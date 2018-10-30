@@ -1,0 +1,16 @@
+# Node files
+node_modules/
+npm-debug.log
+
+# IDE files
+.vscode/
+*.sublime-workspace
+
+# Generated files that don't need tracking
+public/script/bundle.js
+LAST_MODIFIED
+VERSION
+
+# System files
+.DS_Store
+*.~lock*
