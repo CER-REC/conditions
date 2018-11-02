@@ -175,3 +175,8 @@ and covers all of the interaction, analytics, and accessibility requirements.
 // TODO: Write test example and structure
 ```
 
+## Retrieving data
+
+Data for the visualization will be served by a GraphQL server running in the IIS
+visualization service. Queries can be executed with `react-apollo`, which will
+provide automatic caching and query execution when props change.
