@@ -3,6 +3,7 @@ module.exports = {
   extends: 'airbnb',
   env: { browser: true },
   rules: {
-    'no-console': ['error', { allow: ['error'] }]
+    'no-console': ['error', { allow: ['error'] }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['.storybook/**', 'stories/**' ]}]
   },
 }
