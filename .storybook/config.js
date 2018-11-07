@@ -1,14 +1,19 @@
+import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
 import { configureViewport } from '@storybook/addon-viewport';
 import { withOptions } from '@storybook/addon-options';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
 
+import '../app/styles.scss';
 
 addDecorator(
   withOptions({
     addonPanelInRight: true
   })
+)
+addDecorator(
+  storyFn => <div className="visualization">{storyFn()}</div>,
 );
 
 const newViewports = {
@@ -34,9 +39,11 @@ configureViewport({
 
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../stories', true, /.stories.jsx$/);
+const documentationStories = require.context('../stories/', true, /.stories.jsx$/);
+const componentStories = require.context('../app/', true, /.stories.jsx$/);
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  documentationStories.keys().forEach(filename => documentationStories(filename));
+  componentStories.keys().forEach(filename => componentStories(filename));
 }
 
 enzyme({ adapter: new Adapter() });
