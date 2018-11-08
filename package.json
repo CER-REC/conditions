@@ -72,6 +72,7 @@
     "node-sass": "^4.5.3",
     "nsp": "^2.7.0",
     "nyc": "^11.7.3",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "sinon": "^5.0.7",
     "storybook-addon-specifications": "^2.1.2",
