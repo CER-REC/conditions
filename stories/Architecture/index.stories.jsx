@@ -5,6 +5,5 @@ import HighLevel from './highLevel.md';
 import ComponentStructure from './componentStructure.md';
 
 storiesOf('Architecture', module)
-  .addDecorator(withViewport('documentation'))
   .add('High Level', doc(HighLevel))
   .add('Component Structure', doc(ComponentStructure));

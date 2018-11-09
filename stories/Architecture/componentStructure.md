@@ -12,7 +12,7 @@ documentation, examples, and tests.
 /* Inside ./app/components/MyComponentName/
 index.jsx // Component
 styles.scss // Styles for CapitalizedComponent and children
-index.test.jsx // Test for CapitalizedComponent
+index.spec.jsx // Test for CapitalizedComponent
 index.stories.jsx // Examples
 README.md // Documentation
 InternalComponent.jsx // Component used within CapitalizedComponent

@@ -1,8 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { checkA11y } from '@storybook/addon-a11y';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { withDocs } from 'storybook-readme';
+import { storiesForComponent } from '../../../.storybook/utils';
 import TrendButton from './';
 import ReadMe from './README.md';
 
@@ -11,12 +9,11 @@ const encodingOptions = [
   'instrument',
 ];
 
-storiesOf('TrendButton', module)
-  .addDecorator(checkA11y)
+storiesForComponent('TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
-  .add('for encoding', withDocs(ReadMe, () => (
+  .add('for encoding', () => (
     <TrendButton
       encoding={select('Encoding', encodingOptions, encodingOptions[0])}
       onClick={() => console.warn('Clicked')}
     />
-  )));
+  ));
