@@ -5,6 +5,7 @@ import TranslationTable from './app/TranslationTable';
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
 
 module.exports = {
+  mode: 'development',
   entry: {
     bundle: [
       'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr',
@@ -32,25 +33,34 @@ module.exports = {
       {
         test: /\.js$|\.jsx$/,
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'react'],
-            plugins: [],
-          },
-        },
+        use: 'babel-loader',
+      },
+
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        exclude: /(node_modules)/,
+        use: [{
+          loader: 'url-loader',
+          options: { limit: 8000 },
+        }],
       },
 
       {
         test: /\.s?css$/,
-        use: [
-          { loader: 'style-loader' }, // creates style nodes from JS strings
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-            options: { url: false },
-          },
-          { loader: 'sass-loader' }, // compiles Sass to CSS
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: 'file-loader',
+          options: { prefix: 'fonts/' },
+        },
+      },
+
+      {
+        test: /\.md$/,
+        use: 'raw-loader',
       },
 
       {

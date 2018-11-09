@@ -1,6 +1,4 @@
-# Architecture
-
-## Components and Containers
+# Components and Containers
 
 We use the terms `Components` and `Containers`, despite both implementing the
 React component pattern, so that we can differentiate between reusable elements
@@ -28,7 +26,7 @@ const PureFunctionalComponent = React.memo(props => <div />);
 Components should be stored in `app/components/ComponentName/` and Containers in
 `app/containers/ContainerName/`.
 
-### React Components
+## React Components
 
 Each component that is intended for direct use (as opposed to supporting components
 that are only used in a single parent for a very specific purpose) should be in
@@ -41,7 +39,7 @@ not have direct dependencies on the state.
 export default class CompanyWheel extends React.PureComponent {}
 ```
 
-### Containers
+## Containers
 
 Since containers are primarily used for layout and configuration, they will
 typically have no (or few) interactable elements. They will serve as the
@@ -49,7 +47,7 @@ connection point to the Redux state, providing properties to the components,
 including the Redux Action Creators that will be used on the component's
 interactive elements.
 
-### State
+## State
 
 There are three areas where we may track the current visualization settings:
 
@@ -82,7 +80,7 @@ import CompanyWheel from '../../components/CompanyWheel/';
 export default connect(({ selectedCompany })=> ({ selectedCompany }))(CompanyWheel);
 ```
 
-### CSS
+## CSS
 
 Any styles that are required to display the component outside of the visualization
 should be added to a `styles.scss` file and imported into any files within the
@@ -92,7 +90,7 @@ should be grouped in a single class that is only used by this component.
 // TODO Discuss with team and possibly implement a Block Element Modifier (BEM)
 // naming convention for classes
 
-```
+```css
 /* app/components/CompanyWheel/styles.scss */
 .company-wheel {
   .company-name {
@@ -107,17 +105,17 @@ should be grouped in a single class that is only used by this component.
 }
 ```
 
-### PropTypes
+## PropTypes
 
 PropTypes should be added to props to reduce bugs in component usage.
 
-### Documentation
+## Documentation
 
 Each component should have a `README.md` to explain what the component is used
 for, and what its interaction, analytics, and accessibility requirements are,
 with reference links back to the design document.
 
-## Redux
+# Redux
 
 Implementing a global state store with Redux can be broken down into four segments:
 
@@ -130,7 +128,7 @@ Since Types, Actions, and Reducers are closely related, we group these together
 in a single file in the `app/actions/` folder. There should be one file for each
 set of related state.
 
-```
+```js
 // app/actions/findWords.js
 export const Types = {
   UPDATE_SEARCH: 'findWords.updateSearch',
@@ -166,7 +164,7 @@ export const reducer = (initialState = {}, action) => {
 };
 ```
 
-## Testing
+# Testing
 
 Every component should have a set of tests to ensure that it renders as designed
 and covers all of the interaction, analytics, and accessibility requirements.
@@ -175,7 +173,7 @@ and covers all of the interaction, analytics, and accessibility requirements.
 // TODO: Write test example and structure
 ```
 
-## Retrieving data
+# Retrieving data
 
 Data for the visualization will be served by a GraphQL server running in the IIS
 visualization service. Queries can be executed with `react-apollo`, which will

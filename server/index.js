@@ -10,8 +10,8 @@ import Tr from '../app/TranslationTable';
 const app = Express();
 
 // Set up static files
-app.use(Express.static(Path.resolve(__dirname, '../public')));
-app.use(Express.static(Path.resolve(__dirname, '../devPublic')));
+app.use('/conditions', Express.static(Path.resolve(__dirname, '../public')));
+app.use('/conditions', Express.static(Path.resolve(__dirname, '../devPublic')));
 app.use('/data', Express.static(Path.resolve(__dirname, '../data')));
 
 // Set up development pages
@@ -23,7 +23,7 @@ const router = Express.Router();
 router.get('/screenshot', (req, res) => res.render('screenshot'));
 router.get('/', (req, res) => res.render('app', { title: 'WET 4.0.20' }));
 Tr.getIn(['applicationPath']).forEach((path) => {
-  router.get(`/${path}/*`, (req, res) => res.render('app', { title: 'WET 4.0.20' }));
+  router.get(`/${path}/`, (req, res) => res.render('app', { title: 'WET 4.0.20' }));
 });
 
 app.use(router);

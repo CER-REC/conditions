@@ -4,6 +4,9 @@ module.exports = {
   env: { browser: true },
   rules: {
     'no-console': ['error', { allow: ['error'] }],
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['.storybook/**', 'stories/**' ]}]
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: ['.storybook/**', 'stories/**', '**/*.stories.jsx' ] },
+    ],
   },
 }

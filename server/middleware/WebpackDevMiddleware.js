@@ -8,7 +8,7 @@ const compiler = Webpack(webpackConfig);
 
 export default () => {
   const app = Express();
-  app.use('/script', WebpackDevMiddleware(compiler));
-  app.use('/script', WebpackHotMiddleware(compiler));
+  app.use('/conditions/script', WebpackDevMiddleware(compiler));
+  app.use('/conditions/script', WebpackHotMiddleware(compiler));
   return app;
 };
