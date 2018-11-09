@@ -4,6 +4,6 @@ import { doc } from 'storybook-readme';
 import HighLevel from './highLevel.md';
 import ComponentStructure from './componentStructure.md';
 
-storiesOf('Architecture', module)
+storiesOf('Docs|Architecture', module)
   .add('High Level', doc(HighLevel))
   .add('Component Structure', doc(ComponentStructure));

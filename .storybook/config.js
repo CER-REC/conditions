@@ -24,7 +24,11 @@ const viewports = {
 };
 configureViewport({ viewports, defaultViewport: 'fullscreen' });
 
-addDecorator(withOptions({ addonPanelInRight: true }));
+addDecorator(withOptions({
+  addonPanelInRight: true,
+  hierarchyRootSeparator: /\|/, // Categories with |
+  hierarchySeparator: /\//, // Sub-stories with /
+}));
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
 // automatically import all files ending in *.stories.js

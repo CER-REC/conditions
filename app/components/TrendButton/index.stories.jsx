@@ -9,7 +9,7 @@ const encodingOptions = [
   'instrument',
 ];
 
-storiesForComponent('TrendButton', module, ReadMe)
+storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
   .add('for encoding', () => (
     <TrendButton
