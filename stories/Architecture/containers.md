@@ -15,7 +15,7 @@ Containers should be stored in `app/containers/ContainerName/`.
 ## Folder Structure
 
 Each container should have a folder in `./app/components/`, matching the name
-and capitalization of the container component. Each containershould have its own
+and capitalization of the container component. Each container should have its own
 supporting documentation, examples, and tests.
 
 ```
