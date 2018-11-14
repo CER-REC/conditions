@@ -1,9 +1,10 @@
 import { storiesOf } from '@storybook/react';
-import { withViewport } from '@storybook/addon-viewport';
 import { doc } from 'storybook-readme';
 import HighLevel from './highLevel.md';
-import ComponentStructure from './componentStructure.md';
+import Component from './components.md';
+import Container from './containers.md';
 
-storiesOf('Docs|Architecture', module)
+storiesOf('Documentation|Architecture', module)
   .add('High Level', doc(HighLevel))
-  .add('Component Structure', doc(ComponentStructure));
+  .add('Components', doc(Component))
+  .add('Containers', doc(Container));
