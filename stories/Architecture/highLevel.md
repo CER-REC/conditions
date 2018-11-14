@@ -1,8 +1,8 @@
 # High Level Architecture
 
-## Components and Containers
+## Components and Views
 
-We use the terms `Components` and `Containers`, despite both implementing the
+We use the terms `Components` and `Views`, despite both implementing the
 React component pattern, so that we can differentiate between reusable elements
 and visualization layout elements. Both of these implement a similar pattern,
 with the primary difference being reuse.

@@ -37,7 +37,7 @@ and capitalization of the component. Each component should have its own supporti
 documentation, examples, and tests.
 
 ```
-/* Inside ./app/components/MyPublicComponent/
+/* Inside ./app/components/MyPublicComponent/ */
 index.jsx // MyPublicComponent as the default export
 styles.scss // Styles for MyPublicComponent and children
 index.spec.jsx // Test for MyPublicComponent
@@ -73,7 +73,7 @@ As a general rule of thumb, the following steps will define the best location:
  * If this data changes less than once a second: Component state
 
 When a component needs state that is stored within Redux, it will be passed in
-as props from the parent component (in most cases this will be a View Container).
+as props from the parent component (in most cases this will be a View).
 
 ## CSS
 
