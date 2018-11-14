@@ -12,7 +12,9 @@
     "build:webpack": "echo \"Error: not defined\" && exit 1",
     "lint": "eslint ./app ./server",
     "start": "babel-node ./server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test nyc npm run test:raw",
+    "test:raw": "cross-env NODE_ENV=test mocha --require babel-register --require test/test_helper.js --recursive app/**/*.spec.jsx",
+    "test:single": "cross-env NODE_ENV=test mocha --require babel-register --require test/test_helper.js --recursive",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -25,6 +27,7 @@
     "graphql": "^14.0.2",
     "graphql-tag": "^2.8.0",
     "immutable": "^3.8.1",
+    "lodash.memoize": "^4.1.2",
     "prop-types": "^15.6.0",
     "re-reselect": "^2.0.0",
     "react": "^16.6.0",
@@ -51,11 +54,14 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.2",
+    "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -66,6 +72,7 @@
     "eslint-plugin-react": "^7.5.1",
     "express": "^4.15.3",
     "file-loader": "^2.0.0",
+    "jsdom": "^13.0.0",
     "mocha": "^5.1.1",
     "mocha-webpack": "^1.1.0",
     "mustache": "^2.3.0",
@@ -84,5 +91,35 @@
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.6.1",
     "webpack-hot-middleware": "^2.18.2"
+  },
+  "nyc": {
+    "require": [
+      "babel-register",
+      "./test/test_helper.js"
+    ],
+    "exclude": [
+      "**/*.stories.js",
+      "**/*.stories.jsx",
+      "**/*.spec.js",
+      "**/*.spec.jsx",
+      "coverage/**",
+      "**/node_modules/**",
+      "devPublic",
+      ".cache"
+    ],
+    "include": [
+      "app/**/*"
+    ],
+    "extension": [
+      ".jsx"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "sourceMap": false,
+    "instrument": false,
+    "cache": true,
+    "all": true
   }
 }
