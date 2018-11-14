@@ -20,19 +20,23 @@ const PureFunctionalComponent = React.memo(props => <div />);
 
 Components should be stored in `app/components/ComponentName/`.
 
-## Public vs Internal components
+## Public vs Private components
 
-Although all components can be used, we differentiate between public and internal
-components by their folder structure and exports. This allows for a cleaner
-folder structure and division of responsibilities for our components. If a
-component is meant to be used by a view, or is used by multiple other components,
-it should be considered a `public` component. Anything else can be considered an
-`internal` component and should be placed inside of the `public` component that
-uses it.
+Any component that is used by a View, or by two or more other components should
+have its own folder and be considered a `Public` component. Anything that is
+only used by a single component should be placed in that component's folder, and
+is treated as an `Private` component.
+
+Private components should be refactored into a Public component, if we ever
+need to use them in more than one component.
+
+Public components should be treated like a semantically versioned API, and a PR
+should mention any time that the component's properties are changed in a way
+that might affect other components.
 
 ## Folder Structure
 
-Each `public` component should have a folder in `./app/components/`, matching the name
+Each `Public` component should have a folder in `./app/components/`, matching the name
 and capitalization of the component. Each component should have its own supporting
 documentation, examples, and tests.
 
@@ -49,11 +53,14 @@ PrivateComponent.README.md // Documentation
 PrivateComponent.test.jsx // Test for PrivateComponent
 ```
 
-When importing `MyPublicComponent`, the import should be written as:
+The name used for imports and exports should always match the folder or filename:
 
-```js
-import MyPublicComponent from '../components/MyPublicComponent/';
-```
+* `./MyPublicComponent/index.jsx`
+ * Default export is a component named `MyPublicComponent`
+ * Imported as `import MyPublicComponent from './app/components/MyPublicComponent/';`
+* `./MyPublicComponent/PrivateComponent.jsx`
+ * Default export is a component named `PrivateComponent`
+ * Imported as `import PrivateComponent from './PrivateComponent';`
 
 ## State
 
