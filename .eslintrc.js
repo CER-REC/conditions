@@ -12,6 +12,7 @@ module.exports = {
         'stories/**',
         '**/*.stories.jsx',
         '**/*.spec.jsx',
+        'test/**',
       ],
       rules: {
         'import/no-extraneous-dependencies': [

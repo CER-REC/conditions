@@ -74,6 +74,7 @@
     "express": "^4.15.3",
     "file-loader": "^2.0.0",
     "jsdom": "^13.0.0",
+    "jsdom-global": "^3.0.2",
     "mocha": "^5.1.1",
     "mustache": "^2.3.0",
     "mustache-express": "^1.2.5",

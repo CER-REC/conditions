@@ -1,3 +1,4 @@
 --require @babel/register
---require test/test_helper
+--require test/enzyme
+--file test/jsdom
 --recursive
