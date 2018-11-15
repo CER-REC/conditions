@@ -10,7 +10,7 @@
     "build": "npm run build:data && npm run build:webpack",
     "build:data": "echo \"Error: not defined\" && exit 1",
     "build:webpack": "echo \"Error: not defined\" && exit 1",
-    "lint": "eslint ./app ./server",
+    "lint": "eslint ./app/**/*.js{,x} ./server/**/*.js",
     "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc npm run test:raw",
     "test:raw": "cross-env NODE_ENV=test mocha --require babel-register --require test/test_helper.js --recursive app/**/*.spec.jsx",
