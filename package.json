@@ -10,13 +10,14 @@
     "build": "npm run build:data && npm run build:webpack",
     "build:data": "echo \"Error: not defined\" && exit 1",
     "build:webpack": "echo \"Error: not defined\" && exit 1",
+    "ci:test": "npm run test:raw -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-reports/junit.xml",
+    "ci:lint": "eslint -f ./node_modules/eslint-junit/index.js ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "cz": "git-cz",
     "lint": "eslint ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc npm run test:raw",
     "test:raw": "cross-env NODE_ENV=test mocha app/**/*.spec.jsx",
     "test:single": "cross-env NODE_ENV=test mocha",
-    "test:bitbucket": "npm run test:raw -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-reports/junit.xml",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -72,6 +73,7 @@
     "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-junit": "^1.0.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
@@ -128,5 +130,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "eslint-junit": {
+    "suiteName": "ESLint",
+    "output": "./test-reports/junit.xml"
   }
 }

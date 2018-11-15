@@ -19,3 +19,4 @@ VERSION
 # Test results
 .nyc_output/
 coverage/
+test-reports/
