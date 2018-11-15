@@ -13,8 +13,8 @@
     "lint": "eslint ./app/**/*.js{,x} ./server/**/*.js",
     "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc npm run test:raw",
-    "test:raw": "cross-env NODE_ENV=test mocha --require babel-register --require test/test_helper.js --recursive app/**/*.spec.jsx",
-    "test:single": "cross-env NODE_ENV=test mocha --require babel-register --require test/test_helper.js --recursive",
+    "test:raw": "cross-env NODE_ENV=test mocha --require @babel/register --require test/test_helper.js --recursive app/**/*.spec.jsx",
+    "test:single": "cross-env NODE_ENV=test mocha --require @babel/register --require test/test_helper.js --recursive",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -40,6 +40,14 @@
     "reselect-tools": "0.0.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-a11y": "^4.0.2",
     "@storybook/addon-actions": "^4.0.2",
     "@storybook/addon-info": "^4.0.4",
@@ -50,16 +58,9 @@
     "@storybook/addon-viewport": "^4.0.2",
     "@storybook/addons": "^4.0.2",
     "@storybook/react": "^4.0.2",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.2",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
     "babel-plugin-istanbul": "^5.1.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.4",
@@ -94,7 +95,7 @@
   },
   "nyc": {
     "require": [
-      "babel-register",
+      "@babel/register",
       "./test/test_helper.js"
     ],
     "exclude": [
