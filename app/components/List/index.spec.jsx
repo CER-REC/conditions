@@ -5,18 +5,20 @@ import { expect } from 'chai';
 
 import List from './';
 
+const noop = () => {};
+
 describe('Components|List', () => {
-  describe("without any items", () => {
+  describe('without any items', () => {
     it('should not render anything', () => {
-      const wrapper = shallow(<List items={[]} />);
+      const wrapper = shallow(<List items={[]} onChange={noop} />);
       expect(wrapper.type()).to.equal(null);
-    })
+    });
   });
 
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<List items={['a', 'b', 'c']} />);
+      wrapper = shallow(<List items={['a', 'b', 'c']} onChange={noop} />);
     });
 
     it('should render', () => {
@@ -39,17 +41,17 @@ describe('Components|List', () => {
   describe('with a selected item', () => {
     const listItems = ['a', 'b', 'c'];
     it('should only highlight one item', () => {
-      const wrapper = shallow(<List items={listItems} selected="b" />);
+      const wrapper = shallow(<List items={listItems} selected="b" onChange={noop} />);
       expect(wrapper.find('.selected')).to.have.lengthOf(1);
     });
 
     it('should highlight the selected item', () => {
-      const wrapper = shallow(<List items={listItems} selected="b" />);
+      const wrapper = shallow(<List items={listItems} selected="b" onChange={noop} />);
       expect(wrapper.find('.selected').text()).to.equal('b');
     });
 
     it("should highlight the first item if it isn't found", () => {
-      const wrapper = shallow(<List items={listItems} selected="!" />);
+      const wrapper = shallow(<List items={listItems} selected="!" onChange={noop} />);
       expect(wrapper.find('.selected').text()).to.equal('a');
     });
   });
@@ -68,3 +70,4 @@ describe('Components|List', () => {
     });
   });
 });
+

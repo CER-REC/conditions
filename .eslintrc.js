@@ -4,9 +4,33 @@ module.exports = {
   env: { browser: true },
   rules: {
     'no-console': ['error', { allow: ['error'] }],
-    'import/no-extraneous-dependencies': [
-      'error',
-      { devDependencies: ['.storybook/**', 'stories/**', '**/*.stories.jsx' ] },
-    ],
   },
+  overrides: [
+    {
+      files: [
+        '.storybook/**',
+        'stories/**',
+        '**/*.stories.jsx',
+        '**/*.spec.jsx',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true },
+        ],
+      },
+    },
+    {
+      files: ['**/*.spec.jsx'],
+      env: {
+        mocha: true,
+      },
+    },
+    {
+      files: ['**/*.stories.jsx'],
+      rules: {
+        'no-alert': false,
+      },
+    },
+  ],
 }
