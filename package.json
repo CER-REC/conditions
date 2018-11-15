@@ -13,8 +13,8 @@
     "lint": "eslint ./app/**/*.js{,x} ./server/**/*.js",
     "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc npm run test:raw",
-    "test:raw": "cross-env NODE_ENV=test mocha --require @babel/register --require test/test_helper.js --recursive app/**/*.spec.jsx",
-    "test:single": "cross-env NODE_ENV=test mocha --require @babel/register --require test/test_helper.js --recursive",
+    "test:raw": "cross-env NODE_ENV=test mocha app/**/*.spec.jsx",
+    "test:single": "cross-env NODE_ENV=test mocha",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -65,7 +65,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.4",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -75,7 +75,6 @@
     "file-loader": "^2.0.0",
     "jsdom": "^13.0.0",
     "mocha": "^5.1.1",
-    "mocha-webpack": "^1.1.0",
     "mustache": "^2.3.0",
     "mustache-express": "^1.2.5",
     "node-sass": "^4.5.3",
@@ -95,23 +94,19 @@
   },
   "nyc": {
     "require": [
-      "@babel/register",
-      "./test/test_helper.js"
+      "@babel/register"
     ],
     "exclude": [
-      "**/*.stories.js",
-      "**/*.stories.jsx",
-      "**/*.spec.js",
-      "**/*.spec.jsx",
-      "coverage/**",
       "**/node_modules/**",
-      "devPublic",
-      ".cache"
-    ],
-    "include": [
-      "app/**/*"
+      ".cache/",
+      "devPublic/",
+      "test/",
+      "webpack.config.js",
+      "**/*.spec.jsx",
+      "**/*.stories.jsx"
     ],
     "extension": [
+      ".js",
       ".jsx"
     ],
     "reporter": [
@@ -119,8 +114,8 @@
       "text-summary"
     ],
     "sourceMap": false,
-    "instrument": false,
-    "cache": true,
+    "instrument": true,
+    "cache": false,
     "all": true
   }
 }
