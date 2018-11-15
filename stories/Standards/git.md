@@ -12,16 +12,62 @@ release from development. All other Git Flow processes can be followed as normal
 
 ## Commit Messages
 
-Smart Commits are enabled in both JIRA and BitBucket, and all commit messages
-should begin with the JIRA ticket ID. The first line of the commit message should
-be around or below 100 characters, and should summarize the main point of the
-commit. Any additional information can be added to the remaining lines of the
-message.
+Commit messages serve multiple purposes, but providing a good summary of changes
+to other developers should be our highest priority. Some other uses are:
+
+* Providing more context on the reason for the change and the implementation
+* Automatic linking of Commits, Branches, and PRs to JIRA tickets
+* Automatic change-log generation
+* Tracking backwards-incompatible changes
+* Skipping CI/CD processes for specific changes
+
+We have chosen to follow [Conventional Commits](https://www.conventionalcommits.org/)
+as a specification for our commit messages, and it allows us to collect any
+relevant information in an easy-to-read format for both humans and machines.
 
 ```
-NEBV-1167 Adds standards for Git and Code
-* Git uses a variation of Git Flow
-* Code is linted with AirBnB ESLint
+feat(CompanyWheel): Adds PullToSpin to CompanyWheel component's render
+
+This adds the component to the interface, but does not implement the CompanyWheel
+logic for spinning.
+
+NEBV-1234
+```
+
+```
+docs(Standards/Git): Adds Conventional Commits as a commit standard
+
+Committizen has been installed and provides `git cz` alias for guided commit messages
+
+NEBV-114
+```
+
+[Committizen](https://commitizen.github.io/cz-cli/) has been installed and will
+provide a guided commit message workflow when running `npm run cz`. This can be
+aliased to `git cz` by running `npm install -g committizen`. This will simplify
+the process of writing a good commit message, but the message may still be written
+manually.
+
+```bash
+$ git cz
+cz-cli@3.0.4, cz-conventional-changelog@2.1.0
+
+
+Line 1 will be cropped at 100 characters. All other lines will be wrapped after 100 characters.
+
+? Select the type of change that you're committing: docs:     Documentation only changes
+? What is the scope of this change (e.g. component or file name)? (press enter to skip)
+ Standards/Git
+? Write a short, imperative tense description of the change:
+ Adds Conventional Commits as a commit standard
+? Provide a longer description of the change: (press enter to skip)
+ Committizen has been installed and provides `git cz` alias for guided commit messages
+? Are there any breaking changes? No
+? Does this change affect any open issues? Yes
+? Add issue references (e.g. "fix #123", "re #123".):
+ NEBV-1147
+[feature/1167-commit-messages 5201e41] docs(Standards/Git): Adds Conventional Commits as a commit standard
+ 3 files changed, 334 insertions(+), 8 deletions(-)
 ```
 
 ## Pull Requests

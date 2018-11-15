@@ -10,7 +10,8 @@
     "build": "npm run build:data && npm run build:webpack",
     "build:data": "echo \"Error: not defined\" && exit 1",
     "build:webpack": "echo \"Error: not defined\" && exit 1",
-    "lint": "eslint ./app/**/*.js{,x} ./server/**/*.js",
+    "cz": "git-cz",
+    "lint": "eslint ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc npm run test:raw",
     "test:raw": "cross-env NODE_ENV=test mocha app/**/*.spec.jsx",
@@ -62,8 +63,10 @@
     "babel-loader": "^8.0.0",
     "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.1.2",
+    "commitizen": "^3.0.4",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.4",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^4.19.1",
@@ -118,5 +121,10 @@
     "instrument": true,
     "cache": false,
     "all": true
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
