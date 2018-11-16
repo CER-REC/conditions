@@ -14,6 +14,6 @@ storiesForComponent('Components|TrendButton', module, ReadMe)
   .add('for encoding', () => (
     <TrendButton
       encoding={select('Encoding', encodingOptions, encodingOptions[0])}
-      onClick={() => console.warn('Clicked')}
+      onClick={() => alert('Clicked')}
     />
   ));

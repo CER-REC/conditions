@@ -10,10 +10,14 @@
     "build": "npm run build:data && npm run build:webpack",
     "build:data": "echo \"Error: not defined\" && exit 1",
     "build:webpack": "echo \"Error: not defined\" && exit 1",
+    "ci:test": "npm run test:raw -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-reports/junit.xml",
+    "ci:lint": "eslint -f ./node_modules/eslint-junit/index.js ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "cz": "git-cz",
-    "lint": "eslint ./app ./server",
+    "lint": "eslint ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "start": "babel-node ./server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test nyc npm run test:raw",
+    "test:raw": "cross-env NODE_ENV=test mocha app/**/*.spec.jsx",
+    "test:single": "cross-env NODE_ENV=test mocha",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -26,6 +30,7 @@
     "graphql": "^14.0.2",
     "graphql-tag": "^2.8.0",
     "immutable": "^3.8.1",
+    "lodash.memoize": "^4.1.2",
     "prop-types": "^15.6.0",
     "re-reselect": "^2.0.0",
     "react": "^16.6.0",
@@ -38,6 +43,14 @@
     "reselect-tools": "0.0.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-a11y": "^4.0.2",
     "@storybook/addon-actions": "^4.0.2",
     "@storybook/addon-info": "^4.0.4",
@@ -48,29 +61,28 @@
     "@storybook/addon-viewport": "^4.0.2",
     "@storybook/addons": "^4.0.2",
     "@storybook/react": "^4.0.2",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.1.2",
     "commitizen": "^3.0.4",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.4",
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-junit": "^1.0.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "express": "^4.15.3",
     "file-loader": "^2.0.0",
+    "jsdom": "^13.0.0",
+    "jsdom-global": "^3.0.2",
     "mocha": "^5.1.1",
-    "mocha-webpack": "^1.1.0",
+    "mocha-junit-reporter": "^1.18.0",
     "mustache": "^2.3.0",
     "mustache-express": "^1.2.5",
     "node-sass": "^4.5.3",
@@ -88,9 +100,39 @@
     "webpack-dev-server": "^2.6.1",
     "webpack-hot-middleware": "^2.18.2"
   },
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      ".cache/",
+      "devPublic/",
+      "test/",
+      "webpack.config.js",
+      "**/*.spec.jsx",
+      "**/*.stories.jsx"
+    ],
+    "extension": [
+      ".js",
+      ".jsx"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "sourceMap": false,
+    "instrument": true,
+    "cache": false,
+    "all": true
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "eslint-junit": {
+    "suiteName": "ESLint",
+    "output": "./test-reports/junit.xml"
   }
 }

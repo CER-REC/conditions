@@ -15,3 +15,8 @@ VERSION
 # System files
 .DS_Store
 *.~lock*
+
+# Test results
+.nyc_output/
+coverage/
+test-reports/

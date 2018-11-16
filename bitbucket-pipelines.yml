@@ -7,9 +7,16 @@ image: node:10.13.0
 
 pipelines:
   default:
-    - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
+    - parallel:
+      - step:
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run ci:test
+      - step:
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run ci:lint
