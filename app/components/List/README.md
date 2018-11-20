@@ -5,10 +5,10 @@ simple support for arrows, keyboard and mouse support, and scroll wheel support.
 
 ## Requirements
 
-* [ ] Previous and Next arrows
- * [ ] Previous doesn't display on first item
- * [ ] Next does display on last item
-* [ ] Can render text or components as items
+* [x] Previous and Next arrows
+ * [x] Previous doesn't display on first item
+ * [x] Next doesn't display on last item
+* [x] Can render text or components as items
 * [x] Adds mouse/keyboard interaction for selecting items
  * [x] Interaction can be disabled with `itemInteractions={false}`
 * [ ] Can be displayed as a vertical or horizontal list

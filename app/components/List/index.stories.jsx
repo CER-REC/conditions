@@ -10,6 +10,13 @@ storiesForComponent('Components|List', module, ReadMe)
       onChange={v => alert(v)}
     />
   ))
+  .add('selected', () => (
+    <List
+      items={['Item 1', 'Item 2', 'Item 3']}
+      selected={1}
+      onChange={v => alert(v)}
+    />
+  ))
   .add('component items', () => (
     <List
       items={[

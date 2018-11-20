@@ -48,12 +48,12 @@ describe('Components|List', () => {
 
     it('should highlight the selected item', () => {
       const wrapper = shallow(<List items={listItems} selected={1} onChange={noop} />);
-      expect(wrapper.find('.selected').text()).to.equal('b');
+      expect(wrapper.find('.selected .List-Item-Content').text()).to.equal('b');
     });
 
     it("should highlight the first item if it isn't found", () => {
       const wrapper = shallow(<List items={listItems} selected={9000} onChange={noop} />);
-      expect(wrapper.find('.selected').text()).to.equal('a');
+      expect(wrapper.find('.selected .List-Item-Content').text()).to.equal('a');
     });
   });
 
@@ -107,6 +107,33 @@ describe('Components|List', () => {
         onChange={noop}
       />);
       expect(wrapper.find('h1')).to.have.lengthOf(2);
+    });
+  });
+
+  describe('arrows', () => {
+    let spy;
+    beforeEach(() => {
+      spy = sinon.spy();
+    });
+
+    it('should not show a previous arrow on the first item', () => {
+      const wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} />);
+      expect(wrapper.find('.ArrowPrevious')).to.have.lengthOf(0);
+    });
+
+    it('should not show a next arrow on the last item', () => {
+      const wrapper = shallow(<List items={['a', 'b', 'c']} selected={2} onChange={spy} />);
+      expect(wrapper.find('.ArrowNext')).to.have.lengthOf(0);
+    });
+
+    it('should show a next arrow if there are available items', () => {
+      const wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
+      expect(wrapper.find('.ArrowPrevious')).to.have.lengthOf(1);
+    });
+
+    it('should show a next arrow if there are available items', () => {
+      const wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
+      expect(wrapper.find('.ArrowNext')).to.have.lengthOf(1);
     });
   });
 });
