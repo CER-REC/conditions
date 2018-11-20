@@ -6,6 +6,7 @@ import { expect } from 'chai';
 import List from './';
 
 const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|List', () => {
   describe('without any items', () => {
@@ -56,7 +57,7 @@ describe('Components|List', () => {
     });
   });
 
-  describe('when an item is clicked', () => {
+  describe('when a wrapped item is clicked', () => {
     let spy;
     let wrapper;
     beforeEach(() => {
@@ -65,8 +66,32 @@ describe('Components|List', () => {
     });
 
     it('should call its onChange prop with what was clicked', () => {
-      wrapper.find('.List-Item a').first().simulate('click', { preventDefault: () => {} });
+      wrapper.find('.List-Item').first().simulate('click', eventFuncs);
       expect(spy.calledWith('a')).to.equal(true);
+    });
+
+    it('should call its onChange prop with what enter was pressed on', () => {
+      wrapper.find('.List-Item').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
+      expect(spy.calledWith('a')).to.equal(true);
+    });
+  });
+
+  describe('when wrapping is disabled', () => {
+    let spy;
+    let wrapper;
+    beforeEach(() => {
+      spy = sinon.spy();
+      wrapper = shallow(<List items={['a', 'b', 'c']} onChange={spy} itemInteractions={false} />);
+    });
+
+    it('should not respond to clicks', () => {
+      wrapper.find('.List-Item').first().simulate('click', eventFuncs);
+      expect(spy.called).to.equal(false);
+    });
+
+    it('should not respond to keypresses', () => {
+      wrapper.find('.List-Item').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
+      expect(spy.called).to.equal(false);
     });
   });
 });

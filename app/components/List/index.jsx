@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import handleInteraction from '../../utilities/handleInteraction';
 
 const List = (props) => {
   if (props.items.length === 0) { return null; }
@@ -10,16 +11,9 @@ const List = (props) => {
     <li
       key={v}
       className={`List-Item ${selectedItem === v ? 'selected' : ''}`}
+      {...(props.itemInteractions ? handleInteraction(props.onChange, v) : {})}
     >
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          props.onChange(v);
-        }}
-      >
-        {v}
-      </a>
+      {v}
     </li>
   ));
   return (
@@ -33,10 +27,12 @@ List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
   selected: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  itemInteractions: PropTypes.bool,
 };
 
 List.defaultProps = {
   selected: '',
+  itemInteractions: true,
 };
 
 export default List;
