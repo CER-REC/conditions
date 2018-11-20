@@ -112,6 +112,7 @@
       "devPublic/",
       "test/",
       "webpack.config.js",
+      "**/*.spec.js",
       "**/*.spec.jsx",
       "**/*.stories.jsx"
     ],
