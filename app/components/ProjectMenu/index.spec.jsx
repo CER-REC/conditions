@@ -4,7 +4,6 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 
 import ProjectMenu from './';
-import { List } from 'immutable';
 
 describe('Components|ProjectMenu', () => {
   // Assuming that the actual graph data will have a filter coming from the view level
@@ -54,15 +53,15 @@ describe('Components|ProjectMenu', () => {
   ];
 
   describe('with default props', () => {
-    const wrapper = shallow(<ProjectMenu />);
     // TODO: Change this test to "should render virtualized projects if projectData is empty"
     it('should not render', () => {
+      const wrapper = shallow(<ProjectMenu />);
       expect(wrapper.type()).to.equal(null);
     });
   });
 
   describe('with passed down project data', () => {
-    let wrapper =
+    let wrapper;
     beforeEach(() => {
       wrapper = shallow(<ProjectMenu projectData={projectData} />);
     });
@@ -79,14 +78,23 @@ describe('Components|ProjectMenu', () => {
       expect(wrapper.find('List')).has.lengthOf(1);
     });
 
-    it('should pass a function to the List', () => {
+    it('should pass an array to the Lists project proptype', () => {
       const list = wrapper.find('List');
-      expect(list.props().projects).to.be.a('function');
+      expect(list.props().items).to.be.a('array');
     });
 
-    it('should pass down a maximum of 6 items to the List', () => {
+    it('should pass down a maximum of 6 projects to the List', () => {
       const list = wrapper.find('List');
-      expect(list.props().projects()).to.have.lengthOf(6);
+      expect(list.props().items).to.have.lengthOf(6);
+    });
+
+    it('should pass down an onChange function to the List', () => {
+      const list = wrapper.find('List');
+      expect(list.props().onChange).to.be.a('function');
+    });
+
+    it('should should display a legend for the projects', () => {
+      expect(wrapper.find('ProjectLegend').has.lengthOf(1));
     });
   });
 });
