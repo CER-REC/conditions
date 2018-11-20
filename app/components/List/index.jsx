@@ -4,16 +4,15 @@ import handleInteraction from '../../utilities/handleInteraction';
 
 const List = (props) => {
   if (props.items.length === 0) { return null; }
-  const selectedItem = props.items.includes(props.selected)
-    ? props.selected
-    : props.items[0];
-  const items = props.items.map(v => (
+  // Selected index cannot exceed the length of the array
+  const selectedIndex = (props.selected < props.items.length) ? props.selected : 0;
+  const items = props.items.map((item, i) => (
     <li
-      key={v.key || v}
-      className={`List-Item ${selectedItem === v ? 'selected' : ''}`}
-      {...(props.itemInteractions ? handleInteraction(props.onChange, v) : {})}
+      key={item.key || item}
+      className={`List-Item ${selectedIndex === i ? 'selected' : ''}`}
+      {...(props.itemInteractions ? handleInteraction(props.onChange, i) : {})}
     >
-      {v}
+      {item}
     </li>
   ));
   return (
@@ -25,13 +24,13 @@ const List = (props) => {
 
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.node).isRequired,
-  selected: PropTypes.string,
+  selected: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   itemInteractions: PropTypes.bool,
 };
 
 List.defaultProps = {
-  selected: '',
+  selected: 0,
   itemInteractions: true,
 };
 

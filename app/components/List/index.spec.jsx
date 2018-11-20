@@ -42,17 +42,17 @@ describe('Components|List', () => {
   describe('with a selected item', () => {
     const listItems = ['a', 'b', 'c'];
     it('should only highlight one item', () => {
-      const wrapper = shallow(<List items={listItems} selected="b" onChange={noop} />);
+      const wrapper = shallow(<List items={listItems} selected={1} onChange={noop} />);
       expect(wrapper.find('.selected')).to.have.lengthOf(1);
     });
 
     it('should highlight the selected item', () => {
-      const wrapper = shallow(<List items={listItems} selected="b" onChange={noop} />);
+      const wrapper = shallow(<List items={listItems} selected={1} onChange={noop} />);
       expect(wrapper.find('.selected').text()).to.equal('b');
     });
 
     it("should highlight the first item if it isn't found", () => {
-      const wrapper = shallow(<List items={listItems} selected="!" onChange={noop} />);
+      const wrapper = shallow(<List items={listItems} selected={9000} onChange={noop} />);
       expect(wrapper.find('.selected').text()).to.equal('a');
     });
   });
@@ -66,13 +66,13 @@ describe('Components|List', () => {
     });
 
     it('should call its onChange prop with what was clicked', () => {
-      wrapper.find('.List-Item').first().simulate('click', eventFuncs);
-      expect(spy.calledWith('a')).to.equal(true);
+      wrapper.find('.List-Item').last().simulate('click', eventFuncs);
+      expect(spy.calledWith(2)).to.equal(true);
     });
 
     it('should call its onChange prop with what enter was pressed on', () => {
-      wrapper.find('.List-Item').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.calledWith('a')).to.equal(true);
+      wrapper.find('.List-Item').last().simulate('keypress', { key: 'Enter', ...eventFuncs });
+      expect(spy.calledWith(2)).to.equal(true);
     });
   });
 
