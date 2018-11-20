@@ -11,6 +11,7 @@ module.exports = {
         '.storybook/**',
         'stories/**',
         '**/*.stories.jsx',
+        '**/*.spec.js',
         '**/*.spec.jsx',
         'test/**',
       ],
@@ -22,7 +23,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.spec.jsx'],
+      files: ['**/*.spec.js', '**/*.spec.jsx'],
       env: {
         mocha: true,
       },
