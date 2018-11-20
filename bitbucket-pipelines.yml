@@ -7,16 +7,9 @@ image: node:10.13.0
 
 pipelines:
   default:
-    - parallel:
-      - step:
-          caches:
-            - node
-          script:
-            - npm install
-            - npm run ci:test
-      - step:
-          caches:
-            - node
-          script:
-            - npm install
-            - npm run ci:lint
+    - step:
+        caches:
+          - node
+        script:
+          - npm install
+          - npm run ci:test
