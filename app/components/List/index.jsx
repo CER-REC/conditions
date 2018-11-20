@@ -9,7 +9,7 @@ const List = (props) => {
     : props.items[0];
   const items = props.items.map(v => (
     <li
-      key={v}
+      key={v.key || v}
       className={`List-Item ${selectedItem === v ? 'selected' : ''}`}
       {...(props.itemInteractions ? handleInteraction(props.onChange, v) : {})}
     >
@@ -24,7 +24,7 @@ const List = (props) => {
 };
 
 List.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  items: PropTypes.arrayOf(PropTypes.node).isRequired,
   selected: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   itemInteractions: PropTypes.bool,

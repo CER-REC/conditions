@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
@@ -92,6 +92,21 @@ describe('Components|List', () => {
     it('should not respond to keypresses', () => {
       wrapper.find('.List-Item').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
       expect(spy.called).to.equal(false);
+    });
+  });
+
+  describe('with component items', () => {
+    const TestComponent = props => <h1>{props.text}</h1>; // eslint-disable-line react/prop-types
+    it('should render items', () => {
+      const wrapper = mount(<List
+        items={[
+          <TestComponent key="hello" text="hello" />,
+          <TestComponent key="world" text="world" />,
+        ]}
+        itemInteractions={false}
+        onChange={noop}
+      />);
+      expect(wrapper.find('h1')).to.have.lengthOf(2);
     });
   });
 });
