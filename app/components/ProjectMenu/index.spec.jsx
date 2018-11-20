@@ -94,7 +94,7 @@ describe('Components|ProjectMenu', () => {
     });
 
     it('should should display a legend for the projects', () => {
-      expect(wrapper.find('ProjectLegend').has.lengthOf(1));
+      expect(wrapper.find('ProjectLegend')).has.lengthOf(1);
     });
   });
 });

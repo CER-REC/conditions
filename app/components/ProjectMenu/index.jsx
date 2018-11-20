@@ -35,8 +35,10 @@ class ProjectMenu extends React.PureComponent {
       // TODO: Return virtualized elements
       return null;
     }
-    const projects = this.props.projectData
-      .slice(this.state.projectIndex, 6)
+
+    const focusedProjects = this.props.projectData.slice(this.state.projectIndex, 6);
+
+    const listItems = focusedProjects
       .map((project) => {
         if (!project.id) { return null; }
         return (<span>{project.id}</span>);
@@ -44,8 +46,8 @@ class ProjectMenu extends React.PureComponent {
 
     return (
       <div className="ProjectMenu">
-        <List items={projects} onChange={this.onChange} />
-        <ProjectLegend />
+        <List items={listItems} onChange={this.onChange} />
+        <ProjectLegend items={focusedProjects.graphData} />
       </div>
     );
   }

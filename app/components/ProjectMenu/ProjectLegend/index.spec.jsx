@@ -14,9 +14,17 @@ describe('Components|ProjectLegend', () => {
   });
 
   describe('with passed down items', () => {
+    const legendData = [
+      { name: 'condition 1', count: 1 },
+      { name: 'condition 2', count: 45 },
+      { name: 'condition 3', count: 55 },
+      { name: 'condition 4', count: 23 },
+      { name: 'condition 5', count: 3 },
+      { name: 'condition 6', count: 13 },
+    ];
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectLegend items={[]} />);
+      wrapper = shallow(<ProjectLegend items={legendData} />);
     });
 
     it('should render', () => {
