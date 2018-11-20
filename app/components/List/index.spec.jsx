@@ -136,5 +136,17 @@ describe('Components|List', () => {
       expect(wrapper.find('.ArrowNext')).to.have.lengthOf(1);
     });
   });
+
+  describe('styling', () => {
+    it('should accept a className', () => {
+      const wrapper = shallow(<List
+        items={['a', 'b', 'c']}
+        selected={1}
+        onChange={noop}
+        className="my-class"
+      />);
+      expect(wrapper.find('.my-class')).to.have.lengthOf(1);
+    });
+  });
 });
 

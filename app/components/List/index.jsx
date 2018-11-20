@@ -25,7 +25,7 @@ const List = (props) => {
     );
   });
   return (
-    <div className="List">
+    <div className={`List ${props.className}`}>
       <ul>{items}</ul>
     </div>
   );
@@ -33,14 +33,15 @@ const List = (props) => {
 
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.node).isRequired,
-  selected: PropTypes.number,
+  selected: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   itemInteractions: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 List.defaultProps = {
-  selected: 0,
   itemInteractions: true,
+  className: '',
 };
 
 export default List;
