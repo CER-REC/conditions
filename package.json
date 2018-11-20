@@ -10,7 +10,8 @@
     "build": "npm run build:data && npm run build:webpack",
     "build:data": "echo \"Error: not defined\" && exit 1",
     "build:webpack": "echo \"Error: not defined\" && exit 1",
-    "ci:test": "npm run test -- -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-reports/junit.xml && codecov",
+    "ci:test": "npm run test -- -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-reports/junit.xml && npm run ci:testcoverage",
+    "ci:testcoverage": "nyc report --reporter=text-lcov > coverage.lcov && npx codecov",
     "ci:lint": "eslint -f ./node_modules/eslint-junit/index.js ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "cz": "git-cz",
     "lint": "eslint ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
@@ -126,7 +127,7 @@
     ],
     "sourceMap": false,
     "instrument": true,
-    "cache": false,
+    "cache": true,
     "all": true
   },
   "config": {
