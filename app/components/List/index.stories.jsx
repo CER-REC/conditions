@@ -19,4 +19,11 @@ storiesForComponent('Components|List', module, ReadMe)
       ]}
       onChange={v => alert(v)}
     />
+  ))
+  .add('itemInteractions', () => (
+    <List
+      items={['Item 1', 'Item 2', 'Item 3']}
+      onChange={v => alert(v)}
+      itemInteractions={false}
+    />
   ));
