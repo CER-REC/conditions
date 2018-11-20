@@ -95,5 +95,9 @@ describe('Components|ProjectMenu', () => {
     it('should should display a legend for the projects', () => {
       expect(wrapper.find('ProjectLegend')).has.lengthOf(1);
     });
+
+    it('should pass an array of items to the legend', () => {
+      expect(wrapper.find('ProjectLegend').props().items).to.be.a('array');
+    });
   });
 });

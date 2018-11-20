@@ -47,7 +47,8 @@ const projectData = [
 ];
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
-  .add('default', () => (
+  .add('Default Props', () => (<ProjectMenu />))
+  .add('With project data', () => (
     <ProjectMenu projectData={projectData} />
   ));
 

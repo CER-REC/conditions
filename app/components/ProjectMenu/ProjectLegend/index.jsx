@@ -6,7 +6,7 @@ const ProjectLegend = (props) => {
   if (props.items.length === 0) { return null; }
   return (
     <div className="ProjectLegend">
-      test
+      legendItems
     </div>
   );
 };
