@@ -32,10 +32,15 @@ const List = (props) => {
 };
 
 List.propTypes = {
+  /** Rendered items to be displayed in the list */
   items: PropTypes.arrayOf(PropTypes.node).isRequired,
+  /** The index of the currently selected item */
   selected: PropTypes.number.isRequired,
+  /** A function that will receive an array index when an item is selected */
   onChange: PropTypes.func.isRequired,
+  /** Bind onKeyPress and onClick for selecting an item */
   itemInteractions: PropTypes.bool,
+  /** Additional className to add to the list */
   className: PropTypes.string,
 };
 

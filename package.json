@@ -64,6 +64,7 @@
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-react-docgen": "^2.0.0",
     "chai": "^4.1.2",
     "commitizen": "^3.0.4",
     "cross-env": "^5.2.0",
