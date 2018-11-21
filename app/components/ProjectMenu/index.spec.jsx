@@ -51,6 +51,9 @@ describe('Components|ProjectMenu', () => {
     },
   ];
 
+  const selectedProjectID = 1226;
+  const noop = () => {};
+
   describe('with default props', () => {
     // TODO: Change this test to "should render virtualized projects if projectData is empty"
     it('should not render', () => {
@@ -59,10 +62,14 @@ describe('Components|ProjectMenu', () => {
     });
   });
 
-  describe('with passed down project data', () => {
+  describe('with required props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectMenu projectData={projectData} />);
+      wrapper = shallow(<ProjectMenu
+        projectData={projectData}
+        selectedProjectID={selectedProjectID}
+        onChange={noop}
+      />);
     });
 
     it('should render', () => {
@@ -82,9 +89,13 @@ describe('Components|ProjectMenu', () => {
       expect(list.props().items).to.be.a('array');
     });
 
-    it('should pass down a maximum of 6 projects to the List', () => {
+    it('should pass down a maximum of 5 projects to the List', () => {
       const list = wrapper.find('List');
-      expect(list.props().items).to.have.lengthOf(6);
+      expect(list.props().items).to.have.lengthOf(5);
+    });
+
+    it('should pass the List the index of the selected project', () => {
+      expect(wrapper.find('List').props().selected).to.equal(2);
     });
 
     it('should pass down an onChange function to the List', () => {
@@ -100,4 +111,44 @@ describe('Components|ProjectMenu', () => {
       expect(wrapper.find('ProjectLegend').props().items).to.be.a('array');
     });
   });
+
+  // expectedResults is the input coming into the project menu
+  // and the output to the list component
+  // [0] input, [1] output
+  const expectedResults = [
+    [{ total: 8, selected: 0 }, { total: 3, selected: 0 }],
+    [{ total: 8, selected: 1 }, { total: 4, selected: 1 }],
+    [{ total: 8, selected: 2 }, { total: 5, selected: 2 }],
+    [{ total: 8, selected: 3 }, { total: 5, selected: 2 }],
+    [{ total: 8, selected: 4 }, { total: 5, selected: 2 }],
+    [{ total: 8, selected: 5 }, { total: 5, selected: 2 }],
+    [{ total: 8, selected: 6 }, { total: 4, selected: 2 }],
+    [{ total: 8, selected: 7 }, { total: 3, selected: 2 }],
+    [{ total: 3, selected: 2 }, { total: 3, selected: 2 }],
+    [{ total: 3, selected: 1 }, { total: 3, selected: 1 }],
+    [{ total: 4, selected: 1 }, { total: 4, selected: 1 }],
+    [{ total: 6, selected: 5 }, { total: 3, selected: 2 }],
+  ];
+
+  for (let i = 0; i < expectedResults.length; i += 1) {
+    const [input, output] = expectedResults[i];
+    describe(`with index ${input.selected} selected of ${input.total} projects`, () => {
+      let wrapper;
+      beforeEach(() => {
+        wrapper = shallow(<ProjectMenu
+          projectData={projectData.slice(0, input.total)}
+          selectedProjectID={projectData[input.selected].id}
+          onChange={noop}
+        />);
+      });
+
+      it(`should pass the List ${output.total} projects`, () => {
+        expect(wrapper.find('List').props().items).to.have.a.lengthOf(output.total);
+      });
+
+      it(`should pass the List a selected project index of ${output.selected}`, () => {
+        expect(wrapper.find('List').props().selected).to.equal(output.selected);
+      });
+    });
+  }
 });

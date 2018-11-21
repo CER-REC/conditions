@@ -13,21 +13,13 @@ class ProjectMenu extends React.PureComponent {
         count: PropTypes.number.isRequired,
       })),
     })),
+    selectedProjectID: PropTypes.number,
+    onChange: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
     projectData: [],
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      projectIndex: 0,
-    };
-  }
-
-  onChange(index) {
-    this.setState({ projectIndex: index });
+    selectedProjectID: 0,
   }
 
   render() {
@@ -36,18 +28,19 @@ class ProjectMenu extends React.PureComponent {
       return null;
     }
 
-    const focusedProjects = this.props.projectData.slice(this.state.projectIndex, 6);
+    const projectIndex = this.props.projectData
+      .findIndex(project => project.id === this.props.selectedProjectID);
 
-    const listItems = focusedProjects
-      .map((project) => {
-        if (!project.id) { return null; }
-        return (<span>{project.id}</span>);
-      });
+    const distanceFromEnd = this.props.projectData.length - projectIndex;
+    const numBefore = Math.min(projectIndex, 2);
+    const numAfter = Math.min(distanceFromEnd, 2);
+    const listItems = this.props.projectData
+      .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
 
     return (
       <div className="ProjectMenu">
-        <List items={listItems} onChange={this.onChange} />
-        <ProjectLegend items={focusedProjects.graphData} />
+        <List items={listItems} onChange={this.props.onChange} selected={numBefore} />
+        <ProjectLegend items={this.props.projectData.graphData} />
       </div>
     );
   }

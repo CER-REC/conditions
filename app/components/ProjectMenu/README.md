@@ -1,6 +1,6 @@
 # Project Menu
 
-The project menu allows for the selection of up to 6 consecutive projects at a time to allow exploration of projects by different features via small bar charts.
+The project menu allows for the selection of up to 5 consecutive projects at a time to allow exploration of projects by different features via small bar charts.
 
 ## Requirements
 
