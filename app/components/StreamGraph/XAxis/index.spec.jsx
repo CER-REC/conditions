@@ -25,5 +25,13 @@ describe('Components|X Axis', () => {
     it('should have a span title', () => {
       expect(wrapper.find('span')).to.have.lengthOf(1);
     });
+
+    
+
+    describe('with styles', () => {
+      it('should have a className', () => {
+        expect(wrapper.find('className')).to.have.lengthOf(1);
+      });
+    });
   });
 });
