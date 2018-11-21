@@ -20,3 +20,4 @@ VERSION
 .nyc_output/
 coverage/
 test-reports/
+coverage.lcov
