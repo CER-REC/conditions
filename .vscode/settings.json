@@ -4,7 +4,8 @@
     "mocha.showInExplorer": true,
     "mocha.requires": [
         "@babel/register",
-        "test/enzyme"
+        "test/enzyme",
+        "test/ignoreExtensions"
     ],
     "mocha.options": {
         "file": ["test/jsdom"]
