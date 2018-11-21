@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import { expect } from 'chai';
 
 import XAxis from './';
@@ -23,12 +22,8 @@ describe('Components|X Axis', () => {
       expect(wrapper.type()).to.equal('div');
     });
 
-    it('should have an X Axis class', () => {
-      expect(wrapper.is('div.x-axis')).to.equal(true);
+    it('should have a span title', () => {
+      expect(wrapper.find('span')).to.have.lengthOf(1);
     });
-
-    // it('should render 8 dates', () => {
-    //   expect(wrapper.find('')).to.have.lengthOf(8);
-    // });
   });
 });
