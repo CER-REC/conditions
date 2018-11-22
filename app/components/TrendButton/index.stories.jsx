@@ -4,16 +4,21 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import TrendButton from './';
 import ReadMe from './README.md';
 
-const encodingOptions = [
-  'theme',
-  'instrument',
+const featureOptions = [
+  'Theme',
+  'Instrument',
+  'Phase',
+  'Type',
+  'Status',
+  'Filing',
 ];
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
-  .add('for encoding', () => (
+  .add('default button', () => (
     <TrendButton
-      encoding={select('Encoding', encodingOptions, encodingOptions[0])}
-      onClick={() => alert('Clicked')}
+      selectedFeature={featureOptions[0]}
+      onChange={() => alert('Clicked')}
+      streamGraphData="false"
     />
   ));
