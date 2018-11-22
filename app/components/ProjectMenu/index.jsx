@@ -23,11 +23,6 @@ class ProjectMenu extends React.PureComponent {
   }
 
   render() {
-    if (this.props.projectData.length === 0) {
-      // TODO: Return virtualized elements
-      return null;
-    }
-
     const projectIndex = this.props.projectData
       .findIndex(project => project.id === this.props.selectedProjectID);
 
@@ -35,7 +30,8 @@ class ProjectMenu extends React.PureComponent {
     const numBefore = Math.min(projectIndex, 2);
     const numAfter = Math.min(distanceFromEnd, 2);
     const listItems = this.props.projectData
-      .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
+      .slice(projectIndex - numBefore, projectIndex + numAfter + 1)
+      .map(project => <p>{project.id}</p>);
 
     return (
       <div className="ProjectMenu">

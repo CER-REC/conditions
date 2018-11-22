@@ -53,16 +53,7 @@ describe('Components|ProjectMenu', () => {
 
   const selectedProjectID = 1226;
   const noop = () => {};
-
   describe('with default props', () => {
-    // TODO: Change this test to "should render virtualized projects if projectData is empty"
-    it('should not render', () => {
-      const wrapper = shallow(<ProjectMenu />);
-      expect(wrapper.type()).to.equal(null);
-    });
-  });
-
-  describe('with required props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<ProjectMenu
@@ -103,7 +94,7 @@ describe('Components|ProjectMenu', () => {
       expect(list.props().onChange).to.be.a('function');
     });
 
-    it('should should display a legend for the projects', () => {
+    it('should display a legend for the projects', () => {
       expect(wrapper.find('ProjectLegend')).has.lengthOf(1);
     });
 
