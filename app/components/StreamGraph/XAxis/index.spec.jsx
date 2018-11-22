@@ -22,15 +22,15 @@ describe('Components|X Axis', () => {
       expect(wrapper.type()).to.equal('div');
     });
 
-    it('should have a span title', () => {
-      expect(wrapper.find('span')).to.have.lengthOf(1);
+    it('should have a label title', () => {
+      expect(wrapper.find('label')).to.have.lengthOf(1);
     });
 
     
 
     describe('with styles', () => {
       it('should have a className', () => {
-        expect(wrapper.find('className')).to.have.lengthOf(1);
+        expect(wrapper.find('div.x-axis')).to.have.lengthOf(1);
       });
     });
   });

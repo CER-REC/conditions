@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { XYFrame } from 'semiotic';
+import { VictoryAxis } from 'victory';
 
 import './styles.scss';
 
@@ -9,21 +9,17 @@ const XAxis = (props) => {
 
   return (
     <div className="x-axis">
-      <XYFrame
-        size={[props.width, props.height]}
-        xAccessor="year"
-        axes={[{ orient: 'bottom' }]}
-        xExtent={[Math.min(...props.dateRange), Math.max(...props.dateRange)]}
-        margin={
-          {
-            top: props.top,
-            left: props.width / 2,
-            bottom: props.bottom,
-            right: props.right,
-          }
-        }
+      <VictoryAxis
+        label="Effective Date"
+        padding={{ top: props.top, bottom: props.bottom }}
+        tickValues={props.dateRange}
+        style={{
+          axis: { stroke: '#333333' },
+          axisLabel: { fontSize: 20, padding: 30 },
+          ticks: { stroke: 'grey', size: 5 },
+          tickLabels: { fontSize: 15, padding: 5 },
+        }}
       />
-      <span>Effective Date</span>
     </div>
   );
 };
@@ -40,7 +36,7 @@ XAxis.propTypes = {
 XAxis.defaultProps = {
   dateRange: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
   width: 600,
-  height: 100,
+  height: 400,
   top: 55,
   bottom: 50,
   right: 20,
