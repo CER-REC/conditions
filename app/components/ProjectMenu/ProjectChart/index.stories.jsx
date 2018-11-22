@@ -15,7 +15,7 @@ const graphData = [
 
 const chartType = 'Theme';
 
-storiesForComponent('Components|ProjectLegend', module, ReadMe)
+storiesForComponent('PrivateComponents|ProjectChart', module, ReadMe)
   .add('No props', () => (
     <ProjectChart />
   ))

@@ -5,7 +5,7 @@ import ReadMe from './README.md';
 
 const legendType = 'Theme';
 
-storiesForComponent('Components|ProjectLegend', module, ReadMe)
+storiesForComponent('PrivateComponents|ProjectLegend', module, ReadMe)
   .add('No props', () => (
     <Legend />
   ))
