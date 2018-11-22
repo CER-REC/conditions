@@ -1,29 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
-import StreamButton from './images/streamButton.png';
-import BubbleButton from './images/bubbleButton.png';
+import handleInteraction from '../../utilities/handleInteraction';
+import StreamGraph from '../StreamGraphs';
 
-const buttonImages = {
-  theme: StreamButton,
-  instrument: BubbleButton,
-};
 
 const TrendButton = (props) => {
-  if (!buttonImages[props.encoding]) { return null; }
+  if (props.selectedFeature.length === 0) { return null; }
   return (
-    <button className="TrendButton" onClick={props.onClick}>
-      <img src={buttonImages[props.encoding]} alt="" />
-      <span className="buttonText">
-        Go to {props.encoding}<br />Trends
-      </span>
-    </button>
+    <div className="trendButton">
+      <button {...handleInteraction(props.onChange, null)}>
+        {props.streamGraphData === 'true' ?
+        (
+          <div className="streamGraphBackground">
+            <StreamGraph />
+          </div>
+          )
+        :
+          <div className="staticBackground">
+            <img
+              src=""
+              alt=""
+            />
+          </div>
+           }
+        <div className="buttonText">
+          <span > Go to {props.selectedFeature} --> <br /> Trends </span>
+        </div>
+
+      </button>
+    </div>
   );
 };
 
+export default TrendButton;
+
 TrendButton.propTypes = {
-  encoding: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  selectedFeature: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
-export default TrendButton;
+TrendButton.defaultProps = {
+  selectedFeature: '',
+};
