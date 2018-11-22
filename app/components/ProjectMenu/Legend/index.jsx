@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ProjectLegend = (props) => {
+const Legend = (props) => {
   // TODO: Change this to virtualized legend
   if (props.items.length === 0) { return null; }
   return (
-    <div className="ProjectLegend">
+    <div className="Legend">
       legendItems
     </div>
   );
 };
 
-ProjectLegend.propTypes = {
+Legend.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
   })),
 };
 
-ProjectLegend.defaultProps = {
+Legend.defaultProps = {
   items: [],
 };
 
-export default ProjectLegend;
+export default Legend;

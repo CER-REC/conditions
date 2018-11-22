@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from '../List/';
-import ProjectLegend from './ProjectLegend/';
+import Legend from './Legend/';
 
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
@@ -37,7 +37,7 @@ class ProjectMenu extends React.PureComponent {
     return (
       <div className="ProjectMenu">
         <List items={listItems} onChange={this.props.onChange} selected={numBefore} />
-        <ProjectLegend legendType={this.props.selectedFeature} />
+        <Legend legendType={this.props.selectedFeature} />
       </div>
     );
   }

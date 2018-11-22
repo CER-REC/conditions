@@ -76,7 +76,7 @@ describe('Components|ProjectMenu', () => {
       expect(wrapper.find('List')).has.lengthOf(1);
     });
 
-    it('should pass an array to the Lists project proptype', () => {
+    it('should pass an array of projects to the List', () => {
       const list = wrapper.find('List');
       expect(list.props().items).to.be.a('array');
     });
@@ -96,11 +96,11 @@ describe('Components|ProjectMenu', () => {
     });
 
     it('should display a legend for the projects', () => {
-      expect(wrapper.find('ProjectLegend')).has.lengthOf(1);
+      expect(wrapper.find('Legend')).has.lengthOf(1);
     });
 
-    it('should pass the ProjectLegend a feature item', () => {
-      expect(wrapper.find('ProjectLegend').props().legendType).to.be.a('string');
+    it('should pass the Legend a feature item', () => {
+      expect(wrapper.find('Legend').props().legendType).to.be.a('string');
     });
   });
 

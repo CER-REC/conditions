@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import ProjectLegend from './';
+import Legend from './';
 
 describe('Components|ProjLeg', () => {
   describe('with default props', () => {
     // TODO: Change this test to "should render virtualized projects if projectData is empty"
     it('should not render', () => {
-      const wrapper = shallow(<ProjectLegend />);
+      const wrapper = shallow(<Legend />);
       expect(wrapper.type()).to.equal(null);
     });
   });
@@ -24,15 +24,15 @@ describe('Components|ProjLeg', () => {
     ];
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectLegend items={legendData} />);
+      wrapper = shallow(<Legend items={legendData} />);
     });
 
     it('should render', () => {
       expect(wrapper.type()).to.equal('div');
     });
 
-    it('should have a class of ProjectLegend', () => {
-      expect(wrapper.is('div.ProjectLegend')).to.equal(true);
+    it('should have a class of Legend', () => {
+      expect(wrapper.is('div.Legend')).to.equal(true);
     });
   });
 });
