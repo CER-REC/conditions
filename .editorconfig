@@ -8,5 +8,5 @@ indent_style = space
 indent_size = 2
 trim_trailing_whitespace = true
 # For new lines in Bitbucket's markdown
-[README.md]
+[*.md]
 trim_trailing_whitespace = false
