@@ -4,3 +4,13 @@ The SmallMultiplesLegend component is a component used in view 3 as the correspo
 graph's legend and filter control. (Refer to V3.2 in the Conditions Design Doc)
 
 ## Requirements
+
+* [ ] Renders a title
+* [ ] Renders List component with a list of SmallMultiplesLegendItem and a "All" items
+ * [ ] Creates the "All" item
+ * [ ] Creates a list of SmallMultiplesLegendItem from passed in data
+* [ ] Account for empty list
+* [ ] List component onChange triggers the SmallMultiplesLegend component onChange
+* [ ] Highlights a specified item
+ * [ ] Sets all other items to be transparent
+ * [ ] Sets List component controls to be transparent
