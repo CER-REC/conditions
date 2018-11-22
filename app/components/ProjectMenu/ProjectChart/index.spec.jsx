@@ -4,11 +4,30 @@ import { expect } from 'chai';
 
 import ProjectChart from './';
 
+const chartData = [
+  { name: 'Integrity Management', count: 34, color: 'pink' },
+  { name: 'Sunset Clause', count: 2, color: 'blue' },
+  { name: 'Financial', count: 14, color: 'sand' },
+  { name: 'Management System', count: 4, color: 'forestgreen' },
+  { name: 'No Theme Indicated', count: 5, color: 'black' },
+  { name: 'Security', count: 79, color: 'tomato' },
+  { name: 'Enforcement', count: 66, color: 'lightblue' },
+  { name: 'Administrative', count: 9, color: 'peasoup' },
+  { name: 'Environmental Protection', count: 34, color: 'green' },
+  { name: 'Socio-Economic', count: 127, color: 'periwinkle' },
+  { name: 'Standard Condition', count: 15, color: 'brown' },
+  { name: 'Safety Management', count: 0, color: 'darkpurple' },
+  { name: 'Emergency Management', count: 0, color: 'teal' },
+  { name: 'Damage Prevention', count: 0, color: 'purple' },
+];
+
+const chartType = 'Theme';
+
 describe('Components|ProjectChart', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectChart />);
+      wrapper = shallow(<ProjectChart chartType={chartType} graphData={chartData} />);
     });
 
     it('should render', () => {
@@ -17,6 +36,17 @@ describe('Components|ProjectChart', () => {
 
     it('should have a ProjectChart class', () => {
       expect(wrapper.is('div.ProjectChart')).to.equal(true);
+    });
+  });
+
+  describe('when Theme is the selected feature', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart chartType={chartType} graphData={chartData} />);
+    });
+
+    it('should render 14 FeatureFlags', () => {
+      expect(wrapper.find('div.FeatureFlag')).to.have.a.lengthOf(14);
     });
   });
 });
