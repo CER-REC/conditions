@@ -60,6 +60,7 @@ describe('Components|ProjectMenu', () => {
         projectData={projectData}
         selectedProjectID={selectedProjectID}
         onChange={noop}
+        selectedFeature="Phase"
       />);
     });
 
@@ -98,8 +99,8 @@ describe('Components|ProjectMenu', () => {
       expect(wrapper.find('ProjectLegend')).has.lengthOf(1);
     });
 
-    it('should pass an array of items to the legend', () => {
-      expect(wrapper.find('ProjectLegend').props().items).to.be.a('array');
+    it('should pass the ProjectLegend a feature item', () => {
+      expect(wrapper.find('ProjectLegend').props().legendType).to.be.a('string');
     });
   });
 
@@ -130,6 +131,7 @@ describe('Components|ProjectMenu', () => {
           projectData={projectData.slice(0, input.total)}
           selectedProjectID={projectData[input.selected].id}
           onChange={noop}
+          selectedFeature="Theme"
         />);
       });
 

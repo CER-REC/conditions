@@ -13,6 +13,7 @@ class ProjectMenu extends React.PureComponent {
         count: PropTypes.number.isRequired,
       })),
     })),
+    selectedFeature: PropTypes.string.isRequired,
     selectedProjectID: PropTypes.number,
     onChange: PropTypes.func.isRequired,
   }
@@ -36,7 +37,7 @@ class ProjectMenu extends React.PureComponent {
     return (
       <div className="ProjectMenu">
         <List items={listItems} onChange={this.props.onChange} selected={numBefore} />
-        <ProjectLegend items={this.props.projectData.graphData} />
+        <ProjectLegend legendType={this.props.selectedFeature} />
       </div>
     );
   }
