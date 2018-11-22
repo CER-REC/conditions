@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 const SmallMultiplesLegendItem = (props) => {
   return (
-    <div></div>
+    <div>
+      <span>{props.title}</span>
+    </div>
   );
 };
 
-SmallMultiplesLegendItem.propTypes = {};
-
-SmallMultiplesLegendItem.defaultProps = {};
+SmallMultiplesLegendItem.propTypes = {
+  title: PropTypes.string
+};
 
 export default SmallMultiplesLegendItem;
