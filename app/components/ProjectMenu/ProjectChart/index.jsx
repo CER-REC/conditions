@@ -6,7 +6,14 @@ const ProjectChart = (props) => {
   const sortedData = shortChartData(props.chartType, props.graphData);
   return (
     <div className="ProjectChart">
-      {sortedData.map(condition => <div className="FeatureFlag">{condition.count}</div>)}
+      { sortedData.map(condition => (
+        <div
+          className="FeatureFlag"
+          key={condition.name}
+        >
+          {condition.name}
+        </div>
+      ))}
     </div>
   );
 };

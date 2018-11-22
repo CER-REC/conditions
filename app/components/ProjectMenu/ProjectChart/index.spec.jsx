@@ -48,5 +48,13 @@ describe('Components|ProjectChart', () => {
     it('should render 14 FeatureFlags', () => {
       expect(wrapper.find('div.FeatureFlag')).to.have.a.lengthOf(14);
     });
+
+    it('should have Standard Condition as the first feature flag', () => {
+      expect(wrapper.find('div.FeatureFlag').first().key()).to.equal('Standard Condition');
+    });
+
+    it('should have No Theme Indicated as its last feature flag', () => {
+      expect(wrapper.find('div.FeatureFlag').last().key()).to.equal('No Theme Indicated');
+    });
   });
 });
