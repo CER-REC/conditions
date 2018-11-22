@@ -1,8 +1,20 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import SmallMultiplesLegendItem from './';
 
-describe('PrivateComponents|SmallMultiplesLegendItem', () => {});
+describe('Components|SmallMultiplesLegend/SmallMultiplesLegendItem', () => {
+  describe('when the title property is provided', () => {
+    let wrapper;
+    const title = "Test Title";
+
+    beforeEach(() => {
+      wrapper = shallow(<SmallMultiplesLegendItem title={title} />);
+    });
+
+    it('should render the title', () => {
+      expect(wrapper.text()).to.contain(title);
+    });
+  });
+});
