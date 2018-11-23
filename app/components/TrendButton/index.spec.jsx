@@ -4,6 +4,8 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 
 import TrendButton from './';
+import StreamButton from './images/streamButton.png';
+import BubbleButton from './images/bubbleButton.png';
 
 const defaultFunction = () => {};
 const eventFuncs = { preventDefault: defaultFunction, stopPropagation: defaultFunction };
@@ -72,7 +74,7 @@ describe('Components|TrendButton', () => {
   describe('if streamGraph not available', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<TrendButton selectedFeature="Theme" onChange={defaultFunction} />);
+      wrapper = shallow(<TrendButton selectedFeature="Theme" streamGraphData="false" onChange={defaultFunction} />);
     });
 
     it('renders a div with a className of staticBackground', () => {
@@ -81,6 +83,20 @@ describe('Components|TrendButton', () => {
 
     it('renders an image tag', () => {
       expect(wrapper.find('img')).to.have.lengthOf(1);
+    });
+  });
+
+  describe('if streamGraph not available and Instrument is selected', () => {
+    it('has image source of BubbleButton', () => {
+      const wrapper = shallow(<TrendButton selectedFeature="Instrument" streamGraphData="false" onChange={defaultFunction} />);
+      expect(wrapper.find('img').prop('src')).equal(BubbleButton);
+    });
+  });
+
+  describe('if streamGraph not available and anything other than instrument is selected', () => {
+    it('has image source of StreamButton', () => {
+      const wrapper = shallow(<TrendButton selectedFeature="Phase" streamGraphData="false" onChange={defaultFunction} />);
+      expect(wrapper.find('img').prop('src')).equal(StreamButton);
     });
   });
 });

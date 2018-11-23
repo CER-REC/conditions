@@ -19,6 +19,7 @@
     "test": "cross-env NODE_ENV=test nyc npm run test:raw",
     "test:raw": "cross-env NODE_ENV=test mocha app/**/*.spec.{js,jsx}",
     "test:single": "cross-env NODE_ENV=test mocha",
+    "test:showcoverage": "open coverage/lcov-report/index.html",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
