@@ -5,24 +5,32 @@ import { VictoryAxis } from 'victory';
 import './styles.scss';
 
 const YAxis = (props) => {
-  if (props.dateRange.length === 0) { return null; }
+  if (props.conditions.length === 0) { return null; }
 
   return (
     <div className="y-axis">
+      <VictoryAxis
+        dependentAxis
+        offsetX={200}
+        domain={[Math.min(...props.conditions), Math.max(...props.conditions)]}
+        tickValues={[Math.min(...props.conditions), Math.max(...props.conditions)]}
+        label="Number of Conditions"
+        style={{
+          axis: { stroke: '#333333' },
+          ticks: { stroke: '#333333', size: 5 },
+          tickLabels: { fontSize: 11, padding: 5 },
+        }}
+      />
     </div>
   );
 };
 
 YAxis.propTypes = {
-  dateRange: PropTypes.arrayOf(PropTypes.number),
-  top: PropTypes.number,
-  bottom: PropTypes.number,
+  conditions: PropTypes.arrayOf(PropTypes.number),
 };
 
 YAxis.defaultProps = {
-  dateRange: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
-  top: 55,
-  bottom: 50,
+  conditions: [0, 1436],
 };
 
 export default YAxis;

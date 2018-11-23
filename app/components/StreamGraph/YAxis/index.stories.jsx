@@ -3,7 +3,7 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import YAxis from './';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|XAxis', module, ReadMe)
+storiesForComponent('Components|YAxis', module, ReadMe)
   .add('default', () => (
     <YAxis />
   ));

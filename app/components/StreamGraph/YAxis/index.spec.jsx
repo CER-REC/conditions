@@ -7,7 +7,7 @@ import YAxis from './';
 describe('Components|Y Axis', () => {
   describe('without any data', () => {
     it('should not render anything', () => {
-      const wrapper = shallow(<YAxis dateRange={[]} />);
+      const wrapper = shallow(<YAxis conditions={[]} />);
       expect(wrapper.type()).to.equal(null);
     });
   });
@@ -15,7 +15,7 @@ describe('Components|Y Axis', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<YAxis dateRange={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]} />);
+      wrapper = shallow(<YAxis conditions={[0, 1436]} />);
     });
 
     it('should render', () => {
