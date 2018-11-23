@@ -32,7 +32,7 @@ class ProjectMenu extends React.PureComponent {
     const numAfter = Math.min(distanceFromEnd, 2);
     const listItems = this.props.projectData
       .slice(projectIndex - numBefore, projectIndex + numAfter + 1)
-      .map(project => <p>{project.id}</p>);
+      .map(project => <p key={project.id}>{project.id}</p>);
 
     return (
       <div className="ProjectMenu">
