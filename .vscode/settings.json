@@ -12,5 +12,6 @@
     },
     "mocha.coverage": {
         "enable": false
-    }
+    },
+    "editor.tabSize": 2
 }
