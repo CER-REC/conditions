@@ -30,4 +30,20 @@ Click, enter, and touch should all call `props.onClick()`
 
 ## Unit Testing
 
-TODO: Provide table of automated unit test results and code coverage metrics.
+|Categories|Test Details|
+|without a selectedFeature|should not render anything|
+|with a selectedFeature|should render a button|
+|with a selectedFeature|should render a div with a className of trendButton|
+|with a selectedFeature|should render a div with a className of buttonText|
+|with a selectedFeature|should render a span for button text|
+|when a trendButton is clicked|should call it's onChange prop|
+|when a trendButton is clicked|should call it's onChange prop when enter is pressed|
+|if streamGraph available|renders StreamGraph component correctly|
+|if streamGraph available|renders a div with a className of streamGraphBackground|
+|if streamGraph not available|renders a div with a className of staticBackground|
+|if streamGraph not available|renders an image tag|
+|if streamGraph not available and Instrument is selected|has image source of BubbleButton|
+|if streamGraph not available and anything other than Instrument is selected|has image source of StreamButton|
+
+* Code Coverage Metrics:
+    - 100% Coverage (Statements, Branches, Functions, Lines)

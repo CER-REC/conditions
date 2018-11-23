@@ -27,7 +27,7 @@ describe('Components|TrendButton', () => {
     it('should render a button', () => {
       expect(wrapper.find('button')).to.have.lengthOf(1);
     });
-    it('should render a div with a class of name of trendButton', () => {
+    it('should render a div with a className of trendButton', () => {
       expect(wrapper.find('div.trendButton')).to.have.lengthOf(1);
     });
     it('should render a div with a className of buttonText', () => {
@@ -51,7 +51,7 @@ describe('Components|TrendButton', () => {
       expect(spy.called).to.equal(true);
     });
 
-    it("should call it's onChange prop when enter was pressed", () => {
+    it("should call it's onChange prop when enter is pressed", () => {
       wrapper.find('button').simulate('keypress', { key: 'Enter', ...eventFuncs });
       expect(spy.called).to.equal(true);
     });
@@ -93,7 +93,7 @@ describe('Components|TrendButton', () => {
     });
   });
 
-  describe('if streamGraph not available and anything other than instrument is selected', () => {
+  describe('if streamGraph not available and anything other than Instrument is selected', () => {
     it('has image source of StreamButton', () => {
       const wrapper = shallow(<TrendButton selectedFeature="Phase" streamGraphData="false" onChange={defaultFunction} />);
       expect(wrapper.find('img').prop('src')).equal(StreamButton);
