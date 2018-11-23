@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 import StreamGraph from '../StreamGraphs';
 import StreamButton from './images/streamButton.png';
 import BubbleButton from './images/bubbleButton.png';
-import './styles.scss';
 
 const TrendButton = (props) => {
   if (props.selectedFeature.length === 0) { return null; }
@@ -33,11 +33,9 @@ const TrendButton = (props) => {
            }
         <div className="buttonText">
           <span>
-          Go to {props.selectedFeature} <br /> Trends 
-            
+          Go to {props.selectedFeature} <br /> Trends
           </span>
         </div>
-
       </button>
     </div>
   );
@@ -48,6 +46,7 @@ export default TrendButton;
 TrendButton.propTypes = {
   selectedFeature: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  streamGraphData: PropTypes.string.isRequired,
 };
 
 TrendButton.defaultProps = {
