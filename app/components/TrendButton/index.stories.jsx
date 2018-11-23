@@ -13,12 +13,40 @@ const featureOptions = [
   'Filing',
 ];
 
-storiesForComponent('Components|TrendButton', module, ReadMe)
+storiesForComponent('Components|TrendButton', module)
   .addDecorator(withKnobs)
-  .add('default button', () => (
+  .add('Theme button with static image', () => (
     <TrendButton
       selectedFeature={featureOptions[0]}
       onChange={() => alert('Clicked')}
       streamGraphData="false"
+    />
+  ));
+storiesForComponent('Components|TrendButton', module)
+  .addDecorator(withKnobs)
+  .add('Instrument button with static image', () => (
+    <TrendButton
+      selectedFeature={featureOptions[1]}
+      onChange={() => alert('Clicked')}
+      streamGraphData="false"
+    />
+  ));
+storiesForComponent('Components|TrendButton', module)
+  .addDecorator(withKnobs)
+  .add('Phase button with static image', () => (
+    <TrendButton
+      selectedFeature={featureOptions[2]}
+      onChange={() => alert('Clicked')}
+      streamGraphData="false"
+    />
+  ));
+
+storiesForComponent('Components|TrendButton', module)
+  .addDecorator(withKnobs)
+  .add('Phase button with View3 svg background placeholder', () => (
+    <TrendButton
+      selectedFeature={featureOptions[2]}
+      onChange={() => alert('Clicked')}
+      streamGraphData="true"
     />
   ));
