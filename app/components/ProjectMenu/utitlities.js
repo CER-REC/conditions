@@ -8,10 +8,8 @@ const sortChartData = (feature, data) => {
     Filing: [],
   };
 
-  return data.sort((a, b) => {
-    if (!feature) { return (a.name - b.name); }
-    return (featureOrder[feature].indexOf(a.name) - featureOrder[feature].indexOf(b.name));
-  });
+  return data.sort((a, b) => (
+    featureOrder[feature].indexOf(a.name) - featureOrder[feature].indexOf(b.name)));
 };
 
 export default sortChartData;
