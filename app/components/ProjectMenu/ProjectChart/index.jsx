@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import shortChartData from '../utitlities';
+import FeatureFlag from './FeatureFlag';
 
 const ProjectChart = (props) => {
   const sortedData = shortChartData(props.chartType, props.graphData);
   return (
     <div className="ProjectChart">
       { sortedData.map(condition => (
-        <div
-          className="FeatureFlag"
+        <FeatureFlag
           key={condition.name}
-        >
-          {condition.name}
-        </div>
+          count={condition.count}
+          color={condition.color}
+        />
       ))}
     </div>
   );

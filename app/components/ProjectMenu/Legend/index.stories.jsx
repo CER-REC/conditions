@@ -7,7 +7,7 @@ const legendType = 'Theme';
 
 storiesForComponent('Components|ProjectMenu/Legend', module, ReadMe)
   .add('No props', () => (
-    <Legend />
+    <Legend legendType="" />
   ))
   .add('Required props', () => (
     <Legend legendType={legendType} />
