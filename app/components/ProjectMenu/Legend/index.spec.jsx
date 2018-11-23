@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 import Legend from './';
 
-describe('Components|ProjectLegend', () => {
+describe('Components|Legend', () => {
   describe('with default props', () => {
     // TODO: Change this test to "should render virtualized projects if projectData is empty"
     it('should not render', () => {

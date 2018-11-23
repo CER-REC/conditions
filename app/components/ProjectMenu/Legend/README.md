@@ -1,4 +1,4 @@
-# Project Legend
+# Legend
 
 The project legend is a guide for reading the ProjectMenu's project data. It is important that the squares in the legend be in alignment with the corresponding bars in the bar charts.
 
