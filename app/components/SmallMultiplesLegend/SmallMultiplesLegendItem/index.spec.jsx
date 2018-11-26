@@ -7,7 +7,7 @@ import SmallMultiplesLegendItem from './';
 describe('Components|SmallMultiplesLegend/SmallMultiplesLegendItem', () => {
   describe('when only the title property is provided', () => {
     let wrapper;
-    const title = "Test Title";
+    const title = 'Test Title';
 
     beforeEach(() => {
       wrapper = shallow(<SmallMultiplesLegendItem title={title} />);
