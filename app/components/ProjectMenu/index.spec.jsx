@@ -99,8 +99,8 @@ describe('Components|ProjectMenu', () => {
       expect(wrapper.find('Legend')).has.lengthOf(1);
     });
 
-    it('should pass the Legend a feature item', () => {
-      expect(wrapper.find('Legend').props().legendType).to.be.a('string');
+    it('should pass the Legend an array of legend items', () => {
+      expect(wrapper.find('Legend').props().items).to.be.a('array');
     });
   });
 

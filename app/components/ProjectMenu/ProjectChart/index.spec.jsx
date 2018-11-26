@@ -23,7 +23,7 @@ const chartData = [
 
 const chartType = 'Theme';
 
-describe('Components|ProjectChart', () => {
+describe('Components|ProjectMenu/ProjectChart', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {

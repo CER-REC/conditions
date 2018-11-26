@@ -5,6 +5,7 @@ import Legend from './Legend/';
 
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
+    /** All of the project data and its condition data */
     projectData: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
@@ -13,8 +14,9 @@ class ProjectMenu extends React.PureComponent {
         count: PropTypes.number.isRequired,
       })),
     })),
-    selectedFeature: PropTypes.string.isRequired,
+    /** The ID of the project that is currently selected */
     selectedProjectID: PropTypes.number,
+    /** The method tracking which project is currently being selected */
     onChange: PropTypes.func.isRequired,
   }
 
@@ -37,7 +39,7 @@ class ProjectMenu extends React.PureComponent {
     return (
       <div className="ProjectMenu">
         <List items={listItems} onChange={this.props.onChange} selected={numBefore} />
-        <Legend legendType={this.props.selectedFeature} />
+        <Legend items={listItems} />
       </div>
     );
   }

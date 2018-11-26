@@ -1,24 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Legend = (props) => {
-  // TODO: Change this to virtualized legend
-  if (props.items.length === 0) { return null; }
-  return (
-    <div className="Legend">
-      legendItems
-    </div>
-  );
-};
+const Legend = props => (
+  <div className="Legend">
+    {props.items.map(item => (<div>{item.name}</div>))}
+  </div>
+);
 
 Legend.propTypes = {
+  /** The selected Feature menu item */
   items: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
-  })),
-};
-
-Legend.defaultProps = {
-  items: [],
+    color: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default Legend;

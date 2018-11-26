@@ -4,23 +4,23 @@ import { expect } from 'chai';
 
 import Legend from './';
 
-describe('Components|Legend', () => {
-  describe('with default props', () => {
-    // TODO: Change this test to "should render virtualized projects if projectData is empty"
-    it('should not render', () => {
-      const wrapper = shallow(<Legend />);
-      expect(wrapper.type()).to.equal(null);
-    });
-  });
-
+describe('Components|ProjectMenu/Legend', () => {
   describe('with passed down items', () => {
     const legendData = [
-      { name: 'condition 1', count: 1 },
-      { name: 'condition 2', count: 45 },
-      { name: 'condition 3', count: 55 },
-      { name: 'condition 4', count: 23 },
-      { name: 'condition 5', count: 3 },
-      { name: 'condition 6', count: 13 },
+      { name: 'Standard Condition', color: 'brown' },
+      { name: 'Integrity Management', color: 'pink' },
+      { name: 'Environmental Protection', color: 'green' },
+      { name: 'Administrative', color: 'limegreen' },
+      { name: 'Sunset Clause', color: 'blue' },
+      { name: 'Enforcement', color: 'lightblue' },
+      { name: 'Emergency Management', color: 'teal' },
+      { name: 'Socio-Economic', color: 'lavender' },
+      { name: 'Safety Management', color: 'midnightblue' },
+      { name: 'Damage Prevention', color: 'purple' },
+      { name: 'Financial', color: 'moccasin' },
+      { name: 'Security', color: 'tomato' },
+      { name: 'Management System', color: 'forestgreen' },
+      { name: 'No Theme Indicated', color: 'black' },
     ];
     let wrapper;
     beforeEach(() => {

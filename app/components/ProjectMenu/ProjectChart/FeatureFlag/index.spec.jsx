@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 import FeatureFlag from './';
 
-describe('Components|FeatureFlag', () => {
+describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
   describe('with default props', () => {
     const color = 'Rainbow';
     const count = 5;
