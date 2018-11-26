@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 
 const SmallMultiplesLegend = (props) => {
   return (
-    <div></div>
+    <div>
+      <span>{props.title}</span>
+      <span>[TODO: Change to vertical list]</span>
+    </div>
   );
 };
 
-SmallMultiplesLegend.propTypes = {};
+SmallMultiplesLegend.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 SmallMultiplesLegend.defaultProps = {};
 
