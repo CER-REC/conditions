@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import List from '../List';
 import SmallMultiplesLegendItem from './SmallMultiplesLegendItem';
 
-const SmallMultiplesLegend = (props) => {
-  let legendList;
+const getLegendList = (allLabel, data) => {
+  let legendList = null;
   let legendDataItems = [];
 
-  if (props.data) {
-    legendDataItems = props.data.map(conditionsData => (
+  if (data) {
+    legendDataItems = data.map(conditionsData => (
       <SmallMultiplesLegendItem title={conditionsData.id} data={conditionsData.conditions} />
     ));
   }
@@ -17,7 +17,7 @@ const SmallMultiplesLegend = (props) => {
     let legendItems = [];
 
     if (legendDataItems.length > 1) {
-      const allItem = <SmallMultiplesLegendItem title={props.allLabel} />;
+      const allItem = <SmallMultiplesLegendItem title={allLabel} />;
 
       legendItems = [allItem];
     }
@@ -27,13 +27,15 @@ const SmallMultiplesLegend = (props) => {
     legendList = <List items={legendItems} selected={0} />;
   }
 
-  return (
-    <div>
-      <span>{props.title}</span>
-      {legendList}
-    </div>
-  );
+  return legendList;
 };
+
+const SmallMultiplesLegend = props => (
+  <div>
+    <span>{props.title}</span>
+    {getLegendList(props.allLabel, props.data)}
+  </div>
+);
 
 SmallMultiplesLegend.propTypes = {
   title: PropTypes.string.isRequired,
@@ -52,4 +54,5 @@ SmallMultiplesLegend.defaultProps = {
   data: null,
 };
 
+// TODO: Wrap in React.memo when testing issue fixed
 export default SmallMultiplesLegend;

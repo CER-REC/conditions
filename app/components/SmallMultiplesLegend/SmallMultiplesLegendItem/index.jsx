@@ -22,4 +22,5 @@ SmallMultiplesLegendItem.defaultProps = {
   data: null,
 };
 
+// TODO: Wrap in React.memo when testing issue fixed
 export default SmallMultiplesLegendItem;
