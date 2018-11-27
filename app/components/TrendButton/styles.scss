@@ -1,13 +1,15 @@
 @import "../../styles/fontVariables.scss";
 @import "../../styles/colors.scss";
 
+$trends-overlay-button-color: $general-typography-links2;
+
 .trendButton {
   padding: 0;
   border: none;
   cursor: pointer;
   left: 35%;
   top: 3%;
-  position: relative;
+  position: absolute;
 
   button{
     background-color: transparent;
@@ -34,13 +36,13 @@
       display: block;
       height: 60px;
       width: 300px;
-      border: 1px solid $trend-overlay-button-color;
+      border: 1px solid $trends-overlay-button-color;
       svg {
         height: 40px;
         position: relative;
         left: 30%;
         top: 25%;
-        fill: $trend-overlay-button-color;
+        fill: $trends-overlay-button-color;
       }
     }
   }
