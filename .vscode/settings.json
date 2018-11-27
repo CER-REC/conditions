@@ -4,12 +4,16 @@
     "mocha.showInExplorer": true,
     "mocha.requires": [
         "@babel/register",
-        "test/enzyme"
+        "test/enzyme",
+        "test/ignoreExtensions"
     ],
     "mocha.options": {
         "file": ["test/jsdom"]
     },
     "mocha.coverage": {
         "enable": false
-    }
-}
+    },
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true
+  }
