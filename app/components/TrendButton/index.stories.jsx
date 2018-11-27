@@ -13,7 +13,7 @@ const featureOptions = [
   'Filing',
 ];
 
-storiesForComponent('Components|TrendButton', module)
+storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
   .add('Theme button with static image', () => (
     <TrendButton
@@ -22,7 +22,7 @@ storiesForComponent('Components|TrendButton', module)
       streamGraphData="false"
     />
   ));
-storiesForComponent('Components|TrendButton', module)
+storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
   .add('Instrument button with static image', () => (
     <TrendButton
@@ -31,7 +31,7 @@ storiesForComponent('Components|TrendButton', module)
       streamGraphData="false"
     />
   ));
-storiesForComponent('Components|TrendButton', module)
+storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
   .add('Phase button with static image', () => (
     <TrendButton
@@ -41,7 +41,7 @@ storiesForComponent('Components|TrendButton', module)
     />
   ));
 
-storiesForComponent('Components|TrendButton', module)
+storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
   .add('Phase button with View3 svg background placeholder', () => (
     <TrendButton
