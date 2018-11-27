@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
 
 import SmallMultiplesLegend from './';
-import SmallMultiplesLegendItem from './SmallMultiplesLegendItem';
+import LegendItem from './LegendItem';
 import List from '../List';
 
 describe('Components|SmallMultiplesLegend', () => {
@@ -16,13 +16,13 @@ describe('Components|SmallMultiplesLegend', () => {
   };
 
   const itShouldRenderItems = (data, startIndex) => {
-    it('should render the data as SmallMultiplesLegendItems in the List component', () => {
+    it('should render the data as LegendItem components in the List component', () => {
       const listItems = wrapper.find(List).prop('items');
 
       for (let i = 0; i < data.length; i += 1) {
         const listIndex = startIndex + i;
 
-        expect(listItems[listIndex].type).to.be.equal(SmallMultiplesLegendItem);
+        expect(listItems[listIndex].type).to.be.equal(LegendItem);
         expect(listItems[listIndex].props.title).to.equal(data[i].id);
         expect(listItems[listIndex].props.data).to.deep.equal(data[i].conditions);
       }
@@ -69,7 +69,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
     it('should not render a "All" list item', () => {
       expect(wrapper.find(List).text()).to.not.contain(wrapper.prop('allLabel'));
-      expect(wrapper.find(SmallMultiplesLegendItem)).to.have.lengthOf(1);
+      expect(wrapper.find(LegendItem)).to.have.lengthOf(1);
     });
   });
 
@@ -112,14 +112,14 @@ describe('Components|SmallMultiplesLegend', () => {
       itShouldRenderTitle(title);
       itShouldRenderItems(data, 1);
 
-      it('should render the default allLabel as a SmallMultiplesLegendItems component', () => {
+      it('should render the default allLabel as a LegendItem component', () => {
         const firstListItem = wrapper.find(List).prop('items')[0];
 
-        expect(firstListItem.type).to.be.equal(SmallMultiplesLegendItem);
+        expect(firstListItem.type).to.be.equal(LegendItem);
         expect(firstListItem.props.title).to.equal(SmallMultiplesLegend.defaultProps.allLabel);
         // eslint-disable-next-line no-unused-expressions
         expect(firstListItem.props.data).to.be.null;
-        expect(wrapper.find(SmallMultiplesLegendItem)).to.have.lengthOf(4);
+        expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
       });
     });
 
@@ -131,14 +131,14 @@ describe('Components|SmallMultiplesLegend', () => {
       itShouldRenderTitle(title);
       itShouldRenderItems(data, 1);
 
-      it('should render the provided allLabel as a SmallMultiplesLegendItems component', () => {
+      it('should render the provided allLabel as a LegendItem component', () => {
         const firstListItem = wrapper.find(List).prop('items')[0];
 
-        expect(firstListItem.type).to.be.equal(SmallMultiplesLegendItem);
+        expect(firstListItem.type).to.be.equal(LegendItem);
         expect(firstListItem.props.title).to.equal(wrapper.prop('allLabel'));
         // eslint-disable-next-line no-unused-expressions
         expect(firstListItem.props.data).to.be.null;
-        expect(wrapper.find(SmallMultiplesLegendItem)).to.have.lengthOf(4);
+        expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
       });
     });
   });

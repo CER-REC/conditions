@@ -6,9 +6,9 @@ graph's legend and filter control. (Refer to V3.2 in the Conditions Design Doc)
 ## Requirements
 
 * [ ] Renders a title
-* [ ] Renders List component with a list of SmallMultiplesLegendItem and a "All" items
+* [ ] Renders List component with a list of LegendItem components and a "All" LegendItem
  * [ ] Creates the "All" item
- * [ ] Creates a list of SmallMultiplesLegendItem from passed in data
+ * [ ] Creates a list of LegendItem components from passed in data
 * [ ] Account for empty list
 * [ ] List component onChange triggers the SmallMultiplesLegend component onChange
 * [ ] Highlights a specified item

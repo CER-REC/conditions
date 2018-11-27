@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from '../List';
-import SmallMultiplesLegendItem from './SmallMultiplesLegendItem';
+import LegendItem from './LegendItem';
 
 const getLegendList = (allLabel, data) => {
   let legendList = null;
@@ -9,7 +9,7 @@ const getLegendList = (allLabel, data) => {
 
   if (data) {
     legendDataItems = data.map(conditionsData => (
-      <SmallMultiplesLegendItem title={conditionsData.id} data={conditionsData.conditions} />
+      <LegendItem title={conditionsData.id} data={conditionsData.conditions} />
     ));
   }
 
@@ -17,7 +17,7 @@ const getLegendList = (allLabel, data) => {
     let legendItems = [];
 
     if (legendDataItems.length > 1) {
-      const allItem = <SmallMultiplesLegendItem title={allLabel} />;
+      const allItem = <LegendItem title={allLabel} />;
 
       legendItems = [allItem];
     }

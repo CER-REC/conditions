@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SmallMultiplesLegendItem = props => (
+const LegendItem = props => (
   <div>
     <span>[TODO: Change to graph]</span>
     <span>{props.title}</span>
   </div>
 );
 
-SmallMultiplesLegendItem.propTypes = {
+LegendItem.propTypes = {
   /** The text beside the stream graph */
   title: PropTypes.string.isRequired,
   /** The data to render the stream graph */
@@ -20,9 +20,9 @@ SmallMultiplesLegendItem.propTypes = {
   })),
 };
 
-SmallMultiplesLegendItem.defaultProps = {
+LegendItem.defaultProps = {
   data: null,
 };
 
 // TODO: Wrap in React.memo when testing issue fixed
-export default SmallMultiplesLegendItem;
+export default LegendItem;

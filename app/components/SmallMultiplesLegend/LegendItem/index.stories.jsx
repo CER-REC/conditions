@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import SmallMultiplesLegendItem from './';
+import LegendItem from './';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|SmallMultiplesLegend/SmallMultiplesLegendItem', module, ReadMe)
+storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe)
   .add('basic usage', () => (
-    <SmallMultiplesLegendItem
+    <LegendItem
       title="Title"
       data={[{
         date: new Date('2018-01-01T00:00:00.000Z'),

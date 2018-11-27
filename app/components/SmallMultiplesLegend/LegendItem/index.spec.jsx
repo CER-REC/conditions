@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import SmallMultiplesLegendItem from './';
+import LegendItem from './';
 
-describe('Components|SmallMultiplesLegend/SmallMultiplesLegendItem', () => {
+describe('Components|SmallMultiplesLegend/LegendItem', () => {
   let wrapper;
 
   const itShouldRenderTitle = (title) => {
@@ -17,7 +17,7 @@ describe('Components|SmallMultiplesLegend/SmallMultiplesLegendItem', () => {
     const title = 'Test Title';
 
     beforeEach(() => {
-      wrapper = shallow(<SmallMultiplesLegendItem title={title} />);
+      wrapper = shallow(<LegendItem title={title} />);
     });
 
     itShouldRenderTitle(title);
@@ -39,7 +39,7 @@ describe('Components|SmallMultiplesLegend/SmallMultiplesLegendItem', () => {
     }];
 
     beforeEach(() => {
-      wrapper = shallow(<SmallMultiplesLegendItem title={title} data={data} />);
+      wrapper = shallow(<LegendItem title={title} data={data} />);
     });
 
     itShouldRenderTitle(title);
