@@ -38,8 +38,12 @@ const SmallMultiplesLegend = props => (
 );
 
 SmallMultiplesLegend.propTypes = {
+  /** The title to be displayed at the top */
   title: PropTypes.string.isRequired,
+  /** The text to show for the all legend filter */
   allLabel: PropTypes.string,
+  /** The data to render the stream graphs
+      The items rendered in the provided order */
   data: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     conditions: PropTypes.arrayOf(PropTypes.shape({
