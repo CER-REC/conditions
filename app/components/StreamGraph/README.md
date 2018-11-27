@@ -1,6 +1,6 @@
 # StreamGraph
 
-The Stream Graph is a public component used in View 3, and will, by default, show all stream layers from the Sub Feature Legend stacked on top of one another in order, top to bottom, from least total conditions to most. 
+The Stream Graph is a public component used in View 3, and will, by default, show all stream layers from the Sub Feature Legend stacked on top of one another in order, top to bottom, from least total conditions to most. Dashed guidelines will indicate more precision for the user and a knob will show where the user has clicked on the selected stream layer. A textbox displaying the number of conditions will render at the top of the vertical crosshair.
 
 ## Requirements
 
@@ -8,6 +8,7 @@ The Stream Graph is a public component used in View 3, and will, by default, sho
 * Text reflects number of Conditions
 * Stream graph should update to show the stream layer selected
 * Displays a dynamic title for what the Stream Graph is showing
+* Handles user interaction with the crosshairs
 
 ## Interaction Requirements
 
@@ -40,6 +41,7 @@ A similar effect occurs for hover even when a single stream layer is selected as
 ## Analytics Requirements
 
 * onClick should emit an event
+* onTouchEnd should emit an event
 
 ## Unit Testing
 
