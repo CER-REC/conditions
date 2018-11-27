@@ -22,4 +22,5 @@ Issues
 **Windows**
 
 If you have a space in your username then `npm run test` will fail due to `nyc`.  
-You can run `npm run test:raw` or `npm run test:single app/**/*.spec.{js,jsx}`, but no test coverage analysis will be generated.
+You can run `npm run test:raw` or `npm run test:single app/**/*.spec.{js,jsx}`, but no test coverage analysis will be generated.  
+Please see https://github.com/istanbuljs/nyc/issues/784 for the status on a fix.
