@@ -33,7 +33,7 @@ describe('Components|SmallMultiplesLegend', () => {
     const title = 'Test Title';
 
     beforeEach(() => {
-      wrapper = shallow(<SmallMultiplesLegend title={title} />);
+      wrapper = shallow(<SmallMultiplesLegend title={title} data={[]} />);
     });
 
     itShouldRenderTitle(title);

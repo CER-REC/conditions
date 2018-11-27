@@ -5,13 +5,9 @@ import LegendItem from './LegendItem';
 
 const getLegendList = (allLabel, data) => {
   let legendList = null;
-  let legendDataItems = [];
-
-  if (data) {
-    legendDataItems = data.map(conditionsData => (
-      <LegendItem title={conditionsData.id} data={conditionsData.conditions} />
-    ));
-  }
+  const legendDataItems = data.map(conditionsData => (
+    <LegendItem title={conditionsData.id} data={conditionsData.conditions} />
+  ));
 
   if (legendDataItems.length) {
     let legendItems = [];
@@ -50,12 +46,11 @@ SmallMultiplesLegend.propTypes = {
       date: PropTypes.instanceOf(Date).isRequired,
       number: PropTypes.number.isRequired,
     })).isRequired,
-  })),
+  })).isRequired,
 };
 
 SmallMultiplesLegend.defaultProps = {
   allLabel: 'All',
-  data: null,
 };
 
 // TODO: Wrap in React.memo when testing issue fixed
