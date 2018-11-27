@@ -56,16 +56,5 @@ describe('Components|Streamgraph', () => {
     it('should render a chart', () => {
       expect(wrapper.find('VictoryChart')).to.have.lengthOf(1);
     });
-
-    it('should render a crosshair', () => {
-      expect(wrapper.find('VictoryCursorContainer')).to.have.lengthOf(1);
-    });
-
-    // describe with selected streamgraph
-    //  it should bold the year
-    //  it should render the crosshair lines
-    // it should update the number of conditions in the tooltip
-    // it should add a stroke around the selected stream layer
-
   });
 });

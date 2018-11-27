@@ -51,9 +51,4 @@ Streamgraph.propTypes = {
   })).isRequired,
 };
 
-Streamgraph.defaultprops = {
-  date: 0,
-  count: 0,
-};
-
 export default Streamgraph;
