@@ -14,7 +14,7 @@ const eventFuncs = { preventDefault: defaultFunction, stopPropagation: defaultFu
 describe('Components|TrendButton', () => {
   describe('without a selectedFeature', () => {
     it('should not render anything', () => {
-      const wrapper = shallow(<TrendButton selectedFeature="" onChange={defaultFunction} />);
+      const wrapper = shallow(<TrendButton selectedFeature="" onClick={defaultFunction} />);
       expect(wrapper.type()).to.equal(null);
     });
   });
@@ -22,7 +22,7 @@ describe('Components|TrendButton', () => {
   describe('with a selectedFeature', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<TrendButton selectedFeature="Theme" onChange={defaultFunction} />);
+      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={defaultFunction} />);
     });
     it('should render a button', () => {
       expect(wrapper.find('button')).to.have.lengthOf(1);
@@ -44,14 +44,14 @@ describe('Components|TrendButton', () => {
     let wrapper;
     beforeEach(() => {
       spy = sinon.spy();
-      wrapper = shallow(<TrendButton selectedFeature="Theme" onChange={spy} />);
+      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={spy} />);
     });
-    it("should call it's onChange prop", () => {
+    it("should call it's onClick prop", () => {
       wrapper.find('button').simulate('click', eventFuncs);
       expect(spy.called).to.equal(true);
     });
 
-    it("should call it's onChange prop when enter is pressed", () => {
+    it("should call it's onClick prop when enter is pressed", () => {
       wrapper.find('button').simulate('keypress', { key: 'Enter', ...eventFuncs });
       expect(spy.called).to.equal(true);
     });
@@ -60,7 +60,7 @@ describe('Components|TrendButton', () => {
   describe('if streamGraph available', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = mount(<TrendButton selectedFeature="Theme" streamGraphData="true" onChange={defaultFunction} />);
+      wrapper = mount(<TrendButton selectedFeature="Theme" streamGraphData="[1,2,3]" onClick={defaultFunction} />);
     });
 
     it('renders StreamGraph component correctly', () => {
@@ -74,7 +74,7 @@ describe('Components|TrendButton', () => {
   describe('if streamGraph not available', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<TrendButton selectedFeature="Theme" streamGraphData="false" onChange={defaultFunction} />);
+      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={defaultFunction} />);
     });
 
     it('renders a div with a className of staticBackground', () => {
@@ -88,14 +88,14 @@ describe('Components|TrendButton', () => {
 
   describe('if streamGraph not available and Instrument is selected', () => {
     it('has image source of BubbleButton', () => {
-      const wrapper = shallow(<TrendButton selectedFeature="Instrument" streamGraphData="false" onChange={defaultFunction} />);
+      const wrapper = shallow(<TrendButton selectedFeature="Instrument" onClick={defaultFunction} />);
       expect(wrapper.find('img').prop('src')).equal(BubbleButton);
     });
   });
 
   describe('if streamGraph not available and anything other than Instrument is selected', () => {
     it('has image source of StreamButton', () => {
-      const wrapper = shallow(<TrendButton selectedFeature="Phase" streamGraphData="false" onChange={defaultFunction} />);
+      const wrapper = shallow(<TrendButton selectedFeature="Phase" onClick={defaultFunction} />);
       expect(wrapper.find('img').prop('src')).equal(StreamButton);
     });
   });
