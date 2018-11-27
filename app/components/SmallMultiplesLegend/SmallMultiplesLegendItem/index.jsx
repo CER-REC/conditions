@@ -11,9 +11,9 @@ const SmallMultiplesLegendItem = props => (
 SmallMultiplesLegendItem.propTypes = {
   /** The text beside the stream graph */
   title: PropTypes.string.isRequired,
+  /** The data to render the stream graph */
   // TODO: Remove ESLint suppression when the graph feature is implemented
   // eslint-disable-next-line react/no-unused-prop-types
-  /** The data to render the stream graph */
   data: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.instanceOf(Date).isRequired,
     number: PropTypes.number.isRequired,
