@@ -6,8 +6,8 @@ import ReadMe from './README.md';
 
 const featureOptions = [
   'Theme',
-  'Instrument',
   'Phase',
+  'Instrument',
   'Type',
   'Status',
   'Filing',
@@ -15,37 +15,16 @@ const featureOptions = [
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withKnobs)
-  .add('Theme button with static image', () => (
+  .add('Static image', () => (
     <TrendButton
-      selectedFeature={featureOptions[0]}
+      selectedFeature={select('selectedFeature', featureOptions, featureOptions[0])}
       onChange={() => alert('Clicked')}
       streamGraphData="false"
     />
-  ));
-storiesForComponent('Components|TrendButton', module, ReadMe)
-  .addDecorator(withKnobs)
-  .add('Instrument button with static image', () => (
+  ))
+  .add('Svg background placeholder', () => (
     <TrendButton
-      selectedFeature={featureOptions[1]}
-      onChange={() => alert('Clicked')}
-      streamGraphData="false"
-    />
-  ));
-storiesForComponent('Components|TrendButton', module, ReadMe)
-  .addDecorator(withKnobs)
-  .add('Phase button with static image', () => (
-    <TrendButton
-      selectedFeature={featureOptions[2]}
-      onChange={() => alert('Clicked')}
-      streamGraphData="false"
-    />
-  ));
-
-storiesForComponent('Components|TrendButton', module, ReadMe)
-  .addDecorator(withKnobs)
-  .add('Phase button with View3 svg background placeholder', () => (
-    <TrendButton
-      selectedFeature={featureOptions[2]}
+      selectedFeature={select('selectedFeature', featureOptions, featureOptions[2])}
       onChange={() => alert('Clicked')}
       streamGraphData="true"
     />
