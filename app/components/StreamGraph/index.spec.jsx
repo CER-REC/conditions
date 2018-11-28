@@ -7,34 +7,49 @@ import Streamgraph from './';
 describe('Components|Streamgraph', () => {
   const projectData = [
     {
-      id: 'Security',
-      graphData: {
-        date: 2010,
-        count: 0,
-      },
+      id: 'themeOne',
+      color: 'pink',
+      graphData: [
+        { date: 2010, count: 0 },
+        { date: 2011, count: 120 },
+        { date: 2012, count: 230 },
+        { date: 2013, count: 340 },
+        { date: 2014, count: 550 },
+        { date: 2015, count: 760 },
+        { date: 2016, count: 1220 },
+        { date: 2017, count: 1436 },
+      ],
     },
     {
-      id: 'Management System',
-      graphData: {
-        date: 2017,
-        count: 1436,
-      },
+      id: 'themeTwo',
+      color: 'blue',
+      graphData: [
+        { date: 2010, count: 0 },
+        { date: 2011, count: 230 },
+        { date: 2012, count: 340 },
+        { date: 2013, count: 410 },
+        { date: 2014, count: 770 },
+        { date: 2015, count: 820 },
+        { date: 2016, count: 990 },
+        { date: 2017, count: 1270 },
+      ],
     },
     {
-      id: 'Integrity Management',
-      graphData: {
-        date: 2013,
-        count: 1000,
-      },
-    },
-    {
-      id: 'Standard Condition',
-      graphData: {
-        date: 2015,
-        count: 500,
-      },
+      id: 'themeThree',
+      color: 'orange',
+      graphData: [
+        { date: 2010, count: 140 },
+        { date: 2011, count: 340 },
+        { date: 2012, count: 456 },
+        { date: 2013, count: 650 },
+        { date: 2014, count: 830 },
+        { date: 2015, count: 954 },
+        { date: 2016, count: 1240 },
+        { date: 2017, count: 1411 },
+      ],
     },
   ];
+
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
@@ -57,12 +72,12 @@ describe('Components|Streamgraph', () => {
       expect(wrapper.find('VictoryChart')).to.have.lengthOf(1);
     });
 
-    it('should render the axis', () => {
-      expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
-    });
-
     it('should render the stacked chart', () => {
       expect(wrapper.find('VictoryStack')).to.have.lengthOf(1);
+    });
+
+    it('should render the x and y axis', () => {
+      expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
     });
   });
 });

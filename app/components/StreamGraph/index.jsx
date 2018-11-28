@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VictoryAxis, VictoryLabel, VictoryArea, VictoryStack, VictoryCursorContainer, VictoryChart } from 'victory';
+import { VictoryAxis, VictoryArea, VictoryStack, VictoryCursorContainer, VictoryChart } from 'victory';
 
 import './styles.scss';
 
@@ -11,24 +11,24 @@ const Streamgraph = (props) => {
       <VictoryChart
         containerComponent={
           <VictoryCursorContainer
-            cursorLabelComponent={<VictoryLabel />}
+            cursorLabel={point => Math.round(point.y)}
           />
         }
       >
         <VictoryAxis
-          label="Effective Date"
-          tickValues={['valueMin', 'valueMax']}
-        />
-        <VictoryAxis
           dependentAxis
           label="Number of Conditions"
-          tickValues={['min', 'max']}
         />
-        <VictoryStack>
+        <VictoryAxis
+          label="Effective Date"
+        />
+        <VictoryStack
+          colorScale={[props.projectData.color]}
+        >
           {
             props.projectData.map(stream => (
               <VictoryArea
-                data={[stream.date, stream.count]}
+                data={{ x: stream.date, y: stream.count }}
                 interpolation="natural"
               />
             ))
@@ -41,6 +41,7 @@ const Streamgraph = (props) => {
 
 Streamgraph.propTypes = {
   projectData: PropTypes.arrayOf(PropTypes.shape({
+    color: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     graphData: PropTypes.arrayOf(PropTypes.shape({
       date: PropTypes.number.isRequired,
