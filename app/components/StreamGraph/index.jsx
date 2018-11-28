@@ -17,14 +17,12 @@ const Streamgraph = (props) => {
       >
         <VictoryAxis
           label="Effective Date"
-          tickValues={[Math.min(props.projectData.graphData),
-            Math.max(props.projectData.graphData)]}
+          tickValues={['valueMin', 'valueMax']}
         />
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
-          tickValues={[Math.min(props.projectData.graphData),
-            Math.max(props.projectData.graphData)]}
+          tickValues={['min', 'max']}
         />
         <VictoryStack>
           {
