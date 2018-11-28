@@ -4,10 +4,34 @@ import Streamgraph from './';
 import ReadMe from './README.md';
 
 const projectData = [
-  { id: 'stream one', count: 133, color: 'violet' },
-  { id: 'stream two', count: 500, color: 'blue' },
-  { id: 'stream three', count: 700, color: 'pink' },
-  { id: 'stream four', count: 1300, color: 'yellow' },
+  {
+    id: 'Security',
+    graphData: {
+      date: 2010,
+      count: 0,
+    },
+  },
+  {
+    id: 'Management System',
+    graphData: {
+      date: 2017,
+      count: 1436,
+    },
+  },
+  {
+    id: 'Integrity Management',
+    graphData: {
+      date: 2013,
+      count: 1000,
+    },
+  },
+  {
+    id: 'Standard Condition',
+    graphData: {
+      date: 2015,
+      count: 500,
+    },
+  },
 ];
 
 storiesForComponent('Components|Streamgraph', module, ReadMe)
@@ -16,7 +40,7 @@ storiesForComponent('Components|Streamgraph', module, ReadMe)
       projectData={[]}
     />
   ))
-  .add('With required props', () => (
+  .add('With values', () => (
     <Streamgraph
       projectData={projectData}
     />

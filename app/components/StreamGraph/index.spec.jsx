@@ -56,5 +56,13 @@ describe('Components|Streamgraph', () => {
     it('should render a chart', () => {
       expect(wrapper.find('VictoryChart')).to.have.lengthOf(1);
     });
+
+    it('should render the axis', () => {
+      expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
+    });
+
+    it('should render the stacked chart', () => {
+      expect(wrapper.find('VictoryStack')).to.have.lengthOf(1);
+    });
   });
 });
