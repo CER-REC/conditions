@@ -13,7 +13,7 @@ It should display a preview of the View 3 graph as its background.
   - If no view3 chart can be rendered, then use the images
 
 ## Interaction Requirements
-Click, enter, and touch should all call `props.onChange()`
+Click, enter, and touch should all call `props.onClick()`
 
 ## Accessibility Requirements
 - Keyboard interaction
