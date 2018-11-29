@@ -10,7 +10,7 @@ const TrendButton = (props) => {
   if (props.selectedFeature.length === 0) { return null; }
   return (
     <div className="trendButton">
-      <button {...handleInteraction(props.onClick, null)}>
+      <button {...handleInteraction(props.onClick)}>
         {props.streamGraphData !== null ?
         (
           <div className="streamGraphBackground">
@@ -45,12 +45,11 @@ const TrendButton = (props) => {
 export default TrendButton;
 
 TrendButton.propTypes = {
-  selectedFeature: PropTypes.string,
+  selectedFeature: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   streamGraphData: PropTypes.arrayOf(PropTypes.number),
 };
 
 TrendButton.defaultProps = {
-  selectedFeature: '',
   streamGraphData: null,
 };
