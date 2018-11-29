@@ -16,8 +16,7 @@
     "cz": "git-cz",
     "lint": "eslint ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "start": "babel-node ./server/index.js",
-    "test": "cross-env NODE_ENV=test nyc npm run test:raw",
-    "test:raw": "cross-env NODE_ENV=test mocha app/**/*.spec.{js,jsx}",
+    "test": "cross-env NODE_ENV=test nyc mocha app/**/*.spec.{js,jsx}",
     "test:single": "cross-env NODE_ENV=test mocha",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
