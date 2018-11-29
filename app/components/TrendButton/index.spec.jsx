@@ -7,14 +7,14 @@ import TrendButton from './';
 import StreamButton from './images/streamButton.png';
 import BubbleButton from './images/bubbleButton.png';
 
-const defaultFunction = () => {};
-const eventFuncs = { preventDefault: defaultFunction, stopPropagation: defaultFunction };
+const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 
 describe('Components|TrendButton', () => {
   describe('without a selectedFeature', () => {
     it('should not render anything', () => {
-      const wrapper = shallow(<TrendButton selectedFeature="" onClick={defaultFunction} />);
+      const wrapper = shallow(<TrendButton selectedFeature="" onClick={noop} />);
       expect(wrapper.type()).to.equal(null);
     });
   });
@@ -22,7 +22,7 @@ describe('Components|TrendButton', () => {
   describe('with a selectedFeature', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={defaultFunction} />);
+      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={noop} />);
     });
     it('should render a button', () => {
       expect(wrapper.find('button')).to.have.lengthOf(1);
@@ -60,7 +60,7 @@ describe('Components|TrendButton', () => {
   describe('if streamGraph available', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = mount(<TrendButton selectedFeature="Theme" streamGraphData="[1,2,3]" onClick={defaultFunction} />);
+      wrapper = mount(<TrendButton selectedFeature="Theme" streamGraphData={[1, 2, 3]} onClick={noop} />);
     });
 
     it('renders StreamGraph component correctly', () => {
@@ -74,7 +74,7 @@ describe('Components|TrendButton', () => {
   describe('if streamGraph not available', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={defaultFunction} />);
+      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={noop} />);
     });
 
     it('renders a div with a className of staticBackground', () => {
@@ -88,14 +88,14 @@ describe('Components|TrendButton', () => {
 
   describe('if streamGraph not available and Instrument is selected', () => {
     it('has image source of BubbleButton', () => {
-      const wrapper = shallow(<TrendButton selectedFeature="Instrument" onClick={defaultFunction} />);
+      const wrapper = shallow(<TrendButton selectedFeature="Instrument" onClick={noop} />);
       expect(wrapper.find('img').prop('src')).equal(BubbleButton);
     });
   });
 
   describe('if streamGraph not available and anything other than Instrument is selected', () => {
     it('has image source of StreamButton', () => {
-      const wrapper = shallow(<TrendButton selectedFeature="Phase" onClick={defaultFunction} />);
+      const wrapper = shallow(<TrendButton selectedFeature="Phase" onClick={noop} />);
       expect(wrapper.find('img').prop('src')).equal(StreamButton);
     });
   });
