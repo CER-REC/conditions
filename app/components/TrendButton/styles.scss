@@ -11,17 +11,17 @@ $trends-overlay-button-color: $general-typography-links2;
   top: 3%;
   position: absolute;
 
-  button{
+  button {
     background-color: transparent;
     border-color: transparent;
-    
+
     img {
       display: block;
       height: 60px;
       width: 300px;
     }
 
-    .buttonText>span {
+    .buttonText > span {
       position: absolute;
       width: 200px;
       left: 3%;
@@ -32,7 +32,7 @@ $trends-overlay-button-color: $general-typography-links2;
       font-size: 24px;
     }
 
-    .streamGraphBackground{
+    .streamGraphBackground {
       display: block;
       height: 60px;
       width: 300px;
