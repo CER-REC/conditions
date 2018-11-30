@@ -83,9 +83,10 @@ describe('Components|Streamgraph', () => {
     });
   });
 
-  describe('with crosshair label', () => {
-    it('should round the y value to the nearest whole number', () => {
-      expect(shallow(<Streamgraph numOfConditionsLabel={4.3} />)).to.equal(4);
-    });
-  });
+  // describe('with crosshair label', () => {
+  //   it('should round the y value to the nearest whole number', () => {
+  //     const wrapper = shallow(<numOfConditionsLabel />);
+  //     expect(wrapper.props()).to.equal(true);
+  //   });
+  // });
 });
