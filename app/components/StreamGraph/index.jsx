@@ -4,6 +4,9 @@ import { VictoryAxis, VictoryArea, VictoryStack, VictoryCursorContainer, Victory
 
 import './styles.scss';
 
+export const numOfConditionsLabel = point => Math.round(point.y);
+console.log(numOfConditionsLabel(Math.round(4.3)));
+
 const Streamgraph = (props) => {
   return (
     <div className="streamgraph">
@@ -11,13 +14,14 @@ const Streamgraph = (props) => {
       <VictoryChart
         containerComponent={
           <VictoryCursorContainer
-            cursorLabel={point => Math.round(point.y)}
+            cursorLabel={numOfConditionsLabel}
           />
         }
       >
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
+          tickValues={[0, 1]}
         />
         <VictoryAxis
           label="Effective Date"

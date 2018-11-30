@@ -48,6 +48,8 @@ const projectData = [
   },
 ];
 
+console.log(projectData[0].graphData[0].date, projectData[0].graphData[0].count);
+
 storiesForComponent('Components|Streamgraph', module, ReadMe)
   .add('No props', () => (
     <Streamgraph

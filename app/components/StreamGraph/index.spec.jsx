@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import Streamgraph from './';
+import { execute } from 'apollo-link';
+import { Stream } from 'stream';
 
 describe('Components|Streamgraph', () => {
   const projectData = [
@@ -78,6 +80,12 @@ describe('Components|Streamgraph', () => {
 
     it('should render the x and y axis', () => {
       expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
+    });
+  });
+
+  describe('with crosshair label', () => {
+    it('should round the y value to the nearest whole number', () => {
+      expect(shallow(<Streamgraph numOfConditionsLabel={4.3} />)).to.equal(4);
     });
   });
 });
