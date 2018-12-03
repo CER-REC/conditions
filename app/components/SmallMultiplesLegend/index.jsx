@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import List from '../List';
 import LegendItem from './LegendItem';
 
-const getLegendList = (allLabel, data) => {
-  let legendList = null;
-  const legendDataItems = data.map(conditionsData => (
+const SmallMultiplesLegend = (props) => {
+  let legendList;
+  const legendDataItems = props.data.map(conditionsData => (
     <LegendItem title={conditionsData.id} data={conditionsData.conditions} />
   ));
 
@@ -13,7 +13,7 @@ const getLegendList = (allLabel, data) => {
     let legendItems = [];
 
     if (legendDataItems.length > 1) {
-      const allItem = <LegendItem title={allLabel} />;
+      const allItem = <LegendItem title={props.allLabel} />;
 
       legendItems = [allItem];
     }
@@ -23,15 +23,13 @@ const getLegendList = (allLabel, data) => {
     legendList = <List items={legendItems} selected={0} />;
   }
 
-  return legendList;
+  return (
+    <div>
+      <span>{props.title}</span>
+      {legendList}
+    </div>
+  );
 };
-
-const SmallMultiplesLegend = props => (
-  <div>
-    <span>{props.title}</span>
-    {getLegendList(props.allLabel, props.data)}
-  </div>
-);
 
 SmallMultiplesLegend.propTypes = {
   /** The title to be displayed at the top */
