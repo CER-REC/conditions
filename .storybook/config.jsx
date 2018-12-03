@@ -32,7 +32,7 @@ addDecorator(withOptions({
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
 // automatically import all files ending in *.stories.js
-const documentationStories = require.context('../stories/', true, /.stories.jsx$/);
+const documentationStories = require.context('../documentation/', true, /.stories.jsx$/);
 const componentStories = require.context('../app/', true, /.stories.jsx$/);
 function loadStories() {
   documentationStories.keys().forEach(filename => documentationStories(filename));

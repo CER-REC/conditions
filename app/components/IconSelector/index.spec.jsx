@@ -38,18 +38,13 @@ describe('Components|IconSelector', () => {
     });
   });
 
-  describe('with passed props', () => {
-    it('should render the "className" prop with the default class and a empty space', () => {
-      const wrapper = shallow(<IconSelector>Test</IconSelector>);
-      expect(wrapper.props().className).to.equal('IconSelector ');
-    });
-
+  describe('Component renders with passed props', () => {
     it('should render the "IconSelector" class and an extra class through the "className" prop', () => {
       const wrapper = shallow(<IconSelector className="shadowed">Test</IconSelector>);
       expect(wrapper.find('.IconSelector').hasClass('shadowed')).to.equal(true);
     });
 
-    it('shoud accept a size prop with a width and height', () => {
+    it('should accept a size prop with a width and height', () => {
       const wrapper = shallow(<IconSelector size="36px">Test</IconSelector>);
       expect(wrapper.props().style.width).to.equal('36px');
       expect(wrapper.props().style.height).to.equal('36px');
