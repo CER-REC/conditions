@@ -5,9 +5,24 @@ import { VictoryAxis, VictoryArea, VictoryStack, VictoryCursorContainer, Victory
 import './styles.scss';
 
 export const numOfConditionsLabel = point => Math.round(point.y);
-console.log(numOfConditionsLabel(Math.round(4.3)));
+
+export const roundDateLabel = t => Math.round(t);
 
 const Streamgraph = (props) => {
+  const numOfConditions = props.projectData.map(k => k.graphData.map(v => v.count));
+  const numOfConditionsConcat = [].concat(...numOfConditions);
+
+  const minConditionValue = Math.min(...numOfConditionsConcat);
+  const maxConditionValue = Math.max(...numOfConditionsConcat);
+
+  const streamLayer = props.projectData.map(v => (
+    <VictoryArea
+      data={v.graphData.map(k => ({ x: k.date, y: k.count }))}
+      style={{ data: { fill: v.color } }}
+      interpolation="natural"
+    />
+  ));
+
   return (
     <div className="streamgraph">
       <h1>Total Conditions by Theme Over Time</h1>
@@ -21,22 +36,14 @@ const Streamgraph = (props) => {
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
-          tickValues={[0, 1]}
+          tickValues={[minConditionValue, maxConditionValue]}
         />
         <VictoryAxis
           label="Effective Date"
+          tickFormat={roundDateLabel}
         />
-        <VictoryStack
-          colorScale={[props.projectData.color]}
-        >
-          {
-            props.projectData.map(stream => (
-              <VictoryArea
-                data={{ x: stream.date, y: stream.count }}
-                interpolation="natural"
-              />
-            ))
-          }
+        <VictoryStack>
+          {streamLayer}
         </VictoryStack>
       </VictoryChart>
     </div>

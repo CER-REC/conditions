@@ -2,9 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Streamgraph from './';
-import { execute } from 'apollo-link';
-import { Stream } from 'stream';
+import Streamgraph, { roundDateLabel } from './';
 
 describe('Components|Streamgraph', () => {
   const projectData = [
@@ -13,41 +11,41 @@ describe('Components|Streamgraph', () => {
       color: 'pink',
       graphData: [
         { date: 2010, count: 0 },
-        { date: 2011, count: 120 },
-        { date: 2012, count: 230 },
-        { date: 2013, count: 340 },
-        { date: 2014, count: 550 },
-        { date: 2015, count: 760 },
-        { date: 2016, count: 1220 },
-        { date: 2017, count: 1436 },
+        { date: 2011, count: 12 },
+        { date: 2012, count: 23 },
+        { date: 2013, count: 30 },
+        { date: 2014, count: 150 },
+        { date: 2015, count: 260 },
+        { date: 2016, count: 420 },
+        { date: 2017, count: 436 },
       ],
     },
     {
       id: 'themeTwo',
       color: 'blue',
       graphData: [
-        { date: 2010, count: 0 },
-        { date: 2011, count: 230 },
-        { date: 2012, count: 340 },
-        { date: 2013, count: 410 },
-        { date: 2014, count: 770 },
-        { date: 2015, count: 820 },
-        { date: 2016, count: 990 },
-        { date: 2017, count: 1270 },
+        { date: 2010, count: 11 },
+        { date: 2011, count: 23 },
+        { date: 2012, count: 34 },
+        { date: 2013, count: 41 },
+        { date: 2014, count: 77 },
+        { date: 2015, count: 82 },
+        { date: 2016, count: 99 },
+        { date: 2017, count: 120 },
       ],
     },
     {
       id: 'themeThree',
       color: 'orange',
       graphData: [
-        { date: 2010, count: 140 },
-        { date: 2011, count: 340 },
-        { date: 2012, count: 456 },
-        { date: 2013, count: 650 },
-        { date: 2014, count: 830 },
-        { date: 2015, count: 954 },
-        { date: 2016, count: 1240 },
-        { date: 2017, count: 1411 },
+        { date: 2010, count: 14 },
+        { date: 2011, count: 30 },
+        { date: 2012, count: 46 },
+        { date: 2013, count: 65 },
+        { date: 2014, count: 83 },
+        { date: 2015, count: 95 },
+        { date: 2016, count: 140 },
+        { date: 2017, count: 11 },
       ],
     },
   ];
@@ -81,12 +79,13 @@ describe('Components|Streamgraph', () => {
     it('should render the x and y axis', () => {
       expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
     });
-  });
 
-  // describe('with crosshair label', () => {
-  //   it('should round the y value to the nearest whole number', () => {
-  //     const wrapper = shallow(<numOfConditionsLabel />);
-  //     expect(wrapper.props()).to.equal(true);
-  //   });
-  // });
+    it('should round the y value to the nearest whole number', () => {
+      expect(wrapper.props()).to.equal(true);
+    });
+
+    it('should round the date label', () => {
+      expect(wrapper.props().to.equal(true));
+    });
+  });
 });

@@ -9,27 +9,27 @@ const projectData = [
     color: 'pink',
     graphData: [
       { date: 2010, count: 0 },
-      { date: 2011, count: 120 },
-      { date: 2012, count: 230 },
-      { date: 2013, count: 340 },
-      { date: 2014, count: 550 },
-      { date: 2015, count: 760 },
-      { date: 2016, count: 1220 },
-      { date: 2017, count: 1436 },
+      { date: 2011, count: 12 },
+      { date: 2012, count: 23 },
+      { date: 2013, count: 30 },
+      { date: 2014, count: 150 },
+      { date: 2015, count: 260 },
+      { date: 2016, count: 445 },
+      { date: 2017, count: 436 },
     ],
   },
   {
     id: 'themeTwo',
     color: 'blue',
     graphData: [
-      { date: 2010, count: 0 },
-      { date: 2011, count: 230 },
-      { date: 2012, count: 340 },
-      { date: 2013, count: 410 },
-      { date: 2014, count: 770 },
-      { date: 2015, count: 820 },
-      { date: 2016, count: 990 },
-      { date: 2017, count: 1270 },
+      { date: 2010, count: 11 },
+      { date: 2011, count: 23 },
+      { date: 2012, count: 34 },
+      { date: 2013, count: 41 },
+      { date: 2014, count: 77 },
+      { date: 2015, count: 82 },
+      { date: 2016, count: 99 },
+      { date: 2017, count: 120 },
     ],
   },
   {
@@ -48,14 +48,7 @@ const projectData = [
   },
 ];
 
-console.log(projectData[0].graphData[0].date, projectData[0].graphData[0].count);
-
 storiesForComponent('Components|Streamgraph', module, ReadMe)
-  .add('No props', () => (
-    <Streamgraph
-      projectData={[]}
-    />
-  ))
   .add('With values', () => (
     <Streamgraph
       projectData={projectData}

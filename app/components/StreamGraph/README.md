@@ -10,6 +10,12 @@ The Stream Graph is a public component used in View 3, and will, by default, sho
 * Displays a dynamic title for what the Stream Graph is showing
 * Handles user interaction with the crosshairs
 
+## Data Requirements
+
+* Placeholder for 0 values
+* Colour value
+* Needs to be ordered from largest to smallest for streams to stack properly
+
 ## Interaction Requirements
 
 ** Stream graph interactions are still pending full approval from the NEB
