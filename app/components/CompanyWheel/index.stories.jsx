@@ -6,4 +6,7 @@ import ReadMe from './README.md';
 storiesForComponent('Components|CompanyWheel', module, ReadMe)
   .add('default', () => (
     <CompanyWheel ringType="normal" />
+  ))
+  .add('location props', () => (
+    <CompanyWheel ringType="location" />
   ));

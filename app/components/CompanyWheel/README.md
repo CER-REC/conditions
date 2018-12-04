@@ -1,18 +1,47 @@
 # CompanyWheel
 
+* TODO: CompanyWheel
+  * Hookup pulltospin
+  * Implement React-spring
+  * Animate Wheel
+  * Cleanup and outsource all private components.
+  * always calculate the number of companies as n+2 due to the gray ray which shoots out the current company ocuppying three rays.
+
+* TODO: WheelRay
+  * create component
+
+* TODO: WheelCompanyFlag
+  * create component
+  * type location normal
+  * Find how to do the triangles/ flags (d3? React? Algorithm? HardCoded?) 
+
+* TODO: WheelLocationBar
+  * create component
+
+* TODO: ProjectDot
+  * create component 
+  * state [filtered, hidden, hasrelationshipwcompany]
+
+* TODO: relationshipCord
+  * create component
+  * figure out dregree dynamic render
+
+* TODO: PullToSpin.
+  * create component
+  * design graphics
+  * implement duration measurement for mousedown  
+  * hookup function to parent
+
 The company wheel displays all projects grouped by company as well as relationships between companies. It is rendered as part of view 2.
 
 The Company Wheel component uses the following sub-components to render:
 * List 
-* CompanyRay
-* CompanyFlag
-* ProjectDot
-* RelationshipCord
+* WheelRay
+* WheelCompanyFlag
+* WheelLocationBar
+* WheelProjectDot
+* WheelRelationshipCord
 * PullToSpin 
-
-TODO: Find how to do the triangles/ flags (d3? React? Algorithm? HardCoded?) 
-
-TODO: always calculate the number of companies as n+2 due to the gray ray which shoots out the current company ocuppying three rays.
 
 ## Interaction Requirements
 * Moving the wheel
