@@ -12,24 +12,20 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 
 describe('Components|TrendButton', () => {
-  describe('without a selectedFeature', () => {
-    it('should not render anything', () => {
-      const wrapper = shallow(<TrendButton selectedFeature="" onClick={noop} />);
-      expect(wrapper.type()).to.equal(null);
-    });
-  });
-
   describe('with a selectedFeature', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={noop} />);
     });
+
     it('should render a button', () => {
       expect(wrapper.find('button')).to.have.lengthOf(1);
     });
+
     it('should render a div with a className of trendButton', () => {
       expect(wrapper.find('div.trendButton')).to.have.lengthOf(1);
     });
+
     it('should render a div with a className of buttonText', () => {
       expect(wrapper.find('div.buttonText')).to.have.lengthOf(1);
     });
@@ -46,6 +42,7 @@ describe('Components|TrendButton', () => {
       spy = sinon.spy();
       wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={spy} />);
     });
+
     it("should call it's onClick prop", () => {
       wrapper.find('button').simulate('click', eventFuncs);
       expect(spy.called).to.equal(true);
@@ -66,6 +63,7 @@ describe('Components|TrendButton', () => {
     it('renders StreamGraph component correctly', () => {
       expect(wrapper.find('StreamGraph')).to.have.lengthOf(1);
     });
+
     it('renders a div with a className of streamGraphBackground', () => {
       expect(wrapper.find('div.streamGraphBackground')).to.have.lengthOf(1);
     });
