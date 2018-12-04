@@ -41,5 +41,6 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
           number: 5,
         }],
       }]}
+      onChange={id => alert(id)}
     />
   ));
