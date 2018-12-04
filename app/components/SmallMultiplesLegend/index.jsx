@@ -12,14 +12,23 @@ const SmallMultiplesLegend = (props) => {
       data={conditionsData.conditions}
     />
   ));
+  const onItemChange = (index) => {
+    if ((index === 0) && (legendDataItems.length > 1)) {
+      props.onChange(null);
+
+      return;
+    }
+
+    props.onChange(legendDataItems[index].props.title);
+  };
 
   if (legendDataItems.length > 1) {
-    legendDataItems.unshift(<LegendItem title={props.allLabel} />);
+    legendDataItems.unshift(<LegendItem key={null} title={props.allLabel} />);
   }
 
   if (legendDataItems.length) {
     // TODO: Update List properties when the vertical feature is implemented
-    legendList = <List items={legendDataItems} selected={0} />;
+    legendList = <List items={legendDataItems} selected={0} onChange={onItemChange} />;
   }
 
   return (
@@ -44,6 +53,9 @@ SmallMultiplesLegend.propTypes = {
       number: PropTypes.number.isRequired,
     })).isRequired,
   })).isRequired,
+  /** A function that will receive an ID when a data item is selected
+      or null if the all legend filter is selected */
+  onChange: PropTypes.func.isRequired,
 };
 
 SmallMultiplesLegend.defaultProps = {
