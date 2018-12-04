@@ -1,16 +1,18 @@
 # CompanyWheel
 
-TODO: Summarize purpose and requirements from design document.
+The company wheel displays all projects grouped by company as well as relationships between companies. It is rendered as part of view 2.
 
-TODO: Decide on how to render and animate company wheel? (canvas with controlled animation via Konva and react-spring, nivo chord with svg render potentially embed flags as legends, or straight up d3 from https://beta.observablehq.com/@mbostock/d3-chord-diagram )
+The Company Wheel component uses the following sub-components to render:
+* List 
+* CompanyRay
+* CompanyFlag
+* ProjectDot
+* RelationshipCord
+* PullToSpin 
 
 TODO: Find how to do the triangles/ flags (d3? React? Algorithm? HardCoded?) 
 
-TODO: Once triangle structure is decided, how to structure triangle ( Component? Private or public? or based on graph       library? )
-
 TODO: always calculate the number of companies as n+2 due to the gray ray which shoots out the current company ocuppying three rays.
-
-The Company wheel component renders the company wheel for view 2. This component uses the public List component and the CompanyRay, CompanyFlag, ProjectDot, RelationshipCord, and PullToSpin private components.
 
 ## Interaction Requirements
 

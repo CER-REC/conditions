@@ -5,5 +5,5 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|CompanyWheel', module, ReadMe)
   .add('default', () => (
-    <CompanyWheel />
+    <CompanyWheel ringType="normal" />
   ));

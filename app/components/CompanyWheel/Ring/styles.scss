@@ -1,0 +1,64 @@
+@import "../../../styles/fontVariables.scss";
+
+.wheelContainer{
+  padding: 50px;
+  height: 500px;
+  width:500px;
+}
+
+.ringbackground {
+  &.location{
+    fill: #F4CE5A;
+  }
+  &.normal{
+    fill: #30298c;
+  }
+}
+.linebackground {
+  &.location{
+    stroke: #E0A531;
+  }
+  &.normal{
+    stroke: #4054b7; 
+  }
+  stroke-width: 18px;
+}
+
+.cls-1, .cls-2, .cls-6, .cls-7 {
+  fill: none;
+}
+
+.cls-2 {
+  stroke: #707070;
+}
+
+.cls-3 {
+  clip-path: url(#clip-path);
+}
+
+.cls-4 {
+  fill: #f4ce5a;
+}
+
+.cls-5 {
+  fill: rgba(0,0,0,0);
+}
+
+.cls-5, .cls-6 {
+  stroke: #4054b7;
+  stroke-width: 18px;
+}
+
+.cls-8, .cls-9 {
+  stroke: none;
+}
+
+.cls-9 {
+  fill: #d1057a;
+}
+.letterCircle, .rayCircle{
+  stroke: none;
+}
+#letterCircleLegend{
+  writing-mode: vertical-rl;
+}
