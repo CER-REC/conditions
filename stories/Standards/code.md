@@ -14,7 +14,7 @@ case or title case)
 * Component folders/filenames (other than index.jsx) should match the name of
 the exported component
 * Functions should be camelCase (`myFunctionName`)
-* No operation functions will be reffered as noop 
+* No operation functions will be referred as noop 
   ```
   const noop = () => {};
   ```
