@@ -15,8 +15,7 @@ TODO: Find how to do the triangles/ flags (d3? React? Algorithm? HardCoded?)
 TODO: always calculate the number of companies as n+2 due to the gray ray which shoots out the current company ocuppying three rays.
 
 ## Interaction Requirements
-
-* [ ] Moving the wheel
+* Moving the wheel
  * [ ] Tell v2.5 & 2.7 not to render
  * [ ] Click and drag
  * [ ] Click NO drag
@@ -27,7 +26,7 @@ TODO: always calculate the number of companies as n+2 due to the gray ray which 
    * [ ] Scroll TOUCH in area of wheel
  * [ ] List icon click button
 
-* [ ] Spin Lever
+* Spin Lever
  * [ ] On click in area of element 
  * [ ] On touch in area of element 
  * [ ] On click of text instructions

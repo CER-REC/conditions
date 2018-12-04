@@ -6,5 +6,7 @@ import './styles.scss';
 
 storiesForComponent('Components|CompanyWheel/Ring', module, ReadMe)
   .add('defaultView', () => (
-    <Ring className="wheelContainer" ringType="normal" />
+    <svg className="wheelContainer" viewBox="120 200 500 500">
+      <Ring className="wheelContainer" ringType="normal" />
+    </svg>
   ));
