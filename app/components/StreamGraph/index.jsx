@@ -13,7 +13,17 @@ const Streamgraph = (props) => {
   const numOfConditionsConcat = [].concat(...numOfConditions);
 
   const minConditionValue = Math.min(...numOfConditionsConcat);
-  const maxConditionValue = Math.max(...numOfConditionsConcat);
+
+  let conditionDates = props.projectData.reduce((acc, next) => {
+    next.graphData.forEach(v => {
+      if (!acc[v.date]) { acc[v.date] = 0; }
+      acc[v.date] += v.count;
+    });
+    return acc;
+  }, {});
+
+  conditionDates = Object.values(conditionDates);
+  const maxConditionValue = Math.max(...conditionDates);
 
   const streamLayer = props.projectData.map(v => (
     <VictoryArea

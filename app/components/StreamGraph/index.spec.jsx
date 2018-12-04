@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Streamgraph, { roundDateLabel } from './';
+import Streamgraph, { roundDateLabel, numOfConditionsLabel } from './';
 
 describe('Components|Streamgraph', () => {
   const projectData = [
@@ -81,11 +81,12 @@ describe('Components|Streamgraph', () => {
     });
 
     it('should round the y value to the nearest whole number', () => {
-      expect(wrapper.props()).to.equal(true);
+      const point = { x: 5.1, y: 4.3 };
+      expect(numOfConditionsLabel(point)).to.be.equal(4);
     });
 
     it('should round the date label', () => {
-      expect(wrapper.props().to.equal(true));
+      expect(roundDateLabel(2018.1)).to.be.equal(2018);
     });
   });
 });
