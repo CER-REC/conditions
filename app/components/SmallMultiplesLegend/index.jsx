@@ -6,21 +6,20 @@ import LegendItem from './LegendItem';
 const SmallMultiplesLegend = (props) => {
   let legendList;
   const legendDataItems = props.data.map(conditionsData => (
-    <LegendItem title={conditionsData.id} data={conditionsData.conditions} />
+    <LegendItem
+      key={conditionsData.id}
+      title={conditionsData.id}
+      data={conditionsData.conditions}
+    />
   ));
 
+  if (legendDataItems.length > 1) {
+    legendDataItems.unshift(<LegendItem title={props.allLabel} />);
+  }
+
   if (legendDataItems.length) {
-    let legendItems = [];
-
-    if (legendDataItems.length > 1) {
-      const allItem = <LegendItem title={props.allLabel} />;
-
-      legendItems = [allItem];
-    }
-
-    legendItems = legendItems.concat(legendDataItems);
     // TODO: Update List properties when the vertical feature is implemented
-    legendList = <List items={legendItems} selected={0} />;
+    legendList = <List items={legendDataItems} selected={0} />;
   }
 
   return (
