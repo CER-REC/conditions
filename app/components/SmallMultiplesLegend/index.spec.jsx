@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
@@ -15,6 +15,9 @@ describe('Components|SmallMultiplesLegend', () => {
 
   const itShouldRenderTitle = (title) => {
     it('should render the title', () => {
+      // Using mount and shallow requires different ways to check the class of the component
+      // eslint-disable-next-line no-unused-expressions
+      expect(wrapper.find(SmallMultiplesLegend).childAt(0).hasClass('SmallMultiplesLegend')).to.be.true;
       expect(wrapper.text()).to.contain(title);
     });
   };
@@ -80,7 +83,7 @@ describe('Components|SmallMultiplesLegend', () => {
     const title = 'Test Title';
 
     beforeEach(() => {
-      wrapper = shallow(<SmallMultiplesLegend title={title} data={[]} onChange={noop} />);
+      wrapper = mount(<SmallMultiplesLegend title={title} data={[]} onChange={noop} />);
     });
 
     itShouldRenderTitle(title);
@@ -155,7 +158,14 @@ describe('Components|SmallMultiplesLegend', () => {
       const hightlightID = data[0].id;
 
       beforeEach(() => {
-        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} highlightID={hightlightID} />);
+        wrapper = mount((
+          <SmallMultiplesLegend
+            title={title}
+            data={data}
+            onChange={spy}
+            highlightID={hightlightID}
+          />
+        ));
       });
 
       itShouldRenderTitle(title);
