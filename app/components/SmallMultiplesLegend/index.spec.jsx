@@ -19,16 +19,55 @@ describe('Components|SmallMultiplesLegend', () => {
     });
   };
 
-  const itShouldRenderItems = (data, startIndex) => {
+  const itShouldRenderItems = (data) => {
     it('should render the data as LegendItem components in the List component', () => {
-      const listItems = wrapper.find(List).prop('items');
+      const listItemsWrapper = wrapper.find(List).find(LegendItem).not('[data=null]');
 
       for (let i = 0; i < data.length; i += 1) {
-        const listIndex = startIndex + i;
+        const listItemWrapper = listItemsWrapper.at(i);
 
-        expect(listItems[listIndex].type).to.be.equal(LegendItem);
-        expect(listItems[listIndex].props.title).to.equal(data[i].id);
-        expect(listItems[listIndex].props.data).to.deep.equal(data[i].conditions);
+        expect(listItemWrapper.type()).to.be.equal(LegendItem);
+        expect(listItemWrapper.prop('title')).to.equal(data[i].id);
+        expect(listItemWrapper.prop('data')).to.deep.equal(data[i].conditions);
+      }
+    });
+  };
+
+  const itShouldRenderWithoutHighlight = () => {
+    it('should renders the component without highlighting', () => {
+      const listWrapper = wrapper.find(List);
+      const itemsWrapper = wrapper.find(LegendItem);
+
+      if (listWrapper.exists()) {
+        // eslint-disable-next-line no-unused-expressions
+        expect(listWrapper.hasClass('unhighlight')).to.be.false;
+      }
+
+      itemsWrapper.forEach((itemWrapper) => {
+        // eslint-disable-next-line no-unused-expressions
+        expect(itemWrapper.prop('unhighlight')).to.be.oneOf([null, false]);
+      });
+    });
+  };
+
+  const itShouldRenderWithHighlight = (hightlightID) => {
+    it('should only renders the LegendItem with the corresponding ID highlighted', () => {
+      const highlightSelector = `[title="${hightlightID}"]`;
+      const listWrapper = wrapper.find(List);
+      const unhighlightItemsWrapper = wrapper.find(LegendItem).not(highlightSelector);
+      const highlightItemWrapper = wrapper.find(LegendItem).filter(highlightSelector);
+
+      // eslint-disable-next-line no-unused-expressions
+      expect(listWrapper.hasClass('unhighlight')).to.be.true;
+
+      unhighlightItemsWrapper.forEach((itemWrapper) => {
+        // eslint-disable-next-line no-unused-expressions
+        expect(itemWrapper.prop('unhighlight')).to.be.true;
+      });
+
+      if (highlightItemWrapper.exists()) {
+        // eslint-disable-next-line no-unused-expressions
+        expect(highlightItemWrapper.prop('unhighlight')).to.be.false;
       }
     });
   };
@@ -45,6 +84,7 @@ describe('Components|SmallMultiplesLegend', () => {
     });
 
     itShouldRenderTitle(title);
+    itShouldRenderWithoutHighlight();
 
     it('should not render a list', () => {
       // eslint-disable-next-line no-unused-expressions
@@ -68,36 +108,62 @@ describe('Components|SmallMultiplesLegend', () => {
       }],
     }];
 
-    beforeEach(() => {
-      spy = sinon.spy();
-      wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
-    });
-
-    itShouldRenderTitle(title);
-    itShouldRenderItems(data, 0);
-
-    it('should not render a "All" list item', () => {
-      expect(wrapper.find(List).text()).to.not.contain(wrapper.prop('allLabel'));
-      expect(wrapper.find(LegendItem)).to.have.lengthOf(1);
-    });
-
-    it('should call the onChange function on click', () => {
-      const legendItemWrapper = wrapper.find(LegendItem);
-
-      legendItemWrapper.simulate('click', eventFuncs);
-      // eslint-disable-next-line no-unused-expressions
-      expect(spy.calledOnceWith(data[0].id)).to.be.true;
-    });
-
-    it('should call the onChange function on enter key press', () => {
-      const legendItemWrapper = wrapper.find(LegendItem);
-
-      legendItemWrapper.simulate('keypress', {
-        key: 'Enter',
-        ...eventFuncs,
+    const itShouldNotAllListItem = () => {
+      it('should not render a "All" list item', () => {
+        expect(wrapper.find(List).text()).to.not.contain(wrapper.prop('allLabel'));
+        expect(wrapper.find(LegendItem)).to.have.lengthOf(1);
       });
-      // eslint-disable-next-line no-unused-expressions
-      expect(spy.calledOnceWith(data[0].id)).to.be.true;
+    };
+
+    const itShouldCallOnChangeOnClick = () => {
+      it('should call the onChange function on click', () => {
+        const legendItemWrapper = wrapper.find(LegendItem);
+
+        legendItemWrapper.simulate('click', eventFuncs);
+        // eslint-disable-next-line no-unused-expressions
+        expect(spy.calledOnceWith(data[0].id)).to.be.true;
+      });
+    };
+
+    const itShouldCallOnChangeOnEnter = () => {
+      it('should call the onChange function on enter key press', () => {
+        const legendItemWrapper = wrapper.find(LegendItem);
+
+        legendItemWrapper.simulate('keypress', {
+          key: 'Enter',
+          ...eventFuncs,
+        });
+        // eslint-disable-next-line no-unused-expressions
+        expect(spy.calledOnceWith(data[0].id)).to.be.true;
+      });
+    };
+
+    describe('when no highlightID is provided', () => {
+      beforeEach(() => {
+        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
+      });
+
+      itShouldRenderTitle(title);
+      itShouldRenderItems(data);
+      itShouldRenderWithoutHighlight();
+      itShouldNotAllListItem();
+      itShouldCallOnChangeOnClick();
+      itShouldCallOnChangeOnEnter();
+    });
+
+    describe('when a highlightID is provided', () => {
+      const hightlightID = data[0].id;
+
+      beforeEach(() => {
+        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} highlightID={hightlightID} />);
+      });
+
+      itShouldRenderTitle(title);
+      itShouldRenderItems(data);
+      itShouldRenderWithHighlight(hightlightID);
+      itShouldNotAllListItem();
+      itShouldCallOnChangeOnClick();
+      itShouldCallOnChangeOnEnter();
     });
   });
 
@@ -191,48 +257,93 @@ describe('Components|SmallMultiplesLegend', () => {
     };
 
     describe('when no allLabel is provided', () => {
-      beforeEach(() => {
-        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
+      const itShouldRenderDefaultAllLabel = () => {
+        it('should render the default allLabel as a LegendItem component', () => {
+          const firstListItem = wrapper.find(List).prop('items')[0];
+
+          expect(firstListItem.type).to.be.equal(LegendItem);
+          expect(firstListItem.props.title).to.equal(SmallMultiplesLegend.defaultProps.allLabel);
+          // eslint-disable-next-line no-unused-expressions
+          expect(firstListItem.props.data).to.be.null;
+          expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
+        });
+      };
+
+      describe('when no highlightID is provided', () => {
+        beforeEach(() => {
+          wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
+        });
+
+        itShouldRenderTitle(title);
+        itShouldRenderItems(data);
+        itShouldRenderWithoutHighlight();
+        itShouldCallOnChangeWithNULLOnClick();
+        itShouldCallOnChangeWithIDOnClick();
+        itShouldCallOnChangeWithNULLOnEnter();
+        itShouldCallOnChangeWithIDOnEnter();
+        itShouldRenderDefaultAllLabel();
       });
 
-      itShouldRenderTitle(title);
-      itShouldRenderItems(data, 1);
-      itShouldCallOnChangeWithNULLOnClick();
-      itShouldCallOnChangeWithIDOnClick();
-      itShouldCallOnChangeWithNULLOnEnter();
-      itShouldCallOnChangeWithIDOnEnter();
+      describe('when a highlightID is provided', () => {
+        const hightlightID = data[2].id;
 
-      it('should render the default allLabel as a LegendItem component', () => {
-        const firstListItem = wrapper.find(List).prop('items')[0];
+        beforeEach(() => {
+          wrapper = mount((
+            <SmallMultiplesLegend
+              title={title}
+              data={data}
+              onChange={spy}
+              highlightID={hightlightID}
+            />));
+        });
 
-        expect(firstListItem.type).to.be.equal(LegendItem);
-        expect(firstListItem.props.title).to.equal(SmallMultiplesLegend.defaultProps.allLabel);
-        // eslint-disable-next-line no-unused-expressions
-        expect(firstListItem.props.data).to.be.null;
-        expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
+        itShouldRenderTitle(title);
+        itShouldRenderItems(data);
+        itShouldRenderWithHighlight(hightlightID);
+        itShouldCallOnChangeWithNULLOnClick();
+        itShouldCallOnChangeWithIDOnClick();
+        itShouldCallOnChangeWithNULLOnEnter();
+        itShouldCallOnChangeWithIDOnEnter();
+        itShouldRenderDefaultAllLabel();
       });
     });
 
     describe('when a allLabel is provided', () => {
-      beforeEach(() => {
-        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} allLabel="ALL CONDITIONS AND/OR FEATURES" />);
-      });
+      const itShouldRenderProvidedAllLabel = () => {
+        it('should render the provided allLabel as a LegendItem component', () => {
+          const firstListItem = wrapper.find(List).prop('items')[0];
 
-      itShouldRenderTitle(title);
-      itShouldRenderItems(data, 1);
-      itShouldCallOnChangeWithNULLOnClick();
-      itShouldCallOnChangeWithIDOnClick();
-      itShouldCallOnChangeWithNULLOnEnter();
-      itShouldCallOnChangeWithIDOnEnter();
+          expect(firstListItem.type).to.be.equal(LegendItem);
+          expect(firstListItem.props.title).to.equal(wrapper.prop('allLabel'));
+          // eslint-disable-next-line no-unused-expressions
+          expect(firstListItem.props.data).to.be.null;
+          expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
+        });
+      };
 
-      it('should render the provided allLabel as a LegendItem component', () => {
-        const firstListItem = wrapper.find(List).prop('items')[0];
+      describe('when no highlightID is provided', () => {
+        const hightlightID = data[1].id;
 
-        expect(firstListItem.type).to.be.equal(LegendItem);
-        expect(firstListItem.props.title).to.equal(wrapper.prop('allLabel'));
-        // eslint-disable-next-line no-unused-expressions
-        expect(firstListItem.props.data).to.be.null;
-        expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
+        beforeEach(() => {
+          wrapper = mount((
+            <SmallMultiplesLegend
+              title={title}
+              data={data}
+              onChange={spy}
+              allLabel="ALL CONDITIONS AND/OR FEATURES"
+              highlightID={hightlightID}
+            />
+          ));
+        });
+
+        itShouldRenderTitle(title);
+        itShouldRenderItems(data);
+        itShouldRenderWithHighlight(hightlightID);
+        itShouldCallOnChangeWithNULLOnClick();
+        itShouldCallOnChangeWithIDOnClick();
+        itShouldCallOnChangeWithNULLOnEnter();
+        itShouldCallOnChangeWithIDOnEnter();
+        itShouldRenderProvidedAllLabel();
       });
     });
   });
