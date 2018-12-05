@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import List from '../List';
 import LegendItem from './LegendItem';
+import './styles.scss';
 
 const SmallMultiplesLegend = (props) => {
   let legendList;
@@ -10,6 +11,7 @@ const SmallMultiplesLegend = (props) => {
       key={conditionsData.id}
       title={conditionsData.id}
       data={conditionsData.conditions}
+      unhighlight={props.highlightID && (conditionsData.id !== props.highlightID)}
     />
   ));
   const onItemChange = (index) => {
@@ -23,16 +25,22 @@ const SmallMultiplesLegend = (props) => {
   };
 
   if (legendDataItems.length > 1) {
-    legendDataItems.unshift(<LegendItem key={null} title={props.allLabel} />);
+    legendDataItems.unshift((
+      <LegendItem
+        key={null}
+        title={props.allLabel}
+        unhighlight={Boolean(props.highlightID)}
+      />
+    ));
   }
 
   if (legendDataItems.length) {
     // TODO: Update List properties when the vertical feature is implemented
-    legendList = <List items={legendDataItems} selected={0} onChange={onItemChange} />;
+    legendList = <List className={`${props.highlightID ? 'unhighlight' : ''}`} items={legendDataItems} selected={0} onChange={onItemChange} />;
   }
 
   return (
-    <div>
+    <div className="SmallMultiplesLegend">
       <span>{props.title}</span>
       {legendList}
     </div>
@@ -53,6 +61,8 @@ SmallMultiplesLegend.propTypes = {
       number: PropTypes.number.isRequired,
     })).isRequired,
   })).isRequired,
+  /** The ID of the data element to highlight */
+  highlightID: PropTypes.string,
   /** A function that will receive an ID when a data item is selected
       or null if the all legend filter is selected */
   onChange: PropTypes.func.isRequired,
@@ -60,6 +70,7 @@ SmallMultiplesLegend.propTypes = {
 
 SmallMultiplesLegend.defaultProps = {
   allLabel: 'All',
+  highlightID: null,
 };
 
 // TODO: Wrap in React.memo when testing issue fixed

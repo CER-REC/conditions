@@ -1,0 +1,11 @@
+%unhighight {
+  opacity: 0.2;
+}
+
+.SmallMultiplesLegend {
+  .List.unhighlight {
+    button {
+      @extend %unhighight;
+    }
+  }
+}
