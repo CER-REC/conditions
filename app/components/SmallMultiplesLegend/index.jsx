@@ -4,6 +4,15 @@ import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
 
+// TODO: This is a mock, replace with the translation function
+const t = (searchList) => {
+  if (searchList[1] === 'all') {
+    return `All ${searchList[2]}s`;
+  }
+
+  return searchList[2];
+};
+
 const SmallMultiplesLegend = (props) => {
   let legendList;
   const legendDataItems = props.data.map(conditionsData => (
@@ -28,7 +37,7 @@ const SmallMultiplesLegend = (props) => {
     legendDataItems.unshift((
       <LegendItem
         key={null}
-        title={props.allLabel}
+        title={t(['smallMultiplesLegend', 'all', props.title])}
         unhighlight={Boolean(props.highlightID)}
       />
     ));
@@ -41,7 +50,7 @@ const SmallMultiplesLegend = (props) => {
 
   return (
     <div className="SmallMultiplesLegend">
-      <span>{props.title}</span>
+      <span>{t(['smallMultiplesLegend', 'title', props.title])}</span>
       {legendList}
     </div>
   );
@@ -50,8 +59,6 @@ const SmallMultiplesLegend = (props) => {
 SmallMultiplesLegend.propTypes = {
   /** The title to be displayed at the top */
   title: PropTypes.string.isRequired,
-  /** The text to show for the all legend filter */
-  allLabel: PropTypes.string,
   /** The data to render the stream graphs
       The items rendered in the provided order */
   data: PropTypes.arrayOf(PropTypes.shape({
@@ -69,7 +76,6 @@ SmallMultiplesLegend.propTypes = {
 };
 
 SmallMultiplesLegend.defaultProps = {
-  allLabel: 'All',
   highlightID: null,
 };
 

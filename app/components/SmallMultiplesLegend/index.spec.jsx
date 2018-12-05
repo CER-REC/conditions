@@ -113,7 +113,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const itShouldNotAllListItem = () => {
       it('should not render a "All" list item', () => {
-        expect(wrapper.find(List).text()).to.not.contain(wrapper.prop('allLabel'));
+        expect(wrapper.find(LegendItem).filter('[data=null]')).to.have.lengthOf(0);
         expect(wrapper.find(LegendItem)).to.have.lengthOf(1);
       });
     };
@@ -208,6 +208,19 @@ describe('Components|SmallMultiplesLegend', () => {
       }],
     }];
 
+    const itShouldRenderTheAllItem = () => {
+      it('should render the all LegendItem component', () => {
+        const firstListItem = wrapper.find(List).prop('items')[0];
+
+        expect(firstListItem.type).to.be.equal(LegendItem);
+        // TODO: Redo when translations are implemented
+        expect(firstListItem.props.title).to.contain('All');
+        // eslint-disable-next-line no-unused-expressions
+        expect(firstListItem.props.data).to.be.null;
+        expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
+      });
+    };
+
     const itShouldCallOnChangeWithNULLOnClick = () => {
       it('should call the onChange function with the data ID on click', () => {
         const allLegendItemWrapper = wrapper.find(LegendItem).filter('[data=null]');
@@ -266,95 +279,42 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    describe('when no allLabel is provided', () => {
-      const itShouldRenderDefaultAllLabel = () => {
-        it('should render the default allLabel as a LegendItem component', () => {
-          const firstListItem = wrapper.find(List).prop('items')[0];
-
-          expect(firstListItem.type).to.be.equal(LegendItem);
-          expect(firstListItem.props.title).to.equal(SmallMultiplesLegend.defaultProps.allLabel);
-          // eslint-disable-next-line no-unused-expressions
-          expect(firstListItem.props.data).to.be.null;
-          expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
-        });
-      };
-
-      describe('when no highlightID is provided', () => {
-        beforeEach(() => {
-          wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
-        });
-
-        itShouldRenderTitle(title);
-        itShouldRenderItems(data);
-        itShouldRenderWithoutHighlight();
-        itShouldCallOnChangeWithNULLOnClick();
-        itShouldCallOnChangeWithIDOnClick();
-        itShouldCallOnChangeWithNULLOnEnter();
-        itShouldCallOnChangeWithIDOnEnter();
-        itShouldRenderDefaultAllLabel();
+    describe('when no highlightID is provided', () => {
+      beforeEach(() => {
+        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
       });
 
-      describe('when a highlightID is provided', () => {
-        const hightlightID = data[2].id;
-
-        beforeEach(() => {
-          wrapper = mount((
-            <SmallMultiplesLegend
-              title={title}
-              data={data}
-              onChange={spy}
-              highlightID={hightlightID}
-            />));
-        });
-
-        itShouldRenderTitle(title);
-        itShouldRenderItems(data);
-        itShouldRenderWithHighlight(hightlightID);
-        itShouldCallOnChangeWithNULLOnClick();
-        itShouldCallOnChangeWithIDOnClick();
-        itShouldCallOnChangeWithNULLOnEnter();
-        itShouldCallOnChangeWithIDOnEnter();
-        itShouldRenderDefaultAllLabel();
-      });
+      itShouldRenderTitle(title);
+      itShouldRenderItems(data);
+      itShouldRenderWithoutHighlight();
+      itShouldRenderTheAllItem();
+      itShouldCallOnChangeWithNULLOnClick();
+      itShouldCallOnChangeWithIDOnClick();
+      itShouldCallOnChangeWithNULLOnEnter();
+      itShouldCallOnChangeWithIDOnEnter();
     });
 
-    describe('when a allLabel is provided', () => {
-      const itShouldRenderProvidedAllLabel = () => {
-        it('should render the provided allLabel as a LegendItem component', () => {
-          const firstListItem = wrapper.find(List).prop('items')[0];
+    describe('when a highlightID is provided', () => {
+      const hightlightID = data[2].id;
 
-          expect(firstListItem.type).to.be.equal(LegendItem);
-          expect(firstListItem.props.title).to.equal(wrapper.prop('allLabel'));
-          // eslint-disable-next-line no-unused-expressions
-          expect(firstListItem.props.data).to.be.null;
-          expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
-        });
-      };
-
-      describe('when no highlightID is provided', () => {
-        const hightlightID = data[1].id;
-
-        beforeEach(() => {
-          wrapper = mount((
-            <SmallMultiplesLegend
-              title={title}
-              data={data}
-              onChange={spy}
-              allLabel="ALL CONDITIONS AND/OR FEATURES"
-              highlightID={hightlightID}
-            />
-          ));
-        });
-
-        itShouldRenderTitle(title);
-        itShouldRenderItems(data);
-        itShouldRenderWithHighlight(hightlightID);
-        itShouldCallOnChangeWithNULLOnClick();
-        itShouldCallOnChangeWithIDOnClick();
-        itShouldCallOnChangeWithNULLOnEnter();
-        itShouldCallOnChangeWithIDOnEnter();
-        itShouldRenderProvidedAllLabel();
+      beforeEach(() => {
+        wrapper = mount((
+          <SmallMultiplesLegend
+            title={title}
+            data={data}
+            onChange={spy}
+            highlightID={hightlightID}
+          />));
       });
+
+      itShouldRenderTitle(title);
+      itShouldRenderItems(data);
+      itShouldRenderWithHighlight(hightlightID);
+      itShouldRenderTheAllItem();
+      itShouldCallOnChangeWithNULLOnClick();
+      itShouldCallOnChangeWithIDOnClick();
+      itShouldCallOnChangeWithNULLOnEnter();
+      itShouldCallOnChangeWithIDOnEnter();
     });
   });
 });
