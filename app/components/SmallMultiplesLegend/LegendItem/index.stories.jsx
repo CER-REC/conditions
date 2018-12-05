@@ -18,4 +18,20 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
         number: 3,
       }]}
     />
+  ))
+  .add('unhighlight', () => (
+    <LegendItem
+      title="Another"
+      data={[{
+        date: new Date('2018-01-01T00:00:00.000Z'),
+        number: 5,
+      }, {
+        date: new Date('2018-05-11T00:00:00.000Z'),
+        number: 2,
+      }, {
+        date: new Date('2018-12-05T00:00:00.000Z'),
+        number: 55,
+      }]}
+      unhighlight
+    />
   ));
