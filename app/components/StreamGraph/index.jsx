@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryAxis, VictoryArea, VictoryStack, VictoryCursorContainer, VictoryChart } from 'victory';
+import StreamLayer from '../StreamLayer';
 
 import './styles.scss';
 
-export const numOfConditionsLabel = point => Math.round(point.y);
+export const numOfConditionsLabel = point => `${Math.round(point.y)} conditions`;
 
 export const roundDateLabel = t => Math.round(t);
 
@@ -15,7 +16,7 @@ const Streamgraph = (props) => {
   const minConditionValue = Math.min(...numOfConditionsConcat);
 
   let conditionDates = props.projectData.reduce((acc, next) => {
-    next.graphData.forEach(v => {
+    next.graphData.forEach((v) => {
       if (!acc[v.date]) { acc[v.date] = 0; }
       acc[v.date] += v.count;
     });
@@ -27,8 +28,13 @@ const Streamgraph = (props) => {
 
   const streamLayer = props.projectData.map(v => (
     <VictoryArea
+      name={v.id}
       data={v.graphData.map(k => ({ x: k.date, y: k.count }))}
-      style={{ data: { fill: v.color } }}
+      style={{
+        data: {
+          fill: v.color,
+        },
+      }}
       interpolation="natural"
     />
   ));
@@ -47,10 +53,12 @@ const Streamgraph = (props) => {
           dependentAxis
           label="Number of Conditions"
           tickValues={[minConditionValue, maxConditionValue]}
+          className="axis-label"
         />
         <VictoryAxis
           label="Effective Date"
           tickFormat={roundDateLabel}
+          className="axis-label"
         />
         <VictoryStack>
           {streamLayer}
