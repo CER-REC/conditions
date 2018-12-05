@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.scss';
 
 const LegendItem = props => (
-  <div>
+  <div className={`LegendItem ${props.unhighlight ? 'unhighlight' : ''}`}>
     <span>[TODO: Change to graph]</span>
     <span>{props.title}</span>
   </div>
@@ -18,10 +19,13 @@ LegendItem.propTypes = {
     date: PropTypes.instanceOf(Date).isRequired,
     number: PropTypes.number.isRequired,
   })),
+  /** The flag to determine if the component renders with the unhighlight class */
+  unhighlight: PropTypes.bool,
 };
 
 LegendItem.defaultProps = {
   data: null,
+  unhighlight: false,
 };
 
 // TODO: Wrap in React.memo when testing issue fixed
