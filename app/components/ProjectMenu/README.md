@@ -13,8 +13,8 @@ The project menu allows for the selection of up to 5 consecutive projects at a t
 
 ## Interaction Requirements
 
-Navigation can be done through either the <List /> or Project dots.
-Click, enter and touch on the project dots should all call `props.onClick(projectIndex)`
+Navigation can be done through either the `<List />`or Project dots.
+Click, enter and touch on the project dots should all call `props.onClick(projectID)`
 
 ## Accessibility Requirements
 

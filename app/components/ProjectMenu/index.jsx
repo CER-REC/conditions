@@ -25,20 +25,33 @@ class ProjectMenu extends React.PureComponent {
     selectedProjectID: 0,
   }
 
-  render() {
+  getListItems = () => {
     const projectIndex = this.props.projectData
       .findIndex(project => project.id === this.props.selectedProjectID);
 
     const distanceFromEnd = this.props.projectData.length - projectIndex;
     const numBefore = Math.min(projectIndex, 2);
     const numAfter = Math.min(distanceFromEnd, 2);
-    const listItems = this.props.projectData
-      .slice(projectIndex - numBefore, projectIndex + numAfter + 1)
+
+    return this.props.projectData
+      .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
+  }
+
+  handleConditionChange = (listItemIndex) => {
+    const visibleListItems = this.getListItems();
+    this.props.onChange(visibleListItems[listItemIndex].id);
+  }
+
+  render() {
+    const listItems = this.getListItems();
+    const renderedItems = listItems
       .map(project => <p key={project.id}>{project.id}</p>);
+    const selected = listItems
+      .findIndex(project => project.id === this.props.selectedProjectID);
 
     return (
       <div className="ProjectMenu">
-        <List items={listItems} onChange={this.props.onChange} selected={numBefore} />
+        <List items={renderedItems} onChange={this.handleConditionChange} selected={selected} />
         <Legend items={listItems} />
       </div>
     );
