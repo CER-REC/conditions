@@ -19,7 +19,7 @@ const SmallMultiplesLegend = (props) => {
     <LegendItem
       key={conditionsData.id}
       title={conditionsData.id}
-      data={conditionsData.conditions}
+      data={conditionsData.graphData}
       unhighlight={props.highlightID && (conditionsData.id !== props.highlightID)}
     />
   ));
@@ -63,9 +63,9 @@ SmallMultiplesLegend.propTypes = {
       The items rendered in the provided order */
   data: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
-    conditions: PropTypes.arrayOf(PropTypes.shape({
-      date: PropTypes.instanceOf(Date).isRequired,
-      number: PropTypes.number.isRequired,
+    graphData: PropTypes.arrayOf(PropTypes.shape({
+      date: PropTypes.number.isRequired,
+      count: PropTypes.number.isRequired,
     })).isRequired,
   })).isRequired,
   /** The ID of the data element to highlight */

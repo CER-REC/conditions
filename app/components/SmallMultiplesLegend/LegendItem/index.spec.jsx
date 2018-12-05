@@ -66,14 +66,14 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   describe('when the title and data property is provided', () => {
     const title = '(<{}>)other_test-title.!?';
     const data = [{
-      date: new Date('2018-01-01T00:00:00.000Z'),
-      number: 12,
+      date: 2018,
+      count: 12,
     }, {
-      date: new Date('2018-01-02T00:00:00.000Z'),
-      number: 1,
+      date: 2019,
+      count: 1,
     }, {
-      date: new Date('2018-01-03T00:00:00.000Z'),
-      number: 345,
+      date: 2020,
+      count: 345,
     }];
 
     beforeEach(() => {
@@ -88,14 +88,14 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   describe('when the title, data, and unhighlight property is provided', () => {
     const title = '';
     const data = [{
-      date: new Date('2018-01-04T00:00:00.000Z'),
-      number: 11,
+      date: 1999,
+      count: 11,
     }, {
-      date: new Date('2018-04-08T00:00:00.000Z'),
-      number: 22,
+      date: 2002,
+      count: 22,
     }, {
-      date: new Date('2018-08-16T00:00:00.000Z'),
-      number: 33,
+      date: 2011,
+      count: 33,
     }];
 
     beforeEach(() => {

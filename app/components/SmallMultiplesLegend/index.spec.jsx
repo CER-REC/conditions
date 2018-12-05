@@ -31,7 +31,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
         expect(listItemWrapper.type()).to.be.equal(LegendItem);
         expect(listItemWrapper.prop('title')).to.equal(data[i].id);
-        expect(listItemWrapper.prop('data')).to.deep.equal(data[i].conditions);
+        expect(listItemWrapper.prop('data')).to.deep.equal(data[i].graphData);
       }
     });
   };
@@ -99,15 +99,15 @@ describe('Components|SmallMultiplesLegend', () => {
     const title = 'Title-A';
     const data = [{
       id: 'Condition Title',
-      conditions: [{
-        date: new Date('2018-01-01T00:00:00.000Z'),
-        number: 12,
+      graphData: [{
+        date: 2018,
+        count: 12,
       }, {
-        date: new Date('2018-01-02T00:00:00.000Z'),
-        number: 1,
+        date: 2019,
+        count: 1,
       }, {
-        date: new Date('2018-01-03T00:00:00.000Z'),
-        number: 345,
+        date: 2020,
+        count: 345,
       }],
     }];
 
@@ -181,30 +181,30 @@ describe('Components|SmallMultiplesLegend', () => {
     const title = 'ABC-TEST_123';
     const data = [{
       id: 'ConditionTitle 1',
-      conditions: [{
-        date: new Date('2222-01-01T00:00:00.000Z'),
-        number: 7,
+      graphData: [{
+        date: 2211,
+        count: 7,
       }, {
-        date: new Date('2222-02-01T00:00:00.000Z'),
-        number: 8,
+        date: 2222,
+        count: 8,
       }, {
-        date: new Date('2222-03-01T00:00:00.000Z'),
-        number: 9,
+        date: 2233,
+        count: 9,
       }],
     }, {
       id: 'another title',
-      conditions: [{
-        date: new Date('2222-01-01T00:00:00.000Z'),
-        number: 1515,
+      graphData: [{
+        date: 2211,
+        count: 1515,
       }],
     }, {
       id: 'OTHER_OTHER_TITLE_ABC',
-      conditions: [{
-        date: new Date('2222-02-02T00:00:00.000Z'),
-        number: 0,
+      graphData: [{
+        date: 2211,
+        count: 0,
       }, {
-        date: new Date('2222-02-22T00:00:00.000Z'),
-        number: 1,
+        date: 2233,
+        count: 1,
       }],
     }];
 

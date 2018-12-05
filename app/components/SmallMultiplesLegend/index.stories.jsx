@@ -9,36 +9,36 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
       title="Title"
       data={[{
         id: 'Item Title 1',
-        conditions: [{
-          date: new Date('2018-01-01T00:00:00.000Z'),
-          number: 1,
+        graphData: [{
+          date: 2018,
+          count: 1,
         }, {
-          date: new Date('2018-02-01T00:00:00.000Z'),
-          number: 2,
+          date: 2019,
+          count: 2,
         }, {
-          date: new Date('2018-03-01T00:00:00.000Z'),
-          number: 3,
+          date: 2020,
+          count: 3,
         }],
       }, {
         id: 'Item Title 2',
-        conditions: [{
-          date: new Date('2018-01-01T00:00:00.000Z'),
-          number: 43,
+        graphData: [{
+          date: 2018,
+          count: 43,
         }, {
-          date: new Date('2018-02-01T00:00:00.000Z'),
-          number: 22,
+          date: 2019,
+          count: 22,
         }, {
-          date: new Date('2018-03-01T00:00:00.000Z'),
-          number: 56,
+          date: 2020,
+          count: 56,
         }],
       }, {
         id: 'Item Title 3',
-        conditions: [{
-          date: new Date('2018-01-11T00:00:00.000Z'),
-          number: 5,
+        graphData: [{
+          date: 2018,
+          count: 5,
         }, {
-          date: new Date('2018-03-03T00:00:00.000Z'),
-          number: 5,
+          date: 2020,
+          count: 5,
         }],
       }]}
       onChange={id => alert(id)}
@@ -46,42 +46,30 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
   ))
   .add('highlight', () => (
     <SmallMultiplesLegend
-      title="Title"
+      title="Title abc"
       data={[{
-        id: 'Item Title 1',
-        conditions: [{
-          date: new Date('2018-01-01T00:00:00.000Z'),
-          number: 1,
+        id: 'SomeTitle',
+        graphData: [{
+          date: 1997,
+          count: 123,
         }, {
-          date: new Date('2018-02-01T00:00:00.000Z'),
-          number: 2,
+          date: 1998,
+          count: 563,
         }, {
-          date: new Date('2018-03-01T00:00:00.000Z'),
-          number: 3,
+          date: 1999,
+          count: 32,
         }],
       }, {
-        id: 'Item Title 2',
-        conditions: [{
-          date: new Date('2018-01-01T00:00:00.000Z'),
-          number: 43,
+        id: 'Highlight this',
+        graphData: [{
+          date: 1997,
+          count: 97,
         }, {
-          date: new Date('2018-02-01T00:00:00.000Z'),
-          number: 22,
-        }, {
-          date: new Date('2018-03-01T00:00:00.000Z'),
-          number: 56,
-        }],
-      }, {
-        id: 'Item Title 3',
-        conditions: [{
-          date: new Date('2018-01-11T00:00:00.000Z'),
-          number: 5,
-        }, {
-          date: new Date('2018-03-03T00:00:00.000Z'),
-          number: 5,
+          date: 1999,
+          count: 56,
         }],
       }]}
       onChange={id => alert(id)}
-      highlightID="Item Title 2"
+      highlightID="Highlight this"
     />
   ));

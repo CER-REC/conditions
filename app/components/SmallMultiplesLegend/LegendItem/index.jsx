@@ -16,8 +16,8 @@ LegendItem.propTypes = {
   // TODO: Remove ESLint suppression when the graph feature is implemented
   // eslint-disable-next-line react/no-unused-prop-types
   data: PropTypes.arrayOf(PropTypes.shape({
-    date: PropTypes.instanceOf(Date).isRequired,
-    number: PropTypes.number.isRequired,
+    date: PropTypes.number.isRequired,
+    count: PropTypes.number.isRequired,
   })),
   /** The flag to determine if the component renders with the unhighlight class */
   unhighlight: PropTypes.bool,
