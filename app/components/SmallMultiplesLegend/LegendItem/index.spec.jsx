@@ -3,9 +3,11 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import LegendItem from './';
+import shared from '../shared.spec';
 
 describe('Components|SmallMultiplesLegend/LegendItem', () => {
   let wrapper;
+  const test = {};
 
   const itShouldRenderTitle = (title) => {
     it('should render the title', () => {
@@ -24,16 +26,12 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   const itShouldRenderWithoutUnhighlight = () => {
     it('should render without the unhighlight class', () => {
       // eslint-disable-next-line no-unused-expressions
-      expect(wrapper.hasClass('LegendItem')).to.be.true;
-      // eslint-disable-next-line no-unused-expressions
       expect(wrapper.hasClass('unhighlight')).to.be.false;
     });
   };
 
   const itShouldRenderWithUnhighlight = () => {
     it('should render with the unhighlight class', () => {
-      // eslint-disable-next-line no-unused-expressions
-      expect(wrapper.hasClass('LegendItem')).to.be.true;
       // eslint-disable-next-line no-unused-expressions
       expect(wrapper.hasClass('unhighlight')).to.be.true;
     });
@@ -43,9 +41,11 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     const title = 'Test Title';
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem title={title} />);
+      wrapper = shallow(<LegendItem className="test" title={title} />);
+      test.wrapper = wrapper;
     });
 
+    shared.shouldBehaveLikeAComponent(test, LegendItem, 'test');
     itShouldRenderTitle(title);
     itShouldNotRenderGraph();
     itShouldRenderWithoutUnhighlight();
@@ -56,8 +56,10 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
     beforeEach(() => {
       wrapper = shallow(<LegendItem title={title} unhighlight />);
+      test.wrapper = wrapper;
     });
 
+    shared.shouldBehaveLikeAComponent(test, LegendItem, null);
     itShouldRenderTitle(title);
     itShouldNotRenderGraph();
     itShouldRenderWithUnhighlight();
@@ -77,9 +79,11 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     }];
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem title={title} data={data} />);
+      wrapper = shallow(<LegendItem className="testclass" title={title} data={data} />);
+      test.wrapper = wrapper;
     });
 
+    shared.shouldBehaveLikeAComponent(test, LegendItem, 'testclass');
     itShouldRenderTitle(title);
     itShouldRenderGraph();
     itShouldRenderWithoutUnhighlight();
@@ -99,9 +103,11 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     }];
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem title={title} data={data} unhighlight />);
+      wrapper = shallow(<LegendItem className="myClass" title={title} data={data} unhighlight />);
+      test.wrapper = wrapper;
     });
 
+    shared.shouldBehaveLikeAComponent(test, LegendItem, 'myClass');
     itShouldRenderTitle(title);
     itShouldRenderGraph();
     itShouldRenderWithUnhighlight();

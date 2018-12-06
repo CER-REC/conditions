@@ -6,23 +6,22 @@ import { expect } from 'chai';
 import SmallMultiplesLegend from './';
 import LegendItem from './LegendItem';
 import List from '../List';
+import shared from './shared.spec';
 
 describe('Components|SmallMultiplesLegend', () => {
   let wrapper;
   let spy;
+  const test = {};
   const noop = () => {};
   const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-  const itShouldRenderTitle = (title) => {
+  const shouldRenderTitle = (title) => {
     it('should render the title', () => {
-      // Using mount and shallow requires different ways to check the class of the component
-      // eslint-disable-next-line no-unused-expressions
-      expect(wrapper.find(SmallMultiplesLegend).childAt(0).hasClass('SmallMultiplesLegend')).to.be.true;
       expect(wrapper.text()).to.contain(title);
     });
   };
 
-  const itShouldRenderItems = (data, max) => {
+  const shouldRenderItems = (data, max) => {
     it('should render the data as LegendItem components in the List component', () => {
       const listItemsWrapper = wrapper.find(List).find(LegendItem).not('[data=null]');
 
@@ -37,7 +36,7 @@ describe('Components|SmallMultiplesLegend', () => {
     });
   };
 
-  const itShouldRenderWithoutHighlight = () => {
+  const shouldRenderWithoutHighlight = () => {
     it('should renders the component without highlighting', () => {
       const listWrapper = wrapper.find(List);
       const itemsWrapper = wrapper.find(LegendItem);
@@ -54,7 +53,7 @@ describe('Components|SmallMultiplesLegend', () => {
     });
   };
 
-  const itShouldRenderWithHighlight = (hightlightID) => {
+  const shouldRenderWithHighlight = (hightlightID) => {
     it('should only renders the LegendItem with the corresponding ID highlighted', () => {
       const highlightSelector = `[title="${hightlightID}"]`;
       const listWrapper = wrapper.find(List);
@@ -84,11 +83,13 @@ describe('Components|SmallMultiplesLegend', () => {
     const title = 'Test Title';
 
     beforeEach(() => {
-      wrapper = mount(<SmallMultiplesLegend title={title} data={[]} onChange={noop} />);
+      wrapper = mount(<SmallMultiplesLegend className="test" title={title} data={[]} onChange={noop} />);
+      test.wrapper = wrapper;
     });
 
-    itShouldRenderTitle(title);
-    itShouldRenderWithoutHighlight();
+    shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, 'test');
+    shouldRenderTitle(title);
+    shouldRenderWithoutHighlight();
 
     it('should not render a list', () => {
       // eslint-disable-next-line no-unused-expressions
@@ -112,14 +113,14 @@ describe('Components|SmallMultiplesLegend', () => {
       }],
     }];
 
-    const itShouldNotAllListItem = () => {
+    const shouldNotAllListItem = () => {
       it('should not render a "All" list item', () => {
         expect(wrapper.find(LegendItem).filter('[data=null]')).to.have.lengthOf(0);
         expect(wrapper.find(LegendItem)).to.have.lengthOf(1);
       });
     };
 
-    const itShouldCallOnChangeOnClick = () => {
+    const shouldCallOnChangeOnClick = () => {
       it('should call the onChange function on click', () => {
         const legendItemWrapper = wrapper.find(LegendItem);
 
@@ -129,7 +130,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    const itShouldCallOnChangeOnEnter = () => {
+    const shouldCallOnChangeOnEnter = () => {
       it('should call the onChange function on enter key press', () => {
         const legendItemWrapper = wrapper.find(LegendItem);
 
@@ -144,15 +145,17 @@ describe('Components|SmallMultiplesLegend', () => {
 
     describe('when no highlightID is provided', () => {
       beforeEach(() => {
-        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
+        wrapper = mount(<SmallMultiplesLegend className="anotherClass" title={title} data={data} onChange={spy} />);
+        test.wrapper = wrapper;
       });
 
-      itShouldRenderTitle(title);
-      itShouldRenderItems(data, 345);
-      itShouldRenderWithoutHighlight();
-      itShouldNotAllListItem();
-      itShouldCallOnChangeOnClick();
-      itShouldCallOnChangeOnEnter();
+      shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, 'anotherClass');
+      shouldRenderTitle(title);
+      shouldRenderItems(data, 345);
+      shouldRenderWithoutHighlight();
+      shouldNotAllListItem();
+      shouldCallOnChangeOnClick();
+      shouldCallOnChangeOnEnter();
     });
 
     describe('when a highlightID is provided', () => {
@@ -167,14 +170,16 @@ describe('Components|SmallMultiplesLegend', () => {
             highlightID={hightlightID}
           />
         ));
+        test.wrapper = wrapper;
       });
 
-      itShouldRenderTitle(title);
-      itShouldRenderItems(data, 345);
-      itShouldRenderWithHighlight(hightlightID);
-      itShouldNotAllListItem();
-      itShouldCallOnChangeOnClick();
-      itShouldCallOnChangeOnEnter();
+      shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, null);
+      shouldRenderTitle(title);
+      shouldRenderItems(data, 345);
+      shouldRenderWithHighlight(hightlightID);
+      shouldNotAllListItem();
+      shouldCallOnChangeOnClick();
+      shouldCallOnChangeOnEnter();
     });
   });
 
@@ -209,7 +214,7 @@ describe('Components|SmallMultiplesLegend', () => {
       }],
     }];
 
-    const itShouldRenderTheAllItem = () => {
+    const shouldRenderTheAllItem = () => {
       it('should render the all LegendItem component', () => {
         const firstListItem = wrapper.find(List).prop('items')[0];
 
@@ -222,7 +227,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    const itShouldCallOnChangeWithNULLOnClick = () => {
+    const shouldCallOnChangeWithNULLOnClick = () => {
       it('should call the onChange function with the data ID on click', () => {
         const allLegendItemWrapper = wrapper.find(LegendItem).filter('[data=null]');
 
@@ -232,7 +237,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    const itShouldCallOnChangeWithIDOnClick = () => {
+    const shouldCallOnChangeWithIDOnClick = () => {
       it('should call the onChange function with the data ID on click', () => {
         const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([data=null])');
 
@@ -248,7 +253,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    const itShouldCallOnChangeWithNULLOnEnter = () => {
+    const shouldCallOnChangeWithNULLOnEnter = () => {
       it('should call the onChange function with the data ID on click', () => {
         const allLegendItemWrapper = wrapper.find(LegendItem).filter('[data=null]');
 
@@ -261,7 +266,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    const itShouldCallOnChangeWithIDOnEnter = () => {
+    const shouldCallOnChangeWithIDOnEnter = () => {
       it('should call the onChange function with the data ID on enter key press', () => {
         const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([data=null])');
 
@@ -282,17 +287,19 @@ describe('Components|SmallMultiplesLegend', () => {
 
     describe('when no highlightID is provided', () => {
       beforeEach(() => {
-        wrapper = mount(<SmallMultiplesLegend title={title} data={data} onChange={spy} />);
+        wrapper = mount(<SmallMultiplesLegend className="abcd" title={title} data={data} onChange={spy} />);
+        test.wrapper = wrapper;
       });
 
-      itShouldRenderTitle(title);
-      itShouldRenderItems(data, 1515);
-      itShouldRenderWithoutHighlight();
-      itShouldRenderTheAllItem();
-      itShouldCallOnChangeWithNULLOnClick();
-      itShouldCallOnChangeWithIDOnClick();
-      itShouldCallOnChangeWithNULLOnEnter();
-      itShouldCallOnChangeWithIDOnEnter();
+      shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, 'abcd');
+      shouldRenderTitle(title);
+      shouldRenderItems(data, 1515);
+      shouldRenderWithoutHighlight();
+      shouldRenderTheAllItem();
+      shouldCallOnChangeWithNULLOnClick();
+      shouldCallOnChangeWithIDOnClick();
+      shouldCallOnChangeWithNULLOnEnter();
+      shouldCallOnChangeWithIDOnEnter();
     });
 
     describe('when a highlightID is provided', () => {
@@ -301,21 +308,25 @@ describe('Components|SmallMultiplesLegend', () => {
       beforeEach(() => {
         wrapper = mount((
           <SmallMultiplesLegend
+            className="something123"
             title={title}
             data={data}
             onChange={spy}
             highlightID={hightlightID}
-          />));
+          />
+        ));
+        test.wrapper = wrapper;
       });
 
-      itShouldRenderTitle(title);
-      itShouldRenderItems(data, 1515);
-      itShouldRenderWithHighlight(hightlightID);
-      itShouldRenderTheAllItem();
-      itShouldCallOnChangeWithNULLOnClick();
-      itShouldCallOnChangeWithIDOnClick();
-      itShouldCallOnChangeWithNULLOnEnter();
-      itShouldCallOnChangeWithIDOnEnter();
+      shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, 'something123');
+      shouldRenderTitle(title);
+      shouldRenderItems(data, 1515);
+      shouldRenderWithHighlight(hightlightID);
+      shouldRenderTheAllItem();
+      shouldCallOnChangeWithNULLOnClick();
+      shouldCallOnChangeWithIDOnClick();
+      shouldCallOnChangeWithNULLOnEnter();
+      shouldCallOnChangeWithIDOnEnter();
     });
   });
 });
