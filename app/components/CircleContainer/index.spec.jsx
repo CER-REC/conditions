@@ -55,6 +55,11 @@ describe('Component|CircleContainer', () => {
       expect(wrapper.props().tabIndex).to.equal(0);
       expect(wrapper.props().focusable).to.equal(true);
     });
+
+    it('should accept a className prop from the parent to enhance the style', () => {
+      const wrapper = shallow(<CircleContainer size="12" className="searched">Override</CircleContainer>);
+      expect(wrapper.find('.CircleContainer').hasClass('searched')).to.equal(true);
+    });
   });
 });
 

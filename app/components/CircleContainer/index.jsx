@@ -8,6 +8,7 @@ const CircleContainer = props => (
   <div
     className={classNames(
         'CircleContainer',
+         props.className,
         { elevated: props.elevated, disabled: props.disabled },
       )}
     style={{
@@ -26,6 +27,7 @@ CircleContainer.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
   size: PropTypes.string.isRequired,
+  className: PropTypes.string,
   elevated: PropTypes.bool,
   disabled: PropTypes.bool,
 };
@@ -34,6 +36,7 @@ CircleContainer.defaultProps = {
   onClick: null,
   disabled: false,
   elevated: false,
+  className: '',
 };
 
 export default CircleContainer;

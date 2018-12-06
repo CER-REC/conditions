@@ -49,6 +49,19 @@ storiesForComponent('Component|CircleContainer', module, ReadMe)
     &nbsp;
     </CircleContainer>
   ))
+  .add('with prop: className', () => {
+    return (
+      <React.Fragment>
+        <CircleContainer
+          size="24px"
+          className="blue"
+        >
+        &nbsp;
+        </CircleContainer>
+        <style dangerouslySetInnerHTML={{__html: `.CircleContainer.blue { background: blue } `}} />
+      </React.Fragment>
+    );
+  })
   .add('with prop: disabled', () => (
     <CircleContainer
       size="24px"
