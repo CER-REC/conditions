@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const LegendItem = props => (
-  <div className={`LegendItem ${props.unhighlight ? 'unhighlight' : ''}`}>
+  <div className={`LegendItem ${props.className} ${props.unhighlight ? 'unhighlight' : ''}`}>
     <span>[TODO: Change to graph]</span>
     <span>{props.title}</span>
   </div>
@@ -25,12 +25,15 @@ LegendItem.propTypes = {
   max: PropTypes.number,
   /** The flag to determine if the component renders with the unhighlight class */
   unhighlight: PropTypes.bool,
+  /** Additional className to add to the list */
+  className: PropTypes.string,
 };
 
 LegendItem.defaultProps = {
   data: null,
   max: null,
   unhighlight: false,
+  className: '',
 };
 
 // TODO: Wrap in React.memo when testing issue fixed

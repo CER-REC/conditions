@@ -67,7 +67,7 @@ const SmallMultiplesLegend = (props) => {
   }
 
   return (
-    <div className="SmallMultiplesLegend">
+    <div className={`SmallMultiplesLegend ${props.className}`}>
       <span>{t(['smallMultiplesLegend', 'title', props.title])}</span>
       {legendList}
     </div>
@@ -91,10 +91,13 @@ SmallMultiplesLegend.propTypes = {
   /** A function that will receive an ID when a data item is selected
       or null if the all legend filter is selected */
   onChange: PropTypes.func.isRequired,
+  /** Additional className to add to the list */
+  className: PropTypes.string,
 };
 
 SmallMultiplesLegend.defaultProps = {
   highlightID: null,
+  className: '',
 };
 
 // TODO: Wrap in React.memo when testing issue fixed
