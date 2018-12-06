@@ -22,16 +22,17 @@ describe('Components|SmallMultiplesLegend', () => {
     });
   };
 
-  const itShouldRenderItems = (data) => {
+  const itShouldRenderItems = (data, max) => {
     it('should render the data as LegendItem components in the List component', () => {
       const listItemsWrapper = wrapper.find(List).find(LegendItem).not('[data=null]');
 
       for (let i = 0; i < data.length; i += 1) {
         const listItemWrapper = listItemsWrapper.at(i);
 
-        expect(listItemWrapper.type()).to.be.equal(LegendItem);
+        expect(listItemWrapper.type()).to.equal(LegendItem);
         expect(listItemWrapper.prop('title')).to.equal(data[i].id);
         expect(listItemWrapper.prop('data')).to.deep.equal(data[i].graphData);
+        expect(listItemWrapper.prop('max')).to.equal(max);
       }
     });
   };
@@ -147,7 +148,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
 
       itShouldRenderTitle(title);
-      itShouldRenderItems(data);
+      itShouldRenderItems(data, 345);
       itShouldRenderWithoutHighlight();
       itShouldNotAllListItem();
       itShouldCallOnChangeOnClick();
@@ -169,7 +170,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
 
       itShouldRenderTitle(title);
-      itShouldRenderItems(data);
+      itShouldRenderItems(data, 345);
       itShouldRenderWithHighlight(hightlightID);
       itShouldNotAllListItem();
       itShouldCallOnChangeOnClick();
@@ -212,7 +213,7 @@ describe('Components|SmallMultiplesLegend', () => {
       it('should render the all LegendItem component', () => {
         const firstListItem = wrapper.find(List).prop('items')[0];
 
-        expect(firstListItem.type).to.be.equal(LegendItem);
+        expect(firstListItem.type).to.equal(LegendItem);
         // TODO: Redo when translations are implemented
         expect(firstListItem.props.title).to.contain('All');
         // eslint-disable-next-line no-unused-expressions
@@ -243,7 +244,7 @@ describe('Components|SmallMultiplesLegend', () => {
           expect(spy.calledWith(data[i].id)).to.be.true;
         }
 
-        expect(spy.callCount).to.be.equal(data.length);
+        expect(spy.callCount).to.equal(data.length);
       });
     };
 
@@ -275,7 +276,7 @@ describe('Components|SmallMultiplesLegend', () => {
           expect(spy.calledWith(data[i].id)).to.be.true;
         }
 
-        expect(spy.callCount).to.be.equal(data.length);
+        expect(spy.callCount).to.equal(data.length);
       });
     };
 
@@ -285,7 +286,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
 
       itShouldRenderTitle(title);
-      itShouldRenderItems(data);
+      itShouldRenderItems(data, 1515);
       itShouldRenderWithoutHighlight();
       itShouldRenderTheAllItem();
       itShouldCallOnChangeWithNULLOnClick();
@@ -308,7 +309,7 @@ describe('Components|SmallMultiplesLegend', () => {
       });
 
       itShouldRenderTitle(title);
-      itShouldRenderItems(data);
+      itShouldRenderItems(data, 1515);
       itShouldRenderWithHighlight(hightlightID);
       itShouldRenderTheAllItem();
       itShouldCallOnChangeWithNULLOnClick();
