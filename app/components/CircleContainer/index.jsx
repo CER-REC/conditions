@@ -39,4 +39,5 @@ CircleContainer.defaultProps = {
   className: '',
 };
 
-export default CircleContainer;
+export { CircleContainer };
+export default React.memo(CircleContainer);
