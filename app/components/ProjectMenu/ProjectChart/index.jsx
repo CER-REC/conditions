@@ -19,7 +19,9 @@ const ProjectChart = (props) => {
 };
 
 ProjectChart.propTypes = {
+  /** The selected feature */
   chartType: PropTypes.string.isRequired,
+  /** All of the projects condition data */
   graphData: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
