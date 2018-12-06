@@ -13,16 +13,11 @@ class ProjectMenu extends React.PureComponent {
         name: PropTypes.string.isRequired,
         count: PropTypes.number.isRequired,
       })),
-    })),
+    })).isRequired,
     /** The ID of the project that is currently selected */
-    selectedProjectID: PropTypes.number,
+    selectedProjectID: PropTypes.number.isRequired,
     /** The method tracking which project is currently being selected */
     onChange: PropTypes.func.isRequired,
-  }
-
-  static defaultProps = {
-    projectData: [],
-    selectedProjectID: 0,
   }
 
   getListItems = () => {

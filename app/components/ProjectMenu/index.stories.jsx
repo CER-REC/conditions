@@ -46,19 +46,13 @@ const projectData = [
   },
 ];
 
-const selectedFeature = 'Theme';
+const selectedProjectID = 1226;
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
-  .add('Default Props', () => (
-    <ProjectMenu
-      projectData={[]}
-      selectedFeature=""
-      onChange={() => {}}
-    />))
   .add('With project data', () => (
     <ProjectMenu
       projectData={projectData}
-      selectedFeature={selectedFeature}
+      selectedProjectID={selectedProjectID}
       onChange={() => {}}
     />
   ));
