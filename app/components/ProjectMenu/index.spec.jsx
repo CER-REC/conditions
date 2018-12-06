@@ -95,14 +95,6 @@ describe('Components|ProjectMenu', () => {
       const list = wrapper.find('List');
       expect(list.props().onChange).to.be.a('function');
     });
-
-    it('should display a legend for the projects', () => {
-      expect(wrapper.find('Legend')).has.lengthOf(1);
-    });
-
-    it('should pass the Legend an array of legend items', () => {
-      expect(wrapper.find('Legend').props().items).to.be.a('array');
-    });
   });
 
   // expectedResults is the input coming into the project menu
