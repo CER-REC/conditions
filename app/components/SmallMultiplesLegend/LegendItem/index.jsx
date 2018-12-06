@@ -19,12 +19,17 @@ LegendItem.propTypes = {
     date: PropTypes.number.isRequired,
     count: PropTypes.number.isRequired,
   })),
+  /** The y-axis height to set the graph */
+  // TODO: Remove ESLint suppression when the graph feature is implemented
+  // eslint-disable-next-line react/no-unused-prop-types
+  max: PropTypes.number,
   /** The flag to determine if the component renders with the unhighlight class */
   unhighlight: PropTypes.bool,
 };
 
 LegendItem.defaultProps = {
   data: null,
+  max: null,
   unhighlight: false,
 };
 

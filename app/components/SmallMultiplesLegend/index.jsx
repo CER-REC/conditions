@@ -13,13 +13,31 @@ const t = (searchList) => {
   return searchList[2];
 };
 
+const getMaxCount = (data) => {
+  const getCount = graphDataItem => graphDataItem.count;
+  const counts = data.reduce((countAggregate, conditionsData) => {
+    const nextCounts = conditionsData.graphData.map(getCount);
+
+    return countAggregate.concat(nextCounts);
+  }, []);
+  const max = Math.max.apply(null, counts);
+
+  if (!Number.isFinite(max)) {
+    return null;
+  }
+
+  return max;
+};
+
 const SmallMultiplesLegend = (props) => {
   let legendList;
+  const maxCount = getMaxCount(props.data);
   const legendDataItems = props.data.map(conditionsData => (
     <LegendItem
       key={conditionsData.id}
       title={conditionsData.id}
       data={conditionsData.graphData}
+      max={maxCount}
       unhighlight={props.highlightID && (conditionsData.id !== props.highlightID)}
     />
   ));
