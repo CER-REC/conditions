@@ -25,7 +25,7 @@ LegendItem.propTypes = {
   max: PropTypes.number,
   /** The flag to determine if the component renders with the unhighlight class */
   unhighlight: PropTypes.bool,
-  /** Additional className to add to the list */
+  /** Additional className to add to the component */
   className: PropTypes.string,
 };
 

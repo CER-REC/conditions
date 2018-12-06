@@ -91,7 +91,7 @@ SmallMultiplesLegend.propTypes = {
   /** A function that will receive an ID when a data item is selected
       or null if the all legend filter is selected */
   onChange: PropTypes.func.isRequired,
-  /** Additional className to add to the list */
+  /** Additional className to add to the component */
   className: PropTypes.string,
 };
 
