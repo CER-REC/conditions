@@ -24,8 +24,6 @@ This component should be modified by using the props of:
 </Unknown>
 
 ```
-
-
 ## Interaction Requirements
 
 The component may need to accept the behaviour of a button. This is acheived by using the prop: onClick.
