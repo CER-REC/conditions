@@ -4,7 +4,7 @@ The Stream Graph is a public component used in View 3 by the Small Multiples Leg
 
 ## Requirements
 
-* Handles click event
+* [] Handles click event
 
 ## Data Requirements
 
@@ -27,4 +27,12 @@ Implementation of interactions will be completed in the public components the St
 
 ## Unit Testing
 
-TODO: Provide table of automated unit test results and code coverage metrics.
+* Component|StreamLayer
+  * with default props
+    * √ should render
+    * √ should take in props for id
+    * √ should take in props for data
+    * √ should take in props for fill
+    * √ should take in props for stroke
+    * √ should take in props for strokewidth
+    * √ should take in props for standalone

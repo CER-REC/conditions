@@ -6,7 +6,8 @@ import './styles.scss';
 
 const StreamLayer = props => (
   <VictoryArea
-    name={props.projectId}
+    key={props.projectKey}
+    name={props.projectName}
     data={props.dataValues.map(k => ({ x: k.date, y: k.count }))}
     style={{
       data: {
@@ -21,11 +22,12 @@ const StreamLayer = props => (
 );
 
 StreamLayer.propTypes = {
-  projectId: PropTypes.string,
+  projectKey: PropTypes.number,
+  projectName: PropTypes.string,
   projectColor: PropTypes.string,
   strokeColor: PropTypes.string,
   strokeWidth: PropTypes.number,
-  standalone: PropTypes.string,
+  standalone: PropTypes.bool,
   dataValues: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.number.isRequired,
     count: PropTypes.number.isRequired,
@@ -33,10 +35,11 @@ StreamLayer.propTypes = {
 };
 
 StreamLayer.defaultProps = {
-  projectId: 'themeNumber',
+  projectName: 'themeNumber',
+  projectKey: 2420,
   projectColor: 'grey',
   strokeColor: 'none',
-  standalone: 'true',
+  standalone: true,
   strokeWidth: 0,
   dataValues: [
     { date: 2010, count: 20 },

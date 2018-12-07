@@ -60,7 +60,7 @@ describe('Components|Streamgraph', () => {
       expect(wrapper.type()).to.equal('div');
     });
 
-    it('should render a className', () => {
+    it('should have a className', () => {
       expect(wrapper.is('.streamgraph')).to.equal((true));
     });
 
@@ -72,7 +72,7 @@ describe('Components|Streamgraph', () => {
       expect(wrapper.find('VictoryChart')).to.have.lengthOf(1);
     });
 
-    it('should render the stacked chart', () => {
+    it('should render the streams in a stack', () => {
       expect(wrapper.find('VictoryStack')).to.have.lengthOf(1);
     });
 

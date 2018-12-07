@@ -5,7 +5,8 @@ import ReadMe from './README.md';
 
 const projectData = [
   {
-    id: 'themeOne',
+    name: 'themeOne',
+    key: 2420,
     color: 'pink',
     graphData: [
       { date: 2010, count: 0 },
@@ -19,7 +20,8 @@ const projectData = [
     ],
   },
   {
-    id: 'themeTwo',
+    name: 'themeTwo',
+    key: 2420,
     color: 'blue',
     graphData: [
       { date: 2010, count: 11 },
@@ -33,7 +35,8 @@ const projectData = [
     ],
   },
   {
-    id: 'themeThree',
+    name: 'themeThree',
+    key: 2420,
     color: 'orange',
     graphData: [
       { date: 2010, count: 14 },

@@ -3,7 +3,8 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import StreamLayer from './';
 import ReadMe from './README.md';
 
-const projectId = 'themeNumber';
+const projectName = 'themeNumber';
+const projectKey = 2420;
 const projectColor = 'grey';
 const stroke = 'none';
 const strokeWidth = 2;
@@ -21,7 +22,8 @@ const dataValues = [
 storiesForComponent('Components|StreamLayer', module, ReadMe)
   .add('With data', () => (
     <StreamLayer
-      projectId={projectId}
+      projectId={projectName}
+      projectKey={projectKey}
       projectColor={projectColor}
       stroke={stroke}
       strokeWidth={strokeWidth}

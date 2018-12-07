@@ -4,11 +4,11 @@ The Stream Graph is a public component used in View 3, and will, by default, sho
 
 ## Requirements
 
-* Handles click event
-* Text reflects number of Conditions
-* Stream graph should update to show the stream layer selected
-* Displays a dynamic title for what the Stream Graph is showing
-* Handles user interaction with the crosshairs
+* [] Handles click event
+* [√] Text reflects number of Conditions
+* [] Stream graph should update to show the stream layer selected
+* [√] Displays a dynamic title for what the Stream Graph is showing
+* [√] Handles user interaction with the crosshairs
 
 ## Data Requirements
 
@@ -51,4 +51,13 @@ A similar effect occurs for hover even when a single stream layer is selected as
 
 ## Unit Testing
 
-TODO: Provide table of automated unit test results and code coverage metrics.
+* Component|Streamgraph
+  * with default props
+    * √ should render
+    * √ should have a classname
+    * √ should render a title
+    * √ should render a chart
+    * √ should render the streams in a stack
+    * √ should render the x and y axis
+    * √ should round the y value to the nearest whole number
+    * √ should round the date label

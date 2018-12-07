@@ -33,7 +33,9 @@ const Streamgraph = (props) => {
 
   const streamLayers = props.projectData.map(v => (
     <VictoryArea
-      name={v.id}
+      id={v.key}
+      key={v.key}
+      name={v.name}
       data={v.graphData.map(k => ({ x: k.date, y: k.count }))}
       style={{
         data: {
@@ -77,7 +79,8 @@ const Streamgraph = (props) => {
 Streamgraph.propTypes = {
   projectData: PropTypes.arrayOf(PropTypes.shape({
     color: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    key: PropTypes.number.isRequired,
     graphData: PropTypes.arrayOf(PropTypes.shape({
       date: PropTypes.number.isRequired,
       count: PropTypes.number.isRequired,

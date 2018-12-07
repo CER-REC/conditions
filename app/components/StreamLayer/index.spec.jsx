@@ -9,7 +9,7 @@ describe('Components|StreamLayer', () => {
   const projectColor = 'grey';
   const strokeColor = 'none';
   const strokeWidth = 0;
-  const standalone = 'true';
+  const standalone = true;
   const dataValues = [
     { date: 2010, count: 20 },
     { date: 2011, count: 40 },
@@ -59,7 +59,7 @@ describe('Components|StreamLayer', () => {
     });
 
     it('should take in props for standalone', () => {
-      expect(wrapper.props().standalone).to.equal('true');
+      expect(wrapper.props().standalone).to.equal(true);
     });
   });
 });
