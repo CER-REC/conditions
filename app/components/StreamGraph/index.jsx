@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryAxis, VictoryArea, VictoryStack, VictoryCursorContainer, VictoryChart } from 'victory';
-import StreamLayer from '../StreamLayer';
 
 import './styles.scss';
 
@@ -15,6 +14,12 @@ const Streamgraph = (props) => {
 
   const minConditionValue = Math.min(...numOfConditionsConcat);
 
+  const date = props.projectData.map(k => k.graphData.map(v => v.date));
+  const dateConcat = [].concat(...date);
+
+  const minDateValue = Math.min(...dateConcat);
+  const maxDateValue = Math.max(...dateConcat);
+
   let conditionDates = props.projectData.reduce((acc, next) => {
     next.graphData.forEach((v) => {
       if (!acc[v.date]) { acc[v.date] = 0; }
@@ -26,7 +31,7 @@ const Streamgraph = (props) => {
   conditionDates = Object.values(conditionDates);
   const maxConditionValue = Math.max(...conditionDates);
 
-  const streamLayer = props.projectData.map(v => (
+  const streamLayers = props.projectData.map(v => (
     <VictoryArea
       name={v.id}
       data={v.graphData.map(k => ({ x: k.date, y: k.count }))}
@@ -59,9 +64,10 @@ const Streamgraph = (props) => {
           label="Effective Date"
           tickFormat={roundDateLabel}
           className="axis-label"
+          domain={[minDateValue, maxDateValue]}
         />
         <VictoryStack>
-          {streamLayer}
+          {streamLayers}
         </VictoryStack>
       </VictoryChart>
     </div>
