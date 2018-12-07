@@ -17,7 +17,7 @@
     "lint": "eslint ./app/{,**/}*.js{,x} ./server/{,**/}*.js",
     "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc mocha app/**/*.spec.{js,jsx}",
-    "test:single": "cross-env NODE_ENV=test mocha",
+    "test:single": "cross-env NODE_ENV=test mocha app/components/Icon/*.spec.jsx",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -25,6 +25,10 @@
   "author": "Spenser Jones <hello@spenserj.com>",
   "license": "Open Government Liscense - Canada",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-brands-svg-icons": "^5.5.0",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "@fortawesome/react-fontawesome": "^0.1.3",
     "apollo-boost": "^0.1.20",
     "dialog-polyfill": "^0.4.9",
     "domready": "^1.0.8",
