@@ -11,7 +11,7 @@ const FeatureFlag = props => (
 );
 
 FeatureFlag.propTypes = {
-  /** The amount of condtions */
+  /** The amount of conditions */
   count: PropTypes.number.isRequired,
   /** color of the flag item */
   color: PropTypes.string.isRequired,
