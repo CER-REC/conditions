@@ -82,7 +82,7 @@ describe('Components|Streamgraph', () => {
 
     it('should round the y value to the nearest whole number', () => {
       const point = { x: 5.1, y: 4.3 };
-      expect(numOfConditionsLabel(point)).to.be.equal(`${4} conditions`);
+      expect(numOfConditionsLabel(point)).to.be.equal('4');
     });
 
     it('should round the date label', () => {

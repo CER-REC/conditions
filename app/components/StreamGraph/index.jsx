@@ -4,7 +4,7 @@ import { VictoryAxis, VictoryArea, VictoryStack, VictoryChart } from 'victory';
 
 import './styles.scss';
 
-export const numOfConditionsLabel = point => `${Math.round(point.y)} conditions`;
+export const numOfConditionsLabel = point => `${Math.round(point.y)}`;
 
 export const roundDateLabel = t => Math.round(t);
 
@@ -39,8 +39,6 @@ const Streamgraph = (props) => {
       style={{
         data: {
           fill: v.color,
-          opacity: 1,
-          stroke: 'black',
           strokeWidth: 0,
         },
       }}
@@ -50,7 +48,7 @@ const Streamgraph = (props) => {
 
   return (
     <div className="streamgraph">
-      <h1>Total Conditions by Theme Over Time</h1>
+      <h1>Themes Across All Conditions</h1>
       <VictoryChart>
         <VictoryAxis
           dependentAxis
@@ -64,39 +62,7 @@ const Streamgraph = (props) => {
           className="axis-label"
           domain={[minDateValue, maxDateValue]}
         />
-        <VictoryStack
-          events={[{
-            childName: props.projectData.map(v => v.name),
-            target: 'data',
-            eventHandlers: {
-              onClick: (evt, clickedProps) => {
-                const clickedIndex = clickedProps.id;
-                return [
-                  {
-                    target: 'data',
-                    eventKey: props.projectData.name,
-                    mutation: (props) => {
-                      const styles = {
-                        opacity: props.style && props.style.opacity,
-                        stroke: props.style && props.style.stroke,
-                        strokeWidth: props.style && props.style.strokeWidth,
-                      };
-                      let opacity = props.style && props.style.opacity;
-                      let stroke = props.style && props.style.stroke;
-                      let strokeWidth = props.style && props.style.strokeWidth;
-                      console.log(opacity, stroke, strokeWidth);
-                      // if (clickedIndex) {
-                      //   return styles;
-                      // }
-                      const fill = props.style && props.style.fill;
-                      return fill === "black" ? null : { style: { fill: "black" } };
-                    },
-                  },
-              ];
-            },
-          },
-          }]}
-        >
+        <VictoryStack>
           {streamLayers}
         </VictoryStack>
       </VictoryChart>
@@ -114,7 +80,6 @@ Streamgraph.propTypes = {
       count: PropTypes.number.isRequired,
     })).isRequired,
   })).isRequired,
-  style: PropTypes.func.isRequired,
 };
 
 export default Streamgraph;
