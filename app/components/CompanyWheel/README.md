@@ -1,6 +1,23 @@
 # CompanyWheel
 
 * TODO: CompanyWheel
+  * Design data:
+    for companywheel
+    {
+      companies: {
+        company:{
+          id
+          name (sorted alphabetically)
+          projects (sorted by date of earliest instrument)
+          relatedCompanies : {
+            
+          }
+        }
+      }
+    }
+    for location {
+
+    }
   * Hookup pulltospin
   * Implement React-spring
   * Animate Wheel

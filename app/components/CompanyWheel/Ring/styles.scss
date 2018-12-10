@@ -14,11 +14,11 @@
     fill: #30298c;
   }
 }
-.linebackground {
-  &.location{
+.lines {
+  &.location line{
     stroke: #E0A531;
   }
-  &.normal{
+  &.normal line{
     stroke: #4054b7; 
   }
   stroke-width: 18px;
@@ -53,7 +53,7 @@
   stroke: none;
 }
 
-.cls-9 {
+.ringOutline {
   fill: #d1057a;
 }
 .letterCircle, .rayCircle{
