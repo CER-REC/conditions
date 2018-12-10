@@ -16,15 +16,15 @@ const graphData = [
 const chartType = 'Theme';
 
 storiesForComponent('Components|ProjectMenu/ProjectChart', module, ReadMe)
-  .add('No props', () => (
-    <ProjectChart
-      graphData={[]}
-      chartType=""
-    />
-  ))
   .add('With legend items', () => (
     <ProjectChart
       graphData={graphData}
+      chartType={chartType}
+    />
+  ))
+  .add('Empty graphData', () => (
+    <ProjectChart
+      graphData={[]}
       chartType={chartType}
     />
   ));

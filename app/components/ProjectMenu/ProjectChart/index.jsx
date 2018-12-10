@@ -7,14 +7,18 @@ const ProjectChart = props => (
     { props.graphData.map(condition => (
       <FeatureFlag
         key={condition.name}
+        name={condition.name}
         count={condition.count}
         color={condition.color}
+        cartType={props.chartType}
       />
     ))}
   </div>
 );
 
 ProjectChart.propTypes = {
+  /** The selected feature */
+  chartType: PropTypes.string.isRequired,
   /** All of the projects condition data */
   graphData: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,

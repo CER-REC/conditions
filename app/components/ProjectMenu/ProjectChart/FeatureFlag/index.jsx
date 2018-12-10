@@ -5,12 +5,15 @@ const FeatureFlag = props => (
   <div
     className="FeatureFlag"
     style={{ backgroundColor: props.color }}
-  >
-    {props.count}
-  </div>
+    title={`${props.chartType} - ${props.name} - ${props.count}`}
+  />
 );
 
 FeatureFlag.propTypes = {
+  /** The selected feature */
+  chartType: PropTypes.string.isRequired,
+  /** The name of the condition */
+  name: PropTypes.string.isRequired,
   /** The amount of conditions */
   count: PropTypes.number.isRequired,
   /** color of the flag item */

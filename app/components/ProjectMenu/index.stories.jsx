@@ -49,7 +49,7 @@ const projectData = [
 const selectedProjectID = 1226;
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
-  .add('With project data', () => (
+  .add('Default Props', () => (
     <ProjectMenu
       projectData={projectData}
       selectedProjectID={selectedProjectID}
