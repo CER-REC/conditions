@@ -4,7 +4,6 @@ The project menu allows for the selection of up to 5 consecutive projects at a t
 
 ## Requirements
 
-* By default, the projects should display in english. Shown under each project.  `Conditions.ConcatTheme(english)`
 * Individual projects are displayed as enlarged dots along the horizontal axis next to the company name. 
 * The number inside the dot displays the number of conditions for that project.
 * Dots with a visible outline are those that contain results of the keyword search.
@@ -13,7 +12,7 @@ The project menu allows for the selection of up to 5 consecutive projects at a t
 
 ## Interaction Requirements
 
-Navigation can be done through either the `<List />`or Project dots.
+Navigation can be done through either the `<List />` or Project dots.
 Click, enter and touch on the project dots should all call `props.onClick(projectID)`
 
 ## Accessibility Requirements
