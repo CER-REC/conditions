@@ -19,7 +19,7 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
       }]}
     />
   ))
-  .add('unhighlight', () => (
+  .add('faded', () => (
     <LegendItem
       title="Another"
       data={[{
@@ -32,6 +32,6 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
         date: 300,
         count: 55,
       }]}
-      unhighlight
+      faded
     />
   ));

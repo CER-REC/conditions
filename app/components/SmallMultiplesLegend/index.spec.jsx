@@ -42,35 +42,30 @@ describe('Components|SmallMultiplesLegend', () => {
       const itemsWrapper = wrapper.find(LegendItem);
 
       if (listWrapper.exists()) {
-        // eslint-disable-next-line no-unused-expressions
-        expect(listWrapper.hasClass('unhighlight')).to.be.false;
+        expect(listWrapper.hasClass('faded')).to.equal(false);
       }
 
       itemsWrapper.forEach((itemWrapper) => {
-        // eslint-disable-next-line no-unused-expressions
-        expect(itemWrapper.prop('unhighlight')).to.be.oneOf([null, false]);
+        expect(itemWrapper.prop('faded')).to.be.oneOf([null, false]);
       });
     });
   };
 
   const shouldRenderWithHighlight = (hightlightID) => {
-    it('should only renders the LegendItem with the corresponding ID highlighted', () => {
+    it('should only render the LegendItem with the corresponding ID highlighted', () => {
       const highlightSelector = `[title="${hightlightID}"]`;
       const listWrapper = wrapper.find(List);
-      const unhighlightItemsWrapper = wrapper.find(LegendItem).not(highlightSelector);
+      const fadedItemsWrapper = wrapper.find(LegendItem).not(highlightSelector);
       const highlightItemWrapper = wrapper.find(LegendItem).filter(highlightSelector);
 
-      // eslint-disable-next-line no-unused-expressions
-      expect(listWrapper.hasClass('unhighlight')).to.be.true;
+      expect(listWrapper.hasClass('faded')).to.equal(true);
 
-      unhighlightItemsWrapper.forEach((itemWrapper) => {
-        // eslint-disable-next-line no-unused-expressions
-        expect(itemWrapper.prop('unhighlight')).to.be.true;
+      fadedItemsWrapper.forEach((itemWrapper) => {
+        expect(itemWrapper.prop('faded')).to.equal(true);
       });
 
       if (highlightItemWrapper.exists()) {
-        // eslint-disable-next-line no-unused-expressions
-        expect(highlightItemWrapper.prop('unhighlight')).to.be.false;
+        expect(highlightItemWrapper.prop('faded')).to.equal(false);
       }
     });
   };
@@ -92,8 +87,7 @@ describe('Components|SmallMultiplesLegend', () => {
     shouldRenderWithoutHighlight();
 
     it('should not render a list', () => {
-      // eslint-disable-next-line no-unused-expressions
-      expect(wrapper.find(List)).to.be.empty;
+      expect(wrapper.find(List)).to.have.lengthOf(0);
     });
   });
 
@@ -125,8 +119,7 @@ describe('Components|SmallMultiplesLegend', () => {
         const legendItemWrapper = wrapper.find(LegendItem);
 
         legendItemWrapper.simulate('click', eventFuncs);
-        // eslint-disable-next-line no-unused-expressions
-        expect(spy.calledOnceWith(data[0].id)).to.be.true;
+        expect(spy.calledOnceWith(data[0].id)).to.be.equal(true);
       });
     };
 
@@ -138,8 +131,7 @@ describe('Components|SmallMultiplesLegend', () => {
           key: 'Enter',
           ...eventFuncs,
         });
-        // eslint-disable-next-line no-unused-expressions
-        expect(spy.calledOnceWith(data[0].id)).to.be.true;
+        expect(spy.calledOnceWith(data[0].id)).to.be.equal(true);
       });
     };
 
@@ -221,8 +213,7 @@ describe('Components|SmallMultiplesLegend', () => {
         expect(firstListItem.type).to.equal(LegendItem);
         // TODO: Redo when translations are implemented
         expect(firstListItem.props.title).to.contain('All');
-        // eslint-disable-next-line no-unused-expressions
-        expect(firstListItem.props.data).to.be.null;
+        expect(firstListItem.props.data).to.be.equal(null);
         expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
       });
     };
@@ -232,8 +223,7 @@ describe('Components|SmallMultiplesLegend', () => {
         const allLegendItemWrapper = wrapper.find(LegendItem).filter('[data=null]');
 
         allLegendItemWrapper.simulate('click', eventFuncs);
-        // eslint-disable-next-line no-unused-expressions
-        expect(spy.calledOnceWith(null)).to.be.true;
+        expect(spy.calledOnceWith(null)).to.equal(true);
       });
     };
 
@@ -245,8 +235,7 @@ describe('Components|SmallMultiplesLegend', () => {
           const legendItemWrapper = legendItemsWrapper.at(i);
 
           legendItemWrapper.simulate('click', eventFuncs);
-          // eslint-disable-next-line no-unused-expressions
-          expect(spy.calledWith(data[i].id)).to.be.true;
+          expect(spy.calledWith(data[i].id)).to.equal(true);
         }
 
         expect(spy.callCount).to.equal(data.length);
@@ -261,8 +250,7 @@ describe('Components|SmallMultiplesLegend', () => {
           key: 'Enter',
           ...eventFuncs,
         });
-        // eslint-disable-next-line no-unused-expressions
-        expect(spy.calledOnceWith(null)).to.be.true;
+        expect(spy.calledOnceWith(null)).to.equal(true);
       });
     };
 
@@ -277,8 +265,7 @@ describe('Components|SmallMultiplesLegend', () => {
             key: 'Enter',
             ...eventFuncs,
           });
-          // eslint-disable-next-line no-unused-expressions
-          expect(spy.calledWith(data[i].id)).to.be.true;
+          expect(spy.calledWith(data[i].id)).to.be.equal(true);
         }
 
         expect(spy.callCount).to.equal(data.length);

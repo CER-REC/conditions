@@ -1,11 +1,11 @@
-%unhighight {
+%faded {
   opacity: 0.2;
 }
 
 .SmallMultiplesLegend {
-  .List.unhighlight {
+  .List.faded {
     button {
-      @extend %unhighight;
+      @extend %faded;
     }
   }
 }

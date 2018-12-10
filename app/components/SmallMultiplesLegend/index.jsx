@@ -20,7 +20,7 @@ const getMaxCount = (data) => {
 
     return countAggregate.concat(nextCounts);
   }, []);
-  const max = Math.max.apply(null, counts);
+  const max = Math.max(...counts);
 
   if (!Number.isFinite(max)) {
     return null;
@@ -38,7 +38,7 @@ const SmallMultiplesLegend = (props) => {
       title={conditionsData.id}
       data={conditionsData.graphData}
       max={maxCount}
-      unhighlight={props.highlightID && (conditionsData.id !== props.highlightID)}
+      faded={props.highlightID && (conditionsData.id !== props.highlightID)}
     />
   ));
   const onItemChange = (index) => {
@@ -54,16 +54,24 @@ const SmallMultiplesLegend = (props) => {
   if (legendDataItems.length > 1) {
     legendDataItems.unshift((
       <LegendItem
-        key={null}
+        // "all" cannot be an ID in data
+        key="all"
         title={t(['smallMultiplesLegend', 'all', props.title])}
-        unhighlight={Boolean(props.highlightID)}
+        faded={!!props.highlightID}
       />
     ));
   }
 
   if (legendDataItems.length) {
     // TODO: Update List properties when the vertical feature is implemented
-    legendList = <List className={`${props.highlightID ? 'unhighlight' : ''}`} items={legendDataItems} selected={0} onChange={onItemChange} />;
+    legendList = (
+      <List
+        className={`${props.highlightID ? 'faded' : ''}`}
+        items={legendDataItems}
+        selected={0}
+        onChange={onItemChange}
+      />
+    );
   }
 
   return (

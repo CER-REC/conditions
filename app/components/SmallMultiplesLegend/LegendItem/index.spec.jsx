@@ -23,17 +23,15 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     it('should render the graph');
   };
 
-  const itShouldRenderWithoutUnhighlight = () => {
-    it('should render without the unhighlight class', () => {
-      // eslint-disable-next-line no-unused-expressions
-      expect(wrapper.hasClass('unhighlight')).to.be.false;
+  const itShouldRenderWithoutFaded = () => {
+    it('should render without the faded class', () => {
+      expect(wrapper.hasClass('faded')).to.equal(false);
     });
   };
 
-  const itShouldRenderWithUnhighlight = () => {
-    it('should render with the unhighlight class', () => {
-      // eslint-disable-next-line no-unused-expressions
-      expect(wrapper.hasClass('unhighlight')).to.be.true;
+  const itShouldRenderWithFaded = () => {
+    it('should render with the faded class', () => {
+      expect(wrapper.hasClass('faded')).to.equal(true);
     });
   };
 
@@ -48,21 +46,21 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     shared.shouldBehaveLikeAComponent(test, LegendItem, 'test');
     itShouldRenderTitle(title);
     itShouldNotRenderGraph();
-    itShouldRenderWithoutUnhighlight();
+    itShouldRenderWithoutFaded();
   });
 
-  describe('when the title and unhighlight property is provided', () => {
+  describe('when the title and faded property is provided', () => {
     const title = '123 ABC test_title';
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem title={title} unhighlight />);
+      wrapper = shallow(<LegendItem title={title} faded />);
       test.wrapper = wrapper;
     });
 
     shared.shouldBehaveLikeAComponent(test, LegendItem, null);
     itShouldRenderTitle(title);
     itShouldNotRenderGraph();
-    itShouldRenderWithUnhighlight();
+    itShouldRenderWithFaded();
   });
 
   describe('when the title and data property is provided', () => {
@@ -86,10 +84,10 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     shared.shouldBehaveLikeAComponent(test, LegendItem, 'testclass');
     itShouldRenderTitle(title);
     itShouldRenderGraph();
-    itShouldRenderWithoutUnhighlight();
+    itShouldRenderWithoutFaded();
   });
 
-  describe('when the title, data, and unhighlight property is provided', () => {
+  describe('when the title, data, and faded property is provided', () => {
     const title = '';
     const data = [{
       date: 1999,
@@ -103,13 +101,13 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     }];
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem className="myClass" title={title} data={data} unhighlight />);
+      wrapper = shallow(<LegendItem className="myClass" title={title} data={data} faded />);
       test.wrapper = wrapper;
     });
 
     shared.shouldBehaveLikeAComponent(test, LegendItem, 'myClass');
     itShouldRenderTitle(title);
     itShouldRenderGraph();
-    itShouldRenderWithUnhighlight();
+    itShouldRenderWithFaded();
   });
 });

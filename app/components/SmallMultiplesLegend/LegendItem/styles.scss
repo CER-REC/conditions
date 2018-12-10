@@ -1,7 +1,7 @@
 @import '../styles.scss';
 
 .LegendItem {
-  &.unhighlight {
-    @extend %unhighight;
+  &.faded {
+    @extend %faded;
   }
 }
