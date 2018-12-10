@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VictoryAxis, VictoryArea, VictoryStack, VictoryCursorContainer, VictoryChart } from 'victory';
+import { VictoryAxis, VictoryArea, VictoryStack, VictoryChart } from 'victory';
 
 import './styles.scss';
 
@@ -33,13 +33,15 @@ const Streamgraph = (props) => {
 
   const streamLayers = props.projectData.map(v => (
     <VictoryArea
-      id={v.key}
       key={v.key}
       name={v.name}
       data={v.graphData.map(k => ({ x: k.date, y: k.count }))}
       style={{
         data: {
           fill: v.color,
+          opacity: 1,
+          stroke: 'black',
+          strokeWidth: 0,
         },
       }}
       interpolation="natural"
@@ -49,13 +51,7 @@ const Streamgraph = (props) => {
   return (
     <div className="streamgraph">
       <h1>Total Conditions by Theme Over Time</h1>
-      <VictoryChart
-        containerComponent={
-          <VictoryCursorContainer
-            cursorLabel={numOfConditionsLabel}
-          />
-        }
-      >
+      <VictoryChart>
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
@@ -68,7 +64,39 @@ const Streamgraph = (props) => {
           className="axis-label"
           domain={[minDateValue, maxDateValue]}
         />
-        <VictoryStack>
+        <VictoryStack
+          events={[{
+            childName: props.projectData.map(v => v.name),
+            target: 'data',
+            eventHandlers: {
+              onClick: (evt, clickedProps) => {
+                const clickedIndex = clickedProps.id;
+                return [
+                  {
+                    target: 'data',
+                    eventKey: props.projectData.name,
+                    mutation: (props) => {
+                      const styles = {
+                        opacity: props.style && props.style.opacity,
+                        stroke: props.style && props.style.stroke,
+                        strokeWidth: props.style && props.style.strokeWidth,
+                      };
+                      let opacity = props.style && props.style.opacity;
+                      let stroke = props.style && props.style.stroke;
+                      let strokeWidth = props.style && props.style.strokeWidth;
+                      console.log(opacity, stroke, strokeWidth);
+                      // if (clickedIndex) {
+                      //   return styles;
+                      // }
+                      const fill = props.style && props.style.fill;
+                      return fill === "black" ? null : { style: { fill: "black" } };
+                    },
+                  },
+              ];
+            },
+          },
+          }]}
+        >
           {streamLayers}
         </VictoryStack>
       </VictoryChart>
@@ -86,6 +114,7 @@ Streamgraph.propTypes = {
       count: PropTypes.number.isRequired,
     })).isRequired,
   })).isRequired,
+  style: PropTypes.func.isRequired,
 };
 
 export default Streamgraph;
