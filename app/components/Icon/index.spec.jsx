@@ -5,7 +5,7 @@ import { expect } from 'chai';
 
 import Icon from './';
 
-describe('Components|MyComponentName', () => {
+describe('Component|Icon', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {

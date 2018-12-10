@@ -1,28 +1,35 @@
 # Component Name
 
-TODO: Summarize purpose and requirements from design document.
+This component imlements the font-awesome React complonents for SVG icons.
+This component will accept the props of:
+* size - (using the font-awesome format: https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons)
+* color - as a string in HEX or the HTML5 color names
+* prefix* -  font awesome has different libraries a prefix is needed for brand icons.
+* icon* - this is the name of the specific icon
+
+*To use specfifc icons from the font awesome library you must declare from the import section of the component, then add them to library using the .add() function.
 
 ## Interaction Requirements
 
-TODO: Explain interaction requirements, mentioning differences for cursor, touch,
-and keyboard navigation.
+The `<Icon />` component does not have any interaction functionality
 
 ## Accessibility Requirements
 
-TODO: Explain desired accessibility support, and provide table of currently
-implemented accessibility with table of automated accessibility test results.
+TODO: 
 
 ## Analytics Requirements
 
-TODO: Explain what analytics events should be fired from this component, and
-provide table of currently implemented analytics events with table of automated
-analytics test results.
+TODO: 
 
 ## Unit Testing
 
-TODO: Provide table of automated unit test results and code coverage metrics.
+* Component|Icon
+  * with default props
+    * √ should render
+    * √ should contain a single child of a FontAwesomeIcon element
+  * with default props
+    * √ should accept a prop to override the style
+    * √ should accept a prop for size
+    * √ should accept a prop for a prefix for brand icons
+    * √ should accept a prop for color
 
-## Examples
-
-TODO: Implement examples of different implementations with sandbox for editing
-properties on the fly.
