@@ -6,25 +6,36 @@ const SelectedGroupBar = props => (
   <div
     className="SelectedGroupBar"
     color={props.color}
-    groupsize={props.groupsize}
-    groupitemsize={props.groupitemsize}
   >
-    <p>{`${props.group} : ${props.groupitem}`}</p>
+    <p>
+      <span style={{
+        fontSize: props.groupSize,
+      }}
+      >
+        {`${props.group} : `}
+      </span>
+      <span style={{
+        fontSize: props.groupItemSize,
+      }}
+      >
+        {`${props.groupItem}`}
+      </span>
+    </p>
   </div>
 );
 
 SelectedGroupBar.propTypes = {
   group: PropTypes.string.isRequired,
-  groupitem: PropTypes.string.isRequired,
-  groupsize: PropTypes.string,
-  groupitemsize: PropTypes.string,
+  groupSize: PropTypes.string,
+  groupItem: PropTypes.string.isRequired,
+  groupItemSize: PropTypes.string,
   color: PropTypes.string,
 };
 
 SelectedGroupBar.defaultProps = {
   color: '#fefefe',
-  groupsize: '16px',
-  groupitemsize: '14px',
+  groupSize: '16px',
+  groupItemSize: '14px',
 };
 
 export default SelectedGroupBar;

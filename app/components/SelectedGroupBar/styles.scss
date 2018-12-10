@@ -1,5 +1,10 @@
 .SelectedGroupBar{
-  background: #e4e4e4;
-  height: 30px;
-  width: 200px;
+  color: black
+}
+
+.SelectedGroupBar p{
+  position: relative;
+  top: 50%;
+  width: 25%;
+  background: #c5c5c5;
 }

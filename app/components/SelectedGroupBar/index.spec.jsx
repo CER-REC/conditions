@@ -27,33 +27,34 @@ describe('Components|SelectedGroupBar', () => {
   describe('with default props', () => {
     it('should accept a prop for the group text', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions" />);
-      expect(wrapper.find('p').props().children).to.equal('Conditions : undefined');
+      expect(wrapper.find('span').first().props().children).to.equal('Conditions :');
     });
 
     it('should accept a prop for the groupitem text', () => {
-      const wrapper = shallow(<SelectedGroupBar groupitem="condition" />);
-      expect(wrapper.find('p').props().children).to.equal('undefined : condition');
+      const wrapper = shallow(<SelectedGroupBar groupItem="condition" />);
+      expect(wrapper.find('span').last().props().children).to.equal(' condition');
     });
 
     it('should accept both props for the group and groupitem text', () => {
-      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupitem="condition" />);
-      expect(wrapper.find('p').props().children).to.equal('Conditions : condition');
+      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItem="condition" />);
+      expect(wrapper.find('span').first().props().children).to.equal('Conditions :');
+      expect(wrapper.find('span').last().props().children).to.equal(' condition');
     });
 
     it('should accept a prop for the background color', () => {
-      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupitem="condition" color="tomato" />);
+      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItem="condition" color="tomato" />);
       expect(wrapper.props().color).to.equal('tomato');
     });
 
     it('should accept a prop to set the group text size', () => {
-      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupitem="condition" groupsize="16px" />);
-      expect(wrapper.props().groupsize).to.equal('16px');
+      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItem="condition" groupSize="32px" />);
+      expect(wrapper.find('span').first().props().style.fontSize).to.equal('32px');
     });
 
     it('should accept a prop to set the groupitem text size', () => {
-      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupitem="condition" groupitemsize="14px" groupsize="16px" />);
-      expect(wrapper.props().groupitemsize).to.equal('14px');
-      expect(wrapper.props().groupsize).to.equal('16px');
+      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItem="condition" groupItemSize="14px" groupSize="20px" />);
+      expect(wrapper.find('span').first().props().style.fontSize).to.equal('20px');
+      expect(wrapper.find('span').last().props().style.fontSize).to.equal('14px');
     });
   });
 });
