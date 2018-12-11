@@ -29,7 +29,7 @@ describe('Components|SmallMultiplesLegend', () => {
         const listItemWrapper = listItemsWrapper.at(i);
 
         expect(listItemWrapper.type()).to.equal(LegendItem);
-        expect(listItemWrapper.prop('title')).to.equal(data[i].id);
+        expect(listItemWrapper.prop('title')).to.equal(data[i].name);
         expect(listItemWrapper.prop('data')).to.deep.equal(data[i].graphData);
         expect(listItemWrapper.prop('max')).to.equal(max);
       }
@@ -51,9 +51,9 @@ describe('Components|SmallMultiplesLegend', () => {
     });
   };
 
-  const shouldRenderWithHighlight = (hightlightID) => {
-    it('should only render the LegendItem with the corresponding ID highlighted', () => {
-      const highlightSelector = `[title="${hightlightID}"]`;
+  const shouldRenderWithHighlight = (highlightName) => {
+    it('should only render the LegendItem with the corresponding name highlighted', () => {
+      const highlightSelector = `[title="${highlightName}"]`;
       const listWrapper = wrapper.find(List);
       const fadedItemsWrapper = wrapper.find(LegendItem).not(highlightSelector);
       const highlightItemWrapper = wrapper.find(LegendItem).filter(highlightSelector);
@@ -94,7 +94,7 @@ describe('Components|SmallMultiplesLegend', () => {
   describe('when only one data condition is provided', () => {
     const title = 'Title-A';
     const data = [{
-      id: 'Condition Title',
+      name: 'Condition Title',
       graphData: [{
         date: 2018,
         count: 12,
@@ -120,7 +120,7 @@ describe('Components|SmallMultiplesLegend', () => {
         const legendItemWrapper = wrapper.find(LegendItem);
 
         legendItemWrapper.simulate('click', eventFuncs);
-        expect(spy.calledOnceWith(data[0].id)).to.be.equal(true);
+        expect(spy.calledOnceWith(data[0].name)).to.be.equal(true);
       });
     };
 
@@ -132,11 +132,11 @@ describe('Components|SmallMultiplesLegend', () => {
           key: 'Enter',
           ...eventFuncs,
         });
-        expect(spy.calledOnceWith(data[0].id)).to.be.equal(true);
+        expect(spy.calledOnceWith(data[0].name)).to.be.equal(true);
       });
     };
 
-    describe('when no highlightID is provided', () => {
+    describe('when no highlightName is provided', () => {
       beforeEach(() => {
         wrapper = mount(<SmallMultiplesLegend className="anotherClass" title={title} data={data} onChange={spy} />);
         test.wrapper = wrapper;
@@ -151,8 +151,8 @@ describe('Components|SmallMultiplesLegend', () => {
       shouldCallOnChangeOnEnter();
     });
 
-    describe('when a highlightID is provided', () => {
-      const hightlightID = data[0].id;
+    describe('when a highlightName is provided', () => {
+      const highlightName = data[0].name;
 
       beforeEach(() => {
         wrapper = mount((
@@ -160,7 +160,7 @@ describe('Components|SmallMultiplesLegend', () => {
             title={title}
             data={data}
             onChange={spy}
-            highlightID={hightlightID}
+            highlightName={highlightName}
           />
         ));
         test.wrapper = wrapper;
@@ -169,7 +169,7 @@ describe('Components|SmallMultiplesLegend', () => {
       shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, null);
       shouldRenderTitle(title);
       shouldRenderItems(data, 345);
-      shouldRenderWithHighlight(hightlightID);
+      shouldRenderWithHighlight(highlightName);
       shouldNotAllListItem();
       shouldCallOnChangeOnClick();
       shouldCallOnChangeOnEnter();
@@ -179,7 +179,7 @@ describe('Components|SmallMultiplesLegend', () => {
   describe('when multiple data conditions are provided', () => {
     const title = 'ABC-TEST_123';
     const data = [{
-      id: 'ConditionTitle 1',
+      name: 'ConditionTitle 1',
       graphData: [{
         date: 2211,
         count: 7,
@@ -192,14 +192,14 @@ describe('Components|SmallMultiplesLegend', () => {
       }],
       color: 'white',
     }, {
-      id: 'another title',
+      name: 'another title',
       graphData: [{
         date: 2211,
         count: 1515,
       }],
       color: '#123456',
     }, {
-      id: 'OTHER_OTHER_TITLE_ABC',
+      name: 'OTHER_OTHER_TITLE_ABC',
       graphData: [{
         date: 2211,
         count: 0,
@@ -222,7 +222,7 @@ describe('Components|SmallMultiplesLegend', () => {
     };
 
     const shouldCallOnChangeWithNULLOnClick = () => {
-      it('should call the onChange function with the data ID on click', () => {
+      it('should call the onChange function with the data name on click', () => {
         const allLegendItemWrapper = wrapper.find(LegendItem).filter('[all=true]');
 
         allLegendItemWrapper.simulate('click', eventFuncs);
@@ -230,15 +230,15 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    const shouldCallOnChangeWithIDOnClick = () => {
-      it('should call the onChange function with the data ID on click', () => {
+    const shouldCallOnChangeWithNameOnClick = () => {
+      it('should call the onChange function with the data name on click', () => {
         const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([all=true])');
 
         for (let i = 0; i < legendItemsWrapper.length; i += 1) {
           const legendItemWrapper = legendItemsWrapper.at(i);
 
           legendItemWrapper.simulate('click', eventFuncs);
-          expect(spy.calledWith(data[i].id)).to.equal(true);
+          expect(spy.calledWith(data[i].name)).to.equal(true);
         }
 
         expect(spy.callCount).to.equal(data.length);
@@ -246,7 +246,7 @@ describe('Components|SmallMultiplesLegend', () => {
     };
 
     const shouldCallOnChangeWithNULLOnEnter = () => {
-      it('should call the onChange function with the data ID on click', () => {
+      it('should call the onChange function with null on click', () => {
         const allLegendItemWrapper = wrapper.find(LegendItem).filter('[all=true]');
 
         allLegendItemWrapper.simulate('keypress', {
@@ -257,8 +257,8 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     };
 
-    const shouldCallOnChangeWithIDOnEnter = () => {
-      it('should call the onChange function with the data ID on enter key press', () => {
+    const shouldCallOnChangeWithNameOnEnter = () => {
+      it('should call the onChange function with the data name on enter key press', () => {
         const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([all=true])');
 
         for (let i = 0; i < legendItemsWrapper.length; i += 1) {
@@ -268,14 +268,14 @@ describe('Components|SmallMultiplesLegend', () => {
             key: 'Enter',
             ...eventFuncs,
           });
-          expect(spy.calledWith(data[i].id)).to.be.equal(true);
+          expect(spy.calledWith(data[i].name)).to.be.equal(true);
         }
 
         expect(spy.callCount).to.equal(data.length);
       });
     };
 
-    describe('when no highlightID is provided', () => {
+    describe('when no highlightName is provided', () => {
       beforeEach(() => {
         wrapper = mount(<SmallMultiplesLegend className="abcd" title={title} data={data} onChange={spy} />);
         test.wrapper = wrapper;
@@ -287,13 +287,13 @@ describe('Components|SmallMultiplesLegend', () => {
       shouldRenderWithoutHighlight();
       shouldRenderTheAllItem();
       shouldCallOnChangeWithNULLOnClick();
-      shouldCallOnChangeWithIDOnClick();
+      shouldCallOnChangeWithNameOnClick();
       shouldCallOnChangeWithNULLOnEnter();
-      shouldCallOnChangeWithIDOnEnter();
+      shouldCallOnChangeWithNameOnEnter();
     });
 
-    describe('when a highlightID is provided', () => {
-      const hightlightID = data[2].id;
+    describe('when a highlightName is provided', () => {
+      const highlightName = data[2].name;
 
       beforeEach(() => {
         wrapper = mount((
@@ -302,7 +302,7 @@ describe('Components|SmallMultiplesLegend', () => {
             title={title}
             data={data}
             onChange={spy}
-            highlightID={hightlightID}
+            highlightName={highlightName}
           />
         ));
         test.wrapper = wrapper;
@@ -311,12 +311,12 @@ describe('Components|SmallMultiplesLegend', () => {
       shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, 'something123');
       shouldRenderTitle(title);
       shouldRenderItems(data, 1515);
-      shouldRenderWithHighlight(hightlightID);
+      shouldRenderWithHighlight(highlightName);
       shouldRenderTheAllItem();
       shouldCallOnChangeWithNULLOnClick();
-      shouldCallOnChangeWithIDOnClick();
+      shouldCallOnChangeWithNameOnClick();
       shouldCallOnChangeWithNULLOnEnter();
-      shouldCallOnChangeWithIDOnEnter();
+      shouldCallOnChangeWithNameOnEnter();
     });
   });
 });

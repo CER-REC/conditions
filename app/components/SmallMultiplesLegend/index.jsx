@@ -28,12 +28,12 @@ const SmallMultiplesLegend = (props) => {
   const maxCount = getMaxCount(props.data);
   const legendDataItems = props.data.map(conditionsData => (
     <LegendItem
-      key={conditionsData.id}
-      title={conditionsData.id}
+      key={conditionsData.name}
+      title={conditionsData.name}
       data={conditionsData.graphData}
       color={conditionsData.color}
       max={maxCount}
-      faded={props.highlightID && (conditionsData.id !== props.highlightID)}
+      faded={props.highlightName && (conditionsData.name !== props.highlightName)}
     />
   ));
   const onItemChange = (index) => {
@@ -50,13 +50,13 @@ const SmallMultiplesLegend = (props) => {
     legendDataItems.unshift((
       <LegendItem
         all
-        // "all" cannot be an ID in data
+        // "all" cannot be an name in data
         key="all"
         title={props.title}
         data={[]}
         color=""
         max={0}
-        faded={!!props.highlightID}
+        faded={!!props.highlightName}
       />
     ));
   }
@@ -65,7 +65,7 @@ const SmallMultiplesLegend = (props) => {
     // TODO: Update List properties when the vertical feature is implemented
     legendList = (
       <List
-        className={`${props.highlightID ? 'faded' : ''}`}
+        className={`${props.highlightName ? 'faded' : ''}`}
         items={legendDataItems}
         selected={0}
         onChange={onItemChange}
@@ -87,16 +87,16 @@ SmallMultiplesLegend.propTypes = {
   /** The data to render the stream graphs
       The items rendered in the provided order */
   data: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     graphData: PropTypes.arrayOf(PropTypes.shape({
       date: PropTypes.number.isRequired,
       count: PropTypes.number.isRequired,
     })).isRequired,
     color: PropTypes.string.isRequired,
   })).isRequired,
-  /** The ID of the data element to highlight */
-  highlightID: PropTypes.string,
-  /** A function that will receive an ID when a data item is selected
+  /** The name of the data element to highlight */
+  highlightName: PropTypes.string,
+  /** A function that will receive an name when a data item is selected
       or null if the all legend filter is selected */
   onChange: PropTypes.func.isRequired,
   /** Additional className to add to the component */
@@ -104,7 +104,7 @@ SmallMultiplesLegend.propTypes = {
 };
 
 SmallMultiplesLegend.defaultProps = {
-  highlightID: null,
+  highlightName: null,
   className: '',
 };
 

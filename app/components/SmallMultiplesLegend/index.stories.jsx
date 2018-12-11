@@ -8,7 +8,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
     <SmallMultiplesLegend
       title="Title"
       data={[{
-        id: 'Item Title 1',
+        name: 'Item Title 1',
         graphData: [{
           date: 2018,
           count: 1,
@@ -27,7 +27,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         }],
         color: 'red',
       }, {
-        id: 'Item Title 2',
+        name: 'Item Title 2',
         graphData: [{
           date: 2018,
           count: 43,
@@ -46,7 +46,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         }],
         color: 'blue',
       }, {
-        id: 'Item Title 3',
+        name: 'Item Title 3',
         graphData: [{
           date: 2018,
           count: 5,
@@ -56,7 +56,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         }],
         color: 'green',
       }, {
-        id: 'Item Title 5',
+        name: 'Item Title 5',
         graphData: [{
           date: 2018,
           count: 46,
@@ -66,14 +66,14 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         }],
         color: 'yellow',
       }]}
-      onChange={id => alert(id)}
+      onChange={name => alert(name)}
     />
   ))
   .add('highlight', () => (
     <SmallMultiplesLegend
       title="Title abc"
       data={[{
-        id: 'SomeTitle',
+        name: 'SomeTitle',
         graphData: [{
           date: 1997,
           count: 123,
@@ -86,7 +86,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         }],
         color: '#AA11AA',
       }, {
-        id: 'Highlight this',
+        name: 'Highlight this',
         graphData: [{
           date: 1997,
           count: 97,
@@ -96,7 +96,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         }],
         color: '#11AA11',
       }]}
-      onChange={id => alert(id)}
+      onChange={name => alert(name)}
       highlightID="Highlight this"
     />
   ));
