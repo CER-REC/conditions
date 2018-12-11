@@ -17,6 +17,7 @@ const Streamgraph = (props) => {
   const date = props.projectData.map(k => k.graphData.map(v => v.date));
   const dateConcat = [].concat(...date);
 
+
   const minDateValue = Math.min(...dateConcat);
   const maxDateValue = Math.max(...dateConcat);
 
