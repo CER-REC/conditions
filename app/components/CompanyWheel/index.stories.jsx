@@ -5,17 +5,21 @@ import ReadMe from './README.md';
 
 import { locationWheelData, companyWheelData } from './randomDataSample';
 
-const rotation = 90;
-
 const props = {
   ringType: 'normal',
-  rotation,
 };
+
 
 storiesForComponent('Components|CompanyWheel', module, ReadMe)
   .add('default', () => (
-    <CompanyWheel {...props} itemsData={companyWheelData} />
+    <div>
+      <CompanyWheel {...props} itemsData={companyWheelData} />
+    </div>
   ))
   .add('location props', () => (
-    <CompanyWheel {...props} itemsData={locationWheelData} />
+    <CompanyWheel
+      {...props}
+      ringType="location"
+      itemsData={locationWheelData}
+  />
   ));

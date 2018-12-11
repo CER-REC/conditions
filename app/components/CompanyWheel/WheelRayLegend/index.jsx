@@ -5,7 +5,7 @@ import './styles.scss';
 const WheelRayLegend = ({
   ringType, legendPositionArray, numOfItems, rotation,
 }) => {
-  const availDegreesForPlotting = 310;
+  const availDegreesForPlotting = 360;
   const degreesPerItem = availDegreesForPlotting / numOfItems;
 
   let positionDegree = 0;
@@ -21,13 +21,13 @@ const WheelRayLegend = ({
     let objectToRender;
 
     const position = nextPosition(legendObj.count);
-    const stripePosition = rotation;
+    const stripePosition = (rotation + 90) % 360;
 
     if (position > (stripePosition - 20 - degreesPerItem)
       && position < (stripePosition + 20 + degreesPerItem)) {
       objectToRender = (
-        <g transform={`translate(371 209) rotate(${stripePosition}, 0, 245)`} >
-          <text id="LetterLegend" className="textLegend" transform="rotate(270, 0, 245)">
+        <g transform={`translate(371 209) rotate(${position}, 0, 245)`} >
+          <text id="LetterLegend" className="textLegend chosen" transform="rotate(270, 0, 245) ">
             RAWR
           </text>
         </g>);
@@ -44,11 +44,11 @@ const WheelRayLegend = ({
 
   if (!ringType) { return null; }
   return (
-    <g>
+    <React.Fragment>
       {
         legendPositionArray.map(legendObj => legendRenderer(legendObj))
       }
-    </g>
+    </React.Fragment>
   );
 };
 

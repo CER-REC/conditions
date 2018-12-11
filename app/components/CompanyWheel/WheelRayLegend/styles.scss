@@ -1,3 +1,10 @@
 @import "../../../styles/fontVariables.scss";
 
 
+.wheelRayLegendContainer {
+  transform: rotate(90deg);
+
+  .chosen{
+    fill: red;
+  }
+}

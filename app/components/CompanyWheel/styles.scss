@@ -1,12 +1,24 @@
 @import "../../styles/fontVariables.scss";
 
 .wheelContainer{
-  padding: 50px;
-  height: 500px;
-  width:500px;
-  transform: rotate(90deg);
+  height: 700px;
+  position: relative;
   
-  .wheelRayLegendContainer {
+  .movingContainer{
+    height: 500px;
+    width:500px;
     transform: rotate(90deg);
+    position: absolute;
+
+    
+
   }
+  
+  .pullToSpin{
+    position: absolute;
+    top: 80px;
+    right: -30px;
+    transform: rotate(45deg);        
+  }
+  
 }
