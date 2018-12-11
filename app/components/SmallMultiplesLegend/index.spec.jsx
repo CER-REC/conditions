@@ -23,7 +23,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
   const shouldRenderItems = (data, max) => {
     it('should render the data as LegendItem components in the List component', () => {
-      const listItemsWrapper = wrapper.find(List).find(LegendItem).not('[data=null]');
+      const listItemsWrapper = wrapper.find(List).find(LegendItem).not('[all=true]');
 
       for (let i = 0; i < data.length; i += 1) {
         const listItemWrapper = listItemsWrapper.at(i);
@@ -109,7 +109,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldNotAllListItem = () => {
       it('should not render a "All" list item', () => {
-        expect(wrapper.find(LegendItem).filter('[data=null]')).to.have.lengthOf(0);
+        expect(wrapper.find(LegendItem).filter('[all=true]')).to.have.lengthOf(0);
         expect(wrapper.find(LegendItem)).to.have.lengthOf(1);
       });
     };
@@ -208,19 +208,18 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldRenderTheAllItem = () => {
       it('should render the all LegendItem component', () => {
-        const firstListItem = wrapper.find(List).prop('items')[0];
+        const firstItemWrapper = wrapper.find(LegendItem).at(0);
 
-        expect(firstListItem.type).to.equal(LegendItem);
         // TODO: Redo when translations are implemented
-        expect(firstListItem.props.title).to.contain('All');
-        expect(firstListItem.props.data).to.be.equal(null);
+        expect(firstItemWrapper.text()).to.contain('All');
+        expect(firstItemWrapper.text()).to.contain(title);
         expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
       });
     };
 
     const shouldCallOnChangeWithNULLOnClick = () => {
       it('should call the onChange function with the data ID on click', () => {
-        const allLegendItemWrapper = wrapper.find(LegendItem).filter('[data=null]');
+        const allLegendItemWrapper = wrapper.find(LegendItem).filter('[all=true]');
 
         allLegendItemWrapper.simulate('click', eventFuncs);
         expect(spy.calledOnceWith(null)).to.equal(true);
@@ -229,7 +228,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldCallOnChangeWithIDOnClick = () => {
       it('should call the onChange function with the data ID on click', () => {
-        const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([data=null])');
+        const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([all=true])');
 
         for (let i = 0; i < legendItemsWrapper.length; i += 1) {
           const legendItemWrapper = legendItemsWrapper.at(i);
@@ -244,7 +243,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldCallOnChangeWithNULLOnEnter = () => {
       it('should call the onChange function with the data ID on click', () => {
-        const allLegendItemWrapper = wrapper.find(LegendItem).filter('[data=null]');
+        const allLegendItemWrapper = wrapper.find(LegendItem).filter('[all=true]');
 
         allLegendItemWrapper.simulate('keypress', {
           key: 'Enter',
@@ -256,7 +255,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldCallOnChangeWithIDOnEnter = () => {
       it('should call the onChange function with the data ID on enter key press', () => {
-        const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([data=null])');
+        const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([all=true])');
 
         for (let i = 0; i < legendItemsWrapper.length; i += 1) {
           const legendItemWrapper = legendItemsWrapper.at(i);

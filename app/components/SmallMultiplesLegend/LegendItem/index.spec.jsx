@@ -39,7 +39,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     const title = 'Test Title';
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem className="test" title={title} />);
+      wrapper = shallow(<LegendItem className="test" title={title} data={[]} color="" max={0} />);
       test.wrapper = wrapper;
     });
 
@@ -53,7 +53,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     const title = '123 ABC test_title';
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem title={title} faded />);
+      wrapper = shallow(<LegendItem title={title} data={[]} color="" max={0} faded />);
       test.wrapper = wrapper;
     });
 
@@ -77,7 +77,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     }];
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem className="testclass" title={title} data={data} />);
+      wrapper = shallow(<LegendItem className="testclass" title={title} data={data} color="red" max={500} />);
       test.wrapper = wrapper;
     });
 
@@ -101,7 +101,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     }];
 
     beforeEach(() => {
-      wrapper = shallow(<LegendItem className="myClass" title={title} data={data} faded />);
+      wrapper = shallow(<LegendItem className="myClass" title={title} data={data} color="#AACC11" max={0} faded />);
       test.wrapper = wrapper;
     });
 
