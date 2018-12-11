@@ -51,7 +51,7 @@ const projectData = [
   },
 ];
 
-storiesForComponent('Components|Streamgraph', module, ReadMe)
+storiesForComponent('Components|StreamGraph', module, ReadMe)
   .add('With values', () => (
     <Streamgraph
       projectData={projectData}

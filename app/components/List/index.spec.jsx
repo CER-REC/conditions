@@ -22,8 +22,6 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} onChange={noop} />);
     });
 
-
-    
     it('should render', () => {
       expect(wrapper.type()).to.equal('div');
     });

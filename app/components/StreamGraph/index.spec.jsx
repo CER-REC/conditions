@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 import Streamgraph, { roundDateLabel, numOfConditionsLabel } from './';
 
-describe('Components|Streamgraph', () => {
+describe('Components|StreamGraph', () => {
   const projectData = [
     {
       id: 'themeOne',
