@@ -41,7 +41,8 @@
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
     "reselect": "^3.0.1",
-    "reselect-tools": "0.0.6"
+    "reselect-tools": "0.0.6",
+    "victory": "^31.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

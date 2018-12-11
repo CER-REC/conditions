@@ -5,13 +5,7 @@ import LegendItem from './LegendItem';
 import './styles.scss';
 
 // TODO: This is a mock, replace with the translation function
-const t = (searchList) => {
-  if (searchList[1] === 'all') {
-    return `All ${searchList[2]}s`;
-  }
-
-  return searchList[2];
-};
+const t = searchList => searchList[2];
 
 const getMaxCount = (data) => {
   const getCount = graphDataItem => graphDataItem.count;
@@ -37,6 +31,7 @@ const SmallMultiplesLegend = (props) => {
       key={conditionsData.id}
       title={conditionsData.id}
       data={conditionsData.graphData}
+      color={conditionsData.color}
       max={maxCount}
       faded={props.highlightID && (conditionsData.id !== props.highlightID)}
     />
@@ -54,9 +49,13 @@ const SmallMultiplesLegend = (props) => {
   if (legendDataItems.length > 1) {
     legendDataItems.unshift((
       <LegendItem
+        all
         // "all" cannot be an ID in data
         key="all"
-        title={t(['smallMultiplesLegend', 'all', props.title])}
+        title={props.title}
+        data={[]}
+        color=""
+        max={0}
         faded={!!props.highlightID}
       />
     ));
@@ -76,7 +75,7 @@ const SmallMultiplesLegend = (props) => {
 
   return (
     <div className={`SmallMultiplesLegend ${props.className}`}>
-      <span>{t(['smallMultiplesLegend', 'title', props.title])}</span>
+      <span>{`${t(['smallMultiplesLegend', 'title', props.title])}:`}</span>
       {legendList}
     </div>
   );
@@ -93,6 +92,7 @@ SmallMultiplesLegend.propTypes = {
       date: PropTypes.number.isRequired,
       count: PropTypes.number.isRequired,
     })).isRequired,
+    color: PropTypes.string.isRequired,
   })).isRequired,
   /** The ID of the data element to highlight */
   highlightID: PropTypes.string,

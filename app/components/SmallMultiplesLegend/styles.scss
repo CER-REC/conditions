@@ -3,9 +3,17 @@
 }
 
 .SmallMultiplesLegend {
+  text-align: left;
+
   .List.faded {
     button {
       @extend %faded;
     }
+  }
+
+  .List .selected .LegendItem {
+    font-weight: bold;
+    border: 1px solid #D1057A;
+    background-color: white;
   }
 }

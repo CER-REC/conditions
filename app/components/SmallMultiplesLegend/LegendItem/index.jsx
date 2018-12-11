@@ -1,28 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { VictoryArea } from 'victory';
 import './styles.scss';
 
-const LegendItem = props => (
-  <div className={`LegendItem ${props.className} ${props.faded ? 'faded' : ''}`}>
-    <span>[TODO: Change to graph]</span>
-    <span>{props.title}</span>
-  </div>
-);
+// TODO: This is a mock, replace with the translation function
+const t = (searchList) => {
+  if (searchList[1] === 'all') {
+    return `All ${searchList[2]}s`;
+  }
+
+  return searchList[2];
+};
+
+const LegendItem = (props) => {
+  let stream;
+  const type = props.all ? 'all' : 'title';
+
+  if (!props.all) {
+    stream = (
+      <div className="stream">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <VictoryArea
+            data={props.data.map(condition => ({ x: condition.date, y: condition.count }))}
+            maxDomain={{ y: props.max }}
+            style={{ data: { fill: props.color } }}
+            interpolation="natural"
+            standalone={false}
+            width={100}
+            height={100}
+            padding={0}
+          />
+        </svg>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`LegendItem ${props.className} ${props.all ? 'all' : ''} ${props.faded ? 'faded' : ''}`}>
+      {stream}
+      <span>{t(['smallMultiplesLegend', type, props.title])}</span>
+    </div>
+  );
+};
 
 LegendItem.propTypes = {
   /** The text beside the stream graph */
   title: PropTypes.string.isRequired,
   /** The data to render the stream graph */
-  // TODO: Remove ESLint suppression when the graph feature is implemented
-  // eslint-disable-next-line react/no-unused-prop-types
   data: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.number.isRequired,
     count: PropTypes.number.isRequired,
-  })),
+  })).isRequired,
+  /** The color of the stream graph */
+  color: PropTypes.string.isRequired,
   /** The y-axis height to set the graph */
-  // TODO: Remove ESLint suppression when the graph feature is implemented
-  // eslint-disable-next-line react/no-unused-prop-types
-  max: PropTypes.number,
+  max: PropTypes.number.isRequired,
+  /** The flag to determine if the component renders as a all filter item */
+  all: PropTypes.bool,
   /** The flag to determine if the component renders with the faded class */
   faded: PropTypes.bool,
   /** Additional className to add to the component */
@@ -30,8 +69,7 @@ LegendItem.propTypes = {
 };
 
 LegendItem.defaultProps = {
-  data: null,
-  max: null,
+  all: false,
   faded: false,
   className: '',
 };

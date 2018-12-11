@@ -1,7 +1,25 @@
 @import '../styles.scss';
 
 .LegendItem {
+  height: 2em;
+  padding: 0.25em;
+
+  &.all {
+    text-align: center;
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
   &.faded {
     @extend %faded;
+  }
+
+  .stream {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    padding-right: 0.5em;
   }
 }
