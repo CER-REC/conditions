@@ -14,11 +14,18 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
           count: 1,
         }, {
           date: 2019,
-          count: 2,
+          count: 30,
         }, {
           date: 2020,
+          count: 20,
+        }, {
+          date: 2021,
+          count: 84,
+        }, {
+          date: 2022,
           count: 3,
         }],
+        color: 'red',
       }, {
         id: 'Item Title 2',
         graphData: [{
@@ -30,16 +37,34 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         }, {
           date: 2020,
           count: 56,
+        }, {
+          date: 2021,
+          count: 1,
+        }, {
+          date: 2022,
+          count: 56,
         }],
+        color: 'blue',
       }, {
         id: 'Item Title 3',
         graphData: [{
           date: 2018,
           count: 5,
         }, {
-          date: 2020,
+          date: 2022,
           count: 5,
         }],
+        color: 'green',
+      }, {
+        id: 'Item Title 5',
+        graphData: [{
+          date: 2018,
+          count: 46,
+        }, {
+          date: 2022,
+          count: 4,
+        }],
+        color: 'yellow',
       }]}
       onChange={id => alert(id)}
     />
@@ -59,6 +84,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
           date: 1999,
           count: 32,
         }],
+        color: '#AA11AA',
       }, {
         id: 'Highlight this',
         graphData: [{
@@ -68,6 +94,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
           date: 1999,
           count: 56,
         }],
+        color: '#11AA11',
       }]}
       onChange={id => alert(id)}
       highlightID="Highlight this"

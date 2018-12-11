@@ -17,21 +17,34 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
         date: 2017,
         count: 3,
       }]}
+      color="green"
+      max={5}
+    />
+  ))
+  .add('all', () => (
+    <LegendItem
+      title="Title"
+      data={[]}
+      color=""
+      max={0}
+      all
     />
   ))
   .add('faded', () => (
     <LegendItem
       title="Another"
       data={[{
-        date: 100,
+        date: 2000,
         count: 5,
       }, {
-        date: 200,
+        date: 2001,
         count: 2,
       }, {
-        date: 300,
+        date: 2002,
         count: 55,
       }]}
+      color="#D1057A"
+      max={55}
       faded
     />
   ));
