@@ -6,7 +6,9 @@ const FeatureFlag = props => (
     className="FeatureFlag"
     style={{ backgroundColor: props.color }}
     title={`${props.chartType} - ${props.name} - ${props.count}`}
-  />
+  >
+    &nbsp;
+  </div>
 );
 
 FeatureFlag.propTypes = {

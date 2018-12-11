@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from '../List/';
+import ProjectChart from './ProjectChart';
 
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
@@ -17,6 +18,8 @@ class ProjectMenu extends React.PureComponent {
     selectedProjectID: PropTypes.number.isRequired,
     /** The method tracking which project is currently being selected */
     onChange: PropTypes.func.isRequired,
+    /** The selected feature */
+    selectedFeature: PropTypes.string.isRequired,
   }
 
   getListItems = () => {
@@ -39,7 +42,15 @@ class ProjectMenu extends React.PureComponent {
   render() {
     const listItems = this.getListItems();
     const renderedItems = listItems
-      .map(project => <p key={project.id}>{project.id}</p>);
+      .map(project => (
+        <ProjectChart
+          key={project.id}
+          chartType={this.props.selectedFeature}
+          graphData={project.graphData}
+          projectName={project.name}
+          selected={project.id === this.props.selectedProjectID}
+        />
+      ));
     const selected = listItems
       .findIndex(project => project.id === this.props.selectedProjectID);
 

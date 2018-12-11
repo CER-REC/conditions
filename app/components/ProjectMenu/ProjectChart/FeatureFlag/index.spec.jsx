@@ -8,10 +8,17 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
   describe('with default props', () => {
     const color = 'Rainbow';
     const count = 5;
+    const chartType = 'Theme';
+    const name = 'Damage Prevention';
 
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<FeatureFlag color={color} count={count} />);
+      wrapper = shallow(<FeatureFlag
+        chartType={chartType}
+        color={color}
+        count={count}
+        name={name}
+      />);
     });
 
     it('should render', () => {

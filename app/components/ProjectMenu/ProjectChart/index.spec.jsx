@@ -22,12 +22,17 @@ const chartData = [
 ];
 
 const chartType = 'Theme';
+const projectName = 'Project Name';
 
 describe('Components|ProjectMenu/ProjectChart', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectChart chartType={chartType} graphData={chartData} />);
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+      />);
     });
 
     it('should render', () => {
@@ -42,11 +47,30 @@ describe('Components|ProjectMenu/ProjectChart', () => {
   describe('when Theme is the selected feature', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectChart chartType={chartType} graphData={chartData} />);
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+      />);
     });
 
     it('should render 14 FeatureFlags', () => {
       expect(wrapper.find('FeatureFlag')).to.have.a.lengthOf(14);
+    });
+  });
+
+  describe('when the chart is selected', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+        selected
+      />);
+    });
+    it('should add the className "selected"', () => {
+      expect(wrapper.is('div.selected')).to.equal(true);
     });
   });
 });

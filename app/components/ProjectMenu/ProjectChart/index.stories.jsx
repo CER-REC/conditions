@@ -14,18 +14,21 @@ const graphData = [
 ];
 
 const chartType = 'Theme';
+const projectName = 'Project Name';
 
 storiesForComponent('Components|ProjectMenu/ProjectChart', module, ReadMe)
   .add('With legend items', () => (
     <ProjectChart
       graphData={graphData}
       chartType={chartType}
+      projectName={projectName}
     />
   ))
   .add('Empty graphData', () => (
     <ProjectChart
       graphData={[]}
       chartType={chartType}
+      projectName={projectName}
     />
   ));
 

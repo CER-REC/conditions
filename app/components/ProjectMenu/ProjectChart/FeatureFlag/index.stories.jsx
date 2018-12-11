@@ -5,6 +5,6 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|ProjectMenu/ProjectChart/FeatureFlag', module, ReadMe)
   .add('Default props', () => (
-    <FeatureFlag color="pink" count={18} />
+    <FeatureFlag color="pink" count={18} chartType="Theme" />
   ));
 
