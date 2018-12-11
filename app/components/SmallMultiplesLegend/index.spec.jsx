@@ -105,6 +105,7 @@ describe('Components|SmallMultiplesLegend', () => {
         date: 2020,
         count: 345,
       }],
+      color: 'black',
     }];
 
     const shouldNotAllListItem = () => {
@@ -189,12 +190,14 @@ describe('Components|SmallMultiplesLegend', () => {
         date: 2233,
         count: 9,
       }],
+      color: 'white',
     }, {
       id: 'another title',
       graphData: [{
         date: 2211,
         count: 1515,
       }],
+      color: '#123456',
     }, {
       id: 'OTHER_OTHER_TITLE_ABC',
       graphData: [{
@@ -204,6 +207,7 @@ describe('Components|SmallMultiplesLegend', () => {
         date: 2233,
         count: 1,
       }],
+      color: 'red',
     }];
 
     const shouldRenderTheAllItem = () => {
