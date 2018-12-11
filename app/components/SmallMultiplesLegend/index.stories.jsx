@@ -97,6 +97,6 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
         color: '#11AA11',
       }]}
       onChange={name => alert(name)}
-      highlightID="Highlight this"
+      highlightName="Highlight this"
     />
   ));
