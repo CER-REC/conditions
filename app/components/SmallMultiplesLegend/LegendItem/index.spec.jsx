@@ -12,13 +12,13 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
   const shouldRenderTitle = (title) => {
     it('should render the title', () => {
+      expect(wrapper.find('.stream')).to.have.lengthOf(1);
       expect(wrapper.text()).to.contain(title);
     });
   };
 
   const shouldNotRenderGraph = () => {
     it('should not render the graph', () => {
-      expect(wrapper.find('.stream')).to.have.lengthOf(0);
       expect(wrapper.find(VictoryArea)).to.have.lengthOf(0);
     });
   };
@@ -27,7 +27,6 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     it('should render the graph', () => {
       const victoryAreaWrapper = wrapper.find(VictoryArea);
 
-      expect(wrapper.find('.stream')).to.have.lengthOf(1);
       expect(victoryAreaWrapper).to.have.lengthOf(1);
       expect(victoryAreaWrapper.prop('maxDomain')).to.deep.equal({ y: max });
       expect(victoryAreaWrapper.prop('style')).to.deep.equal({ data: { fill: color } });

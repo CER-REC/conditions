@@ -18,31 +18,31 @@ const LegendItem = (props) => {
 
   if (!props.all) {
     stream = (
-      <div className="stream">
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <VictoryArea
-            data={props.data.map(condition => ({ x: condition.date, y: condition.count }))}
-            maxDomain={{ y: props.max }}
-            style={{ data: { fill: props.color } }}
-            interpolation="natural"
-            standalone={false}
-            width={100}
-            height={100}
-            padding={0}
-          />
-        </svg>
-      </div>
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <VictoryArea
+          data={props.data.map(condition => ({ x: condition.date, y: condition.count }))}
+          maxDomain={{ y: props.max }}
+          style={{ data: { fill: props.color } }}
+          interpolation="natural"
+          standalone={false}
+          width={100}
+          height={100}
+          padding={0}
+        />
+      </svg>
     );
   }
 
   return (
     <div className={`LegendItem ${props.className} ${props.all ? 'all' : ''} ${props.faded ? 'faded' : ''}`}>
-      {stream}
+      <span className="stream">
+        {stream}
+      </span>
       <span>{t(['smallMultiplesLegend', type, props.title])}</span>
     </div>
   );
