@@ -58,7 +58,8 @@ storiesForComponent('Component|CircleContainer', module, ReadMe)
         >
         &nbsp;
         </CircleContainer>
-        <style dangerouslySetInnerHTML={{__html: `.CircleContainer.blue { background: blue } `}} />
+        <style dangerouslySetInnerHTML={
+          {__html: `.CircleContainer.blue { background: blue } `}} />
       </React.Fragment>
     );
   })
