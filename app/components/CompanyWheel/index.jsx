@@ -58,16 +58,16 @@ class CompanyWheel extends React.Component {
                     </g>
                       <Ring ringType={this.props.ringType} />
                       <Spring
-                        from={{ rayRotation: this.state.oldRayRotation}}
-                        to={{ rayRotation: this.state.newRayRotation}}>
-                      { props =>
-                          <WheelRayLegend
-                            rotation= {props.rayRotation}
-                            ringType={this.props.ringType}
-                            legendPositionArray={this.props.itemsData}
-                            numOfItems={this.numOfLegendItems}
-                          />
-                      }
+                        to={{ rayRotation: this.state.newRayRotation}}
+                      >
+                        { props =>
+                            <WheelRayLegend
+                              rotation= {props.rayRotation}
+                              ringType={this.props.ringType}
+                              legendPositionArray={this.props.itemsData}
+                              numOfItems={this.numOfLegendItems}
+                            />
+                        }
                       </Spring>
                   </g>
                 </g>

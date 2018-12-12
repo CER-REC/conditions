@@ -1,30 +1,20 @@
-# WheelLegend
+# WheelRayLegend
 
 TODO: Fix overlapping letters
 
-The WheelLegend component is part of the Company Wheel component described in view 2. It renders the alphabetical lettes, or the provinces spaced as prescribed in the design document. This component is responsible for calculating the spacing between the letters and setting the divisors on the necessary places.
+TODO: Fix reservation of the 90 degree area for stripe.
+
+TODO control rerendering of the specific legends so that the performance is better
+
+The WheelLegend component is part of the Company Wheel component described in view 2. It renders the alphabetical lettes, or the provinces spaced as prescribed in the design document. This component is responsible for calculating the spacing between the letters.
 
 ## Interaction Requirements
 
-TODO: Explain interaction requirements, mentioning differences for cursor, touch,
-and keyboard navigation.
+Though most of the interaction is handled by the parent, the WheelRayLegend component ensures the reservation of the user perceived 90 degree position. 
 
 ## Accessibility Requirements
 
 TODO: Explain desired accessibility support, and provide table of currently
 implemented accessibility with table of automated accessibility test results.
 
-## Analytics Requirements
-
-TODO: Explain what analytics events should be fired from this component, and
-provide table of currently implemented analytics events with table of automated
-analytics test results.
-
-## Unit Testing
-
-TODO: Provide table of automated unit test results and code coverage metrics.
-
-## Examples
-
-TODO: Implement examples of different implementations with sandbox for editing
-properties on the fly.
+TODO: reader for the legend?
