@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import ReadMe from './README.md';
@@ -49,20 +50,19 @@ storiesForComponent('Component|CircleContainer', module, ReadMe)
     &nbsp;
     </CircleContainer>
   ))
-  .add('with prop: className', () => {
-    return (
-      <React.Fragment>
-        <CircleContainer
-          size="24px"
-          className="blue"
-        >
+  .add('with prop: className', () => (
+    <React.Fragment>
+      <CircleContainer
+        size="24px"
+        className="blue"
+      >
         &nbsp;
-        </CircleContainer>
-        <style dangerouslySetInnerHTML={
-          {__html: `.CircleContainer.blue { background: blue } `}} />
-      </React.Fragment>
-    );
-  })
+      </CircleContainer>
+      <style dangerouslySetInnerHTML={
+        { __html: '.CircleContainer.blue { background: blue } ' }}
+      />
+    </React.Fragment>
+  ))
   .add('with prop: disabled', () => (
     <CircleContainer
       size="24px"
