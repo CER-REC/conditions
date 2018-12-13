@@ -6,18 +6,13 @@ import FeatureFlag from './';
 
 describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
   describe('with default props', () => {
-    const color = 'Rainbow';
-    const count = 5;
-    const chartType = 'Theme';
-    const name = 'Damage Prevention';
-
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<FeatureFlag
-        chartType={chartType}
-        color={color}
-        count={count}
-        name={name}
+        chartType="Theme"
+        color="purple"
+        count={5}
+        name="Damage Prevention"
       />);
     });
 
@@ -27,6 +22,21 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
 
     it('should have a class of FeatureFlag', () => {
       expect(wrapper.is('div.FeatureFlag')).to.equal(true);
+    });
+  });
+
+  describe('with 10 or more conditions', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<FeatureFlag
+        chartType="Theme"
+        color="green"
+        count={15}
+        name="Environmental Protection"
+      />);
+    });
+    it('should have a FlagTip', () => {
+      expect(wrapper.find('.FlagTip').type()).to.equal('div');
     });
   });
 });

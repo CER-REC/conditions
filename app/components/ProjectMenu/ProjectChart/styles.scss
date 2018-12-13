@@ -1,0 +1,26 @@
+.ProjectChart {
+  width: 50px;
+  &.selected {
+    width: 100px;
+    .FlagWrapper {
+      height: 300px;
+      width: 30px;
+      background-color: #e2dfdf;
+      margin: 0 auto;
+      padding-top: 10px;
+      padding-left: 15px;
+    }
+  }
+
+  .FlagWrapper {
+    height: 300px;
+    width: 2px;
+    background-color: lightgrey;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+}

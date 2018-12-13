@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FeatureFlag from './FeatureFlag';
 
+import './styles.scss';
+
 const ProjectChart = props => (
   <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
-    <span>{props.graphData.length}</span>
-    { props.graphData.map(condition => (
-      <FeatureFlag
-        key={condition.name}
-        name={condition.name}
-        count={condition.count}
-        color={condition.color}
-        chartType={props.chartType}
-      />
-    ))}
-    <span>{props.projectName}</span>
+    <p>{props.graphData.length}</p>
+    <div className="FlagWrapper">
+      { props.graphData.map(condition => (
+        <FeatureFlag
+          key={condition.name}
+          name={condition.name}
+          count={condition.count}
+          color={condition.color}
+          chartType={props.chartType}
+        />
+      ))}
+    </div>
+    <p>{props.projectName}</p>
   </div>
 );
 

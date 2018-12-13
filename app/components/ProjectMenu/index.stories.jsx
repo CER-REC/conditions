@@ -54,6 +54,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectData={projectData}
       selectedProjectID={selectedProjectID}
       onChange={() => {}}
+      selectedFeature="Theme"
     />
   ));
 
