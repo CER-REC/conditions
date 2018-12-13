@@ -17,7 +17,7 @@ parent's SCSS define a new style. The example below shows that the parent's
 SCSS implements the style and passes the selector. 
 
 Note: when using the props elevated or disabled they booleans and not string 
-even though the prop is evaluated to true of false, notice they dont have 
+even though the prop is evaluated to true of false, notice they don't have 
 quotations. I thought this was an interesting.
 
 ```  
