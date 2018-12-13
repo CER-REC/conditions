@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VictoryAxis, VictoryArea, VictoryStack, VictoryChart } from 'victory';
+import {
+  VictoryAxis,
+  VictoryArea,
+  VictoryStack,
+  VictoryChart,
+} from 'victory';
 
 import './styles.scss';
 
@@ -23,24 +28,35 @@ class StreamGraph extends React.PureComponent {
   control() {
     const { x, y } = this.props;
     return (
-      <div className="streamgraph-control">
-        <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <text x="15" y="15">conditions</text>
-          <line
-            strokeDasharray="10, 5"
-            x1="20"
-            x2="20"
-            y1="20"
-            y2="130"
-            stroke="magenta"
-            strokeWidth="2"
-            transform="scale(2)"
-          />
-          <path
-            d="M 100 100 L 300 100 L 200 300 z"
-            fill="magenta"
-            transform="scale(0.2)"
-          />
+      <div
+        className="streamgraph-control"
+        style={{
+          position: 'absolute',
+          zIndex: 9,
+          marginTop: '-485px',
+          marginLeft: '300px',
+          height: '100%',
+        }}
+      >
+        <svg height="400px">
+          <g transform="translate(30, 30)">
+            <text x="15" y="15">conditions</text>
+            <line
+              strokeDasharray="10, 5"
+              x1="20"
+              x2="20"
+              y1="20"
+              y2="330"
+              stroke="magenta"
+              strokeWidth="2"
+              transform="scale(2)"
+            />
+            <path
+              d="M 100 100 L 300 100 L 200 300 z"
+              fill="magenta"
+              transform="scale(0.2)"
+            />
+          </g>
         </svg>
       </div>
     );
@@ -64,7 +80,7 @@ class StreamGraph extends React.PureComponent {
     return streamLayers;
   }
 
-  render() {
+  chart() {
     const numOfConditions = this.props.projectData.map(k => k.graphData.map(v => v.count));
     const numOfConditionsConcat = [].concat(...numOfConditions);
 
@@ -86,28 +102,33 @@ class StreamGraph extends React.PureComponent {
 
     conditionDates = Object.values(conditionDates);
     const maxConditionValue = Math.max(...conditionDates);
+    return (
+      <VictoryChart>
+        <VictoryAxis
+          dependentAxis
+          label="Number of Conditions"
+          tickValues={[minConditionValue, maxConditionValue]}
+          className="axis-label"
+        />
+        <VictoryAxis
+          label="Effective Date"
+          tickFormat={roundDateLabel}
+          className="axis-label"
+          domain={[minDateValue, maxDateValue]}
+        />
+        <VictoryStack>
+          {this.streamLayers()}
+        </VictoryStack>
+      </VictoryChart>
+    );
+  }
 
+  render() {
     return (
       <div className="streamgraph">
-        {this.control()}
         <h1>Themes Across All Conditions</h1>
-        <VictoryChart>
-          <VictoryAxis
-            dependentAxis
-            label="Number of Conditions"
-            tickValues={[minConditionValue, maxConditionValue]}
-            className="axis-label"
-          />
-          <VictoryAxis
-            label="Effective Date"
-            tickFormat={roundDateLabel}
-            className="axis-label"
-            domain={[minDateValue, maxDateValue]}
-          />
-          <VictoryStack>
-            {this.streamLayers()}
-          </VictoryStack>
-        </VictoryChart>
+        {this.chart()}
+        {this.control()}
       </div>
     );
   }

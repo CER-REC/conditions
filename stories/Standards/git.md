@@ -10,6 +10,17 @@ cycle, we have not found a need to do a release branch. Instead, we cut releases
 directly from development, and fix any bugs in that release in the next minor
 release from development. All other Git Flow processes can be followed as normal.
 
+### Branch Naming Guidelines
+* Start with the primary JIRA ticket number if applicable
+* Lowercase
+* Dashes in place of space
+* Brief description of branch (preferably 5 words or less)
+
+```
+feature/1234-example-branch-name
+bugfix/5678-storybook-info-scrolls-unexpectedly
+```
+
 ## Commit Messages
 
 Commit messages serve multiple purposes, but providing a good summary of changes

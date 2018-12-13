@@ -1,25 +1,49 @@
 @import "../../styles/fontVariables.scss";
+@import "../../styles/colors.scss";
 
-.TrendButton {
+$trends-overlay-button-color: $general-typography-links2;
+
+.trendButton {
   padding: 0;
   border: none;
-  position: relative;
   cursor: pointer;
+  left: 35%;
+  top: 3%;
+  position: absolute;
 
-  > img {
-    display: block;
-    width: 300px;
-    height: 72px;
-  }
+  button {
+    background-color: transparent;
+    border-color: transparent;
 
-  > span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 200px;
-    text-align: left;
-    padding: 8px 0 8px 12px;
-    font-family: $fira-sans-condensed;
-    font-size: 24px;
+    img {
+      display: block;
+      height: 60px;
+      width: 300px;
+    }
+
+    .buttonText > span {
+      position: absolute;
+      width: 200px;
+      left: 3%;
+      top: 0px;
+      text-align: left;
+      padding: 2px 4px 0px 20px;
+      font-family: $fira-sans-condensed;
+      font-size: 24px;
+    }
+
+    .streamGraphBackground {
+      display: block;
+      height: 60px;
+      width: 300px;
+      border: 1px solid $trends-overlay-button-color;
+      svg {
+        height: 40px;
+        position: relative;
+        left: 30%;
+        top: 0;
+        fill: $trends-overlay-button-color;
+      }
+    }
   }
 }
