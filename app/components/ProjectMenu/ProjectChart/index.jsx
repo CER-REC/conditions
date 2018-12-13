@@ -4,23 +4,31 @@ import FeatureFlag from './FeatureFlag';
 
 import './styles.scss';
 
-const ProjectChart = props => (
-  <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
-    <p>{props.graphData.length}</p>
-    <div className="FlagWrapper">
-      { props.graphData.map(condition => (
-        <FeatureFlag
-          key={condition.name}
-          name={condition.name}
-          count={condition.count}
-          color={condition.color}
-          chartType={props.chartType}
-        />
-      ))}
+const ProjectChart = (props) => {
+  let conditionCount = 0;
+  props.graphData.forEach((project) => {
+    conditionCount += project.count;
+  });
+  return (
+    <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
+      <p>{conditionCount}</p>
+      <div className="FlagWrapper">
+        { props.graphData.map(condition => (
+          <FeatureFlag
+            key={condition.name}
+            name={condition.name}
+            count={condition.count}
+            color={condition.color}
+            chartType={props.chartType}
+          />
+        ))}
+      </div>
+      <div className="ProjectName">
+        { props.selected ? null : <p>{props.projectName}</p> }
+      </div>
     </div>
-    <p>{props.projectName}</p>
-  </div>
-);
+  );
+};
 
 ProjectChart.propTypes = {
   /** The project name */

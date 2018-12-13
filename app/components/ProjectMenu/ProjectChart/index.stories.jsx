@@ -14,7 +14,7 @@ const graphData = [
 ];
 
 const chartType = 'Theme';
-const projectName = 'Project Name';
+const projectName = '3. Section 21.(1) application';
 
 storiesForComponent('Components|ProjectMenu/ProjectChart', module, ReadMe)
   .add('With legend items', () => (

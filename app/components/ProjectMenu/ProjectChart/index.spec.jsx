@@ -22,7 +22,7 @@ const chartData = [
 ];
 
 const chartType = 'Theme';
-const projectName = 'Project Name';
+const projectName = '3. Section 21.(1) application';
 
 describe('Components|ProjectMenu/ProjectChart', () => {
   describe('with default props', () => {
@@ -69,8 +69,14 @@ describe('Components|ProjectMenu/ProjectChart', () => {
         selected
       />);
     });
+
     it('should add the className "selected"', () => {
       expect(wrapper.is('div.selected')).to.equal(true);
+    });
+
+    it('should remove the project name', () => {
+      const project = wrapper.find('div.ProjectName');
+      expect(project.contains('<p>')).to.equal(false);
     });
   });
 });
