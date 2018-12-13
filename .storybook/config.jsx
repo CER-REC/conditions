@@ -1,7 +1,6 @@
 import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
-import { withInfo } from '@storybook/addon-info';
 import { configureViewport } from '@storybook/addon-viewport';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';

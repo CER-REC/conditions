@@ -5,7 +5,7 @@ import ReadMe from './README.md';
 import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from './';
 
-storiesForComponent('Component|CircleContainer', module, ReadMe)
+storiesForComponent('Components|CircleContainer', module, ReadMe)
   .add('default', () => (
     <CircleContainer
       size="24px"

@@ -15,10 +15,6 @@ class ManualPureClassComponent extends React.Component {
   }
 }
 
-/* Note: untill React.memo is in a useable working state with Enzyme and Storybook
-we will not being using React.memo. However, if components are pure
-we can later on memoize them if needed.
-const PureFunctionalComponent = React.memo(props => <div />); */
 ```
 
 Components should be stored in `app/components/ComponentName/`.
