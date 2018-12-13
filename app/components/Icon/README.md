@@ -2,12 +2,16 @@
 
 This component implements the font-awesome React components for SVG icons.
 This component will accept the props of:
-* size - (using the font-awesome format: https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons)
+* size - (using the font-awesome format: 
+https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons)
 * color - as a string in HEX or the HTML5 color names
-* prefix°° -  font awesome has different libraries a prefix is needed for brand icons.
+* prefix°° -  font awesome has different libraries a prefix is needed for brand 
+icons.
 * icon°°- this is the name of the specific icon
 
-°°To use specfifc icons from the font awesome library you must declare from the import section of the component, then add them to library using the .add() function.
+°°To use specific icons from the font awesome library you must declare from the
+import section of the component, then add them to library using the .add() 
+function.
 
 ## Interaction Requirements
 
