@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import CircleContainer from './';
 import ReadMe from './README.md';
 import handleInteraction from '../../utilities/handleInteraction';
+import CircleContainer from './';
 
 storiesForComponent('Component|CircleContainer', module, ReadMe)
   .add('default', () => (

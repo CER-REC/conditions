@@ -17,7 +17,7 @@ const CircleContainer = props => (
       }}
     {...(!props.onClick ? {} : handleInteraction(props.onClick))}
   >
-    <div className="CircleContainer__Content">
+    <div>
       {props.children}
     </div>
   </div>
@@ -39,5 +39,4 @@ CircleContainer.defaultProps = {
   className: '',
 };
 
-export { CircleContainer };
-export default React.memo(CircleContainer);
+export default CircleContainer;
