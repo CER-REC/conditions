@@ -19,10 +19,9 @@
 
     }
   * Hookup pulltospin
-  * Implement React-spring
-  * Animate Wheel
   * Cleanup and outsource all private components.
   * always calculate the number of companies as n+2 due to the gray ray which shoots out the current company ocuppying three rays.
+  * test rotation
 
 * TODO: WheelRay
   * create component
@@ -34,10 +33,6 @@
 
 * TODO: WheelLocationBar
   * create component
-
-* TODO: ProjectDot
-  * create component 
-  * state [filtered, hidden, hasrelationshipwcompany]
 
 * TODO: relationshipCord
   * create component

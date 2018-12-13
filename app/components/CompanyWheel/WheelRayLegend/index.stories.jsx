@@ -9,7 +9,7 @@ import { locationWheelData, companyWheelData, locationWheelItems } from '../rand
 storiesForComponent('Components|CompanyWheel/WheelRayLegend', module, ReadMe)
   .add('default view', () => (
     <svg className="wheelContainer" viewBox="70 150 600 600">
-      <WheelRayLegend className="wheelContainer" ringType="normal" legendPositionArray={companyWheelData} numOfItems={companyWheelData.length} rotation={0} />
+      <WheelRayLegend className="wheelContainer" ringType="company" legendPositionArray={companyWheelData} numOfItems={companyWheelData.length} rotation={0} />
     </svg>
   )).add('location view', () => (
     <svg className="wheelContainer" viewBox="70 150 600 600">

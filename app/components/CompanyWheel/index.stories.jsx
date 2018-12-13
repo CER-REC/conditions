@@ -21,5 +21,5 @@ storiesForComponent('Components|CompanyWheel', module, ReadMe)
       {...props}
       ringType="location"
       itemsData={locationWheelData}
-  />
+    />
   ));

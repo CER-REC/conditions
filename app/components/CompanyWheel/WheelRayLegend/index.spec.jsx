@@ -16,7 +16,7 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
   describe('with default props', () => {
     const wrapperSetup = (propOverrides) => {
       const props = Object.assign({
-        ringType: 'normal',
+        ringType: 'company',
         legendPositionArray: mockData,
         numOfItems: 1,
         rotation: 0,

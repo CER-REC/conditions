@@ -16,7 +16,7 @@ describe('Components|CompanyWheel/Ring', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<Ring className="wheelContainer" ringType="normal" />);
+      wrapper = shallow(<Ring className="wheelContainer" ringType="company" />);
     });
 
     it('should render', () => {
@@ -24,7 +24,7 @@ describe('Components|CompanyWheel/Ring', () => {
     });
 
     it('should render a company wheel ring group', () => {
-      expect(wrapper.find('#companywheelring').type()).to.equal('g');
+      expect(wrapper.find('.companyWheelRing').type()).to.equal('g');
     });
 
     it('should have an outer and an inner ring in the ring group', () => {
@@ -35,16 +35,16 @@ describe('Components|CompanyWheel/Ring', () => {
       expect(wrapper.find('#ringgroup').type()).to.equal('g');
     });
 
-    it('should have a class normal for the ring background ', () => {
-      expect(wrapper.find('#ringbackground').hasClass('normal')).to.equal(true);
+    it('should have a class company for the ring background ', () => {
+      expect(wrapper.find('#ringbackground').hasClass('company')).to.equal(true);
     });
 
     it('should render 18 lines inside a lines group', () => {
       expect(wrapper.find('#lines').children()).to.have.length(18);
     });
 
-    it('should have a class normal for the line background ', () => {
-      expect(wrapper.find('.linebackground').first().hasClass('normal')).to.equal(true);
+    it('should have a class company for the line background ', () => {
+      expect(wrapper.find('.linebackground').first().hasClass('company')).to.equal(true);
     });
   });
 

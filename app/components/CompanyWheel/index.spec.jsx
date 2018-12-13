@@ -8,11 +8,14 @@ import CompanyWheel from './';
 
 describe('Components|CompanyWheel', () => {
   describe('with no props', () => {
-    it('should not render anything', () => {
-      expect(shallow(<CompanyWheel />).type()).to.equal(null);
+    it('should render a company wheel', () => {
+      expect(shallow(<CompanyWheel />).type()).to.equal('div');
     });
-  });
 
+    // it('should have the prop company by default', () => {
+    //   expect(shallow(<CompanyWheel />).prop('ringType')).to.equal('company');
+    // });
+  });
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {

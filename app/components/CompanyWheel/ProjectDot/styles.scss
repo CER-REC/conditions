@@ -1,0 +1,9 @@
+.projectDot{
+  fill: #E4E4E4;
+  &.isFiltered {
+    fill: #EE6129;
+  }
+  &.isRelevant{
+    fill: #333333;
+  }
+}

@@ -1,4 +1,5 @@
 # WheelRayLegend
+TODO: Change the color of the legend 
 
 TODO: Fix overlapping letters
 

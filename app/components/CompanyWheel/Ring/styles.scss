@@ -10,7 +10,7 @@
   &.location{
     fill: #F4CE5A;
   }
-  &.normal{
+  &.company{
     fill: #30298c;
   }
 }
@@ -18,7 +18,7 @@
   &.location line{
     stroke: #E0A531;
   }
-  &.normal line{
+  &.company line{
     stroke: #4054b7; 
   }
   stroke-width: 18px;
@@ -58,7 +58,4 @@
 }
 .letterCircle, .rayCircle{
   stroke: none;
-}
-#letterCircleLegend{
-  writing-mode: vertical-rl;
 }

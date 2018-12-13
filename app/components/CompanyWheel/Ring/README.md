@@ -1,6 +1,8 @@
 # Ring
 TODO: add location colors to styles once decided on the design document for prop type location styling
 
+TODO: change all ids to classes
+
 The Ring component is part of the Company Wheel component described in view 2. It renders the main rings with their respective background, fill, and stroke colors as prescribed in the design document. Since this is a presentational component all the logic and rendering is delegated to the parent component.
 
 ## Interaction Requirements
