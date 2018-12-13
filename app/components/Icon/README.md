@@ -9,9 +9,20 @@ https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons)
 icons.
 * icon°°- this is the name of the specific icon
 
-°°To use specific icons from the font awesome library you must declare from the
-import section of the component, then add them to library using the .add() 
-function.
+°°To use specific icons, you must import the Font-Awesome libraries you need 
+and pick the icons you want, then you add them to the library object. Example:
+```js
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+library.add(
+  faTwitter,
+  faAngleRight,
+); 
+```
+Icons can be found at https://fontawesome.com/icons?d=gallery&s=solid
+
 
 ## Interaction Requirements
 

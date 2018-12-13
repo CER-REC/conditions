@@ -1,10 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArchive } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import './styles.scss';
 import Icon from './';
 
 describe('Component|Icon', () => {
+  library.add(
+    faGoogle,
+    faArchive,
+  );
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
