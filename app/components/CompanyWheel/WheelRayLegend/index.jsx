@@ -23,12 +23,12 @@ const WheelRayLegend = ({
     const position = nextPosition(legendObj.count);
     const stripePosition = (rotation + 90) % 360;
 
-    if (position > (stripePosition - 20 - degreesPerItem)
-      && position < (stripePosition + 20 + degreesPerItem)) {
+    if (position > (stripePosition - 10 - degreesPerItem)
+      && position < (stripePosition + 10 + degreesPerItem)) {
       objectToRender = (
         <g transform={`translate(371 209) rotate(${position}, 0, 245)`} >
           <text id="LetterLegend" className="textLegend chosen" transform="rotate(270, 0, 245) ">
-            RAWR
+            HOLDER
           </text>
         </g>);
     } else {

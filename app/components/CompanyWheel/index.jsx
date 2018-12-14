@@ -29,7 +29,7 @@ class CompanyWheel extends React.Component {
   };
   
   onSpinClick = () => {
-    let newRotation = Math.floor(Math.random() * 360);
+    let newRotation = this.state.newRayRotation + Math.floor(Math.random() * 360);
     let newRayRotation = this.calcRayRotation(newRotation);
     this.setState({oldRayRotation: this.state.newRayRotation, oldRotation: this.state.newRotation},
     this.setState({ newRotation, newRayRotation })
@@ -42,7 +42,8 @@ class CompanyWheel extends React.Component {
     return (
       <div className="wheelContainer">
         <Spring native
-          from={{ transformOrigin: '50%'}}
+          config={{ tension: 50, clamp: true, mass: 0.7 }}
+          from={{ transformOrigin: '50%', transform:`rotate(${this.state.oldRotation}deg)`}}
           to={{transform:`rotate(${this.state.newRotation}deg)`}}
         >
           { props => (
@@ -74,10 +75,7 @@ class CompanyWheel extends React.Component {
           )
           }
         </Spring>
-        <button className="pullToSpin" onClick={this.onSpinClick} >Spin the wheel</button>
-        <div>rotation: {this.state.newRotation}</div>
-        <div>oldRayRotation: {this.state.oldRayRotation}</div>
-        <div>newRayRotation: {this.state.newRayRotation}</div>
+        <button className="pullToSpin" onClick={this.onSpinClick} >Spin that wheel</button>
       </div>
     );
   }

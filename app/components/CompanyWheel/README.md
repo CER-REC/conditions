@@ -2,26 +2,39 @@
 
 * TODO: CompanyWheel
   * Design data:
-    for companywheel
-    {
-      companies: {
-        company:{
-          id
-          name (sorted alphabetically)
-          projects (sorted by date of earliest instrument)
-          relatedCompanies : {
-            
+    wheel: {
+      company_wheel: {
+        alphabetically_grouped: {
+          letter: {
+            company: {
+              id: guid,
+              name: string,
+              relationship: {[id]},
+              projects: {TBD}
+            }
           }
         }
       }
-    }
-    for location {
-
-    }
+      location_wheel: {
+        # grouped west to east with the territories at the end
+        province_grouped: {
+          province_or_territory:{
+            region: {
+              company: {
+                id: guid,
+                name: string,
+              },
+              graph_data: {TBD}
+            }
+          }
+        }
+      }
+    } 
   * Hookup pulltospin
   * Cleanup and outsource all private components.
   * always calculate the number of companies as n+2 due to the gray ray which shoots out the current company ocuppying three rays.
   * test rotation
+  * change filter of project dot default to opacity 50%
 
 * TODO: WheelRay
   * create component
