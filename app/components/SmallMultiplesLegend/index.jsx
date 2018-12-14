@@ -23,19 +23,28 @@ const getMaxCount = (data) => {
   return max;
 };
 
-const SmallMultiplesLegend = (props) => {
-  let legendList;
-  const maxCount = getMaxCount(props.data);
-  const legendDataItems = props.data.map(conditionsData => (
+const getLegendDataItems = (data, hasHighlight, highlightName) => {
+  const maxCount = getMaxCount(data);
+  const items = data.map(conditionsData => (
     <LegendItem
       key={conditionsData.name}
       title={conditionsData.name}
       data={conditionsData.graphData}
       color={conditionsData.color}
       max={maxCount}
-      faded={props.highlightName && (conditionsData.name !== props.highlightName)}
+      faded={hasHighlight && (conditionsData.name !== highlightName)}
     />
   ));
+
+  return items;
+};
+
+const SmallMultiplesLegend = (props) => {
+  let legendList;
+  const hasHighlight = !!props.data.find(conditionsData => (
+    conditionsData.name === props.highlightName
+  ));
+  const legendDataItems = getLegendDataItems(props.data, hasHighlight, props.highlightName);
   const onItemChange = (index) => {
     if ((index === 0) && (legendDataItems.length > 1)) {
       props.onChange(null);
@@ -56,7 +65,7 @@ const SmallMultiplesLegend = (props) => {
         data={[]}
         color=""
         max={0}
-        faded={!!props.highlightName}
+        faded={hasHighlight}
       />
     ));
   }
@@ -65,7 +74,7 @@ const SmallMultiplesLegend = (props) => {
     // TODO: Update List properties when the vertical feature is implemented
     legendList = (
       <List
-        className={`${props.highlightName ? 'faded' : ''}`}
+        className={`${hasHighlight ? 'faded' : ''}`}
         items={legendDataItems}
         selected={0}
         onChange={onItemChange}
