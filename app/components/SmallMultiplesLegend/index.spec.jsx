@@ -9,21 +9,28 @@ import List from '../List';
 import shared from './shared.spec';
 
 describe('Components|SmallMultiplesLegend', () => {
-  let wrapper;
   let spy;
+  const noop = () => {};
+  let wrapper = shallow((
+    <SmallMultiplesLegend
+      className="test"
+      title="Test Title"
+      data={[]}
+      onChange={noop}
+    />
+  ));
 
   beforeEach(() => {
     spy = sinon.spy();
   });
 
-  describe('when no data is provided', () => {
-    const noop = () => {};
+  shared.shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
 
+  describe('when no data is provided', () => {
     beforeEach(() => {
       wrapper = shallow((
         <SmallMultiplesLegend
-          className="test"
-          title="Test Title"
+          title="123456"
           data={[]}
           onChange={noop}
         />
@@ -78,7 +85,6 @@ describe('Components|SmallMultiplesLegend', () => {
   });
 
   describe('when multiple data conditions are provided', () => {
-    const test = {};
     const title = 'ABC-TEST_123';
     const data = [{
       name: 'ConditionTitle 1',
@@ -121,10 +127,7 @@ describe('Components|SmallMultiplesLegend', () => {
           onChange={spy}
         />
       ));
-      test.wrapper = wrapper;
     });
-
-    shared.shouldBehaveLikeAComponent(test, SmallMultiplesLegend, 'something123');
 
     it('should render the title', () => {
       expect(wrapper.text()).to.contain(title);

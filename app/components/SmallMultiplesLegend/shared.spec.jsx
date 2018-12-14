@@ -1,15 +1,15 @@
 import { ShallowWrapper, ReactWrapper } from 'enzyme';
 import { expect } from 'chai';
 
-const shouldBehaveLikeAComponent = (test, component, className) => {
+const shouldBehaveLikeAComponent = (wrapper, component, className) => {
   const expectHasClass = (name) => {
     // Using mount and shallow requires different ways to check the class of the component
-    if (test.wrapper instanceof ShallowWrapper) {
+    if (wrapper instanceof ShallowWrapper) {
       // eslint-disable-next-line no-unused-expressions
-      expect(test.wrapper.hasClass(name)).to.be.true;
-    } else if (test.wrapper instanceof ReactWrapper) {
+      expect(wrapper.hasClass(name)).to.be.true;
+    } else if (wrapper instanceof ReactWrapper) {
       // eslint-disable-next-line no-unused-expressions
-      expect(test.wrapper.find(component).childAt(0).hasClass(name)).to.be.true;
+      expect(wrapper.find(component).childAt(0).hasClass(name)).to.be.true;
     }
   };
 

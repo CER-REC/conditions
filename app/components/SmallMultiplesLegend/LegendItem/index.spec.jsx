@@ -7,14 +7,23 @@ import LegendItem from './';
 import shared from '../shared.spec';
 
 describe('Components|SmallMultiplesLegend/LegendItem', () => {
-  let wrapper;
+  let wrapper = shallow((
+    <LegendItem
+      className="testtest"
+      title="Test Title"
+      data={[]}
+      color=""
+      max={0}
+    />
+  ));
+
+  shared.shouldBehaveLikeAComponent(wrapper, LegendItem, 'testtest');
 
   describe('when the all property is provided', () => {
     beforeEach(() => {
       wrapper = shallow((
         <LegendItem
-          className="test"
-          title="Test Title"
+          title="a1"
           data={[]}
           color=""
           max={0}
@@ -33,7 +42,6 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   });
 
   describe('when there is no all property provided', () => {
-    const test = {};
     const title = '(<{}>)other_test-title.!?';
     const color = 'red';
     const max = 500;
@@ -58,10 +66,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
           max={max}
         />
       ));
-      test.wrapper = wrapper;
     });
-
-    shared.shouldBehaveLikeAComponent(test, LegendItem, 'testclass');
 
     it('should render the title', () => {
       expect(wrapper.find('.stream')).to.have.lengthOf(1);
