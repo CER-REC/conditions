@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
@@ -13,7 +13,6 @@ describe('Components|SmallMultiplesLegend', () => {
   let spy;
   const test = {};
   const noop = () => {};
-  const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
   const shouldRenderTitle = (title) => {
     it('should render the title', () => {
@@ -23,7 +22,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
   const shouldRenderItems = (data, max) => {
     it('should render the data as LegendItem components in the List component', () => {
-      const listItemsWrapper = wrapper.find(List).find(LegendItem).not('[all=true]');
+      const listItemsWrapper = wrapper.find(List).shallow().find(LegendItem).not('[all=true]');
 
       for (let i = 0; i < data.length; i += 1) {
         const listItemWrapper = listItemsWrapper.at(i);
@@ -78,7 +77,7 @@ describe('Components|SmallMultiplesLegend', () => {
     const title = 'Test Title';
 
     beforeEach(() => {
-      wrapper = mount(<SmallMultiplesLegend className="test" title={title} data={[]} onChange={noop} />);
+      wrapper = shallow(<SmallMultiplesLegend className="test" title={title} data={[]} onChange={noop} />);
       test.wrapper = wrapper;
     });
 
@@ -110,35 +109,32 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldNotAllListItem = () => {
       it('should not render a "All" list item', () => {
-        expect(wrapper.find(LegendItem).filter('[all=true]')).to.have.lengthOf(0);
-        expect(wrapper.find(LegendItem)).to.have.lengthOf(1);
+        const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
+
+        expect(legendItemsWrapper.filter('[all=true]')).to.have.lengthOf(0);
+        expect(legendItemsWrapper).to.have.lengthOf(1);
       });
     };
 
     const shouldCallOnChangeOnClick = () => {
       it('should call the onChange function on click', () => {
-        const legendItemWrapper = wrapper.find(LegendItem);
+        wrapper.find(List).prop('onChange')(0);
 
-        legendItemWrapper.simulate('click', eventFuncs);
         expect(spy.calledOnceWith(data[0].name)).to.be.equal(true);
       });
     };
 
     const shouldCallOnChangeOnEnter = () => {
       it('should call the onChange function on enter key press', () => {
-        const legendItemWrapper = wrapper.find(LegendItem);
+        wrapper.find(List).prop('onChange')(0);
 
-        legendItemWrapper.simulate('keypress', {
-          key: 'Enter',
-          ...eventFuncs,
-        });
         expect(spy.calledOnceWith(data[0].name)).to.be.equal(true);
       });
     };
 
     describe('when no highlightName is provided', () => {
       beforeEach(() => {
-        wrapper = mount(<SmallMultiplesLegend className="anotherClass" title={title} data={data} onChange={spy} />);
+        wrapper = shallow(<SmallMultiplesLegend className="anotherClass" title={title} data={data} onChange={spy} />);
         test.wrapper = wrapper;
       });
 
@@ -155,7 +151,7 @@ describe('Components|SmallMultiplesLegend', () => {
       const highlightName = data[0].name;
 
       beforeEach(() => {
-        wrapper = mount((
+        wrapper = shallow((
           <SmallMultiplesLegend
             title={title}
             data={data}
@@ -212,32 +208,30 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldRenderTheAllItem = () => {
       it('should render the all LegendItem component', () => {
-        const firstItemWrapper = wrapper.find(LegendItem).at(0);
+        const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
+        const firstItemWrapper = legendItemsWrapper.at(0).shallow();
 
         // TODO: Redo when translations are implemented
         expect(firstItemWrapper.text()).to.contain('All');
         expect(firstItemWrapper.text()).to.contain(title);
-        expect(wrapper.find(LegendItem)).to.have.lengthOf(4);
+        expect(legendItemsWrapper).to.have.lengthOf(4);
       });
     };
 
     const shouldCallOnChangeWithNULLOnClick = () => {
       it('should call the onChange function with the data name on click', () => {
-        const allLegendItemWrapper = wrapper.find(LegendItem).filter('[all=true]');
+        wrapper.find(List).prop('onChange')(0);
 
-        allLegendItemWrapper.simulate('click', eventFuncs);
         expect(spy.calledOnceWith(null)).to.equal(true);
       });
     };
 
     const shouldCallOnChangeWithNameOnClick = () => {
       it('should call the onChange function with the data name on click', () => {
-        const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([all=true])');
+        for (let i = 0; i < data.length; i += 1) {
+          // Account for all item at the beginning
+          wrapper.find(List).prop('onChange')(i + 1);
 
-        for (let i = 0; i < legendItemsWrapper.length; i += 1) {
-          const legendItemWrapper = legendItemsWrapper.at(i);
-
-          legendItemWrapper.simulate('click', eventFuncs);
           expect(spy.calledWith(data[i].name)).to.equal(true);
         }
 
@@ -247,27 +241,18 @@ describe('Components|SmallMultiplesLegend', () => {
 
     const shouldCallOnChangeWithNULLOnEnter = () => {
       it('should call the onChange function with null on click', () => {
-        const allLegendItemWrapper = wrapper.find(LegendItem).filter('[all=true]');
+        wrapper.find(List).prop('onChange')(0);
 
-        allLegendItemWrapper.simulate('keypress', {
-          key: 'Enter',
-          ...eventFuncs,
-        });
         expect(spy.calledOnceWith(null)).to.equal(true);
       });
     };
 
     const shouldCallOnChangeWithNameOnEnter = () => {
       it('should call the onChange function with the data name on enter key press', () => {
-        const legendItemsWrapper = wrapper.find(LegendItem).filter(':not([all=true])');
+        for (let i = 0; i < data.length; i += 1) {
+          // Account for all item at the beginning
+          wrapper.find(List).prop('onChange')(i + 1);
 
-        for (let i = 0; i < legendItemsWrapper.length; i += 1) {
-          const legendItemWrapper = legendItemsWrapper.at(i);
-
-          legendItemWrapper.simulate('keypress', {
-            key: 'Enter',
-            ...eventFuncs,
-          });
           expect(spy.calledWith(data[i].name)).to.be.equal(true);
         }
 
@@ -277,7 +262,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
     describe('when no highlightName is provided', () => {
       beforeEach(() => {
-        wrapper = mount(<SmallMultiplesLegend className="abcd" title={title} data={data} onChange={spy} />);
+        wrapper = shallow(<SmallMultiplesLegend className="abcd" title={title} data={data} onChange={spy} />);
         test.wrapper = wrapper;
       });
 
@@ -296,7 +281,7 @@ describe('Components|SmallMultiplesLegend', () => {
       const highlightName = data[2].name;
 
       beforeEach(() => {
-        wrapper = mount((
+        wrapper = shallow((
           <SmallMultiplesLegend
             className="something123"
             title={title}
