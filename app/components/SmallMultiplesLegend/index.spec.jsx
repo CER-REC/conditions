@@ -125,10 +125,6 @@ describe('Components|SmallMultiplesLegend', () => {
       ));
     });
 
-    it('should render the title', () => {
-      expect(wrapper.text()).to.contain(title);
-    });
-
     it('should render the data as LegendItem components in the List component', () => {
       const listItemsWrapper = wrapper.find(List).shallow().find(LegendItem).not('[all=true]');
 
@@ -149,7 +145,7 @@ describe('Components|SmallMultiplesLegend', () => {
       }
     });
 
-    it('should render the all LegendItem components', () => {
+    it('should render the all LegendItem component', () => {
       const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
       const firstItemWrapper = legendItemsWrapper.at(0).shallow();
 

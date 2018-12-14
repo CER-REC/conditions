@@ -4,9 +4,6 @@ import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
 
-// TODO: This is a mock, replace with the translation function
-const t = searchList => searchList[2];
-
 const getMaxCount = (data) => {
   const getCount = graphDataItem => graphDataItem.count;
   const counts = data.reduce((countAggregate, conditionsData) => {
@@ -84,14 +81,13 @@ const SmallMultiplesLegend = (props) => {
 
   return (
     <div className={`SmallMultiplesLegend ${props.className}`}>
-      <span>{`${t(['smallMultiplesLegend', 'title', props.title])}:`}</span>
       {legendList}
     </div>
   );
 };
 
 SmallMultiplesLegend.propTypes = {
-  /** The title to be displayed at the top */
+  /** The title to be displayed in the all filter item */
   title: PropTypes.string.isRequired,
   /** The data to render the stream graphs
       The items rendered in the provided order */
