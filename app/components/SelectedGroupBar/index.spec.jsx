@@ -41,7 +41,7 @@ describe('Components|SelectedGroupBar', () => {
     });
 
     it('should accept a prop for the background color', () => {
-      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItem="condition" color="tomato" />);
+      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItem="condition" backgroundColor="tomato" />);
       expect(wrapper.find('p').props().style.background).to.equal('tomato');
     });
 

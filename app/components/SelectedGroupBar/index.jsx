@@ -6,7 +6,7 @@ const SelectedGroupBar = props => (
   <div
     className="SelectedGroupBar"
   >
-    <p style={{ background: props.color }}>
+    <p style={{ background: props.backgroundColor }}>
       <span style={{
         fontSize: props.groupSize,
       }}
@@ -29,11 +29,11 @@ SelectedGroupBar.propTypes = {
   groupSize: PropTypes.string,
   groupItem: PropTypes.string.isRequired,
   groupItemSize: PropTypes.string,
-  color: PropTypes.string,
+  backgroundColor: PropTypes.string,
 };
 
 SelectedGroupBar.defaultProps = {
-  color: '',
+  backgroundColor: '',
   groupSize: '16px',
   groupItemSize: '14px',
 };

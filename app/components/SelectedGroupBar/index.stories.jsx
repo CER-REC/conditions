@@ -8,7 +8,7 @@ storiesForComponent('Components|SelectedGroupBar', module, ReadMe)
     <SelectedGroupBar group="Group" groupItem="groupItem" />
   ))
   .add('with prop: color', () => (
-    <SelectedGroupBar group="Group" groupItem="groupItem" color="tomato" />
+    <SelectedGroupBar group="Group" groupItem="groupItem" backgroundColor="tomato" />
   ))
   .add('with prop: groupSize', () => (
     <SelectedGroupBar group="Group" groupItem="groupItem" groupSize="36px" />
