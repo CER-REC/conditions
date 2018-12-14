@@ -26,7 +26,6 @@ class StreamGraph extends React.PureComponent {
   }
 
   control() {
-    const { x, y } = this.props;
     return (
       <div
         className="streamgraph-control"
@@ -40,7 +39,7 @@ class StreamGraph extends React.PureComponent {
       >
         <svg height="400px">
           <g transform="translate(30, 30)">
-            <text x="15" y="15">conditions</text>
+            <text x="15" y="15">{this.numOfConditionsLabel}</text>
             <line
               strokeDasharray="10, 5"
               x1="20"
