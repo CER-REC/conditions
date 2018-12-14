@@ -1,0 +1,20 @@
+%faded {
+  opacity: 0.2;
+}
+
+.SmallMultiplesLegend {
+  text-align: left;
+
+  .List.faded {
+    button {
+      @extend %faded;
+    }
+  }
+
+  .List .selected .LegendItem {
+    font-size: 1.25em;
+    border: 1px solid #D1057A;
+    background-color: white;
+    padding: 0.4em;
+  }
+}
