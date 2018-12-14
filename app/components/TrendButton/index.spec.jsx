@@ -60,9 +60,8 @@ describe('Components|TrendButton', () => {
       wrapper = mount(<TrendButton selectedFeature="Theme" streamGraphData={[1, 2, 3]} onClick={noop} />);
     });
 
-    it('renders StreamGraph component correctly', () => {
-      expect(wrapper.find('StreamGraph')).to.have.lengthOf(1);
-    });
+    // TODO: Add this test when StreamGraph is implemented for TrendButton
+    it('renders StreamGraph component correctly');
 
     it('renders a div with a className of streamGraphBackground', () => {
       expect(wrapper.find('div.streamGraphBackground')).to.have.lengthOf(1);

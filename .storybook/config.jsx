@@ -1,7 +1,6 @@
 import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
-import { withInfo } from '@storybook/addon-info';
 import { configureViewport } from '@storybook/addon-viewport';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
@@ -32,7 +31,7 @@ addDecorator(withOptions({
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
 // automatically import all files ending in *.stories.js
-const documentationStories = require.context('../stories/', true, /.stories.jsx$/);
+const documentationStories = require.context('../documentation/', true, /.stories.jsx$/);
 const componentStories = require.context('../app/', true, /.stories.jsx$/);
 function loadStories() {
   documentationStories.keys().forEach(filename => documentationStories(filename));
