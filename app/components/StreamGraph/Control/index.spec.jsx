@@ -4,7 +4,10 @@ import { expect } from 'chai';
 
 import Control from './';
 
-describe('Components|Control', () => {
+// click show and disappear should not be handled here but in the StreamGraph component
+// this component should handle keypress and click events
+
+describe('Components|StreamGraph/Control', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
@@ -15,16 +18,8 @@ describe('Components|Control', () => {
       expect(wrapper.type()).to.equal('div');
     });
 
-    // it('should have a className', () => {
-    //   expect(wrapper.is('.control')).to.equal((true));
-    // });
-
-    // it('should render a title', () => {
-    //   expect(wrapper.find('h1')).to.have.lengthOf(1);
-    // });
-
-    // it('should disappear when click happens outside of ', () => {
-    //   expect(wrapper.find('VictoryChart')).to.have.lengthOf(1);
-    // });
+    it('should have a className', () => {
+      expect(wrapper.is('.control')).to.equal((true));
+    });
   });
 });
