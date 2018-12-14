@@ -10,7 +10,7 @@ const ProjectChart = props => (
         name={condition.name}
         count={condition.count}
         color={condition.color}
-        cartType={props.chartType}
+        chartType={props.chartType}
       />
     ))}
   </div>
