@@ -5,5 +5,5 @@ List component in the SmallMultiplesLegend component.
 
 ## Requirements
 
-* [x] Renders the a graph
+* [x] Renders the graph
 * [x] Renders a title
