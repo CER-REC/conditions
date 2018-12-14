@@ -26,20 +26,16 @@ describe('Components|SmallMultiplesLegend', () => {
 
   shared.shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
 
-  describe('when no data is provided', () => {
-    beforeEach(() => {
-      wrapper = shallow((
-        <SmallMultiplesLegend
-          title="123456"
-          data={[]}
-          onChange={noop}
-        />
-      ));
-    });
+  it('should not render a list when no data is provided', () => {
+    wrapper = shallow((
+      <SmallMultiplesLegend
+        title="123456"
+        data={[]}
+        onChange={noop}
+      />
+    ));
 
-    it('should not render a list', () => {
-      expect(wrapper.find(List)).to.have.lengthOf(0);
-    });
+    expect(wrapper.find(List)).to.have.lengthOf(0);
   });
 
   describe('when only one data condition is provided', () => {
@@ -189,34 +185,51 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     });
 
-    describe('when a highlightName is provided', () => {
+    it('should apply faded to LegendItem components when a highlightName is provided', () => {
       const highlightName = data[2].name;
 
-      beforeEach(() => {
-        wrapper = shallow((
-          <SmallMultiplesLegend
-            className="abcd"
-            title={title}
-            data={data}
-            onChange={spy}
-            highlightName={highlightName}
-          />
-        ));
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          className="abcd"
+          title={title}
+          data={data}
+          onChange={spy}
+          highlightName={highlightName}
+        />
+      ));
+
+      const highlightSelector = `[title="${highlightName}"]`;
+      const listWrapper = wrapper.find(List).shallow();
+      const fadedItemsWrapper = listWrapper.find(LegendItem).not(highlightSelector);
+      const highlightItemWrapper = listWrapper.find(LegendItem).filter(highlightSelector);
+
+      expect(listWrapper.hasClass('faded')).to.equal(true);
+
+      fadedItemsWrapper.forEach((itemWrapper) => {
+        expect(itemWrapper.prop('faded')).to.equal(true);
       });
 
-      it('should apply faded to LegendItem not corresponding to the highlightName', () => {
-        const highlightSelector = `[title="${highlightName}"]`;
-        const listWrapper = wrapper.find(List).shallow();
-        const fadedItemsWrapper = listWrapper.find(LegendItem).not(highlightSelector);
-        const highlightItemWrapper = listWrapper.find(LegendItem).filter(highlightSelector);
+      expect(highlightItemWrapper.prop('faded')).to.equal(false);
+    });
 
-        expect(listWrapper.hasClass('faded')).to.equal(true);
+    it('should not apply faded to LegendItem components when the highlightName is invalid', () => {
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          className="abcd"
+          title={title}
+          data={data}
+          onChange={spy}
+          highlightName="n/a"
+        />
+      ));
 
-        fadedItemsWrapper.forEach((itemWrapper) => {
-          expect(itemWrapper.prop('faded')).to.equal(true);
-        });
+      const listWrapper = wrapper.find(List).shallow();
+      const itemsWrapper = listWrapper.find(LegendItem);
 
-        expect(highlightItemWrapper.prop('faded')).to.equal(false);
+      expect(listWrapper.hasClass('faded')).to.equal(false);
+
+      itemsWrapper.forEach((itemWrapper) => {
+        expect(itemWrapper.prop('faded')).to.be.oneOf([null, false]);
       });
     });
   });
