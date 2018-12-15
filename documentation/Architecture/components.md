@@ -15,7 +15,6 @@ class ManualPureClassComponent extends React.Component {
   }
 }
 
-const PureFunctionalComponent = React.memo(props => <div />);
 ```
 
 Components should be stored in `app/components/ComponentName/`.

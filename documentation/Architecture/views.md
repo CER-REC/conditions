@@ -8,7 +8,7 @@ limited number of tasks:
 * Handle animation when changing views
 
 As with Components, these should always be written in a pure way
-(`extends React.PureComponent` or with `React.memo()`)
+(`extends React.PureComponent`)
 
 Views should be stored in `app/views/ViewName/`.
 
