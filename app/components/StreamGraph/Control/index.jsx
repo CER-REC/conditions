@@ -1,19 +1,26 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
 
 class Control extends React.PureComponent {
+  static propTypes = {
+    position: PropTypes.string,
+    zIndex: PropTypes.number,
+    marginTop: PropTypes.string,
+    marginLeft: PropTypes.string,
+  };
+
   control() {
     return (
       <div
         className="streamgraph-control"
         style={{
-          position: 'absolute',
-          zIndex: 9,
-          marginTop: '-485px',
-          marginLeft: '300px',
           height: '100%',
+          position: this.props.position,
+          zIndex: this.props.zIndex,
+          marginTop: this.props.marginTop,
+          marginLeft: this.props.marginLeft,
         }}
       >
         <svg height="400px">
@@ -48,5 +55,16 @@ class Control extends React.PureComponent {
     );
   }
 }
+
+Control.defaultProps = {
+  position: '',
+  zIndex: 0,
+  marginTop: '',
+  marginLeft: '',
+  // position: 'absolute',
+  // zIndex: 9,
+  // marginTop: '-485px',
+  // marginLeft: '300px',
+};
 
 export default Control;
