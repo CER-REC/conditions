@@ -8,13 +8,6 @@ const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Se
 const feature = 'Feature title';
 
 describe('Components|FeatureDescription', () => {
-  describe('with no props', () => {
-    it('should not render', () => {
-      const wrapper = shallow(<FeatureDescription description="" feature="" />);
-      expect(wrapper.type()).to.equal(null);
-    });
-  });
-
   describe('with props', () => {
     let wrapper;
     beforeEach(() => {
