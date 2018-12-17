@@ -3,23 +3,11 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const SelectedGroupBar = props => (
-  <div
-    className="SelectedGroupBar"
-  >
+  <div className="SelectedGroupBar">
     <p style={{ background: props.backgroundColor }}>
-      <span style={{
-        fontSize: props.groupSize,
-      }}
-      >
-        {props.group}
-      </span>
-      &nbsp;:&nbsp;
-      <span style={{
-        fontSize: props.groupItemSize,
-      }}
-      >
-        {props.groupItem}
-      </span>
+      <span style={{ fontSize: props.groupSize }}>{props.group}</span>
+      :
+      <span style={{ fontSize: props.groupItemSize }}>{props.groupItem}</span>
     </p>
   </div>
 );
