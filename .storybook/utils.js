@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { checkA11y } from '@storybook/addon-a11y';
-import { configureViewport, withViewport } from '@storybook/addon-viewport';
+import { withViewport } from '@storybook/addon-viewport';
 import { withDocs, withReadme } from 'storybook-readme';
+import withStatus from './addon-status/';
 
 export const storiesForComponent = (name, m, readme) => {
   let stories = storiesOf(name, m)
@@ -11,6 +12,8 @@ export const storiesForComponent = (name, m, readme) => {
   if (readme) {
     stories = stories.addDecorator(withDocs(readme));
   }
+  // Add withStatus after the Readme, to make sure it groups on the outside
+  stories = stories.addDecorator(withStatus);
   return stories;
 };
 
