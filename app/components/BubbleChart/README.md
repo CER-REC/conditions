@@ -26,3 +26,13 @@ The Bubble Chart is the parent svg container that will contain both Energy Bubbl
 * [ ] onClick should emit an event
 * [ ] onEnter should emit an event
 * [ ] onHover for more than __ seconds should emit an event
+
+##Implementation Basics
+* [ ] Obtain the smallest number and set up a radius
+* [ ] Proportionally increase the radius of all circles, based on the minimum radius
+* [ ] If circle has minimum radius, then create a circle with larger circle with text included and render it
+* [ ] Obtain the radius of the largest circle and obtain x, y, and radius for reference as required 
+* [ ] Method 1: Render each circle (Energy bubble indepdently)
+* [ ] Method 2: Render the 3 circles with it's corresponding 2 circles. (ie left/right of the svg)
+  * [ ] The three circles in the left and the two circles on the right are seperate circles for the main svg
+* [ ] It will later be scaled appropriately using viewbox

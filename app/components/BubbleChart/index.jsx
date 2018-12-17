@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as d3 from 'd3';
 import handleInteraction from '../../utilities/handleInteraction';
+
 
 class BubbleChart extends React.PureComponent {
   static propTypes = {
@@ -9,69 +11,158 @@ class BubbleChart extends React.PureComponent {
     height: PropTypes.number.isRequired,
   }
 
-  setCircles = (data) => {
-    const placedCircles = [];
-    let theta = 45;
-    // eslint-disable-next-line no-restricted-syntax
-    data.forEach((circle, index) => {
-      if (index === 0) {
-        placedCircles.push({
-          name: circle.name,
-          radius: circle.radius,
-          x: circle.radius,
-          y: circle.radius,
-        });
-      }
-      if (index === 1) {
-        let placed = false;
-        const tempIndex = 0;
-        while (placed !== true) {
-          const circ1 = placedCircles[tempIndex];
-          const circ2 = circle;
-          const circ2x = circ1.x + ((circ2.radius + circ1.radius) * Math.cos(theta)); // need to add circ1.x
-          const circ2y = circ1.y + ((circ2.radius + circ1.radius) * Math.sin(theta)); // need to add circ1.y
-          // check if it doesn't exceed the svg below
-          const bottomCirclePoint = ((circ2.radius) * Math.sin(270)) + circ2y;
-          if (this.props.height > bottomCirclePoint) {
-            placed = true;
-            placedCircles.push({
-              name: circle.name,
-              radius: circle.radius,
-              x: circ2x,
-              y: circ2y,
-            });
-          } else {
-            theta -= 5;
-          }
-        }
-      }
-      console.log(placedCircles);
-    });
-    return placedCircles.map(i => <circle r={i.radius} cx={i.x} cy={i.y} />);
+  componentDidMount() {
+    const bubbleChartData = {
+      GAS: {
+        name: 'GAS',
+        category: 'gas',
+        children: [
+          {
+            name: 'XG',
+            children: [],
+            value: 0.50,
+            category: 'construction',
+          },
+          {
+            name: 'GC',
+            children: [],
+            value: 0.20,
+            category: 'construction',
+          },
+          {
+            name: 'GPSO',
+            children: [],
+            value: 0.10,
+            category: 'opening',
+          },
+          {
+            name: 'SG',
+            children: [],
+            value: 0.10,
+            category: 'safety',
+          },
+          {
+            name: 'GPLO',
+            children: [],
+            value: 0.10,
+            category: 'opening',
+          },
+        ],
+        value: 1,
+      },
+      POWER: {
+        name: 'POWER',
+        category: 'power',
+        children: [
+          {
+            name: 'EC',
+            children: [],
+            value: 0.10,
+            category: 'construction',
+          },
+          {
+            name: 'EPE',
+            children: [],
+            value: 0.10,
+            category: 'construction',
+          },
+        ],
+        value: 5,
+      },
+      OIL: {
+        name: 'OIL',
+        category: 'oil',
+        children: [{
+          name: 'XO',
+          children: [],
+          value: 25,
+          category: 'construction',
+        },
+        {
+          name: 'SO',
+          children: [],
+          value: 0.25,
+          category: 'safety',
+        }, {
+          name: 'OC',
+          children: [],
+          value: 25,
+          category: 'construction',
+        }, {
+          name: 'OPL',
+          children: [],
+          value: 0.25,
+          category: 'routing',
+        }, {
+          name: 'OPLO',
+          children: [],
+          value: 0.04,
+          category: 'opening',
+        }, {
+          name: 'OPSO',
+          children: [],
+          value: 0.04,
+        }],
+      },
+      'Not Specified': {
+        name: 'Not Specified',
+        category: 'not specified',
+        children: [{
+          name: 'XC',
+          category: 'tariffs',
+          value: 0.04,
+        }, {
+          name: 'CO',
+          category: 'tariffs',
+          value: 0.04,
+        }],
+      },
+    };
+    this.fauxDOMRender(null, bubbleChartData);
   }
 
-
-  determineArea = () => {
-    const data = this.props.energyBubbleData;
-    const maxEnergyData = data.reduce((a, b) => ({ energyNum: a.energyNum + b.energyNum }));
-    const maxEnergyNumber = maxEnergyData.energyNum;
-    const minimumSpace =
-    (this.props.height > this.props.width) ? this.props.width : this.props.height;
-    const areaData = data.map(obj =>
-      ({ name: obj.name, area: ((obj.energyNum / maxEnergyNumber) * minimumSpace * 0.9) }));
-    return this.determineRadius(areaData);
-  }
-  determineRadius = (areaData) => {
-    const radiusData = areaData.map(obj =>
-      ({ name: obj.name, radius: Math.sqrt(obj.area / Math.PI) }));
-    return this.setCircles(radiusData);
+  setRef(componentNode) {
+    this.rootNode = componentNode;
   }
 
-  renderSvg = () => {
-    // eslint-disable-next-line no-unused-expressions
-    <svg width={this.props.width} height={this.props.height}>
-      {(this.determineArea())}
-    </svg >;
+  fauxDOMRender(err, data) {
+    const node = this.rootNode;
+    data = data.GAS;
+    const d = this.props.width;
+    const sizeScale = d3.scaleSqrt().range([5, 100]);
+    const svg = d3.select(node).append('svg').attr('width', this.props.width).attr('height', this.props.height);
+    const pack = d3.pack().size([d, d]).padding(5).radius( d => sizeScale(d.value));
+    const root = d3.hierarchy(data);
+    const nodes = svg.datum(data)
+      .selectAll('g')
+      .data(pack(root).descendants())
+      // .call((d) => console.log(d._enter[0][0].__data__.r)) // get's the radius of the maximum circle which is the radius of 150
+      .enter()
+      .append('g')
+      .attr('transform', transformD => `translate(${  transformD.x  },${  transformD.y  })`);
+
+    nodes.append('circle')
+      .each((d, i, nodes) =>
+        d3.select(nodes[i])
+          .attr('r', (d.r))
+          .attr('fill', (d) => {
+            if (d.data.category === 'construction') { return 'orange'; }
+            return 'blue';
+          })
+          .attr('fill-opacity', d.children ? 0.25 : 1.0)
+          .attr('stroke', d.children ? 'rgb(31, 119, 180)' : 'none'))
+          .on('click', d => { 
+            console.log('x is ' + d.x)
+            console.log('y is ' + d.y)
+            // Draw an svg when received the x and y values
+           });
+    nodes.filter(d => !d.children)
+      .append('text')
+      .attr('ref', 'check')
+      .attr('dy', '0.5em')
+      .style('text-anchor', 'middle')
+      .style('font', '8px sans-serif')
+      .text(d => d.data.name.substring(0, d.r));
   }
 
   render() {
@@ -79,10 +170,9 @@ class BubbleChart extends React.PureComponent {
       return null;
     }
     return (
-      <div className="bubbleChart">
-        { this.renderSvg()}
-      </div>);
+      <div className="bubbleChart" ref={this.setRef.bind(this)} />);
   }
+
 }
 
 export default BubbleChart;
