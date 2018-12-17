@@ -13,7 +13,7 @@ import './styles.scss';
 export const numOfConditionsLabel = point => `${Math.round(point.y)}`;
 
 export const roundDateLabel = t => Math.round(t);
-class StreamGraph extends React.PureComponent {
+class StreamGraph extends React.Component {
   static propTypes = {
     projectData: PropTypes.arrayOf(PropTypes.shape({
       color: PropTypes.string.isRequired,
@@ -24,6 +24,23 @@ class StreamGraph extends React.PureComponent {
         count: PropTypes.number.isRequired,
       })).isRequired,
     })).isRequired,
+    chartTitle: PropTypes.string.isRequired,
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showControl: false,
+    };
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.showControl !== this.state.showControl) { return true; }
+    return false;
+  }
+
+  handleOnClick = () => {
+    this.setState({ showControl: !this.state.showControl });
   }
 
   streamLayers() {
@@ -87,12 +104,35 @@ class StreamGraph extends React.PureComponent {
     );
   }
 
+  chartTitle() {
+    return (
+      <h1>{this.props.chartTitle}</h1>
+    );
+  }
+
   render() {
     return (
-      <div className="streamgraph">
-        <h1>Themes Across All Conditions</h1>
+      <div
+        className="streamgraph"
+        onClick={this.handleOnClick}
+        onKeyDown={this.handleOnClick}
+        role="button"
+        tabIndex="-1"
+      >
+        {this.chartTitle()}
         {this.chart()}
-        <Control />
+        {
+          this.state.showControl === true
+          ?
+            <Control
+              position="absolute"
+              zIndex={9}
+              marginTop="-485px"
+              marginLeft="300px"
+            />
+          :
+          null
+        }
       </div>
     );
   }

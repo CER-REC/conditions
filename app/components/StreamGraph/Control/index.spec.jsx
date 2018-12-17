@@ -4,8 +4,7 @@ import { expect } from 'chai';
 
 import Control from './';
 
-// click show and disappear should not be handled here but in the StreamGraph component
-// this component should handle keypress and click events
+// this component will handle arrowKey and drag events
 
 describe('Components|StreamGraph/Control', () => {
   describe('with default props', () => {

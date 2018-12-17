@@ -3,6 +3,7 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import Streamgraph from './';
 import ReadMe from './README.md';
 
+const chartTitle = 'Themes Across All Conditions';
 const projectData = [
   {
     name: 'themeOne',
@@ -55,5 +56,6 @@ storiesForComponent('Components|StreamGraph', module, ReadMe)
   .add('With values', () => (
     <Streamgraph
       projectData={projectData}
+      chartTitle={chartTitle}
     />
   ));

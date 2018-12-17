@@ -5,14 +5,17 @@ of conditions to the user.
 
 ## Requirements
 
-* [ ] Handles click event
 * [X] Text reflects number of Conditions
-* [ ] Appears only when user clicks on the StreamGraph
+* [X] Appears only when user clicks on the StreamGraph
 * [ ] Disappears when user clicks outside of the StreamGraph
+* [ ] Handles drag event
+* [ ] Handles arrow key events
+* [ ] Handles tab events
 
 ## Interaction Requirements
 
-Interaction for the Control component will be handled by the StreamGraph
+The user can drag, arrow or tab across the x-axis, or if they click again on the stream graph,
+the control will move to the nearest location of the new click.
 
 ## Accessibility Requirements
 
@@ -22,8 +25,9 @@ Interaction for the Control component will be handled by the StreamGraph
 
 ## Analytics Requirements
 
-* onClick should emit an event
+* onArrowKey should emit an event
 * onTouchEnd should emit an event
+* onDragEnd should emit an event
 
 ## Unit Testing
 

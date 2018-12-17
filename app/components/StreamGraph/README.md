@@ -6,10 +6,10 @@ from least total conditions to most.
 
 ## Requirements
 
-* [ ] Handles click event
 * [X] Text reflects number of Conditions
-* [ ] Displays a dynamic title for what the Stream Graph is showing
-* [ ] Handles user interaction with the crosshairs
+* [X] Displays a dynamic title for what the Stream Graph is showing
+* [X] Handles showing and hiding of Control component
+* [ ] Effective Dates should be focusable
 
 ## Data Requirements
 
@@ -37,12 +37,8 @@ fade in the new selection, then animate the scale to zoom in to the scale of the
 
 When the user clicks on the stream graph a control appears that will print the exact value for all 
 combined themes for each year on the stream graph. The default position of the control is the 
-nearest year to the location of the click. The user can drag, arrow or tab across the x-axis, or 
-if they click again on the stream graph, the control will move to the nearest location of the new 
-click. If the user clicks anywhere off the streamgraph the control disappears. In the default view 
-“all themes” the control will display the total number of conditions by year. When individual 
-themes are selected the streamgraph will have a similar functionality and the control will display 
-the number of conditions by year associated with the selected theme.
+nearest year to the location of the click. If the user clicks anywhere off the streamgraph the 
+control disappears.
 
 ## Accessibility Requirements
 
@@ -53,7 +49,6 @@ the number of conditions by year associated with the selected theme.
 ## Analytics Requirements
 
 * onClick should emit an event
-* onTouchEnd should emit an event
 
 ## Unit Testing
 

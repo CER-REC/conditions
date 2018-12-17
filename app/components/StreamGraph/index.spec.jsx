@@ -1,10 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+// import sinon from 'sinon';
 
 import Streamgraph, { roundDateLabel, numOfConditionsLabel } from './';
 
 describe('Components|StreamGraph', () => {
+  const noop = () => {};
   const projectData = [
     {
       id: 'themeOne',
@@ -53,7 +55,10 @@ describe('Components|StreamGraph', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<Streamgraph projectData={projectData} />);
+      wrapper = shallow(<Streamgraph
+        projectData={projectData}
+        onClick={noop}
+      />);
     });
 
     it('should render', () => {
@@ -87,6 +92,10 @@ describe('Components|StreamGraph', () => {
 
     it('should round the date label', () => {
       expect(roundDateLabel(2018.1)).to.be.equal(2018);
+    });
+
+    it('should pass down an onClick function to the StreamGraph', () => {
+      expect(wrapper.props().onClick).to.be.a('function');
     });
   });
 });
