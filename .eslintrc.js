@@ -31,7 +31,7 @@ module.exports = {
     {
       files: ['**/*.stories.jsx'],
       rules: {
-        'no-alert': false,
+        'no-alert': 0,
       },
     },
   ],
