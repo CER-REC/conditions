@@ -1,28 +1,19 @@
-# Component Name
+# SelectedGroupBar Component
 
-TODO: Summarize purpose and requirements from design document.
+This component is a public component that is user generally through out the 
+visualization. It consists of a key an value pair that is surrounded by a coloured
+rectangle. They key represented a group of items. The items could be places, 
+conditions, or companies. The value is a specific item from the list. Below is a
+screen capture of the grouping.
 
 ## Interaction Requirements
 
-TODO: Explain interaction requirements, mentioning differences for cursor, touch,
-and keyboard navigation.
+There is no interaction for this component
 
 ## Accessibility Requirements
 
-TODO: Explain desired accessibility support, and provide table of currently
-implemented accessibility with table of automated accessibility test results.
-
-## Analytics Requirements
-
-TODO: Explain what analytics events should be fired from this component, and
-provide table of currently implemented analytics events with table of automated
-analytics test results.
-
-## Unit Testing
-
-TODO: Provide table of automated unit test results and code coverage metrics.
+This component will need to read out the paragraph text of the key and the value 
 
 ## Examples
 
-TODO: Implement examples of different implementations with sandbox for editing
-properties on the fly.
+[example](../../../.storybook/assets/images/SeclectedgroupBar.PNG)

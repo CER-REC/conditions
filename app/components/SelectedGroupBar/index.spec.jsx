@@ -26,7 +26,7 @@ describe('Components|SelectedGroupBar', () => {
   describe('with default props', () => {
     it('should accept a prop for the group text', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions" />);
-      expect(wrapper.find('span').first().props().children).to.equal('Conditions');
+      expect(wrapper.find('span').first().props().children).to.equal('Conditions:');
     });
 
     it('should accept a prop for the groupitem text', () => {
@@ -34,9 +34,9 @@ describe('Components|SelectedGroupBar', () => {
       expect(wrapper.find('span').last().props().children).to.equal('condition');
     });
 
-    it('should accept both props for the group and groupitem text', () => {
+    it('should accept both props for the group and groupItem text', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItem="condition" />);
-      expect(wrapper.find('span').first().props().children).to.equal('Conditions');
+      expect(wrapper.find('span').first().props().children).to.equal('Conditions:');
       expect(wrapper.find('span').last().props().children).to.equal('condition');
     });
 
