@@ -1,6 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+
 import handleInteraction from '../../utilities/handleInteraction';
+import CircleContainer from '../CircleContainer';
+import Icon from '../Icon';
+
+import './styles.scss';
+
+library.add(
+  faAngleRight,
+  faAngleLeft,
+);
 
 const List = (props) => {
   if (props.items.length === 0) { return null; }
@@ -15,11 +27,15 @@ const List = (props) => {
         {...(props.itemInteractions ? handleInteraction(props.onChange, i) : {})}
       >
         {!isSelected || selectedIndex === 0 ? null : (
-          <button {...handleInteraction(props.onChange, i - 1)} className="ArrowPrevious">Previous</button>
+          <CircleContainer size="24px" {...handleInteraction(props.onChange, i - 1)} className="ArrowPrevious">
+            <Icon size="1x" icon="angle-left" />
+          </CircleContainer>
         )}
         <div className="List-Item-Content">{item}</div>
         {!isSelected || selectedIndex === (props.items.length - 1) ? null : (
-          <button {...handleInteraction(props.onChange, i + 1)} className="ArrowNext">Next</button>
+          <CircleContainer size="24px" {...handleInteraction(props.onChange, i + 1)} className="ArrowNext">
+            <Icon size="1x" icon="angle-right" />
+          </CircleContainer>
         )}
       </li>
     );

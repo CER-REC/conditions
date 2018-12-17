@@ -4,18 +4,21 @@
       list-style-type: none;
     }
     .List-Item {
-      display: inline-flex;
+      display: inline-table;
+      position: relative;
+
       &.selected {
-        button {
+        .ArrowNext {
+          margin-top: -12px;
           position: absolute;
-          &.ArrowNext {
-            margin-left: 70px;
-            margin-top: -12px;
-          }
-          &.ArrowPrevious {
-            margin: 0;
-            margin-top: -12px;
-          }
+          top: 0;
+          right: 0;
+        }
+        .ArrowPrevious {
+          margin: 0;
+          margin-top: -12px;
+          position: absolute;
+          left: 0;
         }
       }
     }
