@@ -15,7 +15,6 @@ class ManualPureClassComponent extends React.Component {
   }
 }
 
-const PureFunctionalComponent = React.memo(props => <div />);
 ```
 
 Components should be stored in `app/components/ComponentName/`.
@@ -24,7 +23,7 @@ Components should be stored in `app/components/ComponentName/`.
 
 Any component that is used by a View, or by two or more other components should
 have its own folder and be considered a `Public` component. Anything that is
-only used by a single component should be placed in that component's folder, and
+only used by a single component should be placed in a subfolder of that component, and
 is treated as an `Private` component.
 
 Private components should be refactored into a Public component, if we ever
@@ -47,10 +46,11 @@ styles.scss // Styles for MyPublicComponent and children
 index.spec.jsx // Test for MyPublicComponent
 index.stories.jsx // Examples
 README.md // Documentation
-PrivateComponent.jsx // Component used only within MyPublicComponent
-PrivateComponent.stories.jsx // Examples
-PrivateComponent.README.md // Documentation
-PrivateComponent.test.jsx // Test for PrivateComponent
+PrivateComponent/index.jsx // Component used only within MyPublicComponent
+PrivateComponent/styles.scss // Styles for PrivateComponent and children
+PrivateComponent/index.spec.jsx // Test for PrivateComponent
+PrivateComponent/index.stories.jsx // Examples
+PrivateComponent/README.md // Documentation
 ```
 
 The name used for imports and exports should always match the folder or filename:
@@ -58,9 +58,9 @@ The name used for imports and exports should always match the folder or filename
 * `./MyPublicComponent/index.jsx`
  * Default export is a component named `MyPublicComponent`
  * Imported as `import MyPublicComponent from './app/components/MyPublicComponent/';`
-* `./MyPublicComponent/PrivateComponent.jsx`
+* `./MyPublicComponent/PrivateComponent/index.jsx`
  * Default export is a component named `PrivateComponent`
- * Imported as `import PrivateComponent from './PrivateComponent';`
+ * Imported as `import PrivateComponent from './PrivateComponent/';`
 
 ## State
 
