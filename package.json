@@ -19,11 +19,11 @@
     "test": "cross-env NODE_ENV=test nyc mocha app/**/*.spec.{js,jsx}",
     "test:single": "cross-env NODE_ENV=test mocha",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s  ./app/images -p 6006",
     "build-storybook": "build-storybook"
   },
   "author": "Spenser Jones <hello@spenserj.com>",
-  "license": "Open Government Liscense - Canada",
+  "license": "Open Government License - Canada",
   "dependencies": {
     "apollo-boost": "^0.1.20",
     "dialog-polyfill": "^0.4.9",
