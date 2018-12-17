@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FeatureFlag from './FeatureFlag';
+import CircleContainer from '../../CircleContainer';
 
 import './styles.scss';
 
@@ -11,7 +12,14 @@ const ProjectChart = (props) => {
   });
   return (
     <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
-      <p>{conditionCount}</p>
+      <div className="ConditionPipe">
+        <CircleContainer
+          size="24px"
+          className="ConditionCount"
+        >
+          {conditionCount}
+        </CircleContainer>
+      </div>
       <div className="FlagWrapper">
         { props.graphData.map(condition => (
           <FeatureFlag

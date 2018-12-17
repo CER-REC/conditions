@@ -3,12 +3,21 @@
     ul {
       list-style-type: none;
     }
-    li {
+    .List-Item {
       display: inline-flex;
-    }
-    button {
-      height: 20px;
-      width: 20px;
+      &.selected {
+        button {
+          position: absolute;
+          &.ArrowNext {
+            margin-left: 70px;
+            margin-top: -12px;
+          }
+          &.ArrowPrevious {
+            margin: 0;
+            margin-top: -12px;
+          }
+        }
+      }
     }
   }
 }

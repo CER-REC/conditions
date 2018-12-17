@@ -1,4 +1,9 @@
-$pipe-color: #e2dfdf;
+$pipe-color: #e4e4e4;
+$condition-circle-bg: #a1a8a7;
+$selected-condition-circle-bg: #f15a24;
+$condition-circle-font: #fff;
+$project-chart-line: #a1a8a7;
+
 
 @mixin angled($direction, $sides, $backgroundColour, $contrastTextColour) {
 	position: relative;
@@ -66,8 +71,39 @@ $pipe-color: #e2dfdf;
     }
   }
 
+  .ConditionPipe {
+    height: 30px;
+    background-color: $pipe-color;
+
+    .ConditionCount {
+      background-color: $condition-circle-bg;
+      color: $condition-circle-font;
+    }
+  }
+
+  .FlagWrapper {
+    height: 300px;
+    width: 2px;
+    background-color: $project-chart-line;
+    margin: -6px auto;
+    padding-top: 15px;
+  }
+
+  p {
+    margin: 0;
+  }
+
   &.selected {
     width: 100px;
+
+    .ConditionPipe {
+      .ConditionCount {
+        background-color: $selected-condition-circle-bg;
+        color: $condition-circle-font;
+        position: relative;
+        bottom: 12px;
+      }
+    }
     
     .FlagWrapper {
       height: 300px;
@@ -87,17 +123,5 @@ $pipe-color: #e2dfdf;
       width: 28px;
       @include angled(rightOut, bottomAndTop, $pipe-color, black);
     }
-  }
-
-  .FlagWrapper {
-    height: 300px;
-    width: 2px;
-    background-color: lightgrey;
-    margin: 0 auto;
-    padding-top: 10px;
-  }
-
-  p {
-    margin: 0;
   }
 }
