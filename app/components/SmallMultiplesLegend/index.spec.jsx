@@ -6,7 +6,7 @@ import { expect } from 'chai';
 import SmallMultiplesLegend from './';
 import LegendItem from './LegendItem';
 import List from '../List';
-import shared from './shared.spec';
+import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 describe('Components|SmallMultiplesLegend', () => {
   let spy;
@@ -24,7 +24,7 @@ describe('Components|SmallMultiplesLegend', () => {
     spy = sinon.spy();
   });
 
-  shared.shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
+  shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
 
   it('should not render a list when no data is provided', () => {
     wrapper = shallow((
@@ -76,7 +76,7 @@ describe('Components|SmallMultiplesLegend', () => {
     it('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(data[0].name)).to.be.equal(true);
+      expect(spy.calledOnceWith(data[0].name)).to.equal(true);
     });
   });
 

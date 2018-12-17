@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { VictoryArea } from 'victory';
 
 import LegendItem from './';
-import shared from '../shared.spec';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 describe('Components|SmallMultiplesLegend/LegendItem', () => {
   let wrapper = shallow((
@@ -17,7 +17,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     />
   ));
 
-  shared.shouldBehaveLikeAComponent(wrapper, LegendItem, 'testtest');
+  shouldBehaveLikeAComponent(wrapper, LegendItem, 'testtest');
 
   describe('when the all property is provided', () => {
     beforeEach(() => {
