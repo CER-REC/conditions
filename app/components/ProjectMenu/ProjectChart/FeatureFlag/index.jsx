@@ -4,15 +4,8 @@ import './styles.scss';
 
 const FeatureFlag = (props) => {
   // max flag size is 30px
-  let flagSize = 0;
-  if (props.count === 0) {
-    flagSize = 0;
-  } else if (props.count < 10 ) {
-    // max divided by the count
-    flagSize = 30 / props.count;
-  } else {
-    flagSize = 30;
-  }
+  const sizePerUnit = (30 / 10); // 30px of space, and 10 units is a full flag
+  const flagSize = Math.min(props.count * sizePerUnit, 30);
 
   const bar = (
     <div
