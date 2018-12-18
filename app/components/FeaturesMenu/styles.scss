@@ -1,0 +1,30 @@
+@import "../../styles/borders.scss";
+
+.FeaturesMenu {
+  text-align: left;
+
+  &:not(.dropDown) {
+    .title {
+      color: #4D4D4D;
+      font-size: 18px;
+    }
+
+    .List {
+      .List-Item-Content {
+        color: #666666;
+        font-size: 16px;
+        font-weight: bold;
+        border: $list-width $list-style #B3B3B3;
+        padding: 0.2em 1em;
+        margin: 1em 0em;
+      }
+
+      .selected .List-Item-Content {
+        color: #333333;
+        background-color: #E4E4E4;
+        border: $list-selected;
+        margin-right: 2em;
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from '../List';
+import './styles.scss';
 
 // TODO: This is a mock, replace with the translation function
 const t = searchList => searchList[2];
