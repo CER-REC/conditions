@@ -49,6 +49,7 @@ $project-chart-line: #a1a8a7;
 
 .ProjectChart {
   width: 50px;
+  display: inline-table;
 
   .ProjectName {
     transform: rotate(25deg);
@@ -94,13 +95,12 @@ $project-chart-line: #a1a8a7;
     width: 100px;
 
     .ConditionPipe {
-      top: 0px;
       margin: 0;
       .ConditionCount {
         background-color: $selected-condition-circle-bg;
         color: $condition-circle-font;
         position: relative;
-        bottom: 12px;
+        bottom: 10px;
       }
     }
     

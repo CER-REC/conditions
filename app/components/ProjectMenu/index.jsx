@@ -56,9 +56,34 @@ class ProjectMenu extends React.PureComponent {
     const selected = listItems
       .findIndex(project => project.id === this.props.selectedProjectID);
 
+    let emptyItemsBefore = null;
+    let emptyItemsAfter = null;
+
+    if (selected < 2) {
+      emptyItemsBefore = selected === 1
+        ? <ProjectChart chartType={this.props.selectedFeature} />
+        : (
+          <React.Fragment>
+            <ProjectChart chartType={this.props.selectedFeature} />
+            <ProjectChart chartType={this.props.selectedFeature} />
+          </React.Fragment>
+        );
+    } if (selected > (listItems.length - 3)) {
+      emptyItemsAfter = selected === (listItems.length - 2)
+        ? <ProjectChart chartType={this.props.selectedFeature} />
+        : (
+          <React.Fragment>
+            <ProjectChart chartType={this.props.selectedFeature} />
+            <ProjectChart chartType={this.props.selectedFeature} />
+          </React.Fragment>
+        );
+    }
+
     return (
       <div className="ProjectMenu">
+        <div className="EmptyListItems">{emptyItemsBefore}</div>
         <List items={renderedItems} onChange={this.handleConditionChange} selected={selected} />
+        <div className="EmptyListItems">{emptyItemsAfter}</div>
       </div>
     );
   }

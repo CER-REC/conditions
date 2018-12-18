@@ -26,9 +26,7 @@ storiesForComponent('Components|ProjectMenu/ProjectChart', module, ReadMe)
   ))
   .add('Empty graphData', () => (
     <ProjectChart
-      graphData={[]}
       chartType={chartType}
-      projectName={projectName}
     />
   ));
 

@@ -12,35 +12,39 @@ const ProjectChart = (props) => {
   });
   return (
     <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
-      <div className="ConditionPipe">
-        <CircleContainer
-          size="24px"
-          className="ConditionCount"
-        >
-          {conditionCount}
-        </CircleContainer>
-      </div>
-      <div className="FlagWrapper">
-        { props.graphData.map(condition => (
-          <FeatureFlag
-            key={condition.name}
-            name={condition.name}
-            count={condition.count}
-            color={condition.color}
-            chartType={props.chartType}
-          />
-        ))}
-      </div>
-      <div className="ProjectName">
-        { props.selected ? null : <p>{props.projectName}</p> }
-      </div>
+      {props.graphData.length === 0 ? <div className="ConditionPipe" /> : (
+        <React.Fragment>
+          <div className="ConditionPipe">
+            <CircleContainer
+              size="24px"
+              className="ConditionCount"
+            >
+              {conditionCount}
+            </CircleContainer>
+          </div>
+          <div className="FlagWrapper">
+            { props.graphData.map(condition => (
+              <FeatureFlag
+                key={condition.name}
+                name={condition.name}
+                count={condition.count}
+                color={condition.color}
+                chartType={props.chartType}
+              />
+            ))}
+          </div>
+          <div className="ProjectName">
+            { props.selected ? null : <p>{props.projectName}</p> }
+          </div>
+        </React.Fragment>
+    )}
     </div>
   );
 };
 
 ProjectChart.propTypes = {
   /** The project name */
-  projectName: PropTypes.string.isRequired,
+  projectName: PropTypes.string,
   /** The selected feature */
   chartType: PropTypes.string.isRequired,
   /** All of the projects condition data */
@@ -48,13 +52,15 @@ ProjectChart.propTypes = {
     name: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
     color: PropTypes.string.isRequired,
-  })).isRequired,
+  })),
   /** Selected class for styling */
   selected: PropTypes.bool,
 };
 
 ProjectChart.defaultProps = {
   selected: false,
+  graphData: [],
+  projectName: '',
 };
 
 export default ProjectChart;

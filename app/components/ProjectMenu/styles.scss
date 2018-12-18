@@ -1,11 +1,21 @@
 .ProjectMenu {
+  position: relative;
+  .EmptyListItems {
+    height: 30px;
+    top: 6px;
+    display: inline-block;
+  }
   .List {
+    display: inline-table;
+
     ul {
       list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
     .List-Item {
       display: inline-table;
-      position: relative;
+      position: relative;  
 
       &.selected {
         .ArrowNext {
