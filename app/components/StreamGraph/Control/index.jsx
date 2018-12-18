@@ -8,28 +8,32 @@ class Control extends React.PureComponent {
     position: PropTypes.string,
     zIndex: PropTypes.number,
     marginTop: PropTypes.string,
-    marginLeft: PropTypes.string,
+    x1: PropTypes.string,
+    x2: PropTypes.string,
+    y1: PropTypes.string,
+    y2: PropTypes.string,
+    moveCursor: PropTypes.string,
+    numOfConditionsLabel: PropTypes.number.isRequired,
   };
 
   control() {
     return (
-      <svg height="400px">
-        <g transform="translate(30, 30)">
-          <text x="15" y="15">{this.numOfConditionsLabel}</text>
+      <svg height="100%">
+        <g transform={`scale(1.5)${this.props.moveCursor}`}>
+          <text x="15" y="15">{this.props.numOfConditionsLabel}</text>
           <line
-            strokeDasharray="10, 5"
-            x1="20"
-            x2="20"
-            y1="20"
-            y2="330"
+            strokeDasharray="8, 4"
+            x1={this.props.x1}
+            x2={this.props.x2}
+            y1={this.props.y1}
+            y2={this.props.y2}
             stroke="magenta"
-            strokeWidth="2"
-            transform="scale(2)"
+            strokeWidth="1"
           />
           <path
-            d="M 100 100 L 300 100 L 200 300 z"
+            d="M 5 5 L 15 5 L 10 15 z"
             fill="magenta"
-            transform="scale(0.2)"
+            transform="translate(10, 10)"
           />
         </g>
       </svg>
@@ -45,7 +49,6 @@ class Control extends React.PureComponent {
           position: this.props.position,
           zIndex: this.props.zIndex,
           marginTop: this.props.marginTop,
-          marginLeft: this.props.marginLeft,
         }}
       >
         {this.control()}
@@ -58,7 +61,11 @@ Control.defaultProps = {
   position: '',
   zIndex: 0,
   marginTop: '',
-  marginLeft: '',
+  x1: '20',
+  x2: '20',
+  y1: '20',
+  y2: '200',
+  moveCursor: '',
 };
 
 export default Control;

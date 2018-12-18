@@ -10,9 +10,10 @@ import Control from './Control';
 
 import './styles.scss';
 
-export const numOfConditionsLabel = point => `${Math.round(point.y)}`;
+// export const numOfConditionsLabel = point => `${Math.round(point.y)}`;
 
 export const roundDateLabel = t => Math.round(t);
+
 class StreamGraph extends React.Component {
   static propTypes = {
     projectData: PropTypes.arrayOf(PropTypes.shape({
@@ -31,16 +32,31 @@ class StreamGraph extends React.Component {
     super(props);
     this.state = {
       showControl: false,
+      controlPosition: {
+        x: 0,
+        y: 0,
+      }
     };
+    // this.dragEnd = this.dragEnd.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextState.showControl !== this.state.showControl) { return true; }
-    return false;
+  // onArrowKey = (e) => {
+
+  // }
+
+  handleOnClick = (event) => {
+    if (this.state.showControl === true) {
+      document.addEventListener('click', this.handleOutsideClick, false);
+    }
+    this.setState({ showControl: true }); // add position
+    const xPosition = event.clientX;
   }
 
-  handleOnClick = () => {
-    this.setState({ showControl: !this.state.showControl });
+  handleOutsideClick = (e) => {
+    if (!this.node.contains(e.target)) {
+      this.setState({ showControl: false });
+    }
   }
 
   streamLayers() {
@@ -83,6 +99,8 @@ class StreamGraph extends React.Component {
 
     conditionDates = Object.values(conditionDates);
     const maxConditionValue = Math.max(...conditionDates);
+
+    // console.log(conditionDates); // use to condition labels
     return (
       <VictoryChart>
         <VictoryAxis
@@ -118,6 +136,7 @@ class StreamGraph extends React.Component {
         onKeyDown={this.handleOnClick}
         role="button"
         tabIndex="-1"
+        ref={(node) => { this.node = node; }}
       >
         {this.chartTitle()}
         {this.chart()}
@@ -127,8 +146,9 @@ class StreamGraph extends React.Component {
             <Control
               position="absolute"
               zIndex={9}
-              marginTop="-485px"
-              marginLeft="300px"
+              marginTop="-410px"
+              moveCursor="translate(30, 0)"
+              numOfConditionsLabel={32} // temp until Control position is made dynamic
             />
           :
           null

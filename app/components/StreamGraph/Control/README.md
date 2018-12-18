@@ -7,7 +7,7 @@ of conditions to the user.
 
 * [X] Text reflects number of Conditions
 * [X] Appears only when user clicks on the StreamGraph
-* [ ] Disappears when user clicks outside of the StreamGraph
+* [X] Disappears when user clicks outside of the StreamGraph
 * [ ] Handles drag event
 * [ ] Handles arrow key events
 * [ ] Handles tab events
