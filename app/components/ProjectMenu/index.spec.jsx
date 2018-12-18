@@ -85,7 +85,7 @@ describe('Components|ProjectMenu', () => {
     it('should pass down a maximum of 5 projects to the List', () => {
       const list = wrapper.find('List');
       expect(list.props().items, 'passed props').to.have.lengthOf(5);
-      expect(list.dive().find('ProjectChart'), 'rendered output').to.have.lengthOf(5);
+      expect(list.shallow().find('ProjectChart'), 'rendered output').to.have.lengthOf(5);
     });
 
     it('should pass the List the index of the selected project', () => {
