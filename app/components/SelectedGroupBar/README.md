@@ -16,4 +16,4 @@ This component will need to read out the paragraph text of the key and the value
 
 ## Examples
 
-![Example of SelectedGroupBar](SeclectedgroupBar.PNG)
+![Example of SelectedGroupBar](SelectedGroupBar.PNG)

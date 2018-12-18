@@ -19,7 +19,7 @@
     "test": "cross-env NODE_ENV=test nyc mocha app/**/*.spec.{js,jsx}",
     "test:single": "cross-env NODE_ENV=test mocha",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
-    "storybook": "start-storybook -s  ./app/images -p 6006",
+    "storybook": "start-storybook -s ./app/images -p 6006",
     "build-storybook": "build-storybook"
   },
   "author": "Spenser Jones <hello@spenserj.com>",
