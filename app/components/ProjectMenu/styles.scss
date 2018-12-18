@@ -1,12 +1,16 @@
 .ProjectMenu {
   position: relative;
+  display: inline-table;
+
   .EmptyListItems {
     height: 30px;
     top: 6px;
-    display: inline-block;
+    display: table-cell;
+    vertical-align: top;
   }
+
   .List {
-    display: inline-table;
+    display: table-cell;
 
     ul {
       list-style-type: none;
@@ -14,8 +18,9 @@
       padding: 0;
     }
     .List-Item {
-      display: inline-table;
-      position: relative;  
+      display: table-cell;
+      vertical-align: top;
+      position: relative;
 
       &.selected {
         .ArrowNext {
