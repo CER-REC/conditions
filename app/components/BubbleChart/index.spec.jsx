@@ -13,20 +13,25 @@ describe('Components|BubbleChart', () => {
       expect(wrapper.type()).to.equal(null);
     });
   });
-});
+  describe('with a selectedCategory', () => {
+    it('should render a div', () => {
+      const wrapper = shallow(<BubbleChart selectedCategory="instrument" width={1000} height={1500} />);
+      expect(wrapper.type()).to.equal('div');
+    });
 
-describe('with a selectedCategory', () => {
-  it('should render a div', () => {
-    const wrapper = shallow(<BubbleChart selectedCategory="instrument" width={1000} height={1500} />);
-    expect(wrapper.type()).to.equal('div');
+    it('should render a bubbleChart class', () => {
+      const wrapper = shallow(<BubbleChart selectedCategory="instrument" onChange={noop} width={1000} height={1500} />);
+      expect(wrapper.find('.bubbleChart')).to.have.lengthOf(1);
+    });
   });
-
-  it('should render a bubbleChart class', () => {
-    const wrapper = shallow(<BubbleChart selectedCategory="instrument" onChange={noop} width={1000} height={1500} />);
-    expect(wrapper.find('.bubbleChart')).to.have.lengthOf(1);
-  });
+  // describe('without a selectedCategory equal to Instrument', () => {
+  //   it('should find an svg tag', () => {
+  //     const wrapper = mount(<BubbleChart selectedCategory="test" width={1000} height={1500} />);
+  //     console.log(wrapper.debug());
+  //     // expect(wrapper.find('svg')).to.have.lengthOf(1);
+  //   });
+  // });
 });
-
 //   describe('with an width/height props', () => {
 //     it('should render an svg of width equal to availableSpace', () => {
 //       const wrapper = shallow(<BubbleChart selectedCategory="instrument" width={1000} height={1500} />);

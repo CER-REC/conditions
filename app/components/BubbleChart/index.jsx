@@ -140,22 +140,24 @@ class BubbleChart extends React.PureComponent {
       .enter()
       .append('g')
       .attr('transform', transformD => `translate(${  transformD.x  },${  transformD.y  })`);
-
     nodes.append('circle')
       .each((d, i, nodes) =>
         d3.select(nodes[i])
           .attr('r', (d.r))
-          .attr('fill', (d) => {
-            if (d.data.category === 'construction') { return 'orange'; }
-            return 'blue';
+          .style('fill', (d) => {
+            // if (d.data.category === 'construction') { return 'orange'; }
+            return 'orange';
           })
+          .style('stroke', 'transparent')
           .attr('fill-opacity', d.children ? 0.25 : 1.0)
           .attr('stroke', d.children ? 'rgb(31, 119, 180)' : 'none'))
-          .on('click', d => { 
-            console.log('x is ' + d.x)
-            console.log('y is ' + d.y)
+          .on('click', (d, i, nodes) => {
+            d3.selectAll(nodes).style('stroke', 'transparent');
+            d3.select(nodes[i]).style('stroke', 'magenta').style('stroke-width', '2');
+            svg.selectAll('path').remove();
+            svg.append('g').append('path').attr('d', "M 5 5 L 15 5 L 10 15 z").attr('transform', 'translate(' + d.x + ')')
+          })
             // Draw an svg when received the x and y values
-           });
     nodes.filter(d => !d.children)
       .append('text')
       .attr('ref', 'check')
