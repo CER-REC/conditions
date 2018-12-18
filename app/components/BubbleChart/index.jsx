@@ -149,6 +149,7 @@ class BubbleChart extends React.PureComponent {
             return 'orange';
           })
           .style('stroke', 'transparent')
+          .attr('tabindex', '0')
           .attr('fill-opacity', d.children ? 0.25 : 1.0)
           .attr('stroke', d.children ? 'rgb(31, 119, 180)' : 'none'))
           .on('click', (d, i, nodes) => {
@@ -156,6 +157,14 @@ class BubbleChart extends React.PureComponent {
             d3.select(nodes[i]).style('stroke', 'magenta').style('stroke-width', '2');
             svg.selectAll('path').remove();
             svg.append('g').append('path').attr('d', "M 5 5 L 15 5 L 10 15 z").attr('transform', 'translate(' + d.x + ')')
+          })
+          .on('keypress', (d, i, nodes) => {
+            if (d3.event.keyCode === 13) {
+              d3.selectAll(nodes).style('stroke', 'transparent');
+              d3.select(nodes[i]).style('stroke', 'magenta').style('stroke-width', '2');
+              svg.selectAll('path').remove();
+              svg.append('g').append('path').attr('d', "M 5 5 L 15 5 L 10 15 z").attr('transform', 'translate(' + d.x + ')')  
+            }
           })
             // Draw an svg when received the x and y values
     nodes.filter(d => !d.children)
