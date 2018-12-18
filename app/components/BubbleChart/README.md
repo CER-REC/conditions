@@ -27,12 +27,25 @@ The Bubble Chart is the parent svg container that will contain both Energy Bubbl
 * [ ] onEnter should emit an event
 * [ ] onHover for more than __ seconds should emit an event
 
-##Implementation Basics
-* [ ] Obtain the smallest number and set up a radius
-* [ ] Proportionally increase the radius of all circles, based on the minimum radius
-* [ ] If circle has minimum radius, then create a circle with larger circle with text included and render it
-* [ ] Obtain the radius of the largest circle and obtain x, y, and radius for reference as required 
-* [ ] Method 1: Render each circle (Energy bubble indepdently)
-* [ ] Method 2: Render the 3 circles with it's corresponding 2 circles. (ie left/right of the svg)
-  * [ ] The three circles in the left and the two circles on the right are seperate circles for the main svg
-* [ ] It will later be scaled appropriately using viewbox
+## Implementation Steps
+* [ ] BubbleChart component is the parent component that will have calculations
+  * [ ] Calculation: Loops through original data and get the minimum value among all the data sets
+  * [ ] Calculation: Loops and resizes all the values to be ( #/minimumValue) * minimumPixelSize - To happen only once with main data set (unfiltered)
+  * [ ] If selection made: Create a subset data and passes through to the required component
+  * [ ] If no selection made: Pass in the data with resized values
+  * [ ] Contains the parent svg tag that will have nested Instrument Bubbles for each category
+  * [ ] Function: Get the maximum radius of the parent circle (passed down as props to the InstrumentBubble Component)
+  * [ ] Calculation: After receiving maximum radius, add spacing between two circles, and add the second Instrument Bubble
+  * [ ] Sizing is approximate and only goal is to ensure that they all fit inside the svg
+  * [ ] Scale it appropriately based on the viewbox
+  * [ ] It can be scaled appropriately using viewbox
+* [ ] Instrument Bubble (Child of Bubble Chart)
+  * [ ] Contains the energy circles within the bubbles
+  * [ ] Use d3 packing and d3 heirarchy to render the bubbles
+  * [ ] Ensure accessibility (with tabbing + onEnter)
+  * [ ] onClick, removes all the existing styles on the circles + pointer svg
+    * [ ] Determine the x, y of the clicked circle -> Style the stroke of the circle and add svg for pointer + line
+  * [ ] During render, add additional stroke in children component so that energy bubble(parents) touch while the children nested bubbles doesn't. 
+* Either BubbleChart or Instrument Bubble
+  * [ ] Determine where the x, y of the text is, and ensure no circle overlap with it. 
+  * [ ] Create an arc with the circle
