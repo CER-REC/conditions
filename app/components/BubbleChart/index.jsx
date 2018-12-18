@@ -13,110 +13,77 @@ class BubbleChart extends React.PureComponent {
 
   componentDidMount() {
     const bubbleChartData = {
-      GAS: {
-        name: 'GAS',
-        category: 'gas',
+     name: 'data',
+     children:[{
+        parentName: 'GAS',
         children: [
           {
             name: 'XG',
             children: [],
-            value: 0.50,
-            category: 'construction',
-          },
-          {
+          },{
             name: 'GC',
             children: [],
-            value: 0.20,
-            category: 'construction',
+            value: 50,
           },
           {
             name: 'GPSO',
             children: [],
-            value: 0.10,
-            category: 'opening',
+            value: 25,
           },
           {
             name: 'SG',
             children: [],
-            value: 0.10,
-            category: 'safety',
+            value: 40,
           },
           {
             name: 'GPLO',
             children: [],
-            value: 0.10,
-            category: 'opening',
-          },
-        ],
-        value: 1,
+            value: 50,
+          }],
       },
-      POWER: {
-        name: 'POWER',
-        category: 'power',
+      {
+        parentName: 'POWER',
         children: [
           {
             name: 'EC',
             children: [],
-            value: 0.10,
-            category: 'construction',
+            value: 50,
           },
           {
             name: 'EPE',
             children: [],
-            value: 0.10,
-            category: 'construction',
+            value: 25,
           },
-        ],
-        value: 5,
-      },
-      OIL: {
-        name: 'OIL',
-        category: 'oil',
+        ]},
+      {
+        parentName: 'OIL',
         children: [{
           name: 'XO',
           children: [],
           value: 25,
-          category: 'construction',
         },
         {
           name: 'SO',
           children: [],
-          value: 0.25,
-          category: 'safety',
+          value: 50,
         }, {
           name: 'OC',
           children: [],
-          value: 25,
-          category: 'construction',
+          value: 75,
         }, {
           name: 'OPL',
           children: [],
-          value: 0.25,
-          category: 'routing',
+          value: 25,
         }, {
           name: 'OPLO',
           children: [],
-          value: 0.04,
-          category: 'opening',
+          value: 25,
         }, {
           name: 'OPSO',
           children: [],
-          value: 0.04,
+          value: 25,
         }],
-      },
-      'Not Specified': {
-        name: 'Not Specified',
-        category: 'not specified',
-        children: [{
-          name: 'XC',
-          category: 'tariffs',
-          value: 0.04,
-        }, {
-          name: 'CO',
-          category: 'tariffs',
-          value: 0.04,
-        }],
-      },
+      }]
     };
     this.fauxDOMRender(null, bubbleChartData);
   }
@@ -127,16 +94,14 @@ class BubbleChart extends React.PureComponent {
 
   fauxDOMRender(err, data) {
     const node = this.rootNode;
-    data = data.GAS;
-    const d = this.props.width;
-    const sizeScale = d3.scaleSqrt().range([5, 100]);
-    const svg = d3.select(node).append('svg').attr('width', this.props.width).attr('height', this.props.height);
-    const pack = d3.pack().size([d, d]).padding(5).radius( d => sizeScale(d.value));
-    const root = d3.hierarchy(data);
+    const d = 650;
+    // const sizeScale = d3.scaleSqrt().range([5, 100]); Optional: to 
+    const svg = d3.select(node).append('svg').attr('width', 650).attr('height', 650);
+    const pack = d3.pack().size([d,d]).padding(10).radius( d => d.value);
+    const root = d3.hierarchy(data).sum(d => d.value).sort((a,b) => (b.value - a.value));
     const nodes = svg.datum(data)
       .selectAll('g')
       .data(pack(root).descendants())
-      // .call((d) => console.log(d._enter[0][0].__data__.r)) // get's the radius of the maximum circle which is the radius of 150
       .enter()
       .append('g')
       .attr('transform', transformD => `translate(${  transformD.x  },${  transformD.y  })`);
@@ -145,7 +110,6 @@ class BubbleChart extends React.PureComponent {
         d3.select(nodes[i])
           .attr('r', (d.r))
           .style('fill', (d) => {
-            // if (d.data.category === 'construction') { return 'orange'; }
             return 'orange';
           })
           .style('stroke', 'transparent')
@@ -166,14 +130,26 @@ class BubbleChart extends React.PureComponent {
               svg.append('g').append('path').attr('d', "M 5 5 L 15 5 L 10 15 z").attr('transform', 'translate(' + d.x + ')')  
             }
           })
-            // Draw an svg when received the x and y values
+
+    nodes.filter(d => d.children)
+      .append('text')
+      .attr('dy', d => d.r)
+      .text(d => {
+        if (d.data.parentName !== undefined){
+          return d.data.parentName.substring(0, d.r)
+        }
+      })
     nodes.filter(d => !d.children)
       .append('text')
       .attr('ref', 'check')
       .attr('dy', '0.5em')
       .style('text-anchor', 'middle')
       .style('font', '8px sans-serif')
-      .text(d => d.data.name.substring(0, d.r));
+      .text(d => d.data.name.substring(0, d.r))
+      .attr('class', 'textRender')
+      .on('click', (d, i , nodes) => {
+        console.log(nodes[i].getComputedTextLength()) // Will be used to grab the text length (during first render) and create a second circle for the text rendering
+      });
   }
 
   render() {
