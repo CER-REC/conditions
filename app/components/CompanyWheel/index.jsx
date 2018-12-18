@@ -14,8 +14,8 @@ class CompanyWheel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      oldRotation: 90,
-      newRotation: 90,
+      oldRotation: 0,
+      newRotation: 0,
       newRayRotation: 0,
     };
   }
@@ -54,7 +54,7 @@ class CompanyWheel extends React.Component {
       <div className="wheelContainer">
         <Spring
           config={{ tension: 50, clamp: true, mass: 0.7 }}
-          from={{ transformOrigin: '50%', transform: `rotate(${this.state.oldRotation}deg)` }}
+          from={{ transformOrigin: '50% 50.31%', transform: `rotate(${this.state.oldRotation}deg)` }}
           to={{ transform: `rotate(${this.state.newRotation}deg)`, rotate: this.state.newRayRotation }}
         >
           { props => (

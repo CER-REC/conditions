@@ -7,11 +7,7 @@
   .movingContainer{
     height: 500px;
     width:500px;
-    transform: rotate(90deg);
     position: absolute;
-
-    
-
   }
   
   .pullToSpin{
@@ -20,5 +16,5 @@
     right: -30px;
     transform: rotate(45deg);        
   }
-  
 }
+
