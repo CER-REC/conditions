@@ -20,7 +20,7 @@
     "test:single": "cross-env NODE_ENV=test mocha",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
     "storybook": "start-storybook -s ./app/images -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s ./app/images"
   },
   "author": "Spenser Jones <hello@spenserj.com>",
   "license": "Open Government License - Canada",
@@ -70,6 +70,7 @@
     "@storybook/react": "^4.0.2",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
+    "babel-plugin-add-react-displayname": "0.0.5",
     "babel-plugin-istanbul": "^5.1.0",
     "babel-plugin-react-docgen": "^2.0.0",
     "chai": "^4.1.2",
