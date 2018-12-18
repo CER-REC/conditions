@@ -28,7 +28,7 @@ const ProjectChart = (props) => {
                 key={condition.name}
                 name={condition.name}
                 count={condition.count}
-                color={condition.color}
+                color={props.selected ? condition.color : '#a1a8a7'}
                 chartType={props.chartType}
               />
             ))}

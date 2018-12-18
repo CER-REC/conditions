@@ -47,19 +47,10 @@ const projectData = [
   },
 ];
 
-// const options = {
-//   0: 1223,
-//   1: 1224,
-//   2: 1226,
-//   3: 1227,
-//   4: 1228,
-// };
 const options = projectData.reduce((acc, next) => ({
   ...acc,
   [next.name]: next.id,
 }), {});
-
-const selectedProjectID = 1226;
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withKnobs)

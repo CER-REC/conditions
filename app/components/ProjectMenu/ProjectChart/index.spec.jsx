@@ -79,4 +79,35 @@ describe('Components|ProjectMenu/ProjectChart', () => {
       expect(project.contains('<p>')).to.equal(false);
     });
   });
+
+  describe('when the chart is NOT selected', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+      />);
+    });
+
+    it('should give all conditions a grey color', () => {
+      const flag = wrapper.find('FeatureFlag').first();
+      expect(flag.props().color).to.equal('#a1a8a7');
+    });
+  });
+
+  describe('when there is missing data', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={[]}
+      />);
+    });
+    it('should only render a ConditionPipe', () => {
+      expect(wrapper.find('div.ConditionPipe')).to.have.a.lengthOf(1);
+      expect(wrapper.find('FlagWrapper')).to.have.a.lengthOf(0);
+      expect(wrapper.find('ProjectName')).to.have.a.lengthOf(0);
+    });
+  });
 });
