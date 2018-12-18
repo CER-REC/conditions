@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const WheelRayLegend = ({
-  ringType, legendPositionArray, numOfItems, rotation,
+  ringType, legendPositionArray, rotation, degreesPerItem,
 }) => {
-  const availDegreesForPlotting = 360;
-  const degreesPerItem = availDegreesForPlotting / numOfItems;
-
   let positionDegree = 0;
 
   const nextPosition = (numOfItemsAtIndex) => {
@@ -23,17 +20,24 @@ const WheelRayLegend = ({
     const position = nextPosition(legendObj.count);
     const stripePosition = (rotation + 90) % 360;
 
-    if (position > (stripePosition - 10 - degreesPerItem)
-      && position < (stripePosition + 10 + degreesPerItem)) {
+    if (position > stripePosition - 10 - degreesPerItem) {
       objectToRender = (
-        <g transform={`translate(371 209) rotate(${position}, 0, 245)`} >
+        <g transform={`translate(371 209) rotate(${position + 10}, 0, 245)`} >
+          <text id="LetterLegend" className="textLegend" transform="rotate(270, 0, 245)">
+            {legendObj.legend}
+          </text>
+        </g>);
+    }
+    else if (position < (stripePosition + 10) && position > (stripePosition - 10)) {
+      objectToRender = (
+        <g transform={`translate(371 209) rotate(${stripePosition}, 0, 245)`} >
           <text id="LetterLegend" className="textLegend chosen" transform="rotate(270, 0, 245) ">
             HOLDER
           </text>
         </g>);
     } else {
       objectToRender = (
-        <g transform={`translate(371 209) rotate(${position}, 0, 245)`} >
+        <g transform={`translate(371 209) rotate(${position - 10}, 0, 245)`} >
           <text id="LetterLegend" className="textLegend" transform="rotate(270, 0, 245)">
             {legendObj.legend}
           </text>
@@ -58,7 +62,7 @@ WheelRayLegend.propTypes = {
     legend: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
   })).isRequired,
-  numOfItems: PropTypes.number.isRequired,
+  degreesPerItem: PropTypes.number.isRequired,
   rotation: PropTypes.number.isRequired,
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spring, animated } from 'react-spring';
+import { Spring } from 'react-spring';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
@@ -7,18 +7,37 @@ import Ring from './Ring';
 import WheelRayLegend from './WheelRayLegend';
 
 // The rotation of the legend centered if needed is transformOrigin: '43.25% 52.7%'
+
+// every degreesperitem switch the graph
+// build the array of items by dividing the total change and divide by the degreesperitem
 class CompanyWheel extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       oldRotation: 90,
       newRotation: 90,
-      oldRayRotation: 0,
       newRayRotation: 0,
     };
-  };
+  }
 
-  calcRayRotation = (newWheelRotation) => (450 - (newWheelRotation % 360)) % 360;
+
+  componentWillMount() {
+    const degreesAvailForPlotting = 340;
+    const numOfLegendItems = this.props.ringType === 'company' ?
+      this.props.itemsData.length
+      : this.getLocationItemsCount();
+    const degreesPerItem = degreesAvailForPlotting / numOfLegendItems;
+    this.setState({ degreesPerItem });
+  }
+
+  onSpinClick = () => {
+    const newRotation = this.state.newRayRotation + Math.floor(Math.random() * 360);
+    const newRayRotation = this.calcRayRotation(newRotation);
+    this.setState(
+      { oldRotation: this.state.newRotation },
+      this.setState({ newRotation, newRayRotation }),
+    );
+  };
 
   getLocationItemsCount = () => {
     let count = 0;
@@ -26,28 +45,20 @@ class CompanyWheel extends React.Component {
       count += this.props.itemsData[i].count;
     }
     return count + 2;
-  };
-  
-  onSpinClick = () => {
-    let newRotation = this.state.newRayRotation + Math.floor(Math.random() * 360);
-    let newRayRotation = this.calcRayRotation(newRotation);
-    this.setState({oldRayRotation: this.state.newRayRotation, oldRotation: this.state.newRotation},
-    this.setState({ newRotation, newRayRotation })
-    );
-  };
+  }
 
-  numOfLegendItems = this.props.ringType === 'company' ? this.props.itemsData.length : this.getLocationItemsCount();
+  calcRayRotation = newWheelRotation => (450 - (newWheelRotation % 360)) % 360;
 
-  render(){ 
+  render() {
     return (
       <div className="wheelContainer">
-        <Spring native
+        <Spring
           config={{ tension: 50, clamp: true, mass: 0.7 }}
-          from={{ transformOrigin: '50%', transform:`rotate(${this.state.oldRotation}deg)`}}
-          to={{transform:`rotate(${this.state.newRotation}deg)`}}
+          from={{ transformOrigin: '50%', transform: `rotate(${this.state.oldRotation}deg)` }}
+          to={{ transform: `rotate(${this.state.newRotation}deg)`, rotate: this.state.newRayRotation }}
         >
           { props => (
-            <animated.div style={props} className="movingContainer">
+            <div style={props} className="movingContainer">
               <svg viewBox="0 0 860 860">
                 <g id="Group_3" data-name="Group 3" transform="translate(-27.5 -122.8)">
                   <g id="OuterLimitCircle" className="cls-2" transform="translate(27.5 125.5)">
@@ -57,21 +68,19 @@ class CompanyWheel extends React.Component {
                     <g id="RayCircle" className="cls-2" transform="translate(107.5 189.5)">
                       <circle className="cls-1" cx="264" cy="264" r="263.5" />
                     </g>
-                    <Ring  ringType={this.props.ringType}></Ring>
-                    <Spring to={{ rayRotation: this.state.newRayRotation}}>
-                      { props =>
-                          <WheelRayLegend
-                            rotation= {props.rayRotation}
-                            ringType={this.props.ringType}
-                            legendPositionArray={this.props.itemsData}
-                            numOfItems={this.numOfLegendItems}
-                          />
-                      }
+                    <Ring ringType={this.props.ringType} />
+                    <Spring native to={{ rotation: (props.rotate) }}>
+                      {legendProps => (<WheelRayLegend
+                        rotation={legendProps.rotation.getValue()}
+                        ringType={this.props.ringType}
+                        legendPositionArray={this.props.itemsData}
+                        degreesPerItem={this.state.degreesPerItem}
+                      />)}
                     </Spring>
                   </g>
                 </g>
               </svg>
-            </animated.div>
+            </div>
           )
           }
         </Spring>
@@ -82,8 +91,8 @@ class CompanyWheel extends React.Component {
 }
 
 CompanyWheel.propTypes = {
-  ringType: PropTypes.string.isRequired,
-  itemsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  ringType: PropTypes.string,
+  itemsData: PropTypes.arrayOf(PropTypes.object),
 };
 
 CompanyWheel.defaultProps = {
