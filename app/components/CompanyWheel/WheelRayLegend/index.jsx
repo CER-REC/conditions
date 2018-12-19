@@ -4,6 +4,8 @@ import './styles.scss';
 
 const WheelRayLegend = (props) => {
   let positionDegree = 0;
+  const reservedDegrees = 10;
+  const stripePosition = props.rotation;
 
   const nextPosition = (numOfItemsAtIndex) => {
     const oldPositionDegree = positionDegree;
@@ -13,30 +15,22 @@ const WheelRayLegend = (props) => {
   };
 
   const legendRenderer = (legendObj, index) => {
-    let objectToRender;
+    let position = nextPosition(legendObj.count);
 
-    const position = nextPosition(legendObj.count);
-    const stripePosition = (props.rotation) % 360;
-
-    if (position > stripePosition - 10 - props.degreesPerItem) {
-      objectToRender = (
-        <text id="LetterLegend" key={index} className="textLegend" transform={`translate(371 209) rotate(${position + 10}, 0, 245)`}>
-          {legendObj.legend}
-        </text>);
-    } else if (position < (stripePosition + 10) && position > (stripePosition - 10)) {
-      objectToRender = (
-        <text id="LetterLegend" key={index} className="textLegend chosen" transform={`translate(371 209) rotate(${stripePosition}, 0, 245)`}>
-          HOLDER
-        </text>
-      );
+    if (position > stripePosition - reservedDegrees - props.degreesPerItem) {
+      position += reservedDegrees;
+    } else if (
+      position < (stripePosition + reservedDegrees) && position > (stripePosition - reservedDegrees)
+    ) {
+      position = stripePosition;
     } else {
-      objectToRender = (
-        <text id="LetterLegend" key={index} className="textLegend" transform={`translate(371 209) rotate(${position - 10}, 0, 245)`}>
-          {legendObj.legend}
-        </text>
-      );
+      position -= reservedDegrees;
     }
-    return objectToRender;
+    return (
+      <text id="LetterLegend" key={index} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
+        {legendObj.legend}
+      </text>
+    );
   };
 
   if (!props.ringType) { return null; }
@@ -56,6 +50,7 @@ WheelRayLegend.propTypes = {
     count: PropTypes.number,
   })).isRequired,
   degreesPerItem: PropTypes.number.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   rotation: PropTypes.number.isRequired,
 };
 
