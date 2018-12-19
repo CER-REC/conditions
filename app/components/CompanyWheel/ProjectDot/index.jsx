@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './styles.scss';
 
-const ProjectDot = ({ nameOfCssClass }) => {
-  const evaluatedCssClass = nameOfCssClass ? `projectDot ${nameOfCssClass}` : 'projectDot';
-  return <circle className={evaluatedCssClass} cx="50" cy="50" r="40" />;
-};
+const ProjectDot = props => <circle className={classNames('ProjectDot', props.className)} cx="50" cy="50" r="40" />;
+
 
 ProjectDot.propTypes = {
-  nameOfCssClass: PropTypes.oneOf(['isFiltered', 'isRelevant', null]),
+  className: PropTypes.string,
 };
 
 ProjectDot.defaultProps = {
-  nameOfCssClass: null,
+  className: '',
 };
 
 export default ProjectDot;

@@ -1,61 +1,45 @@
-@import "../../../styles/fontVariables.scss";
-
-.wheelContainer{
+.WheelContainer{
   padding: 50px;
   height: 500px;
   width:500px;
-}
 
-.ringbackground {
-  &.location{
-    fill: #F4CE5A;
+  .RingBackground {
+    &.Location{
+      fill: #F4CE5A;
+    }
+    &.Company{
+      fill: #30298c;
+    }
   }
-  &.company{
-    fill: #30298c;
+
+  .Lines {
+    &.Location line{
+      stroke: #E0A531;
+    }
+    &.Company line{
+      stroke: #4054b7; 
+    }
+    stroke-width: 18px;
+  }
+  
+  .cls-1, .OutterCircles {
+    fill: none;
+  }
+  
+  .OutterCircles {
+    stroke: #707070;
+  }
+  
+  .ClippedBackground {
+    clip-path: url(#clip-path);
+  }
+  
+  .RingOutline {
+    fill: #d1057a;
+  }
+  .LetterCircle {
+    stroke: none;
   }
 }
-.lines {
-  &.location line{
-    stroke: #E0A531;
-  }
-  &.company line{
-    stroke: #4054b7; 
-  }
-  stroke-width: 18px;
-}
 
-.cls-1, .cls-2, .cls-6, .cls-7 {
-  fill: none;
-}
 
-.cls-2 {
-  stroke: #707070;
-}
-
-.cls-3 {
-  clip-path: url(#clip-path);
-}
-
-.cls-4 {
-  fill: #f4ce5a;
-}
-
-.cls-5 {
-  fill: rgba(0,0,0,0);
-}
-
-.cls-5, .cls-6 {
-  stroke: #4054b7;
-  stroke-width: 18px;
-}
-
-.cls-8, .cls-9 {
-  stroke: none;
-}
-
-.ringOutline {
-  fill: #d1057a;
-}
-.letterCircle, .rayCircle{
-  stroke: none;
-}

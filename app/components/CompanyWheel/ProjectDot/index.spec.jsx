@@ -4,36 +4,31 @@ import { expect } from 'chai';
 
 import ProjectDot from './';
 
-const wrapperSetup = (propOverrides) => {
-  const props = Object.assign({
-  }, propOverrides);
-
-  const wrapper = shallow(<ProjectDot {...props} />);
-
-  return {
-    props,
-    wrapper,
-  };
-};
-
 describe('Components|CompanyWheel/ProjectDot', () => {
+  let wrapper;
   describe('with default props', () => {
+    beforeEach(() => {
+      wrapper = shallow(<ProjectDot />);
+    });
+
     it('should render a circle as a child', () => {
-      const { wrapper } = wrapperSetup();
       expect(wrapper.type()).to.equal('circle');
     });
 
-    it('should have a class projectDot always', () => {
-      const { wrapper } = wrapperSetup();
-      expect(wrapper.hasClass('projectDot')).to.equal(true);
+    it('should have a class ProjectDot always', () => {
+      expect(wrapper.hasClass('ProjectDot')).to.equal(true);
     });
   });
 
   describe('with changing classes', () => {
-    it('should have a defined class passed in as well as a projectDot class', () => {
-      const { wrapper } = wrapperSetup({ nameOfCssClass: 'isRelevant' });
-      expect(wrapper.hasClass('isRelevant')).to.equal(true);
-      expect(wrapper.hasClass('projectDot')).to.equal(true);
+    it('should have the class IsRelevant when passed in', () => {
+      wrapper = shallow(<ProjectDot className="IsRelevant" />);
+      expect(wrapper.props().className).to.contain('IsRelevant');
+    });
+
+    it('should have the class isFiltered when passed in', () => {
+      wrapper = shallow(<ProjectDot className="isFiltered" />);
+      expect(wrapper.props().className).to.contain('isFiltered');
     });
   });
 });

@@ -6,11 +6,11 @@ import './styles.scss';
 
 storiesForComponent('Components|CompanyWheel/Ring', module, ReadMe)
   .add('default view', () => (
-    <svg className="wheelContainer" viewBox="120 200 500 500">
-      <Ring className="wheelContainer" ringType="company" />
+    <svg className="WheelContainer" viewBox="120 200 500 500">
+      <Ring className="WheelContainer" ringType="Company" />
     </svg>
   )).add('location view', () => (
-    <svg className="wheelContainer" viewBox="120 200 500 500">
-      <Ring className="wheelContainer" ringType="location" />
+    <svg className="WheelContainer" viewBox="120 200 500 500">
+      <Ring className="WheelContainer" ringType="Location" />
     </svg>
   ));

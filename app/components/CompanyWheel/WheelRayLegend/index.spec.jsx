@@ -20,6 +20,7 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
         legendPositionArray: mockData,
         numOfItems: 1,
         rotation: 0,
+        degreesPerItem: 0,
       }, propOverrides);
 
       const wrapper = shallow(<WheelRayLegend {...props} />);

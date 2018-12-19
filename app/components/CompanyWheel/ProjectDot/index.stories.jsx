@@ -3,27 +3,19 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import ProjectDot from './';
 import ReadMe from './README.md';
 
-const wrapperSetup = (propOverrides) => {
-  const props = Object.assign({
-    nameOfCssClass: null,
-  }, propOverrides);
-
-  return <ProjectDot {...props} />;
-};
-
 storiesForComponent('Components|CompanyWheel/ProjectDot', module, ReadMe)
   .add('default', () => (
-    <svg height="100" width="100" >
-      {wrapperSetup()};
+    <svg height="100" width="100">
+      <ProjectDot />;
     </svg>
   ))
   .add('filtered', () => (
-    <svg height="100" width="100" >
-      {wrapperSetup({ nameOfCssClass: 'isFiltered' })};
+    <svg height="100" width="100">
+      <ProjectDot className="IsFiltered" />;
     </svg>
   ))
   .add('relevant', () => (
-    <svg height="100" width="100" >
-      {wrapperSetup({ nameOfCssClass: 'isRelevant' })};
+    <svg height="100" width="100">
+      <ProjectDot className="IsRelevant" />;
     </svg>
   ));

@@ -6,7 +6,7 @@ import ReadMe from './README.md';
 import { locationWheelData, companyWheelData } from './randomDataSample';
 
 const props = {
-  ringType: 'normal',
+  ringType: 'Company',
 };
 
 
@@ -19,7 +19,7 @@ storiesForComponent('Components|CompanyWheel', module, ReadMe)
   .add('location props', () => (
     <CompanyWheel
       {...props}
-      ringType="location"
+      ringType="Location"
       itemsData={locationWheelData}
     />
   ));
