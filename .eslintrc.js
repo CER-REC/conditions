@@ -4,6 +4,9 @@ module.exports = {
   env: { browser: true },
   rules: {
     'no-console': ['error', { allow: ['error'] }],
+    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0 }],
+    'react/destructuring-assignment': false,
+    'react/jsx-one-expression-per-line': false,
   },
   overrides: [
     {

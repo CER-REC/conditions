@@ -1,9 +1,8 @@
 import React from 'react';
 import { withKnobs, number } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../../../.storybook/utils';
-import FeatureFlag from './';
+import FeatureFlag from '.';
 import ReadMe from './README.md';
-
 
 const options = {
   range: true,

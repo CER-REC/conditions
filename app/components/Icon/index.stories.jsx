@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { storiesForComponent } from '../../../.storybook/utils';
-import Icon from './';
+import Icon from '.';
 import ReadMe from './README.md';
 
 library.add(

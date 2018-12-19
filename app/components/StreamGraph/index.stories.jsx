@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import Streamgraph from './';
+import Streamgraph from '.';
 import ReadMe from './README.md';
 
 const projectData = [

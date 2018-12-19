@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import ProjectChart from './';
+import ProjectChart from '.';
 import ReadMe from './README.md';
 
 const graphData = [

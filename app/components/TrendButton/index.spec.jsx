@@ -3,13 +3,12 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import TrendButton from './';
+import TrendButton from '.';
 import StreamButton from './images/streamButton.png';
 import BubbleButton from './images/bubbleButton.png';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-
 
 describe('Components|TrendButton', () => {
   describe('with a selectedFeature', () => {

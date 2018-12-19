@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import { VictoryArea } from 'victory';
 
-import LegendItem from './';
+import LegendItem from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 describe('Components|SmallMultiplesLegend/LegendItem', () => {

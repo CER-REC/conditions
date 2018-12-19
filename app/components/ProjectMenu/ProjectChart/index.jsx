@@ -34,7 +34,7 @@ const ProjectChart = (props) => {
             { props.selected ? null : <p>{props.projectName}</p> }
           </div>
         </React.Fragment>
-    )}
+      )}
     </div>
   );
 };
