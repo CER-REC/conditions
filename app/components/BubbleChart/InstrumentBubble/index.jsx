@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as d3 from 'd3';
-
-
 class InstrumentBubble extends React.PureComponent {
+  static propTypes = {
+    instrumentChartData: PropTypes.instanceOf(Object).isRequired // Placeholder
+  }
 
   componentDidMount() {
-    this.fauxDOMRender(null, this.props.bubbleChartData);
+    this.fauxDOMRender(null, this.props.instrumentChartData);
+
   }
 
   setRef(componentNode) {
@@ -16,7 +18,6 @@ class InstrumentBubble extends React.PureComponent {
   fauxDOMRender(err, data) {
     const node = this.rootNode;
     const d = 650;
-    // const sizeScale = d3.scaleSqrt().range([5, 100]); Optional: to 
     const svg = d3.select(node).append('svg').attr('width', 650).attr('height', 650);
     const pack = d3.pack().size([d,d]).padding(10).radius( d => d.value);
     const root = d3.hierarchy(data).sum(d => d.value).sort((a,b) => (b.value - a.value));
