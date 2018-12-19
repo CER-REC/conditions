@@ -68,7 +68,9 @@ class ProjectMenu extends React.PureComponent {
             <ProjectChart chartType={this.props.selectedFeature} />
           </React.Fragment>
         );
-    } if (selected > (listItems.length - 3)) {
+    }
+
+    if (selected > (listItems.length - 3)) {
       emptyItemsAfter = selected === (listItems.length - 2)
         ? <ProjectChart chartType={this.props.selectedFeature} />
         : (
