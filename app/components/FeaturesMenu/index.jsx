@@ -6,18 +6,18 @@ import './styles.scss';
 // TODO: This is a mock, replace with the translation function
 const t = searchList => searchList[2];
 
-const getListMenu = (features, onChange) => (
+const getListMenu = (features, selected, onChange) => (
   // TODO: Update List properties when the vertical feature is implemented
   <List
     items={features}
-    selected={0}
+    selected={features.indexOf(selected)}
     onChange={index => onChange(features[index])}
   />
 );
 
-const getDropDownMenu = (features, onChange) => {
+const getDropDownMenu = (features, selected, onChange) => {
   const options = features.map(feature => (
-    <option key={feature} value={feature}>{feature}</option>
+    <option selected={feature === selected} key={feature} value={feature}>{feature}</option>
   ));
 
   return (
@@ -28,9 +28,16 @@ const getDropDownMenu = (features, onChange) => {
 };
 
 const FeaturesMenu = (props) => {
+  let menu;
   const features = props.features.map(feature => t(['featuresMenu', 'title', feature]));
+  const selected = features.includes(props.selected) ? props.selected : features[0];
   const { onChange, dropDown } = props;
-  const menu = dropDown ? getDropDownMenu(features, onChange) : getListMenu(features, onChange);
+
+  if (dropDown) {
+    menu = getDropDownMenu(features, selected, onChange);
+  } else {
+    menu = getListMenu(features, selected, onChange);
+  }
 
   return (
     <div className={`FeaturesMenu ${dropDown ? 'dropDown' : ''} ${props.className}`}>
@@ -45,6 +52,8 @@ FeaturesMenu.propTypes = {
   title: PropTypes.string.isRequired,
   /** The list of features to display in the menu */
   features: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  /** The currently selected feature */
+  selected: PropTypes.string,
   /** The flag to determine if the component renders in drop down mode */
   dropDown: PropTypes.bool,
   /** A function that will receive an feature when a new feature is selected */
@@ -54,6 +63,7 @@ FeaturesMenu.propTypes = {
 };
 
 FeaturesMenu.defaultProps = {
+  selected: '',
   dropDown: false,
   className: '',
 };
