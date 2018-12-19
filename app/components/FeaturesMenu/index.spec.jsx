@@ -126,8 +126,14 @@ describe('Components|FeaturesMenu', () => {
       });
     });
 
-    it('should render the select drop down with the first item selected', () => {
-      expect(wrapper.find('select').prop('value')).to.equal(features[0]);
+    it('should render the select drop down with the first option selected', () => {
+      const optionsWrapper = wrapper.find('option');
+
+      expect(optionsWrapper.at(0).prop('selected')).to.equal(true);
+
+      for (let i = 1; i < optionsWrapper.length; i += 1) {
+        expect(optionsWrapper.at(i).prop('selected')).to.equal(false);
+      }
     });
 
     it('should call the onChange function with the feature on drop down item change', () => {
@@ -153,7 +159,15 @@ describe('Components|FeaturesMenu', () => {
         />
       ));
 
-      expect(wrapper.find('select').prop('value')).to.equal(features[selectedIndex]);
+      const optionsWrapper = wrapper.find('option');
+
+      expect(optionsWrapper.at(selectedIndex).prop('selected')).to.equal(true);
+
+      for (let i = 0; i < optionsWrapper.length; i += 1) {
+        if (i !== selectedIndex) {
+          expect(optionsWrapper.at(i).prop('selected')).to.equal(false);
+        }
+      }
     });
 
     it('should render the select drop down with the first item selected when selected is invalid', () => {
@@ -167,7 +181,13 @@ describe('Components|FeaturesMenu', () => {
         />
       ));
 
-      expect(wrapper.find('select').prop('value')).to.equal(features[0]);
+      const optionsWrapper = wrapper.find('option');
+
+      expect(optionsWrapper.at(0).prop('selected')).to.equal(true);
+
+      for (let i = 1; i < optionsWrapper.length; i += 1) {
+        expect(optionsWrapper.at(i).prop('selected')).to.equal(false);
+      }
     });
   });
 });
