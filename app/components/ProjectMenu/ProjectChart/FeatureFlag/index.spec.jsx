@@ -25,18 +25,33 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
     });
   });
 
-  describe('with 10 or more conditions', () => {
-    let wrapper;
-    beforeEach(() => {
-      wrapper = shallow(<FeatureFlag
-        chartType="Theme"
-        color="green"
-        count={15}
-        name="Environmental Protection"
-      />);
-    });
-    it('should have a FlagTip', () => {
-      expect(wrapper.find('.FlagTip').type()).to.equal('div');
-    });
+  it('should have a FlagTip with more than 11 conditions', () => {
+    const wrapper = shallow(<FeatureFlag
+      chartType="Theme"
+      color="green"
+      count={15}
+      name="Environmental Protection"
+    />);
+    expect(wrapper.find('.FlagTip').type()).to.equal('div');
+  });
+
+  it('should NOT have a FlagTip with 10 or less conditions', () => {
+    const wrapper = shallow(<FeatureFlag
+      chartType="Theme"
+      color="green"
+      count={4}
+      name="Environmental Protection"
+    />);
+    expect(wrapper.contains('.FlagTip')).to.equal(false);
+  });
+
+  it('should NOT have the flag tip if the condition count is 0', () => {
+    const wrapper = shallow(<FeatureFlag
+      chartType="Theme"
+      color="green"
+      count={0}
+      name="Environmental Protection"
+    />);
+    expect(wrapper.contains('.FlagTip')).to.equal(false);
   });
 });
