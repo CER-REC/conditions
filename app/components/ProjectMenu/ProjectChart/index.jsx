@@ -6,10 +6,7 @@ import CircleContainer from '../../CircleContainer';
 import './styles.scss';
 
 const ProjectChart = (props) => {
-  let conditionCount = 0;
-  props.graphData.forEach((project) => {
-    conditionCount += project.count;
-  });
+  const conditionCount = props.graphData.reduce((acc, next) => (acc + next.count), 0);
   return (
     <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
       {props.graphData.length === 0 ? <div className="ConditionPipe" /> : (
