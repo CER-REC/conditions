@@ -27,13 +27,13 @@ const List = (props) => {
         {...(props.itemInteractions ? handleInteraction(props.onChange, i) : {})}
       >
         {!isSelected || selectedIndex === 0 ? null : (
-          <CircleContainer size="24px" {...handleInteraction(props.onChange, i - 1)} className="ArrowPrevious">
+          <CircleContainer size="24px" onClick={() => props.onChange(i + 1)} className="ArrowPrevious">
             <Icon size="1x" icon="angle-left" />
           </CircleContainer>
         )}
         <div className="List-Item-Content">{item}</div>
         {!isSelected || selectedIndex === (props.items.length - 1) ? null : (
-          <CircleContainer size="24px" {...handleInteraction(props.onChange, i + 1)} className="ArrowNext">
+          <CircleContainer size="24px" onClick={() => props.onChange(i + 1)} className="ArrowNext">
             <Icon size="1x" icon="angle-right" />
           </CircleContainer>
         )}
