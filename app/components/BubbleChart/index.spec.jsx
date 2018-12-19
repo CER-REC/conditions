@@ -5,49 +5,98 @@ import { expect } from 'chai';
 import BubbleChart from './';
 
 const noop = () => {};
+const bubbleChartData = {
+  name: 'data',
+  children: [{
+    parentName: 'GAS',
+    children: [
+      {
+        name: 'XG',
+        children: [],
+      }, {
+        name: 'GC',
+        children: [],
+        value: 50,
+      },
+      {
+        name: 'GPSO',
+        children: [],
+        value: 25,
+      },
+      {
+        name: 'SG',
+        children: [],
+        value: 40,
+      },
+      {
+        name: 'GPLO',
+        children: [],
+        value: 50,
+      }],
+  },
+  {
+    parentName: 'POWER',
+    children: [
+      {
+        name: 'EC',
+        children: [],
+        value: 50,
+      },
+      {
+        name: 'EPE',
+        children: [],
+        value: 25,
+      },
+    ]
+},
+  {
+    parentName: 'OIL',
+    children: [{
+      name: 'XO',
+      children: [],
+      value: 25,
+    },
+    {
+      name: 'SO',
+      children: [],
+      value: 50,
+    }, {
+      name: 'OC',
+      children: [],
+      value: 75,
+    }, {
+      name: 'OPL',
+      children: [],
+      value: 25,
+    }, {
+      name: 'OPLO',
+      children: [],
+      value: 25,
+    }, {
+      name: 'OPSO',
+      children: [],
+      value: 25,
+    }],
+  }],
+};
 
 describe('Components|BubbleChart', () => {
   describe('without a selectedCategory equal to Instrument', () => {
     it('should not render a div', () => {
-      const wrapper = shallow(<BubbleChart selectedCategory="test" width={1000} height={1500} />);
+      const wrapper = shallow(<BubbleChart selectedCategory="test" bubbleChartData={bubbleChartData} />);
       expect(wrapper.type()).to.equal(null);
     });
   });
   describe('with a selectedCategory', () => {
     it('should render a div', () => {
-      const wrapper = shallow(<BubbleChart selectedCategory="instrument" width={1000} height={1500} />);
+      const wrapper = shallow(<BubbleChart selectedCategory="instrument" bubbleChartData={bubbleChartData} />);
       expect(wrapper.type()).to.equal('div');
     });
 
     it('should render a bubbleChart class', () => {
-      const wrapper = shallow(<BubbleChart selectedCategory="instrument" onChange={noop} width={1000} height={1500} />);
+      const wrapper = shallow(<BubbleChart selectedCategory="instrument" onChange={noop} bubbleChartData={bubbleChartData} />);
       expect(wrapper.find('.bubbleChart')).to.have.lengthOf(1);
     });
   });
-  // describe('without a selectedCategory equal to Instrument', () => {
-  //   it('should find an svg tag', () => {
-  //     const wrapper = mount(<BubbleChart selectedCategory="test" width={1000} height={1500} />);
-  //     console.log(wrapper.debug());
-  //     // expect(wrapper.find('svg')).to.have.lengthOf(1);
-  //   });
-  // });
 });
-//   describe('with an width/height props', () => {
-//     it('should render an svg of width equal to availableSpace', () => {
-//       const wrapper = shallow(<BubbleChart selectedCategory="instrument" width={1000} height={1500} />);
-//       // expect(wrapper.find('svg').prop('width')).to.equal(1000);
-//     });
 
-//     it('should render an svg of height equal to availableSpace', () => {
-//       const wrapper = shallow(<BubbleChart selectedCategory="instrument" width={1000} height={1500} />);
-//       // expect(wrapper.find('svg').prop('height')).to.equal(1500);
-//     });
-//   });
-
-//   describe('with EnergyBubbleData being passed in', () => {
-//     it('should render a circle', () => {
-//       const wrapper = shallow(<BubbleChart selectedCategory="instrument" width={1000} height={1500} energyBubbleData={energyBubbleData} />);
-//       // expect(wrapper.find('circle')).to.have.lengthOf(1);
-//     });
-//   });
-// });
