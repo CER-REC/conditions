@@ -13,7 +13,7 @@ Users should be able to scroll through the text box if needed
 
 ## Analytics Requirements
 
-* [ ] Tabbing to the textbox should omit an event
+* [ ] Tabbing to the textbox should emit an event
 
 ## Unit Testing
 
