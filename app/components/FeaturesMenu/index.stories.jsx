@@ -11,6 +11,15 @@ storiesForComponent('Components|FeaturesMenu', module, ReadMe)
       onChange={feature => alert(feature)}
     />
   ))
+  .add('selected', () => (
+    <FeaturesMenu
+      title="Title A"
+      features={['F. abc', 'F. 123']}
+      onChange={feature => alert(feature)}
+      selected="F. 123"
+      dropDown
+    />
+  ))
   .add('drop down', () => (
     <FeaturesMenu
       title="Title"
