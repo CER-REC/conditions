@@ -14,6 +14,23 @@ import './styles.scss';
 
 export const roundDateLabel = t => Math.round(t);
 
+const StackGroup = props => (
+  <g
+    onClick={props.handleOnClick}
+    onKeyDown={props.handleOnClick}
+    role="button"
+    tabIndex="-1"
+  >
+    {props.children}
+    {!props.showControl ? null : (
+      <Control
+        positionControl={`translate(${props.positionControl}, 30)`}
+        numOfConditionsLabel={32} // temp until Control position is made dynamic
+      />
+    )}
+  </g>
+);
+
 class StreamGraph extends React.Component {
   static propTypes = {
     projectData: PropTypes.arrayOf(PropTypes.shape({
@@ -32,26 +49,33 @@ class StreamGraph extends React.Component {
     super(props);
     this.state = {
       showControl: false,
-      controlPosition: {
-        x: 0,
-        y: 0,
-      }
+      positionControl: 30,
     };
-    // this.dragEnd = this.dragEnd.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
-
-  // onArrowKey = (e) => {
-
-  // }
 
   handleOnClick = (event) => {
     if (this.state.showControl === true) {
       document.addEventListener('click', this.handleOutsideClick, false);
     }
-    this.setState({ showControl: true }); // add position
-    const xPosition = event.clientX;
-  }
+
+    const groupPosition = event.target.getClientRects()[0];
+
+    const dateCount = this.props.projectData[0].graphData.map(k => k.date).length;
+    const section = 465 / dateCount;
+    if (event.clientX - groupPosition.x <= section) {
+      this.setState({ positionControl: 40 });
+    } else if (event.clientX - groupPosition.x <= section * 2) {
+      this.setState({ positionControl: 80 });
+    } else {
+      this.setState({ positionControl: 30 });
+    }
+    console.log(event.clientX - groupPosition.x, 'user click on the graph');
+
+    this.setState({
+      showControl: true,
+    });
+  };
 
   handleOutsideClick = (e) => {
     if (!this.node.contains(e.target)) {
@@ -115,7 +139,15 @@ class StreamGraph extends React.Component {
           className="axis-label"
           domain={[minDateValue, maxDateValue]}
         />
-        <VictoryStack>
+        <VictoryStack
+          groupComponent={
+            <StackGroup
+              handleOnClick={this.handleOnClick}
+              showControl={this.state.showControl}
+              positionControl={this.state.positionControl}
+            />
+          }
+        >
           {this.streamLayers()}
         </VictoryStack>
       </VictoryChart>
@@ -132,27 +164,10 @@ class StreamGraph extends React.Component {
     return (
       <div
         className="streamgraph"
-        onClick={this.handleOnClick}
-        onKeyDown={this.handleOnClick}
-        role="button"
-        tabIndex="-1"
         ref={(node) => { this.node = node; }}
       >
         {this.chartTitle()}
         {this.chart()}
-        {
-          this.state.showControl === true
-          ?
-            <Control
-              position="absolute"
-              zIndex={9}
-              marginTop="-410px"
-              moveCursor="translate(30, 0)"
-              numOfConditionsLabel={32} // temp until Control position is made dynamic
-            />
-          :
-          null
-        }
       </div>
     );
   }
