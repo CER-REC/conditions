@@ -32,6 +32,7 @@ class InstrumentBubble extends React.PureComponent {
         d3.select(nodes[i])
           .attr('r', (d.r))
           .style('fill', (d) => {
+            // To do: Change Color as per category
             return 'orange';
           })
           .style('stroke', 'transparent')
@@ -50,6 +51,7 @@ class InstrumentBubble extends React.PureComponent {
               d3.select(nodes[i]).style('stroke', 'magenta').style('stroke-width', '2');
               svg.selectAll('path').remove();
               svg.append('g').append('path').attr('d', "M 5 5 L 15 5 L 10 15 z").attr('transform', 'translate(' + d.x + ')')  
+              // To do: Add dashed line from the arrow to the circle. 
             }
           })
 
@@ -70,6 +72,7 @@ class InstrumentBubble extends React.PureComponent {
       .text(d => d.data.name.substring(0, d.r))
       .attr('class', 'textRender')
       .on('click', (d, i , nodes) => {
+        // To do: Render once to get computedTextLength > and reRender with appropriate circle sizes 
         console.log(nodes[i].getComputedTextLength()) // Will be used to grab the text length (during first render) and create a second circle for the text rendering
       });
   }
