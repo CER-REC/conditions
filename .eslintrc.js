@@ -13,7 +13,7 @@ module.exports = {
         '**/*.stories.jsx',
         '**/*.spec.js',
         '**/*.spec.jsx',
-        'test/**',
+        'app/tests/**',
       ],
       rules: {
         'import/no-extraneous-dependencies': [
@@ -23,7 +23,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.spec.js', '**/*.spec.jsx'],
+      files: ['**/*.spec.js', '**/*.spec.jsx', 'app/tests/**'],
       env: {
         mocha: true,
       },

@@ -1,0 +1,24 @@
+
+
+.FeatureFlag {
+  width: 50px;
+  display: flex;
+  margin-left: 2px;
+  margin-top: 1px;
+
+  .Bar {
+    width: 50px;
+    height: 14px;
+    display: inline-block;
+  }
+
+  .FlagTip {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 7px;
+    border-color: transparent;
+    border-style: solid;
+    display: inline-block;
+  }
+}

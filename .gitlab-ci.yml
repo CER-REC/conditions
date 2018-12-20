@@ -1,0 +1,36 @@
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:10.13.0
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+
+test:
+  script:
+    - npm install
+    - npm run ci:test
+  artifacts:
+    reports:
+      junit: gl-junit.xml
+
+lint:
+  script:
+    - npm install
+    - npm run lint
+  allow_failure: true
+  artifacts:
+    reports:
+      codequality: gl-codequality.json
+
+dependency scanning:
+  script:
+    - npm install
+    - npm audit --json | npx gitlab-npm-audit-parser -o gl-dependency-scanning.json
+  allow_failure: true
+  artifacts:
+    reports:
+      dependency_scanning: gl-dependency-scanning.json
+

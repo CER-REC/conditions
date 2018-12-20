@@ -10,6 +10,11 @@ using the prop: onClick.
 The onClick prop accepts a functions that should implement the needed behavior
 for a click event.
 
+## TODO List
+
+Have the CircleContainer conditionally render a div or a button.
+If the component recieves onClick as a prop it should render a button.
+Otherwise the component should render a div.
 
 ## Extra Refactoring:
 // pass props onCLick into a function to check and return
