@@ -1,9 +1,12 @@
+@import "../../styles/borders.scss";
+
 %faded {
   opacity: 0.2;
 }
 
 .SmallMultiplesLegend {
   text-align: left;
+  font-size: 0.85em;
 
   .List.faded {
     button {
@@ -13,7 +16,7 @@
 
   .List .selected .LegendItem {
     font-size: 1.25em;
-    border: 1px solid #D1057A;
+    border: $list-selected;
     background-color: white;
     padding: 0.4em;
   }
