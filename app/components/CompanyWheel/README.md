@@ -49,7 +49,7 @@
 
 * TODO: relationshipCord
   * create component
-  * figure out dregree dynamic render
+  * figure out degree dynamic render
 
 * TODO: PullToSpin.
   * create component

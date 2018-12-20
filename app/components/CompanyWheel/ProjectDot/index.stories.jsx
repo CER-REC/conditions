@@ -11,11 +11,11 @@ storiesForComponent('Components|CompanyWheel/ProjectDot', module, ReadMe)
   ))
   .add('filtered', () => (
     <svg height="100" width="100">
-      <ProjectDot className="ProjectDot IsFiltered" />;
+      <ProjectDot filtered />;
     </svg>
   ))
   .add('relevant', () => (
     <svg height="100" width="100">
-      <ProjectDot className="ProjectDot IsRelevant" />;
+      <ProjectDot relevant />;
     </svg>
   ));

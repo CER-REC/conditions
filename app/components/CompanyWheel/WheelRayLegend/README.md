@@ -7,7 +7,7 @@ TODO: Fix reservation of the 90 degree area for stripe.
 
 TODO control rerendering of the specific legends so that the performance is better
 
-The WheelLegend component is part of the Company Wheel component described in view 2. It renders the alphabetical lettes, or the provinces spaced as prescribed in the design document. This component is responsible for calculating the spacing between the letters.
+The WheelLegend component is part of the Company Wheel component described in view 2. It renders the alphabet, or the provinces spaced as prescribed in the design document.
 
 ## Interaction Requirements
 
