@@ -10,24 +10,25 @@ const eventFuncs = {
 describe('utilities/handleInteraction', () => {
   let spy;
   let result;
-  beforeEach(() => {
-    spy = sinon.spy();
-    result = handleInteraction(spy, 'a', 'b');
-  });
 
-  it('should return an object', () => {
-    expect(result).to.be.an('object');
-  });
+  describe('with a callback', () => {
+    beforeEach(() => {
+      spy = sinon.spy();
+      result = handleInteraction(spy, 'a', 'b');
+    });
 
-  it('should add a tabIndex', () => {
-    expect(result.tabIndex).to.equal(0);
-  });
+    it('should return an object', () => {
+      expect(result).to.be.an('object');
+    });
 
-  it('should add focusable', () => {
-    expect(result.focusable).to.equal(true);
-  });
+    it('should add a tabIndex', () => {
+      expect(result.tabIndex).to.equal(0);
+    });
 
-  describe('events', () => {
+    it('should add focusable', () => {
+      expect(result.focusable).to.equal(true);
+    });
+
     it('should add an onClick handler', () => {
       result.onClick(eventFuncs);
       expect(spy.calledOnce).to.equal(true);
@@ -40,9 +41,15 @@ describe('utilities/handleInteraction', () => {
       expect(spy.calledWith('a', 'b')).to.equal(true);
     });
 
-    it('onKeyPress should only respond to enter', () => {
+    it('should only let onKeyPress respond to enter', () => {
       result.onKeyPress({ key: ' ', ...eventFuncs });
       expect(spy.called).to.equal(false);
     });
+  });
+
+  it('should return an empty object when no callback is provided', () => {
+    spy = sinon.spy();
+    result = handleInteraction();
+    expect(result).to.deep.equal({});
   });
 });
