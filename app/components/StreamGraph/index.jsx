@@ -10,11 +10,9 @@ import Control from './Control';
 
 import './styles.scss';
 
-// export const numOfConditionsLabel = point => `${Math.round(point.y)}`;
-
 export const roundDateLabel = t => Math.round(t);
 
-const StackGroup = props => (
+export const StackGroup = props => (
   <g
     onClick={props.handleOnClick}
     onKeyDown={props.handleOnClick}
@@ -25,11 +23,19 @@ const StackGroup = props => (
     {!props.showControl ? null : (
       <Control
         positionControl={`translate(${props.positionControl}, 30)`}
-        numOfConditionsLabel={32} // temp until Control position is made dynamic
+        numOfConditionsLabel={props.numOfConditions}
       />
     )}
   </g>
 );
+
+StackGroup.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  showControl: PropTypes.bool.isRequired,
+  positionControl: PropTypes.number.isRequired,
+  numOfConditions: PropTypes.number.isRequired,
+};
 
 class StreamGraph extends React.Component {
   static propTypes = {
@@ -50,8 +56,21 @@ class StreamGraph extends React.Component {
     this.state = {
       showControl: false,
       positionControl: 30,
+      numOfConditions: 0,
     };
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+  }
+
+  getConditionDates() {
+    let conditionDates = this.props.projectData.reduce((acc, next) => {
+      next.graphData.forEach((v) => {
+        if (!acc[v.date]) { acc[v.date] = 0; }
+        acc[v.date] += v.count;
+      });
+      return acc;
+    }, {});
+    conditionDates = Object.values(conditionDates);
+    return conditionDates;
   }
 
   handleOnClick = (event) => {
@@ -60,17 +79,22 @@ class StreamGraph extends React.Component {
     }
 
     const groupPosition = event.target.getClientRects()[0];
+    const groupWidth = groupPosition.right - groupPosition.left;
 
     const dateCount = this.props.projectData[0].graphData.map(k => k.date).length;
-    const section = 465 / dateCount;
-    if (event.clientX - groupPosition.x <= section) {
-      this.setState({ positionControl: 40 });
-    } else if (event.clientX - groupPosition.x <= section * 2) {
-      this.setState({ positionControl: 80 });
-    } else {
-      this.setState({ positionControl: 30 });
-    }
-    console.log(event.clientX - groupPosition.x, 'user click on the graph');
+    const sectionWidth = groupWidth / dateCount;
+
+    const numOfConditionValue = this.getConditionDates();
+
+    const clickArea = event.clientX - groupPosition.x;
+
+    const currentSection = Math.floor(clickArea / sectionWidth);
+    this.setState({
+      positionControl: Math.ceil(sectionWidth / 2)
+        + (Math.floor(currentSection * Math.ceil(sectionWidth))
+        - (currentSection * 9)),
+      numOfConditions: numOfConditionValue[currentSection],
+    });
 
     this.setState({
       showControl: true,
@@ -113,18 +137,8 @@ class StreamGraph extends React.Component {
     const minDateValue = Math.min(...dateConcat);
     const maxDateValue = Math.max(...dateConcat);
 
-    let conditionDates = this.props.projectData.reduce((acc, next) => {
-      next.graphData.forEach((v) => {
-        if (!acc[v.date]) { acc[v.date] = 0; }
-        acc[v.date] += v.count;
-      });
-      return acc;
-    }, {});
+    const maxConditionValue = Math.max(...this.getConditionDates());
 
-    conditionDates = Object.values(conditionDates);
-    const maxConditionValue = Math.max(...conditionDates);
-
-    // console.log(conditionDates); // use to condition labels
     return (
       <VictoryChart>
         <VictoryAxis
@@ -145,6 +159,7 @@ class StreamGraph extends React.Component {
               handleOnClick={this.handleOnClick}
               showControl={this.state.showControl}
               positionControl={this.state.positionControl}
+              numOfConditions={this.state.numOfConditions}
             />
           }
         >

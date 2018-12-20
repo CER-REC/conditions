@@ -4,8 +4,6 @@ import { expect } from 'chai';
 
 import Control from './';
 
-// this component will handle arrowKey and drag events
-
 describe('Components|StreamGraph/Control', () => {
   describe('with default props', () => {
     let wrapper;
@@ -13,8 +11,8 @@ describe('Components|StreamGraph/Control', () => {
       wrapper = shallow(<Control />);
     });
 
-    it('should have a className', () => {
-      expect(wrapper.is('.control')).to.equal((true));
+    it('should render', () => {
+      expect(wrapper.type()).to.equal(('g'));
     });
   });
 });
