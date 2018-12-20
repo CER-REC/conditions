@@ -124,10 +124,20 @@ describe('Components|FeaturesMenu', () => {
       features.forEach((feature, index) => {
         expect(optionsWrapper.at(index).text()).to.contain(feature);
       });
+
+      expect(optionsWrapper).to.have.lengthOf(features.length);
     });
 
     it('should render the select drop down with the first item selected', () => {
       expect(wrapper.find('select').prop('value')).to.equal(features[0]);
+    });
+
+    it('should not render any select option with a selected attribute', () => {
+      const optionsWrapper = wrapper.find('option');
+
+      for (let i = 0; i < optionsWrapper.length; i += 1) {
+        expect(optionsWrapper.at(i).prop('selected')).to.equal(undefined);
+      }
     });
 
     it('should call the onChange function with the feature on drop down item change', () => {
