@@ -13,7 +13,7 @@ class BubbleChart extends React.PureComponent {
       return null;
     }
     return (
-      <div className="bubbleChart">
+      <div className="BubbleChart">
         <InstrumentBubble instrumentChartData={this.props.bubbleChartData} />
       </div>);
   }

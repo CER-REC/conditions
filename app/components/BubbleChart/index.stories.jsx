@@ -11,6 +11,7 @@ const bubbleChartData = {
       {
         name: 'XG',
         children: [],
+        value: 10,
       }, {
         name: 'GC',
         children: [],

@@ -87,7 +87,7 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     });
     it('should have a className of instrumentBubble', () => {
       const wrapper = shallow(<InstrumentBubble instrumentChartData={instrumentChartData} />);
-      expect(wrapper.find('.instrumentBubble')).to.have.lengthOf(1);
+      expect(wrapper.find('.InstrumentBubble')).to.have.lengthOf(1);
     });
   });
 });

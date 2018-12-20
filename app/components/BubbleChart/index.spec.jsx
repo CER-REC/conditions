@@ -94,7 +94,7 @@ describe('Components|BubbleChart', () => {
 
     it('should render a bubbleChart class', () => {
       const wrapper = shallow(<BubbleChart selectedCategory="instrument" onChange={noop} bubbleChartData={bubbleChartData} />);
-      expect(wrapper.find('.bubbleChart')).to.have.lengthOf(1);
+      expect(wrapper.find('.BubbleChart')).to.have.lengthOf(1);
     });
   });
 });

@@ -73,13 +73,13 @@ class InstrumentBubble extends React.PureComponent {
         // To do: Render once to get computedTextLength > and reRender with appropriate circle sizes
         console.log(clickNodes[i].getComputedTextLength());
         // Will be used to grab the text length (during first render) and create
-        // a second circle for the text rendering
+        // a second circle with the text rendering
       });
   }
 
   render() {
     return (
-      <div className="instrumentBubble" ref={this.setRef.bind(this)} />);
+      <div className="InstrumentBubble" ref={this.setRef.bind(this)} />);
   }
 }
 
