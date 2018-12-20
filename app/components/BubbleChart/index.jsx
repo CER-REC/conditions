@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InstrumentBubble from '../BubbleChart/InstrumentBubble/index';
+import InstrumentBubble from './InstrumentBubble/index';
 
 class BubbleChart extends React.PureComponent {
   static propTypes = {

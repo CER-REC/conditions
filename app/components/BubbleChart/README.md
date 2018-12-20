@@ -17,4 +17,3 @@ The Bubble Chart is the parent svg container that will contain Instrument Bubble
   * [ ] Calculation: After receiving maximum radius, add spacing between two circles, and add the second Instrument Bubble
   * [ ] Sizing is approximate and only goal is to ensure that they all fit inside the svg
   * [ ] Scale it appropriately based on the viewbox
-  * [ ] It can be scaled appropriately using viewbox

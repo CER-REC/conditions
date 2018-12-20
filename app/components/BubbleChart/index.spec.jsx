@@ -1,8 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import BubbleChart from './';
+import BubbleChart from '.';
 
 const noop = () => {};
 const bubbleChartData = {
@@ -47,8 +46,8 @@ const bubbleChartData = {
         children: [],
         value: 25,
       },
-    ]
-},
+    ],
+  },
   {
     parentName: 'OIL',
     children: [{
@@ -99,4 +98,3 @@ describe('Components|BubbleChart', () => {
     });
   });
 });
-

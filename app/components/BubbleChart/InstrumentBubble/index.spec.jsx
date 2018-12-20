@@ -1,8 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import InstrumentBubble from './';
+import InstrumentBubble from '.';
 
 
 const instrumentChartData = {
@@ -47,8 +46,8 @@ const instrumentChartData = {
         children: [],
         value: 25,
       },
-    ]
-},
+    ],
+  },
   {
     parentName: 'OIL',
     children: [{
