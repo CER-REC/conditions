@@ -6,27 +6,6 @@ import './styles.scss';
 // TODO: This is a mock, replace with the translation function
 const t = searchList => searchList[2];
 
-const getListMenu = (features, selected, onChange) => (
-  // TODO: Update List properties when the vertical feature is implemented
-  <List
-    items={features}
-    selected={features.indexOf(selected)}
-    onChange={index => onChange(features[index])}
-  />
-);
-
-const getDropDownMenu = (features, selected, onChange) => {
-  const options = features.map(feature => (
-    <option key={feature} value={feature}>{feature}</option>
-  ));
-
-  return (
-    <select value={selected} onChange={event => onChange(event.target.value)}>
-      {options}
-    </select>
-  );
-};
-
 const FeaturesMenu = (props) => {
   let menu;
   const features = props.features.map(feature => t(['featuresMenu', 'title', feature]));
@@ -34,9 +13,24 @@ const FeaturesMenu = (props) => {
   const { onChange, dropDown } = props;
 
   if (dropDown) {
-    menu = getDropDownMenu(features, selected, onChange);
+    const options = features.map(feature => (
+      <option key={feature} value={feature}>{feature}</option>
+    ));
+
+    menu = (
+      <select value={selected} onChange={event => onChange(event.target.value)}>
+        {options}
+      </select>
+    );
   } else {
-    menu = getListMenu(features, selected, onChange);
+    // TODO: Update List properties when the vertical feature is implemented
+    menu = (
+      <List
+        items={features}
+        selected={features.indexOf(selected)}
+        onChange={index => onChange(features[index])}
+      />
+    );
   }
 
   return (
