@@ -1,5 +1,7 @@
-// TODO: Memoize functions to prevent extra renders
-export default (callback, ...boundArgs) => {
+import memoize from 'lodash.memoize';
+import memoizeReference from './memoizeReference';
+
+export default memoize((callback, ...boundArgs) => {
   // If no callback was passed, return an empty object to allow spreading props
   if (!callback) { return {}; }
 
@@ -19,4 +21,14 @@ export default (callback, ...boundArgs) => {
     tabIndex: 0,
     focusable: true,
   };
-};
+}, (callback, ...boundArgs) => {
+  const argIds = boundArgs
+    .map((v) => {
+      if (typeof v === 'function' || typeof v === 'object') {
+        return `REF${memoizeReference(v)}`;
+      }
+      return v;
+    })
+    .join('-');
+  return `${memoizeReference(callback)}-${argIds}`;
+});
