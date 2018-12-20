@@ -12,10 +12,10 @@ const CircleContainer = props => (
         { elevated: props.elevated, disabled: props.disabled },
       )}
     style={{
-        width: props.size,
-        height: props.size,
-      }}
-    {...(!props.onClick ? {} : handleInteraction(props.onClick))}
+      width: props.size,
+      height: props.size,
+    }}
+    {...handleInteraction(props.onClick)}
   >
     <div>
       {props.children}

@@ -2,8 +2,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import handleInteraction from '../../utilities/handleInteraction';
-import CircleContainer from './';
+import CircleContainer from '.';
 
 storiesForComponent('Components|CircleContainer', module, ReadMe)
   .add('default', () => (
@@ -36,7 +35,7 @@ storiesForComponent('Components|CircleContainer', module, ReadMe)
   .add('with prop: onClick ', () => (
     <CircleContainer
       size="24px"
-      onClick={handleInteraction}
+      onClick={() => alert('clicked')}
     >
     &nbsp;
     </CircleContainer>
