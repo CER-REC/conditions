@@ -5,15 +5,31 @@ import ReadMe from './README.md';
 
 import { locationWheelData, companyWheelData, locationWheelItems } from '../randomDataSample';
 
+const reservedDegrees = 20;
 
 storiesForComponent('Components|CompanyWheel/WheelRayLegend', module, ReadMe)
   .add('default view', () => (
     <svg className="wheelContainer" viewBox="70 150 600 600">
-      <WheelRayLegend className="wheelContainer" ringType="company" legendPositionArray={companyWheelData} numOfItems={companyWheelData.length} rotation={0} />
+      <WheelRayLegend
+        className="wheelContainer"
+        ringType="Company"
+        legendPositionArray={companyWheelData}
+        degreesPerItem={(360 - reservedDegrees) / companyWheelData.length}
+        rotation={0}
+        reservedDegrees={reservedDegrees}
+      />
     </svg>
   )).add('location view', () => (
     <svg className="wheelContainer" viewBox="70 150 600 600">
-      <WheelRayLegend className="wheelContainer" ringType="location" legendPositionArray={locationWheelData} numOfItems={locationWheelItems} rotation={0} />
+      <WheelRayLegend
+        className="wheelContainer"
+        ringType="location"
+        legendPositionArray={locationWheelData}
+        numOfItems={locationWheelItems}
+        rotation={0}
+        degreesPerItem={(360 - reservedDegrees) / locationWheelItems}
+        reservedDegrees={reservedDegrees}
+      />
     </svg>
   ));
 

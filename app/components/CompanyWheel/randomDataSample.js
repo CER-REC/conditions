@@ -18,6 +18,7 @@
 //   }
 // ]
 
+// eslint-disable-next-line no-unused-vars
 const companyRayData = [{ legend: 'A', count: 2 }, { legend: 'B', count: 4 }, { legend: 'C', count: 7 }, { legend: 'D', count: 5 }, { legend: 'E', count: 9 }, { legend: 'F', count: 6 }, { legend: 'G', count: 7 }, { legend: 'H', count: 4 }, { legend: 'I', count: 3 }, { legend: 'J', count: 0 }, { legend: 'K', count: 0 }, { legend: 'L', count: 3 }, { legend: 'M', count: 4 }, { legend: 'N', count: 7 }, { legend: 'O', count: 1 }, { legend: 'P', count: 5 }, { legend: 'Q', count: 3 }, { legend: 'R', count: 4 }, { legend: 'S', count: 7 }, { legend: 'T', count: 4 }, { legend: 'U', count: 1 }, { legend: 'V', count: 2 }, { legend: 'W', count: 0 }, { legend: 'X', count: 1 }, { legend: 'Y', count: 0 }, { legend: 'Z', count: 11 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }, { count: 0 }];
 
 const companyDataSample = [
@@ -15025,6 +15026,7 @@ const companyDataSample = [
 
 
 const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+// eslint-disable-next-line no-unused-vars
 const canadianProvinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
 
 const calcRayLegendData = () => {
@@ -15048,7 +15050,9 @@ function groupByProperty(collection, property) {
       values.push(collection[i].location[property]);
       // eslint-disable-next-line no-loop-func
       result.push({
-        count: collection.filter(v => v.location[property] === collection[i].location[property]).length,
+        // eslint-disable-next-line no-loop-func
+        count: collection.filter(v => v.location[property] === collection[i].location[property])
+          .length,
         legend: collection[i].location[property],
       });
     }
@@ -15057,8 +15061,6 @@ function groupByProperty(collection, property) {
 }
 
 const companyWheelData = calcRayLegendData();
-
-
 const locationWheelData = groupByProperty(companyDataSample, 'province');
 const locationWheelItems = companyDataSample.length;
 

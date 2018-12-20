@@ -12,12 +12,13 @@ class CompanyWheel extends React.Component {
     this.state = {
       oldRotation: 0,
       newRotation: 0,
-      newRayRotation: 0,
+      newRayRotation: 90,
+      reservedDegrees: 20,
     };
   }
 
   componentWillMount() {
-    const degreesAvailForPlotting = 340;
+    const degreesAvailForPlotting = 360 - this.state.reservedDegrees;
     const numOfLegendItems = this.props.ringType === 'company' ?
       this.props.itemsData.length
       : this.getLocationItemsCount();
@@ -74,6 +75,7 @@ class CompanyWheel extends React.Component {
                         ringType={this.props.ringType}
                         legendPositionArray={this.props.itemsData}
                         degreesPerItem={this.state.degreesPerItem}
+                        reservedDegrees={this.state.reservedDegrees}
                       />)}
                     </Spring>
                   </g>

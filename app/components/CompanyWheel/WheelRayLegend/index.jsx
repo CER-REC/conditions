@@ -3,28 +3,25 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const WheelRayLegend = (props) => {
-  let positionDegree = 0;
-  const reservedDegrees = 10;
+  const halfReservedDegress = props.reservedDegrees;
+  let positionDegree = 0 + halfReservedDegress;
   const stripePosition = props.rotation;
-
+  const reservedSpace = halfReservedDegress + props.degreesPerItem;
   const nextPosition = (numOfItemsAtIndex) => {
     const oldPositionDegree = positionDegree;
-    const allocatedDegrees = numOfItemsAtIndex * props.degreesPerItem;
-    positionDegree += allocatedDegrees;
+    positionDegree += numOfItemsAtIndex * props.degreesPerItem;
     return oldPositionDegree;
   };
 
   const legendRenderer = (legendObj, index) => {
     let position = nextPosition(legendObj.count);
 
-    if (position > stripePosition - reservedDegrees - props.degreesPerItem) {
-      position += reservedDegrees;
-    } else if (
-      position < (stripePosition + reservedDegrees) && position > (stripePosition - reservedDegrees)
-    ) {
-      position = stripePosition;
+    if (position < stripePosition - props.degreesPerItem) {
+      position -= reservedSpace;
+    } else if (position > stripePosition + props.degreesPerItem) {
+      position += reservedSpace;
     } else {
-      position -= reservedDegrees;
+      position = stripePosition;
     }
     return (
       <text id="LetterLegend" key={index} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
@@ -33,18 +30,14 @@ const WheelRayLegend = (props) => {
     );
   };
 
-  if (!props.ringType) { return null; }
   return (
     <React.Fragment>
-      {
-        props.legendPositionArray.map((legendObj, index) => legendRenderer(legendObj, index))
-      }
+      { props.legendPositionArray.map((legendObj, index) => legendRenderer(legendObj, index)) }
     </React.Fragment>
   );
 };
 
 WheelRayLegend.propTypes = {
-  ringType: PropTypes.string.isRequired,
   legendPositionArray: PropTypes.arrayOf(PropTypes.shape({
     legend: PropTypes.string,
     count: PropTypes.number,
@@ -52,6 +45,8 @@ WheelRayLegend.propTypes = {
   degreesPerItem: PropTypes.number.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   rotation: PropTypes.number.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
+  reservedDegrees: PropTypes.number.isRequired,
 };
 
 export default WheelRayLegend;

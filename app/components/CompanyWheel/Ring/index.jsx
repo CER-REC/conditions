@@ -3,8 +3,6 @@ import Proptypes from 'prop-types';
 import './styles.scss';
 
 const Ring = ({ ringType }) => {
-  if (!ringType) { return null; }
-
   const linebackground = `LineBackground ${ringType}`;
   const ringbackground = `RingBackground ${ringType}`;
 
@@ -54,7 +52,11 @@ const Ring = ({ ringType }) => {
 };
 
 Ring.propTypes = {
-  ringType: Proptypes.oneOf(['Company', 'Location']).isRequired,
+  ringType: Proptypes.oneOf(['Company', 'Location']),
+};
+
+Ring.defaultProps = {
+  ringType: 'Company',
 };
 
 export default Ring;
