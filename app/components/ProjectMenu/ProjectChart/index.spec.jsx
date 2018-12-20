@@ -22,12 +22,17 @@ const chartData = [
 ];
 
 const chartType = 'Theme';
+const projectName = '3. Section 21.(1) application';
 
 describe('Components|ProjectMenu/ProjectChart', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectChart chartType={chartType} graphData={chartData} />);
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+      />);
     });
 
     it('should render', () => {
@@ -42,11 +47,67 @@ describe('Components|ProjectMenu/ProjectChart', () => {
   describe('when Theme is the selected feature', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ProjectChart chartType={chartType} graphData={chartData} />);
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+      />);
     });
 
     it('should render 14 FeatureFlags', () => {
       expect(wrapper.find('FeatureFlag')).to.have.a.lengthOf(14);
+    });
+  });
+
+  describe('when the chart is selected', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+        selected
+      />);
+    });
+
+    it('should add the className "selected"', () => {
+      expect(wrapper.is('div.selected')).to.equal(true);
+    });
+
+    it('should remove the project name', () => {
+      const project = wrapper.find('div.ProjectName');
+      expect(project.contains('<p>')).to.equal(false);
+    });
+  });
+
+  describe('when the chart is NOT selected', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+      />);
+    });
+
+    it('should give all conditions a grey color', () => {
+      const flag = wrapper.find('FeatureFlag').first();
+      expect(flag.props().color).to.equal('#a1a8a7');
+    });
+  });
+
+  describe('when there is missing data', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={[]}
+      />);
+    });
+    it('should only render a ConditionPipe', () => {
+      expect(wrapper.find('div.ConditionPipe')).to.have.a.lengthOf(1);
+      expect(wrapper.find('FlagWrapper')).to.have.a.lengthOf(0);
+      expect(wrapper.find('ProjectName')).to.have.a.lengthOf(0);
     });
   });
 });
