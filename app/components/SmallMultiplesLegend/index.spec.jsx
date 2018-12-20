@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import SmallMultiplesLegend from './';
+import SmallMultiplesLegend from '.';
 import LegendItem from './LegendItem';
 import List from '../List';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';

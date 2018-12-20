@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List from '../List/';
+import List from '../List';
 import ProjectChart from './ProjectChart';
-
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
