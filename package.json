@@ -13,7 +13,7 @@
     "ci:test": "npm run test -- --reporter mocha-junit-reporter --reporter-options mochaFile=./gl-junit.xml && npm run ci:testcoverage",
     "ci:testcoverage": "nyc report --reporter=text-lcov > coverage.lcov && npx codecov",
     "cz": "git-cz",
-    "lint": "eslint -f gitlab './app/**/*.js*' './server/**/*.js'",
+    "lint": "eslint -f gitlab \"./app/**/*.js*\" \"./server/**/*.js\"",
     "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc mocha --opts app/tests/mocha.opts app/**/*.spec.{js,jsx}",
     "test:single": "cross-env NODE_ENV=test mocha --opts app/tests/mocha.opts",
