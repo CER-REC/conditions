@@ -25,13 +25,14 @@ The Instrument Bubble is a private/child component. It will render the instrumen
 ## Analytics Requirements
 * [ ] onClick should emit an event
 * [ ] onEnter should emit an event
-* [ ] onHover for more than __ seconds should emit an event
+* [ ] onHover for should emit an event
 
 ## Implementation Steps 
 * [ ] Instrument Bubble (Child of Bubble Chart)
   * [X] Contains the energy circles within the bubbles
   * [X] Use d3 packing and d3 heirarchy to render the bubbles
   * [X] Ensure accessibility (with tabbing + onEnter)
+  * [ ] On hover (timing to be determined) should same action as onClick
   * [ ] onClick, removes all the existing styles on the circles + pointer svg
     * [ ] Determine the x, y of the clicked circle -> Style the stroke of the circle and add svg for pointer
     * [ ] Display line and arrow 
