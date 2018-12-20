@@ -17,11 +17,11 @@ const getListMenu = (features, selected, onChange) => (
 
 const getDropDownMenu = (features, selected, onChange) => {
   const options = features.map(feature => (
-    <option selected={feature === selected} key={feature} value={feature}>{feature}</option>
+    <option key={feature} value={feature}>{feature}</option>
   ));
 
   return (
-    <select onChange={event => onChange(event.target.value)}>
+    <select value={selected} onChange={event => onChange(event.target.value)}>
       {options}
     </select>
   );
