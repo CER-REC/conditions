@@ -11,6 +11,7 @@ npm-debug.log
 public/script/bundle.js
 LAST_MODIFIED
 VERSION
+storybook-static
 
 # System files
 .DS_Store
