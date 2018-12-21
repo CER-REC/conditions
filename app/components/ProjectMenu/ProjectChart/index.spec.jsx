@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import ProjectChart from './';
+import ProjectChart from '.';
 
 const chartData = [
   { name: 'Integrity Management', count: 34, color: 'pink' },

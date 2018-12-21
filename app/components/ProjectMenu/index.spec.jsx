@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import ProjectMenu from './';
+import ProjectMenu from '.';
 
 describe('Components|ProjectMenu', () => {
   // Assuming that the actual graph data will have a filter coming from the view level

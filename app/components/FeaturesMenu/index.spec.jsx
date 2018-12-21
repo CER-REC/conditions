@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import FeaturesMenu from './';
+import FeaturesMenu from '.';
 import List from '../List';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import withStatus from '../../../.storybook/addon-status/';
-import List from './';
+import withStatus from '../../../.storybook/addon-status';
+import List from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|List', module, ReadMe)

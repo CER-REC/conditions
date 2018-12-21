@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import handleInteraction from '../../utilities/handleInteraction';
-import CircleContainer from './';
+import CircleContainer from '.';
 
 describe('Component|CircleContainer', () => {
   describe('with default props', () => {
