@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import handleInteraction from '../../utilities/handleInteraction';
+import { shouldHaveInteractionProps } from '../../tests/utilities';
 import CircleContainer from '.';
 
 describe('Component|CircleContainer', () => {
@@ -48,11 +48,15 @@ describe('Component|CircleContainer', () => {
 
     it('should accept the "onClick" prop and enable click functionality', () => {
       // possibly pass a spy instead of the handle interaction function or noop function
-      const wrapper = shallow(<CircleContainer size="36px" onClick={handleInteraction}>Test</CircleContainer>);
-      expect(wrapper.props().onClick).to.be.a('function');
-      expect(wrapper.props().onKeyPress).to.be.a('function');
-      expect(wrapper.props().tabIndex).to.equal(0);
-      expect(wrapper.props().focusable).to.equal(true);
+      const wrapper = shallow((
+        <CircleContainer
+          size="36px"
+          onClick={() => {}}
+        >
+          Test
+        </CircleContainer>
+      ));
+      shouldHaveInteractionProps(wrapper);
     });
 
     it('should accept a className prop from the parent to enhance the style', () => {
@@ -61,4 +65,3 @@ describe('Component|CircleContainer', () => {
     });
   });
 });
-
