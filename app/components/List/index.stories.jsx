@@ -42,9 +42,11 @@ storiesForComponent('Components|List', module, ReadMe)
       onChange={() => {}}
       horizontal
     />
-  ), {
-    status: {
-      name: 'functionalityUnderDevelopment',
-      note: 'Horizontal support has not been implemented yet',
-    },
-  });
+  ))
+  .add('guide line', () => (
+    <List
+      items={['Item 1', 'Item 2', 'Item 3']}
+      onChange={() => {}}
+      guideLine
+    />
+  ));
