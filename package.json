@@ -7,19 +7,17 @@
     "test": "test"
   },
   "scripts": {
-    "build": "npm run build:data && npm run build:webpack",
-    "build:data": "echo \"Error: not defined\" && exit 1",
-    "build:webpack": "echo \"Error: not defined\" && exit 1",
     "ci:test": "npm run test -- --reporter mocha-junit-reporter --reporter-options mochaFile=./gl-junit.xml && npm run ci:testcoverage",
     "ci:testcoverage": "nyc report --reporter=text-lcov > coverage.lcov && npx codecov",
     "cz": "git-cz",
     "lint": "eslint -f gitlab \"./app/**/*.js*\" \"./server/**/*.js\"",
-    "start": "babel-node ./server/index.js",
     "test": "cross-env NODE_ENV=test nyc mocha --opts app/tests/mocha.opts app/**/*.spec.{js,jsx}",
     "test:single": "cross-env NODE_ENV=test mocha --opts app/tests/mocha.opts",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
+    "start": "babel-node ./server/index.js",
     "storybook": "start-storybook -s ./app/images -p 6006",
-    "build-storybook": "build-storybook -s ./app/images"
+    "build-storybook": "build-storybook -s ./app/images",
+    "postshrinkwrap": "replace --silent 'http://' 'https://' ./package-lock.json"
   },
   "author": "Spenser Jones <hello@spenserj.com>",
   "license": "Open Government License - Canada",
@@ -89,6 +87,7 @@
     "nyc": "^13.1.0",
     "opn-cli": "^4.0.0",
     "raw-loader": "^1.0.0",
+    "replace": "^1.0.1",
     "sass-loader": "^7.1.0",
     "sinon": "^7.2.2",
     "storybook-readme": "^4.0.2",
