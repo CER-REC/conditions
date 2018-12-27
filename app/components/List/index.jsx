@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleUp,
+  faAngleDown,
+  faAngleRight,
+  faAngleLeft,
+} from '@fortawesome/free-solid-svg-icons';
 
 import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 
-import './styles.scss';
+import styles from './styles.scss';
 
 library.add(
+  faAngleUp,
+  faAngleDown,
   faAngleRight,
   faAngleLeft,
 );
@@ -18,6 +25,8 @@ const List = (props) => {
   if (props.items.length === 0) { return null; }
   // Selected index cannot exceed the length of the array
   const selectedIndex = (props.selected < props.items.length) ? props.selected : 0;
+  const previousIcon = props.horizontal ? 'angle-left' : 'angle-up';
+  const nextIcon = props.horizontal ? 'angle-right' : 'angle-down';
   const items = props.items.map((item, i) => {
     const isSelected = selectedIndex === i;
     return (
@@ -27,21 +36,21 @@ const List = (props) => {
         {...(props.itemInteractions ? handleInteraction(props.onChange, i) : {})}
       >
         {!isSelected || selectedIndex === 0 ? null : (
-          <CircleContainer size="24px" onClick={() => props.onChange(i - 1)} className="ArrowPrevious">
-            <Icon size="1x" icon="angle-left" />
+          <CircleContainer size={styles.arrowSize} onClick={() => props.onChange(i - 1)} className="arrowPrevious">
+            <Icon size="1x" icon={previousIcon} />
           </CircleContainer>
         )}
         <div className="List-Item-Content">{item}</div>
         {!isSelected || selectedIndex === (props.items.length - 1) ? null : (
-          <CircleContainer size="24px" onClick={() => props.onChange(i + 1)} className="ArrowNext">
-            <Icon size="1x" icon="angle-right" />
+          <CircleContainer size={styles.arrowSize} onClick={() => props.onChange(i + 1)} className="arrowNext">
+            <Icon size="1x" icon={nextIcon} />
           </CircleContainer>
         )}
       </li>
     );
   });
   return (
-    <div className={`List ${props.className}`}>
+    <div className={`List ${props.horizontal ? 'horizontal' : ''} ${props.guideLine ? 'guideLine' : ''} ${props.className}`}>
       <ul>{items}</ul>
     </div>
   );
@@ -52,6 +61,10 @@ List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.node).isRequired,
   /** The index of the currently selected item */
   selected: PropTypes.number.isRequired,
+  /** The flag to determine if the component renders horizontally */
+  horizontal: PropTypes.bool,
+  /** The flag to determine if the component renders a guide line for vertical lists only */
+  guideLine: PropTypes.bool,
   /** A function that will receive an array index when an item is selected */
   onChange: PropTypes.func.isRequired,
   /** Bind onKeyPress and onClick for selecting an item */
@@ -61,6 +74,8 @@ List.propTypes = {
 };
 
 List.defaultProps = {
+  horizontal: false,
+  guideLine: false,
   itemInteractions: true,
   className: '',
 };
