@@ -145,6 +145,18 @@ describe('Components|List', () => {
       expect(wrapper.find('.arrowNext')).to.have.lengthOf(1);
     });
 
+    it('should call its onChange prop with the previous index', () => {
+      wrapper.find('.arrowPrevious').simulate('click', eventFuncs);
+      expect(spy.calledWith(0)).to.equal(true);
+      expect(spy.calledOnce).to.equal(true);
+    });
+
+    it('should call its onChange prop with the next index', () => {
+      wrapper.find('.arrowNext').simulate('click', eventFuncs);
+      expect(spy.calledWith(2)).to.equal(true);
+      expect(spy.calledOnce).to.equal(true);
+    });
+
     it('should render the arrows with vertical icons', () => {
       expect(wrapper.find('.arrowPrevious').children().prop('icon')).to.contain('up');
       expect(wrapper.find('.arrowNext').children().prop('icon')).to.contain('down');
