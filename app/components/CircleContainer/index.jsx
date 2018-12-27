@@ -15,7 +15,7 @@ const CircleContainer = props => (
       width: props.size,
       height: props.size,
     }}
-    {...(!props.onClick ? {} : handleInteraction(props.onClick))}
+    {...handleInteraction(props.onClick)}
   >
     <div>
       {props.children}
