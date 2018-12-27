@@ -9,15 +9,19 @@
   font-size: 0.85em;
 
   .List.faded {
-    button {
+    .CircleContainer {
       @extend %faded;
     }
   }
 
-  .List .selected .LegendItem {
-    font-size: 1.25em;
-    border: $list-selected;
-    background-color: white;
-    padding: 0.4em;
+  .List .List-Item.selected {
+    margin-right: 0;
+
+    .LegendItem {
+      font-size: 1.25em;
+      border: $list-selected;
+      background-color: white;
+      padding: 0.4em;
+    }
   }
 }

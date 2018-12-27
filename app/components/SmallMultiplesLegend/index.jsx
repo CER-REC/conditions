@@ -68,13 +68,13 @@ const SmallMultiplesLegend = (props) => {
   }
 
   if (legendDataItems.length) {
-    // TODO: Update List properties when the vertical feature is implemented
     legendList = (
       <List
         className={`${hasHighlight ? 'faded' : ''}`}
         items={legendDataItems}
         selected={0}
         onChange={onItemChange}
+        guideLine
       />
     );
   }
