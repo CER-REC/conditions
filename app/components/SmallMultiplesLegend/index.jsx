@@ -38,9 +38,13 @@ const getLegendDataItems = (data, hasHighlight, highlightName) => {
 
 const SmallMultiplesLegend = (props) => {
   let legendList;
+  const dataIndex = props.data.findIndex(conditionsData => (
+    conditionsData.name === props.selected
+  ));
   const hasHighlight = !!props.data.find(conditionsData => (
     conditionsData.name === props.highlightName
   ));
+  const selectedIndex = props.data.length === 1 ? 0 : dataIndex + 1;
   const legendDataItems = getLegendDataItems(props.data, hasHighlight, props.highlightName);
   const onItemChange = (index) => {
     if ((index === 0) && (legendDataItems.length > 1)) {
@@ -72,7 +76,7 @@ const SmallMultiplesLegend = (props) => {
       <List
         className={`${hasHighlight ? 'faded' : ''}`}
         items={legendDataItems}
-        selected={0}
+        selected={selectedIndex}
         onChange={onItemChange}
         guideLine
       />
@@ -99,6 +103,8 @@ SmallMultiplesLegend.propTypes = {
     })).isRequired,
     color: PropTypes.string.isRequired,
   })).isRequired,
+  /** The name of the data element to set as selected */
+  selected: PropTypes.string,
   /** The name of the data element to highlight */
   highlightName: PropTypes.string,
   /** A function that will receive an name when a data item is selected
@@ -109,6 +115,7 @@ SmallMultiplesLegend.propTypes = {
 };
 
 SmallMultiplesLegend.defaultProps = {
+  selected: '',
   highlightName: null,
   className: '',
 };
