@@ -1,0 +1,25 @@
+$square-size: 14px;
+.LegendItem {
+  max-height: $square-size;
+  margin: 0;
+  padding: 0;
+  margin-top: 1px;
+  padding: 0;
+  text-align: left;
+  &.Disabled {
+    opacity: 0.3;
+  }
+  .Color {
+    display: inline-table;
+    height: $square-size;
+    width: $square-size;
+    content: '';
+  }
+  .Text {
+    line-height: 14px;
+    height: 14px;
+    display: inline-table;
+    margin-left: 10px;
+    vertical-align: top;
+  }
+}
