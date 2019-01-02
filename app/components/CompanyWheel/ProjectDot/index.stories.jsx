@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import ProjectDot from './';
+import ProjectDot from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|CompanyWheel/ProjectDot', module, ReadMe)

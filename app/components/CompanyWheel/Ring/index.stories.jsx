@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import Ring from './';
+import Ring from '.';
 import ReadMe from './README.md';
 import './styles.scss';
 

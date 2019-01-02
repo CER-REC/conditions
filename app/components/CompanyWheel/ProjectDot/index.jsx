@@ -12,7 +12,6 @@ const ProjectDot = ({ filtered, relevant }) => (
   />
 );
 
-
 ProjectDot.propTypes = {
   filtered: PropTypes.bool,
   relevant: PropTypes.bool,

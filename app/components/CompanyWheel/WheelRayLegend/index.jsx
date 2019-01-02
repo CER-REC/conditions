@@ -24,7 +24,7 @@ const WheelRayLegend = (props) => {
       position = stripePosition;
     }
     return (
-      <text id="LetterLegend" key={index} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
+      <text key={index} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
         {legendObj.legend}
       </text>
     );
@@ -43,9 +43,7 @@ WheelRayLegend.propTypes = {
     count: PropTypes.number,
   })).isRequired,
   degreesPerItem: PropTypes.number.isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
   rotation: PropTypes.number.isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
   reservedDegrees: PropTypes.number.isRequired,
 };
 

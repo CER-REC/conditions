@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { shallow } from 'enzyme';
 // import sinon from 'sinon';
 import { expect } from 'chai';
 
-import CompanyWheel from './';
+import CompanyWheel from '.';
 
 describe('Components|CompanyWheel', () => {
   describe('with no props', () => {

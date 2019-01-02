@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import WheelRayLegend from './';
+import WheelRayLegend from '.';
 import ReadMe from './README.md';
 
 import { locationWheelData, companyWheelData, locationWheelItems } from '../randomDataSample';

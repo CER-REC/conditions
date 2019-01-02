@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 // import { sinon} from 'sinon';
 
-import WheelRayLegend from './';
+import WheelRayLegend from '.';
 
 const mockData = [
   { legend: 'A', count: 30 },

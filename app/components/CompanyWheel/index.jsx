@@ -19,17 +19,20 @@ class CompanyWheel extends React.Component {
 
   componentWillMount() {
     const degreesAvailForPlotting = 360 - this.state.reservedDegrees;
-    const numOfLegendItems = this.props.ringType === 'company' ?
-      this.props.itemsData.length
+    const numOfLegendItems = this.props.ringType === 'company'
+      ? this.props.itemsData.length
       : this.getLocationItemsCount();
     const degreesPerItem = degreesAvailForPlotting / numOfLegendItems;
     this.setState({ degreesPerItem });
   }
 
   onSpinClick = () => {
-    const newRotation = this.state.newRayRotation + Math.floor(Math.random() * 360);
-    const newRayRotation = this.calcRayRotation(newRotation);
-    this.setState({ oldRotation: this.state.newRotation, newRotation, newRayRotation });
+    const randomNum = Math.floor(Math.random() * 360);
+    this.setState(prevState => ({
+      oldRotation: prevState.newRotation,
+      newRotation: prevState.newRayRotation + randomNum,
+      newRayRotation: this.calcRayRotation(prevState.newRayRotation + randomNum),
+    }));
   };
 
   getLocationItemsCount = () => {
@@ -67,13 +70,14 @@ class CompanyWheel extends React.Component {
                     </g>
                     <Ring ringType={this.props.ringType} />
                     <Spring native to={{ rotation: (props.rotate) }}>
-                      {legendProps => (<WheelRayLegend
-                        rotation={legendProps.rotation.getValue()}
-                        ringType={this.props.ringType}
-                        legendPositionArray={this.props.itemsData}
-                        degreesPerItem={this.state.degreesPerItem}
-                        reservedDegrees={this.state.reservedDegrees}
-                      />)}
+                      {legendProps => (
+                        <WheelRayLegend
+                          rotation={legendProps.rotation.getValue()}
+                          ringType={this.props.ringType}
+                          legendPositionArray={this.props.itemsData}
+                          degreesPerItem={this.state.degreesPerItem}
+                          reservedDegrees={this.state.reservedDegrees}
+                        />)}
                     </Spring>
                   </g>
                 </g>
@@ -82,7 +86,7 @@ class CompanyWheel extends React.Component {
           )
           }
         </Spring>
-        <button className="pullToSpin" onClick={this.onSpinClick} >Spin that wheel</button>
+        <button type="button" className="pullToSpin" onClick={this.onSpinClick}>Spin that wheel</button>
       </div>
     );
   }

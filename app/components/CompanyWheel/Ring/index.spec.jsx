@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import './styles.scss';
 
-import Ring from './';
+import Ring from '.';
 
 describe('Components|CompanyWheel/Ring', () => {
   describe('with default props', () => {
