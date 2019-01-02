@@ -33,14 +33,15 @@ const List = (props) => {
       <li
         key={item.key || item}
         className={`List-Item ${isSelected ? 'selected' : ''}`}
-        {...(props.itemInteractions ? handleInteraction(props.onChange, i) : {})}
       >
         {!isSelected || selectedIndex === 0 ? null : (
           <CircleContainer size={styles.arrowSize} onClick={() => props.onChange(i - 1)} className="arrowPrevious">
             <Icon size="1x" icon={previousIcon} />
           </CircleContainer>
         )}
-        <div className="List-Item-Content">{item}</div>
+        <div {...(props.itemInteractions ? handleInteraction(props.onChange, i) : {})} className="List-Item-Content">
+          {item}
+        </div>
         {!isSelected || selectedIndex === (props.items.length - 1) ? null : (
           <CircleContainer size={styles.arrowSize} onClick={() => props.onChange(i + 1)} className="arrowNext">
             <Icon size="1x" icon={nextIcon} />

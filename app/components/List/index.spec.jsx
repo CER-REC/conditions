@@ -74,12 +74,12 @@ describe('Components|List', () => {
     });
 
     it('should call its onChange prop with what was clicked', () => {
-      wrapper.find('.List-Item').last().simulate('click', eventFuncs);
+      wrapper.find('.List-Item-Content').last().simulate('click', eventFuncs);
       expect(spy.calledWith(2)).to.equal(true);
     });
 
     it('should call its onChange prop with what enter was pressed on', () => {
-      wrapper.find('.List-Item').last().simulate('keypress', { key: 'Enter', ...eventFuncs });
+      wrapper.find('.List-Item-Content').last().simulate('keypress', { key: 'Enter', ...eventFuncs });
       expect(spy.calledWith(2)).to.equal(true);
     });
   });
