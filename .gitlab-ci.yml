@@ -20,6 +20,7 @@ build:
   # This folder is cached between builds
   # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
   cache:
+    key: node_modules
     paths:
       - node_modules/
   artifacts:
@@ -80,6 +81,7 @@ deployDevdocs:
   except:
     - branches
   cache:
+    key: deployDevdocs_pip
     paths:
       - .cache/pip
   before_script:
