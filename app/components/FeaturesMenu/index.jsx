@@ -23,12 +23,12 @@ const FeaturesMenu = (props) => {
       </select>
     );
   } else {
-    // TODO: Update List properties when the vertical feature is implemented
     menu = (
       <List
         items={features}
         selected={features.indexOf(selected)}
         onChange={index => onChange(features[index])}
+        guideLine
       />
     );
   }

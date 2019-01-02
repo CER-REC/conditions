@@ -1,9 +1,17 @@
 import React from 'react';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
 import FeaturesMenu from '.';
 import ReadMe from './README.md';
 
+const features = ['TEST ABC', 'TEST 123', 'test'];
+const featuresOptions = features.reduce((hashAggregate, feature) => ({
+  ...hashAggregate,
+  [feature]: feature,
+}), {});
+
 storiesForComponent('Components|FeaturesMenu', module, ReadMe)
+  .addDecorator(withKnobs)
   .add('basic usage', () => (
     <FeaturesMenu
       title="Title"
@@ -14,17 +22,16 @@ storiesForComponent('Components|FeaturesMenu', module, ReadMe)
   .add('selected', () => (
     <FeaturesMenu
       title="Title A"
-      features={['F. abc', 'F. 123']}
+      features={features}
       onChange={feature => alert(feature)}
-      selected="F. 123"
-      dropDown
+      selected={select('Selected', featuresOptions, 'TEST 123')}
     />
   ))
   .add('drop down', () => (
     <FeaturesMenu
       title="Title"
-      features={['TEST ABC', 'TEST 123', 'test']}
+      features={['F. abc', 'F. 123']}
       onChange={feature => alert(feature)}
-      dropDown
+      dropDown={boolean('Drop Down Mode', true)}
     />
   ));
