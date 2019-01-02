@@ -12,10 +12,20 @@ import './styles.scss';
 
 export const roundDateLabel = t => Math.round(t);
 
+const stopEvent = (event) => {
+  event.stopPropagation();
+};
+
 export const StackGroup = props => (
   <g
-    onClick={props.handleOnClick}
-    onKeyDown={props.handleOnClick}
+    onClick={props.handleOnChange}
+    onKeyDown={props.handleArrowKey}
+    onMouseDown={props.onDragStart}
+    onMouseMove={props.onDragMove}
+    onMouseUp={props.onDragStop}
+    onTouchStart={props.onDragStart}
+    onTouchMove={props.onDragMove}
+    onTouchEnd={props.onDragStop}
     role="button"
     tabIndex="-1"
   >
@@ -30,11 +40,15 @@ export const StackGroup = props => (
 );
 
 StackGroup.propTypes = {
-  handleOnClick: PropTypes.func.isRequired,
+  handleOnChange: PropTypes.func.isRequired,
+  handleArrowKey: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   showControl: PropTypes.bool.isRequired,
   positionControl: PropTypes.number.isRequired,
   numOfConditions: PropTypes.number.isRequired,
+  onDragStart: PropTypes.func.isRequired,
+  onDragMove: PropTypes.func.isRequired,
+  onDragStop: PropTypes.func.isRequired,
 };
 
 class StreamGraph extends React.Component {
@@ -57,8 +71,46 @@ class StreamGraph extends React.Component {
       showControl: false,
       positionControl: 30,
       numOfConditions: 0,
+      isDragging: false,
     };
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.onDragStart = this.onDragStart.bind(this);
+    this.onDragMove = this.onDragMove.bind(this);
+    this.onDragStop = this.onDragStop.bind(this);
+  }
+
+  onDragStart = (event) => {
+    if (!this.state.showControl) { return; }
+    stopEvent(event);
+    this.setState({
+      isDragging: true,
+    });
+
+    document.addEventListener('mousemove', this.onDragMove);
+    document.addEventListener('mouseup', this.onDragStop);
+    document.addEventListener('touchmove', this.onDragMove);
+    document.addEventListener('touchend', this.onDragStop);
+  }
+
+  onDragMove(event) {
+    if (this.state.isDragging === false) { return; }
+    stopEvent(event);
+    this.setState({
+      positionControl: event.clientX - 100,
+    });
+  }
+
+  onDragStop = (event) => {
+    stopEvent(event);
+
+    document.removeEventListener('mousemove', this.onDragMove);
+    document.removeEventListener('mouseup', this.onDragStop);
+    document.removeEventListener('touchmove', this.onDragMove);
+    document.removeEventListener('touchend', this.onDragStop);
+
+    this.setState({
+      isDragging: false,
+    });
   }
 
   getConditionDates() {
@@ -73,7 +125,7 @@ class StreamGraph extends React.Component {
     return conditionDates;
   }
 
-  handleOnClick = (event) => {
+  handleOnChange = (event) => {
     if (this.state.showControl === true) {
       document.addEventListener('click', this.handleOutsideClick, false);
     }
@@ -98,6 +150,40 @@ class StreamGraph extends React.Component {
 
     this.setState({
       showControl: true,
+    });
+  };
+
+  handleArrowKey = (event) => {
+    const currPosition = this.state.positionControl;
+
+    if ((event.key !== 'ArrowLeft' || event.keyCode !== 37) && (event.key !== 'ArrowRight' || event.keyCode !== 39)) {
+      return;
+    }
+
+    let direction = -50;
+    let valueIndex = -1;
+    if (event.key === 'ArrowRight' || event.keyCode === 39) {
+      direction = 50;
+      valueIndex = 1;
+    }
+
+    if (direction + currPosition < event.target.getClientRects()[0].left - 100 ||
+      direction + currPosition > event.target.getClientRects()[0].left + 300) {
+      return;
+    }
+
+    const numOfConditionValue = this.getConditionDates();
+    const groupPosition = event.target.getClientRects()[0];
+    const groupWidth = groupPosition.right - groupPosition.left;
+
+    const dateCount = this.props.projectData[0].graphData.map(k => k.date).length;
+    const sectionWidth = groupWidth / dateCount;
+
+    const currentSection = Math.floor(currPosition / sectionWidth);
+
+    this.setState({
+      positionControl: currPosition + direction,
+      numOfConditions: numOfConditionValue[currentSection + valueIndex],
     });
   };
 
@@ -156,7 +242,11 @@ class StreamGraph extends React.Component {
         <VictoryStack
           groupComponent={
             <StackGroup
-              handleOnClick={this.handleOnClick}
+              handleOnChange={this.handleOnChange}
+              handleArrowKey={this.handleArrowKey}
+              onDragStart={this.onDragStart}
+              onDragMove={this.onDragMove}
+              onDragStop={this.onDragStop}
               showControl={this.state.showControl}
               positionControl={this.state.positionControl}
               numOfConditions={this.state.numOfConditions}

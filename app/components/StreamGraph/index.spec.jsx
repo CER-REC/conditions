@@ -53,12 +53,9 @@ describe('Components|StreamGraph', () => {
 
   describe('with default props', () => {
     let wrapper;
-    let onClick;
     beforeEach(() => {
-      onClick = sinon.spy();
       wrapper = shallow(<Streamgraph
         projectData={projectData}
-        onClick={onClick}
       />);
     });
 
@@ -89,10 +86,21 @@ describe('Components|StreamGraph', () => {
     it('should round the date label', () => {
       expect(roundDateLabel(2018.1)).to.be.equal(2018);
     });
-
-    it('should render a stack group', () => {
-      const stack = shallow(<StackGroup />);
-      expect(stack.type()).to.equal('g');
-    });
   });
+
+  // describe('with the Control visible', () => {
+  //   let stack;
+  //   let onChange;
+  //   beforeEach(() => {
+  //     onChange = sinon.spy();
+  //     stack = mount(<StackGroup
+  //       onChange={onChange}
+  //       projectData={projectData}
+  //     />);
+  //   });
+
+  //   it('should render a stack group', () => {
+  //     expect(stack.type()).to.equal('g');
+  //   });
+  // });
 });
