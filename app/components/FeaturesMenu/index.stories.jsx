@@ -1,14 +1,10 @@
 import React from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
 import FeaturesMenu from '.';
 import ReadMe from './README.md';
 
 const features = ['TEST ABC', 'TEST 123', 'test'];
-const modeOptions = {
-  On: true,
-  Off: false,
-};
 const featuresOptions = features.reduce((hashAggregate, feature) => ({
   ...hashAggregate,
   [feature]: feature,
@@ -36,6 +32,6 @@ storiesForComponent('Components|FeaturesMenu', module, ReadMe)
       title="Title"
       features={['F. abc', 'F. 123']}
       onChange={feature => alert(feature)}
-      dropDown={select('Drop Down Mode', modeOptions, true)}
+      dropDown={boolean('Drop Down Mode', true)}
     />
   ));
