@@ -5,7 +5,7 @@ import './styles.scss';
 
 const ProjectDot = ({ filtered, relevant }) => (
   <circle
-    className={classNames('ProjectDot', filtered ? 'IsFiltered' : '', relevant ? 'IsRelevant' : '')}
+    className={classNames('ProjectDot', { IsFiltered: filtered, IsRelevant: relevant })}
     cx="50"
     cy="50"
     r="40"

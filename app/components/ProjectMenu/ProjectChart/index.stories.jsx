@@ -1,6 +1,7 @@
 import React from 'react';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import ProjectChart from './';
+import ProjectChart from '.';
 import ReadMe from './README.md';
 
 const graphData = [
@@ -14,17 +15,20 @@ const graphData = [
 ];
 
 const chartType = 'Theme';
+const projectName = '3. Section 21.(1) application';
 
 storiesForComponent('Components|ProjectMenu/ProjectChart', module, ReadMe)
+  .addDecorator(withKnobs)
   .add('With legend items', () => (
     <ProjectChart
       graphData={graphData}
       chartType={chartType}
+      projectName={projectName}
+      selected={boolean('Selected project', true)}
     />
   ))
   .add('Empty graphData', () => (
     <ProjectChart
-      graphData={[]}
       chartType={chartType}
     />
   ));

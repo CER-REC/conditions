@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import List from './';
+import withStatus from '../../../.storybook/addon-status';
+import List from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|List', module, ReadMe)
+  .addDecorator(withStatus('designUnderDevelopment'))
   .add('basic usage', () => (
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
@@ -33,4 +35,16 @@ storiesForComponent('Components|List', module, ReadMe)
       onChange={v => alert(v)}
       itemInteractions={false}
     />
-  ));
+  ))
+  .add('horizontal', () => (
+    <List
+      items={['Item 1', 'Item 2', 'Item 3']}
+      onChange={() => {}}
+      horizontal
+    />
+  ), {
+    status: {
+      name: 'functionalityUnderDevelopment',
+      note: 'Horizontal support has not been implemented yet',
+    },
+  });

@@ -1,5 +1,0 @@
---require @babel/register
---require test/enzyme
---require test/ignoreExtensions
---file test/jsdom
---recursive

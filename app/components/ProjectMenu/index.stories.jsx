@@ -1,59 +1,65 @@
 import React from 'react';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
-import ProjectMenu from './';
+import ProjectMenu from '.';
 import ReadMe from './README.md';
 
 const projectData = [
   {
     id: 1223,
-    name: 'Project Name 1',
-    graphData: [{ name: 'condition 1', count: 5 }, { name: 'condition 2', count: 0 }],
+    name: '1. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 5, color: 'pink' }, { name: 'condition 2', count: 0, color: 'green' }],
   },
   {
     id: 1224,
-    name: 'Project Name 2',
-    graphData: [{ name: 'condition 1', count: 10 }, { name: 'condition 2', count: 19 }],
+    name: '2. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 10, color: 'pink' }, { name: 'condition 2', count: 19, color: 'green' }],
   },
   {
     id: 1225,
-    name: 'Project Name 3',
-    graphData: [{ name: 'condition 1', count: 4 }, { name: 'condition 2', count: 29 }],
+    name: '3. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 4, color: 'pink' }, { name: 'condition 2', count: 29, color: 'green' }],
   },
   {
     id: 1226,
-    name: 'Project Name 4',
-    graphData: [{ name: 'condition 1', count: 6 }, { name: 'condition 2', count: 22 }],
+    name: '4. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 6, color: 'pink' }, { name: 'condition 2', count: 22, color: 'green' }],
   },
   {
     id: 1227,
-    name: 'Project Name 1',
-    graphData: [{ name: 'condition 1', count: 5 }, { name: 'condition 2', count: 0 }],
+    name: '5. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 5, color: 'pink' }, { name: 'condition 2', count: 0, color: 'green' }],
   },
   {
     id: 1228,
-    name: 'Project Name 2',
-    graphData: [{ name: 'condition 1', count: 10 }, { name: 'condition 2', count: 19 }],
+    name: '6. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 10, color: 'pink' }, { name: 'condition 2', count: 19, color: 'green' }],
   },
   {
     id: 1229,
-    name: 'Project Name 3',
-    graphData: [{ name: 'condition 1', count: 4 }, { name: 'condition 2', count: 29 }],
+    name: '7. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 4, color: 'pink' }, { name: 'condition 2', count: 29, color: 'green' }],
   },
   {
     id: 1230,
-    name: 'Project Name 4',
-    graphData: [{ name: 'condition 1', count: 6 }, { name: 'condition 2', count: 22 }],
+    name: '8. Section 21.(1) application',
+    graphData: [{ name: 'condition 1', count: 6, color: 'pink' }, { name: 'condition 2', count: 22, color: 'green' }],
   },
 ];
 
-const selectedProjectID = 1226;
+const options = projectData.reduce((acc, next) => ({
+  ...acc,
+  [next.name]: next.id,
+}), {});
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
+  .addDecorator(withKnobs)
   .add('Default Props', () => (
     <ProjectMenu
       projectData={projectData}
-      selectedProjectID={selectedProjectID}
+      selectedProjectID={select('Selected Project', options, 1226)}
       onChange={() => {}}
+      selectedFeature="Theme"
     />
   ));
 

@@ -1,0 +1,11 @@
+$arrow-icon-color: #d1057a;
+
+.List-Item {
+  &.selected {
+    .CircleContainer {
+      background-color: #fff;
+      border: 1px solid $arrow-icon-color;
+      color: $arrow-icon-color;
+    }
+  }
+}

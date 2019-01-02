@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import List from './';
+import List from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };

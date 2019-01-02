@@ -29,10 +29,7 @@ class CompanyWheel extends React.Component {
   onSpinClick = () => {
     const newRotation = this.state.newRayRotation + Math.floor(Math.random() * 360);
     const newRayRotation = this.calcRayRotation(newRotation);
-    this.setState(
-      { oldRotation: this.state.newRotation },
-      this.setState({ newRotation, newRayRotation }),
-    );
+    this.setState({ oldRotation: this.state.newRotation, newRotation, newRayRotation });
   };
 
   getLocationItemsCount = () => {
