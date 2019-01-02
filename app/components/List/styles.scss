@@ -1,6 +1,7 @@
 @import '../../styles/borders.scss';
 @import '../../styles/svgs.scss';
 
+// arrow-size should match the code's arrowSize variable (there are testing issues with :export)
 $arrow-size: 24px;
 $arrow-spacing: 0.6em;
 $button-spacing: calc(#{$arrow-size} + 0.75em);
@@ -77,8 +78,4 @@ $button-spacing: calc(#{$arrow-size} + 0.75em);
       }
     }
   }
-}
-
-:export {
-  arrowSize: $arrow-size;
 }

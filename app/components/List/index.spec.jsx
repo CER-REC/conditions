@@ -11,7 +11,7 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 describe('Components|List', () => {
   describe('without any items', () => {
     it('should not render anything', () => {
-      const wrapper = shallow(<List items={[]} onChange={noop} />);
+      const wrapper = shallow(<List items={[]} selected={0} onChange={noop} />);
       expect(wrapper.type()).to.equal(null);
     });
   });
@@ -19,7 +19,7 @@ describe('Components|List', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<List items={['a', 'b', 'c']} onChange={noop} />);
+      wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={noop} />);
     });
 
     it('should render', () => {
@@ -70,7 +70,7 @@ describe('Components|List', () => {
     let wrapper;
     beforeEach(() => {
       spy = sinon.spy();
-      wrapper = shallow(<List items={['a', 'b', 'c']} onChange={spy} />);
+      wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} />);
     });
 
     it('should call its onChange prop with what was clicked', () => {
@@ -89,7 +89,7 @@ describe('Components|List', () => {
     let wrapper;
     beforeEach(() => {
       spy = sinon.spy();
-      wrapper = shallow(<List items={['a', 'b', 'c']} onChange={spy} itemInteractions={false} />);
+      wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} itemInteractions={false} />);
     });
 
     it('should not respond to clicks', () => {
@@ -111,6 +111,7 @@ describe('Components|List', () => {
           <TestComponent key="hello" text="hello" />,
           <TestComponent key="world" text="world" />,
         ]}
+        selected={0}
         itemInteractions={false}
         onChange={noop}
       />);

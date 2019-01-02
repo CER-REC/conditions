@@ -12,7 +12,7 @@ import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 
-import styles from './styles.scss';
+import './styles.scss';
 
 library.add(
   faAngleUp,
@@ -23,6 +23,8 @@ library.add(
 
 const List = (props) => {
   if (props.items.length === 0) { return null; }
+  // arrowSize should match the style's arrow-size variable (there are testing issues with :export)
+  const arrowSize = '24px';
   // Selected index cannot exceed the length of the array
   const selectedIndex = (props.selected < props.items.length) ? props.selected : 0;
   const previousIcon = props.horizontal ? 'angle-left' : 'angle-up';
@@ -35,7 +37,7 @@ const List = (props) => {
         className={`List-Item ${isSelected ? 'selected' : ''}`}
       >
         {!isSelected || selectedIndex === 0 ? null : (
-          <CircleContainer size={styles.arrowSize} onClick={() => props.onChange(i - 1)} className="arrowPrevious">
+          <CircleContainer size={arrowSize} onClick={() => props.onChange(i - 1)} className="arrowPrevious">
             <Icon size="1x" icon={previousIcon} />
           </CircleContainer>
         )}
@@ -43,7 +45,7 @@ const List = (props) => {
           {item}
         </div>
         {!isSelected || selectedIndex === (props.items.length - 1) ? null : (
-          <CircleContainer size={styles.arrowSize} onClick={() => props.onChange(i + 1)} className="arrowNext">
+          <CircleContainer size={arrowSize} onClick={() => props.onChange(i + 1)} className="arrowNext">
             <Icon size="1x" icon={nextIcon} />
           </CircleContainer>
         )}
