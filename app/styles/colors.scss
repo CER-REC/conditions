@@ -1,107 +1,184 @@
+/*#region TypographyColors */
+
+$Black19: rgb(19,28,43);
+$Black51: rgb(51,51,51);
+$Black77: rgb(77, 77, 77);
+$Gray160: rgb(161,168,167);
+$VeryDarkGray: rgb(96,96,96);
+$general-text-2: rgb(128, 128, 128);
+$DarkGray: rgb(153,153,153);
+$LightGray:rgb(230,230,230) ;
+
+/*#regionend*/
+
+
 /*#region Common */
 
-$very-black-blue: rgb(19,28,43);
-$grey20: rgb(51,51,51);
-$grey30: rgb(77, 77, 77);
-$very-dark-gray: rgb(96,96,96);
-$dark-gray: rgb(153,153,153);
-$dark-grayish-cyan: rgb(161,168,167);
-$very-light-gray: rgb(228,228,228);
-$calm-spirit:rgb(230,230,230) ;
-$general-typography-links2: rgb(209, 5, 122);
-$bright-orange: rgb(238,97,41);
-$vivid-orange: rgb(241,90,36);
-$dark-violet: rgb(56,7,177);
-$white: rgb(255,255,255);
+$LinksTextButtons: rgb(209, 5, 122);
+$AccessibilitySurround: rgb(56,7,177);
+$LightGreyBackground: rgb(228,228,228);
+
+// Projects/conditions will have the following general styling:
+$MainOrange: rgb(238,97,41);
+$ProjectDotBase: rgb(161,168,167);
+// Color oh so ever slightly different in search???
+$SearchKeyword: rgb(241,90,36);
+
+$White: rgb(255,255,255);
 
 /*#regionend*/
 
 /*#region CompanyWheel */
+$MapWheelColors: (
+  $Outline: rgb(209,5,122), // outline, inner colour 1 of company wheel
+  $InnerColourCompany1: rgb(64,84,183), // label company wheel
+  $InnerColourCompany2  : rgb(48,41,140), // inner colour 2 company wheel
+  $InnerColourLocation1: rgb(239,182,82), // location inner coulour 1
+  $InnerColourLocation2: rgb(242,207,102), // location inner colour 2
+);
 
-$strong-pink: rgb(209,5,122); // outline, inner colour 1 of company wheel
-$moderate-blue: rgb(64,84,183); // label company wheel
-$dark-blue: rgb(48,41,140);  // inner colour 2 company wheel
-$soft-orange: rgb(239,182,82); // location inner coulour 1
-$soft-yellow: rgb(242,207,102); // location inner colour 2
-
-
+@function GetWheelColors($key: 'strong-pink'){
+  @return map-get($MapWheelColors, $key);
+};
 /*#regionend*/
 
 /*#region THEMES*/
+$MapThemeColors: (
+  $StandardCondition: rgb(181, 11, 128),
+  $IntegrityManagement:rgb(153,82,255),
+  $EnvironmentalProtection: rgb(33,181,115),
+  $Administrative: rgb(201,215,65),
+  $SunsetClause: rgb(41,41,218),
+  $Enforcement: rgb(74,166,255),
+  $EmergencyManagement: rgb(11,121,153),
+  $SocioEconomic: rgb(153,153,255),
+  $SafetyManagement: rgb(68,34,149),
+  $DamagePrevention: rgb(133,28,133),
+  $Financial: rgb(247,193,97),
+  $ManagementSystem: rgb(221,10,10),
+  $Security: rgb(221,10,10),
+);
 
-$slightly-desaturated-red: rgb(181, 11, 128);
-$light-violet:rgb(153,82,255);
-$lime-green: rgb(33,181,115);
-$moderate-yellow: rgb(201,215,65);
-$bright-blue: rgb(41,41,218);
-$light-blue: rgb(74,166,255);
-$dark-cyan: rgb(11,121,153);
-$blue-magenta: rgb(153,153,255);
-$caparol: rgb(68,34,149);
-$fairy-land: rgb(133,28,133);
-$sandy-summer: rgb(247,193,97);
-$natural-green: rgb(221,10,10);
-$vivid-red: rgb(221,10,10);
+/* to get theme colors use $<your-variable>: GetThemeColors('<NameOfVariableIn$TimingColors>') */
 
+@function GetThemeColors($key: 'StandardCondition'){
+  @return map-get($MapThemeColors, $key);
+};
 /*#endregion */
 
 /*#region TIMING */
-$crushed-ice: rgb(72,82,193);
-$medium-torquoise: rgb(5,215,210);
-$borealis: rgb(31,51,79);
-$heliotrope: rgb(210,102,236);
-$chalfonte-blue: rgb(175,244,244);
-$disqus-blue:rgb(83,164,248);
-$classic-gray: rgb(102,102,102);
-$cobalt-blue: rgb(26,57,146);
+$MapTimingColors: (
+  $IncludesAllPhasesofConstr: rgb(72,82,193),
+  $NotConstructionRelated: rgb(5,215,210),
+  $PostConstructionPhase: rgb(31,51,79),
+  $PriorToConstructionPhase: rgb(210,102,236),
+  $ExpiryDateOfRegInstrument: rgb(175,244,244),
+  $DuringConstructionPhase:rgb(83,164,248),
+  $Abandonment: rgb(102,102,102),
+  $Unspecified: rgb(26,57,146),
+);
+
+/* to get timing colors use $<your-variable>: GetTimingColors('<NameOfVariableIn$TimingColors>') */
+
+@function GetTimingColors($key: 'IncludesAllPhasesofConstr'){
+  @return map-get($MapTimingColors, $key);
+};
+
 
 /*#endregion*/
 
 /*#region STATUS */
-
-$scent-of-pine: rgb(101, 216, 126);
-$light-charcoal: rgb(137, 137, 137);
-$jet-black: rgb(30, 29, 30);
-$hot-pink: rgb(252, 106, 187);
-$red-gore: rgb(145, 9, 9);
-$spanish-rose: rgb(249, 214, 202);
-$brilliant-azure: rgb(45, 151, 247);
-$vivid-mulberry: rgb(188, 30, 226);
-$sun-dust: rgb(234, 189, 110);
-$chalfonte-blue: rgb(176, 244, 244);
-$tomatillo:rgb(198, 170, 6);
-$privet-green: rgb(88, 104, 107);
+$MapStatusColors: (
+  $InProgress: rgb(101, 216, 126),
+  $Closed: rgb(137, 137, 137),
+  $NoFilingRequired: rgb(30, 29, 30),
+  $AwaitingFiling: rgb(252, 106, 187),
+  $OverdueFiling: rgb(145, 9, 9),
+  $UnderReview: rgb(249, 214, 202),
+  $ReviewComplete: rgb(45, 151, 247),
+  $AwaitingIRResponse: rgb(188, 30, 226),
+  $ReadyForBoardDecision: rgb(234, 189, 110),
+  $FurtherInformationRequired: rgb(176, 244, 244),
+  $Amended:rgb(198, 170, 6),
+  $Satisfactory: rgb(88, 104, 107),
+);
+@function GetStatusColors($key: 'InProgress'){
+  @return map-get($MapStatusColors, $key);
+};
 
 /*#endregion*/
 
 /*#region NON-STANDARD */
 
-$purple: rgb(77, 39, 90);
-$slightly-desaturated-red: rgb(181, 11, 128);
+$NonStandard: rgb(77, 39, 90);
+$Standard: rgb(181, 11, 128);
 
 /*#endregion */
 
 /*#region INSTRUMENTS */
-
-$kobaltblau: rgb(14, 43, 140);
-$splish-splash: rgb(39, 165, 249);
-$soulstone-blue: rgb(22, 78, 248);
-$silky-mint: rgb(22, 78, 248);
-$dijon-mustard: rgb(212, 169, 42);
-$deep-magenta: rgb(201, 4, 194);
-$arboretum: rgb(195, 230, 179);
+$MapInstrumentColors: (
+  $Routing: rgb(14, 43, 140),
+  $Construction: rgb(39, 165, 249),
+  $Abandonment: rgb(22, 78, 248),
+  $Opening: rgb(22, 78, 248),
+  $Misc: rgb(212, 169, 42),
+  $Safety: rgb(201, 4, 194),
+  $Tariffs: rgb(195, 230, 179),
+);
+@function GetInstrumentColors($key: 'IncludesAllPhasesofConstr'){
+  @return map-get($MapInstrumentColors, $key);
+};
 
 /*#endregion */
 
 /*#region FILING */
-
-$majorelle-blue: rgb(82, 82, 247);
-$yorkshire-gray: rgb(58, 58, 58);
+$MapFilingColors: (
+  $FilingRequired: rgb(82, 82, 247),
+  $FilingNotRequired: rgb(58, 58, 58),
+);
+@function GetFilingColors($key: 'FilingRequired'){
+  @return map-get($MapFilingColors, $key);
+};
 
 /*#endregion */
 
 /*#region INFORMATION BAR*/
 
-$general-text-2: rgb(128, 128, 128);
-
 /*#endregion */
+
+/* Suggested reading for the Ilab https://scotch.io/tutorials/aesthetic-sass-2-colors */
+
+/* Use sass default flag for topography and then modify */
+
+/* organize by categories: Base
+Layout
+Module
+State
+Theme
+*/
+
+/* The best way */
+// %button {
+//   min-width: 100px;
+//   padding: 1em;
+//   border-radius: 1em;
+// }
+// %twitter-background {
+//   color: #fff;
+//   background: #55acee;
+// }
+// %facebook-background {
+//   color: #fff;
+//   background: #3b5998;
+// }
+
+// .btn {
+//   &--twitter {
+//     @extend %button;
+//     @extend %twitter-background;
+//   }
+//   &--facebook {
+//     @extend %button;
+//     @extend %facebook-background;
+//   }
+// }
