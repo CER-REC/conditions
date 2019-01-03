@@ -1,6 +1,6 @@
-# Downloads Text
+# Downloads Text Box
 
-The Downloads Text is a private component that will be used by the Main Info Bar. It will display
+The Downloads Text Box is a private component that will be used by the Main Info Bar. It will display
 two links to the user so that they can download the data or download an image of the 
 visualization they have on the screen.
 

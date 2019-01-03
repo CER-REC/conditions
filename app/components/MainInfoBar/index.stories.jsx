@@ -4,6 +4,6 @@ import MainInfoBar from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|MainInfoBar', module, ReadMe)
-  .add('With values', () => (
+  .add('Basic view', () => (
     <MainInfoBar />
   ));

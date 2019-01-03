@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import MainInfoBar from '.';
+import DownloadsTextBox from '.';
 
-describe('Components|MainInfoBar', () => {
+describe('Components|MainInfoBar/DownloadsTextBox', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<MainInfoBar />);
+      wrapper = shallow(<DownloadsTextBox />);
     });
 
     it('should render', () => {
@@ -16,7 +16,7 @@ describe('Components|MainInfoBar', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.info-bar')).to.equal((true));
+      expect(wrapper.is('.downloads-text-box')).to.equal((true));
     });
   });
 });

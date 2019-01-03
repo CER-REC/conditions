@@ -1,26 +1,21 @@
-# Methodology Text
+# About Text Box
 
-The Methodology Text is a private component that will be used by the Main Info Bar. It will display
-a link to the Methodology for the visualization provided by the NEB and a description of the
-methodology for keyword extraction.
+The About Text Box is a private component that will be used by the Main Info Bar. It will display
+text provided by the NEB and asset attributions by the UofC Design Team.
 
 ## Requirements
 
 * Display text to user
-* Have link for the Methodology PDF
 * Handle English and French text
 
 ## Interaction Requirements
 
-Text should be hidden when 'Methodology' is not selected
+Text should be hidden when 'About this Visualization' or 'About' is not selected
 Text should be scrollable
-Users should be able to select on links
-
 
 ## Accessibility Requirements
 
 * Keyboard interaction
-* Touchscreen interaction
 * Screen reader
 
 ## Unit Testing

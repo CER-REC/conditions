@@ -1,0 +1,17 @@
+.downloads-text-box {
+  overflow: auto;
+  width: 600px;
+  height: 200px;
+  text-align: left;
+  margin: 10px;
+  white-space: nowrap;
+
+  h1 {
+    display:inline; 
+    white-space:nowrap;
+  }
+
+  img {
+    display: inline;
+  }
+}
