@@ -1,14 +1,14 @@
 # Main Info Bar
 
 The Main Info Bar is public component and a footer at the bottom of the visualization, below Views 
-2 and 3.
+2 and 3. By default, the Main Info Bar takes in all of the data used by the Shortcut Info Bar.
 
-## Associated Public Components
+## Associated Components
 
-* Share icons
-* About text
-* Methodology text
-* Donwloads text
+* Share icons [ PUBLIC ]
+* About text [ PRIVATE ]
+* Methodology text [ PRIVATE ]
+* Donwloads text [ PRIVATE ]
 
 ## Requirements
 

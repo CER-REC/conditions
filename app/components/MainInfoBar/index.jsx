@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Proxy from './images/proxy.jpg';
+import DoubleUpArrows from './images/double-up-arrows.svg';
 
 import './styles.scss';
 
@@ -24,8 +24,8 @@ class MainInfoBar extends React.PureComponent {
   arrows() {
     return (
       <img 
-        src={Proxy}
-        alt="arrows"
+        src={DoubleUpArrows}
+        alt="upward double arrows"
       />
     );
   }
