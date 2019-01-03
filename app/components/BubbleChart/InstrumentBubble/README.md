@@ -11,6 +11,7 @@ The Instrument Bubble is a private/child component. It will render the instrumen
 
 ## Interaction Requirements
 * [X] When single bubble is clicked : Should call it's onClick prop which will set/change the selected instrument
+<!-- TODO -->
 * [ ] When the mouse is hovered for more than __ seconds: Should call it's onClick prop which will set/change the selected instrument
 
 ## Accessibility Requirements
