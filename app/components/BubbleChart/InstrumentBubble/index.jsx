@@ -10,33 +10,16 @@ import handleInteraction from '../../../utilities/handleInteraction';
 */
 
 const pickColor = (category) => {
-  let colorSelected;
   switch (category) {
-    case 'routing':
-      colorSelected = '#0E2B8C';
-      break;
-    case 'construction':
-      colorSelected = '#27A5F9';
-      break;
-    case 'abandonment':
-      colorSelected = '#164EF8';
-      break;
-    case 'misc':
-      colorSelected = '#D4A92A';
-      break;
-    case 'safety':
-      colorSelected = '#C904C2';
-      break;
-    case 'tariffs':
-      colorSelected = '#C3E6B3';
-      break;
-    case 'opening':
-      colorSelected = '#6AE6B2';
-      break;
-    default:
-      colorSelected = 'white';
+    case 'routing': return '#0E2B8C';
+    case 'construction': return '#27A5F9';
+    case 'abandonment': return '#164EF8';
+    case 'misc': return '#D4A92A';
+    case 'safety': return '#C904C2';
+    case 'tariffs': return '#C3E6B3';
+    case 'opening': return '#6AE6B2';
+    default: return 'white';
   }
-  return colorSelected;
 };
 
 class InstrumentBubble extends React.PureComponent {
