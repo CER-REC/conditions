@@ -1,0 +1,20 @@
+@import "../../styles/fontVariables.scss";
+
+.WheelContainer{
+  height: 700px;
+  position: relative;
+  
+  .MovingContainer{
+    height: 500px;
+    width:500px;
+    position: absolute;
+  }
+  
+  .pullToSpin{
+    position: absolute;
+    top: 80px;
+    right: -30px;
+    transform: rotate(45deg);        
+  }
+}
+
