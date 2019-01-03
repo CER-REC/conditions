@@ -28,6 +28,21 @@ addDecorator(withOptions({
   hierarchyRootSeparator: /\|/, // Categories with |
   hierarchySeparator: /\//, // Sub-stories with /
 }));
+
+// Wrap the story in css classes for each of the parent components in its path
+addDecorator((storyFn, context) => {
+  const { fileName } = context.parameters;
+  if (fileName.startsWith('./app/components/')) {
+    // Take everything after components and before the lowest component's folder
+    const componentTree = fileName.split('/').slice(3, -2);
+    // From the inside out, wrap it in the parent component's name as a classname
+    return componentTree.reverse().reduce((acc, next) => (
+      <div className={next}>{acc}</div>
+    ), storyFn());
+  }
+  return storyFn();
+});
+
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
 // automatically import all files ending in *.stories.js
