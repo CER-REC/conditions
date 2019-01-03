@@ -7,7 +7,7 @@ import FeatureFlag from '../ProjectMenu/ProjectChart/FeatureFlag';
 import './styles.scss';
 
 const ProjectLegend = (props) => {
-  if (!props.legendItems) { return null; }
+  if (props.legendItems.length === 0) { return null; }
   const renderedItems = props.legendItems.map(item =>
     (<LegendItem
       key={item.color}
@@ -41,7 +41,7 @@ const ProjectLegend = (props) => {
             count={11}
             color=""
           />
-          <div className="FlagDesc"> {'>10'} </div>
+          <div className="FlagDesc"> &gt;10 </div>
         </div>
         <CircleContainer
           size="24px"

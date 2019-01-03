@@ -5,6 +5,7 @@ import LegendItem from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|ProjectLegend/LegendItem', module, ReadMe)
+  .addDecorator(storyFn => <div className="ProjectLegend">{storyFn()}</div>)
   .addDecorator(withKnobs)
   .add('default', () => (
     <LegendItem color="pink" text="testing 1" disabled={boolean('Empty', false)} />

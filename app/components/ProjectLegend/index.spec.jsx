@@ -14,13 +14,23 @@ const legendItems = [
 ];
 
 describe('Components|ProjectLegend', () => {
-  const wrapper = shallow((
-    <ProjectLegend legendItems={legendItems} />
-  ));
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow((
+      <ProjectLegend legendItems={legendItems} />
+    ));
+  });
 
-  shouldBehaveLikeAComponent(wrapper, ProjectLegend, 'ProjectLegend');
+  shouldBehaveLikeAComponent(wrapper, ProjectLegend);
 
   it('should contain five LegendItems', () => {
     expect(wrapper.find('LegendItem')).to.have.lengthOf(5);
+  });
+
+  describe('without any items', () => {
+    it('should not render anything', () => {
+      const empty = shallow(<ProjectLegend legendItems={[]} />);
+      expect(empty.type()).to.equal(null);
+    });
   });
 });

@@ -4,6 +4,7 @@ import LegendItem from './';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe)
+  .addDecorator(storyFn => <div className="SmallMultiplesLegend">{storyFn()}</div>)
   .add('basic usage', () => (
     <LegendItem
       title="Title"
