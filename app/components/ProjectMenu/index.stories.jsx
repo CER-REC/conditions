@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
+import withStatus from '../../../.storybook/addon-status';
 import ProjectMenu from '.';
 import ReadMe from './README.md';
 
@@ -53,6 +54,7 @@ const options = projectData.reduce((acc, next) => ({
 }), {});
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
   .add('Default Props', () => (
     <ProjectMenu

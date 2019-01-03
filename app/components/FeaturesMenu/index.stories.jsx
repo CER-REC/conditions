@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
+import withStatus from '../../../.storybook/addon-status';
 import FeaturesMenu from '.';
 import ReadMe from './README.md';
 
@@ -11,6 +12,7 @@ const featuresOptions = features.reduce((hashAggregate, feature) => ({
 }), {});
 
 storiesForComponent('Components|FeaturesMenu', module, ReadMe)
+  .addDecorator(withStatus('designUnderDevelopment'))
   .addDecorator(withKnobs)
   .add('basic usage', () => (
     <FeaturesMenu
