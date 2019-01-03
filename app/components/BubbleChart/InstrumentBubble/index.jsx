@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 import handleInteraction from '../../../utilities/handleInteraction';
 
-/* To do:
+/* TODO:
 1) Check if the text is overlapping another and change arc accordingly
 2) Check if the inside text is smaller than circle radius, and shift the text
 3) Add to onClick function to mimic design document functionality
