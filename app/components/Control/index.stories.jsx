@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesForComponent } from '../../../../.storybook/utils';
+import { storiesForComponent } from '../../../.storybook/utils';
 import Control from './';
 import ReadMe from './README.md';
 

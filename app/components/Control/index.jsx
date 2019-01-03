@@ -14,19 +14,20 @@ class Control extends React.PureComponent {
       <g transform={this.props.positionControl}>
         <text x="15" y="15">{this.props.numOfConditionsLabel}</text>
         <line
-          strokeDasharray="8, 4"
+          stroke-dasharray="4.051 4.051"
           x1="20"
           x2="20"
           y1="20"
           y2="220"
-          stroke="magenta"
+          stroke="rgb(209, 5, 122)"
           strokeWidth="1"
         />
         <path
           d="M 5 5 L 15 5 L 10 15 z"
-          fill="magenta"
+          fill="rgb(209, 5, 122)"
           transform="translate(10, 10)"
         />
+        <polygon points="385.539 29.398 379.307 39.862 373.074 29.398 385.539 29.398" fill="#d1057a"/>
       </g>
     );
   }

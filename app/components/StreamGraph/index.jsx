@@ -6,7 +6,7 @@ import {
   VictoryStack,
   VictoryChart,
 } from 'victory';
-import Control from './Control';
+import Control from '../Control';
 
 import './styles.scss';
 
