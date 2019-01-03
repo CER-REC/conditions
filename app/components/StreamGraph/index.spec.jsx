@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Streamgraph, { roundDateLabel, numOfConditionsLabel } from './';
+import Streamgraph, { roundDateLabel, numOfConditionsLabel } from '.';
 
 describe('Components|StreamGraph', () => {
   const projectData = [

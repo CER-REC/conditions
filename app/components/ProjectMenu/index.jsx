@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List from '../List/';
+import List from '../List';
 import ProjectChart from './ProjectChart';
-
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
@@ -84,7 +83,12 @@ class ProjectMenu extends React.PureComponent {
     return (
       <div className="ProjectMenu">
         <div className="EmptyListItems">{emptyItemsBefore}</div>
-        <List items={renderedItems} onChange={this.handleConditionChange} selected={selected} />
+        <List
+          items={renderedItems}
+          onChange={this.handleConditionChange}
+          selected={selected}
+          horizontal
+        />
         <div className="EmptyListItems">{emptyItemsAfter}</div>
       </div>
     );

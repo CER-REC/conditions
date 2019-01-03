@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import FeatureDescription from './';
+import FeatureDescription from '.';
 
 const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a ullamcorper elit. Nulla vitae molestie mauris. Nulla placerat ullamcorper quam a ornare. Ut tempor orci sed arcu faucibus, eu mollis turpis lobortis. Vivamus fermentum neque id tincidunt sagittis. Morbi blandit orci eu augue semper pellentesque. Aenean eleifend quis quam id rhoncus. Etiam tristique hendrerit elit, sit amet tempor lacus gravida vitae. Proin viverra erat sed hendrerit convallis.';
 const feature = 'Feature title';

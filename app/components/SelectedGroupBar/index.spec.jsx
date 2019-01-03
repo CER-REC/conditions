@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import SelectedGroupBar from './';
+import SelectedGroupBar from '.';
 
 describe('Components|SelectedGroupBar', () => {
   describe('with default props', () => {

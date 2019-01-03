@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import FeatureFlag from './';
+import FeatureFlag from '.';
 
 describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
   describe('with default props', () => {

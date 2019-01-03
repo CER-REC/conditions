@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import withStatus from '../../../.storybook/addon-status/';
-import List from './';
+import withStatus from '../../../.storybook/addon-status';
+import List from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|List', module, ReadMe)
@@ -42,9 +42,11 @@ storiesForComponent('Components|List', module, ReadMe)
       onChange={() => {}}
       horizontal
     />
-  ), {
-    status: {
-      name: 'functionalityUnderDevelopment',
-      note: 'Horizontal support has not been implemented yet',
-    },
-  });
+  ))
+  .add('guide line', () => (
+    <List
+      items={['Item 1', 'Item 2', 'Item 3']}
+      onChange={() => {}}
+      guideLine
+    />
+  ));

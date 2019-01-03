@@ -27,7 +27,7 @@ const TrendButton = (props) => {
   }
   return (
     <div className="trendButton">
-      <button {...handleInteraction(props.onClick)}>
+      <button type="button" {...handleInteraction(props.onClick)}>
         {background}
         <div className="buttonText">
           <span>

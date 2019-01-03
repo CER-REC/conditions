@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { Query } from 'react-apollo';
 
-import TrendButton from '../../components/TrendButton/';
+import TrendButton from '../../components/TrendButton';
 // import getCompaniesAndProjects from '../../queries/getCompaniesAndProjects';
 
 import './styles.scss';

@@ -7,15 +7,15 @@ import handleInteraction from '../../utilities/handleInteraction';
 const CircleContainer = props => (
   <div
     className={classNames(
-        'CircleContainer',
-         props.className,
-        { elevated: props.elevated, disabled: props.disabled },
-      )}
+      'CircleContainer',
+      props.className,
+      { elevated: props.elevated, disabled: props.disabled },
+    )}
     style={{
-        width: props.size,
-        height: props.size,
-      }}
-    {...(!props.onClick ? {} : handleInteraction(props.onClick))}
+      width: props.size,
+      height: props.size,
+    }}
+    {...handleInteraction(props.onClick)}
   >
     <div>
       {props.children}

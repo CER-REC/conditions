@@ -20,6 +20,10 @@ export const shouldBehaveLikeAComponent = (wrapper, component, className) => {
   });
 };
 
-export default {
-  shouldBehaveLikeAComponent,
+export const shouldHaveInteractionProps = (wrapper) => {
+  const props = wrapper.props();
+  expect(props.onClick).to.be.a('function');
+  expect(props.onKeyPress).to.be.a('function');
+  expect(props.tabIndex).to.equal(0);
+  expect(props.focusable).to.equal(true);
 };
