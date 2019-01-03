@@ -4,16 +4,14 @@ The Instrument Bubble is a private/child component. It will render the instrumen
 
 
 ## Requirements
-* [ ] Renders nested children bubbles reflecting the size of the instrument 
-* [ ] Color of the bubbles are dependent on the category of the instrument
+* [X] Renders nested children bubbles reflecting the size of the instrument 
+* [X] Color of the bubbles are dependent on the category of the instrument
 * [ ] If a instrument is already selected, create an arrow at the top and a line from the top to the center
   * [ ] Show the number of conditions 
 
 ## Interaction Requirements
-* [ ] When single bubble is clicked : Should call it's onClick prop which will set/change the selected instrument
+* [X] When single bubble is clicked : Should call it's onClick prop which will set/change the selected instrument
 * [ ] When the mouse is hovered for more than __ seconds: Should call it's onClick prop which will set/change the selected instrument
-* [ ] If clicked outside of selected instrument, return opacity to 100% 
-  * [ ] Remove the conditions text of the selected circle
 
 ## Accessibility Requirements
 * [ ] Keyboard Interaction
@@ -33,8 +31,6 @@ The Instrument Bubble is a private/child component. It will render the instrumen
   * [X] Use d3 packing and d3 heirarchy to render the bubbles
   * [X] Ensure accessibility (with tabbing + onEnter)
   * [ ] On hover (timing to be determined) should same action as onClick
-  * [ ] onClick, removes all the existing styles on the circles + pointer svg
-    * [ ] Determine the x, y of the clicked circle -> Style the stroke of the circle and add svg for pointer
-    * [ ] Display line and arrow 
-  * [ ] During render, add additional stroke in children component so that energy bubble(parents) touch while the children nested bubbles doesn't. 
-* [ ] Text to arc on the circle
+  * [X] Ensure proper padding so energy bubble(parents) touch while the children nested bubbles doesn't. 
+* [X] Text to arc on the circle
+  * [ ] Text place so that it doesn't overlap with another circle

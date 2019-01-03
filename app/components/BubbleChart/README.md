@@ -1,4 +1,4 @@
-# BubbleChart
+# BubbleChart (In Progress - Will be addressed in seperate PR)
 The Bubble Chart is the parent svg container that will contain Instrument Bubbles (smaller circles). It will also perform majority of the calculations and will show only when the Instrument is selected in the legend.
 
 ## Requirements
