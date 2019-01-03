@@ -37,7 +37,7 @@ $MapWheelColors: (
   $InnerColourLocation2: rgb(242,207,102), // location inner colour 2
 );
 
-@function GetWheelColors($key: 'strong-pink'){
+@function GetWheelColors($key: 'Outline'){
   @return map-get($MapWheelColors, $key);
 };
 /*#regionend*/
@@ -60,7 +60,6 @@ $MapThemeColors: (
 );
 
 /* to get theme colors use $<your-variable>: GetThemeColors('<NameOfVariableIn$TimingColors>') */
-
 @function GetThemeColors($key: 'StandardCondition'){
   @return map-get($MapThemeColors, $key);
 };
@@ -109,9 +108,13 @@ $MapStatusColors: (
 /*#endregion*/
 
 /*#region NON-STANDARD */
-
-$NonStandard: rgb(77, 39, 90);
-$Standard: rgb(181, 11, 128);
+$MapNonStandardColors: (
+  $NonStandard: rgb(77, 39, 90),
+  $Standard: rgb(181, 11, 128),
+);
+@function GetNonStandardColors($key: 'NonStandard'){
+  @return map-get($MapNonStandardColors, $key);
+};
 
 /*#endregion */
 
@@ -125,7 +128,7 @@ $MapInstrumentColors: (
   $Safety: rgb(201, 4, 194),
   $Tariffs: rgb(195, 230, 179),
 );
-@function GetInstrumentColors($key: 'IncludesAllPhasesofConstr'){
+@function GetInstrumentColors($key: 'Routing'){
   @return map-get($MapInstrumentColors, $key);
 };
 
@@ -145,40 +148,3 @@ $MapFilingColors: (
 /*#region INFORMATION BAR*/
 
 /*#endregion */
-
-/* Suggested reading for the Ilab https://scotch.io/tutorials/aesthetic-sass-2-colors */
-
-/* Use sass default flag for topography and then modify */
-
-/* organize by categories: Base
-Layout
-Module
-State
-Theme
-*/
-
-/* The best way */
-// %button {
-//   min-width: 100px;
-//   padding: 1em;
-//   border-radius: 1em;
-// }
-// %twitter-background {
-//   color: #fff;
-//   background: #55acee;
-// }
-// %facebook-background {
-//   color: #fff;
-//   background: #3b5998;
-// }
-
-// .btn {
-//   &--twitter {
-//     @extend %button;
-//     @extend %twitter-background;
-//   }
-//   &--facebook {
-//     @extend %button;
-//     @extend %facebook-background;
-//   }
-// }
