@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LegendItem from './LegendItem';
 import CircleContainer from '../CircleContainer';
-import FeatureFlag from '../ProjectMenu/ProjectChart/FeatureFlag';
+import FeatureFlag from '../FeatureFlag';
 
 import './styles.scss';
 
 const ProjectLegend = (props) => {
   if (props.legendItems.length === 0) { return null; }
-  const renderedItems = props.legendItems.map(item =>
-    (<LegendItem
+  const renderedItems = props.legendItems.map(item => (
+    <LegendItem
       key={item.color}
       color={item.color}
       text={item.description}

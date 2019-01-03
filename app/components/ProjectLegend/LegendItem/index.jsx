@@ -6,8 +6,8 @@ import './styles.scss';
 const LegendItem = props => (
   <div className={classNames(
     'LegendItem',
-      { Disabled: props.disabled },
-    )}
+    { Disabled: props.disabled },
+  )}
   >
     <div
       className="Color"
