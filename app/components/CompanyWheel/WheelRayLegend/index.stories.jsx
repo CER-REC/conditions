@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../.storybook/utils';
+import withStatus from '../../../../.storybook/addon-status';
 import WheelRayLegend from '.';
 import ReadMe from './README.md';
 
@@ -8,6 +9,7 @@ import { locationWheelData, companyWheelData, locationWheelItems } from '../rand
 const reservedDegrees = 20;
 
 storiesForComponent('Components|CompanyWheel/WheelRayLegend', module, ReadMe)
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default view', () => (
     <svg className="wheelContainer" viewBox="70 150 600 600">
       <WheelRayLegend

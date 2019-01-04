@@ -17,7 +17,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     />
   ));
 
-  shouldBehaveLikeAComponent(wrapper, LegendItem, 'testtest');
+  shouldBehaveLikeAComponent(LegendItem, () => wrapper);
 
   describe('when the all property is provided', () => {
     const title = 'a1';

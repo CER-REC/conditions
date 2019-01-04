@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FeatureFlag from './FeatureFlag';
+import FeatureFlag from '../../FeatureFlag';
 import CircleContainer from '../../CircleContainer';
 
 import './styles.scss';
