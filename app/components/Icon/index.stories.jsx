@@ -3,7 +3,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { storiesForComponent } from '../../../.storybook/utils';
-import Icon from './';
+import withStatus from '../../../.storybook/addon-status';
+import Icon from '.';
 import ReadMe from './README.md';
 
 library.add(
@@ -12,6 +13,7 @@ library.add(
 );
 
 storiesForComponent('Components|Icon', module, ReadMe)
+  .addDecorator(withStatus('underReview'))
   .add('default icon', () => (
     <Icon icon="angle-right" />
   ))

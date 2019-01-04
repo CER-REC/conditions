@@ -4,6 +4,9 @@ module.exports = {
   env: { browser: true },
   rules: {
     'no-console': ['error', { allow: ['error'] }],
+    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0 }],
+    'react/destructuring-assignment': false,
+    'react/jsx-one-expression-per-line': false,
   },
   overrides: [
     {
@@ -13,7 +16,7 @@ module.exports = {
         '**/*.stories.jsx',
         '**/*.spec.js',
         '**/*.spec.jsx',
-        'test/**',
+        'app/tests/**',
       ],
       rules: {
         'import/no-extraneous-dependencies': [
@@ -23,7 +26,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.spec.js', '**/*.spec.jsx'],
+      files: ['**/*.spec.js', '**/*.spec.jsx', 'app/tests/**'],
       env: {
         mocha: true,
       },
@@ -31,7 +34,7 @@ module.exports = {
     {
       files: ['**/*.stories.jsx'],
       rules: {
-        'no-alert': false,
+        'no-alert': 0,
       },
     },
   ],

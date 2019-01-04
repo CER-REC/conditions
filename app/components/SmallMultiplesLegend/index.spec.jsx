@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import SmallMultiplesLegend from './';
+import SmallMultiplesLegend from '.';
 import LegendItem from './LegendItem';
 import List from '../List';
-import shared from './shared.spec';
+import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 describe('Components|SmallMultiplesLegend', () => {
   let spy;
@@ -24,7 +24,7 @@ describe('Components|SmallMultiplesLegend', () => {
     spy = sinon.spy();
   });
 
-  shared.shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
+  shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
 
   it('should not render a list when no data is provided', () => {
     wrapper = shallow((
@@ -62,6 +62,7 @@ describe('Components|SmallMultiplesLegend', () => {
           title={title}
           data={data}
           onChange={spy}
+          selected={data[0].name}
         />
       ));
     });
@@ -76,7 +77,11 @@ describe('Components|SmallMultiplesLegend', () => {
     it('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(data[0].name)).to.be.equal(true);
+      expect(spy.calledOnceWith(data[0].name)).to.equal(true);
+    });
+
+    it('should render the List component with the first item selected', () => {
+      expect(wrapper.find(List).prop('selected')).to.equal(0);
     });
   });
 
@@ -173,12 +178,43 @@ describe('Components|SmallMultiplesLegend', () => {
       expect(spy.callCount).to.equal(data.length);
     });
 
+    it('should render the List component with the first item selected', () => {
+      expect(wrapper.find(List).prop('selected')).to.equal(0);
+    });
+
     it('should not apply faded to LegendItem components', () => {
       const itemsWrapper = wrapper.find(List).shallow().find(LegendItem);
 
       itemsWrapper.forEach((itemWrapper) => {
         expect(itemWrapper.prop('faded')).to.be.oneOf([null, false]);
       });
+    });
+
+    it('should render the List component with the corresponding item selected when selected is provided', () => {
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          title={title}
+          data={data}
+          onChange={spy}
+          selected={data[2].name}
+        />
+      ));
+
+      // An "All" item is rendered at the top for multiple data conditions
+      expect(wrapper.find(List).prop('selected')).to.equal(3);
+    });
+
+    it('should render the List component with the first item selected when selected is invalid', () => {
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          title={title}
+          data={data}
+          onChange={spy}
+          selected="N/A"
+        />
+      ));
+
+      expect(wrapper.find(List).prop('selected')).to.equal(0);
     });
 
     it('should apply faded to LegendItem components when a highlightName is provided', () => {

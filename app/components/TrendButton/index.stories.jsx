@@ -1,7 +1,8 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
-import TrendButton from './';
+import withStatus from '../../../.storybook/addon-status';
+import TrendButton from '.';
 import ReadMe from './README.md';
 
 const featureOptions = [
@@ -14,6 +15,7 @@ const featureOptions = [
 ];
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
   .add('Static image', () => (
     <TrendButton

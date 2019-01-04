@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import Streamgraph from './';
+import withStatus from '../../../.storybook/addon-status';
+import Streamgraph from '.';
 import ReadMe from './README.md';
 
 const chartTitle = 'Themes Across All Conditions';
@@ -53,6 +54,7 @@ const projectData = [
 ];
 
 storiesForComponent('Components|StreamGraph', module, ReadMe)
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('With values', () => (
     <Streamgraph
       projectData={projectData}

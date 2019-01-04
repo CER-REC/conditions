@@ -1,0 +1,11 @@
+.ProjectMenu {
+  position: relative;
+  display: inline-table;
+
+  .EmptyListItems {
+    height: 30px;
+    top: 6px;
+    display: table-cell;
+    vertical-align: top;
+  }
+}

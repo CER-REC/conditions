@@ -1,11 +1,14 @@
-/* eslint-disable react/no-danger */
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
+import withStatus from '../../../.storybook/addon-status';
 import ReadMe from './README.md';
-import handleInteraction from '../../utilities/handleInteraction';
-import CircleContainer from './';
+import CircleContainer from '.';
 
 storiesForComponent('Components|CircleContainer', module, ReadMe)
+  .addDecorator(withStatus({
+    name: 'underReview',
+    note: 'This is a supporting component that is used for circular elements, and is under review by VizworX.',
+  }))
   .add('default', () => (
     <CircleContainer
       size="24px"
@@ -36,7 +39,7 @@ storiesForComponent('Components|CircleContainer', module, ReadMe)
   .add('with prop: onClick ', () => (
     <CircleContainer
       size="24px"
-      onClick={handleInteraction}
+      onClick={() => alert('clicked')}
     >
     &nbsp;
     </CircleContainer>
@@ -57,7 +60,7 @@ storiesForComponent('Components|CircleContainer', module, ReadMe)
       >
         &nbsp;
       </CircleContainer>
-      <style dangerouslySetInnerHTML={
+      <style dangerouslySetInnerHTML={// eslint-disable-line react/no-danger
         { __html: '.CircleContainer.blue { background: blue } ' }}
       />
     </React.Fragment>

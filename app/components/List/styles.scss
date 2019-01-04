@@ -1,0 +1,81 @@
+@import '../../styles/borders.scss';
+@import '../../styles/svgs.scss';
+
+// arrow-size should match the code's arrowSize variable (there are testing issues with :export)
+$arrow-size: 24px;
+$arrow-spacing: 0.6em;
+$button-spacing: calc(#{$arrow-size} + 0.75em);
+
+%horizontalArrow {
+  margin-top: calc(-#{$arrow-size} / 2);
+  position: absolute;
+}
+
+.List {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .List-Item {
+    &.selected {
+      .CircleContainer {
+        background-color: white;
+        border: $list-selected;
+        color: $list-selected-color;
+      }
+    }
+  }
+
+  &.horizontal {
+    .List-Item {
+      display: table-cell;
+      position: relative;
+
+      &.selected {
+        .arrowNext {
+          @extend %horizontalArrow;
+          top: 0;
+          right: 0;
+        }
+
+        .arrowPrevious {
+          @extend %horizontalArrow;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &:not(.horizontal) {
+    &.guideLine {
+      ul {
+        background: $list-line-url left no-repeat;
+        background-size: $arrow-size 100%;
+        background-position: 0 0;
+      }
+    }
+
+    .List-Item {
+      text-align: left;
+      margin-left: $button-spacing;
+
+      &.selected {
+        background: white;
+        margin-right: $button-spacing;
+
+        .CircleContainer {
+          float: left;
+          margin: $arrow-spacing 0;
+
+          &.arrowPrevious {
+            margin-top: calc(-#{($arrow-size)} - #{$arrow-spacing});
+          }
+        }
+
+        margin-left: 0;
+      }
+    }
+  }
+}

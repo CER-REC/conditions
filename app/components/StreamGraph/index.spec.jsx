@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import Streamgraph, { roundDateLabel, StackGroup } from './';
+import Streamgraph, { roundDateLabel, numOfConditionsLabel } from '.';
 
 describe('Components|StreamGraph', () => {
   const projectData = [
