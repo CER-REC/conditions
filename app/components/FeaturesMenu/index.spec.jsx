@@ -9,17 +9,18 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 describe('Components|FeaturesMenu', () => {
   let spy;
-  let wrapper = shallow((
-    <FeaturesMenu
-      className="aClass"
-      title="Title A"
-      features={['TEST Feat.']}
-      onChange={() => {}}
-    />
-  ));
+  let wrapper;
 
   beforeEach(() => {
     spy = sinon.spy();
+    wrapper = shallow((
+      <FeaturesMenu
+        className="aClass"
+        title="Title A"
+        features={['TEST Feat.']}
+        onChange={() => {}}
+      />
+    ));
   });
 
   shouldBehaveLikeAComponent(FeaturesMenu, () => wrapper);

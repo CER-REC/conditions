@@ -11,17 +11,18 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 describe('Components|SmallMultiplesLegend', () => {
   let spy;
   const noop = () => {};
-  let wrapper = shallow((
-    <SmallMultiplesLegend
-      className="test"
-      title="Test Title"
-      data={[]}
-      onChange={noop}
-    />
-  ));
+  let wrapper;
 
   beforeEach(() => {
     spy = sinon.spy();
+    wrapper = shallow((
+      <SmallMultiplesLegend
+        className="test"
+        title="Test Title"
+        data={[]}
+        onChange={noop}
+      />
+    ));
   });
 
   shouldBehaveLikeAComponent(SmallMultiplesLegend, () => wrapper);

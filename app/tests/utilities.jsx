@@ -1,4 +1,4 @@
-import { ShallowWrapper, ReactWrapper } from 'enzyme';
+import { ShallowWrapper } from 'enzyme';
 import { expect } from 'chai';
 
 export const shouldBehaveLikeAComponent = (component, callback) => {
