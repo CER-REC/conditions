@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import Icon from '../Icon';
 
+// should handle url shortening
+
 class MainInfoBar extends React.PureComponent {
   textLinks() {
     return (
@@ -15,21 +17,13 @@ class MainInfoBar extends React.PureComponent {
     )
   }
 
-  // arrows() {
-  //   return (
-  //     <img 
-  //       src={}
-  //       alt="upward double arrows"
-  //     />
-  //   );
-  // }
+  // include logic to handle whether we should the double up arrows
 
   render() {
     return (
       <div className="Main-info-bar">
         <hr />
         {this.textLinks()}
-        {/* {this.arrows()} */}
         <Icon />
         <Icon />
         <Icon />

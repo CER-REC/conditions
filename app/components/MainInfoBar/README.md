@@ -15,6 +15,7 @@ The Main Info Bar is public component and a footer at the bottom of the visualiz
 * The horizontal bar should not overlap with the Visualization at any point
 * Text for 'About', 'Methodology', and 'Download' should be evenly spaced in French and English
 * Share icons should be visible underneath the text
+* Handle generating the shortened URL for share icons
 
 ## Interaction Requirements
 
