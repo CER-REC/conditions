@@ -6,16 +6,20 @@ import LegendItem from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 describe('Components|InstrumentsLegend/LegendItem', () => {
-  let wrapper = shallow((
-    <LegendItem
-      className="testclass"
-      title="Test Title"
-      indicators={[]}
-      color=""
-    />
-  ));
+  let wrapper;
 
-  shouldBehaveLikeAComponent(wrapper, LegendItem, 'testclass');
+  beforeEach(() => {
+    wrapper = shallow((
+      <LegendItem
+        className="testclass"
+        title="Test Title"
+        indicators={[]}
+        color=""
+      />
+    ));
+  });
+
+  shouldBehaveLikeAComponent(LegendItem, () => wrapper);
 
   describe('when the all property is provided', () => {
     const title = '1';
