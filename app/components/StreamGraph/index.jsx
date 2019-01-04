@@ -74,9 +74,9 @@ class StreamGraph extends React.Component {
       isDragging: false,
     };
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
-    // this.onDragStart = this.onDragStart.bind(this);
-    // this.onDragMove = this.onDragMove.bind(this);
-    // this.onDragStop = this.onDragStop.bind(this);
+    this.onDragStart = this.onDragStart.bind(this);
+    this.onDragMove = this.onDragMove.bind(this);
+    this.onDragStop = this.onDragStop.bind(this);
   }
 
   onDragStart = (event) => {
@@ -161,17 +161,14 @@ class StreamGraph extends React.Component {
     }
 
     let direction = -50;
-    let valueIndex = 0;
+    let valueIndex = -1;
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
       direction = 50;
       valueIndex = 1;
     }
-    if (event.key === 'ArrowLeft' || event.keyCode === 37) {
-      valueIndex = -1;
-    }
 
-    if (direction + currPosition < event.target.getClientRects()[0].left - 100 ||
-      direction + currPosition > event.target.getClientRects()[0].left + 300) {
+    if (direction + currPosition < event.target.getClientRects()[0].left - 100
+    || direction + currPosition > event.target.getClientRects()[0].left + 300) {
       return;
     }
 
