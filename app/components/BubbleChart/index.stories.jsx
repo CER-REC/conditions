@@ -138,5 +138,5 @@ const instrumentChartData1 = {
 };
 storiesForComponent('Components|BubbleChart', module, ReadMe)
   .add('default', () => (
-    <BubbleChart selectedCategory="instrument" instrumentChartData1={instrumentChartData1} instrumentChartData2={instrumentChartData2}/>
+    <BubbleChart selectedCategory="instrument" instrumentChartData1={instrumentChartData1} instrumentChartData2={instrumentChartData2} onClick={() => alert('Clicked')} />
   ));

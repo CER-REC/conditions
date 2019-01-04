@@ -130,9 +130,6 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     it('should render an svg', () => {
       expect(wrapper.find('svg')).to.have.lengthOf(1);
     });
-    it('should have a className of instrumentBubble', () => {
-      expect(wrapper.find('.InstrumentBubble')).to.have.lengthOf(1);
-    });
     it('should render svg with proper width', () => {
       expect(wrapper.find('svg').prop('width')).to.equal(400);
     });
