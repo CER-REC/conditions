@@ -17,7 +17,7 @@ types of testing interact together. The difference for React is that, React is
 opinionated in that data and logic and linked. Meaning that components being
 composed of other components make it hard to do unit test in isolation.
 
-To not abstract testing to much its easy to view tests the 3 catagories.
+To not abstract testing to much its easy to view tests the 3 categories.
 From smallest largest they are: Unit Tests, Integration (or Service) Tests,
 and UI tests.
 [Test Pyramid in depth](https://martinfowler.com/articles/practical-test-pyramid.html)
@@ -57,31 +57,31 @@ linked to other dependencies. Therefore Enzyme allows us to use 'shallow' to
 render a single component without the children it needs to support (a lot of
 this has to with how the react life cycle methods work in the initialization
 stage and that children are needed to initialize before render and other
-life-cycle methods can be run by default) There are other methods that we can
-use to render components with their children when we want to start doing integrations
+life-cycle methods can be run by default). There are other methods that we can
+use to render components with their children when we want to start doing integration
 tests. Enzymes Mount and Render function allow us to do that.
 
 [Jest](https://jestjs.io/) - later on we may use be using Jest to enhance our
-tests. Jest is the other side of the coin. Jest Snapshots (not the same a
+tests. Jest is the other side of the coin. Jest Snapshots (not the same as a
 screenshot, which we may also use) takes the 'getSnapshotBeforeUpdate()' life-cycle
-method and looks at the components right before the changes are commited to the
+method and looks at the components right before the changes are committed to the
 DOM. The value of jest is that snapshots show how the output will look as rendered
 HTML. Snapshots are nice however they don't check logic they only show the
 rendered output. This is closer to UI testing than unit tests. Jest is it's own
-test runner, and is uses by many companies instead of using Mocha.
+test runner, and is used by many companies instead of using Mocha.
 
 [Storybook](https://storybook.js.org/) - if all the unit, integration and
 snapshot tests pass we still aren't viewing the actual rendered output. The last
 two types of tests complete the cycle. First is storybook which is a way for
 testers and developers to see the components rendered out in isolation hydrated
-with props, it also gives us to see the components at different states using
-specific props.
+with props, it also gives us the ability to see the components at different
+states using specific props.
 
-Furthermore, we have snapshots which can be done by headless browsers(there are many)
-this is our last bit of functionality that we can use to do pixel matching to
-test output on various screen sizes and resolutions. This part is more important
-as designers have created specific ratios based on design principles. By not
-checking that we are following those requirements we can not ensure that the
+Furthermore, we have snapshots which can be done by headless browsers.
+This is our last bit of functionality that we can use to do pixel matching to
+test output on various screen sizes and resolutions. This part is more important,
+as designers have created specific ratios based on design principles. By
+checking that we are following those requirements, we can now ensure that the
 money spent on design was implemented across multiple view-ports.
 
 End to End: this one has become more controversial over time. Google's Testing
