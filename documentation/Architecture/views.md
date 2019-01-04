@@ -33,7 +33,7 @@ Any functionality it needs for rendering should be imported from a `Component`.
 When importing `ViewName`, the import should be written as:
 
 ```js
-import ViewName from '../views/ViewName/';
+import ViewName from '../views/ViewName';
 ```
 
 ## State

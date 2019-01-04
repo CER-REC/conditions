@@ -57,10 +57,10 @@ The name used for imports and exports should always match the folder or filename
 
 * `./MyPublicComponent/index.jsx`
  * Default export is a component named `MyPublicComponent`
- * Imported as `import MyPublicComponent from './app/components/MyPublicComponent/';`
+ * Imported as `import MyPublicComponent from './app/components/MyPublicComponent';`
 * `./MyPublicComponent/PrivateComponent/index.jsx`
  * Default export is a component named `PrivateComponent`
- * Imported as `import PrivateComponent from './PrivateComponent/';`
+ * Imported as `import PrivateComponent from './PrivateComponent';`
 
 ## State
 

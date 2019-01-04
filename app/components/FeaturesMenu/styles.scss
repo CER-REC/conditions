@@ -1,8 +1,7 @@
-@import "../../styles/borders.scss";
-@import "../../styles/colors.scss";
+@import '../../styles/borders.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/svgs.scss';
 
-$svg-media-type: "data:image/svg+xml;utf8,";
-$arrow-svg: "<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23D1057A'><polygon points='0,0 100,0 50,100'/></svg>";
 $select-side-padding: 0.4em;
 
 .FeaturesMenu {
@@ -21,14 +20,13 @@ $select-side-padding: 0.4em;
         font-weight: bold;
         border: $list-width $list-style #B3B3B3;
         padding: 0.2em 1em;
-        margin: 1em 0em;
+        margin-top: 1em;
       }
 
       .selected .List-Item-Content {
         color: #333333;
         background-color: #E4E4E4;
         border: $list-selected;
-        margin-right: 2em;
       }
     }
   }
@@ -52,7 +50,7 @@ $select-side-padding: 0.4em;
       -moz-appearance:none;
       -webkit-appearance:none;
       appearance:none;
-      background: url($svg-media-type + $arrow-svg) right no-repeat;
+      background: $list-arrow-url right no-repeat;
       background-size: 0.6em;
       background-position: calc(100% - #{$select-side-padding}) center;
       padding: 0.1em $select-side-padding;

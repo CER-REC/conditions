@@ -8,34 +8,4 @@
     display: table-cell;
     vertical-align: top;
   }
-
-  .List {
-    display: table-cell;
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    .List-Item {
-      display: table-cell;
-      vertical-align: top;
-      position: relative;
-
-      &.selected {
-        .ArrowNext {
-          margin-top: -12px;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-        .ArrowPrevious {
-          margin: 0;
-          margin-top: -12px;
-          position: absolute;
-          left: 0;
-        }
-      }
-    }
-  }
 }

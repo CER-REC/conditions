@@ -34,7 +34,10 @@ addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 const documentationStories = require.context('../documentation/', true, /.stories.jsx$/);
 const componentStories = require.context('../app/', true, /.stories.jsx$/);
 function loadStories() {
-  documentationStories.keys().forEach(filename => documentationStories(filename));
+  documentationStories.keys()
+    // Sorting Documentation|Introduction to the top
+    .sort((a, b) => (a.startsWith('./Introduction/') ? -1 : a.localeCompare(b)))
+    .forEach(filename => documentationStories(filename));
   componentStories.keys().forEach(filename => componentStories(filename));
 }
 

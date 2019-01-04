@@ -1,0 +1,11 @@
+.ProjectDot{
+  fill: #A1A8A7;
+  opacity: 0.5;
+  &.IsFiltered {
+    fill: #EE6129;
+    opacity: 1;
+  }
+  &.IsRelevant{
+    opacity: 1;
+  }
+}
