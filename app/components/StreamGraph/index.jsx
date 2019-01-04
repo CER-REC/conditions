@@ -6,7 +6,7 @@ import {
   VictoryStack,
   VictoryChart,
 } from 'victory';
-import Control from '../Control';
+import StackGroup from './StackGroup';
 
 import './styles.scss';
 
@@ -14,41 +14,6 @@ export const roundDateLabel = t => Math.round(t);
 
 const stopEvent = (event) => {
   event.stopPropagation();
-};
-
-export const StackGroup = props => (
-  <g
-    onClick={props.handleOnChange}
-    onKeyDown={props.handleArrowKey}
-    onMouseDown={props.onDragStart}
-    onMouseMove={props.onDragMove}
-    onMouseUp={props.onDragStop}
-    onTouchStart={props.onDragStart}
-    onTouchMove={props.onDragMove}
-    onTouchEnd={props.onDragStop}
-    role="button"
-    tabIndex="-1"
-  >
-    {props.children}
-    {!props.showControl ? null : (
-      <Control
-        positionControl={`translate(${props.positionControl}, 30)`}
-        numOfConditionsLabel={props.numOfConditions}
-      />
-    )}
-  </g>
-);
-
-StackGroup.propTypes = {
-  handleOnChange: PropTypes.func.isRequired,
-  handleArrowKey: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
-  showControl: PropTypes.bool.isRequired,
-  positionControl: PropTypes.number.isRequired,
-  numOfConditions: PropTypes.number.isRequired,
-  onDragStart: PropTypes.func.isRequired,
-  onDragMove: PropTypes.func.isRequired,
-  onDragStop: PropTypes.func.isRequired,
 };
 
 class StreamGraph extends React.Component {
@@ -241,16 +206,20 @@ class StreamGraph extends React.Component {
         />
         <VictoryStack
           groupComponent={
-            <StackGroup
-              handleOnChange={this.handleOnChange}
-              handleArrowKey={this.handleArrowKey}
-              onDragStart={this.onDragStart}
-              onDragMove={this.onDragMove}
-              onDragStop={this.onDragStop}
-              showControl={this.state.showControl}
-              positionControl={this.state.positionControl}
-              numOfConditions={this.state.numOfConditions}
-            />
+            (
+              <StackGroup
+                handleOnChange={this.handleOnChange}
+                handleArrowKey={this.handleArrowKey}
+                onDragStart={this.onDragStart}
+                onDragMove={this.onDragMove}
+                onDragStop={this.onDragStop}
+                showControl={this.state.showControl}
+                positionControl={this.state.positionControl}
+                numOfConditions={this.state.numOfConditions}
+                yHeight="20"
+                controlTopBaseline="10"
+              />
+            )
           }
         >
           {this.streamLayers()}

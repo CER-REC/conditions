@@ -10,6 +10,9 @@ from least total conditions to most.
 * [X] Displays a dynamic title for what the Stream Graph is showing
 * [X] Handles showing and hiding of Control component
 * [ ] Effective Dates should be focusable
+* [X] Handles drag event
+* [X] Handles arrow key events
+* [ ] Handles tab events
 
 ## Data Requirements
 
