@@ -24,7 +24,7 @@ describe('Components|SmallMultiplesLegend', () => {
     spy = sinon.spy();
   });
 
-  shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
+  shouldBehaveLikeAComponent(SmallMultiplesLegend, () => wrapper);
 
   it('should not render a list when no data is provided', () => {
     wrapper = shallow((

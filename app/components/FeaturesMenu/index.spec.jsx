@@ -22,7 +22,7 @@ describe('Components|FeaturesMenu', () => {
     spy = sinon.spy();
   });
 
-  shouldBehaveLikeAComponent(wrapper, FeaturesMenu, 'aClass');
+  shouldBehaveLikeAComponent(FeaturesMenu, () => wrapper);
 
   describe('when the dropDown property is not provided', () => {
     const title = 'a title';
