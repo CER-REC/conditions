@@ -13,11 +13,11 @@ compare the code to the tests and reason whether a line is sufficiently covered.
 ## Testing Libraries
 
 In terms of testing, the 'Testing Pyramid' is a general example of how different
-types of testing interact together. The difference for React is that, React is
-opinionated in that data and logic and linked. Meaning that components being
+types of testing interact together. The difference for React is that it is
+opinionated in how data and logic are linked. Meaning that components being
 composed of other components make it hard to do unit test in isolation.
 
-To not abstract testing to much its easy to view tests the 3 categories.
+To not abstract testing too much, it's easy to view tests in 3 categories.
 From smallest largest they are: Unit Tests, Integration (or Service) Tests,
 and UI tests.
 [Test Pyramid in depth](https://martinfowler.com/articles/practical-test-pyramid.html)
