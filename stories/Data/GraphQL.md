@@ -125,7 +125,7 @@ type {
     dateIssuance: Date!
     dateSunset: Date!
     regDocs: [RegDoc!]!
-    conditions: [Conditions!]!
+    conditions: [Condition!]!
   }
 }
 ```
