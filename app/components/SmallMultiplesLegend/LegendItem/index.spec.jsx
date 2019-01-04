@@ -20,10 +20,12 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   shouldBehaveLikeAComponent(wrapper, LegendItem, 'testtest');
 
   describe('when the all property is provided', () => {
+    const title = 'a1';
+
     beforeEach(() => {
       wrapper = shallow((
         <LegendItem
-          title="a1"
+          title={title}
           data={[]}
           color=""
           max={0}
@@ -38,6 +40,12 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
     it('should render with the all class', () => {
       expect(wrapper.hasClass('all')).to.equal(true);
+    });
+
+    it('should render the all title', () => {
+      // TODO: Redo when translations are implemented
+      expect(wrapper.text()).to.contain('All');
+      expect(wrapper.text()).to.contain(title);
     });
   });
 
