@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
+import withStatus from '../../../.storybook/addon-status';
 import SmallMultiplesLegend from '.';
 import ReadMe from './README.md';
 
@@ -128,6 +129,7 @@ const highlightOptions = highlightData.reduce((hashAggregate, conditionsData) =>
 }), { None: '' });
 
 storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
   .add('basic usage', () => (
     <SmallMultiplesLegend
