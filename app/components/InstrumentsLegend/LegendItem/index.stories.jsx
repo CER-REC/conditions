@@ -5,5 +5,17 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|InstrumentsLegend/LegendItem', module, ReadMe)
   .add('basic usage', () => (
-    <LegendItem />
+    <LegendItem
+      title="Title"
+      indicators={[true, true, false, true]}
+      color="green"
+    />
+  ))
+  .add('all', () => (
+    <LegendItem
+      title="Title"
+      indicators={[]}
+      color=""
+      all
+    />
   ));
