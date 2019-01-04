@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const AboutTextBox = () => (
-  <div className="about-text-box">
+  <div className="About-text-box">
     <h1>About This Project</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla
       condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam

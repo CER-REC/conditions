@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const MethodologyTextBox = () => (
-  <div className="methodology-text-box">
+  <div className="Methodology-text-box">
     <h1>Methodology</h1>
     <p>Click
       <button>here</button>

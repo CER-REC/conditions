@@ -1,3 +1,27 @@
-.main-info-bar {
-  cursor: pointer;
+.Main-info-bar {
+
+  hr {
+    margin-bottom: 20px;
+    width: 70%;
+  }
+
+  .Button {
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .Button:hover {
+    transform: scale(1.2);
+    font-weight: 700;
+  }
+
+  .Button-selected {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }

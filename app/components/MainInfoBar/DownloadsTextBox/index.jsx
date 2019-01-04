@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const DownloadsTextBox = () => (
-  <div className="downloads-text-box">
+  <div className="Downloads-text-box">
     <img
       src=""
       alt="download data icon"

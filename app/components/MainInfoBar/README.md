@@ -5,7 +5,6 @@ The Main Info Bar is public component and a footer at the bottom of the visualiz
 
 ## Associated Components
 
-* Share icons [ PUBLIC ]
 * About text [ PRIVATE ]
 * Methodology text [ PRIVATE ]
 * Donwloads text [ PRIVATE ]
