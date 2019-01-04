@@ -5,17 +5,20 @@ import InstrumentBubble from './InstrumentBubble/index';
 class BubbleChart extends React.PureComponent {
   static propTypes = {
     selectedCategory: PropTypes.string.isRequired,
+    instrumentChartData1: PropTypes.instanceOf(Object).isRequired,
+    instrumentChartData2: PropTypes.instanceOf(Object).isRequired,
   }
 
   render() {
-    const { selectedCategory } = this.props;
+    const { selectedCategory, instrumentChartData1, instrumentChartData2 } = this.props;
     if (selectedCategory !== 'instrument') {
       return null;
     }
+
     return (
       <div className="BubbleChart">
-        {/* TODO: Add prop for instrument bubble - Will be added in a seperate PR */}
-        <InstrumentBubble />
+        <InstrumentBubble instrumentChartData={instrumentChartData1} width={450} height={400} onClick={() => alert('Clicked')} />
+        <InstrumentBubble instrumentChartData={instrumentChartData2} width={300} height={400} onClick={() => alert('Clicked')} />
       </div>);
   }
 }
