@@ -1,5 +1,5 @@
 {
-    "mocha.files.glob": "app/**/*.spec.*",
+    "mocha.files.glob": "app/**/spec.*",
     "mocha.runTestsOnSave": "true",
     "mocha.showInExplorer": true,
     "mocha.requires": [

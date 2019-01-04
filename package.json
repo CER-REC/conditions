@@ -11,7 +11,7 @@
     "ci:testcoverage": "nyc report --reporter=text-lcov > coverage.lcov && npx codecov",
     "cz": "git-cz",
     "lint": "eslint -f gitlab \"./app/**/*.js*\" \"./server/**/*.js\"",
-    "test": "cross-env NODE_ENV=test nyc mocha --opts app/tests/mocha.opts app/**/*.spec.{js,jsx}",
+    "test": "cross-env NODE_ENV=test nyc mocha --opts app/tests/mocha.opts app/**/spec.{js,jsx}",
     "test:single": "cross-env NODE_ENV=test mocha --opts app/tests/mocha.opts",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
     "start": "babel-node ./server/index.js",
@@ -115,9 +115,11 @@
       "storybook-static",
       "test-reports",
       "webpack.config.js",
+      "**/spec.js",
+      "**/spec.jsx",
       "**/*.spec.js",
       "**/*.spec.jsx",
-      "**/*.stories.jsx"
+      "**/stories.jsx"
     ],
     "extension": [
       ".js",
