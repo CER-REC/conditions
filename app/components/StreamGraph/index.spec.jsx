@@ -64,7 +64,7 @@ describe('Components|StreamGraph', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.streamgraph')).to.equal((true));
+      expect(wrapper.is('.Streamgraph')).to.equal((true));
     });
 
     it('should render a title', () => {

@@ -26,7 +26,7 @@ transitions are used to show the change.
 When animating from all to one stream: The stream selected should animate to the baseline while 
 the rest of the streams fade out. After that the streamgraph scales with animation.
 
-When animating from one to all: reverse the above by scaling then changing the basline and fading 
+When animating from one to all: reverse the above by scaling then changing the baseline and fading 
 other streams in.
 
 When animation from one to one, if the scale is increasing: animate the scale out to the scale of 

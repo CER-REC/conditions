@@ -74,9 +74,9 @@ class StreamGraph extends React.Component {
       isDragging: false,
     };
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
-    this.onDragStart = this.onDragStart.bind(this);
-    this.onDragMove = this.onDragMove.bind(this);
-    this.onDragStop = this.onDragStop.bind(this);
+    // this.onDragStart = this.onDragStart.bind(this);
+    // this.onDragMove = this.onDragMove.bind(this);
+    // this.onDragStop = this.onDragStop.bind(this);
   }
 
   onDragStart = (event) => {
@@ -161,10 +161,13 @@ class StreamGraph extends React.Component {
     }
 
     let direction = -50;
-    let valueIndex = -1;
+    let valueIndex = 0;
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
       direction = 50;
       valueIndex = 1;
+    }
+    if (event.key === 'ArrowLeft' || event.keyCode === 37) {
+      valueIndex = -1;
     }
 
     if (direction + currPosition < event.target.getClientRects()[0].left - 100 ||
@@ -236,7 +239,7 @@ class StreamGraph extends React.Component {
         <VictoryAxis
           label="Effective Date"
           tickFormat={roundDateLabel}
-          className="axis-label"
+          className="Axis-label"
           domain={[minDateValue, maxDateValue]}
         />
         <VictoryStack
@@ -268,7 +271,7 @@ class StreamGraph extends React.Component {
   render() {
     return (
       <div
-        className="streamgraph"
+        className="Streamgraph"
         ref={(node) => { this.node = node; }}
       >
         {this.chartTitle()}
