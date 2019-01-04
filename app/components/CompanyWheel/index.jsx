@@ -5,6 +5,7 @@ import './styles.scss';
 
 import Ring from './Ring';
 import WheelRayLegend from './WheelRayLegend';
+import PullToSpin from './PullToSpin';
 
 class CompanyWheel extends React.Component {
   constructor(props) {
@@ -57,13 +58,13 @@ class CompanyWheel extends React.Component {
             <div style={props} className="MovingContainer">
               <svg viewBox="0 0 860 860">
                 <g data-name="Group 3" transform="translate(-27.5 -122.8)">
-                  {/* following three lines can be deleted once everything is rendered.
+                  {/* following outer limit lines can be deleted once everything is rendered.
                     It is an accurate representation of spacing */}
                   <g className="OuterLimitCircle OutterCircles" transform="translate(27.5 125.5)">
                     <circle cx="430" cy="430" r="426" />
                   </g>
                   <g data-name="wheelGroup" transform="translate(86 102)">
-                    {/* following three lines can be deleted once everything is rendered.
+                    {/* following inner limit lines can be deleted once everything is rendered.
                     It is an accurate representation of spacing */}
                     <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
                       <circle className="cls-1" cx="264" cy="264" r="263.5" />
@@ -86,7 +87,7 @@ class CompanyWheel extends React.Component {
           )
           }
         </Spring>
-        <button type="button" className="pullToSpin" onClick={this.onSpinClick}>Spin that wheel</button>
+        <PullToSpin className="pullToSpin" onSpinClick={this.onSpinClick} role="button" />
       </div>
     );
   }
