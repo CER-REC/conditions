@@ -15,7 +15,11 @@ export const shouldBehaveLikeAComponent = (component, callback) => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     if (component.propTypes.className) {
       wrapper.setProps({ className: 'testClass' });
-      expect(getRendered().hasClass('testClass')).to.equal(true);
+      const rendered = getRendered();
+      // Ensure the component name is still a class
+      expect(rendered.hasClass(component.name)).to.equal(true);
+      // Check that the new class was added
+      expect(rendered.hasClass('testClass')).to.equal(true);
     }
   });
 };
