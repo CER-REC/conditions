@@ -10,7 +10,7 @@ with the primary difference being reuse.
 ## Documentation
 
 High-level documentation (like this architecture documentation) belongs in
-`./stories/`.
+`./documentation/`.
 
 ## Redux
 
@@ -65,10 +65,6 @@ export const reducer = (initialState = {}, action) => {
 
 Every component should have a set of tests to ensure that it renders as designed
 and covers all of the interaction, analytics, and accessibility requirements.
-
-```
-// TODO: Write test example and structure
-```
 
 ## Retrieving data
 

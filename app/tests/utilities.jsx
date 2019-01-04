@@ -1,21 +1,25 @@
-import { ShallowWrapper, ReactWrapper } from 'enzyme';
+import { ShallowWrapper } from 'enzyme';
 import { expect } from 'chai';
 
-export const shouldBehaveLikeAComponent = (wrapper, component, className) => {
-  const expectHasClass = (name) => {
-    // Using mount and shallow requires different ways to check the class of the component
-    if (wrapper instanceof ShallowWrapper) {
-      expect(wrapper.hasClass(name)).to.equal(true);
-    } else if (wrapper instanceof ReactWrapper) {
-      expect(wrapper.find(component).childAt(0).hasClass(name)).to.equal(true);
-    }
-  };
+export const shouldBehaveLikeAComponent = (component, callback) => {
+  it('should render with the component name as a class', () => {
+    const wrapper = callback();
 
-  it('should render with the component and provided classes', () => {
-    expectHasClass(component.name);
+    const getRendered = () => {
+      if (wrapper instanceof ShallowWrapper) { return wrapper; }
+      return wrapper.find(component).childAt(0);
+    };
 
-    if (className) {
-      expectHasClass(className);
+    expect(getRendered().hasClass(component.name)).to.equal(true);
+    // Disabling this rule is safe because prop-types are only stripped in prod
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    if (component.propTypes.className) {
+      wrapper.setProps({ className: 'testClass' });
+      const rendered = getRendered();
+      // Ensure the component name is still a class
+      expect(rendered.hasClass(component.name)).to.equal(true);
+      // Check that the new class was added
+      expect(rendered.hasClass('testClass')).to.equal(true);
     }
   });
 };

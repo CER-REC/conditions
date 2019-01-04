@@ -13,7 +13,7 @@ describe('Components|ProjectLegend/LegendItem', () => {
     ));
   });
 
-  shouldBehaveLikeAComponent(wrapper, LegendItem, 'LegendItem');
+  shouldBehaveLikeAComponent(LegendItem, () => wrapper);
 
   describe('When the legend item is disabled', () => {
     const disabled = shallow((<LegendItem color="green" text="disabled" disabled />));

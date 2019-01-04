@@ -21,7 +21,7 @@ describe('Components|ProjectLegend', () => {
     ));
   });
 
-  shouldBehaveLikeAComponent(wrapper, ProjectLegend);
+  shouldBehaveLikeAComponent(ProjectLegend, () => wrapper);
 
   it('should contain five LegendItems', () => {
     expect(wrapper.find('LegendItem')).to.have.lengthOf(5);
