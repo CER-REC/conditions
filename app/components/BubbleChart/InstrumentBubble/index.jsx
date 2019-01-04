@@ -122,8 +122,6 @@ class InstrumentBubble extends React.PureComponent {
   render() {
     const { width, height, onClick } = this.props;
     const d3Calculation = this.d3HierarchyCalculation();
-    // console.log(d3Calculation)
-
     return (
       <svg width={width} height={height}>
         {this.circleRender(d3Calculation, onClick)}
