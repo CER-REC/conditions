@@ -60,7 +60,7 @@ storiesForComponent('Components|CircleContainer', module, ReadMe)
       >
         &nbsp;
       </CircleContainer>
-      <style dangerouslySetInnerHTML={ // eslint-disable-line react/no-danger
+      <style dangerouslySetInnerHTML={// eslint-disable-line react/no-danger
         { __html: '.CircleContainer.blue { background: blue } ' }}
       />
     </React.Fragment>
