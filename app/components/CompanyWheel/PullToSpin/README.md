@@ -15,18 +15,15 @@ Takes in a callback onSpinClick which is triggered when the button is pushed.
 
 ## Interaction Requirements
 
-* [ ] Clicking or pressing enter on an button emits an onClick event
+* [x] Clicking or pressing enter on an button emits an onClick event
 
 ## Accessibility Requirements
 
  * [ ] Keyboard interaction
  * [ ] Keyboard selection
- * [ ] Screen reader support for interaction
 
 ## Analytics Requirements
 
 * [ ] TODO: determine analytic requirements
 
-## Unit Testing
 
-TODO: Provide table of automated unit test results and code coverage metrics.
