@@ -87,20 +87,4 @@ describe('Components|StreamGraph', () => {
       expect(roundDateLabel(2018.1)).to.be.equal(2018);
     });
   });
-
-  // describe('with the Control visible', () => {
-  //   let stack;
-  //   let onChange;
-  //   beforeEach(() => {
-  //     onChange = sinon.spy();
-  //     stack = mount(<StackGroup
-  //       onChange={onChange}
-  //       projectData={projectData}
-  //     />);
-  //   });
-
-  //   it('should render a stack group', () => {
-  //     expect(stack.type()).to.equal('g');
-  //   });
-  // });
 });

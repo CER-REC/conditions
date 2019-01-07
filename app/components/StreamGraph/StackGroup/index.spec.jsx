@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Control from '.';
+import StackGroup from '.';
 
-describe('Components|Control', () => {
+describe('Components|Streamgraph/StackGroup', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<Control />);
+      wrapper = shallow(<StackGroup />);
     });
 
     it('should render', () => {

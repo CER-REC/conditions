@@ -11,8 +11,7 @@ pinpoint the exact number of conditions to the user.
 
 ## Interaction Requirements
 
-The user can drag, arrow or tab across the x-axis, or if they click again on the stream graph,
-the control will move to the nearest location of the new click.
+Interaction for the Control public component will be handled where it is used.
 
 ## Accessibility Requirements
 
