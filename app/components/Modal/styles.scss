@@ -1,0 +1,62 @@
+.Modal {
+  border: 1px solid #b4b4b4;
+  background-color: #fff;
+  padding: 40px;
+  text-align: left;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 5px 40px rgba(0,0,0,0.1), 12px 30px 20px rgba(0,0,0,0.1);
+  z-index: 99;
+
+  .header {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    text-transform: uppercase;
+
+    .title {
+      margin: 0;
+      padding: 0;
+      font-size: 30px;
+      display: inline-block;
+      color: gray;
+    }
+
+    .closeIcon {
+      background-color: transparent;
+      stroke-width: 2.5;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      line {
+        fill: none;
+        stroke-linecap: round;
+        stroke: grey;
+      }
+    }
+
+  }
+
+  .content {
+    margin: 40px;
+    border: 1px solid #b4b4b4;
+  }
+
+  .footer {
+    bottom: 40px;
+    position: absolute;
+
+    .textButton {
+      border: none;
+      background: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 25px;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: gray;
+      font-weight: normal;
+    }
+  }
+}
