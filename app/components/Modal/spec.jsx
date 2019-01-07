@@ -6,6 +6,7 @@ import Modal from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|Modal', () => {
   let wrapper;
@@ -30,6 +31,19 @@ describe('Components|Modal', () => {
 
   it('should have a footer', () => {
     expect(wrapper.find('.footer').is('div')).to.equal(true);
+  });
+
+  describe('When the close icon is clicked', () => {
+    beforeEach(() => {
+      wrapper = shallow(<Modal title="Test Title" content={<div>Test Content</div>} />);
+    });
+
+    it('should close the modal', () => {
+      expect(wrapper.state('isOpen')).to.equal(true);
+      wrapper.find('.closeIcon').simulate('click', eventFuncs);
+      expect(wrapper.state('isOpen')).to.equal(false);
+      expect(wrapper.type()).to.equal(null);
+    });
   });
 
   describe('When there is a modal action', () => {

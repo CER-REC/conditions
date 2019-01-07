@@ -12,9 +12,8 @@ class Modal extends React.PureComponent {
     };
   }
 
-  toggleOpen = (e) => {
-    e.preventDefault();
-    this.setState(prevState => ({ isOpen: !!prevState.isOpen }));
+  toggleOpen = () => {
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   render() {
@@ -32,7 +31,7 @@ class Modal extends React.PureComponent {
         <div className="header">
           <span className="title">{title}</span>
           {/* Didn't use Icon because iconwas not supported in our font-awesome library */}
-          <svg version="1.1" width="20" height="20" className="closeIcon" onClick={this.toggleOpen} tabIndex={0}>
+          <svg version="1.1" width="20" height="20" className="closeIcon" {...handleInteraction(this.toggleOpen)} tabIndex={0}>
             <line x1="0" y1="20" x2="20" y2="0" strokeLinecap="round" />
             <line x1="0" y1="0" x2="20" y2="20" strokeLinecap="round" />
           </svg>
