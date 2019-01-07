@@ -41,5 +41,9 @@ describe('Components|Streamgraph/StackGroup', () => {
     it('should render', () => {
       expect(wrapper.type()).to.equal(('g'));
     });
+
+    it('should show the Control', () => {
+      expect(wrapper.find('Control')).have.lengthOf(1);
+    });
   });
 });
