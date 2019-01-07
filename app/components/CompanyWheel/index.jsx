@@ -77,7 +77,8 @@ class CompanyWheel extends React.Component {
                           legendPositionArray={this.props.itemsData}
                           degreesPerItem={this.state.degreesPerItem}
                           reservedDegrees={this.state.reservedDegrees}
-                        />)}
+                        />
+                      )}
                     </Spring>
                   </g>
                 </g>

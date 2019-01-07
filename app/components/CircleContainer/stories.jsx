@@ -13,8 +13,9 @@ storiesForComponent('Components|CircleContainer', module, ReadMe)
     <CircleContainer
       size="24px"
     >
-    &nbsp;
-    </CircleContainer>))
+      &nbsp;
+    </CircleContainer>
+  ))
   .add('with icon', () => (
     <CircleContainer
       size="24px"
@@ -70,5 +71,6 @@ storiesForComponent('Components|CircleContainer', module, ReadMe)
       size="24px"
       disabled
     >
-    &nbsp;
-    </CircleContainer>));
+      &nbsp;
+    </CircleContainer>
+  ));
