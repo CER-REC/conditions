@@ -14,7 +14,7 @@ const onDragStop = () => {};
 const handleOnChange = () => {};
 const handleArrowKey = () => {};
 const children = () => {};
-const showControl = true;
+let showControl = true;
 
 describe('Components|Streamgraph/StackGroup', () => {
   describe('with default props', () => {
@@ -44,6 +44,18 @@ describe('Components|Streamgraph/StackGroup', () => {
 
     it('should show the Control', () => {
       expect(wrapper.find('Control')).have.lengthOf(1);
+    });
+
+    it('should not show the Control', () => {
+      showControl = false;
+      wrapper = shallow(
+        <StackGroup
+          showControl={showControl}
+        >
+        children={children}
+        </StackGroup>,
+      );
+      expect(wrapper.find('Control')).to.have.lengthOf(0);
     });
   });
 });
