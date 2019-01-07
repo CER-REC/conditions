@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import { doc } from 'storybook-readme';
-import Testing from './testing.md';
+import Process from './process.md';
 
 storiesOf('Documentation|Testing', module)
-  .add('Tests', doc(Testing));
+  .add('Process', doc(Process));

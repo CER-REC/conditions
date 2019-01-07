@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../.storybook/utils';
+import withStatus from '../../../../.storybook/addon-status';
 import InstrumentBubble from '.';
 import ReadMe from './README.md';
 
@@ -95,6 +96,7 @@ const instrumentChartData = {
 };
 
 storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
     <InstrumentBubble instrumentChartData={instrumentChartData} width={400} height={400} onClick={() => alert('Clicked')} />
   ));
