@@ -43,13 +43,13 @@ documentation, examples, and tests.
 /* Inside ./app/components/MyPublicComponent/ */
 index.jsx // MyPublicComponent as the default export
 styles.scss // Styles for MyPublicComponent and children
-index.spec.jsx // Test for MyPublicComponent
-index.stories.jsx // Examples
+spec.jsx // Test for MyPublicComponent
+stories.jsx // Examples
 README.md // Documentation
 PrivateComponent/index.jsx // Component used only within MyPublicComponent
 PrivateComponent/styles.scss // Styles for PrivateComponent and children
-PrivateComponent/index.spec.jsx // Test for PrivateComponent
-PrivateComponent/index.stories.jsx // Examples
+PrivateComponent/spec.jsx // Test for PrivateComponent
+PrivateComponent/stories.jsx // Examples
 PrivateComponent/README.md // Documentation
 ```
 

@@ -45,9 +45,9 @@ addDecorator((storyFn, context) => {
 
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
-// automatically import all files ending in *.stories.js
-const documentationStories = require.context('../documentation/', true, /.stories.jsx$/);
-const componentStories = require.context('../app/', true, /.stories.jsx$/);
+// automatically import all files named stories.jsx
+const documentationStories = require.context('../documentation/', true, /stories.jsx$/);
+const componentStories = require.context('../app/', true, /stories.jsx$/);
 function loadStories() {
   documentationStories.keys()
     // Sorting Documentation|Introduction to the top
