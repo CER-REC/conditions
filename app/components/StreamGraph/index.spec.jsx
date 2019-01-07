@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import Streamgraph, { roundDateLabel, numOfConditionsLabel } from '.';
+import Streamgraph, { roundDateLabel } from '.';
 
 describe('Components|StreamGraph', () => {
   const projectData = [
