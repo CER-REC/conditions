@@ -16,7 +16,8 @@ class BubbleChart extends React.PureComponent {
       <div className="BubbleChart">
         {/* TODO: Add prop for instrument bubble - Will be added in a seperate PR */}
         <InstrumentBubble />
-      </div>);
+      </div>
+    );
   }
 }
 

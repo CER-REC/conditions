@@ -11,7 +11,8 @@ const Icon = props => (
       size={props.size}
       color={props.color}
     />
-  </div>);
+  </div>
+);
 
 Icon.propTypes = {
   className: PropTypes.string,
