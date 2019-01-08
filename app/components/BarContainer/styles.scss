@@ -1,0 +1,14 @@
+.BarContainer {
+  height: 6px;
+  display: inline-flex;
+  &-searchBlock {
+    width: 12px;
+    background: transparent;
+      &.searched{
+        background: rgb(241, 90, 36);
+      }
+  }
+  &-valueBlock {
+    height: 6px;
+  }
+}
