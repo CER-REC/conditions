@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 import handleInteraction from '../../../utilities/handleInteraction';
-
+import './styles.scss';
 /* TODO:
 1) Check if the text is overlapping another and change arc accordingly
 2) Check if the inside text is smaller than circle radius, and shift the text
@@ -40,15 +40,11 @@ class InstrumentBubble extends React.PureComponent {
             <g key={node.data.parentName}>
               <path id={`${node.data.parentName}path`} d={textCurvedPath} style={{ fill: 'none', stroke: 'transparent' }} />
               <circle
+                className="CommodityCircle"
                 {...handleInteraction(onClick)}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
                 tabIndex="0"
-                style={{
-                  fill: 'transparent',
-                  stroke: '#EDEDED',
-                  strokeWidth: 2,
-                }}
               />
               <text>
                 <textPath href={`#${node.data.parentName}path`} textAnchor="middle" startOffset="50%">
@@ -58,25 +54,18 @@ class InstrumentBubble extends React.PureComponent {
             </g>
           );
         }
-
-        let textY;
-        let textColor;
-        if (node.r > node.value) {
-          textY = node.y - (node.r * 0.45);
-          textColor = 'black';
-        } else {
-          textY = node.y;
-          textColor = 'white';
-        }
+        // Determines text position and color
+        const textY = node.r > node.value ? node.y - (node.r * 0.45) : node.y;
+        const textColor = node.r > node.value ? 'black' : 'white';
         // Nested Children circles (ie Instruments)
         return (
           <g
             key={node.data.name}
           >
             <circle
+              className="InstrumentTextCircle"
               r={node.r}
               transform={`translate(${node.x} ${node.y})`}
-              style={{ fill: 'transparent', stroke: 'transparent' }}
             />
             <circle
               {...handleInteraction(onClick)}
