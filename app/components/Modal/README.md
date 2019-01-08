@@ -26,4 +26,7 @@ Clicking the "X" in the top right corner of the modal should close the Modal.
 
 ## Accessibility Requirements
 
-Tabbing should go between the download link and the close modal.
+(Manual Tests)
+Tabbing should stay in the dialog window.
+Closing dialog should return focus back to the previously active element.
+Closing dialog with escape key.

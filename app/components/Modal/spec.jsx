@@ -1,11 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import sinon from 'sinon';
 
 import Modal from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|Modal', () => {
   let wrapper;
@@ -32,6 +34,20 @@ describe('Components|Modal', () => {
 
   it('should have a footer', () => {
     expect(wrapper.find('.footer').is('div')).to.equal(true);
+  });
+
+  it('should close dialog if close is clicked', () => {
+    const spy = sinon.spy();
+    wrapper = shallow((
+      <Modal
+        title="Test Title"
+        content={<div>Test Content</div>}
+        isOpen
+        closeModal={spy}
+      />
+    ));
+    wrapper.find('.closeIcon').simulate('click', eventFuncs);
+    expect(spy.calledOnce).to.equal(true);
   });
 
   it('should have a textButton where ther is a modal action', () => {

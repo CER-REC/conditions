@@ -12,6 +12,7 @@ class Modal extends React.PureComponent {
     this.lastFocus = null;
   }
 
+  /* Polyfill prevents testing (must be manually tested) */
   registerDialog = (ref) => {
     this.dialog = ref;
     if (ref === null) { return; }
@@ -21,8 +22,10 @@ class Modal extends React.PureComponent {
     ref.showModal();
   }
 
+  /* Polyfill prevents testing (must be manually tested) */
   dialogClosed = () => { if (this.lastFocus) { this.lastFocus.focus(); } }
 
+  /* Polyfill prevents testing (must be manually tested) */
   close = () => {
     this.props.closeModal();
     if (this.dialog) { this.dialog.close(); }
