@@ -7,6 +7,11 @@ import 'dialog-polyfill/dialog-polyfill.css';
 import './styles.scss';
 
 class Modal extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.lastFocus = null;
+  }
+
   registerDialog = (ref) => {
     this.dialog = ref;
     if (ref === null) { return; }
@@ -14,6 +19,13 @@ class Modal extends React.PureComponent {
     this.lastFocus = document.activeElement;
     dialogPolyfill.registerDialog(ref);
     ref.showModal();
+  }
+
+  dialogClosed = () => { if (this.lastFocus) { this.lastFocus.focus(); } }
+
+  close = () => {
+    this.props.closeModal();
+    if (this.dialog) { this.dialog.close(); }
   }
 
   render() {
@@ -24,17 +36,16 @@ class Modal extends React.PureComponent {
       height,
       width,
       isOpen,
-      closeModal,
     } = this.props;
 
     if (!isOpen) { return null; }
 
     return (
-      <dialog className="Modal" style={{ height, width }} onClose={this.props.closeModal} ref={this.registerDialog}>
+      <dialog className="Modal" style={{ height, width }} onClose={this.dialogClosed} ref={this.registerDialog}>
         <div className="header">
           <span className="title">{title}</span>
           {/* Didn't use Icon because iconwas not supported in our font-awesome library */}
-          <svg version="1.1" width="20" height="20" className="closeIcon" {...handleInteraction(closeModal)} tabIndex={0}>
+          <svg version="1.1" width="20" height="20" className="closeIcon" {...handleInteraction(this.close)} tabIndex={0}>
             <line x1="0" y1="20" x2="20" y2="0" strokeLinecap="round" />
             <line x1="0" y1="0" x2="20" y2="20" strokeLinecap="round" />
           </svg>
