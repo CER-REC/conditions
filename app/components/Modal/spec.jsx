@@ -6,7 +6,6 @@ import Modal from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 const noop = () => {};
-const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|Modal', () => {
   let wrapper;

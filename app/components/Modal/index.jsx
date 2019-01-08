@@ -1,10 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dialogPolyfill from 'dialog-polyfill';
 import handleInteraction from '../../utilities/handleInteraction';
+import 'dialog-polyfill/dialog-polyfill.css';
 
 import './styles.scss';
 
 class Modal extends React.PureComponent {
+  registerDialog = (ref) => {
+    this.dialog = ref;
+    if (ref === null) { return; }
+
+    this.lastFocus = document.activeElement;
+    dialogPolyfill.registerDialog(ref);
+    ref.showModal();
+  }
+
   render() {
     const {
       title,
@@ -19,7 +30,7 @@ class Modal extends React.PureComponent {
     if (!isOpen) { return null; }
 
     return (
-      <div className="Modal" style={{ height, width }}>
+      <dialog className="Modal" style={{ height, width }} onClose={this.props.closeModal} ref={this.registerDialog}>
         <div className="header">
           <span className="title">{title}</span>
           {/* Didn't use Icon because iconwas not supported in our font-awesome library */}
@@ -37,7 +48,7 @@ class Modal extends React.PureComponent {
             : null
           }
         </div>
-      </div>
+      </dialog>
     );
   }
 }

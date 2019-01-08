@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, number } from '@storybook/addon-knobs';
+import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import Modal from '.';
@@ -32,7 +32,7 @@ storiesForComponent('Components|Modal', module, ReadMe)
         text: 'Save Image',
         task: noop,
       }}
-      isOpen
+      isOpen={boolean('Visible', true)}
       closeModal={noop}
     />))
   .add('Data Download', () => (
@@ -41,7 +41,7 @@ storiesForComponent('Components|Modal', module, ReadMe)
       width={`${number('Width of Modal (px)', 600, options)}px`}
       title="Data Download"
       content={content.data}
-      isOpen
+      isOpen={boolean('Visible', true)}
       closeModal={noop}
     />
   ));
