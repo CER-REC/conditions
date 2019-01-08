@@ -5,33 +5,25 @@ import handleInteraction from '../../utilities/handleInteraction';
 import './styles.scss';
 
 class Modal extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: true,
-    };
-  }
-
-  toggleOpen = () => {
-    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
-  }
-
   render() {
-    if (!this.state.isOpen) { return null; }
     const {
       title,
       content,
       modalAction,
       height,
       width,
+      isOpen,
+      closeModal,
     } = this.props;
+
+    if (!isOpen) { return null; }
 
     return (
       <div className="Modal" style={{ height, width }}>
         <div className="header">
           <span className="title">{title}</span>
           {/* Didn't use Icon because iconwas not supported in our font-awesome library */}
-          <svg version="1.1" width="20" height="20" className="closeIcon" {...handleInteraction(this.toggleOpen)} tabIndex={0}>
+          <svg version="1.1" width="20" height="20" className="closeIcon" {...handleInteraction(closeModal)} tabIndex={0}>
             <line x1="0" y1="20" x2="20" y2="0" strokeLinecap="round" />
             <line x1="0" y1="0" x2="20" y2="20" strokeLinecap="round" />
           </svg>
@@ -59,6 +51,10 @@ Modal.propTypes = {
   height: PropTypes.string,
   /** Width of modal window (percent or pixel)  */
   width: PropTypes.string,
+  /** Determines if the modal is opened or closed */
+  isOpen: PropTypes.bool,
+  /** Function that closes the modal */
+  closeModal: PropTypes.func.isRequired,
   /** Adds a link to the footer of the Modal window */
   modalAction: PropTypes.shape({
     /** The copy for the Modals footer link */
@@ -70,6 +66,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   modalAction: null,
+  isOpen: false,
   height: '100%',
   width: '100%',
 };

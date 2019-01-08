@@ -32,6 +32,8 @@ storiesForComponent('Components|Modal', module, ReadMe)
         text: 'Save Image',
         task: noop,
       }}
+      isOpen
+      closeModal={noop}
     />))
   .add('Data Download', () => (
     <Modal
@@ -39,5 +41,7 @@ storiesForComponent('Components|Modal', module, ReadMe)
       width={`${number('Width of Modal (px)', 600, options)}px`}
       title="Data Download"
       content={content.data}
+      isOpen
+      closeModal={noop}
     />
   ));
