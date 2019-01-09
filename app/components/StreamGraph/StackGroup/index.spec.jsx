@@ -17,7 +17,7 @@ const children = () => {};
 let showControl = true;
 
 describe('Components|Streamgraph/StackGroup', () => {
-  describe('with default props', () => {
+  describe('with props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
@@ -42,11 +42,11 @@ describe('Components|Streamgraph/StackGroup', () => {
       expect(wrapper.type()).to.equal(('g'));
     });
 
-    it('should show the Control', () => {
-      expect(wrapper.find('Control')).have.lengthOf(1);
+    it('should show the Control when showControl is true', () => {
+      expect(wrapper.find('Control').exists()).to.equal(true);
     });
 
-    it('should not show the Control', () => {
+    it('should not show the Control when showControl is false', () => {
       showControl = false;
       wrapper = shallow(
         <StackGroup
@@ -55,7 +55,7 @@ describe('Components|Streamgraph/StackGroup', () => {
         children={children}
         </StackGroup>,
       );
-      expect(wrapper.find('Control')).to.have.lengthOf(0);
+      expect(wrapper.find('Control').exists()).to.equal(false);
     });
   });
 });

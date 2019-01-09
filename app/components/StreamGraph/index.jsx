@@ -12,10 +12,6 @@ import './styles.scss';
 
 export const roundDateLabel = t => Math.round(t);
 
-const stopEvent = (event) => {
-  event.stopPropagation();
-};
-
 class StreamGraph extends React.Component {
   static propTypes = {
     projectData: PropTypes.arrayOf(PropTypes.shape({
@@ -36,127 +32,16 @@ class StreamGraph extends React.Component {
       showControl: false,
       positionControl: 30,
       numOfConditions: 0,
-      isDragging: false,
     };
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
-    this.onDragStart = this.onDragStart.bind(this);
-    this.onDragMove = this.onDragMove.bind(this);
-    this.onDragStop = this.onDragStop.bind(this);
   }
 
-  onDragStart = (event) => {
-    if (!this.state.showControl) { return; }
-    stopEvent(event);
+  handleOnChange = (positionControl, numOfConditions, showControl) => {
     this.setState({
-      isDragging: true,
-    });
-
-    document.addEventListener('mousemove', this.onDragMove);
-    document.addEventListener('mouseup', this.onDragStop);
-    document.addEventListener('touchmove', this.onDragMove);
-    document.addEventListener('touchend', this.onDragStop);
-  }
-
-  onDragMove(event) {
-    if (this.state.isDragging === false) { return; }
-    stopEvent(event);
-    this.setState({
-      positionControl: event.clientX - 100,
-    });
-  }
-
-  onDragStop = (event) => {
-    stopEvent(event);
-
-    document.removeEventListener('mousemove', this.onDragMove);
-    document.removeEventListener('mouseup', this.onDragStop);
-    document.removeEventListener('touchmove', this.onDragMove);
-    document.removeEventListener('touchend', this.onDragStop);
-
-    this.setState({
-      isDragging: false,
-    });
-  }
-
-  getConditionDates() {
-    let conditionDates = this.props.projectData.reduce((acc, next) => {
-      next.graphData.forEach((v) => {
-        if (!acc[v.date]) { acc[v.date] = 0; }
-        acc[v.date] += v.count;
-      });
-      return acc;
-    }, {});
-    conditionDates = Object.values(conditionDates);
-    return conditionDates;
-  }
-
-  handleOnChange = (event) => {
-    if (this.state.showControl === true) {
-      document.addEventListener('click', this.handleOutsideClick, false);
-    }
-
-    const groupPosition = event.target.getClientRects()[0];
-    const groupWidth = groupPosition.right - groupPosition.left;
-
-    const dateCount = this.props.projectData[0].graphData.map(k => k.date).length;
-    const sectionWidth = groupWidth / dateCount;
-
-    const numOfConditionValue = this.getConditionDates();
-
-    const clickArea = event.clientX - groupPosition.x;
-
-    const currentSection = Math.floor(clickArea / sectionWidth);
-    this.setState({
-      positionControl: Math.ceil(sectionWidth / 2)
-        + (Math.floor(currentSection * Math.ceil(sectionWidth))
-        - (currentSection * 9)),
-      numOfConditions: numOfConditionValue[currentSection],
-    });
-
-    this.setState({
-      showControl: true,
+      positionControl,
+      numOfConditions,
+      showControl,
     });
   };
-
-  handleArrowKey = (event) => {
-    const currPosition = this.state.positionControl;
-
-    if ((event.key !== 'ArrowLeft' || event.keyCode !== 37) && (event.key !== 'ArrowRight' || event.keyCode !== 39)) {
-      return;
-    }
-
-    let direction = -50;
-    let valueIndex = -1;
-    if (event.key === 'ArrowRight' || event.keyCode === 39) {
-      direction = 50;
-      valueIndex = 1;
-    }
-
-    if (direction + currPosition < event.target.getClientRects()[0].left - 100
-    || direction + currPosition > event.target.getClientRects()[0].left + 300) {
-      return;
-    }
-
-    const numOfConditionValue = this.getConditionDates();
-    const groupPosition = event.target.getClientRects()[0];
-    const groupWidth = groupPosition.right - groupPosition.left;
-
-    const dateCount = this.props.projectData[0].graphData.map(k => k.date).length;
-    const sectionWidth = groupWidth / dateCount;
-
-    const currentSection = Math.floor(currPosition / sectionWidth);
-
-    this.setState({
-      positionControl: currPosition + direction,
-      numOfConditions: numOfConditionValue[currentSection + valueIndex],
-    });
-  };
-
-  handleOutsideClick = (e) => {
-    if (!this.node.contains(e.target)) {
-      this.setState({ showControl: false });
-    }
-  }
 
   streamLayers() {
     const streamLayers = this.props.projectData.map(v => (
@@ -170,7 +55,7 @@ class StreamGraph extends React.Component {
             strokeWidth: 0,
           },
         }}
-        interpolation="natural"
+        // interpolation="natural"
       />
     ));
     return streamLayers;
@@ -188,7 +73,16 @@ class StreamGraph extends React.Component {
     const minDateValue = Math.min(...dateConcat);
     const maxDateValue = Math.max(...dateConcat);
 
-    const maxConditionValue = Math.max(...this.getConditionDates());
+    let conditionDates = this.props.projectData.reduce((acc, next) => {
+      next.graphData.forEach((v) => {
+        if (!acc[v.date]) { acc[v.date] = 0; }
+        acc[v.date] += v.count;
+      });
+      return acc;
+    }, {});
+    conditionDates = Object.values(conditionDates);
+
+    const maxConditionValue = Math.max(...conditionDates);
 
     return (
       <VictoryChart>
@@ -208,14 +102,11 @@ class StreamGraph extends React.Component {
           groupComponent={
             (
               <StackGroup
-                handleOnChange={this.handleOnChange}
-                handleArrowKey={this.handleArrowKey}
-                onDragStart={this.onDragStart}
-                onDragMove={this.onDragMove}
-                onDragStop={this.onDragStop}
+                onChange={this.handleOnChange}
                 showControl={this.state.showControl}
                 positionControl={this.state.positionControl}
                 numOfConditions={this.state.numOfConditions}
+                projectData={this.props.projectData}
                 yHeight="20"
                 controlTopBaseline="10"
               />
@@ -238,7 +129,6 @@ class StreamGraph extends React.Component {
     return (
       <div
         className="Streamgraph"
-        ref={(node) => { this.node = node; }}
       >
         {this.chartTitle()}
         {this.chart()}

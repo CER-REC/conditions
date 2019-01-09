@@ -8,7 +8,7 @@ const numOfConditionsLabel = 213;
 const yHeight = '20';
 const controlTopBaseline = '10';
 
-storiesForComponent('Components|StreamGraph/Control', module, ReadMe)
+storiesForComponent('Components|Control', module, ReadMe)
   .add('with default values', () => (
     <svg><Control
       positionControl={positionControl}
