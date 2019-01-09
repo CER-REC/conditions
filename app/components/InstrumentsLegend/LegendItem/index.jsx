@@ -16,10 +16,11 @@ const LegendItem = (props) => {
   const type = props.all ? 'all' : 'title';
 
   if (!props.all) {
-    indicators = props.indicators.map((indicator) => {
+    indicators = props.indicators.map((indicator, index) => {
       const style = indicator ? { backgroundColor: props.color } : {};
 
-      return <div className="indicator" style={style} />;
+      // eslint-disable-next-line react/no-array-index-key
+      return <div key={index} className="indicator" style={style} />;
     });
   }
 
