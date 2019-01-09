@@ -27,18 +27,6 @@ describe('Components|SmallMultiplesLegend', () => {
 
   shouldBehaveLikeAComponent(SmallMultiplesLegend, () => wrapper);
 
-  it('should not render a list when no data is provided', () => {
-    wrapper = shallow((
-      <SmallMultiplesLegend
-        title="123456"
-        data={[]}
-        onChange={noop}
-      />
-    ));
-
-    expect(wrapper.find(List)).to.have.lengthOf(0);
-  });
-
   describe('when only one data condition is provided', () => {
     const title = 'Title-A';
     const data = [{
@@ -193,7 +181,7 @@ describe('Components|SmallMultiplesLegend', () => {
         <SmallMultiplesLegend
           title={title}
           data={data}
-          onChange={spy}
+          onChange={noop}
           selected={data[2].name}
         />
       ));
@@ -207,7 +195,7 @@ describe('Components|SmallMultiplesLegend', () => {
         <SmallMultiplesLegend
           title={title}
           data={data}
-          onChange={spy}
+          onChange={noop}
           selected="N/A"
         />
       ));
@@ -223,7 +211,7 @@ describe('Components|SmallMultiplesLegend', () => {
           className="abcd"
           title={title}
           data={data}
-          onChange={spy}
+          onChange={noop}
           highlightName={highlightName}
         />
       ));
@@ -248,7 +236,7 @@ describe('Components|SmallMultiplesLegend', () => {
           className="abcd"
           title={title}
           data={data}
-          onChange={spy}
+          onChange={noop}
           highlightName="n/a"
         />
       ));
