@@ -1,15 +1,25 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
+import withFeedback, { getProps } from '../../../.storybook/addon-interactionfeedback';
 import List from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|List', module, ReadMe)
+  .addDecorator(withFeedback({
+    state: {
+      selected: 0,
+    },
+    actions: {
+      onChange: state => v => ({ ...state, selected: v }),
+    },
+  }))
   .addDecorator(withStatus('designUnderDevelopment'))
   .add('basic usage', () => (
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
       onChange={v => alert(v)}
+      {...getProps()}
     />
   ))
   .add('selected', () => (

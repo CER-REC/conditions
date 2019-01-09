@@ -1,23 +1,28 @@
-import React from 'react';
-import { makeDecorator } from '@storybook/addons';
-import Feedback from './Feedback';
-import './styles.scss';
+import addons, { makeDecorator } from '@storybook/addons';
+import Events from '@storybook/core-events';
+
+let dataStore;
+
+function resetData() {
+  dataStore = {
+    state: {},
+    actions: {},
+    logs: [],
+  };
+}
+resetData();
 
 const defaultOptions = {};
 
-function addFeedback(storyFn, context, providedOptions) {
-  const props = {
-    ...defaultOptions,
-    ...providedOptions,
-    storyFn,
-    context,
-  };
-  return (
-    <Feedback {...props} />
-  );
-}
+function addFeedback(storyFn, context, options) {
+  Object.assign(dataStore.state, {
+    ...(options.state || {}),
+    ...(dataStore.state || {}),
+  });
+  dataStore.actions = options.actions || {};
 
-const optionToObject = (val = {}) => (typeof val === 'string' ? { name: val } : val);
+  return storyFn(context);
+}
 
 export default makeDecorator({
   name: 'withFeedback',
@@ -25,11 +30,35 @@ export default makeDecorator({
   allowDeprecatedUsage: false,
   skipIfNoParametersOrOptions: true,
   wrapper: (getStory, context, { options, parameters }) => {
-    const optionsObj = optionToObject(options);
-    const parametersObj = optionToObject(parameters);
-    if (optionsObj.name && parametersObj.name) { return getStory(context); }
-    const mergedOptions = { ...optionsObj, ...parametersObj };
+    const mergedOptions = {
+      ...defaultOptions,
+      ...options,
+      ...parameters,
+    };
     return addFeedback(getStory, context, mergedOptions);
   },
-})
+});
 
+export const getProps = () => {
+  const actions = Object.entries(dataStore.actions)
+    .reduce((acc, next) => {
+      acc[next[0]] = (...args) => {
+        const result = next[1](dataStore.state)(...args);
+        Object.assign(dataStore, {
+          state: result,
+          logs: dataStore.logs.concat({
+            name: next[0],
+            args,
+            result: JSON.parse(JSON.stringify(result)),
+          }),
+        });
+        addons.getChannel().emit(Events.FORCE_RE_RENDER);
+      };
+      return acc;
+    }, {});
+
+  return {
+    ...dataStore.state,
+    ...actions,
+  };
+};
