@@ -22,8 +22,8 @@ supporting documentation, examples, and tests.
 /* Inside ./app/views/ViewName/ */
 index.jsx // ViewName as the default export
 styles.scss // Styles for ViewName and children
-index.spec.jsx // Test for ViewName
-index.stories.jsx // Examples
+spec.jsx // Test for ViewName
+stories.jsx // Examples
 README.md // Documentation
 ```
 
