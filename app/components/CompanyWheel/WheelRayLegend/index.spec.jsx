@@ -16,19 +16,19 @@ const mockData = [
   { legend: 'H', count: 30 },
   { legend: 'I', count: 30 },
   { legend: 'J', count: 30 },
-  { legend: 'K', count: 30 },
 ];
 
 describe('Components|CompanyWheel/WheelRayLegend', () => {
   describe('with default props', () => {
+    const reservedDegrees = 30;
+    const degreesPerItem = (360 - reservedDegrees) / (mockData.length * 30);
+
     const wrapperSetup = (propOverrides) => {
       const props = Object.assign({
         legendPositionArray: mockData,
-        numOfItems: 1,
-        rotation: 0,
-        degreesPerItem: 0,
-        reservedDegrees: 10,
-
+        reservedDegrees,
+        degreesPerItem,
+        rotation: 90,
       }, propOverrides);
 
       const wrapper = shallow(<WheelRayLegend {...props} />);
@@ -55,9 +55,16 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
     });
 
     it('should render elements between 0 and 360 which are equal to the elements provided', () => {
-      const { wrapper } = wrapperSetup({ degreesPerItem: 1 });
-      expect(wrapper.find('text').first().props().transform).to.contain('rotate(21, 0, 245)');
+      const { wrapper } = wrapperSetup();
+      expect(wrapper.find('text').first().props().transform).to.contain('rotate(0, 0, 245)');
     });
+
+    it('should render an item at 90 degrees', () => {
+      const { wrapper } = wrapperSetup();
+      expect(wrapper.find('text').at(2).props().transform).to.contain('rotate(90, 0, 245)');
+    });
+
+    it('should render an item at 125 degrees');
   });
 });
 
