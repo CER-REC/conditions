@@ -7,7 +7,7 @@ describe('Components|Controller', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <Controller x={50} ystart={50} yend={150} />,
+      <Controller x={50} ystart={50} yend={150} radius={20} text="123" />,
     );
   });
 
@@ -21,7 +21,7 @@ describe('Components|Controller', () => {
     });
 
     it('should render svg with proper calculated height', () => {
-      expect(wrapper.find('svg').prop('height')).to.equal(200);
+      expect(wrapper.find('svg').prop('height')).to.equal(240);
     });
 
     it('should translate the component with passed in props', () => {

@@ -13,12 +13,12 @@ const options = {
 
 const heightOptions = {
   range: true,
-  min: 0,
+  min: 20,
   max: 200,
   step: 20,
 };
 storiesForComponent('Components|Controller', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <Controller x={number('x position(px)', 50, options)} ystart={number('y start position(px)', 20, heightOptions)} yend={number('y end position(px)', 40, heightOptions)} />
+    <Controller text="123" x={number('x position(px)', 50, options)} ystart={number('y start position(px)', 20, heightOptions)} yend={number('y end position(px)', 40, heightOptions)} radius={number('radius(px)', 40, heightOptions)} />
   ));
