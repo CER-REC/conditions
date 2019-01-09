@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
-import withFeedback, { getProps } from '../../../.storybook/addon-interactionfeedback';
+import withFeedback, { getProps } from '../../../.storybook/addon-state-reducer';
 import List from '.';
 import ReadMe from './README.md';
 
