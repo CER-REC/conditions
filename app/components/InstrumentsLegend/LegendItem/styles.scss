@@ -1,4 +1,4 @@
-@import '../../../styles/legend.scss';
+@import '../styles.scss';
 
 .InstrumentsLegend .LegendItem {
   @extend %legendItem;
@@ -9,20 +9,6 @@
 
   .indicators {
     @extend %legendItemData;
-
-    display: inline-flex;
-
-    .indicator {
-      flex-grow: 1;
-      margin: 0.3em 0.25em;
-    }
-
-    .indicator:first-child {
-      margin-left: 0;
-    }
-
-    .indicator:last-child {
-      margin-right: 0;
-    }
+    @extend %indicators;
   }
 }

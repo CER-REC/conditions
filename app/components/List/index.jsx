@@ -23,7 +23,8 @@ library.add(
 
 const List = (props) => {
   if (props.items.length === 0) { return null; }
-  // arrowSize should match the style's arrow-size variable (there are testing issues with :export)
+  // arrowSize should match the legend style's arrow-size variable
+  // (there are testing issues with :export)
   const arrowSize = '24px';
   // Selected index cannot exceed the length of the array
   const selectedIndex = (props.selected < props.items.length) ? props.selected : 0;
