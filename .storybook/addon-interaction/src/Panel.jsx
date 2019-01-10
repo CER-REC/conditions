@@ -15,17 +15,17 @@ export default class Panel extends React.PureComponent {
 
   componentDidMount() {
     const { channel, api } = this.props;
-    channel.on('addon:state-reducer:update', this.update);
+    channel.on('addon:interaction:update', this.update);
     this.stopListeningOnStory = api.onStory(() => {
       this.setState({ data: {}, logs: [] });
       // TODO: Is this happening in two places?
-      channel.emit('addon:state-reducer:reset');
+      channel.emit('addon:interaction:reset');
     });
   }
 
   componentWillUnmount() {
     const { channel } = this.props;
-    channel.removeListener('addon:state-reducer:update', this.update);
+    channel.removeListener('addon:interaction:update', this.update);
     this.stopListeningOnStory();
   }
 

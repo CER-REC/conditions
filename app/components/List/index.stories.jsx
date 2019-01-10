@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
-import withFeedback, { getProps } from '../../../.storybook/addon-state-reducer';
+import withInteraction, { getProps } from '../../../.storybook/addon-interaction';
 import List from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|List', module, ReadMe)
-  .addDecorator(withFeedback({
+  .addDecorator(withInteraction({
     state: {
       selected: 0,
     },

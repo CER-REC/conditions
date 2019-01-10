@@ -48,7 +48,7 @@ class Store {
   }, 50);
 
   updatePanel = debounce(() => {
-    this.channel.emit('addon:state-reducer:update', {
+    this.channel.emit('addon:interaction:update', {
       data: this.data,
       actions: Object.keys(this.actions),
       logs: this.logs,
