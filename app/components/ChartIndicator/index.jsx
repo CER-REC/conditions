@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const ConditionsCounter = (props) => {
+const ChartIndicator = (props) => {
   const svgDefaultHeight = (props.yBottom + props.yTop);
   const svgHeight = (props.radius > 0)
     ? svgDefaultHeight + props.radius * 2
@@ -24,7 +24,8 @@ const ConditionsCounter = (props) => {
         cx={props.radius}
         cy={props.yBottom + props.radius}
         r={props.radius}
-      />)
+      />
+    )
     : (null);
   return (
     // TODO: Remove svg tag once integrated with parent svg
@@ -48,15 +49,15 @@ const ConditionsCounter = (props) => {
   );
 };
 
-ConditionsCounter.propTypes = {
+ChartIndicator.propTypes = {
   x: PropTypes.number.isRequired,
   yBottom: PropTypes.number.isRequired,
   yTop: PropTypes.number.isRequired,
   radius: PropTypes.number,
 };
 
-ConditionsCounter.defaultProps = {
+ChartIndicator.defaultProps = {
   radius: 0,
 };
 
-export default ConditionsCounter;
+export default ChartIndicator;

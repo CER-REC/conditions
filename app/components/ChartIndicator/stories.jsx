@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, number } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
-import Controller from '.';
+import ChartIndicator from '.';
 import ReadMe from './README.md';
 
 const options = {
@@ -20,8 +20,8 @@ const heightOptions = {
 storiesForComponent('Components|ConditionsCounter', module, ReadMe)
   .addDecorator(withKnobs)
   .add('withCircle', () => (
-    <Controller x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} radius={number('radius(px)', 40, heightOptions)} />
+    <ChartIndicator x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} radius={number('radius(px)', 40, heightOptions)} />
   ))
   .add('withoutCircle', () => (
-    <Controller x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} />
+    <ChartIndicator x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} />
   ));

@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import ConditionsCounter from '.';
+import ChartIndicator from '.';
 
-describe('Components|ConditionsCounter', () => {
+describe('Components|ChartIndicator', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ConditionsCounter x={50} ystart={50} yend={150} />,
+      <ChartIndicator x={50} ystart={50} yend={150} />,
     );
   });
   describe('with default props', () => {
@@ -26,7 +26,7 @@ describe('without radius', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ConditionsCounter x={50} ystart={50} yend={150} />,
+      <ChartIndicator x={50} ystart={50} yend={150} />,
     );
   });
   it('should not render a circle', () => {
@@ -37,7 +37,7 @@ describe('with radius', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ConditionsCounter x={50} yTop={40} yBottom={100} radius={40} />,
+      <ChartIndicator x={50} yTop={40} yBottom={100} radius={40} />,
     );
   });
   it('should render a circle', () => {
