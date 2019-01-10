@@ -124,7 +124,12 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
-        <InstrumentBubble instrumentChartData={instrumentChartData} width={400} height={400} />,
+        <InstrumentBubble
+          instrumentChartData={instrumentChartData}
+          width={400}
+          height={400}
+          onClick={noop}
+        />,
       );
     });
     it('should render a div', () => {
