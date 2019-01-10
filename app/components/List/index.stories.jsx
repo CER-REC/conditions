@@ -11,7 +11,7 @@ storiesForComponent('Components|List', module, ReadMe)
       selected: 0,
     },
     actions: {
-      onChange: state => v => ({ ...state, selected: v }),
+      onChange: () => v => ({ selected: v }),
     },
   }))
   .addDecorator(withStatus('designUnderDevelopment'))

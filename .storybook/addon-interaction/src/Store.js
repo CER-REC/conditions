@@ -5,19 +5,27 @@ import clone from 'clone';
 
 class Store {
   constructor() {
-    this.reset();
+    this.reset(true);
   }
 
   setChannel(channel) {
+    if (this.channel) {
+      this.channel.removeListener('addon:interaction:reset', this.reset);
+    }
     this.channel = channel;
+    channel.on('addon:interaction:reset', this.reset);
   }
 
-  reset() {
+  reset = (newStory) => {
     this.data = {};
     this.actions = {};
     this.logs = [];
-    this.updateComponent();
-    this.updatePanel();
+    if (!newStory) {
+      this.updateComponent();
+      this.updatePanel();
+    } else if (this.channel) {
+      this.channel.emit('addon:interaction:loading');
+    }
   }
 
   addLog(name, argsRaw, result) {
@@ -37,8 +45,9 @@ class Store {
   }
 
   updateData(newData) {
-    if (shallowEqual(this.data, newData)) { return; }
-    this.data = newData;
+    const newDataMerged = Object.assign({}, this.data, newData);
+    if (shallowEqual(this.data, newDataMerged)) { return; }
+    this.data = newDataMerged;
     this.updateComponent();
     this.updatePanel();
   }
