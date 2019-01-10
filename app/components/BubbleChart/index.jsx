@@ -22,7 +22,7 @@ class BubbleChart extends React.PureComponent {
       <div className="BubbleChart">
         <InstrumentBubble
           instrumentChartData={instrumentChartData1}
-          width={450}
+          width={525}
           height={400}
           onClick={onClick}
         />
