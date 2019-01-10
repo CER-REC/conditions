@@ -27,6 +27,7 @@ class InstrumentBubble extends React.PureComponent {
     instrumentChartData: PropTypes.instanceOf(Object).isRequired, // Placeholder
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired,
   }
 
   circleRender = (nodes, onClick) => (

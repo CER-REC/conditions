@@ -1,14 +1,14 @@
 {
-    "mocha.files.glob": "app/**/*.spec.*",
+    "mocha.files.glob": "app/**/{spec,*.spec}.*",
     "mocha.runTestsOnSave": "true",
     "mocha.showInExplorer": true,
     "mocha.requires": [
         "@babel/register",
-        "test/enzyme",
-        "test/ignoreExtensions"
+        "app/tests/enzyme",
+        "app/tests/ignoreExtensions"
     ],
     "mocha.options": {
-        "file": ["test/jsdom"]
+        "file": ["app/tests/jsdom"]
     },
     "mocha.coverage": {
         "enable": false
