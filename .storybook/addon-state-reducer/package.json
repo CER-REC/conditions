@@ -27,5 +27,12 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
     "undefined": "^0.1.0"
+  },
+  "dependencies": {
+    "clone": "^2.1.2",
+    "debounce": "^1.2.0",
+    "proptypes": "^1.1.0",
+    "react": "^16.7.0",
+    "shallowequal": "^1.1.0"
   }
 }
