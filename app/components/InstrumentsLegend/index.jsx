@@ -13,14 +13,14 @@ const title = 'Instrument';
 const getFormattedData = (data) => {
   const categoryIndicators = {};
 
-  data.forEach((instrumentsData) => {
-    const type = instrumentsData.parentName;
+  data.forEach((instrument) => {
+    const type = instrument.parentName;
 
-    instrumentsData.children.forEach((instrumentData) => {
-      const indicators = categoryIndicators[instrumentData.category] || { types: [] };
+    instrument.children.forEach((commodity) => {
+      const indicators = categoryIndicators[commodity.category] || { types: [] };
 
-      categoryIndicators[instrumentData.category] = indicators;
-      indicators.color = instrumentData.color;
+      categoryIndicators[commodity.category] = indicators;
+      indicators.color = commodity.color;
 
       indicators.types.push(type);
     });
@@ -56,7 +56,7 @@ const getLegendDataItems = (data, indicatorTypes) => {
 };
 
 const InstrumentsLegend = (props) => {
-  const indicatorTypes = props.data.map(instrumentsData => instrumentsData.parentName);
+  const indicatorTypes = props.data.map(instrument => instrument.parentName);
   const headers = indicatorTypes.map(type => (
     <span key={type} className="indicator">{t(['instrumentsLegend', 'title', type])}</span>
   ));
