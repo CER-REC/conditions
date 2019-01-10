@@ -32,14 +32,16 @@ class StreamGraph extends React.Component {
       showControl: false,
       positionControl: 30,
       numOfConditions: 0,
+      yHeight: '20',
     };
   }
 
-  handleOnChange = (positionControl, numOfConditions, showControl) => {
+  handleOnChange = (positionControl, numOfConditions, showControl, yHeight) => {
     this.setState({
       positionControl,
       numOfConditions,
       showControl,
+      yHeight,
     });
   };
 
@@ -55,7 +57,7 @@ class StreamGraph extends React.Component {
             strokeWidth: 0,
           },
         }}
-        // interpolation="natural"
+        interpolation="natural"
       />
     ));
     return streamLayers;
@@ -107,8 +109,7 @@ class StreamGraph extends React.Component {
                 positionControl={this.state.positionControl}
                 numOfConditions={this.state.numOfConditions}
                 projectData={this.props.projectData}
-                yHeight="20"
-                controlTopBaseline="10"
+                yHeight={this.state.yHeight}
               />
             )
           }

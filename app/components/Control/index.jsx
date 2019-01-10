@@ -5,7 +5,6 @@ import './styles.scss';
 
 const Control = props => (
   <g transform={props.positionControl} className="Control">
-    <text x="0" y="15" textAnchor="middle">{props.numOfConditionsLabel}</text>
     <line
       strokeDasharray="4.051 4.051"
       x1="0"
@@ -15,19 +14,25 @@ const Control = props => (
       stroke="rgb(209, 5, 122)"
       strokeWidth="1"
     />
-    <path
-      d="M 5 5 L 15 5 L 10 15 z"
-      fill="rgb(209, 5, 122)"
-      transform={`translate(-10, ${props.controlTopBaseline})`}
-    />
+    <g transform={`translate(-10, ${props.yHeight - 10})`}>
+      <path
+        d="M 5 5 L 15 5 L 10 15 z"
+        fill="rgb(209, 5, 122)"
+      />
+      <rect x="0" y="-5" width="20" height="10" fill="white" />
+      <text x="10" y="5" textAnchor="middle">{props.numOfConditionsLabel}</text>
+    </g>
   </g>
 );
 
 Control.propTypes = {
   positionControl: PropTypes.string.isRequired,
   numOfConditionsLabel: PropTypes.number.isRequired,
-  yHeight: PropTypes.string.isRequired,
-  controlTopBaseline: PropTypes.string.isRequired,
+  yHeight: PropTypes.string,
+};
+
+Control.defaultProps = {
+  yHeight: '20',
 };
 
 export default Control;

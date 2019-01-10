@@ -7,7 +7,6 @@ import StackGroup from '.';
 const positionControl = 'translate(30, 30)';
 const numOfConditions = 213;
 const yHeight = '20';
-const controlTopBaseline = '10';
 const onDragStart = () => {};
 const onDragMove = () => {};
 const onDragStop = () => {};
@@ -31,7 +30,6 @@ describe('Components|Streamgraph/StackGroup', () => {
           onDragMove={onDragMove}
           onDragStop={onDragStop}
           yHeight={yHeight}
-          controlTopBaseline={controlTopBaseline}
         >
         children={children}
         </StackGroup>,

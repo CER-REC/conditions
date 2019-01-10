@@ -7,7 +7,6 @@ import ReadMe from './README.md';
 const positionControl = 'translate(30, 30)';
 const numOfConditions = 213;
 const yHeight = '20';
-const controlTopBaseline = '10';
 const onDragStart = () => {};
 const onDragMove = () => {};
 const onDragStop = () => {};
@@ -30,7 +29,6 @@ storiesForComponent('Components|StreamGraph/StackGroup', module, ReadMe)
         onDragMove={onDragMove}
         onDragStop={onDragStop}
         yHeight={yHeight}
-        controlTopBaseline={controlTopBaseline}
       >
       children={children}
       </StackGroup>

@@ -10,7 +10,12 @@ class StackGroup extends React.PureComponent {
     this.isDragging = false;
   }
 
-  getConditionDates() {
+  setControlBool = () => {
+    const showControl = true;
+    return showControl;
+  }
+
+  getConditionDates = () => {
     let conditionDates = this.props.projectData.reduce((acc, next) => {
       next.graphData.forEach((v) => {
         if (!acc[v.date]) { acc[v.date] = 0; }
@@ -23,53 +28,57 @@ class StackGroup extends React.PureComponent {
   }
 
   getDateCount = () => {
-    const dateCount = this.props.projectData[0].graphData.map(k => k.date).length;
+    const dateCount = this.props.projectData[0].graphData.map(k => k.date).length - 1;
     return dateCount;
   }
 
+  getChartWidth = () => {
+    const groupWidth = 350;
+    return groupWidth;
+  }
+
+  getSectionWidth = () => {
+    const sectionWidth = this.getChartWidth() / this.getDateCount();
+    return sectionWidth;
+  }
+
   handleArrowKey = (event) => {
-    if ((event.key !== 'ArrowLeft' || event.keyCode !== 37) && (event.key !== 'ArrowRight' || event.keyCode !== 39)) {
+    if ((event.key !== 'ArrowLeft' || event.keyCode !== 37)
+      && (event.key !== 'ArrowRight' || event.keyCode !== 39)) {
       return;
     }
 
-    const showControl = true;
     const prevPosition = this.props.positionControl;
-
-    const groupPosition = event.target.getClientRects()[0];
-    const renderedWidth = groupPosition.right - groupPosition.left;
-    const groupWidth = 350;
-    const scale = renderedWidth / groupWidth; // 1.333
-
-    const sectionWidth = groupWidth / this.getDateCount();
 
     const direction = (event.key === 'ArrowRight' || event.keyCode === 39) ? 1 : -1;
 
-    const positionControl = prevPosition + (direction * sectionWidth);
-    console.log(prevPosition, sectionWidth, direction);
-    if (positionControl < 0 || positionControl > groupWidth) {
+    const positionControl = prevPosition + (direction * this.getSectionWidth());
+    if (positionControl < 0 || positionControl > this.getChartWidth()) {
       return;
     }
-    console.log(positionControl);
 
     const numOfConditionValue = this.getConditionDates();
-    const previousSection = prevPosition / sectionWidth;
+    const previousSection = prevPosition / this.getSectionWidth();
+
     const numOfConditions = numOfConditionValue[Math.round(previousSection) + direction];
 
-    this.props.onChange(positionControl, numOfConditions, showControl);
+    const yHeight = '20';
+
+    this.props.onChange(positionControl, numOfConditions, this.setControlBool(), yHeight);
   };
 
   getClosestYear = (event) => {
     const groupPosition = event.target.getClientRects()[0];
     const renderedWidth = groupPosition.right - groupPosition.left;
-    const groupWidth = 350;
-    const scale = renderedWidth / groupWidth;
-
-    const sectionWidth = groupWidth / (this.getDateCount() - 1);
+    const scale = renderedWidth / this.getChartWidth();
 
     const clickArea = (event.clientX - groupPosition.x) / scale;
-    const currentSection = Math.floor((clickArea + (sectionWidth / 2)) / sectionWidth);
+    const currentSection = Math.floor(
+      (clickArea + (this.getSectionWidth() / 2))
+    / this.getSectionWidth(),
+    );
 
-    const positionControl = (sectionWidth * currentSection);
+    const positionControl = (this.getSectionWidth() * currentSection);
 
     return [positionControl, currentSection];
   };
@@ -82,11 +91,14 @@ class StackGroup extends React.PureComponent {
   onDragMove = (event) => {
     if (this.isDragging === false) { return; }
     event.stopPropagation();
-    const showControl = true;
+
     const [positionControl, currentSection] = this.getClosestYear(event);
     const numOfConditionValue = this.getConditionDates();
     const numOfConditions = numOfConditionValue[currentSection];
-    this.props.onChange(positionControl, numOfConditions, showControl);
+
+    const yHeight = '20';
+
+    this.props.onChange(positionControl, numOfConditions, this.setControlBool(), yHeight);
   }
 
   onDragStop = (event) => {
@@ -100,11 +112,50 @@ class StackGroup extends React.PureComponent {
 
     const [positionControl, currentSection] = this.getClosestYear(event);
 
-    const showControl = true;
     const numOfConditionValue = this.getConditionDates();
     const numOfConditions = numOfConditionValue[currentSection];
 
-    this.props.onChange(positionControl, numOfConditions, showControl);
+    const renderedChartHeight = 270;
+    const controlMaxHeight = 220;
+    const scale = controlMaxHeight / renderedChartHeight; // 0.81
+
+    // const yHeight = ((numOfConditions / scale) * 2) + 40
+
+    // max 684
+
+    // const currentSection = Math.floor(
+    //   (clickArea + (this.getSectionWidth() / 2))
+    // / this.getSectionWidth(),
+    // );
+
+    // const positionControl = (this.getSectionWidth() * currentSection);
+
+    let yHeight = '0'; // max height is 220 : min = 0
+
+    if (numOfConditions === 25) {
+      yHeight = '210';
+    } else if (numOfConditions === 65) {
+      yHeight = '200';
+    } else if (numOfConditions === 103) {
+      yHeight = '185';
+    } else if (numOfConditions === 136) {
+      yHeight = '175';
+    } else if (numOfConditions === 310) {
+      yHeight = '125';
+    } else if (numOfConditions === 437) {
+      yHeight = '85';
+    } else if (numOfConditions === 567) {
+      yHeight = '45';
+    } else if (Math.max(...numOfConditionValue) === numOfConditions) {
+      yHeight = '15';
+    }
+
+    this.props.onChange(
+      positionControl,
+      numOfConditions,
+      this.setControlBool(),
+      yHeight,
+    );
   }
 
   handleOutsideClick = (event) => {
@@ -115,22 +166,6 @@ class StackGroup extends React.PureComponent {
   }
 
   render() {
-
-    const offset = 50;
-    const sectionWidth = 50;
-    const guides = [];
-    for (var i = 0; i < 8; i++) {
-      guides.push(<line
-        key={`test-${i}`}
-        strokeDasharray="4.051 4.051"
-        x1={offset + (sectionWidth * i)}
-        x2={offset + (sectionWidth * i)}
-        y1="0"
-        y2="320"
-        stroke="rgb(209, 5, 122)"
-        strokeWidth="1"
-      />)
-    }
     return (
       <g
         ref={(node) => { this.node = node; }}
@@ -147,13 +182,12 @@ class StackGroup extends React.PureComponent {
         tabIndex="0"
       >
         {this.props.children}
-        {guides}
         {!this.props.showControl ? null : (
           <Control
             positionControl={`translate(${this.props.positionControl + 50}, 30)`}
             numOfConditionsLabel={this.props.numOfConditions}
             yHeight={this.props.yHeight}
-            controlTopBaseline={this.props.controlTopBaseline}
+            controlTextValue={this.props.controlTextValue}
           />
         )}
       </g>
@@ -166,22 +200,19 @@ StackGroup.propTypes = {
   showControl: PropTypes.bool.isRequired,
   numOfConditions: PropTypes.number.isRequired,
   positionControl: PropTypes.number.isRequired,
-  yHeight: PropTypes.string.isRequired,
-  controlTopBaseline: PropTypes.string.isRequired,
   projectData: PropTypes.arrayOf(PropTypes.shape({
-    color: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    key: PropTypes.number.isRequired,
     graphData: PropTypes.arrayOf(PropTypes.shape({
       date: PropTypes.number.isRequired,
       count: PropTypes.number.isRequired,
     })).isRequired,
   })).isRequired,
   onChange: PropTypes.func.isRequired,
+  yHeight: PropTypes.string,
 };
 
 StackGroup.defaultProps = {
   children: null,
+  yHeight: '20',
 };
 
 export default StackGroup;
