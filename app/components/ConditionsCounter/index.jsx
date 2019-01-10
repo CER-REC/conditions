@@ -17,13 +17,14 @@ const ConditionsCounter = (props) => {
     ? (props.radius) : 10;
   const lineY = (props.radius > 0)
     ? 15 : 10;
-  const circleExists = (props.radius > 0) ? (
-    <circle
-      className="selectedCircle"
-      cx={props.radius}
-      cy={props.yBottom + props.radius}
-      r={props.radius}
-    />)
+  const circleExists = (props.radius > 0)
+    ? (
+      <circle
+        className="selectedCircle"
+        cx={props.radius}
+        cy={props.yBottom + props.radius}
+        r={props.radius}
+      />)
     : (null);
   return (
     // TODO: Remove svg tag once integrated with parent svg
