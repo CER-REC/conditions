@@ -13,7 +13,7 @@ const t = (searchList) => {
 };
 
 const LegendItem = (props) => {
-  let stream;
+  let stream = null;
   const type = props.all ? 'all' : 'title';
 
   if (!props.all) {

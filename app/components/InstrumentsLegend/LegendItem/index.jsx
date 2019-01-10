@@ -12,7 +12,7 @@ const t = (searchList) => {
 };
 
 const LegendItem = (props) => {
-  let indicators;
+  let indicators = null;
   const type = props.all ? 'all' : 'title';
 
   if (!props.all) {
