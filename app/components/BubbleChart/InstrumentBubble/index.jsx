@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 import handleInteraction from '../../../utilities/handleInteraction';
-
+import './styles.scss';
 /* TODO:
 1) Check if the text is overlapping another and change arc accordingly
 2) Check if the inside text is smaller than circle radius, and shift the text
@@ -41,15 +41,11 @@ class InstrumentBubble extends React.PureComponent {
             <g key={node.data.parentName}>
               <path id={`${node.data.parentName}path`} d={textCurvedPath} style={{ fill: 'none', stroke: 'transparent' }} />
               <circle
+                className="CommodityCircle"
                 {...handleInteraction(onClick)}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
                 tabIndex="0"
-                style={{
-                  fill: 'transparent',
-                  stroke: '#EDEDED',
-                  strokeWidth: 2,
-                }}
               />
               <text>
                 <textPath href={`#${node.data.parentName}path`} textAnchor="middle" startOffset="50%">
@@ -59,20 +55,27 @@ class InstrumentBubble extends React.PureComponent {
             </g>
           );
         }
+        // Determines text position and color
+        const textY = node.r > node.value ? node.y - (node.r * 0.45) : node.y;
+        const textColor = node.r > node.value ? 'black' : 'white';
         // Nested Children circles (ie Instruments)
         return (
           <g
             key={node.data.name}
           >
             <circle
-              {...handleInteraction(onClick)}
+              className="InstrumentTextCircle"
               r={node.r}
-              stroke="none"
+              transform={`translate(${node.x} ${node.y})`}
+            />
+            <circle
+              {...handleInteraction(onClick)}
+              r={node.value}
               transform={`translate(${node.x} ${node.y})`}
               tabIndex="0"
-              style={{ fill: pickColor(node.data.category), stroke: 'transparent' }}
+              style={{ fill: pickColor(node.data.category) }}
             />
-            <text x={node.x} y={node.y} textAnchor="middle">{node.data.name}</text>
+            <text x={node.x} y={textY} textAnchor="middle" stroke="transparent" fill={textColor}>{node.data.name}</text>
           </g>
         );
       })
@@ -81,10 +84,24 @@ class InstrumentBubble extends React.PureComponent {
   d3HierarchyCalculation() {
     const { width, height, instrumentChartData } = this.props;
     //  d3 pack generates a function to fit data into tightly packed circles
+    // Renders all the circle propertly with proper thickness so it always fits the circle.
     const pack = d3.pack()
       .size([width, height])
-      .padding(node => (node.depth === 0 ? 0 : 10))
-      .radius(r => r.value);
+      .padding(node => (node.depth === 0 ? 0 : 5))
+      .radius((node) => {
+        const tempNode = node;
+        const characterWidth = 5;
+        const textLength = (node.data.name).length * characterWidth;
+        const textHeight = 15;
+        const textLengthExceeds = (tempNode.value * 2 <= textLength);
+        if (textLengthExceeds) {
+          return (tempNode.value) + (textLength); // buffer
+        }
+        if (tempNode.value < textHeight) {
+          return tempNode.value + textHeight;
+        }
+        return node.value;
+      });
     // creates the root node using d3 hierarchy similar to a tree layout
     const root = d3.hierarchy(instrumentChartData)
       .sum(totalData => totalData.value)
@@ -95,13 +112,10 @@ class InstrumentBubble extends React.PureComponent {
   render() {
     const { width, height, onClick } = this.props;
     const d3Calculation = this.d3HierarchyCalculation();
-
     return (
-      <div className="InstrumentBubble">
-        <svg width={width} height={height}>
-          {this.circleRender(d3Calculation, onClick)}
-        </svg>
-      </div>
+      <svg width={width} height={height}>
+        {this.circleRender(d3Calculation, onClick)}
+      </svg>
     );
   }
 }
