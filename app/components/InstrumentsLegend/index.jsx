@@ -17,20 +17,25 @@ const getFormattedData = (data) => {
     const type = instrument.parentName;
 
     instrument.children.forEach((commodity) => {
-      const indicators = categoryIndicators[commodity.category] || { types: [] };
+      let indicators = categoryIndicators[commodity.category];
 
-      categoryIndicators[commodity.category] = indicators;
-      indicators.color = commodity.color;
+      if (!indicator) {
+        indicators = {
+          types: [],
+          color: commodity.color,
+        };
+        categoryIndicators[commodity.category] = indicators;
+      }
 
       indicators.types.push(type);
     });
   });
 
   // TODO: Sorting the formatted data
-  const formattedData = Object.keys(categoryIndicators).map(key => ({
-    name: key,
-    indicators: categoryIndicators[key].types,
-    color: categoryIndicators[key].color,
+  const formattedData = Object.entries(categoryIndicators).map(([category, indicator]) => ({
+    name: category,
+    indicators: indicator.types,
+    color: indicator.color,
   }));
 
   return formattedData;
