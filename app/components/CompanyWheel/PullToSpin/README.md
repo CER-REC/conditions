@@ -1,6 +1,6 @@
 # PullToSpin
 
-The PullToSpin component is in charge of triggering the randomized spinning of the company and location wheel allowing for the vizualisation of different companies and regions. 
+The PullToSpin component is in charge of triggering the randomized spinning of the company and location wheel allowing for the visualization of different companies and regions. 
 
 Takes in a callback onSpinClick which is triggered when the button is pushed.
 
