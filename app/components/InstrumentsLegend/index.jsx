@@ -57,7 +57,7 @@ const getLegendDataItems = (data, indicatorTypes) => {
 const InstrumentsLegend = (props) => {
   const indicatorTypes = props.data.map(instrumentsData => instrumentsData.parentName);
   const headers = indicatorTypes.map(type => (
-    <span className="indicator">{t(['instrumentsLegend', 'title', type])}</span>
+    <span key={type} className="indicator">{t(['instrumentsLegend', 'title', type])}</span>
   ));
   const formattedData = getFormattedData(props.data);
   const dataIndex = formattedData.findIndex(indicatorsData => (
