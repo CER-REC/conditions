@@ -35,11 +35,9 @@ class InstrumentBubble extends React.PureComponent {
         // Renders parent circles (ie Energy bubbles)
         if (node.depth === 1) {
           // Create curved path for parentNode text
-          const textCurvedPath = `M ${(node.x - node.r)},
-          ${(node.y - 1)} A ${node.r}
-          ,${node.r} 0 0,1 
-          ${(node.x + node.r)},
-          ${(node.y - 1)}`;
+          const textCurvedPath = `
+          M ${(node.x - node.r)} ${(node.y - 1)}
+          A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
           return (
             <g key={node.data.parentName}>
               <path
@@ -52,7 +50,6 @@ class InstrumentBubble extends React.PureComponent {
                 {...handleInteraction(this.props.onClick)}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
-                tabIndex="0"
               />
               <text>
                 <textPath
@@ -85,9 +82,7 @@ class InstrumentBubble extends React.PureComponent {
               {...handleInteraction(this.props.onClick)}
               r={node.value}
               transform={`translate(${node.x} ${node.y})`}
-              tabIndex="0"
               style={{ fill: pickColor(node.data.category) }}
-              
             />
             <text
               x={textX}
