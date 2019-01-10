@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
@@ -86,7 +87,7 @@ const InstrumentsLegend = (props) => {
   }
 
   return (
-    <div className={`InstrumentsLegend ${props.className}`}>
+    <div className={classNames('InstrumentsLegend', props.className)}>
       <span className="headers">
         {headers}
       </span>

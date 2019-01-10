@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './styles.scss';
 
 // TODO: This is a mock, replace with the translation function
@@ -25,7 +26,7 @@ const LegendItem = (props) => {
   }
 
   return (
-    <div className={`LegendItem ${props.className}`}>
+    <div className={classNames('LegendItem', props.className)}>
       <span className="indicators">
         {indicators}
       </span>

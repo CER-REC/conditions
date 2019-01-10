@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faAngleUp,
@@ -35,7 +36,7 @@ const List = (props) => {
     return (
       <li
         key={item.key || item}
-        className={`List-Item ${isSelected ? 'selected' : ''}`}
+        className={classNames('List-Item', { selected: isSelected })}
       >
         {!isSelected || selectedIndex === 0 ? null : (
           <CircleContainer size={arrowSize} onClick={() => props.onChange(i - 1)} className="arrowPrevious">
@@ -54,7 +55,13 @@ const List = (props) => {
     );
   });
   return (
-    <div className={`List ${props.horizontal ? 'horizontal' : ''} ${props.guideLine ? 'guideLine' : ''} ${props.className}`}>
+    <div
+      className={classNames(
+        'List',
+        props.className,
+        { horizontal: props.horizontal, guideLine: props.guideLine },
+      )}
+    >
       <ul>{items}</ul>
     </div>
   );

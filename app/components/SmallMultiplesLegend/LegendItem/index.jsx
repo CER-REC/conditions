@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { VictoryArea } from 'victory';
 import './styles.scss';
 
@@ -39,7 +40,13 @@ const LegendItem = (props) => {
   }
 
   return (
-    <div className={`LegendItem ${props.className} ${props.all ? 'all' : ''} ${props.faded ? 'faded' : ''}`}>
+    <div
+      className={classNames(
+        'LegendItem',
+        props.className,
+        { all: props.all, faded: props.faded },
+      )}
+    >
       <span className="stream">
         {stream}
       </span>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
@@ -68,9 +69,9 @@ const SmallMultiplesLegend = (props) => {
   }
 
   return (
-    <div className={`SmallMultiplesLegend ${props.className}`}>
+    <div className={classNames('SmallMultiplesLegend', props.className)}>
       <List
-        className={`${hasHighlight ? 'faded' : ''}`}
+        className={classNames({ faded: hasHighlight })}
         items={legendDataItems}
         selected={selectedIndex}
         onChange={onItemChange}
