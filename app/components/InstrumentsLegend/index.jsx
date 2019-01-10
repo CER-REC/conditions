@@ -19,7 +19,7 @@ const getFormattedData = (data) => {
     instrument.children.forEach((commodity) => {
       let indicators = categoryIndicators[commodity.category];
 
-      if (!indicator) {
+      if (!indicators) {
         indicators = {
           types: [],
           color: commodity.color,
