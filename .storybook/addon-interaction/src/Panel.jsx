@@ -34,12 +34,17 @@ export default class Panel extends React.PureComponent {
     this.stopListeningOnStory();
   }
 
-  update = (data) => this.setState({ ...data, loading: false });
+  update = data => this.setState({ ...data, loading: false });
+
   markLoading = () => this.setState({ loading: true });
 
   render() {
     if (!this.props.active) { return null; }
     if (this.state.loading) { return 'Loading...'; }
+    const { data, logs, actions } = this.state;
+    if (!Object.keys(data).length && !logs.length && !actions.length) {
+      return 'No interactions';
+    }
     return (
       <div>
         <h3>State</h3>
