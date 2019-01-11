@@ -5,24 +5,15 @@ import ReadMe from './README.md';
 
 const rectItems = [
   {
-    width: 20,
-    height: 10,
-    x: 0,
-    y: 0,
+    value: 12,
     fill: 'tomato',
   },
   {
-    width: 60,
-    height: 50,
-    x: 0,
-    y: 0,
+    value: 66,
     fill: 'red',
   },
   {
-    width: 40,
-    height: 20,
-    x: 0,
-    y: 0,
+    value: 33,
     fill: 'pink',
   },
 ];
@@ -30,11 +21,17 @@ const rectItems = [
 storiesForComponent('Components|BarContainer', module, ReadMe)
 
   .add('default', () => (
-    <BarContainer title="ConditionTitle" desc="conditionDesc" items={rectItems} defaultHeight="12" />
+    <BarContainer
+      title="ConditionTitle"
+      desc="conditionDesc"
+      items={rectItems}
+      size={12}
+    />
   ))
 
-  .add('verticle bars', () => (
+  .add('vertical bars', () => (
     <BarContainer
+      size={30}
       title="ConditionTitle"
       desc="conditionDesc"
       items={rectItems}
@@ -45,10 +42,47 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
   .add('standalone', () => (
     <svg>
       <BarContainer
+        size={12}
         title="ConditionTitle"
         desc="conditionDesc"
         items={rectItems}
         standalone
       />
     </svg>
+  ))
+
+  .add('scale horizontal and 2x scale', () => (
+    <BarContainer
+      title="ConditionTitle"
+      desc="conditionDesc"
+      items={rectItems}
+      size={12}
+      scale={2}
+    />
+  ))
+
+  .add('vertical bars with 2x scale', () => (
+    <BarContainer
+      size={30}
+      title="ConditionTitle"
+      desc="conditionDesc"
+      items={rectItems}
+      vert
+      scale={2}
+    />
+  ))
+
+  .add('vertical bars with 2x scale and standalone', () => (
+    <svg>
+      <BarContainer
+        size={30}
+        title="ConditionTitle"
+        desc="conditionDesc"
+        items={rectItems}
+        vert
+        scale={2}
+        standalone
+      />
+    </svg>
   ));
+

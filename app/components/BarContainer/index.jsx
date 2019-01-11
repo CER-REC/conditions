@@ -3,32 +3,63 @@ import PropTypes from 'prop-types';
 import Bar from './Bar';
 import './styles.scss';
 
+//Possible factor into class compoenent to have scale() fucntion
+
 const BarContainer = (props) => {
   if (props.items.length === 0) { return null; }
-  let barContainerWidth = 0;
-  let barContainerHeight = 0;
 
-  const maximumVerticalBarHeight = Math.max(...props.items.map((bar) => {
-    const { height } = bar; return height;
+  const maximumVerticalBarHeight = props.scale * Math.max(...props.items.map((bar) => {
+    const { value } = bar; return value;
   }));
 
-  barContainerHeight = props.vert
-    ? barContainerHeight = maximumVerticalBarHeight
-    : barContainerHeight = props.value;
+  let barContainerWidth = 0;
 
-  const Bars = props.items.map((bar) => {
-    const barY = props.vert
-      ? maximumVerticalBarHeight - bar.height
-      : props.value;
-    const Item = <Bar {...bar} x={barContainerWidth} y={barY} />;
-    barContainerWidth += bar.width;
-    if (bar.height >= barContainerHeight) barContainerHeight = bar.height;
+  let barContainerHeight = props.vert
+    ? maximumVerticalBarHeight * props.scale
+    : props.size * props.scale;
+
+  const Bars = props.items.map((bar, index) => {
+    const y = props.vert
+      ? maximumVerticalBarHeight - bar.value * props.scale
+      : 0;
+
+    const x = props.vert
+      ? props.size * index * props.scale
+      : barContainerWidth * props.scale;
+
+    const height = props.vert
+      ? bar.value * props.scale
+      : barContainerHeight * props.scale;
+
+    const width = props.vert
+      ? props.size * props.scale
+      : bar.value * props.scale;
+
+    const Item = (
+      <Bar
+        {...bar}
+        x={x}
+        y={y}
+        width={width}
+        height={height}
+      />);
+    barContainerWidth += bar.value;
+    if (props.vert) barContainerHeight = maximumVerticalBarHeight;
+    if (props.vert) barContainerWidth = props.size * (index + 1);
     return Item;
   });
 
+  if (props.scale) barContainerWidth *= props.scale;
+
   const Container = !props.standalone
     ? (
-      <div className="BarContainer" style={{ height: barContainerHeight, width: barContainerWidth }}>
+      <div
+        className="BarContainer"
+        style={{
+          height: barContainerHeight,
+          width: barContainerWidth,
+        }}
+      >
         <svg width={barContainerWidth} height={barContainerHeight}>
           <title>{props.title}</title>
           <desc>{props.desc}</desc>
@@ -36,13 +67,13 @@ const BarContainer = (props) => {
         </svg>
       </div>)
     : (
-      <>
+      <React.Fragment>
         <g width={barContainerWidth} height={barContainerHeight}>
           <title>{props.title}</title>
           <desc>{props.desc}</desc>
           {Bars}
         </g>
-      </>);
+      </React.Fragment>);
   return Container;
 };
 
@@ -53,7 +84,7 @@ BarContainer.propTypes = {
   vert: PropTypes.bool,
   scale: PropTypes.number,
   standalone: PropTypes.bool,
-  value: PropTypes.number.isRequired,
+  size: PropTypes.number.isRequired,
 };
 
 BarContainer.defaultProps = {
