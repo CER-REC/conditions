@@ -1,7 +1,7 @@
 import React from 'react';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
-import withInteraction, { getInteractionProps } from '../../../.storybook/addon-interaction';
 import List from '.';
 import ReadMe from './README.md';
 
@@ -18,17 +18,15 @@ storiesForComponent('Components|List', module, ReadMe)
   .add('basic usage', () => (
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
-      onChange={v => alert(v)}
       {...getInteractionProps()}
     />
   ))
   .add('selected', () => (
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
-      selected={1}
-      onChange={v => alert(v)}
+      {...getInteractionProps()}
     />
-  ))
+  ), { interaction: { state: { selected: 1 } } })
   .add('component items', () => (
     <List
       items={[
@@ -36,27 +34,27 @@ storiesForComponent('Components|List', module, ReadMe)
         <em key="em">Emphasis</em>,
         <div key="div" style={{ width: 50, height: 50, background: 'red' }} />,
       ]}
-      onChange={v => alert(v)}
+      {...getInteractionProps()}
     />
   ))
   .add('itemInteractions', () => (
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
-      onChange={v => alert(v)}
       itemInteractions={false}
+      {...getInteractionProps()}
     />
   ))
   .add('horizontal', () => (
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
-      onChange={() => {}}
       horizontal
+      {...getInteractionProps()}
     />
   ))
   .add('guide line', () => (
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
-      onChange={() => {}}
       guideLine
+      {...getInteractionProps()}
     />
   ));
