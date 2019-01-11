@@ -3,61 +3,50 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const ChartIndicator = (props) => {
-  const svgDefaultHeight = (props.yBottom + props.yTop);
-  const svgHeight = (props.radius > 0)
-    ? svgDefaultHeight + props.radius * 2
-    : svgDefaultHeight;
-    // TODO: Remove once integrated with parent svg
-  const svgWidth = (props.radius > 0)
-    ? (props.radius * 2) : 20;
-    // TODO: Remove once integrated with parent svg
-  const pathTransform = (props.radius > 0)
-    ? (`translate(${props.radius - 10}, 5)`) : 'translate(0, 0)';
-  const lineX = (props.radius > 0)
-    ? (props.radius) : 10;
-  const lineY = (props.radius > 0)
-    ? 15 : 10;
+  const lineY = 10;
   const circleExists = (props.radius <= 0)
     ? null
     : (
       <circle
         className="selectedCircle"
-        cx={props.radius}
-        cy={props.yBottom + props.radius}
-        r={props.radius}
+        cx={0}
+        cy={(props.yBottom) + props.radius}
+        r={props.radius + 2}
       />
     );
-  return (
-    // TODO: Remove svg tag once integrated with parent svg
-    <svg height={svgHeight} width={svgWidth} className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
-      <g>
+  if (props.display) {
+    return (
+      <g className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
         <path
           className="arrow"
           d="M 5 5 L 15 5 L 10 15 z"
-          transform={pathTransform}
+          transform="translate(-10,0)"
         />
         <line
           className="line"
-          x1={lineX}
-          x2={lineX}
+          x1={0}
+          x2={0}
           y1={lineY}
           y2={props.yBottom}
         />
         {circleExists}
       </g>
-    </svg>
-  );
+    );
+  }
+  return null;
 };
 
 ChartIndicator.propTypes = {
   x: PropTypes.number.isRequired,
   yBottom: PropTypes.number.isRequired,
-  yTop: PropTypes.number.isRequired,
+  yTop: PropTypes.number,
   radius: PropTypes.number,
+  display: PropTypes.bool.isRequired,
 };
 
 ChartIndicator.defaultProps = {
   radius: 0,
+  yTop: 0,
 };
 
 export default ChartIndicator;

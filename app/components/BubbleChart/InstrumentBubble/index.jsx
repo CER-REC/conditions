@@ -30,7 +30,7 @@ class InstrumentBubble extends React.PureComponent {
     onClick: PropTypes.func.isRequired,
   }
 
-  circleRender = (nodes, onClick) => (
+  circleRender = nodes => (
     nodes.filter(v => (v.depth !== 0))
       .map((node) => {
         // Renders parent circles (ie Energy bubbles)
@@ -42,7 +42,7 @@ class InstrumentBubble extends React.PureComponent {
               <path id={`${node.data.parentName}path`} d={textCurvedPath} style={{ fill: 'none', stroke: 'transparent' }} />
               <circle
                 className="CommodityCircle"
-                {...handleInteraction(onClick)}
+                {...handleInteraction(this.props.onClick, [node.r, node.x, node.y])}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
                 tabIndex="0"
@@ -69,7 +69,7 @@ class InstrumentBubble extends React.PureComponent {
               transform={`translate(${node.x} ${node.y})`}
             />
             <circle
-              {...handleInteraction(onClick)}
+              {...handleInteraction(this.props.onClick, [node.r, node.x, node.y])}
               r={node.value}
               transform={`translate(${node.x} ${node.y})`}
               tabIndex="0"
@@ -113,9 +113,9 @@ class InstrumentBubble extends React.PureComponent {
     const { width, height, onClick } = this.props;
     const d3Calculation = this.d3HierarchyCalculation();
     return (
-      <svg width={width} height={height}>
+      <g width={width} height={height}>
         {this.circleRender(d3Calculation, onClick)}
-      </svg>
+      </g>
     );
   }
 }
