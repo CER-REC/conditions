@@ -1,11 +1,35 @@
 import React from 'react';
+import { setIntlConfig, withIntl } from 'storybook-addon-intl';
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 import { configureViewport } from '@storybook/addon-viewport';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
 
+// Load Locale Data
+import { addLocaleData } from 'react-intl';
+import enLocaleData from 'react-intl/locale-data/en';
+import frLocaleData from 'react-intl/locale-data/fr';
+
 import '../app/styles.scss';
+
+addLocaleData(enLocaleData);
+addLocaleData(frLocaleData);
+
+const getMessages = (locale) => messages[locale];
+
+const messages = {
+  'en': {},
+  'fr': {},
+};
+
+setIntlConfig({
+  locales: ['en', 'fr'],
+  defaultLocale: 'en',
+  getMessages
+});
+
+addDecorator(withIntl);
 
 const viewports = {
   fullscreen: {

@@ -1,0 +1,17 @@
+{
+  "components": {
+    "TrendButton": {
+      "buttonText": "Trends & Definitions",
+      "features": {
+        "Theme": "Theme",
+        "Instrument": "Instrument",
+        "Phase": "Phase",
+        "Type": "Type",
+        "Status": "Status",
+        "Filing": "Filing"
+      }
+    }
+  },
+  "views": {}
+}
+

@@ -1,0 +1,17 @@
+{
+  "components": {
+    "TrendButton": {
+      "text": "",
+      "features" : {
+        "Theme": "",
+        "Instrument": "",
+        "Phase": "",
+        "Type": "",
+        "Status": "",
+        "Filing": ""
+      }
+    }
+  },
+  "views": {}
+}
+
