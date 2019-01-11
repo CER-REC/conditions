@@ -98,5 +98,5 @@ const instrumentChartData = {
 storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
-    <InstrumentBubble instrumentChartData={instrumentChartData} width={450} height={450} onClick={() => alert('Clicked')} />
+    <InstrumentBubble instrumentChartData={instrumentChartData} width={500} height={450} onClick={() => alert('Clicked')} />
   ));

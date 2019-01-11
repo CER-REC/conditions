@@ -25,7 +25,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   className: '',
   prefix: 'fas',
-  size: '',
+  size: null,
   color: '',
 };
 export default Icon;

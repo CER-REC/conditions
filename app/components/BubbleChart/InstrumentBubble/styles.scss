@@ -1,10 +1,12 @@
-.CommodityCircle{
-  fill: transparent;
-  stroke: #EDEDED;
-  stroke-width: 2;
-}
+.InstrumentBubble{
+  .CommodityCircle{
+    fill: transparent;
+    stroke: #EDEDED;
+    stroke-width: 2;
+  }
 
-.InstrumentTextCircle {
-  fill: transparent;
-  stroke: transparent;
+  .InstrumentTextCircle {
+    fill: transparent;
+    stroke: transparent;
+  }
 }

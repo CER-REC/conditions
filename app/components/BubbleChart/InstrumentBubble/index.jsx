@@ -36,19 +36,28 @@ class InstrumentBubble extends React.PureComponent {
         // Renders parent circles (ie Energy bubbles)
         if (node.depth === 1) {
           // Create curved path for parentNode text
-          const textCurvedPath = `M ${(node.x - node.r)},${(node.y - 1)} A ${node.r},${node.r} 0 0,1 ${(node.x + node.r)},${(node.y - 1)}`;
+          const textCurvedPath = `
+          M ${(node.x - node.r)} ${(node.y - 1)}
+          A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
           return (
             <g key={node.data.parentName}>
-              <path id={`${node.data.parentName}path`} d={textCurvedPath} style={{ fill: 'none', stroke: 'transparent' }} />
+              <path
+                id={`${node.data.parentName}path`}
+                d={textCurvedPath}
+                style={{ fill: 'none', stroke: 'transparent' }}
+              />
               <circle
                 className="CommodityCircle"
                 {...handleInteraction(this.props.onClick, [node.r, node.x, node.y])}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
-                tabIndex="0"
               />
               <text>
-                <textPath href={`#${node.data.parentName}path`} textAnchor="middle" startOffset="50%">
+                <textPath
+                  href={`#${node.data.parentName}path`}
+                  textAnchor="middle"
+                  startOffset="50%"
+                >
                   {node.data.parentName}
                 </textPath>
               </text>
@@ -56,7 +65,9 @@ class InstrumentBubble extends React.PureComponent {
           );
         }
         // Determines text position and color
-        const textY = node.r > node.value ? node.y - (node.r * 0.45) : node.y;
+        // Depends upon text length relative to circle size
+        const textX = node.r > node.value ? (node.x + (node.value + 2)) : node.x;
+        const textStyle = node.r > node.value ? '' : 'middle';
         const textColor = node.r > node.value ? 'black' : 'white';
         // Nested Children circles (ie Instruments)
         return (
@@ -72,10 +83,17 @@ class InstrumentBubble extends React.PureComponent {
               {...handleInteraction(this.props.onClick, [node.r, node.x, node.y])}
               r={node.value}
               transform={`translate(${node.x} ${node.y})`}
-              tabIndex="0"
               style={{ fill: pickColor(node.data.category) }}
             />
-            <text x={node.x} y={textY} textAnchor="middle" stroke="transparent" fill={textColor}>{node.data.name}</text>
+            <text
+              x={textX}
+              y={node.y}
+              textAnchor={textStyle}
+              alignmentBaseline="middle"
+              stroke="transparent"
+              fill={textColor}
+            >{node.data.name}
+            </text>
           </g>
         );
       })
@@ -83,26 +101,28 @@ class InstrumentBubble extends React.PureComponent {
 
   d3HierarchyCalculation() {
     const { width, height, instrumentChartData } = this.props;
-    //  d3 pack generates a function to fit data into tightly packed circles
-    // Renders all the circle propertly with proper thickness so it always fits the circle.
+    //  d3 pack generates a function to
+    // fit data into tightly packed circles
+    // Renders all the circle propertly
+    // with proper thickness so it always fits the circle.
     const pack = d3.pack()
       .size([width, height])
       .padding(node => (node.depth === 0 ? 0 : 5))
       .radius((node) => {
-        const tempNode = node;
-        const characterWidth = 5;
+        const characterWidth = 8;
         const textLength = (node.data.name).length * characterWidth;
         const textHeight = 15;
-        const textLengthExceeds = (tempNode.value * 2 <= textLength);
+        const textLengthExceeds = (node.value * 2 <= textLength);
         if (textLengthExceeds) {
-          return (tempNode.value) + (textLength); // buffer
+          return (node.value) + (textLength); // buffer
         }
-        if (tempNode.value < textHeight) {
-          return tempNode.value + textHeight;
+        if (node.value < textHeight) {
+          return node.value + textHeight;
         }
         return node.value;
       });
-    // creates the root node using d3 hierarchy similar to a tree layout
+    // creates the root node using
+    // d3 hierarchy similar to a tree layout
     const root = d3.hierarchy(instrumentChartData)
       .sum(totalData => totalData.value)
       .sort((a, b) => (b.value - a.value));
