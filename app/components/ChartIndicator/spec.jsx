@@ -11,8 +11,8 @@ describe('Components|ChartIndicator', () => {
     );
   });
   describe('with default props', () => {
-    it('should have a classname of Controller', () => {
-      expect(wrapper.find('.Controller')).to.have.lengthOf(1);
+    it('should have a classname of ChartIndicator', () => {
+      expect(wrapper.find('.ChartIndicator')).to.have.lengthOf(1);
     });
     it('should render a path', () => {
       expect(wrapper.find('path')).to.have.lengthOf(1);
