@@ -4,10 +4,7 @@ import * as d3 from 'd3';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/develop
 /* TODO:
 1) Check if the text is overlapping another and change arc accordingly
 2) Check if the inside text is smaller than circle radius, and shift the text
@@ -57,25 +54,18 @@ class InstrumentBubble extends React.PureComponent {
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
               />
-<<<<<<< HEAD
               <text className="bubbleTitle">
                 <FormattedMessage id={`components.instrumentBubble.${node.data.parentName}`}>
                   {text => (
-                    <textPath href={`#${node.data.parentName}path`} textAnchor="middle" startOffset="50%">
+                    <textPath
+                      href={`#${node.data.parentName}path`}
+                      textAnchor="middle"
+                      startOffset="50%"
+                    >
                       {text}
                     </textPath>
                   )}
                 </FormattedMessage>
-=======
-              <text>
-                <textPath
-                  href={`#${node.data.parentName}path`}
-                  textAnchor="middle"
-                  startOffset="50%"
-                >
-                  {node.data.parentName}
-                </textPath>
->>>>>>> origin/develop
               </text>
             </g>
           );
