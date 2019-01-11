@@ -5,7 +5,7 @@ import clone from 'clone';
 
 class Store {
   constructor() {
-    this.reset(true);
+    this.reset();
   }
 
   setChannel(channel) {
@@ -16,16 +16,12 @@ class Store {
     channel.on('addon:interaction:reset', this.reset);
   }
 
-  reset = (newStory) => {
+  reset = () => {
     this.data = {};
     this.actions = {};
     this.logs = [];
-    if (!newStory) {
-      this.updateComponent();
-      this.updatePanel();
-    } else if (this.channel) {
-      this.channel.emit('addon:interaction:loading');
-    }
+    this.updateComponent();
+    this.updatePanel();
   }
 
   addLog(name, argsRaw, result) {

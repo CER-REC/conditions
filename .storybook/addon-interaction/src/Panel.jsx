@@ -14,33 +14,27 @@ export default class Panel extends React.PureComponent {
       data: {},
       actions: [],
       logs: [],
-      loading: true,
     };
   }
 
   componentDidMount() {
     const { channel, api } = this.props;
     channel.on('addon:interaction:update', this.update);
-    channel.on('addon:interaction:loading', this.markLoading);
     this.stopListeningOnStory = api.onStory(() => {
-      channel.emit('addon:interaction:reset', true);
+      channel.emit('addon:interaction:reset');
     });
   }
 
   componentWillUnmount() {
     const { channel } = this.props;
     channel.removeListener('addon:interaction:update', this.update);
-    channel.removeListener('addon:interaction:loading', this.markLoading);
     this.stopListeningOnStory();
   }
 
-  update = data => this.setState({ ...data, loading: false });
-
-  markLoading = () => this.setState({ loading: true });
+  update = data => this.setState(data, () => console.log('updated'));
 
   render() {
     if (!this.props.active) { return null; }
-    if (this.state.loading) { return 'Loading...'; }
     const { data, logs, actions } = this.state;
     if (!Object.keys(data).length && !logs.length && !actions.length) {
       return 'No interactions';
