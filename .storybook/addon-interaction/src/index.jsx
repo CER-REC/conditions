@@ -22,7 +22,7 @@ export default makeDecorator({
   },
 });
 
-export const getProps = () => {
+export const getInteractionProps = () => {
   const actions = Object.entries(Store.actions)
     .reduce((acc, next) => {
       acc[next[0]] = (...args) => {

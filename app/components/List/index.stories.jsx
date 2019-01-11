@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
-import withInteraction, { getProps } from '../../../.storybook/addon-interaction';
+import withInteraction, { getInteractionProps } from '../../../.storybook/addon-interaction';
 import List from '.';
 import ReadMe from './README.md';
 
@@ -19,7 +19,7 @@ storiesForComponent('Components|List', module, ReadMe)
     <List
       items={['Item 1', 'Item 2', 'Item 3']}
       onChange={v => alert(v)}
-      {...getProps()}
+      {...getInteractionProps()}
     />
   ))
   .add('selected', () => (
