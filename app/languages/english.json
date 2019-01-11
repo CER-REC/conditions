@@ -1,17 +1,110 @@
 {
-  "components": {
-    "TrendButton": {
-      "buttonText": "Trends & Definitions",
-      "features": {
-        "Theme": "Theme",
-        "Instrument": "Instrument",
-        "Phase": "Phase",
-        "Type": "Type",
-        "Status": "Status",
-        "Filing": "Filing"
-      }
+  "common": {
+    "features": {
+      "theme": "Theme",
+      "instrument": "Instrument",
+      "phase": "Phase",
+      "type": "Type",
+      "ftatus": "Status",
+      "filing": "Filing"
+    },
+    "trend": {
+      "title": "Trends & Definitions"
+    },
+    "themeLegend": {
+      "security": "Security",
+      "managementSystem": "Management System",
+      "financial": "Financial",
+      "damagePrevention": "Damage Prevention",
+      "safetyManagement": "Safety Management",
+      "socioEconomic": "Socio-Economic",
+      "emergencyManagement": "Emergency Management",
+      "enforcement": "Enforcement",
+      "sunsetClause": "Sunset Clause",
+      "administrative": "Administrative",
+      "environmentalProtection": "Environmental Protection",
+      "integrityManagement": "Integrity Management",
+      "standardCondtion": "Standard Condition"
+    },
+    "instrumentLegend": {
+      "routing": "Routing",
+      "construction": "Construction",
+      "opening": "Opening",
+      "abandonment": "Abandonment",
+      "safety": "Safety",
+      "tariffs": "Tariffs",
+      "misc": "Misc."
+    },
+    "phaseLegend": {
+      "includesAll": "Includes All Phases of Constr.",
+      "notConstruction": "Not Construction Related",
+      "postConstruction": "Post Construction Phase",
+      "priorConstruction": "Prior to Construction Phase",
+      "expiryDate": "Expiry Date of Reg. Instr.",
+      "duringConstruction": "During Construction Phase",
+      "abandonment": "Abandonment",
+      "unspecified": "Unspecified"
+    },
+    "typeLegend": {
+      "nonStandard": "Non Standard",
+      "standard": "Standard"
+    },
+    "statusLegend": {
+      "inProgress": "In Progress",
+      "closed": "Closed",
+      "noFilingReq": "No Filing Required",
+      "awaitingFiling": "Awaiting Filing",
+      "overdueFiling": "Overdue Filing",
+      "underReview": "Under Review",
+      "reviewComplete": "Review Complete",
+      "awaitingIR": "Awaiting IR Response",
+      "readyBoard": "Ready for Board Decision",
+      "furtherInfo": "Further Information Required",
+      "amended": "Amended",
+      "satisfactory": "Satisfactory"
+    },
+    "filingLegend": {
+      "filingRequired": "Filing Required",
+      "FilingNotRequired": "Filing Not Required"
     }
   },
-  "views": {}
+  "components": {
+    "instrumentBubble": {
+      "oil": "Oil",
+      "gas": "Gas",
+      "power": "Power"
+    },
+    "modal": {
+      "image": {
+        "title": "Image Download",
+        "save": "Save Image",
+        "contentTitle": "Conditions on NEB-regulated energy projects",
+        "contentDescription": "An interactive exploration tool",
+        "linkText": "Visit this interactive visualization:"
+      },
+      "data": {
+        "title": "Data Download",
+        "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."
+      }
+    },
+    "projectLegend": {
+      "numberOfConditions": "Number of Conditions",
+      "totalConditions": "Total Number of Conditions fro Project",
+      "associated": "Associated Companies"
+    },
+    "smallMultiplesLegend": {
+      "title": "All Themes"
+    }
+  },
+  "views": {
+    "view1": {
+      "footer": {
+        "skip": "Skip intro to browse:",
+        "projectsBy": "Projects By",
+        "conditionsBy": "Conditions By",
+        "company": "Company",
+        "location": "Location"
+      }
+    }
+  }
 }
-

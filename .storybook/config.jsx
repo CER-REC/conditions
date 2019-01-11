@@ -11,22 +11,38 @@ import { addLocaleData } from 'react-intl';
 import enLocaleData from 'react-intl/locale-data/en';
 import frLocaleData from 'react-intl/locale-data/fr';
 
+import enLang from '../app/languages/english.json';
+import frLang from '../app/languages/french.json';
+
 import '../app/styles.scss';
 
 addLocaleData(enLocaleData);
 addLocaleData(frLocaleData);
-
-const getMessages = (locale) => messages[locale];
+const flatten = (toFlatten) => {
+  const flattened = {};
+  const step = (obj, prevPath = '') => Object.entries(obj).forEach(([key, val]) => {
+    const path = prevPath ? `${prevPath}.${key}` : key;
+    if (typeof val === 'object') {
+      step(val, path);
+      return;
+    }
+    flattened[path] = val;
+  });
+  step(toFlatten);
+  return flattened;
+};
 
 const messages = {
-  'en': {},
-  'fr': {},
+  'en': flatten(enLang),
+  'fr': flatten(frLang),
 };
+
+const getMessages = (locale) => messages[locale];
 
 setIntlConfig({
   locales: ['en', 'fr'],
   defaultLocale: 'en',
-  getMessages
+  getMessages,
 });
 
 addDecorator(withIntl);

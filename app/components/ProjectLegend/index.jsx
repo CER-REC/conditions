@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import LegendItem from './LegendItem';
 import CircleContainer from '../CircleContainer';
 import FeatureFlag from '../FeatureFlag';
@@ -53,7 +54,11 @@ const ProjectLegend = (props) => {
         <div className="ConditionsDesc">Total Number of Conditions for Project</div>
         <div className="AssociatedComp">
           <h3 className="Asterisk">*</h3>
-          <div className="AssociatedDesc">Associated Companies</div>
+          <div className="AssociatedDesc">
+            <FormattedMessage
+              id="components.projectLegend.associated"
+            />
+          </div>
         </div>
       </div>
     </div>

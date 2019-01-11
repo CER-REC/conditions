@@ -1,17 +1,110 @@
 {
-  "components": {
-    "TrendButton": {
-      "text": "",
-      "features" : {
-        "Theme": "",
-        "Instrument": "",
-        "Phase": "",
-        "Type": "",
-        "Status": "",
-        "Filing": ""
-      }
+  "common": {
+    "features": {
+      "theme": "",
+      "instrument": "",
+      "phase": "",
+      "type": "",
+      "ftatus": "",
+      "filing": ""
+    },
+    "trend": {
+      "title": ""
+    },
+    "themeLegend": {
+      "security": "",
+      "managementSystem": "",
+      "financial": "",
+      "damagePrevention": "",
+      "safetyManagement": "",
+      "socioEconomic": "",
+      "emergencyManagement": "",
+      "enforcement": "",
+      "sunsetClause": "",
+      "administrative": "",
+      "environmentalProtection": "",
+      "integrityManagement": "",
+      "standardCondtion": ""
+    },
+    "instrumentLegend": {
+      "routing": "",
+      "construction": "",
+      "opening": "",
+      "abandonment": "",
+      "safety": "",
+      "tariffs": "",
+      "misc": "."
+    },
+    "phaseLegend": {
+      "includesAll": "",
+      "notConstruction": "",
+      "postConstruction": "",
+      "priorConstruction": "",
+      "expiryDate": "",
+      "duringConstruction": "",
+      "abandonment": "",
+      "unspecified": ""
+    },
+    "typeLegend": {
+      "nonStandard": "",
+      "standard": ""
+    },
+    "statusLegend": {
+      "inProgress": "",
+      "closed": "",
+      "noFilingReq": "",
+      "awaitingFiling": "",
+      "overdueFiling": "",
+      "underReview": "",
+      "reviewComplete": "",
+      "awaitingIR": "",
+      "readyBoard": "",
+      "furtherInfo": "",
+      "amended": "",
+      "satisfactory": ""
+    },
+    "filingLegend": {
+      "filingRequired": "",
+      "FilingNotRequired": ""
     }
   },
-  "views": {}
+  "components": {
+    "instrumentBubble": {
+      "oil": "",
+      "gas": "",
+      "power": ""
+    },
+    "modal": {
+      "image": {
+        "title": "",
+        "save": "",
+        "contentTitle": "",
+        "contentDescription": "",
+        "linkText": ""
+      },
+      "data": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "projectLegend": {
+      "numberOfConditions": "",
+      "totalConditions": "",
+      "associated": ""
+    },
+    "smallMultiplesLegend": {
+      "title": ""
+    }
+  },
+  "views": {
+    "view1": {
+      "footer": {
+        "skip": "",
+        "projectsBy": "",
+        "conditionsBy": "",
+        "company": "",
+        "location": ""
+      }
+    }
+  }
 }
-
