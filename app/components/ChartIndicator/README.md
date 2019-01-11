@@ -1,5 +1,5 @@
-# Controller
-Controller is public component that will be used by both StreamGraph and BubbleChart.
+# ChartIndicator
+ChartIndicator is a public component that will be used by both StreamGraph and BubbleChart.
 * It takes in 3 parameters 
   * x: The x position that the arrow/line will be rendered at
   * ystart: The starting y value arrow will start at
