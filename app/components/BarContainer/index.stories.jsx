@@ -30,5 +30,25 @@ const rectItems = [
 storiesForComponent('Components|BarContainer', module, ReadMe)
 
   .add('default', () => (
-    <BarContainer title="ConditionTitle" desc="conditionDesc" items={rectItems} />
+    <BarContainer title="ConditionTitle" desc="conditionDesc" items={rectItems} defaultHeight="12" />
+  ))
+
+  .add('verticle bars', () => (
+    <BarContainer
+      title="ConditionTitle"
+      desc="conditionDesc"
+      items={rectItems}
+      vert
+    />
+  ))
+
+  .add('standalone', () => (
+    <svg>
+      <BarContainer
+        title="ConditionTitle"
+        desc="conditionDesc"
+        items={rectItems}
+        standalone
+      />
+    </svg>
   ));
