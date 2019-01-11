@@ -3,13 +3,15 @@
 The Share Icon component is a public component that will render the icons for Email, Facebook,
 Twitter, and LinkedIn. The Share Icon will be used by the Main Info Bar and Shortcut Info Bar
 components. This component will handle generating a shortened URL for users to share their View 
-of the visualization.
+of the visualization and will use the CircleContainer and Icon public components.
 
 ## Associated Components
 
 * Main Info Bar [ PUBLIC ]
 * Shortcut Info Bar [ PUBLIC ]
-* Donwloads text [ PRIVATE ]
+* Downloads text [ PRIVATE ]
+* Circle Container [ PUBLIC ]
+* Icon [ PUBLIC ]
 
 ## Requirements
 
