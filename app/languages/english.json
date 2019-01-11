@@ -77,7 +77,7 @@
     "modal": {
       "image": {
         "title": "Image Download",
-        "save": "Save Image",
+        "actionText": "Save Image",
         "contentTitle": "Conditions on NEB-regulated energy projects",
         "contentDescription": "An interactive exploration tool",
         "linkText": "Visit this interactive visualization:"
@@ -89,7 +89,7 @@
     },
     "projectLegend": {
       "numberOfConditions": "Number of Conditions",
-      "totalConditions": "Total Number of Conditions fro Project",
+      "totalConditions": "Total Number of Conditions for Project",
       "associated": "Associated Companies"
     },
     "smallMultiplesLegend": {

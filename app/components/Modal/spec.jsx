@@ -15,6 +15,7 @@ describe('Components|Modal', () => {
     wrapper = shallow((
       <Modal
         title="Test Title"
+        type=""
         content={<div>Test Content</div>}
         isOpen
         closeModal={noop}
@@ -41,6 +42,7 @@ describe('Components|Modal', () => {
     wrapper = shallow((
       <Modal
         title="Test Title"
+        type=""
         content={<div>Test Content</div>}
         isOpen
         closeModal={spy}
@@ -54,6 +56,7 @@ describe('Components|Modal', () => {
     wrapper = shallow((
       <Modal
         title="Test Title"
+        type=""
         content={<div>Test Content</div>}
         modalAction={{
           text: 'Test Action',
@@ -68,7 +71,7 @@ describe('Components|Modal', () => {
 
   it('should not render anything if isOpen is false', () => {
     wrapper = shallow((
-      <Modal title="Test Title" content={<div>Test Content</div>} closeModal={noop} />
+      <Modal title="Test Title" type="" content={<div>Test Content</div>} closeModal={noop} />
     ));
     expect(wrapper.type()).to.equal(null);
   });

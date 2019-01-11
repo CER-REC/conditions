@@ -21,7 +21,9 @@ const ProjectLegend = (props) => {
     <div className="ProjectLegend">
       {renderedItems}
       <div className="Footer">
-        <h3 className="Title">Number of Conditions</h3>
+        <h3 className="Title">
+          <FormattedMessage id="components.projectLegend.numberOfConditions" />
+        </h3>
         <div className="ChartLegend">
           <FeatureFlag
             chartType=""
@@ -51,7 +53,11 @@ const ProjectLegend = (props) => {
         >
           #
         </CircleContainer>
-        <div className="ConditionsDesc">Total Number of Conditions for Project</div>
+        <div className="ConditionsDesc">
+          <FormattedMessage
+            id="components.projectLegend.totalConditions"
+          />
+        </div>
         <div className="AssociatedComp">
           <h3 className="Asterisk">*</h3>
           <div className="AssociatedDesc">
