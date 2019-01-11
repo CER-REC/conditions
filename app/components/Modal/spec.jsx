@@ -52,14 +52,13 @@ describe('Components|Modal', () => {
     expect(spy.calledOnce).to.equal(true);
   });
 
-  it('should have a textButton where ther is a modal action', () => {
+  it('should have a textButton where there is a modal action', () => {
     wrapper = shallow((
       <Modal
         title="Test Title"
-        type=""
+        type="image"
         content={<div>Test Content</div>}
         modalAction={{
-          text: 'Test Action',
           task: noop,
         }}
         isOpen

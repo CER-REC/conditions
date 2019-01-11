@@ -62,9 +62,9 @@ class Modal extends React.PureComponent {
         <div className="footer">
           {modalAction
             ? (
-              <FormattedMessage id={`components.modal.${type}.actionText`}>
-                {text => <button className="textButton" type="button" {...handleInteraction(modalAction.task)}>{text}</button>}
-              </FormattedMessage>)
+              <button className="textButton" type="button" {...handleInteraction(modalAction.task)}>
+                <FormattedMessage id={`components.modal.${type}.actionText`} />
+              </button>)
             : null
           }
         </div>
