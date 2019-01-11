@@ -17,7 +17,7 @@ const heightOptions = {
   max: 200,
   step: 20,
 };
-storiesForComponent('Components|ConditionsCounter', module, ReadMe)
+storiesForComponent('Components|ChartIndicator', module, ReadMe)
   .addDecorator(withKnobs)
   .add('withCircle', () => (
     <ChartIndicator x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} radius={number('radius(px)', 40, heightOptions)} />

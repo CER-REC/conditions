@@ -17,20 +17,20 @@ const ChartIndicator = (props) => {
     ? (props.radius) : 10;
   const lineY = (props.radius > 0)
     ? 15 : 10;
-  const circleExists = (props.radius > 0)
-    ? (
+  const circleExists = (props.radius <= 0)
+    ? null
+    : (
       <circle
         className="selectedCircle"
         cx={props.radius}
         cy={props.yBottom + props.radius}
         r={props.radius}
       />
-    )
-    : (null);
+    );
   return (
     // TODO: Remove svg tag once integrated with parent svg
-    <svg>
-      <g height={svgHeight} width={svgWidth} className="Controller" transform={`translate(${props.x}, ${props.yTop})`}>
+    <svg height={svgHeight} width={svgWidth} className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
+      <g>
         <path
           className="arrow"
           d="M 5 5 L 15 5 L 10 15 z"
