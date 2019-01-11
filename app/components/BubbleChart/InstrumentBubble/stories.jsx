@@ -98,5 +98,12 @@ const instrumentChartData = {
 storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
-    <InstrumentBubble instrumentChartData={instrumentChartData} width={500} height={450} onClick={() => alert('Clicked')} />
+    <svg width={600} height={400}>
+      <InstrumentBubble
+        instrumentChartData={instrumentChartData}
+        width={600}
+        height={450}
+        onClick={() => alert('Clicked')}
+      />
+    </svg>
   ));

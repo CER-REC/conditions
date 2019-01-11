@@ -48,7 +48,9 @@ class InstrumentBubble extends React.PureComponent {
               />
               <circle
                 className="CommodityCircle"
-                {...handleInteraction(this.props.onClick, [node.r, node.x, node.y])}
+                {...handleInteraction(
+                  this.props.onClick, [node.r, node.x, node.y],
+                )}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
               />
@@ -133,7 +135,7 @@ class InstrumentBubble extends React.PureComponent {
     const { width, height, onClick } = this.props;
     const d3Calculation = this.d3HierarchyCalculation();
     return (
-      <g width={width} height={height}>
+      <g className="InstrumentBubble" width={width} height={height}>
         {this.circleRender(d3Calculation, onClick)}
       </g>
     );

@@ -6,7 +6,7 @@ The Instrument Bubble is a private/child component. It will render the instrumen
 ## Requirements
 * [X] Renders nested children bubbles reflecting the size of the instrument 
 * [X] Color of the bubbles are dependent on the category of the instrument
-* [ ] If a instrument is already selected, create an arrow at the top and a line from the top to the center
+* [X] If a instrument is already selected, create an arrow at the top and a line from the top to the center
   * [ ] Show the number of conditions 
 
 ## Interaction Requirements

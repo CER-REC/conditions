@@ -39,17 +39,23 @@ class BubbleChart extends React.PureComponent {
 
     return (
       <div className="BubbleChart">
-        <svg width={800} height={400}>
-          <ChartIndicator x={this.state.indicatorX} yBottom={this.state.indicatorYBottom} yTop={0} radius={this.state.indicatorRadius} display={this.state.display} />
+        <svg width={850} height={400}>
+          <ChartIndicator
+            x={this.state.indicatorX}
+            yBottom={this.state.indicatorYBottom}
+            yTop={0}
+            radius={this.state.indicatorRadius}
+            display={this.state.display}
+          />
           <InstrumentBubble
             instrumentChartData={instrumentChartData1}
-            width={450}
+            width={550}
             height={400}
             onClick={this.circleFunction}
           />
           <InstrumentBubble
             instrumentChartData={instrumentChartData2}
-            width={1300}
+            width={1400}
             height={400}
             onClick={this.circleFunction}
           />
