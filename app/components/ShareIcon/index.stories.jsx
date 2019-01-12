@@ -17,7 +17,7 @@ storiesForComponent('Components|ShareIcon', module, ReadMe)
   .add('default icon', () => (
     <ShareIcon icon="angle-up" />
   ))
-  .add('with props: onClick', () => (
-    <ShareIcon icon="angle-up" onClick={() => alert('clicked')} />
+  .add('with props: onChange', () => (
+    <ShareIcon icon="angle-up" onChange={() => alert('clicked')} />
   ));
 

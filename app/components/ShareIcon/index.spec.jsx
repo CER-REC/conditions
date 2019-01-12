@@ -22,10 +22,10 @@ describe('Components|ShareIcon', () => {
   });
 
   describe('with passed props', () => {
-    it('should take in the onClick prop', () => {
+    it('should take in the onChange prop', () => {
       const wrapper = shallow((
         <ShareIcon
-          onClick={() => {}}
+          onChange={() => {}}
         />
       ));
       shouldHaveInteractionProps(wrapper);

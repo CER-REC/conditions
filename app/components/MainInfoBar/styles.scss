@@ -1,11 +1,11 @@
-.Main-info-bar {
+.MainInfoBar {
 
   hr {
     margin-bottom: 20px;
     width: 70%;
   }
 
-  .Button {
+  .TextButton {
     cursor: pointer;
     text-decoration: none;
     border: none;
@@ -13,15 +13,18 @@
     display: inline-block;
     font-size: 14px;
     margin: 10px;
+
+    &.selected {
+      font-weight: 600;
+    }
   }
 
-  .Button:hover {
-    transform: scale(1.2);
-    font-weight: 700;
+  .TextBox {
+    display: inline-flex;
   }
 
-  .Button-selected {
-    font-size: 16px;
-    font-weight: 700;
+  .ShareIcons {
+    display: inline-flex;
+    margin: 10px 10px;
   }
 }

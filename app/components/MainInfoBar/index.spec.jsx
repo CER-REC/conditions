@@ -16,7 +16,19 @@ describe('Components|MainInfoBar', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.info-bar')).to.equal((true));
+      expect(wrapper.is('.MainInfoBar')).to.equal((true));
+    });
+
+    it('should show four share icons', () => {
+      expect(wrapper.find('ShareIcon')).to.have.lengthOf(4);
+    });
+
+    it('should show a horizontal line', () => {
+      expect(wrapper.find('hr')).to.have.lengthOf(1);
+    });
+
+    it('should show three text links', () => {
+      expect(wrapper.find('button')).to.have.lengthOf(3);
     });
   });
 });

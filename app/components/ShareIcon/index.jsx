@@ -20,7 +20,7 @@ class ShareIcon extends React.PureComponent {
     return (
       <div
         className="ShareIcon"
-        {...handleInteraction(this.props.onClick)}
+        {...handleInteraction(this.props.onChange)}
       >
         <CircleContainer size="20px">
           <Icon size="2x" icon={this.props.icon} />

@@ -1,21 +1,23 @@
 # Main Info Bar
 
 The Main Info Bar is public component and a footer at the bottom of the visualization, below Views 
-2 and 3. By default, the Main Info Bar takes in all of the data used by the Shortcut Info Bar.
+2 and 3. By default, the Main Info Bar takes in all of the data used by the Shortcut Info Bar and
+is stickied to the bottom of the page. The Main Info bar will have links for the Share Icons,
+About Text Box, Methodology Text Box, and Downloads Text Box.
 
 ## Associated Components
 
-* About text [ PRIVATE ]
-* Methodology text [ PRIVATE ]
-* Donwloads text [ PRIVATE ]
+* About Text Box [ PRIVATE ]
+* Methodology Text Box [ PRIVATE ]
+* Downloads Text Box [ PRIVATE ]
+* Share Icon [ PUBLIC ]
 
 ## Requirements
 
 * A horizontal bar should be visible as part of the Main Info Bar
-* The horizontal bar should not overlap with the Visualization at any point
+* The horizontal bar should not overlap with the visualization at any point
 * Text for 'About', 'Methodology', and 'Download' should be evenly spaced in French and English
 * Share icons should be visible underneath the text
-* Handle generating the shortened URL for share icons
 
 ## Interaction Requirements
 
