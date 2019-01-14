@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import './styles.scss';
 
@@ -11,10 +12,19 @@ const FeaturesMenu = (props) => {
   const features = props.features.map(feature => t(['featuresMenu', 'title', feature]));
   const selected = features.includes(props.selected) ? props.selected : features[0];
   const { onChange, dropDown } = props;
+  const listItems = features.map(feature => (
+    <FormattedMessage id={`common.features.${feature}`} />
+  ));
 
   if (dropDown) {
     const options = features.map(feature => (
-      <option key={feature} value={feature}>{feature}</option>
+      <FormattedMessage id={`common.features.${feature}`}>
+        {text => (
+          <option key={feature} value={feature}>
+            {text}
+          </option>
+        )}
+      </FormattedMessage>
     ));
 
     menu = (
@@ -25,7 +35,7 @@ const FeaturesMenu = (props) => {
   } else {
     menu = (
       <List
-        items={features}
+        items={listItems}
         selected={features.indexOf(selected)}
         onChange={index => onChange(features[index])}
         guideLine
