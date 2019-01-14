@@ -27,6 +27,9 @@ class CompanyWheel extends React.Component {
     this.setState({ degreesPerItem });
   }
 
+  // calcRayRotation = newWheelRotation => ((360 + 90) - (newWheelRotation % 360)) % 360;
+  calcRayRotation = newWheelRotation => ((360 + 90) - (newWheelRotation % 360));
+
   onSpinClick = () => {
     const randomNum = Math.floor(Math.random() * 360);
     this.setState(prevState => ({
@@ -41,11 +44,9 @@ class CompanyWheel extends React.Component {
     for (let i = 0; i < this.props.itemsData.length; i += 1) {
       count += this.props.itemsData[i].count;
     }
-    return count + 2;
+    return count;
   }
-
-  calcRayRotation = newWheelRotation => (450 - (newWheelRotation % 360)) % 360;
-
+  
   render() {
     return (
       <div className="WheelContainer">

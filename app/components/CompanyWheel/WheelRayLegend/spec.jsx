@@ -54,6 +54,30 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
       expect(wrapper.find('text').length).to.equals(mockData.length);
     });
 
+    it('should not render anything between 90 +/- (reserved degrees/2) unless is at the 90 degrees position', () => {
+      const newReservedDegrees = 20;
+      const newDegreesPerItem = (360 - newReservedDegrees) / (mockData.length * 30);
+      const { wrapper } = wrapperSetup(
+        { reservedDegrees: newReservedDegrees, degreesPerItem: newDegreesPerItem },
+      );
+      const calculatePositions = () => {
+        const possiblePositionsArray = [];
+        for (let i = 90 - newReservedDegrees / 2;
+          i < 90 + newReservedDegrees / 2;
+          i += newDegreesPerItem) {
+          // if (i !== 90) {
+          possiblePositionsArray.push(`rotate(${i}, 0, 245)`);
+          // }
+        }
+        return possiblePositionsArray;
+      };
+      // console.log(JSON.stringify(calculatePositions()));
+      expect(wrapper.find('text').forEach((node) => {
+        console.log(node.debug());
+        expect(node.props().transform).to.not.contain.any.keys(calculatePositions());
+      }));
+    });
+
     it('should render elements between 0 and 360 which are equal to the elements provided', () => {
       const { wrapper } = wrapperSetup();
       expect(wrapper.find('text').first().props().transform).to.contain('rotate(0, 0, 245)');

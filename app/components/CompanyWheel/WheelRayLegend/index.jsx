@@ -4,7 +4,7 @@ import './styles.scss';
 
 const WheelRayLegend = (props) => {
   const halfReservedDegress = props.reservedDegrees / 2;
-  let positionDegree = 0 + halfReservedDegress;
+  let positionDegree = 0;
   const stripePosition = props.rotation;
   const reservedSpace = props.reservedDegrees;
   const nextPosition = (numOfItemsAtIndex) => {
@@ -17,7 +17,7 @@ const WheelRayLegend = (props) => {
     let position = nextPosition(legendObj.count);
 
     if (position <= stripePosition - halfReservedDegress - props.degreesPerItem) {
-      position -= halfReservedDegress;
+      position -= 0;
     } else if (position > stripePosition - halfReservedDegress + props.degreesPerItem) {
       position += reservedSpace;
     } else {
