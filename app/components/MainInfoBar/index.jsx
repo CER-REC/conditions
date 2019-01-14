@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import ShareIcon from '../ShareIcon';
 import AboutTextBox from '../AboutTextBox';
@@ -14,6 +14,7 @@ library.add(
   faEnvelope,
   faFacebook,
   faLinkedin,
+  faAngleDoubleUp,
 );
 
 class MainInfoBar extends React.PureComponent {
@@ -47,15 +48,29 @@ class MainInfoBar extends React.PureComponent {
   }
 
   shareIcons() {
-    const iconsList = ['envelope', 'envelope', 'envelope', 'envelope'];
+    const iconsList = ['twitter', 'facebook', 'linkedin'];
+    const emailIcon = (
+      <ShareIcon
+        key="email"
+        icon="envelope"
+        onChange={this.props.onChange}
+        prefix="fas"
+      />
+    );
     const icons = iconsList.map(k => (
       <ShareIcon
         key={k}
         icon={k}
+        prefix="fab"
         onChange={this.props.onChange}
       />
     ));
-    return icons;
+    return (
+      <div className="ShareIcons">
+        {emailIcon}
+        {icons}
+      </div>
+    );
   }
 
   render() {
@@ -68,13 +83,17 @@ class MainInfoBar extends React.PureComponent {
           {this.handleOnClick(this.props.textBox)}
         </div>
         <br />
-        <div className="ShareIcons">
-          {this.shareIcons()}
-        </div>
+        {this.shareIcons()}
         {
           this.props.textBox === ''
             ? null
-            : <ShareIcon icon="envelope" onChange={this.props.handleDoubleArrows} />
+            : (
+              <ShareIcon
+                icon="angle-double-up"
+                prefix="fas"
+                onChange={this.props.handleDoubleArrows}
+              />
+            )
         }
       </div>
     );

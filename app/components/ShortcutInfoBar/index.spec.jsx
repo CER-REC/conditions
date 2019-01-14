@@ -26,5 +26,9 @@ describe('Components|ShortCutInfoBar', () => {
     it('should show three text links', () => {
       expect(wrapper.find('button')).to.have.lengthOf(1);
     });
+
+    it('should expand when given the handleInfoBar prop', () => {
+      expect(wrapper.props().handleInfoBar).to.equal(true);
+    });
   });
 });

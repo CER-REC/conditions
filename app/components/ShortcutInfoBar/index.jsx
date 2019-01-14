@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEnvelope,
+  faInfoCircle,
+  faAngleDoubleDown,
+  faFileDownload,
+} from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import ShareIcon from '../ShareIcon';
 
@@ -11,21 +16,12 @@ library.add(
   faEnvelope,
   faFacebook,
   faLinkedin,
+  faInfoCircle,
+  faAngleDoubleDown,
+  faFileDownload,
 );
 
 class ShortCutInfoBar extends React.PureComponent {
-  shareIcons() {
-    const iconsList = ['envelope', 'envelope', 'envelope', 'envelope'];
-    const icons = iconsList.map(k => (
-      <ShareIcon
-        key={k}
-        icon={k}
-        onChange={this.props.onChange}
-      />
-    ));
-    return icons;
-  }
-
   infoButton() {
     return (
       <div
@@ -33,7 +29,8 @@ class ShortCutInfoBar extends React.PureComponent {
         onChange={this.props.handleInfoButton}
       >
         <ShareIcon
-          icon="envelope"
+          icon="info-circle"
+          prefix="fas"
         />
       </div>
     );
@@ -49,15 +46,24 @@ class ShortCutInfoBar extends React.PureComponent {
         About this Visualization
         </button>
         <ShareIcon
-          icon="envelope"
+          icon="angle-double-down"
           onChange={this.props.onChange}
+          prefix="fas"
         />
       </div>
     );
   }
 
   share() {
-    const shareIconsList = ['envelope', 'envelope', 'envelope', 'envelope'];
+    const shareIconsList = ['twitter', 'facebook', 'linkedin'];
+    const emailIcon = (
+      <ShareIcon
+        key="email"
+        icon="envelope"
+        onChange={this.props.onChange}
+        prefix="fas"
+      />
+    );
     const shareIcons = shareIconsList.map(k => (
       <ShareIcon
         key={k}
@@ -68,18 +74,20 @@ class ShortCutInfoBar extends React.PureComponent {
     return (
       <div className="Icons">
         Share:
+        {emailIcon}
         {shareIcons}
       </div>
     );
   }
 
   download() {
-    const downloadIconsList = ['envelope', 'envelope'];
+    const downloadIconsList = ['file-download', 'file-download'];
     const downloadIcons = downloadIconsList.map(k => (
       <ShareIcon
         key={k}
         icon={k}
         onChange={this.props.onChange}
+        prefix="fas"
       />
     ));
     return (

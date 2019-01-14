@@ -23,7 +23,7 @@ class ShareIcon extends React.PureComponent {
         {...handleInteraction(this.props.onChange)}
       >
         <CircleContainer size="20px">
-          <Icon size="2x" icon={this.props.icon} />
+          <Icon size="1x" icon={this.props.icon} prefix={this.props.prefix} />
         </CircleContainer>
       </div>
     );
@@ -32,10 +32,12 @@ class ShareIcon extends React.PureComponent {
 
 ShareIcon.propTypes = {
   className: PropTypes.string,
+  prefix: PropTypes.string,
 };
 
 ShareIcon.defaultProps = {
   className: '',
+  prefix: 'fab',
 };
 
 export default ShareIcon;
