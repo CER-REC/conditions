@@ -1,16 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 import './styles.scss';
-
-// TODO: This is a mock, replace with the translation function
-const t = (searchList) => {
-  if (searchList[1] === 'all') {
-    return `All ${searchList[2]}s`;
-  }
-
-  return searchList[2];
-};
 
 const LegendItem = (props) => {
   let stream;
@@ -43,7 +35,7 @@ const LegendItem = (props) => {
       <span className="stream">
         {stream}
       </span>
-      <span>{t(['smallMultiplesLegend', type, props.title])}</span>
+      <FormattedMessage id={`components.smallMultiplesLegend.${type}.${props.title}`} />
     </div>
   );
 };

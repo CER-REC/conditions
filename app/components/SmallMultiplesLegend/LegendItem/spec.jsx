@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 
 import LegendItem from '.';
@@ -20,10 +21,12 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   shouldBehaveLikeAComponent(LegendItem, () => wrapper);
 
   describe('when the all property is provided', () => {
+    const title = 'a1';
+
     beforeEach(() => {
       wrapper = shallow((
         <LegendItem
-          title="a1"
+          title={title}
           data={[]}
           color=""
           max={0}
@@ -38,6 +41,12 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
     it('should render with the all class', () => {
       expect(wrapper.hasClass('all')).to.equal(true);
+    });
+
+    it('should render the formatted all title', () => {
+      const id = `components.smallMultiplesLegend.all.${title}`;
+
+      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
     });
   });
 
@@ -68,9 +77,11 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       ));
     });
 
-    it('should render the title', () => {
+    it('should render the formatted title', () => {
+      const id = `components.smallMultiplesLegend.title.${title}`;
+
       expect(wrapper.find('.stream')).to.have.lengthOf(1);
-      expect(wrapper.text()).to.contain(title);
+      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
     });
 
     it('should render the graph', () => {
