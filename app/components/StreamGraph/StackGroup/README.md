@@ -15,7 +15,9 @@ The Stack Group is a private component used in View 3 that binds the interaction
 ## Analytics Requirements
 
 * onClick should emit an event
+* onDragStop should emit an event
+* onTouchEnd should emit an event
 
 ## Unit Testing
 
-TODO
+TODO: tests pending 

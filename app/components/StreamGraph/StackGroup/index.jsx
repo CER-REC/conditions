@@ -62,7 +62,26 @@ class StackGroup extends React.PureComponent {
 
     const numOfConditions = numOfConditionValue[Math.round(previousSection) + direction];
 
-    const yHeight = '20';
+    /* this mocks the intended scaling of the Control line height
+    until an alogirthm can be determined */
+    let yHeight = '0';
+    if (numOfConditions === 25) {
+      yHeight = '210';
+    } else if (numOfConditions === 65) {
+      yHeight = '200';
+    } else if (numOfConditions === 103) {
+      yHeight = '185';
+    } else if (numOfConditions === 136) {
+      yHeight = '175';
+    } else if (numOfConditions === 310) {
+      yHeight = '125';
+    } else if (numOfConditions === 437) {
+      yHeight = '85';
+    } else if (numOfConditions === 567) {
+      yHeight = '45';
+    } else if (Math.max(...numOfConditionValue) === numOfConditions) {
+      yHeight = '15';
+    }
 
     this.props.onChange(positionControl, numOfConditions, this.setControlBool(), yHeight);
   };
@@ -107,7 +126,7 @@ class StackGroup extends React.PureComponent {
   }
 
   onClick = (event) => {
-    // document.addEventListener('click', this.handleOutsideClick, false);
+    document.addEventListener('click', this.handleOutsideClick, false);
     event.stopPropagation();
 
     const [positionControl, currentSection] = this.getClosestYear(event);
@@ -117,21 +136,11 @@ class StackGroup extends React.PureComponent {
 
     const renderedChartHeight = 270;
     const controlMaxHeight = 220;
-    const scale = controlMaxHeight / renderedChartHeight; // 0.81
+    const scale = controlMaxHeight / renderedChartHeight;
 
-    // const yHeight = ((numOfConditions / scale) * 2) + 40
-
-    // max 684
-
-    // const currentSection = Math.floor(
-    //   (clickArea + (this.getSectionWidth() / 2))
-    // / this.getSectionWidth(),
-    // );
-
-    // const positionControl = (this.getSectionWidth() * currentSection);
-
-    let yHeight = '0'; // max height is 220 : min = 0
-
+    /* this mocks the intended scaling of the Control line height
+    until an alogirthm can be determined */
+    let yHeight = '0';
     if (numOfConditions === 25) {
       yHeight = '210';
     } else if (numOfConditions === 65) {
@@ -159,10 +168,10 @@ class StackGroup extends React.PureComponent {
   }
 
   handleOutsideClick = (event) => {
-    // if (!this.node.contains(event.target)) {
-    //   const showControl = false;
-    //   this.props.onChange(showControl);
-    // }
+    if (!this.node.contains(event.target)) {
+      const showControl = false;
+      this.props.onChange(showControl);
+    }
   }
 
   render() {
@@ -208,6 +217,7 @@ StackGroup.propTypes = {
   })).isRequired,
   onChange: PropTypes.func.isRequired,
   yHeight: PropTypes.string,
+  controlTextValue: PropTypes.number.isRequired,
 };
 
 StackGroup.defaultProps = {

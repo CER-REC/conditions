@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import sinon from 'sinon';
 
 import StackGroup from '.';
 
@@ -13,12 +14,14 @@ const onDragStop = () => {};
 const handleOnChange = () => {};
 const handleArrowKey = () => {};
 const children = () => {};
-let showControl = true;
+const showControl = true;
 
 describe('Components|Streamgraph/StackGroup', () => {
   describe('with props', () => {
     let wrapper;
+    let spy;
     beforeEach(() => {
+      spy = sinon.spy();
       wrapper = shallow(
         <StackGroup
           handleOnChange={handleOnChange}
@@ -44,16 +47,9 @@ describe('Components|Streamgraph/StackGroup', () => {
       expect(wrapper.find('Control').exists()).to.equal(true);
     });
 
-    it('should not show the Control when showControl is false', () => {
-      showControl = false;
-      wrapper = shallow(
-        <StackGroup
-          showControl={showControl}
-        >
-        children={children}
-        </StackGroup>,
-      );
-      expect(wrapper.find('Control').exists()).to.equal(false);
-    });
+    it('should not call onChange if mouseMove is fired before mouseDown');
+    it('should call onChange with the correct position when using mouseMove');
+    it('should call onChange with the correct position when clicking');
+    it('should show the control at the first year the first time it is tabbed to');
   });
 });
