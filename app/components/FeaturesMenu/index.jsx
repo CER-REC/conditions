@@ -13,14 +13,14 @@ const FeaturesMenu = (props) => {
   const selected = features.includes(props.selected) ? props.selected : features[0];
   const { onChange, dropDown } = props;
   const listItems = features.map(feature => (
-    <FormattedMessage id={`common.features.${feature}`} />
+    <FormattedMessage key={feature} id={`common.features.${feature}`} />
   ));
 
   if (dropDown) {
     const options = features.map(feature => (
-      <FormattedMessage id={`common.features.${feature}`}>
+      <FormattedMessage key={feature} id={`common.features.${feature}`}>
         {text => (
-          <option key={feature} value={feature}>
+          <option value={feature}>
             {text}
           </option>
         )}

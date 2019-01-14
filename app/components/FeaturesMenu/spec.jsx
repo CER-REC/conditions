@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
@@ -54,7 +54,7 @@ describe('Components|FeaturesMenu', () => {
       const listWrapper = wrapper.find(List);
 
       expect(listWrapper).to.have.lengthOf(1);
-      expect(listWrapper.prop('items')).to.deep.equal(features);
+      expect(listWrapper.prop('items')).to.have.lengthOf(3);
     });
 
     it('should render the List component with the first item selected', () => {
@@ -102,7 +102,7 @@ describe('Components|FeaturesMenu', () => {
 
   describe('when the dropDown property is provided', () => {
     const title = '2';
-    const features = ['FEATURE', 'FEATURE_2', 'FEATURE_3'];
+    const features = ['theme', 'phase', 'filing'];
 
     beforeEach(() => {
       wrapper = shallow((
@@ -120,12 +120,7 @@ describe('Components|FeaturesMenu', () => {
     });
 
     it('should render the features in the select drop down', () => {
-      const optionsWrapper = wrapper.find('select > option');
-
-      features.forEach((feature, index) => {
-        expect(optionsWrapper.at(index).text()).to.contain(feature);
-      });
-
+      const optionsWrapper = wrapper.find('FormattedMessage');
       expect(optionsWrapper).to.have.lengthOf(features.length);
     });
 
