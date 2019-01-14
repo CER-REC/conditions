@@ -72,7 +72,9 @@
     "instrumentBubble": {
       "oil": "Oil",
       "gas": "Gas",
-      "power": "Power"
+      "power": "Power",
+      "anyCommodityTypes": "Any Commodity Types",
+      "notSpecified": "Not Specified"
     },
     "modal": {
       "image": {

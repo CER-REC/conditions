@@ -15,6 +15,7 @@ const ProjectLegend = (props) => {
       color={item.color}
       text={item.description}
       disabled={item.disabled}
+      selectedFeature={props.selectedFeature}
     />
   ));
   return (
@@ -72,6 +73,9 @@ const ProjectLegend = (props) => {
 };
 
 ProjectLegend.propTypes = {
+  /** Selected feature from the feature menu */
+  selectedFeature: PropTypes.string.isRequired,
+  /** Data for the legend item */
   legendItems: PropTypes.arrayOf(PropTypes.shape({
     disabled: PropTypes.bool,
     color: PropTypes.string.isRequired,

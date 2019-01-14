@@ -6,18 +6,18 @@ import ProjectLegend from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 const legendItems = [
-  { color: 'pink', description: 'test 1', disabled: true },
-  { color: 'red', description: 'test 2', disabled: false },
-  { color: 'green', description: 'test 3', disabled: false },
-  { color: 'blue', description: 'test 4', disabled: false },
-  { color: 'purple', description: 'test 5', disabled: false },
+  { color: 'pink', description: 'security', disabled: true },
+  { color: 'red', description: 'managementSystem', disabled: false },
+  { color: 'green', description: 'financial', disabled: false },
+  { color: 'blue', description: 'damagePrevention', disabled: false },
+  { color: 'purple', description: 'socioEconomic', disabled: false },
 ];
 
 describe('Components|ProjectLegend', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow((
-      <ProjectLegend legendItems={legendItems} />
+      <ProjectLegend legendItems={legendItems} selectedFeature="theme" />
     ));
   });
 
@@ -29,7 +29,7 @@ describe('Components|ProjectLegend', () => {
 
   describe('without any items', () => {
     it('should not render anything', () => {
-      const empty = shallow(<ProjectLegend legendItems={[]} />);
+      const empty = shallow(<ProjectLegend legendItems={[]} selectedFeature="theme" />);
       expect(empty.type()).to.equal(null);
     });
   });
