@@ -11,7 +11,7 @@
     "trend": {
       "title": ""
     },
-    "themeLegend": {
+    "theme": {
       "security": "",
       "managementSystem": "",
       "financial": "",
@@ -26,7 +26,7 @@
       "integrityManagement": "",
       "standardCondtion": ""
     },
-    "instrumentLegend": {
+    "instrument": {
       "routing": "",
       "construction": "",
       "opening": "",
@@ -35,7 +35,7 @@
       "tariffs": "",
       "misc": "."
     },
-    "phaseLegend": {
+    "phase": {
       "includesAll": "",
       "notConstruction": "",
       "postConstruction": "",
@@ -45,11 +45,11 @@
       "abandonment": "",
       "unspecified": ""
     },
-    "typeLegend": {
+    "type": {
       "nonStandard": "",
       "standard": ""
     },
-    "statusLegend": {
+    "status": {
       "inProgress": "",
       "closed": "",
       "noFilingReq": "",
@@ -63,7 +63,7 @@
       "amended": "",
       "satisfactory": ""
     },
-    "filingLegend": {
+    "filing": {
       "filingRequired": "",
       "FilingNotRequired": ""
     }
@@ -93,7 +93,13 @@
       "associated": ""
     },
     "smallMultiplesLegend": {
-      "title": ""
+      "all": {
+        "theme": "",
+        "phase": "",
+        "type": "",
+        "status": "",
+        "filing": ""
+      }
     }
   },
   "views": {

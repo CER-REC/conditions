@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 
 import LegendItem from '.';
@@ -11,6 +12,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     <LegendItem
       className="testtest"
       title="Test Title"
+      feature="Feat."
       data={[]}
       color=""
       max={0}
@@ -20,10 +22,13 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   shouldBehaveLikeAComponent(LegendItem, () => wrapper);
 
   describe('when the all property is provided', () => {
+    const title = 'a1';
+
     beforeEach(() => {
       wrapper = shallow((
         <LegendItem
-          title="a1"
+          title={title}
+          feature={title}
           data={[]}
           color=""
           max={0}
@@ -39,10 +44,17 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     it('should render with the all class', () => {
       expect(wrapper.hasClass('all')).to.equal(true);
     });
+
+    it('should render the formatted all title', () => {
+      const id = `components.smallMultiplesLegend.all.${title}`;
+
+      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
+    });
   });
 
   describe('when there is no all property provided', () => {
     const title = '(<{}>)other_test-title.!?';
+    const feature = 'test feature';
     const color = 'red';
     const max = 500;
     const data = [{
@@ -61,6 +73,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
         <LegendItem
           className="testclass"
           title={title}
+          feature={feature}
           data={data}
           color={color}
           max={max}
@@ -68,9 +81,11 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       ));
     });
 
-    it('should render the title', () => {
+    it('should render the formatted title', () => {
+      const id = `common.${feature}.${title}`;
+
       expect(wrapper.find('.stream')).to.have.lengthOf(1);
-      expect(wrapper.text()).to.contain(title);
+      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
     });
 
     it('should render the graph', () => {
@@ -98,6 +113,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
         <LegendItem
           className="myClass"
           title={title}
+          feature={feature}
           data={data}
           color="#AACC11"
           max={0}
