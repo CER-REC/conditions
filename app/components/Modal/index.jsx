@@ -45,13 +45,24 @@ class Modal extends React.PureComponent {
     if (!isOpen) { return null; }
 
     return (
-      <dialog className="Modal" style={{ height, width }} onClose={this.dialogClosed} ref={this.registerDialog}>
+      <dialog
+        className="Modal"
+        style={{ height, width }}
+        onClose={this.dialogClosed}
+        ref={this.registerDialog}
+      >
         <div className="header">
           <FormattedMessage id={`components.modal.${type}.title`}>
             {text => (<span className="title">{text}</span>)}
           </FormattedMessage>
           {/* Didn't use Icon because icon was not supported in our font-awesome library */}
-          <svg version="1.1" width="20" height="20" className="closeIcon" {...handleInteraction(this.close)} tabIndex={0}>
+          <svg
+            version="1.1"
+            width="20"
+            height="20"
+            className="closeIcon"
+            {...handleInteraction(this.close)}
+          >
             <line x1="0" y1="20" x2="20" y2="0" strokeLinecap="round" />
             <line x1="0" y1="0" x2="20" y2="20" strokeLinecap="round" />
           </svg>
@@ -62,9 +73,14 @@ class Modal extends React.PureComponent {
         <div className="footer">
           {modalAction
             ? (
-              <button className="textButton" type="button" {...handleInteraction(modalAction.task)}>
+              <button
+                className="textButton"
+                type="button"
+                {...handleInteraction(modalAction.task)}
+              >
                 <FormattedMessage id={`components.modal.${type}.actionText`} />
-              </button>)
+              </button>
+            )
             : null
           }
         </div>
