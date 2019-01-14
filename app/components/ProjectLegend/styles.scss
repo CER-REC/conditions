@@ -1,0 +1,99 @@
+.ProjectLegend {
+  display: table;
+  height: auto;
+
+  .Footer {
+    display: table;
+    text-align: left;
+
+    .Title {
+      margin: 10px 0;
+    }
+
+    .ChartLegend {
+      border-left: 1px solid #a1a8a7;
+      margin-bottom: 10px;
+      position: relative;
+      width: 50px;
+
+      .FlagDesc {
+        display: inline-block;
+        position: relative;
+        width: 10px;
+        line-height: 10px;
+        top: -2px;
+      }
+
+      .FeatureFlag {
+        display: inline-block;
+        margin-left: -1px;
+        width: 40px;
+
+        &:nth-child(1) {
+          .Bar {
+            border: #fff;
+          }
+        }
+        /* To target the flag tip transparent bar */
+        &:nth-child(5) {
+          .Bar {
+            border-right: transparent;
+            position:relative;
+            &::after,&::before{
+              content:"";
+              width: 1px;
+              height: 71%;
+              right: -3px;
+              position: absolute;
+            }
+            &::before{
+              background: #a1a8a7;
+              transform:rotate(-45deg);
+              top:-10.5%;
+            }
+            &::after{
+              background:#a1a8a7;
+              transform:rotate(45deg);
+              bottom:-10.5%;
+            }
+          }
+          .FlagTip {
+            border: transparent;
+          }
+        }
+        .Bar {
+          border: 1px solid #a1a8a7;
+        }
+        .FlagTip {
+          border-left-color: #a1a8a7;
+        }
+      }
+    }
+
+    .ConditionsIcon {
+      background-color: #a1a8a7;
+    }
+
+    .ConditionsDesc {
+      vertical-align: top;
+      margin-left: 10px;
+      max-width: 150px;
+      word-wrap: break-word;
+      display: inline-table;
+    }
+
+    .AssociatedComp {
+      margin-top: 10px;
+      display: table;
+      .Asterisk {
+        display: inline-table;
+        margin: 0;
+        padding: 0;
+      }
+      .AssociatedDesc {
+        margin-left: 10px;
+        display: inline-table;
+      }
+    }
+  }
+}

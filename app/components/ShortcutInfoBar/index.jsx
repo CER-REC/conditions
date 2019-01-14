@@ -14,17 +14,6 @@ library.add(
 );
 
 class ShortCutInfoBar extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = ({
-      expandInfoBar: false,
-    });
-  }
-
-  handleInfoButton = () => {
-    this.setState({ expandInfoBar: true });
-  };
-
   shareIcons() {
     const iconsList = ['envelope', 'envelope', 'envelope', 'envelope'];
     const icons = iconsList.map(k => (
@@ -41,7 +30,7 @@ class ShortCutInfoBar extends React.PureComponent {
     return (
       <div
         className="InfoButton"
-        onChange={this.handleInfoButton}
+        onChange={this.props.handleInfoButton}
       >
         <ShareIcon
           icon="envelope"
@@ -102,7 +91,7 @@ class ShortCutInfoBar extends React.PureComponent {
   }
 
   infoBar() {
-    if (!this.state.expandInfoBar) { return null; }
+    if (!this.props.handleInfoBar) { return null; }
     return (
       <div className="InfoBar">
         {this.aboutThisVisualization()}
@@ -126,6 +115,8 @@ class ShortCutInfoBar extends React.PureComponent {
 
 ShortCutInfoBar.propTypes = {
   onChange: PropTypes.func.isRequired,
+  handleInfoButton: PropTypes.func.isRequired,
+  handleInfoBar: PropTypes.bool.isRequired,
 };
 
 export default ShortCutInfoBar;

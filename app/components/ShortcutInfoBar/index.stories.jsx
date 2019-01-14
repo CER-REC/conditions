@@ -8,13 +8,12 @@ storiesForComponent('Components|ShortCutInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('Basic view', () => (
     <ShortCutInfoBar
-      handleInfoBar={() => alert('clicked')}
+      onChange={() => {}}
     />
   ))
   .add('Expanded view', () => (
     <ShortCutInfoBar
       onChange={() => {}}
       handleInfoBar={() => alert('clicked')}
-      handleOnClick={k => alert(k)}
     />
   ));

@@ -28,11 +28,26 @@ addDecorator(withOptions({
   hierarchyRootSeparator: /\|/, // Categories with |
   hierarchySeparator: /\//, // Sub-stories with /
 }));
+
+// Wrap the story in css classes for each of the parent components in its path
+addDecorator((storyFn, context) => {
+  const { kind } = context;
+  if (kind.startsWith('Components|')) {
+    // Take everything after components and before the lowest component's folder
+    const componentTree = kind.split('|')[1].split('/').slice(0, -1);
+    // From the inside out, wrap it in the parent component's name as a classname
+    return componentTree.reverse().reduce((acc, next) => (
+      <div className={next}>{acc}</div>
+    ), storyFn());
+  }
+  return storyFn();
+});
+
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
-// automatically import all files ending in *.stories.js
-const documentationStories = require.context('../documentation/', true, /.stories.jsx$/);
-const componentStories = require.context('../app/', true, /.stories.jsx$/);
+// automatically import all files named stories.jsx
+const documentationStories = require.context('../documentation/', true, /stories.jsx$/);
+const componentStories = require.context('../app/', true, /stories.jsx$/);
 function loadStories() {
   documentationStories.keys()
     // Sorting Documentation|Introduction to the top

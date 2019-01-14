@@ -11,20 +11,21 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 describe('Components|SmallMultiplesLegend', () => {
   let spy;
   const noop = () => {};
-  let wrapper = shallow((
-    <SmallMultiplesLegend
-      className="test"
-      title="Test Title"
-      data={[]}
-      onChange={noop}
-    />
-  ));
+  let wrapper;
 
   beforeEach(() => {
     spy = sinon.spy();
+    wrapper = shallow((
+      <SmallMultiplesLegend
+        className="test"
+        title="Test Title"
+        data={[]}
+        onChange={noop}
+      />
+    ));
   });
 
-  shouldBehaveLikeAComponent(wrapper, SmallMultiplesLegend, 'test');
+  shouldBehaveLikeAComponent(SmallMultiplesLegend, () => wrapper);
 
   it('should not render a list when no data is provided', () => {
     wrapper = shallow((
