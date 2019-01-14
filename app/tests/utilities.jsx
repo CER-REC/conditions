@@ -1,5 +1,8 @@
-import { ShallowWrapper } from 'enzyme';
+import React from 'react';
+import { ShallowWrapper, shallow, mount } from 'enzyme';
 import { expect } from 'chai';
+import { IntlProvider, intlShape } from 'react-intl';
+import i18nMessages from '../i18n';
 
 export const shouldBehaveLikeAComponent = (component, callback) => {
   it('should render with the component name as a class', () => {
@@ -31,3 +34,25 @@ export const shouldHaveInteractionProps = (wrapper) => {
   expect(props.tabIndex).to.equal(0);
   expect(props.focusable).to.equal(true);
 };
+
+const intlProvider = new IntlProvider({ locale: 'en', messages: i18nMessages.en }, {});
+const { intl } = intlProvider.getChildContext();
+
+const nodeWithIntlProp = node => React.cloneElement(node, { intl });
+
+export const shallowWithIntl = (node, { context, ...opts } = {}) => shallow(
+  nodeWithIntlProp(node),
+  {
+    context: { ...context, intl },
+    ...opts,
+  },
+).shallow();
+
+export const mountWithIntl = (node, { context, childContextTypes, ...opts } = {}) => mount(
+  nodeWithIntlProp(node),
+  {
+    context: { ...context, intl },
+    childContextTypes: { intl: intlShape, ...childContextTypes },
+    ...opts,
+  },
+).childAt(0);

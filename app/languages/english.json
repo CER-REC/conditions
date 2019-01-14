@@ -102,12 +102,12 @@
         "type": "All Types",
         "status": "All Statuses",
         "filing": "All Filings"
-      },
-      "streamGraph": {
-        "title": "Themes Across All Conditions",
-        "xAxis": "Effective Date",
-        "yAxis": "Number of Conditions"
       }
+    },
+    "streamGraph": {
+      "xAxis": "Effective Date",
+      "yAxis": "Number of Conditions",
+      "title": "Themes Across All Conditions"
     }
   },
   "views": {

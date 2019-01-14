@@ -93,6 +93,7 @@
       "associated": ""
     },
     "smallMultiplesLegend": {
+      "title": "",
       "all": {
         "theme": "",
         "phase": "",
@@ -100,6 +101,11 @@
         "status": "",
         "filing": ""
       }
+    },
+    "streamGraph": {
+      "xAxis": "",
+      "yAxis": "",
+      "title": ""
     }
   },
   "views": {
