@@ -11,7 +11,7 @@
     "trend": {
       "title": "Trends & Definitions"
     },
-    "themeLegend": {
+    "theme": {
       "security": "Security",
       "managementSystem": "Management System",
       "financial": "Financial",
@@ -26,7 +26,7 @@
       "integrityManagement": "Integrity Management",
       "standardCondtion": "Standard Condition"
     },
-    "instrumentLegend": {
+    "instrument": {
       "routing": "Routing",
       "construction": "Construction",
       "opening": "Opening",
@@ -35,7 +35,7 @@
       "tariffs": "Tariffs",
       "misc": "Misc."
     },
-    "phaseLegend": {
+    "phase": {
       "includesAll": "Includes All Phases of Constr.",
       "notConstruction": "Not Construction Related",
       "postConstruction": "Post Construction Phase",
@@ -45,11 +45,11 @@
       "abandonment": "Abandonment",
       "unspecified": "Unspecified"
     },
-    "typeLegend": {
+    "type": {
       "nonStandard": "Non Standard",
       "standard": "Standard"
     },
-    "statusLegend": {
+    "status": {
       "inProgress": "In Progress",
       "closed": "Closed",
       "noFilingReq": "No Filing Required",
@@ -63,7 +63,7 @@
       "amended": "Amended",
       "satisfactory": "Satisfactory"
     },
-    "filingLegend": {
+    "filing": {
       "filingRequired": "Filing Required",
       "FilingNotRequired": "Filing Not Required"
     }
@@ -95,7 +95,13 @@
       "associated": "Associated Companies"
     },
     "smallMultiplesLegend": {
-      "title": "All Themes"
+      "all": {
+        "theme": "All Themes",
+        "phase": "All Phases",
+        "type": "All Types",
+        "status": "All Statuses",
+        "filing": "All Filings"
+      }
     }
   },
   "views": {

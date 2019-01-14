@@ -6,7 +6,7 @@ import './styles.scss';
 
 const LegendItem = (props) => {
   let stream;
-  const type = props.all ? 'all' : 'title';
+  const id = props.all ? `components.smallMultiplesLegend.all.${props.title}` : `common.${props.feature}.${props.title}`;
 
   if (!props.all) {
     stream = (
@@ -35,7 +35,7 @@ const LegendItem = (props) => {
       <span className="stream">
         {stream}
       </span>
-      <FormattedMessage id={`components.smallMultiplesLegend.${type}.${props.title}`} />
+      <FormattedMessage id={id} />
     </div>
   );
 };
@@ -43,6 +43,8 @@ const LegendItem = (props) => {
 LegendItem.propTypes = {
   /** The text beside the stream graph */
   title: PropTypes.string.isRequired,
+  /** The feature of which to look up the translations */
+  feature: PropTypes.string.isRequired,
   /** The data to render the stream graph */
   data: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.number.isRequired,

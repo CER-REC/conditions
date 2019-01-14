@@ -17,7 +17,7 @@ const LegendItem = ({
       style={{ backgroundColor: color }}
     />
     <div className="text">
-      <FormattedMessage id={`common.${selectedFeature}Legend.${text}`} />
+      <FormattedMessage id={`common.${selectedFeature}.${text}`} />
     </div>
   </div>
 );
