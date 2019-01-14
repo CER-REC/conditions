@@ -5,7 +5,7 @@ import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import ShareIcon from '../ShareIcon';
-import AboutTextBox from './AboutTextBox';
+import AboutTextBox from '../AboutTextBox';
 import MethodologyTextBox from './MethodologyTextBox';
 import DownloadsTextBox from './DownloadsTextBox';
 

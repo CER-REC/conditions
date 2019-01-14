@@ -1,7 +1,7 @@
 # About Text Box
 
-The About Text Box is a private component that will be used by the Main Info Bar. It will display
-text provided by the NEB and asset attributions by the UofC Design Team.
+The About Text Box is a public component that will be used by the Main Info Bar and Shortcut Info 
+Bar. It will display text provided by the NEB and asset attributions by the UofC Design Team.
 
 ## Requirements
 

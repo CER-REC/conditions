@@ -1,0 +1,38 @@
+.ShortCutInfoBar {
+  text-align: left;
+
+  .InfoButton {
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    background: pink;
+    width: 30px;
+    padding: 10px 5px;
+
+    &.expanded {
+      left: 200px;
+    }
+
+  }
+
+  .Icons {
+    display: inline-flex;
+  }
+
+  .About {
+    display: inline-flex;
+    cursor: pointer;
+
+    button {
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+    }
+  }
+
+  .InfoBar {
+    margin-left: 30px;
+    margin-top: -50px;
+  }
+}

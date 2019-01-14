@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './styles.scss';
 
 const DownloadsTextBox = () => (
-  <div className="Downloads-text-box">
+  <div className="DownloadsTextBox">
     <img
       src=""
       alt="download data icon"

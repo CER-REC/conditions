@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 import AboutTextBox from '.';
 
-describe('Components|MainInfoBar/AboutTextBox', () => {
+describe('Components|AboutTextBox', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {

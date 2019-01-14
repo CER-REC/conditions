@@ -1,13 +1,12 @@
 # Main Info Bar
 
 The Main Info Bar is public component and a footer at the bottom of the visualization, below Views 
-2 and 3. By default, the Main Info Bar takes in all of the data used by the Shortcut Info Bar and
-is stickied to the bottom of the page. The Main Info bar will have links for the Share Icons,
-About Text Box, Methodology Text Box, and Downloads Text Box.
+2 and 3. By default, the Main Info Bar is stickied to the bottom of the page. The Main Info bar will 
+have links for the Share Icons, About Text Box, Methodology Text Box, and Downloads Text Box.
 
 ## Associated Components
 
-* About Text Box [ PRIVATE ]
+* About Text Box [ PUBLIC ]
 * Methodology Text Box [ PRIVATE ]
 * Downloads Text Box [ PRIVATE ]
 * Share Icon [ PUBLIC ]
