@@ -96,6 +96,11 @@
     },
     "smallMultiplesLegend": {
       "title": "All Themes"
+    },
+    "streamGraph": {
+      "title": "Themes Across All Conditions",
+      "xAxis": "Effective Date",
+      "yAxis": "Number of Conditions"
     }
   },
   "views": {
