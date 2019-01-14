@@ -46,7 +46,7 @@ class CompanyWheel extends React.Component {
     }
     return count;
   }
-  
+
   render() {
     return (
       <div className="WheelContainer">
