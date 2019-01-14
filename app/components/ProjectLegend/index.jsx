@@ -14,7 +14,8 @@ const ProjectLegend = (props) => {
       color={item.color}
       text={item.description}
       disabled={item.disabled}
-    />));
+    />
+  ));
   return (
     <div className="ProjectLegend">
       {renderedItems}

@@ -124,14 +124,13 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
-        <InstrumentBubble instrumentChartData={instrumentChartData} width={400} height={400} />,
+        <InstrumentBubble
+          instrumentChartData={instrumentChartData}
+          width={400}
+          height={400}
+          onClick={noop}
+        />,
       );
-    });
-    it('should render a div', () => {
-      expect(wrapper.type()).to.equal('div');
-    });
-    it('should have a className of instrumentBubble', () => {
-      expect(wrapper.find('.InstrumentBubble')).to.have.lengthOf(1);
     });
     it('should render an svg', () => {
       expect(wrapper.find('svg')).to.have.lengthOf(1);
