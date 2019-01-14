@@ -6,7 +6,7 @@ import PullToSpin from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|CompanyWheel/PullToSpin', module, ReadMe)
-  .addDecorator(withStatus('designUnderDevelopment'))
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
     <PullToSpin role="button" onSpinClick={() => alert('Start spinning')} />
   ));
