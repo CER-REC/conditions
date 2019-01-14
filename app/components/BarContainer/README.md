@@ -1,28 +1,14 @@
-# Component Name
+# BarContainer
 
-TODO: Summarize purpose and requirements from design document.
+The Bar Container component holds a grouping of bar. The container accepts an array 
+of bars to render. Each element in the array should have a value and a color. Depending on the on the the tpe of BarContainer (vertical or horizontal) the value passed in with affect the size of each bar. The BarContainer b default is is horizontal. THe BarContainer accepts a 'size' prop. If the container is horizontal, 
+the size prop will determine how the height for all bars, and if the container is vertical, the size prop determines the width of each bar in the set.
 
 ## Interaction Requirements
 
-TODO: Explain interaction requirements, mentioning differences for cursor, touch,
-and keyboard navigation.
+The BarContainer does not implement any interaction functionality.
 
 ## Accessibility Requirements
 
-TODO: Explain desired accessibility support, and provide table of currently
-implemented accessibility with table of automated accessibility test results.
-
-## Analytics Requirements
-
-TODO: Explain what analytics events should be fired from this component, and
-provide table of currently implemented analytics events with table of automated
-analytics test results.
-
-## Unit Testing
-
-TODO: Provide table of automated unit test results and code coverage metrics.
-
-## Examples
-
-TODO: Implement examples of different implementations with sandbox for editing
-properties on the fly.
+The BarContainer has two props that are needed for accessibility, 'title' and 
+'desc'. They are not rendered as text in the DOM but they are used by the screen readers and other accessibility tools. 

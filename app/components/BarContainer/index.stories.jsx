@@ -1,4 +1,5 @@
 import React from 'react';
+import withStatus from '../../../.storybook/addon-status';
 import { storiesForComponent } from '../../../.storybook/utils';
 import BarContainer from '.';
 import ReadMe from './README.md';
@@ -19,7 +20,7 @@ const rectItems = [
 ];
 
 storiesForComponent('Components|BarContainer', module, ReadMe)
-
+  .addDecorator(withStatus('underReview'))
   .add('default', () => (
     <BarContainer
       title="ConditionTitle"

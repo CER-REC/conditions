@@ -1,9 +1,11 @@
 import React from 'react';
+import withStatus from '../../../../.storybook/addon-status';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import Bar from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|BarContainer/Bar', module, ReadMe)
+  .addDecorator(withStatus('underReview'))
   .add('default', () => (
     <svg>
       <Bar
