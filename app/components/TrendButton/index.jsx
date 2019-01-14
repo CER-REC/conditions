@@ -9,7 +9,8 @@ const TrendButton = (props) => {
   let background = (
     <div className="staticBackground">
       <img src={(props.selectedFeature === 'Instrument' ? BubbleButton : StreamButton)} alt="" />
-    </div>);
+    </div>
+  );
 
   if (props.streamGraphData !== null) {
     background = (

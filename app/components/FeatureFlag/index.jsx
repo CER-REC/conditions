@@ -12,7 +12,8 @@ const FeatureFlag = (props) => {
       className="Bar"
       style={{ backgroundColor: props.color, content: '', width: `${flagSize}px` }}
       title={`${props.chartType} - ${props.name} - ${props.count}`}
-    />);
+    />
+  );
 
   const tip = (<div className="FlagTip" style={{ borderLeftColor: props.color }} />);
 
