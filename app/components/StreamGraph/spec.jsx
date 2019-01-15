@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Streamgraph, { roundDateLabel, numOfConditionsLabel } from '.';
+import Streamgraph, { roundDateLabel } from '.';
 
 describe('Components|StreamGraph', () => {
   const projectData = [
@@ -56,7 +56,9 @@ describe('Components|StreamGraph', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<Streamgraph projectData={projectData} />);
+      wrapper = shallow(<Streamgraph
+        projectData={projectData}
+      />);
     });
 
     it('should render', () => {
@@ -64,7 +66,7 @@ describe('Components|StreamGraph', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.streamgraph')).to.equal((true));
+      expect(wrapper.is('.Streamgraph')).to.equal((true));
     });
 
     it('should render a title', () => {
@@ -81,11 +83,6 @@ describe('Components|StreamGraph', () => {
 
     it('should render the x and y axis', () => {
       expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
-    });
-
-    it('should round the y value to the nearest whole number', () => {
-      const point = { x: 5.1, y: 4.3 };
-      expect(numOfConditionsLabel(point)).to.be.equal('4');
     });
 
     it('should round the date label', () => {
