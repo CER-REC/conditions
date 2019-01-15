@@ -17,9 +17,7 @@ const heightOptions = {
   max: 100,
   step: 20,
 };
-
 const visible = true;
-
 storiesForComponent('Components|ChartIndicator', module, ReadMe)
   .addDecorator(withKnobs)
   .add('withCircle', () => (
