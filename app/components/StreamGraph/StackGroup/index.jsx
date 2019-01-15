@@ -23,7 +23,9 @@ class StackGroup extends React.PureComponent {
   };
 
   calculateRenderedSize = () => {
-    const size = this.sizeRef.current.getClientRects();
+    const size = this.sizeRef.current
+      ? this.sizeRef.current.getClientRects()
+      : [this.calculateStackSize()];
     /* eslint-disable object-curly-newline */
     const { top, left, width, height } = size[0];
     return { top, left, width, height };
@@ -51,8 +53,8 @@ class StackGroup extends React.PureComponent {
   }
 
   handleArrowKey = (event) => {
-    if ((event.key !== 'ArrowLeft' || event.keyCode !== 37)
-      && (event.key !== 'ArrowRight' || event.keyCode !== 39)) {
+    if ((event.key !== 'ArrowLeft' && event.keyCode !== 37)
+      && (event.key !== 'ArrowRight' && event.keyCode !== 39)) {
       return;
     }
 
@@ -87,6 +89,10 @@ class StackGroup extends React.PureComponent {
   onDragStop = (event) => {
     event.stopPropagation();
     this.isDragging = false;
+  }
+
+  onFocus = () => {
+    this.props.onChange(this.props.stackProps.domain.x[0]);
   }
 
   render() {
@@ -125,6 +131,7 @@ class StackGroup extends React.PureComponent {
           onTouchStart={this.onDragStart}
           onTouchMove={this.onDragMove}
           onTouchEnd={this.onDragStop}
+          onFocus={this.onFocus}
           role="button"
           tabIndex="0"
         >
@@ -151,8 +158,17 @@ StackGroup.propTypes = {
       x: PropTypes.arrayOf(PropTypes.number).isRequired,
     }).isRequired,
     scale: PropTypes.shape({
+      x: PropTypes.func.isRequired,
       y: PropTypes.func.isRequired,
     }).isRequired,
+    padding: PropTypes.shape({
+      left: PropTypes.number.isRequired,
+      right: PropTypes.number.isRequired,
+      top: PropTypes.number.isRequired,
+      bottom: PropTypes.number.isRequired,
+    }).isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
   }).isRequired,
 };
 
