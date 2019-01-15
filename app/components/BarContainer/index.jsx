@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Bar from './Bar';
 import './styles.scss';
 
-//Possible factor into class compoenent to have scale() fucntion
+// Possible factor into class component to have scale() function
 
 const BarContainer = (props) => {
   if (props.items.length === 0) { return null; }
