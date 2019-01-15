@@ -5,10 +5,10 @@ import withStatus from '../../../.storybook/addon-status';
 import InstrumentsLegend from '.';
 import ReadMe from './README.md';
 
-const categories = ['C1', 'C2', 'C3', 'C4', 'C5'];
+const categories = ['opening', 'abandonment', 'safety', 'tariffs', 'misc'];
 const colors = ['purple', '#A1C1B1', 'blue', '#16AA16', '#00FFFF'];
 const data = [{
-  parentName: 'Indicator',
+  parentName: 'oil',
   children: [{
     category: categories[0],
     color: colors[0],
@@ -20,7 +20,7 @@ const data = [{
     color: colors[4],
   }],
 }, {
-  parentName: 'Ind',
+  parentName: 'gas',
   children: [{
     category: categories[0],
     color: colors[0],
@@ -38,7 +38,7 @@ const data = [{
     color: colors[4],
   }],
 }, {
-  parentName: 'Type',
+  parentName: 'power',
   children: [{
     category: categories[0],
     color: colors[0],
@@ -50,7 +50,7 @@ const data = [{
     color: colors[0],
   }],
 }, {
-  parentName: 'N/A',
+  parentName: 'notSpecified',
   children: [{
     category: categories[0],
     color: colors[0],
@@ -68,12 +68,12 @@ storiesForComponent('Components|InstrumentsLegend', module, ReadMe)
   .add('basic usage', () => (
     <InstrumentsLegend
       data={[{
-        parentName: 'Indicator',
+        parentName: 'anyCommodityTypes',
         children: [{
-          category: 'Cat. 1',
+          category: 'routing',
           color: 'red',
         }, {
-          category: 'Cat. 2',
+          category: 'construction',
           color: '#123456',
         }],
       }]}

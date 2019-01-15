@@ -55,7 +55,7 @@ class InstrumentBubble extends React.PureComponent {
                 r={node.r}
               />
               <text className="bubbleTitle">
-                <FormattedMessage id={`components.instrumentBubble.${node.data.parentName}`}>
+                <FormattedMessage id={`common.instrument.type.${node.data.parentName}`}>
                   {text => (
                     <textPath
                       href={`#${node.data.parentName}path`}

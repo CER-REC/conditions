@@ -27,13 +27,22 @@
       "standardCondtion": "Standard Condition"
     },
     "instrument": {
-      "routing": "Routing",
-      "construction": "Construction",
-      "opening": "Opening",
-      "abandonment": "Abandonment",
-      "safety": "Safety",
-      "tariffs": "Tariffs",
-      "misc": "Misc."
+      "category": {
+        "routing": "Routing",
+        "construction": "Construction",
+        "opening": "Opening",
+        "abandonment": "Abandonment",
+        "safety": "Safety",
+        "tariffs": "Tariffs",
+        "misc": "Misc."
+      },
+      "type": {
+        "oil": "Oil",
+        "gas": "Gas",
+        "power": "Power",
+        "anyCommodityTypes": "Any Commodity Types",
+        "notSpecified": "Not Specified"
+      }
     },
     "phase": {
       "includesAll": "Includes All Phases of Constr.",
@@ -69,12 +78,8 @@
     }
   },
   "components": {
-    "instrumentBubble": {
-      "oil": "Oil",
-      "gas": "Gas",
-      "power": "Power",
-      "anyCommodityTypes": "Any Commodity Types",
-      "notSpecified": "Not Specified"
+    "instrumentsLegend": {
+      "all": "All Instruments"
     },
     "modal": {
       "image": {
@@ -95,7 +100,6 @@
       "associated": "Associated Companies"
     },
     "smallMultiplesLegend": {
-      "title": "All Themes",
       "all": {
         "theme": "All Themes",
         "phase": "All Phases",

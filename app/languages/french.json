@@ -27,13 +27,22 @@
       "standardCondtion": ""
     },
     "instrument": {
-      "routing": "",
-      "construction": "",
-      "opening": "",
-      "abandonment": "",
-      "safety": "",
-      "tariffs": "",
-      "misc": "."
+      "category": {
+        "routing": "",
+        "construction": "",
+        "opening": "",
+        "abandonment": "",
+        "safety": "",
+        "tariffs": "",
+        "misc": ""
+      },
+      "type": {
+        "oil": "",
+        "gas": "",
+        "power": "",
+        "anyCommodityTypes": "",
+        "notSpecified": ""
+      }
     },
     "phase": {
       "includesAll": "",
@@ -69,10 +78,8 @@
     }
   },
   "components": {
-    "instrumentBubble": {
-      "oil": "",
-      "gas": "",
-      "power": ""
+    "instrumentsLegend": {
+      "all": ""
     },
     "modal": {
       "image": {
@@ -93,7 +100,6 @@
       "associated": ""
     },
     "smallMultiplesLegend": {
-      "title": "",
       "all": {
         "theme": "",
         "phase": "",

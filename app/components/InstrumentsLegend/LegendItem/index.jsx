@@ -1,20 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import './styles.scss';
-
-// TODO: This is a mock, replace with the translation function
-const t = (searchList) => {
-  if (searchList[1] === 'all') {
-    return `All ${searchList[2]}s`;
-  }
-
-  return searchList[2];
-};
 
 const LegendItem = (props) => {
   let indicators = null;
-  const type = props.all ? 'all' : 'title';
+  const id = props.all ? 'components.instrumentsLegend.all' : `common.instrument.category.${props.title}`;
 
   if (!props.all) {
     indicators = props.indicators.map((indicator, index) => {
@@ -30,7 +22,7 @@ const LegendItem = (props) => {
       <span className="indicators">
         {indicators}
       </span>
-      <span>{t(['instrumentsLegend', type, props.title])}</span>
+      <FormattedMessage id={id} />
     </div>
   );
 };
