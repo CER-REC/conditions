@@ -7,10 +7,8 @@ import './styles.scss';
 
 const BarContainer = (props) => {
   if (props.items.length === 0) { return null; }
-
-  const maximumVerticalBarHeight = props.scale * Math.max(...props.items.map((bar) => {
-    const { value } = bar; return value;
-  }));
+  const className = 'BarContainer';
+  const maximumVerticalBarHeight = props.scale * Math.max(...props.items.map(({ value }) => value));
 
   let barContainerWidth = 0;
 
@@ -54,7 +52,7 @@ const BarContainer = (props) => {
   const Container = !props.standalone
     ? (
       <div
-        className="BarContainer"
+        className={className}
         style={{
           height: barContainerHeight,
           width: barContainerWidth,
@@ -67,13 +65,11 @@ const BarContainer = (props) => {
         </svg>
       </div>)
     : (
-      <React.Fragment>
-        <g width={barContainerWidth} height={barContainerHeight}>
-          <title>{props.title}</title>
-          <desc>{props.desc}</desc>
-          {Bars}
-        </g>
-      </React.Fragment>);
+      <g className={className} width={barContainerWidth} height={barContainerHeight}>
+        <title>{props.title}</title>
+        <desc>{props.desc}</desc>
+        {Bars}
+      </g>);
   return Container;
 };
 
