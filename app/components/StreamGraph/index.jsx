@@ -12,6 +12,13 @@ import './styles.scss';
 
 export const roundDateLabel = t => Math.round(t);
 
+const VictoryStackReplacement = ({ groupProps, ...props }) => (
+  <VictoryStack
+    groupComponent={<StackGroup {...groupProps} stackProps={props} />}
+    {...props}
+  />
+);
+
 class StreamGraph extends React.Component {
   static propTypes = {
     projectData: PropTypes.arrayOf(PropTypes.shape({
@@ -29,21 +36,11 @@ class StreamGraph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showControl: false,
-      positionControl: 30,
-      numOfConditions: 0,
-      yHeight: '20',
+      controlYear: null,
     };
   }
 
-  handleOnChange = (positionControl, numOfConditions, showControl, yHeight) => {
-    this.setState({
-      positionControl,
-      numOfConditions,
-      showControl,
-      yHeight,
-    });
-  };
+  handleOnChange = controlYear => this.setState({ controlYear });
 
   streamLayers() {
     const streamLayers = this.props.projectData.map(v => (
@@ -100,22 +97,15 @@ class StreamGraph extends React.Component {
           className="Axis-label"
           domain={[minDateValue, maxDateValue]}
         />
-        <VictoryStack
-          groupComponent={
-            (
-              <StackGroup
-                onChange={this.handleOnChange}
-                showControl={this.state.showControl}
-                positionControl={this.state.positionControl}
-                numOfConditions={this.state.numOfConditions}
-                projectData={this.props.projectData}
-                yHeight={this.state.yHeight}
-              />
-            )
-          }
+        <VictoryStackReplacement
+          groupProps={{
+            onChange: this.handleOnChange,
+            controlYear: this.state.controlYear,
+            projectData: this.props.projectData,
+          }}
         >
           {this.streamLayers()}
-        </VictoryStack>
+        </VictoryStackReplacement>
       </VictoryChart>
     );
   }

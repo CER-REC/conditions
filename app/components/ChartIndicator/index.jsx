@@ -13,10 +13,7 @@ const ChartIndicator = (props) => {
     />
   );
   const label = !props.label ? null : (
-    <React.Fragment>
-      <rect x="0" y="-5" width="20" height="10" fill="white" />
-      <text x="10" y="5" textAnchor="middle">{props.numOfConditionsLabel}</text>
-    </React.Fragment>
+    <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">{props.label}</text>
   );
   return (
     <g className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
@@ -28,7 +25,7 @@ const ChartIndicator = (props) => {
         className="line"
         x1={0}
         x2={0}
-        y1={0}
+        y1={5}
         y2={lineHeight}
       />
       {circleExists}
@@ -42,7 +39,10 @@ ChartIndicator.propTypes = {
   yBottom: PropTypes.number.isRequired,
   yTop: PropTypes.number.isRequired,
   radius: PropTypes.number,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
 ChartIndicator.defaultProps = {
