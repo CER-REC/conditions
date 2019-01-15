@@ -127,9 +127,11 @@ class StreamGraph extends React.PureComponent {
   render() {
     return (
       <div className="streamgraph">
-        <FormattedMessage id="components.streamGraph.title">
-          {text => <h1>{text}</h1>}
-        </FormattedMessage>
+        <h1>
+          <FormattedMessage id="components.streamGraph.title">
+            {text => text}
+          </FormattedMessage>
+        </h1>
         {this.chart()}
         {this.control()}
       </div>
