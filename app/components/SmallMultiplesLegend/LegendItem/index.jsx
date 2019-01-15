@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 import './styles.scss';
 
 const LegendItem = (props) => {
-  let stream;
+  let stream = null;
   const id = props.all ? `components.smallMultiplesLegend.all.${props.title}` : `common.${props.feature}.${props.title}`;
 
   if (!props.all) {
@@ -31,7 +32,13 @@ const LegendItem = (props) => {
   }
 
   return (
-    <div className={`LegendItem ${props.className} ${props.all ? 'all' : ''} ${props.faded ? 'faded' : ''}`}>
+    <div
+      className={classNames(
+        'LegendItem',
+        props.className,
+        { all: props.all, faded: props.faded },
+      )}
+    >
       <span className="stream">
         {stream}
       </span>

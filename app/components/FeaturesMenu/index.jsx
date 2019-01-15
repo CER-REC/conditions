@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import './styles.scss';
@@ -11,12 +12,11 @@ const FeaturesMenu = (props) => {
   let menu;
   const features = props.features.map(feature => t(['featuresMenu', 'title', feature]));
   const selected = features.includes(props.selected) ? props.selected : features[0];
-  const { onChange, dropDown } = props;
   const listItems = features.map(feature => (
     <FormattedMessage key={feature} id={`common.features.${feature}`} />
   ));
 
-  if (dropDown) {
+  if (props.dropDown) {
     const options = features.map(feature => (
       <FormattedMessage key={feature} id={`common.features.${feature}`}>
         {text => (
@@ -28,7 +28,7 @@ const FeaturesMenu = (props) => {
     ));
 
     menu = (
-      <select value={selected} onChange={event => onChange(event.target.value)}>
+      <select value={selected} onChange={event => props.onChange(event.target.value)}>
         {options}
       </select>
     );
@@ -37,14 +37,14 @@ const FeaturesMenu = (props) => {
       <List
         items={listItems}
         selected={features.indexOf(selected)}
-        onChange={index => onChange(features[index])}
+        onChange={index => props.onChange(features[index])}
         guideLine
       />
     );
   }
 
   return (
-    <div className={`FeaturesMenu ${dropDown ? 'dropDown' : ''} ${props.className}`}>
+    <div className={classNames('FeaturesMenu', props.className, { dropDown: props.dropDown })}>
       <span className="title">{`${t(['featuresMenu', 'title', props.title])}`}</span>
       {menu}
     </div>

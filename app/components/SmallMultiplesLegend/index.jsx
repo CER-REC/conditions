@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
@@ -38,7 +39,6 @@ const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
 };
 
 const SmallMultiplesLegend = (props) => {
-  let legendList;
   const dataIndex = props.data.findIndex(conditionsData => (
     conditionsData.name === props.selected
   ));
@@ -53,13 +53,10 @@ const SmallMultiplesLegend = (props) => {
     props.highlightName,
   );
   const onItemChange = (index) => {
-    if ((index === 0) && (legendDataItems.length > 1)) {
-      props.onChange(null);
+    const legendItem = legendDataItems[index];
+    const category = legendItem.props.all ? null : legendItem.props.title;
 
-      return;
-    }
-
-    props.onChange(legendDataItems[index].props.title);
+    props.onChange(category);
   };
 
   if (legendDataItems.length > 1) {
@@ -78,21 +75,15 @@ const SmallMultiplesLegend = (props) => {
     ));
   }
 
-  if (legendDataItems.length) {
-    legendList = (
+  return (
+    <div className={classNames('SmallMultiplesLegend', props.className)}>
       <List
-        className={`${hasHighlight ? 'faded' : ''}`}
+        className={classNames({ faded: hasHighlight })}
         items={legendDataItems}
         selected={selectedIndex}
         onChange={onItemChange}
         guideLine
       />
-    );
-  }
-
-  return (
-    <div className={`SmallMultiplesLegend ${props.className}`}>
-      {legendList}
     </div>
   );
 };
