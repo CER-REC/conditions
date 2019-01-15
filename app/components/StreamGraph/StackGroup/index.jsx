@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Control from '../../Control';
+import ChartIndicator from '../../ChartIndicator';
 
 import './styles.scss';
 
@@ -168,7 +168,7 @@ class StackGroup extends React.PureComponent {
   }
 
   handleOutsideClick = (event) => {
-    if (!this.node.contains(event.target)) {
+    if (this.node && !this.node.contains(event.target)) {
       const showControl = false;
       this.props.onChange(showControl);
     }
@@ -192,10 +192,11 @@ class StackGroup extends React.PureComponent {
       >
         {this.props.children}
         {!this.props.showControl ? null : (
-          <Control
-            positionControl={`translate(${this.props.positionControl + 50}, 30)`}
-            numOfConditionsLabel={this.props.numOfConditions}
-            yHeight={this.props.yHeight}
+          <ChartIndicator
+            x={this.props.positionControl + 50}
+            yTop={30}
+            yBottom={300}
+            label={this.props.numOfConditions.toString()}
             controlTextValue={this.props.controlTextValue}
           />
         )}
