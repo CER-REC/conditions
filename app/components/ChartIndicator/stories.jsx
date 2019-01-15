@@ -17,15 +17,18 @@ const heightOptions = {
   max: 100,
   step: 20,
 };
+
+const visible = true;
+
 storiesForComponent('Components|ChartIndicator', module, ReadMe)
   .addDecorator(withKnobs)
   .add('withCircle', () => (
     <svg width={500} height={500}>
-      <ChartIndicator display={true} x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} radius={number('radius(px)', 40, heightOptions)} />
+      <ChartIndicator display={visible} x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} radius={number('radius(px)', 40, heightOptions)} />
     </svg>
   ))
   .add('withoutCircle', () => (
     <svg width={500} height={500}>
-      <ChartIndicator display={true} x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} />
+      <ChartIndicator display={visible} x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} />
     </svg>
   ));

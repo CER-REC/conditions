@@ -21,7 +21,69 @@ class BubbleChart extends React.PureComponent {
     };
   }
 
-  circleFunction = (circleProp) => {
+  d3HierarchyCalculation = (instrumentChartData, width, height) => {
+    // d3 pack generates a function to
+    // fit data into tightly packed circles.
+    const pack = d3
+      .pack()
+      .size([width, height])
+      .padding(node => (node.depth === 0 ? 0 : 5))
+      .radius((node) => {
+        // Calculation for rendering larger circle based on text length
+        const characterWidth = 8;
+        const textLength = node.data.name.length * characterWidth;
+        const textHeight = 15;
+        const textLengthExceeds = node.value * 2 <= textLength;
+        if (textLengthExceeds) {
+          return node.value + textLength; // buffer
+        }
+        if (node.value < textHeight) {
+          return node.value + textHeight;
+        }
+        return node.value;
+      });
+    // creates the root node using
+    // d3 hierarchy similar to a tree layout
+    const root = d3
+      .hierarchy(instrumentChartData)
+      .sum(totalData => totalData.value)
+      .sort((a, b) => b.value - a.value);
+
+    const descendants = pack(root).descendants();
+    return descendants;
+  };
+
+  combineData = () => {
+    const nodes1 = this.d3HierarchyCalculation(this.props.instrumentChartData1, 550, 400);
+    const nodes2 = this.d3HierarchyCalculation(this.props.instrumentChartData2, 1400, 400);
+    const sortedData1 = this.sortCombinedData(nodes1);
+    let sortedData2 = [];
+    if (nodes2 !== undefined) {
+      sortedData2 = this.sortCombinedData(nodes2);
+    }
+    return sortedData1.concat(sortedData2);
+  };
+
+  sortCombinedData = (combinedNodes) => {
+    const position = combinedNodes.filter(node => (node.depth > 1)).map(node => ({
+      x: node.x,
+      y: node.y,
+      r: node.value,
+    }));
+    const sortedData = position.sort((a, b) => {
+      if (a.x < b.x) {
+        return -1;
+      }
+      if (a.x > b.x) {
+        return 1;
+      }
+      return 0;
+    });
+    return sortedData;
+  }
+
+  // Interaction Functions for Chart Indicator
+  onClick = (circleProp) => {
     const circleRadius = circleProp[0];
     const circleX = circleProp[1];
     const circleY = circleProp[2];
@@ -33,11 +95,8 @@ class BubbleChart extends React.PureComponent {
     });
   };
 
-  arrowFunction = (event) => {
-    const d3Hierarchy1 = this.d3HierarchyCalculation(this.props.instrumentChartData1, 550, 400);
-    const d3Hierarchy2 = this.d3HierarchyCalculation(this.props.instrumentChartData2, 1400, 400);
-    const d3HierarchyFiltered = d3Hierarchy2.filter(node => node !== undefined);
-    const sortedData = this.combineDataObject(d3Hierarchy1, d3HierarchyFiltered);
+  onKeyPress = (event) => {
+    const sortedData = this.combineData();
     const itemIndex = (sortedData.findIndex((item) => {
       if (item.x === this.state.indicatorX
         && item.r === this.state.indicatorRadius
@@ -62,67 +121,6 @@ class BubbleChart extends React.PureComponent {
     }
   };
 
-  combineDataObject = (nodes1, nodes2) => {
-    const sortedObject1 = this.sortedObject(nodes1);
-    let sortedObject2 = [];
-    if (nodes2 !== undefined) {
-      sortedObject2 = this.sortedObject(nodes2);
-    }
-    return sortedObject1.concat(sortedObject2);
-  };
-
-  sortedObject = (nodes) => {
-    const dataObject = nodes.filter(node => (node.depth > 1)).map(node => ({
-      x: node.x,
-      y: node.y,
-      r: node.value,
-    }));
-    const sortedObject = dataObject.sort((a, b) => {
-      if (a.x < b.x) {
-        return -1;
-      }
-      if (a.x > b.x) {
-        return 1;
-      }
-      return 0;
-    });
-    return sortedObject;
-  }
-
-  d3HierarchyCalculation = (instrumentChartData, width, height) => {
-    // d3 pack generates a function to
-    // fit data into tightly packed circles
-    // Renders all the circle properly
-    // with proper thickness so it always fits the circle.
-    const pack = d3
-      .pack()
-      .size([width, height])
-      .padding(node => (node.depth === 0 ? 0 : 5))
-      .radius((node) => {
-        const characterWidth = 8;
-        const textLength = node.data.name.length * characterWidth;
-        const textHeight = 15;
-        const textLengthExceeds = node.value * 2 <= textLength;
-        if (textLengthExceeds) {
-          return node.value + textLength; // buffer
-        }
-        if (node.value < textHeight) {
-          return node.value + textHeight;
-        }
-        return node.value;
-      });
-    // creates the root node using
-    // d3 hierarchy similar to a tree layout
-    const root = d3
-      .hierarchy(instrumentChartData)
-      .sum(totalData => totalData.value)
-      .sort((a, b) => b.value - a.value);
-
-    const descendants = pack(root).descendants();
-    this.combineDataObject(descendants);
-    return descendants;
-  };
-
   onDragStart = (event) => {
     this.setState({
       isDragging: true,
@@ -132,9 +130,7 @@ class BubbleChart extends React.PureComponent {
 
   onDragMove = (event) => {
     if (this.state.isDragging === true) {
-      const d3Hierarchy1 = this.d3HierarchyCalculation(this.props.instrumentChartData1, 550, 400);
-      const d3Hierarchy2 = this.d3HierarchyCalculation(this.props.instrumentChartData2, 1400, 400);
-      const sortedData = this.combineDataObject(d3Hierarchy1, d3Hierarchy2);
+      const sortedData = this.combineData();
       const minimumArray = sortedData.map(item => Math.abs(item.x - (event.clientX - 64)));
       const closestIndex = minimumArray.indexOf(Math.min.apply(null, minimumArray));
       this.setState({
@@ -177,8 +173,8 @@ class BubbleChart extends React.PureComponent {
           <InstrumentBubble
             width={550}
             height={400}
-            onClick={this.circleFunction}
-            keyPress={this.arrowFunction}
+            onClick={this.onClick}
+            keyPress={this.onKeyPress}
             d3HierarchyCalculation={this.d3HierarchyCalculation(
               instrumentChartData1,
               550,
@@ -188,8 +184,8 @@ class BubbleChart extends React.PureComponent {
           <InstrumentBubble
             width={1400}
             height={400}
-            onClick={this.circleFunction}
-            keyPress={this.arrowFunction}
+            onClick={this.onClick}
+            keyPress={this.onKeyPress}
             d3HierarchyCalculation={this.d3HierarchyCalculation(
               instrumentChartData2,
               1400,

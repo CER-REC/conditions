@@ -4,8 +4,6 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
 /* TODO:
 1) Check if the text is overlapping another and change arc accordingly
-2) Check if the inside text is smaller than circle radius, and shift the text
-3) Add to onClick function to mimic design document functionality
 */
 
 const pickColor = (category) => {
@@ -27,6 +25,8 @@ class InstrumentBubble extends React.PureComponent {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     onClick: PropTypes.func.isRequired,
+    keyPress: PropTypes.func.isRequired,
+    d3HierarchyCalculation: PropTypes.instanceOf(Object).isRequired,
   }
 
   circleRender = nodes => (
