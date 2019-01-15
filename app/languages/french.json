@@ -78,6 +78,9 @@
     }
   },
   "components": {
+    "featureMenu": {
+      "dropDownTitle": ""
+    },
     "instrumentsLegend": {
       "all": ""
     },
