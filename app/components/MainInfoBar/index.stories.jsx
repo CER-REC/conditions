@@ -10,17 +10,13 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('Basic view', () => (
     <MainInfoBar
-      textBox={select('TextBox', ['', 'About', 'Methodology', 'Downloads'], 'None Selected')}
-      onChange={() => {}}
-      handleDoubleArrows={() => alert('clicked')}
-      handleOnClick={k => alert(k)}
+      textBox={select('TextBox', ['', 'About', 'Methodology', 'Downloads'], '')}
     />
   ))
   .add('With prop: About', () => (
     <MainInfoBar
       textBox="About"
       onChange={() => alert('clicked')}
-      handleDoubleArrows={() => alert('clicked')}
       handleOnClick={() => alert('clicked')}
     />
   ))
@@ -28,7 +24,6 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
     <MainInfoBar
       textBox="Methodology"
       onChange={() => alert('clicked')}
-      handleDoubleArrows={() => alert('clicked')}
       handleOnClick={() => alert('clicked')}
     />
   ))
@@ -36,7 +31,6 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
     <MainInfoBar
       textBox="Downloads"
       onChange={() => alert('clicked')}
-      handleDoubleArrows={() => alert('clicked')}
       handleOnClick={() => alert('clicked')}
     />
   ));

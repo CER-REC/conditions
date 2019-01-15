@@ -8,7 +8,11 @@ describe('Components|MainInfoBar', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<MainInfoBar />);
+      wrapper = shallow(<MainInfoBar
+        onChange={() => {}}
+        textBox=""
+        handleOnClick={() => {}}
+      />);
     });
 
     it('should render', () => {
@@ -19,7 +23,7 @@ describe('Components|MainInfoBar', () => {
       expect(wrapper.is('.MainInfoBar')).to.equal((true));
     });
 
-    it('should show four share icons', () => {
+    it('should show four share icons ', () => {
       expect(wrapper.find('ShareIcon')).to.have.lengthOf(4);
     });
 
@@ -29,6 +33,11 @@ describe('Components|MainInfoBar', () => {
 
     it('should show three text links', () => {
       expect(wrapper.find('button')).to.have.lengthOf(3);
+    });
+
+    it('should show five share icons', () => {
+      wrapper = shallow(<MainInfoBar onChange={() => {}} textBox="test" />);
+      expect(wrapper.find('ShareIcon')).to.have.lengthOf(5);
     });
   });
 });

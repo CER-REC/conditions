@@ -18,12 +18,6 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
-  handleDoubleArrows = () => {
-    if (this.props.textBox !== '') {
-      this.props.textBox = '';
-    }
-  }
-
   handleOnClick = () => {
     if (this.props.textBox === 'About') { return <AboutTextBox />; }
     if (this.props.textBox === 'Methodology') { return <MethodologyTextBox />; }
@@ -91,7 +85,7 @@ class MainInfoBar extends React.PureComponent {
               <ShareIcon
                 icon="angle-double-up"
                 prefix="fas"
-                onChange={this.props.handleDoubleArrows}
+                onChange={this.props.textBox}
               />
             )
         }
@@ -102,7 +96,6 @@ class MainInfoBar extends React.PureComponent {
 
 MainInfoBar.propTypes = {
   onChange: PropTypes.func.isRequired,
-  handleDoubleArrows: PropTypes.func.isRequired,
   textBox: PropTypes.string,
   handleOnClick: PropTypes.func.isRequired,
 };
