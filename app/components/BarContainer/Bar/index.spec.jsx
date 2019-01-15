@@ -8,15 +8,7 @@ describe('Components|Bar', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
-        <Bar
-          width={0}
-          height={0}
-          x={0}
-          y={0}
-          fill=""
-        />
-      );
+      wrapper = shallow(<Bar width={0} height={0} x={0} y={0} fill="" />);
     });
 
     it('should render a rect', () => {
