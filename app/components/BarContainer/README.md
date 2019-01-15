@@ -11,7 +11,8 @@ container is vertical, the size prop determines the width of each bar in the set
 BarContainer has a prop called 'standalone' this prop will conditionally render 
 the component with a ```<g></g>``` container instead of the default ```<svg></svg>```.
 This is done so the container will work inside of a current svg without nesting
-a sub svg element.
+a sub svg element. In storybook the BarContainer is rendered inside of a general 
+svg element. The height and width is given by the user-agent. 
 
 ## Interaction Requirements
 
