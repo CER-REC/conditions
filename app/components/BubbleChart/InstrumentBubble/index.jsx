@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as d3 from 'd3';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
 /* TODO:
@@ -33,7 +32,7 @@ class InstrumentBubble extends React.PureComponent {
   circleRender = nodes => (
     nodes.filter(v => (v.depth !== 0))
       .map((node) => {
-        // Renders parent circles (ie Energy bubbles)
+        // Renders commodity circles (ie Energy bubbles)
         if (node.depth === 1) {
           // Create curved path for parentNode text
           const textCurvedPath = `
@@ -47,6 +46,7 @@ class InstrumentBubble extends React.PureComponent {
                 style={{ fill: 'none', stroke: 'transparent' }}
               />
               <circle
+                onKeyDown={this.props.keyPress}
                 className="CommodityCircle"
                 {...handleInteraction(
                   this.props.onClick, [node.r, node.x, node.y],
@@ -77,12 +77,8 @@ class InstrumentBubble extends React.PureComponent {
             key={node.data.name}
           >
             <circle
-              className="InstrumentTextCircle"
-              r={node.r}
-              transform={`translate(${node.x} ${node.y})`}
-            />
-            <circle
-              {...handleInteraction(this.props.onClick, [node.r, node.x, node.y])}
+              onKeyDown={this.props.keyPress}
+              {...handleInteraction(this.props.onClick, [node.value, node.x, node.y])}
               r={node.value}
               transform={`translate(${node.x} ${node.y})`}
               style={{ fill: pickColor(node.data.category) }}
@@ -101,42 +97,11 @@ class InstrumentBubble extends React.PureComponent {
       })
   )
 
-  d3HierarchyCalculation() {
-    const { width, height, instrumentChartData } = this.props;
-    //  d3 pack generates a function to
-    // fit data into tightly packed circles
-    // Renders all the circle propertly
-    // with proper thickness so it always fits the circle.
-    const pack = d3.pack()
-      .size([width, height])
-      .padding(node => (node.depth === 0 ? 0 : 5))
-      .radius((node) => {
-        const characterWidth = 8;
-        const textLength = (node.data.name).length * characterWidth;
-        const textHeight = 15;
-        const textLengthExceeds = (node.value * 2 <= textLength);
-        if (textLengthExceeds) {
-          return (node.value) + (textLength); // buffer
-        }
-        if (node.value < textHeight) {
-          return node.value + textHeight;
-        }
-        return node.value;
-      });
-    // creates the root node using
-    // d3 hierarchy similar to a tree layout
-    const root = d3.hierarchy(instrumentChartData)
-      .sum(totalData => totalData.value)
-      .sort((a, b) => (b.value - a.value));
-    return pack(root).descendants();
-  }
-
   render() {
     const { width, height, onClick } = this.props;
-    const d3Calculation = this.d3HierarchyCalculation();
     return (
       <g className="InstrumentBubble" width={width} height={height}>
-        {this.circleRender(d3Calculation, onClick)}
+        {this.circleRender(this.props.d3HierarchyCalculation, onClick)}
       </g>
     );
   }
