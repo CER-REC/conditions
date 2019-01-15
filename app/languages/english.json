@@ -81,6 +81,9 @@
     "featureDescription": {
       "theme": "Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. \n Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes."
     },
+    "featureMenu": {
+      "dropDownTitle": "Feature"
+    },
     "instrumentsLegend": {
       "all": "All Instruments"
     },

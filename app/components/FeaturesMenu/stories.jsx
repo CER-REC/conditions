@@ -16,14 +16,12 @@ storiesForComponent('Components|FeaturesMenu', module, ReadMe)
   .addDecorator(withKnobs)
   .add('basic usage', () => (
     <FeaturesMenu
-      title="Title"
       features={features}
       onChange={feature => alert(feature)}
     />
   ))
   .add('selected', () => (
     <FeaturesMenu
-      title="Title A"
       features={features}
       onChange={feature => alert(feature)}
       selected={select('Selected', featuresOptions, 'TEST 123')}
@@ -31,7 +29,6 @@ storiesForComponent('Components|FeaturesMenu', module, ReadMe)
   ))
   .add('drop down', () => (
     <FeaturesMenu
-      title="Title"
       features={features}
       onChange={feature => alert(feature)}
       dropDown={boolean('Drop Down Mode', true)}
