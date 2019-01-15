@@ -8,7 +8,11 @@ describe('Components|ShortCutInfoBar', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ShortCutInfoBar />);
+      wrapper = shallow(<ShortCutInfoBar
+        onChange={() => {}}
+        handleInfoBar={() => {}}
+        handleInfoButton={() => {}}
+      />);
     });
 
     it('should render', () => {
@@ -19,16 +23,12 @@ describe('Components|ShortCutInfoBar', () => {
       expect(wrapper.is('.ShortCutInfoBar')).to.equal((true));
     });
 
-    it('should show four share icons', () => {
-      expect(wrapper.find('ShareIcon')).to.have.lengthOf(4);
+    it('should show eight share icons', () => {
+      expect(wrapper.find('ShareIcon')).to.have.lengthOf(8);
     });
 
     it('should show three text links', () => {
       expect(wrapper.find('button')).to.have.lengthOf(1);
-    });
-
-    it('should expand when given the handleInfoBar prop', () => {
-      expect(wrapper.props().handleInfoBar).to.equal(true);
     });
   });
 });

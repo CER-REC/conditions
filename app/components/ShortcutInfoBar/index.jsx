@@ -41,7 +41,7 @@ class ShortCutInfoBar extends React.PureComponent {
       <div className="About">
         <button
           type="button"
-          onClick={() => {}}
+          onChange={this.props.onChange}
         >
         About this Visualization
         </button>
@@ -124,7 +124,7 @@ class ShortCutInfoBar extends React.PureComponent {
 ShortCutInfoBar.propTypes = {
   onChange: PropTypes.func.isRequired,
   handleInfoButton: PropTypes.func.isRequired,
-  handleInfoBar: PropTypes.bool.isRequired,
+  handleInfoBar: PropTypes.func.isRequired,
 };
 
 export default ShortCutInfoBar;

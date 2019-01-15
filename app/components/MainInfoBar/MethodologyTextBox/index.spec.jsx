@@ -16,7 +16,7 @@ describe('Components|MainInfoBar/MethodologyTextBox', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.methodology-text-box')).to.equal((true));
+      expect(wrapper.is('.MethodologyTextBox')).to.equal((true));
     });
   });
 });

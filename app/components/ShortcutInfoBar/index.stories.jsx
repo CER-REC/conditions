@@ -15,5 +15,6 @@ storiesForComponent('Components|ShortCutInfoBar', module, ReadMe)
     <ShortCutInfoBar
       onChange={() => {}}
       handleInfoBar={() => alert('clicked')}
+      handleInfoButton={() => alert('clicked')}
     />
   ));

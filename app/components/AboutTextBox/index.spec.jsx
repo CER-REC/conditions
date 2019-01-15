@@ -16,7 +16,7 @@ describe('Components|AboutTextBox', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.about-text-box')).to.equal((true));
+      expect(wrapper.is('.AboutTextBox')).to.equal((true));
     });
   });
 });

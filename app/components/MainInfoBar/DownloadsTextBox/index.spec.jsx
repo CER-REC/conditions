@@ -16,7 +16,7 @@ describe('Components|MainInfoBar/DownloadsTextBox', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.downloads-text-box')).to.equal((true));
+      expect(wrapper.is('.DownloadsTextBox')).to.equal((true));
     });
   });
 });
