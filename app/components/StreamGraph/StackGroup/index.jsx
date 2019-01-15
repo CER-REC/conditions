@@ -43,32 +43,11 @@ class StackGroup extends React.PureComponent {
     };
   };
 
-  setControlBool = () => {
-    const showControl = true;
-    return showControl;
-  }
-
-  getConditionDates = () => this.props.projectData.reduce((acc, next) => {
-    next.graphData.forEach((v) => {
-      if (!acc[v.date]) { acc[v.date] = 0; }
-      acc[v.date] += v.count;
-    });
-    return acc;
-  }, {});
-
-  getDateCount = () => {
-    const [min, max] = this.props.stackProps.domain.x;
-    return max - min;
-  }
-
-  getChartWidth = () => {
-    const { width } = this.calculateStackSize();
-    return width;
-  }
-
   getSectionWidth = () => {
-    const sectionWidth = this.getChartWidth() / this.getDateCount();
-    return sectionWidth;
+    const { width } = this.calculateStackSize();
+    const [min, max] = this.props.stackProps.domain.x;
+    // Divide the width of the chart by (lastYear - firstYear)
+    return width / (max - min);
   }
 
   handleArrowKey = (event) => {
@@ -110,30 +89,26 @@ class StackGroup extends React.PureComponent {
     this.isDragging = false;
   }
 
-  handleOutsideClick = (event) => {
-    // TODO: Reimplement this
-    // TODO: Change this.node to this.sizeRef
-    if (this.node && !this.node.contains(event.target)) {
-      const showControl = false;
-      this.props.onChange(showControl);
-    }
-  }
-
   render() {
     const { stackProps, controlYear } = this.props;
 
     let control = null;
     if (controlYear) {
       const xPos = stackProps.scale.x(controlYear);
-      const dateValues = this.getConditionDates();
+      // Count the number of conditions across all streams for the selected year
+      const conditionCount = this.props.projectData.reduce((acc, next) => {
+        const yearData = next.graphData.find(data => data.date === controlYear);
+        return acc + (yearData ? yearData.count : 0);
+      }, 0);
+
       const yBottom = stackProps.height - stackProps.padding.bottom;
-      const yTop = stackProps.scale.y(dateValues[controlYear]);
+      const yTop = stackProps.scale.y(conditionCount);
       control = (
         <ChartIndicator
           x={xPos}
           yTop={yTop}
           yBottom={yBottom}
-          label={dateValues[controlYear]}
+          label={conditionCount}
         />
       );
     }
