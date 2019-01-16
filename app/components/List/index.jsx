@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faAngleUp,
@@ -23,7 +24,8 @@ library.add(
 
 const List = (props) => {
   if (props.items.length === 0) { return null; }
-  // arrowSize should match the style's arrow-size variable (there are testing issues with :export)
+  // arrowSize should match the legend style's arrow-size variable
+  // (there are testing issues with :export)
   const arrowSize = '24px';
   // Selected index cannot exceed the length of the array
   const selectedIndex = (props.selected < props.items.length) ? props.selected : 0;
@@ -34,7 +36,7 @@ const List = (props) => {
     return (
       <li
         key={item.key || item}
-        className={`List-Item ${isSelected ? 'selected' : ''}`}
+        className={classNames('List-Item', { selected: isSelected })}
       >
         {!isSelected || selectedIndex === 0 ? null : (
           <CircleContainer size={arrowSize} onClick={() => props.onChange(i - 1)} className="arrowPrevious">
@@ -53,7 +55,13 @@ const List = (props) => {
     );
   });
   return (
-    <div className={`List ${props.horizontal ? 'horizontal' : ''} ${props.guideLine ? 'guideLine' : ''} ${props.className}`}>
+    <div
+      className={classNames(
+        'List',
+        props.className,
+        { horizontal: props.horizontal, guideLine: props.guideLine },
+      )}
+    >
       <ul>{items}</ul>
     </div>
   );

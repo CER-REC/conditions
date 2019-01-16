@@ -93,6 +93,7 @@
     "replace": "1.0.1",
     "sass-loader": "7.1.0",
     "sinon": "7.2.2",
+    "storybook-addon-interaction": "github:jorcass/storybook-addon-interaction",
     "storybook-readme": "4.0.5",
     "style-loader": "0.23.1",
     "url-loader": "1.1.2",

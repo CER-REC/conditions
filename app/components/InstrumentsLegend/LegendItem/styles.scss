@@ -1,0 +1,14 @@
+@import '../styles.scss';
+
+.InstrumentsLegend .LegendItem {
+  @extend %legendItem;
+
+  span {
+    vertical-align: middle;
+  }
+
+  .indicators {
+    @extend %legendItemData;
+    @extend %indicators;
+  }
+}

@@ -1,27 +1,15 @@
-@import '../../styles/borders.scss';
+@import '../../styles/legend.scss';
 
 %faded {
   opacity: 0.2;
 }
 
 .SmallMultiplesLegend {
-  text-align: left;
-  font-size: 0.85em;
+  @extend %legend;
 
   .List.faded {
     .CircleContainer {
       @extend %faded;
-    }
-  }
-
-  .List .List-Item.selected {
-    margin: 0.5em 0;
-
-    .LegendItem {
-      font-size: 1.25em;
-      border: $list-selected;
-      background-color: white;
-      padding: 0.4em;
     }
   }
 }

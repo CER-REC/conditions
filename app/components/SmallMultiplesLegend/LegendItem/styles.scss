@@ -1,8 +1,8 @@
 @import '../styles.scss';
+@import '../../../styles/legend.scss';
 
 .SmallMultiplesLegend .LegendItem {
-  height: 2em;
-  padding: 0.25em;
+  @extend %legendItem;
 
   &.all span {
     vertical-align: middle;
@@ -13,9 +13,8 @@
   }
 
   .stream {
-    width: 50%;
-    height: 100%;
+    @extend %legendItemData;
+
     display: inline-block;
-    padding-right: 0.5em;
   }
 }
