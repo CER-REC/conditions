@@ -3,21 +3,13 @@ import PropTypes from 'prop-types';
 import {
   VictoryAxis,
   VictoryArea,
-  VictoryStack,
   VictoryChart,
 } from 'victory';
-import StackGroup from './StackGroup';
+import StackGroupProps from './StackGroupProps';
 
 import './styles.scss';
 
 export const roundDateLabel = t => Math.round(t);
-
-const VictoryStackReplacement = ({ groupProps, ...props }) => (
-  <VictoryStack
-    groupComponent={<StackGroup {...groupProps} stackProps={props} />}
-    {...props}
-  />
-);
 
 class StreamGraph extends React.Component {
   static propTypes = {
@@ -97,7 +89,7 @@ class StreamGraph extends React.Component {
           className="Axis-label"
           domain={[minDateValue, maxDateValue]}
         />
-        <VictoryStackReplacement
+        <StackGroupProps
           groupProps={{
             onChange: this.handleOnChange,
             controlYear: this.state.controlYear,
@@ -105,7 +97,7 @@ class StreamGraph extends React.Component {
           }}
         >
           {this.streamLayers()}
-        </VictoryStackReplacement>
+        </StackGroupProps>
       </VictoryChart>
     );
   }

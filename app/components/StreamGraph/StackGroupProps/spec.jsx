@@ -2,12 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import VictoryStackReplacement from '.';
+import StackGroupProps from '.';
 
-describe('Components/VictoryStackReplacement', () => {
+describe('Components/StackGroupProps', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<VictoryStackReplacement stackProps />);
+    wrapper = shallow(<StackGroupProps stackProps />);
   });
 
   it('should pass the props in a group', () => {
