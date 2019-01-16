@@ -8,8 +8,10 @@ const intlProvider = new IntlProvider({ locale: 'en', messages: i18nMessages.en 
 const { intl } = intlProvider.getChildContext();
 const nodeWithIntlProp = node => React.cloneElement(node, { intl });
 
-ShallowWrapper.prototype.shallowWithIntl = function shallowWithIntl() {
-  return this.shallow({ context: { intl } });
+export const monkeyPatchShallowWithIntl = () => {
+  ShallowWrapper.prototype.shallowWithIntl = function shallowWithIntl() {
+    return this.shallow({ context: { intl } });
+  };
 };
 
 export const shouldBehaveLikeAComponent = (component, callback) => {
