@@ -17,7 +17,7 @@ describe('Components|FeaturesLegend', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow((
-      <FeaturesLegend legendItems={legendItems} />
+      <FeaturesLegend legendItems={legendItems} isProjectLegend />
     ));
   });
 
@@ -27,9 +27,14 @@ describe('Components|FeaturesLegend', () => {
     expect(wrapper.find('LegendItem')).to.have.lengthOf(5);
   });
 
+  it('should not show the footer when props: isProjectLegend is false', () => {
+    wrapper.setProps({ isProjectLegend: false });
+    expect(wrapper.hasClass('Footer')).to.equal(false);
+  });
+
   describe('without any items', () => {
     it('should not render anything', () => {
-      const empty = shallow(<FeaturesLegend legendItems={[]} />);
+      const empty = shallow(<FeaturesLegend legendItems={[]} isProjectLegend />);
       expect(empty.type()).to.equal(null);
     });
   });

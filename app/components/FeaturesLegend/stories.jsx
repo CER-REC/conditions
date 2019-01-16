@@ -12,6 +12,9 @@ const legendItems = [
 ];
 
 storiesForComponent('Components|FeaturesLegend', module, ReadMe)
-  .add('default', () => (
-    <FeaturesLegend legendItems={legendItems} />
+  .add('Project Legend', () => (
+    <FeaturesLegend legendItems={legendItems} isProjectLegend />
+  ))
+  .add('Location Legend', () => (
+    <FeaturesLegend legendItems={legendItems} isProjectLegend={false} />
   ));
