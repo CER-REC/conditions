@@ -6,9 +6,9 @@ import './styles.scss';
 const SelectedGroupBar = props => (
   <div className="SelectedGroupBar">
     <p style={{ background: props.backgroundColor }}>
-      <FormattedMessage id={props.group}>
-        {text => <span style={{ fontSize: props.groupSize }}>{text}:</span>}
-      </FormattedMessage>
+      <span style={{ fontSize: props.groupSize }}>
+        <FormattedMessage id={props.group}>{text => text}</FormattedMessage>:
+      </span>
       <span style={{ fontSize: props.groupItemSize }}>{props.children}</span>
     </p>
   </div>

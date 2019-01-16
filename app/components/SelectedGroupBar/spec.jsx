@@ -8,7 +8,7 @@ describe('Components|SelectedGroupBar', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<SelectedGroupBar group="Conditions">CONDITION</SelectedGroupBar>);
+      wrapper = shallow(<SelectedGroupBar group="components.companyWheel.wheelRay.title">Company Name</SelectedGroupBar>);
     });
 
     it('should render', () => {
@@ -26,7 +26,7 @@ describe('Components|SelectedGroupBar', () => {
   describe('with default props', () => {
     it('should accept both props for the group and groupItem text', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions">condition</SelectedGroupBar>);
-      expect(wrapper.find('span').first().text()).to.equal('Conditions:');
+      expect(wrapper.find('FormattedMessage')).to.have.lengthOf(1);
       expect(wrapper.find('span').last().text()).to.equal('condition');
     });
 
