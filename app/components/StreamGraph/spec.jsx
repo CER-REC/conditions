@@ -1,6 +1,6 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { shallowWithIntl } from '../../tests/utilities';
 
 import Streamgraph, { roundDateLabel, numOfConditionsLabel } from '.';
 
@@ -56,7 +56,7 @@ describe('Components|StreamGraph', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallowWithIntl(<Streamgraph projectData={projectData} />);
+      wrapper = shallow(<Streamgraph projectData={projectData} />);
     });
 
     it('should render', () => {
