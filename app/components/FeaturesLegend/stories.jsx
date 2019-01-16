@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import ProjectLegend from '.';
+import FeaturesLegend from '.';
 import ReadMe from './README.md';
 
 const legendItems = [
@@ -11,7 +11,7 @@ const legendItems = [
   { color: 'purple', description: 'test 5', disabled: false },
 ];
 
-storiesForComponent('Components|ProjectLegend', module, ReadMe)
+storiesForComponent('Components|FeaturesLegend', module, ReadMe)
   .add('default', () => (
-    <ProjectLegend legendItems={legendItems} />
+    <FeaturesLegend legendItems={legendItems} />
   ));

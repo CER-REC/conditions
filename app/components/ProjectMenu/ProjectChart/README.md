@@ -1,10 +1,11 @@
 # Project Chart
 
-Reveals the distribution of themes (Conditions.ConcatTheme(english)) assigned to conditions for each project from the selected company, shown in a bar chart.
+Reveals the distribution of themes (Conditions.ConcatTheme(english)) assigned to conditions for 
+each project from the selected company, shown in a bar chart.
 
 ## Requirements
 
-* Must follow the same ordering structure as the ProjectLegend
+* Must follow the same ordering structure as the FeaturesLegend
 * Flag items must follow the legend sizing
 * Displays an empty space for items with no data
 * Updates when the top level selected feature changes

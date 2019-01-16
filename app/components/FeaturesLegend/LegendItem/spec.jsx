@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import LegendItem from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
-describe('Components|ProjectLegend/LegendItem', () => {
+describe('Components|FeaturesLegend/LegendItem', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow((

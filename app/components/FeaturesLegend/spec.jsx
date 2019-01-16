@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import ProjectLegend from '.';
+import FeaturesLegend from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 const legendItems = [
@@ -13,15 +13,15 @@ const legendItems = [
   { color: 'purple', description: 'test 5', disabled: false },
 ];
 
-describe('Components|ProjectLegend', () => {
+describe('Components|FeaturesLegend', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow((
-      <ProjectLegend legendItems={legendItems} />
+      <FeaturesLegend legendItems={legendItems} />
     ));
   });
 
-  shouldBehaveLikeAComponent(ProjectLegend, () => wrapper);
+  shouldBehaveLikeAComponent(FeaturesLegend, () => wrapper);
 
   it('should contain five LegendItems', () => {
     expect(wrapper.find('LegendItem')).to.have.lengthOf(5);
@@ -29,7 +29,7 @@ describe('Components|ProjectLegend', () => {
 
   describe('without any items', () => {
     it('should not render anything', () => {
-      const empty = shallow(<ProjectLegend legendItems={[]} />);
+      const empty = shallow(<FeaturesLegend legendItems={[]} />);
       expect(empty.type()).to.equal(null);
     });
   });

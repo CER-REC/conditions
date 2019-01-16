@@ -6,7 +6,7 @@ import FeatureFlag from '../FeatureFlag';
 
 import './styles.scss';
 
-const ProjectLegend = (props) => {
+const FeaturesLegend = (props) => {
   if (props.legendItems.length === 0) { return null; }
   const renderedItems = props.legendItems.map(item => (
     <LegendItem
@@ -17,7 +17,7 @@ const ProjectLegend = (props) => {
     />
   ));
   return (
-    <div className="ProjectLegend">
+    <div className="FeaturesLegend">
       {renderedItems}
       <div className="Footer">
         <h3 className="Title">Number of Conditions</h3>
@@ -60,7 +60,7 @@ const ProjectLegend = (props) => {
   );
 };
 
-ProjectLegend.propTypes = {
+FeaturesLegend.propTypes = {
   legendItems: PropTypes.arrayOf(PropTypes.shape({
     disabled: PropTypes.bool,
     color: PropTypes.string.isRequired,
@@ -68,4 +68,4 @@ ProjectLegend.propTypes = {
   })).isRequired,
 };
 
-export default ProjectLegend;
+export default FeaturesLegend;
