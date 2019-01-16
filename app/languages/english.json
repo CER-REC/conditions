@@ -118,6 +118,14 @@
       "xAxis": "Effective Date",
       "yAxis": "Number of Conditions",
       "title": "Themes Across All Conditions"
+    },
+    "trendButton": {
+      "theme": "Go to Theme \nTrends",
+      "instrument": "Go to Instrument \nTrends",
+      "phase": "Go to Phase \nTrends",
+      "type": "Go to Type \nTrends",
+      "status": "Go to Status \nTrends",
+      "filing": "Go to Filing \nTrends"
     }
   },
   "views": {

@@ -6,12 +6,12 @@ import TrendButton from '.';
 import ReadMe from './README.md';
 
 const featureOptions = [
-  'Theme',
-  'Phase',
-  'Instrument',
-  'Type',
-  'Status',
-  'Filing',
+  'theme',
+  'phase',
+  'instrument',
+  'type',
+  'status',
+  'filing',
 ];
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
