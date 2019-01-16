@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const WheelRayLegend = (props) => {
-  const halfReservedDegress = props.reservedDegrees;
-  let positionDegree = 0 + halfReservedDegress;
-  const stripePosition = props.rotation;
-  const reservedSpace = halfReservedDegress + props.degreesPerItem;
+  const halfReservedDegress = props.reservedDegrees / 2;
+  let positionDegree = 0;
+  const stripePosition = 90 + props.rotation;
+  const reservedSpace = props.reservedDegrees;
   const nextPosition = (numOfItemsAtIndex) => {
     const oldPositionDegree = positionDegree;
     positionDegree += numOfItemsAtIndex * props.degreesPerItem;
@@ -15,17 +15,16 @@ const WheelRayLegend = (props) => {
 
   const legendRenderer = (legendObj, index) => {
     let position = nextPosition(legendObj.count);
-
-    if (position < stripePosition - props.degreesPerItem) {
-      position -= reservedSpace;
-    } else if (position > stripePosition + props.degreesPerItem) {
+    if (position <= stripePosition - halfReservedDegress - props.degreesPerItem) {
+      position -= 0;
+    } else if (position > stripePosition - halfReservedDegress + props.degreesPerItem) {
       position += reservedSpace;
     } else {
       position = stripePosition;
     }
     return (
       <text key={index} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
-        {legendObj.legend}
+        {legendObj.classifier}
       </text>
     );
   };

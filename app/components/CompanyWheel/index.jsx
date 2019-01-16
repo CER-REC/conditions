@@ -1,10 +1,12 @@
 import React from 'react';
-import { Spring } from 'react-spring';
-import PropTypes from 'prop-types';
+import { Spring, animated } from 'react-spring';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 import Ring from './Ring';
 import WheelRayLegend from './WheelRayLegend';
+// import PullToSpin from './PullToSpin';
+import WheelRay from './WheelRay';
 
 class CompanyWheel extends React.Component {
   constructor(props) {
@@ -12,82 +14,77 @@ class CompanyWheel extends React.Component {
     this.state = {
       oldRotation: 0,
       newRotation: 0,
-      newRayRotation: 90,
-      reservedDegrees: 20,
+      reservedDegrees: 30,
     };
   }
 
   componentWillMount() {
     const degreesAvailForPlotting = 360 - this.state.reservedDegrees;
-    const numOfLegendItems = this.props.ringType === 'company'
-      ? this.props.itemsData.length
-      : this.getLocationItemsCount();
+    const numOfLegendItems = this.props.itemsData.legendData.length;
     const degreesPerItem = degreesAvailForPlotting / numOfLegendItems;
     this.setState({ degreesPerItem });
   }
 
-  onSpinClick = () => {
-    const randomNum = Math.floor(Math.random() * 360);
+  setNewRotation= (rotateBy) => {
     this.setState(prevState => ({
       oldRotation: prevState.newRotation,
-      newRotation: prevState.newRayRotation + randomNum,
-      newRayRotation: this.calcRayRotation(prevState.newRayRotation + randomNum),
+      newRotation: prevState.newRotation + rotateBy,
     }));
   };
 
-  getLocationItemsCount = () => {
-    let count = 0;
-    for (let i = 0; i < this.props.itemsData.length; i += 1) {
-      count += this.props.itemsData[i].count;
-    }
-    return count + 2;
-  }
-
-  calcRayRotation = newWheelRotation => (450 - (newWheelRotation % 360)) % 360;
+  onClickSpin = () => {
+    const randomNum = Math.floor(Math.random() * (360));
+    this.setNewRotation(randomNum);
+  };
 
   render() {
     return (
       <div className="WheelContainer">
         <Spring
           config={{ tension: 50, clamp: true, mass: 0.7 }}
-          from={{ transformOrigin: '50% 50.31%', transform: `rotate(${this.state.oldRotation}deg)` }}
-          to={{ transform: `rotate(${this.state.newRotation}deg)`, rotate: this.state.newRayRotation }}
+          from={{ transformOrigin: '50% 50.31%', transform: `rotate(${this.state.oldRotation}deg)`, rotation: this.state.oldRotation }}
+          to={{ transform: `rotate(${this.state.newRotation * -1}deg)`, rotation: this.state.newRotation }}
         >
           { props => (
-            <div style={props} className="MovingContainer">
+            <animated.div className="MovingContainer" style={props}>
               <svg viewBox="0 0 860 860">
                 <g data-name="Group 3" transform="translate(-27.5 -122.8)">
-                  {/* following three lines can be deleted once everything is rendered.
+                  {/* following outer limit lines can be deleted once everything is rendered.
                     It is an accurate representation of spacing */}
                   <g className="OuterLimitCircle OutterCircles" transform="translate(27.5 125.5)">
                     <circle cx="430" cy="430" r="426" />
                   </g>
-                  <g data-name="wheelGroup" transform="translate(86 102)">
-                    {/* following three lines can be deleted once everything is rendered.
+                  <animated.g data-name="wheelGroup" transform="translate(86 102)">
+                    {/* following inner limit lines can be deleted once everything is rendered.
                     It is an accurate representation of spacing */}
                     <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
                       <circle className="cls-1" cx="264" cy="264" r="263.5" />
                     </g>
                     <Ring ringType={this.props.ringType} />
-                    <Spring native to={{ rotation: (props.rotate) }}>
-                      {legendProps => (
-                        <WheelRayLegend
-                          rotation={legendProps.rotation.getValue()}
-                          ringType={this.props.ringType}
-                          legendPositionArray={this.props.itemsData}
-                          degreesPerItem={this.state.degreesPerItem}
-                          reservedDegrees={this.state.reservedDegrees}
-                        />
-                      )}
-                    </Spring>
-                  </g>
+                    <WheelRay
+                      rotation={props.rotation}
+                      ringType={this.props.ringType}
+                      itemsArray={this.props.itemsData.items}
+                      degreesPerItem={this.state.degreesPerItem}
+                      reservedDegrees={this.state.reservedDegrees}
+                    />
+                    <WheelRayLegend
+                      rotation={props.rotation}
+                      ringType={this.props.ringType}
+                      legendPositionArray={this.props.itemsData.legendData}
+                      degreesPerItem={this.state.degreesPerItem}
+                      reservedDegrees={this.state.reservedDegrees}
+                    />
+                  </animated.g>
                 </g>
               </svg>
-            </div>
+            </animated.div>
           )
-          }
+        }
         </Spring>
-        <button type="button" className="pullToSpin" onClick={this.onSpinClick}>Spin that wheel</button>
+        <button className="pullToSpin" onClick={this.onClickSpin} type="button">Spin That Wheel</button>
+        <button className="plus" onClick={() => this.setNewRotation(this.state.degreesPerItem)} type="button">+1</button>
+        <button className="minus" onClick={() => this.setNewRotation(-1 * this.state.degreesPerItem)} type="button">-1</button>
       </div>
     );
   }
@@ -104,3 +101,4 @@ CompanyWheel.defaultProps = {
 };
 
 export default CompanyWheel;
+

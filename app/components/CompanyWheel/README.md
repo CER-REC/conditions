@@ -30,14 +30,13 @@
         }
       }
     } 
-  * Hookup pulltospin
   * Cleanup and outsource all private components.
-  * always calculate the number of companies as n+2 due to the gray ray which shoots out the current company occupying three rays.
-  * test rotation
-  * change filter of project dot default to opacity 50%
-
+  * Find out if delegating the calculation of rendering for wheelray and wheelraylegend should be at the company wheel level 
+  * Resolve issue with edge case of stripePosition being between -halfReservedDegrees < 0 > +halfReservedDegrees
+  
 * TODO: WheelRay
   * create component
+  * Create the two types of ray
 
 * TODO: WheelCompanyFlag
   * create component
@@ -46,16 +45,6 @@
 
 * TODO: WheelLocationBar
   * create component
-
-* TODO: relationshipCord
-  * create component
-  * figure out degree dynamic render
-
-* TODO: PullToSpin.
-  * create component
-  * design graphics
-  * implement duration measurement for mousedown  
-  * hookup function to parent
 
 The company wheel displays all projects grouped by company as well as relationships between companies. It is rendered as part of view 2.
 
