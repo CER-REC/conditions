@@ -55,9 +55,12 @@ describe('Components|StreamGraph', () => {
 
   describe('with default props', () => {
     let wrapper;
+    let handleOnChange;
     beforeEach(() => {
+      handleOnChange = sinon.spy();
       wrapper = shallow(<Streamgraph
         projectData={projectData}
+        handleOnChange={handleOnChange}
       />);
     });
 
@@ -86,3 +89,4 @@ describe('Components|StreamGraph', () => {
     });
   });
 });
+

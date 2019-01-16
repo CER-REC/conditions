@@ -12,5 +12,18 @@ const StackGroupProps = ({ groupProps, ...props }) => (
   />
 );
 
+StackGroupProps.propTypes = {
+  groupProps: PropTypes.objectOf({
+    onChange: PropTypes.func.isRequired,
+    controlYear: PropTypes.number,
+    ProjectData: PropTypes.arrayOf(PropTypes.shape({
+      graphData: PropTypes.arrayOf(PropTypes.shape({
+        date: PropTypes.number.isRequired,
+        count: PropTypes.number.isRequired,
+      })).isRequired,
+    })).isRequired,
+  }).isRequired,
+};
+
 export default StackGroupProps;
 
