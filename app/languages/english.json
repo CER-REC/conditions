@@ -119,11 +119,6 @@
         "filing": "All Filings"
       }
     },
-    "streamGraph": {
-      "xAxis": "Effective Date",
-      "yAxis": "Number of Conditions",
-      "title": "Themes Across All Conditions"
-    },
     "trendButton": {
       "theme": "Go to Theme \nTrends",
       "instrument": "Go to Instrument \nTrends",

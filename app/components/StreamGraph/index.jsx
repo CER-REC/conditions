@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import {
   VictoryAxis,
   VictoryArea,
@@ -15,7 +14,6 @@ export const numOfConditionsLabel = point => `${Math.round(point.y)}`;
 export const roundDateLabel = t => Math.round(t);
 class StreamGraph extends React.PureComponent {
   static propTypes = {
-    intl: intlShape.isRequired,
     projectData: PropTypes.arrayOf(PropTypes.shape({
       color: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
@@ -107,12 +105,12 @@ class StreamGraph extends React.PureComponent {
       <VictoryChart>
         <VictoryAxis
           dependentAxis
-          label={this.props.intl.formatMessage({ id: 'components.streamGraph.yAxis' })}
+          label="Number of Conditions"
           tickValues={[minConditionValue, maxConditionValue]}
           className="axis-label"
         />
         <VictoryAxis
-          label={this.props.intl.formatMessage({ id: 'components.streamGraph.xAxis' })}
+          label="Effective Date"
           tickFormat={roundDateLabel}
           className="axis-label"
           domain={[minDateValue, maxDateValue]}
@@ -127,11 +125,7 @@ class StreamGraph extends React.PureComponent {
   render() {
     return (
       <div className="streamgraph">
-        <h1>
-          <FormattedMessage id="components.streamGraph.title">
-            {text => text}
-          </FormattedMessage>
-        </h1>
+        <h1>Themes Across All Conditions</h1>
         {this.chart()}
         {this.control()}
       </div>
@@ -139,4 +133,4 @@ class StreamGraph extends React.PureComponent {
   }
 }
 
-export default injectIntl(StreamGraph);
+export default StreamGraph;
