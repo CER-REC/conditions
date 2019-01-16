@@ -4,6 +4,14 @@ import { expect } from 'chai';
 import { IntlProvider, intlShape } from 'react-intl';
 import i18nMessages from '../i18n';
 
+const intlProvider = new IntlProvider({ locale: 'en', messages: i18nMessages.en }, {});
+const { intl } = intlProvider.getChildContext();
+const nodeWithIntlProp = node => React.cloneElement(node, { intl });
+
+ShallowWrapper.prototype.shallowWithIntl = function shallowWithIntl() {
+  return this.shallow({ context: { intl } });
+};
+
 export const shouldBehaveLikeAComponent = (component, callback) => {
   it('should render with the component name as a class', () => {
     const wrapper = callback();
@@ -34,11 +42,6 @@ export const shouldHaveInteractionProps = (wrapper) => {
   expect(props.tabIndex).to.equal(0);
   expect(props.focusable).to.equal(true);
 };
-
-const intlProvider = new IntlProvider({ locale: 'en', messages: i18nMessages.en }, {});
-const { intl } = intlProvider.getChildContext();
-
-const nodeWithIntlProp = node => React.cloneElement(node, { intl });
 
 export const shallowWithIntl = (node, { context, ...opts } = {}) => shallow(
   nodeWithIntlProp(node),
