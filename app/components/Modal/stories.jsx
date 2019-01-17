@@ -34,7 +34,9 @@ storiesForComponent('Components|Modal', module, ReadMe)
       }}
       isOpen={boolean('Visible', true)}
       closeModal={noop}
-    />))
+      type="image"
+    />
+  ))
   .add('Data Download', () => (
     <Modal
       height={`${number('Height of Modal (px)', 600, options)}px`}
@@ -43,5 +45,6 @@ storiesForComponent('Components|Modal', module, ReadMe)
       content={content.data}
       isOpen={boolean('Visible', true)}
       closeModal={noop}
+      type="data"
     />
   ));

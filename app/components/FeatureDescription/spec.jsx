@@ -4,8 +4,8 @@ import { expect } from 'chai';
 
 import FeatureDescription from '.';
 
-const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a ullamcorper elit. Nulla vitae molestie mauris. Nulla placerat ullamcorper quam a ornare. Ut tempor orci sed arcu faucibus, eu mollis turpis lobortis. Vivamus fermentum neque id tincidunt sagittis. Morbi blandit orci eu augue semper pellentesque. Aenean eleifend quis quam id rhoncus. Etiam tristique hendrerit elit, sit amet tempor lacus gravida vitae. Proin viverra erat sed hendrerit convallis.';
-const feature = 'Feature title';
+const description = 'components.featureDescription.theme';
+const feature = 'theme';
 
 describe('Components|FeatureDescription', () => {
   describe('with props', () => {
@@ -22,8 +22,9 @@ describe('Components|FeatureDescription', () => {
       expect(wrapper.is('.feature-description')).to.equal(true);
     });
 
-    it('should have a heading', () => {
-      expect(wrapper.find('h1')).to.have.lengthOf(1);
+    it('should use translation to render out text for the heading', () => {
+      const title = wrapper.find('FormattedMessage').first().shallowWithIntl();
+      expect(title.type()).to.equal('h1');
     });
   });
 });

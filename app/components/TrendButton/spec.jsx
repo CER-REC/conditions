@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
+import { FormattedMessage } from 'react-intl';
 
 import TrendButton from '.';
 import StreamButton from './images/streamButton.png';
@@ -13,8 +14,10 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 describe('Components|TrendButton', () => {
   describe('with a selectedFeature', () => {
     let wrapper;
+    const feature = 'Theme';
+
     beforeEach(() => {
-      wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={noop} />);
+      wrapper = shallow(<TrendButton selectedFeature={feature} onClick={noop} />);
     });
 
     it('should render a button', () => {
@@ -29,8 +32,12 @@ describe('Components|TrendButton', () => {
       expect(wrapper.find('div.buttonText')).to.have.lengthOf(1);
     });
 
-    it('should render a span for button text', () => {
-      expect(wrapper.find('span')).to.have.lengthOf(1);
+    it('should render a FormattedMessage component for button text', () => {
+      const messageWrapper = wrapper.find(FormattedMessage);
+
+      expect(messageWrapper).to.have.lengthOf(1);
+      expect(messageWrapper.prop('id')).to.equal(`components.trendButton.${feature}`);
+      // TODO: Test that the message replaces line breaks with <br />
     });
   });
 
@@ -56,7 +63,7 @@ describe('Components|TrendButton', () => {
   describe('if streamGraph available', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = mount(<TrendButton selectedFeature="Theme" streamGraphData={[1, 2, 3]} onClick={noop} />);
+      wrapper = shallow(<TrendButton selectedFeature="Theme" streamGraphData={[1, 2, 3]} onClick={noop} />);
     });
 
     // TODO: Add this test when StreamGraph is implemented for TrendButton

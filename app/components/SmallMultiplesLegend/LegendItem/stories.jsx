@@ -8,7 +8,8 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('basic usage', () => (
     <LegendItem
-      title="Title"
+      title="inProgress"
+      feature="status"
       data={[{
         date: 2015,
         count: 1,
@@ -25,7 +26,8 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
   ))
   .add('all', () => (
     <LegendItem
-      title="Title"
+      title="filing"
+      feature="filing"
       data={[]}
       color=""
       max={0}
@@ -34,7 +36,8 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
   ))
   .add('faded', () => (
     <LegendItem
-      title="Another"
+      title="noFilingReq"
+      feature="status"
       data={[{
         date: 2000,
         count: 5,
