@@ -123,7 +123,8 @@
       "**/spec.jsx",
       "**/*.spec.js",
       "**/*.spec.jsx",
-      "**/stories.jsx"
+      "**/stories.jsx",
+      "app/components/Modal/index.jsx"
     ],
     "extension": [
       ".js",

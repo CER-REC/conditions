@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dialogPolyfill from 'dialog-polyfill';
-import { FormattedMessage } from 'react-intl';
-import handleInteraction from '../../utilities/handleInteraction';
 import 'dialog-polyfill/dialog-polyfill.css';
+
+import ModalContent from './ModalContent';
 
 import './styles.scss';
 
@@ -51,39 +51,13 @@ class Modal extends React.PureComponent {
         onClose={this.dialogClosed}
         ref={this.registerDialog}
       >
-        <div className="header">
-          <span className="title">
-            <FormattedMessage id={`components.modal.${type}.title`} />
-          </span>
-          {/* Didn't use Icon because icon was not supported in our font-awesome library */}
-          <svg
-            version="1.1"
-            width="20"
-            height="20"
-            className="closeIcon"
-            {...handleInteraction(this.close)}
-          >
-            <line x1="0" y1="20" x2="20" y2="0" strokeLinecap="round" />
-            <line x1="0" y1="0" x2="20" y2="20" strokeLinecap="round" />
-          </svg>
-        </div>
-        <div className="content">
-          {content}
-        </div>
-        <div className="footer">
-          {modalAction
-            ? (
-              <button
-                className="textButton"
-                type="button"
-                {...handleInteraction(modalAction.task)}
-              >
-                <FormattedMessage id={`components.modal.${type}.actionText`} />
-              </button>
-            )
-            : null
-          }
-        </div>
+        <ModalContent
+          type={type}
+          content={content}
+          modalAction={modalAction}
+          isOpen={isOpen}
+          closeModal={this.close}
+        />
       </dialog>
     );
   }
