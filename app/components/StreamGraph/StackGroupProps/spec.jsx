@@ -4,15 +4,23 @@ import { expect } from 'chai';
 
 import StackGroupProps from '.';
 
+const fakeScaleProp = () => 1;
+fakeScaleProp.copy = () => {};
+fakeScaleProp.domain = () => {};
+fakeScaleProp.range = () => {};
+
 const stackProps = {
-  domain: { x: () => {} },
+  domain: { x: [0, 100] },
+  scale: { x: fakeScaleProp, y: fakeScaleProp },
+  // eslint-disable-next-line object-curly-newline
+  padding: { left: 0, right: 0, top: 0, bottom: 0 },
   width: 500,
   height: 300,
 };
 
 const groupProps = {
   onChange: () => {},
-  ProjectData: [],
+  projectData: [],
 };
 
 describe('Components/Streamgraph/StackGroupProps', () => {
@@ -24,12 +32,17 @@ describe('Components/Streamgraph/StackGroupProps', () => {
     />);
   });
 
-  it('should pass the props in a group', () => {
-    expect(wrapper.props()).to.include({
+  it('should hide groupProps from VictoryStack', () => {
+    expect(wrapper.props()).to.not.have.property('groupProps');
+  });
+
+  it('should spread the groupProps to the group', () => {
+    const stackGroup = wrapper.prop('groupComponent');
+    // This is the inverse of what we pass to StackGroupProps, because it should
+    // spread groupProps out and keep the stackProps together
+    expect(stackGroup.props).to.deep.include({
+      ...groupProps,
       stackProps,
     });
   });
-
-  it('should pass the groupProps properly', () => {});
 });
-

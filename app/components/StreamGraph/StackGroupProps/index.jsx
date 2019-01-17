@@ -14,7 +14,7 @@ StackGroupProps.propTypes = {
   groupProps: PropTypes.shape({
     onChange: PropTypes.func.isRequired,
     controlYear: PropTypes.number,
-    ProjectData: PropTypes.arrayOf(PropTypes.shape({
+    projectData: PropTypes.arrayOf(PropTypes.shape({
       graphData: PropTypes.arrayOf(PropTypes.shape({
         date: PropTypes.number.isRequired,
         count: PropTypes.number.isRequired,
