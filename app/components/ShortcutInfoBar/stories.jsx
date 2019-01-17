@@ -1,18 +1,18 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
-import ShortCutInfoBar from '.';
+import ShortcutInfoBar from '.';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|ShortCutInfoBar', module, ReadMe)
+storiesForComponent('Components|ShortcutInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('Basic view', () => (
-    <ShortCutInfoBar
+    <ShortcutInfoBar
       onChange={() => {}}
     />
   ))
   .add('Expanded view', () => (
-    <ShortCutInfoBar
+    <ShortcutInfoBar
       onChange={() => {}}
       handleInfoBar={() => alert('clicked')}
       handleInfoButton={() => alert('clicked')}

@@ -21,12 +21,15 @@ library.add(
   faFileDownload,
 );
 
-class ShortCutInfoBar extends React.PureComponent {
+class ShortcutInfoBar extends React.PureComponent {
   infoButton() {
     return (
       <div
         className="InfoButton"
-        onChange={this.props.handleInfoButton}
+        onClick={this.props.handleInfoButton}
+        onKeyPress={this.props.handleInfoButton}
+        role="button"
+        tabIndex="0"
       >
         <ShareIcon
           icon="info-circle"
@@ -41,7 +44,7 @@ class ShortCutInfoBar extends React.PureComponent {
       <div className="About">
         <button
           type="button"
-          onChange={this.props.onChange}
+          onClick={this.props.onChange}
         >
         About this Visualization
         </button>
@@ -113,7 +116,7 @@ class ShortCutInfoBar extends React.PureComponent {
 
   render() {
     return (
-      <div className="ShortCutInfoBar">
+      <div className="ShortcutInfoBar">
         {this.infoButton()}
         {this.infoBar()}
       </div>
@@ -121,10 +124,10 @@ class ShortCutInfoBar extends React.PureComponent {
   }
 }
 
-ShortCutInfoBar.propTypes = {
+ShortcutInfoBar.propTypes = {
   onChange: PropTypes.func.isRequired,
   handleInfoButton: PropTypes.func.isRequired,
   handleInfoBar: PropTypes.func.isRequired,
 };
 
-export default ShortCutInfoBar;
+export default ShortcutInfoBar;

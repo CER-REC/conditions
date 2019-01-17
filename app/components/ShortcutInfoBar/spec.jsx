@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import ShortCutInfoBar from '.';
+import ShortcutInfoBar from '.';
 
-describe('Components|ShortCutInfoBar', () => {
+describe('Components|ShortcutInfoBar', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ShortCutInfoBar
+      wrapper = shallow(<ShortcutInfoBar
         onChange={() => {}}
         handleInfoBar={() => {}}
         handleInfoButton={() => {}}
@@ -20,7 +20,7 @@ describe('Components|ShortCutInfoBar', () => {
     });
 
     it('should have a className', () => {
-      expect(wrapper.is('.ShortCutInfoBar')).to.equal((true));
+      expect(wrapper.is('.ShortcutInfoBar')).to.equal((true));
     });
 
     it('should show eight share icons', () => {
