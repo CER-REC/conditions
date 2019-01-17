@@ -20,13 +20,13 @@ storiesForComponent('Components|TrendButton', module, ReadMe)
   .add('Static image', () => (
     <TrendButton
       selectedFeature={select('selectedFeature', featureOptions, featureOptions[0])}
-      onChange={() => alert('Clicked')}
+      onClick={() => alert('Clicked')}
     />
   ))
   .add('Svg background placeholder', () => (
     <TrendButton
       selectedFeature={select('selectedFeature', featureOptions, featureOptions[2])}
-      onChange={() => alert('Clicked')}
+      onClick={() => alert('Clicked')}
       streamGraphData={[1, 2, 3]}
     />
   ));
