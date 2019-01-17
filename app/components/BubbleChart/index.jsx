@@ -160,16 +160,16 @@ class BubbleChart extends React.PureComponent {
     return (
       <div className="BubbleChart">
         <svg width={850} height={400}>
-          <ChartIndicator
-            x={this.state.indicatorX}
-            yBottom={this.state.indicatorYBottom}
-            yTop={0}
-            radius={this.state.indicatorRadius}
-            display={this.state.display}
-            onDragMove={this.onDragMove}
-            onDragStart={this.onDragStart}
-            onDragStop={this.onDragStop}
-          />
+          { (this.state.display)
+            ? (
+              <ChartIndicator
+                x={this.state.indicatorX}
+                yBottom={this.state.indicatorYBottom}
+                yTop={10}
+                radius={this.state.indicatorRadius}
+              />
+            ) : null
+        }
           <InstrumentBubble
             width={550}
             height={400}

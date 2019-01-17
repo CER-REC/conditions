@@ -39,7 +39,7 @@ const d3HierarchyCalculation = (instrumentChartData, width, height) => {
 const instrumentChartData2 = {
   name: 'data',
   children: [{
-    parentName: 'ANY COMMODITY TYPES',
+    parentName: 'anyCommodityTypes',
     children: [
       {
         name: 'MO',
@@ -61,7 +61,7 @@ const instrumentChartData2 = {
     ],
   },
   {
-    parentName: 'NOT SPECIFIED',
+    parentName: 'notSpecified',
     children: [
       {
         name: 'XC',

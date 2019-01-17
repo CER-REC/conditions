@@ -9,7 +9,7 @@ const ChartIndicator = (props) => {
       className="selectedCircle"
       cx={0}
       cy={lineHeight + props.radius}
-      r={props.radius}
+      r={props.radius + 2}
     />
   );
   const label = !props.label ? null : (
