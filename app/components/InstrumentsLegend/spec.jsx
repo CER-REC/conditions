@@ -127,7 +127,7 @@ describe('Components|InstrumentsLegend', () => {
         const id = `common.instrument.type.${indicatorsData.parentName}`;
 
         expect(headersWrapper.at(index).prop('id')).to.equal(id);
-        // TODO: Test FormattedMessage elements renders as a span with a indicator class
+        expect(headersWrapper.at(index).shallowWithIntl().hasClass('indicator')).to.equal(true);
       });
     });
 

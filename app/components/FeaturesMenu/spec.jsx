@@ -46,7 +46,7 @@ describe('Components|FeaturesMenu', () => {
 
       expect(titleWrapper).to.have.lengthOf(1);
       expect(titleWrapper.prop('id')).to.equal('common.trend.title');
-      // TODO: Test that the title renders with the title class
+      expect(titleWrapper.shallowWithIntl().hasClass('title')).to.equal(true);
     });
 
     it('should render the features in the List component', () => {
@@ -125,7 +125,7 @@ describe('Components|FeaturesMenu', () => {
 
       expect(titleWrapper).to.have.lengthOf(1);
       expect(titleWrapper.prop('id')).to.equal('components.featureMenu.dropDownTitle');
-      // TODO: Test that the title renders with the title class
+      expect(titleWrapper.shallowWithIntl().hasClass('title')).to.equal(true);
     });
 
     it('should render the features in the select drop down', () => {
@@ -135,7 +135,7 @@ describe('Components|FeaturesMenu', () => {
 
       features.forEach((feature, index) => {
         expect(optionsWrapper.at(index).prop('id')).to.equal(`common.features.${feature}`);
-        // TODO: Test that the message renders a option element
+        expect(optionsWrapper.at(index).shallowWithIntl().is('option')).to.equal(true);
       });
     });
 
