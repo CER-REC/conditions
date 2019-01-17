@@ -4,7 +4,7 @@ import './styles.scss';
 
 const ChartIndicator = (props) => {
   const lineHeight = props.yBottom - props.yTop;
-  const circleExists = (props.radius <= 0) ? null : (
+  const circle = (props.radius <= 0) ? null : (
     <circle
       className="selectedCircle"
       cx={0}
@@ -28,7 +28,7 @@ const ChartIndicator = (props) => {
         y1={5}
         y2={lineHeight}
       />
-      {circleExists}
+      {circle}
       {label}
     </g>
   );

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { VictoryStack } from 'victory';
 import StackGroup from '../StackGroup';
 
-import './styles.scss';
-
 const StackGroupProps = ({ groupProps, ...props }) => (
   <VictoryStack
     groupComponent={<StackGroup {...groupProps} stackProps={props} />}
@@ -13,7 +11,7 @@ const StackGroupProps = ({ groupProps, ...props }) => (
 );
 
 StackGroupProps.propTypes = {
-  groupProps: PropTypes.objectOf({
+  groupProps: PropTypes.shape({
     onChange: PropTypes.func.isRequired,
     controlYear: PropTypes.number,
     ProjectData: PropTypes.arrayOf(PropTypes.shape({

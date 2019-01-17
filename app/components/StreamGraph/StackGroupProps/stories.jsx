@@ -1,12 +1,5 @@
-import React from 'react';
-import { storiesForComponent } from '../../../../.storybook/utils';
-import withStatus from '../../../../.storybook/addon-status';
+import { storiesOf } from '@storybook/react';
+import { doc } from 'storybook-readme';
 import ReadMe from './README.md';
 
-import StackGroupProps from '.';
-
-storiesForComponent('Components|StreamGraph/StackGroupProps', module, ReadMe)
-  .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .add('With docs', () => (
-    <StackGroupProps />
-  ));
+storiesOf('Components|StreamGraph/StackGroupProps', module).add('documentation', doc(ReadMe));

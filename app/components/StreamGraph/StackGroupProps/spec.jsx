@@ -5,15 +5,25 @@ import { expect } from 'chai';
 import StackGroupProps from '.';
 
 const stackProps = {
-  onChange: {},
-  controlYear: '',
-  ProjectData: {},
+  domain: { x: () => {} },
+  width: 500,
+  height: 300,
 };
 
-describe('Components/StackGroupProps', () => {
+const groupProps = {
+  onChange: () => {},
+  ProjectData: [],
+};
+
+describe('Components/Streamgraph/StackGroupProps', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<StackGroupProps stackProps={stackProps} />);
+    wrapper = shallow(<StackGroupProps
+      groupProps={groupProps}
+      projectData
+      onChange
+      stackProps={stackProps}
+    />);
   });
 
   it('should pass the props in a group', () => {
@@ -21,5 +31,7 @@ describe('Components/StackGroupProps', () => {
       stackProps,
     });
   });
+
+  it('should pass the groupProps properly', () => {});
 });
 
