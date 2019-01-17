@@ -57,7 +57,6 @@ describe('Components|StreamGraph', () => {
     let wrapper;
     let handleOnChange;
     beforeEach(() => {
-      handleOnChange = sinon.spy();
       wrapper = shallow(<Streamgraph
         projectData={projectData}
         handleOnChange={handleOnChange}
