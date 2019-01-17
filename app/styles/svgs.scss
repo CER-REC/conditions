@@ -1,6 +1,6 @@
 @import './colors.scss';
 
-$drop-down-color: $general-typography-links2;
+$drop-down-color: $LinksTextButtons;
 $url-drop-down-color: 'rgb(#{red($drop-down-color)}%2C#{green($drop-down-color)}%2C#{blue($drop-down-color)})';
 
 $list-line-svg: "<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>"
