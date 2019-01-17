@@ -11,7 +11,7 @@ const options = {
   step: 25,
 };
 
-const topOptions = {
+const heightOptions = {
   range: true,
   min: 20,
   max: 100,
