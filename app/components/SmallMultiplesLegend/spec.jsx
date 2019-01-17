@@ -141,8 +141,10 @@ describe('Components|SmallMultiplesLegend', () => {
 
     it('should render the all LegendItem component', () => {
       const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
+      const firstItemWrapper = legendItemsWrapper.at(0);
 
-      expect(legendItemsWrapper.at(0).prop('all')).to.equal(true);
+      expect(firstItemWrapper.prop('all')).to.equal(true);
+      expect(firstItemWrapper.prop('title')).to.equal(title);
       expect(legendItemsWrapper).to.have.lengthOf(4);
     });
 

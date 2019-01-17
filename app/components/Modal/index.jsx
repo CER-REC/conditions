@@ -34,7 +34,7 @@ class Modal extends React.PureComponent {
 
   render() {
     const {
-      title,
+      type,
       content,
       modalAction,
       height,
@@ -52,7 +52,7 @@ class Modal extends React.PureComponent {
         ref={this.registerDialog}
       >
         <ModalContent
-          title={title}
+          type={type}
           content={content}
           modalAction={modalAction}
           isOpen={isOpen}
@@ -64,8 +64,8 @@ class Modal extends React.PureComponent {
 }
 
 Modal.propTypes = {
-  /** The title of the Modal window */
-  title: PropTypes.string.isRequired,
+  /** The type of modal (used to look up text for language) */
+  type: PropTypes.string.isRequired,
   /** The element to be rendered in the center of the modal */
   content: PropTypes.node.isRequired,
   /** Height of modal window (percent or pixel) */
@@ -78,8 +78,6 @@ Modal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   /** Adds a link to the footer of the Modal window */
   modalAction: PropTypes.shape({
-    /** The copy for the Modals footer link */
-    text: PropTypes.string.isRequired,
     /** The function to handle after interacted with */
     task: PropTypes.func.isRequired,
   }),

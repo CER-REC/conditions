@@ -121,11 +121,13 @@ describe('Components|InstrumentsLegend', () => {
     });
 
     it('should render the indicator type headers', () => {
-      const headersWrapper = wrapper.find('.headers .indicator');
+      const headersWrapper = wrapper.find('.headers FormattedMessage');
 
-      // TODO: Redo when translations are implemented
       data.forEach((indicatorsData, index) => {
-        expect(headersWrapper.at(index).text()).to.contain(indicatorsData.parentName);
+        const id = `common.instrument.type.${indicatorsData.parentName}`;
+
+        expect(headersWrapper.at(index).prop('id')).to.equal(id);
+        expect(headersWrapper.at(index).shallowWithIntl().hasClass('indicator')).to.equal(true);
       });
     });
 

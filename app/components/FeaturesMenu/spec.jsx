@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
+import { FormattedMessage } from 'react-intl';
 
 import FeaturesMenu from '.';
 import List from '../List';
@@ -16,7 +17,6 @@ describe('Components|FeaturesMenu', () => {
     wrapper = shallow((
       <FeaturesMenu
         className="aClass"
-        title="Title A"
         features={['TEST Feat.']}
         onChange={() => {}}
       />
@@ -26,13 +26,11 @@ describe('Components|FeaturesMenu', () => {
   shouldBehaveLikeAComponent(FeaturesMenu, () => wrapper);
 
   describe('when the dropDown property is not provided', () => {
-    const title = 'a title';
     const features = ['Feature A', 'Feature B', 'Feature C'];
 
     beforeEach(() => {
       wrapper = shallow((
         <FeaturesMenu
-          title={title}
           features={features}
           onChange={spy}
         />
@@ -43,18 +41,25 @@ describe('Components|FeaturesMenu', () => {
       expect(wrapper.hasClass('dropDown')).to.equal(false);
     });
 
-    it('should render the title', () => {
-      const titleWrapper = wrapper.find('.title');
+    it('should render the trend title', () => {
+      const titleWrapper = wrapper.find('.FeaturesMenu > FormattedMessage');
 
       expect(titleWrapper).to.have.lengthOf(1);
-      expect(titleWrapper.text()).to.contain(title);
+      expect(titleWrapper.prop('id')).to.equal('common.trend.title');
+      expect(titleWrapper.shallowWithIntl().hasClass('title')).to.equal(true);
     });
 
     it('should render the features in the List component', () => {
       const listWrapper = wrapper.find(List);
+      const items = listWrapper.prop('items');
 
       expect(listWrapper).to.have.lengthOf(1);
-      expect(listWrapper.prop('items')).to.deep.equal(features);
+      expect(items).to.have.lengthOf(features.length);
+
+      features.forEach((feature, index) => {
+        expect(items[index].type).to.equal(FormattedMessage);
+        expect(items[index].props.id).to.equal(`common.features.${feature}`);
+      });
     });
 
     it('should render the List component with the first item selected', () => {
@@ -76,7 +81,6 @@ describe('Components|FeaturesMenu', () => {
 
       wrapper = shallow((
         <FeaturesMenu
-          title={title}
           features={features}
           onChange={spy}
           selected={features[selectedIndex]}
@@ -89,7 +93,6 @@ describe('Components|FeaturesMenu', () => {
     it('should render the List component with the first item selected when selected is invalid', () => {
       wrapper = shallow((
         <FeaturesMenu
-          title={title}
           features={features}
           onChange={spy}
           selected="invalid"
@@ -101,13 +104,11 @@ describe('Components|FeaturesMenu', () => {
   });
 
   describe('when the dropDown property is provided', () => {
-    const title = '2';
-    const features = ['FEATURE', 'FEATURE_2', 'FEATURE_3'];
+    const features = ['theme', 'phase', 'filing'];
 
     beforeEach(() => {
       wrapper = shallow((
         <FeaturesMenu
-          title={title}
           features={features}
           onChange={spy}
           dropDown
@@ -119,14 +120,23 @@ describe('Components|FeaturesMenu', () => {
       expect(wrapper.hasClass('dropDown')).to.equal(true);
     });
 
-    it('should render the features in the select drop down', () => {
-      const optionsWrapper = wrapper.find('select > option');
+    it('should render the drop down title', () => {
+      const titleWrapper = wrapper.find('.FeaturesMenu > FormattedMessage');
 
-      features.forEach((feature, index) => {
-        expect(optionsWrapper.at(index).text()).to.contain(feature);
-      });
+      expect(titleWrapper).to.have.lengthOf(1);
+      expect(titleWrapper.prop('id')).to.equal('components.featureMenu.dropDownTitle');
+      expect(titleWrapper.shallowWithIntl().hasClass('title')).to.equal(true);
+    });
+
+    it('should render the features in the select drop down', () => {
+      const optionsWrapper = wrapper.find('select FormattedMessage');
 
       expect(optionsWrapper).to.have.lengthOf(features.length);
+
+      features.forEach((feature, index) => {
+        expect(optionsWrapper.at(index).prop('id')).to.equal(`common.features.${feature}`);
+        expect(optionsWrapper.at(index).shallowWithIntl().is('option')).to.equal(true);
+      });
     });
 
     it('should render the select drop down with the first item selected', () => {
@@ -156,7 +166,6 @@ describe('Components|FeaturesMenu', () => {
 
       wrapper = shallow((
         <FeaturesMenu
-          title={title}
           features={features}
           onChange={spy}
           selected={features[selectedIndex]}
@@ -170,7 +179,6 @@ describe('Components|FeaturesMenu', () => {
     it('should render the select drop down with the first item selected when selected is invalid', () => {
       wrapper = shallow((
         <FeaturesMenu
-          title={title}
           features={features}
           onChange={spy}
           selected=" "

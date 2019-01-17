@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
 
 const ModalContent = (props) => {
   const {
-    title,
+    type,
     content,
     modalAction,
     isOpen,
@@ -17,7 +18,9 @@ const ModalContent = (props) => {
   return (
     <div className="ModalContent">
       <div className="header">
-        <span className="title">{title}</span>
+        <span className="title">
+          <FormattedMessage id={`components.modal.${type}.title`} />
+        </span>
         {/* Didn't use Icon because icon was not supported in our font-awesome library */}
         <svg
           version="1.1"
@@ -40,7 +43,7 @@ const ModalContent = (props) => {
             type="button"
             {...handleInteraction(modalAction.task)}
           >
-            {modalAction.text}
+            <FormattedMessage id={`components.modal.${type}.actionText`} />
           </button>
         )}
       </div>
@@ -49,8 +52,8 @@ const ModalContent = (props) => {
 };
 
 ModalContent.propTypes = {
-  /** The title of the Modal window */
-  title: PropTypes.string.isRequired,
+  /** The type of modal (used to look up text for language) */
+  type: PropTypes.string.isRequired,
   /** The element to be rendered in the center of the modal */
   content: PropTypes.node.isRequired,
   /** Height of modal window (percent or pixel) */

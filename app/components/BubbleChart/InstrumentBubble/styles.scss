@@ -1,5 +1,8 @@
-.InstrumentBubble{
-  .CommodityCircle{
+.InstrumentBubble {
+  .bubbleTitle {
+    text-transform: uppercase;
+  }
+  .CommodityCircle {
     fill: transparent;
     stroke: #EDEDED;
     stroke-width: 2;
