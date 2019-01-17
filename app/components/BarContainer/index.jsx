@@ -69,13 +69,11 @@ BarContainer.propTypes = {
   scale: PropTypes.number,
   standalone: PropTypes.bool,
   size: PropTypes.number.isRequired,
-  searched: PropTypes.bool,
 };
 
 BarContainer.defaultProps = {
   vert: false,
   scale: 1,
   standalone: false,
-  searched: false,
 };
 export default BarContainer;

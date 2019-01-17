@@ -57,7 +57,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
         title="ConditionTitle"
         desc="conditionDesc"
         items={rectItems}
-        searched
       />);
   })
 
