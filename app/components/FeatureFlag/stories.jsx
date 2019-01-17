@@ -16,9 +16,9 @@ storiesForComponent('Components|FeatureFlag', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
   .add('With color', () => (
-    <FeatureFlag color="pink" count={number('Amount of conditions', 1, options)} chartType="Theme" name="Damage Prevention" />
+    <FeatureFlag color="pink" count={number('Amount of conditions', 1, options)} chartType="theme" name="damagePrevention" />
   ))
   .add('Without color', () => (
-    <FeatureFlag color="#a1a8a7" count={number('Amount of conditions', 1, options)} chartType="Theme" name="Damage Prevention" />
+    <FeatureFlag color="#a1a8a7" count={number('Amount of conditions', 1, options)} chartType="theme" name="damagePrevention" />
   ));
 

@@ -11,12 +11,13 @@ const options = {
   step: 25,
 };
 
-const heightOptions = {
+const topOptions = {
   range: true,
   min: 20,
   max: 100,
   step: 20,
 };
+
 const visible = true;
 storiesForComponent('Components|ChartIndicator', module, ReadMe)
   .addDecorator(withKnobs)

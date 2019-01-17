@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
-
-// TODO: This is a mock, replace with the translation function
-const t = searchList => searchList[2];
-
-const title = 'Instrument';
 
 const getFormattedData = (data) => {
   const categoryIndicators = {};
@@ -63,7 +59,9 @@ const getLegendDataItems = (data, indicatorTypes) => {
 const InstrumentsLegend = (props) => {
   const indicatorTypes = props.data.map(instrument => instrument.parentName);
   const headers = indicatorTypes.map(type => (
-    <span key={type} className="indicator">{t(['instrumentsLegend', 'title', type])}</span>
+    <FormattedMessage key={type} id={`common.instrument.type.${type}`}>
+      {text => <span className="indicator">{text}</span>}
+    </FormattedMessage>
   ));
   const formattedData = getFormattedData(props.data);
   const dataIndex = formattedData.findIndex(indicatorsData => (
@@ -84,7 +82,7 @@ const InstrumentsLegend = (props) => {
         all
         // "all" cannot be an category in data
         key="all"
-        title={title}
+        title=""
         indicators={[]}
         color=""
       />

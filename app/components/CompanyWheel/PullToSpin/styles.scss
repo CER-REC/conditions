@@ -1,0 +1,57 @@
+// TODO: CHANGE COLORS TO MAIN MAP
+@import '../../../styles/fontVariables.scss';
+
+.PullToSpin{
+  height: 110px;
+  transform-origin: top;
+  transform: rotate(2deg);
+
+  .PullMessage{
+    fill: #A1A8A7;
+    font: $fira-sans-condensed-light;
+    font-size: 10px;
+  }
+
+  .diagonalHatch{
+    fill:none;
+    stroke: #d1057a;
+    stroke-miterlimit:10;
+    stroke-width:1.5;
+    opacity: 0.9;
+  }
+
+  .PullSpinArrow{
+    fill:#d1057a;
+    .ArrowLine{
+      stroke:#d1057a;
+      stroke-miterlimit:10;
+      stroke-width:0.72;
+      fill:none;
+    }
+  }
+
+  .PullSlider{
+    opacity:0.5;
+    &:focus{
+      outline: none;
+    }
+    &:focus .PullSpinSvgShadow {
+      width: 55px;
+      height: 47px;
+      opacity: 1;
+    }
+  }
+
+  .PullSpinSvgShadow{
+    opacity:0.6;
+    mix-blend-mode: screen;
+    transform: translate(311.5px, -4.5px);
+  }
+
+  .PullSpinRect{
+
+    transform:translate(159.71px, 300.23px) rotate(-60.92deg);
+    stroke:#d1057a;
+    stroke-miterlimit:10;
+  }
+}

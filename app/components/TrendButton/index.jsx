@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 import StreamButton from './images/streamButton.png';
@@ -31,9 +32,13 @@ const TrendButton = (props) => {
       <button type="button" {...handleInteraction(props.onClick)}>
         {background}
         <div className="buttonText">
-          <span>
-          Go to {props.selectedFeature} <br /> Trends
-          </span>
+          <FormattedMessage id={`components.trendButton.${props.selectedFeature}`}>
+            {text => (
+              <span>
+                {text.split('\n').map(string => <>{string}<br /></>)}
+              </span>
+            )}
+          </FormattedMessage>
         </div>
       </button>
     </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dialogPolyfill from 'dialog-polyfill';
-import handleInteraction from '../../utilities/handleInteraction';
 import 'dialog-polyfill/dialog-polyfill.css';
+
+import ModalContent from './ModalContent';
 
 import './styles.scss';
 
@@ -33,7 +34,7 @@ class Modal extends React.PureComponent {
 
   render() {
     const {
-      title,
+      type,
       content,
       modalAction,
       height,
@@ -44,32 +45,27 @@ class Modal extends React.PureComponent {
     if (!isOpen) { return null; }
 
     return (
-      <dialog className="Modal" style={{ height, width }} onClose={this.dialogClosed} ref={this.registerDialog}>
-        <div className="header">
-          <span className="title">{title}</span>
-          {/* Didn't use Icon because icon was not supported in our font-awesome library */}
-          <svg version="1.1" width="20" height="20" className="closeIcon" {...handleInteraction(this.close)} tabIndex={0}>
-            <line x1="0" y1="20" x2="20" y2="0" strokeLinecap="round" />
-            <line x1="0" y1="0" x2="20" y2="20" strokeLinecap="round" />
-          </svg>
-        </div>
-        <div className="content">
-          {content}
-        </div>
-        <div className="footer">
-          {modalAction
-            ? (<button className="textButton" type="button" {...handleInteraction(modalAction.task)}>{modalAction.text}</button>)
-            : null
-          }
-        </div>
+      <dialog
+        className="Modal"
+        style={{ height, width }}
+        onClose={this.dialogClosed}
+        ref={this.registerDialog}
+      >
+        <ModalContent
+          type={type}
+          content={content}
+          modalAction={modalAction}
+          isOpen={isOpen}
+          closeModal={this.close}
+        />
       </dialog>
     );
   }
 }
 
 Modal.propTypes = {
-  /** The title of the Modal window */
-  title: PropTypes.string.isRequired,
+  /** The type of modal (used to look up text for language) */
+  type: PropTypes.string.isRequired,
   /** The element to be rendered in the center of the modal */
   content: PropTypes.node.isRequired,
   /** Height of modal window (percent or pixel) */
@@ -82,8 +78,6 @@ Modal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   /** Adds a link to the footer of the Modal window */
   modalAction: PropTypes.shape({
-    /** The copy for the Modals footer link */
-    text: PropTypes.string.isRequired,
     /** The function to handle after interacted with */
     task: PropTypes.func.isRequired,
   }),

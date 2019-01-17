@@ -6,14 +6,14 @@ import ReadMe from './README.md';
 storiesForComponent('Components|InstrumentsLegend/LegendItem', module, ReadMe)
   .add('basic usage', () => (
     <LegendItem
-      title="Title"
+      title="routing"
       indicators={[true, true, false, true]}
       color="green"
     />
   ))
   .add('all', () => (
     <LegendItem
-      title="Title"
+      title="misc"
       indicators={[]}
       color=""
       all
