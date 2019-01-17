@@ -10,11 +10,7 @@ const FeatureDescription = props => (
     role="document"
     aria-label={`${props.feature} description`}
   >
-    <h1>
-      <FormattedMessage id={`common.features.${props.feature}`}>
-        {text => text}
-      </FormattedMessage>
-    </h1>
+    <FormattedMessage id={`common.features.${props.feature}`} tagName="h1" />
     <FormattedMessage id={props.description}>
       { (text) => {
         const stringArr = text.split('\n');
