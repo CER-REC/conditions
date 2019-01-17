@@ -2,7 +2,7 @@
 
 The Bar Container component holds a grouping of bar. The container accepts an array 
 of bars to render. Each element in the array should have a value and a color. 
-Depending on the the tpe of BarContainer (vertical or horizontal) the 
+Depending on the the type of BarContainer (vertical or horizontal) the 
 value passed in will affect the size of each bar. The BarContainer by default 
 is horizontal. The BarContainer accepts a 'size' prop. If the container is 
 horizontal, the size prop will determine the height for all bars, and if the

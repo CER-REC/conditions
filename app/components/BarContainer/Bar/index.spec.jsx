@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 import Bar from '.';
 
-describe('Components|Bar', () => {
+describe('Components|BarContainer/Bar', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {

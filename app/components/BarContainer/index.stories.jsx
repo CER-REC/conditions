@@ -1,4 +1,5 @@
 import React from 'react';
+import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 import withStatus from '../../../.storybook/addon-status';
 import { storiesForComponent } from '../../../.storybook/utils';
 import BarContainer from '.';
@@ -7,7 +8,7 @@ import ReadMe from './README.md';
 const rectItems = [
   {
     value: 12,
-    fill: 'tomato',
+    fill: 'green',
   },
   {
     value: 66,
@@ -20,25 +21,45 @@ const rectItems = [
 ];
 
 storiesForComponent('Components|BarContainer', module, ReadMe)
-  .addDecorator(withStatus('underReview'))
-  .add('default', () => (
-    <BarContainer
-      title="ConditionTitle"
-      desc="conditionDesc"
-      items={rectItems}
-      size={12}
-    />
-  ))
-
-  .add('vertical bars', () => (
-    <BarContainer
-      size={30}
-      title="ConditionTitle"
-      desc="conditionDesc"
-      items={rectItems}
-      vert
-    />
-  ))
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
+  .addDecorator(withKnobs)
+  .add('default', () => {
+    const vert = boolean('Vertical', false);
+    const scale = number('Scale', 1);
+    const size = number('Size', 12);
+    return (
+      <BarContainer
+        title="ConditionTitle"
+        desc="conditionDesc"
+        items={rectItems}
+        size={size}
+        scale={scale}
+        vert={vert}
+      />
+    );
+  })
+  .add('vertical bars', () => {
+    const size = number('Size', 20);
+    return (
+      <BarContainer
+        size={size}
+        title="ConditionTitle"
+        desc="conditionDesc"
+        items={rectItems}
+        vert
+      />);
+  })
+  .add('searched bars', () => {
+    const size = number('Size', 15);
+    return (
+      <BarContainer
+        size={size}
+        title="ConditionTitle"
+        desc="conditionDesc"
+        items={rectItems}
+        searched
+      />);
+  })
 
   .add('standalone', () => (
     <svg>

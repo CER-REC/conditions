@@ -5,7 +5,7 @@ import Bar from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|BarContainer/Bar', module, ReadMe)
-  .addDecorator(withStatus('underReview'))
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
     (
       <svg>

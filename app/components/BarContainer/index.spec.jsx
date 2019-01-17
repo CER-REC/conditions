@@ -23,7 +23,7 @@ describe('Components|BarContainer', () => {
     });
 
     it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+      expect(wrapper.type()).to.equal('svg');
     });
 
     it('should have a BarContainer class', () => {
@@ -36,15 +36,15 @@ describe('Components|BarContainer', () => {
     });
 
     it('should have a scale prop', () => {
-      expect(wrapper.props().style.height).to.equal(12);
+      expect(wrapper.props().height).to.equal(12);
       wrapper.setProps({ scale: 2 });
-      expect(wrapper.props().style.height).to.equal(24);
+      expect(wrapper.props().height).to.equal(24);
     });
 
     it('should have a vert prop', () => {
-      expect(wrapper.props().style.height).to.equal(12);
+      expect(wrapper.props().height).to.equal(12);
       wrapper.setProps({ vert: true });
-      expect(wrapper.props().style.height).to.greaterThan(12);
+      expect(wrapper.props().height).to.greaterThan(12);
     });
   });
 });

@@ -14,35 +14,36 @@ const BarContainer = (props) => {
     title,
     desc,
   } = props;
+
   let barContainerWidth = 0;
   const barContainerMaxHeight = scale * Math.max(...items.map(({ value }) => value));
-  const barContainerHeight = vert ? barContainerMaxHeight * scale : size * scale;
+  const barContainerHeight = vert ? barContainerMaxHeight : size * scale;
   const bars = items.map((bar, index) => {
-    let singleBar;
     if (vert) {
       barContainerWidth = size * (index + 1);
-      singleBar = (
+      return (
         <Bar
+          key={index.toString()}
           {...bar}
           x={size * index * scale}
           y={barContainerMaxHeight - bar.value * scale}
           width={size * scale}
           height={bar.value * scale}
         />);
-      return singleBar;
     }
-    singleBar = (
+    const singleBar = (
       <Bar
+        key={index.toString()}
         {...bar}
         x={barContainerWidth * scale}
         y={0}
         width={bar.value * scale}
-        height={barContainerHeight * scale}
+        height={barContainerHeight}
       />);
     barContainerWidth += bar.value;
     return singleBar;
   });
-  if (scale) barContainerWidth *= scale;
+  if (scale) { barContainerWidth *= scale; }
   const Container = standalone
     ? (
       <g className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
@@ -51,38 +52,30 @@ const BarContainer = (props) => {
         {bars}
       </g>)
     : (
-      <div
-        className="BarContainer"
-        style={{
-          height: barContainerHeight,
-          width: barContainerWidth,
-        }}
-      >
-        <svg width={barContainerWidth} height={barContainerHeight}>
-          <title>{title}</title>
-          <desc>{desc}</desc>
-          {bars}
-        </svg>
-      </div>);
+      <svg className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
+        <title>{title}</title>
+        <desc>{desc}</desc>
+        {bars}
+      </svg>
+    );
   return Container;
 };
 
 BarContainer.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.node),
-  desc: PropTypes.string,
-  title: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  desc: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   vert: PropTypes.bool,
   scale: PropTypes.number,
   standalone: PropTypes.bool,
   size: PropTypes.number.isRequired,
+  searched: PropTypes.bool,
 };
 
 BarContainer.defaultProps = {
-  items: [],
-  desc: '',
-  title: '',
   vert: false,
   scale: 1,
   standalone: false,
+  searched: false,
 };
 export default BarContainer;
