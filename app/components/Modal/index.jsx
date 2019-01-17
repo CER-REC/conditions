@@ -53,7 +53,7 @@ class Modal extends React.PureComponent {
       >
         <div className="header">
           <span className="title">
-            <FormattedMessage id={`components.modal.${type}.title`} className="title" />
+            <FormattedMessage id={`components.modal.${type}.title`} />
           </span>
           {/* Didn't use Icon because icon was not supported in our font-awesome library */}
           <svg
