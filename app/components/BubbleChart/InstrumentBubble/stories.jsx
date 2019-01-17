@@ -7,7 +7,7 @@ import ReadMe from './README.md';
 const instrumentChartData = {
   name: 'data',
   children: [{
-    parentName: 'GAS',
+    parentName: 'gas',
     children: [
       {
         name: 'XG',
@@ -47,7 +47,7 @@ const instrumentChartData = {
     ],
   },
   {
-    parentName: 'POWER',
+    parentName: 'power',
     children: [
       {
         name: 'EC',
@@ -64,7 +64,7 @@ const instrumentChartData = {
     ],
   },
   {
-    parentName: 'OIL',
+    parentName: 'oil',
     children: [{
       name: 'XO',
       children: [],

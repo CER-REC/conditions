@@ -14,7 +14,7 @@ describe('Components|Modal/ModalContent', () => {
   beforeEach(() => {
     wrapper = shallow((
       <ModalContent
-        title="Test Title"
+        type=""
         content={<div>Test Content</div>}
         isOpen
         closeModal={noop}
@@ -40,7 +40,7 @@ describe('Components|Modal/ModalContent', () => {
     const spy = sinon.spy();
     wrapper = shallow((
       <ModalContent
-        title="Test Title"
+        type=""
         content={<div>Test Content</div>}
         isOpen
         closeModal={spy}
@@ -53,12 +53,9 @@ describe('Components|Modal/ModalContent', () => {
   it('should have a textButton where there is a modal action', () => {
     wrapper = shallow((
       <ModalContent
-        title="Test Title"
+        type="image"
         content={<div>Test Content</div>}
-        modalAction={{
-          text: 'Test Action',
-          task: noop,
-        }}
+        modalAction={{ task: noop }}
         isOpen
         closeModal={noop}
       />
@@ -68,7 +65,7 @@ describe('Components|Modal/ModalContent', () => {
 
   it('should not render anything if isOpen is false', () => {
     wrapper = shallow((
-      <ModalContent title="Test Title" content={<div>Test Content</div>} closeModal={noop} />
+      <ModalContent type="" content={<div>Test Content</div>} closeModal={noop} />
     ));
     expect(wrapper.type()).to.equal(null);
   });

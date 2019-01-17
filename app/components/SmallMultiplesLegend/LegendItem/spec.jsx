@@ -11,6 +11,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     <LegendItem
       className="testtest"
       title="Test Title"
+      feature="Feat."
       data={[]}
       color=""
       max={0}
@@ -26,6 +27,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       wrapper = shallow((
         <LegendItem
           title={title}
+          feature={title}
           data={[]}
           color=""
           max={0}
@@ -42,15 +44,16 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       expect(wrapper.hasClass('all')).to.equal(true);
     });
 
-    it('should render the all title', () => {
-      // TODO: Redo when translations are implemented
-      expect(wrapper.text()).to.contain('All');
-      expect(wrapper.text()).to.contain(title);
+    it('should render the formatted all title', () => {
+      const id = `components.smallMultiplesLegend.all.${title}`;
+
+      expect(wrapper.find('FormattedMessage').prop('id')).to.equal(id);
     });
   });
 
   describe('when there is no all property provided', () => {
     const title = '(<{}>)other_test-title.!?';
+    const feature = 'test feature';
     const color = 'red';
     const max = 500;
     const data = [{
@@ -69,6 +72,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
         <LegendItem
           className="testclass"
           title={title}
+          feature={feature}
           data={data}
           color={color}
           max={max}
@@ -76,9 +80,11 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       ));
     });
 
-    it('should render the title', () => {
+    it('should render the formatted title', () => {
+      const id = `common.${feature}.${title}`;
+
       expect(wrapper.find('.stream')).to.have.lengthOf(1);
-      expect(wrapper.text()).to.contain(title);
+      expect(wrapper.find('FormattedMessage').prop('id')).to.equal(id);
     });
 
     it('should render the graph', () => {
@@ -106,6 +112,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
         <LegendItem
           className="myClass"
           title={title}
+          feature={feature}
           data={data}
           color="#AACC11"
           max={0}

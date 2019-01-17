@@ -21,12 +21,12 @@ describe('Components|CompanyWheel/ProjectDot', () => {
   });
 
   describe('with changing classes', () => {
-    it('should have the class IsRelevant when passed in', () => {
+    it('should have the class IsRelevant when relevant passed in', () => {
       wrapper = shallow(<ProjectDot relevant />);
       expect(wrapper.props().className).to.contain('IsRelevant');
     });
 
-    it('should have the class isFiltered when passed in', () => {
+    it('should have the class isFiltered when filtered passed in', () => {
       wrapper = shallow(<ProjectDot filtered />);
       expect(wrapper.props().className).to.contain('IsFiltered');
     });
