@@ -20,9 +20,7 @@ describe('Components/Streamgraph/StackGroupProps', () => {
   beforeEach(() => {
     wrapper = shallow(<StackGroupProps
       groupProps={groupProps}
-      projectData
-      onChange
-      stackProps={stackProps}
+      {...stackProps}
     />);
   });
 
