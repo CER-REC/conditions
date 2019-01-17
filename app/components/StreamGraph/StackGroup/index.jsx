@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Control from '../../Control';
+import ChartIndicator from '../../ChartIndicator';
 
 import './styles.scss';
 
@@ -8,98 +8,66 @@ class StackGroup extends React.PureComponent {
   constructor(props) {
     super(props);
     this.isDragging = false;
+    this.sizeRef = React.createRef();
   }
 
-  setControlBool = () => {
-    const showControl = true;
-    return showControl;
-  }
+  calculateStackSize = () => {
+    const { stackProps } = this.props;
+    const { padding } = stackProps;
+    return {
+      top: padding.top,
+      left: padding.left,
+      width: stackProps.width - padding.left - padding.right,
+      height: stackProps.height - padding.top - padding.bottom,
+    };
+  };
 
-  getConditionDates = () => {
-    let conditionDates = this.props.projectData.reduce((acc, next) => {
-      next.graphData.forEach((v) => {
-        if (!acc[v.date]) { acc[v.date] = 0; }
-        acc[v.date] += v.count;
-      });
-      return acc;
-    }, {});
-    conditionDates = Object.values(conditionDates);
-    return conditionDates;
-  }
+  calculateRenderedSize = () => {
+    const size = this.sizeRef.current
+      ? this.sizeRef.current.getClientRects()[0]
+      : this.calculateStackSize();
+    /* eslint-disable object-curly-newline */
+    const { top, left, width, height } = size;
+    return { top, left, width, height };
+    /* eslint-enable object-curly-newline */
+  };
 
-  getDateCount = () => {
-    const dateCount = this.props.projectData[0].graphData.map(k => k.date).length - 1;
-    return dateCount;
-  }
-
-  getChartWidth = () => {
-    const groupWidth = 350;
-    return groupWidth;
-  }
+  calculateScaledMousePosition = (e) => {
+    const stackSize = this.calculateStackSize();
+    const renderedSize = this.calculateRenderedSize();
+    const scale = {
+      x: renderedSize.width / stackSize.width,
+      y: renderedSize.height / stackSize.height,
+    };
+    return {
+      x: (e.clientX - renderedSize.left) / scale.x,
+      y: (e.clientY - renderedSize.top) / scale.y,
+    };
+  };
 
   getSectionWidth = () => {
-    const sectionWidth = this.getChartWidth() / this.getDateCount();
-    return sectionWidth;
+    const { width } = this.calculateStackSize();
+    const [min, max] = this.props.stackProps.domain.x;
+    // Divide the width of the chart by (lastYear - firstYear)
+    return width / (max - min);
   }
 
   handleArrowKey = (event) => {
-    if ((event.key !== 'ArrowLeft' || event.keyCode !== 37)
-      && (event.key !== 'ArrowRight' || event.keyCode !== 39)) {
+    if ((event.key !== 'ArrowLeft' && event.keyCode !== 37)
+      && (event.key !== 'ArrowRight' && event.keyCode !== 39)) {
       return;
     }
-
-    const prevPosition = this.props.positionControl;
 
     const direction = (event.key === 'ArrowRight' || event.keyCode === 39) ? 1 : -1;
 
-    const positionControl = prevPosition + (direction * this.getSectionWidth());
-    if (positionControl < 0 || positionControl > this.getChartWidth()) {
-      return;
+    const { x: xDomain } = this.props.stackProps.domain;
+    const prevYear = this.props.controlYear
+      || (direction === -1 ? xDomain[0] : xDomain[1]);
+    let newYear = prevYear + direction;
+    if (newYear < xDomain[0] || newYear > xDomain[1]) {
+      newYear = prevYear;
     }
-
-    const numOfConditionValue = this.getConditionDates();
-    const previousSection = prevPosition / this.getSectionWidth();
-
-    const numOfConditions = numOfConditionValue[Math.round(previousSection) + direction];
-
-    /* this mocks the intended scaling of the Control line height
-    until an alogirthm can be determined */
-    let yHeight = '0';
-    if (numOfConditions === 25) {
-      yHeight = '210';
-    } else if (numOfConditions === 65) {
-      yHeight = '200';
-    } else if (numOfConditions === 103) {
-      yHeight = '185';
-    } else if (numOfConditions === 136) {
-      yHeight = '175';
-    } else if (numOfConditions === 310) {
-      yHeight = '125';
-    } else if (numOfConditions === 437) {
-      yHeight = '85';
-    } else if (numOfConditions === 567) {
-      yHeight = '45';
-    } else if (Math.max(...numOfConditionValue) === numOfConditions) {
-      yHeight = '15';
-    }
-
-    this.props.onChange(positionControl, numOfConditions, this.setControlBool(), yHeight);
-  };
-
-  getClosestYear = (event) => {
-    const groupPosition = event.target.getClientRects()[0];
-    const renderedWidth = groupPosition.right - groupPosition.left;
-    const scale = renderedWidth / this.getChartWidth();
-
-    const clickArea = (event.clientX - groupPosition.x) / scale;
-    const currentSection = Math.floor(
-      (clickArea + (this.getSectionWidth() / 2))
-    / this.getSectionWidth(),
-    );
-
-    const positionControl = (this.getSectionWidth() * currentSection);
-
-    return [positionControl, currentSection];
+    this.props.onChange(newYear);
   };
 
   onDragStart = (event) => {
@@ -111,13 +79,11 @@ class StackGroup extends React.PureComponent {
     if (this.isDragging === false) { return; }
     event.stopPropagation();
 
-    const [positionControl, currentSection] = this.getClosestYear(event);
-    const numOfConditionValue = this.getConditionDates();
-    const numOfConditions = numOfConditionValue[currentSection];
-
-    const yHeight = '20';
-
-    this.props.onChange(positionControl, numOfConditions, this.setControlBool(), yHeight);
+    const clickArea = this.calculateScaledMousePosition(event);
+    const sectionWidth = this.getSectionWidth();
+    const currentSection = Math.floor((clickArea.x + (sectionWidth / 2)) / sectionWidth);
+    const closestYear = this.props.stackProps.domain.x[0] + currentSection;
+    this.props.onChange(closestYear);
   }
 
   onDragStop = (event) => {
@@ -125,90 +91,61 @@ class StackGroup extends React.PureComponent {
     this.isDragging = false;
   }
 
-  onClick = (event) => {
-    document.addEventListener('click', this.handleOutsideClick, false);
-    event.stopPropagation();
-
-    const [positionControl, currentSection] = this.getClosestYear(event);
-
-    const numOfConditionValue = this.getConditionDates();
-    const numOfConditions = numOfConditionValue[currentSection];
-
-    const renderedChartHeight = 270;
-    const controlMaxHeight = 220;
-    const scale = controlMaxHeight / renderedChartHeight;
-
-    /* this mocks the intended scaling of the Control line height
-    until an alogirthm can be determined */
-    let yHeight = '0';
-    if (numOfConditions === 25) {
-      yHeight = '210';
-    } else if (numOfConditions === 65) {
-      yHeight = '200';
-    } else if (numOfConditions === 103) {
-      yHeight = '185';
-    } else if (numOfConditions === 136) {
-      yHeight = '175';
-    } else if (numOfConditions === 310) {
-      yHeight = '125';
-    } else if (numOfConditions === 437) {
-      yHeight = '85';
-    } else if (numOfConditions === 567) {
-      yHeight = '45';
-    } else if (Math.max(...numOfConditionValue) === numOfConditions) {
-      yHeight = '15';
-    }
-
-    this.props.onChange(
-      positionControl,
-      numOfConditions,
-      this.setControlBool(),
-      yHeight,
-    );
-  }
-
-  handleOutsideClick = (event) => {
-    if (!this.node.contains(event.target)) {
-      const showControl = false;
-      this.props.onChange(showControl);
-    }
+  onFocus = () => {
+    this.props.onChange(this.props.stackProps.domain.x[0]);
   }
 
   render() {
+    const { stackProps, controlYear } = this.props;
+
+    let control = null;
+    if (controlYear) {
+      const xPos = stackProps.scale.x(controlYear);
+      // Count the number of conditions across all streams for the selected year
+      const conditionCount = this.props.projectData.reduce((acc, next) => {
+        const yearData = next.graphData.find(data => data.date === controlYear);
+        return acc + (yearData ? yearData.count : 0);
+      }, 0);
+
+      const yBottom = stackProps.height - stackProps.padding.bottom;
+      const yTop = stackProps.scale.y(conditionCount);
+      control = (
+        <ChartIndicator
+          x={xPos}
+          yTop={yTop}
+          yBottom={yBottom}
+          label={conditionCount}
+        />
+      );
+    }
+
     return (
-      <g
-        ref={(node) => { this.node = node; }}
-        className="StackGroup"
-        onClick={this.onClick}
-        onKeyDown={this.handleArrowKey}
-        onMouseDown={this.onDragStart}
-        onMouseMove={this.onDragMove}
-        onMouseUp={this.onDragStop}
-        onTouchStart={this.onDragStart}
-        onTouchMove={this.onDragMove}
-        onTouchEnd={this.onDragStop}
-        role="button"
-        tabIndex="0"
-      >
-        {this.props.children}
-        {!this.props.showControl ? null : (
-          <Control
-            positionControl={`translate(${this.props.positionControl + 50}, 30)`}
-            numOfConditionsLabel={this.props.numOfConditions}
-            yHeight={this.props.yHeight}
-            controlTextValue={this.props.controlTextValue}
-          />
-        )}
-      </g>
+      <React.Fragment>
+        <g
+          ref={this.sizeRef}
+          className="StackGroup"
+          onKeyDown={this.handleArrowKey}
+          onMouseDown={this.onDragStart}
+          onMouseMove={this.onDragMove}
+          onMouseUp={this.onDragStop}
+          onTouchStart={this.onDragStart}
+          onTouchMove={this.onDragMove}
+          onTouchEnd={this.onDragStop}
+          onFocus={this.onFocus}
+          role="button"
+          tabIndex="0"
+        >
+          {this.props.children}
+        </g>
+        {control}
+      </React.Fragment>
     );
   }
 }
 
 StackGroup.propTypes = {
   children: PropTypes.node,
-  showControl: PropTypes.bool.isRequired,
-  numOfConditions: PropTypes.number.isRequired,
-  positionControl: PropTypes.number.isRequired,
+  controlYear: PropTypes.number,
   projectData: PropTypes.arrayOf(PropTypes.shape({
     graphData: PropTypes.arrayOf(PropTypes.shape({
       date: PropTypes.number.isRequired,
@@ -216,13 +153,28 @@ StackGroup.propTypes = {
     })).isRequired,
   })).isRequired,
   onChange: PropTypes.func.isRequired,
-  yHeight: PropTypes.string,
-  controlTextValue: PropTypes.number.isRequired,
+  stackProps: PropTypes.shape({
+    domain: PropTypes.shape({
+      x: PropTypes.arrayOf(PropTypes.number).isRequired,
+    }).isRequired,
+    scale: PropTypes.shape({
+      x: PropTypes.func.isRequired,
+      y: PropTypes.func.isRequired,
+    }).isRequired,
+    padding: PropTypes.shape({
+      left: PropTypes.number.isRequired,
+      right: PropTypes.number.isRequired,
+      top: PropTypes.number.isRequired,
+      bottom: PropTypes.number.isRequired,
+    }).isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 StackGroup.defaultProps = {
   children: null,
-  yHeight: '20',
+  controlYear: null,
 };
 
 export default StackGroup;
