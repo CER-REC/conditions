@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
-import ProjectLegend from '.';
+import FeaturesLegend from '.';
 import ReadMe from './README.md';
 
 const legendItems = [
@@ -11,7 +11,18 @@ const legendItems = [
   { color: 'purple', description: 'socioEconomic', disabled: false },
 ];
 
-storiesForComponent('Components|ProjectLegend', module, ReadMe)
-  .add('default', () => (
-    <ProjectLegend legendItems={legendItems} selectedFeature="theme" />
+storiesForComponent('Components|FeaturesLegend', module, ReadMe)
+  .add('Project Legend', () => (
+    <FeaturesLegend
+      legendItems={legendItems}
+      selectedFeature="theme"
+      isProjectLegend
+    />
+  ))
+  .add('Location Legend', () => (
+    <FeaturesLegend
+      legendItems={legendItems}
+      selectedFeature="theme"
+      isProjectLegend={false}
+    />
   ));
