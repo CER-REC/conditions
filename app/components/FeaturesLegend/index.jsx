@@ -7,6 +7,44 @@ import FeatureFlag from '../FeatureFlag';
 import './styles.scss';
 
 const FeaturesLegend = (props) => {
+  let footer = null;
+  if (props.isProjectLegend) {
+    footer = (
+      <div className="Footer">
+        <h3 className="Title">Number of Conditions</h3>
+        <div className="ChartLegend">
+          <FeatureFlag
+            chartType=""
+            name="Zero Conditions"
+            count={0}
+            color=""
+          />
+          <div className="FlagDesc">0</div>
+          <FeatureFlag
+            chartType=""
+            name="Ten Conditions"
+            count={10}
+            color="#fff"
+          />
+          <div className="FlagDesc">10</div>
+          <FeatureFlag
+            chartType=""
+            name="Greater than ten Conditions"
+            count={11}
+            color=""
+          />
+          <div className="FlagDesc"> &gt;10 </div>
+        </div>
+        <CircleContainer
+          size="24px"
+          className="ConditionsIcon"
+        >
+        #
+        </CircleContainer>
+        <div className="ConditionsDesc">Total Number of Conditions for Project</div>
+      </div>
+    );
+  }
   if (props.legendItems.length === 0) { return null; }
   const renderedItems = props.legendItems.map(item => (
     <LegendItem
@@ -19,45 +57,7 @@ const FeaturesLegend = (props) => {
   return (
     <div className="FeaturesLegend">
       {renderedItems}
-      {
-        props.isProjectLegend
-          ? (
-            <div className="Footer">
-              <h3 className="Title">Number of Conditions</h3>
-              <div className="ChartLegend">
-                <FeatureFlag
-                  chartType=""
-                  name="Zero Conditions"
-                  count={0}
-                  color=""
-                />
-                <div className="FlagDesc">0</div>
-                <FeatureFlag
-                  chartType=""
-                  name="Ten Conditions"
-                  count={10}
-                  color="#fff"
-                />
-                <div className="FlagDesc">10</div>
-                <FeatureFlag
-                  chartType=""
-                  name="Greater than ten Conditions"
-                  count={11}
-                  color=""
-                />
-                <div className="FlagDesc"> &gt;10 </div>
-              </div>
-              <CircleContainer
-                size="24px"
-                className="ConditionsIcon"
-              >
-              #
-              </CircleContainer>
-              <div className="ConditionsDesc">Total Number of Conditions for Project</div>
-            </div>
-          )
-          : null
-      }
+      {footer}
       <div className="AssociatedComp">
         <div className="AssociatedDesc">* Associated Companies</div>
       </div>
