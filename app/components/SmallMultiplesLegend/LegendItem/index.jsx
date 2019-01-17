@@ -7,7 +7,9 @@ import './styles.scss';
 
 const LegendItem = (props) => {
   let stream = null;
-  const id = props.all ? `components.smallMultiplesLegend.all.${props.title}` : `common.${props.feature}.${props.title}`;
+  const id = props.all
+    ? `components.smallMultiplesLegend.all.${props.title}`
+    : `common.${props.feature}.${props.title}`;
 
   if (!props.all) {
     stream = (

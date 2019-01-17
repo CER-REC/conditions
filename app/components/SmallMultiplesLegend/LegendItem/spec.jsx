@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 
 import LegendItem from '.';
@@ -48,7 +47,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     it('should render the formatted all title', () => {
       const id = `components.smallMultiplesLegend.all.${title}`;
 
-      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
+      expect(wrapper.find('FormattedMessage').prop('id')).to.equal(id);
     });
   });
 
@@ -85,7 +84,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       const id = `common.${feature}.${title}`;
 
       expect(wrapper.find('.stream')).to.have.lengthOf(1);
-      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
+      expect(wrapper.find('FormattedMessage').prop('id')).to.equal(id);
     });
 
     it('should render the graph', () => {

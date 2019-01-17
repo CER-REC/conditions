@@ -7,11 +7,7 @@ import './styles.scss';
 const LegendItem = ({
   disabled, color, selectedFeature, text,
 }) => (
-  <div className={classNames(
-    'LegendItem',
-    { disabled },
-  )}
-  >
+  <div className={classNames('LegendItem', { disabled })}>
     <div
       className="color"
       style={{ backgroundColor: color }}

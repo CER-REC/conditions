@@ -42,9 +42,7 @@ const FeaturesMenu = (props) => {
 
   return (
     <div className={classNames('FeaturesMenu', props.className, { dropDown: props.dropDown })}>
-      <FormattedMessage id={id}>
-        {text => (<span className="title">{text}</span>)}
-      </FormattedMessage>
+      <FormattedMessage id={id} className="title" />
       {menu}
     </div>
   );

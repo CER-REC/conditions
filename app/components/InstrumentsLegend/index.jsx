@@ -59,9 +59,7 @@ const getLegendDataItems = (data, indicatorTypes) => {
 const InstrumentsLegend = (props) => {
   const indicatorTypes = props.data.map(instrument => instrument.parentName);
   const headers = indicatorTypes.map(type => (
-    <FormattedMessage key={type} id={`common.instrument.type.${type}`}>
-      {text => (<span className="indicator">{text}</span>)}
-    </FormattedMessage>
+    <FormattedMessage key={type} id={`common.instrument.type.${type}`} className="indicator" />
   ));
   const formattedData = getFormattedData(props.data);
   const dataIndex = formattedData.findIndex(indicatorsData => (
