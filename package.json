@@ -4,7 +4,7 @@
   "description": "A visualization of data collected since 2010 about conditions on energy projects that the NEB creates as part of their regulatory process. ",
   "main": "app/index.js",
   "scripts": {
-    "ci:test": "npm run test && codecov",
+    "ci:test": "npm run test -- --ci --reporters=default --reporters=jest-junit && codecov",
     "cz": "git-cz",
     "lint": "eslint -f gitlab \"./app/**/*.js\" \"./app/**/*.jsx\" \"./server/**/*.js\"",
     "test": "cross-env NODE_ENV=test jest",
@@ -91,6 +91,7 @@
     "file-loader": "3.0.1",
     "gitlab-npm-audit-parser": "1.0.2",
     "jest": "23.6.0",
+    "jest-junit": "6.0.1",
     "mustache": "3.0.1",
     "mustache-express": "1.2.8",
     "node-sass": "4.11.0",
@@ -118,6 +119,10 @@
   },
   "eslint-junit": {
     "suiteName": "ESLint",
+    "output": "./gl-junit.xml"
+  },
+  "jest-junit": {
+    "suiteName": "Jest",
     "output": "./gl-junit.xml"
   }
 }
