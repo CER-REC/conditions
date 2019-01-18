@@ -16,7 +16,16 @@
     "build-storybook": "build-storybook -s ./app/images",
     "postshrinkwrap": "replace --silent 'http://' 'https://' ./package-lock.json"
   },
-  "author": "Spenser Jones <hello@spenserj.com>",
+  "contributors": [
+    "Alan Chen",
+    "Brandon Devaleriola",
+    "Charlie Cheung",
+    "Jorge Castano <coderifico@gmail.com>",
+    "Joshua Johnsgaard",
+    "Manali Bhattacharyya",
+    "Spenser Jones <hello@spenserj.com>",
+    "VizworX Inc."
+  ],
   "license": "Open Government License - Canada",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.12",
