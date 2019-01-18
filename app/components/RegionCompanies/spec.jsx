@@ -10,7 +10,12 @@ const companies = [
   { id: '1', name: 'Canada-Montana Pipe Line Company' },
   { id: '2', name: 'Express Pipeline Ltd.' },
   { id: '3', name: 'Kinder Morgan Cochin Ulc.' },
-  { id: '4', name: 'Nova Gas Transmission Ltd.' }];
+  { id: '4', name: 'Nova Gas Transmission Ltd.' },
+  { id: '11', name: 'Alberta Trans-Alta è' },
+  { id: '12', name: 'Alberta Trans-Alta e' },
+  { id: '13', name: 'Z-Anti' },
+  { id: '14', name: 'Power Plants R Us' },
+];
 const active = ['3'];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
@@ -43,6 +48,10 @@ describe('Components|RegionCompanies', () => {
 
     it('should display a asterisk beside Kinder Morgan Cochin Ulc.', () => {
       expect(wrapper.find('li').at(2).find('button').type()).to.equal('button');
+    });
+
+    it('should render a formatted message for the title', () => {
+      expect(wrapper.find('FormattedMessage')).to.have.lengthOf(1);
     });
   });
 
