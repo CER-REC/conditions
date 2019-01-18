@@ -144,6 +144,5 @@ storiesForComponent('Components|BubbleChart', module, ReadMe)
       selectedCategory="instrument"
       instrumentChartData1={instrumentChartData1}
       instrumentChartData2={instrumentChartData2}
-      onClick={() => alert('Clicked')}
     />
   ));

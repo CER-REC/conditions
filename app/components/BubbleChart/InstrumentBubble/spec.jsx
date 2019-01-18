@@ -1,12 +1,45 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import * as d3 from 'd3';
 import sinon from 'sinon';
 import InstrumentBubble from '.';
+
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
+const d3HierarchyCalculation = (instrumentChartData, width, height) => {
+  // d3 pack generates a function to
+  // fit data into tightly packed circles.
+  const pack = d3
+    .pack()
+    .size([width, height])
+    .padding(node => (node.depth === 0 ? 0 : 5))
+    .radius((node) => {
+      // Calculation for rendering larger circle based on text length
+      const characterWidth = 8;
+      const textLength = node.data.name.length * characterWidth;
+      const textHeight = 15;
+      const textLengthExceeds = node.value * 2 <= textLength;
+      if (textLengthExceeds) {
+        return node.value + textLength; // buffer
+      }
+      if (node.value < textHeight) {
+        return node.value + textHeight;
+      }
+      return node.value;
+    });
+  // creates the root node using
+  // d3 hierarchy similar to a tree layout
+  const root = d3
+    .hierarchy(instrumentChartData)
+    .sum(totalData => totalData.value)
+    .sort((a, b) => b.value - a.value);
+
+  const descendants = pack(root).descendants();
+  return descendants;
+};
 const instrumentChartData = {
   name: 'data',
   children: [{
@@ -125,21 +158,17 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     beforeEach(() => {
       wrapper = shallow(
         <InstrumentBubble
-          instrumentChartData={instrumentChartData}
-          width={400}
+          width={550}
           height={400}
           onClick={noop}
+          keyPress={noop}
+          d3HierarchyCalculation={d3HierarchyCalculation(
+            instrumentChartData,
+            550,
+            400,
+          )}
         />,
       );
-    });
-    it('should render an svg', () => {
-      expect(wrapper.find('svg')).to.have.lengthOf(1);
-    });
-    it('should render svg with proper width', () => {
-      expect(wrapper.find('svg').prop('width')).to.equal(400);
-    });
-    it('should render svg with proper height', () => {
-      expect(wrapper.find('svg').prop('height')).to.equal(400);
     });
     it('should render atleast one circle', () => {
       expect((wrapper).find('circle').exists()).to.equal(true);
@@ -153,10 +182,15 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
       spy = sinon.spy();
       wrapper = shallow(
         <InstrumentBubble
-          instrumentChartData={instrumentChartData}
-          onClick={spy}
-          width={400}
+          width={550}
           height={400}
+          onClick={spy}
+          keyPress={spy}
+          d3HierarchyCalculation={d3HierarchyCalculation(
+            instrumentChartData,
+            550,
+            400,
+          )}
         />,
       );
     });
