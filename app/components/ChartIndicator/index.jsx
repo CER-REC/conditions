@@ -3,37 +3,33 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const ChartIndicator = (props) => {
-  const pathTransform = (props.radius > 0)
-    ? (`translate(${props.radius - 10}, 5)`) : 'translate(0, 0)';
-  const lineX = (props.radius > 0)
-    ? (props.radius) : 10;
-  const lineY = (props.radius > 0)
-    ? 15 : 10;
-  const circleExists = (props.radius <= 0)
-    ? null
-    : (
-      <circle
-        className="selectedCircle"
-        cx={props.radius}
-        cy={props.yBottom + props.radius}
-        r={props.radius}
-      />
-    );
+  const lineHeight = props.yBottom - props.yTop;
+  const circle = (props.radius <= 0) ? null : (
+    <circle
+      className="selectedCircle"
+      cx={0}
+      cy={lineHeight + props.radius}
+      r={props.radius}
+    />
+  );
+  const label = !props.label ? null : (
+    <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">{props.label}</text>
+  );
   return (
     <g className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
       <path
         className="arrow"
-        d="M 5 5 L 15 5 L 10 15 z"
-        transform={pathTransform}
+        d="M -5 -10 L 5 -10 L 0 0 z"
       />
       <line
         className="line"
-        x1={lineX}
-        x2={lineX}
-        y1={lineY}
-        y2={props.yBottom}
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={lineHeight}
       />
-      {circleExists}
+      {circle}
+      {label}
     </g>
   );
 };
@@ -43,10 +39,15 @@ ChartIndicator.propTypes = {
   yBottom: PropTypes.number.isRequired,
   yTop: PropTypes.number.isRequired,
   radius: PropTypes.number,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
 ChartIndicator.defaultProps = {
   radius: 0,
+  label: '',
 };
 
 export default ChartIndicator;

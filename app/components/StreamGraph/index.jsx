@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import {
   VictoryAxis,
   VictoryArea,
-  VictoryStack,
   VictoryChart,
 } from 'victory';
-import StackGroup from './StackGroup';
+import StackGroupProps from './StackGroupProps';
 
 import './styles.scss';
 
@@ -29,21 +28,11 @@ class StreamGraph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showControl: false,
-      positionControl: 30,
-      numOfConditions: 0,
-      yHeight: '20',
+      controlYear: null,
     };
   }
 
-  handleOnChange = (positionControl, numOfConditions, showControl, yHeight) => {
-    this.setState({
-      positionControl,
-      numOfConditions,
-      showControl,
-      yHeight,
-    });
-  };
+  handleOnChange = controlYear => this.setState({ controlYear });
 
   streamLayers() {
     const streamLayers = this.props.projectData.map(v => (
@@ -100,22 +89,15 @@ class StreamGraph extends React.Component {
           className="Axis-label"
           domain={[minDateValue, maxDateValue]}
         />
-        <VictoryStack
-          groupComponent={
-            (
-              <StackGroup
-                onChange={this.handleOnChange}
-                showControl={this.state.showControl}
-                positionControl={this.state.positionControl}
-                numOfConditions={this.state.numOfConditions}
-                projectData={this.props.projectData}
-                yHeight={this.state.yHeight}
-              />
-            )
-          }
+        <StackGroupProps
+          groupProps={{
+            onChange: this.handleOnChange,
+            controlYear: this.state.controlYear,
+            projectData: this.props.projectData,
+          }}
         >
           {this.streamLayers()}
-        </VictoryStack>
+        </StackGroupProps>
       </VictoryChart>
     );
   }

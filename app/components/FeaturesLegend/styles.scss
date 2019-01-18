@@ -1,4 +1,4 @@
-.ProjectLegend {
+.FeaturesLegend {
   display: table;
   height: auto;
 
@@ -81,19 +81,17 @@
       word-wrap: break-word;
       display: inline-table;
     }
+    
+  }
 
-    .AssociatedComp {
-      margin-top: 10px;
+  .AssociatedComp {
+    margin-top: 10px;
+    display: table;
+    text-align: left;
+
+    .AssociatedDesc {
+      margin-left: 10px;
       display: table;
-      .Asterisk {
-        display: inline-table;
-        margin: 0;
-        padding: 0;
-      }
-      .AssociatedDesc {
-        margin-left: 10px;
-        display: inline-table;
-      }
     }
   }
 }
