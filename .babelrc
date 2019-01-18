@@ -4,17 +4,16 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    "macros",
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-proposal-class-properties",
     "react-docgen",
-    "add-react-displayname",
-    "macros",
-    "require-context-hook"
+    "add-react-displayname"
   ],
   "env": {
     "test": {
       "plugins": [
-        "istanbul"
+        "require-context-hook"
       ]
     }
   }

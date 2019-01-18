@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 import ModalContent from '.';
@@ -24,19 +23,19 @@ describe('Components|Modal/ModalContent', () => {
 
   shouldBehaveLikeAComponent(ModalContent, () => wrapper);
 
-  it('should have a header', () => {
-    expect(wrapper.find('.header').is('div')).to.equal(true);
+  test('should have a header', () => {
+    expect(wrapper.find('.header').is('div')).toBe(true);
   });
 
-  it('should have an area to load content', () => {
-    expect(wrapper.find('.content').is('div')).to.equal(true);
+  test('should have an area to load content', () => {
+    expect(wrapper.find('.content').is('div')).toBe(true);
   });
 
-  it('should have a footer', () => {
-    expect(wrapper.find('.footer').is('div')).to.equal(true);
+  test('should have a footer', () => {
+    expect(wrapper.find('.footer').is('div')).toBe(true);
   });
 
-  it('should close dialog if close is clicked', () => {
+  test('should close dialog if close is clicked', () => {
     const spy = sinon.spy();
     wrapper = shallow((
       <ModalContent
@@ -47,10 +46,10 @@ describe('Components|Modal/ModalContent', () => {
       />
     ));
     wrapper.find('.closeIcon').simulate('click', eventFuncs);
-    expect(spy.calledOnce).to.equal(true);
+    expect(spy.calledOnce).toBe(true);
   });
 
-  it('should have a textButton where there is a modal action', () => {
+  test('should have a textButton where there is a modal action', () => {
     wrapper = shallow((
       <ModalContent
         type="image"
@@ -60,13 +59,13 @@ describe('Components|Modal/ModalContent', () => {
         closeModal={noop}
       />
     ));
-    expect(wrapper.find('.textButton').is('button')).to.equal(true);
+    expect(wrapper.find('.textButton').is('button')).toBe(true);
   });
 
-  it('should not render anything if isOpen is false', () => {
+  test('should not render anything if isOpen is false', () => {
     wrapper = shallow((
       <ModalContent type="" content={<div>Test Content</div>} closeModal={noop} />
     ));
-    expect(wrapper.type()).to.equal(null);
+    expect(wrapper.type()).toBeNull();
   });
 });

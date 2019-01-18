@@ -18,18 +18,24 @@ module.exports = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: null,
+  collectCoverageFrom: [
+    '**/app/**/*.js?(x)',
+  ],
 
   // The directory where Jest should output its coverage files
   // coverageDirectory: null,
 
   // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/app/components/Modal/index.jsx',
+    '<rootDir>/app/tests/',
+    '/(.*\\.)?spec.jsx?',
+    '/(.*\\.)?stories.jsx?',
+  ],
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -120,7 +126,7 @@ module.exports = {
   // setupFiles: ['<rootDir>/app/tests/jest-register-context.js'],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
-  setupTestFrameworkScriptFile: '<rootDir>/app/tests/jest-register-context.js',
+  setupTestFrameworkScriptFile: '<rootDir>/app/tests/setup.js',
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],

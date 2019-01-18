@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 import StackGroup from '.';
@@ -102,88 +101,100 @@ describe('Components|Streamgraph/StackGroup', () => {
       stackGroup = wrapper.find('.StackGroup');
     });
 
-    it('should call onChange with the correct position when clicking', () => {
+    test('should call onChange with the correct position when clicking', () => {
       // Simulate mouseDown and mouseUp since Enzyme would call `onClick` which
       // isn't used.
       let mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
       stackGroup.simulate('mouseDown', mouseEvent);
       stackGroup.simulate('mouseUp', mouseEvent);
-      expect(spy.calledWith(2010)).to.equal(true);
+      expect(spy.calledWith(2010)).toBe(true);
 
       mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
       stackGroup.simulate('mouseDown', mouseEvent);
       stackGroup.simulate('mouseUp', mouseEvent);
-      expect(spy.calledWith(2017)).to.equal(true);
+      expect(spy.calledWith(2017)).toBe(true);
 
       // This should fall just to the right of the gap between 2010 and 2011
       mouseEvent = { ...eventFuncs, clientX: 25, clientY: 0 };
       stackGroup.simulate('mouseDown', mouseEvent);
       stackGroup.simulate('mouseUp', mouseEvent);
-      expect(spy.calledWith(2011)).to.equal(true);
+      expect(spy.calledWith(2011)).toBe(true);
     });
 
-    it('should not call onChange if mouseMove is fired before mouseDown', () => {
+    test('should not call onChange if mouseMove is fired before mouseDown', () => {
       const mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
       stackGroup.simulate('mouseMove', mouseEvent);
-      expect(spy.called).to.equal(false);
+      expect(spy.called).toBe(false);
     });
 
-    it('should call onChange with the correct position when using mouseMove', () => {
-      let mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
-      stackGroup.simulate('mouseDown', mouseEvent);
-      expect(spy.calledWith(2010)).to.equal(true);
+    test(
+      'should call onChange with the correct position when using mouseMove',
+      () => {
+        let mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
+        stackGroup.simulate('mouseDown', mouseEvent);
+        expect(spy.calledWith(2010)).toBe(true);
 
-      mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
-      stackGroup.simulate('mouseMove', mouseEvent);
-      expect(spy.calledWith(2017)).to.equal(true);
-    });
+        mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
+        stackGroup.simulate('mouseMove', mouseEvent);
+        expect(spy.calledWith(2017)).toBe(true);
+      }
+    );
 
-    it('should call onChange with the first year when the chart is focused', () => {
-      stackGroup.simulate('focus', eventFuncs);
-      expect(spy.calledWith(2010)).to.equal(true);
-    });
+    test(
+      'should call onChange with the first year when the chart is focused',
+      () => {
+        stackGroup.simulate('focus', eventFuncs);
+        expect(spy.calledWith(2010)).toBe(true);
+      }
+    );
 
-    it('should increase the year if the right arrow is pressed and not at the edge', () => {
-      const keyEvent = { ...eventFuncs, key: 'ArrowRight' };
-      const simulateKeyDownUp = () => {
-        stackGroup.simulate('keyDown', keyEvent);
-        stackGroup.simulate('keyUp', keyEvent);
-      };
+    test(
+      'should increase the year if the right arrow is pressed and not at the edge',
+      () => {
+        const keyEvent = { ...eventFuncs, key: 'ArrowRight' };
+        const simulateKeyDownUp = () => {
+          stackGroup.simulate('keyDown', keyEvent);
+          stackGroup.simulate('keyUp', keyEvent);
+        };
 
-      // First time pressing right arrow
-      simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).to.equal(2017);
+        // First time pressing right arrow
+        simulateKeyDownUp();
+        expect(spy.lastCall.args[0]).toBe(2017);
 
-      wrapper.setProps({ controlYear: 2010 });
-      simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).to.equal(2011);
+        wrapper.setProps({ controlYear: 2010 });
+        simulateKeyDownUp();
+        expect(spy.lastCall.args[0]).toBe(2011);
 
-      // Press right again at the edge, and don't expect it to change
-      wrapper.setProps({ controlYear: 2017 });
-      simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).to.equal(2017);
-    });
+        // Press right again at the edge, and don't expect it to change
+        wrapper.setProps({ controlYear: 2017 });
+        simulateKeyDownUp();
+        expect(spy.lastCall.args[0]).toBe(2017);
+      }
+    );
 
-    it('should decrease the year if the left arrow is pressed and not at the edge', () => {
-      const keyEvent = { ...eventFuncs, key: 'ArrowLeft' };
-      const simulateKeyDownUp = () => {
-        stackGroup.simulate('keyDown', keyEvent);
-        stackGroup.simulate('keyUp', keyEvent);
-      };
+    test(
+      'should decrease the year if the left arrow is pressed and not at the edge',
+      () => {
+        const keyEvent = { ...eventFuncs, key: 'ArrowLeft' };
+        const simulateKeyDownUp = () => {
+          stackGroup.simulate('keyDown', keyEvent);
+          stackGroup.simulate('keyUp', keyEvent);
+        };
 
-      // First time pressing right arrow
-      simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).to.equal(2010);
+        // First time pressing right arrow
+        simulateKeyDownUp();
+        expect(spy.lastCall.args[0]).toBe(2010);
 
-      wrapper.setProps({ controlYear: 2017 });
-      simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).to.equal(2016);
+        wrapper.setProps({ controlYear: 2017 });
+        simulateKeyDownUp();
+        expect(spy.lastCall.args[0]).toBe(2016);
 
-      // Press left again at the edge, and don't expect it to change
-      wrapper.setProps({ controlYear: 2010 });
-      simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).to.equal(2010);
-    });
+        // Press left again at the edge, and don't expect it to change
+        wrapper.setProps({ controlYear: 2010 });
+        simulateKeyDownUp();
+        expect(spy.lastCall.args[0]).toBe(2010);
+      }
+    );
   });
 
   describe('ChartIndicator', () => {
@@ -198,42 +209,42 @@ describe('Components|Streamgraph/StackGroup', () => {
       );
     });
 
-    it('should not be visible when no year is selected', () => {
-      expect(wrapper.find('ChartIndicator')).to.have.lengthOf(0);
+    test('should not be visible when no year is selected', () => {
+      expect(wrapper.find('ChartIndicator')).toHaveLength(0);
     });
 
-    it('should position correctly', () => {
+    test('should position correctly', () => {
       wrapper.setProps({ controlYear: 2010 });
-      expect(wrapper.find('ChartIndicator').props()).to.include({
+      expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: 0,
         yTop: 192.41,
         yBottom: height,
       });
 
       wrapper.setProps({ controlYear: 2012 });
-      expect(wrapper.find('ChartIndicator').props()).to.include({
+      expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: yearSize * 2,
         yTop: 168.74,
         yBottom: height,
       });
 
       wrapper.setProps({ controlYear: 2017 });
-      expect(wrapper.find('ChartIndicator').props()).to.include({
+      expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: width,
         yTop: 27.92,
         yBottom: height,
       });
     });
 
-    it('should display a label of the condition count', () => {
+    test('should display a label of the condition count', () => {
       wrapper.setProps({ controlYear: 2013 });
-      expect(wrapper.find('ChartIndicator').prop('label')).to.equal(136);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(136);
 
       wrapper.setProps({ controlYear: 2015 });
-      expect(wrapper.find('ChartIndicator').prop('label')).to.equal(437);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(437);
 
       wrapper.setProps({ controlYear: 2016 });
-      expect(wrapper.find('ChartIndicator').prop('label')).to.equal(659);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(659);
     });
   });
 });
