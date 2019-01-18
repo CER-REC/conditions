@@ -1,3 +1,3 @@
 module.exports = {
-  process: (src) => `module.exports = ${JSON.stringify(src)};`,
+  process: src => `module.exports = ${JSON.stringify(src)};`,
 };

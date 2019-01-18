@@ -75,7 +75,7 @@ describe('Components|FeaturesMenu', () => {
         });
 
         expect(spy.callCount).toBe(features.length);
-      }
+      },
     );
 
     test(
@@ -92,7 +92,7 @@ describe('Components|FeaturesMenu', () => {
         ));
 
         expect(wrapper.find(List).prop('selected')).toBe(selectedIndex);
-      }
+      },
     );
 
     test(
@@ -107,7 +107,7 @@ describe('Components|FeaturesMenu', () => {
         ));
 
         expect(wrapper.find(List).prop('selected')).toBe(0);
-      }
+      },
     );
   });
 
@@ -169,7 +169,7 @@ describe('Components|FeaturesMenu', () => {
         });
 
         expect(spy.callCount).toBe(features.length);
-      }
+      },
     );
 
     test(
@@ -187,7 +187,7 @@ describe('Components|FeaturesMenu', () => {
         ));
 
         expect(wrapper.find('select').prop('value')).toBe(features[selectedIndex]);
-      }
+      },
     );
 
     test(
@@ -203,7 +203,7 @@ describe('Components|FeaturesMenu', () => {
         ));
 
         expect(wrapper.find('select').prop('value')).toBe(features[0]);
-      }
+      },
     );
   });
 });

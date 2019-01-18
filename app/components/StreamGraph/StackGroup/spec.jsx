@@ -137,7 +137,7 @@ describe('Components|Streamgraph/StackGroup', () => {
         mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
         stackGroup.simulate('mouseMove', mouseEvent);
         expect(spy.calledWith(2017)).toBe(true);
-      }
+      },
     );
 
     test(
@@ -145,7 +145,7 @@ describe('Components|Streamgraph/StackGroup', () => {
       () => {
         stackGroup.simulate('focus', eventFuncs);
         expect(spy.calledWith(2010)).toBe(true);
-      }
+      },
     );
 
     test(
@@ -169,7 +169,7 @@ describe('Components|Streamgraph/StackGroup', () => {
         wrapper.setProps({ controlYear: 2017 });
         simulateKeyDownUp();
         expect(spy.lastCall.args[0]).toBe(2017);
-      }
+      },
     );
 
     test(
@@ -193,7 +193,7 @@ describe('Components|Streamgraph/StackGroup', () => {
         wrapper.setProps({ controlYear: 2010 });
         simulateKeyDownUp();
         expect(spy.lastCall.args[0]).toBe(2010);
-      }
+      },
     );
   });
 

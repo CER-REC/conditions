@@ -140,7 +140,7 @@ describe('Components|ProjectMenu', () => {
         `should pass the List a selected project index of ${output.selected}`,
         () => {
           expect(wrapper.find('List').props().selected).toBe(output.selected);
-        }
+        },
       );
 
       test(
@@ -149,7 +149,7 @@ describe('Components|ProjectMenu', () => {
           wrapper.find('List').props().onChange(input.clickedIndex);
           expect(onChange.calledOnce).toBe(true);
           expect(onChange.firstCall.args).toEqual([output.projectID]);
-        }
+        },
       );
     });
   }

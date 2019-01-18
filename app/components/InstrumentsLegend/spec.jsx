@@ -141,7 +141,7 @@ describe('Components|InstrumentsLegend', () => {
           expect(listItemWrapper.prop('color')).toBe(colors[i]);
           expect(listItemWrapper.prop('indicators')).toEqual(categoryIndicators[i]);
         }
-      }
+      },
     );
 
     test('should render the all LegendItem component', () => {
@@ -158,7 +158,7 @@ describe('Components|InstrumentsLegend', () => {
         wrapper.find(List).prop('onChange')(0);
 
         expect(spy.calledOnceWith(null)).toBe(true);
-      }
+      },
     );
 
     test(
@@ -172,7 +172,7 @@ describe('Components|InstrumentsLegend', () => {
         }
 
         expect(spy.callCount).toBe(categories.length);
-      }
+      },
     );
 
     test('should render the List component with the first item selected', () => {
@@ -192,7 +192,7 @@ describe('Components|InstrumentsLegend', () => {
 
         // An "All" item is rendered at the top for multiple categories
         expect(wrapper.find(List).prop('selected')).toBe(3);
-      }
+      },
     );
 
     test(
@@ -207,7 +207,7 @@ describe('Components|InstrumentsLegend', () => {
         ));
 
         expect(wrapper.find(List).prop('selected')).toBe(0);
-      }
+      },
     );
   });
 });

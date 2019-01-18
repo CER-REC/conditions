@@ -130,7 +130,7 @@ describe('Components|SmallMultiplesLegend', () => {
           expect(listItemWrapper.prop('title')).toBe(data[i].name);
           expect(listItemWrapper.prop('data')).toEqual(data[i].graphData);
         }
-      }
+      },
     );
 
     test('should pass the same max value to the LegendItem components', () => {
@@ -157,7 +157,7 @@ describe('Components|SmallMultiplesLegend', () => {
         wrapper.find(List).prop('onChange')(0);
 
         expect(spy.calledOnceWith(null)).toBe(true);
-      }
+      },
     );
 
     test(
@@ -171,7 +171,7 @@ describe('Components|SmallMultiplesLegend', () => {
         }
 
         expect(spy.callCount).toBe(data.length);
-      }
+      },
     );
 
     test('should render the List component with the first item selected', () => {
@@ -200,7 +200,7 @@ describe('Components|SmallMultiplesLegend', () => {
 
         // An "All" item is rendered at the top for multiple data conditions
         expect(wrapper.find(List).prop('selected')).toBe(3);
-      }
+      },
     );
 
     test(
@@ -216,7 +216,7 @@ describe('Components|SmallMultiplesLegend', () => {
         ));
 
         expect(wrapper.find(List).prop('selected')).toBe(0);
-      }
+      },
     );
 
     test(
@@ -246,7 +246,7 @@ describe('Components|SmallMultiplesLegend', () => {
         });
 
         expect(highlightItemWrapper.prop('faded')).toBe(false);
-      }
+      },
     );
 
     test(
@@ -270,7 +270,7 @@ describe('Components|SmallMultiplesLegend', () => {
         itemsWrapper.forEach((itemWrapper) => {
           expect([null, false]).toContain(itemWrapper.prop('faded'));
         });
-      }
+      },
     );
   });
 });

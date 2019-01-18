@@ -26,7 +26,7 @@ describe('utilities/memoizeReference', () => {
           const firstIdentifier = memoizeReference(generated);
           memoizeReference(inBetweenGenerator[1]());
           expect(firstIdentifier).toBe(memoizeReference(generated));
-        }
+        },
       );
     });
   });

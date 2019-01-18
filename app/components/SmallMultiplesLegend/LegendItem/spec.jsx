@@ -94,7 +94,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       expect(victoryAreaWrapper.prop('style')).toEqual({ data: { fill: color } });
 
       expect(victoryAreaWrapper.prop('data')).toEqual(
-        expect.arrayContaining(data.map(({ date, count }) => ({ x: date, y: count })))
+        expect.arrayContaining(data.map(({ date, count }) => ({ x: date, y: count }))),
       );
     });
 
@@ -122,7 +122,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
         ));
 
         expect(wrapper.hasClass('faded')).toBe(true);
-      }
+      },
     );
   });
 });

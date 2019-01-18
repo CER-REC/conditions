@@ -53,7 +53,7 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
       () => {
         const { wrapper } = wrapperSetup({});
         expect(wrapper.find('text').length).toBe(mockData.length);
-      }
+      },
     );
 
     test(
@@ -61,7 +61,7 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
       () => {
         const { wrapper } = wrapperSetup();
         expect(wrapper.find('text').first().props().transform).toContain('rotate(0, 0, 245)');
-      }
+      },
     );
 
     test.skip('should render an item at 90 degrees', () => {

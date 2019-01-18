@@ -34,7 +34,7 @@ describe('Component|CircleContainer', () => {
       () => {
         const wrapper = shallow(<CircleContainer size="36px" disabled>Test</CircleContainer>);
         expect(wrapper.find('.CircleContainer').hasClass('disabled')).toBe(true);
-      }
+      },
     );
 
     test('should accept a size prop with a width and height', () => {
@@ -66,7 +66,7 @@ describe('Component|CircleContainer', () => {
       () => {
         const wrapper = shallow(<CircleContainer size="12" className="searched">Override</CircleContainer>);
         expect(wrapper.find('.CircleContainer').hasClass('searched')).toBe(true);
-      }
+      },
     );
   });
 });
