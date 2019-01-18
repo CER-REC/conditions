@@ -52,7 +52,7 @@ module.exports = {
   // Make calling deprecated APIs throw helpful error messages
   // errorOnDeprecated: false,
 
-  // Force coverage collection from ignored files usin a array of glob patterns
+  // Force coverage collection from ignored files using an array of glob patterns
   // forceCoverageMatch: [],
 
   // A path to a module which exports an async function that is triggered once before all test suites
@@ -172,8 +172,8 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/app/tests/jest-babel.js',
-    '^.+\\.md$': '<rootDir>/app/tests/jest-md.js',
+    '^.+\\.jsx?$': '<rootDir>/app/tests/transform/babel.js',
+    '^.+\\.md$': '<rootDir>/app/tests/transform/md.js',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

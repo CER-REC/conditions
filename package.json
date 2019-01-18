@@ -70,11 +70,9 @@
     "babel-loader": "8.0.5",
     "babel-plugin-add-react-displayname": "0.0.5",
     "babel-plugin-inline-import": "3.0.0",
-    "babel-plugin-istanbul": "5.1.0",
     "babel-plugin-macros": "2.4.5",
     "babel-plugin-react-docgen": "2.0.0",
     "babel-plugin-require-context-hook": "1.0.0",
-    "chai": "4.2.0",
     "codecov": "3.1.0",
     "commitizen": "3.0.5",
     "cross-env": "5.2.0",
@@ -93,14 +91,9 @@
     "file-loader": "3.0.1",
     "gitlab-npm-audit-parser": "1.0.2",
     "jest": "23.6.0",
-    "jsdom": "13.1.0",
-    "jsdom-global": "3.0.2",
-    "mocha": "5.2.0",
-    "mocha-junit-reporter": "1.18.0",
     "mustache": "3.0.1",
     "mustache-express": "1.2.8",
     "node-sass": "4.11.0",
-    "nyc": "13.1.0",
     "opn-cli": "4.0.0",
     "raw-loader": "1.0.0",
     "react-test-renderer": "16.7.0",
@@ -117,41 +110,6 @@
     "webpack-dev-middleware": "3.5.1",
     "webpack-dev-server": "3.1.14",
     "webpack-hot-middleware": "2.24.3"
-  },
-  "nyc": {
-    "require": [
-      "@babel/register"
-    ],
-    "exclude": [
-      "**/node_modules/**",
-      ".cache/",
-      ".nyc_output",
-      "app/tests/",
-      "coverage",
-      "devPublic/",
-      "documentation",
-      "storybook-static",
-      "test-reports",
-      "webpack.config.js",
-      "**/spec.js",
-      "**/spec.jsx",
-      "**/*.spec.js",
-      "**/*.spec.jsx",
-      "**/stories.jsx",
-      "app/components/Modal/index.jsx"
-    ],
-    "extension": [
-      ".js",
-      ".jsx"
-    ],
-    "reporter": [
-      "lcov",
-      "text-summary"
-    ],
-    "sourceMap": false,
-    "instrument": true,
-    "cache": true,
-    "all": true
   },
   "config": {
     "commitizen": {
