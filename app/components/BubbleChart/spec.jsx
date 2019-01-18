@@ -184,7 +184,6 @@ describe('Components|BubbleChart', () => {
         instrumentChartData2={instrumentChartData2}
       />);
       wrapper.setState({ display: true });
-      // console.log(wrapper.debug())
       expect(wrapper.find('ChartIndicator')).to.have.lengthOf(1);
     });
   });
@@ -203,7 +202,7 @@ describe('Components|BubbleChart', () => {
         instrumentChartData1={instrumentChartData1}
         instrumentChartData2={instrumentChartData2}
       />);
-      wrapper.find('InstrumentBubble').first().props().onClick([circleProps]);
+      wrapper.find('InstrumentBubble').first().props().onClick(circleProps);
       expect(wrapper.state().indicatorX).to.equal(30);
       expect(wrapper.state().indicatorYBottom).to.equal(20);
     });

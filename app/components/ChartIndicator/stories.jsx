@@ -23,11 +23,24 @@ storiesForComponent('Components|ChartIndicator', module, ReadMe)
   .addDecorator(withKnobs)
   .add('withCircle', () => (
     <svg width={500} height={500}>
-      <ChartIndicator label="With Circle" display={visible} x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} radius={number('radius(px)', 40, heightOptions)} />
+      <ChartIndicator
+        label="With Circle"
+        display={visible}
+        x={number('x position(px)', 50, options)}
+        yTop={number('y start position(px)', 20, heightOptions)}
+        yBottom={number('y end position(px)', 40, heightOptions)}
+        radius={number('radius(px)', 40, heightOptions)}
+      />
     </svg>
   ))
   .add('withoutCircle', () => (
     <svg width={500} height={500}>
-      <ChartIndicator label="Without circle" display={visible} x={number('x position(px)', 50, options)} yTop={number('y start position(px)', 20, heightOptions)} yBottom={number('y end position(px)', 40, heightOptions)} />
+      <ChartIndicator
+        label="Without circle"
+        display={visible}
+        x={number('x position(px)', 50, options)}
+        yTop={number('y start position(px)', 20, heightOptions)}
+        yBottom={number('y end position(px)', 40, heightOptions)}
+      />
     </svg>
   ));

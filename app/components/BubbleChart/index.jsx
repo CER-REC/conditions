@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as d3 from 'd3';
 import InstrumentBubble from './InstrumentBubble/index';
 import ChartIndicator from '../ChartIndicator';
+import d3HierarchyCalculation from '../../utilities/d3HierarchyCalculation';
 
 class BubbleChart extends React.PureComponent {
   static propTypes = {
@@ -23,43 +23,11 @@ class BubbleChart extends React.PureComponent {
     this.svgRef = React.createRef();
   }
 
-  d3HierarchyCalculation = (instrumentChartData, width, height) => {
-    // d3 pack generates a function to
-    // fit data into tightly packed circles.
-    const pack = d3
-      .pack()
-      .size([width, height])
-      .padding(node => (node.depth === 0 ? 0 : 5))
-      .radius((node) => {
-        // Calculation for rendering larger circle based on text length
-        const characterWidth = 8;
-        const textLength = node.data.name.length * characterWidth;
-        const textHeight = 15;
-        const textLengthExceeds = node.value * 2 <= textLength;
-        if (textLengthExceeds) {
-          return node.value + textLength; // buffer
-        }
-        if (node.value < textHeight) {
-          return node.value + textHeight;
-        }
-        return node.value;
-      });
-    // creates the root node using
-    // d3 hierarchy similar to a tree layout
-    const root = d3
-      .hierarchy(instrumentChartData)
-      .sum(totalData => totalData.value)
-      .sort((a, b) => b.value - a.value);
-
-    const descendants = pack(root).descendants();
-    return descendants;
-  };
-
   combineData = () => {
-    const nodes1 = this.d3HierarchyCalculation(
+    const nodes1 = d3HierarchyCalculation(
       this.props.instrumentChartData1, 550, 400,
     );
-    const nodes2 = this.d3HierarchyCalculation(
+    const nodes2 = d3HierarchyCalculation(
       this.props.instrumentChartData2, 1400, 400,
     );
     const sortedData1 = this.sortCombinedData(nodes1);
@@ -98,8 +66,8 @@ class BubbleChart extends React.PureComponent {
       y,
       value,
       name,
-    } = circleProp[0];
-    const circleValue = circleProp[0].value;
+    } = circleProp;
+    const circleValue = circleProp.value;
     const drawnRadius = (r !== value && name === 'instrument') ? value : r;
     this.setState({
       indicatorX: x,
@@ -208,7 +176,7 @@ class BubbleChart extends React.PureComponent {
               height={400}
               onClick={this.onClick}
               keyPress={this.onKeyPress}
-              d3HierarchyCalculation={this.d3HierarchyCalculation(
+              d3HierarchyCalculation={d3HierarchyCalculation(
                 instrumentChartData1,
                 550,
                 400,
@@ -219,7 +187,7 @@ class BubbleChart extends React.PureComponent {
               height={400}
               onClick={this.onClick}
               keyPress={this.onKeyPress}
-              d3HierarchyCalculation={this.d3HierarchyCalculation(
+              d3HierarchyCalculation={d3HierarchyCalculation(
                 instrumentChartData2,
                 1400,
                 400,

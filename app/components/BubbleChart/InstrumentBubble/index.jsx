@@ -51,13 +51,13 @@ class InstrumentBubble extends React.PureComponent {
                 onKeyDown={this.props.keyPress}
                 className="CommodityCircle"
                 {...handleInteraction(
-                  this.props.onClick, [{
+                  this.props.onClick, {
                     r: node.r,
                     x: node.x,
                     y: node.y,
                     value: node.value,
                     name: 'commodity',
-                  }],
+                  },
                 )}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
@@ -91,13 +91,13 @@ class InstrumentBubble extends React.PureComponent {
           >
             <circle
               onKeyDown={this.props.keyPress}
-              {...handleInteraction(this.props.onClick, [{
+              {...handleInteraction(this.props.onClick, {
                 x: node.x,
                 y: node.y,
                 value: node.value,
                 r: node.r,
                 name: 'instrument',
-              }])}
+              })}
               r={node.value}
               transform={`translate(${node.x} ${node.y})`}
               style={{ fill: pickColor(node.data.category) }}
