@@ -3,19 +3,24 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ReadMe from './README.md';
-import RegionalCompanies from '.';
+import RegionCompanies from '.';
 
-const companies = ['Canada-Montana Pipe Line Company', 'Express Pipeline Ltd.', 'Kinder Morgan Cochin Ulc.', 'Nova Gas Transmission Ltd.'];
+const companies = ['Express Pipeline Ltd.', 'Kinder Morgan Cochin Ulc.', 'Canada-Montana Pipe Line Company', 'Nova Gas Transmission Ltd.'];
 const active = ['Kinder Morgan Cochin Ulc.'];
 const noop = () => {};
 
-storiesForComponent('Components|RegionalCompanies', module, ReadMe)
+storiesForComponent('Components|RegionCompanies', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['onChange', 'someInteractionPropFunc'] }))
+  .addDecorator(withInteraction({ actions: ['openProjectDetails'] }))
   .add('default', () => (
-    <RegionalCompanies
+    <RegionCompanies
       companies={companies}
       activeConditionCompanies={active}
-      openProjectDetails={noop}
+      {...getInteractionProps()}
     />
-  ));
+  ), {
+    actions: {
+      onChange: noop,
+      openProjectDetails: () => {},
+    },
+  });
