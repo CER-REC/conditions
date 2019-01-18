@@ -26,24 +26,25 @@ module.exports = {
   ],
 
   // The directory where Jest should output its coverage files
-  // coverageDirectory: null,
+  coverageDirectory: './coverage/',
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '<rootDir>/app/components/Modal/index.jsx',
+    '<rootDir>/app/queries/',
     '<rootDir>/app/tests/',
     '/(.*\\.)?spec.jsx?',
     '/(.*\\.)?stories.jsx?',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
-  //   "json",
-  //   "text",
-  //   "lcov",
-  //   "clover"
-  // ],
+  coverageReporters: [
+    'json',
+    // 'text',
+    'lcov',
+    // 'clover',
+  ],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
