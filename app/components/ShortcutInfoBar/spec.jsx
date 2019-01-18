@@ -23,8 +23,8 @@ describe('Components|ShortcutInfoBar', () => {
       expect(wrapper.is('.ShortcutInfoBar')).to.equal((true));
     });
 
-    it('should show eight share icons', () => {
-      expect(wrapper.find('ShareIcon')).to.have.lengthOf(8);
+    it('should show five share icons', () => {
+      expect(wrapper.find('ShareIcon')).to.have.lengthOf(5);
     });
 
     it('should show three text links', () => {
