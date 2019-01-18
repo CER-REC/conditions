@@ -55,9 +55,11 @@ describe('Components|StreamGraph', () => {
 
   describe('with default props', () => {
     let wrapper;
+    let handleOnChange;
     beforeEach(() => {
       wrapper = shallow(<Streamgraph
         projectData={projectData}
+        handleOnChange={handleOnChange}
       />);
     });
 
@@ -77,10 +79,6 @@ describe('Components|StreamGraph', () => {
       expect(wrapper.find('VictoryChart')).to.have.lengthOf(1);
     });
 
-    it('should render the streams in a stack', () => {
-      expect(wrapper.find('VictoryStack')).to.have.lengthOf(1);
-    });
-
     it('should render the x and y axis', () => {
       expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
     });
@@ -90,3 +88,4 @@ describe('Components|StreamGraph', () => {
     });
   });
 });
+

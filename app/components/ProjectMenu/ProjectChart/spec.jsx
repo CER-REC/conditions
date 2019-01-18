@@ -55,7 +55,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
     });
 
     it('should render 14 FeatureFlags', () => {
-      expect(wrapper.find('FeatureFlag')).to.have.a.lengthOf(14);
+      expect(wrapper.find('.FlagWrapper').children()).to.have.a.lengthOf(14);
     });
   });
 
@@ -91,7 +91,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
     });
 
     it('should give all conditions a grey color', () => {
-      const flag = wrapper.find('FeatureFlag').first();
+      const flag = wrapper.find('.FlagWrapper').children().first();
       expect(flag.props().color).to.equal('#a1a8a7');
     });
   });

@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import { FormattedMessage } from 'react-intl';
 
 import LegendItem from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
@@ -40,9 +41,9 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
     });
 
     it('should render the all title', () => {
-      // TODO: Redo when translations are implemented
-      expect(wrapper.text()).to.contain('All');
-      expect(wrapper.text()).to.contain(title);
+      const id = 'components.instrumentsLegend.all';
+
+      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
     });
   });
 
@@ -63,8 +64,10 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
     });
 
     it('should render the title', () => {
+      const id = `common.instrument.category.${title}`;
+
       expect(wrapper.find('.indicators')).to.have.lengthOf(1);
-      expect(wrapper.text()).to.contain(title);
+      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
     });
 
     it('should render the indicators', () => {

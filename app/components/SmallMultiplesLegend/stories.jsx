@@ -6,7 +6,7 @@ import SmallMultiplesLegend from '.';
 import ReadMe from './README.md';
 
 const basicUsageData = [{
-  name: 'Item Title 1',
+  name: 'security',
   graphData: [{
     date: 2018,
     count: 1,
@@ -25,7 +25,7 @@ const basicUsageData = [{
   }],
   color: 'red',
 }, {
-  name: 'Item Title 2',
+  name: 'managementSystem',
   graphData: [{
     date: 2018,
     count: 43,
@@ -44,7 +44,7 @@ const basicUsageData = [{
   }],
   color: 'blue',
 }, {
-  name: 'Item Title 3',
+  name: 'financial',
   graphData: [{
     date: 2018,
     count: 5,
@@ -54,7 +54,7 @@ const basicUsageData = [{
   }],
   color: 'green',
 }, {
-  name: 'Item Title 5',
+  name: 'damagePrevention',
   graphData: [{
     date: 2018,
     count: 46,
@@ -65,7 +65,7 @@ const basicUsageData = [{
   color: 'yellow',
 }];
 const selectedData = [{
-  name: 'A',
+  name: 'includesAll',
   graphData: [{
     date: 2000,
     count: 5,
@@ -75,7 +75,7 @@ const selectedData = [{
   }],
   color: 'red',
 }, {
-  name: 'B',
+  name: 'notConstruction',
   graphData: [{
     date: 2000,
     count: 50,
@@ -85,7 +85,7 @@ const selectedData = [{
   }],
   color: 'green',
 }, {
-  name: 'C',
+  name: 'postConstruction',
   graphData: [{
     date: 2000,
     count: 38,
@@ -96,7 +96,7 @@ const selectedData = [{
   color: 'yellow',
 }];
 const highlightData = [{
-  name: 'SomeTitle',
+  name: 'nonStandard',
   graphData: [{
     date: 1997,
     count: 123,
@@ -109,7 +109,7 @@ const highlightData = [{
   }],
   color: '#AA11AA',
 }, {
-  name: 'Highlight this',
+  name: 'standard',
   graphData: [{
     date: 1997,
     count: 97,
@@ -133,24 +133,24 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
   .addDecorator(withKnobs)
   .add('basic usage', () => (
     <SmallMultiplesLegend
-      title="Title"
+      title="theme"
       data={basicUsageData}
       onChange={name => alert(name)}
     />
   ))
   .add('selected', () => (
     <SmallMultiplesLegend
-      title="Title abc"
+      title="phase"
       data={selectedData}
       onChange={name => alert(name)}
-      selected={select('Selected', selectedOptions, 'B')}
+      selected={select('Selected', selectedOptions, 'notConstruction')}
     />
   ))
   .add('highlight', () => (
     <SmallMultiplesLegend
-      title="Title abc"
+      title="type"
       data={highlightData}
       onChange={name => alert(name)}
-      highlightName={select('Highlight', highlightOptions, 'Highlight this')}
+      highlightName={select('Highlight', highlightOptions, 'standard')}
     />
   ));

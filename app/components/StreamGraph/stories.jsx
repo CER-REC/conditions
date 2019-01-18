@@ -55,7 +55,7 @@ const projectData = [
 
 storiesForComponent('Components|StreamGraph', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .add('With values', () => (
+  .add('With interaction', () => (
     <Streamgraph
       projectData={projectData}
       chartTitle={chartTitle}

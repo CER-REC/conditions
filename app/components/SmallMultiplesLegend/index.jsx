@@ -21,12 +21,13 @@ const getMaxCount = (data) => {
   return max;
 };
 
-const getLegendDataItems = (data, hasHighlight, highlightName) => {
+const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
   const maxCount = getMaxCount(data);
   const items = data.map(conditionsData => (
     <LegendItem
       key={conditionsData.name}
       title={conditionsData.name}
+      feature={feature}
       data={conditionsData.graphData}
       color={conditionsData.color}
       max={maxCount}
@@ -45,7 +46,12 @@ const SmallMultiplesLegend = (props) => {
     conditionsData.name === props.highlightName
   ));
   const selectedIndex = props.data.length === 1 ? 0 : dataIndex + 1;
-  const legendDataItems = getLegendDataItems(props.data, hasHighlight, props.highlightName);
+  const legendDataItems = getLegendDataItems(
+    props.data,
+    props.title,
+    hasHighlight,
+    props.highlightName,
+  );
   const onItemChange = (index) => {
     const legendItem = legendDataItems[index];
     const category = legendItem.props.all ? null : legendItem.props.title;
@@ -60,6 +66,7 @@ const SmallMultiplesLegend = (props) => {
         // "all" cannot be an name in data
         key="all"
         title={props.title}
+        feature={props.title}
         data={[]}
         color=""
         max={0}
