@@ -26,6 +26,11 @@ describe('Components|BarContainer', () => {
       expect(wrapper.type()).to.equal('svg');
     });
 
+    it('should render null with items[0]', () => {
+      wrapper.setProps({ items: [] });
+      expect(wrapper.type()).to.equal(null);
+    });
+
     it('should have a BarContainer class', () => {
       expect(wrapper.is('.BarContainer')).to.equal(true);
     });

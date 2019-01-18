@@ -4,6 +4,7 @@ import './styles.scss';
 
 const Bar = props => (
   <rect
+    className="Bar"
     width={props.width}
     height={props.height}
     x={props.x}

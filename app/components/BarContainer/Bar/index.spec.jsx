@@ -15,6 +15,10 @@ describe('Components|BarContainer/Bar', () => {
       expect(wrapper.type()).to.equal('rect');
     });
 
+    it('should have an Bar class', () => {
+      expect(wrapper.is('.Bar')).to.equal(true);
+    });
+
     it('should accept a width', () => {
       expect(wrapper.props().width).to.equal(0);
       wrapper.setProps({ width: 10 });

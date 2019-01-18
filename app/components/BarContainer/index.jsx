@@ -23,13 +23,14 @@ const BarContainer = (props) => {
       barContainerWidth = size * (index + 1);
       return (
         <Bar
-          key={index.toString()}
+          key={bar.toString()}
           {...bar}
           x={size * index * scale}
           y={barContainerMaxHeight - bar.value * scale}
           width={size * scale}
           height={bar.value * scale}
-        />);
+        />
+      );
     }
     const singleBar = (
       <Bar
@@ -39,26 +40,25 @@ const BarContainer = (props) => {
         y={0}
         width={bar.value * scale}
         height={barContainerHeight}
-      />);
+      />
+    );
     barContainerWidth += bar.value;
     return singleBar;
   });
   if (scale) { barContainerWidth *= scale; }
-  const Container = standalone
-    ? (
-      <g className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
-        <title>{title}</title>
-        <desc>{desc}</desc>
-        {bars}
-      </g>)
-    : (
-      <svg className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
-        <title>{title}</title>
-        <desc>{desc}</desc>
-        {bars}
-      </svg>
-    );
-  return Container;
+  const content = (
+    <g className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
+      <title>{title}</title>
+      <desc>{desc}</desc>
+      {bars}
+    </g>
+  );
+  if (standalone) { return content; }
+  return (
+    <svg className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
+      {content}
+    </svg>
+  );
 };
 
 BarContainer.propTypes = {

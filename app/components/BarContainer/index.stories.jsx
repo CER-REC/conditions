@@ -23,33 +23,25 @@ const rectItems = [
 storiesForComponent('Components|BarContainer', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
-  .add('default', () => {
-    const vert = boolean('Vertical', false);
-    const scale = number('Scale', 1);
-    const size = number('Size', 12);
-    return (
-      <BarContainer
-        title="ConditionTitle"
-        desc="conditionDesc"
-        items={rectItems}
-        size={size}
-        scale={scale}
-        vert={vert}
-      />
-    );
-  })
-  .add('vertical bars', () => {
-    const size = number('Size', 20);
-    return (
-      <BarContainer
-        size={size}
-        title="ConditionTitle"
-        desc="conditionDesc"
-        items={rectItems}
-        vert
-      />
-    );
-  })
+  .add('default', () => (
+    <BarContainer
+      title="ConditionTitle"
+      desc="conditionDesc"
+      items={rectItems}
+      size={number('Size', 12)}
+      scale={number('Scale', 1)}
+      vert={boolean('Vertical', false)}
+    />
+  ))
+  .add('vertical bars', () => (
+    <BarContainer
+      size={number('Size', 20)}
+      title="ConditionTitle"
+      desc="conditionDesc"
+      items={rectItems}
+      vert
+    />
+  ))
   .add('searched bars', () => {
     const size = number('Size', 15);
     return (
