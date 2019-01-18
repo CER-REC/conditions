@@ -18,7 +18,9 @@ class BubbleChart extends React.PureComponent {
       indicatorX: 1,
       indicatorYBottom: 1,
       indicatorRadius: 0,
+      label: '',
     };
+    this.svgRef = React.createRef();
   }
 
   d3HierarchyCalculation = (instrumentChartData, width, height) => {
@@ -54,10 +56,14 @@ class BubbleChart extends React.PureComponent {
   };
 
   combineData = () => {
-    const nodes1 = this.d3HierarchyCalculation(this.props.instrumentChartData1, 550, 400);
-    const nodes2 = this.d3HierarchyCalculation(this.props.instrumentChartData2, 1400, 400);
+    const nodes1 = this.d3HierarchyCalculation(
+      this.props.instrumentChartData1, 550, 400,
+    );
+    const nodes2 = this.d3HierarchyCalculation(
+      this.props.instrumentChartData2, 1400, 400,
+    );
     const sortedData1 = this.sortCombinedData(nodes1);
-    let sortedData2 = [];
+    let sortedData2;
     if (nodes2 !== undefined) {
       sortedData2 = this.sortCombinedData(nodes2);
     }
@@ -65,7 +71,9 @@ class BubbleChart extends React.PureComponent {
   };
 
   sortCombinedData = (combinedNodes) => {
-    const position = combinedNodes.filter(node => (node.depth > 1)).map(node => ({
+    const position = combinedNodes.filter(
+      node => (node.depth > 1),
+    ).map(node => ({
       x: node.x,
       y: node.y,
       r: node.value,
@@ -84,14 +92,21 @@ class BubbleChart extends React.PureComponent {
 
   // Interaction Functions for Chart Indicator
   onClick = (circleProp) => {
-    const circleRadius = circleProp[0];
-    const circleX = circleProp[1];
-    const circleY = circleProp[2];
+    const {
+      r,
+      x,
+      y,
+      value,
+      name,
+    } = circleProp[0];
+    const circleValue = circleProp[0].value;
+    const drawnRadius = (r !== value && name === 'instrument') ? value : r;
     this.setState({
-      indicatorX: circleX,
-      indicatorYBottom: circleY - circleRadius,
-      indicatorRadius: circleRadius,
+      indicatorX: x,
+      indicatorYBottom: y - drawnRadius,
+      indicatorRadius: drawnRadius,
       display: true,
+      label: circleValue,
     });
   };
 
@@ -100,7 +115,8 @@ class BubbleChart extends React.PureComponent {
     const itemIndex = (sortedData.findIndex((item) => {
       if (item.x === this.state.indicatorX
         && item.r === this.state.indicatorRadius
-        && item.y === this.state.indicatorYBottom + this.state.indicatorRadius) {
+        && item.y
+        === this.state.indicatorYBottom + this.state.indicatorRadius) {
         return item;
       }
       return null;
@@ -109,14 +125,19 @@ class BubbleChart extends React.PureComponent {
     if (event.key === 'ArrowRight') {
       this.setState({
         indicatorX: sortedData[itemIndex + 1].x,
-        indicatorYBottom: sortedData[itemIndex + 1].y - sortedData[itemIndex + 1].r,
-        indicatorRadius: sortedData[itemIndex + 1].r,
+        indicatorYBottom:
+        sortedData[itemIndex + 1].y - sortedData[itemIndex + 1].r,
+        indicatorRadius:
+        sortedData[itemIndex + 1].r,
+        label: sortedData[itemIndex + 1].r,
       });
     } else if (event.key === 'ArrowLeft') {
       this.setState({
         indicatorX: sortedData[itemIndex - 1].x,
-        indicatorYBottom: sortedData[itemIndex - 1].y - sortedData[itemIndex - 1].r,
+        indicatorYBottom:
+        sortedData[itemIndex - 1].y - sortedData[itemIndex - 1].r,
         indicatorRadius: sortedData[itemIndex - 1].r,
+        label: sortedData[itemIndex - 1].r,
       });
     }
   };
@@ -131,12 +152,17 @@ class BubbleChart extends React.PureComponent {
   onDragMove = (event) => {
     if (this.state.isDragging === true) {
       const sortedData = this.combineData();
-      const minimumArray = sortedData.map(item => Math.abs(item.x - (event.clientX - 64)));
-      const closestIndex = minimumArray.indexOf(Math.min.apply(null, minimumArray));
+      const minimumArray = sortedData.map(item => Math.abs(item.x
+          - (event.clientX - this.svgRef.current.getClientRects()[0].x)));
+      const closestIndex = minimumArray.indexOf(
+        Math.min.apply(null, minimumArray),
+      );
       this.setState({
         indicatorX: sortedData[closestIndex].x,
-        indicatorYBottom: sortedData[closestIndex].y - sortedData[closestIndex].r,
+        indicatorYBottom:
+        sortedData[closestIndex].y - sortedData[closestIndex].r,
         indicatorRadius: sortedData[closestIndex].r,
+        label: sortedData[closestIndex].r,
       });
     }
   }
@@ -165,33 +191,41 @@ class BubbleChart extends React.PureComponent {
               <ChartIndicator
                 x={this.state.indicatorX}
                 yBottom={this.state.indicatorYBottom}
-                yTop={10}
+                yTop={25}
                 radius={this.state.indicatorRadius}
+                label={this.state.label}
               />
             ) : null
         }
-          <InstrumentBubble
-            width={550}
-            height={400}
-            onClick={this.onClick}
-            keyPress={this.onKeyPress}
-            d3HierarchyCalculation={this.d3HierarchyCalculation(
-              instrumentChartData1,
-              550,
-              400,
-            )}
-          />
-          <InstrumentBubble
-            width={1400}
-            height={400}
-            onClick={this.onClick}
-            keyPress={this.onKeyPress}
-            d3HierarchyCalculation={this.d3HierarchyCalculation(
-              instrumentChartData2,
-              1400,
-              400,
-            )}
-          />
+          <g
+            ref={this.svgRef}
+            onMouseDown={this.onDragStart}
+            onMouseMove={this.onDragMove}
+            onMouseUp={this.onDragStop}
+          >
+            <InstrumentBubble
+              width={550}
+              height={400}
+              onClick={this.onClick}
+              keyPress={this.onKeyPress}
+              d3HierarchyCalculation={this.d3HierarchyCalculation(
+                instrumentChartData1,
+                550,
+                400,
+              )}
+            />
+            <InstrumentBubble
+              width={1400}
+              height={400}
+              onClick={this.onClick}
+              keyPress={this.onKeyPress}
+              d3HierarchyCalculation={this.d3HierarchyCalculation(
+                instrumentChartData2,
+                1400,
+                400,
+              )}
+            />
+          </g>
         </svg>
       </div>
     );

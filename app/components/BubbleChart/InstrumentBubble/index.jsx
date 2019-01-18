@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as d3 from 'd3';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
@@ -52,10 +51,17 @@ class InstrumentBubble extends React.PureComponent {
                 onKeyDown={this.props.keyPress}
                 className="CommodityCircle"
                 {...handleInteraction(
-                  this.props.onClick, [node.r, node.x, node.y],
+                  this.props.onClick, [{
+                    r: node.r,
+                    x: node.x,
+                    y: node.y,
+                    value: node.value,
+                    name: 'commodity',
+                  }],
                 )}
                 transform={`translate(${node.x} ${node.y})`}
                 r={node.r}
+                value={node.value}
               />
               <text className="bubbleTitle">
                 <FormattedMessage id={`common.instrument.type.${node.data.parentName}`}>
@@ -85,7 +91,13 @@ class InstrumentBubble extends React.PureComponent {
           >
             <circle
               onKeyDown={this.props.keyPress}
-              {...handleInteraction(this.props.onClick, [node.value, node.x, node.y])}
+              {...handleInteraction(this.props.onClick, [{
+                x: node.x,
+                y: node.y,
+                value: node.value,
+                r: node.r,
+                name: 'instrument',
+              }])}
               r={node.value}
               transform={`translate(${node.x} ${node.y})`}
               style={{ fill: pickColor(node.data.category) }}
