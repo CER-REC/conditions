@@ -1,13 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import sinon from 'sinon';
 
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import RegionCompanies from '.';
 
-const companies = ['Canada-Montana Pipe Line Company', 'Express Pipeline Ltd.', 'Kinder Morgan Cochin Ulc.', 'Nova Gas Transmission Ltd.'];
-const active = ['Kinder Morgan Cochin Ulc.'];
+const companies = [
+  { id: '1', name: 'Canada-Montana Pipe Line Company' },
+  { id: '2', name: 'Express Pipeline Ltd.' },
+  { id: '3', name: 'Kinder Morgan Cochin Ulc.' },
+  { id: '4', name: 'Nova Gas Transmission Ltd.' }];
+const active = ['3'];
 const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|RegionCompanies', () => {
   describe('with default props', () => {
@@ -37,6 +43,25 @@ describe('Components|RegionCompanies', () => {
 
     it('should display a asterisk beside Kinder Morgan Cochin Ulc.', () => {
       expect(wrapper.find('li').at(2).find('button').type()).to.equal('button');
+    });
+  });
+
+  describe('when the asterisk is clicked', () => {
+    let spy;
+    let wrapper;
+    beforeEach(() => {
+      spy = sinon.spy();
+      wrapper = shallow(
+        <RegionCompanies
+          companies={companies}
+          activeConditionCompanies={active}
+          openProjectDetails={spy}
+        />,
+      );
+    });
+    it('should call the openProjectDetails function', () => {
+      wrapper.find('button').first().simulate('click', eventFuncs);
+      expect(spy.calledOnce).to.equal(true);
     });
   });
 });
