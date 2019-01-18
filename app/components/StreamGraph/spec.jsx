@@ -59,6 +59,7 @@ describe('Components|StreamGraph', () => {
       wrapper = shallow(<Streamgraph
         projectData={projectData}
         handleOnChange={handleOnChange}
+        chartTitle="Test"
       />);
     });
 

@@ -28133,7 +28133,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
                         "width": "0px",
                       }
                     }
-                    title="common.features. - common..Zero Conditions - 0"
+                    title="Zero Conditions"
                   />
                 </div>
                 <div
@@ -28153,7 +28153,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
                         "width": "30px",
                       }
                     }
-                    title="common.features. - common..Ten Conditions - 10"
+                    title="Ten Conditions"
                   />
                 </div>
                 <div
@@ -28173,7 +28173,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
                         "width": "30px",
                       }
                     }
-                    title="common.features. - common..Greater than ten Conditions - 11"
+                    title="Greater than Ten Conditions"
                   />
                   <div
                     className="FlagTip"
@@ -45383,75 +45383,7 @@ exports[`Storyshots Components|Modal Data Download 1`] = `
                         }
                       >
                         <span>
-                          <button
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "background": "none",
-                                "border": "0 none",
-                                "color": "gray",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                              }
-                            }
-                            type="button"
-                          >
-                            {
-                          </button>
-                          <button
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "background": "none",
-                                "border": "0 none",
-                                "color": "gray",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                              }
-                            }
-                            type="button"
-                          >
-                            ...
-                          </button>
-                          <div
-                            style={
-                              Object {
-                                "marginLeft": 15,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              task
-                              
-                              :
-                               
-                            </span>
-                            <span>
-                              func
-                            </span>
-                            ,
-                          </div>
-                          <button
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "background": "none",
-                                "border": "0 none",
-                                "color": "gray",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                              }
-                            }
-                            type="button"
-                          >
-                            }
-                          </button>
+                          func
                         </span>
                       </td>
                       <td
@@ -45491,7 +45423,7 @@ exports[`Storyshots Components|Modal Data Download 1`] = `
                           }
                         }
                       >
-                        Adds a link to the footer of the Modal window
+                        Adds a link to the footer of the Modal window that triggers this function
                       </td>
                     </tr>
                     <tr>
@@ -46218,56 +46150,11 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
                             <span
                               style={
                                 Object {
-                                  "color": "#666",
+                                  "color": "#170",
                                 }
                               }
                             >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  text
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Save Image'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  task
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                noop
-                              </span>
-                              }
+                              noop
                             </span>
                             }
                           </span>
@@ -46481,75 +46368,7 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
                         }
                       >
                         <span>
-                          <button
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "background": "none",
-                                "border": "0 none",
-                                "color": "gray",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                              }
-                            }
-                            type="button"
-                          >
-                            {
-                          </button>
-                          <button
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "background": "none",
-                                "border": "0 none",
-                                "color": "gray",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                              }
-                            }
-                            type="button"
-                          >
-                            ...
-                          </button>
-                          <div
-                            style={
-                              Object {
-                                "marginLeft": 15,
-                              }
-                            }
-                          >
-                            <span
-                              style={
-                                Object {
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                            >
-                              task
-                              
-                              :
-                               
-                            </span>
-                            <span>
-                              func
-                            </span>
-                            ,
-                          </div>
-                          <button
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "background": "none",
-                                "border": "0 none",
-                                "color": "gray",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                              }
-                            }
-                            type="button"
-                          >
-                            }
-                          </button>
+                          func
                         </span>
                       </td>
                       <td
@@ -46589,7 +46408,7 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
                           }
                         }
                       >
-                        Adds a link to the footer of the Modal window
+                        Adds a link to the footer of the Modal window that triggers this function
                       </td>
                     </tr>
                     <tr>
@@ -47090,7 +46909,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "30px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 1 - 10"
+                            title="Theme - Security - 10"
                           />
                         </div>
                         <div
@@ -47105,7 +46924,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "30px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 2 - 19"
+                            title="Theme - Management System - 19"
                           />
                           <div
                             className="FlagTip"
@@ -47172,7 +46991,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "12px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 1 - 4"
+                            title="Theme - Security - 4"
                           />
                         </div>
                         <div
@@ -47187,7 +47006,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "30px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 2 - 29"
+                            title="Theme - Management System - 29"
                           />
                           <div
                             className="FlagTip"
@@ -47291,7 +47110,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "18px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 1 - 6"
+                            title="Theme - Security - 6"
                           />
                         </div>
                         <div
@@ -47306,7 +47125,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "30px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 2 - 22"
+                            title="Theme - Management System - 22"
                           />
                           <div
                             className="FlagTip"
@@ -47406,7 +47225,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "15px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 1 - 5"
+                            title="Theme - Security - 5"
                           />
                         </div>
                         <div
@@ -47421,7 +47240,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "0px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 2 - 0"
+                            title="Theme - Management System - 0"
                           />
                         </div>
                       </div>
@@ -47480,7 +47299,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "30px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 1 - 10"
+                            title="Theme - Security - 10"
                           />
                         </div>
                         <div
@@ -47495,7 +47314,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 "width": "30px",
                               }
                             }
-                            title="common.features.Theme - common.Theme.condition 2 - 19"
+                            title="Theme - Management System - 19"
                           />
                           <div
                             className="FlagTip"
@@ -47724,7 +47543,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                             }
                                           }
                                         >
-                                          'condition 1'
+                                          'security'
                                         </span>
                                         ,
                                         <span>
@@ -47804,7 +47623,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                             }
                                           }
                                         >
-                                          'condition 2'
+                                          'managementSystem'
                                         </span>
                                         ,
                                         <span>
@@ -47968,7 +47787,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                             }
                                           }
                                         >
-                                          'condition 1'
+                                          'security'
                                         </span>
                                         ,
                                         <span>
@@ -48048,7 +47867,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                             }
                                           }
                                         >
-                                          'condition 2'
+                                          'managementSystem'
                                         </span>
                                         ,
                                         <span>
@@ -48212,7 +48031,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                             }
                                           }
                                         >
-                                          'condition 1'
+                                          'security'
                                         </span>
                                         ,
                                         <span>
@@ -48292,7 +48111,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                             }
                                           }
                                         >
-                                          'condition 2'
+                                          'managementSystem'
                                         </span>
                                         ,
                                         <span>
@@ -48448,7 +48267,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                                 }
                               }
                             >
-                              Theme
+                              theme
                             </span>
                             "
                           </span>
@@ -49213,7 +49032,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
                                   }
                                 }
                               >
-                                Theme
+                                theme
                               </span>
                               "
                             </span>
@@ -49837,7 +49656,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                         "width": "3px",
                       }
                     }
-                    title="common.features.Theme - common.Theme.condition 1 - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -49852,7 +49671,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                         "width": "30px",
                       }
                     }
-                    title="common.features.Theme - common.Theme.condition 2 - 45"
+                    title="Theme - Management System - 45"
                   />
                   <div
                     className="FlagTip"
@@ -49875,7 +49694,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                         "width": "30px",
                       }
                     }
-                    title="common.features.Theme - common.Theme.condition 3 - 55"
+                    title="Theme - Financial - 55"
                   />
                   <div
                     className="FlagTip"
@@ -49898,7 +49717,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                         "width": "30px",
                       }
                     }
-                    title="common.features.Theme - common.Theme.condition 4 - 23"
+                    title="Theme - Damage Prevention - 23"
                   />
                   <div
                     className="FlagTip"
@@ -49921,7 +49740,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                         "width": "9px",
                       }
                     }
-                    title="common.features.Theme - common.Theme.condition 5 - 3"
+                    title="Theme - Safety Management - 3"
                   />
                 </div>
                 <div
@@ -49936,7 +49755,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                         "width": "30px",
                       }
                     }
-                    title="common.features.Theme - common.Theme.condition 6 - 13"
+                    title="Theme - Socio-Economic - 13"
                   />
                   <div
                     className="FlagTip"
@@ -49959,7 +49778,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                         "width": "9px",
                       }
                     }
-                    title="common.features.Theme - common.Theme.condition 7 - 3"
+                    title="Theme - Emergency Management - 3"
                   />
                 </div>
               </div>
@@ -50094,7 +49913,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                                         }
                                       }
                                     >
-                                      'condition 1'
+                                      'security'
                                     </span>
                                     ,
                                     <span>
@@ -50179,7 +49998,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                                         }
                                       }
                                     >
-                                      'condition 2'
+                                      'managementSystem'
                                     </span>
                                     ,
                                     <span>
@@ -50264,7 +50083,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                                         }
                                       }
                                     >
-                                      'condition 3'
+                                      'financial'
                                     </span>
                                     ,
                                     <span>
@@ -50357,7 +50176,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                                   }
                                 }
                               >
-                                Theme
+                                theme
                               </span>
                               "
                             </span>
@@ -51003,7 +50822,9 @@ exports[`Storyshots Components|SelectedGroupBar default 1`] = `
                     "fontSize": "14px",
                   }
                 }
-              />
+              >
+                condition
+              </span>
             </p>
           </div>
         </div>
@@ -51056,90 +50877,130 @@ exports[`Storyshots Components|SelectedGroupBar default 1`] = `
                 }
               >
                 <div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
+                  <div>
+                    <div
                       style={
                         Object {
-                          "color": "#444",
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      &lt;
-                      SelectedGroupBar
-                    </span>
-                    <span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;
+                        SelectedGroupBar
+                      </span>
                       <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          group
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            "
+                            group
+                          </span>
+                          <span>
+                            =
                             <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
+                              style={Object {}}
                             >
-                              components.companyWheel.wheelRay.title
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                components.companyWheel.wheelRay.title
+                              </span>
+                              "
                             </span>
-                            "
                           </span>
                         </span>
-                      </span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          groupItem
-                        </span>
                         <span>
-                          =
+                           
                           <span
                             style={Object {}}
                           >
-                            "
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              groupItem
-                            </span>
-                            "
+                            groupItem
                           </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                groupItem
+                              </span>
+                              "
+                            </span>
+                          </span>
+                          
                         </span>
-                         
                       </span>
-                    </span>
-                    <span
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &gt;
+                      </span>
+                    </div>
+                    <div
                       style={
                         Object {
-                          "color": "#444",
+                          "paddingLeft": 33,
+                          "paddingRight": 3,
                         }
                       }
                     >
-                      /&gt;
-                    </span>
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        condition
+                      </span>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "paddingLeft": 18,
+                          "paddingRight": 3,
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#444",
+                          }
+                        }
+                      >
+                        &lt;/
+                        SelectedGroupBar
+                        &gt;
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <button

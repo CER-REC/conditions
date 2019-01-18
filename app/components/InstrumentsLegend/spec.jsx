@@ -84,16 +84,16 @@ describe('Components|InstrumentsLegend', () => {
       [false, true, true, false],
     ];
     const data = [{
-      parentName: 'Indicator',
+      parentName: 'oil',
       children: [],
     }, {
-      parentName: 'Ind',
+      parentName: 'gas',
       children: [],
     }, {
-      parentName: 'Type',
+      parentName: 'power',
       children: [],
     }, {
-      parentName: 'N/A',
+      parentName: 'notSpecified',
       children: [],
     }];
 

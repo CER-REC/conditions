@@ -75,6 +75,11 @@
     "filing": {
       "filingRequired": "Filing Required",
       "FilingNotRequired": "Filing Not Required"
+    },
+    "legend": {
+      "zeroConditions": "Zero Conditions",
+      "tenConditions": "Ten Conditions",
+      "greaterThanTenConditions": "Greater than Ten Conditions"
     }
   },
   "components": {

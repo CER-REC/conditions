@@ -9,11 +9,15 @@ const FeatureFlag = (props) => {
   const sizePerUnit = (30 / 10); // 30px of space, and 10 units is a full flag
   const flagSize = Math.min(props.count * sizePerUnit, 30);
 
+  const title = props.chartType === 'legend'
+    ? intl.formatMessage({ id: `common.legend.${props.name}` })
+    : `${intl.formatMessage({ id: `common.features.${props.chartType}` })} - ${intl.formatMessage({ id: `common.${props.chartType}.${props.name}` })} - ${props.count}`;
+
   const bar = (
     <div
       className="Bar"
       style={{ backgroundColor: props.color, content: '', width: `${flagSize}px` }}
-      title={`${intl.formatMessage({ id: `common.features.${props.chartType}` })} - ${intl.formatMessage({ id: `common.${props.chartType}.${props.name}` })} - ${props.count}`}
+      title={title}
     />
   );
 

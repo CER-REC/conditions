@@ -6,7 +6,7 @@ describe('Components|ChartIndicator', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ChartIndicator x={50} ystart={50} yend={150} />,
+      <ChartIndicator x={50} yTop={50} yBottom={150} />,
     );
   });
   describe('with default props', () => {
@@ -25,7 +25,7 @@ describe('without radius', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ChartIndicator x={50} ystart={50} yend={150} />,
+      <ChartIndicator x={50} yTop={50} yBottom={150} />,
     );
   });
   test('should not render a circle', () => {
