@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import BubbleChart from '.';
 
@@ -184,7 +184,28 @@ describe('Components|BubbleChart', () => {
         instrumentChartData2={instrumentChartData2}
       />);
       wrapper.setState({ display: true });
+      // console.log(wrapper.debug())
       expect(wrapper.find('ChartIndicator')).to.have.lengthOf(1);
+    });
+  });
+
+  describe('onClick ', () => {
+    it('should change the indicator position', () => {
+      const circleProps = {
+        r: 20,
+        x: 30,
+        y: 40,
+        value: 25,
+        name: 'commodity',
+      };
+      const wrapper = shallow(<BubbleChart
+        selectedCategory="instrument"
+        instrumentChartData1={instrumentChartData1}
+        instrumentChartData2={instrumentChartData2}
+      />);
+      wrapper.find('InstrumentBubble').first().props().onClick([circleProps]);
+      expect(wrapper.state().indicatorX).to.equal(30);
+      expect(wrapper.state().indicatorYBottom).to.equal(20);
     });
   });
 });
