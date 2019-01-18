@@ -47,7 +47,8 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
         desc="conditionDesc"
         items={rectItems}
         vert
-      />);
+      />
+    );
   })
   .add('searched bars', () => {
     const size = number('Size', 15);
@@ -57,7 +58,8 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
         title="ConditionTitle"
         desc="conditionDesc"
         items={rectItems}
-      />);
+      />
+    );
   })
 
   .add('standalone', () => (
