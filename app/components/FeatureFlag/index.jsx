@@ -21,9 +21,11 @@ const FeatureFlag = (props) => {
     />
   );
 
-  const tip = (<div className="FlagTip" style={{ borderLeftColor: props.color }} />);
+  const tip = props.count <= 10
+    ? null
+    : <div className="FlagTip" style={{ borderLeftColor: props.color }} />;
 
-  return <div className="FeatureFlag">{bar}{props.count > 10 ? tip : null}</div>;
+  return <div className="FeatureFlag">{bar}{tip}</div>;
 };
 
 FeatureFlag.propTypes = {
