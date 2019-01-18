@@ -54,7 +54,7 @@ describe('Components|Modal/ModalContent', () => {
       <ModalContent
         type="image"
         content={<div>Test Content</div>}
-        modalAction={{ task: noop }}
+        modalAction={noop}
         isOpen
         closeModal={noop}
       />
