@@ -24,7 +24,7 @@ storiesForComponent('Components|FeaturesMenu', module, ReadMe)
     <FeaturesMenu
       features={features}
       onChange={feature => alert(feature)}
-      selected={select('Selected', featuresOptions, 'TEST 123')}
+      selected={select('Selected', featuresOptions, 'phase')}
     />
   ))
   .add('drop down', () => (
