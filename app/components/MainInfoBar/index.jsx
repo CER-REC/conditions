@@ -18,12 +18,26 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
-  handleOnClick = () => {
-    if (this.props.textBox === 'About') { return <AboutTextBox />; }
-    if (this.props.textBox === 'Methodology') { return <MethodologyTextBox />; }
-    if (this.props.textBox === 'Downloads') { return <DownloadsTextBox />; }
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTextBox: false,
+    };
+  }
+
+  setTextBox() {
+    if (!this.state.showTextBox) { return null; }
+    if (this.props.textBox === 'About') {
+      return <AboutTextBox />;
+    }
+    if (this.props.textBox === 'Methodology') {
+      return <MethodologyTextBox />;
+    }
+    if (this.props.textBox === 'Downloads') {
+      return <DownloadsTextBox />;
+    }
     return null;
-  };
+  }
 
   textButtons() {
     const buttons = ['About', 'Methodology', 'Downloads'];
@@ -74,18 +88,18 @@ class MainInfoBar extends React.PureComponent {
         {this.textButtons()}
         <br />
         <div className="TextBox">
-          {this.handleOnClick(this.props.textBox)}
+          {this.setTextBox}
         </div>
         <br />
         {this.shareIcons()}
         {
-          this.props.textBox === ''
+          !this.state.showTextBox
             ? null
             : (
               <ShareIcon
                 icon="angle-double-up"
                 prefix="fas"
-                onChange={this.props.textBox}
+                onChange={!this.state.showTextBox}
               />
             )
         }
@@ -96,12 +110,8 @@ class MainInfoBar extends React.PureComponent {
 
 MainInfoBar.propTypes = {
   onChange: PropTypes.func.isRequired,
-  textBox: PropTypes.string,
+  textBox: PropTypes.string.isRequired,
   handleOnClick: PropTypes.func.isRequired,
-};
-
-MainInfoBar.defaultProps = {
-  textBox: '',
 };
 
 export default MainInfoBar;

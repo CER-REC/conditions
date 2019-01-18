@@ -24,13 +24,13 @@ class ShortcutInfoBar extends React.PureComponent {
     return (
       <div
         className="InfoButton"
-        onClick={this.props.handleInfoButton}
-        onKeyPress={this.props.handleInfoButton}
+        onClick={this.props.handleInfoBar}
+        onKeyPress={this.props.handleInfoBar}
         role="button"
         tabIndex="0"
       >
         <svg viewBox="0 0 50 100">
-          <g onChange={this.props.onChange} transform="scale(3)">
+          <g transform="scale(3)">
             <path fill="none" stroke="#fff" strokeMiterlimit={10} d="M8.3.5a7.8,7.8,0,1,0,7.8,7.8A7.81,7.81,0,0,0,8.3.5" />
             <path fill="#fff" d="M6,7.2a4.3,4.3,0,0,1,1.8-.5c.9,0,1.7.5,1.7,1.3a9,9,0,0,1-.3,1.9s-.2.9-.3,1.2-.2.8.2,1,1.2-.4,1.2-.4l-.4,1.1a4,4,0,0,1-1.5.4,2.35,2.35,0,0,1-1.6-.5,2,2,0,0,1-.4-1.9c.1-.5.8-2.5.6-3S5.8,8,5.8,8Z" />
             <path fill="#fff" d="M7.3,4.3A1.42,1.42,0,0,1,8.7,3,1.33,1.33,0,0,1,9.9,4.4,1.42,1.42,0,0,1,8.5,5.7,1.17,1.17,0,0,1,7.3,4.3" />
@@ -54,32 +54,6 @@ class ShortcutInfoBar extends React.PureComponent {
           onChange={this.props.jumpToAbout}
           prefix="fas"
         />
-      </div>
-    );
-  }
-
-  share() {
-    const shareIconsList = ['twitter', 'facebook', 'linkedin'];
-    const emailIcon = (
-      <ShareIcon
-        key="email"
-        icon="envelope"
-        onChange={this.props.onChange}
-        prefix="fas"
-      />
-    );
-    const shareIcons = shareIconsList.map(k => (
-      <ShareIcon
-        key={k}
-        icon={k}
-        onChange={this.props.onChange}
-      />
-    ));
-    return (
-      <div className="Icons">
-        Share:
-        {emailIcon}
-        {shareIcons}
       </div>
     );
   }
@@ -122,11 +96,29 @@ class ShortcutInfoBar extends React.PureComponent {
 
   infoBar() {
     if (!this.props.handleInfoBar) { return null; }
+    const shareIconsList = ['twitter', 'facebook', 'linkedin'];
+    const emailIcon = (
+      <ShareIcon
+        key="email"
+        icon="envelope"
+        prefix="fas"
+      />
+    );
+    const shareIcons = shareIconsList.map(k => (
+      <ShareIcon
+        key={k}
+        icon={k}
+      />
+    ));
     return (
       <div className="InfoBar">
         {this.aboutThisVisualization()}
         <br />
-        {this.share()}
+        <div className="Icons">
+          Share:
+          {emailIcon}
+          {shareIcons}
+        </div>
         <br />
         {this.download()}
       </div>
@@ -144,13 +136,10 @@ class ShortcutInfoBar extends React.PureComponent {
 }
 
 ShortcutInfoBar.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  handleInfoButton: PropTypes.func.isRequired,
-  handleInfoBar: PropTypes.func.isRequired,
+  handleInfoBar: PropTypes.bool.isRequired,
   jumpToAbout: PropTypes.func.isRequired,
   openDataModal: PropTypes.func.isRequired,
   openScreenshotModal: PropTypes.func.isRequired,
-
 };
 
 export default ShortcutInfoBar;

@@ -11,7 +11,9 @@ describe('Components|ShortcutInfoBar', () => {
       wrapper = shallow(<ShortcutInfoBar
         onChange={() => {}}
         handleInfoBar={() => {}}
-        handleInfoButton={() => {}}
+        jumpToAbout={() => {}}
+        openDataModal={() => {}}
+        openScreenshotModal={() => {}}
       />);
     });
 
@@ -29,6 +31,11 @@ describe('Components|ShortcutInfoBar', () => {
 
     it('should show three text links', () => {
       expect(wrapper.find('button')).to.have.lengthOf(1);
+    });
+
+    it('should not show the info bar when it is closed', () => {
+      wrapper.setProps({ handleInfoBar: false });
+      expect(wrapper.find('InfoBar')).to.have.lengthOf(0);
     });
   });
 });
