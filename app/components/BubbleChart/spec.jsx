@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount, render } from 'enzyme';
 import { expect } from 'chai';
 import BubbleChart from '.';
 
@@ -165,6 +165,26 @@ describe('Components|BubbleChart', () => {
         instrumentChartData2={instrumentChartData2}
       />);
       expect(wrapper.find('.BubbleChart')).to.have.lengthOf(1);
+    });
+  });
+
+  describe('with chartIndicator display prop ', () => {
+    it('should not show chartIndicator when false', () => {
+      const wrapper = shallow(<BubbleChart
+        selectedCategory="instrument"
+        instrumentChartData1={instrumentChartData1}
+        instrumentChartData2={instrumentChartData2}
+      />);
+      expect(wrapper.find('ChartIndicator')).to.have.lengthOf(0);
+    });
+    it('should show the chartIndicator when true', () => {
+      const wrapper = shallow(<BubbleChart
+        selectedCategory="instrument"
+        instrumentChartData1={instrumentChartData1}
+        instrumentChartData2={instrumentChartData2}
+      />);
+      wrapper.setState({ display: true });
+      expect(wrapper.find('ChartIndicator')).to.have.lengthOf(1);
     });
   });
 });
