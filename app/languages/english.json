@@ -132,8 +132,8 @@
     "view1": {
       "footer": {
         "skip": "Skip intro to browse:",
-        "projectsBy": "Projects By",
-        "conditionsBy": "Conditions By",
+        "projectsBy": "Projects by",
+        "conditionsBy": "Conditions by",
         "company": "Company",
         "location": "Location"
       }

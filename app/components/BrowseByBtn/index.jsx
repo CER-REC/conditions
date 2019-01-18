@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 
 import handleInteraction from '../../utilities/handleInteraction';
 
 const BrowseByBtn = (props) => {
-  const message = props.browseByCompany ? 'Projects by Company' : 'Conditions by Location';
+  const message = props.browseByCompany ? ['projectsBy', 'company'] : ['conditionsBy', 'location'];
 
   const background = (
     <svg height="41.33px" width="41.33px" className="BrowseByBtn-Wheel">
@@ -19,20 +20,15 @@ const BrowseByBtn = (props) => {
     </svg>
   );
 
-  const ParsedMessage = () => {
-    const msgArr = message.split(/(\s+)/);
-    const newMssg = msgArr.splice(0, msgArr.length - 1);
-    return (
-      <div className="BrowseByBtn-ButtonText">
-        <span>{newMssg.map(x => x)}</span>
-        <span className="LastWord">{msgArr[msgArr.length - 1]}</span>
-      </div>
-    );
-  };
-
   return (
     <button type="button" className="BrowseByBtn" {...handleInteraction(props.onClick)}>
-      <ParsedMessage />
+      <div className="BrowseByBtn-ButtonText">
+        <FormattedMessage id={`views.view1.footer.${message[0]}`} />
+        <span>&nbsp;</span>
+        <FormattedMessage id={`views.view1.footer.${message[1]}`}>
+          { text => (<span className="LastWord">{text}</span>) }
+        </FormattedMessage>
+      </div>
       {background}
     </button>
   );
