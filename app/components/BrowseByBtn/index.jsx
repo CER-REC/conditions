@@ -19,7 +19,7 @@ const BrowseByBtn = (props) => {
     </svg>
   );
 
-  const parsedMessage = () => {
+  const ParsedMessage = () => {
     const msgArr = message.split(/(\s+)/);
     const newMssg = msgArr.splice(0, msgArr.length - 1);
     return (
@@ -32,7 +32,7 @@ const BrowseByBtn = (props) => {
 
   return (
     <button type="button" className="BrowseByBtn" {...handleInteraction(props.onClick)}>
-      {parsedMessage()}
+      <ParsedMessage />
       {background}
     </button>
   );
