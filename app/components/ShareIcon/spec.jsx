@@ -9,7 +9,7 @@ describe('Components|ShareIcon', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<ShareIcon />);
+      wrapper = shallow(<ShareIcon icon="" target="" />);
     });
 
     it('should render', () => {
@@ -19,16 +19,31 @@ describe('Components|ShareIcon', () => {
     it('should have a className', () => {
       expect(wrapper.is('.ShareIcon')).to.equal((true));
     });
-  });
 
-  describe('with passed props', () => {
-    it('should take in the onChange prop', () => {
-      const wrapper = shallow((
+    it('should have take in an onClick props', () => {
+      const tester = shallow((
         <ShareIcon
-          onChange={() => {}}
-        />
+          onClick={() => {}}
+        >
+          Test
+        </ShareIcon>
       ));
-      shouldHaveInteractionProps(wrapper);
+      shouldHaveInteractionProps(tester);
+    });
+
+    it('should handle if target is facebook', () => {
+      wrapper.setProps({ target: 'facebook' });
+      expect(wrapper.find('Icon').props().icon).to.equal('facebook');
+    });
+
+    it('should handle if target is twitter', () => {
+      wrapper.setProps({ target: 'twitter' });
+      expect(wrapper.find('Icon').props().icon).to.equal('twitter');
+    });
+
+    it('should handle if target is linkedin', () => {
+      wrapper.setProps({ target: 'linkedin' });
+      expect(wrapper.find('Icon').props().icon).to.equal('linkedin');
     });
   });
 });

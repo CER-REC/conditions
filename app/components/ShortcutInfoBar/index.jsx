@@ -9,6 +9,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import ShareIcon from '../ShareIcon';
+import CircleContainer from '../CircleContainer';
+import Icon from '../Icon';
 
 library.add(
   faTwitter,
@@ -49,11 +51,9 @@ class ShortcutInfoBar extends React.PureComponent {
         >
         About this Visualization
         </button>
-        <ShareIcon
-          icon="angle-double-down"
-          onChange={this.props.jumpToAbout}
-          prefix="fas"
-        />
+        <CircleContainer className="AngleDoubleDown" size="20px" onClick={this.props.jumpToAbout}>
+          <Icon color="#D1057A" size="1x" icon="angle-double-down" prefix="fas" />
+        </CircleContainer>
       </div>
     );
   }

@@ -8,6 +8,8 @@ import ShareIcon from '../ShareIcon';
 import AboutTextBox from '../AboutTextBox';
 import MethodologyTextBox from './MethodologyTextBox';
 import DownloadsTextBox from './DownloadsTextBox';
+import CircleContainer from '../CircleContainer';
+import Icon from '../Icon';
 
 library.add(
   faTwitter,
@@ -21,21 +23,21 @@ class MainInfoBar extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      showTextBox: false,
+      dialogOpen: false,
     };
   }
 
-  setTextBox() {
-    if (!this.state.showTextBox) { return null; }
-    if (this.props.textBox === 'About') {
+  setActiveDialog = (activeDialog) => {
+    if (activeDialog === 'About') {
       return <AboutTextBox />;
     }
-    if (this.props.textBox === 'Methodology') {
+    if (activeDialog === 'Methodology') {
       return <MethodologyTextBox />;
     }
-    if (this.props.textBox === 'Downloads') {
+    if (activeDialog === 'Downloads') {
       return <DownloadsTextBox />;
     }
+    this.setState({ dialogOpen: true });
     return null;
   }
 
@@ -45,7 +47,7 @@ class MainInfoBar extends React.PureComponent {
       <button
         key={k}
         id={k}
-        className={`TextButton ${this.props.textBox === k ? 'selected' : ''}`}
+        className={`TextButton ${this.props.activeDialog === k ? 'selected' : ''}`}
         type="button"
         onClick={() => this.props.handleOnClick(k)}
       >
@@ -53,6 +55,10 @@ class MainInfoBar extends React.PureComponent {
       </button>
     ));
     return textButton;
+  }
+
+  closeDialog() {
+    this.setState({ dialogOpen: false });
   }
 
   shareIcons() {
@@ -88,19 +94,22 @@ class MainInfoBar extends React.PureComponent {
         {this.textButtons()}
         <br />
         <div className="TextBox">
-          {this.setTextBox}
+          {this.setActiveDialog(this.props.activeDialog)}
         </div>
         <br />
         {this.shareIcons()}
+        <br />
         {
-          !this.state.showTextBox
+          this.state.dialogOpen
             ? null
             : (
-              <ShareIcon
-                icon="angle-double-up"
-                prefix="fas"
-                onChange={!this.state.showTextBox}
-              />
+              <CircleContainer
+                className="AngleDoubleDown"
+                size="20px"
+                onClick={this.closeDialog}
+              >
+                <Icon color="grey" size="1x" icon="angle-double-up" prefix="fas" />
+              </CircleContainer>
             )
         }
       </div>
@@ -110,7 +119,7 @@ class MainInfoBar extends React.PureComponent {
 
 MainInfoBar.propTypes = {
   onChange: PropTypes.func.isRequired,
-  textBox: PropTypes.string.isRequired,
+  activeDialog: PropTypes.string.isRequired,
   handleOnClick: PropTypes.func.isRequired,
 };
 

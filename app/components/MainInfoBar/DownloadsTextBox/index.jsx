@@ -22,6 +22,7 @@ const DownloadsTextBox = () => (
     <p>Click
       <button
         type="button"
+        onClick={() => {}} // TODO: implement opening download data modal
       >
         here
       </button>
@@ -44,6 +45,7 @@ const DownloadsTextBox = () => (
     <p>Click
       <button
         type="button"
+        onClick={() => {}} // TODO: implement opening download image modal
       >
         here
       </button>

@@ -10,26 +10,26 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('Basic view', () => (
     <MainInfoBar
-      textBox={select('TextBox', ['', 'About', 'Methodology', 'Downloads'], '')}
+      activeDialog={select('TextBox', ['', 'About', 'Methodology', 'Downloads'], '')}
     />
   ))
   .add('With prop: About', () => (
     <MainInfoBar
-      textBox="About"
+      activeDialog="About"
       onChange={() => alert('clicked')}
       handleOnClick={() => alert('clicked')}
     />
   ))
   .add('With prop: Methodology', () => (
     <MainInfoBar
-      textBox="Methodology"
+      activeDialog="Methodology"
       onChange={() => alert('clicked')}
       handleOnClick={() => alert('clicked')}
     />
   ))
   .add('With prop: Downloads', () => (
     <MainInfoBar
-      textBox="Downloads"
+      activeDialog="Downloads"
       onChange={() => alert('clicked')}
       handleOnClick={() => alert('clicked')}
     />
