@@ -12,7 +12,7 @@ const RegionCompanies = (props) => {
     .map((company) => {
       const active = !activeConditionCompanies.includes(company.id)
         ? null
-        : <button type="button" className="asterisk" {...handleInteraction(() => openProjectDetails(company.id))}>*</button>;
+        : <button type="button" className="asterisk" {...handleInteraction(openProjectDetails, company.id)}>*</button>;
       return (<li key={company.id}>{company.name}{active}</li>);
     });
   return (

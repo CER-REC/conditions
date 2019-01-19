@@ -35,19 +35,21 @@ describe('Components|RegionCompanies', () => {
 
     shouldBehaveLikeAComponent(RegionCompanies, () => wrapper);
 
-    it('should display a list of 4 items', () => {
-      expect(wrapper.find('li')).to.have.a.lengthOf(4);
+    it('should display a list of 8 items', () => {
+      expect(wrapper.find('li')).to.have.a.lengthOf(8);
     });
 
     it('should display companies in alphabetical order', () => {
-      expect(wrapper.find('li').at(0).text()).to.contain('Canada-Montana Pipe Line Company');
-      expect(wrapper.find('li').at(1).text()).to.contain('Express Pipeline Ltd.');
-      expect(wrapper.find('li').at(2).text()).to.contain('Kinder Morgan Cochin Ulc.');
-      expect(wrapper.find('li').at(3).text()).to.contain('Nova Gas Transmission Ltd.');
+      expect(wrapper.find('li').at(0).text()).to.contain('Alberta Trans-Alta e');
+      expect(wrapper.find('li').at(1).text()).to.contain('Alberta Trans-Alta è');
+      expect(wrapper.find('li').at(2).text()).to.contain('Canada-Montana Pipe Line Company');
+      expect(wrapper.find('li').at(3).text()).to.contain('Express Pipeline Ltd.');
+      expect(wrapper.find('li').at(4).text()).to.contain('Kinder Morgan Cochin Ulc.');
+      expect(wrapper.find('li').at(5).text()).to.contain('Nova Gas Transmission Ltd.');
     });
 
     it('should display a asterisk beside Kinder Morgan Cochin Ulc.', () => {
-      expect(wrapper.find('li').at(2).find('button').type()).to.equal('button');
+      expect(wrapper.find('li').at(4).find('button').type()).to.equal('button');
     });
 
     it('should render a formatted message for the title', () => {

@@ -29,7 +29,6 @@ storiesForComponent('Components|RegionCompanies', module, ReadMe)
     />
   ), {
     actions: {
-      onChange: noop,
       openProjectDetails: () => {},
     },
   });
