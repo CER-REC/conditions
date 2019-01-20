@@ -99,7 +99,7 @@
     "storybook-readme": "4.0.5",
     "style-loader": "0.23.1",
     "url-loader": "1.1.2",
-    "webpack": "4.28.4",
+    "webpack": "4.29.0",
     "webpack-dev-middleware": "3.5.1",
     "webpack-dev-server": "3.1.14",
     "webpack-hot-middleware": "2.24.3"
