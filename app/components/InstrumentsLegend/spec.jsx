@@ -130,19 +130,16 @@ describe('Components|InstrumentsLegend', () => {
       });
     });
 
-    test(
-      'should render the data as LegendItem components in the List component',
-      () => {
-        for (let i = 0; i < categories.length; i += 1) {
-          const listItemWrapper = wrapper.find(List).shallow().find(LegendItem).find(`[title='${categories[i]}']`);
+    test('should render the data as LegendItem components in the List component', () => {
+      for (let i = 0; i < categories.length; i += 1) {
+        const listItemWrapper = wrapper.find(List).shallow().find(LegendItem).find(`[title='${categories[i]}']`);
 
-          expect(listItemWrapper).toHaveLength(1);
-          expect(listItemWrapper.type()).toBe(LegendItem);
-          expect(listItemWrapper.prop('color')).toBe(colors[i]);
-          expect(listItemWrapper.prop('indicators')).toEqual(categoryIndicators[i]);
-        }
-      },
-    );
+        expect(listItemWrapper).toHaveLength(1);
+        expect(listItemWrapper.type()).toBe(LegendItem);
+        expect(listItemWrapper.prop('color')).toBe(colors[i]);
+        expect(listItemWrapper.prop('indicators')).toEqual(categoryIndicators[i]);
+      }
+    });
 
     test('should render the all LegendItem component', () => {
       const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
@@ -151,63 +148,51 @@ describe('Components|InstrumentsLegend', () => {
       expect(legendItemsWrapper).toHaveLength(6);
     });
 
-    test(
-      'should call the onChange function with null on List item change to the all item',
-      () => {
-        // All item is at the top
-        wrapper.find(List).prop('onChange')(0);
+    test('should call the onChange function with null on List item change to the all item', () => {
+      // All item is at the top
+      wrapper.find(List).prop('onChange')(0);
 
-        expect(spy.calledOnceWith(null)).toBe(true);
-      },
-    );
+      expect(spy.calledOnceWith(null)).toBe(true);
+    });
 
-    test(
-      'should call the onChange function with the categories name on List item change',
-      () => {
-        for (let i = 0; i < categories.length; i += 1) {
-          // Account for all item at the beginning
-          wrapper.find(List).prop('onChange')(i + 1);
+    test('should call the onChange function with the categories name on List item change', () => {
+      for (let i = 0; i < categories.length; i += 1) {
+        // Account for all item at the beginning
+        wrapper.find(List).prop('onChange')(i + 1);
 
-          expect(spy.calledWith(categories[i])).toBe(true);
-        }
+        expect(spy.calledWith(categories[i])).toBe(true);
+      }
 
-        expect(spy.callCount).toBe(categories.length);
-      },
-    );
+      expect(spy.callCount).toBe(categories.length);
+    });
 
     test('should render the List component with the first item selected', () => {
       expect(wrapper.find(List).prop('selected')).toBe(0);
     });
 
-    test(
-      'should render the List component with the corresponding item selected when selected is provided',
-      () => {
-        wrapper = shallow((
-          <InstrumentsLegend
-            data={data}
-            onChange={noop}
-            selected={categories[2]}
-          />
-        ));
+    test('should render the List component with the corresponding item selected when selected is provided', () => {
+      wrapper = shallow((
+        <InstrumentsLegend
+          data={data}
+          onChange={noop}
+          selected={categories[2]}
+        />
+      ));
 
-        // An "All" item is rendered at the top for multiple categories
-        expect(wrapper.find(List).prop('selected')).toBe(3);
-      },
-    );
+      // An "All" item is rendered at the top for multiple categories
+      expect(wrapper.find(List).prop('selected')).toBe(3);
+    });
 
-    test(
-      'should render the List component with the first item selected when selected is invalid',
-      () => {
-        wrapper = shallow((
-          <InstrumentsLegend
-            data={data}
-            onChange={noop}
-            selected="?"
-          />
-        ));
+    test('should render the List component with the first item selected when selected is invalid', () => {
+      wrapper = shallow((
+        <InstrumentsLegend
+          data={data}
+          onChange={noop}
+          selected="?"
+        />
+      ));
 
-        expect(wrapper.find(List).prop('selected')).toBe(0);
-      },
-    );
+      expect(wrapper.find(List).prop('selected')).toBe(0);
+    });
   });
 });

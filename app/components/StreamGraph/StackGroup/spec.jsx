@@ -127,74 +127,62 @@ describe('Components|Streamgraph/StackGroup', () => {
       expect(spy.called).toBe(false);
     });
 
-    test(
-      'should call onChange with the correct position when using mouseMove',
-      () => {
-        let mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
-        stackGroup.simulate('mouseDown', mouseEvent);
-        expect(spy.calledWith(2010)).toBe(true);
+    test('should call onChange with the correct position when using mouseMove', () => {
+      let mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
+      stackGroup.simulate('mouseDown', mouseEvent);
+      expect(spy.calledWith(2010)).toBe(true);
 
-        mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
-        stackGroup.simulate('mouseMove', mouseEvent);
-        expect(spy.calledWith(2017)).toBe(true);
-      },
-    );
+      mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
+      stackGroup.simulate('mouseMove', mouseEvent);
+      expect(spy.calledWith(2017)).toBe(true);
+    });
 
-    test(
-      'should call onChange with the first year when the chart is focused',
-      () => {
-        stackGroup.simulate('focus', eventFuncs);
-        expect(spy.calledWith(2010)).toBe(true);
-      },
-    );
+    test('should call onChange with the first year when the chart is focused', () => {
+      stackGroup.simulate('focus', eventFuncs);
+      expect(spy.calledWith(2010)).toBe(true);
+    });
 
-    test(
-      'should increase the year if the right arrow is pressed and not at the edge',
-      () => {
-        const keyEvent = { ...eventFuncs, key: 'ArrowRight' };
-        const simulateKeyDownUp = () => {
-          stackGroup.simulate('keyDown', keyEvent);
-          stackGroup.simulate('keyUp', keyEvent);
-        };
+    test('should increase the year if the right arrow is pressed and not at the edge', () => {
+      const keyEvent = { ...eventFuncs, key: 'ArrowRight' };
+      const simulateKeyDownUp = () => {
+        stackGroup.simulate('keyDown', keyEvent);
+        stackGroup.simulate('keyUp', keyEvent);
+      };
 
-        // First time pressing right arrow
-        simulateKeyDownUp();
-        expect(spy.lastCall.args[0]).toBe(2017);
+      // First time pressing right arrow
+      simulateKeyDownUp();
+      expect(spy.lastCall.args[0]).toBe(2017);
 
-        wrapper.setProps({ controlYear: 2010 });
-        simulateKeyDownUp();
-        expect(spy.lastCall.args[0]).toBe(2011);
+      wrapper.setProps({ controlYear: 2010 });
+      simulateKeyDownUp();
+      expect(spy.lastCall.args[0]).toBe(2011);
 
-        // Press right again at the edge, and don't expect it to change
-        wrapper.setProps({ controlYear: 2017 });
-        simulateKeyDownUp();
-        expect(spy.lastCall.args[0]).toBe(2017);
-      },
-    );
+      // Press right again at the edge, and don't expect it to change
+      wrapper.setProps({ controlYear: 2017 });
+      simulateKeyDownUp();
+      expect(spy.lastCall.args[0]).toBe(2017);
+    });
 
-    test(
-      'should decrease the year if the left arrow is pressed and not at the edge',
-      () => {
-        const keyEvent = { ...eventFuncs, key: 'ArrowLeft' };
-        const simulateKeyDownUp = () => {
-          stackGroup.simulate('keyDown', keyEvent);
-          stackGroup.simulate('keyUp', keyEvent);
-        };
+    test('should decrease the year if the left arrow is pressed and not at the edge', () => {
+      const keyEvent = { ...eventFuncs, key: 'ArrowLeft' };
+      const simulateKeyDownUp = () => {
+        stackGroup.simulate('keyDown', keyEvent);
+        stackGroup.simulate('keyUp', keyEvent);
+      };
 
-        // First time pressing right arrow
-        simulateKeyDownUp();
-        expect(spy.lastCall.args[0]).toBe(2010);
+      // First time pressing right arrow
+      simulateKeyDownUp();
+      expect(spy.lastCall.args[0]).toBe(2010);
 
-        wrapper.setProps({ controlYear: 2017 });
-        simulateKeyDownUp();
-        expect(spy.lastCall.args[0]).toBe(2016);
+      wrapper.setProps({ controlYear: 2017 });
+      simulateKeyDownUp();
+      expect(spy.lastCall.args[0]).toBe(2016);
 
-        // Press left again at the edge, and don't expect it to change
-        wrapper.setProps({ controlYear: 2010 });
-        simulateKeyDownUp();
-        expect(spy.lastCall.args[0]).toBe(2010);
-      },
-    );
+      // Press left again at the edge, and don't expect it to change
+      wrapper.setProps({ controlYear: 2010 });
+      simulateKeyDownUp();
+      expect(spy.lastCall.args[0]).toBe(2010);
+    });
   });
 
   describe('ChartIndicator', () => {

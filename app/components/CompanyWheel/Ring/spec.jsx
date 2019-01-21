@@ -23,12 +23,9 @@ describe('Components|CompanyWheel/Ring', () => {
       expect(wrapper.find('.RingGroup').children()).toHaveLength(2);
     });
 
-    test(
-      'should render a ring group containing the outer outlines for the ring',
-      () => {
-        expect(wrapper.find('.RingGroup').type()).toBe('g');
-      },
-    );
+    test('should render a ring group containing the outer outlines for the ring', () => {
+      expect(wrapper.find('.RingGroup').type()).toBe('g');
+    });
 
     test('should have a class company for the ring background ', () => {
       expect(wrapper.find('.RingBackground').hasClass('Company')).toBe(true);

@@ -48,21 +48,15 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
       expect(typeof wrapper.find('text').first().text()).toBe('string');
     });
 
-    test(
-      'should render the same amount of objects as the length of the array passed',
-      () => {
-        const { wrapper } = wrapperSetup({});
-        expect(wrapper.find('text').length).toBe(mockData.length);
-      },
-    );
+    test('should render the same amount of objects as the length of the array passed', () => {
+      const { wrapper } = wrapperSetup({});
+      expect(wrapper.find('text').length).toBe(mockData.length);
+    });
 
-    test(
-      'should render elements between 0 and 360 which are equal to the elements provided',
-      () => {
-        const { wrapper } = wrapperSetup();
-        expect(wrapper.find('text').first().props().transform).toContain('rotate(0, 0, 245)');
-      },
-    );
+    test('should render elements between 0 and 360 which are equal to the elements provided', () => {
+      const { wrapper } = wrapperSetup();
+      expect(wrapper.find('text').first().props().transform).toContain('rotate(0, 0, 245)');
+    });
 
     test.skip('should render an item at 90 degrees', () => {
       const { wrapper } = wrapperSetup();

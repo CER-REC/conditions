@@ -65,50 +65,41 @@ describe('Components|FeaturesMenu', () => {
       expect(wrapper.find(List).prop('selected')).toBe(0);
     });
 
-    test(
-      'should call the onChange function with the feature on List item change',
-      () => {
-        features.forEach((feature, index) => {
-          wrapper.find(List).prop('onChange')(index);
+    test('should call the onChange function with the feature on List item change', () => {
+      features.forEach((feature, index) => {
+        wrapper.find(List).prop('onChange')(index);
 
-          expect(spy.calledWith(feature)).toBe(true);
-        });
+        expect(spy.calledWith(feature)).toBe(true);
+      });
 
-        expect(spy.callCount).toBe(features.length);
-      },
-    );
+      expect(spy.callCount).toBe(features.length);
+    });
 
-    test(
-      'should render the List component with the corresponding item selected when selected is provided',
-      () => {
-        const selectedIndex = 2;
+    test('should render the List component with the corresponding item selected when selected is provided', () => {
+      const selectedIndex = 2;
 
-        wrapper = shallow((
-          <FeaturesMenu
-            features={features}
-            onChange={spy}
-            selected={features[selectedIndex]}
-          />
-        ));
+      wrapper = shallow((
+        <FeaturesMenu
+          features={features}
+          onChange={spy}
+          selected={features[selectedIndex]}
+        />
+      ));
 
-        expect(wrapper.find(List).prop('selected')).toBe(selectedIndex);
-      },
-    );
+      expect(wrapper.find(List).prop('selected')).toBe(selectedIndex);
+    });
 
-    test(
-      'should render the List component with the first item selected when selected is invalid',
-      () => {
-        wrapper = shallow((
-          <FeaturesMenu
-            features={features}
-            onChange={spy}
-            selected="invalid"
-          />
-        ));
+    test('should render the List component with the first item selected when selected is invalid', () => {
+      wrapper = shallow((
+        <FeaturesMenu
+          features={features}
+          onChange={spy}
+          selected="invalid"
+        />
+      ));
 
-        expect(wrapper.find(List).prop('selected')).toBe(0);
-      },
-    );
+      expect(wrapper.find(List).prop('selected')).toBe(0);
+    });
   });
 
   describe('when the dropDown property is provided', () => {
@@ -159,51 +150,42 @@ describe('Components|FeaturesMenu', () => {
       }
     });
 
-    test(
-      'should call the onChange function with the feature on drop down item change',
-      () => {
-        features.forEach((feature) => {
-          wrapper.find('select').simulate('change', { target: { value: feature } });
+    test('should call the onChange function with the feature on drop down item change', () => {
+      features.forEach((feature) => {
+        wrapper.find('select').simulate('change', { target: { value: feature } });
 
-          expect(spy.calledWith(feature)).toBe(true);
-        });
+        expect(spy.calledWith(feature)).toBe(true);
+      });
 
-        expect(spy.callCount).toBe(features.length);
-      },
-    );
+      expect(spy.callCount).toBe(features.length);
+    });
 
-    test(
-      'should render the select drop down with the corresponding item selected when selected is provided',
-      () => {
-        const selectedIndex = 1;
+    test('should render the select drop down with the corresponding item selected when selected is provided', () => {
+      const selectedIndex = 1;
 
-        wrapper = shallow((
-          <FeaturesMenu
-            features={features}
-            onChange={spy}
-            selected={features[selectedIndex]}
-            dropDown
-          />
-        ));
+      wrapper = shallow((
+        <FeaturesMenu
+          features={features}
+          onChange={spy}
+          selected={features[selectedIndex]}
+          dropDown
+        />
+      ));
 
-        expect(wrapper.find('select').prop('value')).toBe(features[selectedIndex]);
-      },
-    );
+      expect(wrapper.find('select').prop('value')).toBe(features[selectedIndex]);
+    });
 
-    test(
-      'should render the select drop down with the first item selected when selected is invalid',
-      () => {
-        wrapper = shallow((
-          <FeaturesMenu
-            features={features}
-            onChange={spy}
-            selected=" "
-            dropDown
-          />
-        ));
+    test('should render the select drop down with the first item selected when selected is invalid', () => {
+      wrapper = shallow((
+        <FeaturesMenu
+          features={features}
+          onChange={spy}
+          selected=" "
+          dropDown
+        />
+      ));
 
-        expect(wrapper.find('select').prop('value')).toBe(features[0]);
-      },
-    );
+      expect(wrapper.find('select').prop('value')).toBe(features[0]);
+    });
   });
 });

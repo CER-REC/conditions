@@ -19,15 +19,12 @@ describe('utilities/memoizeReference', () => {
       });
 
       const inBetweenGenerator = (i === 0) ? entries[1] : entries[i - 1];
-      test(
-        `should return the same identifier if a ${inBetweenGenerator[0]} is passed in between`,
-        () => {
-          const generated = generator();
-          const firstIdentifier = memoizeReference(generated);
-          memoizeReference(inBetweenGenerator[1]());
-          expect(firstIdentifier).toBe(memoizeReference(generated));
-        },
-      );
+      test(`should return the same identifier if a ${inBetweenGenerator[0]} is passed in between`, () => {
+        const generated = generator();
+        const firstIdentifier = memoizeReference(generated);
+        memoizeReference(inBetweenGenerator[1]());
+        expect(firstIdentifier).toBe(memoizeReference(generated));
+      });
     });
   });
 });

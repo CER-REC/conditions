@@ -118,20 +118,17 @@ describe('Components|SmallMultiplesLegend', () => {
       ));
     });
 
-    test(
-      'should render the data as LegendItem components in the List component',
-      () => {
-        const listItemsWrapper = wrapper.find(List).shallow().find(LegendItem).not('[all=true]');
+    test('should render the data as LegendItem components in the List component', () => {
+      const listItemsWrapper = wrapper.find(List).shallow().find(LegendItem).not('[all=true]');
 
-        for (let i = 0; i < data.length; i += 1) {
-          const listItemWrapper = listItemsWrapper.at(i);
+      for (let i = 0; i < data.length; i += 1) {
+        const listItemWrapper = listItemsWrapper.at(i);
 
-          expect(listItemWrapper.type()).toBe(LegendItem);
-          expect(listItemWrapper.prop('title')).toBe(data[i].name);
-          expect(listItemWrapper.prop('data')).toEqual(data[i].graphData);
-        }
-      },
-    );
+        expect(listItemWrapper.type()).toBe(LegendItem);
+        expect(listItemWrapper.prop('title')).toBe(data[i].name);
+        expect(listItemWrapper.prop('data')).toEqual(data[i].graphData);
+      }
+    });
 
     test('should pass the same max value to the LegendItem components', () => {
       const listItemsWrapper = wrapper.find(List).shallow().find(LegendItem).not('[all=true]');
@@ -150,29 +147,23 @@ describe('Components|SmallMultiplesLegend', () => {
       expect(legendItemsWrapper).toHaveLength(4);
     });
 
-    test(
-      'should call the onChange function with null on List item change to the all item',
-      () => {
-        // All item is at the top
-        wrapper.find(List).prop('onChange')(0);
+    test('should call the onChange function with null on List item change to the all item', () => {
+      // All item is at the top
+      wrapper.find(List).prop('onChange')(0);
 
-        expect(spy.calledOnceWith(null)).toBe(true);
-      },
-    );
+      expect(spy.calledOnceWith(null)).toBe(true);
+    });
 
-    test(
-      'should call the onChange function with the data name on List item change',
-      () => {
-        for (let i = 0; i < data.length; i += 1) {
-          // Account for all item at the beginning
-          wrapper.find(List).prop('onChange')(i + 1);
+    test('should call the onChange function with the data name on List item change', () => {
+      for (let i = 0; i < data.length; i += 1) {
+        // Account for all item at the beginning
+        wrapper.find(List).prop('onChange')(i + 1);
 
-          expect(spy.calledWith(data[i].name)).toBe(true);
-        }
+        expect(spy.calledWith(data[i].name)).toBe(true);
+      }
 
-        expect(spy.callCount).toBe(data.length);
-      },
-    );
+      expect(spy.callCount).toBe(data.length);
+    });
 
     test('should render the List component with the first item selected', () => {
       expect(wrapper.find(List).prop('selected')).toBe(0);
@@ -186,91 +177,79 @@ describe('Components|SmallMultiplesLegend', () => {
       });
     });
 
-    test(
-      'should render the List component with the corresponding item selected when selected is provided',
-      () => {
-        wrapper = shallow((
-          <SmallMultiplesLegend
-            title={title}
-            data={data}
-            onChange={noop}
-            selected={data[2].name}
-          />
-        ));
+    test('should render the List component with the corresponding item selected when selected is provided', () => {
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          title={title}
+          data={data}
+          onChange={noop}
+          selected={data[2].name}
+        />
+      ));
 
-        // An "All" item is rendered at the top for multiple data conditions
-        expect(wrapper.find(List).prop('selected')).toBe(3);
-      },
-    );
+      // An "All" item is rendered at the top for multiple data conditions
+      expect(wrapper.find(List).prop('selected')).toBe(3);
+    });
 
-    test(
-      'should render the List component with the first item selected when selected is invalid',
-      () => {
-        wrapper = shallow((
-          <SmallMultiplesLegend
-            title={title}
-            data={data}
-            onChange={noop}
-            selected="N/A"
-          />
-        ));
+    test('should render the List component with the first item selected when selected is invalid', () => {
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          title={title}
+          data={data}
+          onChange={noop}
+          selected="N/A"
+        />
+      ));
 
-        expect(wrapper.find(List).prop('selected')).toBe(0);
-      },
-    );
+      expect(wrapper.find(List).prop('selected')).toBe(0);
+    });
 
-    test(
-      'should apply faded to LegendItem components when a highlightName is provided',
-      () => {
-        const highlightName = data[2].name;
+    test('should apply faded to LegendItem components when a highlightName is provided', () => {
+      const highlightName = data[2].name;
 
-        wrapper = shallow((
-          <SmallMultiplesLegend
-            className="abcd"
-            title={title}
-            data={data}
-            onChange={noop}
-            highlightName={highlightName}
-          />
-        ));
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          className="abcd"
+          title={title}
+          data={data}
+          onChange={noop}
+          highlightName={highlightName}
+        />
+      ));
 
-        const highlightSelector = `[title="${highlightName}"]`;
-        const listWrapper = wrapper.find(List).shallow();
-        const fadedItemsWrapper = listWrapper.find(LegendItem).not(highlightSelector);
-        const highlightItemWrapper = listWrapper.find(LegendItem).filter(highlightSelector);
+      const highlightSelector = `[title="${highlightName}"]`;
+      const listWrapper = wrapper.find(List).shallow();
+      const fadedItemsWrapper = listWrapper.find(LegendItem).not(highlightSelector);
+      const highlightItemWrapper = listWrapper.find(LegendItem).filter(highlightSelector);
 
-        expect(listWrapper.hasClass('faded')).toBe(true);
+      expect(listWrapper.hasClass('faded')).toBe(true);
 
-        fadedItemsWrapper.forEach((itemWrapper) => {
-          expect(itemWrapper.prop('faded')).toBe(true);
-        });
+      fadedItemsWrapper.forEach((itemWrapper) => {
+        expect(itemWrapper.prop('faded')).toBe(true);
+      });
 
-        expect(highlightItemWrapper.prop('faded')).toBe(false);
-      },
-    );
+      expect(highlightItemWrapper.prop('faded')).toBe(false);
+    });
 
-    test(
-      'should not apply faded to LegendItem components when the highlightName is invalid',
-      () => {
-        wrapper = shallow((
-          <SmallMultiplesLegend
-            className="abcd"
-            title={title}
-            data={data}
-            onChange={noop}
-            highlightName="n/a"
-          />
-        ));
+    test('should not apply faded to LegendItem components when the highlightName is invalid', () => {
+      wrapper = shallow((
+        <SmallMultiplesLegend
+          className="abcd"
+          title={title}
+          data={data}
+          onChange={noop}
+          highlightName="n/a"
+        />
+      ));
 
-        const listWrapper = wrapper.find(List).shallow();
-        const itemsWrapper = listWrapper.find(LegendItem);
+      const listWrapper = wrapper.find(List).shallow();
+      const itemsWrapper = listWrapper.find(LegendItem);
 
-        expect(listWrapper.hasClass('faded')).toBe(false);
+      expect(listWrapper.hasClass('faded')).toBe(false);
 
-        itemsWrapper.forEach((itemWrapper) => {
-          expect([null, false]).toContain(itemWrapper.prop('faded'));
-        });
-      },
-    );
+      itemsWrapper.forEach((itemWrapper) => {
+        expect([null, false]).toContain(itemWrapper.prop('faded'));
+      });
+    });
   });
 });

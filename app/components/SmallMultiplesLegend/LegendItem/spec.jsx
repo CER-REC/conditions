@@ -106,23 +106,20 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       expect(wrapper.hasClass('faded')).toBe(false);
     });
 
-    test(
-      'should render with the faded class when the faded property is provided',
-      () => {
-        wrapper = shallow((
-          <LegendItem
-            className="myClass"
-            title={title}
-            feature={feature}
-            data={data}
-            color="#AACC11"
-            max={0}
-            faded
-          />
-        ));
+    test('should render with the faded class when the faded property is provided', () => {
+      wrapper = shallow((
+        <LegendItem
+          className="myClass"
+          title={title}
+          feature={feature}
+          data={data}
+          color="#AACC11"
+          max={0}
+          faded
+        />
+      ));
 
-        expect(wrapper.hasClass('faded')).toBe(true);
-      },
-    );
+      expect(wrapper.hasClass('faded')).toBe(true);
+    });
   });
 });

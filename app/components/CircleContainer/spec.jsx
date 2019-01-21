@@ -29,13 +29,10 @@ describe('Component|CircleContainer', () => {
       expect(wrapper.find('.CircleContainer').hasClass('elevated')).toBe(true);
     });
 
-    test(
-      'should render the "CircleContainer" class and the "disabled" prop',
-      () => {
-        const wrapper = shallow(<CircleContainer size="36px" disabled>Test</CircleContainer>);
-        expect(wrapper.find('.CircleContainer').hasClass('disabled')).toBe(true);
-      },
-    );
+    test('should render the "CircleContainer" class and the "disabled" prop', () => {
+      const wrapper = shallow(<CircleContainer size="36px" disabled>Test</CircleContainer>);
+      expect(wrapper.find('.CircleContainer').hasClass('disabled')).toBe(true);
+    });
 
     test('should accept a size prop with a width and height', () => {
       const wrapper = shallow(<CircleContainer size="36px">Test</CircleContainer>);
@@ -61,12 +58,9 @@ describe('Component|CircleContainer', () => {
       shouldHaveInteractionProps(wrapper);
     });
 
-    test(
-      'should accept a className prop from the parent to enhance the style',
-      () => {
-        const wrapper = shallow(<CircleContainer size="12" className="searched">Override</CircleContainer>);
-        expect(wrapper.find('.CircleContainer').hasClass('searched')).toBe(true);
-      },
-    );
+    test('should accept a className prop from the parent to enhance the style', () => {
+      const wrapper = shallow(<CircleContainer size="12" className="searched">Override</CircleContainer>);
+      expect(wrapper.find('.CircleContainer').hasClass('searched')).toBe(true);
+    });
   });
 });
