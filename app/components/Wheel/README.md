@@ -1,6 +1,6 @@
-# CompanyWheel
+# Wheel
 
-* TODO: CompanyWheel
+* TODO: Wheel
   * Design data:
     wheel: {
       company_wheel: {
@@ -57,9 +57,11 @@
   * implement duration measurement for mousedown  
   * hookup function to parent
 
-The company wheel displays all projects grouped by company as well as relationships between companies. It is rendered as part of view 2.
+The Wheel displays all projects grouped by company as well as relationships between companies.
+It is rendered as part of view 2. The Wheel will also display the locational overview of all
+conditions in a region viewed by Theme (as the default).
 
-The Company Wheel component uses the following sub-components to render:
+The Wheel component uses the following sub-components to render:
 * List 
 * WheelRay
 * WheelCompanyFlag

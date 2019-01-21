@@ -5,7 +5,7 @@ import Ring from '.';
 import ReadMe from './README.md';
 import './styles.scss';
 
-storiesForComponent('Components|CompanyWheel/Ring', module, ReadMe)
+storiesForComponent('Components|Wheel/Ring', module, ReadMe)
   .addDecorator(withStatus('underReview'))
   .add('default view', () => (
     <svg className="WheelContainer" viewBox="120 200 500 500">

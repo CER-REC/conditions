@@ -7,7 +7,7 @@ import Ring from './Ring';
 import WheelRayLegend from './WheelRayLegend';
 import PullToSpin from './PullToSpin';
 
-class CompanyWheel extends React.Component {
+class Wheel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -95,14 +95,14 @@ class CompanyWheel extends React.Component {
   }
 }
 
-CompanyWheel.propTypes = {
+Wheel.propTypes = {
   ringType: PropTypes.string,
   itemsData: PropTypes.arrayOf(PropTypes.object),
 };
 
-CompanyWheel.defaultProps = {
+Wheel.defaultProps = {
   ringType: 'company',
   itemsData: [{}],
 };
 
-export default CompanyWheel;
+export default Wheel;

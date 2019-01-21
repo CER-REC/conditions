@@ -5,7 +5,7 @@ import './styles.scss';
 
 import Ring from '.';
 
-describe('Components|CompanyWheel/Ring', () => {
+describe('Components|Wheel/Ring', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
@@ -14,10 +14,6 @@ describe('Components|CompanyWheel/Ring', () => {
 
     it('should render', () => {
       expect(wrapper.type()).to.equal('g');
-    });
-
-    it('should render a company wheel ring group', () => {
-      expect(wrapper.find('.CompanyWheelRing').type()).to.equal('g');
     });
 
     it('should have an outer and an inner ring in the ring group', () => {

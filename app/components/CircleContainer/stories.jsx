@@ -8,8 +8,8 @@ import CircleContainer from '.';
 const options = {
   range: true,
   min: 0,
-  max: 300,
-  step: 50,
+  max: 100,
+  step: 5,
 };
 
 storiesForComponent('Components|CircleContainer', module, ReadMe)

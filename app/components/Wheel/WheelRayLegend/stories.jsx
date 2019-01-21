@@ -8,7 +8,7 @@ import { locationWheelData, companyWheelData, locationWheelItems } from '../rand
 
 const reservedDegrees = 20;
 
-storiesForComponent('Components|CompanyWheel/WheelRayLegend', module, ReadMe)
+storiesForComponent('Components|Wheel/WheelRayLegend', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default view', () => (
     <svg className="wheelContainer" viewBox="70 150 600 600">

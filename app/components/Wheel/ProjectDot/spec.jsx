@@ -4,7 +4,7 @@ import { expect } from 'chai';
 
 import ProjectDot from '.';
 
-describe('Components|CompanyWheel/ProjectDot', () => {
+describe('Components|Wheel/ProjectDot', () => {
   let wrapper;
   describe('with default props', () => {
     beforeEach(() => {

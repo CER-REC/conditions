@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
-import CompanyWheel from '.';
+import Wheel from '.';
 import ReadMe from './README.md';
 
 import { locationWheelData, companyWheelData } from './randomDataSample';
@@ -10,15 +10,15 @@ const props = {
   ringType: 'Company',
 };
 
-storiesForComponent('Components|CompanyWheel', module, ReadMe)
+storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .add('default', () => (
+  .add('default: company', () => (
     <div>
-      <CompanyWheel {...props} itemsData={companyWheelData} />
+      <Wheel {...props} itemsData={companyWheelData} />
     </div>
   ))
   .add('location props', () => (
-    <CompanyWheel
+    <Wheel
       {...props}
       ringType="Location"
       itemsData={locationWheelData}

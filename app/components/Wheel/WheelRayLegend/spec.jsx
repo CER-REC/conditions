@@ -18,7 +18,7 @@ const mockData = [
   { legend: 'J', count: 30 },
 ];
 
-describe('Components|CompanyWheel/WheelRayLegend', () => {
+describe('Components|Wheel/WheelRayLegend', () => {
   describe('with default props', () => {
     const reservedDegrees = 30;
     const degreesPerItem = (360 - reservedDegrees) / (mockData.length * 30);
