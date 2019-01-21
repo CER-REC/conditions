@@ -1,6 +1,6 @@
 
 # Instrument Bubble
-The Instrument Bubble is a private/child component. It will render the instrumentBubbles in groups (ie oil, gas, power ). 
+The Instrument Bubble is a private/child component. It will render the InstrumentBubbles in groups (ie. oil, gas, power). 
 
 
 ## Requirements
