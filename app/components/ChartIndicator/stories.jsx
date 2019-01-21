@@ -52,8 +52,8 @@ storiesForComponent('Components|ChartIndicator', module, ReadMe)
       <ChartIndicator
         label="Without circle"
         x={number('x position(px)', 50, options)}
-        yTop={number('y start position(px)', 20, heightOptions)}
-        yBottom={number('y end position(px)', 40, heightOptions)}
+        yTop={number('y start position(px)', 20, topOptions)}
+        yBottom={number('y end position(px)', 40, bottomOptions)}
       />
     </svg>
   ));
