@@ -4,13 +4,14 @@ import InstrumentBubble from './InstrumentBubble/index';
 import ChartIndicator from '../ChartIndicator';
 import d3HierarchyCalculation from '../../utilities/d3HierarchyCalculation';
 
-const sortCombinedData = (combinedNodes) => {
-  const position = combinedNodes.filter(
-    node => (node.depth > 1),
-  ).map(({ x, y, value: r }) => ({ x, y, r }));
-  const sortedData = position.sort((a, b) => (a.x - b.x));
-  return sortedData;
-};
+const sortCombinedData = combinedNodes => combinedNodes
+  .filter(node => (node.depth > 0))
+  .map(({
+    x, y, r, value, depth,
+  }) => ({
+    x, y, r, value, depth,
+  }))
+  .sort((a, b) => (a.x - b.x));
 
 class BubbleChart extends React.PureComponent {
   static propTypes = {
@@ -23,11 +24,8 @@ class BubbleChart extends React.PureComponent {
     super(props);
     this.state = {
       display: false,
-      indicatorX: 1,
-      indicatorYBottom: 1,
-      indicatorRadius: 0,
-      label: '',
     };
+    this.isDragging = false;
     this.svgRef = React.createRef();
   }
 
@@ -46,90 +44,80 @@ class BubbleChart extends React.PureComponent {
     return sortedData1.concat(sortedData2);
   };
 
-  // Interaction Functions for Chart Indicator
-  onClick = (circleProp) => {
-    const {
-      r,
-      x,
-      y,
-      value,
-      name,
-    } = circleProp;
-    const circleValue = circleProp.value;
-    const drawnRadius = (r !== value && name === 'instrument') ? value : r;
+  setIndicatorState = (index) => {
+    const sortedData = this.combineData();
+    const drawnRadius = (sortedData[index].r
+    !== sortedData[index].value
+    && sortedData[index].depth > 1)
+      ? sortedData[index].value
+      : sortedData[index].r;
+
     this.setState({
-      indicatorX: x,
-      indicatorYBottom: y - drawnRadius,
-      indicatorRadius: drawnRadius,
       display: true,
-      label: circleValue,
+      indicator: {
+        x: sortedData[index].x,
+        y: sortedData[index].y - drawnRadius,
+        r: drawnRadius,
+        label: sortedData[index].value,
+      },
     });
+  };
+
+  onClick = (circle) => {
+    this.isDragging = false;
+    const sortedData = this.combineData();
+    const index = (sortedData.findIndex((item) => {
+      if (item.x === circle.x && item.y === circle.y && item.r === circle.r) {
+        return item;
+      }
+      return null;
+    }));
+    this.setIndicatorState(index);
   };
 
   onKeyPress = (event) => {
     const sortedData = this.combineData();
     const itemIndex = (sortedData.findIndex((item) => {
-      if (item.x === this.state.indicatorX
-        && item.r === this.state.indicatorRadius
-        && item.y
-        === this.state.indicatorYBottom + this.state.indicatorRadius) {
+      if (item.x === this.state.indicator.x
+        && item.y === this.state.indicator.y + this.state.indicator.r) {
         return item;
       }
       return null;
     }));
-
-    if (event.key === 'ArrowRight') {
-      const rightIndex = (sortedData[itemIndex + 1]) ? (itemIndex + 1) : (0);
-      this.setState({
-        indicatorX: sortedData[rightIndex].x,
-        indicatorYBottom:
-        sortedData[rightIndex].y - sortedData[rightIndex].r,
-        indicatorRadius:
-        sortedData[rightIndex].r,
-        label: sortedData[rightIndex].r,
-      });
-    } else if (event.key === 'ArrowLeft') {
-      const leftIndex = (sortedData[itemIndex - 1]) ? (itemIndex - 1) : (sortedData.length - 1);
-      this.setState({
-        indicatorX: sortedData[leftIndex].x,
-        indicatorYBottom:
-        sortedData[leftIndex].y - sortedData[leftIndex].r,
-        indicatorRadius: sortedData[leftIndex].r,
-        label: sortedData[leftIndex].r,
-      });
+    if (event.key === 'ArrowRight' || event.keyCode === 39) {
+      const rightIndex = (sortedData[itemIndex + 1])
+        ? (itemIndex + 1)
+        : (0);
+      this.setIndicatorState(rightIndex);
+    } else if (event.key === 'ArrowLeft' || event.keyCode === 37) {
+      const leftIndex = (sortedData[itemIndex - 1])
+        ? (itemIndex - 1)
+        : (sortedData.length - 1);
+      this.setIndicatorState(leftIndex);
     }
   };
 
   onDragStart = (event) => {
-    this.setState({
-      isDragging: true,
-    });
+    this.isDragging = true;
     this.onDragMove(event);
   }
 
   onDragMove = (event) => {
-    if (!this.state.isDragging) { return null; }
-
+    if (!this.isDragging) { return null; }
     const sortedData = this.combineData();
+    const svgX = !this.svgRef.current ? { x: 156.3583 }
+      : this.svgRef.current.getClientRects()[0];
     const minimumArray = sortedData.map(item => Math.abs(item.x
-          - (event.clientX - this.svgRef.current.getClientRects()[0].x)));
+          - (event.clientX - svgX.x)));
     const closestIndex = minimumArray.indexOf(
       Math.min(...minimumArray),
     );
-    this.setState({
-      indicatorX: sortedData[closestIndex].x,
-      indicatorYBottom:
-        sortedData[closestIndex].y - sortedData[closestIndex].r,
-      indicatorRadius: sortedData[closestIndex].r,
-      label: sortedData[closestIndex].r,
-    });
+    this.setIndicatorState(closestIndex);
     return null;
   }
 
   onDragStop = () => {
-    this.setState({
-      isDragging: false,
-    });
+    this.isDragging = false;
   }
 
   render() {
@@ -148,11 +136,11 @@ class BubbleChart extends React.PureComponent {
           { (this.state.display)
             ? (
               <ChartIndicator
-                x={this.state.indicatorX}
-                yBottom={this.state.indicatorYBottom}
+                x={this.state.indicator.x}
+                yBottom={this.state.indicator.y}
                 yTop={25}
-                radius={this.state.indicatorRadius}
-                label={this.state.label}
+                radius={this.state.indicator.r}
+                label={this.state.indicator.label}
               />
             ) : null
         }
