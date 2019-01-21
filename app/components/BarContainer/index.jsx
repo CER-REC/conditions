@@ -23,7 +23,8 @@ const BarContainer = (props) => {
       barContainerWidth = size * (index + 1);
       return (
         <Bar
-          key={bar.toString()}
+        // eslint-disable-next-line react/no-array-index-key
+          key={index}
           {...bar}
           x={size * index * scale}
           y={barContainerMaxHeight - bar.value * scale}
