@@ -24,6 +24,12 @@ class BubbleChart extends React.PureComponent {
     super(props);
     this.state = {
       display: false,
+      indicator: {
+        x: 1,
+        y: 1,
+        r: 1,
+        value: 1,
+      },
     };
     this.isDragging = false;
     this.svgRef = React.createRef();
@@ -72,7 +78,7 @@ class BubbleChart extends React.PureComponent {
       }
       return null;
     }));
-    this.setIndicatorState(index);
+    return this.setIndicatorState(index);
   };
 
   onKeyPress = (event) => {
