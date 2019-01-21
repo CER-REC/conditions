@@ -15,7 +15,7 @@ describe('Components|MyComponentName/BrowseByBtn', () => {
     let spy;
     beforeEach(() => {
       spy = sinon.spy();
-      wrapper = shallow(<BrowseByBtn browseByCompany onClick={spy} />);
+      wrapper = shallow(<BrowseByBtn mode="company" onClick={spy} />);
     });
 
     shouldBehaveLikeAComponent(BrowseByBtn, () => wrapper);
@@ -44,7 +44,7 @@ describe('Components|MyComponentName/BrowseByBtn', () => {
     let spy;
     beforeEach(() => {
       spy = sinon.spy();
-      wrapper = shallow(<BrowseByBtn browseByLocation onClick={spy} />);
+      wrapper = shallow(<BrowseByBtn mode="location" onClick={spy} />);
     });
 
     it('should render three elements inside the buttontext', () => {

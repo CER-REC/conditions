@@ -6,7 +6,7 @@ import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 
 const BrowseByBtn = (props) => {
-  const message = props.browseByCompany ? ['projectsBy', 'company'] : ['conditionsBy', 'location'];
+  const message = props.mode === 'company' ? ['projectsBy', 'company'] : ['conditionsBy', 'location'];
 
   const background = (
     <svg height="41.33px" width="41.33px" className="BrowseByBtn-Wheel">
@@ -24,7 +24,7 @@ const BrowseByBtn = (props) => {
     <button type="button" className="BrowseByBtn" {...handleInteraction(props.onClick)}>
       <div className="BrowseByBtn-ButtonText">
         <FormattedMessage id={`views.view1.footer.${message[0]}`} />
-        <span>&nbsp;</span>
+        &nbsp;
         <FormattedMessage id={`views.view1.footer.${message[1]}`}>
           { text => (<span className="LastWord">{text}</span>) }
         </FormattedMessage>
@@ -36,13 +36,7 @@ const BrowseByBtn = (props) => {
 
 BrowseByBtn.propTypes = {
   onClick: PropTypes.func.isRequired,
-  browseByCompany: PropTypes.bool,
-  browseByLocation: PropTypes.bool,
-};
-
-BrowseByBtn.defaultProps = {
-  browseByCompany: false,
-  browseByLocation: false,
+  mode: PropTypes.oneOf(['location', 'company']).isRequired,
 };
 
 export default BrowseByBtn;

@@ -14,13 +14,13 @@ storiesForComponent('Components|BrowseByBtn', module, ReadMe)
   .addDecorator(withInteraction({ actions: { onClick: () => testFn } }))
   .add('browseByCompany', () => (
     <BrowseByBtn
-      browseByCompany
+      mode="company"
       {...getInteractionProps()}
     />
   ))
   .add('browseByLocation', () => (
     <BrowseByBtn
-      browseByLocation
+      mode="location"
       {...getInteractionProps()}
     />
   ));
