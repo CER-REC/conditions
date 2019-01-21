@@ -1,4 +1,5 @@
 # Region Companies
+
 A list of Companies that belong to the selected region in the Wheel's ray.
 If the Wheel is in location mode this component should display in the location of the Project Menu component.
 
@@ -11,9 +12,11 @@ If the Wheel is in location mode this component should display in the location o
 - The asterisk should be clickable and open up a dialog.
 
 ## Interaction Requirements
+
 Asterisk should have an onClick handler.
 
 ## Accessibility Requirements
+
 - Mouse / Touch interaction
 - Screen reader
 

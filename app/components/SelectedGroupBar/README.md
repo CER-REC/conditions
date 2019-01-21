@@ -1,8 +1,8 @@
-# SelectedGroupBar Component
+# Selected Group Bar
 
-This component is a public component that is user generally through out the 
-visualization. It consists of a key an value pair that is surrounded by a coloured
-rectangle. They key represented a group of items. The items could be places, 
+This component is a public component that is used generally throughout the 
+visualization. It consists of a key and value pair that is surrounded by a coloured
+rectangle. They key represents a group of items. The items could be places, 
 conditions, or companies. The value is a specific item from the list. Below is a
 screen capture of the grouping.
 
