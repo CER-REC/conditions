@@ -16,7 +16,6 @@
     "postshrinkwrap": "replace --silent 'http://' 'https://' ./package-lock.json"
   },
   "contributors": [
-    "Alan Chen",
     "Brandon Devaleriola",
     "Charlie Cheung",
     "Jorge Castano <coderifico@gmail.com>",
