@@ -5,13 +5,15 @@ import withStatus from '../../../.storybook/addon-status';
 import BrowseByBtn from '.';
 import ReadMe from './README.md';
 
-const testFn = () => ({
-  message: 'Greetings from the test function',
-});
-
 storiesForComponent('Components|BrowseByBtn', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: { onClick: () => testFn } }))
+  .addDecorator(withInteraction({ actions: ['onClick'] }))
+  .add('with state toggle', () => (
+    <BrowseByBtn
+      {...getInteractionProps()}
+      mode={getInteractionProps().mode === 'company' ? 'location' : 'company'}
+    />
+  ), { interaction: { actions: { onClick: () => mode => ({ mode }) }, state: { mode: 'company' } } })
   .add('browseByCompany', () => (
     <BrowseByBtn
       mode="company"

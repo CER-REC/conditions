@@ -21,7 +21,7 @@ const BrowseByBtn = (props) => {
   );
 
   return (
-    <button type="button" className="BrowseByBtn" {...handleInteraction(props.onClick)}>
+    <button type="button" className="BrowseByBtn" {...handleInteraction(props.onClick, props.mode)}>
       <div className="BrowseByBtn-ButtonText">
         <FormattedMessage id={`views.view1.footer.${message[0]}`} />
         &nbsp;
