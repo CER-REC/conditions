@@ -28,7 +28,7 @@ class InstrumentBubble extends React.PureComponent {
     height: PropTypes.number.isRequired,
     onClick: PropTypes.func.isRequired,
     keyPress: PropTypes.func.isRequired,
-    d3HierarchyCalculation: PropTypes.instanceOf(Object).isRequired,
+    d3Calculation: PropTypes.instanceOf(Object).isRequired,
   }
 
   circleRender = nodes => (
@@ -120,7 +120,7 @@ class InstrumentBubble extends React.PureComponent {
     const { width, height, onClick } = this.props;
     return (
       <g className="InstrumentBubble" width={width} height={height}>
-        {this.circleRender(this.props.d3HierarchyCalculation, onClick)}
+        {this.circleRender(this.props.d3Calculation, onClick)}
       </g>
     );
   }

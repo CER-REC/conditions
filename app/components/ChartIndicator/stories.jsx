@@ -11,7 +11,21 @@ const options = {
   step: 25,
 };
 
+const topOptions = {
+  range: true,
+  min: 40,
+  max: 100,
+  step: 20,
+};
+
 const heightOptions = {
+  range: true,
+  min: 40,
+  max: 100,
+  step: 20,
+};
+
+const bottomOptions = {
   range: true,
   min: 40,
   max: 100,
@@ -27,8 +41,8 @@ storiesForComponent('Components|ChartIndicator', module, ReadMe)
         label="With Circle"
         display={visible}
         x={number('x position(px)', 50, options)}
-        yTop={number('y start position(px)', 20, heightOptions)}
-        yBottom={number('y end position(px)', 40, heightOptions)}
+        yTop={number('y start position(px)', 20, topOptions)}
+        yBottom={number('y end position(px)', 40, bottomOptions)}
         radius={number('radius(px)', 40, heightOptions)}
       />
     </svg>
@@ -37,7 +51,6 @@ storiesForComponent('Components|ChartIndicator', module, ReadMe)
     <svg width={500} height={500}>
       <ChartIndicator
         label="Without circle"
-        display={visible}
         x={number('x position(px)', 50, options)}
         yTop={number('y start position(px)', 20, heightOptions)}
         yBottom={number('y end position(px)', 40, heightOptions)}

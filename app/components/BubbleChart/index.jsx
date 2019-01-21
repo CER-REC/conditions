@@ -4,6 +4,14 @@ import InstrumentBubble from './InstrumentBubble/index';
 import ChartIndicator from '../ChartIndicator';
 import d3HierarchyCalculation from '../../utilities/d3HierarchyCalculation';
 
+const sortCombinedData = (combinedNodes) => {
+  const position = combinedNodes.filter(
+    node => (node.depth > 1),
+  ).map(({ x, y, value: r }) => ({ x, y, r }));
+  const sortedData = position.sort((a, b) => (a.x - b.x));
+  return sortedData;
+};
+
 class BubbleChart extends React.PureComponent {
   static propTypes = {
     selectedCategory: PropTypes.string.isRequired,
@@ -30,33 +38,13 @@ class BubbleChart extends React.PureComponent {
     const nodes2 = d3HierarchyCalculation(
       this.props.instrumentChartData2, 1400, 400,
     );
-    const sortedData1 = this.sortCombinedData(nodes1);
+    const sortedData1 = sortCombinedData(nodes1);
     let sortedData2;
     if (nodes2 !== undefined) {
-      sortedData2 = this.sortCombinedData(nodes2);
+      sortedData2 = sortCombinedData(nodes2);
     }
     return sortedData1.concat(sortedData2);
   };
-
-  sortCombinedData = (combinedNodes) => {
-    const position = combinedNodes.filter(
-      node => (node.depth > 1),
-    ).map(node => ({
-      x: node.x,
-      y: node.y,
-      r: node.value,
-    }));
-    const sortedData = position.sort((a, b) => {
-      if (a.x < b.x) {
-        return -1;
-      }
-      if (a.x > b.x) {
-        return 1;
-      }
-      return 0;
-    });
-    return sortedData;
-  }
 
   // Interaction Functions for Chart Indicator
   onClick = (circleProp) => {
@@ -91,21 +79,23 @@ class BubbleChart extends React.PureComponent {
     }));
 
     if (event.key === 'ArrowRight') {
+      const rightIndex = (sortedData[itemIndex + 1]) ? (itemIndex + 1) : (0);
       this.setState({
-        indicatorX: sortedData[itemIndex + 1].x,
+        indicatorX: sortedData[rightIndex].x,
         indicatorYBottom:
-        sortedData[itemIndex + 1].y - sortedData[itemIndex + 1].r,
+        sortedData[rightIndex].y - sortedData[rightIndex].r,
         indicatorRadius:
-        sortedData[itemIndex + 1].r,
-        label: sortedData[itemIndex + 1].r,
+        sortedData[rightIndex].r,
+        label: sortedData[rightIndex].r,
       });
     } else if (event.key === 'ArrowLeft') {
+      const leftIndex = (sortedData[itemIndex - 1]) ? (itemIndex - 1) : (sortedData.length - 1);
       this.setState({
-        indicatorX: sortedData[itemIndex - 1].x,
+        indicatorX: sortedData[leftIndex].x,
         indicatorYBottom:
-        sortedData[itemIndex - 1].y - sortedData[itemIndex - 1].r,
-        indicatorRadius: sortedData[itemIndex - 1].r,
-        label: sortedData[itemIndex - 1].r,
+        sortedData[leftIndex].y - sortedData[leftIndex].r,
+        indicatorRadius: sortedData[leftIndex].r,
+        label: sortedData[leftIndex].r,
       });
     }
   };
@@ -118,21 +108,22 @@ class BubbleChart extends React.PureComponent {
   }
 
   onDragMove = (event) => {
-    if (this.state.isDragging === true) {
-      const sortedData = this.combineData();
-      const minimumArray = sortedData.map(item => Math.abs(item.x
+    if (!this.state.isDragging) { return null; }
+
+    const sortedData = this.combineData();
+    const minimumArray = sortedData.map(item => Math.abs(item.x
           - (event.clientX - this.svgRef.current.getClientRects()[0].x)));
-      const closestIndex = minimumArray.indexOf(
-        Math.min.apply(null, minimumArray),
-      );
-      this.setState({
-        indicatorX: sortedData[closestIndex].x,
-        indicatorYBottom:
+    const closestIndex = minimumArray.indexOf(
+      Math.min(...minimumArray),
+    );
+    this.setState({
+      indicatorX: sortedData[closestIndex].x,
+      indicatorYBottom:
         sortedData[closestIndex].y - sortedData[closestIndex].r,
-        indicatorRadius: sortedData[closestIndex].r,
-        label: sortedData[closestIndex].r,
-      });
-    }
+      indicatorRadius: sortedData[closestIndex].r,
+      label: sortedData[closestIndex].r,
+    });
+    return null;
   }
 
   onDragStop = () => {
@@ -176,7 +167,7 @@ class BubbleChart extends React.PureComponent {
               height={400}
               onClick={this.onClick}
               keyPress={this.onKeyPress}
-              d3HierarchyCalculation={d3HierarchyCalculation(
+              d3Calculation={d3HierarchyCalculation(
                 instrumentChartData1,
                 550,
                 400,
@@ -187,7 +178,7 @@ class BubbleChart extends React.PureComponent {
               height={400}
               onClick={this.onClick}
               keyPress={this.onKeyPress}
-              d3HierarchyCalculation={d3HierarchyCalculation(
+              d3Calculation={d3HierarchyCalculation(
                 instrumentChartData2,
                 1400,
                 400,

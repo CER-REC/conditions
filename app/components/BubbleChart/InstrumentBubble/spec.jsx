@@ -130,7 +130,7 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
           height={400}
           onClick={noop}
           keyPress={noop}
-          d3HierarchyCalculation={d3HierarchyCalculation(
+          d3Calculation={d3HierarchyCalculation(
             instrumentChartData,
             550,
             400,
@@ -154,7 +154,7 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
           height={400}
           onClick={spy}
           keyPress={spy}
-          d3HierarchyCalculation={d3HierarchyCalculation(
+          d3Calculation={d3HierarchyCalculation(
             instrumentChartData,
             550,
             400,
