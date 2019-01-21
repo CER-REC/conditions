@@ -35,7 +35,8 @@ const BarContainer = (props) => {
     }
     const singleBar = (
       <Bar
-        key={index.toString()}
+     // eslint-disable-next-line react/no-array-index-key
+        key={index}
         {...bar}
         x={barContainerWidth * scale}
         y={0}
