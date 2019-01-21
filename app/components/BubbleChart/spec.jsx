@@ -207,4 +207,70 @@ describe('Components|BubbleChart', () => {
       expect(wrapper.state().indicatorYBottom).to.equal(20);
     });
   });
+
+  describe('onKeyPress', () => {
+    const arrowRight = {
+      key: 'ArrowRight',
+    };
+
+    const arrowLeft = {
+      key: 'ArrowLeft',
+    };
+
+    it('if not end of graph, right arrow should move right', () => {
+      // Go to the prop, and pass the appropriate variables. Check the state afterwards
+      const wrapper = shallow(<BubbleChart
+        selectedCategory="instrument"
+        instrumentChartData1={instrumentChartData1}
+        instrumentChartData2={instrumentChartData2}
+      />);
+      const prevIndicatorX = wrapper.state().indicatorX;
+      wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
+      expect(wrapper.state().indicatorX).to.not.equal(prevIndicatorX);
+      expect(wrapper.state().indicatorX).to.be.above(prevIndicatorX);
+    });
+
+    it('if not the beginning of graph, the left arrow should move left ', () => {
+      const wrapper = shallow(<BubbleChart
+        selectedCategory="instrument"
+        instrumentChartData1={instrumentChartData1}
+        instrumentChartData2={instrumentChartData2}
+      />);
+      wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
+      wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
+      const prevIndicatorX = wrapper.state().indicatorX;
+
+      wrapper.find('InstrumentBubble').first().props().keyPress(arrowLeft);
+      expect(wrapper.state().indicatorX).to.not.equal(prevIndicatorX);
+      expect(wrapper.state().indicatorX).to.be.below(prevIndicatorX);
+    });
+  });
+
+  describe('onDrag', () => {
+    it('should not update indicator position if mouse move without mouse down', () => {
+      // Get props for onDragMove and check the state x position
+      const mouseDrag = {
+        clientX: 50,
+      };
+      const wrapper = shallow(<BubbleChart
+        selectedCategory="instrument"
+        instrumentChartData1={instrumentChartData1}
+        instrumentChartData2={instrumentChartData2}
+      />);
+      const prevIndicatorX = wrapper.state().indicatorX;
+      wrapper.find('g').props().onMouseMove(mouseDrag);
+      expect(wrapper.state().indicatorX).to.equal(prevIndicatorX);
+    });
+
+    // it('should update the indicator position if mouse down before mouse drag', () => {
+    // });
+  });
+
+  // describe('onMouseMove with MouseDown, it does change the chartIndicatorPosition', () => {
+
+  // });
+
+  // describe('onMouseOut, it will cause the state to change ', () => {
+
+  // });
 });
