@@ -23,7 +23,7 @@ const pickColor = (category) => {
 
 const InstrumentBubble = (props) => {
   const {
-    width, height, onClick, d3Calculation, keyPress,
+    onClick, d3Calculation, keyPress,
   } = props;
   const circles = d3Calculation.filter(v => (v.depth !== 0))
     .map((node) => {
@@ -74,18 +74,15 @@ const InstrumentBubble = (props) => {
       return (
         <g
           key={node.data.name}
+          onKeyDown={keyPress}
+          {...handleInteraction(onClick, node)}
         >
           <circle
-            onKeyDown={keyPress}
-            {...handleInteraction(onClick, node)}
             r={node.value}
             transform={`translate(${node.x} ${node.y})`}
             style={{ fill: pickColor(node.data.category) }}
           />
           <text
-            {...handleInteraction(
-              onClick, node,
-            )}
             x={textX}
             y={node.y}
             textAnchor={textStyle}
@@ -99,14 +96,12 @@ const InstrumentBubble = (props) => {
     });
     // Nested Children circles (ie Instruments)
   return (
-    <g className="InstrumentBubble" width={width} height={height}>
+    <g className="InstrumentBubble">
       {circles}
     </g>
   );
 };
 InstrumentBubble.propTypes = {
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
   keyPress: PropTypes.func.isRequired,
   d3Calculation: PropTypes.instanceOf(Object).isRequired,

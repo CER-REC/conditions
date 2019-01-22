@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import InstrumentBubble from '.';
-import d3HierarchyCalculation from '../../../utilities/d3HierarchyCalculation';
+import d3HierarchyCalculation from '../d3HierarchyCalculation';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
@@ -126,8 +126,6 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     beforeEach(() => {
       wrapper = shallow(
         <InstrumentBubble
-          width={550}
-          height={400}
           onClick={noop}
           keyPress={noop}
           d3Calculation={d3HierarchyCalculation(
@@ -150,8 +148,6 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
       spy = sinon.spy();
       wrapper = shallow(
         <InstrumentBubble
-          width={550}
-          height={400}
           onClick={spy}
           keyPress={spy}
           d3Calculation={d3HierarchyCalculation(

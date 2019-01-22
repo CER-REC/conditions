@@ -3,7 +3,7 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
 import InstrumentBubble from '.';
 import ReadMe from './README.md';
-import d3HierarchyCalculation from '../../../utilities/d3HierarchyCalculation';
+import d3HierarchyCalculation from '../d3HierarchyCalculation';
 
 const instrumentChartData2 = {
   name: 'data',
@@ -53,8 +53,6 @@ storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
   .add('default', () => (
     <svg width={300} height={400}>
       <InstrumentBubble
-        width={300}
-        height={400}
         onClick={() => alert('you clicked')}
         keyPress={() => alert('you pressed a key')}
         d3HierarchyCalculation={d3HierarchyCalculation(
