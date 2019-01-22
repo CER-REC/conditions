@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import DownloadsTextBox from '.';
 
@@ -11,12 +10,12 @@ describe('Components|MainInfoBar/DownloadsTextBox', () => {
       wrapper = shallow(<DownloadsTextBox />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a className', () => {
-      expect(wrapper.is('.DownloadsTextBox')).to.equal((true));
+    test('should have a className', () => {
+      expect(wrapper.is('.DownloadsTextBox')).toBe(true);
     });
   });
 });
