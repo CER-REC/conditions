@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import {
   VictoryAxis,
   VictoryArea,
-  VictoryStack,
   VictoryChart,
 } from 'victory';
+import StackGroupProps from './StackGroupProps';
 
 import './styles.scss';
 
-export const numOfConditionsLabel = point => `${Math.round(point.y)}`;
-
 export const roundDateLabel = t => Math.round(t);
-class StreamGraph extends React.PureComponent {
+
+class StreamGraph extends React.Component {
   static propTypes = {
     projectData: PropTypes.arrayOf(PropTypes.shape({
       color: PropTypes.string.isRequired,
@@ -23,43 +22,17 @@ class StreamGraph extends React.PureComponent {
         count: PropTypes.number.isRequired,
       })).isRequired,
     })).isRequired,
+    chartTitle: PropTypes.string.isRequired,
   }
 
-  control() {
-    return (
-      <div
-        className="streamgraph-control"
-        style={{
-          position: 'absolute',
-          zIndex: 9,
-          marginTop: '-485px',
-          marginLeft: '300px',
-          height: '100%',
-        }}
-      >
-        <svg height="400px">
-          <g transform="translate(30, 30)">
-            <text x="15" y="15">{this.numOfConditionsLabel}</text>
-            <line
-              strokeDasharray="10, 5"
-              x1="20"
-              x2="20"
-              y1="20"
-              y2="330"
-              stroke="magenta"
-              strokeWidth="2"
-              transform="scale(2)"
-            />
-            <path
-              d="M 100 100 L 300 100 L 200 300 z"
-              fill="magenta"
-              transform="scale(0.2)"
-            />
-          </g>
-        </svg>
-      </div>
-    );
+  constructor(props) {
+    super(props);
+    this.state = {
+      controlYear: null,
+    };
   }
+
+  handleOnChange = controlYear => this.setState({ controlYear });
 
   streamLayers() {
     const streamLayers = this.props.projectData.map(v => (
@@ -98,9 +71,10 @@ class StreamGraph extends React.PureComponent {
       });
       return acc;
     }, {});
-
     conditionDates = Object.values(conditionDates);
+
     const maxConditionValue = Math.max(...conditionDates);
+
     return (
       <VictoryChart>
         <VictoryAxis
@@ -112,22 +86,35 @@ class StreamGraph extends React.PureComponent {
         <VictoryAxis
           label="Effective Date"
           tickFormat={roundDateLabel}
-          className="axis-label"
+          className="Axis-label"
           domain={[minDateValue, maxDateValue]}
         />
-        <VictoryStack>
+        <StackGroupProps
+          groupProps={{
+            onChange: this.handleOnChange,
+            controlYear: this.state.controlYear,
+            projectData: this.props.projectData,
+          }}
+        >
           {this.streamLayers()}
-        </VictoryStack>
+        </StackGroupProps>
       </VictoryChart>
+    );
+  }
+
+  chartTitle() {
+    return (
+      <h1>{this.props.chartTitle}</h1>
     );
   }
 
   render() {
     return (
-      <div className="streamgraph">
-        <h1>Themes Across All Conditions</h1>
+      <div
+        className="Streamgraph"
+      >
+        {this.chartTitle()}
         {this.chart()}
-        {this.control()}
       </div>
     );
   }

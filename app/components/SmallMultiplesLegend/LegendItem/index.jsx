@@ -1,20 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 import './styles.scss';
 
-// TODO: This is a mock, replace with the translation function
-const t = (searchList) => {
-  if (searchList[1] === 'all') {
-    return `All ${searchList[2]}s`;
-  }
-
-  return searchList[2];
-};
-
 const LegendItem = (props) => {
-  let stream;
-  const type = props.all ? 'all' : 'title';
+  let stream = null;
+  const id = props.all
+    ? `components.smallMultiplesLegend.all.${props.title}`
+    : `common.${props.feature}.${props.title}`;
 
   if (!props.all) {
     stream = (
@@ -39,11 +34,17 @@ const LegendItem = (props) => {
   }
 
   return (
-    <div className={`LegendItem ${props.className} ${props.all ? 'all' : ''} ${props.faded ? 'faded' : ''}`}>
+    <div
+      className={classNames(
+        'LegendItem',
+        props.className,
+        { all: props.all, faded: props.faded },
+      )}
+    >
       <span className="stream">
         {stream}
       </span>
-      <span>{t(['smallMultiplesLegend', type, props.title])}</span>
+      <FormattedMessage id={id} />
     </div>
   );
 };
@@ -51,6 +52,8 @@ const LegendItem = (props) => {
 LegendItem.propTypes = {
   /** The text beside the stream graph */
   title: PropTypes.string.isRequired,
+  /** The feature of which to look up the translations */
+  feature: PropTypes.string.isRequired,
   /** The data to render the stream graph */
   data: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.number.isRequired,

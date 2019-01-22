@@ -13,9 +13,9 @@ module.exports = {
       files: [
         '.storybook/**',
         'stories/**',
-        '**/*.stories.jsx',
-        '**/*.spec.js',
-        '**/*.spec.jsx',
+        '**/stories.jsx',
+        '**/spec.js',
+        '**/spec.jsx',
         'app/tests/**',
       ],
       rules: {
@@ -26,13 +26,19 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.spec.js', '**/*.spec.jsx', 'app/tests/**'],
+      files: [
+        '**/spec.js',
+        '**/spec.jsx',
+        '**/*.spec.js',
+        '**/*.spec.jsx',
+        'app/tests/**',
+      ],
       env: {
-        mocha: true,
+        jest: true,
       },
     },
     {
-      files: ['**/*.stories.jsx'],
+      files: ['**/stories.jsx'],
       rules: {
         'no-alert': 0,
       },

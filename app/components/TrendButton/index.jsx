@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 import StreamButton from './images/streamButton.png';
@@ -9,7 +10,8 @@ const TrendButton = (props) => {
   let background = (
     <div className="staticBackground">
       <img src={(props.selectedFeature === 'Instrument' ? BubbleButton : StreamButton)} alt="" />
-    </div>);
+    </div>
+  );
 
   if (props.streamGraphData !== null) {
     background = (
@@ -30,9 +32,14 @@ const TrendButton = (props) => {
       <button type="button" {...handleInteraction(props.onClick)}>
         {background}
         <div className="buttonText">
-          <span>
-          Go to {props.selectedFeature} <br /> Trends
-          </span>
+          <FormattedMessage id={`components.trendButton.${props.selectedFeature}`}>
+            {text => (
+              <span>
+                {text.split('\n')
+                  .map(string => <React.Fragment key={string}>{string}<br /></React.Fragment>)}
+              </span>
+            )}
+          </FormattedMessage>
         </div>
       </button>
     </div>

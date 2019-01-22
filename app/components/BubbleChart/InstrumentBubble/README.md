@@ -15,10 +15,10 @@ The Instrument Bubble is a private/child component. It will render the instrumen
 * [ ] When the mouse is hovered for more than __ seconds: Should call it's onClick prop which will set/change the selected instrument
 
 ## Accessibility Requirements
-* [ ] Keyboard Interaction
-  * [ ] onEnter 
+* [X] Keyboard Interaction
+  * [X] onEnter 
   * [ ] onHover/onSelected
-  * [ ] On Tab
+  * [X] On Tab
 * [ ] Screen Reader
 
 ## Analytics Requirements
@@ -31,6 +31,8 @@ The Instrument Bubble is a private/child component. It will render the instrumen
   * [X] Contains the energy circles within the bubbles
   * [X] Use d3 packing and d3 heirarchy to render the bubbles
   * [X] Ensure accessibility (with tabbing + onEnter)
+  * [X] Compare between text length and circle radius
+    * [X] Resize smaller circles as per the text length 
   * [ ] On hover (timing to be determined) should same action as onClick
   * [X] Ensure proper padding so energy bubble(parents) touch while the children nested bubbles doesn't. 
 * [X] Text to arc on the circle

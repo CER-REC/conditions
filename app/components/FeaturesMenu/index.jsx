@@ -1,49 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import './styles.scss';
 
-// TODO: This is a mock, replace with the translation function
-const t = searchList => searchList[2];
-
 const FeaturesMenu = (props) => {
   let menu;
-  const features = props.features.map(feature => t(['featuresMenu', 'title', feature]));
-  const selected = features.includes(props.selected) ? props.selected : features[0];
-  const { onChange, dropDown } = props;
+  const id = props.dropDown ? 'components.featureMenu.dropDownTitle' : 'common.trend.title';
+  const selected = props.features.includes(props.selected) ? props.selected : props.features[0];
+  const listItems = props.features.map(feature => (
+    <FormattedMessage key={feature} id={`common.features.${feature}`} />
+  ));
 
-  if (dropDown) {
-    const options = features.map(feature => (
-      <option key={feature} value={feature}>{feature}</option>
+  if (props.dropDown) {
+    const options = props.features.map(feature => (
+      <FormattedMessage key={feature} id={`common.features.${feature}`}>
+        {text => (
+          <option value={feature}>
+            {text}
+          </option>
+        )}
+      </FormattedMessage>
     ));
 
     menu = (
-      <select value={selected} onChange={event => onChange(event.target.value)}>
+      <select value={selected} onChange={event => props.onChange(event.target.value)}>
         {options}
       </select>
     );
   } else {
     menu = (
       <List
-        items={features}
-        selected={features.indexOf(selected)}
-        onChange={index => onChange(features[index])}
+        items={listItems}
+        selected={props.features.indexOf(selected)}
+        onChange={index => props.onChange(props.features[index])}
         guideLine
       />
     );
   }
 
   return (
-    <div className={`FeaturesMenu ${dropDown ? 'dropDown' : ''} ${props.className}`}>
-      <span className="title">{`${t(['featuresMenu', 'title', props.title])}`}</span>
+    <div className={classNames('FeaturesMenu', props.className, { dropDown: props.dropDown })}>
+      <FormattedMessage id={id}>{text => <span className="title">{text}</span>}</FormattedMessage>
       {menu}
     </div>
   );
 };
 
 FeaturesMenu.propTypes = {
-  /** The title to be displayed */
-  title: PropTypes.string.isRequired,
   /** The list of features to display in the menu */
   features: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   /** The currently selected feature */

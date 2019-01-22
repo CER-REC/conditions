@@ -1,29 +1,62 @@
-import { ShallowWrapper, ReactWrapper } from 'enzyme';
-import { expect } from 'chai';
+import React from 'react';
+import { ShallowWrapper, shallow, mount } from 'enzyme';
+import { IntlProvider, intlShape } from 'react-intl';
+import i18nMessages from '../i18n';
 
-export const shouldBehaveLikeAComponent = (wrapper, component, className) => {
-  const expectHasClass = (name) => {
-    // Using mount and shallow requires different ways to check the class of the component
-    if (wrapper instanceof ShallowWrapper) {
-      expect(wrapper.hasClass(name)).to.equal(true);
-    } else if (wrapper instanceof ReactWrapper) {
-      expect(wrapper.find(component).childAt(0).hasClass(name)).to.equal(true);
-    }
+const intlProvider = new IntlProvider({ locale: 'en', messages: i18nMessages.en }, {});
+const { intl } = intlProvider.getChildContext();
+const nodeWithIntlProp = node => React.cloneElement(node, { intl });
+
+export const monkeyPatchShallowWithIntl = () => {
+  ShallowWrapper.prototype.shallowWithIntl = function shallowWithIntl() {
+    return this.shallow({ context: { intl } });
   };
+};
 
-  it('should render with the component and provided classes', () => {
-    expectHasClass(component.name);
+export const shouldBehaveLikeAComponent = (component, callback) => {
+  it('should render with the component name as a class', () => {
+    const wrapper = callback();
 
-    if (className) {
-      expectHasClass(className);
+    const getRendered = () => {
+      if (wrapper instanceof ShallowWrapper) { return wrapper; }
+      return wrapper.find(component).childAt(0);
+    };
+
+    expect(getRendered().hasClass(component.name)).toBe(true);
+    // Disabling this rule is safe because prop-types are only stripped in prod
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    if (component.propTypes.className) {
+      wrapper.setProps({ className: 'testClass' });
+      const rendered = getRendered();
+      // Ensure the component name is still a class
+      expect(rendered.hasClass(component.name)).toBe(true);
+      // Check that the new class was added
+      expect(rendered.hasClass('testClass')).toBe(true);
     }
   });
 };
 
 export const shouldHaveInteractionProps = (wrapper) => {
   const props = wrapper.props();
-  expect(props.onClick).to.be.a('function');
-  expect(props.onKeyPress).to.be.a('function');
-  expect(props.tabIndex).to.equal(0);
-  expect(props.focusable).to.equal(true);
+  expect(props.onClick).toBeInstanceOf(Function);
+  expect(props.onKeyPress).toBeInstanceOf(Function);
+  expect(props.tabIndex).toBe(0);
+  expect(props.focusable).toBe(true);
 };
+
+export const shallowWithIntl = (node, { context, ...opts } = {}) => shallow(
+  nodeWithIntlProp(node),
+  {
+    context: { ...context, intl },
+    ...opts,
+  },
+).shallow();
+
+export const mountWithIntl = (node, { context, childContextTypes, ...opts } = {}) => mount(
+  nodeWithIntlProp(node),
+  {
+    context: { ...context, intl },
+    childContextTypes: { intl: intlShape, ...childContextTypes },
+    ...opts,
+  },
+).childAt(0);
