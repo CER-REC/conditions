@@ -9717,6 +9717,60 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
 </div>
 `;
 
+exports[`Storyshots Components|RegionCompanies default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegionCompanies"
+  >
+    <div
+      className="title"
+    >
+      <span>
+        Companies in Selected Region:
+      </span>
+    </div>
+    <ul>
+      <li>
+        Alberta Trans-Alta e
+      </li>
+      <li>
+        Alberta Trans-Alta è
+      </li>
+      <li>
+        Canada-Montana Pipe Line Company
+      </li>
+      <li>
+        Express Pipeline Ltd.
+      </li>
+      <li>
+        Kinder Morgan Cochin Ulc.
+        <button
+          className="asterisk"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          *
+        </button>
+      </li>
+      <li>
+        Nova Gas Transmission Ltd.
+      </li>
+      <li>
+        Power Plants R Us
+      </li>
+      <li>
+        Z-Anti
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SelectedGroupBar default 1`] = `
 <div
   className="visualization"
