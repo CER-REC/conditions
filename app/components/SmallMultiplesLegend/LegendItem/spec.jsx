@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import { VictoryArea } from 'victory';
 
 import LegendItem from '.';
@@ -36,18 +35,18 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       ));
     });
 
-    it('should not render the graph', () => {
-      expect(wrapper.find(VictoryArea)).to.have.lengthOf(0);
+    test('should not render the graph', () => {
+      expect(wrapper.find(VictoryArea)).toHaveLength(0);
     });
 
-    it('should render with the all class', () => {
-      expect(wrapper.hasClass('all')).to.equal(true);
+    test('should render with the all class', () => {
+      expect(wrapper.hasClass('all')).toBe(true);
     });
 
-    it('should render the formatted all title', () => {
+    test('should render the formatted all title', () => {
       const id = `components.smallMultiplesLegend.all.${title}`;
 
-      expect(wrapper.find('FormattedMessage').prop('id')).to.equal(id);
+      expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
     });
   });
 
@@ -80,34 +79,34 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       ));
     });
 
-    it('should render the formatted title', () => {
+    test('should render the formatted title', () => {
       const id = `common.${feature}.${title}`;
 
-      expect(wrapper.find('.stream')).to.have.lengthOf(1);
-      expect(wrapper.find('FormattedMessage').prop('id')).to.equal(id);
+      expect(wrapper.find('.stream')).toHaveLength(1);
+      expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
     });
 
-    it('should render the graph', () => {
+    test('should render the graph', () => {
       const victoryAreaWrapper = wrapper.find(VictoryArea);
 
-      expect(victoryAreaWrapper).to.have.lengthOf(1);
-      expect(victoryAreaWrapper.prop('maxDomain')).to.deep.equal({ y: max });
-      expect(victoryAreaWrapper.prop('style')).to.deep.equal({ data: { fill: color } });
+      expect(victoryAreaWrapper).toHaveLength(1);
+      expect(victoryAreaWrapper.prop('maxDomain')).toEqual({ y: max });
+      expect(victoryAreaWrapper.prop('style')).toEqual({ data: { fill: color } });
 
-      data.forEach((condition) => {
-        expect(victoryAreaWrapper.prop('data')).to.deep.include({ x: condition.date, y: condition.count });
-      });
+      expect(victoryAreaWrapper.prop('data')).toEqual(
+        expect.arrayContaining(data.map(({ date, count }) => ({ x: date, y: count }))),
+      );
     });
 
-    it('should render without the all class', () => {
-      expect(wrapper.hasClass('all')).to.equal(false);
+    test('should render without the all class', () => {
+      expect(wrapper.hasClass('all')).toBe(false);
     });
 
-    it('should render without the faded class', () => {
-      expect(wrapper.hasClass('faded')).to.equal(false);
+    test('should render without the faded class', () => {
+      expect(wrapper.hasClass('faded')).toBe(false);
     });
 
-    it('should render with the faded class when the faded property is provided', () => {
+    test('should render with the faded class when the faded property is provided', () => {
       wrapper = shallow((
         <LegendItem
           className="myClass"
@@ -120,7 +119,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
         />
       ));
 
-      expect(wrapper.hasClass('faded')).to.equal(true);
+      expect(wrapper.hasClass('faded')).toBe(true);
     });
   });
 });

@@ -76,11 +76,8 @@ Modal.propTypes = {
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
   closeModal: PropTypes.func.isRequired,
-  /** Adds a link to the footer of the Modal window */
-  modalAction: PropTypes.shape({
-    /** The function to handle after interacted with */
-    task: PropTypes.func.isRequired,
-  }),
+  /** Adds a link to the footer of the Modal window that triggers this function */
+  modalAction: PropTypes.func,
 };
 
 Modal.defaultProps = {

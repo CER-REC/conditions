@@ -4,6 +4,7 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    "macros",
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-proposal-class-properties",
     "react-docgen",
@@ -12,7 +13,7 @@
   "env": {
     "test": {
       "plugins": [
-        "istanbul"
+        "require-context-hook"
       ]
     }
   }

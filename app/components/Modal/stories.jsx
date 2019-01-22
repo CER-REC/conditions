@@ -28,10 +28,7 @@ storiesForComponent('Components|Modal', module, ReadMe)
       width={`${number('Width of Modal (px)', 600, options)}px`}
       title="Image Download"
       content={content.image}
-      modalAction={{
-        text: 'Save Image',
-        task: noop,
-      }}
+      modalAction={noop}
       isOpen={boolean('Visible', true)}
       closeModal={noop}
       type="image"

@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 import ProjectMenu from '.';
@@ -13,42 +12,42 @@ describe('Components|ProjectMenu', () => {
     {
       id: 1223,
       name: 'Project Name 1',
-      graphData: [{ name: 'condition 1', count: 5, color: 'pink' }, { name: 'condition 2', count: 0, color: 'green' }],
+      graphData: [{ name: 'security', count: 5, color: 'pink' }, { name: 'managementSystem', count: 0, color: 'green' }],
     },
     {
       id: 1224,
       name: 'Project Name 2',
-      graphData: [{ name: 'condition 1', count: 10, color: 'pink' }, { name: 'condition 2', count: 19, color: 'green' }],
+      graphData: [{ name: 'security', count: 10, color: 'pink' }, { name: 'managementSystem', count: 19, color: 'green' }],
     },
     {
       id: 1225,
       name: 'Project Name 3',
-      graphData: [{ name: 'condition 1', count: 4, color: 'pink' }, { name: 'condition 2', count: 29, color: 'green' }],
+      graphData: [{ name: 'security', count: 4, color: 'pink' }, { name: 'managementSystem', count: 29, color: 'green' }],
     },
     {
       id: 1226,
       name: 'Project Name 4',
-      graphData: [{ name: 'condition 1', count: 6, color: 'pink' }, { name: 'condition 2', count: 22, color: 'green' }],
+      graphData: [{ name: 'security', count: 6, color: 'pink' }, { name: 'managementSystem', count: 22, color: 'green' }],
     },
     {
       id: 1227,
       name: 'Project Name 5',
-      graphData: [{ name: 'condition 1', count: 5, color: 'pink' }, { name: 'condition 2', count: 0, color: 'green' }],
+      graphData: [{ name: 'security', count: 5, color: 'pink' }, { name: 'managementSystem', count: 0, color: 'green' }],
     },
     {
       id: 1228,
       name: 'Project Name 6',
-      graphData: [{ name: 'condition 1', count: 10, color: 'pink' }, { name: 'condition 2', count: 19, color: 'green' }],
+      graphData: [{ name: 'security', count: 10, color: 'pink' }, { name: 'managementSystem', count: 19, color: 'green' }],
     },
     {
       id: 1229,
       name: 'Project Name 7',
-      graphData: [{ name: 'condition 1', count: 4, color: 'pink' }, { name: 'condition 2', count: 29, color: 'green' }],
+      graphData: [{ name: 'security', count: 4, color: 'pink' }, { name: 'managementSystem', count: 29, color: 'green' }],
     },
     {
       id: 1230,
       name: 'Project Name 8',
-      graphData: [{ name: 'condition 1', count: 6, color: 'pink' }, { name: 'condition 2', count: 22, color: 'green' }],
+      graphData: [{ name: 'security', count: 6, color: 'pink' }, { name: 'managementSystem', count: 22, color: 'green' }],
     },
   ];
 
@@ -65,36 +64,38 @@ describe('Components|ProjectMenu', () => {
       />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a ProjectMenu class', () => {
-      expect(wrapper.is('.ProjectMenu')).to.equal(true);
+    test('should have a ProjectMenu class', () => {
+      expect(wrapper.is('.ProjectMenu')).toBe(true);
     });
 
-    it('should contain 1 List component', () => {
-      expect(wrapper.find('List')).has.lengthOf(1);
+    test('should contain 1 List component', () => {
+      expect(wrapper.find('List')).toHaveLength(1);
     });
 
-    it('should pass an array of projects to the List', () => {
+    test('should pass an array of projects to the List', () => {
       const list = wrapper.find('List');
-      expect(list.props().items).to.be.a('array');
+      expect(Array.isArray(list.props().items)).toBe(true);
     });
 
-    it('should pass down a maximum of 5 projects to the List', () => {
+    test('should pass down a maximum of 5 projects to the List', () => {
       const list = wrapper.find('List');
-      expect(list.props().items, 'passed props').to.have.lengthOf(5);
-      expect(list.shallow().find('ProjectChart'), 'rendered output').to.have.lengthOf(5);
+      // passed props
+      expect(list.props().items).toHaveLength(5);
+      // rendered output
+      expect(list.shallow().find('ProjectChart')).toHaveLength(5);
     });
 
-    it('should pass the List the index of the selected project', () => {
-      expect(wrapper.find('List').props().selected).to.equal(2);
+    test('should pass the List the index of the selected project', () => {
+      expect(wrapper.find('List').props().selected).toBe(2);
     });
 
-    it('should pass down an onChange function to the List', () => {
+    test('should pass down an onChange function to the List', () => {
       const list = wrapper.find('List');
-      expect(list.props().onChange).to.be.a('function');
+      expect(typeof list.props().onChange).toBe('function');
     });
   });
 
@@ -127,22 +128,22 @@ describe('Components|ProjectMenu', () => {
           projectData={projectData.slice(0, input.total)}
           selectedProjectID={projectData[input.selected].id}
           onChange={onChange}
-          selectedFeature="Theme"
+          selectedFeature="theme"
         />);
       });
 
-      it(`should pass the List ${output.total} projects`, () => {
-        expect(wrapper.find('List').props().items).to.have.a.lengthOf(output.total);
+      test(`should pass the List ${output.total} projects`, () => {
+        expect(wrapper.find('List').props().items).toHaveLength(output.total);
       });
 
-      it(`should pass the List a selected project index of ${output.selected}`, () => {
-        expect(wrapper.find('List').props().selected).to.equal(output.selected);
+      test(`should pass the List a selected project index of ${output.selected}`, () => {
+        expect(wrapper.find('List').props().selected).toBe(output.selected);
       });
 
-      it(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
+      test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
         wrapper.find('List').props().onChange(input.clickedIndex);
-        expect(onChange.calledOnce).to.equal(true);
-        expect(onChange.firstCall.args).to.deep.equal([output.projectID]);
+        expect(onChange.calledOnce).toBe(true);
+        expect(onChange.firstCall.args).toEqual([output.projectID]);
       });
     });
   }

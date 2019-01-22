@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import { expect } from 'chai';
 import { FormattedMessage } from 'react-intl';
 
 import TrendButton from '.';
@@ -20,23 +19,23 @@ describe('Components|TrendButton', () => {
       wrapper = shallow(<TrendButton selectedFeature={feature} onClick={noop} />);
     });
 
-    it('should render a button', () => {
-      expect(wrapper.find('button')).to.have.lengthOf(1);
+    test('should render a button', () => {
+      expect(wrapper.find('button')).toHaveLength(1);
     });
 
-    it('should render a div with a className of trendButton', () => {
-      expect(wrapper.find('div.trendButton')).to.have.lengthOf(1);
+    test('should render a div with a className of trendButton', () => {
+      expect(wrapper.find('div.trendButton')).toHaveLength(1);
     });
 
-    it('should render a div with a className of buttonText', () => {
-      expect(wrapper.find('div.buttonText')).to.have.lengthOf(1);
+    test('should render a div with a className of buttonText', () => {
+      expect(wrapper.find('div.buttonText')).toHaveLength(1);
     });
 
-    it('should render a FormattedMessage component for button text', () => {
+    test('should render a FormattedMessage component for button text', () => {
       const messageWrapper = wrapper.find(FormattedMessage);
 
-      expect(messageWrapper).to.have.lengthOf(1);
-      expect(messageWrapper.prop('id')).to.equal(`components.trendButton.${feature}`);
+      expect(messageWrapper).toHaveLength(1);
+      expect(messageWrapper.prop('id')).toBe(`components.trendButton.${feature}`);
       // TODO: Test that the message replaces line breaks with <br />
     });
   });
@@ -49,14 +48,14 @@ describe('Components|TrendButton', () => {
       wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={spy} />);
     });
 
-    it("should call it's onClick prop", () => {
+    test("should call it's onClick prop", () => {
       wrapper.find('button').simulate('click', eventFuncs);
-      expect(spy.called).to.equal(true);
+      expect(spy.called).toBe(true);
     });
 
-    it("should call it's onClick prop when enter is pressed", () => {
+    test("should call it's onClick prop when enter is pressed", () => {
       wrapper.find('button').simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.called).to.equal(true);
+      expect(spy.called).toBe(true);
     });
   });
 
@@ -67,10 +66,10 @@ describe('Components|TrendButton', () => {
     });
 
     // TODO: Add this test when StreamGraph is implemented for TrendButton
-    it('renders StreamGraph component correctly');
+    test.skip('renders StreamGraph component correctly', () => {});
 
-    it('renders a div with a className of streamGraphBackground', () => {
-      expect(wrapper.find('div.streamGraphBackground')).to.have.lengthOf(1);
+    test('renders a div with a className of streamGraphBackground', () => {
+      expect(wrapper.find('div.streamGraphBackground')).toHaveLength(1);
     });
   });
 
@@ -80,26 +79,26 @@ describe('Components|TrendButton', () => {
       wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={noop} />);
     });
 
-    it('renders a div with a className of staticBackground', () => {
-      expect(wrapper.find('div.staticBackground')).to.have.lengthOf(1);
+    test('renders a div with a className of staticBackground', () => {
+      expect(wrapper.find('div.staticBackground')).toHaveLength(1);
     });
 
-    it('renders an image tag', () => {
-      expect(wrapper.find('img')).to.have.lengthOf(1);
+    test('renders an image tag', () => {
+      expect(wrapper.find('img')).toHaveLength(1);
     });
   });
 
   describe('if streamGraph not available and Instrument is selected', () => {
-    it('has image source of BubbleButton', () => {
+    test('has image source of BubbleButton', () => {
       const wrapper = shallow(<TrendButton selectedFeature="Instrument" onClick={noop} />);
-      expect(wrapper.find('img').prop('src')).equal(BubbleButton);
+      expect(wrapper.find('img').prop('src')).toBe(BubbleButton);
     });
   });
 
   describe('if streamGraph not available and anything other than Instrument is selected', () => {
-    it('has image source of StreamButton', () => {
+    test('has image source of StreamButton', () => {
       const wrapper = shallow(<TrendButton selectedFeature="Phase" onClick={noop} />);
-      expect(wrapper.find('img').prop('src')).equal(StreamButton);
+      expect(wrapper.find('img').prop('src')).toBe(StreamButton);
     });
   });
 });
