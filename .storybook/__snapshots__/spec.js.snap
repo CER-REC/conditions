@@ -1,5 +1,361 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components|BarContainer default 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height={12}
+    width={111}
+  >
+    <g
+      className="BarContainer"
+      height={12}
+      width={111}
+    >
+      <title>
+        ConditionTitle
+      </title>
+      <desc>
+        conditionDesc
+      </desc>
+      <rect
+        className="Bar"
+        fill="green"
+        height={12}
+        width={12}
+        x={0}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="red"
+        height={12}
+        width={66}
+        x={12}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="pink"
+        height={12}
+        width={33}
+        x={78}
+        y={0}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer scale horizontal and 2x scale 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height={24}
+    width={222}
+  >
+    <g
+      className="BarContainer"
+      height={24}
+      width={222}
+    >
+      <title>
+        ConditionTitle
+      </title>
+      <desc>
+        conditionDesc
+      </desc>
+      <rect
+        className="Bar"
+        fill="green"
+        height={24}
+        width={24}
+        x={0}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="red"
+        height={24}
+        width={132}
+        x={24}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="pink"
+        height={24}
+        width={66}
+        x={156}
+        y={0}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer searched bars 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height={15}
+    width={111}
+  >
+    <g
+      className="BarContainer"
+      height={15}
+      width={111}
+    >
+      <title>
+        ConditionTitle
+      </title>
+      <desc>
+        conditionDesc
+      </desc>
+      <rect
+        className="Bar"
+        fill="green"
+        height={15}
+        width={12}
+        x={0}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="red"
+        height={15}
+        width={66}
+        x={12}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="pink"
+        height={15}
+        width={33}
+        x={78}
+        y={0}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer standalone 1`] = `
+<div
+  className="visualization"
+>
+  <svg>
+    <g
+      className="BarContainer"
+      height={12}
+      width={111}
+    >
+      <title>
+        ConditionTitle
+      </title>
+      <desc>
+        conditionDesc
+      </desc>
+      <rect
+        className="Bar"
+        fill="green"
+        height={12}
+        width={12}
+        x={0}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="red"
+        height={12}
+        width={66}
+        x={12}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="pink"
+        height={12}
+        width={33}
+        x={78}
+        y={0}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer vertical bars 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height={66}
+    width={60}
+  >
+    <g
+      className="BarContainer"
+      height={66}
+      width={60}
+    >
+      <title>
+        ConditionTitle
+      </title>
+      <desc>
+        conditionDesc
+      </desc>
+      <rect
+        className="Bar"
+        fill="green"
+        height={12}
+        width={20}
+        x={0}
+        y={54}
+      />
+      <rect
+        className="Bar"
+        fill="red"
+        height={66}
+        width={20}
+        x={20}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="pink"
+        height={33}
+        width={20}
+        x={40}
+        y={33}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height={132}
+    width={180}
+  >
+    <g
+      className="BarContainer"
+      height={132}
+      width={180}
+    >
+      <title>
+        ConditionTitle
+      </title>
+      <desc>
+        conditionDesc
+      </desc>
+      <rect
+        className="Bar"
+        fill="green"
+        height={24}
+        width={60}
+        x={0}
+        y={108}
+      />
+      <rect
+        className="Bar"
+        fill="red"
+        height={132}
+        width={60}
+        x={60}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="pink"
+        height={66}
+        width={60}
+        x={120}
+        y={66}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer vertical bars with 2x scale and standalone 1`] = `
+<div
+  className="visualization"
+>
+  <svg>
+    <g
+      className="BarContainer"
+      height={132}
+      width={180}
+    >
+      <title>
+        ConditionTitle
+      </title>
+      <desc>
+        conditionDesc
+      </desc>
+      <rect
+        className="Bar"
+        fill="green"
+        height={24}
+        width={60}
+        x={0}
+        y={108}
+      />
+      <rect
+        className="Bar"
+        fill="red"
+        height={132}
+        width={60}
+        x={60}
+        y={0}
+      />
+      <rect
+        className="Bar"
+        fill="pink"
+        height={66}
+        width={60}
+        x={120}
+        y={66}
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer/Bar default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="BarContainer"
+  >
+    <svg>
+      <rect
+        className="Bar"
+        fill="tomato"
+        height={20}
+        width={100}
+        x={0}
+        y={0}
+      />
+    </svg>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|BubbleChart default 1`] = `
 <div
   className="visualization"

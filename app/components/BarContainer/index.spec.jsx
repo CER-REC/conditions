@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import BarContainer from '.';
 
@@ -29,20 +28,20 @@ describe('Components|BarContainer', () => {
       );
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('svg');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('svg');
     });
 
-    it('should render null with items[0]', () => {
+    test('should render null with items[0]', () => {
       wrapper.setProps({ items: [] });
-      expect(wrapper.type()).to.equal(null);
+      expect(wrapper.type()).toBeNull();
     });
 
-    it('should have a BarContainer class', () => {
-      expect(wrapper.is('.BarContainer')).to.equal(true);
+    test('should have a BarContainer class', () => {
+      expect(wrapper.is('.BarContainer')).toBe(true);
     });
 
-    it('should be able to render a <g> wrapper', () => {
+    test('should be able to render a <g> wrapper', () => {
       wrapper = shallow(
         <BarContainer
           title="ConditionTitle"
@@ -52,19 +51,19 @@ describe('Components|BarContainer', () => {
           size={12}
         />,
       );
-      expect(wrapper.find('g')).to.have.lengthOf(1);
+      expect(wrapper.find('g')).toHaveLength(1);
     });
 
-    it('should have a scale prop', () => {
-      expect(wrapper.props().height).to.equal(12);
+    test('should have a scale prop', () => {
+      expect(wrapper.props().height).toBe(12);
       wrapper.setProps({ scale: 2 });
-      expect(wrapper.props().height).to.equal(24);
+      expect(wrapper.props().height).toBe(24);
     });
 
-    it('should have a vert prop', () => {
-      expect(wrapper.props().height).to.equal(12);
+    test('should have a vert prop', () => {
+      expect(wrapper.props().height).toBe(12);
       wrapper.setProps({ vert: true });
-      expect(wrapper.props().height).to.greaterThan(12);
+      expect(wrapper.props().height).toBeGreaterThan(12);
     });
   });
 });
