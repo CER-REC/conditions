@@ -5,9 +5,6 @@ import sinon from 'sinon';
 
 import MainInfoBar from '.';
 
-const noop = () => {};
-const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-
 describe('Components|MainInfoBar', () => {
   describe('with default props', () => {
     let wrapper;
@@ -16,7 +13,6 @@ describe('Components|MainInfoBar', () => {
       spy = sinon.spy();
       wrapper = shallow(<MainInfoBar
         onChange={spy}
-        activeDialog=""
         handleOnClick={spy}
       />);
     });
@@ -39,11 +35,6 @@ describe('Components|MainInfoBar', () => {
 
     it('should show three text links', () => {
       expect(wrapper.find('button')).to.have.lengthOf(3);
-    });
-
-    it('should have text buttons call its onClick props when clicked', () => {
-      wrapper.find('button').first().simulate('click', eventFuncs);
-      expect(spy.called).to.equal(true);
     });
   });
 });

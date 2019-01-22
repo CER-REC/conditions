@@ -11,6 +11,7 @@ import './styles.scss';
 import ShareIcon from '../ShareIcon';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
+import handleInteraction from '../../utilities/handleInteraction';
 
 library.add(
   faTwitter,
@@ -26,10 +27,7 @@ class ShortcutInfoBar extends React.PureComponent {
     return (
       <div
         className="InfoButton"
-        onClick={this.props.handleInfoBar}
-        onKeyPress={this.props.handleInfoBar}
-        role="button"
-        tabIndex="0"
+        {...handleInteraction(this.props.handleInfoBar)}
       >
         <svg viewBox="0 0 50 100">
           <g transform="scale(3)">
@@ -66,7 +64,7 @@ class ShortcutInfoBar extends React.PureComponent {
           <g
             key="file-download"
             icon="file-download"
-            onChange={this.props.openDataModal}
+            {...handleInteraction(this.props.openDataModal)}
           >
             <path fill="#666" d="M2.9,13.3s-.4-.3,0-.3H4.5V9.2c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L6.1,16Z" />
             <polygon fill="none" points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0" />
@@ -80,7 +78,7 @@ class ShortcutInfoBar extends React.PureComponent {
             transform="translate(20, 0)"
             key="image-download"
             icon="image-download"
-            onChange={this.props.openScreenshotModal}
+            {...handleInteraction(this.props.openScreenshotModal)}
           >
             <rect fill="#666" width="11.6" height="11.6" />
             <polygon fill="#666" points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0" />
@@ -100,14 +98,14 @@ class ShortcutInfoBar extends React.PureComponent {
     const emailIcon = (
       <ShareIcon
         key="email"
-        icon="envelope"
+        target="envelope"
         prefix="fas"
       />
     );
     const shareIcons = shareIconsList.map(k => (
       <ShareIcon
         key={k}
-        icon={k}
+        target={k}
       />
     ));
     return (

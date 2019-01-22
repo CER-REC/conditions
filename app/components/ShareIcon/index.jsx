@@ -13,6 +13,10 @@ class ShareIcon extends React.PureComponent {
   */
 
   handleOnClick = () => {
+    if (this.props.target === 'email') {
+      window.location.href = 'mailto:?subject=&body=';
+      return;
+    }
     // TODO: make share icon clickable
     let url; // TODO: get shortened bitly URL
     let locationUrl;
@@ -32,19 +36,15 @@ class ShareIcon extends React.PureComponent {
     );
   }
 
-  emailOnClick = () => {
-    // TODO: get shortned bitly URL
-    window.location.href = 'mailto:?subject=&body=';
-  }
-
   render() {
+    const icon = this.props.target === 'email' ? 'envelope' : this.props.target;
     return (
       <div
         className="ShareIcon"
-        {...handleInteraction(this.handleOnClick, this.emailOnClick)}
+        {...handleInteraction(this.handleOnClick)}
       >
         <CircleContainer size="20px">
-          <Icon size="1x" icon={this.props.target} prefix={this.props.prefix} />
+          <Icon size="1x" icon={icon} prefix={this.props.prefix} />
         </CircleContainer>
       </div>
     );
@@ -54,8 +54,7 @@ class ShareIcon extends React.PureComponent {
 ShareIcon.propTypes = {
   className: PropTypes.string,
   prefix: PropTypes.string,
-  icon: PropTypes.string.isRequired,
-  target: PropTypes.oneOf(['facebook', 'twitter', 'linkedin']).isRequired,
+  target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin']).isRequired,
 };
 
 ShareIcon.defaultProps = {

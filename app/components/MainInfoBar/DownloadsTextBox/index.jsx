@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const DownloadsTextBox = () => (
+const DownloadsTextBox = props => (
   <div className="DownloadsTextBox">
     <svg viewBox="0 0 300 50">
       <g
@@ -22,7 +23,7 @@ const DownloadsTextBox = () => (
     <p>Click
       <button
         type="button"
-        onClick={() => {}} // TODO: implement opening download data modal
+        onClick={props.openDataModal}
       >
         here
       </button>
@@ -45,7 +46,7 @@ const DownloadsTextBox = () => (
     <p>Click
       <button
         type="button"
-        onClick={() => {}} // TODO: implement opening download image modal
+        onClick={props.openScreenshotModal}
       >
         here
       </button>
@@ -53,5 +54,10 @@ const DownloadsTextBox = () => (
     </p>
   </div>
 );
+
+DownloadsTextBox.propTypes = {
+  openDataModal: PropTypes.func.isRequired,
+  openScreenshotModal: PropTypes.func.isRequired,
+};
 
 export default DownloadsTextBox;
