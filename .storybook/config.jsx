@@ -1,3 +1,4 @@
+import requireContext from 'require-context.macro';
 import React from 'react';
 import { setIntlConfig, withIntl } from 'storybook-addon-intl';
 import { addDecorator, configure } from '@storybook/react';
@@ -65,8 +66,8 @@ addDecorator((storyFn, context) => {
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
 // automatically import all files named stories.jsx
-const documentationStories = require.context('../documentation/', true, /stories.jsx$/);
-const componentStories = require.context('../app/', true, /stories.jsx$/);
+const documentationStories = requireContext('../documentation/', true, /stories.jsx$/);
+const componentStories = requireContext('../app/', true, /stories.jsx$/);
 function loadStories() {
   documentationStories.keys()
     // Sorting Documentation|Introduction to the top

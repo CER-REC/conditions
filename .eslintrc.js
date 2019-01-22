@@ -34,7 +34,7 @@ module.exports = {
         'app/tests/**',
       ],
       env: {
-        mocha: true,
+        jest: true,
       },
     },
     {

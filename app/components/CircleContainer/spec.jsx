@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import { shouldHaveInteractionProps } from '../../tests/utilities';
 import CircleContainer from '.';
 
@@ -11,42 +10,42 @@ describe('Component|CircleContainer', () => {
       wrapper = shallow(<CircleContainer size="36px">Test</CircleContainer>);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should render the children', () => {
-      expect(wrapper.text()).to.equal('Test');
+    test('should render the children', () => {
+      expect(wrapper.text()).toBe('Test');
     });
 
-    it('should have an CircleContainer class', () => {
-      expect(wrapper.is('.CircleContainer')).to.equal(true);
+    test('should have an CircleContainer class', () => {
+      expect(wrapper.is('.CircleContainer')).toBe(true);
     });
   });
 
   describe('Component renders with passed props', () => {
-    it('should render the "CircleContainer" and the "elevated" prop', () => {
+    test('should render the "CircleContainer" and the "elevated" prop', () => {
       const wrapper = shallow(<CircleContainer size="36px" elevated>Test</CircleContainer>);
-      expect(wrapper.find('.CircleContainer').hasClass('elevated')).to.equal(true);
+      expect(wrapper.find('.CircleContainer').hasClass('elevated')).toBe(true);
     });
 
-    it('should render the "CircleContainer" class and the "disabled" prop', () => {
+    test('should render the "CircleContainer" class and the "disabled" prop', () => {
       const wrapper = shallow(<CircleContainer size="36px" disabled>Test</CircleContainer>);
-      expect(wrapper.find('.CircleContainer').hasClass('disabled')).to.equal(true);
+      expect(wrapper.find('.CircleContainer').hasClass('disabled')).toBe(true);
     });
 
-    it('should accept a size prop with a width and height', () => {
+    test('should accept a size prop with a width and height', () => {
       const wrapper = shallow(<CircleContainer size="36px">Test</CircleContainer>);
-      expect(wrapper.props().style.width).to.equal('36px');
-      expect(wrapper.props().style.height).to.equal('36px');
+      expect(wrapper.props().style.width).toBe('36px');
+      expect(wrapper.props().style.height).toBe('36px');
     });
 
-    it('should check that the prop "onClick" by default doesnt exist', () => {
+    test('should check that the prop "onClick" by default doesnt exist', () => {
       const wrapper = shallow(<CircleContainer size="36px">Test</CircleContainer>);
-      expect(wrapper.props().onClick).to.equal(undefined);
+      expect(wrapper.props().onClick).toBeUndefined();
     });
 
-    it('should accept the "onClick" prop and enable click functionality', () => {
+    test('should accept the "onClick" prop and enable click functionality', () => {
       // possibly pass a spy instead of the handle interaction function or noop function
       const wrapper = shallow((
         <CircleContainer
@@ -59,9 +58,9 @@ describe('Component|CircleContainer', () => {
       shouldHaveInteractionProps(wrapper);
     });
 
-    it('should accept a className prop from the parent to enhance the style', () => {
+    test('should accept a className prop from the parent to enhance the style', () => {
       const wrapper = shallow(<CircleContainer size="12" className="searched">Override</CircleContainer>);
-      expect(wrapper.find('.CircleContainer').hasClass('searched')).to.equal(true);
+      expect(wrapper.find('.CircleContainer').hasClass('searched')).toBe(true);
     });
   });
 });

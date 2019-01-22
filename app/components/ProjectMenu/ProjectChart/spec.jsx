@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import ProjectChart from '.';
 
@@ -35,12 +34,12 @@ describe('Components|ProjectMenu/ProjectChart', () => {
       />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a ProjectChart class', () => {
-      expect(wrapper.is('div.ProjectChart')).to.equal(true);
+    test('should have a ProjectChart class', () => {
+      expect(wrapper.is('div.ProjectChart')).toBe(true);
     });
   });
 
@@ -54,8 +53,8 @@ describe('Components|ProjectMenu/ProjectChart', () => {
       />);
     });
 
-    it('should render 14 FeatureFlags', () => {
-      expect(wrapper.find('.FlagWrapper').children()).to.have.a.lengthOf(14);
+    test('should render 14 FeatureFlags', () => {
+      expect(wrapper.find('.FlagWrapper').children()).toHaveLength(14);
     });
   });
 
@@ -70,13 +69,13 @@ describe('Components|ProjectMenu/ProjectChart', () => {
       />);
     });
 
-    it('should add the className "selected"', () => {
-      expect(wrapper.is('div.selected')).to.equal(true);
+    test('should add the className "selected"', () => {
+      expect(wrapper.is('div.selected')).toBe(true);
     });
 
-    it('should remove the project name', () => {
+    test('should remove the project name', () => {
       const project = wrapper.find('div.ProjectName');
-      expect(project.contains('<p>')).to.equal(false);
+      expect(project.contains('<p>')).toBe(false);
     });
   });
 
@@ -90,9 +89,9 @@ describe('Components|ProjectMenu/ProjectChart', () => {
       />);
     });
 
-    it('should give all conditions a grey color', () => {
+    test('should give all conditions a grey color', () => {
       const flag = wrapper.find('.FlagWrapper').children().first();
-      expect(flag.props().color).to.equal('#a1a8a7');
+      expect(flag.props().color).toBe('#a1a8a7');
     });
   });
 
@@ -104,10 +103,10 @@ describe('Components|ProjectMenu/ProjectChart', () => {
         graphData={[]}
       />);
     });
-    it('should only render a ConditionPipe', () => {
-      expect(wrapper.find('div.ConditionPipe')).to.have.a.lengthOf(1);
-      expect(wrapper.find('FlagWrapper')).to.have.a.lengthOf(0);
-      expect(wrapper.find('ProjectName')).to.have.a.lengthOf(0);
+    test('should only render a ConditionPipe', () => {
+      expect(wrapper.find('div.ConditionPipe')).toHaveLength(1);
+      expect(wrapper.find('FlagWrapper')).toHaveLength(0);
+      expect(wrapper.find('ProjectName')).toHaveLength(0);
     });
   });
 });
