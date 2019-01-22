@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import { expect } from 'chai';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import BrowseByBtn from '.';
@@ -20,22 +19,22 @@ describe('Components|MyComponentName/BrowseByBtn', () => {
 
     shouldBehaveLikeAComponent(BrowseByBtn, () => wrapper);
 
-    it('should render a button', () => {
-      expect(wrapper.type()).to.equal('button');
+    test('should render a button', () => {
+      expect(wrapper.type()).toBe('button');
     });
 
-    it('should render text and an svg with the graphic', () => {
-      expect(wrapper.find('.BrowseByBtn-Wheel')).to.have.lengthOf(1);
-      expect(wrapper.find('.BrowseByBtn-ButtonText')).to.have.lengthOf(1);
+    test('should render text and an svg with the graphic', () => {
+      expect(wrapper.find('.BrowseByBtn-Wheel')).toHaveLength(1);
+      expect(wrapper.find('.BrowseByBtn-ButtonText')).toHaveLength(1);
     });
 
-    it('should render three elements inside the buttontext', () => {
-      expect(wrapper.find('.BrowseByBtn-ButtonText').children()).to.have.lengthOf(3);
+    test('should render three elements inside the buttontext', () => {
+      expect(wrapper.find('.BrowseByBtn-ButtonText').children()).toHaveLength(3);
     });
 
-    it('should call its onClick prop once', () => {
+    test('should call its onClick prop once', () => {
       wrapper.find('.BrowseByBtn').simulate('click', eventFuncs);
-      expect(spy.calledOnce).to.equal(true);
+      expect(spy.calledOnce).toBe(true);
     });
   });
 
@@ -47,13 +46,13 @@ describe('Components|MyComponentName/BrowseByBtn', () => {
       wrapper = shallow(<BrowseByBtn mode="location" onClick={spy} />);
     });
 
-    it('should render three elements inside the buttontext', () => {
-      expect(wrapper.find('.BrowseByBtn-ButtonText').children()).to.have.lengthOf(3);
+    test('should render three elements inside the buttontext', () => {
+      expect(wrapper.find('.BrowseByBtn-ButtonText').children()).toHaveLength(3);
     });
 
-    it('should call its onClick prop once', () => {
+    test('should call its onClick prop once', () => {
       wrapper.find('.BrowseByBtn').simulate('click', eventFuncs);
-      expect(spy.calledOnce).to.equal(true);
+      expect(spy.calledOnce).toBe(true);
     });
   });
 });
