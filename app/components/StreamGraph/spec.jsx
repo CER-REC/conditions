@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import Streamgraph, { roundDateLabel } from '.';
 
@@ -60,31 +59,32 @@ describe('Components|StreamGraph', () => {
       wrapper = shallow(<Streamgraph
         projectData={projectData}
         handleOnChange={handleOnChange}
+        chartTitle="Test"
       />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a className', () => {
-      expect(wrapper.is('.Streamgraph')).to.equal((true));
+    test('should have a className', () => {
+      expect(wrapper.is('.Streamgraph')).toBe(true);
     });
 
-    it('should render a title', () => {
-      expect(wrapper.find('h1')).to.have.lengthOf(1);
+    test('should render a title', () => {
+      expect(wrapper.find('h1')).toHaveLength(1);
     });
 
-    it('should render a chart', () => {
-      expect(wrapper.find('VictoryChart')).to.have.lengthOf(1);
+    test('should render a chart', () => {
+      expect(wrapper.find('VictoryChart')).toHaveLength(1);
     });
 
-    it('should render the x and y axis', () => {
-      expect(wrapper.find('VictoryAxis')).to.have.lengthOf(2);
+    test('should render the x and y axis', () => {
+      expect(wrapper.find('VictoryAxis')).toHaveLength(2);
     });
 
-    it('should round the date label', () => {
-      expect(roundDateLabel(2018.1)).to.be.equal(2018);
+    test('should round the date label', () => {
+      expect(roundDateLabel(2018.1)).toBe(2018);
     });
   });
 });

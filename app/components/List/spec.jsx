@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
-import { expect } from 'chai';
 
 import List from '.';
 
@@ -10,9 +9,9 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|List', () => {
   describe('without any items', () => {
-    it('should not render anything', () => {
+    test('should not render anything', () => {
       const wrapper = shallow(<List items={[]} selected={0} onChange={noop} />);
-      expect(wrapper.type()).to.equal(null);
+      expect(wrapper.type()).toBeNull();
     });
   });
 
@@ -22,46 +21,46 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={noop} />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a List class', () => {
-      expect(wrapper.is('div.List')).to.equal(true);
+    test('should have a List class', () => {
+      expect(wrapper.is('div.List')).toBe(true);
     });
 
-    it('should render a ul', () => {
-      expect(wrapper.find('ul')).to.have.lengthOf(1);
+    test('should render a ul', () => {
+      expect(wrapper.find('ul')).toHaveLength(1);
     });
 
-    it('should render 3 list items', () => {
-      expect(wrapper.find('li.List-Item')).to.have.lengthOf(3);
+    test('should render 3 list items', () => {
+      expect(wrapper.find('li.List-Item')).toHaveLength(3);
     });
 
-    it('should render without the horizontal class', () => {
-      expect(wrapper.hasClass('horizontal')).to.equal(false);
+    test('should render without the horizontal class', () => {
+      expect(wrapper.hasClass('horizontal')).toBe(false);
     });
 
-    it('should render without the guideLine class', () => {
-      expect(wrapper.hasClass('guideLine')).to.equal(false);
+    test('should render without the guideLine class', () => {
+      expect(wrapper.hasClass('guideLine')).toBe(false);
     });
   });
 
   describe('with a selected item', () => {
     const listItems = ['a', 'b', 'c'];
-    it('should only highlight one item', () => {
+    test('should only highlight one item', () => {
       const wrapper = shallow(<List items={listItems} selected={1} onChange={noop} />);
-      expect(wrapper.find('.selected')).to.have.lengthOf(1);
+      expect(wrapper.find('.selected')).toHaveLength(1);
     });
 
-    it('should highlight the selected item', () => {
+    test('should highlight the selected item', () => {
       const wrapper = shallow(<List items={listItems} selected={1} onChange={noop} />);
-      expect(wrapper.find('.selected .List-Item-Content').text()).to.equal('b');
+      expect(wrapper.find('.selected .List-Item-Content').text()).toBe('b');
     });
 
-    it("should highlight the first item if it isn't found", () => {
+    test("should highlight the first item if it isn't found", () => {
       const wrapper = shallow(<List items={listItems} selected={9000} onChange={noop} />);
-      expect(wrapper.find('.selected .List-Item-Content').text()).to.equal('a');
+      expect(wrapper.find('.selected .List-Item-Content').text()).toBe('a');
     });
   });
 
@@ -73,14 +72,14 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} />);
     });
 
-    it('should call its onChange prop with what was clicked', () => {
+    test('should call its onChange prop with what was clicked', () => {
       wrapper.find('.List-Item-Content').last().simulate('click', eventFuncs);
-      expect(spy.calledWith(2)).to.equal(true);
+      expect(spy.calledWith(2)).toBe(true);
     });
 
-    it('should call its onChange prop with what enter was pressed on', () => {
+    test('should call its onChange prop with what enter was pressed on', () => {
       wrapper.find('.List-Item-Content').last().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.calledWith(2)).to.equal(true);
+      expect(spy.calledWith(2)).toBe(true);
     });
   });
 
@@ -92,20 +91,20 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} itemInteractions={false} />);
     });
 
-    it('should not respond to clicks', () => {
+    test('should not respond to clicks', () => {
       wrapper.find('.List-Item').first().simulate('click', eventFuncs);
-      expect(spy.called).to.equal(false);
+      expect(spy.called).toBe(false);
     });
 
-    it('should not respond to keypresses', () => {
+    test('should not respond to keypresses', () => {
       wrapper.find('.List-Item').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.called).to.equal(false);
+      expect(spy.called).toBe(false);
     });
   });
 
   describe('with component items', () => {
     const TestComponent = props => <h1>{props.text}</h1>; // eslint-disable-line react/prop-types
-    it('should render items', () => {
+    test('should render items', () => {
       const wrapper = mount(<List
         items={[
           <TestComponent key="hello" text="hello" />,
@@ -115,7 +114,7 @@ describe('Components|List', () => {
         itemInteractions={false}
         onChange={noop}
       />);
-      expect(wrapper.find('h1')).to.have.lengthOf(2);
+      expect(wrapper.find('h1')).toHaveLength(2);
     });
   });
 
@@ -128,39 +127,39 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
     });
 
-    it('should not show a previous arrow on the first item', () => {
+    test('should not show a previous arrow on the first item', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} />);
-      expect(wrapper.find('.arrowPrevious')).to.have.lengthOf(0);
+      expect(wrapper.find('.arrowPrevious')).toHaveLength(0);
     });
 
-    it('should not show a next arrow on the last item', () => {
+    test('should not show a next arrow on the last item', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={2} onChange={spy} />);
-      expect(wrapper.find('.arrowNext')).to.have.lengthOf(0);
+      expect(wrapper.find('.arrowNext')).toHaveLength(0);
     });
 
-    it('should show a previous arrow if there are available items', () => {
-      expect(wrapper.find('.arrowPrevious')).to.have.lengthOf(1);
+    test('should show a previous arrow if there are available items', () => {
+      expect(wrapper.find('.arrowPrevious')).toHaveLength(1);
     });
 
-    it('should show a next arrow if there are available items', () => {
-      expect(wrapper.find('.arrowNext')).to.have.lengthOf(1);
+    test('should show a next arrow if there are available items', () => {
+      expect(wrapper.find('.arrowNext')).toHaveLength(1);
     });
 
-    it('should call its onChange prop with the previous index', () => {
+    test('should call its onChange prop with the previous index', () => {
       wrapper.find('.arrowPrevious').simulate('click', eventFuncs);
-      expect(spy.calledWith(0)).to.equal(true);
-      expect(spy.calledOnce).to.equal(true);
+      expect(spy.calledWith(0)).toBe(true);
+      expect(spy.calledOnce).toBe(true);
     });
 
-    it('should call its onChange prop with the next index', () => {
+    test('should call its onChange prop with the next index', () => {
       wrapper.find('.arrowNext').simulate('click', eventFuncs);
-      expect(spy.calledWith(2)).to.equal(true);
-      expect(spy.calledOnce).to.equal(true);
+      expect(spy.calledWith(2)).toBe(true);
+      expect(spy.calledOnce).toBe(true);
     });
 
-    it('should render the arrows with vertical icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).to.contain('up');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).to.contain('down');
+    test('should render the arrows with vertical icons', () => {
+      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('up');
+      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('down');
     });
   });
 
@@ -171,12 +170,12 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['A']} selected={0} onChange={noop} className="my-class" guideLine />);
     });
 
-    it('should accept a className', () => {
-      expect(wrapper.find('.my-class')).to.have.lengthOf(1);
+    test('should accept a className', () => {
+      expect(wrapper.find('.my-class')).toHaveLength(1);
     });
 
-    it('should render with the guideLine class', () => {
-      expect(wrapper.hasClass('guideLine')).to.equal(true);
+    test('should render with the guideLine class', () => {
+      expect(wrapper.hasClass('guideLine')).toBe(true);
     });
   });
 
@@ -187,13 +186,13 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['1', '2', '3', '4', '5']} selected={3} onChange={noop} horizontal />);
     });
 
-    it('should render with the horizontal class', () => {
-      expect(wrapper.hasClass('horizontal')).to.equal(true);
+    test('should render with the horizontal class', () => {
+      expect(wrapper.hasClass('horizontal')).toBe(true);
     });
 
-    it('should render the arrows with horizontal icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).to.contain('left');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).to.contain('right');
+    test('should render the arrows with horizontal icons', () => {
+      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('left');
+      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('right');
     });
   });
 });

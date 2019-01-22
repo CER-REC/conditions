@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import FeaturesLegend from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
@@ -23,19 +22,19 @@ describe('Components|FeaturesLegend', () => {
 
   shouldBehaveLikeAComponent(FeaturesLegend, () => wrapper);
 
-  it('should contain five LegendItems', () => {
-    expect(wrapper.find('LegendItem')).to.have.lengthOf(5);
+  test('should contain five LegendItems', () => {
+    expect(wrapper.find('LegendItem')).toHaveLength(5);
   });
 
-  it('should not show the footer when props: isProjectLegend is false', () => {
+  test('should not show the footer when props: isProjectLegend is false', () => {
     wrapper.setProps({ isProjectLegend: false });
-    expect(wrapper.hasClass('Footer')).to.equal(false);
+    expect(wrapper.hasClass('Footer')).toBe(false);
   });
 
   describe('without any items', () => {
-    it('should not render anything', () => {
+    test('should not render anything', () => {
       const empty = shallow(<FeaturesLegend legendItems={[]} selectedFeature="theme" isProjectLegend />);
-      expect(empty.type()).to.equal(null);
+      expect(empty.type()).toBeNull();
     });
   });
 });

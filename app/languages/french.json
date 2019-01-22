@@ -75,6 +75,11 @@
     "filing": {
       "filingRequired": "",
       "FilingNotRequired": ""
+    },
+    "legend": {
+      "zeroConditions": "",
+      "tenConditions": "",
+      "greaterThanTenConditions": ""
     }
   },
   "components": {
