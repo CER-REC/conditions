@@ -85,7 +85,7 @@ class BubbleChart extends React.PureComponent {
   }
 
   onDragMove = (event) => {
-    if (!this.isDragging) { return null; }
+    if (!this.isDragging) { return; }
     const sortedData = this.combineData();
     const svg = !this.svgRef.current ? { x: 156.3583, y: 187 }
       : this.svgRef.current.getClientRects()[0];
@@ -101,7 +101,6 @@ class BubbleChart extends React.PureComponent {
     );
 
     this.setIndicatorState(closestIndex);
-    return null;
   }
 
   onDragStop = () => {
