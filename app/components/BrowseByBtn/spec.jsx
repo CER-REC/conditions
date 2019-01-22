@@ -8,7 +8,7 @@ import BrowseByBtn from '.';
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|MyComponentName/BrowseByBtn', () => {
+describe('Components|BrowseByBtn', () => {
   describe('with default props', () => {
     let wrapper;
     let spy;
