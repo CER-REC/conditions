@@ -35,7 +35,8 @@ const TrendButton = (props) => {
           <FormattedMessage id={`components.trendButton.${props.selectedFeature}`}>
             {text => (
               <span>
-                {text.split('\n').map(string => <>{string}<br /></>)}
+                {text.split('\n')
+                  .map(string => <React.Fragment key={string}>{string}<br /></React.Fragment>)}
               </span>
             )}
           </FormattedMessage>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import StackGroupProps from '.';
 
@@ -32,15 +31,15 @@ describe('Components/Streamgraph/StackGroupProps', () => {
     />);
   });
 
-  it('should hide groupProps from VictoryStack', () => {
-    expect(wrapper.props()).to.not.have.property('groupProps');
+  test('should hide groupProps from VictoryStack', () => {
+    expect(wrapper.props()).not.toHaveProperty('groupProps');
   });
 
-  it('should spread the groupProps to the group', () => {
+  test('should spread the groupProps to the group', () => {
     const stackGroup = wrapper.prop('groupComponent');
     // This is the inverse of what we pass to StackGroupProps, because it should
     // spread groupProps out and keep the stackProps together
-    expect(stackGroup.props).to.deep.include({
+    expect(stackGroup.props).toMatchObject({
       ...groupProps,
       stackProps,
     });

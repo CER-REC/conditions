@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import ProjectDot from '.';
 
@@ -11,24 +10,24 @@ describe('Components|Wheel/ProjectDot', () => {
       wrapper = shallow(<ProjectDot />);
     });
 
-    it('should render a circle as a child', () => {
-      expect(wrapper.type()).to.equal('circle');
+    test('should render a circle as a child', () => {
+      expect(wrapper.type()).toBe('circle');
     });
 
-    it('should have a class ProjectDot always', () => {
-      expect(wrapper.hasClass('ProjectDot')).to.equal(true);
+    test('should have a class ProjectDot always', () => {
+      expect(wrapper.hasClass('ProjectDot')).toBe(true);
     });
   });
 
   describe('with changing classes', () => {
-    it('should have the class IsRelevant when relevant passed in', () => {
+    test('should have the class IsRelevant when relevant passed in', () => {
       wrapper = shallow(<ProjectDot relevant />);
-      expect(wrapper.props().className).to.contain('IsRelevant');
+      expect(wrapper.props().className).toContain('IsRelevant');
     });
 
-    it('should have the class isFiltered when filtered passed in', () => {
+    test('should have the class isFiltered when filtered passed in', () => {
       wrapper = shallow(<ProjectDot filtered />);
-      expect(wrapper.props().className).to.contain('IsFiltered');
+      expect(wrapper.props().className).toContain('IsFiltered');
     });
   });
 });

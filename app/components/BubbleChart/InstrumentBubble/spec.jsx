@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 import InstrumentBubble from '.';
 
@@ -132,17 +131,17 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
         />,
       );
     });
-    it('should render an svg', () => {
-      expect(wrapper.find('svg')).to.have.lengthOf(1);
+    test('should render an svg', () => {
+      expect(wrapper.find('svg')).toHaveLength(1);
     });
-    it('should render svg with proper width', () => {
-      expect(wrapper.find('svg').prop('width')).to.equal(400);
+    test('should render svg with proper width', () => {
+      expect(wrapper.find('svg').prop('width')).toBe(400);
     });
-    it('should render svg with proper height', () => {
-      expect(wrapper.find('svg').prop('height')).to.equal(400);
+    test('should render svg with proper height', () => {
+      expect(wrapper.find('svg').prop('height')).toBe(400);
     });
-    it('should render atleast one circle', () => {
-      expect((wrapper).find('circle').exists()).to.equal(true);
+    test('should render atleast one circle', () => {
+      expect((wrapper).find('circle').exists()).toBe(true);
     });
   });
 
@@ -160,14 +159,14 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
         />,
       );
     });
-    it("should call it's onClick prop", () => {
+    test("should call it's onClick prop", () => {
       wrapper.find('circle').first().simulate('click', eventFuncs);
-      expect(spy.called).to.equal(true);
+      expect(spy.called).toBe(true);
     });
 
-    it("should call it's onClick prop when enter is pressed", () => {
+    test("should call it's onClick prop when enter is pressed", () => {
       wrapper.find('circle').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.called).to.equal(true);
+      expect(spy.called).toBe(true);
     });
   });
 });

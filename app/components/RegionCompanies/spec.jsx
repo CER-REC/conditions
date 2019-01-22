@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
@@ -35,25 +34,25 @@ describe('Components|RegionCompanies', () => {
 
     shouldBehaveLikeAComponent(RegionCompanies, () => wrapper);
 
-    it('should display a list of 8 items', () => {
-      expect(wrapper.find('li')).to.have.a.lengthOf(8);
+    test('should display a list of 8 items', () => {
+      expect(wrapper.find('li')).toHaveLength(8);
     });
 
-    it('should display companies in alphabetical order', () => {
-      expect(wrapper.find('li').at(0).text()).to.contain('Alberta Trans-Alta e');
-      expect(wrapper.find('li').at(1).text()).to.contain('Alberta Trans-Alta è');
-      expect(wrapper.find('li').at(2).text()).to.contain('Canada-Montana Pipe Line Company');
-      expect(wrapper.find('li').at(3).text()).to.contain('Express Pipeline Ltd.');
-      expect(wrapper.find('li').at(4).text()).to.contain('Kinder Morgan Cochin Ulc.');
-      expect(wrapper.find('li').at(5).text()).to.contain('Nova Gas Transmission Ltd.');
+    test('should display companies in alphabetical order', () => {
+      expect(wrapper.find('li').at(0).childAt(0).text()).toEqual('Alberta Trans-Alta e');
+      expect(wrapper.find('li').at(1).childAt(0).text()).toEqual('Alberta Trans-Alta è');
+      expect(wrapper.find('li').at(2).childAt(0).text()).toEqual('Canada-Montana Pipe Line Company');
+      expect(wrapper.find('li').at(3).childAt(0).text()).toEqual('Express Pipeline Ltd.');
+      expect(wrapper.find('li').at(4).childAt(0).text()).toEqual('Kinder Morgan Cochin Ulc.');
+      expect(wrapper.find('li').at(5).childAt(0).text()).toEqual('Nova Gas Transmission Ltd.');
     });
 
-    it('should display a asterisk beside Kinder Morgan Cochin Ulc.', () => {
-      expect(wrapper.find('li').at(4).find('button').type()).to.equal('button');
+    test('should display a asterisk beside Kinder Morgan Cochin Ulc.', () => {
+      expect(wrapper.find('li').at(4).find('button').type()).toBe('button');
     });
 
-    it('should render a formatted message for the title', () => {
-      expect(wrapper.find('FormattedMessage')).to.have.lengthOf(1);
+    test('should render a formatted message for the title', () => {
+      expect(wrapper.find('FormattedMessage')).toHaveLength(1);
     });
   });
 
@@ -70,9 +69,9 @@ describe('Components|RegionCompanies', () => {
         />,
       );
     });
-    it('should call the openProjectDetails function', () => {
+    test('should call the openProjectDetails function', () => {
       wrapper.find('button').first().simulate('click', eventFuncs);
-      expect(spy.calledOnce).to.equal(true);
+      expect(spy.calledOnce).toBe(true);
     });
   });
 });

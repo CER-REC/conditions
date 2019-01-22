@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import Wheel from '.';
 
 describe('Components|Wheel', () => {
   describe('with no props', () => {
-    it('should render a company wheel', () => {
-      expect(shallow(<Wheel />).type()).to.equal('div');
+    test('should render a company wheel', () => {
+      expect(shallow(<Wheel />).type()).toBe('div');
     });
 
     // it('should have the prop company by default', () => {
@@ -20,8 +19,8 @@ describe('Components|Wheel', () => {
       wrapper = shallow(<Wheel ringType="normal" />);
     });
 
-    it('should render a div', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render a div', () => {
+      expect(wrapper.type()).toBe('div');
     });
   });
 

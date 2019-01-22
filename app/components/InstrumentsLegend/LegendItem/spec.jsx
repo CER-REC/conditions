@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import { FormattedMessage } from 'react-intl';
 
 import LegendItem from '.';
@@ -36,14 +35,14 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
       ));
     });
 
-    it('should not render the indicators', () => {
-      expect(wrapper.find('.indicator')).to.have.lengthOf(0);
+    test('should not render the indicators', () => {
+      expect(wrapper.find('.indicator')).toHaveLength(0);
     });
 
-    it('should render the all title', () => {
+    test('should render the all title', () => {
       const id = 'components.instrumentsLegend.all';
 
-      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
+      expect(wrapper.find(FormattedMessage).prop('id')).toBe(id);
     });
   });
 
@@ -63,25 +62,25 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
       ));
     });
 
-    it('should render the title', () => {
+    test('should render the title', () => {
       const id = `common.instrument.category.${title}`;
 
-      expect(wrapper.find('.indicators')).to.have.lengthOf(1);
-      expect(wrapper.find(FormattedMessage).prop('id')).to.equal(id);
+      expect(wrapper.find('.indicators')).toHaveLength(1);
+      expect(wrapper.find(FormattedMessage).prop('id')).toBe(id);
     });
 
-    it('should render the indicators', () => {
+    test('should render the indicators', () => {
       const indicatorsWrapper = wrapper.find('.indicators');
 
-      expect(indicatorsWrapper.children()).to.have.lengthOf(indicators.length);
+      expect(indicatorsWrapper.children()).toHaveLength(indicators.length);
 
       indicators.forEach((indicator, index) => {
         const style = indicatorsWrapper.childAt(index).prop('style');
 
         if (indicator) {
-          expect(style).to.deep.include({ backgroundColor: color });
+          expect(style).toMatchObject({ backgroundColor: color });
         } else {
-          expect(style).to.not.have.keys('backgroundColor');
+          expect(style).not.toHaveProperty('backgroundColor');
         }
       });
     });

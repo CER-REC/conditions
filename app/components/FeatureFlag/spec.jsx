@@ -1,5 +1,4 @@
 import React from 'react';
-import { expect } from 'chai';
 import { shallowWithIntl } from '../../tests/utilities';
 
 import FeatureFlag from '.';
@@ -16,42 +15,42 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
       />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a class of FeatureFlag', () => {
-      expect(wrapper.is('div.FeatureFlag')).to.equal(true);
+    test('should have a class of FeatureFlag', () => {
+      expect(wrapper.is('div.FeatureFlag')).toBe(true);
     });
   });
 
-  it('should have a FlagTip with more than 11 conditions', () => {
+  test('should have a FlagTip with more than 11 conditions', () => {
     const wrapper = shallowWithIntl(<FeatureFlag
       chartType="theme"
       color="green"
       count={15}
       name="environmentalProtection"
     />);
-    expect(wrapper.find('.FlagTip').type()).to.equal('div');
+    expect(wrapper.find('.FlagTip').type()).toBe('div');
   });
 
-  it('should NOT have a FlagTip with 10 or less conditions', () => {
+  test('should NOT have a FlagTip with 10 or less conditions', () => {
     const wrapper = shallowWithIntl(<FeatureFlag
       chartType="theme"
       color="green"
       count={4}
       name="environmentalProtection"
     />);
-    expect(wrapper.contains('.FlagTip')).to.equal(false);
+    expect(wrapper.contains('.FlagTip')).toBe(false);
   });
 
-  it('should NOT have the flag tip if the condition count is 0', () => {
+  test('should NOT have the flag tip if the condition count is 0', () => {
     const wrapper = shallowWithIntl(<FeatureFlag
       chartType="theme"
       color="green"
       count={0}
       name="environmentalProtection"
     />);
-    expect(wrapper.contains('.FlagTip')).to.equal(false);
+    expect(wrapper.contains('.FlagTip')).toBe(false);
   });
 });

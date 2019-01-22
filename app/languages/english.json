@@ -75,6 +75,11 @@
     "filing": {
       "filingRequired": "Filing Required",
       "FilingNotRequired": "Filing Not Required"
+    },
+    "legend": {
+      "zeroConditions": "Zero Conditions",
+      "tenConditions": "Ten Conditions",
+      "greaterThanTenConditions": "Greater than Ten Conditions"
     }
   },
   "components": {
@@ -135,8 +140,8 @@
     "view1": {
       "footer": {
         "skip": "Skip intro to browse:",
-        "projectsBy": "Projects By",
-        "conditionsBy": "Conditions By",
+        "projectsBy": "Projects by",
+        "conditionsBy": "Conditions by",
         "company": "Company",
         "location": "Location"
       }
