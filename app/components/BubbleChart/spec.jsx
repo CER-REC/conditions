@@ -2,15 +2,18 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import BubbleChart from '.';
 
+const noop = () => {};
+const emptyArray = [];
+
 describe('Components|BubbleChart', () => {
   describe('without a selectedCategory equal to Instrument', () => {
     test('should not render a div', () => {
       const wrapper = shallow((
         <BubbleChart
           selectedCategory="test"
-          instrumentChartData1={[]}
-          instrumentChartData2={[]}
-          onClick={() => {}}
+          instrumentChartData1={emptyArray}
+          instrumentChartData2={emptyArray}
+          onClick={noop}
         />
       ));
       expect(wrapper.type()).toBeNull();
@@ -22,9 +25,9 @@ describe('Components|BubbleChart', () => {
       wrapper = shallow((
         <BubbleChart
           selectedCategory="instrument"
-          instrumentChartData1={[]}
-          instrumentChartData2={[]}
-          onClick={() => {}}
+          instrumentChartData1={emptyArray}
+          instrumentChartData2={emptyArray}
+          onClick={noop}
         />
       ));
     });
