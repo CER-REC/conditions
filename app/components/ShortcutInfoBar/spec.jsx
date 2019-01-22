@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import ShortcutInfoBar from '.';
 
@@ -17,25 +16,25 @@ describe('Components|ShortcutInfoBar', () => {
       />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a className', () => {
-      expect(wrapper.is('.ShortcutInfoBar')).to.equal((true));
+    test('should have a className', () => {
+      expect(wrapper.is('.ShortcutInfoBar')).toBe(true);
     });
 
-    it('should show four share icons', () => {
-      expect(wrapper.find('ShareIcon')).to.have.lengthOf(4);
+    test('should show four share icons', () => {
+      expect(wrapper.find('ShareIcon')).toHaveLength(4);
     });
 
-    it('should show three text links', () => {
-      expect(wrapper.find('button')).to.have.lengthOf(1);
+    test('should show three text links', () => {
+      expect(wrapper.find('button')).toHaveLength(1);
     });
 
-    it('should not show the info bar when it is closed', () => {
+    test('should not show the info bar when it is closed', () => {
       wrapper.setProps({ handleInfoBar: false });
-      expect(wrapper.find('InfoBar')).to.have.lengthOf(0);
+      expect(wrapper.find('InfoBar')).toHaveLength(0);
     });
   });
 });
