@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 
 import MainInfoBar from '.';
@@ -17,24 +16,24 @@ describe('Components|MainInfoBar', () => {
       />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a className', () => {
-      expect(wrapper.is('.MainInfoBar')).to.equal((true));
+    test('should have a className', () => {
+      expect(wrapper.is('.MainInfoBar')).toBe(true);
     });
 
-    it('should show four share icons ', () => {
-      expect(wrapper.find('ShareIcon')).to.have.lengthOf(4);
+    test('should show four share icons ', () => {
+      expect(wrapper.find('ShareIcon')).toHaveLength(4);
     });
 
-    it('should show a horizontal line', () => {
-      expect(wrapper.find('hr')).to.have.lengthOf(1);
+    test('should show a horizontal line', () => {
+      expect(wrapper.find('hr')).toHaveLength(1);
     });
 
-    it('should show three text links', () => {
-      expect(wrapper.find('button')).to.have.lengthOf(3);
+    test('should show three text links', () => {
+      expect(wrapper.find('button')).toHaveLength(3);
     });
   });
 });
