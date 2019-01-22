@@ -17,7 +17,6 @@ class ShareIcon extends React.PureComponent {
       window.location.href = 'mailto:?subject=&body=';
       return;
     }
-    // TODO: make share icon clickable
     let url; // TODO: get shortened bitly URL
     let locationUrl;
     if (this.props.target === 'facebook') {
