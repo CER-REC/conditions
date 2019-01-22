@@ -19,7 +19,14 @@ describe('Components|BarContainer', () => {
 
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<BarContainer items={rectItems} size={12} />);
+      wrapper = shallow(
+        <BarContainer
+          items={rectItems}
+          size={12}
+          title="ConditionTitle"
+          desc="conditionDesc"
+        />,
+      );
     });
 
     it('should render', () => {
@@ -36,7 +43,15 @@ describe('Components|BarContainer', () => {
     });
 
     it('should be able to render a <g> wrapper', () => {
-      wrapper = shallow(<BarContainer standalone items={rectItems} size={12} />);
+      wrapper = shallow(
+        <BarContainer
+          title="ConditionTitle"
+          desc="conditionDesc"
+          standalone
+          items={rectItems}
+          size={12}
+        />,
+      );
       expect(wrapper.find('g')).to.have.lengthOf(1);
     });
 
