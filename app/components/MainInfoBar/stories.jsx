@@ -6,10 +6,17 @@ import MainInfoBar from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|MainInfoBar', module, ReadMe)
-  .addDecorator(withInteraction({ actions: ['onChange'] }))
+  .addDecorator(withInteraction({ actions: ['handleOnClick'] }))
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .add('Basic view', () => (
+  .add('with state toggle', () => (
     <MainInfoBar
       {...getInteractionProps()}
+      dialog={['About', 'Methodology', 'Downloads']}
     />
-  ));
+  ), {
+    interaction: {
+      state: { activeDialog: '' },
+      actions: { handleOnClick: () => v => ({ activeDialog: v }) },
+    },
+  });
+

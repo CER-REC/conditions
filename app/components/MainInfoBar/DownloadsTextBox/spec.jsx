@@ -3,11 +3,17 @@ import { shallow } from 'enzyme';
 
 import DownloadsTextBox from '.';
 
+const openDataModal = () => {};
+const openScreenshotModal = () => {};
+
 describe('Components|MainInfoBar/DownloadsTextBox', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<DownloadsTextBox />);
+      wrapper = shallow(<DownloadsTextBox
+        openDataModal={openDataModal}
+        openScreenshotModal={openScreenshotModal}
+      />);
     });
 
     test('should render', () => {
