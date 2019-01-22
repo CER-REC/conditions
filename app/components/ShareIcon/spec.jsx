@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 import { shouldHaveInteractionProps } from '../../tests/utilities';
 
@@ -18,15 +17,15 @@ describe('Components|ShareIcon', () => {
       wrapper = shallow(<ShareIcon onClick={spy} />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a className', () => {
-      expect(wrapper.is('.ShareIcon')).to.equal((true));
+    test('should have a className', () => {
+      expect(wrapper.is('.ShareIcon')).toBe(true);
     });
 
-    it('should have take in an onClick props', () => {
+    test('should have take in an onClick props', () => {
       const tester = shallow((
         <ShareIcon
           onClick={() => {}}
@@ -37,25 +36,25 @@ describe('Components|ShareIcon', () => {
       shouldHaveInteractionProps(tester);
     });
 
-    it('should handle if target is facebook', () => {
+    test('should handle if target is facebook', () => {
       wrapper.setProps({ target: 'facebook' });
       expect(wrapper.simulate('click', eventFuncs));
-      expect(wrapper.find('Icon').props().icon).to.equal('facebook');
+      expect(wrapper.find('Icon').props().icon).toBe('facebook');
     });
 
-    it('should handle if target is twitter', () => {
+    test('should handle if target is twitter', () => {
       wrapper.setProps({ target: 'twitter' });
-      expect(wrapper.find('Icon').props().icon).to.equal('twitter');
+      expect(wrapper.find('Icon').props().icon).toBe('twitter');
     });
 
-    it('should handle if target is linkedin', () => {
+    test('should handle if target is linkedin', () => {
       wrapper.setProps({ target: 'linkedin' });
-      expect(wrapper.find('Icon').props().icon).to.equal('linkedin');
+      expect(wrapper.find('Icon').props().icon).toBe('linkedin');
     });
 
-    it('should handle if target is email', () => {
+    test('should handle if target is email', () => {
       wrapper.setProps({ target: 'email' });
-      expect(wrapper.find('Icon').props().icon).to.equal('envelope');
+      expect(wrapper.find('Icon').props().icon).toBe('envelope');
     });
   });
 });
