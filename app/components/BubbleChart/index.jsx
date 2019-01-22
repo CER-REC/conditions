@@ -89,18 +89,16 @@ class BubbleChart extends React.PureComponent {
     const sortedData = this.combineData();
     const svg = !this.svgRef.current ? { x: 156.3583, y: 187 }
       : this.svgRef.current.getClientRects()[0];
-    const subtractedX = event.clientX - svg.x;
-    const subtractedY = (event.clientY - svg.y);
-    const minimumArray = sortedData.map(
-      item => Math.sqrt(
-        ((item.x - subtractedX) ** 2) + ((item.y - subtractedY) ** 2),
-      ),
-    );
-    const closestIndex = minimumArray.indexOf(
-      Math.min(...minimumArray),
-    );
-
-    this.setIndicatorState(closestIndex);
+    const [index] = sortedData.reduce((acc, node, i) => {
+      if (node.depth < 2) { return acc; }
+      const subX = event.clientX - svg.x;
+      const subY = event.clientY - svg.y;
+      const distance = Math.sqrt(
+        ((node.x - subX) ** 2) + ((node.y - subY) ** 2),
+      );
+      return (distance > acc[1]) ? acc : [i, distance];
+    }, [null, Number.MAX_SAFE_INTEGER]);
+    this.setIndicatorState(index);
   }
 
   onDragStop = () => {
