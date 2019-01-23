@@ -41,7 +41,7 @@ const ModalContent = (props) => {
           <button
             className="textButton"
             type="button"
-            {...handleInteraction(modalAction.task)}
+            {...handleInteraction(modalAction)}
           >
             <FormattedMessage id={`components.modal.${type}.actionText`} />
           </button>
@@ -64,13 +64,8 @@ ModalContent.propTypes = {
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
   closeModal: PropTypes.func.isRequired,
-  /** Adds a link to the footer of the Modal window */
-  modalAction: PropTypes.shape({
-    /** The copy for the Modals footer link */
-    text: PropTypes.string.isRequired,
-    /** The function to handle after interacted with */
-    task: PropTypes.func.isRequired,
-  }),
+  /** Adds a link to the footer of the Modal window that triggers this function */
+  modalAction: PropTypes.func,
 };
 
 ModalContent.defaultProps = {

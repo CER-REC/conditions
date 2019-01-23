@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import { expect } from 'chai';
 
 import InstrumentsLegend from '.';
 import LegendItem from './LegendItem';
@@ -56,21 +55,21 @@ describe('Components|InstrumentsLegend', () => {
       ));
     });
 
-    it('should not render a "All" list item', () => {
+    test('should not render a "All" list item', () => {
       const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
 
-      expect(legendItemsWrapper.filter('[all=true]')).to.have.lengthOf(0);
-      expect(legendItemsWrapper).to.have.lengthOf(1);
+      expect(legendItemsWrapper.filter('[all=true]')).toHaveLength(0);
+      expect(legendItemsWrapper).toHaveLength(1);
     });
 
-    it('should call the onChange function on List item change', () => {
+    test('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(category)).to.equal(true);
+      expect(spy.calledOnceWith(category)).toBe(true);
     });
 
-    it('should render the List component with the first item selected', () => {
-      expect(wrapper.find(List).prop('selected')).to.equal(0);
+    test('should render the List component with the first item selected', () => {
+      expect(wrapper.find(List).prop('selected')).toBe(0);
     });
   });
 
@@ -85,16 +84,16 @@ describe('Components|InstrumentsLegend', () => {
       [false, true, true, false],
     ];
     const data = [{
-      parentName: 'Indicator',
+      parentName: 'oil',
       children: [],
     }, {
-      parentName: 'Ind',
+      parentName: 'gas',
       children: [],
     }, {
-      parentName: 'Type',
+      parentName: 'power',
       children: [],
     }, {
-      parentName: 'N/A',
+      parentName: 'notSpecified',
       children: [],
     }];
 
@@ -120,58 +119,58 @@ describe('Components|InstrumentsLegend', () => {
       ));
     });
 
-    it('should render the indicator type headers', () => {
+    test('should render the indicator type headers', () => {
       const headersWrapper = wrapper.find('.headers FormattedMessage');
 
       data.forEach((indicatorsData, index) => {
         const id = `common.instrument.type.${indicatorsData.parentName}`;
 
-        expect(headersWrapper.at(index).prop('id')).to.equal(id);
-        expect(headersWrapper.at(index).shallowWithIntl().hasClass('indicator')).to.equal(true);
+        expect(headersWrapper.at(index).prop('id')).toBe(id);
+        expect(headersWrapper.at(index).shallowWithIntl().hasClass('indicator')).toBe(true);
       });
     });
 
-    it('should render the data as LegendItem components in the List component', () => {
+    test('should render the data as LegendItem components in the List component', () => {
       for (let i = 0; i < categories.length; i += 1) {
         const listItemWrapper = wrapper.find(List).shallow().find(LegendItem).find(`[title='${categories[i]}']`);
 
-        expect(listItemWrapper).to.have.lengthOf(1);
-        expect(listItemWrapper.type()).to.equal(LegendItem);
-        expect(listItemWrapper.prop('color')).to.equal(colors[i]);
-        expect(listItemWrapper.prop('indicators')).to.deep.equal(categoryIndicators[i]);
+        expect(listItemWrapper).toHaveLength(1);
+        expect(listItemWrapper.type()).toBe(LegendItem);
+        expect(listItemWrapper.prop('color')).toBe(colors[i]);
+        expect(listItemWrapper.prop('indicators')).toEqual(categoryIndicators[i]);
       }
     });
 
-    it('should render the all LegendItem component', () => {
+    test('should render the all LegendItem component', () => {
       const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
 
-      expect(legendItemsWrapper.at(0).prop('all')).to.equal(true);
-      expect(legendItemsWrapper).to.have.lengthOf(6);
+      expect(legendItemsWrapper.at(0).prop('all')).toBe(true);
+      expect(legendItemsWrapper).toHaveLength(6);
     });
 
-    it('should call the onChange function with null on List item change to the all item', () => {
+    test('should call the onChange function with null on List item change to the all item', () => {
       // All item is at the top
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(null)).to.equal(true);
+      expect(spy.calledOnceWith(null)).toBe(true);
     });
 
-    it('should call the onChange function with the categories name on List item change', () => {
+    test('should call the onChange function with the categories name on List item change', () => {
       for (let i = 0; i < categories.length; i += 1) {
         // Account for all item at the beginning
         wrapper.find(List).prop('onChange')(i + 1);
 
-        expect(spy.calledWith(categories[i])).to.equal(true);
+        expect(spy.calledWith(categories[i])).toBe(true);
       }
 
-      expect(spy.callCount).to.equal(categories.length);
+      expect(spy.callCount).toBe(categories.length);
     });
 
-    it('should render the List component with the first item selected', () => {
-      expect(wrapper.find(List).prop('selected')).to.equal(0);
+    test('should render the List component with the first item selected', () => {
+      expect(wrapper.find(List).prop('selected')).toBe(0);
     });
 
-    it('should render the List component with the corresponding item selected when selected is provided', () => {
+    test('should render the List component with the corresponding item selected when selected is provided', () => {
       wrapper = shallow((
         <InstrumentsLegend
           data={data}
@@ -181,10 +180,10 @@ describe('Components|InstrumentsLegend', () => {
       ));
 
       // An "All" item is rendered at the top for multiple categories
-      expect(wrapper.find(List).prop('selected')).to.equal(3);
+      expect(wrapper.find(List).prop('selected')).toBe(3);
     });
 
-    it('should render the List component with the first item selected when selected is invalid', () => {
+    test('should render the List component with the first item selected when selected is invalid', () => {
       wrapper = shallow((
         <InstrumentsLegend
           data={data}
@@ -193,7 +192,7 @@ describe('Components|InstrumentsLegend', () => {
         />
       ));
 
-      expect(wrapper.find(List).prop('selected')).to.equal(0);
+      expect(wrapper.find(List).prop('selected')).toBe(0);
     });
   });
 });

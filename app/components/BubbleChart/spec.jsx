@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import BubbleChart from '.';
 
 const instrumentChartData2 = {
@@ -139,13 +138,13 @@ const instrumentChartData1 = {
 
 describe('Components|BubbleChart', () => {
   describe('without a selectedCategory equal to Instrument', () => {
-    it('should not render a div', () => {
+    test('should not render a div', () => {
       const wrapper = shallow(<BubbleChart
         selectedCategory="test"
         instrumentChartData1={instrumentChartData1}
         instrumentChartData2={instrumentChartData2}
       />);
-      expect(wrapper.type()).to.equal(null);
+      expect(wrapper.type()).toBeNull();
     });
   });
   describe('with a selectedCategory', () => {
@@ -157,12 +156,12 @@ describe('Components|BubbleChart', () => {
         instrumentChartData2={instrumentChartData2}
       />);
     });
-    it('should render a div', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render a div', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should render a bubbleChart class', () => {
-      expect(wrapper.find('.BubbleChart')).to.have.lengthOf(1);
+    test('should render a bubbleChart class', () => {
+      expect(wrapper.find('.BubbleChart')).toHaveLengthOf(1);
     });
   });
 

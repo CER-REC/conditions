@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import SelectedGroupBar from '.';
 
@@ -11,39 +10,39 @@ describe('Components|SelectedGroupBar', () => {
       wrapper = shallow(<SelectedGroupBar group="components.companyWheel.wheelRay.title">Company Name</SelectedGroupBar>);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a SelectedGroupBar class', () => {
-      expect(wrapper.is('.SelectedGroupBar')).to.equal(true);
+    test('should have a SelectedGroupBar class', () => {
+      expect(wrapper.is('.SelectedGroupBar')).toBe(true);
     });
 
-    it('should have a child element to render the group and group-item', () => {
-      expect(wrapper.find('.SelectedGroupBar').children()).to.have.lengthOf(1);
+    test('should have a child element to render the group and group-item', () => {
+      expect(wrapper.find('.SelectedGroupBar').children()).toHaveLength(1);
     });
   });
   describe('with default props', () => {
-    it('should accept both props for the group and groupItem text', () => {
+    test('should accept both props for the group and groupItem text', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions">condition</SelectedGroupBar>);
-      expect(wrapper.find('FormattedMessage')).to.have.lengthOf(1);
-      expect(wrapper.find('span').last().text()).to.equal('condition');
+      expect(wrapper.find('FormattedMessage')).toHaveLength(1);
+      expect(wrapper.find('span').last().text()).toBe('condition');
     });
 
-    it('should accept a prop for the background color', () => {
+    test('should accept a prop for the background color', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions" backgroundColor="tomato">condition</SelectedGroupBar>);
-      expect(wrapper.find('p').props().style.background).to.equal('tomato');
+      expect(wrapper.find('p').props().style.background).toBe('tomato');
     });
 
-    it('should accept a prop to set the group text size', () => {
+    test('should accept a prop to set the group text size', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions" groupSize="32px">condition</SelectedGroupBar>);
-      expect(wrapper.children().first().props().style.fontSize).to.equal('32px');
+      expect(wrapper.children().first().props().style.fontSize).toBe('32px');
     });
 
-    it('should accept a prop to set the groupitem text size', () => {
+    test('should accept a prop to set the groupitem text size', () => {
       const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItemSize="14px" groupSize="20px">condition</SelectedGroupBar>);
-      expect(wrapper.children().first().props().style.fontSize).to.equal('20px');
-      expect(wrapper.find('span').first().props().style.fontSize).to.equal('14px');
+      expect(wrapper.children().first().props().style.fontSize).toBe('20px');
+      expect(wrapper.find('span').first().props().style.fontSize).toBe('14px');
     });
   });
 });

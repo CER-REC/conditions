@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import FeatureDescription from '.';
 
@@ -14,17 +13,17 @@ describe('Components|FeatureDescription', () => {
       wrapper = shallow(<FeatureDescription description={description} feature={feature} />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a feature description class', () => {
-      expect(wrapper.is('.feature-description')).to.equal(true);
+    test('should have a feature description class', () => {
+      expect(wrapper.is('.feature-description')).toBe(true);
     });
 
-    it('should use translation to render out text for the heading', () => {
+    test('should use translation to render out text for the heading', () => {
       const title = wrapper.find('FormattedMessage').first().shallowWithIntl();
-      expect(title.type()).to.equal('h1');
+      expect(title.type()).toBe('h1');
     });
   });
 });

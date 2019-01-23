@@ -18,22 +18,22 @@ const FeaturesLegend = (props) => {
         </h3>
         <div className="ChartLegend">
           <FeatureFlag
-            chartType=""
-            name="Zero Conditions"
+            chartType="legend"
+            name="zeroConditions"
             count={0}
             color=""
           />
           <div className="FlagDesc">0</div>
           <FeatureFlag
-            chartType=""
-            name="Ten Conditions"
+            chartType="legend"
+            name="tenConditions"
             count={10}
             color="#fff"
           />
           <div className="FlagDesc">10</div>
           <FeatureFlag
-            chartType=""
-            name="Greater than ten Conditions"
+            chartType="legend"
+            name="greaterThanTenConditions"
             count={11}
             color=""
           />

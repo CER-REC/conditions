@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 import InstrumentBubble from '.';
 import d3HierarchyCalculation from '../d3HierarchyCalculation';
@@ -136,8 +135,8 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
         />,
       );
     });
-    it('should render atleast one circle', () => {
-      expect((wrapper).find('circle').exists()).to.equal(true);
+    test('should render atleast one circle', () => {
+      expect((wrapper).find('circle').exists()).toBe(true);
     });
   });
 
@@ -158,14 +157,14 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
         />,
       );
     });
-    it("should call it's onClick prop", () => {
+    test("should call it's onClick prop", () => {
       wrapper.find('circle').first().simulate('click', eventFuncs);
-      expect(spy.called).to.equal(true);
+      expect(spy.called).toBe(true);
     });
 
-    it("should call it's onClick prop when enter is pressed", () => {
+    test("should call it's onClick prop when enter is pressed", () => {
       wrapper.find('circle').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.called).to.equal(true);
+      expect(spy.called).toBe(true);
     });
   });
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 import sinon from 'sinon';
 import { shouldHaveInteractionProps } from '../../../tests/utilities';
 import PullToSpin from '.';
@@ -15,15 +14,15 @@ describe('Components|CompanyWheel/PullToSpin', () => {
       wrapper = shallow(<PullToSpin onSpinClick={noop} />);
     });
 
-    it('should render an svg with className PullToSpin', () => {
-      expect(wrapper.type()).to.equal('svg');
-      expect(wrapper.hasClass('PullToSpin')).to.equal(true);
+    test('should render an svg with className PullToSpin', () => {
+      expect(wrapper.type()).toBe('svg');
+      expect(wrapper.hasClass('PullToSpin')).toBe(true);
     });
 
-    it('should render an arrow, message, and slider', () => {
-      expect(wrapper.find('.PullSpinArrow').exists()).to.equal(true);
-      expect(wrapper.find('.PullMessage').exists()).to.equal(true);
-      expect(wrapper.find('.PullSlider').exists()).to.equal(true);
+    test('should render an arrow, message, and slider', () => {
+      expect(wrapper.find('.PullSpinArrow').exists()).toBe(true);
+      expect(wrapper.find('.PullMessage').exists()).toBe(true);
+      expect(wrapper.find('.PullSlider').exists()).toBe(true);
     });
   });
 
@@ -34,20 +33,20 @@ describe('Components|CompanyWheel/PullToSpin', () => {
       wrapper = shallow(<PullToSpin onSpinClick={callback} />);
     });
 
-    it('should trigger the callback function passed in', () => {
-      expect(wrapper.state('spinTogglePosition')).to.equal('translate(0px, 0px) rotate(0deg)');
+    test('should trigger the callback function passed in', () => {
+      expect(wrapper.state('spinTogglePosition')).toBe('translate(0px, 0px) rotate(0deg)');
       wrapper.find('.PullSlider').simulate('click', eventFuncs);
       shouldHaveInteractionProps(wrapper.find('.PullSlider'));
-      expect(wrapper.state('spinTogglePosition')).to.equal('translate(56px, -56px) rotate(15deg)');
-      expect(callback).to.have.property('callCount', 1);
+      expect(wrapper.state('spinTogglePosition')).toBe('translate(56px, -56px) rotate(15deg)');
+      expect(callback).toHaveProperty('callCount', 1);
     });
   });
 
   describe('when the animation is over', () => {
-    it('should set the spinTogglePosition back to its original position', () => {
+    test('should set the spinTogglePosition back to its original position', () => {
       const instance = wrapper.instance();
       instance.onRestSpin();
-      expect(wrapper.state('spinTogglePosition')).to.equal('translate(0px, 0px) rotate(0deg)');
+      expect(wrapper.state('spinTogglePosition')).toBe('translate(0px, 0px) rotate(0deg)');
     });
   });
 });
