@@ -55,7 +55,7 @@ storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
       <InstrumentBubble
         onClick={() => alert('you clicked')}
         keyPress={() => alert('you pressed a key')}
-        d3HierarchyCalculation={d3HierarchyCalculation(
+        d3Calculation={d3HierarchyCalculation(
           instrumentChartData2,
           300,
           400,

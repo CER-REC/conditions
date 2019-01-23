@@ -36,8 +36,8 @@ const ChartIndicator = (props) => {
 };
 
 ChartIndicator.propTypes = {
-  x: PropTypes.number.isRequired,
-  yBottom: PropTypes.number.isRequired,
+  x: PropTypes.number,
+  yBottom: PropTypes.number,
   yTop: PropTypes.number.isRequired,
   radius: PropTypes.number,
   label: PropTypes.oneOfType([
@@ -49,6 +49,8 @@ ChartIndicator.propTypes = {
 ChartIndicator.defaultProps = {
   radius: 0,
   label: '',
+  x: 0,
+  yBottom: 0,
 };
 
 export default ChartIndicator;

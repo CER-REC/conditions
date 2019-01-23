@@ -161,7 +161,7 @@ describe('Components|BubbleChart', () => {
     });
 
     test('should render a bubbleChart class', () => {
-      expect(wrapper.find('.BubbleChart')).toHaveLengthOf(1);
+      expect(wrapper.find('.BubbleChart')).toHaveLength(1);
     });
   });
 
@@ -174,12 +174,12 @@ describe('Components|BubbleChart', () => {
         instrumentChartData2={instrumentChartData2}
       />);
     });
-    it('should not show chartIndicator when false', () => {
-      expect(wrapper.find('ChartIndicator')).to.have.lengthOf(0);
+    test('should not show chartIndicator when false', () => {
+      expect(wrapper.find('ChartIndicator')).toHaveLength(0);
     });
-    it('should show the chartIndicator when true', () => {
+    test('should show the chartIndicator when true', () => {
       wrapper.setState({ display: true });
-      expect(wrapper.find('ChartIndicator')).to.have.lengthOf(1);
+      expect(wrapper.find('ChartIndicator')).toHaveLength(1);
     });
   });
 
@@ -192,7 +192,7 @@ describe('Components|BubbleChart', () => {
         instrumentChartData2={instrumentChartData2}
       />);
     });
-    it('should change the indicator position', () => {
+    test('should change the indicator position', () => {
       const circleProps = {
         r: 40,
         x: 79.36630443973255,
@@ -200,7 +200,7 @@ describe('Components|BubbleChart', () => {
         value: 40,
       };
       wrapper.find('InstrumentBubble').first().props().onClick(circleProps);
-      expect(wrapper.state().indicator).to.equal(0);
+      expect(wrapper.state().indicator).toBe(0);
     });
   });
 
@@ -228,44 +228,62 @@ describe('Components|BubbleChart', () => {
       keyCode: 37,
     };
 
-    it('should move right with rightArrow keypress if it didn\'t reach end of graph', () => {
-      wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
-      expect(wrapper.state().indicator).to.equal(1);
-    });
+    test(
+      'should move right with rightArrow keypress if it didn\'t reach end of graph',
+      () => {
+        wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
+        expect(wrapper.state().indicator).toBe(1);
+      }
+    );
 
-    it('should move right with keycode 39, if it didn\'t reach end of graph', () => {
-      wrapper.find('InstrumentBubble').first().props().keyPress(keyCodeRight);
-      expect(wrapper.state().indicator).to.equal(1);
-    });
+    test(
+      'should move right with keycode 39, if it didn\'t reach end of graph',
+      () => {
+        wrapper.find('InstrumentBubble').first().props().keyPress(keyCodeRight);
+        expect(wrapper.state().indicator).toBe(1);
+      }
+    );
 
-    it('should move left with leftArrow keypress if it didn\'t reach beginning of graph', () => {
-      wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
-      wrapper.find('InstrumentBubble').first().props().keyPress(arrowLeft);
-      expect(wrapper.state().indicator).to.equal(0);
-    });
+    test(
+      'should move left with leftArrow keypress if it didn\'t reach beginning of graph',
+      () => {
+        wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
+        wrapper.find('InstrumentBubble').first().props().keyPress(arrowLeft);
+        expect(wrapper.state().indicator).toBe(0);
+      }
+    );
 
-    it('should move left with keycode 38 if it didn\'t reach beginning of graph', () => {
-      wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
-      wrapper.find('InstrumentBubble').first().props().keyPress(keyCodeLeft);
-      expect(wrapper.state().indicator).to.equal(0);
-    });
+    test(
+      'should move left with keycode 38 if it didn\'t reach beginning of graph',
+      () => {
+        wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
+        wrapper.find('InstrumentBubble').first().props().keyPress(keyCodeLeft);
+        expect(wrapper.state().indicator).toBe(0);
+      }
+    );
 
-    it('should move to the end with arrow left at the beginning of chart', () => {
-      wrapper.find('InstrumentBubble').first().props().keyPress(arrowLeft);
-      expect(wrapper.state().indicator).to.be.greaterThan(2);
-    });
+    test(
+      'should move to the end with arrow left at the beginning of chart',
+      () => {
+        wrapper.find('InstrumentBubble').first().props().keyPress(arrowLeft);
+        expect(wrapper.state().indicator).toBeGreaterThan(2);
+      }
+    );
 
-    it('should move to the beginning of chart if arrow right at the end of chart', () => {
-      const circleProps = {
-        r: 25,
-        x: 815,
-        y: 200,
-        value: 10,
-      };
-      wrapper.find('InstrumentBubble').first().props().onClick(circleProps);
-      wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
-      expect(wrapper.state().indicator).to.equal(0);
-    });
+    test(
+      'should move to the beginning of chart if arrow right at the end of chart',
+      () => {
+        const circleProps = {
+          r: 25,
+          x: 815,
+          y: 200,
+          value: 10,
+        };
+        wrapper.find('InstrumentBubble').first().props().onClick(circleProps);
+        wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
+        expect(wrapper.state().indicator).toBe(0);
+      }
+    );
   });
 
   describe('onDrag', () => {
@@ -278,26 +296,29 @@ describe('Components|BubbleChart', () => {
       />);
     });
 
-    it('should not update indicator position if mouseMove without mouseDown', () => {
-      // Get props for onDragMove and check the state x position
-      const mouseDrag = {
-        clientX: 50,
-      };
-      wrapper.find('g').props().onMouseMove(mouseDrag);
-      expect(wrapper.state().indicator).to.equal(null);
-    });
+    test(
+      'should not update indicator position if mouseMove without mouseDown',
+      () => {
+        // Get props for onDragMove and check the state x position
+        const mouseDrag = {
+          clientX: 50,
+        };
+        wrapper.find('g').props().onMouseMove(mouseDrag);
+        expect(wrapper.state().indicator).toBeNull();
+      }
+    );
 
-    it('should update indicator position if mouseMove with mouseDown', () => {
+    test('should update indicator position if mouseMove with mouseDown', () => {
       const mouseDrag = {
         clientX: 50,
         clientY: 100,
       };
       wrapper.find('g').props().onMouseDown();
       wrapper.find('g').props().onMouseMove(mouseDrag);
-      expect(wrapper.state().indicator).to.equal(2);
+      expect(wrapper.state().indicator).toBe(2);
     });
 
-    it('should not update the indicator position once mouseUp occurs', () => {
+    test('should not update the indicator position once mouseUp occurs', () => {
       const mouseDrag1 = {
         clientX: 50,
         clientY: 100,
@@ -311,7 +332,7 @@ describe('Components|BubbleChart', () => {
       const prevIndicator = wrapper.state().indicator;
       wrapper.find('g').props().onMouseUp();
       wrapper.find('g').props().onMouseMove(mouseDrag2);
-      expect(wrapper.state().indicator).to.equal(prevIndicator);
+      expect(wrapper.state().indicator).toBe(prevIndicator);
     });
   });
 });
