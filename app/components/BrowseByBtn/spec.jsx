@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import BrowseByBtn from '.';
@@ -13,7 +12,7 @@ describe('Components|BrowseByBtn', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(<BrowseByBtn mode="company" onClick={spy} />);
     });
 
@@ -34,7 +33,7 @@ describe('Components|BrowseByBtn', () => {
 
     test('should call its onClick prop once', () => {
       wrapper.find('.BrowseByBtn').simulate('click', eventFuncs);
-      expect(spy.calledOnce).toBe(true);
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -42,7 +41,7 @@ describe('Components|BrowseByBtn', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(<BrowseByBtn mode="location" onClick={spy} />);
     });
 
@@ -52,7 +51,7 @@ describe('Components|BrowseByBtn', () => {
 
     test('should call its onClick prop once', () => {
       wrapper.find('.BrowseByBtn').simulate('click', eventFuncs);
-      expect(spy.calledOnce).toBe(true);
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

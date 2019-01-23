@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import ModalContent from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
@@ -36,7 +35,7 @@ describe('Components|Modal/ModalContent', () => {
   });
 
   test('should close dialog if close is clicked', () => {
-    const spy = sinon.spy();
+    const spy = jest.fn();
     wrapper = shallow((
       <ModalContent
         type=""
@@ -46,7 +45,7 @@ describe('Components|Modal/ModalContent', () => {
       />
     ));
     wrapper.find('.closeIcon').simulate('click', eventFuncs);
-    expect(spy.calledOnce).toBe(true);
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   test('should have a textButton where there is a modal action', () => {

@@ -30,15 +30,13 @@ callback?`
 
 ### What we are using:
 
-[Mocha](https://mochajs.org/) - as our test runner
+[Jest](https://js.io/) - as our test runner and assertion library
 
 * `describe`: An indicator of what unit is being tested (component, utility, etc)
 * `it`: An indicator of what logic is being tested (adds classname, calculates
   formula, etc)
 * `expect`: An assertation that something (variable, DOM, etc) matches our
   expectations
-
-[Chai](https://www.chaijs.com/) - as our assertion Library
 
 [Sinon](https://sinonjs.org/) - for our fixtures. Fixtures are just that, they
 are "fixed" to what ever they are attached to based on the scope they are given.

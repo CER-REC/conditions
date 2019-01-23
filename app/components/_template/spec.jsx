@@ -1,8 +1,6 @@
 /*
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
-import { expect } from 'chai';
 
 import MyComponentName from './';
 
@@ -14,11 +12,11 @@ describe('Components|MyComponentName', () => {
     });
 
     it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+      expect(wrapper.type()).toBe('div');
     });
 
     it('should have a MyComponentName class', () => {
-      expect(wrapper.is('.MyComponentName')).to.equal(true);
+      expect(wrapper.is('.MyComponentName')).toBe(true);
     });
   });
 });
