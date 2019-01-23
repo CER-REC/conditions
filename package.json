@@ -83,7 +83,7 @@
     "eslint-config-airbnb": "17.1.0",
     "eslint-formatter-gitlab": "1.0.2",
     "eslint-junit": "1.0.1",
-    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-import": "2.15.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.12.4",
     "express": "4.16.4",
