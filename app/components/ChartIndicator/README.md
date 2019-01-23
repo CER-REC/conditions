@@ -4,7 +4,7 @@ ChartIndicator is a public component that will be used by both StreamGraph and B
   * x: The x position that the arrow/line will be rendered at
   * ystart: The starting y value arrow will start at
   * yend: The ending y value that the line will stop at
-
+  * radius [optional]: A radius will render a circle at the end of the line
 ## Requirements
 * [X] Renders the arrow and the line
 * [X] Position them appropriately based on passed parameters
