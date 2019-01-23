@@ -6,11 +6,8 @@ import d3HierarchyCalculation from './d3HierarchyCalculation';
 
 const sortCombinedData = combinedNodes => combinedNodes
   .filter(node => (node.depth > 0))
-  .map(({
-    x, y, r, value, depth,
-  }) => ({
-    x, y, r, value, depth,
-  }))
+  // eslint-disable-next-line object-curly-newline
+  .map(({ x, y, r, value, depth }) => ({ x, y, r, value, depth }))
   .sort((a, b) => (a.x - b.x));
 
 class BubbleChart extends React.PureComponent {
@@ -89,10 +86,10 @@ class BubbleChart extends React.PureComponent {
     const sortedData = this.combineData();
     const svg = !this.svgRef.current ? { x: 156.3583, y: 187 }
       : this.svgRef.current.getClientRects()[0];
+    const subX = event.clientX - svg.x;
+    const subY = event.clientY - svg.y;
     const [index] = sortedData.reduce((acc, node, i) => {
       if (node.depth < 2) { return acc; }
-      const subX = event.clientX - svg.x;
-      const subY = event.clientY - svg.y;
       const distance = Math.sqrt(
         ((node.x - subX) ** 2) + ((node.y - subY) ** 2),
       );
