@@ -233,7 +233,7 @@ describe('Components|BubbleChart', () => {
       () => {
         wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
         expect(wrapper.state().indicator).toBe(1);
-      }
+      },
     );
 
     test(
@@ -241,7 +241,7 @@ describe('Components|BubbleChart', () => {
       () => {
         wrapper.find('InstrumentBubble').first().props().keyPress(keyCodeRight);
         expect(wrapper.state().indicator).toBe(1);
-      }
+      },
     );
 
     test(
@@ -250,7 +250,7 @@ describe('Components|BubbleChart', () => {
         wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
         wrapper.find('InstrumentBubble').first().props().keyPress(arrowLeft);
         expect(wrapper.state().indicator).toBe(0);
-      }
+      },
     );
 
     test(
@@ -259,7 +259,7 @@ describe('Components|BubbleChart', () => {
         wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
         wrapper.find('InstrumentBubble').first().props().keyPress(keyCodeLeft);
         expect(wrapper.state().indicator).toBe(0);
-      }
+      },
     );
 
     test(
@@ -267,7 +267,7 @@ describe('Components|BubbleChart', () => {
       () => {
         wrapper.find('InstrumentBubble').first().props().keyPress(arrowLeft);
         expect(wrapper.state().indicator).toBeGreaterThan(2);
-      }
+      },
     );
 
     test(
@@ -282,7 +282,7 @@ describe('Components|BubbleChart', () => {
         wrapper.find('InstrumentBubble').first().props().onClick(circleProps);
         wrapper.find('InstrumentBubble').first().props().keyPress(arrowRight);
         expect(wrapper.state().indicator).toBe(0);
-      }
+      },
     );
   });
 
@@ -305,7 +305,7 @@ describe('Components|BubbleChart', () => {
         };
         wrapper.find('g').props().onMouseMove(mouseDrag);
         expect(wrapper.state().indicator).toBeNull();
-      }
+      },
     );
 
     test('should update indicator position if mouseMove with mouseDown', () => {
