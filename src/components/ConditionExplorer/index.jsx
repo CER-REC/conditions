@@ -67,7 +67,8 @@ export default class ConditionExplorer extends React.Component {
       const outline = {
         x: x + textSize.xOffset,
         y: (y - textSize.height) + textSize.yOffset,
-        ...textSize,
+        width: textSize.width,
+        height: textSize.height,
       };
 
       const textVisible = (
