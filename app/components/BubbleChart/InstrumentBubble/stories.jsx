@@ -3,100 +3,63 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
 import InstrumentBubble from '.';
 import ReadMe from './README.md';
+import d3HierarchyCalculation from '../d3HierarchyCalculation';
 
-const instrumentChartData = {
+const instrumentChartData2 = {
   name: 'data',
   children: [{
-    parentName: 'gas',
+    parentName: 'anyCommodityTypes',
     children: [
       {
-        name: 'XG',
+        name: 'MO',
         children: [],
         value: 40,
-        category: 'construction',
+        category: 'misc',
       }, {
-        name: 'GC',
+        name: 'AO',
         children: [],
-        value: 30,
-        category: 'construction',
+        value: 40,
+        category: 'misc',
       },
       {
-        name: 'GPSO',
-        children: [],
-        value: 10,
-        category: 'opening',
-      },
-      {
-        name: 'SG',
+        name: 'ZO',
         children: [],
         value: 20,
-        category: 'safety',
-      },
-      {
-        name: 'GPLO',
-        children: [],
-        value: 5,
-        category: 'opening',
-      },
-      {
-        name: 'TG',
-        children: [],
-        value: 10,
-        category: 'tariffs',
+        category: 'routing',
       },
     ],
   },
   {
-    parentName: 'power',
+    parentName: 'notSpecified',
     children: [
       {
-        name: 'EC',
+        name: 'XC',
         children: [],
         value: 10,
         category: 'construction',
       },
       {
-        name: 'EPE',
+        name: 'CO',
         children: [],
-        value: 15,
-        category: 'construction',
+        value: 10,
+        category: 'misc',
       },
     ],
-  },
-  {
-    parentName: 'oil',
-    children: [{
-      name: 'XO',
-      children: [],
-      value: 40,
-      category: 'construction',
-    },
-    {
-      name: 'SO',
-      children: [],
-      value: 30,
-      category: 'safety',
-    }, {
-      name: 'OC',
-      children: [],
-      value: 40,
-      category: 'construction',
-    }, {
-      name: 'OPLO',
-      children: [],
-      value: 10,
-      category: 'opening',
-    }, {
-      name: 'OPSO',
-      children: [],
-      value: 10,
-      category: 'opening',
-    }],
   }],
 };
 
 storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
-    <InstrumentBubble instrumentChartData={instrumentChartData} width={500} height={450} onClick={() => alert('Clicked')} />
+    <svg width={300} height={400}>
+      <InstrumentBubble
+        onClick={() => alert('you clicked')}
+        keyPress={() => alert('you pressed a key')}
+        d3Calculation={d3HierarchyCalculation(
+          instrumentChartData2,
+          300,
+          400,
+        )}
+      />
+    </svg>
   ));
