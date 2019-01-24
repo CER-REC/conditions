@@ -20,12 +20,9 @@ export default memoize((callback) => {
       dragging = false;
     },
 
-    // TODO: This doesn't work since we want to handle leaving the parent el
-    /*
-    onMouseOut: (e) => {
+    onMouseLeave: (e) => {
       e.preventDefault();
       dragging = false;
     },
-    */
   };
 }, callback => memoizeReference(callback));

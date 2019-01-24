@@ -97,16 +97,19 @@ export default class ConditionExplorer extends React.Component {
   updateGuidePosition = (x, y) => {
     const svgBounds = this.svgRef.current
       ? this.svgRef.current.getBoundingClientRect()
-      : { x: 0, y: 0 };
+      : { top: 0, left: 0 };
     this.setState({
       guidePosition: {
-        x: x - svgBounds.x,
-        y: y - svgBounds.y,
+        x: x - svgBounds.left,
+        y: y - svgBounds.top,
       },
     });
   };
 
   render() {
+    // These props are split between circle and SVG to provide better control
+    // when dragging quickly.
+    const { onMouseDown, ...dragProps } = handleDrag(this.updateGuidePosition);
     return (
       <svg
         ref={this.svgRef}
@@ -114,6 +117,7 @@ export default class ConditionExplorer extends React.Component {
         width="500"
         height="500"
         style={{ border: '1px solid #000' }}
+        {...dragProps}
       >
         <text ref={this.textSizeRef} style={{ visibility: 'hidden' }} />
         {this.getKeywords()}
@@ -123,7 +127,7 @@ export default class ConditionExplorer extends React.Component {
           cx={this.state.guidePosition.x}
           cy={this.state.guidePosition.y}
           r={this.state.guideRadius}
-          {...handleDrag(this.updateGuidePosition)}
+          onMouseDown={onMouseDown}
         />
       </svg>
     );
