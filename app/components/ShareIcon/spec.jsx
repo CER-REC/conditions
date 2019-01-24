@@ -7,6 +7,8 @@ import ShareIcon from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
+const target = 'facebook';
+const icon = '';
 
 describe('Components|ShareIcon', () => {
   describe('with default props', () => {
@@ -14,7 +16,7 @@ describe('Components|ShareIcon', () => {
     let spy;
     beforeEach(() => {
       spy = sinon.spy();
-      wrapper = shallow(<ShareIcon onClick={spy} />);
+      wrapper = shallow(<ShareIcon onClick={spy} target={target} icon={icon} />);
     });
 
     test('should render', () => {
@@ -29,6 +31,8 @@ describe('Components|ShareIcon', () => {
       const tester = shallow((
         <ShareIcon
           onClick={() => {}}
+          target={target}
+          icon={icon}
         >
           Test
         </ShareIcon>
@@ -37,9 +41,12 @@ describe('Components|ShareIcon', () => {
     });
 
     test('should handle if target is facebook', () => {
+      global.open = jest.fn();
+
       wrapper.setProps({ target: 'facebook' });
       expect(wrapper.simulate('click', eventFuncs));
       expect(wrapper.find('Icon').props().icon).toBe('facebook');
+      expect(global.open).toBeCalled();
     });
 
     test('should handle if target is twitter', () => {

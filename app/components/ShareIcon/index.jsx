@@ -53,7 +53,7 @@ class ShareIcon extends React.PureComponent {
 ShareIcon.propTypes = {
   className: PropTypes.string,
   prefix: PropTypes.string,
-  target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin']).isRequired,
+  target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin', 'envelope']).isRequired,
 };
 
 ShareIcon.defaultProps = {

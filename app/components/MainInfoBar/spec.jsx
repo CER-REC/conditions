@@ -11,7 +11,7 @@ describe('Components|MainInfoBar', () => {
     beforeEach(() => {
       spy = sinon.spy();
       wrapper = shallow(<MainInfoBar
-        handleOnClick={spy}
+        onChange={spy}
       />);
     });
 
