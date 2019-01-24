@@ -9,6 +9,15 @@ export default class ConditionExplorer extends React.Component {
     changeVisibleWords: PropTypes.func.isRequired,
   };
 
+  calculateTextSize = memoize((text) => {
+    const el = this.textSizeRef.current;
+    el.textContent = text;
+    /* eslint-disable object-curly-newline */
+    const { width, height, x, y } = el.getBBox();
+    return { width, height, xOffset: x, yOffset: height + y };
+    /* eslint-enable object-curly-newline */
+  });
+
   constructor(props) {
     super(props);
     this.svgRef = React.createRef();
@@ -20,50 +29,54 @@ export default class ConditionExplorer extends React.Component {
     this.forceUpdate();
   }
 
-  calculateTextSize = memoize((text) => {
-    const el = this.textSizeRef.current;
-    el.textContent = text;
-    const { width, height } = el.getBBox();
-    return { width, height };
-  });
-
-  render() {
-    let keywords = [];
+  getKeywords() {
+    if (!this.textSizeRef.current) { return []; }
     const size = !this.svgRef.current
       ? { width: 0, height: 0 }
       : {
         width: this.svgRef.current.width.baseVal.value,
         height: this.svgRef.current.height.baseVal.value,
       };
-    if (this.textSizeRef.current) {
-      let x = 0;
-      // The top needs to be one line down to account for y=bottom of text
-      let y = this.calculateTextSize(this.props.keywords[0]).height;
-      keywords = this.props.keywords.map((v) => {
-        const textSize = this.calculateTextSize(v);
-        if (x + textSize.width > size.width) {
-          x = 0;
-          y += textSize.height;
-        }
-        if (y > size.height) {
-          return null;
-        }
-        const el = (
+
+    const startX = -50; // Off the left edge to match design
+    const margin = { width: 10, height: 10 };
+
+    const lineHeight = this.calculateTextSize('Placeholder').height + margin.height;
+    // The top needs to be one line down to account for y=bottom of text
+    let y = lineHeight - margin.height;
+    let x = startX;
+
+    return this.props.keywords.map((v) => {
+      // TODO: Need a better way of shortcircuiting the map
+      if (y > size.height) { return null; }
+      const textSize = this.calculateTextSize(v);
+      const el = (
+        <React.Fragment key={v}>
+          <rect
+            x={x + textSize.xOffset}
+            y={(y - textSize.height) + textSize.yOffset}
+            {...textSize}
+            fill="red"
+          />
           <text
-            key={v}
             x={x}
             y={y}
-            alignmentBaseline="top"
             color="#000"
           >
             {v}
           </text>
-        );
-        x += textSize.width;
-        return el;
-      });
-    }
+        </React.Fragment>
+      );
+      x += textSize.width + margin.width;
+      if (x >= size.width) {
+        x = startX;
+        y += lineHeight; // We don't add the text size since it may wrap
+      }
+      return el;
+    });
+  }
 
+  render() {
     return (
       <svg
         ref={this.svgRef}
@@ -72,7 +85,7 @@ export default class ConditionExplorer extends React.Component {
         style={{ border: '1px solid #000' }}
       >
         <text ref={this.textSizeRef} style={{ visibility: 'hidden' }} />
-        {keywords}
+        {this.getKeywords()}
       </svg>
     );
   }
