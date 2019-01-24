@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import InstrumentBubble from '.';
+import d3HierarchyCalculation from '../d3HierarchyCalculation';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
@@ -124,21 +125,15 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     beforeEach(() => {
       wrapper = shallow(
         <InstrumentBubble
-          instrumentChartData={instrumentChartData}
-          width={400}
-          height={400}
           onClick={noop}
+          keyPress={noop}
+          d3Calculation={d3HierarchyCalculation(
+            instrumentChartData,
+            550,
+            400,
+          )}
         />,
       );
-    });
-    test('should render an svg', () => {
-      expect(wrapper.find('svg')).toHaveLength(1);
-    });
-    test('should render svg with proper width', () => {
-      expect(wrapper.find('svg').prop('width')).toBe(400);
-    });
-    test('should render svg with proper height', () => {
-      expect(wrapper.find('svg').prop('height')).toBe(400);
     });
     test('should render atleast one circle', () => {
       expect((wrapper).find('circle').exists()).toBe(true);
@@ -152,10 +147,13 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
       spy = sinon.spy();
       wrapper = shallow(
         <InstrumentBubble
-          instrumentChartData={instrumentChartData}
           onClick={spy}
-          width={400}
-          height={400}
+          keyPress={spy}
+          d3Calculation={d3HierarchyCalculation(
+            instrumentChartData,
+            550,
+            400,
+          )}
         />,
       );
     });
