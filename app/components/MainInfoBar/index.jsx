@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
@@ -55,12 +54,11 @@ class MainInfoBar extends React.PureComponent {
     return textButton;
   }
 
-  shareIcons() {
+  render() {
     const iconsList = ['twitter', 'facebook', 'linkedin'];
     const emailIcon = (
       <ShareIcon
         target="email"
-        onChange={this.props.onChange}
         prefix="fas"
       />
     );
@@ -69,18 +67,8 @@ class MainInfoBar extends React.PureComponent {
         key={k}
         target={k}
         prefix="fab"
-        onChange={this.props.onChange}
       />
     ));
-    return (
-      <div className="ShareIcons">
-        {emailIcon}
-        {icons}
-      </div>
-    );
-  }
-
-  render() {
     return (
       <div className="MainInfoBar">
         <hr />
@@ -90,7 +78,10 @@ class MainInfoBar extends React.PureComponent {
           {this.getDialogContent()}
         </div>
         <br />
-        {this.shareIcons()}
+        <div className="ShareIcons">
+          {emailIcon}
+          {icons}
+        </div>
         <br />
         {
           this.state.activeDialog === ''
@@ -109,9 +100,5 @@ class MainInfoBar extends React.PureComponent {
     );
   }
 }
-
-MainInfoBar.propTypes = {
-  onChange: PropTypes.func.isRequired,
-};
 
 export default MainInfoBar;

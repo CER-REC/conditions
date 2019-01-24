@@ -97,8 +97,7 @@ class ShortcutInfoBar extends React.PureComponent {
     const shareIconsList = ['twitter', 'facebook', 'linkedin'];
     const emailIcon = (
       <ShareIcon
-        key="email"
-        target="envelope"
+        target="email"
         prefix="fas"
       />
     );

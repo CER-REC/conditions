@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
@@ -14,7 +15,8 @@ class ShareIcon extends React.PureComponent {
 
   handleOnClick = () => {
     if (this.props.target === 'email') {
-      window.location.href = 'mailto:?subject=&body=';
+      const url = 'mailto:?subject=&body=';
+      window.location.assign(url);
       return;
     }
     let url; // TODO: get shortened bitly URL
@@ -39,7 +41,10 @@ class ShareIcon extends React.PureComponent {
     const icon = this.props.target === 'email' ? 'envelope' : this.props.target;
     return (
       <div
-        className="ShareIcon"
+        className={classNames(
+          'ShareIcon',
+          this.props.className,
+        )}
         {...handleInteraction(this.handleOnClick)}
       >
         <CircleContainer size="20px">
@@ -53,7 +58,7 @@ class ShareIcon extends React.PureComponent {
 ShareIcon.propTypes = {
   className: PropTypes.string,
   prefix: PropTypes.string,
-  target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin', 'envelope']).isRequired,
+  target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin']).isRequired,
 };
 
 ShareIcon.defaultProps = {

@@ -1,18 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import MainInfoBar from '.';
 
 describe('Components|MainInfoBar', () => {
   describe('with default props', () => {
     let wrapper;
-    let spy;
     beforeEach(() => {
-      spy = sinon.spy();
-      wrapper = shallow(<MainInfoBar
-        onChange={spy}
-      />);
+      wrapper = shallow(<MainInfoBar />);
     });
 
     test('should render', () => {

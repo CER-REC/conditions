@@ -6,3 +6,4 @@ import { monkeyPatchShallowWithIntl } from './utilities';
 registerRequireContextHook();
 configure({ adapter: new Adapter() });
 monkeyPatchShallowWithIntl();
+global.open = jest.fn();

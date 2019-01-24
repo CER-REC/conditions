@@ -13,9 +13,6 @@ library.add(
 storiesForComponent('Components|ShareIcon', module, ReadMe)
   .addDecorator(withStatus('underReview'))
   .add('default icon', () => (
-    <ShareIcon icon="twitter" target="twitter" />
-  ))
-  .add('with props: onChange', () => (
-    <ShareIcon icon="twitter" target="twitter" onChange={() => alert('clicked')} />
+    <ShareIcon target="twitter" />
   ));
 

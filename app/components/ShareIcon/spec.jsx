@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import { shouldHaveInteractionProps } from '../../tests/utilities';
+import { shouldBehaveLikeAComponent, shouldHaveInteractionProps } from '../../tests/utilities';
 
 import ShareIcon from '.';
 
@@ -13,19 +13,11 @@ const icon = '';
 describe('Components|ShareIcon', () => {
   describe('with default props', () => {
     let wrapper;
-    let spy;
     beforeEach(() => {
-      spy = sinon.spy();
-      wrapper = shallow(<ShareIcon onClick={spy} target={target} icon={icon} />);
+      wrapper = shallow(<ShareIcon target={target} icon={icon} />);
     });
 
-    test('should render', () => {
-      expect(wrapper.type()).toBe('div');
-    });
-
-    test('should have a className', () => {
-      expect(wrapper.is('.ShareIcon')).toBe(true);
-    });
+    shouldBehaveLikeAComponent(ShareIcon, () => wrapper);
 
     test('should have take in an onClick props', () => {
       const tester = shallow((
@@ -41,8 +33,6 @@ describe('Components|ShareIcon', () => {
     });
 
     test('should handle if target is facebook', () => {
-      global.open = jest.fn();
-
       wrapper.setProps({ target: 'facebook' });
       expect(wrapper.simulate('click', eventFuncs));
       expect(wrapper.find('Icon').props().icon).toBe('facebook');
@@ -51,17 +41,25 @@ describe('Components|ShareIcon', () => {
 
     test('should handle if target is twitter', () => {
       wrapper.setProps({ target: 'twitter' });
+      expect(wrapper.simulate('click', eventFuncs));
       expect(wrapper.find('Icon').props().icon).toBe('twitter');
+      expect(global.open).toBeCalled();
     });
 
     test('should handle if target is linkedin', () => {
       wrapper.setProps({ target: 'linkedin' });
+      expect(wrapper.simulate('click', eventFuncs));
       expect(wrapper.find('Icon').props().icon).toBe('linkedin');
+      expect(global.open).toBeCalled();
     });
 
     test('should handle if target is email', () => {
+      const url = 'test';
+      sinon.stub(window.location, 'assign');
       wrapper.setProps({ target: 'email' });
+      expect(wrapper.simulate('click', eventFuncs));
       expect(wrapper.find('Icon').props().icon).toBe('envelope');
+      expect(window.location).toBe(url);
     });
   });
 });
