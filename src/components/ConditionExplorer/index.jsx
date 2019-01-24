@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'lodash.memoize';
+import handleDrag from '../../utilities/handleDrag';
 import './styles.scss';
 
 export default class ConditionExplorer extends React.Component {
@@ -22,6 +23,11 @@ export default class ConditionExplorer extends React.Component {
     super(props);
     this.svgRef = React.createRef();
     this.textSizeRef = React.createRef();
+
+    this.state = {
+      guidePosition: { x: 100, y: 100 },
+      guideRadius: 50,
+    };
   }
 
   componentDidMount() {
@@ -46,27 +52,27 @@ export default class ConditionExplorer extends React.Component {
     let y = lineHeight - margin.height;
     let x = startX;
 
+    const { guidePosition, guideRadius } = this.state;
+
     return this.props.keywords.map((v) => {
       // TODO: Need a better way of shortcircuiting the map
       if (y > size.height) { return null; }
+
       const textSize = this.calculateTextSize(v);
+      const outline = {
+        x: x + textSize.xOffset,
+        y: (y - textSize.height) + textSize.yOffset,
+        ...textSize,
+      };
+
       const el = (
-        <React.Fragment key={v}>
-          <rect
-            x={x + textSize.xOffset}
-            y={(y - textSize.height) + textSize.yOffset}
-            {...textSize}
-            fill="red"
-          />
-          <text
-            x={x}
-            y={y}
-            color="#000"
-          >
-            {v}
-          </text>
-        </React.Fragment>
-      );
+        guidePosition.x - guideRadius < outline.x + outline.width
+        && guidePosition.x + guideRadius > outline.x
+        && guidePosition.y - guideRadius < outline.y + outline.height
+        && guidePosition.y + guideRadius > outline.y
+      )
+        ? <text key={v} x={x} y={y} color="#000">{v}</text>
+        : <rect key={v} {...outline} fill="red" />;
       x += textSize.width + margin.width;
       if (x >= size.width) {
         x = startX;
@@ -75,6 +81,18 @@ export default class ConditionExplorer extends React.Component {
       return el;
     });
   }
+
+  updateGuidePosition = (x, y) => {
+    const svgBounds = this.svgRef.current
+      ? this.svgRef.current.getBoundingClientRect()
+      : { x: 0, y: 0 };
+    this.setState({
+      guidePosition: {
+        x: x - svgBounds.x,
+        y: y - svgBounds.y,
+      },
+    });
+  };
 
   render() {
     return (
@@ -86,6 +104,14 @@ export default class ConditionExplorer extends React.Component {
       >
         <text ref={this.textSizeRef} style={{ visibility: 'hidden' }} />
         {this.getKeywords()}
+        <circle
+          fill="transparent"
+          stroke="#000"
+          cx={this.state.guidePosition.x}
+          cy={this.state.guidePosition.y}
+          r={this.state.guideRadius}
+          {...handleDrag(this.updateGuidePosition)}
+        />
       </svg>
     );
   }
