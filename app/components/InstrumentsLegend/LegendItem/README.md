@@ -5,5 +5,5 @@ List component in the InstrumentsLegend component.
 
 ## Requirements
 
-* [ X ] Renders the rectangles
-* [ X ] Renders a title
+* [X] Renders the rectangles
+* [X] Renders a title

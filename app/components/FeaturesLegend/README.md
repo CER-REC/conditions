@@ -8,13 +8,13 @@ The others appear as 30% opacity.
 
 # Requirements
 
-* [ X ] Company Wheel:
-  * [ X ] should render the Project Legend
-  * [ X ] should render the Number of Conditions portion of the legend
-  * [ X ] should render the icon for Total Number of Conditions for Project
-* [ X ] Location Wheel:
-  * [ X ] should render the Features Legend
-  * [ X ] should render the asertisk for Associated Companies
+* [X] Company Wheel:
+  * [X] should render the Project Legend
+  * [X] should render the Number of Conditions portion of the legend
+  * [X] should render the icon for Total Number of Conditions for Project
+* [X] Location Wheel:
+  * [X] should render the Features Legend
+  * [X] should render the asertisk for Associated Companies
 
 ## Interaction Requirements
 
