@@ -5,6 +5,10 @@ import classNames from 'classnames';
 import handleDrag from '../../utilities/handleDrag';
 import './styles.scss';
 
+// This function memoizes based on the keyword, but doesn't use it in the result
+// function. It is only used in the (default) key generation function (2nd arg)
+const randomColor = memoize(() => `color${Math.floor(Math.random() * 3)}`);
+
 export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -76,7 +80,7 @@ export default class ConditionExplorer extends React.Component {
       const el = (
         <g key={v} className={classNames('keyword', { textVisible })}>
           <text key={v} x={x} y={y}>{v}</text>
-          <rect {...outline} fill="red" />
+          <rect {...outline} className={randomColor(v)} />
         </g>
       );
 

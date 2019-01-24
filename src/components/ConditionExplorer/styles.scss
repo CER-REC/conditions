@@ -6,6 +6,9 @@
     rect {
       opacity: 1;
       transition: opacity 1s 1s;
+      &.color0 { fill: #D7DBD9; }
+      &.color1 { fill: #E2DCD7; }
+      &.color2 { fill: #E0DCE0; }
     }
 
     text {
