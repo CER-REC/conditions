@@ -9,6 +9,12 @@ import './styles.scss';
 // function. It is only used in the (default) key generation function (2nd arg)
 const randomColor = memoize(() => `color${Math.floor(Math.random() * 3)}`);
 
+const testForCollision = (circle, rect) => {
+  const deltaX = circle.x - Math.max(rect.x, Math.min(circle.x, rect.x + rect.width));
+  const deltaY = circle.y - Math.max(rect.y, Math.min(circle.y, rect.y + rect.height));
+  return (deltaX ** 2) + (deltaY ** 2) < (circle.r ** 2);
+};
+
 export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -30,8 +36,7 @@ export default class ConditionExplorer extends React.Component {
     this.textSizeRef = React.createRef();
 
     this.state = {
-      guidePosition: { x: 100, y: 100 },
-      guideRadius: 50,
+      guide: { x: 100, y: 100, r: 50 },
     };
   }
 
@@ -57,8 +62,6 @@ export default class ConditionExplorer extends React.Component {
     let y = lineHeight - margin.height;
     let x = startX;
 
-    const { guidePosition, guideRadius } = this.state;
-
     return this.props.keywords.map((v) => {
       // TODO: Need a better way of shortcircuiting the map
       if (y > size.height) { return null; }
@@ -71,12 +74,7 @@ export default class ConditionExplorer extends React.Component {
         height: textSize.height,
       };
 
-      const textVisible = (
-        guidePosition.x - guideRadius < outline.x + outline.width
-        && guidePosition.x + guideRadius > outline.x
-        && guidePosition.y - guideRadius < outline.y + outline.height
-        && guidePosition.y + guideRadius > outline.y
-      );
+      const textVisible = testForCollision(this.state.guide, outline);
 
       const el = (
         <g key={v} className={classNames('keyword', { textVisible })}>
@@ -99,7 +97,8 @@ export default class ConditionExplorer extends React.Component {
       ? this.svgRef.current.getBoundingClientRect()
       : { top: 0, left: 0 };
     this.setState({
-      guidePosition: {
+      guide: {
+        ...this.state.guide,
         x: x - svgBounds.left,
         y: y - svgBounds.top,
       },
@@ -124,9 +123,9 @@ export default class ConditionExplorer extends React.Component {
         <circle
           fill="transparent"
           stroke="#000"
-          cx={this.state.guidePosition.x}
-          cy={this.state.guidePosition.y}
-          r={this.state.guideRadius}
+          cx={this.state.guide.x}
+          cy={this.state.guide.y}
+          r={this.state.guide.r}
           onMouseDown={onMouseDown}
         />
       </svg>
