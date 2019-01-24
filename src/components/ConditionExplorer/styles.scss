@@ -1,0 +1,34 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fontVariables.scss';
+
+.ConditionExplorer {
+  .keyword {
+    rect {
+      opacity: 1;
+      transition: opacity 1s 1s;
+    }
+
+    text {
+      // TODO: These font styles are from the prototype, and not found in the
+      // design document. We need to provide an issue for the design document
+      // and have these recorded or changed.
+      font-family: $fira-sans-condensed-light;
+      fill: rgb(149, 127, 109);
+      // font-size: 12px;
+      transition: all 1s;
+    }
+
+    &.textVisible {
+      rect {
+        /* Disable the transition when it becomes visible, so it appears immediately */
+        transition: none;
+        opacity: 0;
+      }
+
+      text {
+        // font-size: 16px;
+        fill: rgb(17, 17, 17);
+      }
+    }
+  }
+}

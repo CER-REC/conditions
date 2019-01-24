@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'lodash.memoize';
+import classNames from 'classnames';
 import handleDrag from '../../utilities/handleDrag';
 import './styles.scss';
 
@@ -65,14 +66,20 @@ export default class ConditionExplorer extends React.Component {
         ...textSize,
       };
 
-      const el = (
+      const textVisible = (
         guidePosition.x - guideRadius < outline.x + outline.width
         && guidePosition.x + guideRadius > outline.x
         && guidePosition.y - guideRadius < outline.y + outline.height
         && guidePosition.y + guideRadius > outline.y
-      )
-        ? <text key={v} x={x} y={y} color="#000">{v}</text>
-        : <rect key={v} {...outline} fill="red" />;
+      );
+
+      const el = (
+        <g key={v} className={classNames('keyword', { textVisible })}>
+          <text key={v} x={x} y={y}>{v}</text>
+          <rect {...outline} fill="red" />
+        </g>
+      );
+
       x += textSize.width + margin.width;
       if (x >= size.width) {
         x = startX;
@@ -98,6 +105,7 @@ export default class ConditionExplorer extends React.Component {
     return (
       <svg
         ref={this.svgRef}
+        className="ConditionExplorer"
         width="500"
         height="500"
         style={{ border: '1px solid #000' }}
