@@ -6,7 +6,5 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .add('with state toggle', () => (
-    <MainInfoBar />
-  ));
+  .add('default', () => <MainInfoBar />);
 

@@ -12,7 +12,8 @@ library.add(
 
 storiesForComponent('Components|ShareIcon', module, ReadMe)
   .addDecorator(withStatus('underReview'))
-  .add('default icon', () => (
-    <ShareIcon target="twitter" />
-  ));
+  .add('twitter', () => <ShareIcon target="twitter" />)
+  .add('facebook', () => <ShareIcon target="facebook" />)
+  .add('linkedin', () => <ShareIcon target="linkedin" />)
+  .add('email', () => <ShareIcon target="email" prefix="fas" />);
 
