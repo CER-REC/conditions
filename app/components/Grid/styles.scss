@@ -1,0 +1,40 @@
+
+.item-view-one {
+  grid-area: one;
+}
+
+.item-view-two {
+  grid-area: two;
+}
+
+.item-view-three {
+  grid-area: three;
+}
+
+.item-view-footer{
+  grid-area: footer;
+}
+
+:root {
+  --mainColor: #12345678;
+}
+
+
+.Grid {
+  color: var(--mainColor);
+  align-content: center;
+  align-items: center;
+  display: grid;
+  grid-auto-flow: row;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-template-columns: 100%;
+  grid-template-rows: 400px 200px 300px;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "footer";
+  justify-items: center;
+  justify-content: center;
+}
