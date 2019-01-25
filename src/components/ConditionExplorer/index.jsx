@@ -57,7 +57,7 @@ export default class ConditionExplorer extends React.Component {
     const startX = -50; // Off the left edge to match design
     const margin = { width: 10, height: 10 };
 
-    const lineHeight = this.calculateTextSize('Placeholder').height + margin.height;
+    const lineHeight = this.calculateTextSize('Placeholder hanging').height + margin.height;
     // The top needs to be one line down to account for y=bottom of text
     let y = lineHeight - margin.height;
     let x = startX;
@@ -96,13 +96,13 @@ export default class ConditionExplorer extends React.Component {
     const svgBounds = this.svgRef.current
       ? this.svgRef.current.getBoundingClientRect()
       : { top: 0, left: 0 };
-    this.setState({
+    this.setState(({ guide }) => ({
       guide: {
-        ...this.state.guide,
+        ...guide,
         x: x - svgBounds.left,
         y: y - svgBounds.top,
       },
-    });
+    }));
   };
 
   render() {
