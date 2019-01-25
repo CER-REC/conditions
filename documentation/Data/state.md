@@ -30,7 +30,7 @@ Template of data for component states:
             *feature: string, // one of theme, instrument, phase, type, status, filing (only needed for location to determine charts in location)
             selectedID: number, // company/region id (assuming region id is a number)
             filterYears: [number],
-            filterStatus: [string], // one of open, closed, canceled, draft?
+            filterStatuses: [string], // one of open, closed, canceled, draft?
         },
         
         ProjectMenu: {
@@ -58,7 +58,7 @@ Template of data for component states:
             scroll: number, // needed?
             projectName: string, // blank for location view
         },
-    }
+    },
 
     View3: {
         *feature: string, // used in FeaturesMenu.selected, SmallMultiplesLegend.title
@@ -74,7 +74,6 @@ Template of data for component states:
             *chartTitle: string, // based on feature/sub-feature
             selectedYear: number,
         },
-
         
         // if View3.selected !== instrument
         SmallMultiplesLegend: {
@@ -111,7 +110,7 @@ Template of data for component states:
             projectName: string, // blank for location view
             open: boolean,
         },
-    }
+    },
     
 }
 </pre>
