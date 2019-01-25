@@ -10051,6 +10051,379 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegionConditionSummary"
+  >
+    <div
+      className="ChartContainer"
+    >
+      <div
+        className="BorderBottom"
+      />
+      <div
+        className="RegionConditionSummaryText"
+      >
+        <span>
+          Total Conditions for Selected Region
+        </span>
+      </div>
+    </div>
+    <svg
+      className="YAxis"
+    >
+      <text
+        fill="rgb(161, 168, 167)"
+        x="45"
+        y="21"
+      >
+        100
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="15"
+      />
+      <text
+        fill="rgb(161, 168, 167)"
+        x="58"
+        y="85"
+      >
+        0
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="50"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegionConditionSummary"
+  >
+    <div
+      className="ChartContainer"
+    >
+      <div
+        className="BorderBottom"
+      />
+      <div
+        className="RegionConditionSummaryText"
+      >
+        <span>
+          Total Conditions for Selected Region
+        </span>
+      </div>
+    </div>
+    <svg
+      className="YAxis"
+    >
+      <text
+        fill="rgb(161, 168, 167)"
+        x="45"
+        y="21"
+      >
+        100
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="15"
+      />
+      <text
+        fill="rgb(161, 168, 167)"
+        x="58"
+        y="85"
+      >
+        0
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="50"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegionConditionSummary"
+  >
+    <div
+      className="ChartContainer"
+    >
+      <div
+        className="BorderBottom"
+      />
+      <div
+        className="RegionConditionSummaryText"
+      >
+        <span>
+          Total Conditions for Selected Region
+        </span>
+      </div>
+    </div>
+    <svg
+      className="YAxis"
+    >
+      <text
+        fill="rgb(161, 168, 167)"
+        x="45"
+        y="21"
+      >
+        100
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="15"
+      />
+      <text
+        fill="rgb(161, 168, 167)"
+        x="58"
+        y="85"
+      >
+        0
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="50"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with theme data 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegionConditionSummary"
+  >
+    <div
+      className="RegionConditionChart"
+    >
+      <svg
+        className="BarContainer"
+        height={50}
+        width={400}
+      >
+        <g
+          className="BarContainer"
+          height={50}
+          width={400}
+        >
+          <title>
+            title
+          </title>
+          <desc>
+            description
+          </desc>
+          <rect
+            className="Bar"
+            fill="pink"
+            height={50}
+            width={26.666666666666668}
+            x={0}
+            y={0}
+          />
+          <rect
+            className="Bar"
+            fill="red"
+            height={20}
+            width={26.666666666666668}
+            x={26.666666666666668}
+            y={30}
+          />
+          <rect
+            className="Bar"
+            fill="green"
+            height={43}
+            width={26.666666666666668}
+            x={53.333333333333336}
+            y={7}
+          />
+          <rect
+            className="Bar"
+            fill="blue"
+            height={15}
+            width={26.666666666666668}
+            x={80}
+            y={35}
+          />
+          <rect
+            className="Bar"
+            fill="purple"
+            height={5}
+            width={26.666666666666668}
+            x={106.66666666666667}
+            y={45}
+          />
+          <rect
+            className="Bar"
+            fill="yellow"
+            height={15}
+            width={26.666666666666668}
+            x={133.33333333333334}
+            y={35}
+          />
+          <rect
+            className="Bar"
+            fill="orange"
+            height={3}
+            width={26.666666666666668}
+            x={160}
+            y={47}
+          />
+          <rect
+            className="Bar"
+            fill="navy"
+            height={15}
+            width={26.666666666666668}
+            x={186.66666666666669}
+            y={35}
+          />
+          <rect
+            className="Bar"
+            fill="plum"
+            height={3}
+            width={26.666666666666668}
+            x={213.33333333333334}
+            y={47}
+          />
+          <rect
+            className="Bar"
+            fill="olive"
+            height={3}
+            width={26.666666666666668}
+            x={240}
+            y={47}
+          />
+          <rect
+            className="Bar"
+            fill="coral"
+            height={3}
+            width={26.666666666666668}
+            x={266.6666666666667}
+            y={47}
+          />
+          <rect
+            className="Bar"
+            fill="cadetBlue"
+            height={3}
+            width={26.666666666666668}
+            x={293.33333333333337}
+            y={47}
+          />
+          <rect
+            className="Bar"
+            fill="darkGreen"
+            height={3}
+            width={26.666666666666668}
+            x={320}
+            y={47}
+          />
+          <rect
+            className="Bar"
+            fill="black"
+            height={4}
+            width={26.666666666666668}
+            x={346.6666666666667}
+            y={46}
+          />
+          <rect
+            className="Bar"
+            fill="#e4e4e4"
+            height={0}
+            width={26.666666666666668}
+            x={373.33333333333337}
+            y={50}
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with type data 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegionConditionSummary"
+  >
+    <div
+      className="RegionConditionChart"
+    >
+      <svg
+        className="BarContainer"
+        height={100}
+        width={400}
+      >
+        <g
+          className="BarContainer"
+          height={100}
+          width={400}
+        >
+          <title>
+            title
+          </title>
+          <desc>
+            description
+          </desc>
+          <rect
+            className="Bar"
+            fill="pink"
+            height={50}
+            width={200}
+            x={0}
+            y={50}
+          />
+          <rect
+            className="Bar"
+            fill="purple"
+            height={100}
+            width={200}
+            x={200}
+            y={0}
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SelectedGroupBar default 1`] = `
 <div
   className="visualization"
