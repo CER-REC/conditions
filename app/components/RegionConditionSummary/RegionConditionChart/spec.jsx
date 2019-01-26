@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import RegionConditionChart from '.';
 
 const themeData = [
@@ -20,27 +21,19 @@ const themeData = [
   { color: '#e4e4e4', description: 'all', count: 0 },
 ];
 
-const typeData = [
-  { color: 'pink', description: 'standardCondition', count: 50 },
-  { color: 'purple', description: 'nonStandardCondition', count: 100 },
-];
-
 describe('Component|RegionConditionSummary/RegionConditionChart', () => {
   describe('with no data', () => {
-    const wrapper = shallow(<RegionConditionChart className="" featureData={[]} />);
     test('should return null', () => {
-      expect(wrapper.type()).toBeNull();
+      expect(shallow(<RegionConditionChart featureData={[]} />).type()).toBeNull();
     });
   });
 
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<RegionConditionChart className="" featureData={themeData} />);
+      wrapper = shallow(<RegionConditionChart featureData={themeData} />);
     });
 
-    test('should render', () => {
-      expect(wrapper.type()).toBe('div');
-    });
+    shouldBehaveLikeAComponent(RegionConditionChart, () => wrapper);
   });
 });

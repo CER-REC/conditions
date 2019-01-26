@@ -1,29 +1,35 @@
 .RegionConditionSummary {
   display: inline-block;
-  
 
   .ChartContainer {
     border: 5px solid #e4e4e4;
-    width: 400px;
-    height: 200px;
-    padding: 10px;
+    width: 410px;
+    height: 210px;
+    margin-left: -33px;
     border-radius: 25px;
   }
 
+  .Chart {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: -172px;
+  }
+
   .BorderBottom {
-    width: 400px;
+    width: 401px;
     height: 75px;
     background: #e4e4e4;
     border-radius: 0px 0px 25px 25px;
-    margin-top: 105px;
-    margin-left: -15px;
+    margin-top: 130px;
   }
 
-  .RegionConditionSummaryText {
+  .RegionConditionSummaryTitle {
     text-align: left;
-    margin-top: -170px;
+    margin-top: -197px;
     color: rgb(161, 168, 167);
     font-size: 14px;
+    margin-left: 10px;
   }
 
   .YAxis {
@@ -31,7 +37,7 @@
     font-size: 15px;
     text-align: right;
     color: rgb(161, 168, 167);
-    margin-left: -95px;
-    margin-top: -164px;
+    margin-left: -128px;
+    margin-top: -165px;
   }
 };

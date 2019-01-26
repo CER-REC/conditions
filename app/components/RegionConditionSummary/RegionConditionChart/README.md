@@ -5,7 +5,8 @@ at 200% horizontal and 300% vertical of the original.
 
 ## Requirements
 
-* [] Bars should be ordered the same as the Legend
+* [X] Bar width should be scaled depending on number of bars shown
+* [X] No bars should be visible if no data
 
 ## Interaction Requirements
 

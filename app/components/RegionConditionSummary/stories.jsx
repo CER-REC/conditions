@@ -33,19 +33,16 @@ storiesForComponent('Components|RegionConditionSummary', module, ReadMe)
   }))
   .add('with theme data', () => (
     <RegionConditionSummary
-      className=""
       featureData={themeData}
     />
   ))
   .add('with type data', () => (
     <RegionConditionSummary
-      className=""
       featureData={typeData}
     />
   ))
   .add('with no data', () => (
     <RegionConditionSummary
-      className=""
       featureData={[]}
     />
   ));

@@ -5,8 +5,8 @@ Project Menu in View 2 when Location is selected.
 
 ## Requirements
 
-* [] Bars should be ordered the same as the Legend
-* [] Scale should appear on the left of the Summary box border
+* [X] Bars should be ordered the same as the Legend
+* [X] Scale should appear on the left of the Summary box border
 
 ## Interaction Requirements
 

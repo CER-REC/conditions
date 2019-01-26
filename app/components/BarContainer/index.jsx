@@ -35,7 +35,7 @@ const BarContainer = (props) => {
     }
     const singleBar = (
       <Bar
-     // eslint-disable-next-line react/no-array-index-key
+    // eslint-disable-next-line react/no-array-index-key
         key={index}
         {...bar}
         x={barContainerWidth * scale}
@@ -65,8 +65,8 @@ const BarContainer = (props) => {
 
 BarContainer.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  desc: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  desc: PropTypes.string,
+  title: PropTypes.string,
   vert: PropTypes.bool,
   scale: PropTypes.number,
   standalone: PropTypes.bool,
@@ -77,5 +77,7 @@ BarContainer.defaultProps = {
   vert: false,
   scale: 1,
   standalone: false,
+  desc: '',
+  title: '',
 };
 export default BarContainer;
