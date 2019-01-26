@@ -10458,7 +10458,7 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
         className="BorderBottom"
       />
       <div
-        className="RegionConditionSummaryText"
+        className="RegionConditionSummaryTitle"
       >
         <span>
           Total Conditions for Selected Region
@@ -10518,7 +10518,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
         className="BorderBottom"
       />
       <div
-        className="RegionConditionSummaryText"
+        className="RegionConditionSummaryTitle"
       >
         <span>
           Total Conditions for Selected Region
@@ -10566,12 +10566,12 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
         <svg
           className="BarContainer"
           height={50}
-          width={400}
+          width={350}
         >
           <g
             className="BarContainer"
             height={50}
-            width={400}
+            width={350}
           >
             <title>
               
@@ -10583,7 +10583,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               className="Bar"
               fill="pink"
               height={50}
-              width={26.666666666666668}
+              width={23.333333333333332}
               x={0}
               y={0}
             />
@@ -10591,112 +10591,112 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               className="Bar"
               fill="red"
               height={20}
-              width={26.666666666666668}
-              x={26.666666666666668}
+              width={23.333333333333332}
+              x={23.333333333333332}
               y={30}
             />
             <rect
               className="Bar"
               fill="green"
               height={43}
-              width={26.666666666666668}
-              x={53.333333333333336}
+              width={23.333333333333332}
+              x={46.666666666666664}
               y={7}
             />
             <rect
               className="Bar"
               fill="blue"
               height={15}
-              width={26.666666666666668}
-              x={80}
+              width={23.333333333333332}
+              x={70}
               y={35}
             />
             <rect
               className="Bar"
               fill="purple"
               height={5}
-              width={26.666666666666668}
-              x={106.66666666666667}
+              width={23.333333333333332}
+              x={93.33333333333333}
               y={45}
             />
             <rect
               className="Bar"
               fill="yellow"
               height={15}
-              width={26.666666666666668}
-              x={133.33333333333334}
+              width={23.333333333333332}
+              x={116.66666666666666}
               y={35}
             />
             <rect
               className="Bar"
               fill="orange"
               height={3}
-              width={26.666666666666668}
-              x={160}
+              width={23.333333333333332}
+              x={140}
               y={47}
             />
             <rect
               className="Bar"
               fill="navy"
               height={15}
-              width={26.666666666666668}
-              x={186.66666666666669}
+              width={23.333333333333332}
+              x={163.33333333333331}
               y={35}
             />
             <rect
               className="Bar"
               fill="plum"
               height={3}
-              width={26.666666666666668}
-              x={213.33333333333334}
+              width={23.333333333333332}
+              x={186.66666666666666}
               y={47}
             />
             <rect
               className="Bar"
               fill="olive"
               height={3}
-              width={26.666666666666668}
-              x={240}
+              width={23.333333333333332}
+              x={210}
               y={47}
             />
             <rect
               className="Bar"
               fill="coral"
               height={3}
-              width={26.666666666666668}
-              x={266.6666666666667}
+              width={23.333333333333332}
+              x={233.33333333333331}
               y={47}
             />
             <rect
               className="Bar"
               fill="cadetBlue"
               height={3}
-              width={26.666666666666668}
-              x={293.33333333333337}
+              width={23.333333333333332}
+              x={256.66666666666663}
               y={47}
             />
             <rect
               className="Bar"
               fill="darkGreen"
               height={3}
-              width={26.666666666666668}
-              x={320}
+              width={23.333333333333332}
+              x={280}
               y={47}
             />
             <rect
               className="Bar"
               fill="black"
               height={4}
-              width={26.666666666666668}
-              x={346.6666666666667}
+              width={23.333333333333332}
+              x={303.3333333333333}
               y={46}
             />
             <rect
               className="Bar"
               fill="#e4e4e4"
               height={0}
-              width={26.666666666666668}
-              x={373.33333333333337}
+              width={23.333333333333332}
+              x={326.66666666666663}
               y={50}
             />
           </g>
@@ -10721,7 +10721,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
         className="BorderBottom"
       />
       <div
-        className="RegionConditionSummaryText"
+        className="RegionConditionSummaryTitle"
       >
         <span>
           Total Conditions for Selected Region
@@ -10769,12 +10769,12 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
         <svg
           className="BarContainer"
           height={100}
-          width={400}
+          width={350}
         >
           <g
             className="BarContainer"
             height={100}
-            width={400}
+            width={350}
           >
             <title>
               
@@ -10786,7 +10786,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
               className="Bar"
               fill="pink"
               height={50}
-              width={200}
+              width={175}
               x={0}
               y={50}
             />
@@ -10794,8 +10794,8 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
               className="Bar"
               fill="purple"
               height={100}
-              width={200}
-              x={200}
+              width={175}
+              x={175}
               y={0}
             />
           </g>
@@ -10819,12 +10819,12 @@ exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with 
       <svg
         className="BarContainer"
         height={50}
-        width={400}
+        width={350}
       >
         <g
           className="BarContainer"
           height={50}
-          width={400}
+          width={350}
         >
           <title>
             
@@ -10836,7 +10836,7 @@ exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with 
             className="Bar"
             fill="pink"
             height={50}
-            width={26.666666666666668}
+            width={23.333333333333332}
             x={0}
             y={0}
           />
@@ -10844,112 +10844,112 @@ exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with 
             className="Bar"
             fill="red"
             height={20}
-            width={26.666666666666668}
-            x={26.666666666666668}
+            width={23.333333333333332}
+            x={23.333333333333332}
             y={30}
           />
           <rect
             className="Bar"
             fill="green"
             height={43}
-            width={26.666666666666668}
-            x={53.333333333333336}
+            width={23.333333333333332}
+            x={46.666666666666664}
             y={7}
           />
           <rect
             className="Bar"
             fill="blue"
             height={15}
-            width={26.666666666666668}
-            x={80}
+            width={23.333333333333332}
+            x={70}
             y={35}
           />
           <rect
             className="Bar"
             fill="purple"
             height={5}
-            width={26.666666666666668}
-            x={106.66666666666667}
+            width={23.333333333333332}
+            x={93.33333333333333}
             y={45}
           />
           <rect
             className="Bar"
             fill="yellow"
             height={15}
-            width={26.666666666666668}
-            x={133.33333333333334}
+            width={23.333333333333332}
+            x={116.66666666666666}
             y={35}
           />
           <rect
             className="Bar"
             fill="orange"
             height={3}
-            width={26.666666666666668}
-            x={160}
+            width={23.333333333333332}
+            x={140}
             y={47}
           />
           <rect
             className="Bar"
             fill="navy"
             height={15}
-            width={26.666666666666668}
-            x={186.66666666666669}
+            width={23.333333333333332}
+            x={163.33333333333331}
             y={35}
           />
           <rect
             className="Bar"
             fill="plum"
             height={3}
-            width={26.666666666666668}
-            x={213.33333333333334}
+            width={23.333333333333332}
+            x={186.66666666666666}
             y={47}
           />
           <rect
             className="Bar"
             fill="olive"
             height={3}
-            width={26.666666666666668}
-            x={240}
+            width={23.333333333333332}
+            x={210}
             y={47}
           />
           <rect
             className="Bar"
             fill="coral"
             height={3}
-            width={26.666666666666668}
-            x={266.6666666666667}
+            width={23.333333333333332}
+            x={233.33333333333331}
             y={47}
           />
           <rect
             className="Bar"
             fill="cadetBlue"
             height={3}
-            width={26.666666666666668}
-            x={293.33333333333337}
+            width={23.333333333333332}
+            x={256.66666666666663}
             y={47}
           />
           <rect
             className="Bar"
             fill="darkGreen"
             height={3}
-            width={26.666666666666668}
-            x={320}
+            width={23.333333333333332}
+            x={280}
             y={47}
           />
           <rect
             className="Bar"
             fill="black"
             height={4}
-            width={26.666666666666668}
-            x={346.6666666666667}
+            width={23.333333333333332}
+            x={303.3333333333333}
             y={46}
           />
           <rect
             className="Bar"
             fill="#e4e4e4"
             height={0}
-            width={26.666666666666668}
-            x={373.33333333333337}
+            width={23.333333333333332}
+            x={326.66666666666663}
             y={50}
           />
         </g>
@@ -10972,12 +10972,12 @@ exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with 
       <svg
         className="BarContainer"
         height={100}
-        width={400}
+        width={350}
       >
         <g
           className="BarContainer"
           height={100}
-          width={400}
+          width={350}
         >
           <title>
             
@@ -10989,7 +10989,7 @@ exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with 
             className="Bar"
             fill="pink"
             height={50}
-            width={200}
+            width={175}
             x={0}
             y={50}
           />
@@ -10997,8 +10997,8 @@ exports[`Storyshots Components|RegionConditionSummary/RegionConditionChart with 
             className="Bar"
             fill="purple"
             height={100}
-            width={200}
-            x={200}
+            width={175}
+            x={175}
             y={0}
           />
         </g>
