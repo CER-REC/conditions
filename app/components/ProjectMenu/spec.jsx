@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import ProjectMenu from '.';
 
@@ -123,7 +122,7 @@ describe('Components|ProjectMenu', () => {
       let onChange;
       let wrapper;
       beforeEach(() => {
-        onChange = sinon.spy();
+        onChange = jest.fn();
         wrapper = shallow(<ProjectMenu
           projectData={projectData.slice(0, input.total)}
           selectedProjectID={projectData[input.selected].id}
@@ -142,8 +141,8 @@ describe('Components|ProjectMenu', () => {
 
       test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
         wrapper.find('List').props().onChange(input.clickedIndex);
-        expect(onChange.calledOnce).toBe(true);
-        expect(onChange.firstCall.args).toEqual([output.projectID]);
+        expect(onChange).toHaveBeenCalledTimes(1);
+        expect(onChange).toHaveBeenLastCalledWith(output.projectID);
       });
     });
   }

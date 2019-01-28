@@ -1,8 +1,7 @@
 /*
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
-import { expect } from 'chai';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import MyComponentName from './';
 
@@ -13,13 +12,11 @@ describe('Components|MyComponentName', () => {
       wrapper = shallow(<MyComponentName />);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
     });
 
-    it('should have a MyComponentName class', () => {
-      expect(wrapper.is('.MyComponentName')).to.equal(true);
-    });
+    shouldBehaveLikeAComponent(MyComponentName, () => wrapper);
   });
 });
 */

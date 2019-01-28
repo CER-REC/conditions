@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import { FormattedMessage } from 'react-intl';
 
 import TrendButton from '.';
@@ -44,18 +43,18 @@ describe('Components|TrendButton', () => {
     let spy;
     let wrapper;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(<TrendButton selectedFeature="Theme" onClick={spy} />);
     });
 
     test("should call it's onClick prop", () => {
       wrapper.find('button').simulate('click', eventFuncs);
-      expect(spy.called).toBe(true);
+      expect(spy).toHaveBeenCalled();
     });
 
     test("should call it's onClick prop when enter is pressed", () => {
       wrapper.find('button').simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.called).toBe(true);
+      expect(spy).toHaveBeenCalled();
     });
   });
 

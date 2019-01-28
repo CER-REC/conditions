@@ -100,7 +100,6 @@
     "replace": "1.0.1",
     "require-context.macro": "1.0.4",
     "sass-loader": "7.1.0",
-    "sinon": "7.2.2",
     "storybook-addon-interaction": "0.0.1",
     "storybook-addon-intl": "2.3.2",
     "storybook-readme": "4.0.5",

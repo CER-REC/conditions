@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import InstrumentBubble from '.';
 import d3HierarchyCalculation from '../d3HierarchyCalculation';
 
@@ -144,7 +143,7 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     let spy;
     let wrapper;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(
         <InstrumentBubble
           onClick={spy}
@@ -159,12 +158,12 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
     });
     test("should call it's onClick prop", () => {
       wrapper.find('circle').first().simulate('click', eventFuncs);
-      expect(spy.called).toBe(true);
+      expect(spy).toHaveBeenCalled();
     });
 
     test("should call it's onClick prop when enter is pressed", () => {
       wrapper.find('circle').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.called).toBe(true);
+      expect(spy).toHaveBeenCalled();
     });
   });
 });
