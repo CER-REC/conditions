@@ -10471,7 +10471,7 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
       <text
         fill="rgb(161, 168, 167)"
         x="45"
-        y="21"
+        y="11"
       >
         100
       </text>
@@ -10480,12 +10480,12 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
         height="3"
         width="10"
         x="85"
-        y="15"
+        y="0"
       />
       <text
         fill="rgb(161, 168, 167)"
         x="58"
-        y="85"
+        y="105"
       >
         0
       </text>
@@ -10531,7 +10531,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
       <text
         fill="rgb(161, 168, 167)"
         x="45"
-        y="21"
+        y="11"
       >
         100
       </text>
@@ -10540,12 +10540,12 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
         height="3"
         width="10"
         x="85"
-        y="15"
+        y="0"
       />
       <text
         fill="rgb(161, 168, 167)"
         x="58"
-        y="85"
+        y="105"
       >
         0
       </text>
@@ -10734,7 +10734,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
       <text
         fill="rgb(161, 168, 167)"
         x="45"
-        y="21"
+        y="11"
       >
         100
       </text>
@@ -10743,12 +10743,12 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
         height="3"
         width="10"
         x="85"
-        y="15"
+        y="0"
       />
       <text
         fill="rgb(161, 168, 167)"
         x="58"
-        y="85"
+        y="105"
       >
         0
       </text>
