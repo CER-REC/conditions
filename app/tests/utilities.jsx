@@ -1,15 +1,28 @@
 import React from 'react';
 import { ShallowWrapper, shallow, mount } from 'enzyme';
-import { IntlProvider, intlShape } from 'react-intl';
+import { IntlProvider, addLocaleData, intlShape } from 'react-intl';
 import i18nMessages from '../i18n';
 
 const intlProvider = new IntlProvider({ locale: 'en', messages: i18nMessages.en }, {});
 const { intl } = intlProvider.getChildContext();
 const nodeWithIntlProp = node => React.cloneElement(node, { intl });
 
+addLocaleData({
+  locale: 'test',
+  pluralRuleFunction: () => {},
+});
+
 export const monkeyPatchShallowWithIntl = () => {
-  ShallowWrapper.prototype.shallowWithIntl = function shallowWithIntl() {
-    return this.shallow({ context: { intl } });
+  ShallowWrapper.prototype.shallowWithIntl = function shallowWithIntl(messages) {
+    let testIntl = intl;
+
+    if (messages) {
+      const testIntlProvider = new IntlProvider({ locale: 'test', messages }, {});
+
+      testIntl = testIntlProvider.getChildContext().intl;
+    }
+
+    return this.shallow({ context: { intl: testIntl } });
   };
 };
 
