@@ -1,0 +1,39 @@
+
+.item-area-one {
+  grid-area: one;
+  background-color: #E0E0E0;
+}
+
+.item-area-two {
+  grid-area: two;
+  background-color: #E0E0E0;
+}
+
+.item-area-three {
+  grid-area: three;
+  background-color: #E0E0E0;
+}
+
+.item-area-four{
+  grid-area: footer;
+  background-color: #E0E0E0;
+}
+
+:root {
+  --mainColor: #12345678;
+}
+
+
+.ViewOne {
+  color: var(--mainColor);
+  display: grid;
+  grid-auto-flow: row;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 500px auto 300px;
+  grid-template-areas:
+    "one"
+    "two"
+    "three four";
+}
