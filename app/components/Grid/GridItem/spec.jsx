@@ -1,25 +1,16 @@
-/*
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
-import { expect } from 'chai';
+import GridItem from '.';
 
-import MyComponentName from './';
-
-describe('Components|MyComponentName', () => {
+describe('Components|Grid/GridItem', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<MyComponentName />);
+      wrapper = shallow(<GridItem><></></GridItem>);
     });
 
-    it('should render', () => {
-      expect(wrapper.type()).to.equal('div');
-    });
-
-    it('should have a MyComponentName class', () => {
-      expect(wrapper.is('.MyComponentName')).to.equal(true);
+    test('should have a class to contain the grid', () => {
+      expect(wrapper.is('.item')).toBe(true);
     });
   });
 });
-*/
