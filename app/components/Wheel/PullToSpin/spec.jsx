@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import { shouldHaveInteractionProps } from '../../../tests/utilities';
 import PullToSpin from '.';
 
@@ -29,7 +28,7 @@ describe('Components|Wheel/PullToSpin', () => {
   describe('when the slider is clicked', () => {
     let callback;
     beforeEach(() => {
-      callback = sinon.spy();
+      callback = jest.fn();
       wrapper = shallow(<PullToSpin onSpinClick={callback} />);
     });
 
@@ -38,7 +37,7 @@ describe('Components|Wheel/PullToSpin', () => {
       wrapper.find('.PullSlider').simulate('click', eventFuncs);
       shouldHaveInteractionProps(wrapper.find('.PullSlider'));
       expect(wrapper.state('spinTogglePosition')).toBe('translate(56px, -56px) rotate(15deg)');
-      expect(callback).toHaveProperty('callCount', 1);
+      expect(callback).toHaveBeenCalledTimes(1);
     });
   });
 

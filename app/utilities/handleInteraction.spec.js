@@ -1,4 +1,3 @@
-import sinon from 'sinon';
 import handleInteraction from './handleInteraction';
 
 const eventFuncs = {
@@ -12,7 +11,7 @@ describe('utilities/handleInteraction', () => {
 
   describe('with a callback', () => {
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       result = handleInteraction(spy, 'a', 'b');
     });
 
@@ -30,24 +29,23 @@ describe('utilities/handleInteraction', () => {
 
     test('should add an onClick handler', () => {
       result.onClick(eventFuncs);
-      expect(spy.calledOnce).toBe(true);
-      expect(spy.calledWith('a', 'b')).toBe(true);
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith('a', 'b');
     });
 
     test('should add an onKeyPress handler', () => {
       result.onKeyPress({ key: 'Enter', ...eventFuncs });
-      expect(spy.calledOnce).toBe(true);
-      expect(spy.calledWith('a', 'b')).toBe(true);
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith('a', 'b');
     });
 
     test('should only let onKeyPress respond to enter', () => {
       result.onKeyPress({ key: ' ', ...eventFuncs });
-      expect(spy.called).toBe(false);
+      expect(spy).not.toHaveBeenCalled();
     });
   });
 
   test('should return an empty object when no callback is provided', () => {
-    spy = sinon.spy();
     result = handleInteraction();
     expect(result).toEqual({});
   });

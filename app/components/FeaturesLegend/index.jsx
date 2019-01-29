@@ -40,7 +40,7 @@ const FeaturesLegend = (props) => {
           <div className="FlagDesc"> &gt;10 </div>
         </div>
         <CircleContainer
-          size="24px"
+          size={24}
           className="ConditionsIcon"
         >
         #

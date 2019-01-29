@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import RegionCompanies from '.';
@@ -60,7 +59,7 @@ describe('Components|RegionCompanies', () => {
     let spy;
     let wrapper;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(
         <RegionCompanies
           companies={companies}
@@ -71,7 +70,7 @@ describe('Components|RegionCompanies', () => {
     });
     test('should call the openProjectDetails function', () => {
       wrapper.find('button').first().simulate('click', eventFuncs);
-      expect(spy.calledOnce).toBe(true);
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

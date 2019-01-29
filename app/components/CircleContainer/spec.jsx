@@ -7,7 +7,7 @@ describe('Component|CircleContainer', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<CircleContainer size="36px">Test</CircleContainer>);
+      wrapper = shallow(<CircleContainer size={36}>Test</CircleContainer>);
     });
 
     test('should render', () => {
@@ -25,23 +25,23 @@ describe('Component|CircleContainer', () => {
 
   describe('Component renders with passed props', () => {
     test('should render the "CircleContainer" and the "elevated" prop', () => {
-      const wrapper = shallow(<CircleContainer size="36px" elevated>Test</CircleContainer>);
+      const wrapper = shallow(<CircleContainer size={36} elevated>Test</CircleContainer>);
       expect(wrapper.find('.CircleContainer').hasClass('elevated')).toBe(true);
     });
 
     test('should render the "CircleContainer" class and the "disabled" prop', () => {
-      const wrapper = shallow(<CircleContainer size="36px" disabled>Test</CircleContainer>);
+      const wrapper = shallow(<CircleContainer size={36} disabled>Test</CircleContainer>);
       expect(wrapper.find('.CircleContainer').hasClass('disabled')).toBe(true);
     });
 
     test('should accept a size prop with a width and height', () => {
-      const wrapper = shallow(<CircleContainer size="36px">Test</CircleContainer>);
-      expect(wrapper.props().style.width).toBe('36px');
-      expect(wrapper.props().style.height).toBe('36px');
+      const wrapper = shallow(<CircleContainer size={36}>Test</CircleContainer>);
+      expect(wrapper.props().style.width).toBe(36);
+      expect(wrapper.props().style.height).toBe(36);
     });
 
     test('should check that the prop "onClick" by default doesnt exist', () => {
-      const wrapper = shallow(<CircleContainer size="36px">Test</CircleContainer>);
+      const wrapper = shallow(<CircleContainer size={36}>Test</CircleContainer>);
       expect(wrapper.props().onClick).toBeUndefined();
     });
 
@@ -49,7 +49,7 @@ describe('Component|CircleContainer', () => {
       // possibly pass a spy instead of the handle interaction function or noop function
       const wrapper = shallow((
         <CircleContainer
-          size="36px"
+          size={36}
           onClick={() => {}}
         >
           Test
@@ -59,7 +59,7 @@ describe('Component|CircleContainer', () => {
     });
 
     test('should accept a className prop from the parent to enhance the style', () => {
-      const wrapper = shallow(<CircleContainer size="12" className="searched">Override</CircleContainer>);
+      const wrapper = shallow(<CircleContainer size={12} className="searched">Override</CircleContainer>);
       expect(wrapper.find('.CircleContainer').hasClass('searched')).toBe(true);
     });
   });

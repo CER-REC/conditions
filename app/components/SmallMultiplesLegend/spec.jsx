@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import SmallMultiplesLegend from '.';
 import LegendItem from './LegendItem';
@@ -13,7 +12,7 @@ describe('Components|SmallMultiplesLegend', () => {
   let wrapper;
 
   beforeEach(() => {
-    spy = sinon.spy();
+    spy = jest.fn();
     wrapper = shallow((
       <SmallMultiplesLegend
         className="test"
@@ -65,7 +64,7 @@ describe('Components|SmallMultiplesLegend', () => {
     test('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(data[0].name)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(data[0].name);
     });
 
     test('should render the List component with the first item selected', () => {
@@ -151,7 +150,7 @@ describe('Components|SmallMultiplesLegend', () => {
       // All item is at the top
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(null)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(null);
     });
 
     test('should call the onChange function with the data name on List item change', () => {
@@ -159,10 +158,10 @@ describe('Components|SmallMultiplesLegend', () => {
         // Account for all item at the beginning
         wrapper.find(List).prop('onChange')(i + 1);
 
-        expect(spy.calledWith(data[i].name)).toBe(true);
+        expect(spy).toHaveBeenLastCalledWith(data[i].name);
       }
 
-      expect(spy.callCount).toBe(data.length);
+      expect(spy).toHaveBeenCalledTimes(data.length);
     });
 
     test('should render the List component with the first item selected', () => {
