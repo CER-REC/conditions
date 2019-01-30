@@ -118,16 +118,19 @@ rendered translation cannot be guaranteed.
 
 ```js
 ...
-const translationWrapper = wrapper.find('FormattedMessage');
-expect(translationWrapper.shallowWithIntl().html()).toBe('<span>any translation</span>');
+const translationWrapper = wrapper.find('FormattedMessage').shallowWithIntl();
+// translationWrapper.html() = '<span class="component">any translation</span>'
+expect(translationWrapper.hasClass('component')).toBe(true);
 ...
 ```
 
 ```js
 ...
-const translationWrapper = wrapper.find('FormattedMessage');
 const messages = { 'component.translation': 'specific translation' };
-expect(translationWrapper.shallowWithIntl(messages).html()).toBe('<span>specific translation</span>');
+const translationWrapper = wrapper.find('FormattedMessage').shallowWithIntl(messages);
+// translationWrapper.html() = '<span class="component">specific translation</span>'
+expect(translationWrapper.hasClass('component')).toBe(true);
+expect(translationWrapper.text()).toContain('specific translation');
 ...
 ```
 
