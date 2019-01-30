@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import StackGroup from '.';
 
@@ -90,7 +89,7 @@ describe('Components|Streamgraph/StackGroup', () => {
     let stackGroup;
     let spy;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(
         <StackGroup
           onChange={spy}
@@ -107,39 +106,39 @@ describe('Components|Streamgraph/StackGroup', () => {
       let mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
       stackGroup.simulate('mouseDown', mouseEvent);
       stackGroup.simulate('mouseUp', mouseEvent);
-      expect(spy.calledWith(2010)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2010);
 
       mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
       stackGroup.simulate('mouseDown', mouseEvent);
       stackGroup.simulate('mouseUp', mouseEvent);
-      expect(spy.calledWith(2017)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2017);
 
       // This should fall just to the right of the gap between 2010 and 2011
       mouseEvent = { ...eventFuncs, clientX: 25, clientY: 0 };
       stackGroup.simulate('mouseDown', mouseEvent);
       stackGroup.simulate('mouseUp', mouseEvent);
-      expect(spy.calledWith(2011)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2011);
     });
 
     test('should not call onChange if mouseMove is fired before mouseDown', () => {
       const mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
       stackGroup.simulate('mouseMove', mouseEvent);
-      expect(spy.called).toBe(false);
+      expect(spy).not.toHaveBeenCalled();
     });
 
     test('should call onChange with the correct position when using mouseMove', () => {
       let mouseEvent = { ...eventFuncs, clientX: 0, clientY: 0 };
       stackGroup.simulate('mouseDown', mouseEvent);
-      expect(spy.calledWith(2010)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2010);
 
       mouseEvent = { ...eventFuncs, clientX: width, clientY: height };
       stackGroup.simulate('mouseMove', mouseEvent);
-      expect(spy.calledWith(2017)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2017);
     });
 
     test('should call onChange with the first year when the chart is focused', () => {
       stackGroup.simulate('focus', eventFuncs);
-      expect(spy.calledWith(2010)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2010);
     });
 
     test('should increase the year if the right arrow is pressed and not at the edge', () => {
@@ -151,16 +150,16 @@ describe('Components|Streamgraph/StackGroup', () => {
 
       // First time pressing right arrow
       simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).toBe(2017);
+      expect(spy).toHaveBeenLastCalledWith(2017);
 
       wrapper.setProps({ controlYear: 2010 });
       simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).toBe(2011);
+      expect(spy).toHaveBeenLastCalledWith(2011);
 
       // Press right again at the edge, and don't expect it to change
       wrapper.setProps({ controlYear: 2017 });
       simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).toBe(2017);
+      expect(spy).toHaveBeenLastCalledWith(2017);
     });
 
     test('should decrease the year if the left arrow is pressed and not at the edge', () => {
@@ -172,16 +171,16 @@ describe('Components|Streamgraph/StackGroup', () => {
 
       // First time pressing right arrow
       simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).toBe(2010);
+      expect(spy).toHaveBeenLastCalledWith(2010);
 
       wrapper.setProps({ controlYear: 2017 });
       simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).toBe(2016);
+      expect(spy).toHaveBeenLastCalledWith(2016);
 
       // Press left again at the edge, and don't expect it to change
       wrapper.setProps({ controlYear: 2010 });
       simulateKeyDownUp();
-      expect(spy.lastCall.args[0]).toBe(2010);
+      expect(spy).toHaveBeenLastCalledWith(2010);
     });
   });
 

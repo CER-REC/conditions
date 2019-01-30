@@ -26,7 +26,7 @@ const CircleContainer = props => (
 CircleContainer.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
-  size: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
   className: PropTypes.string,
   elevated: PropTypes.bool,
   disabled: PropTypes.bool,

@@ -89,7 +89,7 @@ class MainInfoBar extends React.PureComponent {
             : (
               <CircleContainer
                 className="AngleDoubleDown"
-                size="20px"
+                size={20}
                 onClick={this.closeDialog}
               >
                 <Icon color="grey" size="1x" icon="angle-double-up" prefix="fas" />

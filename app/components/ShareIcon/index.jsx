@@ -47,7 +47,7 @@ class ShareIcon extends React.PureComponent {
         )}
         {...handleInteraction(this.handleOnClick)}
       >
-        <CircleContainer size="20px">
+        <CircleContainer size={20}>
           <Icon size="1x" icon={icon} prefix={this.props.prefix} />
         </CircleContainer>
       </div>

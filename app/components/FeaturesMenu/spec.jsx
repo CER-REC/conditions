@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import { FormattedMessage } from 'react-intl';
 
 import FeaturesMenu from '.';
@@ -12,7 +11,7 @@ describe('Components|FeaturesMenu', () => {
   let wrapper;
 
   beforeEach(() => {
-    spy = sinon.spy();
+    spy = jest.fn();
     wrapper = shallow((
       <FeaturesMenu
         className="aClass"
@@ -68,11 +67,10 @@ describe('Components|FeaturesMenu', () => {
     test('should call the onChange function with the feature on List item change', () => {
       features.forEach((feature, index) => {
         wrapper.find(List).prop('onChange')(index);
-
-        expect(spy.calledWith(feature)).toBe(true);
+        expect(spy).toHaveBeenLastCalledWith(feature);
       });
 
-      expect(spy.callCount).toBe(features.length);
+      expect(spy).toHaveBeenCalledTimes(features.length);
     });
 
     test('should render the List component with the corresponding item selected when selected is provided', () => {
@@ -154,10 +152,10 @@ describe('Components|FeaturesMenu', () => {
       features.forEach((feature) => {
         wrapper.find('select').simulate('change', { target: { value: feature } });
 
-        expect(spy.calledWith(feature)).toBe(true);
+        expect(spy).toHaveBeenLastCalledWith(feature);
       });
 
-      expect(spy.callCount).toBe(features.length);
+      expect(spy).toHaveBeenCalledTimes(features.length);
     });
 
     test('should render the select drop down with the corresponding item selected when selected is provided', () => {

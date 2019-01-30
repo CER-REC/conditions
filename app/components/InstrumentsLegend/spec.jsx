@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import InstrumentsLegend from '.';
 import LegendItem from './LegendItem';
@@ -13,7 +12,7 @@ describe('Components|InstrumentsLegend', () => {
   const noop = () => {};
 
   beforeEach(() => {
-    spy = sinon.spy();
+    spy = jest.fn();
     wrapper = shallow((
       <InstrumentsLegend
         className="test"
@@ -65,7 +64,7 @@ describe('Components|InstrumentsLegend', () => {
     test('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(category)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(category);
     });
 
     test('should render the List component with the first item selected', () => {
@@ -152,7 +151,7 @@ describe('Components|InstrumentsLegend', () => {
       // All item is at the top
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy.calledOnceWith(null)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(null);
     });
 
     test('should call the onChange function with the categories name on List item change', () => {
@@ -160,10 +159,10 @@ describe('Components|InstrumentsLegend', () => {
         // Account for all item at the beginning
         wrapper.find(List).prop('onChange')(i + 1);
 
-        expect(spy.calledWith(categories[i])).toBe(true);
+        expect(spy).toHaveBeenLastCalledWith(categories[i]);
       }
 
-      expect(spy.callCount).toBe(categories.length);
+      expect(spy).toHaveBeenCalledTimes(categories.length);
     });
 
     test('should render the List component with the first item selected', () => {

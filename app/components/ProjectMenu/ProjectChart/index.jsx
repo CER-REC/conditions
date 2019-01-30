@@ -13,7 +13,7 @@ const ProjectChart = (props) => {
         <React.Fragment>
           <div className="ConditionPipe">
             <CircleContainer
-              size="24px"
+              size={24}
               className="ConditionCount"
             >
               {conditionCount}

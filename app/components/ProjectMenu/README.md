@@ -1,6 +1,7 @@
 # Project Menu
 
-The project menu allows for the selection of up to 5 consecutive projects at a time to allow exploration of projects by different features via small bar charts.
+The Project Menu public component allows for the selection of up to 5 consecutive projects at a
+time to allow exploration of projects by different features via small bar charts.
 
 ## Requirements
 
@@ -8,7 +9,6 @@ The project menu allows for the selection of up to 5 consecutive projects at a t
 * The number inside the dot displays the number of conditions for that project.
 * Dots with a visible outline are those that contain results of the keyword search.
 * There is one chart per project.
-
 
 ## Interaction Requirements
 

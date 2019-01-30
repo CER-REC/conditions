@@ -2,6 +2,8 @@
 
 The List component is a reusable component for rendering a list of items with
 simple support for arrows, keyboard and mouse support, and scroll wheel support.
+The List component is used in the Features Menu, Instruments Legend, Project Menu,
+and Small Multiples Legend components.
 
 ## Requirements
 

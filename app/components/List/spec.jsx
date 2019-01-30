@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
 
 import List from '.';
 
@@ -68,18 +67,18 @@ describe('Components|List', () => {
     let spy;
     let wrapper;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} />);
     });
 
     test('should call its onChange prop with what was clicked', () => {
       wrapper.find('.List-Item-Content').last().simulate('click', eventFuncs);
-      expect(spy.calledWith(2)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2);
     });
 
     test('should call its onChange prop with what enter was pressed on', () => {
       wrapper.find('.List-Item-Content').last().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.calledWith(2)).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2);
     });
   });
 
@@ -87,18 +86,18 @@ describe('Components|List', () => {
     let spy;
     let wrapper;
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} itemInteractions={false} />);
     });
 
     test('should not respond to clicks', () => {
       wrapper.find('.List-Item').first().simulate('click', eventFuncs);
-      expect(spy.called).toBe(false);
+      expect(spy).not.toHaveBeenCalled();
     });
 
     test('should not respond to keypresses', () => {
       wrapper.find('.List-Item').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy.called).toBe(false);
+      expect(spy).not.toHaveBeenCalled();
     });
   });
 
@@ -123,7 +122,7 @@ describe('Components|List', () => {
     let wrapper;
 
     beforeEach(() => {
-      spy = sinon.spy();
+      spy = jest.fn();
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
     });
 
@@ -147,14 +146,14 @@ describe('Components|List', () => {
 
     test('should call its onChange prop with the previous index', () => {
       wrapper.find('.arrowPrevious').simulate('click', eventFuncs);
-      expect(spy.calledWith(0)).toBe(true);
-      expect(spy.calledOnce).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(0);
+      expect(spy).toHaveBeenCalledTimes(1);
     });
 
     test('should call its onChange prop with the next index', () => {
       wrapper.find('.arrowNext').simulate('click', eventFuncs);
-      expect(spy.calledWith(2)).toBe(true);
-      expect(spy.calledOnce).toBe(true);
+      expect(spy).toHaveBeenLastCalledWith(2);
+      expect(spy).toHaveBeenCalledTimes(1);
     });
 
     test('should render the arrows with vertical icons', () => {

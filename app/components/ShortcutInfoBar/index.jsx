@@ -49,7 +49,7 @@ class ShortcutInfoBar extends React.PureComponent {
         >
         About this Visualization
         </button>
-        <CircleContainer className="AngleDoubleDown" size="20px" onClick={this.props.jumpToAbout}>
+        <CircleContainer className="AngleDoubleDown" size={20} onClick={this.props.jumpToAbout}>
           <Icon color="#D1057A" size="1x" icon="angle-double-down" prefix="fas" />
         </CircleContainer>
       </div>
