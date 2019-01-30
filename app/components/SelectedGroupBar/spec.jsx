@@ -35,14 +35,14 @@ describe('Components|SelectedGroupBar', () => {
     });
 
     test('should accept a prop to set the group text size', () => {
-      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupSize="32px">condition</SelectedGroupBar>);
-      expect(wrapper.children().first().props().style.fontSize).toBe('32px');
+      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupSize={32}>condition</SelectedGroupBar>);
+      expect(wrapper.children().first().props().style.fontSize).toBe(32);
     });
 
     test('should accept a prop to set the groupitem text size', () => {
-      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItemSize="14px" groupSize="20px">condition</SelectedGroupBar>);
-      expect(wrapper.children().first().props().style.fontSize).toBe('20px');
-      expect(wrapper.find('span').first().props().style.fontSize).toBe('14px');
+      const wrapper = shallow(<SelectedGroupBar group="Conditions" groupItemSize={14} groupSize={20}>condition</SelectedGroupBar>);
+      expect(wrapper.children().first().props().style.fontSize).toBe(20);
+      expect(wrapper.find('span').first().props().style.fontSize).toBe(14);
     });
   });
 });

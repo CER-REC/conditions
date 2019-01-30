@@ -1,4 +1,4 @@
-# Component Name
+# Icon
 
 This component implements the font-awesome React components for SVG icons.
 This component will accept the props of:

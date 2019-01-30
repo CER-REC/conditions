@@ -6,7 +6,7 @@ import PullToSpin from '.';
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|CompanyWheel/PullToSpin', () => {
+describe('Components|Wheel/PullToSpin', () => {
   let wrapper;
   describe('with default props', () => {
     beforeEach(() => {

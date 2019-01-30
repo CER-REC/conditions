@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CompanyWheel from '.';
+import Wheel from '.';
 
-describe('Components|CompanyWheel', () => {
+describe('Components|Wheel', () => {
   describe('with no props', () => {
     test('should render a company wheel', () => {
-      expect(shallow(<CompanyWheel />).type()).toBe('div');
+      expect(shallow(<Wheel />).type()).toBe('div');
     });
 
     // it('should have the prop company by default', () => {
@@ -16,7 +16,7 @@ describe('Components|CompanyWheel', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<CompanyWheel ringType="normal" />);
+      wrapper = shallow(<Wheel ringType="normal" />);
     });
 
     test('should render a div', () => {

@@ -1,6 +1,7 @@
 # BubbleChart
-The Bubble Chart is the parent svg container 
-that will contain Instrument Bubbles (smaller circles).
+
+The Bubble Chart public component is the parent svg container that will contain
+Instrument Bubbles (smaller circles).
 
 ## Requirements
 * [X] Checks for selected feature and only

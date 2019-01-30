@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import ProjectDot from '.';
 
-describe('Components|CompanyWheel/ProjectDot', () => {
+describe('Components|Wheel/ProjectDot', () => {
   let wrapper;
   describe('with default props', () => {
     beforeEach(() => {
