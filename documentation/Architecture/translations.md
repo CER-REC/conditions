@@ -64,7 +64,7 @@ const Component = (props) => {
   return (
     // If more control is needed over the rendered translation
     <FormattedMessage id="component.translation">
-      {text => <span class="component">{text}</span>}
+      {text => <span className="component">{text}</span>}
     </FormattedMessage>
   );
 };
@@ -104,6 +104,8 @@ function in `stories.jsx` will fix this issue.
 import { storiesForComponent, fixInfo } from '../../../.storybook/utils';
 ...
 fixInfo(Component);
+...
+storiesForComponent('Components|Component', module, ReadMe)
 ...
 ```
 
