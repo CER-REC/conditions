@@ -2,21 +2,19 @@ import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
-import CircleContainer from '../CircleContainer';
-import Icon from '../Icon';
-import Grid from '.';
+import ViewOne from '.';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|Grid', module, ReadMe)
+storiesForComponent('Components|Grid/ViewOne', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['onChange', 'someInteractionPropFunc'] }))
   .add('default', () => (
-    <Grid {...getInteractionProps()}>
-      <Icon icon="angle-right" color="blue" size="6x" />
-      <Icon icon="angle-right" color="green" size="3x" />
-      <CircleContainer size="60px">&nbsp;</CircleContainer>
-      <CircleContainer size="24px" elevated>&nbsp;</CircleContainer>
-    </Grid>
+    <ViewOne {...getInteractionProps()}>
+      <div className="item-area-one">1</div>
+      <div className="item">2</div>
+      <div className="item">3</div>
+      <div className="item">4</div>
+    </ViewOne>
   ), {
     state: { selected: 3, otherPropExample: false },
     actions: {
@@ -24,4 +22,3 @@ storiesForComponent('Components|Grid', module, ReadMe)
       someInteractionPropFunc: state => () => ({ otherPropExample: !state.otherPropExample }),
     },
   });
-
