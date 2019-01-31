@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import InstrumentsLegend from '.';
 import LegendItem from './LegendItem';
 import List from '../List';
+import BubbleLegend from './BubbleLegend';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 describe('Components|InstrumentsLegend', () => {
@@ -59,6 +60,10 @@ describe('Components|InstrumentsLegend', () => {
 
       expect(legendItemsWrapper.filter('[all=true]')).toHaveLength(0);
       expect(legendItemsWrapper).toHaveLength(1);
+    });
+
+    test('should render the Bubble Legend', () => {
+      expect(wrapper.find(BubbleLegend)).toHaveLength(1);
     });
 
     test('should call the onChange function on List item change', () => {
