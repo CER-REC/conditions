@@ -38,7 +38,8 @@ describe('Components|BarContainer', () => {
     });
 
     test('should have a BarContainer class', () => {
-      expect(wrapper.is('.BarContainer')).toBe(true);
+      wrapper.setProps({ className: '.BarContainer' });
+      expect(wrapper.props().className).toBe('.BarContainer');
     });
 
     test('should be able to render a <g> wrapper', () => {

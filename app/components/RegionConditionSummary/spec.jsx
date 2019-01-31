@@ -29,5 +29,9 @@ describe('Component|RegionConditionSummary', () => {
     });
 
     shouldBehaveLikeAComponent(RegionConditionSummary, () => wrapper);
+
+    test('should render a formatted message for the title', () => {
+      expect(wrapper.find('FormattedMessage')).toHaveLength(1);
+    });
   });
 });

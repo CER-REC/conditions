@@ -49,7 +49,7 @@ const BarContainer = (props) => {
   });
   if (scale) { barContainerWidth *= scale; }
   const content = (
-    <g className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
+    <g className={props.className} width={barContainerWidth} height={barContainerHeight}>
       <title>{title}</title>
       <desc>{desc}</desc>
       {bars}
@@ -57,13 +57,14 @@ const BarContainer = (props) => {
   );
   if (standalone) { return content; }
   return (
-    <svg className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
+    <svg className={props.className} width={barContainerWidth} height={barContainerHeight}>
       {content}
     </svg>
   );
 };
 
 BarContainer.propTypes = {
+  className: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   desc: PropTypes.string,
   title: PropTypes.string,
@@ -74,6 +75,7 @@ BarContainer.propTypes = {
 };
 
 BarContainer.defaultProps = {
+  className: '',
   vert: false,
   scale: 1,
   standalone: false,

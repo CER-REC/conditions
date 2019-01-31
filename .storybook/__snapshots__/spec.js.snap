@@ -25,12 +25,12 @@ exports[`Storyshots Components|BarContainer default 1`] = `
   className="visualization"
 >
   <svg
-    className="BarContainer"
+    className=""
     height={12}
     width={111}
   >
     <g
-      className="BarContainer"
+      className=""
       height={12}
       width={111}
     >
@@ -74,12 +74,12 @@ exports[`Storyshots Components|BarContainer scale horizontal and 2x scale 1`] = 
   className="visualization"
 >
   <svg
-    className="BarContainer"
+    className=""
     height={24}
     width={222}
   >
     <g
-      className="BarContainer"
+      className=""
       height={24}
       width={222}
     >
@@ -123,12 +123,12 @@ exports[`Storyshots Components|BarContainer searched bars 1`] = `
   className="visualization"
 >
   <svg
-    className="BarContainer"
+    className=""
     height={15}
     width={111}
   >
     <g
-      className="BarContainer"
+      className=""
       height={15}
       width={111}
     >
@@ -173,7 +173,7 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
 >
   <svg>
     <g
-      className="BarContainer"
+      className=""
       height={12}
       width={111}
     >
@@ -217,12 +217,12 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
   className="visualization"
 >
   <svg
-    className="BarContainer"
+    className=""
     height={66}
     width={60}
   >
     <g
-      className="BarContainer"
+      className=""
       height={66}
       width={60}
     >
@@ -266,12 +266,12 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
   className="visualization"
 >
   <svg
-    className="BarContainer"
+    className=""
     height={132}
     width={180}
   >
     <g
-      className="BarContainer"
+      className=""
       height={132}
       width={180}
     >
@@ -316,7 +316,7 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale and stan
 >
   <svg>
     <g
-      className="BarContainer"
+      className=""
       height={132}
       width={180}
     >
@@ -5015,7 +5015,62 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
 exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
 <div
   className="visualization"
-/>
+>
+  <div
+    className="RegionConditionSummary"
+  >
+    <div
+      className="ChartContainer"
+    >
+      <div
+        className="BorderBottom"
+      />
+      <div
+        className="RegionConditionSummaryTitle"
+      >
+        <span>
+          Total Conditions for Selected Region
+        </span>
+      </div>
+      <div
+        className="RegionConditionChart"
+      />
+    </div>
+    <svg
+      className="YAxis"
+      viewBox="0 0 100 200"
+    >
+      <text
+        fill="rgb(161, 168, 167)"
+        x="45"
+        y="11"
+      >
+        100
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="0"
+      />
+      <text
+        fill="rgb(161, 168, 167)"
+        x="58"
+        y="110"
+      >
+        0
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="50"
+      />
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
@@ -5038,52 +5093,16 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
           Total Conditions for Selected Region
         </span>
       </div>
-    </div>
-    <svg
-      className="YAxis"
-    >
-      <text
-        fill="rgb(161, 168, 167)"
-        x="45"
-        y="11"
-      >
-        100
-      </text>
-      <rect
-        fill="#e4e4e4"
-        height="3"
-        width="10"
-        x="85"
-        y="0"
-      />
-      <text
-        fill="rgb(161, 168, 167)"
-        x="58"
-        y="105"
-      >
-        0
-      </text>
-      <rect
-        fill="#e4e4e4"
-        height="3"
-        width="10"
-        x="85"
-        y="50"
-      />
-    </svg>
-    <div
-      className="Chart"
-    >
       <div
         className="RegionConditionChart"
       >
         <svg
-          className="BarContainer"
+          className=""
           height={50}
           width={350}
         >
           <g
-            className="BarContainer"
+            className=""
             height={50}
             width={350}
           >
@@ -5217,6 +5236,39 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
         </svg>
       </div>
     </div>
+    <svg
+      className="YAxis"
+      viewBox="0 0 100 200"
+    >
+      <text
+        fill="rgb(161, 168, 167)"
+        x="45"
+        y="11"
+      >
+        100
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="0"
+      />
+      <text
+        fill="rgb(161, 168, 167)"
+        x="58"
+        y="110"
+      >
+        0
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="50"
+      />
+    </svg>
   </div>
 </div>
 `;
@@ -5241,52 +5293,16 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
           Total Conditions for Selected Region
         </span>
       </div>
-    </div>
-    <svg
-      className="YAxis"
-    >
-      <text
-        fill="rgb(161, 168, 167)"
-        x="45"
-        y="11"
-      >
-        100
-      </text>
-      <rect
-        fill="#e4e4e4"
-        height="3"
-        width="10"
-        x="85"
-        y="0"
-      />
-      <text
-        fill="rgb(161, 168, 167)"
-        x="58"
-        y="105"
-      >
-        0
-      </text>
-      <rect
-        fill="#e4e4e4"
-        height="3"
-        width="10"
-        x="85"
-        y="50"
-      />
-    </svg>
-    <div
-      className="Chart"
-    >
       <div
         className="RegionConditionChart"
       >
         <svg
-          className="BarContainer"
+          className=""
           height={100}
           width={350}
         >
           <g
-            className="BarContainer"
+            className=""
             height={100}
             width={350}
           >
@@ -5316,6 +5332,39 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
         </svg>
       </div>
     </div>
+    <svg
+      className="YAxis"
+      viewBox="0 0 100 200"
+    >
+      <text
+        fill="rgb(161, 168, 167)"
+        x="45"
+        y="11"
+      >
+        100
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="0"
+      />
+      <text
+        fill="rgb(161, 168, 167)"
+        x="58"
+        y="110"
+      >
+        0
+      </text>
+      <rect
+        fill="#e4e4e4"
+        height="3"
+        width="10"
+        x="85"
+        y="50"
+      />
+    </svg>
   </div>
 </div>
 `;

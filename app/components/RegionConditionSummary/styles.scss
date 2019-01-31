@@ -1,19 +1,21 @@
 .RegionConditionSummary {
-  display: inline-block;
+  position: relative;
+  height: 300px;
 
   .ChartContainer {
+    position: absolute;
     border: 5px solid #e4e4e4;
     width: 410px;
-    height: 234px;
-    margin-left: -33px;
+    height: 221px;
     border-radius: 25px;
+    margin-left: 100px;
   }
 
-  .Chart {
-    height: 100px;
-    display: flex;
-    align-items: flex-end;
-    margin-top: -175px;
+  .RegionConditionChart {
+    position: absolute;
+    bottom: 0;
+    margin-left: 40px;
+    padding-bottom: 70px;
   }
 
   .BorderBottom {
@@ -21,12 +23,12 @@
     height: 78px;
     background: #e4e4e4;
     border-radius: 0px 0px 25px 25px;
-    margin-top: 151px;
+    margin-top: 138px;
   }
 
   .RegionConditionSummaryTitle {
     text-align: left;
-    margin-top: -210px;
+    margin-top: -200px;
     color: rgb(161, 168, 167);
     font-size: 14px;
     margin-left: 28px;
@@ -36,9 +38,8 @@
     height: 176px;
     float: left;
     font-size: 15px;
-    text-align: right;
     color: rgb(161, 168, 167);
-    margin-left: -128px;
-    margin-top: -179px;
+    margin-left: 17px;
+    margin-top: 45px;
   }
 };
