@@ -1,4 +1,4 @@
-# ViewTwo
+# View Two Container
 
 View Two is the container that holds all the child components for the company 
 and location wheel.

@@ -1,4 +1,4 @@
-# ViewOne
+# View One Container
 
 View One is the container that holds the Condition Explorer component and navigation controls
 
