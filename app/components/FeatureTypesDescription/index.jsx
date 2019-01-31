@@ -23,11 +23,8 @@ const featureTypes = {
   ],
 };
 
-const getInstrumentColorCode = (code) => {
-  const group = instrumentCodeGroups[code];
-  return instrumentGroupColors[group];
-};
-
+// Returns the localized heading and description text for a given feature type
+// in the form [heading, description]
 const getFormattedTypeContent = (intl, feature, type) => {
   const headingId = (feature === 'instrument')
     ? `common.instrument.category.${type}`
@@ -42,49 +39,48 @@ const getFormattedTypeContent = (intl, feature, type) => {
   return [heading, description];
 };
 
-const instrumentCodeElement = code => (
-  // <span key="type-code" style={{ color: getInstrumentColorCode(code) }}>{code}</span>
-  <span key="type-code" className={`color-${instrumentCodeGroups[code]}`}>{code}</span>
-);
-
+// Adds color coding to Instrument codes at the beginning of a line
 const instrumentDescription = (item) => {
   const [, code, text] = item.match(/^([A-Z]+)(: .+)/);
 
   return (code)
     ? [
-      instrumentCodeElement(code),
+      <span key="type-code" className={`color-${instrumentCodeGroups[code]}`}>{code}</span>,
       <span key="type-text">{text}</span>,
     ]
     : item;
 };
 
+// Returns a heading element and one or more paragraphs of localized text for a
+// given feature type, in the form [heading, description]
+const getTypeElements = (intl, feature, type) => {
+  const [heading, description] = getFormattedTypeContent(
+    intl,
+    feature,
+    type,
+  );
+
+  const typeDescription = description.split('\n')
+    .map((item, idx) => {
+      const text = (feature === 'instrument')
+        ? instrumentDescription(item)
+        : item;
+
+      // eslint-disable-next-line react/no-array-index-key
+      return <p key={`${type}-text-${idx}`}>{text}</p>;
+    });
+
+  return [
+    <h4 key={`type-heading-${type}`} id={`feature-type-${feature}-${type}`}>{heading}</h4>,
+    <React.Fragment key={`type-description-${type}`}>{typeDescription}</React.Fragment>,
+  ];
+};
+
 const FeatureTypesDescription = (props) => {
   const content = featureTypes[props.feature].reduce((acc, type) => {
-    const [heading, description] = getFormattedTypeContent(
-      props.intl,
-      props.feature,
-      type,
-    );
+    const elements = getTypeElements(props.intl, props.feature, type);
 
-    const typeDescription = description.split('\n')
-      .map((item, idx) => {
-        const text = (props.feature === 'instrument')
-          ? instrumentDescription(item)
-          : item;
-
-        // This list is static and the elements will never be re-rendered
-        // individually, so using the index for a key isn't an issue.
-
-        // eslint-disable-next-line react/no-array-index-key
-        return <p key={`${type}-text-${idx}`}>{text}</p>;
-      });
-
-    acc.push(
-      <h4 key={`type-heading-${type}`} id={`feature-type-${props.feature}-${type}`}>{heading}</h4>,
-      <React.Fragment key={`type-description-${type}`}>{typeDescription}</React.Fragment>,
-    );
-
-    return acc;
+    return acc.concat(elements);
   }, []);
 
   return (

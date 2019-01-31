@@ -45,7 +45,7 @@ describe('Components|FeatureTypesDescription', () => {
     test('should color the instrument code for each paragraph', () => {
       const code = wrapper.find('p').first().shallow().find('span')
         .first();
-      expect(code.prop('style')).toHaveProperty('color', '#0E2B8C');
+      expect(code.hasClass('color-routing')).toBe(true);
     });
   });
 });
