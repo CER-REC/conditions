@@ -13,6 +13,5 @@ describe('Components|FeatureTypeDescription', () => {
     test('should render', () => {
       expect(wrapper.type()).toBe('div');
     });
-
   });
 });
