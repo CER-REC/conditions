@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
 import './styles.scss';
 
@@ -33,27 +33,73 @@ const featureTypes = {
   ],
 };
 
+/*
+import { injectIntl, intlShape } from 'react-intl';
+
+const Component = (props) => {
+  const { intl } = props;
+  // If translation is needed outside of JSX
+  const translation = intl.formatMessage({ id: 'component.translation' });
+  ...
+  return <span>{translation}</span>;
+};
+Component.propTypes = {
+
+  intl: intlShape.isRequired,
+};
+*/
+
 const FeatureTypeDescription = (props) => {
+
+  const content = featureTypes[props.feature].reduce((acc, type) => {
+
+    const headingId = (props.feature === 'instrument')
+      ? `common.instrument.category.${type}`
+      : `common.${props.feature}.${type}`;
+
+    const typeDescription = props.intl
+      .formatMessage({ id: `components.featureTypeDescription.${props.feature}.${type}`})
+      .split('\n')
+      .map((item) => {
+
+        let out;
+        if (props.feature === 'instrument') {
+          const code = item.match(/^([A-Z]+)(: .+)/);
+
+          if (code) {
+            // typeDescription[i] = item.replace(code, <ColoredInstrumentCode code={code} />)
+            const coloredCode = <span style={{color: `${instrumentGroupColors[ instrumentCodeGroups[ code[1].toLowerCase() ] ]}`}}>{code[1]}</span>
+            out = [coloredCode, <span>{code[2]}</span>];
+          }
+        }
+
+        return <p>{out || item}</p>
+      });
+
+    acc.push(
+      <FormattedMessage id={headingId} tagName="h4" />,
+      <p>{typeDescription}</p>,
+    );
+
+    return acc;
+
+  }, []);
+
   return (
     <div className="feature-type-description">
-      {featureTypes[props.feature].map((type) => {
-        return (
-          <React.Fragment>
-            <FormattedMessage id={`common.${props.feature}.${type}`} tagName="h2" />
-            <FormattedMessage id={`components.featureTypeDescription.${props.feature}.${type}`} tagName="p" />
-          </React.Fragment>
-        )
-      })}
+      {content}
     </div>
   );
 };
 
 FeatureTypeDescription.propTypes = {
   feature: PropTypes.string,
+  intl: intlShape.isRequired,
 };
 
 FeatureTypeDescription.defaultProps = {
   feature: 'theme',
 };
 
-export default FeatureTypeDescription;
+// export default FeatureTypeDescription;
+export default injectIntl(FeatureTypeDescription);
