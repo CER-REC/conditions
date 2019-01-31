@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import handleDrag from '../../utilities/handleDrag';
+import { keywordList } from './proptypes';
 
 const testForCollision = (circle, rect) => {
   const deltaX = circle.x - Math.max(rect.x, Math.min(circle.x, rect.x + rect.width));
@@ -11,7 +12,7 @@ const testForCollision = (circle, rect) => {
 
 export default class Fallback extends React.Component {
   static propTypes = {
-    keywords: PropTypes.array.isRequired,
+    keywords: keywordList.isRequired,
   };
 
   constructor(props) {
@@ -23,12 +24,12 @@ export default class Fallback extends React.Component {
     };
   }
 
-  renderKeywords = () => this.props.keywords.map(([v, textPosition, outline, color]) => {
-    const textVisible = testForCollision(this.state.guide, outline);
+  renderKeywords = () => this.props.keywords.map((keyword) => {
+    const textVisible = testForCollision(this.state.guide, keyword.outline);
     return (
-      <g key={v} className={classNames('keyword', { textVisible })}>
-        <text key={v} x={textPosition.x} y={textPosition.y}>{v}</text>
-        <rect {...outline} className={color} />
+      <g key={keyword.value} className={classNames('keyword', { textVisible })}>
+        <text x={keyword.textPosition.x} y={keyword.textPosition.y}>{keyword.value}</text>
+        <rect {...keyword.outline} className={keyword.className} />
       </g>
     );
   });

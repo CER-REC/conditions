@@ -78,7 +78,12 @@ export default class ConditionExplorer extends React.Component {
           y += lineHeight; // We don't add the text size since it may wrap
         }
 
-        return [v, textPosition, outline, randomColor(v)];
+        return {
+          value: v,
+          textPosition,
+          outline,
+          className: randomColor(v),
+        };
       })
       // Filter out null values
       .filter(v => !!v);
@@ -86,9 +91,15 @@ export default class ConditionExplorer extends React.Component {
 
   render() {
     const keywords = this.getKeywords();
-    const content = this.props.physics
-      ? <PhysicsTest keywords={keywords} />
-      : <Fallback keywords={keywords} />;
+    let content = null;
+
+    // There are no keywords to render until after the first mount
+    if (keywords.length > 0) {
+      content = this.props.physics
+        ? <PhysicsTest keywords={keywords} />
+        : <Fallback keywords={keywords} />;
+    }
+
     return (
       <svg
         ref={this.svgRef}
