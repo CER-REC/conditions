@@ -2,16 +2,16 @@ import React from 'react';
 import { storiesForComponent, fixInfo } from '../../../.storybook/utils';
 // import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import withStatus from '../../../.storybook/addon-status';
-import FeatureTypeDescription from '.';
+import FeatureTypesDescription from '.';
 import ReadMe from './README.md';
 
-fixInfo(FeatureTypeDescription);
+fixInfo(FeatureTypesDescription);
 
-storiesForComponent('Components|FeatureTypeDescription', module, ReadMe)
+storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
-    <FeatureTypeDescription />
+    <FeatureTypesDescription />
   ))
   .add('instrument types', () => (
-    <FeatureTypeDescription feature="instrument" />
+    <FeatureTypesDescription feature="instrument" />
   ));

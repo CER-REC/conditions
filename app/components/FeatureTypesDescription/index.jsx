@@ -46,7 +46,7 @@ const getFormattedTypeContent = (intl, feature, type) => {
   const heading = intl.formatMessage({ id: headingId });
 
   const description = intl.formatMessage({
-    id: `components.featureTypeDescription.${feature}.${type}`,
+    id: `components.featureTypesDescription.${feature}.${type}`,
   });
 
   return [heading, description];
@@ -67,7 +67,7 @@ const instrumentDescription = (item) => {
     : item;
 };
 
-const FeatureTypeDescription = (props) => {
+const FeatureTypesDescription = (props) => {
   const content = featureTypes[props.feature].reduce((acc, type) => {
     const [heading, description] = getFormattedTypeContent(
       props.intl,
@@ -97,20 +97,19 @@ const FeatureTypeDescription = (props) => {
   }, []);
 
   return (
-    <div className="feature-type-description">
+    <div className="feature-types-description">
       {content}
     </div>
   );
 };
 
-FeatureTypeDescription.propTypes = {
+FeatureTypesDescription.propTypes = {
   feature: PropTypes.string,
   intl: intlShape.isRequired,
 };
 
-FeatureTypeDescription.defaultProps = {
+FeatureTypesDescription.defaultProps = {
   feature: 'theme',
 };
 
-// export default FeatureTypeDescription;
-export default injectIntl(FeatureTypeDescription);
+export default injectIntl(FeatureTypesDescription);

@@ -3,21 +3,21 @@ import React from 'react';
 
 import { shallowWithIntl } from '../../tests/utilities';
 
-import FeatureTypeDescription from '.';
+import FeatureTypesDescription from '.';
 
-describe('Components|FeatureTypeDescription', () => {
+describe('Components|FeatureTypesDescription', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallowWithIntl(<FeatureTypeDescription />);
+      wrapper = shallowWithIntl(<FeatureTypesDescription />);
     });
 
     test('should render a wrapper', () => {
       expect(wrapper.type()).toBe('div');
     });
 
-    test('should have the class "feature-type-description"', () => {
-      expect(wrapper.is('.feature-type-description')).toBe(true);
+    test('should have the class "feature-types-description"', () => {
+      expect(wrapper.is('.feature-types-description')).toBe(true);
     });
 
     test('should have a heading with translated text', () => {
@@ -39,7 +39,7 @@ describe('Components|FeatureTypeDescription', () => {
   describe('when showing instruments', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallowWithIntl(<FeatureTypeDescription feature="instrument" />);
+      wrapper = shallowWithIntl(<FeatureTypesDescription feature="instrument" />);
     });
 
     test('should color the instrument code for each paragraph', () => {
