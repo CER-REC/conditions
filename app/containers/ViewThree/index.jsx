@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './styles.scss';
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import './styles.scss';
 
-const ViewThree = () => <div />;
+// const ViewThree = () => <div />;
 
-export default ViewThree;
+// export default ViewThree;
