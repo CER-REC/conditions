@@ -1,22 +1,19 @@
-# Component Name
+# Feature Type Description
 
-TODO: Summarize purpose and requirements from design document.
+This sections contains a list of categories for the selected feature, explaining what sorts of conditions they might refer to. The text is scrollable if need be.
 
 ## Interaction Requirements
 
-TODO: Explain interaction requirements, mentioning differences for cursor, touch,
-and keyboard navigation.
+- Users should be able to scroll through the list.
+- When the user selects a feature type in the Small Multiples Legend, the list should scroll to the description for that type.
 
 ## Accessibility Requirements
 
-TODO: Explain desired accessibility support, and provide table of currently
-implemented accessibility with table of automated accessibility test results.
+- [ ] Arrow keys to scroll up and down
 
 ## Analytics Requirements
 
-TODO: Explain what analytics events should be fired from this component, and
-provide table of currently implemented analytics events with table of automated
-analytics test results.
+- [ ] Tabbing to the wrapper should emit an event
 
 ## Unit Testing
 
