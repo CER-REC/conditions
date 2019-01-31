@@ -4,16 +4,6 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import './styles.scss';
 
-const instrumentGroupColors = {
-  routing: '#0E2B8C',
-  construction: '#27A5F9',
-  abandonment: '#164EF8',
-  misc: '#D4A92A',
-  safety: '#C904C2',
-  tariffs: '#C3E6B3',
-  opening: '#6AE6B2',
-};
-
 const instrumentCodeGroups = {
   OPL: 'routing',
   GPL: 'routing',
@@ -53,7 +43,8 @@ const getFormattedTypeContent = (intl, feature, type) => {
 };
 
 const instrumentCodeElement = code => (
-  <span key="type-code" style={{ color: getInstrumentColorCode(code) }}>{code}</span>
+  // <span key="type-code" style={{ color: getInstrumentColorCode(code) }}>{code}</span>
+  <span key="type-code" className={`color-${instrumentCodeGroups[code]}`}>{code}</span>
 );
 
 const instrumentDescription = (item) => {

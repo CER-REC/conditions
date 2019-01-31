@@ -1,3 +1,5 @@
+@import '../../styles/colors.scss';
+
 .feature-types-description {
   height: 200px;
   width: 400px;
@@ -6,7 +8,7 @@
   overflow: auto;
 
   h4 {
-    color: #A1A8A7;
+    color: $Gray160;
     margin-bottom: 0.1rem;
 
     font-family: 'FiraSansCondensedLight', sans-serif;
@@ -15,5 +17,13 @@
   p {
     margin-top: 0;
   }
+
+  .color-routing {      color: GetInstrumentColors('Routing')}
+  .color-construction { color: GetInstrumentColors('Construction')}
+  .color-abandonment {  color: GetInstrumentColors('Abandonment')}
+  .color-misc {         color: GetInstrumentColors('Misc')}
+  .color-safety {       color: GetInstrumentColors('Safety')}
+  .color-tariffs {      color: GetInstrumentColors('Tariffs')}
+  .color-opening {      color: GetInstrumentColors('Opening')}
 
 }
