@@ -33,22 +33,6 @@ const featureTypes = {
   ],
 };
 
-/*
-import { injectIntl, intlShape } from 'react-intl';
-
-const Component = (props) => {
-  const { intl } = props;
-  // If translation is needed outside of JSX
-  const translation = intl.formatMessage({ id: 'component.translation' });
-  ...
-  return <span>{translation}</span>;
-};
-Component.propTypes = {
-
-  intl: intlShape.isRequired,
-};
-*/
-
 const FeatureTypeDescription = (props) => {
 
   const content = featureTypes[props.feature].reduce((acc, type) => {
@@ -56,6 +40,9 @@ const FeatureTypeDescription = (props) => {
     const headingId = (props.feature === 'instrument')
       ? `common.instrument.category.${type}`
       : `common.${props.feature}.${type}`;
+
+    const heading = props.intl
+      .formatMessage({ id: headingId });
 
     const typeDescription = props.intl
       .formatMessage({ id: `components.featureTypeDescription.${props.feature}.${type}`})
@@ -73,12 +60,12 @@ const FeatureTypeDescription = (props) => {
           }
         }
 
-        return <p>{out || item}</p>
+        return <p>{out || item}</p>;
       });
 
     acc.push(
-      <FormattedMessage id={headingId} tagName="h4" />,
-      <p>{typeDescription}</p>,
+      <h4 id={`feature-type-${props.feature}-${type}`}>{heading}</h4>,
+      <React.Fragment>{typeDescription}</React.Fragment>,
     );
 
     return acc;
