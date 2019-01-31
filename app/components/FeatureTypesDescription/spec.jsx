@@ -43,7 +43,8 @@ describe('Components|FeatureTypeDescription', () => {
     });
 
     test('should color the instrument code for each paragraph', () => {
-      const code = wrapper.find('p').first().shallow().find('span').first();
+      const code = wrapper.find('p').first().shallow().find('span')
+        .first();
       expect(code.prop('style')).toHaveProperty('color', '#0E2B8C');
     });
   });

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 
 import './styles.scss';
 
@@ -15,10 +15,10 @@ const instrumentGroupColors = {
 };
 
 const instrumentCodeGroups = {
-  opl: 'routing',
-  gpl: 'routing',
-  gc: 'construction',
-  oc: 'construction',
+  OPL: 'routing',
+  GPL: 'routing',
+  GC: 'construction',
+  OC: 'construction',
 };
 
 const featureTypes = {
@@ -33,43 +33,67 @@ const featureTypes = {
   ],
 };
 
+const getInstrumentColorCode = (code) => {
+  const group = instrumentCodeGroups[code];
+  return instrumentGroupColors[group];
+};
+
+const getFormattedTypeContent = (intl, feature, type) => {
+  const headingId = (feature === 'instrument')
+    ? `common.instrument.category.${type}`
+    : `common.${feature}.${type}`;
+
+  const heading = intl.formatMessage({ id: headingId });
+
+  const description = intl.formatMessage({
+    id: `components.featureTypeDescription.${feature}.${type}`,
+  });
+
+  return [heading, description];
+};
+
+const instrumentCodeElement = code => (
+  <span key="type-code" style={{ color: getInstrumentColorCode(code) }}>{code}</span>
+);
+
+const instrumentDescription = (item) => {
+  const [, code, text] = item.match(/^([A-Z]+)(: .+)/);
+
+  return (code)
+    ? [
+      instrumentCodeElement(code),
+      <span key="type-text">{text}</span>,
+    ]
+    : item;
+};
+
 const FeatureTypeDescription = (props) => {
-
   const content = featureTypes[props.feature].reduce((acc, type) => {
+    const [heading, description] = getFormattedTypeContent(
+      props.intl,
+      props.feature,
+      type,
+    );
 
-    const headingId = (props.feature === 'instrument')
-      ? `common.instrument.category.${type}`
-      : `common.${props.feature}.${type}`;
+    const typeDescription = description.split('\n')
+      .map((item, idx) => {
+        const text = (props.feature === 'instrument')
+          ? instrumentDescription(item)
+          : item;
 
-    const heading = props.intl
-      .formatMessage({ id: headingId });
+        // This list is static and the elements will never be re-rendered
+        // individually, so using the index for a key isn't an issue.
 
-    const typeDescription = props.intl
-      .formatMessage({ id: `components.featureTypeDescription.${props.feature}.${type}`})
-      .split('\n')
-      .map((item) => {
-
-        let out;
-        if (props.feature === 'instrument') {
-          const code = item.match(/^([A-Z]+)(: .+)/);
-
-          if (code) {
-            // typeDescription[i] = item.replace(code, <ColoredInstrumentCode code={code} />)
-            const coloredCode = <span style={{color: `${instrumentGroupColors[ instrumentCodeGroups[ code[1].toLowerCase() ] ]}`}}>{code[1]}</span>
-            out = [coloredCode, <span>{code[2]}</span>];
-          }
-        }
-
-        return <p>{out || item}</p>;
+        // eslint-disable-next-line react/no-array-index-key
+        return <p key={`${type}-text-${idx}`}>{text}</p>;
       });
 
     acc.push(
-      <h4 id={`feature-type-${props.feature}-${type}`}>{heading}</h4>,
-      <React.Fragment>{typeDescription}</React.Fragment>,
+      <h4 key={`type-heading-${type}`} id={`feature-type-${props.feature}-${type}`}>{heading}</h4>,
+      <React.Fragment key={`type-description-${type}`}>{typeDescription}</React.Fragment>,
     );
 
     return acc;
-
   }, []);
 
   return (
