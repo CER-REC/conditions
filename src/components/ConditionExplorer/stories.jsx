@@ -3,7 +3,6 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ConditionExplorer from '.';
-import PhysicsTest from './PhysicsTest';
 import ReadMe from './README.md';
 import keywords from './mockKeywords';
 
@@ -13,6 +12,15 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['changeVisibleWords'] }))
   .add('default', () => (
-    <ConditionExplorer keywords={uniqueKeywords} {...getInteractionProps()} />
+    <ConditionExplorer
+      keywords={uniqueKeywords}
+      {...getInteractionProps()}
+    />
   ))
-  .add('physics', () => <PhysicsTest />);
+  .add('physics disabled', () => (
+    <ConditionExplorer
+      keywords={uniqueKeywords}
+      physics={false}
+      {...getInteractionProps()}
+    />
+  ));

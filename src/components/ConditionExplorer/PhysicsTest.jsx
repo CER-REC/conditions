@@ -9,6 +9,8 @@ export default class PhysicsTest extends React.Component {
   constructor(props) {
     super(props);
 
+    this.groupRef = React.createRef();
+
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
     this.engine = Engine.create({ world });
     this.lastTime = null;
@@ -18,15 +20,22 @@ export default class PhysicsTest extends React.Component {
     this.circle = Bodies.circle(250, 400, 50, {
       collisionFilter: { category: circleCategory },
     });
-    this.rect = Bodies.rectangle(200, 250, 100, 10);
-    Matter.Body.setInertia(this.rect, 1);
+    this.keywords = [
+      Bodies.rectangle(200, 250, 100, 10),
+      Bodies.rectangle(400, 250, 100, 10),
+    ];
+
+    this.keywords.forEach(v => {
+      v.frictionAir = 0.05;
+    });
+
     World.add(this.engine.world, this.circle);
-    World.add(this.engine.world, this.rect);
+    World.add(this.engine.world, this.keywords);
     Engine.run(this.engine);
   }
 
   componentDidMount() {
-    const mouse = Mouse.create(document.getElementById('renderLayer'));
+    const mouse = Mouse.create(this.groupRef.current.parentElement);
     const mouseConstraint = MouseConstraint.create(this.engine, {
       mouse,
       collisionFilter: { mask: circleCategory },
@@ -86,13 +95,10 @@ export default class PhysicsTest extends React.Component {
       const d = body.vertices.map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`).join(' ');
       return <path key={body.id} d={d} stroke="#000" />
     });
-    // We need to have an HTML element surrounding the SVG in order for mouse
-    // events to work properly in Matter
     return (
-      <div id="renderLayer">
-        <svg width="500" height="500">{bodies}</svg>
-      </div>
+      <g ref={this.groupRef}>
+        {bodies}
+      </g>
     );
-    // return <div id="renderLayer" {...handleDrag(this.updateGuidePosition)} onClick={this.updateGuidePosition} />;
   }
 }

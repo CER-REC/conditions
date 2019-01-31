@@ -1,24 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'lodash.memoize';
-import classNames from 'classnames';
-import handleDrag from '../../utilities/handleDrag';
+import PhysicsTest from './PhysicsTest';
+import Fallback from './Fallback';
 import './styles.scss';
 
 // This function memoizes based on the keyword, but doesn't use it in the result
 // function. It is only used in the (default) key generation function (2nd arg)
 const randomColor = memoize(() => `color${Math.floor(Math.random() * 3)}`);
 
-const testForCollision = (circle, rect) => {
-  const deltaX = circle.x - Math.max(rect.x, Math.min(circle.x, rect.x + rect.width));
-  const deltaY = circle.y - Math.max(rect.y, Math.min(circle.y, rect.y + rect.height));
-  return (deltaX ** 2) + (deltaY ** 2) < (circle.r ** 2);
-};
-
 export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     changeVisibleWords: PropTypes.func.isRequired,
+    physics: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    physics: true,
   };
 
   calculateTextSize = memoize((text) => {
@@ -34,10 +33,6 @@ export default class ConditionExplorer extends React.Component {
     super(props);
     this.svgRef = React.createRef();
     this.textSizeRef = React.createRef();
-
-    this.state = {
-      guide: { x: 100, y: 100, r: 50 },
-    };
   }
 
   componentDidMount() {
@@ -62,53 +57,38 @@ export default class ConditionExplorer extends React.Component {
     let y = lineHeight - margin.height;
     let x = startX;
 
-    return this.props.keywords.map((v) => {
-      // TODO: Need a better way of shortcircuiting the map
-      if (y > size.height) { return null; }
+    return this.props.keywords
+      .map((v) => {
+        // TODO: Need a better way of shortcircuiting the map
+        if (y > size.height) { return null; }
 
-      const textSize = this.calculateTextSize(v);
-      const outline = {
-        x: x + textSize.xOffset,
-        y: (y - textSize.height) + textSize.yOffset,
-        width: textSize.width,
-        height: textSize.height,
-      };
+        const textSize = this.calculateTextSize(v);
+        const outline = {
+          x: x + textSize.xOffset,
+          y: (y - textSize.height) + textSize.yOffset,
+          width: textSize.width,
+          height: textSize.height,
+        };
 
-      const textVisible = testForCollision(this.state.guide, outline);
+        const textPosition = { x, y };
 
-      const el = (
-        <g key={v} className={classNames('keyword', { textVisible })}>
-          <text key={v} x={x} y={y}>{v}</text>
-          <rect {...outline} className={randomColor(v)} />
-        </g>
-      );
+        x += textSize.width + margin.width;
+        if (x >= size.width) {
+          x = startX;
+          y += lineHeight; // We don't add the text size since it may wrap
+        }
 
-      x += textSize.width + margin.width;
-      if (x >= size.width) {
-        x = startX;
-        y += lineHeight; // We don't add the text size since it may wrap
-      }
-      return el;
-    });
+        return [v, textPosition, outline, randomColor(v)];
+      })
+      // Filter out null values
+      .filter(v => !!v);
   }
 
-  updateGuidePosition = (x, y) => {
-    const svgBounds = this.svgRef.current
-      ? this.svgRef.current.getBoundingClientRect()
-      : { top: 0, left: 0 };
-    this.setState(({ guide }) => ({
-      guide: {
-        ...guide,
-        x: x - svgBounds.left,
-        y: y - svgBounds.top,
-      },
-    }));
-  };
-
   render() {
-    // These props are split between circle and SVG to provide better control
-    // when dragging quickly.
-    const { onMouseDown, ...dragProps } = handleDrag(this.updateGuidePosition);
+    const keywords = this.getKeywords();
+    const content = this.props.physics
+      ? <PhysicsTest keywords={keywords} />
+      : <Fallback keywords={keywords} />;
     return (
       <svg
         ref={this.svgRef}
@@ -116,18 +96,9 @@ export default class ConditionExplorer extends React.Component {
         width="500"
         height="500"
         style={{ border: '1px solid #000' }}
-        {...dragProps}
       >
         <text ref={this.textSizeRef} style={{ visibility: 'hidden' }} />
-        {this.getKeywords()}
-        <circle
-          fill="transparent"
-          stroke="#000"
-          cx={this.state.guide.x}
-          cy={this.state.guide.y}
-          r={this.state.guide.r}
-          onMouseDown={onMouseDown}
-        />
+        {content}
       </svg>
     );
   }
