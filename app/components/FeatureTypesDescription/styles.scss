@@ -1,0 +1,21 @@
+.feature-type-description {
+  height: 200px;
+  width: 400px;
+  text-align: left;
+  background-color: white;
+  overflow: auto;
+
+  h4 {
+    color: #A1A8A7;
+    margin-bottom: 0.1rem;
+
+    font-family: 'FiraSansCondensedLight', sans-serif;
+  }
+
+  p {
+    margin-top: 0;
+
+    font-family: 'FiraSansCondensed', sans-serif;
+  }
+
+}
