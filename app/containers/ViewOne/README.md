@@ -1,7 +1,6 @@
 # ViewOne
 
-View one is the container that holds all the child components for the company 
-and location wheel.
+View One is the container that holds the Condition Explorer component and navigation controls
 
 * [] The component should have a grid with 12 columns and 3 rows
 * [] The component should have a first section of a fixed height/width ratio 
