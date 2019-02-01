@@ -1781,32 +1781,26 @@ exports[`Storyshots Components|FeatureFlag Without color 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|FeatureTypeDescription default 1`] = `
+exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="feature-type-description"
+    className="feature-types-description"
   >
-    <h4
-      id="feature-type-theme-security"
-    >
+    <h4>
       Security
     </h4>
     <p>
       Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
     </p>
-    <h4
-      id="feature-type-theme-managementSystem"
-    >
+    <h4>
       Management System
     </h4>
     <p>
       Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
     </p>
-    <h4
-      id="feature-type-theme-financial"
-    >
+    <h4>
       Financial
     </h4>
     <p>
@@ -1816,25 +1810,19 @@ exports[`Storyshots Components|FeatureTypeDescription default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|FeatureTypeDescription instrument types 1`] = `
+exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="feature-type-description"
+    className="feature-types-description"
   >
-    <h4
-      id="feature-type-instrument-routing"
-    >
+    <h4>
       Routing
     </h4>
     <p>
       <span
-        style={
-          Object {
-            "color": "#0E2B8C",
-          }
-        }
+        className="color-routing"
       >
         OPL
       </span>
@@ -1844,11 +1832,7 @@ exports[`Storyshots Components|FeatureTypeDescription instrument types 1`] = `
     </p>
     <p>
       <span
-        style={
-          Object {
-            "color": "#0E2B8C",
-          }
-        }
+        className="color-routing"
       >
         GPL
       </span>
@@ -1856,18 +1840,12 @@ exports[`Storyshots Components|FeatureTypeDescription instrument types 1`] = `
         : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
       </span>
     </p>
-    <h4
-      id="feature-type-instrument-construction"
-    >
+    <h4>
       Construction
     </h4>
     <p>
       <span
-        style={
-          Object {
-            "color": "#27A5F9",
-          }
-        }
+        className="color-construction"
       >
         GC
       </span>
@@ -1877,11 +1855,7 @@ exports[`Storyshots Components|FeatureTypeDescription instrument types 1`] = `
     </p>
     <p>
       <span
-        style={
-          Object {
-            "color": "#27A5F9",
-          }
-        }
+        className="color-construction"
       >
         OC
       </span>

@@ -1,11 +1,11 @@
 # Feature Type Description
 
-This sections contains a list of categories for the selected feature, explaining what sorts of conditions they might refer to. The text is scrollable if need be.
+This section contains a list of categories for the selected feature, explaining what sorts of conditions each might refer to. The text is scrollable.
 
 ## Interaction Requirements
 
 - Users should be able to scroll through the list.
-- When the user selects a feature type in the Small Multiples Legend, the list should scroll to the description for that type. (Type headings all have `id=feature-type-theme-security`, etc. for this purpose)
+- When the user selects a feature type in the Small Multiples Legend, the list should scroll to the description for that type. (Parent component should pass `scrollTarget="security"` as a prop to trigger this)
 
 ## Accessibility Requirements
 
