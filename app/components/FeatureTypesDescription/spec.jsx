@@ -1,7 +1,5 @@
 import React from 'react';
-// import { shallow } from 'enzyme';
-
-import { shallowWithIntl } from '../../tests/utilities';
+import { shallowWithIntl, mountWithIntl } from '../../tests/utilities';
 
 import FeatureTypesDescription from '.';
 
@@ -41,6 +39,23 @@ describe('Components|FeatureTypesDescription', () => {
       const code = wrapper.find('p').first().shallow().find('span')
         .first();
       expect(code.hasClass('color-routing')).toBe(true);
+    });
+  });
+
+  // Skipping until we have a proper way to test that the container is being
+  // scrolled.
+  xdescribe('when given a new scroll target', () => {
+    test('should scroll the container', () => {
+      const wrapper = mountWithIntl(<FeatureTypesDescription />);
+
+      const top = wrapper.find('div').getDOMNode().scrollTop;
+
+      // console.log(wrapper.debug());
+      wrapper.setProps({ scrollTarget: 'financial' });
+
+      const newTop = wrapper.find('div').getDOMNode().scrollTop;
+
+      expect(newTop).not.toBe(top);
     });
   });
 });
