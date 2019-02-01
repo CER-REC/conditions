@@ -29,11 +29,6 @@ describe('Components|FeatureTypesDescription', () => {
       const paraText = wrapper.find('p').first().text();
       expect(paraText).toBe('Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.');
     });
-
-    test('should provide an id on headings', () => {
-      const heading = wrapper.find('#feature-type-theme-security').first();
-      expect(heading.exists()).toBe(true);
-    });
   });
 
   describe('when showing instruments', () => {

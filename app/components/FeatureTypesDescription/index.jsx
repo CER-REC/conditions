@@ -23,80 +23,107 @@ const featureTypes = {
   ],
 };
 
-// Returns the localized heading and description text for a given feature type
-// in the form [heading, description]
-const getFormattedTypeContent = (intl, feature, type) => {
-  const headingId = (feature === 'instrument')
-    ? `common.instrument.category.${type}`
-    : `common.${feature}.${type}`;
+class FeatureTypesDescription extends React.PureComponent {
+  constructor() {
+    super();
+    this.headingRefs = {};
+  }
 
-  const heading = intl.formatMessage({ id: headingId });
+  // Returns the localized heading and description text for a given feature type
+  // in the form [heading, description]
+  getFormattedTypeContent = (intl, feature, type) => {
+    const headingId = (feature === 'instrument')
+      ? `common.instrument.category.${type}`
+      : `common.${feature}.${type}`;
 
-  const description = intl.formatMessage({
-    id: `components.featureTypesDescription.${feature}.${type}`,
-  });
+    const heading = intl.formatMessage({ id: headingId });
 
-  return [heading, description];
-};
-
-// Adds color coding to Instrument codes at the beginning of a line
-const instrumentDescription = (item) => {
-  const [, code, text] = item.match(/^([A-Z]+)(: .+)/);
-
-  return (code)
-    ? [
-      <span key="type-code" className={`color-${instrumentCodeGroups[code]}`}>{code}</span>,
-      <span key="type-text">{text}</span>,
-    ]
-    : item;
-};
-
-// Returns a heading element and one or more paragraphs of localized text for a
-// given feature type, in the form [heading, description]
-const getTypeElements = (intl, feature, type) => {
-  const [heading, description] = getFormattedTypeContent(
-    intl,
-    feature,
-    type,
-  );
-
-  const typeDescription = description.split('\n')
-    .map((item, idx) => {
-      const text = (feature === 'instrument')
-        ? instrumentDescription(item)
-        : item;
-
-      // eslint-disable-next-line react/no-array-index-key
-      return <p key={`${type}-text-${idx}`}>{text}</p>;
+    const description = intl.formatMessage({
+      id: `components.featureTypesDescription.${feature}.${type}`,
     });
 
-  return [
-    <h4 key={`type-heading-${type}`} id={`feature-type-${feature}-${type}`}>{heading}</h4>,
-    <React.Fragment key={`type-description-${type}`}>{typeDescription}</React.Fragment>,
-  ];
-};
+    return [heading, description];
+  };
 
-const FeatureTypesDescription = (props) => {
-  const content = featureTypes[props.feature].reduce((acc, type) => {
-    const elements = getTypeElements(props.intl, props.feature, type);
+  // Adds color coding to Instrument codes at the beginning of a line
+  instrumentDescription = (item) => {
+    const [, code, text] = item.match(/^([A-Z]+)(: .+)/);
 
-    return acc.concat(elements);
-  }, []);
+    return (code)
+      ? [
+        <span key="type-code" className={`color-${instrumentCodeGroups[code]}`}>{code}</span>,
+        <span key="type-text">{text}</span>,
+      ]
+      : item;
+  };
 
-  return (
-    <div className="feature-types-description">
-      {content}
-    </div>
-  );
-};
+  // Returns a heading element and one or more paragraphs of localized text for a
+  // given feature type, in the form [heading, description]
+  getTypeElements = (intl, feature, type) => {
+    const [heading, description] = this.getFormattedTypeContent(
+      intl,
+      feature,
+      type,
+    );
+
+    const typeDescription = description.split('\n')
+      .map((item, idx) => {
+        const text = (feature === 'instrument')
+          ? this.instrumentDescription(item)
+          : item;
+
+        // eslint-disable-next-line react/no-array-index-key
+        return <p key={`${type}-text-${idx}`}>{text}</p>;
+      });
+
+    return [
+      <h4
+        key={`type-heading-${type}`}
+        ref={(elm) => { this.headingRefs[type] = elm; }}
+      >
+        {heading}
+      </h4>,
+      <React.Fragment key={`type-description-${type}`}>{typeDescription}</React.Fragment>,
+    ];
+  };
+
+  scrollTo = (feature) => {
+    this.ref.scrollTop = this.headingRefs[feature].offsetTop - this.ref.offsetTop;
+  };
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.scrollTarget !== this.props.scrollTarget) {
+      this.scrollTo(this.props.scrollTarget);
+    }
+  };
+
+  render() {
+    const content = featureTypes[this.props.feature].reduce((acc, type) => {
+      const elements = this.getTypeElements(this.props.intl, this.props.feature, type);
+
+      return acc.concat(elements);
+    }, []);
+
+    return (
+      <div
+        className="feature-types-description"
+        ref={(elm) => { this.ref = elm; }}
+      >
+        {content}
+      </div>
+    );
+  }
+}
 
 FeatureTypesDescription.propTypes = {
   feature: PropTypes.string,
+  scrollTarget: PropTypes.string,
   intl: intlShape.isRequired,
 };
 
 FeatureTypesDescription.defaultProps = {
   feature: 'theme',
+  scrollTarget: '',
 };
 
 export default injectIntl(FeatureTypesDescription);
