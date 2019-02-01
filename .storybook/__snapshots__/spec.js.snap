@@ -1715,51 +1715,6 @@ exports[`Storyshots Components|CircleContainer with text 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Control with default values 1`] = `
-<div
-  className="visualization"
->
-  <svg>
-    <g
-      className="Control"
-      transform="translate(30, 30)"
-    >
-      <line
-        stroke="rgb(209, 5, 122)"
-        strokeDasharray="4.051 4.051"
-        strokeWidth="1"
-        x1="0"
-        x2="0"
-        y1="20"
-        y2="220"
-      />
-      <g
-        transform="translate(-10, 10)"
-      >
-        <path
-          d="M 5 5 L 15 5 L 10 15 z"
-          fill="rgb(209, 5, 122)"
-        />
-        <rect
-          fill="white"
-          height="10"
-          width="20"
-          x="0"
-          y="-5"
-        />
-        <text
-          textAnchor="middle"
-          x="10"
-          y="5"
-        >
-          213
-        </text>
-      </g>
-    </g>
-  </svg>
-</div>
-`;
-
 exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
 <div
   className="visualization"
