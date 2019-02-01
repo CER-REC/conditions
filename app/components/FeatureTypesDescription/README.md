@@ -5,7 +5,7 @@ This sections contains a list of categories for the selected feature, explaining
 ## Interaction Requirements
 
 - Users should be able to scroll through the list.
-- When the user selects a feature type in the Small Multiples Legend, the list should scroll to the description for that type.
+- When the user selects a feature type in the Small Multiples Legend, the list should scroll to the description for that type. (Type headings all have `id=feature-type-theme-security`, etc. for this purpose)
 
 ## Accessibility Requirements
 
