@@ -7,4 +7,4 @@ that relates the diameter of the bubbles in the Instruments Bubble Chart to a va
 
 * [ ] Renders a title for 'Number of Conditions'
 * [ ] Displays a number scale from 1 - 1600
-* [ ] Displays rounded rectangles to show the increase in diameter of the Bubble Chart
+* [ ] Displays ellipses increasing in width relative to sizes of the Bubbles in the Bubble chart
