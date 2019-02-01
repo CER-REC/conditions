@@ -72,4 +72,4 @@ export const mountWithIntl = (node, { context, childContextTypes, ...opts } = {}
     childContextTypes: { intl: intlShape, ...childContextTypes },
     ...opts,
   },
-) //.childAt(0);
+);
