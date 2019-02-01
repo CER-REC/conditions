@@ -26,6 +26,7 @@ const featureTypes = {
 class FeatureTypesDescription extends React.PureComponent {
   constructor() {
     super();
+    this.ref = React.createRef();
     this.headingRefs = {};
   }
 
@@ -76,10 +77,12 @@ class FeatureTypesDescription extends React.PureComponent {
         return <p key={`${type}-text-${idx}`}>{text}</p>;
       });
 
+    this.headingRefs[type] = React.createRef();
+
     return [
       <h4
         key={`type-heading-${type}`}
-        ref={(elm) => { this.headingRefs[type] = elm; }}
+        ref={this.headingRefs[type]}
       >
         {heading}
       </h4>,
@@ -88,7 +91,8 @@ class FeatureTypesDescription extends React.PureComponent {
   };
 
   scrollTo = (feature) => {
-    this.ref.scrollTop = this.headingRefs[feature].offsetTop - this.ref.offsetTop;
+    const newTop = this.headingRefs[feature].current.offsetTop - this.ref.current.offsetTop;
+    this.ref.current.scrollTop = newTop;
   };
 
   componentDidUpdate = (prevProps) => {
@@ -107,7 +111,7 @@ class FeatureTypesDescription extends React.PureComponent {
     return (
       <div
         className="feature-types-description"
-        ref={(elm) => { this.ref = elm; }}
+        ref={this.ref}
       >
         {content}
       </div>
