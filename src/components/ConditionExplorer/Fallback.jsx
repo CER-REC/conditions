@@ -27,9 +27,12 @@ export default class Fallback extends React.Component {
   renderKeywords = () => this.props.keywords.map((keyword) => {
     const textVisible = testForCollision(this.state.guide, keyword.outline);
     return (
-      <g key={keyword.value} className={classNames('keyword', { textVisible })}>
+      <g
+        key={keyword.value}
+        className={classNames('keyword', keyword.className, { textVisible })}
+      >
         <text x={keyword.textPosition.x} y={keyword.textPosition.y}>{keyword.value}</text>
-        <rect {...keyword.outline} className={keyword.className} />
+        <rect {...keyword.outline} />
       </g>
     );
   });

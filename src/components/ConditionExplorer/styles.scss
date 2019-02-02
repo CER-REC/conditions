@@ -3,12 +3,15 @@
 
 .ConditionExplorer {
   .keyword {
-    rect {
+    user-select: none;
+
+    &.color0 { fill: #D7DBD9; }
+    &.color1 { fill: #E2DCD7; }
+    &.color2 { fill: #E0DCE0; }
+
+    rect, path {
       opacity: 1;
       transition: opacity 1s 1s;
-      &.color0 { fill: #D7DBD9; }
-      &.color1 { fill: #E2DCD7; }
-      &.color2 { fill: #E0DCE0; }
     }
 
     text {
@@ -22,10 +25,11 @@
     }
 
     &.textVisible {
-      rect {
+      rect, path {
         /* Disable the transition when it becomes visible, so it appears immediately */
         transition: none;
-        opacity: 0;
+        // opacity: 0;
+        opacity: 0.5;
       }
 
       text {
