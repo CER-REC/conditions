@@ -61,14 +61,14 @@ describe('Components|FeatureTypesDescription', () => {
   });
 
   // Skipping until we have a proper way to test that the container is being
-  // scrolled.
+  // scrolled. Jest doesn't create enough of a DOM for the component to have
+  // useable scrollTop, etc. values, so they just come back as 0.
   xdescribe('when given a new scroll target', () => {
     test('should scroll the container', () => {
       const wrapper = mountWithIntl(<FeatureTypesDescription />);
 
       const top = wrapper.find('div').getDOMNode().scrollTop;
 
-      // console.log(wrapper.debug());
       wrapper.setProps({ scrollTarget: 'financial' });
 
       const newTop = wrapper.find('div').getDOMNode().scrollTop;
