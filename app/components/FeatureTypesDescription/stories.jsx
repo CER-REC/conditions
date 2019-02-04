@@ -21,10 +21,15 @@ const instrumentProps = {
   },
 };
 
-const targets = [
+const defaultTargets = [
   'security',
   'managementSystem',
   'financial',
+];
+
+const instrumentTargets = [
+  'routing',
+  'construction',
 ];
 
 fixInfo(FeatureTypesDescription);
@@ -35,9 +40,12 @@ storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
   .add('default', () => (
     <FeatureTypesDescription
       {...defaultProps}
-      scrollTarget={select('Scroll Target', targets, 'security')}
+      scrollTarget={select('Scroll Target', defaultTargets, 'security')}
     />
   ))
   .add('instrument types', () => (
-    <FeatureTypesDescription {...instrumentProps} />
+    <FeatureTypesDescription
+      {...instrumentProps}
+      scrollTarget={select('Scroll Target', instrumentTargets, 'routing')}
+    />
   ));
