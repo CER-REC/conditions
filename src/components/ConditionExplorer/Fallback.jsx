@@ -31,7 +31,12 @@ export default class Fallback extends React.Component {
         key={keyword.value}
         className={classNames('keyword', keyword.className, { textVisible })}
       >
-        <text x={keyword.textPosition.x} y={keyword.textPosition.y}>{keyword.value}</text>
+        <text
+          x={keyword.outline.x}
+          y={keyword.outline.y + keyword.textOffset.y}
+        >
+          {keyword.value}
+        </text>
         <rect {...keyword.outline} />
       </g>
     );

@@ -11,6 +11,16 @@ const circleCategory = 0x0002;
 const visibleTextCategory = 0x0003;
 const placeholderCategory = 0x0004;
 
+const calculatePosition = (keyword) => ({
+  x: keyword.outline.x + (keyword.outline.width / 2),
+  y: keyword.outline.y + (keyword.outline.height / 2),
+});
+
+const calculateTextOffset = (keyword) => ({
+  x: keyword.textOffset.x,
+  y: keyword.textOffset.y - (keyword.outline.height / 2),
+});
+
 export default class PhysicsTest extends React.Component {
   static propTypes = {
     keywords: keywordList.isRequired,
@@ -38,9 +48,10 @@ export default class PhysicsTest extends React.Component {
     this.keywords = {};
     this.props.keywords.forEach((keyword) => {
       const { outline } = keyword;
+      const position = calculatePosition(keyword);
       const keywordBody = Bodies.rectangle(
-        outline.x + (outline.width / 2),
-        outline.y + (outline.height / 2),
+        position.x,
+        position.y,
         outline.width,
         outline.height,
         {
@@ -52,9 +63,8 @@ export default class PhysicsTest extends React.Component {
       );
       keywordBody.frictionAir = 0.05;
       keywordBody.render.className = keyword.className;
-      keywordBody.render.textPosition = keyword.textPosition;
       keywordBody.render.value = keyword.value;
-      keywordBody.render.textOffset = keyword.textOffset;
+      keywordBody.render.textOffset = calculateTextOffset(keyword);
 
       this.keywords[keyword.value] = keywordBody;
     });
@@ -64,7 +74,7 @@ export default class PhysicsTest extends React.Component {
   }
 
   componentDidMount() {
-    // Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.3, y: 0.01 });
+    Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.3, y: 0.01 });
 
     const mouse = Mouse.create(this.groupRef.current.parentElement);
     const mouseConstraint = MouseConstraint.create(this.engine, {
@@ -110,6 +120,8 @@ export default class PhysicsTest extends React.Component {
           return;
         }
 
+        const oldAngle = keywordBody.angle;
+        Matter.Body.setAngle(keywordBody, 0);
         const oldWidth = keywordBody.bounds.max.x - keywordBody.bounds.min.x;
         const oldHeight = keywordBody.bounds.max.y - keywordBody.bounds.min.y;
         Matter.Body.scale(
@@ -117,11 +129,9 @@ export default class PhysicsTest extends React.Component {
           keyword.outline.width / oldWidth,
           keyword.outline.height / oldHeight,
         );
-        Matter.Body.setPosition(keywordBody, {
-          x: keyword.outline.x + (keyword.outline.width / 2),
-          y: keyword.outline.y + (keyword.outline.height / 2),
-        });
-        keywordBody.render.textOffset = keyword.textOffset;
+        Matter.Body.setPosition(keywordBody, calculatePosition(keyword));
+        Matter.Body.setAngle(keywordBody, oldAngle);
+        keywordBody.render.textOffset = calculateTextOffset(keyword);
         needsUpdate = true;
       });
 
@@ -170,31 +180,38 @@ export default class PhysicsTest extends React.Component {
   }
 
   render() {
-    const bodies = Composite.allBodies(this.engine.world).map((body) => {
-      const d = body.vertices.map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`).join(' ');
-      if (body === this.circle) {
-        return <path key="guide" className="guide" d={d} />;
-      }
+    const bodies = Composite.allBodies(this.engine.world)
+      .sort((a, b) => {
+        if (a.render.isVisible && !b.render.isVisible) { return 1; }
+        if (b.render.isVisible && !a.render.isVisible) { return -1; }
+        return 0;
+      })
+      .map((body) => {
+        const d = body.vertices.map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`).join(' ');
+        if (body === this.circle) {
+          return <path key="guide" className="guide" d={d} />;
+        }
 
-      return (
-        <g
-          key={body.id}
-          className={classNames(
-            'keyword',
-            body.render.className,
-            { textVisible: body.render.isVisible || true },
-          )}
-        >
-          <text
-            x={body.position.x + body.render.textOffset.x}
-            y={body.position.y + body.render.textOffset.y}
+        return (
+          <g
+            key={body.id}
+            className={classNames(
+              'keyword',
+              body.render.className,
+              { textVisible: body.render.isVisible },
+            )}
           >
-            {body.render.value}
-          </text>
-          <path d={d} />
-        </g>
-      );
-    });
+            <text
+              x={body.position.x + body.render.textOffset.x}
+              y={body.position.y + body.render.textOffset.y}
+              transform={`rotate(${body.angle * 180 / Math.PI} ${body.position.x} ${body.position.y})`}
+            >
+              {body.render.value}
+            </text>
+            <path d={d} />
+          </g>
+        );
+      });
     return (
       <g ref={this.groupRef}>
         {bodies}

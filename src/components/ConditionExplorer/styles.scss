@@ -21,15 +21,14 @@
       font-family: $fira-sans-condensed-light;
       fill: rgb(149, 127, 109);
       // font-size: 12px;
-      transition: all 1s;
+      transition: fill 1s, font-size 1s;
     }
 
     &.textVisible {
       rect, path {
         /* Disable the transition when it becomes visible, so it appears immediately */
         transition: none;
-        // opacity: 0;
-        opacity: 0.5;
+        opacity: 0;
       }
 
       text {

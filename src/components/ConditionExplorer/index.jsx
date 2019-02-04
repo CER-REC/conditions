@@ -85,13 +85,13 @@ export default class ConditionExplorer extends React.Component {
 
         const textSize = this.calculateTextSize(v);
         const outline = {
-          x: x + textSize.xOffset,
-          y: (y - textSize.height) + textSize.yOffset,
+          // x: x + textSize.xOffset,
+          // y: (y - textSize.height) + textSize.yOffset,
+          x,
+          y,
           width: textSize.width,
           height: textSize.height,
         };
-
-        const textPosition = { x, y };
 
         x += textSize.width + margin.width;
         if (x >= size.width) {
@@ -101,10 +101,9 @@ export default class ConditionExplorer extends React.Component {
 
         return {
           value: v,
-          textPosition,
           textOffset: {
-            x: -(outline.width / 2) - textSize.xOffset,
-            y: textSize.yOffset,
+            x: -(outline.width / 2) - (textSize.xOffset * 2),
+            y: textSize.yOffset + (outline.height / 2),
           },
           outline,
           className: randomColor(v),
@@ -148,10 +147,12 @@ export default class ConditionExplorer extends React.Component {
         height="500"
         style={{ border: '1px solid #000' }}
       >
-        <text ref={this.fontChangeRef} style={{ visibility: 'hidden' }}>
-          abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-.,0123456789
-        </text>
-        <text ref={this.textSizeRef} style={{ visibility: 'hidden' }} />
+        <g className="keyword color0 textVisible">
+          <text ref={this.fontChangeRef} style={{ visibility: 'hidden' }}>
+            abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-.,0123456789
+          </text>
+          <text ref={this.textSizeRef} style={{ visibility: 'hidden' }} />
+        </g>
         {content}
       </svg>
     );
