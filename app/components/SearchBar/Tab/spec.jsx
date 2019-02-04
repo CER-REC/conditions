@@ -38,7 +38,7 @@ describe('Components|SearchBar/Tab', () => {
 
     test('with filter set to false, render findText ', () => {
       const wrapper = shallow(
-        <Tab isFilter={false} isActive onClick={noop} />
+        <Tab isFilter={false} isActive onClick={noop} />,
       );
       const translationWrapper = wrapper
         .find('FormattedMessage')
@@ -57,7 +57,7 @@ describe('Components|SearchBar/Tab', () => {
   describe('with active prop', () => {
     test('set to true, render bottom border', () => {
       const wrapper = shallow(
-        <Tab isFilter={false} isActive onClick={noop} />
+        <Tab isFilter={false} isActive onClick={noop} />,
       );
       expect(wrapper.props().style.borderBottom).toBe('none');
     });
