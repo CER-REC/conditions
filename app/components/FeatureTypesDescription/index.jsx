@@ -4,25 +4,6 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import './styles.scss';
 
-const instrumentCodeGroups = {
-  OPL: 'routing',
-  GPL: 'routing',
-  GC: 'construction',
-  OC: 'construction',
-};
-
-const featureTypes = {
-  theme: [
-    'security',
-    'managementSystem',
-    'financial',
-  ],
-  instrument: [
-    'routing',
-    'construction',
-  ],
-};
-
 class FeatureTypesDescription extends React.PureComponent {
   constructor() {
     super();
@@ -33,9 +14,7 @@ class FeatureTypesDescription extends React.PureComponent {
   // Returns the localized heading and description text for a given feature type
   // in the form [heading, description]
   getFormattedTypeContent = (intl, feature, type) => {
-    const headingId = (feature === 'instrument')
-      ? `common.instrument.category.${type}`
-      : `common.${feature}.${type}`;
+    const headingId = `common.${feature}.${type}`;
 
     const heading = intl.formatMessage({ id: headingId });
 
@@ -47,12 +26,12 @@ class FeatureTypesDescription extends React.PureComponent {
   };
 
   // Adds color coding to Instrument codes at the beginning of a line
-  instrumentDescription = (item) => {
+  addColorCoding = (item, colorCodes) => {
     const [, code, text] = item.match(/^([A-Z]+)(: .+)/);
 
     return (code)
       ? [
-        <span key="type-code" className={`color-${instrumentCodeGroups[code]}`}>{code}</span>,
+        <span key="type-code" className={`color-${colorCodes[code]}`}>{code}</span>,
         <span key="type-text">{text}</span>,
       ]
       : item;
@@ -60,7 +39,7 @@ class FeatureTypesDescription extends React.PureComponent {
 
   // Returns a heading element and one or more paragraphs of localized text for a
   // given feature type, in the form [heading, description]
-  getTypeElements = (intl, feature, type) => {
+  renderTypeElements = (intl, feature, type, colorCodes) => {
     const [heading, description] = this.getFormattedTypeContent(
       intl,
       feature,
@@ -69,8 +48,8 @@ class FeatureTypesDescription extends React.PureComponent {
 
     const typeDescription = description.split('\n')
       .map((item, idx) => {
-        const text = (feature === 'instrument')
-          ? this.instrumentDescription(item)
+        const text = (colorCodes)
+          ? this.addColorCoding(item, colorCodes)
           : item;
 
         // eslint-disable-next-line react/no-array-index-key
@@ -90,8 +69,8 @@ class FeatureTypesDescription extends React.PureComponent {
     ];
   };
 
-  scrollTo = (feature) => {
-    const newTop = this.headingRefs[feature].current.offsetTop - this.ref.current.offsetTop;
+  scrollTo = (type) => {
+    const newTop = this.headingRefs[type].current.offsetTop - this.ref.current.offsetTop;
     this.ref.current.scrollTop = newTop;
   };
 
@@ -102,8 +81,13 @@ class FeatureTypesDescription extends React.PureComponent {
   };
 
   render() {
-    const content = featureTypes[this.props.feature].reduce((acc, type) => {
-      const elements = this.getTypeElements(this.props.intl, this.props.feature, type);
+    const content = this.props.types.reduce((acc, type) => {
+      const elements = this.renderTypeElements(
+        this.props.intl,
+        this.props.feature,
+        type,
+        this.props.colorCodes,
+      );
 
       return acc.concat(elements);
     }, []);
@@ -120,14 +104,21 @@ class FeatureTypesDescription extends React.PureComponent {
 }
 
 FeatureTypesDescription.propTypes = {
-  feature: PropTypes.string,
+  /** Keyword or path where types can be found (ex. "theme", "instrument.category" */
+  feature: PropTypes.string.isRequired,
+  /** Keywords in the translation file for each type
+   * (ex. ["security", "managementSystem", "financial"]) */
+  types: PropTypes.arrayOf(PropTypes.string).isRequired,
+  /** Hash of instrument color codes (ex. {OPL: "routing"}  */
+  colorCodes: PropTypes.objectOf(PropTypes.string),
+  /** Heading that the container should scroll to (ex. "security") */
   scrollTarget: PropTypes.string,
   intl: intlShape.isRequired,
 };
 
 FeatureTypesDescription.defaultProps = {
-  feature: 'theme',
   scrollTarget: '',
+  colorCodes: null,
 };
 
 export default injectIntl(FeatureTypesDescription);

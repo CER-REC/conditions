@@ -5,6 +5,22 @@ import withStatus from '../../../.storybook/addon-status';
 import FeatureTypesDescription from '.';
 import ReadMe from './README.md';
 
+const defaultProps = {
+  feature: 'theme',
+  types: ['security', 'managementSystem', 'financial'],
+};
+
+const instrumentProps = {
+  feature: 'instrument.category',
+  types: ['routing', 'construction'],
+  colorCodes: {
+    OPL: 'routing',
+    GPL: 'routing',
+    GC: 'construction',
+    OC: 'construction',
+  },
+};
+
 const targets = [
   'security',
   'managementSystem',
@@ -18,9 +34,10 @@ storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
     <FeatureTypesDescription
+      {...defaultProps}
       scrollTarget={select('Scroll Target', targets, 'security')}
     />
   ))
   .add('instrument types', () => (
-    <FeatureTypesDescription feature="instrument" />
+    <FeatureTypesDescription {...instrumentProps} />
   ));
