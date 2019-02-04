@@ -98,8 +98,10 @@
         "financial": "Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header."
       },
       "instrument": {
-        "routing": "OPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nGPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.",
-        "construction": "GC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nOC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this."
+        "category": {
+          "routing": "OPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nGPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.",
+          "construction": "GC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nOC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this."
+        }
       }
     },
     "featureMenu": {
