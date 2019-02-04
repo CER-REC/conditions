@@ -89,6 +89,14 @@
     "instrumentsLegend": {
       "all": ""
     },
+    "SearchBar": {
+      "filter": {
+        "filter": ""
+      },
+      "findWords": {
+        "findWords": ""
+      }
+    },
     "modal": {
       "image": {
         "title": "",

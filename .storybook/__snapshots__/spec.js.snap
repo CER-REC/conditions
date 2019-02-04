@@ -5012,6 +5012,49 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar/Tab default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="Tab"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      style={
+        Object {
+          "borderBottom": "none",
+        }
+      }
+      tabIndex={0}
+    >
+      <div
+        className="findText"
+      >
+        Find Words
+      </div>
+      <span
+        className="iconSvg"
+      >
+        <svg
+          viewBox="0 0 15 15"
+          width={15}
+        >
+          <path
+            className="findIcon"
+            d="M263.37,262.74l-3.65-3.65a6.4,6.4,0,1,0-.63.63l3.65,3.65a.42.42,0, 0,0,.31.13.44.44,0,0,0,.32-.13A.45.45,0,0,0,263.37,262.74Zm-14-7.84a5.5,5.5,0, 1,1,5.5,5.5A5.5,5.5,0,0,1,249.39,254.9Z"
+            transform="translate(-247.9 -247.9)"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SelectedGroupBar default 1`] = `
 <div
   className="visualization"
