@@ -1,0 +1,123 @@
+@import "../../../styles/fontVariables.scss";
+@import "../../../styles/colors.scss";
+
+.SuggestionWindow {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid $LightGray;
+  padding: 10px;
+  font-family: $fira-sans-condensed;
+
+  .keyWordsTitle {
+    padding: 0px 0px 5px 0px;
+    border-bottom: 1px solid $LightGray;
+  }
+
+  .description {
+    a {
+      color: $LinksTextButtons;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+  ul {
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+  }
+  .viewText {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0px 10px 0px 0px;
+    vertical-align: bottom;
+    color: black;
+    margin: 5px 0px;
+  }
+  .categoryList {
+    display: inline-block;
+    padding: 0px 15px;
+    margin: 5px 5px;
+    border: 1px solid $LinksTextButtons;
+    border-radius: 15px;
+    vertical-align: middle;
+    line-height: 25px;
+  }
+  .selectedCategory{
+    color: $White;
+    background-color: $LinksTextButtons;
+  }
+  .rightText {
+    text-align: right;
+    .arrow {
+      padding-left: 15px;
+      svg {
+        width: 15px;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .keyWordsBox {
+    height: 300px;
+    overflow: scroll;
+    ul {
+      list-style-type: none;
+      li {
+        padding: 10px 0px;
+        border-bottom: 1px solid $DarkGray;
+        .icon {
+          display: inline-block;
+          width: 25px;
+          vertical-align: top;
+          .Icon{
+            svg{
+              width: 15px;
+              height: 15px;
+            }
+          }
+          .selectedIcon {
+            color: $White;
+            background-color: $LinksTextButtons;
+            border-radius: 25px;
+            border: 1px solid $LinksTextButtons;
+          }
+          .regularIcon {
+            color: $LinksTextButtons;
+            background-color: $White;
+          }
+        }
+        .keywordCategory {
+          display: inline-block;
+          width: 60px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .BarContainer {
+          margin-left: 10px;
+          margin-right: 10px;
+          vertical-align: super;
+        }
+
+        .conditionsText {
+          display: inline-block;
+          width: 130px;
+          text-align: right;
+          vertical-align: super;
+        }
+      }
+    }
+  }
+
+  .close {
+    text-align: right;
+    button {
+      padding: 5px;
+      margin: 5px 5px 0px 5px;
+      background-color: $LinksTextButtons;
+      color: $White;
+      border-color: $LinksTextButtons;
+    }
+  }
+}
