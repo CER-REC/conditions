@@ -8,5 +8,5 @@ Feedback from the design team is needed for whether the legend scales or not.
 ## Requirements
 
 * [ ] Renders a title for 'Number of Conditions'
-* [ ] Displays a number scale from 1 - 1600
-* [ ] Displays ellipses increasing in width relative to sizes of the Bubbles in the Bubble chart
+* [ ] Displays 1, 500, 1000, and 1600 regardless of what the largest bubble actually is
+* [ ] The scale of the bubbles should match that of the bubble chart (using a prop for largest value)
