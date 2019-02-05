@@ -122,7 +122,7 @@ class FilterContent extends React.PureComponent {
           onKeyDown={this.onKeyPress}
           className={classArray.toString().replace(/,/g, ' ')}
         >
-          <CircleContainer size="24px" color="#4D4D4D" backgroundColor="white"> {i} </CircleContainer>
+          <CircleContainer size={24} color="#4D4D4D" backgroundColor="white"> {i} </CircleContainer>
         </li>
       );
     }));
@@ -134,7 +134,7 @@ class FilterContent extends React.PureComponent {
       {...handleInteraction(this.props.changeProjectStatus, i)}
       className={statusArray.indexOf(i) > -1 ? 'selectedProject' : ''}
     >
-      <FormattedMessage id={`components.SearchBar.findWords.projectStatus.${i.toLowerCase()}`}>
+      <FormattedMessage id={`components.SearchBar.filter.projectStatus.${i.toLowerCase()}`}>
         {text => text.toUpperCase()}
       </FormattedMessage>
     </li>
@@ -162,7 +162,7 @@ class FilterContent extends React.PureComponent {
           {this.yearRangeRender(this.props.yearRange)}
         </ul>
         <div className="titleText">
-          <FormattedMessage id="components.SearchBar.filter.projectStatus" />
+          <FormattedMessage id="components.SearchBar.filter.projectStatus.projectStatusText" />
         </div>
         <ul className="filter">
           {this.projectStatusRender(this.props.projectStatus)}

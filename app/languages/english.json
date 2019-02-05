@@ -97,6 +97,23 @@
     "instrumentsLegend": {
       "all": "All Instruments"
     },
+    "SearchBar": {
+      "close": "Close",
+      "reset": "Reset",
+      "filter": {
+        "filter": "Filter",
+        "projectYear": "Filter by Project Year",
+        "projectStatus": {
+          "projectStatusText": "Filter by Project Status",
+          "open": "Open",
+          "closed": "Closed",
+          "cancelled": "Cancelled"
+        }
+      },
+      "findWords":{
+        "findWords": "Find Words"
+      }
+    },
     "modal": {
       "image": {
         "title": "Image Download",

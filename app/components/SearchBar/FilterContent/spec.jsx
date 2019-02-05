@@ -73,7 +73,7 @@ describe('Components|SearchBar/FilterContent', () => {
     test('renders projectStatus Text', () => {
       const updatedWrapper = wrapper.find('.titleText > FormattedMessage').last();
       expect(updatedWrapper).toHaveLength(1);
-      expect(updatedWrapper.prop('id')).toBe('components.SearchBar.filter.projectStatus');
+      expect(updatedWrapper.prop('id')).toBe('components.SearchBar.filter.projectStatus.projectStatusText');
     });
 
     test('renders close text', () => {

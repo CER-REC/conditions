@@ -5012,6 +5012,1119 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar/FilterContent default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent"
+      onMouseUp={[Function]}
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        RESET
+        <div
+          className="Icon"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-redo-alt fa-w-16 iconInline"
+            color=""
+            data-icon="redo-alt"
+            data-prefix="fas"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              70
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              71
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              72
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              73
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              74
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              75
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              76
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              77
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              78
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              79
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              80
+               
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Status
+        </span>
+      </div>
+      <ul
+        className="filter"
+      >
+        <li
+          className=""
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          OPEN
+        </li>
+        <li
+          className=""
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          CLOSED
+        </li>
+        <li
+          className=""
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          CANCELLED
+        </li>
+      </ul>
+      <button
+        className="close"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        CLOSE
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent"
+      onMouseUp={[Function]}
+    >
+      <div
+        className="reset"
+      >
+        RESET
+        <div
+          className="Icon"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-redo-alt fa-w-16 iconInline"
+            color=""
+            data-icon="redo-alt"
+            data-prefix="fas"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              70
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              71
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              72
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              73
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              74
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              75
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              76
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              77
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              78
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              79
+               
+            </div>
+          </div>
+        </li>
+        <li
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              80
+               
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Status
+        </span>
+      </div>
+      <ul
+        className="filter"
+      >
+        <li
+          className="selectedProject"
+        >
+          OPEN
+        </li>
+        <li
+          className="selectedProject"
+        >
+          CLOSED
+        </li>
+        <li
+          className=""
+        >
+          CANCELLED
+        </li>
+      </ul>
+      <button
+        className="close"
+        type="button"
+      >
+        CLOSE
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent"
+      onMouseUp={[Function]}
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        RESET
+        <div
+          className="Icon"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-redo-alt fa-w-16 iconInline"
+            color=""
+            data-icon="redo-alt"
+            data-prefix="fas"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          className="regularBackground leftCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              70
+               
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              71
+               
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              72
+               
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground rightCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              73
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              74
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              75
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              76
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              77
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              78
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              79
+               
+            </div>
+          </div>
+        </li>
+        <li
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+               
+              80
+               
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Status
+        </span>
+      </div>
+      <ul
+        className="filter"
+      >
+        <li
+          className=""
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          OPEN
+        </li>
+        <li
+          className=""
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          CLOSED
+        </li>
+        <li
+          className=""
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          CANCELLED
+        </li>
+      </ul>
+      <button
+        className="close"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        CLOSE
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SelectedGroupBar default 1`] = `
 <div
   className="visualization"

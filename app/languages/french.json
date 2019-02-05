@@ -89,6 +89,23 @@
     "instrumentsLegend": {
       "all": ""
     },
+    "SearchBar": {
+      "close": "",
+      "reset": "",
+      "filter": {
+        "filter": "",
+        "projectYear": "",
+        "projectStatus": {
+          "projectStatusText": "",
+          "open": "",
+          "closed": "",
+          "cancelled": ""
+        }
+      },
+      "findWords":{
+        "findWords": "Find Words"
+      }
+    },
     "modal": {
       "image": {
         "title": "",
