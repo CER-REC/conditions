@@ -11,6 +11,7 @@
 
 *.jpg binary
 *.png binary
+*.PNG binary
 *.swf binary
 *.woff binary
 *.woff2 binary
