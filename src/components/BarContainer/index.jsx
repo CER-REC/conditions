@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Bar from './Bar';
 import './styles.scss';
 
@@ -35,7 +36,7 @@ const BarContainer = (props) => {
     }
     const singleBar = (
       <Bar
-     // eslint-disable-next-line react/no-array-index-key
+    // eslint-disable-next-line react/no-array-index-key
         key={index}
         {...bar}
         x={barContainerWidth * scale}
@@ -49,7 +50,7 @@ const BarContainer = (props) => {
   });
   if (scale) { barContainerWidth *= scale; }
   const content = (
-    <g className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
+    <g className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
       <title>{title}</title>
       <desc>{desc}</desc>
       {bars}
@@ -57,16 +58,17 @@ const BarContainer = (props) => {
   );
   if (standalone) { return content; }
   return (
-    <svg className="BarContainer" width={barContainerWidth} height={barContainerHeight}>
+    <svg className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
       {content}
     </svg>
   );
 };
 
 BarContainer.propTypes = {
+  className: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  desc: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  desc: PropTypes.string,
+  title: PropTypes.string,
   vert: PropTypes.bool,
   scale: PropTypes.number,
   standalone: PropTypes.bool,
@@ -74,8 +76,11 @@ BarContainer.propTypes = {
 };
 
 BarContainer.defaultProps = {
+  className: '',
   vert: false,
   scale: 1,
   standalone: false,
+  desc: '',
+  title: '',
 };
 export default BarContainer;
