@@ -56,12 +56,10 @@ class FeatureTypesDescription extends React.PureComponent {
         return <p key={`${type}-text-${idx}`}>{text}</p>;
       });
 
-    this.headingRefs[type] = React.createRef();
-
     return [
       <h4
         key={`type-heading-${type}`}
-        ref={this.headingRefs[type]}
+        data-heading={type}
       >
         {heading}
       </h4>,
@@ -70,8 +68,8 @@ class FeatureTypesDescription extends React.PureComponent {
   };
 
   scrollTo = (type) => {
-    const newTop = this.headingRefs[type].current.offsetTop - this.ref.current.offsetTop;
-    this.ref.current.scrollTop = newTop;
+    const elm = this.ref.current.querySelector(`[data-heading="${type}"]`);
+    this.ref.current.scrollTop = elm.offsetTop - this.ref.current.offsetTop;
   };
 
   componentDidUpdate = (prevProps) => {
