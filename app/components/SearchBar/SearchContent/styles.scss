@@ -1,0 +1,117 @@
+@import "../../../styles/fontVariables.scss";
+@import "../../../styles/colors.scss";
+
+.SearchContent {
+  border-top: none;
+  border-right: 1px solid $LightGray;
+  border-bottom: 1px solid $LightGray;
+  border-left: 1px solid $LightGray;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  text-align: left;
+  padding: 25px 10px 5px 10px;
+  font-family: $fira-sans-condensed;
+  .includeText{
+    display: inline-block;
+    span{
+      padding: 0px;
+    }
+  }
+  span {
+    color: $VeryDarkGray;
+    padding: 0px 10px;
+  }
+  .input{
+    display: inline-block;
+    float: right;
+  
+  .searchBar {
+    width: 210px;
+    border-radius: 510px;
+    border-color: $DarkGray;
+    border-width: 1px;
+    caret-color: $SearchKeyword;
+  }
+}
+  .searchWords {
+    margin: 10px;
+    padding: 0px;
+    max-width: 375px;
+    height: 50px;
+    .liText {
+      display: inline-block;
+      vertical-align: top;
+      width: 86px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      border: 1px solid $LightGray;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin: 0px 0px 10px 5px;
+      color: $SearchKeyword;
+    }
+    span {
+      padding: 0px;
+    }
+  }
+  .highlightConditions {
+    font-size: 10px;
+    background-color: $LightGray;
+    border: 1px solid $MainOrange;
+    border-radius: 10px;
+    padding: 10px;
+    font-style: italic;
+    .anyText {
+      display: inline-block;
+      padding-left: 50px;
+      span{
+        padding: 0px;
+      }
+    }
+    .keywordsText {
+      padding-left: 5px;
+      max-width: 200px;
+      display: inline-block;
+      vertical-align: top;
+      span {
+        padding: 0px;
+      }
+    }
+  }
+  .advancedSearchText {
+    text-align: right;
+    color: $LinksTextButtons;
+  }
+  .CircleContainer {
+    background: transparent;
+    line-height: 10px;
+    .plusIcon {
+      color: $LinksTextButtons;
+    }
+    div{
+      transform: inherit;
+    }
+  }
+  .Icon {
+    display: inline;
+    padding-left: 5px;
+    .timesIcon {
+      vertical-align: sub;
+      width: 2%;
+      color: $DarkGray;
+    }
+  }
+  .close {
+    text-align: right;
+    button {
+      padding: 5px;
+      margin: 5px 5px 0px 5px;
+      background-color: $LinksTextButtons;
+      color: $White;
+      border-color: $LinksTextButtons;
+    }
+  }
+}
