@@ -8,7 +8,6 @@
     "cz": "git-cz",
     "lint": "eslint -f gitlab \"./app/**/*.js\" \"./app/**/*.jsx\" \"./server/**/*.js\"",
     "test": "cross-env NODE_ENV=test jest",
-    "test:single": "npm run test",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
     "start": "babel-node ./server/index.js",
     "storybook": "start-storybook -s ./app/images -p 6006",

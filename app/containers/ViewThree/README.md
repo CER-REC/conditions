@@ -10,6 +10,8 @@ View Three is the container that holds all the public components for detailed ch
 * [] The component should contain ConditionsDetails
 * [] The component should contain InstrumentLegend
 * [] The component should contain BubbleChart
+* [] The component should contain FeatureTypeDescription
+* [] The component should contain BrowseByButton 
 
 ## CSS Grid Notes
 

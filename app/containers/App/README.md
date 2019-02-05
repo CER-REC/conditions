@@ -12,7 +12,7 @@ This component has all of the other public containers as children.
 
 ## Accessibility Requirements
 
-* [] The component should have implement keyboard tabbing through the views and footer
+* [] The component should implement keyboard tabbing through the views and footer
 
 ## Analytics Requirements
 
