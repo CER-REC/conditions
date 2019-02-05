@@ -32,8 +32,8 @@ describe('Components|FeatureTypesDescription', () => {
       expect(wrapper.type()).toBe('div');
     });
 
-    test('should have the class "feature-types-description"', () => {
-      expect(wrapper.is('.feature-types-description')).toBe(true);
+    test('should have the class "FeatureTypesDescription"', () => {
+      expect(wrapper.is('.FeatureTypesDescription')).toBe(true);
     });
 
     test('should have a heading with translated text', () => {

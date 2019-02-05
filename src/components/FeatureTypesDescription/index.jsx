@@ -56,15 +56,12 @@ class FeatureTypesDescription extends React.PureComponent {
         return <p key={`${type}-text-${idx}`}>{text}</p>;
       });
 
-    return [
-      <h4
-        key={`type-heading-${type}`}
-        data-heading={type}
-      >
-        {heading}
-      </h4>,
-      <React.Fragment key={`type-description-${type}`}>{typeDescription}</React.Fragment>,
-    ];
+    return (
+      <React.Fragment key={type}>
+        <h4 data-heading={type}>{heading}</h4>
+        {typeDescription}
+      </React.Fragment>
+    );
   };
 
   scrollTo = (type) => {
@@ -79,7 +76,7 @@ class FeatureTypesDescription extends React.PureComponent {
   };
 
   render() {
-    const content = this.props.types.reduce((acc, type) => {
+    const content = this.props.types.map((type) => {
       const elements = this.renderTypeElements(
         this.props.intl,
         this.props.feature,
@@ -87,12 +84,12 @@ class FeatureTypesDescription extends React.PureComponent {
         this.props.colorCodes,
       );
 
-      return acc.concat(elements);
-    }, []);
+      return elements;
+    });
 
     return (
       <div
-        className="feature-types-description"
+        className="FeatureTypesDescription"
         ref={this.ref}
       >
         {content}
