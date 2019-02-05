@@ -1,0 +1,81 @@
+@import "../../../styles/fontVariables.scss";
+@import "../../../styles/colors.scss";
+
+.FilterContent {
+  border-top: none;
+  border-right: 1px solid $LightGray;
+  border-bottom: 1px solid $LightGray;
+  border-left: 1px solid $LightGray;
+  width: 425px;
+  height: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $fira-sans-condensed;
+  user-select: none;
+
+  .titleText {
+    text-align: left;
+    padding: 5px;
+    color: $VeryDarkGray;
+  }
+  .reset {
+    text-align: right;
+    padding: 5px;
+    .Icon {
+      padding-left: 5px;
+      display: inline-block;
+    }
+  }
+
+  .projectList {
+    text-align: left;
+    margin: 0;
+    padding: 0px 0px 10px 10px;
+    li {
+      padding: 2px;
+      display: inline-block;
+      text-align: center;
+      .CircleContainer{
+        overflow: inherit;
+      }
+    }
+  }
+  .filter {
+    list-style-type: none;
+    float: left;
+    margin: 0;
+    padding-left: 5px;
+    li {
+      border: 1px solid $LinksTextButtons;
+      padding: 5px;
+      display: inline-block;
+      border-radius: 15px;
+      margin: 0px 10px 0px 0px;
+      color: $VeryDarkGray;
+    }
+    .selectedProject {
+      color: $White;
+      background-color: $LinksTextButtons;
+    }
+  }
+  .close {
+    padding: 5px;
+    margin: 5px 5px 0px 5px;
+    background-color: $LinksTextButtons;
+    color: $White;
+    float: right;
+    border-color: $LinksTextButtons;
+  }
+  .regularBackground{
+    background-color: $LinksTextButtons;
+  }
+  .leftCurve {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  .rightCurve{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
