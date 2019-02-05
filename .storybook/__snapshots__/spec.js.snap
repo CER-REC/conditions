@@ -25,12 +25,12 @@ exports[`Storyshots Components|BarContainer default 1`] = `
   className="visualization"
 >
   <svg
-    className=""
+    className="BarContainer"
     height={12}
     width={111}
   >
     <g
-      className=""
+      className="BarContainer"
       height={12}
       width={111}
     >
@@ -74,12 +74,12 @@ exports[`Storyshots Components|BarContainer scale horizontal and 2x scale 1`] = 
   className="visualization"
 >
   <svg
-    className=""
+    className="BarContainer"
     height={24}
     width={222}
   >
     <g
-      className=""
+      className="BarContainer"
       height={24}
       width={222}
     >
@@ -123,12 +123,12 @@ exports[`Storyshots Components|BarContainer searched bars 1`] = `
   className="visualization"
 >
   <svg
-    className=""
+    className="BarContainer"
     height={15}
     width={111}
   >
     <g
-      className=""
+      className="BarContainer"
       height={15}
       width={111}
     >
@@ -173,7 +173,7 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
 >
   <svg>
     <g
-      className=""
+      className="BarContainer"
       height={12}
       width={111}
     >
@@ -217,12 +217,12 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
   className="visualization"
 >
   <svg
-    className=""
+    className="BarContainer"
     height={66}
     width={60}
   >
     <g
-      className=""
+      className="BarContainer"
       height={66}
       width={60}
     >
@@ -266,12 +266,12 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
   className="visualization"
 >
   <svg
-    className=""
+    className="BarContainer"
     height={132}
     width={180}
   >
     <g
-      className=""
+      className="BarContainer"
       height={132}
       width={180}
     >
@@ -316,7 +316,7 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale and stan
 >
   <svg>
     <g
-      className=""
+      className="BarContainer"
       height={132}
       width={180}
     >
@@ -5097,12 +5097,12 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
         className="RegionConditionChart"
       >
         <svg
-          className=""
+          className="BarContainer"
           height={50}
           width={350}
         >
           <g
-            className=""
+            className="BarContainer"
             height={50}
             width={350}
           >
@@ -5297,12 +5297,12 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
         className="RegionConditionChart"
       >
         <svg
-          className=""
+          className="BarContainer"
           height={100}
           width={350}
         >
           <g
-            className=""
+            className="BarContainer"
             height={100}
             width={350}
           >

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Bar from './Bar';
 import './styles.scss';
 
@@ -49,7 +50,7 @@ const BarContainer = (props) => {
   });
   if (scale) { barContainerWidth *= scale; }
   const content = (
-    <g className={props.className} width={barContainerWidth} height={barContainerHeight}>
+    <g className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
       <title>{title}</title>
       <desc>{desc}</desc>
       {bars}
@@ -57,7 +58,7 @@ const BarContainer = (props) => {
   );
   if (standalone) { return content; }
   return (
-    <svg className={props.className} width={barContainerWidth} height={barContainerHeight}>
+    <svg className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
       {content}
     </svg>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import BarContainer from '.';
 
@@ -28,6 +29,8 @@ describe('Components|BarContainer', () => {
       );
     });
 
+    shouldBehaveLikeAComponent(BarContainer, () => wrapper);
+
     test('should render', () => {
       expect(wrapper.type()).toBe('svg');
     });
@@ -37,10 +40,10 @@ describe('Components|BarContainer', () => {
       expect(wrapper.type()).toBeNull();
     });
 
-    test('should have a BarContainer class', () => {
-      wrapper.setProps({ className: '.BarContainer' });
-      expect(wrapper.props().className).toBe('.BarContainer');
-    });
+    // test('should have a BarContainer class', () => {
+    //   wrapper.setProps({ className: '.BarContainer' });
+    //   expect(wrapper.props().className).toBe('.BarContainer');
+    // });
 
     test('should be able to render a <g> wrapper', () => {
       wrapper = shallow(
