@@ -97,6 +97,25 @@
     "instrumentsLegend": {
       "all": "All Instruments"
     },
+    "SearchBar": {
+      "close": "Close",
+      "findWords": {
+        "findWords": "Find Words",
+        "advancedSearch": "Advanced Search",
+        "searchText": {
+          "include": "Include",
+          "of": "of",
+          "butDo": "But do",
+          "not": "not"
+        },
+        "highlightText": {
+          "highlightConditions" : "Highlight conditions containing",
+          "following": " of the following:",
+          "any": "any",
+          "none": "none "
+        }
+      }
+    },
     "modal": {
       "image": {
         "title": "Image Download",
