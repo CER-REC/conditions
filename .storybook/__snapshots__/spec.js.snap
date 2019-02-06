@@ -5012,7 +5012,7 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SearchBar/FilterContent default 1`] = `
+exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
 <div
   className="visualization"
 >
@@ -5021,7 +5021,6 @@ exports[`Storyshots Components|SearchBar/FilterContent default 1`] = `
   >
     <div
       className="FilterContent"
-      onMouseUp={[Function]}
     >
       <div
         className="reset"
@@ -5358,7 +5357,7 @@ exports[`Storyshots Components|SearchBar/FilterContent default 1`] = `
         </span>
       </div>
       <ul
-        className="filter"
+        className="projectStatus"
       >
         <li
           className=""
@@ -5412,10 +5411,13 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
   >
     <div
       className="FilterContent"
-      onMouseUp={[Function]}
     >
       <div
         className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
       >
         RESET
         <div
@@ -5451,10 +5453,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         className="projectList"
       >
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5473,10 +5479,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5495,10 +5505,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5517,10 +5531,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5539,10 +5557,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5561,10 +5583,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5583,10 +5609,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5605,10 +5635,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5627,10 +5661,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5649,10 +5687,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5671,10 +5713,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
+          focusable={true}
+          onClick={[Function]}
           onKeyDown={[Function]}
+          onKeyPress={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
+          tabIndex={0}
         >
           <div
             className="CircleContainer"
@@ -5701,26 +5747,42 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         </span>
       </div>
       <ul
-        className="filter"
+        className="projectStatus"
       >
         <li
           className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
           OPEN
         </li>
         <li
           className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
           CLOSED
         </li>
         <li
           className=""
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
           CANCELLED
         </li>
       </ul>
       <button
         className="close"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
         type="button"
       >
         CLOSE
@@ -5739,7 +5801,6 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
   >
     <div
       className="FilterContent"
-      onMouseUp={[Function]}
     >
       <div
         className="reset"
@@ -6080,7 +6141,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         </span>
       </div>
       <ul
-        className="filter"
+        className="projectStatus"
       >
         <li
           className=""

@@ -10,6 +10,7 @@ const yearRange = {
   start: 70,
   end: 80,
 };
+const noop = () => {};
 
 storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -19,8 +20,8 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
     },
     actions: {
       closeTab: () => () => ({ display: false }),
-      // NOTE: forceReRender() used because storybook seems
-      // to have issue with re-rendering after state change
+      // NOTE: forceReRender() used because storybook experienced
+      // issues re-rendering after state change
       changeProjectStatus: state => (item) => {
         const { projectStatus: updateProject } = state;
         const index = (updateProject.indexOf(item) > -1) ? updateProject.indexOf(item) : null;
@@ -78,7 +79,7 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
       },
     },
   }))
-  .add('default', () => (
+  .add('with interaction', () => (
     <FilterContent
       {...getInteractionProps()}
       yearRange={yearRange}
@@ -90,6 +91,12 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
       selectedYear={[]}
       display={getInteractionProps().display}
       yearRange={yearRange}
+      changeProjectStatus={noop}
+      onDragMove={noop}
+      reset={noop}
+      closeTab={noop}
+      yearSelect={noop}
+      onYearKeyPress={noop}
     />
   ))
   .add('withYear', () => (

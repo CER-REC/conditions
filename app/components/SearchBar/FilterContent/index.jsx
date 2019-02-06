@@ -11,6 +11,16 @@ import './styles.scss';
 library.add(
   faRedoAlt,
 );
+
+const createYearArray = (yearObject) => {
+  const startYear = yearObject.start;
+  const endYear = yearObject.end;
+  const yearArray = [];
+  for (let j = startYear; j <= endYear; j += 1) {
+    yearArray.push(j);
+  }
+  return yearArray;
+};
 class FilterContent extends React.PureComponent {
   static propTypes = {
     yearRange: PropTypes.objectOf(PropTypes.number).isRequired,
@@ -49,12 +59,7 @@ class FilterContent extends React.PureComponent {
   }
 
   onKeyPress = (event) => {
-    const startYear = 70;
-    const endYear = 80;
-    const yearArray = [];
-    for (let j = startYear; j <= endYear; j += 1) {
-      yearArray.push(j);
-    }
+    const yearArray = createYearArray(this.props.yearRange);
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
       this.props.onYearKeyPress({
         array: yearArray,
@@ -69,15 +74,8 @@ class FilterContent extends React.PureComponent {
     }
   }
 
-  yearRangeRender = (i) => {
-    const startYear = i.start;
-    const endYear = i.end;
-    const yearArray = [];
-    for (let j = startYear; j <= endYear; j += 1) {
-      yearArray.push(j);
-    }
-    // Should remove this code.
-    // if (yearArray.length === 0) { return null; }
+  yearRangeRender = () => {
+    const yearArray = createYearArray(this.props.yearRange);
     return (yearArray.map((i, index) => {
       const { selectedYear } = this.props;
       const arrayIndex = selectedYear.indexOf(index);
@@ -102,13 +100,11 @@ class FilterContent extends React.PureComponent {
       if (selectedYear.length === 1) {
         classArray.push('rightCurve');
         classArray.push('leftCurve');
-      } else if ((arrayIndex === 0 && selectedYear[1] > selectedYear[0])
-        || (arrayIndex === selectedYear.length - 1
-          && selectedYear[arrayIndex] < selectedYear[selectedYear.length - 2])) {
+      } else if (arrayIndex === 0 && selectedYear[1] > selectedYear[0]) {
         classArray.push('leftCurve');
-      } else if ((arrayIndex === 0 && selectedYear[1] < selectedYear[0])
-        || (arrayIndex === selectedYear.length - 1
-          && selectedYear[arrayIndex] > selectedYear[selectedYear.length - 2])) {
+      } else if (
+        arrayIndex === selectedYear.length - 1
+          && selectedYear[arrayIndex] > selectedYear[selectedYear.length - 2]) {
         classArray.push('rightCurve');
       }
       return (
@@ -143,11 +139,7 @@ class FilterContent extends React.PureComponent {
   render() {
     if (!this.props.display) { return null; }
     return (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div
-        onMouseUp={() => { this.isDragging = false; }}
-        className="FilterContent"
-      >
+      <div className="FilterContent">
         <div {...handleInteraction(this.props.reset)} className="reset">
           <FormattedMessage id="components.SearchBar.reset">
             { text => text.toUpperCase()}
@@ -159,12 +151,12 @@ class FilterContent extends React.PureComponent {
           <FormattedMessage id="components.SearchBar.filter.projectYear" />
         </div>
         <ul className="projectList">
-          {this.yearRangeRender(this.props.yearRange)}
+          {this.yearRangeRender()}
         </ul>
         <div className="titleText">
           <FormattedMessage id="components.SearchBar.filter.projectStatus.projectStatusText" />
         </div>
-        <ul className="filter">
+        <ul className="projectStatus">
           {this.projectStatusRender(this.props.projectStatus)}
         </ul>
         <FormattedMessage id="components.SearchBar.close">
