@@ -1,6 +1,6 @@
 import Path from 'path';
 import Webpack from 'webpack';
-import TranslationTable from './app/TranslationTable';
+import TranslationTable from './src/TranslationTable';
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
 
@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     bundle: [
       'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr',
-      './app/index.js',
+      './src/index.js',
     ],
   },
   output: {
