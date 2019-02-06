@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallowWithIntl } from '../../tests/utilities';
+import { intl, shallowWithIntl } from '../../tests/utilities';
 
 import FeatureTypesDescription from '.';
 
@@ -38,12 +38,19 @@ describe('Components|FeatureTypesDescription', () => {
 
     test('should have a heading with translated text', () => {
       const headingText = wrapper.find('h4').first().text();
-      expect(headingText).toBe('Security');
+      const expectedText = intl
+        .formatMessage({ id: 'common.theme.security' });
+
+      expect(headingText).toBe(expectedText);
     });
 
     test('should have a paragraph with translated text', () => {
       const paraText = wrapper.find('p').first().text();
-      expect(paraText).toBe('Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.');
+      const expectedText = intl
+        .formatMessage({ id: 'components.featureTypesDescription.theme.security' })
+        .split('\n')[0]; // In case there are multiple paragraphs
+
+      expect(paraText).toBe(expectedText);
     });
   });
 
@@ -56,5 +63,4 @@ describe('Components|FeatureTypesDescription', () => {
       expect(code.hasClass('color-routing')).toBe(true);
     });
   });
-
 });
