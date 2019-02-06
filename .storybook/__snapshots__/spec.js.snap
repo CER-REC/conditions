@@ -1077,8 +1077,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 555 199
-      A 87.5 87.5 0 0 1 730 199"
+      M 495 199
+      A 147.5 147.5 0 0 1 790 199"
               id="anyCommodityTypespath"
               style={
                 Object {
@@ -1093,10 +1093,10 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
-              r={87.5}
+              r={147.5}
               tabIndex={0}
               transform="translate(642.5 200)"
-              value={100}
+              value={160}
             />
             <text
               className="bubbleTitle"
@@ -1113,8 +1113,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 730 199
-      A 57.5 57.5 0 0 1 845 199"
+      M 790 199
+      A 57.5 57.5 0 0 1 905 199"
               id="notSpecifiedpath"
               style={
                 Object {
@@ -1131,7 +1131,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onKeyPress={[Function]}
               r={57.5}
               tabIndex={0}
-              transform="translate(787.5 200)"
+              transform="translate(847.5 200)"
               value={20}
             />
             <text
@@ -1154,7 +1154,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
             tabIndex={0}
           >
             <circle
-              r={40}
+              r={100}
               style={
                 Object {
                   "fill": "#D4A92A",
@@ -1187,14 +1187,14 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#D4A92A",
                 }
               }
-              transform="translate(685 200)"
+              transform="translate(745 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="white"
               stroke="transparent"
               textAnchor="middle"
-              x={685}
+              x={745}
               y={200}
             >
               AO
@@ -1214,15 +1214,15 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#0E2B8C",
                 }
               }
-              transform="translate(642.5 249.180788932265)"
+              transform="translate(711.8103448275862 255.8878053741267)"
             />
             <text
               alignmentBaseline="middle"
               fill="white"
               stroke="transparent"
               textAnchor="middle"
-              x={642.5}
-              y={249.180788932265}
+              x={711.8103448275862}
+              y={255.8878053741267}
             >
               ZO
             </text>
@@ -1241,14 +1241,14 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#27A5F9",
                 }
               }
-              transform="translate(760 200)"
+              transform="translate(820 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="black"
               stroke="transparent"
               textAnchor=""
-              x={772}
+              x={832}
               y={200}
             >
               XC
@@ -1268,14 +1268,14 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#D4A92A",
                 }
               }
-              transform="translate(815 200)"
+              transform="translate(875 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="black"
               stroke="transparent"
               textAnchor=""
-              x={827}
+              x={887}
               y={200}
             >
               CO
@@ -2857,7 +2857,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
           cx="100"
           cy="10"
           fill="rgb(228, 228, 228)"
-          rx="100"
+          rx={100}
           ry="5"
           transform="translate(-190, 74)"
         />
@@ -3267,7 +3267,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
           cx="100"
           cy="10"
           fill="rgb(228, 228, 228)"
-          rx="100"
+          rx={100}
           ry="5"
           transform="translate(-190, 74)"
         />
@@ -3349,7 +3349,7 @@ exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
           cx="100"
           cy="10"
           fill="rgb(228, 228, 228)"
-          rx="100"
+          rx={100}
           ry="5"
           transform="translate(-190, 74)"
         />

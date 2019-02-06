@@ -18,14 +18,21 @@ const BubbleLegend = props => (
       <text x="30" y="50" fill="#999">500</text>
       <ellipse cx="80" cy="10" rx="80" ry="5" fill="rgb(228, 228, 228)" transform="translate(-150, 54)" />
       <text x="30" y="70" fill="#999">1000</text>
-      <ellipse cx="100" cy="10" rx="100" ry="5" fill="rgb(228, 228, 228)" transform="translate(-190, 74)" />
-      <text x="30" y="90" fill="#999">1600</text>
+      <ellipse cx="100" cy="10" rx={props.hundredWidthBubble} ry="5" fill="rgb(228, 228, 228)" transform="translate(-190, 74)" />
+      <text x="30" y="90" fill="#999">{props.maxConditions}</text>
     </svg>
   </div>
 );
 
 BubbleLegend.propTypes = {
   className: PropTypes.string.isRequired,
+  maxConditions: PropTypes.number, // number of Conditions in largest Bubble
+  hundredWidthBubble: PropTypes.number, // diameter of Bubble with 100 Conditions
+};
+
+BubbleLegend.defaultProps = {
+  maxConditions: 1600,
+  hundredWidthBubble: 100,
 };
 
 export default BubbleLegend;

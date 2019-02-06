@@ -7,7 +7,11 @@ describe('Component|InstrumentsLegend/BubbleLegend', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<BubbleLegend className="BubbleLegend" />);
+      wrapper = shallow(<BubbleLegend
+        className="BubbleLegend"
+        maxConditions={1600}
+        hundredWidthBubble={50}
+      />);
     });
 
     shouldBehaveLikeAComponent(BubbleLegend, () => wrapper);

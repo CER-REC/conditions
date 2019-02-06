@@ -9,5 +9,9 @@ storiesForComponent('Components|InstrumentsLegend/BubbleLegend', module, ReadMe)
     name: 'underReview',
   }))
   .add('default', () => (
-    <BubbleChart className="BubbleLegend" />
+    <BubbleChart
+      className="BubbleLegend"
+      maxConditions={1600}
+      hundredWidthBubble={100}
+    />
   ));
