@@ -94,6 +94,7 @@
       "findWords": {
         "findWords": "",
         "advancedSearch": "",
+        "basicSearch": "",
         "searchText": {
           "include": "",
           "of": "",

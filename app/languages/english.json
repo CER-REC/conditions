@@ -102,6 +102,7 @@
       "findWords": {
         "findWords": "Find Words",
         "advancedSearch": "Advanced Search",
+        "basicSearch": "Basic Search",
         "searchText": {
           "include": "Include",
           "of": "of",
@@ -112,7 +113,7 @@
           "highlightConditions" : "Highlight conditions containing",
           "following": " of the following:",
           "any": "any",
-          "none": "none "
+          "none": "none"
         }
       }
     },

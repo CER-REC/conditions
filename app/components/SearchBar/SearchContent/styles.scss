@@ -12,9 +12,9 @@
   text-align: left;
   padding: 25px 10px 5px 10px;
   font-family: $fira-sans-condensed;
-  .includeText{
+  .includeText {
     display: inline-block;
-    span{
+    span {
       padding: 0px;
     }
   }
@@ -22,18 +22,18 @@
     color: $VeryDarkGray;
     padding: 0px 10px;
   }
-  .input{
+  .input {
     display: inline-block;
     float: right;
-  
-  .searchBar {
-    width: 210px;
-    border-radius: 510px;
-    border-color: $DarkGray;
-    border-width: 1px;
-    caret-color: $SearchKeyword;
+
+    .searchBar {
+      width: 210px;
+      border-radius: 510px;
+      border-color: $DarkGray;
+      border-width: 1px;
+      caret-color: $SearchKeyword;
+    }
   }
-}
   .searchWords {
     margin: 10px;
     padding: 0px;
@@ -67,7 +67,7 @@
     .anyText {
       display: inline-block;
       padding-left: 50px;
-      span{
+      span {
         padding: 0px;
       }
     }
@@ -83,7 +83,9 @@
   }
   .advancedSearchText {
     text-align: right;
-    color: $LinksTextButtons;
+    span {
+      color: $LinksTextButtons;
+    }
   }
   .CircleContainer {
     background: transparent;
@@ -91,7 +93,7 @@
     .plusIcon {
       color: $LinksTextButtons;
     }
-    div{
+    div {
       transform: inherit;
     }
   }
