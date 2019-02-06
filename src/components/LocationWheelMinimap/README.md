@@ -1,9 +1,11 @@
 # Location Wheel Minimap
 
-This component displays a map of the selected region and province.
+This component is part of the Location Wheel component. It displays the select province and region, updating when the user selects a new region in the Location Wheel.
 
 ## Requirements
 
-- [ ] It should draw an outline of current province
-  - [ ] The province should be scaled to fill the height of its container
-- [ ] It should draw and fill in the current region
+- [ ] Draws an outline of the current province
+  - Scaled to fill the height of its container
+- [ ] Colors in the current region
+- [ ] Updates when the selected region changes
+- [ ] Uses GeoJSON data to generate the map
