@@ -1,0 +1,139 @@
+{
+  "common": {
+    "features": {
+      "theme": "",
+      "instrument": "",
+      "phase": "",
+      "type": "",
+      "ftatus": "",
+      "filing": ""
+    },
+    "trend": {
+      "title": ""
+    },
+    "theme": {
+      "security": "",
+      "managementSystem": "",
+      "financial": "",
+      "damagePrevention": "",
+      "safetyManagement": "",
+      "socioEconomic": "",
+      "emergencyManagement": "",
+      "enforcement": "",
+      "sunsetClause": "",
+      "administrative": "",
+      "environmentalProtection": "",
+      "integrityManagement": "",
+      "standardCondtion": ""
+    },
+    "instrument": {
+      "category": {
+        "routing": "",
+        "construction": "",
+        "opening": "",
+        "abandonment": "",
+        "safety": "",
+        "tariffs": "",
+        "misc": ""
+      },
+      "type": {
+        "oil": "",
+        "gas": "",
+        "power": "",
+        "anyCommodityTypes": "",
+        "notSpecified": ""
+      }
+    },
+    "phase": {
+      "includesAll": "",
+      "notConstruction": "",
+      "postConstruction": "",
+      "priorConstruction": "",
+      "expiryDate": "",
+      "duringConstruction": "",
+      "abandonment": "",
+      "unspecified": ""
+    },
+    "type": {
+      "nonStandard": "",
+      "standard": ""
+    },
+    "status": {
+      "inProgress": "",
+      "closed": "",
+      "noFilingReq": "",
+      "awaitingFiling": "",
+      "overdueFiling": "",
+      "underReview": "",
+      "reviewComplete": "",
+      "awaitingIR": "",
+      "readyBoard": "",
+      "furtherInfo": "",
+      "amended": "",
+      "satisfactory": ""
+    },
+    "filing": {
+      "filingRequired": "",
+      "FilingNotRequired": ""
+    },
+    "legend": {
+      "zeroConditions": "",
+      "tenConditions": "",
+      "greaterThanTenConditions": ""
+    }
+  },
+  "components": {
+    "featureMenu": {
+      "dropDownTitle": ""
+    },
+    "instrumentsLegend": {
+      "all": ""
+    },
+    "modal": {
+      "image": {
+        "title": "",
+        "save": "",
+        "contentTitle": "",
+        "contentDescription": "",
+        "linkText": ""
+      },
+      "data": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "projectLegend": {
+      "numberOfConditions": "",
+      "totalConditions": "",
+      "associated": ""
+    },
+    "regionConditionSummary": {
+      "title": ""
+    },
+    "smallMultiplesLegend": {
+      "all": {
+        "theme": "",
+        "phase": "",
+        "type": "",
+        "status": "",
+        "filing": ""
+      }
+    },
+    "streamGraph": {
+      "xAxis": "",
+      "yAxis": "",
+      "title": ""
+    }
+  },
+  "views": {
+    "view1": {
+      "footer": {
+        "skip": "",
+        "projectsBy": "",
+        "conditionsBy": "",
+        "company": "",
+        "location": ""
+      }
+    }
+  }
+}

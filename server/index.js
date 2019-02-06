@@ -4,7 +4,7 @@ import MustacheExpress from 'mustache-express';
 import Compression from 'compression';
 import WebpackDevMiddleware from './middleware/WebpackDevMiddleware';
 import BitlyMiddleware from './middleware/BitlyMiddleware';
-import Tr from '../app/TranslationTable';
+import Tr from '../src/TranslationTable';
 
 // Prepare the Express app for the incident visualization
 const app = Express();
