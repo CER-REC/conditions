@@ -1,6 +1,8 @@
 # State
 
 Template of data for component states:
+Asertisks in the doc denote states that can be found one level up the architecture.
+  For example, *location in the Wheel can be found in View 2
 
 <pre>
 {
@@ -17,12 +19,29 @@ Template of data for component states:
         x: number,
         y: number,
         *search: string,
+
+        ShortcutInfoBar: {
+          expanded: boolean,
+        }
     },
     
     View2: {
         *selectedFeature: string, // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
         *location: boolean, // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
         *search: string, // used in Wheel.search, ProjectMenu.search, DetailedView.search
+
+        SearchBar: {
+          keywords: [string],
+          exceptKeywords: [string]
+          findAny: boolean,
+          yearRange: { number, number},
+          projectStatus: [string], // one of open, closed, or cancelled
+          filterTab: boolean, // if false, show search content
+        },
+
+        TrendButton : {
+          *selectedFeature: string, // used in View2.selectedFeature
+        },
         
         Wheel: {
             *location: boolean,
@@ -30,7 +49,7 @@ Template of data for component states:
             *feature: string, // one of theme, instrument, phase, type, status, filing (only needed for location to determine charts in location)
             selectedID: number, // company/region id (assuming region id is a number)
             filterYears: [number],
-            filterStatuses: [string], // one of open, closed, canceled, draft?
+            *projectStatus: [string], // used in SearchBar.projectStatus
         },
         
         ProjectMenu: {
@@ -111,7 +130,39 @@ Template of data for component states:
             open: boolean,
         },
     },
-    
+
+    Footer: {
+      selectedTextBox: string, // one of 'About', 'Methodology', or 'Downloads'
+    },
+
+    Screenshot: {
+      nebLogo: boolean
+      bitlyUrl: '',
+
+      // if ViewOne
+      viewOneScreenshot: {
+        page: number,
+        open: boolean,
+        x: number,
+        y: number,
+        *search: string,
+      },
+
+      // if ViewTwo
+      viewTwoScreenshot : {
+        *selectedFeature: string, // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
+        *location: boolean, // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
+        *search: string, // used in Wheel.search, ProjectMenu.search, DetailedView.search
+      },
+
+      // if ViewThree
+      viewThreeScreenshot: {
+        *feature: string, // used in FeaturesMenu.selected, SmallMultiplesLegend.title
+        subFeature: string, // used in SmallMultiplesLegend.selected, StreamGraph.chartTitle, InstrumentsLegend.selected, BubbleChart.chartTitle
+        companyID: number, // used in V3.6
+      },
+    },
+
 }
 </pre>
 
