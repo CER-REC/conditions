@@ -96,7 +96,7 @@
     "node-sass": "4.11.0",
     "opn-cli": "4.0.0",
     "raw-loader": "1.0.0",
-    "react-test-renderer": "16.7.0",
+    "react-test-renderer": "16.8.1",
     "replace": "1.0.1",
     "require-context.macro": "1.0.4",
     "sass-loader": "7.1.0",
