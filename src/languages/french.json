@@ -127,6 +127,9 @@
       "totalConditions": "",
       "associated": ""
     },
+    "regionConditionSummary": {
+      "title": ""
+    },
     "smallMultiplesLegend": {
       "all": {
         "theme": "",
