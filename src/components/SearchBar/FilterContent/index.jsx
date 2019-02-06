@@ -12,15 +12,9 @@ library.add(
   faRedoAlt,
 );
 
-const createYearArray = (yearObject) => {
-  const startYear = yearObject.start;
-  const endYear = yearObject.end;
-  const yearArray = [];
-  for (let j = startYear; j <= endYear; j += 1) {
-    yearArray.push(j);
-  }
-  return yearArray;
-};
+const createYearArray = yearObject => Array(yearObject.end - yearObject.start + 1)
+  .fill()
+  .map((_, index) => yearObject.start + index);
 class FilterContent extends React.PureComponent {
   static propTypes = {
     yearRange: PropTypes.objectOf(PropTypes.number).isRequired,
@@ -76,6 +70,7 @@ class FilterContent extends React.PureComponent {
 
   yearRangeRender = () => {
     const yearArray = createYearArray(this.props.yearRange);
+
     return (yearArray.map((i, index) => {
       const { selectedYear } = this.props;
       const arrayIndex = selectedYear.indexOf(index);
@@ -138,9 +133,12 @@ class FilterContent extends React.PureComponent {
 
   render() {
     if (!this.props.display) { return null; }
+    const yearIndex = () => Array(this.props.yearRange.end - this.props.yearRange.start + 1)
+      .fill()
+      .map((_, index) => index);
     return (
       <div className="FilterContent">
-        <div {...handleInteraction(this.props.reset)} className="reset">
+        <div {...handleInteraction(this.props.reset, yearIndex())} className="reset">
           <FormattedMessage id="components.SearchBar.reset">
             { text => text.toUpperCase()}
           </FormattedMessage>

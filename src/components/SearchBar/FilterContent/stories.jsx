@@ -10,13 +10,14 @@ const yearRange = {
   start: 70,
   end: 80,
 };
+
 const noop = () => {};
 
 storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
     state: {
-      display: true, projectStatus: [], selectedYear: [],
+      display: true, projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     },
     actions: {
       closeTab: () => () => ({ display: false }),
@@ -34,9 +35,10 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
         forceReRender();
         return { projectStatus: updateProject };
       },
-      reset: () => () => {
+      reset: () => (indexArray) => {
+        console.log(indexArray);
         forceReRender();
-        return { projectStatus: [], selectedYear: [] };
+        return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: indexArray };
       },
       onDragMove: state => (event) => {
         const li = event.target.closest('li');
