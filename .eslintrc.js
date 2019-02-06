@@ -16,7 +16,7 @@ module.exports = {
         '**/stories.jsx',
         '**/spec.js',
         '**/spec.jsx',
-        'app/tests/**',
+        'src/tests/**',
       ],
       rules: {
         'import/no-extraneous-dependencies': [
@@ -31,7 +31,7 @@ module.exports = {
         '**/spec.jsx',
         '**/*.spec.js',
         '**/*.spec.jsx',
-        'app/tests/**',
+        'src/tests/**',
       ],
       env: {
         jest: true,

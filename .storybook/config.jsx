@@ -12,9 +12,9 @@ import { addLocaleData } from 'react-intl';
 import enLocaleData from 'react-intl/locale-data/en';
 import frLocaleData from 'react-intl/locale-data/fr';
 
-import i18nMessages from '../app/i18n';
+import i18nMessages from '../src/i18n';
 
-import '../app/styles.scss';
+import '../src/styles.scss';
 
 addLocaleData(enLocaleData);
 addLocaleData(frLocaleData);
@@ -67,7 +67,7 @@ addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
 // automatically import all files named stories.jsx
 const documentationStories = requireContext('../documentation/', true, /stories.jsx$/);
-const componentStories = requireContext('../app/', true, /stories.jsx$/);
+const componentStories = requireContext('../src/', true, /stories.jsx$/);
 function loadStories() {
   documentationStories.keys()
     // Sorting Documentation|Introduction to the top

@@ -22,7 +22,7 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '**/app/**/*.js?(x)',
+    '**/src/**/*.js?(x)',
   ],
 
   // The directory where Jest should output its coverage files
@@ -31,9 +31,9 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '/node_modules/',
-    '<rootDir>/app/components/Modal/index.jsx',
-    '<rootDir>/app/queries/',
-    '<rootDir>/app/tests/',
+    '<rootDir>/src/components/Modal/index.jsx',
+    '<rootDir>/src/queries/',
+    '<rootDir>/src/tests/',
     '/(.*\\.)?spec.jsx?',
     '/(.*\\.)?stories.jsx?',
   ],
@@ -79,7 +79,7 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '\\.(s?css|png)$': '<rootDir>/app/tests/emptyModule.js',
+    '\\.(s?css|png)$': '<rootDir>/src/tests/emptyModule.js',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -127,7 +127,7 @@ module.exports = {
   // setupFiles: ['<rootDir>/app/tests/jest-register-context.js'],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
-  setupTestFrameworkScriptFile: '<rootDir>/app/tests/setup.js',
+  setupTestFrameworkScriptFile: '<rootDir>/src/tests/setup.js',
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
@@ -172,8 +172,8 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/app/tests/transform/babel.js',
-    '^.+\\.md$': '<rootDir>/app/tests/transform/md.js',
+    '^.+\\.jsx?$': '<rootDir>/src/tests/transform/babel.js',
+    '^.+\\.md$': '<rootDir>/src/tests/transform/md.js',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

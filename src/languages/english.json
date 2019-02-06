@@ -126,6 +126,9 @@
     "regionCompanies": {
       "title": "Companies in Selected Region:"
     },
+    "regionConditionSummary": {
+      "title": "Total Conditions for Selected Region"
+    },
     "smallMultiplesLegend": {
       "all": {
         "theme": "All Themes",
