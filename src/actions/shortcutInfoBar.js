@@ -15,7 +15,7 @@ export const DismissComponent = () => ({
 
 export const reducer = (state = false, action) => {
   switch (action.type) {
-    case Types.EXPAND_SOCIALBAR: return true;
+    case Types.EXPAND_SHORTCUTINFOBAR: return true;
     case Types.DISMISS_COMPONENT: return false;
     default: return state;
   }
