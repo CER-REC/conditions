@@ -18,7 +18,6 @@ storybook-static
 *.~lock*
 
 # Test results
-.nyc_output/
 coverage/
 test-reports/
 coverage.lcov
