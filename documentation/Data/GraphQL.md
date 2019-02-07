@@ -7,7 +7,7 @@ be implemented in C# in the ASP.Net application running on the NEB infrastructur
 
 * Date, DateTime, Time - [graphql-iso-date](https://www.npmjs.com/package/graphql-iso-date)
 
-## Enums 
+## Enums
 
 ```gql
 enum ProjectStatus {

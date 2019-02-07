@@ -1,8 +1,7 @@
 # State
 
 Template of data for component states:
-Asertisks in the doc denote states that can be found one level up the architecture.
-  For example, *location in the Wheel can be found in View 2
+Triple back ticks in the doc denote states that can be found one level up the architecture.
 
 <pre>
 {
@@ -18,7 +17,7 @@ Asertisks in the doc denote states that can be found one level up the architectu
         open: boolean,
         x: number,
         y: number,
-        *search: string,
+        ```search: string,```
 
         ShortcutInfoBar: {
           expanded: boolean,
@@ -26,9 +25,9 @@ Asertisks in the doc denote states that can be found one level up the architectu
     },
     
     View2: {
-        *selectedFeature: string, // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
-        *location: boolean, // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
-        *search: string, // used in Wheel.search, ProjectMenu.search, DetailedView.search
+        ```selectedFeature: string, ``` // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
+        ```location: boolean,``` // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
+        ```search: string,``` // used in Wheel.search, ProjectMenu.search, DetailedView.search
 
         SearchBar: {
           keywords: [string],
@@ -40,69 +39,69 @@ Asertisks in the doc denote states that can be found one level up the architectu
         },
 
         TrendButton : {
-          *selectedFeature: string, // used in View2.selectedFeature
+          ```selectedFeature: string,``` // used in View2.selectedFeature
         },
         
         Wheel: {
-            *location: boolean,
-            *search: string,
-            *feature: string, // one of theme, instrument, phase, type, status, filing (only needed for location to determine charts in location)
+            ```location: boolean,```
+            ```search: string,```
+            ```feature: string,``` // one of theme, instrument, phase, type, status, filing (only needed for location to determine charts in location)
             selectedID: number, // company/region id (assuming region id is a number)
             filterYears: [number],
-            *projectStatus: [string], // used in SearchBar.projectStatus
+            ```projectStatus: [string],``` // used in SearchBar.projectStatus
         },
         
         ProjectMenu: {
-            *selectedFeature: string, // one of theme, instrument, phase, type, status, filing
-            *search: string, // searched terms or ... should be highlighted if possible
+            ```selectedFeature: string,``` // one of theme, instrument, phase, type, status, filing
+            ```search: string,``` // searched terms or ... should be highlighted if possible
             selectedProjectID: number,
         },
         
         FeaturesMenu: {
-            *selected: string, // one of theme, instrument, phase, type, status, filing
+            ```selected: string,``` // one of theme, instrument, phase, type, status, filing
         },
         
         FeaturesLegend: {
-            *selectedFeature: string, // one of theme, instrument, phase, type, status, filing
-            *isProjectLegend: boolean, // inverse of wheel location boolean
+            ```selectedFeature: string,``` // one of theme, instrument, phase, type, status, filing
+            ```isProjectLegend: boolean,``` // inverse of wheel location boolean
         },
         
         BrowseByBtn: {
-            *mode: string, // one of location, company (based on location boolean)
+            ```mode: string,``` // one of location, company (based on location boolean)
         },
         
         DetailedView: {
-            *search: string,
-            *selectedID: string, // condition/instrument id (in case ids overlap, might need to prefix ids)
+            ```search: string,```
+            ```selectedID: string,``` // condition/instrument id (in case ids overlap, might need to prefix ids)
             scroll: number, // needed?
             projectName: string, // blank for location view
         },
     },
 
     View3: {
-        *feature: string, // used in FeaturesMenu.selected, SmallMultiplesLegend.title
+        ```feature: string,``` // used in FeaturesMenu.selected, SmallMultiplesLegend.title
         subFeature: string, // used in SmallMultiplesLegend.selected, StreamGraph.chartTitle, InstrumentsLegend.selected, BubbleChart.chartTitle
         companyID: number, // used in V3.6
         
         FeaturesMenu: {
-            *selected: string, // one of theme, instrument, phase, type, status, filing
+            ```selected: string,``` // one of theme, instrument, phase, type, status, filing
         },
         
         // if View3.selected !== instrument
         StreamGraph : {
-            *chartTitle: string, // based on feature/sub-feature
+            ```chartTitle: string,``` // based on feature/sub-feature
             selectedYear: number,
         },
         
         // if View3.selected !== instrument
         SmallMultiplesLegend: {
-            *title: string, // based on feature
-            *selected: string, // a sub feature
+            ```title: string,``` // based on feature
+            ```selected: string,``` // a sub feature
         },
 
         // if View3.selected === instrument
         BubbleChart: {
-            *chartTitle: string, // based on sub-feature
+            ```chartTitle: string,``` // based on sub-feature
             selectedCategory: string,
         },
 
@@ -119,12 +118,12 @@ Asertisks in the doc denote states that can be found one level up the architectu
         },
 
         BrowseByBtn: {
-            *mode: string, // one of location, company (based on location boolean)
+            ```mode: string,``` // one of location, company (based on location boolean)
         }
         
         DetailedView: {
-            *search: string,
-            *selectedID: string, // condition/instrument id (in case ids overlap, might need to prefix ids)
+            ```search: string,```
+            ```selectedID: string,``` // condition/instrument id (in case ids overlap, might need to prefix ids)
             scroll: number, // needed?
             projectName: string, // blank for location view
             open: boolean,
@@ -145,19 +144,19 @@ Asertisks in the doc denote states that can be found one level up the architectu
         open: boolean,
         x: number,
         y: number,
-        *search: string,
+        ```search: string,```
       },
 
       // if ViewTwo
       viewTwoScreenshot : {
-        *selectedFeature: string, // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
-        *location: boolean, // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
-        *search: string, // used in Wheel.search, ProjectMenu.search, DetailedView.search
+        ```selectedFeature: string,``` // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
+        ```location: boolean,``` // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
+        ```search: string,``` // used in Wheel.search, ProjectMenu.search, DetailedView.search
       },
 
       // if ViewThree
       viewThreeScreenshot: {
-        *feature: string, // used in FeaturesMenu.selected, SmallMultiplesLegend.title
+        ```feature: string,``` // used in FeaturesMenu.selected, SmallMultiplesLegend.title
         subFeature: string, // used in SmallMultiplesLegend.selected, StreamGraph.chartTitle, InstrumentsLegend.selected, BubbleChart.chartTitle
         companyID: number, // used in V3.6
       },
