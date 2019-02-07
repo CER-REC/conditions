@@ -1612,6 +1612,8 @@ exports[`Storyshots Components|CircleContainer default 1`] = `
     className="CircleContainer"
     style={
       Object {
+        "backgroundColor": "",
+        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1632,6 +1634,8 @@ exports[`Storyshots Components|CircleContainer with icon 1`] = `
     className="CircleContainer"
     style={
       Object {
+        "backgroundColor": "",
+        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1652,6 +1656,8 @@ exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
     className="CircleContainer blue"
     style={
       Object {
+        "backgroundColor": "",
+        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1682,6 +1688,8 @@ exports[`Storyshots Components|CircleContainer with prop: onClick  1`] = `
     onKeyPress={[Function]}
     style={
       Object {
+        "backgroundColor": "",
+        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1703,6 +1711,8 @@ exports[`Storyshots Components|CircleContainer with text 1`] = `
     className="CircleContainer"
     style={
       Object {
+        "backgroundColor": "",
+        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -2091,6 +2101,8 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="CircleContainer ConditionsIcon"
         style={
           Object {
+            "backgroundColor": "",
+            "color": "",
             "height": 24,
             "width": 24,
           }
@@ -2195,6 +2207,8 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2414,6 +2428,8 @@ exports[`Storyshots Components|FeaturesMenu selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2462,6 +2478,8 @@ exports[`Storyshots Components|FeaturesMenu selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2704,6 +2722,8 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2866,6 +2886,8 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -3240,6 +3262,8 @@ exports[`Storyshots Components|List basic usage 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3331,6 +3355,8 @@ exports[`Storyshots Components|List component items 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3430,6 +3456,8 @@ exports[`Storyshots Components|List guide line 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3519,6 +3547,8 @@ exports[`Storyshots Components|List horizontal 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3604,6 +3634,8 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3685,6 +3717,8 @@ exports[`Storyshots Components|List selected 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3798,6 +3832,8 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -3839,6 +3875,8 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -3880,6 +3918,8 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -3921,6 +3961,8 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -4303,6 +4345,8 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
+                      "backgroundColor": "",
+                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4385,6 +4429,8 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
+                      "backgroundColor": "",
+                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4457,6 +4503,8 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -4504,6 +4552,8 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
+                      "backgroundColor": "",
+                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4568,6 +4618,8 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -4619,6 +4671,8 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
+                      "backgroundColor": "",
+                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4693,6 +4747,8 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
+                      "backgroundColor": "",
+                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4799,6 +4855,8 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
           className="CircleContainer ConditionCount"
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -5420,6 +5478,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         className="projectList"
       >
         <li
+          className="regularBackground leftCurve"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5433,6 +5492,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5446,6 +5507,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5459,6 +5521,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5472,6 +5536,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5485,6 +5550,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5498,6 +5565,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5511,6 +5579,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5524,6 +5594,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5537,6 +5608,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5550,6 +5623,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5563,6 +5637,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5576,6 +5652,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5589,6 +5666,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5602,6 +5681,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5615,6 +5695,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5628,6 +5710,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5641,6 +5724,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5654,6 +5739,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5667,6 +5753,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5680,6 +5768,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
+          className="regularBackground rightCurve"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5693,6 +5782,8 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -5717,7 +5808,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         className="projectStatus"
       >
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -5726,7 +5817,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           OPEN
         </li>
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -5735,7 +5826,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           CLOSED
         </li>
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -5823,6 +5914,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -5849,6 +5942,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -5875,6 +5970,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -5901,6 +5998,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -5927,6 +6026,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -5953,6 +6054,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -5979,6 +6082,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6005,6 +6110,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6031,6 +6138,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6057,6 +6166,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6083,6 +6194,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6214,6 +6327,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -6241,6 +6356,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -6268,6 +6385,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -6295,6 +6414,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "white",
+                "color": "#4D4D4D",
                 "height": 24,
                 "width": 24,
               }
@@ -6321,6 +6442,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6347,6 +6470,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6373,6 +6498,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6399,6 +6526,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6425,6 +6554,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6451,6 +6582,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6477,6 +6610,8 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "#E6E6E6",
+                "color": "#999999",
                 "height": 24,
                 "width": 24,
               }
@@ -6501,7 +6636,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         className="projectStatus"
       >
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -6510,7 +6645,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           OPEN
         </li>
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -6519,7 +6654,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           CLOSED
         </li>
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -6589,6 +6724,8 @@ exports[`Storyshots Components|ShareIcon email 1`] = `
       className="CircleContainer"
       style={
         Object {
+          "backgroundColor": "",
+          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -6637,6 +6774,8 @@ exports[`Storyshots Components|ShareIcon facebook 1`] = `
       className="CircleContainer"
       style={
         Object {
+          "backgroundColor": "",
+          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -6685,6 +6824,8 @@ exports[`Storyshots Components|ShareIcon linkedin 1`] = `
       className="CircleContainer"
       style={
         Object {
+          "backgroundColor": "",
+          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -6733,6 +6874,8 @@ exports[`Storyshots Components|ShareIcon twitter 1`] = `
       className="CircleContainer"
       style={
         Object {
+          "backgroundColor": "",
+          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -6859,6 +7002,8 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
+              "backgroundColor": "",
+              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -6906,6 +7051,8 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -6947,6 +7094,8 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -6988,6 +7137,8 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -7029,6 +7180,8 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -7201,6 +7354,8 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -7541,6 +7696,8 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -7819,6 +7976,8 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -7918,6 +8077,8 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
+                "backgroundColor": "",
+                "color": "",
                 "height": 24,
                 "width": 24,
               }

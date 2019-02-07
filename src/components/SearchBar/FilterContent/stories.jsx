@@ -20,7 +20,7 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
       display: true, projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     },
     actions: {
-      closeTab: () => () => ({ display: false }),
+      closeTab: () => ({ display: false }),
       // NOTE: forceReRender() used because storybook experienced
       // issues re-rendering after state change
       changeProjectStatus: state => (item) => {
@@ -36,7 +36,6 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
         return { projectStatus: updateProject };
       },
       reset: () => (indexArray) => {
-        console.log(indexArray);
         forceReRender();
         return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: indexArray };
       },

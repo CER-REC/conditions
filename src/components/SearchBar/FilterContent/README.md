@@ -7,7 +7,7 @@ Displays the dialog box for the filter tab.
 (PropTypes.oneOf(['OPEN', 'CLOSED', 'CANCELLED'])) 
 
 # Interaction Requirements
-[ ] Selection of year range
-[ ] Project Status Selection
-[ ] Reset functionality
-[ ] Close Interaction
+* [X] Selection of year range
+* [X] Project Status Selection
+* [X] Reset functionality
+* [X] Close Interaction
