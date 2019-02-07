@@ -1,11 +1,11 @@
 import React from 'react';
-import { intl, shallowWithIntl } from '../../tests/utilities';
+import { intl, shallowWithIntl, shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import FeatureTypesDescription from '.';
 
 const defaultProps = {
   feature: 'theme',
-  types: ['security', 'managementSystem', 'financial'],
+  types: ['security'],
 };
 
 const instrumentProps = {
@@ -25,6 +25,10 @@ describe('Components|FeatureTypesDescription', () => {
     beforeEach(() => {
       wrapper = shallowWithIntl(
         <FeatureTypesDescription {...defaultProps} />,
+        {
+          'common.theme.security': 'Security',
+          'components.featureTypesDescription.theme.security': '1\n2\n3',
+        },
       );
     });
 
@@ -32,25 +36,14 @@ describe('Components|FeatureTypesDescription', () => {
       expect(wrapper.type()).toBe('div');
     });
 
-    test('should have the class "FeatureTypesDescription"', () => {
-      expect(wrapper.is('.FeatureTypesDescription')).toBe(true);
-    });
+    // test('should have the class "FeatureTypesDescription"', () => {
+    //   expect(wrapper.is('.FeatureTypesDescription')).toBe(true);
+    // });
 
-    test('should have a heading with translated text', () => {
-      const headingText = wrapper.find('h4').first().text();
-      const expectedText = intl
-        .formatMessage({ id: 'common.theme.security' });
+    shouldBehaveLikeAComponent(FeatureTypesDescription, () => wrapper);
 
-      expect(headingText).toBe(expectedText);
-    });
-
-    test('should have a paragraph with translated text', () => {
-      const paraText = wrapper.find('p').first().text();
-      const expectedText = intl
-        .formatMessage({ id: 'components.featureTypesDescription.theme.security' })
-        .split('\n')[0]; // In case there are multiple paragraphs
-
-      expect(paraText).toBe(expectedText);
+    test('should split multi-line text into paragraphs', () => {
+      expect(wrapper.find('p')).toHaveLength(3);
     });
   });
 
