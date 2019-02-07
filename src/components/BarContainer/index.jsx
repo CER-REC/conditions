@@ -14,6 +14,7 @@ const BarContainer = (props) => {
     standalone,
     title,
     desc,
+    maxValue,
   } = props;
 
   let barContainerWidth = 0;
@@ -28,7 +29,7 @@ const BarContainer = (props) => {
           key={index}
           {...bar}
           x={size * index * scale}
-          y={barContainerMaxHeight - bar.value * scale}
+          y={barContainerMaxHeight - (bar.value * maxValue) * scale}
           width={size * scale}
           height={bar.value * scale}
         />
@@ -41,11 +42,11 @@ const BarContainer = (props) => {
         {...bar}
         x={barContainerWidth * scale}
         y={0}
-        width={bar.value * scale}
+        width={(bar.value * maxValue) * scale}
         height={barContainerHeight}
       />
     );
-    barContainerWidth += bar.value;
+    barContainerWidth += bar.value * maxValue;
     return singleBar;
   });
   if (scale) { barContainerWidth *= scale; }
@@ -70,6 +71,7 @@ BarContainer.propTypes = {
   desc: PropTypes.string,
   title: PropTypes.string,
   vert: PropTypes.bool,
+  maxValue: PropTypes.number,
   scale: PropTypes.number,
   standalone: PropTypes.bool,
   size: PropTypes.number.isRequired,
@@ -80,7 +82,6 @@ BarContainer.defaultProps = {
   vert: false,
   scale: 1,
   standalone: false,
-  desc: '',
-  title: '',
+  maxValue: 1,
 };
 export default BarContainer;

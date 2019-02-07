@@ -20,4 +20,3 @@ storybook-static
 # Test results
 coverage/
 test-reports/
-coverage.lcov
