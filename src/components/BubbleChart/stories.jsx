@@ -12,7 +12,7 @@ const instrumentChartData2 = {
       {
         name: 'MO',
         children: [],
-        value: 100,
+        value: 40,
         category: 'misc',
       }, {
         name: 'AO',

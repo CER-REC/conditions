@@ -1077,8 +1077,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 495 199
-      A 147.5 147.5 0 0 1 790 199"
+      M 555 199
+      A 87.5 87.5 0 0 1 730 199"
               id="anyCommodityTypespath"
               style={
                 Object {
@@ -1093,10 +1093,10 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
-              r={147.5}
+              r={87.5}
               tabIndex={0}
               transform="translate(642.5 200)"
-              value={160}
+              value={100}
             />
             <text
               className="bubbleTitle"
@@ -1113,8 +1113,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 790 199
-      A 57.5 57.5 0 0 1 905 199"
+      M 730 199
+      A 57.5 57.5 0 0 1 845 199"
               id="notSpecifiedpath"
               style={
                 Object {
@@ -1131,7 +1131,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onKeyPress={[Function]}
               r={57.5}
               tabIndex={0}
-              transform="translate(847.5 200)"
+              transform="translate(787.5 200)"
               value={20}
             />
             <text
@@ -1154,7 +1154,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
             tabIndex={0}
           >
             <circle
-              r={100}
+              r={40}
               style={
                 Object {
                   "fill": "#D4A92A",
@@ -1187,14 +1187,14 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#D4A92A",
                 }
               }
-              transform="translate(745 200)"
+              transform="translate(685 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="white"
               stroke="transparent"
               textAnchor="middle"
-              x={745}
+              x={685}
               y={200}
             >
               AO
@@ -1214,15 +1214,15 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#0E2B8C",
                 }
               }
-              transform="translate(711.8103448275862 255.8878053741267)"
+              transform="translate(642.5 249.180788932265)"
             />
             <text
               alignmentBaseline="middle"
               fill="white"
               stroke="transparent"
               textAnchor="middle"
-              x={711.8103448275862}
-              y={255.8878053741267}
+              x={642.5}
+              y={249.180788932265}
             >
               ZO
             </text>
@@ -1241,14 +1241,14 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#27A5F9",
                 }
               }
-              transform="translate(820 200)"
+              transform="translate(760 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="black"
               stroke="transparent"
               textAnchor=""
-              x={832}
+              x={772}
               y={200}
             >
               XC
@@ -1268,14 +1268,14 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
                   "fill": "#D4A92A",
                 }
               }
-              transform="translate(875 200)"
+              transform="translate(815 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="black"
               stroke="transparent"
               textAnchor=""
-              x={887}
+              x={827}
               y={200}
             >
               CO
@@ -2809,60 +2809,60 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
         viewBox="-200 0 260 300"
       >
         <ellipse
+          className="Ellipse"
           cx="3"
           cy="3"
-          fill="rgb(228, 228, 228)"
           rx="3"
           ry="3"
           transform="translate(0, 23)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="30"
         >
           1
         </text>
         <ellipse
+          className="Ellipse"
           cx="40"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx="40"
           ry="5"
           transform="translate(-70, 34)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="50"
         >
           500
         </text>
         <ellipse
+          className="Ellipse"
           cx="80"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx="80"
           ry="5"
           transform="translate(-150, 54)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="70"
         >
           1000
         </text>
         <ellipse
+          className="Ellipse"
           cx="100"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx={100}
           ry="5"
           transform="translate(-190, 74)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="90"
         >
@@ -3219,60 +3219,60 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
         viewBox="-200 0 260 300"
       >
         <ellipse
+          className="Ellipse"
           cx="3"
           cy="3"
-          fill="rgb(228, 228, 228)"
           rx="3"
           ry="3"
           transform="translate(0, 23)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="30"
         >
           1
         </text>
         <ellipse
+          className="Ellipse"
           cx="40"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx="40"
           ry="5"
           transform="translate(-70, 34)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="50"
         >
           500
         </text>
         <ellipse
+          className="Ellipse"
           cx="80"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx="80"
           ry="5"
           transform="translate(-150, 54)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="70"
         >
           1000
         </text>
         <ellipse
+          className="Ellipse"
           cx="100"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx={100}
           ry="5"
           transform="translate(-190, 74)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="90"
         >
@@ -3301,60 +3301,60 @@ exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
         viewBox="-200 0 260 300"
       >
         <ellipse
+          className="Ellipse"
           cx="3"
           cy="3"
-          fill="rgb(228, 228, 228)"
           rx="3"
           ry="3"
           transform="translate(0, 23)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="30"
         >
           1
         </text>
         <ellipse
+          className="Ellipse"
           cx="40"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx="40"
           ry="5"
           transform="translate(-70, 34)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="50"
         >
           500
         </text>
         <ellipse
+          className="Ellipse"
           cx="80"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx="80"
           ry="5"
           transform="translate(-150, 54)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="70"
         >
           1000
         </text>
         <ellipse
+          className="Ellipse"
           cx="100"
           cy="10"
-          fill="rgb(228, 228, 228)"
           rx={100}
           ry="5"
           transform="translate(-190, 74)"
         />
         <text
-          fill="#999"
+          className="Text"
           x="30"
           y="90"
         >

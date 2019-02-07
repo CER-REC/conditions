@@ -12,14 +12,14 @@ const BubbleLegend = props => (
   >
     <FormattedMessage id="components.projectLegend.numberOfConditions" />
     <svg viewBox="-200 0 260 300">
-      <ellipse cx="3" cy="3" rx="3" ry="3" fill="rgb(228, 228, 228)" transform="translate(0, 23)" />
-      <text x="30" y="30" fill="#999">1</text>
-      <ellipse cx="40" cy="10" rx="40" ry="5" fill="rgb(228, 228, 228)" transform="translate(-70, 34)" />
-      <text x="30" y="50" fill="#999">500</text>
-      <ellipse cx="80" cy="10" rx="80" ry="5" fill="rgb(228, 228, 228)" transform="translate(-150, 54)" />
-      <text x="30" y="70" fill="#999">1000</text>
-      <ellipse cx="100" cy="10" rx={props.hundredWidthBubble} ry="5" fill="rgb(228, 228, 228)" transform="translate(-190, 74)" />
-      <text x="30" y="90" fill="#999">{props.maxConditions}</text>
+      <ellipse className="Ellipse" cx="3" cy="3" rx="3" ry="3" transform="translate(0, 23)" />
+      <text className="Text" x="30" y="30">1</text>
+      <ellipse className="Ellipse" cx="40" cy="10" rx="40" ry="5" transform="translate(-70, 34)" />
+      <text className="Text" x="30" y="50">500</text>
+      <ellipse className="Ellipse" cx="80" cy="10" rx="80" ry="5" transform="translate(-150, 54)" />
+      <text className="Text" x="30" y="70">1000</text>
+      <ellipse className="Ellipse" cx="100" cy="10" rx={props.hundredWidthBubble} ry="5" transform="translate(-190, 74)" />
+      <text className="Text" x="30" y="90">{props.maxConditions}</text>
     </svg>
   </div>
 );
