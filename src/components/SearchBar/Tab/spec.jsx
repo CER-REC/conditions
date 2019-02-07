@@ -13,17 +13,13 @@ describe('Components|SearchBar/Tab', () => {
     });
     shouldBehaveLikeAComponent(Tab, () => wrapper);
 
-    test('must render a div', () => {
-      expect(wrapper.find('.Tab')).toHaveLength(1);
-    });
-
     test('must have a div with a className of iconSvg', () => {
       expect(wrapper.find('.iconSvg')).toHaveLength(1);
     });
   });
 
   describe('with filter prop', () => {
-    test('with filter set to true, render  filterIcon', () => {
+    test('with filter set to true, render filterIcon', () => {
       const wrapper = shallow(<Tab isFilter isActive onClick={noop} />);
       expect(wrapper.find('.filterIcon')).toHaveLength(1);
     });
@@ -55,7 +51,7 @@ describe('Components|SearchBar/Tab', () => {
   });
 
   describe('with active prop', () => {
-    test('set to true, render bottom border', () => {
+    test('set to true, it doesn\'t render bottom border', () => {
       const wrapper = shallow(
         <Tab isFilter={false} isActive onClick={noop} />,
       );

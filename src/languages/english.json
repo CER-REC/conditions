@@ -98,11 +98,9 @@
       "all": "All Instruments"
     },
     "SearchBar": {
-      "filter": {
-        "filter": "Filter"
-      },
-      "findWords": {
-        "findWords": "Find Words"
+      "tab": {
+        "filter": "Filter",
+        "find": "Find Words"
       }
     },
     "modal": {

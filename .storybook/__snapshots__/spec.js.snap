@@ -5369,7 +5369,52 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SearchBar/Tab default 1`] = `
+exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="Tab"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      style={
+        Object {
+          "borderBottom": "none",
+        }
+      }
+      tabIndex={0}
+    >
+      <div
+        className="filterText"
+      >
+         
+        Filter
+         
+      </div>
+      <span
+        className="iconSvg"
+      >
+        <svg
+          viewBox="0 0 15 15"
+          width={15}
+        >
+          <path
+            className="filterIcon"
+            d="M252.46,239.85a.48.48,0,0,0-.42-.27H238a.47.47,0,0,0-.41.27.46.46,0,0,0, .06.48l5.42,6.59V253a.46.46,0,0,0,.21.39.44.44,0,0,0,.24.07.54.54,0,0,0,.21,0l3-1.51a .46.46,0,0,0,.25-.41v-4.56l5.42-6.59A.46.46,0,0,0,252.46,239.85Zm-6.29,6.62a.48.48,0, 0,0-.1.28v4.45l-2.13,1.06v-5.5a.48.48,0,0,0-.1-.29l-4.91-6h12.16Z"
+            transform="translate(-237.5 -238.58)"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
 <div
   className="visualization"
 >
@@ -5391,7 +5436,9 @@ exports[`Storyshots Components|SearchBar/Tab default 1`] = `
       <div
         className="findText"
       >
+         
         Find Words
+         
       </div>
       <span
         className="iconSvg"

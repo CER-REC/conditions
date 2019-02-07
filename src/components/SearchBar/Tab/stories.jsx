@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
@@ -17,9 +17,15 @@ storiesForComponent('Components|SearchBar/Tab', module, ReadMe)
     },
   }))
   .addDecorator(withKnobs)
-  .add('default', () => (
+  .add('SearchTab', () => (
     <Tab
       {...getInteractionProps()}
-      isFilter={boolean('isFilter', false)}
+      isFilter={false}
+    />
+  ))
+  .add('FilterTab', () => (
+    <Tab
+      {...getInteractionProps()}
+      isFilter
     />
   ));
