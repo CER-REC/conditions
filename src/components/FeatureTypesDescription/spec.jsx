@@ -1,5 +1,5 @@
 import React from 'react';
-import { intl, shallowWithIntl, shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { shallowWithIntl, shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import FeatureTypesDescription from '.';
 
@@ -31,14 +31,6 @@ describe('Components|FeatureTypesDescription', () => {
         },
       );
     });
-
-    test('should render a wrapper', () => {
-      expect(wrapper.type()).toBe('div');
-    });
-
-    // test('should have the class "FeatureTypesDescription"', () => {
-    //   expect(wrapper.is('.FeatureTypesDescription')).toBe(true);
-    // });
 
     shouldBehaveLikeAComponent(FeatureTypesDescription, () => wrapper);
 

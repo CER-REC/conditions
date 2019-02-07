@@ -8,52 +8,38 @@ class FeatureTypesDescription extends React.PureComponent {
   constructor() {
     super();
     this.ref = React.createRef();
-    this.headingRefs = {};
   }
-
-  // Returns the localized heading and description text for a given feature type
-  // in the form [heading, description]
-  getFormattedTypeContent = (intl, feature, type) => {
-    const headingId = `common.${feature}.${type}`;
-
-    const heading = intl.formatMessage({ id: headingId });
-
-    const description = intl.formatMessage({
-      id: `components.featureTypesDescription.${feature}.${type}`,
-    });
-
-    return [heading, description];
-  };
 
   // Adds color coding to Instrument codes at the beginning of a line
   addColorCoding = (item, colorCodes) => {
     const [, code, text] = item.match(/^([A-Z]+)(: .+)/);
 
     return (code)
-      ? [
-        <span key="type-code" className={`color-${colorCodes[code]}`}>{code}</span>,
-        <span key="type-text">{text}</span>,
-      ]
-      : item;
+      ? (
+        <React.Fragment>
+          <span className={`color-${colorCodes[code]}`}>{code}</span>
+          <span>{text}</span>
+        </React.Fragment>
+      ) : item;
   };
 
   // Returns a heading element and one or more paragraphs of localized text for a
   // given feature type, in the form [heading, description]
   renderTypeElements = (intl, feature, type, colorCodes) => {
-    const [heading, description] = this.getFormattedTypeContent(
-      intl,
-      feature,
-      type,
-    );
+    const headingId = `common.${feature}.${type}`;
+    const heading = intl.formatMessage({ id: headingId });
 
-    const typeDescription = description.split('\n')
-      .map((item, idx) => {
+    const typeDescription = intl.formatMessage({
+      id: `components.featureTypesDescription.${feature}.${type}`,
+    })
+      .split('\n')
+      .map((item) => {
         const text = (colorCodes)
           ? this.addColorCoding(item, colorCodes)
           : item;
 
         // eslint-disable-next-line react/no-array-index-key
-        return <p key={`${type}-text-${idx}`}>{text}</p>;
+        return <p>{text}</p>;
       });
 
     return (
