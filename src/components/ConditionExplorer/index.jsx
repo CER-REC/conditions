@@ -47,17 +47,13 @@ export default class ConditionExplorer extends React.Component {
     this.svgRef = React.createRef();
     this.fontChangeRef = React.createRef();
     this.textSizeRef = React.createRef();
-    this.state = { calculatedFontSize: null };
+    this.state = { fallbackFontSize: null, calculatedFontSize: null };
   }
 
   componentDidMount() {
     // Check every 100ms for 5 seconds for a font change
     this.cancelFontDetection = setTimeoutChain(this.testFontSize, 100, 50);
     // TODO: Find better solution for first mount blanking
-    this.testFontSize();
-  }
-
-  componentDidUpdate() {
     this.testFontSize();
   }
 
@@ -116,12 +112,11 @@ export default class ConditionExplorer extends React.Component {
   testFontSize = () => {
     const { width, height, y } = this.fontChangeRef.current.getBBox();
     const newSize = { width, height, yOffset: height + y };
-    const { calculatedFontSize: oldSize } = this.state;
-    if (!shallowequal(newSize, oldSize)) {
-      // The initial for oldSize is null, so the first detection of the fallback
-      // font will set it to a truthy value. If it changes after that, we know
-      // the real font has loaded in.
-      if (oldSize) { this.cancelFontDetection(); }
+    const { fallbackFontSize } = this.state;
+    if (!fallbackFontSize) {
+      this.setState({ fallbackFontSize: newSize });
+    } else if (!shallowequal(newSize, fallbackFontSize)) {
+      this.cancelFontDetection();
       this.calculateTextSize.cache.clear();
       this.setState({ calculatedFontSize: newSize });
     }
@@ -129,15 +124,18 @@ export default class ConditionExplorer extends React.Component {
 
   render() {
     const { calculatedFontSize } = this.state;
-    const keywords = this.getKeywords();
+    const keywords = calculatedFontSize ? this.getKeywords() : [];
     let content = null;
 
     // There are no keywords to render until after the first mount
     if (keywords.length > 0) {
       content = this.props.physics
-        ? <PhysicsTest keywords={keywords} fontMeasurement={calculatedFontSize} />
-        : <Fallback keywords={keywords} fontMeasurement={calculatedFontSize} />;
+        ? <PhysicsTest keywords={keywords} />
+        : <Fallback keywords={keywords} />;
     }
+
+    const fontTestStyles = { visibility: 'hidden' };
+    if (!this.state.fallbackFontSize) { fontTestStyles.fontFamily = 'Sans Serif'; }
 
     return (
       <svg
@@ -148,10 +146,10 @@ export default class ConditionExplorer extends React.Component {
         style={{ border: '1px solid #000' }}
       >
         <g className="keyword color0 textVisible">
-          <text ref={this.fontChangeRef} style={{ visibility: 'hidden' }}>
+          <text ref={this.fontChangeRef} style={fontTestStyles}>
             abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-.,0123456789
           </text>
-          <text ref={this.textSizeRef} style={{ visibility: 'hidden' }} />
+          <text ref={this.textSizeRef} style={fontTestStyles} />
         </g>
         {content}
       </svg>

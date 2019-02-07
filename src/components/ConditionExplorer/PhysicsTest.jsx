@@ -2,14 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import shallowequal from 'shallowequal';
-import Matter, { Bodies, Composite, Engine, Events, Mouse, MouseConstraint, World } from 'matter-js';
+import Matter from 'matter-js';
 import { keywordList } from './proptypes';
 import './styles.scss';
 
 const circleCategory = Matter.Body.nextCategory();
 const visibleTextCategory = Matter.Body.nextCategory();
 const placeholderCategory = Matter.Body.nextCategory();
+const resettingCategory = Matter.Body.nextCategory();
 
 const calculatePosition = keyword => ({
   x: keyword.outline.x + (keyword.outline.width / 2),
@@ -21,7 +21,7 @@ const calculateTextOffset = keyword => ({
   y: keyword.textOffset.y - (keyword.outline.height / 2),
 });
 
-const isVisible = keyword => (keyword.collisionFilter.category === visibleTextCategory);
+const isVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
 
 const calculateVelocity = (start, end, friction) => {
   let loop = 0;
@@ -49,23 +49,23 @@ export default class PhysicsTest extends React.Component {
     this.groupRef = React.createRef();
 
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
-    this.engine = Engine.create({ world });
+    this.engine = Matter.Engine.create({ world });
     this.lastTime = null;
     this.loopID = null;
 
     // Set up bodies
-    this.circle = Bodies.circle(-100, 200, 50, {
+    this.circle = Matter.Bodies.circle(-100, 200, 50, {
       collisionFilter: {
         category: circleCategory,
       },
     });
-    World.add(this.engine.world, this.circle);
+    Matter.World.add(this.engine.world, this.circle);
 
     this.keywords = {};
     this.props.keywords.forEach((keyword) => {
       const { outline } = keyword;
       const position = calculatePosition(keyword);
-      const keywordBody = Bodies.rectangle(
+      const keywordBody = Matter.Bodies.rectangle(
         position.x,
         position.y,
         outline.width,
@@ -85,16 +85,16 @@ export default class PhysicsTest extends React.Component {
 
       this.keywords[keyword.value] = keywordBody;
     });
-    World.add(this.engine.world, Object.values(this.keywords));
+    Matter.World.add(this.engine.world, Object.values(this.keywords));
 
-    Engine.run(this.engine);
+    Matter.Engine.run(this.engine);
   }
 
   componentDidMount() {
     Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.3, y: 0.01 });
 
-    const mouse = Mouse.create(this.groupRef.current.parentElement);
-    const mouseConstraint = MouseConstraint.create(this.engine, {
+    const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
+    const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse,
       // collisionFilter: { mask: circleCategory },
       constraint: {
@@ -106,78 +106,44 @@ export default class PhysicsTest extends React.Component {
     });
     this.mouse = mouse;
 
-    World.add(this.engine.world, mouseConstraint);
+    Matter.World.add(this.engine.world, mouseConstraint);
 
     const runner = Matter.Runner.create();
     Matter.Runner.run(runner, this.engine);
 
-    Events.on(this.engine, 'afterUpdate', this.onUpdate);
-    Events.on(this.engine, 'collisionStart', this.onCollision);
+    Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
+    Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
     this.loop();
   }
 
-  componentDidUpdate(prevProps) {
-    // TODO: This seems like a really bad place to put this logic.
-    // If the font measurement has changed, we need to update the dimensions
-    // of each of the keyword bars
-    if (!shallowequal(prevProps.fontMeasurement, this.props.fontMeasurement)) {
-      const keywordsToDelete = Object.keys(this.keywords);
-      let needsUpdate = false;
-      this.props.keywords.forEach((keyword) => {
-        const keywordBody = this.keywords[keyword.value];
-        if (!keywordBody) {
-          // TODO: Create it
-          return;
-        }
-
-        // Remove it from the unseen array
-        keywordsToDelete.splice(keywordsToDelete.indexOf(keyword.value), 1);
-
-        if (keywordBody.area === keyword.outline.width * keyword.outline.height) {
-          return;
-        }
-
-        const oldAngle = keywordBody.angle;
-        Matter.Body.setAngle(keywordBody, 0);
-        const oldWidth = keywordBody.bounds.max.x - keywordBody.bounds.min.x;
-        const oldHeight = keywordBody.bounds.max.y - keywordBody.bounds.min.y;
-        Matter.Body.scale(
-          keywordBody,
-          keyword.outline.width / oldWidth,
-          keyword.outline.height / oldHeight,
-        );
-        Matter.Body.setPosition(keywordBody, calculatePosition(keyword));
-        Matter.Body.setAngle(keywordBody, oldAngle);
-        keywordBody.render.originalData = keyword;
-        keywordBody.render.textOffset = calculateTextOffset(keyword);
-        needsUpdate = true;
-      });
-
-      // TODO: Remove the old keywords that aren't needed anymore
-
-      if (needsUpdate) { this.forceUpdate(); }
-    }
-  }
-
   componentWillUnmount() {
-    Events.off(this.engine, 'afterUpdate', this.onUpdate);
-    Events.off(this.engine, 'collisionStart', this.onCollision);
+    Matter.Events.off(this.engine, 'afterUpdate', this.onUpdate);
+    Matter.Events.off(this.engine, 'collisionStart', this.onCollision);
     window.cancelAnimationFrame(this.loopID);
   }
 
   onUpdate = (update) => {
     let bodiesChanged = false;
-    Composite.allBodies(this.engine.world).forEach((body) => {
-      if (!bodiesChanged) {
-        // Check if any positions have updated
-        bodiesChanged = (Math.abs(body.position.x - body.positionPrev.x) > 0.01)
-          || (Math.abs(body.position.y - body.positionPrev.y) > 0.01)
-          || ((Math.abs(body.angle - body.angle) * 180) / Math.PI > 0.01);
+    Matter.Composite.allBodies(this.engine.world).forEach((body) => {
+      const bodyChanged = (Math.abs(body.position.x - body.positionPrev.x) > 0.01)
+        || (Math.abs(body.position.y - body.positionPrev.y) > 0.01)
+        || ((Math.abs(body.angle - body.angle) * 180) / Math.PI > 0.01)
+
+      // Check if any positions have updated
+      bodiesChanged = bodiesChanged || bodyChanged;
+
+      // If the circle has stopped moving, increase its friction
+      if (body.collisionFilter.category === circleCategory && !bodyChanged) {
+        body.frictionAir = 0.2;
+      }
+
+      if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
+        body.collisionFilter.category = placeholderCategory;
       }
 
       // Check if any keywords that have been displaced can move back
       if (body.collisionFilter.category === visibleTextCategory
-          && body.render.lastCollision + 2000 <= update.source.timing.timestamp) {
+          && body.render.lastCollision + 5000 <= update.source.timing.timestamp) {
         // eslint-disable-next-line object-curly-newline
         const { x, y, width, height } = body.render.originalData.outline;
         const originalBounds = {
@@ -185,13 +151,15 @@ export default class PhysicsTest extends React.Component {
           max: { x: x + width, y: y + height },
         };
         if (Matter.Bounds.overlaps(originalBounds, this.circle.bounds) === false) {
-          body.collisionFilter.category = placeholderCategory;
+          body.collisionFilter.category = resettingCategory;
           body.collisionFilter.mask &= ~visibleTextCategory;
           this.resetBodyPosition(body);
         }
       }
     });
-    if (bodiesChanged) { this.setState({}); }
+    // if (bodiesChanged) { this.setState({}); }
+    // TODO: This seems like a really bad thing to run every frame
+    this.forceUpdate();
   };
 
   onCollision = collision => collision.pairs.forEach((pair) => {
@@ -203,13 +171,19 @@ export default class PhysicsTest extends React.Component {
     if (!withCircle) { return; }
 
     const keyword = pair.bodyA === this.circle ? pair.bodyB : pair.bodyA;
+
+    if (keyword.collisionFilter.category === resettingCategory) {
+      pair.isActive = false;
+      return;
+    }
+
     keyword.collisionFilter.category = visibleTextCategory;
     keyword.collisionFilter.mask |= visibleTextCategory;
   });
 
   loop = () => {
     const currTime = 0.001 * Date.now();
-    Engine.update(
+    Matter.Engine.update(
       this.engine,
       1000 / 60,
       this.lastTime ? currTime / this.lastTime : 1,
@@ -233,14 +207,16 @@ export default class PhysicsTest extends React.Component {
 
     // TODO: Temporary placeholder to make sure they snap to the correct spot
     setTimeout(() => {
+      Matter.Body.setVelocity(body, { x: 0, y: 0 });
       Matter.Body.setPosition(body, targetPos);
+      Matter.Body.setAngularVelocity(body, 0);
       Matter.Body.setAngle(body, 0);
       this.forceUpdate();
     }, 2000);
   };
 
   render() {
-    const bodies = Composite.allBodies(this.engine.world)
+    const bodies = Matter.Composite.allBodies(this.engine.world)
       .sort((a, b) => {
         if (isVisible(a) && !isVisible(b)) { return 1; }
         if (isVisible(b) && !isVisible(a)) { return -1; }
