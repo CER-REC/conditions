@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FormattedMessage } from 'react-intl';
@@ -91,16 +92,20 @@ class FilterContent extends React.PureComponent {
         );
       }
       const classArray = [];
+      let position = 'middle';
       classArray.push('regularBackground');
       if (selectedYear.length === 1) {
         classArray.push('rightCurve');
         classArray.push('leftCurve');
+        position = 'outside';
       } else if (arrayIndex === 0 && selectedYear[1] > selectedYear[0]) {
         classArray.push('leftCurve');
+        position = 'outside';
       } else if (
         arrayIndex === selectedYear.length - 1
           && selectedYear[arrayIndex] > selectedYear[selectedYear.length - 2]) {
         classArray.push('rightCurve');
+        position = 'outside';
       }
       return (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -111,9 +116,15 @@ class FilterContent extends React.PureComponent {
           onMouseMove={this.onDragMove}
           onMouseUp={this.onDragStop}
           onKeyDown={this.onKeyPress}
-          className={classArray.toString().replace(/,/g, ' ')}
+          className={classNames(classArray)}
         >
-          <CircleContainer size={24} color="#4D4D4D" backgroundColor="white"> {i} </CircleContainer>
+          <CircleContainer
+            size={24}
+            color={(position === 'outside' ? 'rgb(96,96,96)' : 'white')}
+            backgroundColor={(position === 'outside' ? 'white' : 'rgb(209, 5, 122)')}
+          >
+            {i}
+          </CircleContainer>
         </li>
       );
     }));

@@ -5493,16 +5493,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             style={
               Object {
                 "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               70
-               
             </div>
           </div>
         </li>
@@ -5521,17 +5519,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               71
-               
             </div>
           </div>
         </li>
@@ -5550,17 +5546,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               72
-               
             </div>
           </div>
         </li>
@@ -5579,17 +5573,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               73
-               
             </div>
           </div>
         </li>
@@ -5608,17 +5600,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               74
-               
             </div>
           </div>
         </li>
@@ -5637,17 +5627,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               75
-               
             </div>
           </div>
         </li>
@@ -5666,17 +5654,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               76
-               
             </div>
           </div>
         </li>
@@ -5695,17 +5681,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               77
-               
             </div>
           </div>
         </li>
@@ -5724,17 +5708,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               78
-               
             </div>
           </div>
         </li>
@@ -5753,17 +5735,15 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               79
-               
             </div>
           </div>
         </li>
@@ -5783,16 +5763,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             style={
               Object {
                 "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               80
-               
             </div>
           </div>
         </li>
@@ -6328,16 +6306,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             style={
               Object {
                 "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               70
-               
             </div>
           </div>
         </li>
@@ -6356,17 +6332,15 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               71
-               
             </div>
           </div>
         </li>
@@ -6385,17 +6359,15 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "backgroundColor": "rgb(209, 5, 122)",
+                "color": "white",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               72
-               
             </div>
           </div>
         </li>
@@ -6415,16 +6387,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             style={
               Object {
                 "backgroundColor": "white",
-                "color": "#4D4D4D",
+                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
             }
           >
             <div>
-               
               73
-               
             </div>
           </div>
         </li>
