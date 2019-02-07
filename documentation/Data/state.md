@@ -9,7 +9,8 @@ Triple back ticks in the doc denote states that can be found one level up the ar
     search: string, // used in View1.search, View2.search, View3.DetailedView.search
     location: boolean, // used in View2.location, View3.BrowseByBtn.mode
     companyID: number, // used in View2.Wheel.selectedID, View3.companyID
-    instrumentCondition: string, // used in View2.DetailedView.selectedID, View3.DetailedView.selectedID
+    instrumentCondition: string, // used in View2.DetailedView.selectedID,
+      View3.DetailedView.selectedID
     feature: string, // used in View2.selectedFeature, View3.feature
     
     View1: {
