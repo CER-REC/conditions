@@ -16,5 +16,6 @@ A property accounting for the size of a bubble with 100 Conditions needs to be p
 ## Requirements
 
 * [X] Renders a title for 'Number of Conditions'
-* [X] Displays 1, 500, 1000, and 1600 regardless of what the largest bubble actually is
-* [ ] The scale of the bubbles should match that of the bubble chart (using a prop for largest value)
+* [X] Displays 10, 100, 1000, and the max value
+* [] If the max value is larger than what can fit in the space of the legend, replace it with highest value that can fit
+* [] The scale of the bubbles should match that of the bubble chart (using a prop for largest value)
