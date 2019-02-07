@@ -9,3 +9,4 @@ This component is part of the Location Wheel component. It displays the select p
 - [ ] Colors in the current region
 - [ ] Updates when the selected region changes
 - [ ] Uses GeoJSON data to generate the map
+- [ ] Is hidden when the wheel is in the Company mode
