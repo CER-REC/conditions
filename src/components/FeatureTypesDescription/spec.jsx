@@ -19,6 +19,11 @@ const instrumentProps = {
   },
 };
 
+const messages = {
+  'common.theme.security': 'Security',
+  'components.featureTypesDescription.theme.security': '1\n2\n3',
+};
+
 describe('Components|FeatureTypesDescription', () => {
   describe('with default props', () => {
     let wrapper;
@@ -29,12 +34,8 @@ describe('Components|FeatureTypesDescription', () => {
     shouldBehaveLikeAComponent(FeatureTypesDescription, () => wrapper);
 
     test('should split multi-line text into paragraphs', () => {
-      const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl(
-        {
-          'common.theme.security': 'Security',
-          'components.featureTypesDescription.theme.security': '1\n2\n3',
-        },
-      ).find('p');
+      const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl(messages)
+        .find('p');
 
       expect(p).toHaveLength(3);
     });
