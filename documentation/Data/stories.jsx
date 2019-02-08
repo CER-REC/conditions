@@ -1,8 +1,10 @@
 import { storiesOf } from '@storybook/react';
 import { doc } from 'storybook-readme';
 import GraphQL from './GraphQL.md';
-import State from './state.md';
+import Information from './information.md';
+import Redux from './redux.md';
 
 storiesOf('Documentation|Data', module)
   .add('GraphQL', doc(GraphQL))
-  .add('State', doc(State));
+  .add('Information', doc(Information))
+  .add('Redux', doc(Redux));
