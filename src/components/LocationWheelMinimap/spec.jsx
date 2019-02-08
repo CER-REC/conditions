@@ -4,11 +4,16 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import LocationWheelMinimap from '.';
 
+const defaultProps = {
+  province: 'Alberta',
+  region: 'Lethbridge--Medicine Hat',
+};
+
 describe('Components|LocationWheelMinimap', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<LocationWheelMinimap />);
+      wrapper = shallow(<LocationWheelMinimap {...defaultProps} />);
     });
 
     test('should render', () => {
