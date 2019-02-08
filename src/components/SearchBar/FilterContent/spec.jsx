@@ -61,12 +61,12 @@ describe('Components|SearchBar/FilterContent', () => {
         .find('li')
         .first();
     });
-    test('the click must call its onClick prop called yearSelect', () => {
+    test('the click must call its onClick prop called onYearSelect', () => {
       li.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    test('the enter key should call its keyPress prop called yearSelect', () => {
+    test('the enter key should call its keyPress prop called onYearSelect', () => {
       li.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -82,7 +82,7 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={yearRange}
+          selectedYear={{ start: 1971, end: 1972 }}
           changeProjectStatus={noop}
           reset={noop}
           closeTab={noop}
@@ -97,8 +97,22 @@ describe('Components|SearchBar/FilterContent', () => {
     test('a right arrow key or left arrow key will call its prop', () => {
       li.simulate('keyDown', { ...eventFuncs, key: 'ArrowRight' });
       li.simulate('keyUp', { ...eventFuncs, key: 'ArrowRight' });
+      expect(spy).toHaveBeenCalledWith({ start: 1971, end: 1973 });
+      expect(spy).toHaveBeenCalledTimes(1);
       li.simulate('keyDown', { ...eventFuncs, key: 'ArrowLeft' });
       li.simulate('keyUp', { ...eventFuncs, key: 'ArrowLeft' });
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1972 });
+      expect(spy).toHaveBeenCalledTimes(2);
+    });
+
+    test('a right arrow with keyCode will call its prop', () => {
+      li.simulate('keyDown', { ...eventFuncs, keyCode: 39 });
+      li.simulate('keyUp', { ...eventFuncs, keyCode: 39 });
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith({ start: 1971, end: 1973 });
+      li.simulate('keyDown', { ...eventFuncs, keyCode: 37 });
+      li.simulate('keyUp', { ...eventFuncs, keyCode: 37 });
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1972 });
       expect(spy).toHaveBeenCalledTimes(2);
     });
   });
@@ -296,7 +310,7 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={yearRange}
+          selectedYear={{ start: 1974, end: 1974 }}
           changeProjectStatus={noop}
           onYearSelect={spy}
           closeTab={noop}
@@ -310,13 +324,17 @@ describe('Components|SearchBar/FilterContent', () => {
     });
     test('onDrag move, will call its onYearSelect prop', () => {
       li.simulate('mouseDown', eventFuncs);
+      expect(spy).toHaveBeenCalledTimes(1);
       li.simulate('mouseMove', { eventFuncs, clientX: 10, clientY: 10 });
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1974 });
       expect(spy).toHaveBeenCalledTimes(2);
     });
 
     test('onDrag Stop, onDragMove should not call its onYearSelect prop', () => {
       li.simulate('mouseDown', eventFuncs);
+      expect(spy).toHaveBeenCalledTimes(1);
       li.simulate('mouseMove', { eventFuncs, clientX: 10, clientY: 10 });
+      expect(spy).toHaveBeenCalledTimes(2);
       li.simulate('mouseUp', eventFuncs);
       li.simulate('mouseMove', { eventFuncs, clientX: 20, clientY: 20 });
       expect(spy).toHaveBeenCalledTimes(2);
