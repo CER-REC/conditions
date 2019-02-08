@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import FilterContent from '.';
 
 const yearRange = {
@@ -50,48 +51,14 @@ describe('Components|SearchBar/FilterContent', () => {
         />,
       );
     });
-    test('renders a className of FilterContent', () => {
-      expect(wrapper.find('.FilterContent')).toHaveLength(1);
-    });
+
+    shouldBehaveLikeAComponent(FilterContent, () => wrapper);
+
     test('renders ul with className of filter', () => {
       expect(wrapper.find('ul.projectStatus')).toHaveLength(1);
     });
     test('renders ul with className of projectList', () => {
       expect(wrapper.find('ul.projectList')).toHaveLength(1);
-    });
-
-    test('renders formattedMessage reset', () => {
-      const updatedWrapper = wrapper.find('div.reset > FormattedMessage');
-      expect(updatedWrapper).toHaveLength(1);
-      expect(updatedWrapper.prop('id')).toBe('components.SearchBar.reset');
-      expect(updatedWrapper.shallowWithIntl().text()).toBe('RESET');
-    });
-
-    test('renders formattedMessage projectYear', () => {
-      const updatedWrapper = wrapper
-        .find('.titleText > FormattedMessage')
-        .first();
-      expect(updatedWrapper).toHaveLength(1);
-      expect(updatedWrapper.prop('id')).toBe(
-        'components.SearchBar.filter.projectYear',
-      );
-    });
-
-    test('renders projectStatus Text', () => {
-      const updatedWrapper = wrapper
-        .find('.titleText > FormattedMessage')
-        .last();
-      expect(updatedWrapper).toHaveLength(1);
-      expect(updatedWrapper.prop('id')).toBe(
-        'components.SearchBar.filter.projectStatus.projectStatusText',
-      );
-    });
-
-    test('renders close text', () => {
-      const updatedWrapper = wrapper.find('FormattedMessage').last();
-      expect(updatedWrapper).toHaveLength(1);
-      expect(updatedWrapper.prop('id')).toBe('components.SearchBar.close');
-      expect(updatedWrapper.shallowWithIntl().hasClass('close')).toBe(true);
     });
   });
 

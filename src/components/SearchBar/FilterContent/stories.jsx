@@ -16,76 +16,80 @@ const noop = () => {};
 storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
-    state: {
-      display: true, projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    },
-    actions: {
-      closeTab: () => ({ display: false }),
-      // NOTE: forceReRender() used because storybook experienced
-      // issues re-rendering after state change
-      changeProjectStatus: state => (item) => {
-        const { projectStatus: updateProject } = state;
-        const index = (updateProject.indexOf(item) > -1) ? updateProject.indexOf(item) : null;
-        if (index === null) {
-          updateProject.push(item);
-          forceReRender();
-          return { projectStatus: updateProject };
-        }
-        updateProject.splice(index, 1);
-        forceReRender();
-        return { projectStatus: updateProject };
-      },
-      reset: () => (indexArray) => {
-        forceReRender();
-        return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: indexArray };
-      },
-      onDragMove: state => (event) => {
-        const li = event.target.closest('li');
-        const nodes = Array.from(li.closest('ul').children);
-        const index = nodes.indexOf(li);
-        let { selectedYear } = state;
-        if (selectedYear.indexOf(index) === -1) {
-          selectedYear.push(index);
-          selectedYear = selectedYear.sort((a, b) => a - b);
-          const startingNum = selectedYear[0];
-          const finishingNum = selectedYear[selectedYear.length - 1];
-          for (let i = startingNum; i <= finishingNum; i += 1) {
-            if (selectedYear.indexOf(i) <= -1) {
-              selectedYear.push(i);
-            }
-          }
-          selectedYear = selectedYear.sort((a, b) => a - b);
-        }
-        forceReRender();
-        return ({ selectedYear });
-      },
-      yearSelect: () => year => ({ selectedYear: year }),
-      onYearKeyPress: state => (object) => {
-        const { array, direction } = object;
-        const { selectedYear } = state;
-        const lastIndex = selectedYear[selectedYear.length - 1];
-        const firstIndex = selectedYear[0];
-        if (direction === 1) {
-          if (array[lastIndex + 1] !== undefined) {
-            selectedYear.push(lastIndex + 1);
-          }
-        } else if (direction === -1) {
-          if (array[firstIndex - 1] !== undefined) {
-            selectedYear.push(firstIndex - 1);
-          }
-        }
-        selectedYear.sort((a, b) => a - b);
-        forceReRender();
-        return ({ selectedYear });
-      },
-    },
+    actions: ['closeTab', 'changeProjectStatus', 'reset', 'onDragMove', 'yearSelect', 'onKeyPress'],
   }))
   .add('with interaction', () => (
     <FilterContent
       {...getInteractionProps()}
       yearRange={yearRange}
     />
-  ))
+  ), {
+    interaction: {
+      state: {
+        display: true, projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      },
+      actions: {
+        closeTab: () => () => ({ display: false }),
+        // NOTE: forceReRender() used because storybook experienced
+        // issues re-rendering after state change
+        changeProjectStatus: state => (item) => {
+          const { projectStatus: updateProject } = state;
+          const index = (updateProject.indexOf(item) > -1) ? updateProject.indexOf(item) : null;
+          if (index === null) {
+            updateProject.push(item);
+            forceReRender();
+            return { projectStatus: updateProject };
+          }
+          updateProject.splice(index, 1);
+          forceReRender();
+          return { projectStatus: updateProject };
+        },
+        reset: () => (indexArray) => {
+          forceReRender();
+          return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: indexArray };
+        },
+        onDragMove: state => (event) => {
+          const li = event.target.closest('li');
+          const nodes = Array.from(li.closest('ul').children);
+          const index = nodes.indexOf(li);
+          let { selectedYear } = state;
+          if (selectedYear.indexOf(index) === -1) {
+            selectedYear.push(index);
+            selectedYear = selectedYear.sort((a, b) => a - b);
+            const startingNum = selectedYear[0];
+            const finishingNum = selectedYear[selectedYear.length - 1];
+            for (let i = startingNum; i <= finishingNum; i += 1) {
+              if (selectedYear.indexOf(i) <= -1) {
+                selectedYear.push(i);
+              }
+            }
+            selectedYear = selectedYear.sort((a, b) => a - b);
+          }
+          forceReRender();
+          return ({ selectedYear });
+        },
+        yearSelect: () => year => ({ selectedYear: year }),
+        onYearKeyPress: state => (object) => {
+          const { array, direction } = object;
+          const { selectedYear } = state;
+          const lastIndex = selectedYear[selectedYear.length - 1];
+          const firstIndex = selectedYear[0];
+          if (direction === 1) {
+            if (array[lastIndex + 1] !== undefined) {
+              selectedYear.push(lastIndex + 1);
+            }
+          } else if (direction === -1) {
+            if (array[firstIndex - 1] !== undefined) {
+              selectedYear.push(firstIndex - 1);
+            }
+          }
+          selectedYear.sort((a, b) => a - b);
+          forceReRender();
+          return ({ selectedYear });
+        },
+      },
+    },
+  })
   .add('withProjectStatus', () => (
     <FilterContent
       projectStatus={['CLOSED', 'OPEN']}
@@ -102,7 +106,13 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   ))
   .add('withYear', () => (
     <FilterContent
-      {...getInteractionProps()}
+      projectStatus={[]}
+      onDragMove={noop}
+      reset={noop}
+      closeTab={noop}
+      yearSelect={noop}
+      onYearKeyPress={noop}
+      changeProjectStatus={noop}
       display={getInteractionProps().display}
       selectedYear={[0, 1, 2, 3]}
       yearRange={yearRange}

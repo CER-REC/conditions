@@ -137,7 +137,7 @@ class FilterContent extends React.PureComponent {
       className={statusArray.indexOf(i) > -1 ? 'selectedProject' : ''}
     >
       <FormattedMessage id={`components.SearchBar.filter.projectStatus.${i.toLowerCase()}`}>
-        {text => text.toUpperCase()}
+        {text => <span className="upperCase"> {text} </span>}
       </FormattedMessage>
     </li>
   )))
@@ -151,11 +151,10 @@ class FilterContent extends React.PureComponent {
       <div className="FilterContent">
         <div {...handleInteraction(this.props.reset, yearIndex())} className="reset">
           <FormattedMessage id="components.SearchBar.reset">
-            { text => text.toUpperCase()}
+            { text => <span className="upperCase"> {text} </span> }
           </FormattedMessage>
           <Icon className="iconInline" icon="redo-alt" />
         </div>
-
         <div className="titleText">
           <FormattedMessage id="components.SearchBar.filter.projectYear" />
         </div>
@@ -170,10 +169,10 @@ class FilterContent extends React.PureComponent {
         </ul>
         <FormattedMessage id="components.SearchBar.close">
           { text => (
-            <button {...handleInteraction(this.props.closeTab)} className="close" type="button">
-              {text.toUpperCase()}
+            <button {...handleInteraction(this.props.closeTab)} className="close upperCase" type="button">
+              {text }
             </button>
-          ) }
+          )}
         </FormattedMessage>
       </div>
     );
