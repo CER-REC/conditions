@@ -1,6 +1,17 @@
-.LocationWheelMinimap {
-  height: 400px;
-  width: 400px;
+@import '../../styles/colors.scss';
 
-  border: 1px solid magenta;
+.LocationWheelMinimap {
+  max-height: 100px;
+  max-width: 100px;
+
+  .region {
+    fill: GetWheelColors('InnerColourLocation1');
+  }
+
+  .province {
+    fill: none;
+    stroke: $DarkGray;
+    stroke-width: 1;
+  }
+
 }
