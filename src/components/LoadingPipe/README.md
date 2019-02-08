@@ -20,10 +20,3 @@ NOTE: These prototypes show the animation with a curved pipe and the design no l
 
 - [ ] Must accept a property to determine if the app is in a loading state
 - [ ] Must display over-top or replace project menu pipelines
-
-## Accessibility Requirements
-
-(Manual Tests)
-Tabbing should stay in the dialog window.
-Closing dialog should return focus back to the previously active element.
-Closing dialog with escape key.
