@@ -2,13 +2,74 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-import { geoConicConformal, geoPath } from 'd3-geo';
+import { geoConicConformal, geoAlbers, geoPath, geoBounds } from 'd3-geo';
 import { feature, mergeArcs } from 'topojson-client';
 import Request from 'client-request/promise';
 
 import topoJSON from './toposimplify_1e1';
 
 const viewBox = { width: 300, height: 300 };
+
+const getBounds = (featureData) => {
+  const out = {};
+  [[out.x1, out.y1], [out.x2, out.y2]] = geoBounds(featureData);
+
+  return out;
+};
+
+const minMax = (...args) => [Math.min(...args), Math.max(...args)];
+
+const projectToBounds = (bounds) => {
+  const dataBox = {
+    cx: (bounds.x1 + bounds.x2) / 2,
+    cy: (bounds.y1 + bounds.y2) / 2,
+    width: bounds.x2 - bounds.x1,
+    height: bounds.y2 - bounds.y1,
+  };
+
+  const baseScale = Math.min(
+    viewBox.width / dataBox.width,
+    viewBox.height / dataBox.height,
+  );
+
+  console.log(dataBox.cx);
+
+  let projection = geoConicConformal()
+    .parallels([49, 77])
+    // .rotate([-dataBox.cx, 0]);
+    .rotate([0, 0]);
+
+  // Center and scale so that the viewport contains the bounding box
+  projection = projection.scale(baseScale);
+  const xy1 = projection([bounds.x1, bounds.y2]); // northwest
+  const xy2 = projection([bounds.x2, bounds.y1]); // southeast
+  const xyCenter = [(xy1[0] + xy2[0]) / 2, (xy1[1] + xy2[1]) / 2];
+
+  const xy3 = projection([bounds.x1, bounds.y1]); // southwest
+  const xy4 = projection([bounds.x2, bounds.y2]); // northeast
+  const xy5 = projection([(bounds.x1 + bounds.x2) / 2, bounds.y1]); // due south
+
+  const [xMin, xMax] = minMax(xy1[0], xy2[0], xy3[0], xy4[0], xy5[0]);
+  const [yMin, yMax] = minMax(xy1[1], xy2[1], xy3[1], xy4[1], xy5[1]);
+
+  const xySize = [xMax - xMin, yMax - yMin];
+  const center = projection.invert(xyCenter);
+  // const center = xyCenter;
+
+  const scale = Math.min(
+    viewBox.width / xySize[0],
+    viewBox.height / xySize[1],
+  // ) * baseScale * 1.25;
+  ) * baseScale;
+
+  console.dir({bounds,dataBox,baseScale,xy1,xy2,xy3,xy4,xy5,xMin,xMax,yMin,yMax,xySize,center,scale,viewBox});
+
+  return projection
+    .center([center[0], center[1]])
+    .scale(scale)
+    .translate([(viewBox.width / 2), (viewBox.height / 2)])
+    .precision(0.2);
+};
 
 class LocationWheelMinimap extends React.PureComponent {
   constructor() {
@@ -30,92 +91,41 @@ class LocationWheelMinimap extends React.PureComponent {
       });
   }
 
-  projection() {
-    const { bbox } = this.state.topoData.objects.ler_000b16a_e_latlng;
-
-    const dataBox = {
-      cx: (bbox[0] + bbox[2]) / 2,
-      cy: (bbox[1] + bbox[3]) / 2,
-      width: bbox[2] - bbox[0],
-      height: bbox[3] - bbox[1],
-    };
-
-    const baseScale = Math.min(
-      viewBox.width / dataBox.width,
-      viewBox.height / dataBox.height,
-    );
-
-    console.log(dataBox.cx);
-
-    let projection = geoConicConformal()
-      .parallels([49, 77])
-      .rotate([-dataBox.cx + 90, 0]);
-
-    // Center and scale so that the viewport contains the bounding box
-    projection = projection.scale(baseScale);
-    const xy1 = projection([bbox[0], bbox[3]]); // northwest
-    const xy2 = projection([bbox[2], bbox[1]]); // southeast
-    const xyCenter = [(xy1[0] + xy2[0]) / 2, (xy1[1] + xy2[1]) / 2];
-
-    const xy3 = projection([bbox[0], bbox[1]]); // southwest
-    const xy4 = projection([bbox[2], bbox[3]]); // northeast
-    const xy5 = projection([(bbox[0] + bbox[2]) / 2, bbox[1]]); // due south
-
-    const xMin = Math.min(xy1[0], xy2[0], xy3[0], xy4[0], xy5[0]);
-    const xMax = Math.max(xy1[0], xy2[0], xy3[0], xy4[0], xy5[0]);
-    const yMin = Math.min(xy1[1], xy2[1], xy3[1], xy4[1], xy5[1]);
-    const yMax = Math.max(xy1[1], xy2[1], xy3[1], xy4[1], xy5[1]);
-
-    const xySize = [xMax - xMin, yMax - yMin];
-    const center = projection.invert(xyCenter);
-
-    // console.dir({bbox,dataBox,baseScale,xy1,xy2,xy3,xy4,xy5,xMin,xMax,yMin,yMax,xySize,center});
-
-    const scale = Math.min(
-      viewBox.width / xySize[0],
-      viewBox.height / xySize[1],
-    ) * baseScale * 1.25;
-
-    return projection
-      .center([0, center[1]])
-      .scale(scale)
-      .translate([(viewBox.width / 2) - 300, viewBox.height / 2 + 300])
-      .precision(0.2);
-  }
-
   regionData(name) {
     return this.state.regions.find(region => region.properties.ERNAME.match(name));
   }
 
   provinceData(province) {
-    const regions = this.state.topoData.objects.ler_000b16a_e_latlng.geometries.filter(region => region.properties.PRNAME.match(province));
-    return mergeArcs(this.state.topoData, regions);
+    const regions = this.state
+      .topoData.objects.ler_000b16a_e_latlng.geometries
+      .filter(region => region.properties.PRNAME.match(province));
+
+    return feature(this.state.topoData, mergeArcs(this.state.topoData, regions));
   }
 
   render() {
     if (!this.state.topoData.objects) { return null; }
-    const projection = geoPath().projection(this.projection());
-
-    // const AB_regions = this.state.regions.filter(region => region.properties.PRNAME.match('Alberta'));
-    // const AB_outline = this.provinceData('Alberta');
-    // const regions = this.state.regions;
-
-    // console.dir({regions, AB_regions, AB_outline});
 
     const regionData = this.regionData(this.props.region);
     const provinceData = this.provinceData(regionData.properties.PRNAME);
+
+    const bounds = getBounds(provinceData);
+    // console.dir(bounds);
+    const projection = geoPath().projection(projectToBounds(bounds));
+    const regionPath = projection(regionData);
+    const provincePath = projection(provinceData);
 
     return (
       <div className="LocationWheelMinimap">
         <svg width="100%" height="100%" viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}>
           <g className="regions" transform="translate(0 -80)">
             <path
-              d={projection(regionData)}
+              d={regionPath}
               className="region"
               fill="rgb(239,182,82)"
             />
             <path
-              d={projection(feature(this.state.topoData, provinceData))}
+              d={provincePath}
               className="province"
               fill="none"
               stroke="rgb(153,153,153)"
