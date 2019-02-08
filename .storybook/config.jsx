@@ -31,17 +31,9 @@ const viewports = {
   fullscreen: {
     name: 'Fullscreen',
     styles: { width: '100%', height: '100%' },
-  },
-  desktop: {
-    name: 'Desktop',
-    styles: { width: '970px', height: '1024px' },
-  },
-  ipad: {
-    name: 'iPad',
-    styles: { width: '768px', height: '1024px' },
-  },
+  }
 };
-configureViewport({ viewports, defaultViewport: 'fullscreen' });
+configureViewport({ viewports, defaultViewport: 'Fullscreen' });
 
 addDecorator(withOptions({
   addonPanelInRight: true,
