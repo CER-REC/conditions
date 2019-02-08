@@ -16,10 +16,6 @@ describe('Components|LocationWheelMinimap', () => {
       wrapper = shallow(<LocationWheelMinimap {...defaultProps} />);
     });
 
-    test('should render', () => {
-      expect(wrapper.type()).toBe('div');
-    });
-
     shouldBehaveLikeAComponent(LocationWheelMinimap, () => wrapper);
   });
 });
