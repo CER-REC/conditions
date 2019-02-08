@@ -27,7 +27,6 @@ export const monkeyPatchShallowWithIntl = () => {
 };
 
 export const shouldBehaveLikeAComponent = (rawComponent, callback) => {
-
   const component = rawComponent.WrappedComponent || rawComponent;
 
   it('should render with the component name as a class', () => {
@@ -60,9 +59,7 @@ export const shouldHaveInteractionProps = (wrapper) => {
   expect(props.focusable).toBe(true);
 };
 
-// export const shallowWithIntl = (node, { context, ...opts } = {}) => shallow(
 export const shallowWithIntl = (node, messages) => {
-
   let testIntl = intl;
 
   if (messages) {

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import './styles.scss';
 
 class FeatureTypesDescription extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.ref = React.createRef();
   }
 
@@ -25,22 +25,32 @@ class FeatureTypesDescription extends React.PureComponent {
 
   // Returns a heading element and one or more paragraphs of localized text for a
   // given feature type, in the form [heading, description]
-  renderTypeElements = (intl, feature, type, colorCodes) => {
+  renderTypeElements = (feature, type, colorCodes) => {
     const headingId = `common.${feature}.${type}`;
-    const heading = intl.formatMessage({ id: headingId });
+    // const heading = intl.formatMessage({ id: headingId });
+    const heading = <FormattedMessage id={headingId} tagName="h4" />;
 
-    const typeDescription = intl.formatMessage({
-      id: `components.featureTypesDescription.${feature}.${type}`,
-    })
-      .split('\n')
-      .map((item) => {
-        const text = (colorCodes)
-          ? this.addColorCoding(item, colorCodes)
-          : item;
+    // const typeDescription = intl.formatMessage({
+    //   id: `components.featureTypesDescription.${feature}.${type}`,
+    // })
+    //   .split('\n')
+    //   .map((item) => {
+    //     const text = (colorCodes)
+    //       ? this.addColorCoding(item, colorCodes)
+    //       : item;
 
-        // eslint-disable-next-line react/no-array-index-key
-        return <p>{text}</p>;
-      });
+    //     // eslint-disable-next-line react/no-array-index-key
+    //     return <p>{text}</p>;
+    //   });
+
+    const typeDescription = (
+      <FormattedMessage id={`components.featureTypesDescription.${feature}.${type}`}>
+        {str => str.split('\n').map(line => (
+          <p>{(colorCodes) ? this.addColorCoding(line, colorCodes) : line}</p>
+        ))}
+
+      </FormattedMessage>
+    );
 
     return (
       <React.Fragment key={type}>
@@ -64,7 +74,6 @@ class FeatureTypesDescription extends React.PureComponent {
   render() {
     const content = this.props.types.map((type) => {
       const elements = this.renderTypeElements(
-        this.props.intl,
         this.props.feature,
         type,
         this.props.colorCodes,
@@ -94,7 +103,6 @@ FeatureTypesDescription.propTypes = {
   colorCodes: PropTypes.objectOf(PropTypes.string),
   /** Heading that the container should scroll to (ex. "security") */
   scrollTarget: PropTypes.string,
-  intl: intlShape.isRequired,
 };
 
 FeatureTypesDescription.defaultProps = {
@@ -102,4 +110,4 @@ FeatureTypesDescription.defaultProps = {
   colorCodes: null,
 };
 
-export default injectIntl(FeatureTypesDescription);
+export default FeatureTypesDescription;

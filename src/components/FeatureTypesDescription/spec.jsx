@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallowWithIntl, shouldBehaveLikeAComponent } from '../../tests/utilities';
-
+import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import FeatureTypesDescription from '.';
 
 const defaultProps = {
@@ -23,29 +23,31 @@ describe('Components|FeatureTypesDescription', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallowWithIntl(
-        <FeatureTypesDescription {...defaultProps} />,
-        {
-          'common.theme.security': 'Security',
-          'components.featureTypesDescription.theme.security': '1\n2\n3',
-        },
-      );
+      wrapper = shallow(<FeatureTypesDescription {...defaultProps} />);
     });
 
     shouldBehaveLikeAComponent(FeatureTypesDescription, () => wrapper);
 
     test('should split multi-line text into paragraphs', () => {
-      expect(wrapper.find('p')).toHaveLength(3);
+      const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl(
+        {
+          'common.theme.security': 'Security',
+          'components.featureTypesDescription.theme.security': '1\n2\n3',
+        },
+      ).find('p');
+
+      expect(p).toHaveLength(3);
     });
   });
 
   describe('when showing instruments', () => {
-    const wrapper = shallowWithIntl(<FeatureTypesDescription {...instrumentProps} />);
+    const wrapper = shallow(<FeatureTypesDescription {...instrumentProps} />);
 
     test('should color the instrument code for each paragraph', () => {
-      const code = wrapper.find('p').first().shallow().find('span')
-        .first();
-      expect(code.hasClass('color-routing')).toBe(true);
+      const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl().find('p');
+      const span = p.first().shallow().find('span').first();
+
+      expect(span.hasClass('color-routing')).toBe(true);
     });
   });
 });
