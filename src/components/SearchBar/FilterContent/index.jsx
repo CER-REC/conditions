@@ -24,14 +24,11 @@ class FilterContent extends React.PureComponent {
         ['OPEN', 'CLOSED', 'CANCELLED'],
       ),
     ).isRequired,
-    onDragMove: PropTypes.func.isRequired,
-    selectedYear: PropTypes.arrayOf(PropTypes.number).isRequired,
+    onYearSelect: PropTypes.func.isRequired,
+    selectedYear: PropTypes.objectOf(PropTypes.number).isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
-    display: PropTypes.bool.isRequired,
     reset: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    yearSelect: PropTypes.func.isRequired,
-    onYearKeyPress: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -39,14 +36,29 @@ class FilterContent extends React.PureComponent {
     this.isDragging = false;
   }
 
-  onDragStart = () => {
+  onDragStart = (event) => {
     this.isDragging = true;
-    this.props.yearSelect([]);
+    const year = Number(event.currentTarget.getAttribute('value'));
+    this.props.onYearSelect({ start: year, end: year });
   }
 
   onDragMove = (event) => {
     if (!this.isDragging) { return; }
-    this.props.onDragMove(event);
+    const li = Number(event.currentTarget.getAttribute('value'));
+    let selectedYearArray = createYearArray(this.props.selectedYear);
+    if (selectedYearArray.indexOf(li) === -1) {
+      selectedYearArray.push(li);
+      selectedYearArray = selectedYearArray.sort((a, b) => a - b);
+      selectedYearArray = createYearArray({
+        start: selectedYearArray[0],
+        end: selectedYearArray[selectedYearArray.length - 1],
+      });
+    }
+    selectedYearArray = selectedYearArray.sort((a, b) => a - b);
+    this.props.onYearSelect({
+      start: selectedYearArray[0],
+      end: selectedYearArray[selectedYearArray.length - 1],
+    });
   }
 
   onDragStop = () => {
@@ -54,40 +66,42 @@ class FilterContent extends React.PureComponent {
   }
 
   onKeyPress = (event) => {
+    const selectedYear = createYearArray(this.props.selectedYear);
     const yearArray = createYearArray(this.props.yearRange);
+    const lastNum = selectedYear[selectedYear.length - 1];
+    const firstNum = selectedYear[0];
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
-      this.props.onYearKeyPress({
-        array: yearArray,
-        direction: 1,
-      });
+      if (yearArray.indexOf(lastNum + 1) > -1) {
+        selectedYear.push(lastNum + 1);
+      }
+    } else if (event.key === 'ArrowLeft' || event.keyCode === 37) {
+      if (yearArray.indexOf(firstNum - 1) > -1) {
+        selectedYear.push(firstNum - 1);
+      }
     }
-    if (event.key === 'ArrowLeft' || event.keyCode === 37) {
-      this.props.onYearKeyPress({
-        array: yearArray,
-        direction: -1,
-      });
-    }
+    selectedYear.sort((a, b) => a - b);
+    this.props.onYearSelect({ start: selectedYear[0], end: selectedYear[selectedYear.length - 1] });
   }
 
   yearRangeRender = () => {
     const yearArray = createYearArray(this.props.yearRange);
-
-    return (yearArray.map((i, index) => {
-      const { selectedYear } = this.props;
-      const arrayIndex = selectedYear.indexOf(index);
-
+    return (yearArray.map((i) => {
+      let { selectedYear } = this.props;
+      selectedYear = createYearArray(selectedYear);
+      const arrayIndex = selectedYear.indexOf(i);
       if (arrayIndex === -1) {
         return (
           // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
           <li
-            {...handleInteraction(this.props.yearSelect, [yearArray.indexOf(i)])}
+            {...handleInteraction(this.props.onYearSelect, { start: i, end: i })}
             key={i}
+            value={i}
             onMouseDown={this.onDragStart}
             onMouseMove={this.onDragMove}
             onMouseUp={this.onDragStop}
             onKeyDown={this.onKeyPress}
           >
-            <CircleContainer size={24} color="#999999" backgroundColor="#E6E6E6"> {i} </CircleContainer>
+            <CircleContainer size={24} color="#999999" backgroundColor="#E6E6E6"> {i.toString().substring(2)} </CircleContainer>
           </li>
         );
       }
@@ -110,8 +124,9 @@ class FilterContent extends React.PureComponent {
       return (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <li
-          {...handleInteraction(this.props.yearSelect, [yearArray.indexOf(i)])}
+          {...handleInteraction(this.props.onYearSelect, { start: i, end: i })}
           key={i}
+          value={i}
           onMouseDown={this.onDragStart}
           onMouseMove={this.onDragMove}
           onMouseUp={this.onDragStop}
@@ -123,7 +138,7 @@ class FilterContent extends React.PureComponent {
             color={(position === 'outside' ? 'rgb(96,96,96)' : 'white')}
             backgroundColor={(position === 'outside' ? 'white' : 'rgb(209, 5, 122)')}
           >
-            {i}
+            {i.toString().substring(2)}
           </CircleContainer>
         </li>
       );
@@ -143,13 +158,9 @@ class FilterContent extends React.PureComponent {
   )))
 
   render() {
-    if (!this.props.display) { return null; }
-    const yearIndex = () => Array(this.props.yearRange.end - this.props.yearRange.start + 1)
-      .fill()
-      .map((_, index) => index);
     return (
       <div className="FilterContent">
-        <div {...handleInteraction(this.props.reset, yearIndex())} className="reset">
+        <div {...handleInteraction(this.props.reset)} className="reset">
           <FormattedMessage id="components.SearchBar.reset">
             { text => <span className="upperCase"> {text} </span> }
           </FormattedMessage>

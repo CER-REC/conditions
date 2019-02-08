@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
+import { shouldBehaveLikeAComponent, mountWithIntl } from '../../../tests/utilities';
 import FilterContent from '.';
 
 const yearRange = {
-  start: 70,
-  end: 80,
+  start: 1970,
+  end: 1980,
 };
 
 const projectStatus = ['OPEN', 'CLOSED', 'CANCELLED'];
@@ -13,26 +13,6 @@ const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|SearchBar/FilterContent', () => {
-  describe('if display prop is false', () => {
-    test('should not render anything', () => {
-      const wrapper = shallow(
-        <FilterContent
-          yearRange={yearRange}
-          projectStatus={projectStatus}
-          selectedYear={[]}
-          display={false}
-          changeProjectStatus={noop}
-          onDragMove={noop}
-          reset={noop}
-          closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={noop}
-        />,
-      );
-      expect(wrapper.type()).toBeNull();
-    });
-  });
-
   describe('proper props being passed in', () => {
     let wrapper;
     beforeEach(() => {
@@ -40,14 +20,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[]}
-          display
+          selectedYear={yearRange}
           changeProjectStatus={noop}
-          onDragMove={noop}
           reset={noop}
+          onYearSelect={noop}
           closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={noop}
         />,
       );
     });
@@ -72,14 +49,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[1]}
-          display
+          selectedYear={{ start: 1971, end: 1971 }}
           changeProjectStatus={noop}
-          onDragMove={noop}
           reset={noop}
           closeTab={noop}
-          yearSelect={spy}
-          onYearKeyPress={noop}
+          onYearSelect={spy}
         />,
       );
       li = wrapper
@@ -108,14 +82,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[]}
-          display
+          selectedYear={yearRange}
           changeProjectStatus={noop}
-          onDragMove={noop}
           reset={noop}
           closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={spy}
+          onYearSelect={spy}
         />,
       );
       li = wrapper
@@ -123,7 +94,7 @@ describe('Components|SearchBar/FilterContent', () => {
         .find('li')
         .first();
     });
-    test('a right arrow key or left arrow key will call its keyPress prop called yearSelect', () => {
+    test('a right arrow key or left arrow key will call its prop', () => {
       li.simulate('keyDown', { ...eventFuncs, key: 'ArrowRight' });
       li.simulate('keyUp', { ...eventFuncs, key: 'ArrowRight' });
       li.simulate('keyDown', { ...eventFuncs, key: 'ArrowLeft' });
@@ -142,14 +113,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[]}
-          display
+          selectedYear={yearRange}
           changeProjectStatus={spy}
-          onDragMove={noop}
           reset={noop}
           closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={noop}
+          onYearSelect={noop}
         />,
       );
       status = wrapper
@@ -178,14 +146,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[]}
-          display
+          selectedYear={yearRange}
           changeProjectStatus={noop}
-          onDragMove={noop}
           reset={spy}
           closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={noop}
+          onYearSelect={noop}
         />,
       );
 
@@ -210,14 +175,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[]}
-          display
+          selectedYear={yearRange}
           changeProjectStatus={noop}
-          onDragMove={noop}
           reset={noop}
           closeTab={spy}
-          yearSelect={noop}
-          onYearKeyPress={noop}
+          onYearSelect={noop}
         />,
       );
       close = wrapper
@@ -246,14 +208,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[0]}
-          display
+          selectedYear={{ start: 1970, end: 1970 }}
           changeProjectStatus={spy}
-          onDragMove={noop}
           reset={noop}
           closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={noop}
+          onYearSelect={noop}
         />,
       );
       li = wrapper.find('.projectList').find('li');
@@ -280,14 +239,11 @@ describe('Components|SearchBar/FilterContent', () => {
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[0, 1, 2]}
-          display
+          selectedYear={{ start: 1970, end: 1972 }}
           changeProjectStatus={spy}
-          onDragMove={noop}
           reset={noop}
           closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={noop}
+          onYearSelect={noop}
         />,
       );
       li = wrapper.find('.projectList').find('li');
@@ -307,20 +263,18 @@ describe('Components|SearchBar/FilterContent', () => {
   });
 
   describe('onDrag start', () => {
-    test('on Drag start will call yearSelect prop', () => {
+    test('onDrag start will call yearSelect prop', () => {
       const spy = jest.fn();
-      const wrapper = shallow(
+      // mountWithIntl used for next few tests for accessing getAttribute property
+      const wrapper = mountWithIntl(
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[]}
-          display
+          selectedYear={yearRange}
           changeProjectStatus={noop}
-          onDragMove={noop}
           reset={noop}
           closeTab={noop}
-          yearSelect={spy}
-          onYearKeyPress={noop}
+          onYearSelect={spy}
         />,
       );
       const li = wrapper
@@ -332,24 +286,21 @@ describe('Components|SearchBar/FilterContent', () => {
     });
   });
 
-  describe('on Drag move', () => {
+  describe('onDrag move', () => {
     let wrapper;
     let spy;
     let li;
     beforeEach(() => {
       spy = jest.fn();
-      wrapper = shallow(
+      wrapper = mountWithIntl(
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
-          selectedYear={[]}
-          display
+          selectedYear={yearRange}
           changeProjectStatus={noop}
-          onDragMove={spy}
-          reset={noop}
+          onYearSelect={spy}
           closeTab={noop}
-          yearSelect={noop}
-          onYearKeyPress={noop}
+          reset={noop}
         />,
       );
       li = wrapper
@@ -357,18 +308,18 @@ describe('Components|SearchBar/FilterContent', () => {
         .find('li')
         .first();
     });
-    test('on Drag move, will call its onDragMove prop', () => {
+    test('onDrag move, will call its onYearSelect prop', () => {
       li.simulate('mouseDown', eventFuncs);
       li.simulate('mouseMove', { eventFuncs, clientX: 10, clientY: 10 });
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledTimes(2);
     });
 
-    test('onDrag Stop, onDragMove should not call its onDragMove prop', () => {
+    test('onDrag Stop, onDragMove should not call its onYearSelect prop', () => {
       li.simulate('mouseDown', eventFuncs);
       li.simulate('mouseMove', { eventFuncs, clientX: 10, clientY: 10 });
       li.simulate('mouseUp', eventFuncs);
       li.simulate('mouseMove', { eventFuncs, clientX: 20, clientY: 20 });
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledTimes(2);
     });
   });
 });

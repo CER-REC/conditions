@@ -6,9 +6,14 @@ import withStatus from '../../../../.storybook/addon-status';
 import FilterContent from '.';
 import ReadMe from './README.md';
 
-const yearRange = {
-  start: 70,
-  end: 80,
+const initialYearRange = {
+  start: 1970,
+  end: 1980,
+};
+
+const yearSelected = {
+  start: 1970,
+  end: 1980,
 };
 
 const noop = () => {};
@@ -16,20 +21,19 @@ const noop = () => {};
 storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
-    actions: ['closeTab', 'changeProjectStatus', 'reset', 'onDragMove', 'yearSelect', 'onKeyPress'],
+    actions: ['changeProjectStatus', 'reset', 'onYearSelect'],
   }))
   .add('with interaction', () => (
     <FilterContent
       {...getInteractionProps()}
-      yearRange={yearRange}
+      closeTab={() => alert('clicked')}
     />
   ), {
     interaction: {
       state: {
-        display: true, projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: yearSelected, yearRange: initialYearRange,
       },
       actions: {
-        closeTab: () => () => ({ display: false }),
         // NOTE: forceReRender() used because storybook experienced
         // issues re-rendering after state change
         changeProjectStatus: state => (item) => {
@@ -44,46 +48,11 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
           forceReRender();
           return { projectStatus: updateProject };
         },
-        reset: () => (indexArray) => {
+        reset: () => () => {
           forceReRender();
-          return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: indexArray };
+          return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: initialYearRange };
         },
-        onDragMove: state => (event) => {
-          const li = event.target.closest('li');
-          const nodes = Array.from(li.closest('ul').children);
-          const index = nodes.indexOf(li);
-          let { selectedYear } = state;
-          if (selectedYear.indexOf(index) === -1) {
-            selectedYear.push(index);
-            selectedYear = selectedYear.sort((a, b) => a - b);
-            const startingNum = selectedYear[0];
-            const finishingNum = selectedYear[selectedYear.length - 1];
-            for (let i = startingNum; i <= finishingNum; i += 1) {
-              if (selectedYear.indexOf(i) <= -1) {
-                selectedYear.push(i);
-              }
-            }
-            selectedYear = selectedYear.sort((a, b) => a - b);
-          }
-          forceReRender();
-          return ({ selectedYear });
-        },
-        yearSelect: () => year => ({ selectedYear: year }),
-        onYearKeyPress: state => (object) => {
-          const { array, direction } = object;
-          const { selectedYear } = state;
-          const lastIndex = selectedYear[selectedYear.length - 1];
-          const firstIndex = selectedYear[0];
-          if (direction === 1) {
-            if (array[lastIndex + 1] !== undefined) {
-              selectedYear.push(lastIndex + 1);
-            }
-          } else if (direction === -1) {
-            if (array[firstIndex - 1] !== undefined) {
-              selectedYear.push(firstIndex - 1);
-            }
-          }
-          selectedYear.sort((a, b) => a - b);
+        onYearSelect: () => (selectedYear) => {
           forceReRender();
           return ({ selectedYear });
         },
@@ -93,28 +62,22 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .add('withProjectStatus', () => (
     <FilterContent
       projectStatus={['CLOSED', 'OPEN']}
-      selectedYear={[]}
-      display={getInteractionProps().display}
-      yearRange={yearRange}
+      selectedYear={yearSelected}
+      yearRange={initialYearRange}
       changeProjectStatus={noop}
-      onDragMove={noop}
+      onYearSelect={noop}
       reset={noop}
       closeTab={noop}
-      yearSelect={noop}
-      onYearKeyPress={noop}
     />
   ))
   .add('withYear', () => (
     <FilterContent
       projectStatus={[]}
-      onDragMove={noop}
+      onYearSelect={noop}
       reset={noop}
       closeTab={noop}
-      yearSelect={noop}
-      onYearKeyPress={noop}
       changeProjectStatus={noop}
-      display={getInteractionProps().display}
-      selectedYear={[0, 1, 2, 3]}
-      yearRange={yearRange}
+      selectedYear={yearSelected}
+      yearRange={initialYearRange}
     />
   ));
