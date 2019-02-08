@@ -5,7 +5,6 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import LocationWheelMinimap from '.';
 
 const defaultProps = {
-  province: 'Alberta',
   region: 'Lethbridge--Medicine Hat',
 };
 

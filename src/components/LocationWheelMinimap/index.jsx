@@ -7,10 +7,12 @@ import { feature, mergeArcs } from 'topojson-client';
 
 import Request from 'client-request/promise';
 
-// Hardcoding for now so I can work on the component
-import topoJSON from './toposimplify';
+const topoObj = 'economic_regions_2016_latlng_simplified';
 
-const topoObj = 'economic_regions_2016_latlng';
+// Hardcoding for now so I can work on the component
+import topoJSON from './economic_regions_2016_latlng_simplified';
+
+
 
 // This should use the same dimensions as the component's div to avoid scaling
 // the svg's stroke width.
@@ -78,7 +80,11 @@ class LocationWheelMinimap extends React.PureComponent {
 
 LocationWheelMinimap.propTypes = {
   /** Economic region, e.g. 'Vancouver Island and Coast' */
-  region: PropTypes.string.isRequired,
+  region: PropTypes.string,
+};
+
+LocationWheelMinimap.defaultProps = {
+  region: null,
 };
 
 export default LocationWheelMinimap;
