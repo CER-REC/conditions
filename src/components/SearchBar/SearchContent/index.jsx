@@ -5,7 +5,6 @@ import './styles.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../Icon/index';
-import CircleContainer from '../../CircleContainer';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 library.add(
@@ -15,9 +14,7 @@ library.add(
 class SearchContent extends React.PureComponent {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-    display: PropTypes.bool.isRequired,
-    deleteWord: PropTypes.func.isRequired,
-    addWord: PropTypes.func.isRequired,
+    updateKeywords: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
     exceptKeywords: PropTypes.arrayOf(PropTypes.string),
     mode: PropTypes.string.isRequired,
@@ -35,47 +32,84 @@ class SearchContent extends React.PureComponent {
   }
 
   searchWordsRender = (keywords, type) => (
-    keywords.map(i => (
-      <React.Fragment key={i}>
-        <li className="liText"> {i} </li>
-        <span {...handleInteraction(this.props.deleteWord, [i, type])}> <Icon className="iconInline timesIcon" icon="times" /> </span>
+    keywords.map(word => (
+      <React.Fragment key={word}>
+        <li className="liText"> {word} </li>
+        <span {...handleInteraction(this.deleteWord, [word, type])}> <Icon className="iconInline timesIcon" icon="times" /> </span>
       </React.Fragment>
     ))
   )
 
   keyWordsRender = keywords => (
-    keywords.map(item => (
-      <React.Fragment key={item}>
-        <span> {item}, </span>
+    keywords.map(word => (
+      <React.Fragment key={word}>
+        <span> {word}, </span>
       </React.Fragment>
     ))
   )
 
-  addIncludeWord = () => {
-    const { value } = this.input.current;
-    this.input.current.value = '';
-    return this.props.addWord(value, 'include');
+  deleteWord = (obj) => {
+    const [word, type] = obj;
+    const { keywords, exceptKeywords } = this.props;
+    if (type === 'include') {
+      const index = (keywords.indexOf(word) > -1) ? keywords.indexOf(word) : null;
+      keywords.splice(index, 1);
+      this.props.updateKeywords([keywords, 'include']);
+    } else if (type === 'exclude') {
+      const exceptIndex = (exceptKeywords.indexOf(word) > -1) ? exceptKeywords.indexOf(word) : null;
+      exceptKeywords.splice(exceptIndex, 1);
+      this.props.updateKeywords([exceptKeywords, 'exclude']);
+    }
+    return null;
   }
 
-  addExceptWord = () => {
+  addWord = (word, type) => {
+    if (word.length === 0) { return null; }
+    const { keywords, exceptKeywords } = this.props;
+    if (type === 'include') {
+      if (keywords.length < 6
+        && keywords.indexOf(word) === -1
+        && exceptKeywords.indexOf(word) === -1) {
+        keywords.push(word);
+        this.props.updateKeywords([keywords, 'include']);
+      }
+    } else if (type === 'exclude') {
+      if (exceptKeywords.length < 6
+        && exceptKeywords.indexOf(word) === -1
+        && keywords.indexOf(word) === -1) {
+        exceptKeywords.push(word);
+        this.props.updateKeywords([exceptKeywords, 'exclude']);
+      }
+    }
+    return null;
+  }
+
+  getIncludeWord = () => {
+    if (this.input.current === null) { return this.addWord('test', 'include'); }
+    const { value } = this.input.current;
+    this.input.current.value = '';
+    return this.addWord(value, 'include');
+  }
+
+  getExcludeWord = () => {
+    if (this.input.current === null) { return this.addWord('test', 'exclude'); }
     const { value } = this.excludeInput.current;
     this.excludeInput.current.value = '';
-    return this.props.addWord(value, 'exclude');
+    return this.addWord(value, 'exclude');
   }
 
   render() {
-    if (!this.props.display) { return null; }
     return (
       <div className="SearchContent">
         <div className="includeText">
           <FormattedMessage id="components.SearchBar.findWords.searchText.include" />
         &nbsp;
-          {/* TODO: Update with DropDown Option once DropDownComponent is created */}
+          {/* TODO: Update with DropDown Option once public DropDownComponent is created */}
           {this.props.mode === 'basic'
             ? <FormattedMessage id="components.SearchBar.findWords.highlightText.any" />
             : (
               <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
-                {text => text.toUpperCase()}
+                {text => <span className="upperCase"> {text} </span>}
               </FormattedMessage>
             )
             }
@@ -84,9 +118,9 @@ class SearchContent extends React.PureComponent {
         </div>
         <div className="input">
           <input ref={this.input} className="searchBar" />
-          <CircleContainer onClick={this.addIncludeWord}>
+          <span className="addInput" {...handleInteraction(this.getIncludeWord)}>
             <Icon className="iconInline plusIcon" icon="plus-circle" />
-          </CircleContainer>
+          </span>
         </div>
         <ul className="searchWords">
           {this.searchWordsRender(this.props.keywords, 'include')}
@@ -99,14 +133,14 @@ class SearchContent extends React.PureComponent {
               <strong><FormattedMessage id="components.SearchBar.findWords.searchText.not" /></strong>
               &nbsp;
               <FormattedMessage id="components.SearchBar.findWords.searchText.include">
-                {text => text.toLowerCase()}
+                {text => <span className=".lowerCase"> {text} </span>}
               </FormattedMessage>:
             </div>
             <div className="input">
               <input ref={this.excludeInput} className="searchBar" />
-              <CircleContainer onClick={this.addExceptWord}>
+              <span className="addInput" {...handleInteraction(this.getExcludeWord)} >
                 <Icon className="iconInline plusIcon" icon="plus-circle" />
-              </CircleContainer>
+              </span>
             </div>
             <ul className="searchWords">
               {this.searchWordsRender(this.props.exceptKeywords, 'exclude')}
@@ -125,7 +159,7 @@ class SearchContent extends React.PureComponent {
           </FormattedMessage>
           <div className="anyText">
             <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
-              {text => text.toUpperCase()}
+              {text => <span className="upperCase"> {text} </span>}
             </FormattedMessage>
             <FormattedMessage id="components.SearchBar.findWords.highlightText.following" />
           </div>
@@ -136,7 +170,7 @@ class SearchContent extends React.PureComponent {
               <React.Fragment>
                 <div className="anyText">
                   <FormattedMessage id="components.SearchBar.findWords.highlightText.none">
-                    {text => text.toUpperCase()}
+                    {text => <span className="upperCase"> {text} </span>}
                   </FormattedMessage>
                   <FormattedMessage id="components.SearchBar.findWords.highlightText.following" />
                 </div>
@@ -151,8 +185,9 @@ class SearchContent extends React.PureComponent {
               <button
                 {...handleInteraction(this.props.closeTab)}
                 type="button"
+                className="upperCase"
               >
-                {text.toUpperCase()}
+                {text}
               </button>
             </div>
           )}

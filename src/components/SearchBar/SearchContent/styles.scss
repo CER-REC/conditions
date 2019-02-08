@@ -12,6 +12,13 @@
   text-align: left;
   padding: 25px 10px 5px 10px;
   font-family: $fira-sans-condensed;
+
+  .upperCase{
+    text-transform: uppercase;
+  }
+  .lowerCase{
+    text-transform: lowercase;
+  }
   .includeText {
     display: inline-block;
     span {
@@ -87,7 +94,7 @@
       color: $LinksTextButtons;
     }
   }
-  .CircleContainer {
+  .addInput {
     background: transparent;
     line-height: 10px;
     .plusIcon {

@@ -5386,7 +5386,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           Include
         </span>
          
-        ANY
+        <span
+          className="upperCase"
+        >
+           
+          any
+           
+        </span>
          
         <span>
           of
@@ -5399,43 +5405,35 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <input
           className="searchBar"
         />
-        <div
-          className="CircleContainer"
+        <span
+          className="addInput"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
-          style={
-            Object {
-              "height": undefined,
-              "width": undefined,
-            }
-          }
           tabIndex={0}
         >
-          <div>
-            <div
-              className="Icon"
+          <div
+            className="Icon"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-plus-circle fa-w-16 iconInline plusIcon"
+              color=""
+              data-icon="plus-circle"
+              data-prefix="fas"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-plus-circle fa-w-16 iconInline plusIcon"
-                color=""
-                data-icon="plus-circle"
-                data-prefix="fas"
-                role="img"
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                fill="currentColor"
                 style={Object {}}
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-            </div>
+              />
+            </svg>
           </div>
-        </div>
+        </span>
       </div>
       <ul
         className="searchWords"
@@ -5537,7 +5535,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <div
           className="anyText"
         >
-          ANY
+          <span
+            className="upperCase"
+          >
+             
+            any
+             
+          </span>
           <span>
              of the following:
           </span>
@@ -5560,7 +5564,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <div
           className="anyText"
         >
-          NONE
+          <span
+            className="upperCase"
+          >
+             
+            none
+             
+          </span>
           <span>
              of the following:
           </span>
@@ -5584,13 +5594,14 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         className="close"
       >
         <button
+          className="upperCase"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
           type="button"
         >
-          CLOSE
+          Close
         </button>
       </div>
     </div>
