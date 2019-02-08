@@ -1,0 +1,31 @@
+.ViewTwo {
+  box-sizing: border-box;
+  width: 1120px;
+  height: 900px;
+  display: grid;
+  grid-template-columns: repeat(120, 1fr);
+  grid-template-rows: 10% 45% 35%;
+  row-gap: calc(970px/120);
+  margin: calc(970px/120*2) 0;
+
+  .searchHeader{
+    grid-column: 3 / 119;
+  }
+
+  .wheel{
+    grid-row-start: span 2;
+    grid-column: 3 / 59;
+  }
+
+  .companyBreakdown{
+    grid-column: 60 / 96;
+  }
+
+  .menus{
+    grid-column: 97 / 119;
+  }
+
+  .conditions{
+    grid-column: 60 / 119;
+  }
+}
