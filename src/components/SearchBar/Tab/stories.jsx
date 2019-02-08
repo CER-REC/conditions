@@ -1,5 +1,4 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
@@ -13,10 +12,11 @@ storiesForComponent('Components|SearchBar/Tab', module, ReadMe)
       isActive: true,
     },
     actions: {
-      onClick: state => () => ((state.isActive) ? ({ isActive: false }) : ({ isActive: true })),
+      onClick: state => () => ((state.isActive)
+        ? ({ isActive: false })
+        : ({ isActive: true })),
     },
   }))
-  .addDecorator(withKnobs)
   .add('SearchTab', () => (
     <Tab
       {...getInteractionProps()}

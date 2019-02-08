@@ -7,7 +7,7 @@ import './styles.scss';
 const Tab = (props) => {
   let icon;
   let type;
-  const borderStyle = (props.isActive) ? 'none' : '1px solid';
+  const borderStyle = props.isActive ? 'none' : '1px solid';
 
   if (props.isFilter) {
     type = 'filter';
@@ -34,14 +34,14 @@ const Tab = (props) => {
     );
   }
 
-  const text = (
-    <FormattedMessage id={`components.SearchBar.tab.${type}`}>
-      {txt => <div className={`${type}Text`}> {txt} </div>}
-    </FormattedMessage>
-  );
+  const text = <FormattedMessage id={`components.SearchBar.tab.${type}`} />;
 
   return (
-    <div className="Tab" {...handleInteraction(props.onClick)} style={{ borderBottom: borderStyle }}>
+    <div
+      className="Tab"
+      {...handleInteraction(props.onClick)}
+      style={{ borderBottom: borderStyle }}
+    >
       {text}
       <span className="iconSvg">
         <svg width={15} viewBox="0 0 15 15">
