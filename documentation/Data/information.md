@@ -42,7 +42,7 @@ found one level up the architecture.
             ```search: string,```
             ```selectedFeature: string,``` // one of theme, instrument, phase, type, status, filing (only needed for location to determine charts in location)
             selectedID: number, // company/region id (assuming region id is a number)
-            filterYears: [number],
+            ```filterYears: { number, number},``` // used in SearchBar.yearRange
             ```projectStatus: [string],``` // used in SearchBar.projectStatus
         },
         
