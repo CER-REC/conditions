@@ -1,0 +1,46 @@
+.ViewThree {
+  box-sizing: border-box;
+  width: 1120px;
+  height: 900px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40% 25% 35%;
+  row-gap: calc(97px/12);
+  column-gap:  calc(97px/10);
+  margin: calc(97px/12*2) 0;
+
+  .a {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .b{
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  .c{
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+
+  .d{
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+
+  .e{
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+
+  .f{
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  .g{
+    grid-column: span 8;
+    grid-row: span 1;
+  }
+}

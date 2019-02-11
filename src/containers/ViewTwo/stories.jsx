@@ -2,12 +2,13 @@ import React from 'react';
 import { storiesForView } from '../../../.storybook/utils';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
+import Wheel from '../../components/Wheel';
 import ReadMe from './README.md';
 import ViewTwo from '.';
+import { locationWheelData } from '../../components/Wheel/randomDataSample';
 
 const legendItems = [
-  { color: 'pink', description: 'security', disabled: true },
-  { color: 'red', description: 'managementSystem', disabled: false },
+  { color: 'pink', description: 'security', disabled: false },
   { color: 'green', description: 'financial', disabled: false },
   { color: 'blue', description: 'damagePrevention', disabled: false },
   { color: 'purple', description: 'socioEconomic', disabled: false },
@@ -41,12 +42,19 @@ const projectData = [
   },
 ];
 
+const boxSizing = [
+  <div><span style={{ fontSize: '50px', marginLeft: '45%' }}>1</span></div>,
+  <div><span style={{ fontSize: '50px', marginLeft: '45%' }}>2</span></div>,
+  <div><span style={{ fontSize: '50px', marginLeft: '45%' }}>3</span></div>,
+  <div><span style={{ fontSize: '50px', marginLeft: '45%' }}>4</span></div>,
+  <div><span style={{ fontSize: '50px', marginLeft: '45%' }}>5</span></div>
+];
+
 const components = [
   <div style={{ height: '10%' }} />,
-  <FeaturesLegend
-    legendItems={legendItems}
-    selectedFeature="theme"
-    isProjectLegend
+  <Wheel
+    ringType="Location"
+    itemsData={locationWheelData}
   />,
   <ProjectMenu
     projectData={projectData}
@@ -54,11 +62,17 @@ const components = [
     onChange={() => {}}
     selectedFeature="theme"
   />,
+  <FeaturesLegend
+    legendItems={legendItems}
+    selectedFeature="theme"
+    isProjectLegend
+  />,
+  <div style={{ height: '10%' }} />,
 ];
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
   .add('default', () => (
-    <ViewTwo components={0} />
+    <ViewTwo components={boxSizing} />
   ))
   .add('with components', () => (
     <ViewTwo components={components} />
