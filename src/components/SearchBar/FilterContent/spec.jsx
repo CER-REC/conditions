@@ -105,7 +105,7 @@ describe('Components|SearchBar/FilterContent', () => {
       expect(spy).toHaveBeenCalledTimes(2);
     });
 
-    test('a right arrow with keyCode will call its prop', () => {
+    test('a right and left arrow with keyCode will call its prop', () => {
       li.simulate('keyDown', { ...eventFuncs, keyCode: 39 });
       li.simulate('keyUp', { ...eventFuncs, keyCode: 39 });
       expect(spy).toHaveBeenCalledTimes(1);
@@ -114,6 +114,48 @@ describe('Components|SearchBar/FilterContent', () => {
       li.simulate('keyUp', { ...eventFuncs, keyCode: 37 });
       expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1972 });
       expect(spy).toHaveBeenCalledTimes(2);
+    });
+
+    test('a arrow key which is not right/left will call with the default prop', () => {
+      li.simulate('keyDown', { ...eventFuncs, keyCode: 40 });
+      li.simulate('keyUp', { ...eventFuncs, keyCode: 40 });
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith({ start: 1971, end: 1972 });
+    });
+  });
+
+  describe('keyPress at the beginning and end of the row', () => {
+    let wrapper;
+    let spy;
+    let li;
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = shallow(
+        <FilterContent
+          yearRange={yearRange}
+          projectStatus={projectStatus}
+          selectedYear={{ start: 1970, end: 1980 }}
+          changeProjectStatus={noop}
+          reset={noop}
+          closeTab={noop}
+          onYearSelect={spy}
+        />,
+      );
+      li = wrapper
+        .find('.projectList')
+        .find('li')
+        .first();
+    });
+    test('if reached end of the year array, right arrow will call with default props', () => {
+      li.simulate('keyDown', { ...eventFuncs, keyCode: 39 });
+      li.simulate('keyUp', { ...eventFuncs, keyCode: 39 });
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1980 });
+    });
+
+    test('if reached beginning of the year array, left arrow will call with default props', () => {
+      li.simulate('keyDown', { ...eventFuncs, keyCode: 37 });
+      li.simulate('keyUp', { ...eventFuncs, keyCode: 37 });
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1980 });
     });
   });
 
