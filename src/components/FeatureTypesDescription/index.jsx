@@ -27,13 +27,14 @@ class FeatureTypesDescription extends React.PureComponent {
   // given feature type, in the form [heading, description]
   renderTypeElements = (feature, type, colorCodes) => {
     const headingId = `common.${feature}.${type}`;
-    const heading = <FormattedMessage id={headingId} tagName="h4" />;
+    const heading = <FormattedMessage id={headingId} data-heading={type} tagName="h4" />;
 
     const typeId = `components.featureTypesDescription.${feature}.${type}`;
     const typeDescription = (
       <FormattedMessage id={typeId}>
-        {str => str.split('\n').map(line => (
-          <p>{(colorCodes) ? this.addColorCoding(line, colorCodes) : line}</p>
+        {str => str.split('\n').map((line, idx) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <p key={idx}>{(colorCodes) ? this.addColorCoding(line, colorCodes) : line}</p>
         ))}
 
       </FormattedMessage>
@@ -41,7 +42,7 @@ class FeatureTypesDescription extends React.PureComponent {
 
     return (
       <React.Fragment key={type}>
-        <h4 data-heading={type}>{heading}</h4>
+        {heading}
         {typeDescription}
       </React.Fragment>
     );
