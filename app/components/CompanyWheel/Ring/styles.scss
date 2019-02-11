@@ -1,8 +1,4 @@
 .WheelContainer{
-  padding: 50px;
-  height: 500px;
-  width:500px;
-
   .RingBackground {
     &.Location{
       fill: #F4CE5A;
@@ -17,23 +13,23 @@
       stroke: #E0A531;
     }
     &.Company line{
-      stroke: #4054b7; 
+      stroke: #4054b7;
     }
     stroke-width: 18px;
   }
-  
+
   .cls-1, .OutterCircles {
     fill: none;
   }
-  
+
   .OutterCircles {
     stroke: #707070;
   }
-  
+
   .ClippedBackground {
     clip-path: url(#clip-path);
   }
-  
+
   .RingOutline {
     fill: #d1057a;
   }

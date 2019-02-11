@@ -8,33 +8,57 @@ import WheelRayLegend from './WheelRayLegend';
 // import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
 
+const reservedDegrees = 30;
+
+const AnimatedWheelRay = animated(WheelRay);
+
 class CompanyWheel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       oldRotation: 0,
       newRotation: 0,
-      reservedDegrees: 30,
+      degreesPerItem: 0,
+      selectedIndex: 0,
+      needsSpin: false,
     };
   }
 
-  componentWillMount() {
-    const degreesAvailForPlotting = 360 - this.state.reservedDegrees;
-    const numOfLegendItems = this.props.itemsData.legendData.length;
-    const degreesPerItem = degreesAvailForPlotting / numOfLegendItems;
-    this.setState({ degreesPerItem });
+  static getDerivedStateFromProps(props, prevState) {
+    const { items } = props.itemsData;
+    const degreesAvailForPlotting = 360 - reservedDegrees;
+    const degreesPerItem = degreesAvailForPlotting / items.length;
+
+    const selectedIndex = items.findIndex(v => v._id === props.selectedRay);
+    let newRotation = prevState.newRotation;
+    if (prevState.needsSpin) {
+      const minimumRotation = 360 - (prevState.newRotation % 360);
+      newRotation += minimumRotation + (selectedIndex * degreesPerItem);
+    } else {
+      newRotation += (selectedIndex - prevState.selectedIndex) * degreesPerItem;
+    }
+
+    return {
+      degreesPerItem,
+      selectedIndex,
+      oldRotation: prevState.newRotation,
+      newRotation,
+      needsSpin: false,
+    };
   }
 
-  setNewRotation= (rotateBy) => {
-    this.setState(prevState => ({
-      oldRotation: prevState.newRotation,
-      newRotation: prevState.newRotation + rotateBy,
-    }));
+  onClickSpin = () => {
+    const { items } = this.props.itemsData;
+    const randomNum = Math.floor(Math.random() * items.length);
+    this.setState({ needsSpin: true });
+    this.props.selectRay(items[randomNum]._id);
   };
 
-  onClickSpin = () => {
-    const randomNum = Math.floor(Math.random() * (360));
-    this.setNewRotation(randomNum);
+  rotateWheelOneStep = (prev = false) => {
+    const { items } = this.props.itemsData;
+    const direction = prev ? -1 : 1;
+    const newIndex = (this.state.selectedIndex + direction + items.length) % items.length;
+    this.props.selectRay(items[newIndex]._id);
   };
 
   render() {
@@ -42,11 +66,18 @@ class CompanyWheel extends React.Component {
       <div className="WheelContainer">
         <Spring
           config={{ tension: 50, clamp: true, mass: 0.7 }}
-          from={{ transformOrigin: '50% 50.31%', transform: `rotate(${this.state.oldRotation}deg)`, rotation: this.state.oldRotation }}
-          to={{ transform: `rotate(${this.state.newRotation * -1}deg)`, rotation: this.state.newRotation }}
+          from={{
+            transformOrigin: '50% 50.31%',
+            transform: `rotate(${-this.state.oldRotation}deg)`,
+            rotation: this.state.oldRotation,
+          }}
+          to={{
+            transform: `rotate(${-this.state.newRotation}deg)`,
+            rotation: this.state.newRotation,
+          }}
         >
-          { props => (
-            <animated.div className="MovingContainer" style={props}>
+          {props => (
+            <div className="MovingContainer" style={props}>
               <svg viewBox="0 0 860 860">
                 <g data-name="Group 3" transform="translate(-27.5 -122.8)">
                   {/* following outer limit lines can be deleted once everything is rendered.
@@ -54,37 +85,39 @@ class CompanyWheel extends React.Component {
                   <g className="OuterLimitCircle OutterCircles" transform="translate(27.5 125.5)">
                     <circle cx="430" cy="430" r="426" />
                   </g>
-                  <animated.g data-name="wheelGroup" transform="translate(86 102)">
+                  <g data-name="wheelGroup" transform="translate(86 102)">
                     {/* following inner limit lines can be deleted once everything is rendered.
                     It is an accurate representation of spacing */}
                     <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
                       <circle className="cls-1" cx="264" cy="264" r="263.5" />
                     </g>
                     <Ring ringType={this.props.ringType} />
-                    <WheelRay
-                      rotation={props.rotation}
-                      ringType={this.props.ringType}
-                      itemsArray={this.props.itemsData.items}
+                    <AnimatedWheelRay
+                      items={this.props.itemsData.items}
                       degreesPerItem={this.state.degreesPerItem}
-                      reservedDegrees={this.state.reservedDegrees}
+                      reservedDegrees={reservedDegrees}
+                      {...props}
                     />
                     <WheelRayLegend
                       rotation={props.rotation}
                       ringType={this.props.ringType}
                       legendPositionArray={this.props.itemsData.legendData}
                       degreesPerItem={this.state.degreesPerItem}
-                      reservedDegrees={this.state.reservedDegrees}
+                      reservedDegrees={reservedDegrees}
                     />
-                  </animated.g>
+                  </g>
                 </g>
               </svg>
-            </animated.div>
+            </div>
           )
         }
         </Spring>
+        <div className="list">
+          Grey Pipe
+        </div>
         <button className="pullToSpin" onClick={this.onClickSpin} type="button">Spin That Wheel</button>
-        <button className="plus" onClick={() => this.setNewRotation(this.state.degreesPerItem)} type="button">+1</button>
-        <button className="minus" onClick={() => this.setNewRotation(-1 * this.state.degreesPerItem)} type="button">-1</button>
+        <button className="plus" onClick={() => this.rotateWheelOneStep(false)} type="button">+1</button>
+        <button className="minus" onClick={() => this.rotateWheelOneStep(true)} type="button">-1</button>
       </div>
     );
   }
@@ -92,12 +125,16 @@ class CompanyWheel extends React.Component {
 
 CompanyWheel.propTypes = {
   ringType: PropTypes.string,
-  itemsData: PropTypes.arrayOf(PropTypes.object),
+  itemsData: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+    legendData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
+  selectedRay: PropTypes.string,
 };
 
 CompanyWheel.defaultProps = {
   ringType: 'company',
-  itemsData: [{}],
+  selectedRay: null,
 };
 
 export default CompanyWheel;
