@@ -62,10 +62,6 @@ describe('Components|InstrumentsLegend', () => {
       expect(legendItemsWrapper).toHaveLength(1);
     });
 
-    test('should render the Bubble Legend', () => {
-      expect(wrapper.find(BubbleLegend)).toHaveLength(1);
-    });
-
     test('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
