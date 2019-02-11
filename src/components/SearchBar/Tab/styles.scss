@@ -9,12 +9,27 @@
   font-size: 11px;
   color: $Gray160;
   border: 1px solid;
-  vertical-align: middle;
   font-family: $fira-sans-condensed;
+
+  .tabText{
+    vertical-align: top;
+  }
   .iconSvg {
     padding-left: 5px;
-    path {
-      fill: $LinksTextButtons;
+    .filterIcon {
+      stroke: $LinksTextButtons;
+      stroke-width: 20;
+      fill: none;
+    }
+    .findIcon{
+      path {
+        fill: $LinksTextButtons;
+      }
+      ellipse{
+        fill: $White;
+        stroke: $LinksTextButtons;
+        stroke-width: 20;
+      }
     }
   }
 }
