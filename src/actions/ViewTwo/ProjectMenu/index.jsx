@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-// import SELECTED_FEATURE from ViewTwo
+import { Types as viewTwo } from '../index';
 
 export const Types = {
   POSITION: 'position',
@@ -16,8 +16,7 @@ const initialState = fromJS({
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Types.SELECTED_FEATURE:
-      return state.set('selectedFeature', action.payload.feature);
+    case viewTwo.SELECTED_FEATURE:
     case Types.MODE:
       return state.set('mode', action.payload.mode);
     default: return state;

@@ -1,8 +1,8 @@
 import { fromJS } from 'immutable';
 
 export const Types = {
-  SELECTED_FEATURE: 'selectedFeature',
-  MODE: 'mode',
+  SELECTED_FEATURE: 'viewTwo.selectedFeature',
+  MODE: 'viewTwo.mode',
 };
 
 export const selectedFeature = feature => ({

@@ -10,7 +10,7 @@ export const setTab = content => ({
 });
 
 const initialState = fromJS({
-  selectedTab: 'filter', // one of filter or search
+  selectedTab: 'filter', // one of filter tab or search content
 });
 
 export const reducer = (state = initialState, action) => {
