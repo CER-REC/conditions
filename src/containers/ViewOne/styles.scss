@@ -1,0 +1,31 @@
+.ViewOne {
+  box-sizing: border-box;
+  width: 1120px;
+  height: 900px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 10% auto 10%;
+  row-gap: calc(97px/12);
+  column-gap:  calc(97px/10);
+  margin: calc(97px/12*2);
+
+  .a {
+    grid-column: span 12;
+    grid-row: span 1;
+  }
+
+  .b{
+    grid-column: span 12;
+    grid-row: span 1;
+  }
+
+  .c{
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+
+  .d{
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+}
