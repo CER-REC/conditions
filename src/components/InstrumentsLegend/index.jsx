@@ -101,7 +101,7 @@ const InstrumentsLegend = (props) => {
         onChange={onItemChange}
         guideLine
       />
-      <BubbleLegend className="BubbleLegend" />
+      <BubbleLegend className="BubbleLegend" maxConditions={1600} />
     </div>
   );
 };

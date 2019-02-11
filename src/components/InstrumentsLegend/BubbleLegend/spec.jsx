@@ -10,14 +10,9 @@ describe('Component|InstrumentsLegend/BubbleLegend', () => {
       wrapper = shallow(<BubbleLegend
         className="BubbleLegend"
         maxConditions={1600}
-        hundredWidthBubble={50}
       />);
     });
 
     shouldBehaveLikeAComponent(BubbleLegend, () => wrapper);
-
-    test('should render a formatted message for the title', () => {
-      expect(wrapper.find('FormattedMessage')).toHaveLength(1);
-    });
   });
 });
