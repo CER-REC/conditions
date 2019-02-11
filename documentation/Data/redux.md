@@ -4,86 +4,24 @@ Template for what data persists across sessions in the visualization:
 
 <pre>
 {
-    ```selectedFeature: string, ``` // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
+    ```selectedFeature: string, ``` // used in Wheel, ProjectMenu, FeaturesMenu, FeaturesLegend, 
+    TrendButton, DetailedView, ViewThree, FeatureDescription
+    ```mode: string, ``` // used in Wheel, FeaturesLegend, BrowseByBtn, ViewTwo
+    ```selectedSubFeature: string // used in SmallMultiplesLegend, Streamgraph, InstrumentsLegend, BubbleChart
 
-    View1: {
-        open: boolean,
-    },
-    
-    View2: {
-        ```mode: string,``` // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
+    expandGuide: boolean, // used for viewOne guide
+    expandDetailView: boolean, // used for the Detail View
+    notInstruments: boolean, // used for the SmallMultiplesLegend
+    isShown: boolean, // used for the Screenshot mode
 
-        TrendButton : {
-          ```selectedFeature: string,``` // used in View2.selectedFeature
-        },
-        
-        Wheel: {
-            ```mode: string,``` // either company or location
-            ```feature: string,``` // one of theme, instrument, phase, type, status, filing (only needed for location to determine charts in location)
-        },
-        
-        ProjectMenu: {
-            ```selectedFeature: string,``` // one of theme, instrument, phase, type, status, filing
-        },
-        
-        FeaturesMenu: {
-            ```selected: string,``` // one of theme, instrument, phase, type, status, filing
-        },
-        
-        FeaturesLegend: {
-            ```selectedFeature: string,``` // one of theme, instrument, phase, type, status, filing
-            ```mode: string,``` // show different legends for company or location
-        },
-        
-        BrowseByBtn: {
-            ```mode: string,``` // one of location, company (based on location boolean)
-        },
-        
-        DetailedView: {
-            ```search: string,```
-            ```selectedID: string,``` // condition/instrument id (in case ids overlap, might need to prefix ids)
-            projectName: string, // blank for location view
-        },
+    DetailedView: {
+      ```selectedID: string,``` // condition/instrument id (in case ids overlap, might need to prefix ids)
+      projectName: string, // blank for location view
     },
 
     View3: {
-        ```feature: string,``` // used in FeaturesMenu.selected, SmallMultiplesLegend.title
-        subFeature: string, // used in SmallMultiplesLegend.selected, StreamGraph.chartTitle, InstrumentsLegend.selected, BubbleChart.chartTitle
-        companyID: number, // used in V3.6
-        
-        FeaturesMenu: {
-            ```selected: string,``` // one of theme, instrument, phase, type, status, filing
-        },
-
-        Chart: {
-          notInstruments: boolean, // if not instruments, show the Streamgraph
-        }
-        
-        // if View3.selected !== instrument
-        SmallMultiplesLegend: {
-            ```notInstruments: boolean,```
-            ```title: string,``` // based on feature
-            ```selected: string,``` // a sub feature
-        },
-
-        // in both cases (including V3.5 Feature Types Description)
-        FeatureDescription: {
-            feature: string,
-        },
-
-        BrowseByBtn: {
-            ```mode: string,``` // one of location, company (based on location boolean)
-        }
-        
-        DetailedView: {
-            ```search: string,```
-            projectName: string, // blank for location view
-            open: boolean,
-        },
+      companyID: number, // used in V3.6
     },
-
-    Screenshot: {
-      isShown: boolean // if false, then hide when in screenshot mode
 
 }
 </pre>
