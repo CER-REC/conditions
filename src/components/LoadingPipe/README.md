@@ -3,7 +3,7 @@
 The Loading Pipe will be used as a visual representation that Project data is being loaded. The pipe will consist of "project dots"
 that animate along the pipe during the load time.
 
-A protoype of this anamation can be found at the following links:
+A protoype of this animation can be found at the following links:
 https://app.atomic.io/d/2OeSw9ah0mkF
 https://app.atomic.io/d/OwhDxkv7xBrE
 
