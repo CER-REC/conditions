@@ -89,6 +89,12 @@
     "instrumentsLegend": {
       "all": ""
     },
+    "searchBar": {
+      "suggestedKeywords": {
+        "selectFrom": "",
+        "suggestedKeywords": ""
+      }
+    },
     "modal": {
       "image": {
         "title": "",

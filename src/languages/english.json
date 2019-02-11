@@ -97,6 +97,12 @@
     "instrumentsLegend": {
       "all": "All Instruments"
     },
+    "searchBar": {
+      "suggestedKeywords": {
+        "selectFrom": "Select from",
+        "suggestedKeywords": "Suggested\nKeywords"
+      }
+    },
     "modal": {
       "image": {
         "title": "Image Download",
