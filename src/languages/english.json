@@ -97,6 +97,20 @@
     "instrumentsLegend": {
       "all": "All Instruments"
     },
+    "searchBar": {
+      "close": "close",
+      "suggestionWindow": {
+        "suggestedKeywords": "Suggested Keywords",
+        "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords",
+        "keywordsHere": "here",
+        "viewBy": "View By",
+        "sortBy": "Sort by",
+        "frequency": "Frequency",
+        "alphabetical": "Alphabetical",
+        "none": "none",
+        "conditions": "conditions"
+      }
+    },
     "modal": {
       "image": {
         "title": "Image Download",

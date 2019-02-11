@@ -89,6 +89,20 @@
     "instrumentsLegend": {
       "all": ""
     },
+    "searchBar": {
+      "close": "",
+      "suggestionWindow": {
+        "suggestedKeywords": "",
+        "keywordsDescription": "",
+        "keywordsHere": "",
+        "viewBy": "",
+        "sortBy": "",
+        "frequency": "",
+        "alphabetical": "",
+        "none": "",
+        "conditions": ""
+      }
+    },
     "modal": {
       "image": {
         "title": "",

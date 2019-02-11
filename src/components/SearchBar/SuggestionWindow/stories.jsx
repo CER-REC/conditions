@@ -10,20 +10,101 @@ storiesForComponent('Components|SearchBar/SuggestionWindow', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
     state: {
-      display: true, keywords: ['hello world', 'hi there'],
+      categories: ['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings'],
+      selectedCategory: ['wildlife & habitat'],
+      sortBy: '',
+      sortHierarchy: 'none',
+      selectedWords: [{
+        name: 'safety',
+        conditions: 1200,
+      },
+      {
+        name: 'emissions',
+        conditions: 1000,
+      }, {
+        name: 'habitat',
+        conditions: 800,
+      }],
+      suggestedKeywords: [{
+        name: 'safety',
+        conditions: 1200,
+      },
+      {
+        name: 'emissions',
+        conditions: 1000,
+      }, {
+        name: 'habitat',
+        conditions: 800,
+      },
+      {
+        name: 'construction',
+        conditions: 1000,
+      },
+      {
+        name: 'habitat',
+        conditions: 1000,
+      },
+      {
+        name: 'file',
+        conditions: 1400,
+      },
+      {
+        name: 'breeding breed',
+        conditions: 380,
+      },
+      {
+        name: 'safety',
+        conditions: 1400,
+      },
+      {
+        name: 'emissions',
+        conditions: 1500,
+      }, {
+        name: 'habitat',
+        conditions: 1200,
+      },
+      {
+        name: 'construction',
+        conditions: 1000,
+      },
+      {
+        name: 'habitat',
+        conditions: 1400,
+      },
+      {
+        name: 'file',
+        conditions: 1400,
+      },
+      {
+        name: 'breeding breed',
+        conditions: 380,
+      }],
     },
     actions: {
-      closeTab: () => () => ({ display: false }),
       // NOTE: Storybook seems to have issue with re-rendering after state change
-      deleteWord: state => (word) => {
-        return { keywords: word };
+      onClickUpdate: () => (obj) => {
+        const [updatedList, type] = obj;
+        if (type === 'category') {
+          forceReRender();
+          return ({ selectedCategory: updatedList });
+        }
+        forceReRender();
+        return ({ selectedWords: updatedList });
+      },
+      changeSort: () => (obj) => {
+        const [sort, type] = obj;
+        if (type === 'by') {
+          forceReRender();
+          return ({ sortBy: sort });
+        }
+        forceReRender();
+        return ({ sortHierarchy: sort });
       },
     },
-
   }))
   .add('default', () => (
     <SuggestionWindow
       {...getInteractionProps()}
-      keywords={getInteractionProps().keywords}
+      closeTab={() => alert('clicked')}
     />
   ));

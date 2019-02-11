@@ -5,7 +5,6 @@ import './styles.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../Icon/index';
-import CircleContainer from '../../CircleContainer';
 import handleInteraction from '../../../utilities/handleInteraction';
 import BarContainer from '../../BarContainer';
 
@@ -15,127 +14,159 @@ library.add(
 );
 class SuggestionWindow extends React.PureComponent {
   static propTypes = {
+    selectedCategory: PropTypes.arrayOf(PropTypes.string),
+    selectedWords: PropTypes.objectOf(PropTypes.oneOf({
+      name: PropTypes.string,
+      conditions: PropTypes.number,
+    })),
+    suggestedKeywords: PropTypes.objectOf(PropTypes.oneOf({
+      name: PropTypes.string,
+      conditions: PropTypes.number,
+    })).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onClickUpdate: PropTypes.func.isRequired,
+    closeTab: PropTypes.func.isRequired,
+    changeSort: PropTypes.func.isRequired,
+    sortBy: PropTypes.string.isRequired,
+    sortHierarchy: PropTypes.string.isRequired,
+  }
+
+  static defaultProps = {
+    selectedCategory: [],
+    selectedWords: ({
+      name: null,
+      conditions: 0,
+    }),
   }
 
   renderCategories = () => (
-    ['ALL', 'WILDLIFE & HABITAT', 'ENVIRONMENT', 'ENGINEERING & STRUCTURES', 'ADMINISTRATION & FILINGS'].map((i) => {
-      const selectedCategory = ['ALL'];
-      const classArray = ['categoryList'];
+    this.props.categories.map((i) => {
+      const { selectedCategory } = this.props;
+      const classArray = ['categoryList upperCase'];
       const className = (selectedCategory.indexOf(i) > -1) ? 'selectedCategory' : '';
       classArray.push(className);
-      return (<li className={classArray.toString().replace(/,/g, ' ')}> { i } </li>);
+      return (<li {...handleInteraction(this.categoryOnClick, i)} className={classArray.toString().replace(/,/g, ' ')}> { i } </li>);
     })
   )
 
-  renderKeyWords = () => {
-    const objectProp = [{
-      name: 'safety',
-      conditions: 1200,
-    },
-    {
-      name: 'emissions',
-      conditions: 1000,
-    }, {
-      name: 'habitat',
-      conditions: 800,
-    },
-    {
-      name: 'construction',
-      conditions: 1000,
-    },
-    {
-      name: 'habitat',
-      conditions: 800,
-    },
-    {
-      name: 'file',
-      conditions: 1400,
-    },
-    {
-      name: 'breeding breed',
-      conditions: 380,
-    },
-    {
-      name: 'safety',
-      conditions: 1200,
-    },
-    {
-      name: 'emissions',
-      conditions: 1000,
-    }, {
-      name: 'habitat',
-      conditions: 800,
-    },
-    {
-      name: 'construction',
-      conditions: 1000,
-    },
-    {
-      name: 'habitat',
-      conditions: 800,
-    },
-    {
-      name: 'file',
-      conditions: 1400,
-    },
-    {
-      name: 'breeding breed',
-      conditions: 380,
-    }];
+  findMaxConditions = () => (
+    this.props.suggestedKeywords.reduce((acc, item) => {
+      if (item.conditions < acc) { return acc; }
+      return item.conditions;
+    }, 0))
 
-    return objectProp.map((value) => {
-      const selectedArray = ['safety'];
-      const icon = (selectedArray.indexOf(value.name) > -1) ? 'minus-circle' : 'plus-circle';
-      const iconClass = (selectedArray.indexOf(value.name) > -1) ? 'selectedIcon' : 'regularIcon';
-      const selectedColor = (selectedArray.indexOf(value.name) > -1) ? 'rgb(238,97,41)' : 'rgb(96,96,96)';
-      const maxConditions = 1200;
-      const conditions = (value.conditions / maxConditions) * 200;
-      const remainingSpace = (200 - conditions);
-      return (
-        <li>
-          <span className="icon">
-            <Icon className={iconClass} icon={icon} />
-          </span>
-          <span className="keywordCategory">{value.name} </span>
-          <span className="BarContainer">
-            <BarContainer
-              title="ConditionTitle"
-              desc="conditionDesc"
-              items={[{ value: conditions, fill: selectedColor }, { value: remainingSpace, fill: 'transparent' }]}
-              size={8}
-              scale={1}
-              vert={false}
-            />
-          </span>
-          <div className="conditionsText">
-            {value.conditions} conditions
-          </div>
-        </li>
-      );
-    });
+  categoryOnClick = (li) => {
+    const { selectedCategory } = this.props;
+    const index = selectedCategory.indexOf(li);
+    if (index === -1) {
+      selectedCategory.push(li);
+      return this.props.onClickUpdate([selectedCategory, 'category']);
+    }
+    selectedCategory.splice(index, 1);
+    return this.props.onClickUpdate([selectedCategory, 'category']);
   }
+
+  keywordOnClick = (obj) => {
+    const { selectedWords } = this.props;
+    const [value, present, index] = obj;
+    if (!present) {
+      selectedWords.push(value);
+      return this.props.onClickUpdate([selectedWords, 'words']);
+    }
+    selectedWords.splice(index, 1);
+    return this.props.onClickUpdate([selectedWords, 'words']);
+  }
+
+  sortHierarchy = () => {
+    const sortHierarchyType = this.props.sortHierarchy;
+    const sortArray = ['none', 'inc', 'dec'];
+    const index = sortArray.indexOf(sortHierarchyType);
+    if (index !== sortArray.length - 1) {
+      return this.props.changeSort([sortArray[index + 1], 'hierarchy']);
+    }
+    return this.props.changeSort([sortArray[0], 'hierarchy']);
+  }
+
+  changeSort = (sort) => {
+    if (this.props.sortBy === sort) { return (this.props.changeSort(['', 'by'])); }
+    return this.props.changeSort([sort, 'by']);
+  }
+
+  renderKeyWords = () => this.props.suggestedKeywords.map((value) => {
+    const { selectedWords } = this.props;
+    const [present, selectedIndex] = selectedWords.reduce((acc, item, i) => {
+      if (acc[0] === true) { return acc; }
+      return [item.name === value.name && item.conditions === value.conditions, i];
+    }, [false, null]);
+
+    // const present = selectedArray.indexOf(value.name) > -1; (if using arrays)
+    const icon = (present) ? 'minus-circle' : 'plus-circle';
+    const iconClass = (present) ? 'selectedIcon' : 'regularIcon';
+    const selectedColor = (present) ? 'rgb(238,97,41)' : 'rgb(96,96,96)';
+    const maxConditions = this.findMaxConditions();
+    const conditions = (value.conditions / maxConditions) * 200;
+    const remainingSpace = (200 - conditions);
+    return (
+      <li>
+        <span className="icon" {...handleInteraction(this.keywordOnClick, [value, present, selectedIndex])}>
+          <Icon className={iconClass} icon={icon} />
+        </span>
+        <span className="keywordCategory">{value.name} </span>
+        <span className="BarContainer">
+          <BarContainer
+            title="ConditionTitle"
+            desc="conditionDesc"
+            items={[{ value: conditions, fill: selectedColor }, { value: remainingSpace, fill: 'transparent' }]}
+            size={8}
+            scale={1}
+            vert={false}
+          />
+        </span>
+        <div className="conditionsText">
+          <FormattedMessage id="components.searchBar.suggestionWindow.conditions">
+            { text => <div className="conditionsText"> {value.conditions} { text }  </div>
+          }
+          </FormattedMessage>
+        </div>
+      </li>
+    );
+  })
 
   render() {
     return (
       <div className="SuggestionWindow">
-        <h1 className="keyWordsTitle"> Suggested Keywords </h1>
-        <p className="description"> Keywords capture the general idea of a condition, e.g.type of species regulated. Learn more about how we extracted keywords <a> here </a>. </p>
-
-        {/* <div className="viewTitle"> View By */}
+        <FormattedMessage id="components.searchBar.suggestionWindow.suggestedKeywords">
+          { text => <h1 className="keyWordsTitle"> { text }  </h1>
+          }
+        </FormattedMessage>
+        <FormattedMessage id="components.searchBar.suggestionWindow.keywordsDescription">
+          { text => <p className="description"> { text }  </p>
+          }
+        </FormattedMessage>
         <ul>
-          <li className="viewText"> View By: </li>
+          <FormattedMessage id="components.searchBar.suggestionWindow.viewBy">
+            { text => <li className="viewText"> { text }:  </li>
+          }
+          </FormattedMessage>
           {this.renderCategories()}
         </ul>
 
         <div className="rightText">
-          Sort by
-          <span> Frequency </span>
+          <FormattedMessage id="components.searchBar.suggestionWindow.sortBy" />
+          &nbsp;
+          <FormattedMessage id="components.searchBar.suggestionWindow.frequency">
+            {text => <span className={this.props.sortBy === 'frequency' ? 'selectedSort' : null} {...handleInteraction(this.changeSort, 'frequency')}> {text} </span>}
+          </FormattedMessage>
+          &nbsp;
           |
-          <span> Alphabetical </span>
+          &nbsp;
+          <FormattedMessage id="components.searchBar.suggestionWindow.alphabetical">
+            {text => <span className={this.props.sortBy === 'alphabetical' ? 'selectedSort' : null} {...handleInteraction(this.changeSort, 'alphabetical')}> {text} </span>}
+          </FormattedMessage>
           <span className="arrow">
             <svg viewBox="0 0 427.5 427.5">
               <g>
-              <path d="M405.943,290.254L302.096,425.338c-1.04,1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254
+                <path d="M405.943,290.254L302.096,425.338c-1.04,1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254
               c-0.769-0.993-1.144-2.176-1.144-3.357c0-1.152,0.364-2.329,1.108-3.322c1.499-1.975,4.125-2.707,6.434-1.809l68.76,27.166V21.01
               c0-3.047,2.477-5.503,5.515-5.503h55.106c3.038,0,5.509,2.456,5.509,5.503v287.922l68.76-27.166
               c2.305-0.898,4.93-0.166,6.419,1.809C407.473,285.561,407.461,288.28,405.943,290.254z M238.012,143.913
@@ -143,11 +174,11 @@ class SuggestionWindow extends React.PureComponent {
               c-1.714,0-3.328,0.798-4.377,2.148L21.539,137.23c-1.519,1.969-1.525,4.69-0.03,6.683c1.487,1.968,4.114,2.707,6.419,1.803
               l68.766-27.163v287.919c0,3.05,2.462,5.509,5.506,5.509h55.109c3.041,0,5.515-2.459,5.515-5.509V118.552l68.763,27.163
               C233.886,146.62,236.51,145.88,238.012,143.913z"
-              />
-            </g>
+                />
+              </g>
             </svg>
           </span>
-          <span className="none"> NONE </span>
+          <span {...handleInteraction(this.sortHierarchy)} className="none upperCase"> {this.props.sortHierarchy } </span>
         </div>
 
         <div className="keyWordsBox">
@@ -155,9 +186,9 @@ class SuggestionWindow extends React.PureComponent {
             { this.renderKeyWords() }
           </ul>
         </div>
-        <div className="close">
-        <button> CLOSE </button>
-        </div>
+        <FormattedMessage id="components.searchBar.close">
+          {text => <div {...handleInteraction(this.props.closeTab)} className="close"> <button className="upperCase" type="button"> {text} </button> </div>}
+        </FormattedMessage>
       </div>
     );
   }

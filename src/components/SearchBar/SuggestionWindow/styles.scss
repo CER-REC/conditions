@@ -8,7 +8,9 @@
   border: 1px solid $LightGray;
   padding: 10px;
   font-family: $fira-sans-condensed;
-
+  .upperCase{
+    text-transform: uppercase;
+  }
   .keyWordsTitle {
     padding: 0px 0px 5px 0px;
     border-bottom: 1px solid $LightGray;
@@ -49,6 +51,9 @@
   }
   .rightText {
     text-align: right;
+    .selectedSort{
+      color: $LinksTextButtons;
+    }
     .arrow {
       padding-left: 15px;
       svg {
@@ -69,7 +74,7 @@
         .icon {
           display: inline-block;
           width: 25px;
-          vertical-align: top;
+          vertical-align: super;
           .Icon{
             svg{
               width: 15px;
