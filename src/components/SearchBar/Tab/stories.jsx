@@ -12,9 +12,7 @@ storiesForComponent('Components|SearchBar/Tab', module, ReadMe)
       isActive: true,
     },
     actions: {
-      onClick: state => () => ((state.isActive)
-        ? ({ isActive: false })
-        : ({ isActive: true })),
+      onClick: ({ isActive }) => () => ({ isActive: !isActive }),
     },
   }))
   .add('SearchTab', () => (

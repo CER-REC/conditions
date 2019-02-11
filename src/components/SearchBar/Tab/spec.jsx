@@ -28,17 +28,7 @@ describe('Components|SearchBar/Tab', () => {
       expect(wrapper.find('.filterIcon')).toHaveLength(1);
     });
 
-    test('with filter set to false, render findText ', () => {
-      const wrapper = shallow(
-        <Tab isFilter={false} isActive onClick={noop} />,
-      );
-      const translationWrapper = wrapper.find('FormattedMessage');
-      expect(translationWrapper.prop('id')).toBe(
-        'components.SearchBar.tab.find',
-      );
-    });
-
-    test('with filter set to false,  render the searchIcon', () => {
+    test('with filter set to false, render the searchIcon', () => {
       const wrapper = shallow(
         <Tab isFilter={false} isActive onClick={noop} />,
       );
@@ -61,15 +51,9 @@ describe('Components|SearchBar/Tab', () => {
     });
   });
   describe('with onClick function', () => {
-    let wrapper;
-    let spy;
-    beforeEach(() => {
-      spy = jest.fn();
-      wrapper = shallow(
-        <Tab isFilter isActive onClick={spy} />,
-      );
-    });
     test('should call its onClick prop once', () => {
+      const spy = jest.fn();
+      const wrapper = shallow(<Tab isFilter isActive onClick={spy} />);
       wrapper.find('.Tab').simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
     });
