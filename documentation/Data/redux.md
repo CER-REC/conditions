@@ -4,23 +4,14 @@ Template for what data persists across sessions in the visualization:
 
 <pre>
 {
-    
+    ```selectedFeature: string, ``` // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
+
     View1: {
         open: boolean,
-        search: string,
-
-        ShortcutInfoBar: {
-          expanded: boolean,
-        },
     },
     
     View2: {
-        ```selectedFeature: string, ``` // used in Wheel.feature, ProjectMenu.selectedFeature, FeaturesMenu.selected, FeaturesLegend.selectedFeature
         ```mode: string,``` // used in Wheel.location, FeaturesLegend.isProjectLegend, BrowseByBtn.location
-
-        SearchBar: {
-          filterTab: boolean, // if false, show search content
-        },
 
         TrendButton : {
           ```selectedFeature: string,``` // used in View2.selectedFeature
