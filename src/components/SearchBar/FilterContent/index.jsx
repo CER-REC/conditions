@@ -13,19 +13,30 @@ library.add(
   faRedoAlt,
 );
 
+const findListItemValue = (target, depth = 0) => {
+  if (target.value) { return Number(target.value); }
+  return findListItemValue(target.parentElement, depth + 1);
+};
+
 const createYearArray = yearObject => Array(yearObject.end - yearObject.start + 1)
   .fill()
   .map((_, index) => yearObject.start + index);
 class FilterContent extends React.PureComponent {
   static propTypes = {
-    yearRange: PropTypes.objectOf(PropTypes.number).isRequired,
+    yearRange: PropTypes.shape({
+      start: PropTypes.number.isRequired,
+      end: PropTypes.number.isRequired,
+    }).isRequired,
     projectStatus: PropTypes.arrayOf(
       PropTypes.oneOf(
         ['OPEN', 'CLOSED', 'CANCELLED'],
       ),
     ).isRequired,
     onYearSelect: PropTypes.func.isRequired,
-    selectedYear: PropTypes.objectOf(PropTypes.number).isRequired,
+    selectedYear: PropTypes.shape({
+      start: PropTypes.number.isRequired,
+      end: PropTypes.number.isRequired,
+    }).isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
     reset: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
@@ -38,13 +49,13 @@ class FilterContent extends React.PureComponent {
 
   onDragStart = (event) => {
     this.isDragging = true;
-    const year = Number(event.currentTarget.getAttribute('value'));
+    const year = findListItemValue(event.target);
     this.props.onYearSelect({ start: year, end: year });
   }
 
   onDragMove = (event) => {
     if (!this.isDragging) { return; }
-    const li = Number(event.currentTarget.getAttribute('value'));
+    const li = findListItemValue(event.target);
     let selectedYearArray = createYearArray(this.props.selectedYear);
     if (selectedYearArray.indexOf(li) === -1) {
       selectedYearArray.push(li);
@@ -55,10 +66,14 @@ class FilterContent extends React.PureComponent {
       });
     }
     selectedYearArray = selectedYearArray.sort((a, b) => a - b);
-    this.props.onYearSelect({
+    const newRange = {
       start: selectedYearArray[0],
       end: selectedYearArray[selectedYearArray.length - 1],
-    });
+    };
+
+    if (this.props.selectedYear.start === newRange.start
+      && this.props.selectedYear.end === newRange.end) { return; }
+    this.props.onYearSelect(newRange);
   }
 
   onDragStop = () => {

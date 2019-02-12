@@ -285,18 +285,16 @@ describe('Components|SearchBar/FilterContent', () => {
     });
   });
 
-  describe('3 selected index', () => {
+  describe('with 3 selected indexes in years', () => {
     let wrapper;
-    let spy;
     let li;
     beforeEach(() => {
-      spy = jest.fn();
       wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
           selectedYear={{ start: 1970, end: 1972 }}
-          changeProjectStatus={spy}
+          changeProjectStatus={noop}
           reset={noop}
           closeTab={noop}
           onYearSelect={noop}
@@ -318,11 +316,37 @@ describe('Components|SearchBar/FilterContent', () => {
     });
   });
 
+  describe('selected Status', () => {
+    let wrapper;
+    let li;
+    beforeEach(() => {
+      wrapper = shallow(
+        <FilterContent
+          yearRange={yearRange}
+          projectStatus={['OPEN']}
+          selectedYear={yearRange}
+          changeProjectStatus={noop}
+          reset={noop}
+          closeTab={noop}
+          onYearSelect={noop}
+        />,
+      );
+      li = wrapper.find('.projectStatus').find('li');
+    });
+
+    test('The first index have the class selectedProject', () => {
+      expect(li.at(0).hasClass('selectedProject')).toBe(true);
+    });
+
+    test('The second index will not have the class selectedProject', () => {
+      expect(li.at(1).hasClass('selectedProject')).toBe(false);
+    });
+  });
+
   describe('onDrag start', () => {
     test('onDrag start will call yearSelect prop', () => {
       const spy = jest.fn();
-      // mountWithIntl used for next few tests for accessing getAttribute property
-      const wrapper = mountWithIntl(
+      const wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
@@ -337,18 +361,19 @@ describe('Components|SearchBar/FilterContent', () => {
         .find('.projectList')
         .find('li')
         .first();
-      li.simulate('mouseDown', eventFuncs);
+      li.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('onDrag move', () => {
     let wrapper;
+    let updatedWrapper;
     let spy;
-    let li;
+    let firstLi;
     beforeEach(() => {
       spy = jest.fn();
-      wrapper = mountWithIntl(
+      wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
@@ -359,27 +384,36 @@ describe('Components|SearchBar/FilterContent', () => {
           reset={noop}
         />,
       );
-      li = wrapper
-        .find('.projectList')
-        .find('li')
-        .first();
+      updatedWrapper = wrapper.find('.projectList').find('li');
+      firstLi = updatedWrapper.first();
     });
     test('onDrag move, will call its onYearSelect prop', () => {
-      li.simulate('mouseDown', eventFuncs);
+      firstLi.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(1);
-      li.simulate('mouseMove', { eventFuncs, clientX: 10, clientY: 10 });
-      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1974 });
+      firstLi.simulate('mouseMove', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(2);
     });
 
     test('onDrag Stop, onDragMove should not call its onYearSelect prop', () => {
-      li.simulate('mouseDown', eventFuncs);
+      firstLi.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(1);
-      li.simulate('mouseMove', { eventFuncs, clientX: 10, clientY: 10 });
+      firstLi.simulate('mouseMove', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(2);
-      li.simulate('mouseUp', eventFuncs);
-      li.simulate('mouseMove', { eventFuncs, clientX: 20, clientY: 20 });
+      firstLi.simulate('mouseUp', { ...eventFuncs, target: { value: '1970' } });
+      firstLi.simulate('mouseMove', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(2);
+    });
+
+    test('should not call prop on if moving over existing yearRange', () => {
+      updatedWrapper.at(4).simulate('mouseDown', { ...eventFuncs, target: { value: '1974' } });
+      expect(spy).toHaveBeenLastCalledWith({ start: 1974, end: 1974 });
+      updatedWrapper.at(4).simulate('mouseMove', { ...eventFuncs, target: { value: '1974' } });
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    test('it should obtain the value even if it is clicked on parentElement', () => {
+      firstLi.simulate('mouseDown', { ...eventFuncs, target: { parentElement: { value: '1970' } } });
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -6269,7 +6269,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </span>
         </li>
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -6675,7 +6675,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         className="projectStatus"
       >
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -6690,7 +6690,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </span>
         </li>
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -6705,7 +6705,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </span>
         </li>
         <li
-          className=""
+          className="selectedProject"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}

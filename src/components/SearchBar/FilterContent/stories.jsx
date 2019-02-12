@@ -16,17 +16,14 @@ const yearSelected = {
   end: 1980,
 };
 
-const noop = () => {};
-
 storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
-    actions: ['changeProjectStatus', 'reset', 'onYearSelect'],
+    actions: ['changeProjectStatus', 'reset', 'onYearSelect', 'closeTab'],
   }))
   .add('with interaction', () => (
     <FilterContent
       {...getInteractionProps()}
-      closeTab={() => alert('clicked')}
     />
   ), {
     interaction: {
@@ -34,26 +31,13 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
         projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: yearSelected, yearRange: initialYearRange,
       },
       actions: {
-        // NOTE: forceReRender() used because storybook experienced
-        // issues re-rendering after state change
-        changeProjectStatus: state => (item) => {
-          const { projectStatus: updateProject } = state;
-          const index = (updateProject.indexOf(item) > -1) ? updateProject.indexOf(item) : null;
-          if (index === null) {
-            updateProject.push(item);
-            forceReRender();
-            return { projectStatus: updateProject };
-          }
-          updateProject.splice(index, 1);
-          forceReRender();
-          return { projectStatus: updateProject };
-        },
+        changeProjectStatus: ({ projectStatus: prev }) => item => ({
+          projectStatus: prev.includes(item) ? prev.filter(v => v !== item) : prev.concat(item),
+        }),
         reset: () => () => {
-          forceReRender();
           return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: initialYearRange };
         },
         onYearSelect: () => (selectedYear) => {
-          forceReRender();
           return ({ selectedYear });
         },
       },
@@ -62,21 +46,15 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .add('withProjectStatus', () => (
     <FilterContent
       projectStatus={['CLOSED', 'OPEN']}
-      selectedYear={yearSelected}
+      selectedYear={{ start: 1970, end: 1971 }}
       yearRange={initialYearRange}
-      changeProjectStatus={noop}
-      onYearSelect={noop}
-      reset={noop}
-      closeTab={noop}
+      {...getInteractionProps()}
     />
   ))
   .add('withYear', () => (
     <FilterContent
       projectStatus={[]}
-      onYearSelect={noop}
-      reset={noop}
-      closeTab={noop}
-      changeProjectStatus={noop}
+      {...getInteractionProps()}
       selectedYear={yearSelected}
       yearRange={initialYearRange}
     />
