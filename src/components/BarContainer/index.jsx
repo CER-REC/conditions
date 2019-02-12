@@ -36,6 +36,7 @@ const BarContainer = (props) => {
         />
       );
     }
+
     const singleBar = (
       <Bar
     // eslint-disable-next-line react/no-array-index-key
@@ -84,10 +85,6 @@ BarContainer.defaultProps = {
   vert: false,
   scale: 1,
   standalone: false,
-<<<<<<< HEAD:src/components/BarContainer/index.jsx
-  maxValue: 1,
-=======
   maxWidth: false,
->>>>>>> 7de059f49bed8f569104fd8b77fd89018059dad6:app/components/BarContainer/index.jsx
 };
 export default BarContainer;

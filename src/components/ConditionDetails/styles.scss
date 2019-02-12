@@ -1,9 +1,9 @@
 .ConditionDetails {
   display: grid;
   height: 300px;
-  width: 600px;
+  width: 800px;
   grid-template-rows: 10% 90%;
-  grid-template-columns: 100px 300px auto;
+  grid-template-columns: 150px 400px auto;
   grid-template-areas:
     "header   header  blank"
     "list content details";
@@ -17,6 +17,9 @@
     height: 100%;
     width: 100%;
     background: lightgrey;
+  }
+  p {
+    margin: 0;
   }
 }
 
@@ -38,4 +41,18 @@
 
 .details{
   grid-area: details;
+}
+
+div.marked {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background-color: red;
+}
+
+div.unmarked {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background: none;
 }
