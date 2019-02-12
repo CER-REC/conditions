@@ -101,7 +101,6 @@
       "close": "Close",
       "reset": "Reset",
       "filter": {
-        "filter": "Filter",
         "projectYear": "Filter by Project Year",
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
@@ -110,8 +109,9 @@
           "cancelled": "Cancelled"
         }
       },
-      "findWords":{
-        "findWords": "Find Words"
+      "tab": {
+        "filter": "Filter",
+        "find": "Find Words"
       }
     },
     "modal": {
