@@ -9,6 +9,7 @@ const BarContainer = (props) => {
   if (items.length === 0) { return null; }
   const {
     scale,
+    maxWidth,
     vert,
     size,
     standalone,
@@ -18,7 +19,7 @@ const BarContainer = (props) => {
   } = props;
 
   let barContainerWidth = 0;
-  const barContainerMaxHeight = scale * Math.max(...items.map(({ value }) => value));
+  const barContainerMaxHeight = maxWidth || scale * Math.max(...items.map(({ value }) => value));
   const barContainerHeight = vert ? barContainerMaxHeight : size * scale;
   const bars = items.map((bar, index) => {
     if (vert) {
@@ -75,6 +76,7 @@ BarContainer.propTypes = {
   scale: PropTypes.number,
   standalone: PropTypes.bool,
   size: PropTypes.number.isRequired,
+  maxWidth: PropTypes.number,
 };
 
 BarContainer.defaultProps = {
@@ -82,6 +84,10 @@ BarContainer.defaultProps = {
   vert: false,
   scale: 1,
   standalone: false,
+<<<<<<< HEAD:src/components/BarContainer/index.jsx
   maxValue: 1,
+=======
+  maxWidth: false,
+>>>>>>> 7de059f49bed8f569104fd8b77fd89018059dad6:app/components/BarContainer/index.jsx
 };
 export default BarContainer;
