@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent, mountWithIntl } from '../../../tests/utilities';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import FilterContent from '.';
 
 const yearRange = {

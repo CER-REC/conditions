@@ -1,6 +1,5 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { forceReRender } from '@storybook/react';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
 import FilterContent from '.';
@@ -34,12 +33,8 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
         changeProjectStatus: ({ projectStatus: prev }) => item => ({
           projectStatus: prev.includes(item) ? prev.filter(v => v !== item) : prev.concat(item),
         }),
-        reset: () => () => {
-          return { projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: initialYearRange };
-        },
-        onYearSelect: () => (selectedYear) => {
-          return ({ selectedYear });
-        },
+        reset: () => () => ({ projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: initialYearRange }),
+        onYearSelect: () => selectedYear => ({ selectedYear }),
       },
     },
   })
