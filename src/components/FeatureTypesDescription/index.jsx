@@ -27,7 +27,11 @@ class FeatureTypesDescription extends React.PureComponent {
   // given feature type, in the form [heading, description]
   renderTypeElements = (feature, type, colorCodes) => {
     const headingId = `common.${feature}.${type}`;
-    const heading = <FormattedMessage id={headingId} data-heading={type} tagName="h4" />;
+    const heading = (
+      <FormattedMessage id={headingId}>
+        {text => <h4 data-heading={type}>{text}</h4>}
+      </FormattedMessage>
+    );
 
     const typeId = `components.featureTypesDescription.${feature}.${type}`;
     const typeDescription = (
