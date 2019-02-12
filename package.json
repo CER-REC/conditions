@@ -41,7 +41,7 @@
     "react-dom": "^16.7.0",
     "react-intl": "^2.7.2",
     "react-redux": "^6.0.0",
-    "react-spring": "^7.2.8",
+    "react-spring": "^8.0.7",
     "redux": "^4.0.1",
     "victory": "^31.0.2"
   },
