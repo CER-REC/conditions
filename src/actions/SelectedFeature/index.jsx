@@ -8,12 +8,20 @@ export const selectedFeature = feature => ({
 });
 
 const initialState = {
-  selectedFeature: 'theme',
+  feature: 'theme',
+  subfeature: '',
+  companty: '',
+  project: '',
+  condition: '',
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Types.SELECTED_FEATURE: return action.payload.feature;
+    case Types.SELECTED_FEATURE: return { ...state, selectedFeature: action.payload.feature };
+    // case Types.SELECTED_FEATURE: return { ...state, selectedFeature: action.payload.feature };
+    // case Types.SELECTED_FEATURE: return { ...state, selectedFeature: action.payload.feature };
+    // case Types.SELECTED_FEATURE: return { ...state, selectedFeature: action.payload.feature };
+    // case Types.SELECTED_FEATURE: return { ...state, selectedFeature: action.payload.feature };
     default: return state;
   }
 };
