@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import InstrumentsLegend from '.';
 import LegendItem from './LegendItem';
 import List from '../List';
-import BubbleLegend from './BubbleLegend';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 describe('Components|InstrumentsLegend', () => {

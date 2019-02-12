@@ -2906,9 +2906,9 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
       >
         <ellipse
           className="Ellipse"
-          cx="3"
+          cx={-0.625}
           cy="3"
-          rx={5.333333333333333}
+          rx={0.625}
           ry="3"
           transform="translate(0, 23)"
         />
@@ -2921,11 +2921,11 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="40"
+          cx={-6.25}
           cy="10"
-          rx={40}
+          rx={6.25}
           ry="5"
-          transform="translate(-70, 34)"
+          transform="translate(0, 34)"
         />
         <text
           className="Text"
@@ -2936,11 +2936,11 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="80"
+          cx={-62.5}
           cy="10"
-          rx={80}
+          rx={62.5}
           ry="5"
-          transform="translate(-150, 54)"
+          transform="translate(0, 54)"
         />
         <text
           className="Text"
@@ -2951,11 +2951,11 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="100"
+          cx={-100}
           cy="10"
-          rx="100"
+          rx={100}
           ry="5"
-          transform="translate(-190, 74)"
+          transform="translate(0, 74)"
         />
         <text
           className="Text"
@@ -3316,9 +3316,9 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
       >
         <ellipse
           className="Ellipse"
-          cx="3"
+          cx={-0.625}
           cy="3"
-          rx={5.333333333333333}
+          rx={0.625}
           ry="3"
           transform="translate(0, 23)"
         />
@@ -3331,11 +3331,11 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="40"
+          cx={-6.25}
           cy="10"
-          rx={40}
+          rx={6.25}
           ry="5"
-          transform="translate(-70, 34)"
+          transform="translate(0, 34)"
         />
         <text
           className="Text"
@@ -3346,11 +3346,11 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="80"
+          cx={-62.5}
           cy="10"
-          rx={80}
+          rx={62.5}
           ry="5"
-          transform="translate(-150, 54)"
+          transform="translate(0, 54)"
         />
         <text
           className="Text"
@@ -3361,11 +3361,11 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="100"
+          cx={-100}
           cy="10"
-          rx="100"
+          rx={100}
           ry="5"
-          transform="translate(-190, 74)"
+          transform="translate(0, 74)"
         />
         <text
           className="Text"
@@ -3398,9 +3398,9 @@ exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
       >
         <ellipse
           className="Ellipse"
-          cx="3"
+          cx={-0.625}
           cy="3"
-          rx={5.333333333333333}
+          rx={0.625}
           ry="3"
           transform="translate(0, 23)"
         />
@@ -3413,11 +3413,11 @@ exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="40"
+          cx={-6.25}
           cy="10"
-          rx={40}
+          rx={6.25}
           ry="5"
-          transform="translate(-70, 34)"
+          transform="translate(0, 34)"
         />
         <text
           className="Text"
@@ -3428,11 +3428,11 @@ exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="80"
+          cx={-62.5}
           cy="10"
-          rx={80}
+          rx={62.5}
           ry="5"
-          transform="translate(-150, 54)"
+          transform="translate(0, 54)"
         />
         <text
           className="Text"
@@ -3443,11 +3443,11 @@ exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
         </text>
         <ellipse
           className="Ellipse"
-          cx="100"
+          cx={-100}
           cy="10"
-          rx="100"
+          rx={100}
           ry="5"
-          transform="translate(-190, 74)"
+          transform="translate(0, 74)"
         />
         <text
           className="Text"

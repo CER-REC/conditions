@@ -12,13 +12,13 @@ const BubbleLegend = props => (
   >
     <FormattedMessage id="components.projectLegend.numberOfConditions" />
     <svg viewBox="-200 0 260 300">
-      <ellipse className="Ellipse" cx="3" cy="3" rx={props.maxConditions / 300} ry="3" transform="translate(0, 23)" />
+      <ellipse className="Ellipse" cx={-(props.radiusOfMaxBubble * 10) / props.maxConditions} cy="3" rx={(props.radiusOfMaxBubble * 10) / props.maxConditions} ry="3" transform="translate(0, 23)" />
       <text className="Text" x="30" y="30">10</text>
-      <ellipse className="Ellipse" cx="40" cy="10" rx={props.maxConditions / 40} ry="5" transform="translate(-70, 34)" />
+      <ellipse className="Ellipse" cx={-(props.radiusOfMaxBubble * 100) / props.maxConditions} cy="10" rx={(props.radiusOfMaxBubble * 100) / props.maxConditions} ry="5" transform="translate(0, 34)" />
       <text className="Text" x="30" y="50">100</text>
-      <ellipse className="Ellipse" cx="80" cy="10" rx={props.maxConditions / 20} ry="5" transform="translate(-150, 54)" />
+      <ellipse className="Ellipse" cx={-(props.radiusOfMaxBubble * 1000) / props.maxConditions} cy="10" rx={(props.radiusOfMaxBubble * 1000) / props.maxConditions} ry="5" transform="translate(0, 54)" />
       <text className="Text" x="30" y="70">1000</text>
-      <ellipse className="Ellipse" cx="100" cy="10" rx="100" ry="5" transform="translate(-190, 74)" />
+      <ellipse className="Ellipse" cx={-(props.radiusOfMaxBubble * props.maxConditions) / props.maxConditions} cy="10" rx={props.radiusOfMaxBubble} ry="5" transform="translate(0, 74)" />
       <text className="Text" x="30" y="90">{props.maxConditions}</text>
     </svg>
   </div>
@@ -27,6 +27,7 @@ const BubbleLegend = props => (
 BubbleLegend.propTypes = {
   className: PropTypes.string.isRequired,
   maxConditions: PropTypes.number.isRequired, // number of Conditions in largest Bubble
+  radiusOfMaxBubble: PropTypes.number.isRequired,
 };
 
 export default BubbleLegend;

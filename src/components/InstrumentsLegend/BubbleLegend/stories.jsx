@@ -19,5 +19,6 @@ storiesForComponent('Components|InstrumentsLegend/BubbleLegend', module, ReadMe)
     <BubbleChart
       className="BubbleLegend"
       maxConditions={number('conditions', 1600, options)}
+      radiusOfMaxBubble={100}
     />
   ));

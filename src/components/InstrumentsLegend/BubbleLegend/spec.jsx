@@ -10,6 +10,7 @@ describe('Component|InstrumentsLegend/BubbleLegend', () => {
       wrapper = shallow(<BubbleLegend
         className="BubbleLegend"
         maxConditions={1600}
+        radiusOfMaxBubble={100}
       />);
     });
 
