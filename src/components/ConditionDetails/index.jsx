@@ -43,8 +43,12 @@ const ConditionDetails = (props) => {
   });
   return (
     <section className="ConditionDetails">
-      <List items={items} onChange={handleInteraction} selected={selectedCondition} />
-      <TextDetails className="TextDetails" condition={condition} />
+      <div className="header" />
+      <div className="list"><List items={items} onChange={handleInteraction} selected={selectedCondition} /></div>
+      <div className="blank" />
+      <div className="content" />
+      <div className="details" />
+
     </section>
   );
 };

@@ -1,12 +1,41 @@
 .ConditionDetails {
+  display: grid;
+  height: 300px;
+  width: 600px;
+  grid-template-rows: 10% 90%;
+  grid-template-columns: 100px 300px auto;
+  grid-template-areas:
+    "header   header  blank"
+    "list content details";
+
   position: relative;
   text-align: left;
   ul {
     margin: 0;
   }
-}
-.List-Item{
-  height:6px;
-  margin : 4px;
+  div {
+    height: 100%;
+    width: 100%;
+    background: lightgrey;
+  }
 }
 
+.header{
+  grid-area: header;
+}
+
+.blank{
+  grid-area: blank;
+}
+
+.list{
+  grid-area: list;
+}
+
+.content{
+  grid-area: content;
+}
+
+.details{
+  grid-area: details;
+}
