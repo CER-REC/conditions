@@ -5,14 +5,10 @@ import './styles.scss';
 import { geoConicConformal, geoPath } from 'd3-geo';
 import { feature, mergeArcs } from 'topojson-client';
 
-import Request from 'client-request/promise';
-
-const topoObj = 'economic_regions_2016_latlng_simplified';
-
 // Hardcoding for now so I can work on the component
 import topoJSON from './economic_regions_2016_latlng_simplified';
 
-
+const topoObj = 'economic_regions_2016_latlng_simplified';
 
 // This should use the same dimensions as the component's div to avoid scaling
 // the svg's stroke width.
@@ -31,16 +27,28 @@ class LocationWheelMinimap extends React.PureComponent {
       topoData: {},
       regions: [],
     };
+
+    // Needed to avoid memory issues if React ends up unmounting the component
+    // before our Promise in componentDidMount resolves
+    this.isCurrentlyMounted = false;
   }
 
   componentDidMount() {
+    this.isCurrentlyMounted = true;
+
     Promise.resolve({ body: topoJSON })
       .then(({ body: topoData }) => {
-        this.setState({
-          regions: feature(topoData, topoData.objects[topoObj]).features,
-          topoData,
-        });
+        if (this.isCurrentlyMounted) {
+          this.setState({
+            regions: feature(topoData, topoData.objects[topoObj]).features,
+            topoData,
+          });
+        }
       });
+  }
+
+  componentWillUnmount() {
+    this.isCurrentlyMounted = false;
   }
 
   // Returns a Feature for the given region name
@@ -84,7 +92,7 @@ LocationWheelMinimap.propTypes = {
 };
 
 LocationWheelMinimap.defaultProps = {
-  region: null,
+  region: '',
 };
 
 export default LocationWheelMinimap;

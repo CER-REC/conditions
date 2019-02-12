@@ -17,4 +17,9 @@ describe('Components|LocationWheelMinimap', () => {
 
     shouldBehaveLikeAComponent(LocationWheelMinimap, () => wrapper);
   });
+
+  it('should not render anything if no region is specified', () => {
+    const wrapper = shallow(<LocationWheelMinimap />);
+    expect(wrapper.find('.LocationWheelMinimap')).toHaveLength(0);
+  });
 });

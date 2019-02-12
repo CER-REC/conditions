@@ -3747,6 +3747,12 @@ exports[`Storyshots Components|List selected 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|LocationWheelMinimap default 1`] = `
+<div
+  className="visualization"
+/>
+`;
+
 exports[`Storyshots Components|MainInfoBar default 1`] = `
 <div
   className="visualization"
