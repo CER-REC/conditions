@@ -1781,6 +1781,102 @@ exports[`Storyshots Components|FeatureFlag Without color 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="FeatureTypesDescription"
+  >
+    <h4
+      data-heading="security"
+    >
+      Security
+    </h4>
+    <p>
+      Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+    </p>
+    <h4
+      data-heading="managementSystem"
+    >
+      Management System
+    </h4>
+    <p>
+      Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+    </p>
+    <h4
+      data-heading="financial"
+    >
+      Financial
+    </h4>
+    <p>
+      Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="FeatureTypesDescription"
+  >
+    <h4
+      data-heading="routing"
+    >
+      Routing
+    </h4>
+    <p>
+      <span
+        className="color-routing"
+      >
+        OPL
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
+    <p>
+      <span
+        className="color-routing"
+      >
+        GPL
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
+    <h4
+      data-heading="construction"
+    >
+      Construction
+    </h4>
+    <p>
+      <span
+        className="color-construction"
+      >
+        GC
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
+    <p>
+      <span
+        className="color-construction"
+      >
+        OC
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
 <div
   className="visualization"
