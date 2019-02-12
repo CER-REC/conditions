@@ -35,7 +35,10 @@ class CompanyWheel extends React.Component {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + (selectedIndex * degreesPerItem);
     } else {
-      newRotation += (selectedIndex - prevState.selectedIndex) * degreesPerItem;
+      newRotation += Math.abs(selectedIndex - prevState.selectedIndex) < items.length - 1
+        ? ((selectedIndex - prevState.selectedIndex) * degreesPerItem)
+        : -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
+      console.log('newRotation: ' +  newRotation, 'deltaRotation: ' + (selectedIndex - prevState.selectedIndex));
     }
 
     return {
@@ -72,7 +75,7 @@ class CompanyWheel extends React.Component {
             rotation: this.state.oldRotation,
           }}
           to={{
-            transform: `rotate(${-this.state.newRotation}deg)`,
+            transform: `rotate(${this.state.newRotation}deg)`,
             rotation: this.state.newRotation,
           }}
         >
@@ -96,6 +99,8 @@ class CompanyWheel extends React.Component {
                       items={this.props.itemsData.items}
                       degreesPerItem={this.state.degreesPerItem}
                       reservedDegrees={reservedDegrees}
+                      currentIndex={Math.round((props.rotation % 360) / (360 / this.props.itemsData.items.length))
+                        % this.props.itemsData.items.length}
                       {...props}
                     />
                     <WheelRayLegend

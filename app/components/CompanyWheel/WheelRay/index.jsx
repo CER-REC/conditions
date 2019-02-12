@@ -4,10 +4,15 @@ import PropTypes from 'prop-types';
 
 class WheelRay extends React.Component {
   shouldComponentUpdate(nextProps) {
-    const oldIndex = Math.round((this.props.rotation % 360) / this.props.degreesPerItem)
-      % this.props.items.length;
-    const newIndex = Math.round((nextProps.rotation % 360) / nextProps.degreesPerItem)
-      % nextProps.items.length;
+    // const oldIndex = Math.abs(Math.round((this.props.rotation % 360) / this.props.degreesPerItem)
+    //   % this.props.items.length);
+    // const newIndex = Math.abs(Math.round((nextProps.rotation % 360) / nextProps.degreesPerItem))
+    //   % nextProps.items.length;
+    // console.log(`oldIndex: ${oldIndex}`, `newIndex: ${newIndex}`);
+    // return oldIndex !== newIndex;
+    const oldIndex = this.props.currentIndex;
+    const newIndex = nextProps.currentIndex;
+    console.log(`oldIndex: ${oldIndex}`, `newIndex: ${newIndex}`);
     return oldIndex !== newIndex;
   }
 
@@ -17,16 +22,22 @@ class WheelRay extends React.Component {
     const height = '163px';
     const width = `${props.degreesPerItem + 1}px`;
     const halfReservedDegrees = reservedDegrees / 2;
-    const selectedIndex = Math.round((props.rotation % 360) / degreesPerItem)
-      % items.length; // Make sure we never exceed the number of items
-
+    // const selectedIndex = Math.round((props.rotation % 360) / degreesPerItem)
+    //   % items.length; // Make sure we never exceed the number of items
+    const selectedIndex = props.currentIndex;
     const rays = items.map((item, index) => {
-      const fill = (index === selectedIndex) ? 'blue' : 'red';
+      let fill = (index === selectedIndex) ? 'blue' : 'red';
 
-      let position = (90 - halfReservedDegrees) + (index * props.degreesPerItem);
-      if (index >= selectedIndex) {
-        position += (index === selectedIndex) ? halfReservedDegrees : reservedDegrees;
+      let position = -props.rotation + 90;
+      const plotIndex = selectedIndex - index;
+      if (plotIndex < 0) {
+        position += (plotIndex * props.degreesPerItem) - halfReservedDegrees;
+        fill = 'pink';
+      } else if (plotIndex > 0) {
+        position += halfReservedDegrees + (plotIndex * props.degreesPerItem);
+        fill = 'green';
       }
+
 
       return (
         <rect
@@ -35,7 +46,7 @@ class WheelRay extends React.Component {
           height={(item._id === '5433ce88-f40d-4e90-84f9-980849a26910' ? '323px' : height)}
           width={width}
           key={item._id}
-          transform={`translate(371 209) rotate(${position % 360}, 0, 245)`}
+          transform={`translate(371 209) rotate(${position}, 0, 245)`}
         />
       );
     });
