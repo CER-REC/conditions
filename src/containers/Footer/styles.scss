@@ -1,0 +1,17 @@
+.Footer {
+  box-sizing: border-box;
+  width: 1120px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  row-gap: calc(97px/12);
+  column-gap:  calc(97px/10);
+  margin: calc(97px/12*2);
+
+  .a{
+    grid-column-start: 3;
+    grid-column-end: 11;
+    grid-row: span 1;
+    justify-self: stretch;
+  }
+}
