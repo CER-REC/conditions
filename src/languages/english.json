@@ -104,9 +104,9 @@
         "projectYear": "Filter by Project Year",
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
-          "open": "Open",
-          "closed": "Closed",
-          "cancelled": "Cancelled"
+          "OPEN": "Open",
+          "CLOSED": "Closed",
+          "CANCELLED": "Cancelled"
         }
       },
       "tab": {

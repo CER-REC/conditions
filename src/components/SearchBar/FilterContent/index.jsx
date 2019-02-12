@@ -166,7 +166,7 @@ class FilterContent extends React.PureComponent {
       {...handleInteraction(this.props.changeProjectStatus, i)}
       className={statusArray.indexOf(i) > -1 ? 'selectedProject' : ''}
     >
-      <FormattedMessage id={`components.SearchBar.filter.projectStatus.${i.toLowerCase()}`}>
+      <FormattedMessage id={`components.SearchBar.filter.projectStatus.${i}`}>
         {text => <span className="upperCase"> {text} </span>}
       </FormattedMessage>
     </li>

@@ -96,9 +96,9 @@
         "projectYear": "",
         "projectStatus": {
           "projectStatusText": "",
-          "open": "",
-          "closed": "",
-          "cancelled": ""
+          "OPEN": "",
+          "CLOSED": "",
+          "CANCELLED": ""
         }
       },
       "tab": {
