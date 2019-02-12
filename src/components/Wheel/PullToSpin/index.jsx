@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { Spring, animated } from 'react-spring/renderprops.cjs';
+import { Spring, animated } from 'react-spring/renderprops';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 class PullToSpin extends React.Component {
