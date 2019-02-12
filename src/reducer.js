@@ -1,9 +1,17 @@
 import { combineReducers } from 'redux';
 
-import { reducer as SelectedFeatureReducer } from './actions/SelectedFeature';
+import { reducer as SelectedReducer } from './actions/Selected';
+import { reducer as SearchReducer } from './actions/Search';
+import { reducer as ChartIndicatorPositionReducer } from './actions/ChartIndicatorPosition';
+import { reducer as BrowseByReducer } from './actions/BrowseBy';
+import { reducer as DetailViewReducer } from './actions/DetailView';
 
 const nestedReducers = combineReducers({
-  selectedFeature: SelectedFeatureReducer,
+  selected: SelectedReducer,
+  search: SearchReducer,
+  chartIndicatorPosition: ChartIndicatorPositionReducer,
+  browseBy: BrowseByReducer,
+  detailView: DetailViewReducer,
 });
 
 export default (initialState = {}, action) => {
