@@ -2,14 +2,7 @@ import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import Icon from '../../Icon';
-import CircleContainer from '../../CircleContainer';
-
-library.add(
-  faAngleRight,
-);
+import handleInteraction from '../../../utilities/handleInteraction';
 
 const SuggestedKeywords = props => (
   <div className="SuggestedKeywords">
@@ -24,9 +17,10 @@ const SuggestedKeywords = props => (
         </span>
       )}
     </FormattedMessage>
-    <CircleContainer onClick={props.onClick} size={15} backgroundColor="red">
-      <Icon icon="angle-right" />
-    </CircleContainer>
+    <svg className="arrow" {...handleInteraction(props.onClick)} viewBox="0 0 427.5 427.5" width={20} height={20}>
+      <circle fill="#CF167B" cx="215" cy="213.8" r="213.8" />
+      <polygon fill="#FFFFFF" points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 " />
+    </svg>
   </div>
 );
 

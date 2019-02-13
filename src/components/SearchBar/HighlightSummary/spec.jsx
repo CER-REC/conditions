@@ -4,7 +4,6 @@ import HighlightSummary from '.';
 import './styles.scss';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
-const noop = () => {};
 const keywords = ['test1', 'test2'];
 const exceptKeywords = ['except1', 'except2'];
 const selectedYear = { start: 2010, end: 2018 };

@@ -19,7 +19,7 @@ describe('Components|SearchBar/SuggestedKeywords', () => {
     shouldBehaveLikeAComponent(SuggestedKeywords, () => wrapper);
 
     test('onClick should call onClick prop', () => {
-      const updatedWrapper = wrapper.find('CircleContainer');
+      const updatedWrapper = wrapper.find('.arrow');
       updatedWrapper.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
     });
