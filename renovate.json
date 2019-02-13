@@ -2,5 +2,5 @@
   "extends": [
     "config:base"
   ],
-  "labels": ["Dependency"]
+  "labels": ["Dependency", "Awaiting Review"]
 }
