@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import handleDrag from '../../utilities/handleDrag';
-import { keywordList } from './proptypes';
+import handleDrag from '../../../utilities/handleDrag';
+import { keywordList } from '../proptypes';
 
 const testForCollision = (circle, rect) => {
   const deltaX = circle.x - Math.max(rect.x, Math.min(circle.x, rect.x + rect.width));

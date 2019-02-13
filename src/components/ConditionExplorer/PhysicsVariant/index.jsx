@@ -1,10 +1,9 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-bitwise */
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Matter from 'matter-js';
-import { keywordList } from './proptypes';
-import './styles.scss';
+import { keywordList } from '../proptypes';
 
 const circleCategory = Matter.Body.nextCategory();
 const visibleTextCategory = Matter.Body.nextCategory();
@@ -28,7 +27,6 @@ const calculateVelocity = (start, end, friction) => {
   let current = start;
   let prev = start + ((start - end) / 1000);
   const direction = Math.abs(start - end) / (start - end);
-  // console.log(direction, current, end, current - end)
   while ((current - end) * direction > 0 && loop < 100) {
     loop += 1;
     const velocity = (current - prev) / friction;
@@ -38,16 +36,14 @@ const calculateVelocity = (start, end, friction) => {
   return current - prev;
 };
 
-export default class PhysicsTest extends React.Component {
+export default class PhysicsVariant extends React.Component {
   static propTypes = {
     keywords: keywordList.isRequired,
   };
 
   constructor(props) {
     super(props);
-
     this.groupRef = React.createRef();
-
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
     this.engine = Matter.Engine.create({ world });
     this.lastTime = null;
@@ -96,7 +92,6 @@ export default class PhysicsTest extends React.Component {
     const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse,
-      // collisionFilter: { mask: circleCategory },
       constraint: {
         stiffness: 0.2,
         render: {
@@ -109,8 +104,8 @@ export default class PhysicsTest extends React.Component {
     Matter.World.add(this.engine.world, mouseConstraint);
 
     const runner = Matter.Runner.create();
-    Matter.Runner.run(runner, this.engine);
 
+    Matter.Runner.run(runner, this.engine);
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
     this.loop();
@@ -127,7 +122,7 @@ export default class PhysicsTest extends React.Component {
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       const bodyChanged = (Math.abs(body.position.x - body.positionPrev.x) > 0.01)
         || (Math.abs(body.position.y - body.positionPrev.y) > 0.01)
-        || ((Math.abs(body.angle - body.angle) * 180) / Math.PI > 0.01)
+        || ((Math.abs(body.angle - body.angle) * 180) / Math.PI > 0.01);
 
       // Check if any positions have updated
       bodiesChanged = bodiesChanged || bodyChanged;
@@ -157,7 +152,6 @@ export default class PhysicsTest extends React.Component {
         }
       }
     });
-    // if (bodiesChanged) { this.setState({}); }
     // TODO: This seems like a really bad thing to run every frame
     this.forceUpdate();
   };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'lodash.memoize';
 import shallowequal from 'shallowequal';
-import PhysicsTest from './PhysicsTest';
+import PhysicsVariant from './PhysicsVariant';
 import Fallback from './Fallback';
 import './styles.scss';
 
@@ -25,8 +25,8 @@ const setTimeoutChain = (callback, timeout, times) => {
 export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-    changeVisibleWords: PropTypes.func.isRequired,
     physics: PropTypes.bool,
+    // changeVisibleWords: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -81,8 +81,6 @@ export default class ConditionExplorer extends React.Component {
 
         const textSize = this.calculateTextSize(v);
         const outline = {
-          // x: x + textSize.xOffset,
-          // y: (y - textSize.height) + textSize.yOffset,
           x,
           y,
           width: textSize.width,
@@ -130,7 +128,7 @@ export default class ConditionExplorer extends React.Component {
     // There are no keywords to render until after the first mount
     if (keywords.length > 0) {
       content = this.props.physics
-        ? <PhysicsTest keywords={keywords} />
+        ? <PhysicsVariant keywords={keywords} />
         : <Fallback keywords={keywords} />;
     }
 
