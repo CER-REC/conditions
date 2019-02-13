@@ -5,17 +5,14 @@ import ReadMe from './README.md';
 
 const data = [
   {
-    instrument: {
-      number: 'XO-001-2018',
-      issuanceDate: '2014-10-24',
-      effectiveDate: '2014-10-24',
-      sunsetDate: '2019-01-30',
-      status: 'inProgress',
-      location: 'Albuquerque, NM',
-      type: 'Construction of Oil Pipeline',
-      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
-
-    },
+    instrumentNumber: 'XO-001-2018',
+    issuanceDate: '2014-10-24',
+    effectiveDate: '2014-10-24',
+    sunsetDate: '2019-01-30',
+    status: 'inProgress',
+    location: 'Albuquerque, NM',
+    type: 'Construction of Oil Pipeline',
+    activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
     conditions: [
       {
         length: 3,
@@ -31,21 +28,6 @@ const data = [
           filing: 'notRequired',
         },
       },
-    ],
-  },
-  {
-    instrument: {
-      number: 'XO-002-2018',
-      issuanceDate: '2014-10-24',
-      effectiveDate: '2014-10-24',
-      sunsetDate: '2019-01-30',
-      status: 'inProgress',
-      location: 'Albuquerque, NM',
-      type: 'Construction of Oil Pipeline',
-      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
-
-    },
-    conditions: [
       {
         length: 2,
         fill: 'blue',
@@ -63,17 +45,14 @@ const data = [
     ],
   },
   {
-    instrument: {
-      number: 'XO-003-2018',
-      issuanceDate: '2014-10-24',
-      effectiveDate: '2014-10-24',
-      sunsetDate: '2019-01-30',
-      status: 'inProgress',
-      location: 'Albuquerque, NM',
-      type: 'Construction of Oil Pipeline',
-      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
-
-    },
+    instrumentNumber: 'XO-003-2018',
+    issuanceDate: '2014-10-24',
+    effectiveDate: '2014-10-24',
+    sunsetDate: '2019-01-30',
+    status: 'inProgress',
+    location: 'Albuquerque, NM',
+    type: 'Construction of Oil Pipeline',
+    activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
     conditions: [
       {
         length: 1,
@@ -89,21 +68,6 @@ const data = [
           filing: 'notRequired',
         },
       },
-    ],
-  },
-  {
-    instrument: {
-      number: 'XO-004-2018',
-      issuanceDate: '2014-10-24',
-      effectiveDate: '2014-10-24',
-      sunsetDate: '2019-01-30',
-      status: 'inProgress',
-      location: 'Albuquerque, NM',
-      type: 'Construction of Oil Pipeline',
-      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
-
-    },
-    conditions: [
       {
         length: 2,
         fill: 'red',
@@ -121,17 +85,14 @@ const data = [
     ],
   },
   {
-    instrument: {
-      number: 'XO-005-2018',
-      issuanceDate: '2014-10-24',
-      effectiveDate: '2014-10-24',
-      sunsetDate: '2019-01-30',
-      status: 'inProgress',
-      location: 'Albuquerque, NM',
-      type: 'Construction of Oil Pipeline',
-      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
-
-    },
+    instrumentNumber: 'XO-005-2018',
+    issuanceDate: '2014-10-24',
+    effectiveDate: '2014-10-24',
+    sunsetDate: '2019-01-30',
+    status: 'inProgress',
+    location: 'Albuquerque, NM',
+    type: 'Construction of Oil Pipeline',
+    activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
     conditions: [
       {
         length: 3,
@@ -162,7 +123,11 @@ const defaultProps = {
 storiesForComponent('Components|ConditionDetails', module, ReadMe)
   .add('default', () => (
     <ConditionDetails {...defaultProps} />
+  ))
+  .add('condition', () => (
+    <ConditionDetails {...defaultProps} selectedItem={{ instrumentIndex: 0, itemIndex: 1 }} />
   ));
+
 // .add('default and searched', () => (
 //   <ConditionDetails conditions={itemsBinned} maxWidth={99} maxValue={3} searched={searched} />
 // ))

@@ -13,48 +13,57 @@
   ul {
     margin: 0;
   }
-  div {
+
+  p {
+    margin: 0;
+  }
+
+  .header{
+    grid-area: header;
+  }
+
+  .blank{
+    grid-area: blank;
+  }
+
+  .list{
+    grid-area: list;
+  }
+
+  .content{
+    grid-area: content;
+  }
+
+  .details{
+    grid-area: details;
+  }
+
+  .marked {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: red;
+  }
+
+  .unmarked {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background: none;
+  }
+
+  .contentHalf {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+  }
+
+  .gridCell {
     height: 100%;
     width: 100%;
     border: 1px solid rgba(255,0,255,.25);
     overflow-y: auto;
     overflow-x: hidden;
   }
-  p {
-    margin: 0;
-  }
-}
 
-.header{
-  grid-area: header;
-}
-
-.blank{
-  grid-area: blank;
-}
-
-.list{
-  grid-area: list;
-}
-
-.content{
-  grid-area: content;
-}
-
-.details{
-  grid-area: details;
-}
-
-div.marked {
-  display: inline-block;
-  height: 8px;
-  width: 8px;
-  background-color: red;
-}
-
-div.unmarked {
-  display: inline-block;
-  height: 8px;
-  width: 8px;
-  background: none;
 }

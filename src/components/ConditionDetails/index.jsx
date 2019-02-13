@@ -7,12 +7,10 @@ import List from '../List';
 import BarContainer from '../BarContainer';
 import SelectedGroupBar from '../SelectedGroupBar';
 
-const searchMatch = (text, include, exclude) => {
-  const some = include && include.some(word => text.match(word));
-  const none = exclude && exclude.find(word => text.match(word));
-
-  return some && !none;
-};
+const searchMatch = (text, include, exclude) => (
+  (include && include.some(word => text.match(word)))
+  && !(exclude && exclude.find(word => text.match(word)))
+);
 
 class ConditionDetails extends React.Component {
   renderHeader() {
@@ -25,22 +23,26 @@ class ConditionDetails extends React.Component {
     return <p>Selected Project: {this.props.selectedProject}</p>;
   }
 
-  renderConditionBars(item) {
-    return item.conditions.reduce((out, condition, idx) => {
-      const tabClass = (
-        this.props.searchKeywords
-        && searchMatch(
-          condition.text,
-          this.props.searchKeywords.include,
-          this.props.searchKeywords.exclude,
-        )
-      ) ? 'marked'
-        : 'unmarked';
+  renderTab(condition) {
+    const tabClass = (
+      this.props.searchKeywords
+      && searchMatch(
+        condition.text,
+        this.props.searchKeywords.include,
+        this.props.searchKeywords.exclude,
+      )
+    ) ? 'marked'
+      : 'unmarked';
 
+    return <div className={tabClass} />;
+  }
+
+  renderConditionBars(conditions, itemIdx) {
+    return conditions.reduce((out, condition, idx) => {
       out.push(
         // eslint-disable-next-line react/no-array-index-key
-        <React.Fragment key={`${item.instrument.number}-${idx}`}>
-          <div className={tabClass} />
+        <React.Fragment key={`${itemIdx}-${idx}`}>
+          {this.renderTab(condition)}
           <BarContainer
             items={
               [
@@ -61,51 +63,90 @@ class ConditionDetails extends React.Component {
   }
 
   renderList() {
-    const items = [];
-    this.props.data.forEach((item) => {
-      items.push(
-        (
-          // eslint-disable-next-line react/no-array-index-key
-          <React.Fragment key={item.instrument.number}>
-            <div className="unmarked" />
-            <span>{item.instrument.number}</span>
-          </React.Fragment>
-        ),
-        ...this.renderConditionBars(item),
+    const elements = [];
+    this.props.data.forEach((instrument, idx) => {
+      const instrumentHeading = (
+        // eslint-disable-next-line react/no-array-index-key
+        <React.Fragment key={instrument.instrumentNumber}>
+          <div className="unmarked" />
+          <span>{instrument.instrumentNumber}</span>
+        </React.Fragment>
       );
+
+      const conditions = this.renderConditionBars(instrument.conditions, idx);
+
+      elements.push(instrumentHeading, ...conditions);
     });
 
     return (
       <List
-        items={items}
+        items={elements}
         onChange={handleInteraction}
-        selected={this.props.selectedCondition}
+        selected={this.props.selectedItem}
       />
     );
   }
 
-  renderCondition() {
-    const { instrumentIndex, conditionIndex } = this.props.selectedCondition;
-    const condition = this.props.data[instrumentIndex].conditions[conditionIndex];
-
+  renderInstrument(data) {
     return (
-      <pre>{JSON.stringify(condition, null, 2)}</pre>
+      <React.Fragment>
+        <div className="contentHalf">Issuance Date: {data.issuanceDate}</div>
+        <div className="contentHalf">Instrument #: {data.instrumentNumber}</div>
+        <div className="contentHalf">Effective Date: {data.effectiveDate}</div>
+        <div className="contentHalf">Instrument Status: {data.status}</div>
+        <div className="contentHalf">Sunset Date: {data.sunsetDate}</div>
+        <div className="contentHalf">Location: {data.location}</div>
+        <div>Instrument Type: {data.type}</div>
+        <div>Instrument Activity: {data.activity}</div>
+      </React.Fragment>
     );
   }
 
-  renderDetails() {
+  renderCondition(condition, data) {
+    return (
+      <React.Fragment>
+        <div className="contentHalf">Effective Date: {data.effectiveDate}</div>
+        <div className="contentHalf">Instrument #: {data.instrumentNumber}</div>
+        <div>Keyword(s): {condition.keywords.join(', ')}</div>
+        <div>Text: {condition.text}</div>
+      </React.Fragment>
+    );
+  }
 
+  renderItem(instrument, index) {
+    return (index === -1)
+      ? this.renderInstrument(instrument)
+      : this.renderCondition(instrument.conditions[index], instrument);
+  }
+
+  renderItemDetails(instrument, index) {
+    if (index === -1) return null;
+
+    const details = instrument.conditions[index].details;
+    return (
+        <React.Fragment>
+          <h3>Selected Condition Feature</h3>
+          <div>Theme: {details.theme}</div>
+          <div>Instrument: {details.instrument}</div>
+          <div>Phase: {details.phase}</div>
+          <div>Type: {details.type}</div>
+          <div>Status: {details.status}</div>
+          <div>Filing: {details.filing}</div>
+        </React.Fragment>
+      );
   }
 
   render() {
+    const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
+    const index = this.props.selectedItem.itemIndex;
+
     return (
       <section className="ConditionDetails">
-        <div className="header">{this.renderHeader()}</div>
-        <div className="list">{this.renderList()}</div>
-        <div className="blank" />
-        <div className="content">{this.renderCondition()}</div>
-        <div className="details">{this.renderDetails()}</div>
-
+        <div className="gridCell header">{this.renderHeader()}</div>
+        <div className="gridCell list">{this.renderList()}</div>
+        <div className="gridCell blank" />
+        <div className="gridCell content">{this.renderItem(instrument, index)}</div>
+        <div className="gridCell details">{this.renderItemDetails(instrument, index)}</div>
       </section>
     );
   }
@@ -123,16 +164,16 @@ ConditionDetails.propTypes = {
     conditions: PropTypes.arrayOf(PropTypes.object),
   })).isRequired,
 
-  selectedCondition: PropTypes.shape({
+  selectedItem: PropTypes.shape({
     instrumentIndex: PropTypes.number,
-    conditionIndex: PropTypes.number,
+    itemIndex: PropTypes.number,
   }),
 };
 
 ConditionDetails.defaultProps = {
   expanded: true,
   searchKeywords: { include: [], exclude: [] },
-  selectedCondition: { instrumentIndex: 0, conditionIndex: 0 },
+  selectedItem: { instrumentIndex: 0, itemIndex: -1 },
 };
 
 export default ConditionDetails;
