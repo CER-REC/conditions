@@ -1,3 +1,6 @@
+@import '../../styles/fontVariables.scss';
+@import '../../styles/colors.scss';
+
 .ConditionDetails {
   display: grid;
   height: 300px;
@@ -10,6 +13,11 @@
 
   position: relative;
   text-align: left;
+  color: $Black77;
+
+  font-family: $fira-sans-condensed-light;
+  font-size: 12px;
+
   ul {
     margin: 0;
   }
@@ -18,16 +26,35 @@
     margin: 0;
   }
 
+  h3 {
+    margin: 0;
+    padding-bottom: 0.8rem;
+  }
+
+  h4 {
+    margin: 0;
+
+    display: inline;
+    font-family: $fira-sans-condensed;
+
+    color: $Gray160;
+  }
+
   .header{
     grid-area: header;
+    background-color: $LightGray;
   }
 
   .blank{
     grid-area: blank;
+    background-color: $LightGray;
   }
 
   .list{
     grid-area: list;
+
+    padding-top: 20px;
+    padding-right: 20px;
   }
 
   .content{
@@ -38,21 +65,29 @@
     grid-area: details;
   }
 
+  .content,
+  .details {
+    padding: 20px;
+  }
+
   .marked {
     display: inline-block;
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 10px;
     background-color: red;
   }
 
   .unmarked {
     display: inline-block;
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 10px;
     background: none;
   }
 
-  .contentHalf {
+  .contentBlock {
+    padding-bottom: 0.4rem;
+  }
+  .contentBlock.half {
     display: inline-block;
     width: 50%;
     height: auto;
@@ -61,7 +96,6 @@
   .gridCell {
     height: 100%;
     width: 100%;
-    border: 1px solid rgba(255,0,255,.25);
     overflow-y: auto;
     overflow-x: hidden;
   }

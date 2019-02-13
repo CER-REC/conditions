@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
-import TextDetails from './TextDetails';
 import List from '../List';
 import BarContainer from '../BarContainer';
-import SelectedGroupBar from '../SelectedGroupBar';
 
 const searchMatch = (text, include, exclude) => (
   (include && include.some(word => text.match(word)))
@@ -69,7 +67,7 @@ class ConditionDetails extends React.Component {
         // eslint-disable-next-line react/no-array-index-key
         <React.Fragment key={instrument.instrumentNumber}>
           <div className="unmarked" />
-          <span>{instrument.instrumentNumber}</span>
+          <h4>{instrument.instrumentNumber}</h4>
         </React.Fragment>
       );
 
@@ -90,14 +88,14 @@ class ConditionDetails extends React.Component {
   renderInstrument(data) {
     return (
       <React.Fragment>
-        <div className="contentHalf">Issuance Date: {data.issuanceDate}</div>
-        <div className="contentHalf">Instrument #: {data.instrumentNumber}</div>
-        <div className="contentHalf">Effective Date: {data.effectiveDate}</div>
-        <div className="contentHalf">Instrument Status: {data.status}</div>
-        <div className="contentHalf">Sunset Date: {data.sunsetDate}</div>
-        <div className="contentHalf">Location: {data.location}</div>
-        <div>Instrument Type: {data.type}</div>
-        <div>Instrument Activity: {data.activity}</div>
+        <div className="contentBlock half"><h4>Issuance Date:</h4> {data.issuanceDate}</div>
+        <div className="contentBlock half"><h4>Instrument #:</h4> {data.instrumentNumber}</div>
+        <div className="contentBlock half"><h4>Effective Date:</h4> {data.effectiveDate}</div>
+        <div className="contentBlock half"><h4>Instrument Status:</h4> {data.status}</div>
+        <div className="contentBlock half"><h4>Sunset Date:</h4> {data.sunsetDate}</div>
+        <div className="contentBlock half"><h4>Location:</h4> {data.location}</div>
+        <div className="contentBlock"><h4>Instrument Type:</h4> {data.type}</div>
+        <div className="contentBlock"><h4>Instrument Activity:</h4> {data.activity}</div>
       </React.Fragment>
     );
   }
@@ -105,10 +103,10 @@ class ConditionDetails extends React.Component {
   renderCondition(condition, data) {
     return (
       <React.Fragment>
-        <div className="contentHalf">Effective Date: {data.effectiveDate}</div>
-        <div className="contentHalf">Instrument #: {data.instrumentNumber}</div>
-        <div>Keyword(s): {condition.keywords.join(', ')}</div>
-        <div>Text: {condition.text}</div>
+        <div className="contentBlock half"><h4>Effective Date:</h4> {data.effectiveDate}</div>
+        <div className="contentBlock half"><h4>Instrument #:</h4> {data.instrumentNumber}</div>
+        <div className="contentBlock"><h4>Keyword(s):</h4> {condition.keywords.join(', ')}</div>
+        <div className="contentBlock"><h4>Text:</h4> {condition.text}</div>
       </React.Fragment>
     );
   }
@@ -126,12 +124,12 @@ class ConditionDetails extends React.Component {
     return (
         <React.Fragment>
           <h3>Selected Condition Feature</h3>
-          <div>Theme: {details.theme}</div>
-          <div>Instrument: {details.instrument}</div>
-          <div>Phase: {details.phase}</div>
-          <div>Type: {details.type}</div>
-          <div>Status: {details.status}</div>
-          <div>Filing: {details.filing}</div>
+          <div className="contentBlock"><h4>Theme:</h4> {details.theme}</div>
+          <div className="contentBlock"><h4>Instrument:</h4> {details.instrument}</div>
+          <div className="contentBlock"><h4>Phase:</h4> {details.phase}</div>
+          <div className="contentBlock"><h4>Type:</h4> {details.type}</div>
+          <div className="contentBlock"><h4>Status:</h4> {details.status}</div>
+          <div className="contentBlock"><h4>Filing:</h4> {details.filing}</div>
         </React.Fragment>
       );
   }
