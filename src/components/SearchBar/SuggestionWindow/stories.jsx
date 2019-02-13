@@ -58,26 +58,26 @@ storiesForComponent('Components|SearchBar/SuggestionWindow', module, ReadMe)
       },
       {
         name: 'emissions',
-        conditions: 1500,
+        conditions: 1800,
       }, {
         name: 'habitat',
-        conditions: 1200,
+        conditions: 1400,
       },
       {
         name: 'construction',
-        conditions: 1000,
+        conditions: 1001,
       },
       {
         name: 'habitat',
-        conditions: 1400,
+        conditions: 1300,
       },
       {
         name: 'file',
-        conditions: 1400,
+        conditions: 1420,
       },
       {
         name: 'breeding breed',
-        conditions: 380,
+        conditions: 390,
       }],
     },
     actions: {

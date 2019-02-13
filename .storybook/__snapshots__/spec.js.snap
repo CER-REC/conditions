@@ -5380,7 +5380,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
       className="SuggestionWindow"
     >
       <h1
-        className="keyWordsTitle"
+        className="keywordsTitle"
       >
          
         Suggested Keywords
@@ -5393,7 +5393,9 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
         Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
           
       </p>
-      <ul>
+      <ul
+        className="categories"
+      >
         <li
           className="viewText"
         >
@@ -5501,7 +5503,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
           </svg>
         </span>
         <span
-          className="none upperCase"
+          className="hierarchy upperCase"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -5513,7 +5515,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
         </span>
       </div>
       <div
-        className="keyWordsBox"
+        className="keywordsBox"
       >
         <ul>
           <li>
@@ -5575,7 +5577,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(238,97,41)"
                     height={8}
-                    width={160}
+                    width={133.33333333333331}
                     x={0}
                     y={0}
                   />
@@ -5583,8 +5585,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={40}
-                    x={160}
+                    width={66.66666666666669}
+                    x={133.33333333333331}
                     y={0}
                   />
                 </g>
@@ -5663,7 +5665,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(238,97,41)"
                     height={8}
-                    width={133.33333333333331}
+                    width={111.11111111111111}
                     x={0}
                     y={0}
                   />
@@ -5671,8 +5673,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={66.66666666666669}
-                    x={133.33333333333331}
+                    width={88.88888888888889}
+                    x={111.11111111111111}
                     y={0}
                   />
                 </g>
@@ -5751,7 +5753,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(238,97,41)"
                     height={8}
-                    width={106.66666666666667}
+                    width={88.88888888888889}
                     x={0}
                     y={0}
                   />
@@ -5759,8 +5761,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={93.33333333333333}
-                    x={106.66666666666667}
+                    width={111.11111111111111}
+                    x={88.88888888888889}
                     y={0}
                   />
                 </g>
@@ -5839,7 +5841,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={133.33333333333331}
+                    width={111.11111111111111}
                     x={0}
                     y={0}
                   />
@@ -5847,8 +5849,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={66.66666666666669}
-                    x={133.33333333333331}
+                    width={88.88888888888889}
+                    x={111.11111111111111}
                     y={0}
                   />
                 </g>
@@ -5927,7 +5929,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={133.33333333333331}
+                    width={111.11111111111111}
                     x={0}
                     y={0}
                   />
@@ -5935,8 +5937,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={66.66666666666669}
-                    x={133.33333333333331}
+                    width={88.88888888888889}
+                    x={111.11111111111111}
                     y={0}
                   />
                 </g>
@@ -6015,7 +6017,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={186.66666666666666}
+                    width={155.55555555555557}
                     x={0}
                     y={0}
                   />
@@ -6023,8 +6025,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={13.333333333333343}
-                    x={186.66666666666666}
+                    width={44.44444444444443}
+                    x={155.55555555555557}
                     y={0}
                   />
                 </g>
@@ -6103,7 +6105,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={50.66666666666667}
+                    width={42.22222222222222}
                     x={0}
                     y={0}
                   />
@@ -6111,8 +6113,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={149.33333333333331}
-                    x={50.66666666666667}
+                    width={157.77777777777777}
+                    x={42.22222222222222}
                     y={0}
                   />
                 </g>
@@ -6191,7 +6193,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={186.66666666666666}
+                    width={155.55555555555557}
                     x={0}
                     y={0}
                   />
@@ -6199,8 +6201,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={13.333333333333343}
-                    x={186.66666666666666}
+                    width={44.44444444444443}
+                    x={155.55555555555557}
                     y={0}
                   />
                 </g>
@@ -6301,7 +6303,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                 className="conditionsText"
               >
                  
-                1500
+                1800
                  
                 conditions
                   
@@ -6367,7 +6369,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={160}
+                    width={155.55555555555557}
                     x={0}
                     y={0}
                   />
@@ -6375,8 +6377,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={40}
-                    x={160}
+                    width={44.44444444444443}
+                    x={155.55555555555557}
                     y={0}
                   />
                 </g>
@@ -6389,7 +6391,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                 className="conditionsText"
               >
                  
-                1200
+                1400
                  
                 conditions
                   
@@ -6455,7 +6457,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={133.33333333333331}
+                    width={111.22222222222223}
                     x={0}
                     y={0}
                   />
@@ -6463,8 +6465,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={66.66666666666669}
-                    x={133.33333333333331}
+                    width={88.77777777777777}
+                    x={111.22222222222223}
                     y={0}
                   />
                 </g>
@@ -6477,7 +6479,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                 className="conditionsText"
               >
                  
-                1000
+                1001
                  
                 conditions
                   
@@ -6543,7 +6545,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={186.66666666666666}
+                    width={144.44444444444443}
                     x={0}
                     y={0}
                   />
@@ -6551,8 +6553,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={13.333333333333343}
-                    x={186.66666666666666}
+                    width={55.55555555555557}
+                    x={144.44444444444443}
                     y={0}
                   />
                 </g>
@@ -6565,7 +6567,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                 className="conditionsText"
               >
                  
-                1400
+                1300
                  
                 conditions
                   
@@ -6631,7 +6633,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={186.66666666666666}
+                    width={157.77777777777777}
                     x={0}
                     y={0}
                   />
@@ -6639,8 +6641,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={13.333333333333343}
-                    x={186.66666666666666}
+                    width={42.22222222222223}
+                    x={157.77777777777777}
                     y={0}
                   />
                 </g>
@@ -6653,7 +6655,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                 className="conditionsText"
               >
                  
-                1400
+                1420
                  
                 conditions
                   
@@ -6719,7 +6721,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="rgb(96,96,96)"
                     height={8}
-                    width={50.66666666666667}
+                    width={43.333333333333336}
                     x={0}
                     y={0}
                   />
@@ -6727,8 +6729,8 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                     className="Bar"
                     fill="transparent"
                     height={8}
-                    width={149.33333333333331}
-                    x={50.66666666666667}
+                    width={156.66666666666666}
+                    x={43.333333333333336}
                     y={0}
                   />
                 </g>
@@ -6741,7 +6743,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
                 className="conditionsText"
               >
                  
-                380
+                390
                  
                 conditions
                   

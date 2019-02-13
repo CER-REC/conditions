@@ -15,11 +15,11 @@ library.add(
 class SuggestionWindow extends React.PureComponent {
   static propTypes = {
     selectedCategory: PropTypes.arrayOf(PropTypes.string),
-    selectedWords: PropTypes.objectOf(PropTypes.oneOf({
+    selectedWords: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       conditions: PropTypes.number,
     })),
-    suggestedKeywords: PropTypes.objectOf(PropTypes.oneOf({
+    suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       conditions: PropTypes.number,
     })).isRequired,
@@ -33,10 +33,10 @@ class SuggestionWindow extends React.PureComponent {
 
   static defaultProps = {
     selectedCategory: [],
-    selectedWords: ({
+    selectedWords: ([{
       name: null,
       conditions: 0,
-    }),
+    }]),
   }
 
   renderCategories = () => (
@@ -45,7 +45,7 @@ class SuggestionWindow extends React.PureComponent {
       const classArray = ['categoryList upperCase'];
       const className = (selectedCategory.indexOf(i) > -1) ? 'selectedCategory' : '';
       classArray.push(className);
-      return (<li {...handleInteraction(this.categoryOnClick, i)} className={classArray.toString().replace(/,/g, ' ')}> { i } </li>);
+      return (<li key={i} {...handleInteraction(this.categoryOnClick, i)} className={classArray.toString().replace(/,/g, ' ')}> { i } </li>);
     })
   )
 
@@ -107,7 +107,7 @@ class SuggestionWindow extends React.PureComponent {
     const conditions = (value.conditions / maxConditions) * 200;
     const remainingSpace = (200 - conditions);
     return (
-      <li>
+      <li key={`${value.name} ${value.conditions}`}>
         <span className="icon" {...handleInteraction(this.keywordOnClick, [value, present, selectedIndex])}>
           <Icon className={iconClass} icon={icon} />
         </span>
@@ -136,14 +136,14 @@ class SuggestionWindow extends React.PureComponent {
     return (
       <div className="SuggestionWindow">
         <FormattedMessage id="components.searchBar.suggestionWindow.suggestedKeywords">
-          { text => <h1 className="keyWordsTitle"> { text }  </h1>
+          { text => <h1 className="keywordsTitle"> { text }  </h1>
           }
         </FormattedMessage>
         <FormattedMessage id="components.searchBar.suggestionWindow.keywordsDescription">
           { text => <p className="description"> { text }  </p>
           }
         </FormattedMessage>
-        <ul>
+        <ul className="categories">
           <FormattedMessage id="components.searchBar.suggestionWindow.viewBy">
             { text => <li className="viewText"> { text }:  </li>
           }
@@ -178,10 +178,10 @@ class SuggestionWindow extends React.PureComponent {
               </g>
             </svg>
           </span>
-          <span {...handleInteraction(this.sortHierarchy)} className="none upperCase"> {this.props.sortHierarchy } </span>
+          <span {...handleInteraction(this.sortHierarchy)} className="hierarchy upperCase"> {this.props.sortHierarchy } </span>
         </div>
 
-        <div className="keyWordsBox">
+        <div className="keywordsBox">
           <ul>
             { this.renderKeyWords() }
           </ul>
