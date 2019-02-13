@@ -146,7 +146,12 @@ export default class ConditionExplorer extends React.Component {
       >
         <g className="keyword color0 textVisible">
           <text ref={this.fontChangeRef} style={fontTestStyles}>
-            abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-.,0123456789
+            abcdefghijklmnopqrstuvwxyz
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+            -.,
+            0123456789
+            ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ
+            ùûüÿ€àâæçéèêëïîôœ
           </text>
           <text ref={this.textSizeRef} style={fontTestStyles} />
         </g>
