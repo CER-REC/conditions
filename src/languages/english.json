@@ -101,6 +101,10 @@
       "suggestedKeywords": {
         "selectFrom": "Select from",
         "suggestedKeywords": "Suggested\nKeywords"
+      },
+      "highlightSummary": {
+        "showingAll": "Showing all projects from",
+        "highlightConditions": "\nHighlighting conditions containing"
       }
     },
     "modal": {

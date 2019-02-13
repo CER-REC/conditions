@@ -5369,6 +5369,57 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="HighlightSummary"
+    >
+      <span>
+        Showing all projects from
+      </span>
+       
+      2010
+       - 
+      2018
+       
+      <span>
+        <span>
+          
+          <br />
+        </span>
+        <span>
+          Highlighting conditions containing
+          <br />
+        </span>
+      </span>
+      <div
+        className="keywordsText"
+      >
+        <span>
+           
+          test1
+           
+        </span>
+        <span>
+           , 
+        </span>
+        <span>
+           
+          test2
+           
+        </span>
+      </div>
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SearchBar/SuggestedKeywords default 1`] = `
 <div
   className="visualization"
