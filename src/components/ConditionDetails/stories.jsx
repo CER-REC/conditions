@@ -3,10 +3,19 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import ConditionDetails from '.';
 import ReadMe from './README.md';
 
-const instruments = [
+const data = [
   {
-    effectiveDate: '2014-10-24',
-    instrument: 'XO-001-2018',
+    instrument: {
+      number: 'XO-001-2018',
+      issuanceDate: '2014-10-24',
+      effectiveDate: '2014-10-24',
+      sunsetDate: '2019-01-30',
+      status: 'inProgress',
+      location: 'Albuquerque, NM',
+      type: 'Construction of Oil Pipeline',
+      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
+
+    },
     conditions: [
       {
         length: 3,
@@ -25,8 +34,17 @@ const instruments = [
     ],
   },
   {
-    effectiveDate: '2014-10-24',
-    instrument: 'XO-001-2018',
+    instrument: {
+      number: 'XO-002-2018',
+      issuanceDate: '2014-10-24',
+      effectiveDate: '2014-10-24',
+      sunsetDate: '2019-01-30',
+      status: 'inProgress',
+      location: 'Albuquerque, NM',
+      type: 'Construction of Oil Pipeline',
+      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
+
+    },
     conditions: [
       {
         length: 2,
@@ -45,8 +63,17 @@ const instruments = [
     ],
   },
   {
-    effectiveDate: '2014-10-24',
-    instrument: 'XO-001-2018',
+    instrument: {
+      number: 'XO-003-2018',
+      issuanceDate: '2014-10-24',
+      effectiveDate: '2014-10-24',
+      sunsetDate: '2019-01-30',
+      status: 'inProgress',
+      location: 'Albuquerque, NM',
+      type: 'Construction of Oil Pipeline',
+      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
+
+    },
     conditions: [
       {
         length: 1,
@@ -65,8 +92,17 @@ const instruments = [
     ],
   },
   {
-    effectiveDate: '2014-10-24',
-    instrument: 'XO-001-2018',
+    instrument: {
+      number: 'XO-004-2018',
+      issuanceDate: '2014-10-24',
+      effectiveDate: '2014-10-24',
+      sunsetDate: '2019-01-30',
+      status: 'inProgress',
+      location: 'Albuquerque, NM',
+      type: 'Construction of Oil Pipeline',
+      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
+
+    },
     conditions: [
       {
         length: 2,
@@ -85,8 +121,17 @@ const instruments = [
     ],
   },
   {
-    effectiveDate: '2014-10-24',
-    instrument: 'XO-001-2018',
+    instrument: {
+      number: 'XO-005-2018',
+      issuanceDate: '2014-10-24',
+      effectiveDate: '2014-10-24',
+      sunsetDate: '2019-01-30',
+      status: 'inProgress',
+      location: 'Albuquerque, NM',
+      type: 'Construction of Oil Pipeline',
+      activity: 'IT IS ORDERED that, pursuant to section 58 of the act, the applied-for Project as specified in good lord this is putting me to sleep just typing it out',
+
+    },
     conditions: [
       {
         length: 3,
@@ -107,7 +152,7 @@ const instruments = [
 ];
 
 const defaultProps = {
-  instruments,
+  data,
   selectedProject: 'Keystone XL',
   searchKeywords: {
     include: ['hello'],
@@ -117,13 +162,13 @@ const defaultProps = {
 storiesForComponent('Components|ConditionDetails', module, ReadMe)
   .add('default', () => (
     <ConditionDetails {...defaultProps} />
-  ))
-  // .add('default and searched', () => (
-  //   <ConditionDetails conditions={itemsBinned} maxWidth={99} maxValue={3} searched={searched} />
-  // ))
-  // .add('location weighted', () => (
-  //   <ConditionDetails conditions={items} maxWidth={256} />
-  // ))
-  // .add('location weighted and searched', () => (
-  //   <ConditionDetails conditions={items} maxWidth={256} searched={searched} />
-  // ));
+  ));
+// .add('default and searched', () => (
+//   <ConditionDetails conditions={itemsBinned} maxWidth={99} maxValue={3} searched={searched} />
+// ))
+// .add('location weighted', () => (
+//   <ConditionDetails conditions={items} maxWidth={256} />
+// ))
+// .add('location weighted and searched', () => (
+//   <ConditionDetails conditions={items} maxWidth={256} searched={searched} />
+// ));

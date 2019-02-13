@@ -16,7 +16,9 @@
   div {
     height: 100%;
     width: 100%;
-    background: lightgrey;
+    border: 1px solid rgba(255,0,255,.25);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   p {
     margin: 0;
