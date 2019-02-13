@@ -36,7 +36,7 @@
     "graphql-tag": "^2.10.0",
     "immutable": "^4.0.0-rc.12",
     "lodash.memoize": "^4.1.2",
-    "matter-js": "github:spenserj/matter-js#48c7552",
+    "matter-js": "github:spenserj/matter-js#dd02dba",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
