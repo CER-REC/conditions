@@ -133,5 +133,11 @@
   "jest-junit": {
     "suiteName": "Jest",
     "output": "./gl-junit.xml"
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "not dead",
+    "ie 11"
+  ]
 }
