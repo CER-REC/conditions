@@ -18,7 +18,7 @@ class ConditionDetails extends React.Component {
     //   children: [this.props.selectedProject],
     // };
     // return <SelectedGroupBar {...props} />;
-    return <p>Selected Project: {this.props.selectedProject}</p>;
+    return <React.Fragment><h2>Selected Project:</h2> <h1>{this.props.selectedProject}</h1></React.Fragment>;
   }
 
   renderTab(condition) {
@@ -111,7 +111,7 @@ class ConditionDetails extends React.Component {
     );
   }
 
-  renderItem(instrument, index) {
+  renderContent(instrument, index) {
     return (index === -1)
       ? this.renderInstrument(instrument)
       : this.renderCondition(instrument.conditions[index], instrument);
@@ -143,7 +143,7 @@ class ConditionDetails extends React.Component {
         <div className="gridCell header">{this.renderHeader()}</div>
         <div className="gridCell list">{this.renderList()}</div>
         <div className="gridCell blank" />
-        <div className="gridCell content">{this.renderItem(instrument, index)}</div>
+        <div className="gridCell content">{this.renderContent(instrument, index)}</div>
         <div className="gridCell details">{this.renderItemDetails(instrument, index)}</div>
       </section>
     );

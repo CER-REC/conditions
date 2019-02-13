@@ -18,22 +18,32 @@
   font-family: $fira-sans-condensed-light;
   font-size: 12px;
 
-  ul {
+  h1, h2, h3, h4, ul, p {
     margin: 0;
   }
 
-  p {
-    margin: 0;
+  h1 {
+    display: inline;
+    font-family: $fira-sans-condensed;
+    font-weight: bold;
+    font-size: 14px;
+
+    color: $Black51;
+  }
+
+  h2 {
+    display: inline;
+
+    font-family: $fira-sans-condensed;
+    font-size: 14px;
   }
 
   h3 {
-    margin: 0;
     padding-bottom: 0.8rem;
+    color: $Gray160;
   }
 
   h4 {
-    margin: 0;
-
     display: inline;
     font-family: $fira-sans-condensed;
 
