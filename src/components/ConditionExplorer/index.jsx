@@ -108,6 +108,7 @@ export default class ConditionExplorer extends React.Component {
   }
 
   testFontSize = () => {
+    if (!this.fontChangeRef.current) { return; }
     const { width, height, y } = this.fontChangeRef.current.getBBox();
     const newSize = { width, height, yOffset: height + y };
     const { fallbackFontSize } = this.state;
