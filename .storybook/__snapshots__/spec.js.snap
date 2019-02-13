@@ -5430,7 +5430,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywords default 1`] = `
     <div
       className="SuggestedKeywords"
     >
-      <span>
+      <span
+        className="selectFrom"
+      >
         Select from
         <br />
       </span>

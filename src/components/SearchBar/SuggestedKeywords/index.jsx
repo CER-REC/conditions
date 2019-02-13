@@ -14,7 +14,7 @@ library.add(
 const SuggestedKeywords = props => (
   <div className="SuggestedKeywords">
     <FormattedMessage id="components.searchBar.suggestedKeywords.selectFrom">
-      {text => (<span>{text}<br /></span>)}
+      {text => (<span className="selectFrom">{text}<br /></span>)}
     </FormattedMessage>
     <FormattedMessage id="components.searchBar.suggestedKeywords.suggestedKeywords">
       {text => (

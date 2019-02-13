@@ -1,28 +1,28 @@
 /*#region TypographyColors */
 
-$Black19: rgb(19,28,43);
-$Black51: rgb(51,51,51);
-$Black77: rgb(77, 77, 77);
-$Gray160: rgb(161,168,167);
-$VeryDarkGray: rgb(96,96,96);
-$general-text-2: rgb(128, 128, 128);
-$DarkGray: rgb(153,153,153);
-$LightGray:rgb(230,230,230) ;
+$Black19: rgb(19,28,43); // #131c2b
+$Black51: rgb(51,51,51); // #333333
+$Black77: rgb(77, 77, 77); // #4d4d4d
+$Gray160: rgb(161,168,167); // #a1a8a7
+$VeryDarkGray: rgb(96,96,96); // #606060
+$general-text-2: rgb(128, 128, 128); // #808080
+$DarkGray: rgb(153,153,153); // #999999
+$LightGray:rgb(230,230,230) ; // #e6e6e6
 
 /*#regionend*/
 
 
 /*#region Common */
 
-$LinksTextButtons: rgb(209, 5, 122);
-$AccessibilitySurround: rgb(56,7,177);
-$LightGreyBackground: rgb(228,228,228);
+$LinksTextButtons: rgb(209, 5, 122); // #d1057a
+$AccessibilitySurround: rgb(56,7,177); // #3807b1
+$LightGreyBackground: rgb(228,228,228); // #e4e4e4
 
 // Projects/conditions will have the following general styling:
-$MainOrange: rgb(238,97,41);
-$ProjectDotBase: rgb(161,168,167);
+$MainOrange: rgb(238,97,41); // #ee6129
+$ProjectDotBase: rgb(161,168,167); // #a1a8a7
 // Color oh so ever slightly different in search???
-$SearchKeyword: rgb(241,90,36);
+$SearchKeyword: rgb(241,90,36); // #f15a24
 
 $White: rgb(255,255,255);
 
@@ -33,7 +33,7 @@ $MapWheelColors: (
   Outline: rgb(209,5,122), // outline, inner colour 1 of company wheel
   InnerColourCompany1: rgb(64,84,183), // label company wheel
   InnerColourCompany2  : rgb(48,41,140), // inner colour 2 company wheel
-  InnerColourLocation1: rgb(239,182,82), // location inner coulour 1
+  InnerColourLocation1: rgb(239,182,82), // location inner colour 1
   InnerColourLocation2: rgb(242,207,102), // location inner colour 2
 );
 
