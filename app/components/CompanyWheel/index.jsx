@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Spring, animated } from 'react-spring';
 import './styles.scss';
@@ -13,6 +14,16 @@ const reservedDegrees = 30;
 const AnimatedWheelRay = animated(WheelRay);
 
 class CompanyWheel extends React.Component {
+  static propTypes = {
+    ringType: PropTypes.string,
+    itemsData: PropTypes.shape({
+      items: PropTypes.arrayOf(PropTypes.object).isRequired,
+      legendData: PropTypes.arrayOf(PropTypes.object).isRequired,
+    }).isRequired,
+    selectedRay: PropTypes.string,
+    selectRay: PropTypes.func.isRequired,
+  }
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +41,7 @@ class CompanyWheel extends React.Component {
     const degreesPerItem = degreesAvailForPlotting / items.length;
 
     const selectedIndex = items.findIndex(v => v._id === props.selectedRay);
-    let newRotation = prevState.newRotation;
+    let { newRotation } = prevState.newRotation;
     if (prevState.needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + (selectedIndex * degreesPerItem);
@@ -38,7 +49,6 @@ class CompanyWheel extends React.Component {
       newRotation += Math.abs(selectedIndex - prevState.selectedIndex) < items.length - 1
         ? ((selectedIndex - prevState.selectedIndex) * degreesPerItem)
         : -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
-      console.log('newRotation: ' +  newRotation, 'deltaRotation: ' + (selectedIndex - prevState.selectedIndex));
     }
 
     return {
@@ -127,15 +137,6 @@ class CompanyWheel extends React.Component {
     );
   }
 }
-
-CompanyWheel.propTypes = {
-  ringType: PropTypes.string,
-  itemsData: PropTypes.shape({
-    items: PropTypes.arrayOf(PropTypes.object).isRequired,
-    legendData: PropTypes.arrayOf(PropTypes.object).isRequired,
-  }).isRequired,
-  selectedRay: PropTypes.string,
-};
 
 CompanyWheel.defaultProps = {
   ringType: 'company',
