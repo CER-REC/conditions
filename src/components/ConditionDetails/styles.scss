@@ -5,7 +5,7 @@
   display: grid;
   height: 300px;
   width: 800px;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 24px 1fr;
   grid-template-columns: 150px 400px auto;
   grid-template-areas:
     "header   header  blank"
@@ -24,15 +24,18 @@
 
   h1 {
     display: inline;
-    font-family: $fira-sans-condensed;
-    font-weight: bold;
+    font-family: $fira-sans-condensed-bold;
     font-size: 14px;
+
+    line-height: 24px;
 
     color: $Black51;
   }
 
   h2 {
     display: inline;
+
+    line-height: 24px;
 
     font-family: $fira-sans-condensed;
     font-size: 14px;
@@ -53,6 +56,8 @@
   .header{
     grid-area: header;
     background-color: $LightGray;
+
+    padding-left: 10px;
   }
 
   .blank{
