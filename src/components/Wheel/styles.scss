@@ -1,0 +1,41 @@
+@import "../../styles/fontVariables.scss";
+
+.WheelContainer{
+  height: 500px;
+  width: 500px;
+  margin: 50px;
+  position: relative;
+
+  .MovingContainer{
+    height: 500px;
+    width:500px;
+    position: absolute;
+  }
+
+  .PullToSpin{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  button{
+    position: absolute;
+    top: 10px;
+    &.plus{
+      right: -10px
+    }
+    &.minus{
+      right: -50px
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 60px;
+    margin-top: -30px;
+    background: #ccc;
+  }
+}
