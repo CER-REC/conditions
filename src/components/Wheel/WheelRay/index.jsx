@@ -33,8 +33,8 @@ class WheelRay extends React.Component {
     const selectedIndex = currentIndex >= 0
       ? currentIndex : items.length + currentIndex;
 
+    let legendTracker = '';
     const rays = items.map((item, index) => {
-      const fill = (index === selectedIndex) ? 'blue' : 'red';
       let position = rotation + 90;
       const plotIndex = selectedIndex - index;
       if (plotIndex < 0) {
@@ -42,16 +42,13 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-      // position = 180 + position;
-      return (
+      const componentToReturn = (
         <g>
-          {
-            <text key={`1${item._id}`} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
-              {index}
-            </text>
-          }
+          <text key={`1${item._id}`} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
+            {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
+          </text>
           <rect
-            fill={fill}
+            fill="red"
             y="-181"
             height={(index === 0 ? '323px' : height)}
             width={width}
@@ -60,6 +57,8 @@ class WheelRay extends React.Component {
           />
         </g>
       );
+      legendTracker = item.company_name.charAt(0) === legendTracker ? legendTracker : item.company_name.charAt(0);
+      return componentToReturn;
     });
 
     return <React.Fragment>{rays}</React.Fragment>;

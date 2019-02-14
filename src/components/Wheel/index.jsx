@@ -39,7 +39,7 @@ class Wheel extends React.Component {
   static getDerivedStateFromProps(props, prevState) {
     const { items } = props.itemsData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
-    const degreesPerItem = degreesAvailForPlotting / items.length;
+    const degreesPerItem = degreesAvailForPlotting / (items.length);
 
     let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
