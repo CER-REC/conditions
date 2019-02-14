@@ -9,23 +9,36 @@
   column-gap:  calc(97px/10);
   margin: calc(97px/12*2);
 
-  .a {
+  .introduction {
     grid-column: span 12;
     grid-row: span 1;
   }
 
-  .b{
+  .explorer {
     grid-column: span 12;
     grid-row: span 1;
   }
 
-  .c{
+  .browseBy {
     grid-column: span 6;
     grid-row: span 1;
   }
 
-  .d{
+  .infoBar {
     grid-column: span 6;
     grid-row: span 1;
   }
+}
+
+.ViewOne.layoutOnly > section {
+  background: #F1F3F4;
+
+  &:after {
+    content: attr(class);
+    display: block;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  > * { display: none; }
 }
