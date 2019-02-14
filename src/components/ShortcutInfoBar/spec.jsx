@@ -3,20 +3,17 @@ import { shallow } from 'enzyme';
 
 import ShortcutInfoBar from '.';
 
-const handleInfoBar = false;
-const jumpToAbout = () => {};
-const openDataModal = () => {};
-const openScreenshotModal = () => {};
+const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|ShortcutInfoBar', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<ShortcutInfoBar
-        handleInfoBar={handleInfoBar}
-        jumpToAbout={jumpToAbout}
-        openDataModal={openDataModal}
-        openScreenshotModal={openScreenshotModal}
+        jumpToAbout={noop}
+        openDataModal={noop}
+        openScreenshotModal={noop}
       />);
     });
 
@@ -28,9 +25,9 @@ describe('Components|ShortcutInfoBar', () => {
       expect(wrapper.is('.ShortcutInfoBar')).toBe(true);
     });
 
-    test('should not show the info bar when it is closed', () => {
-      wrapper.setProps({ handleInfoBar: false });
-      expect(wrapper.find('InfoBar')).toHaveLength(0);
+    test('should show the info bar when it is clicked', () => {
+      wrapper.find('.InfoButton').simulate('click', eventFuncs);
+      expect(wrapper.find('.InfoBar')).toHaveLength(1);
     });
   });
 });

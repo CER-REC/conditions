@@ -3,14 +3,14 @@
 
 .ViewOne {
   box-sizing: border-box;
-  width: 1120px;
-  height: 900px;
+  width: 100%;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 10% auto 10%;
   row-gap: calc(97px/12);
   column-gap:  calc(97px/10);
-  margin: calc(97px/12*2);
+  padding: calc(97px/12*2);
 
   .introduction {
     grid-column: span 12;

@@ -23,20 +23,26 @@ library.add(
 );
 
 class ShortcutInfoBar extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { expanded: false };
+  }
+
+  toggleExpanded = () => this.setState(({ expanded }) => ({ expanded: !expanded }));
+
   infoButton() {
     return (
-      <div
+      <svg
+        viewBox="0 0 50 100"
         className="InfoButton"
-        {...handleInteraction(this.props.handleInfoBar)}
+        {...handleInteraction(this.toggleExpanded)}
       >
-        <svg viewBox="0 0 50 100">
-          <g transform="scale(3)">
-            <path fill="none" stroke="#fff" strokeMiterlimit={10} d="M8.3.5a7.8,7.8,0,1,0,7.8,7.8A7.81,7.81,0,0,0,8.3.5" />
-            <path fill="#fff" d="M6,7.2a4.3,4.3,0,0,1,1.8-.5c.9,0,1.7.5,1.7,1.3a9,9,0,0,1-.3,1.9s-.2.9-.3,1.2-.2.8.2,1,1.2-.4,1.2-.4l-.4,1.1a4,4,0,0,1-1.5.4,2.35,2.35,0,0,1-1.6-.5,2,2,0,0,1-.4-1.9c.1-.5.8-2.5.6-3S5.8,8,5.8,8Z" />
-            <path fill="#fff" d="M7.3,4.3A1.42,1.42,0,0,1,8.7,3,1.33,1.33,0,0,1,9.9,4.4,1.42,1.42,0,0,1,8.5,5.7,1.17,1.17,0,0,1,7.3,4.3" />
-          </g>
-        </svg>
-      </div>
+        <g transform="scale(3)">
+          <path fill="none" stroke="#fff" strokeMiterlimit={10} d="M8.3.5a7.8,7.8,0,1,0,7.8,7.8A7.81,7.81,0,0,0,8.3.5" />
+          <path fill="#fff" d="M6,7.2a4.3,4.3,0,0,1,1.8-.5c.9,0,1.7.5,1.7,1.3a9,9,0,0,1-.3,1.9s-.2.9-.3,1.2-.2.8.2,1,1.2-.4,1.2-.4l-.4,1.1a4,4,0,0,1-1.5.4,2.35,2.35,0,0,1-1.6-.5,2,2,0,0,1-.4-1.9c.1-.5.8-2.5.6-3S5.8,8,5.8,8Z" />
+          <path fill="#fff" d="M7.3,4.3A1.42,1.42,0,0,1,8.7,3,1.33,1.33,0,0,1,9.9,4.4,1.42,1.42,0,0,1,8.5,5.7,1.17,1.17,0,0,1,7.3,4.3" />
+        </g>
+      </svg>
     );
   }
 
@@ -59,8 +65,8 @@ class ShortcutInfoBar extends React.PureComponent {
   download() {
     return (
       <div className="Icons">
-        Download:
-        <svg>
+        Download:&nbsp;
+        <svg width="40" height="16">
           <g
             key="file-download"
             icon="file-download"
@@ -93,7 +99,7 @@ class ShortcutInfoBar extends React.PureComponent {
   }
 
   infoBar() {
-    if (!this.props.handleInfoBar) { return null; }
+    if (!this.state.expanded) { return null; }
     const shareIconsList = ['twitter', 'facebook', 'linkedin'];
     const emailIcon = (
       <ShareIcon
@@ -110,13 +116,11 @@ class ShortcutInfoBar extends React.PureComponent {
     return (
       <div className="InfoBar">
         {this.aboutThisVisualization()}
-        <br />
         <div className="Icons">
-          Share:
+          Share:&nbsp;
           {emailIcon}
           {shareIcons}
         </div>
-        <br />
         {this.download()}
       </div>
     );
@@ -125,15 +129,17 @@ class ShortcutInfoBar extends React.PureComponent {
   render() {
     return (
       <div className="ShortcutInfoBar">
-        {this.infoButton()}
-        {this.infoBar()}
+        <div className="Content">
+          {this.infoButton()}
+          {this.infoBar()}
+        </div>
+        <div className="clearfix" />
       </div>
     );
   }
 }
 
 ShortcutInfoBar.propTypes = {
-  handleInfoBar: PropTypes.bool.isRequired,
   jumpToAbout: PropTypes.func.isRequired,
   openDataModal: PropTypes.func.isRequired,
   openScreenshotModal: PropTypes.func.isRequired,
