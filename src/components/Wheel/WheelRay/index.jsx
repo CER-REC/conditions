@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 class WheelRay extends React.Component {
   static propTypes = {
+    wheelType: PropTypes.oneOf(['Company', 'Location']).isRequired,
     degreesPerItem: PropTypes.number.isRequired,
     reservedDegrees: PropTypes.number.isRequired,
     rotation: PropTypes.number.isRequired,
@@ -35,6 +36,7 @@ class WheelRay extends React.Component {
 
     let legendTracker = '';
     const rays = items.map((item, index) => {
+      if (index === selectedIndex) return;
       let position = rotation + 90;
       const plotIndex = selectedIndex - index;
       if (plotIndex < 0) {
@@ -42,9 +44,10 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
+      const transform = `translate(371 209) rotate(${position}, 0, 245)`;
       const componentToReturn = (
-        <g>
-          <text key={`1${item._id}`} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
+        <g key={`${item._id}`}>
+          <text key={`a${item._id}`} className="TextLabels" transform={transform}>
             {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
           </text>
           <rect
@@ -53,20 +56,18 @@ class WheelRay extends React.Component {
             height={(index === 0 ? '323px' : height)}
             width={width}
             key={item._id}
-            transform={`translate(371 209) rotate(${position}, 0, 245)`}
+            transform={transform}
           />
         </g>
       );
-      legendTracker = item.company_name.charAt(0) === legendTracker ? legendTracker : item.company_name.charAt(0);
+      legendTracker = item.company_name.charAt(0) === legendTracker
+        ? legendTracker : item.company_name.charAt(0);
+      // eslint-disable-next-line consistent-return
       return componentToReturn;
     });
 
     return <React.Fragment>{rays}</React.Fragment>;
   }
 }
-
-WheelRay.propTypes = {
-
-};
 
 export default WheelRay;

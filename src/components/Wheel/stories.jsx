@@ -8,7 +8,7 @@ import ReadMe from './README.md';
 import { locationWheelData, companyWheelData } from './randomDataSample';
 
 const props = {
-  ringType: 'Company',
+  wheelType: 'Company',
 };
 
 storiesForComponent('Components|Wheel', module, ReadMe)
@@ -31,7 +31,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
     <Wheel
       {...getInteractionProps()}
       {...props}
-      ringType="Location"
+      wheelType ="Location"
       itemsData={locationWheelData}
     />
   ));

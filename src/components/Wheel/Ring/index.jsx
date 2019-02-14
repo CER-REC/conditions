@@ -1,5 +1,5 @@
 import React from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const Ring = ({ ringType }) => {
@@ -52,7 +52,7 @@ const Ring = ({ ringType }) => {
 };
 
 Ring.propTypes = {
-  ringType: Proptypes.oneOf(['Company', 'Location']),
+  ringType: PropTypes.oneOf(['Company', 'Location']),
 };
 
 Ring.defaultProps = {

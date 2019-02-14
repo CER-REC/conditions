@@ -1,12 +1,12 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { Spring } from 'react-spring/renderprops';
-import { animated } from 'react-spring';
+import { Spring, animated } from 'react-spring/renderprops';
+// import { animated } from 'react-spring';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
 import Ring from './Ring';
-import WheelRayLegend from './WheelRayLegend';
+// import WheelRayLegend from './WheelRayLegend';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
 
@@ -16,7 +16,7 @@ const AnimatedWheelRay = animated(WheelRay);
 
 class Wheel extends React.Component {
   static propTypes = {
-    ringType: PropTypes.string,
+    wheelType: PropTypes.string,
     itemsData: PropTypes.shape({
       items: PropTypes.arrayOf(PropTypes.object).isRequired,
       legendData: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -33,6 +33,7 @@ class Wheel extends React.Component {
       degreesPerItem: 0,
       selectedIndex: 0,
       needsSpin: false,
+      unanimatedSpin: false,
     };
   }
 
@@ -67,21 +68,27 @@ class Wheel extends React.Component {
   onClickSpin = () => {
     const { items } = this.props.itemsData;
     const randomNum = Math.floor(Math.random() * items.length);
-    this.setState({ needsSpin: true });
+    this.setState({ needsSpin: true, unanimatedSpin: false });
     this.props.selectRay(items[randomNum]._id);
   };
 
   rotateWheelOneStep = (prev = false) => {
+    this.setState({ unanimatedSpin: false });
     const { items } = this.props.itemsData;
     const direction = prev ? -1 : 1;
     const newIndex = (this.state.selectedIndex + direction + items.length) % items.length;
     this.props.selectRay(items[newIndex]._id);
   };
 
+  stopWheel = (rotation) => {
+    this.setState({ unanimatedSpin: true, newRotation: rotation });
+  }
+
   render() {
     return (
       <div className="WheelContainer">
         <Spring
+          immediate={this.state.unanimatedSpin}
           config={{ tension: 50, clamp: true, mass: 0.7 }}
           from={{
             transformOrigin: '50% 50.31%',
@@ -94,8 +101,8 @@ class Wheel extends React.Component {
           }}
         >
           {props => (
-            <div className="MovingContainer" style={props}>
-              <svg viewBox="0 0 860 860">
+            <div className="MovingContainer">
+              <animated.svg viewBox="0 0 860 860" style={props}>
                 <g data-name="Group 3" transform="translate(-27.5 -122.8)">
                   {/* following outer limit lines can be deleted once everything is rendered.
                     It is an accurate representation of spacing */}
@@ -108,8 +115,10 @@ class Wheel extends React.Component {
                     <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
                       <circle className="cls-1" cx="264" cy="264" r="263.5" />
                     </g>
-                    <Ring ringType={this.props.ringType} />
+                    <Ring wheelType={this.props.wheelType} />
                     <AnimatedWheelRay
+                      stopWheel={this.stopWheel}
+                      wheelType={this.props.wheelType}
                       items={this.props.itemsData.items}
                       degreesPerItem={this.state.degreesPerItem}
                       reservedDegrees={reservedDegrees}
@@ -120,23 +129,23 @@ class Wheel extends React.Component {
                       legendPositionArray={this.props.itemsData.legendData}
                       {...props}
                     />
-                    {/* <WheelRayLegend
-                      rotation={props.rotation}
-                      ringType={this.props.ringType}
-                      legendPositionArray={this.props.itemsData.legendData}
-                      degreesPerItem={this.state.degreesPerItem}
-                      reservedDegrees={reservedDegrees}
-                    /> */}
                   </g>
                 </g>
-              </svg>
+              </animated.svg>
+              <div className="list">
+                {this.props.itemsData.items[(this.props.itemsData.items.length + (Math.round((props.rotation % 360)
+                        / (360 / this.props.itemsData.items.length))))
+                        % this.props.itemsData.items.length].company_name}
+              </div>
+              <button
+                onClick={() => this.stopWheel(-props.rotation)}
+                type="button"
+              >Stop Rotation
+              </button>
             </div>
           )
         }
         </Spring>
-        <div className="list">
-          Grey Pipe
-        </div>
         <button className="plus" onClick={() => this.rotateWheelOneStep(false)} type="button">+1</button>
         <button className="minus" onClick={() => this.rotateWheelOneStep(true)} type="button">-1</button>
         <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
@@ -146,7 +155,7 @@ class Wheel extends React.Component {
 }
 
 Wheel.defaultProps = {
-  ringType: 'company',
+  wheelType: 'company',
   selectedRay: null,
 };
 
