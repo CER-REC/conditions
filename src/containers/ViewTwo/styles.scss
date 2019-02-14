@@ -29,3 +29,16 @@
     grid-column: 60 / 119;
   }
 }
+
+.ViewTwo.layoutOnly > section {
+  background: #F1F3F4;
+
+  &:after {
+    content: attr(class);
+    display: block;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  > * { display: none; }
+}
