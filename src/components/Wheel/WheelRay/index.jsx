@@ -46,14 +46,14 @@ class WheelRay extends React.Component {
       return (
         <g>
           {
-            <text key={plotIndex} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
-              {this.props.legendPositionArray[index].classifier}
+            <text key={`1${item._id}`} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
+              {index}
             </text>
           }
           <rect
             fill={fill}
             y="-181"
-            height={(item._id === '5433ce88-f40d-4e90-84f9-980849a26910' ? '323px' : height)}
+            height={(index === 0 ? '323px' : height)}
             width={width}
             key={item._id}
             transform={`translate(371 209) rotate(${position}, 0, 245)`}

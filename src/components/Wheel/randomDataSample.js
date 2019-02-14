@@ -5297,7 +5297,7 @@ const calcRayLegendDataLocation = (classifier) => {
       ).length,
     });
   }
-  return WheelRayLegendData;
+  return WheelRayLegendData.items.sort((a, b) => (a.company_name < b.company_name ? -1 : 1));
 };
 
 const companyWheelData = calcRayLegendData(alphabet);

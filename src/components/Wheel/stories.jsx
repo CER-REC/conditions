@@ -14,7 +14,8 @@ const props = {
 storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
-    state: { selectedRay: '5433ce88-f40d-4e90-84f9-980849a26910' },
+    // state: { selectedRay: '5175c45d-b707-4fe6-8591-0f20ae479288' },
+    state: { selectedRay: '' },
     actions: {
       selectRay: () => selectedRay => ({ selectedRay }),
     },

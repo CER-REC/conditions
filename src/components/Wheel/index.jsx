@@ -41,7 +41,9 @@ class Wheel extends React.Component {
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / items.length;
 
-    const selectedIndex = items.findIndex(v => v._id === props.selectedRay);
+    let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
+    // eslint-disable-next-line prefer-destructuring
+    selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
     // eslint-disable-next-line prefer-destructuring
     let newRotation = prevState.newRotation;
     if (prevState.needsSpin) {
@@ -56,7 +58,7 @@ class Wheel extends React.Component {
     return {
       degreesPerItem,
       selectedIndex,
-      oldRotation: prevState.newRotation,
+      oldRotation: prevState.newRotation || 0,
       newRotation,
       needsSpin: false,
     };
