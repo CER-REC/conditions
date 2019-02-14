@@ -24,21 +24,21 @@
 
   h1 {
     display: inline;
+
+    line-height: 24px;
+
+    font-family: $fira-sans-condensed;
+    font-size: 14px;
+  }
+
+  h2 {
+    display: inline;
     font-family: $fira-sans-condensed-bold;
     font-size: 14px;
 
     line-height: 24px;
 
     color: $Black51;
-  }
-
-  h2 {
-    display: inline;
-
-    line-height: 24px;
-
-    font-family: $fira-sans-condensed;
-    font-size: 14px;
   }
 
   h3 {

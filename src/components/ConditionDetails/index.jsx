@@ -18,11 +18,15 @@ class ConditionDetails extends React.Component {
     //   children: [this.props.selectedProject],
     // };
     // return <SelectedGroupBar {...props} />;
-    return <React.Fragment><h2>Selected Project:</h2> <h1>{this.props.selectedProject}</h1></React.Fragment>;
+    return (
+      <React.Fragment>
+        <h1>Selected Project:</h1> <h2>{this.props.selectedProject}</h2>
+      </React.Fragment>
+    );
   }
 
-  renderTab(condition) {
-    const tabClass = (
+  renderListMarker(condition) {
+    const markerClass = (
       this.props.searchKeywords
       && searchMatch(
         condition.text,
@@ -32,7 +36,7 @@ class ConditionDetails extends React.Component {
     ) ? 'marked'
       : 'unmarked';
 
-    return <div className={tabClass} />;
+    return <div className={markerClass} />;
   }
 
   renderConditionBars(conditions, itemIdx) {
@@ -40,7 +44,7 @@ class ConditionDetails extends React.Component {
       out.push(
         // eslint-disable-next-line react/no-array-index-key
         <React.Fragment key={`${itemIdx}-${idx}`}>
-          {this.renderTab(condition)}
+          {this.renderListMarker(condition)}
           <BarContainer
             items={
               [
@@ -61,8 +65,7 @@ class ConditionDetails extends React.Component {
   }
 
   renderList() {
-    const elements = [];
-    this.props.data.forEach((instrument, idx) => {
+    const elements = this.props.data.reduce((out, instrument, idx) => {
       const instrumentHeading = (
         // eslint-disable-next-line react/no-array-index-key
         <React.Fragment key={instrument.instrumentNumber}>
@@ -73,8 +76,10 @@ class ConditionDetails extends React.Component {
 
       const conditions = this.renderConditionBars(instrument.conditions, idx);
 
-      elements.push(instrumentHeading, ...conditions);
-    });
+      out.push(instrumentHeading, ...conditions);
+
+      return out;
+    }, []);
 
     return (
       <List
@@ -117,21 +122,21 @@ class ConditionDetails extends React.Component {
       : this.renderCondition(instrument.conditions[index], instrument);
   }
 
-  renderItemDetails(instrument, index) {
+  renderDetails(instrument, index) {
     if (index === -1) return null;
 
-    const details = instrument.conditions[index].details;
+    const { details } = instrument.conditions[index];
     return (
-        <React.Fragment>
-          <h3>Selected Condition Feature</h3>
-          <div className="contentBlock"><h4>Theme:</h4> {details.theme}</div>
-          <div className="contentBlock"><h4>Instrument:</h4> {details.instrument}</div>
-          <div className="contentBlock"><h4>Phase:</h4> {details.phase}</div>
-          <div className="contentBlock"><h4>Type:</h4> {details.type}</div>
-          <div className="contentBlock"><h4>Status:</h4> {details.status}</div>
-          <div className="contentBlock"><h4>Filing:</h4> {details.filing}</div>
-        </React.Fragment>
-      );
+      <React.Fragment>
+        <h3>Selected Condition Feature</h3>
+        <div className="contentBlock"><h4>Theme:</h4> {details.theme}</div>
+        <div className="contentBlock"><h4>Instrument:</h4> {details.instrument}</div>
+        <div className="contentBlock"><h4>Phase:</h4> {details.phase}</div>
+        <div className="contentBlock"><h4>Type:</h4> {details.type}</div>
+        <div className="contentBlock"><h4>Status:</h4> {details.status}</div>
+        <div className="contentBlock"><h4>Filing:</h4> {details.filing}</div>
+      </React.Fragment>
+    );
   }
 
   render() {
@@ -144,7 +149,7 @@ class ConditionDetails extends React.Component {
         <div className="gridCell list">{this.renderList()}</div>
         <div className="gridCell blank" />
         <div className="gridCell content">{this.renderContent(instrument, index)}</div>
-        <div className="gridCell details">{this.renderItemDetails(instrument, index)}</div>
+        <div className="gridCell details">{this.renderDetails(instrument, index)}</div>
       </section>
     );
   }
