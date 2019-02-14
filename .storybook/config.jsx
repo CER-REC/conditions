@@ -60,12 +60,24 @@ addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 // automatically import all files named stories.jsx
 const documentationStories = requireContext('../documentation/', true, /stories.jsx$/);
 const componentStories = requireContext('../src/', true, /stories.jsx$/);
+const containerOrder = [
+  './containers/ViewOne/stories.jsx',
+  './containers/ViewTwo/stories.jsx',
+  './containers/ViewThree/stories.jsx',
+  './containers/Footer/stories.jsx',
+];
 function loadStories() {
   documentationStories.keys()
     // Sorting Documentation|Introduction to the top
     .sort((a, b) => (a.startsWith('./Introduction/') ? -1 : a.localeCompare(b)))
     .forEach(filename => documentationStories(filename));
-  componentStories.keys().forEach(filename => componentStories(filename));
+  componentStories.keys()
+    .sort((a, b) => {
+      if (!a.startsWith('./containers/') || !b.startsWith('./containers/')) { return 0; }
+      // This is a container, so sort it by usage
+      return containerOrder.indexOf(a) - containerOrder.indexOf(b);
+    })
+    .forEach(filename => componentStories(filename));
 }
 
 enzyme({ adapter: new Adapter() });
