@@ -1,13 +1,14 @@
 .ViewThree {
   box-sizing: border-box;
-  width: 1120px;
-  height: 900px;
+  width: 100%;
+  min-height: 500px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 40% 25% 35%;
   row-gap: calc(97px/12);
   column-gap:  calc(97px/10);
-  margin: calc(97px/12*2) 0;
+  padding: calc(97px/12*2);
+
+  > section { overflow: hidden; }
 
   .features {
     grid-column: span 2;

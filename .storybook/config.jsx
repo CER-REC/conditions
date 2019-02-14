@@ -34,6 +34,10 @@ const viewports = {
   },
   desktop: {
     name: 'Desktop',
+    styles: { width: '1170px', height: '1024px' },
+  },
+  laptop: {
+    name: 'Laptop',
     styles: { width: '970px', height: '1024px' },
   },
   ipad: {

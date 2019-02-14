@@ -44,9 +44,7 @@ const projectData = [
 
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
-    <section className="searchHeader">
-      <div style={{ height: '10%' }} />,
-    </section>
+    <section className="searchHeader" />
     <section className="wheel">
       <Wheel
         ringType="Location"
@@ -68,9 +66,7 @@ const ViewTwo = props => (
         isProjectLegend
       />
     </section>
-    <section className="conditions">
-      <div style={{ height: '10%' }} />
-    </section>
+    <section className="conditions" />
   </section>
 );
 

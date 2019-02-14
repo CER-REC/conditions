@@ -1,12 +1,14 @@
 .ViewTwo {
   box-sizing: border-box;
-  width: 1120px;
-  height: 900px;
+  width: 100%;
+  min-height: 500px;
   display: grid;
   grid-template-columns: repeat(120, 1fr);
   grid-template-rows: 10% 50% 35%;
   row-gap: calc(970px/120);
-  margin: calc(970px/120*2) 0;
+  padding: calc(970px/120*2) 0;
+
+  > section { overflow: hidden; }
 
   .searchHeader{
     grid-column: 3 / 119;

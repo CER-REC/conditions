@@ -1,12 +1,12 @@
 .Footer {
   box-sizing: border-box;
-  width: 1120px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   row-gap: calc(97px/12);
   column-gap:  calc(97px/10);
-  margin: calc(97px/12*2);
+  padding: calc(97px/12*2);
 
   .infoBar {
     grid-column-start: 3;

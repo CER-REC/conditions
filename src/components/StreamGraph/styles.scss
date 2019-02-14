@@ -1,14 +1,7 @@
+@import '../../styles/colors';
+
 .Streamgraph {
   cursor: pointer;
-  color: #333333;
-  height: 300px;
-  width: 600px;
 
-  .Axis-label {
-    color: #333333;
-  }
-
-  h1 {
-    color: #333333;
-  }
+  &, .Axis-label, h1 { color: $Black51; }
 }
