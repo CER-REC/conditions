@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import MainInfoBar from '../../components/MainInfoBar';
 import './styles.scss';
 
-const Footer = (props) => {
-  if (props.components.length === 0) return null;
-  const { components } = props;
-  return (
-    <section className="Footer">
-      <section className="a" style={{ background: '#F1F3F4' }}>
-        { components[0] }
-      </section>
+const Footer = props => (
+  <section className={classNames('Footer', { layoutOnly: props.layoutOnly })}>
+    <section className="infoBar">
+      <MainInfoBar />
     </section>
-  );
-};
+  </section>
+);
 
 Footer.propTypes = {
-  components: PropTypes.arrayOf(PropTypes.node).isRequired,
+  layoutOnly: PropTypes.bool,
 };
+
+Footer.defaultProps = {
+  layoutOnly: PropTypes.false,
+};
+
 export default Footer;

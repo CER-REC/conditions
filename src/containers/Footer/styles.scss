@@ -8,10 +8,23 @@
   column-gap:  calc(97px/10);
   margin: calc(97px/12*2);
 
-  .a{
+  .infoBar {
     grid-column-start: 3;
     grid-column-end: 11;
     grid-row: span 1;
     justify-self: stretch;
   }
+}
+
+.Footer.layoutOnly > section {
+  background: #F1F3F4;
+
+  &:after {
+    content: attr(class);
+    display: block;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  > * { display: none; }
 }
