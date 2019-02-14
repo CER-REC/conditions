@@ -1,0 +1,35 @@
+@import "../../../styles/fontVariables.scss";
+@import "../../../styles/colors.scss";
+
+.Tab {
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  padding: 5px;
+  font-size: 11px;
+  color: $Gray160;
+  border: 1px solid;
+  font-family: $fira-sans-condensed;
+
+  .tabText{
+    vertical-align: top;
+  }
+  .iconSvg {
+    padding-left: 5px;
+    .filterIcon {
+      stroke: $LinksTextButtons;
+      stroke-width: 20;
+      fill: none;
+    }
+    .findIcon{
+      path {
+        fill: $LinksTextButtons;
+      }
+      ellipse{
+        fill: $White;
+        stroke: $LinksTextButtons;
+        stroke-width: 20;
+      }
+    }
+  }
+}
