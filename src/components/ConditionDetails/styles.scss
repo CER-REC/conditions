@@ -4,12 +4,21 @@
 .ConditionDetails {
   display: grid;
   height: 300px;
-  width: 800px;
+  width: 550px;
   grid-template-rows: 24px 1fr;
-  grid-template-columns: 150px 400px auto;
+  grid-template-columns: 150px 400px;
   grid-template-areas:
-    "header   header  blank"
-    "list content details";
+    "header header"
+    "list   content";
+
+  &.expanded {
+    width: 800px;
+
+    grid-template-columns: 150px 400px auto;
+    grid-template-areas:
+      "header header  blank"
+      "list   content details";
+  }
 
   position: relative;
   text-align: left;
@@ -51,6 +60,13 @@
     font-family: $fira-sans-condensed;
 
     color: $Gray160;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    outline: inherit;
   }
 
   .header{
@@ -115,4 +131,18 @@
     overflow-x: hidden;
   }
 
+  .asterisk {
+    color: #d1057a;
+    font-family: 'FiraSansCondensedBold';
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+  }
+
+  .instrumentLink {
+    color: #d1057a;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+  }
 }

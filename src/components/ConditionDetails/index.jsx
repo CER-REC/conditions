@@ -18,7 +18,10 @@ class ConditionDetails extends React.Component {
   renderHeader = () => (
     <React.Fragment>
       <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
-      <h2>{this.props.selectedProject}</h2>
+      <button type="button" {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}>
+        <h2>{this.props.selectedProject}</h2>
+        <span className="asterisk">*</span>
+      </button>
     </React.Fragment>
   )
 
@@ -36,53 +39,80 @@ class ConditionDetails extends React.Component {
     return <div className={markerClass} />;
   }
 
-  renderConditionBars = (conditions, itemIdx) => conditions.reduce(
-    (out, condition, idx) => {
-      out.push(
-        // eslint-disable-next-line react/no-array-index-key
-        <React.Fragment key={`${itemIdx}-${idx}`}>
-          {this.renderListMarker(condition)}
-          <BarContainer
-            items={
-              [
-                {
-                  value: condition.length,
-                  fill: condition.fill,
-                },
-              ]
-            }
-            size="6"
-            maxValue="25"
-            key={idx.toString()}
-          />
-        </React.Fragment>,
-      );
-      return out;
-    }, [],
-  )
-
   renderList = () => {
-    const elements = this.props.data.reduce((out, instrument, idx) => {
-      const instrumentHeading = (
-        // eslint-disable-next-line react/no-array-index-key
-        <React.Fragment key={instrument.instrumentNumber}>
+    let count = 0;
+    let selected;
+    const elements = [];
+
+    const onChange = (element) => {
+      const { 'data-instrument-index': instrumentIndex, 'data-item-index': itemIndex } = element.props;
+      this.props.updateSelectedItem(instrumentIndex, itemIndex);
+    };
+
+    this.props.data.forEach((instrument, instrumentIndex) => {
+      elements.push((
+        <div
+          key={instrument.instrumentNumber}
+          data-instrument-index={instrumentIndex}
+          data-item-index={-1}
+        >
           <div className="unmarked" />
           <h4>{instrument.instrumentNumber}</h4>
-        </React.Fragment>
-      );
+        </div>
+      ));
 
-      const conditions = this.renderConditionBars(instrument.conditions, idx);
+      if (!selected
+        && this.props.selectedItem.instrumentIndex === instrumentIndex
+        && this.props.selectedItem.itemIndex === -1
+      ) {
+        selected = count;
+      } else {
+        count += 1;
+      }
 
-      out.push(instrumentHeading, ...conditions);
+      instrument.conditions.forEach((condition, conditionIndex) => {
+        elements.push(
+          <div
+            // eslint-disable-next-line react/no-array-index-key
+            key={`${instrumentIndex}-${conditionIndex}`}
+            data-instrument-index={instrumentIndex}
+            data-item-index={conditionIndex}
+          >
+            {this.renderListMarker(condition)}
+            <BarContainer
+              items={
+                [
+                  {
+                    value: condition.length,
+                    fill: condition.fill,
+                  },
+                ]
+              }
+              size="6"
+              maxValue="25"
+              // eslint-disable-next-line react/no-array-index-key
+              key={conditionIndex}
 
-      return out;
-    }, []);
+            />
+          </div>,
+        );
+
+        if (!selected
+          && this.props.selectedItem.instrumentIndex === instrumentIndex
+          && this.props.selectedItem.itemIndex === conditionIndex
+        ) {
+          selected = count;
+        } else {
+          count += 1;
+        }
+      });
+    });
 
     return (
       <List
         items={elements}
-        onChange={handleInteraction}
-        selected={this.props.selectedItem}
+        onChange={i => onChange(elements[i])}
+        selected={selected}
       />
     );
   }
@@ -93,12 +123,22 @@ class ConditionDetails extends React.Component {
     </div>
   )
 
+  renderInstrumentLink = instrumentNumber => (
+    <button
+      type="button"
+      className="instrumentLink"
+      {...handleInteraction(this.props.openIntermediatePopup, instrumentNumber)}
+    >
+      {instrumentNumber}
+    </button>
+  )
+
   renderInstrument = data => (
     <React.Fragment>
       {this.renderContentBlock('components.conditionDetails.issuanceDate', data.issuanceDate, true)}
-      {this.renderContentBlock('components.conditionDetails.instrumentNumber', data.instrumentNumber, true)}
+      {this.renderContentBlock('components.conditionDetails.instrumentNumber', this.renderInstrumentLink(data.instrumentNumber), true)}
       {this.renderContentBlock('components.conditionDetails.effectiveDate', data.effectiveDate, true)}
-      {this.renderContentBlock('components.conditionDetails.status', data.status, true)}
+      {this.renderContentBlock('components.conditionDetails.status', <FormattedMessage id={`common.${data.status}`} />, true)}
       {this.renderContentBlock('components.conditionDetails.sunsetDate', data.sunsetDate, true)}
       {this.renderContentBlock('components.conditionDetails.location', data.location, true)}
       {this.renderContentBlock('components.conditionDetails.type', data.type)}
@@ -109,7 +149,7 @@ class ConditionDetails extends React.Component {
   renderCondition = (condition, data) => (
     <React.Fragment>
       {this.renderContentBlock('components.conditionDetails.effectiveDate', data.effectiveDate, true)}
-      {this.renderContentBlock('components.conditionDetails.instrumentNumber', data.instrumentNumber, true)}
+      {this.renderContentBlock('components.conditionDetails.instrumentNumber', this.renderInstrumentLink(data.instrumentNumber), true)}
       {this.renderContentBlock('components.conditionDetails.keywords', condition.keywords.join(', '))}
       {this.renderContentBlock('components.conditionDetails.text', condition.text)}
     </React.Fragment>
@@ -141,19 +181,27 @@ class ConditionDetails extends React.Component {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;
 
-    return (
-      <section className="ConditionDetails">
-        <div className="gridCell header">{this.renderHeader()}</div>
-        <div className="gridCell list">{this.renderList()}</div>
-        <div className="gridCell blank" />
-        <div className="gridCell content">{this.renderContent(instrument, index)}</div>
-        <div className="gridCell details">{this.renderDetails(instrument, index)}</div>
-      </section>
-    );
+    return this.props.expanded
+      ? (
+        <section className="ConditionDetails expanded">
+          <div className="gridCell header">{this.renderHeader()}</div>
+          <div className="gridCell list">{this.renderList()}</div>
+          <div className="gridCell blank" />
+          <div className="gridCell content">{this.renderContent(instrument, index)}</div>
+          <div className="gridCell details">{this.renderDetails(instrument, index)}</div>
+        </section>
+      ) : (
+        <section className="ConditionDetails">
+          <div className="gridCell header">{this.renderHeader()}</div>
+          <div className="gridCell list">{this.renderList()}</div>
+          <div className="gridCell content">{this.renderContent(instrument, index)}</div>
+        </section>
+      );
   }
 }
 
 ConditionDetails.propTypes = {
+  isExpandable: PropTypes.bool,
   expanded: PropTypes.bool,
   selectedProject: PropTypes.string.isRequired,
   searchKeywords: PropTypes.shape({
@@ -164,15 +212,18 @@ ConditionDetails.propTypes = {
     instrument: PropTypes.object,
     conditions: PropTypes.arrayOf(PropTypes.object),
   })).isRequired,
-
   selectedItem: PropTypes.shape({
     instrumentIndex: PropTypes.number,
     itemIndex: PropTypes.number,
   }),
+  openProjectDetails: PropTypes.func.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  updateSelectedItem: PropTypes.func.isRequired,
 };
 
 ConditionDetails.defaultProps = {
-  expanded: true,
+  isExpandable: false,
+  expanded: false,
   searchKeywords: { include: [], exclude: [] },
   selectedItem: { instrumentIndex: 0, itemIndex: -1 },
 };

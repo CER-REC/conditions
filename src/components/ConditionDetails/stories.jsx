@@ -118,22 +118,21 @@ const defaultProps = {
   searchKeywords: {
     include: ['hello'],
   },
+  selectedItem: { instrumentIndex: 1, itemIndex: -1 },
+  openProjectDetails: project => alert(`Project details for: ${project}`),
+  openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
+  updateSelectedItem: (instrumentIndex, itemIndex) => alert(`${instrumentIndex}, ${itemIndex}`),
 };
 
 storiesForComponent('Components|ConditionDetails', module, ReadMe)
   .add('default', () => (
     <ConditionDetails {...defaultProps} />
   ))
-  .add('condition', () => (
-    <ConditionDetails {...defaultProps} selectedItem={{ instrumentIndex: 0, itemIndex: 1 }} />
+  .add('expandable', () => (
+    <ConditionDetails
+      {...defaultProps}
+      selectedItem={{ instrumentIndex: 1, itemIndex: 0 }}
+      expandable
+      expanded
+    />
   ));
-
-// .add('default and searched', () => (
-//   <ConditionDetails conditions={itemsBinned} maxWidth={99} maxValue={3} searched={searched} />
-// ))
-// .add('location weighted', () => (
-//   <ConditionDetails conditions={items} maxWidth={256} />
-// ))
-// .add('location weighted and searched', () => (
-//   <ConditionDetails conditions={items} maxWidth={256} searched={searched} />
-// ));
