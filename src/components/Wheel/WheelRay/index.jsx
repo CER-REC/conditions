@@ -11,6 +11,10 @@ class WheelRay extends React.Component {
     rotation: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
+    legendPositionArray: PropTypes.arrayOf(PropTypes.shape({
+      classifier: PropTypes.string,
+      count: PropTypes.number,
+    })).isRequired,
   }
 
   shouldComponentUpdate(nextProps) {
@@ -31,23 +35,30 @@ class WheelRay extends React.Component {
 
     const rays = items.map((item, index) => {
       const fill = (index === selectedIndex) ? 'blue' : 'red';
-      let position = -rotation + 90;
+      let position = rotation + 90;
       const plotIndex = selectedIndex - index;
       if (plotIndex < 0) {
-        position += (plotIndex * degreesPerItem) - halfReservedDegrees;
+        position -= (plotIndex * degreesPerItem) - halfReservedDegrees;
       } else if (plotIndex > 0) {
-        position += halfReservedDegrees + (plotIndex * degreesPerItem);
+        position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-
+      // position = 180 + position;
       return (
-        <rect
-          fill={fill}
-          y="-181"
-          height={(item._id === '5433ce88-f40d-4e90-84f9-980849a26910' ? '323px' : height)}
-          width={width}
-          key={item._id}
-          transform={`translate(371 209) rotate(${position}, 0, 245)`}
-        />
+        <g>
+          {
+            <text key={plotIndex} className="TextLabels" transform={`translate(371 209) rotate(${position}, 0, 245)`}>
+              {this.props.legendPositionArray[index].classifier}
+            </text>
+          }
+          <rect
+            fill={fill}
+            y="-181"
+            height={(item._id === '5433ce88-f40d-4e90-84f9-980849a26910' ? '323px' : height)}
+            width={width}
+            key={item._id}
+            transform={`translate(371 209) rotate(${position}, 0, 245)`}
+          />
+        </g>
       );
     });
 

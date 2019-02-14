@@ -83,12 +83,12 @@ class Wheel extends React.Component {
           config={{ tension: 50, clamp: true, mass: 0.7 }}
           from={{
             transformOrigin: '50% 50.31%',
-            transform: `rotate(${-this.state.oldRotation}deg)`,
-            rotation: this.state.oldRotation,
+            transform: `rotate(${this.state.oldRotation}deg)`,
+            rotation: -this.state.oldRotation,
           }}
           to={{
             transform: `rotate(${this.state.newRotation}deg)`,
-            rotation: this.state.newRotation,
+            rotation: -this.state.newRotation,
           }}
         >
           {props => (
@@ -115,15 +115,16 @@ class Wheel extends React.Component {
                         Math.round((props.rotation % 360)
                         / (360 / this.props.itemsData.items.length))
                         % this.props.itemsData.items.length}
+                      legendPositionArray={this.props.itemsData.legendData}
                       {...props}
                     />
-                    <WheelRayLegend
+                    {/* <WheelRayLegend
                       rotation={props.rotation}
                       ringType={this.props.ringType}
                       legendPositionArray={this.props.itemsData.legendData}
                       degreesPerItem={this.state.degreesPerItem}
                       reservedDegrees={reservedDegrees}
-                    />
+                    /> */}
                   </g>
                 </g>
               </svg>
