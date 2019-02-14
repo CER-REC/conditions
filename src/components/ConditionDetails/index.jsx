@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
+import { FormattedMessage } from 'react-intl';
+
 import handleInteraction from '../../utilities/handleInteraction';
+
+import './styles.scss';
+
 import List from '../List';
 import BarContainer from '../BarContainer';
 
@@ -11,21 +15,14 @@ const searchMatch = (text, include, exclude) => (
 );
 
 class ConditionDetails extends React.Component {
-  renderHeader() {
-    // const props = {
-    //   group: 'components.conditionDetails.selectedProject',
-    //   backgroundColor: 'lightgray',
-    //   children: [this.props.selectedProject],
-    // };
-    // return <SelectedGroupBar {...props} />;
-    return (
-      <React.Fragment>
-        <h1>Selected Project:</h1> <h2>{this.props.selectedProject}</h2>
-      </React.Fragment>
-    );
-  }
+  renderHeader = () => (
+    <React.Fragment>
+      <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
+      <h2>{this.props.selectedProject}</h2>
+    </React.Fragment>
+  )
 
-  renderListMarker(condition) {
+  renderListMarker = (condition) => {
     const markerClass = (
       this.props.searchKeywords
       && searchMatch(
@@ -39,8 +36,8 @@ class ConditionDetails extends React.Component {
     return <div className={markerClass} />;
   }
 
-  renderConditionBars(conditions, itemIdx) {
-    return conditions.reduce((out, condition, idx) => {
+  renderConditionBars = (conditions, itemIdx) => conditions.reduce(
+    (out, condition, idx) => {
       out.push(
         // eslint-disable-next-line react/no-array-index-key
         <React.Fragment key={`${itemIdx}-${idx}`}>
@@ -61,10 +58,10 @@ class ConditionDetails extends React.Component {
         </React.Fragment>,
       );
       return out;
-    }, []);
-  }
+    }, [],
+  )
 
-  renderList() {
+  renderList = () => {
     const elements = this.props.data.reduce((out, instrument, idx) => {
       const instrumentHeading = (
         // eslint-disable-next-line react/no-array-index-key
@@ -90,51 +87,52 @@ class ConditionDetails extends React.Component {
     );
   }
 
-  renderInstrument(data) {
-    return (
-      <React.Fragment>
-        <div className="contentBlock half"><h4>Issuance Date:</h4> {data.issuanceDate}</div>
-        <div className="contentBlock half"><h4>Instrument #:</h4> {data.instrumentNumber}</div>
-        <div className="contentBlock half"><h4>Effective Date:</h4> {data.effectiveDate}</div>
-        <div className="contentBlock half"><h4>Instrument Status:</h4> {data.status}</div>
-        <div className="contentBlock half"><h4>Sunset Date:</h4> {data.sunsetDate}</div>
-        <div className="contentBlock half"><h4>Location:</h4> {data.location}</div>
-        <div className="contentBlock"><h4>Instrument Type:</h4> {data.type}</div>
-        <div className="contentBlock"><h4>Instrument Activity:</h4> {data.activity}</div>
-      </React.Fragment>
-    );
-  }
+  renderContentBlock = (id, content, isHalf) => (
+    <div className={`contentBlock ${(isHalf ? 'half' : '')}`}>
+      <FormattedMessage id={id} tagName="h4" />: {content}
+    </div>
+  )
 
-  renderCondition(condition, data) {
-    return (
-      <React.Fragment>
-        <div className="contentBlock half"><h4>Effective Date:</h4> {data.effectiveDate}</div>
-        <div className="contentBlock half"><h4>Instrument #:</h4> {data.instrumentNumber}</div>
-        <div className="contentBlock"><h4>Keyword(s):</h4> {condition.keywords.join(', ')}</div>
-        <div className="contentBlock"><h4>Text:</h4> {condition.text}</div>
-      </React.Fragment>
-    );
-  }
+  renderInstrument = data => (
+    <React.Fragment>
+      {this.renderContentBlock('components.conditionDetails.issuanceDate', data.issuanceDate, true)}
+      {this.renderContentBlock('components.conditionDetails.instrumentNumber', data.instrumentNumber, true)}
+      {this.renderContentBlock('components.conditionDetails.effectiveDate', data.effectiveDate, true)}
+      {this.renderContentBlock('components.conditionDetails.status', data.status, true)}
+      {this.renderContentBlock('components.conditionDetails.sunsetDate', data.sunsetDate, true)}
+      {this.renderContentBlock('components.conditionDetails.location', data.location, true)}
+      {this.renderContentBlock('components.conditionDetails.type', data.type)}
+      {this.renderContentBlock('components.conditionDetails.activity', data.activity)}
+    </React.Fragment>
+  )
 
-  renderContent(instrument, index) {
-    return (index === -1)
-      ? this.renderInstrument(instrument)
-      : this.renderCondition(instrument.conditions[index], instrument);
-  }
+  renderCondition = (condition, data) => (
+    <React.Fragment>
+      {this.renderContentBlock('components.conditionDetails.effectiveDate', data.effectiveDate, true)}
+      {this.renderContentBlock('components.conditionDetails.instrumentNumber', data.instrumentNumber, true)}
+      {this.renderContentBlock('components.conditionDetails.keywords', condition.keywords.join(', '))}
+      {this.renderContentBlock('components.conditionDetails.text', condition.text)}
+    </React.Fragment>
+  )
 
-  renderDetails(instrument, index) {
+  renderContent = (instrument, index) => ((index === -1)
+    ? this.renderInstrument(instrument)
+    : this.renderCondition(instrument.conditions[index], instrument)
+  )
+
+  renderDetails = (instrument, index) => {
     if (index === -1) return null;
 
     const { details } = instrument.conditions[index];
     return (
       <React.Fragment>
-        <h3>Selected Condition Feature</h3>
-        <div className="contentBlock"><h4>Theme:</h4> {details.theme}</div>
-        <div className="contentBlock"><h4>Instrument:</h4> {details.instrument}</div>
-        <div className="contentBlock"><h4>Phase:</h4> {details.phase}</div>
-        <div className="contentBlock"><h4>Type:</h4> {details.type}</div>
-        <div className="contentBlock"><h4>Status:</h4> {details.status}</div>
-        <div className="contentBlock"><h4>Filing:</h4> {details.filing}</div>
+        <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
+        {this.renderContentBlock('common.features.theme', <FormattedMessage id={`common.${details.theme}`} />)}
+        {this.renderContentBlock('common.features.instrument', <FormattedMessage id={`common.${details.instrument}`} />)}
+        {this.renderContentBlock('common.features.phase', <FormattedMessage id={`common.${details.phase}`} />)}
+        {this.renderContentBlock('common.features.type', <FormattedMessage id={`common.${details.type}`} />)}
+        {this.renderContentBlock('common.features.status', <FormattedMessage id={`common.${details.status}`} />)}
+        {this.renderContentBlock('common.features.filing', <FormattedMessage id={`common.${details.filing}`} />)}
       </React.Fragment>
     );
   }

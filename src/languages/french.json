@@ -83,6 +83,20 @@
     }
   },
   "components": {
+    "conditionDetails": {
+      "selectedProject": "",
+      "instrumentNumber": "",
+      "location": "",
+      "issuanceDate": "",
+      "effectiveDate": "",
+      "sunsetDate": "",
+      "status": "",
+      "type": "",
+      "activity": "",
+      "keywords": "",
+      "text": "",
+      "selectedConditionFeature": ""
+    },
     "featureMenu": {
       "dropDownTitle": ""
     },

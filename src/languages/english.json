@@ -89,7 +89,18 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Selected Project:"
+      "selectedProject": "Selected Project: ",
+      "instrumentNumber": "Instrument Number",
+      "location": "Location",
+      "issuanceDate": "Issuance Date",
+      "effectiveDate": "Effective Date",
+      "sunsetDate": "Sunset Date",
+      "status": "Instrument Status",
+      "type": "Instrument Type",
+      "activity": "Instrument Activity",
+      "keywords": "Keywords",
+      "text": "Text",
+      "selectedConditionFeature": "Selected Condition Feature"
     },
     "featureDescription": {
       "theme": "Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. \n Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes."
