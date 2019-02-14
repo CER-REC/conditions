@@ -32,10 +32,10 @@ export const projectYear = yearRange => ({
 });
 
 const initialState = {
-  included: [''],
-  excluded: [''],
+  included: [],
+  excluded: [],
   findAny: true,
-  projectStatus: [''],
+  projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'],
   projectYear: {
     start: 2010,
     end: 2018,
