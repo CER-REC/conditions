@@ -1,3 +1,6 @@
+@import '../../styles/fontVariables';
+@import '../../styles/colors';
+
 .ViewOne {
   box-sizing: border-box;
   width: 1120px;
@@ -12,6 +15,20 @@
   .introduction {
     grid-column: span 12;
     grid-row: span 1;
+
+    h1 {
+      font-family: $fira-sans-condensed-bold;
+      font-size: 24px;
+      color: $Black51;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    span {
+      font-family: $fira-sans-condensed;
+      font-size: 14px;
+      color: $Black19;
+    }
   }
 
   .explorer {

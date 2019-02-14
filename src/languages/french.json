@@ -140,16 +140,22 @@
       "xAxis": "",
       "yAxis": "",
       "title": ""
+    },
+    "browseByBtn": {
+      "projectsBy": "",
+      "conditionsBy": "",
+      "company": "",
+      "location": ""
     }
   },
   "views": {
     "view1": {
+      "header": {
+        "title": "",
+        "subtitle": ""
+      },
       "footer": {
-        "skip": "",
-        "projectsBy": "",
-        "conditionsBy": "",
-        "company": "",
-        "location": ""
+        "skip": ""
       }
     }
   }

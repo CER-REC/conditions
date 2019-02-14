@@ -16,6 +16,12 @@ exports[`Storyshots Components|AboutTextBox Basic view 1`] = `
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
     </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
+    </p>
   </div>
 </div>
 `;
@@ -392,13 +398,12 @@ exports[`Storyshots Components|BrowseByBtn browseByCompany 1`] = `
       className="BrowseByBtn-ButtonText"
     >
       <span>
-        Projects by
-      </span>
-       
-      <span
-        className="LastWord"
-      >
-        Company
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
+        </span>
       </span>
     </div>
     <svg
@@ -464,13 +469,12 @@ exports[`Storyshots Components|BrowseByBtn browseByLocation 1`] = `
       className="BrowseByBtn-ButtonText"
     >
       <span>
-        Projects by
-      </span>
-       
-      <span
-        className="LastWord"
-      >
-        Company
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
+        </span>
       </span>
     </div>
     <svg
@@ -536,13 +540,12 @@ exports[`Storyshots Components|BrowseByBtn with state toggle 1`] = `
       className="BrowseByBtn-ButtonText"
     >
       <span>
-        Conditions by
-      </span>
-       
-      <span
-        className="LastWord"
-      >
-        Location
+        Conditions by 
+        <span
+          className="LastWord"
+        >
+          Location
+        </span>
       </span>
     </div>
     <svg
@@ -5682,7 +5685,7 @@ exports[`Storyshots Components|SelectedGroupBar default 1`] = `
     <p
       style={
         Object {
-          "background": "tomato",
+          "background": "lightgrey",
           "fontSize": 16,
         }
       }
