@@ -9,38 +9,51 @@
   column-gap:  calc(97px/10);
   margin: calc(97px/12*2) 0;
 
-  .a {
+  .features {
     grid-column: span 2;
     grid-row: span 1;
   }
 
-  .b{
+  .legend {
     grid-column: span 4;
     grid-row: span 1;
   }
 
-  .c{
+  .chart {
     grid-column: span 6;
     grid-row: span 1;
   }
 
-  .d{
+  .featureDescription {
     grid-column: span 6;
     grid-row: span 1;
   }
 
-  .e{
+  .typesDescription {
     grid-column: span 6;
     grid-row: span 1;
   }
 
-  .f{
+  .selectedCompany {
     grid-column: span 4;
     grid-row: span 1;
   }
 
-  .g{
+  .conditionDetails {
     grid-column: span 8;
     grid-row: span 1;
   }
+}
+
+.ViewThree.layoutOnly > section {
+  background: #F1F3F4;
+
+  &:after {
+    content: attr(class);
+    display: block;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  > * { display: none; }
 }
