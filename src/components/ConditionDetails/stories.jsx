@@ -132,7 +132,7 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
     <ConditionDetails
       {...defaultProps}
       selectedItem={{ instrumentIndex: 1, itemIndex: 0 }}
-      expandable
+      isExpandable
       expanded
     />
   ));

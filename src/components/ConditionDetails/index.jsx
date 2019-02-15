@@ -14,14 +14,41 @@ const searchMatch = (text, include, exclude) => (
   && !(exclude && exclude.find(word => text.match(word)))
 );
 
+const lessButton = (
+  <svg className="arrow" viewBox="0 0 20 20">
+    <polyline points="2,4 12,11 2,18 2,4" />
+  </svg>
+);
+
+const moreButton = (
+  <svg className="arrow">
+
+  </svg>
+);
+
+
 class ConditionDetails extends React.Component {
   renderHeader = () => (
     <React.Fragment>
       <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
-      <button type="button" {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}>
-        <h2>{this.props.selectedProject}</h2>
-        <span className="asterisk">*</span>
+      <button
+        type="button"
+        className="openProject"
+        {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
+      >
+        <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
       </button>
+      {this.props.isExpandable
+        ? (
+          <button
+            type="button"
+            className="toggleExpand"
+            {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
+          >
+            {this.props.expanded ? lessButton : moreButton}
+          </button>
+        ) : null
+      }
     </React.Fragment>
   )
 
