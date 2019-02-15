@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import WheelRayLegend from '.';
 
@@ -25,10 +24,14 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
 
     const wrapperSetup = (propOverrides) => {
       const props = Object.assign({
-        legendPositionArray: mockData,
+        items: mockData,
         reservedDegrees,
         degreesPerItem,
         rotation: 90,
+        selectRay: '',
+        wheelType: 'Company',
+        currentIndex: 0,
+
       }, propOverrides);
 
       const wrapper = shallow(<WheelRayLegend {...props} />);

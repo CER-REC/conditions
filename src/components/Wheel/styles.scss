@@ -1,21 +1,20 @@
 @import "../../styles/fontVariables.scss";
 
 .WheelContainer{
-  height: 500px;
-  width: 500px;
-  margin: 50px;
+  width:100%;
+  padding-top: 100%;
   position: relative;
 
   .MovingContainer{
-    height: 500px;
-    width:500px;
+    width:100%;
+    top: 0;
     position: absolute;
   }
 
   .PullToSpin{
     position: absolute;
     top: 0px;
-    right: 0px;
+    right: -50px;
   }
 
   button{

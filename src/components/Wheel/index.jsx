@@ -10,7 +10,7 @@ import Ring from './Ring';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
 
-const reservedDegrees = 30;
+const reservedDegrees = 18;
 
 const AnimatedWheelRay = animated(WheelRay);
 
@@ -40,7 +40,7 @@ class Wheel extends React.Component {
   static getDerivedStateFromProps(props, prevState) {
     const { items } = props.itemsData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
-    const degreesPerItem = degreesAvailForPlotting / (items.length);
+    const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
 
     let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
@@ -102,53 +102,60 @@ class Wheel extends React.Component {
         >
           {props => (
             <div className="MovingContainer">
-              <animated.svg viewBox="0 0 860 860" style={props}>
-                <g data-name="Group 3" transform="translate(-27.5 -122.8)">
-                  {/* following outer limit lines can be deleted once everything is rendered.
-                    It is an accurate representation of spacing */}
-                  <g className="OuterLimitCircle OutterCircles" transform="translate(27.5 125.5)">
-                    <circle cx="430" cy="430" r="426" />
-                  </g>
-                  <g data-name="wheelGroup" transform="translate(86 102)">
-                    {/* following inner limit lines can be deleted once everything is rendered.
-                    It is an accurate representation of spacing */}
-                    <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
-                      <circle className="cls-1" cx="264" cy="264" r="263.5" />
+              <svg viewBox="0 0 860 860">
+                <animated.g style={props}>
+                  <g data-name="Group 3" transform="translate(-27.5 -122.8)">
+                    {/* following outer limit lines can be deleted once everything is rendered.
+                      It is an accurate representation of spacing */}
+                    <g className="OuterLimitCircle OutterCircles" transform="translate(27.5 125.5)">
+                      <circle cx="430" cy="430" r="426" />
                     </g>
-                    <Ring wheelType={this.props.wheelType} />
-                    <AnimatedWheelRay
-                      stopWheel={this.stopWheel}
-                      wheelType={this.props.wheelType}
-                      items={this.props.itemsData.items}
-                      degreesPerItem={this.state.degreesPerItem}
-                      reservedDegrees={reservedDegrees}
-                      currentIndex={
-                        Math.round((props.rotation % 360)
-                        / (360 / this.props.itemsData.items.length))
-                        % this.props.itemsData.items.length}
-                      legendPositionArray={this.props.itemsData.legendData}
-                      {...props}
-                    />
+                    <g data-name="wheelGroup" transform="translate(86 102)">
+                      {/* following inner limit lines can be deleted once everything is rendered.
+                      It is an accurate representation of spacing */}
+                      <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
+                        <circle className="cls-1" cx="264" cy="264" r="263.5" />
+                      </g>
+                      <Ring wheelType={this.props.wheelType} />
+                      <AnimatedWheelRay
+                        stopWheel={this.stopWheel}
+                        wheelType={this.props.wheelType}
+                        items={this.props.itemsData.items}
+                        degreesPerItem={this.state.degreesPerItem}
+                        reservedDegrees={reservedDegrees}
+                        currentIndex={
+                          Math.round((props.rotation % 360)
+                          / (360 / this.props.itemsData.items.length))
+                          % this.props.itemsData.items.length}
+                        legendPositionArray={this.props.itemsData.legendData}
+                        {...props}
+                      />
+                    </g>
                   </g>
+                </animated.g>
+                <g transform="scale(2)">
+                  <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
                 </g>
-              </animated.svg>
+              </svg>
               <div className="list">
-                {this.props.itemsData.items[(this.props.itemsData.items.length + (Math.round((props.rotation % 360)
-                        / (360 / this.props.itemsData.items.length))))
-                        % this.props.itemsData.items.length].company_name}
+                {/* Doing this calculation twice, maybe better to simplify */}
+                {this.props.itemsData.items[
+                  (this.props.itemsData.items.length + (Math.round((props.rotation % 360)
+                    / (360 / this.props.itemsData.items.length))))
+                    % this.props.itemsData.items.length
+                ].company_name}
               </div>
               <button
                 onClick={() => this.stopWheel(-props.rotation)}
                 type="button"
               >Stop Rotation
               </button>
+              <button className="plus" onClick={() => this.rotateWheelOneStep(false)} type="button">+1</button>
+              <button className="minus" onClick={() => this.rotateWheelOneStep(true)} type="button">-1</button>
             </div>
           )
         }
         </Spring>
-        <button className="plus" onClick={() => this.rotateWheelOneStep(false)} type="button">+1</button>
-        <button className="minus" onClick={() => this.rotateWheelOneStep(true)} type="button">-1</button>
-        <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
       </div>
     );
   }

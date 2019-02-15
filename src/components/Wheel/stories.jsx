@@ -21,17 +21,19 @@ storiesForComponent('Components|Wheel', module, ReadMe)
     },
   }))
   .add('default', () => (
-    <Wheel
-      {...getInteractionProps()}
-      {...props}
-      itemsData={companyWheelData}
-    />
+    <div width="300px">
+      <Wheel
+        {...getInteractionProps()}
+        {...props}
+        itemsData={companyWheelData}
+      />
+    </div>
   ))
   .add('location props', () => (
     <Wheel
       {...getInteractionProps()}
       {...props}
-      wheelType ="Location"
+      wheelType="Location"
       itemsData={locationWheelData}
     />
   ));

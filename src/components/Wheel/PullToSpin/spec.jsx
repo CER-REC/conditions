@@ -10,11 +10,11 @@ describe('Components|Wheel/PullToSpin', () => {
   let wrapper;
   describe('with default props', () => {
     beforeEach(() => {
-      wrapper = shallow(<PullToSpin onSpinClick={noop} />);
+      wrapper = shallow(<PullToSpin onClickSpin={noop} />);
     });
 
-    test('should render an svg with className PullToSpin', () => {
-      expect(wrapper.type()).toBe('svg');
+    test('should render an g with className PullToSpin', () => {
+      expect(wrapper.type()).toBe('g');
       expect(wrapper.hasClass('PullToSpin')).toBe(true);
     });
 

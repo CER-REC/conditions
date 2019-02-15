@@ -2,9 +2,8 @@
 @import '../../../styles/fontVariables.scss';
 
 .PullToSpin{
-  height: 110px;
+  // height: 110px;
   transform-origin: top;
-  transform: rotate(2deg);
 
   .PullMessage{
     fill: #A1A8A7;
@@ -49,7 +48,6 @@
   }
 
   .PullSpinRect{
-
     transform:translate(159.71px, 300.23px) rotate(-60.92deg);
     stroke:#d1057a;
     stroke-miterlimit:10;

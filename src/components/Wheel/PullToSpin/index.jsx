@@ -20,7 +20,8 @@ class PullToSpin extends React.Component {
 
   render() {
     return (
-      <svg className="PullToSpin" xmlns="http://www.w3.org/2000/svg" viewBox="310 -5 110 80">
+      // <svg className="PullToSpin" xmlns="http://www.w3.org/2000/svg" viewBox="310 -5 110 80">
+      <g className="PullToSpin">
         <g className="PullSpinArrow">
           <path id="ArrowLine" className="ArrowLine" d="M312.82,2.1c33.41,15.77,62.69,37.61,85.51,65.32" />
           <path d="M390.13,65.41a.5.5,0,0,1,.63-.34l7.39,2.2L397,59.64a.5.5,0,0,1,1-.15l1.24,8.41a.5.5,0,0,1-.64.56L390.47,66a.5.5,0,0,1-.34-.63Z" />
@@ -51,7 +52,8 @@ class PullToSpin extends React.Component {
             )}
           </Spring>
         </g>
-      </svg>
+      </g>
+      // </svg>
     );
   }
 }
