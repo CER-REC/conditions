@@ -29,7 +29,7 @@ describe('Components|Wheel/PullToSpin', () => {
     let callback;
     beforeEach(() => {
       callback = jest.fn();
-      wrapper = shallow(<PullToSpin onSpinClick={callback} />);
+      wrapper = shallow(<PullToSpin onClickSpin={callback} />);
     });
 
     test('should trigger the callback function passed in', () => {

@@ -1,12 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Spring, animated } from 'react-spring/renderprops';
-// import { animated } from 'react-spring';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
 import Ring from './Ring';
-// import WheelRayLegend from './WheelRayLegend';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
 
@@ -116,7 +114,7 @@ class Wheel extends React.Component {
                       <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
                         <circle className="cls-1" cx="264" cy="264" r="263.5" />
                       </g>
-                      <Ring wheelType={this.props.wheelType} />
+                      <Ring ringType={this.props.wheelType} />
                       <AnimatedWheelRay
                         stopWheel={this.stopWheel}
                         wheelType={this.props.wheelType}

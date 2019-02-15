@@ -47,11 +47,11 @@ class WheelRay extends React.Component {
       }
       const transform = `translate(371 209) rotate(${position}, 0, 245)`;
       const componentToReturn = (
-        <g key={`${item._id}`}>
-          <text key={`a${item._id}`} className="TextLabels" transform={transform}>
+        <g key={`${item._id}`} transform={transform}>
+          <text key={`a${item._id}`} className="TextLabels">
             {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
           </text>
-          <g transform={`translate(371 209) rotate(${position}, 0, 245 )`}>
+          <g>
             <g style={{ transform: 'translate(0px, -19px) rotate(-90deg)' }}>
               <BarContainer
                 className="WheelBar"

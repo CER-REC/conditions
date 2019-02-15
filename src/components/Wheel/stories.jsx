@@ -5,7 +5,7 @@ import withStatus from '../../../.storybook/addon-status';
 import Wheel from '.';
 import ReadMe from './README.md';
 
-import { locationWheelData, companyWheelData } from './randomDataSample';
+import { companyWheelData as wheelData } from './randomDataSample';
 
 const props = {
   wheelType: 'Company',
@@ -25,7 +25,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       <Wheel
         {...getInteractionProps()}
         {...props}
-        itemsData={companyWheelData}
+        itemsData={wheelData}
       />
     </div>
   ))
@@ -34,6 +34,6 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       {...getInteractionProps()}
       {...props}
       wheelType="Location"
-      itemsData={locationWheelData}
+      itemsData={wheelData}
     />
   ));

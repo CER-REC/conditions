@@ -1,40 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import WheelRayLegend from '.';
+import WheelRay from '.';
 
-const mockData = [
-  { legend: 'A', count: 30 },
-  { legend: 'B', count: 30 },
-  { legend: 'C', count: 30 },
-  { legend: 'D', count: 30 },
-  { legend: 'E', count: 30 },
-  { legend: 'E', count: 30 },
-  { legend: 'F', count: 30 },
-  { legend: 'G', count: 30 },
-  { legend: 'H', count: 30 },
-  { legend: 'I', count: 30 },
-  { legend: 'J', count: 30 },
-];
+import { companyWheelData as wheelData } from '../randomDataSample';
 
-describe('Components|CompanyWheel/WheelRayLegend', () => {
+describe('Components|CompanyWheel/WheelRay', () => {
   describe('with default props', () => {
     const reservedDegrees = 30;
-    const degreesPerItem = (360 - reservedDegrees) / (mockData.length * 30);
+    const degreesPerItem = (360 - reservedDegrees) / (wheelData.items.length - 1);
 
     const wrapperSetup = (propOverrides) => {
       const props = Object.assign({
-        items: mockData,
+        items: wheelData.items,
         reservedDegrees,
         degreesPerItem,
-        rotation: 90,
+        rotation: 0,
         selectRay: '',
         wheelType: 'Company',
         currentIndex: 0,
-
       }, propOverrides);
 
-      const wrapper = shallow(<WheelRayLegend {...props} />);
+      const wrapper = shallow(<WheelRay {...props} />);
 
       return {
         props,
@@ -44,19 +31,35 @@ describe('Components|CompanyWheel/WheelRayLegend', () => {
 
     it('should render and return a react fragment', () => {
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.type()).to.equal(React.Fragment);
+      expect(wrapper.type()).toBe(React.Fragment);
     });
 
-    it('should render a ray at position 0');
+    it('should render the same amount of items as the length of the array passed less 1', () => {
+      const { wrapper } = wrapperSetup({});
+      expect(wrapper.children()).toHaveLength(wheelData.items.length - 1);
+    });
 
-    it('should render the same amount of items as the length of the array passed');
+    it('should not render anything between ROTATION +/- (reserved degrees/2)', () => {
+      const { wrapper } = wrapperSetup({});
+      expect(wrapper.children()).not.toHaveProperty('transform', `translate(371 209) rotate(${wrapper.rotate}, 0, 245)`);
+      expect(wrapper.children()).not.toHaveProperty('transform', `translate(371 209) rotate(${wrapper.rotation - (wrapper.reservedDegrees / 2)}, 0, 245)`);
+      expect(wrapper.children()).not.toHaveProperty('transform', `translate(371 209) rotate(${wrapper.rotation + (wrapper.reservedDegrees / 2)}, 0, 245)`);
+    });
 
-    it('should not render anything between 90 +/- (reserved degrees/2) unless is at the 90 degrees position');
+    // it('should render an item before the gap', () => {
+    //   const { wrapper } = wrapperSetup({});
+    //   const elementBefore = 'translate(371 209) rotate(405.00000000000006, 0, 245)';
+    //   console.log(wrapper.children().find('g').debug());
+    //   expect(wrapper.children().find('g').every('g')).not.
+    // toHaveSty('transform', 'translate(371 209) rotate(405.00000000000006, 0, 245)');
+    // });
 
-    it('should render an item before the gap');
-
-    it('should render an item at 90 degrees');
-
-    it('should render an item after the gap');
+    // it('should render an item after the gap', () => {
+    //   const { wrapper } = wrapperSetup({});
+    //   expect(wrapper.children())
+    // .toHaveProperty('transform',
+    // `translate(371 209) rotate(${wrapper.rotation + (wrapper.reservedDegrees / 2) +
+    // wrapper.degreesPerItem}, 0, 245)`);
+    // });
   });
 });
