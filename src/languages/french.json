@@ -24,7 +24,7 @@
       "administrative": "",
       "environmentalProtection": "",
       "integrityManagement": "",
-      "standardCondtion": ""
+      "standardCondition": ""
     },
     "instrument": {
       "category": {
@@ -85,6 +85,17 @@
   "components": {
     "featureMenu": {
       "dropDownTitle": ""
+    },
+    "featureTypesDescription": {
+      "theme": {
+        "security": "",
+        "managementSystem": "",
+        "financial": ""
+      },
+      "instrument": {
+        "routing": "",
+        "construction": ""
+      }
     },
     "instrumentsLegend": {
       "all": ""

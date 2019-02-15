@@ -1715,6 +1715,110 @@ exports[`Storyshots Components|CircleContainer with text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ConditionExplorer default 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="ConditionExplorer"
+    height="500"
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width="500"
+  >
+    <g
+      className="keyword color0 textVisible"
+    >
+      <text
+        style={
+          Object {
+            "fontFamily": "Sans Serif",
+            "visibility": "hidden",
+          }
+        }
+      >
+        abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ -., 0123456789 ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ ùûüÿ€àâæçéèêëïîôœ
+      </text>
+      <text
+        style={
+          Object {
+            "fontFamily": "Sans Serif",
+            "visibility": "hidden",
+          }
+        }
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionExplorer physics disabled 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="ConditionExplorer"
+    height="500"
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width="500"
+  >
+    <g
+      className="keyword color0 textVisible"
+    >
+      <text
+        style={
+          Object {
+            "fontFamily": "Sans Serif",
+            "visibility": "hidden",
+          }
+        }
+      >
+        abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ -., 0123456789 ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ ùûüÿ€àâæçéèêëïîôœ
+      </text>
+      <text
+        style={
+          Object {
+            "fontFamily": "Sans Serif",
+            "visibility": "hidden",
+          }
+        }
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionExplorer/Fallback documentation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionExplorer"
+  >
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionExplorer"
+  >
+    <div />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
 <div
   className="visualization"
@@ -1777,6 +1881,102 @@ exports[`Storyshots Components|FeatureFlag Without color 1`] = `
       }
       title="Theme - Damage Prevention - 1"
     />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="FeatureTypesDescription"
+  >
+    <h4
+      data-heading="security"
+    >
+      Security
+    </h4>
+    <p>
+      Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+    </p>
+    <h4
+      data-heading="managementSystem"
+    >
+      Management System
+    </h4>
+    <p>
+      Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+    </p>
+    <h4
+      data-heading="financial"
+    >
+      Financial
+    </h4>
+    <p>
+      Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="FeatureTypesDescription"
+  >
+    <h4
+      data-heading="routing"
+    >
+      Routing
+    </h4>
+    <p>
+      <span
+        className="color-routing"
+      >
+        OPL
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
+    <p>
+      <span
+        className="color-routing"
+      >
+        GPL
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
+    <h4
+      data-heading="construction"
+    >
+      Construction
+    </h4>
+    <p>
+      <span
+        className="color-construction"
+      >
+        GC
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
+    <p>
+      <span
+        className="color-construction"
+      >
+        OC
+      </span>
+      <span>
+        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+      </span>
+    </p>
   </div>
 </div>
 `;
@@ -3745,6 +3945,12 @@ exports[`Storyshots Components|List selected 1`] = `
     </ul>
   </div>
 </div>
+`;
+
+exports[`Storyshots Components|LocationWheelMinimap default 1`] = `
+<div
+  className="visualization"
+/>
 `;
 
 exports[`Storyshots Components|MainInfoBar default 1`] = `

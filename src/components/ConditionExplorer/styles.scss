@@ -1,0 +1,44 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fontVariables.scss';
+
+.ConditionExplorer {
+  .keyword {
+    user-select: none;
+
+    &.color0 { fill: #D7DBD9; }
+    &.color1 { fill: #E2DCD7; }
+    &.color2 { fill: #E0DCE0; }
+
+    rect, path {
+      opacity: 1;
+      transition: opacity 1s 3s;
+    }
+
+    text {
+      // TODO: These font styles are from the prototype, and not found in the
+      // design document. We need to provide an issue for the design document
+      // and have these recorded or changed.
+      font-family: $fira-sans-condensed-light;
+      fill: rgb(149, 127, 109);
+      // font-size: 12px;
+      transition: fill 1s, font-size 1s;
+    }
+
+    &.textVisible {
+      rect, path {
+        /* Disable the transition when it becomes visible, so it appears immediately */
+        transition: none;
+        opacity: 0;
+      }
+
+      text {
+        fill: rgb(17, 17, 17);
+      }
+    }
+  }
+
+  .guide {
+    fill: #fff;
+    stroke: $LinksTextButtons;
+  }
+}
