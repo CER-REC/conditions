@@ -95,7 +95,9 @@
       "activity": "",
       "keywords": "",
       "text": "",
-      "selectedConditionFeature": ""
+      "selectedConditionFeature": "",
+      "more": "",
+      "less": ""
     },
     "featureMenu": {
       "dropDownTitle": ""

@@ -5,17 +5,17 @@
 
   display: grid;
   height: 300px;
-  width: 550px;
+  width: 600px;
   grid-template-rows: 24px 1fr;
-  grid-template-columns: 150px 400px;
+  grid-template-columns: 150px 450px;
   grid-template-areas:
     "header header"
     "list   content";
 
   &.expanded {
-    width: 800px;
+    width: 820px;
 
-    grid-template-columns: 150px 400px auto;
+    grid-template-columns: 150px 450px auto;
     grid-template-areas:
       "header header  blank"
       "list   content details";
@@ -46,6 +46,7 @@
     font-family: $fira-sans-condensed-bold;
     font-size: 14px;
 
+    text-decoration: underline;
     // line-height: 24px;
 
     color: $Black51;
