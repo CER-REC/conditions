@@ -100,7 +100,9 @@
       "activity": "Instrument Activity",
       "keywords": "Keywords",
       "text": "Text",
-      "selectedConditionFeature": "Selected Condition Feature"
+      "selectedConditionFeature": "Selected Condition Feature",
+      "more": "More",
+      "less": "Less"
     },
     "featureDescription": {
       "theme": "Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. \n Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes."

@@ -1,4 +1,5 @@
 import React from 'react';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import ConditionDetails from '.';
 import ReadMe from './README.md';
@@ -125,6 +126,7 @@ const defaultProps = {
 };
 
 storiesForComponent('Components|ConditionDetails', module, ReadMe)
+  .addDecorator(withInteraction({ actions: ['toggleExpanded'] }))
   .add('default', () => (
     <ConditionDetails {...defaultProps} />
   ))
@@ -133,6 +135,7 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
       {...defaultProps}
       selectedItem={{ instrumentIndex: 1, itemIndex: 0 }}
       isExpandable
-      expanded
+      {...getInteractionProps()}
+      expanded={getInteractionProps().expanded}
     />
-  ));
+  ), { interaction: { actions: { toggleExpanded: () => expand => ({ expanded: expand }) } } });

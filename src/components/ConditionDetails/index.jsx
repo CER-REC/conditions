@@ -15,17 +15,26 @@ const searchMatch = (text, include, exclude) => (
 );
 
 const lessButton = (
-  <svg className="arrow" viewBox="0 0 20 20">
-    <polyline points="2,4 12,11 2,18 2,4" />
-  </svg>
+  <React.Fragment>
+    <FormattedMessage id="components.conditionDetails.less">
+      {text => <h1 className="upperCase">{text}</h1>}
+    </FormattedMessage>
+    <svg className="arrow" viewBox="0 0 16 24">
+      <polyline points="4,4 12,12.5 4,20 4,4" />
+    </svg>
+  </React.Fragment>
 );
 
 const moreButton = (
-  <svg className="arrow">
-
-  </svg>
+  <React.Fragment>
+    <svg className="arrow" viewBox="0 0 16 24">
+      <polyline points="12,4 4,12.5 12,20 12,4" />
+    </svg>
+    <FormattedMessage id="components.conditionDetails.more">
+      {text => <h1 className="upperCase">{text}</h1>}
+    </FormattedMessage>
+  </React.Fragment>
 );
-
 
 class ConditionDetails extends React.Component {
   renderHeader = () => (
@@ -245,6 +254,7 @@ ConditionDetails.propTypes = {
   }),
   openProjectDetails: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
+  toggleExpand: PropTypes.func.isRequired,
   updateSelectedItem: PropTypes.func.isRequired,
 };
 
