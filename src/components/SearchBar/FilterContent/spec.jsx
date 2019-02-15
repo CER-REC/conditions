@@ -389,24 +389,17 @@ describe('Components|SearchBar/FilterContent', () => {
     });
     test('onDrag move, will call its onYearSelect prop', () => {
       firstLi.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
-      firstLi.simulate('mouseMove', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
     test('onDrag Stop, onDragMove should not call its onYearSelect prop', () => {
       firstLi.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
-      firstLi.simulate('mouseMove', { ...eventFuncs, target: { value: '1970' } });
       expect(spy).toHaveBeenCalledTimes(1);
+      firstLi.simulate('mouseOver', { ...eventFuncs, target: { value: '1970' } });
+      expect(spy).toHaveBeenCalledTimes(2);
       firstLi.simulate('mouseUp', { ...eventFuncs, target: { value: '1970' } });
-      firstLi.simulate('mouseMove', { ...eventFuncs, target: { value: '1970' } });
-      expect(spy).toHaveBeenCalledTimes(1);
-    });
-
-    test('should not call prop on if moving over existing yearRange', () => {
-      updatedWrapper.at(4).simulate('mouseDown', { ...eventFuncs, target: { value: '1974' } });
-      expect(spy).toHaveBeenLastCalledWith({ start: 1974, end: 1974 });
-      updatedWrapper.at(4).simulate('mouseMove', { ...eventFuncs, target: { value: '1974' } });
-      expect(spy).toHaveBeenCalledTimes(1);
+      firstLi.simulate('mouseOver', { ...eventFuncs, target: { value: '1970' } });
+      expect(spy).toHaveBeenCalledTimes(2);
     });
 
     test('it should obtain the value even if it is clicked on parentElement', () => {

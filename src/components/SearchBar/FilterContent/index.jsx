@@ -50,22 +50,17 @@ class FilterContent extends React.PureComponent {
     if (!this.isDragging) { return; }
     const li = findListItemValue(event.target);
     let selectedYearArray = createYearArray(this.props.selectedYear);
-    if (selectedYearArray.indexOf(li) === -1) {
-      selectedYearArray.push(li);
-      selectedYearArray = selectedYearArray.sort((a, b) => a - b);
-      selectedYearArray = createYearArray({
-        start: selectedYearArray[0],
-        end: selectedYearArray[selectedYearArray.length - 1],
-      });
-    }
+    selectedYearArray.push(li);
+    selectedYearArray = selectedYearArray.sort((a, b) => a - b);
+    selectedYearArray = createYearArray({
+      start: selectedYearArray[0],
+      end: selectedYearArray[selectedYearArray.length - 1],
+    });
     selectedYearArray = selectedYearArray.sort((a, b) => a - b);
     const newRange = {
       start: selectedYearArray[0],
       end: selectedYearArray[selectedYearArray.length - 1],
     };
-
-    if (this.props.selectedYear.start === newRange.start
-      && this.props.selectedYear.end === newRange.end) { return; }
     this.props.onYearSelect(newRange);
   }
 
@@ -104,7 +99,7 @@ class FilterContent extends React.PureComponent {
             {...handleInteraction(this.props.onYearSelect, { start: i, end: i })}
             key={i}
             value={i}
-            onFocus={this.onDragStart}
+            onFocus={() => {}}
             onMouseDown={this.onDragStart}
             onMouseOver={this.onDragMove}
             onMouseUp={this.onDragStop}
@@ -178,7 +173,6 @@ class FilterContent extends React.PureComponent {
               c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
             />
           </svg>
-          {/* <Icon className="iconInline" icon="redo-alt" /> */}
         </div>
         <div className="titleText">
           <FormattedMessage id="components.SearchBar.filter.projectYear" />
