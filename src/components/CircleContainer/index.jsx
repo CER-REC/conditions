@@ -14,8 +14,6 @@ const CircleContainer = props => (
     style={{
       width: props.size,
       height: props.size,
-      color: props.color,
-      backgroundColor: props.backgroundColor,
     }}
     {...handleInteraction(props.onClick)}
   >
@@ -32,8 +30,6 @@ CircleContainer.propTypes = {
   className: PropTypes.string,
   elevated: PropTypes.bool,
   disabled: PropTypes.bool,
-  color: PropTypes.string,
-  backgroundColor: PropTypes.string,
 };
 
 CircleContainer.defaultProps = {
@@ -41,8 +37,6 @@ CircleContainer.defaultProps = {
   disabled: false,
   elevated: false,
   className: '',
-  color: '',
-  backgroundColor: '',
 };
 
 export default CircleContainer;

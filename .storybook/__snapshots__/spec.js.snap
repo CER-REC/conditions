@@ -1612,8 +1612,6 @@ exports[`Storyshots Components|CircleContainer default 1`] = `
     className="CircleContainer"
     style={
       Object {
-        "backgroundColor": "",
-        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1634,8 +1632,6 @@ exports[`Storyshots Components|CircleContainer with icon 1`] = `
     className="CircleContainer"
     style={
       Object {
-        "backgroundColor": "",
-        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1656,8 +1652,6 @@ exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
     className="CircleContainer blue"
     style={
       Object {
-        "backgroundColor": "",
-        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1688,8 +1682,6 @@ exports[`Storyshots Components|CircleContainer with prop: onClick  1`] = `
     onKeyPress={[Function]}
     style={
       Object {
-        "backgroundColor": "",
-        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -1711,8 +1703,6 @@ exports[`Storyshots Components|CircleContainer with text 1`] = `
     className="CircleContainer"
     style={
       Object {
-        "backgroundColor": "",
-        "color": "",
         "height": 60,
         "width": 60,
       }
@@ -2101,8 +2091,6 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="CircleContainer ConditionsIcon"
         style={
           Object {
-            "backgroundColor": "",
-            "color": "",
             "height": 24,
             "width": 24,
           }
@@ -2207,8 +2195,6 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2428,8 +2414,6 @@ exports[`Storyshots Components|FeaturesMenu selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2478,8 +2462,6 @@ exports[`Storyshots Components|FeaturesMenu selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2722,8 +2704,6 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -2886,8 +2866,6 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -3262,8 +3240,6 @@ exports[`Storyshots Components|List basic usage 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3355,8 +3331,6 @@ exports[`Storyshots Components|List component items 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3456,8 +3430,6 @@ exports[`Storyshots Components|List guide line 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3547,8 +3519,6 @@ exports[`Storyshots Components|List horizontal 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3634,8 +3604,6 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3717,8 +3685,6 @@ exports[`Storyshots Components|List selected 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -3832,8 +3798,6 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -3875,8 +3839,6 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -3918,8 +3880,6 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -3961,8 +3921,6 @@ exports[`Storyshots Components|MainInfoBar default 1`] = `
           className="CircleContainer"
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -4345,8 +4303,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
-                      "backgroundColor": "",
-                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4429,8 +4385,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
-                      "backgroundColor": "",
-                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4503,8 +4457,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -4552,8 +4504,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
-                      "backgroundColor": "",
-                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4618,8 +4568,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -4671,8 +4619,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
-                      "backgroundColor": "",
-                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4747,8 +4693,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   className="CircleContainer ConditionCount"
                   style={
                     Object {
-                      "backgroundColor": "",
-                      "color": "",
                       "height": 24,
                       "width": 24,
                     }
@@ -4855,8 +4799,6 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
           className="CircleContainer ConditionCount"
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 24,
               "width": 24,
             }
@@ -5451,27 +5393,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           Reset
            
         </span>
-        <div
-          className="Icon"
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
         >
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-redo-alt fa-w-16 iconInline"
-            color=""
-            data-icon="redo-alt"
-            data-prefix="fas"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-        </div>
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
       </div>
       <div
         className="titleText"
@@ -5490,17 +5419,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1970}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
@@ -5518,17 +5444,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1971}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5546,17 +5469,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1972}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5574,17 +5494,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1973}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5602,17 +5519,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1974}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5630,17 +5544,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1975}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5658,17 +5569,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1976}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5686,17 +5594,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1977}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5714,17 +5619,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1978}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5742,17 +5644,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1979}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5770,17 +5669,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1980}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
@@ -5887,27 +5783,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           Reset
            
         </span>
-        <div
-          className="Icon"
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
         >
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-redo-alt fa-w-16 iconInline"
-            color=""
-            data-icon="redo-alt"
-            data-prefix="fas"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-        </div>
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
       </div>
       <div
         className="titleText"
@@ -5926,17 +5809,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1970}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
@@ -5954,17 +5834,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1971}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -5982,17 +5859,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1972}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6010,17 +5884,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1973}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6038,17 +5909,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1974}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6066,17 +5934,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1975}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6094,17 +5959,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1976}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6122,17 +5984,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1977}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6150,17 +6009,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1978}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6178,17 +6034,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1979}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6206,17 +6059,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1980}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
@@ -6323,27 +6173,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           Reset
            
         </span>
-        <div
-          className="Icon"
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
         >
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-redo-alt fa-w-16 iconInline"
-            color=""
-            data-icon="redo-alt"
-            data-prefix="fas"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
-        </div>
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
       </div>
       <div
         className="titleText"
@@ -6362,17 +6199,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1970}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
@@ -6390,17 +6224,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1971}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6418,17 +6249,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1972}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6446,17 +6274,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1973}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6474,17 +6299,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1974}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6502,17 +6324,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1975}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6530,17 +6349,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1976}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6558,17 +6374,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1977}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6586,17 +6399,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1978}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6614,17 +6424,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1979}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedInsideCircle"
             style={
               Object {
-                "backgroundColor": "rgb(209, 5, 122)",
-                "color": "white",
                 "height": 24,
                 "width": 24,
               }
@@ -6642,17 +6449,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
-          onMouseMove={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1980}
         >
           <div
-            className="CircleContainer"
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
-                "backgroundColor": "white",
-                "color": "rgb(96,96,96)",
                 "height": 24,
                 "width": 24,
               }
@@ -6878,8 +6682,6 @@ exports[`Storyshots Components|ShareIcon email 1`] = `
       className="CircleContainer"
       style={
         Object {
-          "backgroundColor": "",
-          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -6928,8 +6730,6 @@ exports[`Storyshots Components|ShareIcon facebook 1`] = `
       className="CircleContainer"
       style={
         Object {
-          "backgroundColor": "",
-          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -6978,8 +6778,6 @@ exports[`Storyshots Components|ShareIcon linkedin 1`] = `
       className="CircleContainer"
       style={
         Object {
-          "backgroundColor": "",
-          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -7028,8 +6826,6 @@ exports[`Storyshots Components|ShareIcon twitter 1`] = `
       className="CircleContainer"
       style={
         Object {
-          "backgroundColor": "",
-          "color": "",
           "height": 20,
           "width": 20,
         }
@@ -7156,8 +6952,6 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
           onKeyPress={[Function]}
           style={
             Object {
-              "backgroundColor": "",
-              "color": "",
               "height": 20,
               "width": 20,
             }
@@ -7205,8 +6999,6 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -7248,8 +7040,6 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -7291,8 +7081,6 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -7334,8 +7122,6 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
             className="CircleContainer"
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 20,
                 "width": 20,
               }
@@ -7508,8 +7294,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -7850,8 +7634,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -8130,8 +7912,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }
@@ -8231,8 +8011,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
             onKeyPress={[Function]}
             style={
               Object {
-                "backgroundColor": "",
-                "color": "",
                 "height": 24,
                 "width": 24,
               }

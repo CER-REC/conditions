@@ -1,17 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import CircleContainer from '../../CircleContainer';
-import Icon from '../../Icon/index';
 import './styles.scss';
-
-library.add(
-  faRedoAlt,
-);
 
 const findListItemValue = (target, depth = 0) => {
   if (target.value) { return Number(target.value); }
@@ -111,12 +104,13 @@ class FilterContent extends React.PureComponent {
             {...handleInteraction(this.props.onYearSelect, { start: i, end: i })}
             key={i}
             value={i}
+            onFocus={this.onDragStart}
             onMouseDown={this.onDragStart}
-            onMouseMove={this.onDragMove}
+            onMouseOver={this.onDragMove}
             onMouseUp={this.onDragStop}
             onKeyDown={this.onKeyPress}
           >
-            <CircleContainer size={24} color="#999999" backgroundColor="#E6E6E6"> {i.toString().substring(2)} </CircleContainer>
+            <CircleContainer size={24} className="regularCircle"> {i.toString().substring(2)} </CircleContainer>
           </li>
         );
       }
@@ -143,15 +137,13 @@ class FilterContent extends React.PureComponent {
           key={i}
           value={i}
           onMouseDown={this.onDragStart}
-          onMouseMove={this.onDragMove}
           onMouseUp={this.onDragStop}
           onKeyDown={this.onKeyPress}
           className={classNames(classArray)}
         >
           <CircleContainer
             size={24}
-            color={(position === 'outside' ? 'rgb(96,96,96)' : 'white')}
-            backgroundColor={(position === 'outside' ? 'white' : 'rgb(209, 5, 122)')}
+            className={`regularCircle ${(position === 'outside') ? 'selectedOutsideCircle' : 'selectedInsideCircle'}`}
           >
             {i.toString().substring(2)}
           </CircleContainer>
@@ -179,7 +171,14 @@ class FilterContent extends React.PureComponent {
           <FormattedMessage id="components.SearchBar.reset">
             { text => <span className="upperCase"> {text} </span> }
           </FormattedMessage>
-          <Icon className="iconInline" icon="redo-alt" />
+          <svg width={12} viewBox="0 0 427.5 427.5">
+            <path
+              d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3
+              l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2
+              c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+            />
+          </svg>
+          {/* <Icon className="iconInline" icon="redo-alt" /> */}
         </div>
         <div className="titleText">
           <FormattedMessage id="components.SearchBar.filter.projectYear" />

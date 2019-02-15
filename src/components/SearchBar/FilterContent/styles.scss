@@ -24,9 +24,10 @@
   .reset {
     text-align: right;
     padding: 5px;
-    .Icon {
-      padding-left: 5px;
-      display: inline-block;
+    svg{
+      fill: $general-text-2;
+      stroke: $general-text-2;
+      stroke-width: 20;
     }
   }
 
@@ -40,6 +41,19 @@
       text-align: center;
       .CircleContainer{
         overflow: inherit;
+      }
+      .regularCircle{
+        color: #999999;
+        background-color: #E6E6E6;
+      }
+
+      .selectedOutsideCircle{
+        color: rgb(96,96,96);
+        background-color: $White;
+      }
+      .selectedInsideCircle{
+        color: $White;
+        background-color: rgb(209, 5, 122);
       }
     }
   }
