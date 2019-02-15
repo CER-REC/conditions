@@ -159,6 +159,16 @@ class ConditionDetails extends React.Component {
     </div>
   )
 
+  renderContentText = (id, content) => {
+    const paragraphs = content.split('\n');
+    const heading = <FormattedMessage id={id} tagName="h4" />;
+
+    return [
+      <p className="contentBlock">{heading}: {paragraphs[0]}</p>,
+      ...paragraphs.slice(1).map(text => <p className="contentBlock">{text}</p>),
+    ];
+  }
+
   renderInstrumentLink = instrumentNumber => (
     <button
       type="button"
@@ -178,7 +188,7 @@ class ConditionDetails extends React.Component {
       {this.renderContentBlock('components.conditionDetails.sunsetDate', data.sunsetDate, true)}
       {this.renderContentBlock('components.conditionDetails.location', data.location, true)}
       {this.renderContentBlock('components.conditionDetails.type', data.type)}
-      {this.renderContentBlock('components.conditionDetails.activity', data.activity)}
+      {this.renderContentText('components.conditionDetails.activity', data.activity)}
     </React.Fragment>
   )
 
@@ -187,7 +197,7 @@ class ConditionDetails extends React.Component {
       {this.renderContentBlock('components.conditionDetails.effectiveDate', data.effectiveDate, true)}
       {this.renderContentBlock('components.conditionDetails.instrumentNumber', this.renderInstrumentLink(data.instrumentNumber), true)}
       {this.renderContentBlock('components.conditionDetails.keywords', condition.keywords.join(', '))}
-      {this.renderContentBlock('components.conditionDetails.text', condition.text)}
+      {this.renderContentText('components.conditionDetails.text', condition.text)}
     </React.Fragment>
   )
 
@@ -254,7 +264,7 @@ ConditionDetails.propTypes = {
   }),
   openProjectDetails: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
-  toggleExpand: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func.isRequired,
   updateSelectedItem: PropTypes.func.isRequired,
 };
 
