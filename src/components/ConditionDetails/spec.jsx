@@ -154,10 +154,7 @@ describe('Components|ConditionDetails', () => {
         <ConditionDetails
           {...defaultProps}
           isExpandable
-          openProjectDetails={spy.openProjectDetails}
-          openIntermediatePopup={spy.openIntermediatePopup}
-          toggleExpanded={spy.toggleExpanded}
-          updateSelectedItem={spy.updateSelectedItem}
+          {...spy}
         />,
       );
     });
@@ -169,6 +166,7 @@ describe('Components|ConditionDetails', () => {
         .find('.header')
         .find('.openProject')
         .simulate('click', eventFuncs);
+
       expect(spy.openProjectDetails).toHaveBeenCalledTimes(1);
     });
 
@@ -177,6 +175,7 @@ describe('Components|ConditionDetails', () => {
         .find('.content')
         .find('.instrumentLink')
         .simulate('click', eventFuncs);
+
       expect(spy.openIntermediatePopup).toHaveBeenCalledTimes(1);
     });
 
@@ -185,7 +184,30 @@ describe('Components|ConditionDetails', () => {
         .find('.header')
         .find('.toggleExpand')
         .simulate('click', eventFuncs);
+
       expect(spy.toggleExpanded).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('when not expandable', () => {
+
+    test('should not provide a toggle button when not expandable', () => {
+      const wrapper = shallow(
+        <ConditionDetails
+          {...defaultProps}
+          openProjectDetails={noop}
+          openIntermediatePopup={noop}
+          toggleExpanded={noop}
+          updateSelectedItem={noop}
+        />,
+      );
+
+      const exists = wrapper.find('.ConditionDetails')
+        .find('.header')
+        .find('.toggleExpand')
+        .exists();
+
+      expect(exists).toEqual(false);
     });
   });
 });
