@@ -84,7 +84,7 @@ class Wheel extends React.Component {
 
   render() {
     return (
-      <div className="WheelContainer">
+      <div className="Wheel">
         <Spring
           immediate={this.state.unanimatedSpin}
           config={{ tension: 50, clamp: true, mass: 0.7 }}

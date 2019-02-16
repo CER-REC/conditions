@@ -1,10 +1,9 @@
 @import "../../styles/fontVariables.scss";
-
-.WheelContainer{
+.Wheel{
   width:100%;
   padding-top: 100%;
   position: relative;
-
+  
   .MovingContainer{
     width:100%;
     top: 0;
@@ -37,4 +36,19 @@
     margin-top: -30px;
     background: #ccc;
   }
+  .cls-1, .OutterCircles {
+    fill: none;
+  }
+
+  .OutterCircles {
+    stroke: #707070;
+  }
+  .LetterCircle {
+    stroke: none;
+  }
+  .ClippedBackground {
+    clip-path: url(#clip-path);
+  }
 }
+
+  

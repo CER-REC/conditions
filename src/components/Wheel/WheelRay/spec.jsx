@@ -9,13 +9,14 @@ describe('Components|CompanyWheel/WheelRay', () => {
   describe('with default props', () => {
     const reservedDegrees = 30;
     const degreesPerItem = (360 - reservedDegrees) / (wheelData.items.length - 1);
+    const rotation = 0;
 
     const wrapperSetup = (propOverrides) => {
       const props = Object.assign({
         items: wheelData.items,
         reservedDegrees,
         degreesPerItem,
-        rotation: 0,
+        rotation,
         selectRay: '',
         wheelType: 'Company',
         currentIndex: 0,
@@ -46,20 +47,24 @@ describe('Components|CompanyWheel/WheelRay', () => {
       expect(wrapper.children()).not.toHaveProperty('transform', `translate(371 209) rotate(${wrapper.rotation + (wrapper.reservedDegrees / 2)}, 0, 245)`);
     });
 
-    // it('should render an item before the gap', () => {
-    //   const { wrapper } = wrapperSetup({});
-    //   const elementBefore = 'translate(371 209) rotate(405.00000000000006, 0, 245)';
-    //   console.log(wrapper.children().find('g').debug());
-    //   expect(wrapper.children().find('g').every('g')).not.
-    // toHaveSty('transform', 'translate(371 209) rotate(405.00000000000006, 0, 245)');
-    // });
+    it('should render an item before the gap', () => {
+      const positionBeforeGap = rotation + 90 + (reservedDegrees / 2);
+      const transformValue = `translate(371 209) rotate(${positionBeforeGap.toFixed(2)}, 0, 245)`;
+      const { wrapper } = wrapperSetup({});
+      expect(wrapper.children().findWhere(
+        g => g.props().transform === transformValue,
+      )).toHaveLength(1);
+    });
 
-    // it('should render an item after the gap', () => {
-    //   const { wrapper } = wrapperSetup({});
-    //   expect(wrapper.children())
-    // .toHaveProperty('transform',
-    // `translate(371 209) rotate(${wrapper.rotation + (wrapper.reservedDegrees / 2) +
-    // wrapper.degreesPerItem}, 0, 245)`);
-    // });
+    it('should render an item after the gap', () => {
+      // rotation + the offset of the stripe
+      // - the adjustment for the ray against the pipe + half of the reserved degrees
+      const positionAfterGap = rotation + 90 - (degreesPerItem) + 360 - reservedDegrees + reservedDegrees / 2;
+      const transformValue = `translate(371 209) rotate(${positionAfterGap.toFixed(2)}, 0, 245)`;
+      const { wrapper } = wrapperSetup({});
+      expect(wrapper.children().findWhere(
+        g => g.props().transform === transformValue,
+      )).toHaveLength(1);
+    });
   });
 });

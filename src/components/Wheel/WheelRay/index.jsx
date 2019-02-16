@@ -28,9 +28,9 @@ class WheelRay extends React.Component {
   render() {
     const { props } = this;
     // eslint-disable-next-line object-curly-newline
-    const { items, degreesPerItem, reservedDegrees, rotation, currentIndex } = props;
-    // const height = '163px';
-    // const width = `${degreesPerItem + 1}px`;
+    const { items, degreesPerItem, reservedDegrees, rotation, currentIndex, wheelType } = props;
+    const height = '163px';
+    const width = `${degreesPerItem + 1}px`;
     const halfReservedDegrees = reservedDegrees / 2;
     const selectedIndex = currentIndex >= 0
       ? currentIndex : items.length + currentIndex;
@@ -45,13 +45,28 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-      const transform = `translate(371 209) rotate(${position}, 0, 245)`;
-      const componentToReturn = (
-        <g key={`${item._id}`} transform={transform}>
-          <text key={`a${item._id}`} className="TextLabels">
-            {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
-          </text>
-          <g>
+      const transform = `translate(371 209) rotate(${position.toFixed(2)}, 0, 245)`;
+
+      // TODO: split logic below to location ray and company ray?
+
+      const componentToReturn = wheelType === 'Company'
+        ?(
+          <g key={`${item._id}`} transform={transform}>
+            <text key={`a${item._id}`} className="TextLabels">
+              {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
+            </text>
+            {/* This rect will be used to denote the letter separation in the location wheel or mark the search */}
+            <rect
+              fill="red"
+              y="-181"
+              height={(index === 0 ? '323px' : height)}
+              width={width}
+              key={item._id}
+            />
+          </g>
+        )
+        : (
+          <g key={`${item._id}`} transform={transform}>
             <g style={{ transform: 'translate(0px, -19px) rotate(-90deg)' }}>
               <BarContainer
                 className="WheelBar"
@@ -64,17 +79,7 @@ class WheelRay extends React.Component {
               />
             </g>
           </g>
-          {/* This rect will be used to denote the letter separation in the location wheel */}
-          {/* <rect
-            fill="red"
-            y="-181"
-            height={(index === 0 ? '323px' : height)}
-            width={width}
-            key={item._id}
-            transform={transform}
-          /> */}
-        </g>
-      );
+        );
       legendTracker = item.company_name.charAt(0) === legendTracker
         ? legendTracker : item.company_name.charAt(0);
       // eslint-disable-next-line consistent-return

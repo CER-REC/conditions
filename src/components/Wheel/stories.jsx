@@ -21,7 +21,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
     },
   }))
   .add('default', () => (
-    <div width="300px">
+    <div>
       <Wheel
         {...getInteractionProps()}
         {...props}
