@@ -3011,7 +3011,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
         <g>
           <ellipse
             className="Ellipse"
-            cx={-0.625}
+            cx={-3}
             cy="3"
             rx={3}
             ry={3}
@@ -3429,7 +3429,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
         <g>
           <ellipse
             className="Ellipse"
-            cx={-0.625}
+            cx={-3}
             cy="3"
             rx={3}
             ry={3}
@@ -3519,7 +3519,7 @@ exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
         <g>
           <ellipse
             className="Ellipse"
-            cx={-0.625}
+            cx={-3}
             cy="3"
             rx={3}
             ry={3}

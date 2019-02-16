@@ -13,7 +13,7 @@ const BubbleLegend = (props) => {
       <g key={k}>
         <ellipse
           className="Ellipse"
-          cx={-(props.radiusOfMaxBubble * k) / props.maxConditions}
+          cx={-ellipsisRadius}
           cy="3"
           rx={ellipsisRadius}
           ry={3 + i}
