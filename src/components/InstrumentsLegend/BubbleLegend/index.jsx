@@ -8,7 +8,7 @@ const BubbleLegend = (props) => {
   const values = [10, 100, 1000, props.maxConditions];
   const ellipsis = values.map((k, i) => {
     let ellipsisRadius = (props.radiusOfMaxBubble * k) / props.maxConditions;
-    if (ellipsisRadius <= 4) { ellipsisRadius = 3; }
+    if (ellipsisRadius < 3) { ellipsisRadius = 3; }
     return (
       <g key={k}>
         <ellipse
