@@ -5442,7 +5442,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="liText"
         >
            
-          pipeline
+          pipeline1
            
         </li>
         <span
@@ -5451,7 +5451,6 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           <div
             className="Icon"
           >
@@ -5473,7 +5472,6 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
               />
             </svg>
           </div>
-           
         </span>
         <li
           className="liText"
@@ -5488,7 +5486,6 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           <div
             className="Icon"
           >
@@ -5510,7 +5507,6 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
               />
             </svg>
           </div>
-           
         </span>
       </ul>
       <div
@@ -5551,7 +5547,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         >
           <span>
              
-            pipeline
+            pipeline1
             , 
           </span>
           <span>

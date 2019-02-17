@@ -10,24 +10,14 @@ storiesForComponent('Components|SearchBar/SearchContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
     state: {
-      keywords: ['pipeline', 'pipeline2'], exceptKeywords: ['safety', 'fire'], mode: 'basic',
+      keywords: { include: ['pipeline1', 'pipeline2'], exclude: ['safety', 'fire'] }, mode: 'basic',
     },
     actions: {
-      // NOTE: Storybook seems to have issue with re-rendering after state change
       changeSearchType: state => () => {
         const mode = (state.mode === 'basic') ? 'advanced' : 'basic';
-        forceReRender();
         return ({ mode });
       },
-      updateKeywords: () => (obj) => {
-        const [words, type] = obj;
-        if (type === 'include') {
-          forceReRender();
-          return ({ keywords: words });
-        }
-        forceReRender();
-        return ({ exceptKeywords: words });
-      },
+      updateKeywords: () => words => ({ keywords: words }),
     },
   }))
   .add('with interaction', () => (

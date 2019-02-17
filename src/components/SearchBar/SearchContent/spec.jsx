@@ -2,12 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SearchContent from '.';
 
-const keywords = [
-  'access management',
-  'condition comp',
-  'department of',
-  'fracture tough',
-];
+const keywords = {
+  include: [
+    'access management',
+    'condition comp',
+    'department of',
+    'fracture tough',
+  ],
+  exclude: [
+    'exclude1', 'exclude2', 'exclude3', 'exclude4',
+  ],
+};
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
@@ -19,7 +24,6 @@ describe('Components|SearchBar/SearchContent', () => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          exceptKeywords={[]}
           mode="basic"
           changeSearchType={noop}
           updateKeywords={noop}
@@ -81,7 +85,6 @@ describe('Components|SearchBar/SearchContent', () => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          exceptKeywords={[]}
           mode="advanced"
           changeSearchType={noop}
           updateKeywords={noop}
@@ -120,7 +123,6 @@ describe('Components|SearchBar/SearchContent', () => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          exceptKeywords={['except1', 'except2']}
           mode="advanced"
           changeSearchType={noop}
           updateKeywords={spy}
@@ -156,19 +158,10 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(spy).toHaveBeenCalledTimes(0);
     });
 
-    test('will not call prop if it is the same include word', () => {
+    test('will not call prop if it is the same word', () => {
       const inputDiv = wrapper.find('.input').first();
       const input = inputDiv.find('input');
       input.simulate('change', { target: { value: 'department of' } });
-      const addButton = inputDiv.find('.addInput');
-      addButton.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(0);
-    });
-
-    test('will not call prop if it is the same exclude word', () => {
-      const inputDiv = wrapper.find('.input').last();
-      const input = inputDiv.find('input');
-      input.simulate('change', { target: { value: 'except1' } });
       const addButton = inputDiv.find('.addInput');
       addButton.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(0);
@@ -182,15 +175,10 @@ describe('Components|SearchBar/SearchContent', () => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          keywords={['word1', 'word2', 'word3', 'word4', 'word5', 'word6']}
-          exceptKeywords={[
-            'except1',
-            'except2',
-            'except3',
-            'except4',
-            'except5',
-            'except6',
-          ]}
+          keywords={{
+            include: ['word1', 'word2', 'word3', 'word4', 'word5', 'word6'],
+            exclude: ['except1', 'except2', 'except3', 'except4', 'except5', 'except6'],
+          }}
           mode="advanced"
           changeSearchType={noop}
           updateKeywords={spy}
@@ -225,7 +213,6 @@ describe('Components|SearchBar/SearchContent', () => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          exceptKeywords={['except1', 'except2', 'except3']}
           mode="advanced"
           changeSearchType={noop}
           updateKeywords={spy}
