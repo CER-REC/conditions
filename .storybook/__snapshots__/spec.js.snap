@@ -5385,7 +5385,6 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <span>
           Include
         </span>
-         
         <span
           className="upperCase"
         >
@@ -5393,7 +5392,6 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           any
            
         </span>
-         
         <span>
           of
         </span>
@@ -5404,6 +5402,8 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
       >
         <input
           className="searchBar"
+          onChange={[Function]}
+          value=""
         />
         <span
           className="addInput"

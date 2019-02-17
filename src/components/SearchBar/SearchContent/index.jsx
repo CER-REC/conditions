@@ -27,8 +27,10 @@ class SearchContent extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.input = React.createRef();
-    this.excludeInput = React.createRef();
+    this.state = {
+      inputInclude: '',
+      inputExclude: '',
+    };
   }
 
   searchWordsRender = (keywords, type) => (
@@ -52,15 +54,11 @@ class SearchContent extends React.PureComponent {
     const [word, type] = obj;
     const { keywords, exceptKeywords } = this.props;
     if (type === 'include') {
-      const index = (keywords.indexOf(word) > -1) ? keywords.indexOf(word) : null;
-      keywords.splice(index, 1);
-      this.props.updateKeywords([keywords, 'include']);
-    } else if (type === 'exclude') {
-      const exceptIndex = (exceptKeywords.indexOf(word) > -1) ? exceptKeywords.indexOf(word) : null;
-      exceptKeywords.splice(exceptIndex, 1);
-      this.props.updateKeywords([exceptKeywords, 'exclude']);
+      keywords.splice(keywords.indexOf(word), 1);
+      return this.props.updateKeywords([keywords, 'include']);
     }
-    return null;
+    exceptKeywords.splice(exceptKeywords.indexOf(word), 1);
+    return this.props.updateKeywords([exceptKeywords, 'exclude']);
   }
 
   addWord = (word, type) => {
@@ -73,29 +71,28 @@ class SearchContent extends React.PureComponent {
         keywords.push(word);
         this.props.updateKeywords([keywords, 'include']);
       }
-    } else if (type === 'exclude') {
-      if (exceptKeywords.length < 6
-        && exceptKeywords.indexOf(word) === -1
-        && keywords.indexOf(word) === -1) {
-        exceptKeywords.push(word);
-        this.props.updateKeywords([exceptKeywords, 'exclude']);
-      }
+    }
+    if (exceptKeywords.length < 6
+      && exceptKeywords.indexOf(word) === -1
+      && keywords.indexOf(word) === -1) {
+      exceptKeywords.push(word);
+      this.props.updateKeywords([exceptKeywords, 'exclude']);
     }
     return null;
   }
 
+  updateInputInclude = e => this.setState({ inputInclude: e.target.value });
+
+  updateInputExclude = e => this.setState({ inputExclude: e.target.value });
+
   getIncludeWord = () => {
-    if (this.input.current === null) { return this.addWord('test', 'include'); }
-    const { value } = this.input.current;
-    this.input.current.value = '';
-    return this.addWord(value, 'include');
+    this.addWord(this.state.inputInclude, 'include');
+    return this.setState({ inputInclude: '' });
   }
 
   getExcludeWord = () => {
-    if (this.input.current === null) { return this.addWord('test', 'exclude'); }
-    const { value } = this.excludeInput.current;
-    this.excludeInput.current.value = '';
-    return this.addWord(value, 'exclude');
+    this.addWord(this.state.inputExclude, 'exclude');
+    return this.setState({ inputExclude: '' });
   }
 
   render() {
@@ -103,21 +100,23 @@ class SearchContent extends React.PureComponent {
       <div className="SearchContent">
         <div className="includeText">
           <FormattedMessage id="components.SearchBar.findWords.searchText.include" />
-        &nbsp;
           {/* TODO: Update with DropDown Option once public DropDownComponent is created */}
           {this.props.mode === 'basic'
-            ? <FormattedMessage id="components.SearchBar.findWords.highlightText.any" />
+            ? (
+              <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
+                {text => <span className="spacedText"> {text} </span>}
+              </FormattedMessage>
+            )
             : (
               <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
                 {text => <span className="upperCase"> {text} </span>}
               </FormattedMessage>
             )
             }
-        &nbsp;
           <FormattedMessage id="components.SearchBar.findWords.searchText.of" />:
         </div>
         <div className="input">
-          <input ref={this.input} className="searchBar" />
+          <input value={this.state.inputInclude} onChange={this.updateInputInclude} className="searchBar" />
           <span className="addInput" {...handleInteraction(this.getIncludeWord)}>
             <Icon className="iconInline plusIcon" icon="plus-circle" />
           </span>
@@ -129,16 +128,16 @@ class SearchContent extends React.PureComponent {
           <React.Fragment>
             <div className="includeText">
               <FormattedMessage id="components.SearchBar.findWords.searchText.butDo" />
-              &nbsp;
-              <strong><FormattedMessage id="components.SearchBar.findWords.searchText.not" /></strong>
-              &nbsp;
+              <FormattedMessage id="components.SearchBar.findWords.searchText.not">
+                {text => <span className="spacedText"><strong> {text} </strong></span> }
+              </FormattedMessage>
               <FormattedMessage id="components.SearchBar.findWords.searchText.include">
-                {text => <span className=".lowerCase"> {text} </span>}
+                {text => <span className="lowerCase"> {text} </span>}
               </FormattedMessage>:
             </div>
             <div className="input">
-              <input ref={this.excludeInput} className="searchBar" />
-              <span className="addInput" {...handleInteraction(this.getExcludeWord)} >
+              <input value={this.state.inputExclude} onChange={this.updateInputExclude} className="searchBar" />
+              <span className="addInput" {...handleInteraction(this.getExcludeWord)}>
                 <Icon className="iconInline plusIcon" icon="plus-circle" />
               </span>
             </div>
