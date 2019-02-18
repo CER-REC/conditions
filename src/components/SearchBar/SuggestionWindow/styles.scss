@@ -8,7 +8,7 @@
   border: 1px solid $LightGray;
   padding: 10px;
   font-family: $fira-sans-condensed;
-  .upperCase{
+  .upperCase {
     text-transform: uppercase;
   }
   .keywordsTitle {
@@ -45,13 +45,13 @@
     vertical-align: middle;
     line-height: 25px;
   }
-  .selectedCategory{
+  .selectedCategory {
     color: $White;
     background-color: $LinksTextButtons;
   }
   .rightText {
     text-align: right;
-    .selectedSort{
+    .selectedSort {
       color: $LinksTextButtons;
     }
     .arrow {
@@ -75,8 +75,8 @@
           display: inline-block;
           width: 25px;
           vertical-align: super;
-          .Icon{
-            svg{
+          .Icon {
+            svg {
               width: 15px;
               height: 15px;
             }
