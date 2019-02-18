@@ -5,5 +5,8 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|SearchBar/HighlightSummary', module, ReadMe)
   .add('default', () => (
-    <HighlightSummary keywords={['test1', 'test2']} exceptKeywords={['except1', 'except2']} selectedYear={{ start: 2010, end: 2018 }} />
+    <HighlightSummary
+      keywords={['include1', 'include2']}
+      selectedYear={{ start: 2010, end: 2018 }}
+    />
   ));

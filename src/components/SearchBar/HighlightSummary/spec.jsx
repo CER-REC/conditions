@@ -22,11 +22,5 @@ describe('Components|SearchBar/HighlightSummary', () => {
     });
 
     shouldBehaveLikeAComponent(HighlightSummary, () => wrapper);
-
-    test('formattedMessage for highlightCondition have new line break', () => {
-      // console.log(wrapper.find('FormattedMessage').debug())
-      const updatedWrapper = wrapper.find('FormattedMessage').at(1).shallowWithIntl();
-      expect(updatedWrapper.find('br')).toHaveLength(2);
-    });
   });
 });

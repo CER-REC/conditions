@@ -23,10 +23,5 @@ describe('Components|SearchBar/SuggestedKeywords', () => {
       updatedWrapper.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
     });
-
-    test('render suggestedKeywords with breaks', () => {
-      const updatedWrapper = wrapper.find('FormattedMessage').at(1).shallowWithIntl();
-      expect(updatedWrapper.find('br')).toHaveLength(2);
-    });
   });
 });
