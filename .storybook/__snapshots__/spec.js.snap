@@ -5369,7 +5369,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SearchBar/SuggestionWindow default 1`] = `
+exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] = `
 <div
   className="visualization"
 >
