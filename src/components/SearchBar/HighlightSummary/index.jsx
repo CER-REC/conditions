@@ -20,7 +20,6 @@ const HighlightSummary = props => (
         </React.Fragment>
       ))}
     </div>
-    <div />
   </div>
 );
 
