@@ -100,10 +100,18 @@
     "instrumentsLegend": {
       "all": ""
     },
-    "SearchBar": {
+    "searchBar": {
       "tab": {
         "filter": "",
         "find": ""
+      },
+      "suggestedKeywords": {
+        "selectFrom": "",
+        "suggestedKeywords": ""
+      },
+      "highlightSummary": {
+        "showingAll": "",
+        "highlightConditions": ""
       }
     },
     "modal": {

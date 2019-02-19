@@ -42,7 +42,7 @@ const Tab = (props) => {
       {...handleInteraction(props.onClick)}
       style={{ borderBottom: borderStyle }}
     >
-      <FormattedMessage id={`components.SearchBar.tab.${type}`}>
+      <FormattedMessage id={`components.searchBar.tab.${type}`}>
         {txt => <span className="tabText"> {txt} </span>}
       </FormattedMessage>
       <span className="iconSvg">

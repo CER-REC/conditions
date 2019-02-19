@@ -110,10 +110,18 @@
     "instrumentsLegend": {
       "all": "All Instruments"
     },
-    "SearchBar": {
+    "searchBar": {
       "tab": {
         "filter": "Filter",
         "find": "Find Words"
+      },
+      "suggestedKeywords": {
+        "selectFrom": "Select from",
+        "suggestedKeywords": "Suggested\nKeywords"
+      },
+      "highlightSummary": {
+        "showingAll": "Showing all projects from",
+        "highlightConditions": "Highlighting conditions containing"
       }
     },
     "modal": {
