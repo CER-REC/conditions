@@ -5,12 +5,10 @@ import { FormattedMessage } from 'react-intl';
 
 const HighlightSummary = props => (
   <div className="HighlightSummary">
-    <FormattedMessage id="components.searchBar.highlightSummary.showingAll">
-      {text => <span>{text} </span>}
-    </FormattedMessage>
-    {props.selectedYear.start} - {props.selectedYear.end }
+    <FormattedMessage id="components.searchBar.highlightSummary.showingAll" />
+    <span> {props.selectedYear.start} - {props.selectedYear.end } </span>
     <FormattedMessage id="components.searchBar.highlightSummary.highlightConditions">
-      {text => (<p> {text} : </p>)}
+      {text => (<p>{text} : </p>)}
     </FormattedMessage>
     <div className="keywordsText">
       {props.keywords.join(', ')}

@@ -1,12 +1,11 @@
 @import "../../../styles/fontVariables.scss";
 @import "../../../styles/colors.scss";
 .HighlightSummary {
-  font-size: 12px;
-  font-family: $fira-sans-condensed-light;
-  color: $Gray160;
+  font-size: 9px;
+  font-family: $fira-sans-condensed-italic;
+  color: $VeryDarkGray;
   border-radius: 10px;
   padding: 10px;
-  transform: skew(-5deg);
   display: inline-block;
   text-align: left;
   margin-left: auto;
