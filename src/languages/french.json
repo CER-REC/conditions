@@ -24,7 +24,7 @@
       "administrative": "",
       "environmentalProtection": "",
       "integrityManagement": "",
-      "standardCondtion": ""
+      "standardCondition": ""
     },
     "instrument": {
       "category": {
@@ -102,13 +102,32 @@
     "featureMenu": {
       "dropDownTitle": ""
     },
+    "featureTypesDescription": {
+      "theme": {
+        "security": "",
+        "managementSystem": "",
+        "financial": ""
+      },
+      "instrument": {
+        "routing": "",
+        "construction": ""
+      }
+    },
     "instrumentsLegend": {
       "all": ""
     },
-    "SearchBar": {
+    "searchBar": {
       "tab": {
         "filter": "",
         "find": ""
+      },
+      "suggestedKeywords": {
+        "selectFrom": "",
+        "suggestedKeywords": ""
+      },
+      "highlightSummary": {
+        "showingAll": "",
+        "highlightConditions": ""
       }
     },
     "modal": {

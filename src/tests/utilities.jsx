@@ -26,7 +26,9 @@ export const monkeyPatchShallowWithIntl = () => {
   };
 };
 
-export const shouldBehaveLikeAComponent = (component, callback) => {
+export const shouldBehaveLikeAComponent = (rawComponent, callback) => {
+  const component = rawComponent.WrappedComponent || rawComponent;
+
   it('should render with the component name as a class', () => {
     const wrapper = callback();
 
@@ -57,13 +59,22 @@ export const shouldHaveInteractionProps = (wrapper) => {
   expect(props.focusable).toBe(true);
 };
 
-export const shallowWithIntl = (node, { context, ...opts } = {}) => shallow(
-  nodeWithIntlProp(node),
-  {
-    context: { ...context, intl },
-    ...opts,
-  },
-).shallow();
+export const shallowWithIntl = (node, messages) => {
+  let testIntl = intl;
+
+  if (messages) {
+    const testIntlProvider = new IntlProvider({ locale: 'test', messages }, {});
+
+    testIntl = testIntlProvider.getChildContext().intl;
+  }
+
+  return shallow(
+    nodeWithIntlProp(node),
+    {
+      context: { intl: testIntl },
+    },
+  ).shallow();
+};
 
 export const mountWithIntl = (node, { context, childContextTypes, ...opts } = {}) => mount(
   nodeWithIntlProp(node),
@@ -72,4 +83,4 @@ export const mountWithIntl = (node, { context, childContextTypes, ...opts } = {}
     childContextTypes: { intl: intlShape, ...childContextTypes },
     ...opts,
   },
-).childAt(0);
+);
