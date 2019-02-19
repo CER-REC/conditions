@@ -108,7 +108,7 @@ export default class PhysicsVariant extends React.Component {
     Matter.Runner.run(runner, this.engine);
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
-    this.loop();
+    this.loop(window.performance.now());
   }
 
   componentWillUnmount() {
@@ -122,7 +122,7 @@ export default class PhysicsVariant extends React.Component {
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       const bodyChanged = (Math.abs(body.position.x - body.positionPrev.x) > 0.01)
         || (Math.abs(body.position.y - body.positionPrev.y) > 0.01)
-        || ((Math.abs(body.angle - body.angle) * 180) / Math.PI > 0.01);
+        || ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01);
 
       // Check if any positions have updated
       bodiesChanged = bodiesChanged || bodyChanged;
@@ -175,8 +175,7 @@ export default class PhysicsVariant extends React.Component {
     keyword.collisionFilter.mask |= visibleTextCategory;
   });
 
-  loop = () => {
-    const currTime = 0.001 * Date.now();
+  loop = (currTime) => {
     Matter.Engine.update(
       this.engine,
       1000 / 60,
