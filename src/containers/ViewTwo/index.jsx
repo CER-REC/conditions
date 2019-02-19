@@ -44,29 +44,33 @@ const projectData = [
 
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
-    <section className="searchHeader" />
-    <section className="wheel">
-      <Wheel
-        ringType="Location"
-        itemsData={locationWheelData}
-      />
+    <section className="row">
+      <section className="searchHeader" />
     </section>
-    <section className="companyBreakdown">
-      <ProjectMenu
-        projectData={projectData}
-        selectedProjectID={1225}
-        onChange={() => {}}
-        selectedFeature="theme"
-      />
+    <section className="row">
+      <section className="wheel">
+        <Wheel
+          ringType="Location"
+          itemsData={locationWheelData}
+        />
+      </section>
+      <section className="companyBreakdown">
+        <ProjectMenu
+          projectData={projectData}
+          selectedProjectID={1225}
+          onChange={() => {}}
+          selectedFeature="theme"
+        />
+      </section>
+      <section className="menus">
+        <FeaturesLegend
+          legendItems={legendItems}
+          selectedFeature="theme"
+          isProjectLegend
+        />
+      </section>
+      <section className="conditions" />
     </section>
-    <section className="menus">
-      <FeaturesLegend
-        legendItems={legendItems}
-        selectedFeature="theme"
-        isProjectLegend
-      />
-    </section>
-    <section className="conditions" />
   </section>
 );
 

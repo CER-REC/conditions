@@ -6,8 +6,10 @@ import './styles.scss';
 
 const Footer = props => (
   <section className={classNames('Footer', { layoutOnly: props.layoutOnly })}>
-    <section className="infoBar">
-      <MainInfoBar />
+    <section className="row">
+      <section className="infoBar">
+        <MainInfoBar />
+      </section>
     </section>
   </section>
 );

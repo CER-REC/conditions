@@ -13,24 +13,30 @@ const uniqueKeywords = keywords.filter((v, i) => keywords.indexOf(v) === i);
 
 const ViewOne = props => (
   <section className={classNames('ViewOne', { layoutOnly: props.layoutOnly })}>
-    <section className="introduction">
-      <FormattedMessage id="views.view1.header.title" tagName="h1" />
-      <FormattedMessage id="views.view1.header.subtitle" />
+    <section className="row">
+      <section className="introduction">
+        <FormattedMessage id="views.view1.header.title" tagName="h1" />
+        <FormattedMessage id="views.view1.header.subtitle" />
+      </section>
     </section>
-    <section className="explorer">
-      <ConditionExplorer keywords={uniqueKeywords} />
+    <section className="row">
+      <section className="explorer">
+        <ConditionExplorer keywords={uniqueKeywords} />
+      </section>
     </section>
-    <section className="browseBy">
-      <BrowseByBtn mode="company" onClick={noop} />
-      <BrowseByBtn mode="location" onClick={noop} />
-    </section>
-    <section className="infoBar">
-      <ShortcutInfoBar
-        handleInfoBar={false}
-        jumpToAbout={noop}
-        openDataModal={noop}
-        openScreenshotModal={noop}
-      />
+    <section className="row">
+      <section className="browseBy">
+        <BrowseByBtn mode="company" onClick={noop} />
+        <BrowseByBtn mode="location" onClick={noop} />
+      </section>
+      <section className="infoBar">
+        <ShortcutInfoBar
+          handleInfoBar={false}
+          jumpToAbout={noop}
+          openDataModal={noop}
+          openScreenshotModal={noop}
+        />
+      </section>
     </section>
   </section>
 );

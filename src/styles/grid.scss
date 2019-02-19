@@ -1,0 +1,58 @@
+@mixin grid-sizes($gridSizes, $gridWidth) {
+  $gridUnit: $gridWidth / 120;
+
+  @each $className, $cellGridUnits in $gridSizes {
+    .#{$className} { width: $cellGridUnits * $gridUnit; }
+  }
+
+  width: $gridWidth;
+  /* Padding in grid units (top, right, bottom, left) : 2 0 1 0 */
+  padding: $gridUnit * 2 0 $gridUnit;
+
+  > .row > section {
+    margin-right: $gridUnit;
+    margin-bottom: $gridUnit;
+    &:first-child { margin-left: $gridUnit * 2; }
+    &:last-child { margin-right: $gridUnit * 2; }
+  }
+}
+
+@mixin grid($gridSizes) {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 500px;
+
+  > .row {
+    > section {
+      overflow: hidden;
+      float: left;
+      vertical-align: top;
+    }
+
+    &:after {
+      display: block;
+      clear: both;
+      content: '';
+    }
+  }
+
+  &.layoutOnly > section > section {
+    background: #F1F3F4;
+
+    &:after {
+      content: attr(class);
+      display: block;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    > * { display: none; }
+  }
+
+  @include grid-sizes($gridSizes, 100%);
+  @media (min-width: 768px) { @include grid-sizes($gridSizes, 746px); }
+  @media (min-width: 992px) { @include grid-sizes($gridSizes, 970px); }
+  @media (min-width: 1200px) { @include grid-sizes($gridSizes, 1170px); }
+
+  @content;
+}

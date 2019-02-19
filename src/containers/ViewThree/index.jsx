@@ -127,39 +127,45 @@ const noop = () => {};
 
 const ViewThree = props => (
   <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
-    <section className="features">
-      <FeaturesMenu features={features} onChange={noop} />
+    <section className="row">
+      <section className="features">
+        <FeaturesMenu features={features} onChange={noop} />
+      </section>
+      <section className="legend">
+        <SmallMultiplesLegend
+          title="theme"
+          data={basicUsageData}
+          onChange={noop}
+        />
+      </section>
+      <section className="chart">
+        <StreamGraph projectData={projectData} chartTitle={chartTitle} />
+      </section>
     </section>
-    <section className="legend">
-      <SmallMultiplesLegend
-        title="theme"
-        data={basicUsageData}
-        onChange={noop}
-      />
+    <section className="row">
+      <section className="featureDescription">
+        <FeatureDescription feature={feature} description={description} />
+      </section>
+      <section className="typesDescription">
+        <FeatureDescription feature={feature} description={description} />
+      </section>
     </section>
-    <section className="chart">
-      <StreamGraph projectData={projectData} chartTitle={chartTitle} />
-    </section>
-    <section className="featureDescription">
-      <FeatureDescription feature={feature} description={description} />
-    </section>
-    <section className="typesDescription">
-      <FeatureDescription feature={feature} description={description} />
-    </section>
-    <section className="selectedCompany">
-      <SelectedGroupBar
-        group="components.companyWheel.wheelRay.title"
-        groupItem="groupItem"
-        groupSize={16}
-        groupItemSize={16}
-        backgroundColor="lightgrey"
-      >
-        Company Name
-      </SelectedGroupBar>
-      <BrowseByButton mode="company" onClick={noop} />
-    </section>
-    <section className="conditionDetails">
-      <span style={{ fontSize: '50px', marginLeft: '45%' }}>6</span>
+    <section className="row">
+      <section className="selectedCompany">
+        <SelectedGroupBar
+          group="components.companyWheel.wheelRay.title"
+          groupItem="groupItem"
+          groupSize={16}
+          groupItemSize={16}
+          backgroundColor="lightgrey"
+        >
+          Company Name
+        </SelectedGroupBar>
+        <BrowseByButton mode="company" onClick={noop} />
+      </section>
+      <section className="conditionDetails">
+        <span style={{ fontSize: '50px', marginLeft: '45%' }}>6</span>
+      </section>
     </section>
   </section>
 );

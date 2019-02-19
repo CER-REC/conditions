@@ -1,46 +1,16 @@
+@import '../../styles/grid';
+
 .ViewTwo {
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 500px;
-  display: grid;
-  grid-template-columns: repeat(120, 1fr);
-  grid-template-rows: 10% 50% 35%;
-  row-gap: calc(970px/120);
-  padding: calc(970px/120*2) 0;
-
-  > section { overflow: hidden; }
-
-  .searchHeader{
-    grid-column: 3 / 119;
+  @include grid((
+    searchHeader: 116,
+    wheel: 57,
+    companyBreakdown: 36,
+    menus: 21,
+    conditions: 58,
+  )) {
+    /* To ensure the layoutOnly mode appears properly */
+    .searchHeader { min-height: 100px; }
+    .wheel { min-height: 200px; }
+    .conditions { min-height: 100px; }
   }
-
-  .wheel{
-    grid-row-start: span 2;
-    grid-column: 3 / 59;
-  }
-
-  .companyBreakdown{
-    grid-column: 60 / 96;
-  }
-
-  .menus{
-    grid-column: 97 / 119;
-  }
-
-  .conditions{
-    grid-column: 60 / 119;
-  }
-}
-
-.ViewTwo.layoutOnly > section {
-  background: #F1F3F4;
-
-  &:after {
-    content: attr(class);
-    display: block;
-    text-align: center;
-    font-size: 50px;
-  }
-
-  > * { display: none; }
 }

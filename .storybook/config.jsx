@@ -34,15 +34,15 @@ const viewports = {
   },
   desktop: {
     name: 'Desktop',
-    styles: { width: '1170px', height: '1024px' },
+    styles: { width: '1200px', height: '100%' },
   },
   laptop: {
     name: 'Laptop',
-    styles: { width: '970px', height: '1024px' },
+    styles: { width: '1000px', height: '100%' },
   },
   ipad: {
     name: 'iPad',
-    styles: { width: '768px', height: '1024px' },
+    styles: { width: '768px', height: '100%' },
   },
 };
 configureViewport({ viewports, defaultViewport: 'fullscreen' });
