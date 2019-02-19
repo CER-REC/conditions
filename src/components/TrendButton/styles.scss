@@ -1,49 +1,41 @@
 @import "../../styles/fontVariables.scss";
 @import "../../styles/colors.scss";
 
-$trends-overlay-button-color: $LinksTextButtons;
-
-.trendButton {
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  left: 35%;
-  top: 3%;
-  position: absolute;
-
-  button {
-    background-color: transparent;
-    border-color: transparent;
-
-    img {
-      display: block;
-      height: 60px;
-      width: 300px;
+.TrendButton {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 50px;
+  width: 120px;
+  border: 1px solid #A1A8A7;
+  .Streamgraph {
+    height: 55px;
+    width: 170px;
+    h1 {
+      display: none;
     }
-
-    .buttonText > span {
-      position: absolute;
-      width: 200px;
-      left: 3%;
-      top: 0px;
-      text-align: left;
-      padding: 2px 4px 0px 20px;
-      font-family: $fira-sans-condensed;
-      font-size: 24px;
-    }
-
-    .streamGraphBackground {
-      display: block;
-      height: 60px;
-      width: 300px;
-      border: 1px solid $trends-overlay-button-color;
-      svg {
-        height: 40px;
-        position: relative;
-        left: 30%;
-        top: 0;
-        fill: $trends-overlay-button-color;
+    .VictoryContainer {
+      g[role="presentation"] {
+        display: none;
       }
     }
+  }
+  .descriptionText {
+    text-align: left;
+    display: inline-block;
+    padding-right: 1em;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+  }
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+  .trendArrow {
+    position: absolute;
+    right: 25%;
+    bottom: 30%;
   }
 }

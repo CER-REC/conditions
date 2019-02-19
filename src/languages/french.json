@@ -136,6 +136,9 @@
         "filing": ""
       }
     },
+    "trendButton": {
+      "description": ""
+    },
     "streamGraph": {
       "xAxis": "",
       "yAxis": "",
