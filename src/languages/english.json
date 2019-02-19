@@ -24,7 +24,7 @@
       "administrative": "Administrative",
       "environmentalProtection": "Environmental Protection",
       "integrityManagement": "Integrity Management",
-      "standardCondtion": "Standard Condition"
+      "standardCondition": "Standard Condition"
     },
     "instrument": {
       "category": {
@@ -91,6 +91,19 @@
     "featureDescription": {
       "theme": "Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. \n Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes."
     },
+    "featureTypesDescription": {
+      "theme": {
+        "security": "Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
+        "managementSystem": "Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
+        "financial": "Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header."
+      },
+      "instrument": {
+        "category": {
+          "routing": "OPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nGPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.",
+          "construction": "GC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nOC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this."
+        }
+      }
+    },
     "featureMenu": {
       "dropDownTitle": "Feature"
     },
@@ -98,6 +111,10 @@
       "all": "All Instruments"
     },
     "searchBar": {
+      "tab": {
+        "filter": "Filter",
+        "find": "Find Words"
+      },
       "suggestedKeywords": {
         "selectFrom": "Select from",
         "suggestedKeywords": "Suggested\nKeywords"
