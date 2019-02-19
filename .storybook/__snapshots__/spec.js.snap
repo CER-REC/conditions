@@ -5385,13 +5385,30 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <span>
           Include
         </span>
-        <span
-          className="upperCase"
+        <div
+          className="FeaturesMenu dropDown"
         >
-           
-          any
-           
-        </span>
+          <span
+            className="title"
+          >
+            Feature
+          </span>
+          <select
+            onChange={[Function]}
+            value="any"
+          >
+            <option
+              value="any"
+            >
+              ANY
+            </option>
+            <option
+              value="all"
+            >
+              ALL
+            </option>
+          </select>
+        </div>
         <span>
           of
         </span>

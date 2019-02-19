@@ -95,6 +95,10 @@
         "findWords": "",
         "advancedSearch": "",
         "basicSearch": "",
+        "options": {
+          "any": "",
+          "all": ""
+        },
         "searchText": {
           "include": "",
           "of": "",

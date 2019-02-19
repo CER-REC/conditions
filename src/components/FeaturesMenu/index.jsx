@@ -14,8 +14,9 @@ const FeaturesMenu = (props) => {
   ));
 
   if (props.dropDown) {
+    const dropdownID = (props.dropDownID.length === 0) ? ('common.features') : (props.dropDownID);
     const options = props.features.map(feature => (
-      <FormattedMessage key={feature} id={`common.features.${feature}`}>
+      <FormattedMessage key={feature} id={`${dropdownID}.${feature}`}>
         {text => (
           <option value={feature}>
             {text}
@@ -59,12 +60,15 @@ FeaturesMenu.propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Additional className to add to the component */
   className: PropTypes.string,
+  /** Additional id to use for regular dropdowns */
+  dropDownID: PropTypes.string,
 };
 
 FeaturesMenu.defaultProps = {
   selected: '',
   dropDown: false,
   className: '',
+  dropDownID: '',
 };
 
 export default FeaturesMenu;

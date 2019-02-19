@@ -103,6 +103,10 @@
         "findWords": "Find Words",
         "advancedSearch": "Advanced Search",
         "basicSearch": "Basic Search",
+        "options": {
+          "any": "ANY",
+          "all": "ALL"
+        },
         "searchText": {
           "include": "Include",
           "of": "of",

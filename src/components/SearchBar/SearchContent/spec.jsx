@@ -28,6 +28,7 @@ describe('Components|SearchBar/SearchContent', () => {
           changeSearchType={noop}
           updateKeywords={noop}
           closeTab={noop}
+          selectedIncludeType="any"
         />,
       );
     });

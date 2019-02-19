@@ -5,6 +5,7 @@ import './styles.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../Icon/index';
+import FeaturesMenu from '../../FeaturesMenu';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 library.add(
@@ -21,6 +22,8 @@ class SearchContent extends React.PureComponent {
     closeTab: PropTypes.func.isRequired,
     mode: PropTypes.string.isRequired,
     changeSearchType: PropTypes.func.isRequired,
+    includeOnChange: PropTypes.func,
+    selectedIncludeType: PropTypes.string,
   }
 
   static defaultProps = {
@@ -28,6 +31,8 @@ class SearchContent extends React.PureComponent {
       include: [],
       exclude: [],
     }),
+    includeOnChange: () => {},
+    selectedIncludeType: 'any',
   }
 
   constructor(props) {
@@ -147,7 +152,6 @@ class SearchContent extends React.PureComponent {
     <React.Fragment>
       <div className="includeText">
         <FormattedMessage id="components.SearchBar.findWords.searchText.include" />
-        {/* TODO: Update with DropDown Option once public DropDownComponent is created */}
         {this.props.mode === 'basic'
           ? (
             <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
@@ -155,9 +159,13 @@ class SearchContent extends React.PureComponent {
             </FormattedMessage>
           )
           : (
-            <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
-              {text => <span className="upperCase"> {text} </span>}
-            </FormattedMessage>
+            <FeaturesMenu
+              features={['any', 'all']}
+              onChange={this.props.includeOnChange}
+              dropDown
+              dropDownID="components.SearchBar.findWords.options"
+              selected={this.props.selectedIncludeType}
+            />
           )
       }
         <FormattedMessage id="components.SearchBar.findWords.searchText.of" />:

@@ -24,6 +24,15 @@
     span {
       padding: 0px;
     }
+    .dropDown { // Styles for using Dropdown from FeaturesMenu
+      display: inline-block;
+      .title{
+        display: none;
+      }
+      select {
+        width: 50px;
+      }
+    }
   }
   span {
     color: $VeryDarkGray;
@@ -32,7 +41,6 @@
   .input {
     display: inline-block;
     float: right;
-
     .searchBar {
       width: 210px;
       border-radius: 510px;
