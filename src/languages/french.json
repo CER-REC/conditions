@@ -101,6 +101,17 @@
       "all": ""
     },
     "searchBar": {
+      "close": "",
+      "reset": "",
+      "filter": {
+        "projectYear": "",
+        "projectStatus": {
+          "projectStatusText": "",
+          "OPEN": "",
+          "CLOSED": "",
+          "CANCELLED": ""
+        }
+      },
       "tab": {
         "filter": "",
         "find": ""
