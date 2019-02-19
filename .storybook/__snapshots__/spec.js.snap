@@ -5600,19 +5600,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <div
         className="keywordsText"
       >
-        <span>
-           
-          include1
-           
-        </span>
-        <span>
-           , 
-        </span>
-        <span>
-           
-          include2
-           
-        </span>
+        include1, include2
       </div>
     </div>
   </div>

@@ -13,12 +13,7 @@ const HighlightSummary = props => (
       {text => (<p> {text} : </p>)}
     </FormattedMessage>
     <div className="keywordsText">
-      { props.keywords.map((word, index) => (
-        <React.Fragment key={word}>
-          <span> {word} </span>
-          {(index !== props.keywords.length - 1) ? (<span> , </span>) : (null) }
-        </React.Fragment>
-      ))}
+      {props.keywords.join(', ')}
     </div>
   </div>
 );
