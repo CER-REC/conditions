@@ -1,0 +1,17 @@
+.ConditionList {
+
+  .marked {
+    display: inline-block;
+    height: 6px;
+    width: 10px;
+    background-color: red;
+  }
+
+  .unmarked {
+    display: inline-block;
+    height: 6px;
+    width: 10px;
+    background: none;
+  }
+
+}
