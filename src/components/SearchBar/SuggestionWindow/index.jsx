@@ -104,9 +104,9 @@ class SuggestionWindow extends React.PureComponent {
         : [item.name === value.name && item.conditions === value.conditions, i]
     ), [false, null]);
 
-    const [icon, iconClass, selectedColor] = (present)
-      ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)']
-      : ['plus-circle', 'regularIcon', 'rgb(96,96,96)'];
+    const [icon, iconClass, selectedColor, textStyle] = (present)
+      ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
+      : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
     const maxConditions = this.findMaxConditions();
     const conditions = (value.conditions / maxConditions) * 200;
     const remainingSpace = (200 - conditions);
@@ -118,7 +118,7 @@ class SuggestionWindow extends React.PureComponent {
         >
           <Icon className={iconClass} icon={icon} />
         </span>
-        <span className="keywordCategory">{value.name} </span>
+        <span className={`keywordCategory ${textStyle}`}>{value.name} </span>
         <span className="BarContainer">
           <BarContainer
             title="ConditionTitle"
@@ -132,7 +132,7 @@ class SuggestionWindow extends React.PureComponent {
         </span>
         <div className="conditionsText">
           <FormattedMessage id="components.searchBar.suggestionWindow.conditions">
-            {text => <div className="conditionsText"> {value.conditions} { text }  </div>}
+            {text => <div className="conditionsText"> {value.conditions} {text}  </div>}
           </FormattedMessage>
         </div>
       </li>

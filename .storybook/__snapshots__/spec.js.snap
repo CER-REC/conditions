@@ -5545,7 +5545,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory selectedText"
             >
               safety
                
@@ -5633,7 +5633,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory selectedText"
             >
               emissions
                
@@ -5721,7 +5721,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory selectedText"
             >
               habitat
                
@@ -5809,7 +5809,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               construction
                
@@ -5897,7 +5897,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               habitat
                
@@ -5985,7 +5985,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               file
                
@@ -6073,7 +6073,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               breeding breed
                
@@ -6161,7 +6161,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               safety
                
@@ -6249,7 +6249,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               emissions
                
@@ -6337,7 +6337,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               habitat
                
@@ -6425,7 +6425,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               construction
                
@@ -6513,7 +6513,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               habitat
                
@@ -6601,7 +6601,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               file
                
@@ -6689,7 +6689,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
               </div>
             </span>
             <span
-              className="keywordCategory"
+              className="keywordCategory regularText"
             >
               breeding breed
                
