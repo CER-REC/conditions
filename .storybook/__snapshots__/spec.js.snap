@@ -5578,6 +5578,91 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="HighlightSummary"
+    >
+      <span>
+        Showing all projects from
+      </span>
+      <span>
+         
+        2010
+         - 
+        2018
+         
+      </span>
+      <p>
+        Highlighting conditions containing
+         : 
+      </p>
+      <div
+        className="keywordsText"
+      >
+        include1, include2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/SuggestedKeywords default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="SuggestedKeywords"
+    >
+      <p
+        className="selectFrom"
+      >
+        Select from
+      </p>
+      <p
+        className="colorChange"
+      >
+        Suggested
+      </p>
+      <p
+        className="colorChange"
+      >
+        Keywords
+      </p>
+      <svg
+        className="arrow"
+        focusable={true}
+        height={20}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        viewBox="0 0 427.5 427.5"
+        width={20}
+      >
+        <circle
+          cx="215"
+          cy="213.8"
+          fill="#CF167B"
+          r="213.8"
+        />
+        <polygon
+          fill="#FFFFFF"
+          points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
 <div
   className="visualization"
