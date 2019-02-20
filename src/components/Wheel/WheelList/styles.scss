@@ -1,0 +1,54 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/fontVariables.scss";
+@import '../../../styles/legend.scss';
+
+
+.WheelList {
+  color: $Black77;
+  font-family: $fira-sans-condensed;
+  font-size: 18px;
+  height: 100px;
+  width: 300px;
+
+  span {
+    position: fixed;
+    top: 125px;
+  }
+
+  .arrowPrevious {
+    position: fixed;
+    left: 150px;
+    top: 130px;
+  }
+
+  .arrowNext {
+    position: fixed;
+    left: 150px;
+    top: 140px;
+  }
+
+  .items-list ul {
+    position: absolute;
+    margin-left: 200px;
+    width: 100%;
+    height: 100px;
+    color: $Gray160;
+    font-family: $fira-sans-condensed-light;
+    font-size: 13px;
+    overflow: auto;
+  }
+
+  .items-list ul .selected {
+    position: fixed;
+    font-size: 18px;
+    font-family: $fira-sans-condensed-bold;
+    color: $Black77;
+    top: 125px;
+    background: #E4E4E4;
+  }
+}
+
+
+// if farther out... 10px;
+// if even farther out...8px;
+// names capped at 15 characters then followed by ellipsis

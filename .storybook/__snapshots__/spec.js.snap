@@ -11431,6 +11431,208 @@ exports[`Storyshots Components|Wheel/Ring location view 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|Wheel/WheelList with company data 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Wheel"
+  >
+    <div
+      className="List"
+    >
+      <span>
+        Selected Company:
+      </span>
+      <div
+        className="List"
+      >
+        <ul>
+          <li
+            className="List-Item"
+          >
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyA
+            </div>
+          </li>
+          <li
+            className="List-Item"
+          >
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyB
+            </div>
+          </li>
+          <li
+            className="List-Item"
+          >
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyC
+            </div>
+          </li>
+          <li
+            className="List-Item"
+          >
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyD
+            </div>
+          </li>
+          <li
+            className="List-Item selected"
+          >
+            <div
+              className="CircleContainer arrowPrevious"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+              tabIndex={0}
+            >
+              <div>
+                <div
+                  className="Icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                    color=""
+                    data-icon="angle-up"
+                    data-prefix="fas"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyE
+            </div>
+            <div
+              className="CircleContainer arrowNext"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              style={
+                Object {
+                  "height": 24,
+                  "width": 24,
+                }
+              }
+              tabIndex={0}
+            >
+              <div>
+                <div
+                  className="Icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                    color=""
+                    data-icon="angle-down"
+                    data-prefix="fas"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            className="List-Item"
+          >
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyF
+            </div>
+          </li>
+          <li
+            className="List-Item"
+          >
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyG
+            </div>
+          </li>
+          <li
+            className="List-Item"
+          >
+            <div
+              className="List-Item-Content"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              CompanyH
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|Wheel/WheelRayLegend default view 1`] = `
 <div
   className="visualization"

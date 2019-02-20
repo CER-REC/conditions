@@ -39,7 +39,12 @@ const List = (props) => {
         className={classNames('List-Item', { selected: isSelected })}
       >
         {!isSelected || selectedIndex === 0 ? null : (
-          <CircleContainer size={arrowSize} onClick={() => props.onChange(i - 1)} className="arrowPrevious">
+          <CircleContainer
+            size={arrowSize}
+            onClick={() => props.onChange(i - 1)}
+            className="arrowPrevious"
+            elevated={props.elevated}
+          >
             <Icon size="1x" icon={previousIcon} />
           </CircleContainer>
         )}
@@ -47,7 +52,12 @@ const List = (props) => {
           {item}
         </div>
         {!isSelected || selectedIndex === (props.items.length - 1) ? null : (
-          <CircleContainer size={arrowSize} onClick={() => props.onChange(i + 1)} className="arrowNext">
+          <CircleContainer
+            size={arrowSize}
+            onClick={() => props.onChange(i + 1)}
+            className="arrowNext"
+            elevated={props.elevated}
+          >
             <Icon size="1x" icon={nextIcon} />
           </CircleContainer>
         )}
@@ -82,6 +92,7 @@ List.propTypes = {
   itemInteractions: PropTypes.bool,
   /** Additional className to add to the list */
   className: PropTypes.string,
+  elevated: PropTypes.bool,
 };
 
 List.defaultProps = {
@@ -89,6 +100,7 @@ List.defaultProps = {
   guideLine: false,
   itemInteractions: true,
   className: '',
+  elevated: false,
 };
 
 export default List;
