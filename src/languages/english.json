@@ -110,10 +110,29 @@
     "instrumentsLegend": {
       "all": "All Instruments"
     },
-    "SearchBar": {
+    "searchBar": {
+      "close": "Close",
+      "reset": "Reset",
+      "filter": {
+        "projectYear": "Filter by Project Year",
+        "projectStatus": {
+          "projectStatusText": "Filter by Project Status",
+          "OPEN": "Open",
+          "CLOSED": "Closed",
+          "CANCELLED": "Cancelled"
+        }
+      },
       "tab": {
         "filter": "Filter",
         "find": "Find Words"
+      },
+      "suggestedKeywords": {
+        "selectFrom": "Select from",
+        "suggestedKeywords": "Suggested\nKeywords"
+      },
+      "highlightSummary": {
+        "showingAll": "Showing all projects from",
+        "highlightConditions": "Highlighting conditions containing"
       }
     },
     "modal": {
