@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
-// import './styles.scss';
+import './styles.scss';
 
 const lessButton = (
   <React.Fragment>
@@ -30,7 +30,7 @@ const moreButton = (
 
 class ProjectHeader extends React.PureComponent {
   render = () => (
-    <React.Fragment>
+    <div className="ProjectHeader">
       <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
       <button
         type="button"
@@ -50,7 +50,7 @@ class ProjectHeader extends React.PureComponent {
           </button>
         ) : null
       }
-    </React.Fragment>
+    </div>
   )
 }
 

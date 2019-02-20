@@ -37,11 +37,10 @@ class ConditionDetails extends React.Component {
   )
 
   renderDetails = (instrument, index) => {
-    const { details } = instrument.conditions[index];
+    const details = (index !== -1) ? instrument.conditions[index].details : null;
 
-    return (index === -1)
-      ? null
-      : (
+    return (details)
+      ? (
         <Details
           theme={details.theme}
           instrument={details.instrument}
@@ -50,7 +49,8 @@ class ConditionDetails extends React.Component {
           status={details.status}
           filing={details.filing}
         />
-      );
+      )
+      : null;
   }
 
   render() {

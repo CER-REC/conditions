@@ -1,7 +1,16 @@
 .Content {
 
+  padding: 20px;
+
   .contentText {
     padding-bottom: 0.4rem;
+  }
+
+  .instrumentLink {
+    color: #d1057a;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
   }
 
 }

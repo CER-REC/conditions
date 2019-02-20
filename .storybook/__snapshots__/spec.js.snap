@@ -3463,6 +3463,312 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
 </div>
 `;
 
+exports[`Storyshots Components|ConditionDetails/ContentBlock full 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "border": "1px solid black",
+          "height": 50,
+          "width": 150,
+        }
+      }
+    >
+      <div
+        className="ContentBlock "
+      >
+        <h4>
+          Theme
+        </h4>
+        : 
+        This is a full block
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "height": 50,
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="ContentBlock "
+      >
+        <h4>
+          Theme
+        </h4>
+        : 
+        This is a full block
+      </div>
+      <div
+        className="ContentBlock "
+      >
+        <h4>
+          Theme
+        </h4>
+        : 
+        This is a full block
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails/ContentBlock half 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "border": "1px solid black",
+          "height": 50,
+          "width": 150,
+        }
+      }
+    >
+      <div
+        className="ContentBlock half"
+      >
+        <h4>
+          Theme
+        </h4>
+        : 
+        This is a half block
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "height": 50,
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="ContentBlock half"
+      >
+        <h4>
+          Theme
+        </h4>
+        : 
+        This is a half block
+      </div>
+      <div
+        className="ContentBlock half"
+      >
+        <h4>
+          Theme
+        </h4>
+        : 
+        This is a half block
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "height": 100,
+          "width": 400,
+        }
+      }
+    >
+      <h1>
+        Selected Project: 
+      </h1>
+      <button
+        className="openProject"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h2>
+          Keystone XL
+          <span
+            className="asterisk"
+          >
+            *
+          </span>
+        </h2>
+      </button>
+      <button
+        className="toggleExpand"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          className="arrow"
+          viewBox="0 0 16 24"
+        >
+          <polyline
+            points="12,4 4,12.5 12,20 12,4"
+          />
+        </svg>
+        <h1
+          className="upperCase"
+        >
+          More
+        </h1>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "height": 100,
+          "width": 400,
+        }
+      }
+    >
+      <h1>
+        Selected Project: 
+      </h1>
+      <button
+        className="openProject"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h2>
+          Keystone XL
+          <span
+            className="asterisk"
+          >
+            *
+          </span>
+        </h2>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetailsContentBlock full block 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    style={
+      Object {
+        "height": 50,
+        "width": 300,
+      }
+    }
+  >
+    <div
+      className="ContentBlock "
+    >
+      <h4>
+        Theme
+      </h4>
+      : 
+      This is a full block
+    </div>
+    <div
+      className="ContentBlock "
+    >
+      <h4>
+        Theme
+      </h4>
+      : 
+      This is a full block
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetailsContentBlock half block 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    style={
+      Object {
+        "height": 50,
+        "width": 300,
+      }
+    }
+  >
+    <div
+      className="ContentBlock half"
+    >
+      <h4>
+        Theme
+      </h4>
+      : 
+      This is a half block
+    </div>
+    <div
+      className="ContentBlock half"
+    >
+      <h4>
+        Theme
+      </h4>
+      : 
+      This is a half block
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionExplorer default 1`] = `
 <div
   className="visualization"
@@ -3563,6 +3869,58 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
     className="ConditionExplorer"
   >
     <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ContentBlock full 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    style={
+      Object {
+        "border": "1px solid black",
+        "height": 50,
+        "width": 150,
+      }
+    }
+  >
+    <div
+      className="ContentBlock "
+    >
+      <h4>
+        Theme
+      </h4>
+      : 
+      This is a full block
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ContentBlock half 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    style={
+      Object {
+        "border": "1px solid black",
+        "height": 50,
+        "width": 150,
+      }
+    }
+  >
+    <div
+      className="ContentBlock half"
+    >
+      <h4>
+        Theme
+      </h4>
+      : 
+      This is a half block
+    </div>
   </div>
 </div>
 `;

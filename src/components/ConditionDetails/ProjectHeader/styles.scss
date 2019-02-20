@@ -1,0 +1,46 @@
+@import '../../../styles/colors.scss';
+
+.ProjectHeader {
+  background-color: $LightGray;
+
+  line-height: 24px;
+  vertical-align: middle;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .asterisk {
+    color: #d1057a;
+    font-family: 'FiraSansCondensedBold';
+  }
+
+  .openProject {
+    height: 90%;
+  }
+
+  .toggleExpand {
+    float: right;
+
+    color: #d1057a;
+
+    line-height: 24px;
+
+    height: 90%;
+  }
+
+  .arrow {
+    display: inline-block;
+    stroke: #d1057a;
+    stroke-width: 1.5px;
+    fill: white;
+
+    vertical-align: middle;
+
+    width: 16px;
+    height: 100%;
+  }
+
+  .upperCase {
+    text-transform: uppercase;
+  }
+}
