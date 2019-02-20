@@ -10,16 +10,16 @@ const BubbleLegend = (props) => {
     let ellipsisRadius = (props.radiusOfMaxBubble * k) / props.maxConditions;
     if (ellipsisRadius < 3) { ellipsisRadius = 3; }
     return (
-      <g key={k}>
+      <g key={k} transform={`translate(0, ${i * 20})`}>
         <ellipse
           className="Ellipse"
           cx={-ellipsisRadius}
           cy="3"
           rx={ellipsisRadius}
           ry={3 + i}
-          transform={`translate(0, ${(i * 20) + 23})`}
+          transform="translate(0, 23)"
         />
-        <text className="Text" x="30" y={30 + (i * 20)}>{k}</text>
+        <text className="Text" x="30" y={30}>{k}</text>
       </g>
     );
   });
