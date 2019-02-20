@@ -3215,6 +3215,254 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      className="Content"
+    >
+      <div
+        className="ContentBlock half"
+      >
+        <h4>
+          Effective Date
+        </h4>
+        : 
+        2014-10-24
+      </div>
+      <div
+        className="ContentBlock half"
+      >
+        <h4>
+          Instrument Number
+        </h4>
+        : 
+        <button
+          className="instrumentLink"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          XO-001-2018
+        </button>
+      </div>
+      <div
+        className="ContentBlock "
+      >
+        <h4>
+          Keywords
+        </h4>
+        : 
+        program
+      </div>
+      <p
+        className="contentText"
+      >
+        <h4>
+          Text
+        </h4>
+        : 
+        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+      </p>
+      <p
+        className="contentText"
+      >
+        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+      </p>
+      <p
+        className="contentText"
+      >
+        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+      </p>
+      <p
+        className="contentText"
+      >
+        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+      </p>
+      <p
+        className="contentText"
+      >
+        Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+      </p>
+      <p
+        className="contentText"
+      >
+        Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+      </p>
+      <p
+        className="contentText"
+      >
+        Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+      </p>
+      <p
+        className="contentText"
+      >
+        Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+      </p>
+      <p
+        className="contentText"
+      >
+        Quisque eu lobortis velit, quis viverra elit.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "height": 300,
+          "overflow": "scroll",
+          "width": 450,
+        }
+      }
+    >
+      <div
+        className="Content"
+      >
+        <div
+          className="ContentBlock half"
+        >
+          <h4>
+            Issuance Date
+          </h4>
+          : 
+          2014-10-24
+        </div>
+        <div
+          className="ContentBlock half"
+        >
+          <h4>
+            Instrument Number
+          </h4>
+          : 
+          <button
+            className="instrumentLink"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            XO-001-2018
+          </button>
+        </div>
+        <div
+          className="ContentBlock half"
+        >
+          <h4>
+            Effective Date
+          </h4>
+          : 
+          2014-10-24
+        </div>
+        <div
+          className="ContentBlock half"
+        >
+          <h4>
+            Instrument Status
+          </h4>
+          : 
+          <span>
+            In Progress
+          </span>
+        </div>
+        <div
+          className="ContentBlock half"
+        >
+          <h4>
+            Sunset Date
+          </h4>
+          : 
+          2019-01-30
+        </div>
+        <div
+          className="ContentBlock half"
+        >
+          <h4>
+            Location
+          </h4>
+          : 
+          Albuquerque, NM
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Instrument Type
+          </h4>
+          : 
+          Construction of Oil Pipeline
+        </div>
+        <p
+          className="contentText"
+        >
+          <h4>
+            Instrument Activity
+          </h4>
+          : 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+        </p>
+        <p
+          className="contentText"
+        >
+          Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+        </p>
+        <p
+          className="contentText"
+        >
+          Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+        </p>
+        <p
+          className="contentText"
+        >
+          Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+        </p>
+        <p
+          className="contentText"
+        >
+          Quisque eu lobortis velit, quis viverra elit.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionExplorer default 1`] = `
 <div
   className="visualization"

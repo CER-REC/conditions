@@ -4,6 +4,8 @@ import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
+import './styles.scss';
+
 import ContentBlock from '../ContentBlock';
 
 class Content extends React.PureComponent {
@@ -29,7 +31,6 @@ class Content extends React.PureComponent {
 
   render() {
     const data = this.props.instrument;
-    const condition = data.conditions[this.props.itemIndex];
 
     return (
       <div className="Content">{
@@ -50,8 +51,8 @@ class Content extends React.PureComponent {
             <React.Fragment>
               <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} half />
               <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} half />
-              <ContentBlock id="components.conditionDetails.keywords" content={condition.keywords.join(', ')} />
-              {this.renderContentText('components.conditionDetails.text', condition.text)}
+              <ContentBlock id="components.conditionDetails.keywords" content={data.conditions[this.props.itemIndex].keywords.join(', ')} />
+              {this.renderContentText('components.conditionDetails.text', data.conditions[this.props.itemIndex].text)}
             </React.Fragment>
           )
         }
