@@ -42,8 +42,9 @@ describe('Components|ConditionDetails', () => {
     shouldBehaveLikeAComponent(ConditionDetails, () => wrapper);
 
     //
-    // Should these be tested here, or is testing at the subcomponent level
-    // sufficient?
+    // Is testing at the subcomponent level sufficient for these, or should
+    // they be tested here as well?
+    //
 
     xtest('should call its openProjectDetails callback', () => {
       wrapper.find('.ConditionDetails')
