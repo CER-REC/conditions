@@ -1,0 +1,17 @@
+@import '../../styles/colors.scss';
+
+.LocationWheelMinimap {
+  max-height: 100px;
+  max-width: 100px;
+
+  .region {
+    fill: GetWheelColors('InnerColourLocation1');
+  }
+
+  .province {
+    fill: none;
+    stroke: $DarkGray;
+    stroke-width: 1;
+  }
+
+}
