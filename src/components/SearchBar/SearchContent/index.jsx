@@ -100,11 +100,11 @@ class SearchContent extends React.PureComponent {
   excludeSearchTextAndWords = () => (
     <React.Fragment>
       <div className="includeText">
-        <FormattedMessage id="components.SearchBar.findWords.searchText.butDo" />
-        <FormattedMessage id="components.SearchBar.findWords.searchText.not">
+        <FormattedMessage id="components.searchBar.findWords.searchText.butDo" />
+        <FormattedMessage id="components.searchBar.findWords.searchText.not">
           {text => <span className="spacedText"><strong> {text} </strong></span> }
         </FormattedMessage>
-        <FormattedMessage id="components.SearchBar.findWords.searchText.include">
+        <FormattedMessage id="components.searchBar.findWords.searchText.include">
           {text => <span className="lowerCase"> {text} </span>}
         </FormattedMessage>:
       </div>
@@ -122,14 +122,14 @@ class SearchContent extends React.PureComponent {
 
   highlightConditions = () => (
     <div className="highlightConditions">
-      <FormattedMessage id="components.SearchBar.findWords.highlightText.highlightConditions">
+      <FormattedMessage id="components.searchBar.findWords.highlightText.highlightConditions">
         {text => <div className="highlightText">{text}</div>}
       </FormattedMessage>
       <div className="anyText">
-        <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
+        <FormattedMessage id="components.searchBar.findWords.highlightText.any">
           {text => <span className="upperCase"> {text} </span>}
         </FormattedMessage>
-        <FormattedMessage id="components.SearchBar.findWords.highlightText.following" />
+        <FormattedMessage id="components.searchBar.findWords.highlightText.following" />
       </div>
       <div className="keywordsText">{this.keyWordsRender(this.props.keywords.include)}</div>
       <div />
@@ -137,10 +137,10 @@ class SearchContent extends React.PureComponent {
         : (
           <React.Fragment>
             <div className="anyText">
-              <FormattedMessage id="components.SearchBar.findWords.highlightText.none">
+              <FormattedMessage id="components.searchBar.findWords.highlightText.none">
                 {text => <span className="upperCase"> {text} </span>}
               </FormattedMessage>
-              <FormattedMessage id="components.SearchBar.findWords.highlightText.following" />
+              <FormattedMessage id="components.searchBar.findWords.highlightText.following" />
             </div>
             <div className="keywordsText">{this.keyWordsRender(this.props.keywords.exclude)}</div>
           </React.Fragment>
@@ -151,10 +151,10 @@ class SearchContent extends React.PureComponent {
   includeSearchTextAndWords = () => (
     <React.Fragment>
       <div className="includeText">
-        <FormattedMessage id="components.SearchBar.findWords.searchText.include" />
+        <FormattedMessage id="components.searchBar.findWords.searchText.include" />
         {this.props.mode === 'basic'
           ? (
-            <FormattedMessage id="components.SearchBar.findWords.highlightText.any">
+            <FormattedMessage id="components.searchBar.findWords.highlightText.any">
               {text => <span className="spacedText"> {text} </span>}
             </FormattedMessage>
           )
@@ -163,12 +163,12 @@ class SearchContent extends React.PureComponent {
               features={['any', 'all']}
               onChange={this.props.includeOnChange}
               dropDown
-              dropDownID="components.SearchBar.findWords.options"
+              dropDownID="components.searchBar.findWords.options"
               selected={this.props.selectedIncludeType}
             />
           )
       }
-        <FormattedMessage id="components.SearchBar.findWords.searchText.of" />:
+        <FormattedMessage id="components.searchBar.findWords.searchText.of" />:
       </div>
       <div className="input">
         <input value={this.state.inputInclude} onChange={this.updateInputInclude} className="searchBar" />
@@ -189,12 +189,12 @@ class SearchContent extends React.PureComponent {
         {(this.props.mode !== 'advanced') ? null : (this.excludeSearchTextAndWords())}
         <div {...handleInteraction(this.props.changeSearchType)} className="advancedSearchText">
           {(this.props.mode === 'basic'
-            ? <FormattedMessage id="components.SearchBar.findWords.advancedSearch" />
-            : <FormattedMessage id="components.SearchBar.findWords.basicSearch" />)
+            ? <FormattedMessage id="components.searchBar.findWords.advancedSearch" />
+            : <FormattedMessage id="components.searchBar.findWords.basicSearch" />)
           }
         </div>
         {this.highlightConditions()}
-        <FormattedMessage id="components.SearchBar.close">
+        <FormattedMessage id="components.searchBar.close">
           {text => (
             <div className="close">
               <button

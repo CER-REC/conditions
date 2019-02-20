@@ -48,17 +48,6 @@ lint:
     reports:
       codequality: gl-codequality.json
 
-dependency scanning:
-  stage: test
-  dependencies:
-    - build
-  script:
-    - npm audit --json | npx gitlab-npm-audit-parser -o gl-dependency-scanning.json
-  allow_failure: true
-  artifacts:
-    reports:
-      dependency_scanning: gl-dependency-scanning.json
-
 buildDevdocs:
   stage: documentation
   only:

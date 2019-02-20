@@ -24,7 +24,7 @@
       "administrative": "",
       "environmentalProtection": "",
       "integrityManagement": "",
-      "standardCondtion": ""
+      "standardCondition": ""
     },
     "instrument": {
       "category": {
@@ -86,30 +86,62 @@
     "featureMenu": {
       "dropDownTitle": ""
     },
+    "featureTypesDescription": {
+      "theme": {
+        "security": "",
+        "managementSystem": "",
+        "financial": ""
+      },
+      "instrument": {
+        "routing": "",
+        "construction": ""
+      }
+    },
     "instrumentsLegend": {
       "all": ""
     },
-    "SearchBar": {
-      "close": "",
+    "searchBar": {
+      "close": "Close",
+      "filter": {
+        "projectYear": "Filter by Project Year",
+        "projectStatus": {
+          "projectStatusText": "Filter by Project Status",
+          "OPEN": "Open",
+          "CLOSED": "Closed",
+          "CANCELLED": "Cancelled"
+        }
+      },
+      "tab": {
+        "filter": "Filter",
+        "find": "Find Words"
+      },
+      "suggestedKeywords": {
+        "selectFrom": "Select from",
+        "suggestedKeywords": "Suggested\nKeywords"
+      },
+      "highlightSummary": {
+        "showingAll": "Showing all projects from",
+        "highlightConditions": "Highlighting conditions containing"
+      },
       "findWords": {
-        "findWords": "",
-        "advancedSearch": "",
-        "basicSearch": "",
+        "findWords": "Find Words",
+        "advancedSearch": "Advanced Search",
+        "basicSearch": "Basic Search",
         "options": {
-          "any": "",
-          "all": ""
+          "any": "ANY",
+          "all": "ALL"
         },
         "searchText": {
-          "include": "",
-          "of": "",
-          "butDo": "",
-          "not": ""
+          "include": "Include",
+          "of": "of",
+          "butDo": "But do",
+          "not": "not"
         },
         "highlightText": {
-          "highlightConditions" : "",
-          "following": "",
-          "any": "",
-          "none": ""
+          "highlightConditions" : "Highlight conditions containing",
+          "following": " of the following:",
+          "any": "any",
+          "none": "none"
         }
       }
     },

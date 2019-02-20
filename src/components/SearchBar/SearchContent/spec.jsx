@@ -56,7 +56,7 @@ describe('Components|SearchBar/SearchContent', () => {
         .first();
       expect(updatedWrapper).toHaveLength(1);
       expect(updatedWrapper.prop('id')).toBe(
-        'components.SearchBar.findWords.searchText.include',
+        'components.searchBar.findWords.searchText.include',
       );
     });
     test('renders search text', () => {
@@ -75,7 +75,7 @@ describe('Components|SearchBar/SearchContent', () => {
       );
       expect(updatedWrapper).toHaveLength(1);
       expect(updatedWrapper.prop('id')).toBe(
-        'components.SearchBar.findWords.advancedSearch',
+        'components.searchBar.findWords.advancedSearch',
       );
     });
   });

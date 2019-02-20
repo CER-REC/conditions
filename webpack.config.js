@@ -47,7 +47,7 @@ module.exports = {
 
       {
         test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
 
       {
@@ -73,6 +73,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
       modernizr$: Path.resolve(__dirname, '.modernizrrc.js'),
+      'react-spring/renderprops': Path.resolve(__dirname, 'node_modules/react-spring/renderprops.cjs'),
     },
   },
 
