@@ -6,6 +6,8 @@ import {
   VictoryChart,
 } from 'victory';
 import StackGroupProps from './StackGroupProps';
+import { features } from '../../constants';
+import { allConditionsPerYear } from '../../proptypes';
 
 import './styles.scss';
 
@@ -13,15 +15,7 @@ export const roundDateLabel = t => Math.round(t);
 
 class StreamGraph extends React.Component {
   static propTypes = {
-    projectData: PropTypes.arrayOf(PropTypes.shape({
-      color: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      key: PropTypes.number.isRequired,
-      graphData: PropTypes.arrayOf(PropTypes.shape({
-        date: PropTypes.number.isRequired,
-        count: PropTypes.number.isRequired,
-      })).isRequired,
-    })).isRequired,
+    projectData: allConditionsPerYear.isRequired,
     chartTitle: PropTypes.string.isRequired,
   }
 
@@ -42,7 +36,7 @@ class StreamGraph extends React.Component {
         data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
         style={{
           data: {
-            fill: v.color,
+            fill: features[v.feature][v.subfeature],
             strokeWidth: 0,
           },
         }}

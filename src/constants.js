@@ -16,7 +16,7 @@ export const features = {
     ENVIRONMENTAL_PROTECTION: 'rgb(33, 181, 115)',
     FINANCIAL: 'rgb(247, 193, 97)',
     INTEGRITY_MANAGEMENT: 'rgb(153, 82, 255)',
-    MANAGEMENT_SYSTEM: 'rgb(221, 10, 10)',
+    MANAGEMENT_SYSTEM: 'rgb(36, 91, 64)',
     SAFETY_MANAGEMENT: 'rgb(68, 34, 149)',
     SECURITY: 'rgb(221, 10, 10)',
     SOCIOECONOMIC: 'rgb(153, 153, 255)',

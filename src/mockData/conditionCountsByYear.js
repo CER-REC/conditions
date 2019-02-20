@@ -2,7 +2,7 @@ export default {
   counts: [
     {
       feature: 'theme',
-      subfeature: 'security',
+      subfeature: 'SECURITY',
       years: {
         2010: 0,
         2011: 12,
@@ -12,11 +12,10 @@ export default {
         2016: 445,
         2017: 436,
       },
-      color: 'red',
     },
     {
       feature: 'theme',
-      subfeature: 'managementSystem',
+      subfeature: 'MANAGEMENT_SYSTEM',
       years: {
         2010: 11,
         2011: 23,
@@ -27,11 +26,10 @@ export default {
         2016: 99,
         2017: 120,
       },
-      color: 'blue',
     },
     {
       feature: 'theme',
-      subfeature: 'financial',
+      subfeature: 'FINANCIAL',
       years: {
         2010: 14,
         2011: 30,
@@ -42,7 +40,6 @@ export default {
         2016: 140,
         2017: 11,
       },
-      color: 'yellow',
     },
   ],
 };
