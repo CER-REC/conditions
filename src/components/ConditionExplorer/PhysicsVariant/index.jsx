@@ -102,9 +102,7 @@ export default class PhysicsVariant extends React.Component {
     this.mouse = mouse;
 
     Matter.World.add(this.engine.world, mouseConstraint);
-
     const runner = Matter.Runner.create();
-
     Matter.Runner.run(runner, this.engine);
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
@@ -128,17 +126,17 @@ export default class PhysicsVariant extends React.Component {
       bodiesChanged = bodiesChanged || bodyChanged;
 
       // If the circle has stopped moving, increase its friction
-      if (body.collisionFilter.category === circleCategory && !bodyChanged) {
-        body.frictionAir = 0.2;
+      if (body.collisionFilter.category === circleCategory && !bodiesChanged) {
+        body.frictionAir = 0.25;
       }
 
-      if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
+      if (body.collisionFilter.category === resettingCategory && !bodiesChanged) {
         body.collisionFilter.category = placeholderCategory;
       }
 
       // Check if any keywords that have been displaced can move back
       if (body.collisionFilter.category === visibleTextCategory
-          && body.render.lastCollision + 5000 <= update.source.timing.timestamp) {
+          && body.render.lastCollision + 3500 <= update.source.timing.timestamp) {
         // eslint-disable-next-line object-curly-newline
         const { x, y, width, height } = body.render.originalData.outline;
         const originalBounds = {
@@ -176,9 +174,11 @@ export default class PhysicsVariant extends React.Component {
   });
 
   loop = (currTime) => {
+    const time = currTime / 1000;
+    const deltaTime = time - this.lastTime;
     Matter.Engine.update(
       this.engine,
-      1000 / 60,
+      1000 / deltaTime,
       this.lastTime ? currTime / this.lastTime : 1,
     );
     this.lastTime = currTime;
