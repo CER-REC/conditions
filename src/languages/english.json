@@ -12,36 +12,36 @@
       "title": "Trends & Definitions"
     },
     "theme": {
-      "security": "Security",
-      "managementSystem": "Management System",
-      "financial": "Financial",
-      "damagePrevention": "Damage Prevention",
-      "safetyManagement": "Safety Management",
-      "socioEconomic": "Socio-Economic",
-      "emergencyManagement": "Emergency Management",
-      "enforcement": "Enforcement",
-      "sunsetClause": "Sunset Clause",
-      "administrative": "Administrative",
-      "environmentalProtection": "Environmental Protection",
-      "integrityManagement": "Integrity Management",
-      "standardCondition": "Standard Condition"
+      "SECURITY": "Security",
+      "MANAGEMENT_SYSTEM": "Management System",
+      "FINANCIAL": "Financial",
+      "DAMAGE_PREVENTION": "Damage Prevention",
+      "SAFETY_MANAGEMENT": "Safety Management",
+      "SOCIO_ECONOMIC": "Socio-Economic",
+      "EMERGENCY_MANAGEMENT": "Emergency Management",
+      "ENFORCEMENT": "Enforcement",
+      "SUNSET_CLAUSE": "Sunset Clause",
+      "ADMINISTRATIVE": "Administrative",
+      "ENVIRONMENTAL_PROTECTION": "Environmental Protection",
+      "INTEGRITY_MANAGEMENT": "Integrity Management",
+      "STANDARD_CONDITION": "Standard Condition"
     },
     "instrument": {
       "category": {
-        "routing": "Routing",
-        "construction": "Construction",
-        "opening": "Opening",
-        "abandonment": "Abandonment",
-        "safety": "Safety",
-        "tariffs": "Tariffs",
-        "misc": "Misc."
+        "ROUTING": "Routing",
+        "CONSTRUCTION": "Construction",
+        "OPENING": "Opening",
+        "ABANDONMENT": "Abandonment",
+        "SAFETY": "Safety",
+        "TARIFFS": "Tariffs",
+        "MISC": "Misc."
       },
       "type": {
-        "oil": "Oil",
-        "gas": "Gas",
-        "power": "Power",
-        "anyCommodityTypes": "Any Commodity Types",
-        "notSpecified": "Not Specified"
+        "OIL": "Oil",
+        "GAS": "Gas",
+        "POWER": "Power",
+        "ANY_COMMODITY_TYPES": "Any Commodity Types",
+        "NOT_SPECIFIED": "Not Specified"
       }
     },
     "phase": {
@@ -93,14 +93,14 @@
     },
     "featureTypesDescription": {
       "theme": {
-        "security": "Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
-        "managementSystem": "Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
-        "financial": "Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header."
+        "SECURITY": "Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
+        "MANAGEMENT_SYSTEM": "Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
+        "FINANCIAL": "Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header."
       },
       "instrument": {
         "category": {
-          "routing": "OPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nGPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.",
-          "construction": "GC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nOC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this."
+          "ROUTING": "OPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nGPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.",
+          "CONSTRUCTION": "GC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nOC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this."
         }
       }
     },

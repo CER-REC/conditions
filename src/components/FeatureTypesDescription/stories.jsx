@@ -7,29 +7,29 @@ import ReadMe from './README.md';
 
 const defaultProps = {
   feature: 'theme',
-  types: ['security', 'managementSystem', 'financial'],
+  types: ['SECURITY', 'MANAGEMENT_SYSTEM', 'FINANCIAL'],
 };
 
 const instrumentProps = {
   feature: 'instrument.category',
-  types: ['routing', 'construction'],
+  types: ['ROUTING', 'CONSTRUCTION'],
   colorCodes: {
-    OPL: 'routing',
-    GPL: 'routing',
-    GC: 'construction',
-    OC: 'construction',
+    OPL: 'ROUTING',
+    GPL: 'ROUTING',
+    GC: 'CONSTRUCTION',
+    OC: 'CONSTRUCTION',
   },
 };
 
 const defaultTargets = [
-  'security',
-  'managementSystem',
-  'financial',
+  'SECURITY',
+  'MANAGEMENT_SYSTEM',
+  'FINANCIAL',
 ];
 
 const instrumentTargets = [
-  'routing',
-  'construction',
+  'ROUTING',
+  'CONSTRUCTION',
 ];
 
 fixInfo(FeatureTypesDescription);
@@ -40,12 +40,12 @@ storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
   .add('default', () => (
     <FeatureTypesDescription
       {...defaultProps}
-      scrollTarget={select('Scroll Target', defaultTargets, 'security')}
+      scrollTarget={select('Scroll Target', defaultTargets, 'SECURITY')}
     />
   ))
   .add('instrument types', () => (
     <FeatureTypesDescription
       {...instrumentProps}
-      scrollTarget={select('Scroll Target', instrumentTargets, 'routing')}
+      scrollTarget={select('Scroll Target', instrumentTargets, 'ROUTING')}
     />
   ));
