@@ -1819,6 +1819,52 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
 </div>
 `;
 
+exports[`Storyshots Components|Dropdown with interaction 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Dropdown"
+  >
+    <select
+      onChange={[Function]}
+      value="theme"
+    >
+      <option
+        value="theme"
+      >
+        Theme
+      </option>
+      <option
+        value="instrument"
+      >
+        Instrument
+      </option>
+      <option
+        value="phase"
+      >
+        Phase
+      </option>
+      <option
+        value="type"
+      >
+        Type
+      </option>
+      <option
+        value="status"
+      >
+        Status
+      </option>
+      <option
+        value="filing"
+      >
+        Filing
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
 <div
   className="visualization"
@@ -2519,41 +2565,45 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
     >
       Feature
     </span>
-    <select
-      onChange={[Function]}
-      value="theme"
+    <div
+      className="Dropdown"
     >
-      <option
+      <select
+        onChange={[Function]}
         value="theme"
       >
-        Theme
-      </option>
-      <option
-        value="instrument"
-      >
-        Instrument
-      </option>
-      <option
-        value="phase"
-      >
-        Phase
-      </option>
-      <option
-        value="type"
-      >
-        Type
-      </option>
-      <option
-        value="status"
-      >
-        Status
-      </option>
-      <option
-        value="filing"
-      >
-        Filing
-      </option>
-    </select>
+        <option
+          value="theme"
+        >
+          Theme
+        </option>
+        <option
+          value="instrument"
+        >
+          Instrument
+        </option>
+        <option
+          value="phase"
+        >
+          Phase
+        </option>
+        <option
+          value="type"
+        >
+          Type
+        </option>
+        <option
+          value="status"
+        >
+          Status
+        </option>
+        <option
+          value="filing"
+        >
+          Filing
+        </option>
+      </select>
+    </div>
   </div>
 </div>
 `;
