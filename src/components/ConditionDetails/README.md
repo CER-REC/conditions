@@ -14,7 +14,8 @@ ConditionDetails is an overview of the selected project. It contains:
 ### Details
 
 - Should be collapsable by clicking on a toggle button in the Header
-- Should allow the Details panel to be expanded/collapsed, with the entire ConditionDetails component sliding left to make room for it
+- Should allow the Details panel to be expanded/collapsed
+- TO DO: The component should animate the panel and slide left to make room for it
 
 ## Interaction Requirements
 
