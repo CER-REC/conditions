@@ -76,12 +76,12 @@ describe('Components|TrendButton', () => {
       expect(messageWrapper).toHaveLength(1);
       expect(messageWrapper.prop('id')).toBe('components.trendButton.description');
       const updatedWrapper = messageWrapper.shallowWithIntl();
-      expect(updatedWrapper.find('p')).toHaveLength(2)
+      expect(updatedWrapper.find('p')).toHaveLength(2);
     });
   });
 
   describe('with instrument selected', () => {
-    test('it should not render streamgraph', () => {
+    test('it should not render Streamgraph', () => {
       const wrapper = shallow(<TrendButton onClick={noop} feature="instrument" projectData={projectData} />);
       expect(wrapper.find('StreamGraph')).toHaveLength(0);
     });
