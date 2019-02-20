@@ -1,5 +1,6 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import TrendButton from '.';
@@ -56,17 +57,18 @@ const projectData = [
 storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
+  .addDecorator(withInteraction({ actions: ['onClick'] }))
   .add('Default streamgraph Button', () => (
     <TrendButton
-      onClick={() => alert('Clicked')}
+      {...getInteractionProps()}
       feature="theme"
       projectData={projectData}
     />
   ))
   .add('Instrument Bubble Button', () => (
     <TrendButton
-      onClick={() => alert('Clicked')}
+      {...getInteractionProps()}
       feature="instrument"
       projectData={projectData}
     />
-  ))
+  ));
