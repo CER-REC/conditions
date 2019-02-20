@@ -4,25 +4,74 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import ConditionList from '.';
 import ReadMe from './README.md';
 
-import data from '../testData';
-
-const updateSelectedItem = () => (instrumentIndex, itemIndex) => (
-  { selectedItem: { instrumentIndex, itemIndex } }
-);
-
-const defaultProps = {
-  data,
-  searchKeywords: {
-    include: ['hello'],
+const data = [
+  {
+    isInstrument: true,
+    instrumentNumber: 'XO-001-2018',
+    instrumentIndex: 0,
+    itemIndex: -1,
   },
-  selectedItem: { instrumentIndex: 1, itemIndex: -1 },
+  {
+    length: 3,
+    fill: 'pink',
+    marked: true,
+    instrumentIndex: 0,
+    itemIndex: 0,
+  },
+  {
+    length: 2,
+    fill: 'blue',
+    instrumentIndex: 0,
+    itemIndex: 1,
+  },
+  {
+    isInstrument: true,
+    instrumentNumber: 'XO-003-2018',
+    instrumentIndex: 1,
+    itemIndex: -1,
+  },
+  {
+    length: 1,
+    fill: 'red',
+    instrumentIndex: 1,
+    itemIndex: 0,
+  },
+  {
+    length: 2,
+    fill: 'red',
+    instrumentIndex: 1,
+    itemIndex: 1,
+  },
+  {
+    isInstrument: true,
+    instrumentNumber: 'XO-005-2018',
+    instrumentIndex: 2,
+    itemIndex: -1,
+  },
+  {
+    length: 3,
+    fill: 'orange',
+    marked: true,
+    instrumentIndex: 2,
+    itemIndex: 0,
+  },
+];
+
+const updateSelectedItem = () => (instrumentIndex, itemIndex) => {
+  const idx = data.findIndex(item => (
+    item.instrumentIndex === instrumentIndex
+    && item.itemIndex === itemIndex
+  ));
+
+  return { selectedItem: idx };
 };
 
 storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['updateSelectedItem'] }))
   .add('default', () => (
     <ConditionList
-      {...defaultProps}
+      items={data}
+      selectedItem={3}
       {...getInteractionProps()}
     />
   ), { interaction: { actions: { updateSelectedItem } } });

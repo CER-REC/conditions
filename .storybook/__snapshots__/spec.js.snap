@@ -3599,6 +3599,100 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      style={
+        Object {
+          "height": 300,
+          "overflow": "scroll",
+          "width": 200,
+        }
+      }
+    >
+      <div
+        className="Details"
+      >
+        <h3>
+          Selected Condition Feature
+        </h3>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Theme
+          </h4>
+          : 
+          <span>
+            Environmental Protection
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Instrument
+          </h4>
+          : 
+          <span>
+            Construction
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Phase
+          </h4>
+          : 
+          <span>
+            During Construction Phase
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Type
+          </h4>
+          : 
+          <span>
+            Standard
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Status
+          </h4>
+          : 
+          <span>
+            In Progress
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Filing
+          </h4>
+          : 
+          <span>
+            No Filing Required
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
 <div
   className="visualization"

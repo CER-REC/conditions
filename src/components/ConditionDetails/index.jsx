@@ -9,6 +9,48 @@ import Content from './Content';
 import Details from './Details';
 
 class ConditionDetails extends React.Component {
+  findSelectedItem = () => {
+    let count = 0;
+    for (let i = 0, l = this.props.selectedItem.instrumentIndex; i < l; i += 1) {
+      count += this.props.data[i].conditions.length + 1;
+    }
+
+    return count + this.props.selectedItem.itemIndex + 1;
+  };
+
+  textMatchesKeywords = (text) => {
+    const lowerText = text.toLowerCase();
+    const match = words => words && words.some(word => lowerText.match(word.toLowerCase()));
+
+    return (
+      match(this.props.searchKeywords.include)
+      && !match(this.props.searchKeywords.exclude));
+  }
+
+  getListData = () => this.props.data.reduce(
+    (data, instrument, instrumentIndex) => {
+      data.push({
+        isInstrument: true,
+        instrumentIndex,
+        instrumentNumber: instrument.instrumentNumber,
+        itemIndex: -1,
+      });
+
+      instrument.conditions.forEach((condition, itemIndex) => {
+        const marked = this.textMatchesKeywords(condition.text);
+        data.push({
+          length: condition.length,
+          fill: condition.fill,
+          marked,
+          instrumentIndex,
+          itemIndex,
+        });
+      });
+
+      return data;
+    }, [],
+  );
+
   renderHeader = () => (
     <ProjectHeader
       isExpandable={this.props.isExpandable}
@@ -21,9 +63,8 @@ class ConditionDetails extends React.Component {
 
   renderList = () => (
     <ConditionList
-      searchKeywords={this.props.searchKeywords}
-      data={this.props.data}
-      selectedItem={this.props.selectedItem}
+      items={this.getListData()}
+      selectedItem={this.findSelectedItem()}
       updateSelectedItem={this.props.updateSelectedItem}
     />
   )
@@ -36,22 +77,10 @@ class ConditionDetails extends React.Component {
     />
   )
 
-  renderDetails = (instrument, index) => {
-    const details = (index !== -1) ? instrument.conditions[index].details : null;
-
-    return (details)
-      ? (
-        <Details
-          theme={details.theme}
-          instrument={details.instrument}
-          phase={details.phase}
-          type={details.type}
-          status={details.status}
-          filing={details.filing}
-        />
-      )
-      : null;
-  }
+  renderDetails = (instrument, index) => ((index === -1)
+    ? null
+    : <Details {...instrument.conditions[index].details} />
+  )
 
   render() {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
