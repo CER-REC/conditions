@@ -45,20 +45,6 @@ describe('Components|SearchBar/SuggestionWindow', () => {
       expect(updatedWrapper.at(1).shallowWithIntl().hasClass('selectedSort')).toBe(false);
       expect(updatedWrapper.at(2).shallowWithIntl().hasClass('selectedSort')).toBe(false);
     });
-
-    test('if word is selected, should have appropriately styled', () => {
-      const updatedWrapper = wrapper.find('.keywordsBox li');
-      const first = updatedWrapper.first();
-      expect((first).find('Icon').props().icon).toBe('minus-circle');
-      expect((first).find('Icon').hasClass('selectedIcon')).toBe(true);
-    });
-
-    test('if word is not selected, should have appropriate styles', () => {
-      const updatedWrapper = wrapper.find('.keywordsBox li');
-      const last = updatedWrapper.last();
-      expect((last).find('Icon').props().icon).toBe('plus-circle');
-      expect((last).find('Icon').hasClass('regularIcon')).toBe(true);
-    });
   });
 
   describe('with sortBy prop as alphabetical', () => {
@@ -224,7 +210,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
     });
   });
 
-  describe('onClick for word and category', () => {
+  describe('onClick for category', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
@@ -242,22 +228,6 @@ describe('Components|SearchBar/SuggestionWindow', () => {
           selectedWords={[{ name: 'safety', conditions: 1200 }]}
         />,
       );
-    });
-
-    test('onClick on - symbol, must call onClickUpdateProp', () => {
-      const updatedWrapper = wrapper.find('.keywordsBox li');
-      const first = updatedWrapper.first().find('.icon');
-      first.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith([[], 'words']);
-    });
-
-    test('onClick on + symbol, must call onClickUpdateProp', () => {
-      const updatedWrapper = wrapper.find('.keywordsBox li');
-      const last = updatedWrapper.last().find('.icon');
-      last.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith([[{ conditions: 1200, name: 'safety' }, { conditions: 800, name: 'habitat' }], 'words']);
     });
 
     test('onClick on not highlighted category (gray), must call onClickUpdate prop', () => {

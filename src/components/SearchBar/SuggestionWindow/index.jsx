@@ -3,16 +3,9 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import Icon from '../../Icon/index';
 import handleInteraction from '../../../utilities/handleInteraction';
-import BarContainer from '../../BarContainer';
+import SuggestionWindowKeywords from './SuggestionWindowKeywords';
 
-library.add(
-  faMinusCircle,
-  faPlusCircle,
-);
 class SuggestionWindow extends React.PureComponent {
   static propTypes = {
     selectedCategory: PropTypes.arrayOf(PropTypes.string),
@@ -21,8 +14,8 @@ class SuggestionWindow extends React.PureComponent {
       conditions: PropTypes.number,
     })),
     suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      conditions: PropTypes.number,
+      name: PropTypes.string.isRequired,
+      conditions: PropTypes.number.isRequired,
     })).isRequired,
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClickUpdate: PropTypes.func.isRequired,
@@ -57,11 +50,6 @@ class SuggestionWindow extends React.PureComponent {
     })
   )
 
-  findMaxConditions = () => (
-    this.props.suggestedKeywords.reduce((acc, item) => (
-      (item.conditions < acc) ? acc : item.conditions
-    ), 0))
-
   categoryOnClick = (li) => {
     const { selectedCategory } = this.props;
     const index = selectedCategory.indexOf(li);
@@ -70,16 +58,6 @@ class SuggestionWindow extends React.PureComponent {
       ? (selectedCategory.push(li))
       : selectedCategory.splice(index, 1);
     return (this.props.onClickUpdate([selectedCategory, 'category']));
-  }
-
-  keywordOnClick = (obj) => {
-    const { selectedWords } = this.props;
-    const [value, present, index] = obj;
-    // eslint-disable-next-line no-unused-expressions
-    (!present)
-      ? (selectedWords.push(value))
-      : (selectedWords.splice(index, 1));
-    return (this.props.onClickUpdate([selectedWords, 'words']));
   }
 
   sortHierarchy = () => {
@@ -95,49 +73,6 @@ class SuggestionWindow extends React.PureComponent {
   changeSort = sort => (this.props.sortBy === sort
     ? (this.props.changeSort(['', 'by']))
     : (this.props.changeSort([sort, 'by'])))
-
-  renderKeyWords = () => this.props.suggestedKeywords.map((value) => {
-    const { selectedWords } = this.props;
-    const [present, selectedIndex] = selectedWords.reduce((acc, item, i) => (
-      (acc[0] === true)
-        ? acc
-        : [item.name === value.name && item.conditions === value.conditions, i]
-    ), [false, null]);
-
-    const [icon, iconClass, selectedColor, textStyle] = (present)
-      ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
-      : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
-    const maxConditions = this.findMaxConditions();
-    const conditions = (value.conditions / maxConditions) * 200;
-    const remainingSpace = (200 - conditions);
-    return (
-      <li key={`${value.name} ${value.conditions}`}>
-        <span
-          className="icon"
-          {...handleInteraction(this.keywordOnClick, [value, present, selectedIndex])}
-        >
-          <Icon className={iconClass} icon={icon} />
-        </span>
-        <span className={`keywordCategory ${textStyle}`}>{value.name} </span>
-        <span className="BarContainer">
-          <BarContainer
-            title="ConditionTitle"
-            desc="conditionDesc"
-            items={[{ value: conditions, fill: selectedColor },
-              { value: remainingSpace, fill: 'transparent' }]}
-            size={8}
-            scale={1}
-            vert={false}
-          />
-        </span>
-        <div className="conditionsText">
-          <FormattedMessage id="components.searchBar.suggestionWindow.conditions">
-            {text => <div className="conditionsText"> {value.conditions} {text}  </div>}
-          </FormattedMessage>
-        </div>
-      </li>
-    );
-  })
 
   render() {
     return (
@@ -203,16 +138,20 @@ class SuggestionWindow extends React.PureComponent {
             <span className="upperCase"> {this.props.sortHierarchy } </span>
           </span>
         </div>
-
-        <div className="keywordsBox">
-          <ul>
-            { this.renderKeyWords() }
-          </ul>
-        </div>
+        <SuggestionWindowKeywords
+          selectedWords={this.props.selectedWords}
+          suggestedKeywords={this.props.suggestedKeywords}
+          onClickUpdate={this.props.onClickUpdate}
+        />
         <FormattedMessage id="components.searchBar.close">
           {text => (
-            <div {...handleInteraction(this.props.closeTab)} className="close">
-              <button className="upperCase" type="button"> {text} </button>
+            <div className="close">
+              <button
+                {...handleInteraction(this.props.closeTab)}
+                className="upperCase"
+                type="button"
+              > {text}
+              </button>
             </div>
           )}
         </FormattedMessage>

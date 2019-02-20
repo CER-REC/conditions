@@ -10,9 +10,11 @@ storiesForComponent('Components|SearchBar/SuggestionWindow', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['onClickUpdate', 'changeSort', 'closeTab'] }))
   .add('with interaction', () => (
-    <SuggestionWindow
-      {...getInteractionProps()}
-    />
+    <div>
+      <SuggestionWindow
+        {...getInteractionProps()}
+      />
+    </div>
   ), {
     interaction: {
       state: {
