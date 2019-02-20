@@ -13,10 +13,9 @@ class Content extends React.PureComponent {
     const paragraphs = content.split('\n');
     const heading = <FormattedMessage id={id} tagName="h4" />;
 
-    return [
+    return React.createElement(React.Fragment, {},
       <p className="contentText">{heading}: {paragraphs[0]}</p>,
-      ...paragraphs.slice(1).map(text => <p className="contentText">{text}</p>),
-    ];
+      ...paragraphs.slice(1).map(text => <p className="contentText">{text}</p>));
   }
 
   renderInstrumentLink = instrumentNumber => (
@@ -62,7 +61,17 @@ class Content extends React.PureComponent {
 }
 
 Content.propTypes = {
-  instrument: PropTypes.object.isRequired,
+  instrument: PropTypes.shape({
+    instrumentNumber: PropTypes.string.isRequired,
+    issuanceDate: PropTypes.string.isRequired,
+    effectiveDate: PropTypes.string.isRequired,
+    sunsetDate: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    activity: PropTypes.string.isRequired,
+    conditions: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
   itemIndex: PropTypes.number.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
 };
