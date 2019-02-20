@@ -5823,6 +5823,1261 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent"
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="upperCase"
+        >
+           
+          Reset
+           
+        </span>
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
+        >
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          className="regularBackground leftCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1970}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              70
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1971}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              71
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1972}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              72
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1973}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              73
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1974}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              74
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1975}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              75
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1976}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              76
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1977}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              77
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1978}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              78
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1979}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              79
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground rightCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1980}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              80
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Status
+        </span>
+      </div>
+      <ul
+        className="projectStatus"
+      >
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Open
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Closed
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Cancelled
+             
+          </span>
+        </li>
+      </ul>
+      <button
+        className="close upperCase"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent"
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="upperCase"
+        >
+           
+          Reset
+           
+        </span>
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
+        >
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          className="regularBackground leftCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1970}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              70
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1971}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              71
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1972}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              72
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1973}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              73
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1974}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              74
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1975}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              75
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1976}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              76
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1977}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              77
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1978}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              78
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1979}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              79
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground rightCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1980}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              80
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Status
+        </span>
+      </div>
+      <ul
+        className="projectStatus"
+      >
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Open
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Closed
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Cancelled
+             
+          </span>
+        </li>
+      </ul>
+      <button
+        className="close upperCase"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent"
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="upperCase"
+        >
+           
+          Reset
+           
+        </span>
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
+        >
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          className="regularBackground leftCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1970}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              70
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1971}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              71
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1972}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              72
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1973}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              73
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1974}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              74
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1975}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              75
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1976}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              76
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1977}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              77
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1978}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              78
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1979}
+        >
+          <div
+            className="CircleContainer regularCircle selectedInsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              79
+            </div>
+          </div>
+        </li>
+        <li
+          className="regularBackground rightCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1980}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+          >
+            <div>
+              80
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Status
+        </span>
+      </div>
+      <ul
+        className="projectStatus"
+      >
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Open
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Closed
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Cancelled
+             
+          </span>
+        </li>
+      </ul>
+      <button
+        className="close upperCase"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="HighlightSummary"
+    >
+      <span>
+        Showing all projects from
+      </span>
+      <span>
+         
+        2010
+         - 
+        2018
+         
+      </span>
+      <p>
+        Highlighting conditions containing
+         : 
+      </p>
+      <div
+        className="keywordsText"
+      >
+        include1, include2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/SuggestedKeywords default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="SuggestedKeywords"
+    >
+      <p
+        className="selectFrom"
+      >
+        Select from
+      </p>
+      <p
+        className="colorChange"
+      >
+        Suggested
+      </p>
+      <p
+        className="colorChange"
+      >
+        Keywords
+      </p>
+      <svg
+        className="arrow"
+        focusable={true}
+        height={20}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        viewBox="0 0 427.5 427.5"
+        width={20}
+      >
+        <circle
+          cx="215"
+          cy="213.8"
+          fill="#CF167B"
+          r="213.8"
+        />
+        <polygon
+          fill="#FFFFFF"
+          points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
 <div
   className="visualization"
