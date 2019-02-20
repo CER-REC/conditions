@@ -102,10 +102,8 @@ class StackGroup extends React.PureComponent {
     if (controlYear) {
       const xPos = stackProps.scale.x(controlYear);
       // Count the number of conditions across all streams for the selected year
-      const conditionCount = this.props.projectData.reduce((acc, next) => {
-        const yearData = next.graphData.find(data => data.date === controlYear);
-        return acc + (yearData ? yearData.count : 0);
-      }, 0);
+      const conditionCount = this.props.projectData
+        .reduce((acc, next) => (acc + (next.graphData[controlYear] || 0)), 0);
 
       const yBottom = stackProps.height - stackProps.padding.bottom;
       const yTop = stackProps.scale.y(conditionCount);

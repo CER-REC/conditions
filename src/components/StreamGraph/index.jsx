@@ -37,9 +37,9 @@ class StreamGraph extends React.Component {
   streamLayers() {
     const streamLayers = this.props.projectData.map(v => (
       <VictoryArea
-        key={v.key}
-        name={v.name}
-        data={v.graphData.map(k => ({ x: k.date, y: k.count }))}
+        key={`${v.feature}-${v.subfeature}`}
+        name={v.subfeature}
+        data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
         style={{
           data: {
             fill: v.color,
@@ -53,21 +53,21 @@ class StreamGraph extends React.Component {
   }
 
   chart() {
-    const numOfConditions = this.props.projectData.map(k => k.graphData.map(v => v.count));
+    const numOfConditions = this.props.projectData.map(k => Object.values(k.years));
     const numOfConditionsConcat = [].concat(...numOfConditions);
 
     const minConditionValue = Math.min(...numOfConditionsConcat);
 
-    const date = this.props.projectData.map(k => k.graphData.map(v => v.date));
+    const date = this.props.projectData.map(k => Object.keys(k.years));
     const dateConcat = [].concat(...date);
 
     const minDateValue = Math.min(...dateConcat);
     const maxDateValue = Math.max(...dateConcat);
 
     let conditionDates = this.props.projectData.reduce((acc, next) => {
-      next.graphData.forEach((v) => {
-        if (!acc[v.date]) { acc[v.date] = 0; }
-        acc[v.date] += v.count;
+      Object.entries(next.years).forEach(([date, count]) => {
+        if (!acc[date]) { acc[date] = 0; }
+        acc[date] += count;
       });
       return acc;
     }, {});
