@@ -40,8 +40,8 @@ class ConditionList extends React.Component {
                 value: item.length,
                 fill: item.fill,
               }]}
-              size="6"
-              maxValue="25"
+              size={6}
+              maxValue={25}
               key="2"
             />
           </div>

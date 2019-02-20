@@ -1725,26 +1725,30 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
     <div
       className="gridCell header"
     >
-      <h1>
-        Selected Project: 
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="ProjectHeader"
       >
-        <h2>
-          Keystone XL
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
+        <h1>
+          Selected Project: 
+        </h1>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h2>
+            Keystone XL
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+      </div>
     </div>
     <div
       className="gridCell list"
@@ -1794,7 +1798,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   data-item-index={0}
                 >
                   <div
-                    className="unmarked"
+                    className="marked"
                   />
                   <svg
                     className="BarContainer"
@@ -2082,7 +2086,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   data-item-index={0}
                 >
                   <div
-                    className="unmarked"
+                    className="marked"
                   />
                   <svg
                     className="BarContainer"
@@ -2258,48 +2262,52 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
     <div
       className="gridCell header"
     >
-      <h1>
-        Selected Project: 
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="ProjectHeader"
       >
-        <h2>
-          Keystone XL
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
-      <button
-        className="toggleExpand"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <h1
-          className="upperCase"
-        >
-          Less
+        <h1>
+          Selected Project: 
         </h1>
-        <svg
-          className="arrow"
-          viewBox="0 0 16 24"
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <polyline
-            points="4,4 12,12.5 4,20 4,4"
-          />
-        </svg>
-      </button>
+          <h2>
+            Keystone XL
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
     <div
       className="gridCell list"
@@ -2349,7 +2357,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   data-item-index={0}
                 >
                   <div
-                    className="unmarked"
+                    className="marked"
                   />
                   <svg
                     className="BarContainer"
@@ -2637,7 +2645,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   data-item-index={0}
                 >
                   <div
-                    className="unmarked"
+                    className="marked"
                   />
                   <svg
                     className="BarContainer"
@@ -2767,74 +2775,78 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
     <div
       className="gridCell details"
     >
-      <h3>
-        Selected Condition Feature
-      </h3>
       <div
-        className="ContentBlock "
+        className="Details"
       >
-        <h4>
-          Theme
-        </h4>
-        : 
-        <span>
-          Environmental Protection
-        </span>
-      </div>
-      <div
-        className="ContentBlock "
-      >
-        <h4>
-          Instrument
-        </h4>
-        : 
-        <span>
-          Construction
-        </span>
-      </div>
-      <div
-        className="ContentBlock "
-      >
-        <h4>
-          Phase
-        </h4>
-        : 
-        <span>
-          During Construction Phase
-        </span>
-      </div>
-      <div
-        className="ContentBlock "
-      >
-        <h4>
-          Type
-        </h4>
-        : 
-        <span>
-          Standard
-        </span>
-      </div>
-      <div
-        className="ContentBlock "
-      >
-        <h4>
-          Status
-        </h4>
-        : 
-        <span>
-          In Progress
-        </span>
-      </div>
-      <div
-        className="ContentBlock "
-      >
-        <h4>
-          Filing
-        </h4>
-        : 
-        <span>
-          No Filing Required
-        </span>
+        <h3>
+          Selected Condition Feature
+        </h3>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Theme
+          </h4>
+          : 
+          <span>
+            Enforcement
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Instrument
+          </h4>
+          : 
+          <span>
+            Oil
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Phase
+          </h4>
+          : 
+          <span>
+            During Construction Phase
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Type
+          </h4>
+          : 
+          <span>
+            Non Standard
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Status
+          </h4>
+          : 
+          <span>
+            In Progress
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Filing
+          </h4>
+          : 
+          <span>
+            Closed
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -3223,93 +3235,103 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
     className="ConditionDetails"
   >
     <div
-      className="Content"
+      style={
+        Object {
+          "height": 300,
+          "overflow": "scroll",
+          "width": 450,
+        }
+      }
     >
       <div
-        className="ContentBlock half"
+        className="Content"
       >
-        <h4>
-          Effective Date
-        </h4>
-        : 
-        2014-10-24
-      </div>
-      <div
-        className="ContentBlock half"
-      >
-        <h4>
-          Instrument Number
-        </h4>
-        : 
-        <button
-          className="instrumentLink"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
+        <div
+          className="ContentBlock half"
         >
-          XO-001-2018
-        </button>
+          <h4>
+            Effective Date
+          </h4>
+          : 
+          2014-10-24
+        </div>
+        <div
+          className="ContentBlock half"
+        >
+          <h4>
+            Instrument Number
+          </h4>
+          : 
+          <button
+            className="instrumentLink"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            XO-001-2018
+          </button>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <h4>
+            Keywords
+          </h4>
+          : 
+          program
+        </div>
+        <p
+          className="contentText"
+        >
+          <h4>
+            Text
+          </h4>
+          : 
+          hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+        </p>
+        <p
+          className="contentText"
+        >
+          Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+        </p>
+        <p
+          className="contentText"
+        >
+          Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+        </p>
+        <p
+          className="contentText"
+        >
+          Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+        </p>
+        <p
+          className="contentText"
+        >
+          Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+        </p>
+        <p
+          className="contentText"
+        >
+          Quisque eu lobortis velit, quis viverra elit.
+        </p>
       </div>
-      <div
-        className="ContentBlock "
-      >
-        <h4>
-          Keywords
-        </h4>
-        : 
-        program
-      </div>
-      <p
-        className="contentText"
-      >
-        <h4>
-          Text
-        </h4>
-        : 
-        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-      </p>
-      <p
-        className="contentText"
-      >
-        Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-      </p>
-      <p
-        className="contentText"
-      >
-        Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque eu lobortis velit, quis viverra elit.
-      </p>
     </div>
   </div>
 </div>
@@ -3463,36 +3485,6 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
 </div>
 `;
 
-exports[`Storyshots Components|ConditionDetails/ContentBlock full 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="ConditionDetails"
-  >
-    <div
-      style={
-        Object {
-          "border": "1px solid black",
-          "height": 50,
-          "width": 150,
-        }
-      }
-    >
-      <div
-        className="ContentBlock "
-      >
-        <h4>
-          Theme
-        </h4>
-        : 
-        This is a full block
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
 <div
   className="visualization"
@@ -3526,36 +3518,13 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         : 
         This is a full block
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|ConditionDetails/ContentBlock half 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="ConditionDetails"
-  >
-    <div
-      style={
-        Object {
-          "border": "1px solid black",
-          "height": 50,
-          "width": 150,
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".ConditionDetails { display: block; width: 100% } ",
+          }
         }
-      }
-    >
-      <div
-        className="ContentBlock half"
-      >
-        <h4>
-          Theme
-        </h4>
-        : 
-        This is a half block
-      </div>
+      />
     </div>
   </div>
 </div>
@@ -3594,6 +3563,13 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         : 
         This is a half block
       </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".ConditionDetails { display: block; width: 100% } ",
+          }
+        }
+      />
     </div>
   </div>
 </div>
@@ -3609,9 +3585,9 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
     <div
       style={
         Object {
-          "height": 300,
+          "height": 200,
           "overflow": "scroll",
-          "width": 200,
+          "width": 250,
         }
       }
     >
@@ -3703,53 +3679,64 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
     <div
       style={
         Object {
-          "height": 100,
+          "height": 24,
           "width": 400,
         }
       }
     >
-      <h1>
-        Selected Project: 
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="ProjectHeader"
       >
-        <h2>
-          Keystone XL
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
-      <button
-        className="toggleExpand"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <svg
-          className="arrow"
-          viewBox="0 0 16 24"
-        >
-          <polyline
-            points="12,4 4,12.5 12,20 12,4"
-          />
-        </svg>
-        <h1
-          className="upperCase"
-        >
-          More
+        <h1>
+          Selected Project: 
         </h1>
-      </button>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h2>
+            Keystone XL
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="12,4 4,12.5 12,20 12,4"
+            />
+          </svg>
+          <h1
+            className="upperCase"
+          >
+            More
+          </h1>
+        </button>
+      </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".ConditionDetails { display: block; width: 100% } ",
+          }
+        }
+      />
     </div>
   </div>
 </div>
@@ -3765,99 +3752,42 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
     <div
       style={
         Object {
-          "height": 100,
+          "height": 24,
           "width": 400,
         }
       }
     >
-      <h1>
-        Selected Project: 
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="ProjectHeader"
       >
-        <h2>
-          Keystone XL
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|ConditionDetailsContentBlock full block 1`] = `
-<div
-  className="visualization"
->
-  <div
-    style={
-      Object {
-        "height": 50,
-        "width": 300,
-      }
-    }
-  >
-    <div
-      className="ContentBlock "
-    >
-      <h4>
-        Theme
-      </h4>
-      : 
-      This is a full block
-    </div>
-    <div
-      className="ContentBlock "
-    >
-      <h4>
-        Theme
-      </h4>
-      : 
-      This is a full block
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|ConditionDetailsContentBlock half block 1`] = `
-<div
-  className="visualization"
->
-  <div
-    style={
-      Object {
-        "height": 50,
-        "width": 300,
-      }
-    }
-  >
-    <div
-      className="ContentBlock half"
-    >
-      <h4>
-        Theme
-      </h4>
-      : 
-      This is a half block
-    </div>
-    <div
-      className="ContentBlock half"
-    >
-      <h4>
-        Theme
-      </h4>
-      : 
-      This is a half block
+        <h1>
+          Selected Project: 
+        </h1>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h2>
+            Keystone XL
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+      </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".ConditionDetails { display: block; width: 100% } ",
+          }
+        }
+      />
     </div>
   </div>
 </div>
@@ -3963,58 +3893,6 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
     className="ConditionExplorer"
   >
     <div />
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|ContentBlock full 1`] = `
-<div
-  className="visualization"
->
-  <div
-    style={
-      Object {
-        "border": "1px solid black",
-        "height": 50,
-        "width": 150,
-      }
-    }
-  >
-    <div
-      className="ContentBlock "
-    >
-      <h4>
-        Theme
-      </h4>
-      : 
-      This is a full block
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|ContentBlock half 1`] = `
-<div
-  className="visualization"
->
-  <div
-    style={
-      Object {
-        "border": "1px solid black",
-        "height": 50,
-        "width": 150,
-      }
-    }
-  >
-    <div
-      className="ContentBlock half"
-    >
-      <h4>
-        Theme
-      </h4>
-      : 
-      This is a half block
-    </div>
   </div>
 </div>
 `;

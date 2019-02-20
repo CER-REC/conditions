@@ -41,7 +41,11 @@ describe('Components|ConditionDetails', () => {
 
     shouldBehaveLikeAComponent(ConditionDetails, () => wrapper);
 
-    test('should call its openProjectDetails callback', () => {
+    //
+    // Should these be tested here, or is testing at the subcomponent level
+    // sufficient?
+
+    xtest('should call its openProjectDetails callback', () => {
       wrapper.find('.ConditionDetails')
         .find('.header')
         .find('.openProject')
@@ -50,7 +54,7 @@ describe('Components|ConditionDetails', () => {
       expect(spy.openProjectDetails).toHaveBeenCalledTimes(1);
     });
 
-    test('should call its openIntermediatePopup callback', () => {
+    xtest('should call its openIntermediatePopup callback', () => {
       wrapper.find('.ConditionDetails')
         .find('.content')
         .find('.instrumentLink')
@@ -59,34 +63,13 @@ describe('Components|ConditionDetails', () => {
       expect(spy.openIntermediatePopup).toHaveBeenCalledTimes(1);
     });
 
-    test('should call its toggleExpanded callback', () => {
+    xtest('should call its toggleExpanded callback', () => {
       wrapper.find('.ConditionDetails')
         .find('.header')
         .find('.toggleExpand')
         .simulate('click', eventFuncs);
 
       expect(spy.toggleExpanded).toHaveBeenCalledTimes(1);
-    });
-  });
-
-  describe('when not expandable', () => {
-    test('should not provide a toggle button when not expandable', () => {
-      const wrapper = shallow(
-        <ConditionDetails
-          {...defaultProps}
-          openProjectDetails={noop}
-          openIntermediatePopup={noop}
-          toggleExpanded={noop}
-          updateSelectedItem={noop}
-        />,
-      );
-
-      const exists = wrapper.find('.ConditionDetails')
-        .find('.header')
-        .find('.toggleExpand')
-        .exists();
-
-      expect(exists).toEqual(false);
     });
   });
 });
