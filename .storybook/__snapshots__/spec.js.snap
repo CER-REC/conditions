@@ -2999,6 +2999,93 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
         </li>
       </ul>
     </div>
+    <div
+      className="BubbleLegend BubbleLegend"
+    >
+      <span>
+        Number of Conditions
+      </span>
+      <svg
+        viewBox="-200 0 260 300"
+      >
+        <g
+          transform="translate(0, 0)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-3}
+            cy="3"
+            rx={3}
+            ry={3}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            10
+          </text>
+        </g>
+        <g
+          transform="translate(0, 20)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-6.25}
+            cy="3"
+            rx={6.25}
+            ry={4}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            100
+          </text>
+        </g>
+        <g
+          transform="translate(0, 40)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-62.5}
+            cy="3"
+            rx={62.5}
+            ry={5}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            1000
+          </text>
+        </g>
+        <g
+          transform="translate(0, 60)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-100}
+            cy="3"
+            rx={100}
+            ry={6}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            1600
+          </text>
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -3337,6 +3424,191 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
           </div>
         </li>
       </ul>
+    </div>
+    <div
+      className="BubbleLegend BubbleLegend"
+    >
+      <span>
+        Number of Conditions
+      </span>
+      <svg
+        viewBox="-200 0 260 300"
+      >
+        <g
+          transform="translate(0, 0)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-3}
+            cy="3"
+            rx={3}
+            ry={3}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            10
+          </text>
+        </g>
+        <g
+          transform="translate(0, 20)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-6.25}
+            cy="3"
+            rx={6.25}
+            ry={4}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            100
+          </text>
+        </g>
+        <g
+          transform="translate(0, 40)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-62.5}
+            cy="3"
+            rx={62.5}
+            ry={5}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            1000
+          </text>
+        </g>
+        <g
+          transform="translate(0, 60)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-100}
+            cy="3"
+            rx={100}
+            ry={6}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            1600
+          </text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|InstrumentsLegend/BubbleLegend default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="InstrumentsLegend"
+  >
+    <div
+      className="BubbleLegend BubbleLegend"
+    >
+      <span>
+        Number of Conditions
+      </span>
+      <svg
+        viewBox="-200 0 260 300"
+      >
+        <g
+          transform="translate(0, 0)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-3}
+            cy="3"
+            rx={3}
+            ry={3}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            10
+          </text>
+        </g>
+        <g
+          transform="translate(0, 20)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-6.25}
+            cy="3"
+            rx={6.25}
+            ry={4}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            100
+          </text>
+        </g>
+        <g
+          transform="translate(0, 40)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-62.5}
+            cy="3"
+            rx={62.5}
+            ry={5}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            1000
+          </text>
+        </g>
+        <g
+          transform="translate(0, 60)"
+        >
+          <ellipse
+            className="Ellipse"
+            cx={-100}
+            cy="3"
+            rx={100}
+            ry={6}
+            transform="translate(0, 23)"
+          />
+          <text
+            className="Text"
+            x="30"
+            y={30}
+          >
+            1600
+          </text>
+        </g>
+      </svg>
     </div>
   </div>
 </div>
