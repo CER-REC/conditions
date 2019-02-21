@@ -11,66 +11,6 @@ import './styles.scss';
 
 const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
-const basicUsageData = [{
-  name: 'security',
-  graphData: [{
-    date: 2018,
-    count: 1,
-  }, {
-    date: 2019,
-    count: 30,
-  }, {
-    date: 2020,
-    count: 20,
-  }, {
-    date: 2021,
-    count: 84,
-  }, {
-    date: 2022,
-    count: 3,
-  }],
-  color: 'red',
-}, {
-  name: 'managementSystem',
-  graphData: [{
-    date: 2018,
-    count: 43,
-  }, {
-    date: 2019,
-    count: 22,
-  }, {
-    date: 2020,
-    count: 56,
-  }, {
-    date: 2021,
-    count: 1,
-  }, {
-    date: 2022,
-    count: 56,
-  }],
-  color: 'blue',
-}, {
-  name: 'financial',
-  graphData: [{
-    date: 2018,
-    count: 5,
-  }, {
-    date: 2022,
-    count: 5,
-  }],
-  color: 'green',
-}, {
-  name: 'damagePrevention',
-  graphData: [{
-    date: 2018,
-    count: 46,
-  }, {
-    date: 2022,
-    count: 4,
-  }],
-  color: 'yellow',
-}];
-
 const chartTitle = 'Themes Across All Conditions';
 
 const description = 'components.featureDescription.theme';
@@ -87,7 +27,7 @@ const ViewThree = props => (
       <section className="legend">
         <SmallMultiplesLegend
           title="theme"
-          data={basicUsageData}
+          data={props.conditionCountsByYear.counts}
           onChange={noop}
         />
       </section>
