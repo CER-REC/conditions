@@ -52,8 +52,8 @@ class StreamGraph extends React.Component {
 
     const minConditionValue = Math.min(...numOfConditionsConcat);
 
-    const date = this.props.projectData.map(k => Object.keys(k.years));
-    const dateConcat = [].concat(...date);
+    const dates = this.props.projectData.map(k => Object.keys(k.years));
+    const dateConcat = [].concat(...dates);
 
     const minDateValue = Math.min(...dateConcat);
     const maxDateValue = Math.max(...dateConcat);

@@ -8,6 +8,7 @@ import FeatureDescription from '../../components/FeatureDescription';
 import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
 import './styles.scss';
+import { allConditionsPerYear } from '../../proptypes';
 
 const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
@@ -65,6 +66,9 @@ const ViewThree = props => (
 
 ViewThree.propTypes = {
   layoutOnly: PropTypes.bool,
+  conditionCountsByYear: PropTypes.shape({
+    counts: allConditionsPerYear.isRequired,
+  }).isRequired,
 };
 
 ViewThree.defaultProps = {

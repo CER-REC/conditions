@@ -1,3 +1,5 @@
+// TODO: Remove when we have more constants added
+// eslint-disable-next-line import/prefer-default-export
 export const features = {
   instrument: {
     ROUTING: 'rgb(14, 43, 140)',
