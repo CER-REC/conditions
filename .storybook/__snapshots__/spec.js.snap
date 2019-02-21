@@ -34,8 +34,6 @@ exports[`Storyshots Components|BarContainer default 1`] = `
       height={12}
       width={111}
     >
-      <title />
-      <desc />
       <rect
         className="Bar"
         fill="green"
@@ -79,8 +77,6 @@ exports[`Storyshots Components|BarContainer scale horizontal and 2x scale 1`] = 
       height={24}
       width={222}
     >
-      <title />
-      <desc />
       <rect
         className="Bar"
         fill="green"
@@ -124,8 +120,6 @@ exports[`Storyshots Components|BarContainer searched bars 1`] = `
       height={15}
       width={111}
     >
-      <title />
-      <desc />
       <rect
         className="Bar"
         fill="green"
@@ -165,8 +159,6 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
       height={12}
       width={111}
     >
-      <title />
-      <desc />
       <rect
         className="Bar"
         fill="green"
@@ -210,8 +202,6 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       height={66}
       width={60}
     >
-      <title />
-      <desc />
       <rect
         className="Bar"
         fill="green"
@@ -255,8 +245,6 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
       height={132}
       width={180}
     >
-      <title />
-      <desc />
       <rect
         className="Bar"
         fill="green"
@@ -296,8 +284,6 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale and stan
       height={132}
       width={180}
     >
-      <title />
-      <desc />
       <rect
         className="Bar"
         fill="green"
@@ -1781,8 +1767,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         height={6}
                         width={75}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="pink"
@@ -1823,8 +1807,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         height={6}
                         width={50}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="blue"
@@ -1962,8 +1944,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         height={6}
                         width={25}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="red"
@@ -2004,8 +1984,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         height={6}
                         width={50}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="red"
@@ -2069,8 +2047,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         height={6}
                         width={75}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="orange"
@@ -2343,8 +2319,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height={6}
                         width={75}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="pink"
@@ -2385,8 +2359,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height={6}
                         width={50}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="blue"
@@ -2487,8 +2459,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height={6}
                         width={25}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="red"
@@ -2566,8 +2536,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height={6}
                         width={50}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="red"
@@ -2631,8 +2599,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height={6}
                         width={75}
                       >
-                        <title />
-                        <desc />
                         <rect
                           className="Bar"
                           fill="orange"
@@ -2896,8 +2862,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     height={6}
                     width={75}
                   >
-                    <title />
-                    <desc />
                     <rect
                       className="Bar"
                       fill="pink"
@@ -2938,8 +2902,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     height={6}
                     width={50}
                   >
-                    <title />
-                    <desc />
                     <rect
                       className="Bar"
                       fill="blue"
@@ -3077,8 +3039,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     height={6}
                     width={25}
                   >
-                    <title />
-                    <desc />
                     <rect
                       className="Bar"
                       fill="red"
@@ -3119,8 +3079,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     height={6}
                     width={50}
                   >
-                    <title />
-                    <desc />
                     <rect
                       className="Bar"
                       fill="red"
@@ -3184,8 +3142,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     height={6}
                     width={75}
                   >
-                    <title />
-                    <desc />
                     <rect
                       className="Bar"
                       fill="orange"
@@ -7578,8 +7534,6 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             height={50}
             width={350}
           >
-            <title />
-            <desc />
             <rect
               className="Bar"
               fill="pink"
@@ -7774,8 +7728,6 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
             height={100}
             width={350}
           >
-            <title />
-            <desc />
             <rect
               className="Bar"
               fill="pink"
