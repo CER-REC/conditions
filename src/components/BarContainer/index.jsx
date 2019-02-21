@@ -14,8 +14,6 @@ const BarContainer = (props) => {
     vert,
     size,
     standalone,
-    title,
-    desc,
     maxValue,
   } = props;
 
@@ -55,8 +53,6 @@ const BarContainer = (props) => {
   if (scale && scale !== 1) { barContainerWidth *= scale; }
   const content = (
     <g className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
-      <title>{title}</title>
-      <desc>{desc}</desc>
       {bars}
     </g>
   );
