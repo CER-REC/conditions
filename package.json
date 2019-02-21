@@ -6,10 +6,10 @@
   "scripts": {
     "ci:test": "npm run test -- --ci --reporters=default --reporters=jest-junit && codecov",
     "cz": "git-cz",
-    "lint": "eslint -f gitlab \"./src/**/*.js\" \"./src/**/*.jsx\" \"./server/**/*.js\"",
+    "lint": "eslint -f gitlab \"./src/**/*.js\" \"./src/**/*.jsx\"",
     "test": "cross-env NODE_ENV=test jest",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
-    "start": "babel-node ./server/index.js",
+    "start": "npm run storybook",
     "storybook": "start-storybook -s ./src/images -p 6006",
     "build-storybook": "build-storybook -s ./src/images",
     "postshrinkwrap": "replace --silent 'http://' 'https://' ./package-lock.json",
