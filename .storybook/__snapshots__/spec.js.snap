@@ -1799,11 +1799,7 @@ exports[`Storyshots Components|ConditionExplorer/Fallback documentation 1`] = `
 <div
   className="visualization"
 >
-  <div
-    className="ConditionExplorer"
-  >
-    <div />
-  </div>
+  <div />
 </div>
 `;
 
@@ -1811,11 +1807,7 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
 <div
   className="visualization"
 >
-  <div
-    className="ConditionExplorer"
-  >
-    <div />
-  </div>
+  <div />
 </div>
 `;
 
@@ -9735,11 +9727,7 @@ exports[`Storyshots Components|StreamGraph/StackGroup documentation 1`] = `
 <div
   className="visualization"
 >
-  <div
-    className="StreamGraph"
-  >
-    <div />
-  </div>
+  <div />
 </div>
 `;
 
@@ -9747,11 +9735,7 @@ exports[`Storyshots Components|StreamGraph/StackGroupProps documentation 1`] = `
 <div
   className="visualization"
 >
-  <div
-    className="StreamGraph"
-  >
-    <div />
-  </div>
+  <div />
 </div>
 `;
 
