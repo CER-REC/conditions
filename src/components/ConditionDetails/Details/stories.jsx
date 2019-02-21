@@ -14,9 +14,7 @@ const defaultProps = {
 
 storiesForComponent('Components|ConditionDetails/Details', module, ReadMe)
   .add('default', () => (
-    <div style={{ width: 250, height: 200, overflow: 'scroll' }}>
-      <Details
-        {...defaultProps}
-      />
-    </div>
+    <Details
+      {...defaultProps}
+    />
   ));

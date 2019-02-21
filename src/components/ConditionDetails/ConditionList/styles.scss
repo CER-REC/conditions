@@ -1,7 +1,7 @@
 .ConditionList {
-
+  vertical-align: top;
+  max-width: 160px;
   padding-top: 20px;
-  padding-right: 20px;
 
   .marked {
     display: inline-block;
@@ -16,5 +16,4 @@
     width: 10px;
     background: none;
   }
-
 }

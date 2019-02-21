@@ -1,6 +1,9 @@
 .Content {
+  max-width: 450px;
+  height: 276px;
 
   padding: 20px;
+  overflow-y: scroll;
 
   .contentText {
     padding-bottom: 0.4rem;

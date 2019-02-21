@@ -2,60 +2,52 @@
 
 .ProjectHeader {
 
-  display: block;
   height: 24px;
 
   background-color: $LightGray;
 
-  .header {
-    display: inline-block;
-    width: 600px;
+  display: inline-block;
+  width: 100%;
 
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 
-    text-align:left;
-    line-height: 24px;
-    vertical-align: middle;
+  text-align:left;
+  line-height: 24px;
+  vertical-align: middle;
 
-    .asterisk {
-      color: #d1057a;
-      font-family: 'FiraSansCondensedBold';
-    }
-
-    .openProject {
-      height: 90%;
-    }
-
-    .toggleExpand {
-      float: right;
-
-      color: #d1057a;
-
-      line-height: 24px;
-
-      height: 90%;
-    }
-
-    .arrow {
-      display: inline-block;
-      stroke: #d1057a;
-      stroke-width: 1.5px;
-      fill: white;
-
-      vertical-align: middle;
-
-      width: 16px;
-      height: 100%;
-    }
-
-    .upperCase {
-      text-transform: uppercase;
-    }
+  .asterisk {
+    color: #d1057a;
+    font-family: 'FiraSansCondensedBold';
   }
 
-  .filler {
+  .openProject {
+    height: 90%;
+  }
+
+  .toggleExpand {
+    float: right;
+
+    color: #d1057a;
+
+    line-height: 24px;
+
+    height: 90%;
+  }
+
+  .arrow {
     display: inline-block;
-    width: 220px;
+    stroke: #d1057a;
+    stroke-width: 1.5px;
+    fill: white;
+
+    vertical-align: middle;
+
+    width: 16px;
+    height: 100%;
+  }
+
+  .upperCase {
+    text-transform: uppercase;
   }
 }

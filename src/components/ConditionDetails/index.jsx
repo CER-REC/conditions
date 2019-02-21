@@ -86,21 +86,18 @@ class ConditionDetails extends React.Component {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;
 
-    return this.props.expanded
-      ? (
-        <section className="ConditionDetails expanded">
+    return (
+      <section className={`ConditionDetails ${(this.props.expanded) ? 'expanded' : ''}`}>
+        <div className="main">
           {this.renderHeader()}
-          {this.renderList()}
-          {this.renderContent(instrument, index)}
+          <div className="listPane">{this.renderList()}</div>
+          <div className="contentPane">{this.renderContent(instrument, index)}</div>
+        </div>
+        <div className="popout">
           {this.renderDetails(instrument, index)}
-        </section>
-      ) : (
-        <section className="ConditionDetails">
-          {this.renderHeader()}
-          {this.renderList()}
-          {this.renderContent(instrument, index)}
-        </section>
-      );
+        </div>
+      </section>
+    );
   }
 }
 

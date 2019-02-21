@@ -1,7 +1,7 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import ConditionList from '.';
+import Content from '.';
 import ReadMe from './README.md';
 
 import data from '../testData';
@@ -17,19 +17,15 @@ const defaultProps = {
 storiesForComponent('Components|ConditionDetails/Content', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['openIntermediatePopup'] }))
   .add('condition selected', () => (
-    <div style={{ width: 450, height: 300, overflow: 'scroll' }}>
-      <ConditionList
-        {...defaultProps}
-        {...getInteractionProps()}
-      />
-    </div>
+    <Content
+      {...defaultProps}
+      {...getInteractionProps()}
+    />
   ), { interaction: { actions: { openIntermediatePopup } } })
   .add('instrument selected', () => (
-    <div style={{ width: 450, height: 300, overflow: 'scroll' }}>
-      <ConditionList
-        {...defaultProps}
-        itemIndex={-1}
-        {...getInteractionProps()}
-      />
-    </div>
+    <Content
+      {...defaultProps}
+      itemIndex={-1}
+      {...getInteractionProps()}
+    />
   ), { interaction: { actions: { openIntermediatePopup } } });

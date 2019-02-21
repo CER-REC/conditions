@@ -10,13 +10,16 @@ class Details extends React.PureComponent {
   render() {
     return (
       <div className="Details">
-        <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
-        <ContentBlock id="common.features.theme" content={<FormattedMessage id={`common.${this.props.theme}`} />} />
-        <ContentBlock id="common.features.instrument" content={<FormattedMessage id={`common.${this.props.instrument}`} />} />
-        <ContentBlock id="common.features.phase" content={<FormattedMessage id={`common.${this.props.phase}`} />} />
-        <ContentBlock id="common.features.type" content={<FormattedMessage id={`common.${this.props.type}`} />} />
-        <ContentBlock id="common.features.status" content={<FormattedMessage id={`common.${this.props.status}`} />} />
-        <ContentBlock id="common.features.filing" content={<FormattedMessage id={`common.${this.props.filing}`} />} />
+        <div className="filler" />
+        <div className="content">
+          <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
+          <ContentBlock id="common.features.theme" content={<FormattedMessage id={`common.${this.props.theme}`} />} />
+          <ContentBlock id="common.features.instrument" content={<FormattedMessage id={`common.${this.props.instrument}`} />} />
+          <ContentBlock id="common.features.phase" content={<FormattedMessage id={`common.${this.props.phase}`} />} />
+          <ContentBlock id="common.features.type" content={<FormattedMessage id={`common.${this.props.type}`} />} />
+          <ContentBlock id="common.features.status" content={<FormattedMessage id={`common.${this.props.status}`} />} />
+          <ContentBlock id="common.features.filing" content={<FormattedMessage id={`common.${this.props.filing}`} />} />
+        </div>
       </div>
     );
   }

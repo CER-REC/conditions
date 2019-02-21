@@ -2,17 +2,19 @@
 @import '../../styles/colors.scss';
 
 .ConditionDetails {
+  // float: right;
 
-  position: relative;
-
+  max-width: 820px;
   height: 300px;
-  width: 600px;
 
   font-family: $fira-sans-condensed-light;
   font-size: 12px;
   text-align: left;
 
   color: $Black77;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   // display: grid;
   // grid-template-rows: 24px 1fr;
@@ -21,9 +23,31 @@
   //   "header header"
   //   "list   content";
 
-  &.expanded {
-    width: 820px;
+  transition: padding-left 1s ease-in-out;
 
+  padding-left: 220px;
+
+  .listPane {
+    display: inline-block;
+    width: 27%;
+    vertical-align: top;
+  }
+
+  .contentPane {
+    display: inline-block;
+    width: 73%;
+    vertical-align: top;
+  }
+
+  &.expanded {
+
+    // max-width: 820px;
+    padding-left: 0px;
+
+    .popout {
+      visibility: visible;
+      transition: visibility 0s;
+    }
     // grid-template-columns: 150px 450px auto;
     // grid-template-areas:
     //   "header header  blank"
@@ -74,36 +98,17 @@
     outline: none;
   }
 
-  .gridCell {
-    position: relative;
-
+  .main {
+    display: inline-block;
+    width: 600px;
     height: 100%;
-    width: 100%;
-
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 
-  .header{
-    grid-area: header;
+  .popout {
+    display: inline-block;
+    visibility: hidden; /* Collapsed state */
+    transition: visibility 0s 1s;
+    vertical-align: top;
+    width: calc(100% - 600px);
   }
-
-  .blank{
-    grid-area: blank;
-
-    background-color: $LightGray;
-  }
-
-  .list{
-    grid-area: list;
-  }
-
-  .content{
-    grid-area: content;
-  }
-
-  .details{
-    grid-area: details;
-  }
-
 }
