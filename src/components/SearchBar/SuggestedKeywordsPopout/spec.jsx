@@ -67,7 +67,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       expect(wrapper.state().sortBy).toBe('alphabetical');
     });
   });
-  
+
   describe('with sortBy as alphabetical', () => {
     let wrapper;
     beforeEach(() => {

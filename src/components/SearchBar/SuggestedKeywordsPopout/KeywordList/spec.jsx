@@ -3,67 +3,12 @@ import { shallow } from 'enzyme';
 import KeywordList from '.';
 import './styles.scss';
 
-const suggestedKeywords = [{
-  name: 'safety',
-  conditions: 1200,
-},
-{
-  name: 'emissions',
-  conditions: 1000,
-}, {
-  name: 'habitat',
-  conditions: 800,
-},
-{
-  name: 'construction',
-  conditions: 1000,
-},
-{
-  name: 'habitat',
-  conditions: 1000,
-},
-{
-  name: 'file',
-  conditions: 1400,
-},
-{
-  name: 'breeding breed',
-  conditions: 380,
-},
-{
-  name: 'safety',
-  conditions: 1400,
-},
-{
-  name: 'emissions',
-  conditions: 1800,
-}, {
-  name: 'habitat',
-  conditions: 1400,
-},
-{
-  name: 'construction',
-  conditions: 1001,
-},
-{
-  name: 'habitat',
-  conditions: 1300,
-},
-{
-  name: 'file',
-  conditions: 1420,
-},
-{
-  name: 'breeding breed',
-  conditions: 390,
-}];
+const suggestedKeywords = {
+  deer: { conditions: 1200, category: ['wildlife & habitat'] },
+  alberta: { conditions: 400, category: ['administration & filings'] },
+};
+const selectedWords = ['deer'];
 
-const selectedWords = [
-  {
-    name: 'safety',
-    conditions: 1200,
-  },
-];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
@@ -75,7 +20,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
         <KeywordList
           selectedWords={selectedWords}
           suggestedKeywords={suggestedKeywords}
-          onClickUpdate={noop}
+          onClick={noop}
         />,
       );
     });
@@ -104,24 +49,24 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
         <KeywordList
           selectedWords={selectedWords}
           suggestedKeywords={suggestedKeywords}
-          onClickUpdate={spy}
+          onClick={spy}
         />,
       );
     });
-    test('onClick on - symbol, must call onClickUpdateProp', () => {
+    test('onClick on - symbol, must call onClick prop', () => {
       const updatedWrapper = wrapper.find('li');
       const first = updatedWrapper.first().find('.icon');
       first.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith([[], 'words']);
+      expect(spy).toHaveBeenCalledWith([]);
     });
 
-    test('onClick on + symbol, must call onClickUpdateProp', () => {
+    test('onClick on + symbol, must call onClick prop', () => {
       const updatedWrapper = wrapper.find('li');
       const last = updatedWrapper.last().find('.icon');
       last.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).not.toHaveBeenCalledWith(([], 'words'));
+      expect(spy).not.toHaveBeenCalledWith(([]));
     });
   });
 });
