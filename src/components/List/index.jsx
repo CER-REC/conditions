@@ -54,6 +54,17 @@ const List = (props) => {
       </li>
     );
   });
+
+  const onWheel = (e) => {
+    e.preventDefault();
+    const inc = (e.deltaY > 0 && 1) || (e.deltaY < 0 && -1);
+    if (!inc) return;
+
+    const newIndex = Math.min(Math.max(0, selectedIndex + inc), props.items.length - 1);
+
+    if (newIndex !== selectedIndex) handleInteraction(props.onChange(newIndex));
+  };
+
   return (
     <div
       className={classNames(
@@ -61,6 +72,7 @@ const List = (props) => {
         props.className,
         { horizontal: props.horizontal, guideLine: props.guideLine },
       )}
+      onWheel={onWheel}
     >
       <ul>{items}</ul>
     </div>
