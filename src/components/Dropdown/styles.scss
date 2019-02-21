@@ -1,0 +1,24 @@
+@import '../../styles/borders.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/svgs.scss';
+
+$select-side-padding: 0.4em;
+
+.Dropdown {
+  text-align: left;
+  display: inline-block;
+    select {
+      font-family: inherit;
+      width: 7em;
+      font-size: 1.1em;
+      color: $LinksTextButtons;
+      border: 1px solid $Gray160;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+      appearance:none;
+      background: $list-arrow-url right no-repeat;
+      background-size: 0.6em;
+      background-position: calc(100% - #{$select-side-padding}) center;
+      padding: 0.1em $select-side-padding;
+    }
+}

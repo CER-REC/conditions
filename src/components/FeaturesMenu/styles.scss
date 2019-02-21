@@ -1,6 +1,6 @@
-@import '../../styles/borders.scss';
-@import '../../styles/colors.scss';
-@import '../../styles/svgs.scss';
+@import "../../styles/borders.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/svgs.scss";
 
 $select-side-padding: 0.4em;
 
@@ -9,51 +9,33 @@ $select-side-padding: 0.4em;
 
   &:not(.dropDown) {
     .title {
-      color: #4D4D4D;
+      color: $Black77;
       font-size: 18px;
     }
 
     .List {
       .List-Item-Content {
-        color: #666666;
+        color: $VeryDarkGray;
         font-size: 16px;
         font-weight: bold;
-        border: $list-width $list-style #B3B3B3;
+        border: $list-width $list-style $Gray160;
         padding: 0.2em 1em;
         margin-top: 1em;
       }
 
       .selected .List-Item-Content {
-        color: #333333;
-        background-color: #E4E4E4;
+        color: $Black51;
+        background-color: $LightGray;
         border: $list-selected;
       }
     }
   }
-
   &.dropDown {
-    display: flex;
-
     .title {
-      color: #A1A8A7;
+      color: $Gray160;
       font-weight: bold;
       padding-right: 0.5em;
       margin: auto 0;
-    }
-
-    select {
-      flex: 1;
-      font-family: inherit;
-      font-size: 1.1em;
-      color: $LinksTextButtons;
-      border: 1px solid #A1A8A7;
-      -moz-appearance:none;
-      -webkit-appearance:none;
-      appearance:none;
-      background: $list-arrow-url right no-repeat;
-      background-size: 0.6em;
-      background-position: calc(100% - #{$select-side-padding}) center;
-      padding: 0.1em $select-side-padding;
     }
   }
 }
