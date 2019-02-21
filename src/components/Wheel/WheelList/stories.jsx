@@ -2,45 +2,45 @@ import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
-// import ReadMe from './README.md';
+import ReadMe from './README.md';
 import WheelList from '.';
 
 const companyList = [
   'CompanyA',
-  'CompanyB',
-  'CompanyC',
-  'CompanyD',
-  'CompanyE',
-  'CompanyF',
   'CompanyG',
   'CompanyH',
   'CompanyI',
+  'CompanyB',
+  'CompanyF',
   'CompanyJ',
   'CompanyKmoreThan15Characters',
   'CompanyL',
+  'CompanyC',
+  'CompanyD',
+  'CompanyE',
   'CompanyM',
 ];
 
 const locationList = [
-  'LocationA',
-  'LocationB',
-  'LocationC',
-  'LocationD',
-  'LocationE',
-  'LocationF',
   'LocationG',
   'LocationH',
   'LocationI',
-  'LocationJ',
-  'LocationKmoreThan15Characters',
-  'LocationL',
-  'LocationM',
-  'LocationN',
+  'LocationF',
   'LocationO',
   'LocationP',
+  'LocationA',
+  'LocationB',
+  'LocationL',
+  'LocationM',
+  'LocationZ',
+  'LocationC',
+  'LocationD',
+  'LocationJ',
+  'LocationKmoreThan15Characters',
+  'LocationE',
 ];
 
-storiesForComponent('Components|Wheel/WheelList', module)
+storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['onChange'] }))
   .addDecorator(withStatus({
     name: 'underReview',

@@ -6,43 +6,49 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import List from '../../List';
 import './styles.scss';
 
-const WheelList = (props) => {
-  let message = <FormattedMessage id="components.companyWheel.list.company" />;
-  let renderedList = props.companyList;
-  if (props.mode === 'location') {
-    message = <FormattedMessage id="components.companyWheel.list.location" />;
-    renderedList = props.locationList;
+class WheelList extends React.PureComponent {
+  static propTypes = {
+    className: PropTypes.string.isRequired,
+    mode: PropTypes.oneOf(['location', 'company']).isRequired,
+    onChange: PropTypes.func.isRequired,
+    selected: PropTypes.number.isRequired,
+    companyList: PropTypes.arrayOf(PropTypes.node).isRequired,
+    locationList: PropTypes.arrayOf(PropTypes.node).isRequired,
   }
-  const checkFifteen = renderedList.map((k) => {
-    if (k.length >= 15) {
-      renderedList = `${k}...`;
-    }
-    return k;
-  });
-  return (
-    <div
-      className={classNames('WheelList', props.className)}
-    >
-      {message}
-      <List
-        className="items-list"
-        elevated
-        key={renderedList}
-        items={checkFifteen}
-        onChange={() => {}}
-        selected={props.selected}
-      />
-    </div>
-  );
-};
 
-WheelList.propTypes = {
-  className: PropTypes.string.isRequired,
-  mode: PropTypes.oneOf(['location', 'company']).isRequired,
-  onChange: PropTypes.func.isRequired,
-  selected: PropTypes.number.isRequired,
-  companyList: PropTypes.arrayOf(PropTypes.node).isRequired,
-  locationList: PropTypes.arrayOf(PropTypes.node).isRequired,
-};
+  handleOnClick = () => {
+
+    this.props.onChange();
+  }
+
+  render() {
+    let message = <FormattedMessage id="components.companyWheel.list.company" />;
+    let renderedList = this.props.companyList;
+    if (this.props.mode === 'location') {
+      message = <FormattedMessage id="components.companyWheel.list.location" />;
+      renderedList = this.props.locationList;
+    }
+    const checkLength = renderedList.map((k) => {
+      if (k.length >= 15) {
+        k = `${k.substring(0, 13)}...`;
+      }
+      return k;
+    });
+    return (
+      <div
+        className={classNames('WheelList', this.props.className)}
+      >
+        {message}
+        <List
+          className="items-list"
+          elevated
+          items={checkLength.sort()}
+          onChange={this.handleOnClick}
+          selected={this.props.selected}
+        />
+      </div>
+    );
+  }
+}
 
 export default WheelList;
