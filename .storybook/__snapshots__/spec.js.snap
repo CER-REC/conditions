@@ -6144,13 +6144,13 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,98.80952380952381C8.333333333333336,80.03117913832197,16.66666666666667,61.25283446712015,25,64.28571428571428C33.33333333333333,67.3185941043084,41.666666666666664,92.16269841269842,50,76.19047619047619C58.333333333333336,60.21825396825396,66.66666666666667,3.429705215419501,75,0C83.33333333333333,-3.429705215419501,91.66666666666666,46.499433106575964,100,96.42857142857143L100,100C91.66666666666667,100,83.33333333333334,100,75,100C66.66666666666666,100,58.33333333333333,100,50,100C41.66666666666667,100,33.33333333333333,100,25,100C16.666666666666668,100,8.333333333333334,100,0,100Z"
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "red",
-                          "stroke": "red",
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
                         }
                       }
                     />
@@ -6210,13 +6210,13 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,48.80952380952381C8.333333333333336,66.29109977324264,16.66666666666667,83.77267573696145,25,73.80952380952381C33.33333333333333,63.84637188208617,41.666666666666664,26.438492063492077,50,33.33333333333334C58.333333333333336,40.22817460317461,66.66666666666667,91.42573696145125,75,98.80952380952381C83.33333333333333,106.19331065759637,91.66666666666666,69.76332199546485,100,33.33333333333334L100,100C91.66666666666667,100,83.33333333333334,100,75,100C66.66666666666666,100,58.33333333333333,100,50,100C41.66666666666667,100,33.33333333333333,100,25,100C16.666666666666668,100,8.333333333333334,100,0,100Z"
+                      d="M0,97.52808988764045C4.761904761904763,96.6855412184443,9.523809523809526,95.84299254924815,14.285714285714285,94.8314606741573C19.047619047619044,93.81992879906645,23.809523809523796,92.63941371808086,28.57142857142857,92.35955056179775C33.33333333333334,92.07968740551463,38.0952380952381,92.70047617393406,42.857142857142854,90.78651685393258C47.619047619047606,88.8725575339311,52.380952380952365,84.4238501255087,57.14285714285714,82.69662921348315C61.90476190476191,80.9694083014576,66.66666666666669,81.9636738858289,71.42857142857143,81.57303370786516C76.19047619047618,81.18239352990143,80.95238095238095,79.40684758960265,85.71428571428571,77.75280898876404C90.47619047619047,76.09877038792544,95.23809523809524,74.56623912654699,100,73.03370786516854L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "blue",
-                          "stroke": "blue",
+                          "fill": "rgb(36, 91, 64)",
+                          "stroke": "rgb(36, 91, 64)",
                         }
                       }
                     />
@@ -6276,13 +6276,13 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,94.04761904761905L100,94.04761904761905L100,100L0,100Z"
+                      d="M0,96.85393258426966C4.761904761904763,95.64804557683178,9.523809523809526,94.44215856939391,14.285714285714285,93.25842696629213C19.047619047619044,92.07469536319036,23.809523809523796,90.91311916442474,28.57142857142857,89.66292134831461C33.33333333333334,88.41272353220448,38.0952380952381,87.07390409874982,42.857142857142854,85.3932584269663C47.619047619047606,83.71261275518278,52.380952380952365,81.69014084507042,57.14285714285714,81.34831460674158C61.90476190476191,81.00648836841275,66.66666666666669,82.3453078018674,71.42857142857143,78.65168539325843C76.19047619047618,74.95806298464946,80.95238095238095,66.23199873397688,85.71428571428571,68.53932584269663C90.47619047619047,70.84665295141637,95.23809523809524,84.1873714195284,100,97.52808988764045L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "green",
-                          "stroke": "green",
+                          "fill": "rgb(247, 193, 97)",
+                          "stroke": "rgb(247, 193, 97)",
                         }
                       }
                     />
@@ -6291,72 +6291,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span>
                 Financial
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-6)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-6"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,45.238095238095234L100,95.23809523809524L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "yellow",
-                          "stroke": "yellow",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Damage Prevention
               </span>
             </div>
           </div>
@@ -6395,384 +6329,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                 className="stream"
               />
               <span>
-                All Types
-              </span>
-            </div>
-          </div>
-          <div
-            className="CircleContainer arrowNext"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-            tabIndex={0}
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem faded"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-10)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-10"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,78.15275310834814C16.666666666666664,37.72942569567792,33.33333333333333,-2.6939017169923027,50,0C66.66666666666667,2.6939017169923027,83.33333333333334,48.50503256364713,100,94.31616341030195L100,100C83.33333333333333,100,66.66666666666666,100,50,100C33.333333333333336,100,16.666666666666668,100,0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "#AA11AA",
-                          "stroke": "#AA11AA",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Non Standard
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-11)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-11"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,82.7708703374778L100,90.05328596802842L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "#11AA11",
-                          "stroke": "#11AA11",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Standard
-              </span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="SmallMultiplesLegend"
-  >
-    <div
-      className="List guideLine"
-    >
-      <ul>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem all"
-            >
-              <span
-                className="stream"
-              />
-              <span>
-                All Phases
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-7)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-7"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,93.50649350649351L100,87.01298701298701L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "red",
-                          "stroke": "red",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Includes All Phases of Constr.
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item selected"
-        >
-          <div
-            className="CircleContainer arrowPrevious"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-            tabIndex={0}
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-8)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-8"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,35.06493506493507L100,67.53246753246754L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "green",
-                          "stroke": "green",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Not Construction Related
+                All Themes
               </span>
             </div>
           </div>
@@ -6861,13 +6418,13 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,50.64935064935065L100,0L100,100L0,100Z"
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "yellow",
-                          "stroke": "yellow",
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
                         }
                       }
                     />
@@ -6875,7 +6432,450 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                 </svg>
               </span>
               <span>
-                Post Construction Phase
+                Security
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem faded"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-10)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-10"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,97.52808988764045C4.761904761904763,96.6855412184443,9.523809523809526,95.84299254924815,14.285714285714285,94.8314606741573C19.047619047619044,93.81992879906645,23.809523809523796,92.63941371808086,28.57142857142857,92.35955056179775C33.33333333333334,92.07968740551463,38.0952380952381,92.70047617393406,42.857142857142854,90.78651685393258C47.619047619047606,88.8725575339311,52.380952380952365,84.4238501255087,57.14285714285714,82.69662921348315C61.90476190476191,80.9694083014576,66.66666666666669,81.9636738858289,71.42857142857143,81.57303370786516C76.19047619047618,81.18239352990143,80.95238095238095,79.40684758960265,85.71428571428571,77.75280898876404C90.47619047619047,76.09877038792544,95.23809523809524,74.56623912654699,100,73.03370786516854L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(36, 91, 64)",
+                          "stroke": "rgb(36, 91, 64)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Management System
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem faded"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-11)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-11"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,96.85393258426966C4.761904761904763,95.64804557683178,9.523809523809526,94.44215856939391,14.285714285714285,93.25842696629213C19.047619047619044,92.07469536319036,23.809523809523796,90.91311916442474,28.57142857142857,89.66292134831461C33.33333333333334,88.41272353220448,38.0952380952381,87.07390409874982,42.857142857142854,85.3932584269663C47.619047619047606,83.71261275518278,52.380952380952365,81.69014084507042,57.14285714285714,81.34831460674158C61.90476190476191,81.00648836841275,66.66666666666669,82.3453078018674,71.42857142857143,78.65168539325843C76.19047619047618,74.95806298464946,80.95238095238095,66.23199873397688,85.71428571428571,68.53932584269663C90.47619047619047,70.84665295141637,95.23809523809524,84.1873714195284,100,97.52808988764045L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(247, 193, 97)",
+                          "stroke": "rgb(247, 193, 97)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Financial
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SmallMultiplesLegend"
+  >
+    <div
+      className="List guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem all"
+            >
+              <span
+                className="stream"
+              />
+              <span>
+                All Themes
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-up"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-6)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-6"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Security
+              </span>
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-down"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-7)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-7"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,97.52808988764045C4.761904761904763,96.6855412184443,9.523809523809526,95.84299254924815,14.285714285714285,94.8314606741573C19.047619047619044,93.81992879906645,23.809523809523796,92.63941371808086,28.57142857142857,92.35955056179775C33.33333333333334,92.07968740551463,38.0952380952381,92.70047617393406,42.857142857142854,90.78651685393258C47.619047619047606,88.8725575339311,52.380952380952365,84.4238501255087,57.14285714285714,82.69662921348315C61.90476190476191,80.9694083014576,66.66666666666669,81.9636738858289,71.42857142857143,81.57303370786516C76.19047619047618,81.18239352990143,80.95238095238095,79.40684758960265,85.71428571428571,77.75280898876404C90.47619047619047,76.09877038792544,95.23809523809524,74.56623912654699,100,73.03370786516854L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(36, 91, 64)",
+                          "stroke": "rgb(36, 91, 64)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Management System
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-8)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-8"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,96.85393258426966C4.761904761904763,95.64804557683178,9.523809523809526,94.44215856939391,14.285714285714285,93.25842696629213C19.047619047619044,92.07469536319036,23.809523809523796,90.91311916442474,28.57142857142857,89.66292134831461C33.33333333333334,88.41272353220448,38.0952380952381,87.07390409874982,42.857142857142854,85.3932584269663C47.619047619047606,83.71261275518278,52.380952380952365,81.69014084507042,57.14285714285714,81.34831460674158C61.90476190476191,81.00648836841275,66.66666666666669,82.3453078018674,71.42857142857143,78.65168539325843C76.19047619047618,74.95806298464946,80.95238095238095,66.23199873397688,85.71428571428571,68.53932584269663C90.47619047619047,70.84665295141637,95.23809523809524,84.1873714195284,100,97.52808988764045L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(247, 193, 97)",
+                          "stroke": "rgb(247, 193, 97)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Financial
               </span>
             </div>
           </div>
@@ -6951,13 +6951,13 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem basic usage 1`] =
               </clipPath>
             </defs>
             <path
-              d="M0,80C16.666666666666664,73.33333333333333,33.33333333333333,66.66666666666666,50,60C66.66666666666667,53.333333333333336,83.33333333333334,46.66666666666667,100,40L100,100C83.33333333333333,100,66.66666666666666,100,50,100C33.333333333333336,100,16.666666666666668,100,0,100Z"
+              d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
               role="presentation"
               shapeRendering="auto"
               style={
                 Object {
-                  "fill": "green",
-                  "stroke": "green",
+                  "fill": "rgb(221, 10, 10)",
+                  "stroke": "rgb(221, 10, 10)",
                 }
               }
             />
@@ -6965,7 +6965,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem basic usage 1`] =
         </svg>
       </span>
       <span>
-        In Progress
+        Security
       </span>
     </div>
   </div>
@@ -7016,13 +7016,13 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
               </clipPath>
             </defs>
             <path
-              d="M0,90.9090909090909C16.666666666666664,101.21212121212122,33.33333333333333,111.51515151515152,50,96.36363636363636C66.66666666666667,81.2121212121212,83.33333333333334,40.6060606060606,100,0L100,100C83.33333333333333,100,66.66666666666666,100,50,100C33.333333333333336,100,16.666666666666668,100,0,100Z"
+              d="M0,90C4.761904761904763,86.16700201207243,9.523809523809526,82.33400402414486,14.285714285714285,78.57142857142857C19.047619047619044,74.80885311871228,23.809523809523796,71.11670020120724,28.57142857142857,67.14285714285714C33.33333333333334,63.16901408450703,38.0952380952381,58.913480885311856,42.857142857142854,53.57142857142857C47.619047619047606,48.22937625754528,52.380952380952365,41.800804828973845,57.14285714285714,40.714285714285715C61.90476190476191,39.627766599597585,66.66666666666669,43.88329979879275,71.42857142857143,32.14285714285714C76.19047619047618,20.402414486921526,80.95238095238095,-7.3340040241448685,85.71428571428571,0C90.47619047619047,7.3340040241448685,95.23809523809524,49.73843058350101,100,92.14285714285714L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
               role="presentation"
               shapeRendering="auto"
               style={
                 Object {
-                  "fill": "#D1057A",
-                  "stroke": "#D1057A",
+                  "fill": "rgb(247, 193, 97)",
+                  "stroke": "rgb(247, 193, 97)",
                 }
               }
             />
@@ -7030,7 +7030,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
         </svg>
       </span>
       <span>
-        No Filing Required
+        Financial
       </span>
     </div>
   </div>
