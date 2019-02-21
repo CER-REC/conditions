@@ -2025,7 +2025,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "pink",
+            "backgroundColor": "rgb(221, 10, 10)",
           }
         }
       />
@@ -2044,7 +2044,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "red",
+            "backgroundColor": "rgb(36, 91, 64)",
           }
         }
       />
@@ -2063,7 +2063,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "green",
+            "backgroundColor": "rgb(247, 193, 97)",
           }
         }
       />
@@ -2082,7 +2082,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "blue",
+            "backgroundColor": "rgb(133, 28, 133)",
           }
         }
       />
@@ -2101,7 +2101,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "purple",
+            "backgroundColor": "rgb(153, 153, 255)",
           }
         }
       />
@@ -2147,7 +2147,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "pink",
+            "backgroundColor": "rgb(221, 10, 10)",
           }
         }
       />
@@ -2166,7 +2166,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "red",
+            "backgroundColor": "rgb(36, 91, 64)",
           }
         }
       />
@@ -2185,7 +2185,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "green",
+            "backgroundColor": "rgb(247, 193, 97)",
           }
         }
       />
@@ -2204,7 +2204,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "blue",
+            "backgroundColor": "rgb(133, 28, 133)",
           }
         }
       />
@@ -2223,7 +2223,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "purple",
+            "backgroundColor": "rgb(153, 153, 255)",
           }
         }
       />
@@ -2255,8 +2255,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="Bar"
             style={
               Object {
-                "backgroundColor": "",
-                "content": "",
+                "backgroundColor": "transparent",
                 "width": "0px",
               }
             }
@@ -2275,8 +2274,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="Bar"
             style={
               Object {
-                "backgroundColor": "#fff",
-                "content": "",
+                "backgroundColor": "transparent",
                 "width": "30px",
               }
             }
@@ -2295,8 +2293,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="Bar"
             style={
               Object {
-                "backgroundColor": "",
-                "content": "",
+                "backgroundColor": "transparent",
                 "width": "30px",
               }
             }
@@ -2306,7 +2303,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="FlagTip"
             style={
               Object {
-                "borderLeftColor": "",
+                "borderLeftColor": "transparent",
               }
             }
           />
@@ -2372,7 +2369,7 @@ exports[`Storyshots Components|FeaturesLegend/LegendItem default 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "pink",
+            "backgroundColor": "rgb(221, 10, 10)",
           }
         }
       />
