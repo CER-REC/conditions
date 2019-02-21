@@ -17,19 +17,24 @@ fixInfo(FeatureFlag);
 storiesForComponent('Components|FeatureFlag', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
-  .add('With color', () => (
+  .add('default', () => (
     <FeatureFlag
-      color="pink"
       count={number('Amount of conditions', 1, options)}
       chartType="theme"
       name="DAMAGE_PREVENTION"
     />
   ))
-  .add('Without color', () => (
+  .add('without tip', () => (
     <FeatureFlag
-      color="#a1a8a7"
-      count={number('Amount of conditions', 1, options)}
+      count={10}
       chartType="theme"
-      name="DAMAGE_PREVENTION"
+      name="FINANCIAL"
+    />
+  ))
+  .add('with tip', () => (
+    <FeatureFlag
+      count={20}
+      chartType="theme"
+      name="SECURITY"
     />
   ));

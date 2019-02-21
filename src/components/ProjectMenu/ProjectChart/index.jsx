@@ -25,7 +25,6 @@ const ProjectChart = (props) => {
                 key={condition.name}
                 name={condition.name}
                 count={condition.count}
-                color={props.selected ? condition.color : '#a1a8a7'}
                 chartType={props.chartType}
               />
             ))}
@@ -48,7 +47,6 @@ ProjectChart.propTypes = {
   graphData: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired,
   })),
   /** Selected class for styling */
   selected: PropTypes.bool,

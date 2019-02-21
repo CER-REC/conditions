@@ -6,13 +6,13 @@ import ProjectChart from '.';
 import ReadMe from './README.md';
 
 const graphData = [
-  { name: 'SECURITY', count: 1, color: 'red' },
-  { name: 'MANAGEMENT_SYSTEM', count: 45, color: 'orange' },
-  { name: 'FINANCIAL', count: 55, color: 'yellow' },
-  { name: 'DAMAGE_PREVENTION', count: 23, color: 'green' },
-  { name: 'SAFETY_MANAGEMENT', count: 3, color: 'blue' },
-  { name: 'SOCIO_ECONOMIC', count: 13, color: 'indigo' },
-  { name: 'EMERGENCY_MANAGEMENT', count: 3, color: 'violet' },
+  { name: 'SECURITY', count: 1 },
+  { name: 'MANAGEMENT_SYSTEM', count: 45 },
+  { name: 'FINANCIAL', count: 55 },
+  { name: 'DAMAGE_PREVENTION', count: 23 },
+  { name: 'SAFETY_MANAGEMENT', count: 3 },
+  { name: 'SOCIO_ECONOMIC', count: 13 },
+  { name: 'EMERGENCY_MANAGEMENT', count: 3 },
 ];
 
 const chartType = 'theme';

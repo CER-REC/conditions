@@ -4,20 +4,20 @@ import { shallow } from 'enzyme';
 import ProjectChart from '.';
 
 const chartData = [
-  { name: 'Integrity Management', count: 34, color: 'pink' },
-  { name: 'Sunset Clause', count: 2, color: 'blue' },
-  { name: 'Financial', count: 14, color: 'moccasin' },
-  { name: 'Management System', count: 4, color: 'forestgreen' },
-  { name: 'No Theme Indicated', count: 5, color: 'black' },
-  { name: 'Security', count: 79, color: 'tomato' },
-  { name: 'Enforcement', count: 66, color: 'lightblue' },
-  { name: 'Administrative', count: 9, color: 'limegreen' },
-  { name: 'Environmental Protection', count: 34, color: 'green' },
-  { name: 'Socio-Economic', count: 127, color: 'lavender' },
-  { name: 'Standard Condition', count: 15, color: 'brown' },
-  { name: 'Safety Management', count: 0, color: 'midnightblue' },
-  { name: 'Emergency Management', count: 0, color: 'teal' },
-  { name: 'Damage Prevention', count: 0, color: 'purple' },
+  { name: 'INTEGRITY_MANAGEMENT', count: 34 },
+  { name: 'SUNSET_CLAUSE', count: 2 },
+  { name: 'FINANCIAL', count: 14 },
+  { name: 'MANAGEMENT SYSTEM', count: 4 },
+  { name: 'NO_THEME_INDICATED', count: 5 },
+  { name: 'SECURITY', count: 79 },
+  { name: 'ENFORCEMENT', count: 66 },
+  { name: 'ADMINISTRATIVE', count: 9 },
+  { name: 'ENVIRONMENTAL PROTECTION', count: 34 },
+  { name: 'SOCIO_ECONOMIC', count: 127 },
+  { name: 'STANDARD_CONDITION', count: 15 },
+  { name: 'SAFETY_MANAGEMENT', count: 0 },
+  { name: 'EMERGENCY_MANAGEMENT', count: 0 },
+  { name: 'DAMAGE_PREVENTION', count: 0 },
 ];
 
 const chartType = 'Theme';
@@ -76,22 +76,6 @@ describe('Components|ProjectMenu/ProjectChart', () => {
     test('should remove the project name', () => {
       const project = wrapper.find('div.ProjectName');
       expect(project.contains('<p>')).toBe(false);
-    });
-  });
-
-  describe('when the chart is NOT selected', () => {
-    let wrapper;
-    beforeEach(() => {
-      wrapper = shallow(<ProjectChart
-        chartType={chartType}
-        graphData={chartData}
-        projectName={projectName}
-      />);
-    });
-
-    test('should give all conditions a grey color', () => {
-      const flag = wrapper.find('.FlagWrapper').children().first();
-      expect(flag.props().color).toBe('#a1a8a7');
     });
   });
 

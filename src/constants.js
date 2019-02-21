@@ -19,7 +19,7 @@ export const features = {
     MANAGEMENT_SYSTEM: 'rgb(36, 91, 64)',
     SAFETY_MANAGEMENT: 'rgb(68, 34, 149)',
     SECURITY: 'rgb(221, 10, 10)',
-    SOCIOECONOMIC: 'rgb(153, 153, 255)',
+    SOCIO_ECONOMIC: 'rgb(153, 153, 255)',
     STANDARD_CONDITION: 'rgb(181, 11, 128)',
     SUNSET_CLAUSE: 'rgb(41, 41, 218)',
   },
