@@ -25,8 +25,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
     <BarContainer
-      title="ConditionTitle"
-      desc="conditionDesc"
       items={rectItems}
       size={number('Size', 12)}
       scale={number('Scale', 1)}
@@ -36,8 +34,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
   .add('vertical bars', () => (
     <BarContainer
       size={number('Size', 20)}
-      title="ConditionTitle"
-      desc="conditionDesc"
       items={rectItems}
       vert
     />
@@ -47,8 +43,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
     return (
       <BarContainer
         size={size}
-        title="ConditionTitle"
-        desc="conditionDesc"
         items={rectItems}
       />
     );
@@ -58,8 +52,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
     <svg>
       <BarContainer
         size={12}
-        title="ConditionTitle"
-        desc="conditionDesc"
         items={rectItems}
         standalone
       />
@@ -68,8 +60,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
 
   .add('scale horizontal and 2x scale', () => (
     <BarContainer
-      title="ConditionTitle"
-      desc="conditionDesc"
       items={rectItems}
       size={12}
       scale={2}
@@ -79,8 +69,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
   .add('vertical bars with 2x scale', () => (
     <BarContainer
       size={30}
-      title="ConditionTitle"
-      desc="conditionDesc"
       items={rectItems}
       vert
       scale={2}
@@ -91,8 +79,6 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
     <svg>
       <BarContainer
         size={30}
-        title="ConditionTitle"
-        desc="conditionDesc"
         items={rectItems}
         vert
         scale={2}
@@ -100,4 +86,3 @@ storiesForComponent('Components|BarContainer', module, ReadMe)
       />
     </svg>
   ));
-

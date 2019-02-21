@@ -23,8 +23,6 @@ describe('Components|BarContainer', () => {
         <BarContainer
           items={rectItems}
           size={12}
-          title="ConditionTitle"
-          desc="conditionDesc"
         />,
       );
     });
@@ -43,8 +41,6 @@ describe('Components|BarContainer', () => {
     test('should be able to render a <g> wrapper', () => {
       wrapper = shallow(
         <BarContainer
-          title="ConditionTitle"
-          desc="conditionDesc"
           standalone
           items={rectItems}
           size={12}

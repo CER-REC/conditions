@@ -5,9 +5,10 @@ import Bar from './Bar';
 import './styles.scss';
 
 const BarContainer = (props) => {
-  const { items } = props;
-  if (items.length === 0) { return null; }
+  if (props.items.length === 0) { return null; }
+
   const {
+    items,
     scale,
     maxWidth,
     vert,
@@ -51,7 +52,7 @@ const BarContainer = (props) => {
     barContainerWidth += bar.value * maxValue;
     return singleBar;
   });
-  if (scale) { barContainerWidth *= scale; }
+  if (scale && scale !== 1) { barContainerWidth *= scale; }
   const content = (
     <g className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
       <title>{title}</title>
@@ -70,8 +71,6 @@ const BarContainer = (props) => {
 BarContainer.propTypes = {
   className: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  desc: PropTypes.string,
-  title: PropTypes.string,
   vert: PropTypes.bool,
   maxValue: PropTypes.number,
   scale: PropTypes.number,
@@ -85,6 +84,7 @@ BarContainer.defaultProps = {
   vert: false,
   scale: 1,
   standalone: false,
-  maxWidth: false,
+  maxWidth: 0,
+  maxValue: 1,
 };
 export default BarContainer;

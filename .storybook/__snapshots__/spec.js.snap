@@ -27,24 +27,20 @@ exports[`Storyshots Components|BarContainer default 1`] = `
   <svg
     className="BarContainer"
     height={12}
-    width={NaN}
+    width={111}
   >
     <g
       className="BarContainer"
       height={12}
-      width={NaN}
+      width={111}
     >
-      <title>
-        ConditionTitle
-      </title>
-      <desc>
-        conditionDesc
-      </desc>
+      <title />
+      <desc />
       <rect
         className="Bar"
         fill="green"
         height={12}
-        width={NaN}
+        width={12}
         x={0}
         y={0}
       />
@@ -52,16 +48,16 @@ exports[`Storyshots Components|BarContainer default 1`] = `
         className="Bar"
         fill="red"
         height={12}
-        width={NaN}
-        x={NaN}
+        width={66}
+        x={12}
         y={0}
       />
       <rect
         className="Bar"
         fill="pink"
         height={12}
-        width={NaN}
-        x={NaN}
+        width={33}
+        x={78}
         y={0}
       />
     </g>
@@ -76,24 +72,20 @@ exports[`Storyshots Components|BarContainer scale horizontal and 2x scale 1`] = 
   <svg
     className="BarContainer"
     height={24}
-    width={NaN}
+    width={222}
   >
     <g
       className="BarContainer"
       height={24}
-      width={NaN}
+      width={222}
     >
-      <title>
-        ConditionTitle
-      </title>
-      <desc>
-        conditionDesc
-      </desc>
+      <title />
+      <desc />
       <rect
         className="Bar"
         fill="green"
         height={24}
-        width={NaN}
+        width={24}
         x={0}
         y={0}
       />
@@ -101,16 +93,16 @@ exports[`Storyshots Components|BarContainer scale horizontal and 2x scale 1`] = 
         className="Bar"
         fill="red"
         height={24}
-        width={NaN}
-        x={NaN}
+        width={132}
+        x={24}
         y={0}
       />
       <rect
         className="Bar"
         fill="pink"
         height={24}
-        width={NaN}
-        x={NaN}
+        width={66}
+        x={156}
         y={0}
       />
     </g>
@@ -125,24 +117,20 @@ exports[`Storyshots Components|BarContainer searched bars 1`] = `
   <svg
     className="BarContainer"
     height={15}
-    width={NaN}
+    width={111}
   >
     <g
       className="BarContainer"
       height={15}
-      width={NaN}
+      width={111}
     >
-      <title>
-        ConditionTitle
-      </title>
-      <desc>
-        conditionDesc
-      </desc>
+      <title />
+      <desc />
       <rect
         className="Bar"
         fill="green"
         height={15}
-        width={NaN}
+        width={12}
         x={0}
         y={0}
       />
@@ -150,16 +138,16 @@ exports[`Storyshots Components|BarContainer searched bars 1`] = `
         className="Bar"
         fill="red"
         height={15}
-        width={NaN}
-        x={NaN}
+        width={66}
+        x={12}
         y={0}
       />
       <rect
         className="Bar"
         fill="pink"
         height={15}
-        width={NaN}
-        x={NaN}
+        width={33}
+        x={78}
         y={0}
       />
     </g>
@@ -175,19 +163,15 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
     <g
       className="BarContainer"
       height={12}
-      width={NaN}
+      width={111}
     >
-      <title>
-        ConditionTitle
-      </title>
-      <desc>
-        conditionDesc
-      </desc>
+      <title />
+      <desc />
       <rect
         className="Bar"
         fill="green"
         height={12}
-        width={NaN}
+        width={12}
         x={0}
         y={0}
       />
@@ -195,16 +179,16 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
         className="Bar"
         fill="red"
         height={12}
-        width={NaN}
-        x={NaN}
+        width={66}
+        x={12}
         y={0}
       />
       <rect
         className="Bar"
         fill="pink"
         height={12}
-        width={NaN}
-        x={NaN}
+        width={33}
+        x={78}
         y={0}
       />
     </g>
@@ -226,19 +210,15 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       height={66}
       width={60}
     >
-      <title>
-        ConditionTitle
-      </title>
-      <desc>
-        conditionDesc
-      </desc>
+      <title />
+      <desc />
       <rect
         className="Bar"
         fill="green"
         height={12}
         width={20}
         x={0}
-        y={NaN}
+        y={54}
       />
       <rect
         className="Bar"
@@ -246,7 +226,7 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
         height={66}
         width={20}
         x={20}
-        y={NaN}
+        y={0}
       />
       <rect
         className="Bar"
@@ -254,7 +234,7 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
         height={33}
         width={20}
         x={40}
-        y={NaN}
+        y={33}
       />
     </g>
   </svg>
@@ -275,19 +255,15 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
       height={132}
       width={180}
     >
-      <title>
-        ConditionTitle
-      </title>
-      <desc>
-        conditionDesc
-      </desc>
+      <title />
+      <desc />
       <rect
         className="Bar"
         fill="green"
         height={24}
         width={60}
         x={0}
-        y={NaN}
+        y={108}
       />
       <rect
         className="Bar"
@@ -295,7 +271,7 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
         height={132}
         width={60}
         x={60}
-        y={NaN}
+        y={0}
       />
       <rect
         className="Bar"
@@ -303,7 +279,7 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
         height={66}
         width={60}
         x={120}
-        y={NaN}
+        y={66}
       />
     </g>
   </svg>
@@ -320,19 +296,15 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale and stan
       height={132}
       width={180}
     >
-      <title>
-        ConditionTitle
-      </title>
-      <desc>
-        conditionDesc
-      </desc>
+      <title />
+      <desc />
       <rect
         className="Bar"
         fill="green"
         height={24}
         width={60}
         x={0}
-        y={NaN}
+        y={108}
       />
       <rect
         className="Bar"
@@ -340,7 +312,7 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale and stan
         height={132}
         width={60}
         x={60}
-        y={NaN}
+        y={0}
       />
       <rect
         className="Bar"
@@ -348,7 +320,7 @@ exports[`Storyshots Components|BarContainer vertical bars with 2x scale and stan
         height={66}
         width={60}
         x={120}
-        y={NaN}
+        y={66}
       />
     </g>
   </svg>
@@ -7614,7 +7586,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={50}
               width={23.333333333333332}
               x={0}
-              y={NaN}
+              y={0}
             />
             <rect
               className="Bar"
@@ -7622,7 +7594,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={20}
               width={23.333333333333332}
               x={23.333333333333332}
-              y={NaN}
+              y={30}
             />
             <rect
               className="Bar"
@@ -7630,7 +7602,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={43}
               width={23.333333333333332}
               x={46.666666666666664}
-              y={NaN}
+              y={7}
             />
             <rect
               className="Bar"
@@ -7638,7 +7610,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={15}
               width={23.333333333333332}
               x={70}
-              y={NaN}
+              y={35}
             />
             <rect
               className="Bar"
@@ -7646,7 +7618,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={5}
               width={23.333333333333332}
               x={93.33333333333333}
-              y={NaN}
+              y={45}
             />
             <rect
               className="Bar"
@@ -7654,7 +7626,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={15}
               width={23.333333333333332}
               x={116.66666666666666}
-              y={NaN}
+              y={35}
             />
             <rect
               className="Bar"
@@ -7662,7 +7634,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={3}
               width={23.333333333333332}
               x={140}
-              y={NaN}
+              y={47}
             />
             <rect
               className="Bar"
@@ -7670,7 +7642,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={15}
               width={23.333333333333332}
               x={163.33333333333331}
-              y={NaN}
+              y={35}
             />
             <rect
               className="Bar"
@@ -7678,7 +7650,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={3}
               width={23.333333333333332}
               x={186.66666666666666}
-              y={NaN}
+              y={47}
             />
             <rect
               className="Bar"
@@ -7686,7 +7658,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={3}
               width={23.333333333333332}
               x={210}
-              y={NaN}
+              y={47}
             />
             <rect
               className="Bar"
@@ -7694,7 +7666,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={3}
               width={23.333333333333332}
               x={233.33333333333331}
-              y={NaN}
+              y={47}
             />
             <rect
               className="Bar"
@@ -7702,7 +7674,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={3}
               width={23.333333333333332}
               x={256.66666666666663}
-              y={NaN}
+              y={47}
             />
             <rect
               className="Bar"
@@ -7710,7 +7682,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={3}
               width={23.333333333333332}
               x={280}
-              y={NaN}
+              y={47}
             />
             <rect
               className="Bar"
@@ -7718,7 +7690,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={4}
               width={23.333333333333332}
               x={303.3333333333333}
-              y={NaN}
+              y={46}
             />
             <rect
               className="Bar"
@@ -7726,7 +7698,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
               height={0}
               width={23.333333333333332}
               x={326.66666666666663}
-              y={NaN}
+              y={50}
             />
           </g>
         </svg>
@@ -7810,7 +7782,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
               height={50}
               width={175}
               x={0}
-              y={NaN}
+              y={50}
             />
             <rect
               className="Bar"
@@ -7818,7 +7790,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
               height={100}
               width={175}
               x={175}
-              y={NaN}
+              y={0}
             />
           </g>
         </svg>
