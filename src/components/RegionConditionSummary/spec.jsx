@@ -4,21 +4,20 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import RegionConditionSummary from '.';
 
 const themeData = [
-  { color: 'pink', description: 'STANDARD_CONDITION', count: 50 },
-  { color: 'red', description: 'INTEGRITY_MANAGEMENT', count: 20 },
-  { color: 'green', description: 'ENVIROMENTAL_PROTECT', count: 43 },
-  { color: 'blue', description: 'ADMINISTRATIVE', count: 15 },
-  { color: 'purple', description: 'SUNSET_CLAUSE', count: 5 },
-  { color: 'yellow', description: 'ENFORCEMENT', count: 15 },
-  { color: 'orange', description: 'EMERGENCY_MANAGEMENT', count: 3 },
-  { color: 'navy', description: 'SOCIO_ECONOMIC', count: 15 },
-  { color: 'plum', description: 'SAFETY_MANAGEMENT', count: 3 },
-  { color: 'olive', description: 'DAMAGE_PREVENTION', count: 3 },
-  { color: 'coral', description: 'FINANCIAL', count: 3 },
-  { color: 'cadetBlue', description: 'SECURITY', count: 3 },
-  { color: 'darkGreen', description: 'MANAGEMENT_SYSTEM', count: 3 },
-  { color: 'black', description: 'NO_THEME_INDICATED', count: 4 },
-  { color: '#e4e4e4', description: 'all', count: 0 },
+  { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
+  { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
+  { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
+  { feature: 'theme', description: 'ADMINISTRATIVE', count: 15 },
+  { feature: 'theme', description: 'SUNSET_CLAUSE', count: 5 },
+  { feature: 'theme', description: 'ENFORCEMENT', count: 15 },
+  { feature: 'theme', description: 'EMERGENCY_MANAGEMENT', count: 3 },
+  { feature: 'theme', description: 'SOCIO_ECONOMIC', count: 15 },
+  { feature: 'theme', description: 'SAFETY_MANAGEMENT', count: 3 },
+  { feature: 'theme', description: 'DAMAGE_PREVENTION', count: 3 },
+  { feature: 'theme', description: 'FINANCIAL', count: 3 },
+  { feature: 'theme', description: 'SECURITY', count: 3 },
+  { feature: 'theme', description: 'MANAGEMENT_SYSTEM', count: 3 },
+  { feature: 'theme', description: 'NO_THEME_INDICATED', count: 4 },
 ];
 
 describe('Component|RegionConditionSummary', () => {
