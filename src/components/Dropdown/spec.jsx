@@ -36,14 +36,6 @@ describe('Components|Dropdown', () => {
       expect(wrapper.find('select').prop('value')).toBe(options[0]);
     });
 
-    test('should not render any select option with a selected attribute', () => {
-      const optionsWrapper = wrapper.find('option');
-
-      for (let i = 0; i < optionsWrapper.length; i += 1) {
-        expect(optionsWrapper.at(i).prop('selected')).toBeUndefined();
-      }
-    });
-
     test('should call the onChange function with the feature on drop down item change', () => {
       options.forEach((feature) => {
         wrapper.find('select').simulate('change', { target: { value: feature } });
@@ -54,28 +46,12 @@ describe('Components|Dropdown', () => {
 
     test('should render the select drop down with the corresponding item selected when selected is provided', () => {
       const selectedIndex = 1;
-      wrapper = shallow((
-        <Dropdown
-          options={options}
-          onChange={spy}
-          selectedOption={options[selectedIndex]}
-          optionID={optionID}
-        />
-      ));
-
+      wrapper.setProps({ selectedOption: options[selectedIndex] });
       expect(wrapper.find('select').prop('value')).toBe(options[selectedIndex]);
     });
 
     test('should render the select drop down with the first item selected when selected value is invalid', () => {
-      wrapper = shallow((
-        <Dropdown
-          options={options}
-          onChange={spy}
-          selectedOption=" "
-          optionID={optionID}
-        />
-      ));
-
+      wrapper.setProps({ selectedOption: ' ' });
       expect(wrapper.find('select').prop('value')).toBe(options[0]);
     });
   });
