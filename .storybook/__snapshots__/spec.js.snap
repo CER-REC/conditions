@@ -2982,7 +2982,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "red",
+                      "backgroundColor": "rgb(14, 43, 140)",
                     }
                   }
                 />
@@ -3013,7 +3013,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#123456",
+                      "backgroundColor": "rgb(39, 165, 249)",
                     }
                   }
                 />
@@ -3144,7 +3144,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3152,7 +3152,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3160,7 +3160,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3168,7 +3168,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3199,7 +3199,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#A1C1B1",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3207,7 +3207,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#A1C1B1",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3246,7 +3246,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#00FFFF",
+                      "backgroundColor": "rgb(212, 169, 42)",
                     }
                   }
                 />
@@ -3254,7 +3254,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#00FFFF",
+                      "backgroundColor": "rgb(212, 169, 42)",
                     }
                   }
                 />
@@ -3297,7 +3297,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "blue",
+                      "backgroundColor": "rgb(201, 4, 194)",
                     }
                   }
                 />
@@ -3340,7 +3340,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#16AA16",
+                      "backgroundColor": "rgb(195, 230, 179)",
                     }
                   }
                 />
@@ -3348,7 +3348,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#16AA16",
+                      "backgroundColor": "rgb(195, 230, 179)",
                     }
                   }
                 />
@@ -3407,7 +3407,7 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
           className="indicator"
           style={
             Object {
-              "backgroundColor": "green",
+              "backgroundColor": "rgb(14, 43, 140)",
             }
           }
         />
@@ -3415,7 +3415,7 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
           className="indicator"
           style={
             Object {
-              "backgroundColor": "green",
+              "backgroundColor": "rgb(14, 43, 140)",
             }
           }
         />
@@ -3427,7 +3427,7 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
           className="indicator"
           style={
             Object {
-              "backgroundColor": "green",
+              "backgroundColor": "rgb(14, 43, 140)",
             }
           }
         />
