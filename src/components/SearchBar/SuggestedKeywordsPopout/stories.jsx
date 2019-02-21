@@ -3,15 +3,15 @@ import { forceReRender } from '@storybook/react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
-import SuggestionWindow from '.';
+import SuggestedKeywordsPopout from '.';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|SearchBar/SuggestionWindow', module, ReadMe)
+storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['onClickUpdate', 'changeSort', 'closeTab'] }))
   .add('with interaction', () => (
     <div>
-      <SuggestionWindow
+      <SuggestedKeywordsPopout
         {...getInteractionProps()}
       />
     </div>

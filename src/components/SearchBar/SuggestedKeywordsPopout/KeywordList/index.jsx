@@ -10,7 +10,7 @@ import './styles.scss';
 
 library.add(faMinusCircle, faPlusCircle);
 
-class SuggestionWindowKeywords extends React.PureComponent {
+class KeywordList extends React.PureComponent {
   static propTypes = {
     selectedWords: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
@@ -48,7 +48,7 @@ class SuggestionWindowKeywords extends React.PureComponent {
 
   render() {
     return (
-      <div className="SuggestionWindowKeywords">
+      <div className="KeywordList">
         <ul>
           { this.props.suggestedKeywords.map((value) => {
             const { selectedWords } = this.props;
@@ -86,7 +86,7 @@ class SuggestionWindowKeywords extends React.PureComponent {
                   />
                 </span>
                 <div className="conditionsText">
-                  <FormattedMessage id="components.searchBar.suggestionWindow.conditions">
+                  <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.conditions">
                     {text => <div className="conditionsText"> {value.conditions} {text}  </div>}
                   </FormattedMessage>
                 </div>
@@ -100,4 +100,4 @@ class SuggestionWindowKeywords extends React.PureComponent {
   }
 }
 
-export default SuggestionWindowKeywords;
+export default KeywordList;

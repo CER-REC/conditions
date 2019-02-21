@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
-import SuggestionWindow from '.';
+import SuggestedKeywordsPopout from '.';
 
 const words = [{
   name: 'safety',
@@ -19,12 +19,12 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 const categories = ['all', 'wildlife & habitat', 'environment'];
 
-describe('Components|SearchBar/SuggestionWindow', () => {
+describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
-        <SuggestionWindow
+        <SuggestedKeywordsPopout
           categories={categories}
           selectedCategory={['wildlife & habitat']}
           sortBy=""
@@ -38,7 +38,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
       );
     });
 
-    shouldBehaveLikeAComponent(SuggestionWindow, () => wrapper);
+    shouldBehaveLikeAComponent(SuggestedKeywordsPopout, () => wrapper);
 
     test('if sortBy prop is not frequency, should not render className of selectedSort', () => {
       const updatedWrapper = wrapper.find('.rightText > FormattedMessage');
@@ -53,7 +53,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
-        <SuggestionWindow
+        <SuggestedKeywordsPopout
           categories={categories}
           selectedCategory={['wildlife & habitat']}
           sortBy="alphabetical"
@@ -84,7 +84,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
     let wrapper;
     beforeEach(() => {
       spy = jest.fn();
-      wrapper = shallow(<SuggestionWindow
+      wrapper = shallow(<SuggestedKeywordsPopout
         categories={categories}
         selectedCategory={['wildlife & habitat']}
         sortBy=""
@@ -116,7 +116,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
-        <SuggestionWindow
+        <SuggestedKeywordsPopout
           categories={categories}
           selectedCategory={['wildlife & habitat']}
           sortBy="frequency"
@@ -144,7 +144,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
   describe('with sortHierarchy as none', () => {
     const spy = jest.fn();
     const wrapper = shallow(
-      <SuggestionWindow
+      <SuggestedKeywordsPopout
         categories={categories}
         selectedCategory={['wildlife & habitat']}
         sortBy="frequency"
@@ -167,7 +167,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
   describe('with sortHierarchy as inc', () => {
     const spy = jest.fn();
     const wrapper = shallow(
-      <SuggestionWindow
+      <SuggestedKeywordsPopout
         categories={categories}
         selectedCategory={['wildlife & habitat']}
         sortBy="frequency"
@@ -190,7 +190,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
   describe('with sortHierarchy as dec', () => {
     const spy = jest.fn();
     const wrapper = shallow(
-      <SuggestionWindow
+      <SuggestedKeywordsPopout
         categories={categories}
         selectedCategory={['wildlife & habitat']}
         sortBy="frequency"
@@ -216,7 +216,7 @@ describe('Components|SearchBar/SuggestionWindow', () => {
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
-        <SuggestionWindow
+        <SuggestedKeywordsPopout
           categories={categories}
           selectedCategory={['wildlife & habitat']}
           sortBy="frequency"

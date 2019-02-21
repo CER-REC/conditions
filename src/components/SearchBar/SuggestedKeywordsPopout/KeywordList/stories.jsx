@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../../.storybook/utils';
-import SuggestionWindowKeywords from '.';
+import KeywordList from '.';
 import ReadMe from './README.md';
 
 const suggestedKeywords = [{
@@ -66,9 +66,9 @@ const selectedWords = [
 ];
 const noop = () => {};
 
-storiesForComponent('Components|SearchBar/SuggestionWindow/SuggestionWindowKeywords', module, ReadMe)
+storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', module, ReadMe)
   .add('default', () => (
-    <SuggestionWindowKeywords
+    <KeywordList
       selectedWords={selectedWords}
       suggestedKeywords={suggestedKeywords}
       onClickUpdate={noop}

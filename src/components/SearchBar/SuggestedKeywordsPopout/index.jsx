@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
 import handleInteraction from '../../../utilities/handleInteraction';
-import SuggestionWindowKeywords from './SuggestionWindowKeywords';
+import KeywordList from './KeywordList';
 
-class SuggestionWindow extends React.PureComponent {
+class SuggestedKeywordsPopout extends React.PureComponent {
   static propTypes = {
     selectedCategory: PropTypes.arrayOf(PropTypes.string),
     selectedWords: PropTypes.arrayOf(PropTypes.shape({
@@ -76,24 +76,24 @@ class SuggestionWindow extends React.PureComponent {
 
   render() {
     return (
-      <div className="SuggestionWindow">
-        <FormattedMessage id="components.searchBar.suggestionWindow.suggestedKeywords">
+      <div className="SuggestedKeywordsPopout">
+        <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.suggestedKeywords">
           { text => <h1 className="keywordsTitle"> { text }  </h1> }
         </FormattedMessage>
-        <FormattedMessage id="components.searchBar.suggestionWindow.keywordsDescription">
+        <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.keywordsDescription">
           { text => <p className="description"> { text }  </p> }
         </FormattedMessage>
         <ul className="categories">
-          <FormattedMessage id="components.searchBar.suggestionWindow.viewBy">
+          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.viewBy">
             { text => <li className="viewText"> { text }:  </li> }
           </FormattedMessage>
           {this.renderCategories()}
         </ul>
         <div className="rightText">
-          <FormattedMessage id="components.searchBar.suggestionWindow.sortBy">
+          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.sortBy">
             {text => <span>{text} </span>}
           </FormattedMessage>
-          <FormattedMessage id="components.searchBar.suggestionWindow.frequency">
+          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.frequency">
             {text => (
               <span
                 className={this.props.sortBy === 'frequency' ? 'selectedSort' : null}
@@ -103,7 +103,7 @@ class SuggestionWindow extends React.PureComponent {
             )}
           </FormattedMessage>
           |
-          <FormattedMessage id="components.searchBar.suggestionWindow.alphabetical">
+          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.alphabetical">
             {text => (
               <span
                 className={this.props.sortBy === 'alphabetical' ? 'selectedSort' : null}
@@ -138,7 +138,7 @@ class SuggestionWindow extends React.PureComponent {
             <span className="upperCase"> {this.props.sortHierarchy } </span>
           </span>
         </div>
-        <SuggestionWindowKeywords
+        <KeywordList
           selectedWords={this.props.selectedWords}
           suggestedKeywords={this.props.suggestedKeywords}
           onClickUpdate={this.props.onClickUpdate}
@@ -160,4 +160,4 @@ class SuggestionWindow extends React.PureComponent {
   }
 }
 
-export default SuggestionWindow;
+export default SuggestedKeywordsPopout;

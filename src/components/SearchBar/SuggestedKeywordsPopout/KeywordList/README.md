@@ -1,5 +1,6 @@
-# SuggestionWindowKeywords
-SuggestionWindowKeywords will summarize render the suggested keywords
+# KeywordList
+KeywordList will be a private component of SuggestedKeywordsPopout. 
+It will summarize render the suggested keywords
 
 
 ##  Requirements

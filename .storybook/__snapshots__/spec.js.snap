@@ -6779,58 +6779,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SearchBar/SuggestedKeywords default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="SearchBar"
-  >
-    <div
-      className="SuggestedKeywords"
-    >
-      <p
-        className="selectFrom"
-      >
-        Select from
-      </p>
-      <p
-        className="colorChange"
-      >
-        Suggested
-      </p>
-      <p
-        className="colorChange"
-      >
-        Keywords
-      </p>
-      <svg
-        className="arrow"
-        focusable={true}
-        height={20}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        viewBox="0 0 427.5 427.5"
-        width={20}
-      >
-        <circle
-          cx="215"
-          cy="213.8"
-          fill="#CF167B"
-          r="213.8"
-        />
-        <polygon
-          fill="#FFFFFF"
-          points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
-        />
-      </svg>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] = `
+exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interaction 1`] = `
 <div
   className="visualization"
 >
@@ -6839,7 +6788,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
   >
     <div>
       <div
-        className="SuggestionWindow"
+        className="SuggestedKeywordsPopout"
       >
         <h1
           className="keywordsTitle"
@@ -6973,7 +6922,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
           </span>
         </div>
         <div
-          className="SuggestionWindowKeywords"
+          className="KeywordList"
         >
           <ul>
             <li>
@@ -8231,7 +8180,7 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow with interaction 1`] =
 </div>
 `;
 
-exports[`Storyshots Components|SearchBar/SuggestionWindow/SuggestionWindowKeywords default 1`] = `
+exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList default 1`] = `
 <div
   className="visualization"
 >
@@ -8239,10 +8188,10 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow/SuggestionWindowKeywor
     className="SearchBar"
   >
     <div
-      className="SuggestionWindow"
+      className="SuggestedKeywordsPopout"
     >
       <div
-        className="SuggestionWindowKeywords"
+        className="KeywordList"
       >
         <ul>
           <li>
@@ -9479,6 +9428,57 @@ exports[`Storyshots Components|SearchBar/SuggestionWindow/SuggestionWindowKeywor
           </li>
         </ul>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/SuggestedKeywordsPrompt default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="SuggestedKeywordsPrompt"
+    >
+      <p
+        className="selectFrom"
+      >
+        Select from
+      </p>
+      <p
+        className="colorChange"
+      >
+        Suggested
+      </p>
+      <p
+        className="colorChange"
+      >
+        Keywords
+      </p>
+      <svg
+        className="arrow"
+        focusable={true}
+        height={20}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        viewBox="0 0 427.5 427.5"
+        width={20}
+      >
+        <circle
+          cx="215"
+          cy="213.8"
+          fill="#CF167B"
+          r="213.8"
+        />
+        <polygon
+          fill="#FFFFFF"
+          points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
+        />
+      </svg>
     </div>
   </div>
 </div>

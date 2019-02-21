@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SuggestionWindowKeywords from '.';
+import KeywordList from '.';
 import './styles.scss';
 
 const suggestedKeywords = [{
@@ -67,12 +67,12 @@ const selectedWords = [
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|SearchBar/SuggestionWindow/SuggestionWindowKeywords', () => {
+describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
-        <SuggestionWindowKeywords
+        <KeywordList
           selectedWords={selectedWords}
           suggestedKeywords={suggestedKeywords}
           onClickUpdate={noop}
@@ -101,7 +101,7 @@ describe('Components|SearchBar/SuggestionWindow/SuggestionWindowKeywords', () =>
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
-        <SuggestionWindowKeywords
+        <KeywordList
           selectedWords={selectedWords}
           suggestedKeywords={suggestedKeywords}
           onClickUpdate={spy}

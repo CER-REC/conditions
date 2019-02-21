@@ -116,7 +116,7 @@
         "filter": "",
         "find": ""
       },
-      "suggestedKeywords": {
+      "suggestedKeywordsPrompt": {
         "selectFrom": "",
         "suggestedKeywords": ""
       },
@@ -124,7 +124,7 @@
         "showingAll": "",
         "highlightConditions": ""
       },
-      "suggestionWindow": {
+      "suggestedKeywordsPopout": {
         "suggestedKeywords": "",
         "keywordsDescription": "",
         "keywordsHere": "",
