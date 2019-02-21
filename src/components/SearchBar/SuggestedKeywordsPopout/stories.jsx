@@ -8,7 +8,7 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['onClickUpdate', 'changeSort', 'closeTab'] }))
+  .addDecorator(withInteraction({ actions: ['onClickUpdate', 'closeTab'] }))
   .add('with interaction', () => (
     <div>
       <SuggestedKeywordsPopout
@@ -19,9 +19,6 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
     interaction: {
       state: {
         categories: ['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings'],
-        selectedCategory: ['wildlife & habitat'],
-        sortBy: '',
-        sortHierarchy: 'none',
         selectedWords: [{
           name: 'safety',
           conditions: 1200,
@@ -97,15 +94,6 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
           }
           forceReRender();
           return ({ selectedWords: updatedList });
-        },
-        changeSort: () => (obj) => {
-          const [sort, type] = obj;
-          if (type === 'by') {
-            forceReRender();
-            return ({ sortBy: sort });
-          }
-          forceReRender();
-          return ({ sortHierarchy: sort });
         },
       },
     },

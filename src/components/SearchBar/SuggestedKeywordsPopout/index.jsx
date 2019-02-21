@@ -8,7 +8,6 @@ import KeywordList from './KeywordList';
 
 class SuggestedKeywordsPopout extends React.PureComponent {
   static propTypes = {
-    selectedCategory: PropTypes.arrayOf(PropTypes.string),
     selectedWords: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       conditions: PropTypes.number,
@@ -20,22 +19,27 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClickUpdate: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    changeSort: PropTypes.func.isRequired,
-    sortBy: PropTypes.string.isRequired,
-    sortHierarchy: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
-    selectedCategory: [],
     selectedWords: ([{
       name: null,
       conditions: 0,
     }]),
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedCategory: [],
+      sortBy: '',
+      sortHierarchy: 'none',
+    };
+  }
+
   renderCategories = () => (
     this.props.categories.map((i) => {
-      const { selectedCategory } = this.props;
+      const { selectedCategory } = this.state;
       const classArray = ['categoryList', 'upperCase'];
       const className = (selectedCategory.indexOf(i) > -1) ? 'selectedCategory' : '';
       classArray.push(className);
@@ -51,28 +55,27 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   )
 
   categoryOnClick = (li) => {
-    const { selectedCategory } = this.props;
+    const { selectedCategory } = this.state;
     const index = selectedCategory.indexOf(li);
-    // eslint-disable-next-line no-unused-expressions
-    (index === -1)
-      ? (selectedCategory.push(li))
-      : selectedCategory.splice(index, 1);
-    return (this.props.onClickUpdate([selectedCategory, 'category']));
+    if (index === -1) {
+      return this.setState({ selectedCategory: selectedCategory.concat(li) });
+    }
+    return this.setState({ selectedCategory: selectedCategory.filter(v => v !== li) });
   }
 
   sortHierarchy = () => {
-    const sortHierarchyType = this.props.sortHierarchy;
+    const { sortHierarchy } = this.state;
     const sortArray = ['none', 'inc', 'dec'];
-    const index = sortArray.indexOf(sortHierarchyType);
+    const index = sortArray.indexOf(sortHierarchy);
     const changeSortParam = (index !== sortArray.length - 1)
-      ? ([sortArray[index + 1], 'hierarchy'])
-      : ([sortArray[0], 'hierarchy']);
-    this.props.changeSort(changeSortParam);
+      ? (sortArray[index + 1])
+      : (sortArray[0]);
+    return this.setState({ sortHierarchy: changeSortParam });
   }
 
-  changeSort = sort => (this.props.sortBy === sort
-    ? (this.props.changeSort(['', 'by']))
-    : (this.props.changeSort([sort, 'by'])))
+  changeSort = sort => (this.state.sortBy === sort
+    ? this.setState({ sortBy: '' })
+    : this.setState({ sortBy: sort }))
 
   render() {
     return (
@@ -96,7 +99,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.frequency">
             {text => (
               <span
-                className={this.props.sortBy === 'frequency' ? 'selectedSort' : null}
+                className={this.state.sortBy === 'frequency' ? 'selectedSort' : null}
                 {...handleInteraction(this.changeSort, 'frequency')}
               > {text}
               </span>
@@ -106,7 +109,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.alphabetical">
             {text => (
               <span
-                className={this.props.sortBy === 'alphabetical' ? 'selectedSort' : null}
+                className={this.state.sortBy === 'alphabetical' ? 'selectedSort' : null}
                 {...handleInteraction(this.changeSort, 'alphabetical')}
               >{text}
               </span>
@@ -135,7 +138,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
                 </g>
               </svg>
             </span>
-            <span className="upperCase"> {this.props.sortHierarchy } </span>
+            <span className="upperCase"> {this.state.sortHierarchy } </span>
           </span>
         </div>
         <KeywordList
