@@ -89,17 +89,16 @@ class ConditionDetails extends React.Component {
     return this.props.expanded
       ? (
         <section className="ConditionDetails expanded">
-          <div className="gridCell header">{this.renderHeader()}</div>
-          <div className="gridCell list">{this.renderList()}</div>
-          <div className="gridCell blank" />
-          <div className="gridCell content">{this.renderContent(instrument, index)}</div>
-          <div className="gridCell details">{this.renderDetails(instrument, index)}</div>
+          {this.renderHeader()}
+          {this.renderList()}
+          {this.renderContent(instrument, index)}
+          {this.renderDetails(instrument, index)}
         </section>
       ) : (
         <section className="ConditionDetails">
-          <div className="gridCell header">{this.renderHeader()}</div>
-          <div className="gridCell list">{this.renderList()}</div>
-          <div className="gridCell content">{this.renderContent(instrument, index)}</div>
+          {this.renderHeader()}
+          {this.renderList()}
+          {this.renderContent(instrument, index)}
         </section>
       );
   }

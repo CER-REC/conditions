@@ -31,25 +31,28 @@ const moreButton = (
 class ProjectHeader extends React.PureComponent {
   render = () => (
     <div className="ProjectHeader">
-      <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
-      <button
-        type="button"
-        className="openProject"
-        {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
-      >
-        <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
-      </button>
-      {this.props.isExpandable
-        ? (
-          <button
-            type="button"
-            className="toggleExpand"
-            {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
-          >
-            {this.props.expanded ? lessButton : moreButton}
-          </button>
-        ) : null
-      }
+      <div className="header">
+        <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
+        <button
+          type="button"
+          className="openProject"
+          {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
+        >
+          <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
+        </button>
+        {this.props.isExpandable
+          ? (
+            <button
+              type="button"
+              className="toggleExpand"
+              {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
+            >
+              {this.props.expanded ? lessButton : moreButton}
+            </button>
+          ) : null
+        }
+      </div>
+      <div className="filler" />
     </div>
   )
 }

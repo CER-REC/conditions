@@ -14,20 +14,20 @@
 
   color: $Black77;
 
-  display: grid;
-  grid-template-rows: 24px 1fr;
-  grid-template-columns: 150px 450px;
-  grid-template-areas:
-    "header header"
-    "list   content";
+  // display: grid;
+  // grid-template-rows: 24px 1fr;
+  // grid-template-columns: 150px 450px;
+  // grid-template-areas:
+  //   "header header"
+  //   "list   content";
 
   &.expanded {
     width: 820px;
 
-    grid-template-columns: 150px 450px auto;
-    grid-template-areas:
-      "header header  blank"
-      "list   content details";
+    // grid-template-columns: 150px 450px auto;
+    // grid-template-areas:
+    //   "header header  blank"
+    //   "list   content details";
   }
 
   h1, h2, h3, h4, ul, p {
