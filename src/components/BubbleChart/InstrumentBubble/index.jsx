@@ -3,23 +3,13 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
+import { features } from '../../../constants';
 
 /* TODO:
 1) Check if the text is overlapping another and change arc accordingly
 */
 
-const pickColor = (category) => {
-  switch (category) {
-    case 'ROUTING': return '#0E2B8C';
-    case 'CONSTRUCTION': return '#27A5F9';
-    case 'ABANDONMENT': return '#164EF8';
-    case 'MISC': return '#D4A92A';
-    case 'SAFETY': return '#C904C2';
-    case 'TARIFFS': return '#C3E6B3';
-    case 'OPENING': return '#6AE6B2';
-    default: return 'white';
-  }
-};
+const pickColor = category => features.instrument[category] || 'white';
 
 const InstrumentBubble = (props) => {
   const {
