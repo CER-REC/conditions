@@ -12,6 +12,12 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClick: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
+    suggestedKeywords: PropTypes.objectOf(
+      PropTypes.shape({
+        conditions: PropTypes.number.isRequired,
+        category: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }).isRequired,
+    ).isRequired,
   }
 
   static defaultProps = {

@@ -14,6 +14,12 @@ class KeywordList extends React.PureComponent {
   static propTypes = {
     selectedWords: PropTypes.arrayOf(PropTypes.string),
     onClick: PropTypes.func.isRequired,
+    suggestedKeywords: PropTypes.objectOf(
+      PropTypes.shape({
+        conditions: PropTypes.number.isRequired,
+        category: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }).isRequired,
+    ).isRequired,
   }
 
   static defaultProps = {

@@ -3,17 +3,10 @@ import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import SuggestedKeywordsPopout from '.';
 
-const words = [{
-  name: 'safety',
-  conditions: 1200,
-},
-{
-  name: 'emissions',
-  conditions: 1000,
-}, {
-  name: 'habitat',
-  conditions: 800,
-}];
+const words = {
+  deer: { conditions: 1200, category: ['wildlife & habitat'] },
+  alberta: { conditions: 400, category: ['administration & filings'] },
+};
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
@@ -27,8 +20,8 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClickUpdate={noop}
-          selectedWords={[{ name: 'safety', conditions: 1200 }]}
+          onClick={noop}
+          selectedWords={['deer']}
           closeTab={noop}
         />,
       );
@@ -43,9 +36,9 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       wrapper = shallow(<SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClickUpdate={noop}
+        onClick={noop}
         closeTab={noop}
-        selectedWords={[{ name: 'safety', conditions: 1200 }]}
+        selectedWords={['deer']}
       />);
     });
 
@@ -75,8 +68,8 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClickUpdate={noop}
-          selectedWords={[{ name: 'safety', conditions: 1200 }]}
+          onClick={noop}
+          selectedWords={['deer']}
           closeTab={noop}
         />,
       );
@@ -102,9 +95,9 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClickUpdate={noop}
+          onClick={noop}
           closeTab={noop}
-          selectedWords={[{ name: 'safety', conditions: 1200 }]}
+          selectedWords={['deer']}
         />,
       );
       wrapper.setState({ sortBy: 'frequency' });
@@ -126,9 +119,9 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClickUpdate={noop}
+        onClick={noop}
         closeTab={noop}
-        selectedWords={[{ name: 'safety', conditions: 1200 }]}
+        selectedWords={['deer']}
       />,
     );
     test('onClick of hierarchy text, should call the spy with inc', () => {
@@ -143,9 +136,9 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClickUpdate={noop}
+        onClick={noop}
         closeTab={noop}
-        selectedWords={[{ name: 'safety', conditions: 1200 }]}
+        selectedWords={['deer']}
       />,
     );
     test('onClick of hierarchy text, should call the spy with dec', () => {
@@ -161,9 +154,9 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClickUpdate={noop}
+        onClick={noop}
         closeTab={noop}
-        selectedWords={[{ name: 'safety', conditions: 1200 }]}
+        selectedWords={['deer']}
       />,
     );
     test('onClick of hierarchy text, should call the spy with none', () => {
@@ -183,14 +176,14 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClickUpdate={spy}
+          onClick={spy}
           closeTab={noop}
-          selectedWords={[{ name: 'safety', conditions: 1200 }]}
+          selectedWords={['deer']}
         />,
       );
     });
 
-    test('onClick on not highlighted category (gray), must call onClickUpdate prop', () => {
+    test('onClick on not highlighted category (gray), must call onClick prop', () => {
       const updatedWrapper = wrapper.find('.categories li').first();
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().selectedCategory).toHaveLength(1);
