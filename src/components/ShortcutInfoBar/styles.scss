@@ -1,5 +1,10 @@
 .ShortcutInfoBar {
   text-align: left;
+  .Content {
+    float: right;
+  }
+
+  .clearfix { clear: both; }
 
   .InfoButton {
     cursor: pointer;
@@ -15,12 +20,11 @@
     }
   }
 
-  .Icons {
-    display: inline-flex;
+  .Icons * {
+    display: inline-block;
   }
 
   .About {
-    display: inline-flex;
     cursor: pointer;
 
     button {
@@ -31,12 +35,12 @@
   }
 
   .InfoBar {
-    margin-left: 30px;
-    margin-top: -65px;
+    display: inline-block;
   }
 
   .AngleDoubleDown {
     background: white;
+    vertical-align: middle;
   }
 
   .Envelope {

@@ -6,8 +6,6 @@ import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 
 const BrowseByBtn = (props) => {
-  const message = props.mode === 'company' ? ['projectsBy', 'company'] : ['conditionsBy', 'location'];
-
   const background = (
     <svg height="41.33px" width="41.33px" className="BrowseByBtn-Wheel">
       <defs>
@@ -20,14 +18,27 @@ const BrowseByBtn = (props) => {
     </svg>
   );
 
+  const message = props.mode === 'company'
+    ? ['projectsBy', 'company']
+    : ['conditionsBy', 'location'];
+
   return (
-    <button type="button" className="BrowseByBtn" {...handleInteraction(props.onClick, props.mode)}>
+    <button
+      type="button"
+      className="BrowseByBtn"
+      {...handleInteraction(props.onClick, props.mode)}
+    >
       <div className="BrowseByBtn-ButtonText">
-        <FormattedMessage id={`views.view1.footer.${message[0]}`} />
-        &nbsp;
-        <FormattedMessage id={`views.view1.footer.${message[1]}`}>
-          { text => (<span className="LastWord">{text}</span>) }
-        </FormattedMessage>
+        <FormattedMessage
+          id={`components.browseByBtn.${message[0]}`}
+          values={{
+            icon: (
+              <FormattedMessage id={`components.browseByBtn.${message[1]}`}>
+                {text => <span className="LastWord">{text}</span>}
+              </FormattedMessage>
+            ),
+          }}
+        />
       </div>
       {background}
     </button>

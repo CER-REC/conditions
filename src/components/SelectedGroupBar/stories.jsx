@@ -23,7 +23,7 @@ storiesForComponent('Components|SelectedGroupBar', module, ReadMe)
       groupItem="groupItem"
       groupSize={number('Group Size', 16, options)}
       groupItemSize={number('Group Item Size', 14, options)}
-      backgroundColor={select('Colour Options', colourOptions, 'tomato')}
+      backgroundColor={select('Colour Options', colourOptions, 'lightgrey')}
     >
     condition
     </SelectedGroupBar>

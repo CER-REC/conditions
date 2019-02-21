@@ -16,6 +16,12 @@ exports[`Storyshots Components|AboutTextBox Basic view 1`] = `
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
     </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
+    </p>
   </div>
 </div>
 `;
@@ -392,13 +398,12 @@ exports[`Storyshots Components|BrowseByBtn browseByCompany 1`] = `
       className="BrowseByBtn-ButtonText"
     >
       <span>
-        Projects by
-      </span>
-       
-      <span
-        className="LastWord"
-      >
-        Company
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
+        </span>
       </span>
     </div>
     <svg
@@ -464,13 +469,12 @@ exports[`Storyshots Components|BrowseByBtn browseByLocation 1`] = `
       className="BrowseByBtn-ButtonText"
     >
       <span>
-        Projects by
-      </span>
-       
-      <span
-        className="LastWord"
-      >
-        Company
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
+        </span>
       </span>
     </div>
     <svg
@@ -536,13 +540,12 @@ exports[`Storyshots Components|BrowseByBtn with state toggle 1`] = `
       className="BrowseByBtn-ButtonText"
     >
       <span>
-        Conditions by
-      </span>
-       
-      <span
-        className="LastWord"
-      >
-        Location
+        Conditions by 
+        <span
+          className="LastWord"
+        >
+          Location
+        </span>
       </span>
     </div>
     <svg
@@ -1721,13 +1724,13 @@ exports[`Storyshots Components|ConditionExplorer default 1`] = `
 >
   <svg
     className="ConditionExplorer"
-    height="500"
+    height="100%"
     style={
       Object {
         "border": "1px solid #000",
       }
     }
-    width="500"
+    width="100%"
   >
     <g
       className="keyword color0 textVisible"
@@ -1761,13 +1764,13 @@ exports[`Storyshots Components|ConditionExplorer physics disabled 1`] = `
 >
   <svg
     className="ConditionExplorer"
-    height="500"
+    height="100%"
     style={
       Object {
         "border": "1px solid #000",
       }
     }
-    width="500"
+    width="100%"
   >
     <g
       className="keyword color0 textVisible"
@@ -7201,7 +7204,7 @@ exports[`Storyshots Components|SelectedGroupBar default 1`] = `
     <p
       style={
         Object {
-          "background": "tomato",
+          "background": "lightgrey",
           "fontSize": 16,
         }
       }
@@ -7414,7 +7417,7 @@ exports[`Storyshots Components|ShareIcon twitter 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|ShortcutInfoBar Basic view 1`] = `
+exports[`Storyshots Components|ShortcutInfoBar default 1`] = `
 <div
   className="visualization"
 >
@@ -7422,50 +7425,14 @@ exports[`Storyshots Components|ShortcutInfoBar Basic view 1`] = `
     className="ShortcutInfoBar"
   >
     <div
-      className="InfoButton"
+      className="Content"
     >
       <svg
-        viewBox="0 0 50 100"
-      >
-        <g
-          transform="scale(3)"
-        >
-          <path
-            d="M8.3.5a7.8,7.8,0,1,0,7.8,7.8A7.81,7.81,0,0,0,8.3.5"
-            fill="none"
-            stroke="#fff"
-            strokeMiterlimit={10}
-          />
-          <path
-            d="M6,7.2a4.3,4.3,0,0,1,1.8-.5c.9,0,1.7.5,1.7,1.3a9,9,0,0,1-.3,1.9s-.2.9-.3,1.2-.2.8.2,1,1.2-.4,1.2-.4l-.4,1.1a4,4,0,0,1-1.5.4,2.35,2.35,0,0,1-1.6-.5,2,2,0,0,1-.4-1.9c.1-.5.8-2.5.6-3S5.8,8,5.8,8Z"
-            fill="#fff"
-          />
-          <path
-            d="M7.3,4.3A1.42,1.42,0,0,1,8.7,3,1.33,1.33,0,0,1,9.9,4.4,1.42,1.42,0,0,1,8.5,5.7,1.17,1.17,0,0,1,7.3,4.3"
-            fill="#fff"
-          />
-        </g>
-      </svg>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="ShortcutInfoBar"
-  >
-    <div
-      className="InfoButton"
-      focusable={true}
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      tabIndex={0}
-    >
-      <svg
+        className="InfoButton"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
         viewBox="0 0 50 100"
       >
         <g
@@ -7489,323 +7456,8 @@ exports[`Storyshots Components|ShortcutInfoBar Expanded view 1`] = `
       </svg>
     </div>
     <div
-      className="InfoBar"
-    >
-      <div
-        className="About"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          About this Visualization
-        </button>
-        <div
-          className="CircleContainer AngleDoubleDown"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          style={
-            Object {
-              "height": 20,
-              "width": 20,
-            }
-          }
-          tabIndex={0}
-        >
-          <div>
-            <div
-              className="Icon"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-double-down fa-w-10 fa-1x "
-                color="#D1057A"
-                data-icon="angle-double-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div
-        className="Icons"
-      >
-        Share:
-        <div
-          className="ShareIcon"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
-                  color=""
-                  data-icon="envelope"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="ShareIcon"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
-                  color=""
-                  data-icon="twitter"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="ShareIcon"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
-                  color=""
-                  data-icon="facebook"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 448 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="ShareIcon"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-linkedin fa-w-14 fa-1x "
-                  color=""
-                  data-icon="linkedin"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 448 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div
-        className="Icons"
-      >
-        Download:
-        <svg>
-          <g
-            focusable={true}
-            icon="file-download"
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <path
-              d="M2.9,13.3s-.4-.3,0-.3H4.5V9.2c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L6.1,16Z"
-              fill="#666"
-            />
-            <polygon
-              fill="none"
-              points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0"
-            />
-            <line
-              strokeMiterlimit="10"
-              x1="0.5"
-              x2="11.2"
-              y1="11.1"
-              y2="11.1"
-            />
-            <rect
-              fill="none"
-              height="11.6"
-              width="11.6"
-            />
-            <path
-              d="M7.8,1l2.8,2.9v6.8H1V1.1H7.8M8.2,0H0V11.6H11.6V3.4L8.2,0Z"
-              fill="#666"
-            />
-            <line
-              stroke="#666"
-              strokeWidth="0.75p"
-              x1="7.7"
-              x2="7.7"
-              y1="0.4"
-              y2="4"
-            />
-            <line
-              stroke="#666"
-              strokeWidth="0.75px"
-              x1="11.2"
-              x2="7.3"
-              y1="4"
-              y2="4"
-            />
-          </g>
-          <g
-            focusable={true}
-            icon="image-download"
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            transform="translate(20, 0)"
-          >
-            <rect
-              fill="#666"
-              height="11.6"
-              width="11.6"
-            />
-            <polygon
-              fill="#666"
-              points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0"
-            />
-            <polygon
-              fill="#e6e6e6"
-              points="11.1 11.6 8.2 4.8 6.8 5.8 4.8 1.8 0.5 11.6 11.1 11.6"
-            />
-            <path
-              d="M2.9,13.3s-.4-.3,0-.3H4.5V9.1c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L5.9,16Z"
-              fill="#666"
-            />
-            <line
-              fill="none"
-              stroke="#666"
-              strokeMiterlimit={10}
-              x1="0.5"
-              x2="11.2"
-              y1="11.1"
-              y2="11.1"
-            />
-            <circle
-              cx="9.6"
-              cy="2.4"
-              fill="#e6e6e6"
-              r="1"
-            />
-          </g>
-        </svg>
-      </div>
-    </div>
+      className="clearfix"
+    />
   </div>
 </div>
 `;
