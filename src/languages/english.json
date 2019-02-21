@@ -127,6 +127,17 @@
       "all": "All Instruments"
     },
     "searchBar": {
+      "close": "Close",
+      "reset": "Reset",
+      "filter": {
+        "projectYear": "Filter by Project Year",
+        "projectStatus": {
+          "projectStatusText": "Filter by Project Status",
+          "OPEN": "Open",
+          "CLOSED": "Closed",
+          "CANCELLED": "Cancelled"
+        }
+      },
       "tab": {
         "filter": "Filter",
         "find": "Find Words"
