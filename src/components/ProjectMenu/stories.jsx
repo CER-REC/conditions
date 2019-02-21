@@ -9,42 +9,42 @@ const projectData = [
   {
     id: 1223,
     name: '1. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 5, color: 'pink' }, { name: 'managementSystem', count: 0, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 5, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 0, color: 'green' }],
   },
   {
     id: 1224,
     name: '2. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 10, color: 'pink' }, { name: 'managementSystem', count: 19, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 10, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 19, color: 'green' }],
   },
   {
     id: 1225,
     name: '3. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 4, color: 'pink' }, { name: 'managementSystem', count: 29, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 4, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 29, color: 'green' }],
   },
   {
     id: 1226,
     name: '4. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 6, color: 'pink' }, { name: 'managementSystem', count: 22, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 6, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 22, color: 'green' }],
   },
   {
     id: 1227,
     name: '5. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 5, color: 'pink' }, { name: 'managementSystem', count: 0, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 5, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 0, color: 'green' }],
   },
   {
     id: 1228,
     name: '6. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 10, color: 'pink' }, { name: 'managementSystem', count: 19, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 10, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 19, color: 'green' }],
   },
   {
     id: 1229,
     name: '7. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 4, color: 'pink' }, { name: 'managementSystem', count: 29, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 4, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 29, color: 'green' }],
   },
   {
     id: 1230,
     name: '8. Section 21.(1) application',
-    graphData: [{ name: 'security', count: 6, color: 'pink' }, { name: 'managementSystem', count: 22, color: 'green' }],
+    graphData: [{ name: 'SECURITY', count: 6, color: 'pink' }, { name: 'MANAGEMENT_SYSTEM', count: 22, color: 'green' }],
   },
 ];
 

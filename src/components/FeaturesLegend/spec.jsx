@@ -5,11 +5,11 @@ import FeaturesLegend from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 const legendItems = [
-  { color: 'pink', description: 'security', disabled: true },
-  { color: 'red', description: 'managementSystem', disabled: false },
-  { color: 'green', description: 'financial', disabled: false },
-  { color: 'blue', description: 'damagePrevention', disabled: false },
-  { color: 'purple', description: 'socioEconomic', disabled: false },
+  { color: 'pink', description: 'SECURITY', disabled: true },
+  { color: 'red', description: 'MANAGEMENT_SYSTEM', disabled: false },
+  { color: 'green', description: 'FINANCIAL', disabled: false },
+  { color: 'blue', description: 'DAMAGE_PREVENTION', disabled: false },
+  { color: 'purple', description: 'SOCIO_ECONOMIC', disabled: false },
 ];
 
 describe('Components|FeaturesLegend', () => {

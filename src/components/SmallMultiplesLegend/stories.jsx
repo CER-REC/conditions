@@ -6,7 +6,7 @@ import SmallMultiplesLegend from '.';
 import ReadMe from './README.md';
 
 const basicUsageData = [{
-  name: 'security',
+  name: 'SECURITY',
   graphData: [{
     date: 2018,
     count: 1,
@@ -25,7 +25,7 @@ const basicUsageData = [{
   }],
   color: 'red',
 }, {
-  name: 'managementSystem',
+  name: 'MANAGEMENT_SYSTEM',
   graphData: [{
     date: 2018,
     count: 43,
@@ -44,7 +44,7 @@ const basicUsageData = [{
   }],
   color: 'blue',
 }, {
-  name: 'financial',
+  name: 'FINANCIAL',
   graphData: [{
     date: 2018,
     count: 5,
@@ -54,7 +54,7 @@ const basicUsageData = [{
   }],
   color: 'green',
 }, {
-  name: 'damagePrevention',
+  name: 'DAMAGE_PREVENTION',
   graphData: [{
     date: 2018,
     count: 46,

@@ -619,7 +619,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 25.35830248449136 199
       A 133.80929318883346 133.80929318883346 0 0 1 292.97688886215826 199"
-              id="oilpath"
+              id="OILpath"
               style={
                 Object {
                   "fill": "none",
@@ -642,7 +642,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#oilpath"
+                href="#OILpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -655,7 +655,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 292.97688886215826 199
       A 115.83240432667517 115.83240432667517 0 0 1 524.6416975155087 199"
-              id="gaspath"
+              id="GASpath"
               style={
                 Object {
                   "fill": "none",
@@ -678,7 +678,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#gaspath"
+                href="#GASpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -691,7 +691,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 248.8974000566052 317.49489687560805
       A 47.5 47.5 0 0 1 343.8974000566052 317.49489687560805"
-              id="powerpath"
+              id="POWERpath"
               style={
                 Object {
                   "fill": "none",
@@ -714,7 +714,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#powerpath"
+                href="#POWERpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -1082,7 +1082,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 555 199
       A 87.5 87.5 0 0 1 730 199"
-              id="anyCommodityTypespath"
+              id="ANY_COMMODITY_TYPESpath"
               style={
                 Object {
                   "fill": "none",
@@ -1105,7 +1105,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#anyCommodityTypespath"
+                href="#ANY_COMMODITY_TYPESpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -1118,7 +1118,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 730 199
       A 57.5 57.5 0 0 1 845 199"
-              id="notSpecifiedpath"
+              id="NOT_SPECIFIEDpath"
               style={
                 Object {
                   "fill": "none",
@@ -1141,7 +1141,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#notSpecifiedpath"
+                href="#NOT_SPECIFIEDpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -1310,7 +1310,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             d="
       M 5 199
       A 87.5 87.5 0 0 1 180 199"
-            id="anyCommodityTypespath"
+            id="ANY_COMMODITY_TYPESpath"
             style={
               Object {
                 "fill": "none",
@@ -1333,7 +1333,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             className="bubbleTitle"
           >
             <textPath
-              href="#anyCommodityTypespath"
+              href="#ANY_COMMODITY_TYPESpath"
               startOffset="50%"
               textAnchor="middle"
             >
@@ -1346,7 +1346,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             d="
       M 180 199
       A 57.5 57.5 0 0 1 295 199"
-            id="notSpecifiedpath"
+            id="NOT_SPECIFIEDpath"
             style={
               Object {
                 "fill": "none",
@@ -1369,7 +1369,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             className="bubbleTitle"
           >
             <textPath
-              href="#notSpecifiedpath"
+              href="#NOT_SPECIFIEDpath"
               startOffset="50%"
               textAnchor="middle"
             >

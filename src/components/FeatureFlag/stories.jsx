@@ -22,7 +22,7 @@ storiesForComponent('Components|FeatureFlag', module, ReadMe)
       color="pink"
       count={number('Amount of conditions', 1, options)}
       chartType="theme"
-      name="damagePrevention"
+      name="DAMAGE_PREVENTION"
     />
   ))
   .add('Without color', () => (
@@ -30,6 +30,6 @@ storiesForComponent('Components|FeatureFlag', module, ReadMe)
       color="#a1a8a7"
       count={number('Amount of conditions', 1, options)}
       chartType="theme"
-      name="damagePrevention"
+      name="DAMAGE_PREVENTION"
     />
   ));

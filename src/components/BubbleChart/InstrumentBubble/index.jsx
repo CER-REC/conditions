@@ -10,13 +10,13 @@ import './styles.scss';
 
 const pickColor = (category) => {
   switch (category) {
-    case 'routing': return '#0E2B8C';
-    case 'construction': return '#27A5F9';
-    case 'abandonment': return '#164EF8';
-    case 'misc': return '#D4A92A';
-    case 'safety': return '#C904C2';
-    case 'tariffs': return '#C3E6B3';
-    case 'opening': return '#6AE6B2';
+    case 'ROUTING': return '#0E2B8C';
+    case 'CONSTRUCTION': return '#27A5F9';
+    case 'ABANDONMENT': return '#164EF8';
+    case 'MISC': return '#D4A92A';
+    case 'SAFETY': return '#C904C2';
+    case 'TARIFFS': return '#C3E6B3';
+    case 'OPENING': return '#6AE6B2';
     default: return 'white';
   }
 };
