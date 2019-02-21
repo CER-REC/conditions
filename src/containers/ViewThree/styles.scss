@@ -1,0 +1,14 @@
+@import '../../styles/grid';
+
+.ViewThree {
+  @include grid((
+    features: 21,
+    legend: 37,
+    chart: 56,
+    featureDescription: 59,
+    typesDescription: 56,
+    selectedCompany: 38,
+    conditionDetails: 77,
+  ));
+}
+

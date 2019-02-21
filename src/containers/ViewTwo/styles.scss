@@ -1,0 +1,16 @@
+@import '../../styles/grid';
+
+.ViewTwo {
+  @include grid((
+    searchHeader: 116,
+    wheel: 57,
+    companyBreakdown: 36,
+    menus: 21,
+    conditions: 58,
+  )) {
+    /* To ensure the layoutOnly mode appears properly */
+    .searchHeader { min-height: 100px; }
+    .wheel { min-height: 200px; }
+    .conditions { min-height: 100px; }
+  }
+}

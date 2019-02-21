@@ -163,16 +163,20 @@
     "wheel": {
       "company": "",
       "location": ""
+    },
+    "browseByBtn": {
+      "projectsBy": "",
+      "conditionsBy": ""
     }
   },
   "views": {
     "view1": {
+      "header": {
+        "title": "",
+        "subtitle": ""
+      },
       "footer": {
-        "skip": "",
-        "projectsBy": "",
-        "conditionsBy": "",
-        "company": "",
-        "location": ""
+        "skip": ""
       }
     }
   }

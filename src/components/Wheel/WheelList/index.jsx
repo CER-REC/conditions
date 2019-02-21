@@ -17,32 +17,37 @@ class WheelList extends React.PureComponent {
   }
 
   handleOnClick = () => {
-
     this.props.onChange();
+  }
+
+  scrollHandler = (event) => {
+    console.log(event.target.clientY);
+    console.log(event.target);
   }
 
   render() {
     let message = <FormattedMessage id="components.companyWheel.list.company" />;
-    let renderedList = this.props.companyList;
+    let listByMode = this.props.companyList;
     if (this.props.mode === 'location') {
       message = <FormattedMessage id="components.companyWheel.list.location" />;
-      renderedList = this.props.locationList;
+      listByMode = this.props.locationList;
     }
-    const checkLength = renderedList.map((k) => {
+    const renderedList = listByMode.map((k) => {
       if (k.length >= 15) {
         k = `${k.substring(0, 13)}...`;
       }
       return k;
-    });
+    }).sort();
     return (
       <div
         className={classNames('WheelList', this.props.className)}
+        onScroll={this.scrollHandler}
       >
         {message}
         <List
           className="items-list"
           elevated
-          items={checkLength.sort()}
+          items={renderedList}
           onChange={this.handleOnClick}
           selected={this.props.selected}
         />

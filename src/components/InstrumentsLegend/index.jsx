@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import LegendItem from './LegendItem';
+import BubbleLegend from './BubbleLegend';
 import './styles.scss';
 
 const getFormattedData = (data) => {
@@ -100,6 +101,7 @@ const InstrumentsLegend = (props) => {
         onChange={onItemChange}
         guideLine
       />
+      <BubbleLegend className="BubbleLegend" maxConditions={1600} radiusOfMaxBubble={100} />
     </div>
   );
 };
