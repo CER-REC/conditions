@@ -6,27 +6,27 @@ export const Types = {
   SELECTED_CONDITION: 'selectedCondition',
 };
 
-export const selectedFeature = feature => ({
+export const setSelectedFeature = feature => ({
   type: Types.SELECTED_FEATURE,
   payload: { feature },
 });
 
-export const selectedSubFeature = subFeature => ({
+export const setSelectedSubFeature = subFeature => ({
   type: Types.SELECTED_SUBFEATURE,
   payload: { subFeature },
 });
 
-export const selectedCompany = company => ({
+export const setSelectedCompany = company => ({
   type: Types.SELECTED_COMPANY,
   payload: { company },
 });
 
-export const selectedProject = project => ({
+export const setSelectedProject = project => ({
   type: Types.SELECTED_PROJECT,
   payload: { project },
 });
 
-export const selectedCondition = condition => ({
+export const setSelectedCondition = condition => ({
   type: Types.SELECTED_CONDITION,
   payload: { condition },
 });
@@ -41,13 +41,13 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Types.SELECTED_FEATURE: return { ...state, selectedFeature: action.payload.feature };
+    case Types.SELECTED_FEATURE: return { ...state, feature: action.payload.feature };
     case Types.SELECTED_SUBFEATURE: return {
-      ...state, selectedSubFeature: action.payload.subFeature,
+      ...state, subfeature: action.payload.subFeature,
     };
-    case Types.SELECTED_COMPANY: return { ...state, selectedCompany: action.payload.company };
-    case Types.SELECTED_PROJECT: return { ...state, selectedProject: action.payload.project };
-    case Types.SELECTED_CONDITION: return { ...state, selectedCondition: action.payload.condition };
+    case Types.SELECTED_COMPANY: return { ...state, company: action.payload.company };
+    case Types.SELECTED_PROJECT: return { ...state, project: action.payload.project };
+    case Types.SELECTED_CONDITION: return { ...state, condition: action.payload.condition };
     default: return state;
   }
 };
