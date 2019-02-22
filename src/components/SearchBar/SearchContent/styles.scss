@@ -24,15 +24,6 @@
     span {
       padding: 0px;
     }
-    .dropDown { // Styles for using Dropdown from FeaturesMenu
-      display: inline-block;
-      .title{
-        display: none;
-      }
-      select {
-        width: 50px;
-      }
-    }
   }
   span {
     color: $VeryDarkGray;
@@ -84,20 +75,19 @@
   .highlightConditions {
     font-size: 10px;
     background-color: $LightGray;
-    color: $general-text-2;
     border: 1px solid $MainOrange;
     padding: 10px;
-    font-size: 12px;
-    font-family: $fira-sans-condensed-light;
+    font-size: 9px;
+    font-family: $fira-sans-condensed-italic;
+    color: $VeryDarkGray;
     border-radius: 10px;
     padding: 10px;
-    transform: skew(-5deg);
     .anyText {
       display: inline-block;
       padding-left: 50px;
       span {
         padding: 0px;
-        color: $general-text-2;
+        color: $VeryDarkGray;
       }
     }
     .keywordsText {
@@ -107,7 +97,7 @@
       vertical-align: top;
       span {
         padding: 0px;
-        color: $general-text-2;
+        color: $VeryDarkGray;
       }
     }
   }

@@ -5,7 +5,7 @@ import './styles.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../Icon/index';
-import FeaturesMenu from '../../FeaturesMenu';
+import Dropdown from '../../Dropdown';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 library.add(
@@ -156,20 +156,30 @@ class SearchContent extends React.PureComponent {
             </FormattedMessage>
           )
           : (
-            <FeaturesMenu
-              features={['any', 'all']}
-              onChange={() => (this.props.findAny ? this.props.findAnyOnChange(false) : this.props.findAnyOnChange(true))}
-              dropDown
-              dropDownID="components.searchBar.findWords.options"
-              selected={this.props.findAny ? 'any' : 'all'}
+            <Dropdown
+              options={['any', 'all']}
+              onChange={
+                () => (this.props.findAny
+                  ? this.props.findAnyOnChange(false)
+                  : this.props.findAnyOnChange(true))}
+              selectedOption={this.props.findAny ? 'any' : 'all'}
+              optionID="components.searchBar.findWords.options"
             />
           )
       }
         <FormattedMessage id="components.searchBar.findWords.searchText.of" />:
       </div>
       <div className="input">
-        <input value={this.state.inputInclude} onChange={this.updateInputInclude} className="searchBar" />
-        <button type="button" className="addInput" {...handleInteraction(this.addIncludeWord)}>
+        <input
+          value={this.state.inputInclude}
+          onChange={this.updateInputInclude}
+          className="searchBar"
+        />
+        <button
+          type="button"
+          className="addInput"
+          {...handleInteraction(this.addIncludeWord)}
+        >
           <Icon className="iconInline plusIcon" icon="plus-circle" />
         </button>
       </div>

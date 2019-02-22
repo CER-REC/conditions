@@ -46,15 +46,12 @@ FeaturesMenu.propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Additional className to add to the component */
   className: PropTypes.string,
-  /** Additional id to use for regular dropdowns */
-  dropDownID: PropTypes.string,
 };
 
 FeaturesMenu.defaultProps = {
   selected: '',
   dropDown: false,
   className: '',
-  dropDownID: '',
 };
 
 export default FeaturesMenu;
