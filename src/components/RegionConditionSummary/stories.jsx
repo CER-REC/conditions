@@ -22,8 +22,8 @@ const themeData = [
 ];
 
 const typeData = [
-  { feature: 'standard', description: 'STANDARD', count: 50 },
-  { feature: 'standard', description: 'NON_STANDARD', count: 100 },
+  { feature: 'type', description: 'STANDARD', count: 50 },
+  { feature: 'type', description: 'NON_STANDARD', count: 100 },
 ];
 
 storiesForComponent('Components|RegionConditionSummary', module, ReadMe)

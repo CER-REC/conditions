@@ -5,11 +5,14 @@ import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import './styles.scss';
 import Dropdown from '../Dropdown';
+import { features as featuresRaw } from '../../constants';
+
+const features = Object.keys(featuresRaw);
 
 const FeaturesMenu = (props) => {
   const id = props.dropDown ? 'components.featureMenu.dropDownTitle' : 'common.trend.title';
-  const selected = props.features.includes(props.selected) ? props.selected : props.features[0];
-  const listItems = props.features.map(feature => (
+  const selected = features.includes(props.selected) ? props.selected : features[0];
+  const listItems = features.map(feature => (
     <FormattedMessage key={feature} id={`common.features.${feature}`} />
   ));
 
@@ -18,7 +21,7 @@ const FeaturesMenu = (props) => {
       <FormattedMessage id={id}>{text => <span className="title">{text}</span>}</FormattedMessage>
       {(props.dropDown) ? (
         <Dropdown
-          options={props.features}
+          options={features}
           onChange={props.onChange}
           selectedOption={props.selected}
           optionID="common.features"
@@ -26,8 +29,8 @@ const FeaturesMenu = (props) => {
       ) : (
         <List
           items={listItems}
-          selected={props.features.indexOf(selected)}
-          onChange={index => props.onChange(props.features[index])}
+          selected={features.indexOf(selected)}
+          onChange={index => props.onChange(features[index])}
           guideLine
         />
       )}

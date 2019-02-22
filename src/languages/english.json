@@ -3,6 +3,7 @@
     "features": {
       "theme": "Theme",
       "instrument": "Instrument",
+      "timing": "Timing",
       "phase": "Phase",
       "type": "Type",
       "status": "Status",

@@ -49,7 +49,7 @@ export const features = {
     AMENDED: 'rgb(198, 170, 6)',
     SATISFACTORY: 'rgb(88, 104, 107)',
   },
-  standard: {
+  type: {
     NON_STANDARD: 'rgb(77, 39, 90)',
     STANDARD: 'rgb(181, 11, 128)',
   },
