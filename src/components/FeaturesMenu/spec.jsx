@@ -3,8 +3,12 @@ import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
 
 import FeaturesMenu from '.';
-import List from '../List';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { features as featuresRaw } from '../../constants';
+
+const features = Object.keys(featuresRaw);
+
+const i18nToFeature = id => id.replace('common.features.', '');
 
 describe('Components|FeaturesMenu', () => {
   let spy;
@@ -15,7 +19,6 @@ describe('Components|FeaturesMenu', () => {
     wrapper = shallow((
       <FeaturesMenu
         className="aClass"
-        features={['TEST Feat.']}
         onChange={() => {}}
       />
     ));
@@ -24,15 +27,8 @@ describe('Components|FeaturesMenu', () => {
   shouldBehaveLikeAComponent(FeaturesMenu, () => wrapper);
 
   describe('when the dropDown property is not provided', () => {
-    const features = ['Feature A', 'Feature B', 'Feature C'];
-
     beforeEach(() => {
-      wrapper = shallow((
-        <FeaturesMenu
-          features={features}
-          onChange={spy}
-        />
-      ));
+      wrapper = shallow(<FeaturesMenu onChange={spy} />);
     });
 
     test('should render without the dropDown class', () => {
@@ -48,43 +44,36 @@ describe('Components|FeaturesMenu', () => {
     });
 
     test('should render the features in the List component', () => {
-      const listWrapper = wrapper.find(List);
+      const listWrapper = wrapper.find('List');
       const items = listWrapper.prop('items');
 
       expect(listWrapper).toHaveLength(1);
       expect(items).toHaveLength(features.length);
 
-      features.forEach((feature, index) => {
-        expect(items[index].type).toBe(FormattedMessage);
-        expect(items[index].props.id).toBe(`common.features.${feature}`);
-      });
+      const missing = items
+        .map(v => i18nToFeature(v.props.id))
+        .reduce((acc, next) => acc.filter(v => v !== next), features);
+      expect(missing).toHaveLength(0);
     });
 
     test('should render the List component with the first item selected', () => {
-      expect(wrapper.find(List).prop('selected')).toBe(0);
+      expect(wrapper.find('List').prop('selected')).toBe(0);
     });
 
     test('should call the onChange function with the feature on List item change', () => {
-      features.forEach((feature, index) => {
-        wrapper.find(List).prop('onChange')(index);
-        expect(spy).toHaveBeenLastCalledWith(feature);
-      });
-
-      expect(spy).toHaveBeenCalledTimes(features.length);
+      const list = wrapper.find('List');
+      const desired = i18nToFeature(list.prop('items')[3].props.id);
+      list.prop('onChange')(3);
+      expect(spy).toHaveBeenLastCalledWith(desired);
     });
 
     test('should render the List component with the corresponding item selected when selected is provided', () => {
-      const selectedIndex = 2;
-
-      wrapper = shallow((
-        <FeaturesMenu
-          features={features}
-          onChange={spy}
-          selected={features[selectedIndex]}
-        />
-      ));
-
-      expect(wrapper.find(List).prop('selected')).toBe(selectedIndex);
+      const itemOrder = wrapper.find('List').prop('items')
+        .map(v => i18nToFeature(v.props.id));
+      features.forEach((selected) => {
+        wrapper.setProps({ selected });
+        expect(wrapper.find('List').prop('selected')).toBe(itemOrder.indexOf(selected));
+      });
     });
 
     test('should render the List component with the first item selected when selected is invalid', () => {
@@ -96,21 +85,13 @@ describe('Components|FeaturesMenu', () => {
         />
       ));
 
-      expect(wrapper.find(List).prop('selected')).toBe(0);
+      expect(wrapper.find('List').prop('selected')).toBe(0);
     });
   });
 
   describe('when the dropDown property is provided', () => {
-    const features = ['theme', 'phase', 'filing'];
-
     beforeEach(() => {
-      wrapper = shallow((
-        <FeaturesMenu
-          features={features}
-          onChange={spy}
-          dropDown
-        />
-      ));
+      wrapper = shallow(<FeaturesMenu onChange={spy} dropDown />);
     });
 
     test('should render with the dropDown class', () => {

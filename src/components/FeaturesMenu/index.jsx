@@ -23,7 +23,7 @@ const FeaturesMenu = (props) => {
         <Dropdown
           options={features}
           onChange={props.onChange}
-          selectedOption={props.selected}
+          selectedOption={selected}
           optionID="common.features"
         />
       ) : (
@@ -39,8 +39,6 @@ const FeaturesMenu = (props) => {
 };
 
 FeaturesMenu.propTypes = {
-  /** The list of features to display in the menu */
-  features: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   /** The currently selected feature */
   selected: PropTypes.string,
   /** The flag to determine if the component renders in drop down mode */
