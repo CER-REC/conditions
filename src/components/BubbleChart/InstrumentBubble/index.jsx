@@ -9,8 +9,6 @@ import { features } from '../../../constants';
 1) Check if the text is overlapping another and change arc accordingly
 */
 
-const pickColor = category => features.instrument[category] || 'white';
-
 const InstrumentBubble = (props) => {
   const {
     onClick, d3Calculation, keyPress,
@@ -61,6 +59,7 @@ const InstrumentBubble = (props) => {
       const textX = node.r > node.value ? (node.x + (node.value + 2)) : node.x;
       const textStyle = node.r > node.value ? '' : 'middle';
       const textColor = node.r > node.value ? 'black' : 'white';
+      const pickColor = category => features.instrument[category] || 'white';
       return (
         <g
           key={node.data.name}
