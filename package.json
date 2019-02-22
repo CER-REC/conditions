@@ -108,7 +108,7 @@
     "require-context.macro": "1.0.4",
     "sass-loader": "7.1.0",
     "shapefile": "0.6.6",
-    "storybook-addon-interaction": "0.1.3",
+    "storybook-addon-interaction": "^0.1.4",
     "storybook-addon-intl": "2.3.2",
     "storybook-readme": "4.0.5",
     "style-loader": "0.23.1",
