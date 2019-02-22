@@ -1,6 +1,6 @@
-import Path from 'path';
-import Webpack from 'webpack';
-import TranslationTable from './src/TranslationTable';
+const Path = require('path');
+const Webpack = require('webpack');
+const TranslationTable = require('./src/TranslationTable');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
 
