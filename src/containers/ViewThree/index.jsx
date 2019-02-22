@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
@@ -9,6 +10,8 @@ import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
 import './styles.scss';
 import { allConditionsPerYear } from '../../proptypes';
+import { conditionCountsByYear } from '../../mockData';
+import * as selectedCreators from '../../actions/selected';
 
 const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
@@ -23,7 +26,10 @@ const ViewThree = props => (
   <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
     <section className="row">
       <section className="features">
-        <FeaturesMenu features={features} onChange={noop} />
+        <FeaturesMenu
+          selected={props.selected.feature}
+          onChange={props.setSelectedFeature}
+        />
       </section>
       <section className="legend">
         <SmallMultiplesLegend
@@ -69,10 +75,24 @@ ViewThree.propTypes = {
   conditionCountsByYear: PropTypes.shape({
     counts: allConditionsPerYear.isRequired,
   }).isRequired,
+  selected: PropTypes.shape({
+    feature: PropTypes.string.isRequired,
+  }).isRequired,
+  setSelectedFeature: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {
   layoutOnly: PropTypes.false,
 };
 
-export default ViewThree;
+export const ViewThreeRaw = ViewThree;
+
+export default connect(
+  ({ selected }) => ({
+    selected,
+    conditionCountsByYear,
+  }),
+  {
+    setSelectedFeature: selectedCreators.setSelectedFeature,
+  },
+)(ViewThree);
