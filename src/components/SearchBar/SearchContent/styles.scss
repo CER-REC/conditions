@@ -54,10 +54,12 @@
     padding: 0px;
     max-width: 375px;
     height: 50px;
-    .liText {
+    li {
+      list-style-type: none;
       display: inline-block;
-      vertical-align: top;
+    &.liText {
       width: 86px;
+      vertical-align: top;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -68,9 +70,16 @@
       margin: 0px 0px 10px 5px;
       color: $SearchKeyword;
     }
-    span {
-      padding: 0px;
+    &.deleteButton {
+      button {
+        border: none;
+        padding: 0px; 
+        svg {
+          width: inherit;
+        }
+      }
     }
+  }
   }
   .highlightConditions {
     font-size: 10px;
@@ -104,6 +113,9 @@
   }
   .advancedSearchText {
     text-align: right;
+    button {
+      border: none;
+    }
     span {
       color: $LinksTextButtons;
     }
@@ -111,6 +123,7 @@
   .addInput {
     background: transparent;
     line-height: 10px;
+    border: none;
     .plusIcon {
       color: $LinksTextButtons;
     }

@@ -15,15 +15,11 @@ storiesForComponent('Components|SearchBar/SearchContent', module, ReadMe)
   ), {
     interaction: {
       state: {
-        keywords: { include: ['pipeline1', 'pipeline2'], exclude: ['safety', 'fire'] }, mode: 'basic', selectedIncludeType: 'any',
+        keywords: { include: [], exclude: [] }, findAny: true,
       },
       actions: {
-        changeSearchType: state => () => {
-          const mode = (state.mode === 'basic') ? 'advanced' : 'basic';
-          return ({ mode });
-        },
         updateKeywords: () => words => ({ keywords: words }),
-        includeOnChange: () => e => ({ selectedIncludeType: e }),
+        findAnyOnChange: () => e => ({ findAny: e }),
       },
     },
   });

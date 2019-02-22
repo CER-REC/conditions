@@ -18,17 +18,15 @@ const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|SearchBar/SearchContent', () => {
-  describe('with basic mode props being passed in ', () => {
+  describe('with basic state ', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          mode="basic"
-          changeSearchType={noop}
           updateKeywords={noop}
           closeTab={noop}
-          selectedIncludeType="any"
+          findAny
         />,
       );
     });
@@ -71,7 +69,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
     test('render advanced searchText', () => {
       const updatedWrapper = wrapper.find(
-        '.advancedSearchText > FormattedMessage',
+        '.advancedSearchText FormattedMessage',
       );
       expect(updatedWrapper).toHaveLength(1);
       expect(updatedWrapper.prop('id')).toBe(
@@ -80,18 +78,18 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('advanced prop passed in', () => {
+  describe('advanced state', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          mode="advanced"
-          changeSearchType={noop}
           updateKeywords={noop}
           closeTab={noop}
+          findAny
         />,
       );
+      wrapper.setState({ mode: 'advanced' });
     });
 
     test('render 2 input ', () => {
@@ -124,10 +122,9 @@ describe('Components|SearchBar/SearchContent', () => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          mode="advanced"
-          changeSearchType={noop}
           updateKeywords={spy}
           closeTab={noop}
+          findAny
         />,
       );
     });
@@ -169,7 +166,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('with full keywords list', () => {
+  describe('with full keywords list and in advanced state', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
@@ -180,12 +177,12 @@ describe('Components|SearchBar/SearchContent', () => {
             include: ['word1', 'word2', 'word3', 'word4', 'word5', 'word6'],
             exclude: ['except1', 'except2', 'except3', 'except4', 'except5', 'except6'],
           }}
-          mode="advanced"
-          changeSearchType={noop}
           updateKeywords={spy}
           closeTab={noop}
+          findAny
         />,
       );
+      wrapper.setState({ mode: 'advanced' });
     });
     test('should not call prop with include word', () => {
       const inputDiv = wrapper.find('.input').first();
@@ -214,33 +211,33 @@ describe('Components|SearchBar/SearchContent', () => {
       wrapper = shallow(
         <SearchContent
           keywords={keywords}
-          mode="advanced"
-          changeSearchType={noop}
           updateKeywords={spy}
           closeTab={noop}
+          findAny
         />,
       );
+      wrapper.setState({ mode: 'advanced' });
     });
     test('onClick, should call onchange prop on include', () => {
-      const li = wrapper.find('.searchWords > span').first();
+      const li = wrapper.find('.deleteButton > button').first();
       li.simulate('click', eventFuncs);
       expect(spy).toBeCalledTimes(1);
     });
 
     test('onEnter, should call prop on include', () => {
-      const li = wrapper.find('.searchWords > span').first();
+      const li = wrapper.find('.deleteButton > button').first();
       li.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
       expect(spy).toBeCalledTimes(1);
     });
 
     test('should call prop on exclude', () => {
-      const li = wrapper.find('.searchWords > span').last();
+      const li = wrapper.find('.deleteButton > button').last();
       li.simulate('click', eventFuncs);
       expect(spy).toBeCalledTimes(1);
     });
 
     test('onEnter, should call prop on exclude', () => {
-      const li = wrapper.find('.searchWords > span').last();
+      const li = wrapper.find('.deleteButton > button').last();
       li.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
       expect(spy).toBeCalledTimes(1);
     });

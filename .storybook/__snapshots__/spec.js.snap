@@ -6795,30 +6795,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <span>
           Include
         </span>
-        <div
-          className="FeaturesMenu dropDown"
+        <span
+          className="spacedText"
         >
-          <span
-            className="title"
-          >
-            Feature
-          </span>
-          <select
-            onChange={[Function]}
-            value="any"
-          >
-            <option
-              value="any"
-            >
-              ANY
-            </option>
-            <option
-              value="all"
-            >
-              ALL
-            </option>
-          </select>
-        </div>
+           
+          any
+           
+        </span>
         <span>
           of
         </span>
@@ -6832,12 +6815,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           onChange={[Function]}
           value=""
         />
-        <span
+        <button
           className="addInput"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
+          type="button"
         >
           <div
             className="Icon"
@@ -6860,92 +6844,25 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
               />
             </svg>
           </div>
-        </span>
+        </button>
       </div>
       <ul
         className="searchWords"
-      >
-        <li
-          className="liText"
-        >
-           
-          pipeline1
-           
-        </li>
-        <span
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <div
-            className="Icon"
-          >
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-times fa-w-11 iconInline timesIcon"
-              color=""
-              data-icon="times"
-              data-prefix="fas"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 352 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-          </div>
-        </span>
-        <li
-          className="liText"
-        >
-           
-          pipeline2
-           
-        </li>
-        <span
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <div
-            className="Icon"
-          >
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-times fa-w-11 iconInline timesIcon"
-              color=""
-              data-icon="times"
-              data-prefix="fas"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 352 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
-          </div>
-        </span>
-      </ul>
+      />
       <div
         className="advancedSearchText"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
       >
-        <span>
-          Basic Search
-        </span>
+        <button
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Advanced Search
+          </span>
+        </button>
       </div>
       <div
         className="highlightConditions"
@@ -6973,45 +6890,11 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="keywordsText"
         >
           <span>
+            
              
-            pipeline1
-            , 
-          </span>
-          <span>
-             
-            pipeline2
-            , 
           </span>
         </div>
         <div />
-        <div
-          className="anyText"
-        >
-          <span
-            className="upperCase"
-          >
-             
-            none
-             
-          </span>
-          <span>
-             of the following:
-          </span>
-        </div>
-        <div
-          className="keywordsText"
-        >
-          <span>
-             
-            safety
-            , 
-          </span>
-          <span>
-             
-            fire
-            , 
-          </span>
-        </div>
       </div>
       <div
         className="close"

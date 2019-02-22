@@ -20,10 +20,8 @@ class SearchContent extends React.PureComponent {
     }),
     updateKeywords: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    mode: PropTypes.string.isRequired,
-    changeSearchType: PropTypes.func.isRequired,
-    includeOnChange: PropTypes.func,
-    selectedIncludeType: PropTypes.string,
+    findAnyOnChange: PropTypes.func,
+    findAny: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -31,8 +29,7 @@ class SearchContent extends React.PureComponent {
       include: [],
       exclude: [],
     }),
-    includeOnChange: () => {},
-    selectedIncludeType: 'any',
+    findAnyOnChange: () => {},
   }
 
   constructor(props) {
@@ -40,6 +37,7 @@ class SearchContent extends React.PureComponent {
     this.state = {
       inputInclude: '',
       inputExclude: '',
+      mode: 'basic',
     };
   }
 
@@ -47,27 +45,26 @@ class SearchContent extends React.PureComponent {
     keywords.map(word => (
       <React.Fragment key={word}>
         <li className="liText"> {word} </li>
-        <span {...handleInteraction(this.deleteWord, [word, type])}>
-          <Icon className="iconInline timesIcon" icon="times" />
-        </span>
+        <li className="deleteButton">
+          <button type="button" {...handleInteraction(this.deleteWord, [word, type])}>
+            <Icon className="iconInline timesIcon" icon="times" />
+          </button>
+        </li>
       </React.Fragment>
     ))
   )
 
-  keyWordsRender = keywords => (
-    keywords.map(word => (
-      <React.Fragment key={word}>
-        <span> {word}, </span>
-      </React.Fragment>
-    ))
-  )
+  keyWordsRender = keywords => (<span>{keywords.join(', ')} </span>)
 
   deleteWord = (obj) => {
     const [word, type] = obj;
+    const type2 = type === 'include' ? 'exclude' : 'include';
     const { keywords } = this.props;
-    const index = keywords[type].indexOf(word);
-    keywords[type].splice(index, 1);
-    return this.props.updateKeywords(keywords);
+    const filteredWords = keywords[type].filter(v => v !== word);
+    const updatedKeywords = {};
+    updatedKeywords[type] = filteredWords;
+    updatedKeywords[type2] = keywords[type2];
+    this.props.updateKeywords(updatedKeywords);
   }
 
   addWord = (word, type) => {
@@ -87,14 +84,14 @@ class SearchContent extends React.PureComponent {
 
   updateInputExclude = e => this.setState({ inputExclude: e.target.value });
 
-  getIncludeWord = () => {
+  addIncludeWord = () => {
     this.addWord(this.state.inputInclude, 'include');
     return this.setState({ inputInclude: '' });
   }
 
-  getExcludeWord = () => {
+  addExcludeWord = () => {
     this.addWord(this.state.inputExclude, 'exclude');
-    return this.setState({ inputExclude: '' });
+    this.setState({ inputExclude: '' });
   }
 
   excludeSearchTextAndWords = () => (
@@ -110,9 +107,9 @@ class SearchContent extends React.PureComponent {
       </div>
       <div className="input">
         <input value={this.state.inputExclude} onChange={this.updateInputExclude} className="searchBar" />
-        <span className="addInput" {...handleInteraction(this.getExcludeWord)}>
+        <button type="button" className="addInput" {...handleInteraction(this.addExcludeWord)}>
           <Icon className="iconInline plusIcon" icon="plus-circle" />
-        </span>
+        </button>
       </div>
       <ul className="searchWords">
         {this.searchWordsRender(this.props.keywords.exclude, 'exclude')}
@@ -133,7 +130,7 @@ class SearchContent extends React.PureComponent {
       </div>
       <div className="keywordsText">{this.keyWordsRender(this.props.keywords.include)}</div>
       <div />
-      {this.props.mode === 'basic' ? null
+      {this.state.mode === 'basic' ? null
         : (
           <React.Fragment>
             <div className="anyText">
@@ -152,7 +149,7 @@ class SearchContent extends React.PureComponent {
     <React.Fragment>
       <div className="includeText">
         <FormattedMessage id="components.searchBar.findWords.searchText.include" />
-        {this.props.mode === 'basic'
+        {this.state.mode === 'basic'
           ? (
             <FormattedMessage id="components.searchBar.findWords.highlightText.any">
               {text => <span className="spacedText"> {text} </span>}
@@ -161,10 +158,10 @@ class SearchContent extends React.PureComponent {
           : (
             <FeaturesMenu
               features={['any', 'all']}
-              onChange={this.props.includeOnChange}
+              onChange={() => (this.props.findAny ? this.props.findAnyOnChange(false) : this.props.findAnyOnChange(true))}
               dropDown
               dropDownID="components.searchBar.findWords.options"
-              selected={this.props.selectedIncludeType}
+              selected={this.props.findAny ? 'any' : 'all'}
             />
           )
       }
@@ -172,9 +169,9 @@ class SearchContent extends React.PureComponent {
       </div>
       <div className="input">
         <input value={this.state.inputInclude} onChange={this.updateInputInclude} className="searchBar" />
-        <span className="addInput" {...handleInteraction(this.getIncludeWord)}>
+        <button type="button" className="addInput" {...handleInteraction(this.addIncludeWord)}>
           <Icon className="iconInline plusIcon" icon="plus-circle" />
-        </span>
+        </button>
       </div>
       <ul className="searchWords">
         {this.searchWordsRender(this.props.keywords.include, 'include')}
@@ -182,16 +179,24 @@ class SearchContent extends React.PureComponent {
     </React.Fragment>
   )
 
+  changeSearchType = () => {
+    this.setState(prevState => ({ mode: (prevState.mode === 'basic' ? 'advanced' : 'basic') }));
+    this.props.findAnyOnChange(true);
+    this.props.updateKeywords({ include: this.props.keywords.include, exclude: [] });
+  }
+
   render() {
     return (
       <div className="SearchContent">
         {this.includeSearchTextAndWords()}
-        {(this.props.mode !== 'advanced') ? null : (this.excludeSearchTextAndWords())}
-        <div {...handleInteraction(this.props.changeSearchType)} className="advancedSearchText">
-          {(this.props.mode === 'basic'
-            ? <FormattedMessage id="components.searchBar.findWords.advancedSearch" />
-            : <FormattedMessage id="components.searchBar.findWords.basicSearch" />)
-          }
+        {(this.state.mode !== 'advanced') ? null : (this.excludeSearchTextAndWords())}
+        <div className="advancedSearchText">
+          <button type="button" {...handleInteraction(this.changeSearchType)}>
+            {(this.state.mode === 'basic'
+              ? <FormattedMessage id="components.searchBar.findWords.advancedSearch" />
+              : <FormattedMessage id="components.searchBar.findWords.basicSearch" />)
+            }
+          </button>
         </div>
         {this.highlightConditions()}
         <FormattedMessage id="components.searchBar.close">
