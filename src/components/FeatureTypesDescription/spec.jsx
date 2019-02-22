@@ -5,23 +5,23 @@ import FeatureTypesDescription from '.';
 
 const defaultProps = {
   feature: 'theme',
-  types: ['security'],
+  types: ['SECURITY'],
 };
 
 const instrumentProps = {
   feature: 'instrument.category',
-  types: ['routing', 'construction'],
+  types: ['ROUTING', 'CONSTRUCTION'],
   colorCodes: {
-    OPL: 'routing',
-    GPL: 'routing',
-    GC: 'construction',
-    OC: 'construction',
+    OPL: 'ROUTING',
+    GPL: 'ROUTING',
+    GC: 'CONSTRUCTION',
+    OC: 'CONSTRUCTION',
   },
 };
 
 const messages = {
-  'common.theme.security': 'Security',
-  'components.featureTypesDescription.theme.security': '1\n2\n3',
+  'common.theme.SECURITY': 'Security',
+  'components.featureTypesDescription.theme.SECURITY': '1\n2\n3',
 };
 
 describe('Components|FeatureTypesDescription', () => {
@@ -48,7 +48,7 @@ describe('Components|FeatureTypesDescription', () => {
       const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl().find('p');
       const span = p.first().shallow().find('span').first();
 
-      expect(span.hasClass('color-routing')).toBe(true);
+      expect(span.hasClass('color-ROUTING')).toBe(true);
     });
   });
 });

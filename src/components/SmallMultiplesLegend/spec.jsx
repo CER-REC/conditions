@@ -6,6 +6,36 @@ import LegendItem from './LegendItem';
 import List from '../List';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
+const data = [
+  {
+    feature: 'theme',
+    subfeature: 'SECURITY',
+    years: {
+      2018: 12,
+      2019: 1,
+      2020: 345,
+    },
+  },
+  {
+    feature: 'theme',
+    subfeature: 'MANAGEMENT_SYSTEM',
+    years: {
+      2018: 7,
+      2019: 8,
+      2020: 9,
+    },
+  },
+  {
+    feature: 'theme',
+    subfeature: 'FINANCIAL',
+    years: {
+      2018: 20,
+      2019: 37,
+      2020: 12,
+    },
+  },
+];
+
 describe('Components|SmallMultiplesLegend', () => {
   let spy;
   const noop = () => {};
@@ -27,29 +57,15 @@ describe('Components|SmallMultiplesLegend', () => {
 
   describe('when only one data condition is provided', () => {
     const title = 'Title-A';
-    const data = [{
-      name: 'Condition Title',
-      graphData: [{
-        date: 2018,
-        count: 12,
-      }, {
-        date: 2019,
-        count: 1,
-      }, {
-        date: 2020,
-        count: 345,
-      }],
-      color: 'black',
-    }];
 
     beforeEach(() => {
       wrapper = shallow((
         <SmallMultiplesLegend
           className="anotherClass"
           title={title}
-          data={data}
+          data={data.slice(0, 1)}
           onChange={spy}
-          selected={data[0].name}
+          selected={data[0].subfeature}
         />
       ));
     });
@@ -64,7 +80,7 @@ describe('Components|SmallMultiplesLegend', () => {
     test('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy).toHaveBeenLastCalledWith(data[0].name);
+      expect(spy).toHaveBeenLastCalledWith(data[0].subfeature);
     });
 
     test('should render the List component with the first item selected', () => {
@@ -74,37 +90,6 @@ describe('Components|SmallMultiplesLegend', () => {
 
   describe('when multiple data conditions are provided', () => {
     const title = 'ABC-TEST_123';
-    const data = [{
-      name: 'ConditionTitle 1',
-      graphData: [{
-        date: 2211,
-        count: 7,
-      }, {
-        date: 2222,
-        count: 8,
-      }, {
-        date: 2233,
-        count: 9,
-      }],
-      color: 'white',
-    }, {
-      name: 'another title',
-      graphData: [{
-        date: 2211,
-        count: 1515,
-      }],
-      color: '#123456',
-    }, {
-      name: 'OTHER_OTHER_TITLE_ABC',
-      graphData: [{
-        date: 2211,
-        count: 0,
-      }, {
-        date: 2233,
-        count: 1,
-      }],
-      color: 'red',
-    }];
 
     beforeEach(() => {
       wrapper = shallow((
@@ -124,8 +109,8 @@ describe('Components|SmallMultiplesLegend', () => {
         const listItemWrapper = listItemsWrapper.at(i);
 
         expect(listItemWrapper.type()).toBe(LegendItem);
-        expect(listItemWrapper.prop('title')).toBe(data[i].name);
-        expect(listItemWrapper.prop('data')).toEqual(data[i].graphData);
+        expect(listItemWrapper.prop('title')).toBe(data[i].subfeature);
+        expect(listItemWrapper.prop('data')).toEqual(data[i]);
       }
     });
 
@@ -133,7 +118,7 @@ describe('Components|SmallMultiplesLegend', () => {
       const listItemsWrapper = wrapper.find(List).shallow().find(LegendItem).not('[all=true]');
 
       for (let i = 0; i < data.length; i += 1) {
-        expect(listItemsWrapper.at(i).prop('max')).toBe(1515);
+        expect(listItemsWrapper.at(i).prop('max')).toBe(345);
       }
     });
 
@@ -158,7 +143,7 @@ describe('Components|SmallMultiplesLegend', () => {
         // Account for all item at the beginning
         wrapper.find(List).prop('onChange')(i + 1);
 
-        expect(spy).toHaveBeenLastCalledWith(data[i].name);
+        expect(spy).toHaveBeenLastCalledWith(data[i].subfeature);
       }
 
       expect(spy).toHaveBeenCalledTimes(data.length);
@@ -182,7 +167,7 @@ describe('Components|SmallMultiplesLegend', () => {
           title={title}
           data={data}
           onChange={noop}
-          selected={data[2].name}
+          selected={data[2].subfeature}
         />
       ));
 
@@ -204,7 +189,7 @@ describe('Components|SmallMultiplesLegend', () => {
     });
 
     test('should apply faded to LegendItem components when a highlightName is provided', () => {
-      const highlightName = data[2].name;
+      const highlightName = data[2].subfeature;
 
       wrapper = shallow((
         <SmallMultiplesLegend

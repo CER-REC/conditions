@@ -4,34 +4,27 @@ import classNames from 'classnames';
 import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
+import { allConditionsPerYear } from '../../proptypes';
 
 const getMaxCount = (data) => {
-  const getCount = graphDataItem => graphDataItem.count;
-  const counts = data.reduce((countAggregate, conditionsData) => {
-    const nextCounts = conditionsData.graphData.map(getCount);
-
-    return countAggregate.concat(nextCounts);
-  }, []);
+  const counts = data.reduce((countAggregate, conditionsData) => (
+    countAggregate.concat(Object.values(conditionsData.years))
+  ), []);
   const max = Math.max(...counts);
-
-  if (!Number.isFinite(max)) {
-    return null;
-  }
-
-  return max;
+  return (!Number.isFinite(max)) ? null : max;
 };
 
 const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
   const maxCount = getMaxCount(data);
   const items = data.map(conditionsData => (
     <LegendItem
-      key={conditionsData.name}
-      title={conditionsData.name}
+      key={conditionsData.subfeature}
+      title={conditionsData.subfeature}
       feature={feature}
-      data={conditionsData.graphData}
+      data={conditionsData}
       color={conditionsData.color}
       max={maxCount}
-      faded={hasHighlight && (conditionsData.name !== highlightName)}
+      faded={hasHighlight && (conditionsData.subfeature !== highlightName)}
     />
   ));
 
@@ -40,10 +33,10 @@ const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
 
 const SmallMultiplesLegend = (props) => {
   const dataIndex = props.data.findIndex(conditionsData => (
-    conditionsData.name === props.selected
+    conditionsData.subfeature === props.selected
   ));
   const hasHighlight = !!props.data.find(conditionsData => (
-    conditionsData.name === props.highlightName
+    conditionsData.subfeature === props.highlightName
   ));
   const selectedIndex = props.data.length === 1 ? 0 : dataIndex + 1;
   const legendDataItems = getLegendDataItems(
@@ -67,7 +60,6 @@ const SmallMultiplesLegend = (props) => {
         key="all"
         title={props.title}
         feature={props.title}
-        data={[]}
         color=""
         max={0}
         faded={hasHighlight}
@@ -93,14 +85,7 @@ SmallMultiplesLegend.propTypes = {
   title: PropTypes.string.isRequired,
   /** The data to render the stream graphs
       The items rendered in the provided order */
-  data: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    graphData: PropTypes.arrayOf(PropTypes.shape({
-      date: PropTypes.number.isRequired,
-      count: PropTypes.number.isRequired,
-    })).isRequired,
-    color: PropTypes.string.isRequired,
-  })).isRequired,
+  data: allConditionsPerYear.isRequired,
   /** The name of the data element to set as selected */
   selected: PropTypes.string,
   /** The name of the data element to highlight */

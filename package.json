@@ -99,6 +99,7 @@
     "jest": "24.1.0",
     "jest-junit": "6.3.0",
     "node-sass": "4.11.0",
+    "node-sass-utils": "1.1.2",
     "opn-cli": "4.0.0",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.5.0",

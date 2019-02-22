@@ -103,7 +103,7 @@ $project-chart-line: #a1a8a7;
         bottom: 10px;
       }
     }
-    
+
     .FlagWrapper {
       height: 300px;
       width: 30px;
@@ -112,7 +112,7 @@ $project-chart-line: #a1a8a7;
       padding-top: 10px;
       padding-left: 15px;
     }
-    
+
     .ProjectName {
       left: 3px;
       bottom: 1px;
@@ -122,5 +122,10 @@ $project-chart-line: #a1a8a7;
       width: 28px;
       @include angled(rightOut, bottomAndTop, $pipe-color, black);
     }
+  }
+
+  &:not(.selected) .FeatureFlag {
+    .Bar { background-color: #a1a8a7 !important; }
+    .FlagTip { border-left-color: #a1a8a7 !important; }
   }
 }
