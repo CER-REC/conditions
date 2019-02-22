@@ -196,16 +196,22 @@
       "type": "Go to Type \nTrends",
       "status": "Go to Status \nTrends",
       "filing": "Go to Filing \nTrends"
+    },
+    "browseByBtn": {
+      "projectsBy": "Projects by {icon}",
+      "conditionsBy": "Conditions by {icon}",
+      "company": "Company",
+      "location": "Location"
     }
   },
   "views": {
     "view1": {
+      "header": {
+        "title": "Conditions on NEB-regulated energy projects",
+        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation."
+      },
       "footer": {
-        "skip": "Skip intro to browse:",
-        "projectsBy": "Projects by",
-        "conditionsBy": "Conditions by",
-        "company": "Company",
-        "location": "Location"
+        "skip": "Skip intro to browse:"
       }
     }
   }

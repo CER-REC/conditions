@@ -1,6 +1,6 @@
-import { fromJS } from 'immutable';
+const { fromJS } = require('immutable');
 
-export default fromJS({
+module.exports = fromJS({
   applicationPath: {
     en: 'conditions',
     fr: 'conditions-fr',
