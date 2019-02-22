@@ -44,7 +44,7 @@ $MapWheelColors: (
 
 // To use any of the get____Colors functions, pass it the constant for that feature
 @function getThemeColors($key) { @return map-get(getFeatureColors('theme'), $key); }
-@function getTimingColors($key) { @return map-get(getFeatureColors('timing'), $key); }
+@function getPhaseColors($key) { @return map-get(getFeatureColors('phase'), $key); }
 @function getStatusColors($key) { @return map-get(getFeatureColors('status'), $key); }
 @function getStandardColors($key) { @return map-get(getFeatureColors('standard'), $key); }
 @function getInstrumentColors($key) { @return map-get(getFeatureColors('instrument'), $key); }
