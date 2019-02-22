@@ -59,7 +59,6 @@ const InstrumentBubble = (props) => {
       const textX = node.r > node.value ? (node.x + (node.value + 2)) : node.x;
       const textStyle = node.r > node.value ? '' : 'middle';
       const textColor = node.r > node.value ? 'black' : 'white';
-      const pickColor = category => features.instrument[category] || 'white';
       return (
         <g
           key={node.data.name}
@@ -69,7 +68,7 @@ const InstrumentBubble = (props) => {
           <circle
             r={node.value}
             transform={`translate(${node.x} ${node.y})`}
-            style={{ fill: pickColor(node.data.category) }}
+            style={{ fill: features.instrument[node.data.category] || 'white' }}
           />
           <text
             x={textX}
