@@ -2413,6 +2413,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
     </span>
     <div
       className="List guideLine"
+      onWheel={[Function]}
     >
       <ul>
         <li
@@ -2617,6 +2618,7 @@ exports[`Storyshots Components|FeaturesMenu selected 1`] = `
     </span>
     <div
       className="List guideLine"
+      onWheel={[Function]}
     >
       <ul>
         <li
@@ -2919,6 +2921,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
     </span>
     <div
       className="List guideLine"
+      onWheel={[Function]}
     >
       <ul>
         <li
@@ -3168,6 +3171,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
     </span>
     <div
       className="List guideLine"
+      onWheel={[Function]}
     >
       <ul>
         <li
@@ -3736,6 +3740,7 @@ exports[`Storyshots Components|List basic usage 1`] = `
 >
   <div
     className="List"
+    onWheel={[Function]}
   >
     <ul>
       <li
@@ -3825,6 +3830,7 @@ exports[`Storyshots Components|List component items 1`] = `
 >
   <div
     className="List"
+    onWheel={[Function]}
   >
     <ul>
       <li
@@ -3926,6 +3932,7 @@ exports[`Storyshots Components|List guide line 1`] = `
 >
   <div
     className="List guideLine"
+    onWheel={[Function]}
   >
     <ul>
       <li
@@ -4015,6 +4022,7 @@ exports[`Storyshots Components|List horizontal 1`] = `
 >
   <div
     className="List horizontal"
+    onWheel={[Function]}
   >
     <ul>
       <li
@@ -4104,6 +4112,7 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
 >
   <div
     className="List"
+    onWheel={[Function]}
   >
     <ul>
       <li
@@ -4181,6 +4190,7 @@ exports[`Storyshots Components|List selected 1`] = `
 >
   <div
     className="List"
+    onWheel={[Function]}
   >
     <ul>
       <li
@@ -4804,6 +4814,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
     />
     <div
       className="List horizontal"
+      onWheel={[Function]}
     >
       <ul>
         <li
@@ -7521,6 +7532,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
   >
     <div
       className="List guideLine"
+      onWheel={[Function]}
     >
       <ul>
         <li
@@ -7861,6 +7873,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
   >
     <div
       className="List faded guideLine"
+      onWheel={[Function]}
     >
       <ul>
         <li
@@ -8069,6 +8082,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
   >
     <div
       className="List guideLine"
+      onWheel={[Function]}
     >
       <ul>
         <li
