@@ -143,10 +143,9 @@
           "all": "ALL"
         },
         "searchText": {
-          "include": "Include",
-          "of": "of",
-          "butDo": "But do",
-          "not": "not"
+          "basicInclude": "Include any of:",
+          "advancedInclude": "Include \n of",
+          "exclude": "But do not include:"
         },
         "highlightText": {
           "highlightConditions" : "Highlight conditions containing",

@@ -27,6 +27,7 @@ describe('Components|SearchBar/SearchContent', () => {
           updateKeywords={noop}
           closeTab={noop}
           findAny
+          findAnyOnChange={noop}
         />,
       );
     });
@@ -54,15 +55,8 @@ describe('Components|SearchBar/SearchContent', () => {
         .first();
       expect(updatedWrapper).toHaveLength(1);
       expect(updatedWrapper.prop('id')).toBe(
-        'components.searchBar.findWords.searchText.include',
+        'components.searchBar.findWords.searchText.basicInclude',
       );
-    });
-    test('renders search text', () => {
-      const updatedWrapper = wrapper
-        .find('.includeText > FormattedMessage')
-        .at(1)
-        .shallowWithIntl();
-      expect(updatedWrapper.hasClass('spacedText')).toBe(true);
     });
     test('render the default basic input box', () => {
       expect(wrapper.find('input')).toHaveLength(1);
@@ -87,6 +81,7 @@ describe('Components|SearchBar/SearchContent', () => {
           updateKeywords={noop}
           closeTab={noop}
           findAny
+          findAnyOnChange={noop}
         />,
       );
       wrapper.setState({ mode: 'advanced' });
@@ -97,20 +92,21 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(wrapper.find('input')).toHaveLength(2);
     });
 
-    test('formatted message should spacedClass', () => {
-      const updatedWrapper = wrapper
-        .find('.includeText').last()
-        .find('FormattedMessage').at(1)
-        .shallowWithIntl();
-      expect(updatedWrapper.hasClass('spacedText')).toBe(true);
+    test('render advanced dropdown with selectionOption of any', () => {
+      const formattedMessageWrapper = wrapper.find('.includeText > FormattedMessage').first();
+      expect(formattedMessageWrapper.prop('id')).toBe(
+        'components.searchBar.findWords.searchText.advancedInclude',
+      );
+      const updatedWrapper = formattedMessageWrapper.shallowWithIntl();
+      expect(updatedWrapper.find('Dropdown')).toHaveLength(1);
+      expect(updatedWrapper.find('Dropdown').props().selectedOption).toBe('any');
     });
 
-    test('formatted message should have lowercase class', () => {
-      const updatedWrapper = wrapper
-        .find('.includeText').last()
-        .find('FormattedMessage').at(2)
-        .shallowWithIntl();
-      expect(updatedWrapper.hasClass('lowerCase')).toBe(true);
+    test('with findAny as false, render selection option of all', () => {
+      wrapper.setProps({ findAny: false });
+      const updatedWrapper = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl();
+      expect(updatedWrapper.find('Dropdown')).toHaveLength(1);
+      expect(updatedWrapper.find('Dropdown').props().selectedOption).toBe('all');
     });
   });
 
@@ -125,6 +121,7 @@ describe('Components|SearchBar/SearchContent', () => {
           updateKeywords={spy}
           closeTab={noop}
           findAny
+          findAnyOnChange={noop}
         />,
       );
     });
@@ -180,6 +177,7 @@ describe('Components|SearchBar/SearchContent', () => {
           updateKeywords={spy}
           closeTab={noop}
           findAny
+          findAnyOnChange={noop}
         />,
       );
       wrapper.setState({ mode: 'advanced' });
@@ -203,6 +201,41 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
+  describe('onClick of switch searchText', () => {
+    let wrapper;
+    let spy1;
+    let spy2;
+    beforeEach(() => {
+      spy1 = jest.fn();
+      spy2 = jest.fn();
+      wrapper = shallow(
+        <SearchContent
+          keywords={keywords}
+          updateKeywords={spy1}
+          closeTab={noop}
+          findAny
+          findAnyOnChange={spy2}
+        />,
+      );
+    });
+    test('with basic mode', () => {
+      const basicWrapper = wrapper.find('.advancedSearchText > button');
+      basicWrapper.simulate('click', eventFuncs);
+      expect(spy1).toBeCalledTimes(1);
+      expect(spy2).toBeCalledTimes(1);
+      expect(wrapper.state().mode).toBe('advanced');
+    });
+
+    test('with advanced mode', () => {
+      wrapper.setState({ mode: 'advanced' });
+      const updatedWrapper = wrapper.find('.advancedSearchText > button');
+      updatedWrapper.simulate('click', eventFuncs);
+      expect(spy1).toBeCalledTimes(1);
+      expect(spy2).toBeCalledTimes(1);
+      expect(wrapper.state().mode).toBe('basic');
+    });
+  });
+
   describe('on delete of keywords', () => {
     let wrapper;
     let spy;
@@ -214,6 +247,7 @@ describe('Components|SearchBar/SearchContent', () => {
           updateKeywords={spy}
           closeTab={noop}
           findAny
+          findAnyOnChange={noop}
         />,
       );
       wrapper.setState({ mode: 'advanced' });

@@ -7110,19 +7110,8 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         className="includeText"
       >
         <span>
-          Include
+          Include any of:
         </span>
-        <span
-          className="spacedText"
-        >
-           
-          any
-           
-        </span>
-        <span>
-          of
-        </span>
-        :
       </div>
       <div
         className="input"

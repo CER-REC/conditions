@@ -101,41 +101,40 @@
       "all": ""
     },
     "searchBar": {
-      "close": "Close",
+      "close": "",
       "filter": {
-        "projectYear": "Filter by Project Year",
+        "projectYear": "",
         "projectStatus": {
-          "projectStatusText": "Filter by Project Status",
-          "OPEN": "Open",
-          "CLOSED": "Closed",
-          "CANCELLED": "Cancelled"
+          "projectStatusText": "",
+          "OPEN": "",
+          "CLOSED": "",
+          "CANCELLED": ""
         }
       },
       "tab": {
-        "filter": "Filter",
-        "find": "Find Words"
+        "filter": "",
+        "find": ""
       },
       "suggestedKeywords": {
-        "selectFrom": "Select from",
-        "suggestedKeywords": "Suggested\nKeywords"
+        "selectFrom": "",
+        "suggestedKeywords": ""
       },
       "highlightSummary": {
-        "showingAll": "Showing all projects from",
-        "highlightConditions": "Highlighting conditions containing"
+        "showingAll": "",
+        "highlightConditions": ""
       },
       "findWords": {
-        "findWords": "Find Words",
-        "advancedSearch": "Advanced Search",
-        "basicSearch": "Basic Search",
+        "findWords": "",
+        "advancedSearch": "",
+        "basicSearch": "",
         "options": {
-          "any": "ANY",
-          "all": "ALL"
+          "any": "",
+          "all": ""
         },
         "searchText": {
-          "include": "Include",
-          "of": "of",
-          "butDo": "But do",
-          "not": "not"
+          "basicInclude": "",
+          "advancedInclude": "",
+          "exclude": ""
         },
         "highlightText": {
           "highlightConditions" : "Highlight conditions containing",

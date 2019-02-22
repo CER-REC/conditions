@@ -20,7 +20,7 @@ class SearchContent extends React.PureComponent {
     }),
     updateKeywords: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    findAnyOnChange: PropTypes.func,
+    findAnyOnChange: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
   }
 
@@ -29,7 +29,6 @@ class SearchContent extends React.PureComponent {
       include: [],
       exclude: [],
     }),
-    findAnyOnChange: () => {},
   }
 
   constructor(props) {
@@ -97,13 +96,7 @@ class SearchContent extends React.PureComponent {
   excludeSearchTextAndWords = () => (
     <React.Fragment>
       <div className="includeText">
-        <FormattedMessage id="components.searchBar.findWords.searchText.butDo" />
-        <FormattedMessage id="components.searchBar.findWords.searchText.not">
-          {text => <span className="spacedText"><strong> {text} </strong></span> }
-        </FormattedMessage>
-        <FormattedMessage id="components.searchBar.findWords.searchText.include">
-          {text => <span className="lowerCase"> {text} </span>}
-        </FormattedMessage>:
+        <FormattedMessage id="components.searchBar.findWords.searchText.exclude" />
       </div>
       <div className="input">
         <input value={this.state.inputExclude} onChange={this.updateInputExclude} className="searchBar" />
@@ -148,26 +141,34 @@ class SearchContent extends React.PureComponent {
   includeSearchTextAndWords = () => (
     <React.Fragment>
       <div className="includeText">
-        <FormattedMessage id="components.searchBar.findWords.searchText.include" />
         {this.state.mode === 'basic'
           ? (
-            <FormattedMessage id="components.searchBar.findWords.highlightText.any">
-              {text => <span className="spacedText"> {text} </span>}
-            </FormattedMessage>
+            <FormattedMessage id="components.searchBar.findWords.searchText.basicInclude" />
           )
           : (
-            <Dropdown
-              options={['any', 'all']}
-              onChange={
+            <FormattedMessage id="components.searchBar.findWords.searchText.advancedInclude">
+              {(text) => {
+                const textArray = text.split('\n');
+                return (
+                  <React.Fragment>
+                    <span className="colorChange"> {textArray[0]}</span>
+                    <Dropdown
+                      options={['any', 'all']}
+                      onChange={
                 () => (this.props.findAny
                   ? this.props.findAnyOnChange(false)
                   : this.props.findAnyOnChange(true))}
-              selectedOption={this.props.findAny ? 'any' : 'all'}
-              optionID="components.searchBar.findWords.options"
-            />
+                      selectedOption={this.props.findAny ? 'any' : 'all'}
+                      optionID="components.searchBar.findWords.options"
+                    />
+                    <span className="colorChange"> {textArray[1]} : </span>
+                  </React.Fragment>
+                );
+              }
+          }
+            </FormattedMessage>
           )
       }
-        <FormattedMessage id="components.searchBar.findWords.searchText.of" />:
       </div>
       <div className="input">
         <input
