@@ -102,11 +102,47 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(updatedWrapper.find('Dropdown').props().selectedOption).toBe('any');
     });
 
-    test('with findAny as false, render selection option of all', () => {
+    test('with findAny as false, render dropdown with all as the option', () => {
       wrapper.setProps({ findAny: false });
       const updatedWrapper = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl();
       expect(updatedWrapper.find('Dropdown')).toHaveLength(1);
       expect(updatedWrapper.find('Dropdown').props().selectedOption).toBe('all');
+    });
+
+    test('render upperCase text for highlights', () => {
+      const updatedWrapper = wrapper.find('.anyText > FormattedMessage').at(2).shallowWithIntl();
+      expect(updatedWrapper.hasClass('upperCase')).toBe(true);
+    });
+  });
+
+  describe('onChange of dropdown', () => {
+    let wrapper;
+    let spy;
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = shallow(
+        <SearchContent
+          keywords={keywords}
+          updateKeywords={spy}
+          closeTab={noop}
+          findAny
+          findAnyOnChange={spy}
+        />,
+      );
+      wrapper.setState({ mode: 'advanced' });
+    });
+    test('onChange when findAny is true', () => {
+      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
+      dropdown.props().onChange();
+      expect(spy).toBeCalledTimes(1);
+      expect(spy).toBeCalledWith(false);
+    });
+    test('onChange when findAny is false', () => {
+      wrapper.setProps({ findAny: false });
+      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
+      dropdown.props().onChange();
+      expect(spy).toBeCalledTimes(1);
+      expect(spy).toBeCalledWith(true);
     });
   });
 

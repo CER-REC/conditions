@@ -71,8 +71,8 @@ class SearchContent extends React.PureComponent {
     const type2 = (type === 'include') ? 'exclude' : 'include';
     const { keywords } = this.props;
     if (keywords[type].length < 6
-      && keywords[type].indexOf(word) === -1
-      && keywords[type2].indexOf(word) === -1) {
+      && !keywords[type].includes(word)
+      && !keywords[type2].includes(word)) {
       keywords[type].push(word);
       this.props.updateKeywords(keywords);
     }
