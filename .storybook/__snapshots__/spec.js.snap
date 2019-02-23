@@ -7002,15 +7002,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               <div
                 className="conditionsText"
               >
-                <div
-                  className="conditionsText"
-                >
-                   
-                  1200
-                   
-                  conditions
-                    
-                </div>
+                <span>
+                  1200 conditions
+                </span>
               </div>
             </li>
             <li>
@@ -7090,15 +7084,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               <div
                 className="conditionsText"
               >
-                <div
-                  className="conditionsText"
-                >
-                   
-                  400
-                   
-                  conditions
-                    
-                </div>
+                <span>
+                  400 conditions
+                </span>
               </div>
             </li>
           </ul>
@@ -7215,15 +7203,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
             <div
               className="conditionsText"
             >
-              <div
-                className="conditionsText"
-              >
-                 
-                1200
-                 
-                conditions
-                  
-              </div>
+              <span>
+                1200 conditions
+              </span>
             </div>
           </li>
           <li>
@@ -7303,15 +7285,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
             <div
               className="conditionsText"
             >
-              <div
-                className="conditionsText"
-              >
-                 
-                400
-                 
-                conditions
-                  
-              </div>
+              <span>
+                400 conditions
+              </span>
             </div>
           </li>
         </ul>

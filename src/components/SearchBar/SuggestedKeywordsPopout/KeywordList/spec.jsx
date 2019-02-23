@@ -58,7 +58,6 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
       const first = updatedWrapper.first().find('.icon');
       first.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith([]);
     });
 
     test('onClick on + symbol, must call onClick prop', () => {
@@ -66,7 +65,6 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
       const last = updatedWrapper.last().find('.icon');
       last.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).not.toHaveBeenCalledWith(([]));
     });
   });
 });

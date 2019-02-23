@@ -36,14 +36,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   renderCategories = () => (
     this.props.categories.map((i) => {
       const { selectedCategory } = this.state;
-      const classArray = ['categoryList', 'upperCase'];
-      const className = (selectedCategory.indexOf(i) > -1) ? 'selectedCategory' : '';
-      classArray.push(className);
       return (
         <li
           key={i}
           {...handleInteraction(this.categoryOnClick, i)}
-          className={classNames(classArray)}
+          className={classNames('categoryList', 'upperCase', { selectedCategory: selectedCategory.includes(i) })}
         > { i }
         </li>
       );
@@ -52,21 +49,15 @@ class SuggestedKeywordsPopout extends React.PureComponent {
 
   categoryOnClick = (li) => {
     const { selectedCategory } = this.state;
-    const index = selectedCategory.indexOf(li);
-    if (index === -1) {
+    if (!selectedCategory.includes(li)) {
       return this.setState({ selectedCategory: selectedCategory.concat(li) });
     }
     return this.setState({ selectedCategory: selectedCategory.filter(v => v !== li) });
   }
 
   sortHierarchy = () => {
-    const { sortHierarchy } = this.state;
     const sortArray = ['none', 'inc', 'dec'];
-    const index = sortArray.indexOf(sortHierarchy);
-    const changeSortParam = (index !== sortArray.length - 1)
-      ? (sortArray[index + 1])
-      : (sortArray[0]);
-    return this.setState({ sortHierarchy: changeSortParam });
+    this.setState((({ sortHierarchy }) => ({ sortHierarchy: sortArray[(sortArray.indexOf(sortHierarchy) + 1) % 3] })));
   }
 
   changeSort = sort => (this.state.sortBy === sort

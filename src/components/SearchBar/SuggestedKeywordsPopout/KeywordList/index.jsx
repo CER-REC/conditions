@@ -26,17 +26,16 @@ class KeywordList extends React.PureComponent {
     selectedWords: [],
   }
 
-  keywordOnClick = (obj) => {
+  keywordOnClick = (word) => {
     const { selectedWords } = this.props;
-    const [word, present] = obj;
-    const updatedWords = (!present)
+    const updatedWords = (!selectedWords.includes(word))
       ? selectedWords.concat(word)
       : selectedWords.filter(v => v !== word);
     return this.props.onClick(updatedWords);
   };
 
   findMaxConditions = () => (
-    Math.max(...Object.entries(this.props.suggestedKeywords).map(([, value]) => value.conditions))
+    Math.max(...Object.values(this.props.suggestedKeywords).map(({ conditions }) => conditions))
   );
 
   render() {
@@ -46,8 +45,7 @@ class KeywordList extends React.PureComponent {
         <ul>
           {
             Object.entries(suggestedKeywords).map(([key, value]) => {
-              const present = selectedWords.indexOf(key) > -1;
-              const [icon, iconClass, selectedColor, textStyle] = (present)
+              const [icon, iconClass, selectedColor, textStyle] = (selectedWords.includes(key))
                 ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
                 : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
               const maxConditions = this.findMaxConditions();
@@ -57,8 +55,7 @@ class KeywordList extends React.PureComponent {
                 <li key={`${key} ${value.conditions}`}>
                   <span
                     className="icon"
-                    {...handleInteraction(this.keywordOnClick,
-                      [key, present])}
+                    {...handleInteraction(this.keywordOnClick, key)}
                   >
                     <Icon className={iconClass} icon={icon} />
                   </span>
@@ -75,9 +72,10 @@ class KeywordList extends React.PureComponent {
                     />
                   </span>
                   <div className="conditionsText">
-                    <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.conditions">
-                      {text => <div className="conditionsText"> {value.conditions} {text}  </div>}
-                    </FormattedMessage>
+                    <FormattedMessage
+                      id="components.searchBar.suggestedKeywordsPopout.conditions"
+                      values={{ conditions: value.conditions }}
+                    />
                   </div>
                 </li>
               );
