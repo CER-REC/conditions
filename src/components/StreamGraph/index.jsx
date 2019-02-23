@@ -1,13 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   VictoryAxis,
   VictoryArea,
   VictoryChart,
 } from 'victory';
+import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
-import { allConditionsPerYear } from '../../proptypes';
+import { allConditionsPerYear, featureTypes } from '../../proptypes';
+import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 import './styles.scss';
 
@@ -16,7 +17,7 @@ export const roundDateLabel = t => Math.round(t);
 class StreamGraph extends React.Component {
   static propTypes = {
     projectData: allConditionsPerYear.isRequired,
-    chartTitle: PropTypes.string.isRequired,
+    feature: featureTypes.isRequired,
   }
 
   constructor(props) {
@@ -29,7 +30,8 @@ class StreamGraph extends React.Component {
   handleOnChange = controlYear => this.setState({ controlYear });
 
   streamLayers() {
-    const streamLayers = this.props.projectData.map(v => (
+    const filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    const streamLayers = filteredData.map(v => (
       <VictoryArea
         key={`${v.feature}-${v.subfeature}`}
         name={v.subfeature}
@@ -47,18 +49,19 @@ class StreamGraph extends React.Component {
   }
 
   chart() {
-    const numOfConditions = this.props.projectData.map(k => Object.values(k.years));
+    const filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    const numOfConditions = filteredData.map(k => Object.values(k.years));
     const numOfConditionsConcat = [].concat(...numOfConditions);
 
     const minConditionValue = Math.min(...numOfConditionsConcat);
 
-    const dates = this.props.projectData.map(k => Object.keys(k.years));
+    const dates = filteredData.map(k => Object.keys(k.years));
     const dateConcat = [].concat(...dates);
 
     const minDateValue = Math.min(...dateConcat);
     const maxDateValue = Math.max(...dateConcat);
 
-    let conditionDates = this.props.projectData.reduce((acc, next) => {
+    let conditionDates = filteredData.reduce((acc, next) => {
       Object.entries(next.years).forEach(([date, count]) => {
         if (!acc[date]) { acc[date] = 0; }
         acc[date] += count;
@@ -87,7 +90,7 @@ class StreamGraph extends React.Component {
           groupProps={{
             onChange: this.handleOnChange,
             controlYear: this.state.controlYear,
-            projectData: this.props.projectData,
+            projectData: filteredData,
           }}
         >
           {this.streamLayers()}
@@ -96,18 +99,12 @@ class StreamGraph extends React.Component {
     );
   }
 
-  chartTitle() {
-    return (
-      <h1>{this.props.chartTitle}</h1>
-    );
-  }
-
   render() {
     return (
       <div
         className="Streamgraph"
       >
-        {this.chartTitle()}
+        <FormattedMessage id={`components.streamGraph.title.${this.props.feature}`} tagName="h1" />
         {this.chart()}
       </div>
     );

@@ -8359,7 +8359,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
       }
     >
       <svg
-        aria-labelledby="victory-container-12-title victory-container-12-desc"
+        aria-labelledby="victory-container-42-title victory-container-42-desc"
         height={300}
         role="img"
         style={
@@ -9093,7 +9093,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           tabIndex="0"
         >
           <g
-            clipPath="url(#victory-clip-13)"
+            clipPath="url(#victory-clip-43)"
             style={
               Object {
                 "height": "100%",
@@ -9104,7 +9104,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-13"
+                id="victory-clip-43"
               >
                 <rect
                   height={200}
@@ -9131,7 +9131,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-14)"
+            clipPath="url(#victory-clip-44)"
             style={
               Object {
                 "height": "100%",
@@ -9142,7 +9142,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-14"
+                id="victory-clip-44"
               >
                 <rect
                   height={200}
@@ -9169,7 +9169,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-15)"
+            clipPath="url(#victory-clip-45)"
             style={
               Object {
                 "height": "100%",
@@ -9180,7 +9180,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-15"
+                id="victory-clip-45"
               >
                 <rect
                   height={200}

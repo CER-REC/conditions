@@ -15,8 +15,6 @@ import * as selectedCreators from '../../actions/selected';
 
 const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
-const chartTitle = 'Themes Across All Conditions';
-
 const description = 'components.featureDescription.theme';
 const feature = 'theme';
 
@@ -39,7 +37,10 @@ const ViewThree = props => (
         />
       </section>
       <section className="chart">
-        <StreamGraph projectData={props.conditionCountsByYear.counts} chartTitle={chartTitle} />
+        <StreamGraph
+          projectData={props.conditionCountsByYear.counts}
+          feature={props.selected.feature}
+        />
       </section>
     </section>
     <section className="row">

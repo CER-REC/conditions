@@ -169,6 +169,16 @@
         "filing": "All Filings"
       }
     },
+    "streamGraph": {
+      "title": {
+        "instrument": "Instruments Across All Conditions",
+        "theme": "Themes Across All Conditions",
+        "phase": "Phases Across All Conditions",
+        "status": "Statuses Across All Conditions",
+        "type": "Types Across All Conditions",
+        "filing": "Filing Across All Conditions"
+      }
+    },
     "trendButton": {
       "theme": "Go to Theme \nTrends",
       "instrument": "Go to Instrument \nTrends",

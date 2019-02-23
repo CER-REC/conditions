@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Streamgraph, { roundDateLabel } from '.';
 import { conditionCountsByYear } from '../../mockData';
 
@@ -12,7 +11,7 @@ describe('Components|StreamGraph', () => {
       wrapper = shallow(<Streamgraph
         projectData={conditionCountsByYear.counts}
         handleOnChange={handleOnChange}
-        chartTitle="Test"
+        feature="theme"
       />);
     });
 
@@ -22,10 +21,6 @@ describe('Components|StreamGraph', () => {
 
     test('should have a className', () => {
       expect(wrapper.is('.Streamgraph')).toBe(true);
-    });
-
-    test('should render a title', () => {
-      expect(wrapper.find('h1')).toHaveLength(1);
     });
 
     test('should render a chart', () => {
