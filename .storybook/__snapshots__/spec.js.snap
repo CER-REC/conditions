@@ -8184,6 +8184,89 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SmallMultiplesLegend with one entry 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SmallMultiplesLegend"
+  >
+    <div
+      className="List guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-12)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-12"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Security
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SmallMultiplesLegend/LegendItem all 1`] = `
 <div
   className="visualization"
@@ -8359,7 +8442,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
       }
     >
       <svg
-        aria-labelledby="victory-container-42-title victory-container-42-desc"
+        aria-labelledby="victory-container-13-title victory-container-13-desc"
         height={300}
         role="img"
         style={
@@ -9093,7 +9176,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           tabIndex="0"
         >
           <g
-            clipPath="url(#victory-clip-43)"
+            clipPath="url(#victory-clip-14)"
             style={
               Object {
                 "height": "100%",
@@ -9104,7 +9187,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-43"
+                id="victory-clip-14"
               >
                 <rect
                   height={200}
@@ -9131,7 +9214,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-44)"
+            clipPath="url(#victory-clip-15)"
             style={
               Object {
                 "height": "100%",
@@ -9142,7 +9225,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-44"
+                id="victory-clip-15"
               >
                 <rect
                   height={200}
@@ -9169,7 +9252,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-45)"
+            clipPath="url(#victory-clip-16)"
             style={
               Object {
                 "height": "100%",
@@ -9180,7 +9263,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-45"
+                id="victory-clip-16"
               >
                 <rect
                   height={200}

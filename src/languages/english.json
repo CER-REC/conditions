@@ -53,19 +53,21 @@
       "expiryDate": "Expiry Date of Reg. Instr.",
       "duringConstruction": "During Construction Phase",
       "abandonment": "Abandonment",
-      "unspecified": "Unspecified"
+      "unspecified": "Unspecified",
+      "INCLUDES_ALL_PHASES_OF_CONSTRUCTION": "Includes All Phases of Construction",
+      "PRIOR_TO_CONSTRUCTION_PHASE": "Prior to Construction Phase"
     },
     "type": {
-      "nonStandard": "Non Standard",
-      "standard": "Standard"
+      "NON_STANDARD": "Non Standard",
+      "STANDARD": "Standard"
     },
     "status": {
       "inProgress": "In Progress",
-      "closed": "Closed",
+      "CLOSED": "Closed",
       "noFilingReq": "No Filing Required",
       "awaitingFiling": "Awaiting Filing",
       "overdueFiling": "Overdue Filing",
-      "underReview": "Under Review",
+      "UNDER_REVIEW": "Under Review",
       "reviewComplete": "Review Complete",
       "awaitingIR": "Awaiting IR Response",
       "readyBoard": "Ready for Board Decision",
@@ -74,8 +76,8 @@
       "satisfactory": "Satisfactory"
     },
     "filing": {
-      "filingRequired": "Filing Required",
-      "FilingNotRequired": "Filing Not Required"
+      "REQUIRED": "Filing Required",
+      "NOT_REQUIRED": "Filing Not Required"
     },
     "legend": {
       "zeroConditions": "Zero Conditions",

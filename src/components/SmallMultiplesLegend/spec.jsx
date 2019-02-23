@@ -46,7 +46,7 @@ describe('Components|SmallMultiplesLegend', () => {
     wrapper = shallow((
       <SmallMultiplesLegend
         className="test"
-        title="Test Title"
+        feature="theme"
         data={[]}
         onChange={noop}
       />
@@ -56,13 +56,11 @@ describe('Components|SmallMultiplesLegend', () => {
   shouldBehaveLikeAComponent(SmallMultiplesLegend, () => wrapper);
 
   describe('when only one data condition is provided', () => {
-    const title = 'Title-A';
-
     beforeEach(() => {
       wrapper = shallow((
         <SmallMultiplesLegend
           className="anotherClass"
-          title={title}
+          feature="theme"
           data={data.slice(0, 1)}
           onChange={spy}
           selected={data[0].subfeature}
@@ -89,13 +87,11 @@ describe('Components|SmallMultiplesLegend', () => {
   });
 
   describe('when multiple data conditions are provided', () => {
-    const title = 'ABC-TEST_123';
-
     beforeEach(() => {
       wrapper = shallow((
         <SmallMultiplesLegend
           className="something123"
-          title={title}
+          feature="theme"
           data={data}
           onChange={spy}
         />
@@ -127,7 +123,7 @@ describe('Components|SmallMultiplesLegend', () => {
       const firstItemWrapper = legendItemsWrapper.at(0);
 
       expect(firstItemWrapper.prop('all')).toBe(true);
-      expect(firstItemWrapper.prop('title')).toBe(title);
+      expect(firstItemWrapper.prop('title')).toBe('theme');
       expect(legendItemsWrapper).toHaveLength(4);
     });
 
@@ -164,7 +160,7 @@ describe('Components|SmallMultiplesLegend', () => {
     test('should render the List component with the corresponding item selected when selected is provided', () => {
       wrapper = shallow((
         <SmallMultiplesLegend
-          title={title}
+          feature="theme"
           data={data}
           onChange={noop}
           selected={data[2].subfeature}
@@ -178,7 +174,7 @@ describe('Components|SmallMultiplesLegend', () => {
     test('should render the List component with the first item selected when selected is invalid', () => {
       wrapper = shallow((
         <SmallMultiplesLegend
-          title={title}
+          feature="theme"
           data={data}
           onChange={noop}
           selected="N/A"
@@ -194,7 +190,7 @@ describe('Components|SmallMultiplesLegend', () => {
       wrapper = shallow((
         <SmallMultiplesLegend
           className="abcd"
-          title={title}
+          feature="theme"
           data={data}
           onChange={noop}
           highlightName={highlightName}
@@ -219,7 +215,7 @@ describe('Components|SmallMultiplesLegend', () => {
       wrapper = shallow((
         <SmallMultiplesLegend
           className="abcd"
-          title={title}
+          feature="theme"
           data={data}
           onChange={noop}
           highlightName="n/a"

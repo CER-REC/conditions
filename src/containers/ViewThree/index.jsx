@@ -4,7 +4,9 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
+import InstrumentsLegend from '../../components/InstrumentsLegend';
 import StreamGraph from '../../components/StreamGraph';
+import BubbleChart from '../../components/BubbleChart';
 import FeatureDescription from '../../components/FeatureDescription';
 import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
@@ -30,17 +32,36 @@ const ViewThree = props => (
         />
       </section>
       <section className="legend">
-        <SmallMultiplesLegend
-          title="theme"
-          data={props.conditionCountsByYear.counts}
-          onChange={noop}
-        />
+        {props.selected.feature === 'instrument'
+          ? (
+            <InstrumentsLegend
+              data={[]}
+              onChange={noop}
+            />
+          )
+          : (
+            <SmallMultiplesLegend
+              feature={props.selected.feature}
+              data={props.conditionCountsByYear.counts}
+              onChange={noop}
+            />
+          )}
       </section>
       <section className="chart">
-        <StreamGraph
-          projectData={props.conditionCountsByYear.counts}
-          feature={props.selected.feature}
-        />
+        {props.selected.feature === 'instrument'
+          ? (
+            <BubbleChart
+              selectedCategory=""
+              instrumentChartData1={{}}
+              instrumentChartData2={{}}
+            />
+          )
+          : (
+            <StreamGraph
+              projectData={props.conditionCountsByYear.counts}
+              feature={props.selected.feature}
+            />
+          )}
       </section>
     </section>
     <section className="row">
