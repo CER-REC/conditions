@@ -57,7 +57,9 @@ class SuggestedKeywordsPopout extends React.PureComponent {
 
   sortHierarchy = () => {
     const sortArray = ['none', 'inc', 'dec'];
-    this.setState((({ sortHierarchy }) => ({ sortHierarchy: sortArray[(sortArray.indexOf(sortHierarchy) + 1) % 3] })));
+    this.setState((({ sortHierarchy }) => (
+      { sortHierarchy: sortArray[(sortArray.indexOf(sortHierarchy) + 1) % 3] }
+    )));
   }
 
   changeSort = sort => (this.state.sortBy === sort
