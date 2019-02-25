@@ -16,9 +16,6 @@ import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../.
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 
-const description = 'components.featureDescription.theme';
-const feature = 'theme';
-
 const noop = () => {};
 
 const ViewThree = props => (
@@ -66,7 +63,7 @@ const ViewThree = props => (
     </section>
     <section className="row">
       <section className="featureDescription">
-        <FeatureDescription feature={feature} description={description} />
+        <FeatureDescription feature={props.selected.feature} />
       </section>
       <section className="typesDescription">
         <FeatureTypesDescription feature={props.selected.feature} />
