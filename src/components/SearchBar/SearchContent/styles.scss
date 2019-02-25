@@ -24,6 +24,11 @@
     span {
       padding: 0px;
     }
+    .dropDown {
+      select {
+        text-transform: uppercase;
+      }
+    }
   }
   span {
     color: $VeryDarkGray;

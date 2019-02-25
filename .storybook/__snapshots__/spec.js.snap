@@ -7181,14 +7181,15 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <div
           className="anyText"
         >
-          <span
-            className="upperCase"
-          >
-             
-            any
-             
-          </span>
           <span>
+             
+            <span
+              className="upperCase"
+            >
+               
+              any
+               
+            </span>
              of the following:
           </span>
         </div>

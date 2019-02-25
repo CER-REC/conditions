@@ -61,7 +61,7 @@ describe('Components|SearchBar/SearchContent', () => {
     test('render the default basic input box', () => {
       expect(wrapper.find('input')).toHaveLength(1);
     });
-    test('render advanced searchText', () => {
+    test('render advanced searchBar toggle text', () => {
       const updatedWrapper = wrapper.find(
         '.advancedSearchText FormattedMessage',
       );
@@ -92,6 +92,15 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(wrapper.find('input')).toHaveLength(2);
     });
 
+    test('render bolded text in exclude', () => {
+      const updatedWrapper = wrapper.find('.includeText').last()
+        .find('FormattedMessage')
+        .shallowWithIntl()
+        .find('FormattedMessage')
+        .shallowWithIntl();
+      expect(updatedWrapper.find('strong')).toHaveLength(1);
+    });
+
     test('render advanced dropdown with selectionOption of any', () => {
       const formattedMessageWrapper = wrapper.find('.includeText > FormattedMessage').first();
       expect(formattedMessageWrapper.prop('id')).toBe(
@@ -109,9 +118,38 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(updatedWrapper.find('Dropdown').props().selectedOption).toBe('all');
     });
 
-    test('render upperCase text for highlights', () => {
-      const updatedWrapper = wrapper.find('.anyText > FormattedMessage').at(2).shallowWithIntl();
-      expect(updatedWrapper.hasClass('upperCase')).toBe(true);
+    test('render none text in summary', () => {
+      const updatedWrapper = wrapper.find('.anyText').at(1)
+        .find('FormattedMessage')
+        .shallowWithIntl()
+        .find('FormattedMessage');
+      expect(updatedWrapper.prop('id')).toBe(
+        'components.searchBar.findWords.highlightText.none',
+      );
+      expect(updatedWrapper.shallowWithIntl().hasClass('upperCase')).toBe(true);
+    });
+
+    test('when findAny is true, render any text in summary', () => {
+      const updatedWrapper = wrapper.find('.anyText').first()
+        .find('FormattedMessage')
+        .shallowWithIntl()
+        .find('FormattedMessage');
+      expect(updatedWrapper.prop('id')).toBe(
+        'components.searchBar.findWords.highlightText.any',
+      );
+      expect(updatedWrapper.shallowWithIntl().hasClass('upperCase')).toBe(true);
+    });
+
+    test('when findAny is false, render all text in summary', () => {
+      wrapper.setProps({ findAny: false });
+      const updatedWrapper = wrapper.find('.anyText').first()
+        .find('FormattedMessage')
+        .shallowWithIntl()
+        .find('FormattedMessage');
+      expect(updatedWrapper.prop('id')).toBe(
+        'components.searchBar.findWords.highlightText.all',
+      );
+      expect(updatedWrapper.shallowWithIntl().hasClass('upperCase')).toBe(true);
     });
   });
 
@@ -237,7 +275,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('onClick of switch searchText', () => {
+  describe('onClick of search toggle text', () => {
     let wrapper;
     let spy1;
     let spy2;

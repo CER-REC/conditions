@@ -59,10 +59,10 @@ class SearchContent extends React.PureComponent {
     const [word, type] = obj;
     const type2 = type === 'include' ? 'exclude' : 'include';
     const { keywords } = this.props;
-    const filteredWords = keywords[type].filter(v => v !== word);
-    const updatedKeywords = {};
-    updatedKeywords[type] = filteredWords;
-    updatedKeywords[type2] = keywords[type2];
+    const updatedKeywords = {
+      [type]: keywords[type].filter(v => v !== word),
+      [type2]: keywords[type2],
+    };
     this.props.updateKeywords(updatedKeywords);
   }
 
@@ -73,8 +73,11 @@ class SearchContent extends React.PureComponent {
     if (keywords[type].length < 6
       && !keywords[type].includes(word)
       && !keywords[type2].includes(word)) {
-      keywords[type].push(word);
-      this.props.updateKeywords(keywords);
+      const updatedKeywords = {
+        [type]: keywords[type].concat(word),
+        [type2]: keywords[type2],
+      };
+      this.props.updateKeywords(updatedKeywords);
     }
     return null;
   }
@@ -85,7 +88,7 @@ class SearchContent extends React.PureComponent {
 
   addIncludeWord = () => {
     this.addWord(this.state.inputInclude, 'include');
-    return this.setState({ inputInclude: '' });
+    this.setState({ inputInclude: '' });
   }
 
   addExcludeWord = () => {
@@ -96,7 +99,16 @@ class SearchContent extends React.PureComponent {
   excludeSearchTextAndWords = () => (
     <React.Fragment>
       <div className="includeText">
-        <FormattedMessage id="components.searchBar.findWords.searchText.exclude" />
+        <FormattedMessage
+          id="components.searchBar.findWords.searchText.exclude"
+          values={{
+            not: (
+              <FormattedMessage id="components.searchBar.findWords.searchText.not">
+                {text => <span> <strong> {text} </strong> </span>}
+              </FormattedMessage>
+            ),
+          }}
+        />
       </div>
       <div className="input">
         <input value={this.state.inputExclude} onChange={this.updateInputExclude} className="searchBar" />
@@ -115,22 +127,43 @@ class SearchContent extends React.PureComponent {
       <FormattedMessage id="components.searchBar.findWords.highlightText.highlightConditions">
         {text => <div className="highlightText">{text}</div>}
       </FormattedMessage>
+
       <div className="anyText">
-        <FormattedMessage id="components.searchBar.findWords.highlightText.any">
-          {text => <span className="upperCase"> {text} </span>}
-        </FormattedMessage>
-        <FormattedMessage id="components.searchBar.findWords.highlightText.following" />
+        <FormattedMessage
+          id="components.searchBar.findWords.highlightText.following"
+          values={{
+            choice: (
+              this.props.findAny
+                ? (
+                  <FormattedMessage id="components.searchBar.findWords.highlightText.any">
+                    { text => <span className="upperCase"> {text} </span>}
+                  </FormattedMessage>
+                )
+                : (
+                  <FormattedMessage id="components.searchBar.findWords.highlightText.all">
+                    { text => <span className="upperCase"> {text} </span>}
+                  </FormattedMessage>
+                )),
+          }}
+        />
       </div>
+
       <div className="keywordsText">{this.keyWordsRender(this.props.keywords.include)}</div>
       <div />
       {this.state.mode === 'basic' ? null
         : (
           <React.Fragment>
+
             <div className="anyText">
-              <FormattedMessage id="components.searchBar.findWords.highlightText.none">
-                {text => <span className="upperCase"> {text} </span>}
-              </FormattedMessage>
-              <FormattedMessage id="components.searchBar.findWords.highlightText.following" />
+              <FormattedMessage
+                id="components.searchBar.findWords.highlightText.following"
+                values={{
+                  choice: (
+                    <FormattedMessage id="components.searchBar.findWords.highlightText.none">
+                      {text => <span className="upperCase"> {text} </span>}
+                    </FormattedMessage>),
+                }}
+              />
             </div>
             <div className="keywordsText">{this.keyWordsRender(this.props.keywords.exclude)}</div>
           </React.Fragment>
@@ -146,27 +179,22 @@ class SearchContent extends React.PureComponent {
             <FormattedMessage id="components.searchBar.findWords.searchText.basicInclude" />
           )
           : (
-            <FormattedMessage id="components.searchBar.findWords.searchText.advancedInclude">
-              {(text) => {
-                const textArray = text.split('\n');
-                return (
-                  <React.Fragment>
-                    <span className="colorChange"> {textArray[0]}</span>
-                    <Dropdown
-                      options={['any', 'all']}
-                      onChange={
-                () => (this.props.findAny
-                  ? this.props.findAnyOnChange(false)
-                  : this.props.findAnyOnChange(true))}
-                      selectedOption={this.props.findAny ? 'any' : 'all'}
-                      optionID="components.searchBar.findWords.options"
-                    />
-                    <span className="colorChange"> {textArray[1]} : </span>
-                  </React.Fragment>
-                );
-              }
-          }
-            </FormattedMessage>
+            <FormattedMessage
+              id="components.searchBar.findWords.searchText.advancedInclude"
+              values={{
+                dropdown: (<Dropdown
+                  options={['any', 'all']}
+                  onChange={
+                    () => (this.props.findAny
+                      ? this.props.findAnyOnChange(false)
+                      : this.props.findAnyOnChange(true))
+                    }
+                  className="dropDown"
+                  selectedOption={this.props.findAny ? 'any' : 'all'}
+                  optionID="components.searchBar.findWords.options"
+                />),
+              }}
+            />
           )
       }
       </div>

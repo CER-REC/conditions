@@ -102,6 +102,7 @@
     },
     "searchBar": {
       "close": "",
+      "reset": "",
       "filter": {
         "projectYear": "",
         "projectStatus": {
@@ -134,13 +135,15 @@
         "searchText": {
           "basicInclude": "",
           "advancedInclude": "",
-          "exclude": ""
+          "exclude": "",
+          "not": ""
         },
         "highlightText": {
-          "highlightConditions" : "Highlight conditions containing",
-          "following": " of the following:",
-          "any": "any",
-          "none": "none"
+          "highlightConditions" : "",
+          "following": "",
+          "any": "",
+          "none": "",
+          "all": ""
         }
       }
     },

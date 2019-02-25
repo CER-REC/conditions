@@ -139,19 +139,21 @@
         "advancedSearch": "Advanced Search",
         "basicSearch": "Basic Search",
         "options": {
-          "any": "ANY",
-          "all": "ALL"
+          "any": "any",
+          "all": "all"
         },
         "searchText": {
           "basicInclude": "Include any of:",
-          "advancedInclude": "Include \n of",
-          "exclude": "But do not include:"
+          "advancedInclude": "Include {dropdown} of: ",
+          "exclude": "But do {not} include:",
+          "not": "not"
         },
         "highlightText": {
           "highlightConditions" : "Highlight conditions containing",
-          "following": " of the following:",
+          "following": " {choice} of the following:",
           "any": "any",
-          "none": "none"
+          "none": "none",
+          "all": "all"
         }
       }
     },
