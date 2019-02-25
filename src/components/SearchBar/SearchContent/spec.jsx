@@ -23,7 +23,7 @@ describe('Components|SearchBar/SearchContent', () => {
     beforeEach(() => {
       wrapper = shallow(
         <SearchContent
-          keywords={keywords}
+          searchKeywords={keywords}
           updateKeywords={noop}
           closeTab={noop}
           findAny
@@ -77,7 +77,7 @@ describe('Components|SearchBar/SearchContent', () => {
     beforeEach(() => {
       wrapper = shallow(
         <SearchContent
-          keywords={keywords}
+          searchKeywords={keywords}
           updateKeywords={noop}
           closeTab={noop}
           findAny
@@ -160,7 +160,7 @@ describe('Components|SearchBar/SearchContent', () => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          keywords={keywords}
+          searchKeywords={keywords}
           updateKeywords={spy}
           closeTab={noop}
           findAny
@@ -191,7 +191,7 @@ describe('Components|SearchBar/SearchContent', () => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          keywords={keywords}
+          searchKeywords={keywords}
           updateKeywords={spy}
           closeTab={noop}
           findAny
@@ -244,7 +244,7 @@ describe('Components|SearchBar/SearchContent', () => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          keywords={{
+          searchKeywords={{
             include: ['word1', 'word2', 'word3', 'word4', 'word5', 'word6'],
             exclude: ['except1', 'except2', 'except3', 'except4', 'except5', 'except6'],
           }}
@@ -284,7 +284,7 @@ describe('Components|SearchBar/SearchContent', () => {
       spy2 = jest.fn();
       wrapper = shallow(
         <SearchContent
-          keywords={keywords}
+          searchKeywords={keywords}
           updateKeywords={spy1}
           closeTab={noop}
           findAny
@@ -317,7 +317,7 @@ describe('Components|SearchBar/SearchContent', () => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          keywords={keywords}
+          searchKeywords={keywords}
           updateKeywords={spy}
           closeTab={noop}
           findAny

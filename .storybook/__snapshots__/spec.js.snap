@@ -7554,6 +7554,191 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="SuggestedKeywordsPopout"
+    >
+      <div
+        className="KeywordList"
+      >
+        <ul>
+          <li>
+            <span
+              className="icon"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  color=""
+                  data-icon="minus-circle"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </span>
+            <span
+              className="keywordCategory selectedText"
+            >
+              deer
+               
+            </span>
+            <span
+              className="BarContainer"
+            >
+              <svg
+                className="BarContainer"
+                height={8}
+                width={200}
+              >
+                <g
+                  className="BarContainer"
+                  height={8}
+                  width={200}
+                >
+                  <title>
+                    ConditionTitle
+                  </title>
+                  <desc>
+                    conditionDesc
+                  </desc>
+                  <rect
+                    className="Bar"
+                    fill="rgb(238,97,41)"
+                    height={8}
+                    width={200}
+                    x={0}
+                    y={0}
+                  />
+                  <rect
+                    className="Bar"
+                    fill="transparent"
+                    height={8}
+                    width={0}
+                    x={200}
+                    y={0}
+                  />
+                </g>
+              </svg>
+            </span>
+            <div
+              className="conditionsText"
+            >
+              <span>
+                1200 conditions
+              </span>
+            </div>
+          </li>
+          <li>
+            <span
+              className="icon"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  color=""
+                  data-icon="minus-circle"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </span>
+            <span
+              className="keywordCategory selectedText"
+            >
+              alberta
+               
+            </span>
+            <span
+              className="BarContainer"
+            >
+              <svg
+                className="BarContainer"
+                height={8}
+                width={200}
+              >
+                <g
+                  className="BarContainer"
+                  height={8}
+                  width={200}
+                >
+                  <title>
+                    ConditionTitle
+                  </title>
+                  <desc>
+                    conditionDesc
+                  </desc>
+                  <rect
+                    className="Bar"
+                    fill="rgb(238,97,41)"
+                    height={8}
+                    width={66.66666666666666}
+                    x={0}
+                    y={0}
+                  />
+                  <rect
+                    className="Bar"
+                    fill="transparent"
+                    height={8}
+                    width={133.33333333333334}
+                    x={66.66666666666666}
+                    y={0}
+                  />
+                </g>
+              </svg>
+            </span>
+            <div
+              className="conditionsText"
+            >
+              <span>
+                400 conditions
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SearchBar/SuggestedKeywordsPrompt default 1`] = `
 <div
   className="visualization"
