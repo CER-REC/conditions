@@ -26,21 +26,17 @@ describe('Components|InstrumentsLegend', () => {
 
   describe('when only one category exists in the data', () => {
     const category = 'category';
-    const color = 'red';
     const data = [{
       parentName: 'I.1',
       children: [{
         category,
-        color,
       }, {
         category,
-        color,
       }],
     }, {
       parentName: 'I.2',
       children: [{
         category,
-        color,
       }],
     }];
 
@@ -74,7 +70,6 @@ describe('Components|InstrumentsLegend', () => {
 
   describe('when multiple categories exists in the data', () => {
     const categories = ['C1', 'C2', 'C3', 'C4', 'C5'];
-    const colors = ['purple', '#A1C1B1', 'blue', '#16AA16', '#00FFFF'];
     const categoryIndicators = [
       [true, true, true, true],
       [true, true, false, false],
@@ -83,16 +78,16 @@ describe('Components|InstrumentsLegend', () => {
       [false, true, true, false],
     ];
     const data = [{
-      parentName: 'oil',
+      parentName: 'OIL',
       children: [],
     }, {
-      parentName: 'gas',
+      parentName: 'GAS',
       children: [],
     }, {
-      parentName: 'power',
+      parentName: 'POWER',
       children: [],
     }, {
-      parentName: 'notSpecified',
+      parentName: 'NOT_SPECIFIED',
       children: [],
     }];
 
@@ -102,7 +97,6 @@ describe('Components|InstrumentsLegend', () => {
         if (indicators[typeIndex]) {
           indicatorsData.children.push({
             category: categories[categoryIndex],
-            color: colors[categoryIndex],
           });
         }
       });
@@ -135,7 +129,6 @@ describe('Components|InstrumentsLegend', () => {
 
         expect(listItemWrapper).toHaveLength(1);
         expect(listItemWrapper.type()).toBe(LegendItem);
-        expect(listItemWrapper.prop('color')).toBe(colors[i]);
         expect(listItemWrapper.prop('indicators')).toEqual(categoryIndicators[i]);
       }
     });

@@ -19,7 +19,6 @@ const getFormattedData = (data) => {
       if (!indicators) {
         indicators = {
           types: [],
-          color: commodity.color,
         };
         categoryIndicators[commodity.category] = indicators;
       }
@@ -32,7 +31,6 @@ const getFormattedData = (data) => {
   const formattedData = Object.entries(categoryIndicators).map(([category, indicator]) => ({
     name: category,
     indicators: indicator.types,
-    color: indicator.color,
   }));
 
   return formattedData;
@@ -49,7 +47,6 @@ const getLegendDataItems = (data, indicatorTypes) => {
         key={indicatorsData.name}
         title={indicatorsData.name}
         indicators={indicators}
-        color={indicatorsData.color}
       />
     );
   });
@@ -85,7 +82,6 @@ const InstrumentsLegend = (props) => {
         key="all"
         title=""
         indicators={[]}
-        color=""
       />
     ));
   }
@@ -113,7 +109,6 @@ InstrumentsLegend.propTypes = {
     parentName: PropTypes.string.isRequired,
     children: PropTypes.arrayOf(PropTypes.shape({
       category: PropTypes.string.isRequired,
-      color: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
   /** The name of the category to set as selected */

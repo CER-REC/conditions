@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 
-const SuggestedKeywords = props => (
-  <div className="SuggestedKeywords">
-    <FormattedMessage id="components.searchBar.suggestedKeywords.selectFrom">
+const SuggestedKeywordsPrompt = props => (
+  <div className="SuggestedKeywordsPrompt">
+    <FormattedMessage id="components.searchBar.suggestedKeywordsPrompt.selectFrom">
       {text => (<p className="selectFrom">{text}</p>)}
     </FormattedMessage>
-    <FormattedMessage id="components.searchBar.suggestedKeywords.suggestedKeywords">
+    <FormattedMessage id="components.searchBar.suggestedKeywordsPrompt.suggestedKeywords">
       {text => (
         text.split('\n')
           .map(string => <p className="colorChange" key={string}>{string}</p>)
@@ -31,8 +31,8 @@ const SuggestedKeywords = props => (
   </div>
 );
 
-SuggestedKeywords.propTypes = {
+SuggestedKeywordsPrompt.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default SuggestedKeywords;
+export default SuggestedKeywordsPrompt;

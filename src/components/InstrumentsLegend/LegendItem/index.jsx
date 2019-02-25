@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import './styles.scss';
+import { features } from '../../../constants';
 
 const LegendItem = (props) => {
   let indicators = null;
@@ -10,7 +11,9 @@ const LegendItem = (props) => {
 
   if (!props.all) {
     indicators = props.indicators.map((indicator, index) => {
-      const style = indicator ? { backgroundColor: props.color } : {};
+      const style = indicator
+        ? { backgroundColor: features.instrument[props.title] }
+        : {};
 
       // eslint-disable-next-line react/no-array-index-key
       return <div key={index} className="indicator" style={style} />;
@@ -32,8 +35,6 @@ LegendItem.propTypes = {
   title: PropTypes.string.isRequired,
   /** The list of flags to toggle the display of the indicators */
   indicators: PropTypes.arrayOf(PropTypes.bool).isRequired,
-  /** The color of the indicators */
-  color: PropTypes.string.isRequired,
   /** The flag to determine if the component renders as a all filter item */
   all: PropTypes.bool,
   /** Additional className to add to the component */

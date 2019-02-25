@@ -116,7 +116,7 @@
         "filter": "",
         "find": ""
       },
-      "suggestedKeywords": {
+      "suggestedKeywordsPrompt": {
         "selectFrom": "",
         "suggestedKeywords": ""
       },
@@ -145,6 +145,17 @@
           "none": "",
           "all": ""
         }
+      },
+      "suggestedKeywordsPopout": {
+        "suggestedKeywords": "",
+        "keywordsDescription": "",
+        "keywordsHere": "",
+        "viewBy": "",
+        "sortBy": "",
+        "frequency": "",
+        "alphabetical": "",
+        "none": "",
+        "conditions": ""
       }
     },
     "modal": {

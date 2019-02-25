@@ -7,5 +7,10 @@ import ReadMe from './README.md';
 storiesForComponent('Components|FeaturesLegend/LegendItem', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <LegendItem color="pink" text="security" disabled={boolean('Empty', false)} selectedFeature="theme" />
+    <LegendItem
+      color="pink"
+      text="SECURITY"
+      disabled={boolean('Empty', false)}
+      selectedFeature="theme"
+    />
   ));

@@ -18,12 +18,7 @@
     margin-top: 0;
   }
 
-  .color-routing {      color: GetInstrumentColors('Routing')}
-  .color-construction { color: GetInstrumentColors('Construction')}
-  .color-abandonment {  color: GetInstrumentColors('Abandonment')}
-  .color-misc {         color: GetInstrumentColors('Misc')}
-  .color-safety {       color: GetInstrumentColors('Safety')}
-  .color-tariffs {      color: GetInstrumentColors('Tariffs')}
-  .color-opening {      color: GetInstrumentColors('Opening')}
-
+  @each $category, $color in getFeatureColors('instrument') {
+    .color-#{$category} { color: $color; }
+  }
 }

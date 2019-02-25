@@ -619,7 +619,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 25.35830248449136 199
       A 133.80929318883346 133.80929318883346 0 0 1 292.97688886215826 199"
-              id="oilpath"
+              id="OILpath"
               style={
                 Object {
                   "fill": "none",
@@ -642,7 +642,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#oilpath"
+                href="#OILpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -655,7 +655,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 292.97688886215826 199
       A 115.83240432667517 115.83240432667517 0 0 1 524.6416975155087 199"
-              id="gaspath"
+              id="GASpath"
               style={
                 Object {
                   "fill": "none",
@@ -678,7 +678,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#gaspath"
+                href="#GASpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -691,7 +691,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 248.8974000566052 317.49489687560805
       A 47.5 47.5 0 0 1 343.8974000566052 317.49489687560805"
-              id="powerpath"
+              id="POWERpath"
               style={
                 Object {
                   "fill": "none",
@@ -714,7 +714,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#powerpath"
+                href="#POWERpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -733,7 +733,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={40}
               style={
                 Object {
-                  "fill": "#27A5F9",
+                  "fill": "rgb(39, 165, 249)",
                 }
               }
               transform="translate(79.36630443973255 197.52612788988029)"
@@ -760,7 +760,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={40}
               style={
                 Object {
-                  "fill": "#27A5F9",
+                  "fill": "rgb(39, 165, 249)",
                 }
               }
               transform="translate(164.36630443973255 197.52612788988029)"
@@ -787,7 +787,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={30}
               style={
                 Object {
-                  "fill": "#C904C2",
+                  "fill": "rgb(201, 4, 194)",
                 }
               }
               transform="translate(121.86630443973255 259.32216336142164)"
@@ -814,7 +814,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "#6AE6B2",
+                  "fill": "rgb(22, 78, 248)",
                 }
               }
               transform="translate(121.86630443973255 121.61334899198985)"
@@ -841,7 +841,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "#6AE6B2",
+                  "fill": "rgb(22, 78, 248)",
                 }
               }
               transform="translate(196.4688869069171 278.3866510080102)"
@@ -868,7 +868,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={40}
               style={
                 Object {
-                  "fill": "#27A5F9",
+                  "fill": "rgb(39, 165, 249)",
                 }
               }
               transform="translate(399.23352592252104 215.456396143957)"
@@ -895,7 +895,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={30}
               style={
                 Object {
-                  "fill": "#27A5F9",
+                  "fill": "rgb(39, 165, 249)",
                 }
               }
               transform="translate(474.23352592252104 215.456396143957)"
@@ -922,7 +922,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={20}
               style={
                 Object {
-                  "fill": "#C904C2",
+                  "fill": "rgb(201, 4, 194)",
                 }
               }
               transform="translate(444.73352592252104 261.8756809294855)"
@@ -949,7 +949,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "#6AE6B2",
+                  "fill": "rgb(22, 78, 248)",
                 }
               }
               transform="translate(447.6668592558544 143.1846020454138)"
@@ -976,7 +976,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "#C3E6B3",
+                  "fill": "rgb(195, 230, 179)",
                 }
               }
               transform="translate(400.635769549734 285.4423498261777)"
@@ -1003,7 +1003,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={5}
               style={
                 Object {
-                  "fill": "#6AE6B2",
+                  "fill": "rgb(22, 78, 248)",
                 }
               }
               transform="translate(363.68249874836295 141.56374111747775)"
@@ -1030,7 +1030,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={15}
               style={
                 Object {
-                  "fill": "#27A5F9",
+                  "fill": "rgb(39, 165, 249)",
                 }
               }
               transform="translate(268.8974000566052 318.49489687560805)"
@@ -1057,7 +1057,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "#27A5F9",
+                  "fill": "rgb(39, 165, 249)",
                 }
               }
               transform="translate(313.8974000566052 318.49489687560805)"
@@ -1082,7 +1082,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 555 199
       A 87.5 87.5 0 0 1 730 199"
-              id="anyCommodityTypespath"
+              id="ANY_COMMODITY_TYPESpath"
               style={
                 Object {
                   "fill": "none",
@@ -1105,7 +1105,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#anyCommodityTypespath"
+                href="#ANY_COMMODITY_TYPESpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -1118,7 +1118,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               d="
       M 730 199
       A 57.5 57.5 0 0 1 845 199"
-              id="notSpecifiedpath"
+              id="NOT_SPECIFIEDpath"
               style={
                 Object {
                   "fill": "none",
@@ -1141,7 +1141,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               className="bubbleTitle"
             >
               <textPath
-                href="#notSpecifiedpath"
+                href="#NOT_SPECIFIEDpath"
                 startOffset="50%"
                 textAnchor="middle"
               >
@@ -1160,7 +1160,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={40}
               style={
                 Object {
-                  "fill": "#D4A92A",
+                  "fill": "rgb(212, 169, 42)",
                 }
               }
               transform="translate(600 200)"
@@ -1187,7 +1187,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={40}
               style={
                 Object {
-                  "fill": "#D4A92A",
+                  "fill": "rgb(212, 169, 42)",
                 }
               }
               transform="translate(685 200)"
@@ -1214,7 +1214,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={20}
               style={
                 Object {
-                  "fill": "#0E2B8C",
+                  "fill": "rgb(14, 43, 140)",
                 }
               }
               transform="translate(642.5 249.180788932265)"
@@ -1241,7 +1241,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "#27A5F9",
+                  "fill": "rgb(39, 165, 249)",
                 }
               }
               transform="translate(760 200)"
@@ -1268,7 +1268,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "#D4A92A",
+                  "fill": "rgb(212, 169, 42)",
                 }
               }
               transform="translate(815 200)"
@@ -1310,7 +1310,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             d="
       M 5 199
       A 87.5 87.5 0 0 1 180 199"
-            id="anyCommodityTypespath"
+            id="ANY_COMMODITY_TYPESpath"
             style={
               Object {
                 "fill": "none",
@@ -1333,7 +1333,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             className="bubbleTitle"
           >
             <textPath
-              href="#anyCommodityTypespath"
+              href="#ANY_COMMODITY_TYPESpath"
               startOffset="50%"
               textAnchor="middle"
             >
@@ -1346,7 +1346,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             d="
       M 180 199
       A 57.5 57.5 0 0 1 295 199"
-            id="notSpecifiedpath"
+            id="NOT_SPECIFIEDpath"
             style={
               Object {
                 "fill": "none",
@@ -1369,7 +1369,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             className="bubbleTitle"
           >
             <textPath
-              href="#notSpecifiedpath"
+              href="#NOT_SPECIFIEDpath"
               startOffset="50%"
               textAnchor="middle"
             >
@@ -1388,7 +1388,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={40}
             style={
               Object {
-                "fill": "#D4A92A",
+                "fill": "rgb(212, 169, 42)",
               }
             }
             transform="translate(50 200)"
@@ -1415,7 +1415,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={40}
             style={
               Object {
-                "fill": "#D4A92A",
+                "fill": "rgb(212, 169, 42)",
               }
             }
             transform="translate(135 200)"
@@ -1442,7 +1442,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={20}
             style={
               Object {
-                "fill": "#0E2B8C",
+                "fill": "rgb(14, 43, 140)",
               }
             }
             transform="translate(92.5 249.180788932265)"
@@ -1469,7 +1469,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={10}
             style={
               Object {
-                "fill": "#27A5F9",
+                "fill": "rgb(39, 165, 249)",
               }
             }
             transform="translate(210 200)"
@@ -1496,7 +1496,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={10}
             style={
               Object {
-                "fill": "#D4A92A",
+                "fill": "rgb(212, 169, 42)",
               }
             }
             transform="translate(265 200)"
@@ -1882,7 +1882,7 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|FeatureFlag With color 1`] = `
+exports[`Storyshots Components|FeatureFlag default 1`] = `
 <div
   className="visualization"
 >
@@ -1893,8 +1893,7 @@ exports[`Storyshots Components|FeatureFlag With color 1`] = `
       className="Bar"
       style={
         Object {
-          "backgroundColor": "pink",
-          "content": "",
+          "backgroundColor": "rgb(133, 28, 133)",
           "width": "3px",
         }
       }
@@ -1904,7 +1903,7 @@ exports[`Storyshots Components|FeatureFlag With color 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|FeatureFlag Without color 1`] = `
+exports[`Storyshots Components|FeatureFlag with tip 1`] = `
 <div
   className="visualization"
 >
@@ -1915,12 +1914,40 @@ exports[`Storyshots Components|FeatureFlag Without color 1`] = `
       className="Bar"
       style={
         Object {
-          "backgroundColor": "#a1a8a7",
-          "content": "",
-          "width": "3px",
+          "backgroundColor": "rgb(221, 10, 10)",
+          "width": "30px",
         }
       }
-      title="Theme - Damage Prevention - 1"
+      title="Theme - Security - 20"
+    />
+    <div
+      className="FlagTip"
+      style={
+        Object {
+          "borderLeftColor": "rgb(221, 10, 10)",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|FeatureFlag without tip 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="FeatureFlag"
+  >
+    <div
+      className="Bar"
+      style={
+        Object {
+          "backgroundColor": "rgb(247, 193, 97)",
+          "width": "30px",
+        }
+      }
+      title="Theme - Financial - 10"
     />
   </div>
 </div>
@@ -1934,7 +1961,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     className="FeatureTypesDescription"
   >
     <h4
-      data-heading="security"
+      data-heading="SECURITY"
     >
       Security
     </h4>
@@ -1942,7 +1969,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
       Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
     </p>
     <h4
-      data-heading="managementSystem"
+      data-heading="MANAGEMENT_SYSTEM"
     >
       Management System
     </h4>
@@ -1950,7 +1977,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
       Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
     </p>
     <h4
-      data-heading="financial"
+      data-heading="FINANCIAL"
     >
       Financial
     </h4>
@@ -1969,13 +1996,13 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     className="FeatureTypesDescription"
   >
     <h4
-      data-heading="routing"
+      data-heading="ROUTING"
     >
       Routing
     </h4>
     <p>
       <span
-        className="color-routing"
+        className="color-ROUTING"
       >
         OPL
       </span>
@@ -1985,7 +2012,7 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     </p>
     <p>
       <span
-        className="color-routing"
+        className="color-ROUTING"
       >
         GPL
       </span>
@@ -1994,13 +2021,13 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
       </span>
     </p>
     <h4
-      data-heading="construction"
+      data-heading="CONSTRUCTION"
     >
       Construction
     </h4>
     <p>
       <span
-        className="color-construction"
+        className="color-CONSTRUCTION"
       >
         GC
       </span>
@@ -2010,7 +2037,7 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     </p>
     <p>
       <span
-        className="color-construction"
+        className="color-CONSTRUCTION"
       >
         OC
       </span>
@@ -2036,7 +2063,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "pink",
+            "backgroundColor": "rgb(221, 10, 10)",
           }
         }
       />
@@ -2055,7 +2082,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "red",
+            "backgroundColor": "rgb(36, 91, 64)",
           }
         }
       />
@@ -2074,7 +2101,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "green",
+            "backgroundColor": "rgb(247, 193, 97)",
           }
         }
       />
@@ -2093,7 +2120,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "blue",
+            "backgroundColor": "rgb(133, 28, 133)",
           }
         }
       />
@@ -2112,7 +2139,7 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "purple",
+            "backgroundColor": "rgb(153, 153, 255)",
           }
         }
       />
@@ -2158,7 +2185,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "pink",
+            "backgroundColor": "rgb(221, 10, 10)",
           }
         }
       />
@@ -2177,7 +2204,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "red",
+            "backgroundColor": "rgb(36, 91, 64)",
           }
         }
       />
@@ -2196,7 +2223,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "green",
+            "backgroundColor": "rgb(247, 193, 97)",
           }
         }
       />
@@ -2215,7 +2242,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "blue",
+            "backgroundColor": "rgb(133, 28, 133)",
           }
         }
       />
@@ -2234,7 +2261,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "purple",
+            "backgroundColor": "rgb(153, 153, 255)",
           }
         }
       />
@@ -2266,8 +2293,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="Bar"
             style={
               Object {
-                "backgroundColor": "",
-                "content": "",
+                "backgroundColor": "transparent",
                 "width": "0px",
               }
             }
@@ -2286,8 +2312,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="Bar"
             style={
               Object {
-                "backgroundColor": "#fff",
-                "content": "",
+                "backgroundColor": "transparent",
                 "width": "30px",
               }
             }
@@ -2306,8 +2331,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="Bar"
             style={
               Object {
-                "backgroundColor": "",
-                "content": "",
+                "backgroundColor": "transparent",
                 "width": "30px",
               }
             }
@@ -2317,7 +2341,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             className="FlagTip"
             style={
               Object {
-                "borderLeftColor": "",
+                "borderLeftColor": "transparent",
               }
             }
           />
@@ -2383,7 +2407,7 @@ exports[`Storyshots Components|FeaturesLegend/LegendItem default 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "pink",
+            "backgroundColor": "rgb(221, 10, 10)",
           }
         }
       />
@@ -3000,7 +3024,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "red",
+                      "backgroundColor": "rgb(14, 43, 140)",
                     }
                   }
                 />
@@ -3031,7 +3055,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#123456",
+                      "backgroundColor": "rgb(39, 165, 249)",
                     }
                   }
                 />
@@ -3249,7 +3273,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3257,7 +3281,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3265,7 +3289,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3273,7 +3297,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "purple",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3304,7 +3328,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#A1C1B1",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3312,7 +3336,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#A1C1B1",
+                      "backgroundColor": "rgb(22, 78, 248)",
                     }
                   }
                 />
@@ -3351,7 +3375,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#00FFFF",
+                      "backgroundColor": "rgb(212, 169, 42)",
                     }
                   }
                 />
@@ -3359,7 +3383,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#00FFFF",
+                      "backgroundColor": "rgb(212, 169, 42)",
                     }
                   }
                 />
@@ -3402,7 +3426,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "blue",
+                      "backgroundColor": "rgb(201, 4, 194)",
                     }
                   }
                 />
@@ -3445,7 +3469,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#16AA16",
+                      "backgroundColor": "rgb(195, 230, 179)",
                     }
                   }
                 />
@@ -3453,7 +3477,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "#16AA16",
+                      "backgroundColor": "rgb(195, 230, 179)",
                     }
                   }
                 />
@@ -3697,7 +3721,7 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
           className="indicator"
           style={
             Object {
-              "backgroundColor": "green",
+              "backgroundColor": "rgb(14, 43, 140)",
             }
           }
         />
@@ -3705,7 +3729,7 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
           className="indicator"
           style={
             Object {
-              "backgroundColor": "green",
+              "backgroundColor": "rgb(14, 43, 140)",
             }
           }
         />
@@ -3717,7 +3741,7 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
           className="indicator"
           style={
             Object {
-              "backgroundColor": "green",
+              "backgroundColor": "rgb(14, 43, 140)",
             }
           }
         />
@@ -4846,8 +4870,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(221, 10, 10)",
                         "width": "30px",
                       }
                     }
@@ -4861,8 +4884,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(36, 91, 64)",
                         "width": "30px",
                       }
                     }
@@ -4872,7 +4894,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="FlagTip"
                     style={
                       Object {
-                        "borderLeftColor": "#a1a8a7",
+                        "borderLeftColor": "rgb(36, 91, 64)",
                       }
                     }
                   />
@@ -4928,8 +4950,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(221, 10, 10)",
                         "width": "12px",
                       }
                     }
@@ -4943,8 +4964,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(36, 91, 64)",
                         "width": "30px",
                       }
                     }
@@ -4954,7 +4974,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="FlagTip"
                     style={
                       Object {
-                        "borderLeftColor": "#a1a8a7",
+                        "borderLeftColor": "rgb(36, 91, 64)",
                       }
                     }
                   />
@@ -5047,8 +5067,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "pink",
-                        "content": "",
+                        "backgroundColor": "rgb(221, 10, 10)",
                         "width": "18px",
                       }
                     }
@@ -5062,8 +5081,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "green",
-                        "content": "",
+                        "backgroundColor": "rgb(36, 91, 64)",
                         "width": "30px",
                       }
                     }
@@ -5073,7 +5091,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="FlagTip"
                     style={
                       Object {
-                        "borderLeftColor": "green",
+                        "borderLeftColor": "rgb(36, 91, 64)",
                       }
                     }
                   />
@@ -5162,8 +5180,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(221, 10, 10)",
                         "width": "15px",
                       }
                     }
@@ -5177,8 +5194,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(36, 91, 64)",
                         "width": "0px",
                       }
                     }
@@ -5236,8 +5252,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(221, 10, 10)",
                         "width": "30px",
                       }
                     }
@@ -5251,8 +5266,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": "#a1a8a7",
-                        "content": "",
+                        "backgroundColor": "rgb(36, 91, 64)",
                         "width": "30px",
                       }
                     }
@@ -5262,7 +5276,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="FlagTip"
                     style={
                       Object {
-                        "borderLeftColor": "#a1a8a7",
+                        "borderLeftColor": "rgb(36, 91, 64)",
                       }
                     }
                   />
@@ -5342,8 +5356,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="Bar"
             style={
               Object {
-                "backgroundColor": "red",
-                "content": "",
+                "backgroundColor": "rgb(221, 10, 10)",
                 "width": "3px",
               }
             }
@@ -5357,8 +5370,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="Bar"
             style={
               Object {
-                "backgroundColor": "orange",
-                "content": "",
+                "backgroundColor": "rgb(36, 91, 64)",
                 "width": "30px",
               }
             }
@@ -5368,7 +5380,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="FlagTip"
             style={
               Object {
-                "borderLeftColor": "orange",
+                "borderLeftColor": "rgb(36, 91, 64)",
               }
             }
           />
@@ -5380,8 +5392,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="Bar"
             style={
               Object {
-                "backgroundColor": "yellow",
-                "content": "",
+                "backgroundColor": "rgb(247, 193, 97)",
                 "width": "30px",
               }
             }
@@ -5391,7 +5402,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="FlagTip"
             style={
               Object {
-                "borderLeftColor": "yellow",
+                "borderLeftColor": "rgb(247, 193, 97)",
               }
             }
           />
@@ -5403,8 +5414,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="Bar"
             style={
               Object {
-                "backgroundColor": "green",
-                "content": "",
+                "backgroundColor": "rgb(133, 28, 133)",
                 "width": "30px",
               }
             }
@@ -5414,7 +5424,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="FlagTip"
             style={
               Object {
-                "borderLeftColor": "green",
+                "borderLeftColor": "rgb(133, 28, 133)",
               }
             }
           />
@@ -5426,8 +5436,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="Bar"
             style={
               Object {
-                "backgroundColor": "blue",
-                "content": "",
+                "backgroundColor": "rgb(68, 34, 149)",
                 "width": "9px",
               }
             }
@@ -5441,8 +5450,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="Bar"
             style={
               Object {
-                "backgroundColor": "indigo",
-                "content": "",
+                "backgroundColor": "rgb(153, 153, 255)",
                 "width": "30px",
               }
             }
@@ -5452,7 +5460,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="FlagTip"
             style={
               Object {
-                "borderLeftColor": "indigo",
+                "borderLeftColor": "rgb(153, 153, 255)",
               }
             }
           />
@@ -5464,8 +5472,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             className="Bar"
             style={
               Object {
-                "backgroundColor": "violet",
-                "content": "",
+                "backgroundColor": "rgb(11, 121, 153)",
                 "width": "9px",
               }
             }
@@ -5637,123 +5644,115 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             </desc>
             <rect
               className="Bar"
-              fill="pink"
+              fill="rgb(181, 11, 128)"
               height={50}
-              width={23.333333333333332}
+              width={25}
               x={0}
               y={0}
             />
             <rect
               className="Bar"
-              fill="red"
+              fill="rgb(153, 82, 255)"
               height={20}
-              width={23.333333333333332}
-              x={23.333333333333332}
+              width={25}
+              x={25}
               y={30}
             />
             <rect
               className="Bar"
-              fill="green"
+              fill="rgb(33, 181, 115)"
               height={43}
-              width={23.333333333333332}
-              x={46.666666666666664}
+              width={25}
+              x={50}
               y={7}
             />
             <rect
               className="Bar"
-              fill="blue"
+              fill="rgb(201, 215, 65)"
               height={15}
-              width={23.333333333333332}
-              x={70}
+              width={25}
+              x={75}
               y={35}
             />
             <rect
               className="Bar"
-              fill="purple"
+              fill="rgb(41, 41, 218)"
               height={5}
-              width={23.333333333333332}
-              x={93.33333333333333}
+              width={25}
+              x={100}
               y={45}
             />
             <rect
               className="Bar"
-              fill="yellow"
+              fill="rgb(74, 166, 255)"
               height={15}
-              width={23.333333333333332}
-              x={116.66666666666666}
+              width={25}
+              x={125}
               y={35}
             />
             <rect
               className="Bar"
-              fill="orange"
+              fill="rgb(11, 121, 153)"
               height={3}
-              width={23.333333333333332}
-              x={140}
+              width={25}
+              x={150}
               y={47}
             />
             <rect
               className="Bar"
-              fill="navy"
+              fill="rgb(153, 153, 255)"
               height={15}
-              width={23.333333333333332}
-              x={163.33333333333331}
+              width={25}
+              x={175}
               y={35}
             />
             <rect
               className="Bar"
-              fill="plum"
+              fill="rgb(68, 34, 149)"
               height={3}
-              width={23.333333333333332}
-              x={186.66666666666666}
+              width={25}
+              x={200}
               y={47}
             />
             <rect
               className="Bar"
-              fill="olive"
+              fill="rgb(133, 28, 133)"
               height={3}
-              width={23.333333333333332}
-              x={210}
+              width={25}
+              x={225}
               y={47}
             />
             <rect
               className="Bar"
-              fill="coral"
+              fill="rgb(247, 193, 97)"
               height={3}
-              width={23.333333333333332}
-              x={233.33333333333331}
+              width={25}
+              x={250}
               y={47}
             />
             <rect
               className="Bar"
-              fill="cadetBlue"
+              fill="rgb(221, 10, 10)"
               height={3}
-              width={23.333333333333332}
-              x={256.66666666666663}
+              width={25}
+              x={275}
               y={47}
             />
             <rect
               className="Bar"
-              fill="darkGreen"
+              fill="rgb(36, 91, 64)"
               height={3}
-              width={23.333333333333332}
-              x={280}
+              width={25}
+              x={300}
               y={47}
             />
             <rect
               className="Bar"
               fill="black"
               height={4}
-              width={23.333333333333332}
-              x={303.3333333333333}
+              width={25}
+              x={325}
               y={46}
-            />
-            <rect
-              className="Bar"
-              fill="#e4e4e4"
-              height={0}
-              width={23.333333333333332}
-              x={326.66666666666663}
-              y={50}
             />
           </g>
         </svg>
@@ -5837,7 +5836,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
             </desc>
             <rect
               className="Bar"
-              fill="pink"
+              fill="rgb(181, 11, 128)"
               height={50}
               width={175}
               x={0}
@@ -5845,7 +5844,7 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
             />
             <rect
               className="Bar"
-              fill="purple"
+              fill="rgb(77, 39, 90)"
               height={100}
               width={175}
               x={175}
@@ -7222,7 +7221,340 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SearchBar/SuggestedKeywords default 1`] = `
+exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interaction 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div>
+      <div
+        className="SuggestedKeywordsPopout"
+      >
+        <h1
+          className="keywordsTitle"
+        >
+           
+          Suggested Keywords
+            
+        </h1>
+        <p
+          className="description"
+        >
+           
+          Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
+            
+        </p>
+        <ul
+          className="categories"
+        >
+          <li
+            className="viewText"
+          >
+             
+            View By
+            :  
+          </li>
+          <li
+            className="categoryList upperCase selectedCategory"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+             
+            all
+          </li>
+          <li
+            className="categoryList upperCase"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+             
+            wildlife & habitat
+          </li>
+          <li
+            className="categoryList upperCase"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+             
+            environment
+          </li>
+          <li
+            className="categoryList upperCase"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+             
+            engineering & structures
+          </li>
+          <li
+            className="categoryList upperCase"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+             
+            administration & filings
+          </li>
+        </ul>
+        <div
+          className="rightText"
+        >
+          <span>
+            Sort by
+             
+          </span>
+          <span
+            className={null}
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+             
+            Frequency
+          </span>
+          |
+          <span
+            className={null}
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            Alphabetical
+          </span>
+          <span
+            className="hierarchy"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <span
+              className="arrow"
+            >
+              <svg
+                viewBox="0 0 427.5 427.5"
+              >
+                <g>
+                  <path
+                    d="M405.943,290.254L302.096,425.338c-1.04, 1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254 c-0.769-0.993-1.144-2.176-1.144-3.357c0-1.152,0.364-2.329, 1.108-3.322c1.499-1.975,4.125-2.707,6.434-1.809l68.76,27.166V21.01 c0-3.047,2.477-5.503,5.515-5.503h55.106c3.038,0,5.509, 2.456,5.509,5.503v287.922l68.76-27.166 c2.305-0.898,4.93-0.166,6.419,1.809C407.473,285.561, 407.461,288.28,405.943,290.254z M238.012,143.913 c0.744-0.993,1.105-2.167,1.105-3.322c0-1.176-0.379-2.367-1.142-3.36L134.125, 2.148C133.081,0.792,131.458,0,129.759,0 c-1.714,0-3.328,0.798-4.377,2.148L21.539,137.23c-1.519, 1.969-1.525,4.69-0.03,6.683c1.487,1.968,4.114,2.707,6.419,1.803 l68.766-27.163v287.919c0,3.05,2.462,5.509,5.506, 5.509h55.109c3.041,0,5.515-2.459,5.515-5.509V118.552l68.763,27.163 C233.886,146.62,236.51,145.88,238.012,143.913z"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span
+              className="upperCase"
+            >
+               
+              none
+               
+            </span>
+          </span>
+        </div>
+        <div
+          className="KeywordList"
+        >
+          <ul>
+            <li>
+              <span
+                className="icon"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <div
+                  className="Icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                    color=""
+                    data-icon="minus-circle"
+                    data-prefix="fas"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                </div>
+              </span>
+              <span
+                className="keywordCategory selectedText"
+              >
+                deer
+                 
+              </span>
+              <span
+                className="BarContainer"
+              >
+                <svg
+                  className="BarContainer"
+                  height={8}
+                  width={200}
+                >
+                  <g
+                    className="BarContainer"
+                    height={8}
+                    width={200}
+                  >
+                    <title>
+                      ConditionTitle
+                    </title>
+                    <desc>
+                      conditionDesc
+                    </desc>
+                    <rect
+                      className="Bar"
+                      fill="rgb(238,97,41)"
+                      height={8}
+                      width={200}
+                      x={0}
+                      y={0}
+                    />
+                    <rect
+                      className="Bar"
+                      fill="transparent"
+                      height={8}
+                      width={0}
+                      x={200}
+                      y={0}
+                    />
+                  </g>
+                </svg>
+              </span>
+              <div
+                className="conditionsText"
+              >
+                <span>
+                  1200 conditions
+                </span>
+              </div>
+            </li>
+            <li>
+              <span
+                className="icon"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <div
+                  className="Icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
+                    color=""
+                    data-icon="plus-circle"
+                    data-prefix="fas"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                </div>
+              </span>
+              <span
+                className="keywordCategory regularText"
+              >
+                alberta
+                 
+              </span>
+              <span
+                className="BarContainer"
+              >
+                <svg
+                  className="BarContainer"
+                  height={8}
+                  width={200}
+                >
+                  <g
+                    className="BarContainer"
+                    height={8}
+                    width={200}
+                  >
+                    <title>
+                      ConditionTitle
+                    </title>
+                    <desc>
+                      conditionDesc
+                    </desc>
+                    <rect
+                      className="Bar"
+                      fill="rgb(96,96,96)"
+                      height={8}
+                      width={66.66666666666666}
+                      x={0}
+                      y={0}
+                    />
+                    <rect
+                      className="Bar"
+                      fill="transparent"
+                      height={8}
+                      width={133.33333333333334}
+                      x={66.66666666666666}
+                      y={0}
+                    />
+                  </g>
+                </svg>
+              </span>
+              <div
+                className="conditionsText"
+              >
+                <span>
+                  400 conditions
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="close"
+        >
+          <button
+            className="upperCase"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+             
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/SuggestedKeywordsPrompt default 1`] = `
 <div
   className="visualization"
 >
@@ -7230,7 +7562,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywords default 1`] = `
     className="SearchBar"
   >
     <div
-      className="SuggestedKeywords"
+      className="SuggestedKeywordsPrompt"
     >
       <p
         className="selectFrom"
@@ -7755,13 +8087,13 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,98.80952380952381C8.333333333333336,80.03117913832197,16.66666666666667,61.25283446712015,25,64.28571428571428C33.33333333333333,67.3185941043084,41.666666666666664,92.16269841269842,50,76.19047619047619C58.333333333333336,60.21825396825396,66.66666666666667,3.429705215419501,75,0C83.33333333333333,-3.429705215419501,91.66666666666666,46.499433106575964,100,96.42857142857143L100,100C91.66666666666667,100,83.33333333333334,100,75,100C66.66666666666666,100,58.33333333333333,100,50,100C41.66666666666667,100,33.33333333333333,100,25,100C16.666666666666668,100,8.333333333333334,100,0,100Z"
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "red",
-                          "stroke": "red",
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
                         }
                       }
                     />
@@ -7821,13 +8153,13 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,48.80952380952381C8.333333333333336,66.29109977324264,16.66666666666667,83.77267573696145,25,73.80952380952381C33.33333333333333,63.84637188208617,41.666666666666664,26.438492063492077,50,33.33333333333334C58.333333333333336,40.22817460317461,66.66666666666667,91.42573696145125,75,98.80952380952381C83.33333333333333,106.19331065759637,91.66666666666666,69.76332199546485,100,33.33333333333334L100,100C91.66666666666667,100,83.33333333333334,100,75,100C66.66666666666666,100,58.33333333333333,100,50,100C41.66666666666667,100,33.33333333333333,100,25,100C16.666666666666668,100,8.333333333333334,100,0,100Z"
+                      d="M0,97.52808988764045C4.761904761904763,96.6855412184443,9.523809523809526,95.84299254924815,14.285714285714285,94.8314606741573C19.047619047619044,93.81992879906645,23.809523809523796,92.63941371808086,28.57142857142857,92.35955056179775C33.33333333333334,92.07968740551463,38.0952380952381,92.70047617393406,42.857142857142854,90.78651685393258C47.619047619047606,88.8725575339311,52.380952380952365,84.4238501255087,57.14285714285714,82.69662921348315C61.90476190476191,80.9694083014576,66.66666666666669,81.9636738858289,71.42857142857143,81.57303370786516C76.19047619047618,81.18239352990143,80.95238095238095,79.40684758960265,85.71428571428571,77.75280898876404C90.47619047619047,76.09877038792544,95.23809523809524,74.56623912654699,100,73.03370786516854L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "blue",
-                          "stroke": "blue",
+                          "fill": "rgb(36, 91, 64)",
+                          "stroke": "rgb(36, 91, 64)",
                         }
                       }
                     />
@@ -7887,13 +8219,13 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,94.04761904761905L100,94.04761904761905L100,100L0,100Z"
+                      d="M0,96.85393258426966C4.761904761904763,95.64804557683178,9.523809523809526,94.44215856939391,14.285714285714285,93.25842696629213C19.047619047619044,92.07469536319036,23.809523809523796,90.91311916442474,28.57142857142857,89.66292134831461C33.33333333333334,88.41272353220448,38.0952380952381,87.07390409874982,42.857142857142854,85.3932584269663C47.619047619047606,83.71261275518278,52.380952380952365,81.69014084507042,57.14285714285714,81.34831460674158C61.90476190476191,81.00648836841275,66.66666666666669,82.3453078018674,71.42857142857143,78.65168539325843C76.19047619047618,74.95806298464946,80.95238095238095,66.23199873397688,85.71428571428571,68.53932584269663C90.47619047619047,70.84665295141637,95.23809523809524,84.1873714195284,100,97.52808988764045L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "green",
-                          "stroke": "green",
+                          "fill": "rgb(247, 193, 97)",
+                          "stroke": "rgb(247, 193, 97)",
                         }
                       }
                     />
@@ -7902,72 +8234,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span>
                 Financial
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-6)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-6"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,45.238095238095234L100,95.23809523809524L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "yellow",
-                          "stroke": "yellow",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Damage Prevention
               </span>
             </div>
           </div>
@@ -8006,384 +8272,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                 className="stream"
               />
               <span>
-                All Types
-              </span>
-            </div>
-          </div>
-          <div
-            className="CircleContainer arrowNext"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-            tabIndex={0}
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem faded"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-10)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-10"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,78.15275310834814C16.666666666666664,37.72942569567792,33.33333333333333,-2.6939017169923027,50,0C66.66666666666667,2.6939017169923027,83.33333333333334,48.50503256364713,100,94.31616341030195L100,100C83.33333333333333,100,66.66666666666666,100,50,100C33.333333333333336,100,16.666666666666668,100,0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "#AA11AA",
-                          "stroke": "#AA11AA",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Non Standard
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-11)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-11"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,82.7708703374778L100,90.05328596802842L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "#11AA11",
-                          "stroke": "#11AA11",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Standard
-              </span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="SmallMultiplesLegend"
-  >
-    <div
-      className="List guideLine"
-    >
-      <ul>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem all"
-            >
-              <span
-                className="stream"
-              />
-              <span>
-                All Phases
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-7)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-7"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,93.50649350649351L100,87.01298701298701L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "red",
-                          "stroke": "red",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Includes All Phases of Constr.
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item selected"
-        >
-          <div
-            className="CircleContainer arrowPrevious"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-            tabIndex={0}
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-8)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-8"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,35.06493506493507L100,67.53246753246754L100,100L0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "green",
-                          "stroke": "green",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Not Construction Related
+                All Themes
               </span>
             </div>
           </div>
@@ -8472,13 +8361,13 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       </clipPath>
                     </defs>
                     <path
-                      d="M0,50.64935064935065L100,0L100,100L0,100Z"
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
                       role="presentation"
                       shapeRendering="auto"
                       style={
                         Object {
-                          "fill": "yellow",
-                          "stroke": "yellow",
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
                         }
                       }
                     />
@@ -8486,7 +8375,450 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                 </svg>
               </span>
               <span>
-                Post Construction Phase
+                Security
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem faded"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-10)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-10"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,97.52808988764045C4.761904761904763,96.6855412184443,9.523809523809526,95.84299254924815,14.285714285714285,94.8314606741573C19.047619047619044,93.81992879906645,23.809523809523796,92.63941371808086,28.57142857142857,92.35955056179775C33.33333333333334,92.07968740551463,38.0952380952381,92.70047617393406,42.857142857142854,90.78651685393258C47.619047619047606,88.8725575339311,52.380952380952365,84.4238501255087,57.14285714285714,82.69662921348315C61.90476190476191,80.9694083014576,66.66666666666669,81.9636738858289,71.42857142857143,81.57303370786516C76.19047619047618,81.18239352990143,80.95238095238095,79.40684758960265,85.71428571428571,77.75280898876404C90.47619047619047,76.09877038792544,95.23809523809524,74.56623912654699,100,73.03370786516854L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(36, 91, 64)",
+                          "stroke": "rgb(36, 91, 64)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Management System
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem faded"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-11)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-11"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,96.85393258426966C4.761904761904763,95.64804557683178,9.523809523809526,94.44215856939391,14.285714285714285,93.25842696629213C19.047619047619044,92.07469536319036,23.809523809523796,90.91311916442474,28.57142857142857,89.66292134831461C33.33333333333334,88.41272353220448,38.0952380952381,87.07390409874982,42.857142857142854,85.3932584269663C47.619047619047606,83.71261275518278,52.380952380952365,81.69014084507042,57.14285714285714,81.34831460674158C61.90476190476191,81.00648836841275,66.66666666666669,82.3453078018674,71.42857142857143,78.65168539325843C76.19047619047618,74.95806298464946,80.95238095238095,66.23199873397688,85.71428571428571,68.53932584269663C90.47619047619047,70.84665295141637,95.23809523809524,84.1873714195284,100,97.52808988764045L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(247, 193, 97)",
+                          "stroke": "rgb(247, 193, 97)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Financial
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SmallMultiplesLegend"
+  >
+    <div
+      className="List guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem all"
+            >
+              <span
+                className="stream"
+              />
+              <span>
+                All Themes
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-up"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-6)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-6"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Security
+              </span>
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-down"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-7)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-7"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,97.52808988764045C4.761904761904763,96.6855412184443,9.523809523809526,95.84299254924815,14.285714285714285,94.8314606741573C19.047619047619044,93.81992879906645,23.809523809523796,92.63941371808086,28.57142857142857,92.35955056179775C33.33333333333334,92.07968740551463,38.0952380952381,92.70047617393406,42.857142857142854,90.78651685393258C47.619047619047606,88.8725575339311,52.380952380952365,84.4238501255087,57.14285714285714,82.69662921348315C61.90476190476191,80.9694083014576,66.66666666666669,81.9636738858289,71.42857142857143,81.57303370786516C76.19047619047618,81.18239352990143,80.95238095238095,79.40684758960265,85.71428571428571,77.75280898876404C90.47619047619047,76.09877038792544,95.23809523809524,74.56623912654699,100,73.03370786516854L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(36, 91, 64)",
+                          "stroke": "rgb(36, 91, 64)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Management System
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-8)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-8"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,96.85393258426966C4.761904761904763,95.64804557683178,9.523809523809526,94.44215856939391,14.285714285714285,93.25842696629213C19.047619047619044,92.07469536319036,23.809523809523796,90.91311916442474,28.57142857142857,89.66292134831461C33.33333333333334,88.41272353220448,38.0952380952381,87.07390409874982,42.857142857142854,85.3932584269663C47.619047619047606,83.71261275518278,52.380952380952365,81.69014084507042,57.14285714285714,81.34831460674158C61.90476190476191,81.00648836841275,66.66666666666669,82.3453078018674,71.42857142857143,78.65168539325843C76.19047619047618,74.95806298464946,80.95238095238095,66.23199873397688,85.71428571428571,68.53932584269663C90.47619047619047,70.84665295141637,95.23809523809524,84.1873714195284,100,97.52808988764045L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(247, 193, 97)",
+                          "stroke": "rgb(247, 193, 97)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Financial
               </span>
             </div>
           </div>
@@ -8562,13 +8894,13 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem basic usage 1`] =
               </clipPath>
             </defs>
             <path
-              d="M0,80C16.666666666666664,73.33333333333333,33.33333333333333,66.66666666666666,50,60C66.66666666666667,53.333333333333336,83.33333333333334,46.66666666666667,100,40L100,100C83.33333333333333,100,66.66666666666666,100,50,100C33.333333333333336,100,16.666666666666668,100,0,100Z"
+              d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
               role="presentation"
               shapeRendering="auto"
               style={
                 Object {
-                  "fill": "green",
-                  "stroke": "green",
+                  "fill": "rgb(221, 10, 10)",
+                  "stroke": "rgb(221, 10, 10)",
                 }
               }
             />
@@ -8576,7 +8908,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem basic usage 1`] =
         </svg>
       </span>
       <span>
-        In Progress
+        Security
       </span>
     </div>
   </div>
@@ -8627,13 +8959,13 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
               </clipPath>
             </defs>
             <path
-              d="M0,90.9090909090909C16.666666666666664,101.21212121212122,33.33333333333333,111.51515151515152,50,96.36363636363636C66.66666666666667,81.2121212121212,83.33333333333334,40.6060606060606,100,0L100,100C83.33333333333333,100,66.66666666666666,100,50,100C33.333333333333336,100,16.666666666666668,100,0,100Z"
+              d="M0,90C4.761904761904763,86.16700201207243,9.523809523809526,82.33400402414486,14.285714285714285,78.57142857142857C19.047619047619044,74.80885311871228,23.809523809523796,71.11670020120724,28.57142857142857,67.14285714285714C33.33333333333334,63.16901408450703,38.0952380952381,58.913480885311856,42.857142857142854,53.57142857142857C47.619047619047606,48.22937625754528,52.380952380952365,41.800804828973845,57.14285714285714,40.714285714285715C61.90476190476191,39.627766599597585,66.66666666666669,43.88329979879275,71.42857142857143,32.14285714285714C76.19047619047618,20.402414486921526,80.95238095238095,-7.3340040241448685,85.71428571428571,0C90.47619047619047,7.3340040241448685,95.23809523809524,49.73843058350101,100,92.14285714285714L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
               role="presentation"
               shapeRendering="auto"
               style={
                 Object {
-                  "fill": "#D1057A",
-                  "stroke": "#D1057A",
+                  "fill": "rgb(247, 193, 97)",
+                  "stroke": "rgb(247, 193, 97)",
                 }
               }
             />
@@ -8641,7 +8973,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
         </svg>
       </span>
       <span>
-        No Filing Required
+        Financial
       </span>
     </div>
   </div>
@@ -9431,13 +9763,13 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
               </clipPath>
             </defs>
             <path
-              d="M50,250C66.66666666666667,249.06572033350676,83.33333333333334,248.13144066701355,100,246.49122807017545C116.66666666666666,244.85101547333736,133.33333333333331,242.50486994615437,150,243.2748538011696C166.66666666666669,244.04483765618482,183.33333333333337,247.9309508933983,200,241.2280701754386C216.66666666666663,234.52518945747892,233.33333333333331,217.23331478434628,250,206.140350877193C266.6666666666667,195.0473869700397,283.33333333333337,190.15333382886584,300,173.9766081871345C316.66666666666663,157.79988254540316,333.3333333333333,130.34048440311435,350,119.88304093567251C366.6666666666667,109.42559746823068,383.33333333333337,115.9701086756358,400,122.51461988304094L400,250C383.33333333333337,250,366.6666666666667,250,350,250C333.3333333333333,250,316.66666666666663,249.99999999999997,300,250C283.33333333333337,250.00000000000003,266.6666666666667,250.00000000000003,250,250C233.33333333333331,249.99999999999997,216.66666666666663,249.99999999999997,200,250C183.33333333333337,250.00000000000003,166.66666666666669,250,150,250C133.33333333333331,250,116.66666666666666,250,100,250C83.33333333333334,250,66.66666666666667,250,50,250Z"
+              d="M50,250C66.66666666666667,249.2746475525047,83.33333333333334,248.54929510500938,100,246.49122807017545C116.66666666666666,244.43316103534153,133.33333333333331,241.04237941316896,150,243.2748538011696C166.66666666666669,245.50732818917024,183.33333333333337,253.36305858734403,200,241.2280701754386C216.66666666666663,229.09308176353318,233.33333333333331,196.96737454154874,250,206.140350877193C266.6666666666667,215.31332721283724,283.33333333333337,265.7849871061103,300,250C316.66666666666663,234.21501289388974,333.3333333333333,152.17337878839623,350,119.88304093567251C366.6666666666667,87.59270308294879,383.33333333333337,105.05366148299487,400,122.51461988304094L400,250C383.33333333333337,250,366.6666666666667,250,350,250C333.3333333333333,250,316.66666666666663,249.99999999999997,300,250C283.33333333333337,250.00000000000003,266.6666666666667,250.00000000000003,250,250C233.33333333333331,249.99999999999997,216.66666666666663,249.99999999999997,200,250C183.33333333333337,250.00000000000003,166.66666666666669,250,150,250C133.33333333333331,250,116.66666666666666,250,100,250C83.33333333333334,250,66.66666666666667,250,50,250Z"
               role="presentation"
               shapeRendering="auto"
               style={
                 Object {
-                  "fill": "pink",
-                  "stroke": "pink",
+                  "fill": "rgb(221, 10, 10)",
+                  "stroke": "rgb(221, 10, 10)",
                   "strokeWidth": 0,
                 }
               }
@@ -9469,13 +9801,13 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
               </clipPath>
             </defs>
             <path
-              d="M50,246.78362573099415C66.66666666666667,244.75304735750592,83.33333333333334,242.7224689840177,100,239.76608187134502C116.66666666666666,236.80969475867235,133.33333333333331,232.92749890681517,150,233.33333333333334C166.66666666666669,233.7391677598515,183.33333333333337,238.4330324647452,200,229.23976608187135C216.66666666666663,220.0464996989975,233.33333333333331,196.9661022283561,250,183.62573099415204C266.6666666666667,170.28535975994797,283.33333333333337,166.68501476218123,300,150C316.66666666666663,133.31498523781877,333.3333333333333,103.54530071122308,350,90.93567251461988C366.6666666666667,78.32604431801668,383.33333333333337,82.87647245140599,400,87.4269005847953L400,122.51461988304094C383.33333333333337,115.97010867563581,366.6666666666667,109.42559746823068,350,119.88304093567251C333.3333333333333,130.34048440311435,316.66666666666663,157.79988254540316,300,173.9766081871345C283.33333333333337,190.15333382886584,266.6666666666667,195.04738697003975,250,206.140350877193C233.33333333333331,217.23331478434622,216.66666666666663,234.52518945747894,200,241.2280701754386C183.33333333333337,247.93095089339826,166.66666666666669,244.0448376561848,150,243.2748538011696C133.33333333333331,242.5048699461544,116.66666666666666,244.85101547333733,100,246.49122807017545C83.33333333333334,248.13144066701358,66.66666666666667,249.0657203335068,50,250Z"
+              d="M50,246.78362573099415C66.66666666666667,244.96197457650382,83.33333333333334,243.14032342201352,100,239.76608187134502C116.66666666666666,236.39184032067652,133.33333333333331,231.46500837382976,150,233.33333333333334C166.66666666666669,235.20165829283692,183.33333333333337,243.86514015869093,200,229.23976608187135C216.66666666666663,214.61439200505177,233.33333333333331,176.70016198555857,250,183.62573099415204C266.6666666666667,190.5513000027455,283.33333333333337,242.3166680394256,300,226.0233918128655C316.66666666666663,209.7301155863054,333.3333333333333,125.37819509650498,350,90.93567251461988C366.6666666666667,56.49314993273478,383.33333333333337,71.96002525876504,400,87.4269005847953L400,122.51461988304094C383.33333333333337,105.05366148299488,366.6666666666667,87.59270308294882,350,119.88304093567251C333.3333333333333,152.1733787883962,316.66666666666663,234.2150128938897,300,250C283.33333333333337,265.7849871061103,266.6666666666667,215.31332721283724,250,206.140350877193C233.33333333333331,196.96737454154874,216.66666666666663,229.0930817635332,200,241.2280701754386C183.33333333333337,253.363058587344,166.66666666666669,245.50732818917018,150,243.2748538011696C133.33333333333331,241.04237941316902,116.66666666666666,244.43316103534153,100,246.49122807017545C83.33333333333334,248.54929510500938,66.66666666666667,249.2746475525047,50,250Z"
               role="presentation"
               shapeRendering="auto"
               style={
                 Object {
-                  "fill": "blue",
-                  "stroke": "blue",
+                  "fill": "rgb(36, 91, 64)",
+                  "stroke": "rgb(36, 91, 64)",
                   "strokeWidth": 0,
                 }
               }
@@ -9507,13 +9839,13 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
               </clipPath>
             </defs>
             <path
-              d="M50,242.69005847953215C66.66666666666667,239.09041660221396,83.33333333333334,235.49077472489572,100,230.99415204678363C116.66666666666666,226.49752936867154,133.33333333333331,221.10392588976546,150,219.8830409356725C166.66666666666669,218.66215598157956,183.33333333333337,221.61398955229976,200,210.23391812865498C216.66666666666663,198.8538467050102,233.33333333333331,173.1418702870004,250,159.3567251461988C266.6666666666667,145.57158000539724,283.33333333333337,143.71326614180398,300,122.22222222222223C316.66666666666663,100.73117830264047,333.3333333333333,59.60740432707021,350,50C366.6666666666667,40.39259567292979,383.33333333333337,62.30156099435963,400,84.21052631578948L400,87.4269005847953C383.33333333333337,82.87647245140599,366.6666666666667,78.32604431801668,350,90.93567251461988C333.3333333333333,103.54530071122308,316.66666666666663,133.3149852378188,300,150C283.33333333333337,166.6850147621812,266.6666666666667,170.28535975994794,250,183.62573099415204C233.33333333333331,196.96610222835614,216.66666666666663,220.0464996989975,200,229.23976608187135C183.33333333333337,238.4330324647452,166.66666666666669,233.7391677598515,150,233.33333333333334C133.33333333333331,232.92749890681517,116.66666666666666,236.80969475867235,100,239.76608187134502C83.33333333333334,242.7224689840177,66.66666666666667,244.75304735750592,50,246.78362573099415Z"
+              d="M50,242.69005847953215C66.66666666666667,239.2993438212119,83.33333333333334,235.90862916289157,100,230.99415204678363C116.66666666666666,226.07967493067568,133.33333333333331,219.64143535678005,150,219.8830409356725C166.66666666666669,220.12464651456497,183.33333333333337,227.0460972462455,200,210.23391812865498C216.66666666666663,193.42173901106446,233.33333333333331,152.87593004420285,250,159.3567251461988C266.6666666666667,165.83752024819478,283.33333333333337,219.3449194190484,300,198.24561403508773C316.66666666666663,177.14630865112704,333.3333333333333,81.44029871235209,350,50C366.6666666666667,18.559701287647908,383.33333333333337,51.385113801718695,400,84.21052631578948L400,87.4269005847953C383.33333333333337,71.96002525876506,366.6666666666667,56.493149932734795,350,90.93567251461988C333.3333333333333,125.37819509650497,316.66666666666663,209.73011558630537,300,226.0233918128655C283.33333333333337,242.31666803942562,266.6666666666667,190.5513000027455,250,183.62573099415204C233.33333333333331,176.70016198555857,216.66666666666663,214.61439200505174,200,229.23976608187135C183.33333333333337,243.86514015869096,166.66666666666669,235.2016582928369,150,233.33333333333334C133.33333333333331,231.4650083738298,116.66666666666666,236.39184032067652,100,239.76608187134502C83.33333333333334,243.14032342201352,66.66666666666667,244.96197457650385,50,246.78362573099415Z"
               role="presentation"
               shapeRendering="auto"
               style={
                 Object {
-                  "fill": "orange",
-                  "stroke": "orange",
+                  "fill": "rgb(247, 193, 97)",
+                  "stroke": "rgb(247, 193, 97)",
                   "strokeWidth": 0,
                 }
               }

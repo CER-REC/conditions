@@ -1,0 +1,64 @@
+@import "../../../../styles/fontVariables.scss";
+@import "../../../../styles/colors.scss";
+
+.KeywordList {
+  height: 300px;
+  width: max-content;
+  padding-top: 5px;
+  overflow-y: scroll;
+  ul {
+    list-style-type: none;
+    li {
+      padding: 10px 0px;
+      border-bottom: 1px solid $DarkGray;
+      .icon {
+        display: inline-block;
+        width: 25px;
+        vertical-align: super;
+        .Icon {
+          svg {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        .selectedIcon {
+          color: $White;
+          background-color: $LinksTextButtons;
+          border-radius: 25px;
+          border: 1px solid $LinksTextButtons;
+        }
+        .regularIcon {
+          color: $LinksTextButtons;
+          background-color: $White;
+        }
+      }
+      .keywordCategory {
+        display: inline-block;
+        width: 60px;
+        white-space: nowrap;
+      }
+
+      .selectedText {
+        overflow: visible;
+        vertical-align: super;
+      }
+
+      .regularText {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .BarContainer {
+        margin-left: 15px;
+        margin-right: 10px;
+        vertical-align: super;
+      }
+
+      .conditionsText {
+        display: inline-block;
+        width: 130px;
+        text-align: right;
+        vertical-align: super;
+      }
+    }
+  }
+}
