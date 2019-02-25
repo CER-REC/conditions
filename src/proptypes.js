@@ -10,3 +10,14 @@ export const conditionsPerYear = PropTypes.shape({
 });
 
 export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);
+
+export const ConditionsByCommodityOrInstrument = PropTypes.shape({
+  prefix: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  commodity: PropTypes.string.isRequired,
+});
+
+export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
+  ConditionsByCommodityOrInstrument,
+);

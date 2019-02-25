@@ -12,8 +12,8 @@ import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
 import './styles.scss';
-import { allConditionsPerYear } from '../../proptypes';
-import { conditionCountsByYear } from '../../mockData';
+import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 
 const description = 'components.featureDescription.theme';
@@ -34,7 +34,7 @@ const ViewThree = props => (
         {props.selected.feature === 'instrument'
           ? (
             <InstrumentsLegend
-              data={[]}
+              data={props.conditionCountsByCommodity.counts}
               onChange={noop}
             />
           )
@@ -97,6 +97,9 @@ ViewThree.propTypes = {
   conditionCountsByYear: PropTypes.shape({
     counts: allConditionsPerYear.isRequired,
   }).isRequired,
+  conditionCountsByCommodity: PropTypes.shape({
+    counts: allConditionsByCommodityOrInstrument.isRequired,
+  }).isRequired,
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
@@ -115,6 +118,7 @@ export default connect(
   ({ selected }) => ({
     selected,
     conditionCountsByYear,
+    conditionCountsByCommodity,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
