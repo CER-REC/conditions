@@ -1,16 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import FeatureDescription from '.';
-
-const description = 'components.featureDescription.theme';
-const feature = 'theme';
 
 describe('Components|FeatureDescription', () => {
   describe('with props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<FeatureDescription description={description} feature={feature} />);
+      wrapper = shallow(<FeatureDescription feature="theme" />);
     });
 
     test('should render', () => {
