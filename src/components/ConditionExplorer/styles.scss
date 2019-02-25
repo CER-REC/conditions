@@ -2,6 +2,8 @@
 @import '../../styles/fontVariables.scss';
 
 .ConditionExplorer {
+   touch-action: none;
+
   .keyword {
     user-select: none;
 
@@ -38,7 +40,7 @@
   }
 
   .guide {
-    fill: #fff;
+    fill: #164EF8;
     stroke: $LinksTextButtons;
   }
 }
