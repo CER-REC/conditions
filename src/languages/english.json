@@ -28,22 +28,20 @@
       "STANDARD_CONDITION": "Standard Condition"
     },
     "instrument": {
-      "category": {
-        "ROUTING": "Routing",
-        "CONSTRUCTION": "Construction",
-        "OPENING": "Opening",
-        "ABANDONMENT": "Abandonment",
-        "SAFETY": "Safety",
-        "TARIFFS": "Tariffs",
-        "MISC": "Misc."
-      },
-      "type": {
-        "OIL": "Oil",
-        "GAS": "Gas",
-        "POWER": "Power",
-        "ANY_COMMODITY_TYPES": "Any Commodity Types",
-        "NOT_SPECIFIED": "Not Specified"
-      }
+      "ROUTING": "Routing",
+      "CONSTRUCTION": "Construction",
+      "OPENING": "Opening",
+      "ABANDONMENT": "Abandonment",
+      "SAFETY": "Safety",
+      "TARIFFS": "Tariffs",
+      "MISC": "Misc."
+    },
+    "instrumentCommodityType": {
+      "OIL": "Oil",
+      "GAS": "Gas",
+      "POWER": "Power",
+      "ANY_COMMODITY_TYPES": "Any Commodity Types",
+      "NOT_SPECIFIED": "Not Specified"
     },
     "phase": {
       "includesAll": "Includes All Phases of Constr.",
@@ -96,15 +94,28 @@
     },
     "featureTypesDescription": {
       "theme": {
-        "SECURITY": "Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
-        "MANAGEMENT_SYSTEM": "Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
-        "FINANCIAL": "Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header."
+        "ADMINISTRATIVE": "types of conditions that ensure filings are made.",
+        "DAMAGE_PREVENTION": "types of conditions that ensure reduction and prevention of damage.",
+        "EMERGENCY_MANAGEMENT": "types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.",
+        "ENFORCEMENT": "types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.",
+        "ENVIRONMENTAL_PROTECTION": "types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.",
+        "FINANCIAL": "types of conditions that ensure a company’s financial resposibilities are met.",
+        "INTEGRITY_MANAGEMENT": "types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.",
+        "MANAGEMENT_SYSTEM": "types of conditions that apply when a project is transeferred to another company. Ensures all Management systems are in place and the new company knows its requirements.",
+        "SAFETY_MANAGEMENT": "types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.",
+        "SECURITY": "types of conditions that ensure that project facilities are monitored and secured.",
+        "SOCIO_ECONOMIC": "types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).",
+        "STANDARD_CONDITION": "types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.",
+        "SUNSET_CLAUSE": "types of conditions that ensure that projects/phases begin in a specific period of time."
       },
       "instrument": {
-        "category": {
-          "ROUTING": "OPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nGPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.",
-          "CONSTRUCTION": "GC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nOC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this."
-        }
+        "ROUTING": "Missing: description",
+        "CONSTRUCTION": "Missing: description",
+        "ABANDONMENT": "Missing: description",
+        "OPENING": "Missing: description",
+        "MISC": "Missing: description",
+        "SAFETY": "Missing: description",
+        "TARIFFS": "Missing: description"
       }
     },
     "featureMenu": {

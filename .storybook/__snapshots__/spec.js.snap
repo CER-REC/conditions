@@ -1961,20 +1961,54 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     className="FeatureTypesDescription"
   >
     <h4
-      data-heading="SECURITY"
+      data-heading="ADMINISTRATIVE"
     >
-      Security
+      Administrative
     </h4>
     <p>
-      Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+      <span>
+        types of conditions that ensure filings are made.
+      </span>
     </p>
     <h4
-      data-heading="MANAGEMENT_SYSTEM"
+      data-heading="DAMAGE_PREVENTION"
     >
-      Management System
+      Damage Prevention
     </h4>
     <p>
-      Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+      <span>
+        types of conditions that ensure reduction and prevention of damage.
+      </span>
+    </p>
+    <h4
+      data-heading="EMERGENCY_MANAGEMENT"
+    >
+      Emergency Management
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.
+      </span>
+    </p>
+    <h4
+      data-heading="ENFORCEMENT"
+    >
+      Enforcement
+    </h4>
+    <p>
+      <span>
+        types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.
+      </span>
+    </p>
+    <h4
+      data-heading="ENVIRONMENTAL_PROTECTION"
+    >
+      Environmental Protection
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.
+      </span>
     </p>
     <h4
       data-heading="FINANCIAL"
@@ -1982,7 +2016,79 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
       Financial
     </h4>
     <p>
-      Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+      <span>
+        types of conditions that ensure a company’s financial resposibilities are met.
+      </span>
+    </p>
+    <h4
+      data-heading="INTEGRITY_MANAGEMENT"
+    >
+      Integrity Management
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.
+      </span>
+    </p>
+    <h4
+      data-heading="MANAGEMENT_SYSTEM"
+    >
+      Management System
+    </h4>
+    <p>
+      <span>
+        types of conditions that apply when a project is transeferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+      </span>
+    </p>
+    <h4
+      data-heading="SAFETY_MANAGEMENT"
+    >
+      Safety Management
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.
+      </span>
+    </p>
+    <h4
+      data-heading="SECURITY"
+    >
+      Security
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that project facilities are monitored and secured.
+      </span>
+    </p>
+    <h4
+      data-heading="SOCIO_ECONOMIC"
+    >
+      Socio-Economic
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).
+      </span>
+    </p>
+    <h4
+      data-heading="STANDARD_CONDITION"
+    >
+      Standard Condition
+    </h4>
+    <p>
+      <span>
+        types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.
+      </span>
+    </p>
+    <h4
+      data-heading="SUNSET_CLAUSE"
+    >
+      Sunset Clause
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that projects/phases begin in a specific period of time.
+      </span>
     </p>
   </div>
 </div>
@@ -2002,22 +2108,17 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     </h4>
     <p>
       <span
-        className="color-ROUTING"
+        style={
+          Object {
+            "color": "rgb(14, 43, 140)",
+          }
+        }
       >
-        OPL
+        Missing
+        :
       </span>
       <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
-      </span>
-    </p>
-    <p>
-      <span
-        className="color-ROUTING"
-      >
-        GPL
-      </span>
-      <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+         description
       </span>
     </p>
     <h4
@@ -2027,22 +2128,117 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     </h4>
     <p>
       <span
-        className="color-CONSTRUCTION"
+        style={
+          Object {
+            "color": "rgb(39, 165, 249)",
+          }
+        }
       >
-        GC
+        Missing
+        :
       </span>
       <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+         description
       </span>
     </p>
+    <h4
+      data-heading="ABANDONMENT"
+    >
+      Abandonment
+    </h4>
     <p>
       <span
-        className="color-CONSTRUCTION"
+        style={
+          Object {
+            "color": "rgb(22, 78, 248)",
+          }
+        }
       >
-        OC
+        Missing
+        :
       </span>
       <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="OPENING"
+    >
+      Opening
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(22, 78, 248)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="MISC"
+    >
+      Misc.
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(212, 169, 42)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="SAFETY"
+    >
+      Safety
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(201, 4, 194)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="TARIFFS"
+    >
+      Tariffs
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(195, 230, 179)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
       </span>
     </p>
   </div>

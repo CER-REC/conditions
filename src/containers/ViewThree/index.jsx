@@ -8,6 +8,7 @@ import InstrumentsLegend from '../../components/InstrumentsLegend';
 import StreamGraph from '../../components/StreamGraph';
 import BubbleChart from '../../components/BubbleChart';
 import FeatureDescription from '../../components/FeatureDescription';
+import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
 import './styles.scss';
@@ -69,7 +70,7 @@ const ViewThree = props => (
         <FeatureDescription feature={feature} description={description} />
       </section>
       <section className="typesDescription">
-        <FeatureDescription feature={feature} description={description} />
+        <FeatureTypesDescription feature={props.selected.feature} />
       </section>
     </section>
     <section className="row">
