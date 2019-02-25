@@ -169,18 +169,18 @@ describe('Components|SearchBar/SearchContent', () => {
       );
       wrapper.setState({ mode: 'advanced' });
     });
-    test('onChange when findAny is true', () => {
+    test('onChange when the option selected is any', () => {
       const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
-      dropdown.props().onChange();
-      expect(spy).toBeCalledTimes(1);
-      expect(spy).toBeCalledWith(false);
-    });
-    test('onChange when findAny is false', () => {
-      wrapper.setProps({ findAny: false });
-      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
-      dropdown.props().onChange();
+      dropdown.props().onChange('any');
       expect(spy).toBeCalledTimes(1);
       expect(spy).toBeCalledWith(true);
+    });
+    test('onChange when the option selected is all', () => {
+      wrapper.setProps({ findAny: false });
+      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
+      dropdown.props().onChange('all');
+      expect(spy).toBeCalledTimes(1);
+      expect(spy).toBeCalledWith(false);
     });
   });
 

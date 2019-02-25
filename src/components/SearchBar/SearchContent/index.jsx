@@ -15,20 +15,13 @@ library.add(
 class SearchContent extends React.PureComponent {
   static propTypes = {
     keywords: PropTypes.shape({
-      include: PropTypes.arrayOf(PropTypes.string),
-      exclude: PropTypes.arrayOf(PropTypes.string),
-    }),
+      include: PropTypes.arrayOf(PropTypes.string).isRequired,
+      exclude: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }).isRequired,
     updateKeywords: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
     findAnyOnChange: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
-  }
-
-  static defaultProps = {
-    keywords: PropTypes.shape({
-      include: [],
-      exclude: [],
-    }),
   }
 
   constructor(props) {
@@ -45,7 +38,7 @@ class SearchContent extends React.PureComponent {
       <React.Fragment key={word}>
         <li className="liText"> {word} </li>
         <li className="deleteButton">
-          <button type="button" {...handleInteraction(this.deleteWord, [word, type])}>
+          <button type="button" {...handleInteraction(this.deleteWord, word, type)}>
             <Icon className="iconInline timesIcon" icon="times" />
           </button>
         </li>
@@ -55,8 +48,7 @@ class SearchContent extends React.PureComponent {
 
   keyWordsRender = keywords => (<span>{keywords.join(', ')} </span>)
 
-  deleteWord = (obj) => {
-    const [word, type] = obj;
+  deleteWord = (word, type) => {
     const type2 = type === 'include' ? 'exclude' : 'include';
     const { keywords } = this.props;
     const updatedKeywords = {
@@ -184,11 +176,7 @@ class SearchContent extends React.PureComponent {
               values={{
                 dropdown: (<Dropdown
                   options={['any', 'all']}
-                  onChange={
-                    () => (this.props.findAny
-                      ? this.props.findAnyOnChange(false)
-                      : this.props.findAnyOnChange(true))
-                    }
+                  onChange={v => this.props.findAnyOnChange(v === 'any')}
                   className="dropDown"
                   selectedOption={this.props.findAny ? 'any' : 'all'}
                   optionID="components.searchBar.findWords.options"
