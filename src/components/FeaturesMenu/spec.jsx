@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { FormattedMessage } from 'react-intl';
 
 import FeaturesMenu from '.';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';

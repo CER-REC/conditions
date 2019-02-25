@@ -16,8 +16,6 @@ import { allConditionsPerYear } from '../../proptypes';
 import { conditionCountsByYear } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 
-const featureOrder = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
-
 const description = 'components.featureDescription.theme';
 const feature = 'theme';
 
