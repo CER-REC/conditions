@@ -108,16 +108,16 @@ export default class PhysicsVariant extends React.Component {
       bodiesChanged = bodiesChanged || bodyChanged;
       if (bodyChanged <= 0.01) bodyChanged = 0;
       // If the circle has stopped moving, increase its friction
-      if (body.collisionFilter.category === circleCategory && !bodiesChanged) {
+      if (body.collisionFilter.category === circleCategory && !bodyChanged) {
         body.frictionAir = 0.2;
       }
 
-      if (body.collisionFilter.category === resettingCategory && !bodiesChanged) {
+      if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
         body.collisionFilter.category = placeholderCategory;
       }
       // Check if any keywords that have been displaced can move back
       if (body.collisionFilter.category === visibleTextCategory
-        && body.render.lastCollision + 2633 <= update.source.timing.timestamp) {
+        && body.render.lastCollision + 5633 <= update.source.timing.timestamp) {
       // eslint-disable-next-line object-curly-newline
         const { x, y, width, height } = body.render.originalData.outline;
         const originalBounds = {
@@ -182,7 +182,7 @@ export default class PhysicsVariant extends React.Component {
       Matter.Body.setPosition(body, targetPos);
       Matter.Body.setAngularVelocity(body, 0);
       Matter.Body.setAngle(body, 0);
-    }, 666);
+    }, 1666);
   };
 
   calculatePosition = (keyword) => {
