@@ -13,19 +13,19 @@
       "title": "Trends & Definitions"
     },
     "theme": {
-      "SECURITY": "Security",
-      "MANAGEMENT_SYSTEM": "Management System",
-      "FINANCIAL": "Financial",
+      "ADMINISTRATIVE": "Administrative",
       "DAMAGE_PREVENTION": "Damage Prevention",
-      "SAFETY_MANAGEMENT": "Safety Management",
-      "SOCIO_ECONOMIC": "Socio-Economic",
       "EMERGENCY_MANAGEMENT": "Emergency Management",
       "ENFORCEMENT": "Enforcement",
-      "SUNSET_CLAUSE": "Sunset Clause",
-      "ADMINISTRATIVE": "Administrative",
       "ENVIRONMENTAL_PROTECTION": "Environmental Protection",
+      "FINANCIAL": "Financial",
       "INTEGRITY_MANAGEMENT": "Integrity Management",
-      "STANDARD_CONDITION": "Standard Condition"
+      "MANAGEMENT_SYSTEM": "Management System",
+      "SAFETY_MANAGEMENT": "Safety Management",
+      "SECURITY": "Security",
+      "SOCIO_ECONOMIC": "Socio-Economic",
+      "STANDARD_CONDITION": "Standard Condition",
+      "SUNSET_CLAUSE": "Sunset Clause"
     },
     "instrument": {
       "ROUTING": "Routing",
@@ -44,34 +44,32 @@
       "NOT_SPECIFIED": "Not Specified"
     },
     "phase": {
-      "includesAll": "Includes All Phases of Constr.",
-      "notConstruction": "Not Construction Related",
-      "postConstruction": "Post Construction Phase",
-      "priorConstruction": "Prior to Construction Phase",
-      "expiryDate": "Expiry Date of Reg. Instr.",
-      "duringConstruction": "During Construction Phase",
-      "abandonment": "Abandonment",
-      "unspecified": "Unspecified",
+      "ABANDONMENT": "Abandonment",
+      "DURING_CONSTRUCTION_PHASE": "During Construction Phase",
+      "EXPIRY_DATE_OF_REGULATORY_INSTRUMENT": "Expiry Date of Reg. Instr.",
       "INCLUDES_ALL_PHASES_OF_CONSTRUCTION": "Includes All Phases of Construction",
-      "PRIOR_TO_CONSTRUCTION_PHASE": "Prior to Construction Phase"
+      "NOT_CONSTRUCTION_RELATED": "Not Construction Related",
+      "POST_CONSTRUCTION_PHASE": "Post Construction Phase",
+      "PRIOR_TO_CONSTRUCTION_PHASE": "Prior to Construction Phase",
+      "UNSPECIFIED": "Unspecified"
     },
     "type": {
       "NON_STANDARD": "Non Standard",
       "STANDARD": "Standard"
     },
     "status": {
-      "inProgress": "In Progress",
+      "AMENDED": "Amended",
+      "AWAITING_FILING": "Awaiting Filing",
+      "AWAITING_IR_RESPONSE": "Awaiting IR Response",
       "CLOSED": "Closed",
-      "noFilingReq": "No Filing Required",
-      "awaitingFiling": "Awaiting Filing",
-      "overdueFiling": "Overdue Filing",
-      "UNDER_REVIEW": "Under Review",
-      "reviewComplete": "Review Complete",
-      "awaitingIR": "Awaiting IR Response",
-      "readyBoard": "Ready for Board Decision",
-      "furtherInfo": "Further Information Required",
-      "amended": "Amended",
-      "satisfactory": "Satisfactory"
+      "FURTHER_INFORMATION_REQUIRED": "Further Information Required",
+      "IN_PROGRESS": "In Progress",
+      "NO_FILING_REQUIRED": "No Filing Required",
+      "OVERDUE_FILING": "Overdue Filing",
+      "READY_FOR_BOARD_DECISION": "Ready for Board Decision",
+      "REVIEW_COMPLETE": "Review Complete",
+      "SATISFACTORY": "Satisfactory",
+      "UNDER_REVIEW": "Under Review"
     },
     "filing": {
       "REQUIRED": "Filing Required",
@@ -107,6 +105,38 @@
         "SOCIO_ECONOMIC": "types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).",
         "STANDARD_CONDITION": "types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.",
         "SUNSET_CLAUSE": "types of conditions that ensure that projects/phases begin in a specific period of time."
+      },
+      "phase": {
+        "ABANDONMENT": "If a company wants to abandon a facility, it must submit an application, including an environmental and socio-economic assessment, to the NEB. NEB staff will assess the application and the NEB may hold a public hearing. If the abandonment is approved, the NEB may impose conditions and inspect the abandonment activities.",
+        "DURING_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility. The NEB will monitor company compliance through inspections of construction activities and by reviewing the company’s post-construction monitoring reports.",
+        "EXPIRY_DATE_OF_REGULATORY_INSTRUMENT": "Some conditions apply when the regulatory instrument expires.",
+        "INCLUDES_ALL_PHASES_OF_CONSTRUCTION": "Some conditions apply at all phases of construction.",
+        "NOT_CONSTRUCTION_RELATED": "Some conditions apply outside of the construction context.",
+        "POST_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility. ",
+        "PRIOR_TO_CONSTRUCTION_PHASE": "Assigned to conditions that must be fulfilled before construction can begin. This includes conditions related to environmental and socio-economic assessments.",
+        "UNSPECIFIED": "Missing description"
+      },
+      "status": {
+        "AMENDED": "Missing description",
+        "AWAITING_FILING": "Missing description",
+        "AWAITING_IR_RESPONSE": "Missing description",
+        "CLOSED": "This status refers to a condition that has been fulfilled and no longer needs to be tracked.",
+        "FURTHER_INFORMATION_REQUIRED": "Missing description",
+        "IN_PROGRESS": "This status refers to a condition that continues to be tracked and has not been fulfilled.",
+        "NO_FILING_REQUIRED": "Missing description",
+        "OVERDUE_FILING": "Missing description",
+        "READY_FOR_BOARD_DECISION": "Missing description",
+        "REVIEW_COMPLETE": "Missing description",
+        "SATISFACTORY": "Missing description",
+        "UNDER_REVIEW": "Missing description"
+      },
+      "type": {
+        "STANDARD": "a standard condition will apply generally to project approvals and have been developed over time at the NEB to ensure consistency.",
+        "NON_STANDARD": "a non-standard condition captures project-specific concerns that cannot be encompassed by standard conditions."
+      },
+      "filing": {
+        "REQUIRED": "a company must file a document with the NEB in order to comply with a condition.",
+        "NOT_REQUIRED": "a company must not file a document with the NEB in order to comply with a condition"
       },
       "instrument": {
         "ROUTING": "Missing: description",
