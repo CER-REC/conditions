@@ -41,7 +41,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Types.SELECTED_FEATURE: return { ...state, feature: action.payload.feature };
+    case Types.SELECTED_FEATURE: return { ...state, subFeature: '', feature: action.payload.feature };
     case Types.SELECTED_SUBFEATURE: return {
       ...state, subFeature: action.payload.subFeature,
     };

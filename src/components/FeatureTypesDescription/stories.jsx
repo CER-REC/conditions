@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { storiesForComponent, fixInfo } from '../../../.storybook/utils';
+import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import FeatureTypesDescription from '.';
 import ReadMe from './README.md';
