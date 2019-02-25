@@ -6,36 +6,40 @@ import ReadMe from './README.md';
 import WheelList from '.';
 
 const companyList = [
-  'CompanyA',
-  'CompanyB',
-  'CompanyC',
-  'CompanyD',
-  'CompanyE',
-  'CompanyF',
-  'CompanyG',
-  'CompanyHmoreThan15Characters',
-  'CompanyI',
-  'CompanyJ',
-  'CompanyK',
-  'CompanyL',
-  'CompanyM',
+  'Company A',
+  'Company B',
+  'Company C',
+  'Company D',
+  'Company E',
+  'Company F',
+  'Company G',
+  'Company H moreThan15Characters',
+  'Company I',
+  'Company J',
+  'Company K',
+  'Company L',
+  'Company M',
 ];
 
 const locationList = [
-  'LocationA',
-  'LocationB',
-  'LocationC',
-  'LocationD',
-  'LocationE',
-  'LocationF',
-  'LocationG',
-  'LocationH',
-  'LocationI',
-  'LocationJ',
-  'LocationKmoreThan15Characters',
-  'LocationL',
-  'LocationM',
+  'Calgary',
+  'Camrose--Drumheller',
+  'Edmonton',
+  'Lethbridge--Medicine Hat',
+  'Red Deer',
+  'Wood Buffalo--Cold Lake',
 ];
+
+const innerRadius = 150;
+const outerRadius = 200;
+const magenta = '255, 0, 255';
+const exampleDivProps = {
+  width: 300,
+  height: 300,
+  border: `1px dashed rgba(${magenta}, 0.4)`,
+  boxShadow: `0 0 0px ${outerRadius - innerRadius}px rgba(${magenta}, 0.05)`,
+  borderRadius: '50%',
+};
 
 const onChange = () => index => ({ selected: index });
 
@@ -45,22 +49,25 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
     name: 'underReview',
   }))
   .add('with company data', () => (
-    <div style={{width: 400, height: 400, border: '1px solid magenta'}}>
+    <div style={exampleDivProps}>
       <WheelList
-        mode="company"
-        companyList={companyList}
-        {...getInteractionProps()}
+        innerRadius={innerRadius}
+        outerRadius={outerRadius}
+        listContent={companyList}
         selected={4}
+        {...getInteractionProps()}
       />
     </div>
-  ), {interaction: { actions: { onChange } } })
+  ), { interaction: { actions: { onChange } } })
   .add('with location data', () => (
-    <div style={{width: 400, height: 400, border: '1px solid magenta'}}>
+    <div style={exampleDivProps}>
       <WheelList
-        mode="location"
-        locationList={locationList}
+        innerRadius={innerRadius}
+        outerRadius={innerRadius}
+        showingLocation
+        listContent={locationList}
         selected={2}
         {...getInteractionProps()}
       />
     </div>
-  ), {interaction: { actions: { onChange } } });
+  ), { interaction: { actions: { onChange } } });

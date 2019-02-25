@@ -8,8 +8,10 @@ company names or location.
 ## Requirements
 
 * [ ] Displays always one company or location even when the wheel is spinning
-* [ ] Displays a list of 5 items
+* [ ] Displays a list of 7 items
 * [ ] The items scale in size according to the distance from the currently selected company
+* [ ] Unselected items are cropped if they intersect the wheel
+* [ ] The selected item is shown over-top of the wheel
 
 ## Interaction Requirements
 
@@ -30,5 +32,3 @@ analytics test results.
 ## Unit Testing
 
 TODO: Provide table of automated unit test results and code coverage metrics.
-
-

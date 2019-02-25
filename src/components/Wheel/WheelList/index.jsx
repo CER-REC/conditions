@@ -7,56 +7,48 @@ import List from '../../List';
 import './styles.scss';
 
 class WheelList extends React.PureComponent {
-  static propTypes = {
-    className: PropTypes.string.isRequired,
-    mode: PropTypes.oneOf(['location', 'company']).isRequired,
-    onChange: PropTypes.func.isRequired,
-    selected: PropTypes.number.isRequired,
-    companyList: PropTypes.arrayOf(PropTypes.node).isRequired,
-    locationList: PropTypes.arrayOf(PropTypes.node).isRequired,
-  }
+  handleOnChange = element => this.props.onChange(element.props['data-index'])
 
-  handleOnChange = (element) => {
-    this.props.onChange(element.props['data-index']);
-  }
+  wrapIndex = i => (
+    (this.props.selected + i + this.props.listContent.length)
+    % this.props.listContent.length
+  );
 
   render() {
-    const [label, listInput] = (this.props.mode === 'company')
-      ? [
-        <FormattedMessage id="components.companyWheel.list.company">
-          {text => <span className="label">{text}</span>}
-        </FormattedMessage>,
-        this.props.companyList,
-      ]
-      : [
+    const label = (this.props.showingLocation)
+      ? (
         <FormattedMessage id="components.companyWheel.list.location">
           {text => <span className="label">{text}</span>}
-        </FormattedMessage>,
-        this.props.locationList,
-      ];
+        </FormattedMessage>
+      )
+      : (
+        <FormattedMessage id="components.companyWheel.list.company">
+          {text => <span className="label">{text}</span>}
+        </FormattedMessage>
+      );
 
     const indicesToShow = [
-      (this.props.selected + listInput.length - 3) % listInput.length,
-      (this.props.selected + listInput.length - 2) % listInput.length,
-      (this.props.selected + listInput.length - 1) % listInput.length,
-      this.props.selected,
-      (this.props.selected + listInput.length + 1) % listInput.length,
-      (this.props.selected + listInput.length + 2) % listInput.length,
-      (this.props.selected + listInput.length + 3) % listInput.length,
+      this.wrapIndex(-3),
+      this.wrapIndex(-2),
+      this.wrapIndex(-1),
+      this.wrapIndex(0),
+      this.wrapIndex(1),
+      this.wrapIndex(2),
+      this.wrapIndex(3),
     ];
 
     const classes = [
       'threeAway',
       'twoAway',
       'oneAway',
-      'selected',
+      'dummy',
       'oneAway',
       'twoAway',
       'threeAway',
     ];
 
     const listElements = indicesToShow.map((listIndex, displayIndex) => {
-      const text = listInput[listIndex];
+      const text = this.props.listContent[listIndex];
       const trimmed = (text.length < 15)
         ? text
         : `${text.substring(0, 13)}...`;
@@ -65,30 +57,56 @@ class WheelList extends React.PureComponent {
         <span
           className={classes[displayIndex]}
           data-index={listIndex}
-          key={trimmed}
+          // eslint-disable-next-line react/no-array-index-key
+          key={`${trimmed}-${displayIndex}`}
         >
-          {trimmed}
+          {text}
         </span>
       );
     });
+
+    const selectedText = this.props.listContent[this.props.selected];
+    const selectedElement = (
+      <span
+        className="selected"
+        style={{ width: (this.props.outerRadius) }}
+      >
+        {selectedText}
+      </span>
+    );
 
     return (
       <div
         className={classNames('WheelList', this.props.className)}
         onScroll={this.scrollHandler}
       >
-        <div className="labelContainer">{label}</div>
-        <div className="listContainer">
-          <List
-            elevated
-            items={listElements}
-            onChange={i => this.handleOnChange(listElements[i])}
-            selected={3}
-          />
+        <div className="labelContainer">{label} {selectedElement}</div>
+        <div className="listContainer" style={{ width: (this.props.innerRadius * 2), height: (this.props.innerRadius * 2) }}>
+          <div className="list">
+            <List
+              elevated
+              items={listElements}
+              onChange={i => this.handleOnChange(listElements[i])}
+              selected={3}
+            />
+          </div>
         </div>
       </div>
     );
   }
 }
 
+WheelList.propTypes = {
+  innerRadius: PropTypes.number.isRequired,
+  outerRadius: PropTypes.number.isRequired,
+  className: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  selected: PropTypes.number.isRequired,
+  showingLocation: PropTypes.bool,
+  listContent: PropTypes.arrayOf(PropTypes.node).isRequired,
+};
+
+WheelList.defaultProps = {
+  showingLocation: false,
+};
 export default WheelList;
