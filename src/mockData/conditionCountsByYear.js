@@ -2,7 +2,7 @@ export default {
   counts: [
     {
       feature: 'theme',
-      subfeature: 'SECURITY',
+      subFeature: 'SECURITY',
       years: {
         2010: 0,
         2011: 12,
@@ -15,7 +15,7 @@ export default {
     },
     {
       feature: 'theme',
-      subfeature: 'MANAGEMENT_SYSTEM',
+      subFeature: 'MANAGEMENT_SYSTEM',
       years: {
         2010: 11,
         2011: 23,
@@ -29,7 +29,7 @@ export default {
     },
     {
       feature: 'theme',
-      subfeature: 'FINANCIAL',
+      subFeature: 'FINANCIAL',
       years: {
         2010: 14,
         2011: 30,
@@ -43,7 +43,7 @@ export default {
     },
     {
       feature: 'instrument',
-      subfeature: 'ROUTING',
+      subFeature: 'ROUTING',
       years: {
         2010: 1,
         2011: 2,
@@ -57,7 +57,7 @@ export default {
     },
     {
       feature: 'instrument',
-      subfeature: 'CONSTRUCTION',
+      subFeature: 'CONSTRUCTION',
       years: {
         2010: 12,
         2011: 2,
@@ -71,7 +71,7 @@ export default {
     },
     {
       feature: 'phase',
-      subfeature: 'INCLUDES_ALL_PHASES_OF_CONSTRUCTION',
+      subFeature: 'INCLUDES_ALL_PHASES_OF_CONSTRUCTION',
       years: {
         2010: 13,
         2011: 1,
@@ -85,7 +85,7 @@ export default {
     },
     {
       feature: 'phase',
-      subfeature: 'PRIOR_TO_CONSTRUCTION_PHASE',
+      subFeature: 'PRIOR_TO_CONSTRUCTION_PHASE',
       years: {
         2010: 131,
         2011: 12,
@@ -99,7 +99,7 @@ export default {
     },
     {
       feature: 'status',
-      subfeature: 'CLOSED',
+      subFeature: 'CLOSED',
       years: {
         2010: 1,
         2011: 2,
@@ -113,7 +113,7 @@ export default {
     },
     {
       feature: 'status',
-      subfeature: 'UNDER_REVIEW',
+      subFeature: 'UNDER_REVIEW',
       years: {
         2010: 5,
         2011: 6,
@@ -127,7 +127,7 @@ export default {
     },
     {
       feature: 'type',
-      subfeature: 'STANDARD',
+      subFeature: 'STANDARD',
       years: {
         2010: 12,
         2011: 2,
@@ -141,7 +141,7 @@ export default {
     },
     {
       feature: 'type',
-      subfeature: 'NON_STANDARD',
+      subFeature: 'NON_STANDARD',
       years: {
         2010: 0,
         2011: 12,
@@ -154,7 +154,7 @@ export default {
     },
     {
       feature: 'filing',
-      subfeature: 'REQUIRED',
+      subFeature: 'REQUIRED',
       years: {
         2010: 1,
         2011: 2,
@@ -168,7 +168,7 @@ export default {
     },
     {
       feature: 'filing',
-      subfeature: 'NOT_REQUIRED',
+      subFeature: 'NOT_REQUIRED',
       years: {
         2010: 12,
         2011: 2,

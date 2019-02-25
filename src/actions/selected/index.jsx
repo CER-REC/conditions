@@ -33,7 +33,7 @@ export const setSelectedCondition = condition => ({
 
 const initialState = {
   feature: 'theme',
-  subfeature: '',
+  subFeature: '',
   company: '',
   project: '',
   condition: '',
@@ -43,7 +43,7 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case Types.SELECTED_FEATURE: return { ...state, feature: action.payload.feature };
     case Types.SELECTED_SUBFEATURE: return {
-      ...state, subfeature: action.payload.subFeature,
+      ...state, subFeature: action.payload.subFeature,
     };
     case Types.SELECTED_COMPANY: return { ...state, company: action.payload.company };
     case Types.SELECTED_PROJECT: return { ...state, project: action.payload.project };

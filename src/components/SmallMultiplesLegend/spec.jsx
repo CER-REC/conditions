@@ -9,7 +9,7 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 const data = [
   {
     feature: 'theme',
-    subfeature: 'SECURITY',
+    subFeature: 'SECURITY',
     years: {
       2018: 12,
       2019: 1,
@@ -18,7 +18,7 @@ const data = [
   },
   {
     feature: 'theme',
-    subfeature: 'MANAGEMENT_SYSTEM',
+    subFeature: 'MANAGEMENT_SYSTEM',
     years: {
       2018: 7,
       2019: 8,
@@ -27,7 +27,7 @@ const data = [
   },
   {
     feature: 'theme',
-    subfeature: 'FINANCIAL',
+    subFeature: 'FINANCIAL',
     years: {
       2018: 20,
       2019: 37,
@@ -63,7 +63,7 @@ describe('Components|SmallMultiplesLegend', () => {
           feature="theme"
           data={data.slice(0, 1)}
           onChange={spy}
-          selected={data[0].subfeature}
+          selected={data[0].subFeature}
         />
       ));
     });
@@ -78,7 +78,7 @@ describe('Components|SmallMultiplesLegend', () => {
     test('should call the onChange function on List item change', () => {
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy).toHaveBeenLastCalledWith(data[0].subfeature);
+      expect(spy).toHaveBeenLastCalledWith(data[0].subFeature);
     });
 
     test('should render the List component with the first item selected', () => {
@@ -105,7 +105,7 @@ describe('Components|SmallMultiplesLegend', () => {
         const listItemWrapper = listItemsWrapper.at(i);
 
         expect(listItemWrapper.type()).toBe(LegendItem);
-        expect(listItemWrapper.prop('title')).toBe(data[i].subfeature);
+        expect(listItemWrapper.prop('title')).toBe(data[i].subFeature);
         expect(listItemWrapper.prop('data')).toEqual(data[i]);
       }
     });
@@ -127,11 +127,11 @@ describe('Components|SmallMultiplesLegend', () => {
       expect(legendItemsWrapper).toHaveLength(4);
     });
 
-    test('should call the onChange function with null on List item change to the all item', () => {
+    test('should call the onChange function with empty string on List item change to the all item', () => {
       // All item is at the top
       wrapper.find(List).prop('onChange')(0);
 
-      expect(spy).toHaveBeenLastCalledWith(null);
+      expect(spy).toHaveBeenLastCalledWith('');
     });
 
     test('should call the onChange function with the data name on List item change', () => {
@@ -139,7 +139,7 @@ describe('Components|SmallMultiplesLegend', () => {
         // Account for all item at the beginning
         wrapper.find(List).prop('onChange')(i + 1);
 
-        expect(spy).toHaveBeenLastCalledWith(data[i].subfeature);
+        expect(spy).toHaveBeenLastCalledWith(data[i].subFeature);
       }
 
       expect(spy).toHaveBeenCalledTimes(data.length);
@@ -163,7 +163,7 @@ describe('Components|SmallMultiplesLegend', () => {
           feature="theme"
           data={data}
           onChange={noop}
-          selected={data[2].subfeature}
+          selected={data[2].subFeature}
         />
       ));
 
@@ -185,7 +185,7 @@ describe('Components|SmallMultiplesLegend', () => {
     });
 
     test('should apply faded to LegendItem components when a highlightName is provided', () => {
-      const highlightName = data[2].subfeature;
+      const highlightName = data[2].subFeature;
 
       wrapper = shallow((
         <SmallMultiplesLegend

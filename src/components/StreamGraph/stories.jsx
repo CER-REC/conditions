@@ -12,5 +12,6 @@ storiesForComponent('Components|StreamGraph', module, ReadMe)
     <Streamgraph
       projectData={conditionCountsByYear.counts}
       feature="theme"
+      subFeature=""
     />
   ));

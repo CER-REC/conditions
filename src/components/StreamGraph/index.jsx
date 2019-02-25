@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   VictoryAxis,
   VictoryArea,
@@ -18,6 +19,7 @@ class StreamGraph extends React.Component {
   static propTypes = {
     projectData: allConditionsPerYear.isRequired,
     feature: featureTypes.isRequired,
+    subFeature: PropTypes.string.isRequired,
   }
 
   constructor(props) {
@@ -30,15 +32,19 @@ class StreamGraph extends React.Component {
   handleOnChange = controlYear => this.setState({ controlYear });
 
   streamLayers() {
-    const filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    if (this.props.subFeature !== '') {
+      filteredData = filteredData
+        .filter(featureData => featureData.subFeature === this.props.subFeature);
+    }
     const streamLayers = filteredData.map(v => (
       <VictoryArea
-        key={`${v.feature}-${v.subfeature}`}
-        name={v.subfeature}
+        key={`${v.feature}-${v.subFeature}`}
+        name={v.subFeature}
         data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
         style={{
           data: {
-            fill: features[v.feature][v.subfeature],
+            fill: features[v.feature][v.subFeature],
             strokeWidth: 0,
           },
         }}

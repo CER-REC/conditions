@@ -19,13 +19,13 @@ const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
   const maxCount = getMaxCount(data);
   const items = data.map(conditionsData => (
     <LegendItem
-      key={conditionsData.subfeature}
-      title={conditionsData.subfeature}
+      key={conditionsData.subFeature}
+      title={conditionsData.subFeature}
       feature={feature}
       data={conditionsData}
       color={conditionsData.color}
       max={maxCount}
-      faded={hasHighlight && (conditionsData.subfeature !== highlightName)}
+      faded={hasHighlight && (conditionsData.subFeature !== highlightName)}
     />
   ));
 
@@ -35,10 +35,10 @@ const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
 const SmallMultiplesLegend = (props) => {
   const filteredData = getFilteredProjectData(props.data, props.feature);
   const dataIndex = filteredData.findIndex(conditionsData => (
-    conditionsData.subfeature === props.selected
+    conditionsData.subFeature === props.selected
   ));
   const hasHighlight = !!filteredData.find(conditionsData => (
-    conditionsData.subfeature === props.highlightName
+    conditionsData.subFeature === props.highlightName
   ));
   const selectedIndex = filteredData.length === 1 ? 0 : dataIndex + 1;
   const legendDataItems = getLegendDataItems(
@@ -49,7 +49,7 @@ const SmallMultiplesLegend = (props) => {
   );
   const onItemChange = (index) => {
     const legendItem = legendDataItems[index];
-    const category = legendItem.props.all ? null : legendItem.props.title;
+    const category = legendItem.props.all ? '' : legendItem.props.title;
 
     props.onChange(category);
   };

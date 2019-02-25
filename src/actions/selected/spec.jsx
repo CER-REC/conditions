@@ -7,10 +7,10 @@ describe('actions/selected', () => {
     expect(selected.reducer(undefined, action)).toHaveProperty('feature', feature);
   });
 
-  it('should update the subfeature state based on the action', () => {
-    const subFeature = 'security';
+  it('should update the subFeature state based on the action', () => {
+    const subFeature = 'SECURITY';
     const action = selected.setSelectedSubFeature(subFeature);
-    expect(selected.reducer(undefined, action)).toHaveProperty('subfeature', subFeature);
+    expect(selected.reducer(undefined, action)).toHaveProperty('subFeature', subFeature);
   });
 
   it('should update the company state based on the action', () => {

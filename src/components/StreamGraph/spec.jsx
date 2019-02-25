@@ -12,6 +12,7 @@ describe('Components|StreamGraph', () => {
         projectData={conditionCountsByYear.counts}
         handleOnChange={handleOnChange}
         feature="theme"
+        subFeature=""
       />);
     });
 

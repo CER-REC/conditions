@@ -16,7 +16,7 @@ import { allConditionsPerYear } from '../../proptypes';
 import { conditionCountsByYear } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 
-const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
+const featureOrder = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
 const description = 'components.featureDescription.theme';
 const feature = 'theme';
@@ -44,7 +44,7 @@ const ViewThree = props => (
             <SmallMultiplesLegend
               feature={props.selected.feature}
               data={props.conditionCountsByYear.counts}
-              onChange={noop}
+              onChange={props.setSelectedSubFeature}
             />
           )}
       </section>
@@ -61,6 +61,7 @@ const ViewThree = props => (
             <StreamGraph
               projectData={props.conditionCountsByYear.counts}
               feature={props.selected.feature}
+              subFeature={props.selected.subFeature}
             />
           )}
       </section>
@@ -100,8 +101,10 @@ ViewThree.propTypes = {
   }).isRequired,
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
+    subFeature: PropTypes.string,
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
+  setSelectedSubFeature: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {
@@ -117,5 +120,6 @@ export default connect(
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
+    setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
   },
 )(ViewThree);

@@ -9,12 +9,12 @@ import { conditionCountsByYear } from '../../mockData';
 const selectedOptions = conditionCountsByYear.counts
   .reduce((acc, next) => ({
     ...acc,
-    [next.subfeature]: next.subfeature,
+    [next.subFeature]: next.subFeature,
   }), { All: '' });
 const highlightOptions = conditionCountsByYear.counts
   .reduce((acc, next) => ({
     ...acc,
-    [next.subfeature]: next.subfeature,
+    [next.subFeature]: next.subFeature,
   }), { All: '' });
 
 storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
