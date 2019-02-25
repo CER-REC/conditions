@@ -124,7 +124,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         selectedWords={['deer']}
       />,
     );
-    test('onClick of hierarchy text, should call the spy with inc', () => {
+    test('onClick of hierarchy text, should change the state with inc', () => {
       const updatedWrapper = wrapper.find('.hierarchy');
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().sortHierarchy).toBe('inc');
@@ -169,31 +169,84 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
 
   describe('onClick for category', () => {
     let wrapper;
-    let spy;
     beforeEach(() => {
-      spy = jest.fn();
       wrapper = shallow(
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClick={spy}
+          onClick={noop}
           closeTab={noop}
           selectedWords={['deer']}
         />,
       );
     });
 
-    test('onClick on not highlighted category (gray), must call onClick prop', () => {
-      const updatedWrapper = wrapper.find('.categories li').first();
+    test('onClick on not highlighted category (gray), must change state', () => {
+      const updatedWrapper = wrapper.find('.categories li').at(1);
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().selectedCategory).toHaveLength(1);
     });
 
-    test('onClick on highlighted prop, must call on ClickUpdateProp ', () => {
-      const updatedWrapper = wrapper.find('.categories li').first();
+    test('onClick on highlighted prop, must change state ', () => {
+      const updatedWrapper = wrapper.find('.categories li').at(1);
       updatedWrapper.simulate('click', eventFuncs);
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().selectedCategory).toHaveLength(0);
+    });
+
+    test('onClick on all resets the categories', () => {
+      const updatedWrapper = wrapper.find('.categories li');
+      updatedWrapper.at(1).simulate('click', eventFuncs);
+      expect(wrapper.state().selectedCategory).toHaveLength(1);
+      updatedWrapper.first().simulate('click', eventFuncs);
+      expect(wrapper.state().selectedCategory).toHaveLength(0);
+    });
+  });
+
+  describe('sorting keywords appropriately', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(
+        <SuggestedKeywordsPopout
+          categories={categories}
+          suggestedKeywords={words}
+          onClick={noop}
+          closeTab={noop}
+          selectedWords={['deer']}
+        />,
+      );
+    });
+
+    test('with sortBy as alphabetical, and hierarchy as inc', () => {
+      wrapper.setState({ sortBy: 'alphabetical', sortHierarchy: 'inc' });
+      const updatedWrapper = wrapper.find('KeywordList').props().keywords;
+      const firstWord = updatedWrapper[0][0];
+      const secondWord = updatedWrapper[1][0];
+      expect(firstWord < secondWord).toBe(true);
+    });
+
+    test('with sortBy as alphabetical, and hierarchy as dec', () => {
+      wrapper.setState({ sortBy: 'alphabetical', sortHierarchy: 'dec' });
+      const updatedWrapper = wrapper.find('KeywordList').props().keywords;
+      const firstWord = updatedWrapper[0][0];
+      const secondWord = updatedWrapper[1][0];
+      expect(firstWord > secondWord).toBe(true);
+    });
+
+    test('with sortBy as frequency, and hierarchy as inc', () => {
+      wrapper.setState({ sortBy: 'frequency', sortHierarchy: 'inc' });
+      const updatedWrapper = wrapper.find('KeywordList').props().keywords;
+      const firstCondition = updatedWrapper[0][1].conditions;
+      const secondCondition = updatedWrapper[1][1].conditions;
+      expect(firstCondition < secondCondition).toBe(true);
+    });
+
+    test('with sortBy as frequency, and hierarchy as dec', () => {
+      wrapper.setState({ sortBy: 'frequency', sortHierarchy: 'dec' });
+      const updatedWrapper = wrapper.find('KeywordList').props().keywords;
+      const firstCondition = updatedWrapper[0][1].conditions;
+      const secondCondition = updatedWrapper[1][1].conditions;
+      expect(firstCondition > secondCondition).toBe(true);
     });
   });
 });

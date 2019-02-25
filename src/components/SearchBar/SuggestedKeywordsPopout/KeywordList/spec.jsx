@@ -3,23 +3,50 @@ import { shallow } from 'enzyme';
 import KeywordList from '.';
 import './styles.scss';
 
-const suggestedKeywords = {
-  deer: { conditions: 1200, category: ['wildlife & habitat'] },
-  alberta: { conditions: 400, category: ['administration & filings'] },
-};
+const keywords = [
+  ['deer', { conditions: 1200, category: ['wildlife & habitat'] }],
+  ['alberta', { conditions: 400, category: ['administration & filings'] }],
+];
 const selectedWords = ['deer'];
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
+  describe('error testing for props', () => {
+    test('if first part of tuple is not a string', () => {
+      console.error = jest.fn();
+      console.error.mockClear();
+      shallow(
+        <KeywordList
+          selectedWords={selectedWords}
+          keywords={[[12, { conditions: 1200, category: ['wildlife & habitat'] }]]}
+          onClick={noop}
+        />,
+      );
+      expect(console.error).toHaveBeenCalledTimes(1);
+    });
+    test('if length of tuple is greater than two', () => {
+      console.error = jest.fn();
+      console.error.mockClear();
+      shallow(
+        <KeywordList
+          selectedWords={selectedWords}
+          keywords={[['deer', { conditions: 1200, category: ['wildlife & habitat'] }, 'test']]}
+          onClick={noop}
+        />,
+      );
+      expect(console.error).toHaveBeenCalledTimes(1);
+    });
+  });
+
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
         <KeywordList
           selectedWords={selectedWords}
-          suggestedKeywords={suggestedKeywords}
+          keywords={keywords}
           onClick={noop}
         />,
       );
@@ -48,7 +75,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
       wrapper = shallow(
         <KeywordList
           selectedWords={selectedWords}
-          suggestedKeywords={suggestedKeywords}
+          keywords={keywords}
           onClick={spy}
         />,
       );

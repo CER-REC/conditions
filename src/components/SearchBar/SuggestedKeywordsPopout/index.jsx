@@ -40,7 +40,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
         <li
           key={i}
           {...handleInteraction(this.categoryOnClick, i)}
-          className={classNames('categoryList', 'upperCase', { selectedCategory: selectedCategory.includes(i) })}
+          className={classNames('categoryList', 'upperCase', { selectedCategory: (selectedCategory.length === 0 && i === 'all') ? true : selectedCategory.includes(i) })}
         > { i }
         </li>
       );
@@ -49,24 +49,43 @@ class SuggestedKeywordsPopout extends React.PureComponent {
 
   categoryOnClick = (li) => {
     const { selectedCategory } = this.state;
+    if (li === 'all') return (this.setState({ selectedCategory: [] }));
     if (!selectedCategory.includes(li)) {
       return this.setState({ selectedCategory: selectedCategory.concat(li) });
     }
     return this.setState({ selectedCategory: selectedCategory.filter(v => v !== li) });
   }
 
-  sortHierarchy = () => {
-    const sortArray = ['none', 'inc', 'dec'];
-    this.setState((({ sortHierarchy }) => (
-      { sortHierarchy: sortArray[(sortArray.indexOf(sortHierarchy) + 1) % 3] }
-    )));
+  sortKeywords = () => {
+    const { sortBy, sortHierarchy, selectedCategory } = this.state;
+    const { suggestedKeywords } = this.props;
+    let filteredKeywords = Object.entries(suggestedKeywords);
+    if (selectedCategory.length > 0) {
+      filteredKeywords = filteredKeywords
+        .filter(([, { category }]) => category.some(v => (selectedCategory.includes(v))));
+    }
+    if (sortBy.length > 0 && sortHierarchy !== 'none') {
+      const direction = (sortHierarchy === 'dec') ? -1 : 1;
+      filteredKeywords = (sortBy === 'alphabetical')
+        ? filteredKeywords.sort(([a], [b]) => a.localeCompare(b) * direction)
+        : filteredKeywords.sort(([, a], [, b]) => (a.conditions - b.conditions) * direction);
+    }
+    return filteredKeywords;
   }
 
-  changeSort = sort => (this.state.sortBy === sort
-    ? this.setState({ sortBy: '' })
-    : this.setState({ sortBy: sort }))
+  sortHierarchyOnClick = () => {
+    const sortArray = ['none', 'inc', 'dec'];
+    this.setState(({ sortHierarchy }) => ({
+      sortHierarchy: sortArray[(sortArray.indexOf(sortHierarchy) + 1) % 3],
+    }));
+  }
+
+  changeSortOnClick = sort => (
+    this.setState(({ sortBy }) => ({ sortBy: (sortBy === sort ? '' : sort) }))
+  )
 
   render() {
+    const keywords = this.sortKeywords();
     return (
       <div className="SuggestedKeywordsPopout">
         <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.suggestedKeywords">
@@ -89,7 +108,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
             {text => (
               <span
                 className={this.state.sortBy === 'frequency' ? 'selectedSort' : null}
-                {...handleInteraction(this.changeSort, 'frequency')}
+                {...handleInteraction(this.changeSortOnClick, 'frequency')}
               > {text}
               </span>
             )}
@@ -99,12 +118,12 @@ class SuggestedKeywordsPopout extends React.PureComponent {
             {text => (
               <span
                 className={this.state.sortBy === 'alphabetical' ? 'selectedSort' : null}
-                {...handleInteraction(this.changeSort, 'alphabetical')}
+                {...handleInteraction(this.changeSortOnClick, 'alphabetical')}
               >{text}
               </span>
             )}
           </FormattedMessage>
-          <span className="hierarchy" {...handleInteraction(this.sortHierarchy)}>
+          <span className="hierarchy" {...handleInteraction(this.sortHierarchyOnClick)}>
             <span className="arrow">
               <svg viewBox="0 0 427.5 427.5">
                 <g>
@@ -132,7 +151,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
         </div>
         <KeywordList
           selectedWords={this.props.selectedWords}
-          suggestedKeywords={this.props.suggestedKeywords}
+          keywords={keywords}
           onClick={this.props.onClick}
         />
         <FormattedMessage id="components.searchBar.close">

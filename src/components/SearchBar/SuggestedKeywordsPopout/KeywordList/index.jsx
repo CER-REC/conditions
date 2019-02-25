@@ -14,12 +14,23 @@ class KeywordList extends React.PureComponent {
   static propTypes = {
     selectedWords: PropTypes.arrayOf(PropTypes.string),
     onClick: PropTypes.func.isRequired,
-    suggestedKeywords: PropTypes.objectOf(
-      PropTypes.shape({
+    keywords: PropTypes.arrayOf((props, propName, componentName, location, propFullName) => {
+      const value = props[propName];
+      if (!Array.isArray(value) || value.length !== 2) {
+        return new Error(
+          `Invalid prop \`${propFullName}\` supplied to \`${componentName}\`. Expected keyword tuple.`,
+        );
+      }
+      if (typeof value[0] !== 'string') {
+        return new Error(
+          `Invalid prop \`${propFullName}[0]\` supplied to \`${componentName}\`. Expected keyword tuple.`,
+        );
+      }
+      return PropTypes.checkPropTypes({
         conditions: PropTypes.number.isRequired,
         category: PropTypes.arrayOf(PropTypes.string).isRequired,
-      }).isRequired,
-    ).isRequired,
+      }, value[1], `${propFullName}[1]`, componentName);
+    }).isRequired,
   }
 
   static defaultProps = {
@@ -35,20 +46,21 @@ class KeywordList extends React.PureComponent {
   };
 
   findMaxConditions = () => (
-    Math.max(...Object.values(this.props.suggestedKeywords).map(({ conditions }) => conditions))
+    Math.max(...this.props.keywords.map(([, { conditions }]) => conditions))
   );
 
   render() {
-    const { selectedWords, suggestedKeywords } = this.props;
+    const { selectedWords, keywords } = this.props;
     return (
       <div className="KeywordList">
         <ul>
           {
-            Object.entries(suggestedKeywords).map(([key, value]) => {
+            keywords.map(([key, value]) => {
               const [icon, iconClass, selectedColor, textStyle] = (selectedWords.includes(key))
                 ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
                 : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
               const maxConditions = this.findMaxConditions();
+
               const conditions = (value.conditions / maxConditions) * 200;
               const remainingSpace = (200 - conditions);
               return (

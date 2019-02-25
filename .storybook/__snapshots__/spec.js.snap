@@ -6815,7 +6815,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
             :  
           </li>
           <li
-            className="categoryList upperCase"
+            className="categoryList upperCase selectedCategory"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
