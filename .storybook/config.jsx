@@ -34,15 +34,15 @@ const viewports = {
   },
   desktop: {
     name: 'Desktop',
-    styles: { width: '1170px', height: '1024px' },
+    styles: { width: '1200px', height: '100%' },
   },
   laptop: {
     name: 'Laptop',
-    styles: { width: '970px', height: '1024px' },
+    styles: { width: '1000px', height: '100%' },
   },
   ipad: {
     name: 'iPad',
-    styles: { width: '768px', height: '1024px' },
+    styles: { width: '768px', height: '100%' },
   },
 };
 configureViewport({ viewports, defaultViewport: 'fullscreen' });
@@ -52,20 +52,6 @@ addDecorator(withOptions({
   hierarchyRootSeparator: /\|/, // Categories with |
   hierarchySeparator: /\//, // Sub-stories with /
 }));
-
-// Wrap the story in css classes for each of the parent components in its path
-addDecorator((storyFn, context) => {
-  const { kind } = context;
-  if (kind.startsWith('Components|')) {
-    // Take everything after components and before the lowest component's folder
-    const componentTree = kind.split('|')[1].split('/').slice(0, -1);
-    // From the inside out, wrap it in the parent component's name as a classname
-    return componentTree.reverse().reduce((acc, next) => (
-      <div className={next}>{acc}</div>
-    ), storyFn());
-  }
-  return storyFn();
-});
 
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 

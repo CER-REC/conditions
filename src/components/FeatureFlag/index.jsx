@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
 import './styles.scss';
+import { features } from '../../constants';
 
 const FeatureFlag = (props) => {
   const { intl } = props;
@@ -13,17 +14,21 @@ const FeatureFlag = (props) => {
     ? intl.formatMessage({ id: `common.legend.${props.name}` })
     : `${intl.formatMessage({ id: `common.features.${props.chartType}` })} - ${intl.formatMessage({ id: `common.${props.chartType}.${props.name}` })} - ${props.count}`;
 
+  const color = props.chartType === 'legend'
+    ? 'transparent'
+    : features[props.chartType][props.name];
+
   const bar = (
     <div
       className="Bar"
-      style={{ backgroundColor: props.color, content: '', width: `${flagSize}px` }}
+      style={{ backgroundColor: color, width: `${flagSize}px` }}
       title={title}
     />
   );
 
   const tip = props.count <= 10
     ? null
-    : <div className="FlagTip" style={{ borderLeftColor: props.color }} />;
+    : <div className="FlagTip" style={{ borderLeftColor: color }} />;
 
   return <div className="FeatureFlag">{bar}{tip}</div>;
 };
@@ -37,8 +42,6 @@ FeatureFlag.propTypes = {
   name: PropTypes.string.isRequired,
   /** The amount of conditions */
   count: PropTypes.number.isRequired,
-  /** color of the flag item */
-  color: PropTypes.string.isRequired,
 };
 
 export default injectIntl(FeatureFlag);

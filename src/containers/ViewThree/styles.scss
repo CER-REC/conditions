@@ -1,60 +1,14 @@
+@import '../../styles/grid';
+
 .ViewThree {
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 500px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  row-gap: calc(97px/12);
-  column-gap:  calc(97px/10);
-  padding: calc(97px/12*2);
-
-  > section { overflow: hidden; }
-
-  .features {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-
-  .legend {
-    grid-column: span 4;
-    grid-row: span 1;
-  }
-
-  .chart {
-    grid-column: span 6;
-    grid-row: span 1;
-  }
-
-  .featureDescription {
-    grid-column: span 6;
-    grid-row: span 1;
-  }
-
-  .typesDescription {
-    grid-column: span 6;
-    grid-row: span 1;
-  }
-
-  .selectedCompany {
-    grid-column: span 4;
-    grid-row: span 1;
-  }
-
-  .conditionDetails {
-    grid-column: span 8;
-    grid-row: span 1;
-  }
+  @include grid((
+    features: 21,
+    legend: 37,
+    chart: 56,
+    featureDescription: 59,
+    typesDescription: 56,
+    selectedCompany: 38,
+    conditionDetails: 77,
+  ));
 }
 
-.ViewThree.layoutOnly > section {
-  background: #F1F3F4;
-
-  &:after {
-    content: attr(class);
-    display: block;
-    text-align: center;
-    font-size: 50px;
-  }
-
-  > * { display: none; }
-}

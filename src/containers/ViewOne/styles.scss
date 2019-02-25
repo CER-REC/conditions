@@ -1,61 +1,39 @@
+@import '../../styles/grid';
 @import '../../styles/fontVariables';
 @import '../../styles/colors';
 
 .ViewOne {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 10% auto 10%;
-  row-gap: calc(97px/12);
-  column-gap:  calc(97px/10);
-  padding: calc(97px/12*2);
+  @include grid((
+    introduction: 116,
+    explorer: 116,
+    browseBy: 57,
+    infoBar: 58,
+  )) {
+    height: 100vh;
 
-  .introduction {
-    grid-column: span 12;
-    grid-row: span 1;
+    .introduction {
+      height: 100px;
+      h1 {
+        font-family: $fira-sans-condensed-bold;
+        font-size: 24px;
+        color: $Black51;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
 
-    h1 {
-      font-family: $fira-sans-condensed-bold;
-      font-size: 24px;
-      color: $Black51;
-      text-transform: uppercase;
-      margin-bottom: 4px;
+      span {
+        font-family: $fira-sans-condensed;
+        font-size: 14px;
+        color: $Black19;
+      }
     }
 
-    span {
-      font-family: $fira-sans-condensed;
-      font-size: 14px;
-      color: $Black19;
+    .explorer {
+      height: calc(100vh - 200px);
+    }
+
+    .browseBy, .infoBar {
+      height: 100px;
     }
   }
-
-  .explorer {
-    grid-column: span 12;
-    grid-row: span 1;
-  }
-
-  .browseBy {
-    grid-column: span 6;
-    grid-row: span 1;
-  }
-
-  .infoBar {
-    grid-column: span 6;
-    grid-row: span 1;
-  }
-}
-
-.ViewOne.layoutOnly > section {
-  background: #F1F3F4;
-
-  &:after {
-    content: attr(class);
-    display: block;
-    text-align: center;
-    font-size: 50px;
-  }
-
-  > * { display: none; }
 }

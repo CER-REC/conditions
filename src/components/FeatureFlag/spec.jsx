@@ -11,7 +11,7 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
         chartType="theme"
         color="purple"
         count={5}
-        name="damagePrevention"
+        name="DAMAGE_PREVENTION"
       />);
     });
 
@@ -29,7 +29,7 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
       chartType="theme"
       color="green"
       count={15}
-      name="environmentalProtection"
+      name="ENVIRONMENTAL_PROTECTION"
     />);
     expect(wrapper.find('.FlagTip').type()).toBe('div');
   });
@@ -39,7 +39,7 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
       chartType="theme"
       color="green"
       count={4}
-      name="environmentalProtection"
+      name="ENVIRONMENTAL_PROTECTION"
     />);
     expect(wrapper.contains('.FlagTip')).toBe(false);
   });
@@ -49,7 +49,7 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
       chartType="theme"
       color="green"
       count={0}
-      name="environmentalProtection"
+      name="ENVIRONMENTAL_PROTECTION"
     />);
     expect(wrapper.contains('.FlagTip')).toBe(false);
   });

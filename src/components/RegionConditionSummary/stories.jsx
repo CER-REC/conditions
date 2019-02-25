@@ -5,26 +5,25 @@ import ReadMe from './README.md';
 import RegionConditionSummary from '.';
 
 const themeData = [
-  { color: 'pink', description: 'standardCondition', count: 50 },
-  { color: 'red', description: 'integrityManagement', count: 20 },
-  { color: 'green', description: 'enviromentalProtect', count: 43 },
-  { color: 'blue', description: 'administrative', count: 15 },
-  { color: 'purple', description: 'sunsetClause', count: 5 },
-  { color: 'yellow', description: 'enforcement', count: 15 },
-  { color: 'orange', description: 'emergencyManagement', count: 3 },
-  { color: 'navy', description: 'socioEconomic', count: 15 },
-  { color: 'plum', description: 'safetyManagement', count: 3 },
-  { color: 'olive', description: 'damagePrevention', count: 3 },
-  { color: 'coral', description: 'financial', count: 3 },
-  { color: 'cadetBlue', description: 'security', count: 3 },
-  { color: 'darkGreen', description: 'managementSystem', count: 3 },
-  { color: 'black', description: 'noThemeIndicated', count: 4 },
-  { color: '#e4e4e4', description: 'all', count: 0 },
+  { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
+  { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
+  { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
+  { feature: 'theme', description: 'ADMINISTRATIVE', count: 15 },
+  { feature: 'theme', description: 'SUNSET_CLAUSE', count: 5 },
+  { feature: 'theme', description: 'ENFORCEMENT', count: 15 },
+  { feature: 'theme', description: 'EMERGENCY_MANAGEMENT', count: 3 },
+  { feature: 'theme', description: 'SOCIO_ECONOMIC', count: 15 },
+  { feature: 'theme', description: 'SAFETY_MANAGEMENT', count: 3 },
+  { feature: 'theme', description: 'DAMAGE_PREVENTION', count: 3 },
+  { feature: 'theme', description: 'FINANCIAL', count: 3 },
+  { feature: 'theme', description: 'SECURITY', count: 3 },
+  { feature: 'theme', description: 'MANAGEMENT_SYSTEM', count: 3 },
+  { feature: 'theme', description: 'NO_THEME_INDICATED', count: 4 },
 ];
 
 const typeData = [
-  { color: 'pink', description: 'standardCondition', count: 50 },
-  { color: 'purple', description: 'nonStandardCondition', count: 100 },
+  { feature: 'standard', description: 'STANDARD', count: 50 },
+  { feature: 'standard', description: 'NON_STANDARD', count: 100 },
 ];
 
 storiesForComponent('Components|RegionConditionSummary', module, ReadMe)

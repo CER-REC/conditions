@@ -100,10 +100,29 @@
     "instrumentsLegend": {
       "all": ""
     },
-    "SearchBar": {
+    "searchBar": {
+      "close": "",
+      "reset": "",
+      "filter": {
+        "projectYear": "",
+        "projectStatus": {
+          "projectStatusText": "",
+          "OPEN": "",
+          "CLOSED": "",
+          "CANCELLED": ""
+        }
+      },
       "tab": {
         "filter": "",
         "find": ""
+      },
+      "suggestedKeywords": {
+        "selectFrom": "",
+        "suggestedKeywords": ""
+      },
+      "highlightSummary": {
+        "showingAll": "",
+        "highlightConditions": ""
       }
     },
     "modal": {
