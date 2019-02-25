@@ -100,10 +100,40 @@
     "instrumentsLegend": {
       "all": ""
     },
-    "SearchBar": {
+    "searchBar": {
+      "close": "",
+      "reset": "",
+      "filter": {
+        "projectYear": "",
+        "projectStatus": {
+          "projectStatusText": "",
+          "OPEN": "",
+          "CLOSED": "",
+          "CANCELLED": ""
+        }
+      },
       "tab": {
         "filter": "",
         "find": ""
+      },
+      "suggestedKeywordsPrompt": {
+        "selectFrom": "",
+        "suggestedKeywords": ""
+      },
+      "highlightSummary": {
+        "showingAll": "",
+        "highlightConditions": ""
+      },
+      "suggestedKeywordsPopout": {
+        "suggestedKeywords": "",
+        "keywordsDescription": "",
+        "keywordsHere": "",
+        "viewBy": "",
+        "sortBy": "",
+        "frequency": "",
+        "alphabetical": "",
+        "none": "",
+        "conditions": ""
       }
     },
     "modal": {
@@ -140,16 +170,22 @@
       "xAxis": "",
       "yAxis": "",
       "title": ""
+    },
+    "browseByBtn": {
+      "projectsBy": "",
+      "conditionsBy": "",
+      "company": "",
+      "location": ""
     }
   },
   "views": {
     "view1": {
+      "header": {
+        "title": "",
+        "subtitle": ""
+      },
       "footer": {
-        "skip": "",
-        "projectsBy": "",
-        "conditionsBy": "",
-        "company": "",
-        "location": ""
+        "skip": ""
       }
     }
   }

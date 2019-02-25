@@ -34,11 +34,15 @@ const viewports = {
   },
   desktop: {
     name: 'Desktop',
-    styles: { width: '970px', height: '1024px' },
+    styles: { width: '1200px', height: '100%' },
+  },
+  laptop: {
+    name: 'Laptop',
+    styles: { width: '1000px', height: '100%' },
   },
   ipad: {
     name: 'iPad',
-    styles: { width: '768px', height: '1024px' },
+    styles: { width: '768px', height: '100%' },
   },
 };
 configureViewport({ viewports, defaultViewport: 'fullscreen' });
@@ -49,31 +53,29 @@ addDecorator(withOptions({
   hierarchySeparator: /\//, // Sub-stories with /
 }));
 
-// Wrap the story in css classes for each of the parent components in its path
-addDecorator((storyFn, context) => {
-  const { kind } = context;
-  if (kind.startsWith('Components|')) {
-    // Take everything after components and before the lowest component's folder
-    const componentTree = kind.split('|')[1].split('/').slice(0, -1);
-    // From the inside out, wrap it in the parent component's name as a classname
-    return componentTree.reverse().reduce((acc, next) => (
-      <div className={next}>{acc}</div>
-    ), storyFn());
-  }
-  return storyFn();
-});
-
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
 // automatically import all files named stories.jsx
 const documentationStories = requireContext('../documentation/', true, /stories.jsx$/);
 const componentStories = requireContext('../src/', true, /stories.jsx$/);
+const containerOrder = [
+  './containers/ViewOne/stories.jsx',
+  './containers/ViewTwo/stories.jsx',
+  './containers/ViewThree/stories.jsx',
+  './containers/Footer/stories.jsx',
+];
 function loadStories() {
   documentationStories.keys()
     // Sorting Documentation|Introduction to the top
     .sort((a, b) => (a.startsWith('./Introduction/') ? -1 : a.localeCompare(b)))
     .forEach(filename => documentationStories(filename));
-  componentStories.keys().forEach(filename => componentStories(filename));
+  componentStories.keys()
+    .sort((a, b) => {
+      if (!a.startsWith('./containers/') || !b.startsWith('./containers/')) { return 0; }
+      // This is a container, so sort it by usage
+      return containerOrder.indexOf(a) - containerOrder.indexOf(b);
+    })
+    .forEach(filename => componentStories(filename));
 }
 
 enzyme({ adapter: new Adapter() });

@@ -53,8 +53,6 @@ export default class ConditionExplorer extends React.Component {
   componentDidMount() {
     // Check every 100ms for 5 seconds for a font change
     this.cancelFontDetection = setTimeoutChain(this.testFontSize, 100, 50);
-    // TODO: Find better solution for first mount blanking
-    this.testFontSize();
   }
 
   getKeywords() {
@@ -140,8 +138,8 @@ export default class ConditionExplorer extends React.Component {
       <svg
         ref={this.svgRef}
         className="ConditionExplorer"
-        width="500"
-        height="500"
+        width="100%"
+        height="100%"
         style={{ border: '1px solid #000' }}
       >
         <g className="keyword color0 textVisible">

@@ -4,11 +4,11 @@ import FeaturesLegend from '.';
 import ReadMe from './README.md';
 
 const legendItems = [
-  { color: 'pink', description: 'security', disabled: true },
-  { color: 'red', description: 'managementSystem', disabled: false },
-  { color: 'green', description: 'financial', disabled: false },
-  { color: 'blue', description: 'damagePrevention', disabled: false },
-  { color: 'purple', description: 'socioEconomic', disabled: false },
+  { description: 'SECURITY', disabled: true },
+  { description: 'MANAGEMENT_SYSTEM', disabled: false },
+  { description: 'FINANCIAL', disabled: false },
+  { description: 'DAMAGE_PREVENTION', disabled: false },
+  { description: 'SOCIO_ECONOMIC', disabled: false },
 ];
 
 storiesForComponent('Components|FeaturesLegend', module, ReadMe)

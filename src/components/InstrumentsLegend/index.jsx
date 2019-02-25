@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import LegendItem from './LegendItem';
+import BubbleLegend from './BubbleLegend';
 import './styles.scss';
 
 const getFormattedData = (data) => {
@@ -18,7 +19,6 @@ const getFormattedData = (data) => {
       if (!indicators) {
         indicators = {
           types: [],
-          color: commodity.color,
         };
         categoryIndicators[commodity.category] = indicators;
       }
@@ -31,7 +31,6 @@ const getFormattedData = (data) => {
   const formattedData = Object.entries(categoryIndicators).map(([category, indicator]) => ({
     name: category,
     indicators: indicator.types,
-    color: indicator.color,
   }));
 
   return formattedData;
@@ -48,7 +47,6 @@ const getLegendDataItems = (data, indicatorTypes) => {
         key={indicatorsData.name}
         title={indicatorsData.name}
         indicators={indicators}
-        color={indicatorsData.color}
       />
     );
   });
@@ -84,7 +82,6 @@ const InstrumentsLegend = (props) => {
         key="all"
         title=""
         indicators={[]}
-        color=""
       />
     ));
   }
@@ -100,6 +97,7 @@ const InstrumentsLegend = (props) => {
         onChange={onItemChange}
         guideLine
       />
+      <BubbleLegend className="BubbleLegend" maxConditions={1600} radiusOfMaxBubble={100} />
     </div>
   );
 };
@@ -111,7 +109,6 @@ InstrumentsLegend.propTypes = {
     parentName: PropTypes.string.isRequired,
     children: PropTypes.arrayOf(PropTypes.shape({
       category: PropTypes.string.isRequired,
-      color: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
   /** The name of the category to set as selected */

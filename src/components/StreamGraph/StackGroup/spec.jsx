@@ -2,64 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import StackGroup from '.';
+import { conditionCountsByYear } from '../../../mockData';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-const projectData = [
-  {
-    name: 'themeOne',
-    key: 2420,
-    color: 'pink',
-    graphData: [
-      { date: 2010, count: 0 },
-      { date: 2011, count: 12 },
-      { date: 2012, count: 23 },
-      { date: 2013, count: 30 },
-      { date: 2014, count: 150 },
-      { date: 2015, count: 260 },
-      { date: 2016, count: 420 },
-      { date: 2017, count: 436 },
-    ],
-  },
-  {
-    name: 'themeTwo',
-    key: 2420,
-    color: 'blue',
-    graphData: [
-      { date: 2010, count: 11 },
-      { date: 2011, count: 23 },
-      { date: 2012, count: 34 },
-      { date: 2013, count: 41 },
-      { date: 2014, count: 77 },
-      { date: 2015, count: 82 },
-      { date: 2016, count: 99 },
-      { date: 2017, count: 120 },
-    ],
-  },
-  {
-    name: 'themeThree',
-    key: 2420,
-    color: 'orange',
-    graphData: [
-      { date: 2010, count: 14 },
-      { date: 2011, count: 30 },
-      { date: 2012, count: 46 },
-      { date: 2013, count: 65 },
-      { date: 2014, count: 83 },
-      { date: 2015, count: 95 },
-      { date: 2016, count: 140 },
-      { date: 2017, count: 11 },
-    ],
-  },
-];
-
 const width = 350;
 const height = 200;
-const yearValues = projectData.reduce((acc, next) => {
-  next.graphData.forEach((data) => {
-    if (!acc[data.date]) { acc[data.date] = 0; }
-    acc[data.date] += data.count;
+const yearValues = conditionCountsByYear.counts.reduce((acc, next) => {
+  Object.entries(next.years).forEach(([date, count]) => {
+    if (!acc[date]) { acc[date] = 0; }
+    acc[date] += count;
   });
   return acc;
 }, {});
@@ -93,7 +46,7 @@ describe('Components|Streamgraph/StackGroup', () => {
       wrapper = shallow(
         <StackGroup
           onChange={spy}
-          projectData={projectData}
+          projectData={conditionCountsByYear.counts}
           stackProps={stackProps}
         />,
       );
@@ -190,7 +143,7 @@ describe('Components|Streamgraph/StackGroup', () => {
       wrapper = shallow(
         <StackGroup
           onChange={noop}
-          projectData={projectData}
+          projectData={conditionCountsByYear.counts}
           stackProps={stackProps}
         />,
       );
@@ -204,21 +157,21 @@ describe('Components|Streamgraph/StackGroup', () => {
       wrapper.setProps({ controlYear: 2010 });
       expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: 0,
-        yTop: 192.41,
+        yTop: 192.69,
         yBottom: height,
       });
 
       wrapper.setProps({ controlYear: 2012 });
       expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: yearSize * 2,
-        yTop: 168.74,
+        yTop: 169.88,
         yBottom: height,
       });
 
       wrapper.setProps({ controlYear: 2017 });
       expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: width,
-        yTop: 27.92,
+        yTop: 34.21,
         yBottom: height,
       });
     });
@@ -228,10 +181,10 @@ describe('Components|Streamgraph/StackGroup', () => {
       expect(wrapper.find('ChartIndicator').prop('label')).toBe(136);
 
       wrapper.setProps({ controlYear: 2015 });
-      expect(wrapper.find('ChartIndicator').prop('label')).toBe(437);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(177);
 
       wrapper.setProps({ controlYear: 2016 });
-      expect(wrapper.find('ChartIndicator').prop('label')).toBe(659);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(684);
     });
   });
 });
