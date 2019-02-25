@@ -59,7 +59,8 @@ describe('Components|CompanyWheel/WheelRay', () => {
     it('should render an item after the gap', () => {
       // rotation + the offset of the stripe
       // - the adjustment for the ray against the pipe + half of the reserved degrees
-      const positionAfterGap = rotation + 90 - (degreesPerItem) + 360 - reservedDegrees + reservedDegrees / 2;
+      const positionAfterGap = rotation + 90 - (degreesPerItem)
+        + 360 - reservedDegrees + reservedDegrees / 2;
       const transformValue = `translate(371 209) rotate(${positionAfterGap.toFixed(2)}, 0, 245)`;
       const { wrapper } = wrapperSetup({});
       expect(wrapper.children().findWhere(

@@ -50,12 +50,13 @@ class WheelRay extends React.Component {
       // TODO: split logic below to location ray and company ray?
 
       const componentToReturn = wheelType === 'Company'
-        ?(
+        ? (
           <g key={`${item._id}`} transform={transform}>
             <text key={`a${item._id}`} className="TextLabels">
               {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
             </text>
-            {/* This rect will be used to denote the letter separation in the location wheel or mark the search */}
+            {/* This rect will be used to denote the letter separation in the location wheel
+            also to can be used to mark the search */}
             <rect
               fill="red"
               y="-181"
@@ -65,6 +66,7 @@ class WheelRay extends React.Component {
             />
           </g>
         )
+        // DRAW LOCATION RAY: Move this down to the location ray component
         : (
           <g key={`${item._id}`} transform={transform}>
             <g style={{ transform: 'translate(0px, -19px) rotate(-90deg)' }}>
