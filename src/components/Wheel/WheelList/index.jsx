@@ -97,12 +97,19 @@ class WheelList extends React.PureComponent {
 }
 
 WheelList.propTypes = {
+  /** Inner radius of the wheel; used to crop unselected items */
   innerRadius: PropTypes.number.isRequired,
+  /** Outer radius of the wheel; used to crop the selected item */
   outerRadius: PropTypes.number.isRequired,
+  /** Additional classes to apply */
   className: PropTypes.string.isRequired,
+  /** Event handler, will receive the array index being selected */
   onChange: PropTypes.func.isRequired,
+  /** Index of the currently selected item in 'listContent' */
   selected: PropTypes.number.isRequired,
+  /** Toggle for Company or Location mode */
   showingLocation: PropTypes.bool,
+  /** Array of company/location names to pull the list from */
   listContent: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
