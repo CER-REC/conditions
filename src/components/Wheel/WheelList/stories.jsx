@@ -7,38 +7,37 @@ import WheelList from '.';
 
 const companyList = [
   'CompanyA',
-  'CompanyG',
-  'CompanyH',
-  'CompanyI',
   'CompanyB',
-  'CompanyF',
-  'CompanyJ',
-  'CompanyKmoreThan15Characters',
-  'CompanyL',
   'CompanyC',
   'CompanyD',
   'CompanyE',
+  'CompanyF',
+  'CompanyG',
+  'CompanyHmoreThan15Characters',
+  'CompanyI',
+  'CompanyJ',
+  'CompanyK',
+  'CompanyL',
   'CompanyM',
 ];
 
 const locationList = [
+  'LocationA',
+  'LocationB',
+  'LocationC',
+  'LocationD',
+  'LocationE',
+  'LocationF',
   'LocationG',
   'LocationH',
   'LocationI',
-  'LocationF',
-  'LocationO',
-  'LocationP',
-  'LocationA',
-  'LocationB',
-  'LocationL',
-  'LocationM',
-  'LocationZ',
-  'LocationC',
-  'LocationD',
   'LocationJ',
   'LocationKmoreThan15Characters',
-  'LocationE',
+  'LocationL',
+  'LocationM',
 ];
+
+const onChange = () => index => ({ selected: index });
 
 storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['onChange'] }))
@@ -46,18 +45,22 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
     name: 'underReview',
   }))
   .add('with company data', () => (
-    <WheelList
-      mode="company"
-      companyList={companyList}
-      {...getInteractionProps()}
-      selected={4}
-    />
-  ))
+    <div style={{width: 400, height: 400, border: '1px solid magenta'}}>
+      <WheelList
+        mode="company"
+        companyList={companyList}
+        {...getInteractionProps()}
+        selected={4}
+      />
+    </div>
+  ), {interaction: { actions: { onChange } } })
   .add('with location data', () => (
-    <WheelList
-      mode="location"
-      locationList={locationList}
-      selected={2}
-      {...getInteractionProps()}
-    />
-  ));
+    <div style={{width: 400, height: 400, border: '1px solid magenta'}}>
+      <WheelList
+        mode="location"
+        locationList={locationList}
+        selected={2}
+        {...getInteractionProps()}
+      />
+    </div>
+  ), {interaction: { actions: { onChange } } });

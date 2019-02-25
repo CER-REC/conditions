@@ -16,41 +16,76 @@ class WheelList extends React.PureComponent {
     locationList: PropTypes.arrayOf(PropTypes.node).isRequired,
   }
 
-  handleOnClick = () => {
-    this.props.onChange();
-  }
-
-  scrollHandler = (event) => {
-    console.log(event.target.clientY);
-    console.log(event.target);
+  handleOnChange = (element) => {
+    this.props.onChange(element.props['data-index']);
   }
 
   render() {
-    let message = <FormattedMessage id="components.companyWheel.list.company" />;
-    let listByMode = this.props.companyList;
-    if (this.props.mode === 'location') {
-      message = <FormattedMessage id="components.companyWheel.list.location" />;
-      listByMode = this.props.locationList;
-    }
-    const renderedList = listByMode.map((k) => {
-      if (k.length >= 15) {
-        k = `${k.substring(0, 13)}...`;
-      }
-      return k;
-    }).sort();
+    const [label, listInput] = (this.props.mode === 'company')
+      ? [
+        <FormattedMessage id="components.companyWheel.list.company">
+          {text => <span className="label">{text}</span>}
+        </FormattedMessage>,
+        this.props.companyList,
+      ]
+      : [
+        <FormattedMessage id="components.companyWheel.list.location">
+          {text => <span className="label">{text}</span>}
+        </FormattedMessage>,
+        this.props.locationList,
+      ];
+
+    const indicesToShow = [
+      (this.props.selected + listInput.length - 3) % listInput.length,
+      (this.props.selected + listInput.length - 2) % listInput.length,
+      (this.props.selected + listInput.length - 1) % listInput.length,
+      this.props.selected,
+      (this.props.selected + listInput.length + 1) % listInput.length,
+      (this.props.selected + listInput.length + 2) % listInput.length,
+      (this.props.selected + listInput.length + 3) % listInput.length,
+    ];
+
+    const classes = [
+      'threeAway',
+      'twoAway',
+      'oneAway',
+      'selected',
+      'oneAway',
+      'twoAway',
+      'threeAway',
+    ];
+
+    const listElements = indicesToShow.map((listIndex, displayIndex) => {
+      const text = listInput[listIndex];
+      const trimmed = (text.length < 15)
+        ? text
+        : `${text.substring(0, 13)}...`;
+
+      return (
+        <span
+          className={classes[displayIndex]}
+          data-index={listIndex}
+          key={trimmed}
+        >
+          {trimmed}
+        </span>
+      );
+    });
+
     return (
       <div
         className={classNames('WheelList', this.props.className)}
         onScroll={this.scrollHandler}
       >
-        {message}
-        <List
-          className="items-list"
-          elevated
-          items={renderedList}
-          onChange={this.handleOnClick}
-          selected={this.props.selected}
-        />
+        <div className="labelContainer">{label}</div>
+        <div className="listContainer">
+          <List
+            elevated
+            items={listElements}
+            onChange={i => this.handleOnChange(listElements[i])}
+            selected={3}
+          />
+        </div>
       </div>
     );
   }
