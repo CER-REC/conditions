@@ -116,13 +116,24 @@
         "filter": "",
         "find": ""
       },
-      "suggestedKeywords": {
+      "suggestedKeywordsPrompt": {
         "selectFrom": "",
         "suggestedKeywords": ""
       },
       "highlightSummary": {
         "showingAll": "",
         "highlightConditions": ""
+      },
+      "suggestedKeywordsPopout": {
+        "suggestedKeywords": "",
+        "keywordsDescription": "",
+        "keywordsHere": "",
+        "viewBy": "",
+        "sortBy": "",
+        "frequency": "",
+        "alphabetical": "",
+        "none": "",
+        "conditions": ""
       }
     },
     "modal": {

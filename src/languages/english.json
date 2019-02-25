@@ -126,13 +126,24 @@
         "filter": "Filter",
         "find": "Find Words"
       },
-      "suggestedKeywords": {
+      "suggestedKeywordsPrompt": {
         "selectFrom": "Select from",
         "suggestedKeywords": "Suggested\nKeywords"
       },
       "highlightSummary": {
         "showingAll": "Showing all projects from",
         "highlightConditions": "Highlighting conditions containing"
+      },
+      "suggestedKeywordsPopout": {
+        "suggestedKeywords": "Suggested Keywords",
+        "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords",
+        "keywordsHere": "here",
+        "viewBy": "View By",
+        "sortBy": "Sort by",
+        "frequency": "Frequency",
+        "alphabetical": "Alphabetical",
+        "none": "none",
+        "conditions": "{conditions} conditions"
       }
     },
     "modal": {
