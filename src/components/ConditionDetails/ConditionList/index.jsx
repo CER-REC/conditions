@@ -34,10 +34,12 @@ class ConditionList extends React.Component {
             <div className={item.marked ? 'marked' : 'unmarked'} />
             <BarContainer
               className={`binnedValue-${item.binnedValue}`}
-              items={[{
-                value: 1,
-                fill: item.fill,
-              }]}
+              items={
+                item.fill.map(color => ({
+                  value: 1,
+                  fill: color,
+                }))
+              }
             />
           </div>
         ));
@@ -58,7 +60,15 @@ class ConditionList extends React.Component {
 }
 
 ConditionList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    isInstrument: PropTypes.bool,
+    instrumentNumber: PropTypes.string,
+    instrumentIndex: PropTypes.number.isRequired,
+    itemIndex: PropTypes.number.isRequired,
+    binnedValue: PropTypes.number,
+    fill: PropTypes.arrayOf(PropTypes.string),
+    marked: PropTypes.bool,
+  })).isRequired,
   selectedItem: PropTypes.number,
   updateSelectedItem: PropTypes.func.isRequired,
 };

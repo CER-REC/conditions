@@ -23,7 +23,7 @@ export default [
     conditions: [
       {
         binnedValue: 3,
-        fill: 'pink',
+        fill: ['pink', 'green'],
         keywords: ['program'],
         text: `hello ${lorem}`,
         details: {
@@ -37,7 +37,7 @@ export default [
       },
       {
         binnedValue: 2,
-        fill: 'blue',
+        fill: ['blue', 'red'],
         keywords: ['program'],
         text: lorem,
         details: {
@@ -63,7 +63,7 @@ export default [
     conditions: [
       {
         binnedValue: 1,
-        fill: 'red',
+        fill: ['red'],
         keywords: ['program'],
         text: lorem,
         details: {
@@ -77,7 +77,7 @@ export default [
       },
       {
         binnedValue: 2,
-        fill: 'red',
+        fill: ['red'],
         keywords: ['program'],
         text: lorem,
         details: {
@@ -103,7 +103,7 @@ export default [
     conditions: [
       {
         binnedValue: 3,
-        fill: 'orange',
+        fill: ['orange', 'yellow', 'teal'],
         keywords: ['program'],
         text: `hello ${lorem}`,
         details: {

@@ -13,14 +13,14 @@ const data = [
   },
   {
     binnedValue: 3,
-    fill: 'pink',
+    fill: ['pink'],
     marked: true,
     instrumentIndex: 0,
     itemIndex: 0,
   },
   {
     binnedValue: 2,
-    fill: 'blue',
+    fill: ['blue'],
     instrumentIndex: 0,
     itemIndex: 1,
   },
@@ -32,13 +32,13 @@ const data = [
   },
   {
     binnedValue: 1,
-    fill: 'red',
+    fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 0,
   },
   {
     binnedValue: 2,
-    fill: 'red',
+    fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 1,
   },
@@ -50,7 +50,7 @@ const data = [
   },
   {
     binnedValue: 3,
-    fill: 'orange',
+    fill: ['orange'],
     marked: true,
     instrumentIndex: 2,
     itemIndex: 0,
