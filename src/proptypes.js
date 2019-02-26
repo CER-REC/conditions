@@ -15,7 +15,7 @@ export const ConditionsByCommodityOrInstrument = PropTypes.shape({
   prefix: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   type: PropTypes.string.isRequired,
-  commodity: PropTypes.string.isRequired,
+  commodity: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
 export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
