@@ -1477,7 +1477,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
   className="visualization"
 >
   <section
-    className="ConditionDetails "
+    className="ConditionDetails expanded"
   >
     <div
       className="main"
@@ -1557,16 +1557,24 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       className="marked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-3"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
                         fill="pink"
                         height="100%"
-                        width="100%"
+                        width="50%"
                         x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="green"
+                        height="100%"
+                        width="50%"
+                        x="50%"
                         y={0}
                       />
                     </svg>
@@ -1591,16 +1599,24 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       className="unmarked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-2"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
                         fill="blue"
                         height="100%"
-                        width="100%"
+                        width="50%"
                         x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="50%"
+                        x="50%"
                         y={0}
                       />
                     </svg>
@@ -1722,9 +1738,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       className="unmarked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-1"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
@@ -1756,9 +1772,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       className="unmarked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-2"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
@@ -1813,16 +1829,32 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       className="marked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-3"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
                         fill="orange"
                         height="100%"
-                        width="100%"
+                        width="33.33333333333333%"
                         x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="yellow"
+                        height="100%"
+                        width="33.33333333333333%"
+                        x="33.33333333333333%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="teal"
+                        height="100%"
+                        width="33.33333333333333%"
+                        x="66.66666666666666%"
                         y={0}
                       />
                     </svg>
@@ -1842,18 +1874,22 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           <div
             className="ContentBlock half"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Issuance Date
-            </h4>
+            </span>
             : 
             2014-10-24
           </div>
           <div
             className="ContentBlock half"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Instrument Number
-            </h4>
+            </span>
             : 
             <button
               className="instrumentLink"
@@ -1869,18 +1905,22 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           <div
             className="ContentBlock half"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Effective Date
-            </h4>
+            </span>
             : 
             2014-10-24
           </div>
           <div
             className="ContentBlock half"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Instrument Status
-            </h4>
+            </span>
             : 
             <span>
               In Progress
@@ -1889,36 +1929,44 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           <div
             className="ContentBlock half"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Sunset Date
-            </h4>
+            </span>
             : 
             2019-01-30
           </div>
           <div
             className="ContentBlock half"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Location
-            </h4>
+            </span>
             : 
             Albuquerque, NM
           </div>
           <div
             className="ContentBlock "
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Instrument Type
-            </h4>
+            </span>
             : 
             Construction of Oil Pipeline
           </div>
           <p
             className="contentText"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Instrument Activity
-            </h4>
+            </span>
             : 
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
           </p>
@@ -2079,16 +2127,24 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                       className="marked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-3"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
                         fill="pink"
                         height="100%"
-                        width="100%"
+                        width="50%"
                         x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="green"
+                        height="100%"
+                        width="50%"
+                        x="50%"
                         y={0}
                       />
                     </svg>
@@ -2113,42 +2169,27 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                       className="unmarked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-2"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
                         fill="blue"
                         height="100%"
-                        width="100%"
+                        width="50%"
                         x="0%"
                         y={0}
                       />
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="50%"
+                        x="50%"
+                        y={0}
+                      />
                     </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div
-                    data-instrument-index={1}
-                    data-item-index={-1}
-                  >
-                    <div
-                      className="unmarked"
-                    />
-                    <h4>
-                      XO-003-2018
-                    </h4>
                   </div>
                 </div>
               </li>
@@ -2201,25 +2242,14 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   <div
                     data-instrument-index={1}
-                    data-item-index={0}
+                    data-item-index={-1}
                   >
                     <div
                       className="unmarked"
                     />
-                    <svg
-                      className="BarContainer"
-                      height="100%"
-                      width="25px"
-                    >
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="100%"
-                        x="0%"
-                        y={0}
-                      />
-                    </svg>
+                    <h4>
+                      XO-003-2018
+                    </h4>
                   </div>
                 </div>
                 <div
@@ -2272,15 +2302,49 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   <div
                     data-instrument-index={1}
+                    data-item-index={0}
+                  >
+                    <div
+                      className="unmarked"
+                    />
+                    <svg
+                      className="BarContainer binnedValue-1"
+                      height="100%"
+                      width="100%"
+                    >
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div
+                    data-instrument-index={1}
                     data-item-index={1}
                   >
                     <div
                       className="unmarked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-2"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
@@ -2335,16 +2399,32 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                       className="marked"
                     />
                     <svg
-                      className="BarContainer"
+                      className="BarContainer binnedValue-3"
                       height="100%"
-                      width="25px"
+                      width="100%"
                     >
                       <rect
                         className="Bar"
                         fill="orange"
                         height="100%"
-                        width="100%"
+                        width="33.33333333333333%"
                         x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="yellow"
+                        height="100%"
+                        width="33.33333333333333%"
+                        x="33.33333333333333%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="teal"
+                        height="100%"
+                        width="33.33333333333333%"
+                        x="66.66666666666666%"
                         y={0}
                       />
                     </svg>
@@ -2364,18 +2444,22 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           <div
             className="ContentBlock half"
           >
-            <h4>
-              Effective Date
-            </h4>
+            <span
+              className="contentHeading"
+            >
+              Issuance Date
+            </span>
             : 
             2014-10-24
           </div>
           <div
             className="ContentBlock half"
           >
-            <h4>
+            <span
+              className="contentHeading"
+            >
               Instrument Number
-            </h4>
+            </span>
             : 
             <button
               className="instrumentLink"
@@ -2389,20 +2473,70 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             </button>
           </div>
           <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Effective Date
+            </span>
+            : 
+            2014-10-24
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Instrument Status
+            </span>
+            : 
+            <span>
+              In Progress
+            </span>
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Sunset Date
+            </span>
+            : 
+            2019-01-30
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Location
+            </span>
+            : 
+            Albuquerque, NM
+          </div>
+          <div
             className="ContentBlock "
           >
-            <h4>
-              Keywords
-            </h4>
+            <span
+              className="contentHeading"
+            >
+              Instrument Type
+            </span>
             : 
-            program
+            Construction of Oil Pipeline
           </div>
           <p
             className="contentText"
           >
-            <h4>
-              Text
-            </h4>
+            <span
+              className="contentHeading"
+            >
+              Instrument Activity
+            </span>
             : 
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
           </p>
@@ -2451,88 +2585,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
     </div>
     <div
       className="popout"
-    >
-      <div
-        className="Details"
-      >
-        <div
-          className="filler"
-        />
-        <div
-          className="content"
-        >
-          <h3>
-            Selected Condition Feature
-          </h3>
-          <div
-            className="ContentBlock "
-          >
-            <h4>
-              Theme
-            </h4>
-            : 
-            <span>
-              Enforcement
-            </span>
-          </div>
-          <div
-            className="ContentBlock "
-          >
-            <h4>
-              Instrument
-            </h4>
-            : 
-            <span>
-              Oil
-            </span>
-          </div>
-          <div
-            className="ContentBlock "
-          >
-            <h4>
-              Phase
-            </h4>
-            : 
-            <span>
-              During Construction Phase
-            </span>
-          </div>
-          <div
-            className="ContentBlock "
-          >
-            <h4>
-              Type
-            </h4>
-            : 
-            <span>
-              Non Standard
-            </span>
-          </div>
-          <div
-            className="ContentBlock "
-          >
-            <h4>
-              Status
-            </h4>
-            : 
-            <span>
-              In Progress
-            </span>
-          </div>
-          <div
-            className="ContentBlock "
-          >
-            <h4>
-              Filing
-            </h4>
-            : 
-            <span>
-              Closed
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   </section>
 </div>
 `;
@@ -2592,9 +2645,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   className="marked"
                 />
                 <svg
-                  className="BarContainer"
+                  className="BarContainer binnedValue-3"
                   height="100%"
-                  width="25px"
+                  width="100%"
                 >
                   <rect
                     className="Bar"
@@ -2626,9 +2679,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   className="unmarked"
                 />
                 <svg
-                  className="BarContainer"
+                  className="BarContainer binnedValue-2"
                   height="100%"
-                  width="25px"
+                  width="100%"
                 >
                   <rect
                     className="Bar"
@@ -2757,9 +2810,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   className="unmarked"
                 />
                 <svg
-                  className="BarContainer"
+                  className="BarContainer binnedValue-1"
                   height="100%"
-                  width="25px"
+                  width="100%"
                 >
                   <rect
                     className="Bar"
@@ -2791,9 +2844,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   className="unmarked"
                 />
                 <svg
-                  className="BarContainer"
+                  className="BarContainer binnedValue-2"
                   height="100%"
-                  width="25px"
+                  width="100%"
                 >
                   <rect
                     className="Bar"
@@ -2848,9 +2901,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   className="marked"
                 />
                 <svg
-                  className="BarContainer"
+                  className="BarContainer binnedValue-3"
                   height="100%"
-                  width="25px"
+                  width="100%"
                 >
                   <rect
                     className="Bar"
@@ -2884,18 +2937,22 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Effective Date
-        </h4>
+        </span>
         : 
         2014-10-24
       </div>
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Instrument Number
-        </h4>
+        </span>
         : 
         <button
           className="instrumentLink"
@@ -2911,18 +2968,22 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
       <div
         className="ContentBlock "
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Keywords
-        </h4>
+        </span>
         : 
         program
       </div>
       <p
         className="contentText"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Text
-        </h4>
+        </span>
         : 
         hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
       </p>
@@ -2984,18 +3045,22 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Issuance Date
-        </h4>
+        </span>
         : 
         2014-10-24
       </div>
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Instrument Number
-        </h4>
+        </span>
         : 
         <button
           className="instrumentLink"
@@ -3011,18 +3076,22 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Effective Date
-        </h4>
+        </span>
         : 
         2014-10-24
       </div>
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Instrument Status
-        </h4>
+        </span>
         : 
         <span>
           In Progress
@@ -3031,36 +3100,44 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Sunset Date
-        </h4>
+        </span>
         : 
         2019-01-30
       </div>
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Location
-        </h4>
+        </span>
         : 
         Albuquerque, NM
       </div>
       <div
         className="ContentBlock "
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Instrument Type
-        </h4>
+        </span>
         : 
         Construction of Oil Pipeline
       </div>
       <p
         className="contentText"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Instrument Activity
-        </h4>
+        </span>
         : 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
       </p>
@@ -3127,18 +3204,22 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
       <div
         className="ContentBlock "
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Theme
-        </h4>
+        </span>
         : 
         This is a full block
       </div>
       <div
         className="ContentBlock "
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Theme
-        </h4>
+        </span>
         : 
         This is a full block
       </div>
@@ -3172,18 +3253,22 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Theme
-        </h4>
+        </span>
         : 
         This is a half block
       </div>
       <div
         className="ContentBlock half"
       >
-        <h4>
+        <span
+          className="contentHeading"
+        >
           Theme
-        </h4>
+        </span>
         : 
         This is a half block
       </div>
@@ -3221,9 +3306,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
         <div
           className="ContentBlock "
         >
-          <h4>
+          <span
+            className="contentHeading"
+          >
             Theme
-          </h4>
+          </span>
           : 
           <span>
             Environmental Protection
@@ -3232,9 +3319,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
         <div
           className="ContentBlock "
         >
-          <h4>
+          <span
+            className="contentHeading"
+          >
             Instrument
-          </h4>
+          </span>
           : 
           <span>
             Construction
@@ -3243,9 +3332,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
         <div
           className="ContentBlock "
         >
-          <h4>
+          <span
+            className="contentHeading"
+          >
             Phase
-          </h4>
+          </span>
           : 
           <span>
             During Construction Phase
@@ -3254,9 +3345,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
         <div
           className="ContentBlock "
         >
-          <h4>
+          <span
+            className="contentHeading"
+          >
             Type
-          </h4>
+          </span>
           : 
           <span>
             Standard
@@ -3265,9 +3358,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
         <div
           className="ContentBlock "
         >
-          <h4>
+          <span
+            className="contentHeading"
+          >
             Status
-          </h4>
+          </span>
           : 
           <span>
             In Progress
@@ -3276,9 +3371,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
         <div
           className="ContentBlock "
         >
-          <h4>
+          <span
+            className="contentHeading"
+          >
             Filing
-          </h4>
+          </span>
           : 
           <span>
             No Filing Required
@@ -3328,19 +3425,19 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
         tabIndex={0}
         type="button"
       >
+        <h1
+          className="upperCase"
+        >
+          Less
+        </h1>
         <svg
           className="arrow"
           viewBox="0 0 16 24"
         >
           <polyline
-            points="12,4 4,12.5 12,20 12,4"
+            points="4,4 12,12.5 4,20 4,4"
           />
         </svg>
-        <h1
-          className="upperCase"
-        >
-          More
-        </h1>
       </button>
     </div>
   </div>
