@@ -7,30 +7,37 @@ import List from '../../List';
 import BarContainer from '../../BarContainer';
 
 class ConditionList extends React.Component {
-  render() {
-    const onChange = (element) => {
-      const { 'data-instrument-index': instrumentIndex, 'data-item-index': itemIndex } = element.props;
-      this.props.updateSelectedItem(instrumentIndex, itemIndex);
-    };
+  constructor(props) {
+    super(props);
 
+    this.state = { elementIndices: [] };
+  }
+
+  onChange = (i) => {
+    const { instrumentIndex, itemIndex } = this.state.elementIndices[i];
+    this.props.updateSelectedItem(instrumentIndex, itemIndex);
+  }
+
+  componentDidMount = () => {
+    const elementIndices = this.props.items.map(item => ({
+      instrumentIndex: item.instrumentIndex,
+      itemIndex: item.itemIndex,
+    }));
+
+    this.setState({ elementIndices });
+  }
+
+  render() {
     const elements = this.props.items.reduce((out, item) => {
       out.push((item.isInstrument)
         ? (
-          <div
-            key={item.instrumentNumber}
-            data-instrument-index={item.instrumentIndex}
-            data-item-index={item.itemIndex}
-          >
+          <div key={item.instrumentNumber}>
             <div className="unmarked" />
             <h4>{item.instrumentNumber}</h4>
           </div>
         )
         : (
-          <div
-            key={`${item.instrumentIndex}-${item.itemIndex}`}
-            data-instrument-index={item.instrumentIndex}
-            data-item-index={item.itemIndex}
-          >
+          <div key={`${item.instrumentIndex}-${item.itemIndex}`}>
             <div className={item.marked ? 'marked' : 'unmarked'} />
             <BarContainer
               className={`binnedValue-${item.binnedValue}`}
@@ -51,7 +58,7 @@ class ConditionList extends React.Component {
       <div className="ConditionList">
         <List
           items={elements}
-          onChange={i => onChange(elements[i])}
+          onChange={this.onChange}
           selected={this.props.selectedItem}
         />
       </div>
