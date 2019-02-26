@@ -18,7 +18,7 @@ const defaultProps = {
   searchKeywords: {
     include: ['hello'],
   },
-  selectedItem: { instrumentIndex: 1, itemIndex: -1 },
+  // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
   openProjectDetails: project => alert(`Project details for: ${project}`),
   openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
 };
@@ -30,13 +30,39 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
       {...defaultProps}
       {...getInteractionProps()}
     />
-  ), { interaction: { actions: { toggleExpanded, updateSelectedItem } } })
+  ), {
+    interaction: {
+      state: {
+        selectedItem: {
+          instrumentIndex: 1,
+          itemIndex: -1,
+        },
+      },
+      actions: {
+        toggleExpanded,
+        updateSelectedItem,
+      },
+    },
+  })
   .add('expandable', () => (
     <ConditionDetails
       {...defaultProps}
-      selectedItem={{ instrumentIndex: 1, itemIndex: 0 }}
+      // selectedItem={{ instrumentIndex: 1, itemIndex: 0 }}
       isExpandable
       expanded
       {...getInteractionProps()}
     />
-  ), { interaction: { actions: { toggleExpanded, updateSelectedItem } } });
+  ), {
+    interaction: {
+      state: {
+        selectedItem: {
+          instrumentIndex: 1,
+          itemIndex: 1,
+        },
+      },
+      actions: {
+        toggleExpanded,
+        updateSelectedItem,
+      },
+    },
+  });

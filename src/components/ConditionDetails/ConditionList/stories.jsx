@@ -71,7 +71,6 @@ storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
   .add('default', () => (
     <ConditionList
       items={data}
-      selectedItem={3}
       {...getInteractionProps()}
     />
-  ), { interaction: { actions: { updateSelectedItem } } });
+  ), { interaction: { state: { selectedItem: 3 }, actions: { updateSelectedItem } } });

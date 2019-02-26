@@ -15,7 +15,7 @@ storiesForComponent('Components|ConditionDetails/ProjectHeader', module, ReadMe)
       openProjectDetails={() => alert('Project details')}
       {...getInteractionProps()}
     />
-  ), { interaction: { actions: { toggleExpanded } } })
+  ), { interaction: { state: { expanded: true }, actions: { toggleExpanded } } })
   .add('not expandable', () => (
     <ProjectHeader
       selectedProject="Keystone XL"
