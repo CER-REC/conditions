@@ -1,0 +1,39 @@
+@import '../../styles/grid';
+@import '../../styles/fontVariables';
+@import '../../styles/colors';
+
+.ViewOne {
+  @include grid((
+    introduction: 116,
+    explorer: 116,
+    browseBy: 57,
+    infoBar: 58,
+  )) {
+    height: 100vh;
+
+    .introduction {
+      height: 100px;
+      h1 {
+        font-family: $fira-sans-condensed-bold;
+        font-size: 24px;
+        color: $Black51;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+
+      span {
+        font-family: $fira-sans-condensed;
+        font-size: 14px;
+        color: $Black19;
+      }
+    }
+
+    .explorer {
+      height: calc(100vh - 200px);
+    }
+
+    .browseBy, .infoBar {
+      height: 100px;
+    }
+  }
+}

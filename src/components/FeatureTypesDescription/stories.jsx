@@ -1,51 +1,33 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { storiesForComponent, fixInfo } from '../../../.storybook/utils';
+import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import FeatureTypesDescription from '.';
 import ReadMe from './README.md';
 
-const defaultProps = {
-  feature: 'theme',
-  types: ['security', 'managementSystem', 'financial'],
-};
-
-const instrumentProps = {
-  feature: 'instrument.category',
-  types: ['routing', 'construction'],
-  colorCodes: {
-    OPL: 'routing',
-    GPL: 'routing',
-    GC: 'construction',
-    OC: 'construction',
-  },
-};
-
 const defaultTargets = [
-  'security',
-  'managementSystem',
-  'financial',
+  'SECURITY',
+  'MANAGEMENT_SYSTEM',
+  'FINANCIAL',
 ];
 
 const instrumentTargets = [
-  'routing',
-  'construction',
+  'ROUTING',
+  'CONSTRUCTION',
 ];
-
-fixInfo(FeatureTypesDescription);
 
 storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
   .add('default', () => (
     <FeatureTypesDescription
-      {...defaultProps}
-      scrollTarget={select('Scroll Target', defaultTargets, 'security')}
+      feature="theme"
+      scrollTarget={select('Scroll Target', defaultTargets, 'SECURITY')}
     />
   ))
   .add('instrument types', () => (
     <FeatureTypesDescription
-      {...instrumentProps}
-      scrollTarget={select('Scroll Target', instrumentTargets, 'routing')}
+      feature="instrument"
+      scrollTarget={select('Scroll Target', instrumentTargets, 'ROUTING')}
     />
   ));

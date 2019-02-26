@@ -14,7 +14,6 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
         className="testclass"
         title="Test Title"
         indicators={[]}
-        color=""
       />
     ));
   });
@@ -29,7 +28,6 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
         <LegendItem
           title={title}
           indicators={[]}
-          color=""
           all
         />
       ));
@@ -48,7 +46,6 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
 
   describe('when there is no all property provided', () => {
     const title = 'abc';
-    const color = 'black';
     const indicators = [true, false, true, false];
 
     beforeEach(() => {
@@ -57,13 +54,12 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
           className="testclass"
           title={title}
           indicators={indicators}
-          color={color}
         />
       ));
     });
 
     test('should render the title', () => {
-      const id = `common.instrument.category.${title}`;
+      const id = `common.instrument.${title}`;
 
       expect(wrapper.find('.indicators')).toHaveLength(1);
       expect(wrapper.find(FormattedMessage).prop('id')).toBe(id);
@@ -78,7 +74,7 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
         const style = indicatorsWrapper.childAt(index).prop('style');
 
         if (indicator) {
-          expect(style).toMatchObject({ backgroundColor: color });
+          expect(style).toHaveProperty('backgroundColor');
         } else {
           expect(style).not.toHaveProperty('backgroundColor');
         }

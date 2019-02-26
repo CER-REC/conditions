@@ -8,41 +8,41 @@ import d3HierarchyCalculation from '../d3HierarchyCalculation';
 const instrumentChartData2 = {
   name: 'data',
   children: [{
-    parentName: 'anyCommodityTypes',
+    parentName: 'ANY_COMMODITY_TYPES',
     children: [
       {
         name: 'MO',
         children: [],
         value: 40,
-        category: 'misc',
+        category: 'MISC',
       }, {
         name: 'AO',
         children: [],
         value: 40,
-        category: 'misc',
+        category: 'MISC',
       },
       {
         name: 'ZO',
         children: [],
         value: 20,
-        category: 'routing',
+        category: 'ROUTING',
       },
     ],
   },
   {
-    parentName: 'notSpecified',
+    parentName: 'NOT_SPECIFIED',
     children: [
       {
         name: 'XC',
         children: [],
         value: 10,
-        category: 'construction',
+        category: 'CONSTRUCTION',
       },
       {
         name: 'CO',
         children: [],
         value: 10,
-        category: 'misc',
+        category: 'MISC',
       },
     ],
   }],

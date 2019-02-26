@@ -27,10 +27,6 @@ describe('Components|BrowseByBtn', () => {
       expect(wrapper.find('.BrowseByBtn-ButtonText')).toHaveLength(1);
     });
 
-    test('should render three elements inside the buttontext', () => {
-      expect(wrapper.find('.BrowseByBtn-ButtonText').children()).toHaveLength(3);
-    });
-
     test('should call its onClick prop once', () => {
       wrapper.find('.BrowseByBtn').simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
@@ -45,8 +41,9 @@ describe('Components|BrowseByBtn', () => {
       wrapper = shallow(<BrowseByBtn mode="location" onClick={spy} />);
     });
 
-    test('should render three elements inside the buttontext', () => {
-      expect(wrapper.find('.BrowseByBtn-ButtonText').children()).toHaveLength(3);
+    test('should render text and an svg with the graphic', () => {
+      expect(wrapper.find('.BrowseByBtn-Wheel')).toHaveLength(1);
+      expect(wrapper.find('.BrowseByBtn-ButtonText')).toHaveLength(1);
     });
 
     test('should call its onClick prop once', () => {

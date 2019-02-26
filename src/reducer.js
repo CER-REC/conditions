@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { reducer as SelectedReducer } from './actions/Selected';
+import { reducer as SelectedReducer } from './actions/selected';
 import { reducer as SearchReducer } from './actions/Search';
 import { reducer as ChartIndicatorPositionReducer } from './actions/ChartIndicatorPosition';
 import { reducer as BrowseByReducer } from './actions/BrowseBy';

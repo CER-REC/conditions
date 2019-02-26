@@ -4,15 +4,25 @@ import { VictoryArea } from 'victory';
 
 import LegendItem from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
+import { features } from '../../../constants';
+
+const data = {
+  feature: 'theme',
+  subFeature: 'SECURITY',
+  years: {
+    2018: 12,
+    2019: 1,
+    2020: 345,
+  },
+};
 
 describe('Components|SmallMultiplesLegend/LegendItem', () => {
   let wrapper = shallow((
     <LegendItem
       className="testtest"
-      title="Test Title"
-      feature="Feat."
-      data={[]}
-      color=""
+      title="security"
+      feature="theme"
+      data={data}
       max={0}
     />
   ));
@@ -27,8 +37,6 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
         <LegendItem
           title={title}
           feature={title}
-          data={[]}
-          color=""
           max={0}
           all
         />
@@ -45,26 +53,14 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
     test('should render the formatted all title', () => {
       const id = `components.smallMultiplesLegend.all.${title}`;
-
       expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
     });
   });
 
   describe('when there is no all property provided', () => {
-    const title = '(<{}>)other_test-title.!?';
-    const feature = 'test feature';
-    const color = 'red';
+    const title = 'SECURITY';
+    const feature = 'theme';
     const max = 500;
-    const data = [{
-      date: 2018,
-      count: 12,
-    }, {
-      date: 2019,
-      count: 1,
-    }, {
-      date: 2020,
-      count: 345,
-    }];
 
     beforeEach(() => {
       wrapper = shallow((
@@ -73,7 +69,6 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
           title={title}
           feature={feature}
           data={data}
-          color={color}
           max={max}
         />
       ));
@@ -91,10 +86,11 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
       expect(victoryAreaWrapper).toHaveLength(1);
       expect(victoryAreaWrapper.prop('maxDomain')).toEqual({ y: max });
-      expect(victoryAreaWrapper.prop('style')).toEqual({ data: { fill: color } });
+      expect(victoryAreaWrapper.prop('style'))
+        .toEqual({ data: { fill: features[feature][title] } });
 
       expect(victoryAreaWrapper.prop('data')).toEqual(
-        expect.arrayContaining(data.map(({ date, count }) => ({ x: date, y: count }))),
+        expect.arrayContaining(Object.entries(data.years).map(([x, y]) => ({ x, y }))),
       );
     });
 

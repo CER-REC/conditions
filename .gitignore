@@ -8,10 +8,10 @@ npm-debug.log
 *.sublime-workspace
 
 # Generated files that don't need tracking
-public/script/bundle.js
 LAST_MODIFIED
 VERSION
 storybook-static
+public/script/
 
 # System files
 .DS_Store

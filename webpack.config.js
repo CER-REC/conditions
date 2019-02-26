@@ -1,8 +1,13 @@
-import Path from 'path';
-import Webpack from 'webpack';
-import TranslationTable from './src/TranslationTable';
+const Path = require('path');
+const Webpack = require('webpack');
+const TranslationTable = require('./src/TranslationTable');
+const sass = require('node-sass');
+const SassUtilsConstructor = require('node-sass-utils');
+const { features } = require('./src/constants');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
+
+const sassUtils = SassUtilsConstructor(sass);
 
 module.exports = {
   mode: 'development',
@@ -47,7 +52,20 @@ module.exports = {
 
       {
         test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              functions: {
+                'getFeatureColors($feature)':
+                  feature => sassUtils.castToSass(features[feature.getValue()]),
+              },
+            },
+          },
+        ],
       },
 
       {
