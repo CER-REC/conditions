@@ -33,9 +33,9 @@ class ConditionList extends React.Component {
           >
             <div className={item.marked ? 'marked' : 'unmarked'} />
             <BarContainer
-              width="25px"
+              className={`binnedValue-${item.binnedValue}`}
               items={[{
-                value: item.length,
+                value: 1,
                 fill: item.fill,
               }]}
             />

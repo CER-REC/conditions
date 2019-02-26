@@ -8,6 +8,21 @@
     height: 6px;
   }
 
+  .BarContainer {
+
+    &.binnedValue-1 {
+      width: calc(33% - 10px);
+    }
+
+    &.binnedValue-2 {
+      width: calc(67% - 10px);
+    }
+
+    &.binnedValue-3 {
+      width: calc(100% - 10px);
+    }
+  }
+
   .marked, .unmarked { width: 10px;}
   .marked { background-color: red; }
   .unmarked { background: none; }

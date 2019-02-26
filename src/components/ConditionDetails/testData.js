@@ -22,7 +22,7 @@ export default [
     activity: lorem,
     conditions: [
       {
-        length: 3,
+        binnedValue: 3,
         fill: 'pink',
         keywords: ['program'],
         text: `hello ${lorem}`,
@@ -36,7 +36,7 @@ export default [
         },
       },
       {
-        length: 2,
+        binnedValue: 2,
         fill: 'blue',
         keywords: ['program'],
         text: lorem,
@@ -62,7 +62,7 @@ export default [
     activity: lorem,
     conditions: [
       {
-        length: 1,
+        binnedValue: 1,
         fill: 'red',
         keywords: ['program'],
         text: lorem,
@@ -76,7 +76,7 @@ export default [
         },
       },
       {
-        length: 2,
+        binnedValue: 2,
         fill: 'red',
         keywords: ['program'],
         text: lorem,
@@ -102,7 +102,7 @@ export default [
     activity: lorem,
     conditions: [
       {
-        length: 3,
+        binnedValue: 3,
         fill: 'orange',
         keywords: ['program'],
         text: `hello ${lorem}`,
