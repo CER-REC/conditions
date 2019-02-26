@@ -41,7 +41,7 @@ module.exports = {
   // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: [
     'json',
-    // 'text',
+    'text-summary',
     'lcov',
     // 'clover',
   ],
@@ -128,7 +128,7 @@ module.exports = {
   // setupFiles: ['<rootDir>/app/tests/jest-register-context.js'],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
-  setupTestFrameworkScriptFile: '<rootDir>/src/tests/setup.js',
+  setupFilesAfterEnv: ['<rootDir>/src/tests/setup.js'],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],

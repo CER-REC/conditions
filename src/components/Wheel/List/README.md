@@ -30,5 +30,3 @@ analytics test results.
 ## Unit Testing
 
 TODO: Provide table of automated unit test results and code coverage metrics.
-
-

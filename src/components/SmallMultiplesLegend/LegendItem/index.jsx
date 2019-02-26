@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 import './styles.scss';
+import { features } from '../../../constants';
+import { conditionsPerYear } from '../../../proptypes';
 
 const LegendItem = (props) => {
   let stream = null;
@@ -20,9 +22,9 @@ const LegendItem = (props) => {
         preserveAspectRatio="none"
       >
         <VictoryArea
-          data={props.data.map(condition => ({ x: condition.date, y: condition.count }))}
+          data={Object.entries(props.data.years).map(([x, y]) => ({ x, y }))}
           maxDomain={{ y: props.max }}
-          style={{ data: { fill: props.color } }}
+          style={{ data: { fill: features[props.feature][props.title] } }}
           interpolation="natural"
           standalone={false}
           width={100}
@@ -55,12 +57,7 @@ LegendItem.propTypes = {
   /** The feature of which to look up the translations */
   feature: PropTypes.string.isRequired,
   /** The data to render the stream graph */
-  data: PropTypes.arrayOf(PropTypes.shape({
-    date: PropTypes.number.isRequired,
-    count: PropTypes.number.isRequired,
-  })).isRequired,
-  /** The color of the stream graph */
-  color: PropTypes.string.isRequired,
+  data: conditionsPerYear,
   /** The y-axis height to set the graph */
   max: PropTypes.number.isRequired,
   /** The flag to determine if the component renders as a all filter item */
@@ -75,6 +72,7 @@ LegendItem.defaultProps = {
   all: false,
   faded: false,
   className: '',
+  data: null,
 };
 
 // TODO: Wrap in React.memo when testing issue fixed

@@ -5,55 +5,42 @@ import withStatus from '../../../.storybook/addon-status';
 import InstrumentsLegend from '.';
 import ReadMe from './README.md';
 
-const categories = ['opening', 'abandonment', 'safety', 'tariffs', 'misc'];
-const colors = ['purple', '#A1C1B1', 'blue', '#16AA16', '#00FFFF'];
+const categories = ['OPENING', 'ABANDONMENT', 'SAFETY', 'TARIFFS', 'MISC'];
 const data = [{
-  parentName: 'oil',
+  parentName: 'OIL',
   children: [{
     category: categories[0],
-    color: colors[0],
   }, {
     category: categories[1],
-    color: colors[1],
   }, {
     category: categories[4],
-    color: colors[4],
   }],
 }, {
-  parentName: 'gas',
+  parentName: 'GAS',
   children: [{
     category: categories[0],
-    color: colors[0],
   }, {
     category: categories[1],
-    color: colors[1],
   }, {
     category: categories[2],
-    color: colors[2],
   }, {
     category: categories[3],
-    color: colors[3],
   }, {
     category: categories[4],
-    color: colors[4],
   }],
 }, {
-  parentName: 'power',
+  parentName: 'POWER',
   children: [{
     category: categories[0],
-    color: colors[0],
   }, {
     category: categories[3],
-    color: colors[3],
   }, {
     category: categories[0],
-    color: colors[0],
   }],
 }, {
-  parentName: 'notSpecified',
+  parentName: 'NOT_SPECIFIED',
   children: [{
     category: categories[0],
-    color: colors[0],
   }],
 }];
 
@@ -68,13 +55,11 @@ storiesForComponent('Components|InstrumentsLegend', module, ReadMe)
   .add('basic usage', () => (
     <InstrumentsLegend
       data={[{
-        parentName: 'anyCommodityTypes',
+        parentName: 'ANY_COMMODITY_TYPES',
         children: [{
-          category: 'routing',
-          color: 'red',
+          category: 'ROUTING',
         }, {
-          category: 'construction',
-          color: '#123456',
+          category: 'CONSTRUCTION',
         }],
       }]}
       onChange={name => alert(name)}

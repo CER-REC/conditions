@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
+import { features } from '../../../constants';
 
 const LegendItem = ({
-  disabled, color, selectedFeature, text,
+  disabled, selectedFeature, text,
 }) => (
   <div className={classNames('LegendItem', { disabled })}>
     <div
       className="color"
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: features[selectedFeature][text] }}
     />
     <div className="text">
       <FormattedMessage id={`common.${selectedFeature}.${text}`} />
@@ -23,8 +24,6 @@ LegendItem.propTypes = {
   selectedFeature: PropTypes.string.isRequired,
   /** For legend item transparency */
   disabled: PropTypes.bool,
-  /** Demonstrates colour as a box */
-  color: PropTypes.string.isRequired,
   /** The descriptor of the colour */
   text: PropTypes.string.isRequired,
 };
