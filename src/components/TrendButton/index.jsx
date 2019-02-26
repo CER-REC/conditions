@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Streamgraph from '../StreamGraph';
+import StreamGraph from '../StreamGraph';
+import { allConditionsPerYear, featureTypes } from '../../proptypes';
 import InstrumentBubble from '../BubbleChart/InstrumentBubble';
 
 import './styles.scss';
@@ -23,9 +24,10 @@ const TrendButton = props => (
           </svg>
         )
         : (
-          <Streamgraph
+          <StreamGraph
             projectData={props.projectData}
-            chartTitle=""
+            feature={props.feature}
+            subFeature={props.subFeature}
           />
         )}
       <FormattedMessage id="components.trendButton.description">
@@ -50,20 +52,9 @@ const TrendButton = props => (
 export default TrendButton;
 
 TrendButton.propTypes = {
-  feature: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  projectData: PropTypes.arrayOf(
-    PropTypes.shape({
-      color: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      key: PropTypes.number.isRequired,
-      graphData: PropTypes.arrayOf(
-        PropTypes.shape({
-          date: PropTypes.number.isRequired,
-          count: PropTypes.number.isRequired,
-        }),
-      ).isRequired,
-    }),
-  ).isRequired,
+  projectData: allConditionsPerYear.isRequired,
+  feature: featureTypes.isRequired,
+  subFeature: PropTypes.string.isRequired,
   instrumentData: PropTypes.instanceOf(Object).isRequired,
 };
