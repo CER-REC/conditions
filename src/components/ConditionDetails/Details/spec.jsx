@@ -14,13 +14,31 @@ const data = {
 };
 
 describe('Components|ConditionDetails/Details', () => {
-  describe('with default props', () => {
-    const wrapper = shallow(
-      <Details
-        data={data}
-      />,
-    );
+  describe('when a condition is selected', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<Details data={data} />);
+    });
 
     shouldBehaveLikeAComponent(Details, () => wrapper);
+
+    it('should show text content', () => {
+      const items = wrapper.find('.Details')
+        .find('.content')
+        .children();
+
+      expect(items).toHaveLength(7);
+    });
+  });
+
+  describe('when an instrument is selected', () => {
+    const wrapper = shallow(<Details data={null} isInstrument />);
+    it('should not show any text content', () => {
+      const items = wrapper.find('.Details')
+        .find('.content')
+        .children();
+
+      expect(items).toHaveLength(0);
+    });
   });
 });
