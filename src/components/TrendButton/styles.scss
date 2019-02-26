@@ -1,4 +1,3 @@
-@import "../../styles/fontVariables.scss";
 @import "../../styles/colors.scss";
 
 .TrendButton {
@@ -9,6 +8,7 @@
   height: 50px;
   width: 120px;
   border: 1px solid $Gray160;
+  overflow: hidden;
   .Streamgraph {
     height: 55px;
     width: 170px;
@@ -16,7 +16,14 @@
       display: none;
     }
     .VictoryContainer {
+      filter: grayscale(100%);
       g[role="presentation"] {
+        display: none;
+      }
+      .StackGroup {
+        outline: none;
+      }
+      .ChartIndicator {
         display: none;
       }
     }
