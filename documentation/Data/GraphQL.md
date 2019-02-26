@@ -38,7 +38,7 @@ enum ConditionFlag {
   UNCLEAR_OR_NO_END_DATE
 }
 
-enum ConditionTiming {
+enum ConditionPhase {
   ABANDONMENT
   DURING_CONSTRUCTION_PHASE
   EXPIRY_DATE_OF_REGULATORY_INSTRUMENT
@@ -143,7 +143,7 @@ type {
     latestFilingDate: Date
     flag: ConditionFlag
     justificationEnglish: String!
-    timing: ConditionTiming
+    phase: ConditionPhase
     instrumentNumber: String!
     standardCondition: Boolean!
     theme: [ConditionTheme!]! # May be an empty array

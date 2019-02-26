@@ -9,12 +9,12 @@ import { conditionCountsByYear } from '../../mockData';
 const selectedOptions = conditionCountsByYear.counts
   .reduce((acc, next) => ({
     ...acc,
-    [next.subfeature]: next.subfeature,
+    [next.subFeature]: next.subFeature,
   }), { All: '' });
 const highlightOptions = conditionCountsByYear.counts
   .reduce((acc, next) => ({
     ...acc,
-    [next.subfeature]: next.subfeature,
+    [next.subFeature]: next.subFeature,
   }), { All: '' });
 
 storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
@@ -22,14 +22,14 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
   .addDecorator(withKnobs)
   .add('basic usage', () => (
     <SmallMultiplesLegend
-      title="theme"
+      feature="theme"
       data={conditionCountsByYear.counts}
       onChange={name => alert(name)}
     />
   ))
   .add('selected', () => (
     <SmallMultiplesLegend
-      title="theme"
+      feature="theme"
       data={conditionCountsByYear.counts}
       onChange={name => alert(name)}
       selected={select('Selected', selectedOptions, Object.keys(selectedOptions)[1])}
@@ -37,9 +37,16 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
   ))
   .add('highlight', () => (
     <SmallMultiplesLegend
-      title="theme"
+      feature="theme"
       data={conditionCountsByYear.counts}
       onChange={name => alert(name)}
       highlightName={select('Highlight', highlightOptions, Object.keys(highlightOptions)[1])}
+    />
+  ))
+  .add('with one entry', () => (
+    <SmallMultiplesLegend
+      feature="theme"
+      data={[conditionCountsByYear.counts.filter(v => v.feature === 'theme')[0]]}
+      onChange={name => alert(name)}
     />
   ));

@@ -5,11 +5,14 @@ import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import './styles.scss';
 import Dropdown from '../Dropdown';
+import { features as featuresRaw } from '../../constants';
+
+const features = Object.keys(featuresRaw);
 
 const FeaturesMenu = (props) => {
   const id = props.dropDown ? 'components.featureMenu.dropDownTitle' : 'common.trend.title';
-  const selected = props.features.includes(props.selected) ? props.selected : props.features[0];
-  const listItems = props.features.map(feature => (
+  const selected = features.includes(props.selected) ? props.selected : features[0];
+  const listItems = features.map(feature => (
     <FormattedMessage key={feature} id={`common.features.${feature}`} />
   ));
 
@@ -18,16 +21,16 @@ const FeaturesMenu = (props) => {
       <FormattedMessage id={id}>{text => <span className="title">{text}</span>}</FormattedMessage>
       {(props.dropDown) ? (
         <Dropdown
-          options={props.features}
+          options={features}
           onChange={props.onChange}
-          selectedOption={props.selected}
+          selectedOption={selected}
           optionID="common.features"
         />
       ) : (
         <List
           items={listItems}
-          selected={props.features.indexOf(selected)}
-          onChange={index => props.onChange(props.features[index])}
+          selected={features.indexOf(selected)}
+          onChange={index => props.onChange(features[index])}
           guideLine
         />
       )}
@@ -36,8 +39,6 @@ const FeaturesMenu = (props) => {
 };
 
 FeaturesMenu.propTypes = {
-  /** The list of features to display in the menu */
-  features: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   /** The currently selected feature */
   selected: PropTypes.string,
   /** The flag to determine if the component renders in drop down mode */

@@ -7,7 +7,7 @@ import { conditionCountsByYear } from '../../../mockData';
 
 const generateProps = data => ({
   feature: data.feature,
-  title: data.subfeature,
+  title: data.subFeature,
   data,
   max: Math.max(...Object.values(data.years)),
 });
