@@ -5,6 +5,7 @@ import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
 import { allConditionsPerYear } from '../../proptypes';
+import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 const getMaxCount = (data) => {
   const counts = data.reduce((countAggregate, conditionsData) => (
@@ -18,13 +19,13 @@ const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
   const maxCount = getMaxCount(data);
   const items = data.map(conditionsData => (
     <LegendItem
-      key={conditionsData.subfeature}
-      title={conditionsData.subfeature}
+      key={conditionsData.subFeature}
+      title={conditionsData.subFeature}
       feature={feature}
       data={conditionsData}
       color={conditionsData.color}
       max={maxCount}
-      faded={hasHighlight && (conditionsData.subfeature !== highlightName)}
+      faded={hasHighlight && (conditionsData.subFeature !== highlightName)}
     />
   ));
 
@@ -32,22 +33,23 @@ const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
 };
 
 const SmallMultiplesLegend = (props) => {
-  const dataIndex = props.data.findIndex(conditionsData => (
-    conditionsData.subfeature === props.selected
+  const filteredData = getFilteredProjectData(props.data, props.feature);
+  const dataIndex = filteredData.findIndex(conditionsData => (
+    conditionsData.subFeature === props.selected
   ));
-  const hasHighlight = !!props.data.find(conditionsData => (
-    conditionsData.subfeature === props.highlightName
+  const hasHighlight = !!filteredData.find(conditionsData => (
+    conditionsData.subFeature === props.highlightName
   ));
-  const selectedIndex = props.data.length === 1 ? 0 : dataIndex + 1;
+  const selectedIndex = filteredData.length === 1 ? 0 : dataIndex + 1;
   const legendDataItems = getLegendDataItems(
-    props.data,
-    props.title,
+    filteredData,
+    props.feature,
     hasHighlight,
     props.highlightName,
   );
   const onItemChange = (index) => {
     const legendItem = legendDataItems[index];
-    const category = legendItem.props.all ? null : legendItem.props.title;
+    const category = legendItem.props.all ? '' : legendItem.props.title;
 
     props.onChange(category);
   };
@@ -58,8 +60,8 @@ const SmallMultiplesLegend = (props) => {
         all
         // "all" cannot be an name in data
         key="all"
-        title={props.title}
-        feature={props.title}
+        title={props.feature}
+        feature={props.feature}
         color=""
         max={0}
         faded={hasHighlight}
@@ -81,8 +83,8 @@ const SmallMultiplesLegend = (props) => {
 };
 
 SmallMultiplesLegend.propTypes = {
-  /** The title to be displayed in the all filter item */
-  title: PropTypes.string.isRequired,
+  /** The selected feature in the feature menu */
+  feature: PropTypes.string.isRequired,
   /** The data to render the stream graphs
       The items rendered in the provided order */
   data: allConditionsPerYear.isRequired,

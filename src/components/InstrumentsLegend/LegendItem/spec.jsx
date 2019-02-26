@@ -59,7 +59,7 @@ describe('Components|InstrumentsLegend/LegendItem', () => {
     });
 
     test('should render the title', () => {
-      const id = `common.instrument.category.${title}`;
+      const id = `common.instrument.${title}`;
 
       expect(wrapper.find('.indicators')).toHaveLength(1);
       expect(wrapper.find(FormattedMessage).prop('id')).toBe(id);

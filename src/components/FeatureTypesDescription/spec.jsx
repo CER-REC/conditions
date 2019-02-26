@@ -3,38 +3,23 @@ import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import FeatureTypesDescription from '.';
 
-const defaultProps = {
-  feature: 'theme',
-  types: ['SECURITY'],
-};
-
-const instrumentProps = {
-  feature: 'instrument.category',
-  types: ['ROUTING', 'CONSTRUCTION'],
-  colorCodes: {
-    OPL: 'ROUTING',
-    GPL: 'ROUTING',
-    GC: 'CONSTRUCTION',
-    OC: 'CONSTRUCTION',
-  },
-};
-
 const messages = {
-  'common.theme.SECURITY': 'Security',
-  'components.featureTypesDescription.theme.SECURITY': '1\n2\n3',
+  'components.featureTypesDescription.theme.ADMINISTRATIVE': '1\n2\n3',
 };
 
 describe('Components|FeatureTypesDescription', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<FeatureTypesDescription {...defaultProps} />);
+      wrapper = shallow(<FeatureTypesDescription feature="theme" />);
     });
 
     shouldBehaveLikeAComponent(FeatureTypesDescription, () => wrapper);
 
     test('should split multi-line text into paragraphs', () => {
-      const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl(messages)
+      const p = wrapper.find('FormattedMessage')
+        .at(1)
+        .shallowWithIntl(messages)
         .find('p');
 
       expect(p).toHaveLength(3);
@@ -42,13 +27,13 @@ describe('Components|FeatureTypesDescription', () => {
   });
 
   describe('when showing instruments', () => {
-    const wrapper = shallow(<FeatureTypesDescription {...instrumentProps} />);
+    const wrapper = shallow(<FeatureTypesDescription feature="instrument" />);
 
     test('should color the instrument code for each paragraph', () => {
       const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl().find('p');
-      const span = p.first().shallow().find('span').first();
-
-      expect(span.hasClass('color-ROUTING')).toBe(true);
+      const spans = p.first().shallow().find('span');
+      expect(spans.first().prop('style')).toHaveProperty('color');
+      expect(spans).toHaveLength(2);
     });
   });
 });

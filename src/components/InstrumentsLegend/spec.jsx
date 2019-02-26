@@ -116,7 +116,7 @@ describe('Components|InstrumentsLegend', () => {
       const headersWrapper = wrapper.find('.headers FormattedMessage');
 
       data.forEach((indicatorsData, index) => {
-        const id = `common.instrument.type.${indicatorsData.parentName}`;
+        const id = `common.instrumentCommodityType.${indicatorsData.parentName}`;
 
         expect(headersWrapper.at(index).prop('id')).toBe(id);
         expect(headersWrapper.at(index).shallowWithIntl().hasClass('indicator')).toBe(true);

@@ -25,7 +25,7 @@ export const features = {
     STANDARD_CONDITION: 'rgb(181, 11, 128)',
     SUNSET_CLAUSE: 'rgb(41, 41, 218)',
   },
-  timing: {
+  phase: {
     ABANDONMENT: 'rgb(102, 102, 102)',
     DURING_CONSTRUCTION_PHASE: 'rgb(83, 164, 248)',
     EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 'rgb(175, 244, 244)',
@@ -49,7 +49,7 @@ export const features = {
     AMENDED: 'rgb(198, 170, 6)',
     SATISFACTORY: 'rgb(88, 104, 107)',
   },
-  standard: {
+  type: {
     NON_STANDARD: 'rgb(77, 39, 90)',
     STANDARD: 'rgb(181, 11, 128)',
   },

@@ -1961,20 +1961,54 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     className="FeatureTypesDescription"
   >
     <h4
-      data-heading="SECURITY"
+      data-heading="ADMINISTRATIVE"
     >
-      Security
+      Administrative
     </h4>
     <p>
-      Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+      <span>
+        types of conditions that ensure filings are made.
+      </span>
     </p>
     <h4
-      data-heading="MANAGEMENT_SYSTEM"
+      data-heading="DAMAGE_PREVENTION"
     >
-      Management System
+      Damage Prevention
     </h4>
     <p>
-      Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+      <span>
+        types of conditions that ensure reduction and prevention of damage.
+      </span>
+    </p>
+    <h4
+      data-heading="EMERGENCY_MANAGEMENT"
+    >
+      Emergency Management
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.
+      </span>
+    </p>
+    <h4
+      data-heading="ENFORCEMENT"
+    >
+      Enforcement
+    </h4>
+    <p>
+      <span>
+        types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.
+      </span>
+    </p>
+    <h4
+      data-heading="ENVIRONMENTAL_PROTECTION"
+    >
+      Environmental Protection
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.
+      </span>
     </p>
     <h4
       data-heading="FINANCIAL"
@@ -1982,7 +2016,79 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
       Financial
     </h4>
     <p>
-      Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.
+      <span>
+        types of conditions that ensure a company’s financial resposibilities are met.
+      </span>
+    </p>
+    <h4
+      data-heading="INTEGRITY_MANAGEMENT"
+    >
+      Integrity Management
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.
+      </span>
+    </p>
+    <h4
+      data-heading="MANAGEMENT_SYSTEM"
+    >
+      Management System
+    </h4>
+    <p>
+      <span>
+        types of conditions that apply when a project is transeferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+      </span>
+    </p>
+    <h4
+      data-heading="SAFETY_MANAGEMENT"
+    >
+      Safety Management
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.
+      </span>
+    </p>
+    <h4
+      data-heading="SECURITY"
+    >
+      Security
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that project facilities are monitored and secured.
+      </span>
+    </p>
+    <h4
+      data-heading="SOCIO_ECONOMIC"
+    >
+      Socio-Economic
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).
+      </span>
+    </p>
+    <h4
+      data-heading="STANDARD_CONDITION"
+    >
+      Standard Condition
+    </h4>
+    <p>
+      <span>
+        types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.
+      </span>
+    </p>
+    <h4
+      data-heading="SUNSET_CLAUSE"
+    >
+      Sunset Clause
+    </h4>
+    <p>
+      <span>
+        types of conditions that ensure that projects/phases begin in a specific period of time.
+      </span>
     </p>
   </div>
 </div>
@@ -2002,22 +2108,17 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     </h4>
     <p>
       <span
-        className="color-ROUTING"
+        style={
+          Object {
+            "color": "rgb(14, 43, 140)",
+          }
+        }
       >
-        OPL
+        Missing
+        :
       </span>
       <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
-      </span>
-    </p>
-    <p>
-      <span
-        className="color-ROUTING"
-      >
-        GPL
-      </span>
-      <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+         description
       </span>
     </p>
     <h4
@@ -2027,22 +2128,117 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     </h4>
     <p>
       <span
-        className="color-CONSTRUCTION"
+        style={
+          Object {
+            "color": "rgb(39, 165, 249)",
+          }
+        }
       >
-        GC
+        Missing
+        :
       </span>
       <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+         description
       </span>
     </p>
+    <h4
+      data-heading="ABANDONMENT"
+    >
+      Abandonment
+    </h4>
     <p>
       <span
-        className="color-CONSTRUCTION"
+        style={
+          Object {
+            "color": "rgb(22, 78, 248)",
+          }
+        }
       >
-        OC
+        Missing
+        :
       </span>
       <span>
-        : Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="OPENING"
+    >
+      Opening
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(22, 78, 248)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="MISC"
+    >
+      Misc.
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(212, 169, 42)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="SAFETY"
+    >
+      Safety
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(201, 4, 194)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
+      </span>
+    </p>
+    <h4
+      data-heading="TARIFFS"
+    >
+      Tariffs
+    </h4>
+    <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(195, 230, 179)",
+          }
+        }
+      >
+        Missing
+        :
+      </span>
+      <span>
+         description
       </span>
     </p>
   </div>
@@ -2451,7 +2647,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             tabIndex={0}
           >
             <span>
-              Theme
+              Instrument
             </span>
           </div>
           <div
@@ -2503,7 +2699,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             tabIndex={0}
           >
             <span>
-              Instrument
+              Theme
             </span>
           </div>
         </li>
@@ -2533,7 +2729,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             tabIndex={0}
           >
             <span>
-              Type
+              Status
             </span>
           </div>
         </li>
@@ -2548,7 +2744,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             tabIndex={0}
           >
             <span>
-              Status
+              Type
             </span>
           </div>
         </li>
@@ -2590,17 +2786,17 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
     >
       <select
         onChange={[Function]}
-        value="theme"
+        value="instrument"
       >
-        <option
-          value="theme"
-        >
-          Theme
-        </option>
         <option
           value="instrument"
         >
           Instrument
+        </option>
+        <option
+          value="theme"
+        >
+          Theme
         </option>
         <option
           value="phase"
@@ -2608,14 +2804,14 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
           Phase
         </option>
         <option
-          value="type"
-        >
-          Type
-        </option>
-        <option
           value="status"
         >
           Status
+        </option>
+        <option
+          value="type"
+        >
+          Type
         </option>
         <option
           value="filing"
@@ -2623,193 +2819,6 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
           Filing
         </option>
       </select>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|FeaturesMenu selected 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="FeaturesMenu"
-  >
-    <span
-      className="title"
-    >
-      Trends & Definitions
-    </span>
-    <div
-      className="List guideLine"
-      onWheel={[Function]}
-    >
-      <ul>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span>
-              Theme
-            </span>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span>
-              Instrument
-            </span>
-          </div>
-        </li>
-        <li
-          className="List-Item selected"
-        >
-          <div
-            className="CircleContainer arrowPrevious"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-            tabIndex={0}
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span>
-              Phase
-            </span>
-          </div>
-          <div
-            className="CircleContainer arrowNext"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-            tabIndex={0}
-          >
-            <div>
-              <div
-                className="Icon"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span>
-              Type
-            </span>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span>
-              Status
-            </span>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span>
-              Filing
-            </span>
-          </div>
-        </li>
-      </ul>
     </div>
   </div>
 </div>
@@ -8902,6 +8911,90 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SmallMultiplesLegend with one entry 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SmallMultiplesLegend"
+  >
+    <div
+      className="List guideLine"
+      onWheel={[Function]}
+    >
+      <ul>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-12)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-12"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(221, 10, 10)",
+                          "stroke": "rgb(221, 10, 10)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                Security
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SmallMultiplesLegend/LegendItem all 1`] = `
 <div
   className="visualization"
@@ -9077,7 +9170,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
       }
     >
       <svg
-        aria-labelledby="victory-container-12-title victory-container-12-desc"
+        aria-labelledby="victory-container-13-title victory-container-13-desc"
         height={300}
         role="img"
         style={
@@ -9811,7 +9904,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           tabIndex="0"
         >
           <g
-            clipPath="url(#victory-clip-13)"
+            clipPath="url(#victory-clip-14)"
             style={
               Object {
                 "height": "100%",
@@ -9822,7 +9915,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-13"
+                id="victory-clip-14"
               >
                 <rect
                   height={200}
@@ -9849,7 +9942,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-14)"
+            clipPath="url(#victory-clip-15)"
             style={
               Object {
                 "height": "100%",
@@ -9860,7 +9953,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-14"
+                id="victory-clip-15"
               >
                 <rect
                   height={200}
@@ -9887,7 +9980,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-15)"
+            clipPath="url(#victory-clip-16)"
             style={
               Object {
                 "height": "100%",
@@ -9898,7 +9991,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-15"
+                id="victory-clip-16"
               >
                 <rect
                   height={200}

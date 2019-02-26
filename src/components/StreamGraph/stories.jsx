@@ -6,13 +6,12 @@ import ReadMe from './README.md';
 
 import { conditionCountsByYear } from '../../mockData';
 
-const chartTitle = 'Themes Across All Conditions';
-
 storiesForComponent('Components|StreamGraph', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('With interaction', () => (
     <Streamgraph
       projectData={conditionCountsByYear.counts}
-      chartTitle={chartTitle}
+      feature="theme"
+      subFeature=""
     />
   ));

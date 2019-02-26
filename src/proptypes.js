@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
+import { features } from './constants';
+
+export const featureTypes = PropTypes.oneOf(Object.keys(features));
 
 export const conditionsPerYear = PropTypes.shape({
-  feature: PropTypes.string.isRequired,
-  subfeature: PropTypes.string.isRequired,
+  feature: featureTypes.isRequired,
+  subFeature: PropTypes.string.isRequired,
   years: PropTypes.objectOf(PropTypes.number).isRequired,
 });
 

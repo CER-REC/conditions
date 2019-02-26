@@ -39,7 +39,7 @@ const InstrumentBubble = (props) => {
               value={node.value}
             />
             <text className="bubbleTitle">
-              <FormattedMessage id={`common.instrument.type.${node.data.parentName}`}>
+              <FormattedMessage id={`common.instrumentCommodityType.${node.data.parentName}`}>
                 {text => (
                   <textPath
                     href={`#${node.data.parentName}path`}
