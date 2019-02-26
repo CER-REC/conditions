@@ -9,7 +9,9 @@ class ContentBlock extends React.PureComponent {
   render() {
     return (
       <div className={`ContentBlock ${(this.props.half ? 'half' : '')}`}>
-        <FormattedMessage id={this.props.id} tagName="h4" />: {this.props.content}
+        <FormattedMessage id={this.props.id}>
+          {text => <span className="contentHeading">{text}</span>}
+        </FormattedMessage>: {this.props.content}
       </div>
     );
   }

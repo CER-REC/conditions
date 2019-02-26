@@ -39,6 +39,13 @@
     vertical-align: top;
   }
 
+  .contentHeading {
+    font-family: $fira-sans-condensed;
+    font-weight: bold;
+
+    color: $Gray160;
+  }
+
   &.expanded {
 
     // max-width: 820px;

@@ -11,7 +11,11 @@ import ContentBlock from '../ContentBlock';
 class Content extends React.PureComponent {
   renderContentText = (id, content) => {
     const paragraphs = content.split('\n');
-    const heading = <FormattedMessage id={id} tagName="h4" />;
+    const heading = (
+      <FormattedMessage id={id}>
+        {text => <span className="contentHeading">{text}</span>}
+      </FormattedMessage>
+    );
 
     return React.createElement(React.Fragment, {},
       <p className="contentText">{heading}: {paragraphs[0]}</p>,
