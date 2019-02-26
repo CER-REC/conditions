@@ -2,8 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import InstrumentsLegend from '.';
-import LegendItem from './LegendItem';
-import List from '../List';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 describe('Components|InstrumentsLegend', () => {
@@ -25,20 +23,15 @@ describe('Components|InstrumentsLegend', () => {
   shouldBehaveLikeAComponent(InstrumentsLegend, () => wrapper);
 
   describe('when only one category exists in the data', () => {
-    const category = 'category';
-    const data = [{
-      parentName: 'I.1',
-      children: [{
-        category,
-      }, {
-        category,
-      }],
-    }, {
-      parentName: 'I.2',
-      children: [{
-        category,
-      }],
-    }];
+    const category = 'ROUTING';
+    const data = [
+      {
+        prefix: 'XO',
+        value: 40,
+        type: 'ROUTING',
+        commodity: ['OIL'],
+      },
+    ];
 
     beforeEach(() => {
       wrapper = shallow((
@@ -51,56 +44,47 @@ describe('Components|InstrumentsLegend', () => {
     });
 
     test('should not render a "All" list item', () => {
-      const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
+      const legendItemsWrapper = wrapper.find('List').shallow().find('LegendItem');
 
       expect(legendItemsWrapper.filter('[all=true]')).toHaveLength(0);
       expect(legendItemsWrapper).toHaveLength(1);
     });
 
     test('should call the onChange function on List item change', () => {
-      wrapper.find(List).prop('onChange')(0);
+      wrapper.find('List').prop('onChange')(0);
 
       expect(spy).toHaveBeenLastCalledWith(category);
     });
 
     test('should render the List component with the first item selected', () => {
-      expect(wrapper.find(List).prop('selected')).toBe(0);
+      expect(wrapper.find('List').prop('selected')).toBe(0);
     });
   });
 
   describe('when multiple categories exists in the data', () => {
-    const categories = ['C1', 'C2', 'C3', 'C4', 'C5'];
-    const categoryIndicators = [
-      [true, true, true, true],
-      [true, true, false, false],
-      [true, true, false, false],
-      [false, true, false, false],
-      [false, true, true, false],
-    ];
+    const rowIndicators = {
+      ROUTING: [true, false, false],
+      OPENING: [true, true, false],
+      MISC: [true, false, true],
+    };
     const data = [{
-      parentName: 'OIL',
-      children: [],
-    }, {
-      parentName: 'GAS',
-      children: [],
-    }, {
-      parentName: 'POWER',
-      children: [],
-    }, {
-      parentName: 'NOT_SPECIFIED',
-      children: [],
+      prefix: 'GPLO',
+      value: 40,
+      type: 'OPENING',
+      commodity: ['OIL', 'GAS'],
+    },
+    {
+      prefix: 'OPLO',
+      value: 20,
+      type: 'ROUTING',
+      commodity: ['OIL'],
+    },
+    {
+      prefix: 'OPSO',
+      value: 33,
+      type: 'MISC',
+      commodity: ['OIL', 'POWER'],
     }];
-
-    // Fill in data children elements based on the category indicators
-    data.forEach((indicatorsData, typeIndex) => {
-      categoryIndicators.forEach((indicators, categoryIndex) => {
-        if (indicators[typeIndex]) {
-          indicatorsData.children.push({
-            category: categories[categoryIndex],
-          });
-        }
-      });
-    });
 
     beforeEach(() => {
       wrapper = shallow((
@@ -116,50 +100,46 @@ describe('Components|InstrumentsLegend', () => {
       const headersWrapper = wrapper.find('.headers FormattedMessage');
 
       data.forEach((indicatorsData, index) => {
-        const id = `common.instrumentCommodityType.${indicatorsData.parentName}`;
-
-        expect(headersWrapper.at(index).prop('id')).toBe(id);
+        const id = `common.instrumentCommodityType.${indicatorsData.commodity[0]}`;
+        expect(headersWrapper.at(0).prop('id')).toBe(id);
         expect(headersWrapper.at(index).shallowWithIntl().hasClass('indicator')).toBe(true);
       });
     });
 
     test('should render the data as LegendItem components in the List component', () => {
-      for (let i = 0; i < categories.length; i += 1) {
-        const listItemWrapper = wrapper.find(List).shallow().find(LegendItem).find(`[title='${categories[i]}']`);
-
-        expect(listItemWrapper).toHaveLength(1);
-        expect(listItemWrapper.type()).toBe(LegendItem);
-        expect(listItemWrapper.prop('indicators')).toEqual(categoryIndicators[i]);
-      }
+      const listItems = wrapper.find('List').prop('items');
+      Object.entries(rowIndicators).forEach(([rowName, expectedIndicators]) => {
+        const item = listItems.filter(element => element.props.title === rowName);
+        expect(item).toHaveLength(1);
+        expect(item[0].props.indicators).toEqual(expectedIndicators);
+      });
     });
 
     test('should render the all LegendItem component', () => {
-      const legendItemsWrapper = wrapper.find(List).shallow().find(LegendItem);
+      const legendItemsWrapper = wrapper.find('List').shallow().find('LegendItem');
 
       expect(legendItemsWrapper.at(0).prop('all')).toBe(true);
-      expect(legendItemsWrapper).toHaveLength(6);
+      expect(legendItemsWrapper).toHaveLength(4);
     });
 
     test('should call the onChange function with null on List item change to the all item', () => {
       // All item is at the top
-      wrapper.find(List).prop('onChange')(0);
+      wrapper.find('List').prop('onChange')(0);
 
       expect(spy).toHaveBeenLastCalledWith(null);
     });
 
-    test('should call the onChange function with the categories name on List item change', () => {
-      for (let i = 0; i < categories.length; i += 1) {
+    test('should call the onChange function with the column name on List item change', () => {
+      const listItems = wrapper.find('List').prop('items');
+      for (let i = 0; i < Object.keys(rowIndicators).length; i += 1) {
         // Account for all item at the beginning
-        wrapper.find(List).prop('onChange')(i + 1);
-
-        expect(spy).toHaveBeenLastCalledWith(categories[i]);
+        wrapper.find('List').prop('onChange')(i + 1);
+        expect(spy).toHaveBeenLastCalledWith(listItems[i + 1].props.title);
       }
-
-      expect(spy).toHaveBeenCalledTimes(categories.length);
     });
 
     test('should render the List component with the first item selected', () => {
-      expect(wrapper.find(List).prop('selected')).toBe(0);
+      expect(wrapper.find('List').prop('selected')).toBe(0);
     });
 
     test('should render the List component with the corresponding item selected when selected is provided', () => {
@@ -167,12 +147,14 @@ describe('Components|InstrumentsLegend', () => {
         <InstrumentsLegend
           data={data}
           onChange={noop}
-          selected={categories[2]}
+          selected="OPENING"
         />
       ));
 
+      const listItems = wrapper.find('List').prop('items');
+      const selectedIndex = listItems.findIndex(item => item.props.title === 'OPENING');
       // An "All" item is rendered at the top for multiple categories
-      expect(wrapper.find(List).prop('selected')).toBe(3);
+      expect(wrapper.find('List').prop('selected')).toBe(selectedIndex);
     });
 
     test('should render the List component with the first item selected when selected is invalid', () => {
@@ -184,7 +166,7 @@ describe('Components|InstrumentsLegend', () => {
         />
       ));
 
-      expect(wrapper.find(List).prop('selected')).toBe(0);
+      expect(wrapper.find('List').prop('selected')).toBe(0);
     });
   });
 });

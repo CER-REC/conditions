@@ -1873,10 +1873,7 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
       Theme
     </h1>
     <p>
-      Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. 
-    </p>
-    <p>
-       Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes.
+      Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.
     </p>
   </div>
 </div>
@@ -2948,7 +2945,22 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
       <span
         className="indicator"
       >
-        Any Commodity Types
+        Oil
+      </span>
+      <span
+        className="indicator"
+      >
+        Gas
+      </span>
+      <span
+        className="indicator"
+      >
+        Power
+      </span>
+      <span
+        className="indicator"
+      >
+        Not Specified
       </span>
     </span>
     <div
@@ -3038,6 +3050,22 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                     }
                   }
                 />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(14, 43, 140)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
               </span>
               <span>
                 Routing
@@ -3069,9 +3097,119 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                     }
                   }
                 />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
               </span>
               <span>
                 Construction
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(22, 78, 248)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(22, 78, 248)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+              </span>
+              <span>
+                Opening
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(212, 169, 42)",
+                    }
+                  }
+                />
+              </span>
+              <span>
+                Misc.
               </span>
             </div>
           </div>
@@ -3283,10 +3421,100 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                   className="indicator"
                   style={
                     Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
+                      "backgroundColor": "rgb(14, 43, 140)",
                     }
                   }
                 />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(14, 43, 140)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+              </span>
+              <span>
+                Routing
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+              </span>
+              <span>
+                Construction
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
                 <div
                   className="indicator"
                   style={
@@ -3305,11 +3533,11 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                 />
                 <div
                   className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
-                    }
-                  }
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
                 />
               </span>
               <span>
@@ -3336,19 +3564,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
               >
                 <div
                   className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
-                    }
-                  }
+                  style={Object {}}
                 />
                 <div
                   className="indicator"
@@ -3357,37 +3573,6 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                 <div
                   className="indicator"
                   style={Object {}}
-                />
-              </span>
-              <span>
-                Abandonment
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="indicators"
-              >
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(212, 169, 42)",
-                    }
-                  }
                 />
                 <div
                   className="indicator"
@@ -3396,108 +3581,10 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                       "backgroundColor": "rgb(212, 169, 42)",
                     }
                   }
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
                 />
               </span>
               <span>
                 Misc.
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="indicators"
-              >
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(201, 4, 194)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-              </span>
-              <span>
-                Safety
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="indicators"
-              >
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(195, 230, 179)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(195, 230, 179)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-              </span>
-              <span>
-                Tariffs
               </span>
             </div>
           </div>
