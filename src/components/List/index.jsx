@@ -33,45 +33,17 @@ class List extends React.PureComponent {
     if (newIndex !== this.props.selected) this.props.onChange(newIndex);
   }
 
-  renderListItems = (selectedIndex) => {
-    // arrowSize should match the legend style's arrow-size variable
-    // (there are testing issues with :export)
-    const arrowSize = 24;
-
-    const previousIcon = this.props.horizontal ? 'angle-left' : 'angle-up';
-    const nextIcon = this.props.horizontal ? 'angle-right' : 'angle-down';
-    const items = this.props.items.map((item, i) => {
-      const isSelected = selectedIndex === i;
-      return (
-        <li
-          key={item.key || item}
-          className={classNames('List-Item', { selected: isSelected })}
-        >
-          {!isSelected || selectedIndex === 0 ? null : (
-            <CircleContainer size={arrowSize} onClick={() => this.props.onChange(i - 1)} className="arrowPrevious">
-              <Icon size="1x" icon={previousIcon} />
-            </CircleContainer>
-          )}
-          <div {...(this.props.itemInteractions ? handleInteraction(this.props.onChange, i) : {})} className="List-Item-Content">
-            {item}
-          </div>
-          {!isSelected || selectedIndex === (this.props.items.length - 1) ? null : (
-            <CircleContainer size={arrowSize} onClick={() => this.props.onChange(i + 1)} className="arrowNext">
-              <Icon size="1x" icon={nextIcon} />
-            </CircleContainer>
-          )}
-        </li>
-      );
-    });
-
-    return items;
-  }
-
   render = () => {
     if (this.props.items.length === 0) { return null; }
 
     // Selected index cannot exceed the length of the array
     const selectedIndex = (this.props.selected < this.props.items.length) ? this.props.selected : 0;
+
+    // arrowSize should match the legend style's arrow-size variable
+    // (there are testing issues with :export)
+    const arrowSize = 24;
+    const previousIcon = this.props.horizontal ? 'angle-left' : 'angle-up';
+    const nextIcon = this.props.horizontal ? 'angle-right' : 'angle-down';
 
     return (
       <div
@@ -81,9 +53,44 @@ class List extends React.PureComponent {
           { horizontal: this.props.horizontal, guideLine: this.props.guideLine },
         )}
         onWheel={this.onWheel}
-        data-selected={selectedIndex}
       >
-        <ul>{this.renderListItems(selectedIndex)}</ul>
+        <ul>
+          {this.props.items.map((item, i) => (
+            <li
+              key={item.key || item}
+              className={classNames('List-Item', { selected: selectedIndex === i })}
+            >
+              {selectedIndex !== i || selectedIndex === 0
+                ? null
+                : (
+                  <CircleContainer
+                    size={arrowSize}
+                    onClick={() => this.props.onChange(i - 1)}
+                    className="arrowPrevious"
+                  >
+                    <Icon size="1x" icon={previousIcon} />
+                  </CircleContainer>
+                )}
+              <div
+                {...handleInteraction(this.props.itemInteractions && this.props.onChange, i)}
+                className="List-Item-Content"
+              >
+                {item}
+              </div>
+              {selectedIndex !== i || selectedIndex === (this.props.items.length - 1)
+                ? null
+                : (
+                  <CircleContainer
+                    size={arrowSize}
+                    onClick={() => this.props.onChange(i + 1)}
+                    className="arrowNext"
+                  >
+                    <Icon size="1x" icon={nextIcon} />
+                  </CircleContainer>
+                )}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
