@@ -4,9 +4,13 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import BarContainer from '../BarContainer';
 import './styles.scss';
+import { features } from '../../constants';
 
 const RegionConditionSummary = (props) => {
-  const items = props.featureData.map(k => ({ value: k.count, fill: k.color }));
+  const items = props.featureData.map(k => ({
+    value: k.count,
+    fill: features[k.feature][k.description] || 'black',
+  }));
   return (
     <div className={classNames(
       'RegionConditionSummary',
@@ -35,7 +39,6 @@ const RegionConditionSummary = (props) => {
 RegionConditionSummary.propTypes = {
   className: PropTypes.string,
   featureData: PropTypes.arrayOf(PropTypes.shape({
-    color: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
   })).isRequired,

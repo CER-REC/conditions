@@ -3,23 +3,11 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
+import { features } from '../../../constants';
 
 /* TODO:
 1) Check if the text is overlapping another and change arc accordingly
 */
-
-const pickColor = (category) => {
-  switch (category) {
-    case 'routing': return '#0E2B8C';
-    case 'construction': return '#27A5F9';
-    case 'abandonment': return '#164EF8';
-    case 'misc': return '#D4A92A';
-    case 'safety': return '#C904C2';
-    case 'tariffs': return '#C3E6B3';
-    case 'opening': return '#6AE6B2';
-    default: return 'white';
-  }
-};
 
 const InstrumentBubble = (props) => {
   const {
@@ -51,7 +39,7 @@ const InstrumentBubble = (props) => {
               value={node.value}
             />
             <text className="bubbleTitle">
-              <FormattedMessage id={`common.instrument.type.${node.data.parentName}`}>
+              <FormattedMessage id={`common.instrumentCommodityType.${node.data.parentName}`}>
                 {text => (
                   <textPath
                     href={`#${node.data.parentName}path`}
@@ -80,7 +68,7 @@ const InstrumentBubble = (props) => {
           <circle
             r={node.value}
             transform={`translate(${node.x} ${node.y})`}
-            style={{ fill: pickColor(node.data.category) }}
+            style={{ fill: features.instrument[node.data.category] || 'white' }}
           />
           <text
             x={textX}

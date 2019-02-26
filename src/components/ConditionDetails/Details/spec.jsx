@@ -5,12 +5,12 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import Details from '.';
 
 const defaultProps = {
-  theme: 'theme.environmentalProtection',
-  instrument: 'instrument.category.construction',
-  phase: 'phase.duringConstruction',
-  type: 'type.standard',
-  status: 'status.inProgress',
-  filing: 'status.noFilingReq',
+  theme: 'theme.ENVIRONMENTAL_PROTECTION',
+  instrument: 'instrument.CONSTRUCTION',
+  phase: 'phase.DURING_CONSTRUCTION_PHASE',
+  type: 'type.STANDARD',
+  status: 'status.IN_PROGRESS',
+  filing: 'status.NO_FILING_REQUIRED',
 };
 
 describe('Components|ConditionDetails/Details', () => {

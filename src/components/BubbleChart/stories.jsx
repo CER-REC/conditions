@@ -7,41 +7,41 @@ import ReadMe from './README.md';
 const instrumentChartData2 = {
   name: 'data',
   children: [{
-    parentName: 'anyCommodityTypes',
+    parentName: 'ANY_COMMODITY_TYPES',
     children: [
       {
         name: 'MO',
         children: [],
         value: 40,
-        category: 'misc',
+        category: 'MISC',
       }, {
         name: 'AO',
         children: [],
         value: 40,
-        category: 'misc',
+        category: 'MISC',
       },
       {
         name: 'ZO',
         children: [],
         value: 20,
-        category: 'routing',
+        category: 'ROUTING',
       },
     ],
   },
   {
-    parentName: 'notSpecified',
+    parentName: 'NOT_SPECIFIED',
     children: [
       {
         name: 'XC',
         children: [],
         value: 10,
-        category: 'construction',
+        category: 'CONSTRUCTION',
       },
       {
         name: 'CO',
         children: [],
         value: 10,
-        category: 'misc',
+        category: 'MISC',
       },
     ],
   }],
@@ -50,90 +50,90 @@ const instrumentChartData2 = {
 const instrumentChartData1 = {
   name: 'data',
   children: [{
-    parentName: 'gas',
+    parentName: 'GAS',
     children: [
       {
         name: 'XG',
         children: [],
         value: 40,
-        category: 'construction',
+        category: 'CONSTRUCTION',
       }, {
         name: 'GC',
         children: [],
         value: 30,
-        category: 'construction',
+        category: 'CONSTRUCTION',
       },
       {
         name: 'GPSO',
         children: [],
         value: 10,
-        category: 'opening',
+        category: 'OPENING',
       },
       {
         name: 'SG',
         children: [],
         value: 20,
-        category: 'safety',
+        category: 'SAFETY',
       },
       {
         name: 'GPLO',
         children: [],
         value: 5,
-        category: 'opening',
+        category: 'OPENING',
       },
       {
         name: 'TG',
         children: [],
         value: 10,
-        category: 'tariffs',
+        category: 'TARIFFS',
       },
     ],
   },
   {
-    parentName: 'power',
+    parentName: 'POWER',
     children: [
       {
         name: 'EC',
         children: [],
         value: 10,
-        category: 'construction',
+        category: 'CONSTRUCTION',
       },
       {
         name: 'EPE',
         children: [],
         value: 15,
-        category: 'construction',
+        category: 'CONSTRUCTION',
       },
     ],
   },
   {
-    parentName: 'oil',
+    parentName: 'OIL',
     children: [{
       name: 'XO',
       children: [],
       value: 40,
-      category: 'construction',
+      category: 'CONSTRUCTION',
     },
     {
       name: 'SO',
       children: [],
       value: 30,
-      category: 'safety',
+      category: 'SAFETY',
     }, {
       name: 'OC',
       children: [],
       value: 40,
-      category: 'construction',
+      category: 'CONSTRUCTION',
     }, {
       name: 'OPLO',
       children: [],
       value: 10,
-      category: 'opening',
+      category: 'OPENING',
     }, {
       name: 'OPSO',
       children: [],
       value: 10,
-      category: 'opening',
+      category: 'OPENING',
     }],
   }],
 };
