@@ -3,7 +3,7 @@
 .Details {
   display: inline-block;
 
-  max-width: 220px;
+  width: 100%;
   max-height: 300px;
 
   overflow-x: hidden;
@@ -18,5 +18,8 @@
 
   .content {
     padding: 20px;
+
+    width: 100%;
+    height: calc(100% - 24px);
   }
 }
