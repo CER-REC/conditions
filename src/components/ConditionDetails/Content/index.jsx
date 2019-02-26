@@ -11,15 +11,21 @@ import ContentBlock from '../ContentBlock';
 class Content extends React.PureComponent {
   renderContentText = (id, content) => {
     const paragraphs = content.split('\n');
-    const heading = (
-      <FormattedMessage id={id}>
-        {text => <span className="contentHeading">{text}</span>}
-      </FormattedMessage>
-    );
 
-    return React.createElement(React.Fragment, {},
-      <p className="contentText">{heading}: {paragraphs[0]}</p>,
-      ...paragraphs.slice(1).map(text => <p className="contentText">{text}</p>));
+    return (
+      <React.Fragment>
+        <p className="contentText">
+          <FormattedMessage id={id}>
+            {text => <span className="contentHeading">{text}</span>}
+          </FormattedMessage>: {paragraphs[0]}
+        </p>
+        {
+          paragraphs.slice(1)
+            // eslint-disable-next-line react/no-array-index-key
+            .map((text, idx) => <p className="contentText" key={idx}>{text}</p>)
+        }
+      </React.Fragment>
+    );
   }
 
   renderInstrumentLink = instrumentNumber => (
