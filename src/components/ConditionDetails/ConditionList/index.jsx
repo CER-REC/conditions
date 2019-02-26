@@ -6,25 +6,10 @@ import './styles.scss';
 import List from '../../List';
 import BarContainer from '../../BarContainer';
 
-class ConditionList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { elementIndices: [] };
-  }
-
+class ConditionList extends React.PureComponent {
   onChange = (i) => {
-    const { instrumentIndex, itemIndex } = this.state.elementIndices[i];
+    const { instrumentIndex, itemIndex } = this.props.items[i];
     this.props.updateSelectedItem(instrumentIndex, itemIndex);
-  }
-
-  componentDidMount = () => {
-    const elementIndices = this.props.items.map(item => ({
-      instrumentIndex: item.instrumentIndex,
-      itemIndex: item.itemIndex,
-    }));
-
-    this.setState({ elementIndices });
   }
 
   render() {
