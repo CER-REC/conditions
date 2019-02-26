@@ -12,7 +12,7 @@ class Details extends React.PureComponent {
       <div className="Details">
         <div className="filler" />
         <div className="content">
-          {this.props.data
+          {!this.props.isInstrument
             ? (
               <React.Fragment>
                 <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
@@ -33,14 +33,20 @@ class Details extends React.PureComponent {
 }
 
 Details.propTypes = {
-  data: PropTypes.oneOf(null, PropTypes.shape({
+  isInstrument: PropTypes.bool,
+  data: PropTypes.shape({
     theme: PropTypes.string.isRequired,
     instrument: PropTypes.string.isRequired,
     phase: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     filing: PropTypes.string.isRequired,
-  })).isRequired,
+  }),
+};
+
+Details.defaultProps = {
+  isInstrument: false,
+  data: {},
 };
 
 export default Details;

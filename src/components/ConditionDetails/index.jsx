@@ -77,9 +77,15 @@ class ConditionDetails extends React.Component {
     />
   )
 
-  renderDetails = (instrument, index) => (
-    <Details data={(index === -1) ? null : instrument.conditions[index].details} />
-  )
+  renderDetails = (instrument, index) => {
+    const isInstrument = (index === -1);
+    return (
+      <Details
+        isInstrument={isInstrument}
+        data={isInstrument ? null : instrument.conditions[index].details}
+      />
+    );
+  }
 
   render() {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];

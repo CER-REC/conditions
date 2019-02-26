@@ -4,7 +4,7 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import Details from '.';
 
-const defaultProps = {
+const data = {
   theme: 'theme.ENVIRONMENTAL_PROTECTION',
   instrument: 'instrument.CONSTRUCTION',
   phase: 'phase.DURING_CONSTRUCTION_PHASE',
@@ -17,7 +17,7 @@ describe('Components|ConditionDetails/Details', () => {
   describe('with default props', () => {
     const wrapper = shallow(
       <Details
-        {...defaultProps}
+        data={data}
       />,
     );
 

@@ -1995,7 +1995,18 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
     </div>
     <div
       className="popout"
-    />
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
+      </div>
+    </div>
   </section>
 </div>
 `;
@@ -2542,7 +2553,18 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
     </div>
     <div
       className="popout"
-    />
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
+      </div>
+    </div>
   </section>
 </div>
 `;

@@ -3,7 +3,7 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import Details from '.';
 import ReadMe from './README.md';
 
-const defaultProps = {
+const data = {
   theme: 'theme.ENVIRONMENTAL_PROTECTION',
   instrument: 'instrument.CONSTRUCTION',
   phase: 'phase.DURING_CONSTRUCTION_PHASE',
@@ -15,6 +15,6 @@ const defaultProps = {
 storiesForComponent('Components|ConditionDetails/Details', module, ReadMe)
   .add('default', () => (
     <Details
-      {...defaultProps}
+      data={data}
     />
   ));
