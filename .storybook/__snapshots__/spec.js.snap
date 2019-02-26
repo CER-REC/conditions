@@ -26,125 +26,33 @@ exports[`Storyshots Components|BarContainer default 1`] = `
 >
   <svg
     className="BarContainer"
-    height={12}
-    width={111}
+    height="100%"
+    width="100%"
   >
-    <g
-      className="BarContainer"
-      height={12}
-      width={111}
-    >
-      <rect
-        className="Bar"
-        fill="green"
-        height={12}
-        width={12}
-        x={0}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="red"
-        height={12}
-        width={66}
-        x={12}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="pink"
-        height={12}
-        width={33}
-        x={78}
-        y={0}
-      />
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|BarContainer scale horizontal and 2x scale 1`] = `
-<div
-  className="visualization"
->
-  <svg
-    className="BarContainer"
-    height={24}
-    width={222}
-  >
-    <g
-      className="BarContainer"
-      height={24}
-      width={222}
-    >
-      <rect
-        className="Bar"
-        fill="green"
-        height={24}
-        width={24}
-        x={0}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="red"
-        height={24}
-        width={132}
-        x={24}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="pink"
-        height={24}
-        width={66}
-        x={156}
-        y={0}
-      />
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|BarContainer searched bars 1`] = `
-<div
-  className="visualization"
->
-  <svg
-    className="BarContainer"
-    height={15}
-    width={111}
-  >
-    <g
-      className="BarContainer"
-      height={15}
-      width={111}
-    >
-      <rect
-        className="Bar"
-        fill="green"
-        height={15}
-        width={12}
-        x={0}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="red"
-        height={15}
-        width={66}
-        x={12}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="pink"
-        height={15}
-        width={33}
-        x={78}
-        y={0}
-      />
-    </g>
+    <rect
+      className="Bar"
+      fill="green"
+      height="100%"
+      width="10.81081081081081%"
+      x="0%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="red"
+      height="100%"
+      width="59.45945945945946%"
+      x="10.810810810810814%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="pink"
+      height="100%"
+      width="29.72972972972973%"
+      x="70.27027027027027%"
+      y={0}
+    />
   </svg>
 </div>
 `;
@@ -156,31 +64,31 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
   <svg>
     <g
       className="BarContainer"
-      height={12}
-      width={111}
+      height="100%"
+      width="100%"
     >
       <rect
         className="Bar"
         fill="green"
-        height={12}
-        width={12}
-        x={0}
+        height="100%"
+        width="10.81081081081081%"
+        x="0%"
         y={0}
       />
       <rect
         className="Bar"
         fill="red"
-        height={12}
-        width={66}
-        x={12}
+        height="100%"
+        width="59.45945945945946%"
+        x="10.810810810810814%"
         y={0}
       />
       <rect
         className="Bar"
         fill="pink"
-        height={12}
-        width={33}
-        x={78}
+        height="100%"
+        width="29.72972972972973%"
+        x="70.27027027027027%"
         y={0}
       />
     </g>
@@ -194,143 +102,34 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
 >
   <svg
     className="BarContainer"
-    height={66}
-    width={60}
+    height="100%"
+    width="100%"
   >
-    <g
-      className="BarContainer"
-      height={66}
-      width={60}
-    >
-      <rect
-        className="Bar"
-        fill="green"
-        height={12}
-        width={20}
-        x={0}
-        y={54}
-      />
-      <rect
-        className="Bar"
-        fill="red"
-        height={66}
-        width={20}
-        x={20}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="pink"
-        height={33}
-        width={20}
-        x={40}
-        y={33}
-      />
-    </g>
+    <rect
+      className="Bar"
+      fill="green"
+      height="18.181818181818183%"
+      width="33.33333333333333%"
+      x="0%"
+      y="81.81818181818181%"
+    />
+    <rect
+      className="Bar"
+      fill="red"
+      height="100%"
+      width="33.33333333333333%"
+      x="33.33333333333333%"
+      y="0%"
+    />
+    <rect
+      className="Bar"
+      fill="pink"
+      height="50%"
+      width="33.33333333333333%"
+      x="66.66666666666666%"
+      y="50%"
+    />
   </svg>
-</div>
-`;
-
-exports[`Storyshots Components|BarContainer vertical bars with 2x scale 1`] = `
-<div
-  className="visualization"
->
-  <svg
-    className="BarContainer"
-    height={132}
-    width={180}
-  >
-    <g
-      className="BarContainer"
-      height={132}
-      width={180}
-    >
-      <rect
-        className="Bar"
-        fill="green"
-        height={24}
-        width={60}
-        x={0}
-        y={108}
-      />
-      <rect
-        className="Bar"
-        fill="red"
-        height={132}
-        width={60}
-        x={60}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="pink"
-        height={66}
-        width={60}
-        x={120}
-        y={66}
-      />
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|BarContainer vertical bars with 2x scale and standalone 1`] = `
-<div
-  className="visualization"
->
-  <svg>
-    <g
-      className="BarContainer"
-      height={132}
-      width={180}
-    >
-      <rect
-        className="Bar"
-        fill="green"
-        height={24}
-        width={60}
-        x={0}
-        y={108}
-      />
-      <rect
-        className="Bar"
-        fill="red"
-        height={132}
-        width={60}
-        x={60}
-        y={0}
-      />
-      <rect
-        className="Bar"
-        fill="pink"
-        height={66}
-        width={60}
-        x={120}
-        y={66}
-      />
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|BarContainer/Bar default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="BarContainer"
-  >
-    <svg>
-      <rect
-        className="Bar"
-        fill="tomato"
-        height={20}
-        width={100}
-        x={0}
-        y={0}
-      />
-    </svg>
-  </div>
 </div>
 `;
 
@@ -1759,23 +1558,17 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={75}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={75}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="pink"
-                          height={6}
-                          width={75}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="pink"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -1799,23 +1592,17 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={50}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={50}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="blue"
-                          height={6}
-                          width={50}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="blue"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -1936,23 +1723,17 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={25}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={25}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="red"
-                          height={6}
-                          width={25}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -1976,23 +1757,17 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={50}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={50}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="red"
-                          height={6}
-                          width={50}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -2039,23 +1814,17 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={75}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={75}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="orange"
-                          height={6}
-                          width={75}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="orange"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -2311,23 +2080,17 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={75}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={75}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="pink"
-                          height={6}
-                          width={75}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="pink"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -2351,23 +2114,17 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={50}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={50}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="blue"
-                          height={6}
-                          width={50}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="blue"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -2451,23 +2208,17 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={25}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={25}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="red"
-                          height={6}
-                          width={25}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -2528,23 +2279,17 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={50}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={50}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="red"
-                          height={6}
-                          width={50}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -2591,23 +2336,17 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     />
                     <svg
                       className="BarContainer"
-                      height={6}
-                      width={75}
+                      height="100%"
+                      width="25px"
                     >
-                      <g
-                        className="BarContainer"
-                        height={6}
-                        width={75}
-                      >
-                        <rect
-                          className="Bar"
-                          fill="orange"
-                          height={6}
-                          width={75}
-                          x={0}
-                          y={0}
-                        />
-                      </g>
+                      <rect
+                        className="Bar"
+                        fill="orange"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
                     </svg>
                   </div>
                 </div>
@@ -2854,23 +2593,17 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 />
                 <svg
                   className="BarContainer"
-                  height={6}
-                  width={75}
+                  height="100%"
+                  width="25px"
                 >
-                  <g
-                    className="BarContainer"
-                    height={6}
-                    width={75}
-                  >
-                    <rect
-                      className="Bar"
-                      fill="pink"
-                      height={6}
-                      width={75}
-                      x={0}
-                      y={0}
-                    />
-                  </g>
+                  <rect
+                    className="Bar"
+                    fill="pink"
+                    height="100%"
+                    width="100%"
+                    x="0%"
+                    y={0}
+                  />
                 </svg>
               </div>
             </div>
@@ -2894,23 +2627,17 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 />
                 <svg
                   className="BarContainer"
-                  height={6}
-                  width={50}
+                  height="100%"
+                  width="25px"
                 >
-                  <g
-                    className="BarContainer"
-                    height={6}
-                    width={50}
-                  >
-                    <rect
-                      className="Bar"
-                      fill="blue"
-                      height={6}
-                      width={50}
-                      x={0}
-                      y={0}
-                    />
-                  </g>
+                  <rect
+                    className="Bar"
+                    fill="blue"
+                    height="100%"
+                    width="100%"
+                    x="0%"
+                    y={0}
+                  />
                 </svg>
               </div>
             </div>
@@ -3031,23 +2758,17 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 />
                 <svg
                   className="BarContainer"
-                  height={6}
-                  width={25}
+                  height="100%"
+                  width="25px"
                 >
-                  <g
-                    className="BarContainer"
-                    height={6}
-                    width={25}
-                  >
-                    <rect
-                      className="Bar"
-                      fill="red"
-                      height={6}
-                      width={25}
-                      x={0}
-                      y={0}
-                    />
-                  </g>
+                  <rect
+                    className="Bar"
+                    fill="red"
+                    height="100%"
+                    width="100%"
+                    x="0%"
+                    y={0}
+                  />
                 </svg>
               </div>
             </div>
@@ -3071,23 +2792,17 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 />
                 <svg
                   className="BarContainer"
-                  height={6}
-                  width={50}
+                  height="100%"
+                  width="25px"
                 >
-                  <g
-                    className="BarContainer"
-                    height={6}
-                    width={50}
-                  >
-                    <rect
-                      className="Bar"
-                      fill="red"
-                      height={6}
-                      width={50}
-                      x={0}
-                      y={0}
-                    />
-                  </g>
+                  <rect
+                    className="Bar"
+                    fill="red"
+                    height="100%"
+                    width="100%"
+                    x="0%"
+                    y={0}
+                  />
                 </svg>
               </div>
             </div>
@@ -3134,23 +2849,17 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                 />
                 <svg
                   className="BarContainer"
-                  height={6}
-                  width={75}
+                  height="100%"
+                  width="25px"
                 >
-                  <g
-                    className="BarContainer"
-                    height={6}
-                    width={75}
-                  >
-                    <rect
-                      className="Bar"
-                      fill="orange"
-                      height={6}
-                      width={75}
-                      x={0}
-                      y={0}
-                    />
-                  </g>
+                  <rect
+                    className="Bar"
+                    fill="orange"
+                    height="100%"
+                    width="100%"
+                    x="0%"
+                    y={0}
+                  />
                 </svg>
               </div>
             </div>
@@ -7526,135 +7235,129 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
       >
         <svg
           className="BarContainer"
-          height={50}
-          width={350}
+          height="100%"
+          width="100%"
         >
-          <g
-            className="BarContainer"
-            height={50}
-            width={350}
-          >
-            <rect
-              className="Bar"
-              fill="pink"
-              height={50}
-              width={23.333333333333332}
-              x={0}
-              y={0}
-            />
-            <rect
-              className="Bar"
-              fill="red"
-              height={20}
-              width={23.333333333333332}
-              x={23.333333333333332}
-              y={30}
-            />
-            <rect
-              className="Bar"
-              fill="green"
-              height={43}
-              width={23.333333333333332}
-              x={46.666666666666664}
-              y={7}
-            />
-            <rect
-              className="Bar"
-              fill="blue"
-              height={15}
-              width={23.333333333333332}
-              x={70}
-              y={35}
-            />
-            <rect
-              className="Bar"
-              fill="purple"
-              height={5}
-              width={23.333333333333332}
-              x={93.33333333333333}
-              y={45}
-            />
-            <rect
-              className="Bar"
-              fill="yellow"
-              height={15}
-              width={23.333333333333332}
-              x={116.66666666666666}
-              y={35}
-            />
-            <rect
-              className="Bar"
-              fill="orange"
-              height={3}
-              width={23.333333333333332}
-              x={140}
-              y={47}
-            />
-            <rect
-              className="Bar"
-              fill="navy"
-              height={15}
-              width={23.333333333333332}
-              x={163.33333333333331}
-              y={35}
-            />
-            <rect
-              className="Bar"
-              fill="plum"
-              height={3}
-              width={23.333333333333332}
-              x={186.66666666666666}
-              y={47}
-            />
-            <rect
-              className="Bar"
-              fill="olive"
-              height={3}
-              width={23.333333333333332}
-              x={210}
-              y={47}
-            />
-            <rect
-              className="Bar"
-              fill="coral"
-              height={3}
-              width={23.333333333333332}
-              x={233.33333333333331}
-              y={47}
-            />
-            <rect
-              className="Bar"
-              fill="cadetBlue"
-              height={3}
-              width={23.333333333333332}
-              x={256.66666666666663}
-              y={47}
-            />
-            <rect
-              className="Bar"
-              fill="darkGreen"
-              height={3}
-              width={23.333333333333332}
-              x={280}
-              y={47}
-            />
-            <rect
-              className="Bar"
-              fill="black"
-              height={4}
-              width={23.333333333333332}
-              x={303.3333333333333}
-              y={46}
-            />
-            <rect
-              className="Bar"
-              fill="#e4e4e4"
-              height={0}
-              width={23.333333333333332}
-              x={326.66666666666663}
-              y={50}
-            />
-          </g>
+          <rect
+            className="Bar"
+            fill="pink"
+            height="100%"
+            width="6.666666666666667%"
+            x="0%"
+            y="0%"
+          />
+          <rect
+            className="Bar"
+            fill="red"
+            height="40%"
+            width="6.666666666666667%"
+            x="6.666666666666667%"
+            y="60%"
+          />
+          <rect
+            className="Bar"
+            fill="green"
+            height="86%"
+            width="6.666666666666667%"
+            x="13.333333333333332%"
+            y="14%"
+          />
+          <rect
+            className="Bar"
+            fill="blue"
+            height="30%"
+            width="6.666666666666667%"
+            x="20%"
+            y="70%"
+          />
+          <rect
+            className="Bar"
+            fill="purple"
+            height="10%"
+            width="6.666666666666667%"
+            x="26.666666666666668%"
+            y="90%"
+          />
+          <rect
+            className="Bar"
+            fill="yellow"
+            height="30%"
+            width="6.666666666666667%"
+            x="33.333333333333336%"
+            y="70%"
+          />
+          <rect
+            className="Bar"
+            fill="orange"
+            height="6%"
+            width="6.666666666666667%"
+            x="40%"
+            y="94%"
+          />
+          <rect
+            className="Bar"
+            fill="navy"
+            height="30%"
+            width="6.666666666666667%"
+            x="46.666666666666664%"
+            y="70%"
+          />
+          <rect
+            className="Bar"
+            fill="plum"
+            height="6%"
+            width="6.666666666666667%"
+            x="53.33333333333333%"
+            y="94%"
+          />
+          <rect
+            className="Bar"
+            fill="olive"
+            height="6%"
+            width="6.666666666666667%"
+            x="59.99999999999999%"
+            y="94%"
+          />
+          <rect
+            className="Bar"
+            fill="coral"
+            height="6%"
+            width="6.666666666666667%"
+            x="66.66666666666666%"
+            y="94%"
+          />
+          <rect
+            className="Bar"
+            fill="cadetBlue"
+            height="6%"
+            width="6.666666666666667%"
+            x="73.33333333333333%"
+            y="94%"
+          />
+          <rect
+            className="Bar"
+            fill="darkGreen"
+            height="6%"
+            width="6.666666666666667%"
+            x="80%"
+            y="94%"
+          />
+          <rect
+            className="Bar"
+            fill="black"
+            height="8%"
+            width="6.666666666666667%"
+            x="86.66666666666667%"
+            y="92%"
+          />
+          <rect
+            className="Bar"
+            fill="#e4e4e4"
+            height="0%"
+            width="6.666666666666667%"
+            x="93.33333333333334%"
+            y="100%"
+          />
         </svg>
       </div>
     </div>
@@ -7720,31 +7423,25 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
       >
         <svg
           className="BarContainer"
-          height={100}
-          width={350}
+          height="100%"
+          width="100%"
         >
-          <g
-            className="BarContainer"
-            height={100}
-            width={350}
-          >
-            <rect
-              className="Bar"
-              fill="pink"
-              height={50}
-              width={175}
-              x={0}
-              y={50}
-            />
-            <rect
-              className="Bar"
-              fill="purple"
-              height={100}
-              width={175}
-              x={175}
-              y={0}
-            />
-          </g>
+          <rect
+            className="Bar"
+            fill="pink"
+            height="50%"
+            width="50%"
+            x="0%"
+            y="50%"
+          />
+          <rect
+            className="Bar"
+            fill="purple"
+            height="100%"
+            width="50%"
+            x="50%"
+            y="0%"
+          />
         </svg>
       </div>
     </div>

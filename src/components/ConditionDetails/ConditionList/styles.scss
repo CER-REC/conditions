@@ -3,17 +3,12 @@
   max-width: 160px;
   padding-top: 20px;
 
-  .marked {
+  .marked, .unmarked, .BarContainer {
     display: inline-block;
     height: 6px;
-    width: 10px;
-    background-color: red;
   }
 
-  .unmarked {
-    display: inline-block;
-    height: 6px;
-    width: 10px;
-    background: none;
-  }
+  .marked, .unmarked { width: 10px;}
+  .marked { background-color: red; }
+  .unmarked { background: none; }
 }

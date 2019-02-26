@@ -31,18 +31,13 @@ class ConditionList extends React.Component {
             data-instrument-index={item.instrumentIndex}
             data-item-index={item.itemIndex}
           >
-            <div
-              key="1"
-              className={item.marked ? 'marked' : 'unmarked'}
-            />
+            <div className={item.marked ? 'marked' : 'unmarked'} />
             <BarContainer
+              width="25px"
               items={[{
                 value: item.length,
                 fill: item.fill,
               }]}
-              size={6}
-              maxValue={25}
-              key="2"
             />
           </div>
         ));
