@@ -31,9 +31,13 @@ describe('Components|ConditionDetails/Content', () => {
 
     shouldBehaveLikeAComponent(Content, () => wrapper);
 
-    xit('should call its openIntermediatePopup callback', () => {
-      // Should this be tested at this level? How, without digging into child
-      // components?
+    it('should call its openIntermediatePopup callback', () => {
+      wrapper.find('.Content')
+        .find('ContentBlock').at(1).shallow()
+        .find('button')
+        .simulate('click', eventFuncs);
+
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -5,9 +5,6 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import data from './testData';
 import ConditionDetails from '.';
 
-const noop = () => {};
-const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-
 const defaultProps = {
   data,
   selectedProject: 'Keystone XL',
@@ -46,29 +43,32 @@ describe('Components|ConditionDetails', () => {
     // they be tested here as well?
     //
 
-    xtest('should call its openProjectDetails callback', () => {
+    test('should pass its openProjectDetails callback to the ProjectHeader component', () => {
       wrapper.find('.ConditionDetails')
-        .find('.header')
-        .find('.openProject')
-        .simulate('click', eventFuncs);
+        .find('.main')
+        .find('ProjectHeader')
+        .props()
+        .openProjectDetails('test');
 
       expect(spy.openProjectDetails).toHaveBeenCalledTimes(1);
     });
 
-    xtest('should call its openIntermediatePopup callback', () => {
+    test('should pass its openIntermediatePopup callback to the Content component', () => {
       wrapper.find('.ConditionDetails')
-        .find('.content')
-        .find('.instrumentLink')
-        .simulate('click', eventFuncs);
+        .find('.main')
+        .find('Content')
+        .props()
+        .openIntermediatePopup();
 
       expect(spy.openIntermediatePopup).toHaveBeenCalledTimes(1);
     });
 
-    xtest('should call its toggleExpanded callback', () => {
+    test('should call its toggleExpanded callback', () => {
       wrapper.find('.ConditionDetails')
-        .find('.header')
-        .find('.toggleExpand')
-        .simulate('click', eventFuncs);
+        .find('.main')
+        .find('ProjectHeader')
+        .props()
+        .toggleExpanded(true);
 
       expect(spy.toggleExpanded).toHaveBeenCalledTimes(1);
     });

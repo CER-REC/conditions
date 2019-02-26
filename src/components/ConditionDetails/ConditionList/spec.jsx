@@ -4,9 +4,6 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import ConditionList from '.';
 
-const noop = () => {};
-const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-
 const data = [
   {
     isInstrument: true,
@@ -82,9 +79,11 @@ describe('Components|ConditionDetails/ConditionList', () => {
 
     shouldBehaveLikeAComponent(ConditionList, () => wrapper);
 
-    xit('should call its updateSelectedItem callback', () => {
-      // I can't figure out how to simulate this without digging into the List
-      // component itself. :(
+    it('should pass its updateSelectedItem callback to the List component', () => {
+      wrapper.find('.ConditionList')
+        .find('List').props().onChange(1);
+
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });
