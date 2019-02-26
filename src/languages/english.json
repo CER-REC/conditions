@@ -178,6 +178,28 @@
         "showingAll": "Showing all projects from",
         "highlightConditions": "Highlighting conditions containing"
       },
+      "findWords": {
+        "findWords": "Find Words",
+        "advancedSearch": "Advanced Search",
+        "basicSearch": "Basic Search",
+        "options": {
+          "any": "any",
+          "all": "all"
+        },
+        "searchText": {
+          "basicInclude": "Include any of:",
+          "advancedInclude": "Include {dropdown} of: ",
+          "exclude": "But do {not} include:",
+          "not": "not"
+        },
+        "highlightText": {
+          "highlightConditions" : "Highlight conditions containing",
+          "following": " {choice} of the following:",
+          "any": "any",
+          "none": "none",
+          "all": "all"
+        }
+      },
       "suggestedKeywordsPopout": {
         "suggestedKeywords": "Suggested Keywords",
         "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords",
@@ -189,7 +211,7 @@
         "none": "none",
         "conditions": "{conditions} conditions"
       }
-    },
+    }, 
     "modal": {
       "image": {
         "title": "Image Download",

@@ -124,6 +124,28 @@
         "showingAll": "",
         "highlightConditions": ""
       },
+      "findWords": {
+        "findWords": "",
+        "advancedSearch": "",
+        "basicSearch": "",
+        "options": {
+          "any": "",
+          "all": ""
+        },
+        "searchText": {
+          "basicInclude": "",
+          "advancedInclude": "",
+          "exclude": "",
+          "not": ""
+        },
+        "highlightText": {
+          "highlightConditions" : "",
+          "following": "",
+          "any": "",
+          "none": "",
+          "all": ""
+        }
+      },
       "suggestedKeywordsPopout": {
         "suggestedKeywords": "",
         "keywordsDescription": "",
