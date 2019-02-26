@@ -16,6 +16,7 @@ describe('Components|InstrumentsLegend', () => {
         className="test"
         data={[]}
         onChange={noop}
+        selected=""
       />
     ));
   });
@@ -92,6 +93,7 @@ describe('Components|InstrumentsLegend', () => {
           className="c"
           data={data}
           onChange={spy}
+          selected=""
         />
       ));
     });
@@ -122,11 +124,11 @@ describe('Components|InstrumentsLegend', () => {
       expect(legendItemsWrapper).toHaveLength(4);
     });
 
-    test('should call the onChange function with null on List item change to the all item', () => {
+    test('should call the onChange function with empty string on List item change to the all item', () => {
       // All item is at the top
       wrapper.find('List').prop('onChange')(0);
 
-      expect(spy).toHaveBeenLastCalledWith(null);
+      expect(spy).toHaveBeenLastCalledWith('');
     });
 
     test('should call the onChange function with the column name on List item change', () => {

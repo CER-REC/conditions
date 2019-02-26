@@ -21,6 +21,7 @@ storiesForComponent('Components|InstrumentsLegend', module, ReadMe)
     <InstrumentsLegend
       data={conditionCountsByCommodity.counts}
       onChange={name => alert(name)}
+      selected=""
     />
   ))
   .add('selected', () => (

@@ -32,7 +32,8 @@ const ViewThree = props => (
           ? (
             <InstrumentsLegend
               data={props.conditionCountsByCommodity.counts}
-              onChange={noop}
+              onChange={props.setSelectedSubFeature}
+              selected={props.selected.subFeature}
             />
           )
           : (
