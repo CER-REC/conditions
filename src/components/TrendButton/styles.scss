@@ -12,18 +12,18 @@
   .Streamgraph {
     height: 55px;
     width: 170px;
+
     h1 {
       display: none;
     }
     .VictoryContainer {
       filter: grayscale(100%);
+      svg {
+        // Note: !important used to overwrite 
+        // Victory's inbuilt inline style of `pointer-events:all`
+        pointer-events: none !important;
+      }
       g[role="presentation"] {
-        display: none;
-      }
-      .StackGroup {
-        outline: none;
-      }
-      .ChartIndicator {
         display: none;
       }
     }
