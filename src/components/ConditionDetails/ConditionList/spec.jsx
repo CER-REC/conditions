@@ -20,7 +20,7 @@ const data = [
   },
   {
     binnedValue: 2,
-    fill: ['blue'],
+    fill: ['blue', 'red', 'green'],
     instrumentIndex: 0,
     itemIndex: 1,
   },
@@ -79,11 +79,38 @@ describe('Components|ConditionDetails/ConditionList', () => {
 
     shouldBehaveLikeAComponent(ConditionList, () => wrapper);
 
+    it('should create bars with a single color', () => {
+      const barItems = wrapper.find('.ConditionList')
+        .find('List').props()
+        .items[1].props
+        .children[1].props
+        .items;
+
+      expect(barItems.length).toBe(1);
+    });
+
+    it('should create bars with multiple colors', () => {
+      const barItems = wrapper.find('.ConditionList')
+        .find('List').props()
+        .items[2].props
+        .children[1].props
+        .items;
+
+      expect(barItems.length).toBe(3);
+    });
+
     it('should pass its updateSelectedItem callback to the List component', () => {
       wrapper.find('.ConditionList')
-        .find('List').props().onChange(1);
+        .find('List').props().onChange(2);
 
       expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call updateSelectedItem with an instrument index and item index', () => {
+      wrapper.find('.ConditionList')
+        .find('List').props().onChange(2);
+
+      expect(spy).toHaveBeenCalledWith(0, 1);
     });
   });
 });
