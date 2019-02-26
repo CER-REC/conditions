@@ -2,18 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Streamgraph from '../StreamGraph';
+import InstrumentBubble from '../BubbleChart/InstrumentBubble';
+
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
+
+const noop = () => {};
 
 const TrendButton = props => (
   <div className="TrendButton" {...handleInteraction(props.onClick)}>
     <div className="buttonText">
-      { props.feature === 'instrument' ? null : (
-        <Streamgraph
-          projectData={props.projectData}
-          chartTitle=""
-        />
-      )}
+      { props.feature === 'instrument'
+        ? (
+          <svg className="instrumentSvg" width={120} height={50}>
+            <InstrumentBubble
+              onClick={noop}
+              keyPress={noop}
+              d3Calculation={props.instrumentData}
+            />
+          </svg>
+        )
+        : (
+          <Streamgraph
+            projectData={props.projectData}
+            chartTitle=""
+          />
+        )}
       <FormattedMessage id="components.trendButton.description">
         {text => (
           <span className="descriptionText">
@@ -51,4 +65,5 @@ TrendButton.propTypes = {
       ).isRequired,
     }),
   ).isRequired,
+  instrumentData: PropTypes.instanceOf(Object).isRequired,
 };

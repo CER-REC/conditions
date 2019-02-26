@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
+import d3HierarchyCalculation from '../BubbleChart/d3HierarchyCalculation';
 import TrendButton from '.';
 
 const noop = () => {};
@@ -53,6 +54,32 @@ const projectData = [
   },
 ];
 
+const instrumentData = {
+  name: 'data',
+  children: [{
+    parentName: 'anyCommodityTypes',
+    children: [
+      {
+        name: '1',
+        children: [],
+        value: 15,
+        category: 'construction',
+      }, {
+        name: '2',
+        children: [],
+        value: 15,
+        category: 'misc',
+      }, {
+        name: '3',
+        children: [],
+        value: 15,
+        category: 'tariffs',
+      }],
+  }],
+};
+
+const chartInstrumentData = d3HierarchyCalculation(instrumentData, 120, 50);
+
 describe('Components|TrendButton', () => {
   describe('with default selectedFeature', () => {
     let wrapper;
@@ -63,6 +90,7 @@ describe('Components|TrendButton', () => {
         onClick={noop}
         feature={feature}
         projectData={projectData}
+        instrumentData={chartInstrumentData}
       />);
     });
     test('should render a div with a className of buttonText', () => {
@@ -81,9 +109,20 @@ describe('Components|TrendButton', () => {
   });
 
   describe('with instrument selected', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<TrendButton
+        onClick={noop}
+        feature="instrument"
+        projectData={projectData}
+        instrumentData={chartInstrumentData}
+      />);
+    });
     test('it should not render Streamgraph', () => {
-      const wrapper = shallow(<TrendButton onClick={noop} feature="instrument" projectData={projectData} />);
       expect(wrapper.find('StreamGraph')).toHaveLength(0);
+    });
+    test('it should render InstrumentBubble', () => {
+      expect(wrapper.find('InstrumentBubble')).toHaveLength(1);
     });
   });
 
@@ -96,6 +135,7 @@ describe('Components|TrendButton', () => {
         onClick={spy}
         feature="theme"
         projectData={projectData}
+        instrumentData={chartInstrumentData}
       />);
     });
     test("should call it's onClick prop", () => {

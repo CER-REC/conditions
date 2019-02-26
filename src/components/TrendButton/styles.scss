@@ -12,7 +12,6 @@
   .Streamgraph {
     height: 55px;
     width: 170px;
-
     h1 {
       display: none;
     }
@@ -28,6 +27,15 @@
       }
     }
   }
+  .instrumentSvg {
+    padding-left: 25%;
+    pointer-events: none;
+    filter: grayscale(100%);
+    text {
+      display: none;
+    }
+  }
+
   .descriptionText {
     text-align: left;
     display: inline-block;

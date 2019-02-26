@@ -10432,6 +10432,133 @@ exports[`Storyshots Components|TrendButton Instrument Bubble Button 1`] = `
     <div
       className="buttonText"
     >
+      <svg
+        className="instrumentSvg"
+        height={50}
+        width={120}
+      >
+        <g
+          className="InstrumentBubble"
+        >
+          <g>
+            <path
+              d="
+      M 19.792740578363095 24
+      A 40.207259421636905 40.207259421636905 0 0 1 100.2072594216369 24"
+              id="anyCommodityTypespath"
+              style={
+                Object {
+                  "fill": "none",
+                  "stroke": "transparent",
+                }
+              }
+            />
+            <circle
+              className="CommodityCircle"
+              focusable={true}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyPress={[Function]}
+              r={40.207259421636905}
+              tabIndex={0}
+              transform="translate(60 25)"
+              value={45}
+            />
+            <text
+              className="bubbleTitle"
+            >
+              <textPath
+                href="#anyCommodityTypespath"
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                Any Commodity Types
+              </textPath>
+            </text>
+          </g>
+          <g
+            focusable={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <circle
+              r={15}
+              style={
+                Object {
+                  "fill": "#27A5F9",
+                }
+              }
+              transform="translate(42.5 14.896370289181549)"
+            />
+            <text
+              alignmentBaseline="middle"
+              fill="white"
+              stroke="transparent"
+              textAnchor="middle"
+              x={42.5}
+              y={14.896370289181549}
+            >
+              1
+            </text>
+          </g>
+          <g
+            focusable={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <circle
+              r={15}
+              style={
+                Object {
+                  "fill": "#D4A92A",
+                }
+              }
+              transform="translate(77.5 14.896370289181549)"
+            />
+            <text
+              alignmentBaseline="middle"
+              fill="white"
+              stroke="transparent"
+              textAnchor="middle"
+              x={77.5}
+              y={14.896370289181549}
+            >
+              2
+            </text>
+          </g>
+          <g
+            focusable={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <circle
+              r={15}
+              style={
+                Object {
+                  "fill": "#C3E6B3",
+                }
+              }
+              transform="translate(60 45.2072594216369)"
+            />
+            <text
+              alignmentBaseline="middle"
+              fill="white"
+              stroke="transparent"
+              textAnchor="middle"
+              x={60}
+              y={45.2072594216369}
+            >
+              3
+            </text>
+          </g>
+        </g>
+      </svg>
       <span
         className="descriptionText"
       >
