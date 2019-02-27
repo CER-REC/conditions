@@ -13,38 +13,36 @@ const InstrumentBubble = (props) => {
   const {
     onClick, d3Calculation, keyPress,
   } = props;
-  const circles = d3Calculation.filter(v => (v.depth !== 0))
+  const circles = d3Calculation
     .map((node) => {
       // Don't render the circle surrounding instrument or commodity
-      if (node.depth === 1) { return null; }
-    // Renders commodity circles (ie Energy bubbles)
+      if (node.depth <= 1) { return null; }
+      // Renders commodity circles (ie Energy bubbles)
       if (node.depth === 2) {
       // Create curved path for parentNode text
         const textCurvedPath = `
-      M ${(node.x - node.r)} ${(node.y - 1)}
-      A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
+          M ${(node.x - node.r)} ${(node.y - 1)}
+          A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
         return (
-          <g key={node.data.parentName}>
+          <g key={node.data.name}>
             <path
-              id={`${node.data.parentName}path`}
+              id={`${node.data.name}path`}
               d={textCurvedPath}
               style={{ fill: 'none', stroke: 'transparent' }}
             />
             <circle
               onKeyDown={keyPress}
               className="CommodityCircle"
-              {...handleInteraction(
-                onClick, node,
-              )}
+              {...handleInteraction(onClick, node)}
               transform={`translate(${node.x} ${node.y})`}
               r={node.r}
               value={node.value}
             />
             <text className="bubbleTitle">
-              <FormattedMessage id={`common.instrumentCommodityType.${node.data.parentName}`}>
+              <FormattedMessage id={`common.instrumentCommodityType.${node.data.name}`}>
                 {text => (
                   <textPath
-                    href={`#${node.data.parentName}path`}
+                    href={`#${node.data.name}path`}
                     textAnchor="middle"
                     startOffset="50%"
                   >
@@ -79,7 +77,8 @@ const InstrumentBubble = (props) => {
             alignmentBaseline="middle"
             stroke="transparent"
             fill={textColor}
-          >{node.data.name}
+          >
+            {node.data.name}
           </text>
         </g>
       );

@@ -5,7 +5,7 @@ import InstrumentBubble from '.';
 import ReadMe from './README.md';
 import d3HierarchyCalculation from '../d3HierarchyCalculation';
 
-import instrumentChartData from '../temporaryData';
+import { conditionCountsByCommodity } from '../../../mockData';
 
 storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -15,7 +15,7 @@ storiesForComponent('Components|BubbleChart/InstrumentBubble', module, ReadMe)
         onClick={() => alert('you clicked')}
         keyPress={() => alert('you pressed a key')}
         d3Calculation={d3HierarchyCalculation(
-          instrumentChartData,
+          conditionCountsByCommodity.counts,
           850,
           400,
         )}

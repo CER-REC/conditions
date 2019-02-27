@@ -374,8 +374,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 20.35830248449136 199
-      A 133.80929318883346 133.80929318883346 0 0 1 287.97688886215826 199"
+          M 162.66912586371723 191.49143054794433
+          A 80.5 80.5 0 0 1 323.6691258637172 191.49143054794433"
               id="OILpath"
               style={
                 Object {
@@ -390,10 +390,10 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
-              r={133.80929318883346}
+              r={80.5}
               tabIndex={0}
-              transform="translate(154.16759567332483 200)"
-              value={130}
+              transform="translate(243.16912586371723 192.49143054794433)"
+              value={93}
             />
             <text
               className="bubbleTitle"
@@ -410,8 +410,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 292.97688886215826 199
-      A 115.83240432667517 115.83240432667517 0 0 1 524.6416975155087 199"
+          M 328.6691258637172 191.49143054794433
+          A 39 39 0 0 1 406.6691258637172 191.49143054794433"
               id="GASpath"
               style={
                 Object {
@@ -426,10 +426,10 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
-              r={115.83240432667517}
+              r={39}
               tabIndex={0}
-              transform="translate(408.80929318883346 200)"
-              value={115}
+              transform="translate(367.6691258637172 192.49143054794433)"
+              value={10}
             />
             <text
               className="bubbleTitle"
@@ -446,8 +446,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 246.50672883682768 322.1103958429296
-      A 47.5 47.5 0 0 1 341.5067288368277 322.1103958429296"
+          M 303.00245919705054 266.17892764231897
+          A 36 36 0 0 1 375.00245919705054 266.17892764231897"
               id="POWERpath"
               style={
                 Object {
@@ -462,10 +462,10 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
-              r={47.5}
+              r={36}
               tabIndex={0}
-              transform="translate(294.0067288368277 323.1103958429296)"
-              value={25}
+              transform="translate(339.00245919705054 267.17892764231897)"
+              value={7}
             />
             <text
               className="bubbleTitle"
@@ -482,8 +482,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 534.6416975155087 199
-      A 87.5 87.5 0 0 1 709.6416975155087 199"
+          M 417.0073775911517 199
+          A 89.5 89.5 0 0 1 596.0073775911517 199"
               id="ANY_COMMODITY_TYPESpath"
               style={
                 Object {
@@ -498,10 +498,10 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
-              r={87.5}
+              r={89.5}
               tabIndex={0}
-              transform="translate(622.1416975155087 200)"
-              value={100}
+              transform="translate(506.5073775911517 200)"
+              value={71}
             />
             <text
               className="bubbleTitle"
@@ -518,8 +518,8 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           <g>
             <path
               d="
-      M 714.6416975155087 199
-      A 57.5 57.5 0 0 1 829.6416975155087 199"
+          M 601.0073775911517 199
+          A 43.5 43.5 0 0 1 688.0073775911517 199"
               id="NOT_SPECIFIEDpath"
               style={
                 Object {
@@ -534,9 +534,9 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onKeyPress={[Function]}
-              r={57.5}
+              r={43.5}
               tabIndex={0}
-              transform="translate(772.1416975155087 200)"
+              transform="translate(644.5073775911517 200)"
               value={20}
             />
             <text
@@ -562,18 +562,18 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={40}
               style={
                 Object {
-                  "fill": "rgb(39, 165, 249)",
+                  "fill": "rgb(14, 43, 140)",
                 }
               }
-              transform="translate(74.36630443973255 197.52612788988029)"
+              transform="translate(207.66912586371723 192.49143054794433)"
             />
             <text
               alignmentBaseline="middle"
               fill="white"
               stroke="transparent"
               textAnchor="middle"
-              x={74.36630443973255}
-              y={197.52612788988029}
+              x={207.66912586371723}
+              y={192.49143054794433}
             >
               XO
             </text>
@@ -586,75 +586,48 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
             tabIndex={0}
           >
             <circle
-              r={40}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(159.36630443973255 197.52612788988029)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={159.36630443973255}
-              y={197.52612788988029}
-            >
-              OC
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={30}
-              style={
-                Object {
-                  "fill": "rgb(201, 4, 194)",
-                }
-              }
-              transform="translate(116.86630443973255 259.32216336142164)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={116.86630443973255}
-              y={259.32216336142164}
-            >
-              SO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
+              r={33}
               style={
                 Object {
                   "fill": "rgb(22, 78, 248)",
                 }
               }
-              transform="translate(116.86630443973255 121.61334899198985)"
+              transform="translate(285.6691258637172 192.49143054794433)"
             />
             <text
               alignmentBaseline="middle"
-              fill="black"
+              fill="white"
               stroke="transparent"
-              textAnchor=""
-              x={128.86630443973255}
-              y={121.61334899198985}
+              textAnchor="middle"
+              x={285.6691258637172}
+              y={192.49143054794433}
+            >
+              OPSO
+            </text>
+          </g>
+          <g
+            focusable={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <circle
+              r={20}
+              style={
+                Object {
+                  "fill": "rgb(22, 78, 248)",
+                }
+              }
+              transform="translate(252.188356632948 239.85215363908787)"
+            />
+            <text
+              alignmentBaseline="middle"
+              fill="white"
+              stroke="transparent"
+              textAnchor="middle"
+              x={252.188356632948}
+              y={239.85215363908787}
             >
               OPLO
             </text>
@@ -670,20 +643,47 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={10}
               style={
                 Object {
-                  "fill": "rgb(22, 78, 248)",
+                  "fill": "rgb(14, 43, 140)",
                 }
               }
-              transform="translate(191.4688869069171 278.3866510080102)"
+              transform="translate(367.6691258637172 192.49143054794433)"
             />
             <text
               alignmentBaseline="middle"
               fill="black"
               stroke="transparent"
               textAnchor=""
-              x={203.4688869069171}
-              y={278.3866510080102}
+              x={379.6691258637172}
+              y={192.49143054794433}
             >
-              OPSO
+              OPL
+            </text>
+          </g>
+          <g
+            focusable={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <circle
+              r={7}
+              style={
+                Object {
+                  "fill": "rgb(39, 165, 249)",
+                }
+              }
+              transform="translate(339.00245919705054 267.17892764231897)"
+            />
+            <text
+              alignmentBaseline="middle"
+              fill="black"
+              stroke="transparent"
+              textAnchor=""
+              x={348.00245919705054}
+              y={267.17892764231897}
+            >
+              EPE
             </text>
           </g>
           <g
@@ -697,155 +697,74 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={40}
               style={
                 Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(399.23352592252104 215.456396143957)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={399.23352592252104}
-              y={215.456396143957}
-            >
-              XG
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={30}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(474.23352592252104 215.456396143957)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={474.23352592252104}
-              y={215.456396143957}
-            >
-              GC
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={20}
-              style={
-                Object {
-                  "fill": "rgb(201, 4, 194)",
-                }
-              }
-              transform="translate(444.73352592252104 261.8756809294855)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={444.73352592252104}
-              y={261.8756809294855}
-            >
-              SG
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
                   "fill": "rgb(22, 78, 248)",
                 }
               }
-              transform="translate(447.6668592558544 143.1846020454138)"
+              transform="translate(478.216320468198 165.65082116169629)"
             />
             <text
               alignmentBaseline="middle"
-              fill="black"
+              fill="white"
               stroke="transparent"
-              textAnchor=""
-              x={459.6668592558544}
-              y={143.1846020454138}
-            >
-              GPSO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(195, 230, 179)",
-                }
-              }
-              transform="translate(400.635769549734 285.4423498261777)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={412.635769549734}
-              y={285.4423498261777}
-            >
-              TG
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={5}
-              style={
-                Object {
-                  "fill": "rgb(22, 78, 248)",
-                }
-              }
-              transform="translate(363.68249874836295 141.56374111747775)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={370.68249874836295}
-              y={141.56374111747775}
+              textAnchor="middle"
+              x={478.216320468198}
+              y={165.65082116169629}
             >
               GPLO
+            </text>
+          </g>
+          <g
+            focusable={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <circle
+              r={21}
+              style={
+                Object {
+                  "fill": "rgb(39, 165, 249)",
+                }
+              }
+              transform="translate(544.216320468198 165.65082116169629)"
+            />
+            <text
+              alignmentBaseline="middle"
+              fill="white"
+              stroke="transparent"
+              textAnchor="middle"
+              x={544.216320468198}
+              y={165.65082116169629}
+            >
+              EC
+            </text>
+          </g>
+          <g
+            focusable={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <circle
+              r={10}
+              style={
+                Object {
+                  "fill": "rgb(22, 78, 248)",
+                }
+              }
+              transform="translate(533.5269265288041 232.80539551972828)"
+            />
+            <text
+              alignmentBaseline="middle"
+              fill="black"
+              stroke="transparent"
+              textAnchor=""
+              x={545.5269265288041}
+              y={232.80539551972828}
+            >
+              GPSO
             </text>
           </g>
           <g
@@ -859,98 +778,17 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
               r={15}
               style={
                 Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(266.5067288368277 323.1103958429296)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={266.5067288368277}
-              y={323.1103958429296}
-            >
-              EPE
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(311.5067288368277 323.1103958429296)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={323.5067288368277}
-              y={323.1103958429296}
-            >
-              EC
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={40}
-              style={
-                Object {
                   "fill": "rgb(212, 169, 42)",
                 }
               }
-              transform="translate(579.6416975155087 200)"
+              transform="translate(621.0073775911517 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="white"
               stroke="transparent"
               textAnchor="middle"
-              x={579.6416975155087}
-              y={200}
-            >
-              MO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={40}
-              style={
-                Object {
-                  "fill": "rgb(212, 169, 42)",
-                }
-              }
-              transform="translate(664.6416975155087 200)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={664.6416975155087}
+              x={621.0073775911517}
               y={200}
             >
               AO
@@ -964,77 +802,23 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
             tabIndex={0}
           >
             <circle
-              r={20}
-              style={
-                Object {
-                  "fill": "rgb(14, 43, 140)",
-                }
-              }
-              transform="translate(622.1416975155087 249.180788932265)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={622.1416975155087}
-              y={249.180788932265}
-            >
-              ZO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(744.6416975155087 200)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={756.6416975155087}
-              y={200}
-            >
-              XC
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
+              r={5}
               style={
                 Object {
                   "fill": "rgb(212, 169, 42)",
                 }
               }
-              transform="translate(799.6416975155087 200)"
+              transform="translate(662.0073775911517 200)"
             />
             <text
               alignmentBaseline="middle"
               fill="black"
               stroke="transparent"
               textAnchor=""
-              x={811.6416975155087}
+              x={669.0073775911517}
               y={200}
             >
-              CO
+              MO
             </text>
           </g>
         </g>
@@ -1061,8 +845,8 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
         <g>
           <path
             d="
-      M 20.35830248449136 199
-      A 133.80929318883346 133.80929318883346 0 0 1 287.97688886215826 199"
+          M 162.66912586371723 191.49143054794433
+          A 80.5 80.5 0 0 1 323.6691258637172 191.49143054794433"
             id="OILpath"
             style={
               Object {
@@ -1077,10 +861,10 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
-            r={133.80929318883346}
+            r={80.5}
             tabIndex={0}
-            transform="translate(154.16759567332483 200)"
-            value={130}
+            transform="translate(243.16912586371723 192.49143054794433)"
+            value={93}
           />
           <text
             className="bubbleTitle"
@@ -1097,8 +881,8 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
         <g>
           <path
             d="
-      M 292.97688886215826 199
-      A 115.83240432667517 115.83240432667517 0 0 1 524.6416975155087 199"
+          M 328.6691258637172 191.49143054794433
+          A 39 39 0 0 1 406.6691258637172 191.49143054794433"
             id="GASpath"
             style={
               Object {
@@ -1113,10 +897,10 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
-            r={115.83240432667517}
+            r={39}
             tabIndex={0}
-            transform="translate(408.80929318883346 200)"
-            value={115}
+            transform="translate(367.6691258637172 192.49143054794433)"
+            value={10}
           />
           <text
             className="bubbleTitle"
@@ -1133,8 +917,8 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
         <g>
           <path
             d="
-      M 246.50672883682768 322.1103958429296
-      A 47.5 47.5 0 0 1 341.5067288368277 322.1103958429296"
+          M 303.00245919705054 266.17892764231897
+          A 36 36 0 0 1 375.00245919705054 266.17892764231897"
             id="POWERpath"
             style={
               Object {
@@ -1149,10 +933,10 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
-            r={47.5}
+            r={36}
             tabIndex={0}
-            transform="translate(294.0067288368277 323.1103958429296)"
-            value={25}
+            transform="translate(339.00245919705054 267.17892764231897)"
+            value={7}
           />
           <text
             className="bubbleTitle"
@@ -1169,8 +953,8 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
         <g>
           <path
             d="
-      M 534.6416975155087 199
-      A 87.5 87.5 0 0 1 709.6416975155087 199"
+          M 417.0073775911517 199
+          A 89.5 89.5 0 0 1 596.0073775911517 199"
             id="ANY_COMMODITY_TYPESpath"
             style={
               Object {
@@ -1185,10 +969,10 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
-            r={87.5}
+            r={89.5}
             tabIndex={0}
-            transform="translate(622.1416975155087 200)"
-            value={100}
+            transform="translate(506.5073775911517 200)"
+            value={71}
           />
           <text
             className="bubbleTitle"
@@ -1205,8 +989,8 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
         <g>
           <path
             d="
-      M 714.6416975155087 199
-      A 57.5 57.5 0 0 1 829.6416975155087 199"
+          M 601.0073775911517 199
+          A 43.5 43.5 0 0 1 688.0073775911517 199"
             id="NOT_SPECIFIEDpath"
             style={
               Object {
@@ -1221,9 +1005,9 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             onKeyPress={[Function]}
-            r={57.5}
+            r={43.5}
             tabIndex={0}
-            transform="translate(772.1416975155087 200)"
+            transform="translate(644.5073775911517 200)"
             value={20}
           />
           <text
@@ -1249,18 +1033,18 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={40}
             style={
               Object {
-                "fill": "rgb(39, 165, 249)",
+                "fill": "rgb(14, 43, 140)",
               }
             }
-            transform="translate(74.36630443973255 197.52612788988029)"
+            transform="translate(207.66912586371723 192.49143054794433)"
           />
           <text
             alignmentBaseline="middle"
             fill="white"
             stroke="transparent"
             textAnchor="middle"
-            x={74.36630443973255}
-            y={197.52612788988029}
+            x={207.66912586371723}
+            y={192.49143054794433}
           >
             XO
           </text>
@@ -1273,75 +1057,48 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           tabIndex={0}
         >
           <circle
-            r={40}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(159.36630443973255 197.52612788988029)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={159.36630443973255}
-            y={197.52612788988029}
-          >
-            OC
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={30}
-            style={
-              Object {
-                "fill": "rgb(201, 4, 194)",
-              }
-            }
-            transform="translate(116.86630443973255 259.32216336142164)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={116.86630443973255}
-            y={259.32216336142164}
-          >
-            SO
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
+            r={33}
             style={
               Object {
                 "fill": "rgb(22, 78, 248)",
               }
             }
-            transform="translate(116.86630443973255 121.61334899198985)"
+            transform="translate(285.6691258637172 192.49143054794433)"
           />
           <text
             alignmentBaseline="middle"
-            fill="black"
+            fill="white"
             stroke="transparent"
-            textAnchor=""
-            x={128.86630443973255}
-            y={121.61334899198985}
+            textAnchor="middle"
+            x={285.6691258637172}
+            y={192.49143054794433}
+          >
+            OPSO
+          </text>
+        </g>
+        <g
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={20}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(252.188356632948 239.85215363908787)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={252.188356632948}
+            y={239.85215363908787}
           >
             OPLO
           </text>
@@ -1357,20 +1114,47 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={10}
             style={
               Object {
-                "fill": "rgb(22, 78, 248)",
+                "fill": "rgb(14, 43, 140)",
               }
             }
-            transform="translate(191.4688869069171 278.3866510080102)"
+            transform="translate(367.6691258637172 192.49143054794433)"
           />
           <text
             alignmentBaseline="middle"
             fill="black"
             stroke="transparent"
             textAnchor=""
-            x={203.4688869069171}
-            y={278.3866510080102}
+            x={379.6691258637172}
+            y={192.49143054794433}
           >
-            OPSO
+            OPL
+          </text>
+        </g>
+        <g
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={7}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(339.00245919705054 267.17892764231897)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={348.00245919705054}
+            y={267.17892764231897}
+          >
+            EPE
           </text>
         </g>
         <g
@@ -1384,155 +1168,74 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={40}
             style={
               Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(399.23352592252104 215.456396143957)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={399.23352592252104}
-            y={215.456396143957}
-          >
-            XG
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={30}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(474.23352592252104 215.456396143957)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={474.23352592252104}
-            y={215.456396143957}
-          >
-            GC
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={20}
-            style={
-              Object {
-                "fill": "rgb(201, 4, 194)",
-              }
-            }
-            transform="translate(444.73352592252104 261.8756809294855)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={444.73352592252104}
-            y={261.8756809294855}
-          >
-            SG
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
                 "fill": "rgb(22, 78, 248)",
               }
             }
-            transform="translate(447.6668592558544 143.1846020454138)"
+            transform="translate(478.216320468198 165.65082116169629)"
           />
           <text
             alignmentBaseline="middle"
-            fill="black"
+            fill="white"
             stroke="transparent"
-            textAnchor=""
-            x={459.6668592558544}
-            y={143.1846020454138}
-          >
-            GPSO
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
-                "fill": "rgb(195, 230, 179)",
-              }
-            }
-            transform="translate(400.635769549734 285.4423498261777)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={412.635769549734}
-            y={285.4423498261777}
-          >
-            TG
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={5}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(363.68249874836295 141.56374111747775)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={370.68249874836295}
-            y={141.56374111747775}
+            textAnchor="middle"
+            x={478.216320468198}
+            y={165.65082116169629}
           >
             GPLO
+          </text>
+        </g>
+        <g
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={21}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(544.216320468198 165.65082116169629)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={544.216320468198}
+            y={165.65082116169629}
+          >
+            EC
+          </text>
+        </g>
+        <g
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(533.5269265288041 232.80539551972828)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={545.5269265288041}
+            y={232.80539551972828}
+          >
+            GPSO
           </text>
         </g>
         <g
@@ -1546,98 +1249,17 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={15}
             style={
               Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(266.5067288368277 323.1103958429296)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={266.5067288368277}
-            y={323.1103958429296}
-          >
-            EPE
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(311.5067288368277 323.1103958429296)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={323.5067288368277}
-            y={323.1103958429296}
-          >
-            EC
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={40}
-            style={
-              Object {
                 "fill": "rgb(212, 169, 42)",
               }
             }
-            transform="translate(579.6416975155087 200)"
+            transform="translate(621.0073775911517 200)"
           />
           <text
             alignmentBaseline="middle"
             fill="white"
             stroke="transparent"
             textAnchor="middle"
-            x={579.6416975155087}
-            y={200}
-          >
-            MO
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={40}
-            style={
-              Object {
-                "fill": "rgb(212, 169, 42)",
-              }
-            }
-            transform="translate(664.6416975155087 200)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={664.6416975155087}
+            x={621.0073775911517}
             y={200}
           >
             AO
@@ -1651,77 +1273,23 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           tabIndex={0}
         >
           <circle
-            r={20}
-            style={
-              Object {
-                "fill": "rgb(14, 43, 140)",
-              }
-            }
-            transform="translate(622.1416975155087 249.180788932265)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={622.1416975155087}
-            y={249.180788932265}
-          >
-            ZO
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(744.6416975155087 200)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={756.6416975155087}
-            y={200}
-          >
-            XC
-          </text>
-        </g>
-        <g
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
+            r={5}
             style={
               Object {
                 "fill": "rgb(212, 169, 42)",
               }
             }
-            transform="translate(799.6416975155087 200)"
+            transform="translate(662.0073775911517 200)"
           />
           <text
             alignmentBaseline="middle"
             fill="black"
             stroke="transparent"
             textAnchor=""
-            x={811.6416975155087}
+            x={669.0073775911517}
             y={200}
           >
-            CO
+            MO
           </text>
         </g>
       </g>
