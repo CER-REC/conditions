@@ -1,33 +1,29 @@
 import React from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import { conditionCountsByCommodity } from '../../mockData';
 import InstrumentsLegend from '.';
 import ReadMe from './README.md';
 
-const categories = ['OPENING', 'ABANDONMENT', 'SAFETY', 'TARIFFS', 'MISC'];
-const data = conditionCountsByCommodity.counts;
-
-const selectedOptions = categories.reduce((hashAggregate, category) => ({
-  ...hashAggregate,
-  [category]: category,
-}), { All: '' });
+const props = {
+  data: conditionCountsByCommodity.counts,
+  selected: '',
+};
 
 storiesForComponent('Components|InstrumentsLegend', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withKnobs)
+  .addDecorator(withInteraction({
+    actions: {
+      onChange: () => subFeature => ({
+        selected: subFeature,
+      }),
+    },
+    state: { selected: '' },
+  }))
   .add('basic usage', () => (
     <InstrumentsLegend
-      data={conditionCountsByCommodity.counts}
-      onChange={name => alert(name)}
-      selected=""
-    />
-  ))
-  .add('selected', () => (
-    <InstrumentsLegend
-      data={data}
-      onChange={name => alert(name)}
-      selected={select('Selected', selectedOptions, 'B')}
+      {...props}
+      {...getInteractionProps()}
     />
   ));

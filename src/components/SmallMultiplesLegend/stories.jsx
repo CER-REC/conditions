@@ -1,5 +1,6 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import SmallMultiplesLegend from '.';
@@ -17,15 +18,27 @@ const highlightOptions = conditionCountsByYear.counts
     [next.subFeature]: next.subFeature,
   }), { All: '' });
 
+const props = {
+  data: conditionCountsByYear.counts,
+  feature: 'theme',
+  selected: '',
+};
+
 storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
+  .addDecorator(withInteraction({
+    actions: {
+      onChange: () => subFeature => ({
+        selected: subFeature,
+      }),
+    },
+    state: { selected: '' },
+  }))
   .add('basic usage', () => (
     <SmallMultiplesLegend
-      feature="theme"
-      data={conditionCountsByYear.counts}
-      onChange={name => alert(name)}
-      selected=""
+      {...props}
+      {...getInteractionProps()}
     />
   ))
   .add('selected', () => (
