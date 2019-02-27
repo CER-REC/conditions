@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
@@ -7,7 +8,6 @@ import './styles.scss';
 const Tab = (props) => {
   let icon;
   let type;
-  const borderStyle = props.isActive ? 'none' : '1px solid';
 
   if (props.isFilter) {
     type = 'filter';
@@ -38,9 +38,9 @@ const Tab = (props) => {
 
   return (
     <div
-      className="Tab"
+      className={classNames('Tab', { inactiveTab: !props.isActive })}
       {...handleInteraction(props.onClick)}
-      style={{ borderBottom: borderStyle }}
+
     >
       <FormattedMessage id={`components.searchBar.tab.${type}`}>
         {txt => <span className="tabText"> {txt} </span>}

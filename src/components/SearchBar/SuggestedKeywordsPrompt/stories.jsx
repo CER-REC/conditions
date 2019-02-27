@@ -9,5 +9,5 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPrompt', module, Read
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['onClick'] }))
   .add('default', () => (
-    <SuggestedKeywordsPrompt {...getInteractionProps()} />
+    <SuggestedKeywordsPrompt {...getInteractionProps()} isActive={false} />
   ));

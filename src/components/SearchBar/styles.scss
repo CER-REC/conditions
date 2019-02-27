@@ -1,0 +1,35 @@
+@import "../../styles/fontVariables.scss";
+@import "../../styles/colors.scss";
+
+.SearchBar {
+  position: relative;
+  width: 925px;
+  text-align: left;
+  color: $VeryDarkGray;
+  .SelectionTab {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    display: block;
+    text-align: left;
+    .Tab {
+      display: inline-block;
+    }
+    .rect {
+      display: inline-block;
+      vertical-align: bottom;
+      border-bottom: 1px solid $LightGray;
+      &.horzDivider {
+        width: 20px;
+      }
+      &.horzLine {
+        width: 253px;
+      }
+    }
+  }
+  .SuggestedKeywordsPrompt {
+    position: absolute;
+    top: -10px;
+    left: 390px;
+  }
+}
