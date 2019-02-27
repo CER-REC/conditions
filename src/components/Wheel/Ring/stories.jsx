@@ -9,10 +9,10 @@ storiesForComponent('Components|Wheel/Ring', module, ReadMe)
   .addDecorator(withStatus('underReview'))
   .add('default view', () => (
     <svg viewBox="120 200 500 500">
-      <Ring ringType="Company" />
+      <Ring ringType="company" />
     </svg>
   )).add('location view', () => (
     <svg viewBox="120 200 500 500">
-      <Ring ringType="Location" />
+      <Ring ringType="location" />
     </svg>
   ));

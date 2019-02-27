@@ -21,3 +21,5 @@ export const ConditionsByCommodityOrInstrument = PropTypes.shape({
 export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
   ConditionsByCommodityOrInstrument,
 );
+
+export const browseByType = PropTypes.oneOf(['company', 'location']);

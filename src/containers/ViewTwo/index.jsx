@@ -4,7 +4,9 @@ import classNames from 'classnames';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
-import { locationWheelData } from '../../components/Wheel/randomDataSample';
+import BrowseByBtn from '../../components/BrowseByBtn';
+import { companyWheelData } from '../../components/Wheel/randomDataSample';
+import { browseByType } from '../../proptypes';
 import './styles.scss';
 
 const legendItems = [
@@ -50,9 +52,12 @@ const ViewTwo = props => (
     <section className="row">
       <section className="wheel">
         <Wheel
-          ringType="Location"
-          itemsData={locationWheelData}
+          wheelType={props.browseBy}
+          itemsData={companyWheelData}
+          selectRay={props.selectRay}
         />
+        <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
+        <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
@@ -76,6 +81,8 @@ const ViewTwo = props => (
 
 ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
+  browseBy: browseByType.isRequired,
+  setBrowseBy: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {

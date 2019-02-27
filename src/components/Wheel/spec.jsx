@@ -17,7 +17,7 @@ describe('Components|Wheel', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<Wheel wheelType="Company" itemsData={wheelData} selectRay={() => {}} />);
+      wrapper = shallow(<Wheel wheelType="company" itemsData={wheelData} selectRay={() => {}} />);
     });
 
     test('should render a div', () => {
