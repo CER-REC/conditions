@@ -1552,7 +1552,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="marked"
+                      className="barMarker marked"
                     />
                     <svg
                       className="BarContainer binnedValue-3"
@@ -1591,7 +1591,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <svg
                       className="BarContainer binnedValue-2"
@@ -1724,7 +1724,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <svg
                       className="BarContainer binnedValue-1"
@@ -1755,7 +1755,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <svg
                       className="BarContainer binnedValue-2"
@@ -1806,7 +1806,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="marked"
+                      className="barMarker marked"
                     />
                     <svg
                       className="BarContainer binnedValue-3"
@@ -2110,7 +2110,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   <div>
                     <div
-                      className="marked"
+                      className="barMarker marked"
                     />
                     <svg
                       className="BarContainer binnedValue-3"
@@ -2149,7 +2149,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <svg
                       className="BarContainer binnedValue-2"
@@ -2282,7 +2282,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <svg
                       className="BarContainer binnedValue-1"
@@ -2313,7 +2313,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <svg
                       className="BarContainer binnedValue-2"
@@ -2364,7 +2364,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   <div>
                     <div
-                      className="marked"
+                      className="barMarker marked"
                     />
                     <svg
                       className="BarContainer binnedValue-3"
@@ -2616,7 +2616,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="marked"
+                  className="barMarker marked"
                 />
                 <svg
                   className="BarContainer binnedValue-3"
@@ -2647,7 +2647,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <svg
                   className="BarContainer binnedValue-2"
@@ -2772,7 +2772,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <svg
                   className="BarContainer binnedValue-1"
@@ -2803,7 +2803,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <svg
                   className="BarContainer binnedValue-2"
@@ -2854,7 +2854,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="marked"
+                  className="barMarker marked"
                 />
                 <svg
                   className="BarContainer binnedValue-3"

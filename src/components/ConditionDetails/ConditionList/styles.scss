@@ -3,9 +3,14 @@
   max-width: 160px;
   padding-top: 20px;
 
-  .marked, .unmarked, .BarContainer {
+  .barMarker, .BarContainer {
     display: inline-block;
     height: 6px;
+  }
+
+  .barMarker {
+    width: 10px;
+    &.marked { background-color: red; }
   }
 
   .BarContainer {
@@ -22,8 +27,4 @@
       width: calc(100% - 10px);
     }
   }
-
-  .marked, .unmarked { width: 10px;}
-  .marked { background-color: red; }
-  .unmarked { background: none; }
 }
