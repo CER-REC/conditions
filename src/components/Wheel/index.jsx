@@ -78,6 +78,9 @@ class Wheel extends React.Component {
     this.props.selectRay(items[newIndex]._id);
   };
 
+  getIndex = currentRotation => Math.round((currentRotation % 360)
+    / (360 / this.props.itemsData.items.length))
+
   stopWheel = (rotation) => {
     this.setState({ unanimatedSpin: true, newRotation: rotation });
   }
@@ -121,9 +124,7 @@ class Wheel extends React.Component {
                         items={this.props.itemsData.items}
                         degreesPerItem={this.state.degreesPerItem}
                         reservedDegrees={reservedDegrees}
-                        currentIndex={
-                          Math.round((props.rotation % 360)
-                          / (360 / this.props.itemsData.items.length))
+                        currentIndex={this.getIndex(props.rotation)
                           % this.props.itemsData.items.length}
                         legendPositionArray={this.props.itemsData.legendData}
                         {...props}
@@ -136,10 +137,8 @@ class Wheel extends React.Component {
                 </g>
               </svg>
               <div className="list">
-                {/* Doing this calculation twice, maybe better to simplify */}
                 {this.props.itemsData.items[
-                  (this.props.itemsData.items.length + (Math.round((props.rotation % 360)
-                    / (360 / this.props.itemsData.items.length))))
+                  (this.props.itemsData.items.length + (this.getIndex(props.rotation)))
                     % this.props.itemsData.items.length
                 ].company_name}
               </div>
