@@ -6,13 +6,13 @@ import d3HierarchyCalculation from './d3HierarchyCalculation';
 
 class BubbleChart extends React.PureComponent {
   static propTypes = {
-    selectedCategory: PropTypes.string.isRequired,
+    indicator: PropTypes.string.isRequired,
+    setIndicator: PropTypes.func.isRequired,
     data: PropTypes.instanceOf(Object).isRequired,
   };
 
   constructor(props) {
     super(props);
-    this.state = { indicator: '' };
     this.isDragging = false;
     this.svgRef = React.createRef();
   }
@@ -20,16 +20,14 @@ class BubbleChart extends React.PureComponent {
   getData = () => d3HierarchyCalculation(this.props.data, 850, 400)
     .filter(node => node.depth > 1);
 
-  setIndicatorState = indicator => this.setState({ indicator });
-
   onClick = (circle) => {
     this.isDragging = false;
-    this.setIndicatorState(circle.data.name || '');
+    this.props.setIndicator(circle.data.name || '');
   };
 
   onKeyPress = (event) => {
     const sortedData = this.getData();
-    let itemIndex = sortedData.findIndex(v => v.data.name === this.state.indicator);
+    let itemIndex = sortedData.findIndex(v => v.data.name === this.props.indicator);
     // TODO: This currently goes through big circles then small circles, but
     // should have the big ones interposed between their children
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
@@ -38,7 +36,7 @@ class BubbleChart extends React.PureComponent {
       itemIndex = (sortedData[itemIndex - 1]) ? (itemIndex - 1) : (sortedData.length - 1);
     }
     const newIndicator = sortedData[itemIndex].data.name;
-    if (newIndicator !== this.state.indicator) { this.setIndicatorState(newIndicator); }
+    if (newIndicator !== this.props.indicator) { this.props.setIndicator(newIndicator); }
   };
 
   onDragStart = () => { this.isDragging = true; }
@@ -54,17 +52,12 @@ class BubbleChart extends React.PureComponent {
       target = target.parentElement;
     }
     if (!target.dataset.name) { return; }
-    this.setIndicatorState(target.dataset.name);
+    this.props.setIndicator(target.dataset.name);
   }
 
   render() {
-    const { selectedCategory } = this.props;
-    if (selectedCategory !== 'instrument') {
-      return null;
-    }
-
     const data = this.getData();
-    const { indicator: indicatorName } = this.state;
+    const { indicator: indicatorName } = this.props;
     const indicatorTarget = indicatorName && data.find(v => v.data.name === indicatorName);
 
     let indicator = null;
