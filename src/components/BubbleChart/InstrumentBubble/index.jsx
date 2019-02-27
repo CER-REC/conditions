@@ -24,7 +24,7 @@ const InstrumentBubble = (props) => {
           M ${(node.x - node.r)} ${(node.y - 1)}
           A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
         return (
-          <g key={node.data.name}>
+          <g key={node.data.name} data-name={node.data.name}>
             <path
               id={`${node.data.name}path`}
               d={textCurvedPath}
@@ -63,6 +63,7 @@ const InstrumentBubble = (props) => {
         <g
           key={node.data.name}
           onKeyDown={keyPress}
+          data-name={node.data.name}
           {...handleInteraction(onClick, node)}
         >
           <circle

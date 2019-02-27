@@ -37,7 +37,7 @@ class BubbleChart extends React.PureComponent {
     this.isDragging = false;
     const sortedData = this.getOrderedCircles();
     const index = sortedData.findIndex(item => item.data.name === circle.data.name);
-    return this.setIndicatorState(index);
+    this.setIndicatorState(index);
   };
 
   onKeyPress = (event) => {
@@ -60,25 +60,23 @@ class BubbleChart extends React.PureComponent {
 
   onDragStop = () => { this.isDragging = false; }
 
-  onDragMove = (event) => {
+  onDragOver = (e) => {
     if (!this.isDragging) { return; }
+    let checked = 0;
+    let { target } = e;
+    while (checked < 3 && !target.dataset.name) {
+      checked += 1;
+      target = target.parentElement;
+    }
+    if (!target.dataset.name) { return; }
+
     const sortedData = this.getOrderedCircles();
-    const svg = !this.svgRef.current ? { x: 156.3583, y: 187 }
-      : this.svgRef.current.getClientRects()[0];
-    const subX = event.clientX - svg.x;
-    const subY = event.clientY - svg.y;
-    const [index] = sortedData.reduce((acc, node, i) => {
-      if (node.depth < 2) { return acc; }
-      const distance = Math.sqrt(
-        ((node.x - subX) ** 2) + ((node.y - subY) ** 2),
-      );
-      return (distance > acc[1]) ? acc : [i, distance];
-    }, [null, Number.MAX_SAFE_INTEGER]);
+    const index = sortedData.findIndex(item => item.data.name === target.dataset.name);
     this.setIndicatorState(index);
   }
 
   render() {
-    const { selectedCategory, data } = this.props;
+    const { selectedCategory } = this.props;
     if (selectedCategory !== 'instrument') {
       return null;
     }
@@ -104,10 +102,11 @@ class BubbleChart extends React.PureComponent {
           {this.state.display
             ? <ChartIndicator {...indicatorProps} yTop={25} />
             : null}
+          {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
           <g
             ref={this.svgRef}
             onMouseDown={this.onDragStart}
-            onMouseMove={this.onDragMove}
+            onMouseOver={this.onDragOver}
             onMouseUp={this.onDragStop}
           >
             <InstrumentBubble
