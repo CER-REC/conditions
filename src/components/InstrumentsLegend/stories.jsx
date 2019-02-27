@@ -8,22 +8,26 @@ import ReadMe from './README.md';
 
 const props = {
   data: conditionCountsByCommodity.counts,
-  selected: '',
 };
 
 storiesForComponent('Components|InstrumentsLegend', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({
-    actions: {
-      onChange: () => subFeature => ({
-        selected: subFeature,
-      }),
-    },
-    state: { selected: '' },
-  }))
+  .addDecorator(withInteraction({ actions: ['onChange'] }))
   .add('basic usage', () => (
     <InstrumentsLegend
       {...props}
       {...getInteractionProps()}
+    />
+  ), {
+    interaction: {
+      actions: { onChange: () => subFeature => ({ selected: subFeature }) },
+      state: { selected: '' },
+    },
+  })
+  .add('selected', () => (
+    <InstrumentsLegend
+      {...props}
+      {...getInteractionProps()}
+      selected="CONSTRUCTION"
     />
   ));
