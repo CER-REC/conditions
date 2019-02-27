@@ -15,8 +15,10 @@ const InstrumentBubble = (props) => {
   } = props;
   const circles = d3Calculation.filter(v => (v.depth !== 0))
     .map((node) => {
+      // Don't render the circle surrounding instrument or commodity
+      if (node.depth === 1) { return null; }
     // Renders commodity circles (ie Energy bubbles)
-      if (node.depth === 1) {
+      if (node.depth === 2) {
       // Create curved path for parentNode text
         const textCurvedPath = `
       M ${(node.x - node.r)} ${(node.y - 1)}

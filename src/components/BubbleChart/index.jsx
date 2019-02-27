@@ -4,17 +4,10 @@ import InstrumentBubble from './InstrumentBubble/index';
 import ChartIndicator from '../ChartIndicator';
 import d3HierarchyCalculation from './d3HierarchyCalculation';
 
-const sortCombinedData = combinedNodes => combinedNodes
-  .filter(node => (node.depth > 0))
-  // eslint-disable-next-line object-curly-newline
-  .map(({ x, y, r, value, depth }) => ({ x, y, r, value, depth }))
-  .sort((a, b) => (a.x - b.x));
-
 class BubbleChart extends React.PureComponent {
   static propTypes = {
     selectedCategory: PropTypes.string.isRequired,
-    instrumentChartData1: PropTypes.instanceOf(Object).isRequired,
-    instrumentChartData2: PropTypes.instanceOf(Object).isRequired,
+    data: PropTypes.instanceOf(Object).isRequired,
   };
 
   constructor(props) {
@@ -27,19 +20,12 @@ class BubbleChart extends React.PureComponent {
     this.svgRef = React.createRef();
   }
 
-  combineData = () => {
-    const nodes1 = d3HierarchyCalculation(
-      this.props.instrumentChartData1, 550, 400,
-    );
-    const nodes2 = d3HierarchyCalculation(
-      this.props.instrumentChartData2, 1400, 400,
-    );
-    const sortedData1 = sortCombinedData(nodes1);
-    let sortedData2;
-    if (nodes2 !== undefined) {
-      sortedData2 = sortCombinedData(nodes2);
-    }
-    return sortedData1.concat(sortedData2);
+  getData = () => {
+    return d3HierarchyCalculation(this.props.data, 850, 400)
+      .filter(node => (node.depth > 0))
+      // eslint-disable-next-line object-curly-newline
+      .map(({ x, y, r, value, depth }) => ({ x, y, r, value, depth }))
+      .sort((a, b) => (a.x - b.x));
   };
 
   setIndicatorState = (index) => {
@@ -51,7 +37,7 @@ class BubbleChart extends React.PureComponent {
 
   onClick = (circle) => {
     this.isDragging = false;
-    const sortedData = this.combineData();
+    const sortedData = this.getData();
     const index = (sortedData.findIndex((item) => {
       if (item.x === circle.x && item.y === circle.y && item.r === circle.r) {
         return item;
@@ -62,7 +48,7 @@ class BubbleChart extends React.PureComponent {
   };
 
   onKeyPress = (event) => {
-    const sortedData = this.combineData();
+    const sortedData = this.getData();
     const itemIndex = this.state.indicator;
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
       const rightIndex = (sortedData[itemIndex + 1])
@@ -83,7 +69,7 @@ class BubbleChart extends React.PureComponent {
 
   onDragMove = (event) => {
     if (!this.isDragging) { return; }
-    const sortedData = this.combineData();
+    const sortedData = this.getData();
     const svg = !this.svgRef.current ? { x: 156.3583, y: 187 }
       : this.svgRef.current.getClientRects()[0];
     const subX = event.clientX - svg.x;
@@ -103,11 +89,7 @@ class BubbleChart extends React.PureComponent {
   }
 
   render() {
-    const {
-      selectedCategory,
-      instrumentChartData1,
-      instrumentChartData2,
-    } = this.props;
+    const { selectedCategory, data } = this.props;
     if (selectedCategory !== 'instrument') {
       return null;
     }
@@ -115,7 +97,7 @@ class BubbleChart extends React.PureComponent {
     const { indicator } = this.state;
     let indicatorProps = {};
     if (indicator !== null) {
-      const sortedData = this.combineData();
+      const sortedData = this.getData();
       const value = sortedData[indicator].depth > 1
         ? sortedData[indicator].value
         : sortedData[indicator].r;
@@ -145,24 +127,13 @@ class BubbleChart extends React.PureComponent {
             onMouseUp={this.onDragStop}
           >
             <InstrumentBubble
-              width={550}
+              width={850}
               height={400}
               onClick={this.onClick}
               keyPress={this.onKeyPress}
               d3Calculation={d3HierarchyCalculation(
-                instrumentChartData1,
-                550,
-                400,
-              )}
-            />
-            <InstrumentBubble
-              width={1400}
-              height={400}
-              onClick={this.onClick}
-              keyPress={this.onKeyPress}
-              d3Calculation={d3HierarchyCalculation(
-                instrumentChartData2,
-                1400,
+                data,
+                850,
                 400,
               )}
             />
