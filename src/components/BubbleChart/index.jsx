@@ -12,10 +12,7 @@ class BubbleChart extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.state = {
-      display: false,
-      indicator: null,
-    };
+    this.state = { indicator: '' };
     this.isDragging = false;
     this.svgRef = React.createRef();
   }
@@ -23,37 +20,25 @@ class BubbleChart extends React.PureComponent {
   getData = () => d3HierarchyCalculation(this.props.data, 850, 400)
     .filter(node => node.depth > 1);
 
-  getOrderedCircles = () => this.getData()
-    .sort((a, b) => (a.x - b.x));
-
-  setIndicatorState = (index) => {
-    this.setState({
-      display: true,
-      indicator: index,
-    });
-  };
+  setIndicatorState = indicator => this.setState({ indicator });
 
   onClick = (circle) => {
     this.isDragging = false;
-    const sortedData = this.getOrderedCircles();
-    const index = sortedData.findIndex(item => item.data.name === circle.data.name);
-    this.setIndicatorState(index);
+    this.setIndicatorState(circle.data.name || '');
   };
 
   onKeyPress = (event) => {
-    const sortedData = this.getOrderedCircles();
-    const itemIndex = this.state.indicator;
+    const sortedData = this.getData();
+    let itemIndex = sortedData.findIndex(v => v.data.name === this.state.indicator);
+    // TODO: This currently goes through big circles then small circles, but
+    // should have the big ones interposed between their children
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
-      const rightIndex = (sortedData[itemIndex + 1])
-        ? (itemIndex + 1)
-        : (0);
-      this.setIndicatorState(rightIndex);
+      itemIndex = (sortedData[itemIndex + 1]) ? (itemIndex + 1) : 0;
     } else if (event.key === 'ArrowLeft' || event.keyCode === 37) {
-      const leftIndex = (sortedData[itemIndex - 1])
-        ? (itemIndex - 1)
-        : (sortedData.length - 1);
-      this.setIndicatorState(leftIndex);
+      itemIndex = (sortedData[itemIndex - 1]) ? (itemIndex - 1) : (sortedData.length - 1);
     }
+    const newIndicator = sortedData[itemIndex].data.name;
+    if (newIndicator !== this.state.indicator) { this.setIndicatorState(newIndicator); }
   };
 
   onDragStart = () => { this.isDragging = true; }
@@ -69,10 +54,7 @@ class BubbleChart extends React.PureComponent {
       target = target.parentElement;
     }
     if (!target.dataset.name) { return; }
-
-    const sortedData = this.getOrderedCircles();
-    const index = sortedData.findIndex(item => item.data.name === target.dataset.name);
-    this.setIndicatorState(index);
+    this.setIndicatorState(target.dataset.name);
   }
 
   render() {
@@ -81,27 +63,28 @@ class BubbleChart extends React.PureComponent {
       return null;
     }
 
-    const { indicator } = this.state;
-    let indicatorProps = {};
-    if (indicator !== null) {
-      const sortedData = this.getOrderedCircles();
-      const value = sortedData[indicator].depth > 2
-        ? sortedData[indicator].value
-        : sortedData[indicator].r;
-      indicatorProps = {
-        x: sortedData[indicator].x,
-        yBottom: sortedData[indicator].y - value,
-        radius: value,
-        label: sortedData[indicator].value,
-      };
+    const data = this.getData();
+    const { indicator: indicatorName } = this.state;
+    const indicatorTarget = indicatorName && data.find(v => v.data.name === indicatorName);
+
+    let indicator = null;
+    if (indicatorTarget) {
+      const value = indicatorTarget.depth > 2 ? indicatorTarget.value : indicatorTarget.r;
+      indicator = (
+        <ChartIndicator
+          x={indicatorTarget.x}
+          yBottom={indicatorTarget.y - value}
+          radius={value}
+          label={indicatorTarget.value}
+          yTop={25}
+        />
+      );
     }
 
     return (
       <div className="BubbleChart">
         <svg width={850} height={400}>
-          {this.state.display
-            ? <ChartIndicator {...indicatorProps} yTop={25} />
-            : null}
+          {indicator}
           {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
           <g
             ref={this.svgRef}
@@ -114,7 +97,7 @@ class BubbleChart extends React.PureComponent {
               height={400}
               onClick={this.onClick}
               keyPress={this.onKeyPress}
-              d3Calculation={this.getData()}
+              d3Calculation={data}
             />
           </g>
         </svg>
