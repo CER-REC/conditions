@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+const calculateSize = (size, max) => (max ? `calc(${max} * ${size / 100})` : `${size}%`);
+
 const BarContainer = (props) => {
   if (props.items.length === 0) { return null; }
 
@@ -11,6 +13,9 @@ const BarContainer = (props) => {
     standalone,
     ...spreadProps
   } = props;
+
+  // Pull these out separately since we still want to pass them through
+  const { width: maxWidth, height: maxHeight } = spreadProps;
 
   const scaleAgainst = vertical
     ? Math.max(...items.map(v => v.value))
@@ -27,10 +32,10 @@ const BarContainer = (props) => {
           className="Bar"
           key={index /* eslint-disable-line react/no-array-index-key */}
           fill={bar.fill}
-          x={`${x - width}%`}
-          y={`${100 - height}%`}
-          width={`${width}%`}
-          height={`${height}%`}
+          x={calculateSize(x - width, maxWidth)}
+          y={calculateSize(100 - height, maxHeight)}
+          width={calculateSize(width, maxWidth)}
+          height={calculateSize(height, maxHeight)}
         />
       );
     }
