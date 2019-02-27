@@ -2,17 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import handleInteraction from '../../../utilities/handleInteraction';
+
 import List from '../../List';
 import './styles.scss';
 
 class WheelList extends React.PureComponent {
-  handleOnChange = element => this.props.onChange(element.props['data-index'])
-
   wrapIndex = i => (
     (this.props.selected + i + this.props.listContent.length)
     % this.props.listContent.length
-  );
+  )
+
+  handleOnChange = (i) => {
+    const newIndex = this.wrapIndex(i - 3);
+    this.props.onChange(newIndex);
+  }
 
   render() {
     const label = (this.props.showingLocation)
@@ -49,16 +52,13 @@ class WheelList extends React.PureComponent {
 
     const listElements = indicesToShow.map((listIndex, displayIndex) => {
       const text = this.props.listContent[listIndex];
-      const trimmed = (text.length < 15)
-        ? text
-        : `${text.substring(0, 13)}...`;
 
       return (
         <span
           className={classes[displayIndex]}
-          data-index={listIndex}
+          // data-index={listIndex}
           // eslint-disable-next-line react/no-array-index-key
-          key={`${trimmed}-${displayIndex}`}
+          key={`${text}-${displayIndex}`}
         >
           {text}
         </span>
@@ -77,7 +77,7 @@ class WheelList extends React.PureComponent {
 
     return (
       <div
-        className={classNames('WheelList', this.props.className)}
+        className={this.props.className ? classNames('WheelList', this.props.className) : 'WheelList'}
         onScroll={this.scrollHandler}
       >
         <div className="labelContainer">{label} {selectedElement}</div>
@@ -86,7 +86,8 @@ class WheelList extends React.PureComponent {
             <List
               elevated
               items={listElements}
-              onChange={i => this.handleOnChange(listElements[i])}
+              // onChange={i => this.handleOnChange(listElements[i])}
+              onChange={this.handleOnChange}
               selected={3}
             />
           </div>
@@ -102,7 +103,7 @@ WheelList.propTypes = {
   /** Outer radius of the wheel; used to crop the selected item */
   outerRadius: PropTypes.number.isRequired,
   /** Additional classes to apply */
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   /** Event handler, will receive the array index being selected */
   onChange: PropTypes.func.isRequired,
   /** Index of the currently selected item in 'listContent' */
@@ -115,5 +116,6 @@ WheelList.propTypes = {
 
 WheelList.defaultProps = {
   showingLocation: false,
+  className: null,
 };
 export default WheelList;
