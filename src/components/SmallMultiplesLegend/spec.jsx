@@ -49,6 +49,7 @@ describe('Components|SmallMultiplesLegend', () => {
         feature="theme"
         data={[]}
         onChange={noop}
+        selected=""
       />
     ));
   });
@@ -94,6 +95,7 @@ describe('Components|SmallMultiplesLegend', () => {
           feature="theme"
           data={data}
           onChange={spy}
+          selected=""
         />
       ));
     });
@@ -194,6 +196,7 @@ describe('Components|SmallMultiplesLegend', () => {
           data={data}
           onChange={noop}
           highlightName={highlightName}
+          selected=""
         />
       ));
 
@@ -219,6 +222,7 @@ describe('Components|SmallMultiplesLegend', () => {
           data={data}
           onChange={noop}
           highlightName="n/a"
+          selected=""
         />
       ));
 

@@ -89,7 +89,7 @@ SmallMultiplesLegend.propTypes = {
       The items rendered in the provided order */
   data: allConditionsPerYear.isRequired,
   /** The name of the data element to set as selected */
-  selected: PropTypes.string,
+  selected: PropTypes.string.isRequired,
   /** The name of the data element to highlight */
   highlightName: PropTypes.string,
   /** A function that will receive an name when a data item is selected
@@ -100,7 +100,6 @@ SmallMultiplesLegend.propTypes = {
 };
 
 SmallMultiplesLegend.defaultProps = {
-  selected: '',
   highlightName: null,
   className: '',
 };

@@ -25,6 +25,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
       feature="theme"
       data={conditionCountsByYear.counts}
       onChange={name => alert(name)}
+      selected=""
     />
   ))
   .add('selected', () => (
@@ -41,6 +42,7 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
       data={conditionCountsByYear.counts}
       onChange={name => alert(name)}
       highlightName={select('Highlight', highlightOptions, Object.keys(highlightOptions)[1])}
+      selected=""
     />
   ))
   .add('with one entry', () => (
@@ -48,5 +50,6 @@ storiesForComponent('Components|SmallMultiplesLegend', module, ReadMe)
       feature="theme"
       data={[conditionCountsByYear.counts.filter(v => v.feature === 'theme')[0]]}
       onChange={name => alert(name)}
+      selected=""
     />
   ));

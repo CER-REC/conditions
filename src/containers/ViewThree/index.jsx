@@ -41,6 +41,7 @@ const ViewThree = props => (
               feature={props.selected.feature}
               data={props.conditionCountsByYear.counts}
               onChange={props.setSelectedSubFeature}
+              selected={props.selected.subFeature}
             />
           )}
       </section>
