@@ -51,8 +51,8 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'Company'
         ? (
-          <g key={`${item._id}`} transform={transform}>
-            <text key={`a${item._id}`} className="TextLabels">
+          <g key={item._id} transform={transform}>
+            <text className="TextLabels">
               {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
             </text>
             {/* This rect will be used to denote the letter separation in the location wheel
@@ -82,8 +82,7 @@ class WheelRay extends React.Component {
             </g>
           </g>
         );
-      legendTracker = item.company_name.charAt(0) === legendTracker
-        ? legendTracker : item.company_name.charAt(0);
+      legendTracker = item.company_name.charAt(0);
       // eslint-disable-next-line consistent-return
       return componentToReturn;
     });
