@@ -6,7 +6,9 @@ import ReadMe from './README.md';
 
 import data from '../testData';
 
-const openIntermediatePopup = instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`);
+const openIntermediatePopup = () => (instrumentNumber) => {
+  alert(`Intermediate popup for: ${instrumentNumber}`);
+};
 
 const defaultProps = {
   instrument: data[0],
