@@ -12652,194 +12652,512 @@ exports[`Storyshots Components|Wheel/WheelList with company data 1`] = `
     className="Wheel"
   >
     <div
-      className="List"
+      style={
+        Object {
+          "border": "1px dashed rgba(255, 0, 255, 0.4)",
+          "borderRadius": "50%",
+          "boxShadow": "0 0 0px 50px rgba(255, 0, 255, 0.05)",
+          "height": 300,
+          "width": 300,
+        }
+      }
     >
-      <span>
-        Selected Company:
-      </span>
       <div
-        className="List"
+        className="WheelList"
       >
-        <ul>
-          <li
-            className="List-Item"
+        <div
+          className="labelContainer"
+        >
+          <span
+            className="label"
           >
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyA
-            </div>
-          </li>
-          <li
-            className="List-Item"
-          >
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyB
-            </div>
-          </li>
-          <li
-            className="List-Item"
-          >
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyC
-            </div>
-          </li>
-          <li
-            className="List-Item"
-          >
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyD
-            </div>
-          </li>
-          <li
-            className="List-Item selected"
-          >
-            <div
-              className="CircleContainer arrowPrevious"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              style={
-                Object {
-                  "height": 24,
-                  "width": 24,
-                }
+            Selected Company:
+          </span>
+           
+          <span
+            className="selected"
+            style={
+              Object {
+                "width": 200,
               }
-              tabIndex={0}
+            }
+          >
+            Company E
+          </span>
+        </div>
+        <div
+          className="listContainer"
+          style={
+            Object {
+              "height": 300,
+              "width": 300,
+            }
+          }
+        >
+          <div
+            className="list"
+          >
+            <div
+              className="List"
             >
-              <div>
-                <div
-                  className="Icon"
+              <ul>
+                <li
+                  className="List-Item"
                 >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                    color=""
-                    data-icon="angle-up"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 320 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
                   >
-                    <path
-                      d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                </div>
-              </div>
+                    <span
+                      className="threeAway"
+                    >
+                      Company B
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="twoAway"
+                    >
+                      Company C
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="oneAway"
+                    >
+                      Company D
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item selected"
+                >
+                  <div
+                    className="CircleContainer arrowPrevious elevated"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                          color=""
+                          data-icon="angle-up"
+                          data-prefix="fas"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 320 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="dummy"
+                    >
+                      Company E
+                    </span>
+                  </div>
+                  <div
+                    className="CircleContainer arrowNext elevated"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                          color=""
+                          data-icon="angle-down"
+                          data-prefix="fas"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 320 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="oneAway"
+                    >
+                      Company F
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="twoAway"
+                    >
+                      Company G
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="threeAway"
+                    >
+                      Company H moreThan15Characters
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyE
-            </div>
-            <div
-              className="CircleContainer arrowNext"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              style={
-                Object {
-                  "height": 24,
-                  "width": 24,
-                }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Wheel/WheelList with location data 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Wheel"
+  >
+    <div
+      style={
+        Object {
+          "border": "1px dashed rgba(255, 0, 255, 0.4)",
+          "borderRadius": "50%",
+          "boxShadow": "0 0 0px 50px rgba(255, 0, 255, 0.05)",
+          "height": 300,
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="WheelList"
+      >
+        <div
+          className="labelContainer"
+        >
+          <span
+            className="label"
+          >
+            Region:
+          </span>
+           
+          <span
+            className="selected"
+            style={
+              Object {
+                "width": 150,
               }
-              tabIndex={0}
+            }
+          >
+            Red Deer
+          </span>
+        </div>
+        <div
+          className="listContainer"
+          style={
+            Object {
+              "height": 300,
+              "width": 300,
+            }
+          }
+        >
+          <div
+            className="list"
+          >
+            <div
+              className="List"
             >
-              <div>
-                <div
-                  className="Icon"
+              <ul>
+                <li
+                  className="List-Item"
                 >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                    color=""
-                    data-icon="angle-down"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 320 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
                   >
-                    <path
-                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                </div>
-              </div>
+                    <span
+                      className="threeAway"
+                    >
+                      Camrose--Drumheller
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="twoAway"
+                    >
+                      Edmonton
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="oneAway"
+                    >
+                      Lethbridge--Medicine Hat
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item selected"
+                >
+                  <div
+                    className="CircleContainer arrowPrevious elevated"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                          color=""
+                          data-icon="angle-up"
+                          data-prefix="fas"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 320 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="dummy"
+                    >
+                      Red Deer
+                    </span>
+                  </div>
+                  <div
+                    className="CircleContainer arrowNext elevated"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                          color=""
+                          data-icon="angle-down"
+                          data-prefix="fas"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 320 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="oneAway"
+                    >
+                      Wood Buffalo--Cold Lake
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="twoAway"
+                    >
+                      Calgary
+                    </span>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="threeAway"
+                    >
+                      Camrose--Drumheller
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-          <li
-            className="List-Item"
-          >
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyF
-            </div>
-          </li>
-          <li
-            className="List-Item"
-          >
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyG
-            </div>
-          </li>
-          <li
-            className="List-Item"
-          >
-            <div
-              className="List-Item-Content"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-            >
-              CompanyH
-            </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

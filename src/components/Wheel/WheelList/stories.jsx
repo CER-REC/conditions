@@ -54,11 +54,10 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
         innerRadius={innerRadius}
         outerRadius={outerRadius}
         listContent={companyList}
-        selected={4}
         {...getInteractionProps()}
       />
     </div>
-  ), { interaction: { actions: { onChange } } })
+  ), { interaction: { state: { selected: 4 }, actions: { onChange } } })
   .add('with location data', () => (
     <div style={exampleDivProps}>
       <WheelList
@@ -66,8 +65,7 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
         outerRadius={innerRadius}
         showingLocation
         listContent={locationList}
-        selected={2}
         {...getInteractionProps()}
       />
     </div>
-  ), { interaction: { actions: { onChange } } });
+  ), { interaction: { state: { selected: 2 }, actions: { onChange } } });

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import WheelList from '.';
 
@@ -19,41 +20,37 @@ const companyList = [
   'CompanyM',
 ];
 
-const locationList = [
-  'LocationG',
-  'LocationH',
-  'LocationI',
-  'LocationF',
-  'LocationO',
-  'LocationP',
-  'LocationA',
-  'LocationB',
-  'LocationL',
-  'LocationM',
-  'Location',
-  'LocationC',
-  'LocationD',
-  'LocationJ',
-  'LocationKmoreThan15Characters',
-  'LocationE',
-];
+const noop = () => {};
 
 describe('Components|Wheel/WheelList', () => {
   let wrapper;
+  let spy;
   describe('with default props', () => {
     beforeEach(() => {
+      spy = jest.fn();
       wrapper = shallow(
         <WheelList
-          mode="company"
           className="WheelList"
-          companyList={companyList}
-          locationList={locationList}
+          listContent={companyList}
+          selected={4}
+          innerRadius={100}
+          outerRadius={150}
+          onChange={spy}
         />,
       );
     });
 
-    test('should render a formatted message for the selection', () => {
-      expect(wrapper.find('FormattedMessage')).toHaveLength(1);
+    shouldBehaveLikeAComponent(WheelList, () => wrapper);
+
+    it('should pass its onChange callback to the List', () => {
+      wrapper.find('.WheelList')
+        .find('.listContainer')
+        .find('.list')
+        .find('List')
+        .props()
+        .onChange();
+
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });
