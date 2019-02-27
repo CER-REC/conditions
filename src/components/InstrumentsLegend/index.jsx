@@ -31,7 +31,7 @@ class InstrumentsLegend extends React.PureComponent {
     .onChange(index === 0 ? '' : this.getFormattedData()[index - 1][0]);
 
   render() {
-    const { data, selected, className } = this.props;
+    const { selected, className } = this.props;
     const indicatorTypes = this.getIndicatorTypes();
     const headers = indicatorTypes.map(type => (
       <FormattedMessage key={type} id={`common.instrumentCommodityType.${type}`}>

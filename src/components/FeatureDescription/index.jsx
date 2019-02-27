@@ -13,7 +13,7 @@ const FeatureDescription = props => (
     <FormattedMessage
       id={`components.featureDescription.${props.feature}`}
       values={{
-        link: (url, title) => <a href={url} target="_blank">{title}</a>,
+        link: (url, title) => <a href={url} rel="noopener noreferrer" target="_blank">{title}</a>,
       }}
     >
       {/* eslint-disable-next-line react/no-array-index-key */}

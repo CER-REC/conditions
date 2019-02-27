@@ -33,7 +33,7 @@ describe('Components|InstrumentsLegend', () => {
   }];
 
   beforeEach(() => {
-  spy = jest.fn();
+    spy = jest.fn();
     wrapper = shallow((
       <InstrumentsLegend
         className="c"
