@@ -27,17 +27,8 @@ class InstrumentsLegend extends React.PureComponent {
     }, {}));
   };
 
-  onItemChange = (index) => {
-    const data = this.getFormattedData();
-    if (index === 0 && data.length > 1) {
-      this.props.onChange('');
-      return;
-    }
-
-    const [key] = data[data.length === 1 ? 0 : (index - 1)];
-    const category = key === 'all' ? '' : key;
-    this.props.onChange(category);
-  };
+  onItemChange = index => this.props
+    .onChange(index === 0 ? '' : this.getFormattedData()[index - 1][0]);
 
   render() {
     const { data, selected, className } = this.props;
@@ -49,8 +40,8 @@ class InstrumentsLegend extends React.PureComponent {
     ));
 
     const formattedData = this.getFormattedData();
-    const dataIndex = formattedData.findIndex(([key]) => selected === key);
-    const selectedIndex = data.length === 1 ? 0 : dataIndex + 1;
+    // Add one to account for 'all
+    const selectedIndex = formattedData.findIndex(([key]) => selected === key) + 1;
     const legendDataItems = formattedData.map(([type, indicators]) => (
       <LegendItem
         key={type}
@@ -59,17 +50,15 @@ class InstrumentsLegend extends React.PureComponent {
       />
     ));
 
-    if (legendDataItems.length > 1) {
-      legendDataItems.unshift((
-        <LegendItem
-          all
-          // "all" cannot be an category in data
-          key="all"
-          title=""
-          indicators={[]}
-        />
-      ));
-    }
+    legendDataItems.unshift((
+      <LegendItem
+        all
+        // "all" cannot be an category in data
+        key="all"
+        title=""
+        indicators={[]}
+      />
+    ));
 
     return (
       <div className={classNames('InstrumentsLegend', className)}>
