@@ -108,12 +108,12 @@ describe('Components|BubbleChart/InstrumentBubble', () => {
       );
     });
     test("should call it's onClick prop", () => {
-      wrapper.find('circle').first().simulate('click', eventFuncs);
+      wrapper.find('circle').first().parent().simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalled();
     });
 
     test("should call it's onClick prop when enter is pressed", () => {
-      wrapper.find('circle').first().simulate('keypress', { key: 'Enter', ...eventFuncs });
+      wrapper.find('circle').first().parent().simulate('keypress', { key: 'Enter', ...eventFuncs });
       expect(spy).toHaveBeenCalled();
     });
   });

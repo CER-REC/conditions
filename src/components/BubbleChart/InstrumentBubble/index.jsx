@@ -10,33 +10,52 @@ import { features } from '../../../constants';
 */
 
 const InstrumentBubble = (props) => {
-  const {
-    onClick, d3Calculation, keyPress,
-  } = props;
+  const { onClick, d3Calculation, keyPress } = props;
   const circles = d3Calculation
     .map((node) => {
       // Don't render the circle surrounding instrument or commodity
       if (node.depth <= 1) { return null; }
+
+      const circleTransform = `translate(${node.x} ${node.y})`;
+      const textOutside = node.r > node.value;
+
+      let content = (
+        <React.Fragment>
+          <circle
+            style={{ fill: features.instrument[node.data.category] || 'white' }}
+            r={node.value}
+            transform={circleTransform}
+          />
+          <text
+            x={textOutside ? (node.x + (node.value + 2)) : node.x}
+            y={node.y}
+            textAnchor={textOutside ? '' : 'middle'}
+            alignmentBaseline="middle"
+            stroke="transparent"
+            fill={textOutside ? 'black' : 'white'}
+          >
+            {node.data.name}
+          </text>
+        </React.Fragment>
+      );
+
       // Renders commodity circles (ie Energy bubbles)
       if (node.depth === 2) {
-      // Create curved path for parentNode text
+        // Create curved path for parentNode text
         const textCurvedPath = `
           M ${(node.x - node.r)} ${(node.y - 1)}
           A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
-        return (
-          <g key={node.data.name} data-name={node.data.name}>
+        content = (
+          <React.Fragment>
+            <circle
+              className="CommodityCircle"
+              r={node.r}
+              transform={circleTransform}
+            />
             <path
               id={`${node.data.name}path`}
               d={textCurvedPath}
               style={{ fill: 'none', stroke: 'transparent' }}
-            />
-            <circle
-              onKeyDown={keyPress}
-              className="CommodityCircle"
-              {...handleInteraction(onClick, node.data.name)}
-              transform={`translate(${node.x} ${node.y})`}
-              r={node.r}
-              value={node.value}
             />
             <text className="bubbleTitle">
               <FormattedMessage id={`common.instrumentCommodityType.${node.data.name}`}>
@@ -51,14 +70,10 @@ const InstrumentBubble = (props) => {
                 )}
               </FormattedMessage>
             </text>
-          </g>
+          </React.Fragment>
         );
       }
-      // Determines text position and color
-      // Depends upon text length relative to circle size
-      const textX = node.r > node.value ? (node.x + (node.value + 2)) : node.x;
-      const textStyle = node.r > node.value ? '' : 'middle';
-      const textColor = node.r > node.value ? 'black' : 'white';
+
       return (
         <g
           key={node.data.name}
@@ -66,21 +81,7 @@ const InstrumentBubble = (props) => {
           data-name={node.data.name}
           {...handleInteraction(onClick, node.data.name)}
         >
-          <circle
-            r={node.value}
-            transform={`translate(${node.x} ${node.y})`}
-            style={{ fill: features.instrument[node.data.category] || 'white' }}
-          />
-          <text
-            x={textX}
-            y={node.y}
-            textAnchor={textStyle}
-            alignmentBaseline="middle"
-            stroke="transparent"
-            fill={textColor}
-          >
-            {node.data.name}
-          </text>
+          {content}
         </g>
       );
     });

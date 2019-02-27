@@ -14,7 +14,6 @@ class BubbleChart extends React.PureComponent {
   constructor(props) {
     super(props);
     this.isDragging = false;
-    this.svgRef = React.createRef();
   }
 
   getData = () => d3HierarchyCalculation(this.props.data, 850, 400)
@@ -75,26 +74,23 @@ class BubbleChart extends React.PureComponent {
     }
 
     return (
-      <div className="BubbleChart">
-        <svg width={850} height={400}>
-          {indicator}
-          {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
-          <g
-            ref={this.svgRef}
-            onMouseDown={this.onDragStart}
-            onMouseOver={this.onDragOver}
-            onMouseUp={this.onDragStop}
-          >
-            <InstrumentBubble
-              width={850}
-              height={400}
-              onClick={this.onClick}
-              keyPress={this.onKeyPress}
-              d3Calculation={data}
-            />
-          </g>
-        </svg>
-      </div>
+      <svg width={850} height={400} className="BubbleChart">
+        {indicator}
+        {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
+        <g
+          onMouseDown={this.onDragStart}
+          onMouseOver={this.onDragOver}
+          onMouseUp={this.onDragStop}
+        >
+          <InstrumentBubble
+            width={850}
+            height={400}
+            onClick={this.onClick}
+            keyPress={this.onKeyPress}
+            d3Calculation={data}
+          />
+        </g>
+      </svg>
     );
   }
 }
