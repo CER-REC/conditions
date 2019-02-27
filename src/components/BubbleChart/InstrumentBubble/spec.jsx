@@ -6,117 +6,68 @@ import d3HierarchyCalculation from '../d3HierarchyCalculation';
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-const instrumentChartData = {
-  name: 'data',
-  children: [{
-    parentName: 'GAS',
-    children: [
-      {
-        name: 'XG',
-        children: [],
-        value: 40,
-        category: 'CONSTRUCTION',
-      }, {
-        name: 'GC',
-        children: [],
-        value: 30,
-        category: 'CONSTRUCTION',
-      },
-      {
-        name: 'GPSO',
-        children: [],
-        value: 10,
-        category: 'OPENING',
-      },
-      {
-        name: 'SG',
-        children: [],
-        value: 20,
-        category: 'SAFETY',
-      },
-      {
-        name: 'GPLO',
-        children: [],
-        value: 5,
-        category: 'OPENING',
-      },
-      {
-        name: 'TG',
-        children: [],
-        value: 10,
-        category: 'tariffs',
-      },
-    ],
+const instrumentChartData = [
+  {
+    prefix: 'XO',
+    value: 40,
+    type: 'ROUTING',
+    commodity: ['OIL'],
   },
   {
-    parentName: 'POWER',
-    children: [
-      {
-        name: 'EC',
-        children: [],
-        value: 10,
-        category: 'CONSTRUCTION',
-      },
-      {
-        name: 'EPE',
-        children: [],
-        value: 15,
-        category: 'CONSTRUCTION',
-      }, {
-        // Extra Test Data added for testing currently missing categories.
-        name: '1',
-        children: [],
-        value: 15,
-        category: 'ROUTING',
-      }, {
-        name: '2',
-        children: [],
-        value: 10,
-        category: 'ABANDONMENT',
-      }, {
-        name: '3',
-        children: [],
-        value: 10,
-        category: 'MISC',
-      }, {
-        name: '4',
-        children: [],
-        value: 10,
-        category: null,
-      },
-    ],
+    prefix: 'OPL',
+    value: 10,
+    type: 'ROUTING',
+    commodity: ['GAS'],
   },
   {
-    parentName: 'OIL',
-    children: [{
-      name: 'XO',
-      children: [],
-      value: 40,
-      category: 'CONSTRUCTION',
-    },
-    {
-      name: 'SO',
-      children: [],
-      value: 30,
-      category: 'SAFETY',
-    }, {
-      name: 'OC',
-      children: [],
-      value: 40,
-      category: 'CONSTRUCTION',
-    }, {
-      name: 'OPLO',
-      children: [],
-      value: 10,
-      category: 'OPENING',
-    }, {
-      name: 'OPSO',
-      children: [],
-      value: 10,
-      category: 'OPENING',
-    }],
-  }],
-};
+    prefix: 'EC',
+    value: 21,
+    type: 'CONSTRUCTION',
+    commodity: ['OIL', 'GAS', 'POWER'],
+  },
+  {
+    prefix: 'EPE',
+    value: 7,
+    type: 'CONSTRUCTION',
+    commodity: ['POWER'],
+  },
+  {
+    prefix: 'GPSO',
+    value: 10,
+    type: 'OPENING',
+    commodity: ['OIL', 'GAS'],
+  },
+  {
+    prefix: 'GPLO',
+    value: 40,
+    type: 'OPENING',
+    commodity: ['GAS', 'OIL'],
+  },
+  {
+    prefix: 'OPLO',
+    value: 20,
+    type: 'OPENING',
+    commodity: ['OIL'],
+  },
+  {
+    prefix: 'OPSO',
+    value: 33,
+    type: 'OPENING',
+    commodity: ['OIL'],
+  },
+  {
+    prefix: 'MO',
+    value: 5,
+    type: 'MISC',
+    commodity: ['NOT_SPECIFIED'],
+  },
+  {
+    prefix: 'AO',
+    value: 15,
+    type: 'MISC',
+    commodity: ['NOT_SPECIFIED'],
+  },
+];
 
 describe('Components|BubbleChart/InstrumentBubble', () => {
   describe('when rendered InstrumentBubble', () => {

@@ -33,7 +33,7 @@ const InstrumentBubble = (props) => {
             <circle
               onKeyDown={keyPress}
               className="CommodityCircle"
-              {...handleInteraction(onClick, node)}
+              {...handleInteraction(onClick, node.data.name)}
               transform={`translate(${node.x} ${node.y})`}
               r={node.r}
               value={node.value}
@@ -64,7 +64,7 @@ const InstrumentBubble = (props) => {
           key={node.data.name}
           onKeyDown={keyPress}
           data-name={node.data.name}
-          {...handleInteraction(onClick, node)}
+          {...handleInteraction(onClick, node.data.name)}
         >
           <circle
             r={node.value}

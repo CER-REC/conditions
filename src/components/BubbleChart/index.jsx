@@ -20,9 +20,9 @@ class BubbleChart extends React.PureComponent {
   getData = () => d3HierarchyCalculation(this.props.data, 850, 400)
     .filter(node => node.depth > 1);
 
-  onClick = (circle) => {
+  onClick = (name) => {
     this.isDragging = false;
-    this.props.setIndicator(circle.data.name || '');
+    this.props.setIndicator(name || '');
   };
 
   onKeyPress = (event) => {
