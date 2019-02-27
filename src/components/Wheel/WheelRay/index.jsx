@@ -45,6 +45,9 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
+
+      // TODO: work out how to remove magic numbers. Right now they came from the design
+
       const transform = `translate(371 209) rotate(${position.toFixed(2)}, 0, 245)`;
 
       // TODO: split logic below to location ray and company ray?
