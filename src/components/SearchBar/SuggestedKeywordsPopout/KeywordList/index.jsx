@@ -31,6 +31,7 @@ class KeywordList extends React.PureComponent {
         category: PropTypes.arrayOf(PropTypes.string).isRequired,
       }, value[1], `${propFullName}[1]`, componentName);
     }).isRequired,
+    isExclude: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -38,11 +39,11 @@ class KeywordList extends React.PureComponent {
   }
 
   keywordOnClick = (word) => {
-    const { selectedWords } = this.props;
+    const { selectedWords, isExclude } = this.props;
     const updatedWords = (!selectedWords.includes(word))
       ? selectedWords.concat(word)
       : selectedWords.filter(v => v !== word);
-    return this.props.onClick(updatedWords);
+    return this.props.onClick([updatedWords, (isExclude ? 'exclude' : 'include')]);
   };
 
   findMaxConditions = () => (

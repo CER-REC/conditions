@@ -18,6 +18,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
         category: PropTypes.arrayOf(PropTypes.string).isRequired,
       }).isRequired,
     ).isRequired,
+    isExclude: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -153,6 +154,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           selectedWords={this.props.selectedWords}
           keywords={keywords}
           onClick={this.props.onClick}
+          isExclude={this.props.isExclude}
         />
         <FormattedMessage id="components.searchBar.close">
           {text => (

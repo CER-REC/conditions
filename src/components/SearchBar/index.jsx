@@ -12,17 +12,18 @@ import './styles.scss';
 
 class SearchBar extends React.PureComponent {
   static propTypes = {
-    searchKeywords: PropTypes.instanceOf(Object).isRequired,
     yearRange: PropTypes.instanceOf(Object).isRequired,
     availableYearRange: PropTypes.instanceOf(Object).isRequired,
-    updateSearchKeywords: PropTypes.func.isRequired,
+    updateKeywords: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
     projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
     suggestedKeywords: PropTypes.instanceOf(Object).isRequired,
     availableCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
-    addIncludeKeywords: PropTypes.func.isRequired,
-    addExcludeKeywords: PropTypes.func.isRequired,
-    includeOnChange: PropTypes.func.isRequired,
+    includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    findAnyOnChange: PropTypes.func.isRequired,
+    updateYear: PropTypes.func.isRequired,
+    changeProjectStatus: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -41,11 +42,9 @@ class SearchBar extends React.PureComponent {
       mode, isActive, isExclude,
     } = this.state;
     const {
-      projectStatus, updateSearchKeywords,
-      findAny, searchKeywords, suggestedKeywords,
-      yearRange, availableYearRange, availableCategories,
-      addIncludeKeywords, addExcludeKeywords,
-      includeOnChange,
+      projectStatus, updateKeywords,
+      findAny, includeKeywords, excludeKeywords, suggestedKeywords,
+      yearRange, availableYearRange, availableCategories, findAnyOnChange,
     } = this.props;
     const filterComponent = (mode !== 'filter') ? null : (
       <FilterContent
@@ -53,6 +52,8 @@ class SearchBar extends React.PureComponent {
         selectedYear={yearRange}
         yearRange={availableYearRange}
         closeTab={() => (this.setState({ mode: '' }))}
+        changeProjectStatus={this.props.changeProjectStatus}
+        onYearSelect={this.props.updateYear}
       />
     );
 
@@ -61,19 +62,21 @@ class SearchBar extends React.PureComponent {
         <SuggestedKeywordsPopout
           suggestedKeywords={suggestedKeywords}
           closeTab={() => (this.setState({ isActive: false }))}
-          onClick={isExclude ? addExcludeKeywords : addIncludeKeywords} //
+          onClick={updateKeywords}
           categories={availableCategories}
-          selectedWords={(isExclude ? searchKeywords.exclude : searchKeywords.include)}
+          selectedWords={(isExclude ? excludeKeywords : includeKeywords)}
+          isExclude={isExclude}
         />
       ));
     const searchComponent = (mode !== 'find') ? null : (
       <React.Fragment>
         <SearchContent
-          updateKeywords={updateSearchKeywords}
+          updateKeywords={updateKeywords}
           closeTab={() => (this.setState({ mode: '' }))}
-          includeOnChange={includeOnChange}
+          findAnyOnChange={findAnyOnChange}
           findAny={findAny}
-          searchKeywords={searchKeywords}
+          includeKeywords={includeKeywords}
+          excludeKeywords={excludeKeywords}
           changeIsExclude={this.changeIsExclude}
         />
         <div className={classNames('SuggestionPrompt', { excludePrompt: (this.state.isExclude) })}>
@@ -89,7 +92,7 @@ class SearchBar extends React.PureComponent {
 
     const highlightedSummary = (mode !== '') ? null : (
       <HighlightSummary
-        keywords={searchKeywords.include}
+        keywords={includeKeywords}
         selectedYear={yearRange}
       />
     );

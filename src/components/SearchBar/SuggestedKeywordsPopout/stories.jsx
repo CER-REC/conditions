@@ -27,7 +27,7 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
         suggestedKeywords: keywords,
       },
       actions: {
-        onClick: () => updatedList => ({ selectedWords: updatedList }),
+        onClick: () => ([updatedList]) => ({ selectedWords: updatedList }),
       },
     },
   });

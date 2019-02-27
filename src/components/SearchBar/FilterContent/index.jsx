@@ -31,7 +31,6 @@ class FilterContent extends React.PureComponent {
       end: PropTypes.number.isRequired,
     }).isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
-    reset: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
   }
 
@@ -147,10 +146,23 @@ class FilterContent extends React.PureComponent {
     }));
   }
 
+  filterProjectStatus = (item) => {
+    const { projectStatus } = this.props;
+    const updatedStatus = projectStatus.includes(item)
+      ? projectStatus.filter(v => v !== item)
+      : projectStatus.concat(item);
+    return (this.props.changeProjectStatus(updatedStatus));
+  }
+
+  reset = () => {
+    this.props.changeProjectStatus(['OPEN', 'CLOSED', 'CANCELLED']);
+    this.props.onYearSelect(this.props.yearRange);
+  }
+
   projectStatusRender = statusArray => (['OPEN', 'CLOSED', 'CANCELLED'].map(i => (
     <li
       key={i}
-      {...handleInteraction(this.props.changeProjectStatus, i)}
+      {...handleInteraction(this.filterProjectStatus, i)}
       className={statusArray.indexOf(i) > -1 ? 'selectedProject' : ''}
     >
       <FormattedMessage id={`components.searchBar.filter.projectStatus.${i}`}>
@@ -162,7 +174,7 @@ class FilterContent extends React.PureComponent {
   render() {
     return (
       <div className="FilterContent">
-        <div {...handleInteraction(this.props.reset)} className="reset">
+        <div {...handleInteraction(this.reset)} className="reset">
           <FormattedMessage id="components.searchBar.reset">
             { text => <span className="upperCase"> {text} </span> }
           </FormattedMessage>

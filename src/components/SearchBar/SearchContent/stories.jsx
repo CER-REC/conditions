@@ -15,10 +15,10 @@ storiesForComponent('Components|SearchBar/SearchContent', module, ReadMe)
   ), {
     interaction: {
       state: {
-        searchKeywords: { include: [], exclude: [] }, findAny: true,
+        includeKeywords: [], excludeKeywords: [], findAny: true,
       },
       actions: {
-        updateKeywords: () => words => ({ searchKeywords: words }),
+        updateKeywords: () => ([words, type]) => ((type === 'include') ? { includeKeywords: words } : { excludeKeywords: words }),
         findAnyOnChange: () => e => ({ findAny: e }),
       },
     },
