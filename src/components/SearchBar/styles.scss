@@ -27,9 +27,13 @@
       }
     }
   }
-  .SuggestedKeywordsPrompt {
+  .SuggestionPrompt {
     position: absolute;
     top: -10px;
     left: 390px;
+    &.excludePrompt {
+      top: 85px;
+      left: 390px;
+    }
   }
 }

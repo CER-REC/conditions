@@ -12,14 +12,18 @@ const yearRange = {
 const noop = () => {};
 
 const suggestedKeywords = {
-  deer: { conditions: 1200, category: ['wildlife & habitat'] },
-  alberta: { conditions: 400, category: ['administration & filings'] },
+  safety: { conditions: 1200, category: ['administration & filings'] },
+  emissions: { conditions: 1000, category: ['environment'] },
+  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
+  construction: { conditions: 1000, category: ['environment'] },
 };
 
 const keywords = {
-  include: ['include1', 'include2', 'include3'],
-  exclude: ['exclude1', 'exclude2', 'exclude2'],
+  include: ['safety'],
+  exclude: ['emissions'],
 };
+
+const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 
 const projectStatus = ['OPEN', 'CANCELLED'];
 
@@ -34,66 +38,10 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
       updateSearchKeywords={noop}
       suggestedKeywords={suggestedKeywords}
       findAny
+      addIncludeKeywords={noop}
+      addExcludeKeywords={noop}
+      availableCategories={availableCategories}
       projectStatus={projectStatus}
-
-    />
-  ))
-  .add('Basic Find with SuggestedKeywords', () => (
-    <SearchBar
-      yearRange={yearRange}
-      availableYearRange={yearRange}
-      searchKeywords={keywords}
-      updateSearchKeywords={noop}
-      suggestedKeywords={suggestedKeywords}
-      findAny
-      projectStatus={projectStatus}
-
-    />
-  ))
-  .add('Advanced Find without SuggestedKeywords', () => (
-    <SearchBar
-      yearRange={yearRange}
-      availableYearRange={yearRange}
-      searchKeywords={keywords}
-      updateSearchKeywords={noop}
-      suggestedKeywords={suggestedKeywords}
-      findAny
-      projectStatus={projectStatus}
-
-    />
-  ))
-  .add('Advanced Find with SuggestedKeywords', () => (
-    <SearchBar
-      yearRange={yearRange}
-      availableYearRange={yearRange}
-      searchKeywords={keywords}
-      updateSearchKeywords={noop}
-      suggestedKeywords={suggestedKeywords}
-      findAny
-      projectStatus={projectStatus}
-
-    />
-  ))
-  .add('Filter Selected', () => (
-    <SearchBar
-      yearRange={yearRange}
-      availableYearRange={yearRange}
-      searchKeywords={keywords}
-      updateSearchKeywords={noop}
-      suggestedKeywords={suggestedKeywords}
-      findAny
-      projectStatus={projectStatus}
-
-    />
-  ))
-  .add('Both Tabs closed', () => (
-    <SearchBar
-      yearRange={yearRange}
-      availableYearRange={yearRange}
-      searchKeywords={keywords}
-      updateSearchKeywords={noop}
-      suggestedKeywords={suggestedKeywords}
-      findAny
-      projectStatus={projectStatus}
+      includeOnChange={noop}
     />
   ));

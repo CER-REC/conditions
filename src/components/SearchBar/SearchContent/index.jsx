@@ -22,6 +22,7 @@ class SearchContent extends React.PureComponent {
     closeTab: PropTypes.func.isRequired,
     findAnyOnChange: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
+    changeIsExclude: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -103,7 +104,7 @@ class SearchContent extends React.PureComponent {
         />
       </div>
       <div className="input">
-        <input value={this.state.inputExclude} onChange={this.updateInputExclude} className="searchBar" />
+        <input value={this.state.inputExclude} onChange={this.updateInputExclude} onFocus={() => this.props.changeIsExclude(true)} className="searchBar" />
         <button type="button" className="addInput" {...handleInteraction(this.addExcludeWord)}>
           <Icon className="iconInline plusIcon" icon="plus-circle" />
         </button>
@@ -191,6 +192,7 @@ class SearchContent extends React.PureComponent {
           value={this.state.inputInclude}
           onChange={this.updateInputInclude}
           className="searchBar"
+          onFocus={() => this.props.changeIsExclude(false)}
         />
         <button
           type="button"
@@ -209,6 +211,7 @@ class SearchContent extends React.PureComponent {
   changeSearchType = () => {
     this.setState(prevState => ({ mode: (prevState.mode === 'basic' ? 'advanced' : 'basic') }));
     this.props.findAnyOnChange(true);
+    this.props.changeIsExclude(false);
     this.props.updateKeywords({ include: this.props.searchKeywords.include, exclude: [] });
   }
 
