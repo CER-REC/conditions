@@ -42,6 +42,7 @@ class Wheel extends React.Component {
 
   static getDerivedStateFromProps(props, prevState) {
     const { items } = props.itemsData;
+    console.log(items);
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
 

@@ -9,6 +9,12 @@ export const conditionsPerYear = PropTypes.shape({
   years: PropTypes.objectOf(PropTypes.number).isRequired,
 });
 
+export const companyData = PropTypes.shape({
+  companyID: PropTypes.string.isRequired,
+  companyName: PropTypes.string.isRequired,
+  projects: PropTypes.arrayOf(PropTypes.string).isRequired,
+});
+
 export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);
 
 export const ConditionsByCommodityOrInstrument = PropTypes.shape({
@@ -23,3 +29,7 @@ export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
 );
 
 export const browseByType = PropTypes.oneOf(['company', 'location']);
+
+export const allCompanyData = PropTypes.arrayOf(
+  companyData,
+);

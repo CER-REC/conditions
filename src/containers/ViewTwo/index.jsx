@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import { browseByType } from '../../proptypes';
+import * as selectedCreators from '../../actions/selected';
 import './styles.scss';
 
 const legendItems = [
@@ -89,4 +91,14 @@ ViewTwo.defaultProps = {
   layoutOnly: false,
 };
 
-export default ViewTwo;
+export const ViewTwoUnconnected = ViewTwo;
+
+export default connect(
+  ({ selected }) => ({
+    selected,
+  }),
+  {
+    setSelectedCompany: selectedCreators.setSelectedCompany,
+  },
+)(ViewTwo);
+
