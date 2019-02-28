@@ -8,10 +8,25 @@ import { conditionCountsByYear } from '../../mockData';
 
 storiesForComponent('Components|StreamGraph', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .add('With interaction', () => (
+  .add('default', () => (
     <StreamGraph
       projectData={conditionCountsByYear.counts}
       feature="theme"
       subFeature=""
+    />
+  ))
+  .add('subFeature', () => (
+    <StreamGraph
+      projectData={conditionCountsByYear.counts}
+      feature="theme"
+      subFeature="SECURITY"
+    />
+  ))
+  .add('streamOnly', () => (
+    <StreamGraph
+      projectData={conditionCountsByYear.counts}
+      feature="theme"
+      subFeature=""
+      streamOnly
     />
   ));

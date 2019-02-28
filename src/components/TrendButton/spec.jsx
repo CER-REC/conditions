@@ -2,12 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
-import d3HierarchyCalculation from '../BubbleChart/d3HierarchyCalculation';
 import TrendButton from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-
 
 describe('Components|TrendButton', () => {
   describe('with default selectedFeature', () => {

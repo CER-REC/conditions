@@ -4,7 +4,6 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import TrendButton from '.';
 import ReadMe from './README.md';
-import d3HierarchyCalculation from '../BubbleChart/d3HierarchyCalculation';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 
 storiesForComponent('Components|TrendButton', module, ReadMe)

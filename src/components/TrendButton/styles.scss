@@ -1,7 +1,6 @@
 @import "../../styles/colors.scss";
 
 .TrendButton {
-  width: max-content;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -9,24 +8,18 @@
   width: 120px;
   border: 1px solid $Gray160;
   overflow: hidden;
-  .Streamgraph {
-    height: 55px;
-    width: 170px;
-    h1 {
-      display: none;
-    }
-    .VictoryContainer {
-      filter: grayscale(100%);
-      svg {
-        // Note: !important used to overwrite
-        // Victory's inbuilt inline style of `pointer-events:all`
-        pointer-events: none !important;
-      }
-      g[role="presentation"] {
-        display: none;
-      }
+
+  .buttonText, .StreamGraph, .BubbleChart { width: 100%; height: 100%; }
+
+  .StreamGraph {
+    // Note: All !important declarations are to override Victory's use of inline styling.
+    path {
+      stroke: white !important;
+      stroke-width: 5px !important;
+      fill: $LightGray !important;
     }
   }
+
   .BubbleChart {
     padding-left: 25%;
     pointer-events: none;

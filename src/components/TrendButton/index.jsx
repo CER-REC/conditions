@@ -28,6 +28,7 @@ const TrendButton = props => (
             projectData={props.projectData}
             feature={props.feature}
             subFeature={props.subFeature}
+            streamOnly
           />
         )}
       <FormattedMessage id="components.trendButton.description">
