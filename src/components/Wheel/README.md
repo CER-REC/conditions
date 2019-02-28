@@ -1,61 +1,52 @@
 # Wheel
 
 * TODO: Wheel
-  * Design data:
-    wheel: {
-      company_wheel: {
-        alphabetically_grouped: {
-          letter: {
-            company: {
-              id: guid,
-              name: string,
-              relationship: {[id]},
-              projects: {TBD}
-            }
+  * Company wheel variant
+        # sorted alphabetically to improve rendering speed
+        company_wheel: {
+          company: {
+            id: guid,
+            name: string,
+            relationship: {[id]},
+            projects: {TBD}
+            letter: ? // could also acquire it by sorting on client side
           }
         }
-      }
-      location_wheel: {
+
+  * Location wheel variant
         # grouped west to east with the territories at the end
-        province_grouped: {
-          province_or_territory:{
-            region: {
-              company: {
-                id: guid,
-                name: string,
-              },
-              graph_data: {TBD}
+        location_wheel: {
+          province_grouped: {
+            province_or_territory:{
+              region: {
+                company: {
+                  id: guid,
+                  name: string,
+                },
+                graph_data: {TBD}
+              }
             }
           }
         }
-      }
-    } 
-  * Hookup pulltospin
-  * Cleanup and outsource all private components.
-  * always calculate the number of companies as n+2 due to the gray ray which shoots out the current company occupying three rays.
-  * test rotation
-  * change filter of project dot default to opacity 50%
 
 * TODO: WheelRay
-  * create component
-
+  * Create Company type of ray
+  * Location legend
+      * Adjust positioning for it to be in the middle of the bounds corresponding to beginning and end of province
+      * Draw bounds on ring for beginning and end of provinces
+      * Account for the no region graph (the gray one on the design doc)
 * TODO: WheelCompanyFlag
   * create component
   * type location normal
   * Find how to do the triangles/ flags (d3? React? Algorithm? HardCoded?) 
-
-* TODO: WheelLocationBar
-  * create component
 
 * TODO: relationshipCord
   * create component
   * figure out degree dynamic render
 
 * TODO: PullToSpin.
-  * create component
-  * design graphics
-  * implement duration measurement for mousedown  
-  * hookup function to parent
+  * Fix rendering on IE
+  * Pull To spin functionality???
 
 The Wheel displays all projects grouped by company as well as relationships between companies.
 It is rendered as part of view 2. The Wheel will also display the locational overview of all
@@ -64,10 +55,8 @@ conditions in a region viewed by Theme (as the default).
 The Wheel component uses the following sub-components to render:
 * List 
 * WheelRay
-* WheelCompanyFlag
-* WheelLocationBar
-* WheelProjectDot
-* WheelRelationshipCord
+* CompanyFlag
+* ProjectDot
 * PullToSpin 
 
 ## Interaction Requirements

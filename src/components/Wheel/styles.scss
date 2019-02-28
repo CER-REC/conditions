@@ -1,19 +1,54 @@
 @import "../../styles/fontVariables.scss";
-
-.WheelContainer{
-  height: 700px;
+.Wheel{
+  width:100%;
+  padding-top: 100%;
   position: relative;
   
   .MovingContainer{
-    height: 500px;
-    width:500px;
+    width:100%;
+    top: 0;
     position: absolute;
   }
-  
+
   .PullToSpin{
     position: absolute;
-    top: 50px;
-    right: -55px;
+    top: 0px;
+    right: -50px;
+  }
+
+  button{
+    position: absolute;
+    top: 10px;
+    &.plus{
+      right: -10px
+    }
+    &.minus{
+      right: -50px
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 60px;
+    margin-top: -30px;
+    background: #ccc;
+  }
+  .cls-1, .OutterCircles {
+    fill: none;
+  }
+
+  .OutterCircles {
+    stroke: #707070;
+  }
+  .LetterCircle {
+    stroke: none;
+  }
+  .ClippedBackground {
+    clip-path: url(#clip-path);
   }
 }
 
+  

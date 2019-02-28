@@ -1,86 +1,87 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Bar from './Bar';
-import './styles.scss';
+
+const calculateSize = (size, max) => (max ? `calc(${max} * ${size / 100})` : `${size}%`);
 
 const BarContainer = (props) => {
-  const { items } = props;
-  if (items.length === 0) { return null; }
+  if (props.items.length === 0) { return null; }
+
   const {
-    scale,
-    vert,
-    size,
+    items,
+    vertical,
     standalone,
-    title,
-    desc,
+    ...spreadProps
   } = props;
 
-  let barContainerWidth = 0;
-  const barContainerMaxHeight = scale * Math.max(...items.map(({ value }) => value));
-  const barContainerHeight = vert ? barContainerMaxHeight : size * scale;
+  // Pull these out separately since we still want to pass them through
+  const { width: maxWidth, height: maxHeight } = spreadProps;
+
+  const scaleAgainst = vertical
+    ? Math.max(...items.map(v => v.value))
+    : items.reduce((acc, next) => acc + next.value, 0);
+
+  let x = 0;
   const bars = items.map((bar, index) => {
-    if (vert) {
-      barContainerWidth = size * (index + 1);
+    if (vertical) {
+      const width = 1 / items.length * 100;
+      const height = bar.value / scaleAgainst * 100;
+      x += width;
       return (
-        <Bar
-        // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          {...bar}
-          x={size * index * scale}
-          y={barContainerMaxHeight - bar.value * scale}
-          width={size * scale}
-          height={bar.value * scale}
+        <rect
+          className="Bar"
+          key={index /* eslint-disable-line react/no-array-index-key */}
+          fill={bar.fill}
+          x={calculateSize(x - width, maxWidth)}
+          y={calculateSize(100 - height, maxHeight)}
+          width={calculateSize(width, maxWidth)}
+          height={calculateSize(height, maxHeight)}
         />
       );
     }
-    const singleBar = (
-      <Bar
-    // eslint-disable-next-line react/no-array-index-key
-        key={index}
-        {...bar}
-        x={barContainerWidth * scale}
+
+    const width = bar.value / scaleAgainst * 100;
+    x += width;
+    return (
+      <rect
+        className="Bar"
+        key={index /* eslint-disable-line react/no-array-index-key */}
+        fill={bar.fill}
+        x={`${x - width}%`}
         y={0}
-        width={bar.value * scale}
-        height={barContainerHeight}
+        width={`${width}%`}
+        height="100%"
       />
     );
-    barContainerWidth += bar.value;
-    return singleBar;
   });
-  if (scale) { barContainerWidth *= scale; }
-  const content = (
-    <g className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
-      <title>{title}</title>
-      <desc>{desc}</desc>
-      {bars}
-    </g>
-  );
-  if (standalone) { return content; }
+
+  const Container = standalone ? 'g' : 'svg';
   return (
-    <svg className={classNames('BarContainer', props.className)} width={barContainerWidth} height={barContainerHeight}>
-      {content}
-    </svg>
+    <Container
+      width="100%"
+      height="100%"
+      {...spreadProps}
+      className={classNames('BarContainer', props.className)}
+    >
+      {bars}
+    </Container>
   );
 };
 
 BarContainer.propTypes = {
   className: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  desc: PropTypes.string,
-  title: PropTypes.string,
-  vert: PropTypes.bool,
-  scale: PropTypes.number,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.number.isRequired,
+    fill: PropTypes.string.isRequired,
+  })).isRequired,
+  vertical: PropTypes.bool,
   standalone: PropTypes.bool,
-  size: PropTypes.number.isRequired,
 };
 
 BarContainer.defaultProps = {
   className: '',
-  vert: false,
-  scale: 1,
+  vertical: false,
   standalone: false,
-  desc: '',
-  title: '',
 };
+
 export default BarContainer;

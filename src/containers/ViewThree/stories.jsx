@@ -1,18 +1,28 @@
 import React from 'react';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import { ViewThreeRaw } from '.';
-import { conditionCountsByYear } from '../../mockData';
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 
-const noop = () => {};
 const props = {
   conditionCountsByYear,
+  conditionCountsByCommodity,
   selected: {
     feature: 'theme',
+    subFeature: '',
   },
-  setSelectedFeature: noop,
 };
 
 storiesForView('Containers|ViewThree', module, ReadMe)
-  .add('default', () => <ViewThreeRaw {...props} />)
-  .add('layout only', () => <ViewThreeRaw {...props} layoutOnly />);
+  .addDecorator(withInteraction({
+    actions: {
+      setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature, subFeature: '' } }),
+      setSelectedSubFeature: ({ selected }) => subFeature => ({
+        selected: { ...selected, subFeature },
+      }),
+    },
+    state: { selected: { feature: 'theme', subFeature: '' } },
+  }))
+  .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
+  .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);
