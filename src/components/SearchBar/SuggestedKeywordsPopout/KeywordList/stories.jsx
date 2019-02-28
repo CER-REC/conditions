@@ -13,7 +13,9 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', 
   .addDecorator(withInteraction({ actions: ['onClick'] }))
   .add('default', () => (
     <KeywordList
-      selectedWords={['deer', 'alberta']}
+      includeKeywords={['deer']}
+      excludeKeywords={[]}
+      isExclude={false}
       keywords={words}
       {...getInteractionProps()}
     />

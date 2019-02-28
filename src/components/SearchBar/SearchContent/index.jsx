@@ -14,14 +14,13 @@ library.add(
 );
 class SearchContent extends React.PureComponent {
   static propTypes = {
-    searchKeywords: PropTypes.shape({
-      include: PropTypes.arrayOf(PropTypes.string).isRequired,
-      exclude: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }).isRequired,
+    includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     updateKeywords: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
     findAnyOnChange: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
+    changeIsExclude: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -29,7 +28,7 @@ class SearchContent extends React.PureComponent {
     this.state = {
       inputInclude: '',
       inputExclude: '',
-      mode: 'basic',
+      mode: (props.findAny === false || props.excludeKeywords.length > 0) ? 'advanced' : 'basic',
     };
   }
 
@@ -49,29 +48,17 @@ class SearchContent extends React.PureComponent {
   keyWordsRender = keywords => (<span>{keywords.join(', ')} </span>)
 
   deleteWord = (word, type) => {
-    const type2 = type === 'include' ? 'exclude' : 'include';
-    const { searchKeywords } = this.props;
-    const updatedKeywords = {
-      [type]: searchKeywords[type].filter(v => v !== word),
-      [type2]: searchKeywords[type2],
-    };
-    this.props.updateKeywords(updatedKeywords);
+    const updatedKeywords = this.props[`${type}Keywords`].filter(v => v !== word);
+    this.props.updateKeywords(updatedKeywords, type);
   }
 
   addWord = (word, type) => {
-    if (word.length === 0) { return null; }
-    const type2 = (type === 'include') ? 'exclude' : 'include';
-    const { searchKeywords } = this.props;
-    if (searchKeywords[type].length < 6
-      && !searchKeywords[type].includes(word)
-      && !searchKeywords[type2].includes(word)) {
-      const updatedKeywords = {
-        [type]: searchKeywords[type].concat(word),
-        [type2]: searchKeywords[type2],
-      };
-      this.props.updateKeywords(updatedKeywords);
-    }
-    return null;
+    if (!word || !word.trim()) { return; }
+    const { includeKeywords, excludeKeywords } = this.props;
+    if (includeKeywords.includes(word) || excludeKeywords.includes(word)) { return; }
+    const currentKeywords = this.props[`${type}Keywords`];
+    if (currentKeywords.length >= 6) { return; }
+    this.props.updateKeywords(currentKeywords.concat(word), type);
   }
 
   updateInputInclude = e => this.setState({ inputInclude: e.target.value });
@@ -103,13 +90,13 @@ class SearchContent extends React.PureComponent {
         />
       </div>
       <div className="input">
-        <input value={this.state.inputExclude} onChange={this.updateInputExclude} className="searchBar" />
+        <input value={this.state.inputExclude} onChange={this.updateInputExclude} onFocus={() => this.props.changeIsExclude(true)} className="searchBar" />
         <button type="button" className="addInput" {...handleInteraction(this.addExcludeWord)}>
           <Icon className="iconInline plusIcon" icon="plus-circle" />
         </button>
       </div>
       <ul className="searchWords">
-        {this.searchWordsRender(this.props.searchKeywords.exclude, 'exclude')}
+        {this.searchWordsRender(this.props.excludeKeywords, 'exclude')}
       </ul>
     </React.Fragment>
   )
@@ -140,7 +127,7 @@ class SearchContent extends React.PureComponent {
         />
       </div>
 
-      <div className="keywordsText">{this.keyWordsRender(this.props.searchKeywords.include)}</div>
+      <div className="keywordsText">{this.keyWordsRender(this.props.includeKeywords)}</div>
       <div />
       {this.state.mode === 'basic' ? null
         : (
@@ -157,7 +144,7 @@ class SearchContent extends React.PureComponent {
                 }}
               />
             </div>
-            <div className="keywordsText">{this.keyWordsRender(this.props.searchKeywords.exclude)}</div>
+            <div className="keywordsText">{this.keyWordsRender(this.props.excludeKeywords)}</div>
           </React.Fragment>
         )}
     </div>
@@ -191,6 +178,7 @@ class SearchContent extends React.PureComponent {
           value={this.state.inputInclude}
           onChange={this.updateInputInclude}
           className="searchBar"
+          onFocus={() => this.props.changeIsExclude(false)}
         />
         <button
           type="button"
@@ -201,7 +189,7 @@ class SearchContent extends React.PureComponent {
         </button>
       </div>
       <ul className="searchWords">
-        {this.searchWordsRender(this.props.searchKeywords.include, 'include')}
+        {this.searchWordsRender(this.props.includeKeywords, 'include')}
       </ul>
     </React.Fragment>
   )
@@ -209,7 +197,9 @@ class SearchContent extends React.PureComponent {
   changeSearchType = () => {
     this.setState(prevState => ({ mode: (prevState.mode === 'basic' ? 'advanced' : 'basic') }));
     this.props.findAnyOnChange(true);
-    this.props.updateKeywords({ include: this.props.searchKeywords.include, exclude: [] });
+    this.props.changeIsExclude(false);
+    this.props.updateKeywords(this.props.includeKeywords, 'include');
+    this.props.updateKeywords([], 'exclude');
   }
 
   render() {

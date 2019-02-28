@@ -17,8 +17,8 @@ const keywords = {
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|SearchBar/SearchContent', () => {
-  describe('with basic state ', () => {
+xdescribe('Components|SearchBar/SearchContent', () => {
+  xdescribe('with basic state ', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
@@ -72,7 +72,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('advanced state', () => {
+  xdescribe('advanced state', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
@@ -153,7 +153,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('onChange of dropdown', () => {
+  xdescribe('onChange of dropdown', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
@@ -184,7 +184,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('onClick on the add button', () => {
+  xdescribe('onClick on the add button', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
@@ -237,7 +237,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('with full keywords list and in advanced state', () => {
+  xdescribe('with full keywords list and in advanced state', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
@@ -275,7 +275,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('onClick of search toggle text', () => {
+  xdescribe('onClick of search toggle text', () => {
     let wrapper;
     let spy1;
     let spy2;
@@ -310,7 +310,7 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('on delete of keywords', () => {
+  xdescribe('on delete of keywords', () => {
     let wrapper;
     let spy;
     beforeEach(() => {

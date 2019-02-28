@@ -9,7 +9,7 @@ const exceptKeywords = ['except1', 'except2'];
 const selectedYear = { start: 2010, end: 2018 };
 
 describe('Components|SearchBar/HighlightSummary', () => {
-  describe('default', () => {
+  xdescribe('default', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(

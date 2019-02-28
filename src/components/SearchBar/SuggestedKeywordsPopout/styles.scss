@@ -5,6 +5,7 @@
   width: 500px;
   margin-left: auto;
   margin-right: auto;
+  display: inline-block;
   border: 1px solid $LightGray;
   padding: 10px;
   font-family: $fira-sans-condensed;
@@ -14,13 +15,19 @@
   .keywordsTitle {
     padding: 0px 0px 5px 0px;
     border-bottom: 1px solid $LightGray;
+    font-size: 20px;
+    color: $Gray160;
+    font-family: $fira-sans-condensed-light;
   }
 
   .description {
+    color: $Gray160;
+    font-size: 12px;
     a {
       color: $LinksTextButtons;
       padding: 0px;
       margin: 0px;
+      color: $Gray160;
     }
   }
 
@@ -33,7 +40,7 @@
     font-size: 20px;
     padding: 0px 10px 0px 0px;
     vertical-align: bottom;
-    color: black;
+    color: $Black51;
     margin: 5px 0px;
   }
   .categoryList {

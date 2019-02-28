@@ -22,7 +22,7 @@ const groupProps = {
   projectData: [],
 };
 
-describe('Components/Streamgraph/StackGroupProps', () => {
+describe('Components/StreamGraph/StackGroupProps', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<StackGroupProps
