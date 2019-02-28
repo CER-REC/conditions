@@ -104,7 +104,12 @@
       "less": "Less"
     },
     "featureDescription": {
-      "theme": "Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. \n Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes."
+      "theme": "Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.",
+      "phase": "As a lifecycle regulator, the NEB ensures the safety of a project during all phases. Conditions can apply to one, several or all phases of the lifecycle. More information about the lifecycle can be found [TODO: NEEDS A LINK]here.",
+      "status": "Conditions that are no longer active are closed. Some conditions may be active indefinitely or they refer to the continued operation of a pipeline for example. Others that apply to a specific phase will close, because they have been fulfilled (e.g. a specific filing during construction phase).",
+      "type": "There are two main types of conditions: standard and non-standard.",
+      "filing": "This feature explains whether a company is required to file a document in order to comply with a condition.",
+      "instrument": "Regulatory instruments are official orders issued by NEB staff. An Instrument can include several conditions, and a project might have several instruments (i.e. orders)attached to it. All instruments have an instrument number. Searching for this number in the NEB’s [TODO: NEEDS A LINK]REGDOCS repository is one way to find the original regulatory instrument from which the conditions in this visualization are taken. The prefix of an instrument number is based on its meaning."
     },
     "featureTypesDescription": {
       "theme": {

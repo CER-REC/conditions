@@ -3590,10 +3590,7 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
       Theme
     </h1>
     <p>
-      Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. 
-    </p>
-    <p>
-       Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes.
+      Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.
     </p>
   </div>
 </div>
@@ -4666,7 +4663,22 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
       <span
         className="indicator"
       >
-        Any Commodity Types
+        Oil
+      </span>
+      <span
+        className="indicator"
+      >
+        Gas
+      </span>
+      <span
+        className="indicator"
+      >
+        Power
+      </span>
+      <span
+        className="indicator"
+      >
+        Not Specified
       </span>
     </span>
     <div
@@ -4757,6 +4769,22 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                     }
                   }
                 />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(14, 43, 140)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
               </span>
               <span>
                 Routing
@@ -4788,9 +4816,119 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
                     }
                   }
                 />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
               </span>
               <span>
                 Construction
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(22, 78, 248)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(22, 78, 248)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+              </span>
+              <span>
+                Opening
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(212, 169, 42)",
+                    }
+                  }
+                />
+              </span>
+              <span>
+                Misc.
               </span>
             </div>
           </div>
@@ -4925,7 +5063,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
     >
       <ul>
         <li
-          className="List-Item selected"
+          className="List-Item"
         >
           <div
             className="List-Item-Content"
@@ -4942,6 +5080,141 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
               />
               <span>
                 All Instruments
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(14, 43, 140)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(14, 43, 140)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+              </span>
+              <span>
+                Routing
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-up"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="indicators"
+              >
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={
+                    Object {
+                      "backgroundColor": "rgb(39, 165, 249)",
+                    }
+                  }
+                />
+                <div
+                  className="indicator"
+                  style={Object {}}
+                />
+              </span>
+              <span>
+                Construction
               </span>
             </div>
           </div>
@@ -5017,19 +5290,11 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                 />
                 <div
                   className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
-                    }
-                  }
+                  style={Object {}}
                 />
                 <div
                   className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
-                    }
-                  }
+                  style={Object {}}
                 />
               </span>
               <span>
@@ -5056,19 +5321,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
               >
                 <div
                   className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(22, 78, 248)",
-                    }
-                  }
+                  style={Object {}}
                 />
                 <div
                   className="indicator"
@@ -5077,37 +5330,6 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                 <div
                   className="indicator"
                   style={Object {}}
-                />
-              </span>
-              <span>
-                Abandonment
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="indicators"
-              >
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(212, 169, 42)",
-                    }
-                  }
                 />
                 <div
                   className="indicator"
@@ -5116,108 +5338,10 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
                       "backgroundColor": "rgb(212, 169, 42)",
                     }
                   }
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
                 />
               </span>
               <span>
                 Misc.
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="indicators"
-              >
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(201, 4, 194)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-              </span>
-              <span>
-                Safety
-              </span>
-            </div>
-          </div>
-        </li>
-        <li
-          className="List-Item"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="indicators"
-              >
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(195, 230, 179)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={
-                    Object {
-                      "backgroundColor": "rgb(195, 230, 179)",
-                    }
-                  }
-                />
-                <div
-                  className="indicator"
-                  style={Object {}}
-                />
-              </span>
-              <span>
-                Tariffs
               </span>
             </div>
           </div>
@@ -10702,90 +10826,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|SmallMultiplesLegend with one entry 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="SmallMultiplesLegend"
-  >
-    <div
-      className="List guideLine"
-      onWheel={[Function]}
-    >
-      <ul>
-        <li
-          className="List-Item selected"
-        >
-          <div
-            className="List-Item-Content"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <div
-              className="LegendItem"
-            >
-              <span
-                className="stream"
-              >
-                <svg
-                  height="100%"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                  width="100%"
-                >
-                  <g
-                    clipPath="url(#victory-clip-12)"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <defs>
-                      <clipPath
-                        id="victory-clip-12"
-                      >
-                        <rect
-                          height={100}
-                          role="presentation"
-                          shapeRendering="auto"
-                          vectorEffect="non-scaling-stroke"
-                          width={100}
-                          x={0}
-                          y={0}
-                        />
-                      </clipPath>
-                    </defs>
-                    <path
-                      d="M0,100C5.555555555555554,99.16892346105828,11.111111111111107,98.33784692211658,16.666666666666664,97.30337078651685C22.22222222222222,96.26889465091712,27.777777777777764,95.03101891865937,33.33333333333333,94.8314606741573C38.88888888888889,94.63190242965523,44.44444444444446,95.47066167290886,50,93.25842696629213C55.55555555555554,91.04619225967541,61.1111111111111,85.7829636031883,66.66666666666666,66.29213483146067C72.22222222222221,46.80130605973303,77.77777777777777,13.082877172764814,83.33333333333334,0C88.88888888888891,-13.082877172764814,94.44444444444446,-5.530202631326228,100,2.0224719101123583L100,100C94.44444444444444,100,88.88888888888889,100,83.33333333333334,100C77.7777777777778,100,72.22222222222221,100,66.66666666666666,100C61.1111111111111,100,55.555555555555564,100,50,100C44.444444444444436,100,38.888888888888886,100,33.33333333333333,100C27.777777777777768,100,22.222222222222218,100,16.666666666666664,100C11.11111111111111,100,5.555555555555555,100,0,100Z"
-                      role="presentation"
-                      shapeRendering="auto"
-                      style={
-                        Object {
-                          "fill": "rgb(221, 10, 10)",
-                          "stroke": "rgb(221, 10, 10)",
-                        }
-                      }
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span>
-                Security
-              </span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components|SmallMultiplesLegend/LegendItem all 1`] = `
 <div
   className="visualization"
@@ -10961,7 +11001,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
       }
     >
       <svg
-        aria-labelledby="victory-container-13-title victory-container-13-desc"
+        aria-labelledby="victory-container-12-title victory-container-12-desc"
         height={300}
         role="img"
         style={
@@ -11695,7 +11735,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           tabIndex="0"
         >
           <g
-            clipPath="url(#victory-clip-14)"
+            clipPath="url(#victory-clip-13)"
             style={
               Object {
                 "height": "100%",
@@ -11706,7 +11746,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-14"
+                id="victory-clip-13"
               >
                 <rect
                   height={200}
@@ -11733,7 +11773,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-15)"
+            clipPath="url(#victory-clip-14)"
             style={
               Object {
                 "height": "100%",
@@ -11744,7 +11784,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-15"
+                id="victory-clip-14"
               >
                 <rect
                   height={200}
@@ -11771,7 +11811,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
             />
           </g>
           <g
-            clipPath="url(#victory-clip-16)"
+            clipPath="url(#victory-clip-15)"
             style={
               Object {
                 "height": "100%",
@@ -11782,7 +11822,7 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
           >
             <defs>
               <clipPath
-                id="victory-clip-16"
+                id="victory-clip-15"
               >
                 <rect
                   height={200}
