@@ -138,6 +138,18 @@ ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
   setBrowseBy: PropTypes.func.isRequired,
+  availableProjectYear: PropTypes.shape({
+    start: PropTypes.number.isRequired,
+    end: PropTypes.number.isRequired,
+  }).isRequired,
+  setFindAny: PropTypes.func.isRequired,
+  setProjectYear: PropTypes.func.isRequired,
+  projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
+  yearRange: PropTypes.arrayOf(PropTypes.string).isRequired,
+  findAny: PropTypes.bool.isRequired,
+  selectRay: PropTypes.string.isRequired,
+  projectYear: PropTypes.number.isRequired,
+  setProjectStatus: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
