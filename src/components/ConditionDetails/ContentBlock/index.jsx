@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 
 class ContentBlock extends React.PureComponent {
-  // (id, content, isHalf) => (
   render() {
     return (
       <div className={`ContentBlock ${(this.props.half ? 'half' : '')}`}>

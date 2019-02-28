@@ -38,11 +38,6 @@ describe('Components|ConditionDetails', () => {
 
     shouldBehaveLikeAComponent(ConditionDetails, () => wrapper);
 
-    //
-    // Is testing at the subcomponent level sufficient for these, or should
-    // they be tested here as well?
-    //
-
     test('should pass its openProjectDetails callback to the ProjectHeader component', () => {
       wrapper.find('.ConditionDetails')
         .find('.main')
