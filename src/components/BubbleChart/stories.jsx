@@ -8,7 +8,7 @@ import ReadMe from './README.md';
 
 import { conditionCountsByCommodity } from '../../mockData';
 
-const defaultTargets = [
+const defaultTypes = [
   'ALL',
   'ROUTING',
   'CONSTRUCTION',
@@ -23,7 +23,7 @@ storiesForComponent('Components|BubbleChart', module, ReadMe)
   .add('default', () => (
     <BubbleChart
       data={conditionCountsByCommodity.counts}
-      type={select('Scroll Target', defaultTargets, '')}
+      type={select('Instrument type', defaultTypes, '')}
       {...getInteractionProps()}
     />
   ), {
