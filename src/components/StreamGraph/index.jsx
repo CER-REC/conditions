@@ -115,6 +115,17 @@ class StreamGraph extends React.Component {
       );
     }
 
+    // Setting these here because CSS classes weren't being picked up by Victory
+    // I may have just been doing it wrong though
+    const axisStyles = {
+      tickLabels: {
+        fontSize: '10px',
+      },
+      axisLabel: {
+        fontSize: '12px',
+      },
+    };
+
     return (
       <VictoryChart>
         <VictoryAxis
