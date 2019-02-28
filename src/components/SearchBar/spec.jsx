@@ -6,7 +6,7 @@ import SearchBar from '.';
 // const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|SearchBar/SearchBar', () => {
-  describe('default with isSearch set to true', () => {
+  xdescribe('default with isSearch set to true', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallowWithIntl(
@@ -22,7 +22,7 @@ describe('Components|SearchBar/SearchBar', () => {
     });
   });
 
-  describe('default with isSearch set to false', () => {
+  xdescribe('default with isSearch set to false', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallowWithIntl(

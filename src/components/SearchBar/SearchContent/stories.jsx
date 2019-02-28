@@ -7,7 +7,7 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|SearchBar/SearchContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['changeSearchType', 'updateKeywords', 'closeTab', 'includeOnChange'] }))
+  .addDecorator(withInteraction({ actions: ['changeSearchType', 'updateKeywords', 'closeTab', 'includeOnChange', 'changeIsExclude'] }))
   .add('with interaction', () => (
     <SearchContent
       {...getInteractionProps()}

@@ -44,7 +44,8 @@ class KeywordList extends React.PureComponent {
         <ul>
           {
             (keywords).map(([key, value]) => {
-              const [icon, iconClass, selectedColor, textStyle] = (includeKeywords.includes(key) || excludeKeywords.includes(key))
+              const [icon, iconClass, selectedColor, textStyle] = (includeKeywords.includes(key)
+                || excludeKeywords.includes(key))
                 ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
                 : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
               const maxConditions = this.findMaxConditions();

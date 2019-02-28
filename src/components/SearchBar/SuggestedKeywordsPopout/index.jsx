@@ -35,7 +35,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
         <li
           key={i}
           {...handleInteraction(this.categoryOnClick, i)}
-          className={classNames('categoryList', 'upperCase', { selectedCategory: (selectedCategory.length === 0 && i === 'all') ? true : selectedCategory.includes(i) })}
+          className={classNames('categoryList', 'upperCase', {
+            selectedCategory: (selectedCategory.length === 0 && i === 'all')
+              ? true : selectedCategory.includes(i),
+          })
+          }
         > { i }
         </li>
       );
