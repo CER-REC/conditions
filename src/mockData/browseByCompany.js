@@ -17,7 +17,7 @@ export default {
     },
     {
       primary: 'C',
-      secondary: 'CCoral Energy Canada Inc.',
+      secondary: 'Coral Energy Canada Inc.',
       data: ['111', '222', '333'],
     },
     {
