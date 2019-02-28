@@ -20,7 +20,7 @@ const noop = () => {};
 
 const ViewThree = props => (
   <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
-    <section className="row">
+    <section className="row firstRow">
       <section className="features">
         <FeaturesMenu
           selected={props.selected.feature}
@@ -63,7 +63,7 @@ const ViewThree = props => (
           )}
       </section>
     </section>
-    <section className="row">
+    <section className="row secondRow">
       <section className="featureDescription">
         <FeatureDescription feature={props.selected.feature} />
       </section>
@@ -71,7 +71,7 @@ const ViewThree = props => (
         <FeatureTypesDescription feature={props.selected.feature} />
       </section>
     </section>
-    <section className="row">
+    <section className="row thirdRow">
       <section className="selectedCompany">
         <SelectedGroupBar
           group="components.companyWheel.wheelRay.title"
@@ -85,7 +85,7 @@ const ViewThree = props => (
         <BrowseByButton mode="company" onClick={noop} />
       </section>
       <section className="conditionDetails">
-        <span style={{ fontSize: '50px', marginLeft: '45%' }}>6</span>
+        <span>6</span>
       </section>
     </section>
   </section>

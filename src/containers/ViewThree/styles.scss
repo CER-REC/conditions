@@ -1,4 +1,5 @@
 @import '../../styles/grid';
+@import '../../styles/colors';
 
 .ViewThree {
   @include grid((
@@ -10,5 +11,37 @@
     selectedCompany: 38,
     conditionDetails: 77,
   ));
-}
 
+
+  /**
+   *  Styling for the preview release. None of the code below should be
+   *  considered final or correct.
+   */
+  .firstRow {
+
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .secondRow {
+    height: 200px;
+
+    .typesDescription {
+      height: 100%;
+    }
+  }
+
+  .thirdRow {
+    height: 250px;
+
+    .conditionDetails {
+
+      border: 1px dashed $LinksTextButtons;
+      text-align: center;
+      span {
+        font-size: 50px;
+      }
+    }
+  }
+  // End of preview styling
+}
