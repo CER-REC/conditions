@@ -7,6 +7,7 @@ import './styles.scss';
 import Ring from './Ring';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
+import { browseByType } from '../../proptypes';
 
 const reservedDegrees = 18;
 
@@ -14,14 +15,18 @@ const AnimatedWheelRay = animated(WheelRay);
 
 class Wheel extends React.Component {
   static propTypes = {
-    wheelType: PropTypes.string,
+    wheelType: browseByType.isRequired,
     itemsData: PropTypes.shape({
       items: PropTypes.arrayOf(PropTypes.object).isRequired,
       legendData: PropTypes.arrayOf(PropTypes.object).isRequired,
     }).isRequired,
     selectedRay: PropTypes.string,
     selectRay: PropTypes.func.isRequired,
-  }
+  };
+
+  static defaultProps = {
+    selectedRay: null,
+  };
 
   constructor(props) {
     super(props);
@@ -157,10 +162,5 @@ class Wheel extends React.Component {
     );
   }
 }
-
-Wheel.defaultProps = {
-  wheelType: 'company',
-  selectedRay: null,
-};
 
 export default Wheel;

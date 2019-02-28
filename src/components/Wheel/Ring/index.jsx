@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './styles.scss';
+import { browseByType } from '../../../proptypes';
 
 const Ring = ({ ringType }) => {
   const linebackground = `LineBackground ${ringType}`;
@@ -52,11 +52,7 @@ const Ring = ({ ringType }) => {
 };
 
 Ring.propTypes = {
-  ringType: PropTypes.oneOf(['Company', 'Location']),
-};
-
-Ring.defaultProps = {
-  ringType: 'Company',
+  ringType: browseByType.isRequired,
 };
 
 export default Ring;

@@ -3,12 +3,12 @@ export const Types = {
   STREAM: 'stream',
 };
 
-export const bubble = position => ({
+export const setBubbleChartIndicator = position => ({
   type: Types.BUBBLE,
   payload: { position },
 });
 
-export const stream = position => ({
+export const setStreamGraphIndicator = position => ({
   type: Types.STREAM,
   payload: { position },
 });

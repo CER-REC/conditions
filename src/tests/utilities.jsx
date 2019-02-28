@@ -84,3 +84,9 @@ export const mountWithIntl = (node, { context, childContextTypes, ...opts } = {}
     ...opts,
   },
 );
+
+export const compareReduxChange = (reducer, newState) => {
+  const initialState = reducer(undefined, {});
+  expect(newState).not.toBe(initialState);
+  expect(typeof initialState).toBe(typeof newState);
+};
