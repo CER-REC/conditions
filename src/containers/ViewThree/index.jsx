@@ -12,12 +12,9 @@ import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
 import './styles.scss';
-import { allConditionsPerYear } from '../../proptypes';
-import { conditionCountsByYear } from '../../mockData';
+import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
-
-const description = 'components.featureDescription.theme';
-const feature = 'theme';
 
 const noop = () => {};
 
@@ -34,8 +31,9 @@ const ViewThree = props => (
         {props.selected.feature === 'instrument'
           ? (
             <InstrumentsLegend
-              data={[]}
-              onChange={noop}
+              data={props.conditionCountsByCommodity.counts}
+              onChange={props.setSelectedSubFeature}
+              selected={props.selected.subFeature}
             />
           )
           : (
@@ -43,6 +41,7 @@ const ViewThree = props => (
               feature={props.selected.feature}
               data={props.conditionCountsByYear.counts}
               onChange={props.setSelectedSubFeature}
+              selected={props.selected.subFeature}
             />
           )}
       </section>
@@ -50,9 +49,9 @@ const ViewThree = props => (
         {props.selected.feature === 'instrument'
           ? (
             <BubbleChart
-              selectedCategory=""
-              instrumentChartData1={{}}
-              instrumentChartData2={{}}
+              data={conditionCountsByCommodity.counts}
+              indicator=""
+              setIndicator={noop}
             />
           )
           : (
@@ -66,7 +65,7 @@ const ViewThree = props => (
     </section>
     <section className="row">
       <section className="featureDescription">
-        <FeatureDescription feature={feature} description={description} />
+        <FeatureDescription feature={props.selected.feature} />
       </section>
       <section className="typesDescription">
         <FeatureTypesDescription feature={props.selected.feature} />
@@ -97,6 +96,9 @@ ViewThree.propTypes = {
   conditionCountsByYear: PropTypes.shape({
     counts: allConditionsPerYear.isRequired,
   }).isRequired,
+  conditionCountsByCommodity: PropTypes.shape({
+    counts: allConditionsByCommodityOrInstrument.isRequired,
+  }).isRequired,
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
@@ -115,6 +117,7 @@ export default connect(
   ({ selected }) => ({
     selected,
     conditionCountsByYear,
+    conditionCountsByCommodity,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,

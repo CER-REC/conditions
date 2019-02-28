@@ -7,6 +7,10 @@ jest.doMock('./addon-status', () => {
   });
 });
 
+// This fixes an issue with Jest sometimes ignoring the storybook spec, since it
+// doesn't directly define a test.
+beforeAll(() => {});
+
 initStoryshots({
   storyKindRegex: /^Components/,
 });

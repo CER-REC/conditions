@@ -1,0 +1,22 @@
+@import '../../../styles/fontVariables.scss';
+@import '../../../styles/colors.scss';
+
+.Content {
+  max-width: 450px;
+  height: 276px;
+
+  padding: 20px;
+  overflow-y: scroll;
+
+  .contentText {
+    padding-bottom: 0.4rem;
+  }
+
+  .instrumentLink {
+    color: #d1057a;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+  }
+
+}

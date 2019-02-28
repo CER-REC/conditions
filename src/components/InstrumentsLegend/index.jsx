@@ -5,76 +5,51 @@ import { FormattedMessage } from 'react-intl';
 import List from '../List';
 import LegendItem from './LegendItem';
 import BubbleLegend from './BubbleLegend';
+import { allConditionsByCommodityOrInstrument } from '../../proptypes';
 import './styles.scss';
 
-const getFormattedData = (data) => {
-  const categoryIndicators = {};
-
-  data.forEach((instrument) => {
-    const type = instrument.parentName;
-
-    instrument.children.forEach((commodity) => {
-      let indicators = categoryIndicators[commodity.category];
-
-      if (!indicators) {
-        indicators = {
-          types: [],
-        };
-        categoryIndicators[commodity.category] = indicators;
-      }
-
-      indicators.types.push(type);
+class InstrumentsLegend extends React.PureComponent {
+  getIndicatorTypes = () => (this.props.data.reduce((acc, next) => {
+    next.commodity.forEach((com) => {
+      if (acc.indexOf(com) < 0) { acc.push(com); }
     });
-  });
+    return acc;
+  }, []));
 
-  // TODO: Sorting the formatted data
-  const formattedData = Object.entries(categoryIndicators).map(([category, indicator]) => ({
-    name: category,
-    indicators: indicator.types,
-  }));
-
-  return formattedData;
-};
-
-const getLegendDataItems = (data, indicatorTypes) => {
-  const items = data.map((indicatorsData) => {
-    const indicators = indicatorTypes.map(indicator => (
-      indicatorsData.indicators.includes(indicator)
-    ));
-
-    return (
-      <LegendItem
-        key={indicatorsData.name}
-        title={indicatorsData.name}
-        indicators={indicators}
-      />
-    );
-  });
-
-  return items;
-};
-
-const InstrumentsLegend = (props) => {
-  const indicatorTypes = props.data.map(instrument => instrument.parentName);
-  const headers = indicatorTypes.map(type => (
-    <FormattedMessage key={type} id={`common.instrumentCommodityType.${type}`}>
-      {text => <span className="indicator">{text}</span>}
-    </FormattedMessage>
-  ));
-  const formattedData = getFormattedData(props.data);
-  const dataIndex = formattedData.findIndex(indicatorsData => (
-    indicatorsData.name === props.selected
-  ));
-  const selectedIndex = props.data.length === 1 ? 0 : dataIndex + 1;
-  const legendDataItems = getLegendDataItems(formattedData, indicatorTypes);
-  const onItemChange = (index) => {
-    const legendItem = legendDataItems[index];
-    const category = legendItem.props.all ? null : legendItem.props.title;
-
-    props.onChange(category);
+  getFormattedData = () => {
+    const indicatorTypes = this.getIndicatorTypes();
+    return Object.entries(this.props.data.reduce((acc, next) => {
+      if (!acc[next.type]) {
+        acc[next.type] = indicatorTypes.map(() => false);
+      }
+      next.commodity.forEach((com) => { acc[next.type][indicatorTypes.indexOf(com)] = true; });
+      return acc;
+    }, {}));
   };
 
-  if (legendDataItems.length > 1) {
+  onItemChange = index => this.props
+    .onChange(index === 0 ? '' : this.getFormattedData()[index - 1][0]);
+
+  render() {
+    const { selected, className } = this.props;
+    const indicatorTypes = this.getIndicatorTypes();
+    const headers = indicatorTypes.map(type => (
+      <FormattedMessage key={type} id={`common.instrumentCommodityType.${type}`}>
+        {text => <span className="indicator">{text}</span>}
+      </FormattedMessage>
+    ));
+
+    const formattedData = this.getFormattedData();
+    // Add one to account for 'all
+    const selectedIndex = formattedData.findIndex(([key]) => selected === key) + 1;
+    const legendDataItems = formattedData.map(([type, indicators]) => (
+      <LegendItem
+        key={type}
+        title={type}
+        indicators={indicators}
+      />
+    ));
+
     legendDataItems.unshift((
       <LegendItem
         all
@@ -84,35 +59,30 @@ const InstrumentsLegend = (props) => {
         indicators={[]}
       />
     ));
-  }
 
-  return (
-    <div className={classNames('InstrumentsLegend', props.className)}>
-      <span className="headers">
-        {headers}
-      </span>
-      <List
-        items={legendDataItems}
-        selected={selectedIndex}
-        onChange={onItemChange}
-        guideLine
-      />
-      <BubbleLegend className="BubbleLegend" maxConditions={1600} radiusOfMaxBubble={100} />
-    </div>
-  );
-};
+    return (
+      <div className={classNames('InstrumentsLegend', className)}>
+        <span className="headers">
+          {headers}
+        </span>
+        <List
+          items={legendDataItems}
+          selected={selectedIndex}
+          onChange={this.onItemChange}
+          guideLine
+        />
+        <BubbleLegend className="BubbleLegend" maxConditions={1600} radiusOfMaxBubble={100} />
+      </div>
+    );
+  }
+}
 
 InstrumentsLegend.propTypes = {
   /** The data to render the indicators
       The headers are rendered in the provided order */
-  data: PropTypes.arrayOf(PropTypes.shape({
-    parentName: PropTypes.string.isRequired,
-    children: PropTypes.arrayOf(PropTypes.shape({
-      category: PropTypes.string.isRequired,
-    })).isRequired,
-  })).isRequired,
+  data: allConditionsByCommodityOrInstrument.isRequired,
   /** The name of the category to set as selected */
-  selected: PropTypes.string,
+  selected: PropTypes.string.isRequired,
   /** A function that will receive an name when a category is selected
       or null if the all legend filter is selected */
   onChange: PropTypes.func.isRequired,
@@ -121,7 +91,6 @@ InstrumentsLegend.propTypes = {
 };
 
 InstrumentsLegend.defaultProps = {
-  selected: '',
   className: '',
 };
 

@@ -55,7 +55,11 @@ class StreamGraph extends React.Component {
   }
 
   chart() {
-    const filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    if (this.props.subFeature !== '') {
+      filteredData = filteredData
+        .filter(featureData => featureData.subFeature === this.props.subFeature);
+    }
     const numOfConditions = filteredData.map(k => Object.values(k.years));
     const numOfConditionsConcat = [].concat(...numOfConditions);
 

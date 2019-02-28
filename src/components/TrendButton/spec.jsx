@@ -1,38 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
-import { conditionCountsByYear } from '../../mockData';
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import d3HierarchyCalculation from '../BubbleChart/d3HierarchyCalculation';
 import TrendButton from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-const instrumentData = {
-  name: 'data',
-  children: [{
-    parentName: 'anyCommodityTypes',
-    children: [
-      {
-        name: '1',
-        children: [],
-        value: 15,
-        category: 'construction',
-      }, {
-        name: '2',
-        children: [],
-        value: 15,
-        category: 'misc',
-      }, {
-        name: '3',
-        children: [],
-        value: 15,
-        category: 'tariffs',
-      }],
-  }],
-};
-
-const chartInstrumentData = d3HierarchyCalculation(instrumentData, 120, 50);
 
 describe('Components|TrendButton', () => {
   describe('with default selectedFeature', () => {
@@ -44,7 +19,7 @@ describe('Components|TrendButton', () => {
         feature="theme"
         subFeature=""
         projectData={conditionCountsByYear.counts}
-        instrumentData={chartInstrumentData}
+        instrumentData={conditionCountsByCommodity.counts}
       />);
     });
     test('should render a div with a className of buttonText', () => {
@@ -53,8 +28,8 @@ describe('Components|TrendButton', () => {
     test('should render StreamGraph Component', () => {
       expect(wrapper.find('StreamGraph')).toHaveLength(1);
     });
-    test('should not render InstrumentBubble Component', () => {
-      expect(wrapper.find('InstrumentBubble')).toHaveLength(0);
+    test('should not render BubbleChart Component', () => {
+      expect(wrapper.find('BubbleChart')).toHaveLength(0);
     });
     test('should render a FormattedMessage component for button text', () => {
       const messageWrapper = wrapper.find(FormattedMessage);
@@ -73,14 +48,14 @@ describe('Components|TrendButton', () => {
         feature="instrument"
         subFeature=""
         projectData={conditionCountsByYear.counts}
-        instrumentData={chartInstrumentData}
+        instrumentData={conditionCountsByCommodity.counts}
       />);
     });
     test('it should not render StreamGraph', () => {
       expect(wrapper.find('StreamGraph')).toHaveLength(0);
     });
-    test('it should render InstrumentBubble', () => {
-      expect(wrapper.find('InstrumentBubble')).toHaveLength(1);
+    test('it should render BubbleChart', () => {
+      expect(wrapper.find('BubbleChart')).toHaveLength(1);
     });
   });
 
@@ -94,7 +69,7 @@ describe('Components|TrendButton', () => {
         feature="theme"
         subFeature=""
         projectData={conditionCountsByYear.counts}
-        instrumentData={chartInstrumentData}
+        instrumentData={conditionCountsByCommodity.counts}
       />);
     });
     test("should call it's onClick prop", () => {

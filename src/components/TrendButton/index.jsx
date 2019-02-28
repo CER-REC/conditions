@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import StreamGraph from '../StreamGraph';
 import { allConditionsPerYear, featureTypes } from '../../proptypes';
-import InstrumentBubble from '../BubbleChart/InstrumentBubble';
+import BubbleChart from '../BubbleChart';
 
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
@@ -15,13 +15,13 @@ const TrendButton = props => (
     <div className="buttonText">
       { props.feature === 'instrument'
         ? (
-          <svg className="instrumentSvg" width={120} height={50}>
-            <InstrumentBubble
-              onClick={noop}
-              keyPress={noop}
-              d3Calculation={props.instrumentData}
+          <div style={{ width: '120px', height: '50px' }}>
+            <BubbleChart
+              setIndicator={noop}
+              indicator=""
+              data={props.instrumentData}
             />
-          </svg>
+          </div>
         )
         : (
           <StreamGraph

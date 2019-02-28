@@ -5,31 +5,7 @@ import withStatus from '../../../.storybook/addon-status';
 import TrendButton from '.';
 import ReadMe from './README.md';
 import d3HierarchyCalculation from '../BubbleChart/d3HierarchyCalculation';
-import { conditionCountsByYear } from '../../mockData';
-
-const instrumentData = {
-  name: 'data',
-  children: [{
-    parentName: 'anyCommodityTypes',
-    children: [
-      {
-        name: '1',
-        children: [],
-        value: 15,
-        category: 'construction',
-      }, {
-        name: '2',
-        children: [],
-        value: 15,
-        category: 'misc',
-      }, {
-        name: '3',
-        children: [],
-        value: 15,
-        category: 'tariffs',
-      }],
-  }],
-};
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -40,11 +16,7 @@ storiesForComponent('Components|TrendButton', module, ReadMe)
       feature="theme"
       subFeature=""
       projectData={conditionCountsByYear.counts}
-      instrumentData={d3HierarchyCalculation(
-        instrumentData,
-        120,
-        50,
-      )}
+      instrumentData={conditionCountsByCommodity.counts}
     />
   ))
   .add('Instrument Bubble Button', () => (
@@ -53,10 +25,6 @@ storiesForComponent('Components|TrendButton', module, ReadMe)
       feature="instrument"
       subFeature=""
       projectData={conditionCountsByYear.counts}
-      instrumentData={d3HierarchyCalculation(
-        instrumentData,
-        120,
-        50,
-      )}
+      instrumentData={conditionCountsByCommodity.counts}
     />
   ));
