@@ -6,7 +6,7 @@ import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../../Icon/index';
 import handleInteraction from '../../../../utilities/handleInteraction';
 import BarContainer from '../../../BarContainer';
-import { suggestedKeywordsType } from '../../../../proptypes';
+import { suggestedKeywordsArrayType } from '../../../../proptypes';
 import './styles.scss';
 
 library.add(faMinusCircle, faPlusCircle);
@@ -16,7 +16,7 @@ class KeywordList extends React.PureComponent {
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClick: PropTypes.func.isRequired,
-    keywords: suggestedKeywordsType.isRequired,
+    keywords: suggestedKeywordsArrayType.isRequired,
     isExclude: PropTypes.bool.isRequired,
   }
 

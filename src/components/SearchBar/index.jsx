@@ -7,7 +7,7 @@ import FilterContent from './FilterContent';
 import SuggestedKeywordsPrompt from './SuggestedKeywordsPrompt';
 import SuggestedKeywordsPopout from './SuggestedKeywordsPopout';
 import HighlightSummary from './HighlightSummary';
-import { yearRangeType, suggestedKeywordsType } from '../../proptypes';
+import { yearRangeType, suggestedKeywordsObject } from '../../proptypes';
 
 import './styles.scss';
 
@@ -18,7 +18,7 @@ class SearchBar extends React.PureComponent {
     updateKeywords: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
     projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
-    suggestedKeywords: suggestedKeywordsType.isRequired,
+    suggestedKeywords: suggestedKeywordsObject.isRequired,
     availableCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,

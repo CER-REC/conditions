@@ -27,7 +27,18 @@ export const yearRangeType = PropTypes.shape({
   end: PropTypes.number.isRequired,
 });
 
-export const suggestedKeywordsType = PropTypes
+export const suggestedKeywordsObject = PropTypes.objectOf(
+  PropTypes.shape({
+    conditions: PropTypes.number.isRequired,
+    category: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+);
+
+// Used in Keyword List (SuggestedKeywords)
+// Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
+// ["emissions", { conditions: 400, category: ['category2', 'category3]}]]
+
+export const suggestedKeywordsArrayType = PropTypes
   .arrayOf((props, propName, componentName, location, propFullName) => {
     const value = props[propName];
     if (!Array.isArray(value) || value.length !== 2) {

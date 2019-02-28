@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
 import handleInteraction from '../../../utilities/handleInteraction';
-import { suggestedKeywordsType } from '../../../proptypes';
+import { suggestedKeywordsObject } from '../../../proptypes';
 import KeywordList from './KeywordList';
 
 class SuggestedKeywordsPopout extends React.PureComponent {
@@ -12,7 +12,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClick: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    suggestedKeywords: suggestedKeywordsType.isRequired,
+    suggestedKeywords: suggestedKeywordsObject.isRequired,
     isExclude: PropTypes.bool.isRequired,
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
