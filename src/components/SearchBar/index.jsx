@@ -94,7 +94,8 @@ class SearchBar extends React.PureComponent {
 
     const highlightedSummary = (mode !== '') ? null : (
       <HighlightSummary
-        keywords={includeKeywords}
+        includeKeywords={includeKeywords}
+        excludeKeywords={excludeKeywords}
         selectedYear={yearRange}
       />
     );

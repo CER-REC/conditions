@@ -28,7 +28,7 @@ class SearchContent extends React.PureComponent {
     this.state = {
       inputInclude: '',
       inputExclude: '',
-      mode: 'basic',
+      mode: (props.findAny === false || props.excludeKeywords.length > 0) ? 'advanced' : 'basic',
     };
   }
 

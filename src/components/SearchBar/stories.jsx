@@ -19,6 +19,9 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
   .addDecorator(withKnobs)
   .add('SearchBar default', () => (
     <SearchBar
+      suggestedKeywords={sampleSuggestedKeywords}
+      availableYearRange={{ start: 1970, end: 1980 }}
+      availableCategories={['all', 'oversight & safety', 'environment', 'administration & filings']}
       {...getInteractionProps()}
     />
   ), {
@@ -26,11 +29,8 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
       state: {
         includeKeywords: ['safety'],
         excludeKeywords: [],
-        availableCategories: ['all', 'oversight & safety', 'environment', 'administration & filings'],
         projectStatus: ['OPEN', 'CANCELLED'],
-        suggestedKeywords: sampleSuggestedKeywords,
         yearRange: { start: 1970, end: 1980 },
-        availableYearRange: { start: 1970, end: 1980 },
         findAny: true,
       },
       actions: {
