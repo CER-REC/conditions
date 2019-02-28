@@ -7,16 +7,18 @@ import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
-import ConditonDetails from '../../components/ConditionDetails';
+import ConditionDetails from '../../components/ConditionDetails';
 import TrendButton from '../../components/TrendButton';
-import { browseByType } from '../../proptypes';
+import { browseByType, featureTypes } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
-import Dropdown from '../../components/Dropdown';
+import FeaturesMenu from '../../components/FeaturesMenu';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
+
+const noop = () => {};
 
 const legendItems = [
   { feature: 'theme', description: 'SECURITY', disabled: false },
@@ -53,8 +55,6 @@ const projectData = [
   },
 ];
 
-const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
-
 // SearchBar
 const availableYearRange = { start: 1970, end: 1980 };
 const sampleSuggestedKeywords = {
@@ -83,14 +83,15 @@ const ViewTwo = props => (
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={availableYearRange}
           availableCategories={availableCategories}
-          updateKeywords={() => {}}
-          findAnyOnChange={() => {}}
-          updateYear={() => {}}
-          changeProjectStatus={() => {}}
+          updateKeywords={noop}
+          findAnyOnChange={noop}
+          updateYear={noop}
+          changeProjectStatus={noop}
           includeKeywords={['safety']}
           excludeKeywords={[]}
           projectStatus={['OPEN', 'CANCELLED']}
           yearRange={availableYearRange}
+          findAny
         />
       </section>
     </section>
@@ -99,7 +100,7 @@ const ViewTwo = props => (
         <Wheel
           wheelType={props.browseBy}
           itemsData={companyWheelData}
-          selectRay={props.selectRay}
+          selectRay={noop}
         />
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
         <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
@@ -108,22 +109,22 @@ const ViewTwo = props => (
         <ProjectMenu
           projectData={projectData}
           selectedProjectID={1225}
-          onChange={() => {}}
+          onChange={noop}
           selectedFeature="theme"
         />
       </section>
       <section className="menus">
         <TrendButton
-          onClick={() => {}}
+          onClick={noop}
           feature="theme"
           subFeature=""
           projectData={conditionCountsByYear.counts}
           instrumentData={conditionCountsByCommodity.counts}
         />
-        <Dropdown
-          options={features}
-          onChange={() => {}}
-          optionID="common.features"
+        <FeaturesMenu
+          dropDown
+          selected={props.selected.feature}
+          onChange={props.setSelectedFeature}
         />
         <FeaturesLegend
           legendItems={legendItems}
@@ -132,7 +133,11 @@ const ViewTwo = props => (
         />
       </section>
       <section className="conditions">
-        <ConditonDetails {...defaultProps} />
+        <ConditionDetails
+          {...defaultProps}
+          toggleExpanded={noop}
+          updateSelectedItem={noop}
+        />
       </section>
     </section>
   </section>
@@ -141,7 +146,11 @@ const ViewTwo = props => (
 ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
+  selected: PropTypes.shape({
+    feature: featureTypes.isRequired,
+  }).isRequired,
   setBrowseBy: PropTypes.func.isRequired,
+  setSelectedFeature: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
@@ -156,6 +165,7 @@ export default connect(
     browseBy,
   }),
   {
+    setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
     setBrowseBy: browseByCreators.setBrowseBy,
   },

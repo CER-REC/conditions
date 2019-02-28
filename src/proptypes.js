@@ -33,12 +33,12 @@ export const location = PropTypes.shape({
 export const project = PropTypes.shape({
   id: PropTypes.string.isRequired,
   name: PropTypes.shape({
-    english: PropTypes.string.isRequired,
-    french: PropTypes.string.isRequired,
+    en: PropTypes.string.isRequired,
+    fr: PropTypes.string.isRequired,
   }).isRequired,
   shortName: PropTypes.shape({
-    english: PropTypes.string.isRequired,
-    french: PropTypes.string.isRequired,
+    en: PropTypes.string.isRequired,
+    fr: PropTypes.string.isRequired,
   }).isRequired,
   data: featureData.isRequired,
 });
@@ -83,7 +83,7 @@ export const suggestedKeywordsObject = PropTypes.objectOf(
 // ["emissions", { conditions: 400, category: ['category2', 'category3]}]]
 
 export const suggestedKeywordsArrayType = PropTypes
-  .arrayOf((props, propName, componentName, location, propFullName) => {
+  .arrayOf((props, propName, componentName, _, propFullName) => {
     const value = props[propName];
     if (!Array.isArray(value) || value.length !== 2) {
       return new Error(

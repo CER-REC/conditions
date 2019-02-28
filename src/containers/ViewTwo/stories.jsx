@@ -8,9 +8,14 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
   .addDecorator(withInteraction({
     actions: {
       setBrowseBy: () => browseBy => ({ browseBy }),
-      selectRay: () => () => ({}),
+      setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
     },
-    state: { browseBy: 'company' },
+    state: {
+      browseBy: 'company',
+      selected: {
+        feature: 'theme',
+      },
+    },
   }))
   .add('default', () => <ViewTwoUnconnected {...getInteractionProps()} />)
   .add('layout only', () => <ViewTwoUnconnected layoutOnly {...getInteractionProps()} />);
