@@ -6,7 +6,7 @@ import {
   VictoryChart,
   VictoryGroup,
 } from 'victory';
-import { linear } from 'd3-scale';
+// import { linear } from 'd3-scale';
 import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
