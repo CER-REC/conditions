@@ -14,7 +14,8 @@ import SearchBar from '../../components/SearchBar';
 import Dropdown from '../../components/Dropdown';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
+import * as searchCreators from '../../actions/search';
+import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
 
@@ -56,14 +57,8 @@ const projectData = [
 const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
 // SearchBar
-const availableYearRange = { start: 1970, end: 1980 };
-const sampleSuggestedKeywords = {
-  safety: { conditions: 1200, category: ['administration & filings'] },
-  emissions: { conditions: 1000, category: ['environment'] },
-  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
-  construction: { conditions: 1000, category: ['environment'] },
-};
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
+
 const defaultProps = {
   data,
   selectedProject: 'Keystone XL',
@@ -80,17 +75,18 @@ const ViewTwo = props => (
     <section className="row">
       <section className="searchHeader">
         <SearchBar
-          suggestedKeywords={sampleSuggestedKeywords}
-          availableYearRange={availableYearRange}
+          suggestedKeywords={searchData}
+          availableYearRange={props.availableProjectYear}
           availableCategories={availableCategories}
           updateKeywords={() => {}}
-          findAnyOnChange={() => {}}
-          updateYear={() => {}}
-          changeProjectStatus={() => {}}
+          findAnyOnChange={props.setFindAny}
+          updateYear={props.setProjectYear}
+          changeProjectStatus={props.setProjectStatus}
           includeKeywords={['safety']}
-          excludeKeywords={[]}
-          projectStatus={['OPEN', 'CANCELLED']}
-          yearRange={availableYearRange}
+          excludeKeywords={['emissions']}
+          projectStatus={props.projectStatus}
+          yearRange={props.projectYear}
+          findAny={props.findAny}
         />
       </section>
     </section>
@@ -151,13 +147,27 @@ ViewTwo.defaultProps = {
 export const ViewTwoUnconnected = ViewTwo;
 
 export default connect(
-  ({ selected, browseBy }) => ({
+  ({
     selected,
     browseBy,
+    search,
+  }) => ({
+    selected,
+    browseBy,
+    included: search.included,
+    projectStatus: search.projectStatus,
+    findAny: search.findAny,
+    projectYear: search.projectYear,
+    excluded: search.excluded,
+    availableProjectYear: search.availableProjectYear,
   }),
   {
     setSelectedCompany: selectedCreators.setSelectedCompany,
     setBrowseBy: browseByCreators.setBrowseBy,
+    setProjectStatus: searchCreators.setProjectStatus,
+    setProjectYear: searchCreators.setProjectYear,
+    setFindAny: searchCreators.setFindAny,
+    setSearchWords: searchCreators.setSearchWords,
   },
 )(ViewTwo);
 
