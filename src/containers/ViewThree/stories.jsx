@@ -21,7 +21,9 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
-      setIndicator: () => indicator => ({ indicator }),
+      setSelectedIndicator: ({ selected }) => indicator => (
+        { selected: { ...selected, indicator } }
+      ),
     },
     state: { selected: { feature: 'theme', subFeature: '', indicator: '' } },
   }))

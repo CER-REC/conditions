@@ -51,8 +51,8 @@ const ViewThree = props => (
             <BubbleChart
               data={conditionCountsByCommodity.counts}
               type={props.selected.subFeature}
-              indicator={props.indicator}
-              setIndicator={props.setIndicator}
+              indicator={props.selected.indicator}
+              setIndicator={props.setSelectedIndicator}
             />
           )
           : (
@@ -103,11 +103,11 @@ ViewThree.propTypes = {
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
+    indicator: PropTypes.string,
   }).isRequired,
-  indicator: PropTypes.string.isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
-  setIndicator: PropTypes.func.isRequired,
+  setSelectedIndicator: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {
@@ -125,5 +125,6 @@ export default connect(
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
+    setSelectedIndicator: selectedCreators.setSelectedIndicator,
   },
 )(ViewThree);
