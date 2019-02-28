@@ -17,7 +17,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['findAnyOnChange', 'updateKeywords'] }))
   .addDecorator(withKnobs)
-  .add('Basic Find without SuggestedKeywords', () => (
+  .add('SearchBar default', () => (
     <SearchBar
       {...getInteractionProps()}
     />
@@ -25,7 +25,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
     interaction: {
       state: {
         includeKeywords: ['safety'],
-        excludeKeywords: ['emissions'],
+        excludeKeywords: [],
         availableCategories: ['all', 'oversight & safety', 'environment', 'administration & filings'],
         projectStatus: ['OPEN', 'CANCELLED'],
         suggestedKeywords: sampleSuggestedKeywords,
