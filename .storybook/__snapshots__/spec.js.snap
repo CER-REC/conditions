@@ -7728,6 +7728,115 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="SelectionTab"
+    >
+      <div
+        className="Tab inactiveTab"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="tabText"
+        >
+           
+          Find Words
+           
+        </span>
+        <span
+          className="iconSvg"
+        >
+          <svg
+            viewBox="0 0 284.9 284.9"
+            width={15}
+          >
+            <g
+              className="findIcon"
+            >
+              <path
+                d="M135,93.1l139.8,136.8c9.2,9,9.2,23.4,0,32.4l0, 0c-9.2,9-23.9,9-33.1,0L101.9,125.5c-9.2-9-9.2-23.4,0-32.4 l0,0C109.2,84.1,125.8,84.1,135,93.1z"
+              />
+              <ellipse
+                cx="120.2"
+                cy="112.3"
+                rx="104.8"
+                ry="102.6"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        className="rect horzDivider"
+      />
+      <div
+        className="Tab inactiveTab"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="tabText"
+        >
+           
+          Filter
+           
+        </span>
+        <span
+          className="iconSvg"
+        >
+          <svg
+            viewBox="0 0 284.9 284.9"
+            width={15}
+          >
+            <polygon
+              className="filterIcon"
+              points="37.9,3.1 107.6,142.5 107.6,281.8 177.3,212.1 177.3,142.5 247,3.1"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        className="rect horzLine"
+      />
+    </div>
+    <div
+      className="HighlightSummary"
+    >
+      <span>
+        Showing all projects from
+      </span>
+      <span>
+         
+        1970
+         - 
+        1980
+         
+      </span>
+      <p>
+        Highlighting conditions containing
+         : 
+      </p>
+      <div
+        className="keywordsText"
+      >
+        safety
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
 <div
   className="visualization"
@@ -8927,6 +9036,15 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       >
         include1, include2
       </div>
+      <p>
+        Exclude conditions containing
+         : 
+      </p>
+      <div
+        className="keywordsText"
+      >
+        exclude1, exclude2
+      </div>
     </div>
   </div>
 </div>
@@ -8955,6 +9073,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <input
           className="searchBar"
           onChange={[Function]}
+          onFocus={[Function]}
           value=""
         />
         <button
@@ -9065,312 +9184,292 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
   <div
     className="SearchBar"
   >
-    <div>
-      <div
-        className="SuggestedKeywordsPopout"
+    <div
+      className="SuggestedKeywordsPopout"
+    >
+      <h1
+        className="keywordsTitle"
       >
-        <h1
-          className="keywordsTitle"
+         
+        Suggested Keywords
+          
+      </h1>
+      <p
+        className="description"
+      >
+         
+        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
+          
+      </p>
+      <ul
+        className="categories"
+      >
+        <li
+          className="viewText"
         >
            
-          Suggested Keywords
-            
-        </h1>
-        <p
-          className="description"
+          View By
+          :  
+        </li>
+        <li
+          className="categoryList upperCase selectedCategory"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
            
-          Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
-            
-        </p>
-        <ul
-          className="categories"
+          all
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
-          <li
-            className="viewText"
+           
+          wildlife & habitat
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          environment
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          engineering & structures
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          administration & filings
+        </li>
+      </ul>
+      <div
+        className="rightText"
+      >
+        <span>
+          Sort by
+           
+        </span>
+        <span
+          className={null}
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          Frequency
+        </span>
+        |
+        <span
+          className={null}
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Alphabetical
+        </span>
+        <span
+          className="hierarchy"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="arrow"
+          >
+            <svg
+              viewBox="0 0 427.5 427.5"
+            >
+              <g>
+                <path
+                  d="M405.943,290.254L302.096,425.338c-1.04, 1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254 c-0.769-0.993-1.144-2.176-1.144-3.357c0-1.152,0.364-2.329, 1.108-3.322c1.499-1.975,4.125-2.707,6.434-1.809l68.76,27.166V21.01 c0-3.047,2.477-5.503,5.515-5.503h55.106c3.038,0,5.509, 2.456,5.509,5.503v287.922l68.76-27.166 c2.305-0.898,4.93-0.166,6.419,1.809C407.473,285.561, 407.461,288.28,405.943,290.254z M238.012,143.913 c0.744-0.993,1.105-2.167,1.105-3.322c0-1.176-0.379-2.367-1.142-3.36L134.125, 2.148C133.081,0.792,131.458,0,129.759,0 c-1.714,0-3.328,0.798-4.377,2.148L21.539,137.23c-1.519, 1.969-1.525,4.69-0.03,6.683c1.487,1.968,4.114,2.707,6.419,1.803 l68.766-27.163v287.919c0,3.05,2.462,5.509,5.506, 5.509h55.109c3.041,0,5.515-2.459,5.515-5.509V118.552l68.763,27.163 C233.886,146.62,236.51,145.88,238.012,143.913z"
+                />
+              </g>
+            </svg>
+          </span>
+          <span
+            className="upperCase"
           >
              
-            View By
-            :  
+            none
+             
+          </span>
+        </span>
+      </div>
+      <div
+        className="KeywordList"
+      >
+        <ul>
+          <li>
+            <div
+              className="icon"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  color=""
+                  data-icon="minus-circle"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="keywordCategory selectedText"
+            >
+              deer
+               
+            </div>
+            <svg
+              className="BarContainer"
+              height="8px"
+              width="100%"
+            >
+              <rect
+                className="Bar"
+                fill="rgb(238,97,41)"
+                height="100%"
+                width="100%"
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="0%"
+                x="100%"
+                y={0}
+              />
+            </svg>
+            <div
+              className="conditionsText"
+            >
+              <span>
+                1200 conditions
+              </span>
+            </div>
           </li>
-          <li
-            className="categoryList upperCase selectedCategory"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            all
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            wildlife & habitat
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            environment
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            engineering & structures
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            administration & filings
+          <li>
+            <div
+              className="icon"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
+                  color=""
+                  data-icon="plus-circle"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="keywordCategory regularText"
+            >
+              alberta
+               
+            </div>
+            <svg
+              className="BarContainer"
+              height="8px"
+              width="100%"
+            >
+              <rect
+                className="Bar"
+                fill="rgb(96,96,96)"
+                height="100%"
+                width="33.33333333333333%"
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="66.66666666666667%"
+                x="33.33333333333333%"
+                y={0}
+              />
+            </svg>
+            <div
+              className="conditionsText"
+            >
+              <span>
+                400 conditions
+              </span>
+            </div>
           </li>
         </ul>
-        <div
-          className="rightText"
+      </div>
+      <div
+        className="close"
+      >
+        <button
+          className="upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <span>
-            Sort by
-             
-          </span>
-          <span
-            className={null}
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            Frequency
-          </span>
-          |
-          <span
-            className={null}
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            Alphabetical
-          </span>
-          <span
-            className="hierarchy"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span
-              className="arrow"
-            >
-              <svg
-                viewBox="0 0 427.5 427.5"
-              >
-                <g>
-                  <path
-                    d="M405.943,290.254L302.096,425.338c-1.04, 1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254 c-0.769-0.993-1.144-2.176-1.144-3.357c0-1.152,0.364-2.329, 1.108-3.322c1.499-1.975,4.125-2.707,6.434-1.809l68.76,27.166V21.01 c0-3.047,2.477-5.503,5.515-5.503h55.106c3.038,0,5.509, 2.456,5.509,5.503v287.922l68.76-27.166 c2.305-0.898,4.93-0.166,6.419,1.809C407.473,285.561, 407.461,288.28,405.943,290.254z M238.012,143.913 c0.744-0.993,1.105-2.167,1.105-3.322c0-1.176-0.379-2.367-1.142-3.36L134.125, 2.148C133.081,0.792,131.458,0,129.759,0 c-1.714,0-3.328,0.798-4.377,2.148L21.539,137.23c-1.519, 1.969-1.525,4.69-0.03,6.683c1.487,1.968,4.114,2.707,6.419,1.803 l68.766-27.163v287.919c0,3.05,2.462,5.509,5.506, 5.509h55.109c3.041,0,5.515-2.459,5.515-5.509V118.552l68.763,27.163 C233.886,146.62,236.51,145.88,238.012,143.913z"
-                  />
-                </g>
-              </svg>
-            </span>
-            <span
-              className="upperCase"
-            >
-               
-              none
-               
-            </span>
-          </span>
-        </div>
-        <div
-          className="KeywordList"
-        >
-          <ul>
-            <li>
-              <span
-                className="icon"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-              >
-                <div
-                  className="Icon"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
-                    color=""
-                    data-icon="minus-circle"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                className="keywordCategory selectedText"
-              >
-                deer
-                 
-              </span>
-              <span
-                className="BarContainer"
-              >
-                <svg
-                  className="BarContainer"
-                  desc="conditionDesc"
-                  height="100%"
-                  scale={1}
-                  size={8}
-                  title="ConditionTitle"
-                  vert={false}
-                  width="100%"
-                >
-                  <rect
-                    className="Bar"
-                    fill="rgb(238,97,41)"
-                    height="100%"
-                    width="100%"
-                    x="0%"
-                    y={0}
-                  />
-                  <rect
-                    className="Bar"
-                    fill="transparent"
-                    height="100%"
-                    width="0%"
-                    x="100%"
-                    y={0}
-                  />
-                </svg>
-              </span>
-              <div
-                className="conditionsText"
-              >
-                <span>
-                  1200 conditions
-                </span>
-              </div>
-            </li>
-            <li>
-              <span
-                className="icon"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-              >
-                <div
-                  className="Icon"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
-                    color=""
-                    data-icon="plus-circle"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                className="keywordCategory regularText"
-              >
-                alberta
-                 
-              </span>
-              <span
-                className="BarContainer"
-              >
-                <svg
-                  className="BarContainer"
-                  desc="conditionDesc"
-                  height="100%"
-                  scale={1}
-                  size={8}
-                  title="ConditionTitle"
-                  vert={false}
-                  width="100%"
-                >
-                  <rect
-                    className="Bar"
-                    fill="rgb(96,96,96)"
-                    height="100%"
-                    width="33.33333333333333%"
-                    x="0%"
-                    y={0}
-                  />
-                  <rect
-                    className="Bar"
-                    fill="transparent"
-                    height="100%"
-                    width="66.66666666666667%"
-                    x="33.33333333333333%"
-                    y={0}
-                  />
-                </svg>
-              </span>
-              <div
-                className="conditionsText"
-              >
-                <span>
-                  400 conditions
-                </span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div
-          className="close"
-        >
-          <button
-            className="upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-             
-            Close
-          </button>
-        </div>
+           
+          Close
+        </button>
       </div>
     </div>
   </div>
@@ -9392,7 +9491,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
       >
         <ul>
           <li>
-            <span
+            <div
               className="icon"
               focusable={true}
               onClick={[Function]}
@@ -9404,9 +9503,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
                   color=""
-                  data-icon="minus-circle"
+                  data-icon="plus-circle"
                   data-prefix="fas"
                   role="img"
                   style={Object {}}
@@ -9414,50 +9513,41 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
                     fill="currentColor"
                     style={Object {}}
                   />
                 </svg>
               </div>
-            </span>
-            <span
-              className="keywordCategory selectedText"
+            </div>
+            <div
+              className="keywordCategory regularText"
             >
               deer
                
-            </span>
-            <span
+            </div>
+            <svg
               className="BarContainer"
+              height="8px"
+              width="100%"
             >
-              <svg
-                className="BarContainer"
-                desc="conditionDesc"
+              <rect
+                className="Bar"
+                fill="rgb(96,96,96)"
                 height="100%"
-                scale={1}
-                size={8}
-                title="ConditionTitle"
-                vert={false}
                 width="100%"
-              >
-                <rect
-                  className="Bar"
-                  fill="rgb(238,97,41)"
-                  height="100%"
-                  width="100%"
-                  x="0%"
-                  y={0}
-                />
-                <rect
-                  className="Bar"
-                  fill="transparent"
-                  height="100%"
-                  width="0%"
-                  x="100%"
-                  y={0}
-                />
-              </svg>
-            </span>
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="0%"
+                x="100%"
+                y={0}
+              />
+            </svg>
             <div
               className="conditionsText"
             >
@@ -9467,7 +9557,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
             </div>
           </li>
           <li>
-            <span
+            <div
               className="icon"
               focusable={true}
               onClick={[Function]}
@@ -9479,9 +9569,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
                   color=""
-                  data-icon="minus-circle"
+                  data-icon="plus-circle"
                   data-prefix="fas"
                   role="img"
                   style={Object {}}
@@ -9489,50 +9579,41 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
                     fill="currentColor"
                     style={Object {}}
                   />
                 </svg>
               </div>
-            </span>
-            <span
-              className="keywordCategory selectedText"
+            </div>
+            <div
+              className="keywordCategory regularText"
             >
               alberta
                
-            </span>
-            <span
+            </div>
+            <svg
               className="BarContainer"
+              height="8px"
+              width="100%"
             >
-              <svg
-                className="BarContainer"
-                desc="conditionDesc"
+              <rect
+                className="Bar"
+                fill="rgb(96,96,96)"
                 height="100%"
-                scale={1}
-                size={8}
-                title="ConditionTitle"
-                vert={false}
-                width="100%"
-              >
-                <rect
-                  className="Bar"
-                  fill="rgb(238,97,41)"
-                  height="100%"
-                  width="33.33333333333333%"
-                  x="0%"
-                  y={0}
-                />
-                <rect
-                  className="Bar"
-                  fill="transparent"
-                  height="100%"
-                  width="66.66666666666667%"
-                  x="33.33333333333333%"
-                  y={0}
-                />
-              </svg>
-            </span>
+                width="33.33333333333333%"
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="66.66666666666667%"
+                x="33.33333333333333%"
+                y={0}
+              />
+            </svg>
             <div
               className="conditionsText"
             >
@@ -9586,11 +9667,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPrompt default 1`] = `
         <circle
           cx="215"
           cy="213.8"
-          fill="#CF167B"
           r="213.8"
         />
         <polygon
-          fill="#FFFFFF"
           points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
         />
       </svg>
@@ -9611,11 +9690,6 @@ exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
-      style={
-        Object {
-          "borderBottom": "none",
-        }
-      }
       tabIndex={0}
     >
       <span
@@ -9655,11 +9729,6 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
-      style={
-        Object {
-          "borderBottom": "none",
-        }
-      }
       tabIndex={0}
     >
       <span
