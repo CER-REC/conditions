@@ -2,8 +2,6 @@
 @import '../../styles/colors.scss';
 
 .ConditionDetails {
-  // float: right;
-
   max-width: 820px;
   height: 300px;
 
@@ -15,13 +13,6 @@
 
   overflow-x: hidden;
   overflow-y: hidden;
-
-  // display: grid;
-  // grid-template-rows: 24px 1fr;
-  // grid-template-columns: 150px 450px;
-  // grid-template-areas:
-  //   "header header"
-  //   "list   content";
 
   .main {
     display: inline-block;

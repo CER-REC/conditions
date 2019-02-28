@@ -18,7 +18,6 @@ const defaultProps = {
   searchKeywords: {
     include: ['hello'],
   },
-  // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
   openProjectDetails: project => alert(`Project details for: ${project}`),
   openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
 };
