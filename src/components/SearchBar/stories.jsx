@@ -33,7 +33,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
         availableYearRange: { start: 1970, end: 1980 },
       },
       actions: {
-        updateKeywords: () => ([words, type]) => ((type === 'include') ? { includeKeywords: words } : { excludeKeywords: words }),
+        updateKeywords: () => (words, type) => ((type === 'include') ? { includeKeywords: words } : { excludeKeywords: words }),
         findAnyOnChange: () => e => ({ findAny: e }),
         updateYear: () => selectedYear => ({ yearRange: selectedYear }),
         changeProjectStatus: () => updatedProjectStatus => (

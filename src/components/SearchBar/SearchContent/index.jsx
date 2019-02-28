@@ -48,13 +48,8 @@ class SearchContent extends React.PureComponent {
   keyWordsRender = keywords => (<span>{keywords.join(', ')} </span>)
 
   deleteWord = (word, type) => {
-    const { includeKeywords, excludeKeywords } = this.props;
-    if (type === 'exclude') {
-      const updatedKeywords = excludeKeywords.filter(v => v !== word);
-      return (this.props.updateKeywords([updatedKeywords, 'exclude']));
-    }
-    const updatedKeywords = includeKeywords.filter(v => v !== word);
-    return (this.props.updateKeywords([updatedKeywords, 'include']));
+    const updatedKeywords = this.props[`${type}Keywords`].filter(v => v !== word);
+    this.props.updateKeywords(updatedKeywords, type);
   }
 
   addWord = (word, type) => {
@@ -64,13 +59,13 @@ class SearchContent extends React.PureComponent {
       if (includeKeywords.length < 6
         && !includeKeywords.includes(word)
         && !excludeKeywords.includes(word)) {
-        return (this.props.updateKeywords([includeKeywords.concat(word), 'include']));
+        return (this.props.updateKeywords(includeKeywords.concat(word), 'include'));
       }
     }
     if (excludeKeywords.length < 6
       && !includeKeywords.includes(word)
       && !excludeKeywords.includes(word)) {
-      return (this.props.updateKeywords([excludeKeywords.concat(word), 'exclude']));
+      (this.props.updateKeywords(excludeKeywords.concat(word), 'exclude'));
     }
     return null;
   }
@@ -212,8 +207,8 @@ class SearchContent extends React.PureComponent {
     this.setState(prevState => ({ mode: (prevState.mode === 'basic' ? 'advanced' : 'basic') }));
     this.props.findAnyOnChange(true);
     this.props.changeIsExclude(false);
-    this.props.updateKeywords([this.props.includeKeywords, 'include']);
-    this.props.updateKeywords([[], 'exclude']);
+    this.props.updateKeywords(this.props.includeKeywords, 'include');
+    this.props.updateKeywords([], 'exclude');
   }
 
   render() {

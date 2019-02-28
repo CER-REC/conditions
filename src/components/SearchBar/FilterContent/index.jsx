@@ -151,7 +151,7 @@ class FilterContent extends React.PureComponent {
     const updatedStatus = projectStatus.includes(item)
       ? projectStatus.filter(v => v !== item)
       : projectStatus.concat(item);
-    return (this.props.changeProjectStatus(updatedStatus));
+    this.props.changeProjectStatus(updatedStatus);
   }
 
   reset = () => {

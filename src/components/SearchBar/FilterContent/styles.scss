@@ -41,17 +41,17 @@
         overflow: inherit;
       }
       .regularCircle{
-        color: #999999;
-        background-color: #E6E6E6;
+        color: $DarkGray;
+        background-color: $LightGray;
       }
 
       .selectedOutsideCircle{
-        color: rgb(96,96,96);
+        color: $VeryDarkGray;
         background-color: $White;
       }
       .selectedInsideCircle{
         color: $White;
-        background-color: rgb(209, 5, 122);
+        background-color: $LinksTextButtons;
       }
     }
   }
