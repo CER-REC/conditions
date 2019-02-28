@@ -75,6 +75,7 @@ describe('Components|BubbleChart', () => {
       indicator=""
       setIndicator={spy}
       data={instrumentChartData}
+      type=""
     />);
   });
 
@@ -85,18 +86,18 @@ describe('Components|BubbleChart', () => {
     });
 
     test('should show the ChartIndicator when set', () => {
-      wrapper.setProps({ indicator: 'AO' });
+      wrapper.setProps({ indicator: 'GPLO' });
       expect(wrapper.find('ChartIndicator')).toHaveLength(1);
       const indicatorPropsAO = wrapper.find('ChartIndicator').props();
-      wrapper.setProps({ indicator: 'OPL' });
+      wrapper.setProps({ indicator: 'AO' });
       expect(wrapper.find('ChartIndicator').props()).not.toEqual(indicatorPropsAO);
     });
   });
 
   describe('onClick ', () => {
     test('should change the indicator position', () => {
-      wrapper.find('InstrumentBubble').prop('onClick')('AO');
-      expect(spy).toHaveBeenLastCalledWith('AO');
+      wrapper.find('InstrumentBubble').prop('onClick')('GPLO');
+      expect(spy).toHaveBeenLastCalledWith('GPLO');
     });
   });
 

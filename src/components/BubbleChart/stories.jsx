@@ -9,7 +9,7 @@ import ReadMe from './README.md';
 import { conditionCountsByCommodity } from '../../mockData';
 
 const defaultTypes = [
-  'ALL',
+  '',
   'ROUTING',
   'CONSTRUCTION',
   'OPENING',
@@ -24,6 +24,18 @@ storiesForComponent('Components|BubbleChart', module, ReadMe)
     <BubbleChart
       data={conditionCountsByCommodity.counts}
       type={select('Instrument type', defaultTypes, '')}
+      {...getInteractionProps()}
+    />
+  ), {
+    interaction: {
+      state: { indicator: '' },
+      actions: { setIndicator: () => indicator => ({ indicator }) },
+    },
+  })
+  .add('with OPENING type selected', () => (
+    <BubbleChart
+      data={conditionCountsByCommodity.counts}
+      type="OPENING"
       {...getInteractionProps()}
     />
   ), {
