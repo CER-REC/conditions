@@ -9,14 +9,19 @@ class BubbleChart extends React.PureComponent {
     indicator: PropTypes.string.isRequired,
     setIndicator: PropTypes.func.isRequired,
     data: PropTypes.instanceOf(Object).isRequired,
+    type: PropTypes.string,
   };
+
+  static defaultProps = {
+    type: 'ALL',
+  }
 
   constructor(props) {
     super(props);
     this.isDragging = false;
   }
 
-  getData = () => d3HierarchyCalculation(this.props.data, 850, 400)
+  getData = () => d3HierarchyCalculation(this.props.data, 850, 400, this.props.type)
     .filter(node => node.depth > 1);
 
   onClick = (name) => {

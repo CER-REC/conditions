@@ -1,7 +1,11 @@
 import * as d3 from 'd3';
 
-export default (instrumentChartData, width, height) => {
-  const structuredData = instrumentChartData.reduce((acc, next) => {
+export default (instrumentChartData, width, height, type) => {
+  let propData = instrumentChartData;
+  if (type !== '' && type !== 'ALL') {
+    propData = instrumentChartData.filter(commodity => commodity.type === type);
+  }
+  const structuredData = propData.reduce((acc, next) => {
     const commodity = next.commodity.length > 1
       ? 'ANY_COMMODITY_TYPES'
       : next.commodity[0];
@@ -28,7 +32,6 @@ export default (instrumentChartData, width, height) => {
       })),
     })),
   };
-
   // d3 pack generates a function to
   // fit data into tightly packed circles.
   const pack = d3

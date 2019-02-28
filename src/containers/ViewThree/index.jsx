@@ -50,6 +50,7 @@ const ViewThree = props => (
           ? (
             <BubbleChart
               data={conditionCountsByCommodity.counts}
+              type={props.selected.subFeature}
               indicator=""
               setIndicator={noop}
             />
