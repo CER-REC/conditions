@@ -23,8 +23,10 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
     interaction: {
       state: {
         categories: ['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings'],
-        selectedWords: ['deer'],
+        includeKeywords: ['deer'],
+        excludeKeywords: [],
         suggestedKeywords: keywords,
+        isExclude: false,
       },
       actions: {
         onClick: () => ([updatedList]) => ({ selectedWords: updatedList }),
