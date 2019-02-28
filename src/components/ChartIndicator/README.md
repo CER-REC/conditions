@@ -10,7 +10,7 @@ BubbleChart.
   * yend: The ending y value that the line will stop at
   * radius [optional]: A radius will render a circle at the end of the line
 
-TODO: Since the ChartIndicator will not be displayed when the user clicks away from the Streamgraph
+TODO: Since the ChartIndicator will not be displayed when the user clicks away from the StreamGraph
 or BubbleChart we need to decide if it will be shown when we are in screenshot mode.
 
 ## Requirements

@@ -112,7 +112,7 @@ class StreamGraph extends React.Component {
   render() {
     return (
       <div
-        className="Streamgraph"
+        className="StreamGraph"
       >
         <FormattedMessage id={`components.streamGraph.title.${this.props.feature}`} tagName="h1" />
         {this.chart()}
