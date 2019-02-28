@@ -108,7 +108,7 @@
 
   .main {
     display: inline-block;
-    width: 600px;
+    width: 530px;
     height: 100%;
   }
 
@@ -117,6 +117,6 @@
     visibility: hidden; /* Collapsed state */
     transition: visibility 0s 1s;
     vertical-align: top;
-    width: calc(100% - 600px);
+    width: calc(100% - 530px);
   }
 }

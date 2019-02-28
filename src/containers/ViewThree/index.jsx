@@ -89,6 +89,11 @@ const ViewThree = props => (
         <ConditionDetails
           // TODO: This is just a quick hack to get the component into the view
           {...props.conditionDetails}
+          expanded={props.detailView}
+          updateSelectedItem={props.updateSelectedItem}
+          openIntermediatePopup={props.openIntermediatePopup}
+          toggleExpanded={props.expandDetailView}
+          openProjectDetails={props.openProjectDetails}
         />
       </section>
     </section>
@@ -109,6 +114,13 @@ ViewThree.propTypes = {
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
+
+  conditionDetails: PropTypes.object.isRequired,
+  detailView: PropTypes.bool.isRequired,
+  updateSelectedItem: PropTypes.func.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  expandDetailView: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {

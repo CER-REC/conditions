@@ -7,13 +7,6 @@ import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockDat
 
 // TODO: Connect ConditionDetails to the external view once it's been normalized
 import conditionDetailsData from '../../components/ConditionDetails/testData';
-const conditionDetailsCallbacks = {
-  updateSelectedItem: () => (instrumentIndex, itemIndex) => (
-    { selectedItem: { instrumentIndex, itemIndex } }
-  ),
-  toggleExpanded: () => expand => ({ expanded: expand }),
-};
-
 
 const props = {
   conditionCountsByYear,
@@ -24,15 +17,22 @@ const props = {
   },
   conditionDetails: {
     isExpandable: true,
-    expanded: true,
     searchKeywords: {
       include: ['hello'],
     },
     selectedProject: 'Keystone XL',
+    selectedItem: {
+      instrumentIndex: 0,
+      itemIndex: 0,
+    },
     data: conditionDetailsData,
-
   },
 };
+
+const pendingActions = ['updateSelectedItem', 'openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
+  [next]: () => () => ({}),
+  ...acc,
+}), {});
 
 storiesForView('Containers|ViewThree', module, ReadMe)
   .addDecorator(withInteraction({
@@ -41,9 +41,10 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
-      ...conditionDetailsCallbacks,
+      expandDetailView: () => toggleTo => ({ detailView: toggleTo }),
+      ...pendingActions,
     },
-    state: { selected: { feature: 'theme', subFeature: '' } },
+    state: { selected: { feature: 'theme', subFeature: '' }, detailView: true },
   }))
   .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);
