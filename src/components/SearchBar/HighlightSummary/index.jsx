@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { yearRangeType } from '../../../proptypes';
 
 const HighlightSummary = props => (
   <div className="HighlightSummary">
@@ -17,10 +18,7 @@ const HighlightSummary = props => (
 );
 
 HighlightSummary.propTypes = {
-  selectedYear: PropTypes.shape({
-    start: PropTypes.number,
-    end: PropTypes.number,
-  }).isRequired,
+  selectedYear: yearRangeType.isRequired,
   keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

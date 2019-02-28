@@ -6,6 +6,7 @@ import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../../Icon/index';
 import handleInteraction from '../../../../utilities/handleInteraction';
 import BarContainer from '../../../BarContainer';
+import { suggestedKeywordsType } from '../../../../proptypes';
 import './styles.scss';
 
 library.add(faMinusCircle, faPlusCircle);
@@ -15,42 +16,21 @@ class KeywordList extends React.PureComponent {
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClick: PropTypes.func.isRequired,
-    keywords: PropTypes.arrayOf((props, propName, componentName, location, propFullName) => {
-      const value = props[propName];
-      if (!Array.isArray(value) || value.length !== 2) {
-        return new Error(
-          `Invalid prop \`${propFullName}\` supplied to \`${componentName}\`. Expected keyword tuple.`,
-        );
-      }
-      if (typeof value[0] !== 'string') {
-        return new Error(
-          `Invalid prop \`${propFullName}[0]\` supplied to \`${componentName}\`. Expected keyword tuple.`,
-        );
-      }
-      return PropTypes.checkPropTypes({
-        conditions: PropTypes.number.isRequired,
-        category: PropTypes.arrayOf(PropTypes.string).isRequired,
-      }, value[1], `${propFullName}[1]`, componentName);
-    }).isRequired,
+    keywords: suggestedKeywordsType.isRequired,
     isExclude: PropTypes.bool.isRequired,
   }
 
   keywordOnClick = (word) => {
     const { isExclude, includeKeywords, excludeKeywords } = this.props;
-    if (isExclude) {
-      if (!excludeKeywords.includes(word) && !includeKeywords.includes(word)) {
-        return (this.props.onClick(excludeKeywords.concat(word), 'exclude'));
-      }
-    } else if (!excludeKeywords.includes(word) && !includeKeywords.includes(word)) {
-      return (this.props.onClick(includeKeywords.concat(word), 'include'));
-    }
     if (excludeKeywords.includes(word)) {
-      return (this.props.onClick(excludeKeywords.filter(v => v !== word), 'exclude'));
+      this.props.onClick(excludeKeywords.filter(v => v !== word), 'exclude');
+    } else if (includeKeywords.includes(word)) {
+      this.props.onClick(includeKeywords.filter(v => v !== word), 'include');
+    } else if (isExclude) {
+      this.props.onClick(excludeKeywords.concat(word), 'exclude');
+    } else {
+      this.props.onClick(includeKeywords.concat(word), 'include');
     }
-    if (includeKeywords.includes(word)) {
-      return (this.props.onClick(includeKeywords.filter(v => v !== word), 'include'));
-    }
-    return null;
   };
 
   findMaxConditions = () => (
@@ -69,28 +49,22 @@ class KeywordList extends React.PureComponent {
                 : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
               const maxConditions = this.findMaxConditions();
 
-              const conditions = (value.conditions / maxConditions) * 200;
-              const remainingSpace = (200 - conditions);
+              const conditions = (value.conditions / maxConditions);
+              const remainingSpace = (1 - conditions);
               return (
                 <li key={`${key} ${value.conditions}`}>
-                  <span
+                  <div
                     className="icon"
                     {...handleInteraction(this.keywordOnClick, key)}
                   >
                     <Icon className={iconClass} icon={icon} />
-                  </span>
-                  <span className={`keywordCategory ${textStyle}`}>{key} </span>
-                  <span className="BarContainer">
-                    <BarContainer
-                      title="ConditionTitle"
-                      desc="conditionDesc"
-                      items={[{ value: conditions, fill: selectedColor },
-                        { value: remainingSpace, fill: 'transparent' }]}
-                      size={8}
-                      scale={1}
-                      vert={false}
-                    />
-                  </span>
+                  </div>
+                  <div className={`keywordCategory ${textStyle}`}>{key} </div>
+                  <BarContainer
+                    items={[{ value: conditions, fill: selectedColor },
+                      { value: remainingSpace, fill: 'transparent' }]}
+                    height="8px"
+                  />
                   <div className="conditionsText">
                     <FormattedMessage
                       id="components.searchBar.suggestedKeywordsPopout.conditions"

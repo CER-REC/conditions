@@ -31,6 +31,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
         suggestedKeywords: sampleSuggestedKeywords,
         yearRange: { start: 1970, end: 1980 },
         availableYearRange: { start: 1970, end: 1980 },
+        findAny: true,
       },
       actions: {
         updateKeywords: () => (words, type) => ((type === 'include') ? { includeKeywords: words } : { excludeKeywords: words }),

@@ -53,21 +53,12 @@ class SearchContent extends React.PureComponent {
   }
 
   addWord = (word, type) => {
-    if (word.length === 0) { return null; }
+    if (!word || !word.trim()) { return; }
     const { includeKeywords, excludeKeywords } = this.props;
-    if (type === 'include') {
-      if (includeKeywords.length < 6
-        && !includeKeywords.includes(word)
-        && !excludeKeywords.includes(word)) {
-        return (this.props.updateKeywords(includeKeywords.concat(word), 'include'));
-      }
-    }
-    if (excludeKeywords.length < 6
-      && !includeKeywords.includes(word)
-      && !excludeKeywords.includes(word)) {
-      (this.props.updateKeywords(excludeKeywords.concat(word), 'exclude'));
-    }
-    return null;
+    if (includeKeywords.includes(word) || excludeKeywords.includes(word)) { return; }
+    const currentKeywords = this.props[`${type}Keywords`];
+    if (currentKeywords.length >= 6) { return; }
+    this.props.updateKeywords(currentKeywords.concat(word), type);
   }
 
   updateInputInclude = e => this.setState({ inputInclude: e.target.value });
