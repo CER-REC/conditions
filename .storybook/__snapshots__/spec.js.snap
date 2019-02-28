@@ -371,6 +371,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
         className="InstrumentBubble"
       >
         <g
+          className="depth-2"
           data-name="OIL"
           focusable={true}
           onClick={[Function]}
@@ -408,6 +409,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="GAS"
           focusable={true}
           onClick={[Function]}
@@ -445,6 +447,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="POWER"
           focusable={true}
           onClick={[Function]}
@@ -482,6 +485,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="ANY_COMMODITY_TYPES"
           focusable={true}
           onClick={[Function]}
@@ -519,6 +523,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="NOT_SPECIFIED"
           focusable={true}
           onClick={[Function]}
@@ -556,6 +561,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="XO"
           focusable={true}
           onClick={[Function]}
@@ -584,6 +590,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPSO"
           focusable={true}
           onClick={[Function]}
@@ -612,6 +619,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPLO"
           focusable={true}
           onClick={[Function]}
@@ -640,6 +648,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPL"
           focusable={true}
           onClick={[Function]}
@@ -668,6 +677,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="EPE"
           focusable={true}
           onClick={[Function]}
@@ -696,6 +706,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="GPLO"
           focusable={true}
           onClick={[Function]}
@@ -724,6 +735,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="EC"
           focusable={true}
           onClick={[Function]}
@@ -752,6 +764,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="GPSO"
           focusable={true}
           onClick={[Function]}
@@ -780,6 +793,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="AO"
           focusable={true}
           onClick={[Function]}
@@ -808,6 +822,7 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="MO"
           focusable={true}
           onClick={[Function]}
@@ -856,6 +871,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
         className="InstrumentBubble"
       >
         <g
+          className="depth-2"
           data-name="OIL"
           focusable={true}
           onClick={[Function]}
@@ -893,6 +909,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="GAS"
           focusable={true}
           onClick={[Function]}
@@ -930,6 +947,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="POWER"
           focusable={true}
           onClick={[Function]}
@@ -967,6 +985,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="ANY_COMMODITY_TYPES"
           focusable={true}
           onClick={[Function]}
@@ -1004,6 +1023,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="NOT_SPECIFIED"
           focusable={true}
           onClick={[Function]}
@@ -1041,6 +1061,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="XO"
           focusable={true}
           onClick={[Function]}
@@ -1069,6 +1090,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPSO"
           focusable={true}
           onClick={[Function]}
@@ -1097,6 +1119,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPLO"
           focusable={true}
           onClick={[Function]}
@@ -1125,6 +1148,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPL"
           focusable={true}
           onClick={[Function]}
@@ -1153,6 +1177,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="EPE"
           focusable={true}
           onClick={[Function]}
@@ -1181,6 +1206,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="GPLO"
           focusable={true}
           onClick={[Function]}
@@ -1209,6 +1235,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="EC"
           focusable={true}
           onClick={[Function]}
@@ -1237,6 +1264,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="GPSO"
           focusable={true}
           onClick={[Function]}
@@ -1265,6 +1293,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="AO"
           focusable={true}
           onClick={[Function]}
@@ -1293,6 +1322,7 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="MO"
           focusable={true}
           onClick={[Function]}
@@ -11097,12 +11127,12 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|StreamGraph With interaction 1`] = `
+exports[`Storyshots Components|StreamGraph default 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="Streamgraph"
+    className="StreamGraph"
   >
     <h1>
       Themes Across All Conditions
@@ -12000,6 +12030,981 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="StreamGraph"
+  >
+    <svg
+      height="100%"
+      preserveAspectRatio="none"
+      viewBox="0 0 450 350"
+      width="100%"
+    >
+      <g>
+        <g
+          className="StackGroup"
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <g
+            clipPath="url(#victory-clip-18)"
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-18"
+              >
+                <rect
+                  height={300}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={450}
+                  x={0}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M0,300C21.42857142857143,298.3276143570108,42.85714285714286,296.6552287140216,64.28571428571428,291.91011235955057C85.7142857142857,287.16499600507956,107.14285714285711,279.34714893912667,128.57142857142856,284.4943820224719C150,289.6416151058171,171.42857142857144,307.75392833846047,192.85714285714283,279.7752808988764C214.28571428571422,251.7966334592924,235.7142857142856,177.72702534748092,257.1428571428571,198.87640449438203C278.5714285714286,220.02578364128314,300.0000000000001,336.3941500468969,321.42857142857144,300C342.8571428571428,263.6058499531031,364.2857142857142,74.4491834536956,385.71428571428567,0C407.1428571428571,-74.4491834536956,428.57142857142856,-34.19088386167926,450,6.067415730337075L450,300C428.57142857142856,300,407.14285714285717,300,385.71428571428567,300C364.28571428571416,300,342.85714285714283,300,321.42857142857144,300C300.00000000000006,300,278.57142857142856,300,257.1428571428571,300C235.7142857142857,300,214.28571428571428,300.00000000000006,192.85714285714283,300C171.4285714285714,299.99999999999994,150,300,128.57142857142856,300C107.14285714285711,300,85.7142857142857,300,64.28571428571428,300C42.85714285714286,300,21.42857142857143,300,0,300Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(221, 10, 10)",
+                  "stroke": "rgb(221, 10, 10)",
+                  "strokeWidth": 0,
+                  "width": 10,
+                }
+              }
+            />
+          </g>
+          <g
+            clipPath="url(#victory-clip-19)"
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-19"
+              >
+                <rect
+                  height={300}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={450}
+                  x={0}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M0,292.5842696629214C21.42857142857143,288.3842380123437,42.85714285714286,284.1842063617661,64.28571428571428,276.40449438202245C85.7142857142857,268.6247824022788,107.14285714285711,257.2653900933692,128.57142857142856,261.5730337078652C150,265.8806773223612,171.42857142857144,285.85535686026265,192.85714285714283,252.13483146067415C214.28571428571422,218.41430606108563,235.7142857142856,130.9985757240069,257.1428571428571,146.96629213483146C278.5714285714286,162.934008545656,300.0000000000001,282.28517170438363,321.42857142857144,244.71910112359552C342.8571428571428,207.15303054280741,364.2857142857142,12.669726222503556,385.71428571428567,-66.74157303370788C407.1428571428571,-146.15287228991932,428.57142857142856,-110.49216648203831,450,-74.83146067415731L450,6.067415730337075C428.57142857142856,-34.19088386167926,407.14285714285717,-74.4491834536956,385.71428571428567,0C364.28571428571416,74.4491834536956,342.85714285714283,263.6058499531031,321.42857142857144,300C300.00000000000006,336.3941500468969,278.57142857142856,220.0257836412832,257.1428571428571,198.87640449438203C235.7142857142857,177.72702534748086,214.28571428571428,251.7966334592923,192.85714285714283,279.7752808988764C171.4285714285714,307.7539283384605,150,289.6416151058171,128.57142857142856,284.4943820224719C107.14285714285711,279.34714893912667,85.7142857142857,287.1649960050795,64.28571428571428,291.91011235955057C42.85714285714286,296.65522871402163,21.42857142857143,298.3276143570108,0,300Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(36, 91, 64)",
+                  "stroke": "rgb(36, 91, 64)",
+                  "strokeWidth": 0,
+                  "width": 10,
+                }
+              }
+            />
+          </g>
+          <g
+            clipPath="url(#victory-clip-20)"
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-20"
+              >
+                <rect
+                  height={300}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={450}
+                  x={0}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M0,283.14606741573033C21.42857142857143,275.32837474283906,42.85714285714286,267.51068206994773,64.28571428571428,256.17977528089887C85.7142857142857,244.84886849185,107.14285714285711,230.0047475866435,128.57142857142856,230.56179775280899C150,231.11884791897447,171.42857142857144,247.07706915651207,192.85714285714283,208.31460674157302C214.28571428571422,169.55214432663396,235.7142857142856,76.06899825921822,257.1428571428571,91.01123595505618C278.5714285714286,105.95347365089414,300.0000000000001,229.32109510998578,321.42857142857144,180.6741573033708C342.8571428571428,132.02721949675583,364.2857142857142,-88.63427757556573,385.71428571428567,-161.12359550561797C407.1428571428571,-233.6129134356702,428.57142857142856,-157.93005222345306,450,-82.24719101123594L450,-74.83146067415731C428.57142857142856,-110.49216648203831,407.14285714285717,-146.15287228991932,385.71428571428567,-66.74157303370788C364.28571428571416,12.66972622250356,342.85714285714283,207.15303054280747,321.42857142857144,244.71910112359552C300.00000000000006,282.2851717043836,278.57142857142856,162.93400854565596,257.1428571428571,146.96629213483146C235.7142857142857,130.99857572400697,214.28571428571428,218.4143060610856,192.85714285714283,252.13483146067415C171.4285714285714,285.8553568602627,150,265.8806773223611,128.57142857142856,261.5730337078652C107.14285714285711,257.26539009336926,85.7142857142857,268.6247824022788,64.28571428571428,276.40449438202245C42.85714285714286,284.1842063617661,21.42857142857143,288.38423801234376,0,292.5842696629214Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(247, 193, 97)",
+                  "stroke": "rgb(247, 193, 97)",
+                  "strokeWidth": 0,
+                  "width": 10,
+                }
+              }
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|StreamGraph subFeature 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="StreamGraph"
+  >
+    <h1>
+      Themes Across All Conditions
+    </h1>
+    <div
+      className="VictoryContainer"
+      style={
+        Object {
+          "height": "100%",
+          "pointerEvents": "none",
+          "position": "relative",
+          "touchAction": "none",
+          "userSelect": "none",
+          "width": "100%",
+        }
+      }
+    >
+      <svg
+        aria-labelledby="victory-container-16-title victory-container-16-desc"
+        height={300}
+        role="img"
+        style={
+          Object {
+            "height": "100%",
+            "pointerEvents": "all",
+            "width": "100%",
+          }
+        }
+        viewBox="0 0 450 300"
+        width={450}
+      >
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shapeRendering="auto"
+            style={
+              Object {
+                "fill": "transparent",
+                "stroke": "#252525",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              }
+            }
+            vectorEffect="non-scaling-stroke"
+            x1={50}
+            x2={50}
+            y1={50}
+            y2={250}
+          />
+          <text
+            direction="inherit"
+            dx={0}
+            dy={-2.0300000000000002}
+            transform="rotate(-90,25,150)"
+            x={25}
+            y={150}
+          >
+            <tspan
+              dx={0}
+              style={
+                Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 25,
+                  "stroke": "transparent",
+                  "textAnchor": "middle",
+                }
+              }
+              textAnchor="middle"
+              x={25}
+            >
+              Number of Conditions
+            </tspan>
+          </text>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={400}
+              y1={250}
+              y2={250}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={49}
+              y1={250}
+              y2={250}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={4.97}
+              x={39}
+              y={250}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="end"
+                x={39}
+              >
+                0
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={400}
+              y1={50}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={49}
+              y1={50}
+              y2={50}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={4.97}
+              x={39}
+              y={50}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="end"
+                x={39}
+              >
+                445
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shapeRendering="auto"
+            style={
+              Object {
+                "fill": "transparent",
+                "stroke": "#252525",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              }
+            }
+            vectorEffect="non-scaling-stroke"
+            x1={50}
+            x2={400}
+            y1={250}
+            y2={250}
+          />
+          <text
+            direction="inherit"
+            dx={0}
+            dy={11.969999999999999}
+            x={225}
+            y={275}
+          >
+            <tspan
+              dx={0}
+              style={
+                Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 25,
+                  "stroke": "transparent",
+                  "textAnchor": "middle",
+                }
+              }
+              textAnchor="middle"
+              x={225}
+            >
+              Effective Date
+            </tspan>
+          </text>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={50}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={50}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={50}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={50}
+              >
+                2010
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={100}
+              x2={100}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={100}
+              x2={100}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={100}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={100}
+              >
+                2011
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={150}
+              x2={150}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={150}
+              x2={150}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={150}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={150}
+              >
+                2012
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={200}
+              x2={200}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={200}
+              x2={200}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={200}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={200}
+              >
+                2013
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={250}
+              x2={250}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={250}
+              x2={250}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={250}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={250}
+              >
+                2014
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={300}
+              x2={300}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={300}
+              x2={300}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={300}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={300}
+              >
+                2015
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={350}
+              x2={350}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={350}
+              x2={350}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={350}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={350}
+              >
+                2016
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={400}
+              x2={400}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={400}
+              x2={400}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={400}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={400}
+              >
+                2017
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g
+          className="StackGroup"
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <g
+            clipPath="url(#victory-clip-17)"
+            style={
+              Object {
+                "height": "100%",
+                "userSelect": "none",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-17"
+              >
+                <rect
+                  height={200}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={350}
+                  x={50}
+                  y={50}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M50,250C66.77350427350427,248.33784692211657,83.54700854700855,246.67569384423322,100,244.6067415730337C116.45299145299145,242.53778930183418,132.5854700854701,240.0620378373187,150,239.6629213483146C167.4145299145299,239.26380485931048,186.11111111111111,240.94132334581772,200,236.51685393258427C213.88888888888889,232.09238451935082,222.97008547008545,221.56592720637664,250,182.58426966292134C277.02991452991455,143.60261211946604,322.008547008547,76.16575434552962,350,50C377.991452991453,23.834245654470376,388.9957264957265,38.93959473734755,400,54.04494382022472L400,250C388.9957264957265,250,377.991452991453,250,350,250C322.008547008547,250,277.02991452991455,249.99999999999997,250,250C222.97008547008548,250.00000000000003,213.88888888888889,250.00000000000003,200,250C186.11111111111111,249.99999999999997,167.4145299145299,249.99999999999997,150,250C132.5854700854701,250.00000000000003,116.45299145299144,250,100,250C83.54700854700856,250,66.77350427350427,250,50,250Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(221, 10, 10)",
+                  "stroke": "rgb(221, 10, 10)",
+                  "strokeWidth": 0,
+                }
+              }
+            />
+          </g>
+        </g>
+      </svg>
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 99,
+          }
+        }
+      >
+        <svg
+          height={300}
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "visible",
+              "width": "100%",
+            }
+          }
+          viewBox="0 0 450 300"
+          width={450}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|StreamGraph/StackGroup documentation 1`] = `
 <div
   className="visualization"
@@ -12016,84 +13021,727 @@ exports[`Storyshots Components|StreamGraph/StackGroupProps documentation 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|TrendButton Static image 1`] = `
+exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="trendButton"
+    className="TrendButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
   >
-    <button
-      focusable={true}
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      tabIndex={0}
-      type="button"
+    <div
+      className="buttonText"
     >
       <div
-        className="staticBackground"
+        className="StreamGraph"
       >
-        <img
-          alt=""
-          src={Object {}}
+        <svg
+          height="100%"
+          preserveAspectRatio="none"
+          viewBox="0 0 450 350"
+          width="100%"
+        >
+          <g>
+            <g
+              className="StackGroup"
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <g
+                clipPath="url(#victory-clip-21)"
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <defs>
+                  <clipPath
+                    id="victory-clip-21"
+                  >
+                    <rect
+                      height={300}
+                      role="presentation"
+                      shapeRendering="auto"
+                      vectorEffect="non-scaling-stroke"
+                      width={450}
+                      x={0}
+                      y={0}
+                    />
+                  </clipPath>
+                </defs>
+                <path
+                  d="M0,300C21.42857142857143,298.3276143570108,42.85714285714286,296.6552287140216,64.28571428571428,291.91011235955057C85.7142857142857,287.16499600507956,107.14285714285711,279.34714893912667,128.57142857142856,284.4943820224719C150,289.6416151058171,171.42857142857144,307.75392833846047,192.85714285714283,279.7752808988764C214.28571428571422,251.7966334592924,235.7142857142856,177.72702534748092,257.1428571428571,198.87640449438203C278.5714285714286,220.02578364128314,300.0000000000001,336.3941500468969,321.42857142857144,300C342.8571428571428,263.6058499531031,364.2857142857142,74.4491834536956,385.71428571428567,0C407.1428571428571,-74.4491834536956,428.57142857142856,-34.19088386167926,450,6.067415730337075L450,300C428.57142857142856,300,407.14285714285717,300,385.71428571428567,300C364.28571428571416,300,342.85714285714283,300,321.42857142857144,300C300.00000000000006,300,278.57142857142856,300,257.1428571428571,300C235.7142857142857,300,214.28571428571428,300.00000000000006,192.85714285714283,300C171.4285714285714,299.99999999999994,150,300,128.57142857142856,300C107.14285714285711,300,85.7142857142857,300,64.28571428571428,300C42.85714285714286,300,21.42857142857143,300,0,300Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "rgb(221, 10, 10)",
+                      "stroke": "rgb(221, 10, 10)",
+                      "strokeWidth": 0,
+                      "width": 10,
+                    }
+                  }
+                />
+              </g>
+              <g
+                clipPath="url(#victory-clip-22)"
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <defs>
+                  <clipPath
+                    id="victory-clip-22"
+                  >
+                    <rect
+                      height={300}
+                      role="presentation"
+                      shapeRendering="auto"
+                      vectorEffect="non-scaling-stroke"
+                      width={450}
+                      x={0}
+                      y={0}
+                    />
+                  </clipPath>
+                </defs>
+                <path
+                  d="M0,292.5842696629214C21.42857142857143,288.3842380123437,42.85714285714286,284.1842063617661,64.28571428571428,276.40449438202245C85.7142857142857,268.6247824022788,107.14285714285711,257.2653900933692,128.57142857142856,261.5730337078652C150,265.8806773223612,171.42857142857144,285.85535686026265,192.85714285714283,252.13483146067415C214.28571428571422,218.41430606108563,235.7142857142856,130.9985757240069,257.1428571428571,146.96629213483146C278.5714285714286,162.934008545656,300.0000000000001,282.28517170438363,321.42857142857144,244.71910112359552C342.8571428571428,207.15303054280741,364.2857142857142,12.669726222503556,385.71428571428567,-66.74157303370788C407.1428571428571,-146.15287228991932,428.57142857142856,-110.49216648203831,450,-74.83146067415731L450,6.067415730337075C428.57142857142856,-34.19088386167926,407.14285714285717,-74.4491834536956,385.71428571428567,0C364.28571428571416,74.4491834536956,342.85714285714283,263.6058499531031,321.42857142857144,300C300.00000000000006,336.3941500468969,278.57142857142856,220.0257836412832,257.1428571428571,198.87640449438203C235.7142857142857,177.72702534748086,214.28571428571428,251.7966334592923,192.85714285714283,279.7752808988764C171.4285714285714,307.7539283384605,150,289.6416151058171,128.57142857142856,284.4943820224719C107.14285714285711,279.34714893912667,85.7142857142857,287.1649960050795,64.28571428571428,291.91011235955057C42.85714285714286,296.65522871402163,21.42857142857143,298.3276143570108,0,300Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "rgb(36, 91, 64)",
+                      "stroke": "rgb(36, 91, 64)",
+                      "strokeWidth": 0,
+                      "width": 10,
+                    }
+                  }
+                />
+              </g>
+              <g
+                clipPath="url(#victory-clip-23)"
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <defs>
+                  <clipPath
+                    id="victory-clip-23"
+                  >
+                    <rect
+                      height={300}
+                      role="presentation"
+                      shapeRendering="auto"
+                      vectorEffect="non-scaling-stroke"
+                      width={450}
+                      x={0}
+                      y={0}
+                    />
+                  </clipPath>
+                </defs>
+                <path
+                  d="M0,283.14606741573033C21.42857142857143,275.32837474283906,42.85714285714286,267.51068206994773,64.28571428571428,256.17977528089887C85.7142857142857,244.84886849185,107.14285714285711,230.0047475866435,128.57142857142856,230.56179775280899C150,231.11884791897447,171.42857142857144,247.07706915651207,192.85714285714283,208.31460674157302C214.28571428571422,169.55214432663396,235.7142857142856,76.06899825921822,257.1428571428571,91.01123595505618C278.5714285714286,105.95347365089414,300.0000000000001,229.32109510998578,321.42857142857144,180.6741573033708C342.8571428571428,132.02721949675583,364.2857142857142,-88.63427757556573,385.71428571428567,-161.12359550561797C407.1428571428571,-233.6129134356702,428.57142857142856,-157.93005222345306,450,-82.24719101123594L450,-74.83146067415731C428.57142857142856,-110.49216648203831,407.14285714285717,-146.15287228991932,385.71428571428567,-66.74157303370788C364.28571428571416,12.66972622250356,342.85714285714283,207.15303054280747,321.42857142857144,244.71910112359552C300.00000000000006,282.2851717043836,278.57142857142856,162.93400854565596,257.1428571428571,146.96629213483146C235.7142857142857,130.99857572400697,214.28571428571428,218.4143060610856,192.85714285714283,252.13483146067415C171.4285714285714,285.8553568602627,150,265.8806773223611,128.57142857142856,261.5730337078652C107.14285714285711,257.26539009336926,85.7142857142857,268.6247824022788,64.28571428571428,276.40449438202245C42.85714285714286,284.1842063617661,21.42857142857143,288.38423801234376,0,292.5842696629214Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "rgb(247, 193, 97)",
+                      "stroke": "rgb(247, 193, 97)",
+                      "strokeWidth": 0,
+                      "width": 10,
+                    }
+                  }
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <span
+        className="descriptionText"
+      >
+        <p>
+          Trends &
+        </p>
+        <p>
+          Definitions
+        </p>
+      </span>
+      <svg
+        className="trendArrow"
+        viewBox="0 0 427.5 427.5"
+        width={10}
+      >
+        <path
+          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
+          fill="#D1057A"
         />
-      </div>
-      <div
-        className="buttonText"
-      >
-        <span>
-          Go to Theme 
-          <br />
-          Trends
-          <br />
-        </span>
-      </div>
-    </button>
+      </svg>
+    </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Components|TrendButton Svg background placeholder 1`] = `
+exports[`Storyshots Components|TrendButton Instrument Bubble Button 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="trendButton"
+    className="TrendButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
   >
-    <button
-      focusable={true}
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      tabIndex={0}
-      type="button"
+    <div
+      className="buttonText"
     >
       <div
-        className="streamGraphBackground"
+        style={
+          Object {
+            "height": "50px",
+            "width": "120px",
+          }
+        }
       >
-        <div>
-          SVG Background
-        </div>
         <svg
-          viewBox="0 0 31.49 31.49"
-          x="0px"
-          y="0px"
+          className="BubbleChart"
+          height="100%"
+          viewBox="0 0 850 400"
+          width="100%"
         >
-          <path
-            d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111 C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587 c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"
-          />
+          <g
+            onMouseDown={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+          >
+            <g
+              className="InstrumentBubble"
+            >
+              <g
+                className="depth-2"
+                data-name="OIL"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={80.5}
+                  transform="translate(243.16912586 192.49143055)"
+                />
+                <path
+                  d="
+          M 162.66912586 191.49143055
+          A 80.5 80.5 0 0 1 323.66912586 191.49143055"
+                  id="OILpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#OILpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Oil
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="GAS"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={39}
+                  transform="translate(367.66912586 192.49143055)"
+                />
+                <path
+                  d="
+          M 328.66912586 191.49143055
+          A 39 39 0 0 1 406.66912586 191.49143055"
+                  id="GASpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#GASpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Gas
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="POWER"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={36}
+                  transform="translate(339.00245920 267.17892764)"
+                />
+                <path
+                  d="
+          M 303.00245920 266.17892764
+          A 36 36 0 0 1 375.00245920 266.17892764"
+                  id="POWERpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#POWERpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Power
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="ANY_COMMODITY_TYPES"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={89.5}
+                  transform="translate(506.50737759 200.00000000)"
+                />
+                <path
+                  d="
+          M 417.00737759 199.00000000
+          A 89.5 89.5 0 0 1 596.00737759 199.00000000"
+                  id="ANY_COMMODITY_TYPESpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#ANY_COMMODITY_TYPESpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Any Commodity Types
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="NOT_SPECIFIED"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={43.5}
+                  transform="translate(644.50737759 200.00000000)"
+                />
+                <path
+                  d="
+          M 601.00737759 199.00000000
+          A 43.5 43.5 0 0 1 688.00737759 199.00000000"
+                  id="NOT_SPECIFIEDpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#NOT_SPECIFIEDpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Not Specified
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="XO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={40}
+                  style={
+                    Object {
+                      "fill": "rgb(14, 43, 140)",
+                    }
+                  }
+                  transform="translate(207.66912586 192.49143055)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={207.66912586371723}
+                  y="192.49143055"
+                >
+                  XO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="OPSO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={33}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(285.66912586 192.49143055)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={285.6691258637172}
+                  y="192.49143055"
+                >
+                  OPSO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="OPLO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={20}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(252.18835663 239.85215364)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={252.188356632948}
+                  y="239.85215364"
+                >
+                  OPLO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="OPL"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={10}
+                  style={
+                    Object {
+                      "fill": "rgb(14, 43, 140)",
+                    }
+                  }
+                  transform="translate(367.66912586 192.49143055)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={379.6691258637172}
+                  y="192.49143055"
+                >
+                  OPL
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="EPE"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={7}
+                  style={
+                    Object {
+                      "fill": "rgb(39, 165, 249)",
+                    }
+                  }
+                  transform="translate(339.00245920 267.17892764)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={348.00245919705054}
+                  y="267.17892764"
+                >
+                  EPE
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="GPLO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={40}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(478.21632047 165.65082116)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={478.216320468198}
+                  y="165.65082116"
+                >
+                  GPLO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="EC"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={21}
+                  style={
+                    Object {
+                      "fill": "rgb(39, 165, 249)",
+                    }
+                  }
+                  transform="translate(544.21632047 165.65082116)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={544.216320468198}
+                  y="165.65082116"
+                >
+                  EC
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="GPSO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={10}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(533.52692653 232.80539552)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={545.5269265288041}
+                  y="232.80539552"
+                >
+                  GPSO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="AO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={15}
+                  style={
+                    Object {
+                      "fill": "rgb(212, 169, 42)",
+                    }
+                  }
+                  transform="translate(621.00737759 200.00000000)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={621.0073775911517}
+                  y="200.00000000"
+                >
+                  AO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="MO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={5}
+                  style={
+                    Object {
+                      "fill": "rgb(212, 169, 42)",
+                    }
+                  }
+                  transform="translate(662.00737759 200.00000000)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={669.0073775911517}
+                  y="200.00000000"
+                >
+                  MO
+                </text>
+              </g>
+            </g>
+          </g>
         </svg>
       </div>
-      <div
-        className="buttonText"
+      <span
+        className="descriptionText"
       >
-        <span>
-          Go to Instrument 
-          <br />
-          Trends
-          <br />
-        </span>
-      </div>
-    </button>
+        <p>
+          Trends &
+        </p>
+        <p>
+          Definitions
+        </p>
+      </span>
+      <svg
+        className="trendArrow"
+        viewBox="0 0 427.5 427.5"
+        width={10}
+      >
+        <path
+          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
+          fill="#D1057A"
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;

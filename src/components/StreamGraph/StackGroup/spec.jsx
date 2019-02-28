@@ -39,7 +39,7 @@ const stackProps = {
   height,
 };
 
-describe('Components|Streamgraph/StackGroup', () => {
+describe('Components|StreamGraph/StackGroup', () => {
   describe('events', () => {
     let wrapper;
     let stackGroup;

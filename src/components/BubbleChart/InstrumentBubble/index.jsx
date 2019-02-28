@@ -79,6 +79,7 @@ const InstrumentBubble = (props) => {
           key={node.data.name}
           onKeyDown={keyPress}
           data-name={node.data.name}
+          className={`depth-${node.depth}`}
           {...handleInteraction(onClick, node.data.name)}
         >
           {content}
