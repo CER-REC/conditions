@@ -11190,7 +11190,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={-2.0300000000000002}
+            dy={-1.7400000000000002}
             transform="rotate(-90,25,150)"
             x={25}
             y={150}
@@ -11201,7 +11201,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 Object {
                   "fill": "#252525",
                   "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                  "fontSize": 14,
+                  "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -11252,7 +11252,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={4.97}
+              dy={3.55}
               x={39}
               y={250}
             >
@@ -11262,7 +11262,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11313,7 +11313,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={4.97}
+              dy={3.55}
               x={39}
               y={50}
             >
@@ -11323,7 +11323,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11361,7 +11361,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={11.969999999999999}
+            dy={10.26}
             x={225}
             y={275}
           >
@@ -11371,7 +11371,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 Object {
                   "fill": "#252525",
                   "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                  "fontSize": 14,
+                  "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -11422,7 +11422,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={50}
               y={261}
             >
@@ -11432,7 +11432,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11483,7 +11483,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={100}
               y={261}
             >
@@ -11493,7 +11493,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11544,7 +11544,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={150}
               y={261}
             >
@@ -11554,7 +11554,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11605,7 +11605,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={200}
               y={261}
             >
@@ -11615,7 +11615,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11666,7 +11666,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={250}
               y={261}
             >
@@ -11676,7 +11676,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11727,7 +11727,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={300}
               y={261}
             >
@@ -11737,7 +11737,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11788,7 +11788,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={350}
               y={261}
             >
@@ -11798,7 +11798,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -11849,7 +11849,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={400}
               y={261}
             >
@@ -11859,7 +11859,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12241,7 +12241,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={-2.0300000000000002}
+            dy={-1.7400000000000002}
             transform="rotate(-90,25,150)"
             x={25}
             y={150}
@@ -12252,7 +12252,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 Object {
                   "fill": "#252525",
                   "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                  "fontSize": 14,
+                  "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -12303,7 +12303,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={4.97}
+              dy={3.55}
               x={39}
               y={250}
             >
@@ -12313,7 +12313,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12364,7 +12364,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={4.97}
+              dy={3.55}
               x={39}
               y={50}
             >
@@ -12374,7 +12374,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12412,7 +12412,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={11.969999999999999}
+            dy={10.26}
             x={225}
             y={275}
           >
@@ -12422,7 +12422,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 Object {
                   "fill": "#252525",
                   "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                  "fontSize": 14,
+                  "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -12473,7 +12473,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={50}
               y={261}
             >
@@ -12483,7 +12483,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12534,7 +12534,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={100}
               y={261}
             >
@@ -12544,7 +12544,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12595,7 +12595,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={150}
               y={261}
             >
@@ -12605,7 +12605,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12656,7 +12656,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={200}
               y={261}
             >
@@ -12666,7 +12666,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12717,7 +12717,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={250}
               y={261}
             >
@@ -12727,7 +12727,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12778,7 +12778,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={300}
               y={261}
             >
@@ -12788,7 +12788,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12839,7 +12839,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={350}
               y={261}
             >
@@ -12849,7 +12849,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
@@ -12900,7 +12900,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             <text
               direction="inherit"
               dx={0}
-              dy={11.969999999999999}
+              dy={8.55}
               x={400}
               y={261}
             >
@@ -12910,7 +12910,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                   Object {
                     "fill": "#252525",
                     "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
                     "stroke": "transparent",
