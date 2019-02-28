@@ -358,498 +358,14 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
 >
   <svg
     className="BubbleChart"
-    height={400}
-    width={850}
+    height="100%"
+    viewBox="0 0 850 400"
+    width="100%"
   >
     <g
       onMouseDown={[Function]}
       onMouseOver={[Function]}
       onMouseUp={[Function]}
-    >
-      <g
-        className="InstrumentBubble"
-      >
-        <g
-          data-name="OIL"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            className="CommodityCircle"
-            r={80.5}
-            transform="translate(243.16912586371723 192.49143054794433)"
-          />
-          <path
-            d="
-          M 162.66912586371723 191.49143054794433
-          A 80.5 80.5 0 0 1 323.6691258637172 191.49143054794433"
-            id="OILpath"
-            style={
-              Object {
-                "fill": "none",
-                "stroke": "transparent",
-              }
-            }
-          />
-          <text
-            className="bubbleTitle"
-          >
-            <textPath
-              href="#OILpath"
-              startOffset="50%"
-              textAnchor="middle"
-            >
-              Oil
-            </textPath>
-          </text>
-        </g>
-        <g
-          data-name="GAS"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            className="CommodityCircle"
-            r={39}
-            transform="translate(367.6691258637172 192.49143054794433)"
-          />
-          <path
-            d="
-          M 328.6691258637172 191.49143054794433
-          A 39 39 0 0 1 406.6691258637172 191.49143054794433"
-            id="GASpath"
-            style={
-              Object {
-                "fill": "none",
-                "stroke": "transparent",
-              }
-            }
-          />
-          <text
-            className="bubbleTitle"
-          >
-            <textPath
-              href="#GASpath"
-              startOffset="50%"
-              textAnchor="middle"
-            >
-              Gas
-            </textPath>
-          </text>
-        </g>
-        <g
-          data-name="POWER"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            className="CommodityCircle"
-            r={36}
-            transform="translate(339.00245919705054 267.17892764231897)"
-          />
-          <path
-            d="
-          M 303.00245919705054 266.17892764231897
-          A 36 36 0 0 1 375.00245919705054 266.17892764231897"
-            id="POWERpath"
-            style={
-              Object {
-                "fill": "none",
-                "stroke": "transparent",
-              }
-            }
-          />
-          <text
-            className="bubbleTitle"
-          >
-            <textPath
-              href="#POWERpath"
-              startOffset="50%"
-              textAnchor="middle"
-            >
-              Power
-            </textPath>
-          </text>
-        </g>
-        <g
-          data-name="ANY_COMMODITY_TYPES"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            className="CommodityCircle"
-            r={89.5}
-            transform="translate(506.5073775911517 200)"
-          />
-          <path
-            d="
-          M 417.0073775911517 199
-          A 89.5 89.5 0 0 1 596.0073775911517 199"
-            id="ANY_COMMODITY_TYPESpath"
-            style={
-              Object {
-                "fill": "none",
-                "stroke": "transparent",
-              }
-            }
-          />
-          <text
-            className="bubbleTitle"
-          >
-            <textPath
-              href="#ANY_COMMODITY_TYPESpath"
-              startOffset="50%"
-              textAnchor="middle"
-            >
-              Any Commodity Types
-            </textPath>
-          </text>
-        </g>
-        <g
-          data-name="NOT_SPECIFIED"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            className="CommodityCircle"
-            r={43.5}
-            transform="translate(644.5073775911517 200)"
-          />
-          <path
-            d="
-          M 601.0073775911517 199
-          A 43.5 43.5 0 0 1 688.0073775911517 199"
-            id="NOT_SPECIFIEDpath"
-            style={
-              Object {
-                "fill": "none",
-                "stroke": "transparent",
-              }
-            }
-          />
-          <text
-            className="bubbleTitle"
-          >
-            <textPath
-              href="#NOT_SPECIFIEDpath"
-              startOffset="50%"
-              textAnchor="middle"
-            >
-              Not Specified
-            </textPath>
-          </text>
-        </g>
-        <g
-          data-name="XO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={40}
-            style={
-              Object {
-                "fill": "rgb(14, 43, 140)",
-              }
-            }
-            transform="translate(207.66912586371723 192.49143054794433)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={207.66912586371723}
-            y={192.49143054794433}
-          >
-            XO
-          </text>
-        </g>
-        <g
-          data-name="OPSO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={33}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(285.6691258637172 192.49143054794433)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={285.6691258637172}
-            y={192.49143054794433}
-          >
-            OPSO
-          </text>
-        </g>
-        <g
-          data-name="OPLO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={20}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(252.188356632948 239.85215363908787)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={252.188356632948}
-            y={239.85215363908787}
-          >
-            OPLO
-          </text>
-        </g>
-        <g
-          data-name="OPL"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
-                "fill": "rgb(14, 43, 140)",
-              }
-            }
-            transform="translate(367.6691258637172 192.49143054794433)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={379.6691258637172}
-            y={192.49143054794433}
-          >
-            OPL
-          </text>
-        </g>
-        <g
-          data-name="EPE"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={7}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(339.00245919705054 267.17892764231897)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={348.00245919705054}
-            y={267.17892764231897}
-          >
-            EPE
-          </text>
-        </g>
-        <g
-          data-name="GPLO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={40}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(478.216320468198 165.65082116169629)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={478.216320468198}
-            y={165.65082116169629}
-          >
-            GPLO
-          </text>
-        </g>
-        <g
-          data-name="EC"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={21}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(544.216320468198 165.65082116169629)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={544.216320468198}
-            y={165.65082116169629}
-          >
-            EC
-          </text>
-        </g>
-        <g
-          data-name="GPSO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(533.5269265288041 232.80539551972828)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={545.5269265288041}
-            y={232.80539551972828}
-          >
-            GPSO
-          </text>
-        </g>
-        <g
-          data-name="AO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={15}
-            style={
-              Object {
-                "fill": "rgb(212, 169, 42)",
-              }
-            }
-            transform="translate(621.0073775911517 200)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={621.0073775911517}
-            y={200}
-          >
-            AO
-          </text>
-        </g>
-        <g
-          data-name="MO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={5}
-            style={
-              Object {
-                "fill": "rgb(212, 169, 42)",
-              }
-            }
-            transform="translate(662.0073775911517 200)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={669.0073775911517}
-            y={200}
-          >
-            MO
-          </text>
-        </g>
-      </g>
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="BubbleChart"
-  >
-    <svg
-      height={400}
-      width={850}
     >
       <g
         className="InstrumentBubble"
@@ -1147,6 +663,491 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             textAnchor=""
             x={379.6691258637172}
             y={192.49143054794436}
+          >
+            OPL
+          </text>
+        </g>
+        <g
+          data-name="EPE"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={7}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(339.00245919705054 267.17892764231897)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={348.00245919705054}
+            y={267.17892764231897}
+          >
+            EPE
+          </text>
+        </g>
+        <g
+          data-name="GPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(478.216320468198 165.65082116169629)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={478.216320468198}
+            y={165.65082116169629}
+          >
+            GPLO
+          </text>
+        </g>
+        <g
+          data-name="EC"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={21}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(544.216320468198 165.65082116169629)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={544.216320468198}
+            y={165.65082116169629}
+          >
+            EC
+          </text>
+        </g>
+        <g
+          data-name="GPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(533.5269265288041 232.80539551972828)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={545.5269265288041}
+            y={232.80539551972828}
+          >
+            GPSO
+          </text>
+        </g>
+        <g
+          data-name="AO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={15}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(621.0073775911517 200)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={621.0073775911517}
+            y={200}
+          >
+            AO
+          </text>
+        </g>
+        <g
+          data-name="MO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={5}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(662.0073775911517 200)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={669.0073775911517}
+            y={200}
+          >
+            MO
+          </text>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="BubbleChart"
+  >
+    <svg
+      height={400}
+      width={850}
+    >
+      <g
+        className="InstrumentBubble"
+      >
+        <g
+          data-name="OIL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={80.5}
+            transform="translate(243.16912586371723 192.49143054794433)"
+          />
+          <path
+            d="
+          M 162.66912586371723 191.49143054794433
+          A 80.5 80.5 0 0 1 323.6691258637172 191.49143054794433"
+            id="OILpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#OILpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Oil
+            </textPath>
+          </text>
+        </g>
+        <g
+          data-name="GAS"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={39}
+            transform="translate(367.6691258637172 192.49143054794433)"
+          />
+          <path
+            d="
+          M 328.6691258637172 191.49143054794433
+          A 39 39 0 0 1 406.6691258637172 191.49143054794433"
+            id="GASpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#GASpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Gas
+            </textPath>
+          </text>
+        </g>
+        <g
+          data-name="POWER"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={36}
+            transform="translate(339.00245919705054 267.17892764231897)"
+          />
+          <path
+            d="
+          M 303.00245919705054 266.17892764231897
+          A 36 36 0 0 1 375.00245919705054 266.17892764231897"
+            id="POWERpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#POWERpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Power
+            </textPath>
+          </text>
+        </g>
+        <g
+          data-name="ANY_COMMODITY_TYPES"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={89.5}
+            transform="translate(506.5073775911517 200)"
+          />
+          <path
+            d="
+          M 417.0073775911517 199
+          A 89.5 89.5 0 0 1 596.0073775911517 199"
+            id="ANY_COMMODITY_TYPESpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#ANY_COMMODITY_TYPESpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Any Commodity Types
+            </textPath>
+          </text>
+        </g>
+        <g
+          data-name="NOT_SPECIFIED"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={43.5}
+            transform="translate(644.5073775911517 200)"
+          />
+          <path
+            d="
+          M 601.0073775911517 199
+          A 43.5 43.5 0 0 1 688.0073775911517 199"
+            id="NOT_SPECIFIEDpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#NOT_SPECIFIEDpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Not Specified
+            </textPath>
+          </text>
+        </g>
+        <g
+          data-name="XO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(14, 43, 140)",
+              }
+            }
+            transform="translate(207.66912586371723 192.49143054794433)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={207.66912586371723}
+            y={192.49143054794433}
+          >
+            XO
+          </text>
+        </g>
+        <g
+          data-name="OPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={33}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(285.6691258637172 192.49143054794433)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={285.6691258637172}
+            y={192.49143054794433}
+          >
+            OPSO
+          </text>
+        </g>
+        <g
+          data-name="OPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={20}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(252.188356632948 239.85215363908787)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={252.188356632948}
+            y={239.85215363908787}
+          >
+            OPLO
+          </text>
+        </g>
+        <g
+          data-name="OPL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(14, 43, 140)",
+              }
+            }
+            transform="translate(367.6691258637172 192.49143054794433)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={379.6691258637172}
+            y={192.49143054794433}
           >
             OPL
           </text>

@@ -74,7 +74,7 @@ class BubbleChart extends React.PureComponent {
     }
 
     return (
-      <svg width={850} height={400} className="BubbleChart">
+      <svg width="100%" height="100%" viewBox="0 0 850 400" className="BubbleChart">
         {indicator}
         {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
         <g
