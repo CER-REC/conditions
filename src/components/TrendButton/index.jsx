@@ -20,6 +20,7 @@ const TrendButton = props => (
               setIndicator={noop}
               indicator=""
               data={props.instrumentData}
+              type=""
             />
           </div>
         )

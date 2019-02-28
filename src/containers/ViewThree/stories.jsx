@@ -27,6 +27,11 @@ const props = {
     },
     data: conditionDetailsData,
   },
+  chartIndicatorPosition: {
+    bubble: 'XO',
+    stream: 2010,
+  },
+  detailView: false,
 };
 
 const pendingActions = ['updateSelectedItem', 'openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
@@ -43,8 +48,11 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       }),
       expandDetailView: () => toggleTo => ({ detailView: toggleTo }),
       ...pendingActions,
+      setBubbleChartIndicator: ({ chartIndicatorPosition }) => bubble => (
+        { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
+      ),
     },
-    state: { selected: { feature: 'theme', subFeature: '' }, detailView: true },
+   state: { selected: { feature: 'theme', subFeature: '' }, chartIndicatorPosition: { bubble: 'XO', stream: 2010 } },
   }))
   .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);

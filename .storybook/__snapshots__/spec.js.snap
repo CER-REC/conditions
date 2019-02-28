@@ -856,6 +856,222 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|BubbleChart with OPENING type selected 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BubbleChart"
+    height="100%"
+    viewBox="0 0 850 400"
+    width="100%"
+  >
+    <g
+      onMouseDown={[Function]}
+      onMouseOver={[Function]}
+      onMouseUp={[Function]}
+    >
+      <g
+        className="InstrumentBubble"
+      >
+        <g
+          className="depth-2"
+          data-name="OIL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={60.5}
+            transform="translate(330.50000000 200.00000000)"
+          />
+          <path
+            d="
+          M 270.00000000 199.00000000
+          A 60.5 60.5 0 0 1 391.00000000 199.00000000"
+            id="OILpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#OILpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Oil
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="ANY_COMMODITY_TYPES"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={89.5}
+            transform="translate(490.50000000 200.00000000)"
+          />
+          <path
+            d="
+          M 401.00000000 199.00000000
+          A 89.5 89.5 0 0 1 580.00000000 199.00000000"
+            id="ANY_COMMODITY_TYPESpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#ANY_COMMODITY_TYPESpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Any Commodity Types
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={33}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(308.00000000 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={308}
+            y="200.00000000"
+          >
+            OPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={20}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(366.00000000 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={366}
+            y="200.00000000"
+          >
+            OPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(446.00000000 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={446}
+            y="200.00000000"
+          >
+            GPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(533.00000000 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={545}
+            y="200.00000000"
+          >
+            GPSO
+          </text>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
 exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
 <div
   className="visualization"

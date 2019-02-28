@@ -16,6 +16,7 @@ import './styles.scss';
 import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
+import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 
 const noop = () => {};
 
@@ -51,8 +52,9 @@ const ViewThree = props => (
           ? (
             <BubbleChart
               data={conditionCountsByCommodity.counts}
-              indicator=""
-              setIndicator={noop}
+              type={props.selected.subFeature}
+              indicator={props.chartIndicatorPosition.bubble}
+              setIndicator={props.setBubbleChartIndicator}
             />
           )
           : (
@@ -105,6 +107,11 @@ ViewThree.propTypes = {
   conditionCountsByYear: PropTypes.shape({
     counts: allConditionsPerYear.isRequired,
   }).isRequired,
+  chartIndicatorPosition: PropTypes.shape({
+    bubble: PropTypes.string.isRequired,
+    stream: PropTypes.number.isRequired,
+  }).isRequired,
+  setBubbleChartIndicator: PropTypes.func.isRequired,
   conditionCountsByCommodity: PropTypes.shape({
     counts: allConditionsByCommodityOrInstrument.isRequired,
   }).isRequired,
@@ -130,13 +137,15 @@ ViewThree.defaultProps = {
 export const ViewThreeRaw = ViewThree;
 
 export default connect(
-  ({ selected }) => ({
+  ({ selected, chartIndicatorPosition }) => ({
     selected,
+    chartIndicatorPosition,
     conditionCountsByYear,
     conditionCountsByCommodity,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
+    setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
   },
 )(ViewThree);
