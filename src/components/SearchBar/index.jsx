@@ -64,8 +64,9 @@ class SearchBar extends React.PureComponent {
           closeTab={() => (this.setState({ isActive: false }))}
           onClick={updateKeywords}
           categories={availableCategories}
-          selectedWords={(isExclude ? excludeKeywords : includeKeywords)}
           isExclude={isExclude}
+          includeKeywords={includeKeywords}
+          excludeKeywords={excludeKeywords}
         />
       ));
     const searchComponent = (mode !== 'find') ? null : (

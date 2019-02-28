@@ -12,7 +12,8 @@ library.add(faMinusCircle, faPlusCircle);
 
 class KeywordList extends React.PureComponent {
   static propTypes = {
-    selectedWords: PropTypes.arrayOf(PropTypes.string),
+    includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClick: PropTypes.func.isRequired,
     keywords: PropTypes.arrayOf((props, propName, componentName, location, propFullName) => {
       const value = props[propName];
@@ -34,16 +35,22 @@ class KeywordList extends React.PureComponent {
     isExclude: PropTypes.bool.isRequired,
   }
 
-  static defaultProps = {
-    selectedWords: [],
-  }
-
   keywordOnClick = (word) => {
-    const { selectedWords, isExclude } = this.props;
-    const updatedWords = (!selectedWords.includes(word))
-      ? selectedWords.concat(word)
-      : selectedWords.filter(v => v !== word);
-    return this.props.onClick([updatedWords, (isExclude ? 'exclude' : 'include')]);
+    const { isExclude, includeKeywords, excludeKeywords } = this.props;
+    if (isExclude) {
+      if (!excludeKeywords.includes(word) && !includeKeywords.includes(word)) {
+        return (this.props.onClick([excludeKeywords.concat(word)], 'exclude'));
+      }
+    } else if (!excludeKeywords.includes(word) && !includeKeywords.includes(word)) {
+      return (this.props.onClick([includeKeywords.concat(word), 'include']));
+    }
+    if (excludeKeywords.includes(word)) {
+      return (this.props.onClick([excludeKeywords.filter(v => v !== word), 'exclude']));
+    }
+    if (includeKeywords.includes(word)) {
+      return (this.props.onClick([includeKeywords.filter(v => v !== word), 'include']));
+    }
+    return null;
   };
 
   findMaxConditions = () => (
@@ -51,13 +58,13 @@ class KeywordList extends React.PureComponent {
   );
 
   render() {
-    const { selectedWords, keywords } = this.props;
+    const { keywords, includeKeywords, excludeKeywords } = this.props;
     return (
       <div className="KeywordList">
         <ul>
           {
-            keywords.map(([key, value]) => {
-              const [icon, iconClass, selectedColor, textStyle] = (selectedWords.includes(key))
+            (keywords).map(([key, value]) => {
+              const [icon, iconClass, selectedColor, textStyle] = (includeKeywords.includes(key) || excludeKeywords.includes(key))
                 ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
                 : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
               const maxConditions = this.findMaxConditions();

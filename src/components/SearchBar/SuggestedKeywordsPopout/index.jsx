@@ -8,7 +8,6 @@ import KeywordList from './KeywordList';
 
 class SuggestedKeywordsPopout extends React.PureComponent {
   static propTypes = {
-    selectedWords: PropTypes.arrayOf(PropTypes.string),
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClick: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
@@ -19,10 +18,9 @@ class SuggestedKeywordsPopout extends React.PureComponent {
       }).isRequired,
     ).isRequired,
     isExclude: PropTypes.bool.isRequired,
-  }
+    includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
 
-  static defaultProps = {
-    selectedWords: [],
   }
 
   constructor(props) {
@@ -151,10 +149,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           </span>
         </div>
         <KeywordList
-          selectedWords={this.props.selectedWords}
           keywords={keywords}
           onClick={this.props.onClick}
           isExclude={this.props.isExclude}
+          includeKeywords={this.props.includeKeywords}
+          excludeKeywords={this.props.excludeKeywords}
         />
         <FormattedMessage id="components.searchBar.close">
           {text => (
