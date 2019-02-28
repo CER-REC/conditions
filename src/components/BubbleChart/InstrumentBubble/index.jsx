@@ -16,7 +16,7 @@ const InstrumentBubble = (props) => {
       // Don't render the circle surrounding instrument or commodity
       if (node.depth <= 1) { return null; }
 
-      const circleTransform = `translate(${node.x} ${node.y})`;
+      const circleTransform = `translate(${node.x.toFixed(8)} ${node.y.toFixed(8)})`;
       const textOutside = node.r > node.value;
 
       let content = (
@@ -28,7 +28,7 @@ const InstrumentBubble = (props) => {
           />
           <text
             x={textOutside ? (node.x + (node.value + 2)) : node.x}
-            y={node.y}
+            y={node.y.toFixed(8)}
             textAnchor={textOutside ? '' : 'middle'}
             alignmentBaseline="middle"
             stroke="transparent"
@@ -43,8 +43,8 @@ const InstrumentBubble = (props) => {
       if (node.depth === 2) {
         // Create curved path for parentNode text
         const textCurvedPath = `
-          M ${(node.x - node.r)} ${(node.y - 1)}
-          A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
+          M ${(node.x - node.r).toFixed(8)} ${(node.y - 1).toFixed(8)}
+          A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r).toFixed(8)} ${(node.y - 1).toFixed(8)}`;
         content = (
           <React.Fragment>
             <circle
