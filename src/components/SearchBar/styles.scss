@@ -2,10 +2,14 @@
 @import "../../styles/colors.scss";
 
 .SearchBar {
-  position: relative;
-  width: 925px;
+  position: absolute;
+  width: 425px;
   text-align: left;
   color: $VeryDarkGray;
+
+  background-color: white;
+  z-index: 999;
+
   .SelectionTab {
     margin-left: auto;
     margin-right: auto;

@@ -2,6 +2,8 @@
 @import "../../../styles/colors.scss";
 
 .SuggestedKeywordsPopout {
+  position: absolute;
+
   width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -9,6 +11,10 @@
   border: 1px solid $LightGray;
   padding: 10px;
   font-family: $fira-sans-condensed;
+
+  // z-index: 1001;
+  background-color: white;
+
   .upperCase {
     text-transform: uppercase;
   }
