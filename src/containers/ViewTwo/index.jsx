@@ -9,6 +9,7 @@ import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import ConditonDetails from '../../components/ConditionDetails';
 import { browseByType } from '../../proptypes';
+import Dropdown from '../../components/Dropdown';
 import * as selectedCreators from '../../actions/selected';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
@@ -48,6 +49,8 @@ const projectData = [
   },
 ];
 
+const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
+
 const defaultProps = {
   data,
   selectedProject: 'Keystone XL',
@@ -83,6 +86,11 @@ const ViewTwo = props => (
         />
       </section>
       <section className="menus">
+        <Dropdown
+          options={features}
+          onChange={() => {}}
+          optionID="common.features"
+        />
         <FeaturesLegend
           legendItems={legendItems}
           selectedFeature="theme"
