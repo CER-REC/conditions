@@ -6,12 +6,12 @@ is showing
 
 ## Requirements
 
-* [X] Renders the ChartIndicator when the Streamgraph is selected
-* [X] Handles clicking on the Streamgraph
-* [X] Handles dragging on the Streamgraph
-* [X] Handles the use of arrow keys on the Streamgraph
-* [X] Handles focusing on the Streamgraph
-* [X] Gets the appropriate year and Conditions count when an event is taken on the Streamgraph
+* [X] Renders the ChartIndicator when the StreamGraph is selected
+* [X] Handles clicking on the StreamGraph
+* [X] Handles dragging on the StreamGraph
+* [X] Handles the use of arrow keys on the StreamGraph
+* [X] Handles focusing on the StreamGraph
+* [X] Gets the appropriate year and Conditions count when an event is taken on the StreamGraph
 
 ## Accessibility Requirements
 

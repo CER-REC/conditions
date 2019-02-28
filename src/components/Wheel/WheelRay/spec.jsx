@@ -18,7 +18,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
         degreesPerItem,
         rotation,
         selectRay: '',
-        wheelType: 'Company',
+        wheelType: 'company',
         currentIndex: 0,
       }, propOverrides);
 

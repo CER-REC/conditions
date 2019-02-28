@@ -9,6 +9,40 @@ export const conditionsPerYear = PropTypes.shape({
   years: PropTypes.objectOf(PropTypes.number).isRequired,
 });
 
+export const featureData = PropTypes.shape({
+  instrument: PropTypes.objectOf(PropTypes.number).isRequired,
+  theme: PropTypes.objectOf(PropTypes.number).isRequired,
+  phase: PropTypes.objectOf(PropTypes.number).isRequired,
+  status: PropTypes.objectOf(PropTypes.number).isRequired,
+  type: PropTypes.objectOf(PropTypes.number).isRequired,
+  filing: PropTypes.objectOf(PropTypes.number).isRequired,
+});
+
+export const company = PropTypes.shape({
+  primary: PropTypes.string.isRequired,
+  secondary: PropTypes.arrayOf(PropTypes.string).isRequired,
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+});
+
+export const location = PropTypes.shape({
+  primary: PropTypes.string.isRequired,
+  secondary: PropTypes.arrayOf(PropTypes.string).isRequired,
+  data: featureData.isRequired,
+});
+
+export const project = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  name: PropTypes.shape({
+    en: PropTypes.string.isRequired,
+    fr: PropTypes.string.isRequired,
+  }).isRequired,
+  shortName: PropTypes.shape({
+    en: PropTypes.string.isRequired,
+    fr: PropTypes.string.isRequired,
+  }).isRequired,
+  data: featureData.isRequired,
+});
+
 export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);
 
 export const ConditionsByCommodityOrInstrument = PropTypes.shape({
@@ -20,6 +54,16 @@ export const ConditionsByCommodityOrInstrument = PropTypes.shape({
 
 export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
   ConditionsByCommodityOrInstrument,
+);
+
+export const browseByType = PropTypes.oneOf(['company', 'location']);
+
+export const allCompanyData = PropTypes.arrayOf(
+  company,
+);
+
+export const allLocationData = PropTypes.arrayOf(
+  location,
 );
 
 export const yearRangeType = PropTypes.shape({
@@ -39,7 +83,7 @@ export const suggestedKeywordsObject = PropTypes.objectOf(
 // ["emissions", { conditions: 400, category: ['category2', 'category3]}]]
 
 export const suggestedKeywordsArrayType = PropTypes
-  .arrayOf((props, propName, componentName, location, propFullName) => {
+  .arrayOf((props, propName, componentName, _, propFullName) => {
     const value = props[propName];
     if (!Array.isArray(value) || value.length !== 2) {
       return new Error(

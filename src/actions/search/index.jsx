@@ -6,27 +6,27 @@ export const Types = {
   PROJECT_YEAR: 'projectYear',
 };
 
-export const included = includedKey => ({
+export const setIncluded = includedKey => ({
   type: Types.INCLUDED,
   payload: { includedKey },
 });
 
-export const excluded = excludedKey => ({
+export const setExcluded = excludedKey => ({
   type: Types.EXCLUDED,
   payload: { excludedKey },
 });
 
-export const findAny = findAnyKey => ({
+export const setFindAny = findAnyKey => ({
   type: Types.FIND_ANY,
   payload: { findAnyKey },
 });
 
-export const projectStatus = status => ({
+export const setProjectStatus = status => ({
   type: Types.PROJECT_STATUS,
   payload: { status },
 });
 
-export const projectYear = yearRange => ({
+export const setProjectYear = yearRange => ({
   type: Types.PROJECT_YEAR,
   payload: { yearRange },
 });

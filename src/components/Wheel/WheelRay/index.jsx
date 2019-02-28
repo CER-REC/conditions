@@ -4,10 +4,11 @@ import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import BarContainer from '../../BarContainer';
+import { browseByType } from '../../../proptypes';
 
 class WheelRay extends React.Component {
   static propTypes = {
-    wheelType: PropTypes.oneOf(['Company', 'Location']).isRequired,
+    wheelType: browseByType.isRequired,
     degreesPerItem: PropTypes.number.isRequired,
     reservedDegrees: PropTypes.number.isRequired,
     rotation: PropTypes.number.isRequired,
@@ -20,9 +21,9 @@ class WheelRay extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const oldIndex = this.props.currentIndex;
-    const newIndex = nextProps.currentIndex;
-    return oldIndex !== newIndex;
+    if (this.props.currentIndex !== nextProps.currentIndex) { return true; }
+    if (this.props.wheelType !== nextProps.wheelType) { return true; }
+    return false;
   }
 
   render() {
@@ -52,7 +53,7 @@ class WheelRay extends React.Component {
 
       // TODO: split logic below to location ray and company ray?
 
-      const componentToReturn = wheelType === 'Company'
+      const componentToReturn = wheelType === 'company'
         ? (
           <g key={item._id} transform={transform}>
             <text className="TextLabels">

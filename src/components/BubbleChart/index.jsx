@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import InstrumentBubble from './InstrumentBubble/index';
 import ChartIndicator from '../ChartIndicator';
 import d3HierarchyCalculation from './d3HierarchyCalculation';
+import { allConditionsByCommodityOrInstrument } from '../../proptypes';
 
 class BubbleChart extends React.PureComponent {
   static propTypes = {
     indicator: PropTypes.string.isRequired,
     setIndicator: PropTypes.func.isRequired,
-    data: PropTypes.instanceOf(Object).isRequired,
     type: PropTypes.string.isRequired,
+    data: allConditionsByCommodityOrInstrument.isRequired,
   };
 
   constructor(props) {

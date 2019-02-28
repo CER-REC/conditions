@@ -1,11 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
-import { locationWheelData } from '../../components/Wheel/randomDataSample';
+import BrowseByBtn from '../../components/BrowseByBtn';
+import { companyWheelData } from '../../components/Wheel/randomDataSample';
+import ConditionDetails from '../../components/ConditionDetails';
+import TrendButton from '../../components/TrendButton';
+import { browseByType, featureTypes } from '../../proptypes';
+import SearchBar from '../../components/SearchBar';
+import FeaturesMenu from '../../components/FeaturesMenu';
+import * as browseByCreators from '../../actions/browseBy';
+import * as selectedCreators from '../../actions/selected';
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import './styles.scss';
+import data from '../../components/ConditionDetails/testData';
+
+const noop = () => {};
 
 const legendItems = [
   { feature: 'theme', description: 'SECURITY', disabled: false },
@@ -42,44 +55,119 @@ const projectData = [
   },
 ];
 
+// SearchBar
+const availableYearRange = { start: 1970, end: 1980 };
+const sampleSuggestedKeywords = {
+  safety: { conditions: 1200, category: ['administration & filings'] },
+  emissions: { conditions: 1000, category: ['environment'] },
+  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
+  construction: { conditions: 1000, category: ['environment'] },
+};
+const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
+const defaultProps = {
+  data,
+  selectedProject: 'Keystone XL',
+  searchKeywords: {
+    include: ['hello'],
+  },
+  // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
+  openProjectDetails: project => alert(`Project details for: ${project}`),
+  openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
+};
+
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
     <section className="row">
-      <section className="searchHeader" />
+      <section className="searchHeader">
+        <SearchBar
+          suggestedKeywords={sampleSuggestedKeywords}
+          availableYearRange={availableYearRange}
+          availableCategories={availableCategories}
+          updateKeywords={noop}
+          findAnyOnChange={noop}
+          updateYear={noop}
+          changeProjectStatus={noop}
+          includeKeywords={['safety']}
+          excludeKeywords={[]}
+          projectStatus={['OPEN', 'CANCELLED']}
+          yearRange={availableYearRange}
+          findAny
+        />
+      </section>
     </section>
     <section className="row">
       <section className="wheel">
         <Wheel
-          ringType="Location"
-          itemsData={locationWheelData}
+          wheelType={props.browseBy}
+          itemsData={companyWheelData}
+          selectRay={noop}
         />
+        <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
+        <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
           projectData={projectData}
           selectedProjectID={1225}
-          onChange={() => {}}
+          onChange={noop}
           selectedFeature="theme"
         />
       </section>
       <section className="menus">
+        <TrendButton
+          onClick={noop}
+          feature="theme"
+          subFeature=""
+          projectData={conditionCountsByYear.counts}
+          instrumentData={conditionCountsByCommodity.counts}
+        />
+        <FeaturesMenu
+          dropDown
+          selected={props.selected.feature}
+          onChange={props.setSelectedFeature}
+        />
         <FeaturesLegend
           legendItems={legendItems}
           selectedFeature="theme"
           isProjectLegend
         />
       </section>
-      <section className="conditions" />
+      <section className="conditions">
+        <ConditionDetails
+          {...defaultProps}
+          toggleExpanded={noop}
+          updateSelectedItem={noop}
+        />
+      </section>
     </section>
   </section>
 );
 
 ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
+  browseBy: browseByType.isRequired,
+  selected: PropTypes.shape({
+    feature: featureTypes.isRequired,
+  }).isRequired,
+  setBrowseBy: PropTypes.func.isRequired,
+  setSelectedFeature: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
   layoutOnly: false,
 };
 
-export default ViewTwo;
+export const ViewTwoUnconnected = ViewTwo;
+
+export default connect(
+  ({ selected, browseBy }) => ({
+    selected,
+    browseBy,
+  }),
+  {
+    setSelectedFeature: selectedCreators.setSelectedFeature,
+    setSelectedCompany: selectedCreators.setSelectedCompany,
+    setBrowseBy: browseByCreators.setBrowseBy,
+  },
+)(ViewTwo);
+
