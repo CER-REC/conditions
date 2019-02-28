@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import StreamGraph from '../StreamGraph';
-import { allConditionsPerYear, featureTypes } from '../../proptypes';
+import { allConditionsPerYear, featureTypes, allConditionsByCommodityOrInstrument } from '../../proptypes';
 import BubbleChart from '../BubbleChart';
 
 import './styles.scss';
@@ -57,5 +57,5 @@ TrendButton.propTypes = {
   projectData: allConditionsPerYear.isRequired,
   feature: featureTypes.isRequired,
   subFeature: PropTypes.string.isRequired,
-  instrumentData: PropTypes.instanceOf(Object).isRequired,
+  instrumentData: allConditionsByCommodityOrInstrument.isRequired,
 };
