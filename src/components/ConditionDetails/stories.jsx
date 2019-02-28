@@ -45,7 +45,7 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
     },
   })
   .add('expandable', () => (
-    <div style={{ width: 400, border: '1px dashed magenta' }}>
+    <div style={{ width: 800, border: '1px dashed magenta' }}>
       <ConditionDetails
         {...defaultProps}
         isExpandable
