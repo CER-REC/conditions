@@ -49,9 +49,9 @@ const ViewThree = props => (
         {props.selected.feature === 'instrument'
           ? (
             <BubbleChart
-              selectedCategory=""
-              instrumentChartData1={{}}
-              instrumentChartData2={{}}
+              data={conditionCountsByCommodity.counts}
+              indicator=""
+              setIndicator={noop}
             />
           )
           : (
