@@ -22,13 +22,16 @@ const noop = () => {};
 
 const ViewThree = props => (
   <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
-    <section className="row">
+    <section className="row firstRow">
       <section className="features">
         <FeaturesMenu
           selected={props.selected.feature}
           onChange={props.setSelectedFeature}
         />
       </section>
+      {/* Putting this here to avoid breaking our CSS grid's
+        * first-child or last-child behaviors */}
+      <div className="borderContainer" />
       <section className="legend">
         {props.selected.feature === 'instrument'
           ? (
@@ -66,25 +69,23 @@ const ViewThree = props => (
           )}
       </section>
     </section>
-    <section className="row">
+    <section className="row secondRow">
       <section className="featureDescription">
         <FeatureDescription feature={props.selected.feature} />
       </section>
+      {/* Putting this here to avoid breaking our CSS grid's
+        * first-child or last-child behaviors */}
+      <div className="borderContainer" />
       <section className="typesDescription">
         <FeatureTypesDescription feature={props.selected.feature} />
       </section>
     </section>
-    <section className="row">
+    <section className="row thirdRow">
       <section className="selectedCompany">
-        <SelectedGroupBar
-          group="components.companyWheel.wheelRay.title"
-          groupItem="groupItem"
-          groupSize={16}
-          groupItemSize={16}
-          backgroundColor="lightgrey"
-        >
-          Company Name
-        </SelectedGroupBar>
+        {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
+        <div className="selectedCompanyHeader">
+          <h1>Selected Company:</h1> <h2>Company Name</h2>
+        </div>
         <BrowseByButton mode="company" onClick={noop} />
       </section>
       <section className="conditionDetails">

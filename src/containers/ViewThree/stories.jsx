@@ -20,7 +20,7 @@ const props = {
     searchKeywords: {
       include: ['hello'],
     },
-    selectedProject: 'Keystone XL',
+    selectedProject: 'Project Name',
     selectedItem: {
       instrumentIndex: 0,
       itemIndex: 0,

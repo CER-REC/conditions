@@ -1,11 +1,10 @@
 @import '../../styles/colors.scss';
 
 .FeatureTypesDescription {
-  height: 200px;
-  width: 400px;
+  height: 100%;
+  width: 100%;
   text-align: left;
-  background-color: white;
-  overflow: auto;
+  overflow-y: auto;
 
   h4 {
     color: $Gray160;
