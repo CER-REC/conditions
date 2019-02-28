@@ -1483,13 +1483,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="popout left"
-    >
-      <div
-        className="filler"
-      />
-    </div>
-    <div
       className="main"
     >
       <div
@@ -2000,20 +1993,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="popout right expanded"
-    >
-      <div
-        className="Details"
-      >
-        <div
-          className="filler"
-        />
-        <div
-          className="content"
-        />
-      </div>
-    </div>
   </section>
 </div>
 `;
@@ -2026,7 +2005,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
     style={
       Object {
         "border": "1px dashed magenta",
-        "width": 400,
+        "width": 800,
       }
     }
   >
