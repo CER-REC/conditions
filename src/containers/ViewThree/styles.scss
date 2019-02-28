@@ -13,19 +13,65 @@
     conditionDetails: 77,
   ));
 
-
   /**
+   *  TODO: Go over all of this and fix it up
+   *
    *  Styling for the preview release. None of the code below should be
-   *  considered final or correct.
+   *  considered final or correct, and I apologize for all of it.
    */
-  .firstRow {
 
-    height: 320px;
+  .row {
     overflow: hidden;
   }
 
+  .firstRow {
+    height: 40vh;
+    min-height: 350px;
+
+    .borderContainer {
+      position: absolute;
+
+      width: 100%;
+      height: 40vh;
+      min-height: 350px;
+
+      border-left: 1px solid $DarkGray;
+      border-right: 1px solid $DarkGray;
+      border-top: 1px solid $DarkGray;
+
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 42px);
+
+      z-index: -1;
+    }
+
+    .features {
+      margin-top: 10px;
+    }
+    .legend {
+      margin-top: 42px;
+    }
+    .chart {
+      margin-top: 10px;
+    }
+  }
+
   .secondRow {
-    height: 200px;
+    height: 35vh;
+    min-height: 200px;
+
+    .borderContainer {
+      position: absolute;
+
+      width: 100%;
+      height: 35vh;
+      min-height: 200px;
+
+      border-left: 1px solid $DarkGray;
+      border-right: 1px solid $DarkGray;
+      border-bottom: 1px solid $DarkGray;
+
+      z-index: -1;
+    }
 
     .typesDescription {
       height: 100%;
@@ -33,8 +79,12 @@
   }
 
   .thirdRow {
-    height: 250px;
+    height: 35vh;
+    min-height: 200px;
 
+    padding-top: 10px;
+
+    // TODO: Rework the SelectedGroupBar component instead of doing this here
     .selectedCompanyHeader {
 
       height: 24px;
