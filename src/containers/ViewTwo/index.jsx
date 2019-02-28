@@ -7,9 +7,11 @@ import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
+import ConditonDetails from '../../components/ConditionDetails';
 import { browseByType } from '../../proptypes';
 import * as selectedCreators from '../../actions/selected';
 import './styles.scss';
+import data from '../../components/ConditionDetails/testData';
 
 const legendItems = [
   { feature: 'theme', description: 'SECURITY', disabled: false },
@@ -46,6 +48,17 @@ const projectData = [
   },
 ];
 
+const defaultProps = {
+  data,
+  selectedProject: 'Keystone XL',
+  searchKeywords: {
+    include: ['hello'],
+  },
+  // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
+  openProjectDetails: project => alert(`Project details for: ${project}`),
+  openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
+};
+
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
     <section className="row">
@@ -76,7 +89,9 @@ const ViewTwo = props => (
           isProjectLegend
         />
       </section>
-      <section className="conditions" />
+      <section className="conditions">
+        <ConditonDetails {...defaultProps} />
+      </section>
     </section>
   </section>
 );
