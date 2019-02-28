@@ -26,14 +26,14 @@
 
   .firstRow {
     height: 40vh;
-    min-height: 350px;
+    min-height: 400px;
 
     .borderContainer {
       position: absolute;
 
-      width: 100%;
+      width: calc(100% - 54px);
       height: 40vh;
-      min-height: 350px;
+      min-height: 400px;
 
       border-left: 1px solid $DarkGray;
       border-right: 1px solid $DarkGray;
@@ -46,6 +46,10 @@
 
     .features {
       margin-top: 10px;
+
+      .FeaturesMenu {
+        padding-left: 19.5px;
+      }
     }
     .legend {
       margin-top: 42px;
@@ -62,7 +66,7 @@
     .borderContainer {
       position: absolute;
 
-      width: 100%;
+      width: calc(100% - 54px);
       height: 35vh;
       min-height: 200px;
 

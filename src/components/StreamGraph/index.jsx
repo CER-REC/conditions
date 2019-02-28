@@ -82,6 +82,15 @@ class StreamGraph extends React.Component {
 
     const maxConditionValue = Math.max(...conditionDates);
 
+    const axisStyles = {
+      tickLabels: {
+        fontSize: '10px',
+      },
+      axisLabel: {
+        fontSize: '12px',
+      },
+    };
+
     return (
       <VictoryChart>
         <VictoryAxis
@@ -89,12 +98,14 @@ class StreamGraph extends React.Component {
           label="Number of Conditions"
           tickValues={[minConditionValue, maxConditionValue]}
           className="axis-label"
+          style={axisStyles}
         />
         <VictoryAxis
           label="Effective Date"
           tickFormat={roundDateLabel}
-          className="Axis-label"
+          className="axis-label"
           domain={[minDateValue, maxDateValue]}
+          style={axisStyles}
         />
         <StackGroupProps
           groupProps={{
