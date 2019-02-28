@@ -3,7 +3,6 @@
 
 .KeywordList {
   height: 300px;
-  width: max-content;
   padding-top: 5px;
   overflow-y: scroll;
   ul {
@@ -48,8 +47,7 @@
         text-overflow: ellipsis;
       }
       .BarContainer {
-        margin-left: 15px;
-        margin-right: 10px;
+        width: calc(100% - 85px - 130px);
         vertical-align: super;
       }
 

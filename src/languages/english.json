@@ -197,7 +197,8 @@
       },
       "highlightSummary": {
         "showingAll": "Showing all projects from",
-        "highlightConditions": "Highlighting conditions containing"
+        "includes": "Highlighting conditions containing",
+        "excludes": "Exclude conditions containing"
       },
       "findWords": {
         "findWords": "Find Words",

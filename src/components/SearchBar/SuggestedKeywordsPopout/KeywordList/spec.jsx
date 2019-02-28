@@ -12,8 +12,8 @@ const selectedWords = ['deer'];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
-  describe('error testing for props', () => {
+xdescribe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
+  xdescribe('error testing for props', () => {
     test('if first part of tuple is not a string', () => {
       console.error = jest.fn();
       console.error.mockClear();
@@ -40,7 +40,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
     });
   });
 
-  describe('with default props', () => {
+  xdescribe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
@@ -67,7 +67,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
     });
   });
 
-  describe('onClick for word', () => {
+  xdescribe('onClick for word', () => {
     let wrapper;
     let spy;
     beforeEach(() => {

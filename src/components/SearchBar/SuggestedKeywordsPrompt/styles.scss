@@ -2,14 +2,17 @@
 @import "../../../styles/colors.scss";
 
 .SuggestedKeywordsPrompt {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   border: 1px solid $LinksTextButtons;
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 25px;
+  padding-top: 15px;
+  text-align: center;
   font-family: $fira-sans-condensed;
+  font-size: 9px;
+  background-color: $White;
   position: relative;
   .selectFrom {
     color: $Black77;
@@ -19,13 +22,44 @@
   }
   .arrow {
     position: absolute;
-    top: 88px;
-    left: 40px;
+    top: 61px;
+    left: 27px;
     border-radius: 50%;
+    width:auto;
+    height: 20%;
     background-color: $LinksTextButtons;
   }
   p {
     margin: 0px;
     padding: 0px;
+  }
+
+  circle {
+    fill:$LinksTextButtons;
+    stroke-width: 30px;
+  }
+  polygon {
+    fill: $White;
+  }
+
+  &.isActive {
+    border: 0px;
+    background: transparent;
+    .arrow {
+      transform: scale(-1, 1);
+      color: $LinksTextButtons;
+      fill: $White;
+    }
+    p {
+      opacity: 0;
+    }
+
+    circle {
+      fill: $White;
+      stroke: $LinksTextButtons;
+    }
+    polygon {
+      fill: $LinksTextButtons;
+    }
   }
 }
