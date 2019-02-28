@@ -73,15 +73,10 @@ const ViewThree = props => (
     </section>
     <section className="row thirdRow">
       <section className="selectedCompany">
-        <SelectedGroupBar
-          group="components.companyWheel.wheelRay.title"
-          groupItem="groupItem"
-          groupSize={16}
-          groupItemSize={16}
-          backgroundColor="lightgrey"
-        >
-          Company Name
-        </SelectedGroupBar>
+        {/* TODO: Placeholder for the preview release */}
+        <div className="selectedCompanyHeader">
+          <h1>Selected Company:</h1> <h2>Company Name</h2>
+        </div>
         <BrowseByButton mode="company" onClick={noop} />
       </section>
       <section className="conditionDetails">

@@ -1,5 +1,6 @@
 @import '../../styles/grid';
 @import '../../styles/colors';
+@import '../../styles/fontVariables';
 
 .ViewThree {
   @include grid((
@@ -33,6 +34,44 @@
 
   .thirdRow {
     height: 250px;
+
+    .selectedCompanyHeader {
+
+      height: 24px;
+
+      background-color: $LightGray;
+
+      display: inline-block;
+      width: 100%;
+
+      padding-left: 10px;
+      padding-right: 10px;
+
+      text-align:left;
+      line-height: 24px;
+
+      h1, h2 {
+        margin: 0;
+      }
+
+      h1 {
+        display: inline;
+
+        font-family: $fira-sans-condensed;
+        font-size: 14px;
+      }
+
+      h2 {
+        display: inline;
+
+        font-family: $fira-sans-condensed-bold;
+        font-size: 14px;
+        text-decoration: underline;
+
+        color: $Black51;
+      }
+
+    }
 
     .conditionDetails {
 
