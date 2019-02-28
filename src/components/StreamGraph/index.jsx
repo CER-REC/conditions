@@ -4,7 +4,9 @@ import {
   VictoryAxis,
   VictoryArea,
   VictoryChart,
+  VictoryGroup,
 } from 'victory';
+import { linear } from 'd3-scale';
 import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
@@ -65,31 +67,6 @@ class StreamGraph extends React.Component {
         .filter(featureData => featureData.subFeature === this.props.subFeature);
     }
 
-    if (this.props.streamOnly) {
-      return (
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 450 350"
-          preserveAspectRatio="none"
-        >
-          <StackGroupProps
-            standalone={false}
-            width="450"
-            height="350"
-            padding={0}
-            groupProps={{
-              onChange: noop,
-              controlYear: '',
-              projectData: filteredData,
-            }}
-          >
-            {this.streamLayers()}
-          </StackGroupProps>
-        </svg>
-      );
-    }
-
     const numOfConditions = filteredData.map(k => Object.values(k.years));
     const numOfConditionsConcat = [].concat(...numOfConditions);
 
@@ -111,6 +88,32 @@ class StreamGraph extends React.Component {
     conditionDates = Object.values(conditionDates);
 
     const maxConditionValue = Math.max(...conditionDates);
+
+    if (this.props.streamOnly) {
+      return (
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 450 350"
+          preserveAspectRatio="none"
+        >
+          <VictoryGroup
+            standalone={false}
+            padding={0}
+          >
+            <StackGroupProps
+              groupProps={{
+                onChange: noop,
+                controlYear: null,
+                projectData: filteredData,
+              }}
+            >
+              {this.streamLayers()}
+            </StackGroupProps>
+          </VictoryGroup>
+        </svg>
+      );
+    }
 
     return (
       <VictoryChart>
