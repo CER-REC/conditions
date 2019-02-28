@@ -77,6 +77,11 @@
       z-index: -1;
     }
 
+    .feature-description {
+      padding-left: 19.5px;
+      padding-right: 19.5px;
+    }
+
     .typesDescription {
       height: 100%;
     }
@@ -88,46 +93,75 @@
 
     padding-top: 10px;
 
-    // TODO: Rework the SelectedGroupBar component instead of doing this here
-    .selectedCompanyHeader {
+    .selectedCompany {
+      position: relative;
 
-      height: 24px;
+      height: 100%;
 
-      background-color: $LightGray;
+      // Have the grey bar spill over to meet up against ConditionDetails
+      overflow: visible;
+      &:after {
+        position: absolute;
 
-      display: inline-block;
-      width: 100%;
-
-      padding-left: 10px;
-      padding-right: 10px;
-
-      text-align:left;
-      line-height: 24px;
-
-      h1, h2 {
-        margin: 0;
+        top: 0;
+        right: -10px;
+        display: inline-block;
+        content: "";
+        background-color: $LightGray;
+        height: 24px;
+        width: 10px;
       }
 
-      h1 {
-        display: inline;
+      // TODO: Rework the SelectedGroupBar component instead of doing this here
+      .selectedCompanyHeader {
 
-        font-family: $fira-sans-condensed;
-        font-size: 14px;
+        height: 24px;
+
+        background-color: $LightGray;
+
+        display: inline-block;
+        width: 100%;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+        text-align:left;
+        line-height: 24px;
+
+        h1, h2 {
+          margin: 0;
+        }
+
+        h1 {
+          display: inline;
+
+          font-family: $fira-sans-condensed;
+          font-size: 14px;
+        }
+
+        h2 {
+          display: inline;
+
+          font-family: $fira-sans-condensed-bold;
+          font-size: 14px;
+          text-decoration: underline;
+
+          color: $Black51;
+        }
+
       }
 
-      h2 {
-        display: inline;
+      .BrowseByBtn {
+        position: absolute;
 
-        font-family: $fira-sans-condensed-bold;
-        font-size: 14px;
-        text-decoration: underline;
-
-        color: $Black51;
+        left: 16px;
+        bottom: 24px;
       }
 
     }
-
     .conditionDetails {
+
+      height: 200px;
 
       border: 1px dashed $LinksTextButtons;
       text-align: center;
