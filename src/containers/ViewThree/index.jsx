@@ -100,7 +100,7 @@ ViewThree.propTypes = {
   }).isRequired,
   chartIndicatorPosition: PropTypes.shape({
     bubble: PropTypes.string.isRequired,
-    stream: PropTypes.number.isRequired,    
+    stream: PropTypes.number.isRequired,
   }).isRequired,
   setBubbleChartIndicator: PropTypes.func.isRequired,
   conditionCountsByCommodity: PropTypes.shape({

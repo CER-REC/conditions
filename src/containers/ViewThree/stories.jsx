@@ -15,7 +15,7 @@ const props = {
   chartIndicatorPosition: {
     bubble: 'XO',
     stream: 2010,
-  }
+  },
 };
 
 storiesForView('Containers|ViewThree', module, ReadMe)
@@ -25,11 +25,11 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
-      setSelectedIndicator: ({ selected }) => indicator => (
-        { selected: { ...selected, indicator } }
+      setBubbleChartIndicator: ({ chartIndicatorPosition }) => bubble => (
+        { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
       ),
     },
-    state: { selected: { feature: 'theme', subFeature: '', indicator: '' } },
+    state: { selected: { feature: 'theme', subFeature: '' }, chartIndicatorPosition: { bubble: 'XO', stream: 2010 } },
   }))
   .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);
