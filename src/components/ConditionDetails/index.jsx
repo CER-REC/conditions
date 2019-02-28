@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import './styles.scss';
 
@@ -92,13 +93,16 @@ class ConditionDetails extends React.Component {
     const index = this.props.selectedItem.itemIndex;
 
     return (
-      <section className={`ConditionDetails ${(this.props.expanded) ? 'expanded' : ''}`}>
+      <section className="ConditionDetails">
+        <div className={classNames('popout', 'left', { expanded: !this.props.expanded })}>
+          <div className="filler" />
+        </div>
         <div className="main">
           {this.renderHeader()}
           <div className="listPane">{this.renderList()}</div>
           <div className="contentPane">{this.renderContent(instrument, index)}</div>
         </div>
-        <div className="popout">
+        <div className={classNames('popout', 'right', { expanded: this.props.expanded })}>
           {this.renderDetails(instrument, index)}
         </div>
       </section>
