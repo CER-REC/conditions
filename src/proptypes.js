@@ -9,10 +9,31 @@ export const conditionsPerYear = PropTypes.shape({
   years: PropTypes.objectOf(PropTypes.number).isRequired,
 });
 
-export const companyData = PropTypes.shape({
-  companyID: PropTypes.string.isRequired,
-  companyName: PropTypes.string.isRequired,
-  projects: PropTypes.arrayOf(PropTypes.string).isRequired,
+export const featureData = PropTypes.shape({
+  instrument: PropTypes.objectOf(PropTypes.number).isRequired,
+  theme: PropTypes.objectOf(PropTypes.number).isRequired,
+  phase: PropTypes.objectOf(PropTypes.number).isRequired,
+  status: PropTypes.objectOf(PropTypes.number).isRequired,
+  type: PropTypes.objectOf(PropTypes.number).isRequired,
+  filing: PropTypes.objectOf(PropTypes.number).isRequired,
+});
+
+export const company = PropTypes.shape({
+  primary: PropTypes.string.isRequired,
+  secondary: PropTypes.arrayOf(PropTypes.string).isRequired,
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+});
+
+export const location = PropTypes.shape({
+  primary: PropTypes.string.isRequired,
+  secondary: PropTypes.arrayOf(PropTypes.string).isRequired,
+  data: featureData.isRequired,
+});
+
+export const project = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  data: featureData.isRequired,
 });
 
 export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);
@@ -31,5 +52,9 @@ export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
 export const browseByType = PropTypes.oneOf(['company', 'location']);
 
 export const allCompanyData = PropTypes.arrayOf(
-  companyData,
+  company,
+);
+
+export const allLocationData = PropTypes.arrayOf(
+  location,
 );
