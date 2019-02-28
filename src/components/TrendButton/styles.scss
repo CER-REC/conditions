@@ -16,7 +16,7 @@
   .StreamGraph {
     // The aspect ratio isn't the same, so we need to increase the height slightly
     height: 120%;
-
+    pointer-events: none;
     path {
       stroke: white !important;
       stroke-width: 5px !important;
