@@ -4360,22 +4360,6 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         </span>
       </div>
     </div>
-    <div
-      className="AssociatedComp"
-    >
-      <h3
-        className="Asterisk"
-      >
-        *
-      </h3>
-      <div
-        className="AssociatedDesc"
-      >
-        <span>
-          Associated Companies
-        </span>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -4581,21 +4565,21 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           Total Number of Conditions for Project
         </span>
       </div>
-    </div>
-    <div
-      className="AssociatedComp"
-    >
-      <h3
-        className="Asterisk"
-      >
-        *
-      </h3>
       <div
-        className="AssociatedDesc"
+        className="AssociatedComp"
       >
-        <span>
-          Associated Companies
-        </span>
+        <h3
+          className="Asterisk"
+        >
+          *
+        </h3>
+        <div
+          className="AssociatedDesc"
+        >
+          <span>
+            Associated Companies
+          </span>
+        </div>
       </div>
     </div>
   </div>
