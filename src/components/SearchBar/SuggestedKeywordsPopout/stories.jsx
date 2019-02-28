@@ -14,20 +14,20 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['onClick', 'closeTab'] }))
   .add('with interaction', () => (
-    <div>
-      <SuggestedKeywordsPopout
-        {...getInteractionProps()}
-      />
-    </div>
+    <SuggestedKeywordsPopout
+      isExclude={false}
+      suggestedKeywords={keywords}
+      categories={['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings']}
+      excludeKeywords={[]}
+      {...getInteractionProps()}
+    />
   ), {
     interaction: {
       state: {
-        categories: ['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings'],
-        selectedWords: ['deer'],
-        suggestedKeywords: keywords,
+        includeKeywords: ['deer'],
       },
       actions: {
-        onClick: () => updatedList => ({ selectedWords: updatedList }),
+        onClick: () => updatedList => ({ includeKeywords: updatedList }),
       },
     },
   });

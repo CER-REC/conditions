@@ -11,6 +11,7 @@ import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
+import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
 import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
@@ -52,9 +53,9 @@ const ViewThree = props => (
         {props.selected.feature === 'instrument'
           ? (
             <BubbleChart
-              selectedCategory=""
-              instrumentChartData1={{}}
-              instrumentChartData2={{}}
+              data={conditionCountsByCommodity.counts}
+              indicator=""
+              setIndicator={noop}
             />
           )
           : (
@@ -86,7 +87,15 @@ const ViewThree = props => (
         <BrowseByButton mode="company" onClick={noop} />
       </section>
       <section className="conditionDetails">
-        <span>6</span>
+        <ConditionDetails
+          // TODO: This is just a quick hack to get the component into the view
+          {...props.conditionDetails}
+          expanded={props.detailView}
+          updateSelectedItem={props.updateSelectedItem}
+          openIntermediatePopup={props.openIntermediatePopup}
+          toggleExpanded={props.expandDetailView}
+          openProjectDetails={props.openProjectDetails}
+        />
       </section>
     </section>
   </section>
@@ -106,6 +115,13 @@ ViewThree.propTypes = {
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
+
+  conditionDetails: PropTypes.object.isRequired,
+  detailView: PropTypes.bool.isRequired,
+  updateSelectedItem: PropTypes.func.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  expandDetailView: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {

@@ -10,39 +10,58 @@ import { features } from '../../../constants';
 */
 
 const InstrumentBubble = (props) => {
-  const {
-    onClick, d3Calculation, keyPress,
-  } = props;
-  const circles = d3Calculation.filter(v => (v.depth !== 0))
+  const { onClick, d3Calculation, keyPress } = props;
+  const circles = d3Calculation
     .map((node) => {
-    // Renders commodity circles (ie Energy bubbles)
-      if (node.depth === 1) {
-      // Create curved path for parentNode text
+      // Don't render the circle surrounding instrument or commodity
+      if (node.depth <= 1) { return null; }
+
+      const circleTransform = `translate(${node.x.toFixed(8)} ${node.y.toFixed(8)})`;
+      const textOutside = node.r > node.value;
+
+      let content = (
+        <React.Fragment>
+          <circle
+            style={{ fill: features.instrument[node.data.category] || 'white' }}
+            r={node.value}
+            transform={circleTransform}
+          />
+          <text
+            x={textOutside ? (node.x + (node.value + 2)) : node.x}
+            y={node.y.toFixed(8)}
+            textAnchor={textOutside ? '' : 'middle'}
+            alignmentBaseline="middle"
+            stroke="transparent"
+            fill={textOutside ? 'black' : 'white'}
+          >
+            {node.data.name}
+          </text>
+        </React.Fragment>
+      );
+
+      // Renders commodity circles (ie Energy bubbles)
+      if (node.depth === 2) {
+        // Create curved path for parentNode text
         const textCurvedPath = `
-      M ${(node.x - node.r)} ${(node.y - 1)}
-      A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r)} ${(node.y - 1)}`;
-        return (
-          <g key={node.data.parentName}>
+          M ${(node.x - node.r).toFixed(8)} ${(node.y - 1).toFixed(8)}
+          A ${node.r} ${node.r} 0 0 1 ${(node.x + node.r).toFixed(8)} ${(node.y - 1).toFixed(8)}`;
+        content = (
+          <React.Fragment>
+            <circle
+              className="CommodityCircle"
+              r={node.r}
+              transform={circleTransform}
+            />
             <path
-              id={`${node.data.parentName}path`}
+              id={`${node.data.name}path`}
               d={textCurvedPath}
               style={{ fill: 'none', stroke: 'transparent' }}
             />
-            <circle
-              onKeyDown={keyPress}
-              className="CommodityCircle"
-              {...handleInteraction(
-                onClick, node,
-              )}
-              transform={`translate(${node.x} ${node.y})`}
-              r={node.r}
-              value={node.value}
-            />
             <text className="bubbleTitle">
-              <FormattedMessage id={`common.instrumentCommodityType.${node.data.parentName}`}>
+              <FormattedMessage id={`common.instrumentCommodityType.${node.data.name}`}>
                 {text => (
                   <textPath
-                    href={`#${node.data.parentName}path`}
+                    href={`#${node.data.name}path`}
                     textAnchor="middle"
                     startOffset="50%"
                   >
@@ -51,34 +70,19 @@ const InstrumentBubble = (props) => {
                 )}
               </FormattedMessage>
             </text>
-          </g>
+          </React.Fragment>
         );
       }
-      // Determines text position and color
-      // Depends upon text length relative to circle size
-      const textX = node.r > node.value ? (node.x + (node.value + 2)) : node.x;
-      const textStyle = node.r > node.value ? '' : 'middle';
-      const textColor = node.r > node.value ? 'black' : 'white';
+
       return (
         <g
           key={node.data.name}
           onKeyDown={keyPress}
-          {...handleInteraction(onClick, node)}
+          data-name={node.data.name}
+          className={`depth-${node.depth}`}
+          {...handleInteraction(onClick, node.data.name)}
         >
-          <circle
-            r={node.value}
-            transform={`translate(${node.x} ${node.y})`}
-            style={{ fill: features.instrument[node.data.category] || 'white' }}
-          />
-          <text
-            x={textX}
-            y={node.y}
-            textAnchor={textStyle}
-            alignmentBaseline="middle"
-            stroke="transparent"
-            fill={textColor}
-          >{node.data.name}
-          </text>
+          {content}
         </g>
       );
     });

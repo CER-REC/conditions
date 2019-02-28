@@ -356,718 +356,39 @@ exports[`Storyshots Components|BubbleChart default 1`] = `
 <div
   className="visualization"
 >
-  <div
+  <svg
     className="BubbleChart"
+    height="100%"
+    viewBox="0 0 850 400"
+    width="100%"
   >
-    <svg
-      height={400}
-      width={850}
-    >
-      <g
-        onMouseDown={[Function]}
-        onMouseMove={[Function]}
-        onMouseUp={[Function]}
-      >
-        <g
-          className="InstrumentBubble"
-        >
-          <g>
-            <path
-              d="
-      M 25.35830248449136 199
-      A 133.80929318883346 133.80929318883346 0 0 1 292.97688886215826 199"
-              id="OILpath"
-              style={
-                Object {
-                  "fill": "none",
-                  "stroke": "transparent",
-                }
-              }
-            />
-            <circle
-              className="CommodityCircle"
-              focusable={true}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyPress={[Function]}
-              r={133.80929318883346}
-              tabIndex={0}
-              transform="translate(159.16759567332483 200)"
-              value={130}
-            />
-            <text
-              className="bubbleTitle"
-            >
-              <textPath
-                href="#OILpath"
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                Oil
-              </textPath>
-            </text>
-          </g>
-          <g>
-            <path
-              d="
-      M 292.97688886215826 199
-      A 115.83240432667517 115.83240432667517 0 0 1 524.6416975155087 199"
-              id="GASpath"
-              style={
-                Object {
-                  "fill": "none",
-                  "stroke": "transparent",
-                }
-              }
-            />
-            <circle
-              className="CommodityCircle"
-              focusable={true}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyPress={[Function]}
-              r={115.83240432667517}
-              tabIndex={0}
-              transform="translate(408.80929318883346 200)"
-              value={115}
-            />
-            <text
-              className="bubbleTitle"
-            >
-              <textPath
-                href="#GASpath"
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                Gas
-              </textPath>
-            </text>
-          </g>
-          <g>
-            <path
-              d="
-      M 248.8974000566052 317.49489687560805
-      A 47.5 47.5 0 0 1 343.8974000566052 317.49489687560805"
-              id="POWERpath"
-              style={
-                Object {
-                  "fill": "none",
-                  "stroke": "transparent",
-                }
-              }
-            />
-            <circle
-              className="CommodityCircle"
-              focusable={true}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyPress={[Function]}
-              r={47.5}
-              tabIndex={0}
-              transform="translate(296.3974000566052 318.49489687560805)"
-              value={25}
-            />
-            <text
-              className="bubbleTitle"
-            >
-              <textPath
-                href="#POWERpath"
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                Power
-              </textPath>
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={40}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(79.36630443973255 197.52612788988029)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={79.36630443973255}
-              y={197.52612788988029}
-            >
-              XO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={40}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(164.36630443973255 197.52612788988029)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={164.36630443973255}
-              y={197.52612788988029}
-            >
-              OC
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={30}
-              style={
-                Object {
-                  "fill": "rgb(201, 4, 194)",
-                }
-              }
-              transform="translate(121.86630443973255 259.32216336142164)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={121.86630443973255}
-              y={259.32216336142164}
-            >
-              SO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(22, 78, 248)",
-                }
-              }
-              transform="translate(121.86630443973255 121.61334899198985)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={133.86630443973255}
-              y={121.61334899198985}
-            >
-              OPLO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(22, 78, 248)",
-                }
-              }
-              transform="translate(196.4688869069171 278.3866510080102)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={208.4688869069171}
-              y={278.3866510080102}
-            >
-              OPSO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={40}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(399.23352592252104 215.456396143957)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={399.23352592252104}
-              y={215.456396143957}
-            >
-              XG
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={30}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(474.23352592252104 215.456396143957)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={474.23352592252104}
-              y={215.456396143957}
-            >
-              GC
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={20}
-              style={
-                Object {
-                  "fill": "rgb(201, 4, 194)",
-                }
-              }
-              transform="translate(444.73352592252104 261.8756809294855)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={444.73352592252104}
-              y={261.8756809294855}
-            >
-              SG
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(22, 78, 248)",
-                }
-              }
-              transform="translate(447.6668592558544 143.1846020454138)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={459.6668592558544}
-              y={143.1846020454138}
-            >
-              GPSO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(195, 230, 179)",
-                }
-              }
-              transform="translate(400.635769549734 285.4423498261777)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={412.635769549734}
-              y={285.4423498261777}
-            >
-              TG
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={5}
-              style={
-                Object {
-                  "fill": "rgb(22, 78, 248)",
-                }
-              }
-              transform="translate(363.68249874836295 141.56374111747775)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={370.68249874836295}
-              y={141.56374111747775}
-            >
-              GPLO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={15}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(268.8974000566052 318.49489687560805)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={268.8974000566052}
-              y={318.49489687560805}
-            >
-              EPE
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(313.8974000566052 318.49489687560805)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={325.8974000566052}
-              y={318.49489687560805}
-            >
-              EC
-            </text>
-          </g>
-        </g>
-        <g
-          className="InstrumentBubble"
-        >
-          <g>
-            <path
-              d="
-      M 555 199
-      A 87.5 87.5 0 0 1 730 199"
-              id="ANY_COMMODITY_TYPESpath"
-              style={
-                Object {
-                  "fill": "none",
-                  "stroke": "transparent",
-                }
-              }
-            />
-            <circle
-              className="CommodityCircle"
-              focusable={true}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyPress={[Function]}
-              r={87.5}
-              tabIndex={0}
-              transform="translate(642.5 200)"
-              value={100}
-            />
-            <text
-              className="bubbleTitle"
-            >
-              <textPath
-                href="#ANY_COMMODITY_TYPESpath"
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                Any Commodity Types
-              </textPath>
-            </text>
-          </g>
-          <g>
-            <path
-              d="
-      M 730 199
-      A 57.5 57.5 0 0 1 845 199"
-              id="NOT_SPECIFIEDpath"
-              style={
-                Object {
-                  "fill": "none",
-                  "stroke": "transparent",
-                }
-              }
-            />
-            <circle
-              className="CommodityCircle"
-              focusable={true}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyPress={[Function]}
-              r={57.5}
-              tabIndex={0}
-              transform="translate(787.5 200)"
-              value={20}
-            />
-            <text
-              className="bubbleTitle"
-            >
-              <textPath
-                href="#NOT_SPECIFIEDpath"
-                startOffset="50%"
-                textAnchor="middle"
-              >
-                Not Specified
-              </textPath>
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={40}
-              style={
-                Object {
-                  "fill": "rgb(212, 169, 42)",
-                }
-              }
-              transform="translate(600 200)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={600}
-              y={200}
-            >
-              MO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={40}
-              style={
-                Object {
-                  "fill": "rgb(212, 169, 42)",
-                }
-              }
-              transform="translate(685 200)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={685}
-              y={200}
-            >
-              AO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={20}
-              style={
-                Object {
-                  "fill": "rgb(14, 43, 140)",
-                }
-              }
-              transform="translate(642.5 249.180788932265)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="white"
-              stroke="transparent"
-              textAnchor="middle"
-              x={642.5}
-              y={249.180788932265}
-            >
-              ZO
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(39, 165, 249)",
-                }
-              }
-              transform="translate(760 200)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={772}
-              y={200}
-            >
-              XC
-            </text>
-          </g>
-          <g
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <circle
-              r={10}
-              style={
-                Object {
-                  "fill": "rgb(212, 169, 42)",
-                }
-              }
-              transform="translate(815 200)"
-            />
-            <text
-              alignmentBaseline="middle"
-              fill="black"
-              stroke="transparent"
-              textAnchor=""
-              x={827}
-              y={200}
-            >
-              CO
-            </text>
-          </g>
-        </g>
-      </g>
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="BubbleChart"
-  >
-    <svg
-      height={400}
-      width={300}
+    <g
+      onMouseDown={[Function]}
+      onMouseOver={[Function]}
+      onMouseUp={[Function]}
     >
       <g
         className="InstrumentBubble"
       >
-        <g>
+        <g
+          className="depth-2"
+          data-name="OIL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={80.5}
+            transform="translate(243.16912586 192.49143055)"
+          />
           <path
             d="
-      M 5 199
-      A 87.5 87.5 0 0 1 180 199"
-            id="ANY_COMMODITY_TYPESpath"
+          M 162.66912586 191.49143055
+          A 80.5 80.5 0 0 1 323.66912586 191.49143055"
+            id="OILpath"
             style={
               Object {
                 "fill": "none",
@@ -1075,16 +396,119 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
               }
             }
           />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#OILpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Oil
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="GAS"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
           <circle
             className="CommodityCircle"
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            r={87.5}
-            tabIndex={0}
-            transform="translate(92.5 200)"
-            value={100}
+            r={39}
+            transform="translate(367.66912586 192.49143055)"
+          />
+          <path
+            d="
+          M 328.66912586 191.49143055
+          A 39 39 0 0 1 406.66912586 191.49143055"
+            id="GASpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#GASpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Gas
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="POWER"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={36}
+            transform="translate(339.00245920 267.17892764)"
+          />
+          <path
+            d="
+          M 303.00245920 266.17892764
+          A 36 36 0 0 1 375.00245920 266.17892764"
+            id="POWERpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#POWERpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Power
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="ANY_COMMODITY_TYPES"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={89.5}
+            transform="translate(506.50737759 200.00000000)"
+          />
+          <path
+            d="
+          M 417.00737759 199.00000000
+          A 89.5 89.5 0 0 1 596.00737759 199.00000000"
+            id="ANY_COMMODITY_TYPESpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
           />
           <text
             className="bubbleTitle"
@@ -1098,11 +522,24 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             </textPath>
           </text>
         </g>
-        <g>
+        <g
+          className="depth-2"
+          data-name="NOT_SPECIFIED"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={43.5}
+            transform="translate(644.50737759 200.00000000)"
+          />
           <path
             d="
-      M 180 199
-      A 57.5 57.5 0 0 1 295 199"
+          M 601.00737759 199.00000000
+          A 43.5 43.5 0 0 1 688.00737759 199.00000000"
             id="NOT_SPECIFIEDpath"
             style={
               Object {
@@ -1110,17 +547,6 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
                 "stroke": "transparent",
               }
             }
-          />
-          <circle
-            className="CommodityCircle"
-            focusable={true}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            r={57.5}
-            tabIndex={0}
-            transform="translate(237.5 200)"
-            value={20}
           />
           <text
             className="bubbleTitle"
@@ -1135,6 +561,8 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
+          data-name="XO"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1145,23 +573,25 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={40}
             style={
               Object {
-                "fill": "rgb(212, 169, 42)",
+                "fill": "rgb(14, 43, 140)",
               }
             }
-            transform="translate(50 200)"
+            transform="translate(207.66912586 192.49143055)"
           />
           <text
             alignmentBaseline="middle"
             fill="white"
             stroke="transparent"
             textAnchor="middle"
-            x={50}
-            y={200}
+            x={207.66912586371723}
+            y="192.49143055"
           >
-            MO
+            XO
           </text>
         </g>
         <g
+          className="depth-3"
+          data-name="OPSO"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1169,26 +599,28 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
           tabIndex={0}
         >
           <circle
-            r={40}
+            r={33}
             style={
               Object {
-                "fill": "rgb(212, 169, 42)",
+                "fill": "rgb(22, 78, 248)",
               }
             }
-            transform="translate(135 200)"
+            transform="translate(285.66912586 192.49143055)"
           />
           <text
             alignmentBaseline="middle"
             fill="white"
             stroke="transparent"
             textAnchor="middle"
-            x={135}
-            y={200}
+            x={285.6691258637172}
+            y="192.49143055"
           >
-            AO
+            OPSO
           </text>
         </g>
         <g
+          className="depth-3"
+          data-name="OPLO"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1199,23 +631,25 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={20}
             style={
               Object {
-                "fill": "rgb(14, 43, 140)",
+                "fill": "rgb(22, 78, 248)",
               }
             }
-            transform="translate(92.5 249.180788932265)"
+            transform="translate(252.18835663 239.85215364)"
           />
           <text
             alignmentBaseline="middle"
             fill="white"
             stroke="transparent"
             textAnchor="middle"
-            x={92.5}
-            y={249.180788932265}
+            x={252.188356632948}
+            y="239.85215364"
           >
-            ZO
+            OPLO
           </text>
         </g>
         <g
+          className="depth-3"
+          data-name="OPL"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1224,25 +658,114 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
         >
           <circle
             r={10}
+            style={
+              Object {
+                "fill": "rgb(14, 43, 140)",
+              }
+            }
+            transform="translate(367.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={379.6691258637172}
+            y="192.49143055"
+          >
+            OPL
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EPE"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={7}
             style={
               Object {
                 "fill": "rgb(39, 165, 249)",
               }
             }
-            transform="translate(210 200)"
+            transform="translate(339.00245920 267.17892764)"
           />
           <text
             alignmentBaseline="middle"
             fill="black"
             stroke="transparent"
             textAnchor=""
-            x={222}
-            y={200}
+            x={348.00245919705054}
+            y="267.17892764"
           >
-            XC
+            EPE
           </text>
         </g>
         <g
+          className="depth-3"
+          data-name="GPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(478.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={478.216320468198}
+            y="165.65082116"
+          >
+            GPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EC"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={21}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(544.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={544.216320468198}
+            y="165.65082116"
+          >
+            EC
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPSO"
           focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1253,20 +776,578 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
             r={10}
             style={
               Object {
-                "fill": "rgb(212, 169, 42)",
+                "fill": "rgb(22, 78, 248)",
               }
             }
-            transform="translate(265 200)"
+            transform="translate(533.52692653 232.80539552)"
           />
           <text
             alignmentBaseline="middle"
             fill="black"
             stroke="transparent"
             textAnchor=""
-            x={277}
-            y={200}
+            x={545.5269265288041}
+            y="232.80539552"
           >
-            CO
+            GPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="AO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={15}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(621.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={621.0073775911517}
+            y="200.00000000"
+          >
+            AO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="MO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={5}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(662.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={669.0073775911517}
+            y="200.00000000"
+          >
+            MO
+          </text>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="BubbleChart"
+  >
+    <svg
+      height={400}
+      width={850}
+    >
+      <g
+        className="InstrumentBubble"
+      >
+        <g
+          className="depth-2"
+          data-name="OIL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={80.5}
+            transform="translate(243.16912586 192.49143055)"
+          />
+          <path
+            d="
+          M 162.66912586 191.49143055
+          A 80.5 80.5 0 0 1 323.66912586 191.49143055"
+            id="OILpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#OILpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Oil
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="GAS"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={39}
+            transform="translate(367.66912586 192.49143055)"
+          />
+          <path
+            d="
+          M 328.66912586 191.49143055
+          A 39 39 0 0 1 406.66912586 191.49143055"
+            id="GASpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#GASpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Gas
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="POWER"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={36}
+            transform="translate(339.00245920 267.17892764)"
+          />
+          <path
+            d="
+          M 303.00245920 266.17892764
+          A 36 36 0 0 1 375.00245920 266.17892764"
+            id="POWERpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#POWERpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Power
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="ANY_COMMODITY_TYPES"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={89.5}
+            transform="translate(506.50737759 200.00000000)"
+          />
+          <path
+            d="
+          M 417.00737759 199.00000000
+          A 89.5 89.5 0 0 1 596.00737759 199.00000000"
+            id="ANY_COMMODITY_TYPESpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#ANY_COMMODITY_TYPESpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Any Commodity Types
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-2"
+          data-name="NOT_SPECIFIED"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            className="CommodityCircle"
+            r={43.5}
+            transform="translate(644.50737759 200.00000000)"
+          />
+          <path
+            d="
+          M 601.00737759 199.00000000
+          A 43.5 43.5 0 0 1 688.00737759 199.00000000"
+            id="NOT_SPECIFIEDpath"
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "transparent",
+              }
+            }
+          />
+          <text
+            className="bubbleTitle"
+          >
+            <textPath
+              href="#NOT_SPECIFIEDpath"
+              startOffset="50%"
+              textAnchor="middle"
+            >
+              Not Specified
+            </textPath>
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="XO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(14, 43, 140)",
+              }
+            }
+            transform="translate(207.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={207.66912586371723}
+            y="192.49143055"
+          >
+            XO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={33}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(285.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={285.6691258637172}
+            y="192.49143055"
+          >
+            OPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={20}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(252.18835663 239.85215364)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={252.188356632948}
+            y="239.85215364"
+          >
+            OPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(14, 43, 140)",
+              }
+            }
+            transform="translate(367.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={379.6691258637172}
+            y="192.49143055"
+          >
+            OPL
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EPE"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={7}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(339.00245920 267.17892764)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={348.00245919705054}
+            y="267.17892764"
+          >
+            EPE
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(478.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={478.216320468198}
+            y="165.65082116"
+          >
+            GPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EC"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={21}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(544.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={544.216320468198}
+            y="165.65082116"
+          >
+            EC
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(533.52692653 232.80539552)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={545.5269265288041}
+            y="232.80539552"
+          >
+            GPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="AO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={15}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(621.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={621.0073775911517}
+            y="200.00000000"
+          >
+            AO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="MO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={5}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(662.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={669.0073775911517}
+            y="200.00000000"
+          >
+            MO
           </text>
         </g>
       </g>
@@ -1480,7 +1561,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
   className="visualization"
 >
   <section
-    className="ConditionDetails expanded"
+    className="ConditionDetails"
   >
     <div
       className="main"
@@ -1991,20 +2072,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             Quisque eu lobortis velit, quis viverra elit.
           </p>
         </div>
-      </div>
-    </div>
-    <div
-      className="popout"
-    >
-      <div
-        className="Details"
-      >
-        <div
-          className="filler"
-        />
-        <div
-          className="content"
-        />
       </div>
     </div>
   </section>
@@ -2015,557 +2082,573 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
 <div
   className="visualization"
 >
-  <section
-    className="ConditionDetails expanded"
+  <div
+    style={
+      Object {
+        "border": "1px dashed magenta",
+        "width": 800,
+      }
+    }
   >
-    <div
-      className="main"
+    <section
+      className="ConditionDetails"
     >
       <div
-        className="ProjectHeader"
-      >
-        <h1>
-          Selected Project: 
-        </h1>
-        <button
-          className="openProject"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <h2>
-            Keystone XL
-            <span
-              className="asterisk"
-            >
-              *
-            </span>
-          </h2>
-        </button>
-        <button
-          className="toggleExpand"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <h1
-            className="upperCase"
-          >
-            Less
-          </h1>
-          <svg
-            className="arrow"
-            viewBox="0 0 16 24"
-          >
-            <polyline
-              points="4,4 12,12.5 4,20 4,4"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="listPane"
-      >
-        <div
-          className="ConditionList"
-        >
-          <div
-            className="List"
-            onWheel={[Function]}
-          >
-            <ul>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="unmarked"
-                    />
-                    <h4>
-                      XO-001-2018
-                    </h4>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="barMarker marked"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-3"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        className="Bar"
-                        fill="pink"
-                        height="100%"
-                        width="50%"
-                        x="0%"
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="green"
-                        height="100%"
-                        width="50%"
-                        x="50%"
-                        y={0}
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-2"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        className="Bar"
-                        fill="blue"
-                        height="100%"
-                        width="50%"
-                        x="0%"
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="50%"
-                        x="50%"
-                        y={0}
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item selected"
-              >
-                <div
-                  className="CircleContainer arrowPrevious"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-up"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                          fill="currentColor"
-                          style={Object {}}
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="unmarked"
-                    />
-                    <h4>
-                      XO-003-2018
-                    </h4>
-                  </div>
-                </div>
-                <div
-                  className="CircleContainer arrowNext"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Icon"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-down"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                          fill="currentColor"
-                          style={Object {}}
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-1"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="100%"
-                        x="0%"
-                        y={0}
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="barMarker"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-2"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        className="Bar"
-                        fill="red"
-                        height="100%"
-                        width="100%"
-                        x="0%"
-                        y={0}
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="unmarked"
-                    />
-                    <h4>
-                      XO-005-2018
-                    </h4>
-                  </div>
-                </div>
-              </li>
-              <li
-                className="List-Item"
-              >
-                <div
-                  className="List-Item-Content"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="barMarker marked"
-                    />
-                    <svg
-                      className="BarContainer binnedValue-3"
-                      height="100%"
-                      width="100%"
-                    >
-                      <rect
-                        className="Bar"
-                        fill="orange"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="0%"
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="yellow"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="33.33333333333333%"
-                        y={0}
-                      />
-                      <rect
-                        className="Bar"
-                        fill="teal"
-                        height="100%"
-                        width="33.33333333333333%"
-                        x="66.66666666666666%"
-                        y={0}
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div
-        className="contentPane"
-      >
-        <div
-          className="Content"
-        >
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Issuance Date
-            </span>
-            : 
-            2014-10-24
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Number
-            </span>
-            : 
-            <button
-              className="instrumentLink"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              XO-003-2018
-            </button>
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Effective Date
-            </span>
-            : 
-            2014-10-24
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Status
-            </span>
-            : 
-            <span>
-              In Progress
-            </span>
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Sunset Date
-            </span>
-            : 
-            2019-01-30
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Location
-            </span>
-            : 
-            Albuquerque, NM
-          </div>
-          <div
-            className="ContentBlock "
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Type
-            </span>
-            : 
-            Construction of Oil Pipeline
-          </div>
-          <p
-            className="contentText"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Activity
-            </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-          </p>
-          <p
-            className="contentText"
-          >
-            Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-          </p>
-          <p
-            className="contentText"
-          >
-            Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque eu lobortis velit, quis viverra elit.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      className="popout"
-    >
-      <div
-        className="Details"
+        className="popout left"
       >
         <div
           className="filler"
         />
-        <div
-          className="content"
-        />
       </div>
-    </div>
-  </section>
+      <div
+        className="main"
+      >
+        <div
+          className="ProjectHeader"
+        >
+          <h1>
+            Selected Project: 
+          </h1>
+          <button
+            className="openProject"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <h2>
+              Keystone XL
+              <span
+                className="asterisk"
+              >
+                *
+              </span>
+            </h2>
+          </button>
+          <button
+            className="toggleExpand"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <h1
+              className="upperCase"
+            >
+              Less
+            </h1>
+            <svg
+              className="arrow"
+              viewBox="0 0 16 24"
+            >
+              <polyline
+                points="4,4 12,12.5 4,20 4,4"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="listPane"
+        >
+          <div
+            className="ConditionList"
+          >
+            <div
+              className="List"
+              onWheel={[Function]}
+            >
+              <ul>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="unmarked"
+                      />
+                      <h4>
+                        XO-001-2018
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="barMarker marked"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-3"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          className="Bar"
+                          fill="pink"
+                          height="100%"
+                          width="50%"
+                          x="0%"
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="green"
+                          height="100%"
+                          width="50%"
+                          x="50%"
+                          y={0}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-2"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          className="Bar"
+                          fill="blue"
+                          height="100%"
+                          width="50%"
+                          x="0%"
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="50%"
+                          x="50%"
+                          y={0}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item selected"
+                >
+                  <div
+                    className="CircleContainer arrowPrevious"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                          color=""
+                          data-icon="angle-up"
+                          data-prefix="fas"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 320 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="unmarked"
+                      />
+                      <h4>
+                        XO-003-2018
+                      </h4>
+                    </div>
+                  </div>
+                  <div
+                    className="CircleContainer arrowNext"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                          color=""
+                          data-icon="angle-down"
+                          data-prefix="fas"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 320 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-1"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="100%"
+                          x="0%"
+                          y={0}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="barMarker"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-2"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          className="Bar"
+                          fill="red"
+                          height="100%"
+                          width="100%"
+                          x="0%"
+                          y={0}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="unmarked"
+                      />
+                      <h4>
+                        XO-005-2018
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="List-Item"
+                >
+                  <div
+                    className="List-Item-Content"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="barMarker marked"
+                      />
+                      <svg
+                        className="BarContainer binnedValue-3"
+                        height="100%"
+                        width="100%"
+                      >
+                        <rect
+                          className="Bar"
+                          fill="orange"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="0%"
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="yellow"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="33.33333333333333%"
+                          y={0}
+                        />
+                        <rect
+                          className="Bar"
+                          fill="teal"
+                          height="100%"
+                          width="33.33333333333333%"
+                          x="66.66666666666666%"
+                          y={0}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          className="contentPane"
+        >
+          <div
+            className="Content"
+          >
+            <div
+              className="ContentBlock half"
+            >
+              <span
+                className="contentHeading"
+              >
+                Issuance Date
+              </span>
+              : 
+              2014-10-24
+            </div>
+            <div
+              className="ContentBlock half"
+            >
+              <span
+                className="contentHeading"
+              >
+                Instrument Number
+              </span>
+              : 
+              <button
+                className="instrumentLink"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                XO-003-2018
+              </button>
+            </div>
+            <div
+              className="ContentBlock half"
+            >
+              <span
+                className="contentHeading"
+              >
+                Effective Date
+              </span>
+              : 
+              2014-10-24
+            </div>
+            <div
+              className="ContentBlock half"
+            >
+              <span
+                className="contentHeading"
+              >
+                Instrument Status
+              </span>
+              : 
+              <span>
+                In Progress
+              </span>
+            </div>
+            <div
+              className="ContentBlock half"
+            >
+              <span
+                className="contentHeading"
+              >
+                Sunset Date
+              </span>
+              : 
+              2019-01-30
+            </div>
+            <div
+              className="ContentBlock half"
+            >
+              <span
+                className="contentHeading"
+              >
+                Location
+              </span>
+              : 
+              Albuquerque, NM
+            </div>
+            <div
+              className="ContentBlock "
+            >
+              <span
+                className="contentHeading"
+              >
+                Instrument Type
+              </span>
+              : 
+              Construction of Oil Pipeline
+            </div>
+            <p
+              className="contentText"
+            >
+              <span
+                className="contentHeading"
+              >
+                Instrument Activity
+              </span>
+              : 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+            </p>
+            <p
+              className="contentText"
+            >
+              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+            </p>
+            <p
+              className="contentText"
+            >
+              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+            </p>
+            <p
+              className="contentText"
+            >
+              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+            </p>
+            <p
+              className="contentText"
+            >
+              Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+            </p>
+            <p
+              className="contentText"
+            >
+              Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+            </p>
+            <p
+              className="contentText"
+            >
+              Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+            </p>
+            <p
+              className="contentText"
+            >
+              Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+            </p>
+            <p
+              className="contentText"
+            >
+              Quisque eu lobortis velit, quis viverra elit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="popout right expanded"
+      >
+        <div
+          className="Details"
+        >
+          <div
+            className="filler"
+          />
+          <div
+            className="content"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 `;
 
@@ -7728,6 +7811,115 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="SelectionTab"
+    >
+      <div
+        className="Tab inactiveTab"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="tabText"
+        >
+           
+          Find Words
+           
+        </span>
+        <span
+          className="iconSvg"
+        >
+          <svg
+            viewBox="0 0 284.9 284.9"
+            width={15}
+          >
+            <g
+              className="findIcon"
+            >
+              <path
+                d="M135,93.1l139.8,136.8c9.2,9,9.2,23.4,0,32.4l0, 0c-9.2,9-23.9,9-33.1,0L101.9,125.5c-9.2-9-9.2-23.4,0-32.4 l0,0C109.2,84.1,125.8,84.1,135,93.1z"
+              />
+              <ellipse
+                cx="120.2"
+                cy="112.3"
+                rx="104.8"
+                ry="102.6"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        className="rect horzDivider"
+      />
+      <div
+        className="Tab inactiveTab"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="tabText"
+        >
+           
+          Filter
+           
+        </span>
+        <span
+          className="iconSvg"
+        >
+          <svg
+            viewBox="0 0 284.9 284.9"
+            width={15}
+          >
+            <polygon
+              className="filterIcon"
+              points="37.9,3.1 107.6,142.5 107.6,281.8 177.3,212.1 177.3,142.5 247,3.1"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        className="rect horzLine"
+      />
+    </div>
+    <div
+      className="HighlightSummary"
+    >
+      <span>
+        Showing all projects from
+      </span>
+      <span>
+         
+        1970
+         - 
+        1980
+         
+      </span>
+      <p>
+        Highlighting conditions containing
+         : 
+      </p>
+      <div
+        className="keywordsText"
+      >
+        safety
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
 <div
   className="visualization"
@@ -8927,6 +9119,15 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       >
         include1, include2
       </div>
+      <p>
+        Exclude conditions containing
+         : 
+      </p>
+      <div
+        className="keywordsText"
+      >
+        exclude1, exclude2
+      </div>
     </div>
   </div>
 </div>
@@ -8955,6 +9156,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <input
           className="searchBar"
           onChange={[Function]}
+          onFocus={[Function]}
           value=""
         />
         <button
@@ -9065,312 +9267,292 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
   <div
     className="SearchBar"
   >
-    <div>
-      <div
-        className="SuggestedKeywordsPopout"
+    <div
+      className="SuggestedKeywordsPopout"
+    >
+      <h1
+        className="keywordsTitle"
       >
-        <h1
-          className="keywordsTitle"
+         
+        Suggested Keywords
+          
+      </h1>
+      <p
+        className="description"
+      >
+         
+        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
+          
+      </p>
+      <ul
+        className="categories"
+      >
+        <li
+          className="viewText"
         >
            
-          Suggested Keywords
-            
-        </h1>
-        <p
-          className="description"
+          View By
+          :  
+        </li>
+        <li
+          className="categoryList upperCase selectedCategory"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
            
-          Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
-            
-        </p>
-        <ul
-          className="categories"
+          all
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
-          <li
-            className="viewText"
+           
+          wildlife & habitat
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          environment
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          engineering & structures
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          administration & filings
+        </li>
+      </ul>
+      <div
+        className="rightText"
+      >
+        <span>
+          Sort by
+           
+        </span>
+        <span
+          className={null}
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          Frequency
+        </span>
+        |
+        <span
+          className={null}
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Alphabetical
+        </span>
+        <span
+          className="hierarchy"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="arrow"
+          >
+            <svg
+              viewBox="0 0 427.5 427.5"
+            >
+              <g>
+                <path
+                  d="M405.943,290.254L302.096,425.338c-1.04, 1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254 c-0.769-0.993-1.144-2.176-1.144-3.357c0-1.152,0.364-2.329, 1.108-3.322c1.499-1.975,4.125-2.707,6.434-1.809l68.76,27.166V21.01 c0-3.047,2.477-5.503,5.515-5.503h55.106c3.038,0,5.509, 2.456,5.509,5.503v287.922l68.76-27.166 c2.305-0.898,4.93-0.166,6.419,1.809C407.473,285.561, 407.461,288.28,405.943,290.254z M238.012,143.913 c0.744-0.993,1.105-2.167,1.105-3.322c0-1.176-0.379-2.367-1.142-3.36L134.125, 2.148C133.081,0.792,131.458,0,129.759,0 c-1.714,0-3.328,0.798-4.377,2.148L21.539,137.23c-1.519, 1.969-1.525,4.69-0.03,6.683c1.487,1.968,4.114,2.707,6.419,1.803 l68.766-27.163v287.919c0,3.05,2.462,5.509,5.506, 5.509h55.109c3.041,0,5.515-2.459,5.515-5.509V118.552l68.763,27.163 C233.886,146.62,236.51,145.88,238.012,143.913z"
+                />
+              </g>
+            </svg>
+          </span>
+          <span
+            className="upperCase"
           >
              
-            View By
-            :  
+            none
+             
+          </span>
+        </span>
+      </div>
+      <div
+        className="KeywordList"
+      >
+        <ul>
+          <li>
+            <div
+              className="icon"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  color=""
+                  data-icon="minus-circle"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="keywordCategory selectedText"
+            >
+              deer
+               
+            </div>
+            <svg
+              className="BarContainer"
+              height="8px"
+              width="100%"
+            >
+              <rect
+                className="Bar"
+                fill="rgb(238,97,41)"
+                height="100%"
+                width="100%"
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="0%"
+                x="100%"
+                y={0}
+              />
+            </svg>
+            <div
+              className="conditionsText"
+            >
+              <span>
+                1200 conditions
+              </span>
+            </div>
           </li>
-          <li
-            className="categoryList upperCase selectedCategory"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            all
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            wildlife & habitat
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            environment
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            engineering & structures
-          </li>
-          <li
-            className="categoryList upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            administration & filings
+          <li>
+            <div
+              className="icon"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+            >
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
+                  color=""
+                  data-icon="plus-circle"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="keywordCategory regularText"
+            >
+              alberta
+               
+            </div>
+            <svg
+              className="BarContainer"
+              height="8px"
+              width="100%"
+            >
+              <rect
+                className="Bar"
+                fill="rgb(96,96,96)"
+                height="100%"
+                width="33.33333333333333%"
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="66.66666666666667%"
+                x="33.33333333333333%"
+                y={0}
+              />
+            </svg>
+            <div
+              className="conditionsText"
+            >
+              <span>
+                400 conditions
+              </span>
+            </div>
           </li>
         </ul>
-        <div
-          className="rightText"
+      </div>
+      <div
+        className="close"
+      >
+        <button
+          className="upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <span>
-            Sort by
-             
-          </span>
-          <span
-            className={null}
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-             
-            Frequency
-          </span>
-          |
-          <span
-            className={null}
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            Alphabetical
-          </span>
-          <span
-            className="hierarchy"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-          >
-            <span
-              className="arrow"
-            >
-              <svg
-                viewBox="0 0 427.5 427.5"
-              >
-                <g>
-                  <path
-                    d="M405.943,290.254L302.096,425.338c-1.04, 1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254 c-0.769-0.993-1.144-2.176-1.144-3.357c0-1.152,0.364-2.329, 1.108-3.322c1.499-1.975,4.125-2.707,6.434-1.809l68.76,27.166V21.01 c0-3.047,2.477-5.503,5.515-5.503h55.106c3.038,0,5.509, 2.456,5.509,5.503v287.922l68.76-27.166 c2.305-0.898,4.93-0.166,6.419,1.809C407.473,285.561, 407.461,288.28,405.943,290.254z M238.012,143.913 c0.744-0.993,1.105-2.167,1.105-3.322c0-1.176-0.379-2.367-1.142-3.36L134.125, 2.148C133.081,0.792,131.458,0,129.759,0 c-1.714,0-3.328,0.798-4.377,2.148L21.539,137.23c-1.519, 1.969-1.525,4.69-0.03,6.683c1.487,1.968,4.114,2.707,6.419,1.803 l68.766-27.163v287.919c0,3.05,2.462,5.509,5.506, 5.509h55.109c3.041,0,5.515-2.459,5.515-5.509V118.552l68.763,27.163 C233.886,146.62,236.51,145.88,238.012,143.913z"
-                  />
-                </g>
-              </svg>
-            </span>
-            <span
-              className="upperCase"
-            >
-               
-              none
-               
-            </span>
-          </span>
-        </div>
-        <div
-          className="KeywordList"
-        >
-          <ul>
-            <li>
-              <span
-                className="icon"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-              >
-                <div
-                  className="Icon"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
-                    color=""
-                    data-icon="minus-circle"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                className="keywordCategory selectedText"
-              >
-                deer
-                 
-              </span>
-              <span
-                className="BarContainer"
-              >
-                <svg
-                  className="BarContainer"
-                  desc="conditionDesc"
-                  height="100%"
-                  scale={1}
-                  size={8}
-                  title="ConditionTitle"
-                  vert={false}
-                  width="100%"
-                >
-                  <rect
-                    className="Bar"
-                    fill="rgb(238,97,41)"
-                    height="100%"
-                    width="100%"
-                    x="0%"
-                    y={0}
-                  />
-                  <rect
-                    className="Bar"
-                    fill="transparent"
-                    height="100%"
-                    width="0%"
-                    x="100%"
-                    y={0}
-                  />
-                </svg>
-              </span>
-              <div
-                className="conditionsText"
-              >
-                <span>
-                  1200 conditions
-                </span>
-              </div>
-            </li>
-            <li>
-              <span
-                className="icon"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-              >
-                <div
-                  className="Icon"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
-                    color=""
-                    data-icon="plus-circle"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
-                      fill="currentColor"
-                      style={Object {}}
-                    />
-                  </svg>
-                </div>
-              </span>
-              <span
-                className="keywordCategory regularText"
-              >
-                alberta
-                 
-              </span>
-              <span
-                className="BarContainer"
-              >
-                <svg
-                  className="BarContainer"
-                  desc="conditionDesc"
-                  height="100%"
-                  scale={1}
-                  size={8}
-                  title="ConditionTitle"
-                  vert={false}
-                  width="100%"
-                >
-                  <rect
-                    className="Bar"
-                    fill="rgb(96,96,96)"
-                    height="100%"
-                    width="33.33333333333333%"
-                    x="0%"
-                    y={0}
-                  />
-                  <rect
-                    className="Bar"
-                    fill="transparent"
-                    height="100%"
-                    width="66.66666666666667%"
-                    x="33.33333333333333%"
-                    y={0}
-                  />
-                </svg>
-              </span>
-              <div
-                className="conditionsText"
-              >
-                <span>
-                  400 conditions
-                </span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div
-          className="close"
-        >
-          <button
-            className="upperCase"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-             
-            Close
-          </button>
-        </div>
+           
+          Close
+        </button>
       </div>
     </div>
   </div>
@@ -9392,7 +9574,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
       >
         <ul>
           <li>
-            <span
+            <div
               className="icon"
               focusable={true}
               onClick={[Function]}
@@ -9404,9 +9586,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
                   color=""
-                  data-icon="minus-circle"
+                  data-icon="plus-circle"
                   data-prefix="fas"
                   role="img"
                   style={Object {}}
@@ -9414,50 +9596,41 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
                     fill="currentColor"
                     style={Object {}}
                   />
                 </svg>
               </div>
-            </span>
-            <span
-              className="keywordCategory selectedText"
+            </div>
+            <div
+              className="keywordCategory regularText"
             >
               deer
                
-            </span>
-            <span
+            </div>
+            <svg
               className="BarContainer"
+              height="8px"
+              width="100%"
             >
-              <svg
-                className="BarContainer"
-                desc="conditionDesc"
+              <rect
+                className="Bar"
+                fill="rgb(96,96,96)"
                 height="100%"
-                scale={1}
-                size={8}
-                title="ConditionTitle"
-                vert={false}
                 width="100%"
-              >
-                <rect
-                  className="Bar"
-                  fill="rgb(238,97,41)"
-                  height="100%"
-                  width="100%"
-                  x="0%"
-                  y={0}
-                />
-                <rect
-                  className="Bar"
-                  fill="transparent"
-                  height="100%"
-                  width="0%"
-                  x="100%"
-                  y={0}
-                />
-              </svg>
-            </span>
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="0%"
+                x="100%"
+                y={0}
+              />
+            </svg>
             <div
               className="conditionsText"
             >
@@ -9467,7 +9640,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
             </div>
           </li>
           <li>
-            <span
+            <div
               className="icon"
               focusable={true}
               onClick={[Function]}
@@ -9479,9 +9652,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               >
                 <svg
                   aria-hidden="true"
-                  className="svg-inline--fa fa-minus-circle fa-w-16 selectedIcon"
+                  className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
                   color=""
-                  data-icon="minus-circle"
+                  data-icon="plus-circle"
                   data-prefix="fas"
                   role="img"
                   style={Object {}}
@@ -9489,50 +9662,41 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zM124 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H124z"
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
                     fill="currentColor"
                     style={Object {}}
                   />
                 </svg>
               </div>
-            </span>
-            <span
-              className="keywordCategory selectedText"
+            </div>
+            <div
+              className="keywordCategory regularText"
             >
               alberta
                
-            </span>
-            <span
+            </div>
+            <svg
               className="BarContainer"
+              height="8px"
+              width="100%"
             >
-              <svg
-                className="BarContainer"
-                desc="conditionDesc"
+              <rect
+                className="Bar"
+                fill="rgb(96,96,96)"
                 height="100%"
-                scale={1}
-                size={8}
-                title="ConditionTitle"
-                vert={false}
-                width="100%"
-              >
-                <rect
-                  className="Bar"
-                  fill="rgb(238,97,41)"
-                  height="100%"
-                  width="33.33333333333333%"
-                  x="0%"
-                  y={0}
-                />
-                <rect
-                  className="Bar"
-                  fill="transparent"
-                  height="100%"
-                  width="66.66666666666667%"
-                  x="33.33333333333333%"
-                  y={0}
-                />
-              </svg>
-            </span>
+                width="33.33333333333333%"
+                x="0%"
+                y={0}
+              />
+              <rect
+                className="Bar"
+                fill="transparent"
+                height="100%"
+                width="66.66666666666667%"
+                x="33.33333333333333%"
+                y={0}
+              />
+            </svg>
             <div
               className="conditionsText"
             >
@@ -9586,11 +9750,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPrompt default 1`] = `
         <circle
           cx="215"
           cy="213.8"
-          fill="#CF167B"
           r="213.8"
         />
         <polygon
-          fill="#FFFFFF"
           points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
         />
       </svg>
@@ -9611,11 +9773,6 @@ exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
-      style={
-        Object {
-          "borderBottom": "none",
-        }
-      }
       tabIndex={0}
     >
       <span
@@ -9655,11 +9812,6 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
-      style={
-        Object {
-          "borderBottom": "none",
-        }
-      }
       tabIndex={0}
     >
       <span
@@ -10977,12 +11129,12 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|StreamGraph With interaction 1`] = `
+exports[`Storyshots Components|StreamGraph default 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="Streamgraph"
+    className="StreamGraph"
   >
     <h1>
       Themes Across All Conditions
@@ -11880,6 +12032,981 @@ exports[`Storyshots Components|StreamGraph With interaction 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="StreamGraph"
+  >
+    <svg
+      height="100%"
+      preserveAspectRatio="none"
+      viewBox="0 0 450 350"
+      width="100%"
+    >
+      <g>
+        <g
+          className="StackGroup"
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <g
+            clipPath="url(#victory-clip-18)"
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-18"
+              >
+                <rect
+                  height={300}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={450}
+                  x={0}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M0,300C21.42857142857143,298.3276143570108,42.85714285714286,296.6552287140216,64.28571428571428,291.91011235955057C85.7142857142857,287.16499600507956,107.14285714285711,279.34714893912667,128.57142857142856,284.4943820224719C150,289.6416151058171,171.42857142857144,307.75392833846047,192.85714285714283,279.7752808988764C214.28571428571422,251.7966334592924,235.7142857142856,177.72702534748092,257.1428571428571,198.87640449438203C278.5714285714286,220.02578364128314,300.0000000000001,336.3941500468969,321.42857142857144,300C342.8571428571428,263.6058499531031,364.2857142857142,74.4491834536956,385.71428571428567,0C407.1428571428571,-74.4491834536956,428.57142857142856,-34.19088386167926,450,6.067415730337075L450,300C428.57142857142856,300,407.14285714285717,300,385.71428571428567,300C364.28571428571416,300,342.85714285714283,300,321.42857142857144,300C300.00000000000006,300,278.57142857142856,300,257.1428571428571,300C235.7142857142857,300,214.28571428571428,300.00000000000006,192.85714285714283,300C171.4285714285714,299.99999999999994,150,300,128.57142857142856,300C107.14285714285711,300,85.7142857142857,300,64.28571428571428,300C42.85714285714286,300,21.42857142857143,300,0,300Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(221, 10, 10)",
+                  "stroke": "rgb(221, 10, 10)",
+                  "strokeWidth": 0,
+                  "width": 10,
+                }
+              }
+            />
+          </g>
+          <g
+            clipPath="url(#victory-clip-19)"
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-19"
+              >
+                <rect
+                  height={300}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={450}
+                  x={0}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M0,292.5842696629214C21.42857142857143,288.3842380123437,42.85714285714286,284.1842063617661,64.28571428571428,276.40449438202245C85.7142857142857,268.6247824022788,107.14285714285711,257.2653900933692,128.57142857142856,261.5730337078652C150,265.8806773223612,171.42857142857144,285.85535686026265,192.85714285714283,252.13483146067415C214.28571428571422,218.41430606108563,235.7142857142856,130.9985757240069,257.1428571428571,146.96629213483146C278.5714285714286,162.934008545656,300.0000000000001,282.28517170438363,321.42857142857144,244.71910112359552C342.8571428571428,207.15303054280741,364.2857142857142,12.669726222503556,385.71428571428567,-66.74157303370788C407.1428571428571,-146.15287228991932,428.57142857142856,-110.49216648203831,450,-74.83146067415731L450,6.067415730337075C428.57142857142856,-34.19088386167926,407.14285714285717,-74.4491834536956,385.71428571428567,0C364.28571428571416,74.4491834536956,342.85714285714283,263.6058499531031,321.42857142857144,300C300.00000000000006,336.3941500468969,278.57142857142856,220.0257836412832,257.1428571428571,198.87640449438203C235.7142857142857,177.72702534748086,214.28571428571428,251.7966334592923,192.85714285714283,279.7752808988764C171.4285714285714,307.7539283384605,150,289.6416151058171,128.57142857142856,284.4943820224719C107.14285714285711,279.34714893912667,85.7142857142857,287.1649960050795,64.28571428571428,291.91011235955057C42.85714285714286,296.65522871402163,21.42857142857143,298.3276143570108,0,300Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(36, 91, 64)",
+                  "stroke": "rgb(36, 91, 64)",
+                  "strokeWidth": 0,
+                  "width": 10,
+                }
+              }
+            />
+          </g>
+          <g
+            clipPath="url(#victory-clip-20)"
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-20"
+              >
+                <rect
+                  height={300}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={450}
+                  x={0}
+                  y={0}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M0,283.14606741573033C21.42857142857143,275.32837474283906,42.85714285714286,267.51068206994773,64.28571428571428,256.17977528089887C85.7142857142857,244.84886849185,107.14285714285711,230.0047475866435,128.57142857142856,230.56179775280899C150,231.11884791897447,171.42857142857144,247.07706915651207,192.85714285714283,208.31460674157302C214.28571428571422,169.55214432663396,235.7142857142856,76.06899825921822,257.1428571428571,91.01123595505618C278.5714285714286,105.95347365089414,300.0000000000001,229.32109510998578,321.42857142857144,180.6741573033708C342.8571428571428,132.02721949675583,364.2857142857142,-88.63427757556573,385.71428571428567,-161.12359550561797C407.1428571428571,-233.6129134356702,428.57142857142856,-157.93005222345306,450,-82.24719101123594L450,-74.83146067415731C428.57142857142856,-110.49216648203831,407.14285714285717,-146.15287228991932,385.71428571428567,-66.74157303370788C364.28571428571416,12.66972622250356,342.85714285714283,207.15303054280747,321.42857142857144,244.71910112359552C300.00000000000006,282.2851717043836,278.57142857142856,162.93400854565596,257.1428571428571,146.96629213483146C235.7142857142857,130.99857572400697,214.28571428571428,218.4143060610856,192.85714285714283,252.13483146067415C171.4285714285714,285.8553568602627,150,265.8806773223611,128.57142857142856,261.5730337078652C107.14285714285711,257.26539009336926,85.7142857142857,268.6247824022788,64.28571428571428,276.40449438202245C42.85714285714286,284.1842063617661,21.42857142857143,288.38423801234376,0,292.5842696629214Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(247, 193, 97)",
+                  "stroke": "rgb(247, 193, 97)",
+                  "strokeWidth": 0,
+                  "width": 10,
+                }
+              }
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|StreamGraph subFeature 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="StreamGraph"
+  >
+    <h1>
+      Themes Across All Conditions
+    </h1>
+    <div
+      className="VictoryContainer"
+      style={
+        Object {
+          "height": "100%",
+          "pointerEvents": "none",
+          "position": "relative",
+          "touchAction": "none",
+          "userSelect": "none",
+          "width": "100%",
+        }
+      }
+    >
+      <svg
+        aria-labelledby="victory-container-16-title victory-container-16-desc"
+        height={300}
+        role="img"
+        style={
+          Object {
+            "height": "100%",
+            "pointerEvents": "all",
+            "width": "100%",
+          }
+        }
+        viewBox="0 0 450 300"
+        width={450}
+      >
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shapeRendering="auto"
+            style={
+              Object {
+                "fill": "transparent",
+                "stroke": "#252525",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              }
+            }
+            vectorEffect="non-scaling-stroke"
+            x1={50}
+            x2={50}
+            y1={50}
+            y2={250}
+          />
+          <text
+            direction="inherit"
+            dx={0}
+            dy={-2.0300000000000002}
+            transform="rotate(-90,25,150)"
+            x={25}
+            y={150}
+          >
+            <tspan
+              dx={0}
+              style={
+                Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 25,
+                  "stroke": "transparent",
+                  "textAnchor": "middle",
+                }
+              }
+              textAnchor="middle"
+              x={25}
+            >
+              Number of Conditions
+            </tspan>
+          </text>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={400}
+              y1={250}
+              y2={250}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={49}
+              y1={250}
+              y2={250}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={4.97}
+              x={39}
+              y={250}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="end"
+                x={39}
+              >
+                0
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={400}
+              y1={50}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={49}
+              y1={50}
+              y2={50}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={4.97}
+              x={39}
+              y={50}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="end"
+                x={39}
+              >
+                445
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g
+          role="presentation"
+        >
+          <line
+            role="presentation"
+            shapeRendering="auto"
+            style={
+              Object {
+                "fill": "transparent",
+                "stroke": "#252525",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              }
+            }
+            vectorEffect="non-scaling-stroke"
+            x1={50}
+            x2={400}
+            y1={250}
+            y2={250}
+          />
+          <text
+            direction="inherit"
+            dx={0}
+            dy={11.969999999999999}
+            x={225}
+            y={275}
+          >
+            <tspan
+              dx={0}
+              style={
+                Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 25,
+                  "stroke": "transparent",
+                  "textAnchor": "middle",
+                }
+              }
+              textAnchor="middle"
+              x={225}
+            >
+              Effective Date
+            </tspan>
+          </text>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={50}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={50}
+              x2={50}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={50}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={50}
+              >
+                2010
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={100}
+              x2={100}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={100}
+              x2={100}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={100}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={100}
+              >
+                2011
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={150}
+              x2={150}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={150}
+              x2={150}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={150}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={150}
+              >
+                2012
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={200}
+              x2={200}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={200}
+              x2={200}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={200}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={200}
+              >
+                2013
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={250}
+              x2={250}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={250}
+              x2={250}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={250}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={250}
+              >
+                2014
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={300}
+              x2={300}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={300}
+              x2={300}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={300}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={300}
+              >
+                2015
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={350}
+              x2={350}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={350}
+              x2={350}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={350}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={350}
+              >
+                2016
+              </tspan>
+            </text>
+          </g>
+          <g
+            role="presentation"
+          >
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "none",
+                  "pointerEvents": "painted",
+                  "stroke": "none",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={400}
+              x2={400}
+              y1={250}
+              y2={50}
+            />
+            <line
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "transparent",
+                  "size": 1,
+                  "stroke": "transparent",
+                }
+              }
+              vectorEffect="non-scaling-stroke"
+              x1={400}
+              x2={400}
+              y1={250}
+              y2={251}
+            />
+            <text
+              direction="inherit"
+              dx={0}
+              dy={11.969999999999999}
+              x={400}
+              y={261}
+            >
+              <tspan
+                dx={0}
+                style={
+                  Object {
+                    "fill": "#252525",
+                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fontSize": 14,
+                    "letterSpacing": "normal",
+                    "padding": 10,
+                    "stroke": "transparent",
+                  }
+                }
+                textAnchor="middle"
+                x={400}
+              >
+                2017
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g
+          className="StackGroup"
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <g
+            clipPath="url(#victory-clip-17)"
+            style={
+              Object {
+                "height": "100%",
+                "userSelect": "none",
+                "width": "100%",
+              }
+            }
+          >
+            <defs>
+              <clipPath
+                id="victory-clip-17"
+              >
+                <rect
+                  height={200}
+                  role="presentation"
+                  shapeRendering="auto"
+                  vectorEffect="non-scaling-stroke"
+                  width={350}
+                  x={50}
+                  y={50}
+                />
+              </clipPath>
+            </defs>
+            <path
+              d="M50,250C66.77350427350427,248.33784692211657,83.54700854700855,246.67569384423322,100,244.6067415730337C116.45299145299145,242.53778930183418,132.5854700854701,240.0620378373187,150,239.6629213483146C167.4145299145299,239.26380485931048,186.11111111111111,240.94132334581772,200,236.51685393258427C213.88888888888889,232.09238451935082,222.97008547008545,221.56592720637664,250,182.58426966292134C277.02991452991455,143.60261211946604,322.008547008547,76.16575434552962,350,50C377.991452991453,23.834245654470376,388.9957264957265,38.93959473734755,400,54.04494382022472L400,250C388.9957264957265,250,377.991452991453,250,350,250C322.008547008547,250,277.02991452991455,249.99999999999997,250,250C222.97008547008548,250.00000000000003,213.88888888888889,250.00000000000003,200,250C186.11111111111111,249.99999999999997,167.4145299145299,249.99999999999997,150,250C132.5854700854701,250.00000000000003,116.45299145299144,250,100,250C83.54700854700856,250,66.77350427350427,250,50,250Z"
+              role="presentation"
+              shapeRendering="auto"
+              style={
+                Object {
+                  "fill": "rgb(221, 10, 10)",
+                  "stroke": "rgb(221, 10, 10)",
+                  "strokeWidth": 0,
+                }
+              }
+            />
+          </g>
+        </g>
+      </svg>
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 99,
+          }
+        }
+      >
+        <svg
+          height={300}
+          style={
+            Object {
+              "height": "100%",
+              "overflow": "visible",
+              "width": "100%",
+            }
+          }
+          viewBox="0 0 450 300"
+          width={450}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|StreamGraph/StackGroup documentation 1`] = `
 <div
   className="visualization"
@@ -11896,84 +13023,727 @@ exports[`Storyshots Components|StreamGraph/StackGroupProps documentation 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|TrendButton Static image 1`] = `
+exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="trendButton"
+    className="TrendButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
   >
-    <button
-      focusable={true}
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      tabIndex={0}
-      type="button"
+    <div
+      className="buttonText"
     >
       <div
-        className="staticBackground"
+        className="StreamGraph"
       >
-        <img
-          alt=""
-          src={Object {}}
+        <svg
+          height="100%"
+          preserveAspectRatio="none"
+          viewBox="0 0 450 350"
+          width="100%"
+        >
+          <g>
+            <g
+              className="StackGroup"
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <g
+                clipPath="url(#victory-clip-21)"
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <defs>
+                  <clipPath
+                    id="victory-clip-21"
+                  >
+                    <rect
+                      height={300}
+                      role="presentation"
+                      shapeRendering="auto"
+                      vectorEffect="non-scaling-stroke"
+                      width={450}
+                      x={0}
+                      y={0}
+                    />
+                  </clipPath>
+                </defs>
+                <path
+                  d="M0,300C21.42857142857143,298.3276143570108,42.85714285714286,296.6552287140216,64.28571428571428,291.91011235955057C85.7142857142857,287.16499600507956,107.14285714285711,279.34714893912667,128.57142857142856,284.4943820224719C150,289.6416151058171,171.42857142857144,307.75392833846047,192.85714285714283,279.7752808988764C214.28571428571422,251.7966334592924,235.7142857142856,177.72702534748092,257.1428571428571,198.87640449438203C278.5714285714286,220.02578364128314,300.0000000000001,336.3941500468969,321.42857142857144,300C342.8571428571428,263.6058499531031,364.2857142857142,74.4491834536956,385.71428571428567,0C407.1428571428571,-74.4491834536956,428.57142857142856,-34.19088386167926,450,6.067415730337075L450,300C428.57142857142856,300,407.14285714285717,300,385.71428571428567,300C364.28571428571416,300,342.85714285714283,300,321.42857142857144,300C300.00000000000006,300,278.57142857142856,300,257.1428571428571,300C235.7142857142857,300,214.28571428571428,300.00000000000006,192.85714285714283,300C171.4285714285714,299.99999999999994,150,300,128.57142857142856,300C107.14285714285711,300,85.7142857142857,300,64.28571428571428,300C42.85714285714286,300,21.42857142857143,300,0,300Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "rgb(221, 10, 10)",
+                      "stroke": "rgb(221, 10, 10)",
+                      "strokeWidth": 0,
+                      "width": 10,
+                    }
+                  }
+                />
+              </g>
+              <g
+                clipPath="url(#victory-clip-22)"
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <defs>
+                  <clipPath
+                    id="victory-clip-22"
+                  >
+                    <rect
+                      height={300}
+                      role="presentation"
+                      shapeRendering="auto"
+                      vectorEffect="non-scaling-stroke"
+                      width={450}
+                      x={0}
+                      y={0}
+                    />
+                  </clipPath>
+                </defs>
+                <path
+                  d="M0,292.5842696629214C21.42857142857143,288.3842380123437,42.85714285714286,284.1842063617661,64.28571428571428,276.40449438202245C85.7142857142857,268.6247824022788,107.14285714285711,257.2653900933692,128.57142857142856,261.5730337078652C150,265.8806773223612,171.42857142857144,285.85535686026265,192.85714285714283,252.13483146067415C214.28571428571422,218.41430606108563,235.7142857142856,130.9985757240069,257.1428571428571,146.96629213483146C278.5714285714286,162.934008545656,300.0000000000001,282.28517170438363,321.42857142857144,244.71910112359552C342.8571428571428,207.15303054280741,364.2857142857142,12.669726222503556,385.71428571428567,-66.74157303370788C407.1428571428571,-146.15287228991932,428.57142857142856,-110.49216648203831,450,-74.83146067415731L450,6.067415730337075C428.57142857142856,-34.19088386167926,407.14285714285717,-74.4491834536956,385.71428571428567,0C364.28571428571416,74.4491834536956,342.85714285714283,263.6058499531031,321.42857142857144,300C300.00000000000006,336.3941500468969,278.57142857142856,220.0257836412832,257.1428571428571,198.87640449438203C235.7142857142857,177.72702534748086,214.28571428571428,251.7966334592923,192.85714285714283,279.7752808988764C171.4285714285714,307.7539283384605,150,289.6416151058171,128.57142857142856,284.4943820224719C107.14285714285711,279.34714893912667,85.7142857142857,287.1649960050795,64.28571428571428,291.91011235955057C42.85714285714286,296.65522871402163,21.42857142857143,298.3276143570108,0,300Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "rgb(36, 91, 64)",
+                      "stroke": "rgb(36, 91, 64)",
+                      "strokeWidth": 0,
+                      "width": 10,
+                    }
+                  }
+                />
+              </g>
+              <g
+                clipPath="url(#victory-clip-23)"
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              >
+                <defs>
+                  <clipPath
+                    id="victory-clip-23"
+                  >
+                    <rect
+                      height={300}
+                      role="presentation"
+                      shapeRendering="auto"
+                      vectorEffect="non-scaling-stroke"
+                      width={450}
+                      x={0}
+                      y={0}
+                    />
+                  </clipPath>
+                </defs>
+                <path
+                  d="M0,283.14606741573033C21.42857142857143,275.32837474283906,42.85714285714286,267.51068206994773,64.28571428571428,256.17977528089887C85.7142857142857,244.84886849185,107.14285714285711,230.0047475866435,128.57142857142856,230.56179775280899C150,231.11884791897447,171.42857142857144,247.07706915651207,192.85714285714283,208.31460674157302C214.28571428571422,169.55214432663396,235.7142857142856,76.06899825921822,257.1428571428571,91.01123595505618C278.5714285714286,105.95347365089414,300.0000000000001,229.32109510998578,321.42857142857144,180.6741573033708C342.8571428571428,132.02721949675583,364.2857142857142,-88.63427757556573,385.71428571428567,-161.12359550561797C407.1428571428571,-233.6129134356702,428.57142857142856,-157.93005222345306,450,-82.24719101123594L450,-74.83146067415731C428.57142857142856,-110.49216648203831,407.14285714285717,-146.15287228991932,385.71428571428567,-66.74157303370788C364.28571428571416,12.66972622250356,342.85714285714283,207.15303054280747,321.42857142857144,244.71910112359552C300.00000000000006,282.2851717043836,278.57142857142856,162.93400854565596,257.1428571428571,146.96629213483146C235.7142857142857,130.99857572400697,214.28571428571428,218.4143060610856,192.85714285714283,252.13483146067415C171.4285714285714,285.8553568602627,150,265.8806773223611,128.57142857142856,261.5730337078652C107.14285714285711,257.26539009336926,85.7142857142857,268.6247824022788,64.28571428571428,276.40449438202245C42.85714285714286,284.1842063617661,21.42857142857143,288.38423801234376,0,292.5842696629214Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "rgb(247, 193, 97)",
+                      "stroke": "rgb(247, 193, 97)",
+                      "strokeWidth": 0,
+                      "width": 10,
+                    }
+                  }
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <span
+        className="descriptionText"
+      >
+        <p>
+          Trends &
+        </p>
+        <p>
+          Definitions
+        </p>
+      </span>
+      <svg
+        className="trendArrow"
+        viewBox="0 0 427.5 427.5"
+        width={10}
+      >
+        <path
+          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
+          fill="#D1057A"
         />
-      </div>
-      <div
-        className="buttonText"
-      >
-        <span>
-          Go to Theme 
-          <br />
-          Trends
-          <br />
-        </span>
-      </div>
-    </button>
+      </svg>
+    </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Components|TrendButton Svg background placeholder 1`] = `
+exports[`Storyshots Components|TrendButton Instrument Bubble Button 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="trendButton"
+    className="TrendButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
   >
-    <button
-      focusable={true}
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      tabIndex={0}
-      type="button"
+    <div
+      className="buttonText"
     >
       <div
-        className="streamGraphBackground"
+        style={
+          Object {
+            "height": "50px",
+            "width": "120px",
+          }
+        }
       >
-        <div>
-          SVG Background
-        </div>
         <svg
-          viewBox="0 0 31.49 31.49"
-          x="0px"
-          y="0px"
+          className="BubbleChart"
+          height="100%"
+          viewBox="0 0 850 400"
+          width="100%"
         >
-          <path
-            d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111 C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587 c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"
-          />
+          <g
+            onMouseDown={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+          >
+            <g
+              className="InstrumentBubble"
+            >
+              <g
+                className="depth-2"
+                data-name="OIL"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={80.5}
+                  transform="translate(243.16912586 192.49143055)"
+                />
+                <path
+                  d="
+          M 162.66912586 191.49143055
+          A 80.5 80.5 0 0 1 323.66912586 191.49143055"
+                  id="OILpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#OILpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Oil
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="GAS"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={39}
+                  transform="translate(367.66912586 192.49143055)"
+                />
+                <path
+                  d="
+          M 328.66912586 191.49143055
+          A 39 39 0 0 1 406.66912586 191.49143055"
+                  id="GASpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#GASpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Gas
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="POWER"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={36}
+                  transform="translate(339.00245920 267.17892764)"
+                />
+                <path
+                  d="
+          M 303.00245920 266.17892764
+          A 36 36 0 0 1 375.00245920 266.17892764"
+                  id="POWERpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#POWERpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Power
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="ANY_COMMODITY_TYPES"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={89.5}
+                  transform="translate(506.50737759 200.00000000)"
+                />
+                <path
+                  d="
+          M 417.00737759 199.00000000
+          A 89.5 89.5 0 0 1 596.00737759 199.00000000"
+                  id="ANY_COMMODITY_TYPESpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#ANY_COMMODITY_TYPESpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Any Commodity Types
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-2"
+                data-name="NOT_SPECIFIED"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  className="CommodityCircle"
+                  r={43.5}
+                  transform="translate(644.50737759 200.00000000)"
+                />
+                <path
+                  d="
+          M 601.00737759 199.00000000
+          A 43.5 43.5 0 0 1 688.00737759 199.00000000"
+                  id="NOT_SPECIFIEDpath"
+                  style={
+                    Object {
+                      "fill": "none",
+                      "stroke": "transparent",
+                    }
+                  }
+                />
+                <text
+                  className="bubbleTitle"
+                >
+                  <textPath
+                    href="#NOT_SPECIFIEDpath"
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    Not Specified
+                  </textPath>
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="XO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={40}
+                  style={
+                    Object {
+                      "fill": "rgb(14, 43, 140)",
+                    }
+                  }
+                  transform="translate(207.66912586 192.49143055)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={207.66912586371723}
+                  y="192.49143055"
+                >
+                  XO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="OPSO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={33}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(285.66912586 192.49143055)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={285.6691258637172}
+                  y="192.49143055"
+                >
+                  OPSO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="OPLO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={20}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(252.18835663 239.85215364)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={252.188356632948}
+                  y="239.85215364"
+                >
+                  OPLO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="OPL"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={10}
+                  style={
+                    Object {
+                      "fill": "rgb(14, 43, 140)",
+                    }
+                  }
+                  transform="translate(367.66912586 192.49143055)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={379.6691258637172}
+                  y="192.49143055"
+                >
+                  OPL
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="EPE"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={7}
+                  style={
+                    Object {
+                      "fill": "rgb(39, 165, 249)",
+                    }
+                  }
+                  transform="translate(339.00245920 267.17892764)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={348.00245919705054}
+                  y="267.17892764"
+                >
+                  EPE
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="GPLO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={40}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(478.21632047 165.65082116)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={478.216320468198}
+                  y="165.65082116"
+                >
+                  GPLO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="EC"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={21}
+                  style={
+                    Object {
+                      "fill": "rgb(39, 165, 249)",
+                    }
+                  }
+                  transform="translate(544.21632047 165.65082116)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={544.216320468198}
+                  y="165.65082116"
+                >
+                  EC
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="GPSO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={10}
+                  style={
+                    Object {
+                      "fill": "rgb(22, 78, 248)",
+                    }
+                  }
+                  transform="translate(533.52692653 232.80539552)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={545.5269265288041}
+                  y="232.80539552"
+                >
+                  GPSO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="AO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={15}
+                  style={
+                    Object {
+                      "fill": "rgb(212, 169, 42)",
+                    }
+                  }
+                  transform="translate(621.00737759 200.00000000)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="white"
+                  stroke="transparent"
+                  textAnchor="middle"
+                  x={621.0073775911517}
+                  y="200.00000000"
+                >
+                  AO
+                </text>
+              </g>
+              <g
+                className="depth-3"
+                data-name="MO"
+                focusable={true}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <circle
+                  r={5}
+                  style={
+                    Object {
+                      "fill": "rgb(212, 169, 42)",
+                    }
+                  }
+                  transform="translate(662.00737759 200.00000000)"
+                />
+                <text
+                  alignmentBaseline="middle"
+                  fill="black"
+                  stroke="transparent"
+                  textAnchor=""
+                  x={669.0073775911517}
+                  y="200.00000000"
+                >
+                  MO
+                </text>
+              </g>
+            </g>
+          </g>
         </svg>
       </div>
-      <div
-        className="buttonText"
+      <span
+        className="descriptionText"
       >
-        <span>
-          Go to Instrument 
-          <br />
-          Trends
-          <br />
-        </span>
-      </div>
-    </button>
+        <p>
+          Trends &
+        </p>
+        <p>
+          Definitions
+        </p>
+      </span>
+      <svg
+        className="trendArrow"
+        viewBox="0 0 427.5 427.5"
+        width={10}
+      >
+        <path
+          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
+          fill="#D1057A"
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -12052,7 +13822,7 @@ exports[`Storyshots Components|Wheel default 1`] = `
                       transform="translate(0.5 0.5)"
                     >
                       <ellipse
-                        className="RingBackground Company"
+                        className="RingBackground company"
                         cx="240.251"
                         cy="240.252"
                         rx="240.251"
@@ -12060,7 +13830,7 @@ exports[`Storyshots Components|Wheel default 1`] = `
                         transform="translate(0.5 0.5)"
                       />
                       <g
-                        className="Lines LineBackground Company"
+                        className="Lines LineBackground company"
                         transform="translate(0.5 0.502)"
                       >
                         <line
@@ -13702,7 +15472,7 @@ exports[`Storyshots Components|Wheel location props 1`] = `
                     transform="translate(0.5 0.5)"
                   >
                     <ellipse
-                      className="RingBackground Location"
+                      className="RingBackground location"
                       cx="240.251"
                       cy="240.252"
                       rx="240.251"
@@ -13710,7 +15480,7 @@ exports[`Storyshots Components|Wheel location props 1`] = `
                       transform="translate(0.5 0.5)"
                     />
                     <g
-                      className="Lines LineBackground Location"
+                      className="Lines LineBackground location"
                       transform="translate(0.5 0.502)"
                     >
                       <line
@@ -18267,7 +20037,7 @@ exports[`Storyshots Components|Wheel/Ring default view 1`] = `
             transform="translate(0.5 0.5)"
           >
             <ellipse
-              className="RingBackground Company"
+              className="RingBackground company"
               cx="240.251"
               cy="240.252"
               rx="240.251"
@@ -18275,7 +20045,7 @@ exports[`Storyshots Components|Wheel/Ring default view 1`] = `
               transform="translate(0.5 0.5)"
             />
             <g
-              className="Lines LineBackground Company"
+              className="Lines LineBackground company"
               transform="translate(0.5 0.502)"
             >
               <line
@@ -18411,7 +20181,7 @@ exports[`Storyshots Components|Wheel/Ring location view 1`] = `
             transform="translate(0.5 0.5)"
           >
             <ellipse
-              className="RingBackground Location"
+              className="RingBackground location"
               cx="240.251"
               cy="240.252"
               rx="240.251"
@@ -18419,7 +20189,7 @@ exports[`Storyshots Components|Wheel/Ring location view 1`] = `
               transform="translate(0.5 0.5)"
             />
             <g
-              className="Lines LineBackground Location"
+              className="Lines LineBackground location"
               transform="translate(0.5 0.502)"
             >
               <line

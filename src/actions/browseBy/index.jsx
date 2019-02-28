@@ -2,16 +2,16 @@ export const Types = {
   BROWSE_BY: 'browseBy',
 };
 
-export const browseBy = mode => ({
+export const setBrowseBy = browseBy => ({
   type: Types.BROWSE_BY,
-  payload: { mode },
+  payload: { browseBy },
 });
 
 const initialState = 'company';
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Types.BROWSE_BY: return { browseBy: action.payload.mode };
+    case Types.BROWSE_BY: return action.payload.browseBy;
     default: return state;
   }
 };

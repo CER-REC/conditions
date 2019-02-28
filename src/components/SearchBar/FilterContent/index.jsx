@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import CircleContainer from '../../CircleContainer';
+import { yearRangeType } from '../../../proptypes';
 import './styles.scss';
 
 const findListItemValue = (target, depth = 0) => {
@@ -16,22 +17,15 @@ const createYearArray = yearObject => Array(yearObject.end - yearObject.start + 
   .map((_, index) => yearObject.start + index);
 class FilterContent extends React.PureComponent {
   static propTypes = {
-    yearRange: PropTypes.shape({
-      start: PropTypes.number.isRequired,
-      end: PropTypes.number.isRequired,
-    }).isRequired,
+    yearRange: yearRangeType.isRequired,
     projectStatus: PropTypes.arrayOf(
       PropTypes.oneOf(
         ['OPEN', 'CLOSED', 'CANCELLED'],
       ),
     ).isRequired,
     onYearSelect: PropTypes.func.isRequired,
-    selectedYear: PropTypes.shape({
-      start: PropTypes.number.isRequired,
-      end: PropTypes.number.isRequired,
-    }).isRequired,
+    selectedYear: yearRangeType.isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
-    reset: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
   }
 
@@ -147,10 +141,23 @@ class FilterContent extends React.PureComponent {
     }));
   }
 
+  filterProjectStatus = (item) => {
+    const { projectStatus } = this.props;
+    const updatedStatus = projectStatus.includes(item)
+      ? projectStatus.filter(v => v !== item)
+      : projectStatus.concat(item);
+    this.props.changeProjectStatus(updatedStatus);
+  }
+
+  reset = () => {
+    this.props.changeProjectStatus(['OPEN', 'CLOSED', 'CANCELLED']);
+    this.props.onYearSelect(this.props.yearRange);
+  }
+
   projectStatusRender = statusArray => (['OPEN', 'CLOSED', 'CANCELLED'].map(i => (
     <li
       key={i}
-      {...handleInteraction(this.props.changeProjectStatus, i)}
+      {...handleInteraction(this.filterProjectStatus, i)}
       className={statusArray.indexOf(i) > -1 ? 'selectedProject' : ''}
     >
       <FormattedMessage id={`components.searchBar.filter.projectStatus.${i}`}>
@@ -162,7 +169,7 @@ class FilterContent extends React.PureComponent {
   render() {
     return (
       <div className="FilterContent">
-        <div {...handleInteraction(this.props.reset)} className="reset">
+        <div {...handleInteraction(this.reset)} className="reset">
           <FormattedMessage id="components.searchBar.reset">
             { text => <span className="upperCase"> {text} </span> }
           </FormattedMessage>

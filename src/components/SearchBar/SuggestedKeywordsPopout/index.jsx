@@ -4,24 +4,19 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
 import handleInteraction from '../../../utilities/handleInteraction';
+import { suggestedKeywordsObject } from '../../../proptypes';
 import KeywordList from './KeywordList';
 
 class SuggestedKeywordsPopout extends React.PureComponent {
   static propTypes = {
-    selectedWords: PropTypes.arrayOf(PropTypes.string),
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClick: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    suggestedKeywords: PropTypes.objectOf(
-      PropTypes.shape({
-        conditions: PropTypes.number.isRequired,
-        category: PropTypes.arrayOf(PropTypes.string).isRequired,
-      }).isRequired,
-    ).isRequired,
-  }
+    suggestedKeywords: suggestedKeywordsObject.isRequired,
+    isExclude: PropTypes.bool.isRequired,
+    includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
 
-  static defaultProps = {
-    selectedWords: [],
   }
 
   constructor(props) {
@@ -40,7 +35,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
         <li
           key={i}
           {...handleInteraction(this.categoryOnClick, i)}
-          className={classNames('categoryList', 'upperCase', { selectedCategory: (selectedCategory.length === 0 && i === 'all') ? true : selectedCategory.includes(i) })}
+          className={classNames('categoryList', 'upperCase', {
+            selectedCategory: (selectedCategory.length === 0 && i === 'all')
+              ? true : selectedCategory.includes(i),
+          })
+          }
         > { i }
         </li>
       );
@@ -150,9 +149,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           </span>
         </div>
         <KeywordList
-          selectedWords={this.props.selectedWords}
           keywords={keywords}
           onClick={this.props.onClick}
+          isExclude={this.props.isExclude}
+          includeKeywords={this.props.includeKeywords}
+          excludeKeywords={this.props.excludeKeywords}
         />
         <FormattedMessage id="components.searchBar.close">
           {text => (

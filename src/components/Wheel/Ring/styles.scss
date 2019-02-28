@@ -1,18 +1,18 @@
 .Ring{
   .RingBackground {
-    &.Location{
+    &.location{
       fill: #F4CE5A;
     }
-    &.Company{
+    &.company{
       fill: #30298c;
     }
   }
 
   .Lines {
-    &.Location line{
+    &.location line{
       stroke: #E0A531;
     }
-    &.Company line{
+    &.company line{
       stroke: #4054b7;
     }
     stroke-width: 18px;

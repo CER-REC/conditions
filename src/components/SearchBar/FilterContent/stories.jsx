@@ -18,7 +18,7 @@ const yearSelected = {
 storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({
-    actions: ['changeProjectStatus', 'reset', 'onYearSelect', 'closeTab'],
+    actions: ['changeProjectStatus', 'onYearSelect', 'closeTab'],
   }))
   .add('with interaction', () => (
     <FilterContent
@@ -30,10 +30,8 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
         projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: yearSelected, yearRange: initialYearRange,
       },
       actions: {
-        changeProjectStatus: ({ projectStatus: prev }) => item => ({
-          projectStatus: prev.includes(item) ? prev.filter(v => v !== item) : prev.concat(item),
-        }),
-        reset: () => () => ({ projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: initialYearRange }),
+        changeProjectStatus: () => updatedProjectStatus => (
+          { projectStatus: updatedProjectStatus }),
         onYearSelect: () => selectedYear => ({ selectedYear }),
       },
     },

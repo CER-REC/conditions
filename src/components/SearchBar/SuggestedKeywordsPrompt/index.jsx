@@ -2,10 +2,11 @@ import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 const SuggestedKeywordsPrompt = props => (
-  <div className="SuggestedKeywordsPrompt">
+  <div className={classNames('SuggestedKeywordsPrompt', { isActive: props.isActive })}>
     <FormattedMessage id="components.searchBar.suggestedKeywordsPrompt.selectFrom">
       {text => (<p className="selectFrom">{text}</p>)}
     </FormattedMessage>
@@ -22,9 +23,8 @@ const SuggestedKeywordsPrompt = props => (
       width={20}
       height={20}
     >
-      <circle fill="#CF167B" cx="215" cy="213.8" r="213.8" />
+      <circle cx="215" cy="213.8" r="213.8" />
       <polygon
-        fill="#FFFFFF"
         points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
       />
     </svg>
@@ -33,6 +33,7 @@ const SuggestedKeywordsPrompt = props => (
 
 SuggestedKeywordsPrompt.propTypes = {
   onClick: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired,
 };
 
 export default SuggestedKeywordsPrompt;
