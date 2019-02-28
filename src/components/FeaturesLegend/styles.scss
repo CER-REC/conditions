@@ -6,6 +6,10 @@
     display: table;
     text-align: left;
 
+    // Override WET template
+    min-height: auto;
+    width: auto;
+
     .Title {
       margin: 10px 0;
     }
