@@ -51,8 +51,8 @@ const ViewThree = props => (
             <BubbleChart
               data={conditionCountsByCommodity.counts}
               type={props.selected.subFeature}
-              indicator=""
-              setIndicator={noop}
+              indicator={props.indicator}
+              setIndicator={props.setIndicator}
             />
           )
           : (
@@ -104,8 +104,10 @@ ViewThree.propTypes = {
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
   }).isRequired,
+  indicator: PropTypes.string.isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
+  setIndicator: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {

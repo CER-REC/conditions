@@ -21,8 +21,9 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
+      setIndicator: () => indicator => ({ indicator }),
     },
-    state: { selected: { feature: 'theme', subFeature: '' } },
+    state: { selected: { feature: 'theme', subFeature: '', indicator: '' } },
   }))
   .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);
