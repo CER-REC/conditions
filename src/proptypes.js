@@ -20,13 +20,13 @@ export const featureData = PropTypes.shape({
 
 export const company = PropTypes.shape({
   primary: PropTypes.string.isRequired,
-  secondary: PropTypes.arrayOf(PropTypes.string).isRequired,
+  secondary: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
 export const location = PropTypes.shape({
   primary: PropTypes.string.isRequired,
-  secondary: PropTypes.arrayOf(PropTypes.string).isRequired,
+  secondary: PropTypes.string.isRequired,
   data: featureData.isRequired,
 });
 

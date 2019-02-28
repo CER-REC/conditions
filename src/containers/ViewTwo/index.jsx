@@ -8,13 +8,10 @@ import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import ConditonDetails from '../../components/ConditionDetails';
-import TrendButton from '../../components/TrendButton';
 import { browseByType } from '../../proptypes';
-import SearchBar from '../../components/SearchBar';
 import Dropdown from '../../components/Dropdown';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
 
@@ -55,15 +52,6 @@ const projectData = [
 
 const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
-// SearchBar
-const availableYearRange = { start: 1970, end: 1980 };
-const sampleSuggestedKeywords = {
-  safety: { conditions: 1200, category: ['administration & filings'] },
-  emissions: { conditions: 1000, category: ['environment'] },
-  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
-  construction: { conditions: 1000, category: ['environment'] },
-};
-const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 const defaultProps = {
   data,
   selectedProject: 'Keystone XL',
@@ -78,27 +66,16 @@ const defaultProps = {
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
     <section className="row">
-      <section className="searchHeader">
-        <SearchBar
-          suggestedKeywords={sampleSuggestedKeywords}
-          availableYearRange={availableYearRange}
-          availableCategories={availableCategories}
-          updateKeywords={() => {}}
-          findAnyOnChange={() => {}}
-          updateYear={() => {}}
-          changeProjectStatus={() => {}}
-          includeKeywords={['safety']}
-          excludeKeywords={[]}
-          projectStatus={['OPEN', 'CANCELLED']}
-          yearRange={availableYearRange}
-        />
-      </section>
+      <section className="searchHeader" />
     </section>
     <section className="row">
       <section className="wheel">
         <Wheel
           wheelType={props.browseBy}
-          itemsData={companyWheelData}
+          itemsData={props.browseBy === 'company' ? companyWheelData : {
+            legendData: companyWheelData.legendData.slice(0, 25),
+            items: companyWheelData.items.slice(0, 25),
+          }}
           selectRay={props.selectRay}
         />
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
@@ -113,13 +90,6 @@ const ViewTwo = props => (
         />
       </section>
       <section className="menus">
-        <TrendButton
-          onClick={() => {}}
-          feature="theme"
-          subFeature=""
-          projectData={conditionCountsByYear.counts}
-          instrumentData={conditionCountsByCommodity.counts}
-        />
         <Dropdown
           options={features}
           onChange={() => {}}

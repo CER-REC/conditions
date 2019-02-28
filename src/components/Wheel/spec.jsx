@@ -7,7 +7,7 @@ import { companyWheelData as wheelData } from './randomDataSample';
 describe('Components|Wheel', () => {
   describe('with no wheelType prop', () => {
     test('should render a company wheel', () => {
-      expect(shallow(<Wheel itemsData={wheelData} selectRay={() => {}} />).type()).toBe('div');
+      expect(shallow(<Wheel wheelType="location" itemsData={wheelData} selectRay={() => {}} />).type()).toBe('div');
     });
 
     // it('should have the prop company by default', () => {
