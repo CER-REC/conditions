@@ -15,6 +15,7 @@ import './styles.scss';
 import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
+import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 
 const noop = () => {};
 
@@ -51,8 +52,8 @@ const ViewThree = props => (
             <BubbleChart
               data={conditionCountsByCommodity.counts}
               type={props.selected.subFeature}
-              indicator={props.selected.indicator}
-              setIndicator={props.setSelectedIndicator}
+              indicator={props.chartIndicatorPosition.bubble}
+              setIndicator={props.setBubbleChartIndicator}
             />
           )
           : (
@@ -97,17 +98,20 @@ ViewThree.propTypes = {
   conditionCountsByYear: PropTypes.shape({
     counts: allConditionsPerYear.isRequired,
   }).isRequired,
+  chartIndicatorPosition: PropTypes.shape({
+    bubble: PropTypes.string.isRequired,
+    stream: PropTypes.number.isRequired,    
+  }).isRequired,
+  setBubbleChartIndicator: PropTypes.func.isRequired,
   conditionCountsByCommodity: PropTypes.shape({
     counts: allConditionsByCommodityOrInstrument.isRequired,
   }).isRequired,
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
-    indicator: PropTypes.string,
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
-  setSelectedIndicator: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {
@@ -117,14 +121,15 @@ ViewThree.defaultProps = {
 export const ViewThreeRaw = ViewThree;
 
 export default connect(
-  ({ selected }) => ({
+  ({ selected, chartIndicatorPosition }) => ({
     selected,
+    chartIndicatorPosition,
     conditionCountsByYear,
     conditionCountsByCommodity,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
-    setSelectedIndicator: selectedCreators.setSelectedIndicator,
+    setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
   },
 )(ViewThree);

@@ -875,6 +875,7 @@ exports[`Storyshots Components|BubbleChart with OPENING type selected 1`] = `
         className="InstrumentBubble"
       >
         <g
+          className="depth-2"
           data-name="OIL"
           focusable={true}
           onClick={[Function]}
@@ -912,6 +913,7 @@ exports[`Storyshots Components|BubbleChart with OPENING type selected 1`] = `
           </text>
         </g>
         <g
+          className="depth-2"
           data-name="ANY_COMMODITY_TYPES"
           focusable={true}
           onClick={[Function]}
@@ -949,6 +951,7 @@ exports[`Storyshots Components|BubbleChart with OPENING type selected 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPSO"
           focusable={true}
           onClick={[Function]}
@@ -977,6 +980,7 @@ exports[`Storyshots Components|BubbleChart with OPENING type selected 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="OPLO"
           focusable={true}
           onClick={[Function]}
@@ -1005,6 +1009,7 @@ exports[`Storyshots Components|BubbleChart with OPENING type selected 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="GPLO"
           focusable={true}
           onClick={[Function]}
@@ -1033,6 +1038,7 @@ exports[`Storyshots Components|BubbleChart with OPENING type selected 1`] = `
           </text>
         </g>
         <g
+          className="depth-3"
           data-name="GPSO"
           focusable={true}
           onClick={[Function]}

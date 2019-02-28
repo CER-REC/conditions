@@ -12,6 +12,10 @@ const props = {
     feature: 'theme',
     subFeature: '',
   },
+  chartIndicatorPosition: {
+    bubble: 'XO',
+    stream: 2010,
+  }
 };
 
 storiesForView('Containers|ViewThree', module, ReadMe)
