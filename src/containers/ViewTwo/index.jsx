@@ -10,6 +10,7 @@ import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import ConditonDetails from '../../components/ConditionDetails';
 import { browseByType } from '../../proptypes';
 import Dropdown from '../../components/Dropdown';
+import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
@@ -117,11 +118,13 @@ ViewTwo.defaultProps = {
 export const ViewTwoUnconnected = ViewTwo;
 
 export default connect(
-  ({ selected }) => ({
+  ({ selected, browseBy }) => ({
     selected,
+    browseBy,
   }),
   {
     setSelectedCompany: selectedCreators.setSelectedCompany,
+    setBrowseBy: browseByCreators.setBrowseBy,
   },
 )(ViewTwo);
 

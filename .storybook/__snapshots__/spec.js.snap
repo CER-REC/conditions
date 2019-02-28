@@ -12103,7 +12103,7 @@ exports[`Storyshots Components|Wheel default 1`] = `
                       transform="translate(0.5 0.5)"
                     >
                       <ellipse
-                        className="RingBackground Company"
+                        className="RingBackground company"
                         cx="240.251"
                         cy="240.252"
                         rx="240.251"
@@ -12111,7 +12111,7 @@ exports[`Storyshots Components|Wheel default 1`] = `
                         transform="translate(0.5 0.5)"
                       />
                       <g
-                        className="Lines LineBackground Company"
+                        className="Lines LineBackground company"
                         transform="translate(0.5 0.502)"
                       >
                         <line
@@ -13753,7 +13753,7 @@ exports[`Storyshots Components|Wheel location props 1`] = `
                     transform="translate(0.5 0.5)"
                   >
                     <ellipse
-                      className="RingBackground Location"
+                      className="RingBackground location"
                       cx="240.251"
                       cy="240.252"
                       rx="240.251"
@@ -13761,7 +13761,7 @@ exports[`Storyshots Components|Wheel location props 1`] = `
                       transform="translate(0.5 0.5)"
                     />
                     <g
-                      className="Lines LineBackground Location"
+                      className="Lines LineBackground location"
                       transform="translate(0.5 0.502)"
                     >
                       <line
@@ -18318,7 +18318,7 @@ exports[`Storyshots Components|Wheel/Ring default view 1`] = `
             transform="translate(0.5 0.5)"
           >
             <ellipse
-              className="RingBackground Company"
+              className="RingBackground company"
               cx="240.251"
               cy="240.252"
               rx="240.251"
@@ -18326,7 +18326,7 @@ exports[`Storyshots Components|Wheel/Ring default view 1`] = `
               transform="translate(0.5 0.5)"
             />
             <g
-              className="Lines LineBackground Company"
+              className="Lines LineBackground company"
               transform="translate(0.5 0.502)"
             >
               <line
@@ -18462,7 +18462,7 @@ exports[`Storyshots Components|Wheel/Ring location view 1`] = `
             transform="translate(0.5 0.5)"
           >
             <ellipse
-              className="RingBackground Location"
+              className="RingBackground location"
               cx="240.251"
               cy="240.252"
               rx="240.251"
@@ -18470,7 +18470,7 @@ exports[`Storyshots Components|Wheel/Ring location view 1`] = `
               transform="translate(0.5 0.5)"
             />
             <g
-              className="Lines LineBackground Location"
+              className="Lines LineBackground location"
               transform="translate(0.5 0.502)"
             >
               <line
