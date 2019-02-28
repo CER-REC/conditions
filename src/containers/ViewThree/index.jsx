@@ -11,6 +11,7 @@ import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
+import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
 import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
@@ -85,7 +86,10 @@ const ViewThree = props => (
         <BrowseByButton mode="company" onClick={noop} />
       </section>
       <section className="conditionDetails">
-        <span style={{ fontSize: '50px', marginLeft: '45%' }}>6</span>
+        <ConditionDetails
+          // TODO: This is just a quick hack to get the component into the view
+          {...props.conditionDetails}
+        />
       </section>
     </section>
   </section>
