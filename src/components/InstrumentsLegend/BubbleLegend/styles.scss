@@ -1,11 +1,11 @@
 @import "../../../styles/colors.scss";
 
 .BubbleLegend {
-  // margin-top: 50px;
+  margin-top: 10px;
   width: 250px;
   text-align: left;
-  font-size: 14px;
-  color: #999;
+  font-size: 16px;
+  color: $VeryDarkGray;
 
   .Ellipse {
     fill: $LightGreyBackground;

@@ -82,6 +82,8 @@ class StreamGraph extends React.Component {
 
     const maxConditionValue = Math.max(...conditionDates);
 
+    // Doing this here because CSS classes weren't being picked up by Victory
+    // I may have just been doing it wrong though.
     const axisStyles = {
       tickLabels: {
         fontSize: '10px',

@@ -79,7 +79,7 @@ const ViewThree = props => (
     </section>
     <section className="row thirdRow">
       <section className="selectedCompany">
-        {/* TODO: Placeholder for the preview release */}
+        {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
         <div className="selectedCompanyHeader">
           <h1>Selected Company:</h1> <h2>Company Name</h2>
         </div>
