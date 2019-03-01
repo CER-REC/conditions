@@ -4,14 +4,14 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import Content from '.';
 import ReadMe from './README.md';
 
-import data from '../testData';
+import { conditionData } from '../../../mockData';
 
 const openIntermediatePopup = () => (instrumentNumber) => {
   alert(`Intermediate popup for: ${instrumentNumber}`);
 };
 
 const defaultProps = {
-  instrument: data[0],
+  instrument: conditionData[0],
   openIntermediatePopup,
   itemIndex: 0,
 };

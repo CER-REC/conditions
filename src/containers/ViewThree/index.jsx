@@ -16,6 +16,7 @@ import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../.
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
+import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
 const noop = () => {};
 
@@ -91,8 +92,9 @@ const ViewThree = props => (
         <ConditionDetails
           // TODO: This is just a quick hack to get the component into the view
           {...props.conditionDetails}
-          expanded={props.detailView}
-          updateSelectedItem={props.updateSelectedItem}
+          selectedItem={props.selected.condition}
+          expanded={props.detailViewExpanded}
+          updateSelectedItem={props.setSelectedCondition}
           openIntermediatePopup={props.openIntermediatePopup}
           toggleExpanded={props.expandDetailView}
           openProjectDetails={props.openProjectDetails}
@@ -118,13 +120,17 @@ ViewThree.propTypes = {
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
+    condition: PropTypes.shape({
+      instrumentIndex: PropTypes.number.isRequired,
+      itemIndex: PropTypes.number.isRequired,
+    }).isRequired,
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
 
   conditionDetails: PropTypes.object.isRequired,
-  detailView: PropTypes.bool.isRequired,
-  updateSelectedItem: PropTypes.func.isRequired,
+  detailViewExpanded: PropTypes.bool.isRequired,
+  setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
@@ -137,15 +143,26 @@ ViewThree.defaultProps = {
 export const ViewThreeRaw = ViewThree;
 
 export default connect(
-  ({ selected, chartIndicatorPosition }) => ({
+  ({
     selected,
+    browseBy,
     chartIndicatorPosition,
+    detailViewExpanded,
+  }) => ({
+    selected,
+    browseBy,
+    chartIndicatorPosition,
+    detailViewExpanded,
+
+    // TODO: Remove these since they're data and not state
     conditionCountsByYear,
     conditionCountsByCommodity,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
+    setSelectedCondition: selectedCreators.setSelectedCondition,
     setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
+    expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
 )(ViewThree);

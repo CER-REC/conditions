@@ -110,7 +110,7 @@ describe('Components|ConditionDetails/ConditionList', () => {
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledWith(0, 1);
+      expect(spy).toHaveBeenCalledWith({ instrumentIndex: 0, itemIndex: 1 });
     });
   });
 });

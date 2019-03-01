@@ -6,8 +6,7 @@ import ViewTwo from '../ViewTwo';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
-import conditionDetailsData from '../../components/ConditionDetails/testData';
+import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
 
 const store = createStore();
 
@@ -29,19 +28,15 @@ const conditionDetailsProps = {
       instrumentIndex: 0,
       itemIndex: 0,
     },
-    data: conditionDetailsData,
+    data: conditionData,
   },
   chartIndicatorPosition: {
     bubble: 'XO',
     stream: 2010,
   },
-  detailView: false,
   updateSelectedItem: noop,
   openIntermediatePopup: noop,
-  expandDetailView: noop,
   openProjectDetails: noop,
-  toggleExpanded: noop,
-  browseBy: 'company',
 };
 
 const App = () => (

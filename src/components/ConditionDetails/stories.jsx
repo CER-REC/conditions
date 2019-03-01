@@ -4,16 +4,16 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import ConditionDetails from '.';
 import ReadMe from './README.md';
 
-import data from './testData';
+import { conditionData } from '../../mockData';
 
-const updateSelectedItem = () => (instrumentIndex, itemIndex) => (
+const updateSelectedItem = () => ({ instrumentIndex, itemIndex }) => (
   { selectedItem: { instrumentIndex, itemIndex } }
 );
 
 const toggleExpanded = () => expand => ({ expanded: expand });
 
 const defaultProps = {
-  data,
+  data: conditionData,
   selectedProject: 'Keystone XL',
   searchKeywords: {
     include: ['hello'],
