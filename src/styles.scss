@@ -37,6 +37,10 @@
   .buttonText { color: #D1057A; }
 
   [tabIndex="0"] { cursor: pointer; }
+
+  .close {
+    all: unset;
+  }
 }
 
 // Override the WET template for our container
@@ -47,6 +51,7 @@ body > .container {
   // TODO: Deployment hacks
   // This is only used to indicate the division between views right now
   hr { border-top: 2px solid #ccc; }
+
 }
 
 // TODO: deployment hacks
