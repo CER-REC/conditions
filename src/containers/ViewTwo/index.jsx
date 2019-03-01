@@ -9,7 +9,7 @@ import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import ConditonDetails from '../../components/ConditionDetails';
 import TrendButton from '../../components/TrendButton';
-import { browseByType } from '../../proptypes';
+import { browseByType, yearRangeType } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import Dropdown from '../../components/Dropdown';
 import * as browseByCreators from '../../actions/browseBy';
@@ -56,9 +56,9 @@ const projectData = [
 
 const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
 
-// SearchBar
+// SearchBar (Data)
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
-
+const availableYearRange = { start: 1970, end: 1980 };
 const defaultProps = {
   data,
   selectedProject: 'Keystone XL',
@@ -76,14 +76,15 @@ const ViewTwo = props => (
       <section className="searchHeader">
         <SearchBar
           suggestedKeywords={searchData}
-          availableYearRange={props.availableProjectYear}
+          availableYearRange={availableYearRange}
           availableCategories={availableCategories}
-          updateKeywords={() => {}}
+          setIncluded={props.setIncluded}
+          setExcluded={props.setExcluded}
           findAnyOnChange={props.setFindAny}
           updateYear={props.setProjectYear}
           changeProjectStatus={props.setProjectStatus}
-          includeKeywords={['safety']}
-          excludeKeywords={['emissions']}
+          includeKeywords={props.included}
+          excludeKeywords={props.excluded}
           projectStatus={props.projectStatus}
           yearRange={props.projectYear}
           findAny={props.findAny}
@@ -138,18 +139,18 @@ ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
   setBrowseBy: PropTypes.func.isRequired,
-  availableProjectYear: PropTypes.shape({
-    start: PropTypes.number.isRequired,
-    end: PropTypes.number.isRequired,
-  }).isRequired,
+  availableProjectYear: yearRangeType.isRequired,
   setFindAny: PropTypes.func.isRequired,
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
-  yearRange: PropTypes.arrayOf(PropTypes.string).isRequired,
   findAny: PropTypes.bool.isRequired,
-  selectRay: PropTypes.string.isRequired,
-  projectYear: PropTypes.number.isRequired,
+  selectRay: PropTypes.func.isRequired,
+  projectYear: yearRangeType.isRequired,
   setProjectStatus: PropTypes.func.isRequired,
+  setIncluded: PropTypes.func.isRequired,
+  setExcluded: PropTypes.func.isRequired,
+  included: PropTypes.arrayOf(PropTypes.string).isRequired,
+  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 ViewTwo.defaultProps = {
@@ -179,7 +180,8 @@ export default connect(
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
     setFindAny: searchCreators.setFindAny,
-    setSearchWords: searchCreators.setSearchWords,
+    setIncluded: searchCreators.setIncluded,
+    setExcluded: searchCreators.setExcluded,
   },
 )(ViewTwo);
 

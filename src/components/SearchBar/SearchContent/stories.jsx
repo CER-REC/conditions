@@ -18,7 +18,8 @@ storiesForComponent('Components|SearchBar/SearchContent', module, ReadMe)
         includeKeywords: [], excludeKeywords: [], findAny: true,
       },
       actions: {
-        updateKeywords: () => (words, type) => ((type === 'include') ? { includeKeywords: words } : { excludeKeywords: words }),
+        setIncluded: () => words => ({ includedKeywords: words }),
+        setExcluded: () => words => ({ excludedKeywords: words }),
         findAnyOnChange: () => e => ({ findAny: e }),
       },
     },

@@ -31,8 +31,6 @@ export const setProjectYear = projectYear => ({
   payload: { projectYear },
 });
 
-export const setSearchWords = (words, type) => ((type === 'include') ? { type: Types.INCLUDED, payload: { words } } : { type: Types.EXCLUDED, payload: { words } });
-
 const initialState = {
   included: [],
   excluded: [],

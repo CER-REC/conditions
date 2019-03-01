@@ -6,7 +6,7 @@ import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../../Icon/index';
 import handleInteraction from '../../../../utilities/handleInteraction';
 import BarContainer from '../../../BarContainer';
-import { suggestedKeywordsArrayType } from '../../../../proptypes';
+import { suggestedKeywordsArrayType, updateKeywordsFunctionType } from '../../../../proptypes';
 import './styles.scss';
 
 library.add(faMinusCircle, faPlusCircle);
@@ -15,7 +15,8 @@ class KeywordList extends React.PureComponent {
   static propTypes = {
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onClick: PropTypes.func.isRequired,
+    setIncluded: PropTypes.func.isRequired,
+    setExcluded: PropTypes.func.isRequired,
     keywords: suggestedKeywordsArrayType.isRequired,
     isExclude: PropTypes.bool.isRequired,
   }
@@ -23,13 +24,13 @@ class KeywordList extends React.PureComponent {
   keywordOnClick = (word) => {
     const { isExclude, includeKeywords, excludeKeywords } = this.props;
     if (excludeKeywords.includes(word)) {
-      this.props.onClick(excludeKeywords.filter(v => v !== word), 'exclude');
+      this.props.setExcluded(excludeKeywords.filter(v => v !== word));
     } else if (includeKeywords.includes(word)) {
-      this.props.onClick(includeKeywords.filter(v => v !== word), 'include');
+      this.props.setIncluded(includeKeywords.filter(v => v !== word));
     } else if (isExclude) {
-      this.props.onClick(excludeKeywords.concat(word), 'exclude');
+      this.props.setExcluded(excludeKeywords.concat(word));
     } else {
-      this.props.onClick(includeKeywords.concat(word), 'include');
+      this.props.setIncluded(includeKeywords.concat(word));
     }
   };
 

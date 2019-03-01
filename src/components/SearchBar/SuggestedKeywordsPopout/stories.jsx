@@ -18,16 +18,17 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
       isExclude={false}
       suggestedKeywords={keywords}
       categories={['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings']}
-      excludeKeywords={[]}
       {...getInteractionProps()}
     />
   ), {
     interaction: {
       state: {
         includeKeywords: ['deer'],
+        excludeKeywords: [],
       },
       actions: {
-        onClick: () => updatedList => ({ includeKeywords: updatedList }),
+        setIncluded: () => words => ({ includedKeywords: words }),
+        setExcluded: () => words => ({ excludedKeywords: words }),
       },
     },
   });

@@ -34,7 +34,8 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
         findAny: true,
       },
       actions: {
-        updateKeywords: () => (words, type) => ((type === 'include') ? { includeKeywords: words } : { excludeKeywords: words }),
+        setIncluded: () => words => ({ includedKeywords: words }),
+        setExcluded: () => words => ({ excludedKeywords: words }),
         findAnyOnChange: () => e => ({ findAny: e }),
         updateYear: () => selectedYear => ({ yearRange: selectedYear }),
         changeProjectStatus: () => updatedProjectStatus => (
