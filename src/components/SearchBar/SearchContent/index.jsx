@@ -207,8 +207,8 @@ class SearchContent extends React.PureComponent {
     this.setState(prevState => ({ mode: (prevState.mode === 'basic' ? 'advanced' : 'basic') }));
     this.props.findAnyOnChange(true);
     this.props.changeIsExclude(false);
-    this.props.updateKeywords.include(this.props.includeKeywords);
-    this.props.updateKeywords.exclude([]);
+    this.updateKeywords('include', this.props.includeKeywords);
+    this.updateKeywords('exclude', []);
   }
 
   render() {

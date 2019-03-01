@@ -59,12 +59,6 @@ const projectData = [
 // SearchBar (Data)
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 const availableYearRange = { start: 1970, end: 1980 };
-const sampleSuggestedKeywords = {
-  safety: { conditions: 1200, category: ['administration & filings'] },
-  emissions: { conditions: 1000, category: ['environment'] },
-  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
-  construction: { conditions: 1000, category: ['environment'] },
-};
 
 const defaultProps = {
   data,
@@ -73,8 +67,10 @@ const defaultProps = {
     include: ['hello'],
   },
   // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
+  /* eslint-disable no-alert */
   openProjectDetails: project => alert(`Project details for: ${project}`),
   openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
+  /* eslint-enable no-alert */
 };
 
 const ViewTwo = props => (
@@ -160,7 +156,6 @@ ViewTwo.propTypes = {
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
   findAny: PropTypes.bool.isRequired,
-  selectRay: PropTypes.func.isRequired,
   projectYear: yearRangeType.isRequired,
   setProjectStatus: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,

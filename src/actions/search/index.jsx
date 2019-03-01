@@ -40,10 +40,6 @@ const initialState = {
     start: 2010,
     end: 2018,
   },
-  availableProjectYear: {
-    start: 2010,
-    end: 2018,
-  },
 };
 
 export const reducer = (state = initialState, action) => {

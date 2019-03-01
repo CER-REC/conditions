@@ -6,7 +6,7 @@ import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../../Icon/index';
 import handleInteraction from '../../../../utilities/handleInteraction';
 import BarContainer from '../../../BarContainer';
-import { suggestedKeywordsArrayType, updateKeywordsFunctionType } from '../../../../proptypes';
+import { suggestedKeywordsArrayType } from '../../../../proptypes';
 import './styles.scss';
 
 library.add(faMinusCircle, faPlusCircle);

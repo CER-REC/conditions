@@ -27,8 +27,8 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
         excludeKeywords: [],
       },
       actions: {
-        setIncluded: () => words => ({ includedKeywords: words }),
-        setExcluded: () => words => ({ excludedKeywords: words }),
+        setIncluded: () => words => ({ includeKeywords: words }),
+        setExcluded: () => words => ({ excludeKeywords: words }),
       },
     },
   });
