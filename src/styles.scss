@@ -39,7 +39,8 @@
   [tabIndex="0"] { cursor: pointer; }
 
   .close {
-    all: unset;
+    font-size: inherit;
+    color: inherit;
   }
   // Overwriting styles from theme
   h1, h2, h3, h4, h5, h6 {
