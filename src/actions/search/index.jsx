@@ -6,29 +6,29 @@ export const Types = {
   PROJECT_YEAR: 'projectYear',
 };
 
-export const setIncluded = includedKey => ({
+export const setIncluded = included => ({
   type: Types.INCLUDED,
-  payload: { includedKey },
+  payload: { included },
 });
 
-export const setExcluded = excludedKey => ({
+export const setExcluded = excluded => ({
   type: Types.EXCLUDED,
-  payload: { excludedKey },
+  payload: { excluded },
 });
 
-export const setFindAny = findAnyKey => ({
+export const setFindAny = findAny => ({
   type: Types.FIND_ANY,
-  payload: { findAnyKey },
+  payload: { findAny },
 });
 
-export const setProjectStatus = status => ({
+export const setProjectStatus = projectStatus => ({
   type: Types.PROJECT_STATUS,
-  payload: { status },
+  payload: { projectStatus },
 });
 
-export const setProjectYear = yearRange => ({
+export const setProjectYear = projectYear => ({
   type: Types.PROJECT_YEAR,
-  payload: { yearRange },
+  payload: { projectYear },
 });
 
 const initialState = {
@@ -44,11 +44,11 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Types.INCLUDED: return { ...state, included: action.payload.includedKey };
-    case Types.EXCLUDED: return { ...state, excluded: action.payload.excludedKey };
-    case Types.FIND_ANY: return { ...state, findAny: action.payload.findAnyKey };
-    case Types.PROJECT_STATUS: return { ...state, projectStatus: action.payload.status };
-    case Types.PROJECT_YEAR: return { ...state, projectYear: action.payload.yearRange };
+    case Types.INCLUDED: return { ...state, included: action.payload.included };
+    case Types.EXCLUDED: return { ...state, excluded: action.payload.excluded };
+    case Types.FIND_ANY: return { ...state, findAny: action.payload.findAny };
+    case Types.PROJECT_STATUS: return { ...state, projectStatus: action.payload.projectStatus };
+    case Types.PROJECT_YEAR: return { ...state, projectYear: action.payload.projectYear };
     default: return state;
   }
 };

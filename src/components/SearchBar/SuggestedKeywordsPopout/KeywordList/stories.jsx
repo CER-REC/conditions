@@ -10,7 +10,7 @@ const words = [
 ];
 
 storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', module, ReadMe)
-  .addDecorator(withInteraction({ actions: ['onClick'] }))
+  .addDecorator(withInteraction({ actions: ['setIncluded', 'setExcluded'] }))
   .add('default', () => (
     <KeywordList
       includeKeywords={['deer']}

@@ -16,7 +16,8 @@ class SearchContent extends React.PureComponent {
   static propTypes = {
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-    updateKeywords: PropTypes.func.isRequired,
+    setExcluded: PropTypes.func.isRequired,
+    setIncluded: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
     findAnyOnChange: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
@@ -47,9 +48,17 @@ class SearchContent extends React.PureComponent {
 
   keyWordsRender = keywords => (<span>{keywords.join(', ')} </span>)
 
+  updateKeywords = (type, keywords) => {
+    if (type === 'include') {
+      this.props.setIncluded(keywords);
+    } else {
+      this.props.setExcluded(keywords);
+    }
+  }
+
   deleteWord = (word, type) => {
     const updatedKeywords = this.props[`${type}Keywords`].filter(v => v !== word);
-    this.props.updateKeywords(updatedKeywords, type);
+    this.updateKeywords(type, updatedKeywords);
   }
 
   addWord = (word, type) => {
@@ -58,7 +67,7 @@ class SearchContent extends React.PureComponent {
     if (includeKeywords.includes(word) || excludeKeywords.includes(word)) { return; }
     const currentKeywords = this.props[`${type}Keywords`];
     if (currentKeywords.length >= 6) { return; }
-    this.props.updateKeywords(currentKeywords.concat(word), type);
+    this.updateKeywords(type, currentKeywords.concat(word));
   }
 
   updateInputInclude = e => this.setState({ inputInclude: e.target.value });
@@ -198,8 +207,8 @@ class SearchContent extends React.PureComponent {
     this.setState(prevState => ({ mode: (prevState.mode === 'basic' ? 'advanced' : 'basic') }));
     this.props.findAnyOnChange(true);
     this.props.changeIsExclude(false);
-    this.props.updateKeywords(this.props.includeKeywords, 'include');
-    this.props.updateKeywords([], 'exclude');
+    this.updateKeywords('include', this.props.includeKeywords);
+    this.updateKeywords('exclude', []);
   }
 
   render() {

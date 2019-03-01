@@ -15,7 +15,8 @@ class SearchBar extends React.PureComponent {
   static propTypes = {
     yearRange: yearRangeType.isRequired,
     availableYearRange: yearRangeType.isRequired,
-    updateKeywords: PropTypes.func.isRequired,
+    setExcluded: PropTypes.func.isRequired,
+    setIncluded: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
     projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
     suggestedKeywords: suggestedKeywordsObject.isRequired,
@@ -43,7 +44,7 @@ class SearchBar extends React.PureComponent {
       mode, isActive, isExclude,
     } = this.state;
     const {
-      projectStatus, updateKeywords,
+      projectStatus, setIncluded, setExcluded,
       findAny, includeKeywords, excludeKeywords, suggestedKeywords,
       yearRange, availableYearRange, availableCategories, findAnyOnChange,
     } = this.props;
@@ -63,7 +64,8 @@ class SearchBar extends React.PureComponent {
         <SuggestedKeywordsPopout
           suggestedKeywords={suggestedKeywords}
           closeTab={() => (this.setState({ isActive: false }))}
-          onClick={updateKeywords}
+          setIncluded={setIncluded}
+          setExcluded={setExcluded}
           categories={availableCategories}
           isExclude={isExclude}
           includeKeywords={includeKeywords}
@@ -73,7 +75,8 @@ class SearchBar extends React.PureComponent {
     const searchComponent = (mode !== 'find') ? null : (
       <React.Fragment>
         <SearchContent
-          updateKeywords={updateKeywords}
+          setIncluded={setIncluded}
+          setExcluded={setExcluded}
           closeTab={() => (this.setState({ mode: '' }))}
           findAnyOnChange={findAnyOnChange}
           findAny={findAny}

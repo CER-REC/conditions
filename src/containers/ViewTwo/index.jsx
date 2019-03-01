@@ -8,13 +8,14 @@ import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import TrendButton from '../../components/TrendButton';
-import { browseByType, featureTypes } from '../../proptypes';
+import { browseByType, yearRangeType, featureTypes } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
+import * as searchCreators from '../../actions/search';
+import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
 
@@ -55,16 +56,9 @@ const projectData = [
   },
 ];
 
-// SearchBar
-const availableYearRange = { start: 1970, end: 1980 };
-const sampleSuggestedKeywords = {
-  safety: { conditions: 1200, category: ['administration & filings'] },
-  emissions: { conditions: 1000, category: ['environment'] },
-  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
-  construction: { conditions: 1000, category: ['environment'] },
-};
-
+// SearchBar (Data)
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
+const availableYearRange = { start: 1970, end: 1980 };
 
 const defaultProps = {
   data,
@@ -73,8 +67,10 @@ const defaultProps = {
     include: ['hello'],
   },
   // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
+  /* eslint-disable no-alert */
   openProjectDetails: project => alert(`Project details for: ${project}`),
   openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
+  /* eslint-enable no-alert */
 };
 
 const ViewTwo = props => (
@@ -82,18 +78,19 @@ const ViewTwo = props => (
     <section className="row">
       <section className="searchHeader">
         <SearchBar
-          suggestedKeywords={sampleSuggestedKeywords}
+          suggestedKeywords={searchData}
           availableYearRange={availableYearRange}
           availableCategories={availableCategories}
-          updateKeywords={noop}
-          findAnyOnChange={noop}
-          updateYear={noop}
-          changeProjectStatus={noop}
-          includeKeywords={['safety']}
-          excludeKeywords={[]}
-          projectStatus={['OPEN', 'CANCELLED']}
-          yearRange={availableYearRange}
-          findAny
+          setIncluded={props.setIncluded}
+          setExcluded={props.setExcluded}
+          findAnyOnChange={props.setFindAny}
+          updateYear={props.setProjectYear}
+          changeProjectStatus={props.setProjectStatus}
+          includeKeywords={props.included}
+          excludeKeywords={props.excluded}
+          projectStatus={props.projectStatus}
+          yearRange={props.projectYear}
+          findAny={props.findAny}
         />
       </section>
     </section>
@@ -155,6 +152,16 @@ ViewTwo.propTypes = {
     feature: featureTypes.isRequired,
   }).isRequired,
   setBrowseBy: PropTypes.func.isRequired,
+  setFindAny: PropTypes.func.isRequired,
+  setProjectYear: PropTypes.func.isRequired,
+  projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
+  findAny: PropTypes.bool.isRequired,
+  projectYear: yearRangeType.isRequired,
+  setProjectStatus: PropTypes.func.isRequired,
+  setIncluded: PropTypes.func.isRequired,
+  setExcluded: PropTypes.func.isRequired,
+  included: PropTypes.arrayOf(PropTypes.string).isRequired,
+  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
 };
 
@@ -165,14 +172,28 @@ ViewTwo.defaultProps = {
 export const ViewTwoUnconnected = ViewTwo;
 
 export default connect(
-  ({ selected, browseBy }) => ({
+  ({
     selected,
     browseBy,
+    search,
+  }) => ({
+    selected,
+    browseBy,
+    included: search.included,
+    projectStatus: search.projectStatus,
+    findAny: search.findAny,
+    projectYear: search.projectYear,
+    excluded: search.excluded,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
     setBrowseBy: browseByCreators.setBrowseBy,
+    setProjectStatus: searchCreators.setProjectStatus,
+    setProjectYear: searchCreators.setProjectYear,
+    setFindAny: searchCreators.setFindAny,
+    setIncluded: searchCreators.setIncluded,
+    setExcluded: searchCreators.setExcluded,
   },
 )(ViewTwo);
 
