@@ -101,7 +101,7 @@ const ViewTwo = props => (
       <section className="wheel">
         <Wheel
           wheelType={props.browseBy}
-          selectRay=""
+          selectRay={noop}
           itemsData={props.browseBy === 'company' ? companyWheelData : {
             legendData: companyWheelData.legendData.slice(0, 25),
             items: companyWheelData.items.slice(0, 25),

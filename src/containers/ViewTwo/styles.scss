@@ -1,6 +1,7 @@
 @import '../../styles/grid';
 
 .ViewTwo {
+  width: 100%;
   @include grid((
     searchHeader: 116,
     wheel: 57,
