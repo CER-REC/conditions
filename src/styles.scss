@@ -66,11 +66,8 @@ body > .container {
 @media (min-width: 1200px) { .ProjectMenu { transform: scale(0.9); } }
 body > .container .Wheel button { display: none; }
 
-.ViewTwo, .ViewOne, .ViewThree{
+.ViewTwo, .ViewOne {
   .row {
     margin-right:0px;
   }
-}
-.ViewThree .secondRow {
-    position: unset;
 }
