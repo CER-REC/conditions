@@ -9,7 +9,6 @@ import StreamGraph from '../../components/StreamGraph';
 import BubbleChart from '../../components/BubbleChart';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
-import SelectedGroupBar from '../../components/SelectedGroupBar';
 import BrowseByButton from '../../components/BrowseByBtn';
 import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';

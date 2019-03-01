@@ -7,14 +7,14 @@ import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
-import ConditionDetails from '../../components/ConditionDetails';
 import TrendButton from '../../components/TrendButton';
 import { browseByType, featureTypes } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import FeaturesMenu from '../../components/FeaturesMenu';
+import ConditionDetails from '../../components/ConditionDetails';
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
 
@@ -63,7 +63,9 @@ const sampleSuggestedKeywords = {
   habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
   construction: { conditions: 1000, category: ['environment'] },
 };
+
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
+
 const defaultProps = {
   data,
   selectedProject: 'Keystone XL',
@@ -99,8 +101,11 @@ const ViewTwo = props => (
       <section className="wheel">
         <Wheel
           wheelType={props.browseBy}
-          itemsData={companyWheelData}
           selectRay={noop}
+          itemsData={props.browseBy === 'company' ? companyWheelData : {
+            legendData: companyWheelData.legendData.slice(0, 25),
+            items: companyWheelData.items.slice(0, 25),
+          }}
         />
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
         <BrowseByBtn mode="location" onClick={props.setBrowseBy} />

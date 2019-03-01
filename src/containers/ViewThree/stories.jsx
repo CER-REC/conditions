@@ -52,7 +52,7 @@ storiesForView('Containers|ViewThree', module, ReadMe)
         { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
       ),
     },
-   state: { selected: { feature: 'theme', subFeature: '' }, chartIndicatorPosition: { bubble: 'XO', stream: 2010 } },
+    state: { selected: { feature: 'theme', subFeature: '' }, chartIndicatorPosition: { bubble: 'XO', stream: 2010 } },
   }))
   .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);

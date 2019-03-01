@@ -11,6 +11,7 @@ import conditionDetailsData from '../../components/ConditionDetails/testData';
 
 const store = createStore();
 
+const noop = () => {};
 const conditionDetailsProps = {
   conditionCountsByYear,
   conditionCountsByCommodity,
@@ -23,13 +24,24 @@ const conditionDetailsProps = {
     searchKeywords: {
       include: ['hello'],
     },
-    selectedProject: 'Keystone XL',
+    selectedProject: 'Project Name',
     selectedItem: {
       instrumentIndex: 0,
       itemIndex: 0,
     },
     data: conditionDetailsData,
   },
+  chartIndicatorPosition: {
+    bubble: 'XO',
+    stream: 2010,
+  },
+  detailView: false,
+  updateSelectedItem: noop,
+  openIntermediatePopup: noop,
+  expandDetailView: noop,
+  openProjectDetails: noop,
+  toggleExpanded: noop,
+  browseBy: 'company',
 };
 
 const App = () => (
