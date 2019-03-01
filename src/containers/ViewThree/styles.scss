@@ -3,6 +3,7 @@
 @import '../../styles/fontVariables';
 
 .ViewThree {
+  position: relative;
   @include grid((
     features: 21,
     legend: 37,
@@ -12,7 +13,6 @@
     selectedCompany: 38,
     conditionDetails: 77,
   ));
-
   /**
    *  TODO: Go over all of this and fix it up
    *
@@ -41,7 +41,6 @@
 
       background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 42px);
 
-      z-index: -1;
     }
 
     .features {
@@ -62,7 +61,7 @@
   .secondRow {
     height: 35vh;
     min-height: 200px;
-
+    position: relative;
     .borderContainer {
       position: absolute;
 
@@ -73,8 +72,6 @@
       border-left: 1px solid $DarkGray;
       border-right: 1px solid $DarkGray;
       border-bottom: 1px solid $DarkGray;
-
-      z-index: -1;
     }
 
     .feature-description {
