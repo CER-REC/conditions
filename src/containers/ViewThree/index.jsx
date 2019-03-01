@@ -92,8 +92,9 @@ const ViewThree = props => (
         <ConditionDetails
           // TODO: This is just a quick hack to get the component into the view
           {...props.conditionDetails}
+          selectedItem={props.selected.conditionData}
           expanded={props.detailView}
-          updateSelectedItem={props.updateSelectedItem}
+          updateSelectedItem={props.setSelectedCondition}
           openIntermediatePopup={props.openIntermediatePopup}
           toggleExpanded={props.expandDetailView}
           openProjectDetails={props.openProjectDetails}
@@ -119,13 +120,17 @@ ViewThree.propTypes = {
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
+    conditionData: PropTypes.shape({
+      instrumentIndex: PropTypes.number.isRequired,
+      itemIndex: PropTypes.number.isRequired,
+    }).isRequired,
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
 
   conditionDetails: PropTypes.object.isRequired,
   detailView: PropTypes.bool.isRequired,
-  updateSelectedItem: PropTypes.func.isRequired,
+  setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,

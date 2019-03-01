@@ -3,10 +3,7 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import { ViewThreeRaw } from '.';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
-
-// TODO: Connect ConditionDetails to the external view once it's been normalized
-import conditionDetailsData from '../../components/ConditionDetails/testData';
+import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
 
 const props = {
   conditionCountsByYear,
@@ -21,11 +18,7 @@ const props = {
       include: ['hello'],
     },
     selectedProject: 'Project Name',
-    selectedItem: {
-      instrumentIndex: 0,
-      itemIndex: 0,
-    },
-    data: conditionDetailsData,
+    data: conditionData,
   },
   chartIndicatorPosition: {
     bubble: 'XO',
@@ -34,7 +27,7 @@ const props = {
   detailView: false,
 };
 
-const pendingActions = ['updateSelectedItem', 'openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
+const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
   [next]: () => () => ({}),
   ...acc,
 }), {});
@@ -46,13 +39,26 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
+      setSelectedCondition: ({ selected }) => selectedCondition => ({
+        selected: { ...selected, conditionData: selectedCondition },
+      }),
       expandDetailView: () => toggleTo => ({ detailView: toggleTo }),
       ...pendingActions,
       setBubbleChartIndicator: ({ chartIndicatorPosition }) => bubble => (
         { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
       ),
     },
-   state: { selected: { feature: 'theme', subFeature: '' }, chartIndicatorPosition: { bubble: 'XO', stream: 2010 } },
+    state: {
+      selected: {
+        feature: 'theme',
+        subFeature: '',
+        conditionData: { instrumentIndex: 0, itemIndex: 0 },
+      },
+      chartIndicatorPosition: {
+        bubble: 'XO',
+        stream: 2010,
+      },
+    },
   }))
   .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);

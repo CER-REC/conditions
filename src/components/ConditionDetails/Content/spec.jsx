@@ -4,13 +4,13 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import Content from '.';
 
-import data from '../testData';
+import { conditionData } from '../../../mockData';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 const defaultProps = {
-  instrument: data[0],
+  instrument: conditionData[0],
   itemIndex: 0,
 };
 

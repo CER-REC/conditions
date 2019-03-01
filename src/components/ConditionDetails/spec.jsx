@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
-import data from './testData';
+import { conditionData } from '../../mockData';
 import ConditionDetails from '.';
 
 const defaultProps = {
-  data,
+  data: conditionData,
   selectedProject: 'Keystone XL',
   searchKeywords: {
     include: ['hello'],

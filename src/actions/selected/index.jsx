@@ -41,7 +41,7 @@ const initialState = {
   subFeature: '',
   company: '',
   project: '',
-  condition: '',
+  condition: { instrumentIndex: 0, itemIndex: 0 },
   indicator: '',
 };
 
