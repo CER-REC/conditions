@@ -26,8 +26,8 @@ const ViewOne = props => (
     </section>
     <section className="row">
       <section className="browseBy">
-        <BrowseByBtn mode="company" />
-        <BrowseByBtn mode="location" />
+        <BrowseByBtn mode="company" onClick={noop} />
+        <BrowseByBtn mode="location" onClick={noop} />
       </section>
       <section className="infoBar">
         <ShortcutInfoBar
