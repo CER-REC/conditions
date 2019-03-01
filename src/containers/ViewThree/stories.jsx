@@ -5,6 +5,9 @@ import ReadMe from './README.md';
 import { ViewThreeRaw } from '.';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 
+// TODO: Connect ConditionDetails to the external view once it's been normalized
+import conditionDetailsData from '../../components/ConditionDetails/testData';
+
 const props = {
   conditionCountsByYear,
   conditionCountsByCommodity,
@@ -12,7 +15,29 @@ const props = {
     feature: 'theme',
     subFeature: '',
   },
+  conditionDetails: {
+    isExpandable: true,
+    searchKeywords: {
+      include: ['hello'],
+    },
+    selectedProject: 'Project Name',
+    selectedItem: {
+      instrumentIndex: 0,
+      itemIndex: 0,
+    },
+    data: conditionDetailsData,
+  },
+  chartIndicatorPosition: {
+    bubble: 'XO',
+    stream: 2010,
+  },
+  detailView: false,
 };
+
+const pendingActions = ['updateSelectedItem', 'openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
+  [next]: () => () => ({}),
+  ...acc,
+}), {});
 
 storiesForView('Containers|ViewThree', module, ReadMe)
   .addDecorator(withInteraction({
@@ -21,8 +46,13 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
+      expandDetailView: () => toggleTo => ({ detailView: toggleTo }),
+      ...pendingActions,
+      setBubbleChartIndicator: ({ chartIndicatorPosition }) => bubble => (
+        { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
+      ),
     },
-    state: { selected: { feature: 'theme', subFeature: '' } },
+    state: { selected: { feature: 'theme', subFeature: '' }, chartIndicatorPosition: { bubble: 'XO', stream: 2010 } },
   }))
   .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);

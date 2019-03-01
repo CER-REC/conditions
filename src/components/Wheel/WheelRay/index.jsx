@@ -5,6 +5,15 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import BarContainer from '../../BarContainer';
 import { browseByType } from '../../../proptypes';
+import { features } from '../../../constants';
+
+const themeKeys = Object.keys(features.theme);
+
+const randomLocationBars = Array(200).fill('')
+  .map(() => themeKeys.map(subFeature => ({
+    value: Math.floor(Math.random() * 15) + 1,
+    fill: features.theme[subFeature],
+  })));
 
 class WheelRay extends React.Component {
   static propTypes = {
@@ -50,9 +59,7 @@ class WheelRay extends React.Component {
       // TODO: work out how to remove magic numbers. Right now they came from the design
 
       const transform = `translate(371 209) rotate(${position.toFixed(2)}, 0, 245)`;
-
       // TODO: split logic below to location ray and company ray?
-
       const componentToReturn = wheelType === 'company'
         ? (
           <g key={item._id} transform={transform}>
@@ -78,7 +85,7 @@ class WheelRay extends React.Component {
                 className="WheelBar"
                 width={height /* These are backwards because of the rotation */}
                 height={width}
-                items={[{ value: 8, fill: 'green' }, { value: 10, fill: 'red' }, { value: 7, fill: 'pink' }]}
+                items={randomLocationBars[index]}
                 vertical
                 standalone
               />

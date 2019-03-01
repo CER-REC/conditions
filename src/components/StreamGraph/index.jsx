@@ -115,6 +115,17 @@ class StreamGraph extends React.Component {
       );
     }
 
+    // Setting these here because CSS classes weren't being picked up by Victory
+    // I may have just been doing it wrong though
+    const axisStyles = {
+      tickLabels: {
+        fontSize: '10px',
+      },
+      axisLabel: {
+        fontSize: '12px',
+      },
+    };
+
     return (
       <VictoryChart>
         <VictoryAxis
@@ -122,12 +133,14 @@ class StreamGraph extends React.Component {
           label="Number of Conditions"
           tickValues={[minConditionValue, maxConditionValue]}
           className="axis-label"
+          style={axisStyles}
         />
         <VictoryAxis
           label="Effective Date"
           tickFormat={roundDateLabel}
-          className="Axis-label"
+          className="axis-label"
           domain={[minDateValue, maxDateValue]}
+          style={axisStyles}
         />
         <StackGroupProps
           groupProps={{

@@ -7,17 +7,19 @@ import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
-import ConditonDetails from '../../components/ConditionDetails';
 import TrendButton from '../../components/TrendButton';
-import { browseByType, yearRangeType } from '../../proptypes';
+import { browseByType, yearRangeType, featureTypes } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
-import Dropdown from '../../components/Dropdown';
+import FeaturesMenu from '../../components/FeaturesMenu';
+import ConditionDetails from '../../components/ConditionDetails';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import './styles.scss';
 import data from '../../components/ConditionDetails/testData';
+
+const noop = () => {};
 
 const legendItems = [
   { feature: 'theme', description: 'SECURITY', disabled: false },
@@ -54,11 +56,16 @@ const projectData = [
   },
 ];
 
-const features = ['theme', 'instrument', 'phase', 'type', 'status', 'filing'];
-
 // SearchBar (Data)
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 const availableYearRange = { start: 1970, end: 1980 };
+const sampleSuggestedKeywords = {
+  safety: { conditions: 1200, category: ['administration & filings'] },
+  emissions: { conditions: 1000, category: ['environment'] },
+  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
+  construction: { conditions: 1000, category: ['environment'] },
+};
+
 const defaultProps = {
   data,
   selectedProject: 'Keystone XL',
@@ -95,8 +102,11 @@ const ViewTwo = props => (
       <section className="wheel">
         <Wheel
           wheelType={props.browseBy}
-          itemsData={companyWheelData}
-          selectRay={props.selectRay}
+          selectRay={noop}
+          itemsData={props.browseBy === 'company' ? companyWheelData : {
+            legendData: companyWheelData.legendData.slice(0, 25),
+            items: companyWheelData.items.slice(0, 25),
+          }}
         />
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
         <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
@@ -105,22 +115,22 @@ const ViewTwo = props => (
         <ProjectMenu
           projectData={projectData}
           selectedProjectID={1225}
-          onChange={() => {}}
+          onChange={noop}
           selectedFeature="theme"
         />
       </section>
       <section className="menus">
         <TrendButton
-          onClick={() => {}}
+          onClick={noop}
           feature="theme"
           subFeature=""
           projectData={conditionCountsByYear.counts}
           instrumentData={conditionCountsByCommodity.counts}
         />
-        <Dropdown
-          options={features}
-          onChange={() => {}}
-          optionID="common.features"
+        <FeaturesMenu
+          dropDown
+          selected={props.selected.feature}
+          onChange={props.setSelectedFeature}
         />
         <FeaturesLegend
           legendItems={legendItems}
@@ -129,7 +139,11 @@ const ViewTwo = props => (
         />
       </section>
       <section className="conditions">
-        <ConditonDetails {...defaultProps} />
+        <ConditionDetails
+          {...defaultProps}
+          toggleExpanded={noop}
+          updateSelectedItem={noop}
+        />
       </section>
     </section>
   </section>
@@ -138,8 +152,10 @@ const ViewTwo = props => (
 ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
+  selected: PropTypes.shape({
+    feature: featureTypes.isRequired,
+  }).isRequired,
   setBrowseBy: PropTypes.func.isRequired,
-  availableProjectYear: yearRangeType.isRequired,
   setFindAny: PropTypes.func.isRequired,
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -151,6 +167,7 @@ ViewTwo.propTypes = {
   setExcluded: PropTypes.func.isRequired,
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setSelectedFeature: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
@@ -172,9 +189,9 @@ export default connect(
     findAny: search.findAny,
     projectYear: search.projectYear,
     excluded: search.excluded,
-    availableProjectYear: search.availableProjectYear,
   }),
   {
+    setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,

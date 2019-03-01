@@ -28,7 +28,6 @@ export default (instrumentChartData, width, height) => {
       })),
     })),
   };
-
   // d3 pack generates a function to
   // fit data into tightly packed circles.
   const pack = d3

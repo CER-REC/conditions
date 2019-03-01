@@ -1,8 +1,8 @@
 {
   "name": "neb-conditions-visualization",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A visualization of data collected since 2010 about conditions on energy projects that the NEB creates as part of their regulatory process. ",
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "scripts": {
     "ci:test": "npm run test -- --ci --reporters=default --reporters=jest-junit && codecov",
     "cz": "git-cz",
@@ -37,6 +37,7 @@
     "d3": "^5.7.0",
     "d3-geo": "^1.11.3",
     "dialog-polyfill": "^0.4.10",
+    "domready": "^1.0.8",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
     "immutable": "^4.0.0-rc.12",

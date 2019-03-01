@@ -47,6 +47,14 @@ const FeaturesLegend = (props) => {
             id="components.projectLegend.totalConditions"
           />
         </div>
+        <div className="AssociatedComp">
+          <h3 className="Asterisk">*</h3>
+          <div className="AssociatedDesc">
+            <FormattedMessage
+              id="components.projectLegend.associated"
+            />
+          </div>
+        </div>
       </div>
     );
   }
@@ -62,14 +70,6 @@ const FeaturesLegend = (props) => {
     <div className="FeaturesLegend">
       {renderedItems}
       {footer}
-      <div className="AssociatedComp">
-        <h3 className="Asterisk">*</h3>
-        <div className="AssociatedDesc">
-          <FormattedMessage
-            id="components.projectLegend.associated"
-          />
-        </div>
-      </div>
     </div>
   );
 };

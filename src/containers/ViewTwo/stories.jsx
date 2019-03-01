@@ -18,13 +18,21 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       selectRay: () => () => ({}),
       setFindAny: () => e => ({ findAny: e }),
       setProjectYear: () => selectedYear => ({ projectYear: selectedYear }),
-      setProjectStatus: () => updatedProjectStatus => (
-        { projectStatus: updatedProjectStatus }),
+      setProjectStatus: () => status => ({ projectStatus: status }),
       setIncluded: () => words => ({ included: words }),
       setExcluded: () => words => ({ excluded: words }),
+      setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
     },
     state: {
-      browseBy: 'company', included: [], excluded: [], projectStatus: ['OPEN'], projectYear: year, findAny: true,
+      browseBy: 'company',
+      included: [],
+      excluded: [],
+      projectStatus: ['OPEN'],
+      projectYear: year,
+      findAny: true,
+      selected: {
+        feature: 'theme',
+      },
     },
   }))
   .add('default', () => (

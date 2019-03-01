@@ -18,7 +18,6 @@ const defaultProps = {
   searchKeywords: {
     include: ['hello'],
   },
-  // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
   openProjectDetails: project => alert(`Project details for: ${project}`),
   openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
 };
@@ -45,13 +44,14 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
     },
   })
   .add('expandable', () => (
-    <ConditionDetails
-      {...defaultProps}
-      // selectedItem={{ instrumentIndex: 1, itemIndex: 0 }}
-      isExpandable
-      expanded
-      {...getInteractionProps()}
-    />
+    <div style={{ width: 800, border: '1px dashed magenta' }}>
+      <ConditionDetails
+        {...defaultProps}
+        isExpandable
+        expanded
+        {...getInteractionProps()}
+      />
+    </div>
   ), {
     interaction: {
       state: {

@@ -14,7 +14,7 @@ module.exports = {
   entry: {
     bundle: [
       'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr',
-      './src/index.js',
+      './src/index.jsx',
     ],
   },
   output: {

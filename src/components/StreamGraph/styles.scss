@@ -1,7 +1,16 @@
 @import '../../styles/colors';
+@import '../../styles/fontVariables';
 
 .StreamGraph {
   cursor: pointer;
 
-  &, .Axis-label, h1 { color: $Black51; }
+  &, .axis-label { color: $Black51; }
+
+  h1 {
+    margin: 0;
+    font-family: $fira-sans-condensed;
+    font-weight: normal;
+    color: $Black77;
+    font-size: 18px;
+  }
 }
