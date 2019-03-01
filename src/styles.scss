@@ -56,6 +56,10 @@ body > .container {
   // This is only used to indicate the division between views right now
   hr { border-top: 2px solid #ccc; }
 
+  button {
+    background-color: unset;
+  }
+
 }
 
 // TODO: deployment hacks
