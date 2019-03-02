@@ -110,7 +110,7 @@ class ConditionDetails extends React.Component {
     return (
       <section className="ConditionDetails">
         {popoutLeft}
-        <div className="main">
+        <div className={classNames('main', {'expandable': this.props.isExpandable})}>
           {this.renderHeader()}
           <div className="listPane">{this.renderList()}</div>
           <div className="contentPane">{this.renderContent(instrument, index)}</div>
