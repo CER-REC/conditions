@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import ShareIcon from '../ShareIcon';
-import AboutTextBox from '../AboutTextBox';
+import AboutTextBox from './AboutTextBox';
 import MethodologyTextBox from './MethodologyTextBox';
 import DownloadsTextBox from './DownloadsTextBox';
 import CircleContainer from '../CircleContainer';
@@ -19,11 +21,8 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeDialog: '',
-    };
+  state = {
+    activeDialog: this.props.activeDialog,
   }
 
   setActiveDialog = activeDialog => this.setState({ activeDialog });
@@ -44,7 +43,7 @@ class MainInfoBar extends React.PureComponent {
       <button
         key={k}
         id={k}
-        className={`TextButton ${this.state.activeDialog === k ? 'selected' : ''}`}
+        className={`textButton ${this.state.activeDialog === k ? 'selected' : ''}`}
         type="button"
         onClick={() => this.setActiveDialog(k)}
       >
@@ -71,28 +70,27 @@ class MainInfoBar extends React.PureComponent {
     ));
     return (
       <div className="MainInfoBar">
-        <hr />
-        {this.textButtons()}
-        <br />
-        <div className="TextBox">
+        <div className={classNames('topLine', { view1: this.props.isView1 })} />
+        <div>
+          {this.textButtons()}
+        </div>
+        <div className="content">
           {this.getDialogContent()}
         </div>
-        <br />
-        <div className="ShareIcons">
+        <div className="shareIcons">
           {emailIcon}
           {icons}
         </div>
-        <br />
         {
           this.state.activeDialog === ''
             ? null
             : (
               <CircleContainer
-                className="AngleDoubleDown"
+                className="angleDoubleDown"
                 size={20}
                 onClick={this.closeDialog}
               >
-                <Icon color="grey" size="1x" icon="angle-double-up" prefix="fas" />
+                <Icon size="1x" icon="angle-double-up" prefix="fas" />
               </CircleContainer>
             )
         }
@@ -100,5 +98,15 @@ class MainInfoBar extends React.PureComponent {
     );
   }
 }
+
+MainInfoBar.propTypes = {
+  activeDialog: PropTypes.string,
+  isView1: PropTypes.bool,
+};
+
+MainInfoBar.defaultProps = {
+  activeDialog: '',
+  isView1: false,
+};
 
 export default MainInfoBar;
