@@ -10,33 +10,20 @@ import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from
 
 const store = createStore();
 
-const noop = () => {};
-const conditionDetailsProps = {
+const props = {
   conditionCountsByYear,
   conditionCountsByCommodity,
-  selected: {
-    feature: 'theme',
-    subFeature: '',
-  },
   conditionDetails: {
-    isExpandable: true,
     searchKeywords: {
       include: ['hello'],
     },
     selectedProject: 'Project Name',
-    selectedItem: {
-      instrumentIndex: 0,
-      itemIndex: 0,
-    },
     data: conditionData,
   },
   chartIndicatorPosition: {
     bubble: 'XO',
     stream: 2010,
   },
-  updateSelectedItem: noop,
-  openIntermediatePopup: noop,
-  openProjectDetails: noop,
 };
 
 const App = () => (
@@ -45,9 +32,9 @@ const App = () => (
     {/* TODO: Deployment hacks */}
     <div style={{ clear: 'both' }} />
     <hr />
-    <ViewTwo {...conditionDetailsProps} />
+    <ViewTwo {...props} />
     <hr />
-    <ViewThree {...conditionDetailsProps} />
+    <ViewThree {...props} />
     <hr />
     <Footer />
   </Provider>

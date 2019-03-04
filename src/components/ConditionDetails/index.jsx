@@ -159,7 +159,7 @@ ConditionDetails.propTypes = {
   }),
   openProjectDetails: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func,
   updateSelectedItem: PropTypes.func.isRequired,
 };
 
@@ -168,6 +168,7 @@ ConditionDetails.defaultProps = {
   expanded: false,
   searchKeywords: { include: [], exclude: [] },
   selectedItem: { instrumentIndex: 0, itemIndex: -1 },
+  toggleExpanded: () => {},
 };
 
 export default ConditionDetails;

@@ -17,7 +17,6 @@ import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import './styles.scss';
-import data from '../../components/ConditionDetails/testData';
 
 const noop = () => {};
 
@@ -59,19 +58,6 @@ const projectData = [
 // SearchBar (Data)
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 const availableYearRange = { start: 1970, end: 1980 };
-
-const defaultProps = {
-  data,
-  selectedProject: 'Keystone XL',
-  searchKeywords: {
-    include: ['hello'],
-  },
-  // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
-  /* eslint-disable no-alert */
-  openProjectDetails: project => alert(`Project details for: ${project}`),
-  openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
-  /* eslint-enable no-alert */
-};
 
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
@@ -136,9 +122,12 @@ const ViewTwo = props => (
       </section>
       <section className="conditions">
         <ConditionDetails
-          {...defaultProps}
+          {...props.conditionDetails}
+          selectedItem={props.selected.condition}
+          updateSelectedItem={props.setSelectedCondition}
+          openIntermediatePopup={props.openIntermediatePopup}
+          openProjectDetails={props.openProjectDetails}
           toggleExpanded={noop}
-          updateSelectedItem={noop}
         />
       </section>
     </section>
@@ -150,6 +139,10 @@ ViewTwo.propTypes = {
   browseBy: browseByType.isRequired,
   selected: PropTypes.shape({
     feature: featureTypes.isRequired,
+    condition: PropTypes.shape({
+      instrumentIndex: PropTypes.number.isRequired,
+      itemIndex: PropTypes.number.isRequired,
+    }).isRequired,
   }).isRequired,
   setBrowseBy: PropTypes.func.isRequired,
   setFindAny: PropTypes.func.isRequired,
@@ -163,6 +156,43 @@ ViewTwo.propTypes = {
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
+
+  conditionDetails: PropTypes.shape({
+    isExpandable: PropTypes.bool,
+    expanded: PropTypes.bool,
+    selectedProject: PropTypes.string.isRequired,
+    searchKeywords: PropTypes.shape({
+      include: PropTypes.arrayOf(PropTypes.string),
+      exclude: PropTypes.arrayOf(PropTypes.string),
+    }),
+    data: PropTypes.arrayOf(PropTypes.shape({
+      instrumentNumber: PropTypes.string.isRequired,
+      issuanceDate: PropTypes.string.isRequired,
+      effectiveDate: PropTypes.string.isRequired,
+      sunsetDate: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      activity: PropTypes.string.isRequired,
+      conditions: PropTypes.arrayOf(PropTypes.shape({
+        binnedValue: PropTypes.number.isRequired,
+        fill: PropTypes.arrayOf(PropTypes.string).isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+        text: PropTypes.string.isRequired,
+        details: PropTypes.shape({
+          theme: PropTypes.string.isRequired,
+          instrument: PropTypes.string.isRequired,
+          phase: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired,
+          status: PropTypes.string.isRequired,
+          filing: PropTypes.string.isRequired,
+        }).isRequired,
+      })).isRequired,
+    })).isRequired,
+  }).isRequired,
+  setSelectedCondition: PropTypes.func.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
@@ -188,6 +218,7 @@ export default connect(
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
+    setSelectedCondition: selectedCreators.setSelectedCondition,
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
@@ -196,4 +227,3 @@ export default connect(
     setExcluded: searchCreators.setExcluded,
   },
 )(ViewTwo);
-
