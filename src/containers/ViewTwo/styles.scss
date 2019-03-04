@@ -3,9 +3,9 @@
 .ViewTwo {
   @include grid((
     searchHeader: 116,
-    wheel: 57,
+    wheel: 56,
     companyBreakdown: 36,
-    menus: 21,
+    menus: 20,
     conditions: 58,
   )) {
     /* To ensure the layoutOnly mode appears properly */

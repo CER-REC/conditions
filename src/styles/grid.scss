@@ -58,8 +58,8 @@
 
   @include grid-sizes($gridSizes, 100%);
   @media (min-width: 768px) { @include grid-sizes($gridSizes, 746px); }
-  @media (min-width: 992px) { @include grid-sizes($gridSizes, 970px); }
-  @media (min-width: 1200px) { @include grid-sizes($gridSizes, 1170px); }
+  @media (min-width: 992px) { @include grid-sizes($gridSizes, 968px); }
+  @media (min-width: 1200px) { @include grid-sizes($gridSizes, 1168px); }
 
   @content;
 }
