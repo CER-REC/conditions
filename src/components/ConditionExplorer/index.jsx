@@ -38,13 +38,7 @@ export default class ConditionExplorer extends React.Component {
     el.textContent = text;
     /* eslint-disable object-curly-newline */
     const { width, height, x, y } = el.getBBox();
-    const plusPercent = measurement => measurement + measurement * 0.25;
-    return {
-      width: plusPercent(width),
-      height: plusPercent(height),
-      xOffset: plusPercent(x),
-      yOffset: plusPercent(height) + plusPercent(y),
-    };
+    return { width, height, xOffset: x, yOffset: height + y };
     /* eslint-enable object-curly-newline */
   });
 
@@ -75,7 +69,7 @@ export default class ConditionExplorer extends React.Component {
 
     const lineHeight = this.state.calculatedFontSize.height + margin.height;
     // The top needs to be one line down to account for y=bottom of text
-    let y = lineHeight - margin.height;
+    let y = margin.height;
     let x = startX;
 
     return this.props.keywords
@@ -114,12 +108,7 @@ export default class ConditionExplorer extends React.Component {
   testFontSize = () => {
     if (!this.fontChangeRef.current) { return; }
     const { width, height, y } = this.fontChangeRef.current.getBBox();
-    const plusPercent = measurement => measurement + measurement * 0.43;
-    const newSize = {
-      width: plusPercent(width),
-      height: plusPercent(height),
-      yOffset: plusPercent(height) + plusPercent(y),
-    };
+    const newSize = { width, height, yOffset: height + y };
     const { fallbackFontSize } = this.state;
     if (!fallbackFontSize) {
       this.setState({ fallbackFontSize: newSize });
