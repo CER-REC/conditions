@@ -30,12 +30,23 @@ class List extends React.PureComponent {
   }
 
   shouldScroll = (e) => {
+    // TODO: Remove debugging messages
+    // const printValues = true;
+
+    if (printValues) {
+      console.log({
+        deltaY: e.deltaY,
+        mode: ['pixels', 'lines', 'pages'][e.deltaMode],
+      });
+    }
+
     // Filter out really small movements, such as fingers leaning on a trackpad
     const val = Math.abs(e.deltaY);
     if (
       (e.deltaMode === 0 && val < 8) // Pixels
     || (e.deltaMode === 1 && val < 0.08) // Lines
     ) {
+      if (printValues) console.log('\tmovement too small');
       return false;
     }
 
@@ -48,6 +59,7 @@ class List extends React.PureComponent {
     this.setState({ lastScrollEventTime: time });
 
     if ((time - lastEvent) < 100 || (time - this.state.lastScrollTime) < 200) {
+      if (printValues) console.log(`\tnot enough time has elapsed. since last event: ${time - lastEvent}, since last scroll ${time - this.state.lastScrollTime}`);
       return false;
     }
 
