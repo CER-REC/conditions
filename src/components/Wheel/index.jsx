@@ -147,11 +147,6 @@ class Wheel extends React.Component {
                     % this.props.itemsData.items.length
                 ].company_name}
               </div>
-              {/*
-              <button onClick={() => this.stopWheel(-props.rotation)} type="button">Stop Rotation</button>
-              <button className="plus" onClick={() => this.rotateWheelOneStep(false)} type="button">+1</button>
-              <button className="minus" onClick={() => this.rotateWheelOneStep(true)} type="button">-1</button>
-              */}
             </div>
           )
         }

@@ -2308,7 +2308,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
         />
       </div>
       <div
-        className="main"
+        className="main expandable"
       >
         <div
           className="ProjectHeader"

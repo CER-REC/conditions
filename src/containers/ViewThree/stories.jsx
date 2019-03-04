@@ -37,7 +37,9 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedCondition: ({ selected }) => selectedCondition => ({
         selected: { ...selected, condition: selectedCondition },
       }),
-      expandDetailView: ({ detailViewExpanded }) => () => ({ detailViewExpanded: !detailViewExpanded }),
+      expandDetailView: ({ detailViewExpanded }) => () => (
+        { detailViewExpanded: !detailViewExpanded }
+      ),
       ...pendingActions,
       setBubbleChartIndicator: ({ chartIndicatorPosition }) => bubble => (
         { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
