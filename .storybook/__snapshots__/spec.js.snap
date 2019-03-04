@@ -3898,7 +3898,7 @@ exports[`Storyshots Components|FeatureFlag default 1`] = `
       style={
         Object {
           "backgroundColor": "rgb(133, 28, 133)",
-          "width": "3px",
+          "width": "calc(calc(100% - 7px) * 0.1)",
         }
       }
       title="Theme - Damage Prevention - 1"
@@ -3919,7 +3919,7 @@ exports[`Storyshots Components|FeatureFlag with tip 1`] = `
       style={
         Object {
           "backgroundColor": "rgb(221, 10, 10)",
-          "width": "30px",
+          "width": "calc(calc(100% - 7px) * 1)",
         }
       }
       title="Theme - Security - 20"
@@ -3929,6 +3929,7 @@ exports[`Storyshots Components|FeatureFlag with tip 1`] = `
       style={
         Object {
           "borderLeftColor": "rgb(221, 10, 10)",
+          "left": "calc(calc(100% - 7px) * 1)",
         }
       }
     />
@@ -3948,7 +3949,7 @@ exports[`Storyshots Components|FeatureFlag without tip 1`] = `
       style={
         Object {
           "backgroundColor": "rgb(247, 193, 97)",
-          "width": "30px",
+          "width": "calc(calc(100% - 7px) * 1)",
         }
       }
       title="Theme - Financial - 10"
@@ -4478,7 +4479,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "width": "0px",
+                "width": "calc(calc(100% - 7px) * 0)",
               }
             }
             title="Zero Conditions"
@@ -4497,7 +4498,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Ten Conditions"
@@ -4516,7 +4517,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Greater than Ten Conditions"
@@ -4526,6 +4527,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "borderLeftColor": "transparent",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -6950,21 +6952,138 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
+exports[`Storyshots Components|ProjectMenu At left 1`] = `
 <div
   className="visualization"
 >
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+    .ProjectMenu { width: 400px; border: 1px solid red; }
+  ",
+      }
+    }
+  />
   <div
-    className="ProjectMenu"
+    className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
-      className="EmptyListItems"
+      className="pipe"
     />
     <div
       className="List horizontal"
       onWheel={[Function]}
     >
       <ul>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart selected"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    5
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.5)",
+                      }
+                    }
+                    title="Theme - Security - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-right"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
         <li
           className="List-Item"
         >
@@ -6999,6 +7118,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7006,7 +7128,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Security - 10"
@@ -7020,7 +7142,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 19"
@@ -7030,6 +7152,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7079,6 +7202,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7086,7 +7212,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "12px",
+                        "width": "calc(calc(100% - 7px) * 0.4)",
                       }
                     }
                     title="Theme - Security - 4"
@@ -7100,7 +7226,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 29"
@@ -7110,6 +7236,511 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  3. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu At right 1`] = `
+<div
+  className="visualization"
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+    .ProjectMenu { width: 400px; border: 1px solid red; }
+  ",
+      }
+    }
+  />
+  <div
+    className="ProjectMenu paddingBefore0 paddingAfter1"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="List horizontal"
+      onWheel={[Function]}
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    5
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.5)",
+                      }
+                    }
+                    title="Theme - Security - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  1. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    29
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Security - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 19"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  2. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart selected"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    33
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.4)",
+                      }
+                    }
+                    title="Theme - Security - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 29"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
+<div
+  className="visualization"
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+    .ProjectMenu { width: 400px; border: 1px solid red; }
+  ",
+      }
+    }
+  />
+  <div
+    className="ProjectMenu paddingBefore0 paddingAfter0"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="List horizontal"
+      onWheel={[Function]}
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    29
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Security - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 19"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  2. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    33
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.4)",
+                      }
+                    }
+                    title="Theme - Security - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 29"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7196,6 +7827,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7203,7 +7837,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "18px",
+                        "width": "calc(calc(100% - 7px) * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -7217,7 +7851,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 22"
@@ -7227,6 +7861,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7309,6 +7944,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7316,7 +7954,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "15px",
+                        "width": "calc(calc(100% - 7px) * 0.5)",
                       }
                     }
                     title="Theme - Security - 5"
@@ -7330,7 +7968,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "0px",
+                        "width": "calc(calc(100% - 7px) * 0)",
                       }
                     }
                     title="Theme - Management System - 0"
@@ -7381,6 +8019,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7388,7 +8029,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Security - 10"
@@ -7402,7 +8043,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 19"
@@ -7412,6 +8053,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7429,9 +8071,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
         </li>
       </ul>
     </div>
-    <div
-      className="EmptyListItems"
-    />
   </div>
 </div>
 `;
@@ -7448,7 +8087,35 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
     >
       <div
         className="ConditionPipe"
-      />
+      >
+        <div
+          className="CircleContainer ConditionCount"
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+        >
+          <div>
+            0
+          </div>
+        </div>
+      </div>
+      <div
+        className="FlagWrapper"
+      >
+        <div
+          className="FlagPole"
+        />
+      </div>
+      <div
+        className="ProjectName"
+      >
+        <p>
+          
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -7485,6 +8152,9 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
         className="FlagWrapper"
       >
         <div
+          className="FlagPole"
+        />
+        <div
           className="FeatureFlag"
         >
           <div
@@ -7492,7 +8162,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(221, 10, 10)",
-                "width": "3px",
+                "width": "calc(calc(100% - 7px) * 0.1)",
               }
             }
             title="Theme - Security - 1"
@@ -7506,7 +8176,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(36, 91, 64)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Management System - 45"
@@ -7516,6 +8186,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(36, 91, 64)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7528,7 +8199,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(247, 193, 97)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Financial - 55"
@@ -7538,6 +8209,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(247, 193, 97)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7550,7 +8222,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(133, 28, 133)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Damage Prevention - 23"
@@ -7560,6 +8232,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(133, 28, 133)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7572,7 +8245,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(68, 34, 149)",
-                "width": "9px",
+                "width": "calc(calc(100% - 7px) * 0.3)",
               }
             }
             title="Theme - Safety Management - 3"
@@ -7586,7 +8259,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(153, 153, 255)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Socio-Economic - 13"
@@ -7596,6 +8269,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(153, 153, 255)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7608,7 +8282,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(11, 121, 153)",
-                "width": "9px",
+                "width": "calc(calc(100% - 7px) * 0.3)",
               }
             }
             title="Theme - Emergency Management - 3"

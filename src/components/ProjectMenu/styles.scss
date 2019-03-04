@@ -2,6 +2,7 @@
 
 .ProjectMenu {
   position: relative;
+  margin-top: 12px; // Account for list lifting selected arrows upwards
 
   > .List {
     display: inline-block;
