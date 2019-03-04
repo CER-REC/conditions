@@ -23,13 +23,55 @@ library.add(
 );
 
 class List extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = { lastScrollEventTime: 0, lastScrollTime: 0 };
+  }
+
+  shouldScroll = (e) => {
+    // Filter out really small movements, such as fingers leaning on a trackpad
+    const val = Math.abs(e.deltaY);
+    if (
+      (e.deltaMode === 0 && val < 8) // Pixels
+    || (e.deltaMode === 1 && val < 0.08) // Lines
+    ) {
+      return false;
+    }
+
+    const time = new Date().getTime();
+
+    /* Make sure the previous "set" of events has finished, and that it's
+     * been long enough since we last scrolled
+     */
+    const lastEvent = this.state.lastScrollEventTime;
+    this.setState({ lastScrollEventTime: time });
+
+    if ((time - lastEvent) < 100 || (time - this.state.lastScrollTime) < 200) {
+      return false;
+    }
+
+    this.setState({ lastScrollTime: time });
+
+    return true;
+  }
+
   onWheel = (e) => {
     e.preventDefault();
 
-    const inc = (e.deltaY > 0 && 1) || (e.deltaY < 0 && -1);
-    if (!inc) return;
+    if (!this.shouldScroll(e)) return;
 
-    const newIndex = Math.min(Math.max(0, this.props.selected + inc), this.props.items.length - 1);
+    /* Browsers + devices provide different values using different units, so
+     * we can't use deltaY directly
+     */
+    const direction = (e.deltaY > 0 && 1) || (e.deltaY < 0 && -1);
+    if (!direction) return;
+
+    const newIndex = Math.min(
+      Math.max(0, this.props.selected + direction),
+      this.props.items.length - 1,
+    );
+
     if (newIndex !== this.props.selected) this.props.onChange(newIndex);
   }
 
