@@ -2,34 +2,35 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SearchContent from '.';
 
-const keywords = {
-  include: [
-    'access management',
-    'condition comp',
-    'department of',
-    'fracture tough',
-  ],
-  exclude: [
-    'exclude1', 'exclude2', 'exclude3', 'exclude4',
-  ],
-};
+const includeKeywords = [
+  'access management',
+  'condition comp',
+  'department of',
+  'fracture tough',
+];
+
+const excludeKeywords = ['exclude1', 'exclude2'];
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-xdescribe('Components|SearchBar/SearchContent', () => {
-  xdescribe('with basic state ', () => {
+describe('Components|SearchBar/SearchContent', () => {
+  describe('with basic state ', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
         <SearchContent
-          searchKeywords={keywords}
-          updateKeywords={noop}
+          includeKeywords={includeKeywords}
+          excludeKeywords={[]}
+          setIncluded={noop}
+          setExcluded={noop}
           closeTab={noop}
           findAny
           findAnyOnChange={noop}
+          changeIsExclude={noop}
         />,
       );
+      wrapper.setState({ mode: 'basic' });
     });
 
     test('a className of SearchContent', () => {
@@ -72,16 +73,19 @@ xdescribe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  xdescribe('advanced state', () => {
+  describe('advanced state', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
         <SearchContent
-          searchKeywords={keywords}
-          updateKeywords={noop}
+          includeKeywords={includeKeywords}
+          excludeKeywords={excludeKeywords}
+          setIncluded={noop}
+          setExcluded={noop}
           closeTab={noop}
           findAny
           findAnyOnChange={noop}
+          changeIsExclude={noop}
         />,
       );
       wrapper.setState({ mode: 'advanced' });
@@ -153,69 +157,78 @@ xdescribe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  xdescribe('onChange of dropdown', () => {
+  describe('onChange of dropdown', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          searchKeywords={keywords}
-          updateKeywords={spy}
+          includeKeywords={includeKeywords}
+          excludeKeywords={excludeKeywords}
+          setIncluded={noop}
+          setExcluded={noop}
           closeTab={noop}
           findAny
           findAnyOnChange={spy}
+          changeIsExclude={noop}
         />,
       );
       wrapper.setState({ mode: 'advanced' });
     });
     test('onChange when the option selected is any', () => {
       const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
-      dropdown.props().onChange('any');
+      dropdown.simulate('change', 'any');
       expect(spy).toBeCalledTimes(1);
       expect(spy).toBeCalledWith(true);
     });
     test('onChange when the option selected is all', () => {
       wrapper.setProps({ findAny: false });
       const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
-      dropdown.props().onChange('all');
+      dropdown.simulate('change', 'all');
       expect(spy).toBeCalledTimes(1);
       expect(spy).toBeCalledWith(false);
     });
   });
 
-  xdescribe('onClick on the add button', () => {
+  describe('onClick on the add button', () => {
     let wrapper;
-    let spy;
+    let spyInclude;
+    let spyExclude;
     beforeEach(() => {
-      spy = jest.fn();
+      spyInclude = jest.fn();
+      spyExclude = jest.fn();
       wrapper = shallow(
         <SearchContent
-          searchKeywords={keywords}
-          updateKeywords={spy}
+          includeKeywords={includeKeywords}
+          excludeKeywords={excludeKeywords}
+          setIncluded={spyInclude}
+          setExcluded={spyExclude}
           closeTab={noop}
           findAny
           findAnyOnChange={noop}
+          changeIsExclude={noop}
         />,
       );
+      wrapper.setState({ mode: 'advanced' });
     });
 
-    test('onClick on includeTextbox will call its addWord prop', () => {
+    test('onClick on includeTextbox will call its include prop', () => {
       const inputDiv = wrapper.find('.input').first();
       const input = inputDiv.find('input');
       input.simulate('change', { target: { value: 'test124' } });
       const addButton = inputDiv.find('.addInput');
       addButton.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spyInclude).toHaveBeenCalledTimes(1);
     });
 
-    test('onClick on excludeTextbox will call its addWord prop', () => {
+    test('onClick on excludeTextbox will call its exclude prop', () => {
       const inputDiv = wrapper.find('.input').last();
       const input = inputDiv.find('input');
       input.simulate('change', { target: { value: 'exclude123' } });
       const addButton = inputDiv.find('.addInput');
       addButton.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spyExclude).toHaveBeenCalledTimes(1);
     });
 
     test('without any word length it will not call the prop', () => {
@@ -224,7 +237,7 @@ xdescribe('Components|SearchBar/SearchContent', () => {
       input.simulate('change', { target: { value: '' } });
       const addButton = inputDiv.find('.addInput');
       addButton.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(0);
+      expect(spyInclude).toHaveBeenCalledTimes(0);
     });
 
     test('will not call prop if it is the same word', () => {
@@ -233,25 +246,25 @@ xdescribe('Components|SearchBar/SearchContent', () => {
       input.simulate('change', { target: { value: 'department of' } });
       const addButton = inputDiv.find('.addInput');
       addButton.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(0);
+      expect(spyInclude).toHaveBeenCalledTimes(0);
     });
   });
 
-  xdescribe('with full keywords list and in advanced state', () => {
+  describe('with full keywords list and in advanced state', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          searchKeywords={{
-            include: ['word1', 'word2', 'word3', 'word4', 'word5', 'word6'],
-            exclude: ['except1', 'except2', 'except3', 'except4', 'except5', 'except6'],
-          }}
-          updateKeywords={spy}
+          includeKeywords={['word1', 'word2', 'word3', 'word4', 'word5', 'word6']}
+          excludeKeywords={['except1', 'except2', 'except3', 'except4', 'except5', 'except6']}
+          setIncluded={spy}
+          setExcluded={noop}
           closeTab={noop}
           findAny
           findAnyOnChange={noop}
+          changeIsExclude={noop}
         />,
       );
       wrapper.setState({ mode: 'advanced' });
@@ -275,28 +288,28 @@ xdescribe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  xdescribe('onClick of search toggle text', () => {
+  describe('onClick of search toggle text', () => {
     let wrapper;
-    let spy1;
-    let spy2;
+    let spy;
     beforeEach(() => {
-      spy1 = jest.fn();
-      spy2 = jest.fn();
+      spy = jest.fn();
       wrapper = shallow(
         <SearchContent
-          searchKeywords={keywords}
-          updateKeywords={spy1}
+          includeKeywords={includeKeywords}
+          excludeKeywords={[]}
+          setIncluded={noop}
+          setExcluded={noop}
           closeTab={noop}
           findAny
-          findAnyOnChange={spy2}
+          findAnyOnChange={spy}
+          changeIsExclude={noop}
         />,
       );
     });
     test('with basic mode', () => {
       const basicWrapper = wrapper.find('.advancedSearchText > button');
       basicWrapper.simulate('click', eventFuncs);
-      expect(spy1).toBeCalledTimes(1);
-      expect(spy2).toBeCalledTimes(1);
+      expect(spy).toBeCalledTimes(1);
       expect(wrapper.state().mode).toBe('advanced');
     });
 
@@ -304,24 +317,28 @@ xdescribe('Components|SearchBar/SearchContent', () => {
       wrapper.setState({ mode: 'advanced' });
       const updatedWrapper = wrapper.find('.advancedSearchText > button');
       updatedWrapper.simulate('click', eventFuncs);
-      expect(spy1).toBeCalledTimes(1);
-      expect(spy2).toBeCalledTimes(1);
+      expect(spy).toBeCalledTimes(1);
       expect(wrapper.state().mode).toBe('basic');
     });
   });
 
-  xdescribe('on delete of keywords', () => {
+  describe('on delete of keywords', () => {
     let wrapper;
-    let spy;
+    let spyInclude;
+    let spyExclude;
     beforeEach(() => {
-      spy = jest.fn();
+      spyInclude = jest.fn();
+      spyExclude = jest.fn();
       wrapper = shallow(
         <SearchContent
-          searchKeywords={keywords}
-          updateKeywords={spy}
+          includeKeywords={['word1', 'word2', 'word3', 'word4', 'word5', 'word6']}
+          excludeKeywords={['except1', 'except2', 'except3', 'except4', 'except5', 'except6']}
+          setIncluded={spyInclude}
+          setExcluded={spyExclude}
           closeTab={noop}
           findAny
           findAnyOnChange={noop}
+          changeIsExclude={noop}
         />,
       );
       wrapper.setState({ mode: 'advanced' });
@@ -329,24 +346,45 @@ xdescribe('Components|SearchBar/SearchContent', () => {
     test('onClick, should call onchange prop on include', () => {
       const li = wrapper.find('.deleteButton > button').first();
       li.simulate('click', eventFuncs);
-      expect(spy).toBeCalledTimes(1);
+      expect(spyInclude).toBeCalledTimes(1);
     });
 
     test('onEnter, should call prop on include', () => {
       const li = wrapper.find('.deleteButton > button').first();
       li.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
-      expect(spy).toBeCalledTimes(1);
+      expect(spyInclude).toBeCalledTimes(1);
     });
 
     test('should call prop on exclude', () => {
       const li = wrapper.find('.deleteButton > button').last();
       li.simulate('click', eventFuncs);
-      expect(spy).toBeCalledTimes(1);
+      expect(spyExclude).toBeCalledTimes(1);
     });
 
     test('onEnter, should call prop on exclude', () => {
       const li = wrapper.find('.deleteButton > button').last();
       li.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
+      expect(spyExclude).toBeCalledTimes(1);
+    });
+  });
+
+  describe('on focus on text box', () => {
+    test('should call the prop', () => {
+      const spy = jest.fn();
+      const wrapper = shallow(
+        <SearchContent
+          includeKeywords={['word1', 'word2', 'word3', 'word4', 'word5', 'word6']}
+          excludeKeywords={['except1', 'except2', 'except3', 'except4', 'except5', 'except6']}
+          setIncluded={noop}
+          setExcluded={noop}
+          closeTab={noop}
+          findAny
+          findAnyOnChange={noop}
+          changeIsExclude={spy}
+        />,
+      );
+      const updatedWrapper = wrapper.find('input').last();
+      updatedWrapper.simulate('focus');
       expect(spy).toBeCalledTimes(1);
     });
   });

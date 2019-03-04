@@ -12,7 +12,7 @@ const keywords = {
 
 storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['onClick', 'closeTab'] }))
+  .addDecorator(withInteraction({ actions: ['setIncluded', 'setExcluded', 'closeTab'] }))
   .add('with interaction', () => (
     <SuggestedKeywordsPopout
       isExclude={false}

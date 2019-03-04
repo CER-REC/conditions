@@ -9,10 +9,11 @@ const words = {
 };
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-
+const includedKeywords = ['deer'];
+const excludedKeywords = [];
 const categories = ['all', 'wildlife & habitat', 'environment'];
 
-xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
+describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
@@ -20,9 +21,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClick={noop}
-          selectedWords={['deer']}
+          setIncluded={noop}
+          setExcluded={noop}
+          includeKeywords={includedKeywords}
+          excludeKeywords={excludedKeywords}
           closeTab={noop}
+          isExclude={false}
         />,
       );
     });
@@ -36,9 +40,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       wrapper = shallow(<SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClick={noop}
+        setIncluded={noop}
+        setExcluded={noop}
+        includeKeywords={includedKeywords}
+        excludeKeywords={excludedKeywords}
         closeTab={noop}
-        selectedWords={['deer']}
+        isExclude={false}
       />);
     });
 
@@ -68,9 +75,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClick={noop}
-          selectedWords={['deer']}
+          setIncluded={noop}
+          setExcluded={noop}
+          includeKeywords={includedKeywords}
+          excludeKeywords={excludedKeywords}
           closeTab={noop}
+          isExclude={false}
         />,
       );
       wrapper.setState({ sortBy: 'alphabetical' });
@@ -95,9 +105,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClick={noop}
+          setIncluded={noop}
+          setExcluded={noop}
+          includeKeywords={includedKeywords}
+          excludeKeywords={excludedKeywords}
           closeTab={noop}
-          selectedWords={['deer']}
+          isExclude={false}
         />,
       );
       wrapper.setState({ sortBy: 'frequency' });
@@ -119,9 +132,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClick={noop}
+        setIncluded={noop}
+        setExcluded={noop}
+        includeKeywords={includedKeywords}
+        excludeKeywords={excludedKeywords}
         closeTab={noop}
-        selectedWords={['deer']}
+        isExclude={false}
       />,
     );
     test('onClick of hierarchy text, should change the state with inc', () => {
@@ -136,9 +152,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClick={noop}
+        setIncluded={noop}
+        setExcluded={noop}
+        includeKeywords={includedKeywords}
+        excludeKeywords={excludedKeywords}
         closeTab={noop}
-        selectedWords={['deer']}
+        isExclude={false}
       />,
     );
     test('onClick of hierarchy text, should call the spy with dec', () => {
@@ -154,9 +173,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       <SuggestedKeywordsPopout
         categories={categories}
         suggestedKeywords={words}
-        onClick={noop}
+        setIncluded={noop}
+        setExcluded={noop}
+        includeKeywords={includedKeywords}
+        excludeKeywords={excludedKeywords}
         closeTab={noop}
-        selectedWords={['deer']}
+        isExclude={false}
       />,
     );
     test('onClick of hierarchy text, should call the spy with none', () => {
@@ -174,9 +196,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClick={noop}
+          setIncluded={noop}
+          setExcluded={noop}
+          includeKeywords={includedKeywords}
+          excludeKeywords={excludedKeywords}
           closeTab={noop}
-          selectedWords={['deer']}
+          isExclude={false}
         />,
       );
     });
@@ -210,9 +235,12 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         <SuggestedKeywordsPopout
           categories={categories}
           suggestedKeywords={words}
-          onClick={noop}
+          setIncluded={noop}
+          setExcluded={noop}
+          includeKeywords={includedKeywords}
+          excludeKeywords={excludedKeywords}
           closeTab={noop}
-          selectedWords={['deer']}
+          isExclude={false}
         />,
       );
     });
