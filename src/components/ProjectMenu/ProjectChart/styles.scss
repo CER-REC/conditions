@@ -6,61 +6,22 @@ $selected-condition-circle-bg: #f15a24;
 $condition-circle-font: #fff;
 $project-chart-line: #a1a8a7;
 
-
-@mixin angled($direction, $sides, $backgroundColour, $contrastTextColour) {
-  position: relative;
-  z-index: 1;
-  color: $contrastTextColour;
-
-  &:before {
-    @include angledTopUp($backgroundColour);
-  }
-  &:after {
-    @include angledBottomUp($backgroundColour);
-  }
-}
-
-@mixin angledCommon($backgroundColour) {
-  background: inherit;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  -webkit-backface-visibility: hidden; // for Chrome Windows
-  width: 100%;
-  height: 100%;
-  background-color: $backgroundColour;
-  transform-origin: 0 0;
-}
-
-@mixin angledTopUp($backgroundColour) {
-  top: 0;
-  transform: skewY(-25deg);
-  @include angledCommon($backgroundColour);
-}
-
-@mixin angledBottomUp($backgroundColour) {
-  top: 0;
-  transform: skewY(-25deg);
-  @include angledCommon($backgroundColour);
-}
-
-
 .ProjectChart {
   width: 100%;
+  height: 300px;
+  margin-bottom: 110px;
+
   .ProjectName {
-    transform: rotate(25deg);
     text-overflow: ellipsis;
-    height: 70px;
+    position: absolute;
     width: 118px;
-    margin-left: -85px;
-    margin-top: 50px;
+    bottom: 110px; // Based on the rotation and the width
+    right: 50%;
+    transform: rotate(-60deg);
+    transform-origin: bottom right;
+    text-align: right;
 
     p {
-      transform: rotate(-90deg);
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -83,7 +44,7 @@ $project-chart-line: #a1a8a7;
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 300px;
+    height: calc(100% - 30px); // 100% - pipe
     padding-top: 10px;
 
     .FlagPole {
@@ -134,13 +95,20 @@ $project-chart-line: #a1a8a7;
     }
 
     .ProjectName {
-      left: 3px;
-      bottom: 1px;
-      margin: 0;
-      display: block;
-      height: 145px;
-      width: 28px;
-      @include angled(rightOut, bottomAndTop, $pipe-color, black);
+      z-index: 1;
+      height: 30px;
+      background: $pipe-color;
+      right: calc(50% - 15px);
+      &:before {
+        content: '';
+        background: $pipe-color;
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        left: -18px;
+        transform: skew(30deg);
+      }
     }
   }
 

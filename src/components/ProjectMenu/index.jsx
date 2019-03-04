@@ -57,7 +57,9 @@ class ProjectMenu extends React.PureComponent {
       .findIndex(project => project.id === this.props.selectedProjectID);
 
     const itemsBefore = selected < 2 ? Math.max(2 - selected, 0) : 0;
-    const itemsAfter = (selected > (listItems.length - 3)) ? (listItems.length - 2) : 0;
+    const itemsAfter = (selected > (listItems.length - 3))
+      ? 2 - (listItems.length - 3)
+      : 0;
 
     return (
       <div

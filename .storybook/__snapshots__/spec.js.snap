@@ -7272,7 +7272,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
     }
   />
   <div
-    className="ProjectMenu paddingBefore0 paddingAfter1"
+    className="ProjectMenu paddingBefore0 paddingAfter2"
   >
     <div
       className="pipe"
