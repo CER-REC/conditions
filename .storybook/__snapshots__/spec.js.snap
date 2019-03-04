@@ -9335,6 +9335,29 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
       className="SearchContent"
     >
       <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="upperCase"
+        >
+           
+          Reset
+           
+        </span>
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
+        >
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
+      </div>
+      <div
         className="includeText"
       >
         <span>

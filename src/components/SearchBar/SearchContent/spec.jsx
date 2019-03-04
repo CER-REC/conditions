@@ -368,24 +368,25 @@ describe('Components|SearchBar/SearchContent', () => {
     });
   });
 
-  describe('on focus on text box', () => {
-    test('should call the prop', () => {
-      const spy = jest.fn();
+  describe('on click of reset', () => {
+    test('should call props', () => {
+      const spyInclude = jest.fn();
+      const spyExclude = jest.fn();
       const wrapper = shallow(
         <SearchContent
           includeKeywords={['word1', 'word2', 'word3', 'word4', 'word5', 'word6']}
           excludeKeywords={['except1', 'except2', 'except3', 'except4', 'except5', 'except6']}
-          setIncluded={noop}
-          setExcluded={noop}
+          setIncluded={spyInclude}
+          setExcluded={spyExclude}
           closeTab={noop}
           findAny
           findAnyOnChange={noop}
-          changeIsExclude={spy}
+          changeIsExclude={noop}
         />,
       );
-      const updatedWrapper = wrapper.find('input').last();
-      updatedWrapper.simulate('focus');
-      expect(spy).toBeCalledTimes(1);
+      wrapper.find('.reset').simulate('click', eventFuncs);
+      expect(spyInclude).toBeCalledTimes(1);
+      expect(spyExclude).toBeCalledTimes(1);
     });
   });
 });

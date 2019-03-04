@@ -10,9 +10,18 @@
   border-bottom: 1px solid $LightGray;
   border-left: 1px solid $LightGray;
   text-align: left;
-  padding: 25px 10px 5px 10px;
+  padding: 10px 10px 5px 10px;
   font-family: $fira-sans-condensed;
 
+  .reset {
+    text-align: right;
+    padding-right: 25px;
+    svg{
+      fill: $general-text-2;
+      stroke: $general-text-2;
+      stroke-width: 20;
+    }
+  }
   .upperCase{
     text-transform: uppercase;
   }
@@ -43,6 +52,23 @@
       border-color: $DarkGray;
       border-width: 1px;
       caret-color: $SearchKeyword;
+    }
+    .addInput {
+      background: transparent;
+      line-height: 10px;
+      border: none;
+      div {
+        transform: inherit;
+      }
+      .plusIcon {
+        color: $LinksTextButtons;
+      }
+      &.disabled {
+        pointer-events: none;
+        .plusIcon {
+          color: $LightGray;
+        }
+      }
     }
   }
   .searchWords {
@@ -115,17 +141,7 @@
       color: $LinksTextButtons;
     }
   }
-  .addInput {
-    background: transparent;
-    line-height: 10px;
-    border: none;
-    .plusIcon {
-      color: $LinksTextButtons;
-    }
-    div {
-      transform: inherit;
-    }
-  }
+
   .Icon {
     display: inline;
     padding-left: 5px;
