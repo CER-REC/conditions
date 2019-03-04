@@ -14,7 +14,6 @@ const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
-
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
