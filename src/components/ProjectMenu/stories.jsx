@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { storiesForComponent } from '../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ProjectMenu from '.';
 import ReadMe from './README.md';
@@ -56,10 +56,29 @@ const options = projectData.reduce((acc, next) => ({
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
+  .addDecorator(withStyles(`
+    .ProjectMenu { width: 400px; border: 1px solid red; }
+  `))
   .add('Default Props', () => (
     <ProjectMenu
       projectData={projectData}
       selectedProjectID={select('Selected Project', options, 1226)}
+      onChange={() => {}}
+      selectedFeature="theme"
+    />
+  ))
+  .add('At left', () => (
+    <ProjectMenu
+      projectData={projectData.slice(0, 3)}
+      selectedProjectID={1223}
+      onChange={() => {}}
+      selectedFeature="theme"
+    />
+  ))
+  .add('At right', () => (
+    <ProjectMenu
+      projectData={projectData.slice(0, 3)}
+      selectedProjectID={1225}
       onChange={() => {}}
       selectedFeature="theme"
     />

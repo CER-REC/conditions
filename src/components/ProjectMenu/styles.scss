@@ -1,11 +1,30 @@
+@import '../../styles/colors.scss';
+
 .ProjectMenu {
   position: relative;
-  display: inline-table;
 
-  .EmptyListItems {
+  > .List {
+    display: inline-block;
+    width: 100%;
+
+    ul .List-Item {
+      width: 15%;
+      display: inline-block;
+      vertical-align: top;
+      &.selected { width: 40%; }
+    }
+  }
+  &.paddingBefore1 > .List > ul > li:first-child { margin-left: 15%; }
+  &.paddingBefore2 > .List > ul > li:first-child { margin-left: 30%; }
+  &.paddingAfter1 > .List > ul > li:last-child { margin-right: 15%; }
+  &.paddingAfter2 > .List > ul > li:last-child { margin-right: 30%; }
+
+  > .pipe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 30px;
-    top: 6px;
-    display: table-cell;
-    vertical-align: top;
+    background: $LightGreyBackground;
   }
 }

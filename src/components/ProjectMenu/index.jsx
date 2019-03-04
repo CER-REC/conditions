@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import List from '../List';
 import ProjectChart from './ProjectChart';
 import './styles.scss';
@@ -55,41 +56,24 @@ class ProjectMenu extends React.PureComponent {
     const selected = listItems
       .findIndex(project => project.id === this.props.selectedProjectID);
 
-    let emptyItemsBefore = null;
-    let emptyItemsAfter = null;
-
-    if (selected < 2) {
-      emptyItemsBefore = selected === 1
-        ? <ProjectChart chartType={this.props.selectedFeature} />
-        : (
-          <React.Fragment>
-            <ProjectChart chartType={this.props.selectedFeature} />
-            <ProjectChart chartType={this.props.selectedFeature} />
-          </React.Fragment>
-        );
-    }
-
-    if (selected > (listItems.length - 3)) {
-      emptyItemsAfter = selected === (listItems.length - 2)
-        ? <ProjectChart chartType={this.props.selectedFeature} />
-        : (
-          <React.Fragment>
-            <ProjectChart chartType={this.props.selectedFeature} />
-            <ProjectChart chartType={this.props.selectedFeature} />
-          </React.Fragment>
-        );
-    }
+    const itemsBefore = selected < 2 ? Math.max(2 - selected, 0) : 0;
+    const itemsAfter = (selected > (listItems.length - 3)) ? (listItems.length - 2) : 0;
 
     return (
-      <div className="ProjectMenu">
-        <div className="EmptyListItems">{emptyItemsBefore}</div>
+      <div
+        className={classNames(
+          'ProjectMenu',
+          `paddingBefore${itemsBefore}`,
+          `paddingAfter${itemsAfter}`,
+        )}
+      >
+        <div className="pipe" />
         <List
           items={renderedItems}
           onChange={this.handleConditionChange}
           selected={selected}
           horizontal
         />
-        <div className="EmptyListItems">{emptyItemsAfter}</div>
       </div>
     );
   }

@@ -54,3 +54,11 @@ export const fixInfo = (Component) => {
   Component.__docgenInfo = WrappedComponent.__docgenInfo;
   /* eslint-enable no-param-reassign */
 };
+
+export const withStyles = styles => storyFn => (
+  <React.Fragment>
+    {/* eslint-disable-next-line react/no-danger */}
+    <style dangerouslySetInnerHTML={{ __html: styles }} />
+    {storyFn()}
+  </React.Fragment>
+);
