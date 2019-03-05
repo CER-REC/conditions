@@ -132,7 +132,7 @@ const ViewTwo = props => (
           openIntermediatePopup={props.openIntermediatePopup}
           openProjectDetails={props.openProjectDetails}
           toggleExpanded={noop}
-          selectedKeywords={{
+          searchKeywords={{
             include: props.included,
             exclude: props.excluded,
           }}

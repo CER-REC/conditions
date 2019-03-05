@@ -98,7 +98,7 @@ const ViewThree = props => (
           openIntermediatePopup={props.openIntermediatePopup}
           toggleExpanded={props.expandDetailView}
           openProjectDetails={props.openProjectDetails}
-          selectedKeywords={{
+          searchKeywords={{
             include: props.included,
             exclude: props.excluded,
           }}
