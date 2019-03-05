@@ -11,6 +11,9 @@ import {
   visibleTextCategory,
 } from './categories';
 
+// Found at https://gist.github.com/gre/1650294
+const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
+
 export default class PhysicsVariant extends React.Component {
   static propTypes = {
     keywords: keywordList.isRequired,
@@ -118,7 +121,14 @@ export default class PhysicsVariant extends React.Component {
 
       if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
         body.collisionFilter.category = placeholderCategory;
+        const targetPos = this.calculatePosition(body.render.originalData);
+        // Ensure everything is in the correct position
+        Matter.Body.setVelocity(body, { x: 0, y: 0 });
+        Matter.Body.setPosition(body, targetPos);
+        Matter.Body.setAngularVelocity(body, 0);
+        Matter.Body.setAngle(body, 0);
       }
+
       // Check if any keywords that have been displaced can move back
       if (body.collisionFilter.category === visibleTextCategory
           && body.render.lastCollision + 5000 <= update.source.timing.timestamp) {
@@ -131,8 +141,13 @@ export default class PhysicsVariant extends React.Component {
         if (Matter.Bounds.overlaps(originalBounds, this.circle.bounds) === false) {
           body.collisionFilter.category = resettingCategory;
           body.collisionFilter.mask &= ~visibleTextCategory;
-          this.resetBodyPosition(body);
         }
+      } else if (body.collisionFilter.category === resettingCategory) {
+        const targetPos = this.calculatePosition(body.render.originalData);
+        newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x);
+        newVelocity.y = this.calculateVelocity(body.position.y, targetPos.y);
+        Matter.Body.setVelocity(body, newVelocity);
+        Matter.Body.setAngularVelocity(body, this.calculateVelocity(body.angle, 0));
       }
     });
   };
@@ -168,27 +183,6 @@ export default class PhysicsVariant extends React.Component {
     this.forceUpdate();
   }
 
-  resetBodyPosition = (body) => {
-    const targetPos = this.calculatePosition(body.render.originalData);
-    const frictionAir = 1 - body.frictionAir;
-
-    const velocity = {
-      x: this.calculateVelocity(body.position.x, targetPos.x, frictionAir),
-      y: this.calculateVelocity(body.position.y, targetPos.y, frictionAir),
-    };
-    Matter.Body.setVelocity(body, velocity);
-
-    const angleVelocity = this.calculateVelocity(body.angle, 0, frictionAir);
-    Matter.Body.setAngularVelocity(body, angleVelocity);
-
-    setTimeout(() => {
-      Matter.Body.setVelocity(body, { x: 0, y: 0 });
-      Matter.Body.setPosition(body, targetPos);
-      Matter.Body.setAngularVelocity(body, 0);
-      Matter.Body.setAngle(body, 0);
-    }, 2000);
-  };
-
   calculatePosition = (keyword) => {
     const word = {
       x: keyword.outline.x + (keyword.outline.width / 2),
@@ -205,18 +199,11 @@ export default class PhysicsVariant extends React.Component {
     return word;
   };
 
-  calculateVelocity = (start, end, friction) => {
-    let loop = 0;
-    let current = start;
-    let prev = start + ((start - end) / 1000);
-    const direction = Math.abs(start - end) / (start - end);
-    while ((current - end) * direction > 0 && loop < 100) {
-      loop += 1;
-      const velocity = (current - prev) / friction;
-      prev = current;
-      current += velocity;
-    }
-    return current - prev;
+  calculateVelocity = (start, end) => {
+    const distance = end - start;
+    const distanceScale = Math.min(Math.abs(distance) / 100, 1);
+    const direction = distance / Math.abs(distance);
+    return easeOutCubic(distanceScale) * direction * 2;
   };
 
   isWordVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
