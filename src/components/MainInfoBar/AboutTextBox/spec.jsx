@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import AboutTextBox from '.';
 
@@ -10,12 +11,6 @@ describe('Components|AboutTextBox', () => {
       wrapper = shallow(<AboutTextBox />);
     });
 
-    test('should render', () => {
-      expect(wrapper.type()).toBe('div');
-    });
-
-    test('should have a className', () => {
-      expect(wrapper.is('.AboutTextBox')).toBe(true);
-    });
+    shouldBehaveLikeAComponent(AboutTextBox, () => wrapper);
   });
 });

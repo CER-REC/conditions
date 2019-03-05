@@ -24,9 +24,18 @@ class MainInfoBar extends React.PureComponent {
   getDialogContent() {
     switch (this.props.activeDialog) {
       case 'Methodology':
-        return <MethodologyTextBox />;
+        return (
+          <MethodologyTextBox
+            pdfUrl={this.props.pdfUrl}
+          />
+        );
       case 'Downloads':
-        return <DownloadsTextBox />;
+        return (
+          <DownloadsTextBox
+            openDataModal={this.props.openDataModal}
+            openScreenshotModal={this.props.openScreenshotModal}
+          />
+        );
       case 'About':
       default:
         return <AboutTextBox />;
@@ -107,9 +116,12 @@ class MainInfoBar extends React.PureComponent {
 MainInfoBar.propTypes = {
   activeDialog: PropTypes.string,
   isView1: PropTypes.bool,
+  expanded: PropTypes.bool,
+  pdfUrl: PropTypes.string.isRequired,
   setActiveDialog: PropTypes.func.isRequired,
   toggleExpanded: PropTypes.func.isRequired,
-  expanded: PropTypes.bool,
+  openDataModal: PropTypes.func.isRequired,
+  openScreenshotModal: PropTypes.func.isRequired,
 };
 
 MainInfoBar.defaultProps = {

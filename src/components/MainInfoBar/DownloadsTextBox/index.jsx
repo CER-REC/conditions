@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
+import handleInteraction from '../../../utilities/handleInteraction';
+
 const dataIcon = (
   <svg viewBox="0 0 20 20">
     <g
@@ -43,7 +45,7 @@ const DownloadsTextBox = props => (
     <p className="first">Click
       <button
         type="button"
-        onClick={props.openDataModal}
+        {...handleInteraction(props.openDataModal)}
       >
         &nbsp;here&nbsp;
       </button>
@@ -54,7 +56,7 @@ const DownloadsTextBox = props => (
     <p className="first">Click
       <button
         type="button"
-        onClick={props.openScreenshotModal}
+        {...handleInteraction(props.openScreenshotModal)}
       >
         &nbsp;here&nbsp;
       </button>

@@ -1,33 +1,30 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import MainInfoBar from '.';
+
+const noop = () => {};
 
 describe('Components|MainInfoBar', () => {
   describe('with default props', () => {
     let wrapper;
+    let spy;
     beforeEach(() => {
-      wrapper = shallow(<MainInfoBar />);
+      spy = {
+        setActiveDialog: jest.fn(),
+        toggleExpanded: jest.fn(),
+      };
+
+      wrapper = shallow(<MainInfoBar
+        pdfUrl="???"
+        openDataModal={noop}
+        openScreenshotModal={noop}
+        setActiveDialog={spy.setActiveDialog}
+        toggleExpanded={spy.toggleExpanded}
+      />);
     });
 
-    test('should render', () => {
-      expect(wrapper.type()).toBe('div');
-    });
-
-    test('should have a className', () => {
-      expect(wrapper.is('.MainInfoBar')).toBe(true);
-    });
-
-    test('should show four share icons ', () => {
-      expect(wrapper.find('ShareIcon')).toHaveLength(4);
-    });
-
-    test('should show a horizontal line', () => {
-      expect(wrapper.find('hr')).toHaveLength(1);
-    });
-
-    test('should show three text links', () => {
-      expect(wrapper.find('button')).toHaveLength(3);
-    });
+    shouldBehaveLikeAComponent(MainInfoBar, () => wrapper);
   });
 });
