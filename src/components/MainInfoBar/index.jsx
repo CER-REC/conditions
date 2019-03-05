@@ -21,23 +21,26 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
-  // state = {
-  //   activeDialog: this.props.activeDialog,
-  // }
-
-  // setActiveDialog = activeDialog => this.setState({ activeDialog });
-
   getDialogContent() {
-    const { activeDialog } = this.props;
-    if (activeDialog === 'About') { return <AboutTextBox />; }
-    if (activeDialog === 'Methodology') { return <MethodologyTextBox />; }
-    if (activeDialog === 'Downloads') { return <DownloadsTextBox />; }
-
-    // Still need to render something so the container can animate
-    return (<i />);
+    switch (this.props.activeDialog) {
+      case 'Methodology':
+        return <MethodologyTextBox />;
+      case 'Downloads':
+        return <DownloadsTextBox />;
+      case 'About':
+      default:
+        return <AboutTextBox />;
+    }
   }
 
-  closeDialog = () => this.props.setActiveDialog('');
+  openDialog(k) {
+    this.props.setActiveDialog(k);
+    if (!this.props.expanded) this.props.toggleExpanded(true);
+  }
+
+  closeDialog() {
+    this.props.toggleExpanded(false);
+  }
 
   textButtons() {
     const buttons = ['About', 'Methodology', 'Downloads'];
@@ -47,7 +50,7 @@ class MainInfoBar extends React.PureComponent {
         id={k}
         className={`textButton ${this.props.activeDialog === k ? 'selected' : ''}`}
         type="button"
-        onClick={() => this.props.setActiveDialog(k)}
+        onClick={() => this.openDialog(k)}
       >
         {k}
       </button>
@@ -76,7 +79,7 @@ class MainInfoBar extends React.PureComponent {
         <div>
           {this.textButtons()}
         </div>
-        <div className={classNames('content', { collapsed: this.props.activeDialog === '' })}>
+        <div className={classNames('content', { expanded: this.props.expanded })}>
           {this.getDialogContent()}
         </div>
         <div className="shareIcons">
@@ -84,13 +87,13 @@ class MainInfoBar extends React.PureComponent {
           {icons}
         </div>
         {
-          this.props.activeDialog === ''
+          (!this.props.expanded)
             ? null
             : (
               <CircleContainer
                 className="angleDoubleDown"
                 size={20}
-                onClick={this.closeDialog}
+                onClick={() => this.closeDialog()}
               >
                 <Icon size="1x" icon="angle-double-up" prefix="fas" />
               </CircleContainer>
@@ -105,11 +108,14 @@ MainInfoBar.propTypes = {
   activeDialog: PropTypes.string,
   isView1: PropTypes.bool,
   setActiveDialog: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func.isRequired,
+  expanded: PropTypes.bool,
 };
 
 MainInfoBar.defaultProps = {
-  activeDialog: '',
+  activeDialog: 'About',
   isView1: false,
+  expanded: false,
 };
 
 export default MainInfoBar;

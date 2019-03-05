@@ -9,6 +9,8 @@ const setActiveDialog = () => activeDialog => (
   { activeDialog }
 );
 
+const toggleExpanded = () => expand => ({ expanded: expand });
+
 // eslint-disable-next-line
 const Container = ({children}) => (
   <div style={{ width: 700, height: 600 }}>
@@ -18,39 +20,39 @@ const Container = ({children}) => (
 
 storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['setActiveDialog'] }))
+  .addDecorator(withInteraction({ actions: ['setActiveDialog', 'toggleExpanded'] }))
   .add('default', () => (<Container><MainInfoBar {...getInteractionProps()} /></Container>),
     {
       interaction: {
-        state: { activeDialog: '' },
-        actions: { setActiveDialog },
+        state: { activeDialog: '', expanded: false },
+        actions: { setActiveDialog, toggleExpanded },
       },
     })
   .add('About', () => (<Container><MainInfoBar activeDialog="About" {...getInteractionProps()} /></Container>),
     {
       interaction: {
-        state: { activeDialog: 'About' },
-        actions: { setActiveDialog },
+        state: { activeDialog: 'About', expanded: true },
+        actions: { setActiveDialog, toggleExpanded },
       },
     })
   .add('Methodology', () => (<Container><MainInfoBar activeDialog="Methodology" {...getInteractionProps()} /></Container>),
     {
       interaction: {
-        state: { activeDialog: 'Methodology' },
-        actions: { setActiveDialog },
+        state: { activeDialog: 'Methodology', expanded: true },
+        actions: { setActiveDialog, toggleExpanded },
       },
     })
   .add('Downloads', () => (<Container><MainInfoBar activeDialog="Downloads" {...getInteractionProps()} /></Container>),
     {
       interaction: {
-        state: { activeDialog: 'Downloads' },
-        actions: { setActiveDialog },
+        state: { activeDialog: 'Downloads', expanded: true },
+        actions: { setActiveDialog, toggleExpanded },
       },
     })
   .add('View 1', () => (<Container><MainInfoBar isView1 {...getInteractionProps()} /></Container>),
     {
       interaction: {
-        state: { activeDialog: '' },
-        actions: { setActiveDialog },
+        state: { activeDialog: '', expanded: false },
+        actions: { setActiveDialog, toggleExpanded },
       },
     });
