@@ -4,9 +4,6 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import DownloadsBox from '.';
 
-const noop = () => {};
-const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-
 describe('Components|MainInfoBar/DownloadsBox', () => {
   describe('with default props', () => {
     let wrapper;
@@ -24,23 +21,5 @@ describe('Components|MainInfoBar/DownloadsBox', () => {
     });
 
     shouldBehaveLikeAComponent(DownloadsBox, () => wrapper);
-
-    test('should pass its openDataModal callback to the data link', () => {
-      wrapper.find('.DownloadsBox')
-        .find('button')
-        .first()
-        .simulate('click', eventFuncs);
-
-      expect(spy.data).toHaveBeenCalledTimes(1);
-    });
-
-    test('should pass its openScreenshotModal callback to the image link', () => {
-      wrapper.find('.DownloadsBox')
-        .find('button')
-        .last()
-        .simulate('click', eventFuncs);
-
-      expect(spy.screen).toHaveBeenCalledTimes(1);
-    });
   });
 });

@@ -14,14 +14,5 @@ describe('Components|MainInfoBar/MethodologyBox', () => {
     });
 
     shouldBehaveLikeAComponent(MethodologyBox, () => wrapper);
-
-    it('should pass its pdfUrl to the link', () => {
-      const url = wrapper.find('.MethodologyBox')
-        .find('a')
-        .first()
-        .props().href;
-
-      expect(url).toBe(pdfUrl);
-    });
   });
 });
