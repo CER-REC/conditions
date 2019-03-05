@@ -29,15 +29,28 @@
     // display: inline-flex;
     overflow: auto;
     width: 100%;
-    height: 100%;
+    height: 200px;
     text-align: left;
     margin: 10px 0;
     // max-width: unset;
+
+    transition: height 1s ease-in-out, visibility 0s;
+
+    &.collapsed {
+      transition: height 1s ease-in-out, visibility 0s 1s;
+
+      // visibility: hidden;
+      height: 0;
+    }
   }
 
   .shareIcons {
-    display: inline-flex;
+    display: block;
     margin: 0px 10px 10px 10px;
+
+    .ShareIcon {
+      display: inline-block;
+    }
   }
 
   .angleDoubleDown {

@@ -21,21 +21,23 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
-  state = {
-    activeDialog: this.props.activeDialog,
-  }
+  // state = {
+  //   activeDialog: this.props.activeDialog,
+  // }
 
-  setActiveDialog = activeDialog => this.setState({ activeDialog });
+  // setActiveDialog = activeDialog => this.setState({ activeDialog });
 
   getDialogContent() {
-    const { activeDialog } = this.state;
+    const { activeDialog } = this.props;
     if (activeDialog === 'About') { return <AboutTextBox />; }
     if (activeDialog === 'Methodology') { return <MethodologyTextBox />; }
     if (activeDialog === 'Downloads') { return <DownloadsTextBox />; }
-    return null;
+
+    // Still need to render something so the container can animate
+    return (<i />);
   }
 
-  closeDialog = () => this.setActiveDialog('');
+  closeDialog = () => this.props.setActiveDialog('');
 
   textButtons() {
     const buttons = ['About', 'Methodology', 'Downloads'];
@@ -43,9 +45,9 @@ class MainInfoBar extends React.PureComponent {
       <button
         key={k}
         id={k}
-        className={`textButton ${this.state.activeDialog === k ? 'selected' : ''}`}
+        className={`textButton ${this.props.activeDialog === k ? 'selected' : ''}`}
         type="button"
-        onClick={() => this.setActiveDialog(k)}
+        onClick={() => this.props.setActiveDialog(k)}
       >
         {k}
       </button>
@@ -74,7 +76,7 @@ class MainInfoBar extends React.PureComponent {
         <div>
           {this.textButtons()}
         </div>
-        <div className="content">
+        <div className={classNames('content', { collapsed: this.props.activeDialog === '' })}>
           {this.getDialogContent()}
         </div>
         <div className="shareIcons">
@@ -82,7 +84,7 @@ class MainInfoBar extends React.PureComponent {
           {icons}
         </div>
         {
-          this.state.activeDialog === ''
+          this.props.activeDialog === ''
             ? null
             : (
               <CircleContainer
@@ -102,6 +104,7 @@ class MainInfoBar extends React.PureComponent {
 MainInfoBar.propTypes = {
   activeDialog: PropTypes.string,
   isView1: PropTypes.bool,
+  setActiveDialog: PropTypes.func.isRequired,
 };
 
 MainInfoBar.defaultProps = {
