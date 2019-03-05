@@ -41,39 +41,40 @@ const DownloadsBox = props => (
   <div className="DownloadsBox">
     {dataIcon}
     <FormattedMessage id="components.mainInfoBar.headings.downloadData" tag="h1" />
-    <FormattedMessage id="components.mainInfoBar.content.downloadData">
-      {(text) => {
-        const fragments = text.match(/(.+)\{(.+)\}(.+)/);
-        if (!fragments) return null;
-
-        return (
-          <p className="first">
-            {fragments[1]}
-            <button type="button" {...handleInteraction(props.openDataModal)}>&nbsp;{fragments[2]}&nbsp;
-            </button>
-            {fragments[3]}
-          </p>
-        );
-      }}
-    </FormattedMessage>
+    <p className="first">
+      <FormattedMessage
+        id="components.mainInfoBar.content.downloadData"
+        values={{
+          here: (
+            <FormattedMessage id="components.mainInfoBar.content.here">
+              {text => (
+                <button type="button" {...handleInteraction(props.openDataModal)}>
+                  {text}
+                </button>
+              )}
+            </FormattedMessage>
+          ),
+        }}
+      />
+    </p>
     {imageIcon}
     <FormattedMessage id="components.mainInfoBar.headings.downloadImage" tag="h1" />
-    <FormattedMessage id="components.mainInfoBar.content.downloadImage">
-      {(text) => {
-        const fragments = text.match(/(.+)\{(.+)\}(.+)/);
-        if (!fragments) return null;
-
-        return (
-          <p className="first">
-            {fragments[1]}
-            <button type="button" {...handleInteraction(props.openScreenshotModal)}>
-              &nbsp;{fragments[2]}&nbsp;
-            </button>
-            {fragments[3]}
-          </p>
-        );
-      }}
-    </FormattedMessage>
+    <p className="first">
+      <FormattedMessage
+        id="components.mainInfoBar.content.downloadImage"
+        values={{
+          here: (
+            <FormattedMessage id="components.mainInfoBar.content.here">
+              {text => (
+                <button type="button" {...handleInteraction(props.openScreenshotModal)}>
+                  {text}
+                </button>
+              )}
+            </FormattedMessage>
+          ),
+        }}
+      />
+    </p>
   </div>
 );
 
