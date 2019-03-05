@@ -6,10 +6,7 @@ import AboutBox from '.';
 
 describe('Components|AboutBox', () => {
   describe('with default props', () => {
-    let wrapper;
-    beforeEach(() => {
-      wrapper = shallow(<AboutBox />);
-    });
+    const wrapper = shallow(<AboutBox />);
 
     shouldBehaveLikeAComponent(AboutBox, () => wrapper);
   });

@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+
 import './styles.scss';
+
 import ShareIcon from '../ShareIcon';
 import AboutBox from './AboutBox';
 import MethodologyBox from './MethodologyBox';
@@ -22,24 +25,22 @@ library.add(
 
 class MainInfoBar extends React.PureComponent {
   getDialogContent() {
-    switch (this.props.activeDialog) {
-      case 'Methodology':
-        return (
-          <MethodologyBox
-            pdfUrl={this.props.pdfUrl}
-          />
-        );
-      case 'Downloads':
-        return (
-          <DownloadsBox
-            openDataModal={this.props.openDataModal}
-            openScreenshotModal={this.props.openScreenshotModal}
-          />
-        );
-      case 'About':
-      default:
-        return <AboutBox />;
-    }
+    return ({
+      About: (
+        <AboutBox />
+      ),
+      Methodology: (
+        <MethodologyBox
+          pdfUrl={this.props.pdfUrl}
+        />
+      ),
+      Downloads: (
+        <DownloadsBox
+          openDataModal={this.props.openDataModal}
+          openScreenshotModal={this.props.openScreenshotModal}
+        />
+      ),
+    })[this.props.activeDialog];
   }
 
   openDialog(k) {
@@ -114,7 +115,7 @@ class MainInfoBar extends React.PureComponent {
 }
 
 MainInfoBar.propTypes = {
-  activeDialog: PropTypes.string,
+  activeDialog: PropTypes.oneOf(['About', 'Methodology', 'Downloads']),
   isView1: PropTypes.bool,
   expanded: PropTypes.bool,
   pdfUrl: PropTypes.string.isRequired,

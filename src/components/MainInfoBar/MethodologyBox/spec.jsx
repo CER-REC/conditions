@@ -15,7 +15,7 @@ describe('Components|MainInfoBar/MethodologyBox', () => {
 
     shouldBehaveLikeAComponent(MethodologyBox, () => wrapper);
 
-    it('should pass its PDF URL to the link', () => {
+    it('should pass its pdfUrl to the link', () => {
       const url = wrapper.find('.MethodologyBox')
         .find('a')
         .first()
