@@ -6,9 +6,9 @@ import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 import ShareIcon from '../ShareIcon';
-import AboutTextBox from './AboutTextBox';
-import MethodologyTextBox from './MethodologyTextBox';
-import DownloadsTextBox from './DownloadsTextBox';
+import AboutBox from './AboutBox';
+import MethodologyBox from './MethodologyBox';
+import DownloadsBox from './DownloadsBox';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 
@@ -25,20 +25,20 @@ class MainInfoBar extends React.PureComponent {
     switch (this.props.activeDialog) {
       case 'Methodology':
         return (
-          <MethodologyTextBox
+          <MethodologyBox
             pdfUrl={this.props.pdfUrl}
           />
         );
       case 'Downloads':
         return (
-          <DownloadsTextBox
+          <DownloadsBox
             openDataModal={this.props.openDataModal}
             openScreenshotModal={this.props.openScreenshotModal}
           />
         );
       case 'About':
       default:
-        return <AboutTextBox />;
+        return <AboutBox />;
     }
   }
 

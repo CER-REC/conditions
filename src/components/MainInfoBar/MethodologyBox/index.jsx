@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MethodologyTextBox = props => (
-  <div className="MethodologyTextBox">
+const MethodologyBox = props => (
+  <div className="MethodologyBox">
     <h1>Methodology</h1>
     <p className="first">
       Click <a href={props.pdfUrl} target="_blank" rel="noopener noreferrer">here</a> to download a PDF file explaining
@@ -13,8 +13,8 @@ const MethodologyTextBox = props => (
   </div>
 );
 
-MethodologyTextBox.propTypes = {
+MethodologyBox.propTypes = {
   pdfUrl: PropTypes.string.isRequired,
 };
 
-export default MethodologyTextBox;
+export default MethodologyBox;

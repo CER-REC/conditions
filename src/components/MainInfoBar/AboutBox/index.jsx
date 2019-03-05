@@ -1,7 +1,7 @@
 import React from 'react';
 
-const AboutTextBox = () => (
-  <div className="AboutTextBox">
+const AboutBox = () => (
+  <div className="AboutBox">
     <h1>About This Project</h1>
     <p className="first">
       This Incidents at NEB-Regulated Pipeline and Facilities interactive online
@@ -31,4 +31,4 @@ const AboutTextBox = () => (
   </div>
 );
 
-export default AboutTextBox;
+export default AboutBox;

@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './styles.scss';
-
 import handleInteraction from '../../../utilities/handleInteraction';
 
 const dataIcon = (
@@ -38,8 +36,8 @@ const imageIcon = (
   </svg>
 );
 
-const DownloadsTextBox = props => (
-  <div className="DownloadsTextBox">
+const DownloadsBox = props => (
+  <div className="DownloadsBox">
     {dataIcon}
     <h1>Download Data</h1>
     <p className="first">Click
@@ -65,9 +63,9 @@ const DownloadsTextBox = props => (
   </div>
 );
 
-DownloadsTextBox.propTypes = {
+DownloadsBox.propTypes = {
   openDataModal: PropTypes.func.isRequired,
   openScreenshotModal: PropTypes.func.isRequired,
 };
 
-export default DownloadsTextBox;
+export default DownloadsBox;

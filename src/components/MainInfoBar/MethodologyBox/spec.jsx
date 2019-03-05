@@ -2,21 +2,21 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
-import MethodologyTextBox from '.';
+import MethodologyBox from '.';
 
 const pdfUrl = 'abc';
 
-describe('Components|MainInfoBar/MethodologyTextBox', () => {
+describe('Components|MainInfoBar/MethodologyBox', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<MethodologyTextBox pdfUrl={pdfUrl} />);
+      wrapper = shallow(<MethodologyBox pdfUrl={pdfUrl} />);
     });
 
-    shouldBehaveLikeAComponent(MethodologyTextBox, () => wrapper);
+    shouldBehaveLikeAComponent(MethodologyBox, () => wrapper);
 
     it('should pass its PDF URL to the link', () => {
-      const url = wrapper.find('.MethodologyTextBox')
+      const url = wrapper.find('.MethodologyBox')
         .find('a')
         .first()
         .props().href;
