@@ -1,11 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+
+import { mainInfoBar } from '../../proptypes';
 
 import './styles.scss';
 
@@ -115,16 +117,7 @@ class MainInfoBar extends React.PureComponent {
   }
 }
 
-MainInfoBar.propTypes = {
-  activeDialog: PropTypes.oneOf(['about', 'methodology', 'downloads']),
-  isView1: PropTypes.bool,
-  expanded: PropTypes.bool,
-  pdfUrl: PropTypes.string.isRequired,
-  setActiveDialog: PropTypes.func.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
-  openDataModal: PropTypes.func.isRequired,
-  openScreenshotModal: PropTypes.func.isRequired,
-};
+MainInfoBar.propTypes = mainInfoBar.isRequired;
 
 MainInfoBar.defaultProps = {
   activeDialog: 'about',
