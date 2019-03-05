@@ -9,11 +9,9 @@
   /* Padding in grid units (top, right, bottom, left) : 2 0 1 0 */
   padding: $gridUnit * 2 0 $gridUnit;
 
-
   > .row {
-
-    margin-left: $gridUnit * 2;
-    margin-right: $gridUnit * 2;
+    margin-left: $gridUnit * 2 - 1;
+    margin-right: $gridUnit * 2 - 1;
 
     > section {
       margin-right: $gridUnit;
@@ -30,6 +28,10 @@
   min-height: 500px;
 
   > .row {
+    // Add support for rows to have a border, but hide it by default
+    border-width: 0 1px;
+    border-color: transparent;
+
     > section {
       overflow: hidden;
       float: left;

@@ -29,9 +29,6 @@ const ViewThree = props => (
           onChange={props.setSelectedFeature}
         />
       </section>
-      {/* Putting this here to avoid breaking our CSS grid's
-        * first-child or last-child behaviors */}
-      <div className="borderContainer" />
       <section className="legend">
         {props.selected.feature === 'instrument'
           ? (
@@ -73,9 +70,6 @@ const ViewThree = props => (
       <section className="featureDescription">
         <FeatureDescription feature={props.selected.feature} />
       </section>
-      {/* Putting this here to avoid breaking our CSS grid's
-        * first-child or last-child behaviors */}
-      <div className="borderContainer" />
       <section className="typesDescription">
         <FeatureTypesDescription feature={props.selected.feature} />
       </section>

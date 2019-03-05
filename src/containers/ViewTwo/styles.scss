@@ -12,5 +12,9 @@
     .searchHeader { min-height: 100px; }
     .wheel { min-height: 200px; }
     .conditions { min-height: 100px; }
+
+    // Because we're using inline-block to align the elements, we want to remove
+    // the menus right margin as well, since its also the end of the row
+    > .row > section.menus { margin-right: 0; }
   }
 }

@@ -65,12 +65,3 @@ body > .container {
 .ProjectMenu { transform: scale(0.8); }
 @media (min-width: 1200px) { .ProjectMenu { transform: scale(0.9); } }
 body > .container .Wheel button { display: none; }
-
-.ViewTwo, .ViewOne, .ViewThree{
-  .row {
-    margin-right:0px;
-  }
-}
-.ViewThree .secondRow {
-    position: unset;
-}
