@@ -8,7 +8,7 @@ import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import TrendButton from '../../components/TrendButton';
-import { browseByType, yearRangeType, featureTypes } from '../../proptypes';
+import { browseByType, yearRangeType, featureTypes, conditionData } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
@@ -165,30 +165,7 @@ ViewTwo.propTypes = {
       include: PropTypes.arrayOf(PropTypes.string),
       exclude: PropTypes.arrayOf(PropTypes.string),
     }),
-    data: PropTypes.arrayOf(PropTypes.shape({
-      instrumentNumber: PropTypes.string.isRequired,
-      issuanceDate: PropTypes.string.isRequired,
-      effectiveDate: PropTypes.string.isRequired,
-      sunsetDate: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
-      location: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      activity: PropTypes.string.isRequired,
-      conditions: PropTypes.arrayOf(PropTypes.shape({
-        binnedValue: PropTypes.number.isRequired,
-        fill: PropTypes.arrayOf(PropTypes.string).isRequired,
-        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-        text: PropTypes.string.isRequired,
-        details: PropTypes.shape({
-          theme: PropTypes.string.isRequired,
-          instrument: PropTypes.string.isRequired,
-          phase: PropTypes.string.isRequired,
-          type: PropTypes.string.isRequired,
-          status: PropTypes.string.isRequired,
-          filing: PropTypes.string.isRequired,
-        }).isRequired,
-      })).isRequired,
-    })).isRequired,
+    data: conditionData.isRequired,
   }).isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,

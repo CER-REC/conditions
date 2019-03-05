@@ -12,7 +12,7 @@ import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import BrowseByButton from '../../components/BrowseByBtn';
 import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
-import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
+import { allConditionsPerYear, allConditionsByCommodityOrInstrument, conditionData } from '../../proptypes';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
@@ -136,30 +136,7 @@ ViewThree.propTypes = {
       include: PropTypes.arrayOf(PropTypes.string),
       exclude: PropTypes.arrayOf(PropTypes.string),
     }),
-    data: PropTypes.arrayOf(PropTypes.shape({
-      instrumentNumber: PropTypes.string.isRequired,
-      issuanceDate: PropTypes.string.isRequired,
-      effectiveDate: PropTypes.string.isRequired,
-      sunsetDate: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
-      location: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      activity: PropTypes.string.isRequired,
-      conditions: PropTypes.arrayOf(PropTypes.shape({
-        binnedValue: PropTypes.number.isRequired,
-        fill: PropTypes.arrayOf(PropTypes.string).isRequired,
-        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-        text: PropTypes.string.isRequired,
-        details: PropTypes.shape({
-          theme: PropTypes.string.isRequired,
-          instrument: PropTypes.string.isRequired,
-          phase: PropTypes.string.isRequired,
-          type: PropTypes.string.isRequired,
-          status: PropTypes.string.isRequired,
-          filing: PropTypes.string.isRequired,
-        }).isRequired,
-      })).isRequired,
-    })).isRequired,
+    data: conditionData.isRequired,
   }).isRequired,
   detailViewExpanded: PropTypes.bool.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
