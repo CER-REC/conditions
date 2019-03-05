@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -26,15 +27,15 @@ library.add(
 class MainInfoBar extends React.PureComponent {
   getDialogContent() {
     return ({
-      About: (
+      about: (
         <AboutBox />
       ),
-      Methodology: (
+      methodology: (
         <MethodologyBox
           pdfUrl={this.props.pdfUrl}
         />
       ),
-      Downloads: (
+      downloads: (
         <DownloadsBox
           openDataModal={this.props.openDataModal}
           openScreenshotModal={this.props.openScreenshotModal}
@@ -53,7 +54,7 @@ class MainInfoBar extends React.PureComponent {
   }
 
   textButtons() {
-    const buttons = ['About', 'Methodology', 'Downloads'];
+    const buttons = ['about', 'methodology', 'downloads'];
     const textButton = buttons.map(k => (
       <button
         key={k}
@@ -62,7 +63,7 @@ class MainInfoBar extends React.PureComponent {
         type="button"
         onClick={() => this.openDialog(k)}
       >
-        {k}
+        <FormattedMessage id={`components.mainInfoBar.headings.${k}`} />
       </button>
     ));
     return textButton;
@@ -115,7 +116,7 @@ class MainInfoBar extends React.PureComponent {
 }
 
 MainInfoBar.propTypes = {
-  activeDialog: PropTypes.oneOf(['About', 'Methodology', 'Downloads']),
+  activeDialog: PropTypes.oneOf(['about', 'methodology', 'downloads']),
   isView1: PropTypes.bool,
   expanded: PropTypes.bool,
   pdfUrl: PropTypes.string.isRequired,
@@ -126,7 +127,7 @@ MainInfoBar.propTypes = {
 };
 
 MainInfoBar.defaultProps = {
-  activeDialog: 'About',
+  activeDialog: 'about',
   isView1: false,
   expanded: false,
 };

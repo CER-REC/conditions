@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
@@ -39,27 +40,40 @@ const imageIcon = (
 const DownloadsBox = props => (
   <div className="DownloadsBox">
     {dataIcon}
-    <h1>Download Data</h1>
-    <p className="first">Click
-      <button
-        type="button"
-        {...handleInteraction(props.openDataModal)}
-      >
-        &nbsp;here&nbsp;
-      </button>
-      to download the dataset in Microsoft Excel format (.xlsx)
-    </p>
+    <FormattedMessage id="components.mainInfoBar.headings.downloadData" tag="h1" />
+    <FormattedMessage id="components.mainInfoBar.content.downloadData">
+      {(text) => {
+        const fragments = text.match(/(.+)\{(.+)\}(.+)/);
+        if (!fragments) return null;
+
+        return (
+          <p className="first">
+            {fragments[1]}
+            <button type="button" {...handleInteraction(props.openDataModal)}>&nbsp;{fragments[2]}&nbsp;
+            </button>
+            {fragments[3]}
+          </p>
+        );
+      }}
+    </FormattedMessage>
     {imageIcon}
-    <h1>Download Image</h1>
-    <p className="first">Click
-      <button
-        type="button"
-        {...handleInteraction(props.openScreenshotModal)}
-      >
-        &nbsp;here&nbsp;
-      </button>
-      to download a screenshot of your current view.
-    </p>
+    <FormattedMessage id="components.mainInfoBar.headings.downloadImage" tag="h1" />
+    <FormattedMessage id="components.mainInfoBar.content.downloadImage">
+      {(text) => {
+        const fragments = text.match(/(.+)\{(.+)\}(.+)/);
+        if (!fragments) return null;
+
+        return (
+          <p className="first">
+            {fragments[1]}
+            <button type="button" {...handleInteraction(props.openScreenshotModal)}>
+              &nbsp;{fragments[2]}&nbsp;
+            </button>
+            {fragments[3]}
+          </p>
+        );
+      }}
+    </FormattedMessage>
   </div>
 );
 
