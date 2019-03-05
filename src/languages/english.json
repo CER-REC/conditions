@@ -3,6 +3,7 @@
     "features": {
       "theme": "Theme",
       "instrument": "Instrument",
+      "timing": "Timing",
       "phase": "Phase",
       "type": "Type",
       "status": "Status",
@@ -12,69 +13,67 @@
       "title": "Trends & Definitions"
     },
     "theme": {
-      "SECURITY": "Security",
-      "MANAGEMENT_SYSTEM": "Management System",
-      "FINANCIAL": "Financial",
+      "ADMINISTRATIVE": "Administrative",
       "DAMAGE_PREVENTION": "Damage Prevention",
-      "SAFETY_MANAGEMENT": "Safety Management",
-      "SOCIO_ECONOMIC": "Socio-Economic",
       "EMERGENCY_MANAGEMENT": "Emergency Management",
       "ENFORCEMENT": "Enforcement",
-      "SUNSET_CLAUSE": "Sunset Clause",
-      "ADMINISTRATIVE": "Administrative",
       "ENVIRONMENTAL_PROTECTION": "Environmental Protection",
+      "FINANCIAL": "Financial",
       "INTEGRITY_MANAGEMENT": "Integrity Management",
-      "STANDARD_CONDITION": "Standard Condition"
+      "MANAGEMENT_SYSTEM": "Management System",
+      "SAFETY_MANAGEMENT": "Safety Management",
+      "SECURITY": "Security",
+      "SOCIO_ECONOMIC": "Socio-Economic",
+      "STANDARD_CONDITION": "Standard Condition",
+      "SUNSET_CLAUSE": "Sunset Clause"
     },
     "instrument": {
-      "category": {
-        "ROUTING": "Routing",
-        "CONSTRUCTION": "Construction",
-        "OPENING": "Opening",
-        "ABANDONMENT": "Abandonment",
-        "SAFETY": "Safety",
-        "TARIFFS": "Tariffs",
-        "MISC": "Misc."
-      },
-      "type": {
-        "OIL": "Oil",
-        "GAS": "Gas",
-        "POWER": "Power",
-        "ANY_COMMODITY_TYPES": "Any Commodity Types",
-        "NOT_SPECIFIED": "Not Specified"
-      }
+      "ROUTING": "Routing",
+      "CONSTRUCTION": "Construction",
+      "OPENING": "Opening",
+      "ABANDONMENT": "Abandonment",
+      "SAFETY": "Safety",
+      "TARIFFS": "Tariffs",
+      "MISC": "Misc."
+    },
+    "instrumentCommodityType": {
+      "OIL": "Oil",
+      "GAS": "Gas",
+      "POWER": "Power",
+      "ANY_COMMODITY_TYPES": "Any Commodity Types",
+      "NOT_SPECIFIED": "Not Specified"
     },
     "phase": {
-      "includesAll": "Includes All Phases of Constr.",
-      "notConstruction": "Not Construction Related",
-      "postConstruction": "Post Construction Phase",
-      "priorConstruction": "Prior to Construction Phase",
-      "expiryDate": "Expiry Date of Reg. Instr.",
-      "duringConstruction": "During Construction Phase",
-      "abandonment": "Abandonment",
-      "unspecified": "Unspecified"
+      "ABANDONMENT": "Abandonment",
+      "DURING_CONSTRUCTION_PHASE": "During Construction Phase",
+      "EXPIRY_DATE_OF_REGULATORY_INSTRUMENT": "Expiry Date of Reg. Instr.",
+      "INCLUDES_ALL_PHASES_OF_CONSTRUCTION": "Includes All Phases of Construction",
+      "NOT_CONSTRUCTION_RELATED": "Not Construction Related",
+      "POST_CONSTRUCTION_PHASE": "Post Construction Phase",
+      "PRIOR_TO_CONSTRUCTION_PHASE": "Prior to Construction Phase",
+      "UNSPECIFIED": "Unspecified"
     },
     "type": {
-      "nonStandard": "Non Standard",
-      "standard": "Standard"
+      "NON_STANDARD": "Non Standard",
+      "STANDARD": "Standard"
     },
     "status": {
-      "inProgress": "In Progress",
-      "closed": "Closed",
-      "noFilingReq": "No Filing Required",
-      "awaitingFiling": "Awaiting Filing",
-      "overdueFiling": "Overdue Filing",
-      "underReview": "Under Review",
-      "reviewComplete": "Review Complete",
-      "awaitingIR": "Awaiting IR Response",
-      "readyBoard": "Ready for Board Decision",
-      "furtherInfo": "Further Information Required",
-      "amended": "Amended",
-      "satisfactory": "Satisfactory"
+      "AMENDED": "Amended",
+      "AWAITING_FILING": "Awaiting Filing",
+      "AWAITING_IR_RESPONSE": "Awaiting IR Response",
+      "CLOSED": "Closed",
+      "FURTHER_INFORMATION_REQUIRED": "Further Information Required",
+      "IN_PROGRESS": "In Progress",
+      "NO_FILING_REQUIRED": "No Filing Required",
+      "OVERDUE_FILING": "Overdue Filing",
+      "READY_FOR_BOARD_DECISION": "Ready for Board Decision",
+      "REVIEW_COMPLETE": "Review Complete",
+      "SATISFACTORY": "Satisfactory",
+      "UNDER_REVIEW": "Under Review"
     },
     "filing": {
-      "filingRequired": "Filing Required",
-      "FilingNotRequired": "Filing Not Required"
+      "REQUIRED": "Filing Required",
+      "NOT_REQUIRED": "Filing Not Required"
     },
     "legend": {
       "zeroConditions": "Zero Conditions",
@@ -88,20 +87,86 @@
         "title": "Selected Company"
       }
     },
+    "conditionDetails": {
+      "selectedProject": "Selected Project: ",
+      "instrumentNumber": "Instrument Number",
+      "location": "Location",
+      "issuanceDate": "Issuance Date",
+      "effectiveDate": "Effective Date",
+      "sunsetDate": "Sunset Date",
+      "status": "Instrument Status",
+      "type": "Instrument Type",
+      "activity": "Instrument Activity",
+      "keywords": "Keywords",
+      "text": "Text",
+      "selectedConditionFeature": "Selected Condition Feature",
+      "more": "More",
+      "less": "Less"
+    },
     "featureDescription": {
-      "theme": "Subject experts at the NEB create and manage conditions related to a specific field (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes. \n Subject experts at the NEB create and manage conditions related to a (e.g. financial, or the environment) and tracks its compliance. These subjects, or specific fields are expressed as Themes."
+      "theme": "Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.",
+      "phase": "As a lifecycle regulator, the NEB ensures the safety of a project during all phases. Conditions can apply to one, several or all phases of the lifecycle. More information about the lifecycle can be found [TODO: NEEDS A LINK]here.",
+      "status": "Conditions that are no longer active are closed. Some conditions may be active indefinitely or they refer to the continued operation of a pipeline for example. Others that apply to a specific phase will close, because they have been fulfilled (e.g. a specific filing during construction phase).",
+      "type": "There are two main types of conditions: standard and non-standard.",
+      "filing": "This feature explains whether a company is required to file a document in order to comply with a condition.",
+      "instrument": "Regulatory instruments are official orders issued by NEB staff. An Instrument can include several conditions, and a project might have several instruments (i.e. orders)attached to it. All instruments have an instrument number. Searching for this number in the NEB’s [TODO: NEEDS A LINK]REGDOCS repository is one way to find the original regulatory instrument from which the conditions in this visualization are taken. The prefix of an instrument number is based on its meaning."
     },
     "featureTypesDescription": {
       "theme": {
-        "SECURITY": "Here is a description of the Security theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
-        "MANAGEMENT_SYSTEM": "Here is a description of the Management System theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header.",
-        "FINANCIAL": "Here is a description of the Financial theme. If it is selected in the legend, then wherever the user is in this text box they will jump to this header."
+        "ADMINISTRATIVE": "types of conditions that ensure filings are made.",
+        "DAMAGE_PREVENTION": "types of conditions that ensure reduction and prevention of damage.",
+        "EMERGENCY_MANAGEMENT": "types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.",
+        "ENFORCEMENT": "types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.",
+        "ENVIRONMENTAL_PROTECTION": "types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.",
+        "FINANCIAL": "types of conditions that ensure a company’s financial resposibilities are met.",
+        "INTEGRITY_MANAGEMENT": "types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.",
+        "MANAGEMENT_SYSTEM": "types of conditions that apply when a project is transeferred to another company. Ensures all Management systems are in place and the new company knows its requirements.",
+        "SAFETY_MANAGEMENT": "types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.",
+        "SECURITY": "types of conditions that ensure that project facilities are monitored and secured.",
+        "SOCIO_ECONOMIC": "types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).",
+        "STANDARD_CONDITION": "types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.",
+        "SUNSET_CLAUSE": "types of conditions that ensure that projects/phases begin in a specific period of time."
+      },
+      "phase": {
+        "ABANDONMENT": "If a company wants to abandon a facility, it must submit an application, including an environmental and socio-economic assessment, to the NEB. NEB staff will assess the application and the NEB may hold a public hearing. If the abandonment is approved, the NEB may impose conditions and inspect the abandonment activities.",
+        "DURING_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility. The NEB will monitor company compliance through inspections of construction activities and by reviewing the company’s post-construction monitoring reports.",
+        "EXPIRY_DATE_OF_REGULATORY_INSTRUMENT": "Some conditions apply when the regulatory instrument expires.",
+        "INCLUDES_ALL_PHASES_OF_CONSTRUCTION": "Some conditions apply at all phases of construction.",
+        "NOT_CONSTRUCTION_RELATED": "Some conditions apply outside of the construction context.",
+        "POST_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility. ",
+        "PRIOR_TO_CONSTRUCTION_PHASE": "Assigned to conditions that must be fulfilled before construction can begin. This includes conditions related to environmental and socio-economic assessments.",
+        "UNSPECIFIED": "Missing description"
+      },
+      "status": {
+        "AMENDED": "Missing description",
+        "AWAITING_FILING": "Missing description",
+        "AWAITING_IR_RESPONSE": "Missing description",
+        "CLOSED": "This status refers to a condition that has been fulfilled and no longer needs to be tracked.",
+        "FURTHER_INFORMATION_REQUIRED": "Missing description",
+        "IN_PROGRESS": "This status refers to a condition that continues to be tracked and has not been fulfilled.",
+        "NO_FILING_REQUIRED": "Missing description",
+        "OVERDUE_FILING": "Missing description",
+        "READY_FOR_BOARD_DECISION": "Missing description",
+        "REVIEW_COMPLETE": "Missing description",
+        "SATISFACTORY": "Missing description",
+        "UNDER_REVIEW": "Missing description"
+      },
+      "type": {
+        "STANDARD": "a standard condition will apply generally to project approvals and have been developed over time at the NEB to ensure consistency.",
+        "NON_STANDARD": "a non-standard condition captures project-specific concerns that cannot be encompassed by standard conditions."
+      },
+      "filing": {
+        "REQUIRED": "a company must file a document with the NEB in order to comply with a condition.",
+        "NOT_REQUIRED": "a company must not file a document with the NEB in order to comply with a condition"
       },
       "instrument": {
-        "category": {
-          "ROUTING": "OPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nGPL: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.",
-          "CONSTRUCTION": "GC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this.\nOC: Description of this instrument. If it is selected in the legend or in the chart, the text will jump to this."
-        }
+        "ROUTING": "Missing: description",
+        "CONSTRUCTION": "Missing: description",
+        "ABANDONMENT": "Missing: description",
+        "OPENING": "Missing: description",
+        "MISC": "Missing: description",
+        "SAFETY": "Missing: description",
+        "TARIFFS": "Missing: description"
       }
     },
     "featureMenu": {
@@ -126,15 +191,49 @@
         "filter": "Filter",
         "find": "Find Words"
       },
-      "suggestedKeywords": {
+      "suggestedKeywordsPrompt": {
         "selectFrom": "Select from",
         "suggestedKeywords": "Suggested\nKeywords"
       },
       "highlightSummary": {
         "showingAll": "Showing all projects from",
-        "highlightConditions": "Highlighting conditions containing"
+        "includes": "Highlighting conditions containing",
+        "excludes": "Exclude conditions containing"
+      },
+      "findWords": {
+        "findWords": "Find Words",
+        "advancedSearch": "Advanced Search",
+        "basicSearch": "Basic Search",
+        "options": {
+          "any": "any",
+          "all": "all"
+        },
+        "searchText": {
+          "basicInclude": "Include any of:",
+          "advancedInclude": "Include {dropdown} of: ",
+          "exclude": "But do {not} include:",
+          "not": "not"
+        },
+        "highlightText": {
+          "highlightConditions" : "Highlight conditions containing",
+          "following": " {choice} of the following:",
+          "any": "any",
+          "none": "none",
+          "all": "all"
+        }
+      },
+      "suggestedKeywordsPopout": {
+        "suggestedKeywords": "Suggested Keywords",
+        "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords",
+        "keywordsHere": "here",
+        "viewBy": "View By",
+        "sortBy": "Sort by",
+        "frequency": "Frequency",
+        "alphabetical": "Alphabetical",
+        "none": "none",
+        "conditions": "{conditions} conditions"
       }
-    },
+    }, 
     "modal": {
       "image": {
         "title": "Image Download",
@@ -168,13 +267,18 @@
         "filing": "All Filings"
       }
     },
+    "streamGraph": {
+      "title": {
+        "instrument": "Instruments Across All Conditions",
+        "theme": "Themes Across All Conditions",
+        "phase": "Phases Across All Conditions",
+        "status": "Statuses Across All Conditions",
+        "type": "Types Across All Conditions",
+        "filing": "Filing Across All Conditions"
+      }
+    },
     "trendButton": {
-      "theme": "Go to Theme \nTrends",
-      "instrument": "Go to Instrument \nTrends",
-      "phase": "Go to Phase \nTrends",
-      "type": "Go to Type \nTrends",
-      "status": "Go to Status \nTrends",
-      "filing": "Go to Filing \nTrends"
+      "description": "Trends &\nDefinitions"
     },
     "browseByBtn": {
       "projectsBy": "Projects by {icon}",

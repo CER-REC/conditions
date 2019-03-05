@@ -4,39 +4,53 @@ import {
   VictoryAxis,
   VictoryArea,
   VictoryChart,
+  VictoryGroup,
 } from 'victory';
+// import { linear } from 'd3-scale';
+import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
-import { allConditionsPerYear } from '../../proptypes';
+import { allConditionsPerYear, featureTypes } from '../../proptypes';
+import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 import './styles.scss';
 
 export const roundDateLabel = t => Math.round(t);
+const noop = () => {};
 
 class StreamGraph extends React.Component {
   static propTypes = {
     projectData: allConditionsPerYear.isRequired,
-    chartTitle: PropTypes.string.isRequired,
+    feature: featureTypes.isRequired,
+    subFeature: PropTypes.string.isRequired,
+    streamOnly: PropTypes.bool,
   }
+
+  static defaultProps = {
+    streamOnly: false,
+  };
 
   constructor(props) {
     super(props);
-    this.state = {
-      controlYear: null,
-    };
+    this.state = { controlYear: null };
   }
 
   handleOnChange = controlYear => this.setState({ controlYear });
 
   streamLayers() {
-    const streamLayers = this.props.projectData.map(v => (
+    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    if (this.props.subFeature !== '') {
+      filteredData = filteredData
+        .filter(featureData => featureData.subFeature === this.props.subFeature);
+    }
+    const streamLayers = filteredData.map(v => (
       <VictoryArea
-        key={`${v.feature}-${v.subfeature}`}
-        name={v.subfeature}
+        key={`${v.feature}-${v.subFeature}`}
+        name={v.subFeature}
         data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
         style={{
           data: {
-            fill: features[v.feature][v.subfeature],
+            fill: features[v.feature][v.subFeature],
             strokeWidth: 0,
           },
         }}
@@ -47,18 +61,24 @@ class StreamGraph extends React.Component {
   }
 
   chart() {
-    const numOfConditions = this.props.projectData.map(k => Object.values(k.years));
+    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    if (this.props.subFeature !== '') {
+      filteredData = filteredData
+        .filter(featureData => featureData.subFeature === this.props.subFeature);
+    }
+
+    const numOfConditions = filteredData.map(k => Object.values(k.years));
     const numOfConditionsConcat = [].concat(...numOfConditions);
 
     const minConditionValue = Math.min(...numOfConditionsConcat);
 
-    const dates = this.props.projectData.map(k => Object.keys(k.years));
+    const dates = filteredData.map(k => Object.keys(k.years));
     const dateConcat = [].concat(...dates);
 
     const minDateValue = Math.min(...dateConcat);
     const maxDateValue = Math.max(...dateConcat);
 
-    let conditionDates = this.props.projectData.reduce((acc, next) => {
+    let conditionDates = filteredData.reduce((acc, next) => {
       Object.entries(next.years).forEach(([date, count]) => {
         if (!acc[date]) { acc[date] = 0; }
         acc[date] += count;
@@ -69,6 +89,43 @@ class StreamGraph extends React.Component {
 
     const maxConditionValue = Math.max(...conditionDates);
 
+    if (this.props.streamOnly) {
+      return (
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 450 350"
+          preserveAspectRatio="none"
+        >
+          <VictoryGroup
+            standalone={false}
+            padding={0}
+          >
+            <StackGroupProps
+              groupProps={{
+                onChange: noop,
+                controlYear: null,
+                projectData: filteredData,
+              }}
+            >
+              {this.streamLayers()}
+            </StackGroupProps>
+          </VictoryGroup>
+        </svg>
+      );
+    }
+
+    // Setting these here because CSS classes weren't being picked up by Victory
+    // I may have just been doing it wrong though
+    const axisStyles = {
+      tickLabels: {
+        fontSize: '10px',
+      },
+      axisLabel: {
+        fontSize: '12px',
+      },
+    };
+
     return (
       <VictoryChart>
         <VictoryAxis
@@ -76,18 +133,20 @@ class StreamGraph extends React.Component {
           label="Number of Conditions"
           tickValues={[minConditionValue, maxConditionValue]}
           className="axis-label"
+          style={axisStyles}
         />
         <VictoryAxis
           label="Effective Date"
           tickFormat={roundDateLabel}
-          className="Axis-label"
+          className="axis-label"
           domain={[minDateValue, maxDateValue]}
+          style={axisStyles}
         />
         <StackGroupProps
           groupProps={{
             onChange: this.handleOnChange,
             controlYear: this.state.controlYear,
-            projectData: this.props.projectData,
+            projectData: filteredData,
           }}
         >
           {this.streamLayers()}
@@ -96,18 +155,17 @@ class StreamGraph extends React.Component {
     );
   }
 
-  chartTitle() {
-    return (
-      <h1>{this.props.chartTitle}</h1>
-    );
-  }
-
   render() {
     return (
       <div
-        className="Streamgraph"
+        className="StreamGraph"
       >
-        {this.chartTitle()}
+        {this.props.streamOnly ? null : (
+          <FormattedMessage
+            id={`components.streamGraph.title.${this.props.feature}`}
+            tagName="h1"
+          />
+        )}
         {this.chart()}
       </div>
     );

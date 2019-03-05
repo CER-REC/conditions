@@ -1,13 +1,58 @@
 import React from 'react';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import ViewThree from '.';
-import { conditionCountsByYear } from '../../mockData';
+import { ViewThreeRaw } from '.';
+import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
 
 const props = {
   conditionCountsByYear,
+  conditionCountsByCommodity,
+  conditionDetails: {
+    isExpandable: true,
+    searchKeywords: {
+      include: ['hello'],
+    },
+    selectedProject: 'Project Name',
+    data: conditionData,
+  },
+  chartIndicatorPosition: {
+    bubble: 'XO',
+    stream: 2010,
+  },
 };
 
+const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
+  [next]: () => () => ({}),
+  ...acc,
+}), {});
+
 storiesForView('Containers|ViewThree', module, ReadMe)
-  .add('default', () => <ViewThree {...props} />)
-  .add('layout only', () => <ViewThree {...props} layoutOnly />);
+  .addDecorator(withInteraction({
+    actions: {
+      setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature, subFeature: '' } }),
+      setSelectedSubFeature: ({ selected }) => subFeature => ({
+        selected: { ...selected, subFeature },
+      }),
+      setSelectedCondition: ({ selected }) => selectedCondition => ({
+        selected: { ...selected, condition: selectedCondition },
+      }),
+      expandDetailView: ({ detailViewExpanded }) => () => (
+        { detailViewExpanded: !detailViewExpanded }),
+      ...pendingActions,
+      setBubbleChartIndicator: ({ chartIndicatorPosition }) => bubble => (
+        { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
+      ),
+    },
+    state: {
+      selected: {
+        feature: 'theme',
+        subFeature: '',
+        condition: { instrumentIndex: 0, itemIndex: 0 },
+      },
+      chartIndicatorPosition: { bubble: 'XO', stream: 2010 },
+      detailViewExpanded: false,
+    },
+  }))
+  .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
+  .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);

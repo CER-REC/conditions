@@ -46,4 +46,3 @@ describe('Components|SelectedGroupBar', () => {
     });
   });
 });
-

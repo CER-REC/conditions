@@ -7,6 +7,11 @@ jest.doMock('./addon-status', () => {
   });
 });
 
+// This fixes an issue with Jest sometimes ignoring the storybook spec, since it
+// doesn't directly define a test.
+beforeAll(() => {});
+
+//TODO: THIS IGNORES THE WHEEL STORYBOOK TESTS
 initStoryshots({
-  storyKindRegex: /^Components/,
+  storyKindRegex: /^Components\|(?!Wheel)/
 });

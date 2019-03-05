@@ -83,6 +83,22 @@
     }
   },
   "components": {
+    "conditionDetails": {
+      "selectedProject": "",
+      "instrumentNumber": "",
+      "location": "",
+      "issuanceDate": "",
+      "effectiveDate": "",
+      "sunsetDate": "",
+      "status": "",
+      "type": "",
+      "activity": "",
+      "keywords": "",
+      "text": "",
+      "selectedConditionFeature": "",
+      "more": "",
+      "less": ""
+    },
     "featureMenu": {
       "dropDownTitle": ""
     },
@@ -116,13 +132,46 @@
         "filter": "",
         "find": ""
       },
-      "suggestedKeywords": {
+      "suggestedKeywordsPrompt": {
         "selectFrom": "",
         "suggestedKeywords": ""
       },
       "highlightSummary": {
         "showingAll": "",
         "highlightConditions": ""
+      },
+      "findWords": {
+        "findWords": "",
+        "advancedSearch": "",
+        "basicSearch": "",
+        "options": {
+          "any": "",
+          "all": ""
+        },
+        "searchText": {
+          "basicInclude": "",
+          "advancedInclude": "",
+          "exclude": "",
+          "not": ""
+        },
+        "highlightText": {
+          "highlightConditions" : "",
+          "following": "",
+          "any": "",
+          "none": "",
+          "all": ""
+        }
+      },
+      "suggestedKeywordsPopout": {
+        "suggestedKeywords": "",
+        "keywordsDescription": "",
+        "keywordsHere": "",
+        "viewBy": "",
+        "sortBy": "",
+        "frequency": "",
+        "alphabetical": "",
+        "none": "",
+        "conditions": ""
       }
     },
     "modal": {
@@ -154,6 +203,9 @@
         "status": "",
         "filing": ""
       }
+    },
+    "trendButton": {
+      "description": ""
     },
     "streamGraph": {
       "xAxis": "",

@@ -3,13 +3,16 @@ import { shallow } from 'enzyme';
 
 import StackGroup from '.';
 import { conditionCountsByYear } from '../../../mockData';
+import getFilteredProjectData from '../../../utilities/getFilteredProjectData';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 const width = 350;
 const height = 200;
-const yearValues = conditionCountsByYear.counts.reduce((acc, next) => {
+const feature = 'theme';
+const filteredData = getFilteredProjectData(conditionCountsByYear.counts, feature);
+const yearValues = filteredData.reduce((acc, next) => {
   Object.entries(next.years).forEach(([date, count]) => {
     if (!acc[date]) { acc[date] = 0; }
     acc[date] += count;
@@ -36,7 +39,7 @@ const stackProps = {
   height,
 };
 
-describe('Components|Streamgraph/StackGroup', () => {
+describe('Components|StreamGraph/StackGroup', () => {
   describe('events', () => {
     let wrapper;
     let stackGroup;
@@ -157,34 +160,34 @@ describe('Components|Streamgraph/StackGroup', () => {
       wrapper.setProps({ controlYear: 2010 });
       expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: 0,
-        yTop: 192.69,
+        yTop: 137.72,
         yBottom: height,
       });
 
       wrapper.setProps({ controlYear: 2012 });
       expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: yearSize * 2,
-        yTop: 169.88,
+        yTop: 116.96,
         yBottom: height,
       });
 
       wrapper.setProps({ controlYear: 2017 });
       expect(wrapper.find('ChartIndicator').props()).toMatchObject({
         x: width,
-        yTop: 34.21,
+        yTop: -185.67,
         yBottom: height,
       });
     });
 
     test('should display a label of the condition count', () => {
       wrapper.setProps({ controlYear: 2013 });
-      expect(wrapper.find('ChartIndicator').prop('label')).toBe(136);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(438);
 
       wrapper.setProps({ controlYear: 2015 });
-      expect(wrapper.find('ChartIndicator').prop('label')).toBe(177);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(742);
 
       wrapper.setProps({ controlYear: 2016 });
-      expect(wrapper.find('ChartIndicator').prop('label')).toBe(684);
+      expect(wrapper.find('ChartIndicator').prop('label')).toBe(1646);
     });
   });
 });

@@ -8,7 +8,7 @@ import { features } from '../../../constants';
 
 const data = {
   feature: 'theme',
-  subfeature: 'SECURITY',
+  subFeature: 'SECURITY',
   years: {
     2018: 12,
     2019: 1,

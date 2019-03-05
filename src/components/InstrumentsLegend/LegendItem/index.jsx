@@ -7,7 +7,7 @@ import { features } from '../../../constants';
 
 const LegendItem = (props) => {
   let indicators = null;
-  const id = props.all ? 'components.instrumentsLegend.all' : `common.instrument.category.${props.title}`;
+  const id = props.all ? 'components.instrumentsLegend.all' : `common.instrument.${props.title}`;
 
   if (!props.all) {
     indicators = props.indicators.map((indicator, index) => {

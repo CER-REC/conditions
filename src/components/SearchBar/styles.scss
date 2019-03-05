@@ -1,0 +1,43 @@
+@import "../../styles/fontVariables.scss";
+@import "../../styles/colors.scss";
+
+.SearchBar {
+  position: absolute;
+  width: 425px;
+  text-align: left;
+  color: $VeryDarkGray;
+
+  background-color: white;
+  z-index: 999;
+
+  .SelectionTab {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    display: block;
+    text-align: left;
+    .Tab {
+      display: inline-block;
+    }
+    .rect {
+      display: inline-block;
+      vertical-align: bottom;
+      border-bottom: 1px solid $LightGray;
+      &.horzDivider {
+        width: 20px;
+      }
+      &.horzLine {
+        width: 253px;
+      }
+    }
+  }
+  .SuggestionPrompt {
+    position: absolute;
+    top: -10px;
+    left: 390px;
+    &.excludePrompt {
+      top: 85px;
+      left: 390px;
+    }
+  }
+}

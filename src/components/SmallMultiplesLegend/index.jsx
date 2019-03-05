@@ -5,103 +5,83 @@ import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
 import { allConditionsPerYear } from '../../proptypes';
+import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
-const getMaxCount = (data) => {
-  const counts = data.reduce((countAggregate, conditionsData) => (
-    countAggregate.concat(Object.values(conditionsData.years))
-  ), []);
-  const max = Math.max(...counts);
-  return (!Number.isFinite(max)) ? null : max;
-};
-
-const getLegendDataItems = (data, feature, hasHighlight, highlightName) => {
-  const maxCount = getMaxCount(data);
-  const items = data.map(conditionsData => (
-    <LegendItem
-      key={conditionsData.subfeature}
-      title={conditionsData.subfeature}
-      feature={feature}
-      data={conditionsData}
-      color={conditionsData.color}
-      max={maxCount}
-      faded={hasHighlight && (conditionsData.subfeature !== highlightName)}
-    />
-  ));
-
-  return items;
-};
-
-const SmallMultiplesLegend = (props) => {
-  const dataIndex = props.data.findIndex(conditionsData => (
-    conditionsData.subfeature === props.selected
-  ));
-  const hasHighlight = !!props.data.find(conditionsData => (
-    conditionsData.subfeature === props.highlightName
-  ));
-  const selectedIndex = props.data.length === 1 ? 0 : dataIndex + 1;
-  const legendDataItems = getLegendDataItems(
-    props.data,
-    props.title,
-    hasHighlight,
-    props.highlightName,
-  );
-  const onItemChange = (index) => {
-    const legendItem = legendDataItems[index];
-    const category = legendItem.props.all ? null : legendItem.props.title;
-
-    props.onChange(category);
+class SmallMultiplesLegend extends React.PureComponent {
+  static propTypes = {
+    /** The selected feature in the feature menu */
+    feature: PropTypes.string.isRequired,
+    /** The data to render the stream graphs
+        The items rendered in the provided order */
+    data: allConditionsPerYear.isRequired,
+    /** The name of the data element to set as selected */
+    selected: PropTypes.string.isRequired,
+    /** The name of the data element to highlight */
+    highlightName: PropTypes.string,
+    /** A function that will receive an name when a data item is selected
+        or null if the all legend filter is selected */
+    onChange: PropTypes.func.isRequired,
+    /** Additional className to add to the component */
+    className: PropTypes.string,
   };
 
-  if (legendDataItems.length > 1) {
+  static defaultProps = {
+    highlightName: null,
+    className: '',
+  };
+
+  getData = () => getFilteredProjectData(this.props.data, this.props.feature);
+
+  onItemChange = index => this.props
+    .onChange(index === 0 ? '' : this.getData()[index - 1].subFeature);
+
+  render() {
+    const { feature, highlightName, selected } = this.props;
+    const data = this.getData();
+
+    // Add one to account for 'all
+    const selectedIndex = data.findIndex(c => c.subFeature === selected) + 1;
+    const hasHighlight = !!data.find(c => c.subFeature === highlightName);
+
+    const maxCount = data.reduce((acc, { years }) => Math.max(acc, ...Object.values(years)), 0);
+    const legendDataItems = data.map(conditionsData => (
+      <LegendItem
+        key={conditionsData.subFeature}
+        title={conditionsData.subFeature}
+        feature={this.props.feature}
+        data={conditionsData}
+        color={conditionsData.color}
+        max={maxCount}
+        faded={hasHighlight && (conditionsData.subFeature !== this.props.highlightName)}
+      />
+    ));
+
     legendDataItems.unshift((
       <LegendItem
         all
         // "all" cannot be an name in data
         key="all"
-        title={props.title}
-        feature={props.title}
+        title={feature}
+        feature={feature}
         color=""
         max={0}
         faded={hasHighlight}
       />
     ));
+
+    return (
+      <div className={classNames('SmallMultiplesLegend', this.props.className)}>
+        <List
+          className={classNames({ faded: hasHighlight })}
+          items={legendDataItems}
+          selected={selectedIndex}
+          onChange={this.onItemChange}
+          guideLine
+        />
+      </div>
+    );
   }
-
-  return (
-    <div className={classNames('SmallMultiplesLegend', props.className)}>
-      <List
-        className={classNames({ faded: hasHighlight })}
-        items={legendDataItems}
-        selected={selectedIndex}
-        onChange={onItemChange}
-        guideLine
-      />
-    </div>
-  );
-};
-
-SmallMultiplesLegend.propTypes = {
-  /** The title to be displayed in the all filter item */
-  title: PropTypes.string.isRequired,
-  /** The data to render the stream graphs
-      The items rendered in the provided order */
-  data: allConditionsPerYear.isRequired,
-  /** The name of the data element to set as selected */
-  selected: PropTypes.string,
-  /** The name of the data element to highlight */
-  highlightName: PropTypes.string,
-  /** A function that will receive an name when a data item is selected
-      or null if the all legend filter is selected */
-  onChange: PropTypes.func.isRequired,
-  /** Additional className to add to the component */
-  className: PropTypes.string,
-};
-
-SmallMultiplesLegend.defaultProps = {
-  selected: '',
-  highlightName: null,
-  className: '',
-};
+}
 
 // TODO: Wrap in React.memo when testing issue fixed
 export default SmallMultiplesLegend;
