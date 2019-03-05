@@ -21,11 +21,9 @@ export default class PhysicsVariant extends React.Component {
     this.groupRef = React.createRef();
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
     this.engine = Matter.Engine.create({ world });
-    this.lastTime = null;
     this.loopID = null;
-    this.deltaTime = 0;
-    this.correction = 1;
-    this.timeScale = 1000;
+    this.lastTime = 0;
+    this.lastDeltaTime = 0;
 
     // Set up bodies
     // changed from -200 to 200 to deal with loading bug in storybook
@@ -34,7 +32,6 @@ export default class PhysicsVariant extends React.Component {
         category: circleCategory,
       },
     });
-    Matter.Body.setMass(this.circle, 1);
     Matter.World.add(this.engine.world, this.circle);
 
     this.keywords = {};
@@ -53,7 +50,7 @@ export default class PhysicsVariant extends React.Component {
           },
         },
       );
-      keywordBody.frictionAir = 0.16;
+      keywordBody.frictionAir = 0.05;
       keywordBody.render.className = keyword.className;
       keywordBody.render.value = keyword.value;
       keywordBody.render.originalData = keyword;
@@ -70,12 +67,9 @@ export default class PhysicsVariant extends React.Component {
     // Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.15, y: 0.005 });
 
     const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
-    // mouse constrain needs ot be changed so it has a static center and doesn't drift
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse,
       constraint: {
-        damping: 0.1,
-        anchors: false,
         stiffness: 0.2,
         render: {
           visible: false,
@@ -101,12 +95,22 @@ export default class PhysicsVariant extends React.Component {
   onUpdate = (update) => {
     let bodiesChanged = false;
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
-      let bodyChanged = (Math.abs(body.position.x - body.positionPrev.x) > 0.01)
-        || (Math.abs(body.position.y - body.positionPrev.y) > 0.01)
-        || ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01);
+      // Stop the body from moving if its reached a minimum movement
+      const newVelocity = { ...body.velocity };
+      if (Math.abs(body.position.x - body.positionPrev.x) < 0.01) { newVelocity.x = 0; }
+      if (Math.abs(body.position.y - body.positionPrev.y) < 0.01) { newVelocity.y = 0; }
+      if (newVelocity.x !== body.velocity.x || newVelocity.y !== body.velocity.y) {
+        Matter.Body.setVelocity(body, newVelocity);
+      }
+
+      if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
+        Matter.Body.setAngularVelocity(0);
+      }
+
       // Check if any positions have updated
+      const bodyChanged = !!(body.speed || body.angularSpeed);
       bodiesChanged = bodiesChanged || bodyChanged;
-      if (bodyChanged <= 0.01) bodyChanged = 0;
+
       // If the circle has stopped moving, increase its friction
       if (body.collisionFilter.category === circleCategory && !bodyChanged) {
         body.frictionAir = 0.2;
@@ -117,8 +121,8 @@ export default class PhysicsVariant extends React.Component {
       }
       // Check if any keywords that have been displaced can move back
       if (body.collisionFilter.category === visibleTextCategory
-        && body.render.lastCollision + 5633 <= update.source.timing.timestamp) {
-      // eslint-disable-next-line object-curly-newline
+          && body.render.lastCollision + 5000 <= update.source.timing.timestamp) {
+        // eslint-disable-next-line object-curly-newline
         const { x, y, width, height } = body.render.originalData.outline;
         const originalBounds = {
           min: { x, y },
@@ -152,14 +156,14 @@ export default class PhysicsVariant extends React.Component {
   });
 
   loop = (currTime) => {
-    const time = currTime / this.timeScale;
-    this.deltaTime = time - this.lastTime;
+    const deltaTime = currTime - (this.lastTime || 0);
     Matter.Engine.update(
       this.engine,
-      this.timeScale / this.deltaTime,
-      this.lastTime ? currTime / this.lastTime : this.correction,
+      this.deltaTime,
+      this.lastDeltaTime ? (deltaTime / this.lastDeltaTime) : 1,
     );
     this.lastTime = currTime;
+    this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
     this.forceUpdate();
   }
@@ -182,7 +186,7 @@ export default class PhysicsVariant extends React.Component {
       Matter.Body.setPosition(body, targetPos);
       Matter.Body.setAngularVelocity(body, 0);
       Matter.Body.setAngle(body, 0);
-    }, 1666);
+    }, 2000);
   };
 
   calculatePosition = (keyword) => {
@@ -204,7 +208,7 @@ export default class PhysicsVariant extends React.Component {
   calculateVelocity = (start, end, friction) => {
     let loop = 0;
     let current = start;
-    let prev = start + ((start - end) / this.timeScale);
+    let prev = start + ((start - end) / 1000);
     const direction = Math.abs(start - end) / (start - end);
     while ((current - end) * direction > 0 && loop < 100) {
       loop += 1;
@@ -259,10 +263,6 @@ export default class PhysicsVariant extends React.Component {
       );
     });
     return words;
-  }
-
-  after() {
-    window.cancelAnimationFrame(this.loopID);
   }
 
   render() {

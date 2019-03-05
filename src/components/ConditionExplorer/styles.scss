@@ -3,6 +3,7 @@
 
 .ConditionExplorer {
    touch-action: none;
+   min-height: 500px;
 
   .keyword {
     user-select: none;
@@ -13,7 +14,7 @@
 
     rect, path {
       opacity: 1;
-      transition: opacity 1.333s 0.333s;
+      transition: opacity 1s 3s;
     }
 
     text {
@@ -23,7 +24,7 @@
       font-family: $fira-sans-condensed-light;
       fill: rgb(149, 127, 109);
       // font-size: 12px;
-      transition: fill 0.3s, font-size 0.3s;
+      transition: fill 1s, font-size 1s;
     }
 
     &.textVisible {
