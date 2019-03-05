@@ -69,7 +69,7 @@ export default class ConditionExplorer extends React.Component {
 
     const lineHeight = this.state.calculatedFontSize.height + margin.height;
     // The top needs to be one line down to account for y=bottom of text
-    let y = lineHeight - margin.height;
+    let y = margin.height;
     let x = startX;
 
     return this.props.keywords
