@@ -9,9 +9,6 @@ const props = {
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionDetails: {
-    searchKeywords: {
-      include: ['hello'],
-    },
     selectedProject: 'Project Name',
     data: conditionData,
   },
@@ -47,6 +44,8 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       ...pendingActions,
     },
     state: {
+      included: [],
+      excluded: [],
       selected: {
         feature: 'theme',
         subFeature: '',

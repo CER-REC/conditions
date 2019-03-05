@@ -16,9 +16,9 @@ const props = {
   availableCategories: { categories },
   suggestedKeywords: { searchData },
   conditionDetails: {
-    searchKeywords: {
-      include: ['hello'],
-    },
+    // searchKeywords: {
+    //   include: ['hello'],
+    // },
     selectedProject: 'Project Name',
     data: conditionData,
   },

@@ -91,13 +91,18 @@ const ViewThree = props => (
       <section className="conditionDetails">
         <ConditionDetails
           isExpandable
-          {...props.conditionDetails}
+          selected
           selectedItem={props.selected.condition}
           expanded={props.detailViewExpanded}
           updateSelectedItem={props.setSelectedCondition}
           openIntermediatePopup={props.openIntermediatePopup}
           toggleExpanded={props.expandDetailView}
           openProjectDetails={props.openProjectDetails}
+          selectedKeywords={{
+            include: props.included,
+            exclude: props.excluded,
+          }}
+          {...props.conditionDetails}
         />
       </section>
     </section>
@@ -127,15 +132,12 @@ ViewThree.propTypes = {
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
-
+  included: PropTypes.arrayOf(PropTypes.string).isRequired,
+  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   conditionDetails: PropTypes.shape({
     isExpandable: PropTypes.bool,
     expanded: PropTypes.bool,
     selectedProject: PropTypes.string.isRequired,
-    searchKeywords: PropTypes.shape({
-      include: PropTypes.arrayOf(PropTypes.string),
-      exclude: PropTypes.arrayOf(PropTypes.string),
-    }),
     data: conditionData.isRequired,
   }).isRequired,
   detailViewExpanded: PropTypes.bool.isRequired,
@@ -155,11 +157,14 @@ export default connect(
   ({
     selected,
     browseBy,
+    search,
     chartIndicatorPosition,
     detailViewExpanded,
   }) => ({
     selected,
     browseBy,
+    included: search.included,
+    excluded: search.excluded,
     chartIndicatorPosition,
     detailViewExpanded,
 

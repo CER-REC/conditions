@@ -8,7 +8,12 @@ import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import TrendButton from '../../components/TrendButton';
-import { browseByType, yearRangeType, featureTypes, conditionData } from '../../proptypes';
+import {
+  browseByType,
+  yearRangeType,
+  featureTypes,
+  conditionData,
+} from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
@@ -122,12 +127,16 @@ const ViewTwo = props => (
       </section>
       <section className="conditions">
         <ConditionDetails
-          {...props.conditionDetails}
           selectedItem={props.selected.condition}
           updateSelectedItem={props.setSelectedCondition}
           openIntermediatePopup={props.openIntermediatePopup}
           openProjectDetails={props.openProjectDetails}
           toggleExpanded={noop}
+          selectedKeywords={{
+            include: props.included,
+            exclude: props.excluded,
+          }}
+          {...props.conditionDetails}
         />
       </section>
     </section>
@@ -161,10 +170,10 @@ ViewTwo.propTypes = {
     isExpandable: PropTypes.bool,
     expanded: PropTypes.bool,
     selectedProject: PropTypes.string.isRequired,
-    searchKeywords: PropTypes.shape({
-      include: PropTypes.arrayOf(PropTypes.string),
-      exclude: PropTypes.arrayOf(PropTypes.string),
-    }),
+    // searchKeywords: PropTypes.shape({
+    //   include: PropTypes.arrayOf(PropTypes.string),
+    //   exclude: PropTypes.arrayOf(PropTypes.string),
+    // }),
     data: conditionData.isRequired,
   }).isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
