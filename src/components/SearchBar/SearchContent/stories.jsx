@@ -15,6 +15,7 @@ storiesForComponent('Components|SearchBar/SearchContent', module, ReadMe)
   .add('with interaction', () => (
     <SearchContent
       {...getInteractionProps()}
+      isExclude
     />
   ), {
     interaction: {

@@ -196,20 +196,20 @@ describe('Components|SearchBar/FilterContent', () => {
 
   describe('onClick/keypress of reset', () => {
     let wrapper;
-    let spy;
-    let spy2;
+    let changeStatusSpy;
+    let yearSelectSpy;
     let reset;
     beforeEach(() => {
-      spy = jest.fn();
-      spy2 = jest.fn();
+      changeStatusSpy = jest.fn();
+      yearSelectSpy = jest.fn();
       wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
           selectedYear={yearRange}
-          changeProjectStatus={spy}
+          changeProjectStatus={changeStatusSpy}
           closeTab={noop}
-          onYearSelect={spy2}
+          onYearSelect={yearSelectSpy}
         />,
       );
 
@@ -217,13 +217,13 @@ describe('Components|SearchBar/FilterContent', () => {
     });
     test('click should call its reset prop', () => {
       reset.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy2).toHaveBeenCalledTimes(1);
+      expect(changeStatusSpy).toHaveBeenCalledTimes(1);
+      expect(yearSelectSpy).toHaveBeenCalledTimes(1);
     });
     test('keyPress should call its reset prop', () => {
       reset.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
-      expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy2).toHaveBeenCalledTimes(1);
+      expect(yearSelectSpy).toHaveBeenCalledTimes(1);
+      expect(changeStatusSpy).toHaveBeenCalledTimes(1);
     });
   });
   describe('onClick/keypress of close', () => {

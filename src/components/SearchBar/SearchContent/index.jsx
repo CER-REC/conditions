@@ -23,6 +23,7 @@ class SearchContent extends React.PureComponent {
     findAnyOnChange: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
     changeIsExclude: PropTypes.func.isRequired,
+    isExclude: PropTypes.bool.isRequired,
   }
 
   constructor(props) {
@@ -101,7 +102,7 @@ class SearchContent extends React.PureComponent {
       </div>
       <div className="input">
         <input value={this.state.inputExclude} onChange={this.updateInputExclude} onFocus={() => this.props.changeIsExclude(true)} className="searchBar" />
-        <button type="button" className={classNames(['addInput', { disabled: this.props.excludeKeywords.length === 6 }])} {...handleInteraction(this.addExcludeWord)}>
+        <button type="button" className={classNames('addInput', { disabled: this.props.excludeKeywords.length === 6 })} {...handleInteraction(this.addExcludeWord)}>
           <Icon className={classNames(['iconInline', 'plusIcon'])} icon="plus-circle" />
         </button>
       </div>
@@ -220,7 +221,7 @@ class SearchContent extends React.PureComponent {
   render() {
     return (
       <div className="SearchContent">
-        <div {...handleInteraction(this.reset)} className="reset">
+        <div {...handleInteraction(this.reset)} className={classNames('reset', { shifted: !this.props.isExclude })}>
           <FormattedMessage id="components.searchBar.reset">
             { text => <span className="upperCase"> {text} </span> }
           </FormattedMessage>

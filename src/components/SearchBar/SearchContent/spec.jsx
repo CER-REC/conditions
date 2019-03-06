@@ -26,6 +26,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={noop}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={noop}
           changeIsExclude={noop}
         />,
@@ -84,6 +85,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={noop}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={noop}
           changeIsExclude={noop}
         />,
@@ -170,6 +172,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={noop}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={spy}
           changeIsExclude={noop}
         />,
@@ -206,6 +209,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={spyExclude}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={noop}
           changeIsExclude={noop}
         />,
@@ -263,6 +267,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={noop}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={noop}
           changeIsExclude={noop}
         />,
@@ -301,6 +306,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={noop}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={spy}
           changeIsExclude={noop}
         />,
@@ -337,6 +343,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={spyExclude}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={noop}
           changeIsExclude={noop}
         />,
@@ -380,6 +387,7 @@ describe('Components|SearchBar/SearchContent', () => {
           setExcluded={spyExclude}
           closeTab={noop}
           findAny
+          isExclude
           findAnyOnChange={noop}
           changeIsExclude={noop}
         />,
