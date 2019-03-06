@@ -78,6 +78,31 @@ export const suggestedKeywordsObject = PropTypes.objectOf(
   }).isRequired,
 );
 
+export const conditionData = PropTypes.arrayOf(PropTypes.shape({
+  instrumentNumber: PropTypes.string.isRequired,
+  issuanceDate: PropTypes.string.isRequired,
+  effectiveDate: PropTypes.string.isRequired,
+  sunsetDate: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  activity: PropTypes.string.isRequired,
+  conditions: PropTypes.arrayOf(PropTypes.shape({
+    binnedValue: PropTypes.number.isRequired,
+    fill: PropTypes.arrayOf(PropTypes.string).isRequired,
+    keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    text: PropTypes.string.isRequired,
+    details: PropTypes.shape({
+      theme: PropTypes.string.isRequired,
+      instrument: PropTypes.string.isRequired,
+      phase: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      filing: PropTypes.string.isRequired,
+    }).isRequired,
+  })).isRequired,
+}));
+
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
 // ["emissions", { conditions: 400, category: ['category2', 'category3]}]]
