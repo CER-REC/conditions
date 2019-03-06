@@ -4,6 +4,8 @@ import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
+import './styles.scss';
+
 const DownloadsBox = props => (
   <div className="DownloadsBox">
     <svg viewBox="0 0 20 20">

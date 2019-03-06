@@ -22,7 +22,6 @@ The Main Info Bar is a public component placed in the Footer at the bottom of th
 - When pink arrows are clicked, they should disappear and the text box should slide back up to its original state
 - When a heading button is selected, the selected text should be bigger and bolded
 - Links can be clicked inside the text area
-- Clicking outside of the footer should close the text area (Not yet implemented. **Is this actually required?**)
 - Clicking on a share icon will generate a short URL to the current view and a social media prompt for Email, Twitter, Facebook, or LinkedIn
 
 ## Accessibility Requirements
