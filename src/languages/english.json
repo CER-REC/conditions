@@ -12,6 +12,19 @@
     "trend": {
       "title": "Trends & Definitions"
     },
+    "linkText": {
+      "regDocs": "REGDOCS",
+      "here": "here",
+      "lifecycle": "lifecycle",
+      "applications": "applications",
+      "envProtection": "environmental protection",
+      "conditions": "conditions",
+      "map": "map",
+      "hearings": "hearings",
+      "lawsRegulations": "laws, acts and regulations",
+      "applicationProcess": "application process",
+      "NEB": "NEB"
+    },
     "theme": {
       "ADMINISTRATIVE": "Administrative",
       "DAMAGE_PREVENTION": "Damage Prevention",
@@ -82,6 +95,32 @@
     }
   },
   "components": {
+    "conditionExplorer": {
+      "guide": {
+        "overview": {
+          "text1": "As Canada’s energy regulator the {NEB} has a variety of roles and responsibilities throughout the {lifecycle} of energy infrastructure – from adjudication of energy project {applications} to safety oversight and {envProtection}. To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. {Conditions} are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.",
+          "text2": "The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that {here}). Here is a {map} of major pipeline systems regulated by the NEB."
+        },
+        "scope": {
+          "text1": "Not all concerns result in the creation of a condition. Existing federal, provincial and municipal {lawsRegulations} are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.",
+          "text2": "These different sorts of requirements expressed in conditions are the Themes which can be explored {themeHere} in this data visualization.",
+          "text3": "Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.",
+          "text4": "Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable {conditionHere}. Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.",
+          "text5": "When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the {applicationProcess} Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in {hearings}, individuals must apply (more info about how to become an intervenor {here})"
+        },
+        "compliance": {
+          "text1": "Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company ({exploreHere}) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.",
+          "exploreHere": "explore here",
+          "documentationPrompt": "Conditions may require a company to submit documentation such as:",
+          "doc1": "results of additional environmental and socio-economic assessments, species-specific studies, or traditional land use investigations;",
+          "doc2": "engineering design details, and supporting assessments or information;",
+          "doc3": "environmental protection plans;",
+          "doc4": "mitigation and monitoring documentation;",
+          "doc5": "construction schedules and progress reports; and",
+          "doc6": "employee training programs and manuals."
+        }
+      }
+    },
     "companyWheel": {
       "wheelRay": {
         "title": "Selected Company"
@@ -93,7 +132,7 @@
       "location": "Location",
       "issuanceDate": "Issuance Date",
       "effectiveDate": "Effective Date",
-      "sunsetDate": "Sunset Date",
+    "sunsetDate": "Sunset Date",
       "status": "Instrument Status",
       "type": "Instrument Type",
       "activity": "Instrument Activity",
@@ -105,11 +144,12 @@
     },
     "featureDescription": {
       "theme": "Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.",
-      "phase": "As a lifecycle regulator, the NEB ensures the safety of a project during all phases. Conditions can apply to one, several or all phases of the lifecycle. More information about the lifecycle can be found [TODO: NEEDS A LINK]here.",
+      "phase": "As a lifecycle regulator, the NEB ensures the safety of a project during all phases. Conditions can apply to one, several or all phases of the lifecycle. More information about the lifecycle can be found {phaseLink}",
+      "phaseHere": "here",
       "status": "Conditions that are no longer active are closed. Some conditions may be active indefinitely or they refer to the continued operation of a pipeline for example. Others that apply to a specific phase will close, because they have been fulfilled (e.g. a specific filing during construction phase).",
       "type": "There are two main types of conditions: standard and non-standard.",
       "filing": "This feature explains whether a company is required to file a document in order to comply with a condition.",
-      "instrument": "Regulatory instruments are official orders issued by NEB staff. An Instrument can include several conditions, and a project might have several instruments (i.e. orders)attached to it. All instruments have an instrument number. Searching for this number in the NEB’s [TODO: NEEDS A LINK]REGDOCS repository is one way to find the original regulatory instrument from which the conditions in this visualization are taken. The prefix of an instrument number is based on its meaning."
+      "instrument": "Regulatory instruments are official orders issued by NEB staff. An Instrument can include several conditions, and a project might have several instruments (i.e. orders)attached to it. All instruments have an instrument number. Searching for this number in the NEB’s {regDocsLink} repository is one way to find the original regulatory instrument from which the conditions in this visualization are taken. The prefix of an instrument number is based on its meaning."
     },
     "featureTypesDescription": {
       "theme": {
@@ -118,12 +158,12 @@
         "EMERGENCY_MANAGEMENT": "types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.",
         "ENFORCEMENT": "types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.",
         "ENVIRONMENTAL_PROTECTION": "types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.",
-        "FINANCIAL": "types of conditions that ensure a company’s financial resposibilities are met.",
+        "FINANCIAL": "types of conditions that ensure a company’s financial responsibilities are met.",
         "INTEGRITY_MANAGEMENT": "types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.",
-        "MANAGEMENT_SYSTEM": "types of conditions that apply when a project is transeferred to another company. Ensures all Management systems are in place and the new company knows its requirements.",
+        "MANAGEMENT_SYSTEM": "types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.",
         "SAFETY_MANAGEMENT": "types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.",
         "SECURITY": "types of conditions that ensure that project facilities are monitored and secured.",
-        "SOCIO_ECONOMIC": "types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).",
+        "SOCIO_ECONOMIC": "types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).",
         "STANDARD_CONDITION": "types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.",
         "SUNSET_CLAUSE": "types of conditions that ensure that projects/phases begin in a specific period of time."
       },
@@ -215,7 +255,7 @@
           "not": "not"
         },
         "highlightText": {
-          "highlightConditions" : "Highlight conditions containing",
+          "highlightConditions": "Highlight conditions containing",
           "following": " {choice} of the following:",
           "any": "any",
           "none": "none",
@@ -233,7 +273,7 @@
         "none": "none",
         "conditions": "{conditions} conditions"
       }
-    }, 
+    },
     "modal": {
       "image": {
         "title": "Image Download",

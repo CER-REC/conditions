@@ -13,12 +13,10 @@ const FeatureDescription = props => (
     <FormattedMessage
       id={`components.featureDescription.${props.feature}`}
       values={{
-        link: (url, title) => <a href={url} rel="noopener noreferrer" target="_blank">{title}</a>,
+        regDocsLink: <a href="https://apps.neb-one.gc.ca/REGDOCS/" rel="noopener noreferrer" target="_blank"><FormattedMessage id="common.linkText.regDocs" /></a>,
+        phaseLink: <a href="https://www.neb-one.gc.ca/sftnvrnmnt/nvrnmnt/lfcclpprch/index-eng.html#s1" rel="noopener noreferrer" target="_blank"><FormattedMessage id="common.linkText.here" /></a>,
       }}
-    >
-      {/* eslint-disable-next-line react/no-array-index-key */}
-      {text => text.split('\n').map((str, i) => <p key={i}>{str}</p>)}
-    </FormattedMessage>
+    />
   </div>
 );
 
