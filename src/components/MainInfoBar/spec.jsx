@@ -4,6 +4,9 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import MainInfoBar from '.';
 
+const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
+
 describe('Components|MainInfoBar', () => {
   let spy;
   beforeEach(() => {
@@ -31,8 +34,7 @@ describe('Components|MainInfoBar', () => {
       wrapper.find('.MainInfoBar')
         .find('.textButton')
         .first()
-        .props()
-        .onClick('about');
+        .simulate('click', eventFuncs);
 
       expect(spy.setActiveDialog).toHaveBeenCalledTimes(1);
     });
@@ -40,31 +42,13 @@ describe('Components|MainInfoBar', () => {
     test('should pass its setActiveDialog callback to the collapse arrows', () => {
       wrapper.find('.MainInfoBar')
         .find('CircleContainer')
-        .props()
-        .onClick();
+        .simulate('click', eventFuncs);
 
       expect(spy.toggleExpanded).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('passing information to the content boxes', () => {
-    test('should pass the pdfUrl to the Methodology box', () => {
-      const testUrl = 'abc';
-
-      const wrapper = shallow(<MainInfoBar
-        pdfUrl={testUrl}
-        activeDialog="methodology"
-        {...spy}
-      />);
-
-      const url = wrapper.find('.MainInfoBar')
-        .find('MethodologyBox')
-        .props()
-        .pdfUrl;
-
-      expect(url).toBe(testUrl);
-    });
-
     test('should pass its openDataModal and openScreenshotModal callbacks to the Downloads box', () => {
       const wrapper = shallow(<MainInfoBar
         pdfUrl=""

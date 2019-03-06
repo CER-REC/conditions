@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
@@ -7,7 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 
-import { mainInfoBar } from '../../proptypes';
+import handleInteraction from '../../utilities/handleInteraction';
 
 import './styles.scss';
 
@@ -27,35 +28,32 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
-  getDialogContent() {
-    return ({
-      about: (
-        <AboutBox />
-      ),
-      methodology: (
-        <MethodologyBox
-          pdfUrl={this.props.pdfUrl}
-        />
-      ),
-      downloads: (
-        <DownloadsBox
-          openDataModal={this.props.openDataModal}
-          openScreenshotModal={this.props.openScreenshotModal}
-        />
-      ),
-    })[this.props.activeDialog];
+  getDialogContent = () => {
+    switch (this.props.activeDialog) {
+      case 'about': default:
+        return <AboutBox />;
+      case 'methodology':
+        return <MethodologyBox />;
+      case 'downloads':
+        return (
+          <DownloadsBox
+            openDataModal={this.props.openDataModal}
+            openScreenshotModal={this.props.openScreenshotModal}
+          />
+        );
+    }
   }
 
-  openDialog(k) {
+  openDialog = (k) => {
     this.props.setActiveDialog(k);
-    if (!this.props.expanded) this.props.toggleExpanded(true);
+    if (!this.props.expanded) { this.props.toggleExpanded(true); }
   }
 
-  closeDialog() {
+  closeDialog = () => {
     this.props.toggleExpanded(false);
   }
 
-  textButtons() {
+  textButtons = () => {
     const buttons = ['about', 'methodology', 'downloads'];
     const textButton = buttons.map(k => (
       <button
@@ -63,7 +61,7 @@ class MainInfoBar extends React.PureComponent {
         id={k}
         className={`textButton ${this.props.activeDialog === k ? 'selected' : ''}`}
         type="button"
-        onClick={() => this.openDialog(k)}
+        {...handleInteraction(this.openDialog, k)}
       >
         <FormattedMessage id={`components.mainInfoBar.headings.${k}`} />
       </button>
@@ -88,7 +86,7 @@ class MainInfoBar extends React.PureComponent {
     ));
     return (
       <div className="MainInfoBar">
-        <div className={classNames('topLine', { view1: this.props.isView1 })} />
+        <div className="topLine" />
         <div>
           {this.textButtons()}
         </div>
@@ -106,7 +104,7 @@ class MainInfoBar extends React.PureComponent {
               <CircleContainer
                 className="angleDoubleDown"
                 size={20}
-                onClick={() => this.closeDialog()}
+                onClick={this.closeDialog}
               >
                 <Icon size="1x" icon="angle-double-up" prefix="fas" />
               </CircleContainer>
@@ -117,11 +115,17 @@ class MainInfoBar extends React.PureComponent {
   }
 }
 
-MainInfoBar.propTypes = mainInfoBar.isRequired;
+MainInfoBar.propTypes = {
+  activeDialog: PropTypes.oneOf(['about', 'methodology', 'downloads']),
+  expanded: PropTypes.bool,
+  setActiveDialog: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func.isRequired,
+  openDataModal: PropTypes.func.isRequired,
+  openScreenshotModal: PropTypes.func.isRequired,
+};
 
 MainInfoBar.defaultProps = {
   activeDialog: 'about',
-  isView1: false,
   expanded: false,
 };
 

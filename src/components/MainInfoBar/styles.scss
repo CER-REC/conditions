@@ -74,16 +74,16 @@
     font-family: $fira-sans-condensed;
     font-size: 14px;
     size: 1px;
+
+    & + p {
+      margin-top: 4px;
+    }
   }
 
   p {
     color: $Black77;
     font-family: $fira-sans-condensed-light;
     font-size: 12px;
-
-    // &.first {
-    //   margin-top: 4px;
-    // }
   }
 
   a {

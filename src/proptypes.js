@@ -100,14 +100,3 @@ export const suggestedKeywordsArrayType = PropTypes
       category: PropTypes.arrayOf(PropTypes.string).isRequired,
     }, value[1], `${propFullName}[1]`, componentName);
   });
-
-export const mainInfoBar = PropTypes.shape({
-  activeDialog: PropTypes.oneOf(['about', 'methodology', 'downloads']),
-  isView1: PropTypes.bool,
-  expanded: PropTypes.bool,
-  pdfUrl: PropTypes.string.isRequired,
-  setActiveDialog: PropTypes.func.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
-  openDataModal: PropTypes.func.isRequired,
-  openScreenshotModal: PropTypes.func.isRequired,
-});
