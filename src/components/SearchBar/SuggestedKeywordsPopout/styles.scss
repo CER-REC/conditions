@@ -1,0 +1,89 @@
+@import "../../../styles/fontVariables.scss";
+@import "../../../styles/colors.scss";
+
+.SuggestedKeywordsPopout {
+  position: absolute;
+
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  border: 1px solid $LightGray;
+  padding: 10px;
+  font-family: $fira-sans-condensed;
+
+  // z-index: 1001;
+  background-color: white;
+
+  .upperCase {
+    text-transform: uppercase;
+  }
+  .keywordsTitle {
+    padding: 0px 0px 5px 0px;
+    border-bottom: 1px solid $LightGray;
+    font-size: 20px;
+    color: $Gray160;
+    font-family: $fira-sans-condensed-light;
+  }
+
+  .description {
+    color: $Gray160;
+    font-size: 12px;
+    a {
+      color: $LinksTextButtons;
+      padding: 0px;
+      margin: 0px;
+      color: $Gray160;
+    }
+  }
+
+  ul {
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+  }
+  .viewText {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0px 10px 0px 0px;
+    vertical-align: bottom;
+    color: $Black51;
+    margin: 5px 0px;
+  }
+  .categoryList {
+    display: inline-block;
+    padding: 0px 15px;
+    margin: 5px 5px;
+    border: 1px solid $LinksTextButtons;
+    border-radius: 15px;
+    vertical-align: middle;
+    line-height: 25px;
+  }
+  .selectedCategory {
+    color: $White;
+    background-color: $LinksTextButtons;
+  }
+  .rightText {
+    text-align: right;
+    .selectedSort {
+      color: $LinksTextButtons;
+    }
+    .arrow {
+      padding-left: 15px;
+      svg {
+        width: 15px;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .close {
+    text-align: right;
+    button {
+      padding: 5px;
+      margin: 5px 5px 0px 5px;
+      background-color: $LinksTextButtons;
+      color: $White;
+      border-color: $LinksTextButtons;
+    }
+  }
+}

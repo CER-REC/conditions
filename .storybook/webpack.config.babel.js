@@ -1,4 +1,4 @@
-const webpackConfig = require('../webpack.config.js');
+const webpackConfig = require('../webpack.config.babel.js');
 
 module.exports = (baseConfig, env, defaultConfig) => {
   defaultConfig.module.rules = webpackConfig.module.rules;

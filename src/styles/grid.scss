@@ -9,11 +9,16 @@
   /* Padding in grid units (top, right, bottom, left) : 2 0 1 0 */
   padding: $gridUnit * 2 0 $gridUnit;
 
-  > .row > section {
-    margin-right: $gridUnit;
-    margin-bottom: $gridUnit;
-    &:first-child { margin-left: $gridUnit * 2; }
-    &:last-child { margin-right: $gridUnit * 2; }
+  > .row {
+    margin-left: $gridUnit * 2 - 1;
+    margin-right: $gridUnit * 2 - 1;
+
+    > section {
+      margin-right: $gridUnit;
+      margin-bottom: $gridUnit;
+      // &:first-child { margin-left: $gridUnit * 2; }
+      &:last-child { margin-right: 0; }
+    }
   }
 }
 
@@ -23,6 +28,10 @@
   min-height: 500px;
 
   > .row {
+    // Add support for rows to have a border, but hide it by default
+    border-width: 0 1px;
+    border-color: transparent;
+
     > section {
       overflow: hidden;
       float: left;
@@ -51,8 +60,8 @@
 
   @include grid-sizes($gridSizes, 100%);
   @media (min-width: 768px) { @include grid-sizes($gridSizes, 746px); }
-  @media (min-width: 992px) { @include grid-sizes($gridSizes, 970px); }
-  @media (min-width: 1200px) { @include grid-sizes($gridSizes, 1170px); }
+  @media (min-width: 992px) { @include grid-sizes($gridSizes, 968px); }
+  @media (min-width: 1200px) { @include grid-sizes($gridSizes, 1168px); }
 
   @content;
 }

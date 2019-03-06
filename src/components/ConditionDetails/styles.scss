@@ -1,0 +1,118 @@
+@import '../../styles/fontVariables.scss';
+@import '../../styles/colors.scss';
+
+.ConditionDetails {
+  max-width: 820px;
+  height: 300px;
+
+  font-family: $fira-sans-condensed-light;
+  font-size: 12px;
+  text-align: left;
+
+  color: $Black77;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .main {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    &.expandable {
+        width: 70%;
+    }
+  }
+
+  .popout {
+    display: inline-block;
+
+    vertical-align: top;
+    height: 100%;
+
+    &.left {
+      .filler {
+        height: 24px;
+        width: 100%;
+
+        background-color: $LightGray;
+      }
+    }
+
+    overflow-x: hidden;
+    transition: width 1s ease-in-out, visibility 0s 1s;
+
+    width: 0;
+    visibility: hidden;
+
+    &.expanded {
+      transition: width 1s ease-in-out, visibility 0s;
+
+      width: calc(30%);
+      visibility: visible;
+    }
+  }
+
+  .listPane {
+    display: inline-block;
+    width: 27%;
+    vertical-align: top;
+    padding-left: 5px;
+  }
+
+  .contentPane {
+    display: inline-block;
+    width: 73%;
+    vertical-align: top;
+  }
+
+  .contentHeading {
+    font-family: $fira-sans-condensed;
+    font-weight: bold;
+
+    color: $Gray160;
+  }
+
+  h1, h2, h3, h4, ul, p {
+    margin: 0;
+  }
+
+  h1 {
+    display: inline;
+
+    font-family: $fira-sans-condensed;
+    font-size: 14px;
+  }
+
+  h2 {
+    display: inline;
+
+    font-family: $fira-sans-condensed-bold;
+    font-size: 14px;
+    text-decoration: underline;
+
+    color: $Black51;
+  }
+
+  h3 {
+    padding-bottom: 0.8rem;
+
+    color: $Gray160;
+  }
+
+  h4 {
+    display: inline;
+
+    font-family: $fira-sans-condensed;
+
+    color: $Gray160;
+  }
+
+  button {
+    background: none;
+    border: inherit;
+    padding: 0;
+    margin: 0;
+
+    outline: none;
+  }
+}

@@ -1,32 +1,29 @@
 import React from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import TrendButton from '.';
 import ReadMe from './README.md';
-
-const featureOptions = [
-  'theme',
-  'phase',
-  'instrument',
-  'type',
-  'status',
-  'filing',
-];
+import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withKnobs)
-  .add('Static image', () => (
+  .addDecorator(withInteraction({ actions: ['onClick'] }))
+  .add('Default StreamGraph Button', () => (
     <TrendButton
-      selectedFeature={select('selectedFeature', featureOptions, featureOptions[0])}
-      onClick={() => alert('Clicked')}
+      {...getInteractionProps()}
+      feature="theme"
+      subFeature=""
+      projectData={conditionCountsByYear.counts}
+      instrumentData={conditionCountsByCommodity.counts}
     />
   ))
-  .add('Svg background placeholder', () => (
+  .add('Instrument Bubble Button', () => (
     <TrendButton
-      selectedFeature={select('selectedFeature', featureOptions, featureOptions[2])}
-      onClick={() => alert('Clicked')}
-      streamGraphData={[1, 2, 3]}
+      {...getInteractionProps()}
+      feature="instrument"
+      subFeature=""
+      projectData={conditionCountsByYear.counts}
+      instrumentData={conditionCountsByCommodity.counts}
     />
   ));

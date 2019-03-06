@@ -1,26 +1,33 @@
 import React from 'react';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import Wheel from '.';
 import ReadMe from './README.md';
 
-import { locationWheelData, companyWheelData } from './randomDataSample';
-
-const props = {
-  ringType: 'Company',
-};
+import { companyWheelData as wheelData } from './randomDataSample';
 
 storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .add('default: company', () => (
+  .addDecorator(withInteraction({
+    state: { selectedRay: '' },
+    actions: {
+      selectRay: () => selectedRay => ({ selectedRay }),
+    },
+  }))
+  .add('default', () => (
     <div>
-      <Wheel {...props} itemsData={companyWheelData} />
+      <Wheel
+        {...getInteractionProps()}
+        wheelType="company"
+        itemsData={wheelData}
+      />
     </div>
   ))
   .add('location props', () => (
     <Wheel
-      {...props}
-      ringType="Location"
-      itemsData={locationWheelData}
+      {...getInteractionProps()}
+      wheelType="location"
+      itemsData={wheelData}
     />
   ));

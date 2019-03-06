@@ -55,7 +55,7 @@ control disappears.
 
 ## Unit Testing
 
-* Component|Streamgraph
+* Component|StreamGraph
   * with default props
     * √ should render
     * √ should have a classname

@@ -1,3 +1,4 @@
+// TODO: Deployment hacks
 @import './styles/fontVariables.scss';
 
 @font-face {
@@ -29,15 +30,33 @@
   font-size: 13px;
   color: #808080;
 
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
-  .buttonText {
-    color: #D1057A;
+  .buttonText { color: #D1057A; }
+
+  [tabIndex="0"] { cursor: pointer; }
+
+  .close {
+    font-size: inherit;
+    color: inherit;
+  }
+  // Overwriting styles from theme
+  h1, h2, h3, h4, h5, h6 {
+    all: unset;
   }
 }
 
-[tabIndex="0"]{
-  cursor: pointer;
+// Override the WET template for our container
+body > .container {
+  padding-left: 0;
+  padding-right: 0;
+
+  // TODO: Deployment hacks
+  // This is only used to indicate the division between views right now
+  hr { border-top: 2px solid #ccc; }
+
+  button {
+    background-color: unset;
+  }
+
 }

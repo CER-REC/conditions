@@ -82,6 +82,44 @@ describe('Components|List', () => {
     });
   });
 
+  describe('when the list is scrolled', () => {
+    let spy;
+    let wrapper;
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
+    });
+
+    test('should recognize scrolling up', () => {
+      wrapper.find('.List').first().simulate('wheel', { deltaY: -1, ...eventFuncs });
+      expect(spy).toHaveBeenLastCalledWith(0);
+    });
+
+    test('should recognize scrolling down', () => {
+      wrapper.find('.List').first().simulate('wheel', { deltaY: 1, ...eventFuncs });
+      expect(spy).toHaveBeenLastCalledWith(2);
+    });
+
+    test('should not scroll if the delta is 0', () => {
+      wrapper.find('.List').first().simulate('wheel', { deltaY: 0, ...eventFuncs });
+      expect(spy).not.toHaveBeenCalled();
+    });
+  });
+
+  test('should not scroll up if the first item is already selected', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} />);
+    wrapper.find('.List').first().simulate('wheel', { deltaY: -1, ...eventFuncs });
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  test('should not scroll down if the last item is already selected', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(<List items={['a', 'b', 'c']} selected={2} onChange={spy} />);
+    wrapper.find('.List').first().simulate('wheel', { deltaY: 1, ...eventFuncs });
+    expect(spy).not.toHaveBeenCalled();
+  });
+
   describe('when wrapping is disabled', () => {
     let spy;
     let wrapper;

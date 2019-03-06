@@ -21,21 +21,18 @@ const FeaturesLegend = (props) => {
             chartType="legend"
             name="zeroConditions"
             count={0}
-            color=""
           />
           <div className="FlagDesc">0</div>
           <FeatureFlag
             chartType="legend"
             name="tenConditions"
             count={10}
-            color="#fff"
           />
           <div className="FlagDesc">10</div>
           <FeatureFlag
             chartType="legend"
             name="greaterThanTenConditions"
             count={11}
-            color=""
           />
           <div className="FlagDesc"> &gt;10 </div>
         </div>
@@ -50,13 +47,20 @@ const FeaturesLegend = (props) => {
             id="components.projectLegend.totalConditions"
           />
         </div>
+        <div className="AssociatedComp">
+          <h3 className="Asterisk">*</h3>
+          <div className="AssociatedDesc">
+            <FormattedMessage
+              id="components.projectLegend.associated"
+            />
+          </div>
+        </div>
       </div>
     );
   }
   const renderedItems = props.legendItems.map(item => (
     <LegendItem
-      key={item.color}
-      color={item.color}
+      key={item.description}
       text={item.description}
       disabled={item.disabled}
       selectedFeature={props.selectedFeature}
@@ -66,14 +70,6 @@ const FeaturesLegend = (props) => {
     <div className="FeaturesLegend">
       {renderedItems}
       {footer}
-      <div className="AssociatedComp">
-        <h3 className="Asterisk">*</h3>
-        <div className="AssociatedDesc">
-          <FormattedMessage
-            id="components.projectLegend.associated"
-          />
-        </div>
-      </div>
     </div>
   );
 };
@@ -84,7 +80,6 @@ FeaturesLegend.propTypes = {
   /** Data for the legend item */
   legendItems: PropTypes.arrayOf(PropTypes.shape({
     disabled: PropTypes.bool,
-    color: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   })).isRequired,
   isProjectLegend: PropTypes.bool.isRequired,

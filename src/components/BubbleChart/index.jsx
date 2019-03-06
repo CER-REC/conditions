@@ -3,172 +3,102 @@ import PropTypes from 'prop-types';
 import InstrumentBubble from './InstrumentBubble/index';
 import ChartIndicator from '../ChartIndicator';
 import d3HierarchyCalculation from './d3HierarchyCalculation';
-
-const sortCombinedData = combinedNodes => combinedNodes
-  .filter(node => (node.depth > 0))
-  // eslint-disable-next-line object-curly-newline
-  .map(({ x, y, r, value, depth }) => ({ x, y, r, value, depth }))
-  .sort((a, b) => (a.x - b.x));
+import { allConditionsByCommodityOrInstrument } from '../../proptypes';
 
 class BubbleChart extends React.PureComponent {
   static propTypes = {
-    selectedCategory: PropTypes.string.isRequired,
-    instrumentChartData1: PropTypes.instanceOf(Object).isRequired,
-    instrumentChartData2: PropTypes.instanceOf(Object).isRequired,
+    indicator: PropTypes.string.isRequired,
+    setIndicator: PropTypes.func.isRequired,
+    type: PropTypes.string.isRequired,
+    data: allConditionsByCommodityOrInstrument.isRequired,
   };
 
   constructor(props) {
     super(props);
-    this.state = {
-      display: false,
-      indicator: null,
-    };
     this.isDragging = false;
-    this.svgRef = React.createRef();
   }
 
-  combineData = () => {
-    const nodes1 = d3HierarchyCalculation(
-      this.props.instrumentChartData1, 550, 400,
-    );
-    const nodes2 = d3HierarchyCalculation(
-      this.props.instrumentChartData2, 1400, 400,
-    );
-    const sortedData1 = sortCombinedData(nodes1);
-    let sortedData2;
-    if (nodes2 !== undefined) {
-      sortedData2 = sortCombinedData(nodes2);
+  getData = () => {
+    let propData = this.props.data;
+    if (this.props.type !== '') {
+      propData = this.props.data.filter(commodity => commodity.type === this.props.type);
     }
-    return sortedData1.concat(sortedData2);
-  };
+    return d3HierarchyCalculation(propData, 850, 400)
+      .filter(node => node.depth > 1);
+  }
 
-  setIndicatorState = (index) => {
-    this.setState({
-      display: true,
-      indicator: index,
-    });
-  };
-
-  onClick = (circle) => {
+  onClick = (name) => {
     this.isDragging = false;
-    const sortedData = this.combineData();
-    const index = (sortedData.findIndex((item) => {
-      if (item.x === circle.x && item.y === circle.y && item.r === circle.r) {
-        return item;
-      }
-      return null;
-    }));
-    return this.setIndicatorState(index);
+    this.props.setIndicator(name || '');
   };
 
   onKeyPress = (event) => {
-    const sortedData = this.combineData();
-    const itemIndex = this.state.indicator;
+    const sortedData = this.getData();
+    let itemIndex = sortedData.findIndex(v => v.data.name === this.props.indicator);
+    // TODO: This currently goes through big circles then small circles, but
+    // should have the big ones interposed between their children
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
-      const rightIndex = (sortedData[itemIndex + 1])
-        ? (itemIndex + 1)
-        : (0);
-      this.setIndicatorState(rightIndex);
+      itemIndex = (sortedData[itemIndex + 1]) ? (itemIndex + 1) : 0;
     } else if (event.key === 'ArrowLeft' || event.keyCode === 37) {
-      const leftIndex = (sortedData[itemIndex - 1])
-        ? (itemIndex - 1)
-        : (sortedData.length - 1);
-      this.setIndicatorState(leftIndex);
+      itemIndex = (sortedData[itemIndex - 1]) ? (itemIndex - 1) : (sortedData.length - 1);
     }
+    const newIndicator = sortedData[itemIndex].data.name;
+    if (newIndicator !== this.props.indicator) { this.props.setIndicator(newIndicator); }
   };
 
-  onDragStart = () => {
-    this.isDragging = true;
-  }
+  onDragStart = () => { this.isDragging = true; }
 
-  onDragMove = (event) => {
+  onDragStop = () => { this.isDragging = false; }
+
+  onDragOver = (e) => {
     if (!this.isDragging) { return; }
-    const sortedData = this.combineData();
-    const svg = !this.svgRef.current ? { x: 156.3583, y: 187 }
-      : this.svgRef.current.getClientRects()[0];
-    const subX = event.clientX - svg.x;
-    const subY = event.clientY - svg.y;
-    const [index] = sortedData.reduce((acc, node, i) => {
-      if (node.depth < 2) { return acc; }
-      const distance = Math.sqrt(
-        ((node.x - subX) ** 2) + ((node.y - subY) ** 2),
-      );
-      return (distance > acc[1]) ? acc : [i, distance];
-    }, [null, Number.MAX_SAFE_INTEGER]);
-    this.setIndicatorState(index);
-  }
-
-  onDragStop = () => {
-    this.isDragging = false;
+    let checked = 0;
+    let { target } = e;
+    while (checked < 3 && !target.dataset.name) {
+      checked += 1;
+      target = target.parentElement;
+    }
+    if (!target.dataset.name) { return; }
+    this.props.setIndicator(target.dataset.name);
   }
 
   render() {
-    const {
-      selectedCategory,
-      instrumentChartData1,
-      instrumentChartData2,
-    } = this.props;
-    if (selectedCategory !== 'instrument') {
-      return null;
-    }
+    const data = this.getData();
+    const { indicator: indicatorName } = this.props;
+    const indicatorTarget = indicatorName && data.find(v => v.data.name === indicatorName);
 
-    const { indicator } = this.state;
-    let indicatorProps = {};
-    if (indicator !== null) {
-      const sortedData = this.combineData();
-      const value = sortedData[indicator].depth > 1
-        ? sortedData[indicator].value
-        : sortedData[indicator].r;
-      indicatorProps = {
-        x: sortedData[indicator].x,
-        yBottom: sortedData[indicator].y - value,
-        radius: value,
-        label: sortedData[indicator].value,
-      };
+    let indicator = null;
+    if (indicatorTarget) {
+      const value = indicatorTarget.depth > 2 ? indicatorTarget.value : indicatorTarget.r;
+      indicator = (
+        <ChartIndicator
+          x={indicatorTarget.x}
+          yBottom={indicatorTarget.y - value}
+          radius={value}
+          label={indicatorTarget.value}
+          yTop={25}
+        />
+      );
     }
 
     return (
-      <div className="BubbleChart">
-        <svg width={850} height={400}>
-          { (this.state.display)
-            ? (
-              <ChartIndicator
-                {...indicatorProps}
-                yTop={25}
-              />
-            ) : null
-          }
-          <g
-            ref={this.svgRef}
-            onMouseDown={this.onDragStart}
-            onMouseMove={this.onDragMove}
-            onMouseUp={this.onDragStop}
-          >
-            <InstrumentBubble
-              width={550}
-              height={400}
-              onClick={this.onClick}
-              keyPress={this.onKeyPress}
-              d3Calculation={d3HierarchyCalculation(
-                instrumentChartData1,
-                550,
-                400,
-              )}
-            />
-            <InstrumentBubble
-              width={1400}
-              height={400}
-              onClick={this.onClick}
-              keyPress={this.onKeyPress}
-              d3Calculation={d3HierarchyCalculation(
-                instrumentChartData2,
-                1400,
-                400,
-              )}
-            />
-          </g>
-        </svg>
-      </div>
+      <svg width="100%" height="100%" viewBox="0 0 850 400" className="BubbleChart">
+        {indicator}
+        {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
+        <g
+          onMouseDown={this.onDragStart}
+          onMouseOver={this.onDragOver}
+          onMouseUp={this.onDragStop}
+        >
+          <InstrumentBubble
+            width={850}
+            height={400}
+            onClick={this.onClick}
+            keyPress={this.onKeyPress}
+            d3Calculation={data}
+          />
+        </g>
+      </svg>
     );
   }
 }

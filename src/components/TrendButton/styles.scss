@@ -1,49 +1,54 @@
-@import "../../styles/fontVariables.scss";
 @import "../../styles/colors.scss";
 
-$trends-overlay-button-color: $LinksTextButtons;
+.TrendButton {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 50px;
+  width: 120px;
+  border: 1px solid $Gray160;
+  overflow: hidden;
 
-.trendButton {
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  left: 35%;
-  top: 3%;
-  position: absolute;
+  .buttonText, .StreamGraph, .BubbleChart { width: 100%; height: 100%; }
 
-  button {
-    background-color: transparent;
-    border-color: transparent;
+  // Note: All !important declarations are to override inline styling.
 
-    img {
-      display: block;
-      height: 60px;
-      width: 300px;
+  .StreamGraph {
+    // The aspect ratio isn't the same, so we need to increase the height slightly
+    height: 120%;
+    pointer-events: none;
+    path {
+      stroke: white !important;
+      stroke-width: 5px !important;
+      fill: $LightGray !important;
     }
+  }
 
-    .buttonText > span {
-      position: absolute;
-      width: 200px;
-      left: 3%;
-      top: 0px;
-      text-align: left;
-      padding: 2px 4px 0px 20px;
-      font-family: $fira-sans-condensed;
-      font-size: 24px;
-    }
+  .BubbleChart {
+    margin: 10% 0 0 25%;
+    pointer-events: none;
+    transform: scale(2);
+    text { display: none; }
 
-    .streamGraphBackground {
-      display: block;
-      height: 60px;
-      width: 300px;
-      border: 1px solid $trends-overlay-button-color;
-      svg {
-        height: 40px;
-        position: relative;
-        left: 30%;
-        top: 0;
-        fill: $trends-overlay-button-color;
-      }
-    }
+    .depth-2 circle { stroke-width: 5; }
+    .depth-3 circle { fill: $LightGray !important; }
+  }
+
+  .descriptionText {
+    text-align: left;
+    display: inline-block;
+    padding-right: 1em;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+  }
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+  .trendArrow {
+    position: absolute;
+    right: 25%;
+    bottom: 30%;
   }
 }

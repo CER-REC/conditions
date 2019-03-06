@@ -8,11 +8,11 @@ import './styles.scss';
 storiesForComponent('Components|Wheel/Ring', module, ReadMe)
   .addDecorator(withStatus('underReview'))
   .add('default view', () => (
-    <svg className="WheelContainer" viewBox="120 200 500 500">
-      <Ring className="WheelContainer" ringType="Company" />
+    <svg viewBox="120 200 500 500">
+      <Ring ringType="company" />
     </svg>
   )).add('location view', () => (
-    <svg className="WheelContainer" viewBox="120 200 500 500">
-      <Ring className="WheelContainer" ringType="Location" />
+    <svg viewBox="120 200 500 500">
+      <Ring ringType="location" />
     </svg>
   ));

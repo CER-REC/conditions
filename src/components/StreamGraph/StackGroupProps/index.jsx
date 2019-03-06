@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryStack } from 'victory';
 import StackGroup from '../StackGroup';
+import { allConditionsPerYear } from '../../../proptypes';
 
 const StackGroupProps = ({ groupProps, ...props }) => (
   <VictoryStack
@@ -14,12 +15,7 @@ StackGroupProps.propTypes = {
   groupProps: PropTypes.shape({
     onChange: PropTypes.func.isRequired,
     controlYear: PropTypes.number,
-    projectData: PropTypes.arrayOf(PropTypes.shape({
-      graphData: PropTypes.arrayOf(PropTypes.shape({
-        date: PropTypes.number.isRequired,
-        count: PropTypes.number.isRequired,
-      })).isRequired,
-    })).isRequired,
+    projectData: allConditionsPerYear.isRequired,
   }).isRequired,
 };
 

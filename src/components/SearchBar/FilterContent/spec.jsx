@@ -192,7 +192,7 @@ describe('Components|SearchBar/FilterContent', () => {
     });
   });
 
-  describe('onClick/keypress of reset', () => {
+  xdescribe('onClick/keypress of reset', () => {
     let wrapper;
     let spy;
     let reset;

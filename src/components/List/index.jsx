@@ -22,60 +22,79 @@ library.add(
   faAngleLeft,
 );
 
-const List = (props) => {
-  if (props.items.length === 0) { return null; }
-  // arrowSize should match the legend style's arrow-size variable
-  // (there are testing issues with :export)
-  const arrowSize = 24;
-  // Selected index cannot exceed the length of the array
-  const selectedIndex = (props.selected < props.items.length) ? props.selected : 0;
-  const previousIcon = props.horizontal ? 'angle-left' : 'angle-up';
-  const nextIcon = props.horizontal ? 'angle-right' : 'angle-down';
-  const items = props.items.map((item, i) => {
-    const isSelected = selectedIndex === i;
+class List extends React.PureComponent {
+  onWheel = (e) => {
+    e.preventDefault();
+
+    const inc = (e.deltaY > 0 && 1) || (e.deltaY < 0 && -1);
+    if (!inc) return;
+
+    const newIndex = Math.min(Math.max(0, this.props.selected + inc), this.props.items.length - 1);
+    if (newIndex !== this.props.selected) this.props.onChange(newIndex);
+  }
+
+  render = () => {
+    if (this.props.items.length === 0) { return null; }
+
+    // Selected index cannot exceed the length of the array
+    const selectedIndex = (this.props.selected < this.props.items.length) ? this.props.selected : 0;
+
+    // arrowSize should match the legend style's arrow-size variable
+    // (there are testing issues with :export)
+    const arrowSize = 24;
+    const previousIcon = this.props.horizontal ? 'angle-left' : 'angle-up';
+    const nextIcon = this.props.horizontal ? 'angle-right' : 'angle-down';
+
     return (
-      <li
-        key={item.key || item}
-        className={classNames('List-Item', { selected: isSelected })}
+      <div
+        className={classNames(
+          'List',
+          this.props.className,
+          { horizontal: this.props.horizontal, guideLine: this.props.guideLine },
+        )}
+        onWheel={this.onWheel}
       >
-        {!isSelected || selectedIndex === 0 ? null : (
-          <CircleContainer
-            size={arrowSize}
-            onClick={() => props.onChange(i - 1)}
-            className="arrowPrevious"
-            elevated={props.elevated}
-          >
-            <Icon size="1x" icon={previousIcon} />
-          </CircleContainer>
-        )}
-        <div {...(props.itemInteractions ? handleInteraction(props.onChange, i) : {})} className="List-Item-Content">
-          {item}
-        </div>
-        {!isSelected || selectedIndex === (props.items.length - 1) ? null : (
-          <CircleContainer
-            size={arrowSize}
-            onClick={() => props.onChange(i + 1)}
-            className="arrowNext"
-            elevated={props.elevated}
-          >
-            <Icon size="1x" icon={nextIcon} />
-          </CircleContainer>
-        )}
-      </li>
+        <ul>
+          {this.props.items.map((item, i) => (
+            <li
+              key={item.key || item}
+              className={classNames('List-Item', { selected: selectedIndex === i })}
+            >
+              {selectedIndex !== i || selectedIndex === 0
+                ? null
+                : (
+                  <CircleContainer
+                    size={arrowSize}
+                    onClick={() => this.props.onChange(i - 1)}
+                    className="arrowPrevious"
+                  >
+                    <Icon size="1x" icon={previousIcon} />
+                  </CircleContainer>
+                )}
+              <div
+                {...handleInteraction(this.props.itemInteractions && this.props.onChange, i)}
+                className="List-Item-Content"
+              >
+                {item}
+              </div>
+              {selectedIndex !== i || selectedIndex === (this.props.items.length - 1)
+                ? null
+                : (
+                  <CircleContainer
+                    size={arrowSize}
+                    onClick={() => this.props.onChange(i + 1)}
+                    className="arrowNext"
+                  >
+                    <Icon size="1x" icon={nextIcon} />
+                  </CircleContainer>
+                )}
+            </li>
+          ))}
+        </ul>
+      </div>
     );
-  });
-  return (
-    <div
-      className={classNames(
-        'List',
-        props.className,
-        { horizontal: props.horizontal, guideLine: props.guideLine },
-      )}
-    >
-      <ul>{items}</ul>
-    </div>
-  );
-};
+  }
+}
 
 List.propTypes = {
   /** Rendered items to be displayed in the list */

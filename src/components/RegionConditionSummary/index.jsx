@@ -4,19 +4,13 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import BarContainer from '../BarContainer';
 import './styles.scss';
+import { features } from '../../constants';
 
 const RegionConditionSummary = (props) => {
-  const width = 350;
-  const barWidth = width / props.featureData.length;
-  const items = props.featureData.map(k => ({ value: k.count, fill: k.color }));
-  const chart = (
-    <BarContainer
-      size={barWidth}
-      items={items}
-      vert
-      scale={1}
-    />
-  );
+  const items = props.featureData.map(k => ({
+    value: k.count,
+    fill: features[k.feature][k.description] || 'black',
+  }));
   return (
     <div className={classNames(
       'RegionConditionSummary',
@@ -28,7 +22,9 @@ const RegionConditionSummary = (props) => {
         <div className="RegionConditionSummaryTitle">
           <FormattedMessage id="components.regionConditionSummary.title" />
         </div>
-        <div className="RegionConditionChart">{chart}</div>
+        <div className="RegionConditionChart">
+          <BarContainer items={items} vertical />
+        </div>
       </div>
       <svg className="YAxis" viewBox="0 0 100 200">
         <text x="45" y="11" fill="rgb(161, 168, 167)">100</text>
@@ -43,7 +39,6 @@ const RegionConditionSummary = (props) => {
 RegionConditionSummary.propTypes = {
   className: PropTypes.string,
   featureData: PropTypes.arrayOf(PropTypes.shape({
-    color: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
   })).isRequired,

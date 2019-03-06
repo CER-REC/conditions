@@ -1,0 +1,9 @@
+.ContentBlock {
+  padding-bottom: 0.4rem;
+
+  &.half {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+  }
+}

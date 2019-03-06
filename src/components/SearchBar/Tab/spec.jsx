@@ -36,7 +36,7 @@ describe('Components|SearchBar/Tab', () => {
     });
   });
 
-  describe('with active prop', () => {
+  xdescribe('with active prop', () => {
     test('set to true, it doesn\'t render bottom border', () => {
       const wrapper = shallow(
         <Tab isFilter={false} isActive onClick={noop} />,
