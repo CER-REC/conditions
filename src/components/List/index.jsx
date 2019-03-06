@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import debounce from 'lodash.debounce';
 import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -23,59 +24,10 @@ library.add(
 );
 
 class List extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = { lastScrollEventTime: 0, lastScrollTime: 0 };
-  }
-
-  shouldScroll = (e) => {
-    // TODO: Remove debugging messages
-    // const printValues = true;
-
-    if (printValues) {
-      console.log({
-        deltaY: e.deltaY,
-        mode: ['pixels', 'lines', 'pages'][e.deltaMode],
-      });
-    }
-
-    // Filter out really small movements, such as fingers leaning on a trackpad
-    const val = Math.abs(e.deltaY);
-    if (
-      (e.deltaMode === 0 && val < 8) // Pixels
-    || (e.deltaMode === 1 && val < 0.08) // Lines
-    ) {
-      if (printValues) console.log('\tmovement too small');
-      return false;
-    }
-
-    const time = new Date().getTime();
-
-    /* Make sure the previous "set" of events has finished, and that it's
-     * been long enough since we last scrolled
-     */
-    const lastEvent = this.state.lastScrollEventTime;
-    this.setState({ lastScrollEventTime: time });
-
-    if ((time - lastEvent) < 100 || (time - this.state.lastScrollTime) < 200) {
-      if (printValues) console.log(`\tnot enough time has elapsed. since last event: ${time - lastEvent}, since last scroll ${time - this.state.lastScrollTime}`);
-      return false;
-    }
-
-    this.setState({ lastScrollTime: time });
-
-    return true;
-  }
-
-  onWheel = (e) => {
-    e.preventDefault();
-
-    if (!this.shouldScroll(e)) return;
-
+  handleScroll = (e) => {
     /* Browsers + devices provide different values using different units, so
-     * we can't use deltaY directly
-     */
+    * we can't use deltaY directly
+    */
     const direction = (e.deltaY > 0 && 1) || (e.deltaY < 0 && -1);
     if (!direction) return;
 
@@ -85,6 +37,16 @@ class List extends React.PureComponent {
     );
 
     if (newIndex !== this.props.selected) this.props.onChange(newIndex);
+  }
+
+  debounceScrollEvents = () => {
+    const debounced = debounce(this.handleScroll, 200, { leading: true });
+    return (event) => {
+      // if (event.preventDefault) event.preventDefault();
+      event.preventDefault();
+      // event.persist();
+      debounced(event);
+    };
   }
 
   render = () => {
@@ -106,7 +68,7 @@ class List extends React.PureComponent {
           this.props.className,
           { horizontal: this.props.horizontal, guideLine: this.props.guideLine },
         )}
-        onWheel={this.onWheel}
+        onWheel={this.debounceScrollEvents()}
       >
         <ul>
           {this.props.items.map((item, i) => (
