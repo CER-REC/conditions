@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 const MethodologyBox = props => (
   <div className="MethodologyBox">
-    <FormattedMessage id="components.mainInfoBar.headings.methodology" tag="h1" />
+    <FormattedMessage id="components.mainInfoBar.headings.methodology" tagName="h1" />
     <p className="first">
       <FormattedMessage
         id="components.mainInfoBar.content.methodology"
@@ -17,7 +17,7 @@ const MethodologyBox = props => (
         }}
       />
     </p>
-    <FormattedMessage id="components.mainInfoBar.headings.keywords" tag="h1" />
+    <FormattedMessage id="components.mainInfoBar.headings.keywords" tagName="h1" />
     <FormattedMessage id="components.mainInfoBar.content.keywords">
       {text => <p className="first">{text}</p>}
     </FormattedMessage>
