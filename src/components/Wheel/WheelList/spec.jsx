@@ -20,8 +20,6 @@ const companyList = [
   'CompanyM',
 ];
 
-const noop = () => {};
-
 describe('Components|Wheel/WheelList', () => {
   let wrapper;
   let spy;

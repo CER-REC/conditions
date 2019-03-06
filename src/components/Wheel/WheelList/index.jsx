@@ -56,7 +56,6 @@ class WheelList extends React.PureComponent {
       return (
         <span
           className={classes[displayIndex]}
-          // data-index={listIndex}
           // eslint-disable-next-line react/no-array-index-key
           key={`${text}-${displayIndex}`}
         >
@@ -86,7 +85,6 @@ class WheelList extends React.PureComponent {
             <List
               elevated
               items={listElements}
-              // onChange={i => this.handleOnChange(listElements[i])}
               onChange={this.handleOnChange}
               selected={3}
             />

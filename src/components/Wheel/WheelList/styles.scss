@@ -4,88 +4,64 @@
 
 
 .WheelList {
-  color: $Black77;
-  font-family: $fira-sans-condensed;
-  font-size: 18px;
+  position: relative;
   height: 100%;
   width: 100%;
 
-  position: relative;
-  // span {
-  //   display: inline;
-  //   margin-left: -100px;
-  // }
-
-  // .arrowPrevious {
-  //   position: absolute;
-  //   top: 5px;
-  //   left: -30px;
-  // }
-
-  // .arrowNext {
-  //   position: absolute;
-  //   top: 15px;
-  //   left: -30px;
-  // }
+  color: $Black77;
+  font-family: $fira-sans-condensed;
+  font-size: 18px;
 
   .labelContainer {
     position: absolute;
-
+    top: calc(50% - 12px);
     height: 24px;
     width: 100%;
 
-    background-color: $LightGray;
-
-    top: calc(50% - 12px);
-    line-height: 24px;
-
     overflow: visible;
+    background-color: $LightGray;
+    line-height: 24px;
 
     .label {
       position: absolute;
-      width: 50%;
       right: 50%;
+      width: 50%;
+
       text-align: center;
     }
 
     .selected {
       position: absolute;
       left: 50%;
-      // width: 100%;
-      text-overflow: ellipsis;
       overflow: hidden;
 
-      white-space: nowrap;
-
       text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       background-color: $LightGray;
     }
   }
 
   .listContainer {
-    // height: 100%;
-    // width: 100%;
-
     margin: auto;
 
-    border-radius: 50%;
-
-    white-space: nowrap;
-
     overflow: hidden;
+
+    border-radius: 50%;
+    white-space: nowrap;
   }
 
   .list {
-    height: 50%;
-    width: 50%;
-    margin-left: calc(50% - 12px);
-
-    margin-top: 25%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    height: 50%;
+    width: 50%;
+
+    margin-left: calc(50% - 12px);
+    margin-top: 25%;
   }
 
   .oneAway {
@@ -105,30 +81,4 @@
     font-family: $fira-sans-condensed-light;
     font-size: 11px;
   }
-
-  // .items-list ul {
-  //   margin-top: -70px;
-  //   margin-left: 180px;
-  //   width: 50%;
-  //   height: 130px;
-  //   color: $Gray160;
-  //   font-family: $fira-sans-condensed-light;
-  //   font-size: 13px;
-  //   overflow: auto;
-  // }
-
-  // .selected {
-  //   pointer-events: none;
-  //   position: absolute;
-  //   font-size: 18px;
-  //   font-family: $fira-sans-condensed-bold;
-  //   color: $Black77;
-  //   top: 50px;
-  //   background: #E4E4E4;
-  // }
 }
-
-
-// if farther out... 10px;
-// if even farther out...8px;
-// names capped at 15 characters then followed by ellipsis
