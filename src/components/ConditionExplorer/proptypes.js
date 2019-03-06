@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 
+// These are proptypes for the private components within ConditionExplorer.
+// They should not be moved into the main proptypes file
+
 export const keyword = PropTypes.shape({
   value: PropTypes.string.isRequired,
   textPosition: PropTypes.shape({

@@ -22,20 +22,19 @@ export default class PhysicsVariant extends React.Component {
   constructor(props) {
     super(props);
     this.groupRef = React.createRef();
-    const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
-    this.engine = Matter.Engine.create({ world });
     this.loopID = null;
     this.lastTime = 0;
     this.lastDeltaTime = 0;
+  }
+
+  componentDidMount() {
+    const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
+    this.engine = Matter.Engine.create({ world });
 
     // Set up bodies
-    // changed from -200 to 200 to deal with loading bug in storybook
     this.circle = Matter.Bodies.circle(200, 200, 50, {
-      collisionFilter: {
-        category: circleCategory,
-      },
+      collisionFilter: { category: circleCategory },
     });
-    Matter.World.add(this.engine.world, this.circle);
 
     this.keywords = {};
     this.props.keywords.forEach((keyword) => {
@@ -61,31 +60,27 @@ export default class PhysicsVariant extends React.Component {
 
       this.keywords[keyword.value] = keywordBody;
     });
-    Matter.World.add(this.engine.world, Object.values(this.keywords));
-    Matter.Engine.run(this.engine);
-  }
 
-  componentDidMount() {
+    // Add bodies to world
+    Matter.World.add(this.engine.world, this.circle);
+    Matter.World.add(this.engine.world, Object.values(this.keywords));
+
     //  disable applied force to help with loading bug
     // Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.15, y: 0.005 });
 
     const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse,
-      constraint: {
-        stiffness: 0.2,
-        render: {
-          visible: false,
-        },
-      },
+      constraint: { render: { visible: false } },
     });
     this.mouse = mouse;
 
     Matter.World.add(this.engine.world, mouseConstraint);
-    const runner = Matter.Runner.create();
-    Matter.Runner.run(runner, this.engine);
+
+    Matter.Engine.run(this.engine);
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
+    Matter.Runner.run(Matter.Runner.create(), this.engine);
     this.loop(window.performance.now());
   }
 
@@ -93,10 +88,12 @@ export default class PhysicsVariant extends React.Component {
     window.cancelAnimationFrame(this.loopID);
     Matter.Events.off(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.off(this.engine, 'collisionStart', this.onCollision);
+    // TODO: Is there any other cleanup that should be done for Matter.js?
+    // It seems like all of the matter elements will reference each other, and
+    // will result in a memory leak.
   }
 
   onUpdate = (update) => {
-    let bodiesChanged = false;
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       // Stop the body from moving if its reached a minimum movement
       const newVelocity = { ...body.velocity };
@@ -110,9 +107,8 @@ export default class PhysicsVariant extends React.Component {
         Matter.Body.setAngularVelocity(0);
       }
 
-      // Check if any positions have updated
+      // Check if the body is still moving
       const bodyChanged = !!(body.speed || body.angularSpeed);
-      bodiesChanged = bodiesChanged || bodyChanged;
 
       // If the circle has stopped moving, increase its friction
       if (body.collisionFilter.category === circleCategory && !bodyChanged) {
@@ -220,6 +216,7 @@ export default class PhysicsVariant extends React.Component {
 
   // TODO: optimize the nested map functions
   getWords = () => {
+    if (!this.engine || !this.engine.world) { return null; }
     const bodies = this.getBodies();
     const words = bodies.map((body) => {
       const d = body.vertices
