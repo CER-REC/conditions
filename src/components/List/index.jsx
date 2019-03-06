@@ -24,11 +24,11 @@ library.add(
 );
 
 class List extends React.PureComponent {
-  handleScroll = (e) => {
+  handleScroll = debounce((deltaY) => {
     /* Browsers + devices provide different values using different units, so
     * we can't use deltaY directly
     */
-    const direction = (e.deltaY > 0 && 1) || (e.deltaY < 0 && -1);
+    const direction = (deltaY > 0 && 1) || (deltaY < 0 && -1);
     if (!direction) return;
 
     const newIndex = Math.min(
@@ -37,16 +37,11 @@ class List extends React.PureComponent {
     );
 
     if (newIndex !== this.props.selected) this.props.onChange(newIndex);
-  }
+  }, 200, { leading: true })
 
-  debounceScrollEvents = () => {
-    const debounced = debounce(this.handleScroll, 200, { leading: true });
-    return (event) => {
-      // if (event.preventDefault) event.preventDefault();
-      event.preventDefault();
-      // event.persist();
-      debounced(event);
-    };
+  debounceScrollEvents = (e) => {
+    e.preventDefault();
+    this.handleScroll(e.deltaY);
   }
 
   render = () => {
@@ -68,7 +63,7 @@ class List extends React.PureComponent {
           this.props.className,
           { horizontal: this.props.horizontal, guideLine: this.props.guideLine },
         )}
-        onWheel={this.debounceScrollEvents()}
+        onWheel={this.debounceScrollEvents}
       >
         <ul>
           {this.props.items.map((item, i) => (
