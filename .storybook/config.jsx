@@ -3,7 +3,8 @@ import React from 'react';
 import { setIntlConfig, withIntl } from 'storybook-addon-intl';
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
-import { configureViewport } from '@storybook/addon-viewport';
+// import { configureViewport } from '@storybook/addon-viewport';
+import { addParameters } from '@storybook/react';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
 
@@ -45,7 +46,7 @@ const viewports = {
     styles: { width: '768px', height: '100%' },
   },
 };
-configureViewport({ viewports, defaultViewport: 'fullscreen' });
+addParameters({viewport: { viewports, defaultViewport: 'fullscreen' }});
 
 addDecorator(withOptions({
   addonPanelInRight: true,
