@@ -2,8 +2,7 @@ import requireContext from 'require-context.macro';
 import React from 'react';
 import { setIntlConfig, withIntl } from 'storybook-addon-intl';
 import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
-// import { configureViewport } from '@storybook/addon-viewport';
+import { create } from '@storybook/theming';
 import { addParameters } from '@storybook/react';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
@@ -48,11 +47,11 @@ const viewports = {
 };
 addParameters({viewport: { viewports, defaultViewport: 'fullscreen' }});
 
-addDecorator(withOptions({
-  addonPanelInRight: true,
-  hierarchyRootSeparator: /\|/, // Categories with |
-  hierarchySeparator: /\//, // Sub-stories with /
-}));
+addParameters({
+  options: {
+    addonPanelInRight: true,
+  },
+});
 
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 
