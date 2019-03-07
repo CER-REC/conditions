@@ -9,59 +9,53 @@ import './styles.scss';
 const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
 const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
 
-class WheelList extends React.PureComponent {
-  wrapIndex = i => (
-    (this.props.selected + i + this.props.listContent.length)
-    % this.props.listContent.length
-  )
+const WheelList = (props) => {
+  const wrapIndex = i => (
+    (props.selected + i + props.listContent.length)
+    % props.listContent.length
+  );
 
-  handleOnChange = (i) => {
-    const newIndex = this.wrapIndex(i - 3);
-    this.props.onChange(newIndex);
-  }
+  const handleOnChange = i => props.onChange(wrapIndex(i - 3));
 
-  render() {
-    const listElements = indexOffsets.map((offset) => {
-      const text = this.props.listContent[this.wrapIndex(offset)];
-
-      return (
-        <span
-          className={offsetClasses[Math.abs(offset)]}
-          // eslint-disable-next-line react/no-array-index-key
-          key={`${text}-${offset}`}
-        >
-          {text}
-        </span>
-      );
-    });
+  const listElements = indexOffsets.map((offset) => {
+    const text = props.listContent[wrapIndex(offset)];
 
     return (
-      <div
-        className={classNames('WheelList', this.props.className)}
-        onScroll={this.scrollHandler}
+      <span
+        className={offsetClasses[Math.abs(offset)]}
+        // eslint-disable-next-line react/no-array-index-key
+        key={`${text}-${offset}`}
       >
-        <div className="labelContainer">
-          <FormattedMessage id={`components.companyWheel.list.${this.props.wheelType}`}>
-            {text => <span className="label">{text}</span>}
-          </FormattedMessage>
-          <span className="selected" style={{ width: this.props.textClippingRadius }}>
-            {this.props.listContent[this.props.selected]}
-          </span>
-        </div>
-        <div className="listContainer">
-          <div className="list">
-            <List
-              elevated
-              items={listElements}
-              onChange={this.handleOnChange}
-              selected={3}
-            />
-          </div>
+        {text}
+      </span>
+    );
+  });
+
+  return (
+    <div
+      className={classNames('WheelList', props.className)}
+    >
+      <div className="labelContainer">
+        <FormattedMessage id={`components.companyWheel.list.${props.wheelType}`}>
+          {text => <span className="label">{text}</span>}
+        </FormattedMessage>
+        <span className="selected" style={{ width: props.textClippingRadius }}>
+          {props.listContent[props.selected]}
+        </span>
+      </div>
+      <div className="listContainer">
+        <div className="list">
+          <List
+            elevated
+            items={listElements}
+            onChange={handleOnChange}
+            selected={3}
+          />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 WheelList.propTypes = {
   /** Distance at which to clip the selected text. Requires a valid CSS width. */
@@ -82,4 +76,5 @@ WheelList.defaultProps = {
   className: null,
   textClippingRadius: '50%',
 };
+
 export default WheelList;
