@@ -18,12 +18,15 @@
       "lifecycle": "lifecycle",
       "applications": "applications",
       "envProtection": "environmental protection",
-      "conditions": "conditions",
+      "conditions": "Conditions",
       "map": "map",
       "hearings": "hearings",
       "lawsRegulations": "laws, acts and regulations",
       "applicationProcess": "application process",
-      "NEB": "NEB"
+      "NEB": "NEB",
+      "exploreHere": "explore here",
+      "appProcess": "application process",
+      "explorableHere": "explorable here"
     },
     "theme": {
       "ADMINISTRATIVE": "Administrative",
@@ -98,19 +101,18 @@
     "conditionExplorer": {
       "guide": {
         "overview": {
-          "text1": "As Canada’s energy regulator the {NEB} has a variety of roles and responsibilities throughout the {lifecycle} of energy infrastructure – from adjudication of energy project {applications} to safety oversight and {envProtection}. To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. {Conditions} are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.",
-          "text2": "The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that {here}). Here is a {map} of major pipeline systems regulated by the NEB."
+          "overview1": "As Canada’s energy regulator the {NEB} has a variety of roles and responsibilities throughout the {lifecycleLink} of energy infrastructure – from adjudication of energy project {applicationsLink} to safety oversight and {envProtectionLink}. To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. {conditionsLink} are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.",
+          "overview2": "The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that {hereLink}). Here is a {mapLink} of major pipeline systems regulated by the NEB."
         },
         "scope": {
-          "text1": "Not all concerns result in the creation of a condition. Existing federal, provincial and municipal {lawsRegulations} are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.",
-          "text2": "These different sorts of requirements expressed in conditions are the Themes which can be explored {themeHere} in this data visualization.",
-          "text3": "Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.",
-          "text4": "Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable {conditionHere}. Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.",
-          "text5": "When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the {applicationProcess} Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in {hearings}, individuals must apply (more info about how to become an intervenor {here})"
+          "scope1": "Not all concerns result in the creation of a condition. Existing federal, provincial and municipal {regulationsLink} are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.",
+          "scope2": "These different sorts of requirements expressed in conditions are the Themes which can be explored {themeLink} in this data visualization.",
+          "scope3": "Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.",
+          "scope4": "Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable {conditionLink}. Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.",
+          "scope5": "When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the {applicationLink} Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in {hearingsLink}, individuals must apply (more info about how to become an intervenor {intervenorLink})"
         },
         "compliance": {
-          "text1": "Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company ({exploreHere}) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.",
-          "exploreHere": "explore here",
+          "detail": "Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company ({FilingsLink}) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.",
           "documentationPrompt": "Conditions may require a company to submit documentation such as:",
           "doc1": "results of additional environmental and socio-economic assessments, species-specific studies, or traditional land use investigations;",
           "doc2": "engineering design details, and supporting assessments or information;",
@@ -132,7 +134,7 @@
       "location": "Location",
       "issuanceDate": "Issuance Date",
       "effectiveDate": "Effective Date",
-    "sunsetDate": "Sunset Date",
+      "sunsetDate": "Sunset Date",
       "status": "Instrument Status",
       "type": "Instrument Type",
       "activity": "Instrument Activity",

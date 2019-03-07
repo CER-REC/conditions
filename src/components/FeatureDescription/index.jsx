@@ -3,6 +3,12 @@ import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 import { featureTypes } from '../../proptypes';
 
+const getLink = (link, text) => (
+  <a href={link} rel="noopener noreferrer" target="_blank">
+    <FormattedMessage id={text} />
+  </a>
+);
+
 const FeatureDescription = props => (
   <div
     className="feature-description"
@@ -13,8 +19,8 @@ const FeatureDescription = props => (
     <FormattedMessage
       id={`components.featureDescription.${props.feature}`}
       values={{
-        regDocsLink: <a href="https://apps.neb-one.gc.ca/REGDOCS/" rel="noopener noreferrer" target="_blank"><FormattedMessage id="common.linkText.regDocs" /></a>,
-        phaseLink: <a href="https://www.neb-one.gc.ca/sftnvrnmnt/nvrnmnt/lfcclpprch/index-eng.html#s1" rel="noopener noreferrer" target="_blank"><FormattedMessage id="common.linkText.here" /></a>,
+        regDocsLink: getLink('https://apps.neb-one.gc.ca/REGDOCS/', 'common.linkText.regDocs'),
+        phaseLink: getLink('https://www.neb-one.gc.ca/sftnvrnmnt/nvrnmnt/lfcclpprch/index-eng.html#s1', 'common.linkText.here'),
       }}
     />
   </div>
