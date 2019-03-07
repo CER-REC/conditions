@@ -34,6 +34,7 @@ const innerRadius = 150;
 const outerRadius = 200;
 const magenta = '255, 0, 255';
 const exampleDivProps = {
+  position: 'relative',
   width: 300,
   height: 300,
   border: `1px dashed rgba(${magenta}, 0.4)`,
