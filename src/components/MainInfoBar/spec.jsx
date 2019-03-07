@@ -22,7 +22,6 @@ describe('Components|MainInfoBar', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<MainInfoBar
-        pdfUrl=""
         expanded
         {...spy}
       />);
@@ -51,7 +50,6 @@ describe('Components|MainInfoBar', () => {
   describe('passing information to the content boxes', () => {
     test('should pass its openDataModal and openScreenshotModal callbacks to the Downloads box', () => {
       const wrapper = shallow(<MainInfoBar
-        pdfUrl=""
         activeDialog="downloads"
         {...spy}
       />);
