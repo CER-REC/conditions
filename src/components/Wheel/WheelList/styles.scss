@@ -4,10 +4,11 @@
 
 
 .WheelList {
-  position: relative;
+  position: absolute;
   height: 100%;
   width: 100%;
 
+  margin-top: -100%;
   color: $Black77;
   font-family: $fira-sans-condensed;
   font-size: 18px;
@@ -22,6 +23,8 @@
     background-color: $LightGray;
     line-height: 24px;
 
+    pointer-events: none;
+
     .label {
       position: absolute;
       right: 50%;
@@ -33,6 +36,7 @@
     .selected {
       position: absolute;
       left: 50%;
+      width: 50%;
       overflow: hidden;
 
       text-align: left;
@@ -44,6 +48,8 @@
   }
 
   .listContainer {
+    width: 100%;
+    height: 100%;
     margin: auto;
 
     overflow: hidden;

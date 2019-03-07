@@ -18,7 +18,7 @@ class WheelList extends React.PureComponent {
   }
 
   render() {
-    const label = (this.props.showingLocation)
+    const label = (this.props.wheelType === 'location')
       ? (
         <FormattedMessage id="components.companyWheel.list.location">
           {text => <span className="label">{text}</span>}
@@ -44,7 +44,7 @@ class WheelList extends React.PureComponent {
       'threeAway',
       'twoAway',
       'oneAway',
-      'dummy',
+      '',
       'oneAway',
       'twoAway',
       'threeAway',
@@ -66,21 +66,18 @@ class WheelList extends React.PureComponent {
 
     const selectedText = this.props.listContent[this.props.selected];
     const selectedElement = (
-      <span
-        className="selected"
-        style={{ width: (this.props.outerRadius) }}
-      >
+      <span className="selected" style={{ width: this.props.textClippingRadius }}>
         {selectedText}
       </span>
     );
 
     return (
       <div
-        className={this.props.className ? classNames('WheelList', this.props.className) : 'WheelList'}
+        className={classNames('WheelList', this.props.className)}
         onScroll={this.scrollHandler}
       >
         <div className="labelContainer">{label} {selectedElement}</div>
-        <div className="listContainer" style={{ width: (this.props.innerRadius * 2), height: (this.props.innerRadius * 2) }}>
+        <div className="listContainer">
           <div className="list">
             <List
               elevated
@@ -96,24 +93,22 @@ class WheelList extends React.PureComponent {
 }
 
 WheelList.propTypes = {
-  /** Inner radius of the wheel; used to crop unselected items */
-  innerRadius: PropTypes.number.isRequired,
-  /** Outer radius of the wheel; used to crop the selected item */
-  outerRadius: PropTypes.number.isRequired,
+  /** Distance at which to clip the selected text. Requires a valid CSS width. */
+  textClippingRadius: PropTypes.string,
   /** Additional classes to apply */
   className: PropTypes.string,
   /** Event handler, will receive the array index being selected */
   onChange: PropTypes.func.isRequired,
   /** Index of the currently selected item in 'listContent' */
   selected: PropTypes.number.isRequired,
-  /** Toggle for Company or Location mode */
-  showingLocation: PropTypes.bool,
+  /** Wheel mode */
+  wheelType: PropTypes.oneOf(['company', 'location']).isRequired,
   /** Array of company/location names to pull the list from */
   listContent: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 WheelList.defaultProps = {
-  showingLocation: false,
   className: null,
+  textClippingRadius: '50%',
 };
 export default WheelList;

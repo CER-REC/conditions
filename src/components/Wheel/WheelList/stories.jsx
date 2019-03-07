@@ -53,6 +53,7 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
       <WheelList
         innerRadius={innerRadius}
         outerRadius={outerRadius}
+        wheelType="company"
         listContent={companyList}
         {...getInteractionProps()}
       />
@@ -63,7 +64,7 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
       <WheelList
         innerRadius={innerRadius}
         outerRadius={innerRadius}
-        showingLocation
+        wheelType="location"
         listContent={locationList}
         {...getInteractionProps()}
       />
