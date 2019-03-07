@@ -6,6 +6,9 @@ import classNames from 'classnames';
 import List from '../../List';
 import './styles.scss';
 
+const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
+const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
+
 class WheelList extends React.PureComponent {
   wrapIndex = i => (
     (this.props.selected + i + this.props.listContent.length)
@@ -18,65 +21,33 @@ class WheelList extends React.PureComponent {
   }
 
   render() {
-    const label = (this.props.wheelType === 'location')
-      ? (
-        <FormattedMessage id="components.companyWheel.list.location">
-          {text => <span className="label">{text}</span>}
-        </FormattedMessage>
-      )
-      : (
-        <FormattedMessage id="components.companyWheel.list.company">
-          {text => <span className="label">{text}</span>}
-        </FormattedMessage>
-      );
-
-    const indicesToShow = [
-      this.wrapIndex(-3),
-      this.wrapIndex(-2),
-      this.wrapIndex(-1),
-      this.wrapIndex(0),
-      this.wrapIndex(1),
-      this.wrapIndex(2),
-      this.wrapIndex(3),
-    ];
-
-    const classes = [
-      'threeAway',
-      'twoAway',
-      'oneAway',
-      '',
-      'oneAway',
-      'twoAway',
-      'threeAway',
-    ];
-
-    const listElements = indicesToShow.map((listIndex, displayIndex) => {
-      const text = this.props.listContent[listIndex];
+    const listElements = indexOffsets.map((offset) => {
+      const text = this.props.listContent[this.wrapIndex(offset)];
 
       return (
         <span
-          className={classes[displayIndex]}
+          className={offsetClasses[Math.abs(offset)]}
           // eslint-disable-next-line react/no-array-index-key
-          key={`${text}-${displayIndex}`}
+          key={`${text}-${offset}`}
         >
           {text}
         </span>
       );
     });
 
-    const selectedText = this.props.listContent[this.props.selected];
-    const selectedElement = (
-      <span className="selected" style={{ width: this.props.textClippingRadius }}>
-        {selectedText}
-      </span>
-    );
-
     return (
       <div
         className={classNames('WheelList', this.props.className)}
         onScroll={this.scrollHandler}
       >
-        <div className="labelContainer">{label} {selectedElement}</div>
+        <div className="labelContainer">
+          <FormattedMessage id={`components.companyWheel.list.${this.props.wheelType}`}>
+            {text => <span className="label">{text}</span>}
+          </FormattedMessage>
+          <span className="selected" style={{ width: this.props.textClippingRadius }}>
+            {this.props.listContent[this.props.selected]}
+          </span>
+        </div>
         <div className="listContainer">
           <div className="list">
             <List
