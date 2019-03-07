@@ -29,6 +29,7 @@ describe('Components|Wheel/WheelList', () => {
       wrapper = shallow(
         <WheelList
           className="WheelList"
+          wheelType="company"
           listContent={companyList}
           selected={4}
           onChange={spy}
