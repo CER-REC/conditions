@@ -31,8 +31,6 @@ describe('Components|Wheel/WheelList', () => {
           className="WheelList"
           listContent={companyList}
           selected={4}
-          innerRadius={100}
-          outerRadius={150}
           onChange={spy}
         />,
       );

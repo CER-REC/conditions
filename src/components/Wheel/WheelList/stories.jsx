@@ -30,15 +30,13 @@ const locationList = [
   'Wood Buffalo--Cold Lake',
 ];
 
-const innerRadius = 150;
-const outerRadius = 200;
 const magenta = '255, 0, 255';
 const exampleDivProps = {
   position: 'relative',
   width: 300,
   height: 300,
   border: `1px dashed rgba(${magenta}, 0.4)`,
-  boxShadow: `0 0 0px ${outerRadius - innerRadius}px rgba(${magenta}, 0.05)`,
+  boxShadow: `0 0 0px 32px rgba(${magenta}, 0.05)`,
   borderRadius: '50%',
 };
 
@@ -52,10 +50,9 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
   .add('with company data', () => (
     <div style={exampleDivProps}>
       <WheelList
-        innerRadius={innerRadius}
-        outerRadius={outerRadius}
         wheelType="company"
         listContent={companyList}
+        textClippingRadius="70%"
         {...getInteractionProps()}
       />
     </div>
@@ -63,10 +60,9 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
   .add('with location data', () => (
     <div style={exampleDivProps}>
       <WheelList
-        innerRadius={innerRadius}
-        outerRadius={innerRadius}
         wheelType="location"
         listContent={locationList}
+        textClippingRadius="70%"
         {...getInteractionProps()}
       />
     </div>
