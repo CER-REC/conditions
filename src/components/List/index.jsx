@@ -111,6 +111,7 @@ List.propTypes = {
   itemInteractions: PropTypes.bool,
   /** Additional className to add to the list */
   className: PropTypes.string,
+  elevated: PropTypes.bool,
 };
 
 List.defaultProps = {
@@ -118,6 +119,7 @@ List.defaultProps = {
   guideLine: false,
   itemInteractions: true,
   className: '',
+  elevated: false,
 };
 
 export default List;

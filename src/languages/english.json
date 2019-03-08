@@ -85,6 +85,10 @@
     "companyWheel": {
       "wheelRay": {
         "title": "Selected Company"
+      },
+      "list": {
+        "company": "Selected Company:",
+        "location": "Region:"
       }
     },
     "conditionDetails": {
