@@ -5,7 +5,7 @@ import ReadMe from './README.md';
 
 storiesForComponent('Components|ConditionDetails/ContentBlock', module, ReadMe)
   .add('full block', () => (
-    <div style={{ width: 300, height: 50 }}>
+    <React.Fragment>
       <ContentBlock
         id="common.features.theme"
         content="This is a full block"
@@ -14,13 +14,10 @@ storiesForComponent('Components|ConditionDetails/ContentBlock', module, ReadMe)
         id="common.features.theme"
         content="This is a full block"
       />
-      {/* Fixes a Storybook rendering issue */}
-      <style dangerouslySetInnerHTML={// eslint-disable-line react/no-danger
-        { __html: '.ConditionDetails { display: block; width: 100% } ' }}
-      />
-    </div>
-  )).add('half block', () => (
-    <div style={{ width: 300, height: 50 }}>
+    </React.Fragment>
+  ))
+  .add('half block', () => (
+    <React.Fragment>
       <ContentBlock
         id="common.features.theme"
         content="This is a half block"
@@ -31,9 +28,5 @@ storiesForComponent('Components|ConditionDetails/ContentBlock', module, ReadMe)
         content="This is a half block"
         half
       />
-      {/* Fixes a Storybook rendering issue */}
-      <style dangerouslySetInnerHTML={// eslint-disable-line react/no-danger
-        { __html: '.ConditionDetails { display: block; width: 100% } ' }}
-      />
-    </div>
+    </React.Fragment>
   ));

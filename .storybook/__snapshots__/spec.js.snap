@@ -1712,7 +1712,7 @@ exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".CircleContainer.blue { background: blue } ",
+        "__html": ".CircleContainer.blue { background: blue }",
       }
     }
   />
@@ -3440,42 +3440,26 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
     className="ConditionDetails"
   >
     <div
-      style={
-        Object {
-          "height": 50,
-          "width": 300,
-        }
-      }
+      className="ContentBlock "
     >
-      <div
-        className="ContentBlock "
+      <span
+        className="contentHeading"
       >
-        <span
-          className="contentHeading"
-        >
-          Theme
-        </span>
-        : 
-        This is a full block
-      </div>
-      <div
-        className="ContentBlock "
+        Theme
+      </span>
+      : 
+      This is a full block
+    </div>
+    <div
+      className="ContentBlock "
+    >
+      <span
+        className="contentHeading"
       >
-        <span
-          className="contentHeading"
-        >
-          Theme
-        </span>
-        : 
-        This is a full block
-      </div>
-      <style
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": ".ConditionDetails { display: block; width: 100% } ",
-          }
-        }
-      />
+        Theme
+      </span>
+      : 
+      This is a full block
     </div>
   </div>
 </div>
@@ -3489,42 +3473,26 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
     className="ConditionDetails"
   >
     <div
-      style={
-        Object {
-          "height": 50,
-          "width": 300,
-        }
-      }
+      className="ContentBlock half"
     >
-      <div
-        className="ContentBlock half"
+      <span
+        className="contentHeading"
       >
-        <span
-          className="contentHeading"
-        >
-          Theme
-        </span>
-        : 
-        This is a half block
-      </div>
-      <div
-        className="ContentBlock half"
+        Theme
+      </span>
+      : 
+      This is a half block
+    </div>
+    <div
+      className="ContentBlock half"
+    >
+      <span
+        className="contentHeading"
       >
-        <span
-          className="contentHeading"
-        >
-          Theme
-        </span>
-        : 
-        This is a half block
-      </div>
-      <style
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": ".ConditionDetails { display: block; width: 100% } ",
-          }
-        }
-      />
+        Theme
+      </span>
+      : 
+      This is a half block
     </div>
   </div>
 </div>
