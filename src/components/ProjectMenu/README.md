@@ -9,9 +9,7 @@ time to allow exploration of projects by different features via small bar charts
 * The number inside the dot displays the number of conditions for that project.
 * Dots with a visible outline are those that contain results of the keyword search.
 * There is one chart per project.
-* Scales horizontally to fill its container, but allows the project name to overflow out the left side
-* Scales vertically to fill its container
-  * Container shall provide a minimum height that fits the correct number of flags
+* Scales horizontally to fill its container
 
 ## Interaction Requirements
 

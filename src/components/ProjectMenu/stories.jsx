@@ -57,7 +57,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
   .addDecorator(withStyles(`
-    .ProjectMenu { max-width: 600px; width: 100%; height: 50vh; border: 1px solid red; }
+    .ProjectMenu { width: 400px; border: 1px solid red; }
   `))
   .add('Default Props', () => (
     <ProjectMenu
