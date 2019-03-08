@@ -41,6 +41,7 @@
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
     "immutable": "^4.0.0-rc.12",
+    "lodash.debounce": "^4.0.8",
     "lodash.memoize": "^4.1.2",
     "matter-js": "github:spenserj/matter-js#dd02dba",
     "prop-types": "^15.6.2",
