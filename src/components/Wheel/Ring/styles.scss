@@ -1,4 +1,5 @@
 .Ring{
+  width: 100%;
   .RingBackground {
     &.location{
       fill: #F4CE5A;
@@ -19,9 +20,12 @@
   }
 
   .RingOutline {
-    fill: #d1057a;
+    circle{
+      stroke:#d1057a; 
+      stroke-width:2; 
+      fill: none;
+    }
   }
-
 }
 
 

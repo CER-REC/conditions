@@ -3,9 +3,12 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import BarContainer from '../../BarContainer';
 import { browseByType } from '../../../proptypes';
+import LocationRay from '../LocationRay';
 import { features } from '../../../constants';
+
+// TODO: get legend to display in the middle of the limits of its occupancy
+// TODO: get the first of each letter to draw a line
 
 const themeKeys = Object.keys(features.theme);
 
@@ -37,10 +40,11 @@ class WheelRay extends React.Component {
 
   render() {
     const { props } = this;
+    console.log(props.items);
     // eslint-disable-next-line object-curly-newline
     const { items, degreesPerItem, reservedDegrees, rotation, currentIndex, wheelType } = props;
-    const height = '163px';
-    const width = `${degreesPerItem + 1}px`;
+    const height = '163';
+    // const width = `${degreesPerItem + 1}px`;
     const halfReservedDegrees = reservedDegrees / 2;
     const selectedIndex = currentIndex >= 0
       ? currentIndex : items.length + currentIndex;
@@ -48,7 +52,7 @@ class WheelRay extends React.Component {
     let legendTracker = '';
     const rays = items.map((item, index) => {
       if (index === selectedIndex) { return null; }
-      let position = rotation + 90;
+      let position = rotation;
       const plotIndex = selectedIndex - index;
       if (plotIndex < 0) {
         position -= (plotIndex * degreesPerItem) - halfReservedDegrees + (degreesPerItem);
@@ -56,40 +60,38 @@ class WheelRay extends React.Component {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
 
-      // TODO: work out how to remove magic numbers. Right now they came from the design
-
-      const transform = `translate(371 209) rotate(${position.toFixed(2)}, 0, 245)`;
-      // TODO: split logic below to location ray and company ray?
+      const transform = { transform: `translate(50%, 50%) rotate(${position}deg)` };
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={item._id} transform={transform}>
-            <text className="TextLabels">
+          <g key={`${item._id}CompanyRay`} style={transform}>
+            <text className="textLabels" style={{ transform: 'translate(29%) rotate(90deg)' }}>
               {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
             </text>
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
-            <rect
+            <line
               fill="red"
-              y="-181"
-              height={(index === 0 ? '323px' : height)}
-              width={width}
-              key={item._id}
+              y2="50%"
+              y1={(index === 0 ? '23.5%' : '31%')}
+              stroke="red"
+              strokeWidth="3px"
+              style={{ transform: 'rotate(-90deg)' }}
             />
           </g>
         )
-        // DRAW LOCATION RAY: Move this down to the location ray component
         : (
-          <g key={`${item._id}`} transform={transform}>
-            <g style={{ transform: 'translate(0px, -19px) rotate(-90deg)' }}>
-              <BarContainer
-                className="WheelBar"
-                width={height /* These are backwards because of the rotation */}
-                height={width}
-                items={randomLocationBars[index]}
-                vertical
-                standalone
-              />
-            </g>
+          <g key={`${item._id}LocationRay`} style={transform}>
+            <LocationRay
+              items={randomLocationBars[index]}
+              height={degreesPerItem * 2}
+              width={height}
+              searched={Boolean(Math.round(Math.random()))}
+              adjustRotationReference={degreesPerItem / 2}
+            />
+            {/* {item.} */}
+            <text className="textLabels" style={{ transform: 'translate(29%) rotate(90deg)' }}>
+              {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
+            </text>
           </g>
         );
       legendTracker = item.company_name.charAt(0);

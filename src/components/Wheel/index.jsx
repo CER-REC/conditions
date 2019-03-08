@@ -95,46 +95,45 @@ class Wheel extends React.Component {
       <div className="Wheel">
         <Spring
           immediate={this.state.unanimatedSpin}
-          config={{ tension: 50, clamp: true, mass: 0.7 }}
+          config={{ tension: 30 }}
           from={{
-            transformOrigin: '50% 50.31%',
-            transform: `rotate(${this.state.oldRotation}deg)`,
-            rotation: -this.state.oldRotation,
+            transformOrigin: 'center',
+            transform: `rotate(${this.state.oldRotation.toFixed(2)}deg)`,
+            rotation: -this.state.oldRotation.toFixed(2),
           }}
           to={{
-            transform: `rotate(${this.state.newRotation}deg)`,
-            rotation: -this.state.newRotation,
+            transform: `rotate(${this.state.newRotation.toFixed(2)}deg)`,
+            rotation: -this.state.newRotation.toFixed(2),
           }}
         >
           {props => (
             <div className="MovingContainer">
               <svg viewBox="0 0 860 860">
                 <animated.g style={props}>
-                  <g data-name="Group 3" transform="translate(-27.5 -122.8)">
+                  <g data-name="Group 3">
                     {/* following outer limit lines can be deleted once everything is rendered.
                       It is an accurate representation of spacing */}
-                    <g className="OuterLimitCircle OutterCircles" transform="translate(27.5 125.5)">
-                      <circle cx="430" cy="430" r="426" />
+                    <g className="OuterLimitCircle OutterCircles">
+                      <circle cx="50%" cy="50%" r="50%" />
                     </g>
-                    <g data-name="wheelGroup" transform="translate(86 102)">
-                      {/* following inner limit lines can be deleted once everything is rendered.
-                      It is an accurate representation of spacing */}
-                      <g className="OutterCircles RayCircle" transform="translate(107.5 189.5)">
-                        <circle className="cls-1" cx="264" cy="264" r="263.5" />
-                      </g>
-                      <Ring ringType={this.props.wheelType} />
-                      <AnimatedWheelRay
-                        stopWheel={this.stopWheel}
-                        wheelType={this.props.wheelType}
-                        items={this.props.itemsData.items}
-                        degreesPerItem={this.state.degreesPerItem}
-                        reservedDegrees={reservedDegrees}
-                        currentIndex={this.getIndex(props.rotation)
-                          % this.props.itemsData.items.length}
-                        legendPositionArray={this.props.itemsData.legendData}
-                        {...props}
-                      />
+                    {/* following inner limit lines can be deleted once everything is rendered.
+                    It is an accurate representation of spacing */}
+                    <g className="OutterCircles RayCircle">
+                      {/* <circle className="cls-1" cx="50%" cy="50%" r="263.5" /> */}
+                      <circle className="cls-1" cx="50%" cy="50%" r="31%" />
                     </g>
+                    <Ring ringType={this.props.wheelType} />
+                    <AnimatedWheelRay
+                      stopWheel={this.stopWheel}
+                      wheelType={this.props.wheelType}
+                      items={this.props.itemsData.items}
+                      degreesPerItem={this.state.degreesPerItem}
+                      reservedDegrees={reservedDegrees}
+                      currentIndex={this.getIndex(props.rotation)
+                        % this.props.itemsData.items.length}
+                      legendPositionArray={this.props.itemsData.legendData}
+                      {...props}
+                    />
                   </g>
                 </animated.g>
                 <g transform="scale(2)">

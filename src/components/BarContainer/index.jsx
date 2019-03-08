@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const calculateSize = (size, max) => (max ? `calc(${max} * ${size / 100})` : `${size}%`);
+const calculateSize = (size, max) => (max ? max * (size / 100) : `${size}%`);
 
 const BarContainer = (props) => {
   if (props.items.length === 0) { return null; }
