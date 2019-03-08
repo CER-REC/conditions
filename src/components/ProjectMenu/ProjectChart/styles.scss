@@ -45,7 +45,9 @@ $project-chart-line: #a1a8a7;
     display: inline-block;
     width: 100%;
     height: calc(100% - 30px); // 100% - pipe
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 20vh;
+
 
     .FlagPole {
       position: absolute;

@@ -5,6 +5,8 @@
   padding-top: 12px; // Account for list lifting selected arrows upwards
   overflow-x: visible;
   overflow-y: hidden;
+  padding-left: 5%;
+  padding-right: 5%;
 
   > .List {
     display: inline-block;
