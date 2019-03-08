@@ -39,6 +39,7 @@
   circle {
     fill:$LinksTextButtons;
     stroke-width: 30px;
+    cursor: pointer;
   }
   polygon {
     fill: $White;
@@ -59,6 +60,7 @@
     circle {
       fill: $White;
       stroke: $LinksTextButtons;
+      cursor: pointer;
     }
     polygon {
       fill: $LinksTextButtons;

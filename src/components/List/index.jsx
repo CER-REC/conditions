@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import debounce from 'lodash.debounce';
 import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -23,14 +24,24 @@ library.add(
 );
 
 class List extends React.PureComponent {
-  onWheel = (e) => {
-    e.preventDefault();
+  handleScroll = debounce((deltaY) => {
+    /* Browsers + devices provide different values using different units, so
+    * we can't use deltaY directly
+    */
+    const direction = (deltaY > 0 && 1) || (deltaY < 0 && -1);
+    if (!direction) return;
 
-    const inc = (e.deltaY > 0 && 1) || (e.deltaY < 0 && -1);
-    if (!inc) return;
+    const newIndex = Math.min(
+      Math.max(0, this.props.selected + direction),
+      this.props.items.length - 1,
+    );
 
-    const newIndex = Math.min(Math.max(0, this.props.selected + inc), this.props.items.length - 1);
     if (newIndex !== this.props.selected) this.props.onChange(newIndex);
+  }, 200, { leading: true })
+
+  debounceScrollEvents = (e) => {
+    e.preventDefault();
+    this.handleScroll(e.deltaY);
   }
 
   render = () => {
@@ -52,7 +63,7 @@ class List extends React.PureComponent {
           this.props.className,
           { horizontal: this.props.horizontal, guideLine: this.props.guideLine },
         )}
-        onWheel={this.onWheel}
+        onWheel={this.debounceScrollEvents}
       >
         <ul>
           {this.props.items.map((item, i) => (
@@ -111,6 +122,7 @@ List.propTypes = {
   itemInteractions: PropTypes.bool,
   /** Additional className to add to the list */
   className: PropTypes.string,
+  elevated: PropTypes.bool,
 };
 
 List.defaultProps = {
@@ -118,6 +130,7 @@ List.defaultProps = {
   guideLine: false,
   itemInteractions: true,
   className: '',
+  elevated: false,
 };
 
 export default List;

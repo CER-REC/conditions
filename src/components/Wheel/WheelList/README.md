@@ -1,6 +1,6 @@
-# List
+# Wheel List
 
-The List is a private component of the Wheel component. It will wrap the company list and the
+The Wheel List is a private component of the Wheel component. It will wrap the company list and the
 location list inside of the Wheel. The companies will be listed alphabetically with the currently
 selected company always in the same position. Spinning the wheel gives the user a quick overview of
 company names or location.
@@ -8,8 +8,10 @@ company names or location.
 ## Requirements
 
 * [ ] Displays always one company or location even when the wheel is spinning
-* [ ] Displays a list of 5 items
+* [ ] Displays a list of 7 items
 * [ ] The items scale in size according to the distance from the currently selected company
+* [ ] Unselected items are cropped if they intersect the wheel
+* [ ] The selected item is shown over-top of the wheel
 
 ## Interaction Requirements
 

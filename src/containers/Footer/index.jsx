@@ -8,7 +8,9 @@ const Footer = props => (
   <section className={classNames('Footer', { layoutOnly: props.layoutOnly })}>
     <section className="row">
       <section className="infoBar">
-        <MainInfoBar />
+        <MainInfoBar
+          {...props.mainInfoBar}
+        />
       </section>
     </section>
   </section>
@@ -16,6 +18,14 @@ const Footer = props => (
 
 Footer.propTypes = {
   layoutOnly: PropTypes.bool,
+  mainInfoBar: PropTypes.shape({
+    activeDialog: PropTypes.oneOf(['about', 'methodology', 'downloads']),
+    expanded: PropTypes.bool,
+    setActiveDialog: PropTypes.func.isRequired,
+    toggleExpanded: PropTypes.func.isRequired,
+    openDataModal: PropTypes.func.isRequired,
+    openScreenshotModal: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 Footer.defaultProps = {

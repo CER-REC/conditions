@@ -10,9 +10,21 @@
   border-bottom: 1px solid $LightGray;
   border-left: 1px solid $LightGray;
   text-align: left;
-  padding: 25px 10px 5px 10px;
+  padding: 10px 10px 5px 10px;
   font-family: $fira-sans-condensed;
 
+  .reset {
+    text-align: right;
+    padding-right: 0px;
+    svg{
+      fill: $general-text-2;
+      stroke: $general-text-2;
+      stroke-width: 20;
+    }
+    &.shifted {
+      padding-right: 25px;
+    }
+  }
   .upperCase{
     text-transform: uppercase;
   }
@@ -27,6 +39,7 @@
     .dropDown {
       select {
         text-transform: uppercase;
+        width: 4em;
       }
     }
   }
@@ -43,6 +56,23 @@
       border-color: $DarkGray;
       border-width: 1px;
       caret-color: $SearchKeyword;
+    }
+    .addInput {
+      background: transparent;
+      line-height: 10px;
+      border: none;
+      div {
+        transform: inherit;
+      }
+      .plusIcon {
+        color: $LinksTextButtons;
+      }
+      &.disabled {
+        pointer-events: none;
+        .plusIcon {
+          color: $LightGray;
+        }
+      }
     }
   }
   .searchWords {
@@ -69,7 +99,8 @@
     &.deleteButton {
       button {
         border: none;
-        padding: 0px; 
+        padding: 0px;
+        background-color: transparent;
         svg {
           width: inherit;
         }
@@ -110,22 +141,13 @@
     text-align: right;
     button {
       border: none;
+      background-color: transparent;
     }
     span {
       color: $LinksTextButtons;
     }
   }
-  .addInput {
-    background: transparent;
-    line-height: 10px;
-    border: none;
-    .plusIcon {
-      color: $LinksTextButtons;
-    }
-    div {
-      transform: inherit;
-    }
-  }
+
   .Icon {
     display: inline;
     padding-left: 5px;

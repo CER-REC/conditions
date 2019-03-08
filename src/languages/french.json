@@ -212,11 +212,13 @@
       "yAxis": "",
       "title": ""
     },
-    "browseByBtn": {
-      "projectsBy": "",
-      "conditionsBy": "",
+    "wheel": {
       "company": "",
       "location": ""
+    },
+    "browseByBtn": {
+      "projectsBy": "",
+      "conditionsBy": ""
     }
   },
   "views": {
