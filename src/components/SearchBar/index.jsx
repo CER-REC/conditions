@@ -82,6 +82,7 @@ class SearchBar extends React.PureComponent {
           findAny={findAny}
           includeKeywords={includeKeywords}
           excludeKeywords={excludeKeywords}
+          isExclude={isExclude}
           changeIsExclude={this.changeIsExclude}
         />
         <div className={classNames('SuggestionPrompt', { excludePrompt: (this.state.isExclude) })}>

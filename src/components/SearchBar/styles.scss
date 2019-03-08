@@ -27,13 +27,13 @@
         width: 20px;
       }
       &.horzLine {
-        width: 253px;
+        width: 256px;
       }
     }
   }
   .SuggestionPrompt {
     position: absolute;
-    top: -10px;
+    top: -6px;
     left: 390px;
     &.excludePrompt {
       top: 85px;

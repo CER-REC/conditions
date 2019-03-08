@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
 import Icon from '../../../Icon/index';
 import handleInteraction from '../../../../utilities/handleInteraction';
 import BarContainer from '../../../BarContainer';
@@ -49,6 +50,7 @@ class KeywordList extends React.PureComponent {
                 || excludeKeywords.includes(key))
                 ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
                 : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
+
               const maxConditions = this.findMaxConditions();
 
               const conditions = (value.conditions / maxConditions);
@@ -56,7 +58,7 @@ class KeywordList extends React.PureComponent {
               return (
                 <li key={`${key} ${value.conditions}`}>
                   <div
-                    className="icon"
+                    className={classNames('icon', { disabled: (includeKeywords.length === 6 || excludeKeywords.length === 6) })}
                     {...handleInteraction(this.keywordOnClick, key)}
                   >
                     <Icon className={iconClass} icon={icon} />

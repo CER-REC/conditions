@@ -22,7 +22,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={yearRange}
           changeProjectStatus={noop}
-          reset={noop}
           onYearSelect={noop}
           closeTab={noop}
         />,
@@ -51,7 +50,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={{ start: 1971, end: 1971 }}
           changeProjectStatus={noop}
-          reset={noop}
           closeTab={noop}
           onYearSelect={spy}
         />,
@@ -84,7 +82,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={{ start: 1971, end: 1972 }}
           changeProjectStatus={noop}
-          reset={noop}
           closeTab={noop}
           onYearSelect={spy}
         />,
@@ -136,7 +133,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={{ start: 1970, end: 1980 }}
           changeProjectStatus={noop}
-          reset={noop}
           closeTab={noop}
           onYearSelect={spy}
         />,
@@ -168,10 +164,9 @@ describe('Components|SearchBar/FilterContent', () => {
       wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
-          projectStatus={projectStatus}
+          projectStatus={['CLOSED']}
           selectedYear={yearRange}
           changeProjectStatus={spy}
-          reset={noop}
           closeTab={noop}
           onYearSelect={noop}
         />,
@@ -181,32 +176,40 @@ describe('Components|SearchBar/FilterContent', () => {
         .find('li')
         .first();
     });
-    test('click should call its changeProjectStatus prop', () => {
+    test('click should call its changeProjectStatus prop and add it in if it doesnt exist', () => {
       status.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith(['CLOSED', 'OPEN']);
     });
 
     test('enter key should call its changeProjectStatus prop', () => {
       status.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
       expect(spy).toHaveBeenCalledTimes(1);
     });
+
+    test('if status exists, it will remove the status', () => {
+      wrapper.setProps({ projectStatus: ['OPEN', 'CLOSED'] });
+      status.simulate('click', eventFuncs);
+      expect(spy).toHaveBeenCalledWith(['CLOSED']);
+    });
   });
 
-  xdescribe('onClick/keypress of reset', () => {
+  describe('onClick/keypress of reset', () => {
     let wrapper;
-    let spy;
+    let changeStatusSpy;
+    let yearSelectSpy;
     let reset;
     beforeEach(() => {
-      spy = jest.fn();
+      changeStatusSpy = jest.fn();
+      yearSelectSpy = jest.fn();
       wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
           projectStatus={projectStatus}
           selectedYear={yearRange}
-          changeProjectStatus={noop}
-          reset={spy}
+          changeProjectStatus={changeStatusSpy}
           closeTab={noop}
-          onYearSelect={noop}
+          onYearSelect={yearSelectSpy}
         />,
       );
 
@@ -214,11 +217,13 @@ describe('Components|SearchBar/FilterContent', () => {
     });
     test('click should call its reset prop', () => {
       reset.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(changeStatusSpy).toHaveBeenCalledTimes(1);
+      expect(yearSelectSpy).toHaveBeenCalledTimes(1);
     });
     test('keyPress should call its reset prop', () => {
       reset.simulate('keyPress', { ...eventFuncs, key: 'Enter' });
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(yearSelectSpy).toHaveBeenCalledTimes(1);
+      expect(changeStatusSpy).toHaveBeenCalledTimes(1);
     });
   });
   describe('onClick/keypress of close', () => {
@@ -233,7 +238,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={yearRange}
           changeProjectStatus={noop}
-          reset={noop}
           closeTab={spy}
           onYearSelect={noop}
         />,
@@ -266,7 +270,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={{ start: 1970, end: 1970 }}
           changeProjectStatus={spy}
-          reset={noop}
           closeTab={noop}
           onYearSelect={noop}
         />,
@@ -295,7 +298,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={{ start: 1970, end: 1972 }}
           changeProjectStatus={noop}
-          reset={noop}
           closeTab={noop}
           onYearSelect={noop}
         />,
@@ -326,7 +328,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={['OPEN']}
           selectedYear={yearRange}
           changeProjectStatus={noop}
-          reset={noop}
           closeTab={noop}
           onYearSelect={noop}
         />,
@@ -352,7 +353,6 @@ describe('Components|SearchBar/FilterContent', () => {
           projectStatus={projectStatus}
           selectedYear={yearRange}
           changeProjectStatus={noop}
-          reset={noop}
           closeTab={noop}
           onYearSelect={spy}
         />,
@@ -381,7 +381,6 @@ describe('Components|SearchBar/FilterContent', () => {
           changeProjectStatus={noop}
           onYearSelect={spy}
           closeTab={noop}
-          reset={noop}
         />,
       );
       updatedWrapper = wrapper.find('.projectList').find('li');

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
 import './styles.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +23,7 @@ class SearchContent extends React.PureComponent {
     findAnyOnChange: PropTypes.func.isRequired,
     findAny: PropTypes.bool.isRequired,
     changeIsExclude: PropTypes.func.isRequired,
+    isExclude: PropTypes.bool.isRequired,
   }
 
   constructor(props) {
@@ -99,9 +101,18 @@ class SearchContent extends React.PureComponent {
         />
       </div>
       <div className="input">
-        <input value={this.state.inputExclude} onChange={this.updateInputExclude} onFocus={() => this.props.changeIsExclude(true)} className="searchBar" />
-        <button type="button" className="addInput" {...handleInteraction(this.addExcludeWord)}>
-          <Icon className="iconInline plusIcon" icon="plus-circle" />
+        <input
+          value={this.state.inputExclude}
+          onChange={this.updateInputExclude}
+          onFocus={() => this.props.changeIsExclude(true)}
+          className="searchBar"
+        />
+        <button
+          type="button"
+          className={classNames('addInput', { disabled: this.props.excludeKeywords.length === 6 })}
+          {...handleInteraction(this.addExcludeWord)}
+        >
+          <Icon className={classNames(['iconInline', 'plusIcon'])} icon="plus-circle" />
         </button>
       </div>
       <ul className="searchWords">
@@ -191,7 +202,9 @@ class SearchContent extends React.PureComponent {
         />
         <button
           type="button"
-          className="addInput"
+          className={classNames(
+            'addInput', { disabled: this.props.includeKeywords.length === 6 },
+          )}
           {...handleInteraction(this.addIncludeWord)}
         >
           <Icon className="iconInline plusIcon" icon="plus-circle" />
@@ -211,9 +224,33 @@ class SearchContent extends React.PureComponent {
     this.updateKeywords('exclude', []);
   }
 
+  reset = () => {
+    this.updateKeywords('include', []);
+    this.updateKeywords('exclude', []);
+    this.props.findAnyOnChange(true);
+    this.setState({ mode: 'basic' });
+  }
+
   render() {
     return (
       <div className="SearchContent">
+        <div
+          {...handleInteraction(this.reset)}
+          className={classNames('reset', { shifted: !this.props.isExclude })}
+        >
+          <FormattedMessage id="components.searchBar.reset">
+            { text => <span className="upperCase"> {text} </span> }
+          </FormattedMessage>
+          <svg width={12} viewBox="0 0 427.5 427.5">
+            <path
+              d="M316.2,329.6c-60.9,57.6-157,54.8-214.6
+              -6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1
+              -12.3l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8
+              -67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2c-74.9,79.8
+              -71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+            />
+          </svg>
+        </div>
         {this.includeSearchTextAndWords()}
         {(this.state.mode !== 'advanced') ? null : (this.excludeSearchTextAndWords())}
         <div className="advancedSearchText">

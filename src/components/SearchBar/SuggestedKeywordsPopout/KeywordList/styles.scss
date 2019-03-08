@@ -30,6 +30,17 @@
           color: $LinksTextButtons;
           background-color: $White;
         }
+        &.disabled {
+          pointer-events: none;
+          .regularIcon {
+            color: $LightGray;
+            background-color: $White;
+          }
+          .selectedIcon {
+            pointer-events: all;
+          }
+        }
+
       }
       .keywordCategory {
         display: inline-block;
