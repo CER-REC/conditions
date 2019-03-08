@@ -38,7 +38,14 @@ const App = () => (
     <hr />
     <ViewThree {...props} />
     <hr />
-    <Footer />
+    <Footer
+      mainInfoBar={{
+        setActiveDialog: () => {},
+        toggleExpanded: () => {},
+        openDataModal: () => {},
+        openScreenshotModal: () => {},
+      }}
+    />
   </Provider>
 );
 
