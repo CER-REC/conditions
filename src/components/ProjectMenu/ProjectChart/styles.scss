@@ -8,8 +8,8 @@ $project-chart-line: #a1a8a7;
 
 .ProjectChart {
   width: 100%;
-  height: 300px;
-  margin-bottom: 110px;
+  height: 100%;
+  padding-bottom: 110px;
 
   .ProjectName {
     text-overflow: ellipsis;
@@ -45,7 +45,7 @@ $project-chart-line: #a1a8a7;
     display: inline-block;
     width: 100%;
     height: calc(100% - 30px); // 100% - pipe
-    padding-top: 10px;
+    padding: 10px 0;
 
     .FlagPole {
       position: absolute;

@@ -6960,7 +6960,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
     dangerouslySetInnerHTML={
       Object {
         "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
+    .ProjectMenu { max-width: 600px; width: 100%; height: 50vh; border: 1px solid red; }
   ",
       }
     }
@@ -7266,7 +7266,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
     dangerouslySetInnerHTML={
       Object {
         "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
+    .ProjectMenu { max-width: 600px; width: 100%; height: 50vh; border: 1px solid red; }
   ",
       }
     }
@@ -7572,7 +7572,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
     dangerouslySetInnerHTML={
       Object {
         "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
+    .ProjectMenu { max-width: 600px; width: 100%; height: 50vh; border: 1px solid red; }
   ",
       }
     }

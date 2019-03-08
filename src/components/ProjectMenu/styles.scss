@@ -3,11 +3,14 @@
 .ProjectMenu {
   position: relative;
   padding-top: 12px; // Account for list lifting selected arrows upwards
+  overflow-x: visible;
+  overflow-y: hidden;
 
   > .List {
     display: inline-block;
     width: 100%;
     padding: 0 10%;
+    &, ul, .List-Item, .List-Item-Content { height: 100%; }
 
     ul .List-Item {
       width: 15%;
