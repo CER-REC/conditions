@@ -18,8 +18,7 @@ const WheelList = (props) => {
   const handleOnChange = i => props.onChange(wrapIndex(i - 3));
 
   const listElements = indexOffsets.map((offset) => {
-    const text = props.listContent[wrapIndex(offset)];
-
+    const text = props.listContent[wrapIndex(offset)].company_name;
     return (
       <span
         className={offsetClasses[Math.abs(offset)]}
@@ -40,7 +39,7 @@ const WheelList = (props) => {
           {text => <span className="label">{text}</span>}
         </FormattedMessage>
         <span className="selected" style={{ width: props.textClippingRadius }}>
-          {props.listContent[props.selected]}
+          {props.listContent[props.selected].company_name}
         </span>
       </div>
       <div className="listContainer">

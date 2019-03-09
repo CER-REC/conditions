@@ -40,7 +40,6 @@ class WheelRay extends React.Component {
 
   render() {
     const { props } = this;
-    console.log(props.items);
     // eslint-disable-next-line object-curly-newline
     const { items, degreesPerItem, reservedDegrees, rotation, currentIndex, wheelType } = props;
     const height = '163';

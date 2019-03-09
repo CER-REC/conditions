@@ -8,6 +8,7 @@ import Ring from './Ring';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
 import { browseByType } from '../../proptypes';
+import WheelList from './WheelList';
 
 const reservedDegrees = 18;
 
@@ -44,7 +45,6 @@ class Wheel extends React.Component {
     const { items } = props.itemsData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
-
     let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
@@ -75,13 +75,19 @@ class Wheel extends React.Component {
     this.props.selectRay(items[randomNum]._id);
   };
 
-  rotateWheelOneStep = (prev = false) => {
-    this.setState({ unanimatedSpin: false });
-    const { items } = this.props.itemsData;
-    const direction = prev ? -1 : 1;
-    const newIndex = (this.state.selectedIndex + direction + items.length) % items.length;
-    this.props.selectRay(items[newIndex]._id);
-  };
+  // rotateWheelOneStep = (prev) => {
+  //   this.setState({ unanimatedSpin: false });
+  //   const { items } = this.props.itemsData;
+  //   const direction = prev ? -1 : 1;
+  //   const newIndex = (this.state.selectedIndex + direction + items.length) % items.length;
+  //   this.setState({ selectedIndex: newIndex });
+  // };
+
+  onChange = (index) => {
+    // TODO: do it by rotation
+    const newIndex = (2 * this.props.itemsData.items.length - index) % this.props.itemsData.items.length;
+    this.props.selectRay(this.props.itemsData.items[newIndex]._id);
+  }
 
   getIndex = currentRotation => Math.round((currentRotation % 360)
     / (360 / this.props.itemsData.items.length))
@@ -140,12 +146,14 @@ class Wheel extends React.Component {
                   <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
                 </g>
               </svg>
-              <div className="list">
-                {this.props.itemsData.items[
-                  (this.props.itemsData.items.length + (this.getIndex(props.rotation)))
-                    % this.props.itemsData.items.length
-                ].company_name}
-              </div>
+              <WheelList
+                wheelType="company"
+                listContent={this.props.itemsData.items}
+                textClippingRadius="70%"
+                onChange={this.onChange}
+                selected={(this.props.itemsData.items.length + (this.getIndex(props.rotation)))
+                  % this.props.itemsData.items.length}
+              />
             </div>
           )
         }
