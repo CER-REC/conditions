@@ -7,6 +7,11 @@ module.exports = {
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0 }],
     'react/destructuring-assignment': false,
     'react/jsx-one-expression-per-line': false,
+    'object-curly-newline': ["error", {
+      "minProperties": 8,
+      "multiline": true,
+      "consistent": true,
+    }]
   },
   overrides: [
     {
