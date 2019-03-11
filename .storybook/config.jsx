@@ -49,7 +49,7 @@ addParameters({viewport: { viewports, defaultViewport: 'fullscreen' }});
 
 addParameters({
   options: {
-    addonPanelInRight: true,
+    panelPosition: 'right',
   },
 });
 
