@@ -1,1 +1,7 @@
 !.*
+devPublic
+coverage
+.git
+node_modules
+public
+storybook-static
