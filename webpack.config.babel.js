@@ -1,8 +1,8 @@
 const Path = require('path');
 const Webpack = require('webpack');
-const TranslationTable = require('./src/TranslationTable');
 const sass = require('node-sass');
 const SassUtilsConstructor = require('node-sass-utils');
+const TranslationTable = require('./src/TranslationTable');
 const { features } = require('./src/constants');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
