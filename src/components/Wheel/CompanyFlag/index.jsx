@@ -64,19 +64,18 @@ const parseFlags = (dot) => {
   }, []);
 };
 
-const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing }) => {
-  // Our reference point is the top of the flagpole
-  const x = 0;
-  const y = flagLayout[0].length;
+const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, width, height }) => {
+  const baseY = y + height - (flagLayout[0].length * dotSpacing);
 
+  // console.dir({flagLayout, dotWidth, dotSpacing, x, y, width, height, baseY});
   const columnOffset = {
     x: dotSpacing * Math.sin(Math.PI / 3),
     y: dotSpacing / 2,
   };
 
   const circles = flagLayout.reduce((out, columnDots, columnIndex) => {
-    const columnX = x - (columnIndex * columnOffset.x);
-    const columnY = y + (columnIndex * columnOffset.y);
+    const columnX = -(columnIndex * columnOffset.x);
+    const columnY = baseY + (columnIndex * columnOffset.y);
 
     columnDots.split('').forEach((dot, dotIndex) => {
       const dotY = columnY + (dotIndex * dotSpacing);
@@ -86,8 +85,8 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing }) => {
       if (isDot) {
         // Placeholder color for now, these will be ProjectDots at some point anyway
         out.push({
-          cx: columnX + 64,
-          cy: dotY,
+          cx: x + columnX,
+          cy: y + dotY,
           r: dotWidth / 2,
           filtered: isFiltered,
           relevant: isRelevant,
@@ -114,11 +113,17 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing }) => {
 
 CompanyFlag.propTypes = {
   flagLayout: PropTypes.arrayOf(PropTypes.string).isRequired,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  height: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
   dotWidth: PropTypes.number,
   dotSpacing: PropTypes.number,
 };
 
 CompanyFlag.defaultProps = {
+  x: 0,
+  y: 0,
   dotWidth: 16,
   dotSpacing: 24,
 };
