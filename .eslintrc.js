@@ -17,7 +17,7 @@ module.exports = {
     {
       files: [
         '.storybook/**',
-        'stories/**',
+        'documentation/**',
         '**/stories.jsx',
         '**/spec.js',
         '**/spec.jsx',
@@ -37,6 +37,7 @@ module.exports = {
         '**/*.spec.js',
         '**/*.spec.jsx',
         'src/tests/**',
+        '.storybook/spec.js',
       ],
       env: {
         jest: true,
@@ -49,4 +50,4 @@ module.exports = {
       },
     },
   ],
-}
+};

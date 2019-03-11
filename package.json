@@ -6,7 +6,7 @@
   "scripts": {
     "ci:test": "npm run test -- --ci --reporters=default --reporters=jest-junit && codecov",
     "cz": "git-cz",
-    "lint": "eslint -f gitlab \"./src/**/*.js\" \"./src/**/*.jsx\"",
+    "lint": "eslint -f gitlab --ext .js,.jsx .",
     "test": "cross-env NODE_ENV=test jest",
     "test:showcoverage": "opn coverage/lcov-report/index.html",
     "start": "npm run storybook",
