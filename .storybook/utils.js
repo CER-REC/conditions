@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { checkA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 import { withDocs, withReadme } from 'storybook-readme';
 import withStatus from './addon-status';
 
@@ -21,7 +21,7 @@ export const storiesForComponent = (name, m, readme) => {
       return storyFn();
     })
     .addDecorator(withInfo({ header: false, inline: true }))
-    .addDecorator(checkA11y);
+    .addDecorator(withA11y);
 
   if (readme) {
     stories = stories.addDecorator(withDocs(readme));
