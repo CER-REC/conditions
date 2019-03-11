@@ -7,6 +7,8 @@ import BarContainer from '../../BarContainer';
 import { browseByType } from '../../../proptypes';
 import { features } from '../../../constants';
 
+import CompanyFlag from '../CompanyFlag';
+
 const themeKeys = Object.keys(features.theme);
 
 const randomLocationBars = Array(200).fill('')
@@ -68,13 +70,31 @@ class WheelRay extends React.Component {
             </text>
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
-            <rect
-              fill="red"
-              y="-181"
-              height={(index === 0 ? '323px' : height)}
-              width={width}
-              key={item._id}
+            <CompanyFlag
+              y={-170}
+              flagLayout={
+                [
+                  ['1551111', '313', '77', '1'],
+                  ['111'],
+                  ['1511'],
+                  ['51113711', '11', '3'],
+                  ['1131'],
+                  ['11'],
+                  ['311'],
+                ][index % 7]
+              }
+              width={degreesPerItem + 1}
+              height={323}
+              dotWidth={6}
+              dotSpacing={8}
             />
+            {/* <rect
+              y="-181"
+              fill="magenta"
+              height={(index === 0) ? '323px' : height}
+              width={1}
+              key={item._id}
+            />  */}
           </g>
         )
         // DRAW LOCATION RAY: Move this down to the location ray component

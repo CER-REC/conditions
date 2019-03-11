@@ -10,6 +10,5 @@ describe('Components|Wheel/CompanyFlag', () => {
         flagLayout={['1551111', '313', '77', '1']}
       />,
     );
-
   });
 });
