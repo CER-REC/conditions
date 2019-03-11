@@ -41,10 +41,28 @@ import ProjectDot from '../ProjectDot';
 
   ['1111111', '301', '11', '5']
 
-  - Each column's top is half a space left, half a space down from the previous column
 */
 
-// Returns a <g>?
+// const parseFlags = (dot) => {
+//   const parsed = parseInt(dot, 10);
+//   // eslint-disable-next-line no-bitwise
+//   return [!!(parsed & 1), !!(parsed & 2), !!(parsed & 4)];
+// };
+
+const bits = [
+  ['isDot', 1],
+  ['isFiltered', 2],
+  ['isRelevant', 4],
+];
+
+const parseFlags = (dot) => {
+  const parsed = parseInt(dot, 10);
+  return bits.reduce((flags, [key, bit]) => {
+    // eslint-disable-next-line no-param-reassign, no-bitwise
+    flags[key] = !!(parsed & bit);
+    return flags;
+  }, []);
+};
 
 const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing }) => {
   // Our reference point is the top of the flagpole
@@ -56,42 +74,53 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing }) => {
     y: dotSpacing / 2,
   };
 
-  const circleCoords = flagLayout.reduce((coords, columnDots, columnIndex) => {
+  const circles = flagLayout.reduce((out, columnDots, columnIndex) => {
     const columnX = x - (columnIndex * columnOffset.x);
     const columnY = y + (columnIndex * columnOffset.y);
 
     columnDots.split('').forEach((dot, dotIndex) => {
       const dotY = columnY + (dotIndex * dotSpacing);
-      // eslint-disable-next-line no-bitwise
-      if (parseInt(dot, 2) & 1) {
+
+      const { isDot, isFiltered, isRelevant } = parseFlags(dot);
+
+      if (isDot) {
         // Placeholder color for now, these will be ProjectDots at some point anyway
-        coords.push({ x: columnX, y: dotY, color: 'grey' });
+        out.push({
+          cx: columnX + 64,
+          cy: dotY,
+          r: dotWidth / 2,
+          filtered: isFiltered,
+          relevant: isRelevant,
+        });
       }
     });
 
-    return coords;
+    return out;
   }, []);
-
-  const circles = circleCoords.map(coords => (
-    <ProjectDot
-      key={`${coords.x},${coords.y}`}
-      cx={coords.x + 64}
-      cy={coords.y}
-      r={dotWidth / 2}
-    />
-  ));
 
   return (
     <g>
-      {circles}
+      {
+        circles.map(circle => (
+          <ProjectDot
+            key={`${circle.cx},${circle.cy}`}
+            {...circle}
+          />
+        ))
+      }
     </g>
   );
 };
 
 CompanyFlag.propTypes = {
   flagLayout: PropTypes.arrayOf(PropTypes.string).isRequired,
-  dotWidth: PropTypes.number.isRequired,
-  dotSpacing: PropTypes.number.isRequired,
+  dotWidth: PropTypes.number,
+  dotSpacing: PropTypes.number,
+};
+
+CompanyFlag.defaultProps = {
+  dotWidth: 16,
+  dotSpacing: 24,
 };
 
 export default CompanyFlag;
