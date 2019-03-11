@@ -11,7 +11,7 @@ module.exports = {
       "minProperties": 8,
       "multiline": true,
       "consistent": true,
-    }]
+    }],
   },
   overrides: [
     {
