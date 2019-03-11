@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProjectDot from '../ProjectDot';
 
-const dotWidth = 16;
 /*
 
   111
@@ -45,37 +45,53 @@ const dotWidth = 16;
 */
 
 // Returns a <g>?
-const CompanyFlag = (flagLayout) => {
+
+const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing }) => {
   // Our reference point is the top of the flagpole
   const x = 0;
   const y = flagLayout[0].length;
 
-  const circleCoords = flagLayout.reduce((coords, columnDots, columnIndex) => {
-    // x for each column is half a space over, including padding between the circles
-    const columnOffset = columnIndex * (dotWidth / 2);
-    const columnX = x - columnOffset;
-    const columnY = y + columnOffset;
+  const columnOffset = {
+    x: dotSpacing * Math.sin(Math.PI / 3),
+    y: dotSpacing / 2,
+  };
 
-    columnDots.split("").forEach((dot, dotIndex) => {
-      const dotY = columnY + (dotIndex * dotWidth);
-      if (parseInt(dot, 2)&1) {
+  const circleCoords = flagLayout.reduce((coords, columnDots, columnIndex) => {
+    const columnX = x - (columnIndex * columnOffset.x);
+    const columnY = y + (columnIndex * columnOffset.y);
+
+    columnDots.split('').forEach((dot, dotIndex) => {
+      const dotY = columnY + (dotIndex * dotSpacing);
+      // eslint-disable-next-line no-bitwise
+      if (parseInt(dot, 2) & 1) {
         // Placeholder color for now, these will be ProjectDots at some point anyway
         coords.push({ x: columnX, y: dotY, color: 'grey' });
-      };
+      }
     });
 
     return coords;
   }, []);
 
+  const circles = circleCoords.map(coords => (
+    <ProjectDot
+      key={`${coords.x},${coords.y}`}
+      cx={coords.x + 64}
+      cy={coords.y}
+      r={dotWidth / 2}
+    />
+  ));
+
   return (
     <g>
-      {...circles}
+      {circles}
     </g>
   );
 };
 
 CompanyFlag.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  flagLayout: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dotWidth: PropTypes.number.isRequired,
+  dotSpacing: PropTypes.number.isRequired,
 };
 
 export default CompanyFlag;
