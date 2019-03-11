@@ -40,7 +40,7 @@ const initialState = {
   feature: 'theme',
   subFeature: '',
   company: '',
-  project: '',
+  project: 0,
   condition: { instrumentIndex: 0, itemIndex: 0 },
   indicator: '',
 };

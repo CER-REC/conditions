@@ -3,7 +3,7 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import { ViewTwoUnconnected } from '.';
-import { searchData, conditionData } from '../../mockData';
+import { searchData, conditionData, projectsData } from '../../mockData';
 
 const year = {
   start: 1970,
@@ -12,6 +12,7 @@ const year = {
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
+  projectsData: { projectsData },
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },
@@ -35,6 +36,7 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       setSelectedCondition: ({ selected }) => selectedCondition => ({
         selected: { ...selected, condition: selectedCondition },
       }),
+      setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
       openIntermediatePopup: () => () => ({}),
       openProjectDetails: () => () => ({}),
     },
@@ -48,6 +50,7 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       selected: {
         feature: 'theme',
         condition: { instrumentIndex: 0, itemIndex: 0 },
+        project: 1225,
       },
     },
   }))

@@ -1,65 +1,580 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import ProjectMenu from '.';
+
+const projectsData = [
+  {
+    id: 1226,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+  {
+    id: 1227,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+  {
+    id: 1228,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+  {
+    id: 1229,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+  {
+    id: 1230,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+];
+
+const threeProjectsData = [
+  {
+    id: 1228,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+  {
+    id: 1229,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+  {
+    id: 1230,
+    name: {
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInFrench',
+    },
+    shortName: {
+      english: 'Trans-Alta',
+      french: 'nameInFrench',
+    },
+    graphData: {
+      instrument: {
+        ROUTING: 12,
+        CONSTRUCTION: 11,
+        ABANDONMENT: 1,
+        OPENING: 22,
+        MISC: 2,
+        SAFETY: 9,
+        TARRIFS: 11,
+      },
+      theme: {
+        ADMININSTRATIVE: 10,
+        DAMAGE_PREVENTION: 0,
+        EMERGENCY_MANAGEMENT: 2,
+        ENFORCEMENT: 5,
+        ENVIRONMENTAL_PROTECTION: 3,
+        FINANCIAL: 0,
+        INTEGRITY_MANAGEMENT: 11,
+        MANAGEMENT_SYSTEM: 2,
+        SAFETY_MANAGEMENT: 7,
+        SECURITY: 1,
+        SOCIO_ECONOMIC: 11,
+        STANDARD_CONDITION: 0,
+        SUNSET_CLAUSE: 15,
+      },
+      phase: {
+        ABANDONMENT: 2,
+        DURING_CONSTRUCTION_PHASE: 7,
+        EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
+        INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+        NOT_CONSTRUCTION_RELATED: 33,
+        POST_CONSTRUCTION_PHASE: 4,
+        PRIOR_TO_CONSTRUCTION_PHASE: 2,
+        UNSPECIFIED: 5,
+      },
+      status: {
+        IN_PROGRESS: 1,
+        CLOSED: 8,
+        NO_FILING_REQUIRED: 2,
+        AWAITING_FILING: 22,
+        OVERDUE_FILING: 0,
+        UNDER_REVIEW: 7,
+        REVIEW_COMPLETE: 4,
+        AWAITING_IR_RESPONSE: 8,
+        READY_FOR_BOARD_DECISION: 3,
+        FURTHER_INFORMATION_REQUIRED: 12,
+        AMENDED: 0,
+        SATISFACTORY: 7,
+      },
+      type: {
+        NON_STANDARD: 3,
+        STANDARD: 11,
+      },
+      filing: {
+        REQUIRED: 0,
+        NOT_REQUIRED: 7,
+      },
+    },
+  },
+];
 
 describe('Components|ProjectMenu', () => {
   // Assuming that the actual graph data will have a filter coming from the view level
   // graph data being the subset of data filtered by the <FeaturedMenu /> state
   // Project name will be in either french or english depending on view state
-  const projectData = [
-    {
-      id: 1223,
-      name: 'Project Name 1',
-      graphData: [{ name: 'SECURITY', count: 5 }, { name: 'MANAGEMENT_SYSTEM', count: 0 }],
-    },
-    {
-      id: 1224,
-      name: 'Project Name 2',
-      graphData: [{ name: 'SECURITY', count: 10 }, { name: 'MANAGEMENT_SYSTEM', count: 19 }],
-    },
-    {
-      id: 1225,
-      name: 'Project Name 3',
-      graphData: [{ name: 'SECURITY', count: 4 }, { name: 'MANAGEMENT_SYSTEM', count: 29 }],
-    },
-    {
-      id: 1226,
-      name: 'Project Name 4',
-      graphData: [{ name: 'SECURITY', count: 6 }, { name: 'MANAGEMENT_SYSTEM', count: 22 }],
-    },
-    {
-      id: 1227,
-      name: 'Project Name 5',
-      graphData: [{ name: 'SECURITY', count: 5 }, { name: 'MANAGEMENT_SYSTEM', count: 0 }],
-    },
-    {
-      id: 1228,
-      name: 'Project Name 6',
-      graphData: [{ name: 'SECURITY', count: 10 }, { name: 'MANAGEMENT_SYSTEM', count: 19 }],
-    },
-    {
-      id: 1229,
-      name: 'Project Name 7',
-      graphData: [{ name: 'SECURITY', count: 4 }, { name: 'MANAGEMENT_SYSTEM', count: 29 }],
-    },
-    {
-      id: 1230,
-      name: 'Project Name 8',
-      graphData: [{ name: 'SECURITY', count: 6 }, { name: 'MANAGEMENT_SYSTEM', count: 22 }],
-    },
-  ];
 
-  const selectedProjectID = 1226;
+  const selectedProjectID = 1227;
   const noop = () => {};
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<ProjectMenu
-        projectData={projectData}
+        projectsData={projectsData}
         selectedProjectID={selectedProjectID}
         onChange={noop}
-        selectedFeature="Phase"
+        selectedFeature="theme"
       />);
     });
 
@@ -83,13 +598,13 @@ describe('Components|ProjectMenu', () => {
     test('should pass down a maximum of 5 projects to the List', () => {
       const list = wrapper.find('List');
       // passed props
-      expect(list.props().items).toHaveLength(5);
+      expect(list.props().items).toHaveLength(4);
       // rendered output
-      expect(list.shallow().find('ProjectChart')).toHaveLength(5);
+      expect(list.shallow().find('ProjectChart')).toHaveLength(4);
     });
 
     test('should pass the List the index of the selected project', () => {
-      expect(wrapper.find('List').props().selected).toBe(2);
+      expect(wrapper.find('List').props().selected).toBe(1);
     });
 
     test('should pass down an onChange function to the List', () => {
@@ -98,52 +613,21 @@ describe('Components|ProjectMenu', () => {
     });
   });
 
-  // expectedResults is the input coming into the project menu
-  // and the output to the list component
-  // [0] input, [1] output
-  const expectedResults = [
-    [{ total: 8, selected: 0, clickedIndex: 2 }, { total: 3, selected: 0, projectID: 1225 }],
-    [{ total: 8, selected: 1, clickedIndex: 3 }, { total: 4, selected: 1, projectID: 1226 }],
-    [{ total: 8, selected: 2, clickedIndex: 4 }, { total: 5, selected: 2, projectID: 1227 }],
-    [{ total: 8, selected: 3, clickedIndex: 1 }, { total: 5, selected: 2, projectID: 1225 }],
-    [{ total: 8, selected: 4, clickedIndex: 0 }, { total: 5, selected: 2, projectID: 1225 }],
-    [{ total: 8, selected: 5, clickedIndex: 4 }, { total: 5, selected: 2, projectID: 1230 }],
-    [{ total: 8, selected: 6, clickedIndex: 1 }, { total: 4, selected: 2, projectID: 1228 }],
-    [{ total: 8, selected: 7, clickedIndex: 0 }, { total: 3, selected: 2, projectID: 1228 }],
-    [{ total: 3, selected: 2, clickedIndex: 1 }, { total: 3, selected: 2, projectID: 1224 }],
-    [{ total: 3, selected: 1, clickedIndex: 2 }, { total: 3, selected: 1, projectID: 1225 }],
-    [{ total: 4, selected: 1, clickedIndex: 1 }, { total: 4, selected: 1, projectID: 1224 }],
-    [{ total: 6, selected: 5, clickedIndex: 2 }, { total: 3, selected: 2, projectID: 1228 }],
-  ];
-
-  for (let i = 0; i < expectedResults.length; i += 1) {
-    const [input, output] = expectedResults[i];
-    describe(`with index ${input.selected} selected of ${input.total} projects`, () => {
-      let onChange;
-      let wrapper;
-      beforeEach(() => {
-        onChange = jest.fn();
-        wrapper = shallow(<ProjectMenu
-          projectData={projectData.slice(0, input.total)}
-          selectedProjectID={projectData[input.selected].id}
-          onChange={onChange}
-          selectedFeature="theme"
-        />);
-      });
-
-      test(`should pass the List ${output.total} projects`, () => {
-        expect(wrapper.find('List').props().items).toHaveLength(output.total);
-      });
-
-      test(`should pass the List a selected project index of ${output.selected}`, () => {
-        expect(wrapper.find('List').props().selected).toBe(output.selected);
-      });
-
-      test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
-        wrapper.find('List').props().onChange(input.clickedIndex);
-        expect(onChange).toHaveBeenCalledTimes(1);
-        expect(onChange).toHaveBeenLastCalledWith(output.projectID);
-      });
+  describe('with 3 projects', () => {
+    let onChange;
+    let wrapper;
+    beforeEach(() => {
+      onChange = jest.fn();
+      wrapper = shallow(<ProjectMenu
+        projectsData={threeProjectsData}
+        selectedProjectID={1228}
+        onChange={onChange}
+        selectedFeature="theme"
+      />);
     });
-  }
+
+    test('should pass a list of 3 projects', () => {
+      expect(wrapper.find('List').props().items).toHaveLength(3);
+    });
+  });
 });

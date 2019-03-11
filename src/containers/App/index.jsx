@@ -6,11 +6,17 @@ import ViewTwo from '../ViewTwo';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 
-import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
+import {
+  conditionCountsByYear,
+  conditionCountsByCommodity,
+  conditionData,
+  projectsData,
+} from '../../mockData';
 
 const store = createStore();
 
 const props = {
+  projectsData,
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionDetails: {
