@@ -45,7 +45,7 @@ const viewports = {
     styles: { width: '768px', height: '100%' },
   },
 };
-addParameters({viewport: { viewports, defaultViewport: 'fullscreen' }});
+addParameters({ viewport: { viewports, defaultViewport: 'fullscreen' } });
 
 addParameters({
   options: {
