@@ -68,8 +68,6 @@ class WheelRay extends React.Component {
             <text className="TextLabels">
               {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
             </text>
-            {/* This rect will be used to denote the letter separation in the location wheel
-            also to can be used to mark the search */}
             <CompanyFlag
               y={-170}
               flagLayout={
@@ -88,9 +86,10 @@ class WheelRay extends React.Component {
               dotWidth={6}
               dotSpacing={8}
             />
+            {/* This rect shows the wheel segments; for debugging */}
             {/* <rect
               y="-181"
-              fill="magenta"
+              fill="red"
               height={(index === 0) ? '323px' : height}
               width={1}
               key={item._id}
