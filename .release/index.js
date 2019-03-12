@@ -58,6 +58,7 @@ const writerOpts = {
     return commit;
     /* eslint-enable no-param-reassign */
   },
+  commitGroupsSort: 'title',
   commitsSort: (a, b) => {
     if (commitTypeOrder.includes(a.type) || commitTypeOrder.includes(b.type)) {
       if (!commitTypeOrder.includes(a.type)) { return 1; }
@@ -69,6 +70,7 @@ const writerOpts = {
     return a.type.localeCompare(b.type)
       || a.subject.localeCompare(b.subject);
   },
+  noteGroupsSort: 'title',
 };
 
 module.exports = { parserOpts, writerOpts };
