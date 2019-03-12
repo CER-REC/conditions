@@ -7640,11 +7640,11 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -7929,11 +7929,11 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -8185,11 +8185,11 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -8471,11 +8471,11 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -8727,11 +8727,11 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -9020,11 +9020,11 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -9302,11 +9302,11 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -9558,11 +9558,11 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -9851,11 +9851,11 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -10140,11 +10140,11 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -10396,11 +10396,11 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     className="Bar"
                     style={
                       Object {
-                        "backgroundColor": undefined,
+                        "backgroundColor": "rgb(201, 215, 65)",
                         "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
-                    title="Theme - common.theme.ADMININSTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
