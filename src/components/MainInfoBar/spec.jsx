@@ -12,7 +12,6 @@ describe('Components|MainInfoBar', () => {
   beforeEach(() => {
     spy = {
       setActiveDialog: jest.fn(),
-      toggleExpanded: jest.fn(),
       openDataModal: jest.fn(),
       openScreenshotModal: jest.fn(),
     };
@@ -22,7 +21,7 @@ describe('Components|MainInfoBar', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<MainInfoBar
-        expanded
+        activeDialog="methodology"
         {...spy}
       />);
     });
@@ -35,7 +34,7 @@ describe('Components|MainInfoBar', () => {
         .first()
         .simulate('click', eventFuncs);
 
-      expect(spy.setActiveDialog).toHaveBeenCalledTimes(1);
+      expect(spy.setActiveDialog).toHaveBeenCalledWith('about');
     });
 
     test('should pass its setActiveDialog callback to the collapse arrows', () => {
@@ -43,7 +42,7 @@ describe('Components|MainInfoBar', () => {
         .find('CircleContainer')
         .simulate('click', eventFuncs);
 
-      expect(spy.toggleExpanded).toHaveBeenCalledTimes(1);
+      expect(spy.setActiveDialog).toHaveBeenCalledWith('');
     });
   });
 

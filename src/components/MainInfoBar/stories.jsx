@@ -5,12 +5,6 @@ import withStatus from '../../../.storybook/addon-status';
 import MainInfoBar from '.';
 import ReadMe from './README.md';
 
-const setActiveDialog = () => activeDialog => (
-  { activeDialog }
-);
-
-const toggleExpanded = () => expand => ({ expanded: expand });
-
 const props = {
   openDataModal: () => alert('Download Data window'),
   openScreenshotModal: () => alert('Download Screenshot window'),
@@ -25,11 +19,10 @@ const StoryContainer = ({children}) => (
 
 storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['setActiveDialog', 'toggleExpanded'] }))
+  .addDecorator(withInteraction({ actions: ['setActiveDialog'] }))
   .add('with interaction', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="about"
         {...props}
         {...getInteractionProps()}
       />
@@ -37,15 +30,16 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   ),
   {
     interaction: {
-      state: { activeDialog: '', expanded: false },
-      actions: { setActiveDialog, toggleExpanded },
+      state: { activeDialog: '' },
+      actions: {
+        setActiveDialog: () => activeDialog => ({ activeDialog }),
+      },
     },
   })
   .add('About', () => (
     <StoryContainer>
       <MainInfoBar
         activeDialog="about"
-        expanded
         {...props}
         {...getInteractionProps()}
       />
@@ -55,7 +49,6 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
     <StoryContainer>
       <MainInfoBar
         activeDialog="methodology"
-        expanded
         {...props}
         {...getInteractionProps()}
       />
@@ -65,7 +58,6 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
     <StoryContainer>
       <MainInfoBar
         activeDialog="downloads"
-        expanded
         {...props}
         {...getInteractionProps()}
       />
