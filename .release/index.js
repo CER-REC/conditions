@@ -20,7 +20,7 @@ const parserOpts = {
   headerCorrespondence: [
     'type',
     'scope',
-    'subject'
+    'subject',
   ],
   revertPattern: /^revert:\s([\s\S]*?)\s*This reverts commit (\w*)\./,
   revertCorrespondence: ['header', 'hash'],
@@ -38,15 +38,18 @@ const writerOpts = {
   // Required due to upstream bug preventing all types being displayed.
   // Bug: https://github.com/conventional-changelog/conventional-changelog/issues/317
   // Fix: https://github.com/conventional-changelog/conventional-changelog/pull/410
-  transform: (commit, context) => {
+  transform: (commit) => {
     /* eslint-disable no-param-reassign */
     commit.notes.forEach((note) => { note.title = 'BREAKING CHANGES'; });
 
     commit.type = commitTypes[commit.type];
     if (!commit.type) { return undefined; }
 
-    if (commit.scope === '*') { commit.scope = ''; }
-    if (commit.scope === 'deps') { commit.scope = 'Dependencies'; }
+    if (commit.scope === '*') {
+      commit.scope = '';
+    } else if (commit.scope === 'deps') {
+      commit.scope = 'Dependencies';
+    }
 
     if (typeof commit.hash === 'string') {
       commit.hash = commit.hash.substring(0, 7);

@@ -1,4 +1,4 @@
-## [0.2.1](https://gitlab.com/vizworx/neb/conditions-visualization/compare/v0.2.0...v0.2.1) (2019-03-01)
+## [0.2.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.2.1) (2019-03-01)
 
 
 ### viewTwo
@@ -35,7 +35,7 @@
 
 * **Features:** uses Redux actions for ConditionDetails, relocates mock data (fbd7fc6)
 
-# [0.2.0](https://gitlab.com/vizworx/neb/conditions-visualization/compare/v0.1.0...v0.2.0) (2019-03-01)
+# [0.2.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.2.0) (2019-03-01)
 
 
 ### ViewTwo
@@ -670,7 +670,7 @@
 
 * **Wheel PullToSpin WheeRay:** deleted WheelRayLegend
 
-# [0.1.0](https://gitlab.com/vizworx/neb/conditions-visualization/compare/v0.0.1...v0.1.0) (2019-02-13)
+# [0.1.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.1.0) (2019-02-13)
 
 
 ### Storybook
@@ -1691,7 +1691,7 @@ pulling from
 * **CompanyWheel, PullToSpin components:** Renaming of files
 * **Stream Graph:** Tests
 
-## [0.0.1](https://gitlab.com/vizworx/neb/conditions-visualization/compare/4455660...v0.0.1) (2019-01-04)
+## [0.0.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.0.1) (2019-01-04)
 
 
 ### Storybook
