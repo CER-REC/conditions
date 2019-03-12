@@ -15,7 +15,8 @@
     "build:modified": "git show -s --format=%cd HEAD --date=short > LAST_MODIFIED",
     "build:update-version": "node -p -e \"require('./package.json').version\" > VERSION",
     "build:changelog": "conventional-changelog -n .release/index.js -i CHANGELOG.md -s",
-    "build": "webpack && npm run build:modified && npm run build:update-version"
+    "build": "webpack && npm run build:modified && npm run build:update-version",
+    "version": "npm run build:changelog && git add CHANGELOG.md"
   },
   "contributors": [
     "Brandon Devaleriola",
