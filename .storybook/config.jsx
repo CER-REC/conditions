@@ -49,6 +49,7 @@ addParameters({ viewport: { viewports, defaultViewport: 'fullscreen' } });
 
 addParameters({
   options: {
+    brandTitle: 'Conditions DevDoc',
     panelPosition: 'right',
   },
 });
