@@ -16,5 +16,11 @@
     // Because we're using inline-block to align the elements, we want to remove
     // the menus right margin as well, since its also the end of the row
     > .row > section.menus { margin-right: 0; }
+
+    // We want the condition details to sit at the bottom of the project menu
+    section.companyBreakdown {
+      overflow: visible;
+      margin-bottom: 0;
+    }
   }
 }

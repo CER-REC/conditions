@@ -4,37 +4,15 @@ import React from 'react';
 import classNames from 'classnames';
 import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
+import {
+  circleCategory,
+  placeholderCategory,
+  resettingCategory,
+  visibleTextCategory,
+} from './categories';
 
-const circleCategory = Matter.Body.nextCategory();
-const visibleTextCategory = Matter.Body.nextCategory();
-const placeholderCategory = Matter.Body.nextCategory();
-const resettingCategory = Matter.Body.nextCategory();
-
-const calculatePosition = keyword => ({
-  x: keyword.outline.x + (keyword.outline.width / 2),
-  y: keyword.outline.y + (keyword.outline.height / 2),
-});
-
-const calculateTextOffset = keyword => ({
-  x: keyword.textOffset.x,
-  y: keyword.textOffset.y - (keyword.outline.height / 2),
-});
-
-const isVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
-
-const calculateVelocity = (start, end, friction) => {
-  let loop = 0;
-  let current = start;
-  let prev = start + ((start - end) / 1000);
-  const direction = Math.abs(start - end) / (start - end);
-  while ((current - end) * direction > 0 && loop < 100) {
-    loop += 1;
-    const velocity = (current - prev) / friction;
-    prev = current;
-    current += velocity;
-  }
-  return current - prev;
-};
+// Found at https://gist.github.com/gre/1650294
+const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
 
 export default class PhysicsVariant extends React.Component {
   static propTypes = {
@@ -44,23 +22,24 @@ export default class PhysicsVariant extends React.Component {
   constructor(props) {
     super(props);
     this.groupRef = React.createRef();
+    this.loopID = null;
+    this.lastTime = 0;
+    this.lastDeltaTime = 0;
+  }
+
+  componentDidMount() {
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
     this.engine = Matter.Engine.create({ world });
-    this.lastTime = null;
-    this.loopID = null;
 
     // Set up bodies
-    this.circle = Matter.Bodies.circle(-100, 200, 50, {
-      collisionFilter: {
-        category: circleCategory,
-      },
+    this.circle = Matter.Bodies.circle(200, 200, 50, {
+      collisionFilter: { category: circleCategory },
     });
-    Matter.World.add(this.engine.world, this.circle);
 
     this.keywords = {};
     this.props.keywords.forEach((keyword) => {
       const { outline } = keyword;
-      const position = calculatePosition(keyword);
+      const position = this.calculatePosition(keyword);
       const keywordBody = Matter.Bodies.rectangle(
         position.x,
         position.y,
@@ -77,55 +56,59 @@ export default class PhysicsVariant extends React.Component {
       keywordBody.render.className = keyword.className;
       keywordBody.render.value = keyword.value;
       keywordBody.render.originalData = keyword;
-      keywordBody.render.textOffset = calculateTextOffset(keyword);
+      keywordBody.render.textOffset = this.calculateTextOffset(keyword);
 
       this.keywords[keyword.value] = keywordBody;
     });
+
+    // Add bodies to world
+    Matter.World.add(this.engine.world, this.circle);
     Matter.World.add(this.engine.world, Object.values(this.keywords));
 
-    Matter.Engine.run(this.engine);
-  }
-
-  componentDidMount() {
-    Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.3, y: 0.01 });
+    //  disable applied force to help with loading bug
+    // Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.15, y: 0.005 });
 
     const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse,
-      constraint: {
-        stiffness: 0.2,
-        render: {
-          visible: false,
-        },
-      },
+      constraint: { render: { visible: false } },
     });
     this.mouse = mouse;
 
     Matter.World.add(this.engine.world, mouseConstraint);
 
-    const runner = Matter.Runner.create();
-
-    Matter.Runner.run(runner, this.engine);
+    Matter.Engine.run(this.engine);
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
-    this.loop();
+    Matter.Runner.run(Matter.Runner.create(), this.engine);
+    this.loop(window.performance.now());
   }
 
   componentWillUnmount() {
+    window.cancelAnimationFrame(this.loopID);
     Matter.Events.off(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.off(this.engine, 'collisionStart', this.onCollision);
-    window.cancelAnimationFrame(this.loopID);
+    // TODO: Is there any other cleanup that should be done for Matter.js?
+    // It seems like all of the matter elements will reference each other, and
+    // will result in a memory leak.
   }
 
   onUpdate = (update) => {
-    let bodiesChanged = false;
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
-      const bodyChanged = (Math.abs(body.position.x - body.positionPrev.x) > 0.01)
-        || (Math.abs(body.position.y - body.positionPrev.y) > 0.01)
-        || ((Math.abs(body.angle - body.angle) * 180) / Math.PI > 0.01);
+      // Stop the body from moving if its reached a minimum movement
+      const newVelocity = { ...body.velocity };
+      if (Math.abs(body.position.x - body.positionPrev.x) < 0.01) { newVelocity.x = 0; }
+      if (Math.abs(body.position.y - body.positionPrev.y) < 0.01) { newVelocity.y = 0; }
+      if (newVelocity.x !== body.velocity.x || newVelocity.y !== body.velocity.y) {
+        Matter.Body.setVelocity(body, newVelocity);
+      }
 
-      // Check if any positions have updated
-      bodiesChanged = bodiesChanged || bodyChanged;
+      if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
+        Matter.Body.setAngularVelocity(0);
+      }
+
+      // Check if the body is still moving
+      const bodyChanged = !!(body.speed || body.angularSpeed);
 
       // If the circle has stopped moving, increase its friction
       if (body.collisionFilter.category === circleCategory && !bodyChanged) {
@@ -134,6 +117,12 @@ export default class PhysicsVariant extends React.Component {
 
       if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
         body.collisionFilter.category = placeholderCategory;
+        const targetPos = this.calculatePosition(body.render.originalData);
+        // Ensure everything is in the correct position
+        Matter.Body.setVelocity(body, { x: 0, y: 0 });
+        Matter.Body.setPosition(body, targetPos);
+        Matter.Body.setAngularVelocity(body, 0);
+        Matter.Body.setAngle(body, 0);
       }
 
       // Check if any keywords that have been displaced can move back
@@ -148,12 +137,15 @@ export default class PhysicsVariant extends React.Component {
         if (Matter.Bounds.overlaps(originalBounds, this.circle.bounds) === false) {
           body.collisionFilter.category = resettingCategory;
           body.collisionFilter.mask &= ~visibleTextCategory;
-          this.resetBodyPosition(body);
         }
+      } else if (body.collisionFilter.category === resettingCategory) {
+        const targetPos = this.calculatePosition(body.render.originalData);
+        newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x);
+        newVelocity.y = this.calculateVelocity(body.position.y, targetPos.y);
+        Matter.Body.setVelocity(body, newVelocity);
+        Matter.Body.setAngularVelocity(body, this.calculateVelocity(body.angle, 0));
       }
     });
-    // TODO: This seems like a really bad thing to run every frame
-    this.forceUpdate();
   };
 
   onCollision = collision => collision.pairs.forEach((pair) => {
@@ -170,84 +162,97 @@ export default class PhysicsVariant extends React.Component {
       pair.isActive = false;
       return;
     }
-
     keyword.collisionFilter.category = visibleTextCategory;
     keyword.collisionFilter.mask |= visibleTextCategory;
   });
 
-  loop = () => {
-    const currTime = 0.001 * Date.now();
+  loop = (currTime) => {
+    const deltaTime = currTime - (this.lastTime || 0);
     Matter.Engine.update(
       this.engine,
-      1000 / 60,
-      this.lastTime ? currTime / this.lastTime : 1,
+      this.deltaTime,
+      this.lastDeltaTime ? (deltaTime / this.lastDeltaTime) : 1,
     );
     this.lastTime = currTime;
+    this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
+    this.forceUpdate();
   }
 
-  resetBodyPosition = (body) => {
-    const targetPos = calculatePosition(body.render.originalData);
-    const frictionAir = 1 - body.frictionAir;
-
-    const velocity = {
-      x: calculateVelocity(body.position.x, targetPos.x, frictionAir),
-      y: calculateVelocity(body.position.y, targetPos.y, frictionAir),
+  calculatePosition = (keyword) => {
+    const word = {
+      x: keyword.outline.x + (keyword.outline.width / 2),
+      y: keyword.outline.y + (keyword.outline.height / 2),
     };
-    Matter.Body.setVelocity(body, velocity);
-
-    const angleVelocity = calculateVelocity(body.angle, 0, frictionAir);
-    Matter.Body.setAngularVelocity(body, angleVelocity);
-
-    // TODO: Temporary placeholder to make sure they snap to the correct spot
-    setTimeout(() => {
-      Matter.Body.setVelocity(body, { x: 0, y: 0 });
-      Matter.Body.setPosition(body, targetPos);
-      Matter.Body.setAngularVelocity(body, 0);
-      Matter.Body.setAngle(body, 0);
-      this.forceUpdate();
-    }, 2000);
+    return word;
   };
 
-  render() {
+  calculateTextOffset = (keyword) => {
+    const word = {
+      x: keyword.textOffset.x,
+      y: keyword.textOffset.y - (keyword.outline.height / 2),
+    };
+    return word;
+  };
+
+  calculateVelocity = (start, end) => {
+    const distance = end - start;
+    const distanceScale = Math.min(Math.abs(distance) / 100, 1);
+    const direction = distance / Math.abs(distance);
+    return easeOutCubic(distanceScale) * direction * 2;
+  };
+
+  isWordVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
+
+  getBodies = () => {
     const bodies = Matter.Composite.allBodies(this.engine.world)
       .sort((a, b) => {
-        if (isVisible(a) && !isVisible(b)) { return 1; }
-        if (isVisible(b) && !isVisible(a)) { return -1; }
+        if (this.isWordVisible(a) && !this.isWordVisible(b)) { return 1; }
+        if (this.isWordVisible(b) && !this.isWordVisible(a)) { return -1; }
         return 0;
-      })
-      .map((body) => {
-        const d = body.vertices
-          .concat(body.vertices[0]) // Add it onto the end so we create a full path
-          .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
-          .join(' ');
-        if (body === this.circle) {
-          return <path key="guide" className="guide" d={d} />;
-        }
-
-        return (
-          <g
-            key={body.id}
-            className={classNames(
-              'keyword',
-              body.render.className,
-              { textVisible: isVisible(body) },
-            )}
-          >
-            <text
-              x={body.position.x + body.render.textOffset.x}
-              y={body.position.y + body.render.textOffset.y}
-              transform={`rotate(${body.angle * 180 / Math.PI} ${body.position.x} ${body.position.y})`}
-            >
-              {body.render.value}
-            </text>
-            <path d={d} />
-          </g>
-        );
       });
+    return bodies;
+  }
+
+  // TODO: optimize the nested map functions
+  getWords = () => {
+    if (!this.engine || !this.engine.world) { return null; }
+    const bodies = this.getBodies();
+    const words = bodies.map((body) => {
+      const d = body.vertices
+        .concat(body.vertices[0]) // Add it onto the end so we create a full path
+        .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
+        .join(' ');
+      if (body === this.circle) {
+        return <path key="guide" className="guide" d={d} />;
+      }
+      return (
+        <g
+          key={body.id}
+          className={classNames(
+            'keyword',
+            body.render.className,
+            { textVisible: this.isWordVisible(body) },
+          )}
+        >
+          <text
+            x={body.position.x + body.render.textOffset.x}
+            y={body.position.y + body.render.textOffset.y}
+            transform={`rotate(${body.angle * 180 / Math.PI} ${body.position.x} ${body.position.y})`}
+          >
+            {body.render.value}
+          </text>
+          <path d={d} />
+        </g>
+      );
+    });
+    return words;
+  }
+
+  render() {
     return (
       <g ref={this.groupRef}>
-        {bodies}
+        {this.getWords()}
       </g>
     );
   }

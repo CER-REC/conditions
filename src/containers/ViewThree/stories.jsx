@@ -9,10 +9,6 @@ const props = {
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionDetails: {
-    isExpandable: true,
-    searchKeywords: {
-      include: ['hello'],
-    },
     selectedProject: 'Project Name',
     data: conditionData,
   },
@@ -30,7 +26,9 @@ const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((a
 storiesForView('Containers|ViewThree', module, ReadMe)
   .addDecorator(withInteraction({
     actions: {
-      setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature, subFeature: '' } }),
+      setSelectedFeature: ({ selected }) => feature => ({
+        selected: { ...selected, feature, subFeature: '' },
+      }),
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
@@ -40,12 +38,14 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       expandDetailView: ({ detailViewExpanded }) => () => ({
         detailViewExpanded: !detailViewExpanded,
       }),
-      ...pendingActions,
       setBubbleChartIndicator: ({ chartIndicatorPosition }) => bubble => (
         { chartIndicatorPosition: { ...chartIndicatorPosition, bubble } }
       ),
+      ...pendingActions,
     },
     state: {
+      included: [],
+      excluded: [],
       selected: {
         feature: 'theme',
         subFeature: '',

@@ -9,6 +9,8 @@ import ConditionList from './ConditionList';
 import Content from './Content';
 import Details from './Details';
 
+import { conditionData } from '../../proptypes';
+
 class ConditionDetails extends React.Component {
   findSelectedItem = () => {
     let count = 0;
@@ -129,37 +131,14 @@ ConditionDetails.propTypes = {
     include: PropTypes.arrayOf(PropTypes.string),
     exclude: PropTypes.arrayOf(PropTypes.string),
   }),
-  data: PropTypes.arrayOf(PropTypes.shape({
-    instrumentNumber: PropTypes.string.isRequired,
-    issuanceDate: PropTypes.string.isRequired,
-    effectiveDate: PropTypes.string.isRequired,
-    sunsetDate: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    activity: PropTypes.string.isRequired,
-    conditions: PropTypes.arrayOf(PropTypes.shape({
-      binnedValue: PropTypes.number.isRequired,
-      fill: PropTypes.arrayOf(PropTypes.string).isRequired,
-      keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-      text: PropTypes.string.isRequired,
-      details: PropTypes.shape({
-        theme: PropTypes.string.isRequired,
-        instrument: PropTypes.string.isRequired,
-        phase: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        status: PropTypes.string.isRequired,
-        filing: PropTypes.string.isRequired,
-      }).isRequired,
-    })).isRequired,
-  })).isRequired,
+  data: conditionData.isRequired,
   selectedItem: PropTypes.shape({
     instrumentIndex: PropTypes.number,
     itemIndex: PropTypes.number,
   }),
   openProjectDetails: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func,
   updateSelectedItem: PropTypes.func.isRequired,
 };
 
@@ -168,6 +147,7 @@ ConditionDetails.defaultProps = {
   expanded: false,
   searchKeywords: { include: [], exclude: [] },
   selectedItem: { instrumentIndex: 0, itemIndex: -1 },
+  toggleExpanded: () => {},
 };
 
 export default ConditionDetails;

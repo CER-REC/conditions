@@ -7,47 +7,24 @@ const keywords = [
   ['deer', { conditions: 1200, category: ['wildlife & habitat'] }],
   ['alberta', { conditions: 400, category: ['administration & filings'] }],
 ];
-const selectedWords = ['deer'];
+const includeKeywords = ['deer'];
+const excludeKeywords = [];
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-xdescribe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
-  xdescribe('error testing for props', () => {
-    test('if first part of tuple is not a string', () => {
-      console.error = jest.fn();
-      console.error.mockClear();
-      shallow(
-        <KeywordList
-          selectedWords={selectedWords}
-          keywords={[[12, { conditions: 1200, category: ['wildlife & habitat'] }]]}
-          onClick={noop}
-        />,
-      );
-      expect(console.error).toHaveBeenCalledTimes(1);
-    });
-    test('if length of tuple is greater than two', () => {
-      console.error = jest.fn();
-      console.error.mockClear();
-      shallow(
-        <KeywordList
-          selectedWords={selectedWords}
-          keywords={[['deer', { conditions: 1200, category: ['wildlife & habitat'] }, 'test']]}
-          onClick={noop}
-        />,
-      );
-      expect(console.error).toHaveBeenCalledTimes(1);
-    });
-  });
-
-  xdescribe('with default props', () => {
+describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
+  describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(
         <KeywordList
-          selectedWords={selectedWords}
+          includeKeywords={includeKeywords}
+          excludeKeywords={excludeKeywords}
           keywords={keywords}
-          onClick={noop}
+          setIncluded={noop}
+          setExcluded={noop}
+          isExclude={false}
         />,
       );
     });
@@ -67,27 +44,61 @@ xdescribe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
     });
   });
 
-  xdescribe('onClick for word', () => {
+  describe('onClick for included', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
         <KeywordList
-          selectedWords={selectedWords}
+          includeKeywords={includeKeywords}
+          excludeKeywords={excludeKeywords}
           keywords={keywords}
-          onClick={spy}
+          setIncluded={spy}
+          setExcluded={noop}
+          isExclude={false}
         />,
       );
     });
-    test('onClick on - symbol, must call onClick prop', () => {
+    test('if include selected, onClick on - symbol, must call setIncluded prop', () => {
       const updatedWrapper = wrapper.find('li');
       const first = updatedWrapper.first().find('.icon');
       first.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    test('onClick on + symbol, must call onClick prop', () => {
+    test('if include selected, onClick on + symbol, must call setIncluded prop', () => {
+      const updatedWrapper = wrapper.find('li');
+      const last = updatedWrapper.last().find('.icon');
+      last.simulate('click', eventFuncs);
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('onClick for excluded', () => {
+    let wrapper;
+    let spy;
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = shallow(
+        <KeywordList
+          includeKeywords={[]}
+          excludeKeywords={['deer']}
+          keywords={keywords}
+          setIncluded={noop}
+          setExcluded={spy}
+          isExclude
+        />,
+      );
+    });
+    test('if include selected, onClick on - symbol, must call setExcluded prop', () => {
+      const updatedWrapper = wrapper.find('li');
+      const first = updatedWrapper.first().find('.icon');
+      first.simulate('click', eventFuncs);
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    test('if include selected, onClick on + symbol, must call setExcluded prop', () => {
       const updatedWrapper = wrapper.find('li');
       const last = updatedWrapper.last().find('.icon');
       last.simulate('click', eventFuncs);

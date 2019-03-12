@@ -1,5 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+// Imported instead of using string lookup because of InjectIntl
+import FeatureFlag from '../../FeatureFlag';
 
 import ProjectChart from '.';
 
@@ -54,7 +56,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
     });
 
     test('should render 14 FeatureFlags', () => {
-      expect(wrapper.find('.FlagWrapper').children()).toHaveLength(14);
+      expect(wrapper.find(FeatureFlag)).toHaveLength(14);
     });
   });
 

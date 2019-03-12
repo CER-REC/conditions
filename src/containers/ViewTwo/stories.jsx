@@ -3,13 +3,23 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import { ViewTwoUnconnected } from '.';
-import { searchData } from '../../mockData';
+import { searchData, conditionData } from '../../mockData';
 
 const year = {
   start: 1970,
   end: 1980,
 };
 const categories = ['all', 'wildlife & habitat'];
+
+const props = {
+  availableProjectYear: { year },
+  availableCategories: { categories },
+  suggestedKeywords: { searchData },
+  conditionDetails: {
+    selectedProject: 'Project Name',
+    data: conditionData,
+  },
+};
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
   .addDecorator(withInteraction({
@@ -22,6 +32,11 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       setIncluded: () => words => ({ included: words }),
       setExcluded: () => words => ({ excluded: words }),
       setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
+      setSelectedCondition: ({ selected }) => selectedCondition => ({
+        selected: { ...selected, condition: selectedCondition },
+      }),
+      openIntermediatePopup: () => () => ({}),
+      openProjectDetails: () => () => ({}),
     },
     state: {
       browseBy: 'company',
@@ -32,15 +47,20 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       findAny: true,
       selected: {
         feature: 'theme',
+        condition: { instrumentIndex: 0, itemIndex: 0 },
       },
     },
   }))
   .add('default', () => (
     <ViewTwoUnconnected
-      availableProjectYear={year}
-      availableCategories={categories}
-      suggestedKeywords={searchData}
+      {...props}
       {...getInteractionProps()}
     />
   ))
-  .add('layout only', () => <ViewTwoUnconnected layoutOnly {...getInteractionProps()} />);
+  .add('layout only', () => (
+    <ViewTwoUnconnected
+      layoutOnly
+      {...props}
+      {...getInteractionProps()}
+    />
+  ));

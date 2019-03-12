@@ -36,18 +36,18 @@ describe('Components|SearchBar/Tab', () => {
     });
   });
 
-  xdescribe('with active prop', () => {
+  describe('with active prop', () => {
     test('set to true, it doesn\'t render bottom border', () => {
       const wrapper = shallow(
         <Tab isFilter={false} isActive onClick={noop} />,
       );
-      expect(wrapper.props().style.borderBottom).toBe('none');
+      expect(wrapper.hasClass('inactiveTab')).toBe(false);
     });
     test('set to false, render bottom border', () => {
       const wrapper = shallow(
         <Tab isFilter={false} isActive={false} onClick={noop} />,
       );
-      expect(wrapper.props().style.borderBottom).toBe('1px solid');
+      expect(wrapper.hasClass('inactiveTab')).toBe(true);
     });
   });
   describe('with onClick function', () => {

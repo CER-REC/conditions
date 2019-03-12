@@ -8,7 +8,12 @@ import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import TrendButton from '../../components/TrendButton';
-import { browseByType, yearRangeType, featureTypes } from '../../proptypes';
+import {
+  browseByType,
+  yearRangeType,
+  featureTypes,
+  conditionData,
+} from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
@@ -17,7 +22,6 @@ import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import './styles.scss';
-import data from '../../components/ConditionDetails/testData';
 
 const noop = () => {};
 
@@ -59,19 +63,6 @@ const projectData = [
 // SearchBar (Data)
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 const availableYearRange = { start: 1970, end: 1980 };
-
-const defaultProps = {
-  data,
-  selectedProject: 'Keystone XL',
-  searchKeywords: {
-    include: ['hello'],
-  },
-  // selectedItem: { instrumentIndex: 1, itemIndex: -1 },
-  /* eslint-disable no-alert */
-  openProjectDetails: project => alert(`Project details for: ${project}`),
-  openIntermediatePopup: instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`),
-  /* eslint-enable no-alert */
-};
 
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
@@ -136,9 +127,16 @@ const ViewTwo = props => (
       </section>
       <section className="conditions">
         <ConditionDetails
-          {...defaultProps}
+          selectedItem={props.selected.condition}
+          updateSelectedItem={props.setSelectedCondition}
+          openIntermediatePopup={props.openIntermediatePopup}
+          openProjectDetails={props.openProjectDetails}
           toggleExpanded={noop}
-          updateSelectedItem={noop}
+          searchKeywords={{
+            include: props.included,
+            exclude: props.excluded,
+          }}
+          {...props.conditionDetails}
         />
       </section>
     </section>
@@ -150,6 +148,10 @@ ViewTwo.propTypes = {
   browseBy: browseByType.isRequired,
   selected: PropTypes.shape({
     feature: featureTypes.isRequired,
+    condition: PropTypes.shape({
+      instrumentIndex: PropTypes.number.isRequired,
+      itemIndex: PropTypes.number.isRequired,
+    }).isRequired,
   }).isRequired,
   setBrowseBy: PropTypes.func.isRequired,
   setFindAny: PropTypes.func.isRequired,
@@ -163,6 +165,20 @@ ViewTwo.propTypes = {
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
+
+  conditionDetails: PropTypes.shape({
+    isExpandable: PropTypes.bool,
+    expanded: PropTypes.bool,
+    selectedProject: PropTypes.string.isRequired,
+    // searchKeywords: PropTypes.shape({
+    //   include: PropTypes.arrayOf(PropTypes.string),
+    //   exclude: PropTypes.arrayOf(PropTypes.string),
+    // }),
+    data: conditionData.isRequired,
+  }).isRequired,
+  setSelectedCondition: PropTypes.func.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
@@ -188,6 +204,7 @@ export default connect(
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
+    setSelectedCondition: selectedCreators.setSelectedCondition,
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
@@ -196,4 +213,3 @@ export default connect(
     setExcluded: searchCreators.setExcluded,
   },
 )(ViewTwo);
-

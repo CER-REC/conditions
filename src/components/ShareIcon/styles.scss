@@ -1,11 +1,15 @@
+@import "../../styles/colors";
+
 .ShareIcon {
   cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
 
   .CircleContainer {
     background: transparent;
   }
 
   .Icon {
-    color: grey;
+    color: $Gray160;
   }
 }

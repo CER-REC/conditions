@@ -40,7 +40,7 @@ export const shouldBehaveLikeAComponent = (rawComponent, callback) => {
     expect(getRendered().hasClass(component.name)).toBe(true);
     // Disabling this rule is safe because prop-types are only stripped in prod
     // eslint-disable-next-line react/forbid-foreign-prop-types
-    if (component.propTypes.className) {
+    if (component.propTypes && component.propTypes.className) {
       wrapper.setProps({ className: 'testClass' });
       const rendered = getRendered();
       // Ensure the component name is still a class
