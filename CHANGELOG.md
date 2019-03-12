@@ -1,3 +1,213 @@
+# [0.3.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.3.0) (2019-03-12)
+
+
+### Changelog
+
+* **Documentation:** add changelog to storybook (e96f3f1, NEBV-1343)
+* **Project Maintenance:** adds automatic changelog generation from commits (90aadf8, NEBV-1343)
+* **Project Maintenance:** regenerate when releasing a new version (dbb83cb)
+* **Project Maintenance:** sort entries by scope (fe43ea2, NEBV-1343)
+* **Project Maintenance:** updates version header to link to storybook on S3 (4fbe8db, NEBV-1343)
+
+
+### Condition Explorer
+
+* **Features:** changed forceUpdate() Placement (160357d, NEBV-1311)
+* **Bug Fixes:** fixed wrong call (c0ffb21, NEBV-1311)
+
+
+### ConditionDetails
+
+* **Features:** moves condition data prop shape to global proptypes (c64e344)
+* **Bug Fixes:** fix expandable conditional for view2 (6308979)
+* **Tests:** updated snapshots and fixed some linting issues (ed3d00b)
+
+
+### ConditionExplorer
+
+* **Features:** adds better transition logic for words being reset (4c18463, NEBV-1311)
+* **Features:** Clean up logic related to performance (fdeb0ac, NEBV-1311)
+* **Bug Fixes:** resize font to account for more view sizes (6b3b46b)
+* **Bug Fixes:** augment size of the font (1e13327)
+* **Code Refactoring:** changed delta time calcualtion (ccf75f6)
+* **Code Refactoring:** cleans up some of the structure of the PhysicsVariant (9964474, NEBV-1311)
+
+
+### Dependencies
+
+* **Bug Fixes:** update dependency dialog-polyfill to ^0.5.0 (629f9c8)
+* **Project Maintenance:** update dependency css-loader to v2.1.1 (819a0a0)
+* **Project Maintenance:** update dependency cz-customizable to v5.4.0 (a29f9ff)
+* **Project Maintenance:** update dependency eslint to v5.15.1 (2ba4895)
+* **Project Maintenance:** update dependency postcss-preset-env to v6.6.0 (8eafa32)
+* **Project Maintenance:** update dependency react-test-renderer to v16.8.4 (cac831b)
+* **Project Maintenance:** update dependency webpack to v4.29.6 (6dfa40e)
+* **Project Maintenance:** update jest monorepo to v24.4.0 (415acf4)
+* **Project Maintenance:** update node.js (5f9a168)
+* **Project Maintenance:** update node.js to v10.15.3 (237c6bc)
+* **Project Maintenance:** update storybook monorepo to v5 (ecd03f4)
+* **Project Maintenance:** update storybook monorepo to v5.0.1 (06165d8)
+
+
+### ESLint
+
+* **Features:** makes ESLint check the .storybook folder and root level hidden files (2ee39ed)
+* **Code Formatting:** amends object-curly-newline rule (5b74df5)
+* **Code Formatting:** fixes all linting errors after changing config (e1156ef)
+* **Code Formatting:** Fixes lint in the linter config so you can lint while you lint (fdf2156)
+* **Project Maintenance:** adds linting for all code instead of just src (3bbb996)
+
+
+### FeatureFlag
+
+* **Features:** scales in proportion to the width that it is given (8f678a5, NEBV-1320)
+
+
+### Footer, MainInfoBar
+
+* **Features:** changes as per issues raised in PR (45d7bfd)
+
+
+### Grid View1/2
+
+* **Bug Fixes:** minor changes to grid and views to fit wet template (2ee5a3a)
+
+
+### List
+
+* **Features:** adds lodash.debounce to handle List scrolling events (26d298c)
+* **Bug Fixes:** rewrite of debounce logic so it's actually being used (7c7de03)
+* **Bug Fixes:** adds debug messages for testing (91acce8)
+* **Bug Fixes:** throttles scroll input for consistent behavior (1444d2a)
+
+
+### MainInfoBar
+
+* **Features:** replaces hardcoded text with localization (a23c394)
+* **Features:** resolves issues raised in PR (cd214b5)
+* **Features:** moves state to Redux, adds collapse animation (5ed3890)
+* **Features:** finishes implementing animation, moves collapsed state and cb to props (9fbd0ed)
+* **Features:** moves props to global proptypes (b9a4590)
+* **Features:** updates styling to match the design doc (b416d82)
+* **Tests:** adds interaction tests, removes unusable tests after prev. commit (04265a2)
+* **Tests:** adds component and interaction tests, fills out PropTypes (a9bd2f6)
+* **Code Refactoring:** adds changes as per PR comments (16d59fa)
+* **Code Refactoring:** moved inline SVG styles to CSS (fc2ded0)
+* **Code Refactoring:** tweaks code style for consistency (e03fb5d)
+* **Code Refactoring:** uses Intl's "values=" for interpolated text (c697a2a)
+* **Documentation:** adds missing documentation, relocates Download styles (52922a5)
+* **Documentation:** updates README, removes unused files (987d047)
+
+
+### NPM
+
+* **Project Maintenance:** fixes package-lock.json changing without package.json changes (e2ff3a2, NEBV-1293)
+
+
+### package.json
+
+* **Bug Fixes:** remove changes that were accidentally checked out (cc911b2)
+
+
+### PhysicsVariant
+
+* **Code Refactoring:** dOMHighResTimeStamp (7a5f1f0)
+
+
+### ProjectMenu
+
+* **Features:** Adjusts sizing to match design document (f3c9590, NEBV-1320)
+* **Features:** adds vertical scaling (0b3762f, NEBV-1320)
+* **Features:** selected bar is aligned properly (e01dec2, NEBV-1320)
+* **Features:** scale grey project bars to container size (520e185, NEBV-1320)
+* **Bug Fixes:** height fix (f025a6f)
+* **Tests:** update snapshots (42a45cc, NEBV-1320)
+
+
+### SearchBar
+
+* **Features:** added searchContent reset position change, and fixed styles & tests (eab5bef)
+* **Features:** lint fix for extra spacing (00dc27b)
+* **Features:** implemented feedback (7a7ac63)
+* **Tests:** added tests to improve code coverage (a1055fa)
+* **Code Refactoring:** code style refactor and added props initialization in reset (2ef2416)
+
+
+### Snapshots
+
+* **Tests:** updates broken snapshots for stories that were changed (e57403b, NEBV-1293)
+
+
+### Storybook
+
+* **Bug Fixes:** replace viewport config with SB5 syntax (3285553)
+* **Bug Fixes:** switches to SB5's new config format so we can build it (fdf933d)
+* **Code Refactoring:** switch options to SB5 syntax, remove now-default values (2d502d3)
+* **Documentation:** disables toolbar buttons that aren't needed (8b1c05a)
+* **Documentation:** migrates from 4.x checkA11y to 5.x withA11y (275af95)
+* **Documentation:** removes @storybook/addon-options (a1caf00)
+* **Documentation:** resort introduction and documentation headings (ee1f6a0)
+* **Documentation:** updates to new viewport syntax (06c6791)
+
+
+### Styles
+
+* **Bug Fixes:** resets headers to display: block (dce5d04, NEBV-1343)
+
+
+### Test utils
+
+* **Bug Fixes:** makes sure components have propTypes defined before testing them (ed58bb2)
+
+
+### View 2
+
+* **Features:** adds list interaction for ConditionDetails (097ce51)
+
+
+### View 2/3
+
+* **Features:** provides search keywords to ConditionDetails from props (aeabd2a)
+* **Bug Fixes:** fixes misnamed prop (803e0e9)
+
+
+### View 3
+
+* **Bug Fixes:** fixes broken interactions, adjusts borders (551201c)
+
+
+### ViewThree
+
+* **Features:** adds border and header without additional DOM elements (d43b82e, NEBV-1316)
+
+
+### ViewTwo
+
+* **Bug Fixes:** fixes gridding of menu (2161ac9, NEBV-1320)
+
+
+### wheel list
+
+* **Features:** adds styling (bd21c51, NEBV-1293)
+* **Features:** adds untested wheel list first crack (a2a1cb7, NEBV-1293)
+
+
+### WheelList
+
+* **Features:** adds interaction and wrap-around behavior (2e30e5e)
+* **Features:** adds proper layout and cropping to wheel radius (f9fc180)
+* **Features:** simplifies styling, fixes issues raised in PR (2ee46bf)
+* **Bug Fixes:** corrects margin issue in previous commit (8961e90)
+* **Bug Fixes:** fixes prop validation error in tests (a5dac4b)
+* **Tests:** adds interaction testing, updates story and snapshots (cf9e6e2)
+* **Code Formatting:** removes commented code, tidies up CSS (f0d076f)
+* **Code Formatting:** removes references to old props (0d7e1cf)
+* **Code Refactoring:** changes to a functional component (99da610)
+* **Code Refactoring:** condenses render logic (7e08866)
+* **Code Refactoring:** moves click handler into the class body to avoid re-declaring it (43aba83)
+* **Documentation:** adds prop documentation (02ea76c)
+
+
 ## [0.2.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.2.1) (2019-03-01)
 
 
