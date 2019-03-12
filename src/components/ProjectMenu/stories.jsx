@@ -24,10 +24,10 @@ const projectsData = [
         OPENING: 22,
         MISC: 2,
         SAFETY: 9,
-        TARRIFS: 11,
+        TARIFFS: 11,
       },
       theme: {
-        ADMININSTRATIVE: 10,
+        ADMINISTRATIVE: 10,
         DAMAGE_PREVENTION: 0,
         EMERGENCY_MANAGEMENT: 2,
         ENFORCEMENT: 5,
@@ -93,10 +93,10 @@ const projectsData = [
         OPENING: 22,
         MISC: 2,
         SAFETY: 9,
-        TARRIFS: 11,
+        TARIFFS: 11,
       },
       theme: {
-        ADMININSTRATIVE: 10,
+        ADMINISTRATIVE: 10,
         DAMAGE_PREVENTION: 0,
         EMERGENCY_MANAGEMENT: 2,
         ENFORCEMENT: 5,
@@ -162,10 +162,10 @@ const projectsData = [
         OPENING: 22,
         MISC: 2,
         SAFETY: 9,
-        TARRIFS: 11,
+        TARIFFS: 11,
       },
       theme: {
-        ADMININSTRATIVE: 10,
+        ADMINISTRATIVE: 10,
         DAMAGE_PREVENTION: 0,
         EMERGENCY_MANAGEMENT: 2,
         ENFORCEMENT: 5,
@@ -231,10 +231,10 @@ const projectsData = [
         OPENING: 22,
         MISC: 2,
         SAFETY: 9,
-        TARRIFS: 11,
+        TARIFFS: 11,
       },
       theme: {
-        ADMININSTRATIVE: 10,
+        ADMINISTRATIVE: 10,
         DAMAGE_PREVENTION: 0,
         EMERGENCY_MANAGEMENT: 2,
         ENFORCEMENT: 5,
@@ -300,10 +300,10 @@ const projectsData = [
         OPENING: 22,
         MISC: 2,
         SAFETY: 9,
-        TARRIFS: 11,
+        TARIFFS: 11,
       },
       theme: {
-        ADMININSTRATIVE: 10,
+        ADMINISTRATIVE: 10,
         DAMAGE_PREVENTION: 0,
         EMERGENCY_MANAGEMENT: 2,
         ENFORCEMENT: 5,
@@ -388,4 +388,3 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       selectedFeature="theme"
     />
   ));
-
