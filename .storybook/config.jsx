@@ -1,9 +1,7 @@
 import requireContext from 'require-context.macro';
 import React from 'react';
 import { setIntlConfig, withIntl } from 'storybook-addon-intl';
-import { addDecorator, configure } from '@storybook/react';
-import { create } from '@storybook/theming';
-import { addParameters } from '@storybook/react';
+import { addDecorator, configure, addParameters } from '@storybook/react';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
 
