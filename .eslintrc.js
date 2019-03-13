@@ -7,17 +7,17 @@ module.exports = {
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0 }],
     'react/destructuring-assignment': false,
     'react/jsx-one-expression-per-line': false,
-    'object-curly-newline': ["error", {
-      "minProperties": 8,
-      "multiline": true,
-      "consistent": true,
+    'object-curly-newline': ['error', {
+      minProperties: 8,
+      multiline: true,
+      consistent: true,
     }],
   },
   overrides: [
     {
       files: [
         '.storybook/**',
-        'stories/**',
+        'documentation/**',
         '**/stories.jsx',
         '**/spec.js',
         '**/spec.jsx',
@@ -37,6 +37,7 @@ module.exports = {
         '**/*.spec.js',
         '**/*.spec.jsx',
         'src/tests/**',
+        '.storybook/spec.js',
       ],
       env: {
         jest: true,
@@ -49,4 +50,4 @@ module.exports = {
       },
     },
   ],
-}
+};
