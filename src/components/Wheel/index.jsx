@@ -152,9 +152,9 @@ class Wheel extends React.Component {
                 </g>
               </svg>
               <WheelList
-                wheelType="company"
+                wheelType={this.props.wheelType}
                 listContent={this.props.itemsData.items}
-                textClippingRadius="70%"
+                textClippingRadius="75%"
                 onChange={this.onChange}
                 selected={((this.props.itemsData.items.length + this.getIndex(props.rotation))
                   % this.props.itemsData.items.length)}

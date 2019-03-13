@@ -33,8 +33,9 @@ const locationList = [
 const magenta = '255, 0, 255';
 const exampleDivProps = {
   position: 'relative',
-  width: 300,
-  height: 300,
+  width: '100%',
+  paddingTop: '100%',
+  top: '0',
   border: `1px dashed rgba(${magenta}, 0.4)`,
   boxShadow: `0 0 0px 32px rgba(${magenta}, 0.05)`,
   borderRadius: '50%',

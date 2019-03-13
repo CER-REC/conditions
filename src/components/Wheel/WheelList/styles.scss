@@ -4,15 +4,22 @@
 
 
 .WheelList {
+  display: flex;
+  align-items: center;
+  left: 26.7%;
+  right: 26.7%;
+  top: 50%;
   position: absolute;
   color: $Black77;
-  height: 100%;
+  width: 60%;
+  // height: 100%;
   font-family: $fira-sans-condensed;
   font-size: 18px;
+  transform: translate(0%, -50%);
 
   .labelContainer {
     position: absolute;
-    top: calc(50% - 12px);
+    // top: calc(50% - 12px);
     height: 24px;
     width: 100%;
     overflow: visible;
@@ -40,7 +47,7 @@
   }
 
   .listContainer {
-    height: 100%;
+    height: auto;
     width: 100%;
     margin: auto;
     overflow: hidden;
@@ -54,7 +61,6 @@
   }
 
   .list {
-    transform: translate(0, 50%);
     height: 50%;
     display: flex;
     flex-direction: column;

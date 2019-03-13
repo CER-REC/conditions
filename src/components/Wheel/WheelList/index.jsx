@@ -67,7 +67,7 @@ WheelList.propTypes = {
   /** Wheel mode */
   wheelType: PropTypes.oneOf(['company', 'location']).isRequired,
   /** Array of company/location names to pull the list from */
-  listContent: PropTypes.arrayOf(PropTypes.node).isRequired,
+  listContent: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 WheelList.defaultProps = {
