@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import BarContainer from '../../BarContainer';
 import { browseByType } from '../../../proptypes';
 import { features } from '../../../constants';
+import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
+import sampleFlagData from '../CompanyFlag/sample-flag-data';
 
 import CompanyFlag from '../CompanyFlag';
 
@@ -48,6 +50,12 @@ class WheelRay extends React.Component {
       ? currentIndex : items.length + currentIndex;
 
     let legendTracker = '';
+
+    const maxFlagHeight = 20;
+    const flagData = sampleFlagData.slice(0, items.length);
+    const flagLayouts = flagLayoutCalculation(flagData, maxFlagHeight);
+    // console.dir(flagLayouts);
+
     const rays = items.map((item, index) => {
       if (index === selectedIndex) { return null; }
       let position = rotation + 90;
@@ -70,17 +78,18 @@ class WheelRay extends React.Component {
             </text>
             <CompanyFlag
               y={-170}
-              flagLayout={
-                [
-                  ['1551111', '313', '77', '1'],
-                  ['111'],
-                  ['1511'],
-                  ['51113711', '11', '3'],
-                  ['1131'],
-                  ['11'],
-                  ['311'],
-                ][index % 7]
-              }
+              flagLayout={flagLayouts[index]}
+              // flagLayout={
+              //   [
+              //     ['1551111', '313', '77', '1'],
+              //     ['111'],
+              //     ['1511'],
+              //     ['51113711', '11', '3'],
+              //     ['1131'],
+              //     ['11'],
+              //     ['311'],
+              //   ][index % 7]
+              // }
               width={degreesPerItem + 1}
               height={323}
               dotWidth={6}
