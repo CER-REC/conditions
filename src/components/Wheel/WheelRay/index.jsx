@@ -33,6 +33,14 @@ class WheelRay extends React.Component {
     // })).isRequired,
   }
 
+  constructor(props) {
+    super(props);
+
+    const maxFlagHeight = 20;
+    const flagData = sampleFlagData.slice(0, this.props.items.length);
+    this.flagLayouts = flagLayoutCalculation(flagData, maxFlagHeight);
+  }
+
   shouldComponentUpdate(nextProps) {
     if (this.props.currentIndex !== nextProps.currentIndex) { return true; }
     if (this.props.wheelType !== nextProps.wheelType) { return true; }
@@ -50,11 +58,6 @@ class WheelRay extends React.Component {
       ? currentIndex : items.length + currentIndex;
 
     let legendTracker = '';
-
-    const maxFlagHeight = 20;
-    const flagData = sampleFlagData.slice(0, items.length);
-    const flagLayouts = flagLayoutCalculation(flagData, maxFlagHeight);
-    // console.dir(flagLayouts);
 
     const rays = items.map((item, index) => {
       if (index === selectedIndex) { return null; }
@@ -78,7 +81,7 @@ class WheelRay extends React.Component {
             </text>
             <CompanyFlag
               y={-170}
-              flagLayout={flagLayouts[index]}
+              flagLayout={this.flagLayouts[index]}
               // flagLayout={
               //   [
               //     ['1551111', '313', '77', '1'],

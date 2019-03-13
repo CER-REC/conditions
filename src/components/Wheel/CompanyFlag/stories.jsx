@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import CompanyFlag from '.';
-// import ReadMe from './README.md';
-const ReadMe = '';
+import ReadMe from './README.md';
 
 /*
  * 1 = Dot

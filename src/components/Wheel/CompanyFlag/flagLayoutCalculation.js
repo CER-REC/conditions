@@ -1,3 +1,8 @@
+// Needed for testing because console.log holds a reference rather than taking
+// the object's values when called.
+console.logObj = obj => console.log(JSON.parse(JSON.stringify(obj)));
+console.dirObj = obj => console.dir(JSON.parse(JSON.stringify(obj)));
+
 // Returns the next higher triangular root from x
 export const nextTriangularRoot = x => Math.ceil((Math.sqrt(8 * x + 1) - 1) / 2);
 
@@ -26,17 +31,17 @@ const buildTriangleFrame = (dots, base) => {
   const remainingDots = [...dots];
   const columns = [];
 
-  for (let i = base; i > 0; i -= 1) {
+  for (let i = base - 1; i > 0; i -= 1) {
     const col = new Array(i - 1).fill(0);
+
     col.unshift(remainingDots.pop());
     col.push(remainingDots.pop());
-    console.log(`\tpushing column: ${col}`);
+
     columns.push(col);
   }
+
   columns.push([remainingDots.pop()]);
 
-  console.log(`returning frame:`);
-  console.log(columns);
   return { columns, remainingDots };
 };
 
@@ -44,33 +49,43 @@ const fillTriangleFrame = ({
   dots,
   columns,
   startingColumn = 0,
-  endingColumn = (columns.length - 1),
+  endingColumn = (columns.length - 2),
   startingRow = 1,
   rowLengthOffset = 1,
 }) => {
-
-  console.log(`got ${dots.length} dots to fold, and the existing layout:`);
-  console.dir(columns);
+  console.dirObj(columns);
   // Fill the lowest-numbered column
-  for (let row = columns[startingColumn].length - rowLengthOffset; row >= startingRow; row -= 1) {
+  for (let row = columns[startingColumn].length - rowLengthOffset - 1; row >= startingRow; row -= 1) {
     // eslint-disable-next-line no-param-reassign
-    columns[0][row] = dots.pop();
+    console.log(`\tfilling column ${startingColumn}, row ${row}`);
+    columns[startingColumn][row] = dots.pop();
     if (!dots.length) return columns;
   }
 
+  // console.log(`after filling the first column (${dots.length} dots left}):`);
+  console.dirObj(columns);
+
   // Fill the rest of the top row
-  for (let column = startingColumn + 1; column <= endingColumn; column += 1) {
+  for (let column = startingColumn + 1; column < endingColumn; column += 1) {
+    console.log(`\tfilling column ${column}, row ${startingRow}`);
     // eslint-disable-next-line no-param-reassign
     columns[column][startingRow] = dots.pop();
     if (!dots.length) return columns;
   }
 
+  // console.log(`after filling the top row (${dots.length} dots left}):`);
+  console.dirObj(columns);
+
   // Fill the rest of the bottom row
-  for (let column = endingColumn - 1, end = startingColumn + 1; column >= end; column -= 1) {
+  for (let column = endingColumn - 2, end = startingColumn + 1; column >= end; column -= 1) {
+    console.log(`\tfilling column ${column}, row ${columns[column].length - rowLengthOffset - 1}`);
     // eslint-disable-next-line no-param-reassign
     columns[column][columns[column].length - rowLengthOffset - 1] = dots.pop();
     if (!dots.length) return columns;
   }
+
+  // console.log(`after filling the bottom row (${dots.length} dots left}):`);
+  console.dirObj(columns);
 
   // The unfilled space is now a smaller triangle, so we can fill it recursively
   return fillTriangleFrame({
@@ -117,19 +132,20 @@ const flagLayoutCalculation = (flagData, maxFlagHeight) => {
     const { columns: frame, remainingDots } = buildTriangleFrame(toFold, base);
 
     console.log(`The outer frame used ${toFold.length - remainingDots.length} dots, there are ${remainingDots.length} left`);
-    console.dir(frame);
+    console.dirObj(frame);
 
     // Bypassing the Fill logic until there's actuall Fill logic
-    const columns = (true && remainingDots.length)
+    const columns = (remainingDots.length)
       ? [ray.slice(0, maxFlagHeight), ...fillTriangleFrame({ columns: frame, dots: remainingDots })]
       : [ray.slice(0, maxFlagHeight), ...frame];
 
-    // console.dir(columns);
+    console.log(`Done folding ray ${rayIndex}`)
+    console.dirObj(columns);
 
     return columns.map(col => maskColumn(col));
   });
 
-  console.dir(foldedFlags);
+  console.dirObj(foldedFlags);
 
   return foldedFlags;
 };
