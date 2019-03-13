@@ -32,7 +32,7 @@ const LocationRay = (props) => {
 };
 
 LocationRay.propTypes = {
-  height: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
   width: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.number.isRequired,

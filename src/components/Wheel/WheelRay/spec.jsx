@@ -58,7 +58,8 @@ describe('Components|CompanyWheel/WheelRay', () => {
       const positionAfterGap = (Math.abs(rotation + (reservedDegrees / 2) - 360 + degreesPerItem));
       const transformValue = `translate(50%, 50%) rotate(${positionAfterGap.toFixed(2)}deg)`;
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.childAt(wheelData.items.length - 2).props().style.transform === transformValue).toBe(true);
+      expect(wrapper.childAt(wheelData.items.length - 2)
+        .props().style.transform === transformValue).toBe(true);
     });
   });
 });

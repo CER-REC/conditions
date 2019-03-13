@@ -76,22 +76,24 @@ class Wheel extends React.Component {
 
   onChange = (index) => {
     this.setState({ unanimatedSpin: false });
-    // TODO: refactor to use previous state
     // TODO: bug on jump from 0 to 99
     // TODO: check on resizing of letters on wheel list according to wheel size
-    const newIndex = (2 * this.props.itemsData.items.length - index) % this.props.itemsData.items.length;
-    let rotationDifference = this.state.newRotation;
-    const currentIndex = ((this.props.itemsData.items.length + this.getIndex(this.state.newRotation))
-    % this.props.itemsData.items.length);
-    if (currentIndex < newIndex) {
-      rotationDifference += (newIndex - currentIndex) * this.state.degreesPerItem;
-    }
-    else if (currentIndex > newIndex) {
-      rotationDifference -= (currentIndex - newIndex) * this.state.degreesPerItem;
-    }
-    // console.warn(currentIndex, newIndex, this.state.newRotation, rotationDifference);
-    this.setState({ newRotation: rotationDifference });
-  }
+    const newIndex = (2 * this.props.itemsData.items.length - index)
+      % this.props.itemsData.items.length;
+    this.setState((prevState) => {
+      let rotationDifference = prevState.newRotation;
+      const currentIndex = ((this.props.itemsData.items.length
+        + this.getIndex(prevState.newRotation))
+        % this.props.itemsData.items.length);
+
+      if (currentIndex < newIndex) {
+        rotationDifference += (newIndex - currentIndex) * prevState.degreesPerItem;
+      } else if (currentIndex > newIndex) {
+        rotationDifference -= (currentIndex - newIndex) * prevState.degreesPerItem;
+      }
+      return ({ newRotation: rotationDifference });
+    });
+  };
 
   getIndex = currentRotation => Math.round((currentRotation % 360)
     / (360 / this.props.itemsData.items.length))
