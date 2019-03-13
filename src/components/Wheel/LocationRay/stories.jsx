@@ -1,6 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
+import { storiesForComponent } from '../../../../.storybook/utils';
+import withStatus from '../../../../.storybook/addon-status';
+
+import ReadMe from './README.md';
 
 import LocationRay from '.';
 
@@ -15,18 +17,16 @@ const randomLocationBars = Array(1).fill('')
   })));
 
 const degreesPerItem = 5;
-
-describe('Components|Wheel/LocationRay', () => {
-  describe('with default props', () => {
-    const wrapper = shallow(
+storiesForComponent('Components|Wheel/LocationRay', module, ReadMe)
+  .addDecorator(withStatus('functionalityUnderDevelopment'))
+  .add('default', () => (
+    <svg>
       <LocationRay
         items={randomLocationBars[0]}
         height={degreesPerItem * 2}
         width="163"
-        searched={Boolean(Math.round(Math.random()))}
+        searched
         adjustRotationReference={degreesPerItem / 2}
-      />,
-    );
-    shouldBehaveLikeAComponent(LocationRay, () => wrapper);
-  });
-});
+      />
+    </svg>
+  ));

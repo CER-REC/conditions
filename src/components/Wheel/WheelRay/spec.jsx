@@ -48,24 +48,17 @@ describe('Components|CompanyWheel/WheelRay', () => {
     });
 
     it('should render an item before the gap', () => {
-      const positionBeforeGap = rotation + 90 + (reservedDegrees / 2);
-      const transformValue = `translate(371 209) rotate(${positionBeforeGap.toFixed(2)}, 0, 245)`;
+      const positionBeforeGap = (Math.abs(rotation - (reservedDegrees / 2)) % 360);
+      const transformValue = `translate(50%, 50%) rotate(${positionBeforeGap.toFixed(2)}deg)`;
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.children().findWhere(
-        g => g.props().transform === transformValue,
-      )).toHaveLength(1);
+      expect(wrapper.children().first().props().style.transform === transformValue).toBe(true);
     });
 
     it('should render an item after the gap', () => {
-      // rotation + the offset of the stripe
-      // - the adjustment for the ray against the pipe + half of the reserved degrees
-      const positionAfterGap = rotation + 90 - (degreesPerItem)
-        + 360 - reservedDegrees + reservedDegrees / 2;
-      const transformValue = `translate(371 209) rotate(${positionAfterGap.toFixed(2)}, 0, 245)`;
+      const positionAfterGap = (Math.abs(rotation + (reservedDegrees / 2) - 360 + degreesPerItem));
+      const transformValue = `translate(50%, 50%) rotate(${positionAfterGap.toFixed(2)}deg)`;
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.children().findWhere(
-        g => g.props().transform === transformValue,
-      )).toHaveLength(1);
+      expect(wrapper.childAt(wheelData.items.length - 2).props().style.transform === transformValue).toBe(true);
     });
   });
 });

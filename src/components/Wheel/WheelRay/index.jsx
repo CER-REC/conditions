@@ -59,7 +59,7 @@ class WheelRay extends React.Component {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
 
-      const transform = { transform: `translate(50%, 50%) rotate(${position}deg)` };
+      const transform = { transform: `translate(50%, 50%) rotate(${position.toFixed(2)}deg)` };
       const componentToReturn = wheelType === 'company'
         ? (
           <g key={`${item._id}CompanyRay`} style={transform}>
