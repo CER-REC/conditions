@@ -58,7 +58,6 @@ class Wheel extends React.Component {
         ? ((selectedIndex - prevState.selectedIndex) * degreesPerItem)
         : -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
     }
-
     return {
       degreesPerItem,
       selectedIndex,
@@ -75,18 +74,23 @@ class Wheel extends React.Component {
     this.props.selectRay(items[randomNum]._id);
   };
 
-  // rotateWheelOneStep = (prev) => {
-  //   this.setState({ unanimatedSpin: false });
-  //   const { items } = this.props.itemsData;
-  //   const direction = prev ? -1 : 1;
-  //   const newIndex = (this.state.selectedIndex + direction + items.length) % items.length;
-  //   this.setState({ selectedIndex: newIndex });
-  // };
-
   onChange = (index) => {
-    // TODO: do it by rotation
+    this.setState({ unanimatedSpin: false });
+    // TODO: refactor to use previous state
+    // TODO: bug on jump from 0 to 99
+    // TODO: check on resizing of letters on wheel list according to wheel size
     const newIndex = (2 * this.props.itemsData.items.length - index) % this.props.itemsData.items.length;
-    this.props.selectRay(this.props.itemsData.items[newIndex]._id);
+    let rotationDifference = this.state.newRotation;
+    const currentIndex = ((this.props.itemsData.items.length + this.getIndex(this.state.newRotation))
+    % this.props.itemsData.items.length);
+    if (currentIndex < newIndex) {
+      rotationDifference += (newIndex - currentIndex) * this.state.degreesPerItem;
+    }
+    else if (currentIndex > newIndex) {
+      rotationDifference -= (currentIndex - newIndex) * this.state.degreesPerItem;
+    }
+    // console.warn(currentIndex, newIndex, this.state.newRotation, rotationDifference);
+    this.setState({ newRotation: rotationDifference });
   }
 
   getIndex = currentRotation => Math.round((currentRotation % 360)
@@ -104,12 +108,12 @@ class Wheel extends React.Component {
           config={{ tension: 30 }}
           from={{
             transformOrigin: 'center',
-            transform: `rotate(${this.state.oldRotation.toFixed(2)}deg)`,
-            rotation: -this.state.oldRotation.toFixed(2),
+            transform: `rotate(${this.state.oldRotation}deg)`,
+            rotation: -this.state.oldRotation,
           }}
           to={{
-            transform: `rotate(${this.state.newRotation.toFixed(2)}deg)`,
-            rotation: -this.state.newRotation.toFixed(2),
+            transform: `rotate(${this.state.newRotation}deg)`,
+            rotation: -this.state.newRotation,
           }}
         >
           {props => (
@@ -125,7 +129,6 @@ class Wheel extends React.Component {
                     {/* following inner limit lines can be deleted once everything is rendered.
                     It is an accurate representation of spacing */}
                     <g className="OutterCircles RayCircle">
-                      {/* <circle className="cls-1" cx="50%" cy="50%" r="263.5" /> */}
                       <circle className="cls-1" cx="50%" cy="50%" r="31%" />
                     </g>
                     <Ring ringType={this.props.wheelType} />
@@ -151,8 +154,8 @@ class Wheel extends React.Component {
                 listContent={this.props.itemsData.items}
                 textClippingRadius="70%"
                 onChange={this.onChange}
-                selected={(this.props.itemsData.items.length + (this.getIndex(props.rotation)))
-                  % this.props.itemsData.items.length}
+                selected={((this.props.itemsData.items.length + this.getIndex(props.rotation))
+                  % this.props.itemsData.items.length)}
               />
             </div>
           )

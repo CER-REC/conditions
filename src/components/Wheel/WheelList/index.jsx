@@ -14,7 +14,6 @@ const WheelList = (props) => {
     (props.selected + i + props.listContent.length)
     % props.listContent.length
   );
-
   const handleOnChange = i => props.onChange(wrapIndex(i - 3));
 
   const listElements = indexOffsets.map((offset) => {
