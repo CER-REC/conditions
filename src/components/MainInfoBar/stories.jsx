@@ -19,7 +19,7 @@ const StoryContainer = ({children}) => (
 
 storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['setActiveDialog'] }))
+  .addDecorator(withInteraction({ actions: ['setPane'] }))
   .add('with interaction', () => (
     <StoryContainer>
       <MainInfoBar
@@ -30,16 +30,16 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   ),
   {
     interaction: {
-      state: { activeDialog: '' },
+      state: { pane: '' },
       actions: {
-        setActiveDialog: () => activeDialog => ({ activeDialog }),
+        setPane: () => pane => ({ pane }),
       },
     },
   })
   .add('About', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="about"
+        pane="about"
         {...props}
         {...getInteractionProps()}
       />
@@ -48,7 +48,7 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .add('Methodology', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="methodology"
+        pane="methodology"
         {...props}
         {...getInteractionProps()}
       />
@@ -57,7 +57,7 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .add('Downloads', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="downloads"
+        pane="downloads"
         {...props}
         {...getInteractionProps()}
       />

@@ -29,11 +29,11 @@ library.add(
 
 class MainInfoBar extends React.PureComponent {
   static getDerivedStateFromProps(props, state) {
-    // Expanded is determined by whether we have an activeDialog prop
+    // Expanded is determined by whether we have an pane prop
     // The renderedDialog is either the active dialog, or the previously active one.
     return {
-      expanded: !!props.activeDialog,
-      renderedDialog: props.activeDialog || state.renderedDialog,
+      expanded: !!props.pane,
+      renderedDialog: props.pane || state.renderedDialog,
     };
   }
 
@@ -58,7 +58,7 @@ class MainInfoBar extends React.PureComponent {
     }
   }
 
-  closeDialog = () => this.props.setActiveDialog('');
+  closeDialog = () => this.props.setPane('');
 
   textButtons = () => {
     const buttons = ['about', 'methodology', 'downloads'];
@@ -66,9 +66,9 @@ class MainInfoBar extends React.PureComponent {
       <button
         key={k}
         id={k}
-        className={`textButton ${this.props.activeDialog === k ? 'selected' : ''}`}
+        className={`textButton ${this.props.pane === k ? 'selected' : ''}`}
         type="button"
-        {...handleInteraction(this.props.setActiveDialog, k)}
+        {...handleInteraction(this.props.setPane, k)}
       >
         <FormattedMessage id={`components.mainInfoBar.headings.${k}`} />
       </button>
@@ -123,8 +123,8 @@ class MainInfoBar extends React.PureComponent {
 }
 
 MainInfoBar.propTypes = {
-  activeDialog: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']).isRequired,
-  setActiveDialog: PropTypes.func.isRequired,
+  pane: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']).isRequired,
+  setPane: PropTypes.func.isRequired,
   openDataModal: PropTypes.func.isRequired,
   openScreenshotModal: PropTypes.func.isRequired,
 };
