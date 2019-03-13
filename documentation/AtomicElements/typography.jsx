@@ -15,7 +15,7 @@ export default () => (
 
     <h2> Inline Elements </h2>
     <p>This is a paragraph tag</p>
-    <a href="#">This is a text link</a>
+    <a href="#">This is a text link</a>{/* eslint-disable-line */}
     <br />
     <strong>Strong is used to indicate strong importance</strong>
     <br />

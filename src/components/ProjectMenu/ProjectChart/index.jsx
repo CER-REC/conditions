@@ -9,31 +9,25 @@ const ProjectChart = (props) => {
   const conditionCount = props.graphData.reduce((acc, next) => (acc + next.count), 0);
   return (
     <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
-      {props.graphData.length === 0 ? <div className="ConditionPipe" /> : (
-        <React.Fragment>
-          <div className="ConditionPipe">
-            <CircleContainer
-              size={24}
-              className="ConditionCount"
-            >
-              {conditionCount}
-            </CircleContainer>
-          </div>
-          <div className="FlagWrapper">
-            { props.graphData.map(condition => (
-              <FeatureFlag
-                key={condition.name}
-                name={condition.name}
-                count={condition.count}
-                chartType={props.chartType}
-              />
-            ))}
-          </div>
-          <div className="ProjectName">
-            { props.selected ? null : <p>{props.projectName}</p> }
-          </div>
-        </React.Fragment>
-      )}
+      <div className="ConditionPipe">
+        <CircleContainer size={24} className="ConditionCount">
+          {conditionCount}
+        </CircleContainer>
+      </div>
+      <div className="FlagWrapper">
+        <div className="FlagPole" />
+        {props.graphData.map(condition => (
+          <FeatureFlag
+            key={condition.name}
+            name={condition.name}
+            count={condition.count}
+            chartType={props.chartType}
+          />
+        ))}
+      </div>
+      <div className="ProjectName">
+        {props.selected ? null : <p>{props.projectName}</p>}
+      </div>
     </div>
   );
 };

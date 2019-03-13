@@ -1,0 +1,21 @@
+// TODO: Remove placeholder styles once location/application is confirmed
+@import '../../../styles/fontVariables.scss';
+@import '../../../styles/colors.scss';
+
+.GuideDetail {
+  font-family: $fira-sans-condensed;
+  text-align: left;
+  color: $general-text-2;
+  .title {
+    font-size: 24px;
+    display: block;
+    color: $VeryDarkGray;
+    ~ span {
+      display: block;
+    }
+  }
+  a {
+    color: $LinksTextButtons;
+    text-decoration: none;
+  }
+}
