@@ -12,7 +12,6 @@
   position: absolute;
   color: $Black77;
   width: 60%;
-  // height: 100%;
   font-family: $fira-sans-condensed;
   font-size: 18px;
   transform: translate(0%, -50%);
@@ -47,7 +46,6 @@
   }
 
   .listContainer {
-    height: auto;
     width: 100%;
     margin: auto;
     overflow: hidden;
@@ -61,7 +59,6 @@
   }
 
   .list {
-    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
