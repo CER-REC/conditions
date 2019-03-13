@@ -65,7 +65,6 @@ const parseFlags = (dot) => {
 const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, height }) => {
   const baseY = y + height - (flagLayout[0].length * dotSpacing);
 
-  // console.dir({flagLayout, dotWidth, dotSpacing, x, y, width, height, baseY});
   const columnOffset = {
     x: dotSpacing * Math.sin(Math.PI / 3),
     y: dotSpacing / 2,
