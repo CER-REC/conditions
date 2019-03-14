@@ -36,9 +36,16 @@ class WheelRay extends React.Component {
   constructor(props) {
     super(props);
 
-    const maxFlagHeight = 20;
+    // TODO: This shouldn't be in the constructor; load the data and prompt a
+    // re-render.
+    const maxFlagHeight = 16;
     const flagData = sampleFlagData.slice(0, this.props.items.length);
-    this.flagLayouts = flagLayoutCalculation(flagData, maxFlagHeight);
+    (
+      {
+        flagLayouts: this.flagLayouts,
+        flagScale: this.flagScale,
+      } = flagLayoutCalculation(flagData, maxFlagHeight)
+    );
   }
 
   shouldComponentUpdate(nextProps) {
@@ -79,25 +86,20 @@ class WheelRay extends React.Component {
             <text className="TextLabels">
               {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
             </text>
-            <CompanyFlag
-              y={-170}
-              flagLayout={this.flagLayouts[index]}
-              // flagLayout={
-              //   [
-              //     ['1551111', '313', '77', '1'],
-              //     ['111'],
-              //     ['1511'],
-              //     ['51113711', '11', '3'],
-              //     ['1131'],
-              //     ['11'],
-              //     ['311'],
-              //   ][index % 7]
-              // }
-              width={degreesPerItem + 1}
-              height={323}
-              dotWidth={6}
-              dotSpacing={8}
-            />
+            {(this.flagLayouts)
+              ? (
+                <CompanyFlag
+                  y={-170}
+                  flagLayout={this.flagLayouts[index]}
+                  width={degreesPerItem + 1}
+                  height={323}
+                  dotWidth={6 * this.flagScale}
+                  dotSpacing={8 * this.flagScale}
+                />
+              )
+              : null
+            }
+
             {/* This rect shows the wheel segments; for debugging */}
             {/* <rect
               y="-181"
