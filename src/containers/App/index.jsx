@@ -6,11 +6,17 @@ import ViewTwo from '../ViewTwo';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 
-import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
+import {
+  conditionCountsByYear,
+  conditionCountsByCommodity,
+  conditionData,
+} from '../../mockData';
 
 const store = createStore();
 
-const props = {
+const noop = () => {};
+
+const viewProps = {
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionDetails: {
@@ -24,22 +30,38 @@ const props = {
     bubble: 'XO',
     stream: 2010,
   },
-  openIntermediatePopup: () => {},
-  openProjectDetails: () => {},
+  openIntermediatePopup: noop,
+  openProjectDetails: noop,
 };
 
-const App = () => (
-  <Provider store={store}>
-    <ViewOne />
-    {/* TODO: Deployment hacks */}
-    <div style={{ clear: 'both' }} />
-    <hr />
-    <ViewTwo {...props} />
-    <hr />
-    <ViewThree {...props} />
-    <hr />
-    <Footer />
-  </Provider>
-);
+class App extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { mainInfoBarPane: '' };
+  }
+
+  setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
+
+  render() {
+    return (
+      <Provider store={store}>
+        <ViewOne />
+        {/* TODO: Deployment hacks */}
+        <div style={{ clear: 'both' }} />
+        <hr />
+        <ViewTwo {...viewProps} />
+        <hr />
+        <ViewThree {...viewProps} />
+        <hr />
+        <Footer
+          setMainInfoBarPane={this.setMainInfoBarPane}
+          mainInfoBarPane={this.state.mainInfoBarPane}
+          openDataModal={noop}
+          openScreenshotModal={noop}
+        />
+      </Provider>
+    );
+  }
+}
 
 export default App;

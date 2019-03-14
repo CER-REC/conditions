@@ -1,33 +1,71 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import MainInfoBar from '.';
 
+const noop = () => {};
+const eventFuncs = { preventDefault: noop, stopPropagation: noop };
+
 describe('Components|MainInfoBar', () => {
+  let spy;
+  beforeEach(() => {
+    spy = {
+      setPane: jest.fn(),
+      openDataModal: jest.fn(),
+      openScreenshotModal: jest.fn(),
+    };
+  });
+
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<MainInfoBar />);
+      wrapper = shallow(<MainInfoBar
+        pane="methodology"
+        {...spy}
+      />);
     });
 
-    test('should render', () => {
-      expect(wrapper.type()).toBe('div');
+    shouldBehaveLikeAComponent(MainInfoBar, () => wrapper);
+
+    test('should pass its setPane callback to the heading buttons', () => {
+      wrapper.find('.MainInfoBar')
+        .find('.textButton')
+        .first()
+        .simulate('click', eventFuncs);
+
+      expect(spy.setPane).toHaveBeenCalledWith('about');
     });
 
-    test('should have a className', () => {
-      expect(wrapper.is('.MainInfoBar')).toBe(true);
-    });
+    test('should pass its setPane callback to the collapse arrows', () => {
+      wrapper.find('.MainInfoBar')
+        .find('CircleContainer')
+        .simulate('click', eventFuncs);
 
-    test('should show four share icons ', () => {
-      expect(wrapper.find('ShareIcon')).toHaveLength(4);
+      expect(spy.setPane).toHaveBeenCalledWith('');
     });
+  });
 
-    test('should show a horizontal line', () => {
-      expect(wrapper.find('hr')).toHaveLength(1);
-    });
+  describe('passing information to the content boxes', () => {
+    test('should pass its openDataModal and openScreenshotModal callbacks to the Downloads box', () => {
+      const wrapper = shallow(<MainInfoBar
+        pane="downloads"
+        {...spy}
+      />);
 
-    test('should show three text links', () => {
-      expect(wrapper.find('button')).toHaveLength(3);
+      wrapper.find('.MainInfoBar')
+        .find('DownloadsBox')
+        .props()
+        .openDataModal();
+
+      expect(spy.openDataModal).toHaveBeenCalledTimes(1);
+
+      wrapper.find('.MainInfoBar')
+        .find('DownloadsBox')
+        .props()
+        .openScreenshotModal();
+
+      expect(spy.openScreenshotModal).toHaveBeenCalledTimes(1);
     });
   });
 });

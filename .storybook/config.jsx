@@ -1,9 +1,7 @@
 import requireContext from 'require-context.macro';
 import React from 'react';
 import { setIntlConfig, withIntl } from 'storybook-addon-intl';
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
-import { configureViewport } from '@storybook/addon-viewport';
+import { addDecorator, configure, addParameters } from '@storybook/react';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
 
@@ -45,13 +43,14 @@ const viewports = {
     styles: { width: '768px', height: '100%' },
   },
 };
-configureViewport({ viewports, defaultViewport: 'fullscreen' });
+addParameters({ viewport: { viewports, defaultViewport: 'fullscreen' } });
 
-addDecorator(withOptions({
-  addonPanelInRight: true,
-  hierarchyRootSeparator: /\|/, // Categories with |
-  hierarchySeparator: /\//, // Sub-stories with /
-}));
+addParameters({
+  options: {
+    brandTitle: 'Conditions DevDoc',
+    panelPosition: 'right',
+  },
+});
 
 addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
 

@@ -1,31 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components|AboutTextBox Basic view 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="AboutTextBox"
-  >
-    <h1>
-      About This Project
-    </h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac aliquet nisl. Nulla condimentum, felis vel euismod blandit, ex massa scelerisque nibh, vulputate porta quam tellus et diam. Morbi tincidunt elementum nibh ac vestibulum. Vivamus non tempor eros. Vivamus eget ultricies diam, eu feugiat nisi. Nulla facilisi. Cras non nisl semper, vulputate leo non, dictum nibh. Etiam nulla purus, interdum a tellus nec, malesuada tempus eros. Proin nulla erat, tincidunt ultrices luctus eu, tincidunt in tellus. Vivamus in tincidunt sapien, sed pharetra tortor. Mauris urna nulla, luctus non eleifend vitae, dignissim ut lectus. Nam eu luctus ipsum. Cras a viverra nulla, laoreet tincidunt ante. Phasellus dapibus facilisis semper. Pellentesque ultrices semper massa sed ornare.
-    </p>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components|BarContainer default 1`] = `
 <div
   className="visualization"
@@ -3781,6 +3755,235 @@ exports[`Storyshots Components|ConditionExplorer/Fallback documentation 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionExplorer"
+  >
+    <div
+      className="GuideDetail"
+    >
+      <h1
+        className="title"
+      >
+         Overview: 
+      </h1>
+      <span>
+        As Canada’s energy regulator the 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/fs/nbqckfcts-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          NEB
+           
+        </a>
+         has a variety of roles and responsibilities throughout the 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/vds/thlfcclapprch-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          lifecycle
+           
+        </a>
+         of energy infrastructure – from adjudication of energy project 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          applications
+           
+        </a>
+         to safety oversight and 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/vds/nvrnmntlprtctn-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          environmental protection
+           
+        </a>
+        . To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/vds/cndtncmplnc-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          Conditions
+           
+        </a>
+         are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.
+      </span>
+      <span>
+        The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that 
+        <a
+          href="https://www.neb-one.gc.ca/bts/whwr/pplnrgltncnd-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+        ). Here is a 
+        <a
+          href="https://www.neb-one.gc.ca/sftnvrnmnt/sft/dshbrd/rgltdpplns-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          map
+           
+        </a>
+         of major pipeline systems regulated by the NEB.
+      </span>
+      <h1
+        className="title"
+      >
+         The genesis and scope of conditions 
+      </h1>
+      <span>
+        Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
+        <a
+          href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          laws, acts and regulations
+           
+        </a>
+         are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
+      </span>
+      <span>
+        These different sorts of requirements expressed in conditions are the Themes which can be explored 
+        <a
+          href=""
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+         in this data visualization.
+      </span>
+      <span>
+        Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
+      </span>
+      <span>
+        Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
+        <a
+          href=""
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+        . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
+      </span>
+      <span>
+        When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          application process
+           
+        </a>
+         Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          hearings
+           
+        </a>
+        , individuals must apply (more info about how to become an intervenor 
+        <a
+          href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+        )
+      </span>
+      <h1
+        className="title"
+      >
+         Conditions tracking and compliance 
+      </h1>
+      <span>
+        Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company (
+        <a
+          href=""
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          explorable here
+           
+        </a>
+        ) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.
+      </span>
+      <span>
+        Conditions may require a company to submit documentation such as:
+      </span>
+      <ul>
+        <li>
+          <span>
+            results of additional environmental and socio-economic assessments, species-specific studies, or traditional land use investigations;
+          </span>
+        </li>
+        <li>
+          <span>
+            engineering design details, and supporting assessments or information;
+          </span>
+        </li>
+        <li>
+          <span>
+            environmental protection plans;
+          </span>
+        </li>
+        <li>
+          <span>
+            mitigation and monitoring documentation;
+          </span>
+        </li>
+        <li>
+          <span>
+            construction schedules and progress reports; and
+          </span>
+        </li>
+        <li>
+          <span>
+            employee training programs and manuals.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`] = `
 <div
   className="visualization"
@@ -3847,9 +4050,9 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
     <h1>
       Theme
     </h1>
-    <p>
+    <span>
       Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.
-    </p>
+    </span>
   </div>
 </div>
 `;
@@ -3866,7 +4069,7 @@ exports[`Storyshots Components|FeatureFlag default 1`] = `
       style={
         Object {
           "backgroundColor": "rgb(133, 28, 133)",
-          "width": "3px",
+          "width": "calc(calc(100% - 7px) * 0.1)",
         }
       }
       title="Theme - Damage Prevention - 1"
@@ -3887,7 +4090,7 @@ exports[`Storyshots Components|FeatureFlag with tip 1`] = `
       style={
         Object {
           "backgroundColor": "rgb(221, 10, 10)",
-          "width": "30px",
+          "width": "calc(calc(100% - 7px) * 1)",
         }
       }
       title="Theme - Security - 20"
@@ -3897,6 +4100,7 @@ exports[`Storyshots Components|FeatureFlag with tip 1`] = `
       style={
         Object {
           "borderLeftColor": "rgb(221, 10, 10)",
+          "left": "calc(calc(100% - 7px) * 1)",
         }
       }
     />
@@ -3916,7 +4120,7 @@ exports[`Storyshots Components|FeatureFlag without tip 1`] = `
       style={
         Object {
           "backgroundColor": "rgb(247, 193, 97)",
-          "width": "30px",
+          "width": "calc(calc(100% - 7px) * 1)",
         }
       }
       title="Theme - Financial - 10"
@@ -3989,7 +4193,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure a company’s financial resposibilities are met.
+        types of conditions that ensure a company’s financial responsibilities are met.
       </span>
     </p>
     <h4
@@ -4009,7 +4213,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that apply when a project is transeferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+        types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
       </span>
     </p>
     <h4
@@ -4039,7 +4243,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).
+        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).
       </span>
     </p>
     <h4
@@ -4446,7 +4650,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "width": "0px",
+                "width": "calc(calc(100% - 7px) * 0)",
               }
             }
             title="Zero Conditions"
@@ -4465,7 +4669,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Ten Conditions"
@@ -4484,7 +4688,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Greater than Ten Conditions"
@@ -4494,6 +4698,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
             style={
               Object {
                 "borderLeftColor": "transparent",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -6396,374 +6601,1021 @@ exports[`Storyshots Components|LocationWheelMinimap default 1`] = `
 />
 `;
 
-exports[`Storyshots Components|MainInfoBar default 1`] = `
+exports[`Storyshots Components|MainInfoBar About 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="MainInfoBar"
+    style={
+      Object {
+        "height": 600,
+        "width": 700,
+      }
+    }
   >
-    <hr />
-    <button
-      className="TextButton "
-      id="About"
-      onClick={[Function]}
-      type="button"
-    >
-      About
-    </button>
-    <button
-      className="TextButton "
-      id="Methodology"
-      onClick={[Function]}
-      type="button"
-    >
-      Methodology
-    </button>
-    <button
-      className="TextButton "
-      id="Downloads"
-      onClick={[Function]}
-      type="button"
-    >
-      Downloads
-    </button>
-    <br />
     <div
-      className="TextBox"
-    />
-    <br />
-    <div
-      className="ShareIcons"
+      className="MainInfoBar"
     >
       <div
-        className="ShareIcon"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
+        className="topLine"
+      />
+      <div>
+        <button
+          className="textButton "
+          focusable={true}
+          id="about"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            About
+          </span>
+        </button>
+        <button
+          className="textButton "
+          focusable={true}
+          id="methodology"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Methodology
+          </span>
+        </button>
+        <button
+          className="textButton "
+          focusable={true}
+          id="downloads"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Downloads
+          </span>
+        </button>
+      </div>
+      <div
+        className="content"
       >
         <div
-          className="CircleContainer"
-          style={
-            Object {
-              "height": 20,
-              "width": 20,
-            }
-          }
+          className="AboutBox"
         >
-          <div>
-            <div
-              className="Icon"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
-                color=""
-                data-icon="envelope"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-            </div>
-          </div>
+          <h1>
+            About
+          </h1>
+          <p>
+            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+          </p>
+          <p>
+            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+          </p>
+          <p>
+            We hope we are hitting the mark. Your feedback is essential.
+          </p>
+          <p>
+            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+          </p>
         </div>
       </div>
       <div
-        className="ShareIcon"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
+        className="shareIcons"
       >
         <div
-          className="CircleContainer"
-          style={
-            Object {
-              "height": 20,
-              "width": 20,
-            }
-          }
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
-          <div>
-            <div
-              className="Icon"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
-                color=""
-                data-icon="twitter"
-                data-prefix="fab"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
               >
-                <path
-                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                  fill="currentColor"
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
+                  color=""
+                  data-icon="envelope"
+                  data-prefix="fas"
+                  role="img"
                   style={Object {}}
-                />
-              </svg>
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="ShareIcon"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
         <div
-          className="CircleContainer"
-          style={
-            Object {
-              "height": 20,
-              "width": 20,
-            }
-          }
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
-          <div>
-            <div
-              className="Icon"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
-                color=""
-                data-icon="facebook"
-                data-prefix="fab"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 448 512"
-                xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
               >
-                <path
-                  d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
-                  fill="currentColor"
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
+                  color=""
+                  data-icon="twitter"
+                  data-prefix="fab"
+                  role="img"
                   style={Object {}}
-                />
-              </svg>
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="ShareIcon"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
         <div
-          className="CircleContainer"
-          style={
-            Object {
-              "height": 20,
-              "width": 20,
-            }
-          }
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
-          <div>
-            <div
-              className="Icon"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-linkedin fa-w-14 fa-1x "
-                color=""
-                data-icon="linkedin"
-                data-prefix="fab"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 448 512"
-                xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
               >
-                <path
-                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                  fill="currentColor"
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
+                  color=""
+                  data-icon="facebook"
+                  data-prefix="fab"
+                  role="img"
                   style={Object {}}
-                />
-              </svg>
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-linkedin fa-w-14 fa-1x "
+                  color=""
+                  data-icon="linkedin"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <br />
   </div>
 </div>
 `;
 
-exports[`Storyshots Components|MainInfoBar/DownloadsTextBox Basic view 1`] = `
+exports[`Storyshots Components|MainInfoBar Downloads 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="MainInfoBar"
+    style={
+      Object {
+        "height": 600,
+        "width": 700,
+      }
+    }
   >
     <div
-      className="DownloadsTextBox"
+      className="MainInfoBar"
     >
-      <svg
-        viewBox="0 0 300 50"
-      >
-        <g
-          icon="file-download"
-        >
-          <path
-            d="M2.9,13.3s-.4-.3,0-.3H4.5V9.2c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L6.1,16Z"
-            fill="#666"
-          />
-          <polygon
-            fill="none"
-            points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0"
-          />
-          <line
-            strokeMiterlimit="10"
-            x1="0.5"
-            x2="11.2"
-            y1="11.1"
-            y2="11.1"
-          />
-          <rect
-            fill="none"
-            height="11.6"
-            width="11.6"
-          />
-          <path
-            d="M7.8,1l2.8,2.9v6.8H1V1.1H7.8M8.2,0H0V11.6H11.6V3.4L8.2,0Z"
-            fill="#666"
-          />
-          <line
-            stroke="#666"
-            strokeWidth="0.75p"
-            x1="7.7"
-            x2="7.7"
-            y1="0.4"
-            y2="4"
-          />
-          <line
-            stroke="#666"
-            strokeWidth="0.75px"
-            x1="11.2"
-            x2="7.3"
-            y1="4"
-            y2="4"
-          />
-        </g>
-      </svg>
-      <h1>
-        Download Data
-      </h1>
-      <p>
-        Click
+      <div
+        className="topLine"
+      />
+      <div>
         <button
+          className="textButton "
+          focusable={true}
+          id="about"
           onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
           type="button"
         >
-          here
+          <span>
+            About
+          </span>
         </button>
-        to download the dataset in Microsoft Excel format (.xlsx)
-      </p>
-      <svg
-        viewBox="0 0 300 50"
-      >
-        <g
-          icon="image-download"
-        >
-          <rect
-            fill="#666"
-            height="11.6"
-            width="11.6"
-          />
-          <polygon
-            fill="#666"
-            points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0"
-          />
-          <polygon
-            fill="#e6e6e6"
-            points="11.1 11.6 8.2 4.8 6.8 5.8 4.8 1.8 0.5 11.6 11.1 11.6"
-          />
-          <path
-            d="M2.9,13.3s-.4-.3,0-.3H4.5V9.1c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L5.9,16Z"
-            fill="#666"
-          />
-          <line
-            fill="none"
-            stroke="#666"
-            strokeMiterlimit={10}
-            x1="0.5"
-            x2="11.2"
-            y1="11.1"
-            y2="11.1"
-          />
-          <circle
-            cx="9.6"
-            cy="2.4"
-            fill="#e6e6e6"
-            r="1"
-          />
-        </g>
-      </svg>
-      <h1>
-        Download Image
-      </h1>
-      <p>
-        Click
         <button
+          className="textButton "
+          focusable={true}
+          id="methodology"
           onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
           type="button"
         >
-          here
+          <span>
+            Methodology
+          </span>
         </button>
-        to download a screenshot of your current view.
-      </p>
+        <button
+          className="textButton "
+          focusable={true}
+          id="downloads"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Downloads
+          </span>
+        </button>
+      </div>
+      <div
+        className="content"
+      >
+        <div
+          className="AboutBox"
+        >
+          <h1>
+            About
+          </h1>
+          <p>
+            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+          </p>
+          <p>
+            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+          </p>
+          <p>
+            We hope we are hitting the mark. Your feedback is essential.
+          </p>
+          <p>
+            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+          </p>
+        </div>
+      </div>
+      <div
+        className="shareIcons"
+      >
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
+                  color=""
+                  data-icon="envelope"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
+                  color=""
+                  data-icon="twitter"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
+                  color=""
+                  data-icon="facebook"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-linkedin fa-w-14 fa-1x "
+                  color=""
+                  data-icon="linkedin"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Components|MainInfoBar/MethodologyTextBox Basic view 1`] = `
+exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="MainInfoBar"
+    style={
+      Object {
+        "height": 600,
+        "width": 700,
+      }
+    }
   >
     <div
-      className="MethodologyTextBox"
+      className="MainInfoBar"
     >
-      <h1>
-        Methodology
-      </h1>
-      <p>
-        Click
-        <a
-          href="???"
-          target="_blank"
+      <div
+        className="topLine"
+      />
+      <div>
+        <button
+          className="textButton "
+          focusable={true}
+          id="about"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          here
-        </a>
-        to download a PDF file explaining our data collection methodology
-      </p>
-      <h1>
-        Keywords
-      </h1>
-      <p>
-        [Placeholder for an explanation of...]
-      </p>
+          <span>
+            About
+          </span>
+        </button>
+        <button
+          className="textButton "
+          focusable={true}
+          id="methodology"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Methodology
+          </span>
+        </button>
+        <button
+          className="textButton "
+          focusable={true}
+          id="downloads"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Downloads
+          </span>
+        </button>
+      </div>
+      <div
+        className="content"
+      >
+        <div
+          className="AboutBox"
+        >
+          <h1>
+            About
+          </h1>
+          <p>
+            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+          </p>
+          <p>
+            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+          </p>
+          <p>
+            We hope we are hitting the mark. Your feedback is essential.
+          </p>
+          <p>
+            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+          </p>
+        </div>
+      </div>
+      <div
+        className="shareIcons"
+      >
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
+                  color=""
+                  data-icon="envelope"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
+                  color=""
+                  data-icon="twitter"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
+                  color=""
+                  data-icon="facebook"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-linkedin fa-w-14 fa-1x "
+                  color=""
+                  data-icon="linkedin"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "width": 700,
+      }
+    }
+  >
+    <div
+      className="MainInfoBar"
+    >
+      <div
+        className="topLine"
+      />
+      <div>
+        <button
+          className="textButton "
+          focusable={true}
+          id="about"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            About
+          </span>
+        </button>
+        <button
+          className="textButton "
+          focusable={true}
+          id="methodology"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Methodology
+          </span>
+        </button>
+        <button
+          className="textButton "
+          focusable={true}
+          id="downloads"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Downloads
+          </span>
+        </button>
+      </div>
+      <div
+        className="content"
+      >
+        <div
+          className="AboutBox"
+        >
+          <h1>
+            About
+          </h1>
+          <p>
+            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+          </p>
+          <p>
+            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+          </p>
+          <p>
+            We hope we are hitting the mark. Your feedback is essential.
+          </p>
+          <p>
+            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+          </p>
+        </div>
+      </div>
+      <div
+        className="shareIcons"
+      >
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
+                  color=""
+                  data-icon="envelope"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
+                  color=""
+                  data-icon="twitter"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-facebook fa-w-14 fa-1x "
+                  color=""
+                  data-icon="facebook"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ShareIcon"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="CircleContainer"
+            style={
+              Object {
+                "height": 20,
+                "width": 20,
+              }
+            }
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-linkedin fa-w-14 fa-1x "
+                  color=""
+                  data-icon="linkedin"
+                  data-prefix="fab"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -6918,21 +7770,129 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
+exports[`Storyshots Components|ProjectMenu At left 1`] = `
 <div
   className="visualization"
 >
   <div
-    className="ProjectMenu"
+    className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
-      className="EmptyListItems"
+      className="pipe"
     />
     <div
       className="List horizontal"
       onWheel={[Function]}
     >
       <ul>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart selected"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    5
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.5)",
+                      }
+                    }
+                    title="Theme - Security - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-right"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
         <li
           className="List-Item"
         >
@@ -6967,6 +7927,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -6974,7 +7937,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Security - 10"
@@ -6988,7 +7951,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 19"
@@ -6998,6 +7961,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7047,6 +8011,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7054,7 +8021,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "12px",
+                        "width": "calc(calc(100% - 7px) * 0.4)",
                       }
                     }
                     title="Theme - Security - 4"
@@ -7068,7 +8035,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 29"
@@ -7078,6 +8045,507 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  3. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu At right 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ProjectMenu paddingBefore0 paddingAfter2"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="List horizontal"
+      onWheel={[Function]}
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    5
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.5)",
+                      }
+                    }
+                    title="Theme - Security - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  1. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    29
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Security - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 19"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  2. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart selected"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    33
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.4)",
+                      }
+                    }
+                    title="Theme - Security - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 29"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ProjectMenu paddingBefore0 paddingAfter0"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="List horizontal"
+      onWheel={[Function]}
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    29
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Security - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 19"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  2. Section 21.(1) application
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart "
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    33
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "width": "calc(calc(100% - 7px) * 0.4)",
+                      }
+                    }
+                    title="Theme - Security - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "width": "calc(calc(100% - 7px) * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 29"
+                  />
+                  <div
+                    className="FlagTip"
+                    style={
+                      Object {
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7164,6 +8632,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7171,7 +8642,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "18px",
+                        "width": "calc(calc(100% - 7px) * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -7185,7 +8656,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 22"
@@ -7195,6 +8666,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7277,6 +8749,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7284,7 +8759,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "15px",
+                        "width": "calc(calc(100% - 7px) * 0.5)",
                       }
                     }
                     title="Theme - Security - 5"
@@ -7298,7 +8773,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "0px",
+                        "width": "calc(calc(100% - 7px) * 0)",
                       }
                     }
                     title="Theme - Management System - 0"
@@ -7349,6 +8824,9 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="FlagWrapper"
               >
                 <div
+                  className="FlagPole"
+                />
+                <div
                   className="FeatureFlag"
                 >
                   <div
@@ -7356,7 +8834,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Security - 10"
@@ -7370,7 +8848,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
-                        "width": "30px",
+                        "width": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                     title="Theme - Management System - 19"
@@ -7380,6 +8858,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                     style={
                       Object {
                         "borderLeftColor": "rgb(36, 91, 64)",
+                        "left": "calc(calc(100% - 7px) * 1)",
                       }
                     }
                   />
@@ -7397,10 +8876,14 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
         </li>
       </ul>
     </div>
-    <div
-      className="EmptyListItems"
-    />
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -7416,7 +8899,35 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
     >
       <div
         className="ConditionPipe"
-      />
+      >
+        <div
+          className="CircleContainer ConditionCount"
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+        >
+          <div>
+            0
+          </div>
+        </div>
+      </div>
+      <div
+        className="FlagWrapper"
+      >
+        <div
+          className="FlagPole"
+        />
+      </div>
+      <div
+        className="ProjectName"
+      >
+        <p>
+          
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -7453,6 +8964,9 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
         className="FlagWrapper"
       >
         <div
+          className="FlagPole"
+        />
+        <div
           className="FeatureFlag"
         >
           <div
@@ -7460,7 +8974,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(221, 10, 10)",
-                "width": "3px",
+                "width": "calc(calc(100% - 7px) * 0.1)",
               }
             }
             title="Theme - Security - 1"
@@ -7474,7 +8988,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(36, 91, 64)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Management System - 45"
@@ -7484,6 +8998,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(36, 91, 64)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7496,7 +9011,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(247, 193, 97)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Financial - 55"
@@ -7506,6 +9021,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(247, 193, 97)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7518,7 +9034,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(133, 28, 133)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Damage Prevention - 23"
@@ -7528,6 +9044,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(133, 28, 133)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7540,7 +9057,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(68, 34, 149)",
-                "width": "9px",
+                "width": "calc(calc(100% - 7px) * 0.3)",
               }
             }
             title="Theme - Safety Management - 3"
@@ -7554,7 +9071,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(153, 153, 255)",
-                "width": "30px",
+                "width": "calc(calc(100% - 7px) * 1)",
               }
             }
             title="Theme - Socio-Economic - 13"
@@ -7564,6 +9081,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "borderLeftColor": "rgb(153, 153, 255)",
+                "left": "calc(calc(100% - 7px) * 1)",
               }
             }
           />
@@ -7576,7 +9094,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
             style={
               Object {
                 "backgroundColor": "rgb(11, 121, 153)",
-                "width": "9px",
+                "width": "calc(calc(100% - 7px) * 0.3)",
               }
             }
             title="Theme - Emergency Management - 3"

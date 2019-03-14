@@ -1,12 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+
+import handleInteraction from '../../utilities/handleInteraction';
+
 import './styles.scss';
+
 import ShareIcon from '../ShareIcon';
-import AboutTextBox from '../AboutTextBox';
-import MethodologyTextBox from './MethodologyTextBox';
-import DownloadsTextBox from './DownloadsTextBox';
+import AboutBox from './AboutBox';
+import MethodologyBox from './MethodologyBox';
+import DownloadsBox from './DownloadsBox';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 
@@ -19,36 +28,49 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeDialog: '',
+  static getDerivedStateFromProps(props, state) {
+    // Expanded is determined by whether we have an pane prop
+    // The renderedDialog is either the active dialog, or the previously active one.
+    return {
+      expanded: !!props.pane,
+      renderedDialog: props.pane || state.renderedDialog,
     };
   }
 
-  setActiveDialog = activeDialog => this.setState({ activeDialog });
-
-  getDialogContent() {
-    const { activeDialog } = this.state;
-    if (activeDialog === 'About') { return <AboutTextBox />; }
-    if (activeDialog === 'Methodology') { return <MethodologyTextBox />; }
-    if (activeDialog === 'Downloads') { return <DownloadsTextBox />; }
-    return null;
+  constructor(props) {
+    super(props);
+    this.state = { expanded: false, renderedDialog: '' };
   }
 
-  closeDialog = () => this.setActiveDialog('');
+  getDialogContent = () => {
+    switch (this.state.renderedDialog) {
+      case 'about': default:
+        return <AboutBox />;
+      case 'methodology':
+        return <MethodologyBox />;
+      case 'downloads':
+        return (
+          <DownloadsBox
+            openDataModal={this.props.openDataModal}
+            openScreenshotModal={this.props.openScreenshotModal}
+          />
+        );
+    }
+  }
 
-  textButtons() {
-    const buttons = ['About', 'Methodology', 'Downloads'];
+  closeDialog = () => this.props.setPane('');
+
+  textButtons = () => {
+    const buttons = ['about', 'methodology', 'downloads'];
     const textButton = buttons.map(k => (
       <button
         key={k}
         id={k}
-        className={`TextButton ${this.state.activeDialog === k ? 'selected' : ''}`}
+        className={`textButton ${this.props.pane === k ? 'selected' : ''}`}
         type="button"
-        onClick={() => this.setActiveDialog(k)}
+        {...handleInteraction(this.props.setPane, k)}
       >
-        {k}
+        <FormattedMessage id={`components.mainInfoBar.headings.${k}`} />
       </button>
     ));
     return textButton;
@@ -71,28 +93,27 @@ class MainInfoBar extends React.PureComponent {
     ));
     return (
       <div className="MainInfoBar">
-        <hr />
-        {this.textButtons()}
-        <br />
-        <div className="TextBox">
+        <div className="topLine" />
+        <div>
+          {this.textButtons()}
+        </div>
+        <div className={classNames('content', { expanded: this.state.expanded })}>
           {this.getDialogContent()}
         </div>
-        <br />
-        <div className="ShareIcons">
+        <div className="shareIcons">
           {emailIcon}
           {icons}
         </div>
-        <br />
         {
-          this.state.activeDialog === ''
+          (!this.state.expanded)
             ? null
             : (
               <CircleContainer
-                className="AngleDoubleDown"
+                className="angleDoubleDown"
                 size={20}
                 onClick={this.closeDialog}
               >
-                <Icon color="grey" size="1x" icon="angle-double-up" prefix="fas" />
+                <Icon size="1x" icon="angle-double-up" prefix="fas" />
               </CircleContainer>
             )
         }
@@ -100,5 +121,12 @@ class MainInfoBar extends React.PureComponent {
     );
   }
 }
+
+MainInfoBar.propTypes = {
+  pane: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']).isRequired,
+  setPane: PropTypes.func.isRequired,
+  openDataModal: PropTypes.func.isRequired,
+  openScreenshotModal: PropTypes.func.isRequired,
+};
 
 export default MainInfoBar;

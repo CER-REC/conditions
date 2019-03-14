@@ -2,6 +2,9 @@
 @import '../../styles/fontVariables.scss';
 
 .ConditionExplorer {
+   touch-action: none;
+   min-height: 500px;
+
   .keyword {
     user-select: none;
 
@@ -38,7 +41,7 @@
   }
 
   .guide {
-    fill: #fff;
+    fill: #164EF8;
     stroke: $LinksTextButtons;
   }
 }

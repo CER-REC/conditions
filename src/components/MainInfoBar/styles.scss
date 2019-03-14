@@ -1,34 +1,98 @@
+@import "../../styles/fontVariables";
+@import "../../styles/colors";
+
 .MainInfoBar {
 
-  hr {
-    margin-bottom: 20px;
-    width: 100%;
-  }
+  text-align: center;
 
-  .TextButton {
+  .textButton {
+    background: none;
     cursor: pointer;
     text-decoration: none;
     border: none;
     text-align: center;
     display: inline-block;
-    font-size: 14px;
+    font-size: 10px;
     margin: 10px;
+    color: $Gray160;
+    line-height: 16px;
+    vertical-align: middle;
+    font-family: inherit;
 
     &.selected {
+      font-size: 12px;
       font-weight: 600;
     }
   }
 
-  .TextBox {
-    display: inline-flex;
+  .content {
+    // display: inline-flex;
+    overflow: auto;
+    width: 100%;
+    text-align: left;
+    margin: 10px 0;
+    height: 0;
+    transition: height 1s ease-in-out, visibility 0s 1s;
+
+    &.expanded {
+      transition: height 1s ease-in-out, visibility 0s;
+
+      // visibility: hidden;
+      height: 200px;
+    }
   }
 
-  .ShareIcons {
-    display: inline-flex;
-    margin: 10px 10px;
+  .shareIcons {
+    display: block;
+    margin: 0px 10px 10px 10px;
+
+    .ShareIcon {
+      display: inline-block;
+    }
   }
 
-  .AngleDoubleDown {
+  .angleDoubleDown {
+    color: $LinksTextButtons;
     background: white;
+
+    font-size: 18px;
+  }
+
+  .topLine {
+    border-top: 1px solid $Black77;
+
+    width: 490px;
+    margin: 0 auto 20px;
+  }
+
+  h1 {
+    color: $general-text-2;
+    font-family: $fira-sans-condensed;
+    font-size: 14px;
+    size: 1px;
+
+    & + p {
+      margin-top: 4px;
+    }
+  }
+
+  p {
+    color: $Black77;
+    font-family: $fira-sans-condensed-light;
+    font-size: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $LinksTextButtons;
+  }
+
+  button {
+    border: none;
+    background: none;
+    color: $LinksTextButtons;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
   }
 }

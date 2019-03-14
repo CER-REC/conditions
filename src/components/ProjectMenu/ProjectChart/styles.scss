@@ -1,67 +1,27 @@
-$pipe-color: #e4e4e4;
+@import '../../../styles/colors.scss';
+
+$pipe-color: $LightGreyBackground;
 $condition-circle-bg: #a1a8a7;
 $selected-condition-circle-bg: #f15a24;
 $condition-circle-font: #fff;
 $project-chart-line: #a1a8a7;
 
-
-@mixin angled($direction, $sides, $backgroundColour, $contrastTextColour) {
-  position: relative;
-  z-index: 1;
-  color: $contrastTextColour;
-
-  &:before {
-  @include angledTopUp($backgroundColour);
-  }
-  &:after {
-  @include angledBottomUp($backgroundColour);
-  }
-}
-
-@mixin angledCommon($backgroundColour) {
-  background: inherit;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  -webkit-backface-visibility: hidden; // for Chrome Windows
-  width: 100%;
-  height: 100%;
-  background-color: $backgroundColour;
-  transform-origin: 0 0;
-}
-
-@mixin angledTopUp($backgroundColour) {
-  top: 0;
-  transform: skewY(-25deg);
-  @include angledCommon($backgroundColour);
-}
-
-@mixin angledBottomUp($backgroundColour) {
-  top: 0;
-  transform: skewY(-25deg);
-  @include angledCommon($backgroundColour);
-}
-
-
 .ProjectChart {
-  width: 50px;
-  display: inline-table;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 110px;
 
   .ProjectName {
-    transform: rotate(25deg);
     text-overflow: ellipsis;
-    display: inline-table;
-    height: 70px;
+    position: absolute;
     width: 118px;
-    margin-left: -85px;
-    margin-top: 50px;
+    bottom: 130px; // Based on the rotation and the width
+    right: 50%;
+    transform: rotate(-70deg);
+    transform-origin: bottom right;
+    text-align: right;
 
     p {
-      transform: rotate(-90deg);
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -72,6 +32,7 @@ $project-chart-line: #a1a8a7;
   .ConditionPipe {
     height: 30px;
     background-color: $pipe-color;
+    text-align: center;
 
     .ConditionCount {
       background-color: $condition-circle-bg;
@@ -80,11 +41,30 @@ $project-chart-line: #a1a8a7;
   }
 
   .FlagWrapper {
-    height: 300px;
-    width: 2px;
-    background-color: $project-chart-line;
-    margin: -6px auto;
-    padding-top: 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: calc(100% - 50px); // 100% - pipe
+    padding-top: 10px;
+
+    .FlagPole {
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 2px;
+      height: 100%;
+
+      background-color: $project-chart-line;
+    }
+
+    .FeatureFlag {
+      position: relative;
+      margin-top: 1px;
+      margin-left: 50%;
+      width: 50%;
+    }
   }
 
   p {
@@ -92,10 +72,9 @@ $project-chart-line: #a1a8a7;
   }
 
   &.selected {
-    width: 100px;
-
     .ConditionPipe {
       margin: 0;
+
       .ConditionCount {
         background-color: $selected-condition-circle-bg;
         color: $condition-circle-font;
@@ -104,23 +83,33 @@ $project-chart-line: #a1a8a7;
       }
     }
 
-    .FlagWrapper {
-      height: 300px;
+    .FlagPole {
+      top: 0;
       width: 30px;
       background-color: $pipe-color;
-      margin: 0 auto;
-      padding-top: 10px;
-      padding-left: 15px;
+    }
+
+    .FeatureFlag {
+      // Convert to the same scale as the other charts
+      width: calc(50% / 0.4 * 0.15);
     }
 
     .ProjectName {
-      left: 3px;
-      bottom: 1px;
-      margin: 0;
-      display: block;
-      height: 145px;
-      width: 28px;
-      @include angled(rightOut, bottomAndTop, $pipe-color, black);
+      z-index: 1;
+      width: 140px;
+      height: 30px;
+      background: $pipe-color;
+      right: calc(50% - 15px);
+      &:before {
+        content: '';
+        background: $pipe-color;
+        width: 20px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        left: -10px;
+        transform: skew(20deg);
+      }
     }
   }
 
