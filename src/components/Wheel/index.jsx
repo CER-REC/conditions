@@ -10,7 +10,7 @@ import WheelRay from './WheelRay';
 import { browseByType } from '../../proptypes';
 import WheelList from './WheelList';
 
-const reservedDegrees = 18;
+const reservedDegrees = 14;
 
 const AnimatedWheelRay = animated(WheelRay);
 
@@ -154,7 +154,7 @@ class Wheel extends React.Component {
               <WheelList
                 wheelType={this.props.wheelType}
                 listContent={this.props.itemsData.items}
-                textClippingRadius="75%"
+                textClippingRadius="60"
                 onChange={this.onChange}
                 selected={((this.props.itemsData.items.length + this.getIndex(props.rotation))
                   % this.props.itemsData.items.length)}

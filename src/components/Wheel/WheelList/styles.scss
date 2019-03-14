@@ -11,16 +11,16 @@
   top: 50%;
   position: absolute;
   color: $Black77;
-  width: 60%;
+  width: 50%;
+  height: 45%;
   font-family: $fira-sans-condensed;
   font-size: 18px;
   transform: translate(0%, -50%);
 
   .labelContainer {
     position: absolute;
-    // top: calc(50% - 12px);
     height: 24px;
-    width: 100%;
+    width: 150%;
     overflow: visible;
     background-color: $LightGray;
     line-height: 24px;
@@ -28,15 +28,15 @@
 
     .label {
       position: absolute;
-      right: 50%;
-      width: 50%;
+      right: 70%;
+      width: 30%;
       text-align: center;
     }
 
     .selected {
       position: absolute;
-      left: 50%;
-      width: 50%;
+      left: 30.45%;
+      width: 110%;
       overflow: hidden;
       text-align: left;
       text-overflow: ellipsis;
@@ -46,11 +46,13 @@
   }
 
   .listContainer {
-    width: 100%;
+    width: 87%;
+    height: 100%;
     margin: auto;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 100%;
     white-space: nowrap;
+    position: relative;
     .selected {
       .List-Item-Content {
         background-color: $LightGray;
@@ -59,11 +61,14 @@
   }
 
   .list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    margin-left: calc(50% - 12px);
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // width: 50%;
+    position: absolute;
+    top: 50%;
+    margin-left: 45%;
+    transform: translate(0 , -50%);
   }
 
   .oneAway {

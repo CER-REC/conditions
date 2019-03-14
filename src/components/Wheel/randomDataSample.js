@@ -1,7 +1,7 @@
 const companyDataSample = [
   {
     _id: '5433ce88-f40d-4e90-84f9-980849a26910',
-    company_name: 'Keengen',
+    company_name: 'Keengenaskjdfjhaslkdjkjlashfjashdfkjashdf',
     instruments: [
       {
         _id: '0b0b3a45-6152-471e-bffc-2b673617d219',
@@ -1090,7 +1090,7 @@ const companyDataSample = [
   },
   {
     _id: 'd8ebe6a2-eed5-463e-92c1-0597ec19a788',
-    company_name: 'Adornica',
+    company_name: 'Adornica has more chars to test borders',
     instruments: [
       {
         _id: '8ce538a8-6a44-4fa0-b4e2-5931d9605053',
@@ -1987,7 +1987,7 @@ const companyDataSample = [
   },
   {
     _id: 'f768ec3e-26de-4ee8-a7bc-dfb5484aea9b',
-    company_name: 'Acrodance',
+    company_name: 'Acrodance has more than 26 chars so far we are up to 55',
     instruments: [
       {
         _id: '33b464a0-e216-44b0-93b3-59c74b99e1b2',
@@ -4517,7 +4517,7 @@ const companyDataSample = [
   },
   {
     _id: 'd65cad32-1928-416f-bc6b-78c82f469b99',
-    company_name: 'Andershun',
+    company_name: 'Andershun also has more chars to test',
     instruments: [
       {
         _id: 'a0944373-bee1-4b36-a17d-d69f6dfc254f',

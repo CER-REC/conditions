@@ -23,6 +23,7 @@ const WheelList = (props) => {
     return (
       <span
         className={offsetClasses[Math.abs(offset)]}
+        style={{ width: `${props.textClippingRadius}%` }}
         // eslint-disable-next-line react/no-array-index-key
         key={`${text}-${offset}`}
       >
@@ -39,7 +40,7 @@ const WheelList = (props) => {
         <FormattedMessage id={`components.companyWheel.list.${props.wheelType}`}>
           {text => <span className="label">{text}</span>}
         </FormattedMessage>
-        <span className="selected" style={{ width: props.textClippingRadius }}>
+        <span className="selected" style={{ width: `${props.textClippingRadius - 25}%` }}>
           {props.wheelType === 'company'
             ? props.listContent[props.selected].company_name
             : props.listContent[props.selected].region_name
@@ -77,7 +78,7 @@ WheelList.propTypes = {
 
 WheelList.defaultProps = {
   className: null,
-  textClippingRadius: '50%',
+  textClippingRadius: '80%',
 };
 
 export default WheelList;
