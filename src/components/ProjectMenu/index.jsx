@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import List from '../List';
 import ProjectChart from './ProjectChart';
-import { project as projectsData } from '../../proptypes';
+import { project as projectData } from '../../proptypes';
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
@@ -11,7 +11,7 @@ class ProjectMenu extends React.PureComponent {
     selectedProjectID: PropTypes.number.isRequired,
     selectedFeature: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    projectsData: projectsData.isRequired,
+    projectsData: PropTypes.arrayOf(projectData).isRequired,
   }
 
   getListItems = () => {
