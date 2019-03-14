@@ -7,22 +7,82 @@ import ReadMe from './README.md';
  * 1 = Dot
  * 3 = Filtered
  * 5 = Relevant
- * 7 = Filtered + Relevant
+ * { filtered: true; relevant: true },  = Filtered + Relevant
  */
 
 const defaultProps = {
-  x: 100,
-  y: 0,
+  x: 150,
+  y: 100,
   dotWidth: 16,
   dotSpacing: 24,
-  height: 163,
+  height: 200,
   width: 0,
 };
 
 const flagLayouts = [
-  ['1551111', '313', '77', '1'],
-  ['1551111', '303', '77', '1'],
-  ['1551111313771'],
+  [
+    [
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: true },
+      { filtered: false, relevant: true },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+    ],
+    [
+      { filtered: true, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: true, relevant: false },
+    ],
+    [
+      { filtered: true, relevant: true },
+      { filtered: true, relevant: true },
+    ],
+    [
+      { filtered: false, relevant: false },
+    ],
+  ],
+  [
+    [
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: true },
+      { filtered: false, relevant: true },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+    ],
+    [
+      { filtered: true, relevant: false },
+      0,
+      { filtered: true, relevant: false },
+    ],
+    [
+      { filtered: true, relevant: true },
+      { filtered: true, relevant: true },
+    ],
+    [
+      { filtered: false, relevant: false },
+    ],
+  ],
+  [
+    [
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: true },
+      { filtered: false, relevant: true },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: true, relevant: false },
+      { filtered: false, relevant: false },
+      { filtered: true, relevant: false },
+      { filtered: true, relevant: true },
+      { filtered: true, relevant: true },
+      { filtered: false, relevant: false },
+    ],
+  ],
 ];
 
 storiesForComponent('Components|Wheel/CompanyFlag', module, ReadMe)

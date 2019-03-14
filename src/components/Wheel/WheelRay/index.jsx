@@ -38,13 +38,12 @@ class WheelRay extends React.Component {
 
     // TODO: This shouldn't be in the constructor; load the data and prompt a
     // re-render.
-    const maxFlagHeight = 16;
     const flagData = sampleFlagData.slice(0, this.props.items.length);
     (
       {
         flagLayouts: this.flagLayouts,
         flagScale: this.flagScale,
-      } = flagLayoutCalculation(flagData, maxFlagHeight)
+      } = flagLayoutCalculation(flagData)
     );
   }
 

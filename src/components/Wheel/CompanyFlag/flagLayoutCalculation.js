@@ -1,19 +1,19 @@
-// Needed for testing because console.log holds a reference rather than taking
-// the object's values immediately when called, giving unreliable output.
-console.logObj = obj => console.log(JSON.parse(JSON.stringify(obj)));
-console.dirObj = obj => console.dir(JSON.parse(JSON.stringify(obj)));
-
 // Returns the next higher triangular root from x
 export const nextTriangularRoot = x => Math.ceil((Math.sqrt(8 * x + 1) - 1) / 2);
 
-// Returns the number of items in a triangle of base n
-// export const triangleSize = n => n * (n + 1) / 2;
-
-const findBestTriangle = n => nextTriangularRoot(n);
-
+/**
+ *  Constructs the exterior of the flag
+ *
+ *  i.e. for a base of 4:
+ *
+ *             *
+ *            * *
+ *           * . *
+ *          * . . *
+ */
 const buildTriangleFrame = (dots, base) => {
   const remainingDots = [...dots];
-  const columns = [];
+  const frame = [];
 
   for (let i = base - 1; i > 0; i -= 1) {
     const col = new Array(i - 1).fill(0);
@@ -21,14 +21,15 @@ const buildTriangleFrame = (dots, base) => {
     col.unshift(remainingDots.pop());
     col.push(remainingDots.pop());
 
-    columns.push(col);
+    frame.push(col);
   }
 
-  columns.push([remainingDots.pop()]);
+  frame.push([remainingDots.pop()]);
 
-  return { columns, remainingDots };
+  return { frame, remainingDots };
 };
 
+// TODO: Some of the default params and +/-s in here feel a bit too Magic
 const fillTriangleFrame = ({
   dots,
   columns,
@@ -73,45 +74,32 @@ const fillTriangleFrame = ({
   });
 };
 
-const projectToMask = project => (
-  (project)
-    ? (1 + (project.filtered ? 2 : 0) + (project.relevant ? 4 : 0))
-    : 0
-);
-
-const maskColumn = column => column.reduce((acc, project) => {
-  acc.push(projectToMask(project));
-  return acc;
-}, []).join('');
-
-const triangleHasCollision = ({ triangleSize, stemLength, rayIndex, flagData, flagLayouts, flagScale }) => {
+const triangleHasCollision = ({
+  triangleSize,
+  stemLength,
+  rayIndex,
+  flagData,
+  flagLayouts,
+  flagScale,
+}) => {
   const thirtyDegrees = Math.PI / 6;
   const sixtyDegrees = Math.PI / 3;
 
-  const minimumDistance = 1;
-  const horizontalScale = flagScale * 0.3;
+  // TODO: Magic numbers
+  const minimumDistance = 2 * flagScale;
+  const horizontalScale = flagScale * 0.2;
 
-  console.log(`Checking collisions for ray ${rayIndex}, triangle size of ${triangleSize}, stem of ${stemLength}`);
+  // Flag's base, where it meets the stem
+  const base = { x: rayIndex, y: stemLength - triangleSize };
 
-  // Flag attaches to stem
-  const base = {
-    x: rayIndex,
-    y: stemLength - triangleSize,
-  };
-
-  // Flag tip
+  // Flag's tip
   const tip = {
     x: rayIndex - triangleSize * Math.cos(thirtyDegrees) * horizontalScale,
     y: base.y + triangleSize * Math.sin(thirtyDegrees),
   };
 
-  console.log(`base: {x: ${base.x}, y: ${base.y}}`);
-  console.log(`tip: {x: ${tip.x}, y: ${tip.y}}`);
-
   // Check all rays that the flag extends over
   const endIndex = (tip.x - minimumDistance + flagData.length) % flagData.length;
-
-  console.log(`\tendIndex: ${endIndex}`);
 
   for (let otherIndex = rayIndex - 1; otherIndex >= endIndex; otherIndex -= 1) {
     const wrappedIndex = (otherIndex + flagData.length) % flagData.length;
@@ -124,15 +112,11 @@ const triangleHasCollision = ({ triangleSize, stemLength, rayIndex, flagData, fl
         : flagData[wrappedIndex].length,
     };
 
-    console.log(`\tcomparing to ray ${wrappedIndex}: {x: ${other.x}, y: ${other.y}}`);
-
     // The ray is tall enough to be worth checking
     if (other.y > base.y) {
       const dx = (other.y - base.y) * Math.tan(sixtyDegrees);
       const xIntersect = base.x - Math.abs(dx);
       const distance = (xIntersect - other.x) * Math.sin(thirtyDegrees);
-      console.log(`\t\tdx: ${dx}`);
-      console.log(`\t\tcomparing xIntersect: ${xIntersect} <= other.x: ${other.x} || distance: ${distance} < min: ${minimumDistance}`);
       if (xIntersect <= other.x || distance < minimumDistance) {
         return true;
       }
@@ -146,61 +130,57 @@ const buildFlagLayouts = (flagData, maxFlagHeight, flagScale) => {
   const flagLayouts = [];
   const scaledMaxHeight = Math.floor(maxFlagHeight / flagScale);
 
-  // Using a For loop so we can return early if we have a problem
+  // Using a For loop rather than Map/ForEach so we can return early if we find a problem
   for (let i = 0, l = flagData.length; i < l; i += 1) {
     const stem = flagData[i].slice(0, scaledMaxHeight);
-    const toFold = flagData[i].slice(scaledMaxHeight);
 
-    if (!toFold.length) {
-      flagLayouts.push([maskColumn(stem)]);
-      continue;
+    if (stem.length === flagData[i].length) {
+      flagLayouts.push([stem]);
+    } else {
+      const toFold = flagData[i].slice(scaledMaxHeight);
+
+      const triangleSize = nextTriangularRoot(toFold.length);
+      if (triangleSize >= stem.length // The flag would be too large
+        || triangleHasCollision({ // The flag would intersect another ray
+          triangleSize,
+          stemLength: stem.length,
+          rayIndex: i,
+          flagData,
+          flagLayouts,
+          flagScale,
+        })
+      ) {
+        return false;
+      }
+
+      const { frame, remainingDots } = buildTriangleFrame(toFold, triangleSize);
+
+      const layout = (remainingDots.length)
+        ? fillTriangleFrame({ columns: frame, dots: remainingDots })
+        : frame;
+
+      layout.unshift(stem);
+
+      flagLayouts.push(layout);
     }
-
-    const triangleSize = findBestTriangle(toFold.length);
-    // This flag can't possibly fit in the given space
-    // Commented so I can work on the overlapping logic
-    // if (base >= stem.length) return null;
-
-    // if (triangleSize >= stem.length) {
-    // if (triangleHasCollision({
-    if (triangleSize >= stem.length || triangleHasCollision({
-      triangleSize,
-      stemLength: stem.length,
-      rayIndex: i,
-      flagData,
-      flagLayouts,
-      flagScale,
-    })) {
-      console.log(`folding ray ${i} with a triangle of base ${triangleSize} and stem of ${stem.length} was invalid\n=========================`);
-      return false;
-    }
-
-    const { columns: frame, remainingDots } = buildTriangleFrame(toFold, triangleSize);
-
-    const layout = (remainingDots.length)
-      ? [stem.slice(0, scaledMaxHeight), ...fillTriangleFrame({ columns: frame, dots: remainingDots })]
-      : [stem.slice(0, scaledMaxHeight), ...frame];
-
-    flagLayouts.push(layout.map(col => maskColumn(col)));
   }
 
   return flagLayouts;
 };
 
-// maxFlagHeight is in dots
-const flagLayoutCalculation = (flagData, maxFlagHeight) => {
+const flagLayoutCalculation = (flagData) => {
+  // Maximum stem length (in dots) at the starting scale
+  const maxFlagHeight = 20;
   let flagScale = 1;
-
   let flagLayouts;
+
   // eslint-disable-next-line no-cond-assign
   do {
-    console.log(`=========================\nattempting to fit the flags at a scale of ${flagScale}`);
     flagLayouts = buildFlagLayouts(flagData, maxFlagHeight, flagScale);
 
     // Reduce our scale if necessary and try again
   } while (!flagLayouts && ((flagScale -= 0.1) > 0.3));
 
-  console.log(`returning flags with a scale of ${flagScale}`);
   return { flagLayouts, flagScale };
 };
 
