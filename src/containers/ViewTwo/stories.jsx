@@ -12,7 +12,7 @@ const year = {
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
-  projectsData: { projectsData },
+  projectsData,
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },

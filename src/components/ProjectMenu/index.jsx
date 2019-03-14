@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import List from '../List';
 import ProjectChart from './ProjectChart';
+import { project as projectsData } from '../../proptypes';
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
@@ -10,25 +11,7 @@ class ProjectMenu extends React.PureComponent {
     selectedProjectID: PropTypes.number.isRequired,
     selectedFeature: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    projectsData: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.shape({
-        english: PropTypes.string.isRequired,
-        french: PropTypes.string.isRequired,
-      }).isRequired,
-      shortName: PropTypes.shape({
-        english: PropTypes.string.isRequired,
-        french: PropTypes.string.isRequired,
-      }).isRequired,
-      graphData: PropTypes.shape({
-        instrument: PropTypes.objectOf(PropTypes.number).isRequired,
-        theme: PropTypes.objectOf(PropTypes.number).isRequired,
-        phase: PropTypes.objectOf(PropTypes.number).isRequired,
-        status: PropTypes.objectOf(PropTypes.number).isRequired,
-        type: PropTypes.objectOf(PropTypes.number).isRequired,
-        filing: PropTypes.objectOf(PropTypes.number).isRequired,
-      }).isRequired,
-    })).isRequired,
+    projectsData: projectsData.isRequired,
   }
 
   getListItems = () => {
@@ -47,13 +30,7 @@ class ProjectMenu extends React.PureComponent {
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
-  getReformattedData = (pickedFeature) => {
-    const reformattedData = pickedFeature.map((obj) => {
-      const item = { name: obj[0], count: obj[1] };
-      return item;
-    });
-    return reformattedData;
-  }
+  getReformattedData = pickedFeature => pickedFeature.map(([name, count]) => ({ name, count }));
 
   render() {
     const listItems = this.getListItems();
@@ -75,7 +52,7 @@ class ProjectMenu extends React.PureComponent {
     const selected = listItems
       .findIndex(project => project.id === this.props.selectedProjectID);
     const itemLength = listItems.length;
-    const accountForSmallList = itemLength <= 4 ? itemLength - selected : null;
+    const accountForSmallList = itemLength <= 4 ? itemLength - selected : 0;
     const itemsBefore = selected < 2 ? Math.max(2 - selected, 0) : 0;
     const itemsAfter = (selected > (listItems.length - 3))
       ? 2 - (listItems.length - 3 + accountForSmallList)
