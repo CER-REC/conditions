@@ -84,27 +84,33 @@ class Wheel extends React.Component {
 
   onChange = (index) => {
     this.setState({ unanimatedSpin: false });
-
+    
     const { length } = this.props.itemsData.items;
     // TODO: check on resizing of letters on wheel list according to wheel size
     const newIndex = (2 * length - index)
-      % length;
-
+    % length;
+    
     this.setState(({ newRotation, degreesPerItem }) => {
       const currentIndex = (length
         + this.getIndex(newRotation))
           % length;
-
-      const isLargeDiff = Math.abs(newIndex - currentIndex) > 50;
-
-      const rotationAmount = (
-        ((newIndex > currentIndex) && !isLargeDiff)
-      || ((newIndex < currentIndex) && isLargeDiff)
-      ) ? 1
-        : -1;
-
+      const diff = Math.abs(newIndex - currentIndex);
+      const isLargeDiff = diff > 50;
+      
+      let direction;
+      if (newIndex > currentIndex && !isLargeDiff) {
+        direction = 1;
+      }  
+      else if (newIndex < currentIndex && isLargeDiff) {
+        direction = 1;
+      } else {
+        direction = -1;
+      }
+      const indexShift = isLargeDiff
+        ? Math.min(newIndex, currentIndex) + 100 - Math.max(newIndex, currentIndex)
+        : diff;
       return ({
-        newRotation: newRotation + (rotationAmount * degreesPerItem),
+        newRotation: newRotation + (direction * indexShift * degreesPerItem),
       });
     });
   };
@@ -121,7 +127,7 @@ class Wheel extends React.Component {
       <div className="Wheel">
         <Spring
           immediate={this.state.unanimatedSpin}
-          config={{ tension: 30 }}
+          config={{ tension: 30, easing: 'easeInOutCirc' }}
           from={{
             transformOrigin: 'center',
             transform: `rotate(${this.state.oldRotation}deg)`,
