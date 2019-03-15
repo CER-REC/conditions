@@ -32,7 +32,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
 
     it('should render and return a react fragment', () => {
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.type()).toBe(React.Fragment);
+      expect(wrapper.type()).toBe('g');
     });
 
     it('should render the same amount of items as the length of the array passed less 1', () => {

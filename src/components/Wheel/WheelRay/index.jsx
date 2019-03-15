@@ -5,6 +5,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import { browseByType } from '../../../proptypes';
 import LocationRay from '../LocationRay';
+
 import { features } from '../../../constants';
 
 // TODO: get legend to display in the middle of the limits of its occupancy
@@ -26,10 +27,6 @@ class WheelRay extends React.Component {
     rotation: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
-    // legendPositionArray: PropTypes.arrayOf(PropTypes.shape({
-    //   classifier: PropTypes.string,
-    //   count: PropTypes.number,
-    // })).isRequired,
   }
 
   shouldComponentUpdate(nextProps) {
@@ -41,7 +38,9 @@ class WheelRay extends React.Component {
   render() {
     const { props } = this;
     // eslint-disable-next-line object-curly-newline
-    const { items, degreesPerItem, reservedDegrees, rotation, currentIndex, wheelType } = props;
+    const { items, degreesPerItem, reservedDegrees, rotation,
+      currentIndex, wheelType,
+    } = props;
     const height = '163';
     // const width = `${degreesPerItem + 1}px`;
     const halfReservedDegrees = reservedDegrees / 2;
@@ -58,46 +57,48 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-
       const transform = { transform: `translate(50%, 50%) rotate(${position.toFixed(2)}deg)` };
+
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={`${item._id}CompanyRay`} style={transform}>
-            <text className="textLabels" style={{ transform: 'translate(29%) rotate(90deg)' }}>
-              {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
-            </text>
+          <g key={`${item._id}CompanyRay`} style={transform} className="companyRay">
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
             <line
-              fill="red"
               y2="50%"
               y1={(index === 0 ? '23.5%' : '31%')}
-              stroke="red"
-              strokeWidth="3px"
-              style={{ transform: 'rotate(-90deg)' }}
             />
+            <text className="textLabels">
+              { item.company_name.charAt(0) !== legendTracker ? item.company_name.charAt(0) : null }
+            </text>
           </g>
         )
         : (
-          <g key={`${item._id}LocationRay`} style={transform}>
+          <g key={`${item._id}LocationRay`} style={transform} className="locationRay">
             <LocationRay
               items={randomLocationBars[index]}
               height={degreesPerItem * 2}
               width={height}
-              searched={Boolean(Math.round(Math.random()))}
+              searched
               adjustRotationReference={degreesPerItem / 2}
             />
-            {/* {item.} */}
-            <text className="textLabels" style={{ transform: 'translate(29%) rotate(90deg)' }}>
-              {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
-            </text>
+            { item.location.province !== legendTracker
+              ? (
+                <g>
+                  <text className="textLabels">
+                    {item.location.province}
+                  </text>
+                </g>
+              ) : null }
           </g>
         );
-      legendTracker = item.company_name.charAt(0);
+      legendTracker = props.wheelType === 'company'
+        ? item.company_name.charAt(0)
+        : item.location.province;
       return componentToReturn;
     });
 
-    return <React.Fragment>{rays}</React.Fragment>;
+    return <g className="WheelRay">{rays}</g>;
   }
 }
 

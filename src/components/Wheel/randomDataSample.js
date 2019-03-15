@@ -5266,42 +5266,47 @@ const companyDataSample = [
 ];
 
 const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-// eslint-disable-next-line no-unused-vars
 const canadianProvinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
-const calcRayLegendData = (classifier) => {
+const calcRayLegendData = () => {
   const WheelRayLegendData = {
     legendData: [],
-    items: companyDataSample,
+    items: [...companyDataSample],
   };
-  for (let i = 0; i < companyDataSample.length; i += 1) {
+  alphabet.forEach((letter) => {
     WheelRayLegendData.legendData.push({
-      classifier: classifier[i],
+      classifier: letter,
       count: companyDataSample.filter(
-        company => company.company_name.lastIndexOf(classifier[i], 0) === 0,
+        company => company.company_name === letter,
       ).length,
     });
-  }
+  });
+  WheelRayLegendData.items.sort((a, b) => (a.company_name < b.company_name ? -1 : 1));
   return WheelRayLegendData;
 };
 
-const calcRayLegendDataLocation = (classifier) => {
-  const WheelRayLegendData = {
+const calcRayLegendDataLocation = () => {
+  const WheelLocationData = {
     legendData: [],
-    items: companyDataSample,
+    // eslint-disable-next-line no-return-assign
+    items: companyDataSample.map((company) => {
+      const o = { ...company, region_name: company.location.city };
+      return o;
+    }),
   };
-  for (let i = 0; i < companyDataSample.length; i += 1) {
-    WheelRayLegendData.legendData.push({
-      classifier: classifier[i],
+  canadianProvinces.forEach((province) => {
+    WheelLocationData.legendData.push({
+      classifier: province,
       count: companyDataSample.filter(
-        company => company.location.province === classifier[i],
+        company => company.location.province === province,
       ).length,
     });
-  }
-  return WheelRayLegendData.items.sort((a, b) => (a.company_name < b.company_name ? -1 : 1));
+  });
+  WheelLocationData.items = WheelLocationData.items
+    .sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
+  return WheelLocationData;
 };
 
-const companyWheelData = calcRayLegendData(alphabet);
-const locationWheelData = calcRayLegendDataLocation(canadianProvinces);
-const locationWheelItems = companyDataSample.length;
-
-export { companyWheelData, locationWheelData, locationWheelItems };
+const companyWheelData = calcRayLegendData();
+const locationData = calcRayLegendDataLocation();
+locationData.items.sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
+export { companyWheelData, locationData };

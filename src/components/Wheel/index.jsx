@@ -142,7 +142,6 @@ class Wheel extends React.Component {
                       reservedDegrees={reservedDegrees}
                       currentIndex={this.getIndex(props.rotation)
                         % this.props.itemsData.items.length}
-                      legendPositionArray={this.props.itemsData.legendData}
                       {...props}
                     />
                   </g>

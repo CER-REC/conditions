@@ -1,6 +1,13 @@
 .WheelRay {
   opacity: 1;
-  .WheelBar {
-    height: 3px;
+  text {
+    transform: translate(29%) rotate(90deg);
+  }
+  .companyRay {
+    line {
+      stroke: red;
+      stroke-width: 3px;
+      transform: rotate(-90deg);
+    }
   }
 }

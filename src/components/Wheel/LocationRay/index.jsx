@@ -22,8 +22,6 @@ const LocationRay = (props) => {
           className="searched"
           y2="27.9%"
           y1="23.6%"
-          stroke="orange"
-          strokeWidth="3px"
           style={{ transform: `rotate(-${90 - adjustRotationReference}deg)` }}
         />
       ) : null}
@@ -38,12 +36,8 @@ LocationRay.propTypes = {
     value: PropTypes.number.isRequired,
     fill: PropTypes.string.isRequired,
   })).isRequired,
-  searched: PropTypes.bool,
+  searched: PropTypes.bool.isRequired,
   adjustRotationReference: PropTypes.number.isRequired,
-};
-
-LocationRay.defaultProps = {
-  searched: false,
 };
 
 export default LocationRay;
