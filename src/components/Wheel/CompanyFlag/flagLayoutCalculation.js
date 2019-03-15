@@ -1,15 +1,17 @@
-// Returns the next higher triangular root from x
-export const nextTriangularRoot = x => Math.ceil((Math.sqrt(8 * x + 1) - 1) / 2);
+// Returns the base of a triangle that would hold x items
+export const fitToTriangle = x => Math.ceil((Math.sqrt(8 * x + 1) - 1) / 2);
 
 /**
  *  Constructs the exterior of the flag
  *
- *  i.e. for a base of 4:
+ *  i.e. for a base of 6:
  *
  *             *
  *            * *
  *           * . *
  *          * . . *
+ *         * . . . *
+ *        * . . . . *
  */
 const buildTriangleFrame = (dots, base) => {
   const remainingDots = [...dots];
@@ -30,6 +32,19 @@ const buildTriangleFrame = (dots, base) => {
 };
 
 // TODO: Some of the default params and +/-s in here feel a bit too Magic
+/**
+ *  Attempts to fill the flag in the order:
+ *
+ *             *
+ *            * *
+ *           * 7 *
+ *          * 8 6 *
+ *         * 9 . 5 *
+ *        * 1 2 3 4 *
+ *
+ *  The remaining space is a smaller triangle, so it recurses until there are
+ *  no dots left.
+ */
 const fillTriangleFrame = ({
   dots,
   columns,
@@ -63,7 +78,7 @@ const fillTriangleFrame = ({
     if (!dots.length) return columns;
   }
 
-  // The unfilled space is now a smaller triangle, so we can fill it recursively
+  // The unfilled space is now a smaller triangle
   return fillTriangleFrame({
     dots,
     columns,
@@ -74,6 +89,8 @@ const fillTriangleFrame = ({
   });
 };
 
+// TODO: I can't tell if this is working because it's correct or because the
+// various constants just happen to be in perfect balance.
 const triangleHasCollision = ({
   triangleSize,
   stemLength,
@@ -82,30 +99,28 @@ const triangleHasCollision = ({
   flagLayouts,
   flagScale,
 }) => {
-  const thirtyDegrees = Math.PI / 6;
-  const sixtyDegrees = Math.PI / 3;
+  const THIRTY_DEGREES = Math.PI / 6;
+  const SIXTY_DEGREES = Math.PI / 3;
 
   // TODO: Magic numbers
   const minimumDistance = 2 * flagScale;
+  // Account for the flags not being immediately next to each other
   const horizontalScale = flagScale * 0.2;
 
-  // Flag's base, where it meets the stem
-  const base = { x: rayIndex, y: stemLength - triangleSize };
+  const flagBase = { x: rayIndex, y: stemLength - triangleSize };
 
-  // Flag's tip
-  const tip = {
-    x: rayIndex - triangleSize * Math.cos(thirtyDegrees) * horizontalScale,
-    y: base.y + triangleSize * Math.sin(thirtyDegrees),
+  const flagTip = {
+    x: rayIndex - triangleSize * Math.cos(THIRTY_DEGREES) * horizontalScale,
+    y: flagBase.y + triangleSize * Math.sin(THIRTY_DEGREES),
   };
 
   // Check all rays that the flag extends over
-  const endIndex = (tip.x - minimumDistance + flagData.length) % flagData.length;
+  const endIndex = (flagTip.x - minimumDistance + flagData.length) % flagData.length;
 
   for (let otherIndex = rayIndex - 1; otherIndex >= endIndex; otherIndex -= 1) {
     const wrappedIndex = (otherIndex + flagData.length) % flagData.length;
 
-    // The ray we're looking at
-    const other = {
+    const otherRay = {
       x: wrappedIndex,
       y: (flagLayouts[wrappedIndex])
         ? flagLayouts[wrappedIndex][0].length
@@ -113,11 +128,13 @@ const triangleHasCollision = ({
     };
 
     // The ray is tall enough to be worth checking
-    if (other.y > base.y) {
-      const dx = (other.y - base.y) * Math.tan(sixtyDegrees);
-      const xIntersect = base.x - Math.abs(dx);
-      const distance = (xIntersect - other.x) * Math.sin(thirtyDegrees);
-      if (xIntersect <= other.x || distance < minimumDistance) {
+    if (otherRay.y > flagBase.y) {
+      const dx = (otherRay.y - flagBase.y) * Math.tan(SIXTY_DEGREES);
+      const xIntersect = flagBase.x - Math.abs(dx);
+
+      const distance = (xIntersect - otherRay.x) * Math.sin(THIRTY_DEGREES);
+
+      if (xIntersect <= otherRay.x || distance < minimumDistance) {
         return true;
       }
     }
@@ -126,25 +143,27 @@ const triangleHasCollision = ({
   return false;
 };
 
+// Attempts to fold and construct all of the flags
 const buildFlagLayouts = (flagData, maxFlagHeight, flagScale) => {
   const flagLayouts = [];
   const scaledMaxHeight = Math.floor(maxFlagHeight / flagScale);
 
   // Using a For loop rather than Map/ForEach so we can return early if we find a problem
-  for (let i = 0, l = flagData.length; i < l; i += 1) {
-    const stem = flagData[i].slice(0, scaledMaxHeight);
+  for (let rayIndex = 0, lastIndex = flagData.length; rayIndex < lastIndex; rayIndex += 1) {
+    const stem = flagData[rayIndex].slice(0, scaledMaxHeight);
 
-    if (stem.length === flagData[i].length) {
+    if (stem.length === flagData[rayIndex].length) {
       flagLayouts.push([stem]);
     } else {
-      const toFold = flagData[i].slice(scaledMaxHeight);
+      const toFold = flagData[rayIndex].slice(scaledMaxHeight);
 
-      const triangleSize = nextTriangularRoot(toFold.length);
-      if (triangleSize >= stem.length // The flag would be too large
-        || triangleHasCollision({ // The flag would intersect another ray
+      const triangleSize = fitToTriangle(toFold.length);
+
+      if (triangleSize >= stem.length
+        || triangleHasCollision({
           triangleSize,
           stemLength: stem.length,
-          rayIndex: i,
+          rayIndex,
           flagData,
           flagLayouts,
           flagScale,
@@ -177,9 +196,7 @@ const flagLayoutCalculation = (flagData) => {
   // eslint-disable-next-line no-cond-assign
   do {
     flagLayouts = buildFlagLayouts(flagData, maxFlagHeight, flagScale);
-
-    // Reduce our scale if necessary and try again
-  } while (!flagLayouts && ((flagScale -= 0.1) > 0.3));
+  } while (!flagLayouts && ((flagScale -= 0.1) > 0.3)); // Reduce the scale try again
 
   return { flagLayouts, flagScale };
 };
