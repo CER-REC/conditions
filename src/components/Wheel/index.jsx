@@ -56,15 +56,12 @@ class Wheel extends React.Component {
       newRotation += minimumRotation + (selectedIndex * degreesPerItem);
     } else {
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
-      // console.log(`diff: ${diff}, items.length - 1: ${items.length - 1}`);
       if (diff < items.length - 1) {
         const adding = ((selectedIndex - prevState.selectedIndex) * degreesPerItem);
-        // console.log(`adding: ${adding}`);
         newRotation += adding;
       } else {
         newRotation += -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
       }
-      // console.log({ newRotation, selectedIndex });
     }
     return {
       degreesPerItem,
@@ -84,30 +81,26 @@ class Wheel extends React.Component {
 
   onChange = (index) => {
     this.setState({ unanimatedSpin: false });
-    
     const { length } = this.props.itemsData.items;
     // TODO: check on resizing of letters on wheel list according to wheel size
     const newIndex = (2 * length - index)
     % length;
-    
     this.setState(({ newRotation, degreesPerItem }) => {
       const currentIndex = (length
         + this.getIndex(newRotation))
           % length;
       const diff = Math.abs(newIndex - currentIndex);
-      const isLargeDiff = diff > 50;
-      
+      const isLargeDiff = diff > length / 2;
       let direction;
       if (newIndex > currentIndex && !isLargeDiff) {
         direction = 1;
-      }  
-      else if (newIndex < currentIndex && isLargeDiff) {
+      } else if (newIndex < currentIndex && isLargeDiff) {
         direction = 1;
       } else {
         direction = -1;
       }
       const indexShift = isLargeDiff
-        ? Math.min(newIndex, currentIndex) + 100 - Math.max(newIndex, currentIndex)
+        ? Math.min(newIndex, currentIndex) + length - Math.max(newIndex, currentIndex)
         : diff;
       return ({
         newRotation: newRotation + (direction * indexShift * degreesPerItem),
