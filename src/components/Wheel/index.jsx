@@ -90,23 +90,21 @@ class Wheel extends React.Component {
     const newIndex = (2 * length - index)
       % length;
 
-    this.setState(({ newRotation: rotation, degreesPerItem }) => {
+    this.setState(({ newRotation, degreesPerItem }) => {
       const currentIndex = (length
-        + this.getIndex(rotation))
+        + this.getIndex(newRotation))
           % length;
-
-      if (currentIndex === newIndex) return ({ newRotation: rotation });
 
       const isLargeDiff = Math.abs(newIndex - currentIndex) > 50;
 
       const rotationAmount = (
         ((newIndex > currentIndex) && !isLargeDiff)
-      || ((newIndex < currentIndex) && isLargeDiff))
-        ? 1
+      || ((newIndex < currentIndex) && isLargeDiff)
+      ) ? 1
         : -1;
 
       return ({
-        newRotation: rotation + (rotationAmount * degreesPerItem),
+        newRotation: newRotation + (rotationAmount * degreesPerItem),
       });
     });
   };
