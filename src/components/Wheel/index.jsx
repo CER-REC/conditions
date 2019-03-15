@@ -50,13 +50,21 @@ class Wheel extends React.Component {
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
     // eslint-disable-next-line prefer-destructuring
     let newRotation = prevState.newRotation;
+    // console.log(`prevNewRotation: ${prevState.newRotation}`);
     if (prevState.needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + (selectedIndex * degreesPerItem);
     } else {
-      newRotation += Math.abs(selectedIndex - prevState.selectedIndex) < items.length - 1
-        ? ((selectedIndex - prevState.selectedIndex) * degreesPerItem)
-        : -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
+      const diff = Math.abs(selectedIndex - prevState.selectedIndex);
+      // console.log(`diff: ${diff}, items.length - 1: ${items.length - 1}`);
+      if (diff < items.length - 1) {
+        const adding = ((selectedIndex - prevState.selectedIndex) * degreesPerItem);
+        // console.log(`adding: ${adding}`);
+        newRotation += adding;
+      } else {
+        newRotation += -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
+      }
+      // console.log({ newRotation, selectedIndex });
     }
     return {
       degreesPerItem,
@@ -76,22 +84,30 @@ class Wheel extends React.Component {
 
   onChange = (index) => {
     this.setState({ unanimatedSpin: false });
-    // TODO: bug on jump from 0 to 99
-    // TODO: check on resizing of letters on wheel list according to wheel size
-    const newIndex = (2 * this.props.itemsData.items.length - index)
-      % this.props.itemsData.items.length;
-    this.setState((prevState) => {
-      let rotationDifference = prevState.newRotation;
-      const currentIndex = ((this.props.itemsData.items.length
-        + this.getIndex(prevState.newRotation))
-        % this.props.itemsData.items.length);
 
-      if (currentIndex < newIndex) {
-        rotationDifference += (newIndex - currentIndex) * prevState.degreesPerItem;
-      } else if (currentIndex > newIndex) {
-        rotationDifference -= (currentIndex - newIndex) * prevState.degreesPerItem;
-      }
-      return ({ newRotation: rotationDifference });
+    const { length } = this.props.itemsData.items;
+    // TODO: check on resizing of letters on wheel list according to wheel size
+    const newIndex = (2 * length - index)
+      % length;
+
+    this.setState(({ newRotation: rotation, degreesPerItem }) => {
+      const currentIndex = (length
+        + this.getIndex(rotation))
+          % length;
+
+      if (currentIndex === newIndex) return ({ newRotation: rotation });
+
+      const isLargeDiff = Math.abs(newIndex - currentIndex) > 50;
+
+      const rotationAmount = (
+        ((newIndex > currentIndex) && !isLargeDiff)
+      || ((newIndex < currentIndex) && isLargeDiff))
+        ? 1
+        : -1;
+
+      return ({
+        newRotation: rotation + (rotationAmount * degreesPerItem),
+      });
     });
   };
 
