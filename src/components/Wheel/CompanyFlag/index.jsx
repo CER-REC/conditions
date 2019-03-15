@@ -9,7 +9,6 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, height }) => {
     x: dotSpacing * Math.sin(Math.PI / 3),
     y: dotSpacing / 2,
   };
-
   const circles = flagLayout.reduce((out, columnDots, columnIndex) => {
     const columnX = -(columnIndex * columnOffset.x);
     const columnY = baseY + (columnIndex * columnOffset.y);
@@ -32,7 +31,7 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, height }) => {
   }, []);
 
   return (
-    <g>
+    <g className="CompanyFlag">
       {circles.map(circle => (<ProjectDot key={`${circle.cx},${circle.cy}`} {...circle} />))}
     </g>
   );
@@ -40,7 +39,14 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, height }) => {
 
 CompanyFlag.propTypes = {
   // TODO: flagLayout shape has changed
-  flagLayout: PropTypes.arrayOf(PropTypes.string).isRequired,
+  flagLayout: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        filtered: PropTypes.bool.isRequired,
+        relevant: PropTypes.bool.isRequired,
+      }),
+    ),
+  ).isRequired,
   x: PropTypes.number,
   y: PropTypes.number,
   height: PropTypes.number.isRequired,

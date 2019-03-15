@@ -15,7 +15,7 @@ const defaultProps = {
   y: 100,
   dotWidth: 16,
   dotSpacing: 24,
-  height: 200,
+  height: 100,
   width: 0,
 };
 
