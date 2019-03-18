@@ -11,7 +11,7 @@ const SIXTY_DEGREES = Math.PI / 3;
  *    T = (sqrt(8 * N + 1) - 1) / 2
  * Which we round up to get the next larger triangular integer
  */
-export const fitToTriangle = n => Math.ceil((Math.sqrt(8 * n + 1) - 1) / 2);
+export const fitToTriangle = n => Math.ceil((Math.sqrt((8 * n) + 1) - 1) / 2);
 
 /**
  *  Constructs the exterior of the flag

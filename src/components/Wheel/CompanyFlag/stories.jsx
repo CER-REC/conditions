@@ -8,7 +8,7 @@ const defaultProps = {
   y: 100,
   dotWidth: 16,
   dotSpacing: 24,
-  height: 100,
+  svgHeight: 100,
 };
 
 const flagLayouts = [
