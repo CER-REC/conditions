@@ -5,12 +5,6 @@ import withStatus from '../../../.storybook/addon-status';
 import MainInfoBar from '.';
 import ReadMe from './README.md';
 
-const setActiveDialog = () => activeDialog => (
-  { activeDialog }
-);
-
-const toggleExpanded = () => expand => ({ expanded: expand });
-
 const props = {
   openDataModal: () => alert('Download Data window'),
   openScreenshotModal: () => alert('Download Screenshot window'),
@@ -25,11 +19,10 @@ const StoryContainer = ({children}) => (
 
 storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['setActiveDialog', 'toggleExpanded'] }))
+  .addDecorator(withInteraction({ actions: ['setPane'] }))
   .add('with interaction', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="about"
         {...props}
         {...getInteractionProps()}
       />
@@ -37,15 +30,16 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   ),
   {
     interaction: {
-      state: { activeDialog: '', expanded: false },
-      actions: { setActiveDialog, toggleExpanded },
+      state: { pane: '' },
+      actions: {
+        setPane: () => pane => ({ pane }),
+      },
     },
   })
   .add('About', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="about"
-        expanded
+        pane="about"
         {...props}
         {...getInteractionProps()}
       />
@@ -54,8 +48,7 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .add('Methodology', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="methodology"
-        expanded
+        pane="methodology"
         {...props}
         {...getInteractionProps()}
       />
@@ -64,8 +57,7 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
   .add('Downloads', () => (
     <StoryContainer>
       <MainInfoBar
-        activeDialog="downloads"
-        expanded
+        pane="downloads"
         {...props}
         {...getInteractionProps()}
       />

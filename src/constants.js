@@ -1,5 +1,3 @@
-// TODO: Remove when we have more constants added
-// eslint-disable-next-line import/prefer-default-export
 export const features = {
   instrument: {
     ROUTING: 'rgb(14, 43, 140)',
@@ -57,4 +55,22 @@ export const features = {
     REQUIRED: 'rgb(82, 82, 247)',
     NOT_REQUIRED: 'rgb(58, 58, 58)',
   },
+};
+
+export const provinces = {
+  Yukon: 'YT',
+  'Northwest Territories': 'NT',
+  Nunavut: 'NU',
+  'Newfoundland and Labrador': 'NL',
+  'Prince Edward Island': 'PE',
+  'British Columbia': 'BC',
+  Alberta: 'AB',
+  Saskatchewan: 'SK',
+  Manitoba: 'MB',
+  Ontario: 'ON',
+  Québec: 'QC',
+  'New Brunswick': 'NB',
+  'Nova Scotia': 'NS',
+  'Atlantic provinces and Québec': 'ATL-Q',
+  'Other provinces and territories': 'OtherProvinces',
 };

@@ -9,7 +9,10 @@ const Footer = props => (
     <section className="row">
       <section className="infoBar">
         <MainInfoBar
-          {...props.mainInfoBar}
+          pane={props.mainInfoBarPane}
+          setPane={props.setMainInfoBarPane}
+          openDataModal={props.openDataModal}
+          openScreenshotModal={props.openScreenshotModal}
         />
       </section>
     </section>
@@ -18,14 +21,10 @@ const Footer = props => (
 
 Footer.propTypes = {
   layoutOnly: PropTypes.bool,
-  mainInfoBar: PropTypes.shape({
-    activeDialog: PropTypes.oneOf(['about', 'methodology', 'downloads']),
-    expanded: PropTypes.bool,
-    setActiveDialog: PropTypes.func.isRequired,
-    toggleExpanded: PropTypes.func.isRequired,
-    openDataModal: PropTypes.func.isRequired,
-    openScreenshotModal: PropTypes.func.isRequired,
-  }).isRequired,
+  mainInfoBarPane: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']).isRequired,
+  setMainInfoBarPane: PropTypes.func.isRequired,
+  openDataModal: PropTypes.func.isRequired,
+  openScreenshotModal: PropTypes.func.isRequired,
 };
 
 Footer.defaultProps = {

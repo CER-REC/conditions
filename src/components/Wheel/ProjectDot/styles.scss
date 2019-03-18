@@ -1,9 +1,11 @@
-@import '../../../styles/colors';
+@import '../../../styles/colors.scss';
 
 .ProjectDot{
   fill: $Gray160;
+  opacity: 0.5;
   &.IsFiltered {
-    opacity: 0.5;
+    fill: $SearchKeyword;
+    opacity: 1;
   }
   &.IsRelevant{
     fill: #EE6129;

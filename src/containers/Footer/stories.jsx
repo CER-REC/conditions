@@ -1,17 +1,19 @@
 import React from 'react';
+import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import Footer from '.';
 
-const noop = () => {};
-
-const mainInfoBar = {
-  setActiveDialog: noop,
-  toggleExpanded: noop,
-  openDataModal: noop,
-  openScreenshotModal: noop,
-};
+const noop = () => () => ({});
 
 storiesForView('Containers|Footer', module, ReadMe)
-  .add('default', () => <Footer mainInfoBar={mainInfoBar} />)
-  .add('layout only', () => <Footer layoutOnly />);
+  .addDecorator(withInteraction({
+    actions: {
+      setMainInfoBarPane: () => v => ({ mainInfoBarPane: v }),
+      openDataModal: noop,
+      openScreenshotModal: noop,
+    },
+    state: { mainInfoBarPane: '' },
+  }))
+  .add('default', () => <Footer {...getInteractionProps()} />)
+  .add('layout only', () => <Footer {...getInteractionProps()} layoutOnly />);

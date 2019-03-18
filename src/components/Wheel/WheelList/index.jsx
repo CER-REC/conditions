@@ -14,15 +14,16 @@ const WheelList = (props) => {
     (props.selected + i + props.listContent.length)
     % props.listContent.length
   );
-
   const handleOnChange = i => props.onChange(wrapIndex(i - 3));
 
   const listElements = indexOffsets.map((offset) => {
-    const text = props.listContent[wrapIndex(offset)];
-
+    const text = props.wheelType === 'company'
+      ? props.listContent[wrapIndex(offset)].company_name
+      : props.listContent[wrapIndex(offset)].region_name;
     return (
       <span
         className={offsetClasses[Math.abs(offset)]}
+        style={{ width: `${props.textClippingRadius}%` }}
         // eslint-disable-next-line react/no-array-index-key
         key={`${text}-${offset}`}
       >
@@ -39,8 +40,11 @@ const WheelList = (props) => {
         <FormattedMessage id={`components.companyWheel.list.${props.wheelType}`}>
           {text => <span className="label">{text}</span>}
         </FormattedMessage>
-        <span className="selected" style={{ width: props.textClippingRadius }}>
-          {props.listContent[props.selected]}
+        <span className="selected" style={{ width: `${props.textClippingRadius - 25}%` }}>
+          {props.wheelType === 'company'
+            ? props.listContent[props.selected].company_name
+            : props.listContent[props.selected].region_name
+          }
         </span>
       </div>
       <div className="listContainer">
@@ -69,12 +73,12 @@ WheelList.propTypes = {
   /** Wheel mode */
   wheelType: PropTypes.oneOf(['company', 'location']).isRequired,
   /** Array of company/location names to pull the list from */
-  listContent: PropTypes.arrayOf(PropTypes.node).isRequired,
+  listContent: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 WheelList.defaultProps = {
   className: null,
-  textClippingRadius: '50%',
+  textClippingRadius: '80%',
 };
 
 export default WheelList;

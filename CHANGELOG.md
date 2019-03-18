@@ -1,3 +1,38 @@
+# [0.4.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.4.0) (2019-03-13)
+
+
+### AdditionalDescription
+
+* **Features:** transferred additional text from iLab document (b549424, NEBV-1323)
+
+
+### Dependencies
+
+* **Project Maintenance:** pin dependencies (9b5edaa)
+
+
+### ESLint
+
+* **Code Formatting:** fixes linting errors (e5fb173)
+
+
+### GuideDetail
+
+* **Features:** added text in guide detail, tests, and refactored link logic (1a2f3ef, NEBV-1323)
+* **Code Refactoring:** refactored function for redability and reducing unused html tags (0ea8c63, NEBV-1323)
+
+
+### MainInfoBar
+
+* **Features:** integrates with app and footer for full interaction (5f1d3ed)
+* **Features:** derive expanded state from activeDialog prop (2f0b307)
+* **Code Refactoring:** renames props to avoid dialog terminology (e4ff5c4)
+
+
+### WET
+
+* **Bug Fixes:** tweaks styles to support WET template (e4a0a8d)
+
 # [0.3.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.3.0) (2019-03-12)
 
 

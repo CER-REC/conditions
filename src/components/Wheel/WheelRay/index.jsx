@@ -3,13 +3,17 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import BarContainer from '../../BarContainer';
 import { browseByType } from '../../../proptypes';
+import LocationRay from '../LocationRay';
+
 import { features } from '../../../constants';
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
 import sampleFlagData from '../CompanyFlag/sample-flag-data';
 
 import CompanyFlag from '../CompanyFlag';
+
+// TODO: get legend to display in the middle of the limits of its occupancy
+// TODO: get the first of each letter to draw a line
 
 const themeKeys = Object.keys(features.theme);
 
@@ -27,10 +31,6 @@ class WheelRay extends React.Component {
     rotation: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
-    // legendPositionArray: PropTypes.arrayOf(PropTypes.shape({
-    //   classifier: PropTypes.string,
-    //   count: PropTypes.number,
-    // })).isRequired,
   }
 
   constructor(props) {
@@ -56,9 +56,10 @@ class WheelRay extends React.Component {
   render() {
     const { props } = this;
     // eslint-disable-next-line object-curly-newline
-    const { items, degreesPerItem, reservedDegrees, rotation, currentIndex, wheelType } = props;
-    const height = '163px';
-    const width = `${degreesPerItem + 1}px`;
+    const { items, degreesPerItem, reservedDegrees, rotation,
+      currentIndex, wheelType,
+    } = props;
+    const width = 163;
     const halfReservedDegrees = reservedDegrees / 2;
     const selectedIndex = currentIndex >= 0
       ? currentIndex : items.length + currentIndex;
@@ -67,18 +68,15 @@ class WheelRay extends React.Component {
 
     const rays = items.map((item, index) => {
       if (index === selectedIndex) { return null; }
-      let position = rotation + 90;
+      let position = rotation;
       const plotIndex = selectedIndex - index;
       if (plotIndex < 0) {
         position -= (plotIndex * degreesPerItem) - halfReservedDegrees + (degreesPerItem);
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
+      const transform = { transform: `translate(50%, 50%) rotate(${position.toFixed(2)}deg)` };
 
-      // TODO: work out how to remove magic numbers. Right now they came from the design
-
-      const transform = `translate(371 209) rotate(${position.toFixed(2)}, 0, 245)`;
-      // TODO: split logic below to location ray and company ray?
       const componentToReturn = wheelType === 'company'
         ? (
           <g key={item._id} transform={transform}>
@@ -109,26 +107,32 @@ class WheelRay extends React.Component {
             />  */}
           </g>
         )
-        // DRAW LOCATION RAY: Move this down to the location ray component
         : (
-          <g key={`${item._id}`} transform={transform}>
-            <g style={{ transform: 'translate(0px, -19px) rotate(-90deg)' }}>
-              <BarContainer
-                className="WheelBar"
-                width={height /* These are backwards because of the rotation */}
-                height={width}
-                items={randomLocationBars[index]}
-                vertical
-                standalone
-              />
-            </g>
+          <g key={`${item._id}LocationRay`} style={transform} className="locationRay">
+            <LocationRay
+              items={randomLocationBars[index]}
+              height={degreesPerItem * 2}
+              width={width}
+              searched
+              adjustRotationReference={degreesPerItem / 2}
+            />
+            { item.location.province !== legendTracker
+              ? (
+                <g>
+                  <text className="textLabels">
+                    {item.location.province}
+                  </text>
+                </g>
+              ) : null }
           </g>
         );
-      legendTracker = item.company_name.charAt(0);
+      legendTracker = props.wheelType === 'company'
+        ? item.company_name.charAt(0)
+        : item.location.province;
       return componentToReturn;
     });
 
-    return <React.Fragment>{rays}</React.Fragment>;
+    return <g className="WheelRay">{rays}</g>;
   }
 }
 

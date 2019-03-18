@@ -29,17 +29,12 @@ $White: rgb(255,255,255);
 /*#regionend*/
 
 /*#region CompanyWheel */
-$MapWheelColors: (
-  Outline: rgb(209,5,122), // outline, inner colour 1 of company wheel
-  InnerColourCompany1: rgb(64,84,183), // label company wheel
-  InnerColourCompany2  : rgb(48,41,140), // inner colour 2 company wheel
-  InnerColourLocation1: rgb(239,182,82), // location inner colour 1
-  InnerColourLocation2: rgb(242,207,102), // location inner colour 2
-);
+  $Outline: rgb(209,5,122); // outline, inner colour 1 of company wheel
+  $InnerColourCompany1: rgb(64,84,183); // label company wheel
+  $InnerColourCompany2  : rgb(48,41,140); // inner colour 2 company wheel
+  $InnerColourLocation1: rgb(239,182,82); // location inner colour 1
+  $InnerColourLocation2: rgb(242,207,102); // location inner colour 2
 
-@function GetWheelColors($key: 'Outline'){
-  @return map-get($MapWheelColors, $key);
-};
 /*#regionend*/
 
 // To use any of the get____Colors functions, pass it the constant for that feature

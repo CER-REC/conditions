@@ -1,6 +1,6 @@
 {
   "name": "neb-conditions-visualization",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A visualization of data collected since 2010 about conditions on energy projects that the NEB creates as part of their regulatory process. ",
   "main": "src/index.jsx",
   "scripts": {
@@ -43,6 +43,7 @@
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
     "immutable": "^4.0.0-rc.12",
+    "invariant": "^2.2.4",
     "lodash.debounce": "^4.0.8",
     "lodash.memoize": "^4.1.2",
     "matter-js": "github:spenserj/matter-js#dd02dba",
