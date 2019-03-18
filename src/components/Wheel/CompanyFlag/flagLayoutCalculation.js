@@ -1,3 +1,6 @@
+const THIRTY_DEGREES = Math.PI / 6;
+const SIXTY_DEGREES = Math.PI / 3;
+
 // Returns the base of a triangle that would hold x items
 export const fitToTriangle = x => Math.ceil((Math.sqrt(8 * x + 1) - 1) / 2);
 
@@ -13,7 +16,7 @@ export const fitToTriangle = x => Math.ceil((Math.sqrt(8 * x + 1) - 1) / 2);
  *         * . . . *
  *        * . . . . *
  */
-const buildTriangleFrame = (dots, base) => {
+export const buildTriangleFrame = (dots, base) => {
   const remainingDots = [...dots];
   const frame = [];
 
@@ -45,7 +48,7 @@ const buildTriangleFrame = (dots, base) => {
  *  The remaining space is a smaller triangle, so it recurses until there are
  *  no dots left.
  */
-const fillTriangleFrame = ({
+export const fillTriangleFrame = ({
   dots,
   columns,
   startingColumn = 0,
@@ -89,26 +92,48 @@ const fillTriangleFrame = ({
   });
 };
 
+export const triangleCollidesWithRay = ({
+  flagBase,
+  otherRay,
+  minimumDistance,
+}) => {
+
+  // The ray is tall enough to be worth checking
+  if (otherRay.y > flagBase.y) {
+    const dx = (otherRay.y - flagBase.y) * Math.tan(SIXTY_DEGREES);
+    const xIntersect = flagBase.x - Math.abs(dx);
+
+    const distance = (xIntersect - otherRay.x) * Math.sin(THIRTY_DEGREES);
+
+    if (xIntersect <= otherRay.x || distance < minimumDistance) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
 // TODO: I can't tell if this is working because it's correct or because the
 // various constants just happen to be in perfect balance.
-const triangleHasCollision = ({
-  triangleSize,
-  stemLength,
-  rayIndex,
-  flagData,
-  flagLayouts,
-  flagScale,
-}) => {
-  const THIRTY_DEGREES = Math.PI / 6;
-  const SIXTY_DEGREES = Math.PI / 3;
+const triangleHasCollision = (args) => {
+  const {
+    triangleSize,
+    stemLength,
+    rayIndex,
+    flagData,
+    flagLayouts,
+    flagScale,
+  } = args;
 
   // TODO: Magic numbers
   const minimumDistance = 2 * flagScale;
   // Account for the flags not being immediately next to each other
   const horizontalScale = flagScale * 0.2;
 
-  const flagBase = { x: rayIndex, y: stemLength - triangleSize };
-
+  const flagBase = {
+    x: rayIndex,
+    y: stemLength - triangleSize,
+  };
   const flagTip = {
     x: rayIndex - triangleSize * Math.cos(THIRTY_DEGREES) * horizontalScale,
     y: flagBase.y + triangleSize * Math.sin(THIRTY_DEGREES),
@@ -127,17 +152,11 @@ const triangleHasCollision = ({
         : flagData[wrappedIndex].length,
     };
 
-    // The ray is tall enough to be worth checking
-    if (otherRay.y > flagBase.y) {
-      const dx = (otherRay.y - flagBase.y) * Math.tan(SIXTY_DEGREES);
-      const xIntersect = flagBase.x - Math.abs(dx);
-
-      const distance = (xIntersect - otherRay.x) * Math.sin(THIRTY_DEGREES);
-
-      if (xIntersect <= otherRay.x || distance < minimumDistance) {
-        return true;
-      }
-    }
+    if (triangleCollidesWithRay({
+      flagBase,
+      otherRay,
+      minimumDistance,
+    })) return true;
   }
 
   return false;
@@ -179,7 +198,6 @@ const buildFlagLayouts = (flagData, maxFlagHeight, flagScale) => {
         : frame;
 
       layout.unshift(stem);
-
       flagLayouts.push(layout);
     }
   }
