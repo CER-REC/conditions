@@ -110,6 +110,12 @@ describe('Components|Wheel/CompanyFlag', () => {
             { filtered: false, relevant: true },
             { filtered: false, relevant: true },
           ],
+          [
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+          ],
         ]}
         height={200}
       />);
@@ -127,6 +133,15 @@ describe('Components|Wheel/CompanyFlag', () => {
       for (let i = 4; i < 8; i += 1) {
         expect(wrapper.find('ProjectDot').at(i).prop('cx')).not.toEqual(0);
       }
+    });
+
+    test('there should be one stem and 2 flag offsets', () => {
+      const secondCX = wrapper.find('ProjectDot').at(4).prop('cx');
+      const thirdCX = wrapper.find('ProjectDot').at(8).prop('cx');
+
+      expect(secondCX).not.toEqual(thirdCX);
+      expect(secondCX).not.toEqual(0);
+      expect(thirdCX).not.toEqual(0);
     });
   });
 });
