@@ -52,81 +52,86 @@ class SearchBar extends React.PureComponent {
       projectStatus, setIncluded, setExcluded,
       findAny, includeKeywords, excludeKeywords, suggestedKeywords,
       yearRange, availableYearRange, availableCategories, findAnyOnChange,
+      changeProjectStatus, updateYear,
     } = this.props;
 
-    const filterComponent = (mode !== 'filter') ? null : (
-      <FilterContent
-        projectStatus={projectStatus}
-        selectedYear={yearRange}
-        yearRange={availableYearRange}
-        closeTab={() => (this.setState({ mode: '' }))}
-        changeProjectStatus={this.props.changeProjectStatus}
-        onYearSelect={this.props.updateYear}
-      />
-    );
-
-    const suggestedPopout = (!isActive ? null
-      : (
-        <SuggestedKeywordsPopout
-          suggestedKeywords={suggestedKeywords}
-          closeTab={() => (this.setState({ isActive: false }))}
-          setIncluded={setIncluded}
-          setExcluded={setExcluded}
-          categories={availableCategories}
-          isExclude={isExclude}
-          includeKeywords={includeKeywords}
-          excludeKeywords={excludeKeywords}
-        />
-      ));
-    const searchComponent = (mode !== 'find') ? null : (
-      <React.Fragment>
-        <SearchContent
-          setIncluded={setIncluded}
-          setExcluded={setExcluded}
-          closeTab={() => (this.setState({ mode: '' }))}
-          findAnyOnChange={findAnyOnChange}
-          findAny={findAny}
-          includeKeywords={includeKeywords}
-          excludeKeywords={excludeKeywords}
-          isExclude={isExclude}
-          changeIsExclude={this.changeIsExclude}
-        />
-        <div className={classNames('SuggestionPrompt', { excludePrompt: (this.state.isExclude) })}>
-          <SuggestedKeywordsPrompt
-            onClick={
-            () => (this.setState({ isActive: !isActive }))}
-            isActive={isActive}
+    let modeComponent;
+    switch (mode) {
+      case 'find':
+        modeComponent = (
+          <React.Fragment>
+            <SearchContent
+              setIncluded={setIncluded}
+              setExcluded={setExcluded}
+              closeTab={() => (this.setState({ mode: '' }))}
+              findAnyOnChange={findAnyOnChange}
+              findAny={findAny}
+              includeKeywords={includeKeywords}
+              excludeKeywords={excludeKeywords}
+              isExclude={isExclude}
+              changeIsExclude={this.changeIsExclude}
+            />
+            <div className={classNames('SuggestionPrompt', { excludePrompt: (isExclude) })}>
+              <SuggestedKeywordsPrompt
+                onClick={
+                () => (this.setState({ isActive: !isActive }))}
+                isActive={isActive}
+              />
+            </div>
+            {(isActive)
+              ? (
+                <SuggestedKeywordsPopout
+                  suggestedKeywords={suggestedKeywords}
+                  closeTab={() => (this.setState({ isActive: false }))}
+                  setIncluded={setIncluded}
+                  setExcluded={setExcluded}
+                  categories={availableCategories}
+                  isExclude={isExclude}
+                  includeKeywords={includeKeywords}
+                  excludeKeywords={excludeKeywords}
+                />
+              )
+              : null
+            }
+          </React.Fragment>
+        );
+        break;
+      case 'filter':
+        modeComponent = (
+          <FilterContent
+            projectStatus={projectStatus}
+            selectedYear={yearRange}
+            yearRange={availableYearRange}
+            closeTab={() => (this.setState({ mode: '' }))}
+            changeProjectStatus={changeProjectStatus}
+            onYearSelect={updateYear}
           />
-        </div>
-        {suggestedPopout}
-      </React.Fragment>
-    );
-
-    const highlightedSummary = (mode !== '') ? null : (
-      <HighlightSummary
-        includeKeywords={includeKeywords}
-        excludeKeywords={excludeKeywords}
-        selectedYear={yearRange}
-      />
-    );
-
-    const modeComponent = (mode === '' && highlightedSummary)
-      || (mode === 'find' && searchComponent)
-      || (mode === 'filter' && filterComponent);
+        );
+        break;
+      default:
+        modeComponent = (
+          <HighlightSummary
+            includeKeywords={includeKeywords}
+            excludeKeywords={excludeKeywords}
+            selectedYear={yearRange}
+          />
+        );
+    }
 
     return (
       <div className={classNames('SearchBar', this.props.className)}>
         <div className="SelectionTab">
           <Tab
             onClick={
-              () => (this.setState(
-                { mode: (mode !== 'find' || mode.length === 0) ? 'find' : '' },
-              ))}
+              () => this.setState({ mode: (mode !== 'find') ? 'find' : '' })
+            }
             isFilter={false}
             isActive={(mode === 'find')}
           />
           <Tab
-            onClick={() => (this.setState({ mode: (mode !== 'filter' || mode.length === 0) ? 'filter' : '' }))}
+            onClick={
+              () => this.setState({ mode: (mode !== 'filter') ? 'filter' : '' })
+            }
             isFilter
             isActive={(mode === 'filter')}
           />
