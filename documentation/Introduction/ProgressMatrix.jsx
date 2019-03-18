@@ -3,61 +3,69 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.scss';
 
-const getClass = stage => classNames({
-  pending: stage === 0,
-  started: stage === 1,
-  halfway: stage === 2,
-  mostly: stage === 3,
-  finished: stage === 4,
-});
+const PENDING = 0;
+const STARTED = 1;
+const HALFWAY = 2;
+const MOSTLY = 3;
+const FINISHED = 4;
+
+const classMapping = {
+  [PENDING]: 'pending',
+  [STARTED]: 'started',
+  [HALFWAY]: 'halfway',
+  [MOSTLY]: 'mostly',
+  [FINISHED]: 'finished',
+};
+
+const getClass = stage => classMapping[stage];
 
 // [Functionality, Data, Design]
 const components = {
-  BarContainer: [4, 4, 3],
-  BrowseByBtn: [4, 4, 3],
-  BubbleChart: [3, 2, 2],
-  ChartIndicator: [4, 4, 3],
-  CircleContainer: [4, 4, 4],
-  ConditionDetails: [3, 2, 3],
-  ConditionExplorer: [1, 2, 1],
-  Dropdown: [4, 4, 4],
-  FeatureDescription: [3, 3, 3],
-  FeatureFlag: [4, 3, 4],
-  FeatureTypesDescription: [3, 3, 3],
-  FeaturesLegend: [4, 3, 3],
-  FeaturesMenu: [4, 3, 3],
-  Icon: [4, 4, 4],
-  InstrumentsLegend: [3, 2, 3],
-  List: [4, 4, 4],
-  LocationWheelMinimap: [4, 3, 3],
-  MainInfoBar: [2, 2, 2],
-  Modal: [2, 2, 2],
-  ProjectMenu: [3, 3, 2],
-  RegionCompanies: [3, 3, 3],
-  SearchBar: [4, 3, 3],
-  SelectedGroupBar: [4, 4, 3],
-  ShareIcon: [3, 4, 3],
-  ShortcutInfoBar: [3, 3, 3],
-  SmallMultiplesLegend: [4, 3, 3],
-  StreamGraph: [4, 3, 3],
-  TrendButton: [4, 2, 2],
-  Wheel: [2, 2, 2],
+  BarContainer: [FINISHED, FINISHED, MOSTLY],
+  BrowseByBtn: [FINISHED, FINISHED, MOSTLY],
+  BubbleChart: [MOSTLY, HALFWAY, HALFWAY],
+  ChartIndicator: [FINISHED, FINISHED, MOSTLY],
+  CircleContainer: [FINISHED, FINISHED, FINISHED],
+  ConditionDetails: [MOSTLY, HALFWAY, MOSTLY],
+  ConditionExplorer: [STARTED, HALFWAY, STARTED],
+  Dropdown: [FINISHED, FINISHED, FINISHED],
+  FeatureDescription: [MOSTLY, MOSTLY, MOSTLY],
+  FeatureFlag: [FINISHED, MOSTLY, FINISHED],
+  FeatureTypesDescription: [MOSTLY, MOSTLY, MOSTLY],
+  FeaturesLegend: [FINISHED, MOSTLY, MOSTLY],
+  FeaturesMenu: [FINISHED, MOSTLY, MOSTLY],
+  Icon: [FINISHED, FINISHED, FINISHED],
+  InstrumentsLegend: [MOSTLY, HALFWAY, MOSTLY],
+  List: [FINISHED, FINISHED, FINISHED],
+  LocationWheelMinimap: [FINISHED, MOSTLY, MOSTLY],
+  MainInfoBar: [HALFWAY, HALFWAY, HALFWAY],
+  Modal: [HALFWAY, HALFWAY, HALFWAY],
+  ProjectMenu: [MOSTLY, MOSTLY, HALFWAY],
+  RegionCompanies: [MOSTLY, MOSTLY, MOSTLY],
+  SearchBar: [FINISHED, MOSTLY, MOSTLY],
+  SelectedGroupBar: [FINISHED, FINISHED, MOSTLY],
+  ShareIcon: [MOSTLY, FINISHED, MOSTLY],
+  ShortcutInfoBar: [MOSTLY, MOSTLY, MOSTLY],
+  SmallMultiplesLegend: [FINISHED, MOSTLY, MOSTLY],
+  StreamGraph: [FINISHED, MOSTLY, MOSTLY],
+  TrendButton: [FINISHED, HALFWAY, HALFWAY],
+  Wheel: [HALFWAY, HALFWAY, HALFWAY],
 };
 
 // [Components Implemented, Interaction, Data, Design]
 const views = {
-  ViewOne: [3, 3, 2, 3],
-  ViewTwo: [4, 3, 2, 2],
-  ViewThree: [3, 3, 2, 3],
-  Footer: [2, 3, 3, 2],
+  ViewOne: [MOSTLY, MOSTLY, HALFWAY, MOSTLY],
+  ViewTwo: [FINISHED, MOSTLY, HALFWAY, HALFWAY],
+  ViewThree: [MOSTLY, MOSTLY, HALFWAY, MOSTLY],
+  Footer: [HALFWAY, MOSTLY, MOSTLY, HALFWAY],
 };
 
 // [Architecture, Functionality, Deployment, Refinement]
 const backends = {
-  ETL: [3, 3, 2, 2],
-  'DVI Webservice': [3, 3, 1, 1],
-  'Conditions Webservice': [3, 3, 2, 2],
-  'GraphQL Data API': [2, 1, 1, 0],
+  ETL: [MOSTLY, MOSTLY, HALFWAY, HALFWAY],
+  'DVI Webservice': [MOSTLY, MOSTLY, STARTED, STARTED],
+  'Conditions Webservice': [MOSTLY, MOSTLY, HALFWAY, HALFWAY],
+  'GraphQL Data API': [HALFWAY, STARTED, STARTED, PENDING],
 };
 
 const getAverage = (input) => {
