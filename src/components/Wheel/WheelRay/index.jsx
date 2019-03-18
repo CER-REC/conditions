@@ -79,32 +79,26 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={item._id} transform={transform}>
+          <g key={item._id} transform={transform} className="companyRay">
             <text className="TextLabels">
               {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
             </text>
+            <line
+              y2="50%"
+              y1={(index === 0 ? '23.5%' : '31%')}
+            />
             {(this.flagLayouts)
               ? (
                 <CompanyFlag
-                  y={-170}
                   flagLayout={this.flagLayouts[index]}
-                  width={degreesPerItem + 1}
-                  height={323}
+                  width={degreesPerItem * 2}
+                  height={width}
                   dotWidth={6 * this.flagScale}
                   dotSpacing={8 * this.flagScale}
                 />
               )
               : null
             }
-
-            {/* This rect shows the wheel segments; for debugging */}
-            {/* <rect
-              y="-181"
-              fill="red"
-              height={(index === 0) ? '323px' : height}
-              width={1}
-              key={item._id}
-            />  */}
           </g>
         )
         : (

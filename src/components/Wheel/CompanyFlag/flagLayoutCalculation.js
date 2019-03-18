@@ -1,8 +1,17 @@
 const THIRTY_DEGREES = Math.PI / 6;
 const SIXTY_DEGREES = Math.PI / 3;
 
-// Returns the base of a triangle that would hold x items
-export const fitToTriangle = x => Math.ceil((Math.sqrt(8 * x + 1) - 1) / 2);
+/**
+ * Returns the base of a triangle that would hold N items.
+ * A triangle of base T can hold:
+ *    N = (T + (T - 1) + (T - 2) + ... + 1)
+ * which simplifies to:
+ *    N = T * (T + 1) / 2
+ * Solving for T gives a quadratic equation:
+ *    T = (sqrt(8 * N + 1) - 1) / 2
+ * Which we round up to get the next larger triangular integer
+ */
+export const fitToTriangle = n => Math.ceil((Math.sqrt(8 * n + 1) - 1) / 2);
 
 /**
  *  Constructs the exterior of the flag
@@ -102,7 +111,6 @@ export const triangleCollidesWithRay = ({
   otherRay,
   minimumDistance = 0,
 }) => {
-
   // The ray is tall enough to be worth checking
   if (otherRay.y > flagBase.y) {
     const dx = (otherRay.y - flagBase.y) * Math.tan(SIXTY_DEGREES);
