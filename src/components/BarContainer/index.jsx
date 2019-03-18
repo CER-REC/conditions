@@ -1,8 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import invariant from 'invariant';
 
-const calculateSize = (size, max) => (max ? max * (size / 100) : `${size}%`);
+const isValidUnit = (unit) => {
+  // Must be a number or a string
+  if (typeof unit !== 'number' && typeof unit !== 'string') { return false; }
+  // Number or a string that is actually a number
+  if (typeof unit === 'number' || parseInt(unit, 10).toString() === unit) { return true; }
+  // Ends with % or px
+  if (unit.endsWith('%') || unit.endsWith('px')) { return true; }
+  return false;
+};
+
+const calculateSize = (size, max) => {
+  const value = parseInt(max, 10) * size / 100;
+  return (max.toString().endsWith('%')) ? `${value}%` : value;
+};
 
 const BarContainer = (props) => {
   if (props.items.length === 0) { return null; }
@@ -15,7 +29,16 @@ const BarContainer = (props) => {
   } = props;
 
   // Pull these out separately since we still want to pass them through
-  const { width: maxWidth, height: maxHeight } = spreadProps;
+  const { width: maxWidth, height: maxHeight } = props;
+
+  invariant(
+    isValidUnit(maxWidth),
+    `BarContainer only supports width units of number, %, or px. Received ${maxWidth}`,
+  );
+  invariant(
+    isValidUnit(maxHeight),
+    `BarContainer only supports height units of number, %, or px. Received ${maxHeight}`,
+  );
 
   const scaleAgainst = vertical
     ? Math.max(...items.map(v => v.value))
@@ -58,8 +81,6 @@ const BarContainer = (props) => {
   const Container = standalone ? 'g' : 'svg';
   return (
     <Container
-      width="100%"
-      height="100%"
       {...spreadProps}
       className={classNames('BarContainer', props.className)}
     >
@@ -76,12 +97,16 @@ BarContainer.propTypes = {
   })).isRequired,
   vertical: PropTypes.bool,
   standalone: PropTypes.bool,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 BarContainer.defaultProps = {
   className: '',
   vertical: false,
   standalone: false,
+  width: '100%',
+  height: '100%',
 };
 
 export default BarContainer;

@@ -37,6 +37,80 @@ exports[`Storyshots Components|BarContainer default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|BarContainer size as percentage 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height="100%"
+    width="50%"
+  >
+    <rect
+      className="Bar"
+      fill="green"
+      height="100%"
+      width="10.81081081081081%"
+      x="0%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="red"
+      height="100%"
+      width="59.45945945945946%"
+      x="10.810810810810814%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="pink"
+      height="100%"
+      width="29.72972972972973%"
+      x="70.27027027027027%"
+      y={0}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer size as pixels 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height={200}
+    width={200}
+  >
+    <rect
+      className="Bar"
+      fill="green"
+      height="100%"
+      width="10.81081081081081%"
+      x="0%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="red"
+      height="100%"
+      width="59.45945945945946%"
+      x="10.810810810810814%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="pink"
+      height="100%"
+      width="29.72972972972973%"
+      x="70.27027027027027%"
+      y={0}
+    />
+  </svg>
+</div>
+`;
+
 exports[`Storyshots Components|BarContainer standalone 1`] = `
 <div
   className="visualization"
@@ -9351,7 +9425,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="rgb(153, 153, 255)"
             height="30%"
             width="7.142857142857142%"
-            x="49.999999999999986%"
+            x="49.99999999999998%"
             y="70%"
           />
           <rect
@@ -9359,7 +9433,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="rgb(68, 34, 149)"
             height="6%"
             width="7.142857142857142%"
-            x="57.142857142857125%"
+            x="57.14285714285713%"
             y="94%"
           />
           <rect
@@ -9391,7 +9465,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="rgb(36, 91, 64)"
             height="6%"
             width="7.142857142857142%"
-            x="85.71428571428568%"
+            x="85.7142857142857%"
             y="94%"
           />
           <rect
@@ -9399,7 +9473,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="black"
             height="8%"
             width="7.142857142857142%"
-            x="92.85714285714282%"
+            x="92.85714285714283%"
             y="92%"
           />
         </svg>

@@ -41,8 +41,7 @@ class WheelRay extends React.Component {
     const { items, degreesPerItem, reservedDegrees, rotation,
       currentIndex, wheelType,
     } = props;
-    const height = '163';
-    // const width = `${degreesPerItem + 1}px`;
+    const width = 163;
     const halfReservedDegrees = reservedDegrees / 2;
     const selectedIndex = currentIndex >= 0
       ? currentIndex : items.length + currentIndex;
@@ -78,7 +77,7 @@ class WheelRay extends React.Component {
             <LocationRay
               items={randomLocationBars[index]}
               height={degreesPerItem * 2}
-              width={height}
+              width={width}
               searched
               adjustRotationReference={degreesPerItem / 2}
             />
