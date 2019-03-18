@@ -1760,7 +1760,7 @@ exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".CircleContainer.blue { background: blue } ",
+        "__html": ".CircleContainer.blue { background: blue }",
       }
     }
   />
@@ -3487,14 +3487,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
   <div
     className="ConditionDetails"
   >
-    <div
-      style={
-        Object {
-          "height": 50,
-          "width": 300,
-        }
-      }
-    >
+    <div>
       <div
         className="ContentBlock "
       >
@@ -3517,13 +3510,6 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         : 
         This is a full block
       </div>
-      <style
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": ".ConditionDetails { display: block; width: 100% } ",
-          }
-        }
-      />
     </div>
   </div>
 </div>
@@ -3536,14 +3522,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
   <div
     className="ConditionDetails"
   >
-    <div
-      style={
-        Object {
-          "height": 50,
-          "width": 300,
-        }
-      }
-    >
+    <div>
       <div
         className="ContentBlock half"
       >
@@ -3566,13 +3545,6 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         : 
         This is a half block
       </div>
-      <style
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": ".ConditionDetails { display: block; width: 100% } ",
-          }
-        }
-      />
     </div>
   </div>
 </div>
@@ -7880,15 +7852,6 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
@@ -8179,6 +8142,13 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -8186,15 +8156,6 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore0 paddingAfter2"
   >
@@ -8485,6 +8446,13 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -8492,15 +8460,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore0 paddingAfter0"
   >
@@ -8996,6 +8955,13 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
