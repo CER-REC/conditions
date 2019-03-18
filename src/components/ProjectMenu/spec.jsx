@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ProjectMenu from '.';
+import * as testData from './mockSpecData';
 
 const projectsData = [
   {
@@ -401,161 +402,59 @@ describe('Components|ProjectMenu', () => {
       const list = wrapper.find('List');
       expect(typeof list.props().onChange).toBe('function');
     });
+
+    test('should have double margins for single project', () => {
+      const onChange = jest.fn();
+      wrapper = shallow(
+        <ProjectMenu
+          projectsData={testData.data}
+          selectedProjectID={testData.data[0].id}
+          onChange={onChange}
+          selectedFeature="theme"
+        />,
+      );
+      const two = 2;
+      expect(wrapper.find('.ProjectMenu').hasClass(`paddingBefore${two}`)).toEqual(true);
+      // expect(wrapper.hasClass(`paddingBefore${two}`)).is(true);
+      // expect(wrapper.hasClass(`paddingAfter${two}`)).is(false);
+    });
   });
-
-  // expectedResults is the input coming into the project menu
-  // and the output to the list component
-  // [0] input, [1] output
-  // if 0 should have 3 items, 1
-
-  const expectedResults8 = [
-    [{ total: 8, selected: 0, clickedIndex: 2 }, { total: 3, selected: 0, projectID: 1225 }],
-    [{ total: 8, selected: 1, clickedIndex: 3 }, { total: 4, selected: 1, projectID: 1226 }],
-    [{ total: 8, selected: 2, clickedIndex: 4 }, { total: 5, selected: 2, projectID: 1227 }],
-    [{ total: 8, selected: 3, clickedIndex: 1 }, { total: 5, selected: 2, projectID: 1225 }],
-    [{ total: 8, selected: 4, clickedIndex: 0 }, { total: 5, selected: 2, projectID: 1225 }],
-    [{ total: 8, selected: 5, clickedIndex: 4 }, { total: 5, selected: 2, projectID: 1230 }],
-    [{ total: 8, selected: 6, clickedIndex: 1 }, { total: 4, selected: 2, projectID: 1228 }],
-    [{ total: 8, selected: 7, clickedIndex: 0 }, { total: 3, selected: 2, projectID: 1228 }],
-    [{ total: 4, selected: 1, clickedIndex: 1 }, { total: 4, selected: 1, projectID: 1224 }],
-  ];
-
-  const dataSetOf8 = [
-    { id: 1223, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1224, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1225, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1226, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1227, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1228, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1229, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1230, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  ];
-
-  for (let i = 0; i < expectedResults8.length; i += 1) {
-    const [input, output] = expectedResults8[i];
-    // eslint-disable-next-line no-loop-func
-    describe(`with index ${input.selected} selected of ${input.total} projects`, () => {
-      let onChange;
-      let wrapper;
-      beforeEach(() => {
-        onChange = jest.fn();
-        wrapper = shallow(
-          <ProjectMenu
-            projectsData={dataSetOf8}
-            selectedProjectID={dataSetOf8[input.selected].id}
-            onChange={onChange}
-            selectedFeature="theme"
-          />,
-        );
+  const testProjectsArraySize = (expectedResults, dataSet) => {
+    for (let i = 0; i < expectedResults.length; i += 1) {
+      const [input, output] = expectedResults[i];
+      // eslint-disable-next-line no-loop-func
+      describe(`with index ${input.selected} selected of ${input.total} projects`, () => {
+        let onChange;
+        let wrapper;
+        beforeEach(() => {
+          onChange = jest.fn();
+          wrapper = shallow(
+            <ProjectMenu
+              projectsData={dataSet.slice(0, input.total)}
+              selectedProjectID={dataSet[input.selected].id}
+              onChange={onChange}
+              selectedFeature="theme"
+            />,
+          );
+        });
+        test(`should pass the List ${output.total} projects`, () => {
+          expect(wrapper.find('List').props().items).toHaveLength(output.total);
+        });
+        test(`should pass the List a selected project index of ${output.selected}`, () => {
+          expect(wrapper.find('List').props().selected).toBe(output.selected);
+        });
+        test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
+          wrapper.find('List').props().onChange(input.clickedIndex);
+          expect(onChange).toHaveBeenCalledTimes(1);
+          expect(onChange).toHaveBeenLastCalledWith(output.projectID);
+        });
       });
-
-      test(`should pass the List ${output.total} projects`, () => {
-        expect(wrapper.find('List').props().items).toHaveLength(output.total);
-      });
-
-      test(`should pass the List a selected project index of ${output.selected}`, () => {
-        expect(wrapper.find('List').props().selected).toBe(output.selected);
-      });
-
-      test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
-        wrapper.find('List').props().onChange(input.clickedIndex);
-        expect(onChange).toHaveBeenCalledTimes(1);
-        expect(onChange).toHaveBeenLastCalledWith(output.projectID);
-      });
-    });
-  }
-
-  const expectedResults4 = [
-    [{ total: 4, selected: 0, clickedIndex: 2 }, { total: 3, selected: 0, projectID: 1225 }],
-    [{ total: 4, selected: 1, clickedIndex: 3 }, { total: 4, selected: 1, projectID: 1226 }],
-    [{ total: 4, selected: 2, clickedIndex: 3 }, { total: 4, selected: 2, projectID: 1226 }],
-    [{ total: 4, selected: 3, clickedIndex: 1 }, { total: 3, selected: 2, projectID: 1225 }],
-  ];
-
-  const dataSetOf4 = [
-    { id: 1223, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1224, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1225, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1226, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  ];
-
-  for (let i = 0; i < expectedResults4.length; i += 1) {
-    const [input, output] = expectedResults4[i];
-    // eslint-disable-next-line no-loop-func
-    describe(`with index ${input.selected} selected of ${input.total} projects`, () => {
-      let onChange;
-      let wrapper;
-      beforeEach(() => {
-        onChange = jest.fn();
-        wrapper = shallow(
-          <ProjectMenu
-            projectsData={dataSetOf4}
-            selectedProjectID={dataSetOf4[input.selected].id}
-            onChange={onChange}
-            selectedFeature="theme"
-          />,
-        );
-      });
-
-      test(`should pass the List ${output.total} projects`, () => {
-        expect(wrapper.find('List').props().items).toHaveLength(output.total);
-      });
-
-      test(`should pass the List a selected project index of ${output.selected}`, () => {
-        expect(wrapper.find('List').props().selected).toBe(output.selected);
-      });
-
-      test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
-        wrapper.find('List').props().onChange(input.clickedIndex);
-        expect(onChange).toHaveBeenCalledTimes(1);
-        expect(onChange).toHaveBeenLastCalledWith(output.projectID);
-      });
-    });
-  }
-
-  const expectedResults3 = [
-    [{ total: 3, selected: 0, clickedIndex: 2 }, { total: 3, selected: 0, projectID: 1225 }],
-    [{ total: 3, selected: 1, clickedIndex: 1 }, { total: 3, selected: 1, projectID: 1224 }],
-    [{ total: 3, selected: 2, clickedIndex: 0 }, { total: 3, selected: 2, projectID: 1223 }],
-  ];
-
-  const dataSetOf3 = [
-    { id: 1223, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1224, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-    { id: 1225, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  ];
-
-  for (let i = 0; i < expectedResults3.length; i += 1) {
-    const [input, output] = expectedResults3[i];
-    // eslint-disable-next-line no-loop-func
-    describe(`with index ${input.selected} selected of ${input.total} projects`, () => {
-      let onChange;
-      let wrapper;
-      beforeEach(() => {
-        onChange = jest.fn();
-        wrapper = shallow(
-          <ProjectMenu
-            projectsData={dataSetOf3}
-            selectedProjectID={dataSetOf3[input.selected].id}
-            onChange={onChange}
-            selectedFeature="theme"
-          />,
-        );
-      });
-
-      test(`should pass the List ${output.total} projects`, () => {
-        expect(wrapper.find('List').props().items).toHaveLength(output.total);
-      });
-
-      test(`should pass the List a selected project index of ${output.selected}`, () => {
-        expect(wrapper.find('List').props().selected).toBe(output.selected);
-      });
-
-      test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
-        wrapper.find('List').props().onChange(input.clickedIndex);
-        expect(onChange).toHaveBeenCalledTimes(1);
-        expect(onChange).toHaveBeenLastCalledWith(output.projectID);
-      });
-    });
-  }
+    }
+  };
+  testProjectsArraySize(testData.expectedResults8, testData.data);
+  testProjectsArraySize(testData.expectedResults5, testData.data);
+  testProjectsArraySize(testData.expectedResults4, testData.data);
+  testProjectsArraySize(testData.expectedResults3, testData.data);
+  testProjectsArraySize(testData.expectedResults2, testData.data);
+  testProjectsArraySize(testData.expectedResults1, testData.data);
 });
