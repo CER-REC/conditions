@@ -44,6 +44,10 @@ class SearchBar extends React.PureComponent {
 
   changeIsExclude = bool => (this.setState({ isExclude: bool }));
 
+  handleTabChange = toggleMode => () => this.setState(({ mode }) => ({
+    mode: (mode !== toggleMode) ? toggleMode : '',
+  }))
+
   render() {
     const {
       mode, isActive, isExclude,
@@ -122,16 +126,12 @@ class SearchBar extends React.PureComponent {
       <div className={classNames('SearchBar', this.props.className)}>
         <div className="SelectionTab">
           <Tab
-            onClick={
-              () => this.setState({ mode: (mode !== 'find') ? 'find' : '' })
-            }
+            onClick={this.handleTabChange('find')}
             isFilter={false}
             isActive={(mode === 'find')}
           />
           <Tab
-            onClick={
-              () => this.setState({ mode: (mode !== 'filter') ? 'filter' : '' })
-            }
+            onClick={this.handleTabChange('filter')}
             isFilter
             isActive={(mode === 'filter')}
           />
