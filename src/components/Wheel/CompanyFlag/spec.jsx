@@ -66,4 +66,67 @@ describe('Components|Wheel/CompanyFlag', () => {
       expect(wrapper.find('ProjectDot')).toHaveLength(0);
     });
   });
+
+  describe('with one set of dots', () => {
+    beforeEach(() => {
+      wrapper = shallow(<CompanyFlag
+        flagLayout={[
+          [
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+          ],
+        ]}
+        height={200}
+      />);
+    });
+
+    test('the flag should not wrap', () => {
+      expect(wrapper.find('ProjectDot').first().prop('cx')).toEqual(0);
+      expect(wrapper.find('ProjectDot').last().prop('cx')).toEqual(0);
+    });
+  });
+
+  describe('with multiple sets of dots', () => {
+    beforeEach(() => {
+      wrapper = shallow(<CompanyFlag
+        flagLayout={[
+          [
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+          ],
+          [
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+            { filtered: false, relevant: true },
+          ],
+        ]}
+        height={200}
+      />);
+    });
+
+    test('the first 4 dots should not wrap', () => {
+      // 0 - 3 should be zero
+      for (let i = 0; i < 4; i += 1) {
+        expect(wrapper.find('ProjectDot').at(i).prop('cx')).toEqual(0);
+      }
+    });
+
+    test('the last 4 dots should be wrapping', () => {
+      // 4 - 7 should be a generated number
+      for (let i = 4; i < 8; i += 1) {
+        expect(wrapper.find('ProjectDot').at(i).prop('cx')).not.toEqual(0);
+      }
+    });
+  });
 });
