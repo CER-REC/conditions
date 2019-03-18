@@ -127,7 +127,6 @@ class SearchBar extends React.PureComponent {
         <div className="SelectionTab">
           <Tab
             onClick={this.handleTabChange('find')}
-            isFilter={false}
             isActive={(mode === 'find')}
           />
           <Tab
