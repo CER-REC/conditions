@@ -2,16 +2,13 @@
 @import "../../../styles/colors.scss";
 
 .SearchContent {
-  width: 425px;
   display: inline-block;
   vertical-align: top;
-  border-top: none;
-  border-right: 1px solid $LightGray;
-  border-bottom: 1px solid $LightGray;
-  border-left: 1px solid $LightGray;
+
   text-align: left;
   padding: 10px 10px 5px 10px;
   font-family: $fira-sans-condensed;
+  // z-index: -1;
 
   .reset {
     text-align: right;

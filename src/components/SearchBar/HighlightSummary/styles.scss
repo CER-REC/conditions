@@ -1,10 +1,15 @@
 @import "../../../styles/fontVariables.scss";
 @import "../../../styles/colors.scss";
 .HighlightSummary {
+
+  border-top: 1px solid $LightGray;
+  width: 100%;
+  margin-top: -1px;
+
   font-size: 9px;
   font-family: $fira-sans-condensed-italic;
   color: $VeryDarkGray;
-  border-radius: 10px;
+  // border-radius: 10px;
   padding: 10px;
   display: inline-block;
   text-align: left;

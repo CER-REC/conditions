@@ -2,18 +2,24 @@
 @import "../../../styles/colors.scss";
 
 .Tab {
+  display: inline-block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 20px;
   width: max-content;
   padding: 5px;
   font-size: 11px;
   color: $Gray160;
-  border: 1px solid $LightGray;
+  border-top: 1px solid $LightGray;
+  border-left: 1px solid $LightGray;
+  border-right: 1px solid $LightGray;
   font-family: $fira-sans-condensed;
-  border-bottom: none;
-  &.inactiveTab {
-    border-bottom: 1px solid $LightGray;
-  }
+  background-color: white;
+  // border-bottom: 1px solid white;
+  // &.inactiveTab {
+  //   // border-bottom: 1px solid $LightGray;
+  //   border-bottom: none;
+  // }
+  position: relative;
   .tabText{
     vertical-align: top;
   }
@@ -33,6 +39,22 @@
         stroke: $LinksTextButtons;
         stroke-width: 20;
       }
+    }
+  }
+
+  .bottom {
+    display: inline-block;
+    vertical-align: bottom;
+
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+
+    border-bottom: 1px solid $LightGray;
+
+    &.active {
+      border-bottom: 1px solid white;
     }
   }
 }

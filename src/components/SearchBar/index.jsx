@@ -26,6 +26,11 @@ class SearchBar extends React.PureComponent {
     findAnyOnChange: PropTypes.func.isRequired,
     updateYear: PropTypes.func.isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
+    className: PropTypes.string,
+  }
+
+  static defaultProps = {
+    className: '',
   }
 
   constructor(props) {
@@ -48,6 +53,7 @@ class SearchBar extends React.PureComponent {
       findAny, includeKeywords, excludeKeywords, suggestedKeywords,
       yearRange, availableYearRange, availableCategories, findAnyOnChange,
     } = this.props;
+
     const filterComponent = (mode !== 'filter') ? null : (
       <FilterContent
         projectStatus={projectStatus}
@@ -103,8 +109,13 @@ class SearchBar extends React.PureComponent {
         selectedYear={yearRange}
       />
     );
+
+    const modeComponent = (mode === '' && highlightedSummary)
+      || (mode === 'find' && searchComponent)
+      || (mode === 'filter' && filterComponent);
+
     return (
-      <div className="SearchBar">
+      <div className={classNames('SearchBar', this.props.className)}>
         <div className="SelectionTab">
           <Tab
             onClick={
@@ -114,17 +125,13 @@ class SearchBar extends React.PureComponent {
             isFilter={false}
             isActive={(mode === 'find')}
           />
-          <div className={classNames('rect', 'horzDivider')} />
           <Tab
             onClick={() => (this.setState({ mode: (mode !== 'filter' || mode.length === 0) ? 'filter' : '' }))}
             isFilter
             isActive={(mode === 'filter')}
           />
-          <div className={classNames('rect', 'horzLine')} />
         </div>
-        {highlightedSummary}
-        { searchComponent }
-        { filterComponent }
+        {modeComponent}
       </div>
     );
   }

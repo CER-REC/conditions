@@ -50,6 +50,7 @@ const Tab = (props) => {
           {icon}
         </svg>
       </span>
+      <div className={classNames('bottom', { active: props.isActive })} />
     </div>
   );
 };
