@@ -31,8 +31,8 @@ describe('Components|Wheel/Ring', () => {
       expect(wrapper.find('.RingBackground').hasClass('company')).toBe(true);
     });
 
-    test('should render 18 lines inside a lines group', () => {
-      expect(wrapper.find('.Lines').children()).toHaveLength(18);
+    test('should render 36 lines inside a lines group', () => {
+      expect(wrapper.find('.Lines').children()).toHaveLength(36);
     });
 
     test('should have a class company for the line background ', () => {
