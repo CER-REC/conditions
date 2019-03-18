@@ -92,10 +92,15 @@ export const fillTriangleFrame = ({
   });
 };
 
+/**
+ * Takes the coordinates of a flag's base and another ray's top,
+ * both as {x, y}, and determines if the ray intersects a line extending
+ * from the base at thirty degrees to horizontal.
+ */
 export const triangleCollidesWithRay = ({
   flagBase,
   otherRay,
-  minimumDistance,
+  minimumDistance = 0,
 }) => {
 
   // The ray is tall enough to be worth checking
