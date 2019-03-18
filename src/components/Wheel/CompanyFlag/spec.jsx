@@ -34,14 +34,14 @@ describe('Components|Wheel/CompanyFlag', () => {
   ];
 
   let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(<CompanyFlag
-      flagLayout={flagLayoutData}
-      height={200}
-    />);
-  });
 
   describe('with default props', () => {
+    beforeEach(() => {
+      wrapper = shallow(<CompanyFlag
+        flagLayout={flagLayoutData}
+        height={200}
+      />);
+    });
     test('should render', () => {
       expect(wrapper.type()).toBe('g');
     });
@@ -50,8 +50,20 @@ describe('Components|Wheel/CompanyFlag', () => {
       expect(wrapper.is('.CompanyFlag')).toBe(true);
     });
 
-    test('should have a total of 4 flags', () => {
+    test('should have a total of 20 Dots', () => {
       expect(wrapper.find('ProjectDot')).toHaveLength(20);
+    });
+  });
+
+  describe('with all 0 values', () => {
+    beforeEach(() => {
+      wrapper = shallow(<CompanyFlag
+        flagLayout={[[0, 0, 0, 0], [0, 0, 0, 0]]}
+        height={200}
+      />);
+    });
+    test('should have zero project dots', () => {
+      expect(wrapper.find('ProjectDot')).toHaveLength(0);
     });
   });
 });
