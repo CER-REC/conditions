@@ -5,9 +5,9 @@ The Company Flag is a private component, used by the Wheel when in Company mode.
 ## Requirements
 
 * [x] Renders a collection of ProjectDot components as a single ray
-* [ ] Folds larger collections, starting from the outer end, creating a triangular "flag" to save space
-  * [ ] Flags should never be folded to a point where they intersect another ray's dots
-  * [ ] Flags should maintain a minimum distance from other rays' dots to provide visual separation
+* [x] Folds larger collections, starting from the outer end, creating a triangular "flag" to save space
+  * [x] Flags should never be folded to a point where they intersect another ray's dots
+  * [x] Flags should maintain a minimum distance from other rays' dots to provide visual separation
 
 ## Interaction Requirements
 

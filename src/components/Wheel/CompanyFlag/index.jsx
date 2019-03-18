@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectDot from '../ProjectDot';
 
-const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, height }) => {
+const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, height, rotation }) => {
   const baseY = y + height - (flagLayout[0].length * dotSpacing);
 
   const columnOffset = {
@@ -31,28 +31,30 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, height }) => {
   }, []);
 
   return (
-    <g className="CompanyFlag">
+    <g className="CompanyFlag" style={{ transform: `rotate(${rotation}deg)` }}>
       {circles.map(circle => (<ProjectDot key={`${circle.cx},${circle.cy}`} {...circle} />))}
     </g>
   );
 };
 
 CompanyFlag.propTypes = {
-  // TODO: flagLayout shape has changed
   flagLayout: PropTypes.arrayOf(
     PropTypes.arrayOf(
-      PropTypes.shape({
-        filtered: PropTypes.bool.isRequired,
-        relevant: PropTypes.bool.isRequired,
-      }),
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          filtered: PropTypes.bool.isRequired,
+          relevant: PropTypes.bool.isRequired,
+        }),
+        PropTypes.number,
+      ]),
     ),
   ).isRequired,
   x: PropTypes.number,
   y: PropTypes.number,
   height: PropTypes.number.isRequired,
-  // width: PropTypes.number.isRequired,
   dotWidth: PropTypes.number,
   dotSpacing: PropTypes.number,
+  rotation: PropTypes.number,
 };
 
 CompanyFlag.defaultProps = {
@@ -60,6 +62,7 @@ CompanyFlag.defaultProps = {
   y: 0,
   dotWidth: 16,
   dotSpacing: 24,
+  rotation: 0,
 };
 
 export default CompanyFlag;

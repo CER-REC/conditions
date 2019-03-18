@@ -79,22 +79,19 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={item._id} transform={transform} className="companyRay">
+          <g key={`${item._id}CompanyRay`} style={transform}>
             <text className="TextLabels">
               {item.company_name.charAt(0) === legendTracker ? null : item.company_name.charAt(0)}
             </text>
-            <line
-              y2="50%"
-              y1={(index === 0 ? '23.5%' : '31%')}
-            />
             {(this.flagLayouts)
               ? (
                 <CompanyFlag
+                  y={-136}
                   flagLayout={this.flagLayouts[index]}
-                  width={degreesPerItem * 2}
-                  height={width}
+                  height={degreesPerItem * 2}
                   dotWidth={6 * this.flagScale}
                   dotSpacing={8 * this.flagScale}
+                  rotation={90}
                 />
               )
               : null
