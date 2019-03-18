@@ -15,6 +15,7 @@ import {
   conditionData,
 } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
+import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
 import * as browseByCreators from '../../actions/browseBy';
@@ -67,8 +68,9 @@ const availableYearRange = { start: 1970, end: 1980 };
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
     <section className="row">
-      <section className="searchHeader">
+      <section className="header">
         <SearchBar
+          className={(props.browseBy === 'location') ? 'small' : ''}
           suggestedKeywords={searchData}
           availableYearRange={availableYearRange}
           availableCategories={availableCategories}
@@ -83,6 +85,10 @@ const ViewTwo = props => (
           yearRange={props.projectYear}
           findAny={props.findAny}
         />
+        {(props.browseBy === 'location')
+          ? <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
+          : null
+        }
       </section>
     </section>
     <section className="row">
