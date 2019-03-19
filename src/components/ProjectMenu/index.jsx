@@ -54,16 +54,20 @@ class ProjectMenu extends React.PureComponent {
     const itemLength = listItems.length;
     const accountForSmallList = itemLength <= 4 ? itemLength - selected : 0;
     const itemsBefore = selected < 2 ? Math.max(2 - selected, 0) : 0;
-    const itemsAfter = (selected > (listItems.length - 3))
-      ? 2 - (listItems.length - 3 + accountForSmallList)
-      : 0;
+
+
+    const itemsAfter = (selected > (listItems.length - 3)) ? Math.abs(2 - (listItems.length - 3 + accountForSmallList)) : 0;
+    const singleCase = (listItems.length === 1) ? itemsAfter - 1 : itemsAfter; // fixes 0 case
+    const threeCase1 = (selected === 1 && listItems.length === 3) ? itemsAfter - 1 : itemsAfter;
+    const threeCase2 = (selected === 2 && listItems.length === 3) ? itemsAfter + 1 : itemsAfter;
+
 
     return (
       <div
         className={classNames(
           'ProjectMenu',
           `paddingBefore${itemsBefore}`,
-          `paddingAfter${itemsAfter}`,
+          `paddingAfter${(threeCase1 && threeCase2) || singleCase}`,
         )}
       >
         <div className="pipe" />

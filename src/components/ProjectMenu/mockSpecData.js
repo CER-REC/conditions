@@ -78,7 +78,7 @@ export const expectedResults8 = [
       selected: 2,
       projectID: 1228,
       before: 0,
-      after: -1, // should be 1
+      after: 1,
     },
   ],
   [
@@ -88,7 +88,7 @@ export const expectedResults8 = [
       selected: 2,
       projectID: 1228,
       before: 0,
-      after: 1, // should be 2
+      after: 1, //should be 2
     },
   ],
   [
@@ -151,7 +151,7 @@ export const expectedResults5 = [
       selected: 2,
       projectID: 1225,
       before: 0,
-      after: -1, // should be 1
+      after: 1,
     },
   ],
   [
@@ -161,7 +161,7 @@ export const expectedResults5 = [
       selected: 2,
       projectID: 1226,
       before: 0,
-      after: -1, // should be 1
+      after: 1,
     },
   ],
   [
@@ -171,7 +171,7 @@ export const expectedResults5 = [
       selected: 2,
       projectID: 1227,
       before: 0,
-      after: 1, // bug should be 2
+      after: 1,
     },
   ],
 ];
@@ -204,7 +204,7 @@ export const expectedResults4 = [
       selected: 2,
       projectID: 1225,
       before: 0,
-      after: -1, //bug should be 1
+      after: 1,
     },
   ],
   [
@@ -247,7 +247,7 @@ export const expectedResults3 = [
       selected: 1,
       projectID: 1224,
       before: 1,
-      after: 0, // should be 1
+      after: 1,
     },
   ],
   [
@@ -257,7 +257,7 @@ export const expectedResults3 = [
       selected: 2,
       projectID: 1225,
       before: 0,
-      after: 1, //bug should be 2
+      after: 2,
     },
   ],
 ];
@@ -293,18 +293,18 @@ export const expectedResults1 = [
       selected: 0,
       projectID: 1223,
       before: 2,
-      after: 3, //bug  should be 2
+      after: 2,
     },
   ],
 ];
 
 export const data = [
-  { id: 1223, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1224, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1225, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1226, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1227, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1228, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1229, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1230, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1223, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1224, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1225, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1226, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1227, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1228, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1229, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1230, name: { en: 'Trans-Alta Limited-44245', fr: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
 ];
