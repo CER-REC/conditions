@@ -39,26 +39,25 @@ class ProjectMenu extends React.PureComponent {
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
-  getReformattedData = pickedFeature => pickedFeature.map(([name, count]) => ({ name, count }));
+  getReformattedData = data => (
+    Object.entries(data[this.props.selectedFeature])
+      .map(([name, count]) => ({ name, count }))
+  );
 
   render() {
     const listItems = this.getListItems();
     // If there are no listItems render virtualized data
     // TODO: Make fake renderedItems for loading of projectMenu
     const renderedItems = listItems ? listItems
-      .map((project) => {
-        const { data } = project;
-        const pickedFeature = Object.entries(data[this.props.selectedFeature]);
-        return (
-          <ProjectChart
-            key={project.id}
-            chartType={this.props.selectedFeature}
-            graphData={this.getReformattedData(pickedFeature)}
-            projectName={project.name.english}
-            selected={project.id === this.props.selectedProjectID}
-          />
-        );
-      })
+      .map(project => (
+        <ProjectChart
+          key={project.id}
+          chartType={this.props.selectedFeature}
+          graphData={this.getReformattedData(project.data)}
+          projectName={project.name.english}
+          selected={project.id === this.props.selectedProjectID}
+        />
+      ))
       : [];
 
     const selected = this.props.selectedProjectID === null
