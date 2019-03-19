@@ -12,10 +12,10 @@ storiesForComponent('Components|Wheel/Ring', module, ReadMe)
     <svg viewBox="0 0 860 860">
       <Ring ringType="company" />
     </svg>
-  ), { styles: '.Wheel { padding-top: unset }' })
+  ), { styles: '.Wheel { padding-top: 0px }' })
   .add('location view', () => (
     <svg viewBox="0 0 860 860">
       <Ring ringType="location" />
     </svg>
-  ), { styles: '.Wheel { padding-top: unset }' });
+  ), { styles: '.Wheel { padding-top: 0px }' });
 

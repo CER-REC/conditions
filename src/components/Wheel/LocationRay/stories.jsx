@@ -27,4 +27,4 @@ storiesForComponent('Components|Wheel/LocationRay', module, ReadMe)
         adjustRotationReference={degreesPerItem / 2}
       />
     </svg>
-  ), { styles: '.Wheel { padding-top: unset }' });
+  ), { styles: '.Wheel { padding-top: 0px }' });

@@ -16,5 +16,5 @@ storiesForComponent('Components|Wheel/ProjectDot', module, ReadMe)
         relevant={boolean('Relevant', false)}
       />
     </svg>
-  ), { styles: '.Wheel { padding-top: unset }' });
+  ), { styles: '.Wheel { padding-top: 0px }' });
 

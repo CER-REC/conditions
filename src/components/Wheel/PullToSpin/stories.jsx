@@ -14,5 +14,5 @@ storiesForComponent('Components|Wheel/PullToSpin', module, ReadMe)
     <svg viewBox="300 0 150 100" width="200">
       <PullToSpin {...getInteractionProps()} />
     </svg>
-  ), { styles: '.Wheel { padding-top: unset }' });
+  ), { styles: '.Wheel { padding-top: 0px }' });
 
