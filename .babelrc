@@ -1,6 +1,9 @@
 {
   "presets": [
-    "@babel/preset-env",
+    ["@babel/preset-env",
+    {
+      "useBuiltIns": "entry"
+    }],
     "@babel/preset-react"
   ],
   "plugins": [
@@ -15,6 +18,6 @@
       "plugins": [
         "require-context-hook"
       ]
-    }
+    },
   }
 }

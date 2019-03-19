@@ -13,6 +13,7 @@ module.exports = {
   mode: 'development',
   entry: {
     bundle: [
+      '@babel/polyfill',
       'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr',
       './src/index.jsx',
     ],
