@@ -44,7 +44,7 @@ class ProjectMenu extends React.PureComponent {
   render() {
     const listItems = this.getListItems();
     // If there are no listItems render virtualized data
-    // TODO: Make fake renderedItems for loading of projectMenu 
+    // TODO: Make fake renderedItems for loading of projectMenu
     const renderedItems = listItems ? listItems
       .map((project) => {
         const { data } = project;
