@@ -11,48 +11,291 @@
   */
 
 export const expectedResults8 = [
-  [{ total: 8, selected: 0, clickedIndex: 2 }, { total: 3, selected: 0, projectID: 1225 }],
-  [{ total: 8, selected: 1, clickedIndex: 3 }, { total: 4, selected: 1, projectID: 1226 }],
-  [{ total: 8, selected: 2, clickedIndex: 4 }, { total: 5, selected: 2, projectID: 1227 }],
-  [{ total: 8, selected: 3, clickedIndex: 1 }, { total: 5, selected: 2, projectID: 1225 }],
-  [{ total: 8, selected: 4, clickedIndex: 0 }, { total: 5, selected: 2, projectID: 1225 }],
-  [{ total: 8, selected: 5, clickedIndex: 4 }, { total: 5, selected: 2, projectID: 1230 }],
-  [{ total: 8, selected: 6, clickedIndex: 1 }, { total: 4, selected: 2, projectID: 1228 }],
-  [{ total: 8, selected: 7, clickedIndex: 0 }, { total: 3, selected: 2, projectID: 1228 }],
-  [{ total: 8, selected: 2, clickedIndex: 3 }, { total: 5, selected: 2, projectID: 1226 }],
-  [{ total: 8, selected: 3, clickedIndex: 3 }, { total: 5, selected: 2, projectID: 1227 }],
+  [
+    { total: 8, selected: 0, clickedIndex: 2 },
+    {
+      total: 3,
+      selected: 0,
+      projectID: 1225,
+      before: 2,
+      after: 0,
+    },
+  ],
+  [
+    { total: 8, selected: 1, clickedIndex: 3 },
+    {
+      total: 4,
+      selected: 1,
+      projectID: 1226,
+      before: 1,
+      after: 0,
+    },
+  ],
+  [
+    { total: 8, selected: 2, clickedIndex: 4 },
+    {
+      total: 5,
+      selected: 2,
+      projectID: 1227,
+      before: 0,
+      after: 0,
+    },
+  ],
+  [
+    { total: 8, selected: 3, clickedIndex: 1 },
+    {
+      total: 5,
+      selected: 2,
+      projectID: 1225,
+      before: 0,
+      after: 0,
+    },
+  ],
+  [
+    { total: 8, selected: 4, clickedIndex: 0 },
+    {
+      total: 5,
+      selected: 2,
+      projectID: 1225,
+      before: 0,
+      after: 0,
+    },
+  ],
+  [
+    { total: 8, selected: 5, clickedIndex: 4 },
+    {
+      total: 5,
+      selected: 2,
+      projectID: 1230,
+      before: 0,
+      after: 0,
+    },
+  ],
+  [
+    { total: 8, selected: 6, clickedIndex: 1 },
+    {
+      total: 4,
+      selected: 2,
+      projectID: 1228,
+      before: 0,
+      after: -1, // should be 1
+    },
+  ],
+  [
+    { total: 8, selected: 7, clickedIndex: 0 },
+    {
+      total: 3,
+      selected: 2,
+      projectID: 1228,
+      before: 0,
+      after: 1, // should be 2
+    },
+  ],
+  [
+    { total: 8, selected: 2, clickedIndex: 3 },
+    {
+      total: 5,
+      selected: 2,
+      projectID: 1226,
+      before: 0,
+      after: 0,
+    },
+  ],
+  [
+    { total: 8, selected: 3, clickedIndex: 3 },
+    {
+      total: 5,
+      selected: 2,
+      projectID: 1227,
+      before: 0,
+      after: 0,
+    },
+  ],
 ];
 
 export const expectedResults5 = [
-  [{ total: 5, selected: 0, clickedIndex: 0 }, { total: 3, selected: 0, projectID: 1223 }],
-  [{ total: 5, selected: 1, clickedIndex: 1 }, { total: 4, selected: 1, projectID: 1224 }],
-  [{ total: 5, selected: 2, clickedIndex: 2 }, { total: 5, selected: 2, projectID: 1225 }],
-  [{ total: 5, selected: 3, clickedIndex: 1 }, { total: 4, selected: 2, projectID: 1225 }],
-  [{ total: 5, selected: 3, clickedIndex: 2 }, { total: 4, selected: 2, projectID: 1226 }],
-  [{ total: 5, selected: 4, clickedIndex: 2 }, { total: 3, selected: 2, projectID: 1227 }],
+  [
+    { total: 5, selected: 0, clickedIndex: 0 },
+    {
+      total: 3,
+      selected: 0,
+      projectID: 1223,
+      before: 2,
+      after: 0,
+    },
+  ],
+  [
+    { total: 5, selected: 1, clickedIndex: 1 },
+    {
+      total: 4,
+      selected: 1,
+      projectID: 1224,
+      before: 1,
+      after: 0,
+    },
+  ],
+  [
+    { total: 5, selected: 2, clickedIndex: 2 },
+    {
+      total: 5,
+      selected: 2,
+      projectID: 1225,
+      before: 0,
+      after: 0,
+    },
+  ],
+  [
+    { total: 5, selected: 3, clickedIndex: 1 },
+    {
+      total: 4,
+      selected: 2,
+      projectID: 1225,
+      before: 0,
+      after: -1, // should be 1
+    },
+  ],
+  [
+    { total: 5, selected: 3, clickedIndex: 2 },
+    {
+      total: 4,
+      selected: 2,
+      projectID: 1226,
+      before: 0,
+      after: -1, // should be 1
+    },
+  ],
+  [
+    { total: 5, selected: 4, clickedIndex: 2 },
+    {
+      total: 3,
+      selected: 2,
+      projectID: 1227,
+      before: 0,
+      after: 1, // bug should be 2
+    },
+  ],
 ];
 
 export const expectedResults4 = [
-  [{ total: 4, selected: 0, clickedIndex: 0 }, { total: 3, selected: 0, projectID: 1223 }],
-  [{ total: 4, selected: 1, clickedIndex: 1 }, { total: 4, selected: 1, projectID: 1224 }],
-  [{ total: 4, selected: 2, clickedIndex: 2 }, { total: 4, selected: 2, projectID: 1225 }],
-  [{ total: 4, selected: 3, clickedIndex: 1 }, { total: 3, selected: 2, projectID: 1225 }],
-  [{ total: 4, selected: 3, clickedIndex: 2 }, { total: 3, selected: 2, projectID: 1226 }],
+  [
+    { total: 4, selected: 0, clickedIndex: 0 },
+    {
+      total: 3,
+      selected: 0,
+      projectID: 1223,
+      before: 2,
+      after: 0,
+    },
+  ],
+  [
+    { total: 4, selected: 1, clickedIndex: 1 },
+    {
+      total: 4,
+      selected: 1,
+      projectID: 1224,
+      before: 1,
+      after: 0,
+    },
+  ],
+  [
+    { total: 4, selected: 2, clickedIndex: 2 },
+    {
+      total: 4,
+      selected: 2,
+      projectID: 1225,
+      before: 0,
+      after: -1, //bug should be 1
+    },
+  ],
+  [
+    { total: 4, selected: 3, clickedIndex: 1 },
+    {
+      total: 3,
+      selected: 2,
+      projectID: 1225,
+      before: 0,
+      after: 1,
+    },
+  ],
+  [
+    { total: 4, selected: 3, clickedIndex: 2 },
+    {
+      total: 3,
+      selected: 2,
+      projectID: 1226,
+      before: 0,
+      after: 1,
+    },
+  ],
 ];
 
 export const expectedResults3 = [
-  [{ total: 3, selected: 0, clickedIndex: 0 }, { total: 3, selected: 0, projectID: 1223 }],
-  [{ total: 3, selected: 1, clickedIndex: 1 }, { total: 3, selected: 1, projectID: 1224 }],
-  [{ total: 3, selected: 2, clickedIndex: 2 }, { total: 3, selected: 2, projectID: 1225 }],
+  [
+    { total: 3, selected: 0, clickedIndex: 0 },
+    {
+      total: 3,
+      selected: 0,
+      projectID: 1223,
+      before: 2,
+      after: 0,
+    },
+  ],
+  [
+    { total: 3, selected: 1, clickedIndex: 1 },
+    {
+      total: 3,
+      selected: 1,
+      projectID: 1224,
+      before: 1,
+      after: 0, // should be 1
+    },
+  ],
+  [
+    { total: 3, selected: 2, clickedIndex: 2 },
+    {
+      total: 3,
+      selected: 2,
+      projectID: 1225,
+      before: 0,
+      after: 1, //bug should be 2
+    },
+  ],
 ];
 
 export const expectedResults2 = [
-  [{ total: 2, selected: 0, clickedIndex: 0 }, { total: 2, selected: 0, projectID: 1223 }],
-  [{ total: 2, selected: 1, clickedIndex: 1 }, { total: 2, selected: 1, projectID: 1224 }],
+  [
+    { total: 2, selected: 0, clickedIndex: 0 },
+    {
+      total: 2,
+      selected: 0,
+      projectID: 1223,
+      before: 2,
+      after: 1,
+    },
+  ],
+  [
+    { total: 2, selected: 1, clickedIndex: 1 },
+    {
+      total: 2,
+      selected: 1,
+      projectID: 1224,
+      before: 1,
+      after: 2,
+    },
+  ],
 ];
 
 export const expectedResults1 = [
-  [{ total: 1, selected: 0, clickedIndex: 0 }, { total: 1, selected: 0, projectID: 1223 }],
+  [
+    { total: 1, selected: 0, clickedIndex: 0 },
+    {
+      total: 1,
+      selected: 0,
+      projectID: 1223,
+      before: 2,
+      after: 3, //bug  should be 2
+    },
+  ],
 ];
 
 export const data = [
