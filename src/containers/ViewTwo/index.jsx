@@ -24,7 +24,6 @@ import {
   conditionCountsByYear,
   conditionCountsByCommodity,
   searchData,
-  projectsData,
 } from '../../mockData';
 import './styles.scss';
 
@@ -77,7 +76,7 @@ const ViewTwo = props => (
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
-          projectsData={projectsData.counts}
+          projectsData={props.projectsData.counts}
           selectedProjectID={props.selected.project}
           onChange={props.setSelectedProject}
           selectedFeature={props.selected.feature}
@@ -157,6 +156,22 @@ ViewTwo.propTypes = {
   setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
+  projectsData: PropTypes.shape({
+    counts: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.shape({
+        english: PropTypes.string.isRequired,
+        french: PropTypes.string.isRequired,
+      }),
+      graphData: PropTypes.shape({
+        instrument: PropTypes.object.isRequired,
+        theme: PropTypes.object.isRequired,
+        phase: PropTypes.object.isRequired,
+        status: PropTypes.object.isRequired,
+        type: PropTypes.object.isRequired,
+      }).isRequired,
+    })).isRequired,
+  }).isRequired,
 };
 
 ViewTwo.defaultProps = {
