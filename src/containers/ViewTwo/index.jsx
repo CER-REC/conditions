@@ -123,7 +123,7 @@ ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
   selected: PropTypes.shape({
-    project: PropTypes.number.isRequired,
+    project: PropTypes.number,
     feature: featureTypes.isRequired,
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
@@ -163,7 +163,7 @@ ViewTwo.propTypes = {
         english: PropTypes.string.isRequired,
         french: PropTypes.string.isRequired,
       }),
-      graphData: PropTypes.shape({
+      data: PropTypes.shape({
         instrument: PropTypes.object.isRequired,
         theme: PropTypes.object.isRequired,
         phase: PropTypes.object.isRequired,
