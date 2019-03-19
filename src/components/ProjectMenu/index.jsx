@@ -19,18 +19,18 @@ class ProjectMenu extends React.PureComponent {
   }
 
   getListItems = () => {
-    const projects = this.props.projectsData;
-    const projectIndex = this.props.selectedProjectID === null
+    const { projectsData, selectedProjectID } = this.props;
+    const projectIndex = selectedProjectID === null
       ? -1
-      : projects.findIndex(project => project.id === this.props.selectedProjectID);
-    if (projects.length === 0 && projectIndex === -1) {
+      : projectsData.findIndex(project => project.id === selectedProjectID);
+    if (projectsData.length === 0 && projectIndex === -1) {
       return [];
     }
-    const distanceFromEnd = this.props.projectsData.length - projectIndex;
+    const distanceFromEnd = projectsData.length - projectIndex;
     const numBefore = Math.min(projectIndex, 2);
     const numAfter = Math.min(distanceFromEnd, 2);
 
-    return projects
+    return projectsData
       .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
   }
 
