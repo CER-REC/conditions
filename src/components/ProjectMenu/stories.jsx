@@ -374,7 +374,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('At left', () => (
     <ProjectMenu
-      projectsData={projectsData.slice(0, 3)}
+      projectsData={projectsData.slice(0, 2)}
       selectedProjectID={1226}
       onChange={() => {}}
       selectedFeature="theme"
@@ -382,7 +382,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('At right', () => (
     <ProjectMenu
-      projectsData={projectsData.slice(0, 3)}
+      projectsData={projectsData.slice(0, 2)}
       selectedProjectID={1228}
       onChange={() => {}}
       selectedFeature="theme"

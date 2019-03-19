@@ -415,8 +415,6 @@ describe('Components|ProjectMenu', () => {
       );
       const two = 2;
       expect(wrapper.find('.ProjectMenu').hasClass(`paddingBefore${two}`)).toEqual(true);
-      // expect(wrapper.hasClass(`paddingBefore${two}`)).is(true);
-      // expect(wrapper.hasClass(`paddingAfter${two}`)).is(false);
     });
   });
   const testProjectsArraySize = (expectedResults, dataSet) => {
@@ -436,6 +434,12 @@ describe('Components|ProjectMenu', () => {
               selectedFeature="theme"
             />,
           );
+        });
+        test('should have margins before', () => {
+          expect(wrapper.find('.ProjectMenu').hasClass(`paddingBefore${output.before}`)).toEqual(true);
+        });
+        test('should have margins after', () => {
+          expect(wrapper.find('.ProjectMenu').hasClass(`paddingAfter${output.after}`)).toEqual(true);
         });
         test(`should pass the List ${output.total} projects`, () => {
           expect(wrapper.find('List').props().items).toHaveLength(output.total);
