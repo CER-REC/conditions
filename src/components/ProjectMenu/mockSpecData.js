@@ -56,12 +56,12 @@ export const expectedResults1 = [
 ];
 
 export const data = [
-  { id: 1223, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1224, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1225, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1226, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1227, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1228, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1229, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
-  { id: 1230, name: { en: 'Trans-Alta Limited-44245' }, graphData: { theme: { A: 10 } } },
+  { id: 1223, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
+  { id: 1224, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
+  { id: 1225, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
+  { id: 1226, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
+  { id: 1227, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
+  { id: 1228, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
+  { id: 1229, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
+  { id: 1230, name: { english: 'Trans-Alta Limited-44245' }, data: { theme: { A: 10 } } },
 ];

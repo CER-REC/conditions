@@ -16,7 +16,7 @@ const projectsData = [
       english: 'Trans-Alta',
       french: 'nameInFrench',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -85,7 +85,7 @@ const projectsData = [
       english: 'Trans-Alta',
       french: 'nameInFrench',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -154,7 +154,7 @@ const projectsData = [
       english: 'Trans-Alta',
       french: 'nameInFrench',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -223,7 +223,7 @@ const projectsData = [
       english: 'Trans-Alta',
       french: 'nameInFrench',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -292,7 +292,7 @@ const projectsData = [
       english: 'Trans-Alta',
       french: 'nameInFrench',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
