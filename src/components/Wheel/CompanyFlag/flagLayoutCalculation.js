@@ -2,7 +2,7 @@ const THIRTY_DEGREES = Math.PI / 6;
 const SIXTY_DEGREES = Math.PI / 3;
 
 /**
- * Returns the base of a triangle that would hold N items.
+ * Returns the base width of a triangle that would hold N items.
  * A triangle of base T can hold:
  *    N = (T + (T - 1) + (T - 2) + ... + 1)
  * which simplifies to:
@@ -77,14 +77,22 @@ export const fillTriangleFrame = ({
   }
 
   // Fill the rest of the top row
-  for (let column = startingColumn + 1; column < endingColumn; column += 1) {
+  for (
+    let column = startingColumn + 1;
+    column < endingColumn;
+    column += 1
+  ) {
     // eslint-disable-next-line no-param-reassign
     columns[column][startingRow] = dots.pop();
     if (!dots.length) return columns;
   }
 
   // Fill the rest of the bottom row
-  for (let column = endingColumn - 2, end = startingColumn + 1; column >= end; column -= 1) {
+  for (
+    let column = endingColumn - 2, end = startingColumn + 1;
+    column >= end;
+    column -= 1
+  ) {
     // eslint-disable-next-line no-param-reassign
     columns[column][columns[column].length - rowLengthOffset - 1] = dots.pop();
     if (!dots.length) return columns;
@@ -95,9 +103,10 @@ export const fillTriangleFrame = ({
     dots,
     columns,
     startingColumn: startingColumn + 1,
-    endingColumn: endingColumn - 1,
+    endingColumn: endingColumn - 2,
     startingRow: startingRow + 1,
     rowLengthOffset: rowLengthOffset + 1,
+
   });
 };
 
