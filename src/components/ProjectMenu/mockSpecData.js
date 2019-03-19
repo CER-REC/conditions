@@ -88,7 +88,7 @@ export const expectedResults8 = [
       selected: 2,
       projectID: 1228,
       before: 0,
-      after: 1, //should be 2
+      after: 2, //should be 2
     },
   ],
   [
@@ -171,7 +171,7 @@ export const expectedResults5 = [
       selected: 2,
       projectID: 1227,
       before: 0,
-      after: 1,
+      after: 2,
     },
   ],
 ];
@@ -214,7 +214,7 @@ export const expectedResults4 = [
       selected: 2,
       projectID: 1225,
       before: 0,
-      after: 1,
+      after: 2,
     },
   ],
   [
@@ -224,7 +224,7 @@ export const expectedResults4 = [
       selected: 2,
       projectID: 1226,
       before: 0,
-      after: 1,
+      after: 2,
     },
   ],
 ];
@@ -247,7 +247,7 @@ export const expectedResults3 = [
       selected: 1,
       projectID: 1224,
       before: 1,
-      after: 1,
+      after: 1, //shows after of 0 when it should be 1
     },
   ],
   [
@@ -293,7 +293,7 @@ export const expectedResults1 = [
       selected: 0,
       projectID: 1223,
       before: 2,
-      after: 2,
+      after: 2, //shows after of 1 when it should be 2
     },
   ],
 ];

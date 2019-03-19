@@ -396,4 +396,28 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       onChange={() => {}}
       selectedFeature="theme"
     />
+  ))
+  .add('At four left', () => (
+    <ProjectMenu
+      projectsData={projectsData.slice(0, 4)}
+      selectedProjectID={1227}
+      onChange={() => {}}
+      selectedFeature="theme"
+    />
+  ))
+  .add('At four right', () => (
+    <ProjectMenu
+      projectsData={projectsData.slice(0, 4)}
+      selectedProjectID={1228}
+      onChange={() => {}}
+      selectedFeature="theme"
+    />
+  ))
+  .add('At three middle', () => (
+    <ProjectMenu
+      projectsData={projectsData.slice(0, 3)}
+      selectedProjectID={1227}
+      onChange={() => {}}
+      selectedFeature="theme"
+    />
   ));
