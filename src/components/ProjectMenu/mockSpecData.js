@@ -204,7 +204,7 @@ export const expectedResults4 = [
       selected: 2,
       projectID: 1225,
       before: 0,
-      after: -1, //bug should be 1
+      after: -1, // bug should be 1
     },
   ],
   [
@@ -257,7 +257,7 @@ export const expectedResults3 = [
       selected: 2,
       projectID: 1225,
       before: 0,
-      after: 1, //bug should be 2
+      after: 1, // bug should be 2
     },
   ],
 ];
@@ -293,7 +293,7 @@ export const expectedResults1 = [
       selected: 0,
       projectID: 1223,
       before: 2,
-      after: 3, //bug  should be 2
+      after: 3, // bug  should be 2
     },
   ],
 ];
