@@ -10,7 +10,7 @@ export default {
         english: 'Trans-Alta',
         french: 'nameInFrench',
       },
-      graphData: {
+      data: {
         instrument: {
           ROUTING: 12,
           CONSTRUCTION: 11,
@@ -79,7 +79,7 @@ export default {
         english: 'Trans-Alta',
         french: 'nameInFrench',
       },
-      graphData: {
+      data: {
         instrument: {
           ROUTING: 3,
           CONSTRUCTION: 11,
@@ -148,7 +148,7 @@ export default {
         english: 'Trans-Alta',
         french: 'nameInFrench',
       },
-      graphData: {
+      data: {
         instrument: {
           ROUTING: 12,
           CONSTRUCTION: 11,
@@ -217,7 +217,7 @@ export default {
         english: 'Trans-Alta',
         french: 'nameInFrench',
       },
-      graphData: {
+      data: {
         instrument: {
           ROUTING: 12,
           CONSTRUCTION: 11,
@@ -286,7 +286,7 @@ export default {
         english: 'Trans-Alta',
         french: 'nameInFrench',
       },
-      graphData: {
+      data: {
         instrument: {
           ROUTING: 3,
           CONSTRUCTION: 11,
@@ -355,7 +355,7 @@ export default {
         english: 'Trans-Alta',
         french: 'nameInFrench',
       },
-      graphData: {
+      data: {
         instrument: {
           ROUTING: 12,
           CONSTRUCTION: 11,

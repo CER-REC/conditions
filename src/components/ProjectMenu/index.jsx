@@ -8,20 +8,29 @@ import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
-    selectedProjectID: PropTypes.number.isRequired,
+    selectedProjectID: PropTypes.number,
     selectedFeature: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     projectsData: PropTypes.arrayOf(projectData).isRequired,
   }
 
+  static defaultProps = {
+    selectedProjectID: null,
+  }
+
   getListItems = () => {
-    const projects = this.props.projectsData;
-    const projectIndex = projects.findIndex(project => project.id === this.props.selectedProjectID);
-    const distanceFromEnd = this.props.projectsData.length - projectIndex;
+    const { projectsData, selectedProjectID } = this.props;
+    const projectIndex = selectedProjectID === null
+      ? -1
+      : projectsData.findIndex(project => project.id === selectedProjectID);
+    if (projectsData.length === 0 && projectIndex === -1) {
+      return [];
+    }
+    const distanceFromEnd = projectsData.length - projectIndex;
     const numBefore = Math.min(projectIndex, 2);
     const numAfter = Math.min(distanceFromEnd, 2);
 
-    return this.props.projectsData
+    return projectsData
       .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
   }
 
@@ -30,27 +39,30 @@ class ProjectMenu extends React.PureComponent {
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
-  getReformattedData = pickedFeature => pickedFeature.map(([name, count]) => ({ name, count }));
+  getReformattedData = data => (
+    Object.entries(data[this.props.selectedFeature])
+      .map(([name, count]) => ({ name, count }))
+  );
 
   render() {
     const listItems = this.getListItems();
-    const renderedItems = listItems
-      .map((project) => {
-        const { graphData } = project;
-        const pickedFeature = Object.entries(graphData[this.props.selectedFeature]);
-        return (
-          <ProjectChart
-            key={project.id}
-            chartType={this.props.selectedFeature}
-            graphData={this.getReformattedData(pickedFeature)}
-            projectName={project.name.english}
-            selected={project.id === this.props.selectedProjectID}
-          />
-        );
-      });
+    // If there are no listItems render virtualized data
+    // TODO: Make fake renderedItems for loading of projectMenu
+    const renderedItems = listItems ? listItems
+      .map(project => (
+        <ProjectChart
+          key={project.id}
+          chartType={this.props.selectedFeature}
+          graphData={this.getReformattedData(project.data)}
+          projectName={project.name.english}
+          selected={project.id === this.props.selectedProjectID}
+        />
+      ))
+      : [];
 
-    const selected = listItems
-      .findIndex(project => project.id === this.props.selectedProjectID);
+    const selected = this.props.selectedProjectID === null
+      ? -1
+      : listItems.findIndex(project => project.id === this.props.selectedProjectID);
     const itemLength = listItems.length;
     const accountForSmallList = itemLength <= 4 ? itemLength - selected : 0;
     const itemsBefore = selected < 2 ? Math.max(2 - selected, 0) : 0;

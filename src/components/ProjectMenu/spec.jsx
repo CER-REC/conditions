@@ -7,14 +7,14 @@ const projectsData = [
   {
     id: 1226,
     name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInfr',
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInfr',
     },
     shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInfr',
+      english: 'Trans-Alta',
+      french: 'nameInfr',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -76,14 +76,14 @@ const projectsData = [
   {
     id: 1227,
     name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInfr',
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInfr',
     },
     shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInfr',
+      english: 'Trans-Alta',
+      french: 'nameInfr',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -145,14 +145,14 @@ const projectsData = [
   {
     id: 1228,
     name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInfr',
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInfr',
     },
     shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInfr',
+      english: 'Trans-Alta',
+      french: 'nameInfr',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -214,14 +214,14 @@ const projectsData = [
   {
     id: 1229,
     name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInfr',
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInfr',
     },
     shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInfr',
+      english: 'Trans-Alta',
+      french: 'nameInfr',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -283,14 +283,14 @@ const projectsData = [
   {
     id: 1230,
     name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInfr',
+      english: 'Trans-Alta Limited-44245',
+      french: 'nameInfr',
     },
     shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInfr',
+      english: 'Trans-Alta',
+      french: 'nameInfr',
     },
-    graphData: {
+    data: {
       instrument: {
         ROUTING: 12,
         CONSTRUCTION: 11,
@@ -354,9 +354,9 @@ const projectsData = [
 describe('Components|ProjectMenu', () => {
   // Assuming that the actual graph data will have a filter coming from the view level
   // graph data being the subset of data filtered by the <FeaturedMenu /> state
-  // Project name will be in either fr or en depending on view state
+  // Project name will be in either french or english depending on view state
 
-  const selectedProjectID = 1227;
+  const selectedProjectID = 1228;
   const noop = () => {};
   describe('with default props', () => {
     let wrapper;
@@ -389,13 +389,13 @@ describe('Components|ProjectMenu', () => {
     test('should pass down a maximum of 5 projects to the List', () => {
       const list = wrapper.find('List');
       // passed props
-      expect(list.props().items).toHaveLength(4);
+      expect(list.props().items).toHaveLength(5);
       // rendered output
-      expect(list.shallow().find('ProjectChart')).toHaveLength(4);
+      expect(list.shallow().find('ProjectChart')).toHaveLength(5);
     });
 
     test('should pass the List the index of the selected project', () => {
-      expect(wrapper.find('List').props().selected).toBe(1);
+      expect(wrapper.find('List').props().selected).toBe(2);
     });
 
     test('should pass down an onChange function to the List', () => {
