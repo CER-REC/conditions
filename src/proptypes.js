@@ -125,3 +125,15 @@ export const suggestedKeywordsArrayType = PropTypes
       category: PropTypes.arrayOf(PropTypes.string).isRequired,
     }, value[1], `${propFullName}[1]`, componentName);
   });
+
+export const nullableNumber = (props, propName, componentName) => {
+  if (typeof props[propName] === 'undefined') { return undefined; }
+  return nullableNumber.isRequired(props, propName, componentName);
+};
+
+nullableNumber.isRequired = (props, propName, componentName) => {
+  if (props[propName] === null || typeof props[propName] === 'number') { return undefined; }
+  return new Error(
+    `Invalid prop \`${propName}\` supplied to \`${componentName}\`. Validation failed.`,
+  );
+};

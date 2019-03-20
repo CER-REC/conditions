@@ -3,19 +3,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import List from '../List';
 import ProjectChart from './ProjectChart';
-import { project as projectData } from '../../proptypes';
+import { project as projectData, nullableNumber } from '../../proptypes';
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
-    selectedProjectID: PropTypes.number,
+    selectedProjectID: nullableNumber.isRequired,
     selectedFeature: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     projectsData: PropTypes.arrayOf(projectData).isRequired,
-  }
-
-  static defaultProps = {
-    selectedProjectID: null,
   }
 
   getListItems = () => {
@@ -63,6 +59,13 @@ class ProjectMenu extends React.PureComponent {
     const selected = this.props.selectedProjectID === null
       ? -1
       : listItems.findIndex(project => project.id === this.props.selectedProjectID);
+
+    // If no project is selected, set it to the first project
+    if (selected === -1) {
+      if (listItems.length > 0) { this.props.onChange(listItems[0].id); }
+      return null;
+    }
+
     const itemLength = listItems.length;
     const accountForSmallList = itemLength <= 4 ? itemLength - selected : 0;
     const itemsBefore = selected < 2 ? Math.max(2 - selected, 0) : 0;
