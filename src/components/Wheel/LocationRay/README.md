@@ -5,8 +5,8 @@ The information in the locationRay is also modified by the search filters. While
 
 ## Requirements
 
-* [ ] Renders a graph bar using the barcontainer public component.
-  * [ ] A minimum value is displayed to ensure representation of data. (i.e making it visibile if it's less than a pixel)
+* [x] Renders a graph bar using the barcontainer public component.
+  * [x] A minimum value is displayed to ensure representation of data. (i.e making it visibile if it's less than a pixel, Handled by the bar container)
   * [ ] Calculates the collective large value to take out outliers.
 * [ ] Renders different graphs depending on the feature chosen from the encoding menu.
 * [ ] Rerenders on data change (i.e filtering per year)

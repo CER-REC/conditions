@@ -1,0 +1,12 @@
+
+@import "../../../styles/colors.scss";
+
+.LocationRay {
+  .WheelBar {
+    transform: translate(31%);
+  }
+  .searched {
+    stroke: $SearchKeyword;
+    stroke-width: 3px;
+  }
+}

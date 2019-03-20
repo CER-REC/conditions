@@ -6,7 +6,7 @@ import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
-import { companyWheelData } from '../../components/Wheel/randomDataSample';
+import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import TrendButton from '../../components/TrendButton';
 import {
   browseByType,
@@ -25,7 +25,6 @@ import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '.
 import './styles.scss';
 
 const noop = () => {};
-
 const legendItems = [
   { feature: 'theme', description: 'SECURITY', disabled: false },
   { feature: 'theme', description: 'FINANCIAL', disabled: false },
@@ -96,10 +95,9 @@ const ViewTwo = props => (
         <Wheel
           wheelType={props.browseBy}
           selectRay={noop}
-          itemsData={props.browseBy === 'company' ? companyWheelData : {
-            legendData: companyWheelData.legendData.slice(0, 25),
-            items: companyWheelData.items.slice(0, 25),
-          }}
+          itemsData={props.browseBy === 'company' ? companyWheelData
+            : { items: locationData.items.slice(0, 50) }
+          }
         />
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
         <BrowseByBtn mode="location" onClick={props.setBrowseBy} />

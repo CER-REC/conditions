@@ -1,4 +1,5 @@
 import React from 'react';
+import { makeDecorator } from '@storybook/addons';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
@@ -54,10 +55,21 @@ export const fixInfo = (Component) => {
   /* eslint-enable no-param-reassign */
 };
 
-export const withStyles = styles => storyFn => (
-  <React.Fragment>
-    {/* eslint-disable-next-line react/no-danger */}
-    <style dangerouslySetInnerHTML={{ __html: styles }} />
-    {storyFn()}
-  </React.Fragment>
-);
+export const withStyles = makeDecorator({
+  name: 'withStyles',
+  parameterName: 'styles',
+  allowDeprecatedUsage: false,
+  skipIfNoParametersOrOptions: true,
+  wrapper: (getStory, context, { options, parameters }) => {
+    const styles = (`${options || ''}\n${parameters || ''}`).trim();
+    if (!styles) { return getStory(context); }
+
+    return (
+      <React.Fragment>
+        {getStory(context)}
+        {/* eslint-disable-next-line react/no-danger */}
+        <style dangerouslySetInnerHTML={{ __html: styles }} />
+      </React.Fragment>
+    );
+  },
+});

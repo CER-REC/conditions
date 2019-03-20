@@ -5,7 +5,7 @@ import withStatus from '../../../.storybook/addon-status';
 import Wheel from '.';
 import ReadMe from './README.md';
 
-import { companyWheelData as wheelData } from './randomDataSample';
+import { companyWheelData as companyData, locationData } from './randomDataSample';
 
 storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -20,7 +20,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       <Wheel
         {...getInteractionProps()}
         wheelType="company"
-        itemsData={wheelData}
+        itemsData={companyData}
       />
     </div>
   ))
@@ -28,6 +28,6 @@ storiesForComponent('Components|Wheel', module, ReadMe)
     <Wheel
       {...getInteractionProps()}
       wheelType="location"
-      itemsData={wheelData}
+      itemsData={locationData}
     />
   ));

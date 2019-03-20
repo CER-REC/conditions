@@ -1,4 +1,5 @@
 @import "../../styles/fontVariables.scss";
+@import "../../styles/colors.scss";
 .Wheel{
   width:100%;
   padding-top: 100%;
@@ -41,12 +42,9 @@
   }
 
   .OutterCircles {
-    stroke: #707070;
+    stroke: $DarkGray;
   }
   .LetterCircle {
     stroke: none;
-  }
-  .ClippedBackground {
-    clip-path: url(#clip-path-WheelRing);
   }
 }
