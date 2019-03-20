@@ -1,12 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ProjectMenu from '.';
+import ProjectChart from './ProjectChart';
+import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 const testData = [
   {
     id: 100,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
+    name: { en: 'name-100', fr: 'nameFr-100' },
+    shortName: { en: 'shortName-100', fr: 'shortNameFr-100' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -18,8 +20,8 @@ const testData = [
   },
   {
     id: 101,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
+    name: { en: 'name-101', fr: 'nameFr-101' },
+    shortName: { en: 'shortName-101', fr: 'shortNameFr-101' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -31,8 +33,8 @@ const testData = [
   },
   {
     id: 102,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
+    name: { en: 'name-102', fr: 'nameFr-102' },
+    shortName: { en: 'shortName-102', fr: 'shortNameFr-102' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -44,8 +46,8 @@ const testData = [
   },
   {
     id: 103,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
+    name: { en: 'name-103', fr: 'nameFr-103' },
+    shortName: { en: 'shortName-103', fr: 'shortNameFr-103' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -57,8 +59,8 @@ const testData = [
   },
   {
     id: 104,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
+    name: { en: 'name-104', fr: 'nameFr-104' },
+    shortName: { en: 'shortName-104', fr: 'shortNameFr-104' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -70,8 +72,8 @@ const testData = [
   },
   {
     id: 105,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
+    name: { en: 'name-105', fr: 'nameFr-105' },
+    shortName: { en: 'shortName-105', fr: 'shortNameFr-105' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -83,21 +85,8 @@ const testData = [
   },
   {
     id: 106,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
-    },
-  },
-  {
-    id: 107,
-    name: { en: 'Trans-Alta Limited-44245', fr: '' },
-    shortName: { en: '', fr: '' },
+    name: { en: 'name-106', fr: 'nameFr-106' },
+    shortName: { en: 'shortName-106', fr: 'shortNameFr-106' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -110,51 +99,23 @@ const testData = [
 ];
 
 describe('Components|ProjectMenu', () => {
-  const selectedProjectID = 105;
-  const noop = () => {};
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<ProjectMenu
         projectsData={testData}
-        selectedProjectID={selectedProjectID}
-        onChange={noop}
+        selectedProjectID={105}
+        onChange={() => {}}
         selectedFeature="theme"
       />);
     });
 
-    test('should render', () => {
-      expect(wrapper.type()).toBe('div');
-    });
-
-    test('should have a ProjectMenu class', () => {
-      expect(wrapper.is('.ProjectMenu')).toBe(true);
-    });
-
-    test('should contain 1 List component', () => {
-      expect(wrapper.find('List')).toHaveLength(1);
-    });
+    shouldBehaveLikeAComponent(ProjectMenu, () => wrapper);
 
     test('should pass an array of projects to the List', () => {
       const list = wrapper.find('List');
+      expect(list).toHaveLength(1);
       expect(Array.isArray(list.props().items)).toBe(true);
-    });
-
-    test('should pass down a maximum of 5 projects to the List', () => {
-      const list = wrapper.find('List');
-      // passed props
-      expect(list.props().items).toHaveLength(5);
-      // rendered output
-      expect(list.shallow().find('ProjectChart')).toHaveLength(5);
-    });
-
-    test('should pass the List the index of the selected project', () => {
-      expect(wrapper.find('List').props().selected).toBe(2);
-    });
-
-    test('should pass down an onChange function to the List', () => {
-      const list = wrapper.find('List');
-      expect(typeof list.props().onChange).toBe('function');
     });
   });
 
@@ -171,15 +132,14 @@ describe('Components|ProjectMenu', () => {
   //     clicking list index 1 should emit project ID 101
   //     clicking list index 2 should emit project ID 102
   const groupedTestCases = {
-    8: {
+    7: {
       0: { listIndex: 0, before: 2, items: [100, 101, 102], after: 0 },
       1: { listIndex: 1, before: 1, items: [100, 101, 102, 103], after: 0 },
       2: { listIndex: 2, before: 0, items: [100, 101, 102, 103, 104], after: 0 },
       3: { listIndex: 2, before: 0, items: [101, 102, 103, 104, 105], after: 0 },
       4: { listIndex: 2, before: 0, items: [102, 103, 104, 105, 106], after: 0 },
-      5: { listIndex: 2, before: 0, items: [103, 104, 105, 106, 107], after: 0 },
-      6: { listIndex: 2, before: 0, items: [104, 105, 106, 107], after: 1 },
-      7: { listIndex: 2, before: 0, items: [105, 106, 107], after: 2 },
+      5: { listIndex: 2, before: 0, items: [103, 104, 105, 106], after: 1 },
+      6: { listIndex: 2, before: 0, items: [104, 105, 106], after: 2 },
     },
     5: {
       0: { listIndex: 0, before: 2, items: [100, 101, 102], after: 0 },
@@ -228,7 +188,9 @@ describe('Components|ProjectMenu', () => {
         });
 
         test(`should show ${items.length} projects`, () => {
-          expect(wrapper.find('List').props().items).toHaveLength(items.length);
+          const listItems = wrapper.find('List').prop('items');
+          expect(listItems).toHaveLength(items.length);
+          listItems.forEach(item => expect(item.type).toBe(ProjectChart));
         });
 
         test(`should have padding of ${before} before and ${after} after`, () => {
