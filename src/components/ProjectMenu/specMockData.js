@@ -139,8 +139,8 @@ export const expectedResults1 = [
 export const data = [
   {
     id: 1223,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -152,8 +152,8 @@ export const data = [
   },
   {
     id: 1224,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -165,8 +165,8 @@ export const data = [
   },
   {
     id: 1225,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -178,8 +178,8 @@ export const data = [
   },
   {
     id: 1226,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -191,8 +191,8 @@ export const data = [
   },
   {
     id: 1227,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -204,8 +204,8 @@ export const data = [
   },
   {
     id: 1228,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -217,8 +217,8 @@ export const data = [
   },
   {
     id: 1229,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -230,8 +230,8 @@ export const data = [
   },
   {
     id: 1230,
-    name: { english: 'Trans-Alta Limited-44245', french: '' },
-    shortName: { english: '', french: '' },
+    name: { en: 'Trans-Alta Limited-44245', fr: '' },
+    shortName: { en: '', fr: '' },
     data: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},

@@ -50,7 +50,7 @@ class ProjectMenu extends React.PureComponent {
           key={project.id}
           chartType={this.props.selectedFeature}
           graphData={this.getReformattedData(project.data)}
-          projectName={project.name.english}
+          projectName={project.name.en}
           selected={project.id === this.props.selectedProjectID}
         />
       ))

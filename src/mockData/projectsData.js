@@ -3,12 +3,12 @@ export default {
     {
       id: 1225,
       name: {
-        english: 'Trans-Alta Limited-44245',
-        french: 'nameInFrench',
+        en: 'Trans-Alta Limited-44245',
+        fr: 'nameInFrench',
       },
       shortName: {
-        english: 'Trans-Alta',
-        french: 'nameInFrench',
+        en: 'Trans-Alta',
+        fr: 'nameInFrench',
       },
       data: {
         instrument: {
@@ -72,12 +72,12 @@ export default {
     {
       id: 1226,
       name: {
-        english: 'Trans-Alta Limited-44245',
-        french: 'nameInFrench',
+        en: 'Trans-Alta Limited-44245',
+        fr: 'nameInFrench',
       },
       shortName: {
-        english: 'Trans-Alta',
-        french: 'nameInFrench',
+        en: 'Trans-Alta',
+        fr: 'nameInFrench',
       },
       data: {
         instrument: {
@@ -141,12 +141,12 @@ export default {
     {
       id: 1227,
       name: {
-        english: 'Trans-Alta Limited-44245',
-        french: 'nameInFrench',
+        en: 'Trans-Alta Limited-44245',
+        fr: 'nameInFrench',
       },
       shortName: {
-        english: 'Trans-Alta',
-        french: 'nameInFrench',
+        en: 'Trans-Alta',
+        fr: 'nameInFrench',
       },
       data: {
         instrument: {
@@ -210,12 +210,12 @@ export default {
     {
       id: 1228,
       name: {
-        english: 'Trans-Alta Limited-44245',
-        french: 'nameInFrench',
+        en: 'Trans-Alta Limited-44245',
+        fr: 'nameInFrench',
       },
       shortName: {
-        english: 'Trans-Alta',
-        french: 'nameInFrench',
+        en: 'Trans-Alta',
+        fr: 'nameInFrench',
       },
       data: {
         instrument: {
@@ -279,12 +279,12 @@ export default {
     {
       id: 1229,
       name: {
-        english: 'Trans-Alta Limited-44245',
-        french: 'nameInFrench',
+        en: 'Trans-Alta Limited-44245',
+        fr: 'nameInFrench',
       },
       shortName: {
-        english: 'Trans-Alta',
-        french: 'nameInFrench',
+        en: 'Trans-Alta',
+        fr: 'nameInFrench',
       },
       data: {
         instrument: {
@@ -348,12 +348,12 @@ export default {
     {
       id: 1230,
       name: {
-        english: 'Trans-Alta Limited-44245',
-        french: 'nameInFrench',
+        en: 'Trans-Alta Limited-44245',
+        fr: 'nameInFrench',
       },
       shortName: {
-        english: 'Trans-Alta',
-        french: 'nameInFrench',
+        en: 'Trans-Alta',
+        fr: 'nameInFrench',
       },
       data: {
         instrument: {

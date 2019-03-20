@@ -13,6 +13,7 @@ import {
   yearRangeType,
   featureTypes,
   conditionData,
+  project,
 } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import FeaturesMenu from '../../components/FeaturesMenu';
@@ -155,20 +156,7 @@ ViewTwo.propTypes = {
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
   projectsData: PropTypes.shape({
-    counts: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.shape({
-        english: PropTypes.string.isRequired,
-        french: PropTypes.string.isRequired,
-      }),
-      data: PropTypes.shape({
-        instrument: PropTypes.object.isRequired,
-        theme: PropTypes.object.isRequired,
-        phase: PropTypes.object.isRequired,
-        status: PropTypes.object.isRequired,
-        type: PropTypes.object.isRequired,
-      }).isRequired,
-    })).isRequired,
+    counts: PropTypes.arrayOf(project).isRequired,
   }).isRequired,
 };
 

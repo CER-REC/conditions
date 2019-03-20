@@ -33,12 +33,12 @@ export const location = PropTypes.shape({
 export const project = PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.shape({
-    english: PropTypes.string.isRequired,
-    french: PropTypes.string.isRequired,
+    en: PropTypes.string.isRequired,
+    fr: PropTypes.string.isRequired,
   }).isRequired,
   shortName: PropTypes.shape({
-    english: PropTypes.string.isRequired,
-    french: PropTypes.string.isRequired,
+    en: PropTypes.string.isRequired,
+    fr: PropTypes.string.isRequired,
   }).isRequired,
   data: featureData.isRequired,
 });
