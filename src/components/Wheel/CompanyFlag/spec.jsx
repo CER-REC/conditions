@@ -39,7 +39,7 @@ describe('Components|Wheel/CompanyFlag', () => {
     beforeEach(() => {
       wrapper = shallow(<CompanyFlag
         flagLayout={flagLayoutData}
-        height={200}
+        svgHeight={200}
       />);
     });
     test('should render', () => {
@@ -59,7 +59,7 @@ describe('Components|Wheel/CompanyFlag', () => {
     beforeEach(() => {
       wrapper = shallow(<CompanyFlag
         flagLayout={[[0, 0, 0, 0], [0, 0, 0, 0]]}
-        height={200}
+        svgHeight={200}
       />);
     });
     test('should have zero project dots', () => {
@@ -84,7 +84,7 @@ describe('Components|Wheel/CompanyFlag', () => {
             { filtered: false, relevant: true },
           ],
         ]}
-        height={200}
+        svgHeight={200}
       />);
     });
 
@@ -117,7 +117,7 @@ describe('Components|Wheel/CompanyFlag', () => {
             { filtered: false, relevant: true },
           ],
         ]}
-        height={200}
+        svgHeight={200}
       />);
     });
 
