@@ -114,6 +114,9 @@ export const fillTriangleFrame = ({
  * Takes the coordinates of a flag's base and another ray's top,
  * both as {x, y}, and determines if the ray intersects a line extending
  * from the base at thirty degrees to horizontal.
+ *
+ * TODO: Find a way to account for the angle between rays, apply the parent
+ * function's horizontal scaling where appropriate to reduce false positives.
  */
 export const triangleCollidesWithRay = ({
   flagBase,
@@ -135,8 +138,9 @@ export const triangleCollidesWithRay = ({
   return false;
 };
 
-// TODO: I can't tell if this is working because it's correct or because the
-// various constants just happen to be in perfect balance.
+// TODO: Doesn't scale all of the right values with horizontalScale, so it
+// finds collisions that should actually be okay. Also doesn't account for the
+// slight angle between rays, which leads to more false-positives as well.
 const triangleHasCollision = (args) => {
   const {
     triangleSize,
@@ -148,7 +152,7 @@ const triangleHasCollision = (args) => {
   } = args;
 
   // TODO: Magic numbers
-  const minimumDistance = 2 * flagScale;
+  const minimumDistance = flagScale;
   // Account for the flags not being immediately next to each other
   const horizontalScale = flagScale * 0.2;
 
@@ -197,7 +201,6 @@ const buildFlagLayouts = (flagData, maxFlagHeight, flagScale) => {
       flagLayouts.push([stem]);
     } else {
       const toFold = flagData[rayIndex].slice(scaledMaxHeight);
-
       const triangleSize = fitToTriangle(toFold.length);
 
       if (triangleSize >= stem.length

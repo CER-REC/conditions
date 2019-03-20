@@ -8,7 +8,6 @@ import LocationRay from '../LocationRay';
 
 import { features } from '../../../constants';
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
-import sampleFlagData from '../CompanyFlag/sample-flag-data';
 
 import CompanyFlag from '../CompanyFlag';
 
@@ -38,7 +37,7 @@ class WheelRay extends React.Component {
 
     // TODO: This shouldn't be in the constructor; load the data and prompt a
     // re-render.
-    const flagData = sampleFlagData.slice(0, this.props.items.length);
+    const flagData = this.props.items.map(company => company.projects);
     (
       {
         flagLayouts: this.flagLayouts,
