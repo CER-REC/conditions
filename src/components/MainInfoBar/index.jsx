@@ -28,8 +28,22 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
+  static getDerivedStateFromProps(props, state) {
+    // Expanded is determined by whether we have an pane prop
+    // The renderedDialog is either the active dialog, or the previously active one.
+    return {
+      expanded: !!props.pane,
+      renderedDialog: props.pane || state.renderedDialog,
+    };
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { expanded: false, renderedDialog: '' };
+  }
+
   getDialogContent = () => {
-    switch (this.props.activeDialog) {
+    switch (this.state.renderedDialog) {
       case 'about': default:
         return <AboutBox />;
       case 'methodology':
@@ -44,14 +58,7 @@ class MainInfoBar extends React.PureComponent {
     }
   }
 
-  openDialog = (k) => {
-    this.props.setActiveDialog(k);
-    if (!this.props.expanded) { this.props.toggleExpanded(true); }
-  }
-
-  closeDialog = () => {
-    this.props.toggleExpanded(false);
-  }
+  closeDialog = () => this.props.setPane('');
 
   textButtons = () => {
     const buttons = ['about', 'methodology', 'downloads'];
@@ -59,9 +66,9 @@ class MainInfoBar extends React.PureComponent {
       <button
         key={k}
         id={k}
-        className={`textButton ${this.props.activeDialog === k ? 'selected' : ''}`}
+        className={`textButton ${this.props.pane === k ? 'selected' : ''}`}
         type="button"
-        {...handleInteraction(this.openDialog, k)}
+        {...handleInteraction(this.props.setPane, k)}
       >
         <FormattedMessage id={`components.mainInfoBar.headings.${k}`} />
       </button>
@@ -90,7 +97,7 @@ class MainInfoBar extends React.PureComponent {
         <div>
           {this.textButtons()}
         </div>
-        <div className={classNames('content', { expanded: this.props.expanded })}>
+        <div className={classNames('content', { expanded: this.state.expanded })}>
           {this.getDialogContent()}
         </div>
         <div className="shareIcons">
@@ -98,7 +105,7 @@ class MainInfoBar extends React.PureComponent {
           {icons}
         </div>
         {
-          (!this.props.expanded)
+          (!this.state.expanded)
             ? null
             : (
               <CircleContainer
@@ -116,17 +123,10 @@ class MainInfoBar extends React.PureComponent {
 }
 
 MainInfoBar.propTypes = {
-  activeDialog: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']),
-  expanded: PropTypes.bool,
-  setActiveDialog: PropTypes.func.isRequired,
-  toggleExpanded: PropTypes.func.isRequired,
+  pane: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']).isRequired,
+  setPane: PropTypes.func.isRequired,
   openDataModal: PropTypes.func.isRequired,
   openScreenshotModal: PropTypes.func.isRequired,
-};
-
-MainInfoBar.defaultProps = {
-  activeDialog: 'about',
-  expanded: false,
 };
 
 export default MainInfoBar;

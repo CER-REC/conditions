@@ -1,8 +1,11 @@
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withViewport } from '@storybook/addon-viewport';
 import { doc } from 'storybook-readme';
 import README from './README.md';
+import ProgressMatrix from './ProgressMatrix';
+import CHANGELOG from '../../CHANGELOG.md';
 
-storiesOf('Introduction', module)
-  .addDecorator(withViewport('documentation'))
-  .add('to the document', doc(README));
+storiesOf('Documentation|Introduction', module)
+  .add('to the document', doc(README))
+  .add('progress matrix', () => <ProgressMatrix />)
+  .add('changelog', doc(CHANGELOG));

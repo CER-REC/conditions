@@ -6,35 +6,33 @@ import ReadMe from './README.md';
 import WheelList from '.';
 
 const companyList = [
-  'Company A',
-  'Company B',
-  'Company C',
-  'Company D',
-  'Company E',
-  'Company F',
-  'Company G',
-  'Company H moreThan15Characters',
-  'Company I',
-  'Company J',
-  'Company K',
-  'Company L',
-  'Company M',
+  { company_name: 'Company A' },
+  { company_name: 'Company B' },
+  { company_name: 'Company C' },
+  { company_name: 'Company D' },
+  { company_name: 'Company E' },
+  { company_name: 'Company F' },
+  { company_name: 'Company G' },
+  { company_name: 'Company H moreThan15Characters' },
+  { company_name: 'Company I' },
+  { company_name: 'Company J' },
+  { company_name: 'Company K' },
+  { company_name: 'Company L' },
+  { company_name: 'Company M' },
 ];
 
 const locationList = [
-  'Calgary',
-  'Camrose--Drumheller',
-  'Edmonton',
-  'Lethbridge--Medicine Hat',
-  'Red Deer',
-  'Wood Buffalo--Cold Lake',
+  { region_name: 'Calgary' },
+  { region_name: 'Camrose--Drumheller' },
+  { region_name: 'Edmonton' },
+  { region_name: 'Lethbridge--Medicine Hat' },
+  { region_name: 'Red Deer' },
+  { region_name: 'Wood Buffalo--Cold Lake' },
 ];
 
 const magenta = '255, 0, 255';
 const exampleDivProps = {
-  position: 'relative',
-  width: 300,
-  height: 300,
+  height: '100%',
   border: `1px dashed rgba(${magenta}, 0.4)`,
   boxShadow: `0 0 0px 32px rgba(${magenta}, 0.05)`,
   borderRadius: '50%',
@@ -48,21 +46,21 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
     name: 'underReview',
   }))
   .add('with company data', () => (
-    <div style={exampleDivProps}>
+    <div style={exampleDivProps} className="MovingContainer">
       <WheelList
         wheelType="company"
         listContent={companyList}
-        textClippingRadius="70%"
+        textClippingRadius="75%"
         {...getInteractionProps()}
       />
     </div>
   ), { interaction: { state: { selected: 4 }, actions: { onChange } } })
   .add('with location data', () => (
-    <div style={exampleDivProps}>
+    <div style={exampleDivProps} className="MovingContainer">
       <WheelList
         wheelType="location"
         listContent={locationList}
-        textClippingRadius="70%"
+        textClippingRadius="75%"
         {...getInteractionProps()}
       />
     </div>

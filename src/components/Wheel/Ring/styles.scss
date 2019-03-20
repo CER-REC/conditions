@@ -1,27 +1,33 @@
+@import "../../../styles/colors.scss";
+
 .Ring{
+  width: 100%;
   .RingBackground {
     &.location{
-      fill: #F4CE5A;
+      fill: $InnerColourLocation2;
     }
     &.company{
-      fill: #30298c;
+      fill: $InnerColourCompany2;
     }
   }
 
   .Lines {
     &.location line{
-      stroke: #E0A531;
+      stroke: $InnerColourLocation1;
     }
     &.company line{
-      stroke: #4054b7;
+      stroke: $InnerColourCompany1;
     }
     stroke-width: 18px;
   }
 
   .RingOutline {
-    fill: #d1057a;
+    circle{
+      stroke:$Outline; 
+      stroke-width:2; 
+      fill: none;
+    }
   }
-
 }
 
 

@@ -11,8 +11,7 @@ describe('Components|MainInfoBar', () => {
   let spy;
   beforeEach(() => {
     spy = {
-      setActiveDialog: jest.fn(),
-      toggleExpanded: jest.fn(),
+      setPane: jest.fn(),
       openDataModal: jest.fn(),
       openScreenshotModal: jest.fn(),
     };
@@ -22,35 +21,35 @@ describe('Components|MainInfoBar', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<MainInfoBar
-        expanded
+        pane="methodology"
         {...spy}
       />);
     });
 
     shouldBehaveLikeAComponent(MainInfoBar, () => wrapper);
 
-    test('should pass its setActiveDialog callback to the heading buttons', () => {
+    test('should pass its setPane callback to the heading buttons', () => {
       wrapper.find('.MainInfoBar')
         .find('.textButton')
         .first()
         .simulate('click', eventFuncs);
 
-      expect(spy.setActiveDialog).toHaveBeenCalledTimes(1);
+      expect(spy.setPane).toHaveBeenCalledWith('about');
     });
 
-    test('should pass its setActiveDialog callback to the collapse arrows', () => {
+    test('should pass its setPane callback to the collapse arrows', () => {
       wrapper.find('.MainInfoBar')
         .find('CircleContainer')
         .simulate('click', eventFuncs);
 
-      expect(spy.toggleExpanded).toHaveBeenCalledTimes(1);
+      expect(spy.setPane).toHaveBeenCalledWith('');
     });
   });
 
   describe('passing information to the content boxes', () => {
     test('should pass its openDataModal and openScreenshotModal callbacks to the Downloads box', () => {
       const wrapper = shallow(<MainInfoBar
-        activeDialog="downloads"
+        pane="downloads"
         {...spy}
       />);
 

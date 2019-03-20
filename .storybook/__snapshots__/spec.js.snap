@@ -37,6 +37,80 @@ exports[`Storyshots Components|BarContainer default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|BarContainer size as percentage 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height="100%"
+    width="50%"
+  >
+    <rect
+      className="Bar"
+      fill="green"
+      height="100%"
+      width="10.81081081081081%"
+      x="0%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="red"
+      height="100%"
+      width="59.45945945945946%"
+      x="10.810810810810814%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="pink"
+      height="100%"
+      width="29.72972972972973%"
+      x="70.27027027027027%"
+      y={0}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|BarContainer size as pixels 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    className="BarContainer"
+    height={200}
+    width={200}
+  >
+    <rect
+      className="Bar"
+      fill="green"
+      height="100%"
+      width="10.81081081081081%"
+      x="0%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="red"
+      height="100%"
+      width="59.45945945945946%"
+      x="10.810810810810814%"
+      y={0}
+    />
+    <rect
+      className="Bar"
+      fill="pink"
+      height="100%"
+      width="29.72972972972973%"
+      x="70.27027027027027%"
+      y={0}
+    />
+  </svg>
+</div>
+`;
+
 exports[`Storyshots Components|BarContainer standalone 1`] = `
 <div
   className="visualization"
@@ -1686,7 +1760,7 @@ exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".CircleContainer.blue { background: blue } ",
+        "__html": ".CircleContainer.blue { background: blue }",
       }
     }
   />
@@ -3413,14 +3487,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
   <div
     className="ConditionDetails"
   >
-    <div
-      style={
-        Object {
-          "height": 50,
-          "width": 300,
-        }
-      }
-    >
+    <div>
       <div
         className="ContentBlock "
       >
@@ -3443,13 +3510,6 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         : 
         This is a full block
       </div>
-      <style
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": ".ConditionDetails { display: block; width: 100% } ",
-          }
-        }
-      />
     </div>
   </div>
 </div>
@@ -3462,14 +3522,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
   <div
     className="ConditionDetails"
   >
-    <div
-      style={
-        Object {
-          "height": 50,
-          "width": 300,
-        }
-      }
-    >
+    <div>
       <div
         className="ContentBlock half"
       >
@@ -3492,13 +3545,6 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         : 
         This is a half block
       </div>
-      <style
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": ".ConditionDetails { display: block; width: 100% } ",
-          }
-        }
-      />
     </div>
   </div>
 </div>
@@ -3787,6 +3833,235 @@ exports[`Storyshots Components|ConditionExplorer/Fallback documentation 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionExplorer"
+  >
+    <div
+      className="GuideDetail"
+    >
+      <h1
+        className="title"
+      >
+         Overview: 
+      </h1>
+      <span>
+        As Canada’s energy regulator the 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/fs/nbqckfcts-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          NEB
+           
+        </a>
+         has a variety of roles and responsibilities throughout the 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/vds/thlfcclapprch-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          lifecycle
+           
+        </a>
+         of energy infrastructure – from adjudication of energy project 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          applications
+           
+        </a>
+         to safety oversight and 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/vds/nvrnmntlprtctn-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          environmental protection
+           
+        </a>
+        . To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/vds/cndtncmplnc-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          Conditions
+           
+        </a>
+         are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.
+      </span>
+      <span>
+        The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that 
+        <a
+          href="https://www.neb-one.gc.ca/bts/whwr/pplnrgltncnd-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+        ). Here is a 
+        <a
+          href="https://www.neb-one.gc.ca/sftnvrnmnt/sft/dshbrd/rgltdpplns-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          map
+           
+        </a>
+         of major pipeline systems regulated by the NEB.
+      </span>
+      <h1
+        className="title"
+      >
+         The genesis and scope of conditions 
+      </h1>
+      <span>
+        Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
+        <a
+          href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          laws, acts and regulations
+           
+        </a>
+         are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
+      </span>
+      <span>
+        These different sorts of requirements expressed in conditions are the Themes which can be explored 
+        <a
+          href=""
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+         in this data visualization.
+      </span>
+      <span>
+        Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
+      </span>
+      <span>
+        Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
+        <a
+          href=""
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+        . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
+      </span>
+      <span>
+        When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          application process
+           
+        </a>
+         Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
+        <a
+          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          hearings
+           
+        </a>
+        , individuals must apply (more info about how to become an intervenor 
+        <a
+          href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          here
+           
+        </a>
+        )
+      </span>
+      <h1
+        className="title"
+      >
+         Conditions tracking and compliance 
+      </h1>
+      <span>
+        Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company (
+        <a
+          href=""
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           
+          explorable here
+           
+        </a>
+        ) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.
+      </span>
+      <span>
+        Conditions may require a company to submit documentation such as:
+      </span>
+      <ul>
+        <li>
+          <span>
+            results of additional environmental and socio-economic assessments, species-specific studies, or traditional land use investigations;
+          </span>
+        </li>
+        <li>
+          <span>
+            engineering design details, and supporting assessments or information;
+          </span>
+        </li>
+        <li>
+          <span>
+            environmental protection plans;
+          </span>
+        </li>
+        <li>
+          <span>
+            mitigation and monitoring documentation;
+          </span>
+        </li>
+        <li>
+          <span>
+            construction schedules and progress reports; and
+          </span>
+        </li>
+        <li>
+          <span>
+            employee training programs and manuals.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`] = `
 <div
   className="visualization"
@@ -3853,9 +4128,9 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
     <h1>
       Theme
     </h1>
-    <p>
+    <span>
       Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.
-    </p>
+    </span>
   </div>
 </div>
 `;
@@ -3996,7 +4271,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure a company’s financial resposibilities are met.
+        types of conditions that ensure a company’s financial responsibilities are met.
       </span>
     </p>
     <h4
@@ -4016,7 +4291,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that apply when a project is transeferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+        types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
       </span>
     </p>
     <h4
@@ -4046,7 +4321,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assesssments, etc).
+        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).
       </span>
     </p>
     <h4
@@ -7577,15 +7852,6 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
@@ -8419,6 +8685,13 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -8426,15 +8699,6 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
@@ -9268,6 +9532,13 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -9278,9 +9549,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
       }
     }
   />
@@ -9291,15 +9560,6 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
@@ -10133,6 +10393,13 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -10140,15 +10407,6 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
@@ -10982,6 +11240,13 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -10989,15 +11254,6 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore2 paddingAfter2"
   >
@@ -11264,6 +11520,13 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -11271,15 +11534,6 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
 <div
   className="visualization"
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "
-    .ProjectMenu { width: 400px; border: 1px solid red; }
-  ",
-      }
-    }
-  />
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
@@ -12113,6 +12367,13 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -12542,7 +12803,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="rgb(153, 153, 255)"
             height="30%"
             width="7.142857142857142%"
-            x="49.999999999999986%"
+            x="49.99999999999998%"
             y="70%"
           />
           <rect
@@ -12550,7 +12811,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="rgb(68, 34, 149)"
             height="6%"
             width="7.142857142857142%"
-            x="57.142857142857125%"
+            x="57.14285714285713%"
             y="94%"
           />
           <rect
@@ -12582,7 +12843,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="rgb(36, 91, 64)"
             height="6%"
             width="7.142857142857142%"
-            x="85.71428571428568%"
+            x="85.7142857142857%"
             y="94%"
           />
           <rect
@@ -12590,7 +12851,7 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             fill="black"
             height="8%"
             width="7.142857142857142%"
-            x="92.85714285714282%"
+            x="92.85714285714283%"
             y="92%"
           />
         </svg>

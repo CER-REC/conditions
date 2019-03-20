@@ -1,7 +1,7 @@
 const companyDataSample = [
   {
     _id: '5433ce88-f40d-4e90-84f9-980849a26910',
-    company_name: 'Keengen',
+    company_name: 'Keengenaskjdfjhaslkdjkjlashfjashdfkjashdf',
     instruments: [
       {
         _id: '0b0b3a45-6152-471e-bffc-2b673617d219',
@@ -1090,7 +1090,7 @@ const companyDataSample = [
   },
   {
     _id: 'd8ebe6a2-eed5-463e-92c1-0597ec19a788',
-    company_name: 'Adornica',
+    company_name: 'Adornica has more chars to test borders',
     instruments: [
       {
         _id: '8ce538a8-6a44-4fa0-b4e2-5931d9605053',
@@ -1987,7 +1987,7 @@ const companyDataSample = [
   },
   {
     _id: 'f768ec3e-26de-4ee8-a7bc-dfb5484aea9b',
-    company_name: 'Acrodance',
+    company_name: 'Acrodance has more than 26 chars so far we are up to 55',
     instruments: [
       {
         _id: '33b464a0-e216-44b0-93b3-59c74b99e1b2',
@@ -4517,7 +4517,7 @@ const companyDataSample = [
   },
   {
     _id: 'd65cad32-1928-416f-bc6b-78c82f469b99',
-    company_name: 'Andershun',
+    company_name: 'Andershun also has more chars to test',
     instruments: [
       {
         _id: 'a0944373-bee1-4b36-a17d-d69f6dfc254f',
@@ -5266,42 +5266,47 @@ const companyDataSample = [
 ];
 
 const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-// eslint-disable-next-line no-unused-vars
 const canadianProvinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
-const calcRayLegendData = (classifier) => {
+const calcRayLegendData = () => {
   const WheelRayLegendData = {
     legendData: [],
-    items: companyDataSample,
+    items: [...companyDataSample],
   };
-  for (let i = 0; i < companyDataSample.length; i += 1) {
+  alphabet.forEach((letter) => {
     WheelRayLegendData.legendData.push({
-      classifier: classifier[i],
+      classifier: letter,
       count: companyDataSample.filter(
-        company => company.company_name.lastIndexOf(classifier[i], 0) === 0,
+        company => company.company_name === letter,
       ).length,
     });
-  }
+  });
+  WheelRayLegendData.items.sort((a, b) => (a.company_name < b.company_name ? -1 : 1));
   return WheelRayLegendData;
 };
 
-const calcRayLegendDataLocation = (classifier) => {
-  const WheelRayLegendData = {
+const calcRayLegendDataLocation = () => {
+  const WheelLocationData = {
     legendData: [],
-    items: companyDataSample,
+    // eslint-disable-next-line no-return-assign
+    items: companyDataSample.map((company) => {
+      const o = { ...company, region_name: company.location.city };
+      return o;
+    }),
   };
-  for (let i = 0; i < companyDataSample.length; i += 1) {
-    WheelRayLegendData.legendData.push({
-      classifier: classifier[i],
+  canadianProvinces.forEach((province) => {
+    WheelLocationData.legendData.push({
+      classifier: province,
       count: companyDataSample.filter(
-        company => company.location.province === classifier[i],
+        company => company.location.province === province,
       ).length,
     });
-  }
-  return WheelRayLegendData.items.sort((a, b) => (a.company_name < b.company_name ? -1 : 1));
+  });
+  WheelLocationData.items = WheelLocationData.items
+    .sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
+  return WheelLocationData;
 };
 
-const companyWheelData = calcRayLegendData(alphabet);
-const locationWheelData = calcRayLegendDataLocation(canadianProvinces);
-const locationWheelItems = companyDataSample.length;
-
-export { companyWheelData, locationWheelData, locationWheelItems };
+const companyWheelData = calcRayLegendData();
+const locationData = calcRayLegendDataLocation();
+locationData.items.sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
+export { companyWheelData, locationData };
