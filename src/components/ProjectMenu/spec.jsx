@@ -52,48 +52,46 @@ describe('Components|ProjectMenu', () => {
     });
   });
 
-  const testProjectsArraySize = (expectedResults, dataSet) => {
-    for (let i = 0; i < expectedResults.length; i += 1) {
-      const [input, output] = expectedResults[i];
-      // eslint-disable-next-line no-loop-func
-      describe(`with index ${input.selected} selected of ${input.total} projects`, () => {
-        let onChange;
-        let wrapper;
-        beforeEach(() => {
-          onChange = jest.fn();
-          wrapper = shallow(
-            <ProjectMenu
-              projectsData={dataSet.slice(0, input.total)}
-              selectedProjectID={dataSet[input.selected].id}
-              onChange={onChange}
-              selectedFeature="theme"
-            />,
-          );
-        });
-        test('should have margins before', () => {
-          expect(wrapper.find('.ProjectMenu').hasClass(`paddingBefore${output.before}`)).toEqual(true);
-        });
-        test('should have margins after', () => {
-          expect(wrapper.find('.ProjectMenu').hasClass(`paddingAfter${output.after}`)).toEqual(true);
-        });
-        test(`should pass the List ${output.total} projects`, () => {
-          expect(wrapper.find('List').props().items).toHaveLength(output.total);
-        });
-        test(`should pass the List a selected project index of ${output.selected}`, () => {
-          expect(wrapper.find('List').props().selected).toBe(output.selected);
-        });
-        test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
-          wrapper.find('List').props().onChange(input.clickedIndex);
-          expect(onChange).toHaveBeenCalledTimes(1);
-          expect(onChange).toHaveBeenLastCalledWith(output.projectID);
-        });
+  describe.each([
+    ...testData.expectedResults8,
+    ...testData.expectedResults5,
+    ...testData.expectedResults4,
+    ...testData.expectedResults3,
+    ...testData.expectedResults2,
+    ...testData.expectedResults1,
+  ])(
+    '%j => %j',
+    (input, output) => {
+      let onChange;
+      let wrapper;
+      beforeEach(() => {
+        onChange = jest.fn();
+        wrapper = shallow(
+          <ProjectMenu
+            projectsData={testData.data.slice(0, input.total)}
+            selectedProjectID={testData.data[input.selected].id}
+            onChange={onChange}
+            selectedFeature="theme"
+          />,
+        );
       });
-    }
-  };
-  testProjectsArraySize(testData.expectedResults8, testData.data);
-  testProjectsArraySize(testData.expectedResults5, testData.data);
-  testProjectsArraySize(testData.expectedResults4, testData.data);
-  testProjectsArraySize(testData.expectedResults3, testData.data);
-  testProjectsArraySize(testData.expectedResults2, testData.data);
-  testProjectsArraySize(testData.expectedResults1, testData.data);
+      test('should have margins before', () => {
+        expect(wrapper.find('.ProjectMenu').hasClass(`paddingBefore${output.before}`)).toEqual(true);
+      });
+      test('should have margins after', () => {
+        expect(wrapper.find('.ProjectMenu').hasClass(`paddingAfter${output.after}`)).toEqual(true);
+      });
+      test(`should pass the List ${output.total} projects`, () => {
+        expect(wrapper.find('List').props().items).toHaveLength(output.total);
+      });
+      test(`should pass the List a selected project index of ${output.selected}`, () => {
+        expect(wrapper.find('List').props().selected).toBe(output.selected);
+      });
+      test(`should pass ${output.projectID} when List has a selected index of ${input.clickedIndex}`, () => {
+        wrapper.find('List').props().onChange(input.clickedIndex);
+        expect(onChange).toHaveBeenCalledTimes(1);
+        expect(onChange).toHaveBeenLastCalledWith(output.projectID);
+      });
+    },
+  );
 });
