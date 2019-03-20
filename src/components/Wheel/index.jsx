@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { Spring, animated } from 'react-spring/renderprops.cjs';
+import { Spring, animated } from 'react-spring/renderprops';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
