@@ -36,7 +36,7 @@ describe('Components|Wheel/PullToSpin', () => {
       expect(wrapper.state('spinTogglePosition')).toBe('translate(0px, 0px) rotate(0deg)');
       wrapper.find('.PullSlider').simulate('click', eventFuncs);
       shouldHaveInteractionProps(wrapper.find('.PullSlider'));
-      expect(wrapper.state('spinTogglePosition')).toBe('translate(56px, -56px) rotate(15deg)');
+      expect(wrapper.state('spinTogglePosition')).toBe('translate(56, -56) rotate(15)');
       expect(callback).toHaveBeenCalledTimes(1);
     });
   });
@@ -45,7 +45,7 @@ describe('Components|Wheel/PullToSpin', () => {
     test('should set the spinTogglePosition back to its original position', () => {
       const instance = wrapper.instance();
       instance.onRestSpin();
-      expect(wrapper.state('spinTogglePosition')).toBe('translate(0px, 0px) rotate(0deg)');
+      expect(wrapper.state('spinTogglePosition')).toBe('translate(0, 0) rotate(0)');
     });
   });
 });
