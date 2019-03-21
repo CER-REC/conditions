@@ -2,15 +2,16 @@ const Path = require('path');
 const Webpack = require('webpack');
 const sass = require('node-sass');
 const SassUtilsConstructor = require('node-sass-utils');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TranslationTable = require('./src/TranslationTable');
 const { features } = require('./src/constants');
-
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
-
 const sassUtils = SassUtilsConstructor(sass);
+// test is the same as development?
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
   entry: {
     bundle: [
       'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr',
@@ -53,7 +54,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          'style-loader',
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           {
@@ -98,6 +99,10 @@ module.exports = {
   // NB: Plugins object is *replaced* in production!
   // See webpack.prod.config.js
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    }),
     new Webpack.HotModuleReplacementPlugin(),
     new Webpack.DefinePlugin({
       'process.env': {
