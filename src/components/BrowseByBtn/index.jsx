@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
 import './styles.scss';
 
 import handleInteraction from '../../utilities/handleInteraction';
@@ -25,7 +26,7 @@ const BrowseByBtn = (props) => {
   return (
     <button
       type="button"
-      className="BrowseByBtn"
+      className={classNames('BrowseByBtn', props.classNames)}
       {...handleInteraction(props.onClick, props.mode)}
     >
       <div className="BrowseByBtn-ButtonText">
@@ -48,7 +49,11 @@ const BrowseByBtn = (props) => {
 BrowseByBtn.propTypes = {
   onClick: PropTypes.func.isRequired,
   mode: PropTypes.oneOf(['location', 'company']).isRequired,
+  classNames: PropTypes.string,
+};
+
+BrowseByBtn.defaultProps = {
+  classNames: '',
 };
 
 export default BrowseByBtn;
-

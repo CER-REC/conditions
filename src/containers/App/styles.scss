@@ -1,12 +1,43 @@
 .App {
 
   .Guide {
-    display: none;
+    // display: none;
+    z-index: 999;
+    transition: all 1s ease-in-out;
   }
 
   .ViewOne {
     position: absolute;
     top: 0;
+
+    height: 100%;
+    border: 1px solid magenta;
+
+    .row {
+      &.intro {
+        position: relative;
+        top: 0px;
+        transition: top 1s ease-in-out;
+      }
+      &.explorer {
+        position: relative;
+        top: 0px;
+        transition: top 1s ease-in-out;
+      }
+      &.buttons {
+        position: absolute;
+        bottom: 0;
+        .BrowseByBtn.location {
+          transition: opacity 1s ease-in-out;
+          opacity: 1
+        }
+
+        .ShortcutInfoBar {
+          transition: opacity 1s ease-in-out;
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .ViewTwo {
@@ -23,12 +54,36 @@
     top: 900px;
   }
 
-  &.transition-state-1 {
-    .ViewOne {
-      top: -50%;
+  &.transition-state-0 {
+    .Guide {
+      left: 15.3%;
+      bottom: 54%;
+    }
+  }
 
-      .row:last-of-type {
-        margin-top: 50%;
+  &.transition-state-1 {
+    .Guide {
+      left: 30%;
+      bottom: 20%;
+      // transition: left 2s ease-in-out, bottom 2s ease-in-out;
+    }
+    .ViewOne {
+       .row {
+        &.intro {
+          top: -400px;
+        }
+        &.explorer {
+          top: -400px;
+        }
+        &.buttons {
+          .BrowseByBtn.location {
+            opacity: 0.3;
+          }
+
+          .ShortcutInfoBar {
+            opacity: 0.3;
+          }
+        }
       }
     }
   }
