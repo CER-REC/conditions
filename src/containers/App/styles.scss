@@ -1,0 +1,36 @@
+.App {
+
+  .Guide {
+    display: none;
+  }
+
+  .ViewOne {
+    position: absolute;
+    top: 0;
+  }
+
+  .ViewTwo {
+    // position: absolute;
+    // top: 0;
+  }
+
+  .ViewThree {
+    // display: none;
+  }
+
+  .Footer {
+    position: absolute;
+    top: 900px;
+  }
+
+  &.transition-state-1 {
+    .ViewOne {
+      top: -50%;
+
+      .row:last-of-type {
+        margin-top: 50%;
+      }
+    }
+  }
+
+}
