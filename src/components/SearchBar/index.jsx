@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import memoize from 'lodash.memoize';
+
 import Tab from './Tab';
 import SearchContent from './SearchContent';
 import FilterContent from './FilterContent';
 import SuggestedKeywordsPrompt from './SuggestedKeywordsPrompt';
 import SuggestedKeywordsPopout from './SuggestedKeywordsPopout';
 import HighlightSummary from './HighlightSummary';
+
 import { yearRangeType, suggestedKeywordsObject } from '../../proptypes';
 
 import './styles.scss';
@@ -33,6 +36,10 @@ class SearchBar extends React.PureComponent {
     className: '',
   }
 
+  handleTabChange = memoize(toggleMode => () => this.setState(({ mode }) => ({
+    mode: (mode !== toggleMode) ? toggleMode : '',
+  })))
+
   constructor(props) {
     super(props);
     this.state = {
@@ -43,10 +50,6 @@ class SearchBar extends React.PureComponent {
   }
 
   changeIsExclude = bool => (this.setState({ isExclude: bool }));
-
-  handleTabChange = toggleMode => () => this.setState(({ mode }) => ({
-    mode: (mode !== toggleMode) ? toggleMode : '',
-  }))
 
   render() {
     const {
