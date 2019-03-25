@@ -60,39 +60,27 @@ export const buildTriangleFrame = (dots, base) => {
 export const fillTriangleFrame = ({
   dots,
   columns,
-  startingColumn = 0,
-  endingColumn = (columns.length - 2),
-  startingRow = 1,
+  startCol = 0,
+  endCol = (columns.length - 2),
+  startRow = 1,
   rowLengthOffset = 1,
 }) => {
   // Fill the lowest-numbered column
-  for (
-    let row = columns[startingColumn].length - rowLengthOffset - 1;
-    row >= startingRow;
-    row -= 1
-  ) {
+  for (let row = columns[startCol].length - rowLengthOffset - 1; row >= startRow; row -= 1) {
     // eslint-disable-next-line no-param-reassign
-    columns[startingColumn][row] = dots.pop();
+    columns[startCol][row] = dots.pop();
     if (!dots.length) return columns;
   }
 
   // Fill the rest of the top row
-  for (
-    let column = startingColumn + 1;
-    column < endingColumn;
-    column += 1
-  ) {
+  for (let column = startCol + 1; column < endCol; column += 1) {
     // eslint-disable-next-line no-param-reassign
-    columns[column][startingRow] = dots.pop();
+    columns[column][startRow] = dots.pop();
     if (!dots.length) return columns;
   }
 
   // Fill the rest of the bottom row
-  for (
-    let column = endingColumn - 2, end = startingColumn + 1;
-    column >= end;
-    column -= 1
-  ) {
+  for (let column = endCol - 2, end = startCol + 1; column >= end; column -= 1) {
     // eslint-disable-next-line no-param-reassign
     columns[column][columns[column].length - rowLengthOffset - 1] = dots.pop();
     if (!dots.length) return columns;
@@ -102,9 +90,9 @@ export const fillTriangleFrame = ({
   return fillTriangleFrame({
     dots,
     columns,
-    startingColumn: startingColumn + 1,
-    endingColumn: endingColumn - 2,
-    startingRow: startingRow + 1,
+    startCol: startCol + 1,
+    endCol: endCol - 2,
+    startRow: startRow + 1,
     rowLengthOffset: rowLengthOffset + 1,
 
   });
