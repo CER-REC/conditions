@@ -50,7 +50,7 @@ const PullToSpin = (props) => {
       </g>
     </g>
   );
-}
+};
 
 PullToSpin.propTypes = {
   onClickSpin: PropTypes.func.isRequired,
