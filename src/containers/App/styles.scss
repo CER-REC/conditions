@@ -71,12 +71,10 @@
   }
 
   .Footer {
+    transition: opacity 1s ease-in-out;
     position: absolute;
-    top: 900px;
+    top: 88%;
   }
-
-
-
 
   &.transition-state-0 {
     .Guide {
@@ -94,10 +92,10 @@
     .ViewOne {
        .row {
         &.intro {
-          top: -400px;
+          top: -50%;
         }
         &.explorer {
-          top: -400px;
+          top: -50%;
         }
         &.buttons {
           .BrowseByBtn.location {
@@ -142,7 +140,7 @@
       .row {
         &.intro,
         &.explorer {
-          top: -800px;
+          top: -100%;
         }
 
         &.buttons {
@@ -303,6 +301,39 @@
           opacity: 0.3;
         }
       }
+    }
+
+    .Footer {
+      opacity: 0;
+    }
+  }
+
+  &.transition-state-7 {
+    .Guide {
+      top: 2%;
+      left: 58%;
+    }
+
+    .ViewTwo {
+      // opacity: 1;
+      .searchHeader,
+      .wheel,
+      .companyBreakdown,
+      .menus {
+        opacity: 1;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .ProjectHeader,
+        .contentPane {
+          opacity: 1;
+        }
+      }
+    }
+
+    .Footer {
+      opacity: 1;
     }
   }
 }

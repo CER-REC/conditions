@@ -65,7 +65,7 @@ class App extends React.PureComponent {
             : null
           }
           {false ? <ViewThree {...viewProps} /> : null}
-          {(transitionState >= 7)
+          {(transitionState >= 6)
             ? (
               <Footer
                 setMainInfoBarPane={this.setMainInfoBarPane}
