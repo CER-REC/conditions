@@ -243,4 +243,35 @@
       }
     }
   }
+
+  &.transition-state-5 {
+    .Guide {
+      left: 47.8%;
+      top: -2%;
+    }
+
+    .ViewTwo {
+      // opacity: 1;
+      .searchHeader,
+      .wheel {
+        opacity: 0;
+      }
+
+      .companyBreakdown {
+        opacity: 1;
+      }
+
+      .menus {
+        opacity: 0.3;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .ProjectHeader,
+        .contentPane {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
 }
