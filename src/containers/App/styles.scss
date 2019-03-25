@@ -122,7 +122,7 @@
 
       .ConditionDetails {
         .listPane,
-        .popout,
+        // .popout,
         .ProjectHeader,
         .contentPane {
           // transition: opacity 1s ease-in-out;
@@ -134,8 +134,8 @@
 
   &.transition-state-2 {
     .Guide {
-      top: 83%;
       left: 42%;
+      top: 83%;
     }
 
     .ViewOne {
@@ -165,7 +165,7 @@
 
       .ConditionDetails {
         .listPane,
-        .popout,
+        // .popout,
         .ProjectHeader {
           opacity: 0;
         }
@@ -198,9 +198,42 @@
 
       .ConditionDetails {
         .listPane,
-        .popout,
+        // .popout,
         .ProjectHeader {
           opacity: 0;
+        }
+
+        .contentPane {
+          // transition: opacity 1s ease-in-out;
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  &.transition-state-4 {
+    .Guide {
+      left: 29%;
+      top: 65%;
+    }
+
+    .ViewTwo {
+      // opacity: 1;
+      .searchHeader,
+      .wheel,
+      .companyBreakdown {
+        opacity: 0;
+      }
+
+      .menus {
+        opacity: 0.3;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        // .popout,
+        .ProjectHeader {
+          opacity: 1;
         }
 
         .contentPane {
