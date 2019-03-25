@@ -14,6 +14,7 @@ import {
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionData,
+  projectsData,
 } from '../../mockData';
 
 import './styles.scss';
@@ -23,6 +24,7 @@ const store = createStore();
 const noop = () => {};
 
 const viewProps = {
+  projectsData,
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionDetails: {
