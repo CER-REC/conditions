@@ -3,10 +3,11 @@
 
 .ConditionDetails .Content {
   max-width: 450px;
-  height: 276px;
+  height: 100%;
 
   padding: 20px;
-  overflow-y: scroll;
+
+  overflow-y: auto;
 
   .contentText {
     padding-bottom: 0.4rem;
