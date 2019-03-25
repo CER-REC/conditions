@@ -31,7 +31,7 @@ const PullToSpin = (props) => {
         </text>
       </g>
       <g role="button" className="PullSlider" {...handleInteraction(onSpinClick)}>
-        <animated.g transform={transform.interpolate(t => t)} className="PullAnimatedGroup">
+        <animated.g transform={transform} className="PullAnimatedGroup">
           <defs>
             <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" x="2" width="2" height="5" patternTransform="rotate(90)">
               <rect fill="white" x="0" y="0" width="5" height="5" />
