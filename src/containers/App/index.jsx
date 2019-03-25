@@ -54,13 +54,13 @@ class App extends React.PureComponent {
       <div className={classNames('App', `transition-state-${transitionState}`)}>
         <Provider store={store}>
           <Guide />
-          {(transitionState < 2)
+          {(transitionState < 3)
             ? <ViewOne />
             : null
           }
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
-          {(transitionState >= 2)
+          {(transitionState >= 1)
             ? <ViewTwo {...viewProps} />
             : null
           }

@@ -93,8 +93,10 @@ const ViewTwo = props => (
             : { items: locationData.items.slice(0, 50) }
           }
         />
-        <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
-        <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
+        {(props.browseBy === 'company')
+          ? <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
+          : <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
+        }
       </section>
       <section className="companyBreakdown">
         <ProjectMenu

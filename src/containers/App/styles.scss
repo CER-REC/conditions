@@ -41,12 +41,11 @@
   }
 
   .ViewTwo {
-    // position: absolute;
-    // top: 0;
+    transition: opacity 1s ease-in-out;
   }
 
   .ViewThree {
-    // display: none;
+    transition: opacity 1s ease-in-out;
   }
 
   .Footer {
@@ -86,6 +85,71 @@
         }
       }
     }
+
+    .ViewTwo {
+      // opacity: 0;
+      .searchHeader,
+      .wheel,
+      .companyBreakdown,
+      .menus {
+        opacity: 0;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .popout,
+        .ProjectHeader,
+        .contentPane {
+          transition: opacity 1s ease-in-out;
+          opacity: 0;
+        }
+      }
+    }
   }
 
+  &.transition-state-2 {
+    .Guide {
+      bottom: 1%;
+      left: 42%;
+    }
+
+    .ViewOne {
+      .row {
+        &.intro,
+        &.explorer {
+          top: -800px;
+        }
+
+        &.buttons {
+          .BrowseByBtn.location,
+          .ShortcutInfoBar {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .ViewTwo {
+      // opacity: 1;
+      .searchHeader,
+      .wheel,
+      .companyBreakdown,
+      .menus {
+        opacity: 0;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .popout,
+        .ProjectHeader {
+          opacity: 0;
+        }
+
+        .contentPane {
+          transition: opacity 1s ease-in-out;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
