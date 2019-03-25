@@ -10,6 +10,7 @@ import {
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionData,
+  projectsData,
 } from '../../mockData';
 
 const store = createStore();
@@ -17,6 +18,7 @@ const store = createStore();
 const noop = () => {};
 
 const viewProps = {
+  projectsData,
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionDetails: {
