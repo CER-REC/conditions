@@ -1,10 +1,13 @@
 .App {
 
+  // Base states + transitions
+
   .Guide {
     // display: none;
     z-index: 999;
     transition: all 1s ease-in-out;
   }
+
 
   .ViewOne {
     position: absolute;
@@ -41,8 +44,27 @@
   }
 
   .ViewTwo {
-    transition: opacity 1s ease-in-out;
+    // opacity: 0;
+    .searchHeader,
+    .wheel,
+    .companyBreakdown,
+    .menus {
+      transition: opacity 1s ease-in-out;
+    }
+
+    .ConditionDetails {
+      .listPane,
+      .popout,
+      .ProjectHeader,
+      .contentPane {
+        transition: opacity 1s ease-in-out;
+      }
+    }
   }
+
+  // .ViewTwo {
+  //   transition: opacity 1s ease-in-out;
+  // }
 
   .ViewThree {
     transition: opacity 1s ease-in-out;
@@ -53,17 +75,20 @@
     top: 900px;
   }
 
+
+
+
   &.transition-state-0 {
     .Guide {
       left: 15.3%;
-      bottom: 54%;
+      top: 32%;
     }
   }
 
   &.transition-state-1 {
     .Guide {
       left: 30%;
-      bottom: 20%;
+      top: 63%;
       // transition: left 2s ease-in-out, bottom 2s ease-in-out;
     }
     .ViewOne {
@@ -100,7 +125,7 @@
         .popout,
         .ProjectHeader,
         .contentPane {
-          transition: opacity 1s ease-in-out;
+          // transition: opacity 1s ease-in-out;
           opacity: 0;
         }
       }
@@ -109,7 +134,7 @@
 
   &.transition-state-2 {
     .Guide {
-      bottom: 1%;
+      top: 83%;
       left: 42%;
     }
 
@@ -146,8 +171,41 @@
         }
 
         .contentPane {
-          transition: opacity 1s ease-in-out;
+          // transition: opacity 1s ease-in-out;
           opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.transition-state-3 {
+    .Guide {
+      left: 53%;
+      top: 15%;
+    }
+
+    .ViewTwo {
+      // opacity: 1;
+      .searchHeader,
+      .wheel,
+      .companyBreakdown {
+        opacity: 0;
+      }
+
+      .menus {
+        opacity: 1;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .popout,
+        .ProjectHeader {
+          opacity: 0;
+        }
+
+        .contentPane {
+          // transition: opacity 1s ease-in-out;
+          opacity: 0.3;
         }
       }
     }
