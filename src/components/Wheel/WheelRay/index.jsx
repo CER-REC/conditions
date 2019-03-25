@@ -38,12 +38,9 @@ class WheelRay extends React.Component {
     // TODO: This shouldn't be in the constructor; load the data and prompt a
     // re-render.
     const flagData = this.props.items.map(company => company.projects);
-    (
-      {
-        flagLayouts: this.flagLayouts,
-        flagScale: this.flagScale,
-      } = flagLayoutCalculation(flagData)
-    );
+    const calc = flagLayoutCalculation(flagData);
+    this.flagLayouts = calc.flagLayouts;
+    this.flagScale = calc.flagScale;
   }
 
   shouldComponentUpdate(nextProps) {
