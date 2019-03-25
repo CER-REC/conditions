@@ -5,6 +5,7 @@ const SassUtilsConstructor = require('node-sass-utils');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TranslationTable = require('./src/TranslationTable');
 const { features } = require('./src/constants');
+
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
 const sassUtils = SassUtilsConstructor(sass);
 // test is the same as development?
