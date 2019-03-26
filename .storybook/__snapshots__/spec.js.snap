@@ -15306,6 +15306,34 @@ exports[`Storyshots Components|ShortcutInfoBar default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|SkipIntro default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SkipIntro"
+  >
+    <span>
+      Skip intro to browse:
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SkipIntro view 1 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SkipIntro showArrow"
+  >
+    <span>
+      Skip intro to browse:
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
 <div
   className="visualization"

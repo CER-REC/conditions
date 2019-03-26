@@ -6,9 +6,9 @@ import classNames from 'classnames';
 import './styles.scss';
 
 const SkipIntro = ({ showArrow }) => (
-  <FormattedMessage id="views.view1.footer.skip">
-    {text => <span className={classNames('SkipIntro', { showArrow })}>{text}</span>}
-  </FormattedMessage>
+  <div className={classNames('SkipIntro', { showArrow })}>
+    <FormattedMessage id="views.view1.footer.skip" />
+  </div>
 );
 
 SkipIntro.propTypes = {

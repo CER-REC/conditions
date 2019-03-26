@@ -2,18 +2,24 @@
 @import "../../styles/fontVariables.scss";
 
 .SkipIntro {
+  display: inline-block;
+
+  height: 24px;
+  line-height: 24px;
+
   font-family: $fira-sans-condensed;
   font-size: 16px;
 
   padding-left: 32px;
-  border-top: 2px solid $Guide;
-  border-bottom: 2px solid $Guide;
+  // border-top: 2px solid $White;
+  // border-bottom: 2px solid $White;
 
   position: relative;
 
   &.showArrow {
     color: $White;
     background-color: $Guide;
+    border-color: $Guide;
 
     &::after {
       content: "";
@@ -21,7 +27,7 @@
 
       position: absolute;
       left: 100%;
-      top: -2px;
+      top: 0;
       width: 0;
       height: 0;
       border-width: 12px;
