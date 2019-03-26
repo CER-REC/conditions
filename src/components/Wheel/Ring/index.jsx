@@ -12,7 +12,7 @@ const Ring = ({ ringType }) => {
         key={`${i}ring`}
         y1="28%"
         y2="23.5%"
-        style={{ transform: `translate(50%, 50%) rotate(${i}deg)` }}
+        transform={`rotate(${i})`}
       />);
     }
     return lineArray;
@@ -26,19 +26,17 @@ const Ring = ({ ringType }) => {
           <circle cx="50%" cy="50%" r="23.5%" />
         </mask>
       </defs>
-      <g>
-        <circle cx="50%" cy="50%" r="28%" mask="url(#clip-path-WheelRing)" className={ringbackground} />
-        <g className={`Lines ${linebackground}`}>
+      <circle cx="50%" cy="50%" r="28%" mask="url(#clip-path-WheelRing)" className={ringbackground} />
+      <svg viewBox="50 50 100 100">
+        <g className={`Lines ${linebackground}`} transform="translate(100 100)">
           { lineRenderer()}
         </g>
+      </svg>
+      <g className="OuterRing RingOutline">
+        <circle cx="50%" cy="50%" r="28%" />
       </g>
-      <g className="RingGroup">
-        <g className="OuterRing RingOutline">
-          <circle cx="50%" cy="50%" r="28%" />
-        </g>
-        <g className="InnerRing RingOutline ">
-          <circle cx="50%" cy="50%" r="23.5%" />
-        </g>
+      <g className="InnerRing RingOutline ">
+        <circle cx="50%" cy="50%" r="23.5%" />
       </g>
     </g>
 

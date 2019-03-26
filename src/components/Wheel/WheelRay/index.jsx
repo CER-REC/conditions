@@ -41,7 +41,7 @@ class WheelRay extends React.Component {
     const { items, degreesPerItem, reservedDegrees, rotation,
       currentIndex, wheelType,
     } = props;
-    const width = 163;
+    const width = '19%';
     const halfReservedDegrees = reservedDegrees / 2;
     const selectedIndex = currentIndex >= 0
       ? currentIndex : items.length + currentIndex;
@@ -56,38 +56,36 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-      const transform = { transform: `translate(50%, 50%) rotate(${position.toFixed(2)}deg)` };
+      const transform = `rotate(${position.toFixed(2)})`;
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={`${item._id}CompanyRay`} style={transform} className="companyRay">
+          <g key={`${item._id}CompanyRay`} transform={transform} className="companyRay">
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
             <line
               y2="50%"
               y1={(index === 0 ? '23.5%' : '31%')}
             />
-            <text className="textLabels">
+            <text className="textLabels" transform="translate(28.75) rotate(90)">
               { item.company_name.charAt(0) !== legendTracker ? item.company_name.charAt(0) : null }
             </text>
           </g>
         )
         : (
-          <g key={`${item._id}LocationRay`} style={transform} className="locationRay">
+          <g key={`${item._id}LocationRay`} transform={transform} className="locationRay">
             <LocationRay
               items={randomLocationBars[index]}
-              height={degreesPerItem * 2}
+              height={degreesPerItem * 0.5}
               width={width}
               searched
               adjustRotationReference={degreesPerItem / 2}
             />
             { item.location.province !== legendTracker
               ? (
-                <g>
-                  <text className="textLabels">
-                    {item.location.province}
-                  </text>
-                </g>
+                <text className="textLabels" transform="translate(28.75) rotate(90)">
+                  {item.location.province}
+                </text>
               ) : null }
           </g>
         );
@@ -97,7 +95,11 @@ class WheelRay extends React.Component {
       return componentToReturn;
     });
 
-    return <g className="WheelRay">{rays}</g>;
+    return (
+      <svg className="WheelRay" width="100%" height="100%" viewBox="-50 -50 100 100 ">
+        {rays}
+      </svg>
+    );
   }
 }
 

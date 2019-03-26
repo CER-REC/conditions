@@ -19,6 +19,8 @@
 
   .labelContainer {
     position: absolute;
+    top:50%;
+    transform: translate(0 , -50%);
     height: 24px;
     width: 150%;
     overflow: visible;
@@ -61,10 +63,6 @@
   }
 
   .list {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // width: 50%;
     position: absolute;
     top: 50%;
     margin-left: 45%;
