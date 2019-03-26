@@ -15277,7 +15277,7 @@ exports[`Storyshots Components|ShortcutInfoBar default 1`] = `
         onClick={[Function]}
         onKeyPress={[Function]}
         tabIndex={0}
-        viewBox="0 0 50 100"
+        viewBox="0 0 50 50"
       >
         <g
           transform="scale(3)"
