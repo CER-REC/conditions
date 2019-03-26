@@ -84,11 +84,11 @@ class WheelRay extends React.Component {
             {(this.flagLayouts)
               ? (
                 <CompanyFlag
-                  y={-19}
+                  y={-65}
                   flagLayout={this.flagLayouts[index]}
-                  svgHeight={degreesPerItem * 2}
-                  dotWidth={this.flagScale}
-                  dotSpacing={1.5 * this.flagScale}
+                  svgHeight={100}
+                  dotWidth={0.8 * this.flagScale}
+                  dotSpacing={this.flagScale}
                   rotation={90}
                 />
               )
