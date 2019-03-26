@@ -8,12 +8,38 @@
     transition: all 1s ease-in-out;
   }
 
+  .browseBy {
+    position: absolute;
+    top: 94%;
+    left: 0;
+
+    height: 40px;
+
+    .SkipIntro {
+      transition:
+        opacity 1s ease-in-out,
+        color 1s ease-in-out,
+        background-color 1s ease-in-out,
+        margin-right 1s ease-in-out;
+
+      opacity: 1;
+
+      &::after {
+        transition: border-color 1s ease-in-out;
+      }
+    }
+
+    .BrowseByBtn.location {
+      transition: opacity 1s ease-in-out;
+      opacity: 1
+    }
+  }
 
   .ViewOne {
     position: absolute;
     top: 0;
 
-    height: 100%;
+    // height: 100%;
     border: 1px solid magenta;
 
     .row {
@@ -30,10 +56,6 @@
       &.buttons {
         position: absolute;
         bottom: 0;
-        .BrowseByBtn.location {
-          transition: opacity 1s ease-in-out;
-          opacity: 1
-        }
 
         .ShortcutInfoBar {
           transition: opacity 1s ease-in-out;
@@ -44,7 +66,6 @@
   }
 
   .ViewTwo {
-    // opacity: 0;
     .searchHeader,
     .wheel,
     .companyBreakdown,
@@ -78,16 +99,21 @@
 
   &.transition-state-0 {
     .Guide {
-      left: 15.3%;
-      top: 32%;
+      left: 15.2%;
+      // top: 32%;
+      top: 270px;
     }
   }
 
   &.transition-state-1 {
     .Guide {
       left: 30%;
-      top: 63%;
+      // top: 63%;
+      top: 535px;
       // transition: left 2s ease-in-out, bottom 2s ease-in-out;
+    }
+    .browseBy .BrowseByBtn.location {
+      opacity: 0.3;
     }
     .ViewOne {
        .row {
@@ -98,10 +124,6 @@
           top: -50%;
         }
         &.buttons {
-          .BrowseByBtn.location {
-            opacity: 0.3;
-          }
-
           .ShortcutInfoBar {
             opacity: 0.3;
           }
@@ -133,9 +155,14 @@
   &.transition-state-2 {
     .Guide {
       left: 42%;
-      top: 83%;
+      // top: 83%;
+      top: 704px;
     }
-
+    .browseBy {
+      .BrowseByBtn.location {
+        opacity: 0;
+      }
+    }
     .ViewOne {
       .row {
         &.intro,
@@ -144,7 +171,6 @@
         }
 
         &.buttons {
-          .BrowseByBtn.location,
           .ShortcutInfoBar {
             opacity: 0;
           }
@@ -179,9 +205,14 @@
   &.transition-state-3 {
     .Guide {
       left: 53%;
-      top: 15%;
+      // top: 15%;
+      top: 122px;
     }
-
+    .browseBy {
+      .BrowseByBtn.location {
+        opacity: 0;
+      }
+    }
     .ViewTwo {
       // opacity: 1;
       .searchHeader,
@@ -212,9 +243,14 @@
   &.transition-state-4 {
     .Guide {
       left: 29%;
-      top: 65%;
+      // top: 65%;
+      top: 553px;
     }
-
+    .browseBy {
+      .BrowseByBtn.location {
+        opacity: 0;
+      }
+    }
     .ViewTwo {
       // opacity: 1;
       .searchHeader,
@@ -245,7 +281,13 @@
   &.transition-state-5 {
     .Guide {
       left: 47.8%;
-      top: -2%;
+      // top: -2%;
+      top: -16px;
+    }
+    .browseBy {
+      .BrowseByBtn.location {
+        opacity: 0;
+      }
     }
 
     .ViewTwo {
@@ -276,7 +318,16 @@
   &.transition-state-6 {
     .Guide {
       left: 2%;
-      top: 60%;
+      // top: 60%;
+      top: 512px;
+    }
+    .browseBy {
+      .SkipIntro {
+        opacity: 0;
+      }
+      .BrowseByBtn.location {
+        opacity: 0;
+      }
     }
 
     .ViewTwo {
@@ -310,7 +361,8 @@
 
   &.transition-state-7 {
     .Guide {
-      top: 2%;
+      // top: 2%;
+      top: 16px;
       left: 58%;
     }
 
@@ -334,6 +386,15 @@
 
     .Footer {
       opacity: 1;
+    }
+  }
+
+  &.transition-state-8 {
+    .Guide {
+      top: 16px;
+      left: 58%;
+
+      opacity: 0;
     }
   }
 }

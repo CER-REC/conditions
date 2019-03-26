@@ -9,6 +9,8 @@ import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 
 import Guide from '../../components/Guide';
+import SkipIntro from '../../components/SkipIntro';
+import BrowseByBtn from '../../components/BrowseByBtn';
 
 import {
   conditionCountsByYear,
@@ -55,9 +57,22 @@ class App extends React.PureComponent {
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
         <Provider store={store}>
-          <Guide />
+          {(transitionState <= 8)
+            ? <Guide />
+            : null
+          }
           {(transitionState < 3)
             ? <ViewOne />
+            : null
+          }
+          {(transitionState <= 6)
+            ? (
+              <section className="browseBy">
+                <SkipIntro className={(transitionState < 2) ? 'showArrow' : ''} />
+                <BrowseByBtn classNames="company" mode="company" onClick={noop} />
+                <BrowseByBtn classNames="location" mode="location" onClick={noop} />
+              </section>
+            )
             : null
           }
           {/* TODO: Deployment hacks */}

@@ -91,7 +91,7 @@ class ShortcutInfoBar extends React.PureComponent {
       <div className="ShortcutInfoBar">
         <div className="Content">
           <svg
-            viewBox="0 0 50 100"
+            viewBox="0 0 50 50"
             className="InfoButton"
             {...handleInteraction(this.toggleExpanded)}
           >
