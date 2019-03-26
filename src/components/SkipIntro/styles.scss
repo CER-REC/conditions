@@ -1,0 +1,33 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fontVariables.scss";
+
+.SkipIntro {
+  font-family: $fira-sans-condensed;
+  font-size: 16px;
+
+  padding-left: 32px;
+  border-top: 2px solid $Guide;
+  border-bottom: 2px solid $Guide;
+
+  position: relative;
+
+  &.showArrow {
+    color: $White;
+    background-color: $Guide;
+
+    &::after {
+      content: "";
+      display: inline-block;
+
+      position: absolute;
+      left: 100%;
+      top: -2px;
+      width: 0;
+      height: 0;
+      border-width: 12px;
+      border-radius: 1px;
+      border-color: transparent transparent transparent $Guide;
+      border-style: solid;
+    }
+  }
+}

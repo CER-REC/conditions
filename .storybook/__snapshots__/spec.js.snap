@@ -4708,7 +4708,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       </div>
     </div>
     <div
-      className="Footer"
+      className="footer"
     >
       <h3
         className="Title"
