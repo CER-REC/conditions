@@ -5,18 +5,18 @@ import classNames from 'classnames';
 
 import './styles.scss';
 
-const SkipIntro = ({ showArrow }) => (
-  <div className={classNames('SkipIntro', { showArrow })}>
+const SkipIntro = ({ className }) => (
+  <div className={classNames('SkipIntro', className)}>
     <FormattedMessage id="views.view1.footer.skip" />
   </div>
 );
 
 SkipIntro.propTypes = {
-  showArrow: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 SkipIntro.defaultProps = {
-  showArrow: false,
+  className: '',
 };
 
 export default SkipIntro;

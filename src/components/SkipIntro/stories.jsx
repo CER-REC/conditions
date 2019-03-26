@@ -8,5 +8,5 @@ storiesForComponent('Components|SkipIntro', module, ReadMe)
     <SkipIntro />
   ))
   .add('view 1', () => (
-    <SkipIntro showArrow />
+    <SkipIntro className="showArrow" />
   ));

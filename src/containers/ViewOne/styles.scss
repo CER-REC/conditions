@@ -6,8 +6,8 @@
   @include grid((
     introduction: 116,
     explorer: 116,
-    browseBy: 58,
-    infoBar: 57,
+    browseBy: 65,
+    infoBar: 50,
   )) {
     height: 100vh;
 
@@ -33,7 +33,7 @@
     }
 
     .browseBy, .infoBar {
-      height: 60px;
+      height: 40px;
     }
   }
 }

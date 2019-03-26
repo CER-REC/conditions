@@ -3,37 +3,49 @@
 
 .SkipIntro {
   display: inline-block;
+  position: relative;
+
+  vertical-align: baseline;
 
   height: 24px;
+  // height: 100%;
   line-height: 24px;
+  // line-height: 100%;
+
+  top: -13px;
+
+  padding-left: 24px;
+  margin-right: 12px;
 
   font-family: $fira-sans-condensed;
   font-size: 16px;
 
-  padding-left: 32px;
-  // border-top: 2px solid $White;
-  // border-bottom: 2px solid $White;
+  color: $Gray160;
+  background-color: $White;
 
-  position: relative;
+  &::after {
+    content: "";
+    display: inline-block;
+
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-radius: 1px;
+    border-color: transparent;
+    border-style: solid;
+  }
 
   &.showArrow {
     color: $White;
     background-color: $Guide;
     border-color: $Guide;
+    margin-right: 24px;
 
     &::after {
-      content: "";
-      display: inline-block;
-
-      position: absolute;
-      left: 100%;
-      top: 0;
-      width: 0;
-      height: 0;
-      border-width: 12px;
-      border-radius: 1px;
       border-color: transparent transparent transparent $Guide;
-      border-style: solid;
     }
   }
 }

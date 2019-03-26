@@ -6,6 +6,7 @@ import ConditionExplorer from '../../components/ConditionExplorer';
 import keywords from '../../components/ConditionExplorer/mockKeywords';
 import BrowseByBtn from '../../components/BrowseByBtn';
 import ShortcutInfoBar from '../../components/ShortcutInfoBar';
+import SkipIntro from '../../components/SkipIntro';
 import './styles.scss';
 
 const noop = () => {};
@@ -26,6 +27,7 @@ const ViewOne = props => (
     </section>
     <section className="row buttons">
       <section className="browseBy">
+        <SkipIntro className="showArrow" />
         <BrowseByBtn classNames="company" mode="company" onClick={noop} />
         <BrowseByBtn classNames="location" mode="location" onClick={noop} />
       </section>
