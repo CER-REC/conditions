@@ -31,7 +31,7 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotati
   }, []);
 
   return (
-    <g className="CompanyFlag" style={{ transform: `rotate(${rotation}deg)` }}>
+    <g className="CompanyFlag" transform={`rotate(${rotation})`}>
       {circles.map(circle => (<ProjectDot key={`${circle.cx},${circle.cy}`} {...circle} />))}
     </g>
   );

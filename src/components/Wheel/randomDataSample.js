@@ -810,6 +810,7 @@ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 const canadianProvinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
 
 const addSampleProjects = (company, idx) => {
+  // eslint-disable-next-line no-param-reassign
   company.projects = randomProjects[idx % randomProjects.length];
 };
 
