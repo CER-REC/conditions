@@ -53,6 +53,8 @@ class App extends React.PureComponent {
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
   render() {
+    // TODO: Move this into the app's actual state
+    // Using a prop to work with Storybook knobs
     const { transitionState } = this.props;
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
@@ -81,6 +83,7 @@ class App extends React.PureComponent {
             ? <ViewTwo {...viewProps} />
             : null
           }
+          {/* TODO: Add appropriate transition checks for View 3 */}
           {false ? <ViewThree {...viewProps} /> : null}
           {(transitionState >= 6)
             ? (

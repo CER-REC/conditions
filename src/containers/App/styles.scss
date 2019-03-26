@@ -1,9 +1,6 @@
 .App {
 
-  // Base states + transitions
-
   .Guide {
-    // display: none;
     z-index: 999;
     transition: all 1s ease-in-out;
   }
@@ -38,9 +35,6 @@
   .ViewOne {
     position: absolute;
     top: 0;
-
-    // height: 100%;
-    border: 1px solid magenta;
 
     .row {
       &.intro {
@@ -83,10 +77,6 @@
     }
   }
 
-  // .ViewTwo {
-  //   transition: opacity 1s ease-in-out;
-  // }
-
   .ViewThree {
     transition: opacity 1s ease-in-out;
   }
@@ -99,18 +89,15 @@
 
   &.transition-state-0 {
     .Guide {
-      left: 15.2%;
-      // top: 32%;
+      left: 158px;
       top: 270px;
     }
   }
 
   &.transition-state-1 {
     .Guide {
-      left: 30%;
-      // top: 63%;
+      left: 430px;
       top: 535px;
-      // transition: left 2s ease-in-out, bottom 2s ease-in-out;
     }
     .browseBy .BrowseByBtn.location {
       opacity: 0.3;
@@ -132,7 +119,6 @@
     }
 
     .ViewTwo {
-      // opacity: 0;
       .searchHeader,
       .wheel,
       .companyBreakdown,
@@ -142,10 +128,8 @@
 
       .ConditionDetails {
         .listPane,
-        // .popout,
         .ProjectHeader,
         .contentPane {
-          // transition: opacity 1s ease-in-out;
           opacity: 0;
         }
       }
@@ -154,8 +138,7 @@
 
   &.transition-state-2 {
     .Guide {
-      left: 42%;
-      // top: 83%;
+      left: 610px;
       top: 704px;
     }
     .browseBy {
@@ -179,7 +162,6 @@
     }
 
     .ViewTwo {
-      // opacity: 1;
       .searchHeader,
       .wheel,
       .companyBreakdown,
@@ -189,13 +171,11 @@
 
       .ConditionDetails {
         .listPane,
-        // .popout,
         .ProjectHeader {
           opacity: 0;
         }
 
         .contentPane {
-          // transition: opacity 1s ease-in-out;
           opacity: 1;
         }
       }
@@ -204,8 +184,7 @@
 
   &.transition-state-3 {
     .Guide {
-      left: 53%;
-      // top: 15%;
+      left: 800px;
       top: 122px;
     }
     .browseBy {
@@ -214,7 +193,6 @@
       }
     }
     .ViewTwo {
-      // opacity: 1;
       .searchHeader,
       .wheel,
       .companyBreakdown {
@@ -227,13 +205,11 @@
 
       .ConditionDetails {
         .listPane,
-        // .popout,
         .ProjectHeader {
           opacity: 0;
         }
 
         .contentPane {
-          // transition: opacity 1s ease-in-out;
           opacity: 0.3;
         }
       }
@@ -242,8 +218,7 @@
 
   &.transition-state-4 {
     .Guide {
-      left: 29%;
-      // top: 65%;
+      left: 450px;
       top: 553px;
     }
     .browseBy {
@@ -252,7 +227,6 @@
       }
     }
     .ViewTwo {
-      // opacity: 1;
       .searchHeader,
       .wheel,
       .companyBreakdown {
@@ -265,13 +239,11 @@
 
       .ConditionDetails {
         .listPane,
-        // .popout,
         .ProjectHeader {
           opacity: 1;
         }
 
         .contentPane {
-          // transition: opacity 1s ease-in-out;
           opacity: 0.3;
         }
       }
@@ -280,8 +252,7 @@
 
   &.transition-state-5 {
     .Guide {
-      left: 47.8%;
-      // top: -2%;
+      left: 670px;
       top: -16px;
     }
     .browseBy {
@@ -291,7 +262,6 @@
     }
 
     .ViewTwo {
-      // opacity: 1;
       .searchHeader,
       .wheel {
         opacity: 0;
@@ -317,8 +287,7 @@
 
   &.transition-state-6 {
     .Guide {
-      left: 2%;
-      // top: 60%;
+      left: 50px;
       top: 512px;
     }
     .browseBy {
@@ -331,7 +300,6 @@
     }
 
     .ViewTwo {
-      // opacity: 1;
       .searchHeader {
         opacity: 0;
       }
@@ -361,13 +329,12 @@
 
   &.transition-state-7 {
     .Guide {
-      // top: 2%;
-      top: 16px;
-      left: 58%;
+      left: 870px;
+      top: -4px;
+
     }
 
     .ViewTwo {
-      // opacity: 1;
       .searchHeader,
       .wheel,
       .companyBreakdown,
@@ -391,8 +358,8 @@
 
   &.transition-state-8 {
     .Guide {
-      top: 16px;
-      left: 58%;
+      left: 870px;
+      top: -4px;
 
       opacity: 0;
     }
