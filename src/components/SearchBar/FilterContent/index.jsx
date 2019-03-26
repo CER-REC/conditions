@@ -168,7 +168,7 @@ class FilterContent extends React.PureComponent {
 
   render() {
     return (
-      <div className="FilterContent">
+      <div className="FilterContent contentPane">
         <div {...handleInteraction(this.reset)} className="reset">
           <FormattedMessage id="components.searchBar.reset">
             { text => <span className="upperCase"> {text} </span> }

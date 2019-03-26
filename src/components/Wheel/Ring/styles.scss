@@ -1,7 +1,6 @@
 @import "../../../styles/colors.scss";
 
 .Ring{
-  width: 100%;
   .RingBackground {
     &.location{
       fill: $InnerColourLocation2;
@@ -18,7 +17,7 @@
     &.company line{
       stroke: $InnerColourCompany1;
     }
-    stroke-width: 18px;
+    stroke-width: 2%;
   }
 
   .RingOutline {

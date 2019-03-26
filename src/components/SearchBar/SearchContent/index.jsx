@@ -233,7 +233,7 @@ class SearchContent extends React.PureComponent {
 
   render() {
     return (
-      <div className="SearchContent">
+      <div className="SearchContent contentPane">
         <div
           {...handleInteraction(this.reset)}
           className={classNames('reset', { shifted: !this.props.isExclude })}
