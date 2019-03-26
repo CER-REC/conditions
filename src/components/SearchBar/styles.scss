@@ -11,26 +11,14 @@
   z-index: 999;
 
   .SelectionTab {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 960px;
+    width: 100%;
     display: block;
     text-align: left;
-    .Tab {
-      display: inline-block;
-    }
-    .rect {
-      display: inline-block;
-      vertical-align: bottom;
-      border-bottom: 1px solid $LightGray;
-      &.horzDivider {
-        width: 20px;
-      }
-      &.horzLine {
-        width: 256px;
-      }
-    }
   }
+
   .SuggestionPrompt {
     position: absolute;
     top: -6px;
@@ -39,5 +27,13 @@
       top: 85px;
       left: 390px;
     }
+  }
+
+  .contentPane {
+    margin-top: -1px;
+    width: 425px;
+
+    border: 1px solid $LightGray;
+    background-color: white;
   }
 }

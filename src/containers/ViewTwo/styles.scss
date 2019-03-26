@@ -9,7 +9,7 @@
     conditions: 58,
   )) {
     /* To ensure the layoutOnly mode appears properly */
-    .searchHeader { min-height: 100px; }
+    .header { min-height: 100px; }
     .wheel { min-height: 200px; }
     .conditions { min-height: 100px; }
 
@@ -21,6 +21,17 @@
     section.companyBreakdown {
       overflow: visible;
       margin-bottom: 0;
+    }
+
+    .header {
+      .SearchBar.small {
+        width: 200px;
+      }
+
+      .LocationWheelMinimap {
+        position: absolute;
+        left: 225px;
+      }
     }
   }
 }
