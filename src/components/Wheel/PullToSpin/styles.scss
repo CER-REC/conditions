@@ -44,11 +44,9 @@
   .PullSpinSvgShadow{
     opacity:0.6;
     mix-blend-mode: screen;
-    transform: translate(311.5px, -4.5px);
   }
 
   .PullSpinRect{
-    transform:translate(159.71px, 300.23px) rotate(-60.92deg);
     stroke: $Outline;
     stroke-miterlimit:10;
   }

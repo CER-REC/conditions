@@ -2,13 +2,9 @@
 @import "../../../styles/colors.scss";
 
 .SearchContent {
-  width: 425px;
   display: inline-block;
   vertical-align: top;
-  border-top: none;
-  border-right: 1px solid $LightGray;
-  border-bottom: 1px solid $LightGray;
-  border-left: 1px solid $LightGray;
+
   text-align: left;
   padding: 10px 10px 5px 10px;
   font-family: $fira-sans-condensed;
@@ -48,7 +44,6 @@
     padding: 0px 10px;
   }
   .input {
-    display: inline-block;
     float: right;
     .searchBar {
       width: 210px;

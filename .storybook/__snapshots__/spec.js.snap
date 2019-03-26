@@ -13024,10 +13024,10 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
             </g>
           </svg>
         </span>
+        <div
+          className="bottom"
+        />
       </div>
-      <div
-        className="rect horzDivider"
-      />
       <div
         className="Tab inactiveTab"
         focusable={true}
@@ -13055,10 +13055,10 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
             />
           </svg>
         </span>
+        <div
+          className="bottom"
+        />
       </div>
-      <div
-        className="rect horzLine"
-      />
     </div>
     <div
       className="HighlightSummary"
@@ -13095,7 +13095,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
     className="SearchBar"
   >
     <div
-      className="FilterContent"
+      className="FilterContent contentPane"
     >
       <div
         className="reset"
@@ -13485,7 +13485,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
     className="SearchBar"
   >
     <div
-      className="FilterContent"
+      className="FilterContent contentPane"
     >
       <div
         className="reset"
@@ -13875,7 +13875,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
     className="SearchBar"
   >
     <div
-      className="FilterContent"
+      className="FilterContent contentPane"
     >
       <div
         className="reset"
@@ -14308,7 +14308,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
     className="SearchBar"
   >
     <div
-      className="SearchContent"
+      className="SearchContent contentPane"
     >
       <div
         className="reset"
@@ -14985,6 +14985,9 @@ exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
           />
         </svg>
       </span>
+      <div
+        className="bottom active"
+      />
     </div>
   </div>
 </div>
@@ -15033,6 +15036,9 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
           </g>
         </svg>
       </span>
+      <div
+        className="bottom active"
+      />
     </div>
   </div>
 </div>

@@ -11,6 +11,7 @@ const LocationRay = (props) => {
     <g className="LocationRay">
       <BarContainer
         className="WheelBar"
+        transform="translate(31)"
         width={width}
         height={height}
         items={items}
