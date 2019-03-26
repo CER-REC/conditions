@@ -8,7 +8,7 @@ const { features } = require('./src/constants');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
 const sassUtils = SassUtilsConstructor(sass);
-// test is the same as development?
+
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
