@@ -25,6 +25,12 @@ export default class PhysicsVariant extends React.Component {
     this.loopID = null;
     this.lastTime = 0;
     this.lastDeltaTime = 0;
+
+    this.middleY = 0;
+    this.middleX = 0;
+    this.clickAdded = false;
+    this.showExplainer = false;
+    this.initialTime = 0;
   }
 
   componentDidMount() {
@@ -69,11 +75,13 @@ export default class PhysicsVariant extends React.Component {
     // Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.15, y: 0.005 });
 
     const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
+
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse,
-      constraint: { render: { visible: false } },
+      constraint: { render: { visible: true } },
     });
     this.mouse = mouse;
+    this.constraint = mouseConstraint;
 
     Matter.World.add(this.engine.world, mouseConstraint);
 
@@ -81,6 +89,7 @@ export default class PhysicsVariant extends React.Component {
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
     Matter.Runner.run(Matter.Runner.create(), this.engine);
+    this.initialTime = window.performance.now();
     this.loop(window.performance.now());
   }
 
@@ -94,8 +103,10 @@ export default class PhysicsVariant extends React.Component {
   }
 
   onUpdate = (update) => {
+    const now = window.performance.now();
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       // Stop the body from moving if its reached a minimum movement
+      if (!this.showExplainer) Matter.Sleeping.set(body, false);
       const newVelocity = { ...body.velocity };
       if (Math.abs(body.position.x - body.positionPrev.x) < 0.01) { newVelocity.x = 0; }
       if (Math.abs(body.position.y - body.positionPrev.y) < 0.01) { newVelocity.y = 0; }
@@ -107,8 +118,32 @@ export default class PhysicsVariant extends React.Component {
         Matter.Body.setAngularVelocity(0);
       }
 
+
       // Check if the body is still moving
       const bodyChanged = !!(body.speed || body.angularSpeed);
+
+      if (body === this.circle && bodyChanged && this.showExplainer === true) {
+        // this.showExplainer = false;
+        // Matter.Events.off(this.constraint, 'mousedown');
+        // this.clickAdded = false;
+      }
+
+      // && Math.abs(this.initialTime - now) > 5000   && !bodyChanged
+      if (!this.showExplainer && body === this.circle) {
+        this.initialTime = now;
+        Matter.Events.on(this.constraint, 'startdrag', () => {
+          this.middleY = Math.abs(
+            this.groupRef.current.parentElement.height.baseVal.value / 2
+          );
+          this.middleX = Math.abs(
+            this.groupRef.current.parentElement.width.baseVal.value / 2
+          );
+         // Matter.Body.setStatic(this.circle, 1);
+         // if (this.circle.circleRadius <= 50) Matter.Body.scale(this.circle, 5, 5);
+         // Matter.Body.setPosition(this.circle, { x: this.middleX, y: this.middleY });
+        });
+        this.clickAdded = true;
+      }
 
       // If the circle has stopped moving, increase its friction
       if (body.collisionFilter.category === circleCategory && !bodyChanged) {
@@ -127,7 +162,7 @@ export default class PhysicsVariant extends React.Component {
 
       // Check if any keywords that have been displaced can move back
       if (body.collisionFilter.category === visibleTextCategory
-          && body.render.lastCollision + 5000 <= update.source.timing.timestamp) {
+          && body.render.lastCollision + 5000 <= update.source.timing.timestamp && !this.showExplainer) {
         // eslint-disable-next-line object-curly-newline
         const { x, y, width, height } = body.render.originalData.outline;
         const originalBounds = {
@@ -139,6 +174,7 @@ export default class PhysicsVariant extends React.Component {
           body.collisionFilter.mask &= ~visibleTextCategory;
         }
       } else if (body.collisionFilter.category === resettingCategory) {
+        // use these functions ot calc the way to the middle
         const targetPos = this.calculatePosition(body.render.originalData);
         newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x);
         newVelocity.y = this.calculateVelocity(body.position.y, targetPos.y);
@@ -226,6 +262,9 @@ export default class PhysicsVariant extends React.Component {
       if (body === this.circle) {
         return <path key="guide" className="guide" d={d} />;
       }
+     // console.log(body)
+      const test = bodies.filter(b => this.isWordVisible(b) );
+      if (test.render) console.log(test.render.originalData);
       return (
         <g
           key={body.id}
