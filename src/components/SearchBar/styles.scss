@@ -22,22 +22,23 @@
     .rect {
       display: inline-block;
       vertical-align: bottom;
-      border-bottom: 1px solid $LightGray;
+      border-top: 1px solid $LightGray;
       &.horzDivider {
-        width: 20px;
+        height: 1px;
+        width: 21px;
       }
       &.horzLine {
-        width: 256px;
+        width: 262px;
       }
     }
   }
   .SuggestionPrompt {
     position: absolute;
-    top: -6px;
-    left: 390px;
+    top: -2px;
+    left: 392px;
     &.excludePrompt {
       top: 85px;
-      left: 390px;
+      left: 391px;
     }
   }
 }

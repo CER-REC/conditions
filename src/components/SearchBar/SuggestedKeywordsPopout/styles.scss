@@ -3,9 +3,9 @@
 
 .SuggestedKeywordsPopout {
   position: absolute;
-
+  top: 26px;
   width: 500px;
-  margin-left: auto;
+  margin-left: 2px;
   margin-right: auto;
   display: inline-block;
   border: 1px solid $LightGray;
@@ -39,6 +39,7 @@
 
   ul {
     padding: 10px 0px 10px 0px;
+    width: 100%;
     margin: 0px;
   }
   .viewText {
