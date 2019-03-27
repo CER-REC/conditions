@@ -1,7 +1,11 @@
 .App {
 
   $faded: 0.3;
+
   $defaultTransition: 1s ease-in-out;
+  $fastEnd: 1s cubic-bezier(1, 0, 1, 0);
+  $fastStart: 1s cubic-bezier(0, 1, 0, 1);
+
 
   .Guide {
     z-index: 999;
@@ -86,14 +90,105 @@
 
   .Footer {
     transition: opacity $defaultTransition;
-    position: absolute;
-    top: 88%;
+    // position: absolute;
+    // top: 88%;
   }
 
-  &.transition-state-0 {
+  // Snapping back from View 2 to View 1, using different curves to make it look decent
+  &.transition-state-9 {
+    .Guide {
+      transition: none;
+      transition: opacity $fastEnd;
+    }
+
+    .browseBy {
+      .SkipIntro {
+        transition:
+          opacity $fastEnd,
+          color $fastEnd,
+          background-color $fastEnd,
+          margin-right $fastEnd;
+
+        &::after {
+          transition: border-color $fastEnd;
+        }
+      }
+
+      .BrowseByBtn.location {
+        transition: opacity $fastEnd;
+      }
+    }
+
+    .ViewOne {
+      .row {
+        &.intro {
+          transition: top $fastEnd;
+        }
+        &.explorer {
+          transition: top $fastEnd;
+        }
+        &.buttons {
+
+          .ShortcutInfoBar {
+            transition: opacity $fastEnd;
+          }
+        }
+      }
+    }
+
+    .ViewTwo {
+      .header,
+      .wheel,
+      .companyBreakdown,
+      .menus {
+        transition: opacity $fastStart;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .popout,
+        .ProjectHeader,
+        .contentPane {
+          transition: opacity $fastStart;
+        }
+      }
+    }
+
+    .ViewThree {
+      transition: opacity $fastStart;
+    }
+
+    .Footer {
+      transition: opacity $fastStart;
+    }
+  }
+
+  &.transition-state-0,
+  &.transition-state-9 {
     .Guide {
       left: 13%;
       top: 270px;
+    }
+
+    .ViewTwo {
+      .header,
+      .wheel,
+      .companyBreakdown,
+      .menus {
+        opacity: 0;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .ProjectHeader,
+        .contentPane {
+          opacity: 0;
+        }
+      }
+    }
+
+    .Footer {
+      opacity: 0;
     }
   }
 
@@ -136,6 +231,10 @@
           opacity: 0;
         }
       }
+    }
+
+    .Footer {
+      opacity: 0;
     }
   }
 
@@ -183,6 +282,10 @@
         }
       }
     }
+
+    .Footer {
+      opacity: 0;
+    }
   }
 
   &.transition-state-3 {
@@ -193,6 +296,20 @@
     .browseBy {
       .BrowseByBtn.location {
         opacity: 0;
+      }
+    }
+    .ViewOne {
+      .row {
+        &.intro,
+        &.explorer {
+          top: -100%;
+        }
+
+        &.buttons {
+          .ShortcutInfoBar {
+            opacity: 0;
+          }
+        }
       }
     }
     .ViewTwo {
@@ -217,6 +334,10 @@
         }
       }
     }
+
+    .Footer {
+      opacity: 0;
+    }
   }
 
   &.transition-state-4 {
@@ -227,6 +348,20 @@
     .browseBy {
       .BrowseByBtn.location {
         opacity: 0;
+      }
+    }
+    .ViewOne {
+      .row {
+        &.intro,
+        &.explorer {
+          top: -100%;
+        }
+
+        &.buttons {
+          .ShortcutInfoBar {
+            opacity: 0;
+          }
+        }
       }
     }
     .ViewTwo {
@@ -251,6 +386,10 @@
         }
       }
     }
+
+    .Footer {
+      opacity: 0;
+    }
   }
 
   &.transition-state-5 {
@@ -263,7 +402,20 @@
         opacity: 0;
       }
     }
+    .ViewOne {
+      .row {
+        &.intro,
+        &.explorer {
+          top: -100%;
+        }
 
+        &.buttons {
+          .ShortcutInfoBar {
+            opacity: 0;
+          }
+        }
+      }
+    }
     .ViewTwo {
       .header,
       .wheel {
@@ -286,6 +438,10 @@
         }
       }
     }
+
+    .Footer {
+      opacity: 0;
+    }
   }
 
   &.transition-state-6 {
@@ -301,7 +457,20 @@
         opacity: 0;
       }
     }
+    .ViewOne {
+      .row {
+        &.intro,
+        &.explorer {
+          top: -100%;
+        }
 
+        &.buttons {
+          .ShortcutInfoBar {
+            opacity: 0;
+          }
+        }
+      }
+    }
     .ViewTwo {
       .header {
         opacity: 0;
@@ -336,7 +505,20 @@
       top: -4px;
 
     }
+    .ViewOne {
+      .row {
+        &.intro,
+        &.explorer {
+          top: -100%;
+        }
 
+        &.buttons {
+          .ShortcutInfoBar {
+            opacity: 0;
+          }
+        }
+      }
+    }
     .ViewTwo {
       .header,
       .wheel,
@@ -365,6 +547,20 @@
       top: -4px;
 
       opacity: 0;
+    }
+    .ViewOne {
+      .row {
+        &.intro,
+        &.explorer {
+          top: -100%;
+        }
+
+        &.buttons {
+          .ShortcutInfoBar {
+            opacity: 0;
+          }
+        }
+      }
     }
   }
 }

@@ -59,15 +59,16 @@ class App extends React.PureComponent {
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
         <Provider store={store}>
-          {(transitionState <= 8)
+          {(true || transitionState <= 8)
             ? <Guide />
             : null
           }
-          {(transitionState < 3)
+          {/* {(transitionState < 3) */}
+          {(true || transitionState <= 8)
             ? <ViewOne />
             : null
           }
-          {(transitionState <= 6)
+          {(true || transitionState <= 6)
             ? (
               <section className="browseBy">
                 <SkipIntro className={(transitionState < 2) ? 'showArrow' : ''} />
@@ -79,13 +80,13 @@ class App extends React.PureComponent {
           }
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
-          {(transitionState >= 1)
+          {(true || transitionState <= 8)
             ? <ViewTwo {...viewProps} />
             : null
           }
           {/* TODO: Add appropriate transition checks for View 3 */}
           {false ? <ViewThree {...viewProps} /> : null}
-          {(transitionState >= 6)
+          {(true || transitionState >= 6)
             ? (
               <Footer
                 setMainInfoBarPane={this.setMainInfoBarPane}
