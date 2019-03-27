@@ -30,4 +30,21 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       wheelType="location"
       itemsData={locationData}
     />
+  ))
+  .add('spin on entry', () => (
+    <Wheel
+      {...getInteractionProps()}
+      wheelType="company"
+      itemsData={companyData}
+      selectedRay={companyData.items[30]._id}  
+    />
+  ))
+  .add('no spin with selection', () => (
+    <Wheel
+      {...getInteractionProps()}
+      wheelType="company"
+      itemsData={companyData}
+      selectedRay={companyData.items[30]._id}  
+      unanimatedSpin
+      />
   ));

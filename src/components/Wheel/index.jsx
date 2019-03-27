@@ -23,10 +23,12 @@ class Wheel extends React.Component {
     }).isRequired,
     selectedRay: PropTypes.string,
     selectRay: PropTypes.func.isRequired,
+    unanimatedSpin: PropTypes.bool,
   };
 
   static defaultProps = {
     selectedRay: null,
+    unanimatedSpin: false,
   };
 
   constructor(props) {
@@ -49,7 +51,7 @@ class Wheel extends React.Component {
     // eslint-disable-next-line prefer-destructuring
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
     // eslint-disable-next-line prefer-destructuring
-    let newRotation = prevState.newRotation;
+    let { newRotation } = prevState || -(Math.sign(selectedIndex) * degreesPerItem);
     // console.log(`prevNewRotation: ${prevState.newRotation}`);
     if (prevState.needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
@@ -69,6 +71,7 @@ class Wheel extends React.Component {
       oldRotation: prevState.newRotation || 0,
       newRotation,
       needsSpin: false,
+      unanimatedSpin: props.unanimatedSpin || prevState.unanimatedSpin,
     };
   }
 
@@ -80,7 +83,7 @@ class Wheel extends React.Component {
   };
 
   onChange = (index) => {
-    this.setState({ unanimatedSpin: false });
+    this.setState({ unanimatedSpin: true });
     const { length } = this.props.itemsData.items;
     // TODO: check on resizing of letters on wheel list according to wheel size
     const newIndex = (2 * length - index)
