@@ -3,8 +3,8 @@
   $faded: 0.3;
 
   $defaultTransition: 1s ease-in-out;
-  $fastEnd: 1s cubic-bezier(1, 0, 1, 0);
-  $fastStart: 1s cubic-bezier(0, 1, 0, 1);
+  $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
+  $fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
 
 
   .Guide {
