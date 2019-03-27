@@ -30,6 +30,7 @@
   ],
   "license": "Open Government License - Canada",
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.12",
     "@fortawesome/free-brands-svg-icons": "^5.6.3",
     "@fortawesome/free-solid-svg-icons": "^5.6.3",
@@ -64,7 +65,7 @@
     "@babel/node": "7.2.2",
     "@babel/plugin-proposal-class-properties": "7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "7.3.4",
-    "@babel/polyfill": "7.2.5",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "7.3.4",
     "@babel/preset-react": "7.0.0",
     "@storybook/addon-a11y": "5.0.5",

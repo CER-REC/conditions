@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent } from '../../../.storybook/utils';
@@ -36,7 +37,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       {...getInteractionProps()}
       wheelType="company"
       itemsData={companyData}
-      selectedRay={companyData.items[30]._id}  
+      selectedRay={companyData.items[30]._id}
     />
   ))
   .add('no spin with selection', () => (
@@ -44,7 +45,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       {...getInteractionProps()}
       wheelType="company"
       itemsData={companyData}
-      selectedRay={companyData.items[30]._id}  
+      selectedRay={companyData.items[30]._id}
       unanimatedSpin
-      />
+    />
   ));
