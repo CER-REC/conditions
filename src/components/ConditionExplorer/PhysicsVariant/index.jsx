@@ -14,7 +14,7 @@ import {
 // Found at https://gist.github.com/gre/1650294
 const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
 
-export default class PhysicsVariant extends React.Component {
+export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
   };
@@ -31,6 +31,9 @@ export default class PhysicsVariant extends React.Component {
     this.circleMoving = false;
     this.circleExpanded = false;
     this.initialTime = 0;
+    this.keywordsCanReset = true;
+
+    this.state = { renderToggle: false };
   }
 
   componentDidMount() {
@@ -41,6 +44,7 @@ export default class PhysicsVariant extends React.Component {
     this.circle = Matter.Bodies.circle(200, 200, 50, {
       collisionFilter: { category: circleCategory },
     });
+    this.circle.frictionAir = 0.2;
 
     this.keywords = {};
     this.props.keywords.forEach((keyword) => {
@@ -109,56 +113,34 @@ export default class PhysicsVariant extends React.Component {
     if (newVelocity.x !== body.velocity.x || newVelocity.y !== body.velocity.y) {
       Matter.Body.setVelocity(body, newVelocity);
     }
+    if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
+      Matter.Body.setAngularVelocity(0);
+    }
   }
 
   getCenterCoordinates = () => ({
     x: this.groupRef.current.parentElement.width.baseVal.value / 2,
-    y: this.groupRef.current.parentElement.width.baseVal.value / 2,
+    y: this.groupRef.current.parentElement.height.baseVal.value / 2,
   });
 
   onUpdate = (update) => {
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       // Stopping velocity
-      //this.stopBodyWithLowVelocity(body);
-
-      if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
-        Matter.Body.setAngularVelocity(0);
-      }
+      this.stopBodyWithLowVelocity(body);
       // end stopping velocity
       const bodyChanged = !!(body.speed || body.angularSpeed);
 
-      if (this.constraint.body && this.constraint.body === this.circle) {
-  
-        if (this.constraint.body.speed > 0) {
-          console.log('WOHOOO');
-          
-          // regular collision
-        } else if (this.constraint.body.speed === 0) {
-          console.log(this.constraint.body);
-          const { x, y } = this.getCenterCoordinates();
-          // prevent all currently visisble bodies from returning to background
-          if (body !== this.circle || body.collisionFilter.category === visibleTextCategory) {
-            Matter.Body.setStatic(body, true);
-          }
-        }
-      }
-      // If the circle has stopped moving, increase its friction
-      if (body.collisionFilter.category === circleCategory && !this.circleMoving) {
-        body.frictionAir = 0.2;
-      }
+      // If the body has stopped moving, remove its target position so that it
+      // doesn't automatically move back if bumped.
+      if (!bodyChanged) { body.render.targetPos = false; }
 
       if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
         body.collisionFilter.category = placeholderCategory;
-        const targetPos = this.calculatePosition(body.render.originalData);
-        // Ensure everything is in the correct position
-        Matter.Body.setVelocity(body, { x: 0, y: 0 });
-        Matter.Body.setPosition(body, targetPos);
-        Matter.Body.setAngularVelocity(body, 0);
-        Matter.Body.setAngle(body, 0);
       }
 
       if (body.collisionFilter.category === visibleTextCategory
-        && body.render.lastCollision + 5000 <= update.source.timing.timestamp) {
+        && body.render.lastCollision + 5000 <= update.source.timing.timestamp
+        && this.keywordsCanReset) {
       // eslint-disable-next-line object-curly-newline
         const { x, y, width, height } = body.render.originalData.outline;
         const originalBounds = {
@@ -170,9 +152,14 @@ export default class PhysicsVariant extends React.Component {
           body.collisionFilter.mask &= ~visibleTextCategory;
         }
       } else if (body.collisionFilter.category === resettingCategory) {
+        body.render.targetPos = this.calculatePosition(body.render.originalData);
+      }
+
+      // If the body has a target position, begin moving it to that spot
+      if (body.render.targetPos) {
         // use these functions ot calc the way to the middle
         const newVelocity = { ...body.velocity };
-        const targetPos = this.calculatePosition(body.render.originalData);
+        const { targetPos } = body.render;
         newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x);
         newVelocity.y = this.calculateVelocity(body.position.y, targetPos.y);
         Matter.Body.setVelocity(body, newVelocity);
@@ -209,7 +196,7 @@ export default class PhysicsVariant extends React.Component {
     this.lastTime = currTime;
     this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
-    this.forceUpdate();
+    this.setState(state => ({ renderToggle: !state.renderToggle }));
   }
 
   calculatePosition = (keyword) => {
@@ -247,6 +234,17 @@ export default class PhysicsVariant extends React.Component {
     return bodies;
   }
 
+  onGuideClick = () => {
+    // If the circle is moving, don't do anything
+    console.log(this.circle.speed);
+    if (this.circle.speed) { return; }
+    this.circle.render.targetPos = this.getCenterCoordinates();
+    this.keywordsCanReset = false;
+    Matter.Composite.allBodies(this.engine.world).forEach((body) => {
+      body.collisionFilter.mask &= ~circleCategory;
+    });
+  }
+
   // TODO: optimize the nested map functions
   getWords = () => {
     if (!this.engine || !this.engine.world) { return null; }
@@ -257,11 +255,11 @@ export default class PhysicsVariant extends React.Component {
         .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
         .join(' ');
       if (body === this.circle) {
-        return <path key="guide" className="guide" d={d} />;
+        return <path key="guide" className="guide" d={d} onClick={this.onGuideClick} />;
       }
      // console.log(body)
       const test = bodies.filter(b => this.isWordVisible(b) );
-      if (test.render) console.log(test.render.originalData);
+      //if (test.render) console.log(test.render.originalData);
       return (
         <g
           key={body.id}
