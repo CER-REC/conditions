@@ -1,8 +1,11 @@
 .App {
 
+  $faded: 0.3;
+  $defaultTransition: 1s ease-in-out;
+
   .Guide {
     z-index: 999;
-    transition: all 1s ease-in-out;
+    transition: all $defaultTransition;
   }
 
   .browseBy {
@@ -14,20 +17,20 @@
 
     .SkipIntro {
       transition:
-        opacity 1s ease-in-out,
-        color 1s ease-in-out,
-        background-color 1s ease-in-out,
-        margin-right 1s ease-in-out;
+        opacity $defaultTransition,
+        color $defaultTransition,
+        background-color $defaultTransition,
+        margin-right $defaultTransition;
 
       opacity: 1;
 
       &::after {
-        transition: border-color 1s ease-in-out;
+        transition: border-color $defaultTransition;
       }
     }
 
     .BrowseByBtn.location {
-      transition: opacity 1s ease-in-out;
+      transition: opacity $defaultTransition;
       opacity: 1
     }
   }
@@ -40,19 +43,19 @@
       &.intro {
         position: relative;
         top: 0px;
-        transition: top 1s ease-in-out;
+        transition: top $defaultTransition;
       }
       &.explorer {
         position: relative;
         top: 0px;
-        transition: top 1s ease-in-out;
+        transition: top $defaultTransition;
       }
       &.buttons {
         position: absolute;
         bottom: 0;
 
         .ShortcutInfoBar {
-          transition: opacity 1s ease-in-out;
+          transition: opacity $defaultTransition;
           opacity: 1;
         }
       }
@@ -64,7 +67,7 @@
     .wheel,
     .companyBreakdown,
     .menus {
-      transition: opacity 1s ease-in-out;
+      transition: opacity $defaultTransition;
     }
 
     .ConditionDetails {
@@ -72,17 +75,17 @@
       .popout,
       .ProjectHeader,
       .contentPane {
-        transition: opacity 1s ease-in-out;
+        transition: opacity $defaultTransition;
       }
     }
   }
 
   .ViewThree {
-    transition: opacity 1s ease-in-out;
+    transition: opacity $defaultTransition;
   }
 
   .Footer {
-    transition: opacity 1s ease-in-out;
+    transition: opacity $defaultTransition;
     position: absolute;
     top: 88%;
   }
@@ -100,7 +103,7 @@
       top: 535px;
     }
     .browseBy .BrowseByBtn.location {
-      opacity: 0.3;
+      opacity: $faded;
     }
     .ViewOne {
        .row {
@@ -112,7 +115,7 @@
         }
         &.buttons {
           .ShortcutInfoBar {
-            opacity: 0.3;
+            opacity: $faded;
           }
         }
       }
@@ -210,7 +213,7 @@
         }
 
         .contentPane {
-          opacity: 0.3;
+          opacity: $faded;
         }
       }
     }
@@ -234,7 +237,7 @@
       }
 
       .menus {
-        opacity: 0.3;
+        opacity: $faded;
       }
 
       .ConditionDetails {
@@ -244,7 +247,7 @@
         }
 
         .contentPane {
-          opacity: 0.3;
+          opacity: $faded;
         }
       }
     }
@@ -272,14 +275,14 @@
       }
 
       .menus {
-        opacity: 0.3;
+        opacity: $faded;
       }
 
       .ConditionDetails {
         .listPane,
         .ProjectHeader,
         .contentPane {
-          opacity: 0.3;
+          opacity: $faded;
         }
       }
     }
@@ -310,14 +313,14 @@
 
       .companyBreakdown,
       .menus {
-        opacity: 0.3;
+        opacity: $faded;
       }
 
       .ConditionDetails {
         .listPane,
         .ProjectHeader,
         .contentPane {
-          opacity: 0.3;
+          opacity: $faded;
         }
       }
     }
