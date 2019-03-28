@@ -55,20 +55,23 @@ class App extends React.PureComponent {
   render() {
     // TODO: Move this into the app's actual state
     // Using a prop to work with Storybook knobs
+    // eslint-disable-next-line react/prop-types
     const { transitionState } = this.props;
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
         <Provider store={store}>
           {/* TODO: Figure out proper transition states vs. renders */}
+          {/* eslint-disable-next-line no-constant-condition */}
           {(true || transitionState <= 9)
             ? <Guide textState={transitionState} />
             : null
           }
-          {/* {(transitionState < 3) */}
+          {/* eslint-disable-next-line no-constant-condition */}
           {(true || transitionState <= 8)
             ? <ViewOne />
             : null
           }
+          {/* eslint-disable-next-line no-constant-condition */}
           {(true || transitionState <= 6)
             ? (
               <section className="browseBy">
@@ -81,11 +84,13 @@ class App extends React.PureComponent {
           }
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
+          {/* eslint-disable-next-line no-constant-condition */}
           {(true || transitionState <= 8)
             ? <ViewTwo {...viewProps} />
             : null
           }
           {(transitionState >= 8) ? <ViewThree {...viewProps} /> : null}
+          {/* eslint-disable-next-line no-constant-condition */}
           {(false && transitionState >= 6)
             ? (
               <Footer
