@@ -7,7 +7,7 @@ $faded: 0.3;
 $states: (
   0: (
     ".Guide": (
-      left: 13%,
+      left: 18%,
       top: 270px,
     ),
     ".ViewTwo .header": (opacity: 0),
@@ -52,7 +52,7 @@ $states: (
   ),
   4: (
     ".Guide": (
-      left: 37%,
+      left: 35%,
       top: 553px,
     ),
     ".ViewTwo .menus": (opacity: $faded),
@@ -61,7 +61,7 @@ $states: (
   ),
   5: (
     ".Guide": (
-      left: 60%,
+      left: 57%,
       top: -16px,
     ),
     ".ViewTwo .ConditionDetails .listPane": (opacity: $faded),
@@ -70,8 +70,8 @@ $states: (
   ),
   6: (
     ".Guide": (
-      left: 4%,
-      top: 512px,
+      left: 3%,
+      top: 450px,
     ),
     ".browseBy .SkipIntro": (opacity: 0),
     ".browseBy .BrowseByBtn.location": (opacity: 0),

@@ -9,7 +9,9 @@
   $fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
   $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
 
-  width: 100%;
+  position: relative;
+
+  width: 83%;
   height: 100vh;
 
   .Guide {
