@@ -1,0 +1,120 @@
+$faded: 0.3;
+
+$states: (
+  0: (
+    ".Guide": (
+      left: 13%,
+      top: 270px,
+    ),
+    ".ViewTwo .header": (opacity: 0),
+    ".ViewTwo .wheel": (opacity: 0),
+    ".ViewTwo .companyBreakdown": (opacity: 0),
+    ".ViewTwo .menus": (opacity: 0),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: 0),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 0),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
+    ".Footer": (opacity: 0),
+  ),
+  9: (), // 9 and 0 are the same, so putting it here allows it to inherit the rules
+  1: (
+    ".Guide": (
+      left: 38%,
+      top: 535px,
+    ),
+    ".browseBy .BrowseByBtn.location": (opacity: $faded),
+    ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: $faded),
+    ".ViewOne .row.intro": (top: -50%),
+    ".ViewOne .row.explorer": (top: -50%),
+  ),
+  2: (
+    ".Guide": (
+      left: 50%,
+      top: 704px,
+    ),
+    ".browseBy .BrowseByBtn.location": (opacity: 0),
+    ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: 0),
+    ".ViewOne .row.intro": (top: -100%),
+    ".ViewOne .row.explorer": (top: -100%),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
+  ),
+  3: (
+    ".Guide": (
+      left: 66%,
+      top: 122px,
+    ),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: $faded),
+    ".ViewTwo .menus": (opacity: 1),
+  ),
+  4: (
+    ".Guide": (
+      left: 37%,
+      top: 553px,
+    ),
+    ".ViewTwo .menus": (opacity: $faded),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
+  ),
+  5: (
+    ".Guide": (
+      left: 60%,
+      top: -16px,
+    ),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: $faded),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: $faded),
+    ".ViewTwo .companyBreakdown": (opacity: 1),
+  ),
+  6: (
+    ".Guide": (
+      left: 4%,
+      top: 512px,
+    ),
+    ".browseBy .SkipIntro": (opacity: 0),
+    ".browseBy .BrowseByBtn.location": (opacity: 0),
+    ".ViewTwo .companyBreakdown": (opacity: $faded),
+    ".ViewTwo .wheel": (opacity: 1),
+  ),
+  7: (
+    ".Guide": (
+      left: 73%,
+      top: -4px,
+    ),
+    ".ViewTwo .header": (opacity: 1),
+    ".ViewTwo .wheel": (opacity: 1),
+    ".ViewTwo .companyBreakdown": (opacity: 1),
+    ".ViewTwo .menus": (opacity: 1),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
+    ".Footer": (opacity: 1),
+  ),
+  8: (
+    ".Guide": (opacity: 0),
+  ),
+);
+
+$combinedState: ();
+
+.App {
+  @each $stage, $rules in $states {
+    &.transition-state-#{$stage} {
+      @each $selector, $properties in $rules {
+        @if map_has_key($combinedState, $selector) == false {
+          $combinedState: map-merge($combinedState, ($selector: ())) !global;
+        }
+
+        $combinedState: map-merge(
+          $combinedState,
+          ($selector: map-merge(map-get($combinedState, $selector), $properties)),
+        ) !global;
+      }
+
+      @each $selector, $properties in $combinedState {
+        #{$selector} {
+          @each $property, $value in map-get($combinedState, $selector) {
+            #{$property}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
