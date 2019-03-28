@@ -148,6 +148,7 @@ class StreamGraph extends React.Component {
             controlYear: this.state.controlYear,
             projectData: filteredData,
           }}
+          allThemes={this.props.feature === 'theme'}
         >
           {this.streamLayers()}
         </StackGroupProps>

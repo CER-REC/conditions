@@ -4,9 +4,9 @@ import { VictoryStack } from 'victory';
 import StackGroup from '../StackGroup';
 import { allConditionsPerYear } from '../../../proptypes';
 
-const StackGroupProps = ({ groupProps, ...props }) => (
+const StackGroupProps = ({ groupProps, allThemes, ...props }) => (
   <VictoryStack
-    groupComponent={<StackGroup {...groupProps} stackProps={props} />}
+    groupComponent={<StackGroup {...groupProps} allThemes={allThemes} stackProps={props} />}
     {...props}
   />
 );
@@ -17,7 +17,11 @@ StackGroupProps.propTypes = {
     controlYear: PropTypes.number,
     projectData: allConditionsPerYear.isRequired,
   }).isRequired,
+  allThemes: PropTypes.bool,
+};
+
+StackGroupProps.defaultProps = {
+  allThemes: false,
 };
 
 export default StackGroupProps;
-
