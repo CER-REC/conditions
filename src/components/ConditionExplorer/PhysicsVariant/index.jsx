@@ -16,8 +16,7 @@ const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplu
 const conditionViewerOptions = {
   keywordReturnSpeed: 2,
   circleCenterSpeed: 40,
-  circleIncreaseScale: 1.12,
-  circleMaxRadius: 300,
+  circleIncreaseScale: 1.2,
 };
 
 export default class PhysicsVariant extends React.PureComponent {
@@ -40,6 +39,7 @@ export default class PhysicsVariant extends React.PureComponent {
     this.keywordsCanReset = true;
     this.scale = 1;
     this.state = { renderToggle: false };
+
   }
 
   componentDidMount() {
@@ -174,14 +174,20 @@ export default class PhysicsVariant extends React.PureComponent {
       if (body.render.targetPos) {
         const {
           circleIncreaseScale,
-          circleMaxRadius,
           keywordReturnSpeed,
           circleCenterSpeed,
         } = conditionViewerOptions;
         this.setBodyVelocity(body, keywordReturnSpeed);
-        if (body === this.circle && (this.circle.circleRadius * circleIncreaseScale) < circleMaxRadius) {
-          this.setBodyVelocity(body, circleCenterSpeed);
-          Matter.Body.scale(this.circle, circleIncreaseScale, circleIncreaseScale);
+
+        if (body === this.circle) {
+          const dimensions = this.getCenterCoordinates();
+          console.log(dimensions)
+          const maxRadius = Math.min(dimensions.x, dimensions.y);
+          console.log(maxRadius);
+          if ((this.circle.circleRadius * circleIncreaseScale) < maxRadius) {
+            this.setBodyVelocity(body, circleCenterSpeed);
+            Matter.Body.scale(this.circle, circleIncreaseScale, circleIncreaseScale);
+          }
         }
       }
     });
