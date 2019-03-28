@@ -25,6 +25,13 @@ storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
       scrollTarget={select('Scroll Target', defaultTargets, 'SECURITY')}
     />
   ))
+  .add('allThemes', () => (
+    <FeatureTypesDescription
+      feature="theme"
+      scrollTarget={select('Scroll Target', defaultTargets, 'SECURITY')}
+      allThemes
+    />
+  ))
   .add('instrument types', () => (
     <FeatureTypesDescription
       feature="instrument"

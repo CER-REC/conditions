@@ -54,6 +54,14 @@ class FeatureTypesDescription extends React.PureComponent {
         className="FeatureTypesDescription"
         ref={this.ref}
       >
+        {(this.props.allThemes)
+          ? (
+            <FormattedMessage id="components.featureTypesDescription.allThemes">
+              {text => <p>* {text}</p> }
+            </FormattedMessage>
+          )
+          : null
+        }
         {content}
       </div>
     );
@@ -65,10 +73,13 @@ FeatureTypesDescription.propTypes = {
   feature: PropTypes.string.isRequired,
   /** Heading that the container should scroll to (ex. "security") */
   scrollTarget: PropTypes.string,
+  /** Flag for displaying the "Conditions with multiple themes" message */
+  allThemes: PropTypes.bool,
 };
 
 FeatureTypesDescription.defaultProps = {
   scrollTarget: '',
+  allThemes: false,
 };
 
 export default FeatureTypesDescription;
