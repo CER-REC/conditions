@@ -61,7 +61,7 @@ class App extends React.PureComponent {
         <Provider store={store}>
           {/* TODO: Figure out proper transition states vs. renders */}
           {(true || transitionState <= 9)
-            ? <Guide />
+            ? <Guide textState={transitionState} />
             : null
           }
           {/* {(transitionState < 3) */}
