@@ -11,9 +11,10 @@
   z-index: 999;
 
   .SelectionTab {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 960px;
+    width: 100%;
     display: block;
     text-align: left;
     .Tab {
@@ -32,6 +33,7 @@
       }
     }
   }
+
   .SuggestionPrompt {
     position: absolute;
     top: -4px;
@@ -40,5 +42,13 @@
       top: 85px;
       left: 391px;
     }
+  }
+
+  .contentPane {
+    margin-top: -1px;
+    width: 425px;
+
+    border: 1px solid $LightGray;
+    background-color: white;
   }
 }

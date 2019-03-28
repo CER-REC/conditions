@@ -3,7 +3,8 @@
 
 .SuggestedKeywordsPopout {
   position: absolute;
-  top: 26px;
+  top: 27px;
+  left: 425px;
   width: 500px;
   margin-left: 2px;
   margin-right: auto;
@@ -11,8 +12,6 @@
   border: 1px solid $LightGray;
   padding: 10px;
   font-family: $fira-sans-condensed;
-
-  // z-index: 1001;
   background-color: white;
 
   .upperCase {

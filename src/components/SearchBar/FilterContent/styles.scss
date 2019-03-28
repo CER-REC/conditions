@@ -2,11 +2,6 @@
 @import "../../../styles/colors.scss";
 
 .FilterContent {
-  border-top: none;
-  border-right: 1px solid $LightGray;
-  border-bottom: 1px solid $LightGray;
-  border-left: 1px solid $LightGray;
-  width: 425px;
   height: 160px;
   font-family: $fira-sans-condensed;
   user-select: none;
@@ -95,4 +90,3 @@
     border-bottom-right-radius: 15px;
   }
 }
-

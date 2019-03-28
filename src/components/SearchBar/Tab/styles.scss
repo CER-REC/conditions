@@ -2,19 +2,23 @@
 @import "../../../styles/colors.scss";
 
 .Tab {
+  display: inline-block;
   margin-left: auto;
-  margin-right: auto;
-  display: inline;
+  margin-right: 20px;
+  width: max-content;
   padding: 5px;
   font-size: 11px;
   color: $Gray160;
-  border: 1px solid $LightGray;
+  border: 1px 1px 0 1px solid $LightGray;
   font-family: $fira-sans-condensed;
-  border-bottom: none;
   text-align: center;
+  border-bottom-color: white;
   &.inactiveTab {
     border-bottom: 1px solid $LightGray;
+    margin-top: 1px;
   }
+  // position: relative;
+
   .tabText{
     vertical-align: middle;
   }
@@ -42,4 +46,5 @@
       }
     }
   }
+
 }

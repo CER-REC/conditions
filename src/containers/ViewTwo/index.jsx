@@ -13,14 +13,20 @@ import {
   yearRangeType,
   featureTypes,
   conditionData,
+  project,
 } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
+import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
-import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
+import {
+  conditionCountsByYear,
+  conditionCountsByCommodity,
+  searchData,
+} from '../../mockData';
 import './styles.scss';
 
 const noop = () => {};
@@ -31,34 +37,6 @@ const legendItems = [
   { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
 ];
 
-const projectData = [
-  {
-    id: 1223,
-    name: '1. Section 21.(1) application',
-    graphData: [{ name: 'SECURITY', count: 5 }, { name: 'MANAGEMENT_SYSTEM', count: 0 }],
-  },
-  {
-    id: 1224,
-    name: '2. Section 21.(1) application',
-    graphData: [{ name: 'SECURITY', count: 10 }, { name: 'MANAGEMENT_SYSTEM', count: 19 }],
-  },
-  {
-    id: 1225,
-    name: '3. Section 21.(1) application',
-    graphData: [{ name: 'SECURITY', count: 4 }, { name: 'MANAGEMENT_SYSTEM', count: 29 }],
-  },
-  {
-    id: 1226,
-    name: '4. Section 21.(1) application',
-    graphData: [{ name: 'SECURITY', count: 6 }, { name: 'MANAGEMENT_SYSTEM', count: 22 }],
-  },
-  {
-    id: 1227,
-    name: '5. Section 21.(1) application',
-    graphData: [{ name: 'SECURITY', count: 5 }, { name: 'MANAGEMENT_SYSTEM', count: 0 }],
-  },
-];
-
 // SearchBar (Data)
 const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 const availableYearRange = { start: 1970, end: 1980 };
@@ -66,8 +44,9 @@ const availableYearRange = { start: 1970, end: 1980 };
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
     <section className="row">
-      <section className="searchHeader">
+      <section className="header">
         <SearchBar
+          className={(props.browseBy === 'location') ? 'small' : ''}
           suggestedKeywords={searchData}
           availableYearRange={availableYearRange}
           availableCategories={availableCategories}
@@ -82,6 +61,10 @@ const ViewTwo = props => (
           yearRange={props.projectYear}
           findAny={props.findAny}
         />
+        {(props.browseBy === 'location')
+          ? <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
+          : null
+        }
       </section>
     </section>
     <section className="row">
@@ -98,10 +81,10 @@ const ViewTwo = props => (
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
-          projectData={projectData}
-          selectedProjectID={1225}
-          onChange={noop}
-          selectedFeature="theme"
+          projectsData={props.projectsData.counts}
+          selectedProjectID={props.selected.project}
+          onChange={props.setSelectedProject}
+          selectedFeature={props.selected.feature}
         />
       </section>
       <section className="menus">
@@ -145,6 +128,7 @@ ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
   selected: PropTypes.shape({
+    project: PropTypes.number,
     feature: featureTypes.isRequired,
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
@@ -163,7 +147,7 @@ ViewTwo.propTypes = {
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
-
+  setSelectedProject: PropTypes.func.isRequired,
   conditionDetails: PropTypes.shape({
     isExpandable: PropTypes.bool,
     expanded: PropTypes.bool,
@@ -177,6 +161,9 @@ ViewTwo.propTypes = {
   setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
+  projectsData: PropTypes.shape({
+    counts: PropTypes.arrayOf(project).isRequired,
+  }).isRequired,
 };
 
 ViewTwo.defaultProps = {
@@ -206,6 +193,7 @@ export default connect(
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
+    setSelectedProject: selectedCreators.setSelectedProject,
     setFindAny: searchCreators.setFindAny,
     setIncluded: searchCreators.setIncluded,
     setExcluded: searchCreators.setExcluded,

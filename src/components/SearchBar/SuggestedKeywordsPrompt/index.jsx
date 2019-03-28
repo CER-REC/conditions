@@ -23,7 +23,7 @@ const SuggestedKeywordsPrompt = props => (
       width={15}
       height={15}
     >
-      <circle cx="50%" cy="50%" r="50%" />
+      <circle cx="7.5" cy="7.5" r="7.1" />
       <polyline points="6,4.5 9.5,7.5 6,10.5" />
     </svg>
   </div>

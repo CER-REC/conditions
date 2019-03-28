@@ -133,31 +133,19 @@ class Wheel extends React.Component {
         >
           {props => (
             <div className="MovingContainer">
-              <svg viewBox="0 0 860 860">
+              <svg width="100%" height="100%" viewBox="0 0 860 860">
                 <animated.g style={props}>
-                  <g data-name="Group 3">
-                    {/* following outer limit lines can be deleted once everything is rendered.
-                      It is an accurate representation of spacing */}
-                    <g className="OuterLimitCircle OutterCircles">
-                      <circle cx="50%" cy="50%" r="50%" />
-                    </g>
-                    {/* following inner limit lines can be deleted once everything is rendered.
-                    It is an accurate representation of spacing */}
-                    <g className="OutterCircles RayCircle">
-                      <circle className="cls-1" cx="50%" cy="50%" r="31%" />
-                    </g>
-                    <Ring ringType={this.props.wheelType} />
-                    <AnimatedWheelRay
-                      stopWheel={this.stopWheel}
-                      wheelType={this.props.wheelType}
-                      items={this.props.itemsData.items}
-                      degreesPerItem={this.state.degreesPerItem}
-                      reservedDegrees={reservedDegrees}
-                      currentIndex={this.getIndex(props.rotation)
-                        % this.props.itemsData.items.length}
-                      {...props}
-                    />
-                  </g>
+                  <Ring ringType={this.props.wheelType} />
+                  <AnimatedWheelRay
+                    stopWheel={this.stopWheel}
+                    wheelType={this.props.wheelType}
+                    items={this.props.itemsData.items}
+                    degreesPerItem={this.state.degreesPerItem}
+                    reservedDegrees={reservedDegrees}
+                    currentIndex={this.getIndex(props.rotation)
+                      % this.props.itemsData.items.length}
+                    {...props}
+                  />
                 </animated.g>
                 <g transform="scale(2)">
                   <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
