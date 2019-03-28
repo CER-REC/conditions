@@ -32,8 +32,9 @@ export default class PhysicsVariant extends React.PureComponent {
     this.circleExpanded = false;
     this.initialTime = 0;
     this.keywordsCanReset = true;
-
+    this.scale = 1;
     this.state = { renderToggle: false };
+    this.circleProperties = { speed: 2, scale: 1 };
   }
 
   componentDidMount() {
@@ -158,12 +159,21 @@ export default class PhysicsVariant extends React.PureComponent {
       // If the body has a target position, begin moving it to that spot
       if (body.render.targetPos) {
         // use these functions ot calc the way to the middle
+
         const newVelocity = { ...body.velocity };
         const { targetPos } = body.render;
         newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x);
         newVelocity.y = this.calculateVelocity(body.position.y, targetPos.y);
         Matter.Body.setVelocity(body, newVelocity);
         Matter.Body.setAngularVelocity(body, this.calculateVelocity(body.angle, 0));
+        const value = this.circle.circleRadius * this.circleProperties.scale;
+        if (body === this.circle && value < 170) {
+        //  console.log(Math.round(this.circle.circleRadius))
+          Matter.Body.scale(this.circle, this.circleProperties.scale, this.circleProperties.scale);
+       //   console.log(Math.round(this.circle.circleRadius))
+          this.circleProperties = { speed: 2, scale: 1 };
+        }
+
       }
     });
   };
@@ -219,7 +229,7 @@ export default class PhysicsVariant extends React.PureComponent {
     const distance = end - start;
     const distanceScale = Math.min(Math.abs(distance) / 100, 1);
     const direction = distance / Math.abs(distance);
-    return easeOutCubic(distanceScale) * direction * 2;
+    return easeOutCubic(distanceScale) * direction * this.circleProperties.speed;
   };
 
   isWordVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
@@ -235,14 +245,14 @@ export default class PhysicsVariant extends React.PureComponent {
   }
 
   onGuideClick = () => {
-    // If the circle is moving, don't do anything
-    console.log(this.circle.speed);
+    //this.circleProperties = { speed: 40, scale: 1.12 };
     if (this.circle.speed) { return; }
     this.circle.render.targetPos = this.getCenterCoordinates();
     this.keywordsCanReset = false;
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       body.collisionFilter.mask &= ~circleCategory;
     });
+
   }
 
   // TODO: optimize the nested map functions
@@ -257,9 +267,6 @@ export default class PhysicsVariant extends React.PureComponent {
       if (body === this.circle) {
         return <path key="guide" className="guide" d={d} onClick={this.onGuideClick} />;
       }
-     // console.log(body)
-      const test = bodies.filter(b => this.isWordVisible(b) );
-      //if (test.render) console.log(test.render.originalData);
       return (
         <g
           key={body.id}
