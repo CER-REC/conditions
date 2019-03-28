@@ -73,7 +73,7 @@ const ViewThree = props => (
       <section className="typesDescription">
         <FeatureTypesDescription
           feature={props.selected.feature}
-          allThemes={props.selected.subFeature === ''}
+          subFeature={props.selected.subFeature}
         />
       </section>
     </section>

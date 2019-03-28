@@ -4400,6 +4400,10 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
   <div
     className="FeatureTypesDescription"
   >
+    <p>
+      * 
+      Conditions with multiple themes are counted more than once.
+    </p>
     <h4
       data-heading="ADMINISTRATIVE"
     >
