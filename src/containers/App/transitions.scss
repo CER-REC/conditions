@@ -1,5 +1,9 @@
 $faded: 0.3;
 
+/**
+ *  Each state inherits the previous values, so we only have to declare the parts
+ *  that change at each step.
+ */
 $states: (
   0: (
     ".Guide": (
@@ -15,7 +19,8 @@ $states: (
     ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
     ".Footer": (opacity: 0),
   ),
-  9: (), // 9 and 0 are the same, so putting it here allows it to inherit the rules
+  // 9 resets from View 2 -> 1, just with different transitions
+  9: (),
   1: (
     ".Guide": (
       left: 38%,
@@ -88,7 +93,20 @@ $states: (
     ".Footer": (opacity: 1),
   ),
   8: (
-    ".Guide": (opacity: 0),
+    ".Guide": (
+      opacity: 0.3,
+      // top: -200px,
+    ),
+  ),
+  10: (
+    ".ViewTwo": (
+      opacity: 0,
+      left: -100%,
+    ),
+    ".ViewThree": (
+      opacity: 1,
+      left: 0,
+    ),
   ),
 );
 

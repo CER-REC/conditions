@@ -59,7 +59,8 @@ class App extends React.PureComponent {
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
         <Provider store={store}>
-          {(true || transitionState <= 8)
+          {/* TODO: Figure out proper transition states vs. renders */}
+          {(true || transitionState <= 9)
             ? <Guide />
             : null
           }
@@ -84,9 +85,8 @@ class App extends React.PureComponent {
             ? <ViewTwo {...viewProps} />
             : null
           }
-          {/* TODO: Add appropriate transition checks for View 3 */}
-          {false ? <ViewThree {...viewProps} /> : null}
-          {(true || transitionState >= 6)
+          {(transitionState >= 8) ? <ViewThree {...viewProps} /> : null}
+          {(false && transitionState >= 6)
             ? (
               <Footer
                 setMainInfoBarPane={this.setMainInfoBarPane}
