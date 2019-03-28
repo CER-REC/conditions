@@ -14,7 +14,9 @@ const ChartIndicator = (props) => {
     />
   );
   const label = !props.label ? null : (
-    <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">{props.label}</text>
+    <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">
+      {`${props.label}${(props.allThemes) ? '*' : ''}`}
+    </text>
   );
   return (
     <g className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
@@ -44,6 +46,7 @@ ChartIndicator.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+  allThemes: PropTypes.bool,
 };
 
 ChartIndicator.defaultProps = {
@@ -51,6 +54,7 @@ ChartIndicator.defaultProps = {
   label: '',
   x: 0,
   yBottom: 0,
+  allThemes: false,
 };
 
 export default ChartIndicator;

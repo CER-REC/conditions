@@ -1611,6 +1611,47 @@ exports[`Storyshots Components|BubbleChart/InstrumentBubble default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ChartIndicator allThemes 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height={300}
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width={300}
+  >
+    <g
+      className="ChartIndicator"
+      transform="translate(50, 30)"
+    >
+      <path
+        className="arrow"
+        d="M -5 -10 L 5 -10 L 0 0 z"
+      />
+      <line
+        className="line"
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={90}
+      />
+      <text
+        alignmentBaseline="bottom"
+        textAnchor="middle"
+        x="0"
+        y="-12"
+      >
+        Without circle*
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
 exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
 <div
   className="visualization"
