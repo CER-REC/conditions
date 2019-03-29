@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isValidElementType } from 'react-is';
-
 import dialogPolyfill from 'dialog-polyfill';
+import { componentType } from '../../proptypes';
+
 import 'dialog-polyfill/dialog-polyfill.css';
 
 // import ModalContent from './ModalContent';
@@ -39,7 +39,7 @@ class Modal extends React.PureComponent {
       height,
       width,
       isOpen,
-      content,
+      componentProps,
     } = this.props;
 
     if (!isOpen) { return null; }
@@ -51,8 +51,8 @@ class Modal extends React.PureComponent {
         onClose={this.dialogClosed}
         ref={this.registerDialog}
       >
-        <content.component
-          {...content.props}
+        <this.props.component
+          {...componentProps}
           isOpen={isOpen}
           closeModal={this.close}
         />
@@ -65,16 +65,8 @@ Modal.propTypes = {
   // "is a component" check borrowed from React Router:
   // https://github.com/ReactTraining/react-router/blob/6a99c9362d46f768d93bbf9b9bc657ca7ce683be/packages/react-router/modules/Route.js#L82
   /** A component type and its props, to be rendered in the window */
-  content: PropTypes.shape({
-    component: (props, propName) => (
-      props[propName]
-        && !isValidElementType(props[propName])
-        && new Error(
-          'Invalid prop \'content.component\' supplied to \'Modal\': the prop is not a valid React component',
-        )
-    ).isRequired,
-    props: PropTypes.shape({}),
-  }).isRequired,
+  component: componentType,
+  componentProps: PropTypes.shape({}),
   /** Height of modal window (percent or pixel) */
   height: PropTypes.string,
   /** Width of modal window (percent or pixel)  */
@@ -89,6 +81,7 @@ Modal.defaultProps = {
   isOpen: false,
   height: '100%',
   width: '100%',
+  componentProps: {},
 };
 
 export default Modal;
