@@ -140,7 +140,7 @@ nullableNumber.isRequired = (props, propName, componentName) => {
 };
 
 export const componentType = (props, propName, componentName) => {
-  if (props[propName] === null) { return null; }
+  if (props[propName] === undefined) { return null; }
   return componentType.isRequired(props, propName, componentName);
 };
 

@@ -65,7 +65,7 @@ Modal.propTypes = {
   // "is a component" check borrowed from React Router:
   // https://github.com/ReactTraining/react-router/blob/6a99c9362d46f768d93bbf9b9bc657ca7ce683be/packages/react-router/modules/Route.js#L82
   /** A component type and its props, to be rendered in the window */
-  component: componentType,
+  component: componentType.isRequired,
   componentProps: PropTypes.shape({}),
   /** Height of modal window (percent or pixel) */
   height: PropTypes.string,
