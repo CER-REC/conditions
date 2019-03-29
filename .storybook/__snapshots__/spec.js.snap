@@ -7861,6 +7861,29 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|Modal RegDocs Popup 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal"
+    onClose={[Function]}
+    style={
+      Object {
+        "height": "600px",
+        "width": "600px",
+      }
+    }
+  >
+    <div
+      className="RegDocs"
+    >
+      Hello!
+    </div>
+  </dialog>
+</div>
+`;
+
 exports[`Storyshots Components|ProjectMenu At left 1`] = `
 <div
   className="visualization"

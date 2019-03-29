@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dialogPolyfill from 'dialog-polyfill';
+import classNames from 'classnames';
 import { componentType } from '../../proptypes';
+
 
 import 'dialog-polyfill/dialog-polyfill.css';
 
@@ -46,7 +48,7 @@ class Modal extends React.PureComponent {
 
     return (
       <dialog
-        className="Modal"
+        className={classNames('Modal', this.props.className)}
         style={{ height, width }}
         onClose={this.dialogClosed}
         ref={this.registerDialog}
@@ -75,6 +77,7 @@ Modal.propTypes = {
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
   closeModal: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 Modal.defaultProps = {
@@ -82,6 +85,7 @@ Modal.defaultProps = {
   height: '100%',
   width: '100%',
   componentProps: {},
+  className: '',
 };
 
 export default Modal;

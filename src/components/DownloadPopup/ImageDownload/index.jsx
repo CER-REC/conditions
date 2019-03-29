@@ -2,24 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
-import './styles.scss';
 
-const Download = (props) => {
+import '../styles.scss';
+
+const ImageDownload = (props) => {
   const {
-    type,
-    content,
     modalAction,
     isOpen,
     closeModal,
   } = props;
 
-  if (!isOpen) { return null; }
+  // if (!isOpen) { return null; }
 
   return (
-    <div className="Download">
+    <div className="Download ImageDownload">
       <div className="header">
         <span className="title">
-          <FormattedMessage id={`components.modal.${type}.title`} />
+          <FormattedMessage id="components.modal.image.title" />
         </span>
         {/* Didn't use Icon because icon was not supported in our font-awesome library */}
         <svg
@@ -34,7 +33,7 @@ const Download = (props) => {
         </svg>
       </div>
       <div className="content">
-        {content}
+        this is the image download popup
       </div>
       <div className="footer">
         {!modalAction ? null : (
@@ -43,7 +42,7 @@ const Download = (props) => {
             type="button"
             {...handleInteraction(modalAction)}
           >
-            <FormattedMessage id={`components.modal.${type}.actionText`} />
+            <FormattedMessage id="components.modal.image.actionText" />
           </button>
         )}
       </div>
@@ -51,15 +50,7 @@ const Download = (props) => {
   );
 };
 
-Download.propTypes = {
-  /** The type of modal (used to look up text for language) */
-  type: PropTypes.string.isRequired,
-  /** The element to be rendered in the center of the modal */
-  content: PropTypes.node.isRequired,
-  /** Height of modal window (percent or pixel) */
-  height: PropTypes.string,
-  /** Width of modal window (percent or pixel)  */
-  width: PropTypes.string,
+ImageDownload.propTypes = {
   /** Determines if the modal is opened or closed */
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
@@ -68,11 +59,9 @@ Download.propTypes = {
   modalAction: PropTypes.func,
 };
 
-Download.defaultProps = {
+ImageDownload.defaultProps = {
   modalAction: null,
   isOpen: false,
-  height: '100%',
-  width: '100%',
 };
 
-export default Download;
+export default ImageDownload;

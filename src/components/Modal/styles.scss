@@ -1,10 +1,7 @@
 .Modal {
-  border: 1px solid #b4b4b4;
   background-color: #fff;
   padding: 40px;
   text-align: left;
-  box-shadow: 0 5px 40px rgba(0,0,0,0.1), 12px 30px 20px rgba(0,0,0,0.1);
-  z-index: 99;
   position: fixed;
   top: 50%;
   transform: translate(0, -50%);
