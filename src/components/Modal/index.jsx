@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from 'react-is';
+
 import dialogPolyfill from 'dialog-polyfill';
 import 'dialog-polyfill/dialog-polyfill.css';
 
-import ModalContent from './ModalContent';
+// import ModalContent from './ModalContent';
 
 import './styles.scss';
 
@@ -34,12 +36,10 @@ class Modal extends React.PureComponent {
 
   render() {
     const {
-      type,
-      content,
-      modalAction,
       height,
       width,
       isOpen,
+      content,
     } = this.props;
 
     if (!isOpen) { return null; }
@@ -51,10 +51,8 @@ class Modal extends React.PureComponent {
         onClose={this.dialogClosed}
         ref={this.registerDialog}
       >
-        <ModalContent
-          type={type}
-          content={content}
-          modalAction={modalAction}
+        <content.component
+          {...content.props}
           isOpen={isOpen}
           closeModal={this.close}
         />
@@ -64,10 +62,19 @@ class Modal extends React.PureComponent {
 }
 
 Modal.propTypes = {
-  /** The type of modal (used to look up text for language) */
-  type: PropTypes.string.isRequired,
-  /** The element to be rendered in the center of the modal */
-  content: PropTypes.node.isRequired,
+  // "is a component" check borrowed from React Router:
+  // https://github.com/ReactTraining/react-router/blob/6a99c9362d46f768d93bbf9b9bc657ca7ce683be/packages/react-router/modules/Route.js#L82
+  /** A component type and its props, to be rendered in the window */
+  content: PropTypes.shape({
+    component: (props, propName) => (
+      props[propName]
+        && !isValidElementType(props[propName])
+        && new Error(
+          'Invalid prop \'content.component\' supplied to \'Modal\': the prop is not a valid React component',
+        )
+    ).isRequired,
+    props: PropTypes.shape({}),
+  }).isRequired,
   /** Height of modal window (percent or pixel) */
   height: PropTypes.string,
   /** Width of modal window (percent or pixel)  */
@@ -76,12 +83,9 @@ Modal.propTypes = {
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
   closeModal: PropTypes.func.isRequired,
-  /** Adds a link to the footer of the Modal window that triggers this function */
-  modalAction: PropTypes.func,
 };
 
 Modal.defaultProps = {
-  modalAction: null,
   isOpen: false,
   height: '100%',
   width: '100%',

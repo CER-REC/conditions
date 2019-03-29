@@ -7714,7 +7714,7 @@ exports[`Storyshots Components|Modal Data Download 1`] = `
     }
   >
     <div
-      className="ModalContent"
+      className="Download"
     >
       <div
         className="header"
@@ -7756,12 +7756,25 @@ exports[`Storyshots Components|Modal Data Download 1`] = `
         className="content"
       >
         <div>
-          data here 
+          data here
         </div>
       </div>
       <div
         className="footer"
-      />
+      >
+        <button
+          className="textButton"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            components.modal.data.actionText
+          </span>
+        </button>
+      </div>
     </div>
   </dialog>
 </div>
@@ -7782,7 +7795,7 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
     }
   >
     <div
-      className="ModalContent"
+      className="Download"
     >
       <div
         className="header"
@@ -7824,7 +7837,7 @@ exports[`Storyshots Components|Modal Image Download 1`] = `
         className="content"
       >
         <div>
-           image here
+          image here
         </div>
       </div>
       <div

@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
 
-const ModalContent = (props) => {
+const Download = (props) => {
   const {
     type,
     content,
@@ -16,7 +16,7 @@ const ModalContent = (props) => {
   if (!isOpen) { return null; }
 
   return (
-    <div className="ModalContent">
+    <div className="Download">
       <div className="header">
         <span className="title">
           <FormattedMessage id={`components.modal.${type}.title`} />
@@ -51,7 +51,7 @@ const ModalContent = (props) => {
   );
 };
 
-ModalContent.propTypes = {
+Download.propTypes = {
   /** The type of modal (used to look up text for language) */
   type: PropTypes.string.isRequired,
   /** The element to be rendered in the center of the modal */
@@ -68,11 +68,11 @@ ModalContent.propTypes = {
   modalAction: PropTypes.func,
 };
 
-ModalContent.defaultProps = {
+Download.defaultProps = {
   modalAction: null,
   isOpen: false,
   height: '100%',
   width: '100%',
 };
 
-export default ModalContent;
+export default Download;

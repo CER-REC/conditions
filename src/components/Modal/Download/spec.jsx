@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ModalContent from '.';
+import Download from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 const noop = () => {};
@@ -11,7 +11,7 @@ describe('Components|Modal/ModalContent', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow((
-      <ModalContent
+      <Download
         type=""
         content={<div>Test Content</div>}
         isOpen
@@ -20,7 +20,7 @@ describe('Components|Modal/ModalContent', () => {
     ));
   });
 
-  shouldBehaveLikeAComponent(ModalContent, () => wrapper);
+  shouldBehaveLikeAComponent(Download, () => wrapper);
 
   test('should have a header', () => {
     expect(wrapper.find('.header').is('div')).toBe(true);
@@ -37,7 +37,7 @@ describe('Components|Modal/ModalContent', () => {
   test('should close dialog if close is clicked', () => {
     const spy = jest.fn();
     wrapper = shallow((
-      <ModalContent
+      <Download
         type=""
         content={<div>Test Content</div>}
         isOpen
@@ -50,7 +50,7 @@ describe('Components|Modal/ModalContent', () => {
 
   test('should have a textButton where there is a modal action', () => {
     wrapper = shallow((
-      <ModalContent
+      <Download
         type="image"
         content={<div>Test Content</div>}
         modalAction={noop}
@@ -63,7 +63,7 @@ describe('Components|Modal/ModalContent', () => {
 
   test('should not render anything if isOpen is false', () => {
     wrapper = shallow((
-      <ModalContent type="" content={<div>Test Content</div>} closeModal={noop} />
+      <Download type="" content={<div>Test Content</div>} closeModal={noop} />
     ));
     expect(wrapper.type()).toBeNull();
   });
