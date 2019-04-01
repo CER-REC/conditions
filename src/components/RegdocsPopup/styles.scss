@@ -11,6 +11,10 @@
     color: $Black51;
   }
 
+  h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
   p {
     margin-top: 0;
 
@@ -48,8 +52,24 @@
   }
 
   button {
+    display: inline-block;
+    cursor: pointer;
+  }
 
-    width: 112px;
+  a {
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
+  }
+
+  button,
+  a {
+    padding-left: 8px;
+    font-family: inherit;
+    font-size: 15px;
+
+    width: 108px;
     height: 48px;
 
     margin-right: 24px;
@@ -60,8 +80,9 @@
     border-radius: 8px;
 
     text-align: left;
-    font-size: 14px;
     background: none;
+
+    padding-right: 28px;
 
     position: relative;
 

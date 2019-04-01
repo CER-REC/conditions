@@ -47,57 +47,68 @@ const xIcon = (
   </svg>
 );
 
-const RegdocsPopup = (props) => {
-  const component = ({ closeModal }) => (
-    <React.Fragment>
-      <FormattedMessage
-        id={localeStr('searchFor')}
-        values={{
-          instrument: (<strong>#{props.instrument}</strong>),
-          regdocs: (<FormattedMessage id={localeStr('regdocs')} tagName="strong" />),
-        }}
-      >
-        {(...strings) => <p>{strings}</p>}
-      </FormattedMessage>
-      <p className="iconContainer">
-        {checkIcon}
-        <FormattedMessage id={localeStr('found')} />
-      </p>
-      <FormattedMessage id={localeStr('currentTab')} >
-        {text => (
-          <button type="button">
-            {text}
-            {plusIcon}
-          </button>
-        )}
-      </FormattedMessage>
-      <FormattedMessage id={localeStr('newTab')} >
-        {text => (
-          <button type="button">
-            {text}
-            {plusIcon}
-          </button>
-        )}
-      </FormattedMessage>
-      <FormattedMessage id={localeStr('cancel')} >
-        {text => (
-          <button type="button" onclick={closeModal}>
-            {text}
-            {xIcon}
-          </button>
-        )}
-      </FormattedMessage>
+const RegdocsComponent = ({ instrument, regdocsUrl, closeModal }) => (
+  <React.Fragment>
+    <FormattedMessage
+      id={localeStr('searchFor')}
+      values={{
+        instrument: (<strong>#{instrument}</strong>),
+        regdocs: (<FormattedMessage id={localeStr('regdocs')} tagName="strong" />),
+      }}
+    >
+      {(...strings) => <h3>{strings}</h3>}
+    </FormattedMessage>
+    <p className="iconContainer">
+      {checkIcon}
+      <FormattedMessage id={localeStr('found')} />
+    </p>
+    <FormattedMessage id={localeStr('currentTab')}>
+      {text => (
+        <a className="button" href={regdocsUrl}>
+          {<div>{text}</div>}
+          {plusIcon}
+        </a>
+      )}
+    </FormattedMessage>
+    <FormattedMessage id={localeStr('newTab')}>
+      {text => (
+        <a className="button" href={regdocsUrl} target="_blank" rel="noopener noreferrer">
+          {<div>{text}</div>}
+          {plusIcon}
+        </a>
+      )}
+    </FormattedMessage>
+    <FormattedMessage id={localeStr('cancel')}>
+      {text => (
+        <button type="button" onClick={closeModal}>
+          {text}
+          {xIcon}
+        </button>
+      )}
+    </FormattedMessage>
 
-      <FormattedMessage id={localeStr('whatIsHeading')} tagName="h4" />
-      <FormattedMessage id={localeStr('whatIsText')} tagName="p" />
-    </React.Fragment>
-  );
+    <FormattedMessage id={localeStr('whatIsHeading')} tagName="h4" />
+    <FormattedMessage id={localeStr('whatIsText')} tagName="p" />
+  </React.Fragment>
+);
+
+RegdocsComponent.propTypes = {
+  instrument: PropTypes.string.isRequired,
+  regdocsUrl: PropTypes.string.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};
+
+const RegdocsPopup = ({ instrument, regdocsUrl, isOpen, closeModal }) => {
 
   return (
     <Modal
-      component={component}
-      isOpen={props.isOpen}
-      closeModal={props.closeModal}
+      component={RegdocsComponent}
+      componentProps={{
+        instrument,
+        regdocsUrl,
+      }}
+      isOpen={isOpen}
+      closeModal={closeModal}
       className="RegdocsPopup"
     />
   );
@@ -106,15 +117,15 @@ const RegdocsPopup = (props) => {
 RegdocsPopup.propTypes = {
   /** Determines if the modal is opened or closed */
   isOpen: PropTypes.bool,
-  /** Function that closes the modal */
+  /** Function to be run when the modal is closed */
   closeModal: PropTypes.func.isRequired,
-  /** Adds a link to the footer of the Modal window that triggers this function */
-  modalAction: PropTypes.func,
+  /** Instrument number ('XO-001-2018') */
   instrument: PropTypes.string.isRequired,
+  /** Regdocs page for the instrument */
+  regdocsUrl: PropTypes.string.isRequired,
 };
 
 RegdocsPopup.defaultProps = {
-  modalAction: null,
   isOpen: false,
 };
 

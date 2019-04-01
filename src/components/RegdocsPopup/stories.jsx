@@ -14,5 +14,6 @@ storiesForComponent('Components|RegdocsPopup', module, ReadMe)
       isOpen={boolean('Visible', true)}
       closeModal={noop}
       instrument="XO-001-2018"
+      regdocsUrl="https://www.example.com"
     />
   ));
