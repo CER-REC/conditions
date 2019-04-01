@@ -1,19 +1,18 @@
 import React from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
-import withStatus from '../../../.storybook/addon-status';
 import ReadMe from './README.md';
 
-import DownloadPopup from '.';
+import RegdocsPopup from '.';
 
 const noop = () => {};
 
-storiesForComponent('Components|DownloadPopup', module, ReadMe)
-  .addDecorator(withStatus('functionalityUnderDevelopment'))
+storiesForComponent('Components|RegdocsPopup', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <DownloadPopup
+    <RegdocsPopup
       isOpen={boolean('Visible', true)}
       closeModal={noop}
+      instrument="XO-001-2018"
     />
   ));

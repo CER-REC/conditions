@@ -1,9 +1,15 @@
+// .DownloadPopup {
+//   border: 1px solid #b4b4b4;
+//   box-shadow: 0 5px 40px rgba(0,0,0,0.1), 12px 30px 20px rgba(0,0,0,0.1);
+// }
+
 .DownloadPopup {
   border: 1px solid #b4b4b4;
   box-shadow: 0 5px 40px rgba(0,0,0,0.1), 12px 30px 20px rgba(0,0,0,0.1);
-}
 
-.Download {
+  width: 600px;
+  height: 600px;
+
   .header {
     display: inline-block;
     width: 100%;

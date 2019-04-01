@@ -33,6 +33,7 @@ class Modal extends React.PureComponent {
   /* Polyfill prevents testing (must be manually tested) */
   close = () => {
     this.props.closeModal();
+    console.log("attempting to close");
     if (this.dialog) { this.dialog.close(); }
   }
 
@@ -49,7 +50,6 @@ class Modal extends React.PureComponent {
     return (
       <dialog
         className={classNames('Modal', this.props.className)}
-        style={{ height, width }}
         onClose={this.dialogClosed}
         ref={this.registerDialog}
       >
@@ -69,10 +69,6 @@ Modal.propTypes = {
   /** A component type and its props, to be rendered in the window */
   component: componentType.isRequired,
   componentProps: PropTypes.shape({}),
-  /** Height of modal window (percent or pixel) */
-  height: PropTypes.string,
-  /** Width of modal window (percent or pixel)  */
-  width: PropTypes.string,
   /** Determines if the modal is opened or closed */
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
