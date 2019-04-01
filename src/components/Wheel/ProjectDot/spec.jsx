@@ -3,11 +3,17 @@ import { shallow } from 'enzyme';
 
 import ProjectDot from '.';
 
+const defaultProps = {
+  cx: 16,
+  cy: 16,
+  r: 8,
+};
+
 describe('Components|Wheel/ProjectDot', () => {
   let wrapper;
   describe('with default props', () => {
     beforeEach(() => {
-      wrapper = shallow(<ProjectDot />);
+      wrapper = shallow(<ProjectDot {...defaultProps} />);
     });
 
     test('should render a circle as a child', () => {
@@ -21,12 +27,12 @@ describe('Components|Wheel/ProjectDot', () => {
 
   describe('with changing classes', () => {
     test('should have the class IsRelevant when relevant passed in', () => {
-      wrapper = shallow(<ProjectDot relevant />);
+      wrapper = shallow(<ProjectDot relevant {...defaultProps} />);
       expect(wrapper.props().className).toContain('IsRelevant');
     });
 
     test('should have the class isFiltered when filtered passed in', () => {
-      wrapper = shallow(<ProjectDot filtered />);
+      wrapper = shallow(<ProjectDot filtered {...defaultProps} />);
       expect(wrapper.props().className).toContain('IsFiltered');
     });
   });

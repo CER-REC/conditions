@@ -7,6 +7,9 @@ import { browseByType } from '../../../proptypes';
 import LocationRay from '../LocationRay';
 
 import { features } from '../../../constants';
+import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
+
+import CompanyFlag from '../CompanyFlag';
 
 // TODO: get legend to display in the middle of the limits of its occupancy
 // TODO: get the first of each letter to draw a line
@@ -29,6 +32,17 @@ class WheelRay extends React.Component {
     currentIndex: PropTypes.number.isRequired,
   }
 
+  constructor(props) {
+    super(props);
+
+    // TODO: This shouldn't be in the constructor; load the data and prompt a
+    // re-render.
+    const flagData = this.props.items.map(company => company.projects);
+    const calc = flagLayoutCalculation(flagData);
+    this.flagLayouts = calc.flagLayouts;
+    this.flagScale = calc.flagScale;
+  }
+
   shouldComponentUpdate(nextProps) {
     if (this.props.currentIndex !== nextProps.currentIndex) { return true; }
     if (this.props.wheelType !== nextProps.wheelType) { return true; }
@@ -47,6 +61,7 @@ class WheelRay extends React.Component {
       ? currentIndex : items.length + currentIndex;
 
     let legendTracker = '';
+
     const rays = items.map((item, index) => {
       if (index === selectedIndex) { return null; }
       let position = rotation;
@@ -63,13 +78,22 @@ class WheelRay extends React.Component {
           <g key={`${item._id}CompanyRay`} transform={transform} className="companyRay">
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
-            <line
-              y2="50%"
-              y1={(index === 0 ? '23.5%' : '31%')}
-            />
             <text className="textLabels" transform="translate(28.75) rotate(90)">
               { item.company_name.charAt(0) !== legendTracker ? item.company_name.charAt(0) : null }
             </text>
+            {(this.flagLayouts)
+              ? (
+                <CompanyFlag
+                  y={-65}
+                  flagLayout={this.flagLayouts[index]}
+                  svgHeight={100}
+                  dotWidth={0.8 * this.flagScale}
+                  dotSpacing={this.flagScale}
+                  rotation={90}
+                />
+              )
+              : null
+            }
           </g>
         )
         : (
