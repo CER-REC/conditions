@@ -6,4 +6,80 @@
 
   border: 1px solid $Black19;
   outline: 8px solid $LightGray;
+
+  p {
+    margin-top: 0;
+
+    &.iconContainer {
+      // line-height: 28px;
+      // vertical-align: middle;
+
+      .checkIcon {
+        // vertical-align: middle;
+        width: 28px;
+        height: 28px;
+
+        circle {
+          fill: none;
+          stroke: $Black19;
+          stroke-width: 8px;
+        }
+
+        polyline {
+          // stroke: red;
+          // stroke-width: 1px;
+          fill: $Black19;
+        }
+
+        margin-right: 6px;
+      }
+
+      span {
+        // vertical-align: middle;
+        // color: red;
+        line-height: 28px;
+        vertical-align: top;
+      }
+    }
+  }
+
+  button {
+
+    width: 96px;
+    height: 48px;
+
+    margin-right: 24px;
+
+    color: $LinksTextButtons;
+
+    border: 2px solid rgba(209, 5, 122, 0.1);
+    border-radius: 8px;
+
+    text-align: left;
+
+    background: none;
+
+    position: relative;
+
+    .buttonIcon {
+      width: 32px;
+      height: 32px;
+
+      position: absolute;
+      left: calc(100% - 16px);
+      top: calc(50% - 16px);
+
+      circle {
+        fill: $LinksTextButtons;
+      }
+
+      path {
+        fill: $White;
+      }
+    }
+  }
+
+  h4 {
+    margin-top: 1rem;
+  }
 }

@@ -318,7 +318,7 @@
         "back": "Back"
       },
       "regdocs": {
-        "searchFor": "Search for instrument {instrument} in {regdocs}...",
+        "searchFor": "Search for instrument {instrument} in {regdocs}",
         "regdocs": "Regdocs...",
         "found": "Instrument found, click to open document.",
         "currentTab": "Open in current tab",
