@@ -14,17 +14,15 @@
     padding-right: 0px;
     padding-bottom: 5px;
     vertical-align: middle;
+    padding-right: 30px;
+    span {
+      padding-right: 2px;
+    }
     svg{
       height: 12px;
       fill: $general-text-2;
       stroke: $general-text-2;
       stroke-width: 20;
-    }
-    &.shifted {
-      padding-right: 30px;
-      span {
-        padding-right: 2px;
-      }
     }
   }
   .upperCase{
@@ -52,7 +50,7 @@
   .input {
     float: right;
     .searchBar {
-      width: 210px;
+      width: 230px;
       border-radius: 510px;
       border-color: $DarkGray;
       border-width: 1px;
@@ -149,9 +147,11 @@
     button {
       border: none;
       background-color: transparent;
+      padding-right: 0px;
     }
     span {
       color: $LinksTextButtons;
+      padding-right: 2px;
     }
   }
 
@@ -168,10 +168,10 @@
     text-align: right;
     button {
       padding: 5px;
-      margin: 5px 5px 0px 5px;
+      margin: 10px -5px 0px 5px;
       background-color: $LinksTextButtons;
       color: $White;
-      border-color: $LinksTextButtons;
+      border: none;
     }
   }
 }
