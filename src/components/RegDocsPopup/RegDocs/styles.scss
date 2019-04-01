@@ -1,11 +1,11 @@
-@import '../../styles/colors';
+@import '../../../styles/colors';
 
-.RegdocsPopup {
+.RegDocs {
   width: 500px;
   height: 300px;
 
-  border: 1px solid $Black19;
-  outline: 8px solid $LightGray;
+  // border: 1px solid $Black19;
+  // outline: 8px solid $LightGray;
 
   strong {
     color: $Black51;

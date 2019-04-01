@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
-import handleInteraction from '../../utilities/handleInteraction';
 
-import Modal from '../Modal';
+import { FormattedMessage } from 'react-intl';
+import handleInteraction from '../../../utilities/handleInteraction';
 
 import './styles.scss';
 
@@ -47,8 +46,8 @@ const xIcon = (
   </svg>
 );
 
-const RegdocsComponent = ({ instrument, regdocsUrl, closeModal }) => (
-  <React.Fragment>
+const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
+  <div className="RegDocs">
     <FormattedMessage
       id={localeStr('searchFor')}
       values={{
@@ -80,7 +79,7 @@ const RegdocsComponent = ({ instrument, regdocsUrl, closeModal }) => (
     </FormattedMessage>
     <FormattedMessage id={localeStr('cancel')}>
       {text => (
-        <button type="button" onClick={closeModal}>
+        <button type="button" {...handleInteraction(closeModal)}>
           {text}
           {xIcon}
         </button>
@@ -89,44 +88,13 @@ const RegdocsComponent = ({ instrument, regdocsUrl, closeModal }) => (
 
     <FormattedMessage id={localeStr('whatIsHeading')} tagName="h4" />
     <FormattedMessage id={localeStr('whatIsText')} tagName="p" />
-  </React.Fragment>
+  </div>
 );
 
-RegdocsComponent.propTypes = {
+RegDocs.propTypes = {
   instrument: PropTypes.string.isRequired,
   regdocsUrl: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 
-const RegdocsPopup = ({ instrument, regdocsUrl, isOpen, closeModal }) => {
-
-  return (
-    <Modal
-      component={RegdocsComponent}
-      componentProps={{
-        instrument,
-        regdocsUrl,
-      }}
-      isOpen={isOpen}
-      closeModal={closeModal}
-      className="RegdocsPopup"
-    />
-  );
-};
-
-RegdocsPopup.propTypes = {
-  /** Determines if the modal is opened or closed */
-  isOpen: PropTypes.bool,
-  /** Function to be run when the modal is closed */
-  closeModal: PropTypes.func.isRequired,
-  /** Instrument number ('XO-001-2018') */
-  instrument: PropTypes.string.isRequired,
-  /** Regdocs page for the instrument */
-  regdocsUrl: PropTypes.string.isRequired,
-};
-
-RegdocsPopup.defaultProps = {
-  isOpen: false,
-};
-
-export default RegdocsPopup;
+export default RegDocs;
