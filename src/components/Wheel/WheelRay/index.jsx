@@ -71,7 +71,7 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-      const transform = `rotate(${position.toFixed(2)})`;
+      const transform = `rotate(${position.toFixed(2) % 360})`;
 
       const componentToReturn = wheelType === 'company'
         ? (
