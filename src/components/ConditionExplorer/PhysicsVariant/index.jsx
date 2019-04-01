@@ -30,16 +30,17 @@ export default class PhysicsVariant extends React.PureComponent {
     this.loopID = null;
     this.lastTime = 0;
     this.lastDeltaTime = 0;
-
-    this.middleY = 0;
+    this.notTheGuideClicked = false;
+    this.locationBeforeExpand = { x: 0, y: 0 };
+    this.svgHandler = false;
     this.middleX = 0;
+    this.preExpand = false;
     this.circleMoving = false;
     this.circleExpanded = false;
     this.initialTime = 0;
     this.keywordsCanReset = true;
     this.scale = 1;
     this.state = { renderToggle: false };
-
   }
 
   componentDidMount() {
@@ -181,12 +182,15 @@ export default class PhysicsVariant extends React.PureComponent {
 
         if (body === this.circle) {
           const dimensions = this.getCenterCoordinates();
-          console.log(dimensions)
           const maxRadius = Math.min(dimensions.x, dimensions.y);
-          console.log(maxRadius);
           if ((this.circle.circleRadius * circleIncreaseScale) < maxRadius) {
             this.setBodyVelocity(body, circleCenterSpeed);
             Matter.Body.scale(this.circle, circleIncreaseScale, circleIncreaseScale);
+          }
+          if (Math.round(body.position.x) === Math.round(dimensions.x)
+          && Math.round(body.position.y) === Math.round(dimensions.y)) {
+            Matter.Body.setStatic(this.circle, true);
+          // console.log('circle is now static');
           }
         }
       }
@@ -259,13 +263,37 @@ export default class PhysicsVariant extends React.PureComponent {
     return bodies;
   }
 
-  onGuideClick = () => {
+  openGuide = () => {
+    this.preExpand = true;
+    console.log(this.locationBeforeExpand)
     if (this.circle.speed) { return; }
     this.circle.render.targetPos = this.getCenterCoordinates();
     this.keywordsCanReset = false;
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       body.collisionFilter.mask &= ~circleCategory;
     });
+    this.circleExpanded = true;
+    if (!this.svgHandler) {
+      this.groupRef.current.parentElement.addEventListener('click', (e) => {
+        if (e.path[0].className.baseVal !== 'guide') this.notGuideClicked = true;
+        this.svgHandler = true;
+        if (this.notGuideClicked) {
+          // console.log('outside the guide clicked reset the guide here');
+          // Matter.Body.setStatic(this.circle, false);
+          this.svgHandler = false;
+          this.groupRef.current.parentElement.removeEventListener('click', () => {}, false);
+         // console.log(this.locationBeforeExpand)
+          // this.circle.render.targetPos = this.locationBeforeExpand;
+          // this.keywordsCanReset = true;
+          this.circleExpanded = false;
+          this.notGuideClicked = false;
+          // this.preExpand = false;
+        }
+      }, false);
+    }
+  }
+
+  closeGuide = () => {
   }
 
   // TODO: optimize the nested map functions
@@ -278,7 +306,10 @@ export default class PhysicsVariant extends React.PureComponent {
         .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
         .join(' ');
       if (body === this.circle) {
-        return <path key="guide" className="guide" d={d} onClick={this.onGuideClick} />;
+        if (!this.preExpand) {
+          this.locationBeforeExpand = { x: this.circle.position.x, y: this.circle.position.y };
+        }
+        return <path key="guide" className="guide" d={d} onClick={this.openGuide} />;
       }
       return (
         <g
@@ -288,6 +319,7 @@ export default class PhysicsVariant extends React.PureComponent {
             body.render.className,
             { textVisible: this.isWordVisible(body) },
           )}
+          onClick={this.closeGuide}
         >
           <text
             x={body.position.x + body.render.textOffset.x}
@@ -305,7 +337,9 @@ export default class PhysicsVariant extends React.PureComponent {
 
   render() {
     return (
-      <g ref={this.groupRef}>
+      <g
+        ref={this.groupRef}
+      >
         {this.getWords()}
       </g>
     );
