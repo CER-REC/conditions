@@ -1,5 +1,8 @@
+@import '../../styles/colors';
+
 .Modal {
-  background-color: #fff;
+  color: inherit;
+  background-color: $White;
   padding: 16px;
   text-align: left;
   position: fixed;

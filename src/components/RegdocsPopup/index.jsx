@@ -63,18 +63,31 @@ const RegdocsPopup = (props) => {
         {checkIcon}
         <FormattedMessage id={localeStr('found')} />
       </p>
-      <button type="button">
-        Current
-        {plusIcon}
-      </button>
-      <button type="button">
-        New
-        {plusIcon}
-      </button>
-      <button type="button" onClick={closeModal}>
-        Cancel
-        {xIcon}
-      </button>
+      <FormattedMessage id={localeStr('currentTab')} >
+        {text => (
+          <button type="button">
+            {text}
+            {plusIcon}
+          </button>
+        )}
+      </FormattedMessage>
+      <FormattedMessage id={localeStr('newTab')} >
+        {text => (
+          <button type="button">
+            {text}
+            {plusIcon}
+          </button>
+        )}
+      </FormattedMessage>
+      <FormattedMessage id={localeStr('cancel')} >
+        {text => (
+          <button type="button" onclick={closeModal}>
+            {text}
+            {xIcon}
+          </button>
+        )}
+      </FormattedMessage>
+
       <FormattedMessage id={localeStr('whatIsHeading')} tagName="h4" />
       <FormattedMessage id={localeStr('whatIsText')} tagName="p" />
     </React.Fragment>
