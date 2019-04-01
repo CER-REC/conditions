@@ -3,16 +3,15 @@
 
 .SuggestedKeywordsPopout {
   position: absolute;
-
+  top: 27px;
+  left: 425px;
   width: 500px;
-  margin-left: auto;
+  margin-left: 2px;
   margin-right: auto;
   display: inline-block;
   border: 1px solid $LightGray;
   padding: 10px;
   font-family: $fira-sans-condensed;
-
-  // z-index: 1001;
   background-color: white;
 
   .upperCase {
@@ -39,6 +38,7 @@
 
   ul {
     padding: 10px 0px 10px 0px;
+    width: 100%;
     margin: 0px;
   }
   .viewText {
@@ -70,6 +70,7 @@
     .arrow {
       padding-left: 15px;
       svg {
+        height: 15px;
         width: 15px;
         vertical-align: bottom;
       }
