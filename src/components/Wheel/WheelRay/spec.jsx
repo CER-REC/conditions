@@ -48,8 +48,8 @@ describe('Components|CompanyWheel/WheelRay', () => {
     });
 
     it('should render an item before the gap', () => {
-      const positionBeforeGap = (Math.abs(rotation - (reservedDegrees / 2)) % 360);
-      const transformValue = `rotate(${positionBeforeGap.toFixed(2)})`;
+      const positionBeforeGap = (Math.abs(rotation - (reservedDegrees / 2)).toFixed(2) % 360);
+      const transformValue = `rotate(${positionBeforeGap})`;
       const { wrapper } = wrapperSetup({});
       expect(wrapper.children().first().props().transform === transformValue).toBe(true);
     });

@@ -4,10 +4,11 @@
 .KeywordList {
   height: 300px;
   padding-top: 5px;
-  overflow-y: scroll;
+  overflow-y: auto;
   ul {
     list-style-type: none;
     li {
+      margin: 0px 5px;
       padding: 10px 0px;
       border-bottom: 1px solid $DarkGray;
       .icon {
