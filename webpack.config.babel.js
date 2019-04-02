@@ -100,8 +100,8 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
     devMode ? new Webpack.HotModuleReplacementPlugin() : null,
     new Webpack.DefinePlugin({
