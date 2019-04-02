@@ -1,0 +1,102 @@
+@import '../../../styles/colors';
+
+.Company {
+  width: 500px;
+  height: 300px;
+
+  p {
+    margin-top: 0;
+
+    &.iconContainer {
+      .checkIcon {
+        width: 28px;
+        height: 28px;
+
+        margin-right: 6px;
+
+        circle {
+          fill: none;
+          stroke: $Black51;
+          stroke-width: 8px;
+        }
+
+        polyline {
+          fill: $Black51;
+        }
+      }
+
+      span {
+        line-height: 28px;
+        vertical-align: top;
+      }
+    }
+  }
+
+  h3 {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+  }
+
+  h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  strong {
+    color: $Black51;
+  }
+
+  button {
+    display: inline-block;
+
+    cursor: pointer;
+  }
+
+  a {
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+  }
+
+  button,
+  a {
+    width: 108px;
+    height: 48px;
+
+    position: relative;
+
+    margin-right: 24px;
+    padding-left: 8px;
+    padding-right: 28px;
+
+    font-family: inherit;
+    font-size: 15px;
+    text-align: left;
+    vertical-align: top;
+
+    color: $LinksTextButtons;
+    border: 2px solid rgba(209, 5, 122, 0.1);
+    border-radius: 8px;
+    background: none;
+
+    .buttonIcon {
+      position: absolute;
+      left: calc(100% - 20px);
+      top: calc(50% - 16px);
+
+      width: 32px;
+      height: 32px;
+
+      circle {
+        fill: $LinksTextButtons;
+      }
+
+      path {
+        fill: $White;
+      }
+    }
+  }
+}

@@ -311,7 +311,7 @@
         "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."
       },
       "company": {
-        "name": "Full Project Name",
+        "name": "Full Project Name:",
         "associated": "Companies associated with this project",
         "meaningHeading": "What does it mean to have more than one company associated to a project?",
         "meaningText": "Text to be provided by the NEB.",
