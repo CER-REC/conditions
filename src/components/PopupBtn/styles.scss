@@ -1,0 +1,61 @@
+@import '../../styles/colors';
+
+.PopupBtn {
+
+  // This was the only way I could get SASS work with the & in this situation
+  @at-root {
+    button#{&} {
+      display: inline-block;
+
+      cursor: pointer;
+    }
+
+    a#{&} {
+      display: inline-flex;
+
+      align-items: center;
+
+      text-decoration: none;
+    }
+
+    button#{&},
+    a#{&} {
+      width: 108px;
+      height: 48px;
+
+      position: relative;
+
+      margin-right: 24px;
+      padding-left: 8px;
+      padding-right: 28px;
+
+      font-family: inherit;
+      font-size: 15px;
+      text-align: left;
+      vertical-align: top;
+
+      color: $LinksTextButtons;
+      border: 2px solid rgba(209, 5, 122, 0.1);
+      border-radius: 8px;
+      background: none;
+
+      .buttonIcon {
+        position: absolute;
+        left: calc(100% - 20px);
+        top: calc(50% - 16px);
+
+        width: 32px;
+        height: 32px;
+
+        circle {
+          fill: $LinksTextButtons;
+        }
+
+        path {
+          fill: $White;
+        }
+      }
+    }
+
+  }
+}

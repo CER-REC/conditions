@@ -1811,6 +1811,171 @@ exports[`Storyshots Components|CircleContainer with text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|CompanyPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal CompanyPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="Company"
+    >
+      <h3>
+        Full Project Name:
+         
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h3>
+      <h4>
+        Companies associated with this project
+      </h4>
+      <p>
+        Company A
+        <br />
+        Company B
+        <br />
+        Company C
+        <br />
+        Company D
+        <br />
+        Company E
+        <br />
+      </p>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CompanyPopup"
+  >
+    <div
+      className="Company"
+    >
+      <h3>
+        Full Project Name:
+         
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h3>
+      <h4>
+        Companies associated with this project
+      </h4>
+      <p>
+        Company A
+        <br />
+        Company B
+        <br />
+        Company C
+        <br />
+        Company D
+        <br />
+        Company E
+        <br />
+      </p>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionDetails default 1`] = `
 <div
   className="visualization"
@@ -7771,6 +7936,144 @@ exports[`Storyshots Components|Modal default 1`] = `
       I am a child component
     </div>
   </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|PopupBtn button 1`] = `
+<div
+  className="visualization"
+>
+  <button
+    className="PopupBtn"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    Knock, knock
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+        transform="rotate(45 50 50)"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components|PopupBtn default 1`] = `
+<div
+  className="visualization"
+>
+  <a
+    className="PopupBtn"
+    href="https://www.example.com"
+  >
+    <div>
+      Example
+    </div>
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components|PopupBtn link attributes 1`] = `
+<div
+  className="visualization"
+>
+  <a
+    className="PopupBtn"
+    href="https://www.example.com"
+    noopener={true}
+    noreferrer={true}
+    target="_blank"
+  >
+    <div>
+      Example
+    </div>
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+      />
+    </svg>
+  </a>
 </div>
 `;
 
