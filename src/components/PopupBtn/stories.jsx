@@ -17,7 +17,7 @@ storiesForComponent('Components|PopupBtn', module, ReadMe)
       linkUrl="https://www.example.com"
       text="Example"
       icon="plus"
-      attributes={{ target: '_blank', noopener: true, noreferrer: true }}
+      attributes={{ target: '_blank', rel: 'noopener noreferrer' }}
     />
   ))
   .add('button', () => (

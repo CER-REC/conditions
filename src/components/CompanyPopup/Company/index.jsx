@@ -2,42 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
-import handleInteraction from '../../../utilities/handleInteraction';
+
+import PopupBtn from '../../PopupBtn';
 
 import './styles.scss';
 
-const localeStr = id => `components.modal.company.${id}`;
-
-const plusPath = `
-  M 46 28
-  a 4 4 0 0 1 8,0
-  v 18
-  h 18
-  a 4 4 0 0 1 0,8
-  h -18
-  v 18
-  a 4 4 0 0 1 -8,0
-  v -18
-  h -18
-  a 4 4 0 0 1 0,-8
-  h 18
-  v -18
-  Z
-`;
-
-const xIcon = (
-  <svg className="buttonIcon" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="40" />
-    <path fill="white" d={plusPath} transform="rotate(45 50 50)" />
-  </svg>
-);
-
 const Company = ({ projectName, companies, closeModal }) => (
   <div className="Company">
-    <FormattedMessage id={localeStr('name')}>
+    <FormattedMessage id="components.modal.company.name">
       {text => <h3>{text} <strong>{projectName}</strong></h3>}
     </FormattedMessage>
-    <FormattedMessage id={localeStr('associated')} tagName="h4" />
+    <FormattedMessage id="components.modal.company.associated" tagName="h4" />
     <p>
       {companies.map(company => (
         <React.Fragment key={company}>
@@ -45,14 +20,11 @@ const Company = ({ projectName, companies, closeModal }) => (
         </React.Fragment>
       ))}
     </p>
-    <FormattedMessage id={localeStr('meaningHeading')} tagName="h4" />
-    <FormattedMessage id={localeStr('meaningText')} tagName="p" />
-    <FormattedMessage id={localeStr('back')}>
+    <FormattedMessage id="components.modal.company.meaningHeading" tagName="h4" />
+    <FormattedMessage id="components.modal.company.meaningText" tagName="p" />
+    <FormattedMessage id="components.modal.company.back">
       {text => (
-        <button type="button" {...handleInteraction(closeModal)}>
-          {text}
-          {xIcon}
-        </button>
+        <PopupBtn text={text} icon="x" onClick={closeModal} />
       )}
     </FormattedMessage>
   </div>

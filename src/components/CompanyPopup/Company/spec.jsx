@@ -9,29 +9,27 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 describe('Components|Company', () => {
   let spy;
   beforeEach(() => {
-    spy = {
-      closeModal: jest.fn(),
-    };
+    spy = jest.fn();
   });
 
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = mountWithIntl(<Company
-        instrument="test"
-        CompanyUrl="https://www.example.com"
-        {...spy}
+        projectName="Trans Mountain Expansion"
+        companies={['A', 'B', 'C']}
+        closeModal={spy}
       />);
     });
 
     shouldBehaveLikeAComponent(Company, () => wrapper);
 
-    test('should call its closeModal callback when the Cancel button is clicked', () => {
+    test('should call its closeModal callback when the Back button is clicked', () => {
       wrapper.find('.Company')
         .find('button')
         .simulate('click', eventFuncs);
 
-      expect(spy.closeModal).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

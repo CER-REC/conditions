@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { FormattedMessage } from 'react-intl';
-import handleInteraction from '../../../utilities/handleInteraction';
+
+import PopupBtn from '../../PopupBtn';
 
 import './styles.scss';
-
-const localeStr = id => `components.modal.regdocs.${id}`;
 
 const checkIcon = (
   <svg className="checkIcon" viewBox="0 0 100 100">
@@ -15,79 +13,42 @@ const checkIcon = (
   </svg>
 );
 
-const plusPath = `
-  M 46 28
-  a 4 4 0 0 1 8,0
-  v 18
-  h 18
-  a 4 4 0 0 1 0,8
-  h -18
-  v 18
-  a 4 4 0 0 1 -8,0
-  v -18
-  h -18
-  a 4 4 0 0 1 0,-8
-  h 18
-  v -18
-  Z
-`;
-
-const plusIcon = (
-  <svg className="buttonIcon" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="40" />
-    <path fill="white" d={plusPath} />
-  </svg>
-);
-
-const xIcon = (
-  <svg className="buttonIcon" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="40" />
-    <path fill="white" d={plusPath} transform="rotate(45 50 50)" />
-  </svg>
-);
-
 const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
   <div className="RegDocs">
     <FormattedMessage
-      id={localeStr('searchFor')}
+      id="components.modal.regdocs.searchFor"
       values={{
         instrument: (<strong>#{instrument}</strong>),
-        regdocs: (<FormattedMessage id={localeStr('regdocs')} tagName="strong" />),
+        regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" />),
       }}
     >
       {(...strings) => <h3>{strings}</h3>}
     </FormattedMessage>
     <p className="iconContainer">
       {checkIcon}
-      <FormattedMessage id={localeStr('found')} />
+      <FormattedMessage id="components.modal.regdocs.found" />
     </p>
-    <FormattedMessage id={localeStr('currentTab')}>
+    <FormattedMessage id="components.modal.regdocs.currentTab">
+      {text => (<PopupBtn text={text} icon="plus" linkUrl={regdocsUrl} />)}
+    </FormattedMessage>
+    <FormattedMessage id="components.modal.regdocs.newTab">
       {text => (
-        <a className="button" href={regdocsUrl}>
-          {<div>{text}</div>}
-          {plusIcon}
-        </a>
+        <PopupBtn
+          text={text}
+          icon="plus"
+          linkUrl={regdocsUrl}
+          attributes={{
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          }}
+        />
       )}
     </FormattedMessage>
-    <FormattedMessage id={localeStr('newTab')}>
-      {text => (
-        <a className="button" href={regdocsUrl} target="_blank" rel="noopener noreferrer">
-          {<div>{text}</div>}
-          {plusIcon}
-        </a>
-      )}
+    <FormattedMessage id="components.modal.regdocs.cancel">
+      {text => (<PopupBtn text={text} icon="x" onClick={closeModal} />)}
     </FormattedMessage>
-    <FormattedMessage id={localeStr('cancel')}>
-      {text => (
-        <button type="button" {...handleInteraction(closeModal)}>
-          {text}
-          {xIcon}
-        </button>
-      )}
-    </FormattedMessage>
-
-    <FormattedMessage id={localeStr('whatIsHeading')} tagName="h4" />
-    <FormattedMessage id={localeStr('whatIsText')} tagName="p" />
+    <FormattedMessage id="components.modal.regdocs.whatIsHeading" tagName="h4" />
+    <FormattedMessage id="components.modal.regdocs.whatIsText" tagName="p" />
   </div>
 );
 
