@@ -11,7 +11,7 @@
     "test:showcoverage": "opn coverage/lcov-report/index.html",
     "start": "npm run storybook",
     "storybook": "start-storybook -s ./src/images -p 6006",
-    "build-storybook": "build-storybook -s ./src/images",
+    "build-storybook": "NODE_ENV=production build-storybook -s ./src/images",
     "build:modified": "git show -s --format=%cd HEAD --date=short > LAST_MODIFIED",
     "build:update-version": "node -p -e \"require('./package.json').version\" > VERSION",
     "build:changelog": "conventional-changelog -n .release/index.js -i CHANGELOG.md -s",
