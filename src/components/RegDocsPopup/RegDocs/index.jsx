@@ -45,7 +45,7 @@ const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
       )}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.cancel">
-      {text => (<PopupBtn text={text} icon="x" onClick={closeModal} />)}
+      {text => (<PopupBtn text={text} icon="x" onClick={closeModal} className="cancel" />)}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.whatIsHeading" tagName="h4" />
     <FormattedMessage id="components.modal.regdocs.whatIsText" tagName="p" />

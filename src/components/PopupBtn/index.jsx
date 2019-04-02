@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import handleInteraction from '../../utilities/handleInteraction';
 
 import './styles.scss';
@@ -36,21 +37,24 @@ const icons = {
   ),
 };
 
-const PopupBtn = ({ linkUrl, onClick, text, icon, attributes }) => (
-  (linkUrl !== '')
-    ? (
-      <a className="PopupBtn" href={linkUrl} {...attributes}>
-        {<div>{text}</div>}
-        {icons[icon]}
-      </a>
-    )
-    : (
-      <button className="PopupBtn" type="button" {...handleInteraction(onClick)}>
-        {text}
-        {icons[icon]}
-      </button>
-    )
-);
+const PopupBtn = ({ linkUrl, onClick, text, icon, attributes, className }) => {
+  const classes = classNames('PopupBtn', className);
+  return (
+    (linkUrl !== '')
+      ? (
+        <a className={classes} href={linkUrl} {...attributes}>
+          {<div>{text}</div>}
+          {icons[icon]}
+        </a>
+      )
+      : (
+        <button className={classes} type="button" {...handleInteraction(onClick)}>
+          {text}
+          {icons[icon]}
+        </button>
+      )
+  );
+};
 
 PopupBtn.propTypes = {
   linkUrl: PropTypes.string,
@@ -58,12 +62,14 @@ PopupBtn.propTypes = {
   text: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   attributes: PropTypes.shape({}),
+  className: PropTypes.string,
 };
 
 PopupBtn.defaultProps = {
   linkUrl: '',
   onClick: () => {},
   attributes: {},
+  className: '',
 };
 
 export default PopupBtn;

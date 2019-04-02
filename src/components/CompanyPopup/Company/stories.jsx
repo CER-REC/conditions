@@ -12,6 +12,22 @@ storiesForComponent('Components|CompanyPopup/Company', module)
       isOpen={boolean('Visible', true)}
       closeModal={noop}
       projectName="Trans Mountain Expansion"
-      companies={['Company A', 'Company B', 'Company C', 'Company D', 'Company E']}
+      companies={[
+        'Company A',
+        'Company B',
+        'Company C',
+        'Company D',
+        'Company E',
+        'Company F',
+        'Company G',
+        'Company H',
+        'Company I',
+        'Company J',
+        'Company K',
+        'Company L',
+        'Company M',
+        'Company N',
+        'Company O',
+      ]}
     />
   ));

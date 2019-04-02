@@ -10,10 +10,10 @@ import './styles.scss';
 const Company = ({ projectName, companies, closeModal }) => (
   <div className="Company">
     <FormattedMessage id="components.modal.company.name">
-      {text => <h3>{text} <strong>{projectName}</strong></h3>}
+      {text => <h2>{text} <strong>{projectName}</strong></h2>}
     </FormattedMessage>
-    <FormattedMessage id="components.modal.company.associated" tagName="h4" />
-    <p>
+    <FormattedMessage id="components.modal.company.associated" tagName="h3" />
+    <p className="companies">
       {companies.map(company => (
         <React.Fragment key={company}>
           {company}<br />
