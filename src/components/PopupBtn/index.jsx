@@ -57,11 +57,17 @@ const PopupBtn = ({ linkUrl, onClick, text, icon, attributes, className }) => {
 };
 
 PopupBtn.propTypes = {
+  /** Destination URL. If not given, renders as a <button> */
   linkUrl: PropTypes.string,
-  onClick: PropTypes.func,
-  text: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  /** Attributes (i.e. target="_blank") to pass to the element */
   attributes: PropTypes.shape({}),
+  /** Callback function for the <button> */
+  onClick: PropTypes.func,
+  /** Label */
+  text: PropTypes.string.isRequired,
+  /** Icon to be displayed */
+  icon: PropTypes.oneOf(['plus', 'x']).isRequired,
+  /** Additional CSS classes */
   className: PropTypes.string,
 };
 
