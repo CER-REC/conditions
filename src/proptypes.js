@@ -139,6 +139,8 @@ nullableNumber.isRequired = (props, propName, componentName) => {
   );
 };
 
+// "is a component" check borrowed from React Router:
+// https://github.com/ReactTraining/react-router/blob/6a99c9362d46f768d93bbf9b9bc657ca7ce683be/packages/react-router/modules/Route.js#L82
 export const componentType = (props, propName, componentName) => {
   if (props[propName] === undefined) { return null; }
   return componentType.isRequired(props, propName, componentName);

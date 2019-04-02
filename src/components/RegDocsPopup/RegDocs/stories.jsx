@@ -2,12 +2,10 @@ import React from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import RegDocs from '.';
-// import ReadMe from './README.md';
-const ReadMe = '';
 
 const noop = () => {};
 
-storiesForComponent('Components|RegDocsPopup/RegDocs', module, ReadMe)
+storiesForComponent('Components|RegDocsPopup/RegDocs', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <RegDocs

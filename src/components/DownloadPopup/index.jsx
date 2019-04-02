@@ -7,9 +7,10 @@ import Modal from '../Modal';
 
 import './styles.scss';
 
-const ImageDownload = (props) => {
+// TODO: Split this into a testable component. See the RegDocsPopup for an example.
+const DownloadPopup = (props) => {
   const component = ({ closeModal }) => (
-    <React.Fragment>
+    <div className="Download">
       <div className="header">
         <span className="title">
           <FormattedMessage id="components.modal.image.title" />
@@ -40,7 +41,7 @@ const ImageDownload = (props) => {
           </button>
         )}
       </div>
-    </React.Fragment>
+    </div>
   );
 
   return (
@@ -53,7 +54,7 @@ const ImageDownload = (props) => {
   );
 };
 
-ImageDownload.propTypes = {
+DownloadPopup.propTypes = {
   /** Determines if the modal is opened or closed */
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
@@ -62,9 +63,9 @@ ImageDownload.propTypes = {
   modalAction: PropTypes.func,
 };
 
-ImageDownload.defaultProps = {
+DownloadPopup.defaultProps = {
   modalAction: null,
   isOpen: false,
 };
 
-export default ImageDownload;
+export default DownloadPopup;

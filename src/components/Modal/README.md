@@ -2,8 +2,8 @@
 
 This component provides the framework for other components to open a modal dialog box.
 
-* [ ] Should create a dialog box in the center of the screen
-* [ ] Should fade out the rest of the app and disable interactions while open
+* [x] Should create a dialog box in the center of the screen
+* [x] Should fade out the rest of the app and disable interactions while open
 
 ## Accessibility Requirements
 

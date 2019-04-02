@@ -4079,49 +4079,53 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
     onClose={[Function]}
   >
     <div
-      className="header"
+      className="Download"
     >
-      <span
-        className="title"
+      <div
+        className="header"
       >
-        <span>
-          Image Download
+        <span
+          className="title"
+        >
+          <span>
+            Image Download
+          </span>
         </span>
-      </span>
-      <svg
-        className="closeIcon"
-        focusable={true}
-        height="20"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        version="1.1"
-        width="20"
+        <svg
+          className="closeIcon"
+          focusable={true}
+          height="20"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          version="1.1"
+          width="20"
+        >
+          <line
+            strokeLinecap="round"
+            x1="0"
+            x2="20"
+            y1="20"
+            y2="0"
+          />
+          <line
+            strokeLinecap="round"
+            x1="0"
+            x2="20"
+            y1="0"
+            y2="20"
+          />
+        </svg>
+      </div>
+      <div
+        className="content"
       >
-        <line
-          strokeLinecap="round"
-          x1="0"
-          x2="20"
-          y1="20"
-          y2="0"
-        />
-        <line
-          strokeLinecap="round"
-          x1="0"
-          x2="20"
-          y1="0"
-          y2="20"
-        />
-      </svg>
+        this is the image download popup
+      </div>
+      <div
+        className="footer"
+      />
     </div>
-    <div
-      className="content"
-    >
-      this is the image download popup
-    </div>
-    <div
-      className="footer"
-    />
   </dialog>
 </div>
 `;
@@ -7752,191 +7756,6 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
       </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`Storyshots Components|Modal Data Download 1`] = `
-<div
-  className="visualization"
->
-  <dialog
-    className="Modal"
-    onClose={[Function]}
-    style={
-      Object {
-        "height": "600px",
-        "width": "600px",
-      }
-    }
-  >
-    <div
-      className="Download"
-    >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          <span>
-            Data Download
-          </span>
-        </span>
-        <svg
-          className="closeIcon"
-          focusable={true}
-          height="20"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          version="1.1"
-          width="20"
-        >
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="20"
-            y2="0"
-          />
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="0"
-            y2="20"
-          />
-        </svg>
-      </div>
-      <div
-        className="content"
-      >
-        <div>
-          data here
-        </div>
-      </div>
-      <div
-        className="footer"
-      >
-        <button
-          className="textButton"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span>
-            components.modal.data.actionText
-          </span>
-        </button>
-      </div>
-    </div>
-  </dialog>
-</div>
-`;
-
-exports[`Storyshots Components|Modal Image Download 1`] = `
-<div
-  className="visualization"
->
-  <dialog
-    className="Modal"
-    onClose={[Function]}
-    style={
-      Object {
-        "height": "600px",
-        "width": "600px",
-      }
-    }
-  >
-    <div
-      className="Download"
-    >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          <span>
-            Image Download
-          </span>
-        </span>
-        <svg
-          className="closeIcon"
-          focusable={true}
-          height="20"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          version="1.1"
-          width="20"
-        >
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="20"
-            y2="0"
-          />
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="0"
-            y2="20"
-          />
-        </svg>
-      </div>
-      <div
-        className="content"
-      >
-        <div>
-          image here
-        </div>
-      </div>
-      <div
-        className="footer"
-      >
-        <button
-          className="textButton"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span>
-            Save Image
-          </span>
-        </button>
-      </div>
-    </div>
-  </dialog>
-</div>
-`;
-
-exports[`Storyshots Components|Modal RegDocs Popup 1`] = `
-<div
-  className="visualization"
->
-  <dialog
-    className="Modal"
-    onClose={[Function]}
-    style={
-      Object {
-        "height": "600px",
-        "width": "600px",
-      }
-    }
-  >
-    <div
-      className="RegDocs"
-    >
-      Hello!
-    </div>
-  </dialog>
 </div>
 `;
 

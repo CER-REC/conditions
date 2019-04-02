@@ -4,11 +4,7 @@ import dialogPolyfill from 'dialog-polyfill';
 import classNames from 'classnames';
 import { componentType } from '../../proptypes';
 
-
 import 'dialog-polyfill/dialog-polyfill.css';
-
-// import ModalContent from './ModalContent';
-
 import './styles.scss';
 
 class Modal extends React.PureComponent {
@@ -33,14 +29,11 @@ class Modal extends React.PureComponent {
   /* Polyfill prevents testing (must be manually tested) */
   close = () => {
     this.props.closeModal();
-    console.log("attempting to close");
     if (this.dialog) { this.dialog.close(); }
   }
 
   render() {
     const {
-      height,
-      width,
       isOpen,
       componentProps,
     } = this.props;
@@ -64,10 +57,9 @@ class Modal extends React.PureComponent {
 }
 
 Modal.propTypes = {
-  // "is a component" check borrowed from React Router:
-  // https://github.com/ReactTraining/react-router/blob/6a99c9362d46f768d93bbf9b9bc657ca7ce683be/packages/react-router/modules/Route.js#L82
-  /** A component type and its props, to be rendered in the window */
+  /** A non-rendered component to be rendered in the window */
   component: componentType.isRequired,
+  /** Props to be passed to the component */
   componentProps: PropTypes.shape({}),
   /** Determines if the modal is opened or closed */
   isOpen: PropTypes.bool,
@@ -78,8 +70,6 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   isOpen: false,
-  height: '100%',
-  width: '100%',
   componentProps: {},
   className: '',
 };
