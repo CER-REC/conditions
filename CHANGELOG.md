@@ -1,3 +1,10 @@
+## [0.5.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.5.1) (2019-04-02)
+
+
+### Build
+
+* **Project Maintenance:** fix build env variables in Windows (0e56257)
+
 # [0.5.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.5.0) (2019-04-02)
 
 
