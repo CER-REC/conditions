@@ -1,3 +1,303 @@
+# [0.5.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.5.0) (2019-04-02)
+
+
+### babelrc
+
+* **Bug Fixes:** testing fix due to broken json fix (92fcac6)
+
+
+### BarContainer
+
+* **Features:** adds support for percentage width/height (ccd8c26)
+
+
+### CompanyFlag
+
+* **Features:** adds a fill algorithm (very broken) (699d951)
+* **Features:** begins prototyping flag component (fa005ba)
+* **Features:** adds Filtered/Relevant coloring (5de2d09)
+* **Features:** begins prototyping flag component (34b42a5)
+* **Features:** adds Filtered/Relevant coloring (585feae)
+* **Features:** adds folding of the triangle's frame (3049f8c)
+* **Features:** prevents flags from intersecting (3f4a617)
+* **Bug Fixes:** updates spec with changed prop name (d520744)
+* **Bug Fixes:** fixes linting errors (b4b9c4e)
+* **Bug Fixes:** fixes triangle fill alg., adds algorithm tests (cef6c15)
+* **Code Formatting:** adds description to triangleCollidesWithRay (ca0cd02)
+* **Code Refactoring:** exports intermediate functions to allow testing (554db30)
+* **Code Refactoring:** renames variables to allow nicer formatting (40b7851)
+* **Code Refactoring:** tidies code, adds comments (bd6af6b)
+* **Documentation:** adds documentation, removes unused file (dcb45f1)
+
+
+### CompanyFlag, ProjectDot
+
+* **Features:** draws a flag of project dots (82b33a9)
+* **Features:** draws a flag of project dots (0d01669)
+
+
+### Container ViewTwo
+
+* **Features:** add test cases (a45feb7)
+* **Features:** redux Projectmenu (8fcf914)
+* **Bug Fixes:** projectMenu Redux (7a6baa4)
+
+
+### Dependencies
+
+* **Project Maintenance:** pin dependency mini-css-extract-plugin to 0.5.0 (7902ab7)
+* **Project Maintenance:** update dependency babel-plugin-react-docgen to v3 (98f467b)
+* **Project Maintenance:** update dependency enzyme-adapter-react-16 to v1.11.2 (5aca7bc)
+* **Project Maintenance:** update jest monorepo to v24.5.0 (7c9f7fd)
+
+
+### HighlightSummary
+
+* **Code Formatting:** tidies up styles, removes commented code (4503098)
+
+
+### i18n
+
+* **Features:** use en/fr instead of English/French to match NEB language codes (6e834ed)
+
+
+### LocationRay
+
+* **Documentation:** add stories/ tests (3d98971)
+
+
+### LocationWheelMinimap
+
+* **Bug Fixes:** fixes broken color variable (f8a752e)
+
+
+### MockData
+
+* **Features:** adds a listing of economic regions and provinces (5a08144)
+
+
+### Polyfill babel
+
+* **Code Refactoring:** changes the location of the import for the polyfill to deploy and storyboo (ed06395)
+
+
+### ProgressMatrix
+
+* **Code Refactoring:** switches to enum-style definition of progress (85865ef, NEBV-1357)
+* **Documentation:** adds docs on status of components and views (5c7daa9, NEBV-1357)
+
+
+### Project Menu
+
+* **Bug Fixes:** adds new snapshots (732c64e, NEBV-1339)
+* **Bug Fixes:** fixes test data for View Two project menu and refactors the reformatted data for (380d265, NEBV-1339)
+* **Bug Fixes:** destructure props instead of making variable of prop value (4c5d1ff, NEBV-1339)
+* **Bug Fixes:** fixes component to work with null project ID and fixes all test/mockData to work (8cf36fb, NEBV-1339)
+* **Code Refactoring:** fixes trailing space linting on project menu comment (2d59705, NEBV-1339)
+
+
+### Project Menu mockData
+
+* **Bug Fixes:** fixes linting issues (393fabb, NEBV-1339)
+
+
+### Project Menu stories
+
+* **Bug Fixes:** removes additional mock data (0bf633d, NEBV-1339)
+
+
+### Project Menu tests
+
+* **Bug Fixes:** fixes test data to use required structure (614b4a4, NEBV-1339)
+
+
+### Project Menu Tests
+
+* **Code Refactoring:** fixes test case to use a different id to ensure 5 projects are being p (4744b77, NEBV-1339)
+
+
+### ProjectDot
+
+* **Features:** updates colors to reflect the design doc (4f550c5)
+
+
+### ProjectMenu
+
+* **Features:** reset to first project if selected project isn't found (8de3c97)
+* **Bug Fixes:** added comments to 2 last failing tests (1dc3a2e)
+* **Bug Fixes:** test fixes (b5d7ed1)
+* **Tests:** refactor test cases and add tests for project positions (c3a6fe5)
+* **Code Refactoring:** move spec data into spec and change project IDs (ff30286)
+* **Code Refactoring:** removes duplicated tests (09cb0cb)
+* **Code Refactoring:** reorganize tests to reuse mockData between tests (c25e7d0)
+* **Code Refactoring:** simplifies logic for padding before/after (02baacb)
+* **Code Refactoring:** switches tests to using Jest's describe.each (8095398)
+
+
+### ProjectMenu Change Requests
+
+* **Bug Fixes:** added tests for margins (28668b8)
+
+
+### ProjectMenu, mock data
+
+* **Bug Fixes:** fixes mispelled variable names (6f57a45)
+
+
+### PullToSpin
+
+* **Code Formatting:** specify pointer on trigger (d6af2f8)
+
+
+### Seaarch
+
+* **Code Formatting:** fix jumping reset button, minimal styling changes (4350f12)
+
+
+### Search
+
+* **Tests:** fixes snapshot (74933dd)
+* **Code Formatting:** changes as requested in pr (d918a57)
+* **Code Formatting:** fix border of search not completing (8a02d61)
+* **Code Formatting:** ie-11 css (7c54467)
+
+
+### Search/FilterContent
+
+* **Code Formatting:** mini gap on the selection bubbles (7ebff26)
+
+
+### SearchBar
+
+* **Features:** memoizes the Tabs' event handler (2901c98)
+* **Code Formatting:** removes redundant 'false' for JSX attribute (48aea86)
+* **Code Refactoring:** eliminates redundant conditionals (25a3650)
+* **Code Refactoring:** refactors and removes commented code as per PR comments (6ef15ce)
+* **Code Refactoring:** refactors component to play nicely with others in the View (838695b)
+
+
+### SearchFilter
+
+* **Code Formatting:** remove white lines divider in bubble (8fccf2c)
+
+
+### Snaphshot
+
+* **Code Refactoring:** update snapshot (90d325b)
+
+
+### Snapshots
+
+* **Tests:** updates snapshots for previous commit (8f163b1)
+
+
+### Stories, LocationRay
+
+* **Code Formatting:** css fixes for spacing (6e7ffdc)
+
+
+### Storybook
+
+* **Project Maintenance:** fixes mini-css extraction in build-storybook (6339d25)
+
+
+### View 2
+
+* **Features:** adds the LocationWheelMinimap component (13c54c3)
+* **Tests:** updates snapshots (4cdd593)
+
+
+### View Two
+
+* **Bug Fixes:** fixes proptype issues (c8de7fc)
+* **Bug Fixes:** changes the project menu to use props projectsData instead of mockData projectsData (66506ed, NEBV-1339)
+
+
+### Webpack
+
+* **Features:** adds css extract plugin to bundle css into one file for production (92730f6, NEBV-1359)
+* **Project Maintenance:** optimize production build to remove sourcemaps (c4bbcb0)
+
+
+### webpack config
+
+* **Code Refactoring:** add line after require lint fix (9a10498)
+* **Code Refactoring:** removes comment (0ec4cc6, NEBV-1359)
+
+
+### Wheel
+
+* **Features:** flag alg. uses remaining dots to fill triangle (c23859e)
+* **Features:** changes data shape, tidies code, removes logging (e6cb4fd)
+* **Features:** moves random project data into random company logic (0a7342f)
+* **Bug Fixes:** fixes linting and proptype errors (c1dbbc3)
+* **Bug Fixes:** adds logic to avoid bugs going from 99<->0 (2ad295f)
+* **Bug Fixes:** 0-99 rotation bug (location variant) (d94f291)
+* **Bug Fixes:** initial polyfill for animation working, polyfills need cherry picking (1d7e479)
+* **Bug Fixes:** 0 to 99 position jump (59bea8d)
+* **Tests:** modify test to fit refactored wheel for IE implementation (bcb2f32, NEBV-1358)
+* **Code Formatting:** renames variables and clarifies math as per PR (3efffad)
+* **Code Refactoring:** fixes PropType errors, removes unused code/comments (fe78d22)
+* **Code Refactoring:** initial fix of internet explorer limited to css (no functionality) (c621987)
+* **Code Refactoring:** lint errors (edbd547)
+* **Code Refactoring:** modifications to the wheel, randomdatasample, LocationRay, WheelRay, Styling and Vi (9552a96)
+* **Code Refactoring:** pR comment fixes (4d4668b)
+* **Code Refactoring:** tidies code from previous commit (479be52)
+
+
+### Wheel and WheelList
+
+* **Code Refactoring:** fix rendering and css (1ab16bc)
+
+
+### Wheel Ray
+
+* **Bug Fixes:** fixes spacing for wheel ray flags (2349b81, NEBV-1216)
+
+
+### Wheel, CompanyFlag
+
+* **Features:** draws flags in the wheel (39e6033)
+* **Features:** draws flags in the wheel (b064761)
+
+
+### Wheel, WheelRay, LocationRay
+
+* **Code Refactoring:** adds dynamic rendering of wheel on percentages (10a1870)
+
+
+### WheelList
+
+* **Bug Fixes:** initial implementation with minor bugs (28ea700)
+
+
+### WheelList integration
+
+* **Code Formatting:** further CSS fixes to adjust dynamically (d0a3160)
+
+
+### WheelRay
+
+* **Features:** scales flag dots if a flag can't fit the max height (703810e)
+* **Bug Fixes:** integrates Wheel changes (7b7cfa8)
+* **Code Formatting:** rewrites awkward destructuring assignment (bb56f92)
+* **Code Refactoring:** fix unnecessary array creation on story (0b724f7)
+
+
+### WheelRay and PullToSpin
+
+* **Tests:** fix tests (fe6a05c)
+
+
+### withStyles
+
+* **Features:** Adds decorator for styled stories (bbb8c66)
+
+
+### BREAKING CHANGES
+
+* **ProjectMenu Change Requests:** n
+
 # [0.4.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.4.0) (2019-03-13)
 
 
