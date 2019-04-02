@@ -4070,6 +4070,62 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
 </div>
 `;
 
+exports[`Storyshots Components|DownloadPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal DownloadPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="header"
+    >
+      <span
+        className="title"
+      >
+        <span>
+          Image Download
+        </span>
+      </span>
+      <svg
+        className="closeIcon"
+        focusable={true}
+        height="20"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        version="1.1"
+        width="20"
+      >
+        <line
+          strokeLinecap="round"
+          x1="0"
+          x2="20"
+          y1="20"
+          y2="0"
+        />
+        <line
+          strokeLinecap="round"
+          x1="0"
+          x2="20"
+          y1="0"
+          y2="20"
+        />
+      </svg>
+    </div>
+    <div
+      className="content"
+    >
+      this is the image download popup
+    </div>
+    <div
+      className="footer"
+    />
+  </dialog>
+</div>
+`;
+
 exports[`Storyshots Components|Dropdown with interaction 1`] = `
 <div
   className="visualization"
@@ -7879,6 +7935,21 @@ exports[`Storyshots Components|Modal RegDocs Popup 1`] = `
       className="RegDocs"
     >
       Hello!
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|Modal default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal"
+    onClose={[Function]}
+  >
+    <div>
+      I am a child component
     </div>
   </dialog>
 </div>
@@ -12630,6 +12701,341 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
       <div
         className="ProjectName"
       />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|RegDocsPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal RegDocsPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="RegDocs"
+    >
+      <h3>
+        Search for instrument 
+        <strong>
+          #
+          XO-001-2018
+        </strong>
+         in 
+        <strong>
+          Regdocs...
+        </strong>
+      </h3>
+      <p
+        className="iconContainer"
+      >
+        <svg
+          className="checkIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <polyline
+            points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+          />
+        </svg>
+        <span>
+          Instrument found, click to open document.
+        </span>
+      </p>
+      <a
+        className="button"
+        href="https://www.example.com"
+      >
+        <div>
+          Open in current tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <a
+        className="button"
+        href="https://www.example.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          Open in new tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <button
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Cancel
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+      <h4>
+        What is RegDocs?
+      </h4>
+      <p>
+        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+      </p>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegDocsPopup"
+  >
+    <div
+      className="RegDocs"
+    >
+      <h3>
+        Search for instrument 
+        <strong>
+          #
+          XO-001-2018
+        </strong>
+         in 
+        <strong>
+          Regdocs...
+        </strong>
+      </h3>
+      <p
+        className="iconContainer"
+      >
+        <svg
+          className="checkIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <polyline
+            points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+          />
+        </svg>
+        <span>
+          Instrument found, click to open document.
+        </span>
+      </p>
+      <a
+        className="button"
+        href="https://www.example.com"
+      >
+        <div>
+          Open in current tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <a
+        className="button"
+        href="https://www.example.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          Open in new tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <button
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Cancel
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+      <h4>
+        What is RegDocs?
+      </h4>
+      <p>
+        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+      </p>
     </div>
   </div>
 </div>

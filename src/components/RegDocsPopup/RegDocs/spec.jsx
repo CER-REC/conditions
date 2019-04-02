@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
+import { shouldBehaveLikeAComponent, mountWithIntl } from '../../../tests/utilities';
 
 import RegDocs from '.';
 
@@ -18,7 +17,7 @@ describe('Components|RegDocs', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<RegDocs
+      wrapper = mountWithIntl(<RegDocs
         instrument="test"
         regdocsUrl="https://www.example.com"
         {...spy}
@@ -27,13 +26,12 @@ describe('Components|RegDocs', () => {
 
     shouldBehaveLikeAComponent(RegDocs, () => wrapper);
 
-    // test('should pass its setPane callback to the heading buttons', () => {
-    //   wrapper.find('.MainInfoBar')
-    //     .find('.textButton')
-    //     .first()
-    //     .simulate('click', eventFuncs);
+    test('should call its closeModal callback when the Cancel button is clicked', () => {
+      wrapper.find('.RegDocs')
+        .find('button')
+        .simulate('click', eventFuncs);
 
-    //   expect(spy.setPane).toHaveBeenCalledWith('about');
-    // });
+      expect(spy.closeModal).toHaveBeenCalledTimes(1);
+    });
   });
 });
