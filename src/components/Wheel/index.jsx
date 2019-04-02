@@ -47,6 +47,7 @@ class Wheel extends React.Component {
     const { items } = props.itemsData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
+    let { unanimatedSpin } = props;
     let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
@@ -56,6 +57,7 @@ class Wheel extends React.Component {
     if (prevState.needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + (selectedIndex * degreesPerItem);
+      unanimatedSpin = false;
     } else {
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
       if (diff < items.length - 1) {
@@ -71,7 +73,7 @@ class Wheel extends React.Component {
       oldRotation: prevState.newRotation || 0,
       newRotation,
       needsSpin: false,
-      unanimatedSpin: props.unanimatedSpin || prevState.unanimatedSpin,
+      unanimatedSpin,
     };
   }
 
@@ -125,7 +127,6 @@ class Wheel extends React.Component {
           immediate={this.state.unanimatedSpin}
           config={{ tension: 30, easing: 'easeInOutCirc' }}
           from={{
-            transformOrigin: 'center',
             transform: `rotate(${this.state.oldRotation}deg)`,
             rotation: -this.state.oldRotation,
           }}
@@ -135,9 +136,9 @@ class Wheel extends React.Component {
           }}
         >
           {props => (
-            <div className="MovingContainer">
-              <svg width="100%" height="100%" viewBox="0 0 860 860">
-                <animated.g style={props}>
+            <div className="svgContainer">
+              <div style={props} className="MovingContainer">
+                <svg viewBox="0 0 860 860">
                   <Ring ringType={this.props.wheelType} />
                   <AnimatedWheelRay
                     stopWheel={this.stopWheel}
@@ -149,19 +150,23 @@ class Wheel extends React.Component {
                       % this.props.itemsData.items.length}
                     {...props}
                   />
-                </animated.g>
-                <g transform="scale(2)">
-                  <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
-                </g>
-              </svg>
-              <WheelList
-                wheelType={this.props.wheelType}
-                listContent={this.props.itemsData.items}
-                textClippingRadius="60"
-                onChange={this.onChange}
-                selected={((this.props.itemsData.items.length + this.getIndex(props.rotation))
-                  % this.props.itemsData.items.length)}
-              />
+                </svg>
+              </div>
+              <div className="interactiveItems">
+                <svg viewBox="0 0 860 860">
+                  <g transform="scale(2)">
+                    <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
+                  </g>
+                </svg>
+                <WheelList
+                  wheelType={this.props.wheelType}
+                  listContent={this.props.itemsData.items}
+                  textClippingRadius="60"
+                  onChange={this.onChange}
+                  selected={((this.props.itemsData.items.length + this.getIndex(props.rotation))
+                    % this.props.itemsData.items.length)}
+                />
+              </div>
             </div>
           )
         }

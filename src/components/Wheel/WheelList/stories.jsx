@@ -56,7 +56,7 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
     </div>
   ), { interaction: { state: { selected: 4 }, actions: { onChange } } })
   .add('with location data', () => (
-    <div style={exampleDivProps} className="MovingContainer">
+    <div style={exampleDivProps} className="interactiveItems">
       <WheelList
         wheelType="location"
         listContent={locationList}
@@ -65,3 +65,4 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
       />
     </div>
   ), { interaction: { state: { selected: 2 }, actions: { onChange } } });
+
