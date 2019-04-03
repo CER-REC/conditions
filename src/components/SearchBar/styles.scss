@@ -17,15 +17,30 @@
     width: 100%;
     display: block;
     text-align: left;
+    .Tab {
+      display: inline-block;
+    }
+    .rect {
+      display: inline-block;
+      vertical-align: bottom;
+      border-top: 1px solid $LightGray;
+      &.horzDivider {
+        height: 1px;
+        width: 21px;
+      }
+      &.horzLine {
+        width: 262px;
+      }
+    }
   }
 
   .SuggestionPrompt {
     position: absolute;
-    top: -6px;
-    left: 390px;
+    top: -4px;
+    left: 392px;
     &.excludePrompt {
       top: 85px;
-      left: 390px;
+      left: 391px;
     }
   }
 

@@ -15120,20 +15120,20 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPrompt default 1`] = `
       <svg
         className="arrow"
         focusable={true}
-        height={20}
+        height={15}
         onClick={[Function]}
         onKeyPress={[Function]}
         tabIndex={0}
-        viewBox="0 0 427.5 427.5"
-        width={20}
+        viewBox="0 0 15 15"
+        width={15}
       >
         <circle
-          cx="215"
-          cy="213.8"
-          r="213.8"
+          cx="7.5"
+          cy="7.5"
+          r="7.1"
         />
-        <polygon
-          points="175.6,125.5 158,144.3 251.1,230.8 158,317.3 175.6,336.1 288.9,230.8 "
+        <polyline
+          points="6,4.5 9.5,7.5 6,10.5"
         />
       </svg>
     </div>

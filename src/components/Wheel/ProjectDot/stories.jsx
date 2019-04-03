@@ -12,6 +12,9 @@ storiesForComponent('Components|Wheel/ProjectDot', module, ReadMe)
   .add('default', () => (
     <svg height="100" width="100">
       <ProjectDot
+        cx={50}
+        cy={50}
+        r={40}
         filtered={boolean('Filtered', false)}
         relevant={boolean('Relevant', false)}
       />

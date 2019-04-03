@@ -12,13 +12,17 @@
   .reset {
     text-align: right;
     padding-right: 0px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+    padding-right: 30px;
+    span {
+      padding-right: 2px;
+    }
     svg{
+      height: 12px;
       fill: $general-text-2;
       stroke: $general-text-2;
       stroke-width: 20;
-    }
-    &.shifted {
-      padding-right: 25px;
     }
   }
   .upperCase{
@@ -35,7 +39,7 @@
     .dropDown {
       select {
         text-transform: uppercase;
-        width: 4em;
+        width: 5em;
       }
     }
   }
@@ -46,21 +50,25 @@
   .input {
     float: right;
     .searchBar {
-      width: 210px;
+      width: 230px;
       border-radius: 510px;
       border-color: $DarkGray;
       border-width: 1px;
       caret-color: $SearchKeyword;
+      padding-left:6px;
     }
     .addInput {
       background: transparent;
       line-height: 10px;
       border: none;
+      padding: 1px 14px 2px 0;
       div {
         transform: inherit;
       }
       .plusIcon {
         color: $LinksTextButtons;
+        height: 14px;
+        width: 14px;
       }
       &.disabled {
         pointer-events: none;
@@ -96,6 +104,7 @@
         border: none;
         padding: 0px;
         background-color: transparent;
+        width: 20px;
         svg {
           width: inherit;
         }
@@ -133,13 +142,16 @@
     }
   }
   .advancedSearchText {
+    font-family: $fira-sans-condensed; 
     text-align: right;
     button {
       border: none;
       background-color: transparent;
+      padding-right: 0px;
     }
     span {
       color: $LinksTextButtons;
+      padding-right: 2px;
     }
   }
 
@@ -156,10 +168,10 @@
     text-align: right;
     button {
       padding: 5px;
-      margin: 5px 5px 0px 5px;
+      margin: 10px -5px 0px 5px;
       background-color: $LinksTextButtons;
       color: $White;
-      border-color: $LinksTextButtons;
+      border: none;
     }
   }
 }
