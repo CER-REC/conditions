@@ -15,16 +15,17 @@ module.exports = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
     bundle: [
-      'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr',
+      '@babel/polyfill',
+      devMode ? 'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr' : '',
       './src/index.jsx',
-    ],
+    ].filter(v => !!v),
   },
   output: {
     path: BUILD_DIR,
     publicPath: '/conditions/script/',
     filename: '[name].js',
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: devMode ? 'cheap-module-eval-source-map' : 'none',
   devServer: {
     historyApiFallback: {
       rewrites: [
@@ -97,18 +98,16 @@ module.exports = {
     },
   },
 
-  // NB: Plugins object is *replaced* in production!
-  // See webpack.prod.config.js
   plugins: [
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
-    new Webpack.HotModuleReplacementPlugin(),
+    devMode ? new Webpack.HotModuleReplacementPlugin() : null,
     new Webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development'),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
       },
     }),
-  ],
+  ].filter(v => !!v),
 };
