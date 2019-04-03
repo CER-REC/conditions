@@ -41,7 +41,17 @@
     }
 
     .browseBy, .infoBar {
-      // height: 40px;
+      height: 72px;
+    }
+
+    .infoBar {
+      position: relative;
+
+      .ShortcutInfoBar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
 }

@@ -33,6 +33,8 @@
 
     height: 40px;
 
+    transition: top $defaultTransition;
+
     .SkipIntro {
       transition:
         opacity $defaultTransition,
@@ -87,6 +89,10 @@
     left: 0;
     opacity: 1;
 
+    height: 90vh;
+
+    border: 1px solid magenta;
+
     .header,
     .wheel,
     .companyBreakdown,
@@ -112,6 +118,8 @@
 
     left: 100%;
     opacity: 0;
+
+    height: 90vh;
   }
 
   .Footer {

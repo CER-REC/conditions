@@ -7,8 +7,8 @@ $faded: 0.3;
 $states: (
   0: (
     ".Guide": (
-      left: 18%,
-      top: 270px,
+      left: 14%,
+      top: 28%,
     ),
     ".ViewTwo .header": (opacity: 0),
     ".ViewTwo .wheel": (opacity: 0),
@@ -24,7 +24,7 @@ $states: (
   1: (
     ".Guide": (
       left: 38%,
-      top: 535px,
+      top: 62%,
     ),
     ".browseBy .BrowseByBtn.location": (opacity: $faded),
     ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: $faded),
@@ -33,9 +33,10 @@ $states: (
   ),
   2: (
     ".Guide": (
-      left: 50%,
-      top: 704px,
+      left: 52%,
+      top: 75%,
     ),
+    ".browseBy": (top: 81%),
     ".browseBy .BrowseByBtn.location": (opacity: 0),
     ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: 0),
     ".ViewOne .row.intro": (top: -100%),
