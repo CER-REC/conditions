@@ -55,7 +55,7 @@ class ShortcutInfoBar extends React.PureComponent {
           </div>
           <div className="Icons">
             Download:&nbsp;
-            <svg width="40" height="16">
+            <svg className="downloadIcons" width="40" height="16">
               <g
                 key="file-download"
                 icon="file-download"
