@@ -23,12 +23,10 @@ class Wheel extends React.Component {
     }).isRequired,
     selectedRay: PropTypes.string,
     selectRay: PropTypes.func.isRequired,
-    unanimatedSpin: PropTypes.bool,
   };
 
   static defaultProps = {
     selectedRay: null,
-    unanimatedSpin: false,
   };
 
   constructor(props) {
@@ -39,7 +37,6 @@ class Wheel extends React.Component {
       degreesPerItem: 0,
       selectedIndex: 0,
       needsSpin: false,
-      unanimatedSpin: false,
     };
   }
 
@@ -47,21 +44,22 @@ class Wheel extends React.Component {
     const { items } = props.itemsData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
-    let { unanimatedSpin } = props;
     let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
     // eslint-disable-next-line prefer-destructuring
     let { newRotation } = prevState || -(Math.sign(selectedIndex) * degreesPerItem);
     // console.log(`prevNewRotation: ${prevState.newRotation}`);
+    let { needsSpin } = prevState;
     if (prevState.needsSpin) {
+      needsSpin = true;
       const minimumRotation = 360 - (prevState.newRotation % 360);
-      newRotation += minimumRotation + (selectedIndex * degreesPerItem);
-      unanimatedSpin = false;
+      newRotation += minimumRotation + selectedIndex * degreesPerItem;
     } else {
+      needsSpin = false;
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
       if (diff < items.length - 1) {
-        const adding = ((selectedIndex - prevState.selectedIndex) * degreesPerItem);
+        const adding = (selectedIndex - prevState.selectedIndex) * degreesPerItem;
         newRotation += adding;
       } else {
         newRotation += -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
@@ -72,28 +70,23 @@ class Wheel extends React.Component {
       selectedIndex,
       oldRotation: prevState.newRotation || 0,
       newRotation,
-      needsSpin: false,
-      unanimatedSpin,
+      needsSpin,
     };
   }
 
   onClickSpin = () => {
     const { items } = this.props.itemsData;
     const randomNum = Math.floor(Math.random() * items.length);
-    this.setState({ needsSpin: true, unanimatedSpin: false });
+    this.setState({ needsSpin: true });
     this.props.selectRay(items[randomNum]._id);
   };
 
   onChange = (index) => {
-    this.setState({ unanimatedSpin: true });
     const { length } = this.props.itemsData.items;
     // TODO: check on resizing of letters on wheel list according to wheel size
-    const newIndex = (2 * length - index)
-    % length;
+    const newIndex = (2 * length - index) % length;
     this.setState(({ newRotation, degreesPerItem }) => {
-      const currentIndex = (length
-        + this.getIndex(newRotation))
-          % length;
+      const currentIndex = (length + this.getIndex(newRotation)) % length;
       const diff = Math.abs(newIndex - currentIndex);
       const isLargeDiff = diff > length / 2;
       let direction;
@@ -107,25 +100,29 @@ class Wheel extends React.Component {
       const indexShift = isLargeDiff
         ? Math.min(newIndex, currentIndex) + length - Math.max(newIndex, currentIndex)
         : diff;
-      return ({
-        newRotation: newRotation + (direction * indexShift * degreesPerItem),
-      });
+      return {
+        newRotation: newRotation + direction * indexShift * degreesPerItem,
+        needsSpin: false,
+      };
     });
   };
 
-  getIndex = currentRotation => Math.round((currentRotation % 360)
-    / (360 / this.props.itemsData.items.length))
+  // eslint-disable-next-line arrow-body-style
+  getIndex = (currentRotation) => {
+    return Math.round((currentRotation % 360) / (360 / this.props.itemsData.items.length));
+  };
 
   stopWheel = (rotation) => {
-    this.setState({ unanimatedSpin: true, newRotation: rotation });
-  }
+    this.setState({ newRotation: rotation });
+  };
 
   render() {
     return (
       <div className="Wheel">
         <Spring
-          immediate={this.state.unanimatedSpin}
+          immediate={!this.state.needsSpin}
           config={{ tension: 30, easing: 'easeInOutCirc' }}
+          onRest={() => this.setState({ needsSpin: false })}
           from={{
             transform: `rotate(${this.state.oldRotation}deg)`,
             rotation: -this.state.oldRotation,
@@ -146,8 +143,7 @@ class Wheel extends React.Component {
                     items={this.props.itemsData.items}
                     degreesPerItem={this.state.degreesPerItem}
                     reservedDegrees={reservedDegrees}
-                    currentIndex={this.getIndex(props.rotation)
-                      % this.props.itemsData.items.length}
+                    currentIndex={this.getIndex(props.rotation) % this.props.itemsData.items.length}
                     {...props}
                   />
                 </svg>
@@ -155,7 +151,11 @@ class Wheel extends React.Component {
               <div className="interactiveItems">
                 <svg viewBox="0 0 860 860">
                   <g transform="scale(2)">
-                    <PullToSpin className="pullToSpin" onClickSpin={this.onClickSpin} role="button" />
+                    <PullToSpin
+                      className="pullToSpin"
+                      onClickSpin={this.onClickSpin}
+                      role="button"
+                    />
                   </g>
                 </svg>
                 <WheelList
@@ -163,13 +163,14 @@ class Wheel extends React.Component {
                   listContent={this.props.itemsData.items}
                   textClippingRadius="60"
                   onChange={this.onChange}
-                  selected={((this.props.itemsData.items.length + this.getIndex(props.rotation))
-                    % this.props.itemsData.items.length)}
+                  selected={
+                    (this.props.itemsData.items.length + this.getIndex(props.rotation))
+                    % this.props.itemsData.items.length
+                  }
                 />
               </div>
             </div>
-          )
-        }
+          )}
         </Spring>
       </div>
     );
