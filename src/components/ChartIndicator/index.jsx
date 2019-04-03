@@ -15,7 +15,7 @@ const ChartIndicator = (props) => {
   );
   const label = !props.label ? null : (
     <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">
-      {`${props.label}${(props.allThemes) ? '*' : ''}`}
+      {props.label}{(props.allThemes) ? '*' : ''}
     </text>
   );
   return (

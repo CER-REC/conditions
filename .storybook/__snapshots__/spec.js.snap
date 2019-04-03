@@ -1645,7 +1645,8 @@ exports[`Storyshots Components|ChartIndicator allThemes 1`] = `
         x="0"
         y="-12"
       >
-        Without circle*
+        Without circle
+        *
       </text>
     </g>
   </svg>
@@ -1694,6 +1695,7 @@ exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
         y="-12"
       >
         With Circle
+        
       </text>
     </g>
   </svg>
@@ -1735,6 +1737,7 @@ exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
         y="-12"
       >
         Without circle
+        
       </text>
     </g>
   </svg>
@@ -4255,10 +4258,6 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
   <div
     className="FeatureTypesDescription"
   >
-    <p>
-      * 
-      Conditions with multiple themes are counted more than once.
-    </p>
     <h4
       data-heading="ADMINISTRATIVE"
     >
@@ -4390,6 +4389,13 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
       </span>
     </p>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".FeatureTypesDescription { width: 600px; height: 200px }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -4400,10 +4406,6 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
   <div
     className="FeatureTypesDescription"
   >
-    <p>
-      * 
-      Conditions with multiple themes are counted more than once.
-    </p>
     <h4
       data-heading="ADMINISTRATIVE"
     >
@@ -4535,6 +4537,13 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
       </span>
     </p>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".FeatureTypesDescription { width: 600px; height: 200px }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -4686,6 +4695,13 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
       </span>
     </p>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".FeatureTypesDescription { width: 600px; height: 200px }",
+      }
+    }
+  />
 </div>
 `;
 

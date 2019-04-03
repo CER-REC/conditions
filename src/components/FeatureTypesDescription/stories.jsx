@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { storiesForComponent } from '../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import FeatureTypesDescription from '.';
 import ReadMe from './README.md';
@@ -19,22 +19,25 @@ const instrumentTargets = [
 storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
+  .addDecorator(withStyles(`
+    .FeatureTypesDescription { width: 600px; height: 200px }
+  `))
   .add('default', () => (
     <FeatureTypesDescription
       feature="theme"
-      scrollTarget={select('Scroll Target', defaultTargets, 'SECURITY')}
+      subFeature={select('Scroll Target', defaultTargets, 'SECURITY')}
     />
   ))
   .add('allThemes', () => (
     <FeatureTypesDescription
       feature="theme"
-      scrollTarget={select('Scroll Target', defaultTargets, 'SECURITY')}
+      subFeature={select('Scroll Target', defaultTargets, 'SECURITY')}
       allThemes
     />
   ))
   .add('instrument types', () => (
     <FeatureTypesDescription
       feature="instrument"
-      scrollTarget={select('Scroll Target', instrumentTargets, 'ROUTING')}
+      subFeature={select('Scroll Target', instrumentTargets, 'ROUTING')}
     />
   ));
