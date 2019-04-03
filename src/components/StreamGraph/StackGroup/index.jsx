@@ -114,6 +114,7 @@ class StackGroup extends React.PureComponent {
           yTop={yTop}
           yBottom={yBottom}
           label={conditionCount}
+          allThemes={this.props.allThemes}
         />
       );
     }
@@ -164,11 +165,13 @@ StackGroup.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
   }).isRequired,
+  allThemes: PropTypes.bool,
 };
 
 StackGroup.defaultProps = {
   children: null,
   controlYear: null,
+  allThemes: false,
 };
 
 export default StackGroup;

@@ -16,8 +16,8 @@ StackGroupProps.propTypes = {
     onChange: PropTypes.func.isRequired,
     controlYear: PropTypes.number,
     projectData: allConditionsPerYear.isRequired,
+    allThemes: PropTypes.bool.isRequired,
   }).isRequired,
 };
 
 export default StackGroupProps;
-

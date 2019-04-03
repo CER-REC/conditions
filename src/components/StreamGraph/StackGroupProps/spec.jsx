@@ -20,6 +20,7 @@ const stackProps = {
 const groupProps = {
   onChange: () => {},
   projectData: [],
+  allThemes: false,
 };
 
 describe('Components/StreamGraph/StackGroupProps', () => {

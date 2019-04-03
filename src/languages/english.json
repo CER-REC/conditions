@@ -158,6 +158,7 @@
       "instrument": "Regulatory instruments are official orders issued by NEB staff. An Instrument can include several conditions, and a project might have several instruments (i.e. orders)attached to it. All instruments have an instrument number. Searching for this number in the NEB’s {regDocsLink} repository is one way to find the original regulatory instrument from which the conditions in this visualization are taken. The prefix of an instrument number is based on its meaning."
     },
     "featureTypesDescription": {
+      "allThemes": "Conditions with multiple themes are counted more than once.",
       "theme": {
         "ADMINISTRATIVE": "types of conditions that ensure filings are made.",
         "DAMAGE_PREVENTION": "types of conditions that ensure reduction and prevention of damage.",

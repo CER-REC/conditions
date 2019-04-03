@@ -54,4 +54,15 @@ storiesForComponent('Components|ChartIndicator', module, ReadMe)
         yBottom={number('y end position(px)', 120, bottomOptions)}
       />
     </svg>
+  ))
+  .add('allThemes', () => (
+    <svg width={300} height={300} style={{ border: '1px solid #000' }}>
+      <ChartIndicator
+        label="Without circle"
+        x={number('x position(px)', 50, options)}
+        yTop={number('y start position(px)', 30, topOptions)}
+        yBottom={number('y end position(px)', 120, bottomOptions)}
+        allThemes
+      />
+    </svg>
   ));

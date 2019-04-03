@@ -106,6 +106,7 @@ class StreamGraph extends React.Component {
                 onChange: noop,
                 controlYear: null,
                 projectData: filteredData,
+                allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
               }}
             >
               {this.streamLayers()}
@@ -147,6 +148,7 @@ class StreamGraph extends React.Component {
             onChange: this.handleOnChange,
             controlYear: this.state.controlYear,
             projectData: filteredData,
+            allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
           }}
         >
           {this.streamLayers()}
