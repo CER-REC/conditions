@@ -4,15 +4,12 @@ import { VictoryStack } from 'victory';
 import StackGroup from '../StackGroup';
 import { allConditionsPerYear } from '../../../proptypes';
 
-const StackGroupProps = ({ groupProps, ...props }) => {
-  console.dir(groupProps);
-  return (
+const StackGroupProps = ({ groupProps, ...props }) => (
   <VictoryStack
     groupComponent={<StackGroup {...groupProps} stackProps={props} />}
     {...props}
   />
 );
-  };
 
 StackGroupProps.propTypes = {
   groupProps: PropTypes.shape({
