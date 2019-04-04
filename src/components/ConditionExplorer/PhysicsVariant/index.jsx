@@ -15,8 +15,9 @@ import {
 const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
 const conditionViewerOptions = {
   keywordReturnSpeed: 2,
-  circleCenterSpeed: 40,
+  circleCenterSpeed: 2,
   circleIncreaseScale: 1.2,
+  circleBaseRadius: 50,
 };
 
 export default class PhysicsVariant extends React.PureComponent {
@@ -30,14 +31,7 @@ export default class PhysicsVariant extends React.PureComponent {
     this.loopID = null;
     this.lastTime = 0;
     this.lastDeltaTime = 0;
-    this.notTheGuideClicked = false;
     this.locationBeforeExpand = { x: 0, y: 0 };
-    this.svgHandler = false;
-    this.middleX = 0;
-    this.preExpand = false;
-    this.circleMoving = false;
-    this.circleExpanded = false;
-    this.initialTime = 0;
     this.keywordsCanReset = true;
     this.scale = 1;
     this.state = { renderToggle: false };
@@ -48,10 +42,12 @@ export default class PhysicsVariant extends React.PureComponent {
     this.engine = Matter.Engine.create({ world });
 
     // Set up bodies
-    this.circle = Matter.Bodies.circle(200, 200, 50, {
+    const radius = conditionViewerOptions.circleBaseRadius;
+    this.circle = Matter.Bodies.polygon(200, 200, 100, radius, {
       collisionFilter: { category: circleCategory },
     });
     this.circle.frictionAir = 0.2;
+    this.circle.render.targetRadius = radius;
 
     this.keywords = {};
     this.props.keywords.forEach((keyword) => {
@@ -100,7 +96,6 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
     Matter.Runner.run(Matter.Runner.create(), this.engine);
-    this.initialTime = window.performance.now();
     this.loop(window.performance.now());
   }
 
@@ -114,18 +109,23 @@ export default class PhysicsVariant extends React.PureComponent {
   }
 
   stopBodyWithLowVelocity = (body) => {
-    const newVelocity = { ...body.velocity };
-    if (Math.abs(body.position.x - body.positionPrev.x) < 0.01) { newVelocity.x = 0; }
-    if (Math.abs(body.position.y - body.positionPrev.y) < 0.01) { newVelocity.y = 0; }
-    if (newVelocity.x !== body.velocity.x || newVelocity.y !== body.velocity.y) {
-      Matter.Body.setVelocity(body, newVelocity);
+    if (body.velocity.x || body.velocity.y) {
+      const newVelocity = { ...body.velocity };
+      if (Math.abs(body.position.x - body.positionPrev.x) < 0.01) { newVelocity.x = 0; }
+      if (Math.abs(body.position.y - body.positionPrev.y) < 0.01) { newVelocity.y = 0; }
+      if (newVelocity.x !== body.velocity.x || newVelocity.y !== body.velocity.y) {
+        Matter.Body.setVelocity(body, newVelocity);
+      }
     }
-    if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
-      Matter.Body.setAngularVelocity(0);
+
+    if (body.angularVelocity) {
+      if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
+        Matter.Body.setAngularVelocity(0);
+      }
     }
   }
 
-  setBodyVelocity = (body, speed) => {
+  moveBodyToTarget = (body, speed) => {
     const newVelocity = { ...body.velocity };
     const { targetPos } = body.render;
     newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x, speed);
@@ -141,19 +141,6 @@ export default class PhysicsVariant extends React.PureComponent {
 
   onUpdate = (update) => {
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
-      // Stopping velocity
-      this.stopBodyWithLowVelocity(body);
-      // end stopping velocity
-      const bodyChanged = !!(body.speed || body.angularSpeed);
-
-      // If the body has stopped moving, remove its target position so that it
-      // doesn't automatically move back if bumped.
-      if (!bodyChanged) { body.render.targetPos = false; }
-
-      if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
-        body.collisionFilter.category = placeholderCategory;
-      }
-
       if (body.collisionFilter.category === visibleTextCategory
         && body.render.lastCollision + 5000 <= update.source.timing.timestamp
         && this.keywordsCanReset) {
@@ -178,21 +165,29 @@ export default class PhysicsVariant extends React.PureComponent {
           keywordReturnSpeed,
           circleCenterSpeed,
         } = conditionViewerOptions;
-        this.setBodyVelocity(body, keywordReturnSpeed);
+        const moveSpeed = body === this.circle ? circleCenterSpeed : keywordReturnSpeed;
+        this.moveBodyToTarget(body, moveSpeed);
+      }
 
-        if (body === this.circle) {
-          const dimensions = this.getCenterCoordinates();
-          const maxRadius = Math.min(dimensions.x, dimensions.y);
-          if ((this.circle.circleRadius * circleIncreaseScale) < maxRadius) {
-            this.setBodyVelocity(body, circleCenterSpeed);
-            Matter.Body.scale(this.circle, circleIncreaseScale, circleIncreaseScale);
-          }
-          if (Math.round(body.position.x) === Math.round(dimensions.x)
-          && Math.round(body.position.y) === Math.round(dimensions.y)) {
-            Matter.Body.setStatic(this.circle, true);
-          // console.log('circle is now static');
-          }
+      // Adjust the scale of the circle
+      if (body === this.circle) {
+        const radius = (body.bounds.max.x - body.bounds.min.x) / 2;
+        if (Math.abs(body.render.targetRadius - radius) > 1) {
+          let scaleVelocity = this.calculateVelocity(radius, body.render.targetRadius, 1.01, 1);
+          while (scaleVelocity < 0) { scaleVelocity += 1; }
+          Matter.Body.scale(this.circle, scaleVelocity, scaleVelocity);
         }
+      }
+
+      this.stopBodyWithLowVelocity(body);
+      const bodyChanged = !!(body.speed || body.angularSpeed);
+
+      // If the body has stopped moving, remove its target position so that it
+      // doesn't automatically move back if bumped.
+      if (!bodyChanged) { body.render.targetPos = false; }
+
+      if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
+        body.collisionFilter.category = placeholderCategory;
       }
     });
   };
@@ -244,16 +239,17 @@ export default class PhysicsVariant extends React.PureComponent {
     return word;
   };
 
-  calculateVelocity = (start, end, speed = 2) => {
+  calculateVelocity = (start, end, speed = 2, slowWithin = 100) => {
     const distance = end - start;
-    const distanceScale = Math.min(Math.abs(distance) / 100, 1);
+    if (distance === 0) { return 0; }
+    const distanceScale = Math.min(Math.abs(distance) / slowWithin, 1);
     const direction = distance / Math.abs(distance);
     return easeOutCubic(distanceScale) * direction * speed;
   };
 
   isWordVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
 
-  getBodies = () => {
+  sortBodies = () => {
     const bodies = Matter.Composite.allBodies(this.engine.world)
       .sort((a, b) => {
         if (this.isWordVisible(a) && !this.isWordVisible(b)) { return 1; }
@@ -263,52 +259,36 @@ export default class PhysicsVariant extends React.PureComponent {
     return bodies;
   }
 
-  openGuide = () => {
-    this.preExpand = true;
-    console.log(this.locationBeforeExpand)
-    if (this.circle.speed) { return; }
+  openGuide = (e) => {
+    if (this.circle.speed || this.circle.render.expanded) { return; }
+    e.stopPropagation();
+    this.locationBeforeExpand = { x: this.circle.position.x, y: this.circle.position.y };
     this.circle.render.targetPos = this.getCenterCoordinates();
+    const dimensions = this.getCenterCoordinates();
+    this.circle.render.targetRadius = Math.min(dimensions.x, dimensions.y);
+    this.circle.render.expanded = true;
     this.keywordsCanReset = false;
     Matter.Composite.allBodies(this.engine.world).forEach((body) => {
       body.collisionFilter.mask &= ~circleCategory;
     });
-    this.circleExpanded = true;
-    if (!this.svgHandler) {
-      this.groupRef.current.parentElement.addEventListener('click', (e) => {
-        if (e.path[0].className.baseVal !== 'guide') this.notGuideClicked = true;
-        this.svgHandler = true;
-        if (this.notGuideClicked) {
-          // console.log('outside the guide clicked reset the guide here');
-          // Matter.Body.setStatic(this.circle, false);
-          this.svgHandler = false;
-          this.groupRef.current.parentElement.removeEventListener('click', () => {}, false);
-         // console.log(this.locationBeforeExpand)
-          // this.circle.render.targetPos = this.locationBeforeExpand;
-          // this.keywordsCanReset = true;
-          this.circleExpanded = false;
-          this.notGuideClicked = false;
-          // this.preExpand = false;
-        }
-      }, false);
-    }
   }
 
   closeGuide = () => {
+    this.circle.render.targetPos = this.locationBeforeExpand;
+    this.circle.render.targetRadius = conditionViewerOptions.circleBaseRadius;
+    this.circle.render.expanded = false;
   }
 
   // TODO: optimize the nested map functions
-  getWords = () => {
+  renderBodies = () => {
     if (!this.engine || !this.engine.world) { return null; }
-    const bodies = this.getBodies();
+    const bodies = this.sortBodies();
     const words = bodies.map((body) => {
       const d = body.vertices
         .concat(body.vertices[0]) // Add it onto the end so we create a full path
         .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
         .join(' ');
       if (body === this.circle) {
-        if (!this.preExpand) {
-          this.locationBeforeExpand = { x: this.circle.position.x, y: this.circle.position.y };
-        }
         return <path key="guide" className="guide" d={d} onClick={this.openGuide} />;
       }
       return (
@@ -319,7 +299,7 @@ export default class PhysicsVariant extends React.PureComponent {
             body.render.className,
             { textVisible: this.isWordVisible(body) },
           )}
-          onClick={this.closeGuide}
+          onClick={null/*this.closeGuide*/}
         >
           <text
             x={body.position.x + body.render.textOffset.x}
@@ -337,10 +317,10 @@ export default class PhysicsVariant extends React.PureComponent {
 
   render() {
     return (
-      <g
-        ref={this.groupRef}
-      >
-        {this.getWords()}
+      <g ref={this.groupRef} onClick={this.closeGuide}>
+        {/* This is to ensure the group is always clickable */}
+        <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
+        {this.renderBodies()}
       </g>
     );
   }
