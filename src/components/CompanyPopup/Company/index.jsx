@@ -19,9 +19,7 @@ const Company = ({ projectName, companies, closeModal }) => (
     <FormattedMessage id="components.modal.company.meaningHeading" tagName="h4" />
     <FormattedMessage id="components.modal.company.meaningText" tagName="p" />
     <FormattedMessage id="components.modal.company.back">
-      {text => (
-        <PopupBtn text={text} icon="x" action={closeModal} />
-      )}
+      {text => <PopupBtn text={text} icon="x" action={closeModal} />}
     </FormattedMessage>
   </div>
 );
