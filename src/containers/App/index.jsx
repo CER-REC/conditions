@@ -62,17 +62,17 @@ class App extends React.PureComponent {
         <Provider store={store}>
           {/* TODO: Figure out proper transition states vs. renders */}
           {/* eslint-disable-next-line no-constant-condition */}
-          {(true || transitionState <= 9)
+          {(true)
             ? <Guide textState={transitionState} />
             : null
           }
           {/* eslint-disable-next-line no-constant-condition */}
-          {(true || transitionState <= 8)
+          {(true)
             ? <ViewOne />
             : null
           }
           {/* eslint-disable-next-line no-constant-condition */}
-          {(true || transitionState <= 6)
+          {(true)
             ? (
               <section className="browseBy">
                 <SkipIntro className={(transitionState < 2) ? 'showArrow' : ''} />
@@ -85,13 +85,13 @@ class App extends React.PureComponent {
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
           {/* eslint-disable-next-line no-constant-condition */}
-          {(true || transitionState <= 8)
+          {(true)
             ? <ViewTwo {...viewProps} />
             : null
           }
           {(transitionState >= 8) ? <ViewThree {...viewProps} /> : null}
           {/* eslint-disable-next-line no-constant-condition */}
-          {(false && transitionState >= 6)
+          {(true)
             ? (
               <Footer
                 setMainInfoBarPane={this.setMainInfoBarPane}

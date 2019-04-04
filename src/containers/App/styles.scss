@@ -91,7 +91,7 @@
 
     height: 90vh;
 
-    border: 1px solid magenta;
+    outline: 1px solid magenta;
 
     .header,
     .wheel,
@@ -120,12 +120,14 @@
     opacity: 0;
 
     height: 90vh;
+
+    outline: 1px solid lightseagreen;
   }
 
   .Footer {
     transition: opacity $defaultTransition, top $fastStart;
     position: relative;
-    top: 180px;
+    // top: 180px;
     // top: 88%;
   }
 

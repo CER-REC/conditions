@@ -36,8 +36,8 @@
   .secondRow { border-bottom: 1px solid $DarkGray; }
 
   .firstRow {
-    height: 40vh;
-    min-height: 400px;
+    height: 40%;
+    // min-height: 400px;
     position: relative;
 
     .features {
@@ -56,7 +56,7 @@
   }
 
   .secondRow {
-    height: 35vh;
+    height: 30%;
     min-height: 200px;
     position: relative;
 
@@ -71,10 +71,10 @@
   }
 
   .thirdRow {
-    height: 35vh;
+    height: 30%;
     min-height: 200px;
 
-    padding-top: 10px;
+    // padding-top: 10px;
 
     .selectedCompany {
       position: relative;
