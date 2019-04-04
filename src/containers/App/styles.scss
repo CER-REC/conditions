@@ -84,8 +84,9 @@
 
   .ViewTwo {
     transition: opacity $defaultTransition, left $defaultTransition;
-    position: relative;
+    position: absolute;
 
+    top:0 ;
     left: 0;
     opacity: 1;
 
@@ -126,8 +127,8 @@
 
   .Footer {
     transition: opacity $defaultTransition, top $fastStart;
-    position: relative;
-    // top: 180px;
+    position: absolute;
+    top: 90vh;
     // top: 88%;
   }
 

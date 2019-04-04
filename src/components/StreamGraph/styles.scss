@@ -7,10 +7,16 @@
   &, .axis-label { color: $Black51; }
 
   h1 {
-    margin: 0;
+    margin-top: 10px;
     font-family: $fira-sans-condensed;
     font-weight: normal;
     color: $Black77;
     font-size: 18px;
+  }
+
+  .VictoryContainer {
+    position: absolute !important;
+    top: 0;
+    left: 0;
   }
 }
