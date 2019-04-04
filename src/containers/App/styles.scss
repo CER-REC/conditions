@@ -126,10 +126,10 @@
   }
 
   .Footer {
-    transition: opacity $defaultTransition, top $fastStart;
+    transition: opacity $defaultTransition, top $fastStart, visibility 0s 1s;
     position: absolute;
     top: 90vh;
-    // top: 88%;
+    visibility: hidden;
   }
 
   &.transition-state-8 {

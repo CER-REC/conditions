@@ -91,7 +91,10 @@ $states: (
     ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
     ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
     ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
-    ".Footer": (opacity: 1),
+    ".Footer": (
+      opacity: 1,
+      visibility: visible,
+    ),
   ),
   8: (
     ".Guide": (
