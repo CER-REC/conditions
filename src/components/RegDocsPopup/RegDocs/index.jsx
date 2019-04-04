@@ -21,9 +21,8 @@ const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
         instrument: (<strong key="instrument">#{instrument}</strong>),
         regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" key="regdocs" />),
       }}
-    >
-      {(...strings) => <h3>{strings}</h3>}
-    </FormattedMessage>
+      tagName="h3"
+    />
     <p className="iconContainer">
       {checkIcon}
       <FormattedMessage id="components.modal.regdocs.found" />

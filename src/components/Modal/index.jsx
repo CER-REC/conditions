@@ -11,26 +11,36 @@ class Modal extends React.PureComponent {
   constructor(props) {
     super(props);
     this.lastFocus = null;
+    this.dialog = React.createRef();
   }
 
-  /* Polyfill prevents testing (must be manually tested) */
-  registerDialog = (ref) => {
-    this.dialog = ref;
-    if (ref === null) { return; }
-
-    this.lastFocus = document.activeElement;
-    dialogPolyfill.registerDialog(ref);
-    ref.showModal();
+  componentDidMount() {
+    if (this.dialog.current) { dialogPolyfill.registerDialog(this.dialog.current); }
+    this.updateDialogState();
   }
 
-  /* Polyfill prevents testing (must be manually tested) */
+  componentDidUpdate(prevProps) {
+    if (prevProps.isOpen !== this.props.isOpen) {
+      this.updateDialogState();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.dialog.current) { this.dialog.current.close(); }
+  }
+
+  updateDialogState = () => {
+    if (!this.dialog.current) { return; }
+
+    if (this.props.isOpen) {
+      this.lastFocus = document.activeElement;
+      this.dialog.current.showModal();
+    } else {
+      this.dialog.current.close();
+    }
+  };
+
   dialogClosed = () => { if (this.lastFocus) { this.lastFocus.focus(); } }
-
-  /* Polyfill prevents testing (must be manually tested) */
-  close = () => {
-    this.props.closeModal();
-    if (this.dialog) { this.dialog.close(); }
-  }
 
   render() {
     const {
@@ -38,18 +48,16 @@ class Modal extends React.PureComponent {
       componentProps,
     } = this.props;
 
-    if (!isOpen) { return null; }
-
     return (
       <dialog
         className={classNames('Modal', this.props.className)}
         onClose={this.dialogClosed}
-        ref={this.registerDialog}
+        ref={this.dialog}
       >
         <this.props.component
           {...componentProps}
           isOpen={isOpen}
-          closeModal={this.close}
+          closeModal={this.props.closeModal}
         />
       </dialog>
     );

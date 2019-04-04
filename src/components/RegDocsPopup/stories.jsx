@@ -5,14 +5,14 @@ import ReadMe from './README.md';
 
 import RegDocsPopup from '.';
 
-const noop = () => {};
+const closeModal = () => alert('Close is handled by the view and isn\'t available in this story.\n\nPlease use the Knobs panel on the right.');
 
 storiesForComponent('Components|RegDocsPopup', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
     <RegDocsPopup
       isOpen={boolean('Visible', true)}
-      closeModal={noop}
+      closeModal={closeModal}
       instrument="XO-001-2018"
       regdocsUrl="https://www.example.com"
     />

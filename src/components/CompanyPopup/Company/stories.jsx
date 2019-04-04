@@ -3,14 +3,14 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../../.storybook/utils';
 import Company from '.';
 
-const noop = () => {};
+const closeModal = () => alert('Close is handled by the view and isn\'t available in this story.\n\nPlease use the Knobs panel on the right.');
 
 storiesForComponent('Components|CompanyPopup/Company', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Company
       isOpen={boolean('Visible', true)}
-      closeModal={noop}
+      closeModal={closeModal}
       projectName="Trans Mountain Expansion"
       companies={[
         'Company A',
