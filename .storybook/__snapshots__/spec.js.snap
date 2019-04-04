@@ -8083,8 +8083,7 @@ exports[`Storyshots Components|PopupBtn link attributes 1`] = `
   <a
     className="PopupBtn"
     href="https://www.example.com"
-    noopener={true}
-    noreferrer={true}
+    rel="noopener noreferrer"
     target="_blank"
   >
     <div>
@@ -12917,7 +12916,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </span>
       </p>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
       >
         <div>
@@ -12954,7 +12953,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </svg>
       </a>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -12993,6 +12992,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </svg>
       </a>
       <button
+        className="PopupBtn cancel"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -13084,7 +13084,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </span>
       </p>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
       >
         <div>
@@ -13121,7 +13121,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </svg>
       </a>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -13160,6 +13160,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </svg>
       </a>
       <button
+        className="PopupBtn cancel"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
