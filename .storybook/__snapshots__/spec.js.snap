@@ -1822,17 +1822,19 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     <div
       className="Company"
     >
-      <h3>
+      <h2>
         Full Project Name:
          
         <strong>
           Trans Mountain Expansion
         </strong>
-      </h3>
-      <h4>
+      </h2>
+      <h3>
         Companies associated with this project
-      </h4>
-      <p>
+      </h3>
+      <p
+        className="companies"
+      >
         Company A
         <br />
         Company B
@@ -1843,6 +1845,26 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         <br />
         Company E
         <br />
+        Company F
+        <br />
+        Company G
+        <br />
+        Company H
+        <br />
+        Company I
+        <br />
+        Company J
+        <br />
+        Company K
+        <br />
+        Company L
+        <br />
+        Company M
+        <br />
+        Company N
+        <br />
+        Company O
+        <br />
       </p>
       <h4>
         What does it mean to have more than one company associated to a project?
@@ -1851,6 +1873,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         Text to be provided by the NEB.
       </p>
       <button
+        className="PopupBtn"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -1904,17 +1927,19 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     <div
       className="Company"
     >
-      <h3>
+      <h2>
         Full Project Name:
          
         <strong>
           Trans Mountain Expansion
         </strong>
-      </h3>
-      <h4>
+      </h2>
+      <h3>
         Companies associated with this project
-      </h4>
-      <p>
+      </h3>
+      <p
+        className="companies"
+      >
         Company A
         <br />
         Company B
@@ -1925,6 +1950,26 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         <br />
         Company E
         <br />
+        Company F
+        <br />
+        Company G
+        <br />
+        Company H
+        <br />
+        Company I
+        <br />
+        Company J
+        <br />
+        Company K
+        <br />
+        Company L
+        <br />
+        Company M
+        <br />
+        Company N
+        <br />
+        Company O
+        <br />
       </p>
       <h4>
         What does it mean to have more than one company associated to a project?
@@ -1933,6 +1978,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         Text to be provided by the NEB.
       </p>
       <button
+        className="PopupBtn"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
