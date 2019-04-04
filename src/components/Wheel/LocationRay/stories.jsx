@@ -1,7 +1,6 @@
 import React from 'react';
-import { storiesForComponent } from '../../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
-
 import ReadMe from './README.md';
 
 import LocationRay from '.';
@@ -16,6 +15,7 @@ const randomLocationBars = [Object.keys(features.theme).map((subFeature, index) 
 
 const degreesPerItem = 5;
 storiesForComponent('Components|Wheel/LocationRay', module, ReadMe)
+  .addDecorator(withStyles)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .add('default', () => (
     <svg>
@@ -27,4 +27,4 @@ storiesForComponent('Components|Wheel/LocationRay', module, ReadMe)
         adjustRotationReference={degreesPerItem / 2}
       />
     </svg>
-  ));
+  ), { styles: '.Wheel { padding-top: 0px }' });

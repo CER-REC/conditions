@@ -11,6 +11,13 @@ storiesForComponent('Components|StreamGraph', module, ReadMe)
   .add('default', () => (
     <StreamGraph
       projectData={conditionCountsByYear.counts}
+      feature="phase"
+      subFeature=""
+    />
+  ))
+  .add('allThemes', () => (
+    <StreamGraph
+      projectData={conditionCountsByYear.counts}
       feature="theme"
       subFeature=""
     />

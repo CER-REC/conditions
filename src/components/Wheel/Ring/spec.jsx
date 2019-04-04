@@ -20,11 +20,7 @@ describe('Components|Wheel/Ring', () => {
     });
 
     test('should have an outer and an inner ring in the ring group', () => {
-      expect(wrapper.find('.RingGroup').children()).toHaveLength(2);
-    });
-
-    test('should render a ring group containing the outer outlines for the ring', () => {
-      expect(wrapper.find('.RingGroup').type()).toBe('g');
+      expect(wrapper.find('.RingOutline').children()).toHaveLength(2);
     });
 
     test('should have a class company for the ring background ', () => {

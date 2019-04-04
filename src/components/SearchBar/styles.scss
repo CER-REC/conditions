@@ -11,9 +11,10 @@
   z-index: 999;
 
   .SelectionTab {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 960px;
+    width: 100%;
     display: block;
     text-align: left;
     .Tab {
@@ -22,22 +23,32 @@
     .rect {
       display: inline-block;
       vertical-align: bottom;
-      border-bottom: 1px solid $LightGray;
+      border-top: 1px solid $LightGray;
       &.horzDivider {
-        width: 20px;
+        height: 1px;
+        width: 21px;
       }
       &.horzLine {
-        width: 256px;
+        width: 262px;
       }
     }
   }
+
   .SuggestionPrompt {
     position: absolute;
-    top: -6px;
-    left: 390px;
+    top: -4px;
+    left: 392px;
     &.excludePrompt {
       top: 85px;
-      left: 390px;
+      left: 391px;
     }
+  }
+
+  .contentPane {
+    margin-top: -1px;
+    width: 425px;
+
+    border: 1px solid $LightGray;
+    background-color: white;
   }
 }

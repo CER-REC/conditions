@@ -14,16 +14,18 @@
   width: 50%;
   height: 45%;
   font-family: $fira-sans-condensed;
-  font-size: 18px;
+  font-size: 14px;
   transform: translate(0%, -50%);
 
   .labelContainer {
     position: absolute;
-    height: 24px;
+    top:50%;
+    transform: translate(0 , -50%);
+    height: 22px;
     width: 150%;
     overflow: visible;
     background-color: $LightGray;
-    line-height: 24px;
+    line-height: 22px;
     pointer-events: none;
 
     .label {
@@ -61,31 +63,30 @@
   }
 
   .list {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // width: 50%;
     position: absolute;
     top: 50%;
     margin-left: 45%;
     transform: translate(0 , -50%);
+    .selected {
+      line-height: 20px;
+    }
   }
 
   .oneAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .twoAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 13px;
+    font-size: 10px;
   }
 
   .threeAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 11px;
+    font-size: 8px;
   }
 }

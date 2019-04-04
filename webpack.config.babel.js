@@ -2,27 +2,30 @@ const Path = require('path');
 const Webpack = require('webpack');
 const sass = require('node-sass');
 const SassUtilsConstructor = require('node-sass-utils');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TranslationTable = require('./src/TranslationTable');
 const { features } = require('./src/constants');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
-
 const sassUtils = SassUtilsConstructor(sass);
 
+const devMode = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
   entry: {
     bundle: [
-      'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr',
+      '@babel/polyfill',
+      devMode ? 'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr' : '',
       './src/index.jsx',
-    ],
+    ].filter(v => !!v),
   },
   output: {
     path: BUILD_DIR,
     publicPath: '/conditions/script/',
     filename: '[name].js',
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: devMode ? 'cheap-module-eval-source-map' : 'none',
   devServer: {
     historyApiFallback: {
       rewrites: [
@@ -53,7 +56,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          'style-loader',
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           {
@@ -95,14 +98,16 @@ module.exports = {
     },
   },
 
-  // NB: Plugins object is *replaced* in production!
-  // See webpack.prod.config.js
   plugins: [
-    new Webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+    devMode ? new Webpack.HotModuleReplacementPlugin() : null,
     new Webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development'),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
       },
     }),
-  ],
+  ].filter(v => !!v),
 };

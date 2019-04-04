@@ -11,6 +11,7 @@ const LocationRay = (props) => {
     <g className="LocationRay">
       <BarContainer
         className="WheelBar"
+        transform="translate(31)"
         width={width}
         height={height}
         items={items}
@@ -20,8 +21,8 @@ const LocationRay = (props) => {
       {searched ? (
         <line
           className="searched"
-          y2="27.9%"
-          y1="23.6%"
+          y2="28%"
+          y1="23.4%"
           style={{ transform: `rotate(-${90 - adjustRotationReference}deg)` }}
         />
       ) : null}

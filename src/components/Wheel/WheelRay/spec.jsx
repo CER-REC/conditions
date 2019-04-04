@@ -32,7 +32,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
 
     it('should render and return a react fragment', () => {
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.type()).toBe('g');
+      expect(wrapper.type()).toBe('svg');
     });
 
     it('should render the same amount of items as the length of the array passed less 1', () => {
@@ -48,18 +48,18 @@ describe('Components|CompanyWheel/WheelRay', () => {
     });
 
     it('should render an item before the gap', () => {
-      const positionBeforeGap = (Math.abs(rotation - (reservedDegrees / 2)) % 360);
-      const transformValue = `translate(50%, 50%) rotate(${positionBeforeGap.toFixed(2)}deg)`;
+      const positionBeforeGap = (Math.abs(rotation - (reservedDegrees / 2)).toFixed(2) % 360);
+      const transformValue = `rotate(${positionBeforeGap})`;
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.children().first().props().style.transform === transformValue).toBe(true);
+      expect(wrapper.children().first().props().transform === transformValue).toBe(true);
     });
 
     it('should render an item after the gap', () => {
       const positionAfterGap = (Math.abs(rotation + (reservedDegrees / 2) - 360 + degreesPerItem));
-      const transformValue = `translate(50%, 50%) rotate(${positionAfterGap.toFixed(2)}deg)`;
+      const transformValue = `rotate(${positionAfterGap.toFixed(2)})`;
       const { wrapper } = wrapperSetup({});
       expect(wrapper.childAt(wheelData.items.length - 2)
-        .props().style.transform === transformValue).toBe(true);
+        .props().transform === transformValue).toBe(true);
     });
   });
 });

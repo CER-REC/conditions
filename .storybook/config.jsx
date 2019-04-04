@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import requireContext from 'require-context.macro';
 import React from 'react';
 import { setIntlConfig, withIntl } from 'storybook-addon-intl';

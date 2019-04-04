@@ -2,11 +2,6 @@
 @import "../../../styles/colors.scss";
 
 .FilterContent {
-  border-top: none;
-  border-right: 1px solid $LightGray;
-  border-bottom: 1px solid $LightGray;
-  border-left: 1px solid $LightGray;
-  width: 425px;
   height: 160px;
   font-family: $fira-sans-condensed;
   user-select: none;
@@ -26,17 +21,19 @@
       fill: $general-text-2;
       stroke: $general-text-2;
       stroke-width: 20;
+      height: 12px;
     }
   }
 
   .projectList {
     text-align: left;
     margin: 0;
-    padding: 0px 0px 10px 10px;
+    padding: 0px 0px 10px 4px;
     li {
       padding: 2px;
       display: inline-block;
       text-align: center;
+      height:28px;
       .CircleContainer{
         overflow: inherit;
       }
@@ -87,10 +84,13 @@
   .leftCurve {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    margin-top: 1px;
+    padding-right: 0px;
   }
   .rightCurve{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    margin-top: 1px;
+    padding-left: 0px;
   }
 }
-
