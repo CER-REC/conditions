@@ -6,7 +6,7 @@ import ReadMe from './README.md';
 
 import DownloadPopup from '.';
 
-const noop = () => {};
+const closeModal = () => alert('Close is handled by the view and isn\'t available in this story.\n\nPlease use the Knobs panel on the right.');
 
 storiesForComponent('Components|DownloadPopup', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -14,6 +14,6 @@ storiesForComponent('Components|DownloadPopup', module, ReadMe)
   .add('default', () => (
     <DownloadPopup
       isOpen={boolean('Visible', true)}
-      closeModal={noop}
+      closeModal={closeModal}
     />
   ));

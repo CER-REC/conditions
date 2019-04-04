@@ -5,14 +5,14 @@ import ReadMe from './README.md';
 
 import CompanyPopup from '.';
 
-const noop = () => {};
+const closeModal = () => alert('Close is handled by the view and isn\'t available in this story.\n\nPlease use the Knobs panel on the right.');
 
 storiesForComponent('Components|CompanyPopup', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
     <CompanyPopup
       isOpen={boolean('Visible', true)}
-      closeModal={noop}
+      closeModal={closeModal}
       projectName="Trans Mountain Expansion"
       companies={[
         'Company A',
