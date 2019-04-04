@@ -6,15 +6,14 @@
 .WheelList {
   display: flex;
   align-items: center;
-  left: 26.7%;
-  right: 26.7%;
+  left: 26.6%;
+  right: 26.6%;
   top: 50%;
   position: absolute;
   color: $Black77;
   width: 50%;
   height: 45%;
   font-family: $fira-sans-condensed;
-  font-size: 18px;
   transform: translate(0%, -50%);
 
   .labelContainer {
@@ -27,18 +26,30 @@
     background-color: $LightGray;
     line-height: 24px;
     pointer-events: none;
-
+    border-radius: 0.7% 0.7% / 25px 0 0 25px;
+    span {
+      font-size: 14px;
+      line-height: 24px;
+      color: $Black19;
+      font-family: $fira-sans-condensed;
+    }
     .label {
       position: absolute;
       right: 70%;
       width: 30%;
       text-align: center;
+      border-radius: 0px;
+      border-style: none;
+      border-width: 0px;
+      padding: 0px;
+      font-weight: normal;
+      vertical-align: middle;
     }
 
     .selected {
       position: absolute;
-      left: 30.45%;
-      width: 110%;
+      left: 33%;
+      width: 36%;
       overflow: hidden;
       text-align: left;
       text-overflow: ellipsis;
@@ -55,9 +66,15 @@
     border-radius: 100%;
     white-space: nowrap;
     position: relative;
-    .selected {
+    .List-Item.selected {
+      line-height: 24px;
+      background: transparent;
+      width: fit-content;
       .List-Item-Content {
-        background-color: $LightGray;
+        background-color: transparent;
+        span {
+          visibility: hidden;
+        }
       }
     }
   }
@@ -65,25 +82,26 @@
   .list {
     position: absolute;
     top: 50%;
-    margin-left: 45%;
+    left: 45%;
+    width: 55%;
     transform: translate(0 , -50%);
   }
 
   .oneAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .twoAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 13px;
+    font-size: 10px;
   }
 
   .threeAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 11px;
+    font-size: 8px;
   }
 }
