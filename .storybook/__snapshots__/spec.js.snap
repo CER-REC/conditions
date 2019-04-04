@@ -1822,28 +1822,65 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     <div
       className="Company"
     >
-      <h3>
+      <h2>
         Full Project Name:
          
         <strong>
           Trans Mountain Expansion
         </strong>
-      </h3>
-      <h4>
+      </h2>
+      <h3>
         Companies associated with this project
-      </h4>
-      <p>
-        Company A
-        <br />
-        Company B
-        <br />
-        Company C
-        <br />
-        Company D
-        <br />
-        Company E
-        <br />
-      </p>
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
       <h4>
         What does it mean to have more than one company associated to a project?
       </h4>
@@ -1851,6 +1888,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         Text to be provided by the NEB.
       </p>
       <button
+        className="PopupBtn"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -1904,28 +1942,65 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     <div
       className="Company"
     >
-      <h3>
+      <h2>
         Full Project Name:
          
         <strong>
           Trans Mountain Expansion
         </strong>
-      </h3>
-      <h4>
+      </h2>
+      <h3>
         Companies associated with this project
-      </h4>
-      <p>
-        Company A
-        <br />
-        Company B
-        <br />
-        Company C
-        <br />
-        Company D
-        <br />
-        Company E
-        <br />
-      </p>
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
       <h4>
         What does it mean to have more than one company associated to a project?
       </h4>
@@ -1933,6 +2008,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         Text to be provided by the NEB.
       </p>
       <button
+        className="PopupBtn"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -4253,7 +4329,7 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
           className="title"
         >
           <span>
-            Image Download
+            Data Download
           </span>
         </span>
         <svg
@@ -4285,7 +4361,9 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
       <div
         className="content"
       >
-        this is the image download popup
+        <span>
+          The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer.
+        </span>
       </div>
       <div
         className="footer"
@@ -8037,8 +8115,7 @@ exports[`Storyshots Components|PopupBtn link attributes 1`] = `
   <a
     className="PopupBtn"
     href="https://www.example.com"
-    noopener={true}
-    noreferrer={true}
+    rel="noopener noreferrer"
     target="_blank"
   >
     <div>
@@ -12871,7 +12948,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </span>
       </p>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
       >
         <div>
@@ -12908,7 +12985,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </svg>
       </a>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -12947,6 +13024,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </svg>
       </a>
       <button
+        className="PopupBtn cancel"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -13038,7 +13116,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </span>
       </p>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
       >
         <div>
@@ -13075,7 +13153,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </svg>
       </a>
       <a
-        className="button"
+        className="PopupBtn"
         href="https://www.example.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -13114,6 +13192,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </svg>
       </a>
       <button
+        className="PopupBtn cancel"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}

@@ -13,18 +13,14 @@ const Company = ({ projectName, companies, closeModal }) => (
       {text => <h2>{text} <strong>{projectName}</strong></h2>}
     </FormattedMessage>
     <FormattedMessage id="components.modal.company.associated" tagName="h3" />
-    <p className="companies">
-      {companies.map(company => (
-        <React.Fragment key={company}>
-          {company}<br />
-        </React.Fragment>
-      ))}
-    </p>
+    <ul className="companies">
+      {companies.map(company => <li key={company}>{company}</li>)}
+    </ul>
     <FormattedMessage id="components.modal.company.meaningHeading" tagName="h4" />
     <FormattedMessage id="components.modal.company.meaningText" tagName="p" />
     <FormattedMessage id="components.modal.company.back">
       {text => (
-        <PopupBtn text={text} icon="x" onClick={closeModal} />
+        <PopupBtn text={text} icon="x" action={closeModal} />
       )}
     </FormattedMessage>
   </div>

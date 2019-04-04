@@ -37,18 +37,18 @@ const icons = {
   ),
 };
 
-const PopupBtn = ({ linkUrl, onClick, text, icon, attributes, className }) => {
+const PopupBtn = ({ action, text, icon, attributes, className }) => {
   const classes = classNames('PopupBtn', className);
   return (
-    (linkUrl !== '')
+    (typeof action === 'string')
       ? (
-        <a className={classes} href={linkUrl} {...attributes}>
+        <a className={classes} href={action} {...attributes}>
           {<div>{text}</div>}
           {icons[icon]}
         </a>
       )
       : (
-        <button className={classes} type="button" {...handleInteraction(onClick)}>
+        <button className={classes} type="button" {...handleInteraction(action)}>
           {text}
           {icons[icon]}
         </button>
@@ -57,12 +57,11 @@ const PopupBtn = ({ linkUrl, onClick, text, icon, attributes, className }) => {
 };
 
 PopupBtn.propTypes = {
-  /** Destination URL. If not given, renders as a <button> */
-  linkUrl: PropTypes.string,
+  /** If given a string, will render an <a> and pass this as the URL. If given a function, will
+   * render a <button> and pass this as onClick */
+  action: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
   /** Attributes (i.e. target="_blank") to pass to the element */
   attributes: PropTypes.shape({}),
-  /** Callback function for the <button> */
-  onClick: PropTypes.func,
   /** Label */
   text: PropTypes.string.isRequired,
   /** Icon to be displayed */
@@ -72,8 +71,6 @@ PopupBtn.propTypes = {
 };
 
 PopupBtn.defaultProps = {
-  linkUrl: '',
-  onClick: () => {},
   attributes: {},
   className: '',
 };

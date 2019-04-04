@@ -299,13 +299,6 @@
       }
     },
     "modal": {
-      "image": {
-        "title": "Image Download",
-        "actionText": "Save Image",
-        "contentTitle": "Conditions on NEB-regulated energy projects",
-        "contentDescription": "An interactive exploration tool",
-        "linkText": "Visit this interactive visualization:"
-      },
       "data": {
         "title": "Data Download",
         "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."

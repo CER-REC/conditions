@@ -6,13 +6,13 @@
   width: 450px;
   height: 300px;
 
-  p {
-    margin-top: 0;
+  .companies {
+    padding-left: 0;
 
-    &.companies {
-      height: 6em;
-      overflow-y: auto;
-    }
+    height: 6em;
+    overflow-y: auto;
+
+    list-style-type: none;
   }
 
   h2 {

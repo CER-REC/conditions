@@ -7,14 +7,14 @@ import ReadMe from './README.md';
 storiesForComponent('Components|PopupBtn', module, ReadMe)
   .add('default', () => (
     <PopupBtn
-      linkUrl="https://www.example.com"
+      action="https://www.example.com"
       text="Example"
       icon="plus"
     />
   ))
   .add('link attributes', () => (
     <PopupBtn
-      linkUrl="https://www.example.com"
+      action="https://www.example.com"
       text="Example"
       icon="plus"
       attributes={{ target: '_blank', rel: 'noopener noreferrer' }}
@@ -22,7 +22,7 @@ storiesForComponent('Components|PopupBtn', module, ReadMe)
   ))
   .add('button', () => (
     <PopupBtn
-      onClick={() => alert('Who\'s there?')}
+      action={() => alert('Who\'s there?')}
       text="Knock, knock"
       icon="x"
     />

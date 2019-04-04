@@ -18,8 +18,8 @@ const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
     <FormattedMessage
       id="components.modal.regdocs.searchFor"
       values={{
-        instrument: (<strong>#{instrument}</strong>),
-        regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" />),
+        instrument: (<strong key="instrument">#{instrument}</strong>),
+        regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" key="regdocs" />),
       }}
     >
       {(...strings) => <h3>{strings}</h3>}
@@ -29,14 +29,14 @@ const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
       <FormattedMessage id="components.modal.regdocs.found" />
     </p>
     <FormattedMessage id="components.modal.regdocs.currentTab">
-      {text => (<PopupBtn text={text} icon="plus" linkUrl={regdocsUrl} />)}
+      {text => (<PopupBtn text={text} icon="plus" action={regdocsUrl} />)}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.newTab">
       {text => (
         <PopupBtn
           text={text}
           icon="plus"
-          linkUrl={regdocsUrl}
+          action={regdocsUrl}
           attributes={{
             target: '_blank',
             rel: 'noopener noreferrer',
@@ -45,7 +45,7 @@ const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
       )}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.cancel">
-      {text => (<PopupBtn text={text} icon="x" onClick={closeModal} className="cancel" />)}
+      {text => (<PopupBtn text={text} icon="x" action={closeModal} className="cancel" />)}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.whatIsHeading" tagName="h4" />
     <FormattedMessage id="components.modal.regdocs.whatIsText" tagName="p" />

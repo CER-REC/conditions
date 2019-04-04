@@ -9,7 +9,7 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|PopupBtn', () => {
   describe('with default props', () => {
-    const wrapper = shallow(<PopupBtn icon="x" text="Test" />);
+    const wrapper = shallow(<PopupBtn icon="x" text="Test" action="" />);
 
     shouldBehaveLikeAComponent(PopupBtn, () => wrapper);
   });
@@ -18,7 +18,7 @@ describe('Components|PopupBtn', () => {
     const wrapper = shallow(<PopupBtn
       text="Test"
       icon="x"
-      linkUrl="https://www.example.com"
+      action="https://www.example.com"
       attributes={{ target: '_blank' }}
     />);
 
@@ -37,7 +37,7 @@ describe('Components|PopupBtn', () => {
     const wrapper = shallow(<PopupBtn
       text="Test"
       icon="x"
-      onClick={spy}
+      action={spy}
     />);
 
     test('should render a button tag', () => {

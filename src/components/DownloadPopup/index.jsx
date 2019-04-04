@@ -13,7 +13,7 @@ const DownloadPopup = (props) => {
     <div className="Download">
       <div className="header">
         <span className="title">
-          <FormattedMessage id="components.modal.image.title" />
+          <FormattedMessage id="components.modal.data.title" />
         </span>
         {/* Didn't use Icon because icon was not supported in our font-awesome library */}
         <svg
@@ -28,7 +28,7 @@ const DownloadPopup = (props) => {
         </svg>
       </div>
       <div className="content">
-        this is the image download popup
+        <FormattedMessage id="components.modal.data.description" />
       </div>
       <div className="footer">
         {!props.modalAction ? null : (
@@ -37,7 +37,7 @@ const DownloadPopup = (props) => {
             type="button"
             {...handleInteraction(props.modalAction)}
           >
-            <FormattedMessage id="components.modal.image.actionText" />
+            Download
           </button>
         )}
       </div>
@@ -60,6 +60,7 @@ DownloadPopup.propTypes = {
   /** Function that closes the modal */
   closeModal: PropTypes.func.isRequired,
   /** Adds a link to the footer of the Modal window that triggers this function */
+  // eslint-disable-next-line react/no-unused-prop-types
   modalAction: PropTypes.func,
 };
 
