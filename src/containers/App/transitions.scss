@@ -1,3 +1,11 @@
+$defaultTransition: 1s ease-in-out;
+
+$fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
+$fastestEnd: 1s cubic-bezier(1, 0, 1, 0);
+
+$fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
+$fastestStart: 1s cubic-bezier(0, 1, 0, 1);
+
 $faded: 0.3;
 
 /**
@@ -17,7 +25,11 @@ $states: (
     ".ViewTwo .ConditionDetails .listPane": (opacity: 0),
     ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 0),
     ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
-    ".Footer": (opacity: 0),
+    ".Footer": (
+      opacity: 0,
+
+      transition: "opacity $fastStart, visibility 0s 1s",
+    ),
   ),
   // 9 resets from View 2 -> 1, just with different transitions
   9: (),
@@ -94,6 +106,8 @@ $states: (
     ".Footer": (
       opacity: 1,
       visibility: visible,
+
+      transition: opacity $defaultTransition,
     ),
   ),
   8: (
@@ -104,11 +118,11 @@ $states: (
   10: (
     ".ViewTwo": (
       opacity: 0,
-      left: -100%,
+      // left: -100%,
     ),
     ".ViewThree": (
       opacity: 1,
-      left: 0,
+      // left: 0,
     ),
   ),
 );

@@ -117,7 +117,8 @@
 
     top: 0;
 
-    left: 100%;
+    // left: 100%;
+    left: 0;
     opacity: 0;
 
     height: 90vh;
@@ -126,7 +127,7 @@
   }
 
   .Footer {
-    transition: opacity $defaultTransition, top $fastStart, visibility 0s 1s;
+    transition: opacity $defaultTransition, visibility 0s 1s;
     position: absolute;
     top: 90vh;
     visibility: hidden;
@@ -202,7 +203,7 @@
     }
 
     .Footer {
-      transition: opacity $fastStart;
+      transition: opacity $fastStart, visibility 0s 1s;
     }
   }
 }
