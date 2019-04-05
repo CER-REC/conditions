@@ -13,12 +13,6 @@
     selectedCompany: 38,
     conditionDetails: 77,
   ));
-  /**
-   *  TODO: Go over all of this and fix it up
-   *
-   *  Styling for the preview release. None of the code below should be
-   *  considered final or correct, and I apologize for all of it.
-   */
 
   .row {
     overflow: hidden;
@@ -37,7 +31,6 @@
 
   .firstRow {
     height: 40%;
-    // min-height: 400px;
     position: relative;
 
     .features {
@@ -51,7 +44,6 @@
       margin-top: 42px;
     }
     .chart {
-      // margin-top: 10px;
       height: 100%;
       position: relative;
     }
@@ -76,8 +68,6 @@
     height: 30%;
     min-height: 200px;
     padding-top: 16px;
-
-    // padding-top: 10px;
 
     .conditionDetails {
       height: 100%;
@@ -140,15 +130,6 @@
         }
 
       }
-
-      .BrowseByBtn {
-        position: absolute;
-
-        left: 16px;
-        bottom: 24px;
-      }
-
     }
   }
-  // End of preview styling
 }
