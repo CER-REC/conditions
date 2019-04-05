@@ -10,9 +10,9 @@ import {
   resettingCategory,
   visibleTextCategory,
 } from './categories';
+import Body from './Body';
+import Keyword from './Keyword';
 
-// Found at https://gist.github.com/gre/1650294
-const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
 const conditionViewerOptions = {
   keywordReturnSpeed: 2,
   circleCenterSpeed: 2,
@@ -20,6 +20,8 @@ const conditionViewerOptions = {
   circleBaseRadius: 50,
 };
 
+// Found at https://gist.github.com/gre/1650294
+const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
@@ -33,7 +35,6 @@ export default class PhysicsVariant extends React.PureComponent {
     this.lastDeltaTime = 0;
     this.locationBeforeExpand = { x: 0, y: 0 };
     this.keywordsCanReset = true;
-    this.scale = 1;
     this.state = { renderToggle: false };
   }
 
@@ -48,8 +49,11 @@ export default class PhysicsVariant extends React.PureComponent {
     });
     this.circle.frictionAir = 0.2;
     this.circle.render.targetRadius = radius;
+    this.circleBody = new Body(this.circle);
 
     this.keywords = {};
+    this.keywordsBody = {};
+    /*
     this.props.keywords.forEach((keyword) => {
       const { outline } = keyword;
       const position = this.calculatePosition(keyword);
@@ -72,7 +76,9 @@ export default class PhysicsVariant extends React.PureComponent {
       keywordBody.render.textOffset = this.calculateTextOffset(keyword);
 
       this.keywords[keyword.value] = keywordBody;
+      this.keywordsBody[keyword.value] = new Keyword(keywordBody);
     });
+    */
 
     // Add bodies to world
     Matter.World.add(this.engine.world, this.circle);
@@ -108,23 +114,6 @@ export default class PhysicsVariant extends React.PureComponent {
     // will result in a memory leak.
   }
 
-  stopBodyWithLowVelocity = (body) => {
-    if (body.velocity.x || body.velocity.y) {
-      const newVelocity = { ...body.velocity };
-      if (Math.abs(body.position.x - body.positionPrev.x) < 0.01) { newVelocity.x = 0; }
-      if (Math.abs(body.position.y - body.positionPrev.y) < 0.01) { newVelocity.y = 0; }
-      if (newVelocity.x !== body.velocity.x || newVelocity.y !== body.velocity.y) {
-        Matter.Body.setVelocity(body, newVelocity);
-      }
-    }
-
-    if (body.angularVelocity) {
-      if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
-        Matter.Body.setAngularVelocity(0);
-      }
-    }
-  }
-
   moveBodyToTarget = (body, speed) => {
     const newVelocity = { ...body.velocity };
     const { targetPos } = body.render;
@@ -140,8 +129,12 @@ export default class PhysicsVariant extends React.PureComponent {
   });
 
   onUpdate = (update) => {
-    Matter.Composite.allBodies(this.engine.world).forEach((body) => {
-      if (body.collisionFilter.category === visibleTextCategory
+    // TODO: Separate circle from keywords
+    Object.values(this.keywordsBody).concat(this.circleBody).forEach((bodyInstance) => {
+      bodyInstance.onUpdate(update);
+      const { body } = bodyInstance;
+
+      if (bodyInstance.category === visibleTextCategory
         && body.render.lastCollision + 5000 <= update.source.timing.timestamp
         && this.keywordsCanReset) {
       // eslint-disable-next-line object-curly-newline
@@ -151,8 +144,8 @@ export default class PhysicsVariant extends React.PureComponent {
           max: { x: x + width, y: y + height },
         };
         if (Matter.Bounds.overlaps(originalBounds, this.circle.bounds) === false) {
-          body.collisionFilter.category = resettingCategory;
-          body.collisionFilter.mask &= ~visibleTextCategory;
+          bodyInstance.category = resettingCategory;
+          bodyInstance.removeCollisionMask(visibleTextCategory);
         }
       } else if (body.collisionFilter.category === resettingCategory) {
         body.render.targetPos = this.calculatePosition(body.render.originalData);
@@ -170,6 +163,7 @@ export default class PhysicsVariant extends React.PureComponent {
       }
 
       // Adjust the scale of the circle
+        /*
       if (body === this.circle) {
         const radius = (body.bounds.max.x - body.bounds.min.x) / 2;
         if (Math.abs(body.render.targetRadius - radius) > 1) {
@@ -178,17 +172,7 @@ export default class PhysicsVariant extends React.PureComponent {
           Matter.Body.scale(this.circle, scaleVelocity, scaleVelocity);
         }
       }
-
-      this.stopBodyWithLowVelocity(body);
-      const bodyChanged = !!(body.speed || body.angularSpeed);
-
-      // If the body has stopped moving, remove its target position so that it
-      // doesn't automatically move back if bumped.
-      if (!bodyChanged) { body.render.targetPos = false; }
-
-      if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
-        body.collisionFilter.category = placeholderCategory;
-      }
+      */
     });
   };
 
@@ -200,14 +184,14 @@ export default class PhysicsVariant extends React.PureComponent {
     // time until they go back to their original positions
     if (!withCircle) { return; }
 
-    const keyword = pair.bodyA === this.circle ? pair.bodyB : pair.bodyA;
+    const keyword = (pair.bodyA === this.circle ? pair.bodyB : pair.bodyA).render.wrapper;
 
-    if (keyword.collisionFilter.category === resettingCategory) {
+    if (keyword.category === resettingCategory) {
       pair.isActive = false;
       return;
     }
-    keyword.collisionFilter.category = visibleTextCategory;
-    keyword.collisionFilter.mask |= visibleTextCategory;
+    keyword.category = visibleTextCategory;
+    keyword.addCollisionMask(visibleTextCategory);
   });
 
   loop = (currTime) => {
@@ -263,13 +247,14 @@ export default class PhysicsVariant extends React.PureComponent {
     if (this.circle.speed || this.circle.render.expanded) { return; }
     e.stopPropagation();
     this.locationBeforeExpand = { x: this.circle.position.x, y: this.circle.position.y };
-    this.circle.render.targetPos = this.getCenterCoordinates();
+    // this.circle.render.targetPos = this.getCenterCoordinates();
+    this.circleBody.moveTo(this.getCenterCoordinates().x, this.getCenterCoordinates().y, 100);
     const dimensions = this.getCenterCoordinates();
     this.circle.render.targetRadius = Math.min(dimensions.x, dimensions.y);
     this.circle.render.expanded = true;
     this.keywordsCanReset = false;
-    Matter.Composite.allBodies(this.engine.world).forEach((body) => {
-      body.collisionFilter.mask &= ~circleCategory;
+    Object.values(this.keywordsBody).forEach((body) => {
+      body.removeCollisionMask(circleCategory);
     });
   }
 
