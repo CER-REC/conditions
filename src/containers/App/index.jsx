@@ -9,8 +9,8 @@ import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 
 import Guide from '../../components/Guide';
-import SkipIntro from '../../components/SkipIntro';
-import BrowseByBtn from '../../components/BrowseByBtn';
+import BrowseBy from '../../components/BrowseBy';
+// import BrowseByBtn from '../../components/BrowseByBtn';
 
 import {
   conditionCountsByYear,
@@ -75,9 +75,14 @@ class App extends React.PureComponent {
           {(true)
             ? (
               <section className="browseBy">
-                <SkipIntro className={(transitionState < 2) ? 'showArrow' : ''} />
-                <BrowseByBtn classNames="company" mode="company" onClick={noop} />
-                <BrowseByBtn classNames="location" mode="location" onClick={noop} />
+                <BrowseBy
+                  showArrow={(transitionState < 2)}
+                  labelId={
+                    (transitionState < 7 && 'skip')
+                    || (transitionState > 9 && 'return')
+                    || ''
+                  }
+                />
               </section>
             )
             : null

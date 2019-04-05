@@ -1,0 +1,55 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fontVariables.scss";
+
+.BrowseBy {
+
+  .label {
+    display: inline-block;
+    position: relative;
+
+    width: 160px;
+
+    top: -13px;
+
+    // padding-left: 24px;
+    text-align: right;
+    margin-right: 12px;
+
+    height: 24px;
+
+    vertical-align: baseline;
+    line-height: 24px;
+
+    font-family: $fira-sans-condensed;
+    font-size: 16px;
+
+    color: $Gray160;
+    background-color: $White;
+
+    &::after {
+      content: "";
+      display: inline-block;
+
+      position: absolute;
+      left: 100%;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-width: 12px;
+      border-radius: 1px;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    &.showArrow {
+      color: $White;
+      background-color: $Guide;
+      border-color: $Guide;
+      margin-right: 24px;
+
+      &::after {
+        border-color: transparent transparent transparent $Guide;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
 
-import handleInteraction from '../../utilities/handleInteraction';
+import handleInteraction from '../../../utilities/handleInteraction';
 
 const BrowseByBtn = (props) => {
   const background = (

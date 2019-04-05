@@ -32,28 +32,32 @@
     left: 0;
 
     height: 40px;
+    z-index: 999;
 
     transition: top $defaultTransition;
 
-    .SkipIntro {
-      transition:
-        opacity $defaultTransition,
-        color $defaultTransition,
-        background-color $defaultTransition,
-        margin-right $defaultTransition;
+    .BrowseBy {
+      .label {
+        transition:
+          opacity $defaultTransition,
+          color $defaultTransition,
+          background-color $defaultTransition,
+          margin-right $defaultTransition;
 
-      opacity: 1;
+        opacity: 1;
 
-      &::after {
-        transition: border-color $defaultTransition;
+        &::after {
+          transition: border-color $defaultTransition;
+        }
+      }
+
+      .location,
+      .company {
+        transition: opacity $defaultTransition;
+        opacity: 1
       }
     }
 
-    .BrowseByBtn.location,
-    .BrowseByBtn.company {
-      transition: opacity $defaultTransition;
-      opacity: 1
-    }
   }
 
   .ViewOne {
@@ -147,7 +151,7 @@
     }
 
     .browseBy {
-      .SkipIntro {
+      .BrowseBy {
         transition:
           opacity $fastEnd,
           color $fastEnd,
