@@ -7,30 +7,30 @@
   display: flex;
   align-items: center;
   left: 26.6%;
-  right: 26.6%;
+  right: 27.4%;
   top: 50%;
   position: absolute;
   color: $Black77;
   width: 50%;
   height: 45%;
   font-family: $fira-sans-condensed;
-  transform: translate(0%, -50%);
+  transform: translate(0%, -51%);
 
   .labelContainer {
     position: absolute;
     top:50%;
-    transform: translate(0 , -50%);
-    height: 22px;
+    transform: translate(0 , -51%);
+    height: 24px;
     width: 150%;
     overflow: visible;
     background-color: $LightGray;
-    line-height: 22px;
     pointer-events: none;
     border-radius: 0.7% 0.7% / 25px 0 0 25px;
+    line-height: 24px;
     span {
       font-size: 14px;
       line-height: 24px;
-      color: $Black19;
+      color: $Black77;
       font-family: $fira-sans-condensed;
     }
     .label {
@@ -59,7 +59,7 @@
   }
 
   .listContainer {
-    width: 87%;
+    width: 83%;
     height: 100%;
     margin: auto;
     overflow: hidden;
@@ -93,7 +93,7 @@
   .oneAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .twoAway {
