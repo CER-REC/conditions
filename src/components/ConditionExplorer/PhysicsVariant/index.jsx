@@ -49,11 +49,10 @@ export default class PhysicsVariant extends React.PureComponent {
     });
     this.circle.frictionAir = 0.2;
     this.circle.render.targetRadius = radius;
-    this.circleBody = new Body(this.circle);
+    this.circleBody = new Body(this.circle, this.engine);
 
     this.keywords = {};
     this.keywordsBody = {};
-    /*
     this.props.keywords.forEach((keyword) => {
       const { outline } = keyword;
       const position = this.calculatePosition(keyword);
@@ -76,9 +75,8 @@ export default class PhysicsVariant extends React.PureComponent {
       keywordBody.render.textOffset = this.calculateTextOffset(keyword);
 
       this.keywords[keyword.value] = keywordBody;
-      this.keywordsBody[keyword.value] = new Keyword(keywordBody);
+      this.keywordsBody[keyword.value] = new Keyword(keywordBody, this.engine);
     });
-    */
 
     // Add bodies to world
     Matter.World.add(this.engine.world, this.circle);
@@ -114,6 +112,15 @@ export default class PhysicsVariant extends React.PureComponent {
     // will result in a memory leak.
   }
 
+  /*
+  calculateVelocity = (start, end, speed = 2, slowWithin = 100) => {
+    const distance = end - start;
+    if (distance === 0) { return 0; }
+    const distanceScale = Math.min(Math.abs(distance) / slowWithin, 1);
+    const direction = distance / Math.abs(distance);
+    return easeOutCubic(distanceScale) * direction * speed;
+  };
+
   moveBodyToTarget = (body, speed) => {
     const newVelocity = { ...body.velocity };
     const { targetPos } = body.render;
@@ -122,6 +129,7 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.Body.setVelocity(body, newVelocity);
     Matter.Body.setAngularVelocity(body, this.calculateVelocity(body.angle, 0, speed));
   }
+  */
 
   getCenterCoordinates = () => ({
     x: this.groupRef.current.parentElement.width.baseVal.value / 2,
@@ -146,33 +154,11 @@ export default class PhysicsVariant extends React.PureComponent {
         if (Matter.Bounds.overlaps(originalBounds, this.circle.bounds) === false) {
           bodyInstance.category = resettingCategory;
           bodyInstance.removeCollisionMask(visibleTextCategory);
-        }
-      } else if (body.collisionFilter.category === resettingCategory) {
-        body.render.targetPos = this.calculatePosition(body.render.originalData);
-      }
-
-      // If the body has a target position, begin moving it to that spot
-      if (body.render.targetPos) {
-        const {
-          circleIncreaseScale,
-          keywordReturnSpeed,
-          circleCenterSpeed,
-        } = conditionViewerOptions;
-        const moveSpeed = body === this.circle ? circleCenterSpeed : keywordReturnSpeed;
-        this.moveBodyToTarget(body, moveSpeed);
-      }
-
-      // Adjust the scale of the circle
-        /*
-      if (body === this.circle) {
-        const radius = (body.bounds.max.x - body.bounds.min.x) / 2;
-        if (Math.abs(body.render.targetRadius - radius) > 1) {
-          let scaleVelocity = this.calculateVelocity(radius, body.render.targetRadius, 1.01, 1);
-          while (scaleVelocity < 0) { scaleVelocity += 1; }
-          Matter.Body.scale(this.circle, scaleVelocity, scaleVelocity);
+          const position = this.calculatePosition(body.render.originalData);
+          bodyInstance.moveTo(position.x, position.y, 2500);
+          bodyInstance.rotateTo(0, 2500);
         }
       }
-      */
     });
   };
 
@@ -204,6 +190,7 @@ export default class PhysicsVariant extends React.PureComponent {
     this.lastTime = currTime;
     this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
+    // this.loopID = setTimeout(this.loop, 100);
     this.setState(state => ({ renderToggle: !state.renderToggle }));
   }
 
@@ -223,14 +210,6 @@ export default class PhysicsVariant extends React.PureComponent {
     return word;
   };
 
-  calculateVelocity = (start, end, speed = 2, slowWithin = 100) => {
-    const distance = end - start;
-    if (distance === 0) { return 0; }
-    const distanceScale = Math.min(Math.abs(distance) / slowWithin, 1);
-    const direction = distance / Math.abs(distance);
-    return easeOutCubic(distanceScale) * direction * speed;
-  };
-
   isWordVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
 
   sortBodies = () => {
@@ -247,10 +226,9 @@ export default class PhysicsVariant extends React.PureComponent {
     if (this.circle.speed || this.circle.render.expanded) { return; }
     e.stopPropagation();
     this.locationBeforeExpand = { x: this.circle.position.x, y: this.circle.position.y };
-    // this.circle.render.targetPos = this.getCenterCoordinates();
-    this.circleBody.moveTo(this.getCenterCoordinates().x, this.getCenterCoordinates().y, 100);
     const dimensions = this.getCenterCoordinates();
-    this.circle.render.targetRadius = Math.min(dimensions.x, dimensions.y);
+    this.circleBody.moveTo(dimensions.x, dimensions.y, 2500);
+    this.circleBody.scaleTo(Math.min(dimensions.x, dimensions.y) / 50, 2500);
     this.circle.render.expanded = true;
     this.keywordsCanReset = false;
     Object.values(this.keywordsBody).forEach((body) => {
@@ -259,9 +237,13 @@ export default class PhysicsVariant extends React.PureComponent {
   }
 
   closeGuide = () => {
-    this.circle.render.targetPos = this.locationBeforeExpand;
-    this.circle.render.targetRadius = conditionViewerOptions.circleBaseRadius;
+    this.circleBody.moveTo(this.locationBeforeExpand.x, this.locationBeforeExpand.y, 2500);
+    this.circleBody.scaleTo(1, 2500);
     this.circle.render.expanded = false;
+    this.keywordsCanReset = true;
+    Object.values(this.keywordsBody).forEach((body) => {
+      body.addCollisionMask(circleCategory);
+    });
   }
 
   // TODO: optimize the nested map functions
@@ -284,7 +266,6 @@ export default class PhysicsVariant extends React.PureComponent {
             body.render.className,
             { textVisible: this.isWordVisible(body) },
           )}
-          onClick={null/*this.closeGuide*/}
         >
           <text
             x={body.position.x + body.render.textOffset.x}
