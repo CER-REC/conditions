@@ -237,13 +237,19 @@ export default class PhysicsVariant extends React.PureComponent {
   }
 
   closeGuide = () => {
-    this.circleBody.moveTo(this.locationBeforeExpand.x, this.locationBeforeExpand.y, 2500);
-    this.circleBody.scaleTo(1, 2500);
-    this.circle.render.expanded = false;
-    this.keywordsCanReset = true;
-    Object.values(this.keywordsBody).forEach((body) => {
-      body.addCollisionMask(circleCategory);
-    });
+    const { x, y } = this.locationBeforeExpand;
+    Promise
+      .all([
+        this.circleBody.moveTo(x, y, 2500),
+        this.circleBody.scaleTo(1, 2500),
+      ])
+      .finally(() => {
+        this.circle.render.expanded = false;
+        this.keywordsCanReset = true;
+        Object.values(this.keywordsBody).forEach((body) => {
+          body.addCollisionMask(circleCategory);
+        });
+      });
   }
 
   // TODO: optimize the nested map functions

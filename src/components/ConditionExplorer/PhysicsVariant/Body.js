@@ -33,7 +33,7 @@ export default class Body {
   moveTo(x, y, time = 0) {
     if (time === 0) {
       Matter.Body.setPosition(this.body, { x, y });
-      return;
+      return Promise.resolve();
     }
     const { timestamp } = this.engine.timing;
     this.targetPosition = {
@@ -41,12 +41,20 @@ export default class Body {
       end: { x, y, timestamp: timestamp + time },
       lastProgress: 0,
     };
+    return new Promise((resolve, reject) => {
+      this.targetPosition.promise = {
+        resolve,
+        reject,
+        // If we haven't resolved in 2x the time, reject the promise
+        timeout: setTimeout(() => reject(new Error(`Movement did not finish within ${time * 2}ms limit`)), time * 2),
+      };
+    });
   }
 
   rotateTo(r, time = 0) {
     if (time === 0) {
       Matter.Body.setAngle(this.body, r);
-      return;
+      return Promise.resolve();
     }
     const { timestamp } = this.engine.timing;
     this.targetRotation = {
@@ -54,6 +62,14 @@ export default class Body {
       end: { r, timestamp: timestamp + time },
       lastProgress: 0,
     };
+    return new Promise((resolve, reject) => {
+      this.targetRotation.promise = {
+        resolve,
+        reject,
+        // If we haven't resolved in 2x the time, reject the promise
+        timeout: setTimeout(() => reject(new Error(`Rotation did not finish within ${time * 2}ms limit`)), time * 2),
+      };
+    });
   }
 
   scaleTo(s, time = 0) {
@@ -61,13 +77,21 @@ export default class Body {
       const scale = (1 / this.scale) * s;
       Matter.Body.scale(this.body, scale, scale);
       this.scale = s;
-      return;
+      return Promise.resolve();
     }
     const { timestamp } = this.engine.timing;
     this.targetScale = {
       start: { s: this.scale, timestamp },
       end: { s, timestamp: timestamp + time },
     };
+    return new Promise((resolve, reject) => {
+      this.targetScale.promise = {
+        resolve,
+        reject,
+        // If we haven't resolved in 2x the time, reject the promise
+        timeout: setTimeout(() => reject(new Error(`Scale did not finish within ${time * 2}ms limit`)), time * 2),
+      };
+    });
   }
 
   onUpdatePosition(update) {
@@ -80,6 +104,8 @@ export default class Body {
     if (inOut === 0) {
       // TODO: This doesn't bring it quite far enough
       Matter.Body.setPosition(this.body, { x: end.x, y: end.y });
+      this.targetPosition.promise.resolve();
+      clearInterval(this.targetPosition.promise.timeout);
       this.targetPosition = false;
       return;
     }
@@ -101,6 +127,8 @@ export default class Body {
     if (inOut === 0) {
       // TODO: This doesn't bring it quite far enough
       Matter.Body.setAngle(this.body, end.r);
+      this.targetRotation.promise.resolve();
+      clearInterval(this.targetRotation.promise.timeout);
       this.targetRotation = false;
       return;
     }
@@ -119,6 +147,8 @@ export default class Body {
     if (inOut === 1) {
       Matter.Body.scale(this.body, (1 / this.scale) * end.s, (1 / this.scale) * end.s);
       this.scale = end.s;
+      this.targetScale.promise.resolve();
+      clearInterval(this.targetScale.promise.timeout);
       this.targetScale = false;
       return;
     }
