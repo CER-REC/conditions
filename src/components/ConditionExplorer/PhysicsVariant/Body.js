@@ -31,6 +31,9 @@ export default class Body {
   /* eslint-enable no-bitwise */
 
   moveTo(x, y, time = 0) {
+    if (this.targetPosition) {
+      this.targetPosition.reject(new Error('Movement cancelled due to new target'));
+    }
     if (time === 0) {
       Matter.Body.setPosition(this.body, { x, y });
       return Promise.resolve();
@@ -39,7 +42,6 @@ export default class Body {
     this.targetPosition = {
       start: { ...this.body.position, timestamp },
       end: { x, y, timestamp: timestamp + time },
-      lastProgress: 0,
     };
     return new Promise((resolve, reject) => {
       this.targetPosition.promise = {
@@ -52,6 +54,9 @@ export default class Body {
   }
 
   rotateTo(r, time = 0) {
+    if (this.targetRotation) {
+      this.targetRotation.reject(new Error('Rotation cancelled due to new target'));
+    }
     if (time === 0) {
       Matter.Body.setAngle(this.body, r);
       return Promise.resolve();
@@ -60,7 +65,6 @@ export default class Body {
     this.targetRotation = {
       start: { r: this.body.angle, timestamp },
       end: { r, timestamp: timestamp + time },
-      lastProgress: 0,
     };
     return new Promise((resolve, reject) => {
       this.targetRotation.promise = {
@@ -73,6 +77,9 @@ export default class Body {
   }
 
   scaleTo(s, time = 0) {
+    if (this.targetScale) {
+      this.targetScale.reject(new Error('Scale cancelled due to new target'));
+    }
     if (time === 0) {
       const scale = (1 / this.scale) * s;
       Matter.Body.scale(this.body, scale, scale);
@@ -100,21 +107,16 @@ export default class Body {
     const { start, end } = this.targetPosition;
     const progress = Math.min(1,
       (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
-    const inOut = easeInOutCubic(progress) - easeInOutCubic(this.targetPosition.lastProgress);
-    if (inOut === 0) {
-      // TODO: This doesn't bring it quite far enough
-      Matter.Body.setPosition(this.body, { x: end.x, y: end.y });
+    const inOut = easeInOutCubic(progress);
+    Matter.Body.setPosition(this.body, {
+      x: start.x + ((end.x - start.x) * inOut),
+      y: start.y + ((end.y - start.y) * inOut),
+    });
+    if (inOut === 1) {
       this.targetPosition.promise.resolve();
       clearInterval(this.targetPosition.promise.timeout);
       this.targetPosition = false;
-      return;
     }
-    this.targetPosition.lastProgress = progress;
-    const velocity = {
-      x: inOut * (end.x - start.x) * (1 + this.body.frictionAir),
-      y: inOut * (end.y - start.y) * (1 + this.body.frictionAir),
-    };
-    Matter.Body.setVelocity(this.body, velocity);
   }
 
   onUpdateRotation(update) {
@@ -123,18 +125,13 @@ export default class Body {
     const { start, end } = this.targetRotation;
     const progress = Math.min(1,
       (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
-    const inOut = easeInOutCubic(progress) - easeInOutCubic(this.targetRotation.lastProgress);
-    if (inOut === 0) {
-      // TODO: This doesn't bring it quite far enough
-      Matter.Body.setAngle(this.body, end.r);
+    const inOut = easeInOutCubic(progress);
+    Matter.Body.setAngle(this.body, start.r + ((end.r - start.r) * inOut));
+    if (inOut === 1) {
       this.targetRotation.promise.resolve();
       clearInterval(this.targetRotation.promise.timeout);
       this.targetRotation = false;
-      return;
     }
-    this.targetRotation.lastProgress = progress;
-    const velocity = inOut * (end.r - start.r) * (1 + this.body.frictionAir);
-    Matter.Body.setAngularVelocity(this.body, velocity);
   }
 
   onUpdateScale(update) {
@@ -144,17 +141,14 @@ export default class Body {
     const progress = Math.min(1,
       (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
     const inOut = easeInOutCubic(progress);
-    if (inOut === 1) {
-      Matter.Body.scale(this.body, (1 / this.scale) * end.s, (1 / this.scale) * end.s);
-      this.scale = end.s;
-      this.targetScale.promise.resolve();
-      clearInterval(this.targetScale.promise.timeout);
-      this.targetScale = false;
-      return;
-    }
     const scale = start.s + (inOut * (end.s - start.s));
     Matter.Body.scale(this.body, (1 / this.scale) * scale, (1 / this.scale) * scale);
     this.scale = scale;
+    if (inOut === 1) {
+      this.targetScale.promise.resolve();
+      clearInterval(this.targetScale.promise.timeout);
+      this.targetScale = false;
+    }
   }
 
   onUpdate(update) {
