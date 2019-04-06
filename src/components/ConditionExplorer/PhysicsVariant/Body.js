@@ -24,6 +24,13 @@ export default class Body {
 
   set category(category) { this.body.collisionFilter.category = category; }
 
+  get renderedPathPoints() {
+    return this.body.vertices
+      .concat(this.body.vertices[0]) // Add it onto the end so we create a full path
+      .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
+      .join(' ');
+  }
+
   /* eslint-disable no-bitwise */
   addCollisionMask(mask) { this.body.collisionFilter.mask |= mask; }
 

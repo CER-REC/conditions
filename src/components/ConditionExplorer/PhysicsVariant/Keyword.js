@@ -7,6 +7,8 @@ import {
 } from './categories';
 
 export default class Keyword extends Body {
+  get isVisible() { return this.body.collisionFilter.category !== placeholderCategory; }
+
   onUpdate(update) {
     super.onUpdate(update);
 

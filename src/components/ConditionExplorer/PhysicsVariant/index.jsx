@@ -13,15 +13,10 @@ import {
 import Body from './Body';
 import Keyword from './Keyword';
 
-const conditionViewerOptions = {
-  keywordReturnSpeed: 2,
-  circleCenterSpeed: 2,
-  circleIncreaseScale: 1.2,
-  circleBaseRadius: 50,
+const config = {
+  guideRadius: 50,
 };
 
-// Found at https://gist.github.com/gre/1650294
-const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
@@ -43,12 +38,10 @@ export default class PhysicsVariant extends React.PureComponent {
     this.engine = Matter.Engine.create({ world });
 
     // Set up bodies
-    const radius = conditionViewerOptions.circleBaseRadius;
-    this.circle = Matter.Bodies.polygon(200, 200, 100, radius, {
+    this.circle = Matter.Bodies.polygon(200, 200, 100, config.guideRadius, {
       collisionFilter: { category: circleCategory },
     });
     this.circle.frictionAir = 0.2;
-    this.circle.render.targetRadius = radius;
     this.circleBody = new Body(this.circle, this.engine);
 
     this.keywords = {};
@@ -82,9 +75,6 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.World.add(this.engine.world, this.circle);
     Matter.World.add(this.engine.world, Object.values(this.keywords));
 
-    //  disable applied force to help with loading bug
-    // Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.15, y: 0.005 });
-
     const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
 
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
@@ -112,40 +102,21 @@ export default class PhysicsVariant extends React.PureComponent {
     // will result in a memory leak.
   }
 
-  /*
-  calculateVelocity = (start, end, speed = 2, slowWithin = 100) => {
-    const distance = end - start;
-    if (distance === 0) { return 0; }
-    const distanceScale = Math.min(Math.abs(distance) / slowWithin, 1);
-    const direction = distance / Math.abs(distance);
-    return easeOutCubic(distanceScale) * direction * speed;
-  };
-
-  moveBodyToTarget = (body, speed) => {
-    const newVelocity = { ...body.velocity };
-    const { targetPos } = body.render;
-    newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x, speed);
-    newVelocity.y = this.calculateVelocity(body.position.y, targetPos.y, speed);
-    Matter.Body.setVelocity(body, newVelocity);
-    Matter.Body.setAngularVelocity(body, this.calculateVelocity(body.angle, 0, speed));
-  }
-  */
-
   getCenterCoordinates = () => ({
     x: this.groupRef.current.parentElement.width.baseVal.value / 2,
     y: this.groupRef.current.parentElement.height.baseVal.value / 2,
   });
 
   onUpdate = (update) => {
-    // TODO: Separate circle from keywords
-    Object.values(this.keywordsBody).concat(this.circleBody).forEach((bodyInstance) => {
+    this.circleBody.onUpdate(update);
+
+    Object.values(this.keywordsBody).forEach((bodyInstance) => {
       bodyInstance.onUpdate(update);
       const { body } = bodyInstance;
 
       if (bodyInstance.category === visibleTextCategory
-        && body.render.lastCollision + 5000 <= update.source.timing.timestamp
-        && this.keywordsCanReset) {
-      // eslint-disable-next-line object-curly-newline
+          && body.render.lastCollision + 5000 <= update.source.timing.timestamp
+          && this.keywordsCanReset) {
         const { x, y, width, height } = body.render.originalData.outline;
         const originalBounds = {
           min: { x, y },
@@ -190,7 +161,6 @@ export default class PhysicsVariant extends React.PureComponent {
     this.lastTime = currTime;
     this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
-    // this.loopID = setTimeout(this.loop, 100);
     this.setState(state => ({ renderToggle: !state.renderToggle }));
   }
 
@@ -209,18 +179,6 @@ export default class PhysicsVariant extends React.PureComponent {
     };
     return word;
   };
-
-  isWordVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
-
-  sortBodies = () => {
-    const bodies = Matter.Composite.allBodies(this.engine.world)
-      .sort((a, b) => {
-        if (this.isWordVisible(a) && !this.isWordVisible(b)) { return 1; }
-        if (this.isWordVisible(b) && !this.isWordVisible(a)) { return -1; }
-        return 0;
-      });
-    return bodies;
-  }
 
   openGuide = (e) => {
     if (this.circle.speed || this.circle.render.expanded) { return; }
@@ -252,47 +210,46 @@ export default class PhysicsVariant extends React.PureComponent {
       });
   }
 
-  // TODO: optimize the nested map functions
-  renderBodies = () => {
-    if (!this.engine || !this.engine.world) { return null; }
-    const bodies = this.sortBodies();
-    const words = bodies.map((body) => {
-      const d = body.vertices
-        .concat(body.vertices[0]) // Add it onto the end so we create a full path
-        .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
-        .join(' ');
-      if (body === this.circle) {
-        return <path key="guide" className="guide" d={d} onClick={this.openGuide} />;
-      }
-      return (
-        <g
-          key={body.id}
-          className={classNames(
-            'keyword',
-            body.render.className,
-            { textVisible: this.isWordVisible(body) },
-          )}
-        >
-          <text
-            x={body.position.x + body.render.textOffset.x}
-            y={body.position.y + body.render.textOffset.y}
-            transform={`rotate(${body.angle * 180 / Math.PI} ${body.position.x} ${body.position.y})`}
-          >
-            {body.render.value}
-          </text>
-          <path d={d} />
-        </g>
-      );
-    });
-    return words;
-  }
-
   render() {
+    if (!this.circleBody) { return <g ref={this.groupRef} />; }
+    const sortedKeywords = Object.values(this.keywordsBody)
+      .sort((a, b) => {
+        if (a.isVisible && !b.isVisible) { return 1; }
+        if (b.isVisible && !a.isVisible) { return -1; }
+        return 0;
+      });
     return (
       <g ref={this.groupRef} onClick={this.closeGuide}>
         {/* This is to ensure the group is always clickable */}
         <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
-        {this.renderBodies()}
+        {sortedKeywords.map(keyword => (
+          <g
+            key={keyword.body.id}
+            className={classNames(
+              'keyword',
+              keyword.body.render.className,
+              { textVisible: keyword.isVisible },
+            )}
+          >
+            <text
+              x={keyword.body.position.x + keyword.body.render.textOffset.x}
+              y={keyword.body.position.y + keyword.body.render.textOffset.y}
+              transform={`rotate(
+                ${keyword.body.angle * 180 / Math.PI}
+                ${keyword.body.position.x}
+                ${keyword.body.position.y}
+              )`}
+            >
+              {keyword.body.render.value}
+            </text>
+            <path d={keyword.renderedPathPoints} />
+          </g>
+        ))}
+        <path
+          className="guide"
+          d={this.circleBody.renderedPathPoints}
+          onClick={this.openGuide}
+        />;
       </g>
     );
   }
