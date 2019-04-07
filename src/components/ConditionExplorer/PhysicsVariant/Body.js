@@ -8,6 +8,8 @@ export default class Body {
     this.body = body;
     this.engine = engine;
 
+    Matter.World.add(this.engine.world, this.body);
+
     // TODO: Need to clean this up when we're done because this will cause a memory leak
     body.render.wrapper = this; // eslint-disable-line no-param-reassign
 
