@@ -110,18 +110,18 @@ export default class Body {
     });
   }
 
-  onUpdatePosition = (inOut, start, end) => {
+  onUpdatePosition(inOut, start, end) {
     Matter.Body.setPosition(this.body, {
       x: start.x + ((end.x - start.x) * inOut),
       y: start.y + ((end.y - start.y) * inOut),
     });
   }
 
-  onUpdateRotation = (inOut, start, end) => {
+  onUpdateRotation(inOut, start, end) {
     Matter.Body.setAngle(this.body, start.r + ((end.r - start.r) * inOut));
   }
 
-  onUpdateScale = (inOut, start, end) => {
+  onUpdateScale(inOut, start, end) {
     const scale = start.s + (inOut * (end.s - start.s));
     Matter.Body.scale(this.body, (1 / this.scale) * scale, (1 / this.scale) * scale);
     this.scale = scale;
