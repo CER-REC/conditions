@@ -358,7 +358,8 @@
     },
     "browseBy": {
       "skip": "Skip intro to browse:",
-      "return": "Return to browse:"
+      "return": "Return to browse:",
+      "blank": " "
     },
     "browseByBtn": {
       "projectsBy": "Projects by {icon}",

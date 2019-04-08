@@ -11,17 +11,11 @@ const noop = () => {};
 
 const BrowseBy = ({ showArrow, labelId }) => (
   <div className="BrowseBy">
-    {
-      (labelId !== '')
-        ? (
-          <FormattedMessage id={`components.browseBy.${labelId}`}>
-            {text => <span className={classNames('label', { showArrow })}>{text}</span>}
-          </FormattedMessage>
-        )
-        : (
-          <span className={classNames('label', { showArrow })} />
-        )
-    }
+    <div className={classNames('arrowWrapper', { showArrow, zeroWidth: (labelId === 'blank') })}>
+      <FormattedMessage id={`components.browseBy.${labelId}`}>
+        {text => <span className="label">{text}</span>}
+      </FormattedMessage>
+    </div>
     <BrowseByBtn classNames="company" mode="company" onClick={noop} />
     <BrowseByBtn classNames="location" mode="location" onClick={noop} />
   </div>
@@ -29,7 +23,7 @@ const BrowseBy = ({ showArrow, labelId }) => (
 
 BrowseBy.propTypes = {
   showArrow: PropTypes.bool,
-  labelId: PropTypes.oneOf(['skip', 'return', '']),
+  labelId: PropTypes.oneOf(['skip', 'return', 'blank']),
 };
 
 BrowseBy.defaultProps = {

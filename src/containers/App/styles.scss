@@ -37,18 +37,22 @@
     transition: top $defaultTransition;
 
     .BrowseBy {
-      .label {
+      .arrowWrapper {
         transition:
-          opacity $defaultTransition,
-          color $defaultTransition,
           background-color $defaultTransition,
-          margin-right $defaultTransition;
+          margin-right $defaultTransition,
+          color $defaultTransition,
+          opacity $defaultTransition;
 
         opacity: 1;
 
         &::after {
           transition: border-color $defaultTransition;
         }
+      }
+      .label {
+        transition:
+          width $defaultTransition,
       }
 
       .location,
@@ -97,7 +101,7 @@
 
     height: 90vh;
 
-    outline: 1px solid magenta;
+    // outline: 1px solid magenta;
 
     .header,
     .wheel,
@@ -128,7 +132,7 @@
 
     height: 90vh;
 
-    outline: 1px solid lightseagreen;
+    // outline: 1px solid lightseagreen;
   }
 
   .Footer {

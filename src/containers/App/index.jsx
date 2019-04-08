@@ -76,11 +76,11 @@ class App extends React.PureComponent {
             ? (
               <section className="browseBy">
                 <BrowseBy
-                  showArrow={(transitionState < 2)}
+                  showArrow={(transitionState < 2 || transitionState === 9)}
                   labelId={
-                    (transitionState < 7 && 'skip')
+                    ((transitionState < 7 || transitionState === 9) && 'skip')
                     || (transitionState > 9 && 'return')
-                    || ''
+                    || 'blank'
                   }
                 />
               </section>

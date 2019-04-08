@@ -7,7 +7,7 @@ import './styles.scss';
 
 const Guide = ({ textState }) => (
   <CircleContainer className="Guide" size={128}>
-    <FormattedMessage id={`components.guide.tutorial.${textState}`} />
+    <FormattedMessage id={`components.guide.tutorial.${(textState < 9) ? textState : 0}`} />
   </CircleContainer>
 );
 

@@ -3,25 +3,36 @@
 
 .BrowseBy {
 
-  .label {
+  .arrowWrapper {
+
     display: inline-block;
     position: relative;
+    top: -7px;
 
-    width: 160px;
+    .label {
+      display: inline-block;
+      position: relative;
 
-    top: -13px;
+      white-space: nowrap;
+      width: 160px;
+      overflow: hidden;
 
-    // padding-left: 24px;
-    text-align: right;
+      text-align: right;
+
+      height: 24px;
+
+      vertical-align: baseline;
+      line-height: 24px;
+
+      font-family: $fira-sans-condensed;
+      font-size: 16px;
+    }
+
+    &.zeroWidth .label {
+      width: 0px;
+    }
+
     margin-right: 12px;
-
-    height: 24px;
-
-    vertical-align: baseline;
-    line-height: 24px;
-
-    font-family: $fira-sans-condensed;
-    font-size: 16px;
 
     color: $Gray160;
     background-color: $White;
@@ -35,7 +46,7 @@
       top: 0;
       width: 0;
       height: 0;
-      border-width: 12px;
+      border-width: 14px;
       border-radius: 1px;
       border-color: transparent;
       border-style: solid;
