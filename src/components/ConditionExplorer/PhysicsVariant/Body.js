@@ -110,62 +110,49 @@ export default class Body {
     });
   }
 
-  onUpdatePosition(update) {
-    if (!this.targetPosition) { return; }
-    // If there is a target position, update our velocity
-    const { start, end } = this.targetPosition;
-    const progress = Math.min(1,
-      (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
-    const inOut = easeInOutCubic(progress);
+  onUpdatePosition = (inOut, start, end) => {
     Matter.Body.setPosition(this.body, {
       x: start.x + ((end.x - start.x) * inOut),
       y: start.y + ((end.y - start.y) * inOut),
     });
-    if (inOut === 1) {
-      this.targetPosition.promise.resolve();
-      clearInterval(this.targetPosition.promise.timeout);
-      this.targetPosition = false;
-    }
   }
 
-  onUpdateRotation(update) {
-    if (!this.targetRotation) { return; }
-    // If there is a target rotation, update our velocity
-    const { start, end } = this.targetRotation;
-    const progress = Math.min(1,
-      (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
-    const inOut = easeInOutCubic(progress);
+  onUpdateRotation = (inOut, start, end) => {
     Matter.Body.setAngle(this.body, start.r + ((end.r - start.r) * inOut));
-    if (inOut === 1) {
-      this.targetRotation.promise.resolve();
-      clearInterval(this.targetRotation.promise.timeout);
-      this.targetRotation = false;
-    }
   }
 
-  onUpdateScale(update) {
-    if (!this.targetScale) { return; }
-    // If there is a target rotation, update our velocity
-    const { start, end } = this.targetScale;
-    const progress = Math.min(1,
-      (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
-    const inOut = easeInOutCubic(progress);
+  onUpdateScale = (inOut, start, end) => {
     const scale = start.s + (inOut * (end.s - start.s));
     Matter.Body.scale(this.body, (1 / this.scale) * scale, (1 / this.scale) * scale);
     this.scale = scale;
+  }
+
+  onUpdateParameter(update, param) {
+    const targetParam = `target${param}`;
+    if (!this[targetParam]) { return; }
+
+    // If there is a target, update our position along the easing curve
+    const { start, end } = this[targetParam];
+    const progress = Math.min(1,
+      (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
+
+    const inOut = easeInOutCubic(progress);
+
+    this[`onUpdate${param}`](inOut, start, end);
+
     if (inOut === 1) {
-      this.targetScale.promise.resolve();
-      clearInterval(this.targetScale.promise.timeout);
-      this.targetScale = false;
+      this[targetParam].promise.resolve();
+      clearInterval(this[targetParam].promise.timeout);
+      this[targetParam] = false;
     }
   }
 
   onUpdate(update) {
     const { body } = this;
 
-    this.onUpdatePosition(update);
-    this.onUpdateRotation(update);
-    this.onUpdateScale(update);
+    this.onUpdateParameter(update, 'Position');
+    this.onUpdateParameter(update, 'Rotation');
+    this.onUpdateParameter(update, 'Scale');
 
     // If the body isn't moving very much, stop it completely.
     if (body.velocity.x || body.velocity.y) {
