@@ -19,10 +19,12 @@
     transition: all $defaultTransition;
 
     will-change: transform;
-    transition: transform $defaultTransition;
+    // transition: transform $defaultTransition;
 
     left: 0;
     top: 0;
+
+    transform: translate(0px, 0px);
 
     &.CircleContainer div {
       width: 80%;
@@ -40,7 +42,7 @@
     height: 40px;
     z-index: 999;
 
-    transition: top $defaultTransition;
+    transition: transform $defaultTransition;
 
     .BrowseBy {
       .arrowWrapper {
@@ -58,7 +60,7 @@
       }
       .label {
         transition:
-          width $defaultTransition,
+          width $fastStart,
       }
 
       .location,
@@ -72,21 +74,23 @@
 
   .ViewOne {
     position: absolute;
-    will-change: transform;
+    // will-change: transform;
     top: 0;
 
     .row {
       &.intro {
         position: relative;
+        transform: translateY(0px);
         will-change: transform;
-        top: 0px;
-        transition: top $defaultTransition;
+        // top: 0px;
+        transition: transform $defaultTransition;
       }
       &.explorer {
         position: relative;
+        transform: translateY(0px);
         will-change: transform;
-        top: 0px;
-        transition: top $defaultTransition;
+        // top: 0px;
+        transition: transform $defaultTransition;
       }
       &.buttons {
         position: absolute;
@@ -153,7 +157,7 @@
 
   &.transition-state-8 {
     .Guide {
-      transition: opacity $fastestStart, top 0s 1s, left 0s 1s;
+      transition: opacity $fastestStart, transform 0s 1s;
     }
   }
 
@@ -164,7 +168,7 @@
     }
 
     .browseBy {
-      transition: top $fastStart;
+      transition: transform $fastStart;
 
       .BrowseBy {
         transition:
@@ -186,10 +190,10 @@
     .ViewOne {
       .row {
         &.intro {
-          transition: top $fastEnd;
+          transition: transform $defaultTransition;
         }
         &.explorer {
-          transition: top $fastEnd;
+          transition: transform $defaultTransition;
         }
         &.buttons {
 
