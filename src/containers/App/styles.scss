@@ -18,6 +18,12 @@
     z-index: 999;
     transition: all $defaultTransition;
 
+    will-change: transform;
+    transition: transform $defaultTransition;
+
+    left: 0;
+    top: 0;
+
     &.CircleContainer div {
       width: 80%;
       margin-left: auto;
@@ -66,16 +72,19 @@
 
   .ViewOne {
     position: absolute;
+    will-change: transform;
     top: 0;
 
     .row {
       &.intro {
         position: relative;
+        will-change: transform;
         top: 0px;
         transition: top $defaultTransition;
       }
       &.explorer {
         position: relative;
+        will-change: transform;
         top: 0px;
         transition: top $defaultTransition;
       }
