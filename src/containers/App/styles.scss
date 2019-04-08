@@ -88,7 +88,7 @@
   }
 
   .ViewTwo {
-    transition: opacity $defaultTransition, left $defaultTransition;
+    transition: opacity $fastestEnd;
     position: absolute;
 
     top:0 ;
@@ -117,7 +117,7 @@
   }
 
   .ViewThree {
-    transition: opacity $defaultTransition, left $defaultTransition;
+    transition: opacity $defaultTransition;
     position: absolute;
 
     top: 0;
@@ -151,6 +151,8 @@
     }
 
     .browseBy {
+      transition: top $fastStart;
+
       .BrowseBy {
         transition:
           opacity $fastEnd,
@@ -186,6 +188,8 @@
     }
 
     .ViewTwo {
+      transition: opacity $fastStart;
+
       .header,
       .wheel,
       .companyBreakdown,

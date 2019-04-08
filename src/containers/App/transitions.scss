@@ -25,6 +25,7 @@ $states: (
     ".ViewTwo .ConditionDetails .listPane": (opacity: 0),
     ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 0),
     ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
+    ".ViewThree": (visibility: hidden),
     ".Footer": (
       opacity: 0,
 
@@ -118,14 +119,24 @@ $states: (
     ".Guide": (
       opacity: 0,
     ),
+    ".ViewTwo": (
+      transition: "opacity #{$defaultTransition}",
+    ),
+    ".ViewThree": (
+      transition: "opacity #{$fastestStart}, visibility 0s 1s",
+    ),
   ),
   10: (
     ".ViewTwo": (
+      visibility: hidden,
+      transition: "opacity #{$fastestStart}, visibility 0s 1s",
       opacity: 0,
       // left: -100%,
     ),
     ".ViewThree": (
+      visibility: visible,
       opacity: 1,
+      transition: "opacity #{defaultTransition}",
       // left: 0,
     ),
   ),
