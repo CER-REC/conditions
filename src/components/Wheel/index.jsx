@@ -50,13 +50,11 @@ class Wheel extends React.Component {
     // eslint-disable-next-line prefer-destructuring
     let { newRotation } = prevState || -(Math.sign(selectedIndex) * degreesPerItem);
     // console.log(`prevNewRotation: ${prevState.newRotation}`);
-    let { needsSpin } = prevState;
-    if (prevState.needsSpin) {
-      needsSpin = true;
+    const { needsSpin } = prevState;
+    if (needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + selectedIndex * degreesPerItem;
     } else {
-      needsSpin = false;
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
       if (diff < items.length - 1) {
         const adding = (selectedIndex - prevState.selectedIndex) * degreesPerItem;
@@ -122,7 +120,7 @@ class Wheel extends React.Component {
         <Spring
           immediate={!this.state.needsSpin}
           config={{ tension: 30, easing: 'easeInOutCirc' }}
-          onRest={() => this.setState({ needsSpin: false })}
+          onStart={() => this.setState({ needsSpin: false })}
           from={{
             transform: `rotate(${this.state.oldRotation}deg)`,
             rotation: -this.state.oldRotation,
