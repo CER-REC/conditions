@@ -98,22 +98,40 @@ export default class PhysicsVariant extends React.PureComponent {
     this.setState(state => ({ renderToggle: !state.renderToggle }));
   }
 
-  openGuide = (e) => {
-    if (this.circle.isMoving || this.circle.isExpanded) { return; }
-    e.stopPropagation();
-    this.circle.open(this.getCenterCoordinates());
-    this.keywords.forEach((body) => {
-      body.removeCollisionMask(circleCategory);
-    });
-  }
+  onGuideMouseDown = () => {
+    this.guideClickDetection = { ...this.circle.body.position };
+  };
 
   closeGuide = () => {
+    if (!this.circle.isExpanded || !this.guideClickDetection) { return; }
+    this.guideClickDetection = undefined;
     this.circle.close().finally(() => {
       this.keywords.forEach((body) => {
         body.addCollisionMask(circleCategory);
       });
     });
-  }
+  };
+
+  onGuideMouseUp = (e) => {
+    // If the click detection failed, don't do anything
+    if (!this.guideClickDetection) { return; }
+    const distance = {
+      x: Math.abs(this.circle.body.position.x - this.guideClickDetection.x),
+      y: Math.abs(this.circle.body.position.y - this.guideClickDetection.y),
+    };
+
+    if (distance.x > 5 || distance.y > 5) { return; }
+
+    e.stopPropagation();
+    if (!this.circle.isExpanded) {
+      this.circle.open(this.getCenterCoordinates());
+      this.keywords.forEach((body) => {
+        body.removeCollisionMask(circleCategory);
+      });
+    } else {
+      this.closeGuide();
+    }
+  };
 
   render() {
     if (!this.circle) { return <g ref={this.groupRef} />; }
@@ -153,7 +171,10 @@ export default class PhysicsVariant extends React.PureComponent {
         <path
           className="guide"
           d={this.circle.renderedPathPoints}
-          onClick={this.openGuide}
+          onMouseDown={this.onGuideMouseDown}
+          onTouchStart={this.onGuideMouseDown}
+          onMouseUp={this.onGuideMouseUp}
+          onTouchEnd={this.onGuideMouseUp}
         />;
       </g>
     );

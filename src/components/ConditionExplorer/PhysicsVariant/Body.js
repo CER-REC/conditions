@@ -41,7 +41,7 @@ export default class Body {
 
   moveTo(x, y, time = 0) {
     if (this.targetPosition) {
-      this.targetPosition.reject(new Error('Movement cancelled due to new target'));
+      this.targetPosition.promise.reject(new Error('Movement cancelled due to new target'));
     }
     if (time === 0) {
       Matter.Body.setPosition(this.body, { x, y });
@@ -64,7 +64,7 @@ export default class Body {
 
   rotateTo(r, time = 0) {
     if (this.targetRotation) {
-      this.targetRotation.reject(new Error('Rotation cancelled due to new target'));
+      this.targetRotation.promise.reject(new Error('Rotation cancelled due to new target'));
     }
     if (time === 0) {
       Matter.Body.setAngle(this.body, r);
@@ -87,7 +87,7 @@ export default class Body {
 
   scaleTo(s, time = 0) {
     if (this.targetScale) {
-      this.targetScale.reject(new Error('Scale cancelled due to new target'));
+      this.targetScale.promise.reject(new Error('Scale cancelled due to new target'));
     }
     if (time === 0) {
       const scale = (1 / this.scale) * s;
