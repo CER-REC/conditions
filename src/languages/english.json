@@ -158,6 +158,7 @@
       "instrument": "Regulatory instruments are official orders issued by NEB staff. An Instrument can include several conditions, and a project might have several instruments (i.e. orders)attached to it. All instruments have an instrument number. Searching for this number in the NEB’s {regDocsLink} repository is one way to find the original regulatory instrument from which the conditions in this visualization are taken. The prefix of an instrument number is based on its meaning."
     },
     "featureTypesDescription": {
+      "allThemes": "Conditions with multiple themes are counted more than once.",
       "theme": {
         "ADMINISTRATIVE": "types of conditions that ensure filings are made.",
         "DAMAGE_PREVENTION": "types of conditions that ensure reduction and prevention of damage.",
@@ -311,16 +312,26 @@
       }
     },
     "modal": {
-      "image": {
-        "title": "Image Download",
-        "actionText": "Save Image",
-        "contentTitle": "Conditions on NEB-regulated energy projects",
-        "contentDescription": "An interactive exploration tool",
-        "linkText": "Visit this interactive visualization:"
-      },
       "data": {
         "title": "Data Download",
         "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."
+      },
+      "company": {
+        "name": "Full Project Name:",
+        "associated": "Companies associated with this project",
+        "meaningHeading": "What does it mean to have more than one company associated to a project?",
+        "meaningText": "Text to be provided by the NEB.",
+        "back": "Back"
+      },
+      "regdocs": {
+        "searchFor": "Search for instrument {instrument} in {regdocs}",
+        "regdocs": "Regdocs...",
+        "found": "Instrument found, click to open document.",
+        "currentTab": "Open in current tab",
+        "newTab": "Open in new tab",
+        "cancel": "Cancel",
+        "whatIsHeading": "What is RegDocs?",
+        "whatIsText": "RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters."
       }
     },
     "projectLegend": {

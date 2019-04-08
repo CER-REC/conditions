@@ -68,7 +68,10 @@ const ViewThree = props => (
         <FeatureDescription feature={props.selected.feature} />
       </section>
       <section className="typesDescription">
-        <FeatureTypesDescription feature={props.selected.feature} />
+        <FeatureTypesDescription
+          feature={props.selected.feature}
+          subFeature={props.selected.subFeature}
+        />
       </section>
     </section>
     <section className="row thirdRow">

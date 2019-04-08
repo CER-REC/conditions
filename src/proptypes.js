@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { isValidElementType } from 'react-is';
 import { features } from './constants';
 
 export const featureTypes = PropTypes.oneOf(Object.keys(features));
@@ -136,4 +137,27 @@ nullableNumber.isRequired = (props, propName, componentName) => {
   return new Error(
     `Invalid prop \`${propName}\` supplied to \`${componentName}\`. Validation failed.`,
   );
+};
+
+// "is a component" check borrowed from React Router:
+// https://github.com/ReactTraining/react-router/blob/6a99c9362d46f768d93bbf9b9bc657ca7ce683be/packages/react-router/modules/Route.js#L82
+export const componentType = (props, propName, componentName) => {
+  if (props[propName] === undefined) { return null; }
+  return componentType.isRequired(props, propName, componentName);
+};
+
+componentType.isRequired = (props, propName, componentName) => {
+  if (!props[propName]) {
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` is marked as required.`,
+    );
+  }
+
+  if (!isValidElementType(props[propName])) {
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` expected a React component.`,
+    );
+  }
+
+  return null;
 };

@@ -18,7 +18,7 @@ describe('Components|FeatureTypesDescription', () => {
 
     test('should split multi-line text into paragraphs', () => {
       const p = wrapper.find('FormattedMessage')
-        .at(1)
+        .at(2)
         .shallowWithIntl(messages)
         .find('p');
 

@@ -12,12 +12,14 @@ class FeatureTypesDescription extends React.PureComponent {
 
   scrollTo = (type) => {
     const elm = this.ref.current.querySelector(`[data-heading="${type}"]`);
-    this.ref.current.scrollTop = elm.offsetTop - this.ref.current.offsetTop;
+    this.ref.current.scrollTop = (elm)
+      ? (elm.offsetTop - this.ref.current.offsetTop)
+      : 0;
   };
 
   componentDidUpdate = (prevProps) => {
-    if (prevProps.scrollTarget !== this.props.scrollTarget) {
-      this.scrollTo(this.props.scrollTarget);
+    if (prevProps.subFeature !== this.props.subFeature) {
+      this.scrollTo(this.props.subFeature);
     }
   };
 
@@ -54,6 +56,14 @@ class FeatureTypesDescription extends React.PureComponent {
         className="FeatureTypesDescription"
         ref={this.ref}
       >
+        {(this.props.feature === 'theme' && this.props.subFeature === '')
+          ? (
+            <FormattedMessage id="components.featureTypesDescription.allThemes">
+              {text => <p>* {text}</p> }
+            </FormattedMessage>
+          )
+          : null
+        }
         {content}
       </div>
     );
@@ -64,11 +74,11 @@ FeatureTypesDescription.propTypes = {
   /** Keyword or path where types can be found (ex. "theme", "instrument.category" */
   feature: PropTypes.string.isRequired,
   /** Heading that the container should scroll to (ex. "security") */
-  scrollTarget: PropTypes.string,
+  subFeature: PropTypes.string,
 };
 
 FeatureTypesDescription.defaultProps = {
-  scrollTarget: '',
+  subFeature: '',
 };
 
 export default FeatureTypesDescription;
