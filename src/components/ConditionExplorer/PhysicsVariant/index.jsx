@@ -23,8 +23,6 @@ export default class PhysicsVariant extends React.PureComponent {
     this.loopID = null;
     this.lastTime = 0;
     this.lastDeltaTime = 0;
-    this.locationBeforeExpand = { x: 0, y: 0 };
-    this.keywordsCanReset = true;
     this.state = { renderToggle: false };
   }
 
@@ -66,7 +64,7 @@ export default class PhysicsVariant extends React.PureComponent {
   onUpdate = (update) => {
     this.circle.onUpdate(update);
     this.keywords.forEach(keyword => keyword
-      .onUpdate(update, this.keywordsCanReset, this.circle.body.bounds));
+      .onUpdate(update, !this.circle.isExpanded, this.circle.body.bounds));
   };
 
   onCollision = collision => collision.pairs.forEach((pair) => {
@@ -101,34 +99,20 @@ export default class PhysicsVariant extends React.PureComponent {
   }
 
   openGuide = (e) => {
-    const circle = this.circle.body;
-    if (circle.speed || circle.render.expanded) { return; }
+    if (this.circle.isMoving || this.circle.isExpanded) { return; }
     e.stopPropagation();
-    this.locationBeforeExpand = { x: circle.position.x, y: circle.position.y };
-    const dimensions = this.getCenterCoordinates();
-    this.circle.moveTo(dimensions.x, dimensions.y, 2500);
-    this.circle.scaleTo(Math.min(dimensions.x, dimensions.y) / 50, 2500);
-    circle.render.expanded = true;
-    this.keywordsCanReset = false;
+    this.circle.open(this.getCenterCoordinates());
     this.keywords.forEach((body) => {
       body.removeCollisionMask(circleCategory);
     });
   }
 
   closeGuide = () => {
-    const { x, y } = this.locationBeforeExpand;
-    Promise
-      .all([
-        this.circle.moveTo(x, y, 2500),
-        this.circle.scaleTo(1, 2500),
-      ])
-      .finally(() => {
-        this.circle.body.render.expanded = false;
-        this.keywordsCanReset = true;
-        this.keywords.forEach((body) => {
-          body.addCollisionMask(circleCategory);
-        });
+    this.circle.close().finally(() => {
+      this.keywords.forEach((body) => {
+        body.addCollisionMask(circleCategory);
       });
+    });
   }
 
   render() {
@@ -143,27 +127,27 @@ export default class PhysicsVariant extends React.PureComponent {
       <g ref={this.groupRef} onClick={this.closeGuide}>
         {/* This is to ensure the group is always clickable */}
         <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
-        {sortedKeywords.map(keyword => (
+        {sortedKeywords.map(instance => (
           <g
-            key={keyword.body.id}
+            key={instance.body.id}
             className={classNames(
               'keyword',
-              keyword.body.render.className,
-              { textVisible: keyword.isVisible },
+              instance.keyword.className,
+              { textVisible: instance.isVisible },
             )}
           >
             <text
-              x={keyword.body.position.x + keyword.body.render.textOffset.x}
-              y={keyword.body.position.y + keyword.body.render.textOffset.y}
+              x={instance.body.position.x + instance.textOffset.x}
+              y={instance.body.position.y + instance.textOffset.y}
               transform={`rotate(
-                ${keyword.body.angle * 180 / Math.PI}
-                ${keyword.body.position.x}
-                ${keyword.body.position.y}
+                ${instance.body.angle * 180 / Math.PI}
+                ${instance.body.position.x}
+                ${instance.body.position.y}
               )`}
             >
-              {keyword.body.render.value}
+              {instance.keyword.value}
             </text>
-            <path d={keyword.renderedPathPoints} />
+            <path d={instance.renderedPathPoints} />
           </g>
         ))}
         <path

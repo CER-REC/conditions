@@ -23,19 +23,18 @@ export default class Keyword extends Body {
       },
     );
     body.frictionAir = 0.05;
-    body.render.className = keyword.className;
-    body.render.value = keyword.value;
-    body.render.originalData = keyword;
-    body.render.textOffset = {
-      x: keyword.textOffset.x,
-      y: keyword.textOffset.y - (keyword.outline.height / 2),
-    };
-
     super(body, engine);
     this.keyword = keyword;
   }
 
   get isVisible() { return this.body.collisionFilter.category !== placeholderCategory; }
+
+  get textOffset() {
+    return {
+      x: this.keyword.textOffset.x,
+      y: this.keyword.textOffset.y - (this.keyword.outline.height / 2),
+    };
+  }
 
   resetPosition() {
     return Promise.all([
