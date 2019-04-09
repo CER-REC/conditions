@@ -26,7 +26,7 @@ const BrowseByBtn = (props) => {
   return (
     <button
       type="button"
-      className={classNames('BrowseByBtn', props.classNames)}
+      className={classNames('BrowseByBtn', props.mode, props.classNames)}
       {...handleInteraction(props.onClick, props.mode)}
     >
       <div className="BrowseByBtn-ButtonText">

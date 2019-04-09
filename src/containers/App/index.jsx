@@ -60,6 +60,7 @@ class App extends React.PureComponent {
     // Using a prop to work with Storybook knobs
     // eslint-disable-next-line react/prop-types
     const { transitionState, browseBy, setBrowseBy } = this.props;
+
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
         {/* TODO: Figure out proper transition states vs. renders */}
@@ -124,20 +125,10 @@ App.propTypes = {
 export const AppUnconnected = App;
 
 const ConnectedApp = connect(
-  ({
-    browseBy,
-  }) => ({
-    browseBy,
-  }),
-  {
-    setBrowseBy: browseByCreators.setBrowseBy,
-  },
+  ({ browseBy }) => ({ browseBy }),
+  { setBrowseBy: browseByCreators.setBrowseBy },
 )(App);
 
 const store = createStore();
 
-export default props => (
-  <Provider store={store}>
-    <ConnectedApp {...props} />
-  </Provider>
-);
+export default props => <Provider store={store}><ConnectedApp {...props} /></Provider>;

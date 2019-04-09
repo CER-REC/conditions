@@ -78,7 +78,15 @@ $states: (
     ".Guide": (transform: translate(73%, -4px)),
     ".browseBy .BrowseBy": (opacity: 1),
     ".browseBy .BrowseByBtn.company": (opacity: 1),
-    ".browseBy .BrowseByBtn.location": (opacity: 1),
+    ".browseBy .BrowseByBtn.location": (
+      opacity: 1,
+      transform: translateX(-100%),
+      ),
+    ".browseBy .BrowseByBtn.inactive": (
+      visibility: hidden,
+      opacity: 0,
+      transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
+    ),
     ".ViewTwo .header": (opacity: 1),
     ".ViewTwo .wheel": (opacity: 1),
     ".ViewTwo .companyBreakdown": (opacity: 1),

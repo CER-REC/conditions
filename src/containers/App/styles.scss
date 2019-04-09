@@ -63,7 +63,10 @@
 
       .location,
       .company {
-        transition: opacity $defaultTransition;
+        transition:
+          opacity $defaultTransition,
+          transform $defaultTransition;
+
         opacity: 1
       }
     }

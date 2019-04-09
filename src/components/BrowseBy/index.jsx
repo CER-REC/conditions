@@ -2,27 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-
+import { browseByType } from '../../proptypes';
 import BrowseByBtn from './BrowseByBtn';
 
 import './styles.scss';
 
-const BrowseBy = ({ showArrow, labelId, setBrowseBy }) => (
+const BrowseBy = ({ showArrow, labelId, browseBy, onClick }) => (
   <div className="BrowseBy">
     <div className={classNames('arrowWrapper', { showArrow, zeroWidth: (labelId === 'blank') })}>
       <FormattedMessage id={`components.browseBy.${labelId}`}>
         {text => <span className="label">{text}</span>}
       </FormattedMessage>
     </div>
-    <BrowseByBtn classNames="company" mode="company" onClick={setBrowseBy} />
-    <BrowseByBtn classNames="location" mode="location" onClick={setBrowseBy} />
+    <BrowseByBtn classNames={(browseBy === 'company') ? 'inactive' : ''} mode="company" onClick={onClick} />
+    <BrowseByBtn classNames={(browseBy === 'location') ? 'inactive' : ''} mode="location" onClick={onClick} />
   </div>
 );
 
 BrowseBy.propTypes = {
   showArrow: PropTypes.bool,
   labelId: PropTypes.oneOf(['skip', 'return', 'blank']),
-  setBrowseBy: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
+  browseBy: browseByType.isRequired,
 };
 
 BrowseBy.defaultProps = {
