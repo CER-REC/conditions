@@ -2,7 +2,7 @@ import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import App from '.';
+import AppWithRedux from './AppWithRedux';
 
 const stages = {
   'View 1': 0,
@@ -21,7 +21,7 @@ const stages = {
 storiesForView('Containers|App', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <App
+    <AppWithRedux
       transitionState={select('Transition state', stages, 0)}
     />
   ));
