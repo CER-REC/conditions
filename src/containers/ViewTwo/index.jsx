@@ -18,7 +18,7 @@ import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
-import * as browseByCreators from '../../actions/browseBy';
+// import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import {
@@ -132,7 +132,7 @@ ViewTwo.propTypes = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
-  setBrowseBy: PropTypes.func.isRequired,
+  // setBrowseBy: PropTypes.func.isRequired,
   setFindAny: PropTypes.func.isRequired,
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -172,11 +172,11 @@ export const ViewTwoUnconnected = ViewTwo;
 export default connect(
   ({
     selected,
-    browseBy,
+    // browseBy,
     search,
   }) => ({
     selected,
-    browseBy,
+    // browseBy,
     included: search.included,
     projectStatus: search.projectStatus,
     findAny: search.findAny,
@@ -187,7 +187,7 @@ export default connect(
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
     setSelectedCondition: selectedCreators.setSelectedCondition,
-    setBrowseBy: browseByCreators.setBrowseBy,
+    // setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
     setSelectedProject: selectedCreators.setSelectedProject,

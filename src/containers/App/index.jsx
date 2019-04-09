@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import * as browseByCreators from '../../actions/browseBy';
+import createStore from '../../Store';
 
 import {
   browseByType,
@@ -57,7 +59,7 @@ class App extends React.PureComponent {
     // TODO: Move this into the app's actual state
     // Using a prop to work with Storybook knobs
     // eslint-disable-next-line react/prop-types
-    const { transitionState, setBrowseBy } = this.props;
+    const { transitionState, browseBy, setBrowseBy } = this.props;
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
         {/* TODO: Figure out proper transition states vs. renders */}
@@ -82,6 +84,7 @@ class App extends React.PureComponent {
                   || (transitionState > 9 && 'return')
                   || 'blank'
                 }
+                browseBy={browseBy}
                 setBrowseBy={setBrowseBy}
               />
             </section>
@@ -113,9 +116,14 @@ class App extends React.PureComponent {
   }
 }
 
+App.propTypes = {
+  browseBy: browseByType.isRequired,
+  setBrowseBy: PropTypes.func.isRequired,
+};
+
 export const AppUnconnected = App;
 
-export default connect(
+const ConnectedApp = connect(
   ({
     browseBy,
   }) => ({
@@ -125,3 +133,11 @@ export default connect(
     setBrowseBy: browseByCreators.setBrowseBy,
   },
 )(App);
+
+const store = createStore();
+
+export default props => (
+  <Provider store={store}>
+    <ConnectedApp {...props} />
+  </Provider>
+);
