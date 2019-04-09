@@ -59,7 +59,11 @@ class App extends React.PureComponent {
     // TODO: Move this into the app's actual state
     // Using a prop to work with Storybook knobs
     // eslint-disable-next-line react/prop-types
-    const { transitionState, browseBy, setBrowseBy } = this.props;
+    const { transitionState, browseBy, setBrowseBy, setTransitionState } = this.props;
+    const jumpToView2 = (type) => {
+      setTransitionState(8);
+      setBrowseBy(type);
+    };
 
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
@@ -86,7 +90,7 @@ class App extends React.PureComponent {
                   || 'blank'
                 }
                 browseBy={browseBy}
-                setBrowseBy={setBrowseBy}
+                onClick={(transitionState === 8) ? setBrowseBy : jumpToView2}
               />
             </section>
           )

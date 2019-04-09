@@ -76,6 +76,7 @@ $states: (
   ),
   7: (
     ".Guide": (transform: translate(73%, -4px)),
+    ".browseBy": (transform: translate(10px, -10vh)),
     ".browseBy .BrowseBy": (opacity: 1),
     ".browseBy .BrowseByBtn.company": (opacity: 1),
     ".browseBy .BrowseByBtn.location": (
@@ -113,6 +114,16 @@ $states: (
     ),
   ),
   10: (
+    ".browseBy .BrowseByBtn.active": (
+      visibility: hidden,
+      opacity: 0,
+      transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
+    ),
+    ".browseBy .BrowseByBtn.inactive": (
+      visibility: visible,
+      opacity: 1,
+      transition: "opacity #{$defaultTransition}, transform #{$defaultTransition}",
+    ),
     ".ViewTwo": (
       visibility: hidden,
       transition: "opacity #{$fastestStart}, visibility 0s 1s",

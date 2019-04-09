@@ -14,8 +14,8 @@ const BrowseBy = ({ showArrow, labelId, browseBy, onClick }) => (
         {text => <span className="label">{text}</span>}
       </FormattedMessage>
     </div>
-    <BrowseByBtn classNames={(browseBy === 'company') ? 'inactive' : ''} mode="company" onClick={onClick} />
-    <BrowseByBtn classNames={(browseBy === 'location') ? 'inactive' : ''} mode="location" onClick={onClick} />
+    <BrowseByBtn classNames={(browseBy === 'company') ? 'inactive' : 'active'} mode="company" onClick={onClick} />
+    <BrowseByBtn classNames={(browseBy === 'location') ? 'inactive' : 'active'} mode="location" onClick={onClick} />
   </div>
 );
 
