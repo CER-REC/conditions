@@ -64,6 +64,7 @@ class App extends React.PureComponent {
       setTransitionState(8);
       setBrowseBy(type);
     };
+    const jumpToView3 = () => setTransitionState(10);
 
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)}>
@@ -100,7 +101,7 @@ class App extends React.PureComponent {
         <div style={{ clear: 'both' }} />
         {/* eslint-disable-next-line no-constant-condition */}
         {(true)
-          ? <ViewTwo {...viewProps} />
+          ? <ViewTwo {...viewProps} jumpToView3={jumpToView3} />
           : null
         }
         {(transitionState >= 8) ? <ViewThree {...viewProps} /> : null}
