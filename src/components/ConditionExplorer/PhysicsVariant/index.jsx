@@ -6,15 +6,13 @@ import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
 import {
   circleCategory,
-  placeholderCategory,
   resettingCategory,
   visibleTextCategory,
 } from './categories';
+import Keyword from './Keyword';
+import Guide from './Guide';
 
-// Found at https://gist.github.com/gre/1650294
-const easeOutCubic = t => ((--t) * t * t) + 1; // eslint-disable-line no-plusplus
-
-export default class PhysicsVariant extends React.Component {
+export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
   };
@@ -25,56 +23,21 @@ export default class PhysicsVariant extends React.Component {
     this.loopID = null;
     this.lastTime = 0;
     this.lastDeltaTime = 0;
+    this.state = { renderToggle: false };
   }
 
   componentDidMount() {
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
     this.engine = Matter.Engine.create({ world });
 
-    // Set up bodies
-    this.circle = Matter.Bodies.circle(200, 200, 50, {
-      collisionFilter: { category: circleCategory },
-    });
+    this.circle = new Guide(this.engine);
+    this.keywords = this.props.keywords
+      .map(keyword => new Keyword(keyword, this.engine));
 
-    this.keywords = {};
-    this.props.keywords.forEach((keyword) => {
-      const { outline } = keyword;
-      const position = this.calculatePosition(keyword);
-      const keywordBody = Matter.Bodies.rectangle(
-        position.x,
-        position.y,
-        outline.width,
-        outline.height,
-        {
-          collisionFilter: {
-            category: placeholderCategory,
-            mask: circleCategory,
-          },
-        },
-      );
-      keywordBody.frictionAir = 0.05;
-      keywordBody.render.className = keyword.className;
-      keywordBody.render.value = keyword.value;
-      keywordBody.render.originalData = keyword;
-      keywordBody.render.textOffset = this.calculateTextOffset(keyword);
-
-      this.keywords[keyword.value] = keywordBody;
-    });
-
-    // Add bodies to world
-    Matter.World.add(this.engine.world, this.circle);
-    Matter.World.add(this.engine.world, Object.values(this.keywords));
-
-    //  disable applied force to help with loading bug
-    // Matter.Body.applyForce(this.circle, this.circle.position, { x: 0.15, y: 0.005 });
-
-    const mouse = Matter.Mouse.create(this.groupRef.current.parentElement);
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
-      mouse,
+      mouse: Matter.Mouse.create(this.groupRef.current.parentElement),
       constraint: { render: { visible: false } },
     });
-    this.mouse = mouse;
-
     Matter.World.add(this.engine.world, mouseConstraint);
 
     Matter.Engine.run(this.engine);
@@ -93,77 +56,33 @@ export default class PhysicsVariant extends React.Component {
     // will result in a memory leak.
   }
 
+  getCenterCoordinates = () => ({
+    x: this.groupRef.current.parentElement.width.baseVal.value / 2,
+    y: this.groupRef.current.parentElement.height.baseVal.value / 2,
+  });
+
   onUpdate = (update) => {
-    Matter.Composite.allBodies(this.engine.world).forEach((body) => {
-      // Stop the body from moving if its reached a minimum movement
-      const newVelocity = { ...body.velocity };
-      if (Math.abs(body.position.x - body.positionPrev.x) < 0.01) { newVelocity.x = 0; }
-      if (Math.abs(body.position.y - body.positionPrev.y) < 0.01) { newVelocity.y = 0; }
-      if (newVelocity.x !== body.velocity.x || newVelocity.y !== body.velocity.y) {
-        Matter.Body.setVelocity(body, newVelocity);
-      }
-
-      if ((Math.abs(body.angle - body.anglePrev) * 180) / Math.PI > 0.01) {
-        Matter.Body.setAngularVelocity(0);
-      }
-
-      // Check if the body is still moving
-      const bodyChanged = !!(body.speed || body.angularSpeed);
-
-      // If the circle has stopped moving, increase its friction
-      if (body.collisionFilter.category === circleCategory && !bodyChanged) {
-        body.frictionAir = 0.2;
-      }
-
-      if (body.collisionFilter.category === resettingCategory && !bodyChanged) {
-        body.collisionFilter.category = placeholderCategory;
-        const targetPos = this.calculatePosition(body.render.originalData);
-        // Ensure everything is in the correct position
-        Matter.Body.setVelocity(body, { x: 0, y: 0 });
-        Matter.Body.setPosition(body, targetPos);
-        Matter.Body.setAngularVelocity(body, 0);
-        Matter.Body.setAngle(body, 0);
-      }
-
-      // Check if any keywords that have been displaced can move back
-      if (body.collisionFilter.category === visibleTextCategory
-          && body.render.lastCollision + 5000 <= update.source.timing.timestamp) {
-        // eslint-disable-next-line object-curly-newline
-        const { x, y, width, height } = body.render.originalData.outline;
-        const originalBounds = {
-          min: { x, y },
-          max: { x: x + width, y: y + height },
-        };
-        if (Matter.Bounds.overlaps(originalBounds, this.circle.bounds) === false) {
-          body.collisionFilter.category = resettingCategory;
-          body.collisionFilter.mask &= ~visibleTextCategory;
-        }
-      } else if (body.collisionFilter.category === resettingCategory) {
-        const targetPos = this.calculatePosition(body.render.originalData);
-        newVelocity.x = this.calculateVelocity(body.position.x, targetPos.x);
-        newVelocity.y = this.calculateVelocity(body.position.y, targetPos.y);
-        Matter.Body.setVelocity(body, newVelocity);
-        Matter.Body.setAngularVelocity(body, this.calculateVelocity(body.angle, 0));
-      }
-    });
+    this.circle.onUpdate(update);
+    this.keywords.forEach(keyword => keyword
+      .onUpdate(update, !this.circle.isExpanded, this.circle.body.bounds));
   };
 
   onCollision = collision => collision.pairs.forEach((pair) => {
-    const withCircle = pair.bodyA === this.circle || pair.bodyB === this.circle;
+    const withCircle = pair.bodyA === this.circle.body || pair.bodyB === this.circle.body;
     pair.bodyA.render.lastCollision = collision.source.timing.timestamp;
     pair.bodyB.render.lastCollision = collision.source.timing.timestamp;
     // Collisions between keywords will allow movement, but not extend the
     // time until they go back to their original positions
     if (!withCircle) { return; }
 
-    const keyword = pair.bodyA === this.circle ? pair.bodyB : pair.bodyA;
+    const keyword = (pair.bodyA === this.circle.body ? pair.bodyB : pair.bodyA).render.wrapper;
 
-    if (keyword.collisionFilter.category === resettingCategory) {
+    if (keyword.category === resettingCategory) {
       pair.isActive = false;
       return;
     }
-    keyword.collisionFilter.category = visibleTextCategory;
-    keyword.collisionFilter.mask |= visibleTextCategory;
+    keyword.category = visibleTextCategory;
+    keyword.addCollisionMask(visibleTextCategory);
   });
 
   loop = (currTime) => {
@@ -176,83 +95,87 @@ export default class PhysicsVariant extends React.Component {
     this.lastTime = currTime;
     this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
-    this.forceUpdate();
+    this.setState(state => ({ renderToggle: !state.renderToggle }));
   }
 
-  calculatePosition = (keyword) => {
-    const word = {
-      x: keyword.outline.x + (keyword.outline.width / 2),
-      y: keyword.outline.y + (keyword.outline.height / 2),
-    };
-    return word;
+  onGuideMouseDown = () => {
+    this.guideClickDetection = { ...this.circle.body.position };
   };
 
-  calculateTextOffset = (keyword) => {
-    const word = {
-      x: keyword.textOffset.x,
-      y: keyword.textOffset.y - (keyword.outline.height / 2),
-    };
-    return word;
-  };
-
-  calculateVelocity = (start, end) => {
-    const distance = end - start;
-    const distanceScale = Math.min(Math.abs(distance) / 100, 1);
-    const direction = distance / Math.abs(distance);
-    return easeOutCubic(distanceScale) * direction * 2;
-  };
-
-  isWordVisible = keyword => (keyword.collisionFilter.category !== placeholderCategory);
-
-  getBodies = () => {
-    const bodies = Matter.Composite.allBodies(this.engine.world)
-      .sort((a, b) => {
-        if (this.isWordVisible(a) && !this.isWordVisible(b)) { return 1; }
-        if (this.isWordVisible(b) && !this.isWordVisible(a)) { return -1; }
-        return 0;
+  closeGuide = () => {
+    if (!this.circle.isExpanded || !this.guideClickDetection) { return; }
+    this.guideClickDetection = undefined;
+    this.circle.close().finally(() => {
+      this.keywords.forEach((body) => {
+        body.addCollisionMask(circleCategory);
       });
-    return bodies;
-  }
-
-  // TODO: optimize the nested map functions
-  getWords = () => {
-    if (!this.engine || !this.engine.world) { return null; }
-    const bodies = this.getBodies();
-    const words = bodies.map((body) => {
-      const d = body.vertices
-        .concat(body.vertices[0]) // Add it onto the end so we create a full path
-        .map((v, i) => `${i === 0 ? 'M' : 'L'} ${v.x} ${v.y}`)
-        .join(' ');
-      if (body === this.circle) {
-        return <path key="guide" className="guide" d={d} />;
-      }
-      return (
-        <g
-          key={body.id}
-          className={classNames(
-            'keyword',
-            body.render.className,
-            { textVisible: this.isWordVisible(body) },
-          )}
-        >
-          <text
-            x={body.position.x + body.render.textOffset.x}
-            y={body.position.y + body.render.textOffset.y}
-            transform={`rotate(${body.angle * 180 / Math.PI} ${body.position.x} ${body.position.y})`}
-          >
-            {body.render.value}
-          </text>
-          <path d={d} />
-        </g>
-      );
     });
-    return words;
-  }
+  };
+
+  onGuideMouseUp = (e) => {
+    // If the click detection failed, don't do anything
+    if (!this.guideClickDetection) { return; }
+    const distance = {
+      x: Math.abs(this.circle.body.position.x - this.guideClickDetection.x),
+      y: Math.abs(this.circle.body.position.y - this.guideClickDetection.y),
+    };
+
+    if (distance.x > 5 || distance.y > 5) { return; }
+
+    e.stopPropagation();
+    if (!this.circle.isExpanded) {
+      this.circle.open(this.getCenterCoordinates());
+      this.keywords.forEach((body) => {
+        body.removeCollisionMask(circleCategory);
+      });
+    } else {
+      this.closeGuide();
+    }
+  };
 
   render() {
+    if (!this.circle) { return <g ref={this.groupRef} />; }
+    const sortedKeywords = this.keywords
+      .sort((a, b) => {
+        if (a.isVisible && !b.isVisible) { return 1; }
+        if (b.isVisible && !a.isVisible) { return -1; }
+        return 0;
+      });
     return (
-      <g ref={this.groupRef}>
-        {this.getWords()}
+      <g ref={this.groupRef} onClick={this.closeGuide}>
+        {/* This is to ensure the group is always clickable */}
+        <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
+        {sortedKeywords.map(instance => (
+          <g
+            key={instance.body.id}
+            className={classNames(
+              'keyword',
+              instance.keyword.className,
+              { textVisible: instance.isVisible },
+            )}
+          >
+            <text
+              x={instance.body.position.x + instance.textOffset.x}
+              y={instance.body.position.y + instance.textOffset.y}
+              transform={`rotate(
+                ${instance.body.angle * 180 / Math.PI}
+                ${instance.body.position.x}
+                ${instance.body.position.y}
+              )`}
+            >
+              {instance.keyword.value}
+            </text>
+            <path d={instance.renderedPathPoints} />
+          </g>
+        ))}
+        <path
+          className="guide"
+          d={this.circle.renderedPathPoints}
+          onMouseDown={this.onGuideMouseDown}
+          onTouchStart={this.onGuideMouseDown}
+          onMouseUp={this.onGuideMouseUp}
+          onTouchEnd={this.onGuideMouseUp}
+        />;
       </g>
     );
   }
