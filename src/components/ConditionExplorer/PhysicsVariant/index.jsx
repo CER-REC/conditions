@@ -1,13 +1,13 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-bitwise */
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
 import {
-  circleCategory,
+  guideOutlineCategory,
   resettingCategory,
-  mouseGrabCategory,
   visibleTextCategory,
 } from './categories';
 import Keyword from './Keyword';
@@ -16,6 +16,8 @@ import Guide from './Guide';
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
+    setGuidePosition: PropTypes.func.isRequired,
+    setGuideExpanded: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -32,14 +34,14 @@ export default class PhysicsVariant extends React.PureComponent {
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
     this.engine = Matter.Engine.create({ world });
 
-    this.circle = new Guide(this.engine);
+    this.guide = new Guide(this.engine);
     this.keywords = this.props.keywords
       .map(keyword => new Keyword(keyword, this.engine));
 
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse: Matter.Mouse.create(this.groupRef.current.parentElement),
       constraint: { render: { visible: false } },
-      collisionFilter: { mask: mouseGrabCategory },
+      collisionFilter: { mask: guideOutlineCategory },
     });
     Matter.World.add(this.engine.world, mouseConstraint);
 
@@ -65,20 +67,21 @@ export default class PhysicsVariant extends React.PureComponent {
   });
 
   onUpdate = (update) => {
-    this.circle.onUpdate(update);
+    this.guide.onUpdate(update);
     this.keywords.forEach(keyword => keyword
-      .onUpdate(update, !this.circle.isExpanded, this.circle.body.bounds));
+      .onUpdate(update, !this.guide.isExpanded, this.guide.outline.body.bounds));
   };
 
   onCollision = collision => collision.pairs.forEach((pair) => {
-    const withCircle = pair.bodyA === this.circle.body || pair.bodyB === this.circle.body;
+    const guideOutline = this.guide.outline.body;
+    const withCircle = pair.bodyA === guideOutline || pair.bodyB === guideOutline;
     pair.bodyA.render.lastCollision = collision.source.timing.timestamp;
     pair.bodyB.render.lastCollision = collision.source.timing.timestamp;
     // Collisions between keywords will allow movement, but not extend the
     // time until they go back to their original positions
     if (!withCircle) { return; }
 
-    const keyword = (pair.bodyA === this.circle.body ? pair.bodyB : pair.bodyA).render.wrapper;
+    const keyword = (pair.bodyA === guideOutline ? pair.bodyB : pair.bodyA).render.wrapper;
 
     if (keyword.category === resettingCategory) {
       pair.isActive = false;
@@ -102,18 +105,17 @@ export default class PhysicsVariant extends React.PureComponent {
   }
 
   onGuideMouseDown = () => {
-    this.guideClickDetection = { ...this.circle.body.position };
+    this.guideClickDetection = { ...this.guide.body.position };
   };
 
   closeGuide = () => {
-    if (!this.circle.isExpanded || !this.guideClickDetection) { return; }
+    if (!this.guide.isExpanded || !this.guideClickDetection) { return; }
     this.guideClickDetection = undefined;
     this.props.setGuideExpanded(false);
-    this.circle.close().finally(() => {
-      console.log(this.circle.body)
-      this.props.setGuidePosition(this.circle.body.position.x, this.circle.body.position.y);
+    this.guide.close().finally(() => {
+      this.props.setGuidePosition(this.guide.body.position.x, this.guide.body.position.y);
       this.keywords.forEach((body) => {
-        body.addCollisionMask(circleCategory);
+        body.addCollisionMask(guideOutlineCategory);
       });
     });
   };
@@ -121,22 +123,22 @@ export default class PhysicsVariant extends React.PureComponent {
   onGuideMouseUp = (e) => {
     // If the click detection failed, don't do anything
     if (!this.guideClickDetection) { return; }
-    this.props.setGuidePosition(this.circle.body.position.x, this.circle.body.position.y);
+    this.props.setGuidePosition(this.guide.body.position.x, this.guide.body.position.y);
     const distance = {
-      x: Math.abs(this.circle.body.position.x - this.guideClickDetection.x),
-      y: Math.abs(this.circle.body.position.y - this.guideClickDetection.y),
+      x: Math.abs(this.guide.body.position.x - this.guideClickDetection.x),
+      y: Math.abs(this.guide.body.position.y - this.guideClickDetection.y),
     };
     if (distance.x > 5 || distance.y > 5) { return; }
 
     e.stopPropagation();
-    if (!this.circle.isExpanded) {
-      this.circle.open(this.getCenterCoordinates())
+    if (!this.guide.isExpanded) {
+      this.guide.open(this.getCenterCoordinates())
         .finally(() => {
           this.props.setGuideExpanded(true);
-          this.props.setGuidePosition(this.circle.body.position.x, this.circle.body.position.y);
+          this.props.setGuidePosition(this.guide.body.position.x, this.guide.body.position.y);
         });
       this.keywords.forEach((body) => {
-        body.removeCollisionMask(circleCategory);
+        body.removeCollisionMask(guideOutlineCategory);
       });
     } else {
       this.closeGuide();
@@ -144,7 +146,7 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   render() {
-    if (!this.circle) { return <g ref={this.groupRef} />; }
+    if (!this.guide) { return <g ref={this.groupRef} />; }
     const sortedKeywords = this.keywords
       .sort((a, b) => {
         if (a.isVisible && !b.isVisible) { return 1; }
@@ -180,11 +182,11 @@ export default class PhysicsVariant extends React.PureComponent {
         ))}
         <path
           className="guideOutline"
-          d={this.circle.outline.renderedPathPoints}
+          d={this.guide.outline.renderedPathPoints}
         />
         <path
           className="guide"
-          d={this.circle.renderedPathPoints}
+          d={this.guide.renderedPathPoints}
           onMouseDown={this.onGuideMouseDown}
           onTouchStart={this.onGuideMouseDown}
           onMouseUp={this.onGuideMouseUp}

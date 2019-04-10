@@ -1,7 +1,7 @@
 import Matter from 'matter-js';
 import Body from './Body';
 import {
-  circleCategory,
+  guideOutlineCategory,
   placeholderCategory,
   resettingCategory,
   visibleTextCategory,
@@ -18,7 +18,7 @@ export default class Keyword extends Body {
       {
         collisionFilter: {
           category: placeholderCategory,
-          mask: circleCategory,
+          mask: guideOutlineCategory,
         },
       },
     );
@@ -44,7 +44,9 @@ export default class Keyword extends Body {
         2500,
       ),
       this.rotateTo(0, 2500),
-    ]);
+    ]).finally(() => {
+      this.addCollisionMask(guideOutlineCategory);
+    });
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
@@ -61,6 +63,7 @@ export default class Keyword extends Body {
       if (Matter.Bounds.overlaps(originalBounds, circleBounds) === false) {
         this.category = resettingCategory;
         this.removeCollisionMask(visibleTextCategory);
+        this.removeCollisionMask(guideOutlineCategory);
         this.resetPosition();
       }
     }

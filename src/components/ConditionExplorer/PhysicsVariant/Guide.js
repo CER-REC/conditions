@@ -1,16 +1,16 @@
 import Matter from 'matter-js';
 import Body from './Body';
 import Outline from './Outline';
-import { circleCategory, mouseGrabCategory } from './categories';
+import { guideCategory, guideOutlineCategory } from './categories';
 
 export default class Guide extends Body {
   constructor(engine) {
     // the number are wierd to deal with the increased radius compared to the
     const body = Matter.Bodies.polygon(203, 199.5, 100, 50, {
       collisionFilter: {
-        category: circleCategory,
-        mask: ~mouseGrabCategory,
-        group: ~circleCategory,
+        category: guideCategory,
+        mask: ~guideOutlineCategory,
+        group: ~guideCategory,
       },
     });
     body.frictionAir = 0.2;
