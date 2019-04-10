@@ -17,6 +17,7 @@ $states: (
     ".Guide": (
       transform: translate(14%, 28vh)
     ),
+    ".ViewTwo": (pointer-events: none),
     ".ViewTwo .header": (opacity: 0),
     ".ViewTwo .wheel": (opacity: 0),
     ".ViewTwo .companyBreakdown": (opacity: 0),
@@ -24,7 +25,12 @@ $states: (
     ".ViewTwo .ConditionDetails .listPane": (opacity: 0),
     ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 0),
     ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
-    ".ViewThree": (visibility: hidden),
+    ".ViewThree": (
+      pointer-events: none,
+      visibility: hidden,
+    ),
+    // Fix for Firefox; the svg's pointer-events: all overrides the visibility
+    ".ViewThree .VictoryContainer svg": (pointer-events: visible !important),
     ".Footer": (
       opacity: 0,
 
@@ -107,6 +113,7 @@ $states: (
       opacity: 0,
     ),
     ".ViewTwo": (
+      pointer-events: auto,
       transition: "opacity #{$defaultTransition}",
     ),
     ".ViewThree": (
@@ -125,12 +132,14 @@ $states: (
       transition: "opacity #{$defaultTransition}, transform #{$defaultTransition}",
     ),
     ".ViewTwo": (
+      pointer-events: none,
       visibility: hidden,
       transition: "opacity #{$fastestStart}, visibility 0s 1s",
       opacity: 0,
       // left: -100%,
     ),
     ".ViewThree": (
+      pointer-events: auto,
       visibility: visible,
       opacity: 1,
       transition: "opacity #{defaultTransition}",
