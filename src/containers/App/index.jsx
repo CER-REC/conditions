@@ -1,4 +1,8 @@
 import React from 'react';
+import { ApolloClient } from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink } from 'apollo-link-http';
 import { Provider } from 'react-redux';
 import createStore from '../../Store';
 import ViewOne from '../ViewOne';
@@ -12,6 +16,13 @@ import {
   conditionData,
   projectsData,
 } from '../../mockData';
+
+const cache = new InMemoryCache();
+const link = new HttpLink({
+  // uri: 'http://178.128.239.141/conditions/graphql',
+  uri: 'http://localhost/conditions/graphql',
+});
+const client = new ApolloClient({ cache, link });
 
 const store = createStore();
 
@@ -46,22 +57,24 @@ class App extends React.PureComponent {
 
   render() {
     return (
-      <Provider store={store}>
-        <ViewOne />
-        {/* TODO: Deployment hacks */}
-        <div style={{ clear: 'both' }} />
-        <hr />
-        <ViewTwo {...viewProps} />
-        <hr />
-        <ViewThree {...viewProps} />
-        <hr />
-        <Footer
-          setMainInfoBarPane={this.setMainInfoBarPane}
-          mainInfoBarPane={this.state.mainInfoBarPane}
-          openDataModal={noop}
-          openScreenshotModal={noop}
-        />
-      </Provider>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
+          <ViewOne />
+          {/* TODO: Deployment hacks */}
+          <div style={{ clear: 'both' }} />
+          <hr />
+          <ViewTwo {...viewProps} />
+          <hr />
+          <ViewThree {...viewProps} />
+          <hr />
+          <Footer
+            setMainInfoBarPane={this.setMainInfoBarPane}
+            mainInfoBarPane={this.state.mainInfoBarPane}
+            openDataModal={noop}
+            openScreenshotModal={noop}
+          />
+        </Provider>
+      </ApolloProvider>
     );
   }
 }

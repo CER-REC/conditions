@@ -1,4 +1,6 @@
 import React from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
@@ -6,7 +8,8 @@ import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
-import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
+import { locationData } from '../../components/Wheel/randomDataSample';
+import { companyWheelQuery } from '../../queries/getWheelData';
 import TrendButton from '../../components/TrendButton';
 import {
   browseByType,
@@ -172,6 +175,22 @@ ViewTwo.defaultProps = {
 
 export const ViewTwoUnconnected = ViewTwo;
 
+export const ViewTwoGraphQL = () => (
+  <Query
+    query={companyWheelQuery}
+  >
+    {({ loading, error, data }) => {
+      if (loading) return <p>Loading...</p>;
+      if (error) return <p>Error :(</p>;
+      return () => (
+        <ViewTwo
+          query1Props={data}
+        />
+      );
+    }}
+  </Query>
+);
+
 export default connect(
   ({
     selected,
@@ -198,4 +217,4 @@ export default connect(
     setIncluded: searchCreators.setIncluded,
     setExcluded: searchCreators.setExcluded,
   },
-)(ViewTwo);
+)(ViewTwoGraphQL);
