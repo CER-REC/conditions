@@ -7,6 +7,7 @@ import { keywordList } from '../proptypes';
 import {
   circleCategory,
   resettingCategory,
+  mouseGrabCategory,
   visibleTextCategory,
 } from './categories';
 import Keyword from './Keyword';
@@ -22,6 +23,7 @@ export default class PhysicsVariant extends React.PureComponent {
     this.groupRef = React.createRef();
     this.loopID = null;
     this.lastTime = 0;
+    this.selected = 0;
     this.lastDeltaTime = 0;
     this.state = { renderToggle: false };
   }
@@ -37,6 +39,7 @@ export default class PhysicsVariant extends React.PureComponent {
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse: Matter.Mouse.create(this.groupRef.current.parentElement),
       constraint: { render: { visible: false } },
+      collisionFilter: { mask: mouseGrabCategory },
     });
     Matter.World.add(this.engine.world, mouseConstraint);
 
@@ -105,7 +108,10 @@ export default class PhysicsVariant extends React.PureComponent {
   closeGuide = () => {
     if (!this.circle.isExpanded || !this.guideClickDetection) { return; }
     this.guideClickDetection = undefined;
+    this.props.setGuideExpanded(false);
     this.circle.close().finally(() => {
+      console.log(this.circle.body)
+      this.props.setGuidePosition(this.circle.body.position.x, this.circle.body.position.y);
       this.keywords.forEach((body) => {
         body.addCollisionMask(circleCategory);
       });
@@ -115,16 +121,20 @@ export default class PhysicsVariant extends React.PureComponent {
   onGuideMouseUp = (e) => {
     // If the click detection failed, don't do anything
     if (!this.guideClickDetection) { return; }
+    this.props.setGuidePosition(this.circle.body.position.x, this.circle.body.position.y);
     const distance = {
       x: Math.abs(this.circle.body.position.x - this.guideClickDetection.x),
       y: Math.abs(this.circle.body.position.y - this.guideClickDetection.y),
     };
-
     if (distance.x > 5 || distance.y > 5) { return; }
 
     e.stopPropagation();
     if (!this.circle.isExpanded) {
-      this.circle.open(this.getCenterCoordinates());
+      this.circle.open(this.getCenterCoordinates())
+        .finally(() => {
+          this.props.setGuideExpanded(true);
+          this.props.setGuidePosition(this.circle.body.position.x, this.circle.body.position.y);
+        });
       this.keywords.forEach((body) => {
         body.removeCollisionMask(circleCategory);
       });
@@ -168,6 +178,10 @@ export default class PhysicsVariant extends React.PureComponent {
             <path d={instance.renderedPathPoints} />
           </g>
         ))}
+        <path
+          className="guideOutline"
+          d={this.circle.outline.renderedPathPoints}
+        />
         <path
           className="guide"
           d={this.circle.renderedPathPoints}

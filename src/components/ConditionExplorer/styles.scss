@@ -1,5 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fontVariables.scss';
+@import '../../styles/legend.scss';
+@import '../../styles/svgs.scss';
 
 .ConditionExplorer {
    touch-action: none;
@@ -41,7 +43,37 @@
   }
 
   .guide {
-    fill: #164EF8;
+   fill: #5050EA;
+  }
+
+  .guideOutline {
+    fill: transparent;
     stroke: $LinksTextButtons;
   }
+}
+
+.CircleContainer.lightgrey {
+  background: lightgrey;
+  margin-bottom: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+ }
+
+ .CircleContainer.gray {
+  background: gray;
+  margin-bottom: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+ }
+
+.CircleContainer.arrowNext{
+  background-color: white;
+  border: $list-selected;
+  color: $list-selected-color;
+}
+
+.CircleContainer.arrowPrevious{
+  background-color: white;
+  border: $list-selected;
+  color: $list-selected-color;
 }

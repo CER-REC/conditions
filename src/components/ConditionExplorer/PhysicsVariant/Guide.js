@@ -1,24 +1,48 @@
 import Matter from 'matter-js';
 import Body from './Body';
-import { circleCategory } from './categories';
+import Outline from './Outline';
+import { circleCategory, mouseGrabCategory } from './categories';
 
 export default class Guide extends Body {
   constructor(engine) {
-    const body = Matter.Bodies.polygon(200, 200, 100, 50, {
-      collisionFilter: { category: circleCategory },
+    // the number are wierd to deal with the increased radius compared to the
+    const body = Matter.Bodies.polygon(203, 199.5, 100, 50, {
+      collisionFilter: {
+        category: circleCategory,
+        mask: ~mouseGrabCategory,
+        group: ~circleCategory,
+      },
     });
     body.frictionAir = 0.2;
     super(body, engine);
 
     this.locationBeforeExpand = { x: 0, y: 0 };
+    this.outline = new Outline(engine);
+    this.outline.moveTo(200, 200, 3200)
+      .then(() => {
+        this.constraint = Matter.Constraint.create({
+          bodyA: this.body,
+          bodyB: this.outline.body,
+          length: 0,
+          stiffness: 0.7,
+        });
+        Matter.World.add(this.engine.world, this.constraint);
+      });
   }
 
   get isExpanded() { return this.scale !== 1; }
 
+  onUpdate(update) {
+    super.onUpdate(update);
+    this.outline.onUpdate(update);
+  }
+
   open(dimensions) {
     this.locationBeforeExpand = { ...this.body.position };
-    this.moveTo(dimensions.x, dimensions.y, 2500);
-    this.scaleTo(Math.min(dimensions.x, dimensions.y) / 50, 2500);
+    return Promise.all([
+      this.moveTo(dimensions.x, dimensions.y, 2500),
+      this.scaleTo(Math.min(dimensions.x, dimensions.y) / 50, 2500),
+    ]);
   }
 
   close() {
@@ -27,5 +51,10 @@ export default class Guide extends Body {
       this.moveTo(x, y, 2500),
       this.scaleTo(1, 2500),
     ]);
+  }
+
+  scaleTo(s, time) {
+    super.scaleTo(s, time);
+    this.outline.scaleTo(1, 1);
   }
 }

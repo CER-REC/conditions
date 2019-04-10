@@ -4,6 +4,7 @@ import memoize from 'lodash.memoize';
 import shallowequal from 'shallowequal';
 import PhysicsVariant from './PhysicsVariant';
 import Fallback from './Fallback';
+import InformationPanel from './PhysicsVariant/InformationPanel';
 import './styles.scss';
 
 // This function memoizes based on the keyword, but doesn't use it in the result
@@ -47,12 +48,27 @@ export default class ConditionExplorer extends React.Component {
     this.svgRef = React.createRef();
     this.fontChangeRef = React.createRef();
     this.textSizeRef = React.createRef();
-    this.state = { fallbackFontSize: null, calculatedFontSize: null };
+    this.state = {
+      fallbackFontSize: null,
+      calculatedFontSize: null,
+      guidePosition: { x: 0, y:0, radius: 0},
+      guideExpanded: false,
+    };
   }
 
   componentDidMount() {
     // Check every 100ms for 5 seconds for a font change
     this.cancelFontDetection = setTimeoutChain(this.testFontSize, 100, 50);
+  }
+
+  setGuidePosition = (x, y) => {
+    console.log('setGuidePosition', x, y, this);
+    this.setState({ guidePosition: { x, y } });
+  }
+
+  setGuideExpanded = (guideExpanded) => {
+    console.log('setGuideExpanded', guideExpanded, this);
+    this.setState({ guideExpanded });
   }
 
   getKeywords() {
@@ -126,35 +142,44 @@ export default class ConditionExplorer extends React.Component {
 
     // There are no keywords to render until after the first mount
     if (keywords.length > 0) {
+      const contentProps = {
+        keywords,
+        setGuidePosition: this.setGuidePosition,
+        setGuideExpanded: this.setGuideExpanded,
+      };
       content = this.props.physics
-        ? <PhysicsVariant keywords={keywords} />
-        : <Fallback keywords={keywords} />;
+        ? <PhysicsVariant {...contentProps} />
+        : <Fallback {...contentProps} />;
     }
 
     const fontTestStyles = { visibility: 'hidden' };
     if (!this.state.fallbackFontSize) { fontTestStyles.fontFamily = 'Sans Serif'; }
+    const informationPanel = this.state.guideExpanded ? <InformationPanel selected={0} offset={(this.svgRef.current.clientWidth / 2) - 250} /> : <></>;
 
     return (
-      <svg
-        ref={this.svgRef}
-        className="ConditionExplorer"
-        width="100%"
-        height="100%"
-        style={{ border: '1px solid #000' }}
-      >
-        <g className="keyword color0 textVisible">
-          <text ref={this.fontChangeRef} style={fontTestStyles}>
-            abcdefghijklmnopqrstuvwxyz
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-            -.,
-            0123456789
-            ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ
-            ùûüÿ€àâæçéèêëïîôœ
-          </text>
-          <text ref={this.textSizeRef} style={fontTestStyles} />
-        </g>
-        {content}
-      </svg>
+      <>
+        {informationPanel}
+        <svg
+          ref={this.svgRef}
+          className="ConditionExplorer"
+          width="100%"
+          height="100%"
+          style={{ border: '1px solid #000', zIndex: '0' }}
+        >
+          <g className="keyword color0 textVisible">
+            <text ref={this.fontChangeRef} style={fontTestStyles}>
+              abcdefghijklmnopqrstuvwxyz
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ
+              -.,
+              0123456789
+              ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ
+              ùûüÿ€àâæçéèêëïîôœ
+            </text>
+            <text ref={this.textSizeRef} style={fontTestStyles} />
+          </g>
+          {content}
+        </svg>
+      </>
     );
   }
 }

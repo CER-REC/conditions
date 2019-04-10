@@ -7,7 +7,6 @@ export default class Body {
   constructor(body, engine) {
     this.body = body;
     this.engine = engine;
-
     Matter.World.add(this.engine.world, this.body);
 
     // TODO: Need to clean this up when we're done because this will cause a memory leak
