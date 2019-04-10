@@ -1,3 +1,145 @@
+# [0.6.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.6.0) (2019-04-09)
+
+
+### App
+
+* **Features:** continues refactoring modals, adds rough Regdocs content (d0ad724)
+
+
+### ChartIndicator
+
+* **Features:** adds 'allThemes' prop to display an asterisk (d6875dc)
+
+
+### CompanyPopup
+
+* **Features:** implements the basic component requirements (e2a85a6)
+* **Tests:** updates snapshots (a39c588)
+* **Code Formatting:** condenses unnecessary multiline statement (be8f538)
+
+
+### ConditionExplorer
+
+* **Features:** implements new rendering/visibility logic (1e532a0)
+* **Features:** adds smoother transitions for guide position and scale (96edd69)
+* **Features:** improves opening/closing logic and collisions (1d88b67)
+* **Features:** Rewrite body render object logic (7b67785)
+* **Features:** reworks keyword class to handle logic (5e375a2)
+* **Features:** initial reorganization of logic into index and body (e183637)
+* **Features:** rework move/rotate/scale to use current value instead of velocity (559489a)
+* **Features:** use promises for move/rotate/scale to prevent early keyword collisions (063c4c7)
+* **Features:** Refactors movement/scaling into Body class (d3bc562)
+* **Code Refactoring:** extracts a method to eliminate duplicate code (f838727)
+* **Code Refactoring:** reverts update methods from arrow functions (21bc328)
+
+
+### Dependencies
+
+* **Project Maintenance:** update babel monorepo (8edf2bd)
+* **Project Maintenance:** update dependency codecov to v3.3.0 (ad32322)
+* **Project Maintenance:** update dependency cz-customizable to v5.8.0 (6216255)
+* **Project Maintenance:** update dependency eslint to v5.16.0 (bbf1f7a)
+* **Project Maintenance:** update dependency storybook-addon-interaction to v1 (1f60098)
+* **Project Maintenance:** update jest monorepo to v24.7.0 (b720d1a)
+* **Project Maintenance:** update jest monorepo to v24.7.1 (16ca15a)
+
+
+### DownloadPopup
+
+* **Documentation:** removes references to Image Download (afd4395)
+
+
+### Locales
+
+* **Features:** adds RegDocs and Company popup text (8aaa733)
+
+
+### Modal
+
+* **Features:** opens/closes dialog based on isOpen prop changing (35df826)
+* **Features:** updates styles, removes unused code (c0101a0)
+* **Features:** splits modal functionality into two separate components (cb0cc4d)
+* **Features:** moves custom validator to proptypes.js, refactors prop names (02df6f8)
+* **Code Formatting:** fixes formatting and linting issues, adds comments (e6d8289)
+* **Code Refactoring:** removes content logic from Modal to enable reuse (c945981)
+* **Code Refactoring:** updates styling and logic as per PR comments (12c4ce6)
+* **Code Refactoring:** uses PopupBtn component for modals' buttons (fdc6d24)
+
+
+### Physics variant
+
+* **Features:** adds click to circle (2df354f, NEBV-1289)
+
+
+### Physics Variant
+
+* **Features:** wIP for freezing body elements (489f4e3, NEBV-1289)
+* **Code Refactoring:** refactors some numbers for the physics calculations (64aab9e, NEBV-1289)
+
+
+### PopupBtn
+
+* **Features:** implements the popups' button as a public component (31e9081)
+* **Documentation:** adds prop descriptions (af84ae8)
+
+
+### PropTypes
+
+* **Bug Fixes:** fixes a validation check (95d11d0)
+
+
+### RegdocsPopup
+
+* **Features:** adds links, updates styling (a9fa509)
+* **Features:** adds localized text to buttons (8ab8dae)
+* **Features:** adds + and x icons to buttons (cfec577)
+
+
+### RegDocsPopup
+
+* **Features:** splits popup content into a separate component (7c7045a)
+* **Tests:** updates snapshots (ccb32e1)
+* **Tests:** adds basic tests, removes unused file (1f54365)
+
+
+### Snapshots
+
+* **Tests:** updates snapshots (2ed8e83)
+
+
+### StreamGraph
+
+* **Features:** adds 'allThemes' prop for showing the indicator asterisk (1d8c9b1)
+* **Bug Fixes:** fixes missing `allThemes` prop for `<StreamGraph streamOnly />` (ff6ffa8)
+* **Bug Fixes:** removes a stray console statement (669b242)
+* **Code Formatting:** adjust style and props as per PR comments (31f5560)
+
+
+### View 2
+
+* **Bug Fixes:** fixes minimap positioning issues (675c993)
+
+
+### View 3
+
+* **Features:** scrolls FeatureTypesDescription when Legend changes (db5e3f8)
+* **Features:** adds "Conditions may have multiple themes" message (96bc83b)
+
+
+### Wheel
+
+* **Bug Fixes:** spin on state change regardless of trigger fix (29d7c4b)
+* **Bug Fixes:** tweak situations in which the wheel spins (3757a8a)
+* **Bug Fixes:** rotation fix on internet explorer (3590331)
+* **Code Formatting:** Wheellist fix override wet template (cb71b47)
+* **Code Refactoring:** props spin fix (7daad3f)
+
+
+### WheelList
+
+* **Code Formatting:** adjust for wet template width positioning, centered (bc7264e)
+* **Code Formatting:** tweaks implementing suggestions from PRs (9337cc6)
+
 ## [0.5.2](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.5.2) (2019-04-02)
 
 

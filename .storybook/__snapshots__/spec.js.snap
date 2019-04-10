@@ -1855,6 +1855,247 @@ exports[`Storyshots Components|CircleContainer with text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|CompanyPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal CompanyPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="Company"
+    >
+      <h2>
+        Full Project Name:
+         
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h2>
+      <h3>
+        Companies associated with this project
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CompanyPopup"
+  >
+    <div
+      className="Company"
+    >
+      <h2>
+        Full Project Name:
+         
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h2>
+      <h3>
+        Companies associated with this project
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionDetails default 1`] = `
 <div
   className="visualization"
@@ -4111,6 +4352,68 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
   className="visualization"
 >
   <div />
+</div>
+`;
+
+exports[`Storyshots Components|DownloadPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal DownloadPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="Download"
+    >
+      <div
+        className="header"
+      >
+        <span
+          className="title"
+        >
+          <span>
+            Data Download
+          </span>
+        </span>
+        <svg
+          className="closeIcon"
+          focusable={true}
+          height="20"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          version="1.1"
+          width="20"
+        >
+          <line
+            strokeLinecap="round"
+            x1="0"
+            x2="20"
+            y1="20"
+            y2="0"
+          />
+          <line
+            strokeLinecap="round"
+            x1="0"
+            x2="20"
+            y1="0"
+            y2="20"
+          />
+        </svg>
+      </div>
+      <div
+        className="content"
+      >
+        <span>
+          The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer.
+        </span>
+      </div>
+      <div
+        className="footer"
+      />
+    </div>
+  </dialog>
 </div>
 `;
 
@@ -7905,152 +8208,155 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|Modal Data Download 1`] = `
+exports[`Storyshots Components|Modal default 1`] = `
 <div
   className="visualization"
 >
   <dialog
     className="Modal"
     onClose={[Function]}
-    style={
-      Object {
-        "height": "600px",
-        "width": "600px",
-      }
-    }
   >
-    <div
-      className="ModalContent"
-    >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          <span>
-            Data Download
-          </span>
-        </span>
-        <svg
-          className="closeIcon"
-          focusable={true}
-          height="20"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          version="1.1"
-          width="20"
-        >
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="20"
-            y2="0"
-          />
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="0"
-            y2="20"
-          />
-        </svg>
-      </div>
-      <div
-        className="content"
-      >
-        <div>
-          data here 
-        </div>
-      </div>
-      <div
-        className="footer"
-      />
+    <div>
+      I am a child component
     </div>
   </dialog>
 </div>
 `;
 
-exports[`Storyshots Components|Modal Image Download 1`] = `
+exports[`Storyshots Components|PopupBtn button 1`] = `
 <div
   className="visualization"
 >
-  <dialog
-    className="Modal"
-    onClose={[Function]}
-    style={
-      Object {
-        "height": "600px",
-        "width": "600px",
-      }
-    }
+  <button
+    className="PopupBtn"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
+    type="button"
   >
-    <div
-      className="ModalContent"
+    Knock, knock
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
     >
-      <div
-        className="header"
-      >
-        <span
-          className="title"
-        >
-          <span>
-            Image Download
-          </span>
-        </span>
-        <svg
-          className="closeIcon"
-          focusable={true}
-          height="20"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          version="1.1"
-          width="20"
-        >
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="20"
-            y2="0"
-          />
-          <line
-            strokeLinecap="round"
-            x1="0"
-            x2="20"
-            y1="0"
-            y2="20"
-          />
-        </svg>
-      </div>
-      <div
-        className="content"
-      >
-        <div>
-           image here
-        </div>
-      </div>
-      <div
-        className="footer"
-      >
-        <button
-          className="textButton"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span>
-            Save Image
-          </span>
-        </button>
-      </div>
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+        transform="rotate(45 50 50)"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components|PopupBtn default 1`] = `
+<div
+  className="visualization"
+>
+  <a
+    className="PopupBtn"
+    href="https://www.example.com"
+  >
+    <div>
+      Example
     </div>
-  </dialog>
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components|PopupBtn link attributes 1`] = `
+<div
+  className="visualization"
+>
+  <a
+    className="PopupBtn"
+    href="https://www.example.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <div>
+      Example
+    </div>
+    <svg
+      className="buttonIcon"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+      />
+      <path
+        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+        fill="white"
+      />
+    </svg>
+  </a>
 </div>
 `;
 
@@ -12800,6 +13106,343 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
       <div
         className="ProjectName"
       />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|RegDocsPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal RegDocsPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="RegDocs"
+    >
+      <h3>
+        Search for instrument 
+        <strong>
+          #
+          XO-001-2018
+        </strong>
+         in 
+        <strong>
+          Regdocs...
+        </strong>
+      </h3>
+      <p
+        className="iconContainer"
+      >
+        <svg
+          className="checkIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <polyline
+            points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+          />
+        </svg>
+        <span>
+          Instrument found, click to open document.
+        </span>
+      </p>
+      <a
+        className="PopupBtn"
+        href="https://www.example.com"
+      >
+        <div>
+          Open in current tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <a
+        className="PopupBtn"
+        href="https://www.example.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          Open in new tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <button
+        className="PopupBtn cancel"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Cancel
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+      <h4>
+        What is RegDocs?
+      </h4>
+      <p>
+        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+      </p>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="RegDocsPopup"
+  >
+    <div
+      className="RegDocs"
+    >
+      <h3>
+        Search for instrument 
+        <strong>
+          #
+          XO-001-2018
+        </strong>
+         in 
+        <strong>
+          Regdocs...
+        </strong>
+      </h3>
+      <p
+        className="iconContainer"
+      >
+        <svg
+          className="checkIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <polyline
+            points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+          />
+        </svg>
+        <span>
+          Instrument found, click to open document.
+        </span>
+      </p>
+      <a
+        className="PopupBtn"
+        href="https://www.example.com"
+      >
+        <div>
+          Open in current tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <a
+        className="PopupBtn"
+        href="https://www.example.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          Open in new tab
+        </div>
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <button
+        className="PopupBtn cancel"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Cancel
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+      <h4>
+        What is RegDocs?
+      </h4>
+      <p>
+        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+      </p>
     </div>
   </div>
 </div>
