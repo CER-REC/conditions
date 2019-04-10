@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
+import debounce from 'lodash.debounce';
+
 import * as browseByCreators from '../../actions/browseBy';
 import createStore from '../../Store';
 
@@ -48,12 +50,29 @@ const viewProps = {
 };
 
 class App extends React.PureComponent {
+  handleScroll = debounce((deltaY) => {
+    /* Browsers + devices provide different values using different units, so
+    * we can't use deltaY directly
+    */
+    const direction = (deltaY > 0 && 1) || (deltaY < 0 && -1);
+    if (!direction) return;
+
+    const newState = Math.min(Math.max(0, this.props.transitionState + direction), 10);
+
+    if (newState !== this.props.transitionState) this.props.setTransitionState(newState);
+  }, 1000, { leading: true })
+
   constructor(props) {
     super(props);
     this.state = { mainInfoBarPane: '' };
   }
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
+
+  debounceScrollEvents = (e) => {
+    e.preventDefault();
+    this.handleScroll(e.deltaY);
+  }
 
   render() {
     // TODO: Move this into the app's actual state
@@ -67,7 +86,7 @@ class App extends React.PureComponent {
     const jumpToView3 = () => setTransitionState(10);
 
     return (
-      <div className={classNames('App', `transition-state-${transitionState}`)}>
+      <div className={classNames('App', `transition-state-${transitionState}`)} onWheel={this.debounceScrollEvents}>
         {/* TODO: Figure out proper transition states vs. renders */}
         {/* eslint-disable-next-line no-constant-condition */}
         {(true)
@@ -125,6 +144,7 @@ class App extends React.PureComponent {
 App.propTypes = {
   browseBy: browseByType.isRequired,
   setBrowseBy: PropTypes.func.isRequired,
+  setTransitionState: PropTypes.func.isRequired,
 };
 
 export const AppUnconnected = App;

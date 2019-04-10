@@ -40,7 +40,7 @@ const stages = {
   'View 1 -> 2, step 6': 6,
   'View 1 -> 2, step 7': 7,
   'View 2': 8,
-  'Reset to View 1': 9,
+  'Reset View 2 -> 1': 9,
   'View 3': 10,
 };
 
