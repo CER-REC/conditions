@@ -194,11 +194,17 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
   <div
     className="BrowseBy"
   >
-    <span
-      className="label"
-    />
+    <div
+      className="arrowWrapper"
+    >
+      <span
+        className="label"
+      >
+        Skip intro to browse:
+      </span>
+    </div>
     <button
-      className="BrowseByBtn company"
+      className="BrowseByBtn company inactive"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -259,7 +265,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       </svg>
     </button>
     <button
-      className="BrowseByBtn location"
+      className="BrowseByBtn location active"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -330,13 +336,17 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
   <div
     className="BrowseBy"
   >
-    <span
-      className="label showArrow"
+    <div
+      className="arrowWrapper showArrow"
     >
-      Skip intro to browse:
-    </span>
+      <span
+        className="label"
+      >
+        Skip intro to browse:
+      </span>
+    </div>
     <button
-      className="BrowseByBtn company"
+      className="BrowseByBtn company inactive"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -397,7 +407,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       </svg>
     </button>
     <button
-      className="BrowseByBtn location"
+      className="BrowseByBtn location active"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -468,13 +478,17 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
   <div
     className="BrowseBy"
   >
-    <span
-      className="label"
+    <div
+      className="arrowWrapper"
     >
-      Return to browse:
-    </span>
+      <span
+        className="label"
+      >
+        Return to browse:
+      </span>
+    </div>
     <button
-      className="BrowseByBtn company"
+      className="BrowseByBtn company inactive"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -535,7 +549,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       </svg>
     </button>
     <button
-      className="BrowseByBtn location"
+      className="BrowseByBtn location active"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -607,7 +621,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByCompany 1`] = `
     className="BrowseBy"
   >
     <button
-      className="BrowseByBtn"
+      className="BrowseByBtn company"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -679,7 +693,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByLocation 1`] = `
     className="BrowseBy"
   >
     <button
-      className="BrowseByBtn"
+      className="BrowseByBtn company"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
@@ -751,7 +765,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn with state toggle 1`] = `
     className="BrowseBy"
   >
     <button
-      className="BrowseByBtn"
+      className="BrowseByBtn location"
       focusable={true}
       onClick={[Function]}
       onKeyPress={[Function]}
