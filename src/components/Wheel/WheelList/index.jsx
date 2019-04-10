@@ -18,7 +18,7 @@ const WheelList = (props) => {
 
   const listElements = indexOffsets.map((offset) => {
     const text = props.wheelType === 'company'
-      ? props.listContent[wrapIndex(offset)].company_name
+      ? props.listContent[wrapIndex(offset)].name
       : props.listContent[wrapIndex(offset)].region_name;
     return (
       <span
@@ -42,7 +42,7 @@ const WheelList = (props) => {
         </FormattedMessage>
         <span className="selected" style={{ width: `${props.textClippingRadius - 25}%` }}>
           {props.wheelType === 'company'
-            ? props.listContent[props.selected].company_name
+            ? props.listContent[props.selected].name
             : props.listContent[props.selected].region_name
           }
         </span>

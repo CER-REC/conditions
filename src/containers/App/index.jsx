@@ -19,8 +19,8 @@ import {
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  // uri: 'http://178.128.239.141/conditions/graphql',
-  uri: 'http://localhost/conditions/graphql',
+  uri: 'http://178.128.239.141/conditions/graphql',
+  // uri: 'http://localhost/conditions/graphql',
 });
 const client = new ApolloClient({ cache, link });
 

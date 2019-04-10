@@ -37,7 +37,7 @@ class WheelRay extends React.Component {
 
     // TODO: This shouldn't be in the constructor; load the data and prompt a
     // re-render.
-    const flagData = this.props.items.map(company => company.projects);
+    const flagData = this.props.items.map(company => company.projectIds);
     const calc = flagLayoutCalculation(flagData);
     this.flagLayouts = calc.flagLayouts;
     this.flagScale = calc.flagScale;
@@ -75,11 +75,11 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={`${item._id}CompanyRay`} transform={transform} className="companyRay">
+          <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay">
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
             <text className="textLabels" transform="translate(28.75) rotate(90)">
-              { item.company_name.charAt(0) !== legendTracker ? item.company_name.charAt(0) : null }
+              { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
             </text>
             {(this.flagLayouts)
               ? (
@@ -114,7 +114,7 @@ class WheelRay extends React.Component {
           </g>
         );
       legendTracker = props.wheelType === 'company'
-        ? item.company_name.charAt(0)
+        ? item.name.charAt(0)
         : item.location.province;
       return componentToReturn;
     });

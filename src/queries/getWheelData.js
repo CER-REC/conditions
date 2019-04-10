@@ -1,13 +1,10 @@
 import gql from 'graphql-tag';
 
 export const companyWheelQuery = gql`{
-  allCompanies {
+	allCompanies {
     id
     name
     projectIds
   }
-}`;
-
-export const locationWheelData = gql`{
 }`;
 

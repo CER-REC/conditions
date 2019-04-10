@@ -1,6 +1,5 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
@@ -75,7 +74,7 @@ const ViewTwo = props => (
         <Wheel
           wheelType={props.browseBy}
           selectRay={noop}
-          itemsData={props.browseBy === 'company' ? companyWheelData
+          wheelData={props.browseBy === 'company' ? props.wheelData
             : { items: locationData.items.slice(0, 50) }
           }
         />
@@ -175,16 +174,17 @@ ViewTwo.defaultProps = {
 
 export const ViewTwoUnconnected = ViewTwo;
 
-export const ViewTwoGraphQL = () => (
+export const ViewTwoGraphQL = props => (
   <Query
     query={companyWheelQuery}
   >
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
-      return () => (
+      return (
         <ViewTwo
-          query1Props={data}
+          wheelData={data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))}
+          {...props}
         />
       );
     }}
