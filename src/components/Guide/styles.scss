@@ -9,6 +9,10 @@
 
   .CircleContainer {
     background: $Guide;
+
+    div {
+      margin: 0 10%;
+    }
   }
 
   pointer-events: none;

@@ -16,7 +16,7 @@ const Guide = ({ textState }) => (
       {
         (textState > -1)
           ? <FormattedMessage id={`components.guide.tutorial.${textState}`} />
-          : <div />
+          : <span />
       }
     </CircleContainer>
   </div>
