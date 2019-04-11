@@ -140,10 +140,8 @@ export default class PhysicsVariant extends React.PureComponent {
     e.stopPropagation();
     if (!this.guide.isExpanded) {
       this.guide.open(this.getCenterCoordinates())
-        .finally(() => {
-          this.props.setGuideExpanded(true);
-          this.updateGuidePosition();
-        });
+        .then(() => { this.props.setGuideExpanded(true); })
+        .finally(() => { this.updateGuidePosition(); });
       this.keywords.forEach((body) => {
         body.removeCollisionMask(guideOutlineCategory);
       });
