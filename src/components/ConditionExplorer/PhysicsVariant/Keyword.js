@@ -37,6 +37,7 @@ export default class Keyword extends Body {
   }
 
   resetPosition() {
+    this.removeCollisionMask(guideOutlineCategory);
     return Promise.all([
       this.moveTo(
         this.keyword.outline.x + (this.keyword.outline.width / 2),
@@ -52,6 +53,10 @@ export default class Keyword extends Body {
   onUpdate(update, keywordsCanReset, circleBounds) {
     super.onUpdate(update);
 
+    if (this.category === resettingCategory && !this.isMoving) {
+      this.category = placeholderCategory;
+    }
+
     if (this.category === visibleTextCategory
         && this.body.render.lastCollision + 5000 <= update.source.timing.timestamp
         && keywordsCanReset) {
@@ -63,13 +68,8 @@ export default class Keyword extends Body {
       if (Matter.Bounds.overlaps(originalBounds, circleBounds) === false) {
         this.category = resettingCategory;
         this.removeCollisionMask(visibleTextCategory);
-        this.removeCollisionMask(guideOutlineCategory);
         this.resetPosition();
       }
-    }
-
-    if (this.category === resettingCategory && !this.isMoving) {
-      this.category = placeholderCategory;
     }
   }
 }

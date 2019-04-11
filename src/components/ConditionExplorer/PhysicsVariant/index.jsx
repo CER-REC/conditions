@@ -121,6 +121,7 @@ export default class PhysicsVariant extends React.PureComponent {
     this.guide.close().finally(() => {
       this.updateGuidePosition();
       this.keywords.forEach((body) => {
+        if (body.category === resettingCategory) { return; }
         body.addCollisionMask(guideOutlineCategory);
       });
     });
