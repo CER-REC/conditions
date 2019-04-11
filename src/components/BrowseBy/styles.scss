@@ -20,6 +20,7 @@
       text-align: right;
 
       height: 24px;
+      padding-top: 1px;
 
       vertical-align: baseline;
       line-height: 24px;
@@ -52,11 +53,17 @@
       border-style: solid;
     }
 
+
+
     &.showArrow {
       color: $White;
       background-color: $Guide;
       border-color: $Guide;
       margin-right: 24px;
+
+      .label {
+        padding-top: 0px;
+      }
 
       &::after {
         border-color: transparent transparent transparent $Guide;

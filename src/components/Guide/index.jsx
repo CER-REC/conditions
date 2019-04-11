@@ -12,7 +12,7 @@ const Guide = ({ textState }) => (
    * can't use percentages for translating to a given position relative to the app.
    */
   <div className="Guide">
-    <CircleContainer size={128}>
+    <CircleContainer size={176}>
       {
         (textState > -1)
           ? <FormattedMessage id={`components.guide.tutorial.${textState}`} />

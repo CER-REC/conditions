@@ -15,7 +15,7 @@ $faded: 0.3;
 $states: (
   0: (
     ".Guide": (
-      transform: translate(14%, 28vh)
+      transform: translate(18%, 35vh)
     ),
     ".ViewTwo": (pointer-events: none),
     ".ViewTwo .header": (opacity: 0),
@@ -40,14 +40,14 @@ $states: (
   // 9 resets from View 2 -> 1, just with different transitions
   9: (),
   1: (
-    ".Guide": (transform: translate(38%, 62vh)),
+    ".Guide": (transform: translate(44%, 70vh)),
     ".browseBy .BrowseByBtn.location": (opacity: $faded),
     ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: $faded),
     ".ViewOne .row.intro": (transform: "translateY(-50vh)"),
     ".ViewOne .row.explorer": (transform: "translateY(-50vh)"),
   ),
   2: (
-    ".Guide": (transform: translate(52%, 75vh)),
+    ".Guide": (transform: translate(56%, 83vh)),
     ".browseBy": (transform: translateY(-10vh)),
     ".browseBy .BrowseByBtn.location": (opacity: 0),
     ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: 0),
@@ -56,24 +56,24 @@ $states: (
     ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
   ),
   3: (
-    ".Guide": (transform: translate(66%, 122px)),
+    ".Guide": (transform: translate(72%, 22vh)),
     ".ViewTwo .ConditionDetails .contentPane": (opacity: $faded),
     ".ViewTwo .menus": (opacity: 1),
   ),
   4: (
-    ".Guide": (transform: translate(35%, 553px)),
+    ".Guide": (transform: translate(42%, 70vh)),
     ".ViewTwo .menus": (opacity: $faded),
     ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
     ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
   ),
   5: (
-    ".Guide": (transform: translate(57%, -16px)),
+    ".Guide": (transform: translate(66%, 5vh)),
     ".ViewTwo .ConditionDetails .listPane": (opacity: $faded),
     ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: $faded),
     ".ViewTwo .companyBreakdown": (opacity: 1),
   ),
   6: (
-    ".Guide": (transform: translate(3%, 450px)),
+    ".Guide": (transform: translate(9%, 65vh)),
     ".browseBy .BrowseBy": (opacity: 0),
     ".browseBy .BrowseByBtn.company": (opacity: 0),
     ".browseBy .BrowseByBtn.location": (opacity: 0),
@@ -81,7 +81,7 @@ $states: (
     ".ViewTwo .wheel": (opacity: 1),
   ),
   7: (
-    ".Guide": (transform: translate(73%, -4px)),
+    ".Guide": (transform: translate(82%, 5vh)),
     ".browseBy": (transform: translate(10px, -10vh)),
     ".browseBy .BrowseBy": (opacity: 1),
     ".browseBy .BrowseByBtn.company": (opacity: 1),
