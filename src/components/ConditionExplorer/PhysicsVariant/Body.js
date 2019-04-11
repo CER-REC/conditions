@@ -46,7 +46,7 @@ export default class Body {
       Matter.Body.setPosition(this.body, { x, y });
       return Promise.resolve();
     }
-    const { timestamp } = this.engine.timing;
+    const timestamp = Date.now();
     this.targetPosition = {
       start: { ...this.body.position, timestamp },
       end: { x, y, timestamp: timestamp + time },
@@ -69,7 +69,7 @@ export default class Body {
       Matter.Body.setAngle(this.body, r);
       return Promise.resolve();
     }
-    const { timestamp } = this.engine.timing;
+    const timestamp = Date.now();
     this.targetRotation = {
       start: { r: this.body.angle, timestamp },
       end: { r, timestamp: timestamp + time },
@@ -94,7 +94,7 @@ export default class Body {
       this.scale = s;
       return Promise.resolve();
     }
-    const { timestamp } = this.engine.timing;
+    const timestamp = Date.now();
     this.targetScale = {
       start: { s: this.scale, timestamp },
       end: { s, timestamp: timestamp + time },
@@ -132,8 +132,9 @@ export default class Body {
 
     // If there is a target, update our position along the easing curve
     const { start, end } = this[targetParam];
+    const now = Date.now();
     const progress = Math.min(1,
-      (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
+      (now - start.timestamp) / (end.timestamp - start.timestamp));
 
     const inOut = easeInOutCubic(progress);
 

@@ -95,7 +95,7 @@ export default class PhysicsVariant extends React.PureComponent {
     const deltaTime = currTime - (this.lastTime || 0);
     Matter.Engine.update(
       this.engine,
-      this.deltaTime,
+      deltaTime,
       this.lastDeltaTime ? (deltaTime / this.lastDeltaTime) : 1,
     );
     this.lastTime = currTime;
