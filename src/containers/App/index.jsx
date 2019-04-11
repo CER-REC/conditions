@@ -65,6 +65,25 @@ const transitionTargets = {
   10: { [UP]: 10, [DOWN]: 10 }, // View 3
 };
 
+const targetIsScrollable = (target) => {
+  let checkingTarget = target;
+  let checkedCount = 0;
+  const maxChecked = 3;
+
+  while (
+    checkedCount < maxChecked
+    && checkingTarget
+    && (!checkingTarget.classList.contains('App'))
+  ) {
+    if (checkingTarget.scrollHeight !== checkingTarget.clientHeight) { return true; }
+
+    checkingTarget = checkingTarget.parentElement;
+    checkedCount += 1;
+  }
+
+  return false;
+};
+
 class App extends React.PureComponent {
   handleScroll = debounce((deltaY) => {
     /* Browsers + devices provide different values using different units, so
@@ -87,8 +106,10 @@ class App extends React.PureComponent {
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
   debounceScrollEvents = (e) => {
+    if (targetIsScrollable(e.target)) { return; }
     e.preventDefault();
-    this.handleScroll(e.deltaY);
+    e.stopPropagation();
+    this.handleScroll(e.deltaY, e.target);
   }
 
   render() {
