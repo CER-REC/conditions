@@ -1,8 +1,69 @@
 @import '../../styles/colors.scss';
 
+$condition-circle-bg: #a1a8a7;
+$condition-circle-font: #fff;
+
+@keyframes microLoading {
+  0% {
+    background-color: #e4e4e4;
+    width: 0;
+  }
+  50% {
+    background-color: $condition-circle-bg;
+    width: 16px;
+  }
+  100% {
+    background-color: #e4e4e4;
+    width: 0;
+  }
+}
+
 .ProjectMenu {
   position: relative;
   padding-top: 12px; // Account for list lifting selected arrows upwards
+
+  &.loading {
+    .List {
+      .CircleContainer.arrowNext{
+        background-color: $condition-circle-font;
+        border-color: $condition-circle-bg;
+        .Icon {
+          background-color: $condition-circle-font;
+          content: '';
+          color: $condition-circle-font;
+        }
+      }
+    }
+    @for $li from 0 through 5 {
+      .List-Item:nth-child(#{$li}) {
+        .ConditionPipe {
+          .ConditionCount {
+            background-color: $condition-circle-bg;
+            border-color: $condition-circle-bg;
+          }
+        }
+        .FlagWrapper {
+          .FeatureFlag {
+            .FlagTip {
+              display: none;
+            }
+            $waves: 10;
+            $divisor: 5;
+
+            .Bar {
+              animation: microLoading #{$waves / $divisor}s infinite;
+            }
+
+            @for $i from 0 through $waves - 1 {
+              &:nth-child(#{$waves}n+#{$i}) {
+                .Bar { animation-delay: #{1 + $i / $divisor - $li / 3}s; }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   > .List {
     display: inline-block;
@@ -29,4 +90,5 @@
     height: 30px;
     background: $LightGreyBackground;
   }
+  
 }

@@ -113,7 +113,7 @@ $project-chart-line: #a1a8a7;
     }
   }
 
-  &:not(.selected) .FeatureFlag {
+  &:not(.selected) .FeatureFlag, &.loading .FeatureFlag {
     .Bar { background-color: #a1a8a7 !important; }
     .FlagTip { border-left-color: #a1a8a7 !important; }
   }
