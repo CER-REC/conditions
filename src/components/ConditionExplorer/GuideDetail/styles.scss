@@ -11,17 +11,16 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
   z-index: 1;
   border-radius: 50%;
   overflow: hidden;
-  overflow-wrap: break-word;
 
   .step-text {
-    margin: 14.64%;
+    // 14.25% inscribes the square text inside the circular container
+    margin: 14.25%;
     margin-bottom: 0;
     overflow-y: auto;
-    height: calc(100% - 14.64% - 75px);
+    height: calc(100% - 14.25% - 75px);
 
     h1 {
       font-size: 24px;
@@ -31,6 +30,8 @@
       color: #fff;
       text-decoration: underline;
     }
+
+    ul { text-align: left; }
   }
 
   .step-controls {

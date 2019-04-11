@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -156,11 +156,18 @@ const steps = [
 ];
 
 const GuideDetail = (props) => {
-  const { selected, radius } = props;
+  const { changeStep, selected, radius } = props;
+
+  const goToStep = useMemo(
+    () => steps.map((_, i) => () => changeStep(i)),
+    [changeStep, selected],
+  );
+
   const circles = steps.map((element, index) => (
     <CircleContainer
-      key={index.toString()}
+      key={index /* eslint-disable-line react/no-array-index-key */}
       size={10}
+      onClick={goToStep[index]}
       className={selected === index ? 'gray' : 'lightgrey'}
     >
       &nbsp;
@@ -171,21 +178,25 @@ const GuideDetail = (props) => {
     <section className="GuideDetail" style={{ width: radius * 2, height: radius * 2 }}>
       <div className="step-text">{steps[selected]}</div>
       <div className="step-controls">
-        <CircleContainer
-          size={24}
-          onClick={() => props.changeStep(selected - 1)}
-          className="arrowPrevious"
-        >
-          <Icon size="1x" icon="angle-left" />
-        </CircleContainer>
+        {selected <= 0 ? null : (
+          <CircleContainer
+            size={24}
+            onClick={goToStep[selected - 1]}
+            className="arrowPrevious"
+          >
+            <Icon size="1x" icon="angle-left" />
+          </CircleContainer>
+        )}
         {circles}
-        <CircleContainer
-          size={24}
-          onClick={() => props.changeStep(selected + 1)}
-          className="arrowNext"
-        >
-          <Icon size="1x" icon="angle-right" />
-        </CircleContainer>
+        {selected >= steps.length - 1 ? null : (
+          <CircleContainer
+            size={24}
+            onClick={goToStep[selected + 1]}
+            className="arrowNext"
+          >
+            <Icon size="1x" icon="angle-right" />
+          </CircleContainer>
+        )}
       </div>
     </section>
   );

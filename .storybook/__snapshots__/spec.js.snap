@@ -4266,12 +4266,16 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
         </div>
         <div
           className="CircleContainer lightgrey"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
           style={
             Object {
               "height": 10,
               "width": 10,
             }
           }
+          tabIndex={0}
         >
           <div>
              
@@ -4279,12 +4283,16 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
         </div>
         <div
           className="CircleContainer gray"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
           style={
             Object {
               "height": 10,
               "width": 10,
             }
           }
+          tabIndex={0}
         >
           <div>
              
@@ -4292,12 +4300,16 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
         </div>
         <div
           className="CircleContainer lightgrey"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
           style={
             Object {
               "height": 10,
               "width": 10,
             }
           }
+          tabIndex={0}
         >
           <div>
              
