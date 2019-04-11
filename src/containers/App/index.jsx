@@ -102,12 +102,19 @@ class App extends React.PureComponent {
     };
     const jumpToView3 = () => setTransitionState(10);
 
+    let guideState = transitionState;
+    if (guideState === 9) {
+      guideState = 0;
+    } else if (guideState === 8 || guideState > 9) {
+      guideState = -1;
+    }
+
     return (
       <div className={classNames('App', `transition-state-${transitionState}`)} onWheel={this.debounceScrollEvents}>
         {/* TODO: Figure out proper transition states vs. renders */}
         {/* eslint-disable-next-line no-constant-condition */}
         {(true)
-          ? <Guide textState={(transitionState < 8) ? transitionState : -1} />
+          ? <Guide textState={guideState} />
           : null
         }
         {/* eslint-disable-next-line no-constant-condition */}
