@@ -5,12 +5,10 @@ import { guideCategory, guideOutlineCategory } from './categories';
 
 export default class Guide extends Body {
   constructor(engine) {
-    // the number are wierd to deal with the increased radius compared to the
-    const body = Matter.Bodies.polygon(203, 199.5, 100, 50, {
+    const body = Matter.Bodies.polygon(200, 200, 100, 50, {
       collisionFilter: {
         category: guideCategory,
-        mask: ~guideOutlineCategory,
-        group: ~guideCategory,
+        mask: ~guideOutlineCategory, // eslint-disable-line no-bitwise
       },
     });
     body.frictionAir = 0.2;
@@ -18,16 +16,8 @@ export default class Guide extends Body {
 
     this.locationBeforeExpand = { x: 0, y: 0 };
     this.outline = new Outline(engine);
-    this.outline.moveTo(200, 200, 3200)
-      .then(() => {
-        this.constraint = Matter.Constraint.create({
-          bodyA: this.body,
-          bodyB: this.outline.body,
-          length: 0,
-          stiffness: 0.7,
-        });
-        Matter.World.add(this.engine.world, this.constraint);
-      });
+    this.outlineReady = false;
+    this.outline.moveTo(200, 200, 2500).finally(() => { this.outlineReady = true; });
   }
 
   get isExpanded() { return this.scale !== 1; }
@@ -35,6 +25,9 @@ export default class Guide extends Body {
   onUpdate(update) {
     super.onUpdate(update);
     this.outline.onUpdate(update);
+    if (this.outlineReady) {
+      Matter.Body.setPosition(this.body, this.outline.body.position);
+    }
   }
 
   open(dimensions) {
@@ -53,8 +46,7 @@ export default class Guide extends Body {
     ]);
   }
 
-  scaleTo(s, time) {
-    super.scaleTo(s, time);
-    this.outline.scaleTo(1, 1);
+  moveTo(x, y, time) {
+    return this.outline.moveTo(x, y, time);
   }
 }
