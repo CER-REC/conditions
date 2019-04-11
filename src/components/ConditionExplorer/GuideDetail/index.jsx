@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import classNames from 'classnames';
 import CircleContainer from '../../CircleContainer';
 import List from '../../List';
-import Icon from '../../Icon';
 import './styles.scss';
 
 library.add(
