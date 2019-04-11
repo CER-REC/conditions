@@ -1,8 +1,9 @@
 @import '../../styles/colors.scss';
 
 .LocationWheelMinimap {
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 96px;
+  max-width: 96px;
+
 
   .region {
     fill: $InnerColourLocation1;

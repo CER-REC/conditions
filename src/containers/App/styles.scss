@@ -14,6 +14,8 @@
   max-width: 1168px;
   height: 100vh;
 
+  overflow-x: hidden;
+
   .Guide {
     z-index: 999;
     transition: all $defaultTransition;
