@@ -27,7 +27,7 @@ const ViewOne = props => (
       <section className="infoBar">
         <ShortcutInfoBar
           handleInfoBar={false}
-          jumpToAbout={noop}
+          jumpToAbout={props.jumpToAbout}
           openDataModal={noop}
           openScreenshotModal={noop}
         />
@@ -37,6 +37,7 @@ const ViewOne = props => (
 );
 
 ViewOne.propTypes = {
+  jumpToAbout: PropTypes.func.isRequired,
   layoutOnly: PropTypes.bool,
 };
 

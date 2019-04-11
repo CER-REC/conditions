@@ -102,6 +102,7 @@ class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { mainInfoBarPane: '' };
+    this.ref = React.createRef();
   }
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
@@ -113,16 +114,29 @@ class App extends React.PureComponent {
     this.handleScroll(e.deltaY, e.target);
   }
 
+  jumpToAbout = () => {
+    this.props.setTransitionState(8);
+    this.setMainInfoBarPane('about');
+
+    // This timer needs to be long enough for React to do its thing and for the
+    // CSS transitions to finish so the Footer is there to scroll to.
+    setTimeout(() => {
+      this.ref.current.querySelector('.Footer').scrollIntoView({ behavior: 'smooth' });
+    }, 1500);
+  }
+
+  jumpToView2 = (type) => {
+    this.props.setTransitionState(8);
+    this.props.setBrowseBy(type);
+  }
+
+  jumpToView3 = () => this.props.setTransitionState(10)
+
   render() {
     // TODO: Move this into the app's actual state
     // Using a prop to work with Storybook knobs
     // eslint-disable-next-line react/prop-types
-    const { transitionState, browseBy, setBrowseBy, setTransitionState } = this.props;
-    const jumpToView2 = (type) => {
-      setTransitionState(8);
-      setBrowseBy(type);
-    };
-    const jumpToView3 = () => setTransitionState(10);
+    const { transitionState, browseBy, setBrowseBy } = this.props;
 
     let guideState = transitionState;
     if (guideState === 9) {
@@ -132,7 +146,11 @@ class App extends React.PureComponent {
     }
 
     return (
-      <div className={classNames('App', `transition-state-${transitionState}`)} onWheel={this.debounceScrollEvents}>
+      <div
+        className={classNames('App', `transition-state-${transitionState}`)}
+        onWheel={this.debounceScrollEvents}
+        ref={this.ref}
+      >
         {/* TODO: Figure out proper transition states vs. renders */}
         {/* eslint-disable-next-line no-constant-condition */}
         {(true)
@@ -141,7 +159,7 @@ class App extends React.PureComponent {
         }
         {/* eslint-disable-next-line no-constant-condition */}
         {(true)
-          ? <ViewOne />
+          ? <ViewOne jumpToAbout={this.jumpToAbout} />
           : null
         }
         {/* eslint-disable-next-line no-constant-condition */}
@@ -156,7 +174,7 @@ class App extends React.PureComponent {
                   || 'blank'
                 }
                 browseBy={browseBy}
-                onClick={(transitionState === 8) ? setBrowseBy : jumpToView2}
+                onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
               />
             </section>
           )
@@ -166,7 +184,7 @@ class App extends React.PureComponent {
         <div style={{ clear: 'both' }} />
         {/* eslint-disable-next-line no-constant-condition */}
         {(true)
-          ? <ViewTwo {...viewProps} jumpToView3={jumpToView3} />
+          ? <ViewTwo {...viewProps} jumpToView3={this.jumpToView3} />
           : null
         }
         {(transitionState >= 8) ? <ViewThree {...viewProps} /> : null}
