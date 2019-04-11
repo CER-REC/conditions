@@ -13,7 +13,11 @@ const Guide = ({ textState }) => (
    */
   <div className="Guide">
     <CircleContainer size={128}>
-      <FormattedMessage id={`components.guide.tutorial.${(textState < 9) ? textState : 0}`} />
+      {
+        (textState > -1)
+          ? <FormattedMessage id={`components.guide.tutorial.${textState}`} />
+          : <div />
+      }
     </CircleContainer>
   </div>
 );

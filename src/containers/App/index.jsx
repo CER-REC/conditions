@@ -49,6 +49,22 @@ const viewProps = {
   openProjectDetails: noop,
 };
 
+const UP = -1;
+const DOWN = 1;
+const transitionTargets = {
+  0: { [UP]: 0, [DOWN]: 1 }, // View 1
+  1: { [UP]: 0, [DOWN]: 2 },
+  2: { [UP]: 1, [DOWN]: 3 },
+  3: { [UP]: 2, [DOWN]: 4 },
+  4: { [UP]: 3, [DOWN]: 5 },
+  5: { [UP]: 4, [DOWN]: 6 },
+  6: { [UP]: 5, [DOWN]: 7 },
+  7: { [UP]: 6, [DOWN]: 8 },
+  8: { [UP]: 9, [DOWN]: 8 }, // View 2
+  9: { [UP]: 9, [DOWN]: 1 }, // Reset from 2 -> 1
+  10: { [UP]: 10, [DOWN]: 10 }, // View 3
+};
+
 class App extends React.PureComponent {
   handleScroll = debounce((deltaY) => {
     /* Browsers + devices provide different values using different units, so
@@ -57,7 +73,8 @@ class App extends React.PureComponent {
     const direction = (deltaY > 0 && 1) || (deltaY < 0 && -1);
     if (!direction) return;
 
-    const newState = Math.min(Math.max(0, this.props.transitionState + direction), 10);
+    // const newState = Math.min(Math.max(0, this.props.transitionState + direction), 10);
+    const newState = transitionTargets[this.props.transitionState][direction];
 
     if (newState !== this.props.transitionState) this.props.setTransitionState(newState);
   }, 1000, { leading: true })
@@ -90,7 +107,7 @@ class App extends React.PureComponent {
         {/* TODO: Figure out proper transition states vs. renders */}
         {/* eslint-disable-next-line no-constant-condition */}
         {(true)
-          ? <Guide textState={transitionState} />
+          ? <Guide textState={(transitionState < 8) ? transitionState : -1} />
           : null
         }
         {/* eslint-disable-next-line no-constant-condition */}
@@ -144,6 +161,7 @@ class App extends React.PureComponent {
 App.propTypes = {
   browseBy: browseByType.isRequired,
   setBrowseBy: PropTypes.func.isRequired,
+  transitionState: PropTypes.number.isRequired,
   setTransitionState: PropTypes.func.isRequired,
 };
 

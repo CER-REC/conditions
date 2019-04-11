@@ -161,6 +161,7 @@ ViewTwo.propTypes = {
   projectsData: PropTypes.shape({
     counts: PropTypes.arrayOf(project).isRequired,
   }).isRequired,
+  jumpToView3: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
