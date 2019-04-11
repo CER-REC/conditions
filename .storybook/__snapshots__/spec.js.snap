@@ -4228,7 +4228,7 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
         className="step-controls"
       >
         <div
-          className="CircleContainer arrowPrevious"
+          className="CircleContainer arrow"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -4316,7 +4316,7 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           </div>
         </div>
         <div
-          className="CircleContainer arrowNext"
+          className="CircleContainer arrow"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}

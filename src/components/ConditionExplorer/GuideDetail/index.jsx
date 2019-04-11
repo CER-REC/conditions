@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
 import CircleContainer from '../../CircleContainer';
 import Icon from '../../Icon';
 import './styles.scss';
@@ -178,25 +179,21 @@ const GuideDetail = (props) => {
     <section className="GuideDetail" style={{ width: radius * 2, height: radius * 2 }}>
       <div className="step-text">{steps[selected]}</div>
       <div className="step-controls">
-        {selected <= 0 ? null : (
-          <CircleContainer
-            size={24}
-            onClick={goToStep[selected - 1]}
-            className="arrowPrevious"
-          >
-            <Icon size="1x" icon="angle-left" />
-          </CircleContainer>
-        )}
+        <CircleContainer
+          size={24}
+          onClick={goToStep[selected - 1]}
+          className={classNames('arrow', { hidden: selected <= 0 })}
+        >
+          <Icon size="1x" icon="angle-left" />
+        </CircleContainer>
         {circles}
-        {selected >= steps.length - 1 ? null : (
-          <CircleContainer
-            size={24}
-            onClick={goToStep[selected + 1]}
-            className="arrowNext"
-          >
-            <Icon size="1x" icon="angle-right" />
-          </CircleContainer>
-        )}
+        <CircleContainer
+          size={24}
+          onClick={goToStep[selected + 1]}
+          className={classNames('arrow', { hidden: selected >= steps.length - 1 })}
+        >
+          <Icon size="1x" icon="angle-right" />
+        </CircleContainer>
       </div>
     </section>
   );

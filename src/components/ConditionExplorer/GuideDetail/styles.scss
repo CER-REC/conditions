@@ -46,10 +46,12 @@
       &.lightgrey { background: lightgrey; }
       &.gray { background: gray; }
 
-      &.arrowPrevious, &.arrowNext {
+      &.arrow {
         background-color: white;
         border: $list-selected;
         color: $list-selected-color;
+
+        &.hidden { visibility: hidden; }
       }
     }
   }
