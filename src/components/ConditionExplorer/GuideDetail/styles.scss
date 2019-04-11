@@ -37,22 +37,25 @@
   .step-controls {
     height: 75px;
 
-    .CircleContainer {
+    .List {
+      display: inline-block;
       position: relative;
       top: 50%;
       transform: translateY(-50%);
+    }
 
-      &.lightgrey, &.gray { margin: 0 8px 12px; }
-      &.lightgrey { background: lightgrey; }
-      &.gray { background: gray; }
+    .CircleContainer.arrow.hidden {
+      display: block;
+      visibility: hidden;
+    }
 
-      &.arrow {
-        background-color: white;
-        border: $list-selected;
-        color: $list-selected-color;
-
-        &.hidden { visibility: hidden; }
+    .List-Item {
+      .CircleContainer {
+        margin: 0 8px;
+        background: lightgrey;
       }
+
+      &.selected .CircleContainer { background: gray; }
     }
   }
 }
