@@ -97,7 +97,7 @@ class WheelRay extends React.Component {
           </g>
         )
         : (
-          <g key={`${item._id}LocationRay`} transform={transform} className="locationRay">
+          <g key={`${item.id}LocationRay`} transform={transform} className="locationRay">
             <LocationRay
               items={randomLocationBars[index]}
               height={degreesPerItem * 0.5}

@@ -855,6 +855,5 @@ const calcRayLegendDataLocation = () => {
 };
 
 const companyWheelData = calcRayLegendData().items;
-const locationData = calcRayLegendDataLocation();
-locationData.items.sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
+const locationData = calcRayLegendDataLocation().items;
 export { companyWheelData, locationData };

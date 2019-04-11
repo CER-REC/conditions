@@ -71,13 +71,25 @@ const ViewTwo = props => (
     </section>
     <section className="row">
       <section className="wheel">
-        <Wheel
-          wheelType={props.browseBy}
-          selectRay={noop}
-          wheelData={props.browseBy === 'company' ? props.wheelData
-            : { items: locationData.items.slice(0, 50) }
+        <Query query={companyWheelQuery}>
+          {({ loading, error, data }) => {
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error</p>;
+            return (
+              <Wheel
+                wheelType={props.browseBy}
+                selectRay={noop}
+                wheelData={props.browseBy === 'company'
+                  ? data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+                  // TODO: Implement location query and
+                  // add conditional rendering depending on browseBy
+                  : locationData.slice(0, 50)
+                }
+              />
+            );
           }
-        />
+          }
+        </Query>
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
         <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
       </section>
@@ -175,20 +187,10 @@ ViewTwo.defaultProps = {
 export const ViewTwoUnconnected = ViewTwo;
 
 export const ViewTwoGraphQL = props => (
-  <Query
-    query={companyWheelQuery}
-  >
-    {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error :(</p>;
-      return (
-        <ViewTwo
-          wheelData={data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))}
-          {...props}
-        />
-      );
-    }}
-  </Query>
+  <ViewTwo
+    // wheelData={data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))}
+    {...props}
+  />
 );
 
 export default connect(

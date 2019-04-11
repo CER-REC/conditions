@@ -41,7 +41,7 @@ class Wheel extends React.Component {
     const items = props.wheelData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
-    let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
+    let selectedIndex = items.findIndex(v => v.id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
     // eslint-disable-next-line prefer-destructuring

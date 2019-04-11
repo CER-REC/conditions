@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApolloClient } from 'apollo-boost';
+import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
@@ -20,9 +20,8 @@ import {
 const cache = new InMemoryCache();
 const link = new HttpLink({
   uri: 'http://178.128.239.141/conditions/graphql',
-  // uri: 'http://localhost/conditions/graphql',
 });
-const client = new ApolloClient({ cache, link });
+const client = new ApolloClient({ cache, link, fetch });
 
 const store = createStore();
 
