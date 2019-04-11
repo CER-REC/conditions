@@ -65,20 +65,21 @@ const transitionTargets = {
   10: { [UP]: 10, [DOWN]: 10 }, // View 3
 };
 
+const transitionIfOver = { App: true, ConditionExplorer: true };
+const scrollIfOver = { Footer: true };
+
 const targetIsScrollable = (target) => {
   let checkingTarget = target;
-  let checkedCount = 0;
-  const maxChecked = 3;
 
-  while (
-    checkedCount < maxChecked
-    && checkingTarget
-    && (!checkingTarget.classList.contains('App'))
-  ) {
-    if (checkingTarget.scrollHeight !== checkingTarget.clientHeight) { return true; }
+  while (checkingTarget && !transitionIfOver[checkingTarget.classList[0]]) {
+    if (
+      (checkingTarget.scrollHeight !== checkingTarget.clientHeight)
+      || (scrollIfOver[checkingTarget.classList[0]])
+    ) {
+      return true;
+    }
 
     checkingTarget = checkingTarget.parentElement;
-    checkedCount += 1;
   }
 
   return false;
