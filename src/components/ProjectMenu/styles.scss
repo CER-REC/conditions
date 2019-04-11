@@ -1,19 +1,17 @@
 @import '../../styles/colors.scss';
 
-$condition-circle-bg: #a1a8a7;
-$condition-circle-font: #fff;
 
 @keyframes microLoading {
   0% {
-    background-color: #e4e4e4;
+    background-color: $LightGray;
     width: 0;
   }
   50% {
-    background-color: $condition-circle-bg;
+    background-color: $Gray160;
     width: 16px;
   }
   100% {
-    background-color: #e4e4e4;
+    background-color: $LightGray;
     width: 0;
   }
 }
@@ -25,12 +23,12 @@ $condition-circle-font: #fff;
   &.loading {
     .List {
       .CircleContainer.arrowNext{
-        background-color: $condition-circle-font;
-        border-color: $condition-circle-bg;
+        background-color: $White;
+        border-color: $Gray160;
         .Icon {
-          background-color: $condition-circle-font;
+          background-color: $White;
           content: '';
-          color: $condition-circle-font;
+          color: $White;
         }
       }
     }
@@ -38,8 +36,8 @@ $condition-circle-font: #fff;
       .List-Item:nth-child(#{$li}) {
         .ConditionPipe {
           .ConditionCount {
-            background-color: $condition-circle-bg;
-            border-color: $condition-circle-bg;
+            background-color: $Gray160;
+            border-color: $Gray160;
           }
         }
         .FlagWrapper {
