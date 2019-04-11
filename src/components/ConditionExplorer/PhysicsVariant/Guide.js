@@ -11,7 +11,6 @@ export default class Guide extends Body {
         mask: ~guideOutlineCategory, // eslint-disable-line no-bitwise
       },
     });
-    body.frictionAir = 0.2;
     super(body, engine);
 
     this.locationBeforeExpand = { x: 0, y: 0 };

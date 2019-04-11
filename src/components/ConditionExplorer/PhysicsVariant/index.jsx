@@ -112,6 +112,7 @@ export default class PhysicsVariant extends React.PureComponent {
 
   onGuideMouseDown = () => {
     this.guideClickDetection = { ...this.guide.body.position };
+    Matter.Body.setStatic(this.guide.outline.body, false);
   };
 
   closeGuide = () => {
@@ -129,6 +130,7 @@ export default class PhysicsVariant extends React.PureComponent {
 
   onGuideMouseUp = (e) => {
     // If the click detection failed, don't do anything
+    Matter.Body.setStatic(this.guide.outline.body, true);
     if (!this.guideClickDetection) { return; }
     this.updateGuidePosition();
     const distance = {
