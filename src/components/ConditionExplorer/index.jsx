@@ -4,7 +4,7 @@ import memoize from 'lodash.memoize';
 import shallowequal from 'shallowequal';
 import PhysicsVariant from './PhysicsVariant';
 import Fallback from './Fallback';
-import InformationPanel from './PhysicsVariant/InformationPanel';
+import GuideDetail from './GuideDetail';
 import './styles.scss';
 
 // This function memoizes based on the keyword, but doesn't use it in the result
@@ -51,8 +51,9 @@ export default class ConditionExplorer extends React.Component {
     this.state = {
       fallbackFontSize: null,
       calculatedFontSize: null,
-      guidePosition: { x: 0, y:0, radius: 0},
+      guidePosition: { x: 0, y: 0, r: 0 },
       guideExpanded: false,
+      guideStep: 0,
     };
   }
 
@@ -61,15 +62,14 @@ export default class ConditionExplorer extends React.Component {
     this.cancelFontDetection = setTimeoutChain(this.testFontSize, 100, 50);
   }
 
-  setGuidePosition = (x, y) => {
-    console.log('setGuidePosition', x, y, this);
-    this.setState({ guidePosition: { x, y } });
-  }
+  setGuidePosition = (x, y, r) => this.setState({ guidePosition: { x, y, r } });
 
-  setGuideExpanded = (guideExpanded) => {
-    console.log('setGuideExpanded', guideExpanded, this);
-    this.setState({ guideExpanded });
-  }
+  setGuideExpanded = guideExpanded => this.setState({
+    guideExpanded,
+    guideStep: 0,
+  });
+
+  setGuideStep = guideStep => this.setState({ guideStep });
 
   getKeywords() {
     if (!this.textSizeRef.current || !this.state.calculatedFontSize) { return []; }
@@ -154,14 +154,22 @@ export default class ConditionExplorer extends React.Component {
 
     const fontTestStyles = { visibility: 'hidden' };
     if (!this.state.fallbackFontSize) { fontTestStyles.fontFamily = 'Sans Serif'; }
-    const informationPanel = this.state.guideExpanded ? <InformationPanel selected={0} offset={(this.svgRef.current.clientWidth / 2) - 250} /> : <></>;
+
+    const informationPanel = !this.state.guideExpanded
+      ? null
+      : (
+        <GuideDetail
+          selected={this.state.guideStep}
+          changeStep={this.setGuideStep}
+          radius={this.state.guidePosition.r}
+        />
+      );
 
     return (
-      <>
+      <div className="ConditionExplorer">
         {informationPanel}
         <svg
           ref={this.svgRef}
-          className="ConditionExplorer"
           width="100%"
           height="100%"
           style={{ border: '1px solid #000', zIndex: '0' }}
@@ -179,7 +187,7 @@ export default class ConditionExplorer extends React.Component {
           </g>
           {content}
         </svg>
-      </>
+      </div>
     );
   }
 }

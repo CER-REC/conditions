@@ -104,6 +104,12 @@ export default class PhysicsVariant extends React.PureComponent {
     this.setState(state => ({ renderToggle: !state.renderToggle }));
   }
 
+  updateGuidePosition = () => this.props.setGuidePosition(
+    this.guide.body.position.x,
+    this.guide.body.position.y,
+    Math.abs(this.guide.body.bounds.max.x - this.guide.body.bounds.min.x) / 2,
+  );
+
   onGuideMouseDown = () => {
     this.guideClickDetection = { ...this.guide.body.position };
   };
@@ -113,7 +119,7 @@ export default class PhysicsVariant extends React.PureComponent {
     this.guideClickDetection = undefined;
     this.props.setGuideExpanded(false);
     this.guide.close().finally(() => {
-      this.props.setGuidePosition(this.guide.body.position.x, this.guide.body.position.y);
+      this.updateGuidePosition();
       this.keywords.forEach((body) => {
         body.addCollisionMask(guideOutlineCategory);
       });
@@ -123,7 +129,7 @@ export default class PhysicsVariant extends React.PureComponent {
   onGuideMouseUp = (e) => {
     // If the click detection failed, don't do anything
     if (!this.guideClickDetection) { return; }
-    this.props.setGuidePosition(this.guide.body.position.x, this.guide.body.position.y);
+    this.updateGuidePosition();
     const distance = {
       x: Math.abs(this.guide.body.position.x - this.guideClickDetection.x),
       y: Math.abs(this.guide.body.position.y - this.guideClickDetection.y),
@@ -135,7 +141,7 @@ export default class PhysicsVariant extends React.PureComponent {
       this.guide.open(this.getCenterCoordinates())
         .finally(() => {
           this.props.setGuideExpanded(true);
-          this.props.setGuidePosition(this.guide.body.position.x, this.guide.body.position.y);
+          this.updateGuidePosition();
         });
       this.keywords.forEach((body) => {
         body.removeCollisionMask(guideOutlineCategory);

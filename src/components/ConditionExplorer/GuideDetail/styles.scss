@@ -1,21 +1,55 @@
 // TODO: Remove placeholder styles once location/application is confirmed
 @import '../../../styles/fontVariables.scss';
 @import '../../../styles/colors.scss';
+@import '../../../styles/legend.scss';
 
 .GuideDetail {
   font-family: $fira-sans-condensed;
-  text-align: left;
-  color: $general-text-2;
-  .title {
-    font-size: 24px;
-    display: block;
-    color: $VeryDarkGray;
-    ~ span {
-      display: block;
+  text-align: center;
+  background: #5050EA;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  .step-text {
+    margin: 14.64%;
+    margin-bottom: 0;
+    overflow-y: auto;
+    height: calc(100% - 14.64% - 75px);
+
+    h1 {
+      font-size: 24px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
     }
   }
-  a {
-    color: $LinksTextButtons;
-    text-decoration: none;
+
+  .step-controls {
+    height: 75px;
+
+    .CircleContainer {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.lightgrey, &.gray { margin: 0 8px 12px; }
+      &.lightgrey { background: lightgrey; }
+      &.gray { background: gray; }
+
+      &.arrowPrevious, &.arrowNext {
+        background-color: white;
+        border: $list-selected;
+        color: $list-selected-color;
+      }
+    }
   }
 }
