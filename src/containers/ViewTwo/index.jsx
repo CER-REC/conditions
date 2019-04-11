@@ -1,15 +1,15 @@
 import React from 'react';
-import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+import { Query } from 'react-apollo';
+import { viewTwoQuery } from '../../queries/viewTwo';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import BrowseByBtn from '../../components/BrowseByBtn';
-import { locationData } from '../../components/Wheel/randomDataSample';
-import { companyWheelQuery } from '../../queries/getWheelData';
 import TrendButton from '../../components/TrendButton';
+import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import {
   browseByType,
   yearRangeType,
@@ -71,25 +71,11 @@ const ViewTwo = props => (
     </section>
     <section className="row">
       <section className="wheel">
-        <Query query={companyWheelQuery}>
-          {({ loading, error, data }) => {
-            if (loading) return <p>Loading...</p>;
-            if (error) return <p>Error</p>;
-            return (
-              <Wheel
-                wheelType={props.browseBy}
-                selectRay={noop}
-                wheelData={props.browseBy === 'company'
-                  ? data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
-                  // TODO: Implement location query and
-                  // add conditional rendering depending on browseBy
-                  : locationData.slice(0, 50)
-                }
-              />
-            );
-          }
-          }
-        </Query>
+        <Wheel
+          wheelType={props.browseBy}
+          selectRay={noop}
+          wheelData={props.wheelData}
+        />
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
         <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
       </section>
@@ -178,19 +164,43 @@ ViewTwo.propTypes = {
   projectsData: PropTypes.shape({
     counts: PropTypes.arrayOf(project).isRequired,
   }).isRequired,
+  wheelData: PropTypes.arrayOf({}).isRequired,
 };
 
 ViewTwo.defaultProps = {
   layoutOnly: false,
 };
 
-export const ViewTwoUnconnected = ViewTwo;
-
-export const ViewTwoGraphQL = props => (
+export const ViewTwoUnconnected = props => (
   <ViewTwo
-    // wheelData={data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))}
+    // eslint-disable-next-line react/prop-types
+    wheelData={props.browseBy === 'company'
+      ? companyWheelData
+      : locationData
+    }
     {...props}
   />
+);
+
+export const ViewTwoGraphQL = props => (
+  <Query query={viewTwoQuery}>
+    {({ loading, error, data }) => {
+      if (loading) return <p>Loading...</p>;
+      if (error) return <p>Error</p>;
+      return (
+        <ViewTwo
+          wheelData={
+            // eslint-disable-next-line react/prop-types
+            props.browseBy === 'company'
+              ? data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+              : locationData
+          }
+          {...props}
+        />
+      );
+    }
+    }
+  </Query>
 );
 
 export default connect(

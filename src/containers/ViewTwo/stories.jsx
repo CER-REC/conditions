@@ -1,8 +1,9 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
+import withGQL from '../../../.storybook/addon-graphql';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import { ViewTwoUnconnected } from '.';
+import { ViewTwoUnconnected, ViewTwoGraphQL } from '.';
 import { searchData, conditionData, projectsData } from '../../mockData';
 
 const year = {
@@ -20,6 +21,7 @@ const props = {
     selectedProject: 'Project Name',
     data: conditionData,
   },
+  browseBy: 'company',
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
@@ -54,12 +56,19 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       },
     },
   }))
+  .addDecorator(withGQL)
   .add('default', () => (
     <ViewTwoUnconnected
       {...props}
       {...getInteractionProps()}
     />
   ))
+  .add('connected variant', () => (
+    <ViewTwoGraphQL
+      {...props}
+      {...getInteractionProps()}
+    />
+  ), { wrapped: true })
   .add('layout only', () => (
     <ViewTwoUnconnected
       layoutOnly
