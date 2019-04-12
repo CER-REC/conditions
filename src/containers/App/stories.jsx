@@ -47,8 +47,11 @@ const stages = {
 storiesForView('Containers|App', module, ReadMe)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <App
-      transitionState={select('Transition state', stages, 0)}
-      setTransitionState={setTransitionState}
-    />
-  ));
+    <App />
+  ))
+  // .add('withKnobs', () => (
+  //   <App
+  //     transitionState={select('Transition state', stages, 0)}
+  //     setTransitionState={setTransitionState}
+  //   />
+  // ));

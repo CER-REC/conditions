@@ -5,6 +5,7 @@ import { connect, Provider } from 'react-redux';
 import debounce from 'lodash.debounce';
 
 import * as browseByCreators from '../../actions/browseBy';
+import * as transitionStateCreators from '../../actions/transitionState';
 import createStore from '../../Store';
 
 import {
@@ -215,8 +216,17 @@ App.propTypes = {
 export const AppUnconnected = App;
 
 const ConnectedApp = connect(
-  ({ browseBy }) => ({ browseBy }),
-  { setBrowseBy: browseByCreators.setBrowseBy },
+  ({
+    browseBy,
+    transitionState,
+  }) => ({
+    browseBy,
+    transitionState,
+  }),
+  {
+    setBrowseBy: browseByCreators.setBrowseBy,
+    setTransitionState: transitionStateCreators.setTransitionState,
+  },
 )(App);
 
 const store = createStore();
