@@ -4,14 +4,14 @@ This component has all of the other public containers as children.
 
 ## Requirements
 
-* [ ] Should display View containers 1, 2, and 3 when appropriate
-* [ ] Should display the Footer when appropriate
-* [ ] Should display the Guide when appropriate
-* [ ] Should display the BrowseBy buttons when appropriate
+* [x] Should display View containers 1, 2, and 3 when appropriate
+* [x] Should display the Footer when appropriate
+* [x] Should display the Guide when appropriate
+* [x] Should display the BrowseBy buttons when appropriate
 
 ## Interaction Requirements
 
-* [ ] Should provide a series of transitional states, as per the design document's _Transition: View 1 to View 2_ and _Transition: View 2 to View 3_ sections.
+* [x] Should provide a series of transitional states, as per the design document's _Transition: View 1 to View 2_ and _Transition: View 2 to View 3_ sections.
 
   <table>
     <tr>
@@ -85,9 +85,3 @@ This component has all of the other public containers as children.
 ## Accessibility Requirements
 
 * [ ] The component should implement keyboard tabbing through the views and footer
-
-## Analytics Requirements
-
-## Unit Testing
-
-## Examples

@@ -78,8 +78,10 @@ const targetIsScrollable = (target) => {
       || (scrollIfOver[checkingTarget.classList[0]])
     ) {
       // For debugging scroll issues:
-      // console.log("scrollable @:");
-      // console.dir(checkingTarget);
+      // console.log('=================\noriginal target:');
+      // console.dir(target);
+      // console.log('scrollable @:');
+      // console.dir(checkingTarget\n=================');
       return true;
     }
 
@@ -97,7 +99,6 @@ class App extends React.PureComponent {
     const direction = (deltaY > 0 && 1) || (deltaY < 0 && -1);
     if (!direction) return;
 
-    // const newState = Math.min(Math.max(0, this.props.transitionState + direction), 10);
     const newState = transitionTargets[this.props.transitionState][direction];
 
     if (newState !== this.props.transitionState) this.props.setTransitionState(newState);
@@ -123,10 +124,10 @@ class App extends React.PureComponent {
     this.setMainInfoBarPane('about');
 
     // This timer needs to be long enough for React to do its thing and for the
-    // CSS transitions to finish so the Footer is there to scroll to.
+    // CSS transitions to finish so the Footer content is there to scroll to.
     setTimeout(() => {
       this.ref.current.querySelector('.Footer').scrollIntoView({ behavior: 'smooth' });
-    }, 1500);
+    }, 1000);
   }
 
   jumpToView2 = (type) => {
@@ -137,9 +138,6 @@ class App extends React.PureComponent {
   jumpToView3 = () => this.props.setTransitionState(10)
 
   render() {
-    // TODO: Move this into the app's actual state
-    // Using a prop to work with Storybook knobs
-    // eslint-disable-next-line react/prop-types
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
     let guideState = transitionState;
@@ -149,61 +147,39 @@ class App extends React.PureComponent {
       guideState = -1;
     }
 
+    let labelId = 'blank';
+    if (transitionState < 7 || transitionState === 9) {
+      labelId = 'skip';
+    } else if (transitionState > 9) {
+      labelId = 'return';
+    }
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
         onWheel={this.debounceScrollEvents}
         ref={this.ref}
       >
-        {/* TODO: Figure out proper transition states vs. renders */}
-        {/* eslint-disable-next-line no-constant-condition */}
-        {(true)
-          ? <Guide textState={guideState} />
-          : null
-        }
-        {/* eslint-disable-next-line no-constant-condition */}
-        {(true)
-          ? <ViewOne jumpToAbout={this.jumpToAbout} />
-          : null
-        }
-        {/* eslint-disable-next-line no-constant-condition */}
-        {(true)
-          ? (
-            <section className="browseBy">
-              <BrowseBy
-                showArrow={(transitionState < 2 || transitionState === 9)}
-                labelId={
-                  ((transitionState < 7 || transitionState === 9) && 'skip')
-                  || (transitionState > 9 && 'return')
-                  || 'blank'
-                }
-                browseBy={browseBy}
-                onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
-              />
-            </section>
-          )
-          : null
-        }
+        <Guide textState={guideState} />
+        <ViewOne jumpToAbout={this.jumpToAbout} />
+        <section className="browseBy">
+          <BrowseBy
+            showArrow={(transitionState < 2 || transitionState === 9)}
+            labelId={labelId}
+            browseBy={browseBy}
+            onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
+          />
+        </section>
         {/* TODO: Deployment hacks */}
         <div style={{ clear: 'both' }} />
-        {/* eslint-disable-next-line no-constant-condition */}
-        {(true)
-          ? <ViewTwo {...viewProps} jumpToView3={this.jumpToView3} />
-          : null
-        }
-        {(transitionState >= 8) ? <ViewThree {...viewProps} /> : null}
-        {/* eslint-disable-next-line no-constant-condition */}
-        {(true)
-          ? (
-            <Footer
-              setMainInfoBarPane={this.setMainInfoBarPane}
-              mainInfoBarPane={this.state.mainInfoBarPane}
-              openDataModal={noop}
-              openScreenshotModal={noop}
-            />
-          )
-          : null
-        }
+        <ViewTwo {...viewProps} jumpToView3={this.jumpToView3} />
+        <ViewThree {...viewProps} />
+        <Footer
+          setMainInfoBarPane={this.setMainInfoBarPane}
+          mainInfoBarPane={this.state.mainInfoBarPane}
+          openDataModal={noop}
+          openScreenshotModal={noop}
+        />
       </div>
     );
   }

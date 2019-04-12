@@ -198,7 +198,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       className="arrowWrapper"
     >
       <span
-        className="label"
+        className="browseLabel"
       >
         Skip intro to browse:
       </span>
@@ -340,7 +340,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       className="arrowWrapper showArrow"
     >
       <span
-        className="label"
+        className="browseLabel"
       >
         Skip intro to browse:
       </span>
@@ -482,7 +482,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       className="arrowWrapper"
     >
       <span
-        className="label"
+        className="browseLabel"
       >
         Return to browse:
       </span>
@@ -6005,6 +6005,32 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
           Filing
         </option>
       </select>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Guide default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Guide"
+  >
+    <div
+      className="CircleContainer"
+      style={
+        Object {
+          "height": 176,
+          "width": 176,
+        }
+      }
+    >
+      <div>
+        <span>
+          You can browse other conditions in this project
+        </span>
+      </div>
     </div>
   </div>
 </div>

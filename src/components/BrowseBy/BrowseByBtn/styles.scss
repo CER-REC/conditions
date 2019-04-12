@@ -2,29 +2,42 @@
 @import "../../../styles/colors.scss";
 
 .BrowseByBtn {
-  position: relative;
-  font-family: $fira-sans-condensed;
-  border: none;
-  font-size: 16px;
-  background: none;
-  padding: 0 4px 0 0;
   display: inline-block;
+
+  position: relative;
+
+  padding: 0 4px 0 0;
+
+  font-family: $fira-sans-condensed;
+  font-size: 16px;
+
+  border: none;
+  background: none;
+
   &-ButtonText{
-    position: relative;
     display: inline-block;
+
+    position: relative;
     top: -13px;
+
     span{
       display: inline;
+
       position: relative;
+
       color: $Gray160;
     }
+
     .LastWord{
       color:$LinksTextButtons;
     }
   }
+
   &-Wheel{
-    position: relative;
     display: inline;
+
+    position: relative;
+
     margin-left: -23px;
   }
 }

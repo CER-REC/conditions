@@ -6,5 +6,5 @@ import ViewOne from '.';
 const noop = () => {};
 
 storiesForView('Containers|ViewOne', module, ReadMe)
-  .add('default', () => <ViewOne />)
+  .add('default', () => <ViewOne jumpToAbout={noop} />)
   .add('layout only', () => <ViewOne layoutOnly jumpToAbout={noop} />);

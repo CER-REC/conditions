@@ -18,26 +18,28 @@
 
   .Guide {
     z-index: 999;
-    transition: all $defaultTransition;
 
     // Guide = 176px / 2 = 88px
     left: -88px;
     top: -88px;
 
     transform: translate(0px, 0px);
+
+    transition: all $defaultTransition;
   }
 
   .browseBy {
+    z-index: 999;
     position: absolute;
     top: 94%;
     left: 0;
 
     height: 40px;
-    z-index: 999;
 
     transition: transform $defaultTransition;
-
     .BrowseBy {
+      transition: opacity $defaultTransition;
+
       .arrowWrapper {
         transition:
           background-color $defaultTransition,
@@ -96,15 +98,15 @@
   }
 
   .ViewTwo {
-    transition: opacity $fastestEnd;
     position: absolute;
-
     top:0 ;
     left: 0;
-    opacity: 1;
 
     height: 90vh;
 
+    opacity: 1;
+
+    transition: opacity $fastestEnd;
 
     .header,
     .wheel,
@@ -124,23 +126,24 @@
   }
 
   .ViewThree {
-    transition: opacity $defaultTransition;
     position: absolute;
-
     top: 0;
-
     left: 0;
-    opacity: 0;
 
     height: 90vh;
 
+    opacity: 0;
+
+    transition: opacity $defaultTransition;
   }
 
   .Footer {
-    transition: opacity $defaultTransition, visibility 0s 1s;
     position: absolute;
     top: 90vh;
+
     visibility: hidden;
+
+    transition: opacity $defaultTransition, visibility 0s 1s;
   }
 
   &.transition-state-8 {
