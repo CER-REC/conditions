@@ -42,8 +42,9 @@ export default class Body {
     if (this.targetPosition) {
       this.targetPosition.promise.reject(new Error('Movement cancelled due to new target'));
     }
-    if (time === 0 || this.body.position.x === x && this.body.position.y === y) {
+    if (time === 0 || (this.body.position.x === x && this.body.position.y === y)) {
       Matter.Body.setPosition(this.body, { x, y });
+      Matter.Body.setVelocity(this.body, { x: 0, y: 0 });
       return Promise.resolve();
     }
     const timestamp = Date.now();
@@ -70,6 +71,7 @@ export default class Body {
     let start = modRad(this.body.angle + (Math.PI * 2));
     if (time === 0 || r === start) {
       Matter.Body.setAngle(this.body, r);
+      Matter.Body.setAngularVelocity(this.body, 0);
       return Promise.resolve();
     }
     const timestamp = Date.now();
@@ -145,6 +147,13 @@ export default class Body {
     this[`onUpdate${param}`](inOut, start, end);
 
     if (inOut === 1) {
+      // Stop the movement to prevent drifting
+      switch (param) {
+        case 'Position': Matter.Body.setVelocity(this.body, { x: 0, y: 0 }); break;
+        case 'Rotation': Matter.Body.setAngularVelocity(this.body, 0); break;
+        default: break;
+      }
+
       this[targetParam].promise.resolve();
       clearInterval(this[targetParam].promise.timeout);
       this[targetParam] = false;
