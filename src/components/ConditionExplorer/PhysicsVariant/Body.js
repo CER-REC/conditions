@@ -61,7 +61,9 @@ export default class Body {
     });
   }
 
-  rotateTo(r, time = 0) {
+  rotateTo(rRaw, time = 0) {
+    const modRad = v => v % (Math.PI * 2);
+    const r = modRad(rRaw);
     if (this.targetRotation) {
       this.targetRotation.promise.reject(new Error('Rotation cancelled due to new target'));
     }
@@ -70,8 +72,10 @@ export default class Body {
       return Promise.resolve();
     }
     const timestamp = Date.now();
+    let start = modRad(this.body.angle + (Math.PI * 2));
+    if (start > Math.PI) { start -= (Math.PI * 2); }
     this.targetRotation = {
-      start: { r: this.body.angle, timestamp },
+      start: { r: start, timestamp },
       end: { r, timestamp: timestamp + time },
     };
     return new Promise((resolve, reject) => {
