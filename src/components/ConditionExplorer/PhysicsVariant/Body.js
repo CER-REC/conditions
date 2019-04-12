@@ -42,7 +42,7 @@ export default class Body {
     if (this.targetPosition) {
       this.targetPosition.promise.reject(new Error('Movement cancelled due to new target'));
     }
-    if (time === 0) {
+    if (time === 0 || this.body.position.x === x && this.body.position.y === y) {
       Matter.Body.setPosition(this.body, { x, y });
       return Promise.resolve();
     }
@@ -67,12 +67,12 @@ export default class Body {
     if (this.targetRotation) {
       this.targetRotation.promise.reject(new Error('Rotation cancelled due to new target'));
     }
-    if (time === 0) {
+    let start = modRad(this.body.angle + (Math.PI * 2));
+    if (time === 0 || r === start) {
       Matter.Body.setAngle(this.body, r);
       return Promise.resolve();
     }
     const timestamp = Date.now();
-    let start = modRad(this.body.angle + (Math.PI * 2));
     if (start > Math.PI) { start -= (Math.PI * 2); }
     this.targetRotation = {
       start: { r: start, timestamp },
@@ -92,7 +92,7 @@ export default class Body {
     if (this.targetScale) {
       this.targetScale.promise.reject(new Error('Scale cancelled due to new target'));
     }
-    if (time === 0) {
+    if (time === 0 || s === this.scale) {
       const scale = (1 / this.scale) * s;
       Matter.Body.scale(this.body, scale, scale);
       this.scale = s;

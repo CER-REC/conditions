@@ -23,6 +23,7 @@ export default class Keyword extends Body {
       },
     );
     body.frictionAir = 0.02;
+    body.render.lastCollision = 0;
     super(body, engine);
     this.keyword = keyword;
   }
