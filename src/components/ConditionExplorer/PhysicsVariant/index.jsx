@@ -43,6 +43,7 @@ export default class PhysicsVariant extends React.PureComponent {
       mouse: Matter.Mouse.create(this.groupRef.current.parentElement),
       constraint: { render: { visible: false } },
       collisionFilter: { mask: guideOutlineCategory },
+      stiffness: 1,
     });
     Matter.World.add(this.engine.world, mouseConstraint);
 

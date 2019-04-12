@@ -16,7 +16,8 @@ export default class Guide extends Body {
     this.locationBeforeExpand = { x: 0, y: 0 };
     this.outline = new Outline(engine);
     this.outlineReady = false;
-    this.outline.moveTo(200, 200, 2500).finally(() => { this.outlineReady = true; });
+    this.outline.moveTo(this.body.position.x, this.body.position.y, 2500)
+      .finally(() => { this.outlineReady = true; });
   }
 
   get isExpanded() { return this.scale !== 1; }
