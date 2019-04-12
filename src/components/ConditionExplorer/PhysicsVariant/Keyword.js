@@ -22,7 +22,7 @@ export default class Keyword extends Body {
         },
       },
     );
-    body.frictionAir = 0.05;
+    body.frictionAir = 0.02;
     super(body, engine);
     this.keyword = keyword;
   }
@@ -52,6 +52,19 @@ export default class Keyword extends Body {
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
+    const threshold = 1.5;
+    if (Matter.Vector.magnitude(this.body.velocity) >= threshold) {
+      const clamped = Matter.Vector.normalise({ ...this.body.velocity });
+      clamped.x *= threshold;
+      clamped.y *= threshold;
+      Matter.Body.setVelocity(this.body, clamped);
+    }
+
+    const angThreshold = 0.025;
+    if (Math.abs(this.body.angularVelocity) > angThreshold) {
+      Matter.Body.setAngularVelocity(this.body, angThreshold * Math.sign(this.body.angularVelocity));
+    }
+
     super.onUpdate(update);
 
     if (this.category === resettingCategory && !this.isMoving) {
