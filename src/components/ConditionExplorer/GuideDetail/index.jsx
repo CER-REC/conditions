@@ -1,16 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import CircleContainer from '../../CircleContainer';
 import List from '../../List';
 import './styles.scss';
-
-library.add(
-  faAngleRight,
-  faAngleLeft,
-);
 
 // TODO: Get detail description from iLab and investigate ideal locations to include the text
 const formatLink = (link, text) => (
@@ -158,16 +151,10 @@ const steps = [
 const GuideDetail = (props) => {
   const { changeStep, selected, radius } = props;
 
-  const goToStep = useMemo(
-    () => steps.map((_, i) => () => changeStep(i)),
-    [changeStep, selected],
-  );
-
   const circles = steps.map((element, index) => (
     <CircleContainer
       key={index /* eslint-disable-line react/no-array-index-key */}
       size={10}
-      onClick={goToStep[index]}
       className={selected === index ? 'gray' : 'lightgrey'}
     >
       &nbsp;

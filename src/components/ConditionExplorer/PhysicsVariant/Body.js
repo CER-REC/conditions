@@ -132,11 +132,8 @@ export default class Body {
 
     // If there is a target, update our position along the easing curve
     const { start, end } = this[targetParam];
-    const now = Date.now();
-    const progress = Math.min(1,
-      (now - start.timestamp) / (end.timestamp - start.timestamp));
-
-    const inOut = easeInOutCubic(progress);
+    const progress = (Date.now() - start.timestamp) / (end.timestamp - start.timestamp);
+    const inOut = easeInOutCubic(Math.min(1, progress));
 
     this[`onUpdate${param}`](inOut, start, end);
 
