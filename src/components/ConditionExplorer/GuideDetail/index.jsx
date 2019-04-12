@@ -1,6 +1,9 @@
 import React from 'react';
-import './styles.scss';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import CircleContainer from '../../CircleContainer';
+import List from '../../List';
+import './styles.scss';
 
 // TODO: Get detail description from iLab and investigate ideal locations to include the text
 const formatLink = (link, text) => (
@@ -9,12 +12,16 @@ const formatLink = (link, text) => (
   </FormattedMessage>
 );
 
-const GuideDetail = () => {
-  const overviewText = (
+const steps = [
+  (
     <React.Fragment>
-      <h1 className="title"> Overview: </h1>
+      <FormattedMessage
+        id="components.conditionExplorer.guide.overview.title"
+        tagName="h1"
+      />
       <FormattedMessage
         id="components.conditionExplorer.guide.overview.overview1"
+        tagName="p"
         values={{
           NEB: formatLink(
             'https://www.neb-one.gc.ca/bts/nws/fs/nbqckfcts-eng.html',
@@ -40,6 +47,7 @@ const GuideDetail = () => {
       />
       <FormattedMessage
         id="components.conditionExplorer.guide.overview.overview2"
+        tagName="p"
         values={{
           hereLink: formatLink(
             'https://www.neb-one.gc.ca/bts/whwr/pplnrgltncnd-eng.html',
@@ -52,13 +60,16 @@ const GuideDetail = () => {
         }}
       />
     </React.Fragment>
-  );
-
-  const scopeText = (
+  ),
+  (
     <React.Fragment>
-      <h1 className="title"> The genesis and scope of conditions </h1>
+      <FormattedMessage
+        id="components.conditionExplorer.guide.scope.title"
+        tagName="h1"
+      />
       <FormattedMessage
         id="components.conditionExplorer.guide.scope.scope1"
+        tagName="p"
         values={{
           regulationsLink: formatLink(
             'https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html',
@@ -69,20 +80,26 @@ const GuideDetail = () => {
       {/* TODO: Get link from iLab because currently not in design doc */}
       <FormattedMessage
         id="components.conditionExplorer.guide.scope.scope2"
+        tagName="p"
         values={{
           themeLink: formatLink('', 'common.linkText.here'),
         }}
       />
       {/* TODO: Get link from iLab because currently not in design doc */}
-      <FormattedMessage id="components.conditionExplorer.guide.scope.scope3" />
+      <FormattedMessage
+        id="components.conditionExplorer.guide.scope.scope3"
+        tagName="p"
+      />
       <FormattedMessage
         id="components.conditionExplorer.guide.scope.scope4"
+        tagName="p"
         values={{
           conditionLink: formatLink('', 'common.linkText.here'),
         }}
       />
       <FormattedMessage
         id="components.conditionExplorer.guide.scope.scope5"
+        tagName="p"
         values={{
           applicationLink: formatLink(
             'https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html',
@@ -99,41 +116,72 @@ const GuideDetail = () => {
         }}
       />
     </React.Fragment>
-  );
-
-  const complianceText = (
+  ),
+  (
     <React.Fragment>
-      <h1 className="title"> Conditions tracking and compliance </h1>
+      <FormattedMessage
+        id="components.conditionExplorer.guide.compliance.title"
+        tagName="h1"
+      />
       {/* TODO: Get links from iLab */}
       <FormattedMessage
         id="components.conditionExplorer.guide.compliance.detail"
+        tagName="p"
         values={{
           FilingsLink: formatLink('', 'common.linkText.explorableHere'),
         }}
       />
-      <FormattedMessage id="components.conditionExplorer.guide.compliance.documentationPrompt" />
+      <FormattedMessage
+        id="components.conditionExplorer.guide.compliance.documentationPrompt"
+        tagName="p"
+      />
       <ul>
         {[1, 2, 3, 4, 5, 6].map(i => (
-          <li key={i}>
-            <FormattedMessage
-              id={`components.conditionExplorer.guide.compliance.doc${i}`}
-            />
-          </li>
+          <FormattedMessage
+            key={i}
+            id={`components.conditionExplorer.guide.compliance.doc${i}`}
+            tagName="li"
+          />
         ))}
       </ul>
     </React.Fragment>
-  );
+  ),
+];
+
+const GuideDetail = (props) => {
+  const { changeStep, selected, radius } = props;
+
+  const circles = steps.map((element, index) => (
+    <CircleContainer
+      key={index /* eslint-disable-line react/no-array-index-key */}
+      size={10}
+      className={selected === index ? 'gray' : 'lightgrey'}
+    >
+      &nbsp;
+    </CircleContainer>
+  ));
 
   return (
-    <div className="GuideDetail">
-      {overviewText}
-      {scopeText}
-      {complianceText}
-    </div>
+    <section className="GuideDetail" style={{ width: radius * 2, height: radius * 2 }}>
+      <div className="step-text">{steps[selected]}</div>
+      <div className="step-controls">
+        <List
+          selected={selected}
+          arrowsAtEdges
+          horizontal
+          onChange={changeStep}
+          items={circles}
+        />
+      </div>
+    </section>
   );
 };
 
-GuideDetail.propTypes = {};
+GuideDetail.propTypes = {
+  selected: PropTypes.number.isRequired,
+  changeStep: PropTypes.func.isRequired,
+  radius: PropTypes.number.isRequired,
+};
 
 GuideDetail.defaultProps = {};
 

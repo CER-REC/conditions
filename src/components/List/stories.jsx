@@ -60,4 +60,21 @@ storiesForComponent('Components|List', module, ReadMe)
       guideLine
       {...getInteractionProps()}
     />
+  ))
+  .add('arrows at edges', () => (
+    <List
+      items={['Item 1', 'Item 2', 'Item 3']}
+      selected={1}
+      arrowsAtEdges
+      {...getInteractionProps()}
+    />
+  ))
+  .add('arrows at edges horizontal', () => (
+    <List
+      items={['Item 1', 'Item 2', 'Item 3']}
+      selected={1}
+      arrowsAtEdges
+      horizontal
+      {...getInteractionProps()}
+    />
   ));

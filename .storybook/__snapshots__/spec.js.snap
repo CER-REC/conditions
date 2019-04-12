@@ -2681,7 +2681,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 className="List-Item selected"
               >
                 <div
-                  className="CircleContainer arrowPrevious"
+                  className="CircleContainer arrow arrowPrevious"
                   focusable={true}
                   onClick={[Function]}
                   onKeyPress={[Function]}
@@ -2734,7 +2734,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="CircleContainer arrowNext"
+                  className="CircleContainer arrow arrowNext"
                   focusable={true}
                   onClick={[Function]}
                   onKeyPress={[Function]}
@@ -3240,7 +3240,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   className="List-Item selected"
                 >
                   <div
-                    className="CircleContainer arrowPrevious"
+                    className="CircleContainer arrow arrowPrevious"
                     focusable={true}
                     onClick={[Function]}
                     onKeyPress={[Function]}
@@ -3293,7 +3293,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     </div>
                   </div>
                   <div
-                    className="CircleContainer arrowNext"
+                    className="CircleContainer arrow arrowNext"
                     focusable={true}
                     onClick={[Function]}
                     onKeyPress={[Function]}
@@ -3731,7 +3731,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             className="List-Item selected"
           >
             <div
-              className="CircleContainer arrowPrevious"
+              className="CircleContainer arrow arrowPrevious"
               focusable={true}
               onClick={[Function]}
               onKeyPress={[Function]}
@@ -3784,7 +3784,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               </div>
             </div>
             <div
-              className="CircleContainer arrowNext"
+              className="CircleContainer arrow arrowNext"
               focusable={true}
               onClick={[Function]}
               onKeyPress={[Function]}
@@ -4472,39 +4472,43 @@ exports[`Storyshots Components|ConditionExplorer default 1`] = `
 <div
   className="visualization"
 >
-  <svg
+  <div
     className="ConditionExplorer"
-    height="100%"
-    style={
-      Object {
-        "border": "1px solid #000",
-      }
-    }
-    width="100%"
   >
-    <g
-      className="keyword color0 textVisible"
+    <svg
+      height="100%"
+      style={
+        Object {
+          "border": "1px solid #000",
+          "zIndex": "0",
+        }
+      }
+      width="100%"
     >
-      <text
-        style={
-          Object {
-            "fontFamily": "Sans Serif",
-            "visibility": "hidden",
-          }
-        }
+      <g
+        className="keyword color0 textVisible"
       >
-        abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ -., 0123456789 ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ ùûüÿ€àâæçéèêëïîôœ
-      </text>
-      <text
-        style={
-          Object {
-            "fontFamily": "Sans Serif",
-            "visibility": "hidden",
+        <text
+          style={
+            Object {
+              "fontFamily": "Sans Serif",
+              "visibility": "hidden",
+            }
           }
-        }
-      />
-    </g>
-  </svg>
+        >
+          abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ -., 0123456789 ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ ùûüÿ€àâæçéèêëïîôœ
+        </text>
+        <text
+          style={
+            Object {
+              "fontFamily": "Sans Serif",
+              "visibility": "hidden",
+            }
+          }
+        />
+      </g>
+    </svg>
+  </div>
 </div>
 `;
 
@@ -4512,39 +4516,43 @@ exports[`Storyshots Components|ConditionExplorer physics disabled 1`] = `
 <div
   className="visualization"
 >
-  <svg
+  <div
     className="ConditionExplorer"
-    height="100%"
-    style={
-      Object {
-        "border": "1px solid #000",
-      }
-    }
-    width="100%"
   >
-    <g
-      className="keyword color0 textVisible"
+    <svg
+      height="100%"
+      style={
+        Object {
+          "border": "1px solid #000",
+          "zIndex": "0",
+        }
+      }
+      width="100%"
     >
-      <text
-        style={
-          Object {
-            "fontFamily": "Sans Serif",
-            "visibility": "hidden",
-          }
-        }
+      <g
+        className="keyword color0 textVisible"
       >
-        abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ -., 0123456789 ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ ùûüÿ€àâæçéèêëïîôœ
-      </text>
-      <text
-        style={
-          Object {
-            "fontFamily": "Sans Serif",
-            "visibility": "hidden",
+        <text
+          style={
+            Object {
+              "fontFamily": "Sans Serif",
+              "visibility": "hidden",
+            }
           }
-        }
-      />
-    </g>
-  </svg>
+        >
+          abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ -., 0123456789 ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ ùûüÿ€àâæçéèêëïîôœ
+        </text>
+        <text
+          style={
+            Object {
+              "fontFamily": "Sans Serif",
+              "visibility": "hidden",
+            }
+          }
+        />
+      </g>
+    </svg>
+  </div>
 </div>
 `;
 
@@ -4563,224 +4571,266 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
   <div
     className="ConditionExplorer"
   >
-    <div
+    <section
       className="GuideDetail"
+      style={
+        Object {
+          "height": 500,
+          "width": 500,
+        }
+      }
     >
-      <h1
-        className="title"
+      <div
+        className="step-text"
       >
-         Overview: 
-      </h1>
-      <span>
-        As Canada’s energy regulator the 
-        <a
-          href="https://www.neb-one.gc.ca/bts/nws/fs/nbqckfcts-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          NEB
-           
-        </a>
-         has a variety of roles and responsibilities throughout the 
-        <a
-          href="https://www.neb-one.gc.ca/bts/nws/vds/thlfcclapprch-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          lifecycle
-           
-        </a>
-         of energy infrastructure – from adjudication of energy project 
-        <a
-          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          applications
-           
-        </a>
-         to safety oversight and 
-        <a
-          href="https://www.neb-one.gc.ca/bts/nws/vds/nvrnmntlprtctn-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          environmental protection
-           
-        </a>
-        . To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. 
-        <a
-          href="https://www.neb-one.gc.ca/bts/nws/vds/cndtncmplnc-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          Conditions
-           
-        </a>
-         are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.
-      </span>
-      <span>
-        The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that 
-        <a
-          href="https://www.neb-one.gc.ca/bts/whwr/pplnrgltncnd-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          here
-           
-        </a>
-        ). Here is a 
-        <a
-          href="https://www.neb-one.gc.ca/sftnvrnmnt/sft/dshbrd/rgltdpplns-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          map
-           
-        </a>
-         of major pipeline systems regulated by the NEB.
-      </span>
-      <h1
-        className="title"
+        <h1>
+          The genesis and scope of conditions
+        </h1>
+        <p>
+          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
+          <a
+            href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            laws, acts and regulations
+             
+          </a>
+           are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
+        </p>
+        <p>
+          These different sorts of requirements expressed in conditions are the Themes which can be explored 
+          <a
+            href=""
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            here
+             
+          </a>
+           in this data visualization.
+        </p>
+        <p>
+          Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
+        </p>
+        <p>
+          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
+          <a
+            href=""
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            here
+             
+          </a>
+          . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
+        </p>
+        <p>
+          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
+          <a
+            href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            application process
+             
+          </a>
+           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
+          <a
+            href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            hearings
+             
+          </a>
+          , individuals must apply (more info about how to become an intervenor 
+          <a
+            href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            here
+             
+          </a>
+          )
+        </p>
+      </div>
+      <div
+        className="step-controls"
       >
-         The genesis and scope of conditions 
-      </h1>
-      <span>
-        Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
-        <a
-          href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="List horizontal"
+          onWheel={[Function]}
         >
-           
-          laws, acts and regulations
-           
-        </a>
-         are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
-      </span>
-      <span>
-        These different sorts of requirements expressed in conditions are the Themes which can be explored 
-        <a
-          href=""
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          here
-           
-        </a>
-         in this data visualization.
-      </span>
-      <span>
-        Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
-      </span>
-      <span>
-        Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
-        <a
-          href=""
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          here
-           
-        </a>
-        . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
-      </span>
-      <span>
-        When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
-        <a
-          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          application process
-           
-        </a>
-         Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
-        <a
-          href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          hearings
-           
-        </a>
-        , individuals must apply (more info about how to become an intervenor 
-        <a
-          href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          here
-           
-        </a>
-        )
-      </span>
-      <h1
-        className="title"
-      >
-         Conditions tracking and compliance 
-      </h1>
-      <span>
-        Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company (
-        <a
-          href=""
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-           
-          explorable here
-           
-        </a>
-        ) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.
-      </span>
-      <span>
-        Conditions may require a company to submit documentation such as:
-      </span>
-      <ul>
-        <li>
-          <span>
-            results of additional environmental and socio-economic assessments, species-specific studies, or traditional land use investigations;
-          </span>
-        </li>
-        <li>
-          <span>
-            engineering design details, and supporting assessments or information;
-          </span>
-        </li>
-        <li>
-          <span>
-            environmental protection plans;
-          </span>
-        </li>
-        <li>
-          <span>
-            mitigation and monitoring documentation;
-          </span>
-        </li>
-        <li>
-          <span>
-            construction schedules and progress reports; and
-          </span>
-        </li>
-        <li>
-          <span>
-            employee training programs and manuals.
-          </span>
-        </li>
-      </ul>
-    </div>
+          <ul>
+            <li
+              className="List-Arrow"
+            >
+              <div
+                className="CircleContainer arrow arrowPrevious"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                style={
+                  Object {
+                    "height": 24,
+                    "width": 24,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div>
+                  <div
+                    className="Icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                      color=""
+                      data-icon="angle-left"
+                      data-prefix="fas"
+                      role="img"
+                      style={Object {}}
+                      viewBox="0 0 256 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              className="List-Item"
+            >
+              <div
+                className="List-Item-Content"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <div
+                  className="CircleContainer lightgrey"
+                  style={
+                    Object {
+                      "height": 10,
+                      "width": 10,
+                    }
+                  }
+                >
+                  <div>
+                     
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              className="List-Item selected"
+            >
+              <div
+                className="List-Item-Content"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <div
+                  className="CircleContainer gray"
+                  style={
+                    Object {
+                      "height": 10,
+                      "width": 10,
+                    }
+                  }
+                >
+                  <div>
+                     
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              className="List-Item"
+            >
+              <div
+                className="List-Item-Content"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+              >
+                <div
+                  className="CircleContainer lightgrey"
+                  style={
+                    Object {
+                      "height": 10,
+                      "width": 10,
+                    }
+                  }
+                >
+                  <div>
+                     
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              className="List-Arrow"
+            >
+              <div
+                className="CircleContainer arrow arrowNext"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                style={
+                  Object {
+                    "height": 24,
+                    "width": 24,
+                  }
+                }
+                tabIndex={0}
+              >
+                <div>
+                  <div
+                    className="Icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
+                      color=""
+                      data-icon="angle-right"
+                      data-prefix="fas"
+                      role="img"
+                      style={Object {}}
+                      viewBox="0 0 256 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
 `;
@@ -5826,6 +5876,43 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-up"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -5837,7 +5924,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             </span>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -6188,6 +6275,43 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-up"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -6206,7 +6330,7 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -6633,7 +6757,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
           className="List-Item selected"
         >
           <div
-            className="CircleContainer arrowPrevious"
+            className="CircleContainer arrow arrowPrevious"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -6717,7 +6841,7 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -7106,6 +7230,276 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|List arrows at edges 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="List"
+    onWheel={[Function]}
+  >
+    <ul>
+      <li
+        className="List-Arrow"
+      >
+        <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                color=""
+                data-icon="angle-up"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="List-Item selected"
+      >
+        <div
+          className="List-Item-Content"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Item 1
+        </div>
+      </li>
+      <li
+        className="List-Item"
+      >
+        <div
+          className="List-Item-Content"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Item 2
+        </div>
+      </li>
+      <li
+        className="List-Item"
+      >
+        <div
+          className="List-Item-Content"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Item 3
+        </div>
+      </li>
+      <li
+        className="List-Arrow"
+      >
+        <div
+          className="CircleContainer arrow arrowNext"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                color=""
+                data-icon="angle-down"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="List horizontal"
+    onWheel={[Function]}
+  >
+    <ul>
+      <li
+        className="List-Arrow"
+      >
+        <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                color=""
+                data-icon="angle-left"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 256 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="List-Item selected"
+      >
+        <div
+          className="List-Item-Content"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Item 1
+        </div>
+      </li>
+      <li
+        className="List-Item"
+      >
+        <div
+          className="List-Item-Content"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Item 2
+        </div>
+      </li>
+      <li
+        className="List-Item"
+      >
+        <div
+          className="List-Item-Content"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Item 3
+        </div>
+      </li>
+      <li
+        className="List-Arrow"
+      >
+        <div
+          className="CircleContainer arrow arrowNext"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
+                color=""
+                data-icon="angle-right"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 256 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|List basic usage 1`] = `
 <div
   className="visualization"
@@ -7119,6 +7513,43 @@ exports[`Storyshots Components|List basic usage 1`] = `
         className="List-Item selected"
       >
         <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                color=""
+                data-icon="angle-up"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
           className="List-Item-Content"
           focusable={true}
           onClick={[Function]}
@@ -7128,7 +7559,7 @@ exports[`Storyshots Components|List basic usage 1`] = `
           Item 1
         </div>
         <div
-          className="CircleContainer arrowNext"
+          className="CircleContainer arrow arrowNext"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -7209,6 +7640,43 @@ exports[`Storyshots Components|List component items 1`] = `
         className="List-Item selected"
       >
         <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                color=""
+                data-icon="angle-up"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
           className="List-Item-Content"
           focusable={true}
           onClick={[Function]}
@@ -7220,7 +7688,7 @@ exports[`Storyshots Components|List component items 1`] = `
           </strong>
         </div>
         <div
-          className="CircleContainer arrowNext"
+          className="CircleContainer arrow arrowNext"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -7311,6 +7779,43 @@ exports[`Storyshots Components|List guide line 1`] = `
         className="List-Item selected"
       >
         <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                color=""
+                data-icon="angle-up"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
           className="List-Item-Content"
           focusable={true}
           onClick={[Function]}
@@ -7320,7 +7825,7 @@ exports[`Storyshots Components|List guide line 1`] = `
           Item 1
         </div>
         <div
-          className="CircleContainer arrowNext"
+          className="CircleContainer arrow arrowNext"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -7401,6 +7906,43 @@ exports[`Storyshots Components|List horizontal 1`] = `
         className="List-Item selected"
       >
         <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                color=""
+                data-icon="angle-left"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 256 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
           className="List-Item-Content"
           focusable={true}
           onClick={[Function]}
@@ -7410,7 +7952,7 @@ exports[`Storyshots Components|List horizontal 1`] = `
           Item 1
         </div>
         <div
-          className="CircleContainer arrowNext"
+          className="CircleContainer arrow arrowNext"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -7491,12 +8033,49 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
         className="List-Item selected"
       >
         <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                color=""
+                data-icon="angle-up"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
           className="List-Item-Content"
         >
           Item 1
         </div>
         <div
-          className="CircleContainer arrowNext"
+          className="CircleContainer arrow arrowNext"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -7569,6 +8148,43 @@ exports[`Storyshots Components|List selected 1`] = `
         className="List-Item selected"
       >
         <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Icon"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                color=""
+                data-icon="angle-up"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 320 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
           className="List-Item-Content"
           focusable={true}
           onClick={[Function]}
@@ -7578,7 +8194,7 @@ exports[`Storyshots Components|List selected 1`] = `
           Item 1
         </div>
         <div
-          className="CircleContainer arrowNext"
+          className="CircleContainer arrow arrowNext"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -8843,6 +9459,43 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -9091,7 +9744,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -9690,6 +10343,43 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -9938,7 +10628,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -10551,6 +11241,43 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -10799,7 +11526,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -11398,6 +12125,43 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -11646,7 +12410,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -12245,6 +13009,43 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -12490,6 +13291,43 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
               <div
                 className="ProjectName"
               />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-right"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </li>
@@ -12525,6 +13363,43 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
+                  color=""
+                  data-icon="angle-left"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 256 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -12773,7 +13648,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -16641,6 +17516,43 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-up"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -16659,7 +17571,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -16916,6 +17828,43 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
           className="List-Item selected"
         >
           <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                  color=""
+                  data-icon="angle-up"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -16934,7 +17883,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -17213,7 +18162,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
           className="List-Item selected"
         >
           <div
-            className="CircleContainer arrowPrevious"
+            className="CircleContainer arrow arrowPrevious"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
@@ -17312,7 +18261,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
             </div>
           </div>
           <div
-            className="CircleContainer arrowNext"
+            className="CircleContainer arrow arrowNext"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}

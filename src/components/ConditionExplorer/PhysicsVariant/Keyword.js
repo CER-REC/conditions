@@ -1,7 +1,7 @@
 import Matter from 'matter-js';
 import Body from './Body';
 import {
-  circleCategory,
+  guideOutlineCategory,
   placeholderCategory,
   resettingCategory,
   visibleTextCategory,
@@ -18,7 +18,7 @@ export default class Keyword extends Body {
       {
         collisionFilter: {
           category: placeholderCategory,
-          mask: circleCategory,
+          mask: guideOutlineCategory,
         },
       },
     );
@@ -37,6 +37,7 @@ export default class Keyword extends Body {
   }
 
   resetPosition() {
+    this.removeCollisionMask(guideOutlineCategory);
     return Promise.all([
       this.moveTo(
         this.keyword.outline.x + (this.keyword.outline.width / 2),
@@ -44,11 +45,17 @@ export default class Keyword extends Body {
         2500,
       ),
       this.rotateTo(0, 2500),
-    ]);
+    ]).finally(() => {
+      this.addCollisionMask(guideOutlineCategory);
+    });
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
     super.onUpdate(update);
+
+    if (this.category === resettingCategory && !this.isMoving) {
+      this.category = placeholderCategory;
+    }
 
     if (this.category === visibleTextCategory
         && this.body.render.lastCollision + 5000 <= update.source.timing.timestamp
@@ -63,10 +70,6 @@ export default class Keyword extends Body {
         this.removeCollisionMask(visibleTextCategory);
         this.resetPosition();
       }
-    }
-
-    if (this.category === resettingCategory && !this.isMoving) {
-      this.category = placeholderCategory;
     }
   }
 }
