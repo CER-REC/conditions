@@ -66,7 +66,7 @@ const transitionTargets = {
   10: { [UP]: 10, [DOWN]: 10 }, // View 3
 };
 
-const transitionIfOver = { App: true, ConditionExplorer: true };
+const transitionIfOver = { App: true, ConditionExplorer: true, svgContainer: true, row: true };
 const scrollIfOver = { Footer: true };
 
 const targetIsScrollable = (target) => {
@@ -77,6 +77,9 @@ const targetIsScrollable = (target) => {
       (checkingTarget.scrollHeight !== checkingTarget.clientHeight)
       || (scrollIfOver[checkingTarget.classList[0]])
     ) {
+      // For debugging scroll issues:
+      // console.log("scrollable @:");
+      // console.dir(checkingTarget);
       return true;
     }
 

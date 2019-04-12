@@ -9,7 +9,7 @@
     position: relative;
     top: -7px;
 
-    .label {
+    .browseLabel {
       display: inline-block;
       position: relative;
 
@@ -29,7 +29,7 @@
       font-size: 16px;
     }
 
-    &.zeroWidth .label {
+    &.zeroWidth .browseLabel {
       width: 0px;
     }
 
@@ -61,7 +61,7 @@
       border-color: $Guide;
       margin-right: 24px;
 
-      .label {
+      .browseLabel {
         padding-top: 0px;
       }
 
