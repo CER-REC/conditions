@@ -15,32 +15,34 @@ $arrow-spacing: 0.6em;
     padding: 0;
   }
 
-  .List-Item {
-    &.selected {
-      .CircleContainer {
-        background-color: white;
-        border: $list-selected;
-        color: $list-selected-color;
-      }
-    }
+  .List-Arrow {
+    text-align: left;
+  }
+
+  .CircleContainer.arrow {
+    background-color: white;
+    border: $list-selected;
+    color: $list-selected-color;
+    &.hidden { display: none; }
   }
 
   &.horizontal {
-    .List-Item {
+    .List-Item, .List-Arrow {
       display: table-cell;
       position: relative;
+      vertical-align: middle;
+    }
 
-      &.selected {
-        .arrowNext {
-          @extend %horizontalArrow;
-          top: 0;
-          right: 0;
-        }
+    .List-Item.selected {
+      .arrowNext {
+        @extend %horizontalArrow;
+        top: 0;
+        right: 0;
+      }
 
-        .arrowPrevious {
-          @extend %horizontalArrow;
-          left: 0;
-        }
+      .arrowPrevious {
+        @extend %horizontalArrow;
+        left: 0;
       }
     }
   }

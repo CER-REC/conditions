@@ -7,7 +7,6 @@ export default class Body {
   constructor(body, engine) {
     this.body = body;
     this.engine = engine;
-
     Matter.World.add(this.engine.world, this.body);
 
     // TODO: Need to clean this up when we're done because this will cause a memory leak
@@ -47,7 +46,7 @@ export default class Body {
       Matter.Body.setPosition(this.body, { x, y });
       return Promise.resolve();
     }
-    const { timestamp } = this.engine.timing;
+    const timestamp = Date.now();
     this.targetPosition = {
       start: { ...this.body.position, timestamp },
       end: { x, y, timestamp: timestamp + time },
@@ -70,7 +69,7 @@ export default class Body {
       Matter.Body.setAngle(this.body, r);
       return Promise.resolve();
     }
-    const { timestamp } = this.engine.timing;
+    const timestamp = Date.now();
     this.targetRotation = {
       start: { r: this.body.angle, timestamp },
       end: { r, timestamp: timestamp + time },
@@ -95,7 +94,7 @@ export default class Body {
       this.scale = s;
       return Promise.resolve();
     }
-    const { timestamp } = this.engine.timing;
+    const timestamp = Date.now();
     this.targetScale = {
       start: { s: this.scale, timestamp },
       end: { s, timestamp: timestamp + time },
@@ -133,10 +132,8 @@ export default class Body {
 
     // If there is a target, update our position along the easing curve
     const { start, end } = this[targetParam];
-    const progress = Math.min(1,
-      (update.timestamp - start.timestamp) / (end.timestamp - start.timestamp));
-
-    const inOut = easeInOutCubic(progress);
+    const progress = (Date.now() - start.timestamp) / (end.timestamp - start.timestamp);
+    const inOut = easeInOutCubic(Math.min(1, progress));
 
     this[`onUpdate${param}`](inOut, start, end);
 

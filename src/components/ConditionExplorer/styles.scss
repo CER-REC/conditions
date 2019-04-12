@@ -1,9 +1,18 @@
 @import '../../styles/colors.scss';
 @import '../../styles/fontVariables.scss';
+@import '../../styles/legend.scss';
+@import '../../styles/svgs.scss';
 
 .ConditionExplorer {
-   touch-action: none;
-   min-height: 500px;
+   position: relative;
+
+   &, > svg {
+     width: 100%;
+     height: 100%;
+     min-height: 500px;
+   }
+
+   svg { touch-action: none; }
 
   .keyword {
     user-select: none;
@@ -41,7 +50,11 @@
   }
 
   .guide {
-    fill: #164EF8;
+   fill: #5050EA;
+  }
+
+  .guideOutline {
+    fill: transparent;
     stroke: $LinksTextButtons;
   }
 }
