@@ -89,6 +89,7 @@ export default class PhysicsVariant extends React.PureComponent {
     }
     keyword.category = visibleTextCategory;
     keyword.addCollisionMask(visibleTextCategory);
+    keyword.scaleTo(1 / 0.7); // Inverse of the design docs scaling
   });
 
   loop = (currTime) => {
@@ -173,17 +174,30 @@ export default class PhysicsVariant extends React.PureComponent {
               { textVisible: instance.isVisible },
             )}
           >
-            <text
-              x={instance.body.position.x + instance.textOffset.x}
-              y={instance.body.position.y + instance.textOffset.y}
-              transform={`rotate(
-                ${instance.body.angle * 180 / Math.PI}
-                ${instance.body.position.x}
-                ${instance.body.position.y}
-              )`}
+            <g
+              transform={`
+                translate(
+                  ${instance.body.position.x + instance.textOffset.x},
+                  ${instance.body.position.y + instance.textOffset.y}
+                )
+              `}
             >
-              {instance.keyword.value}
-            </text>
+              <text
+                style={{
+                  // TODO: This doesn't work in IE properly, but I'm using it to figure things out
+                  transformOrigin: `
+                    ${instance.keyword.outline.width / 2}px
+                    ${instance.keyword.textSize.yOffset - (instance.keyword.outline.height / 2)}px
+                  `,
+                }}
+                transform={`
+                  scale(${instance.scale})
+                  rotate(${instance.body.angle * 180 / Math.PI})
+                `}
+              >
+                {instance.keyword.value}
+              </text>
+            </g>
             <path d={instance.renderedPathPoints} />
           </g>
         ))}

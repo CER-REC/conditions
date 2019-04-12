@@ -45,6 +45,7 @@ export default class Keyword extends Body {
         2500,
       ),
       this.rotateTo(0, 2500),
+      this.scaleTo(1, 2500),
     ]).finally(() => {
       this.addCollisionMask(guideOutlineCategory);
     });
