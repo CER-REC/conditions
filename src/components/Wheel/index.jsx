@@ -38,7 +38,9 @@ class Wheel extends React.Component {
   }
 
   static getDerivedStateFromProps(props, prevState) {
-    const items = props.wheelData;
+    const items = props.wheelType === 'company'
+      ? props.wheelData.sort((a, b) => (a.name < b.name ? -1 : 1))
+      : props.wheelData.sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
     let selectedIndex = items.findIndex(v => v.id === props.selectedRay);
@@ -111,6 +113,10 @@ class Wheel extends React.Component {
     this.setState({ newRotation: rotation });
   };
 
+  shouldRender = childComponent => (this.props.wheelData.length > 0
+    ? childComponent
+    : null);
+
   render() {
     return (
       <div className="Wheel">
@@ -132,7 +138,7 @@ class Wheel extends React.Component {
               <div style={props} className="MovingContainer">
                 <svg viewBox="0 0 860 860">
                   <Ring ringType={this.props.wheelType} />
-                  <AnimatedWheelRay
+                  {this.shouldRender(<AnimatedWheelRay
                     stopWheel={this.stopWheel}
                     wheelType={this.props.wheelType}
                     items={this.props.wheelData}
@@ -140,7 +146,7 @@ class Wheel extends React.Component {
                     reservedDegrees={reservedDegrees}
                     currentIndex={this.getIndex(props.rotation) % this.props.wheelData.length}
                     {...props}
-                  />
+                  />)}
                 </svg>
               </div>
               <div className="interactiveItems">
@@ -153,7 +159,7 @@ class Wheel extends React.Component {
                     />
                   </g>
                 </svg>
-                <WheelList
+                {this.shouldRender(<WheelList
                   wheelType={this.props.wheelType}
                   listContent={this.props.wheelData}
                   textClippingRadius="60"
@@ -162,7 +168,8 @@ class Wheel extends React.Component {
                     (this.props.wheelData.length + this.getIndex(props.rotation))
                     % this.props.wheelData.length
                   }
-                />
+                />)
+                }
               </div>
             </div>
           )}

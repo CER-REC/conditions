@@ -24,9 +24,6 @@ module.exports = {
     path: BUILD_DIR,
     publicPath: '/conditions/script/',
     filename: '[name].js',
-    auxiliaryComment: {
-      crossOriginLoading: 'anonymous',
-    },
   },
   devtool: devMode ? 'cheap-module-eval-source-map' : 'none',
   devServer: {

@@ -74,7 +74,10 @@ const ViewTwo = props => (
         <Wheel
           wheelType={props.browseBy}
           selectRay={noop}
-          wheelData={props.wheelData}
+          wheelData={typeof props.wheelData !== 'undefined'
+            ? props.wheelData
+            : []
+          }
         />
         <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
         <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
@@ -164,11 +167,13 @@ ViewTwo.propTypes = {
   projectsData: PropTypes.shape({
     counts: PropTypes.arrayOf(project).isRequired,
   }).isRequired,
-  wheelData: PropTypes.arrayOf({}).isRequired,
+  // The shape of wheelData will change once more integration is done.
+  wheelData: PropTypes.arrayOf(PropTypes.any),
 };
 
 ViewTwo.defaultProps = {
   layoutOnly: false,
+  wheelData: [],
 };
 
 export const ViewTwoUnconnected = props => (
@@ -185,16 +190,19 @@ export const ViewTwoUnconnected = props => (
 export const ViewTwoGraphQL = props => (
   <Query query={viewTwoQuery}>
     {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error</p>;
+      let status = {};
+      if (loading) status = { loading };
+      else if (error) status = { error };
+      else status = { done: true };
       return (
         <ViewTwo
           wheelData={
             // eslint-disable-next-line react/prop-types
             props.browseBy === 'company'
-              ? data.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+              ? data.allCompanies
               : locationData
           }
+          status={status}
           {...props}
         />
       );

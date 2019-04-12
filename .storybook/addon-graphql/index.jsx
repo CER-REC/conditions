@@ -4,24 +4,17 @@ import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
+import graphQLEndPoint from '../../globals';
 
-const defaultOptions = {};
-
-function addGQL(storyFn, context, providedOptions) {
-  const props = {
-    ...defaultOptions,
-    ...providedOptions,
-  };
-
+function addGQL(storyFn, context) {
   const cache = new InMemoryCache();
   const link = new HttpLink({
-    // TODO SET GLOBAL URL
-    uri: 'http://178.128.239.141/conditions/graphql',
+    uri: graphQLEndPoint,
   });
   const client = new ApolloClient({ cache, link, fetch });
 
   return (
-    <ApolloProvider client={client} {...props}>
+    <ApolloProvider client={client}>
       {storyFn(context)}
     </ApolloProvider>
   );

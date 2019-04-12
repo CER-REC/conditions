@@ -10,6 +10,7 @@ import ViewOne from '../ViewOne';
 import ViewTwo from '../ViewTwo';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
+import graphQLEndPoint from '../../../globals';
 
 import {
   conditionCountsByYear,
@@ -20,7 +21,7 @@ import {
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: 'http://178.128.239.141/conditions/graphql',
+  uri: graphQLEndPoint,
 });
 const client = new ApolloClient({ cache, link, fetch });
 
