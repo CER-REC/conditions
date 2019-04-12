@@ -9,6 +9,7 @@ import {
   guideOutlineCategory,
   resettingCategory,
   visibleTextCategory,
+  placeholderCategory,
 } from './categories';
 import Keyword from './Keyword';
 import Guide from './Guide';
@@ -171,7 +172,10 @@ export default class PhysicsVariant extends React.PureComponent {
             className={classNames(
               'keyword',
               instance.keyword.className,
-              { textVisible: instance.isVisible },
+              {
+                textVisible: instance.isVisible,
+                textPlaceholder: instance.category === placeholderCategory,
+              },
             )}
           >
             <g
