@@ -18,8 +18,9 @@ const Guide = ({ textState }) => (
     <CircleContainer size={176}>
       {
         dummyArray.map((_, idx) => (
-          <FormattedMessage id={`components.guide.tutorial.${idx}`}>
-            {text => <span className={(idx === textState) ? '' : 'hidden'} key={text}>{text}</span>}
+          // eslint-disable-next-line react/no-array-index-key
+          <FormattedMessage id={`components.guide.tutorial.${idx}`} key={idx}>
+            {text => <span className={(idx === textState) ? '' : 'hidden'}>{text}</span>}
           </FormattedMessage>
         ))
       }

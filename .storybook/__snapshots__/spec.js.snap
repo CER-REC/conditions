@@ -6114,8 +6114,45 @@ exports[`Storyshots Components|Guide default 1`] = `
       }
     >
       <div>
-        <span>
+        <span
+          className="hidden"
+        >
+          Scroll Down
+        </span>
+        <span
+          className="hidden"
+        >
+          Scroll Down
+        </span>
+        <span
+          className="hidden"
+        >
+          Here is the full legal text of the condition you selected
+        </span>
+        <span
+          className="hidden"
+        >
+          Conditions are characterized by features, such as theme
+        </span>
+        <span
+          className=""
+        >
           You can browse other conditions in this project
+        </span>
+        <span
+          className="hidden"
+        >
+          You can browse other projects by this company
+        </span>
+        <span
+          className="hidden"
+        >
+          Spin wheel to browse companies
+        </span>
+        <span
+          className="hidden"
+        >
+          Look around to discover more!
         </span>
       </div>
     </div>
