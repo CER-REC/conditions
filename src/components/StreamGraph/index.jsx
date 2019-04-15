@@ -54,7 +54,7 @@ class StreamGraph extends React.Component {
             strokeWidth: 0,
           },
         }}
-        interpolation="natural"
+        interpolation="catmullRom"
       />
     ));
     return streamLayers;
