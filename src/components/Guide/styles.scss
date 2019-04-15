@@ -15,8 +15,29 @@
   .CircleContainer {
     background: $Guide;
 
+
     div {
-      margin: 0 10%;
+      transform: none;
+      position: relative;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 90%;
+
+        transform: translate(-50%, -50%);
+
+        &.hidden {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
     }
   }
 }

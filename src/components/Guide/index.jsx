@@ -5,6 +5,9 @@ import CircleContainer from '../CircleContainer';
 
 import './styles.scss';
 
+// Just so there's something to map over in the JSX
+const dummyArray = new Array(8).fill(null);
+
 const Guide = ({ textState }) => (
   /**
    * This wrapper div gets us around the fact that CSS' translate function measures
@@ -14,9 +17,11 @@ const Guide = ({ textState }) => (
   <div className="Guide">
     <CircleContainer size={176}>
       {
-        (textState > -1)
-          ? <FormattedMessage id={`components.guide.tutorial.${textState}`} />
-          : <span />
+        dummyArray.map((_, idx) => (
+          <FormattedMessage id={`components.guide.tutorial.${idx}`}>
+            {text => <span className={(idx === textState) ? '' : 'hidden'} key={text}>{text}</span>}
+          </FormattedMessage>
+        ))
       }
     </CircleContainer>
   </div>

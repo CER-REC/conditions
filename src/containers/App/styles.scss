@@ -26,6 +26,14 @@
     transform: translate(0px, 0px);
 
     transition: all $defaultTransition;
+
+    .CircleContainer span {
+      transition: opacity $defaultTransition;
+
+      &.hidden {
+        transition: opacity $defaultTransition, visibility 0s 1s;
+      }
+    }
   }
 
   .browseBy {
