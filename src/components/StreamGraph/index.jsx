@@ -11,7 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
 import { allConditionsPerYear, featureTypes } from '../../proptypes';
-import getFilteredProjectData from '../../utilities/getFilteredProjectData';
+// import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 import './styles.scss';
 
@@ -37,12 +37,25 @@ class StreamGraph extends React.Component {
 
   handleOnChange = controlYear => this.setState({ controlYear });
 
+  getFilteredProjectData = () => {
+    const { projectData, feature, subFeature } = this.props;
+    return projectData.map((project) => {
+      if (project.feature === feature && (project.subFeature === subFeature || subFeature === '')) { return project; }
+
+      const copy = JSON.parse(JSON.stringify(project));
+      Object.keys(copy.years).forEach((k) => {
+        copy.years[k] = 0;
+      });
+      return copy;
+    });
+  };
+
   streamLayers() {
-    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
-    if (this.props.subFeature !== '') {
-      filteredData = filteredData
-        .filter(featureData => featureData.subFeature === this.props.subFeature);
-    }
+    let filteredData = this.getFilteredProjectData();
+    // if (this.props.subFeature !== '') {
+    //   filteredData = filteredData
+    //     .filter(featureData => featureData.subFeature === this.props.subFeature);
+    // }
     const streamLayers = filteredData.map(v => (
       <VictoryArea
         key={`${v.feature}-${v.subFeature}`}
@@ -61,7 +74,7 @@ class StreamGraph extends React.Component {
   }
 
   chart() {
-    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
+    let filteredData = this.getFilteredProjectData();
     if (this.props.subFeature !== '') {
       filteredData = filteredData
         .filter(featureData => featureData.subFeature === this.props.subFeature);
@@ -128,7 +141,14 @@ class StreamGraph extends React.Component {
     };
 
     return (
-      <VictoryChart>
+      <VictoryChart
+        animate={{
+          onExit: {
+            duration: 500,
+            before: () => ({ _y: 0 }),
+          },
+        }}
+      >
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
