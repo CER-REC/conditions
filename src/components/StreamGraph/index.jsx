@@ -6,17 +6,17 @@ import {
   VictoryChart,
   VictoryGroup,
 } from 'victory';
-// import { linear } from 'd3-scale';
 import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
 import { allConditionsPerYear, featureTypes } from '../../proptypes';
-// import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 import './styles.scss';
 
-export const roundDateLabel = t => Math.round(t);
+export const roundValue = t => Math.round(t);
 const noop = () => {};
+
+const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 
 class StreamGraph extends React.Component {
   static propTypes = {
@@ -41,7 +41,9 @@ class StreamGraph extends React.Component {
   processProjectData = () => {
     const { projectData, feature, subFeature } = this.props;
     this.processedData = projectData.map((project) => {
-      if (project.feature === feature && (project.subFeature === subFeature || subFeature === '')) { return project; }
+      if (project.feature === feature
+        && (project.subFeature === subFeature || subFeature === '')
+      ) { return project; }
 
       const copy = JSON.parse(JSON.stringify(project));
       Object.keys(copy.years).forEach((k) => {
@@ -74,8 +76,10 @@ class StreamGraph extends React.Component {
     const { conditionsByDate, minConditionCount } = filteredData.reduce((acc, cur) => {
       Object.entries(cur.years).forEach(([year, count]) => {
         acc.conditionsByDate[year] = count + (acc.conditionsByDate[year] || 0);
+
         if (count < acc.minConditionCount) { acc.minConditionCount = count; }
       });
+
       return acc;
     }, { conditionsByDate: {}, minConditionCount: Infinity });
 
@@ -83,7 +87,9 @@ class StreamGraph extends React.Component {
       .reduce((acc, [year, count]) => {
         if (year < acc.minDate) { acc.minDate = year; }
         if (year > acc.maxDate) { acc.maxDate = year; }
+
         if (count > acc.maxConditionTotal) { acc.maxConditionTotal = count; }
+
         return acc;
       }, { minDate: Infinity, maxDate: 0, maxConditionTotal: 0 });
 
@@ -98,12 +104,7 @@ class StreamGraph extends React.Component {
           <VictoryGroup
             standalone={false}
             padding={0}
-            animate={{
-              onExit: {
-                duration: 500,
-                before: () => ({ _y: 0 }),
-              },
-            }}
+            animate={streamAnimation}
           >
             <StackGroupProps
               groupProps={{
@@ -132,24 +133,18 @@ class StreamGraph extends React.Component {
     };
 
     return (
-      <VictoryChart
-        animate={{
-          onExit: {
-            duration: 500,
-            before: () => ({ _y: 0 }),
-          },
-        }}
-      >
+      <VictoryChart animate={streamAnimation}>
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
           tickValues={[minConditionCount, maxConditionTotal]}
+          tickFormat={Math.round}
           className="axis-label"
           style={axisStyles}
         />
         <VictoryAxis
           label="Effective Date"
-          tickFormat={roundDateLabel}
+          tickFormat={Math.round}
           className="axis-label"
           domain={[minDate, maxDate]}
           style={axisStyles}
