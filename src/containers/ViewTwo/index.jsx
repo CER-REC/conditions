@@ -90,7 +90,7 @@ const ViewTwo = props => (
       <section className="menus">
         <TrendButton
           onClick={noop}
-          feature="theme"
+          feature={props.selected.feature}
           subFeature=""
           projectData={conditionCountsByYear.counts}
           instrumentData={conditionCountsByCommodity.counts}
