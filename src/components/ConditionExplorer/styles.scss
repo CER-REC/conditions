@@ -12,7 +12,7 @@ $keywordColors: (
 @each $index, $color in $keywordColors {
   @keyframes ConditionExplorerText#{$index} {
     0% { fill: rgb(17, 17, 17); }
-    50% { fill: darken($color, 50%); }
+    80% { fill: darken($color, 50%); }
     100% { fill: transparent; }
   }
 }
@@ -46,12 +46,12 @@ $keywordColors: (
       // and have these recorded or changed.
       font-family: $fira-sans-condensed-light;
       fill: transparent;
-      font-size: 11px;
+      font-size: 9px;
     }
 
     @each $index, $color in $keywordColors {
       &.textPlaceholder.color#{$index} text {
-        animation: ConditionExplorerText#{$index} 4s;
+        animation: ConditionExplorerText#{$index} 3.5s;
       }
     }
 

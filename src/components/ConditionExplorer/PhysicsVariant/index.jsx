@@ -41,9 +41,8 @@ export default class PhysicsVariant extends React.PureComponent {
 
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse: Matter.Mouse.create(this.groupRef.current.parentElement),
-      constraint: { render: { visible: false } },
+      constraint: { render: { visible: false }, stiffness: 1 },
       collisionFilter: { mask: guideOutlineCategory },
-      stiffness: 1,
     });
     Matter.World.add(this.engine.world, mouseConstraint);
 
@@ -92,7 +91,7 @@ export default class PhysicsVariant extends React.PureComponent {
     }
     keyword.category = visibleTextCategory;
     keyword.addCollisionMask(visibleTextCategory);
-    keyword.scaleTo(1 / 0.7); // Inverse of the design docs scaling
+    keyword.scaleTo(1 / 0.5625); // Makes 9px font 16px when scaled up
   });
 
   loop = (currTime) => {

@@ -43,17 +43,17 @@ export default class Keyword extends Body {
       this.moveTo(
         this.keyword.outline.x + (this.keyword.outline.width / 2),
         this.keyword.outline.y + (this.keyword.outline.height / 2),
-        2500,
+        1000,
       ),
-      this.rotateTo(0, 2500),
-      this.scaleTo(1, 2500),
+      this.rotateTo(0, 1000),
+      this.scaleTo(1, 1000),
     ]).finally(() => {
       this.addCollisionMask(guideOutlineCategory);
     });
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
-    const threshold = 1.5;
+    const threshold = 1.2;
     if (Matter.Vector.magnitude(this.body.velocity) >= threshold) {
       const clamped = Matter.Vector.normalise({ ...this.body.velocity });
       clamped.x *= threshold;
