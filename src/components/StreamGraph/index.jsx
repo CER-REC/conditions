@@ -37,9 +37,10 @@ class StreamGraph extends React.Component {
 
   handleOnChange = controlYear => this.setState({ controlYear });
 
-  getFilteredProjectData = () => {
+  // For data that doesn't match the current feature/subfeature, sets all y = 0
+  processProjectData = () => {
     const { projectData, feature, subFeature } = this.props;
-    return projectData.map((project) => {
+    this.processedData = projectData.map((project) => {
       if (project.feature === feature && (project.subFeature === subFeature || subFeature === '')) { return project; }
 
       const copy = JSON.parse(JSON.stringify(project));
@@ -50,57 +51,52 @@ class StreamGraph extends React.Component {
     });
   };
 
-  streamLayers() {
-    let filteredData = this.getFilteredProjectData();
-    // if (this.props.subFeature !== '') {
-    //   filteredData = filteredData
-    //     .filter(featureData => featureData.subFeature === this.props.subFeature);
-    // }
-    const streamLayers = filteredData.map(v => (
-      <VictoryArea
-        key={`${v.feature}-${v.subFeature}`}
-        name={v.subFeature}
-        data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
-        style={{
-          data: {
-            fill: features[v.feature][v.subFeature],
-            strokeWidth: 0,
-          },
-        }}
-        interpolation="catmullRom"
-      />
-    ));
-    return streamLayers;
-  }
+  streamLayers = () => this.processedData.map(v => (
+    <VictoryArea
+      key={`${v.feature}-${v.subFeature}`}
+      name={v.subFeature}
+      data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
+      style={{
+        data: {
+          fill: features[v.feature][v.subFeature],
+          strokeWidth: 0,
+        },
+      }}
+      interpolation="catmullRom"
+    />
+  ));
 
   chart() {
-    let filteredData = this.getFilteredProjectData();
-    if (this.props.subFeature !== '') {
-      filteredData = filteredData
-        .filter(featureData => featureData.subFeature === this.props.subFeature);
-    }
+    const filteredData = (this.props.subFeature !== '')
+      ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
+      : this.processedData;
 
-    const numOfConditions = filteredData.map(k => Object.values(k.years));
-    const numOfConditionsConcat = [].concat(...numOfConditions);
+    const [numOfConditions, dates] = filteredData.reduce((acc, cur) => {
+      Object.entries(cur.years).forEach(([year, val]) => {
+        acc[0].push(val);
+        acc[1].add(year);
+      });
+      return acc;
+    }, [[], new Set()]);
 
-    const minConditionValue = Math.min(...numOfConditionsConcat);
+    const minConditionValue = Math.min(...numOfConditions);
 
-    const dates = filteredData.map(k => Object.keys(k.years));
-    const dateConcat = [].concat(...dates);
+    const [minDateValue, maxDateValue] = Array.from(dates).reduce((acc, cur) => {
+      if (cur < acc[0]) { acc[0] = cur; }
+      if (cur > acc[1]) { acc[1] = cur; }
+      return acc;
+    }, [Infinity, 0]);
 
-    const minDateValue = Math.min(...dateConcat);
-    const maxDateValue = Math.max(...dateConcat);
-
-    let conditionDates = filteredData.reduce((acc, next) => {
+    let conditionsByDate = filteredData.reduce((acc, next) => {
       Object.entries(next.years).forEach(([date, count]) => {
         if (!acc[date]) { acc[date] = 0; }
         acc[date] += count;
       });
       return acc;
     }, {});
-    conditionDates = Object.values(conditionDates);
+    conditionsByDate = Object.values(conditionsByDate);
 
-    const maxConditionValue = Math.max(...conditionDates);
+    const maxConditionValue = Math.max(...conditionsByDate);
 
     if (this.props.streamOnly) {
       return (
@@ -178,6 +174,8 @@ class StreamGraph extends React.Component {
   }
 
   render() {
+    this.processProjectData();
+
     return (
       <div
         className="StreamGraph"
