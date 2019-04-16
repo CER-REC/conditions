@@ -77,11 +77,12 @@ export default class PhysicsVariant extends React.PureComponent {
   onCollision = collision => collision.pairs.forEach((pair) => {
     const guideOutline = this.guide.outline.body;
     const withCircle = pair.bodyA === guideOutline || pair.bodyB === guideOutline;
-    pair.bodyA.render.lastCollision = collision.source.timing.timestamp;
-    pair.bodyB.render.lastCollision = collision.source.timing.timestamp;
     // Collisions between keywords will allow movement, but not extend the
     // time until they go back to their original positions
     if (!withCircle) { return; }
+
+    pair.bodyA.render.lastCollision = Date.now();
+    pair.bodyB.render.lastCollision = Date.now();
 
     const keyword = (pair.bodyA === guideOutline ? pair.bodyB : pair.bodyA).render.wrapper;
 
