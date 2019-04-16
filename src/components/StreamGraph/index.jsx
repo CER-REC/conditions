@@ -98,12 +98,18 @@ class StreamGraph extends React.Component {
           <VictoryGroup
             standalone={false}
             padding={0}
+            animate={{
+              onExit: {
+                duration: 500,
+                before: () => ({ _y: 0 }),
+              },
+            }}
           >
             <StackGroupProps
               groupProps={{
                 onChange: noop,
                 controlYear: null,
-                projectData: filteredData,
+                projectData: this.processedData,
                 allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
               }}
             >
