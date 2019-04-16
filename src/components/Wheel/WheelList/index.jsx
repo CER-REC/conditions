@@ -10,10 +10,7 @@ const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
 const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
 
 const WheelList = (props) => {
-  const wrapIndex = i => (
-    (props.selected + i + props.listContent.length)
-    % props.listContent.length
-  );
+  const wrapIndex = i => (props.selected + i + props.listContent.length) % props.listContent.length;
   const handleOnChange = i => props.onChange(wrapIndex(i - 3));
 
   const listElements = indexOffsets.map((offset) => {
@@ -33,28 +30,20 @@ const WheelList = (props) => {
   });
 
   return (
-    <div
-      className={classNames('WheelList', props.className)}
-    >
+    <div className={classNames('WheelList', props.className)}>
       <div className="labelContainer">
         <FormattedMessage id={`components.companyWheel.list.${props.wheelType}`}>
           {text => <span className="label">{text}</span>}
         </FormattedMessage>
-        <span className="selected" style={{ width: `${props.textClippingRadius - 25}%` }}>
+        <span className="selected">
           {props.wheelType === 'company'
-            ? props.listContent[props.selected].name
-            : props.listContent[props.selected].region_name
-          }
+            ? `${props.listContent[props.selected].name}`
+            : `${props.listContent[props.selected].region_name}`}
         </span>
       </div>
       <div className="listContainer">
         <div className="list">
-          <List
-            elevated
-            items={listElements}
-            onChange={handleOnChange}
-            selected={3}
-          />
+          <List elevated items={listElements} onChange={handleOnChange} selected={3} />
         </div>
       </div>
     </div>

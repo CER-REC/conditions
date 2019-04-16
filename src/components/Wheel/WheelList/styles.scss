@@ -1,7 +1,6 @@
 @import "../../../styles/colors.scss";
 @import "../../../styles/fontVariables.scss";
-@import '../../../styles/legend.scss';
-
+@import "../../../styles/legend.scss";
 
 .WheelList {
   display: flex;
@@ -17,8 +16,8 @@
 
   .labelContainer {
     position: absolute;
-    top:50%;
-    transform: translate(0 , -51%);
+    top: 50%;
+    transform: translate(0, -51%);
     height: 24px;
     width: 150%;
     overflow: visible;
@@ -48,7 +47,7 @@
     .selected {
       position: absolute;
       left: 35%;
-      width: 36%;
+      width: 60%;
       overflow: hidden;
       text-align: left;
       text-overflow: ellipsis;
@@ -83,7 +82,7 @@
     top: 50%;
     left: 45%;
     width: 55%;
-    transform: translate(0 , -50%);
+    transform: translate(0, -50%);
     .selected {
       line-height: 20px;
     }

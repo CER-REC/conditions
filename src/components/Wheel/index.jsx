@@ -113,11 +113,12 @@ class Wheel extends React.Component {
     this.setState({ newRotation: rotation });
   };
 
-  shouldRender = childComponent => (this.props.wheelData.length > 0
-    ? childComponent
-    : null);
+  shouldRender = componentRenderFn => (
+    this.props.wheelData.length > 0 ? componentRenderFn() : null)
+  ;
 
   render() {
+    const dataLength = this.props.wheelData.length;
     return (
       <div className="Wheel">
         <Spring
@@ -138,15 +139,17 @@ class Wheel extends React.Component {
               <div style={props} className="MovingContainer">
                 <svg viewBox="0 0 860 860">
                   <Ring ringType={this.props.wheelType} />
-                  {this.shouldRender(<AnimatedWheelRay
-                    stopWheel={this.stopWheel}
-                    wheelType={this.props.wheelType}
-                    items={this.props.wheelData}
-                    degreesPerItem={this.state.degreesPerItem}
-                    reservedDegrees={reservedDegrees}
-                    currentIndex={this.getIndex(props.rotation) % this.props.wheelData.length}
-                    {...props}
-                  />)}
+                  {this.shouldRender(() => (
+                    <AnimatedWheelRay
+                      stopWheel={this.stopWheel}
+                      wheelType={this.props.wheelType}
+                      items={this.props.wheelData}
+                      degreesPerItem={this.state.degreesPerItem}
+                      reservedDegrees={reservedDegrees}
+                      currentIndex={this.getIndex(props.rotation) % dataLength}
+                      {...props}
+                    />
+                  ))}
                 </svg>
               </div>
               <div className="interactiveItems">
@@ -159,17 +162,15 @@ class Wheel extends React.Component {
                     />
                   </g>
                 </svg>
-                {this.shouldRender(<WheelList
-                  wheelType={this.props.wheelType}
-                  listContent={this.props.wheelData}
-                  textClippingRadius="60"
-                  onChange={this.onChange}
-                  selected={
-                    (this.props.wheelData.length + this.getIndex(props.rotation))
-                    % this.props.wheelData.length
-                  }
-                />)
-                }
+                {this.shouldRender(() => (
+                  <WheelList
+                    wheelType={this.props.wheelType}
+                    listContent={this.props.wheelData}
+                    textClippingRadius="60"
+                    onChange={this.onChange}
+                    selected={(dataLength + this.getIndex(props.rotation)) % dataLength}
+                  />
+                ))}
               </div>
             </div>
           )}

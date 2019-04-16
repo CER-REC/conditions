@@ -25,54 +25,44 @@ const props = {
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
-  .addDecorator(withInteraction({
-    actions: {
-      setBrowseBy: () => browseBy => ({ browseBy }),
-      selectRay: () => () => ({}),
-      setFindAny: () => e => ({ findAny: e }),
-      setProjectYear: () => selectedYear => ({ projectYear: selectedYear }),
-      setProjectStatus: () => status => ({ projectStatus: status }),
-      setIncluded: () => words => ({ included: words }),
-      setExcluded: () => words => ({ excluded: words }),
-      setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
-      setSelectedCondition: ({ selected }) => selectedCondition => ({
-        selected: { ...selected, condition: selectedCondition },
-      }),
-      setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
-      openIntermediatePopup: () => () => ({}),
-      openProjectDetails: () => () => ({}),
-    },
-    state: {
-      browseBy: 'company',
-      included: [],
-      excluded: [],
-      projectStatus: ['OPEN'],
-      projectYear: year,
-      findAny: true,
-      selected: {
-        feature: 'theme',
-        condition: { instrumentIndex: 0, itemIndex: 0 },
-        project: 1225,
+  .addDecorator(
+    withInteraction({
+      actions: {
+        setBrowseBy: () => browseBy => ({ browseBy }),
+        selectRay: () => () => ({}),
+        setFindAny: () => e => ({ findAny: e }),
+        setProjectYear: () => selectedYear => ({ projectYear: selectedYear }),
+        setProjectStatus: () => status => ({ projectStatus: status }),
+        setIncluded: () => words => ({ included: words }),
+        setExcluded: () => words => ({ excluded: words }),
+        setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
+        setSelectedCondition: ({ selected }) => selectedCondition => ({
+          selected: { ...selected, condition: selectedCondition },
+        }),
+        setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
+        openIntermediatePopup: () => () => ({}),
+        openProjectDetails: () => () => ({}),
       },
-    },
-  }))
+      state: {
+        browseBy: 'company',
+        included: [],
+        excluded: [],
+        projectStatus: ['OPEN'],
+        projectYear: year,
+        findAny: true,
+        selected: {
+          feature: 'theme',
+          condition: { instrumentIndex: 0, itemIndex: 0 },
+          project: 1225,
+        },
+      },
+    }),
+  )
+  .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
   .addDecorator(withGQL)
-  .add('default', () => (
-    <ViewTwoUnconnected
-      {...props}
-      {...getInteractionProps()}
-    />
-  ))
-  .add('connected variant', () => (
-    <ViewTwoGraphQL
-      {...props}
-      {...getInteractionProps()}
-    />
-  ), { wrapped: true })
+  .add('connected variant', () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />, {
+    wrapped: true,
+  })
   .add('layout only', () => (
-    <ViewTwoUnconnected
-      layoutOnly
-      {...props}
-      {...getInteractionProps()}
-    />
+    <ViewTwoUnconnected layoutOnly {...props} {...getInteractionProps()} />
   ));
