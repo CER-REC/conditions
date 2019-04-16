@@ -13,9 +13,9 @@ const WheelList = (props) => {
   const wrapIndex = i => (props.selected + i + props.listContent.length) % props.listContent.length;
   const handleOnChange = i => props.onChange(wrapIndex(i - 3));
 
-  const setDangerousText = (text) => (
+  const setDangerousText = text => (
     {
-      __html: text
+      __html: text,
     }
   );
 
