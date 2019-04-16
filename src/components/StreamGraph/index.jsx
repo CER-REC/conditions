@@ -71,32 +71,21 @@ class StreamGraph extends React.Component {
       ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
       : this.processedData;
 
-    const [numOfConditions, dates] = filteredData.reduce((acc, cur) => {
-      Object.entries(cur.years).forEach(([year, val]) => {
-        acc[0].push(val);
-        acc[1].add(year);
+    const { conditionsByDate, minConditionCount } = filteredData.reduce((acc, cur) => {
+      Object.entries(cur.years).forEach(([year, count]) => {
+        acc.conditionsByDate[year] = count + (acc.conditionsByDate[year] || 0);
+        if (count < acc.minConditionCount) { acc.minConditionCount = count; }
       });
       return acc;
-    }, [[], new Set()]);
+    }, { conditionsByDate: {}, minConditionCount: Infinity });
 
-    const minConditionValue = Math.min(...numOfConditions);
-
-    const [minDateValue, maxDateValue] = Array.from(dates).reduce((acc, cur) => {
-      if (cur < acc[0]) { acc[0] = cur; }
-      if (cur > acc[1]) { acc[1] = cur; }
-      return acc;
-    }, [Infinity, 0]);
-
-    let conditionsByDate = filteredData.reduce((acc, next) => {
-      Object.entries(next.years).forEach(([date, count]) => {
-        if (!acc[date]) { acc[date] = 0; }
-        acc[date] += count;
-      });
-      return acc;
-    }, {});
-    conditionsByDate = Object.values(conditionsByDate);
-
-    const maxConditionValue = Math.max(...conditionsByDate);
+    const { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
+      .reduce((acc, [year, count]) => {
+        if (year < acc.minDate) { acc.minDate = year; }
+        if (year > acc.maxDate) { acc.maxDate = year; }
+        if (count > acc.maxConditionTotal) { acc.maxConditionTotal = count; }
+        return acc;
+      }, { minDate: Infinity, maxDate: 0, maxConditionTotal: 0 });
 
     if (this.props.streamOnly) {
       return (
@@ -148,7 +137,7 @@ class StreamGraph extends React.Component {
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
-          tickValues={[minConditionValue, maxConditionValue]}
+          tickValues={[minConditionCount, maxConditionTotal]}
           className="axis-label"
           style={axisStyles}
         />
@@ -156,7 +145,7 @@ class StreamGraph extends React.Component {
           label="Effective Date"
           tickFormat={roundDateLabel}
           className="axis-label"
-          domain={[minDateValue, maxDateValue]}
+          domain={[minDate, maxDate]}
           style={axisStyles}
         />
         <StackGroupProps
