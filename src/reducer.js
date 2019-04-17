@@ -5,6 +5,7 @@ import { reducer as searchReducer } from './actions/search';
 import { reducer as chartIndicatorPositionReducer } from './actions/chartIndicatorPosition';
 import { reducer as browseByReducer } from './actions/browseBy';
 import { reducer as detailViewReducer } from './actions/detailViewExpanded';
+import { reducer as transitionStateReducer } from './actions/transitionState';
 
 const nestedReducers = combineReducers({
   selected: selectedReducer,
@@ -12,6 +13,7 @@ const nestedReducers = combineReducers({
   chartIndicatorPosition: chartIndicatorPositionReducer,
   browseBy: browseByReducer,
   detailViewExpanded: detailViewReducer,
+  transitionState: transitionStateReducer,
 });
 
 export default (initialState = {}, action) => {

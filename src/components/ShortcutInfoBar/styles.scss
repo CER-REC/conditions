@@ -13,7 +13,8 @@
     display: inline-block;
     background: #D1057A;
     width: 30px;
-    padding: 10px 5px;
+    height: 40px;
+    padding: 0 5px;
 
     &.expanded {
       left: 200px;
@@ -21,7 +22,8 @@
   }
 
   .Icons * {
-    display: inline-block;
+    display: inline;
+    margin-right: 2px;
   }
 
   .About {
@@ -31,11 +33,18 @@
       cursor: pointer;
       text-decoration: none;
       border: none;
+      background: none;
+      font-family: inherit;
+      color: inherit;
+      text-align: left;
+      padding-left: 0;
     }
   }
 
   .InfoBar {
     display: inline-block;
+    padding-left: 8px;
+    line-height: 1.8;
   }
 
   .AngleDoubleDown {

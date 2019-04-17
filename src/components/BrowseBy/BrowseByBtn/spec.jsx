@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import BrowseByBtn from '.';
 
@@ -52,4 +52,3 @@ describe('Components|BrowseByBtn', () => {
     });
   });
 });
-

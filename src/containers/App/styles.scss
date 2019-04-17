@@ -1,0 +1,234 @@
+@import "./transitions.scss";
+
+.App {
+  $defaultTransition: 1s ease-in-out;
+
+  $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
+  $fastestEnd: 1s cubic-bezier(1, 0, 1, 0);
+
+  $fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
+  $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
+
+  position: relative;
+
+  max-width: 1168px;
+  height: 100vh;
+
+  overflow-x: hidden;
+
+  .Guide {
+    z-index: 999;
+
+    // Guide = 176px / 2 = 88px
+    left: -88px;
+    top: -88px;
+
+    transform: translate(0px, 0px);
+
+    transition: all $defaultTransition;
+
+    .CircleContainer span {
+      transition: opacity $defaultTransition;
+
+      &.hidden {
+        transition: opacity $defaultTransition, visibility 0s 1s;
+      }
+    }
+  }
+
+  .browseBy {
+    z-index: 999;
+    position: absolute;
+    top: 94%;
+    left: 0;
+
+    height: 40px;
+
+    transition: transform $defaultTransition;
+    .BrowseBy {
+      transition: opacity $defaultTransition;
+
+      .arrowWrapper {
+        transition:
+          background-color $defaultTransition,
+          margin-right $defaultTransition,
+          color $defaultTransition,
+          opacity $defaultTransition;
+
+        opacity: 1;
+
+        &::after {
+          transition: border-color $defaultTransition;
+        }
+      }
+      .browseLabel {
+        transition:
+          width $fastStart,
+      }
+
+      .location,
+      .company {
+        transition:
+          opacity $defaultTransition,
+          transform $defaultTransition;
+
+        opacity: 1
+      }
+    }
+
+  }
+
+  .ViewOne {
+    position: absolute;
+    top: 0;
+
+    .row {
+      &.intro {
+        position: relative;
+        transform: translateY(0px);
+        transition: transform $defaultTransition;
+      }
+      &.explorer {
+        position: relative;
+        transform: translateY(0px);
+        transition: transform $defaultTransition;
+      }
+      &.buttons {
+        position: absolute;
+        bottom: 0;
+
+        .ShortcutInfoBar {
+          transition: opacity $defaultTransition;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .ViewTwo {
+    position: absolute;
+    top:0 ;
+    left: 0;
+
+    height: 90vh;
+
+    opacity: 1;
+
+    transition: opacity $fastestEnd;
+
+    .header,
+    .wheel,
+    .companyBreakdown,
+    .menus {
+      transition: opacity $defaultTransition;
+    }
+
+    .ConditionDetails {
+      .listPane,
+      .popout,
+      .ProjectHeader,
+      .contentPane {
+        transition: opacity $defaultTransition;
+      }
+    }
+  }
+
+  .ViewThree {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 90vh;
+
+    opacity: 0;
+
+    transition: opacity $defaultTransition;
+  }
+
+  .Footer {
+    position: absolute;
+    top: 90vh;
+
+    visibility: hidden;
+
+    transition: opacity $defaultTransition, visibility 0s 1s;
+  }
+
+  &.transition-state-8 {
+    .Guide {
+      transition: opacity $fastestStart, transform 0s 1s;
+    }
+  }
+
+  // Snapping back from View 2 to View 1, using different curves to make it look decent
+  &.transition-state-9 {
+    .Guide {
+      transition: opacity $fastestEnd;
+    }
+
+    .browseBy {
+      transition: transform $fastStart;
+
+      .BrowseBy {
+        transition:
+          opacity $fastEnd,
+          color $fastEnd,
+          background-color $fastEnd,
+          margin-right $fastEnd;
+
+        &::after {
+          transition: border-color $fastEnd;
+        }
+      }
+
+      .BrowseByBtn.location {
+        transition: opacity $fastEnd;
+      }
+    }
+
+    .ViewOne {
+      .row {
+        &.intro {
+          transition: transform $defaultTransition;
+        }
+        &.explorer {
+          transition: transform $defaultTransition;
+        }
+        &.buttons {
+
+          .ShortcutInfoBar {
+            transition: opacity $fastEnd;
+          }
+        }
+      }
+    }
+
+    .ViewTwo {
+      transition: opacity $fastStart;
+
+      .header,
+      .wheel,
+      .companyBreakdown,
+      .menus {
+        transition: opacity $fastStart;
+      }
+
+      .ConditionDetails {
+        .listPane,
+        .popout,
+        .ProjectHeader,
+        .contentPane {
+          transition: opacity $fastStart;
+        }
+      }
+    }
+
+    .ViewThree {
+      transition: opacity $fastStart;
+    }
+
+    .Footer {
+      transition: opacity $fastStart, visibility 0s 1s;
+    }
+  }
+}
