@@ -23,9 +23,9 @@ export default class Keyword extends Body {
       },
     );
     body.frictionAir = 0.02;
-    body.render.lastCollision = Date.now();
     super(body, engine);
     this.keyword = keyword;
+    this.lastCollision = Date.now();
   }
 
   get isVisible() { return this.body.collisionFilter.category !== placeholderCategory; }
@@ -73,7 +73,7 @@ export default class Keyword extends Body {
     }
 
     if (this.category === visibleTextCategory
-        && this.body.render.lastCollision + 5000 <= Date.now()
+        && this.lastCollision + 5000 <= Date.now()
         && keywordsCanReset) {
       const { x, y, width, height } = this.keyword.outline;
       const originalBounds = {

@@ -80,8 +80,8 @@ export default class PhysicsVariant extends React.PureComponent {
     // time until they go back to their original positions
     if (!withCircle) { return; }
 
-    pair.bodyA.render.lastCollision = Date.now();
-    pair.bodyB.render.lastCollision = Date.now();
+    pair.bodyA.render.wrapper.lastCollision = Date.now();
+    pair.bodyB.render.wrapper.lastCollision = Date.now();
 
     const keyword = (pair.bodyA === guideOutline ? pair.bodyB : pair.bodyA).render.wrapper;
 

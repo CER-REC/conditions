@@ -35,6 +35,12 @@ $keywordColors: (
       &.color#{$index} { fill: $color; }
     }
 
+    // Performance optimizations
+    rect, path, text {
+      backface-visibility: hidden;
+      transform-style: flat;
+    }
+
     rect, path {
       opacity: 1;
       transition: opacity 1s 3s;
