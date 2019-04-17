@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
-import BrowseByBtn from '../../components/BrowseByBtn';
 import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import TrendButton from '../../components/TrendButton';
 import {
@@ -76,8 +75,6 @@ const ViewTwo = props => (
             : { items: locationData.items.slice(0, 50) }
           }
         />
-        <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
-        <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
@@ -135,7 +132,7 @@ ViewTwo.propTypes = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
-  setBrowseBy: PropTypes.func.isRequired,
+  // setBrowseBy: PropTypes.func.isRequired,
   setFindAny: PropTypes.func.isRequired,
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -164,6 +161,7 @@ ViewTwo.propTypes = {
   projectsData: PropTypes.shape({
     counts: PropTypes.arrayOf(project).isRequired,
   }).isRequired,
+  jumpToView3: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {

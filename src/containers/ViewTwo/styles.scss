@@ -8,14 +8,20 @@
     menus: 21,
     conditions: 58,
   )) {
+
+    $header-height: 100px;
     /* To ensure the layoutOnly mode appears properly */
-    .header { min-height: 100px; }
+    .header { min-height: $header-height; }
     .wheel { min-height: 200px; }
     .conditions { min-height: 100px; }
 
     // Because we're using inline-block to align the elements, we want to remove
     // the menus right margin as well, since its also the end of the row
     > .row > section.menus { margin-right: 0; }
+
+    .row:last-of-type {
+      height: calc(100% - #{$header-height});
+    }
 
     // We want the condition details to sit at the bottom of the project menu
     section.companyBreakdown {
@@ -32,6 +38,10 @@
         position: relative;
         left: 200px;
       }
+    }
+
+    .conditions {
+      height: 33%;
     }
   }
 }

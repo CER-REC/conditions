@@ -13,12 +13,6 @@
     selectedCompany: 38,
     conditionDetails: 77,
   ));
-  /**
-   *  TODO: Go over all of this and fix it up
-   *
-   *  Styling for the preview release. None of the code below should be
-   *  considered final or correct, and I apologize for all of it.
-   */
 
   .row {
     overflow: hidden;
@@ -36,8 +30,7 @@
   .secondRow { border-bottom: 1px solid $DarkGray; }
 
   .firstRow {
-    height: 40vh;
-    min-height: 400px;
+    height: 40%;
     position: relative;
 
     .features {
@@ -51,12 +44,13 @@
       margin-top: 42px;
     }
     .chart {
-      margin-top: 10px;
+      height: 100%;
+      position: relative;
     }
   }
 
   .secondRow {
-    height: 35vh;
+    height: 30%;
     min-height: 200px;
     position: relative;
 
@@ -71,10 +65,13 @@
   }
 
   .thirdRow {
-    height: 35vh;
+    height: 30%;
     min-height: 200px;
+    padding-top: 16px;
 
-    padding-top: 10px;
+    .conditionDetails {
+      height: 100%;
+    }
 
     .selectedCompany {
       position: relative;
@@ -133,15 +130,6 @@
         }
 
       }
-
-      .BrowseByBtn {
-        position: absolute;
-
-        left: 16px;
-        bottom: 24px;
-      }
-
     }
   }
-  // End of preview styling
 }

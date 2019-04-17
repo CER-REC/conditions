@@ -9,7 +9,6 @@ import StreamGraph from '../../components/StreamGraph';
 import BubbleChart from '../../components/BubbleChart';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
-import BrowseByButton from '../../components/BrowseByBtn';
 import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
 import { allConditionsPerYear, allConditionsByCommodityOrInstrument, conditionData } from '../../proptypes';
@@ -17,8 +16,6 @@ import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockDat
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
-
-const noop = () => {};
 
 const ViewThree = props => (
   <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
@@ -83,7 +80,6 @@ const ViewThree = props => (
         <div className="selectedCompanyHeader">
           <h1>Selected Company:</h1> <h2>Company Name</h2>
         </div>
-        <BrowseByButton mode="company" onClick={noop} />
       </section>
       <section className="conditionDetails">
         <ConditionDetails

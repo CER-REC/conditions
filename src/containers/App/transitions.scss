@@ -1,0 +1,175 @@
+$defaultTransition: 1s ease-in-out;
+
+$fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
+$fastestEnd: 1s cubic-bezier(1, 0, 1, 0);
+
+$fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
+$fastestStart: 1s cubic-bezier(0, 1, 0, 1);
+
+$faded: 0.3;
+
+/**
+ *  Each state inherits the previous values, so we only have to declare the parts
+ *  that change at each step.
+ */
+$states: (
+  0: (
+    ".Guide": (
+      transform: translate(18%, 35vh)
+    ),
+    ".ViewTwo": (pointer-events: none),
+    ".ViewTwo .header": (opacity: 0),
+    ".ViewTwo .wheel": (opacity: 0),
+    ".ViewTwo .companyBreakdown": (opacity: 0),
+    ".ViewTwo .menus": (opacity: 0),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: 0),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 0),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
+    ".ViewThree": (
+      pointer-events: none,
+      visibility: hidden,
+    ),
+    // Fix for Firefox; the svg's pointer-events: all overrides visibility: hidden
+    ".ViewThree .VictoryContainer svg": (pointer-events: visible !important),
+    ".Footer": (
+      opacity: 0,
+
+      transition: "opacity $fastStart, visibility 0s 1s",
+    ),
+  ),
+  // 9 resets from View 2 -> 1, just with different transitions
+  9: (),
+  1: (
+    ".Guide": (transform: translate(44%, 70vh)),
+    ".browseBy .BrowseByBtn.location": (opacity: $faded),
+    ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: $faded),
+    ".ViewOne .row.intro": (transform: "translateY(-50vh)"),
+    ".ViewOne .row.explorer": (transform: "translateY(-50vh)"),
+  ),
+  2: (
+    ".Guide": (transform: translate(56%, 83vh)),
+    ".browseBy": (transform: translateY(-10vh)),
+    ".browseBy .BrowseByBtn.location": (opacity: 0),
+    ".ViewOne .row.buttons .ShortcutInfoBar": (opacity: 0),
+    ".ViewOne .row.intro": (transform: "translateY(-100vh)"),
+    ".ViewOne .row.explorer": (transform: "translateY(-100vh)"),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
+  ),
+  3: (
+    ".Guide": (transform: translate(72%, 22vh)),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: $faded),
+    ".ViewTwo .menus": (opacity: 1),
+  ),
+  4: (
+    ".Guide": (transform: translate(42%, 70vh)),
+    ".ViewTwo .menus": (opacity: $faded),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
+  ),
+  5: (
+    ".Guide": (transform: translate(66%, 5vh)),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: $faded),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: $faded),
+    ".ViewTwo .companyBreakdown": (opacity: 1),
+  ),
+  6: (
+    ".Guide": (transform: translate(9%, 65vh)),
+    ".browseBy .BrowseBy": (opacity: 0),
+    ".browseBy .BrowseByBtn.company": (opacity: 0),
+    ".browseBy .BrowseByBtn.location": (opacity: 0),
+    ".ViewTwo .companyBreakdown": (opacity: $faded),
+    ".ViewTwo .wheel": (opacity: 1),
+  ),
+  7: (
+    ".Guide": (transform: translate(82%, 5vh)),
+    ".browseBy": (transform: translate(10px, -10vh)),
+    ".browseBy .BrowseBy": (opacity: 1),
+    ".browseBy .BrowseByBtn.company": (opacity: 1),
+    ".browseBy .BrowseByBtn.location": (
+      opacity: 1,
+      transform: translateX(-100%),
+      ),
+    ".browseBy .BrowseByBtn.inactive": (
+      visibility: hidden,
+      opacity: 0,
+      transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
+    ),
+    ".ViewTwo .header": (opacity: 1),
+    ".ViewTwo .wheel": (opacity: 1),
+    ".ViewTwo .companyBreakdown": (opacity: 1),
+    ".ViewTwo .menus": (opacity: 1),
+    ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
+    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
+    ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
+    ".Footer": (
+      opacity: 1,
+      visibility: visible,
+
+      transition: opacity $defaultTransition,
+    ),
+  ),
+  8: (
+    ".Guide": (
+      opacity: 0,
+    ),
+    ".ViewTwo": (
+      pointer-events: auto,
+      transition: "opacity #{$defaultTransition}",
+    ),
+    ".ViewThree": (
+      transition: "opacity #{$fastestStart}, visibility 0s 1s",
+    ),
+  ),
+  10: (
+    ".browseBy .arrowWrapper .browseLabel": (width: 128px),
+    ".browseBy .BrowseByBtn.active": (
+      visibility: hidden,
+      opacity: 0,
+      transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
+    ),
+    ".browseBy .BrowseByBtn.inactive": (
+      visibility: visible,
+      opacity: 1,
+      transition: "opacity #{$defaultTransition}, transform #{$defaultTransition}",
+    ),
+    ".ViewTwo": (
+      pointer-events: none,
+      visibility: hidden,
+      transition: "opacity #{$fastestStart}, visibility 0s 1s",
+      opacity: 0,
+    ),
+    ".ViewThree": (
+      pointer-events: auto,
+      visibility: visible,
+      opacity: 1,
+      transition: "opacity #{defaultTransition}",
+    ),
+  ),
+);
+
+$combinedState: ();
+
+.App {
+  @each $stage, $rules in $states {
+    &.transition-state-#{$stage} {
+      @each $selector, $properties in $rules {
+        @if map_has_key($combinedState, $selector) == false {
+          $combinedState: map-merge($combinedState, ($selector: ())) !global;
+        }
+
+        $combinedState: map-merge(
+          $combinedState,
+          ($selector: map-merge(map-get($combinedState, $selector), $properties)),
+        ) !global;
+      }
+
+      @each $selector, $properties in $combinedState {
+        #{$selector} {
+          @each $property, $value in map-get($combinedState, $selector) {
+            #{$property}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
