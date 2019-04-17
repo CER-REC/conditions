@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
 import {
+  guideCategory,
   guideOutlineCategory,
   resettingCategory,
   visibleTextCategory,
@@ -127,6 +128,7 @@ export default class PhysicsVariant extends React.PureComponent {
       this.keywords.forEach((body) => {
         if (body.category === resettingCategory) { return; }
         body.addCollisionMask(guideOutlineCategory);
+        body.removeCollisionMask(guideCategory);
       });
     });
   };
@@ -149,6 +151,9 @@ export default class PhysicsVariant extends React.PureComponent {
         .finally(() => { this.updateGuidePosition(); });
       this.keywords.forEach((body) => {
         body.removeCollisionMask(guideOutlineCategory);
+        if (body.category === visibleTextCategory) {
+          body.addCollisionMask(guideCategory);
+        }
       });
     } else {
       this.closeGuide();
@@ -209,6 +214,10 @@ export default class PhysicsVariant extends React.PureComponent {
         <path
           className="guideOutline"
           d={this.guide.outline.renderedPathPoints}
+          onMouseDown={this.onGuideMouseDown}
+          onTouchStart={this.onGuideMouseDown}
+          onMouseUp={this.onGuideMouseUp}
+          onTouchEnd={this.onGuideMouseUp}
         />
         <path
           className="guide"
@@ -217,7 +226,7 @@ export default class PhysicsVariant extends React.PureComponent {
           onTouchStart={this.onGuideMouseDown}
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
-        />;
+        />
       </g>
     );
   }

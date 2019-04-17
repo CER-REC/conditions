@@ -1,6 +1,7 @@
 import Matter from 'matter-js';
 import Body from './Body';
 import {
+  guideCategory,
   guideOutlineCategory,
   placeholderCategory,
   resettingCategory,
@@ -39,6 +40,7 @@ export default class Keyword extends Body {
 
   resetPosition() {
     this.removeCollisionMask(guideOutlineCategory);
+    this.removeCollisionMask(guideCategory);
     return Promise.all([
       this.moveTo(
         this.keyword.outline.x + (this.keyword.outline.width / 2),
