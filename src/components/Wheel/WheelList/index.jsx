@@ -45,8 +45,8 @@ const WheelList = (props) => {
           className="selected"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={setDangerousText(props.wheelType === 'company'
-            ? `${props.listContent[props.selected].name}`
-            : `${props.listContent[props.selected].region_name}`)
+            ? props.listContent[props.selected].name
+            : props.listContent[props.selected].region_name)
           }
         />
       </div>

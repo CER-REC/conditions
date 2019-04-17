@@ -59,10 +59,10 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
     }),
   )
   .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
-  .addDecorator(withGQL)
-  .add('connected variant', () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />, {
-    wrapped: true,
-  })
+  .add(
+    'connected variant', () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />,
+    { decorators: [withGQL] },
+  )
   .add('layout only', () => (
     <ViewTwoUnconnected layoutOnly {...props} {...getInteractionProps()} />
   ));
