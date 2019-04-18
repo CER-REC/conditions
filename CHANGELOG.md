@@ -1,3 +1,170 @@
+# [0.8.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.8.0) (2019-04-18)
+
+
+### App
+
+* **Features:** adds Footer transitions (a8a2f67)
+* **Features:** adds basic transition stages and a story knob (e1d4cbd)
+* **Features:** updates documentation, removes commented code (92e4d38)
+* **Features:** adds a rough version of the first transition step (e74176c)
+* **Features:** moves transitionState to Redux (60d7340)
+* **Features:** fixes positioning and transition issues (f7ce46c)
+* **Features:** fixes positioning issues, makes Guide larger (32cda23)
+* **Features:** adds jump-to-Footer interaction (b5f8500)
+* **Features:** adds component-specific overrides for scrolling (02f4b5c)
+* **Features:** adds a rough version of the second transition step (5146ae2)
+* **Features:** adds a rough version of the third transition step (cfdaef7)
+* **Features:** makes transition targets more granular, fixes prop errors (186a7c1)
+* **Features:** adds a rough version of the fourth transition step (e2784f1)
+* **Features:** implements scroll interactions (7dfb3d3)
+* **Features:** initial graphql apollo integration to app (a016d9a)
+* **Features:** adds a rough version of the fifth transition step (f868299)
+* **Features:** adds an event handler for the Trend button (10c7f64)
+* **Features:** implements a transition state callback for the BrowseBy buttons (6fa9358)
+* **Features:** transitions the BrowseBy buttons on mode changes (4a12f5a)
+* **Features:** handles Redux wrapper in App component (759a999)
+* **Features:** wraps the App with Redux, hooks the BrowseBy buttons up again (f00f85f)
+* **Features:** removes preemptive will-change properties (b954b5c)
+* **Features:** uses translate for all positioning animations (a6c9867)
+* **Features:** uses translate for improved performance when moving the Guide (f1a4a49)
+* **Features:** tweaks BrowseBy transitions (c82d9c4)
+* **Features:** adjusts View 2/3 transitions (d096acf)
+* **Features:** adds a rough version of the sixth transition step (e39fb92)
+* **Features:** updates BrowseBy visibility (443ef56)
+* **Features:** fades text from one Guide step to the next (df33fae)
+* **Features:** removes redundant BrowseBy buttons from Views (43d49b1)
+* **Features:** hides Footer to avoid capturing mouse events (8dac4e9)
+* **Features:** updates the views to use consistent heights (9736679)
+* **Features:** adjust View 3 to use the same heights as the others (4197f99)
+* **Features:** continues updating styles for a consistent viewport (f0e9416)
+* **Features:** adjusts View 1 styles (261ae12)
+* **Features:** adds a rough version of the seventh transition step (69e6d86)
+* **Features:** adds SkipIntro to View 1 (9391bb2)
+* **Features:** adds localized text for each Guide step (7e44ffe)
+* **Features:** adds basic View 2<->3 transition, updates styles (10b76ad)
+* **Features:** updates documentation with transition states (69087b8)
+* **Features:** moves guide CSS into sass map (e5b5b25)
+* **Features:** adjust transition curve for 8 -> 0 (f2d2d75)
+* **Features:** render components at all stages, add 8 -> 0 transition (e5d5ae5)
+* **Features:** uses pixels for Guide positioning rather than percent (d8ab68e)
+* **Bug Fixes:** adjusts CSS to match SearchBar changes (dc57d52)
+* **Bug Fixes:** fixes missing key errors, updates snapshots (3855998)
+* **Bug Fixes:** corrects issues integrating with the WET template (fe9c392)
+* **Bug Fixes:** checks for scrollable elements before transitioning (f81202a)
+* **Bug Fixes:** stops App from hijacking wheel events on List (0941a3f)
+* **Bug Fixes:** fixes Guide positioning at tutorial steps (54a6a1b)
+* **Bug Fixes:** reverts the Guide's x position to percents for scaling (7d93f30)
+* **Bug Fixes:** fixes pointer issues with Victory on Firefox (7ad1546)
+* **Tests:** updates snapshots (45d1984)
+* **Code Formatting:** removes commented code, disables linting for temp. code (a5a2339)
+* **Code Formatting:** uses variables for repeated styles (1be2177)
+* **Code Refactoring:** moves Guide state logic out of JSX (26dc665)
+* **Code Refactoring:** refactors and privatizes the BrowseByBtn component (9fdc5be)
+
+
+### BrowseBy
+
+* **Features:** adds missing callback prop (e65505b)
+* **Bug Fixes:** fixes proptype errors, updates snapshots (4a18f5f)
+
+
+### BrowseByBtn
+
+* **Bug Fixes:** fixes display issues with duplicate clip path IDs (d0043a7)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** adjusts component height to match the design doc (684c51a)
+
+
+### FeaturesLegend
+
+* **Code Refactoring:** renames component class to avoid namespace collision (69dd191)
+
+
+### GraphQL
+
+* **Features:** wheel-company variant query render on load (24b2937)
+
+
+### GraphQL/Wheel
+
+* **Features:** add conditional rendering, cleanup (6f78783)
+
+
+### Guide
+
+* **Features:** adds a margin to keep text inside the circle (425cfdb)
+
+
+### ProjectMenu
+
+* **Features:** shortens pipe to avoid overlapping ConditionDetails (5e618fe)
+
+
+### Query
+
+* **Code Refactoring:** modifies (48333e2)
+
+
+### ShortcutInfoBar
+
+* **Features:** updates styling (still pretty rough) (6a8e044)
+
+
+### SkipIntro
+
+* **Features:** adds arrow display (91938d9)
+* **Features:** adds a component for View 1's BrowseBy buttons (09bc778)
+
+
+### Snapshots
+
+* **Tests:** updates snapshots (3b3897c)
+
+
+### View 2
+
+* **Features:** fixes positioning issues (afab629)
+
+
+### View 3
+
+* **Code Formatting:** removes unused code (f4dca09)
+
+
+### View2
+
+* **Code Refactoring:** create alternate view and fetch polyfill (b0a1728)
+
+
+### ViewTwo
+
+* **Code Refactoring:** changes reflecting further PR suggestions (1a8542e)
+
+
+### ViewTwo, GraphQL, Wheel, GQLdecorator
+
+* **Code Refactoring:** refactor as per PR comments (2c4021a)
+
+
+### Wheel
+
+* **Features:** graphQL tied with company wheel variant (de20ff2)
+
+
+### WheelList
+
+* **Code Refactoring:** adds support for html formatted text, fixes text spacing for non selected items (b7307dd)
+* **Code Refactoring:** fixes linting issues errors (07ec78b)
+
+
+### BREAKING CHANGES
+
+* **GraphQL:** change of randomdatasample and removal of object from it to return an array instead
+* **Wheel:** Location Wheel, props changed
+
 # [0.7.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.7.0) (2019-04-15)
 
 
