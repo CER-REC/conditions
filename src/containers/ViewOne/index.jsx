@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
+import { Query } from 'react-apollo';
 import { FormattedMessage } from 'react-intl';
+import { viewOneQuery } from '../../queries/viewOne';
+
 import ConditionExplorer from '../../components/ConditionExplorer';
 import keywords from '../../components/ConditionExplorer/mockKeywords';
 import ShortcutInfoBar from '../../components/ShortcutInfoBar';
