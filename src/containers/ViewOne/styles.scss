@@ -6,13 +6,16 @@
   @include grid((
     introduction: 116,
     explorer: 116,
-    browseBy: 58,
-    infoBar: 57,
+    browseBy: 65,
+    infoBar: 116,
   )) {
-    height: 100vh;
+    height: 100%;
+
+    .row.intro {
+      height: 100px;
+    }
 
     .introduction {
-      height: 100px;
       h1 {
         font-family: $fira-sans-condensed-bold;
         font-size: 24px;
@@ -28,12 +31,26 @@
       }
     }
 
-    .explorer {
-      height: calc(100vh - 200px);
+    .row.explorer {
+      height: calc(100% - 200px);
+
+      .explorer {
+        height: 100%;
+      }
     }
 
     .browseBy, .infoBar {
-      height: 100px;
+      height: 72px;
+    }
+
+    .infoBar {
+      position: relative;
+
+      .ShortcutInfoBar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
 }

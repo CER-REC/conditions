@@ -3,7 +3,7 @@
 
 .ConditionDetails {
   max-width: 820px;
-  height: 300px;
+  height: 100%;
 
   font-family: $fira-sans-condensed-light;
   font-size: 12px;
@@ -63,6 +63,7 @@
     display: inline-block;
     width: 73%;
     vertical-align: top;
+    height: calc(100% - 24px);
   }
 
   .contentHeading {

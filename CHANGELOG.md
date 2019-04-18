@@ -1,3 +1,38 @@
+# [0.7.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.7.0) (2019-04-15)
+
+
+### ConditionExplorer
+
+* **Features:** adds guide dot interactions and fixes PR comments (5e69568)
+* **Features:** keep Guide and Outline positions synchronized (3a075e1)
+* **Features:** finish implementing guide text and sizing (eb06e56)
+* **Bug Fixes:** fixes bug with double-click still opening guide (11a39d2)
+* **Bug Fixes:** fixes bugs with engine and transition timings (9084329)
+* **Bug Fixes:** fixes collision when immediately opening and closing guide (6a088d5)
+* **Tests:** updates snapshots (26a8248)
+* **Code Formatting:** fixes linting errors (8650aac)
+* **Code Formatting:** fixes PR comments (d45824a)
+* **Code Formatting:** hide guide arrows instead of removing them (df9524d)
+* **Code Refactoring:** rename circle/guide/outline and categories (9dfa56d)
+
+
+### Dependencies
+
+* **Bug Fixes:** update dependency react-redux to v7 (9b85637)
+* **Project Maintenance:** update dependency cz-customizable to v5.10.0 (6971751)
+* **Project Maintenance:** update dependency enzyme-adapter-react-16 to v1.12.1 (4a2c251)
+* **Project Maintenance:** update dependency opn-cli to v4.1.0 (8ba4f96)
+
+
+### Interactive Guide
+
+* **Features:** add on click overlay (2e09a4c)
+
+
+### List
+
+* **Features:** adds prop for arrows on outside of list (4aa8722)
+
 # [0.6.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.6.0) (2019-04-09)
 
 

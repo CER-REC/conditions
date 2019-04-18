@@ -7,7 +7,6 @@ import { viewTwoQuery } from '../../queries/viewTwo';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
-import BrowseByBtn from '../../components/BrowseByBtn';
 import TrendButton from '../../components/TrendButton';
 import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import { browseByType, yearRangeType, featureTypes, conditionData, project } from '../../proptypes';
@@ -66,8 +65,6 @@ const ViewTwo = props => (
     <section className="row">
       <section className="wheel">
         <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
-        <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
-        <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
@@ -79,7 +76,7 @@ const ViewTwo = props => (
       </section>
       <section className="menus">
         <TrendButton
-          onClick={noop}
+          onClick={props.jumpToView3}
           feature="theme"
           subFeature=""
           projectData={conditionCountsByYear.counts}
@@ -121,7 +118,7 @@ ViewTwo.propTypes = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
-  setBrowseBy: PropTypes.func.isRequired,
+  // setBrowseBy: PropTypes.func.isRequired,
   setFindAny: PropTypes.func.isRequired,
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -152,6 +149,7 @@ ViewTwo.propTypes = {
   }).isRequired,
   // The shape of wheelData will change once more integration is done.
   wheelData: PropTypes.arrayOf(PropTypes.any),
+  jumpToView3: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {

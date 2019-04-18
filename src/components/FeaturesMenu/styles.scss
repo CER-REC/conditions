@@ -31,6 +31,13 @@ $select-side-padding: 0.4em;
     }
   }
   &.dropDown {
+
+    margin-bottom: 8px;
+
+    .Dropdown {
+      width: 100px;
+    }
+
     .title {
       color: $Gray160;
       font-weight: bold;

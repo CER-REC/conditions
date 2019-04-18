@@ -1,11 +1,11 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { storiesForComponent } from '../../../.storybook/utils';
-import withStatus from '../../../.storybook/addon-status';
+import { storiesForComponent } from '../../../../.storybook/utils';
+import withStatus from '../../../../.storybook/addon-status';
 import BrowseByBtn from '.';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|BrowseByBtn', module, ReadMe)
+storiesForComponent('Components|BrowseBy/BrowseByBtn', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['onClick'] }))
   .add('with state toggle', () => (
@@ -26,4 +26,3 @@ storiesForComponent('Components|BrowseByBtn', module, ReadMe)
       {...getInteractionProps()}
     />
   ));
-

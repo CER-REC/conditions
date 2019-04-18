@@ -222,6 +222,18 @@
     "featureMenu": {
       "dropDownTitle": "Feature"
     },
+    "guide": {
+      "tutorial": {
+        "0": "Scroll Down",
+        "1": "Scroll Down",
+        "2": "Here is the full legal text of the condition you selected",
+        "3": "Conditions are characterized by features, such as theme",
+        "4": "You can browse other conditions in this project",
+        "5": "You can browse other projects by this company",
+        "6": "Spin wheel to browse companies",
+        "7": "Look around to discover more!"
+      }
+    },
     "instrumentsLegend": {
       "all": "All Instruments"
     },
@@ -358,6 +370,11 @@
     "trendButton": {
       "description": "Trends &\nDefinitions"
     },
+    "browseBy": {
+      "skip": "Skip intro to browse:",
+      "return": "Return to browse:",
+      "blank": " "
+    },
     "browseByBtn": {
       "projectsBy": "Projects by {icon}",
       "conditionsBy": "Conditions by {icon}",
@@ -370,9 +387,6 @@
       "header": {
         "title": "Conditions on NEB-regulated energy projects",
         "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation."
-      },
-      "footer": {
-        "skip": "Skip intro to browse:"
       }
     }
   }

@@ -12,7 +12,7 @@ const FeaturesLegend = (props) => {
   let footer = null;
   if (props.isProjectLegend) {
     footer = (
-      <div className="Footer">
+      <div className="footer">
         <h3 className="Title">
           <FormattedMessage id="components.projectLegend.numberOfConditions" />
         </h3>

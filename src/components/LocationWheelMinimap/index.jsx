@@ -12,7 +12,7 @@ const topoObj = 'economic_regions_2016_latlng_simplified';
 
 // This should use the same dimensions as the component's div to avoid scaling
 // the svg's stroke width.
-const viewBox = { width: 100, height: 100 };
+const viewBox = { width: 96, height: 96 };
 
 const projectFeature = feat => geoConicConformal()
   // Rotate the province w.r.t Canada's longitudinal center

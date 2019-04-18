@@ -41,6 +41,7 @@ class List extends React.PureComponent {
 
   debounceScrollEvents = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     this.handleScroll(e.deltaY);
   }
 

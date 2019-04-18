@@ -6,6 +6,8 @@ import ReadMe from './README.md';
 import { ViewTwoUnconnected, ViewTwoGraphQL } from '.';
 import { searchData, conditionData, projectsData } from '../../mockData';
 
+const noop = () => {};
+
 const year = {
   start: 1970,
   end: 1980,
@@ -22,6 +24,7 @@ const props = {
     data: conditionData,
   },
   browseBy: 'company',
+  jumpToView3: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
