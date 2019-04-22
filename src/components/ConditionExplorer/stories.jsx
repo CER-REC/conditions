@@ -8,18 +8,22 @@ import keywords from './mockKeywords';
 
 const uniqueKeywords = keywords.filter((v, i) => keywords.indexOf(v) === i);
 
+const noop = () => {};
+
 storiesForComponent('Components|ConditionExplorer', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['changeVisibleWords'] }))
   .add('default', () => (
     <ConditionExplorer
       keywords={uniqueKeywords}
+      setSelectedKeywordId={noop}
       {...getInteractionProps()}
     />
   ))
   .add('physics disabled', () => (
     <ConditionExplorer
       keywords={uniqueKeywords}
+      setSelectedKeywordId={noop}
       physics={false}
       {...getInteractionProps()}
     />

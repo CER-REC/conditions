@@ -31,7 +31,7 @@
       // design document. We need to provide an issue for the design document
       // and have these recorded or changed.
       font-family: $fira-sans-condensed-light;
-      fill: rgb(149, 127, 109);
+      fill: $DarkGray;
       font-size: 18px;
       transition: fill 1s, font-size 1s;
     }
@@ -44,19 +44,19 @@
       }
 
       text {
-        fill: rgb(17, 17, 17);
+        fill: $Black19;
       }
 
       &.selected {
         text {
-          fill: rgb(255, 0, 0);
+          fill: $MainOrange;
         }
       }
     }
   }
 
   .guide {
-   fill: #5050EA;
+   fill: $Guide;
   }
 
   .guideOutline {
