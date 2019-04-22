@@ -46,6 +46,12 @@
       text {
         fill: rgb(17, 17, 17);
       }
+
+      &.selected {
+        text {
+          fill: rgb(255, 0, 0);
+        }
+      }
     }
   }
 

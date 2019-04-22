@@ -16,8 +16,14 @@ import Guide from './Guide';
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
+    selectedKeywordId: PropTypes.number,
+    setSelectedKeywordId: PropTypes.func.isRequired,
     setGuidePosition: PropTypes.func.isRequired,
     setGuideExpanded: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    selectedKeywordId: -1,
   };
 
   constructor(props) {
@@ -150,6 +156,16 @@ export default class PhysicsVariant extends React.PureComponent {
     }
   };
 
+  onKeywordClick = (e) => {
+    // console.dir(e.currentTarget);
+    if (e.currentTarget.classList.contains('textVisible')) {
+      this.props.setSelectedKeywordId(
+        parseInt(e.currentTarget.dataset.id, 10),
+        e.currentTarget.dataset.keyword,
+      );
+    }
+  };
+
   render() {
     if (!this.guide) { return <g ref={this.groupRef} />; }
     const sortedKeywords = this.keywords
@@ -168,8 +184,14 @@ export default class PhysicsVariant extends React.PureComponent {
             className={classNames(
               'keyword',
               instance.keyword.className,
-              { textVisible: instance.isVisible },
+              {
+                textVisible: instance.isVisible,
+                selected: (instance.body.id === this.props.selectedKeywordId),
+              },
             )}
+            data-id={instance.body.id}
+            data-keyword={instance.keyword.value}
+            onClick={this.onKeywordClick}
           >
             <text
               x={instance.body.position.x + instance.textOffset.x}

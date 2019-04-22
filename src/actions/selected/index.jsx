@@ -5,6 +5,7 @@ export const Types = {
   SELECTED_COMPANY: 'selectedCompany',
   SELECTED_PROJECT: 'selectedProject',
   SELECTED_CONDITION: 'selectedCondition',
+  SELECTED_KEYWORDID: 'selectedKeywordId',
 };
 
 export const setSelectedFeature = feature => ({
@@ -36,6 +37,11 @@ export const setSelectedCondition = condition => ({
   payload: { condition },
 });
 
+export const setSelectedKeywordId = keywordId => ({
+  type: Types.SELECTED_KEYWORDID,
+  payload: { keywordId },
+});
+
 const initialState = {
   feature: 'theme',
   subFeature: '',
@@ -43,6 +49,7 @@ const initialState = {
   project: null,
   condition: { instrumentIndex: 0, itemIndex: 0 },
   indicator: '',
+  keywordId: null,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -55,6 +62,7 @@ export const reducer = (state = initialState, action) => {
     case Types.SELECTED_COMPANY: return { ...state, company: action.payload.company };
     case Types.SELECTED_PROJECT: return { ...state, project: action.payload.project };
     case Types.SELECTED_CONDITION: return { ...state, condition: action.payload.condition };
+    case Types.SELECTED_KEYWORDID: return { ...state, keywordId: action.payload.keywordId };
     default: return state;
   }
 };

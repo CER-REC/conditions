@@ -10,10 +10,20 @@ const uniqueKeywords = keywords.filter((v, i) => keywords.indexOf(v) === i);
 
 const noop = () => {};
 
+const storyProps = {
+  selected: { keywordId: null },
+  setSelectedKeywordId: noop,
+};
 storiesForView('Containers|ViewOne', module, ReadMe)
-  .add('default', () => <ViewOneUnconnected keywords={uniqueKeywords} jumpToAbout={noop} />)
+  .add('default', () => (
+    <ViewOneUnconnected
+      keywords={uniqueKeywords}
+      jumpToAbout={noop}
+      {...storyProps}
+    />
+  ))
   .add(
-    'connected variant', () => <ViewOneGraphQL jumpToAbout={noop} />,
+    'connected variant', () => <ViewOneGraphQL jumpToAbout={noop} {...storyProps} />,
     { decorators: [withGQL] },
   )
-  .add('layout only', () => <ViewOneUnconnected layoutOnly keywords={uniqueKeywords} jumpToAbout={noop} />);
+  .add('layout only', () => <ViewOneUnconnected layoutOnly keywords={uniqueKeywords} jumpToAbout={noop} {...storyProps} />);

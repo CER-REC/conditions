@@ -26,11 +26,14 @@ const setTimeoutChain = (callback, timeout, times) => {
 export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectedKeywordId: PropTypes.number,
+    setSelectedKeywordId: PropTypes.func.isRequired,
     physics: PropTypes.bool,
     // changeVisibleWords: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
+    selectedKeywordId: null,
     physics: true,
   };
 
@@ -144,6 +147,8 @@ export default class ConditionExplorer extends React.Component {
     if (keywords.length > 0) {
       const contentProps = {
         keywords,
+        selectedKeywordId: this.props.selectedKeywordId,
+        setSelectedKeywordId: this.props.setSelectedKeywordId,
         setGuidePosition: this.setGuidePosition,
         setGuideExpanded: this.setGuideExpanded,
       };

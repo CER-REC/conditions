@@ -6,6 +6,8 @@ import { Query } from 'react-apollo';
 import { FormattedMessage } from 'react-intl';
 import { viewOneQuery } from '../../queries/viewOne';
 
+import * as selectedCreators from '../../actions/selected';
+
 import ConditionExplorer from '../../components/ConditionExplorer';
 import ShortcutInfoBar from '../../components/ShortcutInfoBar';
 import './styles.scss';
@@ -44,7 +46,11 @@ const ViewOne = props => (
     </section>
     <section className="row explorer">
       <section className="explorer">
-        <ConditionExplorer keywords={props.keywords} />
+        <ConditionExplorer
+          keywords={props.keywords}
+          selectedKeywordId={props.selected.keywordId}
+          setSelectedKeywordId={props.setSelectedKeywordId}
+        />
       </section>
     </section>
     <section className="row buttons">
@@ -61,7 +67,11 @@ const ViewOne = props => (
 );
 
 ViewOne.propTypes = {
+  selected: PropTypes.shape({
+    keywordId: PropTypes.number,
+  }).isRequired,
   keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setSelectedKeywordId: PropTypes.func.isRequired,
   jumpToAbout: PropTypes.func.isRequired,
   layoutOnly: PropTypes.bool,
 };
@@ -96,6 +106,10 @@ export const ViewOneGraphQL = props => (
 );
 
 export default connect(
-  () => {},
-  {},
+  ({ selected }) => ({
+    selected,
+  }),
+  {
+    setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
+  },
 )(ViewOneGraphQL);
