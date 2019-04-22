@@ -179,9 +179,11 @@ export default class PhysicsVariant extends React.PureComponent {
                 ${instance.body.position.x}
                 ${instance.body.position.y}
               )`}
-            >
-              {instance.keyword.value}
-            </text>
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: instance.keyword.value }}
+            />
+            {/* {instance.keyword.value} */}
+            {/* </text> */}
             <path d={instance.renderedPathPoints} />
           </g>
         ))}
