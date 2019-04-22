@@ -17,10 +17,7 @@ const AnimatedWheelRay = animated(WheelRay);
 class Wheel extends React.Component {
   static propTypes = {
     wheelType: browseByType.isRequired,
-    itemsData: PropTypes.shape({
-      items: PropTypes.arrayOf(PropTypes.object).isRequired,
-      legendData: PropTypes.arrayOf(PropTypes.object).isRequired,
-    }).isRequired,
+    wheelData: PropTypes.arrayOf(PropTypes.object).isRequired,
     selectedRay: PropTypes.string,
     selectRay: PropTypes.func.isRequired,
   };
@@ -41,10 +38,12 @@ class Wheel extends React.Component {
   }
 
   static getDerivedStateFromProps(props, prevState) {
-    const { items } = props.itemsData;
+    const items = props.wheelType === 'company'
+      ? props.wheelData.sort((a, b) => (a.name < b.name ? -1 : 1))
+      : props.wheelData.sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
-    let selectedIndex = items.findIndex(v => v._id === props.selectedRay);
+    let selectedIndex = items.findIndex(v => v.id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
     // eslint-disable-next-line prefer-destructuring
@@ -73,14 +72,14 @@ class Wheel extends React.Component {
   }
 
   onClickSpin = () => {
-    const { items } = this.props.itemsData;
+    const items = this.props.wheelData;
     const randomNum = Math.floor(Math.random() * items.length);
     this.setState({ needsSpin: true });
     this.props.selectRay(items[randomNum]._id);
   };
 
   onChange = (index) => {
-    const { length } = this.props.itemsData.items;
+    const { length } = this.props.wheelData;
     // TODO: check on resizing of letters on wheel list according to wheel size
     const newIndex = (2 * length - index) % length;
     this.setState(({ newRotation, degreesPerItem }) => {
@@ -107,14 +106,19 @@ class Wheel extends React.Component {
 
   // eslint-disable-next-line arrow-body-style
   getIndex = (currentRotation) => {
-    return Math.round((currentRotation % 360) / (360 / this.props.itemsData.items.length));
+    return Math.round((currentRotation % 360) / (360 / this.props.wheelData.length));
   };
 
   stopWheel = (rotation) => {
     this.setState({ newRotation: rotation });
   };
 
+  shouldRender = componentRenderFn => (
+    this.props.wheelData.length > 0 ? componentRenderFn() : null)
+  ;
+
   render() {
+    const dataLength = this.props.wheelData.length;
     return (
       <div className="Wheel">
         <Spring
@@ -135,15 +139,17 @@ class Wheel extends React.Component {
               <div style={props} className="MovingContainer">
                 <svg viewBox="0 0 860 860">
                   <Ring ringType={this.props.wheelType} />
-                  <AnimatedWheelRay
-                    stopWheel={this.stopWheel}
-                    wheelType={this.props.wheelType}
-                    items={this.props.itemsData.items}
-                    degreesPerItem={this.state.degreesPerItem}
-                    reservedDegrees={reservedDegrees}
-                    currentIndex={this.getIndex(props.rotation) % this.props.itemsData.items.length}
-                    {...props}
-                  />
+                  {this.shouldRender(() => (
+                    <AnimatedWheelRay
+                      stopWheel={this.stopWheel}
+                      wheelType={this.props.wheelType}
+                      items={this.props.wheelData}
+                      degreesPerItem={this.state.degreesPerItem}
+                      reservedDegrees={reservedDegrees}
+                      currentIndex={this.getIndex(props.rotation) % dataLength}
+                      {...props}
+                    />
+                  ))}
                 </svg>
               </div>
               <div className="interactiveItems">
@@ -156,16 +162,15 @@ class Wheel extends React.Component {
                     />
                   </g>
                 </svg>
-                <WheelList
-                  wheelType={this.props.wheelType}
-                  listContent={this.props.itemsData.items}
-                  textClippingRadius="60"
-                  onChange={this.onChange}
-                  selected={
-                    (this.props.itemsData.items.length + this.getIndex(props.rotation))
-                    % this.props.itemsData.items.length
-                  }
-                />
+                {this.shouldRender(() => (
+                  <WheelList
+                    wheelType={this.props.wheelType}
+                    listContent={this.props.wheelData}
+                    textClippingRadius="60"
+                    onChange={this.onChange}
+                    selected={(dataLength + this.getIndex(props.rotation)) % dataLength}
+                  />
+                ))}
               </div>
             </div>
           )}

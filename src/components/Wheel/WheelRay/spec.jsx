@@ -8,12 +8,12 @@ import { companyWheelData as wheelData } from '../randomDataSample';
 describe('Components|CompanyWheel/WheelRay', () => {
   describe('with default props', () => {
     const reservedDegrees = 30;
-    const degreesPerItem = (360 - reservedDegrees) / (wheelData.items.length - 1);
+    const degreesPerItem = (360 - reservedDegrees) / (wheelData.length - 1);
     const rotation = 0;
 
     const wrapperSetup = (propOverrides) => {
       const props = Object.assign({
-        items: wheelData.items,
+        items: wheelData,
         reservedDegrees,
         degreesPerItem,
         rotation,
@@ -37,7 +37,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
 
     it('should render the same amount of items as the length of the array passed less 1', () => {
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.children()).toHaveLength(wheelData.items.length - 1);
+      expect(wrapper.children()).toHaveLength(wheelData.length - 1);
     });
 
     it('should not render anything between ROTATION +/- (reserved degrees/2)', () => {
@@ -58,7 +58,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
       const positionAfterGap = (Math.abs(rotation + (reservedDegrees / 2) - 360 + degreesPerItem));
       const transformValue = `rotate(${positionAfterGap.toFixed(2)})`;
       const { wrapper } = wrapperSetup({});
-      expect(wrapper.childAt(wheelData.items.length - 2)
+      expect(wrapper.childAt(wheelData.length - 2)
         .props().transform === transformValue).toBe(true);
     });
   });

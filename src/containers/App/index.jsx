@@ -1,4 +1,9 @@
 import React from 'react';
+import { ApolloClient } from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink } from 'apollo-link-http';
+import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
@@ -16,9 +21,11 @@ import ViewOne from '../ViewOne';
 import ViewTwo from '../ViewTwo';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
+import graphQLEndPoint from '../../../globals';
 
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
+import './styles.scss';
 
 import {
   conditionCountsByYear,
@@ -27,7 +34,12 @@ import {
   projectsData,
 } from '../../mockData';
 
-import './styles.scss';
+const store = createStore();
+const cache = new InMemoryCache();
+const link = new HttpLink({
+  uri: graphQLEndPoint,
+});
+const client = new ApolloClient({ cache, link, fetch });
 
 const noop = () => {};
 
@@ -208,6 +220,10 @@ const ConnectedApp = connect(
   },
 )(App);
 
-const store = createStore();
-
-export default props => <Provider store={store}><ConnectedApp {...props} /></Provider>;
+export default props => (
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <ConnectedApp {...props} />
+    </Provider>
+  </ApolloProvider>
+);
