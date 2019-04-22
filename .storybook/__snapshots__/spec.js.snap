@@ -19904,6 +19904,13 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
       </div>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".StreamGraph { position: relative; width: 500px; height: 500px }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -21187,6 +21194,13 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
       </div>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".StreamGraph { position: relative; width: 500px; height: 500px }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -21715,6 +21729,13 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
       </g>
     </svg>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".StreamGraph { position: relative; width: 500px; height: 500px }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -22998,6 +23019,13 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
       </div>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".StreamGraph { position: relative; width: 500px; height: 500px }",
+      }
+    }
+  />
 </div>
 `;
 
