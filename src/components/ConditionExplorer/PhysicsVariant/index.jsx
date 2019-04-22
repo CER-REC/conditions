@@ -17,7 +17,7 @@ export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
     selectedKeywordId: PropTypes.number,
-    setSelectedKeywordId: PropTypes.func.isRequired,
+    onKeywordClick: PropTypes.func.isRequired,
     setGuidePosition: PropTypes.func.isRequired,
     setGuideExpanded: PropTypes.func.isRequired,
   };
@@ -156,16 +156,6 @@ export default class PhysicsVariant extends React.PureComponent {
     }
   };
 
-  onKeywordClick = (e) => {
-    // console.dir(e.currentTarget);
-    if (e.currentTarget.classList.contains('textVisible')) {
-      this.props.setSelectedKeywordId(
-        parseInt(e.currentTarget.dataset.id, 10),
-        e.currentTarget.dataset.keyword,
-      );
-    }
-  };
-
   render() {
     if (!this.guide) { return <g ref={this.groupRef} />; }
     const sortedKeywords = this.keywords
@@ -191,7 +181,7 @@ export default class PhysicsVariant extends React.PureComponent {
             )}
             data-id={instance.body.id}
             data-keyword={instance.keyword.value}
-            onClick={this.onKeywordClick}
+            onClick={this.props.onKeywordClick}
           >
             <text
               x={instance.body.position.x + instance.textOffset.x}

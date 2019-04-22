@@ -138,6 +138,17 @@ export default class ConditionExplorer extends React.Component {
     }
   };
 
+  onKeywordClick = (e) => {
+    if (e.currentTarget.classList.contains('textVisible')) {
+      this.props.setSelectedKeywordId(
+        parseInt(e.currentTarget.dataset.id, 10),
+        e.currentTarget.dataset.keyword,
+      );
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  };
+
   render() {
     const { calculatedFontSize } = this.state;
     const keywords = calculatedFontSize ? this.getKeywords() : [];
@@ -148,7 +159,7 @@ export default class ConditionExplorer extends React.Component {
       const contentProps = {
         keywords,
         selectedKeywordId: this.props.selectedKeywordId,
-        setSelectedKeywordId: this.props.setSelectedKeywordId,
+        onKeywordClick: this.onKeywordClick,
         setGuidePosition: this.setGuidePosition,
         setGuideExpanded: this.setGuideExpanded,
       };

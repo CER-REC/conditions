@@ -12,7 +12,17 @@ const noop = () => {};
 
 storiesForComponent('Components|ConditionExplorer', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['changeVisibleWords'] }))
+  // .addDecorator(withInteraction({ actions: ['changeVisibleWords'] }))
+  .addDecorator(
+    withInteraction({
+      actions: {
+        setSelectedKeywordId: () => keywordId => ({ selectedKeywordId: keywordId }),
+      },
+      state: {
+        selectedKeywordId: null,
+      },
+    }),
+  )
   .add('default', () => (
     <ConditionExplorer
       keywords={uniqueKeywords}
