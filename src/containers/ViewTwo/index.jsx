@@ -86,7 +86,7 @@ const ViewTwo = props => (
       </section>
       <section className="menus">
         <TrendButton
-          onClick={noop}
+          onClick={props.jumpToView3}
           feature={props.selected.feature}
           subFeature=""
           projectData={conditionCountsByYear.counts}

@@ -1,6 +1,6 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { storiesForView } from '../../../.storybook/utils';
+import { storiesForView, withStyles } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import { ViewThreeRaw } from '.';
 import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
@@ -24,6 +24,9 @@ const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((a
 }), {});
 
 storiesForView('Containers|ViewThree', module, ReadMe)
+  .addDecorator(withStyles(`
+    .ViewThree { height: 90vh }
+  `))
   .addDecorator(withInteraction({
     actions: {
       setSelectedFeature: ({ selected }) => feature => ({
