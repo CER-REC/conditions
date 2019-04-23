@@ -10,6 +10,7 @@ import { connect, Provider } from 'react-redux';
 import debounce from 'lodash.debounce';
 
 import * as browseByCreators from '../../actions/browseBy';
+import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import createStore from '../../Store';
 
@@ -149,6 +150,12 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(10)
 
+  setSelectedKeyword = (keyword, id) => {
+    this.props.setSelectedKeywordId(id);
+    // eslint-disable-next-line no-alert
+    alert(`getting data for keyword '${keyword}'`);
+  };
+
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
@@ -173,7 +180,7 @@ class App extends React.PureComponent {
         ref={this.ref}
       >
         <Guide textState={guideState} />
-        <ViewOne jumpToAbout={this.jumpToAbout} />
+        <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
         <section className="browseBy">
           <BrowseBy
             showArrow={(transitionState < 2 || transitionState === 9)}
@@ -202,19 +209,23 @@ App.propTypes = {
   setBrowseBy: PropTypes.func.isRequired,
   transitionState: PropTypes.number.isRequired,
   setTransitionState: PropTypes.func.isRequired,
+  setSelectedKeywordId: PropTypes.func.isRequired,
 };
 
 export const AppUnconnected = App;
 
 const ConnectedApp = connect(
   ({
+    selected,
     browseBy,
     transitionState,
   }) => ({
+    selected,
     browseBy,
     transitionState,
   }),
   {
+    setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
   },

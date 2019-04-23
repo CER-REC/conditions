@@ -26,14 +26,14 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
   .add('default', () => (
     <ConditionExplorer
       keywords={uniqueKeywords}
-      setSelectedKeywordId={noop}
+      setSelectedKeyword={noop}
       {...getInteractionProps()}
     />
   ))
   .add('physics disabled', () => (
     <ConditionExplorer
       keywords={uniqueKeywords}
-      setSelectedKeywordId={noop}
+      setSelectedKeyword={noop}
       physics={false}
       {...getInteractionProps()}
     />

@@ -27,7 +27,7 @@ export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     selectedKeywordId: PropTypes.number,
-    setSelectedKeywordId: PropTypes.func.isRequired,
+    setSelectedKeyword: PropTypes.func.isRequired,
     physics: PropTypes.bool,
     // changeVisibleWords: PropTypes.func.isRequired,
   };
@@ -140,9 +140,9 @@ export default class ConditionExplorer extends React.Component {
 
   onKeywordClick = (e) => {
     if (e.currentTarget.classList.contains('textVisible')) {
-      this.props.setSelectedKeywordId(
-        parseInt(e.currentTarget.dataset.id, 10),
+      this.props.setSelectedKeyword(
         e.currentTarget.dataset.keyword,
+        parseInt(e.currentTarget.dataset.id, 10),
       );
       e.stopPropagation();
       e.preventDefault();
