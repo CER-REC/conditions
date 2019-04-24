@@ -27,9 +27,9 @@ const RegionConditionSummary = (props) => {
         </div>
       </div>
       <svg className="YAxis" viewBox="0 0 100 200">
-        <text x="45" y="11" fill="rgb(161, 168, 167)">100</text>
-        <rect x="85" y="0" width="10" height="3" fill="#e4e4e4" />
-        <text x="58" y="110" fill="rgb(161, 168, 167)">0</text>
+        <text x="45" y="15" fill="rgb(161, 168, 167)">100</text>
+        <rect x="85" y="5" width="10" height="3" fill="#e4e4e4" />
+        <text x="58" y="100" fill="rgb(161, 168, 167)">0</text>
         <rect x="85" y="50" width="10" height="3" fill="#e4e4e4" />
       </svg>
     </div>
