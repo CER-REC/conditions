@@ -4,6 +4,10 @@
 
   height: 24px;
 
+  &.location {
+    margin-left: 48px;
+  }
+
   background-color: $LightGray;
 
   display: inline-block;

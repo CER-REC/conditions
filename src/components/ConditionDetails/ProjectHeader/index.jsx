@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
@@ -30,7 +31,7 @@ const moreButton = (
 
 class ProjectHeader extends React.PureComponent {
   render = () => (
-    <div className="ProjectHeader">
+    <div className={classNames('ProjectHeader', { location: this.props.browseBy === 'location' })}>
       <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
       <button
         type="button"
@@ -60,11 +61,13 @@ ProjectHeader.propTypes = {
   selectedProject: PropTypes.string.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
   toggleExpanded: PropTypes.func.isRequired,
+  browseBy: PropTypes.oneOf(['company', 'location']),
 };
 
 ProjectHeader.defaultProps = {
   isExpandable: false,
   expanded: false,
+  browseBy: 'company',
 };
 
 export default ProjectHeader;

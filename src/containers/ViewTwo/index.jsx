@@ -127,6 +127,7 @@ const ViewTwo = props => (
             include: props.included,
             exclude: props.excluded,
           }}
+          browseBy={props.browseBy}
           {...props.conditionDetails}
         />
       </section>

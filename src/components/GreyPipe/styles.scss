@@ -36,6 +36,11 @@ $curveRadius: 48px;
     background: $LightGray;
   }
 
+  .horizontal {
+    position: absolute;
+    background: $LightGray;
+  }
+
   &.company {
     top: 12px;
     right: 0;
@@ -79,7 +84,7 @@ $curveRadius: 48px;
 
   &.location {
     top: calc(50% - 15px);
-    right: 0;
+    right: calc(8px -#{$curveRadius});
     bottom: calc(20% - 2px);
 
     .top {
@@ -114,6 +119,13 @@ $curveRadius: 48px;
       top: $curveRadius;
       bottom: $curveRadius;
       right: 0;
+    }
+
+    .horizontal {
+      top: 0;
+      right: 100%;
+      width: 38px;
+      height: 24px;
     }
   }
 }
