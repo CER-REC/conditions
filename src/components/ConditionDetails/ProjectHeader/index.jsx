@@ -32,14 +32,21 @@ const moreButton = (
 class ProjectHeader extends React.PureComponent {
   render = () => (
     <div className={classNames('ProjectHeader', { location: this.props.browseBy === 'location' })}>
-      <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
-      <button
-        type="button"
-        className="openProject"
-        {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
-      >
-        <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
-      </button>
+      {this.props.browseBy === 'company'
+        ? (
+          <React.Fragment>
+            <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
+            <button
+              type="button"
+              className="openProject"
+              {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
+            >
+              <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
+            </button>
+          </React.Fragment>
+        )
+        : <FormattedMessage id="components.conditionDetails.selectedCondition" tagName="h1" />
+      }
       {this.props.isExpandable
         ? (
           <button
