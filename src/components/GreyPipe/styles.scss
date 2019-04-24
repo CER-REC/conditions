@@ -12,19 +12,7 @@ $curveRadius: 48px;
 
   width: $curveRadius;
 
-  .vertical {
-    position: absolute;
-
-    top: $curveRadius;
-    bottom: $curveRadius;
-    right: 0;
-
-    width: calc(#{$curveRadius} / 2);
-
-    background: $LightGray;
-  }
-
-  .topCurve, .bottomCurve {
+  .top, .bottom {
     position: absolute;
 
     width: 100%;
@@ -45,49 +33,66 @@ $curveRadius: 48px;
 
   }
 
-  .topCurve {
-    right: -50%;
-    top: 0;
+  &.company {
+    .vertical {
+      position: absolute;
 
-    border-top-left-radius: 100%;
+      top: $curveRadius;
+      bottom: $curveRadius;
+      right: 0;
 
-    &:before {
+      width: calc(#{$curveRadius} / 2);
+
+      background: $LightGray;
+    }
+
+    .top {
+      right: -50%;
+      top: 0;
+
+      border-top-left-radius: 100%;
+
+      &:before {
+        right: 0;
+        bottom: 0;
+
+        border-top-left-radius: 100%;
+      }
+    }
+
+    .bottom {
       right: 0;
       bottom: 0;
 
-      border-top-left-radius: 100%;
-    }
-  }
-
-  .bottomCurve {
-    right: 0;
-    bottom: 0;
-
-    border-bottom-right-radius: 100%;
-
-    &:before {
-      left: 0;
-      top: 0;
-
       border-bottom-right-radius: 100%;
+
+      &:before {
+        left: 0;
+        top: 0;
+
+        border-bottom-right-radius: 100%;
+      }
     }
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .GreyPipe {
-    .topCurve {
-      border-top-left-radius: 90%;
 
-      &:before {
+    &.company {
+      .top {
         border-top-left-radius: 90%;
-      }
-    }
-    .bottomCurve {
-      border-bottom-right-radius: 90%;
 
-      &:before {
+        &:before {
+          border-top-left-radius: 90%;
+        }
+      }
+      .bottom {
         border-bottom-right-radius: 90%;
+
+        &:before {
+          border-bottom-right-radius: 90%;
+        }
       }
     }
   }

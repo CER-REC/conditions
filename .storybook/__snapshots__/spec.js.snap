@@ -6097,6 +6097,36 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|GreyPipe default 1`] = `
+<div
+  className="visualization"
+>
+  <section
+    style={
+      Object {
+        "height": "400px",
+        "position": "relative",
+        "width": "200px",
+      }
+    }
+  >
+    <div
+      className="GreyPipe"
+    >
+      <div
+        className="topCurve"
+      />
+      <div
+        className="vertical"
+      />
+      <div
+        className="bottomCurve"
+      />
+    </div>
+  </section>
+</div>
+`;
+
 exports[`Storyshots Components|Guide default 1`] = `
 <div
   className="visualization"
@@ -9485,6 +9515,22 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 2,
+        }
+      }
+    />
+    <div
       className="pipe"
     />
     <div
@@ -10368,6 +10414,22 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 2,
+        }
+      }
+    />
     <div
       className="pipe"
     />
@@ -11267,6 +11329,22 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 3,
+        }
+      }
+    />
+    <div
       className="pipe"
     />
     <div
@@ -12150,6 +12228,22 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 3,
+        }
+      }
+    />
     <div
       className="pipe"
     />
@@ -13035,6 +13129,22 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter2"
   >
     <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
       className="pipe"
     />
     <div
@@ -13388,6 +13498,22 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
   <div
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 2,
+        }
+      }
+    />
     <div
       className="pipe"
     />
