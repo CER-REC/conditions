@@ -27,7 +27,7 @@
     left: 14px;
     right: 0;
     height: 24px;
-    background: $LightGreyBackground;
+    background: $LightGray;
   }
 
   .sedimentation {
@@ -37,6 +37,8 @@
     height: 24px;
 
     background: $Gray160;
+
+    z-index: 1;
 
     &.left {
       left: 12px;

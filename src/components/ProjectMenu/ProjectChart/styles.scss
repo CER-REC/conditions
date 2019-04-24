@@ -1,10 +1,10 @@
 @import '../../../styles/colors.scss';
 
-$pipe-color: $LightGreyBackground;
-$condition-circle-bg: #a1a8a7;
-$selected-condition-circle-bg: #f15a24;
-$condition-circle-font: #fff;
-$project-chart-line: #a1a8a7;
+$pipe-color: $LightGray;
+$condition-circle-bg: $Gray160;
+$selected-condition-circle-bg: $MainOrange;
+$condition-circle-font: $White;
+$project-chart-line: $Gray160;
 
 .ProjectChart {
   width: 100%;
@@ -114,7 +114,7 @@ $project-chart-line: #a1a8a7;
   }
 
   &:not(.selected) .FeatureFlag {
-    .Bar { background-color: #a1a8a7 !important; }
-    .FlagTip { border-left-color: #a1a8a7 !important; }
+    .Bar { background-color: $Gray160 !important; }
+    .FlagTip { border-left-color: $Gray160 !important; }
   }
 }
