@@ -49,5 +49,12 @@
     color: $Gray160;
     top: 212px;
     left: 0;
+
+    text {
+      fill: $Gray160;
+    }
+    rect {
+      fill: $LightGray;
+    }
   }
 };

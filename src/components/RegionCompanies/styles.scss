@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .RegionCompanies {
   position: absolute;
 
@@ -12,12 +14,12 @@
     padding: 0;
     height: 20px;
     line-height: 20px;
-    background-color:  #e4e4e4;
+    background-color:  $LightGray;
     padding-left: 20px;
     width: 100%;
     // padding-right: 100px;
     border-bottom-right-radius: 15px;
-    color: #4d4e4e;
+    color: $Black77;
     display: inline-block;
   }
 
@@ -33,7 +35,7 @@
     }
     .asterisk {
       background: none;
-      color: #d1057a;
+      color: $LinksTextButtons;
       font-family: 'FiraSansCondensedBold';
       border: none;
       padding: 0;
