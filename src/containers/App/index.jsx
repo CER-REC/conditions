@@ -157,9 +157,11 @@ class App extends React.PureComponent {
     // eslint-disable-next-line no-alert
     alert(`getting data for keyword '${keyword}'`);
     client.query({
-      query: gql`query
-        allProjects{
-          id
+      query: gql`
+        {
+          allProjects{
+            id
+          }
         }
       `,
     }).then(response => console.dir(response));
