@@ -6097,33 +6097,68 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|GreyPipe default 1`] = `
+exports[`Storyshots Components|GreyPipe company 1`] = `
 <div
   className="visualization"
 >
-  <section
-    style={
-      Object {
-        "height": "400px",
-        "position": "relative",
-        "width": "200px",
-      }
-    }
+  <div
+    className="storyWrapper"
   >
     <div
-      className="GreyPipe"
+      className="GreyPipe company"
     >
       <div
-        className="topCurve"
+        className="top"
       />
       <div
         className="vertical"
       />
       <div
-        className="bottomCurve"
+        className="bottom"
       />
     </div>
-  </section>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {position: relative; height: 400px; width: 200px;}",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|GreyPipe location 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+  >
+    <div
+      className="GreyPipe location"
+    >
+      <div
+        className="horizontal"
+      />
+      <div
+        className="top"
+      />
+      <div
+        className="vertical"
+      />
+      <div
+        className="bottom"
+      />
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {position: relative; height: 400px; width: 200px;}",
+      }
+    }
+  />
 </div>
 `;
 
@@ -14955,52 +14990,63 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
   className="visualization"
 >
   <div
-    className="RegionCompanies"
+    className="storyWrapper"
   >
     <div
-      className="title"
+      className="RegionCompanies"
     >
-      <span>
-        Companies in Selected Region:
-      </span>
+      <div
+        className="title"
+      >
+        <span>
+          Companies in Selected Region:
+        </span>
+      </div>
+      <ul>
+        <li>
+          Alberta Trans-Alta e
+        </li>
+        <li>
+          Alberta Trans-Alta è
+        </li>
+        <li>
+          Canada-Montana Pipe Line Company
+        </li>
+        <li>
+          Express Pipeline Ltd.
+        </li>
+        <li>
+          Kinder Morgan Cochin Ulc.
+          <button
+            className="asterisk"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            *
+          </button>
+        </li>
+        <li>
+          Nova Gas Transmission Ltd.
+        </li>
+        <li>
+          Power Plants R Us
+        </li>
+        <li>
+          Z-Anti
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li>
-        Alberta Trans-Alta e
-      </li>
-      <li>
-        Alberta Trans-Alta è
-      </li>
-      <li>
-        Canada-Montana Pipe Line Company
-      </li>
-      <li>
-        Express Pipeline Ltd.
-      </li>
-      <li>
-        Kinder Morgan Cochin Ulc.
-        <button
-          className="asterisk"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          *
-        </button>
-      </li>
-      <li>
-        Nova Gas Transmission Ltd.
-      </li>
-      <li>
-        Power Plants R Us
-      </li>
-      <li>
-        Z-Anti
-      </li>
-    </ul>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper { position: relative; width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -15033,28 +15079,24 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
       viewBox="0 0 100 200"
     >
       <text
-        fill="rgb(161, 168, 167)"
         x="45"
-        y="11"
+        y="18"
       >
         100
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
-        y="0"
+        y="8"
       />
       <text
-        fill="rgb(161, 168, 167)"
         x="58"
-        y="110"
+        y="100"
       >
         0
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
@@ -15062,6 +15104,13 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
       />
     </svg>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".RegionConditionSummary { width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -15213,28 +15262,24 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
       viewBox="0 0 100 200"
     >
       <text
-        fill="rgb(161, 168, 167)"
         x="45"
-        y="11"
+        y="18"
       >
         100
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
-        y="0"
+        y="8"
       />
       <text
-        fill="rgb(161, 168, 167)"
         x="58"
-        y="110"
+        y="100"
       >
         0
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
@@ -15242,6 +15287,13 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
       />
     </svg>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".RegionConditionSummary { width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -15297,28 +15349,24 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
       viewBox="0 0 100 200"
     >
       <text
-        fill="rgb(161, 168, 167)"
         x="45"
-        y="11"
+        y="18"
       >
         100
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
-        y="0"
+        y="8"
       />
       <text
-        fill="rgb(161, 168, 167)"
         x="58"
-        y="110"
+        y="100"
       >
         0
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
@@ -15326,6 +15374,13 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
       />
     </svg>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".RegionConditionSummary { width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 

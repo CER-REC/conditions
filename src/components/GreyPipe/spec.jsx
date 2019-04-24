@@ -6,7 +6,7 @@ import GreyPipe from '.';
 
 describe('Components|GreyPipe', () => {
   describe('with default props', () => {
-    const wrapper = shallow(<GreyPipe />);
+    const wrapper = shallow(<GreyPipe mode="company" />);
     shouldBehaveLikeAComponent(GreyPipe, () => wrapper);
   });
 });
