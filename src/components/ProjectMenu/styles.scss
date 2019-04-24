@@ -29,4 +29,21 @@
     height: 24px;
     background: $LightGreyBackground;
   }
+
+  .sedimentation {
+    position: absolute;
+
+    top: 12px;
+    height: 24px;
+
+    background: $Gray160;
+
+    &.left {
+      left: 12px;
+    }
+
+    &.right {
+      right: 12px;
+    }
+  }
 }

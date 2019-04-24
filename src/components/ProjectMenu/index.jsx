@@ -40,6 +40,18 @@ class ProjectMenu extends React.PureComponent {
       .map(([name, count]) => ({ name, count }))
   );
 
+  getSedimentation = () => {
+    const data = this.props.projectsData;
+
+    const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
+    const rightCount = data.length - leftCount - 1;
+
+    return [
+      leftCount < 35 ? leftCount : 35,
+      rightCount < 35 ? rightCount : 35,
+    ];
+  };
+
   render() {
     const listItems = this.getListItems();
     // If there are no listItems render virtualized data
@@ -69,6 +81,8 @@ class ProjectMenu extends React.PureComponent {
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;
 
+    const [sedimentationLeft, sedimentationRight] = this.getSedimentation();
+
     return (
       <div
         className={classNames(
@@ -77,6 +91,8 @@ class ProjectMenu extends React.PureComponent {
           `paddingAfter${paddingAfter}`,
         )}
       >
+        <div className={classNames('sedimentation', 'left')} style={{ width: sedimentationLeft }} />
+        <div className={classNames('sedimentation', 'right')} style={{ width: sedimentationRight }} />
         <div className="pipe" />
         <List
           items={renderedItems}
