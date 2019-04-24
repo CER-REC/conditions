@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import gql from 'graphql-tag';
 import { HttpLink } from 'apollo-link-http';
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
@@ -39,6 +40,7 @@ const store = createStore();
 const cache = new InMemoryCache();
 const link = new HttpLink({
   uri: graphQLEndPoint,
+  credentials: 'same-origin',
 });
 const client = new ApolloClient({ cache, link, fetch });
 
@@ -154,6 +156,13 @@ class App extends React.PureComponent {
     this.props.setSelectedKeywordId(id);
     // eslint-disable-next-line no-alert
     alert(`getting data for keyword '${keyword}'`);
+    client.query({
+      query: gql`query
+        allProjects{
+          id
+        }
+      `,
+    }).then(response => console.dir(response));
   };
 
   render() {
