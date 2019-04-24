@@ -29,6 +29,11 @@
       margin-bottom: 0;
     }
 
+    section.wheel {
+      position: relative;
+      overflow: visible;
+    }
+
     .header {
       .SearchBar.small {
         width: 200px;

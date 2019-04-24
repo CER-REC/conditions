@@ -15,7 +15,7 @@ $project-chart-line: #a1a8a7;
     text-overflow: ellipsis;
     position: absolute;
     width: 118px;
-    bottom: 130px; // Based on the rotation and the width
+    bottom: 137px; // Based on the rotation and the width
     right: 50%;
     transform: rotate(-70deg);
     transform-origin: bottom right;
@@ -30,7 +30,7 @@ $project-chart-line: #a1a8a7;
   }
 
   .ConditionPipe {
-    height: 30px;
+    height: 24px;
     background-color: $pipe-color;
     text-align: center;
 
@@ -85,7 +85,7 @@ $project-chart-line: #a1a8a7;
 
     .FlagPole {
       top: 0;
-      width: 30px;
+      width: 24px;
       background-color: $pipe-color;
     }
 
@@ -96,15 +96,15 @@ $project-chart-line: #a1a8a7;
 
     .ProjectName {
       z-index: 1;
-      width: 134px;
-      height: 30px;
+      width: 144px;
+      height: 24px;
       background: $pipe-color;
-      right: calc(50% - 15px);
+      right: calc(50% - 12px);
       &:before {
         content: '';
         background: $pipe-color;
         width: 20px;
-        height: 30px;
+        height: 24px;
         display: block;
         position: absolute;
         left: -10px;
