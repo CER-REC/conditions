@@ -13,7 +13,6 @@ import { allConditionsPerYear, featureTypes } from '../../proptypes';
 
 import './styles.scss';
 
-export const roundValue = t => Math.round(t);
 const noop = () => {};
 
 const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
