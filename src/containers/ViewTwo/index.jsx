@@ -8,6 +8,8 @@ import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import GreyPipe from '../../components/GreyPipe';
+import RegionConditionSummary from '../../components/RegionConditionSummary';
+import RegionCompanies from '../../components/RegionCompanies';
 import TrendButton from '../../components/TrendButton';
 import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import { browseByType, yearRangeType, featureTypes, conditionData, project } from '../../proptypes';
@@ -69,12 +71,35 @@ const ViewTwo = props => (
         <GreyPipe mode={props.browseBy} />
       </section>
       <section className="companyBreakdown">
-        <ProjectMenu
-          projectsData={props.projectsData.counts}
-          selectedProjectID={props.selected.project}
-          onChange={props.setSelectedProject}
-          selectedFeature={props.selected.feature}
-        />
+        {props.browseBy === 'location'
+          ? (
+            <div className="regionChart">
+              <RegionConditionSummary featureData={[
+                { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
+                { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
+                { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
+              ]}
+              />
+              <RegionCompanies
+                companies={[
+                  { id: '12', name: 'Alberta Trans-Alta e' },
+                  { id: '11', name: 'Alberta Trans-Alta è' },
+                  { id: '1', name: 'Canada-Montana Pipe Line Company' },
+                ]}
+                activeConditionCompanies={['3']}
+                openProjectDetails={null}
+              />
+            </div>
+          )
+          : (
+            <ProjectMenu
+              projectsData={props.projectsData.counts}
+              selectedProjectID={props.selected.project}
+              onChange={props.setSelectedProject}
+              selectedFeature={props.selected.feature}
+            />
+          )
+        }
       </section>
       <section className="menus">
         <TrendButton

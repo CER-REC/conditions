@@ -27,6 +27,12 @@
     section.companyBreakdown {
       overflow: visible;
       margin-bottom: 0;
+
+      .regionChart {
+        position: relative;
+
+        height: 422px;
+      }
     }
 
     section.wheel {

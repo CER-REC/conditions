@@ -5,11 +5,6 @@ $curveRadius: 48px;
 .GreyPipe {
   position: absolute;
 
-  top: 12px;
-  right: 0;
-  // I'm not sure where the extra pixel comes from here. Browser rounding maybe?
-  bottom: calc(50% - 9px);
-
   width: $curveRadius;
 
   .top, .bottom {
@@ -33,17 +28,24 @@ $curveRadius: 48px;
 
   }
 
-  &.company {
-    .vertical {
-      position: absolute;
+  .vertical {
+    position: absolute;
 
+    width: calc(#{$curveRadius} / 2);
+
+    background: $LightGray;
+  }
+
+  &.company {
+    top: 12px;
+    right: 0;
+    // I'm not sure where the extra pixel comes from here. Browser rounding maybe?
+    bottom: calc(50% - 9px);
+
+    .vertical {
       top: $curveRadius;
       bottom: $curveRadius;
       right: 0;
-
-      width: calc(#{$curveRadius} / 2);
-
-      background: $LightGray;
     }
 
     .top {
@@ -72,6 +74,46 @@ $curveRadius: 48px;
 
         border-bottom-right-radius: 100%;
       }
+    }
+  }
+
+  &.location {
+    top: calc(50% - 15px);
+    right: 0;
+    bottom: calc(20% - 2px);
+
+    .top {
+      right: 0;
+      top: 0;
+
+      border-top-right-radius: 100%;
+
+      &:before {
+        left: 0;
+        bottom: 0;
+
+        border-top-right-radius: 100%;
+      }
+    }
+
+    .bottom {
+      left: 50%;
+      bottom: 0;
+
+      border-bottom-left-radius: 100%;
+
+      &:before {
+        right: 0;
+        top: 0;
+
+        border-bottom-left-radius: 100%;
+      }
+    }
+
+    .vertical {
+      top: $curveRadius;
+      bottom: $curveRadius;
+      right: 0;
     }
   }
 }
