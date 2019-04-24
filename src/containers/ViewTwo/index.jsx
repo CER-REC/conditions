@@ -7,6 +7,7 @@ import { viewTwoQuery } from '../../queries/viewTwo';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
+import GreyPipe from '../../components/GreyPipe';
 import TrendButton from '../../components/TrendButton';
 import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import { browseByType, yearRangeType, featureTypes, conditionData, project } from '../../proptypes';
@@ -65,6 +66,7 @@ const ViewTwo = props => (
     <section className="row">
       <section className="wheel">
         <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
+        <GreyPipe mode={props.browseBy} />
       </section>
       <section className="companyBreakdown">
         <ProjectMenu

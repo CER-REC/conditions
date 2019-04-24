@@ -1,0 +1,94 @@
+@import '../../styles/colors';
+
+$curveRadius: 48px;
+
+.GreyPipe {
+  position: absolute;
+
+  top: 12px;
+  right: 0;
+  // I'm not sure where the extra pixel comes from here. Browser rounding maybe?
+  bottom: calc(50% - 9px);
+
+  width: $curveRadius;
+
+  .vertical {
+    position: absolute;
+
+    top: $curveRadius;
+    bottom: $curveRadius;
+    right: 0;
+
+    width: calc(#{$curveRadius} / 2);
+
+    background: $LightGray;
+  }
+
+  .topCurve, .bottomCurve {
+    position: absolute;
+
+    width: 100%;
+    height: $curveRadius;
+
+    background: $LightGray;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+
+      width: 50%;
+      height: calc(#{$curveRadius} / 2);
+
+      background: $White;
+    }
+
+  }
+
+  .topCurve {
+    right: -50%;
+    top: 0;
+
+    border-top-left-radius: 100%;
+
+    &:before {
+      right: 0;
+      bottom: 0;
+
+      border-top-left-radius: 100%;
+    }
+  }
+
+  .bottomCurve {
+    right: 0;
+    bottom: 0;
+
+    border-bottom-right-radius: 100%;
+
+    &:before {
+      left: 0;
+      top: 0;
+
+      border-bottom-right-radius: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .GreyPipe {
+    .topCurve {
+      border-top-left-radius: 90%;
+
+      &:before {
+        border-top-left-radius: 90%;
+      }
+    }
+    .bottomCurve {
+      border-bottom-right-radius: 90%;
+
+      &:before {
+        border-bottom-right-radius: 90%;
+      }
+    }
+  }
+}
