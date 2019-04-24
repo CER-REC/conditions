@@ -1,3 +1,49 @@
+# [0.10.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.10.0) (2019-04-24)
+
+
+### App
+
+* **Bug Fixes:** fixes issues raised in PR (e9768c5)
+
+
+### ConditionExplorer
+
+* **Features:** outline transitions to wherever guide is initiall positioned (0477944)
+* **Features:** guide displaces keywords when it is expanded (5bd45ec)
+* **Features:** adjusts keyword movement and timing (7e47440)
+* **Features:** adds font-size scaling to match design doc (f69fea2)
+* **Features:** adds text shimmer when keywords reset to placeholders (5f9ec63)
+* **Features:** immediately finish transitions if they don't result in change (1e454bf)
+* **Features:** adds CSS and collision performance improvements (b6cb1cf)
+* **Features:** clamps keyword velocity and rotation for "icy" movement (e0bf216)
+* **Features:** rotate with shortest path (modulus) instead of unwinding (23b8e22)
+* **Features:** set guide as static when not being dragged (85c744b)
+* **Bug Fixes:** fixes bug with drifting keywords (603fc15)
+* **Bug Fixes:** fixes collision/reset timing (79f05a4)
+
+
+### Storybook
+
+* **Features:** removes the a11y addon from the project (250a147)
+* **Performance Improvements:** disables the a11y addon to fix perf and scroll janking issues (84b1128)
+
+
+### StreamGraph
+
+* **Features:** tweaks animation, updates snapshots (4ac6a02)
+* **Features:** adds stream animation for TrendButton display (2c5c02b)
+* **Features:** adds transitions when data changes (38b901d)
+* **Bug Fixes:** removes unused code (a0a7b9a)
+* **Bug Fixes:** fixes rendering issues in component stories (e8b33ee)
+* **Bug Fixes:** adjusts curve to keep streams on top of each other (9368e22)
+* **Code Refactoring:** continues work on redundant loops (b56f75b)
+* **Code Refactoring:** minimizes redundant looping over the data set (7e26675)
+
+
+### View 2
+
+* **Features:** syncs the Trend Button to current feature (30a921b)
+
 # [0.8.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.8.0) (2019-04-18)
 
 
