@@ -31,6 +31,21 @@ const legendItems = [
   { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
 ];
 
+const regionData = {
+  featureData: [
+    { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
+    { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
+    { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
+  ],
+  companyData: [
+    { id: '12', name: 'Alberta Trans-Alta e' },
+    { id: '11', name: 'Alberta Trans-Alta è' },
+    { id: '1', name: 'Canada-Montana Pipe Line Company' },
+  ],
+  activeConditionCompanies: ['3'],
+  openProjectDetails: noop,
+};
+
 // SearchBar (Data)
 const availableCategories = [
   'all',
@@ -74,20 +89,11 @@ const ViewTwo = props => (
         {props.browseBy === 'location'
           ? (
             <div className="regionChart">
-              <RegionConditionSummary featureData={[
-                { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
-                { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
-                { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
-              ]}
-              />
+              <RegionConditionSummary featureData={regionData.featureData} />
               <RegionCompanies
-                companies={[
-                  { id: '12', name: 'Alberta Trans-Alta e' },
-                  { id: '11', name: 'Alberta Trans-Alta è' },
-                  { id: '1', name: 'Canada-Montana Pipe Line Company' },
-                ]}
-                activeConditionCompanies={['3']}
-                openProjectDetails={null}
+                companies={regionData.companyData}
+                activeConditionCompanies={regionData.activeConditionCompanies}
+                openProjectDetails={regionData.openProjectDetails}
               />
             </div>
           )

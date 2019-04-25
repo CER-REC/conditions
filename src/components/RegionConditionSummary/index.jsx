@@ -11,6 +11,7 @@ const RegionConditionSummary = (props) => {
     value: k.count,
     fill: features[k.feature][k.description] || 'black',
   }));
+
   return (
     <div className={classNames(
       'RegionConditionSummary',

@@ -40,7 +40,7 @@ class ProjectMenu extends React.PureComponent {
       .map(([name, count]) => ({ name, count }))
   );
 
-  getSedimentation = () => {
+  getSedimentationWidth = () => {
     const data = this.props.projectsData;
 
     const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
@@ -81,7 +81,7 @@ class ProjectMenu extends React.PureComponent {
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;
 
-    const [sedimentationLeft, sedimentationRight] = this.getSedimentation();
+    const [sedimentationLeft, sedimentationRight] = this.getSedimentationWidth();
 
     return (
       <div
@@ -91,9 +91,9 @@ class ProjectMenu extends React.PureComponent {
           `paddingAfter${paddingAfter}`,
         )}
       >
+        <div className="pipe" />
         <div className={classNames('sedimentation', 'left')} style={{ width: sedimentationLeft }} />
         <div className={classNames('sedimentation', 'right')} style={{ width: sedimentationRight }} />
-        <div className="pipe" />
         <List
           items={renderedItems}
           onChange={this.handleConditionChange}

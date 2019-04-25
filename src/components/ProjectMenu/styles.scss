@@ -2,7 +2,7 @@
 
 .ProjectMenu {
   position: relative;
-  padding-top: 12px; // Account for list lifting selected arrows upwards
+  margin-top: 12px; // Account for list lifting selected arrows upwards
 
   > .List {
     display: inline-block;
@@ -23,7 +23,7 @@
 
   > .pipe {
     position: absolute;
-    top: 12px;
+    top: 0;
     left: 14px;
     right: 0;
     height: 24px;
@@ -33,7 +33,7 @@
   .sedimentation {
     position: absolute;
 
-    top: 12px;
+    top: 0;
     height: 24px;
 
     background: $Gray160;
