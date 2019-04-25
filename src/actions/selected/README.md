@@ -8,7 +8,8 @@ telling the visualization which value has been selected.
 
   * feature: string
   * subFeature: string
-  * company: string
+  * company: int
+  * region: int
   * project: string
   * condition: string
 

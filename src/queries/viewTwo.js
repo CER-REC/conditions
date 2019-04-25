@@ -1,6 +1,5 @@
 import gql from 'graphql-tag';
 
-// eslint-disable-next-line import/prefer-default-export
 export const viewTwoQuery = gql`
   query companies {
     allCompanies {
@@ -12,3 +11,12 @@ export const viewTwoQuery = gql`
 `;
 
 // TODO: once region data is integrated in query add locationWheelQuery
+
+export const projectMenuQuery = gql`
+  query projectMenu($id:Int) {
+    allProjectsByCompany (companyId: $id) {
+      id
+      status
+    }
+  }
+`;

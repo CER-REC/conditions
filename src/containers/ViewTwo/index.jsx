@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
-import { viewTwoQuery } from '../../queries/viewTwo';
+import { viewTwoQuery, projectMenuQuery } from '../../queries/viewTwo';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
@@ -64,7 +64,12 @@ const ViewTwo = props => (
     </section>
     <section className="row">
       <section className="wheel">
-        <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
+        <Wheel
+          wheelType={props.browseBy}
+          selectedRay={props.selected.company}
+          selectRay={props.setSelectedCompany}
+          wheelData={props.wheelData}
+        />
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
@@ -111,6 +116,8 @@ ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
   selected: PropTypes.shape({
+    company: PropTypes.number,
+    region: PropTypes.number,
     project: PropTypes.number,
     feature: featureTypes.isRequired,
     condition: PropTypes.shape({
@@ -131,6 +138,8 @@ ViewTwo.propTypes = {
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  setSelectedCompany: PropTypes.func.isRequired,
+  setSelectedRegion: PropTypes.func.isRequired,
   conditionDetails: PropTypes.shape({
     isExpandable: PropTypes.bool,
     expanded: PropTypes.bool,
@@ -171,9 +180,10 @@ export const ViewTwoGraphQL = props => (
       // if (loading) // do something;
       // else if (error) // handle the error;
       // else {}
+      // <Query query={projectMenuQuery} id={props.}
       <ViewTwo
         wheelData={
-        // eslint-disable-next-line react/prop-types
+        // eslint-disable-next-line react/prop-types125
         props.browseBy === 'company' ? data.allCompanies : locationData
         }
         {...props}
@@ -195,11 +205,12 @@ export default connect(
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
+    setSelectedRegion: selectedCreators.setSelectedRegion,
     setSelectedCondition: selectedCreators.setSelectedCondition,
+    setSelectedProject: selectedCreators.setSelectedProject,
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
-    setSelectedProject: selectedCreators.setSelectedProject,
     setFindAny: searchCreators.setFindAny,
     setIncluded: searchCreators.setIncluded,
     setExcluded: searchCreators.setExcluded,

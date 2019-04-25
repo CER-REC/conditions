@@ -43,6 +43,8 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
           selected: { ...selected, condition: selectedCondition },
         }),
         setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
+        setSelectedCompany: ({ selected }) => company => ({ selected: { ...selected, company } }),
+        setSelectedRegion: ({ selected }) => region => ({ selected: { ...selected, region } }),
         openIntermediatePopup: () => () => ({}),
         openProjectDetails: () => () => ({}),
       },
@@ -57,13 +59,16 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
           feature: 'theme',
           condition: { instrumentIndex: 0, itemIndex: 0 },
           project: 1225,
+          company: null,
+          region: null,
         },
       },
     }),
   )
   .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
   .add(
-    'connected variant', () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />,
+    'connected variant',
+    () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />,
     { decorators: [withGQL] },
   )
   .add('layout only', () => (

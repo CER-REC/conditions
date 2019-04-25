@@ -18,7 +18,7 @@ class Wheel extends React.Component {
   static propTypes = {
     wheelType: browseByType.isRequired,
     wheelData: PropTypes.arrayOf(PropTypes.object).isRequired,
-    selectedRay: PropTypes.string,
+    selectedRay: PropTypes.number,
     selectRay: PropTypes.func.isRequired,
   };
 
@@ -37,6 +37,11 @@ class Wheel extends React.Component {
     };
   }
 
+  shouldComponentUpdate(nextProps) {
+    return this.props.selectedRay !== nextProps.selectedRay
+    || this.props.wheelData.length !== nextProps.wheelData.length;
+  }
+
   static getDerivedStateFromProps(props, prevState) {
     const items = props.wheelType === 'company'
       ? props.wheelData.sort((a, b) => (a.name < b.name ? -1 : 1))
@@ -47,8 +52,7 @@ class Wheel extends React.Component {
     // eslint-disable-next-line prefer-destructuring
     selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
     // eslint-disable-next-line prefer-destructuring
-    let { newRotation } = prevState || -(Math.sign(selectedIndex) * degreesPerItem);
-    // console.log(`prevNewRotation: ${prevState.newRotation}`);
+    let { newRotation } = prevState || selectedIndex * degreesPerItem;
     const { needsSpin } = prevState;
     if (needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
@@ -74,43 +78,24 @@ class Wheel extends React.Component {
   onClickSpin = () => {
     const items = this.props.wheelData;
     const randomNum = Math.floor(Math.random() * items.length);
+    this.props.selectRay(items[randomNum].id);
     this.setState({ needsSpin: true });
-    this.props.selectRay(items[randomNum]._id);
   };
 
   onChange = (index) => {
-    const { length } = this.props.wheelData;
-    // TODO: check on resizing of letters on wheel list according to wheel size
-    const newIndex = (2 * length - index) % length;
-    this.setState(({ newRotation, degreesPerItem }) => {
-      const currentIndex = (length + this.getIndex(newRotation)) % length;
-      const diff = Math.abs(newIndex - currentIndex);
-      const isLargeDiff = diff > length / 2;
-      let direction;
-      if (newIndex > currentIndex && !isLargeDiff) {
-        direction = 1;
-      } else if (newIndex < currentIndex && isLargeDiff) {
-        direction = 1;
-      } else {
-        direction = -1;
-      }
-      const indexShift = isLargeDiff
-        ? Math.min(newIndex, currentIndex) + length - Math.max(newIndex, currentIndex)
-        : diff;
-      return {
-        newRotation: newRotation + direction * indexShift * degreesPerItem,
-        needsSpin: false,
-      };
-    });
+    this.props.selectRay(this.props.wheelData[index].id);
   };
 
-  // eslint-disable-next-line arrow-body-style
   getIndex = (currentRotation) => {
-    return Math.round((currentRotation % 360) / (360 / this.props.wheelData.length));
+    const { length } = this.props.wheelData;
+    const index = Math.round((currentRotation % 360) / ((360 - reservedDegrees) / (length - 1)));
+    return index;
   };
 
-  stopWheel = (rotation) => {
-    this.setState({ newRotation: rotation });
+  stopWheel = (index) => {
+    this.setState(prevState => (
+      { newRotation: prevState.newRotation + (index * prevState.degreesPerItem) }
+    ));
   };
 
   shouldRender = componentRenderFn => (
@@ -118,12 +103,11 @@ class Wheel extends React.Component {
   ;
 
   render() {
-    const dataLength = this.props.wheelData.length;
     return (
       <div className="Wheel">
         <Spring
           immediate={!this.state.needsSpin}
-          config={{ tension: 30, easing: 'easeInOutCirc' }}
+          config={{ tension: 30, easing: 'easeInExpo' }}
           onStart={() => this.setState({ needsSpin: false })}
           from={{
             transform: `rotate(${this.state.oldRotation}deg)`,
@@ -146,7 +130,7 @@ class Wheel extends React.Component {
                       items={this.props.wheelData}
                       degreesPerItem={this.state.degreesPerItem}
                       reservedDegrees={reservedDegrees}
-                      currentIndex={this.getIndex(props.rotation) % dataLength}
+                      currentIndex={this.getIndex(props.rotation)}
                       {...props}
                     />
                   ))}
@@ -168,7 +152,10 @@ class Wheel extends React.Component {
                     listContent={this.props.wheelData}
                     textClippingRadius="60"
                     onChange={this.onChange}
-                    selected={(dataLength + this.getIndex(props.rotation)) % dataLength}
+                    selected={
+                      (this.props.wheelData.length - this.getIndex(props.rotation))
+                      % this.props.wheelData.length
+                    }
                   />
                 ))}
               </div>
