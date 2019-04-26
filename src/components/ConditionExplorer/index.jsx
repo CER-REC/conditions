@@ -83,8 +83,8 @@ export default class ConditionExplorer extends React.Component {
         height: this.svgRef.current.height.baseVal.value,
       };
 
-    const startX = -50; // Off the left edge to match design
-    const margin = { width: 10, height: 10 };
+    const startX = -20; // Off the left edge to match design
+    const margin = { width: 22, height: 22 };
 
     const lineHeight = this.state.calculatedFontSize.height + margin.height;
     // The top needs to be one line down to account for y=bottom of text
@@ -116,6 +116,7 @@ export default class ConditionExplorer extends React.Component {
             x: -(outline.width / 2) - (textSize.xOffset * 2),
             y: textSize.yOffset + (outline.height / 2),
           },
+          textSize,
           outline,
           className: randomColor(v),
         };

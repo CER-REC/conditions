@@ -3,6 +3,20 @@
 @import '../../styles/legend.scss';
 @import '../../styles/svgs.scss';
 
+$keywordColors: (
+  0: #D7DBD9,
+  1: #E2DCD7,
+  2: #E0DCE0,
+);
+
+@each $index, $color in $keywordColors {
+  @keyframes ConditionExplorerText#{$index} {
+    0% { fill: rgb(17, 17, 17); }
+    80% { fill: darken($color, 50%); }
+    100% { fill: transparent; }
+  }
+}
+
 .ConditionExplorer {
    position: relative;
 
@@ -17,9 +31,15 @@
   .keyword {
     user-select: none;
 
-    &.color0 { fill: #D7DBD9; }
-    &.color1 { fill: #E2DCD7; }
-    &.color2 { fill: #E0DCE0; }
+    @each $index, $color in $keywordColors {
+      &.color#{$index} { fill: $color; }
+    }
+
+    // Performance optimizations
+    rect, path, text {
+      backface-visibility: hidden;
+      transform-style: flat;
+    }
 
     rect, path {
       opacity: 1;
@@ -31,9 +51,14 @@
       // design document. We need to provide an issue for the design document
       // and have these recorded or changed.
       font-family: $fira-sans-condensed-light;
-      fill: $DarkGray;
-      font-size: 18px;
-      transition: fill 1s, font-size 1s;
+      fill: transparent;
+      font-size: 9px;
+    }
+
+    @each $index, $color in $keywordColors {
+      &.textPlaceholder.color#{$index} text {
+        animation: ConditionExplorerText#{$index} 3.5s;
+      }
     }
 
     &.textVisible {
@@ -45,6 +70,7 @@
 
       text {
         fill: $Black19;
+        animation: none;
       }
 
       &.selected {

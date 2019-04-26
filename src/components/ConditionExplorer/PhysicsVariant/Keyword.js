@@ -1,6 +1,7 @@
 import Matter from 'matter-js';
 import Body from './Body';
 import {
+  guideCategory,
   guideOutlineCategory,
   placeholderCategory,
   resettingCategory,
@@ -22,9 +23,10 @@ export default class Keyword extends Body {
         },
       },
     );
-    body.frictionAir = 0.05;
+    body.frictionAir = 0.02;
     super(body, engine);
     this.keyword = keyword;
+    this.lastCollision = Date.now();
   }
 
   get isVisible() { return this.body.collisionFilter.category !== placeholderCategory; }
@@ -38,19 +40,36 @@ export default class Keyword extends Body {
 
   resetPosition() {
     this.removeCollisionMask(guideOutlineCategory);
+    this.removeCollisionMask(guideCategory);
     return Promise.all([
       this.moveTo(
         this.keyword.outline.x + (this.keyword.outline.width / 2),
         this.keyword.outline.y + (this.keyword.outline.height / 2),
-        2500,
+        1000,
       ),
-      this.rotateTo(0, 2500),
+      this.rotateTo(0, 1000),
+      this.scaleTo(1, 1000),
     ]).finally(() => {
       this.addCollisionMask(guideOutlineCategory);
     });
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
+    const threshold = 1.2;
+    if (Matter.Vector.magnitude(this.body.velocity) >= threshold) {
+      const clamped = Matter.Vector.normalise({ ...this.body.velocity });
+      clamped.x *= threshold;
+      clamped.y *= threshold;
+      Matter.Body.setVelocity(this.body, clamped);
+    }
+
+    const angThreshold = 0.025;
+    if (Math.abs(this.body.angularVelocity) > angThreshold) {
+      Matter.Body.setAngularVelocity(
+        this.body, angThreshold * Math.sign(this.body.angularVelocity)
+      );
+    }
+
     super.onUpdate(update);
 
     if (this.category === resettingCategory && !this.isMoving) {
@@ -58,7 +77,7 @@ export default class Keyword extends Body {
     }
 
     if (this.category === visibleTextCategory
-        && this.body.render.lastCollision + 5000 <= update.source.timing.timestamp
+        && this.lastCollision + 5000 <= Date.now()
         && keywordsCanReset) {
       const { x, y, width, height } = this.keyword.outline;
       const originalBounds = {

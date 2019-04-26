@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import StreamGraph, { roundDateLabel } from '.';
+import StreamGraph from '.';
 import { conditionCountsByYear } from '../../mockData';
 
 describe('Components|StreamGraph', () => {
@@ -31,10 +31,5 @@ describe('Components|StreamGraph', () => {
     test('should render the x and y axis', () => {
       expect(wrapper.find('VictoryAxis')).toHaveLength(2);
     });
-
-    test('should round the date label', () => {
-      expect(roundDateLabel(2018.1)).toBe(2018);
-    });
   });
 });
-
