@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+import { Query } from 'react-apollo';
+import { viewThreeQuery } from '../../queries/viewThree';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import InstrumentsLegend from '../../components/InstrumentsLegend';
@@ -144,7 +146,26 @@ ViewThree.defaultProps = {
   layoutOnly: PropTypes.false,
 };
 
-export const ViewThreeRaw = ViewThree;
+export const ViewThreeUnconnected = ViewThree;
+
+export const ViewThreeGraphQL = props => (
+  <Query query={viewThreeQuery}>
+    {({ data }) => {
+      // TODO: Figure what to render while we're waiting
+      if (!data) { return null; }
+
+      // Just for testing until we actually hook up some components
+      console.dir({ data });
+
+      return (
+        <ViewThree
+          // data props here
+          {...props}
+        />
+      );
+    }}
+  </Query>
+);
 
 export default connect(
   ({
@@ -172,4 +193,4 @@ export default connect(
     setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(ViewThree);
+)(ViewThreeGraphQL);
