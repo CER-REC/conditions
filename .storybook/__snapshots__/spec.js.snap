@@ -2591,7 +2591,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-001-2018
@@ -2726,7 +2726,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-003-2018
@@ -2845,7 +2845,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-005-2018
@@ -3150,7 +3150,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="unmarked"
+                        className="barMarker"
                       />
                       <h4>
                         XO-001-2018
@@ -3285,7 +3285,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="unmarked"
+                        className="barMarker"
                       />
                       <h4>
                         XO-003-2018
@@ -3404,7 +3404,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="unmarked"
+                        className="barMarker"
                       />
                       <h4>
                         XO-005-2018
@@ -3670,7 +3670,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-001-2018
@@ -3805,7 +3805,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-003-2018
@@ -3924,7 +3924,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-005-2018
@@ -4162,7 +4162,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <h4>
                   XO-001-2018
@@ -4281,7 +4281,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <h4>
                   XO-003-2018
@@ -4400,7 +4400,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <h4>
                   XO-005-2018
@@ -10073,6 +10073,9 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
+      className="pipe"
+    />
+    <div
       className="sedimentation left"
       style={
         Object {
@@ -10087,9 +10090,6 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
           "width": 2,
         }
       }
-    />
-    <div
-      className="pipe"
     />
     <div
       className="List horizontal"
@@ -10973,6 +10973,9 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
+      className="pipe"
+    />
+    <div
       className="sedimentation left"
       style={
         Object {
@@ -10987,9 +10990,6 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
           "width": 2,
         }
       }
-    />
-    <div
-      className="pipe"
     />
     <div
       className="List horizontal"
@@ -11887,6 +11887,9 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
+      className="pipe"
+    />
+    <div
       className="sedimentation left"
       style={
         Object {
@@ -11901,9 +11904,6 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           "width": 3,
         }
       }
-    />
-    <div
-      className="pipe"
     />
     <div
       className="List horizontal"
@@ -12787,6 +12787,9 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
+      className="pipe"
+    />
+    <div
       className="sedimentation left"
       style={
         Object {
@@ -12801,9 +12804,6 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           "width": 3,
         }
       }
-    />
-    <div
-      className="pipe"
     />
     <div
       className="List horizontal"
@@ -13687,6 +13687,9 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter2"
   >
     <div
+      className="pipe"
+    />
+    <div
       className="sedimentation left"
       style={
         Object {
@@ -13701,9 +13704,6 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
           "width": 0,
         }
       }
-    />
-    <div
-      className="pipe"
     />
     <div
       className="List horizontal"
@@ -14057,6 +14057,9 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
     className="ProjectMenu paddingBefore2 paddingAfter0"
   >
     <div
+      className="pipe"
+    />
+    <div
       className="sedimentation left"
       style={
         Object {
@@ -14071,9 +14074,6 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           "width": 2,
         }
       }
-    />
-    <div
-      className="pipe"
     />
     <div
       className="List horizontal"
