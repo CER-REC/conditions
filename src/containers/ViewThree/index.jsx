@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
-import { viewThreeQuery } from '../../queries/viewThree';
+import { viewThreeQueries } from '../../queries/viewThree';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import InstrumentsLegend from '../../components/InstrumentsLegend';
@@ -160,7 +160,7 @@ ViewThree.defaultProps = {
 export const ViewThreeUnconnected = ViewThree;
 
 export const ViewThreeGraphQL = props => (
-  <Query query={viewThreeQuery} variables={{id: props.queryId}}>
+  <Query query={viewThreeQueries.instrumentsByProject} variables={{id: props.queryId}}>
     {({ data, loading }) => {
       // TODO: Figure what to render while we're waiting
       if (!data) { return null; }
