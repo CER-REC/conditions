@@ -2,11 +2,16 @@ import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
 export const viewThreeQuery = gql`
-  query companies {
-    allCompanies {
+  query instrumentsByProject($id: Int!) {
+    allInstrumentsByProject(projectId: $id){
+      dateEffective
+      dateIssuance
+      dateSunset
       id
       name
-      projectIds
+      projectId
+      regionIds
+      status
     }
   }
 `;

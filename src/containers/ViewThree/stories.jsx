@@ -1,6 +1,8 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import { storiesForView, withStyles } from '../../../.storybook/utils';
+
 import withGQL from '../../../.storybook/addon-graphql';
 import ReadMe from './README.md';
 import { ViewThreeUnconnected, ViewThreeGraphQL } from '.';
@@ -62,6 +64,12 @@ storiesForView('Containers|ViewThree', module, ReadMe)
   .add('default', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} />)
   .add(
     'connected variant',
-    () => <ViewThreeGraphQL {...props} {...getInteractionProps()} />, { decorators: [withGQL] },
+    () => (
+      <ViewThreeGraphQL
+        {...props}
+        {...getInteractionProps()}
+        queryId={select('query project id', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1)}
+      />
+    ), { decorators: [withGQL, withKnobs] },
   )
   .add('layout only', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} layoutOnly />);
