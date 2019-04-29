@@ -41,20 +41,37 @@ class List extends React.PureComponent {
 
   debounceScrollEvents = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     this.handleScroll(e.deltaY);
   }
 
-  render = () => {
-    if (this.props.items.length === 0) { return null; }
-
-    // Selected index cannot exceed the length of the array
-    const selectedIndex = (this.props.selected < this.props.items.length) ? this.props.selected : 0;
+  renderArrow(next, selectedIndex) {
+    const hidden = ((next === false && selectedIndex === 0)
+      || (next === true && selectedIndex === this.props.items.length - 1));
 
     // arrowSize should match the legend style's arrow-size variable
     // (there are testing issues with :export)
     const arrowSize = 24;
     const previousIcon = this.props.horizontal ? 'angle-left' : 'angle-up';
     const nextIcon = this.props.horizontal ? 'angle-right' : 'angle-down';
+
+    return (
+      <CircleContainer
+        size={arrowSize}
+        onClick={() => this.props.onChange(selectedIndex + (next ? 1 : -1))}
+        className={classNames('arrow', next ? 'arrowNext' : 'arrowPrevious', { hidden })}
+      >
+        <Icon size="1x" icon={next ? nextIcon : previousIcon} />
+      </CircleContainer>
+    );
+  }
+
+  render = () => {
+    const { arrowsAtEdges } = this.props;
+    if (this.props.items.length === 0) { return null; }
+
+    // Selected index cannot exceed the length of the array
+    const selectedIndex = (this.props.selected < this.props.items.length) ? this.props.selected : 0;
 
     return (
       <div
@@ -66,41 +83,27 @@ class List extends React.PureComponent {
         onWheel={this.debounceScrollEvents}
       >
         <ul>
+          {!arrowsAtEdges
+            ? null
+            : <li className="List-Arrow">{this.renderArrow(false, selectedIndex)}</li>}
           {this.props.items.map((item, i) => (
             <li
               key={item.key || item}
               className={classNames('List-Item', { selected: selectedIndex === i })}
             >
-              {selectedIndex !== i || selectedIndex === 0
-                ? null
-                : (
-                  <CircleContainer
-                    size={arrowSize}
-                    onClick={() => this.props.onChange(i - 1)}
-                    className="arrowPrevious"
-                  >
-                    <Icon size="1x" icon={previousIcon} />
-                  </CircleContainer>
-                )}
+              {arrowsAtEdges || selectedIndex !== i ? null : this.renderArrow(false, selectedIndex)}
               <div
                 {...handleInteraction(this.props.itemInteractions && this.props.onChange, i)}
                 className="List-Item-Content"
               >
                 {item}
               </div>
-              {selectedIndex !== i || selectedIndex === (this.props.items.length - 1)
-                ? null
-                : (
-                  <CircleContainer
-                    size={arrowSize}
-                    onClick={() => this.props.onChange(i + 1)}
-                    className="arrowNext"
-                  >
-                    <Icon size="1x" icon={nextIcon} />
-                  </CircleContainer>
-                )}
+              {arrowsAtEdges || selectedIndex !== i ? null : this.renderArrow(true, selectedIndex)}
             </li>
           ))}
+          {!arrowsAtEdges
+            ? null
+            : <li className="List-Arrow">{this.renderArrow(true, selectedIndex)}</li>}
         </ul>
       </div>
     );
@@ -123,6 +126,7 @@ List.propTypes = {
   /** Additional className to add to the list */
   className: PropTypes.string,
   elevated: PropTypes.bool,
+  arrowsAtEdges: PropTypes.bool,
 };
 
 List.defaultProps = {
@@ -131,6 +135,7 @@ List.defaultProps = {
   itemInteractions: true,
   className: '',
   elevated: false,
+  arrowsAtEdges: false,
 };
 
 export default List;

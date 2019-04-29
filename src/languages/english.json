@@ -101,10 +101,12 @@
     "conditionExplorer": {
       "guide": {
         "overview": {
+          "title": "Overview",
           "overview1": "As Canada’s energy regulator the {NEB} has a variety of roles and responsibilities throughout the {lifecycleLink} of energy infrastructure – from adjudication of energy project {applicationsLink} to safety oversight and {envProtectionLink}. To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. {conditionsLink} are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.",
           "overview2": "The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that {hereLink}). Here is a {mapLink} of major pipeline systems regulated by the NEB."
         },
         "scope": {
+          "title": "The genesis and scope of conditions",
           "scope1": "Not all concerns result in the creation of a condition. Existing federal, provincial and municipal {regulationsLink} are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.",
           "scope2": "These different sorts of requirements expressed in conditions are the Themes which can be explored {themeLink} in this data visualization.",
           "scope3": "Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.",
@@ -112,6 +114,7 @@
           "scope5": "When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the {applicationLink} Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in {hearingsLink}, individuals must apply (more info about how to become an intervenor {intervenorLink})"
         },
         "compliance": {
+          "title": "Conditions tracking and compliance",
           "detail": "Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company ({FilingsLink}) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.",
           "documentationPrompt": "Conditions may require a company to submit documentation such as:",
           "doc1": "results of additional environmental and socio-economic assessments, species-specific studies, or traditional land use investigations;",
@@ -218,6 +221,18 @@
     },
     "featureMenu": {
       "dropDownTitle": "Feature"
+    },
+    "guide": {
+      "tutorial": {
+        "0": "Scroll Down",
+        "1": "Scroll Down",
+        "2": "Here is the full legal text of the condition you selected",
+        "3": "Conditions are characterized by features, such as theme",
+        "4": "You can browse other conditions in this project",
+        "5": "You can browse other projects by this company",
+        "6": "Spin wheel to browse companies",
+        "7": "Look around to discover more!"
+      }
     },
     "instrumentsLegend": {
       "all": "All Instruments"
@@ -355,6 +370,11 @@
     "trendButton": {
       "description": "Trends &\nDefinitions"
     },
+    "browseBy": {
+      "skip": "Skip intro to browse:",
+      "return": "Return to browse:",
+      "blank": " "
+    },
     "browseByBtn": {
       "projectsBy": "Projects by {icon}",
       "conditionsBy": "Conditions by {icon}",
@@ -367,9 +387,6 @@
       "header": {
         "title": "Conditions on NEB-regulated energy projects",
         "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation."
-      },
-      "footer": {
-        "skip": "Skip intro to browse:"
       }
     }
   }

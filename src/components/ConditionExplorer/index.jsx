@@ -4,6 +4,7 @@ import memoize from 'lodash.memoize';
 import shallowequal from 'shallowequal';
 import PhysicsVariant from './PhysicsVariant';
 import Fallback from './Fallback';
+import GuideDetail from './GuideDetail';
 import './styles.scss';
 
 // This function memoizes based on the keyword, but doesn't use it in the result
@@ -47,13 +48,28 @@ export default class ConditionExplorer extends React.Component {
     this.svgRef = React.createRef();
     this.fontChangeRef = React.createRef();
     this.textSizeRef = React.createRef();
-    this.state = { fallbackFontSize: null, calculatedFontSize: null };
+    this.state = {
+      fallbackFontSize: null,
+      calculatedFontSize: null,
+      guidePosition: { x: 0, y: 0, r: 0 },
+      guideExpanded: false,
+      guideStep: 0,
+    };
   }
 
   componentDidMount() {
     // Check every 100ms for 5 seconds for a font change
     this.cancelFontDetection = setTimeoutChain(this.testFontSize, 100, 50);
   }
+
+  setGuidePosition = (x, y, r) => this.setState({ guidePosition: { x, y, r } });
+
+  setGuideExpanded = guideExpanded => this.setState({
+    guideExpanded,
+    guideStep: 0,
+  });
+
+  setGuideStep = guideStep => this.setState({ guideStep });
 
   getKeywords() {
     if (!this.textSizeRef.current || !this.state.calculatedFontSize) { return []; }
@@ -64,8 +80,8 @@ export default class ConditionExplorer extends React.Component {
         height: this.svgRef.current.height.baseVal.value,
       };
 
-    const startX = -50; // Off the left edge to match design
-    const margin = { width: 10, height: 10 };
+    const startX = -20; // Off the left edge to match design
+    const margin = { width: 22, height: 22 };
 
     const lineHeight = this.state.calculatedFontSize.height + margin.height;
     // The top needs to be one line down to account for y=bottom of text
@@ -97,6 +113,7 @@ export default class ConditionExplorer extends React.Component {
             x: -(outline.width / 2) - (textSize.xOffset * 2),
             y: textSize.yOffset + (outline.height / 2),
           },
+          textSize,
           outline,
           className: randomColor(v),
         };
@@ -126,35 +143,52 @@ export default class ConditionExplorer extends React.Component {
 
     // There are no keywords to render until after the first mount
     if (keywords.length > 0) {
+      const contentProps = {
+        keywords,
+        setGuidePosition: this.setGuidePosition,
+        setGuideExpanded: this.setGuideExpanded,
+      };
       content = this.props.physics
-        ? <PhysicsVariant keywords={keywords} />
-        : <Fallback keywords={keywords} />;
+        ? <PhysicsVariant {...contentProps} />
+        : <Fallback {...contentProps} />;
     }
 
     const fontTestStyles = { visibility: 'hidden' };
     if (!this.state.fallbackFontSize) { fontTestStyles.fontFamily = 'Sans Serif'; }
 
+    const informationPanel = !this.state.guideExpanded
+      ? null
+      : (
+        <GuideDetail
+          selected={this.state.guideStep}
+          changeStep={this.setGuideStep}
+          radius={this.state.guidePosition.r}
+        />
+      );
+
     return (
-      <svg
-        ref={this.svgRef}
-        className="ConditionExplorer"
-        width="100%"
-        height="100%"
-        style={{ border: '1px solid #000' }}
-      >
-        <g className="keyword color0 textVisible">
-          <text ref={this.fontChangeRef} style={fontTestStyles}>
-            abcdefghijklmnopqrstuvwxyz
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-            -.,
-            0123456789
-            ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ
-            ùûüÿ€àâæçéèêëïîôœ
-          </text>
-          <text ref={this.textSizeRef} style={fontTestStyles} />
-        </g>
-        {content}
-      </svg>
+      <div className="ConditionExplorer">
+        {informationPanel}
+        <svg
+          ref={this.svgRef}
+          width="100%"
+          height="100%"
+          style={{ border: '1px solid #000', zIndex: '0' }}
+        >
+          <g className="keyword color0 textVisible">
+            <text ref={this.fontChangeRef} style={fontTestStyles}>
+              abcdefghijklmnopqrstuvwxyz
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ
+              -.,
+              0123456789
+              ÙÛÜŸ€ÀÂÆÇÉÈÊËÏÎÔŒ
+              ùûüÿ€àâæçéèêëïîôœ
+            </text>
+            <text ref={this.textSizeRef} style={fontTestStyles} />
+          </g>
+          {content}
+        </svg>
+      </div>
     );
   }
 }

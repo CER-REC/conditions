@@ -13,7 +13,7 @@ describe('Components|Wheel', () => {
     wrapper = shallow((
       <Wheel
         wheelType="company"
-        itemsData={wheelData}
+        wheelData={wheelData}
         selectRay={spy}
       />
     ));

@@ -2,19 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+import { Query } from 'react-apollo';
+import { viewTwoQuery } from '../../queries/viewTwo';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
-import BrowseByBtn from '../../components/BrowseByBtn';
-import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import TrendButton from '../../components/TrendButton';
-import {
-  browseByType,
-  yearRangeType,
-  featureTypes,
-  conditionData,
-  project,
-} from '../../proptypes';
+import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
+import { browseByType, yearRangeType, featureTypes, conditionData, project } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
@@ -22,11 +17,7 @@ import ConditionDetails from '../../components/ConditionDetails';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
-import {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
-  searchData,
-} from '../../mockData';
+import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import './styles.scss';
 
 const noop = () => {};
@@ -38,7 +29,12 @@ const legendItems = [
 ];
 
 // SearchBar (Data)
-const availableCategories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
+const availableCategories = [
+  'all',
+  'oversight & safety',
+  'environment',
+  'administration & filings',
+];
 const availableYearRange = { start: 1970, end: 1980 };
 
 const ViewTwo = props => (
@@ -46,7 +42,7 @@ const ViewTwo = props => (
     <section className="row">
       <section className="header">
         <SearchBar
-          className={(props.browseBy === 'location') ? 'small' : ''}
+          className={props.browseBy === 'location' ? 'small' : ''}
           suggestedKeywords={searchData}
           availableYearRange={availableYearRange}
           availableCategories={availableCategories}
@@ -61,23 +57,14 @@ const ViewTwo = props => (
           yearRange={props.projectYear}
           findAny={props.findAny}
         />
-        {(props.browseBy === 'location')
-          ? <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
-          : null
-        }
+        {props.browseBy === 'location' ? (
+          <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
+        ) : null}
       </section>
     </section>
     <section className="row">
       <section className="wheel">
-        <Wheel
-          wheelType={props.browseBy}
-          selectRay={noop}
-          itemsData={props.browseBy === 'company' ? companyWheelData
-            : { items: locationData.items.slice(0, 50) }
-          }
-        />
-        <BrowseByBtn mode="company" onClick={props.setBrowseBy} />
-        <BrowseByBtn mode="location" onClick={props.setBrowseBy} />
+        <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
       </section>
       <section className="companyBreakdown">
         <ProjectMenu
@@ -89,8 +76,8 @@ const ViewTwo = props => (
       </section>
       <section className="menus">
         <TrendButton
-          onClick={noop}
-          feature="theme"
+          onClick={props.jumpToView3}
+          feature={props.selected.feature}
           subFeature=""
           projectData={conditionCountsByYear.counts}
           instrumentData={conditionCountsByCommodity.counts}
@@ -100,11 +87,7 @@ const ViewTwo = props => (
           selected={props.selected.feature}
           onChange={props.setSelectedFeature}
         />
-        <FeaturesLegend
-          legendItems={legendItems}
-          selectedFeature="theme"
-          isProjectLegend
-        />
+        <FeaturesLegend legendItems={legendItems} selectedFeature="theme" isProjectLegend />
       </section>
       <section className="conditions">
         <ConditionDetails
@@ -135,7 +118,7 @@ ViewTwo.propTypes = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
-  setBrowseBy: PropTypes.func.isRequired,
+  // setBrowseBy: PropTypes.func.isRequired,
   setFindAny: PropTypes.func.isRequired,
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -164,20 +147,43 @@ ViewTwo.propTypes = {
   projectsData: PropTypes.shape({
     counts: PropTypes.arrayOf(project).isRequired,
   }).isRequired,
+  // The shape of wheelData will change once more integration is done.
+  wheelData: PropTypes.arrayOf(PropTypes.any),
+  jumpToView3: PropTypes.func.isRequired,
 };
 
 ViewTwo.defaultProps = {
   layoutOnly: false,
+  wheelData: [],
 };
 
-export const ViewTwoUnconnected = ViewTwo;
+export const ViewTwoUnconnected = props => (
+  <ViewTwo
+    // eslint-disable-next-line react/prop-types
+    wheelData={props.browseBy === 'company' ? companyWheelData : locationData}
+    {...props}
+  />
+);
+
+export const ViewTwoGraphQL = props => (
+  <Query query={viewTwoQuery}>
+    {({ data }) => (
+      // if (loading) // do something;
+      // else if (error) // handle the error;
+      // else {}
+      <ViewTwo
+        wheelData={
+        // eslint-disable-next-line react/prop-types
+        props.browseBy === 'company' ? data.allCompanies : locationData
+        }
+        {...props}
+      />
+    )}
+  </Query>
+);
 
 export default connect(
-  ({
-    selected,
-    browseBy,
-    search,
-  }) => ({
+  ({ selected, browseBy, search }) => ({
     selected,
     browseBy,
     included: search.included,
@@ -198,4 +204,4 @@ export default connect(
     setIncluded: searchCreators.setIncluded,
     setExcluded: searchCreators.setExcluded,
   },
-)(ViewTwo);
+)(ViewTwoGraphQL);

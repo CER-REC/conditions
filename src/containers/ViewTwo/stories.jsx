@@ -1,9 +1,12 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
+import withGQL from '../../../.storybook/addon-graphql';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import { ViewTwoUnconnected } from '.';
+import { ViewTwoUnconnected, ViewTwoGraphQL } from '.';
 import { searchData, conditionData, projectsData } from '../../mockData';
+
+const noop = () => {};
 
 const year = {
   start: 1970,
@@ -20,50 +23,49 @@ const props = {
     selectedProject: 'Project Name',
     data: conditionData,
   },
+  browseBy: 'company',
+  jumpToView3: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
-  .addDecorator(withInteraction({
-    actions: {
-      setBrowseBy: () => browseBy => ({ browseBy }),
-      selectRay: () => () => ({}),
-      setFindAny: () => e => ({ findAny: e }),
-      setProjectYear: () => selectedYear => ({ projectYear: selectedYear }),
-      setProjectStatus: () => status => ({ projectStatus: status }),
-      setIncluded: () => words => ({ included: words }),
-      setExcluded: () => words => ({ excluded: words }),
-      setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
-      setSelectedCondition: ({ selected }) => selectedCondition => ({
-        selected: { ...selected, condition: selectedCondition },
-      }),
-      setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
-      openIntermediatePopup: () => () => ({}),
-      openProjectDetails: () => () => ({}),
-    },
-    state: {
-      browseBy: 'company',
-      included: [],
-      excluded: [],
-      projectStatus: ['OPEN'],
-      projectYear: year,
-      findAny: true,
-      selected: {
-        feature: 'theme',
-        condition: { instrumentIndex: 0, itemIndex: 0 },
-        project: 1225,
+  .addDecorator(
+    withInteraction({
+      actions: {
+        setBrowseBy: () => browseBy => ({ browseBy }),
+        selectRay: () => () => ({}),
+        setFindAny: () => e => ({ findAny: e }),
+        setProjectYear: () => selectedYear => ({ projectYear: selectedYear }),
+        setProjectStatus: () => status => ({ projectStatus: status }),
+        setIncluded: () => words => ({ included: words }),
+        setExcluded: () => words => ({ excluded: words }),
+        setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
+        setSelectedCondition: ({ selected }) => selectedCondition => ({
+          selected: { ...selected, condition: selectedCondition },
+        }),
+        setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
+        openIntermediatePopup: () => () => ({}),
+        openProjectDetails: () => () => ({}),
       },
-    },
-  }))
-  .add('default', () => (
-    <ViewTwoUnconnected
-      {...props}
-      {...getInteractionProps()}
-    />
-  ))
+      state: {
+        browseBy: 'company',
+        included: [],
+        excluded: [],
+        projectStatus: ['OPEN'],
+        projectYear: year,
+        findAny: true,
+        selected: {
+          feature: 'theme',
+          condition: { instrumentIndex: 0, itemIndex: 0 },
+          project: 1225,
+        },
+      },
+    }),
+  )
+  .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
+  .add(
+    'connected variant', () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />,
+    { decorators: [withGQL] },
+  )
   .add('layout only', () => (
-    <ViewTwoUnconnected
-      layoutOnly
-      {...props}
-      {...getInteractionProps()}
-    />
+    <ViewTwoUnconnected layoutOnly {...props} {...getInteractionProps()} />
   ));

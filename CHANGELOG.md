@@ -1,3 +1,251 @@
+# [0.10.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.10.0) (2019-04-24)
+
+
+### App
+
+* **Bug Fixes:** fixes issues raised in PR (e9768c5)
+
+
+### ConditionExplorer
+
+* **Features:** outline transitions to wherever guide is initiall positioned (0477944)
+* **Features:** guide displaces keywords when it is expanded (5bd45ec)
+* **Features:** adjusts keyword movement and timing (7e47440)
+* **Features:** adds font-size scaling to match design doc (f69fea2)
+* **Features:** adds text shimmer when keywords reset to placeholders (5f9ec63)
+* **Features:** immediately finish transitions if they don't result in change (1e454bf)
+* **Features:** adds CSS and collision performance improvements (b6cb1cf)
+* **Features:** clamps keyword velocity and rotation for "icy" movement (e0bf216)
+* **Features:** rotate with shortest path (modulus) instead of unwinding (23b8e22)
+* **Features:** set guide as static when not being dragged (85c744b)
+* **Bug Fixes:** fixes bug with drifting keywords (603fc15)
+* **Bug Fixes:** fixes collision/reset timing (79f05a4)
+
+
+### Storybook
+
+* **Features:** removes the a11y addon from the project (250a147)
+* **Performance Improvements:** disables the a11y addon to fix perf and scroll janking issues (84b1128)
+
+
+### StreamGraph
+
+* **Features:** tweaks animation, updates snapshots (4ac6a02)
+* **Features:** adds stream animation for TrendButton display (2c5c02b)
+* **Features:** adds transitions when data changes (38b901d)
+* **Bug Fixes:** removes unused code (a0a7b9a)
+* **Bug Fixes:** fixes rendering issues in component stories (e8b33ee)
+* **Bug Fixes:** adjusts curve to keep streams on top of each other (9368e22)
+* **Code Refactoring:** continues work on redundant loops (b56f75b)
+* **Code Refactoring:** minimizes redundant looping over the data set (7e26675)
+
+
+### View 2
+
+* **Features:** syncs the Trend Button to current feature (30a921b)
+
+# [0.8.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.8.0) (2019-04-18)
+
+
+### App
+
+* **Features:** adds Footer transitions (a8a2f67)
+* **Features:** adds basic transition stages and a story knob (e1d4cbd)
+* **Features:** updates documentation, removes commented code (92e4d38)
+* **Features:** adds a rough version of the first transition step (e74176c)
+* **Features:** moves transitionState to Redux (60d7340)
+* **Features:** fixes positioning and transition issues (f7ce46c)
+* **Features:** fixes positioning issues, makes Guide larger (32cda23)
+* **Features:** adds jump-to-Footer interaction (b5f8500)
+* **Features:** adds component-specific overrides for scrolling (02f4b5c)
+* **Features:** adds a rough version of the second transition step (5146ae2)
+* **Features:** adds a rough version of the third transition step (cfdaef7)
+* **Features:** makes transition targets more granular, fixes prop errors (186a7c1)
+* **Features:** adds a rough version of the fourth transition step (e2784f1)
+* **Features:** implements scroll interactions (7dfb3d3)
+* **Features:** initial graphql apollo integration to app (a016d9a)
+* **Features:** adds a rough version of the fifth transition step (f868299)
+* **Features:** adds an event handler for the Trend button (10c7f64)
+* **Features:** implements a transition state callback for the BrowseBy buttons (6fa9358)
+* **Features:** transitions the BrowseBy buttons on mode changes (4a12f5a)
+* **Features:** handles Redux wrapper in App component (759a999)
+* **Features:** wraps the App with Redux, hooks the BrowseBy buttons up again (f00f85f)
+* **Features:** removes preemptive will-change properties (b954b5c)
+* **Features:** uses translate for all positioning animations (a6c9867)
+* **Features:** uses translate for improved performance when moving the Guide (f1a4a49)
+* **Features:** tweaks BrowseBy transitions (c82d9c4)
+* **Features:** adjusts View 2/3 transitions (d096acf)
+* **Features:** adds a rough version of the sixth transition step (e39fb92)
+* **Features:** updates BrowseBy visibility (443ef56)
+* **Features:** fades text from one Guide step to the next (df33fae)
+* **Features:** removes redundant BrowseBy buttons from Views (43d49b1)
+* **Features:** hides Footer to avoid capturing mouse events (8dac4e9)
+* **Features:** updates the views to use consistent heights (9736679)
+* **Features:** adjust View 3 to use the same heights as the others (4197f99)
+* **Features:** continues updating styles for a consistent viewport (f0e9416)
+* **Features:** adjusts View 1 styles (261ae12)
+* **Features:** adds a rough version of the seventh transition step (69e6d86)
+* **Features:** adds SkipIntro to View 1 (9391bb2)
+* **Features:** adds localized text for each Guide step (7e44ffe)
+* **Features:** adds basic View 2<->3 transition, updates styles (10b76ad)
+* **Features:** updates documentation with transition states (69087b8)
+* **Features:** moves guide CSS into sass map (e5b5b25)
+* **Features:** adjust transition curve for 8 -> 0 (f2d2d75)
+* **Features:** render components at all stages, add 8 -> 0 transition (e5d5ae5)
+* **Features:** uses pixels for Guide positioning rather than percent (d8ab68e)
+* **Bug Fixes:** adjusts CSS to match SearchBar changes (dc57d52)
+* **Bug Fixes:** fixes missing key errors, updates snapshots (3855998)
+* **Bug Fixes:** corrects issues integrating with the WET template (fe9c392)
+* **Bug Fixes:** checks for scrollable elements before transitioning (f81202a)
+* **Bug Fixes:** stops App from hijacking wheel events on List (0941a3f)
+* **Bug Fixes:** fixes Guide positioning at tutorial steps (54a6a1b)
+* **Bug Fixes:** reverts the Guide's x position to percents for scaling (7d93f30)
+* **Bug Fixes:** fixes pointer issues with Victory on Firefox (7ad1546)
+* **Tests:** updates snapshots (45d1984)
+* **Code Formatting:** removes commented code, disables linting for temp. code (a5a2339)
+* **Code Formatting:** uses variables for repeated styles (1be2177)
+* **Code Refactoring:** moves Guide state logic out of JSX (26dc665)
+* **Code Refactoring:** refactors and privatizes the BrowseByBtn component (9fdc5be)
+
+
+### BrowseBy
+
+* **Features:** adds missing callback prop (e65505b)
+* **Bug Fixes:** fixes proptype errors, updates snapshots (4a18f5f)
+
+
+### BrowseByBtn
+
+* **Bug Fixes:** fixes display issues with duplicate clip path IDs (d0043a7)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** adjusts component height to match the design doc (684c51a)
+
+
+### FeaturesLegend
+
+* **Code Refactoring:** renames component class to avoid namespace collision (69dd191)
+
+
+### GraphQL
+
+* **Features:** wheel-company variant query render on load (24b2937)
+
+
+### GraphQL/Wheel
+
+* **Features:** add conditional rendering, cleanup (6f78783)
+
+
+### Guide
+
+* **Features:** adds a margin to keep text inside the circle (425cfdb)
+
+
+### ProjectMenu
+
+* **Features:** shortens pipe to avoid overlapping ConditionDetails (5e618fe)
+
+
+### Query
+
+* **Code Refactoring:** modifies (48333e2)
+
+
+### ShortcutInfoBar
+
+* **Features:** updates styling (still pretty rough) (6a8e044)
+
+
+### SkipIntro
+
+* **Features:** adds arrow display (91938d9)
+* **Features:** adds a component for View 1's BrowseBy buttons (09bc778)
+
+
+### Snapshots
+
+* **Tests:** updates snapshots (3b3897c)
+
+
+### View 2
+
+* **Features:** fixes positioning issues (afab629)
+
+
+### View 3
+
+* **Code Formatting:** removes unused code (f4dca09)
+
+
+### View2
+
+* **Code Refactoring:** create alternate view and fetch polyfill (b0a1728)
+
+
+### ViewTwo
+
+* **Code Refactoring:** changes reflecting further PR suggestions (1a8542e)
+
+
+### ViewTwo, GraphQL, Wheel, GQLdecorator
+
+* **Code Refactoring:** refactor as per PR comments (2c4021a)
+
+
+### Wheel
+
+* **Features:** graphQL tied with company wheel variant (de20ff2)
+
+
+### WheelList
+
+* **Code Refactoring:** adds support for html formatted text, fixes text spacing for non selected items (b7307dd)
+* **Code Refactoring:** fixes linting issues errors (07ec78b)
+
+
+### BREAKING CHANGES
+
+* **GraphQL:** change of randomdatasample and removal of object from it to return an array instead
+* **Wheel:** Location Wheel, props changed
+
+# [0.7.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.7.0) (2019-04-15)
+
+
+### ConditionExplorer
+
+* **Features:** adds guide dot interactions and fixes PR comments (5e69568)
+* **Features:** keep Guide and Outline positions synchronized (3a075e1)
+* **Features:** finish implementing guide text and sizing (eb06e56)
+* **Bug Fixes:** fixes bug with double-click still opening guide (11a39d2)
+* **Bug Fixes:** fixes bugs with engine and transition timings (9084329)
+* **Bug Fixes:** fixes collision when immediately opening and closing guide (6a088d5)
+* **Tests:** updates snapshots (26a8248)
+* **Code Formatting:** fixes linting errors (8650aac)
+* **Code Formatting:** fixes PR comments (d45824a)
+* **Code Formatting:** hide guide arrows instead of removing them (df9524d)
+* **Code Refactoring:** rename circle/guide/outline and categories (9dfa56d)
+
+
+### Dependencies
+
+* **Bug Fixes:** update dependency react-redux to v7 (9b85637)
+* **Project Maintenance:** update dependency cz-customizable to v5.10.0 (6971751)
+* **Project Maintenance:** update dependency enzyme-adapter-react-16 to v1.12.1 (4a2c251)
+* **Project Maintenance:** update dependency opn-cli to v4.1.0 (8ba4f96)
+
+
+### Interactive Guide
+
+* **Features:** add on click overlay (2e09a4c)
+
+
+### List
+
+* **Features:** adds prop for arrows on outside of list (4aa8722)
+
 # [0.6.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.6.0) (2019-04-09)
 
 

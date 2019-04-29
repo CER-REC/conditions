@@ -4,11 +4,19 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import GuideDetail from '.';
 
+const noop = () => {};
+
 describe('Components|ConditionExplorer/GuideDetail', () => {
   describe('default', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<GuideDetail />);
+      wrapper = shallow((
+        <GuideDetail
+          radius={250}
+          selected={1}
+          changeStep={noop}
+        />
+      ));
     });
     shouldBehaveLikeAComponent(GuideDetail, () => wrapper);
   });
