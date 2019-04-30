@@ -6121,12 +6121,12 @@ exports[`Storyshots Components|Guide default 1`] = `
         <span
           className="hidden"
         >
-          Scroll Down
+          Click to continue
         </span>
         <span
           className="hidden"
         >
-          Scroll Down
+          Click to continue
         </span>
         <span
           className="hidden"

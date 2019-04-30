@@ -224,8 +224,8 @@
     },
     "guide": {
       "tutorial": {
-        "0": "Scroll Down",
-        "1": "Scroll Down",
+        "0": "Click to continue",
+        "1": "Click to continue",
         "2": "Here is the full legal text of the condition you selected",
         "3": "Conditions are characterized by features, such as theme",
         "4": "You can browse other conditions in this project",
