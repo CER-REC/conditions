@@ -60,6 +60,21 @@ const ViewTwo = props => (
         {props.browseBy === 'location' ? (
           <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
         ) : null}
+
+        {/* Placeholder for functionality; waiting on a design for this */}
+        <button
+          className="view1reset"
+          type="button"
+          onClick={props.jumpToView1}
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            height: '48px',
+          }}
+        >
+            Back To Introduction
+        </button>
       </section>
     </section>
     <section className="row">
@@ -149,6 +164,7 @@ ViewTwo.propTypes = {
   }).isRequired,
   // The shape of wheelData will change once more integration is done.
   wheelData: PropTypes.arrayOf(PropTypes.any),
+  jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
 };
 

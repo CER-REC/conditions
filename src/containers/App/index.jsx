@@ -7,7 +7,6 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import debounce from 'lodash.debounce';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as transitionStateCreators from '../../actions/transitionState';
@@ -62,60 +61,7 @@ const viewProps = {
   openProjectDetails: noop,
 };
 
-const UP = -1;
-const DOWN = 1;
-const transitionTargets = {
-  0: { [UP]: 0, [DOWN]: 1 }, // View 1
-  1: { [UP]: 0, [DOWN]: 2 },
-  2: { [UP]: 1, [DOWN]: 3 },
-  3: { [UP]: 2, [DOWN]: 4 },
-  4: { [UP]: 3, [DOWN]: 5 },
-  5: { [UP]: 4, [DOWN]: 6 },
-  6: { [UP]: 5, [DOWN]: 7 },
-  7: { [UP]: 6, [DOWN]: 8 },
-  8: { [UP]: 9, [DOWN]: 8 }, // View 2
-  9: { [UP]: 9, [DOWN]: 1 }, // Reset from 2 -> 1
-  10: { [UP]: 10, [DOWN]: 10 }, // View 3
-};
-
-const transitionIfOver = { App: true, ConditionExplorer: true, svgContainer: true, row: true };
-const scrollIfOver = { Footer: true };
-
-const targetIsScrollable = (target) => {
-  let checkingTarget = target;
-
-  while (checkingTarget && !transitionIfOver[checkingTarget.classList[0]]) {
-    if (
-      (checkingTarget.scrollHeight !== checkingTarget.clientHeight)
-      || (scrollIfOver[checkingTarget.classList[0]])
-    ) {
-      // For debugging scroll issues:
-      // console.log('=================\noriginal target:');
-      // console.dir(target);
-      // console.log('scrollable @:');
-      // console.dir(checkingTarget\n=================');
-      return true;
-    }
-
-    checkingTarget = checkingTarget.parentElement;
-  }
-
-  return false;
-};
-
 class App extends React.PureComponent {
-  handleScroll = debounce((deltaY) => {
-    /* Browsers + devices provide different values using different units, so
-    * we can't use deltaY directly
-    */
-    const direction = (deltaY > 0 && 1) || (deltaY < 0 && -1);
-    if (!direction) return;
-
-    const newState = transitionTargets[this.props.transitionState][direction];
-
-    if (newState !== this.props.transitionState) this.props.setTransitionState(newState);
-  }, 1000, { leading: true })
-
   constructor(props) {
     super(props);
     this.state = { mainInfoBarPane: '' };
@@ -124,11 +70,11 @@ class App extends React.PureComponent {
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
-  debounceScrollEvents = (e) => {
-    if (targetIsScrollable(e.target)) { return; }
-    e.preventDefault();
-    e.stopPropagation();
-    this.handleScroll(e.deltaY, e.target);
+  handleGuideClick = () => {
+    const newState = Math.min(Math.max(0, this.props.transitionState + 1), 8);
+    if (newState !== this.props.transitionState) {
+      this.props.setTransitionState(newState);
+    }
   }
 
   jumpToAbout = () => {
@@ -141,6 +87,8 @@ class App extends React.PureComponent {
       this.ref.current.querySelector('.Footer').scrollIntoView({ behavior: 'smooth' });
     }, 1000);
   }
+
+  jumpToView1 = () => this.props.setTransitionState(9)
 
   jumpToView2 = (type) => {
     this.props.setTransitionState(8);
@@ -169,10 +117,9 @@ class App extends React.PureComponent {
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
-        onWheel={this.debounceScrollEvents}
         ref={this.ref}
       >
-        <Guide textState={guideState} />
+        <Guide textState={guideState} onClick={this.handleGuideClick} />
         <ViewOne jumpToAbout={this.jumpToAbout} />
         <section className="browseBy">
           <BrowseBy
@@ -184,7 +131,7 @@ class App extends React.PureComponent {
         </section>
         {/* TODO: Deployment hacks */}
         <div style={{ clear: 'both' }} />
-        <ViewTwo {...viewProps} jumpToView3={this.jumpToView3} />
+        <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
         <ViewThree {...viewProps} />
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}

@@ -10,7 +10,7 @@
 
   font-size: 20px;
 
-  pointer-events: none;
+  // pointer-events: none;
 
   .CircleContainer {
     background: $Guide;
@@ -32,6 +32,8 @@
         width: 90%;
 
         transform: translate(-50%, -50%);
+
+        pointer-events: none;
 
         &.hidden {
           visibility: hidden;

@@ -111,6 +111,7 @@ $states: (
   8: (
     ".Guide": (
       opacity: 0,
+      pointer-events: none,
     ),
     ".ViewTwo": (
       pointer-events: auto,
