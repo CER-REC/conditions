@@ -61,7 +61,7 @@ const ViewTwo = props => (
           <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
         ) : null}
 
-        {/* Placeholder for functionality; waiting on a design for this */}
+        {/* TODO: Placeholder for functionality; waiting on a design for this */}
         <button
           className="view1reset"
           type="button"
