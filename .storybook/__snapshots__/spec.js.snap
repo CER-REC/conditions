@@ -2591,7 +2591,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-001-2018
@@ -2726,7 +2726,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-003-2018
@@ -2845,7 +2845,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="unmarked"
+                      className="barMarker"
                     />
                     <h4>
                       XO-005-2018
@@ -3150,7 +3150,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="unmarked"
+                        className="barMarker"
                       />
                       <h4>
                         XO-001-2018
@@ -3285,7 +3285,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="unmarked"
+                        className="barMarker"
                       />
                       <h4>
                         XO-003-2018
@@ -3404,7 +3404,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="unmarked"
+                        className="barMarker"
                       />
                       <h4>
                         XO-005-2018
@@ -3630,6 +3630,511 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ConditionDetails location 1`] = `
+<div
+  className="visualization"
+>
+  <section
+    className="ConditionDetails"
+  >
+    <div
+      className="main"
+    >
+      <div
+        className="ProjectHeader location"
+      >
+        <h1>
+          Selected Condition: 
+        </h1>
+      </div>
+      <div
+        className="listPane"
+      >
+        <div
+          className="ConditionList"
+        >
+          <div
+            className="List"
+            onWheel={[Function]}
+          >
+            <ul>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker"
+                    />
+                    <h4>
+                      XO-001-2018
+                    </h4>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker marked"
+                    />
+                    <svg
+                      className="BarContainer binnedValue-3"
+                      height="100%"
+                      width="100%"
+                    >
+                      <rect
+                        className="Bar"
+                        fill="pink"
+                        height="100%"
+                        width="50%"
+                        x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="green"
+                        height="100%"
+                        width="50%"
+                        x="50%"
+                        y={0}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker"
+                    />
+                    <svg
+                      className="BarContainer binnedValue-2"
+                      height="100%"
+                      width="100%"
+                    >
+                      <rect
+                        className="Bar"
+                        fill="blue"
+                        height="100%"
+                        width="50%"
+                        x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="50%"
+                        x="50%"
+                        y={0}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item selected"
+              >
+                <div
+                  className="CircleContainer arrow arrowPrevious"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="Icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
+                        color=""
+                        data-icon="angle-up"
+                        data-prefix="fas"
+                        role="img"
+                        style={Object {}}
+                        viewBox="0 0 320 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                          fill="currentColor"
+                          style={Object {}}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker"
+                    />
+                    <h4>
+                      XO-003-2018
+                    </h4>
+                  </div>
+                </div>
+                <div
+                  className="CircleContainer arrow arrowNext"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="Icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
+                        color=""
+                        data-icon="angle-down"
+                        data-prefix="fas"
+                        role="img"
+                        style={Object {}}
+                        viewBox="0 0 320 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                          fill="currentColor"
+                          style={Object {}}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker"
+                    />
+                    <svg
+                      className="BarContainer binnedValue-1"
+                      height="100%"
+                      width="100%"
+                    >
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker"
+                    />
+                    <svg
+                      className="BarContainer binnedValue-2"
+                      height="100%"
+                      width="100%"
+                    >
+                      <rect
+                        className="Bar"
+                        fill="red"
+                        height="100%"
+                        width="100%"
+                        x="0%"
+                        y={0}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker"
+                    />
+                    <h4>
+                      XO-005-2018
+                    </h4>
+                  </div>
+                </div>
+              </li>
+              <li
+                className="List-Item"
+              >
+                <div
+                  className="List-Item-Content"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="barMarker marked"
+                    />
+                    <svg
+                      className="BarContainer binnedValue-3"
+                      height="100%"
+                      width="100%"
+                    >
+                      <rect
+                        className="Bar"
+                        fill="orange"
+                        height="100%"
+                        width="33.33333333333333%"
+                        x="0%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="yellow"
+                        height="100%"
+                        width="33.33333333333333%"
+                        x="33.33333333333333%"
+                        y={0}
+                      />
+                      <rect
+                        className="Bar"
+                        fill="teal"
+                        height="100%"
+                        width="33.33333333333333%"
+                        x="66.66666666666666%"
+                        y={0}
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        className="contentPane"
+      >
+        <div
+          className="Content"
+        >
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Issuance Date
+            </span>
+            : 
+            2014-10-24
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Instrument Number
+            </span>
+            : 
+            <button
+              className="instrumentLink"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              XO-003-2018
+            </button>
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Effective Date
+            </span>
+            : 
+            2014-10-24
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Instrument Status
+            </span>
+            : 
+            <span>
+              In Progress
+            </span>
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Sunset Date
+            </span>
+            : 
+            2019-01-30
+          </div>
+          <div
+            className="ContentBlock half"
+          >
+            <span
+              className="contentHeading"
+            >
+              Location
+            </span>
+            : 
+            Albuquerque, NM
+          </div>
+          <div
+            className="ContentBlock "
+          >
+            <span
+              className="contentHeading"
+            >
+              Instrument Type
+            </span>
+            : 
+            Construction of Oil Pipeline
+          </div>
+          <p
+            className="contentText"
+          >
+            <span
+              className="contentHeading"
+            >
+              Instrument Activity
+            </span>
+            : 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+          </p>
+          <p
+            className="contentText"
+          >
+            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+          </p>
+          <p
+            className="contentText"
+          >
+            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+          </p>
+          <p
+            className="contentText"
+          >
+            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+          </p>
+          <p
+            className="contentText"
+          >
+            Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+          </p>
+          <p
+            className="contentText"
+          >
+            Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+          </p>
+          <p
+            className="contentText"
+          >
+            Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+          </p>
+          <p
+            className="contentText"
+          >
+            Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+          </p>
+          <p
+            className="contentText"
+          >
+            Quisque eu lobortis velit, quis viverra elit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
 exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
 <div
   className="visualization"
@@ -3657,7 +4162,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <h4>
                   XO-001-2018
@@ -3776,7 +4281,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <h4>
                   XO-003-2018
@@ -3895,7 +4400,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="unmarked"
+                  className="barMarker"
                 />
                 <h4>
                   XO-005-2018
@@ -4428,6 +4933,24 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
           />
         </svg>
       </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ConditionDetails"
+  >
+    <div
+      className="ProjectHeader location"
+    >
+      <h1>
+        Selected Condition: 
+      </h1>
     </div>
   </div>
 </div>
@@ -6094,6 +6617,71 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
       </select>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components|GreyPipe company 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+  >
+    <div
+      className="GreyPipe company"
+    >
+      <div
+        className="top"
+      />
+      <div
+        className="vertical"
+      />
+      <div
+        className="bottom"
+      />
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {position: relative; height: 400px; width: 200px;}",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|GreyPipe location 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+  >
+    <div
+      className="GreyPipe location"
+    >
+      <div
+        className="horizontal"
+      />
+      <div
+        className="top"
+      />
+      <div
+        className="vertical"
+      />
+      <div
+        className="bottom"
+      />
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {position: relative; height: 400px; width: 200px;}",
+      }
+    }
+  />
 </div>
 `;
 
@@ -9488,6 +10076,22 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
       className="pipe"
     />
     <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+    <div
       className="List horizontal"
       onWheel={[Function]}
     >
@@ -10096,6 +10700,22 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
   >
     <div
       className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
     />
     <div
       className="List horizontal"
@@ -10980,6 +11600,22 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
   >
     <div
       className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 4,
+        }
+      }
     />
     <div
       className="List horizontal"
@@ -12122,6 +12758,22 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
       className="pipe"
     />
     <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 2,
+        }
+      }
+    />
+    <div
       className="List horizontal"
       onWheel={[Function]}
     >
@@ -13260,6 +13912,22 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
   >
     <div
       className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 2,
+        }
+      }
     />
     <div
       className="List horizontal"
@@ -14442,6 +15110,22 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
   >
     <div
       className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
     />
     <div
       className="List horizontal"
@@ -15881,52 +16565,63 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
   className="visualization"
 >
   <div
-    className="RegionCompanies"
+    className="storyWrapper"
   >
     <div
-      className="title"
+      className="RegionCompanies"
     >
-      <span>
-        Companies in Selected Region:
-      </span>
+      <div
+        className="title"
+      >
+        <span>
+          Companies in Selected Region:
+        </span>
+      </div>
+      <ul>
+        <li>
+          Alberta Trans-Alta e
+        </li>
+        <li>
+          Alberta Trans-Alta è
+        </li>
+        <li>
+          Canada-Montana Pipe Line Company
+        </li>
+        <li>
+          Express Pipeline Ltd.
+        </li>
+        <li>
+          Kinder Morgan Cochin Ulc.
+          <button
+            className="asterisk"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            *
+          </button>
+        </li>
+        <li>
+          Nova Gas Transmission Ltd.
+        </li>
+        <li>
+          Power Plants R Us
+        </li>
+        <li>
+          Z-Anti
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li>
-        Alberta Trans-Alta e
-      </li>
-      <li>
-        Alberta Trans-Alta è
-      </li>
-      <li>
-        Canada-Montana Pipe Line Company
-      </li>
-      <li>
-        Express Pipeline Ltd.
-      </li>
-      <li>
-        Kinder Morgan Cochin Ulc.
-        <button
-          className="asterisk"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          *
-        </button>
-      </li>
-      <li>
-        Nova Gas Transmission Ltd.
-      </li>
-      <li>
-        Power Plants R Us
-      </li>
-      <li>
-        Z-Anti
-      </li>
-    </ul>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper { position: relative; width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -15959,28 +16654,24 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
       viewBox="0 0 100 200"
     >
       <text
-        fill="rgb(161, 168, 167)"
         x="45"
-        y="11"
+        y="18"
       >
         100
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
-        y="0"
+        y="8"
       />
       <text
-        fill="rgb(161, 168, 167)"
         x="58"
-        y="110"
+        y="100"
       >
         0
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
@@ -15988,6 +16679,13 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
       />
     </svg>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".RegionConditionSummary { width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -16139,28 +16837,24 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
       viewBox="0 0 100 200"
     >
       <text
-        fill="rgb(161, 168, 167)"
         x="45"
-        y="11"
+        y="18"
       >
         100
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
-        y="0"
+        y="8"
       />
       <text
-        fill="rgb(161, 168, 167)"
         x="58"
-        y="110"
+        y="100"
       >
         0
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
@@ -16168,6 +16862,13 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
       />
     </svg>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".RegionConditionSummary { width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -16223,28 +16924,24 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
       viewBox="0 0 100 200"
     >
       <text
-        fill="rgb(161, 168, 167)"
         x="45"
-        y="11"
+        y="18"
       >
         100
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
-        y="0"
+        y="8"
       />
       <text
-        fill="rgb(161, 168, 167)"
         x="58"
-        y="110"
+        y="100"
       >
         0
       </text>
       <rect
-        fill="#e4e4e4"
         height="3"
         width="10"
         x="85"
@@ -16252,6 +16949,13 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
       />
     </svg>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".RegionConditionSummary { width: 300px; height: 500px; }",
+      }
+    }
+  />
 </div>
 `;
 

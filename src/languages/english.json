@@ -137,6 +137,7 @@
     },
     "conditionDetails": {
       "selectedProject": "Selected Project: ",
+      "selectedCondition": "Selected Condition: ",
       "instrumentNumber": "Instrument Number",
       "location": "Location",
       "issuanceDate": "Issuance Date",

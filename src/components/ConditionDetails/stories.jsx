@@ -43,6 +43,26 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
       },
     },
   })
+  .add('location', () => (
+    <ConditionDetails
+      {...defaultProps}
+      browseBy="location"
+      {...getInteractionProps()}
+    />
+  ), {
+    interaction: {
+      state: {
+        selectedItem: {
+          instrumentIndex: 1,
+          itemIndex: -1,
+        },
+      },
+      actions: {
+        toggleExpanded,
+        updateSelectedItem,
+      },
+    },
+  })
   .add('expandable', () => (
     <div style={{ width: 800, border: '1px dashed magenta' }}>
       <ConditionDetails

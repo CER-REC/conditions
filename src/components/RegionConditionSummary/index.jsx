@@ -11,6 +11,7 @@ const RegionConditionSummary = (props) => {
     value: k.count,
     fill: features[k.feature][k.description] || 'black',
   }));
+
   return (
     <div className={classNames(
       'RegionConditionSummary',
@@ -27,10 +28,10 @@ const RegionConditionSummary = (props) => {
         </div>
       </div>
       <svg className="YAxis" viewBox="0 0 100 200">
-        <text x="45" y="11" fill="rgb(161, 168, 167)">100</text>
-        <rect x="85" y="0" width="10" height="3" fill="#e4e4e4" />
-        <text x="58" y="110" fill="rgb(161, 168, 167)">0</text>
-        <rect x="85" y="50" width="10" height="3" fill="#e4e4e4" />
+        <text x="45" y="18">100</text>
+        <rect x="85" y="8" width="10" height="3" />
+        <text x="58" y="100">0</text>
+        <rect x="85" y="50" width="10" height="3" />
       </svg>
     </div>
   );

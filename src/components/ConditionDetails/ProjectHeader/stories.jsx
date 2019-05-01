@@ -16,6 +16,14 @@ storiesForComponent('Components|ConditionDetails/ProjectHeader', module, ReadMe)
       {...getInteractionProps()}
     />
   ), { interaction: { state: { expanded: true }, actions: { toggleExpanded } } })
+  .add('location mode', () => (
+    <ProjectHeader
+      selectedProject="Keystone XL"
+      openProjectDetails={() => alert('Project details')}
+      browseBy="location"
+      {...getInteractionProps()}
+    />
+  ))
   .add('not expandable', () => (
     <ProjectHeader
       selectedProject="Keystone XL"
