@@ -35,8 +35,8 @@ $project-chart-line: $Gray160;
     text-align: center;
 
     .ConditionCount {
-      background-color: $condition-circle-bg;
-      color: $condition-circle-font;
+      background-color: $Gray160;
+      color: $White;
     }
   }
 
@@ -56,7 +56,7 @@ $project-chart-line: $Gray160;
       width: 2px;
       height: 100%;
 
-      background-color: $project-chart-line;
+      background-color: $Gray160;
     }
 
     .FeatureFlag {
@@ -76,8 +76,8 @@ $project-chart-line: $Gray160;
       margin: 0;
 
       .ConditionCount {
-        background-color: $selected-condition-circle-bg;
-        color: $condition-circle-font;
+        background-color: $SearchKeyword;
+        color: $White;
         position: relative;
         bottom: 10px;
       }
@@ -102,7 +102,7 @@ $project-chart-line: $Gray160;
       right: calc(50% - 12px);
       &:before {
         content: '';
-        background: $pipe-color;
+        background: $LightGreyBackground;
         width: 20px;
         height: 24px;
         display: block;

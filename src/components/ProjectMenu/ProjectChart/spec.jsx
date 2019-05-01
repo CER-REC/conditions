@@ -45,6 +45,30 @@ describe('Components|ProjectMenu/ProjectChart', () => {
     });
   });
 
+  describe('with loading data', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectChart
+        chartType={chartType}
+        graphData={chartData}
+        projectName={projectName}
+        loading
+      />);
+    });
+
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
+    });
+
+    test('should have a loading class', () => {
+      expect(wrapper.hasClass('loading')).toBe(true);
+    });
+
+    test('should not display a condition count', () => {
+      expect(wrapper.find('CircleContainer').props().children).toEqual('');
+    });
+  });
+
   describe('when Theme is the selected feature', () => {
     let wrapper;
     beforeEach(() => {
