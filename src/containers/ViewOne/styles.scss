@@ -4,10 +4,10 @@
 
 .ViewOne {
   @include grid((
-    introduction: 116,
-    explorer: 116,
-    browseBy: 65,
-    infoBar: 116,
+    introduction: (w: 116, h: 30),
+    explorer: (w: 116, h: 30),
+    browseBy: (w: 65, h: 30),
+    infoBar: (w: 116, h: 30),
   )) {
     height: 100%;
 

@@ -1,8 +1,14 @@
 @mixin grid-sizes($gridSizes, $gridWidth) {
   $gridUnit: $gridWidth / 120;
 
-  @each $className, $cellGridUnits in $gridSizes {
-    .#{$className} { width: $cellGridUnits * $gridUnit; }
+  @each $className, $dimensions in $gridSizes {
+    .#{$className} {
+      width: map-get($dimensions, "w") * $gridUnit;
+      height: map-get($dimensions, "h") * $gridUnit;
+
+      /* TODO: Just for tweaking purposes */
+      outline: 1px dashed magenta;
+    }
   }
 
   width: $gridWidth;
