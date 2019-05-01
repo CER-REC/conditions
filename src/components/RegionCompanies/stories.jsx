@@ -1,6 +1,6 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { storiesForComponent } from '../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ReadMe from './README.md';
 import RegionCompanies from '.';
@@ -20,12 +20,17 @@ const active = ['3'];
 storiesForComponent('Components|RegionCompanies', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['openProjectDetails'] }))
+  .addDecorator(withStyles(`
+    .storyWrapper { position: relative; width: 300px; height: 500px; }
+  `))
   .add('default', () => (
-    <RegionCompanies
-      companies={companies}
-      activeConditionCompanies={active}
-      {...getInteractionProps()}
-    />
+    <div className="storyWrapper">
+      <RegionCompanies
+        companies={companies}
+        activeConditionCompanies={active}
+        {...getInteractionProps()}
+      />
+    </div>
   ), {
     actions: {
       openProjectDetails: () => {},

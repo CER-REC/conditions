@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
@@ -30,15 +31,22 @@ const moreButton = (
 
 class ProjectHeader extends React.PureComponent {
   render = () => (
-    <div className="ProjectHeader">
-      <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
-      <button
-        type="button"
-        className="openProject"
-        {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
-      >
-        <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
-      </button>
+    <div className={classNames('ProjectHeader', { location: this.props.browseBy === 'location' })}>
+      {this.props.browseBy === 'company'
+        ? (
+          <React.Fragment>
+            <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
+            <button
+              type="button"
+              className="openProject"
+              {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
+            >
+              <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
+            </button>
+          </React.Fragment>
+        )
+        : <FormattedMessage id="components.conditionDetails.selectedCondition" tagName="h1" />
+      }
       {this.props.isExpandable
         ? (
           <button
@@ -60,11 +68,13 @@ ProjectHeader.propTypes = {
   selectedProject: PropTypes.string.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
   toggleExpanded: PropTypes.func.isRequired,
+  browseBy: PropTypes.oneOf(['company', 'location']),
 };
 
 ProjectHeader.defaultProps = {
   isExpandable: false,
   expanded: false,
+  browseBy: 'company',
 };
 
 export default ProjectHeader;

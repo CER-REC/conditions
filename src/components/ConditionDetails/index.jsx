@@ -61,6 +61,7 @@ class ConditionDetails extends React.Component {
       selectedProject={this.props.selectedProject}
       openProjectDetails={this.props.openProjectDetails}
       toggleExpanded={this.props.toggleExpanded}
+      browseBy={this.props.browseBy}
     />
   )
 
@@ -124,6 +125,7 @@ class ConditionDetails extends React.Component {
 }
 
 ConditionDetails.propTypes = {
+  browseBy: PropTypes.oneOf(['company', 'location']),
   isExpandable: PropTypes.bool,
   expanded: PropTypes.bool,
   selectedProject: PropTypes.string.isRequired,
@@ -143,6 +145,7 @@ ConditionDetails.propTypes = {
 };
 
 ConditionDetails.defaultProps = {
+  browseBy: 'company',
   isExpandable: false,
   expanded: false,
   searchKeywords: { include: [], exclude: [] },

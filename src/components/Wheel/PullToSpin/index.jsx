@@ -25,7 +25,7 @@ const PullToSpin = (props) => {
         <path d="M390.13,65.41a.5.5,0,0,1,.63-.34l7.39,2.2L397,59.64a.5.5,0,0,1,1-.15l1.24,8.41a.5.5,0,0,1-.64.56L390.47,66a.5.5,0,0,1-.34-.63Z" />
       </g>
       <g className="PullMessage">
-        <text x="390" y="25" className="small">
+        <text x="376" y="10" className="small">
           <tspan dx="2">Pull</tspan>
           <tspan dx="-20" dy="9">to Spin</tspan>
         </text>
