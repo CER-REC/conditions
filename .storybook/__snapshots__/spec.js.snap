@@ -6694,23 +6694,27 @@ exports[`Storyshots Components|Guide default 1`] = `
   >
     <div
       className="CircleContainer"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
       style={
         Object {
           "height": 176,
           "width": 176,
         }
       }
+      tabIndex={0}
     >
       <div>
         <span
           className="hidden"
         >
-          Scroll Down
+          Click to continue
         </span>
         <span
           className="hidden"
         >
-          Scroll Down
+          Click to continue
         </span>
         <span
           className="hidden"
