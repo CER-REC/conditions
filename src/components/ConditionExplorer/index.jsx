@@ -51,7 +51,7 @@ export default class ConditionExplorer extends React.Component {
     this.state = {
       fallbackFontSize: null,
       calculatedFontSize: null,
-      guidePosition: { x: 0, y: 0, r: 0 },
+      guidePosition: { x: 200, y: 0, r: 0 },
       guideExpanded: false,
       guideStep: 0,
     };

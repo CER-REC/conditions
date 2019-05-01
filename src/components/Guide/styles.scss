@@ -10,11 +10,12 @@
 
   font-size: 20px;
 
-  // pointer-events: none;
+  pointer-events: none;
 
   .CircleContainer {
     background: $Guide;
 
+    pointer-events: all;
 
     div {
       transform: none;
