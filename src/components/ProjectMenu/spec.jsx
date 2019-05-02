@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import ProjectMenu from '.';
 import ProjectChart from './ProjectChart';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { loadingProjectsData } from '../../mockData';
 
 const testData = [
   {
@@ -116,6 +117,25 @@ describe('Components|ProjectMenu', () => {
       const list = wrapper.find('List');
       expect(list).toHaveLength(1);
       expect(Array.isArray(list.props().items)).toBe(true);
+    });
+  });
+
+  describe('with loading data', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectMenu
+        projectsData={Array(5).fill(loadingProjectsData).map((v, id) => ({ ...v, id }))}
+        selectedProjectID={0}
+        onChange={() => {}}
+        selectedFeature="theme"
+        loading
+      />);
+    });
+
+    test('should add a loading class onto ProjectMenu', () => {
+      const list = wrapper.find('List');
+      expect(list).toHaveLength(1);
+      expect(wrapper.hasClass('loading')).toBe(true);
     });
   });
 

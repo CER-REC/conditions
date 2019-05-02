@@ -6,17 +6,16 @@ import {
   VictoryChart,
   VictoryGroup,
 } from 'victory';
-// import { linear } from 'd3-scale';
 import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
 import { allConditionsPerYear, featureTypes } from '../../proptypes';
-import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 import './styles.scss';
 
-export const roundDateLabel = t => Math.round(t);
 const noop = () => {};
+
+const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 
 class StreamGraph extends React.Component {
   static propTypes = {
@@ -37,57 +36,61 @@ class StreamGraph extends React.Component {
 
   handleOnChange = controlYear => this.setState({ controlYear });
 
-  streamLayers() {
-    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
-    if (this.props.subFeature !== '') {
-      filteredData = filteredData
-        .filter(featureData => featureData.subFeature === this.props.subFeature);
-    }
-    const streamLayers = filteredData.map(v => (
-      <VictoryArea
-        key={`${v.feature}-${v.subFeature}`}
-        name={v.subFeature}
-        data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
-        style={{
-          data: {
-            fill: features[v.feature][v.subFeature],
-            strokeWidth: 0,
-          },
-        }}
-        interpolation="natural"
-      />
-    ));
-    return streamLayers;
-  }
+  // For data that doesn't match the current feature/subfeature, sets all y = 0
+  processProjectData = () => {
+    const { projectData, feature, subFeature } = this.props;
+    this.processedData = projectData.map((project) => {
+      if (project.feature === feature
+        && (project.subFeature === subFeature || subFeature === '')
+      ) { return project; }
+
+      const copy = JSON.parse(JSON.stringify(project));
+      Object.keys(copy.years).forEach((k) => {
+        copy.years[k] = 0;
+      });
+      return copy;
+    });
+  };
+
+  streamLayers = () => this.processedData.map(v => (
+    <VictoryArea
+      key={`${v.feature}-${v.subFeature}`}
+      name={v.subFeature}
+      data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
+      style={{
+        data: {
+          fill: features[v.feature][v.subFeature],
+          strokeWidth: 0,
+        },
+      }}
+      interpolation="catmullRom"
+    />
+  ));
 
   chart() {
-    let filteredData = getFilteredProjectData(this.props.projectData, this.props.feature);
-    if (this.props.subFeature !== '') {
-      filteredData = filteredData
-        .filter(featureData => featureData.subFeature === this.props.subFeature);
-    }
+    const filteredData = (this.props.subFeature !== '')
+      ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
+      : this.processedData;
 
-    const numOfConditions = filteredData.map(k => Object.values(k.years));
-    const numOfConditionsConcat = [].concat(...numOfConditions);
+    const { conditionsByDate, minConditionCount } = filteredData.reduce((acc, cur) => {
+      Object.entries(cur.years).forEach(([year, count]) => {
+        acc.conditionsByDate[year] = count + (acc.conditionsByDate[year] || 0);
 
-    const minConditionValue = Math.min(...numOfConditionsConcat);
-
-    const dates = filteredData.map(k => Object.keys(k.years));
-    const dateConcat = [].concat(...dates);
-
-    const minDateValue = Math.min(...dateConcat);
-    const maxDateValue = Math.max(...dateConcat);
-
-    let conditionDates = filteredData.reduce((acc, next) => {
-      Object.entries(next.years).forEach(([date, count]) => {
-        if (!acc[date]) { acc[date] = 0; }
-        acc[date] += count;
+        if (count < acc.minConditionCount) { acc.minConditionCount = count; }
       });
-      return acc;
-    }, {});
-    conditionDates = Object.values(conditionDates);
 
-    const maxConditionValue = Math.max(...conditionDates);
+      return acc;
+    }, { conditionsByDate: {}, minConditionCount: Infinity });
+
+    const { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
+      .reduce((acc, [year, count]) => {
+        if (year < acc.minDate) { acc.minDate = year; }
+        if (year > acc.maxDate) { acc.maxDate = year; }
+
+        if (count > acc.maxConditionTotal) { acc.maxConditionTotal = count; }
+
+        return acc;
+      }, { minDate: Infinity, maxDate: 0, maxConditionTotal: 0 });
 
     if (this.props.streamOnly) {
       return (
@@ -100,12 +103,13 @@ class StreamGraph extends React.Component {
           <VictoryGroup
             standalone={false}
             padding={0}
+            animate={streamAnimation}
           >
             <StackGroupProps
               groupProps={{
                 onChange: noop,
                 controlYear: null,
-                projectData: filteredData,
+                projectData: this.processedData,
                 allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
               }}
             >
@@ -128,19 +132,20 @@ class StreamGraph extends React.Component {
     };
 
     return (
-      <VictoryChart>
+      <VictoryChart animate={streamAnimation}>
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
-          tickValues={[minConditionValue, maxConditionValue]}
+          tickValues={[minConditionCount, maxConditionTotal]}
+          tickFormat={Math.round}
           className="axis-label"
           style={axisStyles}
         />
         <VictoryAxis
           label="Effective Date"
-          tickFormat={roundDateLabel}
+          tickFormat={Math.round}
           className="axis-label"
-          domain={[minDateValue, maxDateValue]}
+          domain={[minDate, maxDate]}
           style={axisStyles}
         />
         <StackGroupProps
@@ -158,6 +163,8 @@ class StreamGraph extends React.Component {
   }
 
   render() {
+    this.processProjectData();
+
     return (
       <div
         className="StreamGraph"

@@ -6,9 +6,11 @@ import classNames from 'classnames';
 import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
 import {
+  guideCategory,
   guideOutlineCategory,
   resettingCategory,
   visibleTextCategory,
+  placeholderCategory,
 } from './categories';
 import Keyword from './Keyword';
 import Guide from './Guide';
@@ -40,7 +42,7 @@ export default class PhysicsVariant extends React.PureComponent {
 
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse: Matter.Mouse.create(this.groupRef.current.parentElement),
-      constraint: { render: { visible: false } },
+      constraint: { render: { visible: false }, stiffness: 1 },
       collisionFilter: { mask: guideOutlineCategory },
     });
     Matter.World.add(this.engine.world, mouseConstraint);
@@ -75,11 +77,12 @@ export default class PhysicsVariant extends React.PureComponent {
   onCollision = collision => collision.pairs.forEach((pair) => {
     const guideOutline = this.guide.outline.body;
     const withCircle = pair.bodyA === guideOutline || pair.bodyB === guideOutline;
-    pair.bodyA.render.lastCollision = collision.source.timing.timestamp;
-    pair.bodyB.render.lastCollision = collision.source.timing.timestamp;
     // Collisions between keywords will allow movement, but not extend the
     // time until they go back to their original positions
     if (!withCircle) { return; }
+
+    pair.bodyA.render.wrapper.lastCollision = Date.now();
+    pair.bodyB.render.wrapper.lastCollision = Date.now();
 
     const keyword = (pair.bodyA === guideOutline ? pair.bodyB : pair.bodyA).render.wrapper;
 
@@ -89,6 +92,7 @@ export default class PhysicsVariant extends React.PureComponent {
     }
     keyword.category = visibleTextCategory;
     keyword.addCollisionMask(visibleTextCategory);
+    keyword.scaleTo(1 / 0.5625); // Makes 9px font 16px when scaled up
   });
 
   loop = (currTime) => {
@@ -112,6 +116,7 @@ export default class PhysicsVariant extends React.PureComponent {
 
   onGuideMouseDown = () => {
     this.guideClickDetection = { ...this.guide.body.position };
+    Matter.Body.setStatic(this.guide.outline.body, false);
   };
 
   closeGuide = () => {
@@ -123,12 +128,14 @@ export default class PhysicsVariant extends React.PureComponent {
       this.keywords.forEach((body) => {
         if (body.category === resettingCategory) { return; }
         body.addCollisionMask(guideOutlineCategory);
+        body.removeCollisionMask(guideCategory);
       });
     });
   };
 
   onGuideMouseUp = (e) => {
     // If the click detection failed, don't do anything
+    Matter.Body.setStatic(this.guide.outline.body, true);
     if (!this.guideClickDetection) { return; }
     this.updateGuidePosition();
     const distance = {
@@ -144,6 +151,9 @@ export default class PhysicsVariant extends React.PureComponent {
         .finally(() => { this.updateGuidePosition(); });
       this.keywords.forEach((body) => {
         body.removeCollisionMask(guideOutlineCategory);
+        if (body.category === visibleTextCategory) {
+          body.addCollisionMask(guideCategory);
+        }
       });
     } else {
       this.closeGuide();
@@ -168,26 +178,46 @@ export default class PhysicsVariant extends React.PureComponent {
             className={classNames(
               'keyword',
               instance.keyword.className,
-              { textVisible: instance.isVisible },
+              {
+                textVisible: instance.isVisible,
+                textPlaceholder: instance.category === placeholderCategory,
+              },
             )}
           >
-            <text
-              x={instance.body.position.x + instance.textOffset.x}
-              y={instance.body.position.y + instance.textOffset.y}
-              transform={`rotate(
-                ${instance.body.angle * 180 / Math.PI}
-                ${instance.body.position.x}
-                ${instance.body.position.y}
-              )`}
+            <g
+              transform={`
+                translate(
+                  ${instance.body.position.x + instance.textOffset.x},
+                  ${instance.body.position.y + instance.textOffset.y}
+                )
+              `}
             >
-              {instance.keyword.value}
-            </text>
+              <text
+                style={{
+                  // TODO: This doesn't work in IE properly, but I'm using it to figure things out
+                  transformOrigin: `
+                    ${instance.keyword.outline.width / 2}px
+                    ${instance.keyword.textSize.yOffset - (instance.keyword.outline.height / 2)}px
+                  `,
+                }}
+                transform={`
+                  scale(${instance.scale})
+                  rotate(${instance.body.angle * 180 / Math.PI})
+                `}
+              >
+                {instance.keyword.value}
+              </text>
+            </g>
             <path d={instance.renderedPathPoints} />
           </g>
         ))}
         <path
           className="guideOutline"
           d={this.guide.outline.renderedPathPoints}
+          onMouseDown={this.onGuideMouseDown}
+          onTouchStart={this.onGuideMouseDown}
+          onMouseUp={this.onGuideMouseUp}
+          onTouchEnd={this.onGuideMouseUp}
         />
         <path
           className="guide"
@@ -196,7 +226,7 @@ export default class PhysicsVariant extends React.PureComponent {
           onTouchStart={this.onGuideMouseDown}
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
-        />;
+        />
       </g>
     );
   }
