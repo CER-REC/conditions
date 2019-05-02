@@ -26,9 +26,13 @@ const ProjectChart = (props) => {
           />
         ))}
       </div>
-      <div className="ProjectName">
-        {props.selected ? null : <p>{props.projectName}</p>}
-      </div>
+      {props.selected
+        ? (
+          <div className="SelectedPipe" />
+        ) : (
+          <div className="ProjectName"><p>{props.projectName}</p></div>
+        )
+      }
     </div>
   );
 };

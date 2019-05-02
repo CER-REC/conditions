@@ -5,13 +5,13 @@
 .ViewThree {
   position: relative;
   @include grid((
-    features: (w: 21, h: 30),
-    legend: (w: 37, h: 30),
-    chart: (w: 56, h: 30),
-    featureDescription: (w: 59, h: 30),
-    typesDescription: (w: 56, h: 30),
-    selectedCompany: (w: 38, h: 30),
-    conditionDetails: (w: 77, h: 30),
+    features: (x: 0, y: 0, w: 21, h: 30),
+    legend: (x: 0, y: 0, w: 37, h: 30),
+    chart: (x: 0, y: 0, w: 56, h: 30),
+    featureDescription: (x: 0, y: 0, w: 59, h: 30),
+    typesDescription: (x: 0, y: 0, w: 56, h: 30),
+    selectedCompany: (x: 0, y: 0, w: 38, h: 30),
+    conditionDetails: (x: 0, y: 0, w: 77, h: 30),
   ));
 
   .row {

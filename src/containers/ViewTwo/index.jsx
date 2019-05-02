@@ -57,7 +57,7 @@ const availableYearRange = { start: 1970, end: 1980 };
 
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
-    <section className="row">
+    {/* <section className="row"> */}
       <section className="header">
         <SearchBar
           className={props.browseBy === 'location' ? 'small' : ''}
@@ -94,8 +94,8 @@ const ViewTwo = props => (
             Back To Introduction
         </button>
       </section>
-    </section>
-    <section className="row">
+    {/* </section> */}
+    {/* <section className="row"> */}
       <section className="wheel">
         <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
         <GreyPipe mode={props.browseBy} />
@@ -152,7 +152,7 @@ const ViewTwo = props => (
           {...props.conditionDetails}
         />
       </section>
-    </section>
+    {/* </section> */}
   </section>
 );
 

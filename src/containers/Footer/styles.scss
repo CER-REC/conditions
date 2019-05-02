@@ -2,7 +2,7 @@
 
 .Footer {
   @include grid((
-    infoBar: (w: 75, h: 30),
+    infoBar: (x: 0, y: 0, w: 75, h: 30),
   )) {
     .infoBar {
       position: relative;

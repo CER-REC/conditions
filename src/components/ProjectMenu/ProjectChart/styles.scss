@@ -7,15 +7,17 @@ $condition-circle-font: $White;
 $project-chart-line: $Gray160;
 
 .ProjectChart {
+  position: relative;
+
   width: 100%;
-  height: 300px;
-  margin-bottom: 110px;
+  height: 100%;
 
   .ProjectName {
     text-overflow: ellipsis;
     position: absolute;
     width: 118px;
-    bottom: 137px; // Based on the rotation and the width
+    top: calc(65% - 12px);
+    // bottom: 100px; // Based on the rotation and the width
     right: 50%;
     transform: rotate(-70deg);
     transform-origin: bottom right;
@@ -44,7 +46,7 @@ $project-chart-line: $Gray160;
     position: relative;
     display: inline-block;
     width: 100%;
-    height: calc(100% - 50px); // 100% - pipe
+    height: calc(65% -24px); // 100% - pipe
     padding-top: 10px;
 
     .FlagPole {
@@ -94,22 +96,16 @@ $project-chart-line: $Gray160;
       width: calc(50% / 0.4 * 0.15);
     }
 
-    .ProjectName {
+    .SelectedPipe {
+      position: absolute;
+
       z-index: 1;
-      width: 144px;
-      height: 24px;
+      width: 24px;
+      height: 39%;
       background: $pipe-color;
-      right: calc(50% - 12px);
-      &:before {
-        content: '';
-        background: $LightGreyBackground;
-        width: 20px;
-        height: 24px;
-        display: block;
-        position: absolute;
-        left: -10px;
-        transform: skew(20deg);
-      }
+      left: 12px;
+      // right: calc(50% - 24px);
+      transform: skewX(-20deg)
     }
   }
 

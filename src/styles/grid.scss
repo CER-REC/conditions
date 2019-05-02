@@ -1,10 +1,13 @@
 @mixin grid-sizes($gridSizes, $gridWidth) {
   $gridUnit: $gridWidth / 120;
 
-  @each $className, $dimensions in $gridSizes {
+  @each $className, $values in $gridSizes {
     .#{$className} {
-      width: map-get($dimensions, "w") * $gridUnit;
-      height: map-get($dimensions, "h") * $gridUnit;
+      position: absolute;
+      top: map-get($values, "y") * $gridUnit;
+      left: map-get($values, "x") * $gridUnit;
+      width: map-get($values, "w") * $gridUnit;
+      height: map-get($values, "h") * $gridUnit;
 
       /* TODO: Just for tweaking purposes */
       outline: 1px dashed magenta;
