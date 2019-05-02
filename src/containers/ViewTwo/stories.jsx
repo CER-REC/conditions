@@ -31,7 +31,6 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
   .addDecorator(
     withInteraction({
       actions: {
-        setBrowseBy: () => browseBy => ({ browseBy }),
         selectRay: () => () => ({}),
         setFindAny: () => e => ({ findAny: e }),
         setProjectYear: () => selectedYear => ({ projectYear: selectedYear }),
@@ -49,7 +48,6 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
         openProjectDetails: () => () => ({}),
       },
       state: {
-        browseBy: 'company',
         included: [],
         excluded: [],
         projectStatus: ['OPEN'],
@@ -66,6 +64,7 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
     }),
   )
   .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
+  .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" {...getInteractionProps()} />)
   .add(
     'connected variant',
     () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />,

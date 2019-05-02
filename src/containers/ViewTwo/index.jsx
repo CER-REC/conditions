@@ -7,6 +7,9 @@ import { viewTwoQuery, projectMenuQuery } from '../../queries/viewTwo';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
+import GreyPipe from '../../components/GreyPipe';
+import RegionConditionSummary from '../../components/RegionConditionSummary';
+import RegionCompanies from '../../components/RegionCompanies';
 import TrendButton from '../../components/TrendButton';
 import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
 import { browseByType, yearRangeType, featureTypes, conditionData, project } from '../../proptypes';
@@ -27,6 +30,21 @@ const legendItems = [
   { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
   { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
 ];
+
+const regionData = {
+  featureData: [
+    { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
+    { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
+    { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
+  ],
+  companyData: [
+    { id: '12', name: 'Alberta Trans-Alta e' },
+    { id: '11', name: 'Alberta Trans-Alta è' },
+    { id: '1', name: 'Canada-Montana Pipe Line Company' },
+  ],
+  activeConditionCompanies: ['3'],
+  openProjectDetails: noop,
+};
 
 // SearchBar (Data)
 const availableCategories = [
@@ -60,6 +78,21 @@ const ViewTwo = props => (
         {props.browseBy === 'location' ? (
           <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
         ) : null}
+
+        {/* TODO: Placeholder for functionality; waiting on a design for this */}
+        <button
+          className="view1reset"
+          type="button"
+          onClick={props.jumpToView1}
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            height: '48px',
+          }}
+        >
+            Back To Introduction
+        </button>
       </section>
     </section>
     <section className="row">
@@ -70,14 +103,29 @@ const ViewTwo = props => (
           selectRay={props.setSelectedCompany}
           wheelData={props.wheelData}
         />
+        <GreyPipe mode={props.browseBy} />
       </section>
       <section className="companyBreakdown">
-        <ProjectMenu
-          projectsData={props.projectsData.counts}
-          selectedProjectID={props.selected.project}
-          onChange={props.setSelectedProject}
-          selectedFeature={props.selected.feature}
-        />
+        {props.browseBy === 'location'
+          ? (
+            <div className="regionChart">
+              <RegionConditionSummary featureData={regionData.featureData} />
+              <RegionCompanies
+                companies={regionData.companyData}
+                activeConditionCompanies={regionData.activeConditionCompanies}
+                openProjectDetails={regionData.openProjectDetails}
+              />
+            </div>
+          )
+          : (
+            <ProjectMenu
+              projectsData={props.projectsData.counts}
+              selectedProjectID={props.selected.project}
+              onChange={props.setSelectedProject}
+              selectedFeature={props.selected.feature}
+            />
+          )
+        }
       </section>
       <section className="menus">
         <TrendButton
@@ -105,6 +153,7 @@ const ViewTwo = props => (
             include: props.included,
             exclude: props.excluded,
           }}
+          browseBy={props.browseBy}
           {...props.conditionDetails}
         />
       </section>
@@ -158,6 +207,7 @@ ViewTwo.propTypes = {
   }).isRequired,
   // The shape of wheelData will change once more integration is done.
   wheelData: PropTypes.arrayOf(PropTypes.any),
+  jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
 };
 
