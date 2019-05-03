@@ -4,20 +4,12 @@
   @include grid((
     header: (x: 2, y: 2, w: 94, h: 11),
     wheel: (x: 2, y: 14, w: 57, h: 57),
-    // wheel: (x: 2, y: 14, w: 57, h: 68),
     companyBreakdown: (x: 60, y: 14, w: 36, h: 38),
     menus: (x: 97, y: 2, w: 21, h: 11),
-    legend: (x: 97, y: 14, w: 21, h: 37),
+    legend: (x: 97, y: 14, w: 21, h: 38),
     conditions: (x: 60, y: 53, w: 58, h: 29),
   )) {
 
-    $header-height: 100px;
-    /* To ensure the layoutOnly mode appears properly */
-    .header { min-height: $header-height; }
-    .wheel { min-height: 200px; }
-    .conditions { min-height: 100px; }
-
-    // We want the condition details to sit at the bottom of the project menu
     section.companyBreakdown {
       overflow: visible;
       margin-bottom: 0;
@@ -25,7 +17,16 @@
       .regionChart {
         position: relative;
         width: 90%;
-        // height: 422px;
+        height: 100%;
+
+        .RegionConditionSummary {
+          bottom: 92px;
+        }
+
+        .RegionCompanies {
+          bottom: 0;
+          left: 30px;
+        }
       }
     }
 
@@ -54,7 +55,7 @@
       }
     }
 
-    .header {
+    section.header {
       .SearchBar.small {
         width: 200px;
       }

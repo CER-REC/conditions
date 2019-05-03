@@ -76,12 +76,14 @@ class LocationWheelMinimap extends React.PureComponent {
     const provincePath = projection(provinceData);
 
     return (
-      <svg className="LocationWheelMinimap">
-        <g className="regions">
-          <path d={regionPath} className="region" />
-          <path d={provincePath} className="province" />
-        </g>
-      </svg>
+      <div className="LocationWheelMinimap">
+        <svg viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}>
+          <g className="regions">
+            <path d={regionPath} className="region" />
+            <path d={provincePath} className="province" />
+          </g>
+        </svg>
+      </div>
     );
   }
 }
