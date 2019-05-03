@@ -93,7 +93,7 @@ $project-chart-line: $Gray160;
 
     .FeatureFlag {
       // Convert to the same scale as the other charts
-      width: calc(50% / 0.4 * 0.15);
+      // width: calc(50% / 0.4 * 0.15);
     }
 
     .SelectedPipe {
@@ -103,9 +103,8 @@ $project-chart-line: $Gray160;
       width: 24px;
       height: 39%;
       background: $pipe-color;
-      left: 12px;
-      // right: calc(50% - 24px);
-      transform: skewX(-20deg)
+      transform: translateX(calc(-50% - 2px)) skewX(-20deg);
+      transform-origin: bottom left;
     }
   }
 
