@@ -9,8 +9,8 @@
       width: map-get($values, "w") * $gridUnit;
       height: map-get($values, "h") * $gridUnit;
 
-      /* TODO: Just for tweaking purposes */
-      outline: 1px dashed magenta;
+      /* For layout tweaking */
+      // outline: 1px dashed magenta;
     }
   }
 

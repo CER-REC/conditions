@@ -30,11 +30,6 @@ const FeaturesLegend = (props) => {
         </h3>
         <div className="ChartLegend">
           <div className="legendRow">
-            <FeatureFlag
-              chartType="legend"
-              name="zeroConditions"
-              count={0}
-            />
             <span className="FlagDesc">0</span>
           </div>
           <div className="legendRow">

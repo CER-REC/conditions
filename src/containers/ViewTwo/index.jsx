@@ -134,7 +134,11 @@ const ViewTwo = props => (
       />
     </section>
     <section className="legend">
-      <FeaturesLegend legendItems={legendItems} selectedFeature="theme" isProjectLegend />
+      <FeaturesLegend
+        legendItems={legendItems}
+        selectedFeature="theme"
+        isProjectLegend={props.browseBy !== 'location'}
+      />
     </section>
     <section className="conditions">
       <ConditionDetails

@@ -33,6 +33,27 @@
       overflow: visible;
     }
 
+    section.menus {
+      .TrendButton {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .FeaturesMenu {
+        position: absolute;
+        bottom: 0;
+
+        margin-bottom: 0;
+
+        .Dropdown {
+          position: relative;
+          left: 1px;
+        }
+      }
+    }
+
     .header {
       .SearchBar.small {
         width: 200px;

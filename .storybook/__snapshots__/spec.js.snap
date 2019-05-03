@@ -6021,280 +6021,8 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
     className="FeaturesLegend"
   >
     <div
-      className="LegendItem disabled"
+      className="featuresHeader hidden"
     >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(221, 10, 10)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Security
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(36, 91, 64)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Management System
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(247, 193, 97)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Financial
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(133, 28, 133)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Damage Prevention
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(153, 153, 255)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Socio-Economic
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="FeaturesLegend"
-  >
-    <div
-      className="LegendItem disabled"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(221, 10, 10)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Security
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(36, 91, 64)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Management System
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(247, 193, 97)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Financial
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(133, 28, 133)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Damage Prevention
-        </span>
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(153, 153, 255)",
-          }
-        }
-      />
-      <div
-        className="text"
-      >
-        <span>
-          Socio-Economic
-        </span>
-      </div>
-    </div>
-    <div
-      className="footer"
-    >
-      <h3
-        className="Title"
-      >
-        <span>
-          Number of Conditions
-        </span>
-      </h3>
-      <div
-        className="ChartLegend"
-      >
-        <div
-          className="FeatureFlag"
-        >
-          <div
-            className="Bar "
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "borderLeftColor": "transparent",
-                "width": "calc(1px * 0)",
-              }
-            }
-            title="Zero Conditions"
-          />
-        </div>
-        <div
-          className="FlagDesc"
-        >
-          0
-        </div>
-        <div
-          className="FeatureFlag"
-        >
-          <div
-            className="Bar "
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "borderLeftColor": "transparent",
-                "width": "calc(1px * 10)",
-              }
-            }
-            title="Ten Conditions"
-          />
-        </div>
-        <div
-          className="FlagDesc"
-        >
-          10
-        </div>
-        <div
-          className="FeatureFlag"
-        >
-          <div
-            className="Bar withTip"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "borderLeftColor": "transparent",
-                "width": "calc(1px * 11)",
-              }
-            }
-            title="Greater than Ten Conditions"
-          />
-        </div>
-        <div
-          className="FlagDesc"
-        >
-           &gt;10 
-        </div>
-      </div>
       <div
         className="CircleContainer ConditionsIcon"
         style={
@@ -6315,21 +6043,436 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           Total Number of Conditions for Project
         </span>
       </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
       <div
-        className="AssociatedComp"
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(221, 10, 10)",
+          }
+        }
+      />
+      <div
+        className="text"
       >
-        <h3
-          className="Asterisk"
-        >
-          *
-        </h3>
+        <span>
+          Security
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(36, 91, 64)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Management System
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(247, 193, 97)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Financial
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(133, 28, 133)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Damage Prevention
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(153, 153, 255)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Socio-Economic
+        </span>
+      </div>
+    </div>
+    <div
+      className="featuresLegend hidden"
+    >
+      <h3
+        className="Title"
+      >
+        <span>
+          Number of Conditions
+        </span>
+      </h3>
+      <div
+        className="ChartLegend"
+      >
         <div
-          className="AssociatedDesc"
+          className="legendRow"
         >
-          <span>
-            Associated Companies
+          <div
+            className="FeatureFlag"
+          >
+            <div
+              className="Bar "
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderLeftColor": "transparent",
+                  "width": "calc(1px * 0)",
+                }
+              }
+              title="Zero Conditions"
+            />
+          </div>
+          <span
+            className="FlagDesc"
+          >
+            0
           </span>
         </div>
+        <div
+          className="legendRow"
+        >
+          <div
+            className="FeatureFlag"
+          >
+            <div
+              className="Bar "
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderLeftColor": "transparent",
+                  "width": "calc(1px * 10)",
+                }
+              }
+              title="Ten Conditions"
+            />
+          </div>
+          <span
+            className="FlagDesc"
+          >
+            10
+          </span>
+        </div>
+        <div
+          className="legendRow"
+        >
+          <div
+            className="FeatureFlag"
+          >
+            <div
+              className="Bar withTip"
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderLeftColor": "transparent",
+                  "width": "calc(1px * 11)",
+                }
+              }
+              title="Greater than Ten Conditions"
+            />
+          </div>
+          <span
+            className="FlagDesc"
+          >
+             &gt;10 
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="AssociatedComp"
+    >
+      <h3
+        className="Asterisk"
+      >
+        *
+      </h3>
+      <div
+        className="AssociatedDesc"
+      >
+        <span>
+          Associated Companies
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="FeaturesLegend"
+  >
+    <div
+      className="featuresHeader"
+    >
+      <div
+        className="CircleContainer ConditionsIcon"
+        style={
+          Object {
+            "height": 24,
+            "width": 24,
+          }
+        }
+      >
+        <div>
+          #
+        </div>
+      </div>
+      <div
+        className="ConditionsDesc"
+      >
+        <span>
+          Total Number of Conditions for Project
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(221, 10, 10)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Security
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(36, 91, 64)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Management System
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(247, 193, 97)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Financial
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(133, 28, 133)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Damage Prevention
+        </span>
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(153, 153, 255)",
+          }
+        }
+      />
+      <div
+        className="text"
+      >
+        <span>
+          Socio-Economic
+        </span>
+      </div>
+    </div>
+    <div
+      className="featuresLegend"
+    >
+      <h3
+        className="Title"
+      >
+        <span>
+          Number of Conditions
+        </span>
+      </h3>
+      <div
+        className="ChartLegend"
+      >
+        <div
+          className="legendRow"
+        >
+          <div
+            className="FeatureFlag"
+          >
+            <div
+              className="Bar "
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderLeftColor": "transparent",
+                  "width": "calc(1px * 0)",
+                }
+              }
+              title="Zero Conditions"
+            />
+          </div>
+          <span
+            className="FlagDesc"
+          >
+            0
+          </span>
+        </div>
+        <div
+          className="legendRow"
+        >
+          <div
+            className="FeatureFlag"
+          >
+            <div
+              className="Bar "
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderLeftColor": "transparent",
+                  "width": "calc(1px * 10)",
+                }
+              }
+              title="Ten Conditions"
+            />
+          </div>
+          <span
+            className="FlagDesc"
+          >
+            10
+          </span>
+        </div>
+        <div
+          className="legendRow"
+        >
+          <div
+            className="FeatureFlag"
+          >
+            <div
+              className="Bar withTip"
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderLeftColor": "transparent",
+                  "width": "calc(1px * 11)",
+                }
+              }
+              title="Greater than Ten Conditions"
+            />
+          </div>
+          <span
+            className="FlagDesc"
+          >
+             &gt;10 
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="AssociatedComp"
+    >
+      <h3
+        className="Asterisk"
+      >
+        *
+      </h3>
+      <div
+        className="AssociatedDesc"
+      >
+        <span>
+          Associated Companies
+        </span>
       </div>
     </div>
   </div>
@@ -10648,7 +10791,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -11488,7 +11631,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -12570,7 +12713,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -13652,7 +13795,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -14734,7 +14877,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -14748,7 +14891,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -14762,7 +14905,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -14776,7 +14919,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />
@@ -15616,7 +15759,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".ProjectMenu { width: 400px; border: 1px solid red; }",
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
       }
     }
   />

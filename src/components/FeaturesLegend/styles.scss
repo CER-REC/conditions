@@ -7,11 +7,15 @@
   .featuresHeader {
     position: relative;
     margin-top: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
+
+    height: 24px;
 
     width: 100%;
 
     .ConditionsIcon {
+      position: absolute;
+      left: 0;
       font-weight: bold;
       background-color: $Gray160;
     }
@@ -25,20 +29,28 @@
       word-wrap: break-word;
     }
   }
+
+  .featuresLegend, .featuresHeader {
+    &.hidden {
+      display: none;
+    }
+  }
+
   .featuresLegend {
     margin-top: 10px;
 
     text-align: left;
 
     .Title {
-      margin-top: 24px;
-      margin-bottom: 10px;
+      margin-top: 23px;
+      margin-bottom: 11px;
       line-height: 10px;
     }
 
     .ChartLegend {
       border-left: 1px solid $Gray160;
-      margin-bottom: 10px;
+      height: 40px;
+      margin-bottom: 11px;
       position: relative;
       width: 50px;
 
@@ -97,12 +109,12 @@
   .AssociatedComp {
     position: relative;
 
-    margin-top: 10px;
+    margin-top: 11px;
     text-align: left;
     color: $VeryDarkGray;
 
-    height: 12px;
-    line-height: 12px;
+    height: 11px;
+    line-height: 11px;
     vertical-align: middle;
 
     .Asterisk {
