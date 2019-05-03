@@ -110,7 +110,7 @@ $project-chart-line: $Gray160;
   }
 
   &:not(.selected) .FeatureFlag {
-    .Bar { background-color: $Gray160 !important; }
-    .FlagTip { border-left-color: $Gray160 !important; }
+    .Bar { background-color: $Gray160 !important; border-left-color: $Gray160 !important; }
+    // .FlagTip { border-left-color: $Gray160 !important; }
   }
 }

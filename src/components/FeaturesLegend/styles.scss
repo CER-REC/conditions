@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .FeaturesLegend {
   display: table;
   height: auto;
@@ -15,7 +17,7 @@
     }
 
     .ChartLegend {
-      border-left: 1px solid #a1a8a7;
+      border-left: 1px solid $Gray160;
       margin-bottom: 10px;
       position: relative;
       width: 50px;
@@ -35,47 +37,42 @@
 
         &:nth-child(1) {
           .Bar {
-            border: #fff;
-          }
-        }
-        /* To target the flag tip transparent bar */
-        &:nth-child(5) {
-          .Bar {
-            border-right: transparent;
-            position:relative;
-            &::after,&::before{
-              content:"";
-              width: 1px;
-              height: 71%;
-              right: -3px;
-              position: absolute;
-            }
-            &::before{
-              background: #a1a8a7;
-              transform:rotate(-45deg);
-              top:-10.5%;
-            }
-            &::after{
-              background:#a1a8a7;
-              transform:rotate(45deg);
-              bottom:-10.5%;
-            }
-          }
-          .FlagTip {
-            border: transparent;
+            border: $White;
           }
         }
         .Bar {
-          border: 1px solid #a1a8a7;
-        }
-        .FlagTip {
-          border-left-color: #a1a8a7;
+          border: 1px solid $Gray160;
+
+          &.withTip {
+            border-right: none;
+          }
+
+          &.withTip::after {
+            left: 100%;
+            top: -1px;
+            border-left-color: $VeryDarkGray !important;
+          }
+
+          &.withTip::before {
+            z-index: 1;
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 0px;
+            width: 0;
+            height: 0;
+            border-width: 4px;
+            border-color: transparent;
+            border-left-color: white;
+            border-style: solid;
+            display: inline-block;
+          }
         }
       }
     }
 
     .ConditionsIcon {
-      background-color: #a1a8a7;
+      background-color: $Gray160;
     }
 
     .ConditionsDesc {

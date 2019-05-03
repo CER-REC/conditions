@@ -6,8 +6,8 @@ import { features } from '../../constants';
 
 const FeatureFlag = (props) => {
   const { intl } = props;
-  // Tip is 7px, so the flag can take up whatever remains
-  const flagSize = `calc(calc(100% - 7px) * ${Math.min(props.count, 10) / 10})`;
+
+  const flagSize = `calc(1px * ${props.count})`;
 
   const title = props.chartType === 'legend'
     ? intl.formatMessage({ id: `common.legend.${props.name}` })
@@ -19,17 +19,17 @@ const FeatureFlag = (props) => {
 
   const bar = (
     <div
-      className="Bar"
-      style={{ backgroundColor: color, width: flagSize }}
+      className={`Bar ${(props.count > 10) ? 'withTip' : ''}`}
+      style={{ backgroundColor: color, width: flagSize, borderLeftColor: color }}
       title={title}
     />
   );
 
-  const tip = props.count <= 10
-    ? null
-    : <div className="FlagTip" style={{ borderLeftColor: color, left: flagSize }} />;
+  // const tip = props.count <= 10
+  //   ? null
+  //   : <div className="FlagTip" style={{ borderLeftColor: color, left: flagSize }} />;
 
-  return <div className="FeatureFlag">{bar}{tip}</div>;
+  return <div className="FeatureFlag">{bar}</div>;
 };
 
 FeatureFlag.propTypes = {

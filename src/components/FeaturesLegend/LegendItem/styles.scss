@@ -1,4 +1,4 @@
-$square-size: 14px;
+$square-size: 10px;
 .FeaturesLegend .LegendItem {
   display: table;
   text-align: left;
@@ -6,7 +6,6 @@ $square-size: 14px;
   margin: 0px;
   margin-top: 1px;
   padding: 0px;
-  text-align: left;
   &.disabled {
     opacity: 0.3;
   }
@@ -17,8 +16,9 @@ $square-size: 14px;
     content: '';
   }
   .text {
-    line-height: 14px;
-    height: 14px;
+    font-size: 12px;
+    line-height: $square-size;
+    height: $square-size;
     display: table-cell;
     padding-left: 10px;
     vertical-align: top;

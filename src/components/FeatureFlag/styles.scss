@@ -1,21 +1,28 @@
 .FeatureFlag {
   position: relative;
   width: 50px;
-  display: flex;
+  height: 10px;
+  // display: flex;
 
   .Bar {
+    position: relative;
+
     height: 10px;
     display: inline-block;
+
+    &.withTip::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      width: 0;
+      height: 0;
+      border-width: 5px;
+      border-color: transparent;
+      border-left-color: inherit;
+      border-style: solid;
+      display: inline-block;
+    }
   }
 
-  .FlagTip {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-width: 5px;
-    border-color: transparent;
-    border-style: solid;
-    display: inline-block;
-  }
+
 }
