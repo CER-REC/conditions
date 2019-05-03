@@ -6,7 +6,8 @@
     wheel: (x: 2, y: 14, w: 57, h: 57),
     // wheel: (x: 2, y: 14, w: 57, h: 68),
     companyBreakdown: (x: 60, y: 14, w: 36, h: 38),
-    menus: (x: 97, y: 2, w: 21, h: 50),
+    menus: (x: 97, y: 2, w: 21, h: 11),
+    legend: (x: 97, y: 14, w: 21, h: 37),
     conditions: (x: 60, y: 53, w: 58, h: 29),
   )) {
 
@@ -15,14 +16,6 @@
     .header { min-height: $header-height; }
     .wheel { min-height: 200px; }
     .conditions { min-height: 100px; }
-
-    // Because we're using inline-block to align the elements, we want to remove
-    // the menus right margin as well, since its also the end of the row
-    > .row > section.menus { margin-right: 0; }
-
-    .row:last-of-type {
-      height: calc(100% - #{$header-height});
-    }
 
     // We want the condition details to sit at the bottom of the project menu
     section.companyBreakdown {

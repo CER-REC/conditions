@@ -132,6 +132,8 @@ const ViewTwo = props => (
         selected={props.selected.feature}
         onChange={props.setSelectedFeature}
       />
+    </section>
+    <section className="legend">
       <FeaturesLegend legendItems={legendItems} selectedFeature="theme" isProjectLegend />
     </section>
     <section className="conditions">

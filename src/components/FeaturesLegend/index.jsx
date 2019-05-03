@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
 import LegendItem from './LegendItem';
 import CircleContainer from '../CircleContainer';
 import FeatureFlag from '../FeatureFlag';
@@ -9,55 +10,63 @@ import './styles.scss';
 
 const FeaturesLegend = (props) => {
   if (props.legendItems.length === 0) { return null; }
-  let footer = null;
-  if (props.isProjectLegend) {
-    footer = (
-      <div className="footer">
+
+  const header = (
+    <div className={classNames('featuresHeader', { hidden: (!props.isProjectLegend) })}>
+      <CircleContainer size={24} className="ConditionsIcon">#</CircleContainer>
+      <div className="ConditionsDesc">
+        <FormattedMessage
+          id="components.projectLegend.totalConditions"
+        />
+      </div>
+    </div>
+  );
+
+  const footer = (
+    <React.Fragment>
+      <div className={classNames('featuresLegend', { hidden: (!props.isProjectLegend) })}>
         <h3 className="Title">
           <FormattedMessage id="components.projectLegend.numberOfConditions" />
         </h3>
         <div className="ChartLegend">
-          <FeatureFlag
-            chartType="legend"
-            name="zeroConditions"
-            count={0}
-          />
-          <div className="FlagDesc">0</div>
-          <FeatureFlag
-            chartType="legend"
-            name="tenConditions"
-            count={10}
-          />
-          <div className="FlagDesc">10</div>
-          <FeatureFlag
-            chartType="legend"
-            name="greaterThanTenConditions"
-            count={11}
-          />
-          <div className="FlagDesc"> &gt;10 </div>
-        </div>
-        <CircleContainer
-          size={24}
-          className="ConditionsIcon"
-        >
-        #
-        </CircleContainer>
-        <div className="ConditionsDesc">
-          <FormattedMessage
-            id="components.projectLegend.totalConditions"
-          />
-        </div>
-        <div className="AssociatedComp">
-          <h3 className="Asterisk">*</h3>
-          <div className="AssociatedDesc">
-            <FormattedMessage
-              id="components.projectLegend.associated"
+          <div className="legendRow">
+            <FeatureFlag
+              chartType="legend"
+              name="zeroConditions"
+              count={0}
             />
+            <span className="FlagDesc">0</span>
+          </div>
+          <div className="legendRow">
+            <FeatureFlag
+              chartType="legend"
+              name="tenConditions"
+              count={10}
+            />
+            <span className="FlagDesc">10</span>
+          </div>
+          <div className="legendRow">
+            <FeatureFlag
+              chartType="legend"
+              name="greaterThanTenConditions"
+              count={11}
+            />
+            <span className="FlagDesc"> &gt;10 </span>
           </div>
         </div>
       </div>
-    );
-  }
+
+      <div className="AssociatedComp">
+        <h3 className="Asterisk">*</h3>
+        <div className="AssociatedDesc">
+          <FormattedMessage
+            id="components.projectLegend.associated"
+          />
+        </div>
+      </div>
+    </React.Fragment>
+  );
+
   const renderedItems = props.legendItems.map(item => (
     <LegendItem
       key={item.description}
@@ -68,6 +77,7 @@ const FeaturesLegend = (props) => {
   ));
   return (
     <div className="FeaturesLegend">
+      {header}
       {renderedItems}
       {footer}
     </div>
