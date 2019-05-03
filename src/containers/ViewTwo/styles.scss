@@ -20,11 +20,15 @@
         height: 100%;
 
         .RegionConditionSummary {
-          bottom: 92px;
+          position: absolute;
+
+          // 50% - 16px of the Wheel = 75% of our container here - 16px
+          //                         = 25% + 16px to bottom, - 24px for the border
+          bottom: calc(25% + 16px - 24px);
         }
 
         .RegionCompanies {
-          bottom: 0;
+          top: calc(75% - 16px + 24px);
           left: 30px;
         }
       }

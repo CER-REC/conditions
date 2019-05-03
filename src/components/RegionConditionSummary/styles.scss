@@ -2,11 +2,14 @@
 
 .RegionConditionSummary {
   position: relative;
+  width: 100%;
+
+  height: 124px;
 
   .ChartContainer {
     position: absolute;
 
-    top: 167px;
+    top: 0;
     left: 48px;
 
     width: calc(100% - 48px);
@@ -15,6 +18,7 @@
     border: 4px solid $LightGray;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    border-bottom: none;
   }
 
   .RegionConditionChart {
@@ -28,9 +32,10 @@
 
   .BorderBottom {
     position: absolute;
-    top: 99%;
-    right: -4px;
-    left: -24px;
+    bottom: 0;
+    // right: -4px;
+    left: 24px;
+    right: 0;
 
     height: 24px;
 
@@ -50,10 +55,11 @@
   .YAxis {
     position: absolute;
 
-    top: 212px;
+    // top: 45px;
+    bottom: 26px;
     left: 0;
 
-    height: 100px;
+    height: 50px;
 
     font-size: 22px;
 

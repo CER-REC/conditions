@@ -6155,21 +6155,6 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         <div
           className="legendRow"
         >
-          <div
-            className="FeatureFlag"
-          >
-            <div
-              className="Bar "
-              style={
-                Object {
-                  "backgroundColor": "transparent",
-                  "borderLeftColor": "transparent",
-                  "width": "calc(1px * 0)",
-                }
-              }
-              title="Zero Conditions"
-            />
-          </div>
           <span
             className="FlagDesc"
           >
@@ -6388,21 +6373,6 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         <div
           className="legendRow"
         >
-          <div
-            className="FeatureFlag"
-          >
-            <div
-              className="Bar "
-              style={
-                Object {
-                  "backgroundColor": "transparent",
-                  "borderLeftColor": "transparent",
-                  "width": "calc(1px * 0)",
-                }
-              }
-              title="Zero Conditions"
-            />
-          </div>
           <span
             className="FlagDesc"
           >
@@ -16372,9 +16342,6 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
       className="ChartContainer"
     >
       <div
-        className="BorderBottom"
-      />
-      <div
         className="RegionConditionSummaryTitle"
       >
         <span>
@@ -16385,9 +16352,12 @@ exports[`Storyshots Components|RegionConditionSummary with no data 1`] = `
         className="RegionConditionChart"
       />
     </div>
+    <div
+      className="BorderBottom"
+    />
     <svg
       className="YAxis"
-      viewBox="0 0 100 200"
+      viewBox="0 0 100 100"
     >
       <text
         x="45"
@@ -16435,9 +16405,6 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
     <div
       className="ChartContainer"
     >
-      <div
-        className="BorderBottom"
-      />
       <div
         className="RegionConditionSummaryTitle"
       >
@@ -16568,9 +16535,12 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
         </svg>
       </div>
     </div>
+    <div
+      className="BorderBottom"
+    />
     <svg
       className="YAxis"
-      viewBox="0 0 100 200"
+      viewBox="0 0 100 100"
     >
       <text
         x="45"
@@ -16619,9 +16589,6 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
       className="ChartContainer"
     >
       <div
-        className="BorderBottom"
-      />
-      <div
         className="RegionConditionSummaryTitle"
       >
         <span>
@@ -16655,9 +16622,12 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
         </svg>
       </div>
     </div>
+    <div
+      className="BorderBottom"
+    />
     <svg
       className="YAxis"
-      viewBox="0 0 100 200"
+      viewBox="0 0 100 100"
     >
       <text
         x="45"
