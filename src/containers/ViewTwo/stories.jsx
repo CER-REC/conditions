@@ -12,10 +12,31 @@ const year = {
   start: 1970,
   end: 1980,
 };
+
+const legendItems = [
+  { feature: 'theme', description: 'SECURITY', disabled: false },
+  { feature: 'theme', description: 'FINANCIAL', disabled: false },
+  { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
+  { feature: 'theme', description: 'SOCIOECONOMIC', disabled: false },
+];
+
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
   projectsData,
+  legendItems,
+  availableProjectYear: { year },
+  availableCategories: { categories },
+  suggestedKeywords: { searchData },
+  conditionDetails: {
+    selectedProject: 'Project Name',
+    data: conditionData,
+  },
+  browseBy: 'company',
+  jumpToView3: noop,
+};
+
+const connectedProps = {
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },
@@ -67,7 +88,7 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
   .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" {...getInteractionProps()} />)
   .add(
     'connected variant',
-    () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />,
+    () => <ViewTwoGraphQL {...connectedProps} {...getInteractionProps()} />,
     { decorators: [withGQL] },
   )
   .add('layout only', () => (

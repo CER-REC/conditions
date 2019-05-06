@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
-import { viewTwoQuery, projectMenuQuery } from '../../queries/viewTwo';
+import { companyWheelQuery } from '../../queries/viewTwoQueries/wheel';
+import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
@@ -24,12 +25,6 @@ import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '.
 import './styles.scss';
 
 const noop = () => {};
-const legendItems = [
-  { feature: 'theme', description: 'SECURITY', disabled: false },
-  { feature: 'theme', description: 'FINANCIAL', disabled: false },
-  { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
-  { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
-];
 
 const regionData = {
   featureData: [
@@ -119,7 +114,8 @@ const ViewTwo = props => (
           )
           : (
             <ProjectMenu
-              projectsData={props.projectsData.counts}
+              loading={props.projectMenuLoading}
+              projectsData={props.projectsData}
               selectedProjectID={props.selected.project}
               onChange={props.setSelectedProject}
               selectedFeature={props.selected.feature}
@@ -140,7 +136,11 @@ const ViewTwo = props => (
           selected={props.selected.feature}
           onChange={props.setSelectedFeature}
         />
-        <FeaturesLegend legendItems={legendItems} selectedFeature="theme" isProjectLegend />
+        <FeaturesLegend
+          legendItems={props.legendItems}
+          selectedFeature={props.selected.feature}
+          isProjectLegend
+        />
       </section>
       <section className="conditions">
         <ConditionDetails
@@ -164,6 +164,10 @@ const ViewTwo = props => (
 ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
+  legendItems: PropTypes.arrayOf(PropTypes.shape({
+    disabled: PropTypes.bool,
+    description: PropTypes.string.isRequired,
+  })).isRequired,
   selected: PropTypes.shape({
     company: PropTypes.number,
     region: PropTypes.number,
@@ -225,20 +229,45 @@ export const ViewTwoUnconnected = props => (
 );
 
 export const ViewTwoGraphQL = props => (
-  <Query query={viewTwoQuery}>
-    {({ data }) => (
-      // if (loading) // do something;
-      // else if (error) // handle the error;
-      // else {}
-      // <Query query={projectMenuQuery} id={props.}
-      <ViewTwo
-        wheelData={
-        // eslint-disable-next-line react/prop-types125
-        props.browseBy === 'company' ? data.allCompanies : locationData
-        }
-        {...props}
-      />
-    )}
+  // The queries must be by company and location and then subdivide.
+  // The common queries such as the condition explorer must be set at the view level
+  // const isCompanyVariant = props.browseBy === "company";
+  <Query query={companyWheelQuery}>
+    {({ data: wheelData }) => (
+      <Query query={projectMenuQuery} variables={{ id: `${props.selected.company}` }}>
+        { (projectMenuQprops) => {
+          const { loading: projLoading } = projectMenuQprops;
+          const { error: projError } = projectMenuQprops;
+          const { data: projData } = projectMenuQprops;
+          const legendItem = !projLoading && !projError
+            ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
+            : null;
+          const rawFeatureData = legendItem
+            ? legendItem.aggregatedCount[props.selected.feature]
+            : [];
+          const projectFeatureData = Object.keys(rawFeatureData)
+            .filter(key => key !== '__typename')
+            .map(key => ({
+              feature: props.selected.feature,
+              description: key,
+              disabled: !rawFeatureData[key] > 0,
+            }));
+          // MISSING ERROR HANDLING
+          return (
+            <ViewTwo
+              wheelData={
+                props.browseBy === 'company' ? wheelData.allCompanies : locationData
+              }
+              projectsData={!projLoading && !projError ? projData.allProjectsByCompany : []}
+              projectMenuLoading={projLoading}
+              legendItems={projectFeatureData}
+              {...props}
+            />
+          );
+        }}
+      </Query>
+    )
+    }
   </Query>
 );
 

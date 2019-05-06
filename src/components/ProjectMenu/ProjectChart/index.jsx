@@ -7,17 +7,18 @@ import CircleContainer from '../../CircleContainer';
 import './styles.scss';
 
 const ProjectChart = (props) => {
-  const conditionCount = props.graphData.reduce((acc, next) => (acc + next.count), 0);
+  const graphData = props.graphData.filter(dataPoint => dataPoint.name !== '__typename');
+  const conditionCount = graphData.reduce((acc, next) => (acc + next.count), 0);
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
         <CircleContainer size={24} className="ConditionCount">
-          {props.loading ? '' : conditionCount}
+          {props.loading || conditionCount <= 0 ? '' : conditionCount}
         </CircleContainer>
       </div>
       <div className="FlagWrapper">
         <div className="FlagPole" />
-        {props.graphData.map(condition => (
+        {graphData.map(condition => (
           <FeatureFlag
             key={condition.name}
             name={condition.name}
