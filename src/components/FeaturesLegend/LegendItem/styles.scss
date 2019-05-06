@@ -1,26 +1,36 @@
 $square-size: 10px;
 .FeaturesLegend .LegendItem {
   display: table;
-  text-align: left;
+
   max-height: $square-size;
+
   margin: 0px;
   margin-top: 1px;
   padding: 0px;
+
+  text-align: left;
+
   &.disabled {
     opacity: 0.3;
   }
+
   .color {
     display: table-cell;
+
     height: $square-size;
     width: $square-size;
+
     content: '';
   }
+
   .text {
+    display: table-cell;
+    height: $square-size;
+
+    padding-left: 10px;
+
     font-size: 12px;
     line-height: $square-size;
-    height: $square-size;
-    display: table-cell;
-    padding-left: 10px;
     vertical-align: top;
   }
 }

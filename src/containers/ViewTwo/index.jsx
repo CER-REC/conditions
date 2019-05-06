@@ -93,10 +93,12 @@ const ViewTwo = props => (
           Back To Introduction
       </button>
     </section>
+
     <section className="wheel">
       <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
       <GreyPipe mode={props.browseBy} />
     </section>
+
     <section className="companyBreakdown">
       {props.browseBy === 'location'
         ? (
@@ -119,6 +121,7 @@ const ViewTwo = props => (
         )
       }
     </section>
+
     <section className="menus">
       <TrendButton
         onClick={props.jumpToView3}
@@ -133,6 +136,7 @@ const ViewTwo = props => (
         onChange={props.setSelectedFeature}
       />
     </section>
+
     <section className="legend">
       <FeaturesLegend
         legendItems={legendItems}
@@ -140,6 +144,7 @@ const ViewTwo = props => (
         isProjectLegend={props.browseBy !== 'location'}
       />
     </section>
+
     <section className="conditions">
       <ConditionDetails
         selectedItem={props.selected.condition}

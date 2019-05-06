@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import classNames from 'classnames';
 import LegendItem from './LegendItem';
 import CircleContainer from '../CircleContainer';
 import FeatureFlag from '../FeatureFlag';
@@ -11,45 +10,50 @@ import './styles.scss';
 const FeaturesLegend = (props) => {
   if (props.legendItems.length === 0) { return null; }
 
-  const header = (
-    <div className={classNames('featuresHeader', { hidden: (!props.isProjectLegend) })}>
-      <CircleContainer size={24} className="ConditionsIcon">#</CircleContainer>
-      <div className="ConditionsDesc">
-        <FormattedMessage
-          id="components.projectLegend.totalConditions"
-        />
+  const header = (props.isProjectLegend)
+    ? (
+      <div className="featuresHeader">
+        <CircleContainer size={24} className="ConditionsIcon">#</CircleContainer>
+        <div className="ConditionsDesc">
+          <FormattedMessage
+            id="components.projectLegend.totalConditions"
+          />
+        </div>
       </div>
-    </div>
-  );
+    ) : null;
 
   const footer = (
     <React.Fragment>
-      <div className={classNames('featuresLegend', { hidden: (!props.isProjectLegend) })}>
-        <h3 className="Title">
-          <FormattedMessage id="components.projectLegend.numberOfConditions" />
-        </h3>
-        <div className="ChartLegend">
-          <div className="legendRow">
-            <span className="FlagDesc">0</span>
+      {(props.isProjectLegend)
+        ? (
+          <div className="featuresLegend">
+            <h3 className="Title">
+              <FormattedMessage id="components.projectLegend.numberOfConditions" />
+            </h3>
+            <div className="ChartLegend">
+              <div className="legendRow">
+                <span className="FlagDesc">0</span>
+              </div>
+              <div className="legendRow">
+                <FeatureFlag
+                  chartType="legend"
+                  name="tenConditions"
+                  count={10}
+                />
+                <span className="FlagDesc">10</span>
+              </div>
+              <div className="legendRow">
+                <FeatureFlag
+                  chartType="legend"
+                  name="greaterThanTenConditions"
+                  count={11}
+                />
+                <span className="FlagDesc"> &gt;10 </span>
+              </div>
+            </div>
           </div>
-          <div className="legendRow">
-            <FeatureFlag
-              chartType="legend"
-              name="tenConditions"
-              count={10}
-            />
-            <span className="FlagDesc">10</span>
-          </div>
-          <div className="legendRow">
-            <FeatureFlag
-              chartType="legend"
-              name="greaterThanTenConditions"
-              count={11}
-            />
-            <span className="FlagDesc"> &gt;10 </span>
-          </div>
-        </div>
-      </div>
+        ) : null
+      }
 
       <div className="AssociatedComp">
         <h3 className="Asterisk">*</h3>

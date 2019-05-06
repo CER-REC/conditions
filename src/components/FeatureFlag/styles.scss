@@ -1,8 +1,8 @@
 .FeatureFlag {
   position: relative;
+
   width: 50px;
   height: 10px;
-  // display: flex;
 
   .Bar {
     position: relative;
@@ -12,15 +12,18 @@
 
     &.withTip::after {
       content: '';
+      display: inline-block;
+
       position: absolute;
       left: 100%;
+
       width: 0;
       height: 0;
+
       border-width: 5px;
       border-color: transparent;
       border-left-color: inherit;
       border-style: solid;
-      display: inline-block;
     }
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
+import classNames from 'classnames';
 import './styles.scss';
 import { features } from '../../constants';
 
@@ -19,16 +20,11 @@ const FeatureFlag = (props) => {
 
   const bar = (
     <div
-      className={`Bar ${(props.count > 10) ? 'withTip' : ''}`}
+      className={classNames('Bar', { withTip: (props.count > 10) })}
       style={{ backgroundColor: color, width: flagSize, borderLeftColor: color }}
       title={title}
     />
   );
-
-  // const tip = props.count <= 10
-  //   ? null
-  //   : <div className="FlagTip" style={{ borderLeftColor: color, left: flagSize }} />;
-
   return <div className="FeatureFlag">{bar}</div>;
 };
 

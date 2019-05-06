@@ -10,7 +10,6 @@
     margin-bottom: 25px;
 
     height: 24px;
-
     width: 100%;
 
     .ConditionsIcon {
@@ -22,17 +21,12 @@
 
     .ConditionsDesc {
       position: absolute;
-      line-height: 12px;
       left: 30px;
       top: 0;
+
+      line-height: 12px;
       max-width: 150px;
       word-wrap: break-word;
-    }
-  }
-
-  .featuresLegend, .featuresHeader {
-    &.hidden {
-      display: none;
     }
   }
 
@@ -48,11 +42,14 @@
     }
 
     .ChartLegend {
-      border-left: 1px solid $Gray160;
-      height: 40px;
-      margin-bottom: 11px;
       position: relative;
+
       width: 50px;
+      height: 40px;
+
+      margin-bottom: 11px;
+
+      border-left: 1px solid $Gray160;
 
       .legendRow {
         position: relative;
