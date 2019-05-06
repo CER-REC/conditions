@@ -152,19 +152,34 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(10)
 
+  getAncestorsForCondition = (id) => {
+    // TODO: Make a query for this once our server has `conditionById($id)` available
+    console.log(`TODO: Get condition data, instrument, project, and company for condition ${id}`);
+  }
+
   setSelectedKeyword = (keyword, id) => {
     this.props.setSelectedKeywordId(id);
-    // eslint-disable-next-line no-alert
-    alert(`getting data for keyword '${keyword}'`);
     client.query({
       query: gql`
         {
-          allProjects{
-            id
+          findSearchResults(
+            includeKeywords: ["${keyword}"],
+            language: "en" # TODO: Check the app's locale
+          ) {
+            conditionIds
           }
         }
       `,
-    }).then(response => console.dir(response));
+    }).then((response) => {
+      const { conditionIds } = response.data.findSearchResults;
+      if (!conditionIds.length) {
+        // TODO: Proper error checking or something
+        console.error(`There are no conditions matching "${keyword}"`);
+      } else {
+        const randomId = conditionIds[Math.floor(Math.random() * conditionIds.length)];
+        this.getAncestorsForCondition(randomId);
+      }
+    });
   };
 
   render() {

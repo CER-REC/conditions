@@ -34,6 +34,7 @@ storiesForView('Containers|ViewOne', module, ReadMe)
   .add('connected variant', () => (
     <ViewOneGraphQL
       jumpToAbout={noop}
+      setSelectedKeyword={noop}
       {...getInteractionProps()}
     />
   ), { decorators: [withGQL] })
