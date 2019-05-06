@@ -16,7 +16,6 @@ describe('Components|MainInfoBar/DownloadsBox', () => {
 
       wrapper = shallow(<DownloadsBox
         openDataModal={spy.data}
-        openScreenshotModal={spy.screen}
       />);
     });
 
