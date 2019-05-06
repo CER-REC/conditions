@@ -48,13 +48,23 @@
 
       .FeaturesMenu {
         position: absolute;
+        width: 100%;
         bottom: 0;
 
         margin-bottom: 0;
 
+        .title {
+          position: absolute;
+          line-height: 1.8em;
+          right: calc(50% + 50px);
+          bottom: 0;
+        }
+
         .Dropdown {
-          position: relative;
-          left: 1px;
+          position: absolute;
+          bottom: 0;
+          right: 50%;
+          transform: translateX(50%);
         }
       }
     }
