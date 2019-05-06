@@ -14,7 +14,7 @@ const sampleSuggestedKeywords = {
 
 const includeKeywords = ['safety'];
 const excludeKeywords = ['exclude1'];
-const projectStatus = ['OPEN'];
+const projectStatus = ['INPROGRESS'];
 const yearRange = { start: 1970, end: 1980 };
 const categories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 

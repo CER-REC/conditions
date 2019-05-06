@@ -20,7 +20,7 @@ class FilterContent extends React.PureComponent {
     yearRange: yearRangeType.isRequired,
     projectStatus: PropTypes.arrayOf(
       PropTypes.oneOf(
-        ['OPEN', 'CLOSED', 'CANCELLED'],
+        ['INPROGRESS', 'COMPLETED'],
       ),
     ).isRequired,
     onYearSelect: PropTypes.func.isRequired,
@@ -143,18 +143,28 @@ class FilterContent extends React.PureComponent {
 
   filterProjectStatus = (item) => {
     const { projectStatus } = this.props;
-    const updatedStatus = projectStatus.includes(item)
-      ? projectStatus.filter(v => v !== item)
-      : projectStatus.concat(item);
+    let updatedStatus = projectStatus;
+    if (projectStatus.length > 1) {
+      updatedStatus = projectStatus.filter(v => v !== item);
+    } else if (item === projectStatus[0]) {
+      updatedStatus = projectStatus.filter(v => v !== item);
+      if (item === 'INPROGRESS') {
+        updatedStatus = updatedStatus.concat('COMPLETED');
+      } else if (item === 'COMPLETED') {
+        updatedStatus = updatedStatus.concat('INPROGRESS');
+      }
+    } else {
+      updatedStatus = updatedStatus.concat(item);
+    }
     this.props.changeProjectStatus(updatedStatus);
   }
 
   reset = () => {
-    this.props.changeProjectStatus(['OPEN', 'CLOSED', 'CANCELLED']);
+    this.props.changeProjectStatus(['INPROGRESS', 'COMPLETED']);
     this.props.onYearSelect(this.props.yearRange);
   }
 
-  projectStatusRender = statusArray => (['OPEN', 'CLOSED', 'CANCELLED'].map(i => (
+  projectStatusRender = statusArray => (['INPROGRESS', 'COMPLETED'].map(i => (
     <li
       key={i}
       {...handleInteraction(this.filterProjectStatus, i)}
