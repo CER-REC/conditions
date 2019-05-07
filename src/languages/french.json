@@ -123,9 +123,8 @@
         "projectYear": "",
         "projectStatus": {
           "projectStatusText": "",
-          "OPEN": "",
-          "CLOSED": "",
-          "CANCELLED": ""
+          "INPROGRESS": "",
+          "COMPLETED": ""
         }
       },
       "tab": {
