@@ -179,7 +179,7 @@ describe('Components|SearchBar/FilterContent', () => {
     test('click should call its changeProjectStatus prop and add it in if it doesnt exist', () => {
       status.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith(['COMPLETED', 'INPROGRESS']);
+      expect(spy).toHaveBeenCalledWith(['INPROGRESS', 'COMPLETED']);
     });
 
     test('enter key should call its changeProjectStatus prop', () => {

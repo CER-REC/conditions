@@ -142,19 +142,13 @@ class FilterContent extends React.PureComponent {
   }
 
   filterProjectStatus = (item) => {
+    const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
     const { projectStatus } = this.props;
     let updatedStatus = projectStatus;
-    if (projectStatus.length > 1) {
-      updatedStatus = projectStatus.filter(v => v !== item);
-    } else if (item === projectStatus[0]) {
-      updatedStatus = projectStatus.filter(v => v !== item);
-      if (item === 'INPROGRESS') {
-        updatedStatus = updatedStatus.concat('COMPLETED');
-      } else if (item === 'COMPLETED') {
-        updatedStatus = updatedStatus.concat('INPROGRESS');
-      }
+    if ((projectStatus.length > 1) || (item === projectStatus[0])) {
+      updatedStatus = allProjectStatuses.filter(v => v !== item);
     } else {
-      updatedStatus = updatedStatus.concat(item);
+      updatedStatus = [...allProjectStatuses];
     }
     this.props.changeProjectStatus(updatedStatus);
   }
