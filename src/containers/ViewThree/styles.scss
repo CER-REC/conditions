@@ -5,131 +5,122 @@
 .ViewThree {
   position: relative;
   @include grid((
-    features: (x: 0, y: 0, w: 21, h: 30),
-    legend: (x: 0, y: 0, w: 37, h: 30),
-    chart: (x: 0, y: 0, w: 56, h: 30),
-    featureDescription: (x: 0, y: 0, w: 59, h: 30),
-    typesDescription: (x: 0, y: 0, w: 56, h: 30),
-    selectedCompany: (x: 0, y: 0, w: 38, h: 30),
-    conditionDetails: (x: 0, y: 0, w: 77, h: 30),
+    features: (x: 2, y: 2, w: 22, h: 30),
+    legend: (x: 25, y: 2, w: 35, h: 30),
+    chart: (x: 61, y: 2, w: 57, h: 30),
+    featureDescription: (x: 2, y: 32, w: 58, h: 20),
+    typesDescription: (x: 60, y: 32, w: 58, h: 20),
+    selectedCompany: (x: 2, y: 53, w: 58, h: 29),
+    conditions: (x: 60, y: 53, w: 58, h: 29),
   ));
 
-  .row {
-    overflow: hidden;
+  // .row {
+  //   overflow: hidden;
+  // }
+
+  // .firstRow, .secondRow {
+  //   border-left: 1px solid $DarkGray;
+  //   border-right: 1px solid $DarkGray;
+  // }
+
+  // .firstRow {
+  //   border-top: 1px solid $DarkGray;
+  //   background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 42px);
+  // }
+  // .secondRow { border-bottom: 1px solid $DarkGray; }
+
+  // .features {
+  //   margin-top: 10px;
+
+  //   .FeaturesMenu {
+  //     padding-left: 19.5px;
+  //   }
+  // }
+  // .legend {
+  //   margin-top: 42px;
+  // }
+  .chart {
+    // height: 100%;
+    // position: relative;
   }
 
-  .firstRow, .secondRow {
-    border-left: 1px solid $DarkGray;
-    border-right: 1px solid $DarkGray;
+
+  .featureDescription {
+    padding-left: 19.5px;
+    padding-right: 19.5px;
   }
 
-  .firstRow {
-    border-top: 1px solid $DarkGray;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 42px);
-  }
-  .secondRow { border-bottom: 1px solid $DarkGray; }
-
-  .firstRow {
-    height: 40%;
-    position: relative;
-
-    .features {
-      margin-top: 10px;
-
-      .FeaturesMenu {
-        padding-left: 19.5px;
-      }
-    }
-    .legend {
-      margin-top: 42px;
-    }
-    .chart {
-      height: 100%;
-      position: relative;
-    }
+  .typesDescription {
+    // height: 100%;
   }
 
-  .secondRow {
-    height: 30%;
-    min-height: 200px;
-    position: relative;
-
-    .feature-description {
-      padding-left: 19.5px;
-      padding-right: 19.5px;
-    }
-
-    .typesDescription {
-      height: 100%;
-    }
-  }
-
-  .thirdRow {
-    height: 30%;
-    min-height: 200px;
-    padding-top: 16px;
+  .conditions {
+    // height: 30%;
+    // min-height: 200px;
+    // padding-top: 16px;
 
     .conditionDetails {
-      height: 100%;
+      // height: 100%;
     }
 
-    .selectedCompany {
-      position: relative;
+  }
 
-      height: 100%;
+  .selectedCompany {
+    // position: relative;
 
-      // Have the grey bar spill over to meet up against ConditionDetails
-      overflow: visible;
-      &:after {
-        position: absolute;
+    // height: 100%;
 
-        top: 0;
-        right: -10px;
-        display: inline-block;
-        content: "";
-        background-color: $LightGray;
-        height: 24px;
-        width: 10px;
+    // Have the grey bar spill over to meet up against ConditionDetails
+    overflow: visible;
+    &:after {
+      position: absolute;
+
+      top: 0;
+      right: -10px;
+      display: inline-block;
+      content: "";
+      background-color: $LightGray;
+      height: 24px;
+      width: 10px;
+    }
+
+    // TODO: Rework the SelectedGroupBar component instead of doing this here
+    .selectedCompanyHeader {
+
+      height: 24px;
+
+      background-color: $LightGray;
+
+      display: inline-block;
+      width: 100%;
+
+      padding-left: 10px;
+      padding-right: 10px;
+
+      text-align:left;
+      line-height: 24px;
+
+      h1, h2 {
+        margin: 0;
       }
 
-      // TODO: Rework the SelectedGroupBar component instead of doing this here
-      .selectedCompanyHeader {
+      h1 {
+        display: inline;
 
-        height: 24px;
-
-        background-color: $LightGray;
-
-        display: inline-block;
-        width: 100%;
-
-        padding-left: 10px;
-        padding-right: 10px;
-
-        text-align:left;
-        line-height: 24px;
-
-        h1, h2 {
-          margin: 0;
-        }
-
-        h1 {
-          display: inline;
-
-          font-family: $fira-sans-condensed;
-          font-size: 14px;
-        }
-
-        h2 {
-          display: inline;
-
-          font-family: $fira-sans-condensed-bold;
-          font-size: 14px;
-          text-decoration: underline;
-
-          color: $Black51;
-        }
-
+        font-family: $fira-sans-condensed;
+        font-size: 14px;
       }
+
+      h2 {
+        display: inline;
+
+        font-family: $fira-sans-condensed-bold;
+        font-size: 14px;
+        text-decoration: underline;
+
+        color: $Black51;
+      }
+
     }
   }
 }
