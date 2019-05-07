@@ -7,19 +7,6 @@ import { project as projectData, nullableNumber } from '../../proptypes';
 import { loadingProjectsData } from '../../mockData';
 import './styles.scss';
 
-// const loadingProjectsData = {
-//   id: -1,
-//   name: { en: '', fr: '' },
-//   shortName: { en: '', fr: '' },
-//   aggregatedCount: {
-//     filing: [],
-//     instrument: [],
-//     phase: [],
-//     status: [],
-//     theme: [],
-//     type: [],
-//   },
-// };
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
     /** The Project id of the item currently selected */

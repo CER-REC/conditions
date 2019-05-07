@@ -109,6 +109,7 @@ class Wheel extends React.Component {
           immediate={!this.state.needsSpin}
           config={{ tension: 30, easing: 'easeInExpo' }}
           onStart={() => this.setState({ needsSpin: false })}
+          onRest={() => null /* set loading status to false for the projectMenu */}
           from={{
             transform: `rotate(${this.state.oldRotation}deg)`,
             rotation: -this.state.oldRotation,
@@ -130,7 +131,8 @@ class Wheel extends React.Component {
                       items={this.props.wheelData}
                       degreesPerItem={this.state.degreesPerItem}
                       reservedDegrees={reservedDegrees}
-                      currentIndex={this.getIndex(props.rotation)}
+                      currentIndex={(this.props.wheelData.length - this.getIndex(props.rotation))
+                        % this.props.wheelData.length}
                       {...props}
                     />
                   ))}
