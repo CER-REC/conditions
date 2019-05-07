@@ -8,7 +8,7 @@ export default {
     en: '',
     fr: '',
   },
-  data: {
+  aggregatedCount: {
     instrument: {
       ROUTING: 0,
       CONSTRUCTION: 0,

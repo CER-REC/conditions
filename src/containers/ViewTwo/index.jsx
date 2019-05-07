@@ -270,6 +270,7 @@ export const ViewTwoGraphQL = props => (
     }
   </Query>
 );
+ViewTwoGraphQL.propTypes = ViewTwo.propTypes;
 
 export default connect(
   ({ selected, browseBy, search }) => ({
