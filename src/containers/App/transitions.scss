@@ -111,6 +111,8 @@ $states: (
   8: (
     ".Guide": (
       opacity: 0,
+    ),
+    ".Guide .CircleContainer":(
       pointer-events: none,
     ),
     ".ViewTwo": (
