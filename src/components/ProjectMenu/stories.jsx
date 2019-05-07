@@ -14,7 +14,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['onChange'] }))
   .add('Default Props', () => (
     <ProjectMenu
-      projectsData={projectsData.counts}
+      projectsData={projectsData}
       selectedFeature="theme"
       {...getInteractionProps()}
     />
