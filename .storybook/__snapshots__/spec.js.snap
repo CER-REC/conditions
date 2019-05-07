@@ -6525,7 +6525,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             tabIndex={0}
           >
             <span>
-              Status
+              Filing
             </span>
           </div>
         </li>
@@ -6555,7 +6555,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
             tabIndex={0}
           >
             <span>
-              Filing
+              Status
             </span>
           </div>
         </li>
@@ -6600,9 +6600,9 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
           Phase
         </option>
         <option
-          value="status"
+          value="filing"
         >
-          Status
+          Filing
         </option>
         <option
           value="type"
@@ -6610,9 +6610,9 @@ exports[`Storyshots Components|FeaturesMenu drop down 1`] = `
           Type
         </option>
         <option
-          value="filing"
+          value="status"
         >
-          Filing
+          Status
         </option>
       </select>
     </div>

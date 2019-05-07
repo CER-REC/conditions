@@ -33,6 +33,14 @@ export const features = {
     PRIOR_TO_CONSTRUCTION_PHASE: 'rgb(210, 102, 236)',
     UNSPECIFIED: 'rgb(26, 57, 146)',
   },
+  filing: {
+    REQUIRED: 'rgb(82, 82, 247)',
+    NOT_REQUIRED: 'rgb(58, 58, 58)',
+  },
+  type: {
+    NON_STANDARD: 'rgb(77, 39, 90)',
+    STANDARD: 'rgb(181, 11, 128)',
+  },
   status: {
     IN_PROGRESS: 'rgb(101, 216, 126)',
     CLOSED: 'rgb(137, 137, 137)',
@@ -46,14 +54,6 @@ export const features = {
     FURTHER_INFORMATION_REQUIRED: 'rgb(176, 244, 244)',
     AMENDED: 'rgb(198, 170, 6)',
     SATISFACTORY: 'rgb(88, 104, 107)',
-  },
-  type: {
-    NON_STANDARD: 'rgb(77, 39, 90)',
-    STANDARD: 'rgb(181, 11, 128)',
-  },
-  filing: {
-    REQUIRED: 'rgb(82, 82, 247)',
-    NOT_REQUIRED: 'rgb(58, 58, 58)',
   },
 };
 
