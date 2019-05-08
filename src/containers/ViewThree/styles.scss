@@ -5,45 +5,33 @@
 .ViewThree {
   position: relative;
   @include grid((
-    features: (x: 2, y: 2, w: 22, h: 30),
-    legend: (x: 25, y: 2, w: 35, h: 30),
-    chart: (x: 61, y: 2, w: 57, h: 30),
-    featureDescription: (x: 2, y: 32, w: 58, h: 20),
-    typesDescription: (x: 60, y: 32, w: 58, h: 20),
+    gradientContainer: (x: 2, y: 2, w: 116, h: 50),
+    features: (x: 2, y: 2, w: 22, h: 32),
+    legend: (x: 25, y: 2, w: 35, h: 32),
+    chart: (x: 61, y: 2, w: 57, h: 32),
+    featureDescription: (x: 2, y: 34, w: 58, h: 18),
+    typesDescription: (x: 60, y: 34, w: 58, h: 18),
     selectedCompany: (x: 2, y: 53, w: 58, h: 29),
     conditions: (x: 60, y: 53, w: 58, h: 29),
   ));
 
-  // .row {
-  //   overflow: hidden;
-  // }
+  .gradientContainer {
+    border: 1px solid $DarkGray;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 42px);
 
-  // .firstRow, .secondRow {
-  //   border-left: 1px solid $DarkGray;
-  //   border-right: 1px solid $DarkGray;
-  // }
-
-  // .firstRow {
-  //   border-top: 1px solid $DarkGray;
-  //   background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 42px);
-  // }
-  // .secondRow { border-bottom: 1px solid $DarkGray; }
-
-  // .features {
-  //   margin-top: 10px;
-
-  //   .FeaturesMenu {
-  //     padding-left: 19.5px;
-  //   }
-  // }
-  // .legend {
-  //   margin-top: 42px;
-  // }
-  .chart {
-    // height: 100%;
-    // position: relative;
+    pointer-events: none;
   }
 
+  .features {
+    padding-top: 10px;
+
+    .FeaturesMenu {
+      padding-left: 19.5px;
+    }
+  }
+  .legend {
+    padding-top: 42px;
+  }
 
   .featureDescription {
     padding-left: 19.5px;
@@ -51,18 +39,9 @@
   }
 
   .typesDescription {
-    // height: 100%;
-  }
-
-  .conditions {
-    // height: 30%;
-    // min-height: 200px;
-    // padding-top: 16px;
-
-    .conditionDetails {
-      // height: 100%;
-    }
-
+    padding-left: 19.5px;
+    padding-right: 1px;
+    padding-bottom: 1px;
   }
 
   .selectedCompany {

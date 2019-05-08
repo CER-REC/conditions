@@ -71,7 +71,9 @@ class App extends React.PureComponent {
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
   handleGuideClick = () => {
-    const newState = Math.min(Math.max(0, this.props.transitionState + 1), 8);
+    let currentState = this.props.transitionState;
+    if (currentState === 9) { currentState = 0; };
+    const newState = Math.min(Math.max(0, currentState + 1), 8);
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
     }

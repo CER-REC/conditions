@@ -19,6 +19,7 @@ import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
 const ViewThree = props => (
   <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
+    <section className="gradientContainer" />
     <section className="features">
       <FeaturesMenu
         selected={props.selected.feature}
