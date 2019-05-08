@@ -53,7 +53,7 @@ describe('Components|MainInfoBar', () => {
       />);
 
       wrapper.find('.MainInfoBar')
-        .find('DownloadsBox')
+        .find('DownloadBox')
         .props()
         .openDataModal();
 

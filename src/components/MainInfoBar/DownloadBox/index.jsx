@@ -6,8 +6,8 @@ import handleInteraction from '../../../utilities/handleInteraction';
 
 import './styles.scss';
 
-const DownloadsBox = props => (
-  <div className="DownloadsBox">
+const DownloadBox = props => (
+  <div className="DownloadBox">
     <svg viewBox="0 0 20 20">
       <rect className="fillNone" width="11.6" height="11.6" />
       <polygon className="fillNone" points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0" />
@@ -35,9 +35,9 @@ const DownloadsBox = props => (
   </div>
 );
 
-DownloadsBox.propTypes = {
+DownloadBox.propTypes = {
   openDataModal: PropTypes.func.isRequired,
 
 };
 
-export default DownloadsBox;
+export default DownloadBox;

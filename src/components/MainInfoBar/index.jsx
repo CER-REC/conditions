@@ -15,7 +15,7 @@ import './styles.scss';
 import ShareIcon from '../ShareIcon';
 import AboutBox from './AboutBox';
 import MethodologyBox from './MethodologyBox';
-import DownloadsBox from './DownloadsBox';
+import DownloadBox from './DownloadBox';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 
@@ -50,7 +50,7 @@ class MainInfoBar extends React.PureComponent {
         return <MethodologyBox />;
       case 'download':
         return (
-          <DownloadsBox
+          <DownloadBox
             openDataModal={this.props.openDataModal}
           />
         );
