@@ -4,6 +4,9 @@
   width: 50px;
   height: 10px;
 
+  // Some user agents (and/or Storybook) leave 'text-align: center' on <div>
+  text-align: left;
+
   .Bar {
     position: relative;
 

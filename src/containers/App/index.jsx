@@ -72,7 +72,7 @@ class App extends React.PureComponent {
 
   handleGuideClick = () => {
     let currentState = this.props.transitionState;
-    if (currentState === 9) { currentState = 0; };
+    if (currentState === 9) { currentState = 0; }
     const newState = Math.min(Math.max(0, currentState + 1), 8);
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
