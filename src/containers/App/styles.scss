@@ -1,6 +1,8 @@
+@import '../../styles/grid';
 @import "./transitions.scss";
 
 .App {
+
   $defaultTransition: 1s ease-in-out;
 
   $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
@@ -9,10 +11,10 @@
   $fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
   $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
 
-  position: relative;
+  // position: relative;
 
-  max-width: 1168px;
-  height: 100vh;
+  // max-width: 1168px;
+  // height: 100vh;
 
   overflow-x: hidden;
 
@@ -81,27 +83,20 @@
   .ViewOne {
     position: absolute;
     top: 0;
+    left: 0;
 
-    .row {
-      &.intro {
-        position: relative;
-        transform: translateY(0px);
-        transition: transform $defaultTransition;
-      }
-      &.explorer {
-        position: relative;
-        transform: translateY(0px);
-        transition: transform $defaultTransition;
-      }
-      &.buttons {
-        position: absolute;
-        bottom: 0;
+    .introduction {
+      transform: translateY(0px);
+      transition: transform $defaultTransition;
+    }
+    .explorer {
+      transform: translateY(0px);
+      transition: transform $defaultTransition;
+    }
 
-        .ShortcutInfoBar {
-          transition: opacity $defaultTransition;
-          opacity: 1;
-        }
-      }
+    .infoBar {
+      transition: opacity $defaultTransition;
+      opacity: 1;
     }
   }
 
@@ -110,7 +105,7 @@
     top:0 ;
     left: 0;
 
-    height: 90vh;
+    // height: 90vh;
 
     opacity: 1;
 
