@@ -7,6 +7,8 @@ import CircleContainer from '../../CircleContainer';
 import { yearRangeType } from '../../../proptypes';
 import './styles.scss';
 
+const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
+
 const findListItemValue = (target, depth = 0) => {
   if (target.value) { return Number(target.value); }
   return findListItemValue(target.parentElement, depth + 1);
@@ -20,7 +22,7 @@ class FilterContent extends React.PureComponent {
     yearRange: yearRangeType.isRequired,
     projectStatus: PropTypes.arrayOf(
       PropTypes.oneOf(
-        ['INPROGRESS', 'COMPLETED'],
+        allProjectStatuses,
       ),
     ).isRequired,
     onYearSelect: PropTypes.func.isRequired,
@@ -142,9 +144,8 @@ class FilterContent extends React.PureComponent {
   }
 
   filterProjectStatus = (item) => {
-    const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
     const { projectStatus } = this.props;
-    let updatedStatus = projectStatus;
+    let updatedStatus;
     if ((projectStatus.length > 1) || (item === projectStatus[0])) {
       updatedStatus = allProjectStatuses.filter(v => v !== item);
     } else {
@@ -154,11 +155,11 @@ class FilterContent extends React.PureComponent {
   }
 
   reset = () => {
-    this.props.changeProjectStatus(['INPROGRESS', 'COMPLETED']);
+    this.props.changeProjectStatus(allProjectStatuses);
     this.props.onYearSelect(this.props.yearRange);
   }
 
-  projectStatusRender = statusArray => (['INPROGRESS', 'COMPLETED'].map(i => (
+  projectStatusRender = statusArray => (allProjectStatuses.map(i => (
     <li
       key={i}
       {...handleInteraction(this.filterProjectStatus, i)}
