@@ -245,8 +245,9 @@
         "projectYear": "Filter by Project Year",
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
-          "INPROGRESS": "In Progress",
-          "COMPLETED": "Completed"
+          "OPEN": "Open",
+          "CLOSED": "Closed",
+          "CANCELLED": "Cancelled"
         }
       },
       "tab": {

@@ -17412,7 +17412,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="upperCase"
           >
              
-            In Progress
+            Open
              
           </span>
         </li>
@@ -17427,7 +17427,22 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="upperCase"
           >
              
-            Completed
+            Closed
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Cancelled
              
           </span>
         </li>
@@ -17787,7 +17802,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="upperCase"
           >
              
-            In Progress
+            Open
              
           </span>
         </li>
@@ -17802,7 +17817,22 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="upperCase"
           >
              
-            Completed
+            Closed
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Cancelled
              
           </span>
         </li>
@@ -18162,7 +18192,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="upperCase"
           >
              
-            In Progress
+            Open
              
           </span>
         </li>
@@ -18177,7 +18207,22 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="upperCase"
           >
              
-            Completed
+            Closed
+             
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+             
+            Cancelled
              
           </span>
         </li>

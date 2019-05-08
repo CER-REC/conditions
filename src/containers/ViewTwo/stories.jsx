@@ -48,7 +48,7 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       state: {
         included: [],
         excluded: [],
-        projectStatus: ['INPROGRESS', 'COMPLETED'],
+        projectStatus: ['OPEN'],
         projectYear: year,
         findAny: true,
         selected: {

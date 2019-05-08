@@ -27,7 +27,7 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   ), {
     interaction: {
       state: {
-        projectStatus: ['INPROGRESS', 'COMPLETED'], selectedYear: yearSelected, yearRange: initialYearRange,
+        projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: yearSelected, yearRange: initialYearRange,
       },
       actions: {
         changeProjectStatus: () => updatedProjectStatus => (
@@ -38,7 +38,7 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   })
   .add('withProjectStatus', () => (
     <FilterContent
-      projectStatus={['COMPLETED', 'INPROGRESS']}
+      projectStatus={['CLOSED', 'OPEN']}
       selectedYear={{ start: 1970, end: 1971 }}
       yearRange={initialYearRange}
       {...getInteractionProps()}

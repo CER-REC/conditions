@@ -20,7 +20,7 @@ class FilterContent extends React.PureComponent {
     yearRange: yearRangeType.isRequired,
     projectStatus: PropTypes.arrayOf(
       PropTypes.oneOf(
-        ['INPROGRESS', 'COMPLETED'],
+        ['OPEN', 'CLOSED', 'CANCELLED'],
       ),
     ).isRequired,
     onYearSelect: PropTypes.func.isRequired,
@@ -142,23 +142,19 @@ class FilterContent extends React.PureComponent {
   }
 
   filterProjectStatus = (item) => {
-    const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
     const { projectStatus } = this.props;
-    let updatedStatus = projectStatus;
-    if ((projectStatus.length > 1) || (item === projectStatus[0])) {
-      updatedStatus = allProjectStatuses.filter(v => v !== item);
-    } else {
-      updatedStatus = [...allProjectStatuses];
-    }
+    const updatedStatus = projectStatus.includes(item)
+      ? projectStatus.filter(v => v !== item)
+      : projectStatus.concat(item);
     this.props.changeProjectStatus(updatedStatus);
   }
 
   reset = () => {
-    this.props.changeProjectStatus(['INPROGRESS', 'COMPLETED']);
+    this.props.changeProjectStatus(['OPEN', 'CLOSED', 'CANCELLED']);
     this.props.onYearSelect(this.props.yearRange);
   }
 
-  projectStatusRender = statusArray => (['INPROGRESS', 'COMPLETED'].map(i => (
+  projectStatusRender = statusArray => (['OPEN', 'CLOSED', 'CANCELLED'].map(i => (
     <li
       key={i}
       {...handleInteraction(this.filterProjectStatus, i)}
