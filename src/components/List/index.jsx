@@ -54,6 +54,82 @@ class List extends React.PureComponent {
     const arrowSize = 24;
     const previousIcon = this.props.horizontal ? 'angle-left' : 'angle-up';
     const nextIcon = this.props.horizontal ? 'angle-right' : 'angle-down';
+    
+//        <Icon size="1x" icon={next ? nextIcon : previousIcon} />
+
+    //What i need to do is pass different svg's based on wether its next or not and wi
+    let firstPathStartX,firstPathEndX, firstPathStartY, firstPathEndY,secondPathStartX, secondPathEndX, secondPathStartY, secondPathEndY;
+    let point1X, point1Y, point2X, point2Y, point3X, point3Y;
+
+    if (this.props.horizontal){
+     
+      point1Y = 11.55;
+      point2Y =  12;
+      point3Y = 12.45;
+      firstPathStartY = 12;
+      secondPathStartY = 12;
+
+      firstPathEndY = 6.3;
+      secondPathEndY = 17.7;
+
+      if (!next){
+        //right angle case
+        point1X = 4.7;
+        point2X =  6;
+        point3X = 4.7;
+
+        firstPathStartX = 5;
+        secondPathStartX = 5;
+     
+        firstPathEndX = 16;
+        secondPathEndX = 16;
+         
+      } else{
+        //left angle case
+        point1X, point3X = 19.3;
+        point2X = 18;
+        firstPathStartX, secondPathStartX = 19;
+        firstPathEndX , secondPathEndX = 8;
+      }
+
+    } else {
+      point1X = 11.55;
+      point2X =  12;
+      point3X = 12.45;
+
+      firstPathStartX = 12;
+      secondPathStartX = 12;
+
+      firstPathEndX = 6.3;
+      secondPathEndX = 17.7;
+      if (!next){
+        //up angle case
+        point1Y = 4.7;
+        point2Y =  6;
+        point3Y = 4.7;
+
+        firstPathStartY = 5;
+        secondPathStartY = 5;
+     
+        firstPathEndY = 16;
+        secondPathEndY = 16;
+      } else{
+        //down angle case
+        point1Y = 19.3;
+        point2Y =  18;
+        point3Y = 19.3;
+        firstPathStartY = 19;
+        secondPathStartY = 19;
+
+        firstPathEndY = 8;
+        secondPathEndY = 8;
+      }
+
+    }
+    let firstPath = "M" + firstPathStartX + " " + (firstPathStartY) + " " + firstPathEndX + " " + (firstPathEndY);
+    let secondPath = "M" + secondPathStartX + " " + (secondPathStartY) + " " + secondPathEndX + " " + (secondPathEndY);
+    let triangle = "M" + point1X + " " + point1Y + "L " + point2X + " " + point2Y + "L " + point3X + " " + point3Y;
+
 
     return (
       <CircleContainer
@@ -61,7 +137,14 @@ class List extends React.PureComponent {
         onClick={() => this.props.onChange(selectedIndex + (next ? 1 : -1))}
         className={classNames('arrow', next ? 'arrowNext' : 'arrowPrevious', { hidden })}
       >
-        <Icon size="1x" icon={next ? nextIcon : previousIcon} />
+        
+          <svg class="arrow" width="24" height="24">
+          <circle cx="12" cy="12" r="11" stroke="blue" stroke-width="0.7" fill="none" />
+            <path d={firstPath} stroke="red" stroke-width="1.3" fill="none"></path>
+            <path d={secondPath} stroke="red" stroke-width="1.3" fill="none"></path>
+            <path d={triangle} fill= "red"/>
+         </svg>
+        
       </CircleContainer>
     );
   }
