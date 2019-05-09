@@ -7,7 +7,7 @@ import ReadMe from './README.md';
 
 
 storiesForComponent('Components|Arrow', module, ReadMe)
-  .addDecorator(withStatus('underReview'))
+  .addDecorator(withStatus('designUnderDevelopment'))
   .add('default arrow', () => (
     <Arrow orientation="Up"/>
   ))
