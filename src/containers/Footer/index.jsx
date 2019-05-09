@@ -11,7 +11,6 @@ const Footer = props => (
         pane={props.mainInfoBarPane}
         setPane={props.setMainInfoBarPane}
         openDataModal={props.openDataModal}
-        openScreenshotModal={props.openScreenshotModal}
       />
     </section>
   </section>
@@ -19,10 +18,9 @@ const Footer = props => (
 
 Footer.propTypes = {
   layoutOnly: PropTypes.bool,
-  mainInfoBarPane: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']).isRequired,
+  mainInfoBarPane: PropTypes.oneOf(['', 'about', 'methodology', 'download']).isRequired,
   setMainInfoBarPane: PropTypes.func.isRequired,
   openDataModal: PropTypes.func.isRequired,
-  openScreenshotModal: PropTypes.func.isRequired,
 };
 
 Footer.defaultProps = {
