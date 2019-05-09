@@ -1,10 +1,10 @@
 @import '../../../styles/colors.scss';
 
-$pipe-color: $LightGreyBackground;
-$condition-circle-bg: #a1a8a7;
-$selected-condition-circle-bg: #f15a24;
-$condition-circle-font: #fff;
-$project-chart-line: #a1a8a7;
+$pipe-color: $LightGray;
+$condition-circle-bg: $Gray160;
+$selected-condition-circle-bg: $MainOrange;
+$condition-circle-font: $White;
+$project-chart-line: $Gray160;
 
 .ProjectChart {
   width: 100%;
@@ -15,7 +15,7 @@ $project-chart-line: #a1a8a7;
     text-overflow: ellipsis;
     position: absolute;
     width: 118px;
-    bottom: 130px; // Based on the rotation and the width
+    bottom: 137px; // Based on the rotation and the width
     right: 50%;
     transform: rotate(-70deg);
     transform-origin: bottom right;
@@ -30,13 +30,13 @@ $project-chart-line: #a1a8a7;
   }
 
   .ConditionPipe {
-    height: 30px;
+    height: 24px;
     background-color: $pipe-color;
     text-align: center;
 
     .ConditionCount {
-      background-color: $condition-circle-bg;
-      color: $condition-circle-font;
+      background-color: $Gray160;
+      color: $White;
     }
   }
 
@@ -56,7 +56,7 @@ $project-chart-line: #a1a8a7;
       width: 2px;
       height: 100%;
 
-      background-color: $project-chart-line;
+      background-color: $Gray160;
     }
 
     .FeatureFlag {
@@ -76,8 +76,8 @@ $project-chart-line: #a1a8a7;
       margin: 0;
 
       .ConditionCount {
-        background-color: $selected-condition-circle-bg;
-        color: $condition-circle-font;
+        background-color: $SearchKeyword;
+        color: $White;
         position: relative;
         bottom: 10px;
       }
@@ -85,7 +85,7 @@ $project-chart-line: #a1a8a7;
 
     .FlagPole {
       top: 0;
-      width: 30px;
+      width: 24px;
       background-color: $pipe-color;
     }
 
@@ -96,15 +96,15 @@ $project-chart-line: #a1a8a7;
 
     .ProjectName {
       z-index: 1;
-      width: 134px;
-      height: 30px;
+      width: 144px;
+      height: 24px;
       background: $pipe-color;
-      right: calc(50% - 15px);
+      right: calc(50% - 12px);
       &:before {
         content: '';
-        background: $pipe-color;
+        background: $LightGreyBackground;
         width: 20px;
-        height: 30px;
+        height: 24px;
         display: block;
         position: absolute;
         left: -10px;
@@ -114,7 +114,7 @@ $project-chart-line: #a1a8a7;
   }
 
   &:not(.selected) .FeatureFlag {
-    .Bar { background-color: #a1a8a7 !important; }
-    .FlagTip { border-left-color: #a1a8a7 !important; }
+    .Bar { background-color: $Gray160 !important; }
+    .FlagTip { border-left-color: $Gray160 !important; }
   }
 }

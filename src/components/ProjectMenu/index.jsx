@@ -4,14 +4,27 @@ import classNames from 'classnames';
 import List from '../List';
 import ProjectChart from './ProjectChart';
 import { project as projectData, nullableNumber } from '../../proptypes';
+import { loadingProjectsData } from '../../mockData';
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
-    selectedProjectID: nullableNumber.isRequired,
+    /** The Project id of the item currently selected */
+    selectedProjectID: nullableNumber,
+    /** The selected feature */
     selectedFeature: PropTypes.string.isRequired,
+    /** Function for updating the project selected index */
     onChange: PropTypes.func.isRequired,
-    projectsData: PropTypes.arrayOf(projectData).isRequired,
+    /** All of the projects condition data */
+    projectsData: PropTypes.arrayOf(projectData),
+    /** A flag used to simulate data inside the project menu while loading */
+    loading: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    loading: false,
+    projectsData: [loadingProjectsData],
+    selectedProjectID: null,
   }
 
   getListItems = () => {
@@ -31,6 +44,7 @@ class ProjectMenu extends React.PureComponent {
   }
 
   handleConditionChange = (listItemIndex) => {
+    if (this.props.loading) { return; }
     const visibleListItems = this.getListItems();
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
@@ -40,7 +54,20 @@ class ProjectMenu extends React.PureComponent {
       .map(([name, count]) => ({ name, count }))
   );
 
+  getSedimentationWidth = () => {
+    const data = this.props.projectsData;
+
+    const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
+    const rightCount = data.length - leftCount - 1;
+
+    return [
+      leftCount < 35 ? leftCount : 35,
+      rightCount < 35 ? rightCount : 35,
+    ];
+  };
+
   render() {
+    const { loading, selectedProjectID, selectedFeature, onChange } = this.props;
     const listItems = this.getListItems();
     // If there are no listItems render virtualized data
     // TODO: Make fake renderedItems for loading of projectMenu
@@ -48,26 +75,29 @@ class ProjectMenu extends React.PureComponent {
       .map(project => (
         <ProjectChart
           key={project.id}
-          chartType={this.props.selectedFeature}
+          chartType={selectedFeature}
           graphData={this.getReformattedData(project.data)}
           projectName={project.name.en}
-          selected={project.id === this.props.selectedProjectID}
+          selected={project.id === selectedProjectID}
+          loading={loading}
         />
       ))
       : [];
 
-    const selected = this.props.selectedProjectID === null
+    const selected = selectedProjectID === null
       ? -1
-      : listItems.findIndex(project => project.id === this.props.selectedProjectID);
+      : listItems.findIndex(project => project.id === selectedProjectID);
 
     // If no project is selected, set it to the first project
     if (selected === -1) {
-      if (listItems.length > 0) { this.props.onChange(listItems[0].id); }
+      if (listItems.length > 0) { onChange(listItems[0].id); }
       return null;
     }
 
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;
+
+    const [sedimentationLeft, sedimentationRight] = this.getSedimentationWidth();
 
     return (
       <div
@@ -75,9 +105,12 @@ class ProjectMenu extends React.PureComponent {
           'ProjectMenu',
           `paddingBefore${paddingBefore}`,
           `paddingAfter${paddingAfter}`,
+          { loading },
         )}
       >
         <div className="pipe" />
+        <div className={classNames('sedimentation', 'left')} style={{ width: sedimentationLeft }} />
+        <div className={classNames('sedimentation', 'right')} style={{ width: sedimentationRight }} />
         <List
           items={renderedItems}
           onChange={this.handleConditionChange}

@@ -13,7 +13,6 @@ describe('Components|MainInfoBar', () => {
     spy = {
       setPane: jest.fn(),
       openDataModal: jest.fn(),
-      openScreenshotModal: jest.fn(),
     };
   });
 
@@ -47,25 +46,18 @@ describe('Components|MainInfoBar', () => {
   });
 
   describe('passing information to the content boxes', () => {
-    test('should pass its openDataModal and openScreenshotModal callbacks to the Downloads box', () => {
+    test('should pass its openDataModal callback to the Downloads box', () => {
       const wrapper = shallow(<MainInfoBar
-        pane="downloads"
+        pane="download"
         {...spy}
       />);
 
       wrapper.find('.MainInfoBar')
-        .find('DownloadsBox')
+        .find('DownloadBox')
         .props()
         .openDataModal();
 
       expect(spy.openDataModal).toHaveBeenCalledTimes(1);
-
-      wrapper.find('.MainInfoBar')
-        .find('DownloadsBox')
-        .props()
-        .openScreenshotModal();
-
-      expect(spy.openScreenshotModal).toHaveBeenCalledTimes(1);
     });
   });
 });

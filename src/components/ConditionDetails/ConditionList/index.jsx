@@ -18,7 +18,7 @@ class ConditionList extends React.PureComponent {
       out.push((item.isInstrument)
         ? (
           <div key={item.instrumentNumber}>
-            <div className="unmarked" />
+            <div className={classNames('barMarker', { marked: item.marked })} />
             <h4>{item.instrumentNumber}</h4>
           </div>
         )

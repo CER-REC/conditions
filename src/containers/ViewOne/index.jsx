@@ -57,7 +57,6 @@ const ViewOne = props => (
           handleInfoBar={false}
           jumpToAbout={props.jumpToAbout}
           openDataModal={noop}
-          openScreenshotModal={noop}
         />
       </section>
     </section>
