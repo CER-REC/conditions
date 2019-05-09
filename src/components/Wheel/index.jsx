@@ -123,7 +123,7 @@ class Wheel extends React.Component {
       <div className="Wheel">
         <Spring
           immediate={!this.state.needsSpin}
-          config={{ tension: 30, easing: 'easeInOutCirc' }}
+          config={{ tension: 70, friction: 30, easing: t => t * t * t * t * t }}
           onStart={() => this.setState({ needsSpin: false })}
           from={{
             transform: `rotate(${this.state.oldRotation}deg)`,
