@@ -28,13 +28,13 @@ const handleScroll = throttle((deltaY, currentIndex, length) => {
   * we can't use deltaY directly
   */
   const direction = Math.sign(deltaY, currentIndex, length);
-  if (!direction) return null;
+  if (!direction || deltaY === 0) return null;
   const newIndex = Math.min(
     Math.max(0, currentIndex + direction),
     length - 1,
   );
   return newIndex;
-}, scrollDelay);
+}, scrollDelay, { leading: true });
 
 class List extends React.PureComponent {
   componentRef = null;
@@ -94,7 +94,6 @@ class List extends React.PureComponent {
           this.props.className,
           { horizontal: this.props.horizontal, guideLine: this.props.guideLine },
         )}
-        onWheel={this.throttleScrollEvents}
       >
         <ul>
           {!arrowsAtEdges
