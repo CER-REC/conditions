@@ -28,10 +28,10 @@ const Arrow = (props) => {
   return(
   <div className="Arrow">
   
-    <svg class="arrow" width="24" height="24">
-            <circle cx="12" cy="12" r="11" stroke="blue" stroke-width="0.7" fill="none" />
-            <path d={firstPath} stroke="red" stroke-width="1.3" fill="none"></path>
-            <path d={secondPath} stroke="red" stroke-width="1.3" fill="none"></path>
+    <svg width="24" height="24">
+            <circle cx="12" cy="12" r="11" stroke="blue" strokeWidth="0.7" fill="none" />
+            <path d={firstPath} stroke="red" strokeWidth="1.3" fill="none"></path>
+            <path d={secondPath} stroke="red" strokeWidth="1.3" fill="none"></path>
             <path d={triangle} fill= "red"/>
     </svg>
   </div>
