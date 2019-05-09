@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import './styles.scss';
 
 const Arrow = (props) => {
-  const firstPath, secondPath, triangle;
+  let firstPath, secondPath, triangle;
 
   if (props.orientation === 'Up'){
     firstPath = 'M 12 5 6.3 16';
@@ -26,17 +26,7 @@ const Arrow = (props) => {
     triangle = 'M 19.3 11.55 L 18 12 L 19.3 12.45 ';
   } 
   return(
-  <div
-    className={classNames(
-      'Arrow',
-      props.className,
-      { elevated: props.elevated, disabled: props.disabled },
-    )}
-    style={{
-      width: props.size,
-      height: props.size,
-    }}
-  >
+  <div className="Arrow">
   
     <svg class="arrow" width="24" height="24">
             <circle cx="12" cy="12" r="11" stroke="blue" stroke-width="0.7" fill="none" />
@@ -45,16 +35,17 @@ const Arrow = (props) => {
             <path d={triangle} fill= "red"/>
     </svg>
   </div>
-);
+  );
   };
 Arrow.propTypes = {
   orientation: PropTypes.string.isRequired,
-  className: PropTypes.string,
+
 };
 
 Arrow.defaultProps = {
-  orientation: 'Up',
   className: '',
+  orientation: 'Up',
+
 };
 
 export default Arrow;
