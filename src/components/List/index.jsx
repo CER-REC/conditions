@@ -12,7 +12,6 @@ import {
 
 import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
-import Icon from '../Icon';
 
 import './styles.scss';
 import Arrow from '../Arrow';

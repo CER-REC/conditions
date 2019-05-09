@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import './styles.scss';
 
 const Arrow = (props) => {
@@ -15,12 +14,12 @@ const Arrow = (props) => {
     secondPath = 'M 12 19 17.7 8';
     triangle = 'M 11.55 19.3 L 12 18 L 12.45 19.3';
 
-  } else if (props.orientation === 'Right'){
+  } else if (props.orientation === 'Left'){
     firstPath = 'M 5 12 16 6.3';
     secondPath = 'M 5 12 16 17.7';
     triangle = 'M 4.7 11.55 L 6 12 L 4.7 12.45';
 
-  } else if (props.orientation === 'Left'){
+  } else if (props.orientation === 'Right'){
     firstPath = 'M 19 12 8 6.3 ';
     secondPath = 'M 19 12 8 17.7 ';
     triangle = 'M 19.3 11.55 L 18 12 L 19.3 12.45 ';
@@ -29,22 +28,23 @@ const Arrow = (props) => {
   <div className="Arrow">
   
     <svg width="24" height="24">
-            <circle cx="12" cy="12" r="11" stroke="blue" strokeWidth="0.7" fill="none" />
-            <path d={firstPath} stroke="red" strokeWidth="1.3" fill="none"></path>
-            <path d={secondPath} stroke="red" strokeWidth="1.3" fill="none"></path>
-            <path d={triangle} fill= "red"/>
+            <path d={firstPath} stroke={props.color} strokeWidth="1.3" fill="none"></path>
+            <path d={secondPath} stroke={props.color} strokeWidth="1.3" fill="none"></path>
+            <path d={triangle} fill= {props.color}/>
     </svg>
   </div>
   );
   };
 Arrow.propTypes = {
   orientation: PropTypes.string.isRequired,
+  color: PropTypes.string,
 
 };
 
 Arrow.defaultProps = {
   className: '',
   orientation: 'Up',
+  color: 'red',
 
 };
 
