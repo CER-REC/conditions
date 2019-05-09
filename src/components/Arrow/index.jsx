@@ -21,7 +21,7 @@ const Arrow = (props) => {
   <div className="Arrow">
   
     <svg width="24" height="24" className='svg'>
-      <polyline points={line} fill="none"></polyline>
+      <polyline points={line} fill="none" ></polyline>
             
     </svg>
   </div>
@@ -29,14 +29,12 @@ const Arrow = (props) => {
   };
 Arrow.propTypes = {
   orientation: PropTypes.string.isRequired,
-  color: PropTypes.string,
-
+  className: PropTypes.string
 };
 
 Arrow.defaultProps = {
   className: '',
   orientation: 'Up',
-  color: 'red',
 
 };
 

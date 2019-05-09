@@ -1,5 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components|Arrow Down orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow"
+  >
+    <svg
+      className="svg"
+      height="24"
+      width="24"
+    >
+      <polyline
+        fill="none"
+        points=" 5.3, 8 11,19 16.7,8 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Arrow Left orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow"
+  >
+    <svg
+      className="svg"
+      height="24"
+      width="24"
+    >
+      <polyline
+        fill="none"
+        points=" 16,6.3 5,12 16,17.7 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Arrow Right orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow"
+  >
+    <svg
+      className="svg"
+      height="24"
+      width="24"
+    >
+      <polyline
+        fill="none"
+        points=" 8,6.3 18,12 8,17.7 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Arrow Up orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow"
+  >
+    <svg
+      className="svg"
+      height="24"
+      width="24"
+    >
+      <polyline
+        fill="none"
+        points=" 5.3, 16 11,5 16.7,16 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Arrow default arrow 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow"
+  >
+    <svg
+      className="svg"
+      height="24"
+      width="24"
+    >
+      <polyline
+        fill="none"
+        points=" 5.3, 16 11,5 16.7,16 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|BarContainer default 1`] = `
 <div
   className="visualization"
@@ -2695,23 +2800,16 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-up"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        className="svg"
+                        height="24"
+                        width="24"
                       >
-                        <path
-                          d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          fill="none"
+                          points=" 5.3, 16 11,5 16.7,16 "
                         />
                       </svg>
                     </div>
@@ -2748,23 +2846,16 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-down"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        className="svg"
+                        height="24"
+                        width="24"
                       >
-                        <path
-                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          fill="none"
+                          points=" 5.3, 8 11,19 16.7,8 "
                         />
                       </svg>
                     </div>
@@ -3254,23 +3345,16 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="Icon"
+                        className="Arrow"
                       >
                         <svg
-                          aria-hidden="true"
-                          className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                          color=""
-                          data-icon="angle-up"
-                          data-prefix="fas"
-                          role="img"
-                          style={Object {}}
-                          viewBox="0 0 320 512"
-                          xmlns="http://www.w3.org/2000/svg"
+                          className="svg"
+                          height="24"
+                          width="24"
                         >
-                          <path
-                            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                            fill="currentColor"
-                            style={Object {}}
+                          <polyline
+                            fill="none"
+                            points=" 5.3, 16 11,5 16.7,16 "
                           />
                         </svg>
                       </div>
@@ -3307,23 +3391,16 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="Icon"
+                        className="Arrow"
                       >
                         <svg
-                          aria-hidden="true"
-                          className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                          color=""
-                          data-icon="angle-down"
-                          data-prefix="fas"
-                          role="img"
-                          style={Object {}}
-                          viewBox="0 0 320 512"
-                          xmlns="http://www.w3.org/2000/svg"
+                          className="svg"
+                          height="24"
+                          width="24"
                         >
-                          <path
-                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                            fill="currentColor"
-                            style={Object {}}
+                          <polyline
+                            fill="none"
+                            points=" 5.3, 8 11,19 16.7,8 "
                           />
                         </svg>
                       </div>
@@ -3774,23 +3851,16 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-up"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        className="svg"
+                        height="24"
+                        width="24"
                       >
-                        <path
-                          d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          fill="none"
+                          points=" 5.3, 16 11,5 16.7,16 "
                         />
                       </svg>
                     </div>
@@ -3827,23 +3897,16 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-down"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        className="svg"
+                        height="24"
+                        width="24"
                       >
-                        <path
-                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          fill="none"
+                          points=" 5.3, 8 11,19 16.7,8 "
                         />
                       </svg>
                     </div>
@@ -4250,23 +4313,16 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="Icon"
+                  className="Arrow"
                 >
                   <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                    color=""
-                    data-icon="angle-up"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 320 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                    className="svg"
+                    height="24"
+                    width="24"
                   >
-                    <path
-                      d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                      fill="currentColor"
-                      style={Object {}}
+                    <polyline
+                      fill="none"
+                      points=" 5.3, 16 11,5 16.7,16 "
                     />
                   </svg>
                 </div>
@@ -4303,23 +4359,16 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="Icon"
+                  className="Arrow"
                 >
                   <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                    color=""
-                    data-icon="angle-down"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 320 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                    className="svg"
+                    height="24"
+                    width="24"
                   >
-                    <path
-                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      fill="currentColor"
-                      style={Object {}}
+                    <polyline
+                      fill="none"
+                      points=" 5.3, 8 11,19 16.7,8 "
                     />
                   </svg>
                 </div>
@@ -5211,23 +5260,16 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
               >
                 <div>
                   <div
-                    className="Icon"
+                    className="Arrow"
                   >
                     <svg
-                      aria-hidden="true"
-                      className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                      color=""
-                      data-icon="angle-left"
-                      data-prefix="fas"
-                      role="img"
-                      style={Object {}}
-                      viewBox="0 0 256 512"
-                      xmlns="http://www.w3.org/2000/svg"
+                      className="svg"
+                      height="24"
+                      width="24"
                     >
-                      <path
-                        d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                        fill="currentColor"
-                        style={Object {}}
+                      <polyline
+                        fill="none"
+                        points=" 16,6.3 5,12 16,17.7 "
                       />
                     </svg>
                   </div>
@@ -5327,23 +5369,16 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
               >
                 <div>
                   <div
-                    className="Icon"
+                    className="Arrow"
                   >
                     <svg
-                      aria-hidden="true"
-                      className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                      color=""
-                      data-icon="angle-right"
-                      data-prefix="fas"
-                      role="img"
-                      style={Object {}}
-                      viewBox="0 0 256 512"
-                      xmlns="http://www.w3.org/2000/svg"
+                      className="svg"
+                      height="24"
+                      width="24"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        fill="currentColor"
-                        style={Object {}}
+                      <polyline
+                        fill="none"
+                        points=" 8,6.3 18,12 8,17.7 "
                       />
                     </svg>
                   </div>
@@ -6413,23 +6448,16 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 16 11,5 16.7,16 "
                   />
                 </svg>
               </div>
@@ -6461,23 +6489,16 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 8 11,19 16.7,8 "
                   />
                 </svg>
               </div>
@@ -6918,23 +6939,16 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 16 11,5 16.7,16 "
                   />
                 </svg>
               </div>
@@ -6973,23 +6987,16 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 8 11,19 16.7,8 "
                   />
                 </svg>
               </div>
@@ -7400,23 +7407,16 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 16 11,5 16.7,16 "
                   />
                 </svg>
               </div>
@@ -7484,23 +7484,16 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 8 11,19 16.7,8 "
                   />
                 </svg>
               </div>
@@ -7886,23 +7879,16 @@ exports[`Storyshots Components|List arrows at edges 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 16 11,5 16.7,16 "
                 />
               </svg>
             </div>
@@ -7966,23 +7952,16 @@ exports[`Storyshots Components|List arrows at edges 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 8 11,19 16.7,8 "
                 />
               </svg>
             </div>
@@ -8021,23 +8000,16 @@ exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                color=""
-                data-icon="angle-left"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 256 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 16,6.3 5,12 16,17.7 "
                 />
               </svg>
             </div>
@@ -8101,23 +8073,16 @@ exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                color=""
-                data-icon="angle-right"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 256 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 8,6.3 18,12 8,17.7 "
                 />
               </svg>
             </div>
@@ -8156,23 +8121,16 @@ exports[`Storyshots Components|List basic usage 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 16 11,5 16.7,16 "
                 />
               </svg>
             </div>
@@ -8202,23 +8160,16 @@ exports[`Storyshots Components|List basic usage 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 8 11,19 16.7,8 "
                 />
               </svg>
             </div>
@@ -8283,23 +8234,16 @@ exports[`Storyshots Components|List component items 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 16 11,5 16.7,16 "
                 />
               </svg>
             </div>
@@ -8331,23 +8275,16 @@ exports[`Storyshots Components|List component items 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 8 11,19 16.7,8 "
                 />
               </svg>
             </div>
@@ -8422,23 +8359,16 @@ exports[`Storyshots Components|List guide line 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 16 11,5 16.7,16 "
                 />
               </svg>
             </div>
@@ -8468,23 +8398,16 @@ exports[`Storyshots Components|List guide line 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 8 11,19 16.7,8 "
                 />
               </svg>
             </div>
@@ -8549,23 +8472,16 @@ exports[`Storyshots Components|List horizontal 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                color=""
-                data-icon="angle-left"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 256 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 16,6.3 5,12 16,17.7 "
                 />
               </svg>
             </div>
@@ -8595,23 +8511,16 @@ exports[`Storyshots Components|List horizontal 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                color=""
-                data-icon="angle-right"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 256 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 8,6.3 18,12 8,17.7 "
                 />
               </svg>
             </div>
@@ -8676,23 +8585,16 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 16 11,5 16.7,16 "
                 />
               </svg>
             </div>
@@ -8718,23 +8620,16 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 8 11,19 16.7,8 "
                 />
               </svg>
             </div>
@@ -8791,23 +8686,16 @@ exports[`Storyshots Components|List selected 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 16 11,5 16.7,16 "
                 />
               </svg>
             </div>
@@ -8837,23 +8725,16 @@ exports[`Storyshots Components|List selected 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                className="svg"
+                height="24"
+                width="24"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  fill="none"
+                  points=" 5.3, 8 11,19 16.7,8 "
                 />
               </svg>
             </div>
@@ -10374,23 +10255,16 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-left"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 16,6.3 5,12 16,17.7 "
                   />
                 </svg>
               </div>
@@ -10659,23 +10533,16 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 8,6.3 18,12 8,17.7 "
                   />
                 </svg>
               </div>
@@ -11000,23 +10867,16 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-left"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 16,6.3 5,12 16,17.7 "
                   />
                 </svg>
               </div>
@@ -11285,23 +11145,16 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 8,6.3 18,12 8,17.7 "
                   />
                 </svg>
               </div>
@@ -11900,23 +11753,16 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-left"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 16,6.3 5,12 16,17.7 "
                   />
                 </svg>
               </div>
@@ -12185,23 +12031,16 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 8,6.3 18,12 8,17.7 "
                   />
                 </svg>
               </div>
@@ -13056,23 +12895,16 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-left"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 16,6.3 5,12 16,17.7 "
                   />
                 </svg>
               </div>
@@ -13341,23 +13173,16 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 8,6.3 18,12 8,17.7 "
                   />
                 </svg>
               </div>
@@ -14212,23 +14037,16 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-left"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 16,6.3 5,12 16,17.7 "
                   />
                 </svg>
               </div>
@@ -14497,23 +14315,16 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 8,6.3 18,12 8,17.7 "
                   />
                 </svg>
               </div>
@@ -15410,23 +15221,16 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-left"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 16,6.3 5,12 16,17.7 "
                   />
                 </svg>
               </div>
@@ -15695,23 +15499,16 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 8,6.3 18,12 8,17.7 "
                   />
                 </svg>
               </div>
@@ -19282,23 +19079,16 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 16 11,5 16.7,16 "
                   />
                 </svg>
               </div>
@@ -19337,23 +19127,16 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 8 11,19 16.7,8 "
                   />
                 </svg>
               </div>
@@ -19594,23 +19377,16 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 16 11,5 16.7,16 "
                   />
                 </svg>
               </div>
@@ -19649,23 +19425,16 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 8 11,19 16.7,8 "
                   />
                 </svg>
               </div>
@@ -19928,23 +19697,16 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 16 11,5 16.7,16 "
                   />
                 </svg>
               </div>
@@ -20027,23 +19789,16 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="svg"
+                  height="24"
+                  width="24"
                 >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    fill="none"
+                    points=" 5.3, 8 11,19 16.7,8 "
                   />
                 </svg>
               </div>
