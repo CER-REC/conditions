@@ -8945,14 +8945,14 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
         <button
           className="textButton "
           focusable={true}
-          id="downloads"
+          id="download"
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
           type="button"
         >
           <span>
-            Downloads
+            Download
           </span>
         </button>
       </div>
@@ -9152,7 +9152,7 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|MainInfoBar Downloads 1`] = `
+exports[`Storyshots Components|MainInfoBar Download 1`] = `
 <div
   className="visualization"
 >
@@ -9200,14 +9200,14 @@ exports[`Storyshots Components|MainInfoBar Downloads 1`] = `
         <button
           className="textButton "
           focusable={true}
-          id="downloads"
+          id="download"
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
           type="button"
         >
           <span>
-            Downloads
+            Download
           </span>
         </button>
       </div>
@@ -9455,14 +9455,14 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
         <button
           className="textButton "
           focusable={true}
-          id="downloads"
+          id="download"
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
           type="button"
         >
           <span>
-            Downloads
+            Download
           </span>
         </button>
       </div>
@@ -9710,14 +9710,14 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
         <button
           className="textButton "
           focusable={true}
-          id="downloads"
+          id="download"
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
           type="button"
         >
           <span>
-            Downloads
+            Download
           </span>
         </button>
       </div>
@@ -17412,7 +17412,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="upperCase"
           >
              
-            Open
+            In Progress
              
           </span>
         </li>
@@ -17427,22 +17427,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             className="upperCase"
           >
              
-            Closed
-             
-          </span>
-        </li>
-        <li
-          className="selectedProject"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="upperCase"
-          >
-             
-            Cancelled
+            Completed
              
           </span>
         </li>
@@ -17802,7 +17787,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="upperCase"
           >
              
-            Open
+            In Progress
              
           </span>
         </li>
@@ -17817,22 +17802,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             className="upperCase"
           >
              
-            Closed
-             
-          </span>
-        </li>
-        <li
-          className="selectedProject"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="upperCase"
-          >
-             
-            Cancelled
+            Completed
              
           </span>
         </li>
@@ -18192,7 +18162,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="upperCase"
           >
              
-            Open
+            In Progress
              
           </span>
         </li>
@@ -18207,22 +18177,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             className="upperCase"
           >
              
-            Closed
-             
-          </span>
-        </li>
-        <li
-          className="selectedProject"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="upperCase"
-          >
-             
-            Cancelled
+            Completed
              
           </span>
         </li>

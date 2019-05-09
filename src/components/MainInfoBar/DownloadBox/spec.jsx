@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
-import DownloadsBox from '.';
+import DownloadBox from '.';
 
-describe('Components|MainInfoBar/DownloadsBox', () => {
+describe('Components|MainInfoBar/DownloadBox', () => {
   describe('with default props', () => {
     let wrapper;
     let spy;
@@ -14,12 +14,11 @@ describe('Components|MainInfoBar/DownloadsBox', () => {
         screen: jest.fn(),
       };
 
-      wrapper = shallow(<DownloadsBox
+      wrapper = shallow(<DownloadBox
         openDataModal={spy.data}
-        openScreenshotModal={spy.screen}
       />);
     });
 
-    shouldBehaveLikeAComponent(DownloadsBox, () => wrapper);
+    shouldBehaveLikeAComponent(DownloadBox, () => wrapper);
   });
 });

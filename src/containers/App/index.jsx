@@ -137,7 +137,6 @@ class App extends React.PureComponent {
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
           openDataModal={noop}
-          openScreenshotModal={noop}
         />
       </div>
     );

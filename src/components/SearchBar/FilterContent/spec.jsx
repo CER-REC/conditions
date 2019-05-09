@@ -8,7 +8,7 @@ const yearRange = {
   end: 1980,
 };
 
-const projectStatus = ['OPEN', 'CLOSED', 'CANCELLED'];
+const projectStatus = ['INPROGRESS', 'COMPLETED'];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
@@ -164,7 +164,7 @@ describe('Components|SearchBar/FilterContent', () => {
       wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
-          projectStatus={['CLOSED']}
+          projectStatus={['COMPLETED']}
           selectedYear={yearRange}
           changeProjectStatus={spy}
           closeTab={noop}
@@ -179,7 +179,7 @@ describe('Components|SearchBar/FilterContent', () => {
     test('click should call its changeProjectStatus prop and add it in if it doesnt exist', () => {
       status.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith(['CLOSED', 'OPEN']);
+      expect(spy).toHaveBeenCalledWith(['INPROGRESS', 'COMPLETED']);
     });
 
     test('enter key should call its changeProjectStatus prop', () => {
@@ -188,9 +188,9 @@ describe('Components|SearchBar/FilterContent', () => {
     });
 
     test('if status exists, it will remove the status', () => {
-      wrapper.setProps({ projectStatus: ['OPEN', 'CLOSED'] });
+      wrapper.setProps({ projectStatus: ['INPROGRESS', 'COMPLETED'] });
       status.simulate('click', eventFuncs);
-      expect(spy).toHaveBeenCalledWith(['CLOSED']);
+      expect(spy).toHaveBeenCalledWith(['COMPLETED']);
     });
   });
 
@@ -325,7 +325,7 @@ describe('Components|SearchBar/FilterContent', () => {
       wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
-          projectStatus={['OPEN']}
+          projectStatus={['INPROGRESS']}
           selectedYear={yearRange}
           changeProjectStatus={noop}
           closeTab={noop}
