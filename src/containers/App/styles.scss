@@ -2,6 +2,13 @@
 @import "./transitions.scss";
 
 .App {
+  @include grid((
+    guideWrapper: (x: 0, y: 0, w: 120, h: 84),
+    ViewOne: (x: 0, y: 0, w: 120, h: 84),
+    ViewTwo: (x: 0, y: 0, w: 120, h: 84),
+    ViewThree: (x: 0, y: 0, w: 120, h: 84),
+    Footer: (x: 0, y: 84, w: 120),
+  )) {
 
   $defaultTransition: 1s ease-in-out;
 
@@ -11,12 +18,14 @@
   $fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
   $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
 
-  // position: relative;
+  position: relative;
 
   // max-width: 1168px;
   // height: 100vh;
 
-  overflow-x: hidden;
+  .guideWrapper {
+    overflow: hidden;
+  }
 
   .Guide {
     z-index: 999;
@@ -81,10 +90,6 @@
   }
 
   .ViewOne {
-    position: absolute;
-    top: 0;
-    left: 0;
-
     .introduction {
       transform: translateY(0px);
       transition: transform $defaultTransition;
@@ -101,12 +106,6 @@
   }
 
   .ViewTwo {
-    position: absolute;
-    top:0 ;
-    left: 0;
-
-    // height: 90vh;
-
     opacity: 1;
 
     transition: opacity $fastestEnd;
@@ -130,24 +129,18 @@
   }
 
   .ViewThree {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 90vh;
-
     opacity: 0;
 
     transition: opacity $defaultTransition;
   }
 
   .Footer {
-    position: absolute;
-    top: 90vh;
-
     visibility: hidden;
 
-    transition: opacity $defaultTransition, visibility 0s 1s;
+    height: 0;
+    overflow: hidden;
+
+    transition: opacity $defaultTransition, height $defaultTransition, visibility 0s 1s;
   }
 
   &.transition-state-8 {
@@ -227,4 +220,5 @@
       transition: opacity $fastStart, visibility 0s 1s;
     }
   }
+}
 }

@@ -6,15 +6,13 @@ import './styles.scss';
 
 const Footer = props => (
   <section className={classNames('Footer', { layoutOnly: props.layoutOnly })}>
-    <section className="row">
-      <section className="infoBar">
-        <MainInfoBar
-          pane={props.mainInfoBarPane}
-          setPane={props.setMainInfoBarPane}
-          openDataModal={props.openDataModal}
-          openScreenshotModal={props.openScreenshotModal}
-        />
-      </section>
+    <section className="infoBar">
+      <MainInfoBar
+        pane={props.mainInfoBarPane}
+        setPane={props.setMainInfoBarPane}
+        openDataModal={props.openDataModal}
+        openScreenshotModal={props.openScreenshotModal}
+      />
     </section>
   </section>
 );

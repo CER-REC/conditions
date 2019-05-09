@@ -35,7 +35,7 @@ $states: (
     ".Footer": (
       opacity: 0,
 
-      transition: "opacity $fastStart, visibility 0s 1s",
+      transition: "opacity $fastStart, height $defaultTransition, visibility 0s 1s",
     ),
   ),
   // 9 resets from View 2 -> 1, just with different transitions
@@ -109,7 +109,9 @@ $states: (
       opacity: 1,
       visibility: visible,
 
-      transition: opacity $defaultTransition,
+      height: 300px,
+
+      transition: "opacity #{$defaultTransition}, height #{$defaultTransition}",
     ),
   ),
   8: (

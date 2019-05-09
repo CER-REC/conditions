@@ -121,7 +121,9 @@ class App extends React.PureComponent {
         className={classNames('App', `transition-state-${transitionState}`)}
         ref={this.ref}
       >
-        <Guide textState={guideState} onClick={this.handleGuideClick} />
+        <div className="guideWrapper">
+          <Guide textState={guideState} onClick={this.handleGuideClick} />
+        </div>
         <ViewOne jumpToAbout={this.jumpToAbout} />
         <section className="browseBy">
           <BrowseBy
