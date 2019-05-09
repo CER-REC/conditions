@@ -62,6 +62,8 @@ $keywordColors: (
     }
 
     &.textVisible {
+      cursor: pointer;
+
       rect, path {
         /* Disable the transition when it becomes visible, so it appears immediately */
         transition: none;

@@ -10,6 +10,7 @@ import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
 
 import * as browseByCreators from '../../actions/browseBy';
+import * as searchCreators from '../../actions/search';
 import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import createStore from '../../Store';
@@ -100,13 +101,46 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(10)
 
-  getAncestorsForCondition = (id) => {
+  setConditionAncestors = (id) => {
     // TODO: Make a query for this once our server has `conditionById($id)` available
-    console.log(`TODO: Get condition data, instrument, project, and company for condition ${id}`);
+    client.query({
+      query: gql`
+        query{
+          getConditionById(id: ${id}){
+            instrumentId
+            instrument {
+              projectId
+              project {
+                companyIds
+              }
+            }
+            text {
+              en
+            }
+          }
+        }
+      `,
+    // eslint-disable-next-line no-unused-vars
+    }).then((response) => {
+      // TODO: Error checking
+
+      const condition = response.data.getConditionById[0];
+
+      // TODO: setSelectedCondition once View 2 is wired up for it
+
+      this.props.setSelectedProject(condition.instrument.projectId);
+
+      const randomCompany = Math.floor(
+        Math.random() * condition.instrument.project.companyIds.length,
+      );
+      const company = condition.instrument.project.companyIds[randomCompany];
+      this.props.setSelectedCompany(company);
+    });
   }
 
   setSelectedKeyword = (keyword, id) => {
     this.props.setSelectedKeywordId(id);
+    this.props.setIncluded([keyword]);
     client.query({
       query: gql`
         {
@@ -125,7 +159,7 @@ class App extends React.PureComponent {
         console.error(`There are no conditions matching "${keyword}"`);
       } else {
         const randomId = conditionIds[Math.floor(Math.random() * conditionIds.length)];
-        this.getAncestorsForCondition(randomId);
+        this.setConditionAncestors(randomId);
       }
     });
   };
@@ -181,7 +215,11 @@ App.propTypes = {
   setBrowseBy: PropTypes.func.isRequired,
   transitionState: PropTypes.number.isRequired,
   setTransitionState: PropTypes.func.isRequired,
+  setSelectedCompany: PropTypes.func.isRequired,
+  setSelectedCondition: PropTypes.func.isRequired,
+  setSelectedProject: PropTypes.func.isRequired,
   setSelectedKeywordId: PropTypes.func.isRequired,
+  setIncluded: PropTypes.func.isRequired,
 };
 
 export const AppUnconnected = App;
@@ -197,6 +235,10 @@ const ConnectedApp = connect(
     transitionState,
   }),
   {
+    setSelectedCompany: selectedCreators.setSelectedCompany,
+    setSelectedCondition: selectedCreators.setSelectedCondition,
+    setSelectedProject: selectedCreators.setSelectedProject,
+    setIncluded: searchCreators.setIncluded,
     setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
