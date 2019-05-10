@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring/web.cjs';
@@ -26,8 +27,12 @@ const PullToSpin = (props) => {
       </g>
       <g className="PullMessage">
         <text x="376" y="10" className="small">
-          <tspan dx="2">Pull</tspan>
-          <tspan dx="-20" dy="9">to Spin</tspan>
+
+            <FormattedMessage id="components.companyWheel.arrow.pull" />
+
+          <tspan dx="-20" dy="9">
+            <FormattedMessage id="components.companyWheel.arrow.tospin" />
+          </tspan>
         </text>
       </g>
       <g role="button" className="PullSlider" {...handleInteraction(onSpinClick)}>

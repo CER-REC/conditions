@@ -133,6 +133,10 @@
       "list": {
         "company": "Selected Company:",
         "location": "Region:"
+      },
+      "arrow": {
+        "pull": "Pull",
+        "tospin": "to Spin"
       }
     },
     "conditionDetails": {

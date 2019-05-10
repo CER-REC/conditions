@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { withKnobs, number, select } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
@@ -25,6 +26,6 @@ storiesForComponent('Components|SelectedGroupBar', module, ReadMe)
       groupItemSize={number('Group Item Size', 14, options)}
       backgroundColor={select('Colour Options', colourOptions, 'lightgrey')}
     >
-    condition
+      <FormattedMessage key="company" id="components.companyWheel.list.company" />
     </SelectedGroupBar>
   ));

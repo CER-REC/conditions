@@ -135,7 +135,7 @@ class StreamGraph extends React.Component {
       <VictoryChart animate={streamAnimation}>
         <VictoryAxis
           dependentAxis
-          label="Number of Conditions"
+          label={<FormattedMessage key="numberOfConditions" id="components.projectLegend.numberOfConditions" />}
           tickValues={[minConditionCount, maxConditionTotal]}
           tickFormat={Math.round}
           className="axis-label"
