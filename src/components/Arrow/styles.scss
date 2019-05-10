@@ -1,18 +1,20 @@
+@import '../../styles/colors.scss';
+
 .Arrow {
   .CircleContainer & {
     transform: translate(0);
   }
 
-  .svg{
+  
     
-    line-height:10px;
-    stroke-width: 1.3;
-    stroke: #d1057a;
-    fill: "none";
-    display: block;
-    stroke-linejoin: bevel;
+  line-height:10px;
+  stroke-width: 1.3;
+  stroke: $LinksTextButtons;
+  fill: "none";
+  display: block;
+  stroke-linejoin: bevel;
 
-  }
+  
 }
 
 
