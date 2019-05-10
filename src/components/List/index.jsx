@@ -54,18 +54,14 @@ class List extends React.PureComponent {
     const arrowSize = 24;
     const previousArrow = this.props.horizontal ? 'Left' : 'Up';
     const nextArrow = this.props.horizontal ? 'Right' : 'Down';
-    
 
-  
     return (
       <CircleContainer
         size={arrowSize}
         onClick={() => this.props.onChange(selectedIndex + (next ? 1 : -1))}
         className={classNames('arrow', next ? 'arrowNext' : 'arrowPrevious', { hidden })}
       >
-      <Arrow orientation = {next ? nextArrow : previousArrow}/>
-        
-
+        <Arrow orientation={next ? nextArrow : previousArrow} />
       </CircleContainer>
     );
   }
