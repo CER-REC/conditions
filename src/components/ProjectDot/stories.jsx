@@ -5,7 +5,7 @@ import withStatus from '../../../.storybook/addon-status';
 import ProjectDot from '.';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|Wheel/ProjectDot', module, ReadMe)
+storiesForComponent('Components|ProjectDot', module, ReadMe)
   .addDecorator(withKnobs)
   .addDecorator(withStyles)
   .addDecorator(withStatus('underReview'))

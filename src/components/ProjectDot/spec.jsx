@@ -9,7 +9,7 @@ const defaultProps = {
   r: 8,
 };
 
-describe('Components|Wheel/ProjectDot', () => {
+describe('Components|ProjectDot', () => {
   let wrapper;
   describe('with default props', () => {
     beforeEach(() => {
