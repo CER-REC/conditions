@@ -1,0 +1,20 @@
+@import '../../styles/fontVariables';
+@import '../../styles/colors';
+
+.DotLegend {
+  display: flex;
+
+  margin-left: 4px;
+
+  align-items: center;
+
+  p {
+    display: inline-block;
+
+    margin: 0 0 0 6px;
+
+    width: 120px;
+    font-size: 12px;
+    color: $Gray160;
+  }
+}
