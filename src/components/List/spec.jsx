@@ -90,18 +90,6 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
     });
 
-    // Disabled due to ref attaching the function on mount
-    xtest('should recognize scrolling up', () => {
-      wrapper.find('.List').first().simulate('wheel', { deltaY: -1, ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(0);
-    });
-
-    // Disabled due to ref attaching the function on mount
-    xtest('should recognize scrolling down', () => {
-      wrapper.find('.List').first().simulate('wheel', { deltaY: 1, ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(1);
-    });
-
     test('should not scroll if the delta is 0', () => {
       wrapper.find('.List').first().simulate('wheel', { deltaY: 0, ...eventFuncs });
       expect(spy).not.toHaveBeenCalled();

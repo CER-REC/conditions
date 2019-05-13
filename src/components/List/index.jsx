@@ -22,7 +22,8 @@ library.add(
   faAngleRight,
   faAngleLeft,
 );
-const scrollDelay = 250;
+const scrollDelay = 30;
+
 const handleScroll = throttle((deltaY, currentIndex, length) => {
   /* Browsers + devices provide different values using different units, so
   * we can't use deltaY directly
@@ -34,20 +35,20 @@ const handleScroll = throttle((deltaY, currentIndex, length) => {
     length - 1,
   );
   return newIndex;
-}, scrollDelay, { leading: true });
+}, scrollDelay, { trailing: true });
 
 class List extends React.PureComponent {
   componentRef = null;
 
   componentDidMount() {
     if (this.componentRef) {
-      this.componentRef.addEventListener('wheel', this.throttleScrollEvents);
+      this.componentRef.addEventListener('wheel', this.throttleScrollEvents, { passive: false });
     }
   }
 
   componentWillUnmount() {
     if (this.componentRef) {
-      this.componentRef.removeEventListener('wheel', this.throttleScrollEvents);
+      this.componentRef.removeEventListener('wheel', this.throttleScrollEvents, { passive: false });
     }
   }
 
