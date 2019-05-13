@@ -8,9 +8,14 @@ import { conditionsPerYear } from '../../../proptypes';
 
 const LegendItem = (props) => {
   let stream = null;
-  const id = props.all
-    ? `components.smallMultiplesLegend.all.${props.feature}`
-    : `common.${props.feature}.${props.subFeature}`;
+  let caption;
+  if (props.all) {
+    caption = <FormattedMessage id={`components.smallMultiplesLegend.all.${props.feature}`} />;
+  } else if (props.feature === 'instrument') {
+    caption = <span>{props.subFeature}</span>;
+  } else {
+    caption = <FormattedMessage id={`common.${props.feature}.${props.subFeature}`} />;
+  }
 
   if (!props.all) {
     stream = (
@@ -42,10 +47,8 @@ const LegendItem = (props) => {
         { all: props.all, faded: props.faded },
       )}
     >
-      <span className="stream">
-        {stream}
-      </span>
-      <FormattedMessage id={id} />
+      <span className="stream">{stream}</span>
+      {caption}
     </div>
   );
 };
