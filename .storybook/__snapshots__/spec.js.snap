@@ -5,15 +5,14 @@ exports[`Storyshots Components|Arrow Down orientation 1`] = `
   className="visualization"
 >
   <div
-    className="Arrow"
+    className="Arrow Down"
   >
     <svg
-      height="24"
-      width="24"
+      height="22"
+      width="22"
     >
       <polyline
-        fill="none"
-        points=" 5.3, 8 11,19 16.7,8 "
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
       />
     </svg>
   </div>
@@ -25,15 +24,14 @@ exports[`Storyshots Components|Arrow Left orientation 1`] = `
   className="visualization"
 >
   <div
-    className="Arrow"
+    className="Arrow Left"
   >
     <svg
-      height="24"
-      width="24"
+      height="22"
+      width="22"
     >
       <polyline
-        fill="none"
-        points=" 15,6.3 5,12 15,17.7 "
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
       />
     </svg>
   </div>
@@ -45,15 +43,14 @@ exports[`Storyshots Components|Arrow Right orientation 1`] = `
   className="visualization"
 >
   <div
-    className="Arrow"
+    className="Arrow Right"
   >
     <svg
-      height="24"
-      width="24"
+      height="22"
+      width="22"
     >
       <polyline
-        fill="none"
-        points=" 7,6.3 17,12 7,17.7 "
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
       />
     </svg>
   </div>
@@ -65,15 +62,14 @@ exports[`Storyshots Components|Arrow Up orientation 1`] = `
   className="visualization"
 >
   <div
-    className="Arrow"
+    className="Arrow Up"
   >
     <svg
-      height="24"
-      width="24"
+      height="22"
+      width="22"
     >
       <polyline
-        fill="none"
-        points=" 5.3, 16 11,5 16.7,16 "
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
       />
     </svg>
   </div>
@@ -2775,15 +2771,14 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="Arrow"
+                      className="Arrow Up"
                     >
                       <svg
-                        height="24"
-                        width="24"
+                        height="22"
+                        width="22"
                       >
                         <polyline
-                          fill="none"
-                          points=" 5.3, 16 11,5 16.7,16 "
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -2820,15 +2815,14 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="Arrow"
+                      className="Arrow Down"
                     >
                       <svg
-                        height="24"
-                        width="24"
+                        height="22"
+                        width="22"
                       >
                         <polyline
-                          fill="none"
-                          points=" 5.3, 8 11,19 16.7,8 "
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -3318,15 +3312,14 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="Arrow"
+                        className="Arrow Up"
                       >
                         <svg
-                          height="24"
-                          width="24"
+                          height="22"
+                          width="22"
                         >
                           <polyline
-                            fill="none"
-                            points=" 5.3, 16 11,5 16.7,16 "
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                           />
                         </svg>
                       </div>
@@ -3363,15 +3356,14 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="Arrow"
+                        className="Arrow Down"
                       >
                         <svg
-                          height="24"
-                          width="24"
+                          height="22"
+                          width="22"
                         >
                           <polyline
-                            fill="none"
-                            points=" 5.3, 8 11,19 16.7,8 "
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                           />
                         </svg>
                       </div>
@@ -3822,15 +3814,14 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="Arrow"
+                      className="Arrow Up"
                     >
                       <svg
-                        height="24"
-                        width="24"
+                        height="22"
+                        width="22"
                       >
                         <polyline
-                          fill="none"
-                          points=" 5.3, 16 11,5 16.7,16 "
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -3867,15 +3858,14 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="Arrow"
+                      className="Arrow Down"
                     >
                       <svg
-                        height="24"
-                        width="24"
+                        height="22"
+                        width="22"
                       >
                         <polyline
-                          fill="none"
-                          points=" 5.3, 8 11,19 16.7,8 "
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -4282,15 +4272,14 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="Arrow"
+                  className="Arrow Up"
                 >
                   <svg
-                    height="24"
-                    width="24"
+                    height="22"
+                    width="22"
                   >
                     <polyline
-                      fill="none"
-                      points=" 5.3, 16 11,5 16.7,16 "
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                     />
                   </svg>
                 </div>
@@ -4327,15 +4316,14 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="Arrow"
+                  className="Arrow Down"
                 >
                   <svg
-                    height="24"
-                    width="24"
+                    height="22"
+                    width="22"
                   >
                     <polyline
-                      fill="none"
-                      points=" 5.3, 8 11,19 16.7,8 "
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                     />
                   </svg>
                 </div>
@@ -5227,15 +5215,14 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
               >
                 <div>
                   <div
-                    className="Arrow"
+                    className="Arrow Left"
                   >
                     <svg
-                      height="24"
-                      width="24"
+                      height="22"
+                      width="22"
                     >
                       <polyline
-                        fill="none"
-                        points=" 15,6.3 5,12 15,17.7 "
+                        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                       />
                     </svg>
                   </div>
@@ -5335,15 +5322,14 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
               >
                 <div>
                   <div
-                    className="Arrow"
+                    className="Arrow Right"
                   >
                     <svg
-                      height="24"
-                      width="24"
+                      height="22"
+                      width="22"
                     >
                       <polyline
-                        fill="none"
-                        points=" 7,6.3 17,12 7,17.7 "
+                        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                       />
                     </svg>
                   </div>
@@ -6413,15 +6399,14 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Up"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 16 11,5 16.7,16 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -6453,15 +6438,14 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Down"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 8 11,19 16.7,8 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -6902,15 +6886,14 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Up"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 16 11,5 16.7,16 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -6949,15 +6932,14 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Down"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 8 11,19 16.7,8 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -7368,15 +7350,14 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Up"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 16 11,5 16.7,16 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -7444,15 +7425,14 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Down"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 8 11,19 16.7,8 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -7838,15 +7818,14 @@ exports[`Storyshots Components|List arrows at edges 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Up"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 16 11,5 16.7,16 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -7910,15 +7889,14 @@ exports[`Storyshots Components|List arrows at edges 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Down"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 8 11,19 16.7,8 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -7957,15 +7935,14 @@ exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Left"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 15,6.3 5,12 15,17.7 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8029,15 +8006,14 @@ exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Right"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 7,6.3 17,12 7,17.7 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8076,15 +8052,14 @@ exports[`Storyshots Components|List basic usage 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Up"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 16 11,5 16.7,16 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8114,15 +8089,14 @@ exports[`Storyshots Components|List basic usage 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Down"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 8 11,19 16.7,8 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8187,15 +8161,14 @@ exports[`Storyshots Components|List component items 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Up"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 16 11,5 16.7,16 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8227,15 +8200,14 @@ exports[`Storyshots Components|List component items 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Down"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 8 11,19 16.7,8 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8310,15 +8282,14 @@ exports[`Storyshots Components|List guide line 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Up"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 16 11,5 16.7,16 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8348,15 +8319,14 @@ exports[`Storyshots Components|List guide line 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Down"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 8 11,19 16.7,8 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8421,15 +8391,14 @@ exports[`Storyshots Components|List horizontal 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Left"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 15,6.3 5,12 15,17.7 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8459,15 +8428,14 @@ exports[`Storyshots Components|List horizontal 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Right"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 7,6.3 17,12 7,17.7 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8532,15 +8500,14 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Up"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 16 11,5 16.7,16 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8566,15 +8533,14 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Down"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 8 11,19 16.7,8 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8631,15 +8597,14 @@ exports[`Storyshots Components|List selected 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Up"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 16 11,5 16.7,16 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -8669,15 +8634,14 @@ exports[`Storyshots Components|List selected 1`] = `
         >
           <div>
             <div
-              className="Arrow"
+              className="Arrow Down"
             >
               <svg
-                height="24"
-                width="24"
+                height="22"
+                width="22"
               >
                 <polyline
-                  fill="none"
-                  points=" 5.3, 8 11,19 16.7,8 "
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -10198,15 +10162,14 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Left"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 15,6.3 5,12 15,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -10475,15 +10438,14 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Right"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 7,6.3 17,12 7,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -10808,15 +10770,14 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Left"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 15,6.3 5,12 15,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -11085,15 +11046,14 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Right"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 7,6.3 17,12 7,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -11692,15 +11652,14 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Left"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 15,6.3 5,12 15,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -11969,15 +11928,14 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Right"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 7,6.3 17,12 7,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -12832,15 +12790,14 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Left"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 15,6.3 5,12 15,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -13109,15 +13066,14 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Right"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 7,6.3 17,12 7,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -13972,15 +13928,14 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Left"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 15,6.3 5,12 15,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -14249,15 +14204,14 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Right"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 7,6.3 17,12 7,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -15154,15 +15108,14 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Left"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 15,6.3 5,12 15,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -15431,15 +15384,14 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Right"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 7,6.3 17,12 7,17.7 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -19010,15 +18962,14 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Up"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 16 11,5 16.7,16 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -19057,15 +19008,14 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Down"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 8 11,19 16.7,8 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -19306,15 +19256,14 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Up"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 16 11,5 16.7,16 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -19353,15 +19302,14 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Down"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 8 11,19 16.7,8 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -19624,15 +19572,14 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Up"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 16 11,5 16.7,16 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -19715,15 +19662,14 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
           >
             <div>
               <div
-                className="Arrow"
+                className="Arrow Down"
               >
                 <svg
-                  height="24"
-                  width="24"
+                  height="22"
+                  width="22"
                 >
                   <polyline
-                    fill="none"
-                    points=" 5.3, 8 11,19 16.7,8 "
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>

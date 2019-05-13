@@ -1,23 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
+import classNames from 'classnames';
 
 const Arrow = (props) => {
-  let line;
-
-  if (props.orientation === 'Up') {
-    line = ' 5.3, 16 11,5 16.7,16 ';
-  } else if (props.orientation === 'Down') {
-    line = ' 5.3, 8 11,19 16.7,8 ';
-  } else if (props.orientation === 'Left') {
-    line = ' 15,6.3 5,12 15,17.7 ';
-  } else if (props.orientation === 'Right') {
-    line = ' 7,6.3 17,12 7,17.7 ';
-  }
+  const line = ' 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 ';
   return (
-    <div className="Arrow">
-      <svg width="24" height="24">
-        <polyline points={line} fill="none" />
+    <div className={classNames('Arrow', props.orientation)}>
+      <svg width="22" height="22">
+        <polyline points={line} />
       </svg>
     </div>
   );
