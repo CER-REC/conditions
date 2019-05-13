@@ -105,7 +105,7 @@ $project-chart-line: $Gray160;
 
       z-index: 1;
       width: 24px;
-      height: calc(100% - 214px);
+      height: calc(100% - 212px);
       background: $pipe-color;
       left: 50%;
       transform: translateX(-50%) skewX(-20deg);
@@ -114,6 +114,9 @@ $project-chart-line: $Gray160;
   }
 
   &:not(.selected) .FeatureFlag {
-    .Bar { background-color: $Gray160 !important; border-left-color: $Gray160 !important; }
+    .Bar {
+      background-color: $Gray160 !important;
+      border-left-color: $Gray160 !important;
+    }
   }
 }

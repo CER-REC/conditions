@@ -26,8 +26,6 @@
 
 @mixin grid($gridSizes) {
   box-sizing: border-box;
-  // width: 100%;
-  // min-height: 500px;
 
   &.layoutOnly > section {
     background: #F1F3F4;
