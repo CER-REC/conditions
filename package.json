@@ -96,7 +96,7 @@
     "css-loader": "2.1.1",
     "cssnano": "4.1.10",
     "cz-customizable": "6.0.0",
-    "d3-geo-projection": "2.6.0",
+    "d3-geo-projection": "2.7.0",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.13.0",
     "eslint": "5.16.0",
