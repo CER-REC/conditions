@@ -349,6 +349,7 @@
     },
     "smallMultiplesLegend": {
       "all": {
+        "instrument": "All Instruments",
         "theme": "All Themes",
         "phase": "All Phases",
         "type": "All Types",

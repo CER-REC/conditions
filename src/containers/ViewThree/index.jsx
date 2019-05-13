@@ -4,9 +4,7 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
-import InstrumentsLegend from '../../components/InstrumentsLegend';
 import StreamGraph from '../../components/StreamGraph';
-import BubbleChart from '../../components/BubbleChart';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import ConditionDetails from '../../components/ConditionDetails';
@@ -17,90 +15,103 @@ import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
-const ViewThree = props => (
-  <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
-    <section className="row firstRow">
-      <section className="features">
-        <FeaturesMenu
-          selected={props.selected.feature}
-          onChange={props.setSelectedFeature}
-        />
+const processConditionCounts = (counts) => {
+  const instruments = counts
+    .filter(entry => entry.feature === 'instrument')
+    .map(entry => ({
+      feature: 'instrument',
+      subFeature: entry.subFeature,
+      years: entry.years,
+      total: Object.values(entry.years).reduce((acc, cur) => acc + cur, 0),
+    }))
+    .sort((a, b) => (b.total - a.total));
+
+  const minorYears = instruments.slice(9).reduce((aggregatedYears, entry) => {
+    return Object.entries(entry.years).reduce((acc, [year, count]) => {
+      acc[year] = (acc[year] || 0) + count;
+
+      return acc;
+    }, aggregatedYears);
+  }, {});
+
+  const instrumentsOut = instruments.slice(0, 9);
+  instrumentsOut.push({
+    feature: 'instrument',
+    subFeature: 'OTHER',
+    years: minorYears,
+  });
+
+  const notInstruments = counts.filter(entry => entry.feature !== 'instrument');
+  return [...instrumentsOut, ...notInstruments];
+};
+
+const ViewThree = (props) => {
+  const conditionCounts = processConditionCounts(props.conditionCountsByYear.counts);
+
+  return (
+    <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
+      <section className="row firstRow">
+        <section className="features">
+          <FeaturesMenu
+            selected={props.selected.feature}
+            onChange={props.setSelectedFeature}
+          />
+        </section>
+        <section className="legend">
+          <SmallMultiplesLegend
+            feature={props.selected.feature}
+            data={conditionCounts}
+            onChange={props.setSelectedSubFeature}
+            selected={props.selected.subFeature}
+          />
+        </section>
+        <section className="chart">
+          <StreamGraph
+            projectData={conditionCounts}
+            feature={props.selected.feature}
+            subFeature={props.selected.subFeature}
+          />
+        </section>
       </section>
-      <section className="legend">
-        {props.selected.feature === 'instrument'
-          ? (
-            <InstrumentsLegend
-              data={props.conditionCountsByCommodity.counts}
-              onChange={props.setSelectedSubFeature}
-              selected={props.selected.subFeature}
-            />
-          )
-          : (
-            <SmallMultiplesLegend
-              feature={props.selected.feature}
-              data={props.conditionCountsByYear.counts}
-              onChange={props.setSelectedSubFeature}
-              selected={props.selected.subFeature}
-            />
-          )}
+      <section className="row secondRow">
+        <section className="featureDescription">
+          <FeatureDescription feature={props.selected.feature} />
+        </section>
+        <section className="typesDescription">
+          <FeatureTypesDescription
+            feature={props.selected.feature}
+            subFeature={props.selected.subFeature}
+          />
+        </section>
       </section>
-      <section className="chart">
-        {props.selected.feature === 'instrument'
-          ? (
-            <BubbleChart
-              data={conditionCountsByCommodity.counts}
-              type={props.selected.subFeature}
-              indicator={props.chartIndicatorPosition.bubble}
-              setIndicator={props.setBubbleChartIndicator}
-            />
-          )
-          : (
-            <StreamGraph
-              projectData={props.conditionCountsByYear.counts}
-              feature={props.selected.feature}
-              subFeature={props.selected.subFeature}
-            />
-          )}
+      <section className="row thirdRow">
+        <section className="selectedCompany">
+          {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
+          <div className="selectedCompanyHeader">
+            <h1>Selected Company:</h1> <h2>Company Name</h2>
+          </div>
+        </section>
+        <section className="conditionDetails">
+          <ConditionDetails
+            isExpandable
+            selected
+            selectedItem={props.selected.condition}
+            expanded={props.detailViewExpanded}
+            updateSelectedItem={props.setSelectedCondition}
+            openIntermediatePopup={props.openIntermediatePopup}
+            toggleExpanded={props.expandDetailView}
+            openProjectDetails={props.openProjectDetails}
+            searchKeywords={{
+              include: props.included,
+              exclude: props.excluded,
+            }}
+            {...props.conditionDetails}
+          />
+        </section>
       </section>
     </section>
-    <section className="row secondRow">
-      <section className="featureDescription">
-        <FeatureDescription feature={props.selected.feature} />
-      </section>
-      <section className="typesDescription">
-        <FeatureTypesDescription
-          feature={props.selected.feature}
-          subFeature={props.selected.subFeature}
-        />
-      </section>
-    </section>
-    <section className="row thirdRow">
-      <section className="selectedCompany">
-        {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
-        <div className="selectedCompanyHeader">
-          <h1>Selected Company:</h1> <h2>Company Name</h2>
-        </div>
-      </section>
-      <section className="conditionDetails">
-        <ConditionDetails
-          isExpandable
-          selected
-          selectedItem={props.selected.condition}
-          expanded={props.detailViewExpanded}
-          updateSelectedItem={props.setSelectedCondition}
-          openIntermediatePopup={props.openIntermediatePopup}
-          toggleExpanded={props.expandDetailView}
-          openProjectDetails={props.openProjectDetails}
-          searchKeywords={{
-            include: props.included,
-            exclude: props.excluded,
-          }}
-          {...props.conditionDetails}
-        />
-      </section>
-    </section>
-  </section>
-);
+  );
+};
 
 ViewThree.propTypes = {
   layoutOnly: PropTypes.bool,
