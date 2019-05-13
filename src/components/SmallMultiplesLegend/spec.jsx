@@ -63,7 +63,7 @@ describe('Components|SmallMultiplesLegend', () => {
       const listItemWrapper = listItemsWrapper.at(i);
 
       expect(listItemWrapper.type()).toBe(LegendItem);
-      expect(listItemWrapper.prop('title')).toBe(data[i].subFeature);
+      expect(listItemWrapper.prop('subFeature')).toBe(data[i].subFeature);
       expect(listItemWrapper.prop('data')).toEqual(data[i]);
     }
   });
@@ -81,7 +81,7 @@ describe('Components|SmallMultiplesLegend', () => {
     const firstItemWrapper = legendItemsWrapper.at(0);
 
     expect(firstItemWrapper.prop('all')).toBe(true);
-    expect(firstItemWrapper.prop('title')).toBe('theme');
+    expect(firstItemWrapper.prop('subFeature')).toBe('theme');
     expect(legendItemsWrapper).toHaveLength(4);
   });
 
@@ -156,10 +156,9 @@ describe('Components|SmallMultiplesLegend', () => {
       />
     ));
 
-    const highlightSelector = `[title="${highlightName}"]`;
     const listWrapper = wrapper.find(List).shallow();
-    const fadedItemsWrapper = listWrapper.find(LegendItem).not(highlightSelector);
-    const highlightItemWrapper = listWrapper.find(LegendItem).filter(highlightSelector);
+    const fadedItemsWrapper = listWrapper.find(LegendItem).not({ subFeature: highlightName });
+    const highlightItemWrapper = listWrapper.find(LegendItem).find({ subFeature: highlightName });
 
     expect(listWrapper.hasClass('faded')).toBe(true);
 

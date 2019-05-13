@@ -25,15 +25,4 @@ describe('Components|FeatureTypesDescription', () => {
       expect(p).toHaveLength(3);
     });
   });
-
-  describe('when showing instruments', () => {
-    const wrapper = shallow(<FeatureTypesDescription feature="instrument" />);
-
-    test('should color the instrument code for each paragraph', () => {
-      const p = wrapper.find('FormattedMessage').at(1).shallowWithIntl().find('p');
-      const spans = p.first().shallow().find('span');
-      expect(spans.first().prop('style')).toHaveProperty('color');
-      expect(spans).toHaveLength(2);
-    });
-  });
 });

@@ -66,7 +66,7 @@ class SmallMultiplesLegend extends React.PureComponent {
         all
         // "all" cannot be an name in data
         key="all"
-        title={feature}
+        subFeature={feature}
         feature={feature}
         color=""
         max={0}
