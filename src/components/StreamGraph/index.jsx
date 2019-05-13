@@ -10,6 +10,7 @@ import { FormattedMessage } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
 import { allConditionsPerYear, featureTypes } from '../../proptypes';
+import getTextFromIntl from '../../utilities/getTextFromIntl';
 
 import './styles.scss';
 
@@ -68,6 +69,9 @@ class StreamGraph extends React.Component {
   ));
 
   chart() {
+    
+    
+    
     const filteredData = (this.props.subFeature !== '')
       ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
       : this.processedData;
@@ -132,10 +136,11 @@ class StreamGraph extends React.Component {
     };
 
     return (
+
       <VictoryChart animate={streamAnimation}>
         <VictoryAxis
           dependentAxis
-          label={<FormattedMessage key="numberOfConditions" id="components.projectLegend.numberOfConditions" />}
+          label={this.yAxisLabel}
           tickValues={[minConditionCount, maxConditionTotal]}
           tickFormat={Math.round}
           className="axis-label"
@@ -161,15 +166,17 @@ class StreamGraph extends React.Component {
       </VictoryChart>
     );
   }
-
+  yAxisLabel ="";
   render() {
     this.processProjectData();
-
+    this.yAxisLabel =  
+    getTextFromIntl(getMessage => {getMessage({ id: 'components.companyWheel.pullToSpin.pull' })});
     return (
       <div
         className="StreamGraph"
       >
-        {this.props.streamOnly ? null : (
+                        {getTextFromIntl(getMessage => <tspan dx="-20">{getMessage({ id: 'components.projectLegend.numberOfConditions' })} </tspan>)
+        }{this.props.streamOnly ? null : (
           <FormattedMessage
             id={`components.streamGraph.title.${this.props.feature}`}
             tagName="h1"
