@@ -5366,6 +5366,31 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
 </div>
 `;
 
+exports[`Storyshots Components|DotLegend default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="DotLegend"
+  >
+    <svg
+      height="10"
+      width="10"
+    >
+      <circle
+        className="ProjectDot"
+        cx={5}
+        cy={5}
+        r={3}
+      />
+    </svg>
+    <p>
+      NEB Regulated Project with Conditions
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|DownloadPopup default 1`] = `
 <div
   className="visualization"
@@ -10066,6 +10091,31 @@ exports[`Storyshots Components|PopupBtn link attributes 1`] = `
       />
     </svg>
   </a>
+</div>
+`;
+
+exports[`Storyshots Components|ProjectDot default 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height="100"
+    width="100"
+  >
+    <circle
+      className="ProjectDot"
+      cx={50}
+      cy={50}
+      r={40}
+    />
+  </svg>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".Wheel { padding-top: 0px }",
+      }
+    }
+  />
 </div>
 `;
 
