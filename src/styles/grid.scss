@@ -15,7 +15,7 @@
         height: map-get($values, "h") * $gridUnit;
       }
 
-      /* For layout tweaking */
+      /* Uncomment this for a visual guide when tweaking the layout of grid components. */
       // outline: 1px dashed magenta;
     }
   }
