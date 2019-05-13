@@ -26,13 +26,14 @@ const processConditionCounts = (counts) => {
     }))
     .sort((a, b) => (b.total - a.total));
 
-  const minorYears = instruments.slice(9).reduce((aggregatedYears, entry) => {
-    return Object.entries(entry.years).reduce((acc, [year, count]) => {
-      acc[year] = (acc[year] || 0) + count;
+  const minorYears = instruments
+    .slice(9)
+    .reduce((aggregatedYears, entry) => Object.entries(entry.years)
+      .reduce((acc, [year, count]) => {
+        acc[year] = (acc[year] || 0) + count;
 
-      return acc;
-    }, aggregatedYears);
-  }, {});
+        return acc;
+      }, aggregatedYears), {});
 
   const instrumentsOut = instruments.slice(0, 9);
   instrumentsOut.push({
