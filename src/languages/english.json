@@ -374,6 +374,9 @@
       "conditionsBy": "Conditions by {icon}",
       "company": "Company",
       "location": "Location"
+    },
+    "dotLegend": {
+      "text": "NEB Regulated Project with Conditions"
     }
   },
   "views": {

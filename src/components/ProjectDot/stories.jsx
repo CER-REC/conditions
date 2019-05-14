@@ -1,11 +1,11 @@
 import React from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
-import { storiesForComponent, withStyles } from '../../../../.storybook/utils';
-import withStatus from '../../../../.storybook/addon-status';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
+import withStatus from '../../../.storybook/addon-status';
 import ProjectDot from '.';
 import ReadMe from './README.md';
 
-storiesForComponent('Components|Wheel/ProjectDot', module, ReadMe)
+storiesForComponent('Components|ProjectDot', module, ReadMe)
   .addDecorator(withKnobs)
   .addDecorator(withStyles)
   .addDecorator(withStatus('underReview'))
@@ -20,4 +20,3 @@ storiesForComponent('Components|Wheel/ProjectDot', module, ReadMe)
       />
     </svg>
   ), { styles: '.Wheel { padding-top: 0px }' });
-

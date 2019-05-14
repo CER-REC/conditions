@@ -2,11 +2,11 @@
 
 .Footer {
   @include grid((
-    infoBar: 75,
+    infoBar: (x: 0, y: 0, w: 75, h: 30),
   )) {
     .infoBar {
       position: relative;
-      margin: 0 0 0 50% !important;
+      margin-left: 50%;
       transform: translateX(-50%);
     }
   }

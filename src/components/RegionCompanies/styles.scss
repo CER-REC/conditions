@@ -3,11 +3,9 @@
 .RegionCompanies {
   position: absolute;
 
-  top: 285px;
-  left: 30px;
   right: 0;
 
-  height: 130px;
+  height: 92px;
 
   text-align: left;
 
@@ -39,10 +37,18 @@
     list-style: none;
 
     overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-left: 2em;
 
     li {
       font-size: 14px;
       font-family: 'FiraSansCondensedLight';
+      width: 100%;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .asterisk {

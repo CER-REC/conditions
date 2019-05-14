@@ -135,7 +135,7 @@ class StreamGraph extends React.Component {
     };
 
     return (
-      <VictoryChart animate={streamAnimation}>
+      <VictoryChart animate={streamAnimation} width={600} height={330}>
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"

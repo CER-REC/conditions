@@ -1,51 +1,33 @@
-@mixin grid-sizes($gridSizes, $gridWidth) {
-  $gridUnit: $gridWidth / 120;
+@mixin grid-sizes($gridSizes, $viewPort) {
 
-  @each $className, $cellGridUnits in $gridSizes {
-    .#{$className} { width: $cellGridUnits * $gridUnit; }
-  }
+  $gridUnit: map-get($viewPort, "w") / 120;
 
-  width: $gridWidth;
-  /* Padding in grid units (top, right, bottom, left) : 2 0 1 0 */
-  padding: $gridUnit * 2 0 $gridUnit;
+  @each $className, $values in $gridSizes {
+    .#{$className} {
+      position: absolute;
 
-  > .row {
-    margin-left: $gridUnit * 2 - 1;
-    margin-right: $gridUnit * 2 - 1;
+      top: map-get($values, "y") * $gridUnit;
+      left: map-get($values, "x") * $gridUnit;
+      @if map-has-key($values, "w") {
+        width: map-get($values, "w") * $gridUnit;
+      }
+      @if map-has-key($values, "h") {
+        height: map-get($values, "h") * $gridUnit;
+      }
 
-    > section {
-      margin-right: $gridUnit;
-      margin-bottom: $gridUnit;
-      // &:first-child { margin-left: $gridUnit * 2; }
-      &:last-child { margin-right: 0; }
+      /* Uncomment this for a visual guide when tweaking the layout of grid components. */
+      // outline: 1px dashed magenta;
     }
   }
+
+  width: map-get($viewPort, "w");
+  height: map-get($viewPort, "h");
 }
 
 @mixin grid($gridSizes) {
   box-sizing: border-box;
-  width: 100%;
-  min-height: 500px;
 
-  > .row {
-    // Add support for rows to have a border, but hide it by default
-    border-width: 0 1px;
-    border-color: transparent;
-
-    > section {
-      overflow: hidden;
-      float: left;
-      vertical-align: top;
-    }
-
-    &:after {
-      display: block;
-      clear: both;
-      content: '';
-    }
-  }
-
-  &.layoutOnly > section > section {
+  &.layoutOnly > section {
     background: #F1F3F4;
 
     &:after {
@@ -58,10 +40,10 @@
     > * { display: none; }
   }
 
-  @include grid-sizes($gridSizes, 100%);
-  @media (min-width: 768px) { @include grid-sizes($gridSizes, 746px); }
-  @media (min-width: 992px) { @include grid-sizes($gridSizes, 968px); }
-  @media (min-width: 1200px) { @include grid-sizes($gridSizes, 1168px); }
+  @include grid-sizes($gridSizes, (w: 100%, h: 100%));
+  @media (min-width: 768px) { @include grid-sizes($gridSizes, (w: 746px, h: 538px)); }
+  @media (min-width: 992px) { @include grid-sizes($gridSizes, (w: 968px, h: 698px)); }
+  @media (min-width: 1200px) { @include grid-sizes($gridSizes, (w: 1168px, h: 843px)); }
 
   @content;
 }
