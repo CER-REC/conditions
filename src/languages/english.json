@@ -44,6 +44,13 @@
       "SUNSET_CLAUSE": "Sunset Clause"
     },
     "instrument": {
+      "ROUTING": "Routing",
+      "CONSTRUCTION": "Construction",
+      "OPENING": "Opening",
+      "ABANDONMENT": "Abandonment",
+      "SAFETY": "Safety",
+      "TARIFFS": "Tariffs",
+      "MISC": "Misc.",
       "OTHER": "Other Instrument Types"
     },
     "instrumentCommodityType": {

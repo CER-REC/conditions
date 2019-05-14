@@ -3600,7 +3600,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           </span>
           : 
           <span>
-            common.instrument.CONSTRUCTION
+            Construction
           </span>
         </div>
         <div
