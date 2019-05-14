@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
 export const projectMenuQuery = gql`
-  query ProjectMenu ($id: String!) {
+  query ProjectMenu ($id: Int!) {
     allProjectsByCompany(companyId: $id) {
       id
       status
@@ -26,7 +26,7 @@ export const projectMenuQuery = gql`
             MANAGEMENT_SYSTEM
             SAFETY_MANAGEMENT
             SECURITY
-            SOCIOECONOMIC
+            SOCIO_ECONOMIC
             STANDARD_CONDITION
             SUNSET_CLAUSE
           }
@@ -42,7 +42,7 @@ export const projectMenuQuery = gql`
             NOT_REQUIRED
             REQUIRED
           }
-          timing {
+          phase {
             ABANDONMENT
             DURING_CONSTRUCTION_PHASE
             EXPIRY_DATE_OF_REG_INSTR

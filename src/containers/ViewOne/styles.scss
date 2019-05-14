@@ -4,16 +4,10 @@
 
 .ViewOne {
   @include grid((
-    introduction: 116,
-    explorer: 116,
-    browseBy: 65,
-    infoBar: 116,
+    introduction: (x: 2, y: 2, w: 116, h: 8),
+    explorer: (x: 2, y: 11, w: 116, h: 62),
+    infoBar: (x: 2, y: 74, w: 116, h: 8),
   )) {
-    height: 100%;
-
-    .row.intro {
-      height: 100px;
-    }
 
     .introduction {
       h1 {
@@ -31,21 +25,7 @@
       }
     }
 
-    .row.explorer {
-      height: calc(100% - 200px);
-
-      .explorer {
-        height: 100%;
-      }
-    }
-
-    .browseBy, .infoBar {
-      height: 72px;
-    }
-
     .infoBar {
-      position: relative;
-
       .ShortcutInfoBar {
         position: absolute;
         bottom: 0;
