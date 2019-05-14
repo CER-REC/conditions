@@ -9,7 +9,7 @@ import { projectsData, loadingProjectsData } from '../../mockData';
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withStyles(`
-    .ProjectMenu { width: 400px; border: 1px solid red; }
+    .ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }
   `))
   .addDecorator(withInteraction({ actions: ['onChange'] }))
   .add('Default Props', () => (

@@ -31,7 +31,7 @@ storiesForComponent('Components|RegionConditionSummary', module, ReadMe)
     name: 'underReview',
   }))
   .addDecorator(withStyles(`
-    .RegionConditionSummary { width: 300px; height: 500px; }
+    .RegionConditionSummary { width: 300px; height: 124px; }
   `))
   .add('with theme data', () => (
     <RegionConditionSummary
