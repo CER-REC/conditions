@@ -14,7 +14,7 @@ const LegendItem = (props) => {
         {text => <span className="text">{text}</span>}
       </FormattedMessage>
     );
-  } else if (props.feature === 'instrument') {
+  } else if (props.feature === 'instrument' && props.subFeature !== 'OTHER') {
     caption = <span className="text">{props.subFeature}</span>;
   } else {
     caption = (

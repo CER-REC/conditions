@@ -25,6 +25,22 @@ class FeatureTypesDescription extends React.PureComponent {
 
   render() {
     const { feature } = this.props;
+
+    let header = null;
+    if (this.props.feature === 'theme' && this.props.subFeature === '') {
+      header = (
+        <FormattedMessage id="components.featureTypesDescription.allThemes">
+          {text => <p>* {text}</p> }
+        </FormattedMessage>
+      );
+    } else if (this.props.feature === 'instrument') {
+      header = (
+        <FormattedMessage id="components.featureTypesDescription.otherInstruments">
+          {text => <p>* {text}</p> }
+        </FormattedMessage>
+      );
+    }
+
     const content = Object.entries(features[feature]).map(([type, color]) => (
       <React.Fragment key={type}>
         <FormattedMessage id={`common.${feature}.${type}`}>
@@ -56,14 +72,7 @@ class FeatureTypesDescription extends React.PureComponent {
         className="FeatureTypesDescription"
         ref={this.ref}
       >
-        {(this.props.feature === 'theme' && this.props.subFeature === '')
-          ? (
-            <FormattedMessage id="components.featureTypesDescription.allThemes">
-              {text => <p>* {text}</p> }
-            </FormattedMessage>
-          )
-          : null
-        }
+        {header}
         {content}
       </div>
     );

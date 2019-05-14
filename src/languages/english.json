@@ -51,7 +51,7 @@
       "SAFETY": "Safety",
       "TARIFFS": "Tariffs",
       "MISC": "Misc.",
-      "OTHER": "Other Instrument Types"
+      "OTHER": "Other*"
     },
     "instrumentCommodityType": {
       "OIL": "Oil",
@@ -164,6 +164,7 @@
     },
     "featureTypesDescription": {
       "allThemes": "Conditions with multiple themes are counted more than once.",
+      "otherInstruments": "The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.",
       "theme": {
         "ADMINISTRATIVE": "types of conditions that ensure filings are made.",
         "DAMAGE_PREVENTION": "types of conditions that ensure reduction and prevention of damage.",
