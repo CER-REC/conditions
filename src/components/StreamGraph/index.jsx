@@ -145,7 +145,7 @@ class StreamGraph extends React.Component {
         animate={streamAnimation}
         width={600}
         height={330}
-        domainPadding={{y: [0, 20]}}
+        domainPadding={{ y: [0, 20] }}
       >
         <VictoryAxis
           dependentAxis
