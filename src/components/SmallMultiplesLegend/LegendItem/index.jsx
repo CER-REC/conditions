@@ -7,18 +7,25 @@ import './styles.scss';
 import { conditionsPerYear } from '../../../proptypes';
 
 const LegendItem = (props) => {
-  let stream = null;
   let caption;
   if (props.all) {
-    caption = <FormattedMessage id={`components.smallMultiplesLegend.all.${props.feature}`} />;
+    caption = (
+      <FormattedMessage id={`components.smallMultiplesLegend.all.${props.feature}`}>
+        {text => <span className="text">{text}</span>}
+      </FormattedMessage>
+    );
   } else if (props.feature === 'instrument') {
-    caption = <span>{props.subFeature}</span>;
+    caption = <span className="text">{props.subFeature}</span>;
   } else {
-    caption = <FormattedMessage id={`common.${props.feature}.${props.subFeature}`} />;
+    caption = (
+      <FormattedMessage id={`common.${props.feature}.${props.subFeature}`}>
+        {text => <span className="text">{text}</span>}
+      </FormattedMessage>
+    );
   }
 
-  if (!props.all) {
-    stream = (
+  const stream = (!props.all)
+    ? (
       <svg
         width="100%"
         height="100%"
@@ -36,8 +43,9 @@ const LegendItem = (props) => {
           padding={0}
         />
       </svg>
+    ) : (
+      null
     );
-  }
 
   return (
     <div
