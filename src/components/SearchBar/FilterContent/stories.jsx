@@ -5,6 +5,7 @@ import withStatus from '../../../../.storybook/addon-status';
 import FilterContent from '.';
 import ReadMe from './README.md';
 
+const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
 const initialYearRange = {
   start: 1970,
   end: 1980,
@@ -27,7 +28,7 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   ), {
     interaction: {
       state: {
-        projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'], selectedYear: yearSelected, yearRange: initialYearRange,
+        projectStatus: allProjectStatuses, selectedYear: yearSelected, yearRange: initialYearRange,
       },
       actions: {
         changeProjectStatus: () => updatedProjectStatus => (
@@ -38,7 +39,7 @@ storiesForComponent('Components|SearchBar/FilterContent', module, ReadMe)
   })
   .add('withProjectStatus', () => (
     <FilterContent
-      projectStatus={['CLOSED', 'OPEN']}
+      projectStatus={allProjectStatuses}
       selectedYear={{ start: 1970, end: 1971 }}
       yearRange={initialYearRange}
       {...getInteractionProps()}

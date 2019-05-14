@@ -1,3 +1,150 @@
+# [0.12.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.12.0) (2019-05-09)
+
+
+### Dependencies
+
+* **Project Maintenance:** update dependency node-sass to v4.12.0 (9ed1169)
+
+
+### Features Menu
+
+* **Code Refactoring:** swapped filing and order (c94da44, NEBV-1464)
+
+
+### FilterContent
+
+* **Code Refactoring:** added constant to reference statuses (0a18dd0, NEBV-1451)
+
+
+### french.json
+
+* **Code Refactoring:** removed CANCELLED, changed OPEN and CLOSED (913c91c, NEBV-1451)
+
+
+### MainInfoBar
+
+* **Code Refactoring:** changed DownloadsBox to DownloadBox (3cc4c23)
+
+
+### MainInfoBar, ShortcutInfoBar
+
+* **Code Refactoring:** change downloads and remove image (2cab66c, NEBV-1456)
+
+
+### SearchBar, FilterContent
+
+* **Bug Fixes:** improved toggle and name change (f8a4279, NEBV-1451)
+
+
+### SearchBar, FilterContent, View2
+
+* **Bug Fixes:** removed out of scope changes (4a380c4)
+* **Code Refactoring:** readding overwritten changes (2dd3e69, NEBV-1451)
+
+
+### SearchBar/FilterContent
+
+* **Bug Fixes:** toggle, Name Change and Functionality (11e89b9)
+
+
+### transitions.scss
+
+* **Code Refactoring:** removes out of scope changes (c6fa328)
+
+
+### View 3
+
+* **Bug Fixes:** guide Button not clickable now (d32655d, NEBV-1448)
+* **Bug Fixes:** graph click now shown (d39bbd6, NEBV-1448)
+
+
+### BREAKING CHANGES
+
+* **SearchBar/FilterContent:** Keys changed for the state of the search bar
+
+# [0.11.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.11.0) (2019-05-01)
+
+
+### App
+
+* **Features:** removes scroll interaction, adds placeholder View 1 button (4978bfb)
+* **Features:** uses existing variables for color styles (57f3a9d)
+* **Bug Fixes:** keeps Guide from stealing mouse events, repositions it (8629ba2)
+* **Tests:** updates snapshots, fixes prop errors (de23417)
+
+
+### ConditionDetails
+
+* **Features:** adjusts ConditionList styles as per design review (21be095)
+* **Features:** changes header to reflect BrowseBy mode (9ecc2de)
+
+
+### ConditionExplorer
+
+* **Bug Fixes:** Removes a stray change from debugging (7f735bb)
+* **Code Refactoring:** fixes keyword js lint error line 69 (cf07158)
+
+
+### Dependencies
+
+* **Project Maintenance:** update dependency cz-customizable to v6 (98390dc)
+* **Project Maintenance:** update dependency webpack to v4.30.0 (d5b573c)
+
+
+### GreyPipe
+
+* **Code Formatting:** removes commented code (791f4f4)
+
+
+### GreyPipe/RegionConditionSummary/Wheellist
+
+* **Code Formatting:** refactors some styles to calculate using the same (ccb578a)
+
+
+### Guide
+
+* **Features:** updates text to reflect change to click interaction (8f9855e)
+
+
+### Physics variant keyword
+
+* **Code Formatting:** fixes linting issue for trailing comma (8e8b75e, NEBV-1291)
+
+
+### Project Menu
+
+* **Features:** adds Loading animation to the project menu loader (6579918, NEBV-1408)
+* **Bug Fixes:** fixes styles as requested via Merge request (7315584, NEBV-1408)
+
+
+### Project Menu and Project Chart
+
+* **Tests:** adds new tests and mock data for loading project menu (bb0042a, NEBV-1408)
+
+
+### ProjectMenu
+
+* **Features:** reimplements project sedimentation (10fd44c)
+
+
+### Storybook
+
+* **Tests:** updates snapshots (3f66764)
+
+
+### View 2
+
+* **Features:** fixes stories, updates snapshots (b89f57a)
+* **Features:** uses variables for color styles (27d3e96)
+* **Features:** positions Region components as per design doc (020026c)
+* **Features:** adjusts ConditionDetails to connect with GreyPipe (4dcbb00)
+* **Features:** adds GreyPipe's location mode (b121f33)
+* **Features:** updates docs, adds prop for mode toggle (8cae2d8)
+* **Features:** reimplements changes to fit GreyPipe into the view (9e3aa84)
+* **Features:** migrates to a clean branch to fix merge issues (5f7eb95)
+* **Code Formatting:** adds TODO tag to a to-do comment (bdeaec0)
+* **Code Formatting:** tidies up in preparation for PR (7ebc7b3)
+
 # [0.10.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.10.0) (2019-04-24)
 
 

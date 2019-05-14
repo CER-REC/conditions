@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import FeatureFlag from '../../FeatureFlag';
 import CircleContainer from '../../CircleContainer';
 
@@ -8,10 +9,10 @@ import './styles.scss';
 const ProjectChart = (props) => {
   const conditionCount = props.graphData.reduce((acc, next) => (acc + next.count), 0);
   return (
-    <div className={`ProjectChart ${props.selected ? 'selected' : ''}`}>
+    <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
         <CircleContainer size={24} className="ConditionCount">
-          {conditionCount}
+          {props.loading ? '' : conditionCount}
         </CircleContainer>
       </div>
       <div className="FlagWrapper">
@@ -25,9 +26,15 @@ const ProjectChart = (props) => {
           />
         ))}
       </div>
-      <div className="ProjectName">
-        {props.selected ? null : <p>{props.projectName}</p>}
-      </div>
+
+      {props.selected
+        ? (
+          <div className="SelectedPipe" />
+        )
+        : (
+          <div className="ProjectName"><p>{props.projectName}</p></div>
+        )
+      }
     </div>
   );
 };
@@ -44,12 +51,15 @@ ProjectChart.propTypes = {
   })),
   /** Selected class for styling */
   selected: PropTypes.bool,
+  /** A flag to animate fake data inside the chart and change condition count value */
+  loading: PropTypes.bool,
 };
 
 ProjectChart.defaultProps = {
   selected: false,
   graphData: [],
   projectName: '',
+  loading: false,
 };
 
 export default ProjectChart;

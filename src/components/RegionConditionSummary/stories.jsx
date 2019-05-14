@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesForComponent } from '../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ReadMe from './README.md';
 import RegionConditionSummary from '.';
@@ -30,6 +30,9 @@ storiesForComponent('Components|RegionConditionSummary', module, ReadMe)
   .addDecorator(withStatus({
     name: 'underReview',
   }))
+  .addDecorator(withStyles(`
+    .RegionConditionSummary { width: 300px; height: 124px; }
+  `))
   .add('with theme data', () => (
     <RegionConditionSummary
       featureData={themeData}

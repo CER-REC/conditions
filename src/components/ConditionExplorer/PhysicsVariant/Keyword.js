@@ -66,7 +66,7 @@ export default class Keyword extends Body {
     const angThreshold = 0.025;
     if (Math.abs(this.body.angularVelocity) > angThreshold) {
       Matter.Body.setAngularVelocity(
-        this.body, angThreshold * Math.sign(this.body.angularVelocity)
+        this.body, angThreshold * Math.sign(this.body.angularVelocity),
       );
     }
 

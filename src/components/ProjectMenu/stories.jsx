@@ -4,12 +4,12 @@ import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ProjectMenu from '.';
 import ReadMe from './README.md';
-import { projectsData } from '../../mockData';
+import { projectsData, loadingProjectsData } from '../../mockData';
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withStyles(`
-    .ProjectMenu { width: 400px; border: 1px solid red; }
+    .ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }
   `))
   .addDecorator(withInteraction({ actions: ['onChange'] }))
   .add('Default Props', () => (
@@ -20,13 +20,31 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
     />
   ), {
     interaction: {
-      state: { selectedProjectID: null },
+      state: { selectedProjectID: 1226 },
       actions: { onChange: () => v => ({ selectedProjectID: v }) },
     },
   })
+  .add('Loading 1', () => (
+    <ProjectMenu
+      projectsData={[{ ...loadingProjectsData, id: 0 }]}
+      selectedProjectID={0}
+      selectedFeature="theme"
+      loading
+      {...getInteractionProps()}
+    />
+  ))
+  .add('Loading 5', () => (
+    <ProjectMenu
+      projectsData={Array(5).fill(loadingProjectsData).map((v, id) => ({ ...v, id }))}
+      selectedProjectID={0}
+      selectedFeature="theme"
+      loading
+      {...getInteractionProps()}
+    />
+  ))
   .add('At left', () => (
     <ProjectMenu
-      projectsData={projectsData.counts.slice(0, 3)}
+      projectsData={projectsData.counts.slice(0, 2)}
       selectedProjectID={1225}
       selectedFeature="theme"
       {...getInteractionProps()}

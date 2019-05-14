@@ -1,0 +1,147 @@
+@import '../../styles/colors';
+
+$curveRadius: 48px;
+
+.GreyPipe {
+  position: absolute;
+
+  width: $curveRadius;
+
+  .top, .bottom {
+    position: absolute;
+
+    width: 100%;
+    height: $curveRadius;
+
+    background: $LightGray;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+
+      width: 50%;
+      height: calc(#{$curveRadius} / 2);
+
+      background: $White;
+    }
+
+  }
+
+  .vertical {
+    position: absolute;
+    width: calc(#{$curveRadius} / 2);
+    background: $LightGray;
+  }
+
+  .horizontal {
+    position: absolute;
+    background: $LightGray;
+  }
+
+  &.company {
+    top: 12px;
+    right: 0;
+    bottom: calc(50% - 8px);
+
+    .vertical {
+      top: $curveRadius;
+      bottom: $curveRadius;
+      right: 0;
+    }
+    .top {
+      right: -50%;
+      top: 0;
+
+      border-top-left-radius: 100%;
+
+      &:before {
+        right: 0;
+        bottom: 0;
+        border-top-left-radius: 100%;
+      }
+    }
+
+    .bottom {
+      right: 0;
+      bottom: 0;
+      border-bottom-right-radius: 100%;
+
+      &:before {
+        left: 0;
+        top: 0;
+        border-bottom-right-radius: 100%;
+      }
+    }
+  }
+
+  &.location {
+    top: calc(50% - 16px);
+    right: calc(8px - #{$curveRadius});
+
+    // (Height of ProjectMenu + 1 grid unit for the gap) / Wheel height = 31.5%
+    bottom: calc(31.5% - 24px);
+
+    .top {
+      right: 0;
+      top: 0;
+
+      border-top-right-radius: 0;
+
+      &:before {
+        left: 0;
+        bottom: 0;
+
+        border-top-right-radius: 100%;
+      }
+    }
+
+    .bottom {
+      left: 50%;
+      bottom: 0;
+      border-bottom-left-radius: 100%;
+
+      &:before {
+        right: 0;
+        top: 0;
+        border-bottom-left-radius: 100%;
+      }
+    }
+
+    .vertical {
+      top: $curveRadius;
+      bottom: $curveRadius;
+      right: 0;
+    }
+
+    .horizontal {
+      top: 0;
+      right: 100%;
+
+      width: 38px;
+      height: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .GreyPipe {
+
+    &.company {
+      .top {
+        border-top-left-radius: 90%;
+
+        &:before {
+          border-top-left-radius: 90%;
+        }
+      }
+      .bottom {
+        border-bottom-right-radius: 90%;
+
+        &:before {
+          border-bottom-right-radius: 90%;
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,6 @@ import ReadMe from './README.md';
 
 const props = {
   openDataModal: () => alert('Download Data window'),
-  openScreenshotModal: () => alert('Download Screenshot window'),
 };
 
 // eslint-disable-next-line
@@ -54,10 +53,10 @@ storiesForComponent('Components|MainInfoBar', module, ReadMe)
       />
     </StoryContainer>
   ))
-  .add('Downloads', () => (
+  .add('Download', () => (
     <StoryContainer>
       <MainInfoBar
-        pane="downloads"
+        pane="download"
         {...props}
         {...getInteractionProps()}
       />

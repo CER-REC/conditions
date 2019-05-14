@@ -193,11 +193,6 @@ describe('Components|List', () => {
       expect(spy).toHaveBeenLastCalledWith(2);
       expect(spy).toHaveBeenCalledTimes(1);
     });
-
-    test('should render the arrows with vertical icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('up');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('down');
-    });
   });
 
   describe('styling', () => {
@@ -225,11 +220,6 @@ describe('Components|List', () => {
 
     test('should render with the horizontal class', () => {
       expect(wrapper.hasClass('horizontal')).toBe(true);
-    });
-
-    test('should render the arrows with horizontal icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('left');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('right');
     });
   });
 });

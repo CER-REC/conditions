@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProjectDot from '../ProjectDot';
+import ProjectDot from '../../ProjectDot';
 
 const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotation }) => {
   const baseY = y + svgHeight - (flagLayout[0].length * dotSpacing);

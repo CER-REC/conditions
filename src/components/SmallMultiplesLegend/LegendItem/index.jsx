@@ -46,7 +46,9 @@ const LegendItem = (props) => {
       <span className="stream">
         {stream}
       </span>
-      <FormattedMessage id={id} />
+      <FormattedMessage id={id}>
+        {text => <span className="text">{text}</span>}
+      </FormattedMessage>
     </div>
   );
 };

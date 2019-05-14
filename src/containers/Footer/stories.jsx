@@ -11,7 +11,6 @@ storiesForView('Containers|Footer', module, ReadMe)
     actions: {
       setMainInfoBarPane: () => v => ({ mainInfoBarPane: v }),
       openDataModal: noop,
-      openScreenshotModal: noop,
     },
     state: { mainInfoBarPane: '' },
   }))

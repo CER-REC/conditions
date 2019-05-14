@@ -15,7 +15,7 @@ import './styles.scss';
 import ShareIcon from '../ShareIcon';
 import AboutBox from './AboutBox';
 import MethodologyBox from './MethodologyBox';
-import DownloadsBox from './DownloadsBox';
+import DownloadBox from './DownloadBox';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 
@@ -48,11 +48,10 @@ class MainInfoBar extends React.PureComponent {
         return <AboutBox />;
       case 'methodology':
         return <MethodologyBox />;
-      case 'downloads':
+      case 'download':
         return (
-          <DownloadsBox
+          <DownloadBox
             openDataModal={this.props.openDataModal}
-            openScreenshotModal={this.props.openScreenshotModal}
           />
         );
     }
@@ -61,7 +60,7 @@ class MainInfoBar extends React.PureComponent {
   closeDialog = () => this.props.setPane('');
 
   textButtons = () => {
-    const buttons = ['about', 'methodology', 'downloads'];
+    const buttons = ['about', 'methodology', 'download'];
     const textButton = buttons.map(k => (
       <button
         key={k}
@@ -123,10 +122,9 @@ class MainInfoBar extends React.PureComponent {
 }
 
 MainInfoBar.propTypes = {
-  pane: PropTypes.oneOf(['', 'about', 'methodology', 'downloads']).isRequired,
+  pane: PropTypes.oneOf(['', 'about', 'methodology', 'download']).isRequired,
   setPane: PropTypes.func.isRequired,
   openDataModal: PropTypes.func.isRequired,
-  openScreenshotModal: PropTypes.func.isRequired,
 };
 
 export default MainInfoBar;
