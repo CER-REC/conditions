@@ -1,6 +1,15 @@
+@import '../../styles/grid';
 @import "./transitions.scss";
 
 .App {
+  @include grid((
+    guideWrapper: (x: 0, y: 0, w: 120, h: 84),
+    ViewOne: (x: 0, y: 0, w: 120, h: 84),
+    ViewTwo: (x: 0, y: 0, w: 120, h: 84),
+    ViewThree: (x: 0, y: 0, w: 120, h: 84),
+    Footer: (x: 0, y: 84, w: 120),
+  )) {
+
   $defaultTransition: 1s ease-in-out;
 
   $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
@@ -11,10 +20,9 @@
 
   position: relative;
 
-  max-width: 1168px;
-  height: 100vh;
-
-  overflow-x: hidden;
+  .guideWrapper {
+    overflow: hidden;
+  }
 
   .Guide {
     z-index: 999;
@@ -39,7 +47,7 @@
   .browseBy {
     z-index: 999;
     position: absolute;
-    top: 94%;
+    top: 90%;
     left: 0;
 
     height: 40px;
@@ -79,39 +87,22 @@
   }
 
   .ViewOne {
-    position: absolute;
-    top: 0;
+    .introduction {
+      transform: translateY(0px);
+      transition: transform $defaultTransition;
+    }
+    .explorer {
+      transform: translateY(0px);
+      transition: transform $defaultTransition;
+    }
 
-    .row {
-      &.intro {
-        position: relative;
-        transform: translateY(0px);
-        transition: transform $defaultTransition;
-      }
-      &.explorer {
-        position: relative;
-        transform: translateY(0px);
-        transition: transform $defaultTransition;
-      }
-      &.buttons {
-        position: absolute;
-        bottom: 0;
-
-        .ShortcutInfoBar {
-          transition: opacity $defaultTransition;
-          opacity: 1;
-        }
-      }
+    .infoBar {
+      transition: opacity $defaultTransition;
+      opacity: 1;
     }
   }
 
   .ViewTwo {
-    position: absolute;
-    top:0 ;
-    left: 0;
-
-    height: 90vh;
-
     opacity: 1;
 
     transition: opacity $fastestEnd;
@@ -119,7 +110,8 @@
     .header,
     .wheel,
     .companyBreakdown,
-    .menus {
+    .menus,
+    .legend {
       transition: opacity $defaultTransition;
     }
 
@@ -134,24 +126,18 @@
   }
 
   .ViewThree {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 90vh;
-
     opacity: 0;
 
     transition: opacity $defaultTransition;
   }
 
   .Footer {
-    position: absolute;
-    top: 90vh;
-
     visibility: hidden;
 
-    transition: opacity $defaultTransition, visibility 0s 1s;
+    height: 0;
+    overflow: hidden;
+
+    transition: opacity $defaultTransition, height $defaultTransition, visibility 0s 1s;
   }
 
   &.transition-state-8 {
@@ -231,4 +217,5 @@
       transition: opacity $fastStart, visibility 0s 1s;
     }
   }
+}
 }

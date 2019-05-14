@@ -2,44 +2,74 @@
 
 .ViewTwo {
   @include grid((
-    header: 116,
-    wheel: 57,
-    companyBreakdown: 36,
-    menus: 21,
-    conditions: 58,
+    header: (x: 2, y: 2, w: 94, h: 11),
+    wheel: (x: 2, y: 14, w: 57, h: 57),
+    companyBreakdown: (x: 60, y: 14, w: 36, h: 38),
+    menus: (x: 97, y: 2, w: 21, h: 11),
+    legend: (x: 97, y: 14, w: 21, h: 38),
+    conditions: (x: 60, y: 53, w: 58, h: 29),
   )) {
 
-    $header-height: 100px;
-    /* To ensure the layoutOnly mode appears properly */
-    .header { min-height: $header-height; }
-    .wheel { min-height: 200px; }
-    .conditions { min-height: 100px; }
-
-    // Because we're using inline-block to align the elements, we want to remove
-    // the menus right margin as well, since its also the end of the row
-    > .row > section.menus { margin-right: 0; }
-
-    .row:last-of-type {
-      height: calc(100% - #{$header-height});
-    }
-
-    // We want the condition details to sit at the bottom of the project menu
     section.companyBreakdown {
       overflow: visible;
       margin-bottom: 0;
 
       .regionChart {
         position: relative;
-        height: 422px;
+        width: 90%;
+        height: 100%;
+
+        .RegionConditionSummary {
+          position: absolute;
+
+          // 50% - 16px of the Wheel = 75% of our container here - 16px
+          //                         = 25% + 16px to bottom, - 24px for the border
+          bottom: calc(25% + 16px - 24px);
+        }
+
+        .RegionCompanies {
+          top: calc(75% - 16px + 24px);
+          left: 30px;
+        }
       }
     }
 
     section.wheel {
-      position: relative;
       overflow: visible;
     }
 
-    .header {
+    section.menus {
+      .TrendButton {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .FeaturesMenu {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+
+        margin-bottom: 0;
+
+        .title {
+          position: absolute;
+          line-height: 1.8em;
+          right: calc(50% + 50px);
+          bottom: 0;
+        }
+
+        .Dropdown {
+          position: absolute;
+          bottom: 0;
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+    }
+
+    section.header {
       .SearchBar.small {
         width: 200px;
       }
@@ -48,10 +78,6 @@
         position: relative;
         left: 200px;
       }
-    }
-
-    .conditions {
-      height: 33%;
     }
   }
 }

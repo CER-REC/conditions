@@ -31,7 +31,7 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
       count={15}
       name="ENVIRONMENTAL_PROTECTION"
     />);
-    expect(wrapper.find('.FlagTip').type()).toBe('div');
+    expect(wrapper.find('.withTip').type()).toBe('div');
   });
 
   test('should NOT have a FlagTip with 10 or less conditions', () => {
@@ -41,7 +41,7 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
       count={4}
       name="ENVIRONMENTAL_PROTECTION"
     />);
-    expect(wrapper.contains('.FlagTip')).toBe(false);
+    expect(wrapper.contains('.withTip')).toBe(false);
   });
 
   test('should NOT have the flag tip if the condition count is 0', () => {
@@ -51,6 +51,6 @@ describe('Components|ProjectMenu/ProjectChart/FeatureFlag', () => {
       count={0}
       name="ENVIRONMENTAL_PROTECTION"
     />);
-    expect(wrapper.contains('.FlagTip')).toBe(false);
+    expect(wrapper.contains('.withTip')).toBe(false);
   });
 });

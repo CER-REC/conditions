@@ -7,7 +7,9 @@ $arrow-spacing: 0.6em;
   margin-top: calc(-#{$arrow-size} / 2);
   position: absolute;
 }
-
+.CircleContainer.arrow{
+  float: left;
+}
 .List {
   ul {
     list-style-type: none;

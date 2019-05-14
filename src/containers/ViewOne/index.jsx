@@ -36,29 +36,23 @@ const shuffleArray = (arr) => {
 
 const ViewOne = props => (
   <section className={classNames('ViewOne', { layoutOnly: props.layoutOnly })}>
-    <section className="row intro">
-      <section className="introduction">
-        <FormattedMessage id="views.view1.header.title" tagName="h1" />
-        <FormattedMessage id="views.view1.header.subtitle" />
-      </section>
+    <section className="introduction">
+      <FormattedMessage id="views.view1.header.title" tagName="h1" />
+      <FormattedMessage id="views.view1.header.subtitle" />
     </section>
-    <section className="row explorer">
-      <section className="explorer">
-        <ConditionExplorer
-          keywords={props.keywords}
-          selectedKeywordId={props.selected.keywordId}
-          setSelectedKeyword={props.setSelectedKeyword}
-        />
-      </section>
+    <section className="explorer">
+      <ConditionExplorer
+        keywords={props.keywords}
+        selectedKeywordId={props.selected.keywordId}
+        setSelectedKeyword={props.setSelectedKeyword}
+      />
     </section>
-    <section className="row buttons">
-      <section className="infoBar">
-        <ShortcutInfoBar
-          handleInfoBar={false}
-          jumpToAbout={props.jumpToAbout}
-          openDataModal={noop}
-        />
-      </section>
+    <section className="infoBar">
+      <ShortcutInfoBar
+        handleInfoBar={false}
+        jumpToAbout={props.jumpToAbout}
+        openDataModal={noop}
+      />
     </section>
   </section>
 );

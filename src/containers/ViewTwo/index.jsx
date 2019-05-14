@@ -57,101 +57,108 @@ const availableYearRange = { start: 1970, end: 1980 };
 
 const ViewTwo = props => (
   <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
-    <section className="row">
-      <section className="header">
-        <SearchBar
-          className={props.browseBy === 'location' ? 'small' : ''}
-          suggestedKeywords={searchData}
-          availableYearRange={availableYearRange}
-          availableCategories={availableCategories}
-          setIncluded={props.setIncluded}
-          setExcluded={props.setExcluded}
-          findAnyOnChange={props.setFindAny}
-          updateYear={props.setProjectYear}
-          changeProjectStatus={props.setProjectStatus}
-          includeKeywords={props.included}
-          excludeKeywords={props.excluded}
-          projectStatus={props.projectStatus}
-          yearRange={props.projectYear}
-          findAny={props.findAny}
-        />
-        {props.browseBy === 'location' ? (
-          <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
-        ) : null}
+    <section className="header">
+      <SearchBar
+        className={props.browseBy === 'location' ? 'small' : ''}
+        suggestedKeywords={searchData}
+        availableYearRange={availableYearRange}
+        availableCategories={availableCategories}
+        setIncluded={props.setIncluded}
+        setExcluded={props.setExcluded}
+        findAnyOnChange={props.setFindAny}
+        updateYear={props.setProjectYear}
+        changeProjectStatus={props.setProjectStatus}
+        includeKeywords={props.included}
+        excludeKeywords={props.excluded}
+        projectStatus={props.projectStatus}
+        yearRange={props.projectYear}
+        findAny={props.findAny}
+      />
+      {props.browseBy === 'location' ? (
+        <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
+      ) : null}
 
-        {/* TODO: Placeholder for functionality; waiting on a design for this */}
-        <button
-          className="view1reset"
-          type="button"
-          onClick={props.jumpToView1}
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            height: '48px',
-          }}
-        >
-            Back To Introduction
-        </button>
-      </section>
+      {/* TODO: Placeholder for functionality; waiting on a design for this */}
+      <button
+        className="view1reset"
+        type="button"
+        onClick={props.jumpToView1}
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          height: '48px',
+        }}
+      >
+          Back To Introduction
+      </button>
     </section>
-    <section className="row">
-      <section className="wheel">
-        <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
-        <GreyPipe mode={props.browseBy} />
-      </section>
-      <section className="companyBreakdown">
-        {props.browseBy === 'location'
-          ? (
-            <div className="regionChart">
-              <RegionConditionSummary featureData={regionData.featureData} />
-              <RegionCompanies
-                companies={regionData.companyData}
-                activeConditionCompanies={regionData.activeConditionCompanies}
-                openProjectDetails={regionData.openProjectDetails}
-              />
-            </div>
-          )
-          : (
-            <ProjectMenu
-              projectsData={props.projectsData.counts}
-              selectedProjectID={props.selected.project}
-              onChange={props.setSelectedProject}
-              selectedFeature={props.selected.feature}
+
+    <section className="wheel">
+      <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
+      <GreyPipe mode={props.browseBy} />
+    </section>
+
+    <section className="companyBreakdown">
+      {props.browseBy === 'location'
+        ? (
+          <div className="regionChart">
+            <RegionConditionSummary featureData={regionData.featureData} />
+            <RegionCompanies
+              companies={regionData.companyData}
+              activeConditionCompanies={regionData.activeConditionCompanies}
+              openProjectDetails={regionData.openProjectDetails}
             />
-          )
-        }
-      </section>
-      <section className="menus">
-        <TrendButton
-          onClick={props.jumpToView3}
-          feature={props.selected.feature}
-          subFeature=""
-          projectData={conditionCountsByYear.counts}
-          instrumentData={conditionCountsByCommodity.counts}
-        />
-        <FeaturesMenu
-          dropDown
-          selected={props.selected.feature}
-          onChange={props.setSelectedFeature}
-        />
-        <FeaturesLegend legendItems={legendItems} selectedFeature="theme" isProjectLegend />
-      </section>
-      <section className="conditions">
-        <ConditionDetails
-          selectedItem={props.selected.condition}
-          updateSelectedItem={props.setSelectedCondition}
-          openIntermediatePopup={props.openIntermediatePopup}
-          openProjectDetails={props.openProjectDetails}
-          toggleExpanded={noop}
-          searchKeywords={{
-            include: props.included,
-            exclude: props.excluded,
-          }}
-          browseBy={props.browseBy}
-          {...props.conditionDetails}
-        />
-      </section>
+          </div>
+        )
+        : (
+          <ProjectMenu
+            projectsData={props.projectsData.counts}
+            selectedProjectID={props.selected.project}
+            onChange={props.setSelectedProject}
+            selectedFeature={props.selected.feature}
+          />
+        )
+      }
+    </section>
+
+    <section className="menus">
+      <TrendButton
+        onClick={props.jumpToView3}
+        feature={props.selected.feature}
+        subFeature=""
+        projectData={conditionCountsByYear.counts}
+        instrumentData={conditionCountsByCommodity.counts}
+      />
+      <FeaturesMenu
+        dropDown
+        selected={props.selected.feature}
+        onChange={props.setSelectedFeature}
+      />
+    </section>
+
+    <section className="legend">
+      <FeaturesLegend
+        legendItems={legendItems}
+        selectedFeature="theme"
+        isProjectLegend={props.browseBy !== 'location'}
+      />
+    </section>
+
+    <section className="conditions">
+      <ConditionDetails
+        selectedItem={props.selected.condition}
+        updateSelectedItem={props.setSelectedCondition}
+        openIntermediatePopup={props.openIntermediatePopup}
+        openProjectDetails={props.openProjectDetails}
+        toggleExpanded={noop}
+        searchKeywords={{
+          include: props.included,
+          exclude: props.excluded,
+        }}
+        browseBy={props.browseBy}
+        {...props.conditionDetails}
+      />
     </section>
   </section>
 );
