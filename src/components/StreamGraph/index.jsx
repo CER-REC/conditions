@@ -85,7 +85,9 @@ class StreamGraph extends React.Component {
       return acc;
     }, { conditionsByDate: {}, minConditionCount: Infinity });
 
-    const { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
+    // TODO: Use GraphQL to get the min + max date
+    // eslint-disable-next-line prefer-const
+    let { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
       .reduce((acc, [year, count]) => {
         if (year < acc.minDate) { acc.minDate = year; }
         if (year > acc.maxDate) { acc.maxDate = year; }
@@ -94,6 +96,11 @@ class StreamGraph extends React.Component {
 
         return acc;
       }, { minDate: Infinity, maxDate: 0, maxConditionTotal: 0 });
+
+    minDate = parseInt(minDate, 10);
+    maxDate = parseInt(maxDate, 10);
+
+    const yearTicks = Array(maxDate - minDate + 1).fill(null).map((_, i) => minDate + i);
 
     if (this.props.streamOnly) {
       return (
@@ -123,8 +130,7 @@ class StreamGraph extends React.Component {
       );
     }
 
-    // Setting these here because CSS classes weren't being picked up by Victory
-    // I may have just been doing it wrong though
+    // Setting these here because CSS classes aren't picked up by Victory
     const axisStyles = {
       tickLabels: {
         fontSize: '10px',
@@ -135,7 +141,12 @@ class StreamGraph extends React.Component {
     };
 
     return (
-      <VictoryChart animate={streamAnimation} width={600} height={330}>
+      <VictoryChart
+        animate={streamAnimation}
+        width={600}
+        height={330}
+        domainPadding={{y: [0, 20]}}
+      >
         <VictoryAxis
           dependentAxis
           label="Number of Conditions"
@@ -147,7 +158,9 @@ class StreamGraph extends React.Component {
         <VictoryAxis
           label="Effective Date"
           tickFormat={Math.round}
+          scale="linear"
           className="axis-label"
+          tickValues={yearTicks}
           domain={[minDate, maxDate]}
           style={axisStyles}
         />
