@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
-import { viewThreeQueries } from '../../queries/viewThree';
+import { yearRange } from '../../queries/viewThreeQueries/yearRange';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import InstrumentsLegend from '../../components/InstrumentsLegend';
@@ -21,7 +21,6 @@ import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
 class ViewThree extends React.Component {
   shouldComponentUpdate(nextProps) {
-    console.dir(nextProps);
     return nextProps.loading === false;
   }
 
@@ -146,29 +145,29 @@ ViewThree.propTypes = {
   openIntermediatePopup: PropTypes.func.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
 };
 
 ViewThree.defaultProps = {
   layoutOnly: PropTypes.false,
+  loading: false,
 };
 
 export const ViewThreeUnconnected = ViewThree;
 
 export const ViewThreeGraphQL = props => (
-  <Query query={viewThreeQueries.instrumentsByProject} variables={{id: props.queryId}}>
+  <Query query={yearRange}>
     {({ data, loading }) => {
       // TODO: Figure what to render while we're waiting
       if (!data) { return null; }
-
-      console.log(`query id: ${props.queryId}`);
-      // Just for testing until we actually hook up some components
-      console.dir(data.allInstrumentsByProject);
 
       return (
         <ViewThree
           // data props here
           data={data}
           loading={loading}
+          minYear={data.allConfigurationData.instrumentYearRange.min}
+          maxYear={data.allConfigurationData.instrumentYearRange.max}
           {...props}
         />
       );
