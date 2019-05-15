@@ -10,41 +10,42 @@ import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
 import { allConditionsPerYear, allConditionsByCommodityOrInstrument, conditionData } from '../../proptypes';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
+import { conditionCountsByYear, conditionCountsByCommodity, displayOrder } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
 const processConditionCounts = (counts) => {
-  const instruments = counts
-    .filter(entry => entry.feature === 'instrument')
-    .map(entry => ({
-      feature: 'instrument',
-      subFeature: entry.subFeature,
-      years: entry.years,
-      total: Object.values(entry.years).reduce((acc, cur) => acc + cur, 0),
-    }))
-    .sort((a, b) => (b.total - a.total));
+  const [instruments, notInstruments] = counts.reduce((acc, entry) => {
+    acc[(entry.feature === 'instrument') ? 0 : 1].push(entry);
+    return acc;
+  }, [[], []]);
 
-  const minorYears = instruments
-    .slice(9)
+  instruments.forEach((entry, idx) => {
+    instruments[idx].total = Object.values(entry.years).reduce((acc, cur) => acc + cur, 0);
+  });
+
+  instruments.sort((a, b) => (b.total - a.total));
+
+  const minorInstrumentYears = instruments.slice(9)
     .reduce((aggregatedYears, entry) => Object.entries(entry.years)
       .reduce((acc, [year, count]) => {
         acc[year] = (acc[year] || 0) + count;
 
         return acc;
-      }, aggregatedYears), {});
+      }, aggregatedYears),
+    {});
 
   const instrumentsOut = instruments.slice(0, 9);
   instrumentsOut.push({
     feature: 'instrument',
     subFeature: 'OTHER',
-    years: minorYears,
+    years: minorInstrumentYears,
   });
 
+  // We need to know their order here for the StreamGraph's colors
   instrumentsOut.forEach((_, idx) => { instrumentsOut[idx].rank = idx; });
 
-  const notInstruments = counts.filter(entry => entry.feature !== 'instrument');
   return [...instrumentsOut, ...notInstruments];
 };
 
@@ -84,6 +85,7 @@ const ViewThree = (props) => {
         <FeatureTypesDescription
           feature={props.selected.feature}
           subFeature={props.selected.subFeature}
+          displayOrder={displayOrder.features[props.selected.feature]}
         />
       </section>
       <section className="selectedCompany">

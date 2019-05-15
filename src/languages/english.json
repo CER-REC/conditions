@@ -213,13 +213,22 @@
         "NOT_REQUIRED": "a company must not file a document with the NEB in order to comply with a condition"
       },
       "instrument": {
-        "ROUTING": "Missing: description",
-        "CONSTRUCTION": "Missing: description",
-        "ABANDONMENT": "Missing: description",
-        "OPENING": "Missing: description",
-        "MISC": "Missing: description",
-        "SAFETY": "Missing: description",
-        "TARIFFS": "Missing: description"
+        "CPTC": "Missing description",
+        "GPL": "Missing description",
+        "GPMO": "Missing description",
+        "GPSO": "Missing description",
+        "KAX": "Missing description",
+        "MH": "Missing description",
+        "MHW": "Missing description",
+        "MO": "Missing description",
+        "OH": "Missing description",
+        "OPL": "Missing description",
+        "OPLO": "Missing description",
+        "OPSP": "Missing description",
+        "TG": "Missing description",
+        "XE": "Missing description",
+        "XG": "Missing description",
+        "ZO": "Missing description"
       }
     },
     "featureMenu": {
