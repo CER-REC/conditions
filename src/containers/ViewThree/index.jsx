@@ -42,12 +42,16 @@ const processConditionCounts = (counts) => {
     years: minorYears,
   });
 
+  instrumentsOut.forEach((_, idx) => { instrumentsOut[idx].rank = idx; });
+
   const notInstruments = counts.filter(entry => entry.feature !== 'instrument');
   return [...instrumentsOut, ...notInstruments];
 };
 
 const ViewThree = (props) => {
   const conditionCounts = processConditionCounts(props.conditionCountsByYear.counts);
+
+  const reversedCounts = conditionCounts.slice().reverse();
 
   return (
     <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
@@ -68,7 +72,7 @@ const ViewThree = (props) => {
       </section>
       <section className="chart">
         <StreamGraph
-          projectData={conditionCounts}
+          projectData={reversedCounts}
           feature={props.selected.feature}
           subFeature={props.selected.subFeature}
         />

@@ -52,7 +52,7 @@ class StreamGraph extends React.Component {
     });
   };
 
-  streamLayers = () => this.processedData.map((v, idx) => (
+  streamLayers = () => this.processedData.map(v => (
     <VictoryArea
       key={`${v.feature}-${v.subFeature}`}
       name={v.subFeature}
@@ -60,7 +60,7 @@ class StreamGraph extends React.Component {
       style={{
         data: {
           fill: ((v.feature === 'instrument')
-            ? features.instrument[idx]
+            ? features.instrument[v.rank]
             : features[v.feature][v.subFeature]
           ),
           strokeWidth: 0,
