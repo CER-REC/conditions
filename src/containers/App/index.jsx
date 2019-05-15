@@ -30,7 +30,6 @@ import {
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionData,
-  projectsData,
 } from '../../mockData';
 
 const store = createStore();
@@ -43,14 +42,12 @@ const client = new ApolloClient({ cache, link, fetch });
 const noop = () => {};
 
 const viewProps = {
-  projectsData,
   conditionCountsByYear,
   conditionCountsByCommodity,
   conditionDetails: {
     searchKeywords: {
       include: ['hello'],
     },
-    selectedProject: 'Project Name',
     data: conditionData,
   },
   chartIndicatorPosition: {

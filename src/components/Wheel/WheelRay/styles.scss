@@ -1,6 +1,10 @@
+@import "../../../styles/fontVariables.scss";
+@import "../../../styles/colors.scss";
+
 .WheelRay {
   opacity: 1;
   .textLabels {
     font-size: 0.14em;
+    fill:$InnerColourCompany1;
   }
 }

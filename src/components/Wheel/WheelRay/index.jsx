@@ -5,6 +5,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import { browseByType } from '../../../proptypes';
 import LocationRay from '../LocationRay';
+import handleInteraction from '../../../utilities/handleInteraction';
 
 import { features } from '../../../constants';
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
@@ -24,6 +25,7 @@ const randomLocationBars = Array(200).fill('')
 
 class WheelRay extends React.Component {
   static propTypes = {
+    onChange: PropTypes.func.isRequired,
     wheelType: browseByType.isRequired,
     degreesPerItem: PropTypes.number.isRequired,
     reservedDegrees: PropTypes.number.isRequired,
@@ -75,7 +77,7 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay">
+          <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay" {...handleInteraction(props.onChange, index)}>
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
             <text className="textLabels" transform="translate(28.75) rotate(90)">
@@ -97,7 +99,7 @@ class WheelRay extends React.Component {
           </g>
         )
         : (
-          <g key={`${item.id}LocationRay`} transform={transform} className="locationRay">
+          <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChange, index)}>
             <LocationRay
               items={randomLocationBars[index]}
               height={degreesPerItem * 0.5}

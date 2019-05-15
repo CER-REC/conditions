@@ -24,6 +24,18 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       actions: { onChange: () => v => ({ selectedProjectID: v }) },
     },
   })
+  .add('no data, empty pipe', () => (
+    <ProjectMenu
+      projectsData={[]}
+      selectedFeature="theme"
+      {...getInteractionProps()}
+    />
+  ), {
+    interaction: {
+      state: { selectedProjectID: 1226 },
+      actions: { onChange: () => v => ({ selectedProjectID: v }) },
+    },
+  })
   .add('Loading 1', () => (
     <ProjectMenu
       projectsData={[{ ...loadingProjectsData, id: 0 }]}

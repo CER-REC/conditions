@@ -92,8 +92,8 @@ const ViewTwo = props => (
     <section className="wheel">
       <Wheel
         wheelType={props.browseBy}
-        selectedRay={props.selected.company}
-        selectRay={props.setSelectedCompany}
+        selectedRay={props.browseBy === 'company' ? props.selected.company : props.selected.region}
+        selectRay={props.browseBy === 'company' ? props.setSelectedCompany : props.setSelectedRegion}
         wheelData={props.wheelData}
       />
       <GreyPipe mode={props.browseBy} />
@@ -233,15 +233,18 @@ export const ViewTwoUnconnected = props => (
 export const ViewTwoGraphQL = props => (
   // The queries must be by company and location and then subdivide.
   // The common queries such as the condition explorer must be set at the view level
-  // const isCompanyVariant = props.browseBy === "company";
   <Query query={companyWheelQuery}>
     {({ data: wheelData }) => (
-      <Query query={projectMenuQuery} variables={{ id: props.selected.company }}>
+      <Query
+        query={projectMenuQuery}
+        variables={{ id: props.selected.company }}
+        skip={!props.selected.company}
+      >
         { (projectMenuQprops) => {
           const { loading: projLoading } = projectMenuQprops;
           const { error: projError } = projectMenuQprops;
           const { data: projData } = projectMenuQprops;
-          const legendItem = !projLoading && !projError
+          const legendItem = props.selected.company && !projLoading && !projError
             ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
             : null;
           const rawFeatureData = legendItem
@@ -260,7 +263,10 @@ export const ViewTwoGraphQL = props => (
               wheelData={
                 props.browseBy === 'company' ? wheelData.allCompanies : locationData
               }
-              projectsData={!projLoading && !projError ? projData.allProjectsByCompany : []}
+              projectsData={!projLoading && !projError && props.selected.company
+                ? projData.allProjectsByCompany
+                : []
+              }
               projectMenuLoading={projLoading}
               legendItems={projectFeatureData}
               {...props}

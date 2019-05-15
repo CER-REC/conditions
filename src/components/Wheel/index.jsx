@@ -37,23 +37,17 @@ class Wheel extends React.Component {
     };
   }
 
-  shouldComponentUpdate(nextProps) {
-    return this.props.selectedRay !== nextProps.selectedRay
-    || this.props.wheelData.length !== nextProps.wheelData.length;
-  }
-
   static getDerivedStateFromProps(props, prevState) {
     const items = props.wheelType === 'company'
       ? props.wheelData.sort((a, b) => (a.name < b.name ? -1 : 1))
       : props.wheelData.sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
-    let selectedIndex = items.findIndex(v => v.id === props.selectedRay);
+    const selectedIndex = items.findIndex(v => v.id === props.selectedRay);
     // eslint-disable-next-line prefer-destructuring
-    selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
+    const { needsSpin } = prevState;
     // eslint-disable-next-line prefer-destructuring
     let { newRotation } = prevState || selectedIndex * degreesPerItem;
-    const { needsSpin } = prevState;
     if (needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + selectedIndex * degreesPerItem;
@@ -73,6 +67,17 @@ class Wheel extends React.Component {
       newRotation,
       needsSpin,
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return this.props.selectedRay !== nextProps.selectedRay
+    || this.props.wheelData.length !== nextProps.wheelData.length;
+  }
+
+  componentDidUpdate() {
+    if (this.state.selectedIndex === -1 && this.props.wheelData.length > 0) {
+      this.onClickSpin();
+    }
   }
 
   onClickSpin = () => {
@@ -126,6 +131,7 @@ class Wheel extends React.Component {
                   <Ring ringType={this.props.wheelType} />
                   {this.shouldRender(() => (
                     <AnimatedWheelRay
+                      onChange={this.onChange}
                       stopWheel={this.stopWheel}
                       wheelType={this.props.wheelType}
                       items={this.props.wheelData}
@@ -148,18 +154,16 @@ class Wheel extends React.Component {
                     />
                   </g>
                 </svg>
-                {this.shouldRender(() => (
-                  <WheelList
-                    wheelType={this.props.wheelType}
-                    listContent={this.props.wheelData}
-                    textClippingRadius="60"
-                    onChange={this.onChange}
-                    selected={
-                      (this.props.wheelData.length - this.getIndex(props.rotation))
-                      % this.props.wheelData.length
-                    }
-                  />
-                ))}
+                <WheelList
+                  wheelType={this.props.wheelType}
+                  listContent={this.props.wheelData}
+                  textClippingRadius="60"
+                  onChange={this.onChange}
+                  selected={
+                    (this.props.wheelData.length - this.getIndex(props.rotation))
+                    % this.props.wheelData.length
+                  }
+                />
               </div>
             </div>
           )}

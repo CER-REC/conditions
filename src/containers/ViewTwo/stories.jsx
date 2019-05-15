@@ -17,7 +17,7 @@ const legendItems = [
   { feature: 'theme', description: 'SECURITY', disabled: false },
   { feature: 'theme', description: 'FINANCIAL', disabled: false },
   { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
-  { feature: 'theme', description: 'SOCIOECONOMIC', disabled: false },
+  { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
 ];
 
 const categories = ['all', 'wildlife & habitat'];

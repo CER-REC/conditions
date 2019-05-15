@@ -89,10 +89,7 @@ class ProjectMenu extends React.PureComponent {
       : listItems.findIndex(project => project.id === selectedProjectID);
 
     // If no project is selected, set it to the first project
-    if (selected === -1) {
-      if (listItems.length > 0) { onChange(listItems[0].id); }
-      return null;
-    }
+    if (selected === -1 && listItems.length > 0) { onChange(listItems[0].id); }
 
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;
