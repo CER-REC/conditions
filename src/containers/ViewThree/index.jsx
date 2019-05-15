@@ -85,7 +85,7 @@ const ViewThree = (props) => {
         <FeatureTypesDescription
           feature={props.selected.feature}
           subFeature={props.selected.subFeature}
-          displayOrder={displayOrder.features[props.selected.feature]}
+          displayOrder={displayOrder.features}
         />
       </section>
       <section className="selectedCompany">

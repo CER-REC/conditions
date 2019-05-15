@@ -3,7 +3,7 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForView, withStyles } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import { ViewThreeRaw } from '.';
-import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
+import { conditionCountsByYear, conditionCountsByCommodity, conditionData, displayOrder } from '../../mockData';
 
 const props = {
   conditionCountsByYear,
@@ -16,6 +16,7 @@ const props = {
     bubble: 'XO',
     stream: 2010,
   },
+  displayOrder,
 };
 
 const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({

@@ -40,7 +40,7 @@ class FeatureTypesDescription extends React.PureComponent {
       );
     }
 
-    const content = displayOrder.map(type => (
+    const content = displayOrder[feature].map(type => (
       <React.Fragment key={type}>
         {(feature === 'instrument')
           ? <h4 data-heading={type}>{type}</h4>
@@ -88,8 +88,8 @@ FeatureTypesDescription.propTypes = {
   feature: PropTypes.string.isRequired,
   /** Heading that the container should scroll to (ex. "security") */
   subFeature: PropTypes.string,
-  /** Order to use for instrument prefixes */
-  displayOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
+  /** Display order by feature type */
+  displayOrder: PropTypes.shape().isRequired,
 };
 
 FeatureTypesDescription.defaultProps = {
