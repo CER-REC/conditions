@@ -370,7 +370,7 @@
         "filing": "Filing Across All Conditions"
       },
       "axis":{
-        "yAxis": "Number Of Conditions",
+        "yAxis": "Number of Conditions",
         "xAxis": "Effective Date"
       }
     },

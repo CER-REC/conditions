@@ -20421,7 +20421,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               textAnchor="middle"
               x={25}
             >
-              Number Of Conditions
+              Number of Conditions
             </tspan>
           </text>
           <g
@@ -21711,7 +21711,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               textAnchor="middle"
               x={25}
             >
-              Number Of Conditions
+              Number of Conditions
             </tspan>
           </text>
           <g
@@ -23536,7 +23536,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               textAnchor="middle"
               x={25}
             >
-              Number Of Conditions
+              Number of Conditions
             </tspan>
           </text>
           <g
