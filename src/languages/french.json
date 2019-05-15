@@ -207,6 +207,9 @@
     "trendButton": {
       "description": ""
     },
+    "keywordExploreButton": {
+      "description": ""
+    },
     "streamGraph": {
       "xAxis": "",
       "yAxis": "",

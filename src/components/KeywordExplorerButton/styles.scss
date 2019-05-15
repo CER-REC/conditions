@@ -1,0 +1,36 @@
+@import "../../styles/colors.scss";
+
+.KeywordExplorerButton {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: -1px;
+  height: 36px;
+  width: 100px;
+  border: 1px solid $Gray160;
+  overflow: hidden;
+
+  margin-bottom: 12px;
+  bottom: 5px;
+
+  .buttonText { 
+    width: 100%; 
+    height: 100%;
+  }
+  .descriptionText {
+    display: inline-block;
+    padding-top: 2%;
+    position: absolute;
+  }
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+  .keywordExplorerCircle {
+    height: 36px;
+    width: 36px;
+  }
+  .keywordExplorerCircle > circle{
+    fill: $Guide;
+  }
+}

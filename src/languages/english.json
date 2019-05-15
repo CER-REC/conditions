@@ -369,6 +369,9 @@
     "trendButton": {
       "description": "Trends &\nDefinitions"
     },
+    "keywordExploreButton": {
+      "description": "Keyword\nExplorer"
+    },
     "browseBy": {
       "skip": "Skip intro to browse:",
       "return": "Return to browse:",
