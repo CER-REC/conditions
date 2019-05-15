@@ -4,7 +4,7 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import TrendButton from '.';
 import ReadMe from './README.md';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
+import { conditionCountsByYear } from '../../mockData';
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -14,8 +14,7 @@ storiesForComponent('Components|TrendButton', module, ReadMe)
       {...getInteractionProps()}
       feature="theme"
       subFeature=""
-      projectData={conditionCountsByYear.counts}
-      instrumentData={conditionCountsByCommodity.counts}
+      countsData={conditionCountsByYear.counts}
     />
   ))
   .add('Instrument Bubble Button', () => (
@@ -23,7 +22,6 @@ storiesForComponent('Components|TrendButton', module, ReadMe)
       {...getInteractionProps()}
       feature="instrument"
       subFeature=""
-      projectData={conditionCountsByYear.counts}
-      instrumentData={conditionCountsByCommodity.counts}
+      countsData={conditionCountsByYear.counts}
     />
   ));

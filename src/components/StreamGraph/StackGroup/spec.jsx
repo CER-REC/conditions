@@ -49,7 +49,7 @@ describe('Components|StreamGraph/StackGroup', () => {
       wrapper = shallow(
         <StackGroup
           onChange={spy}
-          projectData={conditionCountsByYear.counts}
+          countsData={conditionCountsByYear.counts}
           stackProps={stackProps}
         />,
       );

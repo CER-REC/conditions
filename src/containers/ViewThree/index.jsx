@@ -72,7 +72,7 @@ const ViewThree = (props) => {
       </section>
       <section className="chart">
         <StreamGraph
-          projectData={reversedCounts}
+          countsData={reversedCounts}
           feature={props.selected.feature}
           subFeature={props.selected.subFeature}
         />

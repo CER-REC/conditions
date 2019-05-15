@@ -2,18 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import StreamGraph from '../StreamGraph';
-import { allConditionsPerYear, featureTypes, allConditionsByCommodityOrInstrument } from '../../proptypes';
+import { allConditionsPerYear, featureTypes } from '../../proptypes';
 
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
-
-const noop = () => {};
 
 const TrendButton = props => (
   <div className="TrendButton" {...handleInteraction(props.onClick)}>
     <div className="buttonText">
       <StreamGraph
-        projectData={props.projectData}
+        countsData={props.countsData}
         feature={props.feature}
         subFeature={props.subFeature}
         streamOnly
@@ -41,8 +39,7 @@ export default TrendButton;
 
 TrendButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  projectData: allConditionsPerYear.isRequired,
+  countsData: allConditionsPerYear.isRequired,
   feature: featureTypes.isRequired,
   subFeature: PropTypes.string.isRequired,
-  instrumentData: allConditionsByCommodityOrInstrument.isRequired,
 };

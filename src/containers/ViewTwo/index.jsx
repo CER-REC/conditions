@@ -20,7 +20,7 @@ import ConditionDetails from '../../components/ConditionDetails';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
-import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
+import { conditionCountsByYear, searchData } from '../../mockData';
 import './styles.scss';
 
 const noop = () => {};
@@ -127,8 +127,7 @@ const ViewTwo = props => (
         onClick={props.jumpToView3}
         feature={props.selected.feature}
         subFeature=""
-        projectData={conditionCountsByYear.counts}
-        instrumentData={conditionCountsByCommodity.counts}
+        countsData={conditionCountsByYear.counts}
       />
       <FeaturesMenu
         dropDown

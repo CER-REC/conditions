@@ -9,7 +9,7 @@ describe('Components|StreamGraph', () => {
     let handleOnChange;
     beforeEach(() => {
       wrapper = shallow(<StreamGraph
-        projectData={conditionCountsByYear.counts}
+        countsData={conditionCountsByYear.counts}
         handleOnChange={handleOnChange}
         feature="theme"
         subFeature=""

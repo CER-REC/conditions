@@ -15,7 +15,7 @@ StackGroupProps.propTypes = {
   groupProps: PropTypes.shape({
     onChange: PropTypes.func.isRequired,
     controlYear: PropTypes.number,
-    projectData: allConditionsPerYear.isRequired,
+    countsData: allConditionsPerYear.isRequired,
     allThemes: PropTypes.bool.isRequired,
   }).isRequired,
 };

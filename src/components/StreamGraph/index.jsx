@@ -19,7 +19,7 @@ const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 
 class StreamGraph extends React.Component {
   static propTypes = {
-    projectData: allConditionsPerYear.isRequired,
+    countsData: allConditionsPerYear.isRequired,
     feature: featureTypes.isRequired,
     subFeature: PropTypes.string.isRequired,
     streamOnly: PropTypes.bool,
@@ -37,14 +37,14 @@ class StreamGraph extends React.Component {
   handleOnChange = controlYear => this.setState({ controlYear });
 
   // For data that doesn't match the current feature/subfeature, sets all y = 0
-  processProjectData = () => {
-    const { projectData, feature, subFeature } = this.props;
-    this.processedData = projectData.map((project) => {
-      if (project.feature === feature
-        && (project.subFeature === subFeature || subFeature === '')
-      ) { return project; }
+  processCountsData = () => {
+    const { countsData, feature, subFeature } = this.props;
+    this.processedData = countsData.map((entry) => {
+      if (entry.feature === feature
+        && (entry.subFeature === subFeature || subFeature === '')
+      ) { return entry; }
 
-      const copy = JSON.parse(JSON.stringify(project));
+      const copy = JSON.parse(JSON.stringify(entry));
       Object.keys(copy.years).forEach((k) => {
         copy.years[k] = 0;
       });
@@ -119,7 +119,7 @@ class StreamGraph extends React.Component {
               groupProps={{
                 onChange: noop,
                 controlYear: null,
-                projectData: this.processedData,
+                countsData: this.processedData,
                 allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
               }}
             >
@@ -168,7 +168,7 @@ class StreamGraph extends React.Component {
           groupProps={{
             onChange: this.handleOnChange,
             controlYear: this.state.controlYear,
-            projectData: filteredData,
+            countsData: filteredData,
             allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
           }}
         >
@@ -179,7 +179,7 @@ class StreamGraph extends React.Component {
   }
 
   render() {
-    this.processProjectData();
+    this.processCountsData();
 
     return (
       <div
