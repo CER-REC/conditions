@@ -75,6 +75,8 @@ class StreamGraph extends React.Component {
       ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
       : this.processedData;
 
+    // TODO: GraphQL will provide an array of [2010, 2011, 2012...]
+    // We can map over that instead to save a bit of time here
     const { conditionsByDate, minConditionCount } = filteredData.reduce((acc, cur) => {
       Object.entries(cur.years).forEach(([year, count]) => {
         acc.conditionsByDate[year] = count + (acc.conditionsByDate[year] || 0);
@@ -85,7 +87,7 @@ class StreamGraph extends React.Component {
       return acc;
     }, { conditionsByDate: {}, minConditionCount: Infinity });
 
-    // TODO: Use GraphQL to get the min + max date
+    // TODO: Use GraphQL's data to get the min + max date
     // eslint-disable-next-line prefer-const
     let { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
       .reduce((acc, [year, count]) => {
@@ -100,6 +102,7 @@ class StreamGraph extends React.Component {
     minDate = parseInt(minDate, 10);
     maxDate = parseInt(maxDate, 10);
 
+    // TODO: Year list from GraphQL
     const yearTicks = Array(maxDate - minDate + 1).fill(null).map((_, i) => minDate + i);
 
     if (this.props.streamOnly) {
