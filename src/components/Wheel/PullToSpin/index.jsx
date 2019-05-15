@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-
+import { injectIntl, intlShape } from 'react-intl';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring/web.cjs';
 import handleInteraction from '../../../utilities/handleInteraction';
-import getTextFromIntl from '../../../utilities/getTextFromIntl';
 
 const PullToSpin = (props) => {
   const [triggered, set] = useState(false);
+  const { intl } = props;
 
   const { transform } = useSpring({
     transform: triggered ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
@@ -19,11 +19,6 @@ const PullToSpin = (props) => {
     set(state => !state);
     props.onClickSpin();
   };
-  const name = () => {
-    const text = getTextFromIntl(getMessage => <tspan dx="-20">{getMessage({ id: 'components.companyWheel.pullToSpin.pull' })} </tspan>);
-    console.log(text);
-    return text;
-  }
   return (
     <g className="PullToSpin">
       <g className="PullSpinArrow">
@@ -32,8 +27,8 @@ const PullToSpin = (props) => {
       </g>
       <g className="PullMessage">
         <text x="376" y="10" className="small">
-          {name()}
-          {getTextFromIntl(getMessage => <tspan dx="-20" dy="9">{getMessage({ id: 'components.companyWheel.pullToSpin.toSpin' })} </tspan>)}
+          <tspan dx="-10">{intl.formatMessage({ id: 'components.companyWheel.pullToSpin.pull' })}</tspan>
+          <tspan dx="-20" dy="10">{intl.formatMessage({ id: 'components.companyWheel.pullToSpin.toSpin' })}</tspan>
         </text>
       </g>
       <g role="button" className="PullSlider" {...handleInteraction(onSpinClick)}>
@@ -60,6 +55,7 @@ const PullToSpin = (props) => {
 
 PullToSpin.propTypes = {
   onClickSpin: PropTypes.func.isRequired,
+  intl: intlShape.isRequired,
 };
 
-export default PullToSpin;
+export default injectIntl(PullToSpin);

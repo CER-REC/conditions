@@ -368,6 +368,10 @@
         "status": "Statuses Across All Conditions",
         "type": "Types Across All Conditions",
         "filing": "Filing Across All Conditions"
+      },
+      "axis":{
+        "yAxis": "Number Of Conditions",
+        "xAxis": "Effective Date"
       }
     },
     "trendButton": {

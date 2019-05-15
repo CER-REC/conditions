@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shouldHaveInteractionProps } from '../../../tests/utilities';
+import { shouldHaveInteractionProps, shallowWithIntl } from '../../../tests/utilities';
 import PullToSpin from '.';
 
 const noop = () => {};
@@ -10,7 +9,7 @@ describe('Components|Wheel/PullToSpin', () => {
   let wrapper;
   describe('with default props', () => {
     beforeEach(() => {
-      wrapper = shallow(<PullToSpin onClickSpin={noop} />);
+      wrapper = shallowWithIntl(<PullToSpin onClickSpin={noop} />);
     });
 
     test('should render an g with className PullToSpin', () => {
@@ -29,7 +28,7 @@ describe('Components|Wheel/PullToSpin', () => {
     let callback;
     beforeEach(() => {
       callback = jest.fn();
-      wrapper = shallow(<PullToSpin onClickSpin={callback} />);
+      wrapper = shallowWithIntl(<PullToSpin onClickSpin={callback} />);
     });
 
     test('should trigger the callback function passed in', () => {

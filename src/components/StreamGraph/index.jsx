@@ -6,11 +6,10 @@ import {
   VictoryChart,
   VictoryGroup,
 } from 'victory';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedMessage, intlShape } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
 import { allConditionsPerYear, featureTypes } from '../../proptypes';
-import getTextFromIntl from '../../utilities/getTextFromIntl';
 
 import './styles.scss';
 
@@ -24,6 +23,8 @@ class StreamGraph extends React.Component {
     feature: featureTypes.isRequired,
     subFeature: PropTypes.string.isRequired,
     streamOnly: PropTypes.bool,
+    intl: intlShape.isRequired,
+
   }
 
   static defaultProps = {
@@ -69,9 +70,6 @@ class StreamGraph extends React.Component {
   ));
 
   chart() {
-    
-    
-    
     const filteredData = (this.props.subFeature !== '')
       ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
       : this.processedData;
@@ -135,19 +133,21 @@ class StreamGraph extends React.Component {
       },
     };
 
+    const { intl } = this.props;
+
     return (
 
       <VictoryChart animate={streamAnimation}>
         <VictoryAxis
           dependentAxis
-          label={this.yAxisLabel}
+          label={intl.formatMessage({ id: 'components.streamGraph.axis.yAxis' })}
           tickValues={[minConditionCount, maxConditionTotal]}
           tickFormat={Math.round}
           className="axis-label"
           style={axisStyles}
         />
         <VictoryAxis
-          label="Effective Date"
+          label={intl.formatMessage({ id: 'components.streamGraph.axis.xAxis' })}
           tickFormat={Math.round}
           className="axis-label"
           domain={[minDate, maxDate]}
@@ -166,17 +166,14 @@ class StreamGraph extends React.Component {
       </VictoryChart>
     );
   }
-  yAxisLabel ="";
+
   render() {
     this.processProjectData();
-    this.yAxisLabel =  
-    getTextFromIntl(getMessage => {getMessage({ id: 'components.companyWheel.pullToSpin.pull' })});
     return (
       <div
         className="StreamGraph"
       >
-                        {getTextFromIntl(getMessage => <tspan dx="-20">{getMessage({ id: 'components.projectLegend.numberOfConditions' })} </tspan>)
-        }{this.props.streamOnly ? null : (
+        {this.props.streamOnly ? null : (
           <FormattedMessage
             id={`components.streamGraph.title.${this.props.feature}`}
             tagName="h1"
@@ -188,4 +185,4 @@ class StreamGraph extends React.Component {
   }
 }
 
-export default StreamGraph;
+export default injectIntl(StreamGraph);
