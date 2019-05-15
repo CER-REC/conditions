@@ -56,11 +56,4 @@ export const projectMenuQuery = gql`
     }
   }
 `;
-// export const projectMenuQuery = gql`
-//   query ProjectMenu($id: Int!) {
-//     allProjectsByCompany (companyId: $id) {
-//       id
-//       status
-//     }
-//   }
-// `;
+
