@@ -7821,6 +7821,45 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore Button 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="KeywordExplorerButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="buttonText"
+    >
+      <svg
+        className="keywordExplorerCircle"
+      >
+        <circle
+          cx="18"
+          cy="18"
+          opacity="0.4"
+          r="8.125"
+        />
+      </svg>
+      <span
+        className="descriptionText"
+      >
+        <p>
+          Keyword
+        </p>
+        <p>
+          Explorer
+        </p>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|List arrows at edges 1`] = `
 <div
   className="visualization"
