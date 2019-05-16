@@ -22,6 +22,7 @@ import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import './styles.scss';
+import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
 const noop = () => {};
 const legendItems = [
@@ -112,12 +113,17 @@ const ViewTwo = props => (
           </div>
         )
         : (
-          <ProjectMenu
-            projectsData={props.projectsData.counts}
-            selectedProjectID={props.selected.project}
-            onChange={props.setSelectedProject}
-            selectedFeature={props.selected.feature}
-          />
+          <div>
+            <div className="conditionsLabel">
+              <TotalConditionsLabel />
+            </div>
+            <ProjectMenu
+              projectsData={props.projectsData.counts}
+              selectedProjectID={props.selected.project}
+              onChange={props.setSelectedProject}
+              selectedFeature={props.selected.feature}
+            />
+          </div>
         )
       }
     </section>

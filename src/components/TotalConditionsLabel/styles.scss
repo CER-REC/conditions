@@ -1,0 +1,19 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fontVariables.scss';
+
+.TotalConditionsForProject{
+  .small{
+    fill: $Gray160;
+    font: $fira-sans-condensed-light;
+    font-size: 12px;
+  }
+  
+  .connectingLine{
+    stroke-dasharray: 2,2;
+    stroke: $Gray160;
+    stroke-width: 1px;
+  }
+
+}
+
+
