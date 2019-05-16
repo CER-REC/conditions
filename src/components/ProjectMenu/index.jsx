@@ -51,6 +51,7 @@ class ProjectMenu extends React.PureComponent {
 
   getReformattedData = data => (
     Object.entries(data[this.props.selectedFeature])
+      .filter(([name]) => (name !== '__typename'))
       .map(([name, count]) => ({ name, count }))
   );
 

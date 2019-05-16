@@ -7,7 +7,7 @@ import CircleContainer from '../../CircleContainer';
 import './styles.scss';
 
 const ProjectChart = (props) => {
-  const graphData = props.graphData.filter(dataPoint => dataPoint.name !== '__typename');
+  const { graphData } = props;
   const conditionCount = graphData.reduce((acc, next) => (acc + next.count), 0);
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>

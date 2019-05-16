@@ -169,7 +169,7 @@ ViewTwo.propTypes = {
   legendItems: PropTypes.arrayOf(PropTypes.shape({
     disabled: PropTypes.bool,
     description: PropTypes.string.isRequired,
-  })).isRequired,
+  })),
   selected: PropTypes.shape({
     company: PropTypes.number,
     region: PropTypes.number,
@@ -208,9 +208,7 @@ ViewTwo.propTypes = {
   setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
-  projectsData: PropTypes.shape({
-    counts: PropTypes.arrayOf(project).isRequired,
-  }).isRequired,
+  projectsData: PropTypes.arrayOf(project),
   // The shape of wheelData will change once more integration is done.
   wheelData: PropTypes.arrayOf(PropTypes.any),
   jumpToView1: PropTypes.func.isRequired,
@@ -220,6 +218,8 @@ ViewTwo.propTypes = {
 ViewTwo.defaultProps = {
   layoutOnly: false,
   wheelData: [],
+  legendItems: [],
+  projectsData: [],
 };
 
 export const ViewTwoUnconnected = props => (
