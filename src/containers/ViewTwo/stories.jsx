@@ -25,6 +25,7 @@ const props = {
   },
   browseBy: 'company',
   jumpToView3: noop,
+  jumpToView1: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
