@@ -27,19 +27,19 @@ describe('Components|KeywordExplorerButton', () => {
 
   describe('when a KeywordExplorerButton is clicked', () => {
     let spy;
-    let wrapper;
+    let wrapperSpy;
     beforeEach(() => {
       spy = jest.fn();
-      wrapper = shallow(<KeywordExplorerButton
+      wrapperSpy = shallow(<KeywordExplorerButton
         onClick={spy}
       />);
     });
     test("should call it's onClick prop", () => {
-      wrapper.find('.KeywordExplorerButton').simulate('click', eventFuncs);
+      wrapperSpy.find('.KeywordExplorerButton').simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalled();
     });
     test("should call it's onClick prop when enter is pressed", () => {
-      wrapper.find('.KeywordExplorerButton').simulate('keypress', { key: 'Enter', ...eventFuncs });
+      wrapperSpy.find('.KeywordExplorerButton').simulate('keypress', { key: 'Enter', ...eventFuncs });
       expect(spy).toHaveBeenCalled();
     });
   });
