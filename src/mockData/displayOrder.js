@@ -49,6 +49,7 @@ export default {
     ],
     instrument: [
       'CPTC',
+      'GH',
       'GPL',
       'GPMO',
       'GPSO',
