@@ -6154,30 +6154,6 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
     className="FeaturesLegend"
   >
     <div
-      className="featuresHeader"
-    >
-      <div
-        className="CircleContainer ConditionsIcon"
-        style={
-          Object {
-            "height": 24,
-            "width": 24,
-          }
-        }
-      >
-        <div>
-          #
-        </div>
-      </div>
-      <div
-        className="ConditionsDesc"
-      >
-        <span>
-          Total Number of Conditions for Project
-        </span>
-      </div>
-    </div>
-    <div
       className="LegendItem disabled"
     >
       <div
@@ -24077,6 +24053,44 @@ exports[`Storyshots Components|StreamGraph/StackGroupProps documentation 1`] = `
   className="visualization"
 >
   <div />
+</div>
+`;
+
+exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="default"
+  >
+    <svg
+      className="TotalConditionsForProject"
+      height="100"
+      width="100"
+    >
+      <text
+        className="small"
+        x="0"
+        y="12"
+      >
+        Total Conditions
+      </text>
+      <text
+        className="small"
+        x="0"
+        y="24"
+      >
+        For Project
+      </text>
+      <line
+        className="connectingLine"
+        x1="2"
+        x2="2"
+        y1="28"
+        y2="100"
+      />
+    </svg>
+  </div>
 </div>
 `;
 

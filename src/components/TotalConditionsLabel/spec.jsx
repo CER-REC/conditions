@@ -1,12 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { shallowWithIntl } from '../../tests/utilities';
 
 import TotalConditionsLabel from '.';
 
 describe('Component|TotalConditionsLabel', () => {
   describe('default', () => {
-    const wrapper = shallow(<TotalConditionsLabel />);
-    shouldBehaveLikeAComponent(TotalConditionsLabel, () => wrapper);
+    const wrapper = shallowWithIntl(<TotalConditionsLabel className="test" />);
+    test('should render', () => {
+      expect(wrapper.type()).toBe('div');
+    });
   });
 });

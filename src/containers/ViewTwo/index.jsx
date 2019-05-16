@@ -115,7 +115,7 @@ const ViewTwo = props => (
         : (
           <div>
             <div className="conditionsLabel">
-              <TotalConditionsLabel />
+              <TotalConditionsLabel className="view2ConditionLabel" />
             </div>
             <ProjectMenu
               projectsData={props.projectsData.counts}
