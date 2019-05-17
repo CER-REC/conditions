@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.scss';
 import { injectIntl, intlShape } from 'react-intl';
-import PropTypes from 'prop-types';
 
 const TotalConditionsLabel = (props) => {
   const { intl } = props;
