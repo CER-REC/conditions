@@ -13,7 +13,7 @@ const ProjectChart = (props) => {
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
         <CircleContainer size={24} className="ConditionCount">
-          {props.loading || conditionCount <= 0 ? '' : conditionCount}
+          {props.loading || conditionCount < 0 ? '' : conditionCount}
         </CircleContainer>
       </div>
       <div className="FlagWrapper">

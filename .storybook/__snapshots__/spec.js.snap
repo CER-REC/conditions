@@ -16496,7 +16496,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
           }
         >
           <div>
-            
+            0
           </div>
         </div>
       </div>
