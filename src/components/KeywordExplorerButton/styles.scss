@@ -6,7 +6,6 @@
   position: relative;
   height: 36px;
   width: 100px;
-  border: 1px solid $Gray160;
   overflow: hidden;
   background: $LightGray;
   margin-bottom: 12px;
@@ -19,6 +18,7 @@
   .descriptionText {
     display: inline-block;
     padding-top: 2%;
+    left: 45px;
     position: absolute;
   }
   p {
@@ -28,6 +28,8 @@
   .keywordExplorerCircle {
     height: 36px;
     width: 36px;
+    left: 4px;
+    position: absolute;
   }
   .keywordExplorerCircle > circle {
     fill: $Guide;

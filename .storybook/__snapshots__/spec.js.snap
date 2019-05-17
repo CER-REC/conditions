@@ -7842,7 +7842,7 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
           cx="18"
           cy="14"
           opacity="0.4"
-          r="11"
+          r="12"
         />
       </svg>
       <span
