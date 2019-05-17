@@ -200,7 +200,7 @@ class FilterContent extends React.PureComponent {
         </ul>
         <FormattedMessage id="components.searchBar.close">
           { text => (
-            <button {...handleInteraction(this.props.closeTab)} className="close upperCase" type="button">
+            <button {...handleInteraction(this.props.closeTab)} className="closeSearchBar upperCase" type="button">
               {text }
             </button>
           )}

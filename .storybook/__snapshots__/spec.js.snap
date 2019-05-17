@@ -16777,7 +16777,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17152,7 +17152,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17527,7 +17527,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17716,7 +17716,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <div />
       </div>
       <div
-        className="close"
+        className="closeSearchBar"
       >
         <button
           className="upperCase"
