@@ -24060,33 +24060,37 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
 <div
   className="visualization"
 >
-  <svg
+  <div
     className="TotalConditionsLabel"
-    height="60"
-    width="100"
   >
-    <text
-      className="small"
-      x="0"
-      y="12"
+    <svg
+      className="conditionLabel"
+      height="60"
+      width="100"
     >
-      Total Conditions
-    </text>
-    <text
-      className="small"
-      x="0"
-      y="24"
-    >
-      for Project
-    </text>
-    <line
-      className="connectingLine"
-      x1="1.5"
-      x2="1.5"
-      y1="25"
-      y2="60"
-    />
-  </svg>
+      <text
+        className="small"
+        x="0"
+        y="12"
+      >
+        Total Conditions
+      </text>
+      <text
+        className="small"
+        x="0"
+        y="24"
+      >
+        for Project
+      </text>
+      <line
+        className="connectingLine"
+        x1="1.5"
+        x2="1.5"
+        y1="25"
+        y2="60"
+      />
+    </svg>
+  </div>
 </div>
 `;
 

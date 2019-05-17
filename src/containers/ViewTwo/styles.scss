@@ -13,11 +13,10 @@
     section.companyBreakdown {
       overflow: visible;
       margin-bottom: 0;
-      .conditionsLabel{
+      .TotalConditionsLabel{
         position: absolute;
         top : -50px;
         left: 50%;
-        padding-right: 150px;
       }
 
       .regionChart {

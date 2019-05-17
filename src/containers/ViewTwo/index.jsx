@@ -114,9 +114,7 @@ const ViewTwo = props => (
         )
         : (
           <React.Fragment>
-            <div className="conditionsLabel">
-              <TotalConditionsLabel className="view2ConditionLabel" />
-            </div>
+            <TotalConditionsLabel />
             <ProjectMenu
               projectsData={props.projectsData.counts}
               selectedProjectID={props.selected.project}

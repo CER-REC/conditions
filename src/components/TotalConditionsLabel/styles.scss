@@ -2,19 +2,22 @@
 @import '../../styles/fontVariables.scss';
 
 .TotalConditionsLabel {
-  position: relative;
-  left: -1.45px;
-
-  .small{
-    fill: $Gray160;
-    font: $fira-sans-condensed-light;
-    font-size: 12px;
+  
+  .conditionLabel {
+    position: relative;
+    left: -1.45px;
+  
+    .small{
+      fill: $Gray160;
+      font: $fira-sans-condensed-light;
+      font-size: 12px;
+    }
+  
+    .connectingLine{
+      stroke-dasharray: 3,1;
+      stroke: $Gray160;
+      stroke-width: 1px;
+    }
   }
-
-  .connectingLine{
-    stroke-dasharray: 3,1;
-    stroke: $Gray160;
-    stroke-width: 1px;
-  }
-
 }
+
