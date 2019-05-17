@@ -21,6 +21,7 @@ import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
+import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 
 const noop = () => {};
@@ -77,21 +78,6 @@ const ViewTwo = props => (
       {props.browseBy === 'location' ? (
         <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
       ) : null}
-
-      {/* TODO: Placeholder for functionality; waiting on a design for this */}
-      <button
-        className="view1reset"
-        type="button"
-        onClick={props.jumpToView1}
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          height: '48px',
-        }}
-      >
-          Back To Introduction
-      </button>
     </section>
 
     <section className="wheel">
@@ -123,6 +109,9 @@ const ViewTwo = props => (
     </section>
 
     <section className="menus">
+      <KeywordExplorerButton
+        onClick={props.jumpToView1}
+      />
       <TrendButton
         onClick={props.jumpToView3}
         feature={props.selected.feature}
