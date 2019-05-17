@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import FeaturesMenu from '../../components/FeaturesMenu';
@@ -74,7 +75,8 @@ const ViewThree = props => (
     <section className="selectedCompany">
       {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
       <div className="selectedCompanyHeader">
-        <h1>Selected Company:</h1> <h2>Company Name</h2>
+        <FormattedMessage id="views.view3.company" />
+        <h2>Company Name</h2>
       </div>
     </section>
     <section className="conditions">

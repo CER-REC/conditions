@@ -164,7 +164,7 @@
       color: $DarkGray;
     }
   }
-  .close {
+  .closeSearchBar {
     text-align: right;
     button {
       padding: 5px;
@@ -172,6 +172,7 @@
       background-color: $LinksTextButtons;
       color: $White;
       border: none;
+      width: 80px;
     }
   }
 }

@@ -108,7 +108,7 @@ class Wheel extends React.Component {
       <div className="Wheel">
         <Spring
           immediate={!this.state.needsSpin}
-          config={{ tension: 30, easing: 'easeInExpo' }}
+          config={{ tension: 30, friction: 20, easing: t => t * t * t * t * t }}
           onStart={() => this.setState({ needsSpin: false })}
           onRest={() => null /* set loading status to false for the projectMenu */}
           from={{
