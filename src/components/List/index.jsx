@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
+import throttle from 'lodash.throttle';
 import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -22,27 +22,41 @@ library.add(
   faAngleRight,
   faAngleLeft,
 );
+const scrollDelay = 30;
+
+const handleScroll = throttle((deltaY, currentIndex, length) => {
+  /* Browsers + devices provide different values using different units, so
+  * we can't use deltaY directly
+  */
+  const direction = Math.sign(deltaY, currentIndex, length);
+  if (!direction || deltaY === 0) return null;
+  const newIndex = Math.min(
+    Math.max(0, currentIndex + direction),
+    length - 1,
+  );
+  return newIndex;
+}, scrollDelay, { trailing: true });
 
 class List extends React.PureComponent {
-  handleScroll = debounce((deltaY) => {
-    /* Browsers + devices provide different values using different units, so
-    * we can't use deltaY directly
-    */
-    const direction = (deltaY > 0 && 1) || (deltaY < 0 && -1);
-    if (!direction) return;
+  componentRef = null;
 
-    const newIndex = Math.min(
-      Math.max(0, this.props.selected + direction),
-      this.props.items.length - 1,
-    );
+  componentDidMount() {
+    if (this.componentRef) {
+      this.componentRef.addEventListener('wheel', this.throttleScrollEvents, { passive: false });
+    }
+  }
 
-    if (newIndex !== this.props.selected) this.props.onChange(newIndex);
-  }, 200, { leading: true })
+  componentWillUnmount() {
+    if (this.componentRef) {
+      this.componentRef.removeEventListener('wheel', this.throttleScrollEvents, { passive: false });
+    }
+  }
 
-  debounceScrollEvents = (e) => {
+  throttleScrollEvents = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    this.handleScroll(e.deltaY);
+    const newIndex = handleScroll(e.deltaY, this.props.selected, this.props.items.length);
+    if (newIndex !== this.props.selected && newIndex !== null) this.props.onChange(newIndex);
   }
 
   renderArrow(next, selectedIndex) {
@@ -75,12 +89,12 @@ class List extends React.PureComponent {
 
     return (
       <div
+        ref={(node) => { this.componentRef = node; }}
         className={classNames(
           'List',
           this.props.className,
           { horizontal: this.props.horizontal, guideLine: this.props.guideLine },
         )}
-        onWheel={this.debounceScrollEvents}
       >
         <ul>
           {!arrowsAtEdges

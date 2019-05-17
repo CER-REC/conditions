@@ -70,13 +70,14 @@
       background-color: $LinksTextButtons;
     }
   }
-  .close {
+  .closeSearchBar {
     padding: 5px;
-    margin: 5px 5px 0px 5px;
+    margin: 0px 5px 0px 5px;
     background-color: $LinksTextButtons;
     color: $White;
     float: right;
-    border-color: $LinksTextButtons;
+    border: none;
+    width: 80px;
   }
   .regularBackground{
     background-color: $LinksTextButtons;

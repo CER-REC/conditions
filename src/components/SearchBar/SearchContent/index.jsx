@@ -264,7 +264,7 @@ class SearchContent extends React.PureComponent {
         {this.highlightConditions()}
         <FormattedMessage id="components.searchBar.close">
           {text => (
-            <div className="close">
+            <div className="closeSearchBar">
               <button
                 {...handleInteraction(this.props.closeTab)}
                 type="button"

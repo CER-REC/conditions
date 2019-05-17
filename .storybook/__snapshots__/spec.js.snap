@@ -2652,7 +2652,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         >
           <div
             className="List"
-            onWheel={[Function]}
           >
             <ul>
               <li
@@ -3193,7 +3192,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           >
             <div
               className="List"
-              onWheel={[Function]}
             >
               <ul>
                 <li
@@ -3695,7 +3693,6 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         >
           <div
             className="List"
-            onWheel={[Function]}
           >
             <ul>
               <li
@@ -4169,7 +4166,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
     >
       <div
         className="List"
-        onWheel={[Function]}
       >
         <ul>
           <li
@@ -5194,7 +5190,6 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
       >
         <div
           className="List horizontal"
-          onWheel={[Function]}
         >
           <ul>
             <li
@@ -6408,7 +6403,6 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
     </span>
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -6895,7 +6889,6 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
     </span>
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -7290,7 +7283,6 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
     </span>
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -7821,13 +7813,51 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore Button 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="KeywordExplorerButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="buttonText"
+    >
+      <svg
+        className="keywordExplorerCircle"
+      >
+        <circle
+          cx="18"
+          cy="14"
+          opacity="0.4"
+          r="12"
+        />
+      </svg>
+      <span
+        className="descriptionText"
+      >
+        <p>
+          Keyword
+        </p>
+        <p>
+          Explorer
+        </p>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|List arrows at edges 1`] = `
 <div
   className="visualization"
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -7944,7 +7974,6 @@ exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
 >
   <div
     className="List horizontal"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8061,7 +8090,6 @@ exports[`Storyshots Components|List basic usage 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8170,7 +8198,6 @@ exports[`Storyshots Components|List component items 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8291,7 +8318,6 @@ exports[`Storyshots Components|List guide line 1`] = `
 >
   <div
     className="List guideLine"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8400,7 +8426,6 @@ exports[`Storyshots Components|List horizontal 1`] = `
 >
   <div
     className="List horizontal"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8509,7 +8534,6 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8606,7 +8630,6 @@ exports[`Storyshots Components|List selected 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -9948,7 +9971,6 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -10528,7 +10550,6 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -11350,7 +11371,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -12414,7 +12434,6 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -13478,7 +13497,6 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -14584,7 +14602,6 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -16777,7 +16794,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17152,7 +17169,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17527,7 +17544,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17716,7 +17733,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <div />
       </div>
       <div
-        className="close"
+        className="closeSearchBar"
       >
         <button
           className="upperCase"
@@ -18352,7 +18369,7 @@ exports[`Storyshots Components|SelectedGroupBar default 1`] = `
           }
         }
       >
-        condition
+        Example Company Name
       </span>
     </p>
   </div>
@@ -18605,7 +18622,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
   >
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -18907,7 +18923,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
   >
     <div
       className="List faded guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -19209,7 +19224,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
   >
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li

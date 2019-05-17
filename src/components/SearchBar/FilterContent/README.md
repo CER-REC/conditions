@@ -4,7 +4,7 @@ Displays the dialog box for the filter tab.
 # Props
 * yearRange: { start: Number, end: Number }
 * projectStatus: PropTypes.arrayOf
-(PropTypes.oneOf(['OPEN', 'CLOSED', 'CANCELLED'])) 
+(PropTypes.oneOf(['IN_PROGRESS', 'COMPLETED' ])) 
 
 # Interaction Requirements
 * [X] Selection of year range
