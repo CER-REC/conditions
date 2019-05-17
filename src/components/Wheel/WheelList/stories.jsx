@@ -6,19 +6,19 @@ import ReadMe from './README.md';
 import WheelList from '.';
 
 const companyList = [
-  { company_name: 'Company A' },
-  { company_name: 'Company B' },
-  { company_name: 'Company C' },
-  { company_name: 'Company D' },
-  { company_name: 'Company E' },
-  { company_name: 'Company F' },
-  { company_name: 'Company G' },
-  { company_name: 'Company H moreThan15Characters' },
-  { company_name: 'Company I' },
-  { company_name: 'Company J' },
-  { company_name: 'Company K' },
-  { company_name: 'Company L' },
-  { company_name: 'Company M' },
+  { name: 'Company A' },
+  { name: 'Company B' },
+  { name: 'Company C' },
+  { name: 'Company D' },
+  { name: 'Company E' },
+  { name: 'Company F' },
+  { name: 'Company G' },
+  { name: 'Company H moreThan15Characters' },
+  { name: 'Company I' },
+  { name: 'Company J' },
+  { name: 'Company K' },
+  { name: 'Company L' },
+  { name: 'Company M' },
 ];
 
 const locationList = [
