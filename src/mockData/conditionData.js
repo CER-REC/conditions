@@ -109,7 +109,7 @@ export default [
         details: {
           theme: 'theme.ADMINISTRATIVE',
           instrument: 'instrument.OPENING',
-          phase: 'phase.INCLUDES_ALL_PHASES_OF_CONSTRUCTION',
+          phase: 'phase.INCLUDES_ALL_PHASES_OF_CONSTR',
           type: 'type.NON_STANDARD',
           status: 'status.IN_PROGRESS',
           filing: 'status.OVERDUE_FILING',

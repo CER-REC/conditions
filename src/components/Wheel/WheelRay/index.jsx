@@ -80,7 +80,7 @@ class WheelRay extends React.Component {
           <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay" {...handleInteraction(props.onChange, index)}>
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
-            <text className="textLabels" transform="translate(28.75) rotate(90)">
+            <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
               { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
             </text>
             {(this.flagLayouts)
@@ -109,7 +109,7 @@ class WheelRay extends React.Component {
             />
             { item.location.province !== legendTracker
               ? (
-                <text className="textLabels" transform="translate(28.75) rotate(90)">
+                <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
                   {item.location.province}
                 </text>
               ) : null }

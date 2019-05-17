@@ -256,13 +256,17 @@ export const ViewTwoGraphQL = (props) => {
                 const rawFeatureData = selectedProject
                   ? selectedProject.aggregatedCount[props.selected.feature]
                   : [];
-                const projectFeatureData = Object.keys(rawFeatureData)
-                  .filter(key => key !== '__typename')
-                  .map(key => ({
-                    feature: props.selected.feature,
-                    description: key,
-                    disabled: !rawFeatureData[key] > 0,
-                  }));
+                const projectFeatureData = Object.entries(rawFeatureData)
+                  .reduce((acc, [key, val]) => {
+                    if (key !== '__typename') {
+                      acc.push({
+                        feature: props.selected.feature,
+                        description: key,
+                        disabled: val <= 0,
+                      });
+                    }
+                    return acc;
+                  }, []);
                 // MISSING ERROR HANDLING
                 return (
                   <ViewTwo
