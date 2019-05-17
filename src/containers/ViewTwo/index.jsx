@@ -113,7 +113,7 @@ const ViewTwo = props => (
           </div>
         )
         : (
-          <div>
+          <React.Fragment>
             <div className="conditionsLabel">
               <TotalConditionsLabel className="view2ConditionLabel" />
             </div>
@@ -123,7 +123,7 @@ const ViewTwo = props => (
               onChange={props.setSelectedProject}
               selectedFeature={props.selected.feature}
             />
-          </div>
+          </React.Fragment>
         )
       }
     </section>
