@@ -236,47 +236,54 @@ export const ViewTwoGraphQL = (props) => {
     // The queries must be by company and location and then subdivide.
     // The common queries such as the condition explorer must be set at the view level
       <Query query={companyWheelQuery}>
-        {({ data: wheelData }) => (
-          <Query
-            query={projectMenuQuery}
-            variables={{ id: props.selected.company }}
-            skip={!props.selected.company}
-          >
-            { (projectMenuQprops) => {
-              const { loading: projLoading } = projectMenuQprops;
-              const { error: projError } = projectMenuQprops;
-              const { data: projData } = projectMenuQprops;
-              const legendItem = props.selected.company && !projLoading && !projError
-                ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
-                : null;
-              const rawFeatureData = legendItem
-                ? legendItem.aggregatedCount[props.selected.feature]
-                : [];
-              const projectFeatureData = Object.keys(rawFeatureData)
-                .filter(key => key !== '__typename')
-                .map(key => ({
-                  feature: props.selected.feature,
-                  description: key,
-                  disabled: !rawFeatureData[key] > 0,
-                }));
-              // MISSING ERROR HANDLING
-              return (
-                <ViewTwo
-                  wheelData={
-                    wheelData.allCompanies
-                  }
-                  projectsData={!projLoading && !projError && props.selected.company
-                    ? projData.allProjectsByCompany
-                    : []
-                  }
-                  projectMenuLoading={projLoading}
-                  legendItems={projectFeatureData}
-                  {...props}
-                />
-              );
-            }}
-          </Query>
-        )
+        {(wheelQueryProps) => {
+          const { data: wheelQData } = wheelQueryProps;
+          const { loading: wheelQLoading } = wheelQueryProps;
+          const { error: wheelQerror } = wheelQueryProps;
+          return (
+            <Query
+              query={projectMenuQuery}
+              variables={{ id: props.selected.company }}
+              skip={!props.selected.company}
+            >
+              { (projectMenuQprops) => {
+                const { loading: projLoading } = projectMenuQprops;
+                const { error: projError } = projectMenuQprops;
+                const { data: projData } = projectMenuQprops;
+                const selectedProject = props.selected.company && !projLoading && !projError
+                  ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
+                  : null;
+                const rawFeatureData = selectedProject
+                  ? selectedProject.aggregatedCount[props.selected.feature]
+                  : [];
+                const projectFeatureData = Object.keys(rawFeatureData)
+                  .filter(key => key !== '__typename')
+                  .map(key => ({
+                    feature: props.selected.feature,
+                    description: key,
+                    disabled: !rawFeatureData[key] > 0,
+                  }));
+                // MISSING ERROR HANDLING
+                return (
+                  <ViewTwo
+                    wheelData={
+                      !wheelQLoading && !wheelQerror
+                        ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+                        : []
+                    }
+                    projectsData={!projLoading && !projError && props.selected.company
+                      ? projData.allProjectsByCompany
+                      : []
+                    }
+                    projectMenuLoading={projLoading}
+                    legendItems={projectFeatureData}
+                    {...props}
+                  />
+                );
+              }}
+            </Query>
+          );
+        }
         }
       </Query>
     );

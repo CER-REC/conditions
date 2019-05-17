@@ -4,7 +4,7 @@
 
 .PullToSpin{
   transform-origin: top;
-  pointer-events: all;
+  pointer-events: auto;
   .PullMessage{
     fill: $Gray160;
     font: $fira-sans-condensed-light;

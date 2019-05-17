@@ -38,9 +38,7 @@ class Wheel extends React.Component {
   }
 
   static getDerivedStateFromProps(props, prevState) {
-    const items = props.wheelType === 'company'
-      ? props.wheelData.sort((a, b) => (a.name < b.name ? -1 : 1))
-      : props.wheelData.sort((a, b) => (a.location.province < b.location.province ? -1 : 1));
+    const items = props.wheelData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
     const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
     const selectedIndex = items.findIndex(v => v.id === props.selectedRay);

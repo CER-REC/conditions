@@ -26,9 +26,9 @@ const WheelList = (props) => {
           className={offsetClasses[Math.abs(offset)]}
           style={{ width: `${props.textClippingRadius}%` }}
           key={`${text}-${offset}`}
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={setDangerousText(text)}
-        />
+        >
+          {text}
+        </span>
       );
     }))
     : null;

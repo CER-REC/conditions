@@ -23,6 +23,8 @@ $states: (
     ".ViewTwo .companyBreakdown": (opacity: 0),
     ".ViewTwo .menus": (opacity: 0),
     ".ViewTwo .legend": (opacity: 0),
+    ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: none),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: none),
     ".ViewTwo .ConditionDetails .listPane": (opacity: 0),
     ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 0),
     ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
@@ -122,6 +124,8 @@ $states: (
       pointer-events: auto,
       transition: "opacity #{$defaultTransition}",
     ),
+    ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: all),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: all),
     ".ViewThree": (
       transition: "opacity #{$fastestStart}, visibility 0s 1s",
     ),
@@ -144,6 +148,8 @@ $states: (
       transition: "opacity #{$fastestStart}, visibility 0s 1s",
       opacity: 0,
     ),
+    ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: none),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: none),
     ".ViewThree": (
       pointer-events: auto,
       visibility: visible,
