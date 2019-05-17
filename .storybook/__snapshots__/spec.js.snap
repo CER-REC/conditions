@@ -7840,9 +7840,9 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
       >
         <circle
           cx="18"
-          cy="18"
+          cy="14"
           opacity="0.4"
-          r="8.125"
+          r="11"
         />
       </svg>
       <span
