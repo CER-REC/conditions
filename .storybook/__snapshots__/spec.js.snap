@@ -24077,7 +24077,7 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
       x="0"
       y="24"
     >
-      For Project
+      for Project
     </text>
     <line
       className="connectingLine"
