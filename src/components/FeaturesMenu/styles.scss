@@ -33,9 +33,10 @@ $select-side-padding: 0.4em;
   &.dropDown {
 
     margin-bottom: 8px;
-
+    
     .Dropdown {
       width: 100px;
+      background-color: $LightGray;
     }
 
     .title {

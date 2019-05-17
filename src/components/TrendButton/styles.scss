@@ -7,7 +7,6 @@
   left: -1px;
   height: 36px;
   width: 100px;
-  border: 1px solid $Gray160;
   overflow: hidden;
 
   margin-bottom: 12px;
@@ -49,9 +48,5 @@
     padding: 0px;
     margin: 0px;
   }
-  .trendArrow {
-    position: absolute;
-    right: 5%;
-    bottom: 10%;
-  }
+  
 }
