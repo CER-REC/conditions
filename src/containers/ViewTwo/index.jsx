@@ -24,6 +24,7 @@ import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
+import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
 const noop = () => {};
 
@@ -97,13 +98,16 @@ const ViewTwo = props => (
           </div>
         )
         : (
-          <ProjectMenu
-            loading={props.projectMenuLoading}
-            projectsData={props.projectsData}
-            selectedProjectID={props.selected.project}
-            onChange={props.setSelectedProject}
-            selectedFeature={props.selected.feature}
-          />
+          <React.Fragment>
+            <TotalConditionsLabel />
+            <ProjectMenu
+              loading={props.projectMenuLoading}
+              projectsData={props.projectsData}
+              selectedProjectID={props.selected.project}
+              onChange={props.setSelectedProject}
+              selectedFeature={props.selected.feature}
+            />
+          </React.Fragment>
         )
       }
     </section>
@@ -119,14 +123,14 @@ const ViewTwo = props => (
         projectData={conditionCountsByYear.counts}
         instrumentData={conditionCountsByCommodity.counts}
       />
+    </section>
+
+    <section className="legend">
       <FeaturesMenu
         dropDown
         selected={props.selected.feature}
         onChange={props.setSelectedFeature}
       />
-    </section>
-
-    <section className="legend">
       <FeaturesLegend
         legendItems={props.legendItems}
         selectedFeature={props.selected.feature}

@@ -104,27 +104,21 @@
   }
 
   .AssociatedComp {
-    position: relative;
-
-    margin-top: 11px;
-    text-align: left;
-
-    height: 11px;
-    line-height: 11px;
-    vertical-align: middle;
-
+    position: absolute;
+    bottom: 0;
+    right: 0;
     .Asterisk {
+      position: relative;
+      top: 5px;
+      margin-right: 4px;
       display: inline-block;
       font-size: 18px;
-      line-height: normal;
       color: $VeryDarkGray;
     }
 
     .AssociatedDesc {
-      position: absolute;
-      top: 0;
-      left: 24px;
-      line-height: normal;
+      display: inline-block;
+      position: relative;
     }
   }
 }

@@ -395,6 +395,10 @@
     },
     "dotLegend": {
       "text": "NEB Regulated Project with Conditions"
+    },
+    "totalConditionsLabel" : {
+      "total": "Total Conditions",
+      "forProject": "for Project"
     }
   },
   "views": {
