@@ -18352,7 +18352,7 @@ exports[`Storyshots Components|SelectedGroupBar default 1`] = `
           }
         }
       >
-        condition
+        Example Company Name
       </span>
     </p>
   </div>

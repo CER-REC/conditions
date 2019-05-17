@@ -6,7 +6,7 @@ import {
   VictoryChart,
   VictoryGroup,
 } from 'victory';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedMessage, intlShape } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
 import { allConditionsPerYear, featureTypes } from '../../proptypes';
@@ -23,6 +23,8 @@ class StreamGraph extends React.Component {
     feature: featureTypes.isRequired,
     subFeature: PropTypes.string.isRequired,
     streamOnly: PropTypes.bool,
+    intl: intlShape.isRequired,
+
   }
 
   static defaultProps = {
@@ -131,18 +133,20 @@ class StreamGraph extends React.Component {
       },
     };
 
+    const { intl } = this.props;
+
     return (
       <VictoryChart animate={streamAnimation} width={600} height={330}>
         <VictoryAxis
           dependentAxis
-          label="Number of Conditions"
+          label={intl.formatMessage({ id: 'components.streamGraph.axis.yAxis' })}
           tickValues={[minConditionCount, maxConditionTotal]}
           tickFormat={Math.round}
           className="axis-label"
           style={axisStyles}
         />
         <VictoryAxis
-          label="Effective Date"
+          label={intl.formatMessage({ id: 'components.streamGraph.axis.xAxis' })}
           tickFormat={Math.round}
           className="axis-label"
           domain={[minDate, maxDate]}
@@ -164,7 +168,6 @@ class StreamGraph extends React.Component {
 
   render() {
     this.processProjectData();
-
     return (
       <div
         className="StreamGraph"
@@ -181,4 +184,4 @@ class StreamGraph extends React.Component {
   }
 }
 
-export default StreamGraph;
+export default injectIntl(StreamGraph);
