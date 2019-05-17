@@ -245,7 +245,7 @@
         "projectYear": "Filter by Project Year",
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
-          "INPROGRESS": "In Progress",
+          "IN_PROGRESS": "In Progress",
           "COMPLETED": "Completed"
 
         }

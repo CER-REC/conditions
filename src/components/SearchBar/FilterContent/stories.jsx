@@ -5,7 +5,7 @@ import withStatus from '../../../../.storybook/addon-status';
 import FilterContent from '.';
 import ReadMe from './README.md';
 
-const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
+const allProjectStatuses = ['IN_PROGRESS', 'COMPLETED'];
 const initialYearRange = {
   start: 1970,
   end: 1980,

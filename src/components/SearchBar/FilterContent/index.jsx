@@ -7,7 +7,7 @@ import CircleContainer from '../../CircleContainer';
 import { yearRangeType } from '../../../proptypes';
 import './styles.scss';
 
-const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
+const allProjectStatuses = ['IN_PROGRESS', 'COMPLETED'];
 
 const findListItemValue = (target, depth = 0) => {
   if (target.value) { return Number(target.value); }

@@ -29,7 +29,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
       state: {
         includeKeywords: ['safety'],
         excludeKeywords: [],
-        projectStatus: ['INPROGRESS', 'COMPLETED'],
+        projectStatus: ['IN_PROGRESS', 'COMPLETED'],
         yearRange: { start: 1970, end: 1980 },
         findAny: true,
       },
