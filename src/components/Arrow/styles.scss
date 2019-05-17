@@ -1,0 +1,23 @@
+@import '../../styles/colors.scss';
+
+.Arrow {
+  height:22px;
+  width: 22px;
+  fill: $LinksTextButtons;
+
+  &.Up{
+    transform: rotate(0deg);
+  }
+  &.Down{
+    transform: rotate(180deg);
+  }
+  &.Left{
+    transform: rotate(270deg);
+  }
+  &.Right{
+    transform: rotate(90deg);
+  }  
+  
+}
+
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallowWithIntl } from '../../tests/utilities';
 import StreamGraph from '.';
 import { conditionCountsByYear } from '../../mockData';
 
@@ -8,7 +8,7 @@ describe('Components|StreamGraph', () => {
     let wrapper;
     let handleOnChange;
     beforeEach(() => {
-      wrapper = shallow(<StreamGraph
+      wrapper = shallowWithIntl(<StreamGraph
         countsData={conditionCountsByYear.counts}
         handleOnChange={handleOnChange}
         feature="theme"

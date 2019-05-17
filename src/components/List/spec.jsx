@@ -90,16 +90,6 @@ describe('Components|List', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
     });
 
-    test('should recognize scrolling up', () => {
-      wrapper.find('.List').first().simulate('wheel', { deltaY: -1, ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(0);
-    });
-
-    test('should recognize scrolling down', () => {
-      wrapper.find('.List').first().simulate('wheel', { deltaY: 1, ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(2);
-    });
-
     test('should not scroll if the delta is 0', () => {
       wrapper.find('.List').first().simulate('wheel', { deltaY: 0, ...eventFuncs });
       expect(spy).not.toHaveBeenCalled();
@@ -193,11 +183,6 @@ describe('Components|List', () => {
       expect(spy).toHaveBeenLastCalledWith(2);
       expect(spy).toHaveBeenCalledTimes(1);
     });
-
-    test('should render the arrows with vertical icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('up');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('down');
-    });
   });
 
   describe('styling', () => {
@@ -225,11 +210,6 @@ describe('Components|List', () => {
 
     test('should render with the horizontal class', () => {
       expect(wrapper.hasClass('horizontal')).toBe(true);
-    });
-
-    test('should render the arrows with horizontal icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('left');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('right');
     });
   });
 });

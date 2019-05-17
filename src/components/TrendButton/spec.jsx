@@ -22,9 +22,6 @@ describe('Components|TrendButton', () => {
     test('should render a div with a className of buttonText', () => {
       expect(wrapper.find('div.buttonText')).toHaveLength(1);
     });
-    test('should render StreamGraph Component', () => {
-      expect(wrapper.find('StreamGraph')).toHaveLength(1);
-    });
     test('should render a FormattedMessage component for button text', () => {
       const messageWrapper = wrapper.find(FormattedMessage);
       expect(messageWrapper).toHaveLength(1);
@@ -33,7 +30,6 @@ describe('Components|TrendButton', () => {
       expect(updatedWrapper.find('p')).toHaveLength(2);
     });
   });
-
   describe('when a trendButton is clicked', () => {
     let spy;
     let wrapper;

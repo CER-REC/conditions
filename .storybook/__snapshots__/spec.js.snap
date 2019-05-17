@@ -1,5 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components|Arrow Down orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow Down"
+  >
+    <svg
+      height="22"
+      width="22"
+    >
+      <polyline
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Arrow Left orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow Left"
+  >
+    <svg
+      height="22"
+      width="22"
+    >
+      <polyline
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Arrow Right orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow Right"
+  >
+    <svg
+      height="22"
+      width="22"
+    >
+      <polyline
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|Arrow Up orientation 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Arrow Up"
+  >
+    <svg
+      height="22"
+      width="22"
+    >
+      <polyline
+        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+      />
+    </svg>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|BarContainer default 1`] = `
 <div
   className="visualization"
@@ -215,7 +291,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -276,7 +352,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -357,7 +433,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -418,7 +494,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -499,7 +575,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -560,7 +636,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -632,7 +708,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByCompany 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -704,7 +780,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByLocation 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -776,7 +852,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn with state toggle 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -913,7 +989,7 @@ exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
         y="-12"
       >
         With Circle
-        
+
       </text>
     </g>
   </svg>
@@ -955,7 +1031,7 @@ exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
         y="-12"
       >
         Without circle
-        
+
       </text>
     </g>
   </svg>
@@ -1086,7 +1162,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     >
       <h2>
         Full Project Name:
-         
+
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -1206,7 +1282,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     >
       <h2>
         Full Project Name:
-         
+
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -1328,7 +1404,790 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         className="ProjectHeader"
       >
         <h1>
-          Selected Project: 
+          Selected Project:
+        </h1>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h2>
+            Keystone XL
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+      </div>
+      <div
+        className="listPane"
+      >
+        <div
+          className="ConditionList"
+        >
+          <circle
+            r={33}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(285.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={285.6691258637172}
+            y="192.49143055"
+          >
+            OPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={20}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(252.18835663 239.85215364)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={252.188356632948}
+            y="239.85215364"
+          >
+            OPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(14, 43, 140)",
+              }
+            }
+            transform="translate(367.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={379.6691258637172}
+            y="192.49143055"
+          >
+            OPL
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EPE"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={7}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(339.00245920 267.17892764)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={348.00245919705054}
+            y="267.17892764"
+          >
+            EPE
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(478.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={478.216320468198}
+            y="165.65082116"
+          >
+            GPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EC"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={21}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(544.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={544.216320468198}
+            y="165.65082116"
+          >
+            EC
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(533.52692653 232.80539552)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={545.5269265288041}
+            y="232.80539552"
+          >
+            GPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="AO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={15}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(621.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={621.0073775911517}
+            y="200.00000000"
+          >
+            AO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="MO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={5}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(662.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={669.0073775911517}
+            y="200.00000000"
+          >
+            MO
+          </text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ChartIndicator allThemes 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height={300}
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width={300}
+  >
+    <g
+      className="ChartIndicator"
+      transform="translate(50, 30)"
+    >
+      <path
+        className="arrow"
+        d="M -5 -10 L 5 -10 L 0 0 z"
+      />
+      <line
+        className="line"
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={90}
+      />
+      <text
+        alignmentBaseline="bottom"
+        textAnchor="middle"
+        x="0"
+        y="-12"
+      >
+        Without circle
+        *
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height={300}
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width={300}
+  >
+    <g
+      className="ChartIndicator"
+      transform="translate(50, 30)"
+    >
+      <path
+        className="arrow"
+        d="M -5 -10 L 5 -10 L 0 0 z"
+      />
+      <line
+        className="line"
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={90}
+      />
+      <circle
+        className="selectedCircle"
+        cx={0}
+        cy={130}
+        r={40}
+        strokeWidth={4}
+      />
+      <text
+        alignmentBaseline="bottom"
+        textAnchor="middle"
+        x="0"
+        y="-12"
+      >
+        With Circle
+
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height={300}
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width={300}
+  >
+    <g
+      className="ChartIndicator"
+      transform="translate(50, 30)"
+    >
+      <path
+        className="arrow"
+        d="M -5 -10 L 5 -10 L 0 0 z"
+      />
+      <line
+        className="line"
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={90}
+      />
+      <text
+        alignmentBaseline="bottom"
+        textAnchor="middle"
+        x="0"
+        y="-12"
+      >
+        Without circle
+
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with icon 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+      &lt;
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer blue"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+       
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".CircleContainer.blue { background: blue }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with prop: onClick  1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+    tabIndex={0}
+  >
+    <div>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with text 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+      150
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CompanyPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal CompanyPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="Company"
+    >
+      <h2>
+        Full Project Name:
+
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h2>
+      <h3>
+        Companies associated with this project
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CompanyPopup"
+  >
+    <div
+      className="Company"
+    >
+      <h2>
+        Full Project Name:
+
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h2>
+      <h3>
+        Companies associated with this project
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails default 1`] = `
+<div
+  className="visualization"
+>
+  <section
+    className="ConditionDetails"
+  >
+    <div
+      className="main"
+    >
+      <div
+        className="ProjectHeader"
+      >
+        <h1>
+          Selected Project:
         </h1>
         <button
           className="openProject"
@@ -1356,7 +2215,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         >
           <div
             className="List"
-            onWheel={[Function]}
           >
             <ul>
               <li
@@ -1475,23 +2333,14 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow Up"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-up"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="22"
+                        width="22"
                       >
-                        <path
-                          d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -1528,23 +2377,14 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow Down"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-down"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="22"
+                        width="22"
                       >
-                        <path
-                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -1698,7 +2538,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Issuance Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -1709,7 +2549,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Number
             </span>
-            : 
+            :
             <button
               className="instrumentLink"
               focusable={true}
@@ -1729,7 +2569,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Effective Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -1740,7 +2580,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Status
             </span>
-            : 
+            :
             <span>
               In Progress
             </span>
@@ -1753,7 +2593,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Sunset Date
             </span>
-            : 
+            :
             2019-01-30
           </div>
           <div
@@ -1764,7 +2604,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Location
             </span>
-            : 
+            :
             Albuquerque, NM
           </div>
           <div
@@ -1775,7 +2615,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Type
             </span>
-            : 
+            :
             Construction of Oil Pipeline
           </div>
           <p
@@ -1786,23 +2626,23 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Activity
             </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+            :
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
           </p>
           <p
             className="contentText"
           >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
           </p>
           <p
             className="contentText"
           >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
           </p>
           <p
             className="contentText"
           >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
           </p>
           <p
             className="contentText"
@@ -1865,7 +2705,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           className="ProjectHeader"
         >
           <h1>
-            Selected Project: 
+            Selected Project:
           </h1>
           <button
             className="openProject"
@@ -1915,7 +2755,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           >
             <div
               className="List"
-              onWheel={[Function]}
             >
               <ul>
                 <li
@@ -2034,23 +2873,14 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="Icon"
+                        className="Arrow Up"
                       >
                         <svg
-                          aria-hidden="true"
-                          className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                          color=""
-                          data-icon="angle-up"
-                          data-prefix="fas"
-                          role="img"
-                          style={Object {}}
-                          viewBox="0 0 320 512"
-                          xmlns="http://www.w3.org/2000/svg"
+                          height="22"
+                          width="22"
                         >
-                          <path
-                            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                            fill="currentColor"
-                            style={Object {}}
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                           />
                         </svg>
                       </div>
@@ -2087,23 +2917,14 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div>
                       <div
-                        className="Icon"
+                        className="Arrow Down"
                       >
                         <svg
-                          aria-hidden="true"
-                          className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                          color=""
-                          data-icon="angle-down"
-                          data-prefix="fas"
-                          role="img"
-                          style={Object {}}
-                          viewBox="0 0 320 512"
-                          xmlns="http://www.w3.org/2000/svg"
+                          height="22"
+                          width="22"
                         >
-                          <path
-                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                            fill="currentColor"
-                            style={Object {}}
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                           />
                         </svg>
                       </div>
@@ -2257,7 +3078,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Issuance Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -2268,7 +3089,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Number
               </span>
-              : 
+              :
               <button
                 className="instrumentLink"
                 focusable={true}
@@ -2288,7 +3109,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Effective Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -2299,7 +3120,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Status
               </span>
-              : 
+              :
               <span>
                 In Progress
               </span>
@@ -2312,7 +3133,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Sunset Date
               </span>
-              : 
+              :
               2019-01-30
             </div>
             <div
@@ -2323,7 +3144,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Location
               </span>
-              : 
+              :
               Albuquerque, NM
             </div>
             <div
@@ -2334,7 +3155,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Type
               </span>
-              : 
+              :
               Construction of Oil Pipeline
             </div>
             <p
@@ -2345,23 +3166,23 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Activity
               </span>
-              : 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+              :
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
             </p>
             <p
               className="contentText"
             >
-              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
             </p>
             <p
               className="contentText"
             >
-              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
             </p>
             <p
               className="contentText"
             >
-              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
             </p>
             <p
               className="contentText"
@@ -2424,7 +3245,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         className="ProjectHeader location"
       >
         <h1>
-          Selected Condition: 
+          Selected Condition:
         </h1>
       </div>
       <div
@@ -2435,7 +3256,6 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         >
           <div
             className="List"
-            onWheel={[Function]}
           >
             <ul>
               <li
@@ -2554,23 +3374,14 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow Up"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-up"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="22"
+                        width="22"
                       >
-                        <path
-                          d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -2607,23 +3418,14 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div>
                     <div
-                      className="Icon"
+                      className="Arrow Down"
                     >
                       <svg
-                        aria-hidden="true"
-                        className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                        color=""
-                        data-icon="angle-down"
-                        data-prefix="fas"
-                        role="img"
-                        style={Object {}}
-                        viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="22"
+                        width="22"
                       >
-                        <path
-                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                          fill="currentColor"
-                          style={Object {}}
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                         />
                       </svg>
                     </div>
@@ -2777,7 +3579,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Issuance Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -2788,7 +3590,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Number
             </span>
-            : 
+            :
             <button
               className="instrumentLink"
               focusable={true}
@@ -2808,7 +3610,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Effective Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -2819,7 +3621,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Status
             </span>
-            : 
+            :
             <span>
               In Progress
             </span>
@@ -2832,7 +3634,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Sunset Date
             </span>
-            : 
+            :
             2019-01-30
           </div>
           <div
@@ -2843,7 +3645,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Location
             </span>
-            : 
+            :
             Albuquerque, NM
           </div>
           <div
@@ -2854,7 +3656,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Type
             </span>
-            : 
+            :
             Construction of Oil Pipeline
           </div>
           <p
@@ -2865,23 +3667,23 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Activity
             </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+            :
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
           </p>
           <p
             className="contentText"
           >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
           </p>
           <p
             className="contentText"
           >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
           </p>
           <p
             className="contentText"
           >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
           </p>
           <p
             className="contentText"
@@ -2927,7 +3729,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
     >
       <div
         className="List"
-        onWheel={[Function]}
       >
         <ul>
           <li
@@ -3030,23 +3831,14 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="Icon"
+                  className="Arrow Up"
                 >
                   <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                    color=""
-                    data-icon="angle-up"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 320 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="22"
+                    width="22"
                   >
-                    <path
-                      d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                      fill="currentColor"
-                      style={Object {}}
+                    <polyline
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                     />
                   </svg>
                 </div>
@@ -3083,23 +3875,14 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div>
                 <div
-                  className="Icon"
+                  className="Arrow Down"
                 >
                   <svg
-                    aria-hidden="true"
-                    className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                    color=""
-                    data-icon="angle-down"
-                    data-prefix="fas"
-                    role="img"
-                    style={Object {}}
-                    viewBox="0 0 320 512"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="22"
+                    width="22"
                   >
-                    <path
-                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                      fill="currentColor"
-                      style={Object {}}
+                    <polyline
+                      points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                     />
                   </svg>
                 </div>
@@ -3244,7 +4027,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Effective Date
         </span>
-        : 
+        :
         2014-10-24
       </div>
       <div
@@ -3255,7 +4038,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Instrument Number
         </span>
-        : 
+        :
         <button
           className="instrumentLink"
           focusable={true}
@@ -3275,7 +4058,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Keywords
         </span>
-        : 
+        :
         program
       </div>
       <p
@@ -3286,23 +4069,23 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Text
         </span>
-        : 
-        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+        :
+        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
       </p>
       <p
         className="contentText"
       >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
       </p>
       <p
         className="contentText"
       >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
       </p>
       <p
         className="contentText"
       >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
       </p>
       <p
         className="contentText"
@@ -3352,7 +4135,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Issuance Date
         </span>
-        : 
+        :
         2014-10-24
       </div>
       <div
@@ -3363,7 +4146,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Number
         </span>
-        : 
+        :
         <button
           className="instrumentLink"
           focusable={true}
@@ -3383,7 +4166,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Effective Date
         </span>
-        : 
+        :
         2014-10-24
       </div>
       <div
@@ -3394,7 +4177,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Status
         </span>
-        : 
+        :
         <span>
           In Progress
         </span>
@@ -3407,7 +4190,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Sunset Date
         </span>
-        : 
+        :
         2019-01-30
       </div>
       <div
@@ -3418,7 +4201,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Location
         </span>
-        : 
+        :
         Albuquerque, NM
       </div>
       <div
@@ -3429,7 +4212,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Type
         </span>
-        : 
+        :
         Construction of Oil Pipeline
       </div>
       <p
@@ -3440,23 +4223,23 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Activity
         </span>
-        : 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+        :
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
       </p>
       <p
         className="contentText"
       >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
       </p>
       <p
         className="contentText"
       >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
       </p>
       <p
         className="contentText"
       >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
       </p>
       <p
         className="contentText"
@@ -3504,7 +4287,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a full block
       </div>
       <div
@@ -3515,7 +4298,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a full block
       </div>
     </div>
@@ -3539,7 +4322,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a half block
       </div>
       <div
@@ -3550,7 +4333,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a half block
       </div>
     </div>
@@ -3585,7 +4368,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Theme
           </span>
-          : 
+          :
           <span>
             Environmental Protection
           </span>
@@ -3598,7 +4381,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Instrument
           </span>
-          : 
+          :
           <span>
             Construction
           </span>
@@ -3611,7 +4394,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Phase
           </span>
-          : 
+          :
           <span>
             During Construction Phase
           </span>
@@ -3624,7 +4407,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Type
           </span>
-          : 
+          :
           <span>
             Standard
           </span>
@@ -3637,7 +4420,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Status
           </span>
-          : 
+          :
           <span>
             In Progress
           </span>
@@ -3650,7 +4433,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Filing
           </span>
-          : 
+          :
           <span>
             No Filing Required
           </span>
@@ -3672,7 +4455,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -3729,7 +4512,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       className="ProjectHeader location"
     >
       <h1>
-        Selected Condition: 
+        Selected Condition:
       </h1>
     </div>
   </div>
@@ -3747,7 +4530,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -3890,28 +4673,28 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           The genesis and scope of conditions
         </h1>
         <p>
-          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
+          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal
           <a
             href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             laws, acts and regulations
-             
+
           </a>
            are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
         </p>
         <p>
-          These different sorts of requirements expressed in conditions are the Themes which can be explored 
+          These different sorts of requirements expressed in conditions are the Themes which can be explored
           <a
             href=""
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             here
-             
+
           </a>
            in this data visualization.
         </p>
@@ -3919,48 +4702,48 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
         </p>
         <p>
-          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
+          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable
           <a
             href=""
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             here
-             
+
           </a>
           . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
         </p>
         <p>
-          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
+          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the
           <a
             href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             application process
-             
+
           </a>
-           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
+           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in
           <a
             href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             hearings
-             
+
           </a>
-          , individuals must apply (more info about how to become an intervenor 
+          , individuals must apply (more info about how to become an intervenor
           <a
             href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             here
-             
+
           </a>
           )
         </p>
@@ -3970,7 +4753,6 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
       >
         <div
           className="List horizontal"
-          onWheel={[Function]}
         >
           <ul>
             <li
@@ -3991,23 +4773,14 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
               >
                 <div>
                   <div
-                    className="Icon"
+                    className="Arrow Left"
                   >
                     <svg
-                      aria-hidden="true"
-                      className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                      color=""
-                      data-icon="angle-left"
-                      data-prefix="fas"
-                      role="img"
-                      style={Object {}}
-                      viewBox="0 0 256 512"
-                      xmlns="http://www.w3.org/2000/svg"
+                      height="22"
+                      width="22"
                     >
-                      <path
-                        d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                        fill="currentColor"
-                        style={Object {}}
+                      <polyline
+                        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                       />
                     </svg>
                   </div>
@@ -4107,23 +4880,14 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
               >
                 <div>
                   <div
-                    className="Icon"
+                    className="Arrow Right"
                   >
                     <svg
-                      aria-hidden="true"
-                      className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                      color=""
-                      data-icon="angle-right"
-                      data-prefix="fas"
-                      role="img"
-                      style={Object {}}
-                      viewBox="0 0 256 512"
-                      xmlns="http://www.w3.org/2000/svg"
+                      height="22"
+                      width="22"
                     >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                        fill="currentColor"
-                        style={Object {}}
+                      <polyline
+                        points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                       />
                     </svg>
                   </div>
@@ -4372,7 +5136,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     className="FeatureTypesDescription"
   >
     <p>
-      * 
+      *
       Conditions with multiple themes are counted more than once.
     </p>
     <h4
@@ -4672,7 +5436,7 @@ exports[`Storyshots Components|FeatureTypesDescription instrument types 1`] = `
     className="FeatureTypesDescription"
   >
     <p>
-      * 
+      *
       The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.
     </p>
     <h4
@@ -5161,7 +5925,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           <span
             className="FlagDesc"
           >
-             &gt;10 
+             &gt;10
           </span>
         </div>
       </div>
@@ -5230,7 +5994,6 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
     </span>
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -5251,23 +6014,14 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow Up"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-up"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  height="22"
+                  width="22"
                 >
-                  <path
-                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -5299,23 +6053,14 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow Down"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                  color=""
-                  data-icon="angle-down"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 320 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  height="22"
+                  width="22"
                 >
-                  <path
-                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -5714,40 +6459,42 @@ exports[`Storyshots Components|List arrows at edges 1`] = `
       <li
         className="List-Arrow"
       >
-        <div
-          className="CircleContainer arrow arrowPrevious hidden"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          style={
-            Object {
-              "height": 24,
-              "width": 24,
-            }
-          }
-          tabIndex={0}
+        Not Specified
+      </span>
+    </span>
+    <div
+      className="List guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item selected"
         >
-          <div>
-            <div
-              className="Icon"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Up"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -5811,23 +6558,40 @@ exports[`Storyshots Components|List arrows at edges 1`] = `
             <div
               className="Icon"
             >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                className="indicators"
+              />
+              <span>
+                All Instruments
+              </span>
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Down"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -6111,18 +6875,15 @@ exports[`Storyshots Components|List component items 1`] = `
       <li
         className="List-Item selected"
       >
-        <div
-          className="CircleContainer arrow arrowPrevious hidden"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          style={
-            Object {
-              "height": 24,
-              "width": 24,
-            }
-          }
-          tabIndex={0}
+        Not Specified
+      </span>
+    </span>
+    <div
+      className="List guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item"
         >
           <div>
             <div
@@ -6230,40 +6991,30 @@ exports[`Storyshots Components|List component items 1`] = `
                 "width": 50,
               }
             }
-          />
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|List guide line 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="List guideLine"
-    onWheel={[Function]}
-  >
-    <ul>
-      <li
-        className="List-Item selected"
-      >
-        <div
-          className="CircleContainer arrow arrowPrevious hidden"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          style={
-            Object {
-              "height": 24,
-              "width": 24,
-            }
-          }
-          tabIndex={0}
-        >
-          <div>
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Up"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
             <div
               className="Icon"
             >
@@ -6306,30 +7057,21 @@ exports[`Storyshots Components|List guide line 1`] = `
               "height": 24,
               "width": 24,
             }
-          }
-          tabIndex={0}
-        >
-          <div>
-            <div
-              className="Icon"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-down fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-down"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Down"
               >
-                <path
-                  d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -6607,13 +7349,51 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components|List selected 1`] = `
+exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore Button 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="KeywordExplorerButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="buttonText"
+    >
+      <svg
+        className="keywordExplorerCircle"
+      >
+        <circle
+          cx="18"
+          cy="14"
+          opacity="0.4"
+          r="12"
+        />
+      </svg>
+      <span
+        className="descriptionText"
+      >
+        <p>
+          Keyword
+        </p>
+        <p>
+          Explorer
+        </p>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|List arrows at edges 1`] = `
 <div
   className="visualization"
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -6634,23 +7414,14 @@ exports[`Storyshots Components|List selected 1`] = `
         >
           <div>
             <div
-              className="Icon"
+              className="Arrow Up"
             >
               <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-angle-up fa-w-10 fa-1x "
-                color=""
-                data-icon="angle-up"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 320 512"
-                xmlns="http://www.w3.org/2000/svg"
+                height="22"
+                width="22"
               >
-                <path
-                  d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
-                  fill="currentColor"
-                  style={Object {}}
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
               </svg>
             </div>
@@ -6840,40 +7611,38 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
+          <div>
+            <div
+              className="Arrow Down"
+            >
+              <svg
+                height="22"
+                width="22"
               >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
-                  color=""
-                  data-icon="envelope"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
             </div>
           </div>
         </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="List horizontal"
+  >
+    <ul>
+      <li
+        className="List-Arrow"
+      >
         <div
           className="ShareIcon"
           focusable={true}
@@ -6881,37 +7650,18 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
+          <div>
+            <div
+              className="Arrow Left"
+            >
+              <svg
+                height="22"
+                width="22"
               >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
-                  color=""
-                  data-icon="twitter"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -6971,29 +7721,21 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
                 "width": 20,
               }
             }
-          >
-            <div>
-              <div
-                className="Icon"
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Arrow Right"
+            >
+              <svg
+                height="22"
+                width="22"
               >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-linkedin fa-w-14 fa-1x "
-                  color=""
-                  data-icon="linkedin"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 448 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -7008,12 +7750,7 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
   className="visualization"
 >
   <div
-    style={
-      Object {
-        "height": 600,
-        "width": 700,
-      }
-    }
+    className="List"
   >
     <div
       className="MainInfoBar"
@@ -7031,58 +7768,20 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           tabIndex={0}
           type="button"
         >
-          <span>
-            About
-          </span>
-        </button>
-        <button
-          className="textButton "
-          focusable={true}
-          id="methodology"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span>
-            Methodology
-          </span>
-        </button>
-        <button
-          className="textButton "
-          focusable={true}
-          id="download"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span>
-            Download
-          </span>
-        </button>
-      </div>
-      <div
-        className="content"
-      >
-        <div
-          className="AboutBox"
-        >
-          <h1>
-            About
-          </h1>
-          <p>
-            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
-          </p>
-          <p>
-            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
-          </p>
-          <p>
-            We hope we are hitting the mark. Your feedback is essential.
-          </p>
-          <p>
-            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
-          </p>
+          <div>
+            <div
+              className="Arrow Up"
+            >
+              <svg
+                height="22"
+                width="22"
+              >
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -7136,37 +7835,18 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
+          <div>
+            <div
+              className="Arrow Down"
+            >
+              <svg
+                height="22"
+                width="22"
               >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
-                  color=""
-                  data-icon="twitter"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -7263,12 +7943,7 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
   className="visualization"
 >
   <div
-    style={
-      Object {
-        "height": 600,
-        "width": 700,
-      }
-    }
+    className="List"
   >
     <div
       className="MainInfoBar"
@@ -7286,12 +7961,23 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           tabIndex={0}
           type="button"
         >
-          <span>
-            About
-          </span>
-        </button>
-        <button
-          className="textButton "
+          <div>
+            <div
+              className="Arrow Up"
+            >
+              <svg
+                height="22"
+                width="22"
+              >
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          className="List-Item-Content"
           focusable={true}
           id="methodology"
           onClick={[Function]}
@@ -7312,13 +7998,24 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           tabIndex={0}
           type="button"
         >
-          <span>
-            Download
-          </span>
-        </button>
-      </div>
-      <div
-        className="content"
+          <div>
+            <div
+              className="Arrow Down"
+            >
+              <svg
+                height="22"
+                width="22"
+              >
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="List-Item"
       >
         <div
           className="AboutBox"
@@ -7358,29 +8055,50 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
                 "width": 20,
               }
             }
-          >
-            <div>
-              <div
-                className="Icon"
+          />
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|List guide line 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="List guideLine"
+  >
+    <ul>
+      <li
+        className="List-Item selected"
+      >
+        <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Arrow Up"
+            >
+              <svg
+                height="22"
+                width="22"
               >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
-                  color=""
-                  data-icon="envelope"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -7399,29 +8117,21 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
                 "width": 20,
               }
             }
-          >
-            <div>
-              <div
-                className="Icon"
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Arrow Down"
+            >
+              <svg
+                height="22"
+                width="22"
               >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
-                  color=""
-                  data-icon="twitter"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -7518,12 +8228,7 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
   className="visualization"
 >
   <div
-    style={
-      Object {
-        "height": 600,
-        "width": 700,
-      }
-    }
+    className="List horizontal"
   >
     <div
       className="MainInfoBar"
@@ -7554,45 +8259,20 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           tabIndex={0}
           type="button"
         >
-          <span>
-            Methodology
-          </span>
-        </button>
-        <button
-          className="textButton "
-          focusable={true}
-          id="download"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span>
-            Download
-          </span>
-        </button>
-      </div>
-      <div
-        className="content"
-      >
-        <div
-          className="AboutBox"
-        >
-          <h1>
-            About
-          </h1>
-          <p>
-            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
-          </p>
-          <p>
-            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
-          </p>
-          <p>
-            We hope we are hitting the mark. Your feedback is essential.
-          </p>
-          <p>
-            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
-          </p>
+          <div>
+            <div
+              className="Arrow Left"
+            >
+              <svg
+                height="22"
+                width="22"
+              >
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -7646,37 +8326,18 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
-          <div
-            className="CircleContainer"
-            style={
-              Object {
-                "height": 20,
-                "width": 20,
-              }
-            }
-          >
-            <div>
-              <div
-                className="Icon"
+          <div>
+            <div
+              className="Arrow Right"
+            >
+              <svg
+                height="22"
+                width="22"
               >
-                <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-twitter fa-w-16 fa-1x "
-                  color=""
-                  data-icon="twitter"
-                  data-prefix="fab"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
-              </div>
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -7834,43 +8495,95 @@ exports[`Storyshots Components|PopupBtn default 1`] = `
 <div
   className="visualization"
 >
-  <a
-    className="PopupBtn"
-    href="https://www.example.com"
+  <div
+    className="List"
   >
-    <div>
-      Example
-    </div>
-    <svg
-      className="buttonIcon"
-      viewBox="0 0 100 100"
-    >
-      <circle
-        cx="50"
-        cy="50"
-        r="40"
-      />
-      <path
-        d="
-  M 46 28
-  a 4 4 0 0 1 8,0
-  v 18
-  h 18
-  a 4 4 0 0 1 0,8
-  h -18
-  v 18
-  a 4 4 0 0 1 -8,0
-  v -18
-  h -18
-  a 4 4 0 0 1 0,-8
-  h 18
-  v -18
-  Z
-"
-        fill="white"
-      />
-    </svg>
-  </a>
+    <ul>
+      <li
+        className="List-Item selected"
+      >
+        <div
+          className="CircleContainer arrow arrowPrevious hidden"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Arrow Up"
+            >
+              <svg
+                height="22"
+                width="22"
+              >
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          className="List-Item-Content"
+        >
+          Item 1
+        </div>
+        <div
+          className="CircleContainer arrow arrowNext"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+          tabIndex={0}
+        >
+          <div>
+            <div
+              className="Arrow Down"
+            >
+              <svg
+                height="22"
+                width="22"
+              >
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="List-Item"
+      >
+        <div
+          className="List-Item-Content"
+        >
+          Item 2
+        </div>
+      </li>
+      <li
+        className="List-Item"
+      >
+        <div
+          className="List-Item-Content"
+        >
+          Item 3
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 
@@ -7950,7 +8663,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore1 paddingAfter2"
+    className="List"
   >
     <div
       className="pipe"
@@ -7987,30 +8700,14 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart"
+              className="Arrow Up"
             >
-              <div
-                className="ConditionPipe"
+              <svg
+                height="22"
+                width="22"
               >
-                <div
-                  className="CircleContainer ConditionCount"
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                >
-                  <div>
-                    67
-                  </div>
-                </div>
-              </div>
-              <div
-                className="FlagWrapper"
-              >
-                <div
-                  className="FlagPole"
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
                 <div
                   className="FeatureFlag"
@@ -8266,30 +8963,14 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart selected"
+              className="Arrow Down"
             >
-              <div
-                className="ConditionPipe"
+              <svg
+                height="22"
+                width="22"
               >
-                <div
-                  className="CircleContainer ConditionCount"
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                >
-                  <div>
-                    86
-                  </div>
-                </div>
-              </div>
-              <div
-                className="FlagWrapper"
-              >
-                <div
-                  className="FlagPole"
+                <polyline
+                  points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                 />
                 <div
                   className="FeatureFlag"
@@ -10493,7 +11174,6 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -10756,23 +11436,14 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow Left"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-left fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-left"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  height="22"
+                  width="22"
                 >
-                  <path
-                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -11027,29 +11698,63 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow Right"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  height="22"
+                  width="22"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
             </div>
           </div>
         </li>
+      </ul>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu At right 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ProjectMenu paddingBefore1 paddingAfter1"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="List horizontal"
+    >
+      <ul>
         <li
           className="List-Item"
         >
@@ -11296,6 +12001,34 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           className="List-Item"
         >
           <div
+            className="CircleContainer arrow arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
             className="List-Item-Content"
             focusable={true}
             onClick={[Function]}
@@ -11506,6 +12239,52 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       }
                     }
                     title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(1px * 7)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 7"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </div>
                 <div
@@ -11820,6 +12599,49 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
             </div>
           </div>
         </li>
+      </ul>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ProjectMenu paddingBefore1 paddingAfter0"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 4,
+        }
+      }
+    />
+    <div
+      className="List horizontal"
+    >
+      <ul>
         <li
           className="List-Item selected"
         >
@@ -12109,23 +12931,14 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow Left"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  height="22"
+                  width="22"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -12365,11 +13178,35 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                 </div>
               </div>
               <div
-                className="ProjectName"
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
               >
-                <p>
-                  Trans-Alta Limited-44245
-                </p>
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -12944,6 +13781,49 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
             </div>
           </div>
         </li>
+      </ul>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ProjectMenu paddingBefore1 paddingAfter0"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 2,
+        }
+      }
+    />
+    <div
+      className="List horizontal"
+    >
+      <ul>
         <li
           className="List-Item selected"
         >
@@ -13233,23 +14113,14 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           >
             <div>
               <div
-                className="Icon"
+                className="Arrow Left"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-angle-right fa-w-8 fa-1x "
-                  color=""
-                  data-icon="angle-right"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 256 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  height="22"
+                  width="22"
                 >
-                  <path
-                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -13549,7 +14420,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
         className="ProjectName"
       >
         <p>
-          
+
         </p>
       </div>
     </div>
@@ -13716,12 +14587,12 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument 
+        Search for instrument
         <strong>
           #
           XO-001-2018
         </strong>
-         in 
+         in
         <strong>
           Regdocs...
         </strong>
@@ -13884,12 +14755,12 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument 
+        Search for instrument
         <strong>
           #
           XO-001-2018
         </strong>
-         in 
+         in
         <strong>
           Regdocs...
         </strong>
@@ -14460,9 +15331,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-           
+
           Find Words
-           
+
         </span>
         <span
           className="iconSvg"
@@ -14500,9 +15371,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-           
+
           Filter
-           
+
         </span>
         <span
           className="iconSvg"
@@ -14529,15 +15400,15 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         Showing all projects from
       </span>
       <span>
-         
+
         1970
-         - 
+         -
         1980
-         
+
       </span>
       <p>
         Highlighting conditions containing
-         : 
+         :
       </p>
       <div
         className="keywordsText"
@@ -14569,9 +15440,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -14613,32 +15484,18 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
             }
           >
             <div>
-              70
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1971}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              71
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </li>
@@ -14888,9 +15745,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           <span
             className="upperCase"
           >
-             
+
             In Progress
-             
+
           </span>
         </li>
         <li
@@ -14903,9 +15760,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           <span
             className="upperCase"
           >
-             
+
             Completed
-             
+
           </span>
         </li>
       </ul>
@@ -14932,7 +15789,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
     className="SearchBar"
   >
     <div
-      className="FilterContent contentPane"
+      className="List horizontal"
     >
       <div
         className="reset"
@@ -14944,9 +15801,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -15013,182 +15870,18 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
             }
           >
             <div>
-              71
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1972}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              72
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1973}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              73
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1974}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              74
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1975}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              75
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1976}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              76
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1977}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              77
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1978}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              78
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </li>
@@ -15263,9 +15956,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           <span
             className="upperCase"
           >
-             
+
             In Progress
-             
+
           </span>
         </li>
         <li
@@ -15278,9 +15971,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           <span
             className="upperCase"
           >
-             
+
             Completed
-             
+
           </span>
         </li>
       </ul>
@@ -15319,9 +16012,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -15388,82 +16081,18 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
             }
           >
             <div>
-              71
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1972}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              72
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1973}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              73
-            </div>
-          </div>
-        </li>
-        <li
-          className="regularBackground"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          tabIndex={0}
-          value={1974}
-        >
-          <div
-            className="CircleContainer regularCircle selectedInsideCircle"
-            style={
-              Object {
-                "height": 24,
-                "width": 24,
-              }
-            }
-          >
-            <div>
-              74
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </li>
@@ -15638,9 +16267,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           <span
             className="upperCase"
           >
-             
+
             In Progress
-             
+
           </span>
         </li>
         <li
@@ -15653,9 +16282,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           <span
             className="upperCase"
           >
-             
+
             Completed
-             
+
           </span>
         </li>
       </ul>
@@ -15688,15 +16317,15 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         Showing all projects from
       </span>
       <span>
-         
+
         2010
-         - 
+         -
         2018
-         
+
       </span>
       <p>
         Highlighting conditions containing
-         : 
+         :
       </p>
       <div
         className="keywordsText"
@@ -15705,7 +16334,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       </div>
       <p>
         Exclude conditions containing
-         : 
+         :
       </p>
       <div
         className="keywordsText"
@@ -15725,7 +16354,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
     className="SearchBar"
   >
     <div
-      className="SearchContent contentPane"
+      className="List horizontal"
     >
       <div
         className="reset"
@@ -15737,9 +16366,9 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -15827,13 +16456,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="anyText"
         >
           <span>
-             
+
             <span
               className="upperCase"
             >
-               
+
               any
-               
+
             </span>
              of the following:
           </span>
@@ -15842,8 +16471,8 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="keywordsText"
         >
           <span>
-            
-             
+
+
           </span>
         </div>
         <div />
@@ -15880,16 +16509,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <h1
         className="keywordsTitle"
       >
-         
+
         Suggested Keywords
-          
+
       </h1>
       <p
         className="description"
       >
-         
+
         Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
-          
+
       </p>
       <ul
         className="categories"
@@ -15897,9 +16526,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         <li
           className="viewText"
         >
-           
+
           View By
-          :  
+          :
         </li>
         <li
           className="categoryList upperCase selectedCategory"
@@ -15908,7 +16537,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           all
         </li>
         <li
@@ -15918,7 +16547,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           wildlife & habitat
         </li>
         <li
@@ -15928,7 +16557,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           environment
         </li>
         <li
@@ -15938,7 +16567,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           engineering & structures
         </li>
         <li
@@ -15948,7 +16577,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           administration & filings
         </li>
       </ul>
@@ -15957,7 +16586,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       >
         <span>
           Sort by
-           
+
         </span>
         <span
           className={null}
@@ -15966,7 +16595,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           Frequency
         </span>
         |
@@ -15989,22 +16618,31 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           <span
             className="arrow"
           >
-            <svg
-              viewBox="0 0 427.5 427.5"
-            >
-              <g>
-                <path
-                  d="M405.943,290.254L302.096,425.338c-1.04, 1.354-2.66,2.146-4.374,2.146c-1.702,0-3.321-0.798-4.368-2.146L189.511,290.254 c-0.769-0.993-1.144-2.176-1.144-3.357c0-1.152,0.364-2.329, 1.108-3.322c1.499-1.975,4.125-2.707,6.434-1.809l68.76,27.166V21.01 c0-3.047,2.477-5.503,5.515-5.503h55.106c3.038,0,5.509, 2.456,5.509,5.503v287.922l68.76-27.166 c2.305-0.898,4.93-0.166,6.419,1.809C407.473,285.561, 407.461,288.28,405.943,290.254z M238.012,143.913 c0.744-0.993,1.105-2.167,1.105-3.322c0-1.176-0.379-2.367-1.142-3.36L134.125, 2.148C133.081,0.792,131.458,0,129.759,0 c-1.714,0-3.328,0.798-4.377,2.148L21.539,137.23c-1.519, 1.969-1.525,4.69-0.03,6.683c1.487,1.968,4.114,2.707,6.419,1.803 l68.766-27.163v287.919c0,3.05,2.462,5.509,5.506, 5.509h55.109c3.041,0,5.515-2.459,5.515-5.509V118.552l68.763,27.163 C233.886,146.62,236.51,145.88,238.012,143.913z"
-                />
-              </g>
-            </svg>
-          </span>
-          <span
-            className="upperCase"
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
-             
+
             none
-             
+
           </span>
         </span>
       </div>
@@ -16046,7 +16684,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="keywordCategory selectedText"
             >
               deer
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -16112,7 +16750,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="keywordCategory regularText"
             >
               alberta
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -16157,7 +16795,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
           type="button"
         >
-           
+
           Close
         </button>
       </div>
@@ -16214,7 +16852,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               className="keywordCategory regularText"
             >
               deer
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -16255,23 +16893,14 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               tabIndex={0}
             >
               <div
-                className="Icon"
+                className="Arrow Right"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-plus-circle fa-w-16 regularIcon"
-                  color=""
-                  data-icon="plus-circle"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  height="22"
+                  width="22"
                 >
-                  <path
-                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
-                    fill="currentColor"
-                    style={Object {}}
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
                 </svg>
               </div>
@@ -16280,7 +16909,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               className="keywordCategory regularText"
             >
               alberta
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -16385,9 +17014,9 @@ exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
       <span
         className="tabText"
       >
-         
+
         Filter
-         
+
       </span>
       <span
         className="iconSvg"
@@ -16427,9 +17056,9 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
       <span
         className="tabText"
       >
-         
+
         Find Words
-         
+
       </span>
       <span
         className="iconSvg"
@@ -18887,36 +19516,83 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               }
             }
           >
-            <defs>
-              <clipPath
-                id="victory-clip-48"
-              >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,272.3195113575534C50,272.3195113575534,87.02647319343959,264.0267451394532,105.55555555555554,260.03072952963873C124.06353428008326,256.0392651686977,142.5683363761662,251.99591009802225,161.1111111111111,248.3563867931198C179.6054998376695,244.7263605568962,199.37914479328455,247.07199082347333,216.66666666666666,238.21814178509024C236.8657473969637,227.8731303479378,253.1581025803964,186.0219721897115,272.2222222222222,184.76194083366158C290.25269985251896,183.57022741570304,311.8331970056447,230.50239080744097,327.77777777777777,225.62214041147774C352.4684762755703,218.06491499159984,358.2256836076492,78.37666466758735,383.3333333333333,69.86183074265975C399.2153534304524,64.47571276679065,423.1417078493083,85.20484666431375,438.8888888888889,105.80651758931009C465.06507514739815,140.0522136293665,466.2067936261597,259.36684309155913,494.4444444444444,280C510.00979484866417,291.37354942491066,550,280,550,280L550,280C550,280,510.00979484866417,291.37354942491066,494.4444444444444,280C466.20679362615965,259.3668430915591,465.06507514739815,140.0522136293665,438.8888888888889,105.80651758931009C423.1417078493083,85.20484666431375,399.2153534304525,64.47571276679065,383.3333333333333,69.86183074265975C358.2256836076493,78.37666466758735,352.4684762755703,218.0649149915998,327.77777777777777,225.62214041147774C311.8331970056447,230.50239080744097,290.25269985251896,183.57022741570304,272.2222222222222,184.76194083366158C253.1581025803963,186.0219721897115,236.8657473969637,227.8731303479378,216.66666666666666,238.21814178509024C199.37914479328455,247.07199082347333,179.60549983766953,244.7263605568962,161.1111111111111,248.3563867931198C142.5683363761662,251.99591009802225,124.06353428008326,256.0392651686977,105.55555555555554,260.03072952963873C87.0264731934396,264.0267451394532,50,272.3195113575534,50,272.3195113575534Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "#bdbdbd",
-                  "stroke": "#bdbdbd",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-          <g
-            clipPath="url(#victory-clip-49)"
+
+            Completed
+
+          </span>
+        </li>
+      </ul>
+      <button
+        className="closeSearchBar upperCase"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent contentPane"
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="upperCase"
+        >
+
+          Reset
+
+        </span>
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
+        >
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          className="regularBackground leftCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1970}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
                 "height": "100%",
@@ -19305,36 +19981,124 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               }
             }
           >
-            <defs>
-              <clipPath
-                id="victory-clip-59"
-              >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,272.3195113575534C50,272.3195113575534,87.02647319343959,264.0267451394532,105.55555555555554,260.03072952963873C124.06353428008326,256.0392651686977,142.5683363761662,251.99591009802225,161.1111111111111,248.3563867931198C179.6054998376695,244.7263605568962,199.37914479328455,247.07199082347333,216.66666666666666,238.21814178509024C236.8657473969637,227.8731303479378,253.1581025803964,186.0219721897115,272.2222222222222,184.76194083366158C290.25269985251896,183.57022741570304,311.8331970056447,230.50239080744097,327.77777777777777,225.62214041147774C352.4684762755703,218.06491499159984,358.2256836076492,78.37666466758735,383.3333333333333,69.86183074265975C399.2153534304524,64.47571276679065,423.1417078493083,85.20484666431375,438.8888888888889,105.80651758931009C465.06507514739815,140.0522136293665,466.2067936261597,259.36684309155913,494.4444444444444,280C510.00979484866417,291.37354942491066,550,280,550,280L550,280C550,280,510.00979484866417,291.37354942491066,494.4444444444444,280C466.20679362615965,259.3668430915591,465.06507514739815,140.0522136293665,438.8888888888889,105.80651758931009C423.1417078493083,85.20484666431375,399.2153534304525,64.47571276679065,383.3333333333333,69.86183074265975C358.2256836076493,78.37666466758735,352.4684762755703,218.0649149915998,327.77777777777777,225.62214041147774C311.8331970056447,230.50239080744097,290.25269985251896,183.57022741570304,272.2222222222222,184.76194083366158C253.1581025803963,186.0219721897115,236.8657473969637,227.8731303479378,216.66666666666666,238.21814178509024C199.37914479328455,247.07199082347333,179.60549983766953,244.7263605568962,161.1111111111111,248.3563867931198C142.5683363761662,251.99591009802225,124.06353428008326,256.0392651686977,105.55555555555554,260.03072952963873C87.0264731934396,264.0267451394532,50,272.3195113575534,50,272.3195113575534Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "#525252",
-                  "stroke": "#525252",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-          <g
-            clipPath="url(#victory-clip-60)"
+            <div>
+              80
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Status
+        </span>
+      </div>
+      <ul
+        className="projectStatus"
+      >
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+
+            In Progress
+
+          </span>
+        </li>
+        <li
+          className="selectedProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="upperCase"
+          >
+
+            Completed
+
+          </span>
+        </li>
+      </ul>
+      <button
+        className="closeSearchBar upperCase"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="FilterContent contentPane"
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="upperCase"
+        >
+
+          Reset
+
+        </span>
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
+        >
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3 l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8-67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2 c-74.9,79.8-71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="titleText"
+      >
+        <span>
+          Filter by Project Year
+        </span>
+      </div>
+      <ul
+        className="projectList"
+      >
+        <li
+          className="regularBackground leftCurve"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          value={1970}
+        >
+          <div
+            className="CircleContainer regularCircle selectedOutsideCircle"
             style={
               Object {
                 "height": "100%",
@@ -19837,36 +20601,110 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               }
             }
           >
-            <defs>
-              <clipPath
-                id="victory-clip-73"
-              >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,272.3195113575534C50,272.3195113575534,87.02647319343959,264.0267451394532,105.55555555555554,260.03072952963873C124.06353428008326,256.0392651686977,142.5683363761662,251.99591009802225,161.1111111111111,248.3563867931198C179.6054998376695,244.7263605568962,199.37914479328455,247.07199082347333,216.66666666666666,238.21814178509024C236.8657473969637,227.8731303479378,253.1581025803964,186.0219721897115,272.2222222222222,184.76194083366158C290.25269985251896,183.57022741570304,311.8331970056447,230.50239080744097,327.77777777777777,225.62214041147774C352.4684762755703,218.06491499159984,358.2256836076492,78.37666466758735,383.3333333333333,69.86183074265975C399.2153534304524,64.47571276679065,423.1417078493083,85.20484666431375,438.8888888888889,105.80651758931009C465.06507514739815,140.0522136293665,466.2067936261597,259.36684309155913,494.4444444444444,280C510.00979484866417,291.37354942491066,550,280,550,280L550,280C550,280,510.00979484866417,291.37354942491066,494.4444444444444,280C466.20679362615965,259.3668430915591,465.06507514739815,140.0522136293665,438.8888888888889,105.80651758931009C423.1417078493083,85.20484666431375,399.2153534304525,64.47571276679065,383.3333333333333,69.86183074265975C358.2256836076493,78.37666466758735,352.4684762755703,218.0649149915998,327.77777777777777,225.62214041147774C311.8331970056447,230.50239080744097,290.25269985251896,183.57022741570304,272.2222222222222,184.76194083366158C253.1581025803963,186.0219721897115,236.8657473969637,227.8731303479378,216.66666666666666,238.21814178509024C199.37914479328455,247.07199082347333,179.60549983766953,244.7263605568962,161.1111111111111,248.3563867931198C142.5683363761662,251.99591009802225,124.06353428008326,256.0392651686977,105.55555555555554,260.03072952963873C87.0264731934396,264.0267451394532,50,272.3195113575534,50,272.3195113575534Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "#525252",
-                  "stroke": "#525252",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-        </g>
-      </svg>
+
+            Completed
+
+          </span>
+        </li>
+      </ul>
+      <button
+        className="closeSearchBar upperCase"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="HighlightSummary"
+    >
+      <span>
+        Showing all projects from
+      </span>
+      <span>
+
+        2010
+         -
+        2018
+
+      </span>
+      <p>
+        Highlighting conditions containing
+         :
+      </p>
+      <div
+        className="keywordsText"
+      >
+        include1, include2
+      </div>
+      <p>
+        Exclude conditions containing
+         :
+      </p>
+      <div
+        className="keywordsText"
+      >
+        exclude1, exclude2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SearchBar"
+  >
+    <div
+      className="SearchContent contentPane"
+    >
+      <div
+        className="reset"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="upperCase"
+        >
+
+          Reset
+
+        </span>
+        <svg
+          viewBox="0 0 427.5 427.5"
+          width={12}
+        >
+          <path
+            d="M316.2,329.6c-60.9,57.6-157,54.8-214.6 -6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1 -12.3l-55.2,56.8L427,197.5L386.8,11.2l-55.2,56.8c-76.2-71.2-195.8 -67.2-267,9.1c-1.6,1.7-3.2,3.5-4.7,5.2c-74.9,79.8 -71,205.2,8.9,280.2c77.9,73.1,199.7,71.3,275.5-4L316.2,329.6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="includeText"
+      >
+        <span>
+          Include any of:
+        </span>
+      </div>
       <div
         style={
           Object {
@@ -19891,6 +20729,101 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           viewBox="0 0 600 330"
           width={600}
         />
+        <button
+          className="addInput"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            className="Icon"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-plus-circle fa-w-16 iconInline plusIcon"
+              color=""
+              data-icon="plus-circle"
+              data-prefix="fas"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <ul
+        className="searchWords"
+      />
+      <div
+        className="advancedSearchText"
+      >
+        <button
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span>
+            Advanced Search
+          </span>
+        </button>
+      </div>
+      <div
+        className="highlightConditions"
+      >
+        <div
+          className="highlightText"
+        >
+          Highlight conditions containing
+        </div>
+        <div
+          className="anyText"
+        >
+          <span>
+
+            <span
+              className="upperCase"
+            >
+
+              any
+
+            </span>
+             of the following:
+          </span>
+        </div>
+        <div
+          className="keywordsText"
+        >
+          <span>
+
+
+          </span>
+        </div>
+        <div />
+      </div>
+      <div
+        className="closeSearchBar"
+      >
+        <button
+          className="upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>
@@ -20586,8 +21519,81 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               </tspan>
             </text>
           </g>
-          <g
-            role="presentation"
+        </svg>
+      </span>
+      <div
+        className="bottom active"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SelectedGroupBar default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SelectedGroupBar"
+  >
+    <p
+      style={
+        Object {
+          "background": "lightgrey",
+          "fontSize": 16,
+        }
+      }
+    >
+      Selected Company
+      :
+      <span
+        style={
+          Object {
+            "fontSize": 14,
+          }
+        }
+      >
+        Example Company Name
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ShareIcon email 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ShareIcon"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="CircleContainer"
+      style={
+        Object {
+          "height": 20,
+          "width": 20,
+        }
+      }
+    >
+      <div>
+        <div
+          className="Icon"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-envelope fa-w-16 fa-1x "
+            color=""
+            data-icon="envelope"
+            data-prefix="fas"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <line
               role="presentation"
@@ -20770,18 +21776,28 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             </text>
           </g>
         </g>
-        <g
-          className="StackGroup"
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          tabIndex="0"
+      </svg>
+    </div>
+    <div
+      className="clearfix"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SmallMultiplesLegend"
+  >
+    <div
+      className="List guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item selected"
         >
           <g
             clipPath="url(#victory-clip-13)"
@@ -20830,6 +21846,29 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 "width": "100%",
               }
             }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Up"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
             <defs>
               <clipPath
@@ -20869,43 +21908,31 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               }
             }
           >
-            <defs>
-              <clipPath
-                id="victory-clip-15"
+            <div>
+              <div
+                className="Arrow Down"
               >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,280C50,280,87.03703703703702,280,105.55555555555554,280C124.07407407407406,280,142.5925925925926,280.0000000000001,161.1111111111111,280C179.6296296296296,279.9999999999999,198.1481481481481,279.99999999999994,216.66666666666666,280C235.1851851851852,280,253.7037037037037,280,272.2222222222222,280C290.7407407407407,280.00000000000006,309.25925925925924,280,327.77777777777777,280C346.2962962962963,280,364.81481481481484,280,383.3333333333333,280C401.8518518518518,280,420.37037037037027,279.99999999999994,438.8888888888889,280C457.40740740740745,280,475.9259259259259,280,494.4444444444444,280C512.9629629629628,279.99999999999994,550,280,550,280L550,280C550,280,512.9629629629629,279.99999999999994,494.4444444444444,280C475.92592592592587,280,457.40740740740745,280,438.8888888888889,280C420.37037037037027,279.99999999999994,401.8518518518518,280,383.3333333333333,280C364.8148148148148,280,346.2962962962963,280,327.77777777777777,280C309.25925925925924,280,290.7407407407407,280.00000000000006,272.2222222222222,280C253.7037037037037,280,235.1851851851852,280,216.66666666666666,280C198.1481481481481,279.99999999999994,179.62962962962956,279.9999999999999,161.1111111111111,280C142.5925925925926,280.0000000000001,124.07407407407405,280,105.55555555555554,280C87.03703703703704,280,50,280,50,280Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "rgb(247, 193, 97)",
-                  "stroke": "rgb(247, 193, 97)",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-          <g
-            clipPath="url(#victory-clip-16)"
-            style={
-              Object {
-                "height": "100%",
-                "userSelect": "none",
-                "width": "100%",
-              }
-            }
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
             <defs>
               <clipPath
@@ -21025,32 +22052,36 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               <clipPath
                 id="victory-clip-19"
               >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,78.26735751295337C50,78.26735751295337,78.49892897381652,251.1178878249698,105.55555555555554,261.7880253310305C121.21431688308779,267.9632643629399,143.96592168149502,244.6778161624154,161.1111111111111,229.56683937823834C181.58868687323667,211.51885144506346,198.14814814814818,156.7189407023604,216.66666666666666,156.71894070236038C235.18518518518513,156.71894070236038,255.23890136865697,231.5845252759675,272.2222222222222,229.56683937823834C293.04953716276697,227.09247173215576,304.2454594278456,130.2714605133626,327.77777777777777,103.4839378238342C343.9332304464462,85.09371598142047,364.91892529862,69.52949854183254,383.3333333333333,69.86183074265975C401.95835749763245,70.19796401717572,423.13375225507536,85.56098288429997,438.8888888888889,106.28578008059873C464.9940370400667,140.62530462977693,466.2381553555506,259.4070270987391,494.4444444444444,280C510.01195551230234,291.36559767043957,550,280,550,280L550,280C550,280,510.09951500645303,291.0643600024112,494.4444444444444,280C467.34683916869426,260.8485270771168,465.0272523720895,134.5431052011878,438.8888888888889,123.09683362118594C423.13748845998845,116.19912530863489,400.90828914920905,135.45132540157383,383.3333333333333,146.91249280368453C363.62872400922186,159.76247253750725,346.4139450019214,181.83461628716688,327.77777777777777,198.74657455382845C309.37399224175266,215.4476509710126,291.5666831963086,245.48451926465765,272.2222222222222,247.77881404720782C254.40442385179895,249.89204335313437,234.20120213471625,215.57427995923913,216.66666666666666,218.3594703511802C196.89736591158461,221.4996314702915,181.63418183927175,266.4785976532369,161.1111111111111,275.7972366148532C143.98799175049334,283.5721046807375,123.8812967290266,280.8408534210812,105.55555555555554,278.59907887161773C86.83588269682237,276.30911494646205,50,261.7880253310305,50,261.7880253310305Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "rgb(210, 102, 236)",
-                  "stroke": "rgb(210, 102, 236)",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-          <g
-            clipPath="url(#victory-clip-20)"
+                Financial
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SmallMultiplesLegend"
+  >
+    <div
+      className="List faded guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
             style={
               Object {
                 "height": "100%",
@@ -21058,6 +22089,29 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 "width": "100%",
               }
             }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Up"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
             <defs>
               <clipPath
@@ -21097,43 +22151,31 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               }
             }
           >
-            <defs>
-              <clipPath
-                id="victory-clip-21"
+            <div>
+              <div
+                className="Arrow Down"
               >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,78.26735751295337C50,78.26735751295337,78.49892897381652,251.1178878249698,105.55555555555554,261.7880253310305C121.21431688308779,267.9632643629399,143.96592168149502,244.6778161624154,161.1111111111111,229.56683937823834C181.58868687323667,211.51885144506346,198.14814814814818,156.7189407023604,216.66666666666666,156.71894070236038C235.18518518518513,156.71894070236038,255.23890136865697,231.5845252759675,272.2222222222222,229.56683937823834C293.04953716276697,227.09247173215576,304.2454594278456,130.2714605133626,327.77777777777777,103.4839378238342C343.9332304464462,85.09371598142047,364.91892529862,69.52949854183254,383.3333333333333,69.86183074265975C401.95835749763245,70.19796401717572,423.13375225507536,85.56098288429997,438.8888888888889,106.28578008059873C464.9940370400667,140.62530462977693,466.2381553555506,259.4070270987391,494.4444444444444,280C510.01195551230234,291.36559767043957,550,280,550,280L550,280C550,280,510.01195551230234,291.36559767043957,494.4444444444444,280C466.23815535555053,259.4070270987391,464.99403704006664,140.62530462977693,438.8888888888889,106.28578008059873C423.13375225507554,85.56098288429997,401.9583574976324,70.19796401717574,383.3333333333333,69.86183074265975C364.91892529862,69.52949854183254,343.9332304464462,85.09371598142047,327.77777777777777,103.4839378238342C304.2454594278456,130.2714605133626,293.04953716276697,227.09247173215576,272.2222222222222,229.56683937823834C255.23890136865697,231.58452527596756,235.18518518518516,156.71894070236038,216.66666666666666,156.71894070236038C198.14814814814815,156.7189407023604,181.58868687323667,211.51885144506343,161.1111111111111,229.56683937823834C143.96592168149502,244.67781616241538,121.21431688308779,267.9632643629399,105.55555555555554,261.7880253310305C78.49892897381652,251.1178878249698,50,78.26735751295337,50,78.26735751295337Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "rgb(249, 214, 202)",
-                  "stroke": "rgb(249, 214, 202)",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-          <g
-            clipPath="url(#victory-clip-22)"
-            style={
-              Object {
-                "height": "100%",
-                "userSelect": "none",
-                "width": "100%",
-              }
-            }
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
             <defs>
               <clipPath
@@ -21253,39 +22295,37 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               <clipPath
                 id="victory-clip-25"
               >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,78.26735751295337C50,78.26735751295337,78.49892897381652,251.1178878249698,105.55555555555554,261.7880253310305C121.21431688308779,267.9632643629399,143.96592168149502,244.6778161624154,161.1111111111111,229.56683937823834C181.58868687323667,211.51885144506346,198.14814814814818,156.7189407023604,216.66666666666666,156.71894070236038C235.18518518518513,156.71894070236038,255.23890136865697,231.5845252759675,272.2222222222222,229.56683937823834C293.04953716276697,227.09247173215576,304.2454594278456,130.2714605133626,327.77777777777777,103.4839378238342C343.9332304464462,85.09371598142047,364.91892529862,69.52949854183254,383.3333333333333,69.86183074265975C401.95835749763245,70.19796401717572,423.13375225507536,85.56098288429997,438.8888888888889,106.28578008059873C464.9940370400667,140.62530462977693,466.2381553555506,259.4070270987391,494.4444444444444,280C510.01195551230234,291.36559767043957,550,280,550,280L550,280C550,280,510.01195551230234,291.36559767043957,494.4444444444444,280C466.23815535555053,259.4070270987391,464.99403704006664,140.62530462977693,438.8888888888889,106.28578008059873C423.13375225507554,85.56098288429997,401.9583574976324,70.19796401717574,383.3333333333333,69.86183074265975C364.91892529862,69.52949854183254,343.9332304464462,85.09371598142047,327.77777777777777,103.4839378238342C304.2454594278456,130.2714605133626,293.04953716276697,227.09247173215576,272.2222222222222,229.56683937823834C255.23890136865697,231.58452527596756,235.18518518518516,156.71894070236038,216.66666666666666,156.71894070236038C198.14814814814815,156.7189407023604,181.58868687323667,211.51885144506343,161.1111111111111,229.56683937823834C143.96592168149502,244.67781616241538,121.21431688308779,267.9632643629399,105.55555555555554,261.7880253310305C78.49892897381652,251.1178878249698,50,78.26735751295337,50,78.26735751295337Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "rgb(58, 58, 58)",
-                  "stroke": "rgb(58, 58, 58)",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-          <g
-            clipPath="url(#victory-clip-26)"
-            style={
-              Object {
-                "height": "100%",
-                "userSelect": "none",
-                "width": "100%",
-              }
-            }
+                Financial
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="SmallMultiplesLegend"
+  >
+    <div
+      className="List guideLine"
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
             <defs>
               <clipPath
@@ -21325,43 +22365,27 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               }
             }
           >
-            <defs>
-              <clipPath
-                id="victory-clip-27"
+            <div>
+              <div
+                className="Arrow Up"
               >
-                <rect
-                  height={230}
-                  role="presentation"
-                  shapeRendering="auto"
-                  vectorEffect="non-scaling-stroke"
-                  width={0}
-                  x={50}
-                  y={50}
-                />
-              </clipPath>
-            </defs>
-            <path
-              d="M50,78.26735751295337C50,78.26735751295337,78.49892897381652,251.1178878249698,105.55555555555554,261.7880253310305C121.21431688308779,267.9632643629399,143.96592168149502,244.6778161624154,161.1111111111111,229.56683937823834C181.58868687323667,211.51885144506346,198.14814814814818,156.7189407023604,216.66666666666666,156.71894070236038C235.18518518518513,156.71894070236038,255.23890136865697,231.5845252759675,272.2222222222222,229.56683937823834C293.04953716276697,227.09247173215576,304.2454594278456,130.2714605133626,327.77777777777777,103.4839378238342C343.9332304464462,85.09371598142047,364.91892529862,69.52949854183254,383.3333333333333,69.86183074265975C401.95835749763245,70.19796401717572,423.13375225507536,85.56098288429997,438.8888888888889,106.28578008059873C464.9940370400667,140.62530462977693,466.2381553555506,259.4070270987391,494.4444444444444,280C510.01195551230234,291.36559767043957,550,280,550,280L550,280C550,280,510.01195551230234,291.36559767043957,494.4444444444444,280C466.23815535555053,259.4070270987391,464.99403704006664,140.62530462977693,438.8888888888889,106.28578008059873C423.13375225507554,85.56098288429997,401.9583574976324,70.19796401717574,383.3333333333333,69.86183074265975C364.91892529862,69.52949854183254,343.9332304464462,85.09371598142047,327.77777777777777,103.4839378238342C304.2454594278456,130.2714605133626,293.04953716276697,227.09247173215576,272.2222222222222,229.56683937823834C255.23890136865697,231.58452527596756,235.18518518518516,156.71894070236038,216.66666666666666,156.71894070236038C198.14814814814815,156.7189407023604,181.58868687323667,211.51885144506343,161.1111111111111,229.56683937823834C143.96592168149502,244.67781616241538,121.21431688308779,267.9632643629399,105.55555555555554,261.7880253310305C78.49892897381652,251.1178878249698,50,78.26735751295337,50,78.26735751295337Z"
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "#252525",
-                  "stroke": "#252525",
-                  "strokeWidth": 0,
-                }
-              }
-            />
-          </g>
-          <g
-            clipPath="url(#victory-clip-28)"
-            style={
-              Object {
-                "height": "100%",
-                "userSelect": "none",
-                "width": "100%",
-              }
-            }
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
             <defs>
               <clipPath
@@ -21476,6 +22500,101 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 "width": "100%",
               }
             }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Down"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="LegendItem"
+            >
+              <span
+                className="stream"
+              >
+                <svg
+                  height="100%"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 100"
+                  width="100%"
+                >
+                  <g
+                    clipPath="url(#victory-clip-7)"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <defs>
+                      <clipPath
+                        id="victory-clip-7"
+                      >
+                        <rect
+                          height={100}
+                          role="presentation"
+                          shapeRendering="auto"
+                          vectorEffect="non-scaling-stroke"
+                          width={100}
+                          x={0}
+                          y={0}
+                        />
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M0,97.52808988764045C4.761904761904763,96.6855412184443,9.523809523809526,95.84299254924815,14.285714285714285,94.8314606741573C19.047619047619044,93.81992879906645,23.809523809523796,92.63941371808086,28.57142857142857,92.35955056179775C33.33333333333334,92.07968740551463,38.0952380952381,92.70047617393406,42.857142857142854,90.78651685393258C47.619047619047606,88.8725575339311,52.380952380952365,84.4238501255087,57.14285714285714,82.69662921348315C61.90476190476191,80.9694083014576,66.66666666666669,81.9636738858289,71.42857142857143,81.57303370786516C76.19047619047618,81.18239352990143,80.95238095238095,79.40684758960265,85.71428571428571,77.75280898876404C90.47619047619047,76.09877038792544,95.23809523809524,74.56623912654699,100,73.03370786516854L100,100C95.23809523809526,100,90.47619047619048,100,85.71428571428571,100C80.95238095238093,100,76.19047619047619,100,71.42857142857143,100C66.66666666666667,100,61.904761904761905,100,57.14285714285714,100C52.38095238095237,100,47.61904761904761,100,42.857142857142854,100C38.095238095238095,100,33.333333333333336,100,28.57142857142857,100C23.809523809523803,100,19.047619047619044,100,14.285714285714285,100C9.523809523809526,100,4.761904761904763,100,0,100Z"
+                      role="presentation"
+                      shapeRendering="auto"
+                      style={
+                        Object {
+                          "fill": "rgb(36, 91, 64)",
+                          "stroke": "rgb(36, 91, 64)",
+                        }
+                      }
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span
+                className="text"
+              >
+                Management System
+              </span>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
           >
             <defs>
               <clipPath

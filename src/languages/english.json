@@ -134,6 +134,10 @@
       "list": {
         "company": "Selected Company:",
         "location": "Region:"
+      },
+      "pullToSpin": {
+        "pull": "Pull",
+        "toSpin": "to Spin"
       }
     },
     "conditionDetails": {
@@ -257,7 +261,7 @@
         "projectYear": "Filter by Project Year",
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
-          "INPROGRESS": "In Progress",
+          "IN_PROGRESS": "In Progress",
           "COMPLETED": "Completed"
 
         }
@@ -377,10 +381,17 @@
         "status": "Statuses Across All Conditions",
         "type": "Types Across All Conditions",
         "filing": "Filing Across All Conditions"
+      },
+      "axis":{
+        "yAxis": "Number of Conditions",
+        "xAxis": "Effective Date"
       }
     },
     "trendButton": {
       "description": "Trends &\nDefinitions"
+    },
+    "keywordExploreButton": {
+      "description": "Keyword\nExplorer"
     },
     "browseBy": {
       "skip": "Skip intro to browse:",
@@ -403,6 +414,9 @@
         "title": "Conditions on NEB-regulated energy projects",
         "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation."
       }
+    },
+    "view3": {
+      "company":"Selected Company: "
     }
   }
 }

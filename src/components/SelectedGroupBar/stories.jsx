@@ -12,7 +12,7 @@ const options = {
   step: 5,
 };
 
-const colourOptions = ['tomato', 'blue', 'green', 'pink'];
+const colourOptions = ['lightgrey', 'tomato', 'blue', 'green', 'pink'];
 
 storiesForComponent('Components|SelectedGroupBar', module, ReadMe)
   .addDecorator(withKnobs)
@@ -25,6 +25,6 @@ storiesForComponent('Components|SelectedGroupBar', module, ReadMe)
       groupItemSize={number('Group Item Size', 14, options)}
       backgroundColor={select('Colour Options', colourOptions, 'lightgrey')}
     >
-    condition
+      Example Company Name
     </SelectedGroupBar>
   ));
