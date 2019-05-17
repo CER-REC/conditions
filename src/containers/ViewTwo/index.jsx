@@ -123,14 +123,14 @@ const ViewTwo = props => (
         projectData={conditionCountsByYear.counts}
         instrumentData={conditionCountsByCommodity.counts}
       />
+    </section>
+
+    <section className="legend">
       <FeaturesMenu
         dropDown
         selected={props.selected.feature}
         onChange={props.setSelectedFeature}
       />
-    </section>
-
-    <section className="legend">
       <FeaturesLegend
         legendItems={props.legendItems}
         selectedFeature={props.selected.feature}
