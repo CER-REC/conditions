@@ -23,6 +23,13 @@ describe('actions/selected', () => {
     compareReduxChange(selected.reducer, newState);
   });
 
+  it('should update the region state based on the action', () => {
+    const region = 'testRegion';
+    const newState = selected.reducer(undefined, selected.setSelectedRegion(region));
+    expect(newState).toHaveProperty('region', region);
+    compareReduxChange(selected.reducer, newState);
+  });
+
   it('should update the project state based on the action', () => {
     const project = 'testProject';
     const newState = selected.reducer(undefined, selected.setSelectedProject(project));

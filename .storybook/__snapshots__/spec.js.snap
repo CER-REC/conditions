@@ -2652,7 +2652,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         >
           <div
             className="List"
-            onWheel={[Function]}
           >
             <ul>
               <li
@@ -3193,7 +3192,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           >
             <div
               className="List"
-              onWheel={[Function]}
             >
               <ul>
                 <li
@@ -3695,7 +3693,6 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         >
           <div
             className="List"
-            onWheel={[Function]}
           >
             <ul>
               <li
@@ -4169,7 +4166,6 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
     >
       <div
         className="List"
-        onWheel={[Function]}
       >
         <ul>
           <li
@@ -5194,7 +5190,6 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
       >
         <div
           className="List horizontal"
-          onWheel={[Function]}
         >
           <ul>
             <li
@@ -5517,7 +5512,7 @@ exports[`Storyshots Components|FeatureFlag default 1`] = `
         Object {
           "backgroundColor": "rgb(133, 28, 133)",
           "borderLeftColor": "rgb(133, 28, 133)",
-          "width": "calc(1px * 1)",
+          "width": "calc(18px * 0.1)",
         }
       }
       title="Theme - Damage Prevention - 1"
@@ -5539,7 +5534,7 @@ exports[`Storyshots Components|FeatureFlag with tip 1`] = `
         Object {
           "backgroundColor": "rgb(221, 10, 10)",
           "borderLeftColor": "rgb(221, 10, 10)",
-          "width": "calc(1px * 20)",
+          "width": "calc(18px * 1)",
         }
       }
       title="Theme - Security - 20"
@@ -5561,7 +5556,7 @@ exports[`Storyshots Components|FeatureFlag without tip 1`] = `
         Object {
           "backgroundColor": "rgb(247, 193, 97)",
           "borderLeftColor": "rgb(247, 193, 97)",
-          "width": "calc(1px * 10)",
+          "width": "calc(18px * 1)",
         }
       }
       title="Theme - Financial - 10"
@@ -6282,7 +6277,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "borderLeftColor": "transparent",
-                  "width": "calc(1px * 10)",
+                  "width": "calc(18px * 1)",
                 }
               }
               title="Ten Conditions"
@@ -6306,7 +6301,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "borderLeftColor": "transparent",
-                  "width": "calc(1px * 11)",
+                  "width": "calc(18px * 1)",
                 }
               }
               title="Greater than Ten Conditions"
@@ -6384,7 +6379,6 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
     </span>
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -6871,7 +6865,6 @@ exports[`Storyshots Components|InstrumentsLegend basic usage 1`] = `
     </span>
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -7266,7 +7259,6 @@ exports[`Storyshots Components|InstrumentsLegend selected 1`] = `
     </span>
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -7797,13 +7789,51 @@ exports[`Storyshots Components|InstrumentsLegend/LegendItem basic usage 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore Button 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="KeywordExplorerButton"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="buttonText"
+    >
+      <svg
+        className="keywordExplorerCircle"
+      >
+        <circle
+          cx="18"
+          cy="14"
+          opacity="0.4"
+          r="12"
+        />
+      </svg>
+      <span
+        className="descriptionText"
+      >
+        <p>
+          Keyword
+        </p>
+        <p>
+          Explorer
+        </p>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|List arrows at edges 1`] = `
 <div
   className="visualization"
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -7920,7 +7950,6 @@ exports[`Storyshots Components|List arrows at edges horizontal 1`] = `
 >
   <div
     className="List horizontal"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8037,7 +8066,6 @@ exports[`Storyshots Components|List basic usage 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8146,7 +8174,6 @@ exports[`Storyshots Components|List component items 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8267,7 +8294,6 @@ exports[`Storyshots Components|List guide line 1`] = `
 >
   <div
     className="List guideLine"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8376,7 +8402,6 @@ exports[`Storyshots Components|List horizontal 1`] = `
 >
   <div
     className="List horizontal"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8485,7 +8510,6 @@ exports[`Storyshots Components|List itemInteractions 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -8582,7 +8606,6 @@ exports[`Storyshots Components|List selected 1`] = `
 >
   <div
     className="List"
-    onWheel={[Function]}
   >
     <ul>
       <li
@@ -9924,7 +9947,6 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -9972,7 +9994,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -9987,7 +10009,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -10002,7 +10024,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -10017,7 +10039,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -10032,7 +10054,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -10047,7 +10069,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -10062,7 +10084,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -10077,7 +10099,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -10092,7 +10114,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -10107,7 +10129,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -10122,7 +10144,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -10137,7 +10159,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -10152,7 +10174,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -10163,7 +10185,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -10242,7 +10264,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -10257,7 +10279,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Damage Prevention - 3"
@@ -10272,7 +10294,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Emergency Management - 7"
@@ -10287,7 +10309,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -10302,7 +10324,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Environmental Protection - 4"
@@ -10317,7 +10339,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 13)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Financial - 13"
@@ -10332,7 +10354,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -10347,7 +10369,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -10362,7 +10384,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -10377,7 +10399,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 6)",
+                        "width": "calc(18px * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -10392,7 +10414,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -10407,7 +10429,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -10422,7 +10444,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Sunset Clause - 7"
@@ -10504,7 +10526,6 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -10552,7 +10573,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -10567,7 +10588,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -10582,7 +10603,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -10597,7 +10618,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -10612,7 +10633,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -10627,7 +10648,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -10642,7 +10663,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -10657,7 +10678,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -10672,7 +10693,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -10687,7 +10708,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -10702,7 +10723,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -10717,7 +10738,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -10732,7 +10753,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -10743,7 +10764,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -10822,7 +10843,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -10837,7 +10858,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Damage Prevention - 3"
@@ -10852,7 +10873,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Emergency Management - 7"
@@ -10867,7 +10888,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -10882,7 +10903,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Environmental Protection - 4"
@@ -10897,7 +10918,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 13)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Financial - 13"
@@ -10912,7 +10933,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -10927,7 +10948,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -10942,7 +10963,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -10957,7 +10978,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 6)",
+                        "width": "calc(18px * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -10972,7 +10993,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -10987,7 +11008,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -11002,7 +11023,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Sunset Clause - 7"
@@ -11088,7 +11109,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Administrative - 4"
@@ -11103,7 +11124,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Damage Prevention - 11"
@@ -11118,7 +11139,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -11133,7 +11154,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -11148,7 +11169,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -11163,7 +11184,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Financial - 5"
@@ -11178,7 +11199,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -11193,7 +11214,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 14)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Management System - 14"
@@ -11208,7 +11229,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -11223,7 +11244,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Security - 7"
@@ -11238,7 +11259,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -11253,7 +11274,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -11268,7 +11289,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -11279,7 +11300,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -11326,7 +11347,6 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -11374,7 +11394,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -11389,7 +11409,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -11404,7 +11424,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -11419,7 +11439,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -11434,7 +11454,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -11449,7 +11469,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -11464,7 +11484,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -11479,7 +11499,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -11494,7 +11514,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -11509,7 +11529,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -11524,7 +11544,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -11539,7 +11559,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -11554,7 +11574,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -11565,7 +11585,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -11644,7 +11664,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -11659,7 +11679,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Damage Prevention - 3"
@@ -11674,7 +11694,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Emergency Management - 7"
@@ -11689,7 +11709,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -11704,7 +11724,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Environmental Protection - 4"
@@ -11719,7 +11739,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 13)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Financial - 13"
@@ -11734,7 +11754,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -11749,7 +11769,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -11764,7 +11784,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -11779,7 +11799,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 6)",
+                        "width": "calc(18px * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -11794,7 +11814,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -11809,7 +11829,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -11824,7 +11844,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Sunset Clause - 7"
@@ -11910,7 +11930,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Administrative - 4"
@@ -11925,7 +11945,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Damage Prevention - 11"
@@ -11940,7 +11960,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -11955,7 +11975,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -11970,7 +11990,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -11985,7 +12005,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Financial - 5"
@@ -12000,7 +12020,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -12015,7 +12035,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 14)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Management System - 14"
@@ -12030,7 +12050,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -12045,7 +12065,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Security - 7"
@@ -12060,7 +12080,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -12075,7 +12095,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -12090,7 +12110,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -12101,7 +12121,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -12152,7 +12172,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -12167,7 +12187,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -12182,7 +12202,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -12197,7 +12217,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -12212,7 +12232,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -12227,7 +12247,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -12242,7 +12262,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -12257,7 +12277,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -12272,7 +12292,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -12287,7 +12307,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -12302,7 +12322,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -12317,7 +12337,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -12332,7 +12352,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -12343,7 +12363,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -12390,7 +12410,6 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -12438,7 +12457,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -12453,7 +12472,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -12468,7 +12487,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -12483,7 +12502,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -12498,7 +12517,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -12513,7 +12532,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -12528,7 +12547,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -12543,7 +12562,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -12558,7 +12577,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -12573,7 +12592,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -12588,7 +12607,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -12603,7 +12622,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -12618,7 +12637,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -12629,7 +12648,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -12708,7 +12727,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -12723,7 +12742,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Damage Prevention - 3"
@@ -12738,7 +12757,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Emergency Management - 7"
@@ -12753,7 +12772,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -12768,7 +12787,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Environmental Protection - 4"
@@ -12783,7 +12802,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 13)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Financial - 13"
@@ -12798,7 +12817,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -12813,7 +12832,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -12828,7 +12847,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -12843,7 +12862,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 6)",
+                        "width": "calc(18px * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -12858,7 +12877,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -12873,7 +12892,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -12888,7 +12907,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Sunset Clause - 7"
@@ -12974,7 +12993,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Administrative - 4"
@@ -12989,7 +13008,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Damage Prevention - 11"
@@ -13004,7 +13023,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -13019,7 +13038,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -13034,7 +13053,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -13049,7 +13068,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Financial - 5"
@@ -13064,7 +13083,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -13079,7 +13098,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 14)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Management System - 14"
@@ -13094,7 +13113,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -13109,7 +13128,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Security - 7"
@@ -13124,7 +13143,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -13139,7 +13158,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -13154,7 +13173,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -13165,7 +13184,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -13216,7 +13235,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -13231,7 +13250,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -13246,7 +13265,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -13261,7 +13280,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -13276,7 +13295,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -13291,7 +13310,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -13306,7 +13325,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -13321,7 +13340,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -13336,7 +13355,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -13351,7 +13370,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -13366,7 +13385,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -13381,7 +13400,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -13396,7 +13415,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -13407,7 +13426,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -13454,7 +13473,6 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -13502,7 +13520,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -13517,7 +13535,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -13532,7 +13550,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -13547,7 +13565,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -13562,7 +13580,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -13577,7 +13595,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -13592,7 +13610,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -13607,7 +13625,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -13622,7 +13640,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -13637,7 +13655,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -13652,7 +13670,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -13667,7 +13685,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -13682,7 +13700,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -13693,7 +13711,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -13772,7 +13790,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -13787,7 +13805,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Damage Prevention - 3"
@@ -13802,7 +13820,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Emergency Management - 7"
@@ -13817,7 +13835,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -13832,7 +13850,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Environmental Protection - 4"
@@ -13847,7 +13865,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 13)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Financial - 13"
@@ -13862,7 +13880,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -13877,7 +13895,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -13892,7 +13910,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -13907,7 +13925,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 6)",
+                        "width": "calc(18px * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -13922,7 +13940,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -13937,7 +13955,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -13952,7 +13970,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Sunset Clause - 7"
@@ -14038,7 +14056,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Administrative - 4"
@@ -14053,7 +14071,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Damage Prevention - 11"
@@ -14068,7 +14086,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -14083,7 +14101,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -14098,7 +14116,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -14113,7 +14131,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Financial - 5"
@@ -14128,7 +14146,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -14143,7 +14161,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 14)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Management System - 14"
@@ -14158,7 +14176,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -14173,7 +14191,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Security - 7"
@@ -14188,7 +14206,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -14203,7 +14221,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -14218,7 +14236,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -14229,7 +14247,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -14280,7 +14298,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -14295,7 +14313,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -14310,7 +14328,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -14325,7 +14343,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -14340,7 +14358,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -14355,7 +14373,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -14370,7 +14388,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -14385,7 +14403,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -14400,7 +14418,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -14415,7 +14433,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -14430,7 +14448,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -14445,7 +14463,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -14460,7 +14478,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -14471,7 +14489,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -14494,6 +14512,277 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
 <div
   className="visualization"
 >
+  <div
+    className="ProjectMenu paddingBefore3 paddingAfter1 loading"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": -1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="List horizontal"
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart loading"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Administrative - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Enforcement - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Safety Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Security - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
   <style
     dangerouslySetInnerHTML={
       Object {
@@ -14508,6 +14797,519 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
 <div
   className="visualization"
 >
+  <div
+    className="ProjectMenu paddingBefore3 paddingAfter0 loading"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": -1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 5,
+        }
+      }
+    />
+    <div
+      className="List horizontal"
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart loading"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Administrative - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Enforcement - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Safety Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Security - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart loading"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Administrative - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Enforcement - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Safety Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Security - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
   <style
     dangerouslySetInnerHTML={
       Object {
@@ -14522,6 +15324,277 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
 <div
   className="visualization"
 >
+  <div
+    className="ProjectMenu paddingBefore3 paddingAfter1"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": -1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="List horizontal"
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    67
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Administrative - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Management System - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.1)",
+                      }
+                    }
+                    title="Theme - Security - 1"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+              >
+                <p>
+                  Trans-Alta
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
   <style
     dangerouslySetInnerHTML={
       Object {
@@ -14560,7 +15633,6 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
     />
     <div
       className="List horizontal"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -14608,7 +15680,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -14623,7 +15695,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Damage Prevention - 0"
@@ -14638,7 +15710,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -14653,7 +15725,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -14668,7 +15740,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -14683,7 +15755,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Financial - 0"
@@ -14698,7 +15770,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -14713,7 +15785,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -14728,7 +15800,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -14743,7 +15815,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 1)",
+                        "width": "calc(18px * 0.1)",
                       }
                     }
                     title="Theme - Security - 1"
@@ -14758,7 +15830,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -14773,7 +15845,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -14788,7 +15860,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -14799,7 +15871,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -14878,7 +15950,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 10)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Administrative - 10"
@@ -14893,7 +15965,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Damage Prevention - 3"
@@ -14908,7 +15980,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Emergency Management - 7"
@@ -14923,7 +15995,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -14938,7 +16010,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Environmental Protection - 4"
@@ -14953,7 +16025,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 13)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Financial - 13"
@@ -14968,7 +16040,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -14983,7 +16055,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Management System - 2"
@@ -14998,7 +16070,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -15013,7 +16085,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 6)",
+                        "width": "calc(18px * 0.6)",
                       }
                     }
                     title="Theme - Security - 6"
@@ -15028,7 +16100,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -15043,7 +16115,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -15058,7 +16130,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Sunset Clause - 7"
@@ -15144,7 +16216,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(201, 215, 65)",
                         "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(1px * 4)",
+                        "width": "calc(18px * 0.4)",
                       }
                     }
                     title="Theme - Administrative - 4"
@@ -15159,7 +16231,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(133, 28, 133)",
                         "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Damage Prevention - 11"
@@ -15174,7 +16246,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(11, 121, 153)",
                         "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(1px * 2)",
+                        "width": "calc(18px * 0.2)",
                       }
                     }
                     title="Theme - Emergency Management - 2"
@@ -15189,7 +16261,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(74, 166, 255)",
                         "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Enforcement - 5"
@@ -15204,7 +16276,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(33, 181, 115)",
                         "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(1px * 3)",
+                        "width": "calc(18px * 0.3)",
                       }
                     }
                     title="Theme - Environmental Protection - 3"
@@ -15219,7 +16291,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(247, 193, 97)",
                         "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(1px * 5)",
+                        "width": "calc(18px * 0.5)",
                       }
                     }
                     title="Theme - Financial - 5"
@@ -15234,7 +16306,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 82, 255)",
                         "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Integrity Management - 11"
@@ -15249,7 +16321,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(36, 91, 64)",
                         "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(1px * 14)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Management System - 14"
@@ -15264,7 +16336,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(68, 34, 149)",
                         "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Safety Management - 7"
@@ -15279,7 +16351,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(221, 10, 10)",
                         "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(1px * 7)",
+                        "width": "calc(18px * 0.7)",
                       }
                     }
                     title="Theme - Security - 7"
@@ -15294,7 +16366,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(153, 153, 255)",
                         "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(1px * 11)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Socio-Economic - 11"
@@ -15309,7 +16381,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(181, 11, 128)",
                         "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(1px * 0)",
+                        "width": "calc(18px * 0)",
                       }
                     }
                     title="Theme - Standard Condition - 0"
@@ -15324,7 +16396,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       Object {
                         "backgroundColor": "rgb(41, 41, 218)",
                         "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(1px * 15)",
+                        "width": "calc(18px * 1)",
                       }
                     }
                     title="Theme - Sunset Clause - 15"
@@ -15335,7 +16407,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  Trans-Alta Limited-44245
+                  Trans-Alta
                 </p>
               </div>
             </div>
@@ -15343,6 +16415,43 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
         </li>
       </ul>
     </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ProjectMenu paddingBefore3 paddingAfter2"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": -1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
   </div>
   <style
     dangerouslySetInnerHTML={
@@ -15442,7 +16551,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
               Object {
                 "backgroundColor": "rgb(221, 10, 10)",
                 "borderLeftColor": "rgb(221, 10, 10)",
-                "width": "calc(1px * 1)",
+                "width": "calc(18px * 0.1)",
               }
             }
             title="Theme - Security - 1"
@@ -15457,7 +16566,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
               Object {
                 "backgroundColor": "rgb(36, 91, 64)",
                 "borderLeftColor": "rgb(36, 91, 64)",
-                "width": "calc(1px * 45)",
+                "width": "calc(18px * 1)",
               }
             }
             title="Theme - Management System - 45"
@@ -15472,7 +16581,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
               Object {
                 "backgroundColor": "rgb(247, 193, 97)",
                 "borderLeftColor": "rgb(247, 193, 97)",
-                "width": "calc(1px * 55)",
+                "width": "calc(18px * 1)",
               }
             }
             title="Theme - Financial - 55"
@@ -15487,7 +16596,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
               Object {
                 "backgroundColor": "rgb(133, 28, 133)",
                 "borderLeftColor": "rgb(133, 28, 133)",
-                "width": "calc(1px * 23)",
+                "width": "calc(18px * 1)",
               }
             }
             title="Theme - Damage Prevention - 23"
@@ -15502,7 +16611,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
               Object {
                 "backgroundColor": "rgb(68, 34, 149)",
                 "borderLeftColor": "rgb(68, 34, 149)",
-                "width": "calc(1px * 3)",
+                "width": "calc(18px * 0.3)",
               }
             }
             title="Theme - Safety Management - 3"
@@ -15517,7 +16626,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
               Object {
                 "backgroundColor": "rgb(153, 153, 255)",
                 "borderLeftColor": "rgb(153, 153, 255)",
-                "width": "calc(1px * 13)",
+                "width": "calc(18px * 1)",
               }
             }
             title="Theme - Socio-Economic - 13"
@@ -15532,7 +16641,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
               Object {
                 "backgroundColor": "rgb(11, 121, 153)",
                 "borderLeftColor": "rgb(11, 121, 153)",
-                "width": "calc(1px * 3)",
+                "width": "calc(18px * 0.3)",
               }
             }
             title="Theme - Emergency Management - 3"
@@ -16753,7 +17862,7 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17128,7 +18237,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17503,7 +18612,7 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         </li>
       </ul>
       <button
-        className="close upperCase"
+        className="closeSearchBar upperCase"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -17692,7 +18801,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <div />
       </div>
       <div
-        className="close"
+        className="closeSearchBar"
       >
         <button
           className="upperCase"
@@ -18328,7 +19437,7 @@ exports[`Storyshots Components|SelectedGroupBar default 1`] = `
           }
         }
       >
-        condition
+        Example Company Name
       </span>
     </p>
   </div>
@@ -18581,7 +19690,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
   >
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -18883,7 +19991,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
   >
     <div
       className="List faded guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li
@@ -19185,7 +20292,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
   >
     <div
       className="List guideLine"
-      onWheel={[Function]}
     >
       <ul>
         <li

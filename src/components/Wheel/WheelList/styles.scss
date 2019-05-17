@@ -83,10 +83,17 @@
     left: 45%;
     width: 55%;
     height: 100%;
+    pointer-events: all;
     .List{
       position: absolute;
-      top: 50%;
-      transform: translateY(-51%);
+      height: 100%;
+      width: 100%;
+      top: 0%;
+      ul {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 

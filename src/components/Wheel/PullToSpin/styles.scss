@@ -4,19 +4,19 @@
 
 .PullToSpin{
   transform-origin: top;
-
+  pointer-events: auto;
   .PullMessage{
     fill: $Gray160;
     font: $fira-sans-condensed-light;
     font-size: 10px;
   }
 
-  .diagonalHatch{
-    fill:none;
-    stroke: $Outline;
-    stroke-miterlimit:10;
-    stroke-width:1.5;
-    opacity: 0.9;
+  #diagonalHatch{
+    line {
+      stroke: $Outline;
+      stroke-width:1.3;
+      stroke-opacity: 0.7;
+    }
   }
 
   .PullSpinArrow{
@@ -31,24 +31,25 @@
 
   .PullSlider{
     cursor: pointer;
-    opacity:0.5;
     &:focus{
       outline: none;
     }
     &:focus .PullSpinSvgShadow {
       width: 55px;
       height: 47px;
-      opacity: 1;
+      opacity: 0.5;
     }
   }
 
   .PullSpinSvgShadow{
-    opacity:0.6;
-    mix-blend-mode: screen;
+    opacity:0.3;
+    mix-blend-mode: multiply;
   }
 
   .PullSpinRect{
     stroke: $Outline;
     stroke-miterlimit:10;
+    stroke-width: 0.5;
+    stroke-opacity: 0.7;
   }
 }

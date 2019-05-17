@@ -23,12 +23,6 @@ describe('Components|TrendButton', () => {
     test('should render a div with a className of buttonText', () => {
       expect(wrapper.find('div.buttonText')).toHaveLength(1);
     });
-    test('should render StreamGraph Component', () => {
-      expect(wrapper.find('StreamGraph')).toHaveLength(1);
-    });
-    test('should not render BubbleChart Component', () => {
-      expect(wrapper.find('BubbleChart')).toHaveLength(0);
-    });
     test('should render a FormattedMessage component for button text', () => {
       const messageWrapper = wrapper.find(FormattedMessage);
       expect(messageWrapper).toHaveLength(1);
@@ -37,26 +31,6 @@ describe('Components|TrendButton', () => {
       expect(updatedWrapper.find('p')).toHaveLength(2);
     });
   });
-
-  describe('with instrument selected', () => {
-    let wrapper;
-    beforeEach(() => {
-      wrapper = shallow(<TrendButton
-        onClick={noop}
-        feature="instrument"
-        subFeature=""
-        projectData={conditionCountsByYear.counts}
-        instrumentData={conditionCountsByCommodity.counts}
-      />);
-    });
-    test('it should not render StreamGraph', () => {
-      expect(wrapper.find('StreamGraph')).toHaveLength(0);
-    });
-    test('it should render BubbleChart', () => {
-      expect(wrapper.find('BubbleChart')).toHaveLength(1);
-    });
-  });
-
   describe('when a trendButton is clicked', () => {
     let spy;
     let wrapper;

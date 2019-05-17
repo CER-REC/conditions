@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
-import { viewTwoQuery } from '../../queries/viewTwo';
+import { companyWheelQuery } from '../../queries/viewTwoQueries/wheel';
+import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
@@ -21,16 +22,11 @@ import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
+import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
 const noop = () => {};
-const legendItems = [
-  { feature: 'theme', description: 'SECURITY', disabled: false },
-  { feature: 'theme', description: 'FINANCIAL', disabled: false },
-  { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
-  { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
-];
 
 const regionData = {
   featureData: [
@@ -78,28 +74,17 @@ const ViewTwo = props => (
       {props.browseBy === 'location' ? (
         <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
       ) : null}
-
-      {/* TODO: Placeholder for functionality; waiting on a design for this */}
-      <button
-        className="view1reset"
-        type="button"
-        onClick={props.jumpToView1}
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          height: '48px',
-        }}
-      >
-          Back To Introduction
-      </button>
     </section>
 
     <section className="wheel">
-      <Wheel wheelType={props.browseBy} selectRay={noop} wheelData={props.wheelData} />
+      <Wheel
+        wheelType={props.browseBy}
+        selectedRay={props.browseBy === 'company' ? props.selected.company : props.selected.region}
+        selectRay={props.browseBy === 'company' ? props.setSelectedCompany : props.setSelectedRegion}
+        wheelData={props.wheelData}
+      />
       <GreyPipe mode={props.browseBy} />
     </section>
-
     <section className="companyBreakdown">
       {props.browseBy === 'location'
         ? (
@@ -116,7 +101,8 @@ const ViewTwo = props => (
           <React.Fragment>
             <TotalConditionsLabel />
             <ProjectMenu
-              projectsData={props.projectsData.counts}
+              loading={props.projectMenuLoading}
+              projectsData={props.projectsData}
               selectedProjectID={props.selected.project}
               onChange={props.setSelectedProject}
               selectedFeature={props.selected.feature}
@@ -127,6 +113,9 @@ const ViewTwo = props => (
     </section>
 
     <section className="menus">
+      <KeywordExplorerButton
+        onClick={props.jumpToView1}
+      />
       <TrendButton
         onClick={props.jumpToView3}
         feature={props.selected.feature}
@@ -143,8 +132,8 @@ const ViewTwo = props => (
 
     <section className="legend">
       <FeaturesLegend
-        legendItems={legendItems}
-        selectedFeature="theme"
+        legendItems={props.legendItems}
+        selectedFeature={props.selected.feature}
         isProjectLegend={props.browseBy !== 'location'}
       />
     </section>
@@ -170,7 +159,13 @@ const ViewTwo = props => (
 ViewTwo.propTypes = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
+  legendItems: PropTypes.arrayOf(PropTypes.shape({
+    disabled: PropTypes.bool,
+    description: PropTypes.string.isRequired,
+  })),
   selected: PropTypes.shape({
+    company: PropTypes.number,
+    region: PropTypes.number,
     project: PropTypes.number,
     feature: featureTypes.isRequired,
     condition: PropTypes.shape({
@@ -191,6 +186,8 @@ ViewTwo.propTypes = {
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
+  setSelectedCompany: PropTypes.func.isRequired,
+  setSelectedRegion: PropTypes.func.isRequired,
   conditionDetails: PropTypes.shape({
     isExpandable: PropTypes.bool,
     expanded: PropTypes.bool,
@@ -204,9 +201,7 @@ ViewTwo.propTypes = {
   setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
-  projectsData: PropTypes.shape({
-    counts: PropTypes.arrayOf(project).isRequired,
-  }).isRequired,
+  projectsData: PropTypes.arrayOf(project),
   // The shape of wheelData will change once more integration is done.
   wheelData: PropTypes.arrayOf(PropTypes.any),
   jumpToView1: PropTypes.func.isRequired,
@@ -216,6 +211,8 @@ ViewTwo.propTypes = {
 ViewTwo.defaultProps = {
   layoutOnly: false,
   wheelData: [],
+  legendItems: [],
+  projectsData: [],
 };
 
 export const ViewTwoUnconnected = props => (
@@ -226,22 +223,71 @@ export const ViewTwoUnconnected = props => (
   />
 );
 
-export const ViewTwoGraphQL = props => (
-  <Query query={viewTwoQuery}>
-    {({ data }) => (
-      // if (loading) // do something;
-      // else if (error) // handle the error;
-      // else {}
-      <ViewTwo
-        wheelData={
-        // eslint-disable-next-line react/prop-types
-        props.browseBy === 'company' ? data.allCompanies : locationData
+export const ViewTwoGraphQL = (props) => {
+  if (props.browseBy === 'company') {
+    return (
+    // The queries must be by company and location and then subdivide.
+    // The common queries such as the condition explorer must be set at the view level
+      <Query query={companyWheelQuery}>
+        {(wheelQueryProps) => {
+          const { data: wheelQData } = wheelQueryProps;
+          const { loading: wheelQLoading } = wheelQueryProps;
+          const { error: wheelQerror } = wheelQueryProps;
+          return (
+            <Query
+              query={projectMenuQuery}
+              variables={{ id: props.selected.company }}
+              skip={!props.selected.company}
+            >
+              { (projectMenuQprops) => {
+                const { loading: projLoading } = projectMenuQprops;
+                const { error: projError } = projectMenuQprops;
+                const { data: projData } = projectMenuQprops;
+                const selectedProject = props.selected.company && !projLoading && !projError
+                  ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
+                  : null;
+                const rawFeatureData = selectedProject
+                  ? selectedProject.aggregatedCount[props.selected.feature]
+                  : [];
+                const projectFeatureData = Object.entries(rawFeatureData)
+                  .reduce((acc, [key, val]) => {
+                    if (key !== '__typename') {
+                      acc.push({
+                        feature: props.selected.feature,
+                        description: key,
+                        disabled: val <= 0,
+                      });
+                    }
+                    return acc;
+                  }, []);
+                // MISSING ERROR HANDLING
+                return (
+                  <ViewTwo
+                    wheelData={
+                      !wheelQLoading && !wheelQerror
+                        ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+                        : []
+                    }
+                    projectsData={!projLoading && !projError && props.selected.company
+                      ? projData.allProjectsByCompany
+                      : []
+                    }
+                    projectMenuLoading={projLoading}
+                    legendItems={projectFeatureData}
+                    {...props}
+                  />
+                );
+              }}
+            </Query>
+          );
         }
-        {...props}
-      />
-    )}
-  </Query>
-);
+        }
+      </Query>
+    );
+  }
+  return (<ViewTwo {...props} wheelData={locationData} legendItems={regionData.featureData} />);
+};
+ViewTwoGraphQL.propTypes = ViewTwo.propTypes;
 
 export default connect(
   ({ selected, browseBy, search }) => ({
@@ -256,11 +302,12 @@ export default connect(
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
+    setSelectedRegion: selectedCreators.setSelectedRegion,
     setSelectedCondition: selectedCreators.setSelectedCondition,
+    setSelectedProject: selectedCreators.setSelectedProject,
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
-    setSelectedProject: selectedCreators.setSelectedProject,
     setFindAny: searchCreators.setFindAny,
     setIncluded: searchCreators.setIncluded,
     setExcluded: searchCreators.setExcluded,

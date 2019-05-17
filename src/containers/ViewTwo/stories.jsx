@@ -12,10 +12,19 @@ const year = {
   start: 1970,
   end: 1980,
 };
+
+const legendItems = [
+  { feature: 'theme', description: 'SECURITY', disabled: false },
+  { feature: 'theme', description: 'FINANCIAL', disabled: false },
+  { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
+  { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
+];
+
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
   projectsData,
+  legendItems,
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },
@@ -25,6 +34,19 @@ const props = {
   },
   browseBy: 'company',
   jumpToView3: noop,
+};
+
+const connectedProps = {
+  availableProjectYear: { year },
+  availableCategories: { categories },
+  suggestedKeywords: { searchData },
+  conditionDetails: {
+    selectedProject: 'Project Name',
+    data: conditionData,
+  },
+  browseBy: 'company',
+  jumpToView3: noop,
+  jumpToView1: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
@@ -42,19 +64,23 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
           selected: { ...selected, condition: selectedCondition },
         }),
         setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
+        setSelectedCompany: ({ selected }) => company => ({ selected: { ...selected, company } }),
+        setSelectedRegion: ({ selected }) => region => ({ selected: { ...selected, region } }),
         openIntermediatePopup: () => () => ({}),
         openProjectDetails: () => () => ({}),
       },
       state: {
         included: [],
         excluded: [],
-        projectStatus: ['INPROGRESS', 'COMPLETED'],
+        projectStatus: ['IN_PROGRESS', 'COMPLETED'],
         projectYear: year,
         findAny: true,
         selected: {
           feature: 'theme',
           condition: { instrumentIndex: 0, itemIndex: 0 },
           project: 1225,
+          company: null,
+          region: null,
         },
       },
     }),
@@ -62,7 +88,8 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
   .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
   .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" {...getInteractionProps()} />)
   .add(
-    'connected variant', () => <ViewTwoGraphQL {...props} {...getInteractionProps()} />,
+    'connected variant',
+    () => <ViewTwoGraphQL {...connectedProps} {...getInteractionProps()} />,
     { decorators: [withGQL] },
   )
   .add('layout only', () => (
