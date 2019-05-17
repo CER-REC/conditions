@@ -249,7 +249,7 @@
         "projectYear": "Filter by Project Year",
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
-          "INPROGRESS": "In Progress",
+          "IN_PROGRESS": "In Progress",
           "COMPLETED": "Completed"
 
         }
@@ -387,6 +387,9 @@
       "conditionsBy": "Conditions by {icon}",
       "company": "Company",
       "location": "Location"
+    },
+    "dotLegend": {
+      "text": "NEB Regulated Project with Conditions"
     }
   },
   "views": {

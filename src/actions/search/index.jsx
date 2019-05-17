@@ -35,7 +35,7 @@ const initialState = {
   included: [],
   excluded: [],
   findAny: true,
-  projectStatus: ['OPEN', 'CLOSED', 'CANCELLED'],
+  projectStatus: ['IN_PROGRESS', 'COMPLETED'],
   projectYear: {
     start: 2010,
     end: 2018,

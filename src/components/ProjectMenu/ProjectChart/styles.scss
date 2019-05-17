@@ -7,30 +7,39 @@ $condition-circle-font: $White;
 $project-chart-line: $Gray160;
 
 .ProjectChart {
+  position: relative;
+
   width: 100%;
-  height: 300px;
-  margin-bottom: 110px;
+  height: 100%;
 
   .ProjectName {
-    text-overflow: ellipsis;
     position: absolute;
-    width: 118px;
-    bottom: 137px; // Based on the rotation and the width
-    right: 50%;
-    transform: rotate(-70deg);
-    transform-origin: bottom right;
+    top: 220px;
+    right: 90%;
+
+    transform: rotate(200deg);
+
+    width: 100%;
+    height: 25%;
+
+    text-overflow: ellipsis;
     text-align: right;
 
     p {
+      height: 100%;
+      width: 100%;
+
+      overflow: hidden;
+
+      writing-mode: vertical-lr;
       white-space: nowrap;
       text-overflow: ellipsis;
-      overflow: hidden;
-      width: 118px;
     }
   }
 
   .ConditionPipe {
     height: 24px;
+
     background-color: $pipe-color;
     text-align: center;
 
@@ -44,13 +53,15 @@ $project-chart-line: $Gray160;
     position: relative;
     display: inline-block;
     width: 100%;
-    height: calc(100% - 50px); // 100% - pipe
+    height: 200px;
+
     padding-top: 10px;
 
     .FlagPole {
       position: absolute;
       top: -6px;
       left: 50%;
+
       transform: translateX(-50%);
 
       width: 2px;
@@ -89,32 +100,23 @@ $project-chart-line: $Gray160;
       background-color: $pipe-color;
     }
 
-    .FeatureFlag {
-      // Convert to the same scale as the other charts
-      width: calc(50% / 0.4 * 0.15);
-    }
+    .SelectedPipe {
+      position: absolute;
 
-    .ProjectName {
       z-index: 1;
-      width: 144px;
-      height: 24px;
+      width: 24px;
+      height: calc(100% - 212px);
       background: $pipe-color;
-      right: calc(50% - 12px);
-      &:before {
-        content: '';
-        background: $LightGreyBackground;
-        width: 20px;
-        height: 24px;
-        display: block;
-        position: absolute;
-        left: -10px;
-        transform: skew(20deg);
-      }
+      left: 50%;
+      transform: translateX(-50%) skewX(-20deg);
+      transform-origin: top right;
     }
   }
 
   &:not(.selected) .FeatureFlag {
-    .Bar { background-color: $Gray160 !important; }
-    .FlagTip { border-left-color: $Gray160 !important; }
+    .Bar {
+      background-color: $Gray160 !important;
+      border-left-color: $Gray160 !important;
+    }
   }
 }

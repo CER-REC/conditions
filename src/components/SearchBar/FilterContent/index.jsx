@@ -7,7 +7,7 @@ import CircleContainer from '../../CircleContainer';
 import { yearRangeType } from '../../../proptypes';
 import './styles.scss';
 
-const allProjectStatuses = ['INPROGRESS', 'COMPLETED'];
+const allProjectStatuses = ['IN_PROGRESS', 'COMPLETED'];
 
 const findListItemValue = (target, depth = 0) => {
   if (target.value) { return Number(target.value); }
@@ -200,7 +200,7 @@ class FilterContent extends React.PureComponent {
         </ul>
         <FormattedMessage id="components.searchBar.close">
           { text => (
-            <button {...handleInteraction(this.props.closeTab)} className="close upperCase" type="button">
+            <button {...handleInteraction(this.props.closeTab)} className="closeSearchBar upperCase" type="button">
               {text }
             </button>
           )}

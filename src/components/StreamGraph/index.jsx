@@ -136,8 +136,7 @@ class StreamGraph extends React.Component {
     const { intl } = this.props;
 
     return (
-
-      <VictoryChart animate={streamAnimation}>
+      <VictoryChart animate={streamAnimation} width={600} height={330}>
         <VictoryAxis
           dependentAxis
           label={intl.formatMessage({ id: 'components.streamGraph.axis.yAxis' })}

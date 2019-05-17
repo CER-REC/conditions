@@ -12,9 +12,9 @@ import {
 
 import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
-import Icon from '../Icon';
 
 import './styles.scss';
+import Arrow from '../Arrow';
 
 library.add(
   faAngleUp,
@@ -52,8 +52,8 @@ class List extends React.PureComponent {
     // arrowSize should match the legend style's arrow-size variable
     // (there are testing issues with :export)
     const arrowSize = 24;
-    const previousIcon = this.props.horizontal ? 'angle-left' : 'angle-up';
-    const nextIcon = this.props.horizontal ? 'angle-right' : 'angle-down';
+    const previousArrow = this.props.horizontal ? 'Left' : 'Up';
+    const nextArrow = this.props.horizontal ? 'Right' : 'Down';
 
     return (
       <CircleContainer
@@ -61,7 +61,7 @@ class List extends React.PureComponent {
         onClick={() => this.props.onChange(selectedIndex + (next ? 1 : -1))}
         className={classNames('arrow', next ? 'arrowNext' : 'arrowPrevious', { hidden })}
       >
-        <Icon size="1x" icon={next ? nextIcon : previousIcon} />
+        <Arrow orientation={next ? nextArrow : previousArrow} />
       </CircleContainer>
     );
   }

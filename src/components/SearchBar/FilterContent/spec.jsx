@@ -8,7 +8,7 @@ const yearRange = {
   end: 1980,
 };
 
-const projectStatus = ['INPROGRESS', 'COMPLETED'];
+const projectStatus = ['IN_PROGRESS', 'COMPLETED'];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
@@ -179,7 +179,7 @@ describe('Components|SearchBar/FilterContent', () => {
     test('click should call its changeProjectStatus prop and add it in if it doesnt exist', () => {
       status.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith(['INPROGRESS', 'COMPLETED']);
+      expect(spy).toHaveBeenCalledWith(['IN_PROGRESS', 'COMPLETED']);
     });
 
     test('enter key should call its changeProjectStatus prop', () => {
@@ -188,7 +188,7 @@ describe('Components|SearchBar/FilterContent', () => {
     });
 
     test('if status exists, it will remove the status', () => {
-      wrapper.setProps({ projectStatus: ['INPROGRESS', 'COMPLETED'] });
+      wrapper.setProps({ projectStatus: ['IN_PROGRESS', 'COMPLETED'] });
       status.simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledWith(['COMPLETED']);
     });
@@ -325,7 +325,7 @@ describe('Components|SearchBar/FilterContent', () => {
       wrapper = shallow(
         <FilterContent
           yearRange={yearRange}
-          projectStatus={['INPROGRESS']}
+          projectStatus={['IN_PROGRESS']}
           selectedYear={yearRange}
           changeProjectStatus={noop}
           closeTab={noop}

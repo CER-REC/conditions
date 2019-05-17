@@ -42,7 +42,7 @@ $curveRadius: 48px;
   &.company {
     top: 12px;
     right: 0;
-    bottom: calc(50% - 8px) ;
+    bottom: calc(50% - 8px);
 
     .vertical {
       top: $curveRadius;
@@ -78,7 +78,9 @@ $curveRadius: 48px;
   &.location {
     top: calc(50% - 16px);
     right: calc(8px - #{$curveRadius});
-    bottom: calc(20% - 2px);
+
+    // (Height of ProjectMenu + 1 grid unit for the gap) / Wheel height = 31.5%
+    bottom: calc(31.5% - 24px);
 
     .top {
       right: 0;

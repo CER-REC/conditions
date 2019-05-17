@@ -1,18 +1,27 @@
 @import '../../styles/colors.scss';
 
 .LocationWheelMinimap {
-  max-height: 96px;
+  position: relative;
+
+  height: 100%;
   max-width: 96px;
 
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 
-  .region {
-    fill: $InnerColourLocation1;
-  }
+    .region {
+      fill: $InnerColourLocation1;
+    }
 
-  .province {
-    fill: none;
-    stroke: $DarkGray;
-    stroke-width: 1;
+    .province {
+      fill: none;
+      stroke: $DarkGray;
+      stroke-width: 1;
+    }
   }
 
 }
