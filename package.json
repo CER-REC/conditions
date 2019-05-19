@@ -98,7 +98,7 @@
     "cz-customizable": "6.2.0",
     "d3-geo-projection": "2.7.0",
     "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.13.0",
+    "enzyme-adapter-react-16": "1.13.1",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-formatter-gitlab": "1.0.3",
