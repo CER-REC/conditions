@@ -235,7 +235,8 @@
         "TG": "Missing description",
         "XE": "Missing description",
         "XG": "Missing description",
-        "ZO": "Missing description"
+        "ZO": "Missing description",
+        "other": "Other"
       }
     },
     "featureMenu": {

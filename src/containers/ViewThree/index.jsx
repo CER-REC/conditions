@@ -44,14 +44,21 @@ const processConditionCounts = (counts) => {
     years: minorInstrumentYears,
   });
 
+  const prefixOrder = instruments.reduce((acc, cur) => {
+    acc.push(cur.subFeature);
+    return acc;
+  }, []);
+
   // We need to know their order here for the StreamGraph's colors
   instrumentsOut.forEach((_, idx) => { instrumentsOut[idx].rank = idx; });
 
-  return [...instrumentsOut, ...notInstruments];
+  return { conditionCounts: [...instrumentsOut, ...notInstruments], prefixOrder };
 };
 
 const ViewThree = (props) => {
-  const conditionCounts = processConditionCounts(props.conditionCountsByYear.counts);
+  const { conditionCounts, prefixOrder } = processConditionCounts(
+    props.conditionCountsByYear.counts,
+  );
 
   const reversedCounts = conditionCounts.slice().reverse();
 
@@ -86,7 +93,11 @@ const ViewThree = (props) => {
         <FeatureTypesDescription
           feature={props.selected.feature}
           subFeature={props.selected.subFeature}
-          displayOrder={displayOrder.features}
+          displayOrder={
+            (props.selected.feature === 'instrument')
+              ? prefixOrder
+              : displayOrder.features[props.selected.feature]
+          }
         />
       </section>
       <section className="selectedCompany">

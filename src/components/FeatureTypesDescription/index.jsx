@@ -40,7 +40,7 @@ class FeatureTypesDescription extends React.PureComponent {
       );
     }
 
-    const content = displayOrder[feature].map(type => (
+    const content = displayOrder.map(type => (
       <React.Fragment key={type}>
         {(feature === 'instrument')
           ? <h4 data-heading={type}>{type}</h4>
@@ -53,23 +53,27 @@ class FeatureTypesDescription extends React.PureComponent {
         <FormattedMessage
           id={`components.featureTypesDescription.${feature}.${type}`}
         >
-          {str => str.split('\n').map((line, idx) => {
-            let prefix = null;
-            const split = line.split(':');
-            if (split.length > 1) {
-              prefix = <span>{split.splice(0, 1)}:</span>;
-            }
-            return (
+          {
+            str => str.split('\n').map((line, idx) => (
               // eslint-disable-next-line react/no-array-index-key
               <p key={idx}>
-                {prefix}
-                <span>{split.join(':')}</span>
+                {line}
               </p>
-            );
-          })}
+            ))
+          }
         </FormattedMessage>
       </React.Fragment>
     ));
+
+    if (feature === 'instrument') {
+      content.splice(9, 0, (
+        <FormattedMessage
+          key="other"
+          tagName="h3"
+          id="components.featureTypesDescription.instrument.other"
+        />
+      ));
+    }
 
     return (
       <div
@@ -89,7 +93,7 @@ FeatureTypesDescription.propTypes = {
   /** Heading that the container should scroll to (ex. "security") */
   subFeature: PropTypes.string,
   /** Display order by feature type */
-  displayOrder: PropTypes.shape().isRequired,
+  displayOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 FeatureTypesDescription.defaultProps = {
