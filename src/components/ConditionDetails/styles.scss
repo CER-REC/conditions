@@ -20,7 +20,21 @@
     height: 100%;
     &.expandable {
         width: 70%;
+
+        .ProjectHeader .toggleExpand {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 1s ease-in-out, visibility 0s;
+        }
     }
+
+    .ProjectHeader .toggleExpand {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out, visibility 0s 1s;
+    }
+
+    transition: width 1s ease-in-out;
   }
 
   .popout {

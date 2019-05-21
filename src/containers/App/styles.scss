@@ -115,21 +115,21 @@
     .legend {
       transition: opacity $defaultTransition;
     }
-
-    .ConditionDetails {
-      .listPane,
-      .popout,
-      .ProjectHeader,
-      .contentPane {
-        transition: opacity $defaultTransition;
-      }
-    }
   }
 
   .ViewThree {
     opacity: 0;
 
     transition: opacity $defaultTransition;
+  }
+
+  .ConditionDetails {
+    .listPane,
+    // .popout,
+    .ProjectHeader,
+    .contentPane {
+      transition: opacity $defaultTransition;
+    }
   }
 
   .Footer {
@@ -199,19 +199,19 @@
       .menus {
         transition: opacity $fastStart;
       }
-
-      .ConditionDetails {
-        .listPane,
-        .popout,
-        .ProjectHeader,
-        .contentPane {
-          transition: opacity $fastStart;
-        }
-      }
     }
 
     .ViewThree {
       transition: opacity $fastStart;
+    }
+
+    .ConditionDetails {
+      .listPane,
+      // .popout,
+      .ProjectHeader,
+      .contentPane {
+        transition: opacity $fastStart;
+      }
     }
 
     .Footer {
