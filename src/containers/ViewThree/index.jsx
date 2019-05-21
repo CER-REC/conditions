@@ -161,7 +161,11 @@ export const ViewThreeGraphQL = props => (
   <Query query={yearRange}>
     {({ data, loading }) => {
       // TODO: Figure what to render while we're waiting
-      if (!data) { return null; }
+      if (loading || !data) { return null; }
+
+      // Placeholder to demonstrate that the query is working
+      // eslint-disable-next-line no-console
+      console.dir(data.allConfigurationData);
 
       return (
         <ViewThree

@@ -68,7 +68,6 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       <ViewThreeGraphQL
         {...props}
         {...getInteractionProps()}
-        queryId={43}
       />
     ), { decorators: [withGQL] },
   )
