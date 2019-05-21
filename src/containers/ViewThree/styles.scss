@@ -44,11 +44,8 @@
   }
 
   .selectedCompany {
-    // position: relative;
+    z-index: -1;
 
-    // height: 100%;
-
-    // Have the grey bar spill over to meet up against ConditionDetails
     overflow: visible;
     &:after {
       position: absolute;
@@ -70,7 +67,7 @@
       background-color: $LightGray;
 
       display: inline-block;
-      width: 100%;
+      width: 110%;
 
       padding-left: 10px;
       padding-right: 10px;

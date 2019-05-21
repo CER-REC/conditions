@@ -97,15 +97,15 @@ class ConditionDetails extends React.Component {
 
     return (
       <section className="ConditionDetails">
-        <div className={classNames('popout', 'left', { expanded: (this.props.isExpandable && !this.props.expanded) })}>
+        {/* <div className={classNames('popout', 'left', { expanded: (this.props.isExpandable && !this.props.expanded) })}>
           <div className="filler" />
-        </div>
-        <div className={classNames('main', { expandable: this.props.isExpandable })}>
+        </div> */}
+        <div className={classNames('main', { expanded: this.props.expanded, expandable: this.props.isExpandable })}>
           {this.renderHeader()}
           <div className="listPane">{this.renderList()}</div>
           <div className="contentPane">{this.renderContent(instrument, index)}</div>
         </div>
-        <div className={classNames('popout', 'right', { expanded: (this.props.isExpandable && this.props.expanded) })}>
+        <div className={classNames('popout', { expanded: (this.props.isExpandable && this.props.expanded) })}>
           {this.renderDetails(instrument, index)}
         </div>
       </section>

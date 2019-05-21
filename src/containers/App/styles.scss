@@ -7,7 +7,7 @@
     ViewOne: (x: 0, y: 0, w: 120, h: 84),
     ViewTwo: (x: 0, y: 0, w: 120, h: 84),
     ViewThree: (x: 0, y: 0, w: 120, h: 84),
-    conditions: (x: 60, y: 53, w: 58, h: 29),
+    conditions: (x: 39, y: 53, w: 79, h: 29),
     Footer: (x: 0, y: 84, w: 120),
   )) {
 
@@ -87,6 +87,14 @@
 
   }
 
+  .conditions {
+    z-index: 1;
+  }
+
+  .ViewTwo .wheel {
+    z-index: 2;
+  }
+
   .ViewOne {
     .introduction {
       transform: translateY(0px);
@@ -123,12 +131,13 @@
     transition: opacity $defaultTransition;
   }
 
-  .ConditionDetails {
-    .listPane,
-    // .popout,
-    .ProjectHeader,
-    .contentPane {
-      transition: opacity $defaultTransition;
+  .conditions {
+    .ConditionDetails {
+      .listPane,
+      .ProjectHeader,
+      .contentPane {
+        transition: opacity $defaultTransition;
+      }
     }
   }
 
@@ -207,7 +216,6 @@
 
     .ConditionDetails {
       .listPane,
-      // .popout,
       .ProjectHeader,
       .contentPane {
         transition: opacity $fastStart;
