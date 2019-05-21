@@ -4593,6 +4593,167 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="FeatureTypesDescription"
+  >
+    <p>
+      * 
+      The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.
+    </p>
+    <h4
+      data-heading="GH"
+    >
+      GH
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="XG"
+    >
+      XG
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="OH"
+    >
+      OH
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="MO"
+    >
+      MO
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="KAX"
+    >
+      KAX
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="MHW"
+    >
+      MHW
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="CPTC"
+    >
+      CPTC
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="XE"
+    >
+      XE
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="MH"
+    >
+      MH
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h3>
+      Other
+    </h3>
+    <h4
+      data-heading="ZO"
+    >
+      ZO
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="TG"
+    >
+      TG
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="GPSO"
+    >
+      GPSO
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="OPLO"
+    >
+      OPLO
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="GPMO"
+    >
+      GPMO
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="OPSP"
+    >
+      OPSP
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="OPL"
+    >
+      OPL
+    </h4>
+    <p>
+      Missing description
+    </p>
+    <h4
+      data-heading="GPL"
+    >
+      GPL
+    </h4>
+    <p>
+      Missing description
+    </p>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".FeatureTypesDescription { width: 600px; height: 200px }",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
 <div
   className="visualization"
