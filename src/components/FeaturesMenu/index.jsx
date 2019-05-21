@@ -8,7 +8,6 @@ import Dropdown from '../Dropdown';
 import { features as featuresRaw } from '../../constants';
 
 const features = Object.keys(featuresRaw);
-
 const FeaturesMenu = (props) => {
   const id = props.dropDown ? 'components.featureMenu.dropDownTitle' : 'common.trend.title';
   const selected = features.includes(props.selected) ? props.selected : features[0];

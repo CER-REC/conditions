@@ -12,28 +12,20 @@ const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
 const WheelList = (props) => {
   const wrapIndex = i => (props.selected + i + props.listContent.length) % props.listContent.length;
   const handleOnChange = i => props.onChange(wrapIndex(i - 3));
-
-  const setDangerousText = text => (
-    {
-      __html: text,
-    }
-  );
-
-  const listElements = indexOffsets.map((offset) => {
-    const text = props.wheelType === 'company'
-      ? props.listContent[wrapIndex(offset)].name
-      : props.listContent[wrapIndex(offset)].region_name;
-    return (
-      <span
-        className={offsetClasses[Math.abs(offset)]}
-        style={{ width: `${props.textClippingRadius}%` }}
-        // eslint-disable-next-line react/no-array-index-key
-        key={`${text}-${offset}`}
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={setDangerousText(text)}
-      />
-    );
-  });
+  const listElements = props.listContent.length > 0
+    ? (indexOffsets.map((offset) => {
+      const text = props.listContent[wrapIndex(offset)].name;
+      return (
+        <span
+          className={offsetClasses[Math.abs(offset)]}
+          style={{ width: `${props.textClippingRadius}%` }}
+          key={`${text}-${offset}`}
+        >
+          {text}
+        </span>
+      );
+    }))
+    : null;
 
   return (
     <div className={classNames('WheelList', props.className)}>
@@ -41,19 +33,19 @@ const WheelList = (props) => {
         <FormattedMessage id={`components.companyWheel.list.${props.wheelType}`}>
           {text => <span className="label">{text}</span>}
         </FormattedMessage>
-        <span
-          className="selected"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={setDangerousText(props.wheelType === 'company'
-            ? props.listContent[props.selected].name
-            : props.listContent[props.selected].region_name)
-          }
-        />
+        { props.listContent.length > 0
+          ? (<span className="selected">{props.listContent[props.selected].name}</span>)
+          : null
+        }
       </div>
       <div className="listContainer">
-        <div className="list">
-          <List elevated items={listElements} onChange={handleOnChange} selected={3} />
-        </div>
+        { props.listContent.length > 0
+          ? (
+            <div className="list">
+              <List elevated items={listElements} onChange={handleOnChange} selected={3} />
+            </div>
+          ) : null
+        }
       </div>
     </div>
   );

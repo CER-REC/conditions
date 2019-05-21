@@ -41,7 +41,7 @@ export const project = PropTypes.shape({
     en: PropTypes.string.isRequired,
     fr: PropTypes.string.isRequired,
   }).isRequired,
-  data: featureData.isRequired,
+  aggregatedCount: featureData.isRequired,
 });
 
 export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);

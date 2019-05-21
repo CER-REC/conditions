@@ -10,6 +10,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
     const reservedDegrees = 30;
     const degreesPerItem = (360 - reservedDegrees) / (wheelData.length - 1);
     const rotation = 0;
+    const noop = () => {};
 
     const wrapperSetup = (propOverrides) => {
       const props = Object.assign({
@@ -20,6 +21,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
         selectRay: '',
         wheelType: 'company',
         currentIndex: 0,
+        onChange: noop,
       }, propOverrides);
 
       const wrapper = shallow(<WheelRay {...props} />);

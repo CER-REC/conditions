@@ -51,6 +51,7 @@ class ProjectMenu extends React.PureComponent {
 
   getReformattedData = data => (
     Object.entries(data[this.props.selectedFeature])
+      .filter(([name]) => (name !== '__typename'))
       .map(([name, count]) => ({ name, count }))
   );
 
@@ -76,8 +77,8 @@ class ProjectMenu extends React.PureComponent {
         <ProjectChart
           key={project.id}
           chartType={selectedFeature}
-          graphData={this.getReformattedData(project.data)}
-          projectName={project.name.en}
+          graphData={this.getReformattedData(project.aggregatedCount)}
+          projectName={project.shortName.en}
           selected={project.id === selectedProjectID}
           loading={loading}
         />
@@ -89,10 +90,7 @@ class ProjectMenu extends React.PureComponent {
       : listItems.findIndex(project => project.id === selectedProjectID);
 
     // If no project is selected, set it to the first project
-    if (selected === -1) {
-      if (listItems.length > 0) { onChange(listItems[0].id); }
-      return null;
-    }
+    if (selected === -1 && listItems.length > 0) { onChange(listItems[0].id); }
 
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;

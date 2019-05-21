@@ -2,26 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LegendItem from './LegendItem';
-import CircleContainer from '../CircleContainer';
 import FeatureFlag from '../FeatureFlag';
 
 import './styles.scss';
 
 const FeaturesLegend = (props) => {
   if (props.legendItems.length === 0) { return null; }
-
-  const header = (props.isProjectLegend)
-    ? (
-      <div className="featuresHeader">
-        <CircleContainer size={24} className="ConditionsIcon">#</CircleContainer>
-        <div className="ConditionsDesc">
-          <FormattedMessage
-            id="components.projectLegend.totalConditions"
-          />
-        </div>
-      </div>
-    ) : null;
-
   const footer = (
     <React.Fragment>
       {(props.isProjectLegend)
@@ -76,7 +62,6 @@ const FeaturesLegend = (props) => {
   ));
   return (
     <div className="FeaturesLegend">
-      {header}
       {renderedItems}
       {footer}
     </div>
