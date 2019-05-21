@@ -10,8 +10,8 @@ import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
-import { allConditionsPerYear, allConditionsByCommodityOrInstrument, conditionData } from '../../proptypes';
-import { conditionCountsByYear, conditionCountsByCommodity, displayOrder } from '../../mockData';
+import { allConditionsPerYear, conditionData } from '../../proptypes';
+import { conditionCountsByYear, displayOrder } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
@@ -127,9 +127,6 @@ ViewThree.propTypes = {
     stream: PropTypes.number.isRequired,
   }).isRequired,
   setBubbleChartIndicator: PropTypes.func.isRequired,
-  conditionCountsByCommodity: PropTypes.shape({
-    counts: allConditionsByCommodityOrInstrument.isRequired,
-  }).isRequired,
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
@@ -178,7 +175,6 @@ export default connect(
 
     // TODO: Remove these since they're data and not state
     conditionCountsByYear,
-    conditionCountsByCommodity,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,

@@ -42,34 +42,6 @@ export default {
       },
     },
     {
-      feature: 'instrument',
-      subFeature: 'ROUTING',
-      years: {
-        2010: 1,
-        2011: 2,
-        2012: 3,
-        2013: 5,
-        2014: 23,
-        2015: 48,
-        2016: 65,
-        2017: 112,
-      },
-    },
-    {
-      feature: 'instrument',
-      subFeature: 'CONSTRUCTION',
-      years: {
-        2010: 12,
-        2011: 2,
-        2012: 23,
-        2013: 54,
-        2014: 23,
-        2015: 88,
-        2016: 95,
-        2017: 12,
-      },
-    },
-    {
       feature: 'phase',
       subFeature: 'INCLUDES_ALL_PHASES_OF_CONSTR',
       years: {
