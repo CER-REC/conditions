@@ -2618,7 +2618,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main"
+      className="main expanded"
     >
       <div
         className="ProjectHeader"
@@ -2642,6 +2642,28 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               *
             </span>
           </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
         </button>
       </div>
       <div
@@ -3109,6 +3131,20 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="popout"
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
+      </div>
+    </div>
   </section>
 </div>
 `;
@@ -3129,14 +3165,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
       className="ConditionDetails"
     >
       <div
-        className="popout left"
-      >
-        <div
-          className="filler"
-        />
-      </div>
-      <div
-        className="main expandable"
+        className="main expanded expandable"
       >
         <div
           className="ProjectHeader"
@@ -3650,7 +3679,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
         </div>
       </div>
       <div
-        className="popout right expanded"
+        className="popout expanded"
       >
         <div
           className="Details"
@@ -3676,7 +3705,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main"
+      className="main expanded"
     >
       <div
         className="ProjectHeader location"
@@ -3684,6 +3713,28 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         <h1>
           Selected Condition: 
         </h1>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="listPane"
@@ -4148,6 +4199,20 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             Quisque eu lobortis velit, quis viverra elit.
           </p>
         </div>
+      </div>
+    </div>
+    <div
+      className="popout"
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
       </div>
     </div>
   </section>
@@ -4951,6 +5016,28 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       <h1>
         Selected Condition: 
       </h1>
+      <button
+        className="toggleExpand"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h1
+          className="upperCase"
+        >
+          Less
+        </h1>
+        <svg
+          className="arrow"
+          viewBox="0 0 16 24"
+        >
+          <polyline
+            points="4,4 12,12.5 4,20 4,4"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </div>
@@ -4985,6 +5072,28 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
             *
           </span>
         </h2>
+      </button>
+      <button
+        className="toggleExpand"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h1
+          className="upperCase"
+        >
+          Less
+        </h1>
+        <svg
+          className="arrow"
+          viewBox="0 0 16 24"
+        >
+          <polyline
+            points="4,4 12,12.5 4,20 4,4"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -6630,7 +6739,7 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       className="GreyPipe location"
     >
       <div
-        className="horizontal"
+        className="topConnection"
       />
       <div
         className="top"
@@ -6640,6 +6749,9 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       />
       <div
         className="bottom"
+      />
+      <div
+        className="bottomConnection"
       />
     </div>
   </div>
