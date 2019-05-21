@@ -4,29 +4,15 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import FeatureTypesDescription from '.';
 import { displayOrder } from '../../mockData';
 
-const messages = {
-  'components.featureTypesDescription.theme.ADMINISTRATIVE': '1\n2\n3',
-};
-
 describe('Components|FeatureTypesDescription', () => {
   describe('with default props', () => {
-    let wrapper;
-    beforeEach(() => {
-      wrapper = shallow(<FeatureTypesDescription
+    const wrapper = shallow(
+      <FeatureTypesDescription
         feature="theme"
-        displayOrder={displayOrder.features}
-      />);
-    });
+        displayOrder={displayOrder.features.theme}
+      />,
+    );
 
     shouldBehaveLikeAComponent(FeatureTypesDescription, () => wrapper);
-
-    test('should split multi-line text into paragraphs', () => {
-      const p = wrapper.find('FormattedMessage')
-        .at(2)
-        .shallowWithIntl(messages)
-        .find('p');
-
-      expect(p).toHaveLength(3);
-    });
   });
 });
