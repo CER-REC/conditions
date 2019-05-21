@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
-export const viewTwoQuery = gql`
+export const companyWheelQuery = gql`
   query companies {
     allCompanies {
       id
@@ -10,5 +10,3 @@ export const viewTwoQuery = gql`
     }
   }
 `;
-
-// TODO: once region data is integrated in query add locationWheelQuery

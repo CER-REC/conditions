@@ -1,3 +1,247 @@
+# [0.13.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.13.0) (2019-05-17)
+
+
+### App
+
+* **Features:** adjusts View 1 to the grid, fixes Layout Only stories (2167846)
+* **Features:** begins reimplenting grid system (e3fdd23)
+* **Features:** continues laying out components to the grid, resizes ProjectMenu (de35333)
+* **Features:** repositions BrowseBy components for new layout (e9afa23)
+* **Features:** adjusts grid logic, positions Footer and adjusts transitions (c403173)
+* **Features:** fits View 3 to the grid, adjusts StreamGraph and transitions (d03ac00)
+* **Bug Fixes:** fixes flag alignment and Guide transition bugs (5e12c9d)
+* **Bug Fixes:** adds Streamgraph fix that was lost when merging PRs (4277f00)
+* **Bug Fixes:** fixes issues raised in PR (ac79e80)
+* **Tests:** updates snapshots (aa45bd2)
+* **Code Formatting:** removes unused code, tidies and fixes linting issues (aea6704)
+
+
+### App, ViewTwo, Wheel
+
+* **Code Refactoring:** changes as suggested on PR (84df01b)
+
+
+### Arrow
+
+* **Features:** adding spec (e6c6cb4)
+* **Features:** trying to get ccs working (d31d966)
+* **Features:** arrow now rendering (6cac23e)
+* **Code Formatting:** arrows look better (461d83b)
+* **Code Refactoring:** changed Arrow to match design doc (0366ad9, NEBV-1471)
+* **Code Refactoring:** improved arrow (2d4feb4)
+
+
+### Components/Arrow
+
+* **Features:** created Arrow Component (5c14433, NEBV-1471)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** removes header padding until we can overhaul this component (954bfa9)
+
+
+### Dependencies
+
+* **Project Maintenance:** update dependency codecov to v3.4.0 (f1d8fc2)
+* **Project Maintenance:** update dependency codecov to v3.5.0 (acfa194)
+* **Project Maintenance:** update dependency cz-customizable to v6.2.0 (7b320ff)
+* **Project Maintenance:** update dependency webpack to v4.31.0 (7ff35f5)
+
+
+### DotLegend
+
+* **Features:** implements DotLegend component (3a98acd)
+* **Documentation:** adds documentation (f2cadc5)
+
+
+### English.json
+
+* **Bug Fixes:** changed case of 'Of' (3052b41)
+
+
+### FeatureFlag
+
+* **Tests:** updates tests and snapshots (5366c20)
+
+
+### FilterContent
+
+* **Documentation:** updated Readme (476a26e, NEBV-1467)
+
+
+### Grid
+
+* **Documentation:** expands comment to add clarity (e1051e6)
+
+
+### List
+
+* **Code Refactoring:** Adds safety checks, adjusts tests (9100417)
+* **Code Refactoring:** changed Icon to Arrow (85bb353)
+
+
+### List/Wheel\
+
+* **Bug Fixes:** fixes scrolling, changes wheel animation params (6844f93)
+
+
+### ProjectDot
+
+* **Code Refactoring:** adjusts displayed scope of tests and stories (2280d83)
+
+
+### ProjectMenu
+
+* **Features:** adjusts the skewed pipe to be scalable (ee1b953)
+* **Bug Fixes:** fixes default story not rendering (97b8344)
+* **Code Refactoring:** fixes broken test during gql implementation (aa69eec)
+
+
+### Search Bar
+
+* **Code Refactoring:** applied style changes to close button (07e2f5e, NEBV-1509)
+* **Code Refactoring:** changed initial state of filters (419413b, NEBV-1467)
+
+
+### Search Bar, Filter Content, Search Content
+
+* **Bug Fixes:** fixed wet template close button (451f101, NEBV-1509)
+
+
+### SelectedGroupBar
+
+* **Bug Fixes:** changed colourOptions and Text (45ef874)
+
+
+### snapshot
+
+* **Tests:** updates snapshot (2e2f05b)
+
+
+### snapshots
+
+* **Bug Fixes:** updated snapshots (ca70486)
+
+
+### Snapshots
+
+* **Tests:** updates snapshots (8fbd072)
+
+
+### Storybook
+
+* **Tests:** updates snapshots (b5c9845)
+
+
+### TotalConditionLabel
+
+* **Code Refactoring:** refactors positioning concerns (1d5d9e1)
+
+
+### TotalConditionsLabel
+
+* **Code Refactoring:** removed unnecessary import (cade6ff)
+
+
+### view 2
+
+* **Code Refactoring:** removing hard coded strings (a7eb627)
+
+
+### View 2
+
+* **Features:** adjusts scaling for GreyPipe, fits Region display to the layout (efe2f52)
+* **Features:** adjust ProjectMenu and FeatureFlags to fit new layout (91e4c94)
+* **Features:** adjusts GreyPipe and RegionChart to fit new layout (ed9701e)
+* **Features:** added number of conditions label (2c851b6, NEBV-1513)
+* **Features:** adjusts ProjectMenu and FeatureMenu to fit the layout (5f0d103)
+* **Features:** redesigns the legend to align items with their flags (669546f)
+* **Features:** scales the minimap to fit its container (5fd55d8)
+* **Features:** continues adjusting layout to the grid (4fb583d)
+* **Bug Fixes:** fixes styling issues, removes redundant elements (e7094de)
+* **Code Formatting:** changed case of 'f' in for (06e5f01)
+* **Code Refactoring:** removed old conditions label (8ef4b55, NEBV-1513)
+
+
+### View 2, Search Bar
+
+* **Code Refactoring:** changed INPROGRESS to IN_PROGRESS (d2f7910, NEBV-1467)
+
+
+### View 2, View 3, Stream Graph, PullToSpin
+
+* **Code Refactoring:** replaced Hard coded strings (3cd7e85, NEBV-1490, NEBV-1495, NEBV-1484, NEBV-1480)
+
+
+### View 3
+
+* **Features:** adds basic grid layout (a4f1e83)
+
+
+### View 3, Wheel
+
+* **Code Refactoring:** took out hardcoded strings (4f7c55c)
+
+
+### View2 , View3
+
+* **Features:** added Arrow component (bcaddb6, NEBV-1471)
+
+
+### ViewTwo
+
+* **Bug Fixes:** fixes stories, Wheel flag positioning (05ca512)
+* **Code Formatting:** fixes view two integration legend positioning (b3c8574)
+* **Code Refactoring:** changes params of List and wheel animations & interactions (8b99ea0)
+
+
+### ViewTwo -> subcomponents
+
+* **Bug Fixes:** fixes conditional rendering issues (2d5137f)
+* **Code Refactoring:** fixes console errors (9d17a67)
+
+
+### ViewTwo, subcomponents
+
+* **Features:** adds data connection to ProjectMenu, ProjectLegend (103e827, NEBV-1399)
+
+
+### ViewTwo/Flag
+
+* **Code Refactoring:** modifies the queries and reverts width calculation (879eb9e)
+
+
+### ViewTwoGQL,SubfeaturePhase
+
+* **Code Refactoring:** simplifies functions Changes enums to match backend (fa11596)
+
+
+### Wheel
+
+* **Code Refactoring:** extracts ProjectDot as a public component (5861eb6)
+
+
+### Wheel/ ProjectMenu
+
+* **Code Refactoring:** further changes as suggested in prs (92f4995)
+
+
+### Wheel/GQL/PullToSpin
+
+* **Code Refactoring:** adds query, refactors wheel logic, fixes css pulltospin (534b9f6)
+
+
+### Wheel/location
+
+* **Bug Fixes:** fixes rendering on app due to query (a7ad82f)
+
+
+### BREAKING CHANGES
+
+* **ViewTwo, subcomponents:** ENGLISH.JSON, PROJECTSDATA.JS, VIEWTWOQUERIES, VIEWTWO AND SUBCOMPONENTS
+* **List/Wheel\:** none
+
 # [0.12.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.12.0) (2019-05-09)
 
 

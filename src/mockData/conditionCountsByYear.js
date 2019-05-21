@@ -71,7 +71,7 @@ export default {
     },
     {
       feature: 'phase',
-      subFeature: 'INCLUDES_ALL_PHASES_OF_CONSTRUCTION',
+      subFeature: 'INCLUDES_ALL_PHASES_OF_CONSTR',
       years: {
         2010: 13,
         2011: 1,

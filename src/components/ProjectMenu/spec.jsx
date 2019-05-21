@@ -10,7 +10,7 @@ const testData = [
     id: 100,
     name: { en: 'name-100', fr: 'nameFr-100' },
     shortName: { en: 'shortName-100', fr: 'shortNameFr-100' },
-    data: {
+    aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
       phase: {},
@@ -23,7 +23,7 @@ const testData = [
     id: 101,
     name: { en: 'name-101', fr: 'nameFr-101' },
     shortName: { en: 'shortName-101', fr: 'shortNameFr-101' },
-    data: {
+    aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
       phase: {},
@@ -36,7 +36,7 @@ const testData = [
     id: 102,
     name: { en: 'name-102', fr: 'nameFr-102' },
     shortName: { en: 'shortName-102', fr: 'shortNameFr-102' },
-    data: {
+    aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
       phase: {},
@@ -49,7 +49,7 @@ const testData = [
     id: 103,
     name: { en: 'name-103', fr: 'nameFr-103' },
     shortName: { en: 'shortName-103', fr: 'shortNameFr-103' },
-    data: {
+    aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
       phase: {},
@@ -62,7 +62,7 @@ const testData = [
     id: 104,
     name: { en: 'name-104', fr: 'nameFr-104' },
     shortName: { en: 'shortName-104', fr: 'shortNameFr-104' },
-    data: {
+    aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
       phase: {},
@@ -75,7 +75,7 @@ const testData = [
     id: 105,
     name: { en: 'name-105', fr: 'nameFr-105' },
     shortName: { en: 'shortName-105', fr: 'shortNameFr-105' },
-    data: {
+    aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
       phase: {},
@@ -88,7 +88,7 @@ const testData = [
     id: 106,
     name: { en: 'name-106', fr: 'nameFr-106' },
     shortName: { en: 'shortName-106', fr: 'shortNameFr-106' },
-    data: {
+    aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
       phase: {},
