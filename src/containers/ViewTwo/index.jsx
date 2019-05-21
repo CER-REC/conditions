@@ -13,11 +13,10 @@ import RegionConditionSummary from '../../components/RegionConditionSummary';
 import RegionCompanies from '../../components/RegionCompanies';
 import TrendButton from '../../components/TrendButton';
 import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
-import { browseByType, yearRangeType, featureTypes, conditionData, project } from '../../proptypes';
+import { browseByType, yearRangeType, featureTypes, project } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
-import ConditionDetails from '../../components/ConditionDetails';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
@@ -137,22 +136,6 @@ const ViewTwo = props => (
         isProjectLegend={props.browseBy !== 'location'}
       />
     </section>
-
-    <section className="conditions">
-      <ConditionDetails
-        selectedItem={props.selected.condition}
-        updateSelectedItem={props.setSelectedCondition}
-        openIntermediatePopup={props.openIntermediatePopup}
-        openProjectDetails={props.openProjectDetails}
-        toggleExpanded={noop}
-        searchKeywords={{
-          include: props.included,
-          exclude: props.excluded,
-        }}
-        browseBy={props.browseBy}
-        {...props.conditionDetails}
-      />
-    </section>
   </section>
 );
 
@@ -188,19 +171,19 @@ ViewTwo.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedRegion: PropTypes.func.isRequired,
-  conditionDetails: PropTypes.shape({
-    isExpandable: PropTypes.bool,
-    expanded: PropTypes.bool,
-    selectedProject: PropTypes.string.isRequired,
-    // searchKeywords: PropTypes.shape({
-    //   include: PropTypes.arrayOf(PropTypes.string),
-    //   exclude: PropTypes.arrayOf(PropTypes.string),
-    // }),
-    data: conditionData.isRequired,
-  }).isRequired,
-  setSelectedCondition: PropTypes.func.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
+  // conditionDetails: PropTypes.shape({
+  //   isExpandable: PropTypes.bool,
+  //   expanded: PropTypes.bool,
+  //   selectedProject: PropTypes.string.isRequired,
+  //   searchKeywords: PropTypes.shape({
+  //     include: PropTypes.arrayOf(PropTypes.string),
+  //     exclude: PropTypes.arrayOf(PropTypes.string),
+  //   }),
+  //   data: conditionData.isRequired,
+  // }).isRequired,
+  // setSelectedCondition: PropTypes.func.isRequired,
+  // openIntermediatePopup: PropTypes.func.isRequired,
+  // openProjectDetails: PropTypes.func.isRequired,
   projectsData: PropTypes.arrayOf(project),
   // The shape of wheelData will change once more integration is done.
   wheelData: PropTypes.arrayOf(PropTypes.any),
@@ -303,7 +286,7 @@ export default connect(
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedCompany: selectedCreators.setSelectedCompany,
     setSelectedRegion: selectedCreators.setSelectedRegion,
-    setSelectedCondition: selectedCreators.setSelectedCondition,
+    // setSelectedCondition: selectedCreators.setSelectedCondition,
     setSelectedProject: selectedCreators.setSelectedProject,
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,

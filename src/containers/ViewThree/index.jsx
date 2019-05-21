@@ -10,9 +10,8 @@ import StreamGraph from '../../components/StreamGraph';
 import BubbleChart from '../../components/BubbleChart';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
-import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
-import { allConditionsPerYear, allConditionsByCommodityOrInstrument, conditionData } from '../../proptypes';
+import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
 import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
@@ -79,23 +78,6 @@ const ViewThree = props => (
         <h2>Company Name</h2>
       </div>
     </section>
-    <section className="conditions">
-      <ConditionDetails
-        isExpandable
-        selected
-        selectedItem={props.selected.condition}
-        expanded={props.detailViewExpanded}
-        updateSelectedItem={props.setSelectedCondition}
-        openIntermediatePopup={props.openIntermediatePopup}
-        toggleExpanded={props.expandDetailView}
-        openProjectDetails={props.openProjectDetails}
-        searchKeywords={{
-          include: props.included,
-          exclude: props.excluded,
-        }}
-        {...props.conditionDetails}
-      />
-    </section>
   </section>
 );
 
@@ -122,19 +104,6 @@ ViewThree.propTypes = {
   }).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedSubFeature: PropTypes.func.isRequired,
-  included: PropTypes.arrayOf(PropTypes.string).isRequired,
-  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
-  conditionDetails: PropTypes.shape({
-    isExpandable: PropTypes.bool,
-    expanded: PropTypes.bool,
-    selectedProject: PropTypes.string.isRequired,
-    data: conditionData.isRequired,
-  }).isRequired,
-  detailViewExpanded: PropTypes.bool.isRequired,
-  setSelectedCondition: PropTypes.func.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
-  expandDetailView: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ViewThree.defaultProps = {
@@ -165,7 +134,6 @@ export default connect(
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
-    setSelectedCondition: selectedCreators.setSelectedCondition,
     setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
