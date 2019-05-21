@@ -3,6 +3,7 @@ export const Types = {
   SELECTED_SUBFEATURE: 'selectedSubFeature',
   SELECTED_INDICATOR: 'selectedIndicator',
   SELECTED_COMPANY: 'selectedCompany',
+  SELECTED_REGION: 'selectedRegion',
   SELECTED_PROJECT: 'selectedProject',
   SELECTED_CONDITION: 'selectedCondition',
   SELECTED_KEYWORDID: 'selectedKeywordId',
@@ -22,11 +23,16 @@ export const setSelectedIndicator = indicator => ({
   type: Types.SELECTED_INDICATOR,
   payload: { indicator },
 });
+
 export const setSelectedCompany = company => ({
   type: Types.SELECTED_COMPANY,
   payload: { company },
 });
 
+export const setSelectedRegion = region => ({
+  type: Types.SELECTED_REGION,
+  payload: { region },
+});
 export const setSelectedProject = project => ({
   type: Types.SELECTED_PROJECT,
   payload: { project },
@@ -45,7 +51,8 @@ export const setSelectedKeywordId = keywordId => ({
 const initialState = {
   feature: 'theme',
   subFeature: '',
-  company: '',
+  company: null,
+  region: null,
   project: null,
   condition: { instrumentIndex: 0, itemIndex: 0 },
   indicator: '',
@@ -60,6 +67,7 @@ export const reducer = (state = initialState, action) => {
     };
     case Types.SELECTED_INDICATOR: return { ...state, indicator: action.payload.indicator };
     case Types.SELECTED_COMPANY: return { ...state, company: action.payload.company };
+    case Types.SELECTED_REGION: return { ...state, region: action.payload.region };
     case Types.SELECTED_PROJECT: return { ...state, project: action.payload.project };
     case Types.SELECTED_CONDITION: return { ...state, condition: action.payload.condition };
     case Types.SELECTED_KEYWORDID: return { ...state, keywordId: action.payload.keywordId };

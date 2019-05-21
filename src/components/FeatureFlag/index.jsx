@@ -8,7 +8,7 @@ import { features } from '../../constants';
 const FeatureFlag = (props) => {
   const { intl } = props;
 
-  const flagSize = `calc(1px * ${props.count})`;
+  const flagSize = `calc(18px * ${Math.min(props.count, 10) / 10})`;
 
   const title = props.chartType === 'legend'
     ? intl.formatMessage({ id: `common.legend.${props.name}` })

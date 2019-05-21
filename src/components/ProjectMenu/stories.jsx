@@ -14,7 +14,19 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['onChange'] }))
   .add('Default Props', () => (
     <ProjectMenu
-      projectsData={projectsData.counts}
+      projectsData={projectsData}
+      selectedFeature="theme"
+      {...getInteractionProps()}
+    />
+  ), {
+    interaction: {
+      state: { selectedProjectID: 1226 },
+      actions: { onChange: () => v => ({ selectedProjectID: v }) },
+    },
+  })
+  .add('no data, empty pipe', () => (
+    <ProjectMenu
+      projectsData={[]}
       selectedFeature="theme"
       {...getInteractionProps()}
     />
@@ -44,7 +56,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('At left', () => (
     <ProjectMenu
-      projectsData={projectsData.counts.slice(0, 2)}
+      projectsData={projectsData.slice(0, 2)}
       selectedProjectID={1225}
       selectedFeature="theme"
       {...getInteractionProps()}
@@ -52,7 +64,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('At right', () => (
     <ProjectMenu
-      projectsData={projectsData.counts.slice(0, 3)}
+      projectsData={projectsData.slice(0, 3)}
       selectedProjectID={1227}
       selectedFeature="theme"
       {...getInteractionProps()}
@@ -60,7 +72,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('Single project', () => (
     <ProjectMenu
-      projectsData={projectsData.counts.slice(0, 1)}
+      projectsData={projectsData.slice(0, 1)}
       selectedProjectID={1225}
       selectedFeature="theme"
       {...getInteractionProps()}
@@ -68,7 +80,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('Four near left', () => (
     <ProjectMenu
-      projectsData={projectsData.counts.slice(0, 4)}
+      projectsData={projectsData.slice(0, 4)}
       selectedProjectID={1226}
       selectedFeature="theme"
       {...getInteractionProps()}
@@ -76,7 +88,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('Four near right', () => (
     <ProjectMenu
-      projectsData={projectsData.counts.slice(0, 4)}
+      projectsData={projectsData.slice(0, 4)}
       selectedProjectID={1227}
       selectedFeature="theme"
       {...getInteractionProps()}
@@ -84,7 +96,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
   ))
   .add('Three at middle', () => (
     <ProjectMenu
-      projectsData={projectsData.counts.slice(0, 3)}
+      projectsData={projectsData.slice(0, 3)}
       selectedProjectID={1226}
       selectedFeature="theme"
       {...getInteractionProps()}
