@@ -355,7 +355,6 @@ export const ViewTwoGraphQL = (props) => {
           region => region.id === props.selected.region,
         ).aggregatedCount
         : [];
-      console.log(regionsFeatureData);
       return (<ViewTwo {...props} wheelData={regionsFeatureData} legendItems={legendItems} />);
     }}
     </Query>

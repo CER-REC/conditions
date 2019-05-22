@@ -8,12 +8,10 @@ import LocationRay from '../LocationRay';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
-
 import CompanyFlag from '../CompanyFlag';
 
 // TODO: get legend to display in the middle of the limits of its occupancy
 // TODO: get the first of each letter to draw a line
-
 
 class WheelRay extends React.Component {
   static propTypes = {
@@ -31,10 +29,10 @@ class WheelRay extends React.Component {
 
     // TODO: This shouldn't be in the constructor; load the data and prompt a
     // re-render.
-    // const flagData = this.props.items.map(company => company.projectIds);
-    // const calc = flagLayoutCalculation(flagData);
-    // this.flagLayouts = calc.flagLayouts;
-    // this.flagScale = calc.flagScale;
+    const flagData = props.wheelType === 'company' ? this.props.items.map(company => company.projectIds) : [];
+    const calc = flagLayoutCalculation(flagData);
+    this.flagLayouts = calc.flagLayouts;
+    this.flagScale = calc.flagScale;
   }
 
   shouldComponentUpdate(nextProps) {
@@ -76,7 +74,7 @@ class WheelRay extends React.Component {
             <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
               { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
             </text>
-            {/* {(this.flagLayouts)
+            {(this.flagLayouts)
               ? (
                 <CompanyFlag
                   y={-65}
@@ -88,7 +86,7 @@ class WheelRay extends React.Component {
                 />
               )
               : null
-            } */}
+            }
           </g>
         )
         : (

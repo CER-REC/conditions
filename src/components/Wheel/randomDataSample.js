@@ -876,5 +876,4 @@ const locationData = locationDataRaw.map((location, index) => ({
   ...location,
   aggregatedCount: randomLocationBars[index],
 }));
-console.log(locationData);
 export { companyWheelData, locationData };

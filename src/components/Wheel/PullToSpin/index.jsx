@@ -9,16 +9,17 @@ const PullToSpin = (props) => {
   const [triggered, set] = useState(false);
   const { intl } = props;
 
+  const onSpinClick = () => {
+    set(state => !state);
+    // props.onClickSpin();
+  };
+
   const { transform } = useSpring({
     transform: triggered ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
     config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
-    onRest: () => set(false),
+    onRest: () => { set(false); if (triggered) props.onClickSpin(); },
   });
 
-  const onSpinClick = () => {
-    set(state => !state);
-    props.onClickSpin();
-  };
   return (
     <g className="PullToSpin">
       <g className="PullSpinArrow">

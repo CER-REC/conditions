@@ -8,6 +8,14 @@ import ReadMe from './README.md';
 
 import { companyWheelData as companyData, locationData } from './randomDataSample';
 
+const processedLocationData = locationData.map(region => (
+  {
+    ...region,
+    aggregatedCount: region.aggregatedCount.filter(
+      item => item[0].feature === 'theme',
+    )[0],
+  }));
+
 storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(
@@ -24,5 +32,5 @@ storiesForComponent('Components|Wheel', module, ReadMe)
     </div>
   ))
   .add('location props', () => (
-    <Wheel {...getInteractionProps()} wheelType="location" wheelData={locationData} />
+    <Wheel {...getInteractionProps()} wheelType="location" wheelData={processedLocationData} />
   ));
