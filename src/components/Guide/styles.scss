@@ -10,8 +10,6 @@
 
   font-size: 20px;
 
-  pointer-events: none;
-
   .CircleContainer {
     position: absolute;
     top: 50%;
@@ -56,8 +54,6 @@
     left: 0;
 
     .wedge {
-      stroke: $White;
-      stroke-width: 2px;
       fill: $LinksTextButtons;
     }
   }

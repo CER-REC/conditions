@@ -16,7 +16,9 @@ const numWedges = wedgesEnd - wedgesStart + 1;
 
 const wedgeWidth = 10;
 
-const overallSize = guideSize + 2 * wedgeWidth;
+const padding = 4;
+
+const overallSize = guideSize + 2 * wedgeWidth + 2 * padding;
 const halfOverallSize = overallSize / 2;
 
 const Guide = ({ step, onClick }) => {
@@ -26,12 +28,12 @@ const Guide = ({ step, onClick }) => {
       wedges.push((
         <path
           className="wedge"
-          transform={`rotate(${i * 360 / numWedges}) translate(1, -1)`}
+          transform={`rotate(${i * 360 / numWedges}) translate(1, -2)`}
           d={`
-            M 0 -${halfOverallSize}
-            A ${halfOverallSize} ${halfOverallSize} 0 0 1 ${0.866 * halfOverallSize} -${0.5 * halfOverallSize}
-            L ${0.866 * (halfOverallSize - wedgeWidth)} -${0.5 * (halfOverallSize - wedgeWidth)}
-            A ${halfOverallSize - wedgeWidth} ${halfOverallSize - wedgeWidth} 0 0 0 0 ${-halfOverallSize + wedgeWidth}
+            M 0 ${-halfOverallSize + padding}
+            A ${halfOverallSize - padding} ${halfOverallSize - padding} 0 0 1 ${0.866 * (halfOverallSize - padding)} -${0.5 * (halfOverallSize - padding)}
+            L ${0.866 * (halfOverallSize - padding - wedgeWidth)} -${0.5 * (halfOverallSize - padding - wedgeWidth)}
+            A ${halfOverallSize - padding - wedgeWidth} ${halfOverallSize - padding - wedgeWidth} 0 0 0 0 ${-halfOverallSize + padding + wedgeWidth}
             Z
           `}
         />
@@ -40,11 +42,6 @@ const Guide = ({ step, onClick }) => {
   }
 
   return (
-    /**
-     * This wrapper div gets us around the fact that CSS' translate function measures
-     * percentages relative to the element being translated; the Guide circle itself
-     * can't use percentages for translating to a given position relative to the app.
-     */
     <div className="Guide" style={{ width: overallSize, height: overallSize }}>
       <CircleContainer size={guideSize} onClick={onClick}>
         {

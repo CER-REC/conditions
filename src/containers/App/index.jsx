@@ -119,7 +119,14 @@ class App extends React.PureComponent {
         ref={this.ref}
       >
         <div className="guideWrapper">
-          <Guide step={guideStep} onClick={this.handleGuideClick} />
+          {/**
+             * This extra div gets us around the fact that CSS' translate function measures
+             * percentages relative to the element being translated; the Guide circle itself
+             * can't use percentages for translating to a given position relative to the app.
+             */}
+          <div className="guideTranslate">
+            <Guide step={guideStep} onClick={this.handleGuideClick} />
+          </div>
         </div>
         <ViewOne jumpToAbout={this.jumpToAbout} />
         <section className="browseBy">
