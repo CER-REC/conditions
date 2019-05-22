@@ -13,18 +13,10 @@ const year = {
   end: 1980,
 };
 
-const legendItems = [
-  { feature: 'theme', description: 'SECURITY', disabled: false },
-  { feature: 'theme', description: 'FINANCIAL', disabled: false },
-  { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
-  { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
-];
-
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
   projectsData,
-  legendItems,
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },

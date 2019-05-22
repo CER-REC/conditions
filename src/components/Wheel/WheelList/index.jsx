@@ -8,13 +8,12 @@ import './styles.scss';
 
 const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
 const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
-const language = 'en';
 const WheelList = (props) => {
   const wrapIndex = i => (props.selected + i + props.listContent.length) % props.listContent.length;
   const handleOnChange = i => props.onChange(wrapIndex(i - 3));
   const listElements = props.listContent.length > 0
     ? (indexOffsets.map((offset) => {
-      const text = props.listContent[wrapIndex(offset)].name[language];
+      const text = props.listContent[wrapIndex(offset)].name;
       return (
         <span
           className={offsetClasses[Math.abs(offset)]}
@@ -34,7 +33,7 @@ const WheelList = (props) => {
           {text => <span className="label">{text}</span>}
         </FormattedMessage>
         { props.listContent.length > 0
-          ? (<span className="selected">{props.listContent[props.selected].name[language]}</span>)
+          ? (<span className="selected">{props.listContent[props.selected].name}</span>)
           : null
         }
       </div>

@@ -1,4 +1,5 @@
 import randomProjects from './randomProjects';
+import { features } from '../../constants';
 
 const companyDataSample = [
   {
@@ -854,6 +855,26 @@ const calcRayLegendDataLocation = () => {
   return WheelLocationData;
 };
 
+const featureKeys = Object.keys(features);
+const randomLocationBars = Array(200).fill('')
+  .map(() => featureKeys.map(feature => (
+    Object.entries(features[feature]).map(([key, value]) => {
+      const randomValue = Math.floor(Math.random() * 15);
+      return ({
+        feature,
+        description: key,
+        disabled: randomValue <= 0,
+        count: randomValue,
+        value: randomValue,
+        fill: value,
+      });
+    })
+  )));
 const companyWheelData = calcRayLegendData().items;
-const locationData = calcRayLegendDataLocation().items;
+const locationDataRaw = calcRayLegendDataLocation().items;
+const locationData = locationDataRaw.map((location, index) => ({
+  ...location,
+  aggregatedCount: randomLocationBars[index],
+}));
+console.log(locationData);
 export { companyWheelData, locationData };

@@ -96,9 +96,6 @@ const ViewTwo = props => (
         ? (
           <div className="regionChart">
             <RegionConditionSummary featureData={props.legendItems} />
-            {/* <RegionConditionSummary
-              featureData={props.wheelData.filter(region => region.id === props.selected.region)}
-            /> */}
             <RegionCompanies
               companies={regionData.companyData}
               activeConditionCompanies={regionData.activeConditionCompanies}
@@ -224,13 +221,39 @@ ViewTwo.defaultProps = {
   projectsData: [],
 };
 
-export const ViewTwoUnconnected = props => (
-  <ViewTwo
+export const ViewTwoUnconnected = (props) => {
+  let wheelData = [];
+  let legendItems = [];
+  // eslint-disable-next-line react/prop-types
+  if (props.browseBy === 'company') {
+    wheelData = companyWheelData;
+  // eslint-disable-next-line react/prop-types
+  } else if (props.browseBy === 'location') {
+    wheelData = locationData.length > 0
+      ? locationData.map(region => (
+        {
+          ...region,
+          // REMOVE THE TWO FOLLOWING LINES ONCE THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
+          aggregatedCount: region.aggregatedCount.filter(
+            // eslint-disable-next-line react/prop-types
+            item => item[0].feature === props.selected.feature,
+          )[0],
+        }))
+      : [];
     // eslint-disable-next-line react/prop-types
-    wheelData={props.browseBy === 'company' ? companyWheelData : locationData}
-    {...props}
-  />
-);
+    legendItems = props.selected.region
+      ? wheelData.find(region => region.id === props.selected.region).aggregatedCount
+      : [];
+  }
+  return (
+    <ViewTwo
+      // eslint-disable-next-line react/prop-types
+      wheelData={wheelData}
+      legendItems={legendItems}
+      {...props}
+    />
+  );
+};
 
 export const ViewTwoGraphQL = (props) => {
   if (props.browseBy === 'company') {
@@ -307,6 +330,9 @@ export const ViewTwoGraphQL = (props) => {
         ? locationData.map(region => (
           {
             ...region,
+            // REMOVE THE TWO FOLLOWING LINES ONCE THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
+            name: region.name.en,
+            province: region.province.en,
             aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
               .reduce((acc, [key, val]) => {
                 if (key !== '__typename') {
@@ -329,6 +355,7 @@ export const ViewTwoGraphQL = (props) => {
           region => region.id === props.selected.region,
         ).aggregatedCount
         : [];
+      console.log(regionsFeatureData);
       return (<ViewTwo {...props} wheelData={regionsFeatureData} legendItems={legendItems} />);
     }}
     </Query>
