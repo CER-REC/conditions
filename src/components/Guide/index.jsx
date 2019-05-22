@@ -15,11 +15,23 @@ const wedgesEnd = 7;
 const numWedges = wedgesEnd - wedgesStart + 1;
 
 const wedgeWidth = 10;
-
 const padding = 4;
 
-const overallSize = guideSize + 2 * wedgeWidth + 2 * padding;
-const halfOverallSize = overallSize / 2;
+const radius = guideSize / 2 + wedgeWidth + padding;
+
+const x1 = 0;
+const y1 = -radius + padding;
+
+const r2 = radius - padding;
+const x2 = 0.866 * r2;
+const y2 = -(0.5 * r2);
+
+const r3 = radius - padding - wedgeWidth;
+const x3 = 0.866 * r3;
+const y3 = -(0.5 * r3);
+
+const x4 = 0;
+const y4 = -radius + padding + wedgeWidth;
 
 const Guide = ({ step, onClick }) => {
   const wedges = [];
@@ -30,10 +42,10 @@ const Guide = ({ step, onClick }) => {
           className="wedge"
           transform={`rotate(${i * 360 / numWedges}) translate(1, -2)`}
           d={`
-            M 0 ${-halfOverallSize + padding}
-            A ${halfOverallSize - padding} ${halfOverallSize - padding} 0 0 1 ${0.866 * (halfOverallSize - padding)} -${0.5 * (halfOverallSize - padding)}
-            L ${0.866 * (halfOverallSize - padding - wedgeWidth)} -${0.5 * (halfOverallSize - padding - wedgeWidth)}
-            A ${halfOverallSize - padding - wedgeWidth} ${halfOverallSize - padding - wedgeWidth} 0 0 0 0 ${-halfOverallSize + padding + wedgeWidth}
+            M ${x1} ${y1}
+            A ${r2} ${r2} 0 0 1 ${x2} ${y2}
+            L ${x3} ${y3}
+            A ${r3} ${r3} 0 0 0 ${x4} ${y4}
             Z
           `}
         />
@@ -42,7 +54,7 @@ const Guide = ({ step, onClick }) => {
   }
 
   return (
-    <div className="Guide" style={{ width: overallSize, height: overallSize }}>
+    <div className="Guide" style={{ width: 2 * radius, height: 2 * radius }}>
       <CircleContainer size={guideSize} onClick={onClick}>
         {
           textPlaceholders.map((_, idx) => (
@@ -57,7 +69,7 @@ const Guide = ({ step, onClick }) => {
         ? (
           <svg
             className="wedgeContainer"
-            viewBox={`-${overallSize / 2} -${overallSize / 2} ${overallSize} ${overallSize}`}
+            viewBox={`${-radius} ${-radius} ${2 * radius} ${2 * radius}`}
           >
             {wedges}
           </svg>
