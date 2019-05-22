@@ -99,11 +99,11 @@ class App extends React.PureComponent {
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
-    let guideState = transitionState;
-    if (guideState === 9) {
-      guideState = 0;
-    } else if (guideState === 8 || guideState > 9) {
-      guideState = -1;
+    let guideStep = transitionState;
+    if (guideStep === 9) {
+      guideStep = 0;
+    } else if (guideStep === 8 || guideStep > 9) {
+      guideStep = -1;
     }
 
     let labelId = 'blank';
@@ -119,7 +119,7 @@ class App extends React.PureComponent {
         ref={this.ref}
       >
         <div className="guideWrapper">
-          <Guide textState={guideState} onClick={this.handleGuideClick} />
+          <Guide step={guideStep} onClick={this.handleGuideClick} />
         </div>
         <ViewOne jumpToAbout={this.jumpToAbout} />
         <section className="browseBy">

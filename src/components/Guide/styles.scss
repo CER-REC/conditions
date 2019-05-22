@@ -13,6 +13,12 @@
   pointer-events: none;
 
   .CircleContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
     background: $Guide;
 
     pointer-events: all;
@@ -41,6 +47,18 @@
           opacity: 0;
         }
       }
+    }
+  }
+
+  .wedgeContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .wedge {
+      stroke: $White;
+      stroke-width: 2px;
+      fill: $LinksTextButtons;
     }
   }
 }
