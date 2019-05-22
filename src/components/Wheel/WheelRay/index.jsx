@@ -16,6 +16,7 @@ import CompanyFlag from '../CompanyFlag';
 // TODO: get the first of each letter to draw a line
 
 const themeKeys = Object.keys(features.theme);
+const language = 'en';
 
 const randomLocationBars = Array(200).fill('')
   .map(() => themeKeys.map(subFeature => ({
@@ -39,15 +40,16 @@ class WheelRay extends React.Component {
 
     // TODO: This shouldn't be in the constructor; load the data and prompt a
     // re-render.
-    const flagData = this.props.items.map(company => company.projectIds);
-    const calc = flagLayoutCalculation(flagData);
-    this.flagLayouts = calc.flagLayouts;
-    this.flagScale = calc.flagScale;
+    // const flagData = this.props.items.map(company => company.projectIds);
+    // const calc = flagLayoutCalculation(flagData);
+    // this.flagLayouts = calc.flagLayouts;
+    // this.flagScale = calc.flagScale;
   }
 
   shouldComponentUpdate(nextProps) {
     if (this.props.currentIndex !== nextProps.currentIndex) { return true; }
     if (this.props.wheelType !== nextProps.wheelType) { return true; }
+    if (this.props.items !== nextProps.items) { return true; }
     return false;
   }
 
@@ -81,9 +83,9 @@ class WheelRay extends React.Component {
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
             <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
-              { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
+              { item.name[language].charAt(0) !== legendTracker ? item.name[language].charAt(0) : null }
             </text>
-            {(this.flagLayouts)
+            {/* {(this.flagLayouts)
               ? (
                 <CompanyFlag
                   y={-65}
@@ -95,29 +97,30 @@ class WheelRay extends React.Component {
                 />
               )
               : null
-            }
+            } */}
           </g>
         )
         : (
           <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChange, index)}>
             <LocationRay
-              items={randomLocationBars[index]}
+              // items={randomLocationBars[index]}
+              items={items[index].aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
               searched
               adjustRotationReference={degreesPerItem / 2}
             />
-            { item.location.province !== legendTracker
+            { item.province[language] !== legendTracker
               ? (
                 <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
-                  {item.location.province}
+                  {item.province[language]}
                 </text>
               ) : null }
           </g>
         );
       legendTracker = props.wheelType === 'company'
-        ? item.name.charAt(0)
-        : item.location.province;
+        ? item.name[language].charAt(0)
+        : item.province[language];
       return componentToReturn;
     });
 

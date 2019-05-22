@@ -88,8 +88,13 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
   .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
   .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" {...getInteractionProps()} />)
   .add(
-    'connected variant',
+    'connected company',
     () => <ViewTwoGraphQL {...connectedProps} {...getInteractionProps()} />,
+    { decorators: [withGQL] },
+  )
+  .add(
+    'connected location',
+    () => <ViewTwoGraphQL {...connectedProps} browseBy="location" {...getInteractionProps()} />,
     { decorators: [withGQL] },
   )
   .add('layout only', () => (

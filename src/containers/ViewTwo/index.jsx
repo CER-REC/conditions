@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
-import { companyWheelQuery } from '../../queries/viewTwoQueries/wheel';
+import { companyWheelQuery, locationWheelQuery } from '../../queries/viewTwoQueries/wheel';
 import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
@@ -25,9 +25,10 @@ import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '.
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
+import { features } from '../../constants';
 
 const noop = () => {};
-
+const language = 'en';
 const regionData = {
   featureData: [
     { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
@@ -72,7 +73,12 @@ const ViewTwo = props => (
         findAny={props.findAny}
       />
       {props.browseBy === 'location' ? (
-        <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
+        <LocationWheelMinimap
+          region={props.selected.region
+            ? props.wheelData.find(region => region.id === props.selected.region).name.en
+            : ''
+          }
+        />
       ) : null}
     </section>
 
@@ -89,7 +95,10 @@ const ViewTwo = props => (
       {props.browseBy === 'location'
         ? (
           <div className="regionChart">
-            <RegionConditionSummary featureData={regionData.featureData} />
+            <RegionConditionSummary featureData={props.legendItems} />
+            {/* <RegionConditionSummary
+              featureData={props.wheelData.filter(region => region.id === props.selected.region)}
+            /> */}
             <RegionCompanies
               companies={regionData.companyData}
               activeConditionCompanies={regionData.activeConditionCompanies}
@@ -285,7 +294,45 @@ export const ViewTwoGraphQL = (props) => {
       </Query>
     );
   }
-  return (<ViewTwo {...props} wheelData={locationData} legendItems={regionData.featureData} />);
+  return (
+    <Query query={locationWheelQuery}>{(allRegionsQueryProps) => {
+      // eslint-disable-next-line no-shadow
+      const locationData = allRegionsQueryProps.data.allRegions
+        ? allRegionsQueryProps.data.allRegions.sort(
+          (a, b) => (a.province[language] < b.province[language] ? -1 : 1),
+        )
+        : [];
+      // Get the aggregatedCount and create the graph for each one.
+      const regionsFeatureData = locationData.length > 0
+        ? locationData.map(region => (
+          {
+            ...region,
+            aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
+              .reduce((acc, [key, val]) => {
+                if (key !== '__typename') {
+                  acc.push({
+                    feature: props.selected.feature,
+                    description: key,
+                    disabled: val <= 0,
+                    count: val,
+                    value: val,
+                    fill: features[props.selected.feature][key],
+                    id: region.id,
+                  });
+                }
+                return acc;
+              }, []),
+          }))
+        : [];
+      const legendItems = regionsFeatureData.length > 0 && props.selected.region
+        ? regionsFeatureData.find(
+          region => region.id === props.selected.region,
+        ).aggregatedCount
+        : [];
+      return (<ViewTwo {...props} wheelData={regionsFeatureData} legendItems={legendItems} />);
+    }}
+    </Query>
+  );
 };
 ViewTwoGraphQL.propTypes = ViewTwo.propTypes;
 
