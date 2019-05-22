@@ -14,7 +14,7 @@ const wedgesStart = 2;
 const wedgesEnd = 7;
 const numWedges = wedgesEnd - wedgesStart + 1;
 
-const wedgeWidth = 12;
+const wedgeWidth = 10;
 
 const overallSize = guideSize + 2 * wedgeWidth;
 const halfOverallSize = overallSize / 2;
@@ -26,7 +26,7 @@ const Guide = ({ step, onClick }) => {
       wedges.push((
         <path
           className="wedge"
-          transform={`rotate(${i * 360 / numWedges})`}
+          transform={`rotate(${i * 360 / numWedges}) translate(1, -1)`}
           d={`
             M 0 -${halfOverallSize}
             A ${halfOverallSize} ${halfOverallSize} 0 0 1 ${0.866 * halfOverallSize} -${0.5 * halfOverallSize}
