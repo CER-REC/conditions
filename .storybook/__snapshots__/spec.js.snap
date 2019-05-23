@@ -7817,10 +7817,10 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         className="descriptionText"
       >
         <p>
-          Keyword
+          Back to
         </p>
         <p>
-          Explorer
+          Keywords
         </p>
       </span>
     </div>
