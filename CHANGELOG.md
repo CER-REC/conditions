@@ -1,3 +1,51 @@
+# [0.14.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.14.0) (2019-05-23)
+
+
+### conditions list
+
+* **Code Formatting:** added space (25923a7)
+
+
+### Conditions List
+
+* **Features:** changed indicator to orange circle (0fe1d4a, NEBV-1526)
+
+
+### ConditionsList, View 3
+
+* **Bug Fixes:** fixed white space (b488c83)
+
+
+### FeaturesMenu
+
+* **Code Refactoring:** removed Border around selected (d288c52)
+
+
+### Keyword Explorer Button
+
+* **Code Refactoring:** changed text to: Back to Keywords (ccafc1d, NEBV-1528)
+
+
+### PopuBtn
+
+* **Code Refactoring:** made button height dynamic (62a19e9, NEBV-1496)
+
+
+### PopupButon
+
+* **Code Refactoring:** changed button width (a221a6e, NEBV-1496)
+
+
+### Trend Button, Features Menu
+
+* **Code Refactoring:** updated button and menu to match design doc (89086f2, NEBV-1504)
+
+
+### View 2, View 3
+
+* **Bug Fixes:** better way to insert space (bc814ae)
+* **Bug Fixes:** removed trailing spaces in text (f550d77, NEBV-1521)
+
 # [0.13.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.13.0) (2019-05-17)
 
 
