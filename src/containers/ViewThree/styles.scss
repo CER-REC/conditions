@@ -99,6 +99,10 @@
 
         color: $Black51;
       }
+      .companyName::before{
+        content: '\00a0';
+        opacity: 0;
+      }
 
     }
   }
