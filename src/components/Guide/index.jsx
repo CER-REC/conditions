@@ -10,8 +10,8 @@ const guideSize = 176;
 // Just so there's something to map over in the JSX
 const textPlaceholders = new Array(8).fill(null);
 
-const wedgesStart = 2;
-const wedgesEnd = 7;
+const wedgesStart = 1;
+const wedgesEnd = 6;
 const numWedges = wedgesEnd - wedgesStart + 1;
 
 const wedgeWidth = 10;

@@ -43,6 +43,13 @@ const client = new ApolloClient({ cache, link, fetch });
 const noop = () => {};
 const tutorialTiming = 5000;
 
+const transitionStates = {
+  view1: 0,
+  view2: 7,
+  view1Reset: 8,
+  view3: 9,
+};
+
 const viewProps = {
   conditionCountsByYear,
   conditionCountsByCommodity,
@@ -74,8 +81,11 @@ class App extends React.PureComponent {
 
   incrementTransitionState = (back) => {
     let currentState = this.props.transitionState;
-    if (currentState === 9) { currentState = 0; }
-    const newState = Math.min(Math.max(0, currentState + (back ? -1 : 1)), 8);
+    if (currentState === transitionStates.view1Reset) { currentState = 0; }
+    const newState = Math.min(
+      Math.max(transitionStates.view1, currentState + (back ? -1 : 1)),
+      transitionStates.view2,
+    );
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
     }
@@ -98,8 +108,7 @@ class App extends React.PureComponent {
   };
 
   playTimer = () => {
-    console.log('timer went');
-    if (this.state.tutorialPlaying && this.props.transitionState < 8) {
+    if (this.state.tutorialPlaying && this.props.transitionState < transitionStates.view2) {
       this.incrementTransitionState();
 
       setTimeout(this.playTimer, tutorialTiming);
@@ -116,7 +125,7 @@ class App extends React.PureComponent {
   }
 
   jumpToAbout = () => {
-    this.props.setTransitionState(8);
+    this.props.setTransitionState(transitionStates.view2);
     this.setMainInfoBarPane('about');
 
     // This timer needs to be long enough for React to do its thing and for the
@@ -126,27 +135,28 @@ class App extends React.PureComponent {
     }, 1000);
   }
 
-  jumpToView1 = () => this.props.setTransitionState(9)
+  jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
 
   jumpToView2 = (type) => {
-    this.props.setTransitionState(8);
+    this.props.setTransitionState(transitionStates.view2);
     this.props.setBrowseBy(type);
   }
 
-  jumpToView3 = () => this.props.setTransitionState(10)
+  jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
     let guideStep = transitionState;
-    if (guideStep === 9) {
-      guideStep = 0;
-    } else if (guideStep === 8 || guideStep > 9) {
+    if (guideStep === transitionStates.view1Reset) {
+      guideStep = transitionStates.view1;
+    } else if (guideStep === transitionStates.view2 || guideStep > transitionStates.view1Reset) {
       guideStep = -1;
     }
 
     let labelId = 'blank';
-    if (transitionState < 7 || transitionState === 9) {
+    if (transitionState < (transitionStates.view2 - 1)
+    || transitionState === transitionStates.view1Reset) {
       labelId = 'skip';
     } else if (transitionState > 9) {
       labelId = 'return';
@@ -170,10 +180,13 @@ class App extends React.PureComponent {
         <ViewOne jumpToAbout={this.jumpToAbout} />
         <section className="browseBy">
           <BrowseBy
-            showArrow={(transitionState < 2 || transitionState === 9)}
+            showArrow={
+              (transitionState === transitionStates.view1
+              || transitionState === transitionStates.view1Reset)
+            }
             labelId={labelId}
             browseBy={browseBy}
-            onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
+            onClick={(transitionState === transitionStates.view2) ? setBrowseBy : this.jumpToView2}
           />
           <GuideTransport
             playing={this.state.tutorialPlaying}
