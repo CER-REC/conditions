@@ -23,8 +23,11 @@
   }
 
   .openProject {
-    margin-left: 1em;
     height: 90%;
+  }
+  .openProject::before {
+    content: ' ';
+    white-space: pre;
   }
 
   .toggleExpand {
@@ -36,6 +39,10 @@
     line-height: 24px;
 
     height: 90%;
+  }
+  .toggleExpand::before {
+    content: ' ';
+    white-space: pre;
   }
 
   .arrow {

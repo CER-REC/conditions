@@ -99,8 +99,11 @@
 
         color: $Black51;
       }
-      .companyName{
-        margin-left: 6px;
+      .companyName::before{
+        content: ' ';
+        opacity: 0;
+        white-space: pre;
+        
       }
 
     }
