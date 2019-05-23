@@ -25,6 +25,9 @@
   .openProject {
     height: 90%;
   }
+  .openProject::before {
+    content: '\00a0';
+  }
 
   .toggleExpand {
     float: right;
@@ -35,6 +38,7 @@
 
     height: 90%;
   }
+  
 
   .arrow {
     display: inline-block;

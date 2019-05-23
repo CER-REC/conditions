@@ -2624,7 +2624,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         className="ProjectHeader"
       >
         <h1>
-          Selected Project: 
+          Selected Project:
         </h1>
         <button
           className="openProject"
@@ -3142,7 +3142,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           className="ProjectHeader"
         >
           <h1>
-            Selected Project: 
+            Selected Project:
           </h1>
           <button
             className="openProject"
@@ -3682,7 +3682,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         className="ProjectHeader location"
       >
         <h1>
-          Selected Condition: 
+          Selected Condition:
         </h1>
       </div>
       <div
@@ -4892,7 +4892,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -4949,7 +4949,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       className="ProjectHeader location"
     >
       <h1>
-        Selected Condition: 
+        Selected Condition:
       </h1>
     </div>
   </div>
@@ -4967,7 +4967,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
