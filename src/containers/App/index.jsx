@@ -24,6 +24,7 @@ import graphQLEndPoint from '../../../globals';
 
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
+import GuideTransport from '../../components/GuideTransport';
 import './styles.scss';
 
 import {
@@ -67,14 +68,16 @@ class App extends React.PureComponent {
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
-  handleGuideClick = () => {
+  incrementTransitionState = (back) => {
     let currentState = this.props.transitionState;
     if (currentState === 9) { currentState = 0; }
-    const newState = Math.min(Math.max(0, currentState + 1), 8);
+    const newState = Math.min(Math.max(0, currentState + (back ? -1 : 1)), 8);
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
     }
   }
+
+  decrementTransitionState = () => this.incrementTransitionState(true);
 
   jumpToAbout = () => {
     this.props.setTransitionState(8);
@@ -125,7 +128,7 @@ class App extends React.PureComponent {
              * can't use percentages for translating to a given position relative to the app.
              */}
           <div className="guideTranslate">
-            <Guide step={guideStep} onClick={this.handleGuideClick} />
+            <Guide step={guideStep} onClick={this.incrementTransitionState} />
           </div>
         </div>
         <ViewOne jumpToAbout={this.jumpToAbout} />
@@ -135,6 +138,10 @@ class App extends React.PureComponent {
             labelId={labelId}
             browseBy={browseBy}
             onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
+          />
+          <GuideTransport
+            back={this.decrementTransitionState}
+            forward={this.incrementTransitionState}
           />
         </section>
         {/* TODO: Deployment hacks */}
