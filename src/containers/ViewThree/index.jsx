@@ -75,7 +75,7 @@ const ViewThree = props => (
       {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
       <div className="selectedCompanyHeader">
         <FormattedMessage id="views.view3.company" />
-        <h2>Company Name</h2>
+        <h2 className="companyName">Company Name</h2>
       </div>
     </section>
   </section>

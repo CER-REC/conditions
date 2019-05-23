@@ -2624,7 +2624,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         className="ProjectHeader"
       >
         <h1>
-          Selected Project: 
+          Selected Project:
         </h1>
         <button
           className="openProject"
@@ -3171,7 +3171,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           className="ProjectHeader"
         >
           <h1>
-            Selected Project: 
+            Selected Project:
           </h1>
           <button
             className="openProject"
@@ -3711,7 +3711,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         className="ProjectHeader location"
       >
         <h1>
-          Selected Condition: 
+          Selected Condition:
         </h1>
         <button
           className="toggleExpand"
@@ -4957,7 +4957,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -5014,7 +5014,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       className="ProjectHeader location"
     >
       <h1>
-        Selected Condition: 
+        Selected Condition:
       </h1>
       <button
         className="toggleExpand"
@@ -5054,7 +5054,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -7929,10 +7929,10 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         className="descriptionText"
       >
         <p>
-          Keyword
+          Back to
         </p>
         <p>
-          Explorer
+          Keywords
         </p>
       </span>
     </div>
@@ -25857,16 +25857,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
           Definitions
         </p>
       </span>
-      <svg
-        className="trendArrow"
-        viewBox="0 0 427.5 427.5"
-        width={10}
-      >
-        <path
-          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
-          fill="#D1057A"
-        />
-      </svg>
     </div>
   </div>
 </div>
@@ -26402,16 +26392,6 @@ exports[`Storyshots Components|TrendButton Instrument Bubble Button 1`] = `
           Definitions
         </p>
       </span>
-      <svg
-        className="trendArrow"
-        viewBox="0 0 427.5 427.5"
-        width={10}
-      >
-        <path
-          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
-          fill="#D1057A"
-        />
-      </svg>
     </div>
   </div>
 </div>
