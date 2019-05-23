@@ -70,11 +70,11 @@ class Wheel extends React.Component {
     || this.props.wheelData !== nextProps.wheelData;
   }
 
-  // componentDidUpdate() {
-  //   if (this.state.selectedIndex === -1 && this.props.wheelData.length > 0) {
-  //     this.onClickSpin();
-  //   }
-  // }
+  componentDidUpdate() {
+    if (this.state.selectedIndex === -1 && this.props.wheelData.length > 0) {
+      this.onClickSpin();
+    }
+  }
 
   onClickSpin = () => {
     const items = this.props.wheelData;

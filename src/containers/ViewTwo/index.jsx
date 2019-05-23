@@ -227,19 +227,35 @@ export const ViewTwoUnconnected = (props) => {
   // eslint-disable-next-line react/prop-types
   if (props.browseBy === 'company') {
     wheelData = companyWheelData;
-  // eslint-disable-next-line react/prop-types
-  } else if (props.browseBy === 'location') {
-    wheelData = locationData.length > 0
-      ? locationData.map(region => (
-        {
-          ...region,
-          // REMOVE THE TWO FOLLOWING LINES ONCE THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
-          aggregatedCount: region.aggregatedCount.filter(
-            // eslint-disable-next-line react/prop-types
-            item => item[0].feature === props.selected.feature,
-          )[0],
+    // eslint-disable-next-line react/prop-types
+    legendItems = props.selected.company
+      // eslint-disable-next-line react/prop-types
+      ? Object.entries(props.projectsData.find(
+        // eslint-disable-next-line react/prop-types
+        proj => proj.id === props.selected.project,
+      )
+        // eslint-disable-next-line react/prop-types
+        .aggregatedCount[props.selected.feature])
+        .map(([key, value]) => ({
+          feature: props.selected.feature,
+          description: key,
+          disabled: value <= 0,
+          count: value,
+          value,
+          fill: features[props.selected.feature][key],
         }))
       : [];
+  // eslint-disable-next-line react/prop-types
+  } else if (props.browseBy === 'location') {
+    wheelData = locationData.map(region => (
+      {
+        ...region,
+        // REMOVE THE TWO FOLLOWING LINES ONCE THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
+        aggregatedCount: region.aggregatedCount.filter(
+          // eslint-disable-next-line react/prop-types
+          item => item[0].feature === props.selected.feature,
+        )[0],
+      }));
     // eslint-disable-next-line react/prop-types
     legendItems = props.selected.region
       ? wheelData.find(region => region.id === props.selected.region).aggregatedCount
