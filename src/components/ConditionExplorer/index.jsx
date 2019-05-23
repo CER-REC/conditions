@@ -29,7 +29,6 @@ export default class ConditionExplorer extends React.Component {
     selectedKeywordId: PropTypes.number,
     setSelectedKeyword: PropTypes.func.isRequired,
     physics: PropTypes.bool,
-    // changeVisibleWords: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
