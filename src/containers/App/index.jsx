@@ -41,6 +41,7 @@ const link = new HttpLink({
 const client = new ApolloClient({ cache, link, fetch });
 
 const noop = () => {};
+const tutorialTiming = 5000;
 
 const viewProps = {
   conditionCountsByYear,
@@ -62,7 +63,10 @@ const viewProps = {
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { mainInfoBarPane: '' };
+    this.state = {
+      mainInfoBarPane: '',
+      tutorialPlaying: false,
+    };
     this.ref = React.createRef();
   }
 
@@ -77,7 +81,39 @@ class App extends React.PureComponent {
     }
   }
 
-  decrementTransitionState = () => this.incrementTransitionState(true);
+  transportBack = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      tutorialPlaying: false,
+    }));
+    this.incrementTransitionState(true);
+  };
+
+  transportForward = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      tutorialPlaying: false,
+    }));
+    this.incrementTransitionState();
+  };
+
+  playTimer = () => {
+    console.log('timer went');
+    if (this.state.tutorialPlaying && this.props.transitionState < 8) {
+      this.incrementTransitionState();
+
+      setTimeout(this.playTimer, tutorialTiming);
+    }
+  };
+
+  togglePlay = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      tutorialPlaying: !prevState.tutorialPlaying,
+    }));
+
+    setTimeout(this.playTimer, tutorialTiming);
+  }
 
   jumpToAbout = () => {
     this.props.setTransitionState(8);
@@ -140,8 +176,10 @@ class App extends React.PureComponent {
             onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
           />
           <GuideTransport
-            back={this.decrementTransitionState}
-            forward={this.incrementTransitionState}
+            playing={this.state.tutorialPlaying}
+            back={this.transportBack}
+            forward={this.transportForward}
+            togglePlay={this.togglePlay}
           />
         </section>
         {/* TODO: Deployment hacks */}
