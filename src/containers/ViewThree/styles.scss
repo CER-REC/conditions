@@ -100,10 +100,8 @@
         color: $Black51;
       }
       .companyName::before{
-        content: ' ';
+        content: '\00a0';
         opacity: 0;
-        white-space: pre;
-        
       }
 
     }

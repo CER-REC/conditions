@@ -26,8 +26,7 @@
     height: 90%;
   }
   .openProject::before {
-    content: ' ';
-    white-space: pre;
+    content: '\00a0';
   }
 
   .toggleExpand {
@@ -41,8 +40,8 @@
     height: 90%;
   }
   .toggleExpand::before {
-    content: ' ';
-    white-space: pre;
+    content: '\00a0';
+
   }
 
   .arrow {
