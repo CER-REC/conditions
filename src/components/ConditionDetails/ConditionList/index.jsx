@@ -25,6 +25,7 @@ class ConditionList extends React.PureComponent {
         : (
           <div key={`${item.instrumentIndex}-${item.itemIndex}`}>
             <div className={classNames('barMarker', { marked: item.marked })} />
+
             <BarContainer
               className={`binnedValue-${item.binnedValue}`}
               items={

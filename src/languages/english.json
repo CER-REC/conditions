@@ -142,8 +142,8 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Selected Project: ",
-      "selectedCondition": "Selected Condition: ",
+      "selectedProject": "Selected Project:",
+      "selectedCondition": "Selected Condition:",
       "instrumentNumber": "Instrument Number",
       "location": "Location",
       "issuanceDate": "Issuance Date",
@@ -190,7 +190,7 @@
         "EXPIRY_DATE_OF_REG_INSTR": "Some conditions apply when the regulatory instrument expires.",
         "INCLUDES_ALL_PHASES_OF_CONSTR": "Some conditions apply at all phases of construction.",
         "NOT_CONSTRUCTION_RELATED": "Some conditions apply outside of the construction context.",
-        "POST_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility. ",
+        "POST_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility.",
         "PRIOR_TO_CONSTRUCTION_PHASE": "Assigned to conditions that must be fulfilled before construction can begin. This includes conditions related to environmental and socio-economic assessments.",
         "UNSPECIFIED": "Missing description"
       },
@@ -279,7 +279,7 @@
         },
         "searchText": {
           "basicInclude": "Include any of:",
-          "advancedInclude": "Include {dropdown} of: ",
+          "advancedInclude": "Include {dropdown} of:",
           "exclude": "But do {not} include:",
           "not": "not"
         },
@@ -380,7 +380,7 @@
       "description": "Trends &\nDefinitions"
     },
     "keywordExploreButton": {
-      "description": "Keyword\nExplorer"
+      "description": "Back to\nKeywords"
     },
     "browseBy": {
       "skip": "Skip intro to browse:",
@@ -409,7 +409,7 @@
       }
     },
     "view3": {
-      "company":"Selected Company: "
+      "company":"Selected Company:"
     }
   }
 }
