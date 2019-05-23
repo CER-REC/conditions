@@ -15,7 +15,9 @@ storiesForView('Containers|ViewOne', module, ReadMe)
   .addDecorator(
     withInteraction({
       actions: {
-        setSelectedKeywordId: () => keywordId => ({ selected: { keywordId } }),
+        setSelectedKeyword: () => (keyword, id) => (
+          { selected: { keywordId: id } }
+        ),
       },
       state: {
         selected: {
@@ -34,7 +36,6 @@ storiesForView('Containers|ViewOne', module, ReadMe)
   .add('connected variant', () => (
     <ViewOneGraphQL
       jumpToAbout={noop}
-      setSelectedKeyword={noop}
       {...getInteractionProps()}
     />
   ), { decorators: [withGQL] })

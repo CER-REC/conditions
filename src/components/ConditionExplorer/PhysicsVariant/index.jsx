@@ -214,9 +214,9 @@ export default class PhysicsVariant extends React.PureComponent {
                   scale(${instance.scale})
                   rotate(${instance.body.angle * 180 / Math.PI})
                 `}
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: instance.keyword.value }}
-              />
+              >
+                {instance.keyword.value}
+              </text>
             </g>
             <path d={instance.renderedPathPoints} />
           </g>

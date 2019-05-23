@@ -122,8 +122,7 @@ class App extends React.PureComponent {
     // eslint-disable-next-line no-unused-vars
     }).then((response) => {
       // TODO: Error checking
-
-      const condition = response.data.getConditionById[0];
+      const condition = response.data.getConditionById;
 
       // TODO: setSelectedCondition once View 2 is wired up for it
 
