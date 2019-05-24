@@ -118,28 +118,32 @@ class App extends React.PureComponent {
         className={classNames('App', `transition-state-${transitionState}`)}
         ref={this.ref}
       >
-        <div className="guideWrapper">
-          <Guide textState={guideState} onClick={this.handleGuideClick} />
+        <div className="fixedContainerWithoutFooter">
+          <div className="guideWrapper">
+            <Guide textState={guideState} onClick={this.handleGuideClick} />
+          </div>
+          <ViewOne jumpToAbout={this.jumpToAbout} />
+          <section className="browseBy">
+            <BrowseBy
+              showArrow={(transitionState < 2 || transitionState === 9)}
+              labelId={labelId}
+              browseBy={browseBy}
+              onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
+            />
+          </section>
+          {/* TODO: Deployment hacks */}
+          <div style={{ clear: 'both' }} />
+          <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
+          <ViewThree {...viewProps} />
+
         </div>
-        <ViewOne jumpToAbout={this.jumpToAbout} />
-        <section className="browseBy">
-          <BrowseBy
-            showArrow={(transitionState < 2 || transitionState === 9)}
-            labelId={labelId}
-            browseBy={browseBy}
-            onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
-          />
-        </section>
-        {/* TODO: Deployment hacks */}
-        <div style={{ clear: 'both' }} />
-        <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
-        <ViewThree {...viewProps} />
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
           openDataModal={noop}
         />
       </div>
+
     );
   }
 }

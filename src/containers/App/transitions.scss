@@ -110,7 +110,6 @@ $states: (
       opacity: 1,
       visibility: visible,
 
-      height: 300px,
 
       transition: "opacity #{$defaultTransition}, height #{$defaultTransition}",
     ),
