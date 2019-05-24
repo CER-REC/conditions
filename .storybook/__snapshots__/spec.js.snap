@@ -6661,11 +6661,148 @@ exports[`Storyshots Components|Guide default 1`] = `
     className="Guide"
     style={
       Object {
-        "height": 204,
-        "width": 204,
+        "height": 156,
+        "width": 156,
       }
     }
   >
+    <svg
+      className="wedgeContainer"
+      viewBox="-78 -78 156 156"
+    >
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(0)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(60)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(120)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(180)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(240)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(300)
+            translate(1, -2)
+          "
+        />
+      </g>
+    </svg>
     <div
       className="CircleContainer"
       focusable={true}
@@ -6673,8 +6810,8 @@ exports[`Storyshots Components|Guide default 1`] = `
       onKeyPress={[Function]}
       style={
         Object {
-          "height": 176,
-          "width": 176,
+          "height": 128,
+          "width": 128,
         }
       }
       tabIndex={0}
@@ -6717,77 +6854,6 @@ exports[`Storyshots Components|Guide default 1`] = `
         </span>
       </div>
     </div>
-    <svg
-      className="wedgeContainer"
-      viewBox="-102 -102 204 204"
-    >
-      <path
-        className="wedge"
-        d="
-            M 0 -98
-            A 98 98 0 0 1 84.868 -49
-            L 76.208 -44
-            A 88 88 0 0 0 0 -88
-            Z
-          "
-        transform="rotate(0) translate(1, -2)"
-      />
-      <path
-        className="wedge"
-        d="
-            M 0 -98
-            A 98 98 0 0 1 84.868 -49
-            L 76.208 -44
-            A 88 88 0 0 0 0 -88
-            Z
-          "
-        transform="rotate(60) translate(1, -2)"
-      />
-      <path
-        className="wedge"
-        d="
-            M 0 -98
-            A 98 98 0 0 1 84.868 -49
-            L 76.208 -44
-            A 88 88 0 0 0 0 -88
-            Z
-          "
-        transform="rotate(120) translate(1, -2)"
-      />
-      <path
-        className="wedge"
-        d="
-            M 0 -98
-            A 98 98 0 0 1 84.868 -49
-            L 76.208 -44
-            A 88 88 0 0 0 0 -88
-            Z
-          "
-        transform="rotate(180) translate(1, -2)"
-      />
-      <path
-        className="wedge"
-        d="
-            M 0 -98
-            A 98 98 0 0 1 84.868 -49
-            L 76.208 -44
-            A 88 88 0 0 0 0 -88
-            Z
-          "
-        transform="rotate(240) translate(1, -2)"
-      />
-      <path
-        className="wedge"
-        d="
-            M 0 -98
-            A 98 98 0 0 1 84.868 -49
-            L 76.208 -44
-            A 88 88 0 0 0 0 -88
-            Z
-          "
-        transform="rotate(300) translate(1, -2)"
-      />
-    </svg>
   </div>
 </div>
 `;
@@ -8109,7 +8175,6 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         <circle
           cx="18"
           cy="14"
-          opacity="0.4"
           r="12"
         />
       </svg>
