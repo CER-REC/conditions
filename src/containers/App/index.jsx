@@ -89,7 +89,14 @@ class App extends React.PureComponent {
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
     }
-  }
+  };
+
+  handleGuideClick = () => {
+    if (this.props.transitionState === 0) {
+      this.togglePlay(true);
+    }
+    this.incrementTransitionState();
+  };
 
   transportBack = () => {
     this.setState(prevState => ({
@@ -108,17 +115,21 @@ class App extends React.PureComponent {
   };
 
   playTimer = () => {
-    if (this.state.tutorialPlaying && this.props.transitionState < transitionStates.view2) {
+    if (this.state.tutorialPlaying
+    && (this.props.transitionState < transitionStates.view2
+      || this.props.transitionState === transitionStates.view1Reset)
+    ) {
       this.incrementTransitionState();
 
       setTimeout(this.playTimer, tutorialTiming);
     }
   };
 
-  togglePlay = () => {
+  // Pass true or false to explicitly set the state
+  togglePlay = (state) => {
     this.setState(prevState => ({
       ...prevState,
-      tutorialPlaying: !prevState.tutorialPlaying,
+      tutorialPlaying: (state !== undefined) ? state : !prevState.tutorialPlaying,
     }));
 
     setTimeout(this.playTimer, tutorialTiming);
@@ -174,11 +185,11 @@ class App extends React.PureComponent {
              * can't use percentages for translating to a given position relative to the app.
              */}
           <div className="guideTranslate">
-            <Guide step={guideStep} onClick={this.incrementTransitionState} />
+            <Guide step={guideStep} onClick={this.handleGuideClick} />
           </div>
         </div>
         <ViewOne jumpToAbout={this.jumpToAbout} />
-        <section className="browseBy">
+        <section className="appControls">
           <BrowseBy
             showArrow={
               (transitionState === transitionStates.view1
