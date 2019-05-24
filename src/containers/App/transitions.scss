@@ -52,6 +52,7 @@ $states: (
       visibility: visible,
       transition: opacity $fastEnd,
     ),
+    ".ViewOne": (pointer-events: none),
     ".ViewOne .infoBar": (opacity: 0),
     ".ViewOne .introduction": (transform: "translateY(-100vh)"),
     ".ViewOne .explorer": (transform: "translateY(-100vh)"),
@@ -85,6 +86,9 @@ $states: (
     ".ViewTwo .wheel": (opacity: 1),
   ),
   6: (
+    ".guideWrapper": (
+      pointer-events: none,
+    ),
     ".guideTranslate": (transform: translate(80%, 10%)),
     ".appControls": (transform: translateX(10px)),
     ".appControls .BrowseBy": (opacity: 1),
@@ -98,6 +102,9 @@ $states: (
       opacity: 0,
       transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
     ),
+    ".ViewTwo": (pointer-events: auto),
+    ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: auto),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: auto),
     ".ViewTwo .header": (opacity: 1),
     ".ViewTwo .wheel": (opacity: 1),
     ".ViewTwo .companyBreakdown": (opacity: 1),
@@ -133,7 +140,6 @@ $states: (
 
     ),
     ".ViewTwo": (
-      pointer-events: auto,
       transition: "opacity #{$defaultTransition}",
     ),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: all),

@@ -79,7 +79,7 @@ class App extends React.PureComponent {
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
-  incrementTransitionState = (amt) => {
+  incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
     if (currentState === transitionStates.view1Reset) { currentState = 0; }
     const newState = Math.min(
@@ -99,7 +99,7 @@ class App extends React.PureComponent {
       this.togglePlay(false);
     }
 
-    this.incrementTransitionState(1);
+    this.incrementTransitionState();
   };
 
   transportBack = () => {
@@ -115,7 +115,7 @@ class App extends React.PureComponent {
       ...prevState,
       tutorialPlaying: false,
     }));
-    this.incrementTransitionState(1);
+    this.incrementTransitionState();
   };
 
   playTimer = () => {
@@ -123,7 +123,7 @@ class App extends React.PureComponent {
     && (this.props.transitionState < transitionStates.view2
       || this.props.transitionState === transitionStates.view1Reset)
     ) {
-      this.incrementTransitionState(1);
+      this.incrementTransitionState();
 
       setTimeout(this.playTimer, tutorialTiming);
     }
@@ -181,6 +181,14 @@ class App extends React.PureComponent {
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
         ref={this.ref}
+        // For the last tutorial step, the view needs to be interactive but still
+        // advance the transition state when something is interacted with.
+        // The timeout makes sure React doesn't re-render before the event can
+        // propagate to the actual target
+        onClickCapture={(transitionState === (transitionStates.view2 - 1))
+          ? () => setTimeout(this.incrementTransitionState, 0)
+          : null
+        }
       >
         <div className="guideWrapper">
           {/**
