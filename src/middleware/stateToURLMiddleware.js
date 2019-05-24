@@ -56,14 +56,8 @@ const stateToURLMiddleware = (store) => {
 
     const compressed = encodeURIComponent(LZUTF8.compress(stateString, { outputEncoding: 'Base64' }));
 
-    const decompressed = JSON.parse(LZUTF8.decompress(decodeURIComponent(compressed), { inputEncoding: 'Base64' }));
     updatingHistory = true;
     const baseURL = TR.getIn(['applicationPath', 'en']);
-    debugger;
-    console.log(stateString);
-    console.log(compressed);
-    console.log(decompressed);
-    console.log(baseURL);
     history.push(`${baseURL}?config=${compressed}`);
     updatingHistory = false;
   };
