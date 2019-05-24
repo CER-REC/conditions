@@ -79,11 +79,11 @@ class App extends React.PureComponent {
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
-  incrementTransitionState = (back) => {
+  incrementTransitionState = (amt) => {
     let currentState = this.props.transitionState;
     if (currentState === transitionStates.view1Reset) { currentState = 0; }
     const newState = Math.min(
-      Math.max(transitionStates.view1, currentState + (back ? -1 : 1)),
+      Math.max(transitionStates.view1, currentState + amt),
       transitionStates.view2,
     );
     if (newState !== this.props.transitionState) {
@@ -92,10 +92,11 @@ class App extends React.PureComponent {
   };
 
   handleGuideClick = () => {
-    if (this.props.transitionState === 0) {
+    if (this.props.transitionState === transitionStates.view1
+      || this.props.transitionState === transitionStates.view1Reset) {
       this.togglePlay(true);
     }
-    this.incrementTransitionState();
+    this.incrementTransitionState(1);
   };
 
   transportBack = () => {
@@ -103,7 +104,7 @@ class App extends React.PureComponent {
       ...prevState,
       tutorialPlaying: false,
     }));
-    this.incrementTransitionState(true);
+    this.incrementTransitionState(-1);
   };
 
   transportForward = () => {
@@ -111,7 +112,7 @@ class App extends React.PureComponent {
       ...prevState,
       tutorialPlaying: false,
     }));
-    this.incrementTransitionState();
+    this.incrementTransitionState(1);
   };
 
   playTimer = () => {
@@ -119,7 +120,7 @@ class App extends React.PureComponent {
     && (this.props.transitionState < transitionStates.view2
       || this.props.transitionState === transitionStates.view1Reset)
     ) {
-      this.incrementTransitionState();
+      this.incrementTransitionState(1);
 
       setTimeout(this.playTimer, tutorialTiming);
     }
