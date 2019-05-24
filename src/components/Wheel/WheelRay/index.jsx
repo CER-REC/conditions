@@ -36,10 +36,9 @@ class WheelRay extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    if (this.props.currentIndex !== nextProps.currentIndex) { return true; }
-    if (this.props.wheelType !== nextProps.wheelType) { return true; }
-    if (this.props.items !== nextProps.items) { return true; }
-    return false;
+    return (this.props.currentIndex !== nextProps.currentIndex
+      || this.props.wheelType !== nextProps.wheelType
+      || this.props.items !== nextProps.items);
   }
 
   render() {
@@ -60,11 +59,11 @@ class WheelRay extends React.Component {
       let position = rotation;
       const plotIndex = selectedIndex - index;
       if (plotIndex < 0) {
-        position -= (plotIndex * degreesPerItem) - halfReservedDegrees + (degreesPerItem);
+        position -= (plotIndex * degreesPerItem) - halfReservedDegrees;
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-      const transform = `rotate(${position.toFixed(2) % 360})`;
+      const transform = `rotate(${(position % 360).toFixed(2)})`;
 
       const componentToReturn = wheelType === 'company'
         ? (
@@ -101,7 +100,7 @@ class WheelRay extends React.Component {
             />
             { item.province !== legendTracker
               ? (
-                <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
+                <text className="textLabels" transform="translate(28.75) rotate(90)" textAnchor="middle" {...handleInteraction(props.onChange, index)}>
                   {item.province}
                 </text>
               ) : null }

@@ -3,11 +3,13 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import withGQL from '../../../.storybook/addon-graphql';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import { ViewTwoUnconnected, ViewTwoGraphQL } from '.';
+import ViewTwoUnconnected from './ViewTwoUnconnected';
+import { ViewTwoGraphQL } from './ViewTwoGraphQL';
 import { searchData, conditionData, projectsData } from '../../mockData';
+import { companyWheelData } from '../../components/Wheel/randomDataSample';
+import locationData from '../../mockData/locationData';
 
 const noop = () => {};
-
 const year = {
   start: 1970,
   end: 1980,
@@ -77,8 +79,8 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       },
     }),
   )
-  .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
-  .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" {...getInteractionProps()} />)
+  .add('default', () => <ViewTwoUnconnected {...props} wheelData={companyWheelData} {...getInteractionProps()} />)
+  .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" wheelData={locationData} {...getInteractionProps()} />)
   .add(
     'connected company',
     () => <ViewTwoGraphQL {...connectedProps} {...getInteractionProps()} />,

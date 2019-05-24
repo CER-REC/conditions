@@ -18,7 +18,7 @@ export const locationWheelQuery = gql`
       name {
         en
       }
-      province {en}
+      province
       aggregatedCount {
         ...theme
         ...status

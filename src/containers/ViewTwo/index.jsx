@@ -1,10 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { connect } from 'react-redux';
-import { Query } from 'react-apollo';
-import { companyWheelQuery, locationWheelQuery } from '../../queries/viewTwoQueries/wheel';
-import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
@@ -12,29 +8,18 @@ import GreyPipe from '../../components/GreyPipe';
 import RegionConditionSummary from '../../components/RegionConditionSummary';
 import RegionCompanies from '../../components/RegionCompanies';
 import TrendButton from '../../components/TrendButton';
-import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
-import { browseByType, yearRangeType, featureTypes, conditionData, project } from '../../proptypes';
+import { viewTwo } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import ConditionDetails from '../../components/ConditionDetails';
-import * as browseByCreators from '../../actions/browseBy';
-import * as selectedCreators from '../../actions/selected';
-import * as searchCreators from '../../actions/search';
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
-import { features } from '../../constants';
 
 const noop = () => {};
-const language = 'en';
 const regionData = {
-  featureData: [
-    { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
-    { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
-    { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
-  ],
   companyData: [
     { id: '12', name: 'Alberta Trans-Alta e' },
     { id: '11', name: 'Alberta Trans-Alta è' },
@@ -75,8 +60,8 @@ const ViewTwo = props => (
       {props.browseBy === 'location' ? (
         <LocationWheelMinimap
           region={props.selected.region
-            ? props.wheelData.find(region => region.id === props.selected.region).name.en
-            : ''
+            ? props.wheelData.find(region => region.id === props.selected.region).name
+            : null
           }
         />
       ) : null}
@@ -162,57 +147,7 @@ const ViewTwo = props => (
   </section>
 );
 
-ViewTwo.propTypes = {
-  layoutOnly: PropTypes.bool,
-  browseBy: browseByType.isRequired,
-  legendItems: PropTypes.arrayOf(PropTypes.shape({
-    disabled: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-  })),
-  selected: PropTypes.shape({
-    company: PropTypes.number,
-    region: PropTypes.number,
-    project: PropTypes.number,
-    feature: featureTypes.isRequired,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-    }).isRequired,
-  }).isRequired,
-  // setBrowseBy: PropTypes.func.isRequired,
-  setFindAny: PropTypes.func.isRequired,
-  setProjectYear: PropTypes.func.isRequired,
-  projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
-  findAny: PropTypes.bool.isRequired,
-  projectYear: yearRangeType.isRequired,
-  setProjectStatus: PropTypes.func.isRequired,
-  setIncluded: PropTypes.func.isRequired,
-  setExcluded: PropTypes.func.isRequired,
-  included: PropTypes.arrayOf(PropTypes.string).isRequired,
-  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setSelectedFeature: PropTypes.func.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  setSelectedCompany: PropTypes.func.isRequired,
-  setSelectedRegion: PropTypes.func.isRequired,
-  conditionDetails: PropTypes.shape({
-    isExpandable: PropTypes.bool,
-    expanded: PropTypes.bool,
-    selectedProject: PropTypes.string.isRequired,
-    // searchKeywords: PropTypes.shape({
-    //   include: PropTypes.arrayOf(PropTypes.string),
-    //   exclude: PropTypes.arrayOf(PropTypes.string),
-    // }),
-    data: conditionData.isRequired,
-  }).isRequired,
-  setSelectedCondition: PropTypes.func.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
-  projectsData: PropTypes.arrayOf(project),
-  // The shape of wheelData will change once more integration is done.
-  wheelData: PropTypes.arrayOf(PropTypes.any),
-  jumpToView1: PropTypes.func.isRequired,
-  jumpToView3: PropTypes.func.isRequired,
-};
+ViewTwo.propTypes = viewTwo;
 
 ViewTwo.defaultProps = {
   layoutOnly: false,
@@ -221,184 +156,4 @@ ViewTwo.defaultProps = {
   projectsData: [],
 };
 
-export const ViewTwoUnconnected = (props) => {
-  let wheelData = [];
-  let legendItems = [];
-  // eslint-disable-next-line react/prop-types
-  if (props.browseBy === 'company') {
-    wheelData = companyWheelData;
-    // eslint-disable-next-line react/prop-types
-    legendItems = props.selected.company
-      // eslint-disable-next-line react/prop-types
-      ? Object.entries(props.projectsData.find(
-        // eslint-disable-next-line react/prop-types
-        proj => proj.id === props.selected.project,
-      )
-        // eslint-disable-next-line react/prop-types
-        .aggregatedCount[props.selected.feature])
-        .map(([key, value]) => ({
-          feature: props.selected.feature,
-          description: key,
-          disabled: value <= 0,
-          count: value,
-          value,
-          fill: features[props.selected.feature][key],
-        }))
-      : [];
-  // eslint-disable-next-line react/prop-types
-  } else if (props.browseBy === 'location') {
-    wheelData = locationData.map(region => (
-      {
-        ...region,
-        // REMOVE THE TWO FOLLOWING LINES ONCE THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
-        aggregatedCount: region.aggregatedCount.filter(
-          // eslint-disable-next-line react/prop-types
-          item => item[0].feature === props.selected.feature,
-        )[0],
-      }));
-    // eslint-disable-next-line react/prop-types
-    legendItems = props.selected.region
-      ? wheelData.find(region => region.id === props.selected.region).aggregatedCount
-      : [];
-  }
-  return (
-    <ViewTwo
-      // eslint-disable-next-line react/prop-types
-      wheelData={wheelData}
-      legendItems={legendItems}
-      {...props}
-    />
-  );
-};
-
-export const ViewTwoGraphQL = (props) => {
-  if (props.browseBy === 'company') {
-    return (
-    // The queries must be by company and location and then subdivide.
-    // The common queries such as the condition explorer must be set at the view level
-      <Query query={companyWheelQuery}>
-        {(wheelQueryProps) => {
-          const { data: wheelQData } = wheelQueryProps;
-          const { loading: wheelQLoading } = wheelQueryProps;
-          const { error: wheelQerror } = wheelQueryProps;
-          return (
-            <Query
-              query={projectMenuQuery}
-              variables={{ id: props.selected.company }}
-              skip={!props.selected.company}
-            >
-              { (projectMenuQprops) => {
-                const { loading: projLoading } = projectMenuQprops;
-                const { error: projError } = projectMenuQprops;
-                const { data: projData } = projectMenuQprops;
-                const selectedProject = props.selected.company && !projLoading && !projError
-                  ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
-                  : null;
-                const rawFeatureData = selectedProject
-                  ? selectedProject.aggregatedCount[props.selected.feature]
-                  : [];
-                const projectFeatureData = Object.entries(rawFeatureData)
-                  .reduce((acc, [key, val]) => {
-                    if (key !== '__typename') {
-                      acc.push({
-                        feature: props.selected.feature,
-                        description: key,
-                        disabled: val <= 0,
-                      });
-                    }
-                    return acc;
-                  }, []);
-                // MISSING ERROR HANDLING
-                return (
-                  <ViewTwo
-                    wheelData={
-                      !wheelQLoading && !wheelQerror
-                        ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
-                        : []
-                    }
-                    projectsData={!projLoading && !projError && props.selected.company
-                      ? projData.allProjectsByCompany
-                      : []
-                    }
-                    projectMenuLoading={projLoading}
-                    legendItems={projectFeatureData}
-                    {...props}
-                  />
-                );
-              }}
-            </Query>
-          );
-        }
-        }
-      </Query>
-    );
-  }
-  return (
-    <Query query={locationWheelQuery}>{(allRegionsQueryProps) => {
-      // eslint-disable-next-line no-shadow
-      const locationData = allRegionsQueryProps.data.allRegions
-        ? allRegionsQueryProps.data.allRegions.sort(
-          (a, b) => (a.province[language] < b.province[language] ? -1 : 1),
-        )
-        : [];
-      // Get the aggregatedCount and create the graph for each one.
-      const regionsFeatureData = locationData.length > 0
-        ? locationData.map(region => (
-          {
-            ...region,
-            // REMOVE THE TWO FOLLOWING LINES ONCE THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
-            name: region.name.en,
-            province: region.province.en,
-            aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
-              .reduce((acc, [key, val]) => {
-                if (key !== '__typename') {
-                  acc.push({
-                    feature: props.selected.feature,
-                    description: key,
-                    disabled: val <= 0,
-                    count: val,
-                    value: val,
-                    fill: features[props.selected.feature][key],
-                    id: region.id,
-                  });
-                }
-                return acc;
-              }, []),
-          }))
-        : [];
-      const legendItems = regionsFeatureData.length > 0 && props.selected.region
-        ? regionsFeatureData.find(
-          region => region.id === props.selected.region,
-        ).aggregatedCount
-        : [];
-      return (<ViewTwo {...props} wheelData={regionsFeatureData} legendItems={legendItems} />);
-    }}
-    </Query>
-  );
-};
-ViewTwoGraphQL.propTypes = ViewTwo.propTypes;
-
-export default connect(
-  ({ selected, browseBy, search }) => ({
-    selected,
-    browseBy,
-    included: search.included,
-    projectStatus: search.projectStatus,
-    findAny: search.findAny,
-    projectYear: search.projectYear,
-    excluded: search.excluded,
-  }),
-  {
-    setSelectedFeature: selectedCreators.setSelectedFeature,
-    setSelectedCompany: selectedCreators.setSelectedCompany,
-    setSelectedRegion: selectedCreators.setSelectedRegion,
-    setSelectedCondition: selectedCreators.setSelectedCondition,
-    setSelectedProject: selectedCreators.setSelectedProject,
-    setBrowseBy: browseByCreators.setBrowseBy,
-    setProjectStatus: searchCreators.setProjectStatus,
-    setProjectYear: searchCreators.setProjectYear,
-    setFindAny: searchCreators.setFindAny,
-    setIncluded: searchCreators.setIncluded,
-    setExcluded: searchCreators.setExcluded,
-  },
-)(ViewTwoGraphQL);
+export default ViewTwo;

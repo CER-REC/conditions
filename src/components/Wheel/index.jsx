@@ -10,9 +10,10 @@ import WheelRay from './WheelRay';
 import { browseByType } from '../../proptypes';
 import WheelList from './WheelList';
 
-const reservedDegrees = 14;
+const reservedDegrees = 12;
 
 const AnimatedWheelRay = animated(WheelRay);
+const AnimatedWheelList = animated(WheelList);
 
 class Wheel extends React.Component {
   static propTypes = {
@@ -40,7 +41,7 @@ class Wheel extends React.Component {
   static getDerivedStateFromProps(props, prevState) {
     const items = props.wheelData;
     const degreesAvailForPlotting = 360 - reservedDegrees;
-    const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
+    const degreesPerItem = (degreesAvailForPlotting / (items.length - 1));
     const selectedIndex = items.findIndex(v => v.id === props.selectedRay);
     const { needsSpin } = prevState;
     let { newRotation } = prevState || selectedIndex * degreesPerItem;
@@ -90,7 +91,7 @@ class Wheel extends React.Component {
   getIndex = (currentRotation) => {
     const { length } = this.props.wheelData;
     const index = Math.round((currentRotation % 360) / ((360 - reservedDegrees) / (length - 1)));
-    return index;
+    return (this.props.wheelData.length - index) % this.props.wheelData.length;
   };
 
   stopWheel = (index) => {
@@ -107,62 +108,59 @@ class Wheel extends React.Component {
     return (
       <div className="Wheel">
         <Spring
+          native
           immediate={!this.state.needsSpin}
           config={{ tension: 30, friction: 20, easing: t => t * t * t * t * t }}
           onStart={() => this.setState({ needsSpin: false })}
-          onRest={() => null /* set loading status to false for the projectMenu */}
           from={{
-            transform: `rotate(${this.state.oldRotation}deg)`,
             rotation: -this.state.oldRotation,
           }}
           to={{
-            transform: `rotate(${this.state.newRotation}deg)`,
             rotation: -this.state.newRotation,
           }}
         >
-          {props => (
-            <div className="svgContainer">
-              <div style={props} className="MovingContainer">
-                <svg viewBox="0 0 860 860">
-                  <Ring ringType={this.props.wheelType} />
-                  {this.shouldRender(() => (
-                    <AnimatedWheelRay
-                      onChange={this.onChange}
-                      stopWheel={this.stopWheel}
-                      wheelType={this.props.wheelType}
-                      items={this.props.wheelData}
-                      degreesPerItem={this.state.degreesPerItem}
-                      reservedDegrees={reservedDegrees}
-                      currentIndex={(this.props.wheelData.length - this.getIndex(props.rotation))
-                        % this.props.wheelData.length}
-                      {...props}
-                    />
-                  ))}
-                </svg>
+          {(props) => {
+            const currentIndex = props.rotation.interpolate(r => this.getIndex(r));
+            return (
+              <div className="svgContainer">
+                <animated.div style={{ transform: props.rotation.interpolate(r => `rotate(${r.toFixed(2)}deg)`) }} className="MovingContainer">
+                  <svg viewBox="0 0 860 860">
+                    <Ring ringType={this.props.wheelType} />
+                    {this.shouldRender(() => (
+                      <AnimatedWheelRay
+                        onChange={this.onChange}
+                        stopWheel={this.stopWheel}
+                        wheelType={this.props.wheelType}
+                        items={this.props.wheelData}
+                        degreesPerItem={this.state.degreesPerItem}
+                        reservedDegrees={reservedDegrees}
+                        currentIndex={currentIndex}
+                        rotation={props.rotation.interpolate(r => r * -1)}
+                      />
+                    ))}
+                  </svg>
+                </animated.div>
+                <div className="interactiveItems">
+                  <svg viewBox="0 0 860 860">
+                    <g transform="scale(2)">
+                      <PullToSpin
+                        className="pullToSpin"
+                        onClickSpin={this.onClickSpin}
+                        role="button"
+                      />
+                    </g>
+                  </svg>
+                  <AnimatedWheelList
+                    wheelType={this.props.wheelType}
+                    listContent={this.props.wheelData}
+                    textClippingRadius="60"
+                    onChange={this.onChange}
+                    selected={currentIndex}
+                  />
+                </div>
               </div>
-              <div className="interactiveItems">
-                <svg viewBox="0 0 860 860">
-                  <g transform="scale(2)">
-                    <PullToSpin
-                      className="pullToSpin"
-                      onClickSpin={this.onClickSpin}
-                      role="button"
-                    />
-                  </g>
-                </svg>
-                <WheelList
-                  wheelType={this.props.wheelType}
-                  listContent={this.props.wheelData}
-                  textClippingRadius="60"
-                  onChange={this.onChange}
-                  selected={
-                    (this.props.wheelData.length - this.getIndex(props.rotation))
-                    % this.props.wheelData.length
-                  }
-                />
-              </div>
-            </div>
-          )}
+            );
+          }}
         </Spring>
       </div>
     );

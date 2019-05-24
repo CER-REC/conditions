@@ -17,7 +17,7 @@ import {
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
-import ViewTwo from '../ViewTwo';
+import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 import graphQLEndPoint from '../../../globals';
