@@ -95,7 +95,10 @@ class App extends React.PureComponent {
     if (this.props.transitionState === transitionStates.view1
       || this.props.transitionState === transitionStates.view1Reset) {
       this.togglePlay(true);
+    } else if (this.state.tutorialPlaying) {
+      this.togglePlay(false);
     }
+
     this.incrementTransitionState(1);
   };
 

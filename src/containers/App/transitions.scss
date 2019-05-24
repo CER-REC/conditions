@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 $defaultTransition: 1s ease-in-out;
 
 $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
@@ -116,9 +118,14 @@ $states: (
   // View 2
   7: (
     ".guideTranslate": (
-      opacity: 0,
+      visibility: hidden,
+      transform: translate(87.22%, 5.77%),
     ),
-    ".guideTranslate .CircleContainer": (pointer-events: none),
+    ".guideTranslate .Guide": (transform: scale(0.17)),
+    ".guideTranslate .CircleContainer": (
+      pointer-events: none,
+      background-color: $GuideFaded,
+    ),
     ".appControls .GuideTransport": (
       visibility: hidden,
       opacity: 0,

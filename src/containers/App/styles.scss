@@ -41,11 +41,15 @@
 
     transition: all $defaultTransition;
 
-    .CircleContainer span {
-      transition: opacity $defaultTransition;
+    .CircleContainer {
+      transition: background $defaultTransition;
 
-      &.hidden {
-        transition: opacity $defaultTransition, visibility 0s 1s;
+      span {
+        transition: opacity $defaultTransition;
+
+        &.hidden {
+          transition: opacity $defaultTransition, visibility 0s 1s;
+        }
       }
     }
   }
@@ -159,7 +163,11 @@
 
   &.transition-state-7 {
     .Guide {
-      transition: opacity $fastestStart, transform 0s 1s;
+      transition:
+        opacity $fastestStart,
+        transform $defaultTransition,
+        background-color $defaultTransition,
+        visibility 0s 1s;
     }
   }
 

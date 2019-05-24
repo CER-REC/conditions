@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+
 import CircleContainer from '../CircleContainer';
 
 import './styles.scss';
@@ -35,13 +36,19 @@ const y4 = -radius + padding + wedgeWidth;
 
 const Guide = ({ step, onClick }) => {
   const wedges = [];
-  if (step >= wedgesStart && step <= wedgesEnd) {
-    for (let i = 0; i <= (step - wedgesStart); i += 1) {
-      wedges.push((
+  for (let i = 0; i < numWedges; i += 1) {
+    const hidden = i > (step - wedgesStart);
+    wedges.push((
+      <g
+        key={`wedge-${i}`}
+        className="wedge"
+        style={{ transform: (hidden ? 'scale(0.8, 0.8)' : 'scale(1, 1)') }}
+      >
         <path
-          className="wedge"
-          key={`wedge-${i}`}
-          transform={`rotate(${i * 360 / numWedges}) translate(1, -2)`}
+          transform={`
+            rotate(${i * 360 / numWedges})
+            translate(1, -2)
+          `}
           d={`
             M ${x1} ${y1}
             A ${r2} ${r2} 0 0 1 ${x2} ${y2}
@@ -50,22 +57,12 @@ const Guide = ({ step, onClick }) => {
             Z
           `}
         />
-      ));
-    }
+      </g>
+    ));
   }
 
   return (
     <div className="Guide" style={{ width: 2 * radius, height: 2 * radius }}>
-      <CircleContainer size={guideSize} onClick={onClick}>
-        {
-          textPlaceholders.map((_, idx) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <FormattedMessage id={`components.guide.tutorial.${idx}`} key={idx}>
-              {text => <span className={(idx === step) ? '' : 'hidden'}>{text}</span>}
-            </FormattedMessage>
-          ))
-        }
-      </CircleContainer>
       {(wedges.length)
         ? (
           <svg
@@ -77,6 +74,16 @@ const Guide = ({ step, onClick }) => {
         ) : null
 
       }
+      <CircleContainer size={guideSize} onClick={onClick}>
+        {
+          textPlaceholders.map((_, idx) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <FormattedMessage id={`components.guide.tutorial.${idx}`} key={idx}>
+              {text => <span className={(idx === step) ? '' : 'hidden'}>{text}</span>}
+            </FormattedMessage>
+          ))
+        }
+      </CircleContainer>
     </div>
   );
 };

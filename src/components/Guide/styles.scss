@@ -17,7 +17,7 @@
 
     transform: translate(-50%, -50%);
 
-    background: $Guide;
+    background-color: $Guide;
 
     pointer-events: all;
 
@@ -53,8 +53,11 @@
     top: 0;
     left: 0;
 
+    pointer-events: none;
+
     .wedge {
       fill: $LinksTextButtons;
+      transition: transform 0.3s;
     }
   }
 }
