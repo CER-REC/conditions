@@ -8,7 +8,7 @@ import './styles.scss';
 const guideSize = 176;
 
 // Just so there's something to map over in the JSX
-const textPlaceholders = new Array(8).fill(null);
+const textPlaceholders = new Array(7).fill(null);
 
 const wedgesStart = 1;
 const wedgesEnd = 6;
@@ -40,6 +40,7 @@ const Guide = ({ step, onClick }) => {
       wedges.push((
         <path
           className="wedge"
+          key={`wedge-${i}`}
           transform={`rotate(${i * 360 / numWedges}) translate(1, -2)`}
           d={`
             M ${x1} ${y1}
