@@ -40,11 +40,16 @@ $states: (
       transition: "opacity $fastStart, height $defaultTransition, visibility 0s 1s",
     ),
   ),
-  // 9 resets from View 2 -> 1, just with different transitions
+  // 8 resets from View 2 -> 1, just with different transitions
   8: (),
   1: (
     ".guideTranslate": (transform: translate(58%, 76%)),
-    ".browseBy .BrowseByBtn.location": (opacity: 0),
+    ".appControls .BrowseByBtn.location": (opacity: 0),
+    ".appControls .GuideTransport": (
+      opacity: 1,
+      visibility: visible,
+      transition: opacity $fastEnd,
+    ),
     ".ViewOne .infoBar": (opacity: 0),
     ".ViewOne .introduction": (transform: "translateY(-100vh)"),
     ".ViewOne .explorer": (transform: "translateY(-100vh)"),
@@ -71,22 +76,22 @@ $states: (
   ),
   5: (
     ".guideTranslate": (transform: translate(11%, 68%)),
-    ".browseBy .BrowseBy": (opacity: 0),
-    ".browseBy .BrowseByBtn.company": (opacity: 0),
-    ".browseBy .BrowseByBtn.location": (opacity: 0),
+    ".appControls .BrowseBy": (opacity: 0),
+    ".appControls .BrowseByBtn.company": (opacity: 0),
+    ".appControls .BrowseByBtn.location": (opacity: 0),
     ".ViewTwo .companyBreakdown": (opacity: $faded),
     ".ViewTwo .wheel": (opacity: 1),
   ),
   6: (
     ".guideTranslate": (transform: translate(80%, 10%)),
-    ".browseBy": (transform: translateX(10px)),
-    ".browseBy .BrowseBy": (opacity: 1),
-    ".browseBy .BrowseByBtn.company": (opacity: 1),
-    ".browseBy .BrowseByBtn.location": (
+    ".appControls": (transform: translateX(10px)),
+    ".appControls .BrowseBy": (opacity: 1),
+    ".appControls .BrowseByBtn.company": (opacity: 1),
+    ".appControls .BrowseByBtn.location": (
       opacity: 1,
       transform: translateX(-100%),
       ),
-    ".browseBy .BrowseByBtn.inactive": (
+    ".appControls .BrowseByBtn.inactive": (
       visibility: hidden,
       opacity: 0,
       transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
@@ -108,11 +113,18 @@ $states: (
       transition: "opacity #{$defaultTransition}, height #{$defaultTransition}",
     ),
   ),
+  // View 2
   7: (
     ".guideTranslate": (
       opacity: 0,
     ),
     ".guideTranslate .CircleContainer": (pointer-events: none),
+    ".appControls .GuideTransport": (
+      visibility: hidden,
+      opacity: 0,
+      transition: "opacity #{$fastStart}, visibility 0s 1s",
+
+    ),
     ".ViewTwo": (
       pointer-events: auto,
       transition: "opacity #{$defaultTransition}",
@@ -123,14 +135,15 @@ $states: (
       transition: "opacity #{$fastestStart}, visibility 0s 1s",
     ),
   ),
+  // View 3
   9: (
-    ".browseBy .arrowWrapper .browseLabel": (width: 128px),
-    ".browseBy .BrowseByBtn.active": (
+    ".appControls .arrowWrapper .browseLabel": (width: 128px),
+    ".appControls .BrowseByBtn.active": (
       visibility: hidden,
       opacity: 0,
       transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
     ),
-    ".browseBy .BrowseByBtn.inactive": (
+    ".appControls .BrowseByBtn.inactive": (
       visibility: visible,
       opacity: 1,
       transition: "opacity #{$defaultTransition}, transform #{$defaultTransition}",

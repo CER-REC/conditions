@@ -50,7 +50,7 @@
     }
   }
 
-  .browseBy {
+  .appControls {
     z-index: 999;
     position: absolute;
     top: 90%;
@@ -90,7 +90,18 @@
       }
     }
 
+    .GuideTransport {
+      opacity: 0;
+      visibility: hidden;
+
+      left: -170px;
+
+      transition: opacity $fastStart, visibility 0s 1s;
+    }
+
   }
+
+
 
   .ViewOne {
     .introduction {
@@ -158,7 +169,7 @@
       transition: opacity $fastestEnd;
     }
 
-    .browseBy {
+    .appControls {
       transition: transform $fastStart;
 
       .BrowseBy {
@@ -175,6 +186,13 @@
 
       .BrowseByBtn.location {
         transition: opacity $fastEnd;
+      }
+
+      .GuideTransport {
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity $fastEnd, visibility 0s 1s;
       }
     }
 
