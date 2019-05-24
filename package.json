@@ -127,7 +127,7 @@
     "topojson-server": "3.0.0",
     "topojson-simplify": "3.0.2",
     "url-loader": "1.1.2",
-    "webpack": "4.31.0",
+    "webpack": "4.32.2",
     "webpack-cli": "3.3.2"
   },
   "config": {
