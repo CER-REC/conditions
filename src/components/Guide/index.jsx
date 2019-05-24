@@ -5,7 +5,7 @@ import CircleContainer from '../CircleContainer';
 
 import './styles.scss';
 
-const guideSize = 176;
+const guideSize = 128;
 
 // Just so there's something to map over in the JSX
 const textPlaceholders = new Array(7).fill(null);
