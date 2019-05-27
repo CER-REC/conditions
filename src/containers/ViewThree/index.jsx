@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+import { Query } from 'react-apollo';
+import { yearRange } from '../../queries/viewThreeQueries/yearRange';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import InstrumentsLegend from '../../components/InstrumentsLegend';
@@ -18,86 +20,96 @@ import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
-const ViewThree = props => (
-  <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
-    <section className="gradientContainer" />
-    <section className="features">
-      <FeaturesMenu
-        selected={props.selected.feature}
-        onChange={props.setSelectedFeature}
-      />
-    </section>
-    <section className="legend">
-      {props.selected.feature === 'instrument'
-        ? (
-          <InstrumentsLegend
-            data={props.conditionCountsByCommodity.counts}
-            onChange={props.setSelectedSubFeature}
-            selected={props.selected.subFeature}
+class ViewThree extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.loading === false;
+  }
+
+  render() {
+    const { props } = this;
+
+    return (
+      <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
+        <section className="gradientContainer" />
+        <section className="features">
+          <FeaturesMenu
+            selected={props.selected.feature}
+            onChange={props.setSelectedFeature}
           />
-        )
-        : (
-          <SmallMultiplesLegend
-            feature={props.selected.feature}
-            data={props.conditionCountsByYear.counts}
-            onChange={props.setSelectedSubFeature}
-            selected={props.selected.subFeature}
-          />
-        )}
-    </section>
-    <section className="chart">
-      {props.selected.feature === 'instrument'
-        ? (
-          <BubbleChart
-            data={conditionCountsByCommodity.counts}
-            type={props.selected.subFeature}
-            indicator={props.chartIndicatorPosition.bubble}
-            setIndicator={props.setBubbleChartIndicator}
-          />
-        )
-        : (
-          <StreamGraph
-            projectData={props.conditionCountsByYear.counts}
+        </section>
+        <section className="legend">
+          {props.selected.feature === 'instrument'
+            ? (
+              <InstrumentsLegend
+                data={props.conditionCountsByCommodity.counts}
+                onChange={props.setSelectedSubFeature}
+                selected={props.selected.subFeature}
+              />
+            )
+            : (
+              <SmallMultiplesLegend
+                feature={props.selected.feature}
+                data={props.conditionCountsByYear.counts}
+                onChange={props.setSelectedSubFeature}
+                selected={props.selected.subFeature}
+              />
+            )}
+        </section>
+        <section className="chart">
+          {props.selected.feature === 'instrument'
+            ? (
+              <BubbleChart
+                data={conditionCountsByCommodity.counts}
+                type={props.selected.subFeature}
+                indicator={props.chartIndicatorPosition.bubble}
+                setIndicator={props.setBubbleChartIndicator}
+              />
+            )
+            : (
+              <StreamGraph
+                projectData={props.conditionCountsByYear.counts}
+                feature={props.selected.feature}
+                subFeature={props.selected.subFeature}
+              />
+            )}
+        </section>
+        <section className="featureDescription">
+          <FeatureDescription feature={props.selected.feature} />
+        </section>
+        <section className="typesDescription">
+          <FeatureTypesDescription
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
           />
-        )}
-    </section>
-    <section className="featureDescription">
-      <FeatureDescription feature={props.selected.feature} />
-    </section>
-    <section className="typesDescription">
-      <FeatureTypesDescription
-        feature={props.selected.feature}
-        subFeature={props.selected.subFeature}
-      />
-    </section>
-    <section className="selectedCompany">
-      {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
-      <div className="selectedCompanyHeader">
-        <FormattedMessage id="views.view3.company" />
-        <h2 className="companyName">Company Name</h2>
-      </div>
-    </section>
-    <section className="conditions">
-      <ConditionDetails
-        isExpandable
-        selected
-        selectedItem={props.selected.condition}
-        expanded={props.detailViewExpanded}
-        updateSelectedItem={props.setSelectedCondition}
-        openIntermediatePopup={props.openIntermediatePopup}
-        toggleExpanded={props.expandDetailView}
-        openProjectDetails={props.openProjectDetails}
-        searchKeywords={{
-          include: props.included,
-          exclude: props.excluded,
-        }}
-        {...props.conditionDetails}
-      />
-    </section>
-  </section>
-);
+        </section>
+        <section className="selectedCompany">
+          {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
+          <div className="selectedCompanyHeader">
+            <FormattedMessage id="views.view3.company" />
+            <h2 className="companyName">Company Name</h2>
+          </div>
+        </section>
+        <section className="conditions">
+          <ConditionDetails
+            isExpandable
+            selected
+            selectedItem={props.selected.condition}
+            expanded={props.detailViewExpanded}
+            updateSelectedItem={props.setSelectedCondition}
+            openIntermediatePopup={props.openIntermediatePopup}
+            toggleExpanded={props.expandDetailView}
+            openProjectDetails={props.openProjectDetails}
+            searchKeywords={{
+              include: props.included,
+              exclude: props.excluded,
+            }}
+            {...props.conditionDetails}
+          />
+        </section>
+      </section>
+    );
+  }
+}
 
 ViewThree.propTypes = {
   layoutOnly: PropTypes.bool,
@@ -135,13 +147,39 @@ ViewThree.propTypes = {
   openIntermediatePopup: PropTypes.func.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
 };
 
 ViewThree.defaultProps = {
   layoutOnly: PropTypes.false,
+  loading: false,
 };
 
-export const ViewThreeRaw = ViewThree;
+export const ViewThreeUnconnected = ViewThree;
+
+export const ViewThreeGraphQL = props => (
+  <Query query={yearRange}>
+    {({ data, loading }) => {
+      // TODO: Figure what to render while we're waiting
+      if (loading || !data) { return null; }
+
+      // Placeholder to demonstrate that the query is working
+      // eslint-disable-next-line no-console
+      console.dir(data.allConfigurationData);
+
+      return (
+        <ViewThree
+          // data props here
+          data={data}
+          loading={loading}
+          minYear={data.allConfigurationData.instrumentYearRange.min}
+          maxYear={data.allConfigurationData.instrumentYearRange.max}
+          {...props}
+        />
+      );
+    }}
+  </Query>
+);
 
 export default connect(
   ({
@@ -169,4 +207,4 @@ export default connect(
     setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(ViewThree);
+)(ViewThreeGraphQL);
