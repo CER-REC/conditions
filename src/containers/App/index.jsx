@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import gql from 'graphql-tag';
 import { HttpLink } from 'apollo-link-http';
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
@@ -9,6 +10,8 @@ import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
 
 import * as browseByCreators from '../../actions/browseBy';
+import * as searchCreators from '../../actions/search';
+import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import createStore from '../../Store';
 
@@ -36,6 +39,7 @@ const store = createStore();
 const cache = new InMemoryCache();
 const link = new HttpLink({
   uri: graphQLEndPoint,
+  credentials: 'same-origin',
 });
 const client = new ApolloClient({ cache, link, fetch });
 
@@ -96,6 +100,68 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(10)
 
+  setConditionAncestors = (id) => {
+    // TODO: Make a query for this once our server has `conditionById($id)` available
+    client.query({
+      query: gql`
+        query{
+          getConditionById(id: ${id}){
+            instrumentId
+            instrument {
+              projectId
+              project {
+                companyIds
+              }
+            }
+            text {
+              en
+            }
+          }
+        }
+      `,
+    // eslint-disable-next-line no-unused-vars
+    }).then((response) => {
+      // TODO: Error checking
+      const condition = response.data.getConditionById;
+
+      // TODO: setSelectedCondition once View 2 is wired up for it
+
+      this.props.setSelectedProject(condition.instrument.projectId);
+
+      const randomCompany = Math.floor(
+        Math.random() * condition.instrument.project.companyIds.length,
+      );
+      const company = condition.instrument.project.companyIds[randomCompany];
+      this.props.setSelectedCompany(company);
+    });
+  }
+
+  setSelectedKeyword = (keyword, id) => {
+    this.props.setSelectedKeywordId(id);
+    this.props.setIncluded([keyword]);
+    client.query({
+      query: gql`
+        {
+          findSearchResults(
+            includeKeywords: ["${keyword}"],
+            language: "en" # TODO: Check the app's locale
+          ) {
+            conditionIds
+          }
+        }
+      `,
+    }).then((response) => {
+      const { conditionIds } = response.data.findSearchResults;
+      if (!conditionIds.length) {
+        // TODO: Proper error checking or something
+        console.error(`There are no conditions matching "${keyword}"`);
+      } else {
+        const randomId = conditionIds[Math.floor(Math.random() * conditionIds.length)];
+        this.setConditionAncestors(randomId);
+      }
+    });
+  };
+
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
@@ -121,7 +187,7 @@ class App extends React.PureComponent {
         <div className="guideWrapper">
           <Guide textState={guideState} onClick={this.handleGuideClick} />
         </div>
-        <ViewOne jumpToAbout={this.jumpToAbout} />
+        <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
         <section className="browseBy">
           <BrowseBy
             showArrow={(transitionState < 2 || transitionState === 9)}
@@ -149,19 +215,31 @@ App.propTypes = {
   setBrowseBy: PropTypes.func.isRequired,
   transitionState: PropTypes.number.isRequired,
   setTransitionState: PropTypes.func.isRequired,
+  setSelectedCompany: PropTypes.func.isRequired,
+  setSelectedCondition: PropTypes.func.isRequired,
+  setSelectedProject: PropTypes.func.isRequired,
+  setSelectedKeywordId: PropTypes.func.isRequired,
+  setIncluded: PropTypes.func.isRequired,
 };
 
 export const AppUnconnected = App;
 
 const ConnectedApp = connect(
   ({
+    selected,
     browseBy,
     transitionState,
   }) => ({
+    selected,
     browseBy,
     transitionState,
   }),
   {
+    setSelectedCompany: selectedCreators.setSelectedCompany,
+    setSelectedCondition: selectedCreators.setSelectedCondition,
+    setSelectedProject: selectedCreators.setSelectedProject,
+    setIncluded: searchCreators.setIncluded,
+    setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
   },
