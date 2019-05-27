@@ -20,11 +20,11 @@ const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 class StreamGraph extends React.Component {
   static propTypes = {
     countsData: allConditionsPerYear.isRequired,
+    years: PropTypes.arrayOf(PropTypes.number).isRequired,
     feature: featureTypes.isRequired,
     subFeature: PropTypes.string.isRequired,
     streamOnly: PropTypes.bool,
     intl: intlShape.isRequired,
-
   }
 
   static defaultProps = {
@@ -78,37 +78,24 @@ class StreamGraph extends React.Component {
   });
 
   chart() {
-    const filteredData = (this.props.subFeature !== '')
-      ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
-      : this.processedData;
+    const filteredData = this.processedData.filter(entry => (
+      (entry.feature === this.props.feature)
+      && ((this.props.subFeature === '') || (entry.subFeature === this.props.subFeature))
+    ));
 
-    // TODO: GraphQL will provide an array of [2010, 2011, 2012...]
-    // We can map over that instead to save a bit of time here
-    const { conditionsByDate, minConditionCount } = filteredData.reduce((acc, cur) => {
-      Object.entries(cur.years).forEach(([year, count]) => {
-        acc.conditionsByDate[year] = count + (acc.conditionsByDate[year] || 0);
-
-        if (count < acc.minConditionCount) { acc.minConditionCount = count; }
+    const yearTotals = filteredData.reduce((acc, cur) => {
+      Object.values(cur.years).forEach((count, yearIdx) => {
+        acc[yearIdx] = count + (acc[yearIdx] || 0);
       });
 
       return acc;
-    }, { conditionsByDate: {}, minConditionCount: Infinity });
+    }, []);
 
-    // TODO: Use GraphQL's data to get the min + max date
-    // eslint-disable-next-line prefer-const
-    let { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
-      .reduce((acc, [year, count]) => {
-        const parsedYear = parseInt(year, 10);
-        if (parsedYear < acc.minDate) { acc.minDate = parsedYear; }
-        if (parsedYear > acc.maxDate) { acc.maxDate = parsedYear; }
+    const maxTotal = Math.max(...yearTotals);
+    const minTotal = Math.min(...yearTotals);
 
-        if (count > acc.maxConditionTotal) { acc.maxConditionTotal = count; }
-
-        return acc;
-      }, { minDate: Infinity, maxDate: 0, maxConditionTotal: 0 });
-
-    // TODO: Year list from GraphQL
-    const yearTicks = Array(maxDate - minDate + 1).fill(null).map((_, i) => minDate + i);
+    const minDate = this.props.years[0];
+    const maxDate = this.props.years[this.props.years.length - 1];
 
     if (this.props.streamOnly) {
       return (
@@ -160,7 +147,7 @@ class StreamGraph extends React.Component {
         <VictoryAxis
           dependentAxis
           label={intl.formatMessage({ id: 'components.streamGraph.axis.yAxis' })}
-          tickValues={[minConditionCount, maxConditionTotal]}
+          tickValues={[minTotal, maxTotal]}
           tickFormat={Math.round}
           className="axis-label"
           style={axisStyles}
@@ -170,7 +157,7 @@ class StreamGraph extends React.Component {
           tickFormat={Math.round}
           scale="linear"
           className="axis-label"
-          tickValues={yearTicks}
+          tickValues={this.props.years}
           domain={[minDate, maxDate]}
           style={axisStyles}
         />
