@@ -47,7 +47,7 @@ export const ViewTwoGraphQL = (props) => {
                     }, [])
                   : [];
 
-                // MISSING ERROR HANDLING
+                // TODO: ERROR HANDLING
                 return (
                   <ViewTwo
                     wheelData={

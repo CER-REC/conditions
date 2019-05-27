@@ -49,15 +49,12 @@ class WheelRay extends React.Component {
     } = props;
     const width = '19%';
     const halfReservedDegrees = reservedDegrees / 2;
-    const selectedIndex = currentIndex >= 0
-      ? currentIndex : items.length + currentIndex;
-
     let legendTracker = '';
 
     const rays = items.map((item, index) => {
-      if (index === selectedIndex) { return null; }
+      if (index === currentIndex) { return null; }
       let position = rotation;
-      const plotIndex = selectedIndex - index;
+      const plotIndex = currentIndex - index;
       if (plotIndex < 0) {
         position -= (plotIndex * degreesPerItem) - halfReservedDegrees;
       } else if (plotIndex > 0) {

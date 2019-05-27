@@ -6,7 +6,7 @@ import ViewTwo from './index';
 const ViewTwoUnconnected = (props) => {
   let wheelParsedData = [];
   let legendItems = [];
-  if (props.browseBy !== 'location') {
+  if (props.browseBy === 'company') {
     wheelParsedData = props.wheelData;
     legendItems = props.selected.company
       ? Object.entries(props.projectsData.find(

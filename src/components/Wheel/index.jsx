@@ -40,21 +40,20 @@ class Wheel extends React.Component {
 
   static getDerivedStateFromProps(props, prevState) {
     const items = props.wheelData;
-    const degreesAvailForPlotting = 360 - reservedDegrees;
-    const degreesPerItem = (degreesAvailForPlotting / (items.length - 1));
+    const degreesPerItem = ((360 - reservedDegrees) / (items.length));
     const selectedIndex = items.findIndex(v => v.id === props.selectedRay);
     const { needsSpin } = prevState;
-    let { newRotation } = prevState || selectedIndex * degreesPerItem;
+    let { newRotation } = prevState || selectedIndex * (360 / items.length);
     if (needsSpin) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
-      newRotation += minimumRotation + selectedIndex * degreesPerItem;
+      newRotation += minimumRotation + selectedIndex * (360 / items.length);
     } else {
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
       if (diff < items.length - 1) {
-        const adding = (selectedIndex - prevState.selectedIndex) * degreesPerItem;
+        const adding = (selectedIndex - prevState.selectedIndex) * (360 / items.length);
         newRotation += adding;
       } else {
-        newRotation += -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
+        newRotation += -(Math.sign(selectedIndex - prevState.selectedIndex) * (360 / items.length));
       }
     }
     return {
@@ -90,13 +89,13 @@ class Wheel extends React.Component {
 
   getIndex = (currentRotation) => {
     const { length } = this.props.wheelData;
-    const index = Math.round((currentRotation % 360) / ((360 - reservedDegrees) / (length - 1)));
-    return (this.props.wheelData.length - index) % this.props.wheelData.length;
+    const index = Math.round(((360 + (currentRotation % 360)) % 360) / (360 / length));
+    return (length + (length - index)) % length;
   };
 
   stopWheel = (index) => {
     this.setState(prevState => (
-      { newRotation: prevState.newRotation + (index * prevState.degreesPerItem) }
+      { newRotation: prevState.newRotation + (index * (360 / this.props.wheelData.length)) }
     ));
   };
 
