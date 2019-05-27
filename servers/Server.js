@@ -1,6 +1,6 @@
 import Express from 'express';
-import Tr from '../src/TranslationTable';
 import Compression from 'compression';
+import Tr from '../src/TranslationTable';
 
 // Compression = require('compression')
 

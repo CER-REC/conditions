@@ -8,8 +8,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
-import i18nMessages from '../../i18n';
 import { AppContainer, hot } from 'react-hot-loader';
+import i18nMessages from '../../i18n';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as transitionStateCreators from '../../actions/transitionState';
