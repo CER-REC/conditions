@@ -1,11 +1,11 @@
-const Express = require('express');
-const Path = require('path');
-const ApplicationRoot = require('../../ApplicationRoot.js');
+import express from 'express';
+import path from 'path';
+import ApplicationRoot from '../../ApplicationRoot';
 
 const PublicFilesMiddleware = () => {
-  const app = Express();
-  app.use(Express.static(Path.join(ApplicationRoot, 'public')));
-  app.use(Express.static(Path.join(ApplicationRoot, 'devPublic')));
+  const app = express();
+  app.use(express.static(path.join(ApplicationRoot, 'public')));
+  app.use(express.static(path.join(ApplicationRoot, 'devPublic')));
   return app;
 };
-module.exports = PublicFilesMiddleware;
+export default PublicFilesMiddleware;

@@ -1,19 +1,19 @@
-const Express = require('express');
-const Path = require('path');
-const MustacheExpress = require('mustache-express');
+import express from 'express';
+import path from 'path';
+import mustacheExpress from 'mustache-express';
 
 const ApplicationRoot = require('../../ApplicationRoot.js');
 
 const DevelopmentPageMiddleware = () => {
-  const app = Express();
+  const app = express();
 
   // view engine setup
-  app.engine('mustache', MustacheExpress());
+  app.engine('mustache', mustacheExpress());
 
-  app.set('views', Path.join(ApplicationRoot, 'servers', 'views'));
+  app.set('views', path.join(ApplicationRoot, 'servers', 'views'));
   app.set('view engine', 'mustache');
 
-  const router = Express.Router();
+  const router = express.Router();
 
   router.get('/', (req, res) => {
     res.render('app', { title: 'WET 4.0.20' });
@@ -33,4 +33,4 @@ const DevelopmentPageMiddleware = () => {
   return app;
 };
 
-module.exports = DevelopmentPageMiddleware;
+export default DevelopmentPageMiddleware;

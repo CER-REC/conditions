@@ -1,17 +1,19 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-const WebpackHotMiddleware = require('webpack-hot-middleware');
-const WebpackDevMiddleware = require('webpack-dev-middleware');
-const Webpack = require('webpack');
-const Express = require('express');
+import hot from 'webpack-hot-middleware';
+import dev from 'webpack-dev-middleware';
+import webpack from 'webpack';
+import express from 'express';
 
 const Config = require('../../webpack.config.babel.js');
 
-const compiler = Webpack(Config);
-module.exports = () => {
-  const app = Express();
-  app.use('/script', WebpackDevMiddleware(compiler, {
+const compiler = webpack(Config);
+const WebpackDevMiddleware = () => {
+  const app = express();
+  app.use('/script', dev(compiler, {
     // options
   }));
-  app.use('/script', WebpackHotMiddleware(compiler));
+  app.use('/script', hot(compiler));
   return app;
 };
+
+export default WebpackDevMiddleware;

@@ -2,9 +2,7 @@ import Express from 'express';
 import Compression from 'compression';
 import Tr from '../src/TranslationTable';
 
-// Compression = require('compression')
-
-function Server(middlewares) {
+const Server = (middlewares) => {
   // Prepare the Express app for the incident visualization
   const app = Express();
   middlewares.forEach(middleware => app.use(middleware));
@@ -26,5 +24,6 @@ function Server(middlewares) {
     return rootApp.emit('server-online');
   });
   return rootApp;
-}
-module.exports = Server;
+};
+
+export default Server;
