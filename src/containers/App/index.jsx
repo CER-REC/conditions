@@ -7,6 +7,9 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
+import { IntlProvider } from 'react-intl';
+import i18nMessages from '../../i18n';
+import { AppContainer, hot } from 'react-hot-loader';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as transitionStateCreators from '../../actions/transitionState';
@@ -153,7 +156,7 @@ App.propTypes = {
 
 export const AppUnconnected = App;
 
-const ConnectedApp = connect(
+const ConnectedApp = hot(module)(connect(
   ({
     browseBy,
     transitionState,
@@ -165,12 +168,16 @@ const ConnectedApp = connect(
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
   },
-)(App);
+)(App));
 
 export default props => (
-  <ApolloProvider client={client}>
-    <Provider store={store}>
-      <ConnectedApp {...props} />
-    </Provider>
-  </ApolloProvider>
+  <AppContainer>
+    <IntlProvider locale="en" messages={i18nMessages.en}>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
+          <ConnectedApp {...props} />
+        </Provider>
+      </ApolloProvider>
+    </IntlProvider>
+  </AppContainer>
 );
