@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const WebpackHotMiddleware = require('webpack-hot-middleware');
 const WebpackDevMiddleware = require('webpack-dev-middleware');
 const Webpack = require('webpack');
