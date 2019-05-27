@@ -40,7 +40,6 @@ const stateToURLMiddleware = (store) => {
 
   return next => (action) => {
     next(action);
-console.log('test')
     // Don't update the URL if we're currently updating the state
     if (updatingState) { return; }
 
