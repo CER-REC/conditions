@@ -41,6 +41,7 @@ class StreamGraph extends React.Component {
   // For data that doesn't match the current feature/subfeature, sets all y = 0
   processCountsData = () => {
     const { countsData, feature, subFeature } = this.props;
+
     this.processedData = countsData.map((entry) => {
       if (entry.feature === feature
         && (entry.subFeature === subFeature || subFeature === '')
@@ -54,23 +55,27 @@ class StreamGraph extends React.Component {
     });
   };
 
-  streamLayers = () => this.processedData.map(v => (
-    <VictoryArea
-      key={`${v.feature}-${v.subFeature}`}
-      name={v.subFeature}
-      data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
-      style={{
-        data: {
-          fill: ((v.feature === 'instrument')
-            ? features.instrument[v.rank]
-            : features[v.feature][v.subFeature]
-          ),
-          strokeWidth: 0,
-        },
-      }}
-      interpolation="catmullRom"
-    />
-  ));
+  streamLayers = () => this.processedData.map((v) => {
+    const data = Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }));
+
+    return (
+      <VictoryArea
+        key={`${v.feature}-${v.subFeature}`}
+        name={v.subFeature}
+        data={data}
+        style={{
+          data: {
+            fill: ((v.feature === 'instrument')
+              ? features.instrument[v.rank]
+              : features[v.feature][v.subFeature]
+            ),
+            strokeWidth: 0,
+          },
+        }}
+        interpolation="catmullRom"
+      />
+    );
+  });
 
   chart() {
     const filteredData = (this.props.subFeature !== '')
@@ -93,16 +98,14 @@ class StreamGraph extends React.Component {
     // eslint-disable-next-line prefer-const
     let { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
       .reduce((acc, [year, count]) => {
-        if (year < acc.minDate) { acc.minDate = year; }
-        if (year > acc.maxDate) { acc.maxDate = year; }
+        const parsedYear = parseInt(year, 10);
+        if (parsedYear < acc.minDate) { acc.minDate = parsedYear; }
+        if (parsedYear > acc.maxDate) { acc.maxDate = parsedYear; }
 
         if (count > acc.maxConditionTotal) { acc.maxConditionTotal = count; }
 
         return acc;
       }, { minDate: Infinity, maxDate: 0, maxConditionTotal: 0 });
-
-    minDate = parseInt(minDate, 10);
-    maxDate = parseInt(maxDate, 10);
 
     // TODO: Year list from GraphQL
     const yearTicks = Array(maxDate - minDate + 1).fill(null).map((_, i) => minDate + i);

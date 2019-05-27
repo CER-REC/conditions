@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
-import { yearRange } from '../../queries/viewThreeQueries/yearRange';
+import { conditionsPerYear } from '../../queries/viewThreeQueries/conditionsPerYear';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
@@ -19,14 +19,35 @@ import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
 const processConditionCounts = (counts) => {
-  const [instruments, notInstruments] = counts.reduce((acc, entry) => {
-    acc[(entry.feature === 'instrument') ? 0 : 1].push(entry);
-    return acc;
-  }, [[], []]);
+  // TODO: Change to 'const' once the instrument hack below is removed
+  // eslint-disable-next-line prefer-const
+  let [instruments, notInstruments] = Object.entries(counts)
+    .reduce((acc, [feature, featureCounts]) => {
+      if (feature === 'year' || feature === '__typename') return acc;
+      const pushTo = (feature === 'instrument') ? 0 : 1;
 
-  instruments.forEach((entry, idx) => {
-    instruments[idx].total = Object.values(entry.years).reduce((acc, cur) => acc + cur, 0);
-  });
+      Object.entries(featureCounts).forEach(([subFeature, subCounts]) => {
+        if (subFeature === '__typename') return;
+        const countObj = {
+          feature,
+          subFeature,
+          years: {},
+          total: 0,
+        };
+
+        subCounts.forEach((count, idx) => {
+          countObj.years[counts.year[idx]] = count;
+          countObj.total += count;
+        });
+
+        acc[pushTo].push(countObj);
+      });
+
+      return acc;
+    }, [[], []]);
+
+  // TODO: Hack to keep things from breaking until we have live instrument data
+  instruments = conditionCountsByYear.counts.filter(entry => entry.feature === 'instrument');
 
   instruments.sort((a, b) => (b.total - a.total));
 
@@ -65,7 +86,7 @@ class ViewThree extends React.Component {
   render() {
     const { props } = this;
     const { conditionCounts, prefixOrder } = processConditionCounts(
-      props.conditionCountsByYear.counts,
+      props.data.conditionsPerYear,
     );
 
     const reversedCounts = conditionCounts.slice().reverse();
@@ -181,22 +202,15 @@ ViewThree.defaultProps = {
 export const ViewThreeUnconnected = ViewThree;
 
 export const ViewThreeGraphQL = props => (
-  <Query query={yearRange}>
-    {({ data, loading }) => {
-      // TODO: Figure what to render while we're waiting
-      if (loading || !data) { return null; }
-
-      // Placeholder to demonstrate that the query is working
-      // eslint-disable-next-line no-console
-      console.dir(data.allConfigurationData);
+  <Query query={conditionsPerYear}>
+    {({ data: conditionsData, loading: conditionsLoading }) => {
+      if (conditionsLoading || !conditionsData) return null;
 
       return (
         <ViewThree
           // data props here
-          data={data}
-          loading={loading}
-          minYear={data.allConfigurationData.instrumentYearRange.min}
-          maxYear={data.allConfigurationData.instrumentYearRange.max}
+          data={{ conditionsPerYear: conditionsData.conditionsPerYear }}
+          loading={conditionsLoading}
           {...props}
         />
       );
@@ -218,9 +232,6 @@ export default connect(
     excluded: search.excluded,
     chartIndicatorPosition,
     detailViewExpanded,
-
-    // TODO: Remove these since they're data and not state
-    conditionCountsByYear,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
