@@ -1,14 +1,13 @@
 import { createBrowserHistory } from 'history';
 import QueryString from 'query-string';
 import LZUTF8 from 'lzutf8';
-import TR from '../TranslationTable';
 
 let unlistenHistory;
 let lastSave = {};
 let updatingHistory = false;
 let updatingState = false;
 
-const updateStateFromURL = (search, store) => {
+export const updateStateFromURL = (search, store) => {
   try {
     const { config: configRaw } = QueryString.parse(search);
     if (!configRaw) { return; }
@@ -41,7 +40,7 @@ const stateToURLMiddleware = (store) => {
 
   return next => (action) => {
     next(action);
-
+console.log('test')
     // Don't update the URL if we're currently updating the state
     if (updatingState) { return; }
 
@@ -57,8 +56,7 @@ const stateToURLMiddleware = (store) => {
     const compressed = encodeURIComponent(LZUTF8.compress(stateString, { outputEncoding: 'Base64' }));
 
     updatingHistory = true;
-    const baseURL = TR.getIn(['applicationPath', 'en']);
-    history.push(`${baseURL}?config=${compressed}`);
+    history.push(`?config=${compressed}`);
     updatingHistory = false;
   };
 };
