@@ -85,9 +85,9 @@ class ViewThree extends React.Component {
 
   render() {
     const { props } = this;
-    const { conditionCounts, prefixOrder } = processConditionCounts(
-      props.data.conditionsPerYear,
-    );
+    this.processedConditionCounts = this.processedConditionCounts
+      || processConditionCounts(props.data.conditionsPerYear);
+    const { conditionCounts, prefixOrder } = this.processedConditionCounts;
 
     const reversedCounts = conditionCounts.slice().reverse();
 
@@ -111,6 +111,7 @@ class ViewThree extends React.Component {
         <section className="chart">
           <StreamGraph
             countsData={reversedCounts}
+            years={props.data.conditionsPerYear.year}
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
           />
