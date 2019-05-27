@@ -94,6 +94,7 @@ class ViewThree extends React.Component {
 }
 
 ViewThree.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
   layoutOnly: PropTypes.bool,
   conditionCountsByYear: PropTypes.shape({
     counts: allConditionsPerYear.isRequired,
@@ -102,6 +103,7 @@ ViewThree.propTypes = {
     bubble: PropTypes.string.isRequired,
     stream: PropTypes.number.isRequired,
   }).isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   setBubbleChartIndicator: PropTypes.func.isRequired,
   conditionCountsByCommodity: PropTypes.shape({
     counts: allConditionsByCommodityOrInstrument.isRequired,
@@ -114,8 +116,11 @@ ViewThree.propTypes = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   setSelectedFeature: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   setSelectedSubFeature: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
 };
 
 ViewThree.defaultProps = {
