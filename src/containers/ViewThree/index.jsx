@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+import { Query } from 'react-apollo';
+import { yearRange } from '../../queries/viewThreeQueries/yearRange';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
@@ -55,78 +57,85 @@ const processConditionCounts = (counts) => {
   return { conditionCounts: [...instrumentsOut, ...notInstruments], prefixOrder };
 };
 
-const ViewThree = (props) => {
-  const { conditionCounts, prefixOrder } = processConditionCounts(
-    props.conditionCountsByYear.counts,
-  );
+class ViewThree extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.loading === false;
+  }
 
-  const reversedCounts = conditionCounts.slice().reverse();
+  render() {
+    const { props } = this;
+    const { conditionCounts, prefixOrder } = processConditionCounts(
+      props.conditionCountsByYear.counts,
+    );
 
-  return (
-    <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
-      <section className="gradientContainer" />
-      <section className="features">
-        <FeaturesMenu
-          selected={props.selected.feature}
-          onChange={props.setSelectedFeature}
-        />
+    const reversedCounts = conditionCounts.slice().reverse();
+
+    return (
+      <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
+        <section className="gradientContainer" />
+        <section className="features">
+          <FeaturesMenu
+            selected={props.selected.feature}
+            onChange={props.setSelectedFeature}
+          />
+        </section>
+        <section className="legend">
+          <SmallMultiplesLegend
+            feature={props.selected.feature}
+            data={conditionCounts}
+            onChange={props.setSelectedSubFeature}
+            selected={props.selected.subFeature}
+          />
+        </section>
+        <section className="chart">
+          <StreamGraph
+            countsData={reversedCounts}
+            feature={props.selected.feature}
+            subFeature={props.selected.subFeature}
+          />
+        </section>
+        <section className="featureDescription">
+          <FeatureDescription feature={props.selected.feature} />
+        </section>
+        <section className="typesDescription">
+          <FeatureTypesDescription
+            feature={props.selected.feature}
+            subFeature={props.selected.subFeature}
+            displayOrder={
+              (props.selected.feature === 'instrument')
+                ? prefixOrder
+                : displayOrder.features[props.selected.feature]
+            }
+          />
+        </section>
+        <section className="selectedCompany">
+          {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
+          <div className="selectedCompanyHeader">
+            <FormattedMessage id="views.view3.company" />
+            <h2 className="companyName">Company Name</h2>
+          </div>
+        </section>
+        <section className="conditions">
+          <ConditionDetails
+            isExpandable
+            selected
+            selectedItem={props.selected.condition}
+            expanded={props.detailViewExpanded}
+            updateSelectedItem={props.setSelectedCondition}
+            openIntermediatePopup={props.openIntermediatePopup}
+            toggleExpanded={props.expandDetailView}
+            openProjectDetails={props.openProjectDetails}
+            searchKeywords={{
+              include: props.included,
+              exclude: props.excluded,
+            }}
+            {...props.conditionDetails}
+          />
+        </section>
       </section>
-      <section className="legend">
-        <SmallMultiplesLegend
-          feature={props.selected.feature}
-          data={conditionCounts}
-          onChange={props.setSelectedSubFeature}
-          selected={props.selected.subFeature}
-        />
-      </section>
-      <section className="chart">
-        <StreamGraph
-          countsData={reversedCounts}
-          feature={props.selected.feature}
-          subFeature={props.selected.subFeature}
-        />
-      </section>
-      <section className="featureDescription">
-        <FeatureDescription feature={props.selected.feature} />
-      </section>
-      <section className="typesDescription">
-        <FeatureTypesDescription
-          feature={props.selected.feature}
-          subFeature={props.selected.subFeature}
-          displayOrder={
-            (props.selected.feature === 'instrument')
-              ? prefixOrder
-              : displayOrder.features[props.selected.feature]
-          }
-        />
-      </section>
-      <section className="selectedCompany">
-        {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
-        <div className="selectedCompanyHeader">
-          <FormattedMessage id="views.view3.company" />
-          <h2 className="companyName">Company Name</h2>
-        </div>
-      </section>
-      <section className="conditions">
-        <ConditionDetails
-          isExpandable
-          selected
-          selectedItem={props.selected.condition}
-          expanded={props.detailViewExpanded}
-          updateSelectedItem={props.setSelectedCondition}
-          openIntermediatePopup={props.openIntermediatePopup}
-          toggleExpanded={props.expandDetailView}
-          openProjectDetails={props.openProjectDetails}
-          searchKeywords={{
-            include: props.included,
-            exclude: props.excluded,
-          }}
-          {...props.conditionDetails}
-        />
-      </section>
-    </section>
-  );
-};
+    );
+  }
+}
 
 ViewThree.propTypes = {
   layoutOnly: PropTypes.bool,
@@ -161,13 +170,39 @@ ViewThree.propTypes = {
   openIntermediatePopup: PropTypes.func.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
 };
 
 ViewThree.defaultProps = {
   layoutOnly: PropTypes.false,
+  loading: false,
 };
 
-export const ViewThreeRaw = ViewThree;
+export const ViewThreeUnconnected = ViewThree;
+
+export const ViewThreeGraphQL = props => (
+  <Query query={yearRange}>
+    {({ data, loading }) => {
+      // TODO: Figure what to render while we're waiting
+      if (loading || !data) { return null; }
+
+      // Placeholder to demonstrate that the query is working
+      // eslint-disable-next-line no-console
+      console.dir(data.allConfigurationData);
+
+      return (
+        <ViewThree
+          // data props here
+          data={data}
+          loading={loading}
+          minYear={data.allConfigurationData.instrumentYearRange.min}
+          maxYear={data.allConfigurationData.instrumentYearRange.max}
+          {...props}
+        />
+      );
+    }}
+  </Query>
+);
 
 export default connect(
   ({
@@ -194,4 +229,4 @@ export default connect(
     setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(ViewThree);
+)(ViewThreeGraphQL);

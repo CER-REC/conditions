@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import handleDrag from '../../../utilities/handleDrag';
 import { keywordList } from '../proptypes';
@@ -12,6 +13,12 @@ const testForCollision = (circle, rect) => {
 export default class Fallback extends React.Component {
   static propTypes = {
     keywords: keywordList.isRequired,
+    selectedKeywordId: PropTypes.number,
+    onKeywordClick: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    selectedKeywordId: null,
   };
 
   constructor(props) {
@@ -23,12 +30,15 @@ export default class Fallback extends React.Component {
     };
   }
 
-  renderKeywords = () => this.props.keywords.map((keyword) => {
+  renderKeywords = () => this.props.keywords.map((keyword, idx) => {
     const textVisible = testForCollision(this.state.guide, keyword.outline);
     return (
       <g
         key={keyword.value}
-        className={classNames('keyword', keyword.className, { textVisible })}
+        className={classNames('keyword', keyword.className, { textVisible, selected: (idx === this.props.selectedKeywordId) })}
+        data-id={idx}
+        data-keyword={keyword}
+        onClick={this.props.onKeywordClick}
       >
         <text
           x={keyword.outline.x}
