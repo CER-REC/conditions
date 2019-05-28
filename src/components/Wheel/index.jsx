@@ -34,19 +34,26 @@ class Wheel extends React.Component {
       newRotation: 0,
       degreesPerItem: 0,
       selectedIndex: 0,
-      needsSpin: false,
+      wheelModifiers: {
+        spin: false,
+      },
     };
   }
 
   static getDerivedStateFromProps(props, prevState) {
     const items = props.wheelData;
+    if (!items.length > 0) return { ...prevState };
+    if (props.selectedRay === null) {
+      props.selectRay(items[Math.floor(Math.random() * items.length)].id);
+    }
     const degreesPerItem = ((360 - reservedDegrees) / (items.length));
     const selectedIndex = items.findIndex(v => v.id === props.selectedRay);
-    const { needsSpin } = prevState;
-    let { newRotation } = prevState || selectedIndex * (360 / items.length);
-    if (needsSpin) {
+    const { wheelModifiers } = prevState;
+    let { newRotation } = prevState;
+    if (wheelModifiers.spin || prevState.selectedIndex === -1) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + selectedIndex * (360 / items.length);
+      wheelModifiers.spin = true;
     } else {
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
       if (diff < items.length - 1) {
@@ -61,26 +68,21 @@ class Wheel extends React.Component {
       selectedIndex,
       oldRotation: prevState.newRotation || 0,
       newRotation,
-      needsSpin,
+      wheelModifiers,
     };
   }
 
-  shouldComponentUpdate(nextProps) {
-    return this.props.selectedRay !== nextProps.selectedRay
-    || this.props.wheelData !== nextProps.wheelData;
-  }
-
-  componentDidUpdate() {
-    if (this.state.selectedIndex === -1 && this.props.wheelData.length > 0) {
-      this.onClickSpin();
-    }
+  shouldComponentUpdate(prevProps) {
+    return prevProps.wheelType !== this.props.wheelType
+      || prevProps.selectedRay !== this.props.selectedRay
+      || prevProps.wheelData !== this.props.wheelData;
   }
 
   onClickSpin = () => {
     const items = this.props.wheelData;
     const randomNum = Math.floor(Math.random() * items.length);
     this.props.selectRay(items[randomNum].id);
-    this.setState({ needsSpin: true });
+    this.state.wheelModifiers.spin = true;
   };
 
   onChange = (index) => {
@@ -108,15 +110,12 @@ class Wheel extends React.Component {
       <div className="Wheel">
         <Spring
           native
-          immediate={!this.state.needsSpin}
+          immediate={!this.state.wheelModifiers.spin}
           config={{ tension: 30, friction: 20, easing: t => t * t * t * t * t }}
-          onStart={() => this.setState({ needsSpin: false })}
-          from={{
-            rotation: -this.state.oldRotation,
-          }}
-          to={{
-            rotation: -this.state.newRotation,
-          }}
+          onStart={() => { this.state.wheelModifiers.spin = false; }}
+          onRest={() => {}} // props.showInfo()}
+          from={{ rotation: -this.state.oldRotation }}
+          to={{ rotation: -this.state.newRotation }}
         >
           {(props) => {
             const currentIndex = props.rotation.interpolate(r => this.getIndex(r));

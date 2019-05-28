@@ -16,10 +16,6 @@ class WheelList extends React.Component {
     };
   }
 
-  shouldComponentUpdate(nextProps) {
-    return nextProps.selected !== this.props.selected;
-  }
-
   static getDerivedStateFromProps(props) {
     const wrapIndex = i => (props.selected + i + props.listContent.length)
     % props.listContent.length;

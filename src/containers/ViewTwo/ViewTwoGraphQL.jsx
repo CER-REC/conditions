@@ -51,7 +51,7 @@ export const ViewTwoGraphQL = (props) => {
                 return (
                   <ViewTwo
                     wheelData={
-                      !wheelQLoading && !wheelQerror
+                      !wheelQLoading && !wheelQerror && wheelQData.allCompanies
                         ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
                         : []
                     }
@@ -85,7 +85,8 @@ export const ViewTwoGraphQL = (props) => {
         ? locationData.map(region => (
           {
             ...region,
-            // REMOVE THE TWO FOLLOWING LINES ONCE THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
+            // TODO: REMOVE THE TWO FOLLOWING LINES ONCE
+            // THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
             name: region.name.en,
             province: region.province,
             aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
@@ -95,7 +96,7 @@ export const ViewTwoGraphQL = (props) => {
                     feature: props.selected.feature,
                     description: key,
                     disabled: val <= 0,
-                    count: val,
+                    // count: val,
                     value: val,
                     fill: features[props.selected.feature][key],
                     id: region.id,
