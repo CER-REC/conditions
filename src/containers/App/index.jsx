@@ -118,7 +118,7 @@ class App extends React.PureComponent {
         className={classNames('App', `transition-state-${transitionState}`)}
         ref={this.ref}
       >
-        <div className="fixedContainerWithoutFooter">
+        <div className="fixedContainer">
           <div className="guideWrapper">
             <Guide textState={guideState} onClick={this.handleGuideClick} />
           </div>

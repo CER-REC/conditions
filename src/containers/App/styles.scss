@@ -14,7 +14,7 @@
   $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
 
   position: relative;
-  .fixedContainerWithoutFooter{
+  .fixedContainer{
     @include grid((
       guideWrapper: (x: 0, y: 0, w: 120, h: 84),
       ViewOne: (x: 0, y: 0, w: 120, h: 84),
