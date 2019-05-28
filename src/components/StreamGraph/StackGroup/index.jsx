@@ -98,6 +98,7 @@ class StackGroup extends React.PureComponent {
 
   render() {
     const { stackProps, controlYear } = this.props;
+    const stackSize = this.calculateStackSize();
 
     let control = null;
     if (controlYear) {
@@ -135,6 +136,7 @@ class StackGroup extends React.PureComponent {
           role="button"
           tabIndex="0"
         >
+          <rect x={stackSize.top} y={stackSize.left} width={stackSize.width} height={stackSize.height} fill="none" />
           {this.props.children}
         </g>
         {control}
