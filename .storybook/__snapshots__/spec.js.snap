@@ -21498,6 +21498,13 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={230}
+            width={500}
+            x={50}
+            y={50}
+          />
           <g
             clipPath="url(#victory-clip-27)"
             style={
@@ -21992,6 +21999,31 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               }
             />
           </g>
+        </g>
+        <g
+          className="ChartIndicator"
+          transform="translate(407.14285714285717, 220.48245614035088)"
+        >
+          <path
+            className="arrow"
+            d="M -5 -10 L 5 -10 L 0 0 z"
+          />
+          <line
+            className="line"
+            x1={0}
+            x2={0}
+            y1={5}
+            y2={59.51754385964912}
+          />
+          <text
+            alignmentBaseline="bottom"
+            textAnchor="middle"
+            x="0"
+            y="-12"
+          >
+            177
+            *
+          </text>
         </g>
       </svg>
       <div
@@ -22788,6 +22820,13 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={230}
+            width={500}
+            x={50}
+            y={50}
+          />
           <g
             clipPath="url(#victory-clip-13)"
             style={
@@ -23283,6 +23322,31 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             />
           </g>
         </g>
+        <g
+          className="ChartIndicator"
+          transform="translate(407.14285714285717, 86.80000000000001)"
+        >
+          <path
+            className="arrow"
+            d="M -5 -10 L 5 -10 L 0 0 z"
+          />
+          <line
+            className="line"
+            x1={0}
+            x2={0}
+            y1={5}
+            y2={193.2}
+          />
+          <text
+            alignmentBaseline="bottom"
+            textAnchor="middle"
+            x="0"
+            y="-12"
+          >
+            126
+            
+          </text>
+        </g>
       </svg>
       <div
         style={
@@ -23348,6 +23412,13 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={300}
+            width={450}
+            x={0}
+            y={0}
+          />
           <g
             clipPath="url(#victory-clip-54)"
             style={
@@ -24613,6 +24684,13 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={230}
+            width={500}
+            x={50}
+            y={50}
+          />
           <g
             clipPath="url(#victory-clip-41)"
             style={
@@ -25108,6 +25186,31 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             />
           </g>
         </g>
+        <g
+          className="ChartIndicator"
+          transform="translate(335.7142857142857, 202.47191011235955)"
+        >
+          <path
+            className="arrow"
+            d="M -5 -10 L 5 -10 L 0 0 z"
+          />
+          <line
+            className="line"
+            x1={0}
+            x2={0}
+            y1={5}
+            y2={77.52808988764045}
+          />
+          <text
+            alignmentBaseline="bottom"
+            textAnchor="middle"
+            x="0"
+            y="-12"
+          >
+            150
+            
+          </text>
+        </g>
       </svg>
       <div
         style={
@@ -25237,6 +25340,13 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
               role="button"
               tabIndex="0"
             >
+              <rect
+                fill="none"
+                height={300}
+                width={450}
+                x={0}
+                y={0}
+              />
               <g
                 clipPath="url(#victory-clip-67)"
                 style={

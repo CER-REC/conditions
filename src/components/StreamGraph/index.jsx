@@ -75,9 +75,10 @@ class StreamGraph extends React.Component {
       const controlYearArr = controlYearArray.sort();
       if (controlYearArray.length >= 3) {
         const [controlYear] = controlYearArr.slice(-3, -2);
-        this.setState(prevState => ({ ...prevState, controlYear }));
+        return parseInt(controlYear, 10);
       }
     }
+    return this.state.controlYear;
   };
 
   chart() {
@@ -96,8 +97,6 @@ class StreamGraph extends React.Component {
 
       return acc;
     }, { conditionsByDate: {}, minConditionCount: Infinity });
-
-    this.updateControlYearState(controlYearArray);
 
     const { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
       .reduce((acc, [year, count]) => {
@@ -149,7 +148,7 @@ class StreamGraph extends React.Component {
     };
 
     const { intl } = this.props;
-
+    const controlYr = this.updateControlYearState(controlYearArray);
     return (
       <VictoryChart animate={streamAnimation} width={600} height={330}>
         <VictoryAxis
@@ -170,7 +169,7 @@ class StreamGraph extends React.Component {
         <StackGroupProps
           groupProps={{
             onChange: this.handleOnChange,
-            controlYear: this.state.controlYear,
+            controlYear: controlYr,
             projectData: filteredData,
             allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
           }}
