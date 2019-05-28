@@ -17,9 +17,7 @@ export const ViewTwoGraphQL = (props) => {
     // The common queries such as the condition explorer must be set at the view level
       <Query query={companyWheelQuery}>
         {(wheelQueryProps) => {
-          const { data: wheelQData } = wheelQueryProps;
-          const { loading: wheelQLoading } = wheelQueryProps;
-          const { error: wheelQerror } = wheelQueryProps;
+          const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQueryProps;
           return (
             <Query
               query={projectMenuQuery}
@@ -27,9 +25,14 @@ export const ViewTwoGraphQL = (props) => {
               skip={!props.selected.company}
             >
               { (projectMenuQprops) => {
-                const { loading: projLoading } = projectMenuQprops;
-                const { error: projError } = projectMenuQprops;
-                const { data: projData } = projectMenuQprops;
+                const {
+                  loading: projLoading,
+                  error: projError,
+                  data: projData,
+                } = projectMenuQprops;
+                const wheelData = !wheelQLoading && !wheelQerror && wheelQData.allCompanies
+                  ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+                  : [];
                 const selectedProject = props.selected.company && !projLoading && !projError
                   ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
                   : null;
@@ -46,19 +49,16 @@ export const ViewTwoGraphQL = (props) => {
                       return acc;
                     }, [])
                   : [];
+                const projectsData = !projLoading && !projError && props.selected.company
+                  ? projData.allProjectsByCompany
+                  : [];
 
                 // TODO: ERROR HANDLING
+
                 return (
                   <ViewTwo
-                    wheelData={
-                      !wheelQLoading && !wheelQerror && wheelQData.allCompanies
-                        ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
-                        : []
-                    }
-                    projectsData={!projLoading && !projError && props.selected.company
-                      ? projData.allProjectsByCompany
-                      : []
-                    }
+                    wheelData={wheelData}
+                    projectsData={projectsData}
                     projectMenuLoading={projLoading}
                     legendItems={projectFeatureData}
                     {...props}
@@ -73,46 +73,47 @@ export const ViewTwoGraphQL = (props) => {
     );
   }
   return (
-    <Query query={locationWheelQuery}>{(allRegionsQueryProps) => {
-      // eslint-disable-next-line no-shadow
-      const locationData = allRegionsQueryProps.data.allRegions
-        ? allRegionsQueryProps.data.allRegions.sort(
-          (a, b) => (a.province < b.province ? -1 : 1),
-        )
-        : [];
-      // Get the aggregatedCount and create the graph for each one.
-      const regionsFeatureData = locationData.length > 0
-        ? locationData.map(region => (
-          {
-            ...region,
-            // TODO: REMOVE THE TWO FOLLOWING LINES ONCE
-            // THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
-            name: region.name.en,
-            province: region.province,
-            aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
-              .reduce((acc, [key, val]) => {
-                if (key !== '__typename') {
-                  acc.push({
-                    feature: props.selected.feature,
-                    description: key,
-                    disabled: val <= 0,
-                    // count: val,
-                    value: val,
-                    fill: features[props.selected.feature][key],
-                    id: region.id,
-                  });
-                }
-                return acc;
-              }, []),
-          }))
-        : [];
-      const legendItems = regionsFeatureData.length > 0 && props.selected.region
-        ? regionsFeatureData.find(
-          region => region.id === props.selected.region,
-        ).aggregatedCount
-        : [];
-      return (<ViewTwo {...props} wheelData={regionsFeatureData} legendItems={legendItems} />);
-    }}
+    <Query query={locationWheelQuery}>{
+      (allRegionsQueryProps) => {
+        // eslint-disable-next-line no-shadow
+        const locationData = allRegionsQueryProps.data.allRegions
+          ? allRegionsQueryProps.data.allRegions.sort(
+            (a, b) => (a.province < b.province ? -1 : 1),
+          )
+          : [];
+        // Get the aggregatedCount and create the graph for each one.
+        const regionsFeatureData = locationData.length > 0
+          ? locationData.map(region => (
+            {
+              ...region,
+              // TODO: REMOVE THE TWO FOLLOWING LINES ONCE
+              // THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
+              name: region.name.en,
+              province: region.province,
+              aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
+                .reduce((acc, [key, val]) => {
+                  if (key !== '__typename') {
+                    acc.push({
+                      feature: props.selected.feature,
+                      description: key,
+                      disabled: val <= 0,
+                      value: val,
+                      fill: features[props.selected.feature][key],
+                      id: region.id,
+                    });
+                  }
+                  return acc;
+                }, []),
+            }))
+          : [];
+        const legendItems = regionsFeatureData.length > 0 && props.selected.region
+          ? regionsFeatureData.find(
+            region => region.id === props.selected.region,
+          ).aggregatedCount
+          : [];
+        return (<ViewTwo {...props} wheelData={regionsFeatureData} legendItems={legendItems} />);
+      }
+    }
     </Query>
   );
 };
