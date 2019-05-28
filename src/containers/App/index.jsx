@@ -224,6 +224,9 @@ App.propTypes = {
 
 export const AppUnconnected = App;
 
+// Allows stories to override the initial state
+export const AppStore = store;
+
 const ConnectedApp = connect(
   ({
     selected,
