@@ -55,6 +55,7 @@ class Wheel extends React.Component {
       newRotation += minimumRotation + selectedIndex * (360 / items.length);
       wheelModifiers.spin = true;
     } else {
+      wheelModifiers.spin = false;
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
       if (diff < items.length - 1) {
         const adding = (selectedIndex - prevState.selectedIndex) * (360 / items.length);
@@ -81,8 +82,8 @@ class Wheel extends React.Component {
   onClickSpin = () => {
     const items = this.props.wheelData;
     const randomNum = Math.floor(Math.random() * items.length);
+    this.setState(prevState => ({ wheelModifiers: { ...prevState.wheelModifiers, spin: true } }));
     this.props.selectRay(items[randomNum].id);
-    this.state.wheelModifiers.spin = true;
   };
 
   onChange = (index) => {
@@ -97,7 +98,10 @@ class Wheel extends React.Component {
 
   stopWheel = (index) => {
     this.setState(prevState => (
-      { newRotation: prevState.newRotation + (index * (360 / this.props.wheelData.length)) }
+      {
+        newRotation: prevState.newRotation + (index * (360 / this.props.wheelData.length)),
+        wheelModifiers: { ...prevState.wheelModifiers, needsSpin: false },
+      }
     ));
   };
 
