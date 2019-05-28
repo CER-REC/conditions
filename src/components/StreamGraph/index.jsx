@@ -96,8 +96,9 @@ class StreamGraph extends React.Component {
 
       return acc;
     }, { conditionsByDate: {}, minConditionCount: Infinity });
-    // Check if control 
+
     this.updateControlYearState(controlYearArray);
+
     const { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
       .reduce((acc, [year, count]) => {
         if (year < acc.minDate) { acc.minDate = year; }
