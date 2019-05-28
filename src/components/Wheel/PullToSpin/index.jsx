@@ -11,7 +11,6 @@ const PullToSpin = (props) => {
 
   const onSpinClick = () => {
     set(state => !state);
-    // props.onClickSpin();
   };
 
   const { transform } = useSpring({

@@ -10,9 +10,6 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
 import CompanyFlag from '../CompanyFlag';
 
-// TODO: get legend to display in the middle of the limits of its occupancy
-// TODO: get the first of each letter to draw a line
-
 class WheelRay extends React.Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
@@ -88,7 +85,6 @@ class WheelRay extends React.Component {
         : (
           <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChange, index)}>
             <LocationRay
-              // items={randomLocationBars[index]}
               items={items[index].aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}

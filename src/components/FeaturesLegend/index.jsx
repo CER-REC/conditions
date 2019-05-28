@@ -10,45 +10,40 @@ const FeaturesLegend = (props) => {
   if (props.legendItems.length === 0) { return null; }
   const footer = (
     <React.Fragment>
-      {(props.isProjectLegend)
-        ? (
-          <div className="featuresLegend">
-            <h3 className="Title">
-              <FormattedMessage id="components.projectLegend.numberOfConditions" />
-            </h3>
-            <div className="ChartLegend">
-              <div className="legendRow">
-                <span className="FlagDesc">0</span>
-              </div>
-              <div className="legendRow">
-                <FeatureFlag
-                  chartType="legend"
-                  name="tenConditions"
-                  count={10}
-                />
-                <span className="FlagDesc">10</span>
-              </div>
-              <div className="legendRow">
-                <FeatureFlag
-                  chartType="legend"
-                  name="greaterThanTenConditions"
-                  count={11}
-                />
-                <span className="FlagDesc"> &gt;10 </span>
-              </div>
-            </div>
-            <div className="AssociatedComp">
-              <h3 className="Asterisk">*</h3>
-              <div className="AssociatedDesc">
-                <FormattedMessage
-                  id="components.projectLegend.associated"
-                />
-              </div>
-            </div>
+      <div className="featuresLegend">
+        <h3 className="Title">
+          <FormattedMessage id="components.projectLegend.numberOfConditions" />
+        </h3>
+        <div className="ChartLegend">
+          <div className="legendRow">
+            <span className="FlagDesc">0</span>
           </div>
-        )
-        : null
-      }
+          <div className="legendRow">
+            <FeatureFlag
+              chartType="legend"
+              name="tenConditions"
+              count={10}
+            />
+            <span className="FlagDesc">10</span>
+          </div>
+          <div className="legendRow">
+            <FeatureFlag
+              chartType="legend"
+              name="greaterThanTenConditions"
+              count={11}
+            />
+            <span className="FlagDesc"> &gt;10 </span>
+          </div>
+        </div>
+        <div className="AssociatedComp">
+          <h3 className="Asterisk">*</h3>
+          <div className="AssociatedDesc">
+            <FormattedMessage
+              id="components.projectLegend.associated"
+            />
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   );
 
@@ -63,7 +58,7 @@ const FeaturesLegend = (props) => {
   return (
     <div className="FeaturesLegend">
       {renderedItems}
-      {footer}
+      { props.isProjectLegend ? footer : null }
     </div>
   );
 };
