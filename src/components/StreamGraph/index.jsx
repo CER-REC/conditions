@@ -69,21 +69,35 @@ class StreamGraph extends React.Component {
     />
   ));
 
+  updateControlYearState = (controlYearArray) => {
+    if (this.state.controlYear === null) {
+      // sorting of control year array
+      const controlYearArr = controlYearArray.sort();
+      if (controlYearArray.length >= 3) {
+        const [controlYear] = controlYearArr.slice(-3, -2);
+        this.setState(prevState => ({ ...prevState, controlYear }));
+      }
+    }
+  };
+
   chart() {
     const filteredData = (this.props.subFeature !== '')
       ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
       : this.processedData;
-
+    const controlYearArray = [];
     const { conditionsByDate, minConditionCount } = filteredData.reduce((acc, cur) => {
       Object.entries(cur.years).forEach(([year, count]) => {
         acc.conditionsByDate[year] = count + (acc.conditionsByDate[year] || 0);
-
+        if (!controlYearArray.includes(year)) {
+          controlYearArray.push(year);
+        }
         if (count < acc.minConditionCount) { acc.minConditionCount = count; }
       });
 
       return acc;
     }, { conditionsByDate: {}, minConditionCount: Infinity });
-
+    // Check if control 
+    this.updateControlYearState(controlYearArray);
     const { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
       .reduce((acc, [year, count]) => {
         if (year < acc.minDate) { acc.minDate = year; }
