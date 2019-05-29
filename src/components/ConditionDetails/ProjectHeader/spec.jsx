@@ -38,13 +38,6 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
 
       expect(spy.openProjectDetails).toHaveBeenCalledTimes(1);
     });
-
-    test('should not have a button to toggle the expanded view', () => {
-      const results = wrapper.find('.ProjectHeader')
-        .find('.toggleExpand');
-
-      expect(results.length).toBe(0);
-    });
   });
 
   describe('expandable', () => {
@@ -57,13 +50,6 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
           isExpandable
         />,
       );
-    });
-
-    test('should have a button to toggle the expanded view', () => {
-      const results = wrapper.find('.ProjectHeader')
-        .find('.toggleExpand');
-
-      expect(results.length).toBe(1);
     });
 
     test('should call its toggleExpanded callback', () => {

@@ -3,14 +3,14 @@
 .ProjectHeader {
   height: 24px;
 
-  // margin-left: 48px;
-
   background-color: $LightGray;
 
   display: inline-block;
-  width: 100%;
+  width: 91.5%;
 
-  padding-left: 10px;
+  margin-left: 8.5%;
+
+  padding-left: 3px;
   padding-right: 10px;
 
   text-align:left;
@@ -38,7 +38,7 @@
 
     height: 90%;
   }
-  
+
 
   .arrow {
     display: inline-block;
