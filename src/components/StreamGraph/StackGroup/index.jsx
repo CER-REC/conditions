@@ -93,6 +93,8 @@ class StackGroup extends React.PureComponent {
   }
 
   onFocus = () => {
+    if (this.isDragging) { return; }
+
     this.props.onChange(this.props.stackProps.domain.x[0]);
   }
 
