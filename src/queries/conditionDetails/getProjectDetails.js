@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
-export const getProjectDetails = gql`
+export default gql`
   query getProject($projectId: Int!){
     getProjectById(id:$projectId) {
       shortName{

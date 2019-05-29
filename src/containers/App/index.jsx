@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
 import { HttpLink } from 'apollo-link-http';
@@ -10,6 +10,7 @@ import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
+import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
 
 import * as browseByCreators from '../../actions/browseBy';
@@ -168,7 +169,7 @@ class App extends React.PureComponent {
   };
 
   render() {
-    const { transitionState, browseBy, setBrowseBy } = this.props;
+    const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
     let guideState = transitionState;
     if (guideState === 9) {
@@ -190,9 +191,7 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
-
-    console.log(this.props.selected);
-
+    console.log(selected.project);
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -215,21 +214,32 @@ class App extends React.PureComponent {
         <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
         <ViewThree {...viewProps} />
         <section className="conditions">
-          <ConditionDetails
-            selectedItem={this.props.selected.condition}
-            selectedProject="Selected Project"
-            updateSelectedItem={this.props.setSelectedCondition}
-            openIntermediatePopup={this.props.openIntermediatePopup}
-            openProjectDetails={this.props.openProjectDetails}
-            toggleExpanded={noop}
-            searchKeywords={{
-              include: this.props.included,
-              exclude: this.props.excluded,
-            }}
-            data={conditionData}
-            browseBy={this.props.browseBy}
-            {...conditionDetailsViewProps}
-          />
+          {selected.project !== null
+            ? (
+              <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
+                {({ data, loading, error }) => {
+                  console.log(data, loading, error);
+                  return (
+                    <ConditionDetails
+                      selectedItem={this.props.selected.condition}
+                      selectedProject="Selected Project"
+                      updateSelectedItem={this.props.setSelectedCondition}
+                      openIntermediatePopup={this.props.openIntermediatePopup}
+                      openProjectDetails={this.props.openProjectDetails}
+                      toggleExpanded={noop}
+                      searchKeywords={{
+                        include: this.props.included,
+                        exclude: this.props.excluded,
+                      }}
+                      data={conditionData}
+                      browseBy={this.props.browseBy}
+                      {...conditionDetailsViewProps}
+                    />
+                  );
+                }}
+              </Query>
+            )
+            : null}
         </section>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
@@ -253,6 +263,7 @@ App.propTypes = {
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
   selected: PropTypes.shape({
+    project: PropTypes.number,
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
     condition: PropTypes.shape({
