@@ -18,11 +18,9 @@ export const projectMenuQuery = gql`
             DAMAGE_PREVENTION
             EMERGENCY_MANAGEMENT
             ENFORCEMENT
-            ENGINEERING
             ENVIRONMENTAL_PROTECTION
             FINANCIAL
             INTEGRITY_MANAGEMENT
-            LANDOWNER
             MANAGEMENT_SYSTEM
             SAFETY_MANAGEMENT
             SECURITY
