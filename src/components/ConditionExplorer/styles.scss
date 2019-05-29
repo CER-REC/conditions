@@ -62,6 +62,8 @@ $keywordColors: (
     }
 
     &.textVisible {
+      cursor: pointer;
+
       rect, path {
         /* Disable the transition when it becomes visible, so it appears immediately */
         transition: none;
@@ -69,14 +71,21 @@ $keywordColors: (
       }
 
       text {
+        fill: $Black19;
+        transition: fill 0.5s;
         animation: none;
-        fill: rgb(17, 17, 17);
+      }
+
+      &.selected {
+        text {
+          fill: $MainOrange;
+        }
       }
     }
   }
 
   .guide {
-   fill: #5050EA;
+   fill: $Guide;
   }
 
   .guideOutline {

@@ -34,7 +34,12 @@ $curveRadius: 48px;
     background: $LightGray;
   }
 
-  .horizontal {
+  .topConnection {
+    position: absolute;
+    background: $LightGray;
+  }
+
+  .bottomConnection {
     position: absolute;
     background: $LightGray;
   }
@@ -114,11 +119,19 @@ $curveRadius: 48px;
       right: 0;
     }
 
-    .horizontal {
+    .topConnection {
       top: 0;
       right: 100%;
 
       width: 38px;
+      height: 24px;
+    }
+
+    .bottomConnection {
+      bottom: 0;
+      left: calc(100% + (#{$curveRadius} / 2));
+
+      width: 19px;
       height: 24px;
     }
   }

@@ -26,11 +26,13 @@ const setTimeoutChain = (callback, timeout, times) => {
 export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectedKeywordId: PropTypes.number,
+    setSelectedKeyword: PropTypes.func.isRequired,
     physics: PropTypes.bool,
-    // changeVisibleWords: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
+    selectedKeywordId: null,
     physics: true,
   };
 
@@ -136,6 +138,17 @@ export default class ConditionExplorer extends React.Component {
     }
   };
 
+  onKeywordClick = (e) => {
+    if (e.currentTarget.classList.contains('textVisible')) {
+      this.props.setSelectedKeyword(
+        e.currentTarget.dataset.keyword,
+        parseInt(e.currentTarget.dataset.id, 10),
+      );
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  };
+
   render() {
     const { calculatedFontSize } = this.state;
     const keywords = calculatedFontSize ? this.getKeywords() : [];
@@ -145,6 +158,8 @@ export default class ConditionExplorer extends React.Component {
     if (keywords.length > 0) {
       const contentProps = {
         keywords,
+        selectedKeywordId: this.props.selectedKeywordId,
+        onKeywordClick: this.onKeywordClick,
         setGuidePosition: this.setGuidePosition,
         setGuideExpanded: this.setGuideExpanded,
       };

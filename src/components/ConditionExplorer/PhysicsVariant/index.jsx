@@ -18,8 +18,14 @@ import Guide from './Guide';
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
+    selectedKeywordId: PropTypes.number,
+    onKeywordClick: PropTypes.func.isRequired,
     setGuidePosition: PropTypes.func.isRequired,
     setGuideExpanded: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    selectedKeywordId: -1,
   };
 
   constructor(props) {
@@ -180,9 +186,13 @@ export default class PhysicsVariant extends React.PureComponent {
               instance.keyword.className,
               {
                 textVisible: instance.isVisible,
+                selected: (instance.body.id === this.props.selectedKeywordId),
                 textPlaceholder: instance.category === placeholderCategory,
               },
             )}
+            data-id={instance.body.id}
+            data-keyword={instance.keyword.value}
+            onClick={this.props.onKeywordClick}
           >
             <g
               transform={`
