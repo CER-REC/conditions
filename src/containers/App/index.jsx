@@ -188,6 +188,8 @@ class App extends React.PureComponent {
         expanded: this.props.detailViewExpanded,
       } : {};
 
+    console.log(this.props.selected);
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
