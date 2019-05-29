@@ -2,7 +2,7 @@ import React from 'react';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import gql from 'graphql-tag';
+
 import { HttpLink } from 'apollo-link-http';
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
@@ -11,6 +11,9 @@ import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import i18nMessages from '../../i18n';
+
+import getConditionAncestors from '../../queries/getConditionAncestors';
+import getKeywordConditions from '../../queries/getKeywordConditions';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -171,22 +174,8 @@ class App extends React.PureComponent {
   setConditionAncestors = (id) => {
     // TODO: Make a query for this once our server has `conditionById($id)` available
     client.query({
-      query: gql`
-        query{
-          getConditionById(id: ${id}){
-            instrumentId
-            instrument {
-              projectId
-              project {
-                companyIds
-              }
-            }
-            text {
-              en
-            }
-          }
-        }
-      `,
+      query: getConditionAncestors,
+      variables: { id },
     // eslint-disable-next-line no-unused-vars
     }).then((response) => {
       // TODO: Error checking
@@ -208,16 +197,8 @@ class App extends React.PureComponent {
     this.props.setSelectedKeywordId(id);
     this.props.setIncluded([keyword]);
     client.query({
-      query: gql`
-        {
-          findSearchResults(
-            includeKeywords: ["${keyword}"],
-            language: "en" # TODO: Check the app's locale
-          ) {
-            conditionIds
-          }
-        }
-      `,
+      query: getKeywordConditions,
+      variables: { keywords: [keyword] },
     }).then((response) => {
       const { conditionIds } = response.data.findSearchResults;
       if (!conditionIds.length) {
