@@ -85,6 +85,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
 
   render() {
     const keywords = this.sortKeywords();
+    const spacer = ' | ';
     return (
       <div className="SuggestedKeywordsPopout">
         <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.suggestedKeywords">
@@ -112,7 +113,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
               </span>
             )}
           </FormattedMessage>
-          |
+          {spacer}
           <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.alphabetical">
             {text => (
               <span
