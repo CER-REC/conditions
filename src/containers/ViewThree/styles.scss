@@ -12,7 +12,6 @@
     featureDescription: (x: 2, y: 34, w: 58, h: 18),
     typesDescription: (x: 60, y: 34, w: 58, h: 18),
     selectedCompany: (x: 2, y: 53, w: 58, h: 29),
-    conditions: (x: 60, y: 53, w: 58, h: 29),
   ));
 
   .gradientContainer {
@@ -45,11 +44,8 @@
   }
 
   .selectedCompany {
-    // position: relative;
+    z-index: -1;
 
-    // height: 100%;
-
-    // Have the grey bar spill over to meet up against ConditionDetails
     overflow: visible;
     &:after {
       position: absolute;
@@ -71,7 +67,7 @@
       background-color: $LightGray;
 
       display: inline-block;
-      width: 100%;
+      width: 115%;
 
       padding-left: 10px;
       padding-right: 10px;

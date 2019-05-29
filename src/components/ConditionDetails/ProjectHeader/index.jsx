@@ -47,17 +47,13 @@ class ProjectHeader extends React.PureComponent {
         )
         : <FormattedMessage id="components.conditionDetails.selectedCondition" tagName="h1" />
       }
-      {this.props.isExpandable
-        ? (
-          <button
-            type="button"
-            className="toggleExpand"
-            {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
-          >
-            {this.props.expanded ? lessButton : moreButton}
-          </button>
-        ) : null
-      }
+      <button
+        type="button"
+        className="toggleExpand"
+        {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
+      >
+        {this.props.expanded ? lessButton : moreButton}
+      </button>
     </div>
   )
 }
