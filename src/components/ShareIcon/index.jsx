@@ -12,6 +12,8 @@ class ShareIcon extends React.PureComponent {
     TODO: shorten URL with bitly
   };
   */
+ // TODO: Implement Bitly service to get shortened url
+ getBitlyURL = () => document.location.href;
 
   handleOnClick = () => {
     if (this.props.target === 'email') {
@@ -19,7 +21,7 @@ class ShareIcon extends React.PureComponent {
       window.location.assign(url);
       return;
     }
-    let url; // TODO: get shortened bitly URL
+    const url = this.getBitlyURL(); // TODO: get shortened bitly URL
     let locationUrl;
     if (this.props.target === 'facebook') {
       locationUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
