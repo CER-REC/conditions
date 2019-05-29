@@ -95,30 +95,16 @@ class ConditionDetails extends React.Component {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;
 
-    const [popoutLeft, popoutRight] = (this.props.isExpandable)
-      ? [
-        (
-          <div className={classNames('popout', 'left', { expanded: !this.props.expanded })}>
-            <div className="filler" />
-          </div>
-        ),
-        (
-          <div className={classNames('popout', 'right', { expanded: this.props.expanded })}>
-            {this.renderDetails(instrument, index)}
-          </div>
-        ),
-      ]
-      : [null, null];
-
     return (
       <section className="ConditionDetails">
-        {popoutLeft}
-        <div className={classNames('main', { expandable: this.props.isExpandable })}>
+        <div className={classNames('main', { expanded: this.props.expanded, expandable: this.props.isExpandable })}>
           {this.renderHeader()}
           <div className="listPane">{this.renderList()}</div>
           <div className="contentPane">{this.renderContent(instrument, index)}</div>
         </div>
-        {popoutRight}
+        <div className={classNames('popout', { expanded: (this.props.isExpandable && this.props.expanded) })}>
+          {this.renderDetails(instrument, index)}
+        </div>
       </section>
     );
   }

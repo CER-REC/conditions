@@ -16,3 +16,4 @@ Commands
 - Testing (all): `npm run test`
 - Testing (target): `npm run test:single [PATH_TO_FILES]`
 - Coverage Report: `npm run test:showcoverage`
+- Run Express server with Wet Template: `npm run dev-start`

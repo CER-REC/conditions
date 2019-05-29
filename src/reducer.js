@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { mergeDeep } from 'immutable';
 
 import { reducer as selectedReducer } from './actions/selected';
 import { reducer as searchReducer } from './actions/search';
@@ -17,6 +18,9 @@ const nestedReducers = combineReducers({
 });
 
 export default (initialState = {}, action) => {
-  const state = initialState;
+  let state = initialState;
+  if (action.type === 'urlRouteChanged') {
+    state = mergeDeep(state, action.payload);
+  }
   return nestedReducers(state, action);
 };

@@ -5,10 +5,11 @@ import './styles.scss';
 
 const GreyPipe = ({ mode }) => (
   <div className={classNames('GreyPipe', mode)}>
-    {mode === 'location' ? <div className="horizontal" /> : null}
+    {mode === 'location' ? <div className="topConnection" /> : null}
     <div className="top" />
     <div className="vertical" />
     <div className="bottom" />
+    {mode === 'location' ? <div className="bottomConnection" /> : null}
   </div>
 );
 
