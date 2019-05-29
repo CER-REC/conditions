@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
 import { HttpLink } from 'apollo-link-http';
@@ -8,6 +8,11 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
+
+import { conditionsPerYear } from '../../queries/conditionsPerYear';
+import { displayOrder } from '../../queries/displayOrder';
+
+import { processConditionCounts, processDisplayOrder } from './processQueryData';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -30,8 +35,6 @@ import BrowseBy from '../../components/BrowseBy';
 import './styles.scss';
 
 import {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
   conditionData,
 } from '../../mockData';
 
@@ -46,8 +49,6 @@ const client = new ApolloClient({ cache, link, fetch });
 const noop = () => {};
 
 const viewProps = {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
   conditionDetails: {
     searchKeywords: {
       include: ['hello'],
@@ -162,8 +163,37 @@ class App extends React.PureComponent {
     });
   };
 
+  // For data that doesn't match the current feature/subfeature, sets all y = 0
+  filterConditionCounts = (counts) => {
+    const { feature, subFeature } = this.props.selected;
+
+    return counts.map((entry) => {
+      if (entry.feature === feature
+        && (entry.subFeature === subFeature || subFeature === '')
+      ) { return entry; }
+
+      const copy = JSON.parse(JSON.stringify(entry));
+      Object.keys(copy.years).forEach((k) => {
+        copy.years[k] = 0;
+      });
+      return copy;
+    });
+  };
+
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
+
+    this.processedConditionCounts = this.processedConditionCounts
+      || processConditionCounts(this.props.conditionsPerYear);
+
+    this.processedDisplayOrder = this.processedDisplayOrder
+      || processDisplayOrder(this.props.displayOrder)
+
+    const currentOrder = (this.props.selected.feature === 'instrument')
+      ? this.processedConditionCounts.prefixOrder
+      : this.processedDisplayOrder.features[this.props.selected.feature];
+
+    const filteredConditionCounts = this.filterConditionCounts(this.processedConditionCounts.conditionCounts);
 
     let guideState = transitionState;
     if (guideState === 9) {
@@ -198,8 +228,20 @@ class App extends React.PureComponent {
         </section>
         {/* TODO: Deployment hacks */}
         <div style={{ clear: 'both' }} />
-        <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
-        <ViewThree {...viewProps} />
+        <ViewTwo
+          {...viewProps}
+          conditionsPerYear={filteredConditionCounts}
+          years={this.processedConditionCounts.years}
+          displayOrder={currentOrder}
+          jumpToView1={this.jumpToView1}
+          jumpToView3={this.jumpToView3}
+        />
+        <ViewThree
+          {...viewProps}
+          conditionsPerYear={filteredConditionCounts}
+          years={this.processedConditionCounts.years}
+          displayOrder={currentOrder}
+        />
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
@@ -251,7 +293,26 @@ const ConnectedApp = connect(
 export default props => (
   <ApolloProvider client={client}>
     <Provider store={store}>
-      <ConnectedApp {...props} />
+      <Query query={conditionsPerYear}>
+        {({ data: conditionsData, loading: conditionsLoading }) => (
+          <Query query={displayOrder}>
+            {({ data: displayData, loading: displayLoading }) => {
+              if (conditionsLoading
+                || displayLoading
+                || !conditionsData
+                || !displayData) return null;
+
+              return (
+                <ConnectedApp
+                  conditionsPerYear={conditionsData.conditionsPerYear}
+                  displayOrder={displayData.allConfigurationData.displayOrder}
+                  {...props}
+                />
+              );
+            }}
+          </Query>
+        )}
+      </Query>
     </Provider>
   </ApolloProvider>
 );

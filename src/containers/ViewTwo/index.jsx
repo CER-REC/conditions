@@ -21,7 +21,7 @@ import ConditionDetails from '../../components/ConditionDetails';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
-import { conditionCountsByYear, searchData } from '../../mockData';
+import { searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
@@ -120,7 +120,8 @@ const ViewTwo = props => (
         onClick={props.jumpToView3}
         feature={props.selected.feature}
         subFeature=""
-        countsData={conditionCountsByYear.counts}
+        years={props.years}
+        countsData={props.conditionsPerYear}
       />
     </section>
 

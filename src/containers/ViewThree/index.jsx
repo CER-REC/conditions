@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import { Query } from 'react-apollo';
-import { conditionsPerYear } from '../../queries/viewThreeQueries/conditionsPerYear';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
@@ -12,84 +10,22 @@ import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
+import displayOrder from '../../mockData/displayOrder';
 import { allConditionsPerYear, conditionData } from '../../proptypes';
-import { conditionCountsByYear, displayOrder } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
-const processConditionCounts = (counts) => {
-  // TODO: Change to 'const' once the instrument hack below is removed
-  // eslint-disable-next-line prefer-const
-  let [instruments, notInstruments] = Object.entries(counts)
-    .reduce((acc, [feature, featureCounts]) => {
-      if (feature === 'year' || feature === '__typename') return acc;
-      const pushTo = (feature === 'instrument') ? 0 : 1;
-
-      Object.entries(featureCounts).forEach(([subFeature, subCounts]) => {
-        if (subFeature === '__typename') return;
-        const countObj = {
-          feature,
-          subFeature,
-          years: {},
-          total: 0,
-        };
-
-        subCounts.forEach((count, idx) => {
-          countObj.years[counts.year[idx]] = count;
-          countObj.total += count;
-        });
-
-        acc[pushTo].push(countObj);
-      });
-
-      return acc;
-    }, [[], []]);
-
-  // TODO: Hack to keep things from breaking until we have live instrument data
-  instruments = conditionCountsByYear.counts.filter(entry => entry.feature === 'instrument');
-
-  instruments.sort((a, b) => (b.total - a.total));
-
-  const minorInstrumentYears = instruments.slice(9)
-    .reduce((aggregatedYears, entry) => Object.entries(entry.years)
-      .reduce((acc, [year, count]) => {
-        acc[year] = (acc[year] || 0) + count;
-
-        return acc;
-      }, aggregatedYears),
-    {});
-
-  const instrumentsOut = instruments.slice(0, 9);
-  instrumentsOut.push({
-    feature: 'instrument',
-    subFeature: 'OTHER',
-    years: minorInstrumentYears,
-  });
-
-  const prefixOrder = instruments.reduce((acc, cur) => {
-    acc.push(cur.subFeature);
-    return acc;
-  }, []);
-
-  // We need to know their order here for the StreamGraph's colors
-  instrumentsOut.forEach((_, idx) => { instrumentsOut[idx].rank = idx; });
-
-  return { conditionCounts: [...instrumentsOut, ...notInstruments], prefixOrder };
-};
-
-class ViewThree extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    return nextProps.loading === false;
-  }
+class ViewThree extends React.PureComponent {
+  // shouldComponentUpdate(nextProps) {
+  //   return nextProps.loading === false;
+  // }
 
   render() {
     const { props } = this;
-    this.processedConditionCounts = this.processedConditionCounts
-      || processConditionCounts(props.data.conditionsPerYear);
-    const { conditionCounts, prefixOrder } = this.processedConditionCounts;
+    const conditionCounts = this.props.conditionsPerYear;
 
-    const reversedCounts = conditionCounts.slice().reverse();
+    this.reversedCounts = this.reversedCounts || conditionCounts.slice().reverse();
 
     return (
       <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
@@ -104,14 +40,16 @@ class ViewThree extends React.Component {
           <SmallMultiplesLegend
             feature={props.selected.feature}
             data={conditionCounts}
+            displayOrder={props.displayOrder}
             onChange={props.setSelectedSubFeature}
             selected={props.selected.subFeature}
           />
         </section>
         <section className="chart">
           <StreamGraph
-            countsData={reversedCounts}
-            years={props.data.conditionsPerYear.year}
+            countsData={this.reversedCounts}
+            displayOrder={props.displayOrder}
+            years={props.years}
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
           />
@@ -123,11 +61,7 @@ class ViewThree extends React.Component {
           <FeatureTypesDescription
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
-            displayOrder={
-              (props.selected.feature === 'instrument')
-                ? prefixOrder
-                : displayOrder.features[props.selected.feature]
-            }
+            displayOrder={props.displayOrder}
           />
         </section>
         <section className="selectedCompany">
@@ -161,9 +95,6 @@ class ViewThree extends React.Component {
 
 ViewThree.propTypes = {
   layoutOnly: PropTypes.bool,
-  conditionCountsByYear: PropTypes.shape({
-    counts: allConditionsPerYear.isRequired,
-  }).isRequired,
   chartIndicatorPosition: PropTypes.shape({
     bubble: PropTypes.string.isRequired,
     stream: PropTypes.number.isRequired,
@@ -203,20 +134,20 @@ ViewThree.defaultProps = {
 export const ViewThreeUnconnected = ViewThree;
 
 export const ViewThreeGraphQL = props => (
-  <Query query={conditionsPerYear}>
-    {({ data: conditionsData, loading: conditionsLoading }) => {
-      if (conditionsLoading || !conditionsData) return null;
+  // <Query query={conditionsPerYear}>
+  //   {({ data: conditionsData, loading: conditionsLoading }) => {
+  //     if (conditionsLoading || !conditionsData) return null;
 
-      return (
+  //     return (
         <ViewThree
           // data props here
-          data={{ conditionsPerYear: conditionsData.conditionsPerYear }}
-          loading={conditionsLoading}
+          // data={{ conditionsPerYear: conditionsData.conditionsPerYear }}
+          // loading={conditionsLoading}
           {...props}
         />
-      );
-    }}
-  </Query>
+  //     );
+  //   }}
+  // </Query>
 );
 
 export default connect(

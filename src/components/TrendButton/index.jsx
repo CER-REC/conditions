@@ -14,6 +14,7 @@ const TrendButton = props => (
         countsData={props.countsData}
         feature={props.feature}
         subFeature={props.subFeature}
+        years={props.years}
         streamOnly
       />
       <FormattedMessage id="components.trendButton.description">
@@ -33,6 +34,7 @@ export default TrendButton;
 
 TrendButton.propTypes = {
   onClick: PropTypes.func.isRequired,
+  years: PropTypes.arrayOf(PropTypes.number).isRequired,
   countsData: allConditionsPerYear.isRequired,
   feature: featureTypes.isRequired,
   subFeature: PropTypes.string.isRequired,
