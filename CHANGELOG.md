@@ -1,3 +1,113 @@
+# [0.15.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.15.0) (2019-05-30)
+
+
+### App
+
+* **Features:** implements forward/back functionality for transport (a5aba30)
+* **Features:** moves App queries to separate files (bdcffdb)
+* **Features:** adds a callback for selected keyword queries (a825cdf)
+* **Features:** allows interaction on the last tutorial step (955eaae)
+* **Features:** sends a dummy query for random project data (e18702f)
+* **Features:** adds shrinking transition when tutorial is finished (f450160)
+* **Features:** adds View 1's keyword search and a dummy random data call (7bf0a60)
+* **Features:** adjusts function signtuare for readability (28133b1)
+* **Features:** adjusts GuideTransport positioning for transition steps (b88b1ce)
+* **Features:** starts Guide tutorial on first Guide click (4e768b2)
+* **Features:** adjusts Guide size and position to avoid viewport clipping (f9e71a0)
+* **Features:** updates Guide text (34cc0e9)
+* **Features:** removes second transition step as per redesign (549f7b2)
+* **Features:** implements timer for the guide tutorial (de48321)
+* **Features:** sets selected project/company ids and search keyword in Redux (197a9ca)
+* **Features:** lifts ConditionDetails from the views to the App (69ce5ec)
+* **Features:** corrects Guide positioning for tutorial, pads indicators (bb3b0bd)
+* **Features:** adds progress indicators to Guide (e9f3201)
+* **Features:** adds transitions for ConditionDetails' expanded mode (5759189)
+* **Features:** adjusts GreyPipe and Selected Company Header to match ConditionDetails (6eb069f)
+* **Features:** adjusts styling and transitions to fit Selected Company header and Wheel (9371115)
+* **Features:** implements selected keyword state and callback (deda87e)
+* **Bug Fixes:** fixes properties that I broke while refactoring, removes dangerous HTML (005c926)
+* **Bug Fixes:** made container stretch with footer expansion (0001842, NEBV-1532)
+* **Bug Fixes:** fixes GraphQL syntax error (e7e090b)
+* **Bug Fixes:** reverts accidental package.json changes (ad642f9)
+* **Tests:** updates snapshots (6d68354)
+* **Code Formatting:** removed whitespace (e5fc691)
+* **Code Formatting:** removes commented code (214ef89)
+
+
+### App, Footer
+
+* **Code Formatting:** indentation change (7d1b0c8)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** adjusts header positioning (2cd24c3)
+* **Tests:** updates broken tests (91f66c3)
+
+
+### ConditionExplorer
+
+* **Features:** tweak keyword physics (37474b9)
+* **Features:** updates styles, fixes prop errors (5003e1c)
+* **Bug Fixes:** correctly displays HTML entities in keyword names (c2d2602)
+* **Code Formatting:** removes commented code (2615311)
+
+
+### Guide
+
+* **Features:** adjusts indicator positioning (2fc722b)
+* **Code Refactoring:** extracts calculations from SVG for readability (27f098c)
+
+
+### GuideTransport
+
+* **Features:** adds SVGs and caption (ec6309c)
+* **Features:** adds component skeleton (ef073db)
+* **Tests:** adds interaction tests, updates snapshots and broken tests (472083d)
+
+
+### ProjectMenu
+
+* **Bug Fixes:** remove engineering and landowner from project (889d199)
+
+
+### Search Bar
+
+* **Bug Fixes:** added spaces (b241008)
+* **Bug Fixes:** added spaces around | (c7dcf09, NEBV-1537)
+
+
+### snapshot
+
+* **Bug Fixes:** updated snapshot (3998889)
+
+
+### URL-TO-STATE
+
+* **Features:** converts store data to a string and hash it (5f0d5f1, NEBV-1518)
+
+
+### View 1
+
+* **Features:** implements keyword selection for the fallback Explorer (a790444)
+* **Features:** populates ConditionExplorer with keywords from ETL (f56871a)
+* **Features:** begins integrating GraphQL (54cb6f4)
+
+
+### View 3
+
+* **Features:** adds console.log as placeholder to show query data (75fa26a)
+* **Features:** queries for the year range used in the dataset (19e29c2)
+* **Features:** adds a GraphQL wrapper and dummy query (7e48707)
+* **Bug Fixes:** fixes linting errors (4c71d6f)
+* **Code Refactoring:** exports queries as an object (allows multiple queries) (70f0c43)
+* **Code Refactoring:** moves to a class component to make use of lifecycle (e56ad00)
+
+
+### BREAKING CHANGES
+
+* **App:** The grid is no longer in the app its in another container down
+
 # [0.14.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.14.0) (2019-05-23)
 
 
