@@ -8,7 +8,7 @@ const noop = () => {};
 
 describe('Components|Guide', () => {
   describe('with default props', () => {
-    const wrapper = shallow(<Guide textState={3} onClick={noop} />);
+    const wrapper = shallow(<Guide step={3} onClick={noop} />);
 
     shouldBehaveLikeAComponent(Guide, () => wrapper);
   });

@@ -4,3 +4,4 @@ This component renders the Guide circle when it moves outside the ConditionExplo
 
 * [x] Should display a blue circle
 * [x] Should display relevant text for the current app state
+* [x] Should display pink wedges to indicate the current app state

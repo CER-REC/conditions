@@ -28,27 +28,37 @@
     overflow: hidden;
   }
 
-  .Guide {
+  .guideTranslate {
     z-index: 999;
+    pointer-events: none;
 
-    // Guide = 176px / 2 = 88px
-    left: -88px;
-    top: -88px;
+    position: absolute;
+
+    // Guide = 156px  / 2 = 78px
+    left: -78px;
+    top: -78px;
+
+    width: 100%;
+    height: 100%;
 
     transform: translate(0px, 0px);
 
     transition: all $defaultTransition;
 
-    .CircleContainer span {
-      transition: opacity $defaultTransition;
+    .CircleContainer {
+      transition: background $defaultTransition;
 
-      &.hidden {
-        transition: opacity $defaultTransition, visibility 0s 1s;
+      span {
+        transition: opacity $defaultTransition;
+
+        &.hidden {
+          transition: opacity $defaultTransition, visibility 0s 1s;
+        }
       }
     }
   }
 
-  .browseBy {
+  .appControls {
     z-index: 999;
     position: absolute;
     top: 90%;
@@ -88,15 +98,17 @@
       }
     }
 
+    .GuideTransport {
+      opacity: 0;
+      visibility: hidden;
+
+      left: -170px;
+
+      transition: opacity $fastStart, visibility 0s 1s;
+    }
+
   }
 
-  .conditions {
-    z-index: 1;
-  }
-
-  .ViewTwo .wheel {
-    z-index: 2;
-  }
 
   .ViewOne {
     .introduction {
@@ -151,19 +163,23 @@
     transition: opacity $defaultTransition, height $defaultTransition, visibility 0s 1s;
   }
 
-  &.transition-state-8 {
+  &.transition-state-7 {
     .Guide {
-      transition: opacity $fastestStart, transform 0s 1s;
+      transition:
+        opacity $fastestStart,
+        transform $defaultTransition,
+        background-color $defaultTransition,
+        visibility 0s 1s;
     }
   }
 
   // Snapping back from View 2 to View 1, using different curves to make it look decent
-  &.transition-state-9 {
-    .Guide {
+  &.transition-state-8 {
+    .guideTranslate {
       transition: opacity $fastestEnd;
     }
 
-    .browseBy {
+    .appControls {
       transition: transform $fastStart;
 
       .BrowseBy {
@@ -180,6 +196,13 @@
 
       .BrowseByBtn.location {
         transition: opacity $fastEnd;
+      }
+
+      .GuideTransport {
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity $fastEnd, visibility 0s 1s;
       }
     }
 

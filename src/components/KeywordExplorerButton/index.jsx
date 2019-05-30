@@ -9,7 +9,7 @@ const KeywordExplorerButton = props => (
   <div className="KeywordExplorerButton" {...handleInteraction(props.onClick)}>
     <div className="buttonText">
       <svg className="keywordExplorerCircle">
-        <circle cx="18" cy="14" r="12" opacity="0.4" />
+        <circle cx="18" cy="14" r="12" />
       </svg>
       <FormattedMessage id="components.keywordExploreButton.description">
         {text => (
