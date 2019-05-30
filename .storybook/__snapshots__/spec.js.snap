@@ -19398,7 +19398,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
            
           Frequency
         </span>
-        |
+         | 
         <span
           className={null}
           focusable={true}
