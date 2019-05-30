@@ -249,55 +249,60 @@ class App extends React.PureComponent {
           : null
         }
       >
-        <div className="guideWrapper">
-          {/**
-             * This extra div gets us around the fact that CSS' translate function measures
-             * percentages relative to the element being translated; the Guide circle itself
-             * can't use percentages for translating to a given position relative to the app.
-             */}
-          <div className="guideTranslate">
-            <Guide step={guideStep} onClick={this.handleGuideClick} />
+        <div className="fixedContainer">
+          <div className="guideWrapper">
+            {/**
+              * This extra div gets us around the fact that CSS' translate function measures
+              * percentages relative to the element being translated; the Guide circle itself
+              * can't use percentages for translating to a given position relative to the app.
+              */}
+            <div className="guideTranslate">
+              <Guide step={guideStep} onClick={this.handleGuideClick} />
+            </div>
           </div>
+          <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
+          <section className="appControls">
+            <BrowseBy
+              showArrow={
+                (transitionState === transitionStates.view1
+                || transitionState === transitionStates.view1Reset)
+              }
+              labelId={labelId}
+              browseBy={browseBy}
+              onClick={
+                (transitionState === transitionStates.view2)
+                  ? setBrowseBy
+                  : this.jumpToView2}
+            />
+            <GuideTransport
+              playing={this.state.tutorialPlaying}
+              back={this.transportBack}
+              forward={this.transportForward}
+              togglePlay={this.togglePlay}
+            />
+          </section>
+          {/* TODO: Deployment hacks */}
+          <div style={{ clear: 'both' }} />
+          <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
+          <ViewThree {...viewProps} />
+          <section className="conditions">
+            <ConditionDetails
+              selectedItem={this.props.selected.condition}
+              selectedProject="Selected Project"
+              updateSelectedItem={this.props.setSelectedCondition}
+              openIntermediatePopup={this.props.openIntermediatePopup}
+              openProjectDetails={this.props.openProjectDetails}
+              toggleExpanded={noop}
+              searchKeywords={{
+                include: this.props.included,
+                exclude: this.props.excluded,
+              }}
+              data={conditionData}
+              browseBy={this.props.browseBy}
+              {...conditionDetailsViewProps}
+            />
+          </section>
         </div>
-        <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
-        <section className="appControls">
-          <BrowseBy
-            showArrow={
-              (transitionState === transitionStates.view1
-              || transitionState === transitionStates.view1Reset)
-            }
-            labelId={labelId}
-            browseBy={browseBy}
-            onClick={(transitionState === transitionStates.view2) ? setBrowseBy : this.jumpToView2}
-          />
-          <GuideTransport
-            playing={this.state.tutorialPlaying}
-            back={this.transportBack}
-            forward={this.transportForward}
-            togglePlay={this.togglePlay}
-          />
-        </section>
-        {/* TODO: Deployment hacks */}
-        <div style={{ clear: 'both' }} />
-        <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
-        <ViewThree {...viewProps} />
-        <section className="conditions">
-          <ConditionDetails
-            selectedItem={this.props.selected.condition}
-            selectedProject="Selected Project"
-            updateSelectedItem={this.props.setSelectedCondition}
-            openIntermediatePopup={this.props.openIntermediatePopup}
-            openProjectDetails={this.props.openProjectDetails}
-            toggleExpanded={noop}
-            searchKeywords={{
-              include: this.props.included,
-              exclude: this.props.excluded,
-            }}
-            data={conditionData}
-            browseBy={this.props.browseBy}
-            {...conditionDetailsViewProps}
-          />
-        </section>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
