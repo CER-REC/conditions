@@ -21,9 +21,10 @@ export default class Keyword extends Body {
           category: placeholderCategory,
           mask: guideOutlineCategory,
         },
+        density: 0.08,
+        frictionAir: 0.032,
       },
     );
-    body.frictionAir = 0.02;
     super(body, engine);
     this.keyword = keyword;
     this.lastCollision = Date.now();
@@ -55,19 +56,13 @@ export default class Keyword extends Body {
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
-    const threshold = 1.2;
-    if (Matter.Vector.magnitude(this.body.velocity) >= threshold) {
+    const threshold = 1.01;
+    const magnitude = Matter.Vector.magnitude(this.body.velocity);
+    if (magnitude >= threshold) {
       const clamped = Matter.Vector.normalise({ ...this.body.velocity });
-      clamped.x *= threshold;
-      clamped.y *= threshold;
-      Matter.Body.setVelocity(this.body, clamped);
-    }
-
-    const angThreshold = 0.025;
-    if (Math.abs(this.body.angularVelocity) > angThreshold) {
-      Matter.Body.setAngularVelocity(
-        this.body, angThreshold * Math.sign(this.body.angularVelocity),
-      );
+      const velocity = threshold;
+      clamped.x *= velocity;
+      clamped.y *= velocity;
     }
 
     super.onUpdate(update);
