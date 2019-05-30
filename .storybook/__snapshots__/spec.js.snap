@@ -291,7 +291,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -352,7 +352,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -433,7 +433,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -494,7 +494,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -575,7 +575,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -636,7 +636,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -708,7 +708,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByCompany 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -780,7 +780,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByLocation 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by 
+          Projects by
           <span
             className="LastWord"
           >
@@ -852,7 +852,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn with state toggle 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by 
+          Conditions by
           <span
             className="LastWord"
           >
@@ -989,7 +989,7 @@ exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
         y="-12"
       >
         With Circle
-        
+
       </text>
     </g>
   </svg>
@@ -1031,7 +1031,7 @@ exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
         y="-12"
       >
         Without circle
-        
+
       </text>
     </g>
   </svg>
@@ -1162,7 +1162,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     >
       <h2>
         Full Project Name:
-         
+
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -1282,792 +1282,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     >
       <h2>
         Full Project Name:
-         
-        <strong>
-          Trans Mountain Expansion
-        </strong>
-      </h2>
-      <h3>
-        Companies associated with this project
-      </h3>
-      <ul
-        className="companies"
-      >
-        <li>
-          Company A
-        </li>
-        <li>
-          Company B
-        </li>
-        <li>
-          Company C
-        </li>
-        <li>
-          Company D
-        </li>
-        <li>
-          Company E
-        </li>
-        <li>
-          Company F
-        </li>
-        <li>
-          Company G
-        </li>
-        <li>
-          Company H
-        </li>
-        <li>
-          Company I
-        </li>
-        <li>
-          Company J
-        </li>
-        <li>
-          Company K
-        </li>
-        <li>
-          Company L
-        </li>
-        <li>
-          Company M
-        </li>
-        <li>
-          Company N
-        </li>
-        <li>
-          Company O
-        </li>
-      </ul>
-      <h4>
-        What does it mean to have more than one company associated to a project?
-      </h4>
-      <p>
-        Text to be provided by the NEB.
-      </p>
-      <button
-        className="PopupBtn"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Back
-        <svg
-          className="buttonIcon"
-          viewBox="0 0 100 100"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="40"
-          />
-          <path
-            d="
-  M 46 28
-  a 4 4 0 0 1 8,0
-  v 18
-  h 18
-  a 4 4 0 0 1 0,8
-  h -18
-  v 18
-  a 4 4 0 0 1 -8,0
-  v -18
-  h -18
-  a 4 4 0 0 1 0,-8
-  h 18
-  v -18
-  Z
-"
-            fill="white"
-            transform="rotate(45 50 50)"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-`;
 
-exports[`Storyshots Components|ConditionDetails default 1`] = `
-<div
-  className="visualization"
->
-  <section
-    className="ConditionDetails"
-  >
-    <div
-      className="main"
-    >
-      <div
-        className="ProjectHeader"
-      >
-        <h1>
-          Selected Project:
-        </h1>
-        <button
-          className="openProject"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <h2>
-            Keystone XL
-            <span
-              className="asterisk"
-            >
-              *
-            </span>
-          </h2>
-        </button>
-      </div>
-      <div
-        className="listPane"
-      >
-        <div
-          className="ConditionList"
-        >
-<<<<<<< HEAD
-=======
-          <circle
-            r={33}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(285.66912586 192.49143055)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={285.6691258637172}
-            y="192.49143055"
-          >
-            OPSO
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="OPLO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={20}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(252.18835663 239.85215364)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={252.188356632948}
-            y="239.85215364"
-          >
-            OPLO
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="OPL"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
-                "fill": "rgb(14, 43, 140)",
-              }
-            }
-            transform="translate(367.66912586 192.49143055)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={379.6691258637172}
-            y="192.49143055"
-          >
-            OPL
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="EPE"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={7}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(339.00245920 267.17892764)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={348.00245919705054}
-            y="267.17892764"
-          >
-            EPE
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="GPLO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={40}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(478.21632047 165.65082116)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={478.216320468198}
-            y="165.65082116"
-          >
-            GPLO
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="EC"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={21}
-            style={
-              Object {
-                "fill": "rgb(39, 165, 249)",
-              }
-            }
-            transform="translate(544.21632047 165.65082116)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={544.216320468198}
-            y="165.65082116"
-          >
-            EC
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="GPSO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={10}
-            style={
-              Object {
-                "fill": "rgb(22, 78, 248)",
-              }
-            }
-            transform="translate(533.52692653 232.80539552)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={545.5269265288041}
-            y="232.80539552"
-          >
-            GPSO
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="AO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={15}
-            style={
-              Object {
-                "fill": "rgb(212, 169, 42)",
-              }
-            }
-            transform="translate(621.00737759 200.00000000)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="white"
-            stroke="transparent"
-            textAnchor="middle"
-            x={621.0073775911517}
-            y="200.00000000"
-          >
-            AO
-          </text>
-        </g>
-        <g
-          className="depth-3"
-          data-name="MO"
-          focusable={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-          <circle
-            r={5}
-            style={
-              Object {
-                "fill": "rgb(212, 169, 42)",
-              }
-            }
-            transform="translate(662.00737759 200.00000000)"
-          />
-          <text
-            alignmentBaseline="middle"
-            fill="black"
-            stroke="transparent"
-            textAnchor=""
-            x={669.0073775911517}
-            y="200.00000000"
-          >
-            MO
-          </text>
-        </g>
-      </g>
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|ChartIndicator allThemes 1`] = `
-<div
-  className="visualization"
->
-  <svg
-    height={300}
-    style={
-      Object {
-        "border": "1px solid #000",
-      }
-    }
-    width={300}
-  >
-    <g
-      className="ChartIndicator"
-      transform="translate(50, 30)"
-    >
-      <path
-        className="arrow"
-        d="M -5 -10 L 5 -10 L 0 0 z"
-      />
-      <line
-        className="line"
-        x1={0}
-        x2={0}
-        y1={5}
-        y2={90}
-      />
-      <text
-        alignmentBaseline="bottom"
-        textAnchor="middle"
-        x="0"
-        y="-12"
-      >
-        Without circle
-        *
-      </text>
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
-<div
-  className="visualization"
->
-  <svg
-    height={300}
-    style={
-      Object {
-        "border": "1px solid #000",
-      }
-    }
-    width={300}
-  >
-    <g
-      className="ChartIndicator"
-      transform="translate(50, 30)"
-    >
-      <path
-        className="arrow"
-        d="M -5 -10 L 5 -10 L 0 0 z"
-      />
-      <line
-        className="line"
-        x1={0}
-        x2={0}
-        y1={5}
-        y2={90}
-      />
-      <circle
-        className="selectedCircle"
-        cx={0}
-        cy={130}
-        r={40}
-        strokeWidth={4}
-      />
-      <text
-        alignmentBaseline="bottom"
-        textAnchor="middle"
-        x="0"
-        y="-12"
-      >
-        With Circle
-        
-      </text>
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
-<div
-  className="visualization"
->
-  <svg
-    height={300}
-    style={
-      Object {
-        "border": "1px solid #000",
-      }
-    }
-    width={300}
-  >
-    <g
-      className="ChartIndicator"
-      transform="translate(50, 30)"
-    >
-      <path
-        className="arrow"
-        d="M -5 -10 L 5 -10 L 0 0 z"
-      />
-      <line
-        className="line"
-        x1={0}
-        x2={0}
-        y1={5}
-        y2={90}
-      />
-      <text
-        alignmentBaseline="bottom"
-        textAnchor="middle"
-        x="0"
-        y="-12"
-      >
-        Without circle
-        
-      </text>
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Storyshots Components|CircleContainer default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="CircleContainer"
-    style={
-      Object {
-        "height": 60,
-        "width": 60,
-      }
-    }
-  >
-    <div>
-       
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|CircleContainer with icon 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="CircleContainer"
-    style={
-      Object {
-        "height": 60,
-        "width": 60,
-      }
-    }
-  >
-    <div>
-      &lt;
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="CircleContainer blue"
-    style={
-      Object {
-        "height": 60,
-        "width": 60,
-      }
-    }
-  >
-    <div>
-       
-    </div>
-  </div>
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": ".CircleContainer.blue { background: blue }",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots Components|CircleContainer with prop: onClick  1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="CircleContainer"
-    focusable={true}
-    onClick={[Function]}
-    onKeyPress={[Function]}
-    style={
-      Object {
-        "height": 60,
-        "width": 60,
-      }
-    }
-    tabIndex={0}
-  >
-    <div>
-       
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|CircleContainer with text 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="CircleContainer"
-    style={
-      Object {
-        "height": 60,
-        "width": 60,
-      }
-    }
-  >
-    <div>
-      150
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|CompanyPopup default 1`] = `
-<div
-  className="visualization"
->
-  <dialog
-    className="Modal CompanyPopup"
-    onClose={[Function]}
-  >
-    <div
-      className="Company"
-    >
-      <h2>
-        Full Project Name:
-         
-        <strong>
-          Trans Mountain Expansion
-        </strong>
-      </h2>
-      <h3>
-        Companies associated with this project
-      </h3>
-      <ul
-        className="companies"
-      >
-        <li>
-          Company A
-        </li>
-        <li>
-          Company B
-        </li>
-        <li>
-          Company C
-        </li>
-        <li>
-          Company D
-        </li>
-        <li>
-          Company E
-        </li>
-        <li>
-          Company F
-        </li>
-        <li>
-          Company G
-        </li>
-        <li>
-          Company H
-        </li>
-        <li>
-          Company I
-        </li>
-        <li>
-          Company J
-        </li>
-        <li>
-          Company K
-        </li>
-        <li>
-          Company L
-        </li>
-        <li>
-          Company M
-        </li>
-        <li>
-          Company N
-        </li>
-        <li>
-          Company O
-        </li>
-      </ul>
-      <h4>
-        What does it mean to have more than one company associated to a project?
-      </h4>
-      <p>
-        Text to be provided by the NEB.
-      </p>
-      <button
-        className="PopupBtn"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Back
-        <svg
-          className="buttonIcon"
-          viewBox="0 0 100 100"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="40"
-          />
-          <path
-            d="
-  M 46 28
-  a 4 4 0 0 1 8,0
-  v 18
-  h 18
-  a 4 4 0 0 1 0,8
-  h -18
-  v 18
-  a 4 4 0 0 1 -8,0
-  v -18
-  h -18
-  a 4 4 0 0 1 0,-8
-  h 18
-  v -18
-  Z
-"
-            fill="white"
-            transform="rotate(45 50 50)"
-          />
-        </svg>
-      </button>
-    </div>
-  </dialog>
-</div>
-`;
-
-exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="CompanyPopup"
-  >
-    <div
-      className="Company"
-    >
-      <h2>
-        Full Project Name:
-         
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -2237,7 +1452,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         <div
           className="ConditionList"
         >
->>>>>>> develop
           <div
             className="List"
           >
@@ -2563,7 +1777,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Issuance Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -2574,7 +1788,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Number
             </span>
-            : 
+            :
             <button
               className="instrumentLink"
               focusable={true}
@@ -2594,7 +1808,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Effective Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -2605,7 +1819,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Status
             </span>
-            : 
+            :
             <span>
               In Progress
             </span>
@@ -2618,7 +1832,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Sunset Date
             </span>
-            : 
+            :
             2019-01-30
           </div>
           <div
@@ -2629,7 +1843,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Location
             </span>
-            : 
+            :
             Albuquerque, NM
           </div>
           <div
@@ -2640,7 +1854,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Type
             </span>
-            : 
+            :
             Construction of Oil Pipeline
           </div>
           <p
@@ -2651,23 +1865,23 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Activity
             </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+            :
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
           </p>
           <p
             className="contentText"
           >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
           </p>
           <p
             className="contentText"
           >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
           </p>
           <p
             className="contentText"
           >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
           </p>
           <p
             className="contentText"
@@ -3110,7 +2324,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Issuance Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -3121,7 +2335,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Number
               </span>
-              : 
+              :
               <button
                 className="instrumentLink"
                 focusable={true}
@@ -3141,7 +2355,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Effective Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -3152,7 +2366,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Status
               </span>
-              : 
+              :
               <span>
                 In Progress
               </span>
@@ -3165,7 +2379,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Sunset Date
               </span>
-              : 
+              :
               2019-01-30
             </div>
             <div
@@ -3176,7 +2390,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Location
               </span>
-              : 
+              :
               Albuquerque, NM
             </div>
             <div
@@ -3187,7 +2401,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Type
               </span>
-              : 
+              :
               Construction of Oil Pipeline
             </div>
             <p
@@ -3198,23 +2412,23 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Activity
               </span>
-              : 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+              :
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
             </p>
             <p
               className="contentText"
             >
-              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
             </p>
             <p
               className="contentText"
             >
-              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
             </p>
             <p
               className="contentText"
             >
-              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
             </p>
             <p
               className="contentText"
@@ -3633,7 +2847,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Issuance Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -3644,7 +2858,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Number
             </span>
-            : 
+            :
             <button
               className="instrumentLink"
               focusable={true}
@@ -3664,7 +2878,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Effective Date
             </span>
-            : 
+            :
             2014-10-24
           </div>
           <div
@@ -3675,7 +2889,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Status
             </span>
-            : 
+            :
             <span>
               In Progress
             </span>
@@ -3688,7 +2902,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Sunset Date
             </span>
-            : 
+            :
             2019-01-30
           </div>
           <div
@@ -3699,7 +2913,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Location
             </span>
-            : 
+            :
             Albuquerque, NM
           </div>
           <div
@@ -3710,7 +2924,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Type
             </span>
-            : 
+            :
             Construction of Oil Pipeline
           </div>
           <p
@@ -3721,23 +2935,23 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Activity
             </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+            :
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
           </p>
           <p
             className="contentText"
           >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
           </p>
           <p
             className="contentText"
           >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
           </p>
           <p
             className="contentText"
           >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
           </p>
           <p
             className="contentText"
@@ -4095,7 +3309,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Effective Date
         </span>
-        : 
+        :
         2014-10-24
       </div>
       <div
@@ -4106,7 +3320,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Instrument Number
         </span>
-        : 
+        :
         <button
           className="instrumentLink"
           focusable={true}
@@ -4126,7 +3340,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Keywords
         </span>
-        : 
+        :
         program
       </div>
       <p
@@ -4137,23 +3351,23 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Text
         </span>
-        : 
-        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+        :
+        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
       </p>
       <p
         className="contentText"
       >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
       </p>
       <p
         className="contentText"
       >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
       </p>
       <p
         className="contentText"
       >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
       </p>
       <p
         className="contentText"
@@ -4203,7 +3417,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Issuance Date
         </span>
-        : 
+        :
         2014-10-24
       </div>
       <div
@@ -4214,7 +3428,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Number
         </span>
-        : 
+        :
         <button
           className="instrumentLink"
           focusable={true}
@@ -4234,7 +3448,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Effective Date
         </span>
-        : 
+        :
         2014-10-24
       </div>
       <div
@@ -4245,7 +3459,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Status
         </span>
-        : 
+        :
         <span>
           In Progress
         </span>
@@ -4258,7 +3472,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Sunset Date
         </span>
-        : 
+        :
         2019-01-30
       </div>
       <div
@@ -4269,7 +3483,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Location
         </span>
-        : 
+        :
         Albuquerque, NM
       </div>
       <div
@@ -4280,7 +3494,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Type
         </span>
-        : 
+        :
         Construction of Oil Pipeline
       </div>
       <p
@@ -4291,23 +3505,23 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Activity
         </span>
-        : 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+        :
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
       </p>
       <p
         className="contentText"
       >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
       </p>
       <p
         className="contentText"
       >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
       </p>
       <p
         className="contentText"
       >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
       </p>
       <p
         className="contentText"
@@ -4355,7 +3569,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a full block
       </div>
       <div
@@ -4366,7 +3580,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a full block
       </div>
     </div>
@@ -4390,7 +3604,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a half block
       </div>
       <div
@@ -4401,7 +3615,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a half block
       </div>
     </div>
@@ -4436,7 +3650,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Theme
           </span>
-          : 
+          :
           <span>
             Environmental Protection
           </span>
@@ -4449,7 +3663,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Instrument
           </span>
-          : 
+          :
           <span>
             Construction
           </span>
@@ -4462,7 +3676,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Phase
           </span>
-          : 
+          :
           <span>
             During Construction Phase
           </span>
@@ -4475,7 +3689,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Type
           </span>
-          : 
+          :
           <span>
             Standard
           </span>
@@ -4488,7 +3702,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Status
           </span>
-          : 
+          :
           <span>
             In Progress
           </span>
@@ -4501,7 +3715,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Filing
           </span>
-          : 
+          :
           <span>
             No Filing Required
           </span>
@@ -4785,28 +3999,28 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           The genesis and scope of conditions
         </h1>
         <p>
-          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
+          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal
           <a
             href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             laws, acts and regulations
-             
+
           </a>
            are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
         </p>
         <p>
-          These different sorts of requirements expressed in conditions are the Themes which can be explored 
+          These different sorts of requirements expressed in conditions are the Themes which can be explored
           <a
             href=""
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             here
-             
+
           </a>
            in this data visualization.
         </p>
@@ -4814,48 +4028,48 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
         </p>
         <p>
-          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
+          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable
           <a
             href=""
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             here
-             
+
           </a>
           . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
         </p>
         <p>
-          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
+          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the
           <a
             href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             application process
-             
+
           </a>
-           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
+           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in
           <a
             href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             hearings
-             
+
           </a>
-          , individuals must apply (more info about how to become an intervenor 
+          , individuals must apply (more info about how to become an intervenor
           <a
             href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-             
+
             here
-             
+
           </a>
           )
         </p>
@@ -5248,7 +4462,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     className="FeatureTypesDescription"
   >
     <p>
-      * 
+      *
       Conditions with multiple themes are counted more than once.
     </p>
     <h4
@@ -5496,7 +4710,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     className="FeatureTypesDescription"
   >
     <p>
-      * 
+      *
       The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.
     </p>
     <h4
@@ -5940,7 +5154,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           <span
             className="FlagDesc"
           >
-             &gt;10 
+             &gt;10
           </span>
         </div>
       </div>
@@ -6292,7 +5506,150 @@ exports[`Storyshots Components|Guide default 1`] = `
 >
   <div
     className="Guide"
+    style={
+      Object {
+        "height": 156,
+        "width": 156,
+      }
+    }
   >
+    <svg
+      className="wedgeContainer"
+      viewBox="-78 -78 156 156"
+    >
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(0)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(60)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(120)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(180)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(240)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(300)
+            translate(1, -2)
+          "
+        />
+      </g>
+    </svg>
     <div
       className="CircleContainer"
       focusable={true}
@@ -6300,18 +5657,13 @@ exports[`Storyshots Components|Guide default 1`] = `
       onKeyPress={[Function]}
       style={
         Object {
-          "height": 176,
-          "width": 176,
+          "height": 128,
+          "width": 128,
         }
       }
       tabIndex={0}
     >
       <div>
-        <span
-          className="hidden"
-        >
-          Click to continue
-        </span>
         <span
           className="hidden"
         >
@@ -6328,14 +5680,14 @@ exports[`Storyshots Components|Guide default 1`] = `
           Conditions are characterized by features, such as theme
         </span>
         <span
-          className=""
+          className="hidden"
         >
-          You can browse other conditions in this project
+          Scroll to browse other conditions in this project
         </span>
         <span
           className="hidden"
         >
-          You can browse other projects by this company
+          Scroll to browse other projects by this company
         </span>
         <span
           className="hidden"
@@ -6343,12 +5695,240 @@ exports[`Storyshots Components|Guide default 1`] = `
           Spin wheel to browse companies
         </span>
         <span
-          className="hidden"
+          className=""
         >
           Look around to discover more!
         </span>
       </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|GuideTransport default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="GuideTransport"
+  >
+    <span>
+      Guide
+      :
+    </span>
+    <svg
+      className="back"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="togglePlay"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        className="pink"
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="
+  M 38 27
+  L 72 50
+  L 38 73
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="forward"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      style={
+        Object {
+          "transform": "scaleX(-1",
+        }
+      }
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|GuideTransport playing 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="GuideTransport"
+  >
+    <span>
+      Guide
+      :
+    </span>
+    <svg
+      className="back"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="togglePlay"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        className=""
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="
+  M 30 27
+  L 44 27
+  L 44 73
+  L 30 73
+  Z
+  M 70 27
+  L 56 27
+  L 56 73
+  L 70 73
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="forward"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      style={
+        Object {
+          "transform": "scaleX(-1",
+        }
+      }
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
   </div>
 </div>
 `;
@@ -6485,7 +6065,6 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         <circle
           cx="18"
           cy="14"
-          opacity="0.4"
           r="12"
         />
       </svg>
@@ -13240,7 +12819,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                   }
                 >
                   <div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -13450,7 +13029,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  
+
                 </p>
               </div>
             </div>
@@ -13525,7 +13104,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                   }
                 >
                   <div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -13735,7 +13314,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  
+
                 </p>
               </div>
             </div>
@@ -13767,7 +13346,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                   }
                 >
                   <div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -13977,7 +13556,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                 className="ProjectName"
               >
                 <p>
-                  
+
                 </p>
               </div>
             </div>
@@ -15177,7 +14756,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
         className="ProjectName"
       >
         <p>
-          
+
         </p>
       </div>
     </div>
@@ -15344,12 +14923,12 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument 
+        Search for instrument
         <strong>
           #
           XO-001-2018
         </strong>
-         in 
+         in
         <strong>
           Regdocs...
         </strong>
@@ -15512,12 +15091,12 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument 
+        Search for instrument
         <strong>
           #
           XO-001-2018
         </strong>
-         in 
+         in
         <strong>
           Regdocs...
         </strong>
@@ -16088,9 +15667,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-           
+
           Find Words
-           
+
         </span>
         <span
           className="iconSvg"
@@ -16128,9 +15707,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-           
+
           Filter
-           
+
         </span>
         <span
           className="iconSvg"
@@ -16157,15 +15736,15 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         Showing all projects from
       </span>
       <span>
-         
+
         1970
-         - 
+         -
         1980
-         
+
       </span>
       <p>
         Highlighting conditions containing
-         : 
+         :
       </p>
       <div
         className="keywordsText"
@@ -16197,9 +15776,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -16516,9 +16095,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           <span
             className="upperCase"
           >
-             
+
             In Progress
-             
+
           </span>
         </li>
         <li
@@ -16531,9 +16110,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           <span
             className="upperCase"
           >
-             
+
             Completed
-             
+
           </span>
         </li>
       </ul>
@@ -16572,9 +16151,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -16891,9 +16470,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           <span
             className="upperCase"
           >
-             
+
             In Progress
-             
+
           </span>
         </li>
         <li
@@ -16906,9 +16485,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           <span
             className="upperCase"
           >
-             
+
             Completed
-             
+
           </span>
         </li>
       </ul>
@@ -16947,9 +16526,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -17266,9 +16845,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           <span
             className="upperCase"
           >
-             
+
             In Progress
-             
+
           </span>
         </li>
         <li
@@ -17281,9 +16860,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           <span
             className="upperCase"
           >
-             
+
             Completed
-             
+
           </span>
         </li>
       </ul>
@@ -17316,15 +16895,15 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         Showing all projects from
       </span>
       <span>
-         
+
         2010
-         - 
+         -
         2018
-         
+
       </span>
       <p>
         Highlighting conditions containing
-         : 
+         :
       </p>
       <div
         className="keywordsText"
@@ -17333,7 +16912,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       </div>
       <p>
         Exclude conditions containing
-         : 
+         :
       </p>
       <div
         className="keywordsText"
@@ -17365,9 +16944,9 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <span
           className="upperCase"
         >
-           
+
           Reset
-           
+
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -17455,13 +17034,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="anyText"
         >
           <span>
-             
+
             <span
               className="upperCase"
             >
-               
+
               any
-               
+
             </span>
              of the following:
           </span>
@@ -17470,8 +17049,8 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="keywordsText"
         >
           <span>
-            
-             
+
+
           </span>
         </div>
         <div />
@@ -17508,16 +17087,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <h1
         className="keywordsTitle"
       >
-         
+
         Suggested Keywords
-          
+
       </h1>
       <p
         className="description"
       >
-         
+
         Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
-          
+
       </p>
       <ul
         className="categories"
@@ -17525,9 +17104,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         <li
           className="viewText"
         >
-           
+
           View By
-          :  
+          :
         </li>
         <li
           className="categoryList upperCase selectedCategory"
@@ -17536,7 +17115,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           all
         </li>
         <li
@@ -17546,7 +17125,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           wildlife & habitat
         </li>
         <li
@@ -17556,7 +17135,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           environment
         </li>
         <li
@@ -17566,7 +17145,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           engineering & structures
         </li>
         <li
@@ -17576,7 +17155,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           administration & filings
         </li>
       </ul>
@@ -17585,7 +17164,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       >
         <span>
           Sort by
-           
+
         </span>
         <span
           className={null}
@@ -17594,10 +17173,10 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           Frequency
         </span>
-        |
+         | 
         <span
           className={null}
           focusable={true}
@@ -17630,9 +17209,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           <span
             className="upperCase"
           >
-             
+
             none
-             
+
           </span>
         </span>
       </div>
@@ -17674,7 +17253,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="keywordCategory selectedText"
             >
               deer
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -17740,7 +17319,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="keywordCategory regularText"
             >
               alberta
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -17785,7 +17364,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
           type="button"
         >
-           
+
           Close
         </button>
       </div>
@@ -17842,7 +17421,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               className="keywordCategory regularText"
             >
               deer
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -17908,7 +17487,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               className="keywordCategory regularText"
             >
               alberta
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -18013,9 +17592,9 @@ exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
       <span
         className="tabText"
       >
-         
+
         Filter
-         
+
       </span>
       <span
         className="iconSvg"
@@ -18055,9 +17634,9 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
       <span
         className="tabText"
       >
-         
+
         Find Words
-         
+
       </span>
       <span
         className="iconSvg"
@@ -21436,8 +21015,36 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
         viewBox="0 0 600 330"
         width={600}
       >
-        <g
-          role="presentation"
+        <span>
+          Sort by
+
+        </span>
+        <span
+          className={null}
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+
+          Frequency
+        </span>
+         | 
+        <span
+          className={null}
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          Alphabetical
+        </span>
+        <span
+          className="hierarchy"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
         >
           <line
             role="presentation"

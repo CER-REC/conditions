@@ -243,14 +243,16 @@
     "guide": {
       "tutorial": {
         "0": "Click to continue",
-        "1": "Click to continue",
-        "2": "Here is the full legal text of the condition you selected",
-        "3": "Conditions are characterized by features, such as theme",
-        "4": "You can browse other conditions in this project",
-        "5": "You can browse other projects by this company",
-        "6": "Spin wheel to browse companies",
-        "7": "Look around to discover more!"
+        "1": "Here is the full legal text of the condition you selected",
+        "2": "Conditions are characterized by features, such as theme",
+        "3": "Scroll to browse other conditions in this project",
+        "4": "Scroll to browse other projects by this company",
+        "5": "Spin wheel to browse companies",
+        "6": "Look around to discover more!"
       }
+    },
+    "guideTransport": {
+      "caption": "Guide"
     },
     "instrumentsLegend": {
       "all": "All Instruments"
