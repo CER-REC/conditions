@@ -8,17 +8,24 @@ import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
+import displayOrder from '../../mockData/displayOrder';
 import './styles.scss';
 import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
+import { allConditionsPerYear } from '../../proptypes';
+
 class ViewThree extends React.PureComponent {
   render() {
     const { props } = this;
-    const conditionCounts = this.props.conditionsPerYear;
+    const conditionCounts = props.conditionsPerYear;
 
     this.reversedCounts = this.reversedCounts || conditionCounts.slice().reverse();
+
+    const currentDisplayOrder = (props.selected.feature === 'instrument')
+      ? props.prefixOrder
+      : displayOrder.features[props.selected.feature];
 
     return (
       <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
@@ -33,7 +40,7 @@ class ViewThree extends React.PureComponent {
           <SmallMultiplesLegend
             feature={props.selected.feature}
             data={conditionCounts}
-            displayOrder={props.displayOrder}
+            displayOrder={currentDisplayOrder}
             onChange={props.setSelectedSubFeature}
             selected={props.selected.subFeature}
           />
@@ -41,7 +48,7 @@ class ViewThree extends React.PureComponent {
         <section className="chart">
           <StreamGraph
             countsData={this.reversedCounts}
-            displayOrder={props.displayOrder}
+            displayOrder={currentDisplayOrder}
             years={props.years}
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
@@ -54,7 +61,7 @@ class ViewThree extends React.PureComponent {
           <FeatureTypesDescription
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
-            displayOrder={props.displayOrder}
+            displayOrder={currentDisplayOrder}
           />
         </section>
         <section className="selectedCompany">
@@ -90,32 +97,14 @@ ViewThree.propTypes = {
   setSelectedFeature: PropTypes.func.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   setSelectedSubFeature: PropTypes.func.isRequired,
-  loading: PropTypes.bool,
+  conditionsPerYear: allConditionsPerYear.isRequired,
 };
 
 ViewThree.defaultProps = {
   layoutOnly: PropTypes.false,
-  loading: false,
 };
 
 export const ViewThreeUnconnected = ViewThree;
-
-export const ViewThreeGraphQL = props => (
-  // <Query query={conditionsPerYear}>
-  //   {({ data: conditionsData, loading: conditionsLoading }) => {
-  //     if (conditionsLoading || !conditionsData) return null;
-
-  //     return (
-        <ViewThree
-          // data props here
-          // data={{ conditionsPerYear: conditionsData.conditionsPerYear }}
-          // loading={conditionsLoading}
-          {...props}
-        />
-  //     );
-  //   }}
-  // </Query>
-);
 
 export default connect(
   ({
@@ -138,4 +127,4 @@ export default connect(
     setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(ViewThreeGraphQL);
+)(ViewThree);

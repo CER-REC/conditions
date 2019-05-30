@@ -45,6 +45,7 @@ class SmallMultiplesLegend extends React.PureComponent {
     const hasHighlight = !!data.find(c => c.subFeature === highlightName);
 
     const maxCount = data.reduce((acc, { years }) => Math.max(acc, ...Object.values(years)), 0);
+
     const legendDataItems = data.map((conditionsData, idx) => (
       <LegendItem
         key={conditionsData.subFeature}

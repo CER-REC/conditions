@@ -12,10 +12,9 @@ import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import i18nMessages from '../../i18n';
 
-import { conditionsPerYear } from '../../queries/conditionsPerYear';
-import { displayOrder } from '../../queries/displayOrder';
+import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 
-import { processConditionCounts, processDisplayOrder } from './processQueryData';
+import { processConditionCounts } from './processQueryData';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -168,37 +167,11 @@ class App extends React.PureComponent {
     });
   };
 
-  // For data that doesn't match the current feature/subfeature, sets all y = 0
-  filterConditionCounts = (counts) => {
-    const { feature, subFeature } = this.props.selected;
-
-    return counts.map((entry) => {
-      if (entry.feature === feature
-        && (entry.subFeature === subFeature || subFeature === '')
-      ) { return entry; }
-
-      const copy = JSON.parse(JSON.stringify(entry));
-      Object.keys(copy.years).forEach((k) => {
-        copy.years[k] = 0;
-      });
-      return copy;
-    });
-  };
-
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
     this.processedConditionCounts = this.processedConditionCounts
       || processConditionCounts(this.props.conditionsPerYear);
-
-    this.processedDisplayOrder = this.processedDisplayOrder
-      || processDisplayOrder(this.props.displayOrder)
-
-    const currentOrder = (this.props.selected.feature === 'instrument')
-      ? this.processedConditionCounts.prefixOrder
-      : this.processedDisplayOrder.features[this.props.selected.feature];
-
-    const filteredConditionCounts = this.filterConditionCounts(this.processedConditionCounts.conditionCounts);
 
     let guideState = transitionState;
     if (guideState === 9) {
@@ -242,17 +215,16 @@ class App extends React.PureComponent {
         <div style={{ clear: 'both' }} />
         <ViewTwo
           {...viewProps}
-          conditionsPerYear={filteredConditionCounts}
+          conditionsPerYear={this.processedConditionCounts.conditionCounts}
           years={this.processedConditionCounts.years}
-          displayOrder={currentOrder}
           jumpToView1={this.jumpToView1}
           jumpToView3={this.jumpToView3}
         />
         <ViewThree
           {...viewProps}
-          conditionsPerYear={filteredConditionCounts}
+          conditionsPerYear={this.processedConditionCounts.conditionCounts}
+          prefixOrder={this.processedConditionCounts.prefixOrder}
           years={this.processedConditionCounts.years}
-          displayOrder={currentOrder}
         />
         <section className="conditions">
           <ConditionDetails
@@ -344,25 +316,17 @@ export default props => (
     <IntlProvider locale="en" messages={i18nMessages.en}>
       <ApolloProvider client={client}>
         <Provider store={store}>
-          <Query query={conditionsPerYear}>
-            {({ data: conditionsData, loading: conditionsLoading }) => (
-              <Query query={displayOrder}>
-                {({ data: displayData, loading: displayLoading }) => {
-                  if (conditionsLoading
-                    || displayLoading
-                    || !conditionsData
-                    || !displayData) return null;
+          <Query query={conditionsPerYearQuery}>
+            {({ data: conditionsData, loading: conditionsLoading }) => {
+              if (conditionsLoading || !conditionsData) return null;
 
-                  return (
-                    <ConnectedApp
-                      conditionsPerYear={conditionsData.conditionsPerYear}
-                      displayOrder={displayData.allConfigurationData.displayOrder}
-                      {...props}
-                    />
-                  );
-                }}
-              </Query>
-            )}
+              return (
+                <ConnectedApp
+                  conditionsPerYear={conditionsData.conditionsPerYear}
+                  {...props}
+                />
+              );
+            }}
           </Query>
         </Provider>
       </ApolloProvider>

@@ -7,6 +7,7 @@ export const featureTypes = PropTypes.oneOf(Object.keys(features));
 export const conditionsPerYear = PropTypes.shape({
   feature: featureTypes.isRequired,
   subFeature: PropTypes.string.isRequired,
+  rank: PropTypes.number, // Used for instrument ordering
   years: PropTypes.objectOf(PropTypes.number).isRequired,
 });
 
