@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 $defaultTransition: 1s ease-in-out;
 
 $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
@@ -14,7 +16,7 @@ $faded: 0.3;
  */
 $states: (
   0: (
-    ".Guide": (
+    ".guideTranslate": (
       transform: translate(30%, 30%)
     ),
     ".ViewTwo": (pointer-events: none),
@@ -25,9 +27,9 @@ $states: (
     ".ViewTwo .legend": (opacity: 0),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: none),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: none),
-    ".ViewTwo .ConditionDetails .listPane": (opacity: 0),
-    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 0),
-    ".ViewTwo .ConditionDetails .contentPane": (opacity: 0),
+    ".ConditionDetails .listPane": (opacity: 0),
+    ".ConditionDetails .ProjectHeader": (opacity: 0),
+    ".ConditionDetails .contentPane": (opacity: 0),
     ".ViewThree": (
       pointer-events: none,
       visibility: hidden,
@@ -40,88 +42,103 @@ $states: (
       transition: "opacity $fastStart, height $defaultTransition, visibility 0s 1s",
     ),
   ),
-  // 9 resets from View 2 -> 1, just with different transitions
-  9: (),
+  // 8 resets from View 2 -> 1, just with different transitions
+  8: (),
   1: (
-    ".Guide": (transform: translate(44%, 70%)),
-    ".browseBy .BrowseByBtn.location": (opacity: $faded),
-    ".ViewOne .infoBar": (opacity: $faded),
-    ".ViewOne .introduction": (transform: "translateY(-50vh)"),
-    ".ViewOne .explorer": (transform: "translateY(-50vh)"),
-  ),
-  2: (
-    ".Guide": (transform: translate(56%, 83%)),
-    ".browseBy .BrowseByBtn.location": (opacity: 0),
+    ".guideTranslate": (transform: translate(58%, 76%)),
+    ".appControls .BrowseByBtn.location": (opacity: 0),
+    ".appControls .GuideTransport": (
+      opacity: 1,
+      visibility: visible,
+      transition: opacity $fastEnd,
+    ),
+    ".ViewOne": (pointer-events: none),
     ".ViewOne .infoBar": (opacity: 0),
     ".ViewOne .introduction": (transform: "translateY(-100vh)"),
     ".ViewOne .explorer": (transform: "translateY(-100vh)"),
-    ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
+    ".ConditionDetails .contentPane": (opacity: 1),
   ),
-  3: (
-    ".Guide": (transform: translate(72%, 22%)),
-    ".ViewTwo .ConditionDetails .contentPane": (opacity: $faded),
+  2: (
+    ".guideTranslate": (transform: translate(72%, 22%)),
+    ".ConditionDetails .contentPane": (opacity: $faded),
     ".ViewTwo .menus": (opacity: 1),
     ".ViewTwo .legend": (opacity: 1),
   ),
-  4: (
-    ".Guide": (transform: translate(42%, 70%)),
+  3: (
+    ".guideTranslate": (transform: translate(42%, 70%)),
     ".ViewTwo .menus": (opacity: $faded),
     ".ViewTwo .legend": (opacity: $faded),
-    ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
-    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
+    ".ConditionDetails .listPane": (opacity: 1),
+    ".ConditionDetails .ProjectHeader": (opacity: 1),
   ),
-  5: (
-    ".Guide": (transform: translate(66%, 5%)),
-    ".ViewTwo .ConditionDetails .listPane": (opacity: $faded),
-    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: $faded),
+  4: (
+    ".guideTranslate": (transform: translate(80%, 10%)),
+    ".ConditionDetails .listPane": (opacity: $faded),
+    ".ConditionDetails .ProjectHeader": (opacity: $faded),
     ".ViewTwo .companyBreakdown": (opacity: 1),
   ),
-  6: (
-    ".Guide": (transform: translate(9%, 65%)),
-    ".browseBy .BrowseBy": (opacity: 0),
-    ".browseBy .BrowseByBtn.company": (opacity: 0),
-    ".browseBy .BrowseByBtn.location": (opacity: 0),
+  5: (
+    ".guideTranslate": (transform: translate(11%, 68%)),
+    ".appControls .BrowseBy": (opacity: 0),
+    ".appControls .BrowseByBtn.company": (opacity: 0),
+    ".appControls .BrowseByBtn.location": (opacity: 0),
     ".ViewTwo .companyBreakdown": (opacity: $faded),
     ".ViewTwo .wheel": (opacity: 1),
   ),
-  7: (
-    ".Guide": (transform: translate(82%, 5%)),
-    ".browseBy": (transform: translateX(10px)),
-    ".browseBy .BrowseBy": (opacity: 1),
-    ".browseBy .BrowseByBtn.company": (opacity: 1),
-    ".browseBy .BrowseByBtn.location": (
+  6: (
+    ".guideWrapper": (
+      pointer-events: none,
+    ),
+    ".guideTranslate": (transform: translate(80%, 10%)),
+    ".appControls": (transform: translateX(10px)),
+    ".appControls .BrowseBy": (opacity: 1),
+    ".appControls .BrowseByBtn.company": (opacity: 1),
+    ".appControls .BrowseByBtn.location": (
       opacity: 1,
       transform: translateX(-100%),
       ),
-    ".browseBy .BrowseByBtn.inactive": (
+    ".appControls .BrowseByBtn.inactive": (
       visibility: hidden,
       opacity: 0,
       transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
     ),
+    ".ViewTwo": (pointer-events: auto),
+    ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: auto),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: auto),
     ".ViewTwo .header": (opacity: 1),
     ".ViewTwo .wheel": (opacity: 1),
     ".ViewTwo .companyBreakdown": (opacity: 1),
     ".ViewTwo .menus": (opacity: 1),
     ".ViewTwo .legend": (opacity: 1),
-    ".ViewTwo .ConditionDetails .listPane": (opacity: 1),
-    ".ViewTwo .ConditionDetails .ProjectHeader": (opacity: 1),
-    ".ViewTwo .ConditionDetails .contentPane": (opacity: 1),
+    ".ConditionDetails .listPane": (opacity: 1),
+    ".ConditionDetails .ProjectHeader": (opacity: 1),
+    ".ConditionDetails .contentPane": (opacity: 1),
     ".Footer": (
       opacity: 1,
       visibility: visible,
 
-      height: 300px,
 
       transition: "opacity #{$defaultTransition}, height #{$defaultTransition}",
     ),
   ),
-  8: (
-    ".Guide": (
-      opacity: 0,
+  // View 2
+  7: (
+    ".guideTranslate": (
+      visibility: hidden,
+      transform: translate(87.22%, 5.77%),
     ),
-    ".Guide .CircleContainer": (pointer-events: none),
+    ".guideTranslate .Guide": (transform: scale(0.17)),
+    ".guideTranslate .CircleContainer": (
+      pointer-events: none,
+      background-color: $GuideFaded,
+    ),
+    ".appControls .GuideTransport": (
+      visibility: hidden,
+      opacity: 0,
+      transition: "opacity #{$fastStart}, visibility 0s 1s",
+
+    ),
     ".ViewTwo": (
-      pointer-events: auto,
       transition: "opacity #{$defaultTransition}",
     ),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: all),
@@ -130,14 +147,15 @@ $states: (
       transition: "opacity #{$fastestStart}, visibility 0s 1s",
     ),
   ),
-  10: (
-    ".browseBy .arrowWrapper .browseLabel": (width: 128px),
-    ".browseBy .BrowseByBtn.active": (
+  // View 3
+  9: (
+    ".appControls .arrowWrapper .browseLabel": (width: 128px),
+    ".appControls .BrowseByBtn.active": (
       visibility: hidden,
       opacity: 0,
       transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
     ),
-    ".browseBy .BrowseByBtn.inactive": (
+    ".appControls .BrowseByBtn.inactive": (
       visibility: visible,
       opacity: 1,
       transition: "opacity #{$defaultTransition}, transform #{$defaultTransition}",

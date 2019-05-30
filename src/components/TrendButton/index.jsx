@@ -41,12 +41,6 @@ const TrendButton = props => (
           </span>
         )}
       </FormattedMessage>
-      <svg className="trendArrow" width={10} viewBox="0 0 427.5 427.5">
-        <path
-          fill="#D1057A"
-          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
-        />
-      </svg>
     </div>
   </div>
 );

@@ -112,7 +112,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
               </span>
             )}
           </FormattedMessage>
-          |
+          &nbsp;|&nbsp;
           <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.alphabetical">
             {text => (
               <span

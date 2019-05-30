@@ -12,7 +12,7 @@ import { viewTwo } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
-import ConditionDetails from '../../components/ConditionDetails';
+
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
@@ -128,22 +128,6 @@ class ViewTwo extends React.PureComponent {
             legendItems={this.props.legendItems}
             selectedFeature={this.props.selected.feature}
             isProjectLegend={this.props.browseBy !== 'location'}
-          />
-        </section>
-
-        <section className="conditions">
-          <ConditionDetails
-            selectedItem={this.props.selected.condition}
-            updateSelectedItem={this.props.setSelectedCondition}
-            openIntermediatePopup={this.props.openIntermediatePopup}
-            openProjectDetails={this.props.openProjectDetails}
-            toggleExpanded={noop}
-            searchKeywords={{
-              include: this.props.included,
-              exclude: this.props.excluded,
-            }}
-            browseBy={this.props.browseBy}
-            {...this.props.conditionDetails}
           />
         </section>
       </section>

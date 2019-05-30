@@ -33,11 +33,9 @@
       "DAMAGE_PREVENTION": "Damage Prevention",
       "EMERGENCY_MANAGEMENT": "Emergency Management",
       "ENFORCEMENT": "Enforcement",
-      "ENGINEERING": "Engineering",
       "ENVIRONMENTAL_PROTECTION": "Environmental Protection",
       "FINANCIAL": "Financial",
       "INTEGRITY_MANAGEMENT": "Integrity Management",
-      "LANDOWNER": "Land owner",
       "MANAGEMENT_SYSTEM": "Management System",
       "SAFETY_MANAGEMENT": "Safety Management",
       "SECURITY": "Security",
@@ -142,8 +140,8 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Selected Project: ",
-      "selectedCondition": "Selected Condition: ",
+      "selectedProject": "Selected Project:",
+      "selectedCondition": "Selected Condition:",
       "instrumentNumber": "Instrument Number",
       "location": "Location",
       "issuanceDate": "Issuance Date",
@@ -190,7 +188,7 @@
         "EXPIRY_DATE_OF_REG_INSTR": "Some conditions apply when the regulatory instrument expires.",
         "INCLUDES_ALL_PHASES_OF_CONSTR": "Some conditions apply at all phases of construction.",
         "NOT_CONSTRUCTION_RELATED": "Some conditions apply outside of the construction context.",
-        "POST_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility. ",
+        "POST_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility.",
         "PRIOR_TO_CONSTRUCTION_PHASE": "Assigned to conditions that must be fulfilled before construction can begin. This includes conditions related to environmental and socio-economic assessments.",
         "UNSPECIFIED": "Missing description"
       },
@@ -232,14 +230,16 @@
     "guide": {
       "tutorial": {
         "0": "Click to continue",
-        "1": "Click to continue",
-        "2": "Here is the full legal text of the condition you selected",
-        "3": "Conditions are characterized by features, such as theme",
-        "4": "You can browse other conditions in this project",
-        "5": "You can browse other projects by this company",
-        "6": "Spin wheel to browse companies",
-        "7": "Look around to discover more!"
+        "1": "Here is the full legal text of the condition you selected",
+        "2": "Conditions are characterized by features, such as theme",
+        "3": "Scroll to browse other conditions in this project",
+        "4": "Scroll to browse other projects by this company",
+        "5": "Spin wheel to browse companies",
+        "6": "Look around to discover more!"
       }
+    },
+    "guideTransport": {
+      "caption": "Guide"
     },
     "instrumentsLegend": {
       "all": "All Instruments"
@@ -279,7 +279,7 @@
         },
         "searchText": {
           "basicInclude": "Include any of:",
-          "advancedInclude": "Include {dropdown} of: ",
+          "advancedInclude": "Include {dropdown} of:",
           "exclude": "But do {not} include:",
           "not": "not"
         },
@@ -380,7 +380,7 @@
       "description": "Trends &\nDefinitions"
     },
     "keywordExploreButton": {
-      "description": "Keyword\nExplorer"
+      "description": "Back to\nKeywords"
     },
     "browseBy": {
       "skip": "Skip intro to browse:",
@@ -409,7 +409,7 @@
       }
     },
     "view3": {
-      "company":"Selected Company: "
+      "company":"Selected Company:"
     }
   }
 }

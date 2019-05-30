@@ -2618,13 +2618,13 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main"
+      className="main expanded"
     >
       <div
         className="ProjectHeader"
       >
         <h1>
-          Selected Project: 
+          Selected Project:
         </h1>
         <button
           className="openProject"
@@ -2642,6 +2642,28 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               *
             </span>
           </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
         </button>
       </div>
       <div
@@ -3109,6 +3131,20 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="popout"
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
+      </div>
+    </div>
   </section>
 </div>
 `;
@@ -3129,20 +3165,13 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
       className="ConditionDetails"
     >
       <div
-        className="popout left"
-      >
-        <div
-          className="filler"
-        />
-      </div>
-      <div
-        className="main expandable"
+        className="main expanded expandable"
       >
         <div
           className="ProjectHeader"
         >
           <h1>
-            Selected Project: 
+            Selected Project:
           </h1>
           <button
             className="openProject"
@@ -3650,7 +3679,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
         </div>
       </div>
       <div
-        className="popout right expanded"
+        className="popout expanded"
       >
         <div
           className="Details"
@@ -3676,14 +3705,36 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main"
+      className="main expanded"
     >
       <div
         className="ProjectHeader location"
       >
         <h1>
-          Selected Condition: 
+          Selected Condition:
         </h1>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="listPane"
@@ -4148,6 +4199,20 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             Quisque eu lobortis velit, quis viverra elit.
           </p>
         </div>
+      </div>
+    </div>
+    <div
+      className="popout"
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
       </div>
     </div>
   </section>
@@ -4892,7 +4957,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -4949,8 +5014,30 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       className="ProjectHeader location"
     >
       <h1>
-        Selected Condition: 
+        Selected Condition:
       </h1>
+      <button
+        className="toggleExpand"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h1
+          className="upperCase"
+        >
+          Less
+        </h1>
+        <svg
+          className="arrow"
+          viewBox="0 0 16 24"
+        >
+          <polyline
+            points="4,4 12,12.5 4,20 4,4"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </div>
@@ -4967,7 +5054,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
       className="ProjectHeader"
     >
       <h1>
-        Selected Project: 
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -4985,6 +5072,28 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
             *
           </span>
         </h2>
+      </button>
+      <button
+        className="toggleExpand"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h1
+          className="upperCase"
+        >
+          Less
+        </h1>
+        <svg
+          className="arrow"
+          viewBox="0 0 16 24"
+        >
+          <polyline
+            points="4,4 12,12.5 4,20 4,4"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -6614,7 +6723,7 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       className="GreyPipe location"
     >
       <div
-        className="horizontal"
+        className="topConnection"
       />
       <div
         className="top"
@@ -6624,6 +6733,9 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       />
       <div
         className="bottom"
+      />
+      <div
+        className="bottomConnection"
       />
     </div>
   </div>
@@ -6643,7 +6755,150 @@ exports[`Storyshots Components|Guide default 1`] = `
 >
   <div
     className="Guide"
+    style={
+      Object {
+        "height": 156,
+        "width": 156,
+      }
+    }
   >
+    <svg
+      className="wedgeContainer"
+      viewBox="-78 -78 156 156"
+    >
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(0)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(60)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(120)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(180)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(240)
+            translate(1, -2)
+          "
+        />
+      </g>
+      <g
+        className="wedge"
+        style={
+          Object {
+            "transform": "scale(1, 1)",
+          }
+        }
+      >
+        <path
+          d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+          transform="
+            rotate(300)
+            translate(1, -2)
+          "
+        />
+      </g>
+    </svg>
     <div
       className="CircleContainer"
       focusable={true}
@@ -6651,18 +6906,13 @@ exports[`Storyshots Components|Guide default 1`] = `
       onKeyPress={[Function]}
       style={
         Object {
-          "height": 176,
-          "width": 176,
+          "height": 128,
+          "width": 128,
         }
       }
       tabIndex={0}
     >
       <div>
-        <span
-          className="hidden"
-        >
-          Click to continue
-        </span>
         <span
           className="hidden"
         >
@@ -6679,14 +6929,14 @@ exports[`Storyshots Components|Guide default 1`] = `
           Conditions are characterized by features, such as theme
         </span>
         <span
-          className=""
+          className="hidden"
         >
-          You can browse other conditions in this project
+          Scroll to browse other conditions in this project
         </span>
         <span
           className="hidden"
         >
-          You can browse other projects by this company
+          Scroll to browse other projects by this company
         </span>
         <span
           className="hidden"
@@ -6694,12 +6944,240 @@ exports[`Storyshots Components|Guide default 1`] = `
           Spin wheel to browse companies
         </span>
         <span
-          className="hidden"
+          className=""
         >
           Look around to discover more!
         </span>
       </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|GuideTransport default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="GuideTransport"
+  >
+    <span>
+      Guide
+      :
+    </span>
+    <svg
+      className="back"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="togglePlay"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        className="pink"
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="
+  M 38 27
+  L 72 50
+  L 38 73
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="forward"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      style={
+        Object {
+          "transform": "scaleX(-1",
+        }
+      }
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|GuideTransport playing 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="GuideTransport"
+  >
+    <span>
+      Guide
+      :
+    </span>
+    <svg
+      className="back"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="togglePlay"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        className=""
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="
+  M 30 27
+  L 44 27
+  L 44 73
+  L 30 73
+  Z
+  M 70 27
+  L 56 27
+  L 56 73
+  L 70 73
+  Z
+"
+      />
+    </svg>
+    <svg
+      className="forward"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      style={
+        Object {
+          "transform": "scaleX(-1",
+        }
+      }
+      tabIndex={0}
+      viewBox="0 0 100 100"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+      />
+      <path
+        d="M 15 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+      <path
+        d="M 44 50 
+  l 18 -23
+  l 18 0
+  l -18 23
+  l 18 23
+  l -18 0
+  Z
+"
+      />
+    </svg>
   </div>
 </div>
 `;
@@ -7793,7 +8271,6 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         <circle
           cx="18"
           cy="14"
-          opacity="0.4"
           r="12"
         />
       </svg>
@@ -7801,10 +8278,10 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         className="descriptionText"
       >
         <p>
-          Keyword
+          Back to
         </p>
         <p>
-          Explorer
+          Keywords
         </p>
       </span>
     </div>
@@ -18905,7 +19382,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
            
           Frequency
         </span>
-        |
+         | 
         <span
           className={null}
           focusable={true}
@@ -25729,16 +26206,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
           Definitions
         </p>
       </span>
-      <svg
-        className="trendArrow"
-        viewBox="0 0 427.5 427.5"
-        width={10}
-      >
-        <path
-          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
-          fill="#D1057A"
-        />
-      </svg>
     </div>
   </div>
 </div>
@@ -26274,16 +26741,6 @@ exports[`Storyshots Components|TrendButton Instrument Bubble Button 1`] = `
           Definitions
         </p>
       </span>
-      <svg
-        className="trendArrow"
-        viewBox="0 0 427.5 427.5"
-        width={10}
-      >
-        <path
-          d="M60.9,0l338.1,170.6v85.3L60.9,427.5l-32.5-68l295.5-146.2L28.4,69.1L60.9,0z"
-          fill="#D1057A"
-        />
-      </svg>
     </div>
   </div>
 </div>
