@@ -1,13 +1,10 @@
 @import '../../styles/grid';
 
 .Footer {
-  @include grid((
-    infoBar: (x: 0, y: 0, w: 75, h: 30),
-  )) {
-    .infoBar {
-      position: relative;
-      margin-left: 50%;
-      transform: translateX(-50%);
-    }
+  width: 100%;
+  .infoBar {
+    position: relative;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 }

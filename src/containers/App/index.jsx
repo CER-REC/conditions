@@ -196,45 +196,48 @@ class App extends React.PureComponent {
         className={classNames('App', `transition-state-${transitionState}`)}
         ref={this.ref}
       >
-        <div className="guideWrapper">
-          <Guide textState={guideState} onClick={this.handleGuideClick} />
+        <div className="fixedContainer">
+          <div className="guideWrapper">
+            <Guide textState={guideState} onClick={this.handleGuideClick} />
+          </div>
+          <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
+          <section className="browseBy">
+            <BrowseBy
+              showArrow={(transitionState < 2 || transitionState === 9)}
+              labelId={labelId}
+              browseBy={browseBy}
+              onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
+            />
+          </section>
+          {/* TODO: Deployment hacks */}
+          <div style={{ clear: 'both' }} />
+          <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
+          <ViewThree {...viewProps} />
+          <section className="conditions">
+            <ConditionDetails
+              selectedItem={this.props.selected.condition}
+              selectedProject="Selected Project"
+              updateSelectedItem={this.props.setSelectedCondition}
+              openIntermediatePopup={this.props.openIntermediatePopup}
+              openProjectDetails={this.props.openProjectDetails}
+              toggleExpanded={noop}
+              searchKeywords={{
+                include: this.props.included,
+                exclude: this.props.excluded,
+              }}
+              data={conditionData}
+              browseBy={this.props.browseBy}
+              {...conditionDetailsViewProps}
+            />
+          </section>
         </div>
-        <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
-        <section className="browseBy">
-          <BrowseBy
-            showArrow={(transitionState < 2 || transitionState === 9)}
-            labelId={labelId}
-            browseBy={browseBy}
-            onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
-          />
-        </section>
-        {/* TODO: Deployment hacks */}
-        <div style={{ clear: 'both' }} />
-        <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
-        <ViewThree {...viewProps} />
-        <section className="conditions">
-          <ConditionDetails
-            selectedItem={this.props.selected.condition}
-            selectedProject="Selected Project"
-            updateSelectedItem={this.props.setSelectedCondition}
-            openIntermediatePopup={this.props.openIntermediatePopup}
-            openProjectDetails={this.props.openProjectDetails}
-            toggleExpanded={noop}
-            searchKeywords={{
-              include: this.props.included,
-              exclude: this.props.excluded,
-            }}
-            data={conditionData}
-            browseBy={this.props.browseBy}
-            {...conditionDetailsViewProps}
-          />
-        </section>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
           openDataModal={noop}
         />
       </div>
+
     );
   }
 }
