@@ -40,7 +40,7 @@ $states: (
     ".Footer": (
       opacity: 0,
 
-      transition: "opacity $fastStart, height $defaultTransition, visibility 0s 1s",
+      transition: "opacity #{$fastStart}, height #{$defaultTransition}, visibility 0s 1s",
     ),
   ),
   // 8 resets from View 2 -> 1, just with different transitions
@@ -54,9 +54,21 @@ $states: (
       transition: opacity $fastEnd,
     ),
     ".ViewOne": (pointer-events: none),
-    ".ViewOne .infoBar": (opacity: 0),
-    ".ViewOne .introduction": (transform: "translateY(-100vh)"),
-    ".ViewOne .explorer": (transform: "translateY(-100vh)"),
+    ".ViewOne .infoBar": (
+      opacity: 0,
+      visibility: hidden,
+      transition: "opacity #{$defaultTransition}, visibility 0s 1s",
+    ),
+    ".ViewOne .introduction": (
+      transform: "translateY(-100vh)",
+      visibility: hidden,
+      transition: "transform #{$defaultTransition}, visibility 0s 1s",
+    ),
+    ".ViewOne .explorer": (
+      transform: "translateY(-100vh)",
+      visibility: hidden,
+      transition: "transform #{$defaultTransition}, visibility 0s 1s",
+    ),
     ".ConditionDetails .contentPane": (opacity: 1),
   ),
   2: (
