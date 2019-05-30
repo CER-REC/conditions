@@ -8,6 +8,9 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
+import { IntlProvider } from 'react-intl';
+import { AppContainer, hot } from 'react-hot-loader';
+import i18nMessages from '../../i18n';
 
 import { conditionsPerYear } from '../../queries/conditionsPerYear';
 import { displayOrder } from '../../queries/displayOrder';
@@ -18,6 +21,7 @@ import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
 import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
+import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
 
 import {
@@ -32,6 +36,7 @@ import graphQLEndPoint from '../../../globals';
 
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
+import ConditionDetails from '../../components/ConditionDetails';
 import './styles.scss';
 
 import {
@@ -209,6 +214,13 @@ class App extends React.PureComponent {
       labelId = 'return';
     }
 
+    const conditionDetailsViewProps = (transitionState === 10)
+      ? {
+        isExpandable: true,
+        toggleExpanded: this.props.expandDetailView,
+        expanded: this.props.detailViewExpanded,
+      } : {};
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -242,6 +254,23 @@ class App extends React.PureComponent {
           years={this.processedConditionCounts.years}
           displayOrder={currentOrder}
         />
+        <section className="conditions">
+          <ConditionDetails
+            selectedItem={this.props.selected.condition}
+            selectedProject="Selected Project"
+            updateSelectedItem={this.props.setSelectedCondition}
+            openIntermediatePopup={this.props.openIntermediatePopup}
+            openProjectDetails={this.props.openProjectDetails}
+            toggleExpanded={noop}
+            searchKeywords={{
+              include: this.props.included,
+              exclude: this.props.excluded,
+            }}
+            data={conditionData}
+            browseBy={this.props.browseBy}
+            {...conditionDetailsViewProps}
+          />
+        </section>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
@@ -257,6 +286,20 @@ App.propTypes = {
   setBrowseBy: PropTypes.func.isRequired,
   transitionState: PropTypes.number.isRequired,
   setTransitionState: PropTypes.func.isRequired,
+  included: PropTypes.arrayOf(PropTypes.string).isRequired,
+  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
+  detailViewExpanded: PropTypes.bool.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  expandDetailView: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
+  selected: PropTypes.shape({
+    feature: PropTypes.string.isRequired,
+    subFeature: PropTypes.string,
+    condition: PropTypes.shape({
+      instrumentIndex: PropTypes.number.isRequired,
+      itemIndex: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -269,15 +312,20 @@ export const AppUnconnected = App;
 // Allows stories to override the initial state
 export const AppStore = store;
 
-const ConnectedApp = connect(
+const ConnectedApp = hot(module)(connect(
   ({
     selected,
     browseBy,
     transitionState,
+    search,
+    detailViewExpanded,
   }) => ({
     selected,
     browseBy,
     transitionState,
+    included: search.included,
+    excluded: search.excluded,
+    detailViewExpanded,
   }),
   {
     setSelectedCompany: selectedCreators.setSelectedCompany,
@@ -287,32 +335,37 @@ const ConnectedApp = connect(
     setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
+    expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(App);
+)(App));
 
 export default props => (
-  <ApolloProvider client={client}>
-    <Provider store={store}>
-      <Query query={conditionsPerYear}>
-        {({ data: conditionsData, loading: conditionsLoading }) => (
-          <Query query={displayOrder}>
-            {({ data: displayData, loading: displayLoading }) => {
-              if (conditionsLoading
-                || displayLoading
-                || !conditionsData
-                || !displayData) return null;
+  <AppContainer>
+    <IntlProvider locale="en" messages={i18nMessages.en}>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
+          <Query query={conditionsPerYear}>
+            {({ data: conditionsData, loading: conditionsLoading }) => (
+              <Query query={displayOrder}>
+                {({ data: displayData, loading: displayLoading }) => {
+                  if (conditionsLoading
+                    || displayLoading
+                    || !conditionsData
+                    || !displayData) return null;
 
-              return (
-                <ConnectedApp
-                  conditionsPerYear={conditionsData.conditionsPerYear}
-                  displayOrder={displayData.allConfigurationData.displayOrder}
-                  {...props}
-                />
-              );
-            }}
+                  return (
+                    <ConnectedApp
+                      conditionsPerYear={conditionsData.conditionsPerYear}
+                      displayOrder={displayData.allConfigurationData.displayOrder}
+                      {...props}
+                    />
+                  );
+                }}
+              </Query>
+            )}
           </Query>
-        )}
-      </Query>
-    </Provider>
-  </ApolloProvider>
+        </Provider>
+      </ApolloProvider>
+    </IntlProvider>
+  </AppContainer>
 );

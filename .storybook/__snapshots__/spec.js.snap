@@ -1430,6 +1430,814 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         <div
           className="ConditionList"
         >
+<<<<<<< HEAD
+=======
+          <circle
+            r={33}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(285.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={285.6691258637172}
+            y="192.49143055"
+          >
+            OPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={20}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(252.18835663 239.85215364)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={252.188356632948}
+            y="239.85215364"
+          >
+            OPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="OPL"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(14, 43, 140)",
+              }
+            }
+            transform="translate(367.66912586 192.49143055)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={379.6691258637172}
+            y="192.49143055"
+          >
+            OPL
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EPE"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={7}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(339.00245920 267.17892764)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={348.00245919705054}
+            y="267.17892764"
+          >
+            EPE
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPLO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={40}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(478.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={478.216320468198}
+            y="165.65082116"
+          >
+            GPLO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="EC"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={21}
+            style={
+              Object {
+                "fill": "rgb(39, 165, 249)",
+              }
+            }
+            transform="translate(544.21632047 165.65082116)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={544.216320468198}
+            y="165.65082116"
+          >
+            EC
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="GPSO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={10}
+            style={
+              Object {
+                "fill": "rgb(22, 78, 248)",
+              }
+            }
+            transform="translate(533.52692653 232.80539552)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={545.5269265288041}
+            y="232.80539552"
+          >
+            GPSO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="AO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={15}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(621.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="white"
+            stroke="transparent"
+            textAnchor="middle"
+            x={621.0073775911517}
+            y="200.00000000"
+          >
+            AO
+          </text>
+        </g>
+        <g
+          className="depth-3"
+          data-name="MO"
+          focusable={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          <circle
+            r={5}
+            style={
+              Object {
+                "fill": "rgb(212, 169, 42)",
+              }
+            }
+            transform="translate(662.00737759 200.00000000)"
+          />
+          <text
+            alignmentBaseline="middle"
+            fill="black"
+            stroke="transparent"
+            textAnchor=""
+            x={669.0073775911517}
+            y="200.00000000"
+          >
+            MO
+          </text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ChartIndicator allThemes 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height={300}
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width={300}
+  >
+    <g
+      className="ChartIndicator"
+      transform="translate(50, 30)"
+    >
+      <path
+        className="arrow"
+        d="M -5 -10 L 5 -10 L 0 0 z"
+      />
+      <line
+        className="line"
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={90}
+      />
+      <text
+        alignmentBaseline="bottom"
+        textAnchor="middle"
+        x="0"
+        y="-12"
+      >
+        Without circle
+        *
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height={300}
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width={300}
+  >
+    <g
+      className="ChartIndicator"
+      transform="translate(50, 30)"
+    >
+      <path
+        className="arrow"
+        d="M -5 -10 L 5 -10 L 0 0 z"
+      />
+      <line
+        className="line"
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={90}
+      />
+      <circle
+        className="selectedCircle"
+        cx={0}
+        cy={130}
+        r={40}
+        strokeWidth={4}
+      />
+      <text
+        alignmentBaseline="bottom"
+        textAnchor="middle"
+        x="0"
+        y="-12"
+      >
+        With Circle
+        
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
+<div
+  className="visualization"
+>
+  <svg
+    height={300}
+    style={
+      Object {
+        "border": "1px solid #000",
+      }
+    }
+    width={300}
+  >
+    <g
+      className="ChartIndicator"
+      transform="translate(50, 30)"
+    >
+      <path
+        className="arrow"
+        d="M -5 -10 L 5 -10 L 0 0 z"
+      />
+      <line
+        className="line"
+        x1={0}
+        x2={0}
+        y1={5}
+        y2={90}
+      />
+      <text
+        alignmentBaseline="bottom"
+        textAnchor="middle"
+        x="0"
+        y="-12"
+      >
+        Without circle
+        
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with icon 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+      &lt;
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with prop: className 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer blue"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+       
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".CircleContainer.blue { background: blue }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with prop: onClick  1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    focusable={true}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+    tabIndex={0}
+  >
+    <div>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CircleContainer with text 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CircleContainer"
+    style={
+      Object {
+        "height": 60,
+        "width": 60,
+      }
+    }
+  >
+    <div>
+      150
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CompanyPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal CompanyPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="Company"
+    >
+      <h2>
+        Full Project Name:
+         
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h2>
+      <h3>
+        Companies associated with this project
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CompanyPopup"
+  >
+    <div
+      className="Company"
+    >
+      <h2>
+        Full Project Name:
+         
+        <strong>
+          Trans Mountain Expansion
+        </strong>
+      </h2>
+      <h3>
+        Companies associated with this project
+      </h3>
+      <ul
+        className="companies"
+      >
+        <li>
+          Company A
+        </li>
+        <li>
+          Company B
+        </li>
+        <li>
+          Company C
+        </li>
+        <li>
+          Company D
+        </li>
+        <li>
+          Company E
+        </li>
+        <li>
+          Company F
+        </li>
+        <li>
+          Company G
+        </li>
+        <li>
+          Company H
+        </li>
+        <li>
+          Company I
+        </li>
+        <li>
+          Company J
+        </li>
+        <li>
+          Company K
+        </li>
+        <li>
+          Company L
+        </li>
+        <li>
+          Company M
+        </li>
+        <li>
+          Company N
+        </li>
+        <li>
+          Company O
+        </li>
+      </ul>
+      <h4>
+        What does it mean to have more than one company associated to a project?
+      </h4>
+      <p>
+        Text to be provided by the NEB.
+      </p>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|ConditionDetails default 1`] = `
+<div
+  className="visualization"
+>
+  <section
+    className="ConditionDetails"
+  >
+    <div
+      className="main expanded"
+    >
+      <div
+        className="ProjectHeader"
+      >
+        <h1>
+          Selected Project:
+        </h1>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h2>
+            Keystone XL
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="listPane"
+      >
+        <div
+          className="ConditionList"
+        >
+>>>>>>> develop
           <div
             className="List"
           >
@@ -1889,6 +2697,20 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="popout"
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
+      </div>
+    </div>
   </section>
 </div>
 `;
@@ -1909,14 +2731,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
       className="ConditionDetails"
     >
       <div
-        className="popout left"
-      >
-        <div
-          className="filler"
-        />
-      </div>
-      <div
-        className="main expandable"
+        className="main expanded expandable"
       >
         <div
           className="ProjectHeader"
@@ -2430,7 +3245,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
         </div>
       </div>
       <div
-        className="popout right expanded"
+        className="popout expanded"
       >
         <div
           className="Details"
@@ -2456,7 +3271,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main"
+      className="main expanded"
     >
       <div
         className="ProjectHeader location"
@@ -2464,6 +3279,28 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         <h1>
           Selected Condition:
         </h1>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="listPane"
@@ -2928,6 +3765,20 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             Quisque eu lobortis velit, quis viverra elit.
           </p>
         </div>
+      </div>
+    </div>
+    <div
+      className="popout"
+    >
+      <div
+        className="Details"
+      >
+        <div
+          className="filler"
+        />
+        <div
+          className="content"
+        />
       </div>
     </div>
   </section>
@@ -3731,6 +4582,28 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       <h1>
         Selected Condition:
       </h1>
+      <button
+        className="toggleExpand"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h1
+          className="upperCase"
+        >
+          Less
+        </h1>
+        <svg
+          className="arrow"
+          viewBox="0 0 16 24"
+        >
+          <polyline
+            points="4,4 12,12.5 4,20 4,4"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </div>
@@ -3765,6 +4638,28 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
             *
           </span>
         </h2>
+      </button>
+      <button
+        className="toggleExpand"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h1
+          className="upperCase"
+        >
+          Less
+        </h1>
+        <svg
+          className="arrow"
+          viewBox="0 0 16 24"
+        >
+          <polyline
+            points="4,4 12,12.5 4,20 4,4"
+          />
+        </svg>
       </button>
     </div>
   </div>
@@ -5365,7 +6260,7 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       className="GreyPipe location"
     >
       <div
-        className="horizontal"
+        className="topConnection"
       />
       <div
         className="top"
@@ -5375,6 +6270,9 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       />
       <div
         className="bottom"
+      />
+      <div
+        className="bottomConnection"
       />
     </div>
   </div>

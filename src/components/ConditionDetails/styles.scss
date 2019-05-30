@@ -16,10 +16,28 @@
 
   .main {
     display: inline-block;
-    width: 100%;
+    width: 70%;
     height: 100%;
+
+    margin-left: 30%;
+    transition: margin-left 1s ease-in-out;
+
+    &.expanded {
+      margin-left: 0;
+    }
+
     &.expandable {
-        width: 70%;
+        .ProjectHeader .toggleExpand {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 1s ease-in-out, visibility 0s;
+        }
+    }
+
+    .ProjectHeader .toggleExpand {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out, visibility 0s 1s;
     }
   }
 
@@ -28,15 +46,6 @@
 
     vertical-align: top;
     height: 100%;
-
-    &.left {
-      .filler {
-        height: 24px;
-        width: 100%;
-
-        background-color: $LightGray;
-      }
-    }
 
     overflow-x: hidden;
     transition: width 1s ease-in-out, visibility 0s 1s;
@@ -47,7 +56,7 @@
     &.expanded {
       transition: width 1s ease-in-out, visibility 0s;
 
-      width: calc(30%);
+      width: 30%;
       visibility: visible;
     }
   }
