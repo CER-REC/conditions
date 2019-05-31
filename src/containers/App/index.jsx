@@ -292,7 +292,7 @@ class App extends React.PureComponent {
                         include: this.props.included,
                         exclude: this.props.excluded,
                       }}
-                      data={conditionData}
+                      data={formattedInstrument}
                       browseBy={this.props.browseBy}
                       {...conditionDetailsViewProps}
                     />
