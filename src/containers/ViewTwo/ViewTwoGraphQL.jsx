@@ -76,7 +76,11 @@ export const ViewTwoGraphQL = (props) => {
     <Query query={locationWheelQuery}>{
       (allRegionsQueryProps) => {
         // eslint-disable-next-line no-shadow
-        const { data: regionsData, loading: regionsLoading, error: regionsError } = allRegionsQueryProps;
+        const {
+          data: regionsData,
+          loading: regionsLoading,
+          error: regionsError,
+        } = allRegionsQueryProps;
         const locationData = !regionsLoading && !regionsError && regionsData.allRegions
           ? regionsData.allRegions.sort((a, b) => {
             if (a.province === b.province) {
