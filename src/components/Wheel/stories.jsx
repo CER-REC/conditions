@@ -45,9 +45,9 @@ storiesForComponent('Components|Wheel', module, ReadMe)
   )
   .add('default', () => (
     <div>
-      <Wheel {...getInteractionProps()} wheelType="company" wheelData={companyData} />
+      <Wheel {...getInteractionProps()} wheelType="company" wheelData={companyData} wheelMotionTrigger={() => {}} />
     </div>
   ))
   .add('location props', () => (
-    <Wheel {...getInteractionProps()} wheelType="location" wheelData={processedLocationData} />
+    <Wheel {...getInteractionProps()} wheelType="location" wheelData={processedLocationData} wheelMotionTrigger={() => {}} />
   ));
