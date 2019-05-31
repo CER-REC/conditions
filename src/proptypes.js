@@ -111,6 +111,12 @@ export const viewTwo = {
     disabled: PropTypes.bool,
     description: PropTypes.string.isRequired,
   })),
+  regionCompanyData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ),
   selected: PropTypes.shape({
     company: PropTypes.number,
     region: PropTypes.number,

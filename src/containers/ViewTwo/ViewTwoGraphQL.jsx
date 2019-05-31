@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
 import ViewTwo from './index';
-import { companyWheelQuery, locationWheelQuery } from '../../queries/viewTwoQueries/wheel';
+import { companyWheelQuery, locationWheelQuery, companiesByRegionQuery } from '../../queries/viewTwoQueries/wheel';
 import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
@@ -14,7 +14,6 @@ export const ViewTwoGraphQL = (props) => {
   if (props.browseBy === 'company') {
     return (
     // The queries must be by company and location and then subdivide.
-    // The common queries such as the condition explorer must be set at the view level
       <Query query={companyWheelQuery}>
         {(wheelQueryProps) => {
           const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQueryProps;
@@ -111,12 +110,35 @@ export const ViewTwoGraphQL = (props) => {
             region => region.id === props.selected.region,
           ).aggregatedCount
           : [];
-        return (<ViewTwo {...props} wheelData={regionsFeatureData} legendItems={legendItems} />);
-      }
-    }
+        return (
+          <Query
+            query={companiesByRegionQuery}
+            variables={{ id: props.selected.region }}
+            skip={!props.selected.region}
+          >
+            {(companiesByRegionProps) => {
+              const data = !companiesByRegionProps.error
+                && !companiesByRegionProps.loading
+                && companiesByRegionProps.data
+                && companiesByRegionProps.data.companiesByRegionId;
+              const omitTypename = (key, value) => (key === '__typename' ? undefined : value);
+              const regionCompanyData = data ? JSON.parse(JSON.stringify(data), omitTypename) : [{ name: '', id: 0 }];
+              return (
+                <ViewTwo
+                  {...props}
+                  wheelData={regionsFeatureData}
+                  legendItems={legendItems}
+                  regionCompanyData={regionCompanyData}
+                />
+              );
+            }}
+          </Query>
+        );
+      }}
     </Query>
   );
 };
+
 export default connect(
   ({ selected, browseBy, search }) => ({
     selected,

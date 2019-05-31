@@ -18,17 +18,6 @@ import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
-const noop = () => {};
-const regionData = {
-  companyData: [
-    { id: '12', name: 'Alberta Trans-Alta e' },
-    { id: '11', name: 'Alberta Trans-Alta è' },
-    { id: '1', name: 'Canada-Montana Pipe Line Company' },
-  ],
-  activeConditionCompanies: ['3'],
-  openProjectDetails: noop,
-};
-
 const availableCategories = [
   'all',
   'oversight & safety',
@@ -38,9 +27,15 @@ const availableCategories = [
 const availableYearRange = { start: 1970, end: 1980 };
 
 class ViewTwo extends React.PureComponent {
-  regionName = this.props.selected.region
-    ? this.props.wheelData.find(region => region.id === this.props.selected.region).name
-    : null;
+  regionName = '';
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.selected.region !== this.props.selected.region) {
+      this.regionName = this.props.selected.region
+        ? this.props.wheelData.find(region => region.id === this.props.selected.region).name
+        : null;
+    }
+  }
 
   render() {
     return (
@@ -84,9 +79,9 @@ class ViewTwo extends React.PureComponent {
               <div className="regionChart">
                 <RegionConditionSummary featureData={this.props.legendItems} />
                 <RegionCompanies
-                  companies={regionData.companyData}
-                  activeConditionCompanies={regionData.activeConditionCompanies}
-                  openProjectDetails={regionData.openProjectDetails}
+                  companies={this.props.regionCompanyData}
+                  activeConditionCompanies={[]}
+                  openProjectDetails={this.props.openProjectDetails}
                 />
               </div>
             )

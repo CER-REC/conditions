@@ -15,6 +15,14 @@ const year = {
   end: 1980,
 };
 
+const regionCompanyData = [
+  { id: 12, name: 'Alberta Trans-Alta e' },
+  { id: 11, name: 'Alberta Trans-Alta è' },
+  { id: 1, name: 'Canada-Montana Pipe Line Company' },
+];
+//   activeConditionCompanies: ['3'],
+// };
+
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
@@ -28,6 +36,8 @@ const props = {
   },
   browseBy: 'company',
   jumpToView3: noop,
+  regionCompanyData,
+  openProjectDetails: noop,
 };
 
 const connectedProps = {
@@ -41,6 +51,7 @@ const connectedProps = {
   browseBy: 'company',
   jumpToView3: noop,
   jumpToView1: noop,
+  regionCompanyData,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)

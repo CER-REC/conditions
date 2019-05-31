@@ -29,7 +29,7 @@
   }
 
   ul {
-    max-height: 100px;
+    max-height: calc(100% - 20px);
 
     margin-top: 2px;
     margin-left: 5px;
