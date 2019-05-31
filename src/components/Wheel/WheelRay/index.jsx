@@ -7,21 +7,8 @@ import { browseByType } from '../../../proptypes';
 import LocationRay from '../LocationRay';
 import handleInteraction from '../../../utilities/handleInteraction';
 
-import { features } from '../../../constants';
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
-
 import CompanyFlag from '../CompanyFlag';
-
-// TODO: get legend to display in the middle of the limits of its occupancy
-// TODO: get the first of each letter to draw a line
-
-const themeKeys = Object.keys(features.theme);
-
-const randomLocationBars = Array(200).fill('')
-  .map(() => themeKeys.map(subFeature => ({
-    value: Math.floor(Math.random() * 15) + 1,
-    fill: features.theme[subFeature],
-  })));
 
 class WheelRay extends React.Component {
   static propTypes = {
@@ -39,16 +26,16 @@ class WheelRay extends React.Component {
 
     // TODO: This shouldn't be in the constructor; load the data and prompt a
     // re-render.
-    const flagData = this.props.items.map(company => company.projectIds);
+    const flagData = props.wheelType === 'company' ? this.props.items.map(company => company.projectIds) : [];
     const calc = flagLayoutCalculation(flagData);
     this.flagLayouts = calc.flagLayouts;
     this.flagScale = calc.flagScale;
   }
 
   shouldComponentUpdate(nextProps) {
-    if (this.props.currentIndex !== nextProps.currentIndex) { return true; }
-    if (this.props.wheelType !== nextProps.wheelType) { return true; }
-    return false;
+    return (this.props.currentIndex !== nextProps.currentIndex
+      || this.props.wheelType !== nextProps.wheelType
+      || this.props.items !== nextProps.items);
   }
 
   render() {
@@ -59,21 +46,18 @@ class WheelRay extends React.Component {
     } = props;
     const width = '19%';
     const halfReservedDegrees = reservedDegrees / 2;
-    const selectedIndex = currentIndex >= 0
-      ? currentIndex : items.length + currentIndex;
-
     let legendTracker = '';
 
     const rays = items.map((item, index) => {
-      if (index === selectedIndex) { return null; }
+      if (index === currentIndex) { return null; }
       let position = rotation;
-      const plotIndex = selectedIndex - index;
+      const plotIndex = currentIndex - index;
       if (plotIndex < 0) {
-        position -= (plotIndex * degreesPerItem) - halfReservedDegrees + (degreesPerItem);
+        position -= (plotIndex * degreesPerItem) - halfReservedDegrees;
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
-      const transform = `rotate(${position.toFixed(2) % 360})`;
+      const transform = `rotate(${(position % 360).toFixed(2)})`;
 
       const componentToReturn = wheelType === 'company'
         ? (
@@ -101,23 +85,23 @@ class WheelRay extends React.Component {
         : (
           <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChange, index)}>
             <LocationRay
-              items={randomLocationBars[index]}
+              items={items[index].aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
               searched
               adjustRotationReference={degreesPerItem / 2}
             />
-            { item.location.province !== legendTracker
+            { item.province !== legendTracker
               ? (
-                <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
-                  {item.location.province}
+                <text className="textLabels" transform="translate(28.75) rotate(90)" textAnchor="middle" {...handleInteraction(props.onChange, index)}>
+                  {item.province}
                 </text>
               ) : null }
           </g>
         );
       legendTracker = props.wheelType === 'company'
         ? item.name.charAt(0)
-        : item.location.province;
+        : item.province;
       return componentToReturn;
     });
 
