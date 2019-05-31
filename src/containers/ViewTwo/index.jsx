@@ -26,8 +26,15 @@ const availableCategories = [
 ];
 const availableYearRange = { start: 1970, end: 1980 };
 
-class ViewTwo extends React.PureComponent {
+class ViewTwo extends React.Component {
   regionName = '';
+
+  constructor() {
+    super();
+    this.state = {
+      wheelMoving: false,
+    };
+  }
 
   componentDidUpdate(prevProps) {
     if (prevProps.selected.region !== this.props.selected.region) {
@@ -36,6 +43,8 @@ class ViewTwo extends React.PureComponent {
         : null;
     }
   }
+
+  setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
   render() {
     return (
@@ -60,6 +69,7 @@ class ViewTwo extends React.PureComponent {
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
               region={this.regionName}
+              className={this.state.wheelMoving ? 'hidden' : ''}
             />
           ) : null}
         </section>
@@ -70,6 +80,7 @@ class ViewTwo extends React.PureComponent {
             selectedRay={this.props.browseBy === 'company' ? this.props.selected.company : this.props.selected.region}
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
             wheelData={this.props.wheelData}
+            wheelMotionTrigger={this.setWheelMoving}
           />
           <GreyPipe mode={this.props.browseBy} />
         </section>
@@ -77,11 +88,15 @@ class ViewTwo extends React.PureComponent {
           {this.props.browseBy === 'location'
             ? (
               <div className="regionChart">
-                <RegionConditionSummary featureData={this.props.legendItems} />
+                <RegionConditionSummary
+                  featureData={this.props.legendItems}
+                  visibility={this.state.wheelMoving ? 'hidden' : ''}
+                />
                 <RegionCompanies
                   companies={this.props.regionCompanyData}
                   activeConditionCompanies={[]}
                   openProjectDetails={this.props.openProjectDetails}
+                  className={this.state.wheelMoving ? 'hidden' : ''}
                 />
               </div>
             )

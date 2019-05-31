@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import handleInteraction from '../../utilities/handleInteraction';
 
@@ -16,7 +17,7 @@ const RegionCompanies = (props) => {
       return (<li key={company.id}>{company.name}{active}</li>);
     });
   return (
-    <div className="RegionCompanies">
+    <div className={classNames('RegionCompanies', props.className)}>
       <div className="title">
         <FormattedMessage id="components.regionCompanies.title" />
       </div>
@@ -34,6 +35,12 @@ RegionCompanies.propTypes = {
   activeConditionCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
   /** A function for opening up the dialog to project details */
   openProjectDetails: PropTypes.func.isRequired,
+  /** A class to hide or show the component according to the movement of the wheel */
+  className: PropTypes.string,
+};
+
+RegionCompanies.defaultProps = {
+  className: '',
 };
 
 export default RegionCompanies;
