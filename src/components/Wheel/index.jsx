@@ -116,7 +116,13 @@ class Wheel extends React.Component {
         <Spring
           native
           immediate={!this.state.wheelModifiers.spin}
-          config={{ tension: 30, friction: 20, precision: 0.1, easing: t => t * t * t * t * t }}
+          config={{
+            tension: 30,
+            friction: 20,
+            precision: 0.05,
+            clamping: true,
+            easing: t => t * t * t * t * t,
+          }}
           onStart={() => {
             this.state.wheelModifiers.spin = false;
             this.props.wheelMotionTrigger(true);
