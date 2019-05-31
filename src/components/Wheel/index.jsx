@@ -154,7 +154,7 @@ class Wheel extends React.Component {
                 </animated.div>
                 <div className="interactiveItems">
                   <svg viewBox="0 0 860 860">
-                    <g transform="scale(2)">
+                    <g className="pullToSpinContainer">
                       <PullToSpin
                         className="pullToSpin"
                         onClickSpin={this.onClickSpin}

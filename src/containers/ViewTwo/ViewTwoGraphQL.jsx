@@ -15,8 +15,8 @@ export const ViewTwoGraphQL = (props) => {
     return (
     // The queries must be by company and location and then subdivide.
       <Query query={companyWheelQuery}>
-        {(wheelQueryProps) => {
-          const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQueryProps;
+        {(wheelQProps) => {
+          const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQProps;
           return (
             <Query
               query={projectMenuQuery}
@@ -73,19 +73,27 @@ export const ViewTwoGraphQL = (props) => {
   }
   return (
     <Query query={locationWheelQuery}>{
-      (allRegionsQueryProps) => {
+      (allRegionsQProps) => {
         // eslint-disable-next-line no-shadow
-        const locationData = allRegionsQueryProps.data.allRegions
-          ? allRegionsQueryProps.data.allRegions.sort(
-            (a, b) => (a.province < b.province ? -1 : 1),
-          )
+        const {
+          data: regionsQData,
+          loading: regionsQLoading,
+          error: regionsQError,
+        } = allRegionsQProps;
+        const locationData = !regionsQLoading && !regionsQError && regionsQData.allRegions
+          ? regionsQData.allRegions.sort((a, b) => {
+            if (a.province === b.province) {
+              return (a.name.en < b.name.en ? -1 : 1);
+            }
+            return (a.province < b.province ? -1 : 1);
+          })
           : [];
         // Get the aggregatedCount and create the graph for each one.
         const regionsFeatureData = locationData.length > 0
           ? locationData.map(region => (
             {
               ...region,
-              // TODO: REMOVE THE TWO FOLLOWING LINES ONCE
+              // TODO: REMOVE THE FOLLOWING LINE ONCE
               // THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
               name: region.name.en,
               province: region.province,
