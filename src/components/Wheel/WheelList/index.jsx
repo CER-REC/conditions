@@ -9,6 +9,9 @@ import './styles.scss';
 const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
 const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
 class WheelList extends React.Component {
+  static wrapIndex= (i, selected, length) => (selected + i + length)
+  % length;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,11 +20,11 @@ class WheelList extends React.Component {
   }
 
   static getDerivedStateFromProps(props) {
-    const wrapIndex = i => (props.selected + i + props.listContent.length)
-    % props.listContent.length;
     const listElements = props.listContent.length > 0
       ? (indexOffsets.map((offset) => {
-        const text = props.listContent[wrapIndex(offset)].name;
+        const text = props.listContent[WheelList.wrapIndex(
+          offset, props.selected, props.listContent.length,
+        )].name;
         return (
           <span
             className={offsetClasses[Math.abs(offset)]}
@@ -36,10 +39,9 @@ class WheelList extends React.Component {
     return { listElements };
   }
 
-  wrapIndex= i => (this.props.selected + i + this.props.listContent.length)
-  % this.props.listContent.length
-
-  handleOnChange = i => this.props.onChange(this.wrapIndex(i - 3));
+  handleOnChange = i => this.props.onChange(
+    WheelList.wrapIndex(i - 3, this.props.selected, this.props.listContent.length),
+  );
 
   render() {
     return (
