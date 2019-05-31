@@ -125,7 +125,8 @@ $states: (
   7: (
     ".guideTranslate": (
       visibility: hidden,
-      transform: translate(87.22%, 5.77%),
+      opacity: 0,
+      transform: translate(87.22%, 5%),
     ),
     ".guideTranslate .Guide": (transform: scale(0.17)),
     ".guideTranslate .CircleContainer": (
