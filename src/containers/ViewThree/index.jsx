@@ -138,7 +138,7 @@ export const ViewThreeGraphQL = props => (
 
       // Placeholder to demonstrate that the query is working
       // eslint-disable-next-line no-console
-      console.dir(data.allConfigurationData);
+      // console.dir(data.allConfigurationData);
 
       return (
         <ViewThree

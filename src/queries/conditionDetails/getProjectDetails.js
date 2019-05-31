@@ -17,14 +17,27 @@ export default gql`
       }
       instruments {
         id
+        name
         instrumentPrefix
         status
+        regions {
+          name {
+            en
+            fr
+          }
+          province
+        }
         instrumentNumber
         dateSunset
         dateIssuance
         dateEffective
         conditions {
           id
+          textLength
+          text {
+            en
+            fr
+          }
           aggregatedCount {
             filing {
               NOT_REQUIRED

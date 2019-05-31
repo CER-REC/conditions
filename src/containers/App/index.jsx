@@ -12,6 +12,7 @@ import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
+import { features } from '../../constants';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -218,11 +219,71 @@ class App extends React.PureComponent {
             ? (
               <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
                 {({ data, loading, error }) => {
-                  console.log(data, loading, error);
+                  if (!data.getProjectById || !data) { return null; }
+                  if (loading) { return <div>loading</div>; }
+                  const { shortName, instruments } = data.getProjectById;
+                  const formattedInstrument = instruments.map((instrument) => {
+                    const {
+                      instrumentNumber,
+                      dateIssuance,
+                      dateEffective,
+                      dateSunset,
+                      status,
+                      regions,
+                      name,
+                      conditions,
+                    } = instrument;
+                    const bins = {
+                      S: 1,
+                      M: 2,
+                      L: 3,
+                    };
+
+                    const formattedConditions = conditions.reduce((acc, next) => {
+                      // TODO: populate details values for `subFeaturesWithValue`
+                      const subFeaturesWithValue = Object.entries(next.aggregatedCount[selected.feature])
+                        .reduce((subAcc, [subFeature, subCount]) => {
+                          if (subFeature === '__typename' || !subCount) return subAcc;
+                          subAcc.fill.push(features[selected.feature][subFeature]);
+                          return subAcc;
+                        },
+                        {
+                          fill: [],
+                          details: {
+                            theme: '',
+                            phase: '',
+                            type: '',
+                            status: '',
+                            filing: '',
+                          },
+                        });
+                      // TODO: keywords needs to be matched search keywords...
+                      // TODO: Handle translations for text
+                      acc.push({
+                        ...subFeaturesWithValue,
+                        binnedValue: bins[next.textLength],
+                        keywords: [''],
+                        text: next.text.en,
+                      });
+                      return acc;
+                    }, []);
+                    // TODO: handle multiple locations for `instrument.regions`
+                    return {
+                      instrumentNumber,
+                      issuanceDate: dateIssuance,
+                      effectiveDate: dateEffective,
+                      sunsetDate: dateSunset,
+                      status,
+                      location: regions[0] ? `${regions[0].name.en}, ${regions[0].province}` : '',
+                      activity: name,
+                      conditions: formattedConditions,
+                    };
+                  });
+                  console.log(formattedInstrument);
                   return (
                     <ConditionDetails
                       selectedItem={this.props.selected.condition}
-                      selectedProject="Selected Project"
+                      selectedProject={shortName.en}
                       updateSelectedItem={this.props.setSelectedCondition}
                       openIntermediatePopup={this.props.openIntermediatePopup}
                       openProjectDetails={this.props.openProjectDetails}
@@ -264,7 +325,7 @@ App.propTypes = {
   openProjectDetails: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     project: PropTypes.number,
-    feature: PropTypes.string.isRequired,
+    subFeature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
