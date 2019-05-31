@@ -121,7 +121,6 @@ export const viewTwo = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
-  // setBrowseBy: PropTypes.func.isRequired,
   setFindAny: PropTypes.func.isRequired,
   setProjectYear: PropTypes.func.isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -140,10 +139,6 @@ export const viewTwo = {
     isExpandable: PropTypes.bool,
     expanded: PropTypes.bool,
     selectedProject: PropTypes.string.isRequired,
-    // searchKeywords: PropTypes.shape({
-    //   include: PropTypes.arrayOf(PropTypes.string),
-    //   exclude: PropTypes.arrayOf(PropTypes.string),
-    // }),
     data: conditionData.isRequired,
   }).isRequired,
   setSelectedCondition: PropTypes.func.isRequired,

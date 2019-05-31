@@ -16,8 +16,8 @@ export const ViewTwoGraphQL = (props) => {
     // The queries must be by company and location and then subdivide.
     // The common queries such as the condition explorer must be set at the view level
       <Query query={companyWheelQuery}>
-        {(wheelQueryProps) => {
-          const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQueryProps;
+        {(wheelQProps) => {
+          const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQProps;
           return (
             <Query
               query={projectMenuQuery}
@@ -74,15 +74,15 @@ export const ViewTwoGraphQL = (props) => {
   }
   return (
     <Query query={locationWheelQuery}>{
-      (allRegionsQueryProps) => {
+      (allRegionsQProps) => {
         // eslint-disable-next-line no-shadow
         const {
-          data: regionsData,
-          loading: regionsLoading,
-          error: regionsError,
-        } = allRegionsQueryProps;
-        const locationData = !regionsLoading && !regionsError && regionsData.allRegions
-          ? regionsData.allRegions.sort((a, b) => {
+          data: regionsQData,
+          loading: regionsQLoading,
+          error: regionsQError,
+        } = allRegionsQProps;
+        const locationData = !regionsQLoading && !regionsQError && regionsQData.allRegions
+          ? regionsQData.allRegions.sort((a, b) => {
             if (a.province === b.province) {
               return (a.name.en < b.name.en ? -1 : 1);
             }
