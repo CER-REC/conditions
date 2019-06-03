@@ -104,7 +104,7 @@ class ViewTwo extends React.Component {
               <React.Fragment>
                 <TotalConditionsLabel />
                 <ProjectMenu
-                  loading={this.props.projectMenuLoading}
+                  loading={this.state.wheelMoving}
                   projectsData={this.props.projectsData}
                   selectedProjectID={this.props.selected.project}
                   onChange={this.props.setSelectedProject}
