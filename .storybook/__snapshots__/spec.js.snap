@@ -291,7 +291,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by
+          Projects by 
           <span
             className="LastWord"
           >
@@ -352,7 +352,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by
+          Conditions by 
           <span
             className="LastWord"
           >
@@ -433,7 +433,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by
+          Projects by 
           <span
             className="LastWord"
           >
@@ -494,7 +494,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by
+          Conditions by 
           <span
             className="LastWord"
           >
@@ -575,7 +575,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by
+          Projects by 
           <span
             className="LastWord"
           >
@@ -636,7 +636,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by
+          Conditions by 
           <span
             className="LastWord"
           >
@@ -708,7 +708,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByCompany 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by
+          Projects by 
           <span
             className="LastWord"
           >
@@ -780,7 +780,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByLocation 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Projects by
+          Projects by 
           <span
             className="LastWord"
           >
@@ -852,7 +852,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn with state toggle 1`] = `
         className="BrowseByBtn-ButtonText"
       >
         <span>
-          Conditions by
+          Conditions by 
           <span
             className="LastWord"
           >
@@ -989,7 +989,7 @@ exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
         y="-12"
       >
         With Circle
-
+        
       </text>
     </g>
   </svg>
@@ -1031,7 +1031,7 @@ exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
         y="-12"
       >
         Without circle
-
+        
       </text>
     </g>
   </svg>
@@ -1162,7 +1162,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     >
       <h2>
         Full Project Name:
-
+         
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -1282,7 +1282,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     >
       <h2>
         Full Project Name:
-
+         
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -1777,7 +1777,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Issuance Date
             </span>
-            :
+            : 
             2014-10-24
           </div>
           <div
@@ -1788,7 +1788,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Number
             </span>
-            :
+            : 
             <button
               className="instrumentLink"
               focusable={true}
@@ -1808,7 +1808,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Effective Date
             </span>
-            :
+            : 
             2014-10-24
           </div>
           <div
@@ -1819,7 +1819,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Status
             </span>
-            :
+            : 
             <span>
               In Progress
             </span>
@@ -1832,7 +1832,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Sunset Date
             </span>
-            :
+            : 
             2019-01-30
           </div>
           <div
@@ -1843,7 +1843,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Location
             </span>
-            :
+            : 
             Albuquerque, NM
           </div>
           <div
@@ -1854,7 +1854,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Type
             </span>
-            :
+            : 
             Construction of Oil Pipeline
           </div>
           <p
@@ -1865,23 +1865,23 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             >
               Instrument Activity
             </span>
-            :
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+            : 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
           </p>
           <p
             className="contentText"
           >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
           </p>
           <p
             className="contentText"
           >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
           </p>
           <p
             className="contentText"
           >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
+            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
           </p>
           <p
             className="contentText"
@@ -2324,7 +2324,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Issuance Date
               </span>
-              :
+              : 
               2014-10-24
             </div>
             <div
@@ -2335,7 +2335,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Number
               </span>
-              :
+              : 
               <button
                 className="instrumentLink"
                 focusable={true}
@@ -2355,7 +2355,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Effective Date
               </span>
-              :
+              : 
               2014-10-24
             </div>
             <div
@@ -2366,7 +2366,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Status
               </span>
-              :
+              : 
               <span>
                 In Progress
               </span>
@@ -2379,7 +2379,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Sunset Date
               </span>
-              :
+              : 
               2019-01-30
             </div>
             <div
@@ -2390,7 +2390,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Location
               </span>
-              :
+              : 
               Albuquerque, NM
             </div>
             <div
@@ -2401,7 +2401,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Type
               </span>
-              :
+              : 
               Construction of Oil Pipeline
             </div>
             <p
@@ -2412,23 +2412,23 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               >
                 Instrument Activity
               </span>
-              :
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+              : 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
             </p>
             <p
               className="contentText"
             >
-              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
             </p>
             <p
               className="contentText"
             >
-              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
             </p>
             <p
               className="contentText"
             >
-              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
+              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
             </p>
             <p
               className="contentText"
@@ -2847,7 +2847,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Issuance Date
             </span>
-            :
+            : 
             2014-10-24
           </div>
           <div
@@ -2858,7 +2858,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Number
             </span>
-            :
+            : 
             <button
               className="instrumentLink"
               focusable={true}
@@ -2878,7 +2878,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Effective Date
             </span>
-            :
+            : 
             2014-10-24
           </div>
           <div
@@ -2889,7 +2889,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Status
             </span>
-            :
+            : 
             <span>
               In Progress
             </span>
@@ -2902,7 +2902,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Sunset Date
             </span>
-            :
+            : 
             2019-01-30
           </div>
           <div
@@ -2913,7 +2913,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Location
             </span>
-            :
+            : 
             Albuquerque, NM
           </div>
           <div
@@ -2924,7 +2924,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Type
             </span>
-            :
+            : 
             Construction of Oil Pipeline
           </div>
           <p
@@ -2935,23 +2935,23 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             >
               Instrument Activity
             </span>
-            :
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+            : 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
           </p>
           <p
             className="contentText"
           >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
           </p>
           <p
             className="contentText"
           >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
           </p>
           <p
             className="contentText"
           >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
+            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
           </p>
           <p
             className="contentText"
@@ -3309,7 +3309,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Effective Date
         </span>
-        :
+        : 
         2014-10-24
       </div>
       <div
@@ -3320,7 +3320,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Instrument Number
         </span>
-        :
+        : 
         <button
           className="instrumentLink"
           focusable={true}
@@ -3340,7 +3340,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Keywords
         </span>
-        :
+        : 
         program
       </div>
       <p
@@ -3351,23 +3351,23 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         >
           Text
         </span>
-        :
-        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+        : 
+        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
       </p>
       <p
         className="contentText"
       >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
       </p>
       <p
         className="contentText"
       >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
       </p>
       <p
         className="contentText"
       >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
+        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
       </p>
       <p
         className="contentText"
@@ -3417,7 +3417,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Issuance Date
         </span>
-        :
+        : 
         2014-10-24
       </div>
       <div
@@ -3428,7 +3428,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Number
         </span>
-        :
+        : 
         <button
           className="instrumentLink"
           focusable={true}
@@ -3448,7 +3448,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Effective Date
         </span>
-        :
+        : 
         2014-10-24
       </div>
       <div
@@ -3459,7 +3459,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Status
         </span>
-        :
+        : 
         <span>
           In Progress
         </span>
@@ -3472,7 +3472,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Sunset Date
         </span>
-        :
+        : 
         2019-01-30
       </div>
       <div
@@ -3483,7 +3483,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Location
         </span>
-        :
+        : 
         Albuquerque, NM
       </div>
       <div
@@ -3494,7 +3494,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Type
         </span>
-        :
+        : 
         Construction of Oil Pipeline
       </div>
       <p
@@ -3505,23 +3505,23 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         >
           Instrument Activity
         </span>
-        :
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+        : 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
       </p>
       <p
         className="contentText"
       >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
       </p>
       <p
         className="contentText"
       >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
       </p>
       <p
         className="contentText"
       >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
+        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
       </p>
       <p
         className="contentText"
@@ -3569,7 +3569,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         >
           Theme
         </span>
-        :
+        : 
         This is a full block
       </div>
       <div
@@ -3580,7 +3580,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock full block 1`] = `
         >
           Theme
         </span>
-        :
+        : 
         This is a full block
       </div>
     </div>
@@ -3604,7 +3604,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         >
           Theme
         </span>
-        :
+        : 
         This is a half block
       </div>
       <div
@@ -3615,7 +3615,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock half block 1`] = `
         >
           Theme
         </span>
-        :
+        : 
         This is a half block
       </div>
     </div>
@@ -3650,7 +3650,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Theme
           </span>
-          :
+          : 
           <span>
             Environmental Protection
           </span>
@@ -3663,7 +3663,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Instrument
           </span>
-          :
+          : 
           <span>
             Construction
           </span>
@@ -3676,7 +3676,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Phase
           </span>
-          :
+          : 
           <span>
             During Construction Phase
           </span>
@@ -3689,7 +3689,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Type
           </span>
-          :
+          : 
           <span>
             Standard
           </span>
@@ -3702,7 +3702,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Status
           </span>
-          :
+          : 
           <span>
             In Progress
           </span>
@@ -3715,7 +3715,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Filing
           </span>
-          :
+          : 
           <span>
             No Filing Required
           </span>
@@ -3999,28 +3999,28 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           The genesis and scope of conditions
         </h1>
         <p>
-          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal
+          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
           <a
             href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-
+             
             laws, acts and regulations
-
+             
           </a>
            are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
         </p>
         <p>
-          These different sorts of requirements expressed in conditions are the Themes which can be explored
+          These different sorts of requirements expressed in conditions are the Themes which can be explored 
           <a
             href=""
             rel="noopener noreferrer"
             target="_blank"
           >
-
+             
             here
-
+             
           </a>
            in this data visualization.
         </p>
@@ -4028,48 +4028,48 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
         </p>
         <p>
-          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable
+          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
           <a
             href=""
             rel="noopener noreferrer"
             target="_blank"
           >
-
+             
             here
-
+             
           </a>
           . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
         </p>
         <p>
-          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the
+          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
           <a
             href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-
+             
             application process
-
+             
           </a>
-           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in
+           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
           <a
             href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-
+             
             hearings
-
+             
           </a>
-          , individuals must apply (more info about how to become an intervenor
+          , individuals must apply (more info about how to become an intervenor 
           <a
             href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-
+             
             here
-
+             
           </a>
           )
         </p>
@@ -4462,7 +4462,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     className="FeatureTypesDescription"
   >
     <p>
-      *
+      * 
       Conditions with multiple themes are counted more than once.
     </p>
     <h4
@@ -4710,7 +4710,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     className="FeatureTypesDescription"
   >
     <p>
-      *
+      * 
       The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.
     </p>
     <h4
@@ -5138,7 +5138,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           <span
             className="FlagDesc"
           >
-             &gt;10
+             &gt;10 
           </span>
         </div>
       </div>
@@ -5714,7 +5714,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
         r="48"
       />
       <path
-        d="M 15 50
+        d="M 15 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -5724,7 +5724,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
 "
       />
       <path
-        d="M 44 50
+        d="M 44 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -5776,7 +5776,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
         r="48"
       />
       <path
-        d="M 15 50
+        d="M 15 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -5786,7 +5786,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
 "
       />
       <path
-        d="M 44 50
+        d="M 44 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -5825,7 +5825,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
         r="48"
       />
       <path
-        d="M 15 50
+        d="M 15 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -5835,7 +5835,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
 "
       />
       <path
-        d="M 44 50
+        d="M 44 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -5893,7 +5893,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
         r="48"
       />
       <path
-        d="M 15 50
+        d="M 15 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -5903,7 +5903,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
 "
       />
       <path
-        d="M 44 50
+        d="M 44 50 
   l 18 -23
   l 18 0
   l -18 23
@@ -12803,7 +12803,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                   }
                 >
                   <div>
-
+                    
                   </div>
                 </div>
               </div>
@@ -13013,7 +13013,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                 className="ProjectName"
               >
                 <p>
-
+                  
                 </p>
               </div>
             </div>
@@ -13088,7 +13088,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                   }
                 >
                   <div>
-
+                    
                   </div>
                 </div>
               </div>
@@ -13298,7 +13298,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                 className="ProjectName"
               >
                 <p>
-
+                  
                 </p>
               </div>
             </div>
@@ -13330,7 +13330,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                   }
                 >
                   <div>
-
+                    
                   </div>
                 </div>
               </div>
@@ -13540,7 +13540,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                 className="ProjectName"
               >
                 <p>
-
+                  
                 </p>
               </div>
             </div>
@@ -14740,7 +14740,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
         className="ProjectName"
       >
         <p>
-
+          
         </p>
       </div>
     </div>
@@ -14907,12 +14907,12 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument
+        Search for instrument 
         <strong>
           #
           XO-001-2018
         </strong>
-         in
+         in 
         <strong>
           Regdocs...
         </strong>
@@ -15075,12 +15075,12 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument
+        Search for instrument 
         <strong>
           #
           XO-001-2018
         </strong>
-         in
+         in 
         <strong>
           Regdocs...
         </strong>
@@ -15651,9 +15651,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-
+           
           Find Words
-
+           
         </span>
         <span
           className="iconSvg"
@@ -15691,9 +15691,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-
+           
           Filter
-
+           
         </span>
         <span
           className="iconSvg"
@@ -15720,15 +15720,15 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         Showing all projects from
       </span>
       <span>
-
+         
         1970
-         -
+         - 
         1980
-
+         
       </span>
       <p>
         Highlighting conditions containing
-         :
+         : 
       </p>
       <div
         className="keywordsText"
@@ -15760,9 +15760,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         <span
           className="upperCase"
         >
-
+           
           Reset
-
+           
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -16079,9 +16079,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           <span
             className="upperCase"
           >
-
+             
             In Progress
-
+             
           </span>
         </li>
         <li
@@ -16094,9 +16094,9 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           <span
             className="upperCase"
           >
-
+             
             Completed
-
+             
           </span>
         </li>
       </ul>
@@ -16135,9 +16135,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         <span
           className="upperCase"
         >
-
+           
           Reset
-
+           
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -16454,9 +16454,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           <span
             className="upperCase"
           >
-
+             
             In Progress
-
+             
           </span>
         </li>
         <li
@@ -16469,9 +16469,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           <span
             className="upperCase"
           >
-
+             
             Completed
-
+             
           </span>
         </li>
       </ul>
@@ -16510,9 +16510,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         <span
           className="upperCase"
         >
-
+           
           Reset
-
+           
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -16829,9 +16829,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           <span
             className="upperCase"
           >
-
+             
             In Progress
-
+             
           </span>
         </li>
         <li
@@ -16844,9 +16844,9 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           <span
             className="upperCase"
           >
-
+             
             Completed
-
+             
           </span>
         </li>
       </ul>
@@ -16879,15 +16879,15 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         Showing all projects from
       </span>
       <span>
-
+         
         2010
-         -
+         - 
         2018
-
+         
       </span>
       <p>
         Highlighting conditions containing
-         :
+         : 
       </p>
       <div
         className="keywordsText"
@@ -16896,7 +16896,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       </div>
       <p>
         Exclude conditions containing
-         :
+         : 
       </p>
       <div
         className="keywordsText"
@@ -16928,9 +16928,9 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <span
           className="upperCase"
         >
-
+           
           Reset
-
+           
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -17018,13 +17018,13 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="anyText"
         >
           <span>
-
+             
             <span
               className="upperCase"
             >
-
+               
               any
-
+               
             </span>
              of the following:
           </span>
@@ -17033,8 +17033,8 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="keywordsText"
         >
           <span>
-
-
+            
+             
           </span>
         </div>
         <div />
@@ -17071,16 +17071,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <h1
         className="keywordsTitle"
       >
-
+         
         Suggested Keywords
-
+          
       </h1>
       <p
         className="description"
       >
-
+         
         Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
-
+          
       </p>
       <ul
         className="categories"
@@ -17088,9 +17088,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         <li
           className="viewText"
         >
-
+           
           View By
-          :
+          :  
         </li>
         <li
           className="categoryList upperCase selectedCategory"
@@ -17099,7 +17099,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-
+           
           all
         </li>
         <li
@@ -17109,7 +17109,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-
+           
           wildlife & habitat
         </li>
         <li
@@ -17119,7 +17119,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-
+           
           environment
         </li>
         <li
@@ -17129,7 +17129,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-
+           
           engineering & structures
         </li>
         <li
@@ -17139,7 +17139,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-
+           
           administration & filings
         </li>
       </ul>
@@ -17148,7 +17148,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       >
         <span>
           Sort by
-
+           
         </span>
         <span
           className={null}
@@ -17157,7 +17157,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-
+           
           Frequency
         </span>
          | 
@@ -17193,9 +17193,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           <span
             className="upperCase"
           >
-
+             
             none
-
+             
           </span>
         </span>
       </div>
@@ -17237,7 +17237,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="keywordCategory selectedText"
             >
               deer
-
+               
             </div>
             <svg
               className="BarContainer"
@@ -17303,7 +17303,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="keywordCategory regularText"
             >
               alberta
-
+               
             </div>
             <svg
               className="BarContainer"
@@ -17348,7 +17348,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
           type="button"
         >
-
+           
           Close
         </button>
       </div>
@@ -17405,7 +17405,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               className="keywordCategory regularText"
             >
               deer
-
+               
             </div>
             <svg
               className="BarContainer"
@@ -17471,7 +17471,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               className="keywordCategory regularText"
             >
               alberta
-
+               
             </div>
             <svg
               className="BarContainer"
@@ -17576,9 +17576,9 @@ exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
       <span
         className="tabText"
       >
-
+         
         Filter
-
+         
       </span>
       <span
         className="iconSvg"
@@ -17618,9 +17618,9 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
       <span
         className="tabText"
       >
-
+         
         Find Words
-
+         
       </span>
       <span
         className="iconSvg"
