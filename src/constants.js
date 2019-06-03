@@ -74,3 +74,5 @@ export const provinces = {
   'Atlantic provinces and Québec': 'ATL-Q',
   'Other provinces and territories': 'OtherProvinces',
 };
+
+export const guideSize = 128;
