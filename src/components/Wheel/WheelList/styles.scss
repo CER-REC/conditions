@@ -24,12 +24,14 @@
     background-color: $LightGray;
     border-radius: 1.5% 1.5% / 24px 0 0 24px;
     line-height: 24px;
+    
     span {
       font-size: 14px;
       line-height: 24px;
       color: $Black77;
       font-family: $fira-sans-condensed;
     }
+    
     .label {
       position: absolute;
       left: 0;
@@ -46,7 +48,6 @@
     .selected {
       position: absolute;
       left: 35%;
-      margin-left: 4.5%;
       width: 60%;
       overflow: hidden;
       text-align: left;
@@ -60,19 +61,30 @@
     width: 100%;
     height: 47%;
     margin: auto;
-    overflow: hidden;
     border-radius: 50%;
+    // overflow: hidden;
     white-space: nowrap;
     position: absolute;
-    top: 26%;
+    top: calc(26% - 1px);
+    
     .List-Item.selected {
       line-height: 24px;
       background: transparent;
-      width: fit-content;
+      width: 100%;
+      margin-top: 1px;
+      margin-bottom: 1px;
+      overflow: visible;
+
       .List-Item-Content {
+        height: 24px;
         background-color: transparent;
+        width: 160%;
+        margin-left: 3%;
+
         span {
+          float: left;
           visibility: hidden;
+          overflow: hidden;
         }
       }
     }
@@ -81,20 +93,28 @@
   .list {
     position: absolute;
     left: 45%;
-    width: 55%;
     height: 100%;
-    pointer-events: all;
+    width: 55%;
+    
     .List{
       position: absolute;
       height: 100%;
-      width: 100%;
+      width: 98%;
       top: 0%;
+      pointer-events: auto;
+      
       ul {
         position: absolute;
         top: 50%;
+        width: 100%;
         transform: translateY(-50%);
       }
     }
+  }
+
+  .List-Item-Content:not(.selected){
+    text-overflow: clip;
+    overflow: hidden;
   }
 
   .oneAway {
