@@ -85,6 +85,7 @@ class App extends React.PureComponent {
     this.state = {
       mainInfoBarPane: '',
       tutorialPlaying: false,
+      syncedGuidePosition: { x: 0, y: 0 },
     };
     this.ref = React.createRef();
   }
@@ -211,6 +212,29 @@ class App extends React.PureComponent {
     });
   };
 
+  beginTutorial = (guidePosition) => {
+    this.updateSyncedGuidePosition(guidePosition);
+
+    setTimeout(() => {
+      this.togglePlay(true);
+      this.incrementTransitionState();
+    }, 100);
+  };
+
+  updateSyncedGuidePosition = (guidePosition) => {
+    const app = this.ref.current;
+    const explorer = app.querySelector('.ViewOne .explorer');
+
+    if (!app || !explorer) { return; }
+
+    const pixelsX = explorer.offsetLeft - app.offsetLeft + guidePosition.x;
+    const pixelsY = explorer.offsetTop - app.offsetTop + guidePosition.y + guidePosition.r;
+    const x = 100 * pixelsX / app.offsetWidth;
+    const y = 100 * pixelsY / app.offsetHeight;
+
+    this.setState({ syncedGuidePosition: { x, y } });
+  };
+
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
@@ -256,11 +280,31 @@ class App extends React.PureComponent {
               * percentages relative to the element being translated; the Guide circle itself
               * can't use percentages for translating to a given position relative to the app.
               */}
-            <div className="guideTranslate">
+            <div
+              className="guideTranslate"
+              style={(
+                transitionState === transitionStates.view1
+                || transitionState === transitionStates.view1Reset
+              )
+                ? {
+                  transform: `translate(${this.state.syncedGuidePosition.x}%, ${this.state.syncedGuidePosition.y}%)`,
+                }
+                : null
+              }
+            >
               <Guide step={guideStep} onClick={this.handleGuideClick} />
             </div>
           </div>
-          <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
+          <ViewOne
+            jumpToAbout={this.jumpToAbout}
+            setSelectedKeyword={this.setSelectedKeyword}
+            beginTutorial={this.beginTutorial}
+            physicsPaused={(
+              transitionState > transitionStates.view1
+              && transitionState !== transitionStates.view1Reset
+            )}
+            explorerRef={this.explorerRef}
+          />
           <section className="appControls">
             <BrowseBy
               showArrow={

@@ -17,7 +17,7 @@ $faded: 0.3;
 $states: (
   0: (
     ".guideTranslate": (
-      transform: translate(30%, 30%)
+      opacity: 0,
     ),
     ".ViewTwo": (pointer-events: none),
     ".ViewTwo .header": (opacity: 0),
@@ -45,7 +45,11 @@ $states: (
   // 8 resets from View 2 -> 1, just with different transitions
   8: (),
   1: (
-    ".guideTranslate": (transform: translate(58%, 76%)),
+    ".guideTranslate": (
+      transform: translate(58%, 76%),
+      opacity: 1,
+      transition: 'transform $defaultTransition',
+    ),
     ".appControls .BrowseByBtn.location": (opacity: 0),
     ".appControls .GuideTransport": (
       opacity: 1,
@@ -59,7 +63,10 @@ $states: (
     ".ConditionDetails .contentPane": (opacity: 1),
   ),
   2: (
-    ".guideTranslate": (transform: translate(72%, 22%)),
+    ".guideTranslate": (
+      transform: translate(72%, 22%),
+      transition: 'transform $defaultTransition, opacity $defaultTransition',
+    ),
     ".ConditionDetails .contentPane": (opacity: $faded),
     ".ViewTwo .menus": (opacity: 1),
     ".ViewTwo .legend": (opacity: 1),
