@@ -44,7 +44,8 @@ class ProjectMenu extends React.PureComponent {
 
   handleConditionChange = (listItemIndex) => {
     if (this.props.loading) { return; }
-    const visibleListItems = this.getListItems(this.props.projectsData, this.props.selectedProjectID);
+    const visibleListItems = this.getListItems(this.props.projectsData,
+      this.props.selectedProjectID);
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
