@@ -230,11 +230,11 @@ class App extends React.PureComponent {
     if (transitionState < (transitionStates.view2 - 1)
     || transitionState === transitionStates.view1Reset) {
       labelId = 'skip';
-    } else if (transitionState > 9) {
+    } else if (transitionState === transitionStates.view3) {
       labelId = 'return';
     }
 
-    const conditionDetailsViewProps = (transitionState === 10)
+    const conditionDetailsViewProps = (transitionState === transitionStates.view3)
       ? {
         isExpandable: true,
         toggleExpanded: this.props.expandDetailView,
