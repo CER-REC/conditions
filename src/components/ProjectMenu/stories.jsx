@@ -1,5 +1,6 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ProjectMenu from '.';
@@ -8,6 +9,7 @@ import { projectsData, loadingProjectsData } from '../../mockData';
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
+  .addDecorator(withKnobs)
   .addDecorator(withStyles(`
     .ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }
   `))
@@ -16,6 +18,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
     <ProjectMenu
       projectsData={projectsData}
       selectedFeature="theme"
+      loading={boolean('Loading', false)}
       {...getInteractionProps()}
     />
   ), {
@@ -41,7 +44,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={[{ ...loadingProjectsData, id: 0 }]}
       selectedProjectID={0}
       selectedFeature="theme"
-      loading
+      loading={boolean('Loading', true)}
       {...getInteractionProps()}
     />
   ))

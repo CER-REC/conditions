@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
@@ -104,7 +103,7 @@ class ViewTwo extends React.Component {
               <React.Fragment>
                 <TotalConditionsLabel />
                 <ProjectMenu
-                  loading={this.state.wheelMoving}
+                  loading={this.state.wheelMoving || this.props.projectMenuLoading}
                   projectsData={this.props.projectsData}
                   selectedProjectID={this.props.selected.project}
                   onChange={this.props.setSelectedProject}
