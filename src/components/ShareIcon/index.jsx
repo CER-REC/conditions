@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Request from 'client-request/promise';
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
+import RouteComputations from '../../RouteComputations';
+import { appHost } from '../../constants';
 
 class ShareIcon extends React.PureComponent {
   /*
@@ -13,30 +16,49 @@ class ShareIcon extends React.PureComponent {
   };
   */
  // TODO: Implement Bitly service to get shortened url
- getBitlyURL = () => document.location.href;
+  getBitlyURL = () => {
+    const bitlyEndpoint = RouteComputations.bitlyEndpoint();
+    const shortenUrl = RouteComputations.bitlyParameter('en');
+
+    const options = {
+      uri: `${bitlyEndpoint}?shortenUrl=${shortenUrl}`,
+      json: true,
+    };
+    return Request(options)
+      .then((response) => {
+        if (response.body.status_code !== 200) {
+          return appHost;
+        }
+        return response.body.data.url;
+      }).catch(() => appHost);
+  };
 
   handleOnClick = () => {
     if (this.props.target === 'email') {
-      const url = 'mailto:?subject=&body=';
-      window.location.assign(url);
-      return;
+      this.getBitlyURL().then((url) => {
+        const emailBody = url;
+        const emailUrl = `mailto:?subject=; &body= ${emailBody}`;
+        window.location.href = emailUrl;
+      });
     }
-    const url = this.getBitlyURL(); // TODO: get shortened bitly URL
-    let locationUrl;
     if (this.props.target === 'facebook') {
-      locationUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      this.getBitlyURL().then((bitlyUrl) => {
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${bitlyUrl}`;
+        window.open(facebookUrl, 'targetWindow', 'width=650,height=650');
+      });
     }
     if (this.props.target === 'linkedin') {
-      locationUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&summary=${url}`;
+      this.getBitlyURL().then((bitlyUrl) => {
+        const locationUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${bitlyUrl}&summary=${bitlyUrl}`
+        window.open(locationUrl, 'targetWindow', 'width=650,height=650');
+      });
     }
     if (this.props.target === 'twitter') {
-      locationUrl = `https://twitter.com/intent/tweet?url=${url}`;
+      this.getBitlyURL().then((bitlyUrl) => {
+        const locationUrl = `https://twitter.com/intent/tweet?url=${bitlyUrl}`;
+        window.open(locationUrl, 'targetWindow', 'width=650,height=650');
+      });
     }
-    window.open(
-      `${locationUrl}`,
-      'targetWindow',
-      'width=650,height=650',
-    );
   }
 
   render() {

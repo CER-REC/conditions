@@ -74,3 +74,7 @@ export const provinces = {
   'Atlantic provinces and Québec': 'ATL-Q',
   'Other provinces and territories': 'OtherProvinces',
 };
+
+export const appHost = ((process.env.NODE_ENV === 'production')
+  ? 'https://apps2.neb-one.gc.ca'
+  : 'http://localhost:3003');
