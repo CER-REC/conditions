@@ -12,11 +12,12 @@ import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import i18nMessages from '../../i18n';
 
-import conditionsPerYearQuery from '../../queries/conditionsPerYear';
-
 import { processConditionCounts } from './processQueryData';
+
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
+import conditionsPerYearQuery from '../../queries/conditionsPerYear';
+import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -213,6 +214,8 @@ class App extends React.PureComponent {
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
+    console.dir(this.props.configData);
+
     this.processedConditionCounts = this.processedConditionCounts
       || processConditionCounts(this.props.conditionsPerYear);
 
@@ -389,17 +392,25 @@ export default props => (
     <IntlProvider locale="en" messages={i18nMessages.en}>
       <ApolloProvider client={client}>
         <Provider store={store}>
-          <Query query={conditionsPerYearQuery}>
-            {({ data: conditionsData, loading: conditionsLoading }) => {
-              if (conditionsLoading || !conditionsData) return null;
+          <Query query={initialConfigurationDataQuery}>
+            {({ data: configData, loading: configLoading }) => (
+              <Query query={conditionsPerYearQuery}>
+                {({ data: conditionsData, loading: conditionsLoading }) => {
+                  if (
+                    conditionsLoading || !conditionsData
+                    || configLoading || !configData
+                  ) return null;
 
-              return (
-                <ConnectedApp
-                  conditionsPerYear={conditionsData.conditionsPerYear}
-                  {...props}
-                />
-              );
-            }}
+                  return (
+                    <ConnectedApp
+                      conditionsPerYear={conditionsData.conditionsPerYear}
+                      configData={configData.allConfigurationData}
+                      {...props}
+                    />
+                  );
+                }}
+              </Query>
+            )}
           </Query>
         </Provider>
       </ApolloProvider>

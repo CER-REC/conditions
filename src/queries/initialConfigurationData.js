@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
-export const displayOrder = gql`
+export default gql`
   query {
     allConfigurationData{
       displayOrder {
