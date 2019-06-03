@@ -3,12 +3,18 @@ import gql from 'graphql-tag';
 // eslint-disable-next-line import/prefer-default-export
 export default gql`
   query {
-    allConfigurationData{
+    allConfigurationData {
       displayOrder {
+        conditionFiling {
+          en
+        }
         conditionPhase {
           en
         }
         conditionStatus {
+          en
+        }
+        conditionType {
           en
         }
         instrumentStatus {
@@ -21,6 +27,11 @@ export default gql`
           en
         }
       }
+      instrumentYearRange {
+        max
+        min
+      }
+      lastUpdated
     }
   }
 `;

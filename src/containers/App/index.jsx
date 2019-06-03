@@ -28,6 +28,7 @@ import createStore from '../../Store';
 
 import {
   browseByType,
+  allConditionsPerYearType,
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
@@ -214,10 +215,8 @@ class App extends React.PureComponent {
   render() {
     const { transitionState, browseBy, setBrowseBy } = this.props;
 
-    console.dir(this.props.configData);
-
     this.processedConditionCounts = this.processedConditionCounts
-      || processConditionCounts(this.props.conditionsPerYear);
+      || processConditionCounts(this.props.allConditionsPerYear);
 
     let guideStep = transitionState;
     if (guideStep === transitionStates.view1Reset) {
@@ -348,6 +347,7 @@ App.propTypes = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
+  allConditionsPerYear: allConditionsPerYearType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -403,7 +403,7 @@ export default props => (
 
                   return (
                     <ConnectedApp
-                      conditionsPerYear={conditionsData.conditionsPerYear}
+                      allConditionsPerYear={conditionsData.conditionsPerYear}
                       configData={configData.allConfigurationData}
                       {...props}
                     />

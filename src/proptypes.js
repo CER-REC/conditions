@@ -45,7 +45,7 @@ export const project = PropTypes.shape({
   aggregatedCount: featureData.isRequired,
 });
 
-export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);
+export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
 
 export const ConditionsByCommodityOrInstrument = PropTypes.shape({
   prefix: PropTypes.string.isRequired,

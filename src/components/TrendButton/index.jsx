@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import StreamGraph from '../StreamGraph';
-import { allConditionsPerYear, featureTypes } from '../../proptypes';
+import { allConditionsPerYearType, featureTypes } from '../../proptypes';
 
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
@@ -35,7 +35,7 @@ export default TrendButton;
 TrendButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   years: PropTypes.arrayOf(PropTypes.number).isRequired,
-  countsData: allConditionsPerYear.isRequired,
+  countsData: allConditionsPerYearType.isRequired,
   feature: featureTypes.isRequired,
   subFeature: PropTypes.string.isRequired,
 };

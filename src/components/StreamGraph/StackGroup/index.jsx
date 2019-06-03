@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChartIndicator from '../../ChartIndicator';
-import { allConditionsPerYear } from '../../../proptypes';
+import { allConditionsPerYearType } from '../../../proptypes';
 
 import './styles.scss';
 
@@ -146,7 +146,7 @@ class StackGroup extends React.PureComponent {
 StackGroup.propTypes = {
   children: PropTypes.node,
   controlYear: PropTypes.number,
-  countsData: allConditionsPerYear.isRequired,
+  countsData: allConditionsPerYearType.isRequired,
   onChange: PropTypes.func.isRequired,
   stackProps: PropTypes.shape({
     domain: PropTypes.shape({

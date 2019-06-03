@@ -5,7 +5,7 @@ import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
 import { features } from '../../constants';
-import { allConditionsPerYear } from '../../proptypes';
+import { allConditionsPerYearType } from '../../proptypes';
 import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 class SmallMultiplesLegend extends React.PureComponent {
@@ -14,7 +14,7 @@ class SmallMultiplesLegend extends React.PureComponent {
     feature: PropTypes.string.isRequired,
     /** The data to render the stream graphs
         Items are rendered in the provided order */
-    data: allConditionsPerYear.isRequired,
+    data: allConditionsPerYearType.isRequired,
     /** The name of the data element to set as selected */
     selected: PropTypes.string.isRequired,
     /** The name of the data element to highlight */

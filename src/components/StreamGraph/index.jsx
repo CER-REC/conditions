@@ -9,7 +9,7 @@ import {
 import { injectIntl, FormattedMessage, intlShape } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
-import { allConditionsPerYear, featureTypes } from '../../proptypes';
+import { allConditionsPerYearType, featureTypes } from '../../proptypes';
 
 import './styles.scss';
 
@@ -19,7 +19,7 @@ const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 
 class StreamGraph extends React.Component {
   static propTypes = {
-    countsData: allConditionsPerYear.isRequired,
+    countsData: allConditionsPerYearType.isRequired,
     years: PropTypes.arrayOf(PropTypes.number).isRequired,
     feature: featureTypes.isRequired,
     subFeature: PropTypes.string.isRequired,

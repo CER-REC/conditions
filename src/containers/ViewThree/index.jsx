@@ -14,8 +14,6 @@ import * as selectedCreators from '../../actions/selected';
 import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
-import { allConditionsPerYear } from '../../proptypes';
-
 class ViewThree extends React.PureComponent {
   render() {
     const { props } = this;
@@ -97,7 +95,6 @@ ViewThree.propTypes = {
   setSelectedFeature: PropTypes.func.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   setSelectedSubFeature: PropTypes.func.isRequired,
-  conditionsPerYear: allConditionsPerYear.isRequired,
 };
 
 ViewThree.defaultProps = {
