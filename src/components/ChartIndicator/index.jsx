@@ -13,11 +13,11 @@ const ChartIndicator = (props) => {
       strokeWidth={4}
     />
   );
-  const label = !props.label ? null : (
+  const label = typeof props.label === 'undefined' ? null : (
     <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">
       {props.label}{(props.allThemes) ? '*' : ''}
     </text>
-  );
+  ); 
   return (
     <g className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
       <path
