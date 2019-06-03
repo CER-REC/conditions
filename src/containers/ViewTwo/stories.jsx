@@ -3,28 +3,22 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import withGQL from '../../../.storybook/addon-graphql';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import { ViewTwoUnconnected, ViewTwoGraphQL } from '.';
+import ViewTwoUnconnected from './ViewTwoUnconnected';
+import { ViewTwoGraphQL } from './ViewTwoGraphQL';
 import { searchData, conditionData, projectsData } from '../../mockData';
+import { companyWheelData } from '../../components/Wheel/randomDataSample';
+import locationData from '../../mockData/locationData';
 
 const noop = () => {};
-
 const year = {
   start: 1970,
   end: 1980,
 };
 
-const legendItems = [
-  { feature: 'theme', description: 'SECURITY', disabled: false },
-  { feature: 'theme', description: 'FINANCIAL', disabled: false },
-  { feature: 'theme', description: 'DAMAGE_PREVENTION', disabled: false },
-  { feature: 'theme', description: 'SOCIO_ECONOMIC', disabled: false },
-];
-
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
   projectsData,
-  legendItems,
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },
@@ -85,11 +79,16 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       },
     }),
   )
-  .add('default', () => <ViewTwoUnconnected {...props} {...getInteractionProps()} />)
-  .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" {...getInteractionProps()} />)
+  .add('default', () => <ViewTwoUnconnected {...props} wheelData={companyWheelData} {...getInteractionProps()} />)
+  .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" wheelData={locationData} {...getInteractionProps()} />)
   .add(
-    'connected variant',
+    'connected company',
     () => <ViewTwoGraphQL {...connectedProps} {...getInteractionProps()} />,
+    { decorators: [withGQL] },
+  )
+  .add(
+    'connected location',
+    () => <ViewTwoGraphQL {...connectedProps} browseBy="location" {...getInteractionProps()} />,
     { decorators: [withGQL] },
   )
   .add('layout only', () => (
