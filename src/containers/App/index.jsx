@@ -172,6 +172,29 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
+  updateSyncedGuidePosition = (guidePosition) => {
+    const app = this.ref.current;
+    const explorer = app.querySelector('.ViewOne .explorer');
+
+    if (!app || !explorer) { return; }
+
+    const pixelsX = explorer.offsetLeft - app.offsetLeft + guidePosition.x;
+    const pixelsY = explorer.offsetTop - app.offsetTop + guidePosition.y + guidePosition.r;
+    const x = 100 * pixelsX / app.offsetWidth;
+    const y = 100 * pixelsY / app.offsetHeight;
+
+    this.setState({ syncedGuidePosition: { x, y } });
+  };
+
+  beginTutorial = (guidePosition) => {
+    this.updateSyncedGuidePosition(guidePosition);
+
+    setTimeout(() => {
+      this.togglePlay(true);
+      this.incrementTransitionState();
+    }, 1000);
+  };
+
   setConditionAncestors = (id) => {
     // TODO: Make a query for this once our server has `conditionById($id)` available
     client.query({
@@ -210,29 +233,6 @@ class App extends React.PureComponent {
         this.setConditionAncestors(randomId);
       }
     });
-  };
-
-  beginTutorial = (guidePosition) => {
-    this.updateSyncedGuidePosition(guidePosition);
-
-    setTimeout(() => {
-      this.togglePlay(true);
-      this.incrementTransitionState();
-    }, 100);
-  };
-
-  updateSyncedGuidePosition = (guidePosition) => {
-    const app = this.ref.current;
-    const explorer = app.querySelector('.ViewOne .explorer');
-
-    if (!app || !explorer) { return; }
-
-    const pixelsX = explorer.offsetLeft - app.offsetLeft + guidePosition.x;
-    const pixelsY = explorer.offsetTop - app.offsetTop + guidePosition.y + guidePosition.r;
-    const x = 100 * pixelsX / app.offsetWidth;
-    const y = 100 * pixelsY / app.offsetHeight;
-
-    this.setState({ syncedGuidePosition: { x, y } });
   };
 
   render() {

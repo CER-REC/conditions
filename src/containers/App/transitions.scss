@@ -17,7 +17,11 @@ $faded: 0.3;
 $states: (
   0: (
     ".guideTranslate": (
-      opacity: 0,
+      opacity: 0.2,
+      transition: 'transform $fastStart, opacity $fastStart',
+    ),
+    ".guideTranslate .CircleContainer": (
+      pointer-events: none,
     ),
     ".ViewTwo": (pointer-events: none),
     ".ViewTwo .header": (opacity: 0),
@@ -48,7 +52,10 @@ $states: (
     ".guideTranslate": (
       transform: translate(58%, 76%),
       opacity: 1,
-      transition: 'transform $defaultTransition',
+      transition: 'transform $defaultTransition, opacity $fastStart',
+    ),
+    ".guideTranslate .CircleContainer": (
+      pointer-events: auto,
     ),
     ".appControls .BrowseByBtn.location": (opacity: 0),
     ".appControls .GuideTransport": (
