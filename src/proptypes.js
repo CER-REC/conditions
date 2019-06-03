@@ -105,6 +105,52 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   })).isRequired,
 }));
 
+export const viewTwo = {
+  layoutOnly: PropTypes.bool,
+  browseBy: browseByType.isRequired,
+  legendItems: PropTypes.arrayOf(PropTypes.shape({
+    disabled: PropTypes.bool,
+    description: PropTypes.string.isRequired,
+  })),
+  selected: PropTypes.shape({
+    company: PropTypes.number,
+    region: PropTypes.number,
+    project: PropTypes.number,
+    feature: featureTypes.isRequired,
+    condition: PropTypes.shape({
+      instrumentIndex: PropTypes.number.isRequired,
+      itemIndex: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+  setFindAny: PropTypes.func.isRequired,
+  setProjectYear: PropTypes.func.isRequired,
+  projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
+  findAny: PropTypes.bool.isRequired,
+  projectYear: yearRangeType.isRequired,
+  setProjectStatus: PropTypes.func.isRequired,
+  setIncluded: PropTypes.func.isRequired,
+  setExcluded: PropTypes.func.isRequired,
+  included: PropTypes.arrayOf(PropTypes.string).isRequired,
+  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setSelectedFeature: PropTypes.func.isRequired,
+  setSelectedProject: PropTypes.func.isRequired,
+  setSelectedCompany: PropTypes.func.isRequired,
+  setSelectedRegion: PropTypes.func.isRequired,
+  conditionDetails: PropTypes.shape({
+    isExpandable: PropTypes.bool,
+    expanded: PropTypes.bool,
+    selectedProject: PropTypes.string.isRequired,
+    data: conditionData.isRequired,
+  }).isRequired,
+  setSelectedCondition: PropTypes.func.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
+  projectsData: PropTypes.arrayOf(project),
+  // The shape of wheelData will change once more integration is done.
+  wheelData: PropTypes.arrayOf(PropTypes.any),
+  jumpToView1: PropTypes.func.isRequired,
+  jumpToView3: PropTypes.func.isRequired,
+};
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
 // ["emissions", { conditions: 400, category: ['category2', 'category3]}]]

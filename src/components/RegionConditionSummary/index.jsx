@@ -8,7 +8,7 @@ import { features } from '../../constants';
 
 const RegionConditionSummary = (props) => {
   const items = props.featureData.map(k => ({
-    value: k.count,
+    value: k.value,
     fill: features[k.feature][k.description] || 'black',
   }));
 
@@ -41,7 +41,7 @@ RegionConditionSummary.propTypes = {
   className: PropTypes.string,
   featureData: PropTypes.arrayOf(PropTypes.shape({
     description: PropTypes.string.isRequired,
-    count: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
   })).isRequired,
 };
 
