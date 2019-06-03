@@ -5,19 +5,19 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import WheelList from '.';
 
 const companyList = [
-  'CompanyA',
-  'CompanyG',
-  'CompanyH',
-  'CompanyI',
-  'CompanyB',
-  'CompanyF',
-  'CompanyJ',
-  'CompanyKmoreThan15Characters',
-  'CompanyL',
-  'CompanyC',
-  'CompanyD',
-  'CompanyE',
-  'CompanyM',
+  { name: 'Company A' },
+  { name: 'Company B' },
+  { name: 'Company C' },
+  { name: 'Company D' },
+  { name: 'Company E' },
+  { name: 'Company F' },
+  { name: 'Company G' },
+  { name: 'Company H moreThan15Characters' },
+  { name: 'Company I' },
+  { name: 'Company J' },
+  { name: 'Company K' },
+  { name: 'Company L' },
+  { name: 'Company M' },
 ];
 
 describe('Components|Wheel/WheelList', () => {
@@ -28,7 +28,7 @@ describe('Components|Wheel/WheelList', () => {
       spy = jest.fn();
       wrapper = shallow(
         <WheelList
-          className="WheelList"
+          className="testClass"
           wheelType="company"
           listContent={companyList}
           selected={4}

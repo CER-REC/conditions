@@ -1,10 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { connect } from 'react-redux';
-import { Query } from 'react-apollo';
-import { companyWheelQuery } from '../../queries/viewTwoQueries/wheel';
-import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
@@ -12,27 +7,18 @@ import GreyPipe from '../../components/GreyPipe';
 import RegionConditionSummary from '../../components/RegionConditionSummary';
 import RegionCompanies from '../../components/RegionCompanies';
 import TrendButton from '../../components/TrendButton';
-import { companyWheelData, locationData } from '../../components/Wheel/randomDataSample';
-import { browseByType, yearRangeType, featureTypes, project } from '../../proptypes';
+import { viewTwo } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
-import * as browseByCreators from '../../actions/browseBy';
-import * as selectedCreators from '../../actions/selected';
-import * as searchCreators from '../../actions/search';
+
 import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
 const noop = () => {};
-
 const regionData = {
-  featureData: [
-    { feature: 'theme', description: 'STANDARD_CONDITION', count: 50 },
-    { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', count: 20 },
-    { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', count: 43 },
-  ],
   companyData: [
     { id: '12', name: 'Alberta Trans-Alta e' },
     { id: '11', name: 'Alberta Trans-Alta è' },
@@ -42,7 +28,6 @@ const regionData = {
   openProjectDetails: noop,
 };
 
-// SearchBar (Data)
 const availableCategories = [
   'all',
   'oversight & safety',
@@ -51,131 +36,105 @@ const availableCategories = [
 ];
 const availableYearRange = { start: 1970, end: 1980 };
 
-const ViewTwo = props => (
-  <section className={classNames('ViewTwo', { layoutOnly: props.layoutOnly })}>
-    <section className="header">
-      <SearchBar
-        className={props.browseBy === 'location' ? 'small' : ''}
-        suggestedKeywords={searchData}
-        availableYearRange={availableYearRange}
-        availableCategories={availableCategories}
-        setIncluded={props.setIncluded}
-        setExcluded={props.setExcluded}
-        findAnyOnChange={props.setFindAny}
-        updateYear={props.setProjectYear}
-        changeProjectStatus={props.setProjectStatus}
-        includeKeywords={props.included}
-        excludeKeywords={props.excluded}
-        projectStatus={props.projectStatus}
-        yearRange={props.projectYear}
-        findAny={props.findAny}
-      />
-      {props.browseBy === 'location' ? (
-        <LocationWheelMinimap region="Lethbridge--Medicine Hat" />
-      ) : null}
-    </section>
+class ViewTwo extends React.PureComponent {
+  regionName = this.props.selected.region
+    ? this.props.wheelData.find(region => region.id === this.props.selected.region).name
+    : null;
 
-    <section className="wheel">
-      <Wheel
-        wheelType={props.browseBy}
-        selectedRay={props.browseBy === 'company' ? props.selected.company : props.selected.region}
-        selectRay={props.browseBy === 'company' ? props.setSelectedCompany : props.setSelectedRegion}
-        wheelData={props.wheelData}
-      />
-      <GreyPipe mode={props.browseBy} />
-    </section>
-    <section className="companyBreakdown">
-      {props.browseBy === 'location'
-        ? (
-          <div className="regionChart">
-            <RegionConditionSummary featureData={regionData.featureData} />
-            <RegionCompanies
-              companies={regionData.companyData}
-              activeConditionCompanies={regionData.activeConditionCompanies}
-              openProjectDetails={regionData.openProjectDetails}
+  render() {
+    return (
+      <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
+        <section className="header">
+          <SearchBar
+            className={this.props.browseBy === 'location' ? 'small' : ''}
+            suggestedKeywords={searchData}
+            availableYearRange={availableYearRange}
+            availableCategories={availableCategories}
+            setIncluded={this.props.setIncluded}
+            setExcluded={this.props.setExcluded}
+            findAnyOnChange={this.props.setFindAny}
+            updateYear={this.props.setProjectYear}
+            changeProjectStatus={this.props.setProjectStatus}
+            includeKeywords={this.props.included}
+            excludeKeywords={this.props.excluded}
+            projectStatus={this.props.projectStatus}
+            yearRange={this.props.projectYear}
+            findAny={this.props.findAny}
+          />
+          {this.props.browseBy === 'location' ? (
+            <LocationWheelMinimap
+              region={this.regionName}
             />
-          </div>
-        )
-        : (
-          <React.Fragment>
-            <TotalConditionsLabel />
-            <ProjectMenu
-              loading={props.projectMenuLoading}
-              projectsData={props.projectsData}
-              selectedProjectID={props.selected.project}
-              onChange={props.setSelectedProject}
-              selectedFeature={props.selected.feature}
-            />
-          </React.Fragment>
-        )
-      }
-    </section>
+          ) : null}
+        </section>
 
-    <section className="menus">
-      <KeywordExplorerButton
-        onClick={props.jumpToView1}
-      />
-      <TrendButton
-        onClick={props.jumpToView3}
-        feature={props.selected.feature}
-        subFeature=""
-        projectData={conditionCountsByYear.counts}
-        instrumentData={conditionCountsByCommodity.counts}
-      />
-    </section>
+        <section className="wheel">
+          <Wheel
+            wheelType={this.props.browseBy}
+            selectedRay={this.props.browseBy === 'company' ? this.props.selected.company : this.props.selected.region}
+            selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
+            wheelData={this.props.wheelData}
+          />
+          <GreyPipe mode={this.props.browseBy} />
+        </section>
+        <section className="companyBreakdown">
+          {this.props.browseBy === 'location'
+            ? (
+              <div className="regionChart">
+                <RegionConditionSummary featureData={this.props.legendItems} />
+                <RegionCompanies
+                  companies={regionData.companyData}
+                  activeConditionCompanies={regionData.activeConditionCompanies}
+                  openProjectDetails={regionData.openProjectDetails}
+                />
+              </div>
+            )
+            : (
+              <React.Fragment>
+                <TotalConditionsLabel />
+                <ProjectMenu
+                  loading={this.props.projectMenuLoading}
+                  projectsData={this.props.projectsData}
+                  selectedProjectID={this.props.selected.project}
+                  onChange={this.props.setSelectedProject}
+                  selectedFeature={this.props.selected.feature}
+                />
+              </React.Fragment>
+            )
+          }
+        </section>
 
-    <section className="legend">
-      <FeaturesMenu
-        dropDown
-        selected={props.selected.feature}
-        onChange={props.setSelectedFeature}
-      />
-      <FeaturesLegend
-        legendItems={props.legendItems}
-        selectedFeature={props.selected.feature}
-        isProjectLegend={props.browseBy !== 'location'}
-      />
-    </section>
-  </section>
-);
+        <section className="menus">
+          <KeywordExplorerButton
+            onClick={this.props.jumpToView1}
+          />
+          <TrendButton
+            onClick={this.props.jumpToView3}
+            feature={this.props.selected.feature}
+            subFeature=""
+            projectData={conditionCountsByYear.counts}
+            instrumentData={conditionCountsByCommodity.counts}
+          />
+        </section>
 
-ViewTwo.propTypes = {
-  layoutOnly: PropTypes.bool,
-  browseBy: browseByType.isRequired,
-  legendItems: PropTypes.arrayOf(PropTypes.shape({
-    disabled: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-  })),
-  selected: PropTypes.shape({
-    company: PropTypes.number,
-    region: PropTypes.number,
-    project: PropTypes.number,
-    feature: featureTypes.isRequired,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-    }).isRequired,
-  }).isRequired,
-  setFindAny: PropTypes.func.isRequired,
-  setProjectYear: PropTypes.func.isRequired,
-  projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
-  findAny: PropTypes.bool.isRequired,
-  projectYear: yearRangeType.isRequired,
-  setProjectStatus: PropTypes.func.isRequired,
-  setIncluded: PropTypes.func.isRequired,
-  setExcluded: PropTypes.func.isRequired,
-  included: PropTypes.arrayOf(PropTypes.string).isRequired,
-  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setSelectedFeature: PropTypes.func.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  setSelectedCompany: PropTypes.func.isRequired,
-  setSelectedRegion: PropTypes.func.isRequired,
-  projectsData: PropTypes.arrayOf(project),
-  // The shape of wheelData will change once more integration is done.
-  wheelData: PropTypes.arrayOf(PropTypes.any),
-  jumpToView1: PropTypes.func.isRequired,
-  jumpToView3: PropTypes.func.isRequired,
-};
+        <section className="legend">
+          <FeaturesMenu
+            dropDown
+            selected={this.props.selected.feature}
+            onChange={this.props.setSelectedFeature}
+          />
+          <FeaturesLegend
+            legendItems={this.props.legendItems}
+            selectedFeature={this.props.selected.feature}
+            isProjectLegend={this.props.browseBy !== 'location'}
+          />
+        </section>
+      </section>
+    );
+  }
+}
+
+ViewTwo.propTypes = viewTwo;
 
 ViewTwo.defaultProps = {
   layoutOnly: false,
@@ -184,100 +143,4 @@ ViewTwo.defaultProps = {
   projectsData: [],
 };
 
-export const ViewTwoUnconnected = props => (
-  <ViewTwo
-    // eslint-disable-next-line react/prop-types
-    wheelData={props.browseBy === 'company' ? companyWheelData : locationData}
-    {...props}
-  />
-);
-
-export const ViewTwoGraphQL = (props) => {
-  if (props.browseBy === 'company') {
-    return (
-    // The queries must be by company and location and then subdivide.
-    // The common queries such as the condition explorer must be set at the view level
-      <Query query={companyWheelQuery}>
-        {(wheelQueryProps) => {
-          const { data: wheelQData } = wheelQueryProps;
-          const { loading: wheelQLoading } = wheelQueryProps;
-          const { error: wheelQerror } = wheelQueryProps;
-          return (
-            <Query
-              query={projectMenuQuery}
-              variables={{ id: props.selected.company }}
-              skip={!props.selected.company}
-            >
-              { (projectMenuQprops) => {
-                const { loading: projLoading } = projectMenuQprops;
-                const { error: projError } = projectMenuQprops;
-                const { data: projData } = projectMenuQprops;
-                const selectedProject = props.selected.company && !projLoading && !projError
-                  ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
-                  : null;
-                const rawFeatureData = selectedProject
-                  ? selectedProject.aggregatedCount[props.selected.feature]
-                  : [];
-                const projectFeatureData = Object.entries(rawFeatureData)
-                  .reduce((acc, [key, val]) => {
-                    if (key !== '__typename') {
-                      acc.push({
-                        feature: props.selected.feature,
-                        description: key,
-                        disabled: val <= 0,
-                      });
-                    }
-                    return acc;
-                  }, []);
-                // MISSING ERROR HANDLING
-                return (
-                  <ViewTwo
-                    wheelData={
-                      !wheelQLoading && !wheelQerror
-                        ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
-                        : []
-                    }
-                    projectsData={!projLoading && !projError && props.selected.company
-                      ? projData.allProjectsByCompany
-                      : []
-                    }
-                    projectMenuLoading={projLoading}
-                    legendItems={projectFeatureData}
-                    {...props}
-                  />
-                );
-              }}
-            </Query>
-          );
-        }
-        }
-      </Query>
-    );
-  }
-  return (<ViewTwo {...props} wheelData={locationData} legendItems={regionData.featureData} />);
-};
-ViewTwoGraphQL.propTypes = ViewTwo.propTypes;
-
-export default connect(
-  ({ selected, browseBy, search }) => ({
-    selected,
-    browseBy,
-    included: search.included,
-    projectStatus: search.projectStatus,
-    findAny: search.findAny,
-    projectYear: search.projectYear,
-    excluded: search.excluded,
-  }),
-  {
-    setSelectedFeature: selectedCreators.setSelectedFeature,
-    setSelectedCompany: selectedCreators.setSelectedCompany,
-    setSelectedRegion: selectedCreators.setSelectedRegion,
-    setSelectedProject: selectedCreators.setSelectedProject,
-    setBrowseBy: browseByCreators.setBrowseBy,
-    setProjectStatus: searchCreators.setProjectStatus,
-    setProjectYear: searchCreators.setProjectYear,
-    setFindAny: searchCreators.setFindAny,
-    setIncluded: searchCreators.setIncluded,
-    setExcluded: searchCreators.setExcluded,
-  },
-)(ViewTwoGraphQL);
+export default ViewTwo;

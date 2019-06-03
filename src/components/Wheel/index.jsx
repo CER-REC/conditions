@@ -10,9 +10,10 @@ import WheelRay from './WheelRay';
 import { browseByType } from '../../proptypes';
 import WheelList from './WheelList';
 
-const reservedDegrees = 14;
+const reservedDegrees = 12;
 
 const AnimatedWheelRay = animated(WheelRay);
+const AnimatedWheelList = animated(WheelList);
 
 class Wheel extends React.Component {
   static propTypes = {
@@ -33,27 +34,34 @@ class Wheel extends React.Component {
       newRotation: 0,
       degreesPerItem: 0,
       selectedIndex: 0,
-      needsSpin: false,
+      wheelModifiers: {
+        spin: false,
+      },
     };
   }
 
   static getDerivedStateFromProps(props, prevState) {
     const items = props.wheelData;
-    const degreesAvailForPlotting = 360 - reservedDegrees;
-    const degreesPerItem = degreesAvailForPlotting / (items.length - 1);
+    if (!items.length > 0) return { ...prevState };
+    if (props.selectedRay === null) {
+      props.selectRay(items[Math.floor(Math.random() * items.length)].id);
+    }
+    const degreesPerItem = ((360 - reservedDegrees) / (items.length));
     const selectedIndex = items.findIndex(v => v.id === props.selectedRay);
-    const { needsSpin } = prevState;
-    let { newRotation } = prevState || selectedIndex * degreesPerItem;
-    if (needsSpin) {
+    const { wheelModifiers } = prevState;
+    let { newRotation } = prevState;
+    if (wheelModifiers.spin || prevState.selectedIndex === -1) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
-      newRotation += minimumRotation + selectedIndex * degreesPerItem;
+      newRotation += minimumRotation + selectedIndex * (360 / items.length);
+      wheelModifiers.spin = true;
     } else {
+      wheelModifiers.spin = false;
       const diff = Math.abs(selectedIndex - prevState.selectedIndex);
       if (diff < items.length - 1) {
-        const adding = (selectedIndex - prevState.selectedIndex) * degreesPerItem;
+        const adding = (selectedIndex - prevState.selectedIndex) * (360 / items.length);
         newRotation += adding;
       } else {
-        newRotation += -(Math.sign(selectedIndex - prevState.selectedIndex) * degreesPerItem);
+        newRotation += -(Math.sign(selectedIndex - prevState.selectedIndex) * (360 / items.length));
       }
     }
     return {
@@ -61,26 +69,21 @@ class Wheel extends React.Component {
       selectedIndex,
       oldRotation: prevState.newRotation || 0,
       newRotation,
-      needsSpin,
+      wheelModifiers,
     };
   }
 
-  shouldComponentUpdate(nextProps) {
-    return this.props.selectedRay !== nextProps.selectedRay
-    || this.props.wheelData.length !== nextProps.wheelData.length;
-  }
-
-  componentDidUpdate() {
-    if (this.state.selectedIndex === -1 && this.props.wheelData.length > 0) {
-      this.onClickSpin();
-    }
+  shouldComponentUpdate(prevProps) {
+    return prevProps.wheelType !== this.props.wheelType
+      || prevProps.selectedRay !== this.props.selectedRay
+      || prevProps.wheelData !== this.props.wheelData;
   }
 
   onClickSpin = () => {
     const items = this.props.wheelData;
     const randomNum = Math.floor(Math.random() * items.length);
+    this.setState(prevState => ({ wheelModifiers: { ...prevState.wheelModifiers, spin: true } }));
     this.props.selectRay(items[randomNum].id);
-    this.setState({ needsSpin: true });
   };
 
   onChange = (index) => {
@@ -89,13 +92,16 @@ class Wheel extends React.Component {
 
   getIndex = (currentRotation) => {
     const { length } = this.props.wheelData;
-    const index = Math.round((currentRotation % 360) / ((360 - reservedDegrees) / (length - 1)));
-    return index;
+    const index = Math.round(((360 + (currentRotation % 360)) % 360) / (360 / length));
+    return (length + (length - index)) % length;
   };
 
   stopWheel = (index) => {
     this.setState(prevState => (
-      { newRotation: prevState.newRotation + (index * prevState.degreesPerItem) }
+      {
+        newRotation: prevState.newRotation + (index * (360 / this.props.wheelData.length)),
+        wheelModifiers: { ...prevState.wheelModifiers, needsSpin: false },
+      }
     ));
   };
 
@@ -107,62 +113,56 @@ class Wheel extends React.Component {
     return (
       <div className="Wheel">
         <Spring
-          immediate={!this.state.needsSpin}
+          native
+          immediate={!this.state.wheelModifiers.spin}
           config={{ tension: 30, friction: 20, easing: t => t * t * t * t * t }}
-          onStart={() => this.setState({ needsSpin: false })}
-          onRest={() => null /* set loading status to false for the projectMenu */}
-          from={{
-            transform: `rotate(${this.state.oldRotation}deg)`,
-            rotation: -this.state.oldRotation,
-          }}
-          to={{
-            transform: `rotate(${this.state.newRotation}deg)`,
-            rotation: -this.state.newRotation,
-          }}
+          onStart={() => { this.state.wheelModifiers.spin = false; }}
+          onRest={() => {}} // props.showInfo()}
+          from={{ rotation: -this.state.oldRotation }}
+          to={{ rotation: -this.state.newRotation }}
         >
-          {props => (
-            <div className="svgContainer">
-              <div style={props} className="MovingContainer">
-                <svg viewBox="0 0 860 860">
-                  <Ring ringType={this.props.wheelType} />
-                  {this.shouldRender(() => (
-                    <AnimatedWheelRay
-                      onChange={this.onChange}
-                      stopWheel={this.stopWheel}
-                      wheelType={this.props.wheelType}
-                      items={this.props.wheelData}
-                      degreesPerItem={this.state.degreesPerItem}
-                      reservedDegrees={reservedDegrees}
-                      currentIndex={(this.props.wheelData.length - this.getIndex(props.rotation))
-                        % this.props.wheelData.length}
-                      {...props}
-                    />
-                  ))}
-                </svg>
+          {(props) => {
+            const currentIndex = props.rotation.interpolate(r => this.getIndex(r));
+            return (
+              <div className="svgContainer">
+                <animated.div style={{ transform: props.rotation.interpolate(r => `rotate(${r.toFixed(2)}deg)`) }} className="MovingContainer">
+                  <svg viewBox="0 0 860 860">
+                    <Ring ringType={this.props.wheelType} />
+                    {this.shouldRender(() => (
+                      <AnimatedWheelRay
+                        onChange={this.onChange}
+                        stopWheel={this.stopWheel}
+                        wheelType={this.props.wheelType}
+                        items={this.props.wheelData}
+                        degreesPerItem={this.state.degreesPerItem}
+                        reservedDegrees={reservedDegrees}
+                        currentIndex={currentIndex}
+                        rotation={props.rotation.interpolate(r => r * -1)}
+                      />
+                    ))}
+                  </svg>
+                </animated.div>
+                <div className="interactiveItems">
+                  <svg viewBox="0 0 860 860">
+                    <g className="pullToSpinContainer">
+                      <PullToSpin
+                        className="pullToSpin"
+                        onClickSpin={this.onClickSpin}
+                        role="button"
+                      />
+                    </g>
+                  </svg>
+                  <AnimatedWheelList
+                    wheelType={this.props.wheelType}
+                    listContent={this.props.wheelData}
+                    textClippingRadius="60"
+                    onChange={this.onChange}
+                    selected={currentIndex}
+                  />
+                </div>
               </div>
-              <div className="interactiveItems">
-                <svg viewBox="0 0 860 860">
-                  <g transform="scale(2)">
-                    <PullToSpin
-                      className="pullToSpin"
-                      onClickSpin={this.onClickSpin}
-                      role="button"
-                    />
-                  </g>
-                </svg>
-                <WheelList
-                  wheelType={this.props.wheelType}
-                  listContent={this.props.wheelData}
-                  textClippingRadius="60"
-                  onChange={this.onChange}
-                  selected={
-                    (this.props.wheelData.length - this.getIndex(props.rotation))
-                    % this.props.wheelData.length
-                  }
-                />
-              </div>
-            </div>
-          )}
+            );
+          }}
         </Spring>
       </div>
     );
