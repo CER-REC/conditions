@@ -86,7 +86,8 @@ class App extends React.PureComponent {
     this.state = {
       mainInfoBarPane: '',
       tutorialPlaying: false,
-      syncedGuidePosition: { x: 0, y: 0 },
+      initialGuidePosition: { x: 0, y: 0 },
+      finalGuidePosition: { x: 0, y: 0 },
     };
     this.ref = React.createRef();
   }
@@ -178,7 +179,7 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
-  updateSyncedGuidePosition = (guidePosition) => {
+  syncInitialGuidePosition = (guidePosition) => {
     const view = document.querySelector('.ViewOne');
     const explorer = view.querySelector('.explorer');
 
@@ -199,15 +200,47 @@ class App extends React.PureComponent {
     const viewRect = view.getBoundingClientRect();
 
     this.setState({
-      syncedGuidePosition: {
+      initialGuidePosition: {
         x: 100 * (explorerRect.left - viewRect.left + positionInExplorer.x) / viewRect.width,
         y: 100 * (explorerRect.top - viewRect.top + positionInExplorer.y) / viewRect.height,
       },
     });
   };
 
+  syncFinalGuidePosition = () => {
+    const view = document.querySelector('.ViewTwo');
+    const button = view.querySelector('.KeywordExplorerButton');
+
+    if (!view || !button) { return; }
+
+    // Adapted from: https://stackoverflow.com/a/48346417
+    const svgRoot = button.querySelector('svg');
+    const svgCircle = button.querySelector('circle');
+
+    const svgPosition = svgRoot.createSVGPoint();
+    const matrix = svgCircle.getCTM();
+
+    // TODO: Magic numbers, borrowed from the KeywordExplorer button's SVG
+    svgPosition.x = 21;
+    svgPosition.y = 14;
+
+    const positionInSvg = svgPosition.matrixTransform(matrix);
+
+    const buttonRect = button.getBoundingClientRect();
+    const viewRect = view.getBoundingClientRect();
+
+    this.setState({
+      finalGuidePosition: {
+        x: 100 * (buttonRect.left - viewRect.left + positionInSvg.x) / viewRect.width,
+        y: 100 * (buttonRect.top - viewRect.top + positionInSvg.y) / viewRect.height,
+      },
+    });
+  };
+
   beginTutorial = (guidePosition) => {
-    this.updateSyncedGuidePosition(guidePosition);
+    this.syncInitialGuidePosition(guidePosition);
+    this.syncFinalGuidePosition();
+
     // Apply the "Guide was clicked state" immediately
     this.incrementTransitionState();
     this.togglePlay(true);
@@ -215,6 +248,31 @@ class App extends React.PureComponent {
     setTimeout(() => {
       this.incrementTransitionState();
     }, 1000);
+  };
+
+  getGuideTranslation = () => {
+    let guideTranslation;
+    if (
+      this.props.transitionState === transitionStates.view1
+      || this.props.transitionState === transitionStates.view1Reset
+      || this.props.transitionState === (transitionStates.tutorialStart)
+    ) {
+      guideTranslation = {
+        transform: `translate(
+          ${this.state.initialGuidePosition.x}%,
+          ${this.state.initialGuidePosition.y}%
+        )`,
+      };
+    } else if (this.props.transitionState === transitionStates.view2) {
+      guideTranslation = {
+        transform: `translate(
+          ${this.state.finalGuidePosition.x}%,
+          ${this.state.finalGuidePosition.y}%
+        )`,
+      };
+    }
+
+    return guideTranslation;
   };
 
   setConditionAncestors = (id) => {
@@ -304,16 +362,7 @@ class App extends React.PureComponent {
               */}
             <div
               className="guideTranslate"
-              style={(
-                transitionState === transitionStates.view1
-                || transitionState === transitionStates.view1Reset
-                || transitionState === (transitionStates.tutorialStart)
-              )
-                ? {
-                  transform: `translate(${this.state.syncedGuidePosition.x}%, ${this.state.syncedGuidePosition.y}%)`,
-                }
-                : null
-              }
+              style={this.getGuideTranslation()}
             >
               <Guide step={guideStep} onClick={this.handleGuideClick} />
             </div>

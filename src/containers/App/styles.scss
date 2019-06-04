@@ -162,7 +162,7 @@
     transition: opacity $defaultTransition, height $defaultTransition, visibility 0s 1s;
   }
 
-  &.transition-state-7 {
+  &.transition-state-8 {
     .Guide {
       transition:
         opacity $fastestEnd,
@@ -173,7 +173,7 @@
   }
 
   // Snapping back from View 2 to View 1, using different curves to make it look decent
-  &.transition-state-8 {
+  &.transition-state-9 {
     .guideTranslate {
       transition: opacity $fastestEnd;
     }
