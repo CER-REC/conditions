@@ -57,9 +57,10 @@ const tutorialTiming = 5000;
 
 const transitionStates = {
   view1: 0,
-  view2: 7,
-  view1Reset: 8,
-  view3: 9,
+  tutorialStart: 1,
+  view2: 8,
+  view1Reset: 9,
+  view3: 10,
 };
 
 const viewProps = {
@@ -94,7 +95,12 @@ class App extends React.PureComponent {
 
   incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
-    if (currentState === transitionStates.view1Reset) { currentState = 0; }
+    if (currentState === transitionStates.view1Reset) {
+      currentState = 0;
+    } else if (amt === -1 && currentState === (transitionStates.tutorialStart + 1)) {
+      currentState = 1;
+    }
+
     const newState = Math.min(
       Math.max(transitionStates.view1, currentState + amt),
       transitionStates.view2,
@@ -188,11 +194,13 @@ class App extends React.PureComponent {
 
   beginTutorial = (guidePosition) => {
     this.updateSyncedGuidePosition(guidePosition);
+    // Apply the "Guide was clicked state" immediately
+    this.incrementTransitionState();
+    this.togglePlay(true);
 
     setTimeout(() => {
-      this.togglePlay(true);
       this.incrementTransitionState();
-    }, 1000);
+    });
   };
 
   setConditionAncestors = (id) => {
@@ -285,6 +293,7 @@ class App extends React.PureComponent {
               style={(
                 transitionState === transitionStates.view1
                 || transitionState === transitionStates.view1Reset
+                || transitionState === (transitionStates.tutorialStart)
               )
                 ? {
                   transform: `translate(${this.state.syncedGuidePosition.x}%, ${this.state.syncedGuidePosition.y}%)`,
