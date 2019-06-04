@@ -1,6 +1,6 @@
 import { features } from '../constants';
 
-export default (instruments, selectedFeature) => (
+export default (instruments, selectedFeature, locale) => (
   instruments.map((instrument) => {
     const {
       number,
@@ -56,7 +56,7 @@ export default (instruments, selectedFeature) => (
         ...subFeaturesWithValue,
         binnedValue: bins[next.textLength],
         keywords: [''],
-        text: next.text.en,
+        text: next.text[locale],
       });
       return acc;
     }, []);
