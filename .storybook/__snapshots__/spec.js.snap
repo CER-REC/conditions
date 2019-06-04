@@ -5216,82 +5216,10 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
         className="step-text"
       >
         <h1>
-          The genesis and scope of conditions
+          Why are conditions made?
         </h1>
         <p>
-          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
-          <a
-            href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            laws, acts and regulations
-             
-          </a>
-           are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
-        </p>
-        <p>
-          These different sorts of requirements expressed in conditions are the Themes which can be explored 
-          <a
-            href=""
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            here
-             
-          </a>
-           in this data visualization.
-        </p>
-        <p>
-          Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
-        </p>
-        <p>
-          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
-          <a
-            href=""
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            here
-             
-          </a>
-          . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
-        </p>
-        <p>
-          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
-          <a
-            href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            application process
-             
-          </a>
-           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
-          <a
-            href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            hearings
-             
-          </a>
-          , individuals must apply (more info about how to become an intervenor 
-          <a
-            href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            here
-             
-          </a>
-          )
+          Conditions are project-specific. The NEB sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest.
         </p>
       </div>
       <div
