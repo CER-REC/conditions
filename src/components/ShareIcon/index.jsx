@@ -12,6 +12,7 @@ import { appHost } from '../../constants';
 class ShareIcon extends React.PureComponent {
   getBitlyURL = () => {
     const bitlyEndpoint = RouteComputations.bitlyEndpoint();
+    // TODO: will remove this hardcoded value 'en' once langaguge prop is introduce
     const shortenUrl = RouteComputations.bitlyParameter('en');
 
     const options = {
