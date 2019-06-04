@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+/* eslint linebreak-style: ["error", "windows"] */
 import { appHost } from './constants';
 import Tr from './TranslationTable';
 

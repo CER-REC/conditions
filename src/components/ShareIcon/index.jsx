@@ -10,12 +10,6 @@ import RouteComputations from '../../RouteComputations';
 import { appHost } from '../../constants';
 
 class ShareIcon extends React.PureComponent {
-  /*
-  shortenUrl = () => {
-    TODO: shorten URL with bitly
-  };
-  */
- // TODO: Implement Bitly service to get shortened url
   getBitlyURL = () => {
     const bitlyEndpoint = RouteComputations.bitlyEndpoint();
     const shortenUrl = RouteComputations.bitlyParameter('en');
@@ -39,25 +33,41 @@ class ShareIcon extends React.PureComponent {
         const emailBody = url;
         const emailUrl = `mailto:?subject=; &body= ${emailBody}`;
         window.location.href = emailUrl;
-      });
+      }).catch(
+        () => {
+          // do nothing
+        },
+      );
     }
     if (this.props.target === 'facebook') {
       this.getBitlyURL().then((bitlyUrl) => {
         const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${bitlyUrl}`;
         window.open(facebookUrl, 'targetWindow', 'width=650,height=650');
-      });
+      }).catch(
+        () => {
+          // do nothing
+        },
+      );
     }
     if (this.props.target === 'linkedin') {
       this.getBitlyURL().then((bitlyUrl) => {
-        const locationUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${bitlyUrl}&summary=${bitlyUrl}`
+        const locationUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${bitlyUrl}&summary=${bitlyUrl}`;
         window.open(locationUrl, 'targetWindow', 'width=650,height=650');
-      });
+      }).catch(
+        () => {
+          // do nothing
+        },
+      );
     }
     if (this.props.target === 'twitter') {
       this.getBitlyURL().then((bitlyUrl) => {
         const locationUrl = `https://twitter.com/intent/tweet?url=${bitlyUrl}`;
         window.open(locationUrl, 'targetWindow', 'width=650,height=650');
-      });
+      }).catch(
+        () => {
+          // do nothing
+        },
+      );
     }
   }
 
