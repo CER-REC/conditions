@@ -17,7 +17,7 @@ const ChartIndicator = (props) => {
     <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">
       {props.label}{(props.allThemes) ? '*' : ''}
     </text>
-  ); 
+  );
   return (
     <g className="ChartIndicator" transform={`translate(${props.x}, ${props.yTop})`}>
       <path
