@@ -7,7 +7,6 @@ import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 import RouteComputations from '../../RouteComputations';
-import { appHost } from '../../constants';
 
 class ShareIcon extends React.PureComponent {
   getBitlyURL = () => {
@@ -22,10 +21,10 @@ class ShareIcon extends React.PureComponent {
     return Request(options)
       .then((response) => {
         if (response.body.status_code !== 200) {
-          return appHost;
+          return document.location.href;
         }
         return response.body.data.url;
-      }).catch(() => appHost);
+      }).catch(() => document.location.href);
   };
 
   handleOnClick = () => {
