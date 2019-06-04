@@ -11,7 +11,7 @@ export const processConditionCounts = (counts) => {
       const pushTo = (feature === 'prefix') ? 0 : 1;
 
       Object.entries(featureCounts).forEach(([subFeature, subCounts]) => {
-        if (subFeature === '__typename') return;
+        if (subFeature === '__typename' || !subCounts.length) return;
         const countObj = {
           feature: (feature === 'prefix') ? 'instrument' : feature,
           subFeature,
