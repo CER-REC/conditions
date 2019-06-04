@@ -76,5 +76,5 @@ export const provinces = {
 };
 
 export const appHost = ((process.env.NODE_ENV === 'production')
-  ? 'https://apps2.neb-one.gc.ca'
+  ? 'http://198.103.162.97' // Replace this url with this 'https://apps2.neb-one.gc.ca' when it goes live
   : 'http://localhost:3003');
