@@ -12,6 +12,7 @@ export default (instruments, selectedFeature, locale) => (
       name,
       conditions,
     } = instrument;
+
     // TODO: This will change when manali updates our GraphQL endpoint
     const bins = {
       S: 1,
@@ -59,12 +60,15 @@ export default (instruments, selectedFeature, locale) => (
       });
       return acc;
     }, []);
-    // TODO: handle multiple locations for `instrument.regions`
+
+    // This is used to show all regions belonging to an instrument
     const allLocations = regions.reduce((acc, next) => {
+      // for param reassign
       let string = acc;
       string = string.concat(`${next.name[locale]}, ${next.province} `);
       return string;
     }, '');
+
     return {
       instrumentNumber: number,
       issuanceDate: dateIssuance,
