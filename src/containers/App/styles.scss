@@ -245,6 +245,11 @@
         transition: opacity $fastStart;
       }
     }
+    .DateUpdated{
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+    }
 
     .Footer {
       transition: opacity $fastStart, visibility 0s 1s;

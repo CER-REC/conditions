@@ -1,19 +1,22 @@
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { HttpLink } from 'apollo-link-http';
+
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
+import gql from 'graphql-tag';
 import i18nMessages from '../../i18n';
 
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
+// import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -31,7 +34,6 @@ import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 import graphQLEndPoint from '../../../globals';
-
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
@@ -228,7 +230,12 @@ class App extends React.PureComponent {
     } else if (transitionState > 9) {
       labelId = 'return';
     }
-
+    const dateQuery = gql`
+    query getDateDataUpdated {
+      allConfigurationData {
+        lastUpdated
+      }
+    }`;
     const conditionDetailsViewProps = (transitionState === 10)
       ? {
         isExpandable: true,
@@ -302,6 +309,23 @@ class App extends React.PureComponent {
               {...conditionDetailsViewProps}
             />
           </section>
+          <Query query={dateQuery}>
+            {({ loading, error, data }) => {
+              if (loading) return 'Loading Date';
+              if (error) return 'Error Occured';
+              // console.dir('Look Here: ');
+              // console.dir(data.allConfigurationData.lastUpdated);
+              const dateOfUpdate = new Date(data.allConfigurationData.lastUpdated);
+
+              return (
+
+                <div className="DateUpdated">
+                  <h1>Data Last Updated:</h1>
+                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
+                </div>
+              );
+            }}
+          </Query>
         </div>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
