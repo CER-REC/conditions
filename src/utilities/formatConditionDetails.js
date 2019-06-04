@@ -51,7 +51,6 @@ export default (instruments, selectedFeature, locale) => (
           },
         });
       // TODO: keywords needs to be matched search keywords...
-      // TODO: Handle translations for text
       acc.push({
         ...subFeaturesWithValue,
         binnedValue: bins[next.textLength],
@@ -61,13 +60,18 @@ export default (instruments, selectedFeature, locale) => (
       return acc;
     }, []);
     // TODO: handle multiple locations for `instrument.regions`
+    const allLocations = regions.reduce((acc, next) => {
+      let string = acc;
+      string = string.concat(`${next.name[locale]}, ${next.province} `);
+      return string;
+    }, '');
     return {
       instrumentNumber: number,
       issuanceDate: dateIssuance,
       effectiveDate: dateEffective,
       sunsetDate: dateSunset || 'null',
       status,
-      location: regions[0] ? `${regions[0].name.en}, ${regions[0].province}` : '',
+      location: allLocations || '',
       activity: name,
       conditions: formattedConditions,
     };
