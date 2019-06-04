@@ -192,7 +192,6 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
-    console.log(selected.project);
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -220,7 +219,8 @@ class App extends React.PureComponent {
               <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
                 {({ data, loading, error }) => {
                   if (!data.getProjectById || !data) { return null; }
-                  if (loading) { return <div>loading</div>; }
+                  if (loading) { return <div>Loading</div>; }
+                  if (error) { return <div>Loading</div>; }
                   const { shortName, instruments } = data.getProjectById;
                   const formattedInstrument = instruments.map((instrument) => {
                     const {
@@ -233,6 +233,7 @@ class App extends React.PureComponent {
                       name,
                       conditions,
                     } = instrument;
+                    // TODO: This will change when manali updates our GraphQL endpoint
                     const bins = {
                       S: 1,
                       M: 2,
@@ -241,7 +242,8 @@ class App extends React.PureComponent {
 
                     const formattedConditions = conditions.reduce((acc, next) => {
                       // TODO: populate details values for `subFeaturesWithValue`
-                      const subFeaturesWithValue = Object.entries(next.aggregatedCount[selected.feature])
+                      const subFeaturesWithValue = Object
+                        .entries(next.aggregatedCount[selected.feature])
                         .reduce((subAcc, [subFeature, subCount]) => {
                           if (subFeature === '__typename' || !subCount) return subAcc;
                           subAcc.fill.push(features[selected.feature][subFeature]);
@@ -279,7 +281,6 @@ class App extends React.PureComponent {
                       conditions: formattedConditions,
                     };
                   });
-                  console.log(formattedInstrument);
                   return (
                     <ConditionDetails
                       selectedItem={this.props.selected.condition}
@@ -326,7 +327,6 @@ App.propTypes = {
   selected: PropTypes.shape({
     project: PropTypes.number,
     subFeature: PropTypes.string.isRequired,
-    subFeature: PropTypes.string,
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
       itemIndex: PropTypes.number.isRequired,
