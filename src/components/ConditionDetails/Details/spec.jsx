@@ -27,7 +27,7 @@ describe('Components|ConditionDetails/Details', () => {
         .find('.content')
         .children();
 
-      expect(items).toHaveLength(7);
+      expect(items).toHaveLength(6);
     });
   });
 
