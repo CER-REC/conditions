@@ -17,7 +17,7 @@ $faded: 0.3;
 $states: (
   0: (
     ".guideTranslate": (
-      opacity: 0,
+      opacity: 0.3,
       transition: "opacity 0s 1.2s , transform #{$defaultTransition}",
     ),
     ".guideTranslate .CircleContainer": (

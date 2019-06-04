@@ -179,23 +179,31 @@ class App extends React.PureComponent {
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
   updateSyncedGuidePosition = (guidePosition) => {
-    const app = this.ref.current;
-    const explorer = app.querySelector('.ViewOne .explorer');
+    const view = document.querySelector('.ViewOne');
+    const explorer = view.querySelector('.explorer');
 
-    if (!app || !explorer) { return; }
+    if (!view || !explorer) { return; }
 
-    // TODO: Try to handle these dynamically
-    // Magic numbers to compensate for the guide's SVG units not being pixels
-    const xMultiplier = 1.019;
-    const yMultiplier = 1.155;
-    const yOffset = -47;
+    // Adapted from: https://stackoverflow.com/a/48346417
+    const svgRoot = explorer.querySelector('.ConditionExplorer svg');
+    const svgGuide = explorer.querySelector('.ConditionExplorer .guide');
 
-    const pixelsX = explorer.offsetLeft - app.offsetLeft + (xMultiplier * guidePosition.x);
-    const pixelsY = explorer.offsetTop - app.offsetTop + yOffset + (yMultiplier * guidePosition.y) + guidePosition.r;
-    const x = 100 * pixelsX / app.offsetWidth;
-    const y = 100 * pixelsY / app.offsetHeight;
+    const svgPosition = svgRoot.createSVGPoint();
+    const matrix = svgGuide.getCTM();
+    svgPosition.x = guidePosition.x;
+    svgPosition.y = guidePosition.y;
 
-    this.setState({ syncedGuidePosition: { x, y } });
+    const positionInExplorer = svgPosition.matrixTransform(matrix);
+
+    const explorerRect = explorer.getBoundingClientRect();
+    const viewRect = view.getBoundingClientRect();
+
+    this.setState({
+      syncedGuidePosition: {
+        x: 100 * (explorerRect.left - viewRect.left + positionInExplorer.x) / viewRect.width,
+        y: 100 * (explorerRect.top - viewRect.top + positionInExplorer.y) / viewRect.height,
+      },
+    });
   };
 
   beginTutorial = (guidePosition) => {
@@ -206,7 +214,7 @@ class App extends React.PureComponent {
 
     setTimeout(() => {
       this.incrementTransitionState();
-    });
+    }, 1000);
   };
 
   setConditionAncestors = (id) => {

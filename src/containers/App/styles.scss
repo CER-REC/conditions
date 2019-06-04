@@ -2,9 +2,6 @@
 @import "./transitions.scss";
 
 .App {
-
-
-
   $defaultTransition: 1s ease-in-out;
 
   $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
@@ -14,6 +11,8 @@
   $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
 
   position: relative;
+  overflow: hidden;
+
   .fixedContainer{
     @include grid((
       guideWrapper: (x: 0, y: 0, w: 120, h: 84),
