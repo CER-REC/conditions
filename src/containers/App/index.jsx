@@ -184,8 +184,14 @@ class App extends React.PureComponent {
 
     if (!app || !explorer) { return; }
 
-    const pixelsX = explorer.offsetLeft - app.offsetLeft + guidePosition.x;
-    const pixelsY = explorer.offsetTop - app.offsetTop + guidePosition.y + guidePosition.r;
+    // TODO: Try to handle these dynamically
+    // Magic numbers to compensate for the guide's SVG units not being pixels
+    const xMultiplier = 1.019;
+    const yMultiplier = 1.155;
+    const yOffset = -47;
+
+    const pixelsX = explorer.offsetLeft - app.offsetLeft + (xMultiplier * guidePosition.x);
+    const pixelsY = explorer.offsetTop - app.offsetTop + yOffset + (yMultiplier * guidePosition.y) + guidePosition.r;
     const x = 100 * pixelsX / app.offsetWidth;
     const y = 100 * pixelsY / app.offsetHeight;
 

@@ -18,18 +18,18 @@ $states: (
   0: (
     ".guideTranslate": (
       opacity: 0,
-      transition: "opacity 0s 1s, transform #{$defaultTransition}",
+      transition: "opacity 0s 1.2s , transform #{$defaultTransition}",
     ),
     ".guideTranslate .CircleContainer": (
       pointer-events: none,
     ),
     ".ConditionExplorer .guide": (
       opacity: 1,
-      transition: opacity 0s 1s,
+      transition: opacity 0.3s 1s ease-in-out,
     ),
     ".ConditionExplorer .guideOutline": (
       opacity: 1,
-      transition: opacity 0.3s 1s,
+      transition: opacity 0s 1s,
     ),
     ".ViewTwo": (pointer-events: none),
     ".ViewTwo .header": (opacity: 0),
