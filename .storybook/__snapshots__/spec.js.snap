@@ -5602,7 +5602,7 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
       Theme
     </h1>
     <span>
-      Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.
+      To facilitate analysis and public understanding, conditions are grouped into themes such as environment, finance, safety, security, etc.
     </span>
   </div>
 </div>
@@ -5688,7 +5688,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure filings are made.
+        conditions that help track organizational tasks.
       </span>
     </p>
     <h4
@@ -5698,7 +5698,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure reduction and prevention of damage.
+        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </span>
     </p>
     <h4
@@ -5708,7 +5708,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.
+        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </span>
     </p>
     <h4
@@ -5718,7 +5718,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.
+        conditions that reinforce prescribed regulatory requirements to be met.
       </span>
     </p>
     <h4
@@ -5728,7 +5728,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.
+        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </span>
     </p>
     <h4
@@ -5738,7 +5738,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure a company’s financial responsibilities are met.
+        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </span>
     </p>
     <h4
@@ -5748,7 +5748,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.
+        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </span>
     </p>
     <h4
@@ -5757,8 +5757,18 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
       Management System
     </h4>
     <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(36, 91, 64)",
+          }
+        }
+      >
+        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note
+        :
+      </span>
       <span>
-        types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+         A management system is not project specific.
       </span>
     </p>
     <h4
@@ -5768,7 +5778,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.
+         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </span>
     </p>
     <h4
@@ -5778,7 +5788,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that project facilities are monitored and secured.
+        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5788,7 +5798,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).
+        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </span>
     </p>
     <h4
@@ -5798,7 +5808,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.
+         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5808,7 +5818,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects/phases begin in a specific period of time.
+        conditions that ensure projects begin within a specific period of time.
       </span>
     </p>
   </div>
@@ -5836,7 +5846,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure filings are made.
+        conditions that help track organizational tasks.
       </span>
     </p>
     <h4
@@ -5846,7 +5856,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure reduction and prevention of damage.
+        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </span>
     </p>
     <h4
@@ -5856,7 +5866,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.
+        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </span>
     </p>
     <h4
@@ -5866,7 +5876,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.
+        conditions that reinforce prescribed regulatory requirements to be met.
       </span>
     </p>
     <h4
@@ -5876,7 +5886,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.
+        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </span>
     </p>
     <h4
@@ -5886,7 +5896,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure a company’s financial responsibilities are met.
+        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </span>
     </p>
     <h4
@@ -5896,7 +5906,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.
+        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </span>
     </p>
     <h4
@@ -5905,8 +5915,18 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
       Management System
     </h4>
     <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(36, 91, 64)",
+          }
+        }
+      >
+        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note
+        :
+      </span>
       <span>
-        types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+         A management system is not project specific.
       </span>
     </p>
     <h4
@@ -5916,7 +5936,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.
+         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </span>
     </p>
     <h4
@@ -5926,7 +5946,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that project facilities are monitored and secured.
+        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5936,7 +5956,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).
+        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </span>
     </p>
     <h4
@@ -5946,7 +5966,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.
+         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5956,7 +5976,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects/phases begin in a specific period of time.
+        conditions that ensure projects begin within a specific period of time.
       </span>
     </p>
   </div>
@@ -21210,7 +21230,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Themes Across All Conditions
+      Overall Trend for Conditions: Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -22500,7 +22520,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Phases Across All Conditions
+      Total Conditions by Phase Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -24325,7 +24345,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Themes Across All Conditions
+      Overall Trend for Conditions: Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
