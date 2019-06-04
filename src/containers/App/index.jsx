@@ -12,7 +12,6 @@ import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
-import { features } from '../../constants';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -34,6 +33,7 @@ import graphQLEndPoint from '../../../globals';
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import ConditionDetails from '../../components/ConditionDetails';
+import formatConditionDetails from '../../utilities/formatConditionDetails';
 import './styles.scss';
 
 import {
@@ -222,65 +222,7 @@ class App extends React.PureComponent {
                   if (loading) { return <div>Loading</div>; }
                   if (error) { return <div>Loading</div>; }
                   const { shortName, instruments } = data.getProjectById;
-                  const formattedInstrument = instruments.map((instrument) => {
-                    const {
-                      instrumentNumber,
-                      dateIssuance,
-                      dateEffective,
-                      dateSunset,
-                      status,
-                      regions,
-                      name,
-                      conditions,
-                    } = instrument;
-                    // TODO: This will change when manali updates our GraphQL endpoint
-                    const bins = {
-                      S: 1,
-                      M: 2,
-                      L: 3,
-                    };
-
-                    const formattedConditions = conditions.reduce((acc, next) => {
-                      // TODO: populate details values for `subFeaturesWithValue`
-                      const subFeaturesWithValue = Object
-                        .entries(next.aggregatedCount[selected.feature])
-                        .reduce((subAcc, [subFeature, subCount]) => {
-                          if (subFeature === '__typename' || !subCount) return subAcc;
-                          subAcc.fill.push(features[selected.feature][subFeature]);
-                          return subAcc;
-                        },
-                        {
-                          fill: [],
-                          details: {
-                            theme: '',
-                            phase: '',
-                            type: '',
-                            status: '',
-                            filing: '',
-                          },
-                        });
-                      // TODO: keywords needs to be matched search keywords...
-                      // TODO: Handle translations for text
-                      acc.push({
-                        ...subFeaturesWithValue,
-                        binnedValue: bins[next.textLength],
-                        keywords: [''],
-                        text: next.text.en,
-                      });
-                      return acc;
-                    }, []);
-                    // TODO: handle multiple locations for `instrument.regions`
-                    return {
-                      instrumentNumber,
-                      issuanceDate: dateIssuance,
-                      effectiveDate: dateEffective,
-                      sunsetDate: dateSunset,
-                      status,
-                      location: regions[0] ? `${regions[0].name.en}, ${regions[0].province}` : '',
-                      activity: name,
-                      conditions: formattedConditions,
-                    };
-                  });
+                  const formattedInstrument = formatConditionDetails(instruments, selected.feature);
                   return (
                     <ConditionDetails
                       selectedItem={this.props.selected.condition}

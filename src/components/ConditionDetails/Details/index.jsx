@@ -35,7 +35,6 @@ Details.propTypes = {
   isInstrument: PropTypes.bool,
   data: PropTypes.shape({
     theme: PropTypes.string.isRequired,
-    instrument: PropTypes.string.isRequired,
     phase: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,

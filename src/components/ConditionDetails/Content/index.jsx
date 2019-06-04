@@ -52,7 +52,6 @@ class Content extends React.PureComponent {
               <ContentBlock id="components.conditionDetails.status" content={<FormattedMessage id={`common.${data.status}`} />} half />
               <ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} half />
               <ContentBlock id="components.conditionDetails.location" content={data.location} half />
-              <ContentBlock id="components.conditionDetails.type" content={data.type} />
               {this.renderContentText('components.conditionDetails.activity', data.activity)}
             </React.Fragment>
           )
@@ -78,7 +77,6 @@ Content.propTypes = {
     sunsetDate: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
     activity: PropTypes.string.isRequired,
     conditions: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,

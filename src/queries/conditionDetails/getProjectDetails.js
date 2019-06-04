@@ -18,7 +18,7 @@ export default gql`
       instruments {
         id
         name
-        instrumentPrefix
+        prefix
         status
         regions {
           name {
@@ -27,7 +27,7 @@ export default gql`
           }
           province
         }
-        instrumentNumber
+        number
         dateSunset
         dateIssuance
         dateEffective
