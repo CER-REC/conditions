@@ -23,10 +23,22 @@ export default (instruments, selectedFeature) => (
       const subFeaturesWithValue = Object
         .entries(next.aggregatedCount[selectedFeature])
         .reduce((subAcc, [subFeature, subCount]) => {
-          if (subFeature === '__typename' || !subCount) return subAcc;
-          subAcc.fill.push(features[selectedFeature][subFeature]);
-          // TODO: populate details values for `subFeaturesWithValue`
-          return subAcc;
+          // this variable is used for no-param-reassign
+          const reformatted = subAcc;
+          if (subFeature === '__typename' || subCount <= 0) return reformatted;
+          reformatted.fill.push(features[selectedFeature][subFeature]);
+          // TODO: bring top level feature into this nested reduce
+          Object
+            .entries(next.aggregatedCount)
+            .filter(feature => feature[0] !== '__typename')
+            .forEach((feature) => {
+              const test = Object.entries(feature[1])
+                .filter(sub => sub[0] !== '__typename')
+                .filter(sub => sub[1] > 0)
+                .flat();
+              reformatted.details[feature[0]] = `${feature[0]}.${test[0]}`;
+            });
+          return reformatted;
         },
         {
           fill: [],
