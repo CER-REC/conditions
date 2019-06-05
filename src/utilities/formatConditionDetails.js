@@ -24,10 +24,8 @@ export default (instruments, selectedFeature) => (
       const subFeaturesWithValue = Object
         .entries(next.aggregatedCount[selectedFeature])
         .reduce((subAcc, [subFeature, subCount]) => {
-          // this variable is used for no-param-reassign
-          const reformatted = subAcc;
-          if (subFeature === '__typename' || subCount <= 0) return reformatted;
-          reformatted.fill.push(features[selectedFeature][subFeature]);
+          if (subFeature === '__typename' || subCount <= 0) return subAcc;
+          subAcc.fill.push(features[selectedFeature][subFeature]);
           // TODO: bring top level feature into this nested reduce
           Object
             .entries(next.aggregatedCount)
@@ -37,9 +35,10 @@ export default (instruments, selectedFeature) => (
                 .filter(sub => sub[0] !== '__typename')
                 .filter(sub => sub[1] > 0)
                 .flat();
-              reformatted.details[feature[0]] = `${feature[0]}.${test[0]}`;
+              // eslint-disable-next-line no-param-reassign
+              subAcc.details[feature[0]] = `${feature[0]}.${test[0]}`;
             });
-          return reformatted;
+          return subAcc;
         },
         {
           fill: [],
@@ -63,19 +62,16 @@ export default (instruments, selectedFeature) => (
 
     // This is used to show all regions belonging to an instrument
     const allLocations = regions.reduce((acc, next) => {
-      // for param reassign
-      let string = acc;
-      string = string.concat(`${next.name.en}, ${next.province} `);
-      return string;
-    }, '');
-
+      acc.push([next.name.en, next.province].join(', '));
+      return acc;
+    }, []);
     return {
       instrumentNumber: number,
       issuanceDate: dateIssuance,
       effectiveDate: dateEffective,
       sunsetDate: dateSunset || 'null',
       status,
-      location: allLocations || '',
+      location: allLocations,
       activity: name,
       conditions: formattedConditions,
     };
