@@ -50,20 +50,20 @@ export const ViewTwoGraphQL = (props) => {
                             [`${projectsData[projectIndex].aggregatedCount[`${feature}Enum`][subfeatureIndex]}`]: count,
                           });
                         });
-                      // if (Object.keys(aggregated[feature]).length > 13) {
-                      //   const parsedData = Object.entries(aggregated[feature]).sort(
-                      //     (a, b) => (a.count > b.count ? -1 : 1),
-                      //   );
-                      //   aggregated[feature] = {};
-                      //   parsedData.push([
-                      //     'other',
-                      //     parsedData.splice(13).reduce((acc, cur) => (acc + cur[1]), 0),
-                      //   ]);
-                      //   parsedData.forEach((arrayElement) => {
-                      //     // eslint-disable-next-line prefer-destructuring
-                      //     aggregated[feature][arrayElement[0]] = arrayElement[1];
-                      //   });
-                      // }
+                      if (feature === 'instrument' && Object.keys(aggregated.instrument.length > 10)) {
+                        const parsedData = Object.entries(aggregated[feature]).sort(
+                          (a, b) => (a.count > b.count ? -1 : 1),
+                        );
+                        aggregated[feature] = {};
+                        parsedData.push([
+                          'other',
+                          parsedData.splice(10).reduce((acc, cur) => (acc + cur[1]), 0),
+                        ]);
+                        parsedData.forEach((arrayElement) => {
+                          // eslint-disable-next-line prefer-destructuring
+                          aggregated[feature][arrayElement[0]] = arrayElement[1];
+                        });
+                      }
                     });
                     return ({
                       ...project,
