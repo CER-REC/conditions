@@ -72,21 +72,19 @@ export const ViewTwoGraphQL = (props) => {
                   })
                   : [];
 
-                const selectedProject = props.selected.company && !projLoading && !projError
-                  && parsedProjectsData.length > 1
+                const selectedProject = !projLoading && !projError && props.selected.company
+                  && parsedProjectsData.length > 0
                   ? parsedProjectsData.find(item => item.id === props.selected.project)
                   : null;
 
                 const projectFeatureData = selectedProject
                   ? Object.entries(selectedProject.aggregatedCount[props.selected.feature])
                     .reduce((acc, [key, val]) => {
-                      if (key !== '__typename') {
-                        acc.push({
-                          feature: props.selected.feature,
-                          description: key,
-                          disabled: val <= 0,
-                        });
-                      }
+                      acc.push({
+                        feature: props.selected.feature,
+                        description: key,
+                        disabled: val <= 0,
+                      });
                       return acc;
                     }, [])
                   : [];
