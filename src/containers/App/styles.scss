@@ -2,8 +2,8 @@
 @import "./transitions.scss";
 
 .App {
-  
-  
+
+
 
   $defaultTransition: 1s ease-in-out;
 
@@ -21,12 +21,12 @@
       ViewTwo: (x: 0, y: 0, w: 120, h: 84),
       ViewThree: (x: 0, y: 0, w: 120, h: 84),
       conditions: (x: 39, y:53, w: 79, h:29),
-  )) 
+  ))
   }
 
-  .guideWrapper {
-    overflow: hidden;
-  }
+  // .guideWrapper {
+  //   overflow: hidden;
+  // }
 
   .guideTranslate {
     z-index: 999;
@@ -251,4 +251,3 @@
     }
   }
 }
-

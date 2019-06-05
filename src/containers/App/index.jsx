@@ -94,12 +94,20 @@ class App extends React.PureComponent {
   incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
     if (currentState === transitionStates.view1Reset) { currentState = 0; }
+
     const newState = Math.min(
       Math.max(transitionStates.view1, currentState + amt),
       transitionStates.view2,
     );
+
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
+
+      // Fix for users with viewports too short to see the entire vis. losing
+      // the Guide. (i.e. they have four toolbars or something)
+      if (newState < transitionStates.view2) {
+        this.scrollSelectorIntoView('.Guide', 1000);
+      }
     }
   };
 
@@ -151,15 +159,30 @@ class App extends React.PureComponent {
     setTimeout(this.playTimer, tutorialTiming);
   }
 
+  scrollSelectorIntoView = (selector, delay) => {
+    setTimeout(() => {
+      const app = document.documentElement;
+      const rect = app.querySelector(selector).getBoundingClientRect();
+
+      if (rect.bottom <= window.innerHeight && rect.top >= 0) { return; }
+
+      // Element.scrollIntoView doesn't work for the Guide; I think because it's inside
+      // a transform: translated container?
+      app.scrollTo({
+        top: (rect.top + app.scrollTop) - (window.innerHeight / 2),
+        left: 0,
+        behavior: 'smooth',
+      });
+    }, delay);
+  }
+
   jumpToAbout = () => {
     this.props.setTransitionState(transitionStates.view2);
     this.setMainInfoBarPane('about');
 
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
-    setTimeout(() => {
-      this.ref.current.querySelector('.Footer').scrollIntoView({ behavior: 'smooth' });
-    }, 1000);
+    this.scrollSelectorIntoView('.Footer', 1000);
   }
 
   jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
