@@ -33,24 +33,6 @@ export const ViewTwoGraphQL = (props) => {
                   data: projData,
                 } = projectMenuQprops;
 
-                const selectedProject = props.selected.company && !projLoading && !projError
-                  ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
-                  : null;
-
-                const projectFeatureData = selectedProject
-                  ? Object.entries(selectedProject.aggregatedCount[props.selected.feature])
-                    .reduce((acc, [key, val]) => {
-                      if (key !== '__typename') {
-                        acc.push({
-                          feature: props.selected.feature,
-                          description: selectedProject.aggregatedCount[`${props.selected.feature}Enum`][key],
-                          disabled: val <= 0,
-                        });
-                      }
-                      return acc;
-                    }, [])
-                  : [];
-
                 const projectsData = !projLoading && !projError && props.selected.company
                   ? omitTypename(projData.allProjectsByCompany)
                   : [];
@@ -68,15 +50,19 @@ export const ViewTwoGraphQL = (props) => {
                             [`${projectsData[projectIndex].aggregatedCount[`${feature}Enum`][subfeatureIndex]}`]: count,
                           });
                         });
-                      if (aggregated[feature].length > 13) {
-                        const parsedData = aggregated[feature].sort(
+                      if (Object.keys(aggregated[feature]).length > 13) {
+                        const parsedData = Object.entries(aggregated[feature]).sort(
                           (a, b) => (a.count > b.count ? -1 : 1),
                         );
-                        parsedData.push({
-                          name: 'other',
-                          count: parsedData.splice(13).reduce((acc, cur) => (acc + cur.count), 0),
+                        aggregated[feature] = {};
+                        parsedData.push([
+                          'other',
+                          parsedData.splice(13).reduce((acc, cur) => (acc + cur[1]), 0),
+                        ]);
+                        parsedData.forEach((arrayElement) => {
+                          // eslint-disable-next-line prefer-destructuring
+                          aggregated[feature][arrayElement[0]] = arrayElement[1];
                         });
-                        aggregated[feature] = [...parsedData];
                       }
                     });
                     return ({
@@ -85,6 +71,26 @@ export const ViewTwoGraphQL = (props) => {
                     });
                   })
                   : [];
+
+                const selectedProject = props.selected.company && !projLoading && !projError
+                  && parsedProjectsData.length > 1
+                  ? parsedProjectsData.find(item => item.id === props.selected.project)
+                  : null;
+
+                const projectFeatureData = selectedProject
+                  ? Object.entries(selectedProject.aggregatedCount[props.selected.feature])
+                    .reduce((acc, [key, val]) => {
+                      if (key !== '__typename') {
+                        acc.push({
+                          feature: props.selected.feature,
+                          description: key,
+                          disabled: val <= 0,
+                        });
+                      }
+                      return acc;
+                    }, [])
+                  : [];
+
                 // console.log(parsedProjectsData);
                 // TODO: ERROR HANDLING
                 return (
