@@ -15,6 +15,7 @@ describe('Components|Wheel', () => {
         wheelType="company"
         wheelData={wheelData}
         selectRay={spy}
+        wheelMotionTrigger={() => {}}
       />
     ));
   });

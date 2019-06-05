@@ -6,6 +6,10 @@
   height: 100%;
   max-width: 96px;
 
+  &.hidden {
+    visibility: hidden;
+  }
+
   svg {
     position: absolute;
     left: 0;

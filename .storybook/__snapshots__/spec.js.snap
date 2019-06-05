@@ -17454,7 +17454,9 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
           Companies in Selected Region:
         </span>
       </div>
-      <ul>
+      <ul
+        className=""
+      >
         <li>
           Alberta Trans-Alta e
         </li>

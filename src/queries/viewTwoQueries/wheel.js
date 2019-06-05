@@ -35,3 +35,21 @@ export const locationWheelQuery = gql`
   ${FILING_FRAGMENT}
   ${PHASE_FRAGMENT}
 `;
+
+export const companiesByRegionQuery = gql`
+  query companiesByRegion ($id: Int!) {
+    companiesByRegionId: getCompaniesByRegionId (id: $id){
+      name
+      id
+      projects {
+        instruments {
+          regions {
+            name {
+              en
+            }
+          }
+        }
+      }
+    }
+  }
+`;

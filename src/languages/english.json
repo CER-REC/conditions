@@ -74,8 +74,8 @@
       "XO" :"Oil Order", 
       "ZO": "Abandonment Order",
       "CO": "text not yet provided",
-      "OPL": "text not yet provided"
-
+      "OPL": "text not yet provided",
+      "other": "other"
     },
     "instrumentCommodityType": {
       "OIL": "Oil",
