@@ -9,7 +9,8 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, FormattedMessage } from 'react-intl';
+
 import { AppContainer, hot } from 'react-hot-loader';
 import i18nMessages from '../../i18n';
 
@@ -303,13 +304,15 @@ class App extends React.PureComponent {
             />
           </section>
           <Query query={getDateDataUpdated}>
-            {({ loading, error, data }) => {
-              if (loading) return 'Loading Date';
-              if (error) return 'Error Occured';
-              const dateOfUpdate = new Date(data.allConfigurationData.lastUpdated);
+            {(dateQProps) => {
+              const { loading: dateLoading, error: errorDateQuery, data: dateData } = dateQProps;
+              if (dateLoading) return 'Loading Date';
+              if (errorDateQuery) return 'Error Occured';
+              const dateOfUpdate = new Date(dateData.allConfigurationData.lastUpdated);
               return (
                 <div className="DateUpdated">
-                  <h1>Data Last Updated: {`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
+                  <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
+                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
                 </div>
               );
             }}
