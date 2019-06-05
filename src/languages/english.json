@@ -73,6 +73,14 @@
       "XG":"Gas Order",
       "XO" :"Oil Order",
       "ZO": "Abandonment Order",
+      "GH": "text not yet provided",
+      "OH": "text not yet provided",
+      "KAX": "text not yet provided",
+      "MHW": "text not yet provided",
+      "CPTC": "text not yet provided",
+      "XE": "text not yet provided",
+      "MH": "text not yet provided",
+      "OPSP": "text not yet provided",
       "CO": "text not yet provided",
       "OPL": "text not yet provided",
       "OTHER": "other"
@@ -253,8 +261,18 @@
         "XG":" The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
         "XO" :"The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)",
         "ZO": "The approval of abandonment applications",
+        "GH": "text not yet provided",
+        "OH": "text not yet provided",
+        "KAX": "text not yet provided",
+        "MHW": "text not yet provided",
+        "CPTC": "text not yet provided",
+        "XE": "text not yet provided",
+        "MH": "text not yet provided",
+        "OPSP": "text not yet provided",
         "CO": "text not yet provided",
-        "OPL": "text not yet provided"
+        "OPL": "text not yet provided",
+        "OTHER":  "text not yet provided",
+        "other": "text not yet provided"
       }
     },
     "featureMenu": {
