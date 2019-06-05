@@ -77,15 +77,32 @@ class StreamGraph extends React.Component {
     );
   });
 
+  updateControlYearState = (controlYearArray) => {
+    if (this.state.controlYear === null) {
+      // sorting of control year array
+      const controlYearArr = controlYearArray.sort();
+      if (controlYearArray.length >= 3) {
+        const [controlYear] = controlYearArr.slice(-3, -2);
+        return parseInt(controlYear, 10);
+      }
+    }
+    return this.state.controlYear;
+  };
+
   chart() {
     const filteredData = this.processedData.filter(entry => (
       (entry.feature === this.props.feature)
       && ((this.props.subFeature === '') || (entry.subFeature === this.props.subFeature))
     ));
 
+    const controlYearArray = [];
+
     const yearTotals = filteredData.reduce((acc, cur) => {
-      Object.values(cur.years).forEach((count, yearIdx) => {
+      Object.entries(cur.years).forEach(([year, count], yearIdx) => {
         acc[yearIdx] = count + (acc[yearIdx] || 0);
+        if (!controlYearArray.includes(year)) {
+          controlYearArray.push(year);
+        }
       });
 
       return acc;
@@ -136,7 +153,7 @@ class StreamGraph extends React.Component {
     };
 
     const { intl } = this.props;
-
+    const controlYr = this.updateControlYearState(controlYearArray);
     return (
       <VictoryChart
         animate={streamAnimation}
@@ -164,7 +181,7 @@ class StreamGraph extends React.Component {
         <StackGroupProps
           groupProps={{
             onChange: this.handleOnChange,
-            controlYear: this.state.controlYear,
+            controlYear: controlYr,
             countsData: filteredData,
             allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
           }}

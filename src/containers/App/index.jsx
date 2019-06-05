@@ -4,11 +4,13 @@ import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { HttpLink } from 'apollo-link-http';
+
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, FormattedMessage } from 'react-intl';
+
 import { AppContainer, hot } from 'react-hot-loader';
 import i18nMessages from '../../i18n';
 
@@ -18,6 +20,7 @@ import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
+import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -36,7 +39,6 @@ import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 import graphQLEndPoint from '../../../globals';
-
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
@@ -95,12 +97,20 @@ class App extends React.PureComponent {
   incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
     if (currentState === transitionStates.view1Reset) { currentState = 0; }
+
     const newState = Math.min(
       Math.max(transitionStates.view1, currentState + amt),
       transitionStates.view2,
     );
+
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
+
+      // Fix for users with viewports too short to see the entire vis. losing
+      // the Guide. (i.e. they have four toolbars or something)
+      if (newState < transitionStates.view2) {
+        this.scrollSelectorIntoView('.Guide', 1000);
+      }
     }
   };
 
@@ -152,15 +162,30 @@ class App extends React.PureComponent {
     setTimeout(this.playTimer, tutorialTiming);
   }
 
+  scrollSelectorIntoView = (selector, delay) => {
+    setTimeout(() => {
+      const app = document.documentElement;
+      const rect = app.querySelector(selector).getBoundingClientRect();
+
+      if (rect.bottom <= window.innerHeight && rect.top >= 0) { return; }
+
+      // Element.scrollIntoView doesn't work for the Guide; I think because it's inside
+      // a transform: translated container?
+      app.scrollTo({
+        top: (rect.top + app.scrollTop) - (window.innerHeight / 2),
+        left: 0,
+        behavior: 'smooth',
+      });
+    }, delay);
+  }
+
   jumpToAbout = () => {
     this.props.setTransitionState(transitionStates.view2);
     this.setMainInfoBarPane('about');
 
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
-    setTimeout(() => {
-      this.ref.current.querySelector('.Footer').scrollIntoView({ behavior: 'smooth' });
-    }, 1000);
+    this.scrollSelectorIntoView('.Footer', 1000);
   }
 
   jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
@@ -319,6 +344,20 @@ class App extends React.PureComponent {
               {...conditionDetailsViewProps}
             />
           </section>
+          <Query query={getDateDataUpdated}>
+            {(dateQProps) => {
+              const { loading: dateLoading, error: errorDateQuery, data: dateData } = dateQProps;
+              if (dateLoading) return 'Loading Date';
+              if (errorDateQuery) return 'Error Occured';
+              const dateOfUpdate = new Date(dateData.allConfigurationData.lastUpdated);
+              return (
+                <div className="DateUpdated">
+                  <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
+                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
+                </div>
+              );
+            }}
+          </Query>
         </div>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}

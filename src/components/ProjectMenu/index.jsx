@@ -23,12 +23,11 @@ class ProjectMenu extends React.PureComponent {
 
   static defaultProps = {
     loading: false,
-    projectsData: [loadingProjectsData],
+    projectsData: [],
     selectedProjectID: null,
   }
 
-  getListItems = () => {
-    const { projectsData, selectedProjectID } = this.props;
+  getListItems = (projectsData, selectedProjectID) => {
     const projectIndex = selectedProjectID === null
       ? -1
       : projectsData.findIndex(project => project.id === selectedProjectID);
@@ -45,7 +44,8 @@ class ProjectMenu extends React.PureComponent {
 
   handleConditionChange = (listItemIndex) => {
     if (this.props.loading) { return; }
-    const visibleListItems = this.getListItems();
+    const visibleListItems = this.getListItems(this.props.projectsData,
+      this.props.selectedProjectID);
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
@@ -55,9 +55,7 @@ class ProjectMenu extends React.PureComponent {
       .map(([name, count]) => ({ name, count }))
   );
 
-  getSedimentationWidth = () => {
-    const data = this.props.projectsData;
-
+  getSedimentationWidth = (data) => {
     const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
     const rightCount = data.length - leftCount - 1;
 
@@ -68,10 +66,15 @@ class ProjectMenu extends React.PureComponent {
   };
 
   render() {
-    const { loading, selectedProjectID, selectedFeature, onChange } = this.props;
-    const listItems = this.getListItems();
-    // If there are no listItems render virtualized data
-    // TODO: Make fake renderedItems for loading of projectMenu
+    const { loading, onChange } = this.props;
+    let { selectedProjectID, selectedFeature, projectsData } = this.props;
+    const isListEmpty = this.getListItems(projectsData, selectedProjectID).length === 0;
+    if (loading || isListEmpty) {
+      projectsData = [{ ...loadingProjectsData, id: 0 }];
+      selectedProjectID = 0;
+      selectedFeature = 'theme';
+    }
+    const listItems = this.getListItems(projectsData, selectedProjectID);
     const renderedItems = listItems ? listItems
       .map(project => (
         <ProjectChart
@@ -95,8 +98,8 @@ class ProjectMenu extends React.PureComponent {
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;
 
-    const [sedimentationLeft, sedimentationRight] = this.getSedimentationWidth();
-
+    const [sedimentationLeft, sedimentationRight] = loading ? [0, 0]
+      : this.getSedimentationWidth(projectsData);
     return (
       <div
         className={classNames(

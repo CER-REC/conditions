@@ -15,6 +15,19 @@ const year = {
   end: 1980,
 };
 
+const regionCompanyData = {
+  companies: [
+    { id: 12, name: 'Alberta Trans-Alta e' },
+    { id: 11, name: '6720471 Canada Ltd.' },
+    { id: 10, name: 'Abitibi-Consolidated Company of Canada.' },
+    { id: 13, name: 'EnCana Corporation.' },
+    { id: 14, name: 'Genesis Pipeline Canada Ltd.' },
+    { id: 15, name: 'Husky Oil Operations Limited.' },
+    { id: 1, name: 'Canada-Montana Pipe Line Company' },
+  ],
+  selectedConditionCompanies: [],
+};
+
 const categories = ['all', 'wildlife & habitat'];
 
 const props = {
@@ -29,6 +42,8 @@ const props = {
   },
   browseBy: 'company',
   jumpToView3: noop,
+  regionCompanyData,
+  openProjectDetails: noop,
 };
 
 const connectedProps = {
@@ -43,6 +58,7 @@ const connectedProps = {
   browseBy: 'company',
   jumpToView3: noop,
   jumpToView1: noop,
+  regionCompanyData,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
