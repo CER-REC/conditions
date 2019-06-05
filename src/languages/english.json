@@ -72,7 +72,9 @@
       "XC": "Commodity Order:",
       "XG":"Gas Order",
       "XO" :"Oil Order", 
-      "ZO": "Abandonment Order"
+      "ZO": "Abandonment Order",
+      "CO": "text not yet provided",
+      "OPL": "text not yet provided"
 
     },
     "instrumentCommodityType": {
@@ -266,7 +268,9 @@
         "XC": "The exemption of a commodity pipeline or parts thereof, or commodity pipeline facilities",
         "XG":" The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
         "XO" :"The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)", 
-        "ZO": "The approval of abandonment applications"
+        "ZO": "The approval of abandonment applications",
+        "CO": "text not yet provided",
+        "OPL": "text not yet provided"
       }
     },
     "featureMenu": {
