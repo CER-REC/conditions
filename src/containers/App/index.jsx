@@ -2,7 +2,7 @@ import React from 'react';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import gql from 'graphql-tag';
+
 import { HttpLink } from 'apollo-link-http';
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
@@ -12,6 +12,9 @@ import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
+
+import getConditionAncestors from '../../queries/getConditionAncestors';
+import getKeywordConditions from '../../queries/getKeywordConditions';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -25,13 +28,14 @@ import {
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
-import ViewTwo from '../ViewTwo';
+import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 import graphQLEndPoint from '../../../globals';
 
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
+import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
 import './styles.scss';
@@ -51,6 +55,14 @@ const link = new HttpLink({
 const client = new ApolloClient({ cache, link, fetch });
 
 const noop = () => {};
+const tutorialTiming = 5000;
+
+const transitionStates = {
+  view1: 0,
+  view2: 7,
+  view1Reset: 8,
+  view3: 9,
+};
 
 const viewProps = {
   conditionCountsByYear,
@@ -72,23 +84,77 @@ const viewProps = {
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { mainInfoBarPane: '' };
+    this.state = {
+      mainInfoBarPane: '',
+      tutorialPlaying: false,
+    };
     this.ref = React.createRef();
   }
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
-  handleGuideClick = () => {
+  incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
-    if (currentState === 9) { currentState = 0; }
-    const newState = Math.min(Math.max(0, currentState + 1), 8);
+    if (currentState === transitionStates.view1Reset) { currentState = 0; }
+    const newState = Math.min(
+      Math.max(transitionStates.view1, currentState + amt),
+      transitionStates.view2,
+    );
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
     }
+  };
+
+  handleGuideClick = () => {
+    if (this.props.transitionState === transitionStates.view1
+      || this.props.transitionState === transitionStates.view1Reset) {
+      this.togglePlay(true);
+    } else if (this.state.tutorialPlaying) {
+      this.togglePlay(false);
+    }
+
+    this.incrementTransitionState();
+  };
+
+  transportBack = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      tutorialPlaying: false,
+    }));
+    this.incrementTransitionState(-1);
+  };
+
+  transportForward = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      tutorialPlaying: false,
+    }));
+    this.incrementTransitionState();
+  };
+
+  playTimer = () => {
+    if (this.state.tutorialPlaying
+    && (this.props.transitionState < transitionStates.view2
+      || this.props.transitionState === transitionStates.view1Reset)
+    ) {
+      this.incrementTransitionState();
+
+      setTimeout(this.playTimer, tutorialTiming);
+    }
+  };
+
+  // Pass true or false to explicitly set the state
+  togglePlay = (state) => {
+    this.setState(prevState => ({
+      ...prevState,
+      tutorialPlaying: (state !== undefined) ? state : !prevState.tutorialPlaying,
+    }));
+
+    setTimeout(this.playTimer, tutorialTiming);
   }
 
   jumpToAbout = () => {
-    this.props.setTransitionState(8);
+    this.props.setTransitionState(transitionStates.view2);
     this.setMainInfoBarPane('about');
 
     // This timer needs to be long enough for React to do its thing and for the
@@ -98,34 +164,20 @@ class App extends React.PureComponent {
     }, 1000);
   }
 
-  jumpToView1 = () => this.props.setTransitionState(9)
+  jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
 
   jumpToView2 = (type) => {
-    this.props.setTransitionState(8);
+    this.props.setTransitionState(transitionStates.view2);
     this.props.setBrowseBy(type);
   }
 
-  jumpToView3 = () => this.props.setTransitionState(10)
+  jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
   setConditionAncestors = (id) => {
     // TODO: Make a query for this once our server has `conditionById($id)` available
     client.query({
-      query: gql`
-        query{
-          getConditionById(id: ${id}){
-            instrumentId
-            instrument {
-              projectId
-              project {
-                companyIds
-              }
-            }
-            text {
-              en
-            }
-          }
-        }
-      `,
+      query: getConditionAncestors,
+      variables: { id },
     // eslint-disable-next-line no-unused-vars
     }).then((response) => {
       // TODO: Error checking
@@ -147,16 +199,8 @@ class App extends React.PureComponent {
     this.props.setSelectedKeywordId(id);
     this.props.setIncluded([keyword]);
     client.query({
-      query: gql`
-        {
-          findSearchResults(
-            includeKeywords: ["${keyword}"],
-            language: "en" # TODO: Check the app's locale
-          ) {
-            conditionIds
-          }
-        }
-      `,
+      query: getKeywordConditions,
+      variables: { keywords: [keyword] },
     }).then((response) => {
       const { conditionIds } = response.data.findSearchResults;
       if (!conditionIds.length) {
@@ -172,15 +216,16 @@ class App extends React.PureComponent {
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
-    let guideState = transitionState;
-    if (guideState === 9) {
-      guideState = 0;
-    } else if (guideState === 8 || guideState > 9) {
-      guideState = -1;
+    let guideStep = transitionState;
+    if (guideStep === transitionStates.view1Reset) {
+      guideStep = transitionStates.view1;
+    } else if (guideStep === transitionStates.view2 || guideStep > transitionStates.view1Reset) {
+      guideStep = -1;
     }
 
     let labelId = 'blank';
-    if (transitionState < 7 || transitionState === 9) {
+    if (transitionState < (transitionStates.view2 - 1)
+    || transitionState === transitionStates.view1Reset) {
       labelId = 'skip';
     } else if (transitionState > 9) {
       labelId = 'return';
@@ -196,56 +241,87 @@ class App extends React.PureComponent {
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
         ref={this.ref}
+        // For the last tutorial step, the view needs to be interactive but still
+        // advance the transition state when something is interacted with.
+        // The timeout makes sure React doesn't re-render before the event can
+        // propagate to the actual target
+        onClickCapture={(transitionState === (transitionStates.view2 - 1))
+          ? () => setTimeout(this.incrementTransitionState, 0)
+          : null
+        }
       >
-        <div className="guideWrapper">
-          <Guide textState={guideState} onClick={this.handleGuideClick} />
+        <div className="fixedContainer">
+          <div className="guideWrapper">
+            {/**
+              * This extra div gets us around the fact that CSS' translate function measures
+              * percentages relative to the element being translated; the Guide circle itself
+              * can't use percentages for translating to a given position relative to the app.
+              */}
+            <div className="guideTranslate">
+              <Guide step={guideStep} onClick={this.handleGuideClick} />
+            </div>
+          </div>
+          <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
+          <section className="appControls">
+            <BrowseBy
+              showArrow={
+                (transitionState === transitionStates.view1
+                || transitionState === transitionStates.view1Reset)
+              }
+              labelId={labelId}
+              browseBy={browseBy}
+              onClick={
+                (transitionState === transitionStates.view2)
+                  ? setBrowseBy
+                  : this.jumpToView2}
+            />
+            <GuideTransport
+              playing={this.state.tutorialPlaying}
+              back={this.transportBack}
+              forward={this.transportForward}
+              togglePlay={this.togglePlay}
+            />
+          </section>
+          {/* TODO: Deployment hacks */}
+          <div style={{ clear: 'both' }} />
+          <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
+          <ViewThree {...viewProps} />
+          <section className="conditions">
+            {selected.project !== null
+              ? (
+                <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
+                  {({ data, loading, error }) => {
+                    if (!data.getProjectById || !data) { return null; }
+                    if (loading) { return <div>Loading</div>; }
+                    if (error) { return <div>Loading</div>; }
+                    const { shortName, instruments } = data.getProjectById;
+                    // TODO: Change string 'en' to the redux store locale
+                    const formattedInstrument = formatConditionDetails(
+                      instruments, selected.feature,
+                    );
+                    return (
+                      <ConditionDetails
+                        selectedItem={this.props.selected.condition}
+                        selectedProject={shortName.en}
+                        updateSelectedItem={this.props.setSelectedCondition}
+                        openIntermediatePopup={this.props.openIntermediatePopup}
+                        openProjectDetails={this.props.openProjectDetails}
+                        toggleExpanded={noop}
+                        searchKeywords={{
+                          include: this.props.included,
+                          exclude: this.props.excluded,
+                        }}
+                        data={formattedInstrument}
+                        browseBy={this.props.browseBy}
+                        {...conditionDetailsViewProps}
+                      />
+                    );
+                  }}
+                </Query>
+              )
+              : null}
+          </section>
         </div>
-        <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
-        <section className="browseBy">
-          <BrowseBy
-            showArrow={(transitionState < 2 || transitionState === 9)}
-            labelId={labelId}
-            browseBy={browseBy}
-            onClick={(transitionState === 8) ? setBrowseBy : this.jumpToView2}
-          />
-        </section>
-        {/* TODO: Deployment hacks */}
-        <div style={{ clear: 'both' }} />
-        <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
-        <ViewThree {...viewProps} />
-        <section className="conditions">
-          {selected.project !== null
-            ? (
-              <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
-                {({ data, loading, error }) => {
-                  if (!data.getProjectById || !data) { return null; }
-                  if (loading) { return <div>Loading</div>; }
-                  if (error) { return <div>Loading</div>; }
-                  const { shortName, instruments } = data.getProjectById;
-                  // TODO: Change string 'en' to the redux store locale
-                  const formattedInstrument = formatConditionDetails(instruments, selected.feature);
-                  return (
-                    <ConditionDetails
-                      selectedItem={this.props.selected.condition}
-                      selectedProject={shortName.en}
-                      updateSelectedItem={this.props.setSelectedCondition}
-                      openIntermediatePopup={this.props.openIntermediatePopup}
-                      openProjectDetails={this.props.openProjectDetails}
-                      toggleExpanded={noop}
-                      searchKeywords={{
-                        include: this.props.included,
-                        exclude: this.props.excluded,
-                      }}
-                      data={formattedInstrument}
-                      browseBy={this.props.browseBy}
-                      {...conditionDetailsViewProps}
-                    />
-                  );
-                }}
-              </Query>
-            )
-            : null}
-        </section>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
