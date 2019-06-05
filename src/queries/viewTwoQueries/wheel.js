@@ -41,6 +41,15 @@ export const companiesByRegionQuery = gql`
     companiesByRegionId: getCompaniesByRegionId (id: $id){
       name
       id
+      projects {
+        instruments {
+          regions {
+            name {
+              en
+            }
+          }
+        }
+      }
     }
   }
 `;

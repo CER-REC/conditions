@@ -9,14 +9,17 @@ import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
 import { features } from '../../constants';
 import { viewTwo } from '../../proptypes';
+import omitTypename from '../../utilities/omitTypeName';
 
 export const ViewTwoGraphQL = (props) => {
   if (props.browseBy === 'company') {
     return (
-    // The queries must be by company and location and then subdivide.
       <Query query={companyWheelQuery}>
         {(wheelQProps) => {
           const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQProps;
+          const wheelData = !wheelQLoading && !wheelQerror && wheelQData.allCompanies
+            ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+            : [];
           return (
             <Query
               query={projectMenuQuery}
@@ -29,35 +32,65 @@ export const ViewTwoGraphQL = (props) => {
                   error: projError,
                   data: projData,
                 } = projectMenuQprops;
-                const wheelData = !wheelQLoading && !wheelQerror && wheelQData.allCompanies
-                  ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
-                  : [];
+
                 const selectedProject = props.selected.company && !projLoading && !projError
                   ? projData.allProjectsByCompany.find(item => item.id === props.selected.project)
                   : null;
+
                 const projectFeatureData = selectedProject
                   ? Object.entries(selectedProject.aggregatedCount[props.selected.feature])
                     .reduce((acc, [key, val]) => {
                       if (key !== '__typename') {
                         acc.push({
                           feature: props.selected.feature,
-                          description: key,
+                          description: selectedProject.aggregatedCount[`${props.selected.feature}Enum`][key],
                           disabled: val <= 0,
                         });
                       }
                       return acc;
                     }, [])
                   : [];
+
                 const projectsData = !projLoading && !projError && props.selected.company
-                  ? projData.allProjectsByCompany
+                  ? omitTypename(projData.allProjectsByCompany)
                   : [];
+                const featuresEnums = ['theme', 'instrument', 'phase', 'status', 'type', 'filing'];
 
+                const parsedProjectsData = projectsData.length > 0
+                  && projectsData[0].aggregatedCount
+                  ? projectsData.map((project, projectIndex) => {
+                    const aggregated = {};
+                    featuresEnums.forEach((feature) => {
+                      project.aggregatedCount[feature]
+                        .forEach((count, subfeatureIndex) => {
+                          aggregated[feature] = ({
+                            ...aggregated[feature],
+                            [`${projectsData[projectIndex].aggregatedCount[`${feature}Enum`][subfeatureIndex]}`]: count,
+                          });
+                        });
+                      if (aggregated[feature].length > 13) {
+                        const parsedData = aggregated[feature].sort(
+                          (a, b) => (a.count > b.count ? -1 : 1),
+                        );
+                        parsedData.push({
+                          name: 'other',
+                          count: parsedData.splice(13).reduce((acc, cur) => (acc + cur.count), 0),
+                        });
+                        aggregated[feature] = [...parsedData];
+                      }
+                    });
+                    return ({
+                      ...project,
+                      aggregatedCount: aggregated,
+                    });
+                  })
+                  : [];
+                // console.log(parsedProjectsData);
                 // TODO: ERROR HANDLING
-
                 return (
                   <ViewTwo
                     wheelData={wheelData}
-                    projectsData={projectsData}
+                    projectsData={parsedProjectsData}
                     projectMenuLoading={projLoading}
                     legendItems={projectFeatureData}
                     {...props}
@@ -129,8 +162,10 @@ export const ViewTwoGraphQL = (props) => {
                 && !companiesByRegionProps.loading
                 && companiesByRegionProps.data
                 && companiesByRegionProps.data.companiesByRegionId;
-              const omitTypename = (key, value) => (key === '__typename' ? undefined : value);
-              const regionCompanyData = data ? JSON.parse(JSON.stringify(data), omitTypename) : [{ name: '', id: 0 }];
+              const regionCompanyData = {
+                companies: data ? omitTypename(data) : [{ name: '', id: 0 }],
+                selectedConditionCompanies: [],
+              };
               return (
                 <ViewTwo
                   {...props}

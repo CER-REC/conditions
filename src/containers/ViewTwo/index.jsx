@@ -92,10 +92,10 @@ class ViewTwo extends React.Component {
                   visibility={this.state.wheelMoving ? 'hidden' : ''}
                 />
                 <RegionCompanies
-                  companies={this.props.regionCompanyData}
-                  activeConditionCompanies={[]}
+                  companies={this.props.regionCompanyData.companies}
+                  activeConditionCompanies={this.props.regionCompanyData.selectedConditionCompanies}
                   openProjectDetails={this.props.openProjectDetails}
-                  className={this.state.wheelMoving ? 'hidden' : ''}
+                  isVisible={this.state.wheelMoving ? 'hidden' : ''}
                 />
               </div>
             )
