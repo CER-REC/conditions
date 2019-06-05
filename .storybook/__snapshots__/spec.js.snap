@@ -14957,7 +14957,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter1 loading"
+    className="ProjectMenu paddingBefore2 paddingAfter2 loading"
   >
     <div
       className="pipe"
@@ -14966,7 +14966,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 0,
         }
       }
     />
@@ -14974,7 +14974,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -14983,8 +14983,36 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
     >
       <ul>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -14993,7 +15021,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart loading"
+              className="ProjectChart selected loading"
             >
               <div
                 className="ConditionPipe"
@@ -15215,11 +15243,35 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                 </div>
               </div>
               <div
-                className="ProjectName"
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
               >
-                <p>
-                  
-                </p>
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -15242,7 +15294,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter0 loading"
+    className="ProjectMenu paddingBefore2 paddingAfter2 loading"
   >
     <div
       className="pipe"
@@ -15251,7 +15303,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 0,
         }
       }
     />
@@ -15259,7 +15311,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 5,
+          "width": 0,
         }
       }
     />
@@ -15268,250 +15320,36 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
     >
       <ul>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
           <div
-            className="List-Item-Content"
+            className="CircleContainer arrow arrowPrevious hidden"
             focusable={true}
             onClick={[Function]}
             onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
             tabIndex={0}
           >
-            <div
-              className="ProjectChart loading"
-            >
+            <div>
               <div
-                className="ConditionPipe"
+                className="Arrow Left"
               >
-                <div
-                  className="CircleContainer ConditionCount"
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
+                <svg
+                  height="22"
+                  width="22"
                 >
-                  <div>
-                    
-                  </div>
-                </div>
-              </div>
-              <div
-                className="FlagWrapper"
-              >
-                <div
-                  className="FlagPole"
-                />
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(201, 215, 65)",
-                        "borderLeftColor": "rgb(201, 215, 65)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Administrative - 0"
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
                   />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(133, 28, 133)",
-                        "borderLeftColor": "rgb(133, 28, 133)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Damage Prevention - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(11, 121, 153)",
-                        "borderLeftColor": "rgb(11, 121, 153)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Emergency Management - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(74, 166, 255)",
-                        "borderLeftColor": "rgb(74, 166, 255)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Enforcement - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(33, 181, 115)",
-                        "borderLeftColor": "rgb(33, 181, 115)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Environmental Protection - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(247, 193, 97)",
-                        "borderLeftColor": "rgb(247, 193, 97)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Financial - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(153, 82, 255)",
-                        "borderLeftColor": "rgb(153, 82, 255)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Integrity Management - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(36, 91, 64)",
-                        "borderLeftColor": "rgb(36, 91, 64)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Management System - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(68, 34, 149)",
-                        "borderLeftColor": "rgb(68, 34, 149)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Safety Management - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(221, 10, 10)",
-                        "borderLeftColor": "rgb(221, 10, 10)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Security - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(153, 153, 255)",
-                        "borderLeftColor": "rgb(153, 153, 255)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Socio-Economic - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(181, 11, 128)",
-                        "borderLeftColor": "rgb(181, 11, 128)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Standard Condition - 0"
-                  />
-                </div>
-                <div
-                  className="FeatureFlag"
-                >
-                  <div
-                    className="Bar"
-                    style={
-                      Object {
-                        "backgroundColor": "rgb(41, 41, 218)",
-                        "borderLeftColor": "rgb(41, 41, 218)",
-                        "width": "calc(18px * 0)",
-                      }
-                    }
-                    title="Theme - Sunset Clause - 0"
-                  />
-                </div>
-              </div>
-              <div
-                className="ProjectName"
-              >
-                <p>
-                  
-                </p>
+                </svg>
               </div>
             </div>
           </div>
-        </li>
-        <li
-          className="List-Item"
-        >
           <div
             className="List-Item-Content"
             focusable={true}
@@ -15520,7 +15358,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart loading"
+              className="ProjectChart selected loading"
             >
               <div
                 className="ConditionPipe"
@@ -15742,11 +15580,35 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                 </div>
               </div>
               <div
-                className="ProjectName"
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
               >
-                <p>
-                  
-                </p>
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -16875,7 +16737,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter2"
+    className="ProjectMenu paddingBefore2 paddingAfter2"
   >
     <div
       className="pipe"
@@ -16892,10 +16754,310 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 0,
+          "width": 1,
         }
       }
     />
+    <div
+      className="List horizontal"
+    >
+      <ul>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrow arrowPrevious hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart selected"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    0
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Administrative - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Enforcement - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Management System - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Safety Management - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Security - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 0"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
   <style
     dangerouslySetInnerHTML={
