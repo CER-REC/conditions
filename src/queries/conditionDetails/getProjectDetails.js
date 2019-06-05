@@ -32,6 +32,11 @@ export default gql`
         dateIssuance
         dateEffective
         conditions {
+          theme
+          phase
+          filingRequired
+          standardCondition
+          status
           id
           textLength
           text {

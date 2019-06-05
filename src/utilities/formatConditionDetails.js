@@ -20,42 +20,30 @@ export default (instruments, selectedFeature) => (
       L: 3,
     };
 
-    const formattedConditions = conditions.reduce((acc, next) => {
-      const subFeaturesWithValue = Object
-        .entries(next.aggregatedCount[selectedFeature])
-        .reduce((subAcc, [subFeature, subCount]) => {
-          if (subFeature === '__typename' || subCount <= 0) return subAcc;
-          subAcc.fill.push(features[selectedFeature][subFeature]);
-          // TODO: bring top level feature into this nested reduce
-          Object
-            .entries(next.aggregatedCount)
-            .filter(feature => feature[0] !== '__typename')
-            .forEach((feature) => {
-              const test = Object.entries(feature[1])
-                .filter(sub => sub[0] !== '__typename')
-                .filter(sub => sub[1] > 0)
-                .flat();
-              // eslint-disable-next-line no-param-reassign
-              subAcc.details[feature[0]] = `${feature[0]}.${test[0]}`;
-            });
-          return subAcc;
-        },
-        {
-          fill: [],
-          details: {
-            theme: '',
-            phase: '',
-            type: '',
-            status: '',
-            filing: '',
-          },
-        });
+    const formattedConditions = conditions.reduce((acc, condition) => {
+      const fill = Object.entries(condition.aggregatedCount[selectedFeature])
+        .reduce((fillAcc, [subFeature, subCount]) => {
+          if (subFeature === '__typename' || subCount <= 0) return fillAcc;
+          fillAcc.push(features[selectedFeature][subFeature]);
+          return fillAcc;
+        }, []);
+
+      const details = {
+        // TODO: Handle multiple themes (do any actually exist?)
+        theme: `theme.${condition.theme[0]}`,
+        phase: `phase.${condition.phase}`,
+        type: `type.${(condition.standardCondition) ? 'STANDARD' : 'NON_STANDARD'}`,
+        status: `status.${condition.status}`,
+        filing: `filing.${(condition.filingRequired) ? 'REQUIRED' : 'NOT_REQUIRED'}`,
+      };
+
       // TODO: keywords needs to be matched search keywords...
       acc.push({
-        ...subFeaturesWithValue,
-        binnedValue: bins[next.textLength],
+        fill,
+        details,
+        binnedValue: bins[condition.textLength],
         keywords: [''],
-        text: next.text.en,
+        text: condition.text.en,
       });
       return acc;
     }, []);
