@@ -312,15 +312,13 @@ class App extends React.PureComponent {
           </section>
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
-          {/* TODO: View 2 is disabled since it currently breaks the app if Instrument is selected.
-              To be fixed shortly. */}
-          {/* <ViewTwo
+          <ViewTwo
             {...viewProps}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
-          /> */}
+          />
           <ViewThree
             {...viewProps}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
