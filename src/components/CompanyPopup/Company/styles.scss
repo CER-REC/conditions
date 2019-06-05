@@ -4,7 +4,7 @@
   position: relative;
 
   width: 450px;
-  height: 300px;
+  height: 450px;
 
   .companies {
     padding-left: 0;
@@ -13,6 +13,10 @@
     overflow-y: auto;
 
     list-style-type: none;
+  }
+
+  .bullets {
+    padding-left: 1em;
   }
 
   h2 {
@@ -37,6 +41,8 @@
   strong {
     color: $Black51;
   }
+
+
 
   .PopupBtn {
     position: absolute;

@@ -10,6 +10,7 @@ import ReadMe from './README.md';
 import { companyWheelData as companyData } from './randomDataSample';
 import locationData from '../../mockData/locationData';
 
+const noop = () => {};
 const processedLocationData = locationData
   .sort((a, b) => (a.province < b.province ? -1 : 1))
   .map(region => (
@@ -45,9 +46,9 @@ storiesForComponent('Components|Wheel', module, ReadMe)
   )
   .add('default', () => (
     <div>
-      <Wheel {...getInteractionProps()} wheelType="company" wheelData={companyData} />
+      <Wheel {...getInteractionProps()} wheelType="company" wheelData={companyData} wheelMotionTrigger={noop} />
     </div>
   ))
   .add('location props', () => (
-    <Wheel {...getInteractionProps()} wheelType="location" wheelData={processedLocationData} />
+    <Wheel {...getInteractionProps()} wheelType="location" wheelData={processedLocationData} wheelMotionTrigger={noop} />
   ));

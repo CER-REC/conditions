@@ -50,7 +50,32 @@
       "ABANDONMENT": "Abandonment",
       "SAFETY": "Safety",
       "TARIFFS": "Tariffs",
-      "MISC": "Misc."
+      "MISC": "Misc.", 
+      "AO": "Amending Order",
+      "EC": "Electricity Certificate",
+      "EP": "Electricity Permit",
+      "EPE": "Electricity Export Permit",
+      "FRO": "Financial requirements order",
+      "GC": "Gas Certificate",
+      "GPL": "Gas Order",
+      "GPLO": "Gas Order",
+      "GPMO": "Gas Order",
+      "GPSO": "Gas Order",
+      "MO": "Miscellaneous Order",
+      "OC": "Oil Certificate",
+      "OPLO": "Oil Order",
+      "OPSO": "Oil Order",
+      "SG": "Gas Safety Order",
+      "SO": "Oil Safety Order",
+      "TG": "Gas Toll & Tariff Order",
+      "TO": "Oil Toll & Tariff Order",
+      "XC": "Commodity Order:",
+      "XG":"Gas Order",
+      "XO" :"Oil Order", 
+      "ZO": "Abandonment Order",
+      "CO": "text not yet provided",
+      "OPL": "text not yet provided",
+      "other": "other"
     },
     "instrumentCommodityType": {
       "OIL": "Oil",
@@ -101,28 +126,18 @@
     "conditionExplorer": {
       "guide": {
         "overview": {
-          "title": "Overview",
-          "overview1": "As Canada’s energy regulator the {NEB} has a variety of roles and responsibilities throughout the {lifecycleLink} of energy infrastructure – from adjudication of energy project {applicationsLink} to safety oversight and {envProtectionLink}. To ensure safety and security, environmental protection and efficient energy infrastructure, the NEB places conditions on the approval of energy projects. {conditionsLink} are legal requirements placed on projects, which cannot go ahead unless these conditions are fulfilled. Conditions are designed to protect the public and the environment by reducing possible concerns and risks identified during the application process.",
-          "overview2": "The NEB does not regulate all energy projects in Canada, but only oversees the construction, operation and abandonment of pipelines that cross international borders or provincial boundaries (more information about that {hereLink}). Here is a {mapLink} of major pipeline systems regulated by the NEB."
+          "title": "What is a condition?",
+          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB’s regulatory framework, which is made of laws, regulations, requirements and guidance."
         },
-        "scope": {
-          "title": "The genesis and scope of conditions",
-          "scope1": "Not all concerns result in the creation of a condition. Existing federal, provincial and municipal {regulationsLink} are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.",
-          "scope2": "These different sorts of requirements expressed in conditions are the Themes which can be explored {themeLink} in this data visualization.",
-          "scope3": "Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.",
-          "scope4": "Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable {conditionLink}. Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.",
-          "scope5": "When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the {applicationLink} Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in {hearingsLink}, individuals must apply (more info about how to become an intervenor {intervenorLink})"
+        "reason": {
+          "title": "Why are conditions made?",
+          "overview": "Conditions are project-specific. The NEB sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest."
         },
         "compliance": {
-          "title": "Conditions tracking and compliance",
-          "detail": "Conditions are set out regardless of whether the NEB recommends a project’s approval. If a project is approved, the NEB is responsible for verifying that the company complies with all the conditions. Only when the NEB is satisfied that the information in the Filings of the company ({FilingsLink}) meets the requirements of a specific condition will the company be authorized to proceed with activities associated with that condition.",
-          "documentationPrompt": "Conditions may require a company to submit documentation such as:",
-          "doc1": "results of additional environmental and socio-economic assessments, species-specific studies, or traditional land use investigations;",
-          "doc2": "engineering design details, and supporting assessments or information;",
-          "doc3": "environmental protection plans;",
-          "doc4": "mitigation and monitoring documentation;",
-          "doc5": "construction schedules and progress reports; and",
-          "doc6": "employee training programs and manuals."
+          "title": "How does the NEB verify condition compliance?",
+          "documentationPrompt": "The NEB verifies company compliance with project condition requirements through:",
+          "doc1": "compliance verification activities (i.e. inspections, audits, etc.)",
+          "doc2": "assessing condition filings"
         }
       }
     },
@@ -157,48 +172,48 @@
       "less": "Less"
     },
     "featureDescription": {
-      "theme": "Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.",
-      "phase": "As a lifecycle regulator, the NEB ensures the safety of a project during all phases. Conditions can apply to one, several or all phases of the lifecycle. More information about the lifecycle can be found {phaseLink}",
+      "theme": "To facilitate analysis and public understanding, conditions are grouped into themes such as environment, finance, safety, security, etc.",
+      "phase": "As a lifecycle regulator, the NEB ensures the safety and protection of the environment throughout all phases of a project. Conditions can apply to one, several or all phases of the lifecycle. Learn more about the NEB Lifecycle Approach.",
       "phaseHere": "here",
-      "status": "Conditions that are no longer active are closed. Some conditions may be active indefinitely or they refer to the continued operation of a pipeline for example. Others that apply to a specific phase will close, because they have been fulfilled (e.g. a specific filing during construction phase).",
+      "status": "There are two possible status for conditions: In progress and Closed.",
       "type": "There are two main types of conditions: standard and non-standard.",
-      "filing": "This feature explains whether a company is required to file a document in order to comply with a condition.",
-      "instrument": "Regulatory instruments are official orders issued by NEB staff. An Instrument can include several conditions, and a project might have several instruments (i.e. orders)attached to it. All instruments have an instrument number. Searching for this number in the NEB’s {regDocsLink} repository is one way to find the original regulatory instrument from which the conditions in this visualization are taken. The prefix of an instrument number is based on its meaning."
+      "filing": "A document that demonstrates the fulfillment of a condition’s requirements.",
+      "instrument": "Orders, certificates, licenses or permits issued by the Board. All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe NEB publishes a [Regulatory Instrument] Report that lists Regulatory Instruments issued from September 2014 to current."
     },
     "featureTypesDescription": {
       "allThemes": "Conditions with multiple themes are counted more than once.",
       "theme": {
-        "ADMINISTRATIVE": "types of conditions that ensure filings are made.",
-        "DAMAGE_PREVENTION": "types of conditions that ensure reduction and prevention of damage.",
-        "EMERGENCY_MANAGEMENT": "types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.",
-        "ENFORCEMENT": "types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.",
-        "ENVIRONMENTAL_PROTECTION": "types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.",
-        "FINANCIAL": "types of conditions that ensure a company’s financial responsibilities are met.",
-        "INTEGRITY_MANAGEMENT": "types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.",
-        "MANAGEMENT_SYSTEM": "types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.",
-        "SAFETY_MANAGEMENT": "types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.",
-        "SECURITY": "types of conditions that ensure that project facilities are monitored and secured.",
-        "SOCIO_ECONOMIC": "types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).",
-        "STANDARD_CONDITION": "types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.",
-        "SUNSET_CLAUSE": "types of conditions that ensure that projects/phases begin in a specific period of time."
+        "ADMINISTRATIVE": "conditions that help track organizational tasks.",
+        "DAMAGE_PREVENTION": "conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.",
+        "EMERGENCY_MANAGEMENT": "conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.",
+        "ENFORCEMENT": "conditions that reinforce prescribed regulatory requirements to be met.",
+        "ENVIRONMENTAL_PROTECTION": "conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.",
+        "FINANCIAL": "conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.",
+        "INTEGRITY_MANAGEMENT": "conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.",
+        "MANAGEMENT_SYSTEM": "company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.",
+        "SAFETY_MANAGEMENT": " conditions that eliminate or reduce risk to the public, workers, the environment and assets.",
+        "SECURITY": "conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.",
+        "SOCIO_ECONOMIC": "conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.",
+        "STANDARD_CONDITION": " conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.",
+        "SUNSET_CLAUSE": "conditions that ensure projects begin within a specific period of time."
       },
       "phase": {
-        "ABANDONMENT": "If a company wants to abandon a facility, it must submit an application, including an environmental and socio-economic assessment, to the NEB. NEB staff will assess the application and the NEB may hold a public hearing. If the abandonment is approved, the NEB may impose conditions and inspect the abandonment activities.",
-        "DURING_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility. The NEB will monitor company compliance through inspections of construction activities and by reviewing the company’s post-construction monitoring reports.",
-        "EXPIRY_DATE_OF_REG_INSTR": "Some conditions apply when the regulatory instrument expires.",
-        "INCLUDES_ALL_PHASES_OF_CONSTR": "Some conditions apply at all phases of construction.",
+        "ABANDONMENT": "If a company wants to abandon a pipeline or facility, it must submit an application to the NEB, including an environmental and socio-economic assessment.  The NEB will assess the application and may hold a public hearing. The NEB may impose conditions on an abandonment project.",
+        "DURING_CONSTRUCTION_PHASE": "The NEB will monitor and verify compliance with the regulatory instrument’s conditions during the construction phase through compliance verification activities (CVAs).",
+        "EXPIRY_DATE_OF_REG_INSTR": "If construction has not commenced prior to the expiry dates, the instrument and all conditions are null and void.",
+        "INCLUDES_ALL_PHASES_OF_CONSTR": "Some conditions apply at all phases of construction (prior, during and post construction).",
         "NOT_CONSTRUCTION_RELATED": "Some conditions apply outside of the construction context.",
-        "POST_CONSTRUCTION_PHASE": "If an application for a facility is approved by the NEB, the NEB will regulate the construction and post-construction activities carried out by the company by monitoring compliance with the conditions of approval. These conditions may specify how and when a company will construct its facility.",
-        "PRIOR_TO_CONSTRUCTION_PHASE": "Assigned to conditions that must be fulfilled before construction can begin. This includes conditions related to environmental and socio-economic assessments.",
-        "UNSPECIFIED": "Missing description"
+        "POST_CONSTRUCTION_PHASE": "After construction is complete, the NEB continues to regulate the post-construction activities carried out by the company through compliance verification activities (CVAs).",
+        "PRIOR_TO_CONSTRUCTION_PHASE": "Before construction can begin, conditions assigned must be fulfilled.",
+        "UNSPECIFIED": "Phase is not specified or applicable."
       },
       "status": {
         "AMENDED": "Missing description",
         "AWAITING_FILING": "Missing description",
         "AWAITING_IR_RESPONSE": "Missing description",
-        "CLOSED": "This status refers to a condition that has been fulfilled and no longer needs to be tracked.",
+        "CLOSED": "this status refers to:\n-condition requirements that have been satisfied, and no further submissions from the company are required; or\n-conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
         "FURTHER_INFORMATION_REQUIRED": "Missing description",
-        "IN_PROGRESS": "This status refers to a condition that continues to be tracked and has not been fulfilled.",
+        "IN_PROGRESS": "this status refers to conditions that continue to be monitored by the NEB. This happens when:\n-condition filings have not yet been received by the NEB; or,\n-filings have been received but are under review or do not yet meet requirements; or,\n-a project is not completed and it has conditions, which have not been met; or,\n-a project has a post-construction condition, but a requirement has not yet been completed; or,\n-some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions.",
         "NO_FILING_REQUIRED": "Missing description",
         "OVERDUE_FILING": "Missing description",
         "READY_FOR_BOARD_DECISION": "Missing description",
@@ -207,12 +222,12 @@
         "UNDER_REVIEW": "Missing description"
       },
       "type": {
-        "STANDARD": "a standard condition will apply generally to project approvals and have been developed over time at the NEB to ensure consistency.",
-        "NON_STANDARD": "a non-standard condition captures project-specific concerns that cannot be encompassed by standard conditions."
+        "STANDARD": "a set of conditions that are typically imposed on all approved infrastructure projects.",
+        "NON_STANDARD": "non-standard conditions capture project-specific information or concerns that are not addressed by standard conditions."
       },
       "filing": {
-        "REQUIRED": "a company must file a document with the NEB in order to comply with a condition.",
-        "NOT_REQUIRED": "a company must not file a document with the NEB in order to comply with a condition"
+        "REQUIRED": "a company must file a document with the NEB in order to comply with a condition. The NEB reviews these filings.",
+        "NOT_REQUIRED": " a company is not required to file a document with the NEB in order to comply with a condition. Some conditions are covered by filings for another related condition. If a condition does not require a company to file a document, the NEB can verify compliance during a compliance verification activity (CVA) such as an inspection or audit."
       },
       "instrument": {
         "ROUTING": "Missing: description",
@@ -221,7 +236,31 @@
         "OPENING": "Missing: description",
         "MISC": "Missing: description",
         "SAFETY": "Missing: description",
-        "TARIFFS": "Missing: description"
+        "TARIFFS": "Missing: description",
+        "AO": "The approval of an amendment as to content or conditions of any Certificate, License, Order or Permit (in some cases the approval of the Governor in Council is required).",
+        "EC": "The approval of the construction and/or operation of an international power line",
+        "EP": "The approval of the construction and operation of an international power line",
+        "EPE": "The approval of the export of power and/or energy",
+        "FRO": "",
+        "GC": "The approval of the construction of a new gas pipeline or additional gas pipeline",
+        "GPL": "The approval of the Plans, Profiles, and Books of Reference for a new or additional gas pipeline. Also used in connection with deviations required in existing gas pipelines",
+        "GPLO": "The approval of the opening of a new or additional gas pipelines or deviations thereof",
+        "GPMO": "The approval of the opening of a gas meter station or parts thereof",
+        "GPSO": "The approval of the opening of a gas compressor station, gas plant or parts thereof",
+        "MO": "The approval of miscellaneous matters, such as upgrading of maximum authorized operation pressures, conveyance, sale or lease of a pipeline or parts thereof, abandonment of pipelines, etc.",
+        "OC": "The approval of the construction of a new oil pipeline or additional oil pipeline",
+        "OPLO": "The approval of the opening of a new or additional oil pipelines or derivations thereof",
+        "OPSO": "The approval of the opening of an oil pump station or parts thereof and terminal facilities",
+        "SG": "The requirements for gas pipeline company to repair, reconstruct or alter part of a gas pipeline, etc., for safety reasons",
+        "SO": "The requirements for an oil pipeline company to repair, reconstruct or alter part of an oil pipeline etc., for safety reasons",
+        "TG": "The fixing of tariffs and tolls – gas pipelines",
+        "TO": "The fixing of tariffs and tolls – oil pipelines",
+        "XC": "The exemption of a commodity pipeline or parts thereof, or commodity pipeline facilities",
+        "XG":" The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
+        "XO" :"The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)", 
+        "ZO": "The approval of abandonment applications",
+        "CO": "text not yet provided",
+        "OPL": "text not yet provided"
       }
     },
     "featureMenu": {
@@ -327,8 +366,8 @@
       "company": {
         "name": "Full Project Name:",
         "associated": "Companies associated with this project",
-        "meaningHeading": "What does it mean to have more than one company associated to a project?",
-        "meaningText": "Text to be provided by the NEB.",
+        "meaningHeading": "Why is there more than one company associated with this project?",
+        "meaningText": "There are instances when more than one company has obligations related to a project.  Examples include:\n-an agreement between one company to sell and another company to purchase a pipeline;\n-where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and\n-NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).",
         "back": "Back"
       },
       "regdocs": {
@@ -365,11 +404,11 @@
     "streamGraph": {
       "title": {
         "instrument": "Instruments Across All Conditions",
-        "theme": "Themes Across All Conditions",
-        "phase": "Phases Across All Conditions",
-        "status": "Statuses Across All Conditions",
-        "type": "Types Across All Conditions",
-        "filing": "Filing Across All Conditions"
+        "theme": "Overall Trend for Conditions: Theme Over Time",
+        "phase": "Total Conditions by Phase Over Time",
+        "status": "Total Conditions by Status Over Time",
+        "type": "Total Conditions by Type Over Time",
+        "filing": "Total Conditions by Filing Over Time"
       },
       "axis":{
         "yAxis": "Number of Conditions",
@@ -402,6 +441,9 @@
     }
   },
   "views": {
+    "app": {
+      "dataLastUpdated" : "Data Last Updated:"
+    },
     "view1": {
       "header": {
         "title": "Conditions on NEB-regulated energy projects",

@@ -17,17 +17,6 @@ import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
-const noop = () => {};
-const regionData = {
-  companyData: [
-    { id: '12', name: 'Alberta Trans-Alta e' },
-    { id: '11', name: 'Alberta Trans-Alta è' },
-    { id: '1', name: 'Canada-Montana Pipe Line Company' },
-  ],
-  activeConditionCompanies: ['3'],
-  openProjectDetails: noop,
-};
-
 const availableCategories = [
   'all',
   'oversight & safety',
@@ -36,10 +25,25 @@ const availableCategories = [
 ];
 const availableYearRange = { start: 1970, end: 1980 };
 
-class ViewTwo extends React.PureComponent {
-  regionName = this.props.selected.region
-    ? this.props.wheelData.find(region => region.id === this.props.selected.region).name
-    : null;
+class ViewTwo extends React.Component {
+  regionName = null;
+
+  constructor() {
+    super();
+    this.state = {
+      wheelMoving: false,
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.selected.region !== this.props.selected.region) {
+      this.regionName = this.props.selected.region
+        ? this.props.wheelData.find(region => region.id === this.props.selected.region).name
+        : null;
+    }
+  }
+
+  setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
   render() {
     return (
@@ -64,6 +68,7 @@ class ViewTwo extends React.PureComponent {
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
               region={this.regionName}
+              className={this.state.wheelMoving ? 'hidden' : ''}
             />
           ) : null}
         </section>
@@ -74,6 +79,7 @@ class ViewTwo extends React.PureComponent {
             selectedRay={this.props.browseBy === 'company' ? this.props.selected.company : this.props.selected.region}
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
             wheelData={this.props.wheelData}
+            wheelMotionTrigger={this.setWheelMoving}
           />
           <GreyPipe mode={this.props.browseBy} />
         </section>
@@ -81,11 +87,15 @@ class ViewTwo extends React.PureComponent {
           {this.props.browseBy === 'location'
             ? (
               <div className="regionChart">
-                <RegionConditionSummary featureData={this.props.legendItems} />
+                <RegionConditionSummary
+                  featureData={this.props.legendItems}
+                  isHidden={this.state.wheelMoving}
+                />
                 <RegionCompanies
-                  companies={regionData.companyData}
-                  activeConditionCompanies={regionData.activeConditionCompanies}
-                  openProjectDetails={regionData.openProjectDetails}
+                  companies={this.props.regionCompanyData.companies}
+                  activeConditionCompanies={this.props.regionCompanyData.selectedConditionCompanies}
+                  openProjectDetails={this.props.openProjectDetails}
+                  isVisible={this.state.wheelMoving ? 'hidden' : ''}
                 />
               </div>
             )

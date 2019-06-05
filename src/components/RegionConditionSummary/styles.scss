@@ -6,6 +6,10 @@
 
   height: 124px;
 
+  .hidden {
+    visibility: hidden;
+  }
+
   .ChartContainer {
     position: absolute;
 
@@ -70,6 +74,11 @@
 
     rect {
       fill: $LightGray;
+    }
+  }
+  ul {
+    .hidden {
+      visibility: hidden;
     }
   }
 };
