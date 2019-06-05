@@ -130,6 +130,7 @@ export const viewTwo = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
+  projectMenuLoading: PropTypes.bool,
   projectsData: PropTypes.arrayOf(project),
   projectYear: yearRangeType.isRequired,
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
