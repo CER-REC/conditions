@@ -18,7 +18,7 @@ export const ViewTwoGraphQL = (props) => {
         {(wheelQProps) => {
           const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQProps;
           const wheelData = !wheelQLoading && !wheelQerror && wheelQData.allCompanies
-            ? wheelQData.allCompanies.sort((a, b) => (a.name < b.name ? -1 : 1))
+            ? wheelQData.allCompanies.sort((a, b) => (a.name.localeCompare(b.name)))
             : [];
           return (
             <Query
@@ -50,20 +50,20 @@ export const ViewTwoGraphQL = (props) => {
                             [`${projectsData[projectIndex].aggregatedCount[`${feature}Enum`][subfeatureIndex]}`]: count,
                           });
                         });
-                      if (Object.keys(aggregated[feature]).length > 13) {
-                        const parsedData = Object.entries(aggregated[feature]).sort(
-                          (a, b) => (a.count > b.count ? -1 : 1),
-                        );
-                        aggregated[feature] = {};
-                        parsedData.push([
-                          'other',
-                          parsedData.splice(13).reduce((acc, cur) => (acc + cur[1]), 0),
-                        ]);
-                        parsedData.forEach((arrayElement) => {
-                          // eslint-disable-next-line prefer-destructuring
-                          aggregated[feature][arrayElement[0]] = arrayElement[1];
-                        });
-                      }
+                      // if (Object.keys(aggregated[feature]).length > 13) {
+                      //   const parsedData = Object.entries(aggregated[feature]).sort(
+                      //     (a, b) => (a.count > b.count ? -1 : 1),
+                      //   );
+                      //   aggregated[feature] = {};
+                      //   parsedData.push([
+                      //     'other',
+                      //     parsedData.splice(13).reduce((acc, cur) => (acc + cur[1]), 0),
+                      //   ]);
+                      //   parsedData.forEach((arrayElement) => {
+                      //     // eslint-disable-next-line prefer-destructuring
+                      //     aggregated[feature][arrayElement[0]] = arrayElement[1];
+                      //   });
+                      // }
                     });
                     return ({
                       ...project,
@@ -89,7 +89,6 @@ export const ViewTwoGraphQL = (props) => {
                     }, [])
                   : [];
 
-                // console.log(parsedProjectsData);
                 // TODO: ERROR HANDLING
                 return (
                   <ViewTwo
@@ -162,10 +161,13 @@ export const ViewTwoGraphQL = (props) => {
             skip={!props.selected.region}
           >
             {(companiesByRegionProps) => {
-              const data = !companiesByRegionProps.error
-                && !companiesByRegionProps.loading
-                && companiesByRegionProps.data
-                && companiesByRegionProps.data.companiesByRegionId;
+              const {
+                data: compByRegQdata,
+                loading: compByRegQload,
+                error: compByRegQerror,
+              } = companiesByRegionProps;
+              const data = !compByRegQerror && !compByRegQload && compByRegQdata
+                && compByRegQdata.companiesByRegionId;
               const regionCompanyData = {
                 companies: data ? omitTypename(data) : [{ name: '', id: 0 }],
                 selectedConditionCompanies: [],

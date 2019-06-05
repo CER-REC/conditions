@@ -26,7 +26,7 @@ const availableCategories = [
 const availableYearRange = { start: 1970, end: 1980 };
 
 class ViewTwo extends React.Component {
-  regionName = '';
+  regionName = null;
 
   constructor() {
     super();

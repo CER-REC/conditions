@@ -127,7 +127,7 @@ class Wheel extends React.Component {
             this.state.wheelModifiers.spin = false;
             this.props.wheelMotionTrigger(true);
           }}
-          onRest={() => { this.props.wheelMotionTrigger(false); }} // props.showInfo()}
+          onRest={() => { this.props.wheelMotionTrigger(false); }}
           from={{ rotation: -this.state.oldRotation }}
           to={{ rotation: -this.state.newRotation }}
         >
