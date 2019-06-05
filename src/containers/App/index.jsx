@@ -11,12 +11,11 @@ import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
-import gql from 'graphql-tag';
 import i18nMessages from '../../i18n';
 
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
-// import getDateDataUpdated from '../../queries/getDateDataUpdated';
+import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -230,12 +229,6 @@ class App extends React.PureComponent {
     } else if (transitionState > 9) {
       labelId = 'return';
     }
-    const dateQuery = gql`
-    query getDateDataUpdated {
-      allConfigurationData {
-        lastUpdated
-      }
-    }`;
     const conditionDetailsViewProps = (transitionState === 10)
       ? {
         isExpandable: true,
@@ -309,19 +302,14 @@ class App extends React.PureComponent {
               {...conditionDetailsViewProps}
             />
           </section>
-          <Query query={dateQuery}>
+          <Query query={getDateDataUpdated}>
             {({ loading, error, data }) => {
               if (loading) return 'Loading Date';
               if (error) return 'Error Occured';
-              // console.dir('Look Here: ');
-              // console.dir(data.allConfigurationData.lastUpdated);
               const dateOfUpdate = new Date(data.allConfigurationData.lastUpdated);
-
               return (
-
                 <div className="DateUpdated">
-                  <h1>Data Last Updated:</h1>
-                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
+                  <h1>Data Last Updated: {`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
                 </div>
               );
             }}

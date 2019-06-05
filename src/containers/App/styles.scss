@@ -23,6 +23,11 @@
       conditions: (x: 39, y:53, w: 79, h:29),
   )) 
   }
+  .DateUpdated{
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+  }
 
   .guideWrapper {
     overflow: hidden;
@@ -205,6 +210,7 @@
         transition: opacity $fastEnd, visibility 0s 1s;
       }
     }
+    
 
     .ViewOne {
       .row {
@@ -244,11 +250,6 @@
       .contentPane {
         transition: opacity $fastStart;
       }
-    }
-    .DateUpdated{
-      position: absolute;
-      bottom: 0;
-      left: 5px;
     }
 
     .Footer {
