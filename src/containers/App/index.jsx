@@ -223,7 +223,7 @@ class App extends React.PureComponent {
                   if (error) { return <div>Loading</div>; }
                   const { shortName, instruments } = data.getProjectById;
                   // TODO: Change string 'en' to the redux store locale
-                  const formattedInstrument = formatConditionDetails(instruments, selected.feature, 'fr');
+                  const formattedInstrument = formatConditionDetails(instruments, selected.feature);
                   return (
                     <ConditionDetails
                       selectedItem={this.props.selected.condition}

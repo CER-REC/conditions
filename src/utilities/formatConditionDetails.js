@@ -1,6 +1,6 @@
 import { features } from '../constants';
 
-export default (instruments, selectedFeature, locale) => (
+export default (instruments, selectedFeature) => (
   instruments.map((instrument) => {
     const {
       number,
@@ -56,7 +56,7 @@ export default (instruments, selectedFeature, locale) => (
         ...subFeaturesWithValue,
         binnedValue: bins[next.textLength],
         keywords: [''],
-        text: next.text[locale],
+        text: next.text.en,
       });
       return acc;
     }, []);
@@ -65,7 +65,7 @@ export default (instruments, selectedFeature, locale) => (
     const allLocations = regions.reduce((acc, next) => {
       // for param reassign
       let string = acc;
-      string = string.concat(`${next.name[locale]}, ${next.province} `);
+      string = string.concat(`${next.name.en}, ${next.province} `);
       return string;
     }, '');
 
