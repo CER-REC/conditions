@@ -398,6 +398,7 @@ export default props => (
             {({ data: configData, loading: configLoading }) => (
               <Query query={conditionsPerYearQuery}>
                 {({ data: conditionsData, loading: conditionsLoading }) => {
+                  // TODO: Error handling for these queries
                   if (
                     conditionsLoading || !conditionsData
                     || configLoading || !configData
