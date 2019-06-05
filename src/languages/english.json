@@ -254,7 +254,8 @@
         "XO" :"The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)",
         "ZO": "The approval of abandonment applications",
         "CO": "text not yet provided",
-        "OPL": "text not yet provided"
+        "OPL": "text not yet provided",
+        "OTHER": "Other Instruments"
       }
     },
     "featureMenu": {

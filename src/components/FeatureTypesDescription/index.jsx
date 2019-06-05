@@ -69,7 +69,7 @@ class FeatureTypesDescription extends React.PureComponent {
         <FormattedMessage
           key="other"
           tagName="h3"
-          id="components.featureTypesDescription.instrument.other"
+          id="components.featureTypesDescription.instrument.OTHER"
         />
       ));
     }
