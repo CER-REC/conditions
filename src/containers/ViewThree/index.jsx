@@ -11,7 +11,6 @@ import FeatureTypesDescription from '../../components/FeatureTypesDescription';
 import displayOrder from '../../mockData/displayOrder';
 import './styles.scss';
 import * as selectedCreators from '../../actions/selected';
-import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
 class ViewThree extends React.PureComponent {
@@ -78,11 +77,8 @@ ViewThree.propTypes = {
   // eslint-disable-next-line react/no-unused-prop-types
   layoutOnly: PropTypes.bool,
   chartIndicatorPosition: PropTypes.shape({
-    bubble: PropTypes.string.isRequired,
     stream: PropTypes.number.isRequired,
   }).isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
-  setBubbleChartIndicator: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
@@ -121,7 +117,6 @@ export default connect(
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
-    setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
 )(ViewThree);
