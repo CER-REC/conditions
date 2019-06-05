@@ -2440,11 +2440,24 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         </li>
       </ul>
       <h4>
-        What does it mean to have more than one company associated to a project?
+        Why is there more than one company associated with this project?
       </h4>
       <p>
-        Text to be provided by the NEB.
+        There are instances when more than one company has obligations related to a project.  Examples include:
       </p>
+      <ul
+        className="bullets"
+      >
+        <li>
+          an agreement between one company to sell and another company to purchase a pipeline;
+        </li>
+        <li>
+          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+        </li>
+        <li>
+          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+        </li>
+      </ul>
       <button
         className="PopupBtn"
         focusable={true}
@@ -2560,11 +2573,24 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         </li>
       </ul>
       <h4>
-        What does it mean to have more than one company associated to a project?
+        Why is there more than one company associated with this project?
       </h4>
       <p>
-        Text to be provided by the NEB.
+        There are instances when more than one company has obligations related to a project.  Examples include:
       </p>
+      <ul
+        className="bullets"
+      >
+        <li>
+          an agreement between one company to sell and another company to purchase a pipeline;
+        </li>
+        <li>
+          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+        </li>
+        <li>
+          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+        </li>
+      </ul>
       <button
         className="PopupBtn"
         focusable={true}
@@ -5216,82 +5242,10 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
         className="step-text"
       >
         <h1>
-          The genesis and scope of conditions
+          Why are conditions made?
         </h1>
         <p>
-          Not all concerns result in the creation of a condition. Existing federal, provincial and municipal 
-          <a
-            href="https://www.neb-one.gc.ca/bts/ctrg/lstctrg-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            laws, acts and regulations
-             
-          </a>
-           are in place that address many of the concerns that may arise from a proposed project. Conditions are project-specific and may include requirements pertaining to project engineering and safety; emergency preparedness; environmental protection; rights and interests of people and communities; and the company’s financial responsibilities.
-        </p>
-        <p>
-          These different sorts of requirements expressed in conditions are the Themes which can be explored 
-          <a
-            href=""
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            here
-             
-          </a>
-           in this data visualization.
-        </p>
-        <p>
-          Conditions apply to different Phases of an energy project; as a lifecycle regulator, the NEB ensures the safety of a project through all phases. Some conditions are only relevant to some phases, some span across the entire project timeline.
-        </p>
-        <p>
-          Each energy project is unique, so the conditons for a project are unique as well. There are two general Types of conditions, Standard and Non-Standard, explorable 
-          <a
-            href=""
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            here
-             
-          </a>
-          . Whenever Standard conditions don’t capture all concerns of a project, non-standard conditions are created to address those concerns.
-        </p>
-        <p>
-          When creating project specific conditions, the Hearing Panel at the NEB, supported by expert professional staff, sets conditions during the 
-          <a
-            href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/06rgltrsnpsht-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            application process
-             
-          </a>
-           Conditions are based on the Board’s analysis of the evidence on the record, including the views of Indigenous Groups, municipalities and all participants. To participate in 
-          <a
-            href="https://www.neb-one.gc.ca/bts/nws/rgltrsnpshts/2016/03rgltrsnpsht-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            hearings
-             
-          </a>
-          , individuals must apply (more info about how to become an intervenor 
-          <a
-            href="https://www.neb-one.gc.ca/prtcptn/hrng/pplngprtcpt-eng.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-             
-            here
-             
-          </a>
-          )
+          Conditions are project-specific. The NEB sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest.
         </p>
       </div>
       <div
@@ -5602,7 +5556,7 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
       Theme
     </h1>
     <span>
-      Subject experts at the NEB are assigned to conditions that relate to specific sub-fields (e.g. finance, environment, safety). They also track compliance. These sub-fields are called Themes here.
+      To facilitate analysis and public understanding, conditions are grouped into themes such as environment, finance, safety, security, etc.
     </span>
   </div>
 </div>
@@ -5688,7 +5642,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure filings are made.
+        conditions that help track organizational tasks.
       </span>
     </p>
     <h4
@@ -5698,7 +5652,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure reduction and prevention of damage.
+        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </span>
     </p>
     <h4
@@ -5708,7 +5662,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.
+        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </span>
     </p>
     <h4
@@ -5718,7 +5672,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.
+        conditions that reinforce prescribed regulatory requirements to be met.
       </span>
     </p>
     <h4
@@ -5728,7 +5682,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.
+        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </span>
     </p>
     <h4
@@ -5738,7 +5692,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure a company’s financial responsibilities are met.
+        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </span>
     </p>
     <h4
@@ -5748,7 +5702,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.
+        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </span>
     </p>
     <h4
@@ -5757,8 +5711,18 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
       Management System
     </h4>
     <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(36, 91, 64)",
+          }
+        }
+      >
+        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note
+        :
+      </span>
       <span>
-        types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+         A management system is not project specific.
       </span>
     </p>
     <h4
@@ -5768,7 +5732,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.
+         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </span>
     </p>
     <h4
@@ -5778,7 +5742,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that project facilities are monitored and secured.
+        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5788,7 +5752,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).
+        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </span>
     </p>
     <h4
@@ -5798,7 +5762,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.
+         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5808,7 +5772,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects/phases begin in a specific period of time.
+        conditions that ensure projects begin within a specific period of time.
       </span>
     </p>
   </div>
@@ -5836,7 +5800,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure filings are made.
+        conditions that help track organizational tasks.
       </span>
     </p>
     <h4
@@ -5846,7 +5810,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure reduction and prevention of damage.
+        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </span>
     </p>
     <h4
@@ -5856,7 +5820,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure appropriate measures are in place and updated, in case of an emergency.
+        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </span>
     </p>
     <h4
@@ -5866,7 +5830,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that provide NEB officers with tools to ensure conditions are being fulfilled.
+        conditions that reinforce prescribed regulatory requirements to be met.
       </span>
     </p>
     <h4
@@ -5876,7 +5840,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that risk to the environment is minimized, monitored, and mitigated.
+        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </span>
     </p>
     <h4
@@ -5886,7 +5850,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure a company’s financial responsibilities are met.
+        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </span>
     </p>
     <h4
@@ -5896,7 +5860,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects are designed, built and upkept in order to prevent toxic spills and emissions escape.
+        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </span>
     </p>
     <h4
@@ -5905,8 +5869,18 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
       Management System
     </h4>
     <p>
+      <span
+        style={
+          Object {
+            "color": "rgb(36, 91, 64)",
+          }
+        }
+      >
+        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note
+        :
+      </span>
       <span>
-        types of conditions that apply when a project is transferred to another company. Ensures all Management systems are in place and the new company knows its requirements.
+         A management system is not project specific.
       </span>
     </p>
     <h4
@@ -5916,7 +5890,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that work on a project is safe for workers and affected individuals and communities.
+         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </span>
     </p>
     <h4
@@ -5926,7 +5900,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that project facilities are monitored and secured.
+        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5936,7 +5910,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that the concerns of affected communities and indigenous groups (e.g.traditional land use investigations, noise assessments, etc).
+        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </span>
     </p>
     <h4
@@ -5946,7 +5920,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions which clearly state the compliance objective to be met by the company; promote due diligence by the Company, are enforceable by NEB compliance staff.
+         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </span>
     </p>
     <h4
@@ -5956,7 +5930,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
     </h4>
     <p>
       <span>
-        types of conditions that ensure that projects/phases begin in a specific period of time.
+        conditions that ensure projects begin within a specific period of time.
       </span>
     </p>
   </div>
@@ -6691,6 +6665,15 @@ exports[`Storyshots Components|GreyPipe company 1`] = `
     <div
       className="GreyPipe company"
     >
+      <svg
+        className="bottomSvg"
+        height="48"
+        width="48"
+      >
+        <path
+          d="M48 0 C48 0 48 48 0 48 L24 48 0 48 0 24 C0 24 24 24 24 0 L24 12 24 0"
+        />
+      </svg>
       <div
         className="top"
       />
@@ -17633,7 +17616,9 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
           Companies in Selected Region:
         </span>
       </div>
-      <ul>
+      <ul
+        className=""
+      >
         <li>
           Alberta Trans-Alta e
         </li>
@@ -21372,7 +21357,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Themes Across All Conditions
+      Overall Trend for Conditions: Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -22121,6 +22106,13 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={230}
+            width={500}
+            x={50}
+            y={50}
+          />
           <g
             clipPath="url(#victory-clip-27)"
             style={
@@ -22616,6 +22608,31 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
             />
           </g>
         </g>
+        <g
+          className="ChartIndicator"
+          transform="translate(407.14285714285717, 220.48245614035088)"
+        >
+          <path
+            className="arrow"
+            d="M -5 -10 L 5 -10 L 0 0 z"
+          />
+          <line
+            className="line"
+            x1={0}
+            x2={0}
+            y1={5}
+            y2={59.51754385964912}
+          />
+          <text
+            alignmentBaseline="bottom"
+            textAnchor="middle"
+            x="0"
+            y="-12"
+          >
+            177
+            *
+          </text>
+        </g>
       </svg>
       <div
         style={
@@ -22662,7 +22679,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Phases Across All Conditions
+      Total Conditions by Phase Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -23411,6 +23428,13 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={230}
+            width={500}
+            x={50}
+            y={50}
+          />
           <g
             clipPath="url(#victory-clip-13)"
             style={
@@ -23906,6 +23930,31 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             />
           </g>
         </g>
+        <g
+          className="ChartIndicator"
+          transform="translate(407.14285714285717, 86.80000000000001)"
+        >
+          <path
+            className="arrow"
+            d="M -5 -10 L 5 -10 L 0 0 z"
+          />
+          <line
+            className="line"
+            x1={0}
+            x2={0}
+            y1={5}
+            y2={193.2}
+          />
+          <text
+            alignmentBaseline="bottom"
+            textAnchor="middle"
+            x="0"
+            y="-12"
+          >
+            126
+            
+          </text>
+        </g>
       </svg>
       <div
         style={
@@ -23971,6 +24020,13 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={300}
+            width={450}
+            x={0}
+            y={0}
+          />
           <g
             clipPath="url(#victory-clip-54)"
             style={
@@ -24487,7 +24543,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Themes Across All Conditions
+      Overall Trend for Conditions: Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -25236,6 +25292,13 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           role="button"
           tabIndex="0"
         >
+          <rect
+            fill="none"
+            height={230}
+            width={500}
+            x={50}
+            y={50}
+          />
           <g
             clipPath="url(#victory-clip-41)"
             style={
@@ -25731,6 +25794,31 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             />
           </g>
         </g>
+        <g
+          className="ChartIndicator"
+          transform="translate(335.7142857142857, 202.47191011235955)"
+        >
+          <path
+            className="arrow"
+            d="M -5 -10 L 5 -10 L 0 0 z"
+          />
+          <line
+            className="line"
+            x1={0}
+            x2={0}
+            y1={5}
+            y2={77.52808988764045}
+          />
+          <text
+            alignmentBaseline="bottom"
+            textAnchor="middle"
+            x="0"
+            y="-12"
+          >
+            150
+            
+          </text>
+        </g>
       </svg>
       <div
         style={
@@ -25860,6 +25948,13 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
               role="button"
               tabIndex="0"
             >
+              <rect
+                fill="none"
+                height={300}
+                width={450}
+                x={0}
+                y={0}
+              />
               <g
                 clipPath="url(#victory-clip-67)"
                 style={

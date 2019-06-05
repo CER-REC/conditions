@@ -7,7 +7,7 @@ $curveRadius: 48px;
 
   width: $curveRadius;
 
-  .top, .bottom {
+  .top, .bottom, .bottomSvg {
     position: absolute;
 
     width: 100%;
@@ -67,16 +67,16 @@ $curveRadius: 48px;
       }
     }
 
-    .bottom {
-      right: 0;
+    .bottomSvg {
       bottom: 0;
-      border-bottom-right-radius: 100%;
-
-      &:before {
-        left: 0;
-        top: 0;
-        border-bottom-right-radius: 100%;
+      right: 0;
+      background: none;
+      path {
+        fill: $LightGray;
       }
+    }
+    .bottom {
+      visibility: hidden;
     }
   }
 

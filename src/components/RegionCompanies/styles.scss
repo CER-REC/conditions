@@ -9,10 +9,6 @@
 
   text-align: left;
 
-  &.hidden {
-    visibility: hidden;
-  }
-
   .title {
     display: inline-block;
 
@@ -44,6 +40,10 @@
     overflow-x: hidden;
 
     padding-left: 2em;
+
+    &.hidden {
+      visibility: hidden;
+    }
 
     li {
       font-size: 14px;

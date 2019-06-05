@@ -26,7 +26,7 @@ const availableCategories = [
 const availableYearRange = { start: 1970, end: 1980 };
 
 class ViewTwo extends React.Component {
-  regionName = '';
+  regionName = null;
 
   constructor() {
     super();
@@ -89,13 +89,13 @@ class ViewTwo extends React.Component {
               <div className="regionChart">
                 <RegionConditionSummary
                   featureData={this.props.legendItems}
-                  visibility={this.state.wheelMoving ? 'hidden' : ''}
+                  isHidden={this.state.wheelMoving}
                 />
                 <RegionCompanies
-                  companies={this.props.regionCompanyData}
-                  activeConditionCompanies={[]}
+                  companies={this.props.regionCompanyData.companies}
+                  activeConditionCompanies={this.props.regionCompanyData.selectedConditionCompanies}
                   openProjectDetails={this.props.openProjectDetails}
-                  className={this.state.wheelMoving ? 'hidden' : ''}
+                  isVisible={this.state.wheelMoving ? 'hidden' : ''}
                 />
               </div>
             )

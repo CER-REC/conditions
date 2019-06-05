@@ -1,6 +1,6 @@
 {
   "name": "neb-conditions-visualization",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "A visualization of data collected since 2010 about conditions on energy projects that the NEB creates as part of their regulatory process. ",
   "main": "src/index.jsx",
   "scripts": {

@@ -5,6 +5,7 @@
   @each $className, $values in $gridSizes {
     .#{$className} {
       position: absolute;
+      overflow: hidden;
 
       top: map-get($values, "y") * $gridUnit;
       left: map-get($values, "x") * $gridUnit;
