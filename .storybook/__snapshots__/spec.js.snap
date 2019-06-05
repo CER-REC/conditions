@@ -2440,10 +2440,13 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         </li>
       </ul>
       <h4>
-        What does it mean to have more than one company associated to a project?
+        Why is there more than one company associated with this project?
       </h4>
       <p>
-        Text to be provided by the NEB.
+        There are instances when more than one company has obligations related to a project.  Examples include:
+-an agreement between one company to sell and another company to purchase a pipeline;
+-where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+-NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
       </p>
       <button
         className="PopupBtn"
@@ -2560,10 +2563,13 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         </li>
       </ul>
       <h4>
-        What does it mean to have more than one company associated to a project?
+        Why is there more than one company associated with this project?
       </h4>
       <p>
-        Text to be provided by the NEB.
+        There are instances when more than one company has obligations related to a project.  Examples include:
+-an agreement between one company to sell and another company to purchase a pipeline;
+-where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+-NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
       </p>
       <button
         className="PopupBtn"
