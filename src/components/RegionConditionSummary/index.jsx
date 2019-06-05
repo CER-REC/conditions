@@ -18,7 +18,7 @@ const RegionConditionSummary = (props) => {
         <div className="RegionConditionSummaryTitle">
           <FormattedMessage id="components.regionConditionSummary.title" />
         </div>
-        <div className={classNames('RegionConditionChart', props.visibility)}>
+        <div className={classNames('RegionConditionChart', props.isHidden ? 'hidden' : '')}>
           <BarContainer items={items} vertical />
         </div>
       </div>
@@ -34,7 +34,7 @@ const RegionConditionSummary = (props) => {
 };
 
 RegionConditionSummary.propTypes = {
-  visibility: PropTypes.string,
+  isHidden: PropTypes.bool,
   featureData: PropTypes.arrayOf(PropTypes.shape({
     description: PropTypes.string.isRequired,
     value: PropTypes.number.isRequired,
@@ -42,7 +42,7 @@ RegionConditionSummary.propTypes = {
 };
 
 RegionConditionSummary.defaultProps = {
-  visibility: '',
+  isHidden: false,
 };
 
 export default RegionConditionSummary;

@@ -89,7 +89,7 @@ class ViewTwo extends React.Component {
               <div className="regionChart">
                 <RegionConditionSummary
                   featureData={this.props.legendItems}
-                  visibility={this.state.wheelMoving ? 'hidden' : ''}
+                  isHidden={this.state.wheelMoving}
                 />
                 <RegionCompanies
                   companies={this.props.regionCompanyData.companies}

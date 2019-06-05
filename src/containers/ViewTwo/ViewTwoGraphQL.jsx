@@ -119,6 +119,8 @@ export const ViewTwoGraphQL = (props) => {
         const locationData = !regionsQLoading && !regionsQError && regionsQData.allRegions
           ? regionsQData.allRegions.sort((a, b) => {
             if (a.province === b.province) {
+              // TODO: REMOVE THE FOLLOWING LINE ONCE
+              // THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
               return (a.name.en < b.name.en ? -1 : 1);
             }
             return (a.province < b.province ? -1 : 1);
