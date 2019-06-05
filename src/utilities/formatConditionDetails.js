@@ -50,9 +50,10 @@ export default (instruments, selectedFeature) => (
 
     // This is used to show all regions belonging to an instrument
     const allLocations = regions.reduce((acc, next) => {
-      acc.push([next.name.en, next.province].join(', '));
+      acc.push(`${next.name.en}, ${next.province} `);
       return acc;
     }, []);
+
     return {
       instrumentNumber: number,
       issuanceDate: dateIssuance,
