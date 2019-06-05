@@ -392,6 +392,9 @@
     }
   },
   "views": {
+    "app": {
+      "dataLastUpdated" : "Data Last Updated:"
+    },
     "view1": {
       "header": {
         "title": "Conditions on NEB-regulated energy projects",

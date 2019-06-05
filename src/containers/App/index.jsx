@@ -1,19 +1,22 @@
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { HttpLink } from 'apollo-link-http';
+
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, FormattedMessage } from 'react-intl';
+
 import { AppContainer, hot } from 'react-hot-loader';
 import i18nMessages from '../../i18n';
 
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
+import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -31,7 +34,6 @@ import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 import graphQLEndPoint from '../../../globals';
-
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
@@ -251,7 +253,6 @@ class App extends React.PureComponent {
     } else if (transitionState > 9) {
       labelId = 'return';
     }
-
     const conditionDetailsViewProps = (transitionState === 10)
       ? {
         isExpandable: true,
@@ -325,6 +326,20 @@ class App extends React.PureComponent {
               {...conditionDetailsViewProps}
             />
           </section>
+          <Query query={getDateDataUpdated}>
+            {(dateQProps) => {
+              const { loading: dateLoading, error: errorDateQuery, data: dateData } = dateQProps;
+              if (dateLoading) return 'Loading Date';
+              if (errorDateQuery) return 'Error Occured';
+              const dateOfUpdate = new Date(dateData.allConfigurationData.lastUpdated);
+              return (
+                <div className="DateUpdated">
+                  <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
+                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
+                </div>
+              );
+            }}
+          </Query>
         </div>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
