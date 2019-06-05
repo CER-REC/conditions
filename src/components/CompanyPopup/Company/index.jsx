@@ -17,7 +17,22 @@ const Company = ({ projectName, companies, closeModal }) => (
       {companies.map(company => <li key={company}>{company}</li>)}
     </ul>
     <FormattedMessage id="components.modal.company.meaningHeading" tagName="h4" />
-    <FormattedMessage id="components.modal.company.meaningText" tagName="p" />
+    <FormattedMessage id="components.modal.company.meaningText">
+      {(text) => {
+        const arr = text.split('\n');
+        const first = arr.shift();
+        const items = arr.map(bullet => <li key={bullet}>{bullet.match(/- ?(.+)/)[1]}</li>);
+
+        return (
+          <React.Fragment>
+            <p>{first}</p>
+            <ul className="bullets">
+              {items}
+            </ul>
+          </React.Fragment>
+        );
+      }}
+    </FormattedMessage>
     <FormattedMessage id="components.modal.company.back">
       {text => <PopupBtn text={text} icon="x" action={closeModal} />}
     </FormattedMessage>
