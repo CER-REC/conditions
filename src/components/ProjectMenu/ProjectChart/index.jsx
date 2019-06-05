@@ -21,7 +21,7 @@ const ProjectChart = (props) => {
         {graphData.map((condition, idx) => (
           <FeatureFlag
             key={condition.name}
-            name={(props.chartType === 'instrument') ? idx : condition.name}
+            name={(props.chartType === 'instrument') ? toString(idx) : condition.name}
             count={condition.count}
             chartType={props.chartType}
           />
