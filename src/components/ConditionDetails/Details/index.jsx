@@ -17,7 +17,6 @@ class Details extends React.PureComponent {
               <React.Fragment>
                 <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
                 <ContentBlock id="common.features.theme" content={<FormattedMessage id={`common.${this.props.data.theme}`} />} />
-                <ContentBlock id="common.features.instrument" content={<FormattedMessage id={`common.${this.props.data.instrument}`} />} />
                 <ContentBlock id="common.features.phase" content={<FormattedMessage id={`common.${this.props.data.phase}`} />} />
                 <ContentBlock id="common.features.type" content={<FormattedMessage id={`common.${this.props.data.type}`} />} />
                 <ContentBlock id="common.features.status" content={<FormattedMessage id={`common.${this.props.data.status}`} />} />
@@ -36,7 +35,6 @@ Details.propTypes = {
   isInstrument: PropTypes.bool,
   data: PropTypes.shape({
     theme: PropTypes.string.isRequired,
-    instrument: PropTypes.string.isRequired,
     phase: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
