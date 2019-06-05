@@ -55,9 +55,7 @@ class ProjectMenu extends React.PureComponent {
       .map(([name, count]) => ({ name, count }))
   );
 
-  getSedimentationWidth = (projectsData) => {
-    const data = projectsData;
-
+  getSedimentationWidth = (data) => {
     const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
     const rightCount = data.length - leftCount - 1;
 
@@ -77,8 +75,6 @@ class ProjectMenu extends React.PureComponent {
       selectedFeature = 'theme';
     }
     const listItems = this.getListItems(projectsData, selectedProjectID);
-    // If there are no listItems render virtualized data
-    // TODO: Make fake renderedItems for loading of projectMenu
     const renderedItems = listItems ? listItems
       .map(project => (
         <ProjectChart
