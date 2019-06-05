@@ -14,6 +14,7 @@ storiesForComponent('Components|StreamGraph', module, ReadMe)
   .add('default', () => (
     <StreamGraph
       countsData={conditionCountsByYear.counts}
+      years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
       feature="phase"
       subFeature=""
     />
@@ -21,6 +22,7 @@ storiesForComponent('Components|StreamGraph', module, ReadMe)
   .add('allThemes', () => (
     <StreamGraph
       countsData={conditionCountsByYear.counts}
+      years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
       feature="theme"
       subFeature=""
     />
@@ -28,6 +30,7 @@ storiesForComponent('Components|StreamGraph', module, ReadMe)
   .add('subFeature', () => (
     <StreamGraph
       countsData={conditionCountsByYear.counts}
+      years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
       feature="theme"
       subFeature="SECURITY"
     />
@@ -35,6 +38,7 @@ storiesForComponent('Components|StreamGraph', module, ReadMe)
   .add('streamOnly', () => (
     <StreamGraph
       countsData={conditionCountsByYear.counts}
+      years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
       feature="theme"
       subFeature=""
       streamOnly

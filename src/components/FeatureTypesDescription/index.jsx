@@ -25,20 +25,19 @@ class FeatureTypesDescription extends React.PureComponent {
   render() {
     const { feature, subFeature, displayOrder } = this.props;
 
-    let header = null;
+    let headerId;
     if (feature === 'theme' && subFeature === '') {
-      header = (
-        <FormattedMessage id="components.featureTypesDescription.allThemes">
-          {text => <p>* {text}</p> }
-        </FormattedMessage>
-      );
+      headerId = 'allThemes';
     } else if (feature === 'instrument') {
-      header = (
-        <FormattedMessage id="components.featureTypesDescription.otherInstruments">
+      headerId = 'otherInstruments';
+    }
+
+    const header = (headerId)
+      ? (
+        <FormattedMessage id={`components.featureTypesDescription.${headerId}`}>
           {text => <p>* {text}</p> }
         </FormattedMessage>
-      );
-    }
+      ) : null;
 
     const content = displayOrder.map(type => (
       <React.Fragment key={type}>
