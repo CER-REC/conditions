@@ -9,10 +9,10 @@ import './styles.scss';
 import { guideSize } from '../../constants';
 
 // Just so there's something to map over in the JSX
-const textPlaceholders = new Array(7).fill(null);
+const textPlaceholders = new Array(8).fill(null);
 
-const wedgesStart = 1;
-const wedgesEnd = 6;
+const wedgesStart = 2;
+const wedgesEnd = 7;
 const numWedges = wedgesEnd - wedgesStart + 1;
 
 const wedgeWidth = 10;

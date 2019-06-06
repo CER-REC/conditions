@@ -139,6 +139,9 @@ class App extends React.PureComponent {
       ...prevState,
       tutorialPlaying: false,
     }));
+    // Override to avoid immediately incrementing +1 afterward if we're on the
+    // last tutorial step (see the App's onClickCapture attribute)
+    clearTimeout(this.transitionTimeout);
     this.incrementTransitionState(-1);
   };
 
@@ -378,7 +381,7 @@ class App extends React.PureComponent {
         // The timeout makes sure React doesn't re-render before the event can
         // propagate to the actual target
         onClickCapture={(transitionState === (transitionStates.view2 - 1))
-          ? () => setTimeout(this.incrementTransitionState, 0)
+          ? () => { this.transitionTimeout = setTimeout(this.incrementTransitionState, 0); }
           : null
         }
       >
@@ -430,6 +433,7 @@ class App extends React.PureComponent {
           <div style={{ clear: 'both' }} />
           <ViewTwo
             {...viewProps}
+            hideKeywordCircle={transitionState < transitionStates.view2}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
