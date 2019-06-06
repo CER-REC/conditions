@@ -6935,17 +6935,69 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           <h1>
             About
           </h1>
+          <span>
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
+We hope we are hitting the mark. Your feedback is essential.
+Email us with your comments and ideas:
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca."
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>
+                energyindesign@neb-one.gc.ca.
+              </span>
+            </a>
+             We look forward to hearing from you.
+          </span>
           <p>
-            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
           <p>
-            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+            If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
           </p>
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+            Email us with your comments and ideas:
+          </p>
+          <h1>
+            Contributor
+          </h1>
+          <p>
+            DATA SOURCE:
+          </p>
+          <p>
+            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+          </p>
+          <p>
+            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+          </p>
+          <p>
+            ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
+          </p>
+          <p>
+            COORDINATION:
+          </p>
+          <p>
+            Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
+          </p>
+          <p>
+            DATA VISUALIZATION:
+          </p>
+          <p>
+            Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
+          </p>
+          <p>
+            Design: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.
+          </p>
+          <p>
+            Lead Technical: VizworX
+          </p>
+          <p>
+            Technical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.
           </p>
         </div>
       </div>
@@ -7190,17 +7242,69 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           <h1>
             About
           </h1>
+          <span>
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
+We hope we are hitting the mark. Your feedback is essential.
+Email us with your comments and ideas:
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca."
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>
+                energyindesign@neb-one.gc.ca.
+              </span>
+            </a>
+             We look forward to hearing from you.
+          </span>
           <p>
-            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
           <p>
-            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+            If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
           </p>
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+            Email us with your comments and ideas:
+          </p>
+          <h1>
+            Contributor
+          </h1>
+          <p>
+            DATA SOURCE:
+          </p>
+          <p>
+            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+          </p>
+          <p>
+            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+          </p>
+          <p>
+            ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
+          </p>
+          <p>
+            COORDINATION:
+          </p>
+          <p>
+            Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
+          </p>
+          <p>
+            DATA VISUALIZATION:
+          </p>
+          <p>
+            Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
+          </p>
+          <p>
+            Design: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.
+          </p>
+          <p>
+            Lead Technical: VizworX
+          </p>
+          <p>
+            Technical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.
           </p>
         </div>
       </div>
@@ -7445,17 +7549,69 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           <h1>
             About
           </h1>
+          <span>
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
+We hope we are hitting the mark. Your feedback is essential.
+Email us with your comments and ideas:
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca."
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>
+                energyindesign@neb-one.gc.ca.
+              </span>
+            </a>
+             We look forward to hearing from you.
+          </span>
           <p>
-            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
           <p>
-            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+            If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
           </p>
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+            Email us with your comments and ideas:
+          </p>
+          <h1>
+            Contributor
+          </h1>
+          <p>
+            DATA SOURCE:
+          </p>
+          <p>
+            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+          </p>
+          <p>
+            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+          </p>
+          <p>
+            ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
+          </p>
+          <p>
+            COORDINATION:
+          </p>
+          <p>
+            Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
+          </p>
+          <p>
+            DATA VISUALIZATION:
+          </p>
+          <p>
+            Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
+          </p>
+          <p>
+            Design: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.
+          </p>
+          <p>
+            Lead Technical: VizworX
+          </p>
+          <p>
+            Technical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.
           </p>
         </div>
       </div>
@@ -7700,17 +7856,69 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           <h1>
             About
           </h1>
+          <span>
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
+We hope we are hitting the mark. Your feedback is essential.
+Email us with your comments and ideas:
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca."
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>
+                energyindesign@neb-one.gc.ca.
+              </span>
+            </a>
+             We look forward to hearing from you.
+          </span>
           <p>
-            This Incidents at NEB-Regulated Pipeline and Facilities interactive online tool is part of the National Energy Board's (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada's energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2008 to present for incidents reported under the Onshore Pipeline Regulations and the Processing Plant Regulation. In the months and years to come we will use this innovative format to share our pipeline safety data, energy data series, energy infrastructure information, and a host of other topical data. In addition, other online tools can be found in the NEB Safety Performance Portal.
+            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
           <p>
-            If you want to use the data for research and undertake your own review, all data is downloadable and shareable. The chart images are also downloadable.
+            If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
           </p>
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: energyindesign@neb-one.gc.ca. We look forward to hearing from you.
+            Email us with your comments and ideas:
+          </p>
+          <h1>
+            Contributor
+          </h1>
+          <p>
+            DATA SOURCE:
+          </p>
+          <p>
+            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+          </p>
+          <p>
+            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+          </p>
+          <p>
+            ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
+          </p>
+          <p>
+            COORDINATION:
+          </p>
+          <p>
+            Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
+          </p>
+          <p>
+            DATA VISUALIZATION:
+          </p>
+          <p>
+            Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
+          </p>
+          <p>
+            Design: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.
+          </p>
+          <p>
+            Lead Technical: VizworX
+          </p>
+          <p>
+            Technical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.
           </p>
         </div>
       </div>
