@@ -1872,17 +1872,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             : 
             Albuquerque, NM
           </div>
-          <div
-            className="ContentBlock "
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Type
-            </span>
-            : 
-            Construction of Oil Pipeline
-          </div>
           <p
             className="contentText"
           >
@@ -2419,17 +2408,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               : 
               Albuquerque, NM
             </div>
-            <div
-              className="ContentBlock "
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument Type
-              </span>
-              : 
-              Construction of Oil Pipeline
-            </div>
             <p
               className="contentText"
             >
@@ -2941,17 +2919,6 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             </span>
             : 
             Albuquerque, NM
-          </div>
-          <div
-            className="ContentBlock "
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Type
-            </span>
-            : 
-            Construction of Oil Pipeline
           </div>
           <p
             className="contentText"
@@ -3512,17 +3479,6 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         : 
         Albuquerque, NM
       </div>
-      <div
-        className="ContentBlock "
-      >
-        <span
-          className="contentHeading"
-        >
-          Instrument Type
-        </span>
-        : 
-        Construction of Oil Pipeline
-      </div>
       <p
         className="contentText"
       >
@@ -3679,19 +3635,6 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           : 
           <span>
             Environmental Protection
-          </span>
-        </div>
-        <div
-          className="ContentBlock "
-        >
-          <span
-            className="contentHeading"
-          >
-            Instrument
-          </span>
-          : 
-          <span>
-            Construction
           </span>
         </div>
         <div
