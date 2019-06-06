@@ -8,6 +8,11 @@ const AboutBox = () => (
       {/* eslint-disable-next-line react/no-array-index-key */}
       {text => text.split('\n').map((para, idx) => <p key={idx}>{para}</p>)}
     </FormattedMessage>
+    <FormattedMessage id="components.mainInfoBar.headings.contributor" tagName="h1" />
+    <FormattedMessage id="components.mainInfoBar.content.contributor">
+      {/* eslint-disable-next-line react/no-array-index-key */}
+      {text => text.split('\n').map((para, idx) => <p key={idx}>{para}</p>)}
+    </FormattedMessage>
   </div>
 );
 
