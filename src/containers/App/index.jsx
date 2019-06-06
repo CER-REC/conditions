@@ -12,6 +12,7 @@ import { connect, Provider } from 'react-redux';
 import { IntlProvider, FormattedMessage } from 'react-intl';
 
 import { AppContainer, hot } from 'react-hot-loader';
+import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
 
 import { processConditionCounts } from './processQueryData';
@@ -43,6 +44,7 @@ import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
+import formatConditionDetails from '../../utilities/formatConditionDetails';
 import './styles.scss';
 
 import {
@@ -238,7 +240,7 @@ class App extends React.PureComponent {
   };
 
   render() {
-    const { transitionState, browseBy, setBrowseBy } = this.props;
+    const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
     this.processedConditionCounts = this.processedConditionCounts
       || processConditionCounts(this.props.allConditionsPerYear);
@@ -264,7 +266,6 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
-
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -326,21 +327,39 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
           />
           <section className="conditions">
-            <ConditionDetails
-              selectedItem={this.props.selected.condition}
-              selectedProject="Selected Project"
-              updateSelectedItem={this.props.setSelectedCondition}
-              openIntermediatePopup={this.props.openIntermediatePopup}
-              openProjectDetails={this.props.openProjectDetails}
-              toggleExpanded={noop}
-              searchKeywords={{
-                include: this.props.included,
-                exclude: this.props.excluded,
-              }}
-              data={conditionData}
-              browseBy={this.props.browseBy}
-              {...conditionDetailsViewProps}
-            />
+            {selected.project !== null
+              ? (
+                <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
+                  {({ data, loading, error }) => {
+                    if (!data.getProjectById || !data) { return null; }
+                    if (loading) { return <div>Loading</div>; }
+                    if (error) { return <div>Loading</div>; }
+                    const { shortName, instruments } = data.getProjectById;
+                    // TODO: Change string 'en' to the redux store locale
+                    const formattedInstrument = formatConditionDetails(
+                      instruments, selected.feature,
+                    );
+                    return (
+                      <ConditionDetails
+                        selectedItem={this.props.selected.condition}
+                        selectedProject={shortName.en}
+                        updateSelectedItem={this.props.setSelectedCondition}
+                        openIntermediatePopup={this.props.openIntermediatePopup}
+                        openProjectDetails={this.props.openProjectDetails}
+                        toggleExpanded={noop}
+                        searchKeywords={{
+                          include: this.props.included,
+                          exclude: this.props.excluded,
+                        }}
+                        data={formattedInstrument}
+                        browseBy={this.props.browseBy}
+                        {...conditionDetailsViewProps}
+                      />
+                    );
+                  }}
+                </Query>
+              )
+              : null}
           </section>
           <Query query={getDateDataUpdated}>
             {(dateQProps) => {
@@ -379,8 +398,8 @@ App.propTypes = {
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
   selected: PropTypes.shape({
-    feature: PropTypes.string.isRequired,
-    subFeature: PropTypes.string,
+    project: PropTypes.number,
+    subFeature: PropTypes.string.isRequired,
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
       itemIndex: PropTypes.number.isRequired,
