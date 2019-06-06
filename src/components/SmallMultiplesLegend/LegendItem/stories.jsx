@@ -4,10 +4,12 @@ import withStatus from '../../../../.storybook/addon-status';
 import LegendItem from '.';
 import ReadMe from './README.md';
 import { conditionCountsByYear } from '../../../mockData';
+import { features } from '../../../constants';
 
 const generateProps = data => ({
   feature: data.feature,
-  title: data.subFeature,
+  subFeature: data.subFeature,
+  color: features[data.feature][data.subFeature],
   data,
   max: Math.max(...Object.values(data.years)),
 });
@@ -21,8 +23,9 @@ storiesForComponent('Components|SmallMultiplesLegend/LegendItem', module, ReadMe
   ))
   .add('all', () => (
     <LegendItem
-      title="filing"
       feature="filing"
+      subFeature="REQUIRED"
+      color={features.filing.REQUIRED}
       max={0}
       all
     />

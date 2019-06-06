@@ -3,29 +3,26 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import { Query } from 'react-apollo';
-import { yearRange } from '../../queries/viewThreeQueries/yearRange';
 import FeaturesMenu from '../../components/FeaturesMenu';
 import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
-import InstrumentsLegend from '../../components/InstrumentsLegend';
 import StreamGraph from '../../components/StreamGraph';
-import BubbleChart from '../../components/BubbleChart';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
+import displayOrder from '../../mockData/displayOrder';
 import './styles.scss';
-import { allConditionsPerYear, allConditionsByCommodityOrInstrument } from '../../proptypes';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
 import * as selectedCreators from '../../actions/selected';
-import * as chartIndicatorCreators from '../../actions/chartIndicatorPosition';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
-class ViewThree extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    return nextProps.loading === false;
-  }
-
+class ViewThree extends React.PureComponent {
   render() {
     const { props } = this;
+    const conditionCounts = props.conditionsPerYear;
+
+    this.reversedCounts = this.reversedCounts || conditionCounts.slice().reverse();
+
+    const currentDisplayOrder = (props.selected.feature === 'instrument')
+      ? props.prefixOrder
+      : displayOrder.features[props.selected.feature];
 
     return (
       <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
@@ -37,40 +34,22 @@ class ViewThree extends React.Component {
           />
         </section>
         <section className="legend">
-          {props.selected.feature === 'instrument'
-            ? (
-              <InstrumentsLegend
-                data={props.conditionCountsByCommodity.counts}
-                onChange={props.setSelectedSubFeature}
-                selected={props.selected.subFeature}
-              />
-            )
-            : (
-              <SmallMultiplesLegend
-                feature={props.selected.feature}
-                data={props.conditionCountsByYear.counts}
-                onChange={props.setSelectedSubFeature}
-                selected={props.selected.subFeature}
-              />
-            )}
+          <SmallMultiplesLegend
+            feature={props.selected.feature}
+            data={conditionCounts}
+            displayOrder={currentDisplayOrder}
+            onChange={props.setSelectedSubFeature}
+            selected={props.selected.subFeature}
+          />
         </section>
         <section className="chart">
-          {props.selected.feature === 'instrument'
-            ? (
-              <BubbleChart
-                data={conditionCountsByCommodity.counts}
-                type={props.selected.subFeature}
-                indicator={props.chartIndicatorPosition.bubble}
-                setIndicator={props.setBubbleChartIndicator}
-              />
-            )
-            : (
-              <StreamGraph
-                projectData={props.conditionCountsByYear.counts}
-                feature={props.selected.feature}
-                subFeature={props.selected.subFeature}
-              />
-            )}
+          <StreamGraph
+            countsData={this.reversedCounts}
+            displayOrder={currentDisplayOrder}
+            years={props.years}
+            feature={props.selected.feature}
+            subFeature={props.selected.subFeature}
+          />
         </section>
         <section className="featureDescription">
           <FeatureDescription feature={props.selected.feature} />
@@ -79,6 +58,7 @@ class ViewThree extends React.Component {
           <FeatureTypesDescription
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
+            displayOrder={currentDisplayOrder}
           />
         </section>
         <section className="selectedCompany">
@@ -96,17 +76,8 @@ class ViewThree extends React.Component {
 ViewThree.propTypes = {
   // eslint-disable-next-line react/no-unused-prop-types
   layoutOnly: PropTypes.bool,
-  conditionCountsByYear: PropTypes.shape({
-    counts: allConditionsPerYear.isRequired,
-  }).isRequired,
   chartIndicatorPosition: PropTypes.shape({
-    bubble: PropTypes.string.isRequired,
     stream: PropTypes.number.isRequired,
-  }).isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
-  setBubbleChartIndicator: PropTypes.func.isRequired,
-  conditionCountsByCommodity: PropTypes.shape({
-    counts: allConditionsByCommodityOrInstrument.isRequired,
   }).isRequired,
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
@@ -120,35 +91,13 @@ ViewThree.propTypes = {
   setSelectedFeature: PropTypes.func.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   setSelectedSubFeature: PropTypes.func.isRequired,
-  loading: PropTypes.bool,
 };
 
 ViewThree.defaultProps = {
   layoutOnly: PropTypes.false,
-  loading: false,
 };
 
 export const ViewThreeUnconnected = ViewThree;
-
-export const ViewThreeGraphQL = props => (
-  <Query query={yearRange}>
-    {({ data, loading }) => {
-      // TODO: Figure what to render while we're waiting
-      if (loading || !data) { return null; }
-
-      return (
-        <ViewThree
-          // data props here
-          data={data}
-          loading={loading}
-          minYear={data.allConfigurationData.instrumentYearRange.min}
-          maxYear={data.allConfigurationData.instrumentYearRange.max}
-          {...props}
-        />
-      );
-    }}
-  </Query>
-);
 
 export default connect(
   ({
@@ -164,15 +113,10 @@ export default connect(
     excluded: search.excluded,
     chartIndicatorPosition,
     detailViewExpanded,
-
-    // TODO: Remove these since they're data and not state
-    conditionCountsByYear,
-    conditionCountsByCommodity,
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
     setSelectedSubFeature: selectedCreators.setSelectedSubFeature,
-    setBubbleChartIndicator: chartIndicatorCreators.setBubbleChartIndicator,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(ViewThreeGraphQL);
+)(ViewThree);

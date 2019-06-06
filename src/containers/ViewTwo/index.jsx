@@ -12,7 +12,7 @@ import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
 
-import { conditionCountsByYear, conditionCountsByCommodity, searchData } from '../../mockData';
+import { searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
@@ -122,8 +122,8 @@ class ViewTwo extends React.Component {
             onClick={this.props.jumpToView3}
             feature={this.props.selected.feature}
             subFeature=""
-            projectData={conditionCountsByYear.counts}
-            instrumentData={conditionCountsByCommodity.counts}
+            years={this.props.years}
+            countsData={this.props.conditionsPerYear}
           />
         </section>
 

@@ -9,7 +9,7 @@ import {
 import { injectIntl, FormattedMessage, intlShape } from 'react-intl';
 import StackGroupProps from './StackGroupProps';
 import { features } from '../../constants';
-import { allConditionsPerYear, featureTypes } from '../../proptypes';
+import { allConditionsPerYearType, featureTypes } from '../../proptypes';
 
 import './styles.scss';
 
@@ -19,12 +19,12 @@ const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 
 class StreamGraph extends React.Component {
   static propTypes = {
-    projectData: allConditionsPerYear.isRequired,
+    countsData: allConditionsPerYearType.isRequired,
+    years: PropTypes.arrayOf(PropTypes.number).isRequired,
     feature: featureTypes.isRequired,
     subFeature: PropTypes.string.isRequired,
     streamOnly: PropTypes.bool,
     intl: intlShape.isRequired,
-
   }
 
   static defaultProps = {
@@ -39,14 +39,15 @@ class StreamGraph extends React.Component {
   handleOnChange = controlYear => this.setState({ controlYear });
 
   // For data that doesn't match the current feature/subfeature, sets all y = 0
-  processProjectData = () => {
-    const { projectData, feature, subFeature } = this.props;
-    this.processedData = projectData.map((project) => {
-      if (project.feature === feature
-        && (project.subFeature === subFeature || subFeature === '')
-      ) { return project; }
+  processCountsData = () => {
+    const { countsData, feature, subFeature } = this.props;
 
-      const copy = JSON.parse(JSON.stringify(project));
+    this.processedData = countsData.map((entry) => {
+      if (entry.feature === feature
+        && (entry.subFeature === subFeature || subFeature === '')
+      ) { return entry; }
+
+      const copy = JSON.parse(JSON.stringify(entry));
       Object.keys(copy.years).forEach((k) => {
         copy.years[k] = 0;
       });
@@ -54,20 +55,27 @@ class StreamGraph extends React.Component {
     });
   };
 
-  streamLayers = () => this.processedData.map(v => (
-    <VictoryArea
-      key={`${v.feature}-${v.subFeature}`}
-      name={v.subFeature}
-      data={Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }))}
-      style={{
-        data: {
-          fill: features[v.feature][v.subFeature],
-          strokeWidth: 0,
-        },
-      }}
-      interpolation="catmullRom"
-    />
-  ));
+  streamLayers = () => this.processedData.map((v) => {
+    const data = Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }));
+
+    return (
+      <VictoryArea
+        key={`${v.feature}-${v.subFeature}`}
+        name={v.subFeature}
+        data={data}
+        style={{
+          data: {
+            fill: ((v.feature === 'instrument')
+              ? features.instrument[v.rank]
+              : features[v.feature][v.subFeature]
+            ),
+            strokeWidth: 0,
+          },
+        }}
+        interpolation="catmullRom"
+      />
+    );
+  });
 
   updateControlYearState = (controlYearArray) => {
     if (this.state.controlYear === null) {
@@ -82,31 +90,29 @@ class StreamGraph extends React.Component {
   };
 
   chart() {
-    const filteredData = (this.props.subFeature !== '')
-      ? this.processedData.filter(data => data.subFeature === this.props.subFeature)
-      : this.processedData;
+    const filteredData = this.processedData.filter(entry => (
+      (entry.feature === this.props.feature)
+      && ((this.props.subFeature === '') || (entry.subFeature === this.props.subFeature))
+    ));
+
     const controlYearArray = [];
-    const { conditionsByDate, minConditionCount } = filteredData.reduce((acc, cur) => {
-      Object.entries(cur.years).forEach(([year, count]) => {
-        acc.conditionsByDate[year] = count + (acc.conditionsByDate[year] || 0);
+
+    const yearTotals = filteredData.reduce((acc, cur) => {
+      Object.entries(cur.years).forEach(([year, count], yearIdx) => {
+        acc[yearIdx] = count + (acc[yearIdx] || 0);
         if (!controlYearArray.includes(year)) {
           controlYearArray.push(year);
         }
-        if (count < acc.minConditionCount) { acc.minConditionCount = count; }
       });
 
       return acc;
-    }, { conditionsByDate: {}, minConditionCount: Infinity });
+    }, []);
 
-    const { minDate, maxDate, maxConditionTotal } = Object.entries(conditionsByDate)
-      .reduce((acc, [year, count]) => {
-        if (year < acc.minDate) { acc.minDate = year; }
-        if (year > acc.maxDate) { acc.maxDate = year; }
+    const maxTotal = Math.max(...yearTotals);
+    const minTotal = Math.min(...yearTotals);
 
-        if (count > acc.maxConditionTotal) { acc.maxConditionTotal = count; }
-
-        return acc;
-      }, { minDate: Infinity, maxDate: 0, maxConditionTotal: 0 });
+    const minDate = this.props.years[0];
+    const maxDate = this.props.years[this.props.years.length - 1];
 
     if (this.props.streamOnly) {
       return (
@@ -125,7 +131,7 @@ class StreamGraph extends React.Component {
               groupProps={{
                 onChange: noop,
                 controlYear: null,
-                projectData: this.processedData,
+                countsData: this.processedData,
                 allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
               }}
             >
@@ -136,8 +142,7 @@ class StreamGraph extends React.Component {
       );
     }
 
-    // Setting these here because CSS classes weren't being picked up by Victory
-    // I may have just been doing it wrong though
+    // Setting these here because CSS classes aren't picked up by Victory
     const axisStyles = {
       tickLabels: {
         fontSize: '10px',
@@ -150,11 +155,16 @@ class StreamGraph extends React.Component {
     const { intl } = this.props;
     const controlYr = this.updateControlYearState(controlYearArray);
     return (
-      <VictoryChart animate={streamAnimation} width={600} height={330}>
+      <VictoryChart
+        animate={streamAnimation}
+        width={600}
+        height={330}
+        domainPadding={{ y: [0, 20] }}
+      >
         <VictoryAxis
           dependentAxis
           label={intl.formatMessage({ id: 'components.streamGraph.axis.yAxis' })}
-          tickValues={[minConditionCount, maxConditionTotal]}
+          tickValues={[minTotal, maxTotal]}
           tickFormat={Math.round}
           className="axis-label"
           style={axisStyles}
@@ -162,7 +172,9 @@ class StreamGraph extends React.Component {
         <VictoryAxis
           label={intl.formatMessage({ id: 'components.streamGraph.axis.xAxis' })}
           tickFormat={Math.round}
+          scale="linear"
           className="axis-label"
+          tickValues={this.props.years}
           domain={[minDate, maxDate]}
           style={axisStyles}
         />
@@ -170,7 +182,7 @@ class StreamGraph extends React.Component {
           groupProps={{
             onChange: this.handleOnChange,
             controlYear: controlYr,
-            projectData: filteredData,
+            countsData: filteredData,
             allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
           }}
         >
@@ -181,7 +193,8 @@ class StreamGraph extends React.Component {
   }
 
   render() {
-    this.processProjectData();
+    this.processCountsData();
+
     return (
       <div
         className="StreamGraph"

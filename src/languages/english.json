@@ -50,7 +50,7 @@
       "ABANDONMENT": "Abandonment",
       "SAFETY": "Safety",
       "TARIFFS": "Tariffs",
-      "MISC": "Misc.", 
+      "MISC": "Misc.",
       "AO": "Amending Order",
       "EC": "Electricity Certificate",
       "EP": "Electricity Permit",
@@ -71,11 +71,11 @@
       "TO": "Oil Toll & Tariff Order",
       "XC": "Commodity Order:",
       "XG":"Gas Order",
-      "XO" :"Oil Order", 
+      "XO" :"Oil Order",
       "ZO": "Abandonment Order",
       "CO": "text not yet provided",
       "OPL": "text not yet provided",
-      "other": "other"
+      "OTHER": "other"
     },
     "instrumentCommodityType": {
       "OIL": "Oil",
@@ -182,6 +182,7 @@
     },
     "featureTypesDescription": {
       "allThemes": "Conditions with multiple themes are counted more than once.",
+      "otherInstruments": "The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.",
       "theme": {
         "ADMINISTRATIVE": "conditions that help track organizational tasks.",
         "DAMAGE_PREVENTION": "conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.",
@@ -230,18 +231,11 @@
         "NOT_REQUIRED": " a company is not required to file a document with the NEB in order to comply with a condition. Some conditions are covered by filings for another related condition. If a condition does not require a company to file a document, the NEB can verify compliance during a compliance verification activity (CVA) such as an inspection or audit."
       },
       "instrument": {
-        "ROUTING": "Missing: description",
-        "CONSTRUCTION": "Missing: description",
-        "ABANDONMENT": "Missing: description",
-        "OPENING": "Missing: description",
-        "MISC": "Missing: description",
-        "SAFETY": "Missing: description",
-        "TARIFFS": "Missing: description",
         "AO": "The approval of an amendment as to content or conditions of any Certificate, License, Order or Permit (in some cases the approval of the Governor in Council is required).",
         "EC": "The approval of the construction and/or operation of an international power line",
         "EP": "The approval of the construction and operation of an international power line",
         "EPE": "The approval of the export of power and/or energy",
-        "FRO": "",
+        "FRO": " ",
         "GC": "The approval of the construction of a new gas pipeline or additional gas pipeline",
         "GPL": "The approval of the Plans, Profiles, and Books of Reference for a new or additional gas pipeline. Also used in connection with deviations required in existing gas pipelines",
         "GPLO": "The approval of the opening of a new or additional gas pipelines or deviations thereof",
@@ -257,10 +251,20 @@
         "TO": "The fixing of tariffs and tolls – oil pipelines",
         "XC": "The exemption of a commodity pipeline or parts thereof, or commodity pipeline facilities",
         "XG":" The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
-        "XO" :"The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)", 
+        "XO" :"The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)",
         "ZO": "The approval of abandonment applications",
         "CO": "text not yet provided",
-        "OPL": "text not yet provided"
+        "OPL": "text not yet provided",
+        "GH": "text not yet provided",
+        "OH": "text not yet provided",
+        "KAX": "text not yet provided",
+        "MHW": "text not yet provided",
+        "CPTC": "text not yet provided",
+        "XE": "text not yet provided",
+        "MH": "text not yet provided",
+        "OPSP": "text not yet provided",
+        "OTHER":  "text not yet provided",
+        "other": "text not yet provided"
       }
     },
     "featureMenu": {
@@ -394,6 +398,7 @@
     },
     "smallMultiplesLegend": {
       "all": {
+        "instrument": "All Instruments",
         "theme": "All Themes",
         "phase": "All Phases",
         "type": "All Types",

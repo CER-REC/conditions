@@ -19,7 +19,7 @@ const stackProps = {
 
 const groupProps = {
   onChange: () => {},
-  projectData: [],
+  countsData: [],
   allThemes: false,
 };
 

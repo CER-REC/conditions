@@ -20,8 +20,9 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   let wrapper = shallow((
     <LegendItem
       className="testtest"
-      title="security"
+      subFeature="security"
       feature="theme"
+      color={features[data.feature][data.subFeature]}
       data={data}
       max={0}
     />
@@ -35,8 +36,9 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     beforeEach(() => {
       wrapper = shallow((
         <LegendItem
-          title={title}
+          subFeature={title}
           feature={title}
+          color={features[data.feature][data.subFeature]}
           max={0}
           all
         />
@@ -58,7 +60,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
   });
 
   describe('when there is no all property provided', () => {
-    const title = 'SECURITY';
+    const subFeature = 'SECURITY';
     const feature = 'theme';
     const max = 500;
 
@@ -66,8 +68,9 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       wrapper = shallow((
         <LegendItem
           className="testclass"
-          title={title}
+          subFeature={subFeature}
           feature={feature}
+          color={features[feature][subFeature]}
           data={data}
           max={max}
         />
@@ -75,7 +78,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     });
 
     test('should render the formatted title', () => {
-      const id = `common.${feature}.${title}`;
+      const id = `common.${feature}.${subFeature}`;
 
       expect(wrapper.find('.stream')).toHaveLength(1);
       expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
@@ -86,8 +89,6 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
       expect(victoryAreaWrapper).toHaveLength(1);
       expect(victoryAreaWrapper.prop('maxDomain')).toEqual({ y: max });
-      expect(victoryAreaWrapper.prop('style'))
-        .toEqual({ data: { fill: features[feature][title] } });
 
       expect(victoryAreaWrapper.prop('data')).toEqual(
         expect.arrayContaining(Object.entries(data.years).map(([x, y]) => ({ x, y }))),
@@ -106,7 +107,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       wrapper = shallow((
         <LegendItem
           className="myClass"
-          title={title}
+          subFeature={subFeature}
           feature={feature}
           data={data}
           color="#AACC11"

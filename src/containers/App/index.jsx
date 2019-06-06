@@ -15,8 +15,12 @@ import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
 
+import { processConditionCounts } from './processQueryData';
+
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
+import conditionsPerYearQuery from '../../queries/conditionsPerYear';
+import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
@@ -28,6 +32,7 @@ import createStore from '../../Store';
 
 import {
   browseByType,
+  allConditionsPerYearType,
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
@@ -43,8 +48,6 @@ import formatConditionDetails from '../../utilities/formatConditionDetails';
 import './styles.scss';
 
 import {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
   conditionData,
 } from '../../mockData';
 
@@ -67,8 +70,6 @@ const transitionStates = {
 };
 
 const viewProps = {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
   conditionDetails: {
     searchKeywords: {
       include: ['hello'],
@@ -241,6 +242,9 @@ class App extends React.PureComponent {
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
+    this.processedConditionCounts = this.processedConditionCounts
+      || processConditionCounts(this.props.allConditionsPerYear);
+
     let guideStep = transitionState;
     if (guideStep === transitionStates.view1Reset) {
       guideStep = transitionStates.view1;
@@ -252,10 +256,11 @@ class App extends React.PureComponent {
     if (transitionState < (transitionStates.view2 - 1)
     || transitionState === transitionStates.view1Reset) {
       labelId = 'skip';
-    } else if (transitionState > 9) {
+    } else if (transitionState === transitionStates.view3) {
       labelId = 'return';
     }
-    const conditionDetailsViewProps = (transitionState === 10)
+
+    const conditionDetailsViewProps = (transitionState === transitionStates.view3)
       ? {
         isExpandable: true,
         toggleExpanded: this.props.expandDetailView,
@@ -308,8 +313,19 @@ class App extends React.PureComponent {
           </section>
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
-          <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
-          <ViewThree {...viewProps} />
+          <ViewTwo
+            {...viewProps}
+            conditionsPerYear={this.processedConditionCounts.conditionCounts}
+            years={this.processedConditionCounts.years}
+            jumpToView1={this.jumpToView1}
+            jumpToView3={this.jumpToView3}
+          />
+          <ViewThree
+            {...viewProps}
+            conditionsPerYear={this.processedConditionCounts.conditionCounts}
+            prefixOrder={this.processedConditionCounts.prefixOrder}
+            years={this.processedConditionCounts.years}
+          />
           <section className="conditions">
             {selected.project !== null
               ? (
@@ -389,6 +405,7 @@ App.propTypes = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
+  allConditionsPerYear: allConditionsPerYearType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -397,6 +414,9 @@ App.propTypes = {
 };
 
 export const AppUnconnected = App;
+
+// Allows stories to override the initial state
+export const AppStore = store;
 
 const ConnectedApp = hot(module)(connect(
   ({
@@ -430,7 +450,27 @@ export default props => (
     <IntlProvider locale="en" messages={i18nMessages.en}>
       <ApolloProvider client={client}>
         <Provider store={store}>
-          <ConnectedApp {...props} />
+          <Query query={initialConfigurationDataQuery}>
+            {({ data: configData, loading: configLoading }) => (
+              <Query query={conditionsPerYearQuery}>
+                {({ data: conditionsData, loading: conditionsLoading }) => {
+                  // TODO: Error handling for these queries
+                  if (
+                    conditionsLoading || !conditionsData
+                    || configLoading || !configData
+                  ) return null;
+
+                  return (
+                    <ConnectedApp
+                      allConditionsPerYear={conditionsData.conditionsPerYear}
+                      configData={configData.allConfigurationData}
+                      {...props}
+                    />
+                  );
+                }}
+              </Query>
+            )}
+          </Query>
         </Provider>
       </ApolloProvider>
     </IntlProvider>

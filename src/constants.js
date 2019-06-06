@@ -1,12 +1,15 @@
 export const features = {
   instrument: {
-    ROUTING: 'rgb(14, 43, 140)',
-    CONSTRUCTION: 'rgb(39, 165, 249)',
-    ABANDONMENT: 'rgb(22, 78, 248)',
-    OPENING: 'rgb(22, 78, 248)',
-    MISC: 'rgb(212, 169, 42)',
-    SAFETY: 'rgb(201, 4, 194)',
-    TARIFFS: 'rgb(195, 230, 179)',
+    0: 'rgb(122, 25, 17)',
+    1: 'rgb(239, 71, 57)',
+    2: 'rgb(73, 127, 57)',
+    3: 'rgb(246, 155, 202)',
+    4: 'rgb(231, 157, 78)',
+    5: 'rgb(141, 191, 105)',
+    6: 'rgb(221, 106, 97)',
+    7: 'rgb(175, 107, 68)',
+    8: 'rgb(90, 158, 150)',
+    9: 'rgb(96, 96, 96)',
   },
   theme: {
     ADMINISTRATIVE: 'rgb(201, 215, 65)',

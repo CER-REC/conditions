@@ -26,6 +26,7 @@ export const ViewTwoGraphQL = (props) => {
               variables={{ id: props.selected.company }}
               skip={!props.selected.company}
             >
+
               { (projectMenuQprops) => {
                 const {
                   loading: projLoading,
@@ -50,14 +51,14 @@ export const ViewTwoGraphQL = (props) => {
                             [`${projectsData[projectIndex].aggregatedCount[`${feature}Enum`][subfeatureIndex]}`]: count,
                           });
                         });
-                      if (feature === 'instrument' && Object.keys(aggregated.instrument.length > 10)) {
+                      if (feature === 'instrument' && Object.keys(aggregated.instrument.length > 9)) {
                         const parsedData = Object.entries(aggregated[feature]).sort(
                           (a, b) => (a.count > b.count ? -1 : 1),
                         );
                         aggregated[feature] = {};
                         parsedData.push([
-                          'other',
-                          parsedData.splice(10).reduce((acc, cur) => (acc + cur[1]), 0),
+                          'OTHER',
+                          parsedData.splice(9).reduce((acc, cur) => (acc + cur[1]), 0),
                         ]);
                         parsedData.forEach((arrayElement) => {
                           // eslint-disable-next-line prefer-destructuring

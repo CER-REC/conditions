@@ -18,10 +18,10 @@ const ProjectChart = (props) => {
       </div>
       <div className="FlagWrapper">
         <div className="FlagPole" />
-        {graphData.map(condition => (
+        {graphData.map((condition, idx) => (
           <FeatureFlag
             key={condition.name}
-            name={condition.name}
+            name={(props.chartType === 'instrument') ? toString(idx) : condition.name}
             count={condition.count}
             chartType={props.chartType}
           />
