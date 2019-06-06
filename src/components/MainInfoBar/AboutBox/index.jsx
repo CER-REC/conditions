@@ -16,7 +16,12 @@ const AboutBox = () => (
         nebLink: formatLink('mailto:energyindesign@neb-one.gc.ca.', 'common.linkText.NEBLink'),
       }}
     />
-    <FormattedMessage id="components.mainInfoBar.content.about">
+    <FormattedMessage
+      id="components.mainInfoBar.content.about"
+      values={{
+        nebLink: formatLink('mailto:energyindesign@neb-one.gc.ca.', 'common.linkText.NEBLink'),
+      }}
+    >
       {/* eslint-disable-next-line react/no-array-index-key */}
       {text => text.split('\n').map((para, idx) => <p key={idx}>{para}</p>)}
     </FormattedMessage>
