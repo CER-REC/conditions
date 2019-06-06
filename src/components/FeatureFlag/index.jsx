@@ -10,6 +10,7 @@ const FeatureFlag = (props) => {
 
   const flagSize = `calc(18px * ${Math.min(props.count, 10) / 10})`;
 
+  console.log(props.name);
   const title = props.chartType === 'legend'
     ? intl.formatMessage({ id: `common.legend.${props.name}` })
     : `${intl.formatMessage({ id: `common.features.${props.chartType}` })} - ${props.chartType}.${props.name} - ${props.count}`;
