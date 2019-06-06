@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import { features } from '../constants';
 
+// eslint-disable-next-line no-unused-vars
 export default (instruments, selectedFeature) => (
   instruments.map((instrument) => {
     const {
