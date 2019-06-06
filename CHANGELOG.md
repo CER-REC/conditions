@@ -1,3 +1,264 @@
+# [0.17.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.17.0) (2019-06-06)
+
+
+### App
+
+* **Features:** updates proptypes and queries (2960439)
+* **Features:** removes BubbleChart and InstrumentsLegend components as prep for redesign (30f3178)
+* **Features:** reimplements instrument counts using the StreamGraph (40b2178)
+* **Features:** renames variables for clarity (2d44c51)
+* **Features:** adds stories to the App that start on View 2 or 3 (7ab197a)
+* **Features:** moves conditionsPerYear processing to the app level for perf. and reuse (1f01c36)
+* **Features:** scrolls the keep the Guide in view during the tutorial (2ddf184)
+* **Features:** adds configuration data query to App (9498b8b)
+* **Features:** integrates live instrument data (e03012a)
+* **Features:** add data date to bottom (0ea970d, NEBV-1452)
+* **Features:** added Date Data Updated (8b18020, NEBV-1452)
+* **Features:** adds comment explaining why View 2 is disabled (053684c)
+* **Features:** filters out instrument prefixes with no counts (e99267c)
+* **Bug Fixes:** revert changes to get back to a working state (42358bb)
+* **Bug Fixes:** changed instrument prefix keys (7f4613d)
+* **Bug Fixes:** removes harcoded transition states that had been missed (472c456)
+* **Bug Fixes:** updates tests and snapshots, removes duplicate code (687744b)
+* **Bug Fixes:** colors instrument flags in ProjectMenu, fixes missing messages (b90e006)
+* **Bug Fixes:** fixes the keyword explorer being visible on top of WET header (98c8d2b)
+* **Bug Fixes:** removes pointer events from ConditionDetails when not visible (e30ae30)
+* **Bug Fixes:** fixes crashes switching to instrument mode (dff29c0)
+* **Bug Fixes:** updates snapshots (8599106)
+* **Bug Fixes:** restores View 2 now that it won't break (9465268)
+* **Tests:** updates snapshots (e371b76)
+* **Tests:** fixes broken or highly-coupled tests (51fce5a)
+* **Tests:** updates snapshots, bypasses linting errors (f19d8a4)
+* **Code Formatting:** adds TODO comment for query error-handling (3bfda14)
+* **Code Formatting:** renamed variables and added internationalzation (25506d6)
+
+
+### CompanyPopup
+
+* **Features:** adds processing to split the text content into a list (6ea96f9)
+
+
+### English.json
+
+* **Bug Fixes:** fixes missing instrument keys preventing snapshot pass (af23a91)
+
+
+### FeatureTypesDescription
+
+* **Features:** updates tests and stories to reflect instrument changes (e1cc223)
+* **Bug Fixes:** updates snapshots (191b5b0)
+
+
+### GraphQL
+
+* **Code Refactoring:** added links, updated snapshots (c90ede1)
+
+
+### GreyPipe
+
+* **Bug Fixes:** fixes flag block (c408465)
+
+
+### GuideDetail
+
+* **Features:** changed guide detail text to approved text (b149d05, NEBV-1566)
+
+
+### Languages
+
+* **Bug Fixes:** puts removed strings back (1f5f0be)
+
+
+### LocationWheel/MiniMap
+
+* **Features:** implements data for the locationVariant of view (9afba32)
+
+
+### MainInfoBar
+
+* **Bug Fixes:** fixes about link (c440c74)
+
+
+### Mock Data
+
+* **Bug Fixes:** adds missing instrument type (9cff878)
+
+
+### Project Menu
+
+* **Features:** add wheelspin animation for loading (91d8b46, NEBV-1550)
+
+
+### ProjectMenu
+
+* **Bug Fixes:** fixes prop type error (bf0185c)
+* **Bug Fixes:** fixes binning by limiting to only instruments (161e575)
+
+
+### ProjectMenuQuery
+
+* **Code Refactoring:** simplifies query (76d99d8)
+
+
+### Queries
+
+* **Features:** moves queries up to the app level (9cd9835)
+
+
+### SmallMultiplesLegend
+
+* **Features:** ensures all variations have CSS applied (1615dff)
+* **Features:** uses instrument prefixes rather than looking for locale text (02d8557)
+
+
+### snapshot
+
+* **Bug Fixes:** updated snapshots (914e708)
+
+
+### Steam Graph
+
+* **Bug Fixes:** fixes test cases for the rect added for clickable ares (7f4ec85)
+* **Bug Fixes:** fixes clickable area for the steam graph. Now user can click inside the white spac (f216a94, NEBV-1531)
+
+
+### SteamGraph
+
+* **Features:** now chart indicator id on by default (51f529c, NEBV-1531)
+
+
+### StreamGraph
+
+* **Features:** simplifies processing, removes calcs we can get from queries (cc5feb6)
+* **Features:** adds TODO comments (ac61bc8)
+* **Features:** displays all year ticks, adds padding to avoid clipping curves (2d4c078)
+* **Code Formatting:** fixes linting error (835ed8d)
+* **Code Formatting:** restores and bypasses some broken tests, to fix later (6a4d30a)
+
+
+### view 2
+
+* **Bug Fixes:** cleanup from Review (1f81d04)
+
+
+### View 2
+
+* **Features:** loading animation on wheel spin (7d5f830, NEBV-1550)
+* **Bug Fixes:** fixes the search bar being cut off (27f4fb5)
+* **Code Refactoring:** replaces Dummy Text in Company Popup (6acaaf3, NEBV-1565)
+
+
+### view 3
+
+* **Code Refactoring:** added additional instrument prefixes (7f639c5)
+
+
+### View 3
+
+* **Features:** only processes the count data once rather than per-render (f7baff2)
+* **Features:** adds query for conditionCountsPerYear, connects StreamGraphs (c9b2477)
+* **Features:** displays instrument prefixes in FeatureTypesDescription as per count order (5629d82)
+* **Features:** removes unused props and mock data (26e3a8a)
+* **Features:** adds redesigned instrument colors (e99ae4a)
+* **Features:** restructures year processing, adds mock display order (e51404e)
+* **Features:** displays StreamGraph streams in the same order as SmallMultiplesLegend (f63b398)
+* **Features:** adjusts text formatting (a61a117)
+* **Tests:** updates tests and snapshots (6b3db3f)
+* **Code Formatting:** removes unused props and imports (bd8f926)
+* **Code Refactoring:** replaced dummy text with approved text (025d231, NEBV-1564)
+* **Code Refactoring:** restructures logic for readability (e38f139)
+
+
+### ViewThree
+
+* **Code Refactoring:** removes commented code (8358680)
+
+
+### ViewTwo
+
+* **Features:** adds conditional render of elements on wheelSpin for locationWheel (48aed0a)
+* **Features:** connects RegionCompanies to GraphQl (0d6ab04)
+* **Code Refactoring:** adds dynamic FeaturesLegend on Unconnected Viewtwo (a01a30b)
+* **Code Refactoring:** changes ViewTwo to PureComponent, calculates region name (d13cf1c)
+* **Code Refactoring:** fixes formatting, removes lingering comments. (0e30e88)
+* **Code Refactoring:** fixes prop missing (6109467)
+* **Code Refactoring:** separates viewTwo variants, other major changes (c5db446)
+
+
+### ViewTwo/companyVariant
+
+* **Bug Fixes:** fixes instrument display name (c36bb74)
+
+
+### ViewTwo/Location
+
+* **Code Refactoring:** fixes unconnected rendering (631b9f6)
+
+
+### ViewTwo/Subcomponents
+
+* **Code Refactoring:** minor changes and code cleanup as per PR comments (d43f0bb)
+
+
+### ViewTwo/Wheel
+
+* **Code Refactoring:** fixes companywheelRay Modifies pullToSpin trigger (593b6a0)
+
+
+### ViewTwoGQL/location
+
+* **Features:** initial implementation of the instruments on location (becb500)
+
+
+### ViewTwoGraphQL
+
+* **Features:** adds location wheel initial renderding of instruments (19ab921)
+* **Bug Fixes:** fixes no render of lenged randomly (6725873)
+* **Bug Fixes:** fixes instruments feature variant crash on companyWheel (55307d3)
+* **Code Refactoring:** fixes linting issue (01bca9c)
+* **Code Refactoring:** fixes PR comments and requests (3a3b248)
+* **Code Refactoring:** fixes PR comments second round (fb29a1a)
+
+
+### Wheel
+
+* **Bug Fixes:** fixes no spin onPull after scroll on list (8e7184c)
+* **Bug Fixes:** fixes spin on entry when first data loaded and no project selected (3f41344)
+* **Code Refactoring:** modifies parameters to trigger end of animation faster (1a09ac8)
+
+
+### WHeel
+
+* **Code Refactoring:** adds missing wheelMotionTriggerprop to story (b7c0126)
+
+
+### Wheel/FeaturesLegend
+
+* **Code Refactoring:** removes comments, cleans code (0a764af)
+
+
+### Wheel/WheelList
+
+* **Bug Fixes:** fixes list accuracy bug (b1be55e)
+* **Code Refactoring:** fixes focus box for selected project, cleans-up code (11bce2f)
+
+
+### WheelList
+
+* **Code Refactoring:** removes duplicate code (eb088b8)
+
+
+### WheelListGQL
+
+* **Bug Fixes:** fixes list re-sorting onChange (02096c2)
+
+
+### BREAKING CHANGES
+
+* **SteamGraph:** No
+* **App:** View 2 is broken
+* **LocationWheel/MiniMap:** ViewTwo and related stories for wheel broken need to be fixed in future commits
+
 # [0.15.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.15.0) (2019-05-30)
 
 
