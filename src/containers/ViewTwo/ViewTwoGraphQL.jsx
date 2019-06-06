@@ -139,12 +139,13 @@ export const ViewTwoGraphQL = (props) => {
               aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
                 .reduce((acc, [key, val]) => {
                   if (key !== '__typename') {
+                    const description = region.aggregatedCount[`${props.selected.feature}Enum`][key];
                     acc.push({
                       feature: props.selected.feature,
-                      description: key,
+                      description,
                       disabled: val <= 0,
                       value: val,
-                      fill: features[props.selected.feature][key],
+                      fill: features[props.selected.feature][props.selected.feature === 'instrument' ? key : description],
                       id: region.id,
                     });
                   }
@@ -157,6 +158,7 @@ export const ViewTwoGraphQL = (props) => {
             region => region.id === props.selected.region,
           ).aggregatedCount
           : [];
+
         return (
           <Query
             query={companiesByRegionQuery}

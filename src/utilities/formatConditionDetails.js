@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import { features } from '../constants';
 
+// eslint-disable-next-line no-unused-vars
 export default (instruments, selectedFeature) => (
   instruments.map((instrument) => {
     const {
@@ -21,12 +23,14 @@ export default (instruments, selectedFeature) => (
     };
 
     const formattedConditions = conditions.reduce((acc, condition) => {
-      const fill = Object.entries(condition.aggregatedCount[selectedFeature])
-        .reduce((fillAcc, [subFeature, subCount]) => {
-          if (subFeature === '__typename' || subCount <= 0) return fillAcc;
-          fillAcc.push(features[selectedFeature][subFeature]);
-          return fillAcc;
-        }, []);
+      // const fill = Object.entries(condition.aggregatedCount[selectedFeature])
+      //   .reduce((fillAcc, [subFeature, subCount]) => {
+      //     if (subFeature === '__typename' || subCount <= 0) return fillAcc;
+      //     fillAcc.push(features[selectedFeature][subFeature]);
+      //     return fillAcc;
+      //   }, []);
+
+      const fill = ['red'];
 
       const details = {
         // TODO: Handle multiple themes (do any actually exist?)
