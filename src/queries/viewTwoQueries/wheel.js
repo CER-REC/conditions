@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-import { THEME_FRAGMENT, STATUS_FRAGMENT, TYPE_FRAGMENT, FILING_FRAGMENT, PHASE_FRAGMENT } from '../featuresFragments';
 
 export const companyWheelQuery = gql`
   query companies {
@@ -19,19 +18,38 @@ export const locationWheelQuery = gql`
         en
       }
       province
-      aggregatedCount {
-        ...theme
-        ...status
-        ...type
-        ...filing
-        ...phase
+      aggregatedCount: aggregatedCountArray {
+        filing
+        filingEnum
+        phase
+        phaseEnum
+        status
+        statusEnum
+        theme
+        themeEnum
+        type
+        typeEnum
+        instrument: prefix
+        instrumentEnum: prefixEnum
       }
     }
   }
+`;
 
-  ${THEME_FRAGMENT}
-  ${STATUS_FRAGMENT}
-  ${TYPE_FRAGMENT}
-  ${FILING_FRAGMENT}
-  ${PHASE_FRAGMENT}
+export const companiesByRegionQuery = gql`
+  query companiesByRegion ($id: Int!) {
+    companiesByRegionId: getCompaniesByRegionId (id: $id){
+      name
+      id
+      projects {
+        instruments {
+          regions {
+            name {
+              en
+            }
+          }
+        }
+      }
+    }
+  }
 `;

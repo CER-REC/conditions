@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-import { THEME_FRAGMENT, STATUS_FRAGMENT, TYPE_FRAGMENT, FILING_FRAGMENT, PHASE_FRAGMENT } from '../featuresFragments';
 
 // eslint-disable-next-line import/prefer-default-export
 export const projectMenuQuery = gql`
@@ -13,20 +12,22 @@ export const projectMenuQuery = gql`
       name {
         en
       }
-      aggregatedCount {
-        ...theme
-        ...status
-        ...type
-        ...filing
-        ...phase
+      aggregatedCount: aggregatedCountArray {
+        filing
+        filingEnum
+        phase
+        phaseEnum
+        status
+        statusEnum
+        theme
+        themeEnum
+        type
+        typeEnum
+        instrument: prefix
+        instrumentEnum: prefixEnum
+        
       }
     }
   }
-
-  ${THEME_FRAGMENT}
-  ${STATUS_FRAGMENT}
-  ${TYPE_FRAGMENT}
-  ${FILING_FRAGMENT}
-  ${PHASE_FRAGMENT}
 `;
 

@@ -16,6 +16,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
     <ProjectMenu
       projectsData={projectsData}
       selectedFeature="theme"
+      loading={false}
       {...getInteractionProps()}
     />
   ), {

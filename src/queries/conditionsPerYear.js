@@ -1,0 +1,137 @@
+import gql from 'graphql-tag';
+
+// eslint-disable-next-line import/prefer-default-export
+export default gql`
+  query {
+    conditionsPerYear {
+      filing {
+        NOT_REQUIRED
+        REQUIRED
+      }
+      phase {
+        ABANDONMENT
+        DURING_CONSTRUCTION_PHASE
+        EXPIRY_DATE_OF_REG_INSTR
+        INCLUDES_ALL_PHASES_OF_CONSTR
+        NOT_CONSTRUCTION_RELATED
+        POST_CONSTRUCTION_PHASE
+        PRIOR_TO_CONSTRUCTION_PHASE
+        UNSPECIFIED
+      }
+      status {
+        CLOSED
+        IN_PROGRESS
+      }
+      theme {
+        ADMINISTRATIVE
+        DAMAGE_PREVENTION
+        EMERGENCY_MANAGEMENT
+        ENFORCEMENT
+        ENVIRONMENTAL_PROTECTION
+        FINANCIAL
+        INTEGRITY_MANAGEMENT
+        MANAGEMENT_SYSTEM
+        SAFETY_MANAGEMENT
+        SECURITY
+        SOCIO_ECONOMIC
+        STANDARD_CONDITION
+        SUNSET_CLAUSE
+      }
+      type {
+        NON_STANDARD
+        STANDARD
+      }
+      prefix {
+        AO
+        CC
+        CO
+        CPSO
+        DO
+        DP
+        DPSRO
+        EAP
+        EBU
+        EC
+        EH
+        EHR
+        EL
+        ELO
+        EMD
+        EMG
+        EO
+        EOE
+        EP
+        EPE
+        EPO
+        EPP
+        EPR
+        ERF
+        EW
+        EXG
+        EXO
+        EYL
+        FRO
+        GC
+        GH
+        GHP
+        GHR
+        GHRB
+        GHW
+        GL
+        GLI
+        GO
+        GOL
+        GP
+        GPL
+        GPLO
+        GPM
+        GPMO
+        GPS
+        GPSO
+        IPL
+        IRF
+        MH
+        MO
+        NPO
+        OC
+        OH
+        OHE
+        OHR
+        OL
+        OLC
+        OLF
+        OLX
+        OP
+        OPL
+        OPLO
+        OPMO
+        OPS
+        OPSO
+        P
+        PE
+        PO
+        RE
+        RH
+        RH_R
+        RO
+        ROE
+        SG
+        SL
+        SO
+        TG
+        TGI
+        TO
+        TOI
+        UX
+        XC
+        XE
+        XG
+        XGM
+        XO
+        XOM
+        ZO
+      }
+      year
+    }
+  }
+`;

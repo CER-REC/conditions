@@ -22,10 +22,15 @@
       conditions: (x: 39, y:53, w: 79, h:29),
   ))
   }
-
-  .guideWrapper {
-    overflow: hidden;
+  .DateUpdated{
+    position: absolute;
+    bottom: 0;
+    left: 5px;
   }
+
+  // .guideWrapper {
+  //   overflow: hidden;
+  // }
 
   .guideTranslate {
     z-index: 999;
@@ -204,6 +209,7 @@
         transition: opacity $fastEnd, visibility 0s 1s;
       }
     }
+
 
     .ViewOne {
       .row {
