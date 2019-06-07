@@ -370,7 +370,7 @@ class App extends React.PureComponent {
               return (
                 <div className="DateUpdated">
                   <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
-                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
+                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth() + 1} -`} ${dateOfUpdate.getDate()}`}</h1>
                 </div>
               );
             }}
