@@ -2,16 +2,32 @@ import React, { useState } from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { useSpring, animated } from 'react-spring/web.cjs';
+import { useSpring, animated, interpolate } from 'react-spring';
+import { useGesture } from 'react-with-gesture';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 const PullToSpin = (props) => {
   const [triggered, set] = useState(false);
   const { intl } = props;
 
+  const getPosition = (x) => {
+    if (x > 56) return { x: 56, y: -56, rot: 15 };
+    if (x < 0) return { x: 0, y: 0, rot: 0 };
+    return { x, y: -x, rot: (x / 56) * 15 };
+  };
   const onSpinClick = () => {
     set(state => !state);
+    props.onClickSpin();
   };
+  const [bind, { delta, down }] = useGesture({
+    onUp: () => { onSpinClick(); },
+
+  });
+
+  const { x } = useSpring({
+    x: down ? delta[0] : 0,
+    config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+  });
 
   const { transform } = useSpring({
     transform: triggered ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
@@ -19,6 +35,7 @@ const PullToSpin = (props) => {
     onRest: () => { set(false); if (triggered) props.onClickSpin(); },
   });
 
+  const dragAnim = interpolate([x], (x1) => { const position = getPosition(x1); return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`); });
   return (
     <g className="PullToSpin">
       <g className="PullSpinArrow">
@@ -32,7 +49,7 @@ const PullToSpin = (props) => {
         </text>
       </g>
       <g role="button" className="PullSlider" {...handleInteraction(onSpinClick)}>
-        <animated.g transform={transform} className="PullAnimatedGroup">
+        <animated.g {...bind()} transform={dragAnim} className="PullAnimatedGroup">
           <defs>
             <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" x="2" width="2.2" height="5" patternTransform="rotate(90)">
               <rect width="13.52px" height="33.12px" x="328.33" y="-2.22" transform="translate(159.71, 300.23) rotate(-60.92)" />
