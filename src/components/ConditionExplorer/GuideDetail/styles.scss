@@ -6,11 +6,11 @@
 .GuideDetail {
   font-family: $fira-sans-condensed;
   text-align: center;
-  background: #5050EA;
   color: #fff;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   border-radius: 50%;
   overflow: hidden;
@@ -20,7 +20,7 @@
     margin: 14.25%;
     margin-bottom: 0;
     overflow-y: auto;
-    height: calc(100% - 14.25% - 75px);
+    height: calc(100% - 28.5% - 75px);
 
     h1 {
       font-size: 24px;
