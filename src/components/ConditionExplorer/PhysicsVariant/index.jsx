@@ -252,6 +252,14 @@ export default class PhysicsVariant extends React.PureComponent {
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
+        <text
+          className="guideText"
+          x={this.guide.body.position.x}
+          y={this.guide.body.position.y}
+          textAnchor="middle"
+        >
+          Guide Text
+        </text>
       </g>
     );
   }
