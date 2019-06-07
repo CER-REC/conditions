@@ -16,7 +16,7 @@ const processedLocationData = locationData
   .map(region => (
     {
       ...region,
-      name: region.name.en,
+      name: region.name,
       province: region.province,
       aggregatedCount: Object.entries(region.aggregatedCount.theme)
         .reduce((acc, [key, val]) => {

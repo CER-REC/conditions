@@ -11,6 +11,7 @@ import { addLocaleData } from 'react-intl';
 import enLocaleData from 'react-intl/locale-data/en';
 import frLocaleData from 'react-intl/locale-data/fr';
 
+import { lang } from '../src/constants';
 import i18nMessages from '../src/i18n';
 
 import '../src/styles.scss';
@@ -20,7 +21,7 @@ addLocaleData(frLocaleData);
 
 setIntlConfig({
   locales: ['en', 'fr'],
-  defaultLocale: 'en',
+  defaultLocale: lang,
   getMessages: locale => i18nMessages[locale],
 });
 

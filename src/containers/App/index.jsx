@@ -335,14 +335,12 @@ class App extends React.PureComponent {
                     if (loading) { return <div>Loading</div>; }
                     if (error) { return <div>Loading</div>; }
                     const { shortName, instruments } = data.getProjectById;
-                    // TODO: Change string 'en' to the redux store locale
-                    const formattedInstrument = formatConditionDetails(
-                      instruments, selected.feature,
-                    );
+                    const formattedInstrument =
+                      formatConditionDetails(instruments, selected.feature);
                     return (
                       <ConditionDetails
                         selectedItem={this.props.selected.condition}
-                        selectedProject={shortName.en}
+                        selectedProject={shortName}
                         updateSelectedItem={this.props.setSelectedCondition}
                         openIntermediatePopup={this.props.openIntermediatePopup}
                         openProjectDetails={this.props.openProjectDetails}

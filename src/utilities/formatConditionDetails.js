@@ -47,14 +47,14 @@ export default (instruments, selectedFeature) => (
         details,
         binnedValue: bins[condition.textLength],
         keywords: [''],
-        text: condition.text.en,
+        text: condition.text,
       });
       return acc;
     }, []);
 
     // This is used to show all regions belonging to an instrument
     const allLocations = regions.reduce((acc, next) => {
-      acc.push(`${next.name.en}, ${next.province} `);
+      acc.push(`${next.name}, ${next.province} `);
       return acc;
     }, []);
 
