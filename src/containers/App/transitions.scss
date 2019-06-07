@@ -177,8 +177,9 @@ $states: (
     ".guideTranslate": (
       visibility: hidden,
       opacity: 0,
+      transition: "transform #{$defaultTransition}, opacity #{$fastEnd}",
     ),
-    ".guideTranslate .Guide": (transform: scale(0.19)),
+    ".guideTranslate .Guide": (transform: scale(0.17)),
     ".guideTranslate .CircleContainer": (
       pointer-events: none,
       background-color: $GuideFaded,

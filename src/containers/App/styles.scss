@@ -50,7 +50,7 @@
     transition: all $defaultTransition;
 
     .CircleContainer {
-      transition: background $defaultTransition;
+      transition: background-color $defaultTransition;
 
       span {
         transition: opacity $defaultTransition;
