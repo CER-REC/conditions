@@ -96,9 +96,10 @@ $keywordColors: (
   .guideText {
     pointer-events: none;
 
-    font-size: 16px;
-    font-family: $fira-sans-condensed;
-    fill: $LightGray;
-    transform: translateY(6px);
+    text {
+      font-size: 16px;
+      font-family: $fira-sans-condensed;
+      fill: $LightGray;
+    }
   }
 }

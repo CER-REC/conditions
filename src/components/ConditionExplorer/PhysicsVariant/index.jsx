@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
 import {
@@ -252,14 +253,28 @@ export default class PhysicsVariant extends React.PureComponent {
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
-        <text
-          className="guideText"
-          x={this.guide.body.position.x}
-          y={this.guide.body.position.y}
-          textAnchor="middle"
-        >
-          Guide Text
-        </text>
+        <FormattedMessage id="components.conditionExplorer.guide.messages.intro">
+          {(text) => {
+            const lines = text.split('\n');
+
+            return (
+              <g
+                className="guideText"
+                transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
+              >
+                <text
+                  textAnchor="middle"
+                  x="0"
+                  y={`-${(lines.length) / 2}em`}
+                >
+                  {text.split('\n').map(line => (
+                    <tspan x="0" dy="1em" key={line}>{line}</tspan>
+                  ))}
+                </text>
+              </g>
+            );
+          }}
+        </FormattedMessage>
       </g>
     );
   }

@@ -133,6 +133,13 @@
   "components": {
     "conditionExplorer": {
       "guide": {
+        "messages": {
+          "intro": "These lines\nare conditions",
+          "1": "Reveal condition\nkeywords by dragging",
+          "2": "Click to learn\nwhat a\ncondition is",
+          "3": "Select a\nkeyword and\nclick to\ncontinue",
+          "click": "Click to\ncontinue"
+        },
         "overview": {
           "title": "What is a condition?",
           "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB’s regulatory framework, which is made of laws, regulations, requirements and guidance."
