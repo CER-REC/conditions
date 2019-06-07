@@ -47,7 +47,7 @@ $states: (
       pointer-events: none,
       visibility: hidden,
     ),
-    // Fix for Firefox; the svg"s pointer-events: all overrides visibility: hidden
+    // Fix for Firefox; the svg's pointer-events: all overrides visibility: hidden
     ".ViewThree .VictoryContainer > svg": (pointer-events: visible !important),
     ".Footer": (
       opacity: 0,

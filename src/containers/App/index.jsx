@@ -407,7 +407,6 @@ class App extends React.PureComponent {
               transitionState > transitionStates.view1
               && transitionState !== transitionStates.view1Reset
             )}
-            explorerRef={this.explorerRef}
           />
           <section className="appControls">
             <BrowseBy
@@ -433,7 +432,6 @@ class App extends React.PureComponent {
           <div style={{ clear: 'both' }} />
           <ViewTwo
             {...viewProps}
-            hideKeywordCircle={transitionState < transitionStates.view2}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}

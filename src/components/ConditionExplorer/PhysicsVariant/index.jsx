@@ -44,7 +44,6 @@ export default class PhysicsVariant extends React.PureComponent {
   componentDidMount() {
     const world = Matter.World.create({ gravity: { x: 0, y: 0 } });
     this.engine = Matter.Engine.create({ world });
-    this.runner = Matter.Runner.create();
 
     this.guide = new Guide(this.engine);
     this.keywords = this.props.keywords
@@ -60,11 +59,9 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.Engine.run(this.engine);
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
-
-    Matter.Runner.run(this.runner, this.engine);
+    Matter.Runner.run(Matter.Runner.create(), this.engine);
 
     this.updateGuidePosition();
-
     this.loop(window.performance.now());
   }
 
