@@ -1,3 +1,4 @@
+// TODO: Port/replace with queries/allInstrumentsBy and a query for project name
 import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
