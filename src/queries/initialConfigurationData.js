@@ -5,6 +5,7 @@ export default gql`
   query {
     allConfigurationData {
       displayOrder {
+        # TODO: en/fr should automatically return for the current language
         conditionFiling {
           en
         }

@@ -415,6 +415,7 @@ class App extends React.PureComponent {
       );
       const company = condition.instrument.project.companyIds[randomCompany];
       this.props.setSelectedCompany(company);
+      // TODO: This should also set the condition to selected
     });
   }
 
@@ -490,6 +491,7 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}

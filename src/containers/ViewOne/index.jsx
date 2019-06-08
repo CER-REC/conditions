@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
 import { FormattedMessage } from 'react-intl';
-import { viewOneQuery } from '../../queries/viewOne';
+import allKeywords from '../../queries/allKeywords';
 
 import ConditionExplorer from '../../components/ConditionExplorer';
 import ShortcutInfoBar from '../../components/ShortcutInfoBar';
@@ -96,7 +96,7 @@ export const ViewOneUnconnected = props => (
 );
 
 export const ViewOneGraphQL = props => (
-  <Query query={viewOneQuery}>
+  <Query query={allKeywords}>
     {({ data }) => {
       if (!data.allKeywords) { return null; }
 

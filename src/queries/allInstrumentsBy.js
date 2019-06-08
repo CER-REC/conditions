@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-const instrumentFields = gql`
+const instrumentFields = `
   id
   name
   prefix
