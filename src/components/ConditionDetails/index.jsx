@@ -92,6 +92,8 @@ class ConditionDetails extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    const shouldRenderData = this.props.data.length > 0;
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;
 
@@ -100,7 +102,10 @@ class ConditionDetails extends React.Component {
         <div className={classNames('main', { expanded: this.props.expanded, expandable: this.props.isExpandable })}>
           {this.renderHeader()}
           <div className="listPane">{this.renderList()}</div>
-          <div className="contentPane">{this.renderContent(instrument, index)}</div>
+          {shouldRenderData
+            ? <div className="contentPane">{this.renderContent(instrument, index)}</div>
+            : null
+          }
         </div>
         <div className={classNames('popout', { expanded: (this.props.isExpandable && this.props.expanded) })}>
           {this.renderDetails(instrument, index)}

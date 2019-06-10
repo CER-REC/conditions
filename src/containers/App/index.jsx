@@ -327,39 +327,37 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
           />
           <section className="conditions">
-            {selected.project !== null
-              ? (
-                <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
-                  {({ data, loading, error }) => {
-                    if (!data.getProjectById || !data) { return null; }
-                    if (loading) { return <div>Loading</div>; }
-                    if (error) { return <div>Loading</div>; }
-                    const { shortName, instruments } = data.getProjectById;
-                    // TODO: Change string 'en' to the redux store locale
-                    const formattedInstrument = formatConditionDetails(
-                      instruments, selected.feature,
-                    );
-                    return (
-                      <ConditionDetails
-                        selectedItem={this.props.selected.condition}
-                        selectedProject={shortName.en}
-                        updateSelectedItem={this.props.setSelectedCondition}
-                        openIntermediatePopup={this.props.openIntermediatePopup}
-                        openProjectDetails={this.props.openProjectDetails}
-                        toggleExpanded={noop}
-                        searchKeywords={{
-                          include: this.props.included,
-                          exclude: this.props.excluded,
-                        }}
-                        data={formattedInstrument}
-                        browseBy={this.props.browseBy}
-                        {...conditionDetailsViewProps}
-                      />
-                    );
-                  }}
-                </Query>
-              )
-              : null}
+            <Query query={getProjectDetails} variables={{ projectId: selected.project }} skip={selected.project}>
+              {(conditionDetailsQProps) => {
+                const {
+                  data: condDetQData,
+                  loading: condDetQLoading,
+                  error: condDetQError,
+                } = conditionDetailsQProps;
+                const loadedCondDetails = !condDetQLoading && !condDetQError && condDetQData.getProjectById;
+                const { shortName, instruments } = loadedCondDetails;
+                const formattedInstrument = instruments
+                  ? formatConditionDetails(instruments, selected.feature)
+                  : [];
+                return (
+                  <ConditionDetails
+                    selectedItem={{ instrumentIndex: 0, itemIndex: -1 }}//this.props.selected.condition |}
+                    selectedProject={(shortName && shortName.en) || ''}
+                    updateSelectedItem={this.props.setSelectedCondition}
+                    openIntermediatePopup={this.props.openIntermediatePopup}
+                    openProjectDetails={this.props.openProjectDetails}
+                    // toggleExpanded={noop}
+                    searchKeywords={{
+                      include: this.props.included,
+                      exclude: this.props.excluded,
+                    }}
+                    data={formattedInstrument}
+                    browseBy={this.props.browseBy}
+                    {...conditionDetailsViewProps}
+                  />
+                );
+              }}
+            </Query>
           </section>
           <Query query={getDateDataUpdated}>
             {(dateQProps) => {
@@ -370,7 +368,7 @@ class App extends React.PureComponent {
               return (
                 <div className="DateUpdated">
                   <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
-                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth() + 1} -`} ${dateOfUpdate.getDate()}`}</h1>
+                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth()} -`} ${dateOfUpdate.getDate()}`}</h1>
                 </div>
               );
             }}
