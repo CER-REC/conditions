@@ -92,7 +92,6 @@ class ConditionDetails extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const shouldRenderData = this.props.data.length > 0;
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;

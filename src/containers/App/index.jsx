@@ -327,26 +327,35 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
           />
           <section className="conditions">
-            <Query query={getProjectDetails} variables={{ projectId: selected.project }} skip={selected.project}>
+            <Query
+              query={getProjectDetails}
+              variables={{ projectId: selected.project }}
+              skip={!selected.project}
+            >
               {(conditionDetailsQProps) => {
                 const {
                   data: condDetQData,
                   loading: condDetQLoading,
                   error: condDetQError,
                 } = conditionDetailsQProps;
-                const loadedCondDetails = !condDetQLoading && !condDetQError && condDetQData.getProjectById;
-                const { shortName, instruments } = loadedCondDetails;
+                const loadedCondDetails = !condDetQLoading && !condDetQError && condDetQData
+                  && condDetQData.getProjectById;
+                const shortName = loadedCondDetails && loadedCondDetails.shortName;
+                const instruments = loadedCondDetails && loadedCondDetails.instruments;
                 const formattedInstrument = instruments
                   ? formatConditionDetails(instruments, selected.feature)
                   : [];
+                const selectedItem = formattedInstrument.length > 0
+                  ? this.props.selected.condition
+                  : { instrumentIndex: 0, itemIndex: -1 };
+
                 return (
                   <ConditionDetails
-                    selectedItem={{ instrumentIndex: 0, itemIndex: -1 }}//this.props.selected.condition |}
+                    selectedItem={selectedItem}
                     selectedProject={(shortName && shortName.en) || ''}
                     updateSelectedItem={this.props.setSelectedCondition}
                     openIntermediatePopup={this.props.openIntermediatePopup}
                     openProjectDetails={this.props.openProjectDetails}
-                    // toggleExpanded={noop}
                     searchKeywords={{
                       include: this.props.included,
                       exclude: this.props.excluded,
