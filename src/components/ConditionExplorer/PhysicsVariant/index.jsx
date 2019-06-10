@@ -69,6 +69,10 @@ export default class PhysicsVariant extends React.PureComponent {
       constraint: { render: { visible: false }, stiffness: 1 },
       collisionFilter: { mask: guideOutlineCategory },
     });
+
+    Matter.Events.on(mouseConstraint, 'startdrag', this.onGuideDragStart);
+    Matter.Events.on(mouseConstraint, 'enddrag', this.onGuideDragEnd);
+
     Matter.World.add(this.engine.world, mouseConstraint);
 
     Matter.Engine.run(this.engine);
@@ -154,6 +158,14 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.Body.setStatic(this.guide.outline.body, false);
   };
 
+  onGuideDragStart = () => {
+    this.guideHasMoved = true;
+  };
+
+  onGuideDragEnd = () => {
+    this.guideHasMoved = false;
+  };
+
   closeGuide = () => {
     if (!this.guide.isExpanded || !this.guideClickDetection) { return; }
     this.guideClickDetection = undefined;
@@ -201,13 +213,16 @@ export default class PhysicsVariant extends React.PureComponent {
   updateGuideMessage = (currTime) => {
     const currMsg = this.state.guideMessage;
     let newMsg;
-
-    if (this.props.selectedKeywordId > -1) {
+    if (this.guideHasMoved) {
+      newMsg = -1;
+      this.lastMessageTime = currTime;
+    } else if (this.props.selectedKeywordId > -1) {
       newMsg = 'click';
     } else if (!this.guide.outlineReady) {
       newMsg = 'intro';
     } else if (Number.isNaN(parseInt(currMsg, 10))) {
       newMsg = 0;
+      this.lastMessageTime = currTime;
     // Otherwise rotate through 0, 1, 2 on a timer
     } else if ((currTime - this.lastMessageTime) > messageTime) {
       newMsg = (currMsg + 1) % 3;
@@ -318,6 +333,7 @@ export default class PhysicsVariant extends React.PureComponent {
           d={this.guide.renderedPathPoints}
           onMouseDown={this.onGuideMouseDown}
           onTouchStart={this.onGuideMouseDown}
+          onDrag={this.onGuideMouseDrag}
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
