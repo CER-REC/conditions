@@ -3,7 +3,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { useSpring, animated, interpolate } from 'react-spring';
-import { useGesture } from 'react-with-gesture';
+import { useGesture } from 'react-use-gesture';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 const PullToSpin = (props) => {
@@ -19,23 +19,57 @@ const PullToSpin = (props) => {
     set(state => !state);
     props.onClickSpin();
   };
-  const [bind, { delta, down }] = useGesture({
-    onUp: () => { onSpinClick(); },
+  // const { transform } = useSpring({
+  //   transform: triggered ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
+  //   config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+  //   onRest: () => { set(false); if (triggered) props.onClickSpin(); },
+  // });
+  let clickAnimation = false;
+  let showAnimation;
+  
+  const bind = useGesture({
+    onDrag: ({ down, delta }) => {
+      // console.dir(down);
+      // console.dir(delta);
+      // Now that we have delta and down we need to perform a check to see if its a click or a drag
+      // On drag end get the position - if its less than some threshold value then consider it a click otherwise its a drag
+      // until that point we have the regular drag animation
+      // here is where you set the drag animation
+      // Pass it too a function that renders the drag animation
+      // const { x, transform } = useSpring({
+      //   transform: clickAnimation ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
+      //   x: down ? delta[0] : 0,
+      //   config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+      // });
+      // const dragAnim = interpolate([x], (x1) => { const position = getPosition(x1); return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`); });
+      // clickAnimation = false;
+      // showAnimation = dragAnim;
+      // props.onClickSpin();
+    },
+    onDragEnd: ({ delta }) => {
+      if (delta[0] < 1 && delta[1] < 1) {
+        // This means we are in the click state
+        clickAnimation = true;
+        console.dir('CLICK');
+      } else {
+        // We are in the drag state we shouldn't have to do anything here
+        console.dir(delta[0]);
+        console.dir('DRAGGED');
 
+        props.onClickSpin();
+      }
+    },
   });
+  const down = false;
+  const delta = 0;
 
-  const { x } = useSpring({
+  const { x , transform } = useSpring({
+    transform: clickAnimation ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
     x: down ? delta[0] : 0,
     config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
   });
-
-  const { transform } = useSpring({
-    transform: triggered ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
-    config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
-    onRest: () => { set(false); if (triggered) props.onClickSpin(); },
-  });
-
   const dragAnim = interpolate([x], (x1) => { const position = getPosition(x1); return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`); });
+ 
   return (
     <g className="PullToSpin">
       <g className="PullSpinArrow">
