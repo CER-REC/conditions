@@ -173,10 +173,12 @@ export default class PhysicsVariant extends React.PureComponent {
     if (distance.x > 5 || distance.y > 5) { return; }
 
     e.stopPropagation();
-    if (this.props.selectedKeywordId) {
+    if (this.props.selectedKeywordId && !this.guide.isExpanded) {
       this.updateGuidePosition();
       this.props.beginTutorial();
-    } else if (!this.guide.isExpanded) {
+    } else if (this.guide.isExpanded) {
+      this.closeGuide();
+    } else {
       this.guide.open(this.getCenterCoordinates())
         .then(() => { this.props.setGuideExpanded(true); })
         .finally(() => { this.updateGuidePosition(); });
@@ -186,9 +188,14 @@ export default class PhysicsVariant extends React.PureComponent {
           body.addCollisionMask(guideCategory);
         }
       });
-    } else {
+    }
+  };
+
+  onKeywordClick = (e) => {
+    if (this.guide.isExpanded) {
       this.closeGuide();
     }
+    this.props.onKeywordClick(e);
   };
 
   render() {
@@ -217,7 +224,7 @@ export default class PhysicsVariant extends React.PureComponent {
             )}
             data-id={instance.body.id}
             data-keyword={instance.keyword.value}
-            onClick={this.props.onKeywordClick}
+            onClick={this.onKeywordClick}
           >
             <g
               transform={`
