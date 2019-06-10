@@ -8,7 +8,7 @@
     "cz": "git-cz",
     "lint": "eslint -f gitlab --ext .js,.jsx .",
     "test": "cross-env NODE_ENV=test jest",
-    "test:showcoverage": "opn coverage/lcov-report/index.html",
+    "test:showcoverage": "open-cli coverage/lcov-report/index.html",
     "start": "npm run storybook",
     "dev-start": "cross-env NODE_ENV=development webpack && babel-node servers/DevelopmentServer/DevelopmentServer.js",
     "storybook": "start-storybook -s ./src/images -p 6006",
@@ -121,7 +121,7 @@
     "mini-css-extract-plugin": "0.7.0",
     "node-sass": "4.12.0",
     "node-sass-utils": "1.1.2",
-    "opn-cli": "4.1.0",
+    "open-cli": "^5.0.0",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.6.0",
     "raw-loader": "1.0.0",
@@ -136,10 +136,10 @@
     "topojson-server": "3.0.0",
     "topojson-simplify": "3.0.2",
     "url-loader": "1.1.2",
-    "webpack-dev-middleware": "3.7.0",
-    "webpack-hot-middleware": "2.25.0",
     "webpack": "4.32.2",
-    "webpack-cli": "3.3.2"
+    "webpack-cli": "3.3.2",
+    "webpack-dev-middleware": "3.7.0",
+    "webpack-hot-middleware": "2.25.0"
   },
   "config": {
     "commitizen": {
