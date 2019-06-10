@@ -221,10 +221,12 @@ export default class PhysicsVariant extends React.PureComponent {
     } else if (!this.guide.outlineReady) {
       newMsg = 'intro';
     } else if (Number.isNaN(parseInt(currMsg, 10))) {
+      console.log("isnan")
       newMsg = 0;
       this.lastMessageTime = currTime;
     // Otherwise rotate through 0, 1, 2 on a timer
     } else if ((currTime - this.lastMessageTime) > messageTime) {
+      console.log("timer went")
       newMsg = (currMsg + 1) % 3;
       this.lastMessageTime = currTime;
     }
