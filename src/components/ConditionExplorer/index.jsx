@@ -34,7 +34,7 @@ export default class ConditionExplorer extends React.Component {
   };
 
   static defaultProps = {
-    selectedKeywordId: null,
+    selectedKeywordId: -1,
     physics: true,
     physicsPaused: false,
   };

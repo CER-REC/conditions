@@ -100,6 +100,12 @@ $keywordColors: (
       font-size: 16px;
       font-family: $fira-sans-condensed;
       fill: $LightGray;
+
+      transition: opacity 1s;
+
+      &.hidden {
+        opacity: 0;
+      }
     }
   }
 }

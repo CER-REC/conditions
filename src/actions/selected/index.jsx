@@ -56,7 +56,7 @@ const initialState = {
   project: null,
   condition: { instrumentIndex: 0, itemIndex: 0 },
   indicator: '',
-  keywordId: null,
+  keywordId: -1,
 };
 
 export const reducer = (state = initialState, action) => {

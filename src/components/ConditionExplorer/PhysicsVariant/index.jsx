@@ -16,6 +16,16 @@ import {
 import Keyword from './Keyword';
 import Guide from './Guide';
 
+const messageIds = [
+  'intro',
+  '0',
+  '1',
+  '2',
+  'click',
+];
+
+const messageTime = 5000;
+
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
     keywords: keywordList.isRequired,
@@ -39,7 +49,11 @@ export default class PhysicsVariant extends React.PureComponent {
     this.lastTime = 0;
     this.selected = 0;
     this.lastDeltaTime = 0;
-    this.state = { renderToggle: false };
+    this.lastMessageTime = 0;
+    this.state = {
+      renderToggle: false,
+      guideMessage: 'intro',
+    };
   }
 
   componentDidMount() {
@@ -119,6 +133,8 @@ export default class PhysicsVariant extends React.PureComponent {
       );
 
       this.setState(state => ({ renderToggle: !state.renderToggle }));
+
+      this.updateGuideMessage(currTime);
     }
 
     this.lastDeltaTime = deltaTime;
@@ -164,7 +180,7 @@ export default class PhysicsVariant extends React.PureComponent {
     if (distance.x > 5 || distance.y > 5) { return; }
 
     e.stopPropagation();
-    if (this.props.selectedKeywordId) {
+    if (this.props.selectedKeywordId > -1) {
       this.updateGuidePosition();
       this.props.beginTutorial();
     } else if (!this.guide.isExpanded) {
@@ -181,6 +197,58 @@ export default class PhysicsVariant extends React.PureComponent {
       this.closeGuide();
     }
   };
+
+  updateGuideMessage = (currTime) => {
+    const currMsg = this.state.guideMessage;
+    let newMsg;
+
+    if (this.props.selectedKeywordId > -1) {
+      newMsg = 'click';
+    } else if (!this.guide.outlineReady) {
+      newMsg = 'intro';
+    } else if (Number.isNaN(parseInt(currMsg, 10))) {
+      newMsg = 0;
+    // Otherwise rotate through 0, 1, 2 on a timer
+    } else if ((currTime - this.lastMessageTime) > messageTime) {
+      newMsg = (currMsg + 1) % 3;
+      this.lastMessageTime = currTime;
+    }
+
+    if (newMsg !== undefined && newMsg !== currMsg) {
+      this.setState({ guideMessage: newMsg });
+    }
+  };
+
+  renderMessages = () => (
+    <g
+      className="guideText"
+      transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
+    >
+      {messageIds.map(id => (
+        <FormattedMessage id={`components.conditionExplorer.guide.messages.${id}`}>
+          {(text) => {
+            const lines = text.split('\n');
+
+            return (
+              <text
+                textAnchor="middle"
+                x="0"
+                y={`-${(lines.length) / 2}em`}
+                // Double equals because we need to compare '1' with 1. toString()
+                // isn't doing it for me.
+                // eslint-disable-next-line eqeqeq
+                className={(id == this.state.guideMessage) ? '' : 'hidden'}
+              >
+                {text.split('\n').map(line => (
+                  <tspan x="0" dy="1em" key={line}>{line}</tspan>
+                ))}
+              </text>
+            );
+          }}
+        </FormattedMessage>
+      ))}
+    </g>
+  );
 
   render() {
     if (!this.guide) { return <g ref={this.groupRef} />; }
@@ -253,28 +321,7 @@ export default class PhysicsVariant extends React.PureComponent {
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
-        <FormattedMessage id="components.conditionExplorer.guide.messages.intro">
-          {(text) => {
-            const lines = text.split('\n');
-
-            return (
-              <g
-                className="guideText"
-                transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
-              >
-                <text
-                  textAnchor="middle"
-                  x="0"
-                  y={`-${(lines.length) / 2}em`}
-                >
-                  {text.split('\n').map(line => (
-                    <tspan x="0" dy="1em" key={line}>{line}</tspan>
-                  ))}
-                </text>
-              </g>
-            );
-          }}
-        </FormattedMessage>
+        {this.renderMessages()}
       </g>
     );
   }

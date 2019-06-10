@@ -135,9 +135,9 @@
       "guide": {
         "messages": {
           "intro": "These lines\nare conditions",
-          "1": "Reveal condition\nkeywords by dragging",
-          "2": "Click to learn\nwhat a\ncondition is",
-          "3": "Select a\nkeyword and\nclick to\ncontinue",
+          "0": "Reveal condition\nkeywords by\ndragging",
+          "1": "Click to learn\nwhat a\ncondition is",
+          "2": "Select a\nkeyword and\nclick to\ncontinue",
           "click": "Click to\ncontinue"
         },
         "overview": {
