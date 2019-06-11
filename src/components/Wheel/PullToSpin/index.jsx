@@ -7,7 +7,9 @@ import { useGesture } from 'react-use-gesture';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 const PullToSpin = (props) => {
-  const [triggered, set] = useState(false);
+  const [{ animation, triggered }, setState] = useState({ animation: false, triggered: false });
+  console.dir("Original State: "  + animation + ", "+triggered);
+
   const { intl } = props;
 
   const getPosition = (x) => {
@@ -16,7 +18,8 @@ const PullToSpin = (props) => {
     return { x, y: -x, rot: (x / 56) * 15 };
   };
   const onSpinClick = () => {
-    set(state => !state);
+    setState({ animation, triggered: !triggered });
+
     props.onClickSpin();
   };
   // const { transform } = useSpring({
@@ -24,52 +27,48 @@ const PullToSpin = (props) => {
   //   config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
   //   onRest: () => { set(false); if (triggered) props.onClickSpin(); },
   // });
-  let clickAnimation = false;
-  let showAnimation;
-  
+
+  const [{ x, transform }, set] = useSpring(() => ({
+    transform: 'translate(56, -56) rotate(15)', //: 'translate(0, 0) rotate(0)',
+    x: 0,
+    config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+  }));
+  const dragAnim = interpolate([x], (x1) => { const position = getPosition(x1); return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`); });
+
   const bind = useGesture({
     onDrag: ({ down, delta }) => {
-      // console.dir(down);
-      // console.dir(delta);
-      // Now that we have delta and down we need to perform a check to see if its a click or a drag
-      // On drag end get the position - if its less than some threshold value then consider it a click otherwise its a drag
-      // until that point we have the regular drag animation
-      // here is where you set the drag animation
-      // Pass it too a function that renders the drag animation
-      // const { x, transform } = useSpring({
-      //   transform: clickAnimation ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
-      //   x: down ? delta[0] : 0,
-      //   config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
-      // });
-      // const dragAnim = interpolate([x], (x1) => { const position = getPosition(x1); return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`); });
-      // clickAnimation = false;
-      // showAnimation = dragAnim;
-      // props.onClickSpin();
+      // Set the animation state to be false to have us on the drag animation
+      setState({ animation: false, triggered });
+
+      set({
+        x: down ? delta[0] : 0,
+        config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+        onRest: () => { console.dir('on rest cleared..................'); },
+      });
     },
     onDragEnd: ({ delta }) => {
       if (delta[0] < 1 && delta[1] < 1) {
         // This means we are in the click state
-        clickAnimation = true;
+        // Set the animation to be true
+        setState({ animation: true, triggered: true }); // the triggered is just true for now
         console.dir('CLICK');
+        //onSpinClick();
+     
+        set({
+          transform: 'translate(56, -56) rotate(15)', //: 'translate(0, 0) rotate(0)',
+          config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+          onRest: () => { if (triggered) onSpinClick(); console.dir('On Rest Ran'); },
+        });
       } else {
         // We are in the drag state we shouldn't have to do anything here
         console.dir(delta[0]);
         console.dir('DRAGGED');
-
         props.onClickSpin();
       }
     },
   });
-  const down = false;
-  const delta = 0;
 
-  const { x , transform } = useSpring({
-    transform: clickAnimation ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
-    x: down ? delta[0] : 0,
-    config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
-  });
-  const dragAnim = interpolate([x], (x1) => { const position = getPosition(x1); return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`); });
- 
+
   return (
     <g className="PullToSpin">
       <g className="PullSpinArrow">
@@ -82,8 +81,8 @@ const PullToSpin = (props) => {
           <tspan dx="-20" dy="10">{intl.formatMessage({ id: 'components.companyWheel.pullToSpin.toSpin' })}</tspan>
         </text>
       </g>
-      <g role="button" className="PullSlider" {...handleInteraction(onSpinClick)}>
-        <animated.g {...bind()} transform={dragAnim} className="PullAnimatedGroup">
+      <g role="button" className="PullSlider" {...handleInteraction(props.onClickSpin())}>
+        <animated.g {...bind()} transform={animation ? transform : dragAnim} className="PullAnimatedGroup">
           <defs>
             <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" x="2" width="2.2" height="5" patternTransform="rotate(90)">
               <rect width="13.52px" height="33.12px" x="328.33" y="-2.22" transform="translate(159.71, 300.23) rotate(-60.92)" />
