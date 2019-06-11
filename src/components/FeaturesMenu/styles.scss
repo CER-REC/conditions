@@ -1,6 +1,7 @@
 @import "../../styles/borders.scss";
 @import "../../styles/colors.scss";
 @import "../../styles/svgs.scss";
+@import "../../styles/fontVariables.scss";
 
 $select-side-padding: 0.4em;
 
@@ -27,6 +28,7 @@ $select-side-padding: 0.4em;
         color: $Black51;
         background-color: $LightGray;
         border: $list-selected;
+        font-family: $fira-sans-condensed-bold;
       }
     }
   }

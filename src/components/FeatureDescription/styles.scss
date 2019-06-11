@@ -1,10 +1,19 @@
+@import "../../styles/fontVariables";
+
 .feature-description {
   height: 100%;
   width: 100%;
   text-align: left;
   overflow: auto;
+
   h1 {
     color: #333333;
+    font-family: $fira-sans-condensed-bold;
+    font-size: 15px;
   }
 
+  p {
+    margin-top: 1em;
+    font-family: $fira-sans-condensed-light;
+  }
 }

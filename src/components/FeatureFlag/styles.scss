@@ -1,3 +1,5 @@
+@import "../../styles/grid";
+
 .FeatureFlag {
   position: relative;
 
@@ -30,5 +32,13 @@
     }
   }
 
+  @include breakpoint("large") {
+    height: 12px;
 
+    .Bar {
+      height: 12px;
+      &.withTip::before { border-width: 5px; }
+      &.withTip::after { border-width: 6px; }
+    }
+  }
 }

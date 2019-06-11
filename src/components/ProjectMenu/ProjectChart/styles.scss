@@ -1,4 +1,5 @@
-@import '../../../styles/colors.scss';
+@import '../../../styles/colors';
+@import '../../../styles/grid';
 
 $pipe-color: $LightGray;
 $condition-circle-bg: $Gray160;
@@ -15,6 +16,7 @@ $project-chart-line: $Gray160;
   .ProjectName {
     position: absolute;
     top: 220px;
+    @include breakpoint("large") { top: 260px; }
     right: 90%;
 
     transform: rotate(200deg);
@@ -55,18 +57,19 @@ $project-chart-line: $Gray160;
     display: inline-block;
     width: 100%;
     height: 200px;
+    @include breakpoint("large") { height: 240px; }
 
     padding-top: 10px;
 
     .FlagPole {
       position: absolute;
-      top: -6px;
+      top: 0px;
       left: 50%;
 
       transform: translateX(-50%);
 
-      width: 2px;
-      height: 100%;
+      width: 1px;
+      height: calc(100% - 6px);
 
       background-color: $Gray160;
     }
@@ -100,6 +103,7 @@ $project-chart-line: $Gray160;
       top: 0;
       width: 24px;
       background-color: $pipe-color;
+      height: 100%;
     }
 
     .SelectedPipe {
@@ -108,6 +112,7 @@ $project-chart-line: $Gray160;
       z-index: 1;
       width: 24px;
       height: calc(100% - 212px);
+      @include breakpoint("large") { height: calc(100% - 252px); }
       background: $pipe-color;
       left: 50%;
       transform: translateX(-50%) skewX(-20deg);
