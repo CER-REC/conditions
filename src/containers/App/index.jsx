@@ -200,7 +200,11 @@ class App extends React.PureComponent {
     this.scrollSelectorIntoView('.Footer', 1000);
   }
 
-  jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
+  jumpToView1 = () => {
+    this.props.setTransitionState(transitionStates.view1Reset);
+    this.props.setBrowseBy('company');
+    this.props.setSelectedKeywordId(-1);
+  }
 
   jumpToView2 = (type) => {
     this.props.setTransitionState(transitionStates.view2);
