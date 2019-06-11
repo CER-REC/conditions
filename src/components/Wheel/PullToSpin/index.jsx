@@ -8,7 +8,7 @@ import handleInteraction from '../../../utilities/handleInteraction';
 
 const PullToSpin = (props) => {
   const [{ animation, triggered }, setState] = useState({ animation: false, triggered: false });
-  console.dir("Original State: "  + animation + ", "+triggered);
+  console.dir('Original State: ' + animation + ', ' + triggered);
 
   const { intl } = props;
 
@@ -29,7 +29,7 @@ const PullToSpin = (props) => {
   // });
 
   const [{ x, transform }, set] = useSpring(() => ({
-    transform: 'translate(56, -56) rotate(15)', //: 'translate(0, 0) rotate(0)',
+    transform: 'translate(56, -56) rotate(15)', // : 'translate(0, 0) rotate(0)',
     x: 0,
     config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
   }));
@@ -52,12 +52,10 @@ const PullToSpin = (props) => {
         // Set the animation to be true
         setState({ animation: true, triggered: true }); // the triggered is just true for now
         console.dir('CLICK');
-        //onSpinClick();
-     
         set({
-          transform: 'translate(56, -56) rotate(15)', //: 'translate(0, 0) rotate(0)',
+          transform: 'translate(56, -56) rotate(15)', // : 'translate(0, 0) rotate(0)',
           config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
-          onRest: () => { if (triggered) onSpinClick(); console.dir('On Rest Ran'); },
+          onRest: () => { setState({ animation: true, triggered: false }); set({ transform: 'translate(0, 0) rotate(0)' }); },
         });
       } else {
         // We are in the drag state we shouldn't have to do anything here
@@ -67,7 +65,6 @@ const PullToSpin = (props) => {
       }
     },
   });
-
 
   return (
     <g className="PullToSpin">
