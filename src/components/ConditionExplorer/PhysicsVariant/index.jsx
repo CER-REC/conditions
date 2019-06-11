@@ -181,6 +181,8 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   onGuideMouseUp = (e) => {
+    if (!this.guide.outlineReady) { return; }
+
     // If the click detection failed, don't do anything
     Matter.Body.setStatic(this.guide.outline.body, true);
     if (!this.guideClickDetection) { return; }
