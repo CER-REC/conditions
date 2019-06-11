@@ -39,6 +39,9 @@ $states: (
     ".ViewTwo .legend": (opacity: 0),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: none),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: none),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List-Item-Content": (pointer-events: none),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List": (pointer-events: none),
+
     ".conditions": (pointer-events: none),
     ".ConditionDetails .listPane": (opacity: 0),
     ".ConditionDetails .ProjectHeader": (opacity: 0),
@@ -195,6 +198,8 @@ $states: (
     ),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: all),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: all),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List-Item-Content": (pointer-events: auto),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List": (pointer-events: auto),
     ".ViewThree": (
       transition: "opacity #{$fastestStart}, visibility 0s 1s",
     ),
@@ -220,6 +225,8 @@ $states: (
     ),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: none),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: none),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List-Item-Content": (pointer-events: none),
+    ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List": (pointer-events: none),
     ".ViewThree": (
       pointer-events: auto,
       visibility: visible,
