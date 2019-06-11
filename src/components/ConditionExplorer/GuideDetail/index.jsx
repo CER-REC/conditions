@@ -62,8 +62,11 @@ const GuideDetail = (props) => {
     </CircleContainer>
   ));
 
+  const doubleRadius = radius * 2;
+  const textRadius = radius - 4;
+
   return (
-    <section className="GuideDetail" style={{ width: radius * 2, height: radius * 2 }}>
+    <section className="GuideDetail" style={{ width: doubleRadius, height: doubleRadius }}>
       <div className="step-text">{steps[selected]}</div>
       <div className="step-controls">
         <List
@@ -75,6 +78,35 @@ const GuideDetail = (props) => {
           items={circles}
         />
       </div>
+      <FormattedMessage id="components.conditionExplorer.guide.clickOutside">
+        {text => (
+          <svg
+            className="curvedText"
+            width={doubleRadius}
+            height={doubleRadius}
+            viewBox={`-${radius} -${radius} ${doubleRadius} ${doubleRadius}`}
+          >
+            <defs>
+              <path
+                id="guideDetailText"
+                d={`
+                  M 0,${textRadius}
+                  A ${textRadius} ${textRadius} 0 0 0 ${textRadius},0
+                  Z
+                `}
+              />
+            </defs>
+            <text>
+              <textPath
+                href="#guideDetailText"
+                startOffset="3%"
+              >
+                {text}
+              </textPath>
+            </text>
+          </svg>
+        )}
+      </FormattedMessage>
     </section>
   );
 };

@@ -74,4 +74,18 @@
       transform: scale(0.7);
     }
   }
+
+  .curvedText {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    textPath {
+      font-family: $fira-sans-condensed-light;
+      font-size: 11px;
+      fill: $LightGray;
+    }
+  }
 }
