@@ -17,16 +17,34 @@
   line-height: 24px;
   vertical-align: middle;
 
+  white-space: nowrap;
+  overflow: hidden;
+
   .asterisk {
+    display: inline-block;
+    width: fit-content;
     color: $LinksTextButtons;
     font-family: 'FiraSansCondensedBold';
   }
 
   .openProject {
     height: 90%;
-  }
-  .openProject::before {
-    content: '\00a0';
+    max-width: 67%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    &:first-child {
+
+      width: fit-content;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &:before{
+      content: '\00a0';
+      display: inline-block;
+    }
   }
 
   .toggleExpand {

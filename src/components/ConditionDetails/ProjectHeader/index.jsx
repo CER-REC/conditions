@@ -41,8 +41,9 @@ class ProjectHeader extends React.PureComponent {
               className="openProject"
               {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
             >
-              <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
+              <h2>{this.props.selectedProject}</h2>
             </button>
+            <h2><span className="asterisk">*</span></h2>
           </React.Fragment>
         )
         : <FormattedMessage id="components.conditionDetails.selectedCondition" tagName="h1" />

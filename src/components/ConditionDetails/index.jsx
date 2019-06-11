@@ -107,7 +107,7 @@ class ConditionDetails extends React.Component {
           }
         </div>
         <div className={classNames('popout', { expanded: (this.props.isExpandable && this.props.expanded) })}>
-          {this.renderDetails(instrument, index)}
+          {shouldRenderData ? this.renderDetails(instrument, index) : null}
         </div>
       </section>
     );
