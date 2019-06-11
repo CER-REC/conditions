@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import ProjectDot from '../../ProjectDot';
 
 const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotation }) => {
+  if (!flagLayout) { return null; }
+
   const baseY = y + svgHeight - (flagLayout[0].length * dotSpacing);
 
   const columnOffset = {
