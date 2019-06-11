@@ -8,6 +8,8 @@ import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 import RouteComputations from '../../RouteComputations';
 
+const noop = () => {};
+
 class ShareIcon extends React.PureComponent {
   getBitlyURL = () => {
     const bitlyEndpoint = RouteComputations.bitlyEndpoint();
@@ -44,9 +46,7 @@ class ShareIcon extends React.PureComponent {
         const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${bitlyUrl}`;
         window.open(facebookUrl, 'targetWindow', 'width=650,height=650');
       }).catch(
-        () => {
-          // do nothing
-        },
+        noop,
       );
     }
     if (this.props.target === 'linkedin') {
@@ -54,9 +54,7 @@ class ShareIcon extends React.PureComponent {
         const locationUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${bitlyUrl}&summary=${bitlyUrl}`;
         window.open(locationUrl, 'targetWindow', 'width=650,height=650');
       }).catch(
-        () => {
-          // do nothing
-        },
+        noop,
       );
     }
     if (this.props.target === 'twitter') {
@@ -64,9 +62,7 @@ class ShareIcon extends React.PureComponent {
         const locationUrl = `https://twitter.com/intent/tweet?url=${bitlyUrl}`;
         window.open(locationUrl, 'targetWindow', 'width=650,height=650');
       }).catch(
-        () => {
-          // do nothing
-        },
+        noop,
       );
     }
   }

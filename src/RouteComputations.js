@@ -6,15 +6,7 @@ const RouteComputations = {
     return `${appHost}/${Tr.getIn(['applicationPath', language])}/${encodeURIComponent(document.location.search)}`;
   },
   bitlyEndpoint() {
-    switch (process.env.NODE_ENV) {
-      case 'development': {
-        const root = 'http://localhost';
-        return `${root}/bitlyService/api/bitlyShortlink`;
-      }
-      case 'production':
-      default:
-        return `${document.location.origin}/bitlyService/api/bitlyShortlink`;
-    }
+    return `${document.location.origin}/bitlyService/api/bitlyShortlink`;
   },
   applicationPath(language) {
     return Tr.getIn(['applicationPath', language]);
