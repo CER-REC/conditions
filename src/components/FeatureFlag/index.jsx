@@ -12,7 +12,10 @@ const FeatureFlag = (props) => {
 
   const title = props.chartType === 'legend'
     ? intl.formatMessage({ id: `common.legend.${props.name}` })
-    : `${intl.formatMessage({ id: `common.features.${props.chartType}` })} - ${intl.formatMessage({ id: `common.${props.chartType}.${props.name}` })} - ${props.count}`;
+    : `${intl.formatMessage({ id: `common.features.${props.chartType}` })} - ${props.chartType}.${props.name} - ${props.count}`;
+    // TODO: Fix this so it checks for instrument prefixes instead of using their numbers
+    // : `${intl.formatMessage({ id: `common.features.${props.chartType}` })} \
+    // - ${intl.formatMessage({ id: `common.${props.chartType}.${props.name}` })} - ${props.count}`;
 
   const color = props.chartType === 'legend'
     ? 'transparent'

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChartIndicator from '../../ChartIndicator';
-import { allConditionsPerYear } from '../../../proptypes';
+import { allConditionsPerYearType } from '../../../proptypes';
 
 import './styles.scss';
 
@@ -93,17 +93,20 @@ class StackGroup extends React.PureComponent {
   }
 
   onFocus = () => {
+    if (this.isDragging) { return; }
+
     this.props.onChange(this.props.stackProps.domain.x[0]);
   }
 
   render() {
     const { stackProps, controlYear } = this.props;
+    const stackSize = this.calculateStackSize();
 
     let control = null;
     if (controlYear) {
       const xPos = stackProps.scale.x(controlYear);
       // Count the number of conditions across all streams for the selected year
-      const conditionCount = this.props.projectData
+      const conditionCount = this.props.countsData
         .reduce((acc, next) => (acc + (next.years[controlYear] || 0)), 0);
 
       const yBottom = stackProps.height - stackProps.padding.bottom;
@@ -135,6 +138,7 @@ class StackGroup extends React.PureComponent {
           role="button"
           tabIndex="0"
         >
+          <rect x={stackSize.top} y={stackSize.left} width={stackSize.width} height={stackSize.height} fill="none" />
           {this.props.children}
         </g>
         {control}
@@ -146,7 +150,7 @@ class StackGroup extends React.PureComponent {
 StackGroup.propTypes = {
   children: PropTypes.node,
   controlYear: PropTypes.number,
-  projectData: allConditionsPerYear.isRequired,
+  countsData: allConditionsPerYearType.isRequired,
   onChange: PropTypes.func.isRequired,
   stackProps: PropTypes.shape({
     domain: PropTypes.shape({

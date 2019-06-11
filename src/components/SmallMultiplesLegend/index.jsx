@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
-import { allConditionsPerYear } from '../../proptypes';
+import { features } from '../../constants';
+import { allConditionsPerYearType } from '../../proptypes';
 import getFilteredProjectData from '../../utilities/getFilteredProjectData';
 
 class SmallMultiplesLegend extends React.PureComponent {
@@ -12,8 +13,8 @@ class SmallMultiplesLegend extends React.PureComponent {
     /** The selected feature in the feature menu */
     feature: PropTypes.string.isRequired,
     /** The data to render the stream graphs
-        The items rendered in the provided order */
-    data: allConditionsPerYear.isRequired,
+        Items are rendered in the provided order */
+    data: allConditionsPerYearType.isRequired,
     /** The name of the data element to set as selected */
     selected: PropTypes.string.isRequired,
     /** The name of the data element to highlight */
@@ -44,13 +45,18 @@ class SmallMultiplesLegend extends React.PureComponent {
     const hasHighlight = !!data.find(c => c.subFeature === highlightName);
 
     const maxCount = data.reduce((acc, { years }) => Math.max(acc, ...Object.values(years)), 0);
-    const legendDataItems = data.map(conditionsData => (
+
+    const legendDataItems = data.map((conditionsData, idx) => (
       <LegendItem
         key={conditionsData.subFeature}
-        title={conditionsData.subFeature}
         feature={this.props.feature}
+        subFeature={conditionsData.subFeature}
+        index={idx}
+        color={(this.props.feature === 'instrument')
+          ? features.instrument[idx]
+          : features[this.props.feature][conditionsData.subFeature]
+        }
         data={conditionsData}
-        color={conditionsData.color}
         max={maxCount}
         faded={hasHighlight && (conditionsData.subFeature !== this.props.highlightName)}
       />
@@ -61,7 +67,7 @@ class SmallMultiplesLegend extends React.PureComponent {
         all
         // "all" cannot be an name in data
         key="all"
-        title={feature}
+        subFeature={feature}
         feature={feature}
         color=""
         max={0}

@@ -1,14 +1,24 @@
 import React from 'react';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import App from '.';
+import App, { AppStore } from '.';
+import { setTransitionState } from '../../actions/transitionState';
 
 const noop = () => {};
+const props = {
+  openIntermediatePopup: noop,
+  openProjectDetails: noop,
+};
 
 storiesForView('Containers|App', module, ReadMe)
   .add('default', () => (
-    <App
-      openIntermediatePopup={noop}
-      openProjectDetails={noop}
-    />
-  ));
+    <App {...props} />
+  ))
+  .add('view 2', () => {
+    AppStore.dispatch(setTransitionState(7));
+    return <App {...props} />;
+  })
+  .add('view 3', () => {
+    AppStore.dispatch(setTransitionState(9));
+    return <App {...props} />;
+  });

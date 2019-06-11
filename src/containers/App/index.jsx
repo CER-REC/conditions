@@ -1,19 +1,27 @@
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { HttpLink } from 'apollo-link-http';
+
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, FormattedMessage } from 'react-intl';
+
 import { AppContainer, hot } from 'react-hot-loader';
+import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
+
+import { processConditionCounts } from './processQueryData';
 
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
+import conditionsPerYearQuery from '../../queries/conditionsPerYear';
+import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
+import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -24,6 +32,7 @@ import createStore from '../../Store';
 
 import {
   browseByType,
+  allConditionsPerYearType,
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
@@ -31,16 +40,14 @@ import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
 import graphQLEndPoint from '../../../globals';
-
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
+import formatConditionDetails from '../../utilities/formatConditionDetails';
 import './styles.scss';
 
 import {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
   conditionData,
 } from '../../mockData';
 
@@ -63,8 +70,6 @@ const transitionStates = {
 };
 
 const viewProps = {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
   conditionDetails: {
     searchKeywords: {
       include: ['hello'],
@@ -94,12 +99,20 @@ class App extends React.PureComponent {
   incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
     if (currentState === transitionStates.view1Reset) { currentState = 0; }
+
     const newState = Math.min(
       Math.max(transitionStates.view1, currentState + amt),
       transitionStates.view2,
     );
+
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
+
+      // Fix for users with viewports too short to see the entire vis. losing
+      // the Guide. (i.e. they have four toolbars or something)
+      if (newState < transitionStates.view2) {
+        this.scrollSelectorIntoView('.Guide', 1000);
+      }
     }
   };
 
@@ -151,15 +164,30 @@ class App extends React.PureComponent {
     setTimeout(this.playTimer, tutorialTiming);
   }
 
+  scrollSelectorIntoView = (selector, delay) => {
+    setTimeout(() => {
+      const app = document.documentElement;
+      const rect = app.querySelector(selector).getBoundingClientRect();
+
+      if (rect.bottom <= window.innerHeight && rect.top >= 0) { return; }
+
+      // Element.scrollIntoView doesn't work for the Guide; I think because it's inside
+      // a transform: translated container?
+      app.scrollTo({
+        top: (rect.top + app.scrollTop) - (window.innerHeight / 2),
+        left: 0,
+        behavior: 'smooth',
+      });
+    }, delay);
+  }
+
   jumpToAbout = () => {
     this.props.setTransitionState(transitionStates.view2);
     this.setMainInfoBarPane('about');
 
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
-    setTimeout(() => {
-      this.ref.current.querySelector('.Footer').scrollIntoView({ behavior: 'smooth' });
-    }, 1000);
+    this.scrollSelectorIntoView('.Footer', 1000);
   }
 
   jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
@@ -212,7 +240,10 @@ class App extends React.PureComponent {
   };
 
   render() {
-    const { transitionState, browseBy, setBrowseBy } = this.props;
+    const { transitionState, browseBy, setBrowseBy, selected } = this.props;
+
+    this.processedConditionCounts = this.processedConditionCounts
+      || processConditionCounts(this.props.allConditionsPerYear);
 
     let guideStep = transitionState;
     if (guideStep === transitionStates.view1Reset) {
@@ -225,17 +256,16 @@ class App extends React.PureComponent {
     if (transitionState < (transitionStates.view2 - 1)
     || transitionState === transitionStates.view1Reset) {
       labelId = 'skip';
-    } else if (transitionState > 9) {
+    } else if (transitionState === transitionStates.view3) {
       labelId = 'return';
     }
 
-    const conditionDetailsViewProps = (transitionState === 10)
+    const conditionDetailsViewProps = (transitionState === transitionStates.view3)
       ? {
         isExpandable: true,
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
-
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -283,25 +313,68 @@ class App extends React.PureComponent {
           </section>
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
-          <ViewTwo {...viewProps} jumpToView1={this.jumpToView1} jumpToView3={this.jumpToView3} />
-          <ViewThree {...viewProps} />
+          <ViewTwo
+            {...viewProps}
+            conditionsPerYear={this.processedConditionCounts.conditionCounts}
+            years={this.processedConditionCounts.years}
+            jumpToView1={this.jumpToView1}
+            jumpToView3={this.jumpToView3}
+          />
+          <ViewThree
+            {...viewProps}
+            conditionsPerYear={this.processedConditionCounts.conditionCounts}
+            prefixOrder={this.processedConditionCounts.prefixOrder}
+            years={this.processedConditionCounts.years}
+          />
           <section className="conditions">
-            <ConditionDetails
-              selectedItem={this.props.selected.condition}
-              selectedProject="Selected Project"
-              updateSelectedItem={this.props.setSelectedCondition}
-              openIntermediatePopup={this.props.openIntermediatePopup}
-              openProjectDetails={this.props.openProjectDetails}
-              toggleExpanded={noop}
-              searchKeywords={{
-                include: this.props.included,
-                exclude: this.props.excluded,
-              }}
-              data={conditionData}
-              browseBy={this.props.browseBy}
-              {...conditionDetailsViewProps}
-            />
+            {selected.project !== null
+              ? (
+                <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
+                  {({ data, loading, error }) => {
+                    if (!data.getProjectById || !data) { return null; }
+                    if (loading) { return <div>Loading</div>; }
+                    if (error) { return <div>Loading</div>; }
+                    const { shortName, instruments } = data.getProjectById;
+                    // TODO: Change string 'en' to the redux store locale
+                    const formattedInstrument = formatConditionDetails(
+                      instruments, selected.feature,
+                    );
+                    return (
+                      <ConditionDetails
+                        selectedItem={this.props.selected.condition}
+                        selectedProject={shortName.en}
+                        updateSelectedItem={this.props.setSelectedCondition}
+                        openIntermediatePopup={this.props.openIntermediatePopup}
+                        openProjectDetails={this.props.openProjectDetails}
+                        toggleExpanded={noop}
+                        searchKeywords={{
+                          include: this.props.included,
+                          exclude: this.props.excluded,
+                        }}
+                        data={formattedInstrument}
+                        browseBy={this.props.browseBy}
+                        {...conditionDetailsViewProps}
+                      />
+                    );
+                  }}
+                </Query>
+              )
+              : null}
           </section>
+          <Query query={getDateDataUpdated}>
+            {(dateQProps) => {
+              const { loading: dateLoading, error: errorDateQuery, data: dateData } = dateQProps;
+              if (dateLoading) return 'Loading Date';
+              if (errorDateQuery) return 'Error Occured';
+              const dateOfUpdate = new Date(dateData.allConfigurationData.lastUpdated);
+              return (
+                <div className="DateUpdated">
+                  <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
+                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth() + 1} -`} ${dateOfUpdate.getDate()}`}</h1>
+                </div>
+              );
+            }}
+          </Query>
         </div>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
@@ -325,13 +398,14 @@ App.propTypes = {
   expandDetailView: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
   selected: PropTypes.shape({
-    feature: PropTypes.string.isRequired,
-    subFeature: PropTypes.string,
+    project: PropTypes.number,
+    subFeature: PropTypes.string.isRequired,
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
+  allConditionsPerYear: allConditionsPerYearType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -340,6 +414,9 @@ App.propTypes = {
 };
 
 export const AppUnconnected = App;
+
+// Allows stories to override the initial state
+export const AppStore = store;
 
 const ConnectedApp = hot(module)(connect(
   ({
@@ -373,7 +450,27 @@ export default props => (
     <IntlProvider locale="en" messages={i18nMessages.en}>
       <ApolloProvider client={client}>
         <Provider store={store}>
-          <ConnectedApp {...props} />
+          <Query query={initialConfigurationDataQuery}>
+            {({ data: configData, loading: configLoading }) => (
+              <Query query={conditionsPerYearQuery}>
+                {({ data: conditionsData, loading: conditionsLoading }) => {
+                  // TODO: Error handling for these queries
+                  if (
+                    conditionsLoading || !conditionsData
+                    || configLoading || !configData
+                  ) return null;
+
+                  return (
+                    <ConnectedApp
+                      allConditionsPerYear={conditionsData.conditionsPerYear}
+                      configData={configData.allConfigurationData}
+                      {...props}
+                    />
+                  );
+                }}
+              </Query>
+            )}
+          </Query>
         </Provider>
       </ApolloProvider>
     </IntlProvider>

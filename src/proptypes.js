@@ -7,6 +7,7 @@ export const featureTypes = PropTypes.oneOf(Object.keys(features));
 export const conditionsPerYear = PropTypes.shape({
   feature: featureTypes.isRequired,
   subFeature: PropTypes.string.isRequired,
+  rank: PropTypes.number, // Used for instrument ordering
   years: PropTypes.objectOf(PropTypes.number).isRequired,
 });
 
@@ -35,7 +36,6 @@ export const project = PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.shape({
     en: PropTypes.string.isRequired,
-    fr: PropTypes.string.isRequired,
   }).isRequired,
   shortName: PropTypes.shape({
     en: PropTypes.string.isRequired,
@@ -44,7 +44,7 @@ export const project = PropTypes.shape({
   aggregatedCount: featureData.isRequired,
 });
 
-export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);
+export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
 
 export const ConditionsByCommodityOrInstrument = PropTypes.shape({
   prefix: PropTypes.string.isRequired,
@@ -86,7 +86,6 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   sunsetDate: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   activity: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.shape({
     binnedValue: PropTypes.number.isRequired,
@@ -95,7 +94,6 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     details: PropTypes.shape({
       theme: PropTypes.string.isRequired,
-      instrument: PropTypes.string.isRequired,
       phase: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
@@ -107,6 +105,16 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
 export const viewTwo = {
   layoutOnly: PropTypes.bool,
   browseBy: browseByType.isRequired,
+  wheelData: PropTypes.arrayOf(PropTypes.any),
+  regionCompanyData: PropTypes.shape({
+    companies: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })),
+    selectedConditionCompanies: PropTypes.arrayOf(
+      PropTypes.number,
+    ),
+  }),
   legendItems: PropTypes.arrayOf(PropTypes.shape({
     disabled: PropTypes.bool,
     description: PropTypes.string.isRequired,
@@ -121,32 +129,25 @@ export const viewTwo = {
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
-  setFindAny: PropTypes.func.isRequired,
-  setProjectYear: PropTypes.func.isRequired,
+  projectMenuLoading: PropTypes.bool,
+  projectsData: PropTypes.arrayOf(project),
+  projectYear: yearRangeType.isRequired,
+  included: PropTypes.arrayOf(PropTypes.string).isRequired,
+  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
   findAny: PropTypes.bool.isRequired,
-  projectYear: yearRangeType.isRequired,
+  setFindAny: PropTypes.func.isRequired,
+  setProjectYear: PropTypes.func.isRequired,
   setProjectStatus: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   setExcluded: PropTypes.func.isRequired,
-  included: PropTypes.arrayOf(PropTypes.string).isRequired,
-  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedFeature: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedRegion: PropTypes.func.isRequired,
-  conditionDetails: PropTypes.shape({
-    isExpandable: PropTypes.bool,
-    expanded: PropTypes.bool,
-    selectedProject: PropTypes.string.isRequired,
-    data: conditionData.isRequired,
-  }).isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
-  projectsData: PropTypes.arrayOf(project),
-  // The shape of wheelData will change once more integration is done.
-  wheelData: PropTypes.arrayOf(PropTypes.any),
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
 };

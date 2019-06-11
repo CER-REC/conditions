@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './styles.scss';
 
 import { geoConicConformal, geoPath } from 'd3-geo';
@@ -20,7 +21,7 @@ const projectFeature = feat => geoConicConformal()
   .rotate([96, 0])
   .fitExtent([[2, 2], [viewBox.width - 4, viewBox.height - 4]], feat);
 
-class LocationWheelMinimap extends React.PureComponent {
+class LocationWheelMinimap extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -76,7 +77,7 @@ class LocationWheelMinimap extends React.PureComponent {
     const provincePath = projection(provinceData);
 
     return (
-      <div className="LocationWheelMinimap">
+      <div className={classNames('LocationWheelMinimap', this.props.className)}>
         <svg viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}>
           <g className="regions">
             <path d={regionPath} className="region" />
@@ -91,10 +92,13 @@ class LocationWheelMinimap extends React.PureComponent {
 LocationWheelMinimap.propTypes = {
   /** Economic region, e.g. 'Vancouver Island and Coast' */
   region: PropTypes.string,
+  /** A class to hide or show the component according to the movement of the wheel */
+  className: PropTypes.string,
 };
 
 LocationWheelMinimap.defaultProps = {
   region: '',
+  className: '',
 };
 
 export default LocationWheelMinimap;

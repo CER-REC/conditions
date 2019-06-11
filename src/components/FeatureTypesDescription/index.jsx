@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { features } from '../../constants';
 import './styles.scss';
 
 class FeatureTypesDescription extends React.PureComponent {
@@ -24,46 +23,63 @@ class FeatureTypesDescription extends React.PureComponent {
   };
 
   render() {
-    const { feature } = this.props;
-    const content = Object.entries(features[feature]).map(([type, color]) => (
-      <React.Fragment key={type}>
-        <FormattedMessage id={`common.${feature}.${type}`}>
-          {text => <h4 data-heading={type}>{text}</h4>}
+    const { feature, subFeature, displayOrder } = this.props;
+
+    let headerId;
+    if (feature === 'theme' && subFeature === '') {
+      headerId = 'allThemes';
+    } else if (feature === 'instrument') {
+      headerId = 'otherInstruments';
+    }
+
+    const header = (headerId)
+      ? (
+        <FormattedMessage id={`components.featureTypesDescription.${headerId}`}>
+          {text => <p>* {text}</p> }
         </FormattedMessage>
+      ) : null;
+
+    const content = displayOrder.map(type => (
+      <React.Fragment key={type}>
+        {(feature === 'instrument')
+          ? <h4 data-heading={type}>{type}</h4>
+          : (
+            <FormattedMessage id={`common.${feature}.${type}`}>
+              {text => <h4 data-heading={type}>{text}</h4>}
+            </FormattedMessage>
+          )
+        }
         <FormattedMessage
           id={`components.featureTypesDescription.${feature}.${type}`}
         >
-          {str => str.split('\n').map((line, idx) => {
-            let prefix = null;
-            const split = line.split(':');
-            if (split.length > 1) {
-              prefix = <span style={{ color }}>{split.splice(0, 1)}:</span>;
-            }
-            return (
+          {
+            str => str.split('\n').map((line, idx) => (
               // eslint-disable-next-line react/no-array-index-key
               <p key={idx}>
-                {prefix}
-                <span>{split.join(':')}</span>
+                {line}
               </p>
-            );
-          })}
+            ))
+          }
         </FormattedMessage>
       </React.Fragment>
     ));
+
+    if (feature === 'instrument') {
+      content.splice(9, 0, (
+        <FormattedMessage
+          key="other"
+          tagName="h3"
+          id="components.featureTypesDescription.instrument.OTHER"
+        />
+      ));
+    }
 
     return (
       <div
         className="FeatureTypesDescription"
         ref={this.ref}
       >
-        {(this.props.feature === 'theme' && this.props.subFeature === '')
-          ? (
-            <FormattedMessage id="components.featureTypesDescription.allThemes">
-              {text => <p>* {text}</p> }
-            </FormattedMessage>
-          )
-          : null
-        }
+        {header}
         {content}
       </div>
     );
@@ -75,6 +91,8 @@ FeatureTypesDescription.propTypes = {
   feature: PropTypes.string.isRequired,
   /** Heading that the container should scroll to (ex. "security") */
   subFeature: PropTypes.string,
+  /** Display order by feature type */
+  displayOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 FeatureTypesDescription.defaultProps = {

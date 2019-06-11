@@ -20,7 +20,7 @@ const RegionCompanies = (props) => {
       <div className="title">
         <FormattedMessage id="components.regionCompanies.title" />
       </div>
-      <ul>
+      <ul className={props.isVisible}>
         {companyItems}
       </ul>
     </div>
@@ -34,6 +34,14 @@ RegionCompanies.propTypes = {
   activeConditionCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
   /** A function for opening up the dialog to project details */
   openProjectDetails: PropTypes.func.isRequired,
+  /** A class to hide or show the component according to the movement of the wheel */
+  isVisible: PropTypes.string,
+  /** A string that adds a class to the list within the component.
+   * hidden modifies the visibility of the list */
+};
+
+RegionCompanies.defaultProps = {
+  isVisible: '',
 };
 
 export default RegionCompanies;

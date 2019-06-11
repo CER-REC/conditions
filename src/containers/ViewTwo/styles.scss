@@ -8,7 +8,6 @@
     menus: (x: 97, y: 2, w: 21, h: 11),
     legend: (x: 97, y: 14, w: 21, h: 38),
   )) {
-
     section.companyBreakdown {
       overflow: visible;
       margin-bottom: 0;
@@ -85,6 +84,8 @@
 
 
     section.header {
+      overflow: visible;
+
       .SearchBar.small {
         width: 200px;
       }

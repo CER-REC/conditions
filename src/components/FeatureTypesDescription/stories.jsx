@@ -2,6 +2,7 @@ import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
+import { displayOrder } from '../../mockData';
 import FeatureTypesDescription from '.';
 import ReadMe from './README.md';
 
@@ -11,9 +12,24 @@ const defaultTargets = [
   'FINANCIAL',
 ];
 
-const instrumentTargets = [
-  'ROUTING',
-  'CONSTRUCTION',
+const prefixOrder = [
+  'GH',
+  'XG',
+  'OH',
+  'MO',
+  'KAX',
+  'MHW',
+  'CPTC',
+  'XE',
+  'MH',
+  'ZO',
+  'TG',
+  'GPSO',
+  'OPLO',
+  'GPMO',
+  'OPSP',
+  'OPL',
+  'GPL',
 ];
 
 storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
@@ -26,18 +42,20 @@ storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
     <FeatureTypesDescription
       feature="theme"
       subFeature={select('Scroll Target', defaultTargets, 'SECURITY')}
+      displayOrder={displayOrder.features.theme}
     />
   ))
   .add('allThemes', () => (
     <FeatureTypesDescription
       feature="theme"
-      subFeature={select('Scroll Target', defaultTargets, 'SECURITY')}
-      allThemes
+      subFeature=""
+      displayOrder={displayOrder.features.theme}
     />
   ))
-  .add('instrument types', () => (
+  .add('instruments', () => (
     <FeatureTypesDescription
       feature="instrument"
-      subFeature={select('Scroll Target', instrumentTargets, 'ROUTING')}
+      subFeature=""
+      displayOrder={prefixOrder}
     />
   ));

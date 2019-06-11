@@ -1,15 +1,14 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-
 import { storiesForView, withStyles } from '../../../.storybook/utils';
 
-import withGQL from '../../../.storybook/addon-graphql';
 import ReadMe from './README.md';
-import { ViewThreeUnconnected, ViewThreeGraphQL } from '.';
-import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
+import ViewThree, { ViewThreeUnconnected } from '.';
+import { conditionCountsByYear, conditionCountsByCommodity, conditionData, displayOrder } from '../../mockData';
 
 const props = {
   conditionCountsByYear,
+  years: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
   conditionCountsByCommodity,
   conditionDetails: {
     selectedProject: 'Project Name',
@@ -19,6 +18,7 @@ const props = {
     bubble: 'XO',
     stream: 2010,
   },
+  displayOrder,
 };
 
 const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
@@ -61,14 +61,5 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       detailViewExpanded: false,
     },
   }))
-  .add('default', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} />)
-  .add(
-    'connected variant',
-    () => (
-      <ViewThreeGraphQL
-        {...props}
-        {...getInteractionProps()}
-      />
-    ), { decorators: [withGQL] },
-  )
+  .add('default', () => <ViewThree {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} layoutOnly />);

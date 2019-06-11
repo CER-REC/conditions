@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
-import { conditionCountsByYear, conditionCountsByCommodity } from '../../mockData';
+import { conditionCountsByYear } from '../../mockData';
 import TrendButton from '.';
 
 const noop = () => {};
@@ -16,8 +16,8 @@ describe('Components|TrendButton', () => {
         onClick={noop}
         feature="theme"
         subFeature=""
-        projectData={conditionCountsByYear.counts}
-        instrumentData={conditionCountsByCommodity.counts}
+        years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
+        countsData={conditionCountsByYear.counts}
       />);
     });
     test('should render a div with a className of buttonText', () => {
@@ -40,8 +40,8 @@ describe('Components|TrendButton', () => {
         onClick={spy}
         feature="theme"
         subFeature=""
-        projectData={conditionCountsByYear.counts}
-        instrumentData={conditionCountsByCommodity.counts}
+        years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
+        countsData={conditionCountsByYear.counts}
       />);
     });
     test("should call it's onClick prop", () => {

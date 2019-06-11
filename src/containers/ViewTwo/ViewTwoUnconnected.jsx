@@ -61,6 +61,7 @@ const ViewTwoUnconnected = (props) => {
       {...props}
       wheelData={wheelParsedData}
       legendItems={legendItems}
+      regionCompanyData={props.regionCompanyData}
     />
   );
 };

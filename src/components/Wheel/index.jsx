@@ -21,6 +21,7 @@ class Wheel extends React.Component {
     wheelData: PropTypes.arrayOf(PropTypes.object).isRequired,
     selectedRay: PropTypes.number,
     selectRay: PropTypes.func.isRequired,
+    wheelMotionTrigger: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -115,9 +116,18 @@ class Wheel extends React.Component {
         <Spring
           native
           immediate={!this.state.wheelModifiers.spin}
-          config={{ tension: 30, friction: 20, easing: t => t * t * t * t * t }}
-          onStart={() => { this.state.wheelModifiers.spin = false; }}
-          onRest={() => {}} // props.showInfo()}
+          config={{
+            tension: 30,
+            friction: 20,
+            precision: 0.05,
+            clamping: true,
+            easing: t => t * t * t * t * t,
+          }}
+          onStart={() => {
+            this.state.wheelModifiers.spin = false;
+            this.props.wheelMotionTrigger(true);
+          }}
+          onRest={() => { this.props.wheelMotionTrigger(false); }}
           from={{ rotation: -this.state.oldRotation }}
           to={{ rotation: -this.state.newRotation }}
         >
