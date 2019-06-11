@@ -334,7 +334,6 @@ export default class PhysicsVariant extends React.PureComponent {
           d={this.guide.renderedPathPoints}
           onMouseDown={this.onGuideMouseDown}
           onTouchStart={this.onGuideMouseDown}
-          onDrag={this.onGuideMouseDrag}
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
