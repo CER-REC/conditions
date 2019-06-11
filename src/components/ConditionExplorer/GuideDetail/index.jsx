@@ -56,7 +56,7 @@ const GuideDetail = (props) => {
   const circles = steps.map((element, index) => (
     <CircleContainer
       key={index /* eslint-disable-line react/no-array-index-key */}
-      size={10}
+      size={8}
     >
       &nbsp;
     </CircleContainer>
@@ -69,6 +69,7 @@ const GuideDetail = (props) => {
         <List
           selected={selected}
           arrowsAtEdges
+          arrowSize={16}
           horizontal
           onChange={changeStep}
           items={circles}

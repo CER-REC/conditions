@@ -16,26 +16,34 @@
   overflow: hidden;
 
   .step-text {
-    // 14.25% inscribes the square text inside the circular container
-    margin: 14.25%;
-    margin-bottom: 0;
+    margin: 22% 8% 0 8%;
     overflow-y: auto;
-    height: calc(100% - 28.5% - 75px);
+    height: calc(100% - 44%);
+
+    font-family: $fira-sans-condensed-light;
+    font-size: 20px;
 
     h1 {
-      font-size: 24px;
+      font-family: $fira-sans-condensed-bold;
+      font-size: 36px;
     }
 
-    a {
-      color: $White;
-      text-decoration: underline;
+    p {
+      margin-top: 1.2em;
     }
 
-    ul { text-align: left; }
+    ul {
+      text-align: left;
+    }
   }
 
   .step-controls {
     height: 75px;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     .List {
       display: inline-block;
@@ -51,7 +59,7 @@
 
     .List-Item {
       .CircleContainer {
-        margin: 0 8px;
+        margin: 0 6px;
         background: $White;
         opacity: 0.6;
       }
@@ -60,6 +68,10 @@
         background: $White;
         opacity: 1;
       }
+    }
+
+    .List-Arrow {
+      transform: scale(0.7);
     }
   }
 }

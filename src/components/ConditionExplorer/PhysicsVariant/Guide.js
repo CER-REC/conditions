@@ -36,7 +36,7 @@ export default class Guide extends Body {
     this.locationBeforeExpand = { ...this.body.position };
     return Promise.all([
       this.moveTo(dimensions.x, dimensions.y, 2500),
-      this.scaleTo(Math.min(dimensions.x, dimensions.y) / 50, 2500),
+      this.scaleTo(Math.min(dimensions.x, dimensions.y) / 65, 2500),
     ]);
   }
 
