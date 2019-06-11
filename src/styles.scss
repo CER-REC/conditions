@@ -52,6 +52,8 @@ body > .container {
   padding-left: 0;
   padding-right: 0;
 
+  line-height: initial;
+
   // TODO: Deployment hacks
   // This is only used to indicate the division between views right now
   hr { border-top: 2px solid #ccc; }
