@@ -62,11 +62,10 @@ const GuideDetail = (props) => {
     </CircleContainer>
   ));
 
-  const doubleRadius = radius * 2;
   const textRadius = radius - 4;
 
   return (
-    <section className="GuideDetail" style={{ width: doubleRadius, height: doubleRadius }}>
+    <section className="GuideDetail" style={{ width: radius * 2, height: radius * 2 }}>
       <div className="step-text">{steps[selected]}</div>
       <div className="step-controls">
         <List
@@ -82,9 +81,9 @@ const GuideDetail = (props) => {
         {text => (
           <svg
             className="curvedText"
-            width={doubleRadius}
-            height={doubleRadius}
-            viewBox={`-${radius} -${radius} ${doubleRadius} ${doubleRadius}`}
+            width={radius}
+            height={radius / 2}
+            viewBox={`0 ${radius / 2} ${radius} ${radius / 2}`}
           >
             <defs>
               <path

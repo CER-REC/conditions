@@ -4122,9 +4122,9 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
       </div>
       <svg
         className="curvedText"
-        height={500}
-        viewBox="-250 -250 500 500"
-        width={500}
+        height={125}
+        viewBox="0 125 250 125"
+        width={250}
       >
         <defs>
           <path
