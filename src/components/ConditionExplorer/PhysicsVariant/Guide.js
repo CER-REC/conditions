@@ -3,9 +3,11 @@ import Body from './Body';
 import Outline from './Outline';
 import { guideCategory, guideOutlineCategory } from './categories';
 
+import { guideSize } from '../../../constants';
+
 export default class Guide extends Body {
   constructor(engine) {
-    const body = Matter.Bodies.polygon(200, 200, 100, 50, {
+    const body = Matter.Bodies.polygon(200, 200, 100, (guideSize / 2), {
       collisionFilter: {
         category: guideCategory,
         mask: ~guideOutlineCategory, // eslint-disable-line no-bitwise

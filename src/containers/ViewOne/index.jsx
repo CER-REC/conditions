@@ -45,6 +45,8 @@ const ViewOne = props => (
         keywords={props.keywords}
         selectedKeywordId={props.selected.keywordId}
         setSelectedKeyword={props.setSelectedKeyword}
+        beginTutorial={props.beginTutorial}
+        physicsPaused={props.physicsPaused}
       />
     </section>
     <section className="infoBar">
@@ -64,11 +66,14 @@ ViewOne.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedKeyword: PropTypes.func.isRequired,
   jumpToAbout: PropTypes.func.isRequired,
+  beginTutorial: PropTypes.func.isRequired,
   layoutOnly: PropTypes.bool,
+  physicsPaused: PropTypes.bool,
 };
 
 ViewOne.defaultProps = {
   layoutOnly: PropTypes.false,
+  physicsPaused: false,
 };
 
 export const ViewOneUnconnected = props => (

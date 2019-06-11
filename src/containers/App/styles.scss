@@ -2,9 +2,6 @@
 @import "./transitions.scss";
 
 .App {
-
-
-
   $defaultTransition: 1s ease-in-out;
 
   $fastEnd: 1s cubic-bezier(0.8, 0, 1, 0.2);
@@ -14,6 +11,8 @@
   $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
 
   position: relative;
+  overflow: hidden;
+
   .fixedContainer{
     @include grid((
       guideWrapper: (x: 0, y: 0, w: 120, h: 84),
@@ -28,10 +27,6 @@
     bottom: 0;
     left: 5px;
   }
-
-  // .guideWrapper {
-  //   overflow: hidden;
-  // }
 
   .guideTranslate {
     z-index: 999;
@@ -51,7 +46,7 @@
     transition: all $defaultTransition;
 
     .CircleContainer {
-      transition: background $defaultTransition;
+      transition: background-color $defaultTransition;
 
       span {
         transition: opacity $defaultTransition;
@@ -168,10 +163,10 @@
     transition: opacity $defaultTransition, height $defaultTransition, visibility 0s 1s;
   }
 
-  &.transition-state-7 {
+  &.transition-state-8 {
     .Guide {
       transition:
-        opacity $fastestStart,
+        opacity $fastestEnd,
         transform $defaultTransition,
         background-color $defaultTransition,
         visibility 0s 1s;
@@ -179,7 +174,7 @@
   }
 
   // Snapping back from View 2 to View 1, using different curves to make it look decent
-  &.transition-state-8 {
+  &.transition-state-9 {
     .guideTranslate {
       transition: opacity $fastestEnd;
     }
@@ -210,7 +205,7 @@
         transition: opacity $fastEnd, visibility 0s 1s;
       }
     }
-    
+
 
     .ViewOne {
       .row {

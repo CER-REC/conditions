@@ -26,6 +26,7 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
     <ConditionExplorer
       keywords={uniqueKeywords}
       setSelectedKeyword={noop}
+      beginTutorial={noop}
       {...getInteractionProps()}
     />
   ))
@@ -33,6 +34,7 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
     <ConditionExplorer
       keywords={uniqueKeywords}
       setSelectedKeyword={noop}
+      beginTutorial={noop}
       physics={false}
       {...getInteractionProps()}
     />
