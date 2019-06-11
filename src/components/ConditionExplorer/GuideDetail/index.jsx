@@ -57,7 +57,6 @@ const GuideDetail = (props) => {
     <CircleContainer
       key={index /* eslint-disable-line react/no-array-index-key */}
       size={10}
-      className={selected === index ? 'gray' : 'lightgrey'}
     >
       &nbsp;
     </CircleContainer>

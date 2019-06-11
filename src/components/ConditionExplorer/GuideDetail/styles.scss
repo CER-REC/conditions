@@ -6,7 +6,7 @@
 .GuideDetail {
   font-family: $fira-sans-condensed;
   text-align: center;
-  color: #fff;
+  color: $White;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -27,7 +27,7 @@
     }
 
     a {
-      color: #fff;
+      color: $White;
       text-decoration: underline;
     }
 
@@ -52,10 +52,14 @@
     .List-Item {
       .CircleContainer {
         margin: 0 8px;
-        background: lightgrey;
+        background: $White;
+        opacity: 0.6;
       }
 
-      &.selected .CircleContainer { background: gray; }
+      &.selected .CircleContainer {
+        background: $White;
+        opacity: 1;
+      }
     }
   }
 }
