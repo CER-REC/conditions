@@ -4,13 +4,12 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import { useSpring, animated, interpolate } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
-import handleInteraction from '../../../utilities/handleInteraction';
 
 const PullToSpin = (props) => {
-  const [{ animation, triggered }, setState] = useState({ animation: false, triggered: false });
-  console.dir(`Original State: ${animation}, ${triggered}`);
+  const [animation, setState] = useState(false);
 
   const { intl } = props;
+  const tester = () => {};
 
   const getPosition = (x) => {
     if (x > 56) return { x: 56, y: -56, rot: 15 };
@@ -22,29 +21,36 @@ const PullToSpin = (props) => {
     transform: 'translate(56, -56) rotate(15)',
     x: 0,
     config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+    // eslint-disable-next-line no-use-before-define
+    onRest: setZeroRest,
   }));
+
+  const setZeroRest = () => set({ transform: 'translate(0, 0) rotate(0)' });
+
+  const onClickDoThis = (shouldTriggerSpin) => {
+    setState(true);
+    set({
+      transform: 'translate(56, -56) rotate(15)',
+      onRest: () => {
+        if (shouldTriggerSpin) { props.onClickSpin(); }
+        setZeroRest();
+      },
+    });
+  };
   const dragAnim = interpolate([x], (x1) => { const position = getPosition(x1); return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`); });
 
   const bind = useGesture({
     onDrag: ({ down, delta }) => {
       // Set the animation state to be false to have us on the drag animation
-      setState({ animation: false, triggered: false });
-      set({ x: down ? delta[0] : 0 });
+      setState(false);
+      set({ x: down ? delta[0] : 0, onRest: tester });
     },
     onDragEnd: ({ delta }) => {
-      if (delta[0] < 1 && delta[1] < 1) {
-        // This means we are in the click state
-        // Set the animation to be true
-        setState({ animation: true, triggered: true });
+      if (delta[0] < 1 && delta[1] > -1) onClickDoThis(true);
+      else {
         set({
-          transform: 'translate(56, -56) rotate(15)',
-          onRest: () => { setState({ animation: true, triggered: false }); set({ transform: 'translate(0, 0) rotate(0)' }); },
-        });
-      } else {
-        // We are in the drag state we shouldn't have to do anything here
-        console.dir(delta[0]);
-        console.dir('DRAGGED');
-        props.onClickSpin();
+          onRest: setZeroRest,
+        }); props.onClickSpin();
       }
     },
   });
@@ -61,7 +67,7 @@ const PullToSpin = (props) => {
           <tspan dx="-20" dy="10">{intl.formatMessage({ id: 'components.companyWheel.pullToSpin.toSpin' })}</tspan>
         </text>
       </g>
-      <g role="button" className="PullSlider" {...handleInteraction(props.onClickSpin())}>
+      <g role="button" className="PullSlider">
         <animated.g {...bind()} transform={animation ? transform : dragAnim} className="PullAnimatedGroup">
           <defs>
             <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" x="2" width="2.2" height="5" patternTransform="rotate(90)">
