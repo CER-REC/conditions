@@ -4,21 +4,26 @@
 @import '../../../styles/legend.scss';
 
 .GuideDetail {
-  font-family: $fira-sans-condensed;
-  text-align: center;
-  color: $White;
   position: absolute;
+
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
   z-index: 1;
+
+  font-family: $fira-sans-condensed;
+  text-align: center;
+  color: $White;
+
   border-radius: 50%;
   overflow: hidden;
 
   .step-text {
     margin: 22% 8% 0 8%;
+    height: 56%;
+
     overflow-y: auto;
-    height: calc(100% - 44%);
 
     font-family: $fira-sans-condensed-light;
     font-size: 20px;
