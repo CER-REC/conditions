@@ -109,7 +109,6 @@ class StreamGraph extends React.Component {
     }, []);
 
     const maxTotal = Math.max(...yearTotals);
-    const minTotal = Math.min(...yearTotals);
 
     const minDate = this.props.years[0];
     const maxDate = this.props.years[this.props.years.length - 1];
@@ -146,9 +145,13 @@ class StreamGraph extends React.Component {
     const axisStyles = {
       tickLabels: {
         fontSize: '10px',
+        fontFamily: 'FiraSansCondensed, sans-serif',
+        fill: 'rgb(77, 77, 77)',
       },
       axisLabel: {
         fontSize: '12px',
+        fontFamily: 'FiraSansCondensed, sans-serif',
+        fill: 'rgb(77, 77, 77)',
       },
     };
 
@@ -164,7 +167,7 @@ class StreamGraph extends React.Component {
         <VictoryAxis
           dependentAxis
           label={intl.formatMessage({ id: 'components.streamGraph.axis.yAxis' })}
-          tickValues={[minTotal, maxTotal]}
+          tickValues={[0, maxTotal]}
           tickFormat={Math.round}
           className="axis-label"
           style={axisStyles}

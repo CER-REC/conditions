@@ -5422,9 +5422,9 @@ exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
     <h1>
       Theme
     </h1>
-    <span>
+    <p>
       To facilitate analysis and public understanding, conditions are grouped into themes such as environment, finance, safety, security, etc.
-    </span>
+    </p>
   </div>
 </div>
 `;
@@ -5502,114 +5502,168 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
   <div
     className="FeatureTypesDescription"
   >
-    <p>
+    <p
+      className="info"
+    >
       * 
       Conditions with multiple themes are counted more than once.
     </p>
-    <h4
-      data-heading="ADMINISTRATIVE"
+    <div
+      className=""
     >
-      Administrative
-    </h4>
-    <p>
-      conditions that help track organizational tasks.
-    </p>
-    <h4
-      data-heading="DAMAGE_PREVENTION"
+      <h4
+        data-heading="ADMINISTRATIVE"
+      >
+        Administrative
+      </h4>
+      <p>
+        conditions that help track organizational tasks.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Damage Prevention
-    </h4>
-    <p>
-      conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
-    </p>
-    <h4
-      data-heading="EMERGENCY_MANAGEMENT"
+      <h4
+        data-heading="DAMAGE_PREVENTION"
+      >
+        Damage Prevention
+      </h4>
+      <p>
+        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Emergency Management
-    </h4>
-    <p>
-      conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
-    </p>
-    <h4
-      data-heading="ENFORCEMENT"
+      <h4
+        data-heading="EMERGENCY_MANAGEMENT"
+      >
+        Emergency Management
+      </h4>
+      <p>
+        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Enforcement
-    </h4>
-    <p>
-      conditions that reinforce prescribed regulatory requirements to be met.
-    </p>
-    <h4
-      data-heading="ENVIRONMENTAL_PROTECTION"
+      <h4
+        data-heading="ENFORCEMENT"
+      >
+        Enforcement
+      </h4>
+      <p>
+        conditions that reinforce prescribed regulatory requirements to be met.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Environmental Protection
-    </h4>
-    <p>
-      conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
-    </p>
-    <h4
-      data-heading="FINANCIAL"
+      <h4
+        data-heading="ENVIRONMENTAL_PROTECTION"
+      >
+        Environmental Protection
+      </h4>
+      <p>
+        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Financial
-    </h4>
-    <p>
-      conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
-    </p>
-    <h4
-      data-heading="INTEGRITY_MANAGEMENT"
+      <h4
+        data-heading="FINANCIAL"
+      >
+        Financial
+      </h4>
+      <p>
+        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Integrity Management
-    </h4>
-    <p>
-      conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
-    </p>
-    <h4
-      data-heading="MANAGEMENT_SYSTEM"
+      <h4
+        data-heading="INTEGRITY_MANAGEMENT"
+      >
+        Integrity Management
+      </h4>
+      <p>
+        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Management System
-    </h4>
-    <p>
-      company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
-    </p>
-    <h4
-      data-heading="SAFETY_MANAGEMENT"
+      <h4
+        data-heading="MANAGEMENT_SYSTEM"
+      >
+        Management System
+      </h4>
+      <p>
+        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Safety Management
-    </h4>
-    <p>
-       conditions that eliminate or reduce risk to the public, workers, the environment and assets.
-    </p>
-    <h4
-      data-heading="SECURITY"
+      <h4
+        data-heading="SAFETY_MANAGEMENT"
+      >
+        Safety Management
+      </h4>
+      <p>
+         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Security
-    </h4>
-    <p>
-      conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
-    </p>
-    <h4
-      data-heading="SOCIO_ECONOMIC"
+      <h4
+        data-heading="SECURITY"
+      >
+        Security
+      </h4>
+      <p>
+        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Socio-Economic
-    </h4>
-    <p>
-      conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
-    </p>
-    <h4
-      data-heading="STANDARD_CONDITION"
+      <h4
+        data-heading="SOCIO_ECONOMIC"
+      >
+        Socio-Economic
+      </h4>
+      <p>
+        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Standard Condition
-    </h4>
-    <p>
-       conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
-    </p>
-    <h4
-      data-heading="SUNSET_CLAUSE"
+      <h4
+        data-heading="STANDARD_CONDITION"
+      >
+        Standard Condition
+      </h4>
+      <p>
+         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Sunset Clause
-    </h4>
-    <p>
-      conditions that ensure projects begin within a specific period of time.
-    </p>
+      <h4
+        data-heading="SUNSET_CLAUSE"
+      >
+        Sunset Clause
+      </h4>
+      <p>
+        conditions that ensure projects begin within a specific period of time.
+      </p>
+    </div>
   </div>
   <style
     dangerouslySetInnerHTML={
@@ -5628,110 +5682,162 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
   <div
     className="FeatureTypesDescription"
   >
-    <h4
-      data-heading="ADMINISTRATIVE"
+    <div
+      className=""
     >
-      Administrative
-    </h4>
-    <p>
-      conditions that help track organizational tasks.
-    </p>
-    <h4
-      data-heading="DAMAGE_PREVENTION"
+      <h4
+        data-heading="ADMINISTRATIVE"
+      >
+        Administrative
+      </h4>
+      <p>
+        conditions that help track organizational tasks.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Damage Prevention
-    </h4>
-    <p>
-      conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
-    </p>
-    <h4
-      data-heading="EMERGENCY_MANAGEMENT"
+      <h4
+        data-heading="DAMAGE_PREVENTION"
+      >
+        Damage Prevention
+      </h4>
+      <p>
+        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Emergency Management
-    </h4>
-    <p>
-      conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
-    </p>
-    <h4
-      data-heading="ENFORCEMENT"
+      <h4
+        data-heading="EMERGENCY_MANAGEMENT"
+      >
+        Emergency Management
+      </h4>
+      <p>
+        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Enforcement
-    </h4>
-    <p>
-      conditions that reinforce prescribed regulatory requirements to be met.
-    </p>
-    <h4
-      data-heading="ENVIRONMENTAL_PROTECTION"
+      <h4
+        data-heading="ENFORCEMENT"
+      >
+        Enforcement
+      </h4>
+      <p>
+        conditions that reinforce prescribed regulatory requirements to be met.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Environmental Protection
-    </h4>
-    <p>
-      conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
-    </p>
-    <h4
-      data-heading="FINANCIAL"
+      <h4
+        data-heading="ENVIRONMENTAL_PROTECTION"
+      >
+        Environmental Protection
+      </h4>
+      <p>
+        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Financial
-    </h4>
-    <p>
-      conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
-    </p>
-    <h4
-      data-heading="INTEGRITY_MANAGEMENT"
+      <h4
+        data-heading="FINANCIAL"
+      >
+        Financial
+      </h4>
+      <p>
+        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Integrity Management
-    </h4>
-    <p>
-      conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
-    </p>
-    <h4
-      data-heading="MANAGEMENT_SYSTEM"
+      <h4
+        data-heading="INTEGRITY_MANAGEMENT"
+      >
+        Integrity Management
+      </h4>
+      <p>
+        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Management System
-    </h4>
-    <p>
-      company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
-    </p>
-    <h4
-      data-heading="SAFETY_MANAGEMENT"
+      <h4
+        data-heading="MANAGEMENT_SYSTEM"
+      >
+        Management System
+      </h4>
+      <p>
+        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
+      </p>
+    </div>
+    <div
+      className=""
     >
-      Safety Management
-    </h4>
-    <p>
-       conditions that eliminate or reduce risk to the public, workers, the environment and assets.
-    </p>
-    <h4
-      data-heading="SECURITY"
+      <h4
+        data-heading="SAFETY_MANAGEMENT"
+      >
+        Safety Management
+      </h4>
+      <p>
+         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Security
-    </h4>
-    <p>
-      conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
-    </p>
-    <h4
-      data-heading="SOCIO_ECONOMIC"
+      <h4
+        data-heading="SECURITY"
+      >
+        Security
+      </h4>
+      <p>
+        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Socio-Economic
-    </h4>
-    <p>
-      conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
-    </p>
-    <h4
-      data-heading="STANDARD_CONDITION"
+      <h4
+        data-heading="SOCIO_ECONOMIC"
+      >
+        Socio-Economic
+      </h4>
+      <p>
+        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Standard Condition
-    </h4>
-    <p>
-       conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
-    </p>
-    <h4
-      data-heading="SUNSET_CLAUSE"
+      <h4
+        data-heading="STANDARD_CONDITION"
+      >
+        Standard Condition
+      </h4>
+      <p>
+         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      Sunset Clause
-    </h4>
-    <p>
-      conditions that ensure projects begin within a specific period of time.
-    </p>
+      <h4
+        data-heading="SUNSET_CLAUSE"
+      >
+        Sunset Clause
+      </h4>
+      <p>
+        conditions that ensure projects begin within a specific period of time.
+      </p>
+    </div>
   </div>
   <style
     dangerouslySetInnerHTML={
@@ -5750,149 +5856,219 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
   <div
     className="FeatureTypesDescription"
   >
-    <p>
+    <p
+      className="info"
+    >
       * 
       The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.
     </p>
-    <h4
-      data-heading="GH"
+    <div
+      className=""
     >
-      GH
-    </h4>
-    <p>
+      <h4
+        data-heading="GH"
+      >
+        GH
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="XG"
+      >
+        XG
+      </h4>
+      <p>
+         The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="OH"
+      >
+        OH
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="MO"
+      >
+        MO
+      </h4>
+      <p>
+        The approval of miscellaneous matters, such as upgrading of maximum authorized operation pressures, conveyance, sale or lease of a pipeline or parts thereof, abandonment of pipelines, etc.
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="KAX"
+      >
+        KAX
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="MHW"
+      >
+        MHW
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="CPTC"
+      >
+        CPTC
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="XE"
+      >
+        XE
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className=""
+    >
+      <h4
+        data-heading="MH"
+      >
+        MH
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <h4>
       text not yet provided
-    </p>
-    <h4
-      data-heading="XG"
-    >
-      XG
     </h4>
-    <p>
-       The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)
-    </p>
-    <h4
-      data-heading="OH"
+    <div
+      className="other"
     >
-      OH
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h4
-      data-heading="MO"
+      <h4
+        data-heading="ZO"
+      >
+        ZO
+      </h4>
+      <p>
+        The approval of abandonment applications
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      MO
-    </h4>
-    <p>
-      The approval of miscellaneous matters, such as upgrading of maximum authorized operation pressures, conveyance, sale or lease of a pipeline or parts thereof, abandonment of pipelines, etc.
-    </p>
-    <h4
-      data-heading="KAX"
+      <h4
+        data-heading="TG"
+      >
+        TG
+      </h4>
+      <p>
+        The fixing of tariffs and tolls – gas pipelines
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      KAX
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h4
-      data-heading="MHW"
+      <h4
+        data-heading="GPSO"
+      >
+        GPSO
+      </h4>
+      <p>
+        The approval of the opening of a gas compressor station, gas plant or parts thereof
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      MHW
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h4
-      data-heading="CPTC"
+      <h4
+        data-heading="OPLO"
+      >
+        OPLO
+      </h4>
+      <p>
+        The approval of the opening of a new or additional oil pipelines or derivations thereof
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      CPTC
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h4
-      data-heading="XE"
+      <h4
+        data-heading="GPMO"
+      >
+        GPMO
+      </h4>
+      <p>
+        The approval of the opening of a gas meter station or parts thereof
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      XE
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h4
-      data-heading="MH"
+      <h4
+        data-heading="OPSP"
+      >
+        OPSP
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      MH
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h3>
-      text not yet provided
-    </h3>
-    <h4
-      data-heading="ZO"
+      <h4
+        data-heading="OPL"
+      >
+        OPL
+      </h4>
+      <p>
+        text not yet provided
+      </p>
+    </div>
+    <div
+      className="other"
     >
-      ZO
-    </h4>
-    <p>
-      The approval of abandonment applications
-    </p>
-    <h4
-      data-heading="TG"
-    >
-      TG
-    </h4>
-    <p>
-      The fixing of tariffs and tolls – gas pipelines
-    </p>
-    <h4
-      data-heading="GPSO"
-    >
-      GPSO
-    </h4>
-    <p>
-      The approval of the opening of a gas compressor station, gas plant or parts thereof
-    </p>
-    <h4
-      data-heading="OPLO"
-    >
-      OPLO
-    </h4>
-    <p>
-      The approval of the opening of a new or additional oil pipelines or derivations thereof
-    </p>
-    <h4
-      data-heading="GPMO"
-    >
-      GPMO
-    </h4>
-    <p>
-      The approval of the opening of a gas meter station or parts thereof
-    </p>
-    <h4
-      data-heading="OPSP"
-    >
-      OPSP
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h4
-      data-heading="OPL"
-    >
-      OPL
-    </h4>
-    <p>
-      text not yet provided
-    </p>
-    <h4
-      data-heading="GPL"
-    >
-      GPL
-    </h4>
-    <p>
-      The approval of the Plans, Profiles, and Books of Reference for a new or additional gas pipeline. Also used in connection with deviations required in existing gas pipelines
-    </p>
+      <h4
+        data-heading="GPL"
+      >
+        GPL
+      </h4>
+      <p>
+        The approval of the Plans, Profiles, and Books of Reference for a new or additional gas pipeline. Also used in connection with deviations required in existing gas pipelines
+      </p>
+    </div>
   </div>
   <style
     dangerouslySetInnerHTML={
@@ -6665,7 +6841,7 @@ exports[`Storyshots Components|Guide default 1`] = `
         className="wedge"
         style={
           Object {
-            "transform": "scale(1, 1)",
+            "transform": "scale(0.8, 0.8)",
           }
         }
       >
@@ -6706,6 +6882,11 @@ exports[`Storyshots Components|Guide default 1`] = `
         <span
           className="hidden"
         >
+          Click to continue
+        </span>
+        <span
+          className="hidden"
+        >
           Here is the full legal text of the condition you selected
         </span>
         <span
@@ -6724,12 +6905,12 @@ exports[`Storyshots Components|Guide default 1`] = `
           Scroll to browse other projects by this company
         </span>
         <span
-          className="hidden"
+          className=""
         >
           Spin wheel to browse companies
         </span>
         <span
-          className=""
+          className="hidden"
         >
           Look around to discover more!
         </span>
@@ -20472,8 +20653,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fill": "rgb(77, 77, 77)",
+                  "fontFamily": "FiraSansCondensed, sans-serif",
                   "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -20503,8 +20684,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={50}
               x2={550}
-              y1={272.21710484232074}
-              y2={272.21710484232074}
+              y1={280}
+              y2={280}
             />
             <line
               role="presentation"
@@ -20519,22 +20700,22 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={50}
               x2={49}
-              y1={272.21710484232074}
-              y2={272.21710484232074}
+              y1={280}
+              y2={280}
             />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
               x={39}
-              y={272.21710484232074}
+              y={280}
             >
               <tspan
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -20544,7 +20725,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 textAnchor="end"
                 x={39}
               >
-                25
+                0
               </tspan>
             </text>
           </g>
@@ -20594,8 +20775,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -20642,8 +20823,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fill": "rgb(77, 77, 77)",
+                  "fontFamily": "FiraSansCondensed, sans-serif",
                   "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -20703,8 +20884,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -20764,8 +20945,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -20825,8 +21006,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -20886,8 +21067,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -20947,8 +21128,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -21008,8 +21189,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -21069,8 +21250,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -21130,8 +21311,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -21191,8 +21372,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -21252,8 +21433,8 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -22486,8 +22667,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fill": "rgb(77, 77, 77)",
+                  "fontFamily": "FiraSansCondensed, sans-serif",
                   "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -22517,8 +22698,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={50}
               x2={550}
-              y1={261.7880253310305}
-              y2={261.7880253310305}
+              y1={280}
+              y2={280}
             />
             <line
               role="presentation"
@@ -22533,22 +22714,22 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               vectorEffect="non-scaling-stroke"
               x1={50}
               x2={49}
-              y1={261.7880253310305}
-              y2={261.7880253310305}
+              y1={280}
+              y2={280}
             />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
               x={39}
-              y={261.7880253310305}
+              y={280}
             >
               <tspan
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -22558,7 +22739,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 textAnchor="end"
                 x={39}
               >
-                13
+                0
               </tspan>
             </text>
           </g>
@@ -22608,8 +22789,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -22656,8 +22837,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fill": "rgb(77, 77, 77)",
+                  "fontFamily": "FiraSansCondensed, sans-serif",
                   "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -22717,8 +22898,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -22778,8 +22959,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -22839,8 +23020,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -22900,8 +23081,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -22961,8 +23142,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23022,8 +23203,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23083,8 +23264,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23144,8 +23325,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23205,8 +23386,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23266,8 +23447,8 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25612,8 +25793,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fill": "rgb(77, 77, 77)",
+                  "fontFamily": "FiraSansCondensed, sans-serif",
                   "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -25673,8 +25854,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25734,8 +25915,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25782,8 +25963,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "#252525",
-                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fill": "rgb(77, 77, 77)",
+                  "fontFamily": "FiraSansCondensed, sans-serif",
                   "fontSize": 12,
                   "letterSpacing": "normal",
                   "padding": 25,
@@ -25843,8 +26024,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25904,8 +26085,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25965,8 +26146,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -26026,8 +26207,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -26087,8 +26268,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -26148,8 +26329,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -26209,8 +26390,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -26270,8 +26451,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -26331,8 +26512,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -26392,8 +26573,8 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 dx={0}
                 style={
                   Object {
-                    "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                    "fill": "rgb(77, 77, 77)",
+                    "fontFamily": "FiraSansCondensed, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,

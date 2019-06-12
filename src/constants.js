@@ -79,3 +79,4 @@ export const provinces = {
 };
 
 export const regDocURL = 'https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=';
+export const guideSize = 128;

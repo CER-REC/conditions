@@ -28,12 +28,15 @@ export default class ConditionExplorer extends React.Component {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     selectedKeywordId: PropTypes.number,
     setSelectedKeyword: PropTypes.func.isRequired,
+    beginTutorial: PropTypes.func.isRequired,
+    physicsPaused: PropTypes.bool,
     physics: PropTypes.bool,
   };
 
   static defaultProps = {
     selectedKeywordId: null,
     physics: true,
+    physicsPaused: false,
   };
 
   calculateTextSize = memoize((text) => {
@@ -149,6 +152,10 @@ export default class ConditionExplorer extends React.Component {
     }
   };
 
+  beginTutorial = () => {
+    this.props.beginTutorial(this.state.guidePosition);
+  };
+
   render() {
     const { calculatedFontSize } = this.state;
     const keywords = calculatedFontSize ? this.getKeywords() : [];
@@ -162,6 +169,8 @@ export default class ConditionExplorer extends React.Component {
         onKeywordClick: this.onKeywordClick,
         setGuidePosition: this.setGuidePosition,
         setGuideExpanded: this.setGuideExpanded,
+        beginTutorial: this.beginTutorial,
+        physicsPaused: this.props.physicsPaused,
       };
       content = this.props.physics
         ? <PhysicsVariant {...contentProps} />
