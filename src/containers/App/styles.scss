@@ -135,7 +135,8 @@
     .wheel,
     .companyBreakdown,
     .menus,
-    .legend {
+    .legend,
+    .legend .AssociatedComp {
       transition: opacity $defaultTransition;
     }
   }
