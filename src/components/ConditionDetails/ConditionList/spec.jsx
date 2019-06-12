@@ -16,13 +16,17 @@ const data = [
     fill: ['pink'],
     marked: true,
     instrumentIndex: 0,
+    instrumentNumber: 'XO-001-2018',
     itemIndex: 0,
+    id: 0,
   },
   {
     binnedValue: 2,
     fill: ['blue', 'red', 'green'],
     instrumentIndex: 0,
+    instrumentNumber: 'XO-001-2018',
     itemIndex: 1,
+    id: 1,
   },
   {
     isInstrument: true,
@@ -34,13 +38,17 @@ const data = [
     binnedValue: 1,
     fill: ['red'],
     instrumentIndex: 1,
+    instrumentNumber: 'XO-003-2018',
     itemIndex: 0,
+    id: 2,
   },
   {
     binnedValue: 2,
     fill: ['red'],
     instrumentIndex: 1,
+    instrumentNumber: 'XO-003-2018',
     itemIndex: 1,
+    id: 3,
   },
   {
     isInstrument: true,
@@ -53,7 +61,9 @@ const data = [
     fill: ['orange'],
     marked: true,
     instrumentIndex: 2,
+    instrumentNumber: 'XO-005-2018',
     itemIndex: 0,
+    id: 4,
   },
 ];
 
@@ -110,7 +120,7 @@ describe('Components|ConditionDetails/ConditionList', () => {
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledWith({ instrumentIndex: 0, itemIndex: 1 });
+      expect(spy).toHaveBeenCalledWith({ instrumentIndex: 'XO-001-2018', itemIndex: 1 });
     });
   });
 });

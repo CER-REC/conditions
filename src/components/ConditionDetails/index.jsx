@@ -38,7 +38,7 @@ class ConditionDetails extends React.Component {
         instrumentNumber: instrument.instrumentNumber,
         itemIndex: -1,
       });
-      
+
       instrument.conditions.forEach((condition, itemIndex) => {
         const marked = this.textMatchesKeywords(condition.text);
         data.push({

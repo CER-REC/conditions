@@ -350,11 +350,20 @@ class App extends React.PureComponent {
                 //   : { instrumentIndex: 0, itemIndex: -1 };
                 const selectedItem = (() => {
                   if (formattedInstruments.length > 0) {
-                    const instrumentIndex = formattedInstruments.findIndex(instr => (instr.instrumentNumber.localeCompare(this.props.selected.condition.instrumentIndex) === 0));
+                    const instrumentIndex = formattedInstruments.findIndex(
+                      instr => (instr.instrumentNumber.localeCompare(
+                        this.props.selected.condition.instrumentIndex,
+                      ) === 0
+                      ),
+                    );
                     const conditionFound = instrumentIndex > -1
-                      ? formattedInstruments[instrumentIndex].conditions.findIndex(cond => (cond.id === this.props.selected.condition.itemIndex))
+                      ? formattedInstruments[instrumentIndex].conditions.findIndex(
+                        cond => (cond.id === this.props.selected.condition.itemIndex),
+                      )
                       : 0;
-                    return instrumentIndex >= 0 ? ({ instrumentIndex, itemIndex: conditionFound }) : ({ instrumentIndex: 0, itemIndex: -1 });
+                    return instrumentIndex >= 0
+                      ? ({ instrumentIndex, itemIndex: conditionFound })
+                      : ({ instrumentIndex: 0, itemIndex: -1 });
                   }
                   return ({ instrumentIndex: 0, itemIndex: -1 });
                 })();
