@@ -43,8 +43,8 @@ const ViewOne = props => (
           const date = new Date(props.lastUpdated);
           const dateStr = [
             date.getUTCFullYear(),
-            (`0${date.getUTCMonth() + 1}`).slice(-2),
-            (`0${date.getUTCDate()}`).slice(-2),
+            (date.getUTCMonth() + 1).toString().padStart(2, '0'),
+            date.getUTCDate().toString().padStart(2, '0'),
           ].join('-');
 
           return <span>{text}&nbsp;{dateStr}.</span>;
