@@ -340,7 +340,9 @@ class App extends React.PureComponent {
                       instruments, selected.feature,
                     );
                     let companyArray = [];
-                    if (data.getProjectById && data.getProjectById.companies && data.getProjectById.companies.length > 0) {
+                    if (data.getProjectById
+                      && data.getProjectById.companies
+                      && data.getProjectById.companies.length > 0) {
                       companyArray = data.getProjectById.companies.reduce((acc, company) => {
                         acc.push(company.name);
                         return acc;
