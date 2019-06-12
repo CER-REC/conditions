@@ -38,7 +38,18 @@ const ViewOne = props => (
   <section className={classNames('ViewOne', { layoutOnly: props.layoutOnly })}>
     <section className="introduction">
       <FormattedMessage id="views.view1.header.title" tagName="h1" />
-      <FormattedMessage id="views.view1.header.subtitle" />
+      <FormattedMessage id="views.view1.header.subtitle">
+        {(text) => {
+          const date = new Date(props.lastUpdated);
+          const dateStr = [
+            date.getUTCFullYear(),
+            (`0${date.getUTCMonth() + 1}`).slice(-2),
+            (`0${date.getUTCDate()}`).slice(-2),
+          ].join('-');
+
+          return <span>{text}&nbsp;{dateStr}.</span>;
+        }}
+      </FormattedMessage>
     </section>
     <section className="explorer">
       <ConditionExplorer
@@ -69,11 +80,13 @@ ViewOne.propTypes = {
   beginTutorial: PropTypes.func.isRequired,
   layoutOnly: PropTypes.bool,
   physicsPaused: PropTypes.bool,
+  lastUpdated: PropTypes.string,
 };
 
 ViewOne.defaultProps = {
   layoutOnly: PropTypes.false,
   physicsPaused: false,
+  lastUpdated: '1970-01-01T00:00:00Z',
 };
 
 export const ViewOneUnconnected = props => (

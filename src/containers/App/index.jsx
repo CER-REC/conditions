@@ -9,7 +9,7 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider, FormattedMessage } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 
 import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
@@ -21,7 +21,6 @@ import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
-import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -33,6 +32,7 @@ import createStore from '../../Store';
 import {
   browseByType,
   allConditionsPerYearType,
+  allConfigurationDataType,
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
@@ -407,6 +407,7 @@ class App extends React.PureComponent {
               transitionState > transitionStates.view1
               && transitionState !== transitionStates.view1Reset
             )}
+            lastUpdated={this.props.allConfigurationData.lastUpdated}
           />
           <section className="appControls">
             <BrowseBy
@@ -478,20 +479,6 @@ class App extends React.PureComponent {
               )
               : null}
           </section>
-          <Query query={getDateDataUpdated}>
-            {(dateQProps) => {
-              const { loading: dateLoading, error: errorDateQuery, data: dateData } = dateQProps;
-              if (dateLoading) return 'Loading Date';
-              if (errorDateQuery) return 'Error Occured';
-              const dateOfUpdate = new Date(dateData.allConfigurationData.lastUpdated);
-              return (
-                <div className="DateUpdated">
-                  <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
-                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth() + 1} -`} ${dateOfUpdate.getDate()}`}</h1>
-                </div>
-              );
-            }}
-          </Query>
         </div>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
@@ -523,6 +510,7 @@ App.propTypes = {
     }).isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
+  allConfigurationData: allConfigurationDataType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -580,7 +568,7 @@ export default props => (
                   return (
                     <ConnectedApp
                       allConditionsPerYear={conditionsData.conditionsPerYear}
-                      configData={configData.allConfigurationData}
+                      allConfigurationData={configData.allConfigurationData}
                       {...props}
                     />
                   );

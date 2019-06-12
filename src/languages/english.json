@@ -457,13 +457,10 @@
     }
   },
   "views": {
-    "app": {
-      "dataLastUpdated" : "Data Last Updated:"
-    },
     "view1": {
       "header": {
         "title": "Conditions on NEB-regulated energy projects",
-        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation."
+        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation. The last update was:"
       }
     },
     "view3": {
