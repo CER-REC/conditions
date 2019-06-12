@@ -27,6 +27,7 @@ class WheelList extends React.Component {
         )].name;
         return (
           <span
+            title={text}
             className={offsetClasses[Math.abs(offset)]}
             style={{ width: `${props.textClippingRadius}%` }}
             key={`${text}-${offset}`}
