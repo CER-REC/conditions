@@ -77,3 +77,5 @@ export const provinces = {
   'Atlantic provinces and Québec': 'ATL-Q',
   'Other provinces and territories': 'OtherProvinces',
 };
+
+export const regDocURL = 'https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=';

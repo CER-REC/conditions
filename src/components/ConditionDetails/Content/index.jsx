@@ -8,6 +8,7 @@ import './styles.scss';
 
 import ContentBlock from '../ContentBlock';
 import RegDocsPopup from '../../RegDocsPopup';
+import { regDocURL } from '../../../constants';
 
 class Content extends React.PureComponent {
   constructor(props) {
@@ -57,7 +58,7 @@ class Content extends React.PureComponent {
         isOpen={this.state.isIntermediatePopupOpen}
         closeModal={this.closeRegDocPopup}
         instrument={instrumentNumber}
-        regdocsUrl="https://www.example.com"
+        regdocsUrl={`${regDocURL}${instrumentNumber}`}
       />
     </div>
   )
