@@ -33,10 +33,14 @@ $states: (
     ),
     ".ViewTwo": (pointer-events: none),
     ".ViewTwo .header": (opacity: 0),
-    ".ViewTwo .wheel": (opacity: 0),
+    ".ViewTwo .wheel .MovingContainer": (opacity: 0),
+    ".ViewTwo .wheel .pullToSpinContainer": (opacity: 0),
+    ".ViewTwo .wheel .listContainer": (opacity: 0),
+    ".ViewTwo .wheel .labelContainer": (opacity: 0),
+    ".ViewTwo .wheel .GreyPipe": (opacity: 0),
+
     ".ViewTwo .companyBreakdown": (opacity: 0),
     ".ViewTwo .menus": (opacity: 0),
-    ".ViewTwo .menus .keywordExplorerCircle": (opacity: 0),
     ".ViewTwo .legend": (opacity: 0),
     ".ViewTwo .legend .AssociatedComp": (opacity: 0),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: none),
@@ -128,6 +132,8 @@ $states: (
     ".guideTranslate": (transform: translate(80%, 10%)),
     ".ConditionDetails .listPane": (opacity: $faded),
     ".ConditionDetails .ProjectHeader": (opacity: $faded),
+    ".ViewTwo .wheel .labelContainer": (opacity: 1),
+    ".ViewTwo .wheel .GreyPipe": (opacity: 1),
     ".ViewTwo .companyBreakdown": (opacity: 1),
   ),
   6: (
@@ -136,7 +142,9 @@ $states: (
     ".appControls .BrowseByBtn.company": (opacity: 0),
     ".appControls .BrowseByBtn.location": (opacity: 0),
     ".ViewTwo .companyBreakdown": (opacity: $faded),
-    ".ViewTwo .wheel": (opacity: 1),
+    ".ViewTwo .wheel .MovingContainer": (opacity: 1),
+    ".ViewTwo .wheel .listContainer": (opacity: 1),
+    ".ViewTwo .wheel .pullToSpinContainer": (opacity: 1),
   ),
   7: (
     ".guideWrapper": (
@@ -159,7 +167,6 @@ $states: (
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: auto),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: auto),
     ".ViewTwo .header": (opacity: 1),
-    ".ViewTwo .wheel": (opacity: 1),
     ".ViewTwo .companyBreakdown": (opacity: 1),
     ".ViewTwo .legend": (opacity: 1),
     ".ViewTwo .legend .AssociatedComp": (opacity: 1),
@@ -196,8 +203,10 @@ $states: (
     ".ViewTwo": (
       transition: "opacity #{$defaultTransition}",
     ),
-    ".ViewTwo .menus": (opacity: 1),
-    ".ViewTwo .menus .keywordExplorerCircle": (opacity: 1),
+    ".ViewTwo .menus": (
+      opacity: 1,
+      transition: opacity $fastestEnd,
+    ),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: all),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: all),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List-Item-Content": (pointer-events: auto),
