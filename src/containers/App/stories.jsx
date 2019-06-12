@@ -15,10 +15,10 @@ storiesForView('Containers|App', module, ReadMe)
     <App {...props} />
   ))
   .add('view 2', () => {
-    AppStore.dispatch(setTransitionState(7));
+    AppStore.dispatch(setTransitionState(8));
     return <App {...props} />;
   })
   .add('view 3', () => {
-    AppStore.dispatch(setTransitionState(9));
+    AppStore.dispatch(setTransitionState(10));
     return <App {...props} />;
   });
