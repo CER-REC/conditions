@@ -35,14 +35,14 @@ class ShortcutInfoBar extends React.PureComponent {
       ? null
       : (
         <div className="InfoBar">
-          <div className="About">
+          <div className="About" {...handleInteraction(this.props.jumpToAbout)}>
             <button
               type="button"
               onClick={this.props.jumpToAbout}
             >
               About this Visualization
             </button>
-            <CircleContainer className="AngleDoubleDown" size={20} onClick={this.props.jumpToAbout}>
+            <CircleContainer className="AngleDoubleDown" size={20}>
               <Icon color="#D1057A" size="1x" icon="angle-double-down" prefix="fas" />
             </CircleContainer>
           </div>
@@ -53,13 +53,12 @@ class ShortcutInfoBar extends React.PureComponent {
             <ShareIcon target="facebook" />
             <ShareIcon target="linkedin" />
           </div>
-          <div className="Icons">
+          <div className="Icons" {...handleInteraction(this.props.openDataModal)}>
             Download:&nbsp;
             <svg className="downloadIcons" width="40" height="16">
               <g
                 key="file-download"
                 icon="file-download"
-                {...handleInteraction(this.props.openDataModal)}
               >
                 <path fill="#666" d="M2.9,13.3s-.4-.3,0-.3H4.5V9.2c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L6.1,16Z" />
                 <polygon fill="none" points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0" />
