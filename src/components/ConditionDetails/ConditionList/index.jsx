@@ -9,8 +9,9 @@ import BarContainer from '../../BarContainer';
 
 class ConditionList extends React.PureComponent {
   onChange = (i) => {
-    const { instrumentIndex, itemIndex } = this.props.items[i];
-    this.props.updateSelectedItem({ instrumentIndex, itemIndex });
+    const { instrumentNumber, id } = this.props.items[i];
+    console.log({ instrumentIndex: instrumentNumber, itemIndex: id });
+    this.props.updateSelectedItem({ instrumentIndex: instrumentNumber, itemIndex: id });
   }
 
   render() {

@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
 export default gql`
-  query getProject($projectId: Int!){
+  query getConditionDetails($projectId: Int!){
     getProjectById(id:$projectId) {
       shortName{
         en

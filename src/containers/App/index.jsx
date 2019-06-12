@@ -342,12 +342,22 @@ class App extends React.PureComponent {
                   && condDetQData.getProjectById;
                 const shortName = loadedCondDetails && loadedCondDetails.shortName;
                 const instruments = loadedCondDetails && loadedCondDetails.instruments;
-                const formattedInstrument = instruments
+                const formattedInstruments = instruments
                   ? formatConditionDetails(instruments, selected.feature)
                   : [];
-                const selectedItem = formattedInstrument.length > 0
-                  ? this.props.selected.condition
-                  : { instrumentIndex: 0, itemIndex: -1 };
+                // const selectedItem = formattedInstruments.length > 0
+                //   ? this.props.selected.ßcondition
+                //   : { instrumentIndex: 0, itemIndex: -1 };
+                const selectedItem = (() => {
+                  if (formattedInstruments.length > 0) {
+                    const instrumentIndex = formattedInstruments.findIndex(instr => (instr.instrumentNumber.localeCompare(this.props.selected.condition.instrumentIndex) === 0));
+                    const conditionFound = instrumentIndex > -1
+                      ? formattedInstruments[instrumentIndex].conditions.findIndex(cond => (cond.id === this.props.selected.condition.itemIndex))
+                      : 0;
+                    return instrumentIndex >= 0 ? ({ instrumentIndex, itemIndex: conditionFound }) : ({ instrumentIndex: 0, itemIndex: -1 });
+                  }
+                  return ({ instrumentIndex: 0, itemIndex: -1 });
+                })();
 
                 return (
                   <ConditionDetails
@@ -360,7 +370,7 @@ class App extends React.PureComponent {
                       include: this.props.included,
                       exclude: this.props.excluded,
                     }}
-                    data={formattedInstrument}
+                    data={formattedInstruments}
                     browseBy={this.props.browseBy}
                     {...conditionDetailsViewProps}
                   />

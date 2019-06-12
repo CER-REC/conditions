@@ -29,9 +29,10 @@ export default (instruments, selectedFeature) => (
       //     fillAcc.push(features[selectedFeature][subFeature]);
       //     return fillAcc;
       //   }, []);
+      const { id } = condition;
 
       const fill = ['red'];
-
+      
       const details = {
         // TODO: Handle multiple themes (do any actually exist?)
         theme: `theme.${condition.theme[0]}`,
@@ -43,6 +44,7 @@ export default (instruments, selectedFeature) => (
 
       // TODO: keywords needs to be matched search keywords...
       acc.push({
+        id,
         fill,
         details,
         binnedValue: bins[condition.textLength],
