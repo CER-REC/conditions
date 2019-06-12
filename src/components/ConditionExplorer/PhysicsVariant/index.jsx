@@ -22,10 +22,13 @@ export default class PhysicsVariant extends React.PureComponent {
     onKeywordClick: PropTypes.func.isRequired,
     setGuidePosition: PropTypes.func.isRequired,
     setGuideExpanded: PropTypes.func.isRequired,
+    beginTutorial: PropTypes.func.isRequired,
+    physicsPaused: PropTypes.bool,
   };
 
   static defaultProps = {
     selectedKeywordId: -1,
+    physicsPaused: false,
   };
 
   constructor(props) {
@@ -57,7 +60,21 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.Events.on(this.engine, 'afterUpdate', this.onUpdate);
     Matter.Events.on(this.engine, 'collisionStart', this.onCollision);
     Matter.Runner.run(Matter.Runner.create(), this.engine);
+
+    this.updateGuidePosition();
     this.loop(window.performance.now());
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.physicsPaused !== this.props.physicsPaused) {
+      if (this.props.physicsPaused) {
+        window.cancelAnimationFrame(this.loopID);
+      } else {
+        // Prevent the engine from thinking we had a really laggy frame and going hyperspeed
+        this.lastTime = window.performance.now();
+        this.loop(this.lastTime);
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -103,15 +120,18 @@ export default class PhysicsVariant extends React.PureComponent {
 
   loop = (currTime) => {
     const deltaTime = currTime - (this.lastTime || 0);
+    this.lastTime = currTime;
+
     Matter.Engine.update(
       this.engine,
       deltaTime,
       this.lastDeltaTime ? (deltaTime / this.lastDeltaTime) : 1,
     );
-    this.lastTime = currTime;
+
+    this.setState(state => ({ renderToggle: !state.renderToggle }));
+
     this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
-    this.setState(state => ({ renderToggle: !state.renderToggle }));
   }
 
   updateGuidePosition = () => this.props.setGuidePosition(
@@ -121,6 +141,8 @@ export default class PhysicsVariant extends React.PureComponent {
   );
 
   onGuideMouseDown = () => {
+    if (this.props.physicsPaused) { return; }
+
     this.guideClickDetection = { ...this.guide.body.position };
     Matter.Body.setStatic(this.guide.outline.body, false);
   };
@@ -151,7 +173,12 @@ export default class PhysicsVariant extends React.PureComponent {
     if (distance.x > 5 || distance.y > 5) { return; }
 
     e.stopPropagation();
-    if (!this.guide.isExpanded) {
+    if (this.props.selectedKeywordId && !this.guide.isExpanded) {
+      this.updateGuidePosition();
+      this.props.beginTutorial();
+    } else if (this.guide.isExpanded) {
+      this.closeGuide();
+    } else {
       this.guide.open(this.getCenterCoordinates())
         .then(() => { this.props.setGuideExpanded(true); })
         .finally(() => { this.updateGuidePosition(); });
@@ -161,9 +188,14 @@ export default class PhysicsVariant extends React.PureComponent {
           body.addCollisionMask(guideCategory);
         }
       });
-    } else {
+    }
+  };
+
+  onKeywordClick = (e) => {
+    if (this.guide.isExpanded) {
       this.closeGuide();
     }
+    this.props.onKeywordClick(e);
   };
 
   render() {
@@ -192,7 +224,7 @@ export default class PhysicsVariant extends React.PureComponent {
             )}
             data-id={instance.body.id}
             data-keyword={instance.keyword.value}
-            onClick={this.props.onKeywordClick}
+            onClick={this.onKeywordClick}
           >
             <g
               transform={`

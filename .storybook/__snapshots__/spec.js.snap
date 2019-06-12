@@ -5521,7 +5521,7 @@ exports[`Storyshots Components|Guide default 1`] = `
         className="wedge"
         style={
           Object {
-            "transform": "scale(1, 1)",
+            "transform": "scale(0.8, 0.8)",
           }
         }
       >
@@ -5562,6 +5562,11 @@ exports[`Storyshots Components|Guide default 1`] = `
         <span
           className="hidden"
         >
+          Click to continue
+        </span>
+        <span
+          className="hidden"
+        >
           Here is the full legal text of the condition you selected
         </span>
         <span
@@ -5580,12 +5585,12 @@ exports[`Storyshots Components|Guide default 1`] = `
           Scroll to browse other projects by this company
         </span>
         <span
-          className="hidden"
+          className=""
         >
           Spin wheel to browse companies
         </span>
         <span
-          className=""
+          className="hidden"
         >
           Look around to discover more!
         </span>
