@@ -84,6 +84,18 @@ export default class PhysicsVariant extends React.PureComponent {
     this.loop(window.performance.now());
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.physicsPaused !== this.props.physicsPaused) {
+      if (this.props.physicsPaused) {
+        window.cancelAnimationFrame(this.loopID);
+      } else {
+        // Prevent the engine from thinking we had a really laggy frame and going hyperspeed
+        this.lastTime = window.performance.now();
+        this.loop(this.lastTime);
+      }
+    }
+  }
+
   componentWillUnmount() {
     window.cancelAnimationFrame(this.loopID);
     Matter.Events.off(this.engine, 'afterUpdate', this.onUpdate);
@@ -129,17 +141,14 @@ export default class PhysicsVariant extends React.PureComponent {
     const deltaTime = currTime - (this.lastTime || 0);
     this.lastTime = currTime;
 
-    if (!this.props.physicsPaused) {
-      Matter.Engine.update(
-        this.engine,
-        deltaTime,
-        this.lastDeltaTime ? (deltaTime / this.lastDeltaTime) : 1,
-      );
+    Matter.Engine.update(
+      this.engine,
+      deltaTime,
+      this.lastDeltaTime ? (deltaTime / this.lastDeltaTime) : 1,
+    );
 
-      this.setState(state => ({ renderToggle: !state.renderToggle }));
-
-      this.updateGuideMessage(currTime);
-    }
+    this.updateGuideMessage(currTime);
+    this.setState(state => ({ renderToggle: !state.renderToggle }));
 
     this.lastDeltaTime = deltaTime;
     this.loopID = window.requestAnimationFrame(this.loop);
@@ -194,10 +203,12 @@ export default class PhysicsVariant extends React.PureComponent {
     if (distance.x > 5 || distance.y > 5) { return; }
 
     e.stopPropagation();
-    if (this.props.selectedKeywordId > -1) {
+    if (this.props.selectedKeywordId > -1 && !this.guide.isExpanded) {
       this.updateGuidePosition();
       this.props.beginTutorial();
-    } else if (!this.guide.isExpanded) {
+    } else if (this.guide.isExpanded) {
+      this.closeGuide();
+    } else {
       this.guide.open(this.getCenterCoordinates())
         .then(() => { this.props.setGuideExpanded(true); })
         .finally(() => { this.updateGuidePosition(); });
@@ -207,9 +218,14 @@ export default class PhysicsVariant extends React.PureComponent {
           body.addCollisionMask(guideCategory);
         }
       });
-    } else {
+    }
+  };
+
+  onKeywordClick = (e) => {
+    if (this.guide.isExpanded) {
       this.closeGuide();
     }
+    this.props.onKeywordClick(e);
   };
 
   updateGuideMessage = (currTime) => {
@@ -292,7 +308,7 @@ export default class PhysicsVariant extends React.PureComponent {
             )}
             data-id={instance.body.id}
             data-keyword={instance.keyword.value}
-            onClick={this.props.onKeywordClick}
+            onClick={this.onKeywordClick}
           >
             <g
               transform={`
