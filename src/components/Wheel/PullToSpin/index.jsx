@@ -8,7 +8,7 @@ import handleInteraction from '../../../utilities/handleInteraction';
 
 const PullToSpin = (props) => {
   const [{ animation, triggered }, setState] = useState({ animation: false, triggered: false });
-  console.dir('Original State: ' + animation + ', ' + triggered);
+  console.dir(`Original State: ${animation}, ${triggered}`);
 
   const { intl } = props;
 
@@ -17,19 +17,9 @@ const PullToSpin = (props) => {
     if (x < 0) return { x: 0, y: 0, rot: 0 };
     return { x, y: -x, rot: (x / 56) * 15 };
   };
-  const onSpinClick = () => {
-    setState({ animation, triggered: !triggered });
-
-    props.onClickSpin();
-  };
-  // const { transform } = useSpring({
-  //   transform: triggered ? 'translate(56, -56) rotate(15)' : 'translate(0, 0) rotate(0)',
-  //   config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
-  //   onRest: () => { set(false); if (triggered) props.onClickSpin(); },
-  // });
 
   const [{ x, transform }, set] = useSpring(() => ({
-    transform: 'translate(56, -56) rotate(15)', // : 'translate(0, 0) rotate(0)',
+    transform: 'translate(56, -56) rotate(15)',
     x: 0,
     config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
   }));
@@ -38,23 +28,16 @@ const PullToSpin = (props) => {
   const bind = useGesture({
     onDrag: ({ down, delta }) => {
       // Set the animation state to be false to have us on the drag animation
-      setState({ animation: false, triggered });
-
-      set({
-        x: down ? delta[0] : 0,
-        config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
-        onRest: () => { console.dir('on rest cleared..................'); },
-      });
+      setState({ animation: false, triggered: false });
+      set({ x: down ? delta[0] : 0 });
     },
     onDragEnd: ({ delta }) => {
       if (delta[0] < 1 && delta[1] < 1) {
         // This means we are in the click state
         // Set the animation to be true
-        setState({ animation: true, triggered: true }); // the triggered is just true for now
-        console.dir('CLICK');
+        setState({ animation: true, triggered: true });
         set({
-          transform: 'translate(56, -56) rotate(15)', // : 'translate(0, 0) rotate(0)',
-          config: { tension: 350, friction: 27, easing: 'easeInOutQuart' },
+          transform: 'translate(56, -56) rotate(15)',
           onRest: () => { setState({ animation: true, triggered: false }); set({ transform: 'translate(0, 0) rotate(0)' }); },
         });
       } else {
