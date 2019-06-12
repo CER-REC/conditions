@@ -339,19 +339,25 @@ class App extends React.PureComponent {
                     const formattedInstrument = formatConditionDetails(
                       instruments, selected.feature,
                     );
+                    let companyArray = [];
+                    if (data.getProjectById && data.getProjectById.companies && data.getProjectById.companies.length > 0) {
+                      companyArray = data.getProjectById.companies.reduce((acc, company) => {
+                        acc.push(company.name);
+                        return acc;
+                      }, []);
+                    }
                     return (
                       <ConditionDetails
                         selectedItem={this.props.selected.condition}
                         selectedProject={shortName.en}
                         updateSelectedItem={this.props.setSelectedCondition}
-                        openIntermediatePopup={this.props.openIntermediatePopup}
-                        openProjectDetails={this.props.openProjectDetails}
                         toggleExpanded={noop}
                         searchKeywords={{
                           include: this.props.included,
                           exclude: this.props.excluded,
                         }}
                         data={formattedInstrument}
+                        companies={companyArray}
                         browseBy={this.props.browseBy}
                         {...conditionDetailsViewProps}
                       />

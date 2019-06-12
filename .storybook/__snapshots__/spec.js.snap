@@ -1449,6 +1449,87 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             </span>
           </h2>
         </button>
+        <dialog
+          className="Modal CompanyPopup"
+          onClose={[Function]}
+        >
+          <div
+            className="Company"
+          >
+            <h2>
+              Full Project Name:
+               
+              <strong>
+                Keystone XL
+              </strong>
+            </h2>
+            <h3>
+              Companies associated with this project
+            </h3>
+            <ul
+              className="companies"
+            />
+            <h4>
+              Why is there more than one company associated with this project?
+            </h4>
+            <p>
+              There are instances when more than one company has obligations related to a project.  Examples include:
+            </p>
+            <ul
+              className="bullets"
+            >
+              <li>
+                an agreement between one company to sell and another company to purchase a pipeline;
+              </li>
+              <li>
+                where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+              </li>
+              <li>
+                NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+              </li>
+            </ul>
+            <button
+              className="PopupBtn"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Back
+              <svg
+                className="buttonIcon"
+                viewBox="0 0 100 100"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                />
+                <path
+                  d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                  fill="white"
+                  transform="rotate(45 50 50)"
+                />
+              </svg>
+            </button>
+          </div>
+        </dialog>
         <button
           className="toggleExpand"
           focusable={true}
@@ -1815,16 +1896,180 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               Instrument Number
             </span>
             : 
-            <button
-              className="instrumentLink"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              XO-003-2018
-            </button>
+            <div>
+              <button
+                className="instrumentLink"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                XO-003-2018
+              </button>
+              <dialog
+                className="Modal RegDocsPopup"
+                onClose={[Function]}
+              >
+                <div
+                  className="RegDocs"
+                >
+                  <h3>
+                    Search for instrument 
+                    <strong>
+                      #
+                      XO-003-2018
+                    </strong>
+                     in 
+                    <strong>
+                      Regdocs...
+                    </strong>
+                  </h3>
+                  <p
+                    className="iconContainer"
+                  >
+                    <svg
+                      className="checkIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <polyline
+                        points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+                      />
+                    </svg>
+                    <span>
+                      Instrument found, click to open document.
+                    </span>
+                  </p>
+                  <a
+                    className="PopupBtn"
+                    href="https://www.example.com"
+                  >
+                    <div>
+                      Open in current tab
+                    </div>
+                    <svg
+                      className="buttonIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <path
+                        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    className="PopupBtn"
+                    href="https://www.example.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <div>
+                      Open in new tab
+                    </div>
+                    <svg
+                      className="buttonIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <path
+                        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                  <button
+                    className="PopupBtn cancel"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Cancel
+                    <svg
+                      className="buttonIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <path
+                        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                        fill="white"
+                        transform="rotate(45 50 50)"
+                      />
+                    </svg>
+                  </button>
+                  <h4>
+                    What is RegDocs?
+                  </h4>
+                  <p>
+                    RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+                  </p>
+                </div>
+              </dialog>
+            </div>
           </div>
           <div
             className="ContentBlock half"
@@ -1985,6 +2230,87 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               </span>
             </h2>
           </button>
+          <dialog
+            className="Modal CompanyPopup"
+            onClose={[Function]}
+          >
+            <div
+              className="Company"
+            >
+              <h2>
+                Full Project Name:
+                 
+                <strong>
+                  Keystone XL
+                </strong>
+              </h2>
+              <h3>
+                Companies associated with this project
+              </h3>
+              <ul
+                className="companies"
+              />
+              <h4>
+                Why is there more than one company associated with this project?
+              </h4>
+              <p>
+                There are instances when more than one company has obligations related to a project.  Examples include:
+              </p>
+              <ul
+                className="bullets"
+              >
+                <li>
+                  an agreement between one company to sell and another company to purchase a pipeline;
+                </li>
+                <li>
+                  where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+                </li>
+                <li>
+                  NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+                </li>
+              </ul>
+              <button
+                className="PopupBtn"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Back
+                <svg
+                  className="buttonIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <path
+                    d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                    fill="white"
+                    transform="rotate(45 50 50)"
+                  />
+                </svg>
+              </button>
+            </div>
+          </dialog>
           <button
             className="toggleExpand"
             focusable={true}
@@ -2351,16 +2677,180 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 Instrument Number
               </span>
               : 
-              <button
-                className="instrumentLink"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                XO-003-2018
-              </button>
+              <div>
+                <button
+                  className="instrumentLink"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  XO-003-2018
+                </button>
+                <dialog
+                  className="Modal RegDocsPopup"
+                  onClose={[Function]}
+                >
+                  <div
+                    className="RegDocs"
+                  >
+                    <h3>
+                      Search for instrument 
+                      <strong>
+                        #
+                        XO-003-2018
+                      </strong>
+                       in 
+                      <strong>
+                        Regdocs...
+                      </strong>
+                    </h3>
+                    <p
+                      className="iconContainer"
+                    >
+                      <svg
+                        className="checkIcon"
+                        viewBox="0 0 100 100"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                        />
+                        <polyline
+                          points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+                        />
+                      </svg>
+                      <span>
+                        Instrument found, click to open document.
+                      </span>
+                    </p>
+                    <a
+                      className="PopupBtn"
+                      href="https://www.example.com"
+                    >
+                      <div>
+                        Open in current tab
+                      </div>
+                      <svg
+                        className="buttonIcon"
+                        viewBox="0 0 100 100"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                        />
+                        <path
+                          d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      className="PopupBtn"
+                      href="https://www.example.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <div>
+                        Open in new tab
+                      </div>
+                      <svg
+                        className="buttonIcon"
+                        viewBox="0 0 100 100"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                        />
+                        <path
+                          d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                    <button
+                      className="PopupBtn cancel"
+                      focusable={true}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Cancel
+                      <svg
+                        className="buttonIcon"
+                        viewBox="0 0 100 100"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                        />
+                        <path
+                          d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                          fill="white"
+                          transform="rotate(45 50 50)"
+                        />
+                      </svg>
+                    </button>
+                    <h4>
+                      What is RegDocs?
+                    </h4>
+                    <p>
+                      RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+                    </p>
+                  </div>
+                </dialog>
+              </div>
             </div>
             <div
               className="ContentBlock half"
@@ -2863,16 +3353,180 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               Instrument Number
             </span>
             : 
-            <button
-              className="instrumentLink"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              XO-003-2018
-            </button>
+            <div>
+              <button
+                className="instrumentLink"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                XO-003-2018
+              </button>
+              <dialog
+                className="Modal RegDocsPopup"
+                onClose={[Function]}
+              >
+                <div
+                  className="RegDocs"
+                >
+                  <h3>
+                    Search for instrument 
+                    <strong>
+                      #
+                      XO-003-2018
+                    </strong>
+                     in 
+                    <strong>
+                      Regdocs...
+                    </strong>
+                  </h3>
+                  <p
+                    className="iconContainer"
+                  >
+                    <svg
+                      className="checkIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <polyline
+                        points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+                      />
+                    </svg>
+                    <span>
+                      Instrument found, click to open document.
+                    </span>
+                  </p>
+                  <a
+                    className="PopupBtn"
+                    href="https://www.example.com"
+                  >
+                    <div>
+                      Open in current tab
+                    </div>
+                    <svg
+                      className="buttonIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <path
+                        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    className="PopupBtn"
+                    href="https://www.example.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <div>
+                      Open in new tab
+                    </div>
+                    <svg
+                      className="buttonIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <path
+                        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                  <button
+                    className="PopupBtn cancel"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Cancel
+                    <svg
+                      className="buttonIcon"
+                      viewBox="0 0 100 100"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                      />
+                      <path
+                        d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                        fill="white"
+                        transform="rotate(45 50 50)"
+                      />
+                    </svg>
+                  </button>
+                  <h4>
+                    What is RegDocs?
+                  </h4>
+                  <p>
+                    RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+                  </p>
+                </div>
+              </dialog>
+            </div>
           </div>
           <div
             className="ContentBlock half"
@@ -3314,16 +3968,180 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           Instrument Number
         </span>
         : 
-        <button
-          className="instrumentLink"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          XO-001-2018
-        </button>
+        <div>
+          <button
+            className="instrumentLink"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            XO-001-2018
+          </button>
+          <dialog
+            className="Modal RegDocsPopup"
+            onClose={[Function]}
+          >
+            <div
+              className="RegDocs"
+            >
+              <h3>
+                Search for instrument 
+                <strong>
+                  #
+                  XO-001-2018
+                </strong>
+                 in 
+                <strong>
+                  Regdocs...
+                </strong>
+              </h3>
+              <p
+                className="iconContainer"
+              >
+                <svg
+                  className="checkIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <polyline
+                    points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+                  />
+                </svg>
+                <span>
+                  Instrument found, click to open document.
+                </span>
+              </p>
+              <a
+                className="PopupBtn"
+                href="https://www.example.com"
+              >
+                <div>
+                  Open in current tab
+                </div>
+                <svg
+                  className="buttonIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <path
+                    d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+              <a
+                className="PopupBtn"
+                href="https://www.example.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div>
+                  Open in new tab
+                </div>
+                <svg
+                  className="buttonIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <path
+                    d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+              <button
+                className="PopupBtn cancel"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+                <svg
+                  className="buttonIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <path
+                    d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                    fill="white"
+                    transform="rotate(45 50 50)"
+                  />
+                </svg>
+              </button>
+              <h4>
+                What is RegDocs?
+              </h4>
+              <p>
+                RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+              </p>
+            </div>
+          </dialog>
+        </div>
       </div>
       <div
         className="ContentBlock "
@@ -3422,16 +4240,180 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           Instrument Number
         </span>
         : 
-        <button
-          className="instrumentLink"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          XO-001-2018
-        </button>
+        <div>
+          <button
+            className="instrumentLink"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            XO-001-2018
+          </button>
+          <dialog
+            className="Modal RegDocsPopup"
+            onClose={[Function]}
+          >
+            <div
+              className="RegDocs"
+            >
+              <h3>
+                Search for instrument 
+                <strong>
+                  #
+                  XO-001-2018
+                </strong>
+                 in 
+                <strong>
+                  Regdocs...
+                </strong>
+              </h3>
+              <p
+                className="iconContainer"
+              >
+                <svg
+                  className="checkIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <polyline
+                    points="33 45, 45 55, 70 31, 76 37, 45 72, 25 53"
+                  />
+                </svg>
+                <span>
+                  Instrument found, click to open document.
+                </span>
+              </p>
+              <a
+                className="PopupBtn"
+                href="https://www.example.com"
+              >
+                <div>
+                  Open in current tab
+                </div>
+                <svg
+                  className="buttonIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <path
+                    d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+              <a
+                className="PopupBtn"
+                href="https://www.example.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div>
+                  Open in new tab
+                </div>
+                <svg
+                  className="buttonIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <path
+                    d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+              <button
+                className="PopupBtn cancel"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+                <svg
+                  className="buttonIcon"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <path
+                    d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                    fill="white"
+                    transform="rotate(45 50 50)"
+                  />
+                </svg>
+              </button>
+              <h4>
+                What is RegDocs?
+              </h4>
+              <p>
+                RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+              </p>
+            </div>
+          </dialog>
+        </div>
       </div>
       <div
         className="ContentBlock half"
@@ -3725,6 +4707,87 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
           </span>
         </h2>
       </button>
+      <dialog
+        className="Modal CompanyPopup"
+        onClose={[Function]}
+      >
+        <div
+          className="Company"
+        >
+          <h2>
+            Full Project Name:
+             
+            <strong>
+              Keystone XL
+            </strong>
+          </h2>
+          <h3>
+            Companies associated with this project
+          </h3>
+          <ul
+            className="companies"
+          />
+          <h4>
+            Why is there more than one company associated with this project?
+          </h4>
+          <p>
+            There are instances when more than one company has obligations related to a project.  Examples include:
+          </p>
+          <ul
+            className="bullets"
+          >
+            <li>
+              an agreement between one company to sell and another company to purchase a pipeline;
+            </li>
+            <li>
+              where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+            </li>
+            <li>
+              NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+            </li>
+          </ul>
+          <button
+            className="PopupBtn"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Back
+            <svg
+              className="buttonIcon"
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="40"
+              />
+              <path
+                d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                fill="white"
+                transform="rotate(45 50 50)"
+              />
+            </svg>
+          </button>
+        </div>
+      </dialog>
       <button
         className="toggleExpand"
         focusable={true}
@@ -3822,6 +4885,87 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
           </span>
         </h2>
       </button>
+      <dialog
+        className="Modal CompanyPopup"
+        onClose={[Function]}
+      >
+        <div
+          className="Company"
+        >
+          <h2>
+            Full Project Name:
+             
+            <strong>
+              Keystone XL
+            </strong>
+          </h2>
+          <h3>
+            Companies associated with this project
+          </h3>
+          <ul
+            className="companies"
+          />
+          <h4>
+            Why is there more than one company associated with this project?
+          </h4>
+          <p>
+            There are instances when more than one company has obligations related to a project.  Examples include:
+          </p>
+          <ul
+            className="bullets"
+          >
+            <li>
+              an agreement between one company to sell and another company to purchase a pipeline;
+            </li>
+            <li>
+              where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
+            </li>
+            <li>
+              NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+            </li>
+          </ul>
+          <button
+            className="PopupBtn"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Back
+            <svg
+              className="buttonIcon"
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="40"
+              />
+              <path
+                d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+                fill="white"
+                transform="rotate(45 50 50)"
+              />
+            </svg>
+          </button>
+        </div>
+      </dialog>
       <button
         className="toggleExpand"
         focusable={true}

@@ -21,8 +21,6 @@ describe('Components|ConditionDetails', () => {
 
     beforeEach(() => {
       spy = {
-        openProjectDetails: jest.fn(),
-        openIntermediatePopup: jest.fn(),
         toggleExpanded: jest.fn(),
         updateSelectedItem: jest.fn(),
       };
@@ -37,26 +35,6 @@ describe('Components|ConditionDetails', () => {
     });
 
     shouldBehaveLikeAComponent(ConditionDetails, () => wrapper);
-
-    test('should pass its openProjectDetails callback to the ProjectHeader component', () => {
-      wrapper.find('.ConditionDetails')
-        .find('.main')
-        .find('ProjectHeader')
-        .props()
-        .openProjectDetails('test');
-
-      expect(spy.openProjectDetails).toHaveBeenCalledTimes(1);
-    });
-
-    test('should pass its openIntermediatePopup callback to the Content component', () => {
-      wrapper.find('.ConditionDetails')
-        .find('.main')
-        .find('Content')
-        .props()
-        .openIntermediatePopup();
-
-      expect(spy.openIntermediatePopup).toHaveBeenCalledTimes(1);
-    });
 
     test('should call its toggleExpanded callback', () => {
       wrapper.find('.ConditionDetails')
