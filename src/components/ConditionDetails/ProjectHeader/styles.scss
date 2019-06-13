@@ -34,8 +34,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
-    &:first-child {
-
+    &:first-of-type {
       width: fit-content;
       white-space: nowrap;
       overflow: hidden;

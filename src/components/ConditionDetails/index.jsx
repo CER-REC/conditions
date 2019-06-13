@@ -102,9 +102,13 @@ class ConditionDetails extends React.Component {
       <section className="ConditionDetails">
         <div className={classNames('main', { expanded: this.props.expanded, expandable: this.props.isExpandable })}>
           {this.renderHeader()}
-          <div className="listPane">{this.renderList()}</div>
-          {shouldRenderData
-            ? <div className="contentPane">{this.renderContent(instrument, index)}</div>
+          { shouldRenderData
+            ? (
+              <React.Fragment>
+                <div className="listPane">{this.renderList()}</div>
+                <div className="contentPane">{this.renderContent(instrument, index)}</div>
+              </React.Fragment>
+            )
             : null
           }
         </div>

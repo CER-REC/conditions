@@ -8,22 +8,31 @@ import List from '../../List';
 import BarContainer from '../../BarContainer';
 
 class ConditionList extends React.PureComponent {
+  itemRefs = {};
+
+  scrollBy = (refId) => {
+    this.itemRefs[refId].scrollIntoView({ block: 'center' });
+  }
+
   onChange = (i) => {
-    const { instrumentNumber, id } = this.props.items[i];
-    this.props.updateSelectedItem({ instrumentIndex: instrumentNumber, itemIndex: id });
+    const { instrumentNumber, id, instrumentIndex, itemIndex } = this.props.items[i];
+    this.props.updateSelectedItem({ instrumentNumber, id, instrumentIndex, itemIndex });
+    this.scrollBy(`${instrumentIndex}-${itemIndex}`);
   }
 
   render() {
     const elements = this.props.items.reduce((out, item) => {
       out.push((item.isInstrument)
         ? (
-          <div key={item.instrumentNumber}>
+          // eslint-disable-next-line no-return-assign
+          <div key={item.instrumentNumber} ref={el => (this.itemRefs[`${item.instrumentIndex}-${item.itemIndex}`] = el)}>
             <div className={classNames('barMarker', { marked: item.marked })} />
             <h4>{item.instrumentNumber}</h4>
           </div>
         )
         : (
-          <div key={`${item.instrumentIndex}-${item.itemIndex}`}>
+          // eslint-disable-next-line no-return-assign
+          <div key={`${item.instrumentIndex}-${item.itemIndex}`} ref={el => (this.itemRefs[`${item.instrumentIndex}-${item.itemIndex}`] = el)}>
             <div className={classNames('barMarker', { marked: item.marked })} />
 
             <BarContainer

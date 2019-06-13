@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import ConditionList from '.';
@@ -16,17 +16,13 @@ const data = [
     fill: ['pink'],
     marked: true,
     instrumentIndex: 0,
-    instrumentNumber: 'XO-001-2018',
     itemIndex: 0,
-    id: 0,
   },
   {
     binnedValue: 2,
     fill: ['blue', 'red', 'green'],
     instrumentIndex: 0,
-    instrumentNumber: 'XO-001-2018',
     itemIndex: 1,
-    id: 1,
   },
   {
     isInstrument: true,
@@ -38,17 +34,13 @@ const data = [
     binnedValue: 1,
     fill: ['red'],
     instrumentIndex: 1,
-    instrumentNumber: 'XO-003-2018',
     itemIndex: 0,
-    id: 2,
   },
   {
     binnedValue: 2,
     fill: ['red'],
     instrumentIndex: 1,
-    instrumentNumber: 'XO-003-2018',
     itemIndex: 1,
-    id: 3,
   },
   {
     isInstrument: true,
@@ -61,9 +53,7 @@ const data = [
     fill: ['orange'],
     marked: true,
     instrumentIndex: 2,
-    instrumentNumber: 'XO-005-2018',
     itemIndex: 0,
-    id: 4,
   },
 ];
 
@@ -108,19 +98,35 @@ describe('Components|ConditionDetails/ConditionList', () => {
 
       expect(barItems.length).toBe(3);
     });
+  });
 
+  describe('mounted', () => {
+    let wrapper;
+    let spy;
+
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = mount(
+        <ConditionList
+          {...defaultProps}
+          updateSelectedItem={spy}
+        />,
+      );
+    });
+    
     it('should pass its updateSelectedItem callback to the List component', () => {
+      Element.prototype.scrollIntoView = jest.fn();
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(Element.prototype.scrollIntoView).toHaveBeenCalledTimes(1);
     });
 
     it('should call updateSelectedItem with an instrument index and item index', () => {
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledWith({ instrumentIndex: 'XO-001-2018', itemIndex: 1 });
+      expect(spy).toHaveBeenCalledWith({ instrumentIndex: 0, itemIndex: 1 });
     });
-  });
+  })
 });

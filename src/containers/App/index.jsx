@@ -93,9 +93,12 @@ class App extends React.PureComponent {
       tutorialPlaying: false,
       initialGuidePosition: { x: 0, y: 0 },
       finalGuidePosition: { x: 0, y: 0 },
+      wheelMoving: false,
     };
     this.ref = React.createRef();
   }
+
+  setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
@@ -370,7 +373,7 @@ class App extends React.PureComponent {
       ? {
         isExpandable: true,
         toggleExpanded: this.props.expandDetailView,
-        expanded: this.props.detailViewExpanded,
+        expanded: !this.props.detailViewExpanded,
       } : {};
     return (
       <div
@@ -432,6 +435,8 @@ class App extends React.PureComponent {
           <div style={{ clear: 'both' }} />
           <ViewTwo
             {...viewProps}
+            setWheelMoving={this.setWheelMoving}
+            wheelMoving={this.state.wheelMoving}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
@@ -459,35 +464,12 @@ class App extends React.PureComponent {
                   && condDetQData.getProjectById;
                 const shortName = loadedCondDetails && loadedCondDetails.shortName;
                 const instruments = loadedCondDetails && loadedCondDetails.instruments;
-                const formattedInstruments = instruments
+                const formattedInstruments = instruments && !this.state.wheelMoving
                   ? formatConditionDetails(instruments, selected.feature)
                   : [];
-                // const selectedItem = formattedInstruments.length > 0
-                //   ? this.props.selected.ßcondition
-                //   : { instrumentIndex: 0, itemIndex: -1 };
-                const selectedItem = (() => {
-                  if (formattedInstruments.length > 0) {
-                    const instrumentIndex = formattedInstruments.findIndex(
-                      instr => (instr.instrumentNumber.localeCompare(
-                        this.props.selected.condition.instrumentIndex,
-                      ) === 0
-                      ),
-                    );
-                    const conditionFound = instrumentIndex > -1
-                      ? formattedInstruments[instrumentIndex].conditions.findIndex(
-                        cond => (cond.id === this.props.selected.condition.itemIndex),
-                      )
-                      : 0;
-                    return instrumentIndex >= 0
-                      ? ({ instrumentIndex, itemIndex: conditionFound })
-                      : ({ instrumentIndex: 0, itemIndex: -1 });
-                  }
-                  return ({ instrumentIndex: 0, itemIndex: -1 });
-                })();
-
                 return (
                   <ConditionDetails
-                    selectedItem={selectedItem}
+                    selectedItem={this.props.selected.condition}
                     selectedProject={(shortName && shortName.en) || ''}
                     updateSelectedItem={this.props.setSelectedCondition}
                     openIntermediatePopup={this.props.openIntermediatePopup}
