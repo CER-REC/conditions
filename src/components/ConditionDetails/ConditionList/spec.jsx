@@ -113,7 +113,7 @@ describe('Components|ConditionDetails/ConditionList', () => {
         />,
       );
     });
-    
+
     it('should pass its updateSelectedItem callback to the List component', () => {
       Element.prototype.scrollIntoView = jest.fn();
       wrapper.find('.ConditionList')
@@ -128,5 +128,5 @@ describe('Components|ConditionDetails/ConditionList', () => {
 
       expect(spy).toHaveBeenCalledWith({ instrumentIndex: 0, itemIndex: 1 });
     });
-  })
+  });
 });

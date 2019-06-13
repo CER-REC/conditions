@@ -15,13 +15,6 @@ export default (instruments, selectedFeature) => (
       conditions,
     } = instrument;
 
-    // TODO: This will change when manali updates our GraphQL endpoint
-    const bins = {
-      S: 1,
-      M: 2,
-      L: 3,
-    };
-
     const formattedConditions = conditions.reduce((acc, condition) => {
       // const fill = Object.entries(condition.aggregatedCount[selectedFeature])
       //   .reduce((fillAcc, [subFeature, subCount]) => {
@@ -47,16 +40,16 @@ export default (instruments, selectedFeature) => (
         id,
         fill,
         details,
-        binnedValue: bins[condition.textLength],
+        binnedValue: condition.textLength,
         keywords: [''],
-        text: condition.text.en,
+        text: condition.text,
       });
       return acc;
     }, []);
 
     // This is used to show all regions belonging to an instrument
     const allLocations = regions.reduce((acc, next) => {
-      acc.push(`${next.name.en}, ${next.province} `);
+      acc.push(`${next.name}, ${next.province} `);
       return acc;
     }, []);
 

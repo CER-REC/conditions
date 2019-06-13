@@ -1,14 +1,8 @@
 export default [
   {
     id: 1225,
-    name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInFrench',
-    },
-    shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInFrench',
-    },
+    name: 'Trans-Alta Limited-44245',
+    shortName: 'Trans-Alta',
     aggregatedCount: {
       instrument: {
         ROUTING: 12,
@@ -70,14 +64,8 @@ export default [
   },
   {
     id: 1226,
-    name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInFrench',
-    },
-    shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInFrench',
-    },
+    name: 'Trans-Alta Limited-44245',
+    shortName: 'Trans-Alta',
     aggregatedCount: {
       instrument: {
         ROUTING: 3,
@@ -139,14 +127,8 @@ export default [
   },
   {
     id: 1227,
-    name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInFrench',
-    },
-    shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInFrench',
-    },
+    name: 'Trans-Alta Limited-44245',
+    shortName: 'Trans-Alta',
     aggregatedCount: {
       instrument: {
         ROUTING: 12,
@@ -208,14 +190,8 @@ export default [
   },
   {
     id: 1228,
-    name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInFrench',
-    },
-    shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInFrench',
-    },
+    name: 'Trans-Alta Limited-44245',
+    shortName: 'Trans-Alta',
     aggregatedCount: {
       instrument: {
         ROUTING: 12,
@@ -277,14 +253,8 @@ export default [
   },
   {
     id: 1229,
-    name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInFrench',
-    },
-    shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInFrench',
-    },
+    name: 'Trans-Alta Limited-44245',
+    shortName: 'Trans-Alta',
     aggregatedCount: {
       instrument: {
         ROUTING: 3,
@@ -346,14 +316,8 @@ export default [
   },
   {
     id: 1230,
-    name: {
-      en: 'Trans-Alta Limited-44245',
-      fr: 'nameInFrench',
-    },
-    shortName: {
-      en: 'Trans-Alta',
-      fr: 'nameInFrench',
-    },
+    name: 'Trans-Alta Limited-44245',
+    shortName: 'Trans-Alta',
     aggregatedCount: {
       instrument: {
         ROUTING: 12,

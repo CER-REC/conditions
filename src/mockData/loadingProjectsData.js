@@ -1,13 +1,7 @@
 export default {
   id: null,
-  name: {
-    en: '',
-    fr: '',
-  },
-  shortName: {
-    en: '',
-    fr: '',
-  },
+  name: '',
+  shortName: '',
   aggregatedCount: {
     instrument: {
       ROUTING: 0,

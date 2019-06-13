@@ -34,13 +34,8 @@ export const location = PropTypes.shape({
 
 export const project = PropTypes.shape({
   id: PropTypes.number.isRequired,
-  name: PropTypes.shape({
-    en: PropTypes.string.isRequired,
-  }).isRequired,
-  shortName: PropTypes.shape({
-    en: PropTypes.string.isRequired,
-    fr: PropTypes.string.isRequired,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  shortName: PropTypes.string.isRequired,
   aggregatedCount: featureData.isRequired,
 });
 

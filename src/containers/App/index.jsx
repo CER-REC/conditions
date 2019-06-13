@@ -14,6 +14,7 @@ import { IntlProvider, FormattedMessage } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
+import { lang } from '../../constants';
 
 import { processConditionCounts } from './processQueryData';
 
@@ -39,7 +40,6 @@ import ViewOne from '../ViewOne';
 import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
-import graphQLEndPoint from '../../../globals';
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
@@ -54,7 +54,7 @@ import {
 const store = createStore();
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: graphQLEndPoint,
+  uri: `/conditions/graphql?lang=${lang}`,
   credentials: 'same-origin',
 });
 const client = new ApolloClient({ cache, link, fetch });
@@ -572,7 +572,7 @@ const ConnectedApp = hot(module)(connect(
 
 export default props => (
   <AppContainer>
-    <IntlProvider locale="en" messages={i18nMessages.en}>
+    <IntlProvider locale={lang} messages={i18nMessages[lang]}>
       <ApolloProvider client={client}>
         <Provider store={store}>
           <Query query={initialConfigurationDataQuery}>
