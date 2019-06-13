@@ -94,7 +94,7 @@ class App extends React.PureComponent {
       initialGuidePosition: { x: 0, y: 0 },
       finalGuidePosition: { x: 0, y: 0 },
       initialKeywordPosition: { x: 0, y: 0 },
-      finalKeywordPosition: { x: 800, y: 500 },
+      finalKeywordPosition: { x: 0, y: 0 },
     };
     this.ref = React.createRef();
   }
@@ -283,8 +283,9 @@ class App extends React.PureComponent {
 
     const svgPosition = svgRoot.createSVGPoint();
     const matrix = svgKeyword.getCTM();
-    svgPosition.x = instance.body.position.x + instance.textOffset.x;
-    svgPosition.y = instance.body.position.y + instance.textOffset.y;
+
+    svgPosition.x = instance.body.position.x - (0.89 * instance.keyword.textSize.width);
+    svgPosition.y = instance.body.position.y - 10;
 
     const positionInExplorer = svgPosition.matrixTransform(matrix);
 
@@ -295,9 +296,13 @@ class App extends React.PureComponent {
       initialKeywordPosition: {
         x: explorerRect.left - viewRect.left + positionInExplorer.x,
         y: explorerRect.top - viewRect.top + positionInExplorer.y,
-        // x: 100 * (explorerRect.left - viewRect.left + positionInExplorer.x) / viewRect.width,
-        // y: 100 * (explorerRect.top - viewRect.top + positionInExplorer.y) / viewRect.height,
       },
+    });
+  };
+
+  syncFinalKeywordPosition = () => {
+    this.setState({
+      finalKeywordPosition: { x: 800, y: 600 },
     });
   };
 
@@ -306,15 +311,17 @@ class App extends React.PureComponent {
     this.syncFinalGuidePosition();
 
     this.syncInitialKeywordPosition();
-    // this.syncFinalKeywordPosition();
+    this.syncFinalKeywordPosition();
 
+    // TODO: Just for debugging
+    this.props.setTransitionState(1);
     // Apply the "Guide was clicked state" immediately
-    this.incrementTransitionState();
-    this.togglePlay(true);
+    // this.incrementTransitionState();
+    // this.togglePlay(true);
 
-    setTimeout(() => {
-      this.incrementTransitionState();
-    }, 200);
+    // setTimeout(() => {
+    //   this.incrementTransitionState();
+    // }, 200);
   };
 
   getGuideTranslation = () => {
