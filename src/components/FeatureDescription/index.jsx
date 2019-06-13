@@ -18,6 +18,7 @@ const FeatureDescription = props => (
     <FormattedMessage id={`common.features.${props.feature}`} tagName="h1" />
     <FormattedMessage
       id={`components.featureDescription.${props.feature}`}
+      tagName="p"
       values={{
         regDocsLink: formatLink('https://apps.neb-one.gc.ca/REGDOCS/', 'common.linkText.regDocs'),
         phaseLink: formatLink('https://www.neb-one.gc.ca/sftnvrnmnt/nvrnmnt/lfcclpprch/index-eng.html#s1', 'common.linkText.here'),
