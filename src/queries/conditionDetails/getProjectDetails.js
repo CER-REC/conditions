@@ -4,14 +4,8 @@ import gql from 'graphql-tag';
 export default gql`
   query getProject($projectId: Int!){
     getProjectById(id:$projectId) {
-      shortName{
-        en
-        fr
-      }
-      name {
-        en
-        fr
-      }
+      shortName
+      name
       companies {
         name
       }
@@ -21,10 +15,7 @@ export default gql`
         prefix
         status
         regions {
-          name {
-            en
-            fr
-          }
+          name
           province
         }
         number
@@ -39,10 +30,7 @@ export default gql`
           status
           id
           textLength
-          text {
-            en
-            fr
-          }
+          text
           aggregatedCountArray {
             filing
             filingEnum
