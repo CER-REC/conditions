@@ -2,9 +2,8 @@
 .ConditionList {
   vertical-align: top;
   max-width: 160px;
-  padding-top: 20px;
-
   line-height: 10px;
+  height: 100%;
 
   .barMarker, .BarContainer {
     display: inline-block;
@@ -24,6 +23,15 @@
     &.marked { background-color: $SearchKeyword; }
   }
 
+  .List {
+    height: 100%;
+    overflow: visible;
+    ul {
+      padding-top: 20px;
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
 
   .BarContainer {
 

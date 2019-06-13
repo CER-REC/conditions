@@ -75,10 +75,10 @@ class ConditionDetails extends React.Component {
     />
   )
 
-  renderContent = () => (
+  renderContent = (instrument, itemIndex) => (
     <Content
-      instrument={this.props.data[this.props.selectedItem.instrumentIndex]}
-      itemIndex={this.props.selectedItem.itemIndex}
+      instrument={instrument}
+      itemIndex={itemIndex}
       openIntermediatePopup={this.props.openIntermediatePopup}
     />
   )
@@ -88,15 +88,19 @@ class ConditionDetails extends React.Component {
     return (
       <Details
         isInstrument={isInstrument}
-        data={isInstrument ? null : instrument.conditions[index].details}
+        data={isInstrument
+          ? null
+          : instrument.conditions[index].details
+        }
       />
     );
   }
 
   render() {
-    const shouldRenderData = this.props.data.length > 0;
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;
+    const shouldRenderData = this.props.data.length > 0
+      && instrument;
 
     return (
       <section className="ConditionDetails">

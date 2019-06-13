@@ -54,7 +54,7 @@ const initialState = {
   company: null,
   region: null,
   project: null,
-  condition: { instrumentIndex: 0, itemIndex: 0 },
+  condition: { instrumentIndex: 0, itemIndex: -1 },
   indicator: '',
   keywordId: null,
 };
@@ -68,7 +68,11 @@ export const reducer = (state = initialState, action) => {
     case Types.SELECTED_INDICATOR: return { ...state, indicator: action.payload.indicator };
     case Types.SELECTED_COMPANY: return { ...state, company: action.payload.company };
     case Types.SELECTED_REGION: return { ...state, region: action.payload.region };
-    case Types.SELECTED_PROJECT: return { ...state, project: action.payload.project };
+    case Types.SELECTED_PROJECT: return {
+      ...state,
+      project: action.payload.project,
+      condition: { instrumentIndex: 0, itemIndex: -1 },
+    };
     case Types.SELECTED_CONDITION: return { ...state, condition: action.payload.condition };
     case Types.SELECTED_KEYWORDID: return { ...state, keywordId: action.payload.keywordId };
     default: return state;

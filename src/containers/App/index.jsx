@@ -462,15 +462,18 @@ class App extends React.PureComponent {
                 } = conditionDetailsQProps;
                 const loadedCondDetails = !condDetQLoading && !condDetQError && condDetQData
                   && condDetQData.getProjectById;
-                const shortName = loadedCondDetails && loadedCondDetails.shortName;
                 const instruments = loadedCondDetails && loadedCondDetails.instruments;
                 const formattedInstruments = instruments && !this.state.wheelMoving
                   ? formatConditionDetails(instruments, selected.feature)
                   : [];
+                const shortName = formattedInstruments.length > 0
+                  && loadedCondDetails.shortName;
+
                 return (
                   <ConditionDetails
                     selectedItem={this.props.selected.condition}
-                    selectedProject={(shortName && shortName.en) || ''}
+                    selectedProjectId={selected.project}
+                    selectedProject={shortName || ''}
                     updateSelectedItem={this.props.setSelectedCondition}
                     openIntermediatePopup={this.props.openIntermediatePopup}
                     openProjectDetails={this.props.openProjectDetails}
@@ -528,6 +531,7 @@ App.propTypes = {
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
       itemIndex: PropTypes.number.isRequired,
+      instrumentNumber: PropTypes.string,
     }).isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
