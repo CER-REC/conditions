@@ -93,6 +93,8 @@ class App extends React.PureComponent {
       tutorialPlaying: false,
       initialGuidePosition: { x: 0, y: 0 },
       finalGuidePosition: { x: 0, y: 0 },
+      initialKeywordPosition: { x: 0, y: 0 },
+      finalKeywordPosition: { x: 800, y: 500 },
     };
     this.ref = React.createRef();
   }
@@ -267,9 +269,44 @@ class App extends React.PureComponent {
     });
   };
 
+  syncInitialKeywordPosition = () => {
+    const view = document.querySelector('.ViewOne');
+    const explorer = view.querySelector('.explorer');
+
+    if (!view || !explorer) { return; }
+
+    const instance = this.selectedKeywordInstance;
+
+    // Adapted from: https://stackoverflow.com/a/48346417
+    const svgRoot = explorer.querySelector('.ConditionExplorer svg');
+    const svgKeyword = explorer.querySelector(`[data-id="${instance.body.id}"]`);
+
+    const svgPosition = svgRoot.createSVGPoint();
+    const matrix = svgKeyword.getCTM();
+    svgPosition.x = instance.body.position.x + instance.textOffset.x;
+    svgPosition.y = instance.body.position.y + instance.textOffset.y;
+
+    const positionInExplorer = svgPosition.matrixTransform(matrix);
+
+    const explorerRect = explorer.getBoundingClientRect();
+    const viewRect = view.getBoundingClientRect();
+
+    this.setState({
+      initialKeywordPosition: {
+        x: explorerRect.left - viewRect.left + positionInExplorer.x,
+        y: explorerRect.top - viewRect.top + positionInExplorer.y,
+        // x: 100 * (explorerRect.left - viewRect.left + positionInExplorer.x) / viewRect.width,
+        // y: 100 * (explorerRect.top - viewRect.top + positionInExplorer.y) / viewRect.height,
+      },
+    });
+  };
+
   beginTutorial = (guidePosition) => {
     this.syncInitialGuidePosition(guidePosition);
     this.syncFinalGuidePosition();
+
+    this.syncInitialKeywordPosition();
+    // this.syncFinalKeywordPosition();
 
     // Apply the "Guide was clicked state" immediately
     this.incrementTransitionState();
@@ -277,7 +314,7 @@ class App extends React.PureComponent {
 
     setTimeout(() => {
       this.incrementTransitionState();
-    }, 1000);
+    }, 200);
   };
 
   getGuideTranslation = () => {
@@ -303,6 +340,27 @@ class App extends React.PureComponent {
     }
 
     return guideTranslation;
+  };
+
+  getKeywordTranslation = () => {
+    let keywordTranslation;
+    if (this.props.transitionState <= transitionStates.tutorialStart) {
+      keywordTranslation = {
+        transform: `translate(
+          ${this.state.initialKeywordPosition.x}px,
+          ${this.state.initialKeywordPosition.y}px
+        )`,
+      };
+    } else {
+      keywordTranslation = {
+        transform: `translate(
+          ${this.state.finalKeywordPosition.x}px,
+          ${this.state.finalKeywordPosition.y}px
+        )`,
+      };
+    }
+
+    return keywordTranslation;
   };
 
   setConditionAncestors = (id) => {
@@ -404,6 +462,12 @@ class App extends React.PureComponent {
             >
               <Guide step={guideStep} onClick={this.handleGuideClick} />
             </div>
+            <span
+              className="selectedKeywordTranslate"
+              style={this.getKeywordTranslation()}
+            >
+              {(this.selectedKeywordInstance) ? this.selectedKeywordInstance.keyword.value : ''}
+            </span>
           </div>
           <ViewOne
             jumpToAbout={this.jumpToAbout}

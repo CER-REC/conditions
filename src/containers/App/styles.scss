@@ -1,4 +1,6 @@
 @import '../../styles/grid';
+@import '../../styles/colors';
+@import '../../styles/fontVariables.scss';
 @import "./transitions.scss";
 
 .App {
@@ -26,6 +28,21 @@
     position: absolute;
     bottom: 0;
     left: 5px;
+  }
+
+  .selectedKeywordTranslate {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-family: $fira-sans-condensed-light;
+    font-size: 16px;
+
+    color: $SearchKeyword;
+
+    pointer-events: none;
+
+    transition: translate $defaultTransition opacity $fastestStart;
   }
 
   .guideTranslate {

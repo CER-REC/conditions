@@ -226,7 +226,6 @@ export default class PhysicsVariant extends React.PureComponent {
               },
             )}
             data-id={instance.body.id}
-            data-keyword={instance.keyword.value}
             onClick={this.onKeywordClick}
           >
             <g

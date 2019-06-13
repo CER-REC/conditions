@@ -23,6 +23,7 @@ $states: (
     ".guideTranslate .CircleContainer": (
       pointer-events: none,
     ),
+    ".selectedKeywordTranslate": (opacity: 0),
     ".ConditionExplorer .guide": (
       opacity: 1,
       transition: opacity 0.3s 1s ease-in-out,
@@ -73,6 +74,9 @@ $states: (
       opacity: 1,
       transition: opacity 0s,
     ),
+    ".selectedKeywordTranslate": (
+      opacity: 1,
+    ),
     ".ConditionExplorer .guide": (
       opacity: 0,
       transition: opacity 0s,
@@ -90,6 +94,10 @@ $states: (
     ),
     ".guideTranslate .CircleContainer": (
       pointer-events: auto,
+    ),
+    ".selectedKeywordTranslate": (
+      opacity: 0,
+      transition: "transform #{$defaultTransition}, opacity #{$fastEnd}",
     ),
     ".appControls .BrowseByBtn.location": (opacity: 0),
     ".appControls .GuideTransport": (
