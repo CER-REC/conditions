@@ -23,11 +23,13 @@ const interpolatePosition = (x1) => {
   const position = getPosition(x1);
   return (`translate(${position.x}, ${position.y}) rotate(${position.rot})`);
 };
+
+const noop = () => {};
+
 const PullToSpin = (props) => {
   const [animation, setState] = useState(false);
 
   const { intl } = props;
-  const noop = () => {};
 
   const [{ x, transform }, set] = useSpring(() => ({
     transform: 'translate(56, -56) rotate(15)',
