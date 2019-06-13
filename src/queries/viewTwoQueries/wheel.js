@@ -14,9 +14,7 @@ export const locationWheelQuery = gql`
   query regions {
     allRegions {
       id
-      name {
-        en
-      }
+      name
       province
       aggregatedCount: aggregatedCountArray {
         filing
@@ -44,9 +42,7 @@ export const companiesByRegionQuery = gql`
       projects {
         instruments {
           regions {
-            name {
-              en
-            }
+            name
           }
         }
       }

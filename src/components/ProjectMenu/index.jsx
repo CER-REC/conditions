@@ -82,7 +82,7 @@ class ProjectMenu extends React.PureComponent {
           key={project.id}
           chartType={selectedFeature}
           graphData={this.getReformattedData(project.aggregatedCount)}
-          projectName={project.shortName.en}
+          projectName={project.shortName}
           selected={project.id === selectedProjectID}
           loading={loading}
         />
