@@ -195,7 +195,10 @@ export default class PhysicsVariant extends React.PureComponent {
     if (this.guide.isExpanded) {
       this.closeGuide();
     }
-    this.props.onKeywordClick(e);
+
+    const id = parseInt(e.currentTarget.dataset.id, 10);
+    const instance = this.keywords.find(keywordInstance => keywordInstance.body.id === id);
+    this.props.onKeywordClick(e, instance);
   };
 
   render() {

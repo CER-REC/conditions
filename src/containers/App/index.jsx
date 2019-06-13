@@ -327,9 +327,15 @@ class App extends React.PureComponent {
     });
   }
 
-  setSelectedKeyword = (keyword, id) => {
+  setSelectedKeyword = (instance) => {
+    this.selectedKeywordInstance = instance;
+
+    const id = parseInt(instance.body.id, 10);
+    const keyword = instance.keyword.value;
+
     this.props.setSelectedKeywordId(id);
     this.props.setIncluded([keyword]);
+
     client.query({
       query: getKeywordConditions,
       variables: { keywords: [keyword] },
@@ -521,6 +527,7 @@ App.propTypes = {
       instrumentIndex: PropTypes.number.isRequired,
       itemIndex: PropTypes.number.isRequired,
     }).isRequired,
+    keywordId: PropTypes.number.isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
