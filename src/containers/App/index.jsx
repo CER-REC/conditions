@@ -462,8 +462,10 @@ class App extends React.PureComponent {
                         return acc;
                       }, []);
                     }
-                    const formattedInstrument =
-                      formatConditionDetails(instruments, selected.feature);
+                    const formattedInstrument = formatConditionDetails(
+                      instruments,
+                      selected.feature,
+                    );
                     return (
                       <ConditionDetails
                         selectedItem={this.props.selected.condition}
