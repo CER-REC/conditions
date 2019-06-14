@@ -216,7 +216,6 @@ class App extends React.PureComponent {
       xInSvg: guidePosition.x,
       yInSvg: guidePosition.y,
       viewSelector: '.ViewOne',
-      containerSelector: '.explorer',
       svgSelector: '.ConditionExplorer svg',
       elementSelector: '.ConditionExplorer .guide',
     });
@@ -232,61 +231,55 @@ class App extends React.PureComponent {
   };
 
   syncFinalGuidePosition = () => {
-    const view = document.querySelector('.ViewTwo');
-    const button = view.querySelector('.KeywordExplorerButton');
-
-    if (!view || !button) { return; }
-
-    // Adapted from: https://stackoverflow.com/a/48346417
-    const svgRoot = button.querySelector('svg');
-    const svgCircle = button.querySelector('circle');
-
-    const svgPosition = svgRoot.createSVGPoint();
-    const matrix = svgCircle.getCTM();
-
-    // TODO: Magic numbers, borrowed from the KeywordExplorer button's SVG
-    svgPosition.x = 21;
-    svgPosition.y = 14;
-
-    const positionInSvg = svgPosition.matrixTransform(matrix);
-
-    const buttonRect = button.getBoundingClientRect();
-    const viewRect = view.getBoundingClientRect();
-
-    this.setState({
-      finalGuidePosition: {
-        x: 100 * (buttonRect.left - viewRect.left + positionInSvg.x) / viewRect.width,
-        y: 100 * (buttonRect.top - viewRect.top + positionInSvg.y) / viewRect.height,
-      },
+    const position = this.absolutePositionFromSvg({
+      xInSvg: 18,
+      yInSvg: 14,
+      viewSelector: '.ViewTwo',
+      svgSelector: '.KeywordExplorerButton svg',
+      elementSelector: 'circle',
     });
+
+    if (position) {
+      this.setState({
+        finalGuidePosition: {
+          x: 100 * position.x / position.viewWidth,
+          y: 100 * position.y / position.viewHeight,
+        },
+      });
+    }
   };
 
-  absolutePositionFromSvg = ({ xInSvg, yInSvg, viewSelector, containerSelector, svgSelector, elementSelector }) => {
+  // Adapted from: https://stackoverflow.com/a/48346417
+  absolutePositionFromSvg = ({
+    xInSvg,
+    yInSvg,
+    viewSelector,
+    svgSelector, // Relative to viewSelector
+    elementSelector, // Relative to svgSelector
+  }) => {
     const view = document.querySelector(viewSelector);
-    const container = document.querySelector(containerSelector);
+    if (!view) { return null; }
 
-    if (!view || !container) { return null; }
+    const svg = view.querySelector(svgSelector);
+    if (!svg) { return null; }
 
-    // Adapted from: https://stackoverflow.com/a/48346417
-    const svgRoot = container.querySelector(svgSelector);
-    const svgElement = container.querySelector(elementSelector);
-
+    const svgElement = svg.querySelector(elementSelector);
     if (!svgElement) { return null; }
 
-    const svgPosition = svgRoot.createSVGPoint();
+    const point = svg.createSVGPoint();
     const matrix = svgElement.getCTM();
 
-    svgPosition.x = xInSvg;
-    svgPosition.y = yInSvg;
+    point.x = xInSvg;
+    point.y = yInSvg;
 
-    const positionInExplorer = svgPosition.matrixTransform(matrix);
+    const positionInSvg = point.matrixTransform(matrix);
 
-    const containerRect = container.getBoundingClientRect();
+    const svgRect = svg.getBoundingClientRect();
     const viewRect = view.getBoundingClientRect();
 
     return {
-      x: containerRect.left - viewRect.left + positionInExplorer.x,
-      y: containerRect.top - viewRect.top + positionInExplorer.y,
+      x: svgRect.left - viewRect.left + positionInSvg.x,
+      y: svgRect.top - viewRect.top + positionInSvg.y,
       viewWidth: viewRect.width,
       viewHeight: viewRect.height,
     };
@@ -299,7 +292,6 @@ class App extends React.PureComponent {
       xInSvg: instance.body.position.x - (0.89 * instance.keyword.textSize.width),
       yInSvg: instance.body.position.y - 10,
       viewSelector: '.ViewOne',
-      containerSelector: '.explorer',
       svgSelector: '.ConditionExplorer svg',
       elementSelector: `[data-id="${instance.body.id}"]`,
     });
