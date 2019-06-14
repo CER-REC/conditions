@@ -81,6 +81,7 @@ class ViewTwo extends React.Component {
             wheelData={this.props.wheelData}
             wheelMotionTrigger={this.setWheelMoving}
             relevantProjects={this.props.relevantInfo.relevantProjectIDs}
+            filteredProjects={this.props.filteredProjects}
           />
           <GreyPipe mode={this.props.browseBy} />
         </section>
@@ -157,6 +158,7 @@ ViewTwo.defaultProps = {
     relevantCompanyIDs: [],
     relevantProjectIDs: [],
   },
+  filteredProjects: [],
 };
 
 export default ViewTwo;

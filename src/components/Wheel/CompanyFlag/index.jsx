@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectDot from '../../ProjectDot';
 
-const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotation, relevantProjects }) => {
+const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotation, relevantProjects, filteredProjects}) => {
   if (!flagLayout) { return null; }
 
   const baseY = y + svgHeight - (flagLayout[0].length * dotSpacing);
@@ -23,7 +23,7 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotati
           cx: x + columnX,
           cy: y + dotY,
           r: dotWidth / 2,
-          filtered: dot.filtered,
+          filtered: filteredProjects.includes(flagLayout[columnIndex][dotIndex]),
           relevant: relevantProjects.includes(flagLayout[columnIndex][dotIndex]),
         });
       }

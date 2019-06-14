@@ -20,10 +20,12 @@ class WheelRay extends React.Component {
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
     relevantProjects: PropTypes.arrayOf(PropTypes.number),
+    filteredProjects: PropTypes.arrayOf(PropTypes.number),
   }
 
   static defaultProps = {
     relevantProjects: [],
+    filteredProjects: [],
   };
 
   constructor(props) {
@@ -82,6 +84,7 @@ class WheelRay extends React.Component {
                   dotSpacing={this.flagScale}
                   rotation={90}
                   relevantProjects={this.props.relevantProjects}
+                  filteredProjects={this.props.filteredProjects}
                 />
               )
               : null
