@@ -1,10 +1,7 @@
 const locationData = [
   {
     id: 1,
-    name: {
-      en: 'Prince Albert',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Prince Albert',
     province: 'SK',
     aggregatedCount: {
       theme: {
@@ -55,10 +52,7 @@ const locationData = [
   },
   {
     id: 2,
-    name: {
-      en: 'Camrose--Drumheller',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Camrose--Drumheller',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -109,10 +103,7 @@ const locationData = [
   },
   {
     id: 3,
-    name: {
-      en: 'Northwest',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Northwest',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -163,10 +154,7 @@ const locationData = [
   },
   {
     id: 4,
-    name: {
-      en: 'Lethbridge--Medicine Hat',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Lethbridge--Medicine Hat',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -217,10 +205,7 @@ const locationData = [
   },
   {
     id: 5,
-    name: {
-      en: 'Cape Breton',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Cape Breton',
     province: 'NS',
     aggregatedCount: {
       theme: {
@@ -271,10 +256,7 @@ const locationData = [
   },
   {
     id: 6,
-    name: {
-      en: 'Montréal',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Montréal',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -325,10 +307,7 @@ const locationData = [
   },
   {
     id: 7,
-    name: {
-      en: 'London',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'London',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -379,10 +358,7 @@ const locationData = [
   },
   {
     id: 8,
-    name: {
-      en: 'Outaouais',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Outaouais',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -433,10 +409,7 @@ const locationData = [
   },
   {
     id: 9,
-    name: {
-      en: 'Moncton--Richibucto',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Moncton--Richibucto',
     province: 'NB',
     aggregatedCount: {
       theme: {
@@ -487,10 +460,7 @@ const locationData = [
   },
   {
     id: 11,
-    name: {
-      en: 'Halifax',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Halifax',
     province: 'NS',
     aggregatedCount: {
       theme: {
@@ -541,10 +511,7 @@ const locationData = [
   },
   {
     id: 12,
-    name: {
-      en: 'South Central',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'South Central',
     province: 'MB',
     aggregatedCount: {
       theme: {
@@ -595,10 +562,7 @@ const locationData = [
   },
   {
     id: 13,
-    name: {
-      en: 'Abitibi-Témiscamingue',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Abitibi-Témiscamingue',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -649,10 +613,7 @@ const locationData = [
   },
   {
     id: 14,
-    name: {
-      en: 'Banff--Jasper--Rocky Mountain House',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Banff--Jasper--Rocky Mountain House',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -703,10 +664,7 @@ const locationData = [
   },
   {
     id: 15,
-    name: {
-      en: 'Laval',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Laval',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -757,10 +715,7 @@ const locationData = [
   },
   {
     id: 16,
-    name: {
-      en: 'North Central',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'North Central',
     province: 'MB',
     aggregatedCount: {
       theme: {
@@ -811,10 +766,7 @@ const locationData = [
   },
   {
     id: 17,
-    name: {
-      en: 'Muskoka--Kawarthas',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Muskoka--Kawarthas',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -865,10 +817,7 @@ const locationData = [
   },
   {
     id: 18,
-    name: {
-      en: 'Regina--Moose Mountain',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Regina--Moose Mountain',
     province: 'SK',
     aggregatedCount: {
       theme: {
@@ -919,10 +868,7 @@ const locationData = [
   },
   {
     id: 19,
-    name: {
-      en: 'Capitale-Nationale',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Capitale-Nationale',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -973,10 +919,7 @@ const locationData = [
   },
   {
     id: 20,
-    name: {
-      en: 'Calgary',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Calgary',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -1027,10 +970,7 @@ const locationData = [
   },
   {
     id: 21,
-    name: {
-      en: 'Saskatoon--Biggar',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Saskatoon--Biggar',
     province: 'SK',
     aggregatedCount: {
       theme: {
@@ -1081,10 +1021,7 @@ const locationData = [
   },
   {
     id: 22,
-    name: {
-      en: 'Mauricie',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Mauricie',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -1135,10 +1072,7 @@ const locationData = [
   },
   {
     id: 23,
-    name: {
-      en: 'Southeast',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Southeast',
     province: 'MB',
     aggregatedCount: {
       theme: {
@@ -1189,10 +1123,7 @@ const locationData = [
   },
   {
     id: 24,
-    name: {
-      en: 'Estrie',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Estrie',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -1243,10 +1174,7 @@ const locationData = [
   },
   {
     id: 25,
-    name: {
-      en: 'Toronto',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Toronto',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -1297,10 +1225,7 @@ const locationData = [
   },
   {
     id: 26,
-    name: {
-      en: 'Northwest Territories',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Northwest Territories',
     province: 'NT',
     aggregatedCount: {
       theme: {
@@ -1351,10 +1276,7 @@ const locationData = [
   },
   {
     id: 27,
-    name: {
-      en: 'Fredericton--Oromocto',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Fredericton--Oromocto',
     province: 'NB',
     aggregatedCount: {
       theme: {
@@ -1405,10 +1327,7 @@ const locationData = [
   },
   {
     id: 28,
-    name: {
-      en: 'Lanaudière',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Lanaudière',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -1459,10 +1378,7 @@ const locationData = [
   },
   {
     id: 29,
-    name: {
-      en: 'Swift Current--Moose Jaw',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Swift Current--Moose Jaw',
     province: 'SK',
     aggregatedCount: {
       theme: {
@@ -1513,10 +1429,7 @@ const locationData = [
   },
   {
     id: 30,
-    name: {
-      en: 'Red Deer',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Red Deer',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -1567,10 +1480,7 @@ const locationData = [
   },
   {
     id: 31,
-    name: {
-      en: 'Nechako',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Nechako',
     province: 'BC',
     aggregatedCount: {
       theme: {
@@ -1621,10 +1531,7 @@ const locationData = [
   },
   {
     id: 32,
-    name: {
-      en: 'Edmonton',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Edmonton',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -1675,10 +1582,7 @@ const locationData = [
   },
   {
     id: 33,
-    name: {
-      en: 'Saint John--St. Stephen',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Saint John--St. Stephen',
     province: 'NB',
     aggregatedCount: {
       theme: {
@@ -1729,10 +1633,7 @@ const locationData = [
   },
   {
     id: 34,
-    name: {
-      en: 'Hamilton--Niagara Peninsula',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Hamilton--Niagara Peninsula',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -1783,10 +1684,7 @@ const locationData = [
   },
   {
     id: 35,
-    name: {
-      en: 'Yorkton--Melville',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Yorkton--Melville',
     province: 'SK',
     aggregatedCount: {
       theme: {
@@ -1837,10 +1735,7 @@ const locationData = [
   },
   {
     id: 36,
-    name: {
-      en: 'Windsor--Sarnia',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Windsor--Sarnia',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -1891,10 +1786,7 @@ const locationData = [
   },
   {
     id: 37,
-    name: {
-      en: 'Athabasca--Grande Prairie--Peace River',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Athabasca--Grande Prairie--Peace River',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -1945,10 +1837,7 @@ const locationData = [
   },
   {
     id: 38,
-    name: {
-      en: 'Ottawa',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Ottawa',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -1999,10 +1888,7 @@ const locationData = [
   },
   {
     id: 39,
-    name: {
-      en: 'Kingston--Pembroke',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Kingston--Pembroke',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -2053,10 +1939,7 @@ const locationData = [
   },
   {
     id: 40,
-    name: {
-      en: 'Montérégie',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Montérégie',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -2107,10 +1990,7 @@ const locationData = [
   },
   {
     id: 41,
-    name: {
-      en: 'Northeast',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Northeast',
     province: 'BC',
     aggregatedCount: {
       theme: {
@@ -2161,10 +2041,7 @@ const locationData = [
   },
   {
     id: 42,
-    name: {
-      en: 'Wood Buffalo--Cold Lake',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Wood Buffalo--Cold Lake',
     province: 'AB',
     aggregatedCount: {
       theme: {
@@ -2215,10 +2092,7 @@ const locationData = [
   },
   {
     id: 43,
-    name: {
-      en: 'Southwest',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Southwest',
     province: 'MB',
     aggregatedCount: {
       theme: {
@@ -2269,10 +2143,7 @@ const locationData = [
   },
   {
     id: 44,
-    name: {
-      en: 'Laurentides',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Laurentides',
     province: 'QC',
     aggregatedCount: {
       theme: {
@@ -2323,10 +2194,7 @@ const locationData = [
   },
   {
     id: 45,
-    name: {
-      en: 'Cariboo',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Cariboo',
     province: 'BC',
     aggregatedCount: {
       theme: {
@@ -2377,10 +2245,7 @@ const locationData = [
   },
   {
     id: 47,
-    name: {
-      en: 'Thompson--Okanagan',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Thompson--Okanagan',
     province: 'BC',
     aggregatedCount: {
       theme: {
@@ -2431,10 +2296,7 @@ const locationData = [
   },
   {
     id: 48,
-    name: {
-      en: 'Kootenay',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Kootenay',
     province: 'BC',
     aggregatedCount: {
       theme: {
@@ -2485,10 +2347,7 @@ const locationData = [
   },
   {
     id: 49,
-    name: {
-      en: 'Parklands',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Parklands',
     province: 'MB',
     aggregatedCount: {
       theme: {
@@ -2539,10 +2398,7 @@ const locationData = [
   },
   {
     id: 50,
-    name: {
-      en: 'Lower Mainland--Southwest',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Lower Mainland--Southwest',
     province: 'BC',
     aggregatedCount: {
       theme: {
@@ -2593,10 +2449,7 @@ const locationData = [
   },
   {
     id: 51,
-    name: {
-      en: 'North Shore',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'North Shore',
     province: 'NS',
     aggregatedCount: {
       theme: {
@@ -2647,10 +2500,7 @@ const locationData = [
   },
   {
     id: 52,
-    name: {
-      en: 'Kitchener--Waterloo--Barrie',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Kitchener--Waterloo--Barrie',
     province: 'ON',
     aggregatedCount: {
       theme: {
@@ -2701,10 +2551,7 @@ const locationData = [
   },
   {
     id: 53,
-    name: {
-      en: 'Yukon',
-      __typename: 'TranslatedStringType',
-    },
+    name: 'Yukon',
     province: 'YT',
     aggregatedCount: {
       theme: {

@@ -8,8 +8,8 @@ import { loadingProjectsData } from '../../mockData';
 const testData = [
   {
     id: 100,
-    name: { en: 'name-100', fr: 'nameFr-100' },
-    shortName: { en: 'shortName-100', fr: 'shortNameFr-100' },
+    name: 'name-100',
+    shortName: 'shortName-100',
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -21,8 +21,8 @@ const testData = [
   },
   {
     id: 101,
-    name: { en: 'name-101', fr: 'nameFr-101' },
-    shortName: { en: 'shortName-101', fr: 'shortNameFr-101' },
+    name: 'name-101',
+    shortName: 'shortName-101',
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -34,8 +34,8 @@ const testData = [
   },
   {
     id: 102,
-    name: { en: 'name-102', fr: 'nameFr-102' },
-    shortName: { en: 'shortName-102', fr: 'shortNameFr-102' },
+    name: 'name-102',
+    shortName: 'shortName-102',
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -47,8 +47,8 @@ const testData = [
   },
   {
     id: 103,
-    name: { en: 'name-103', fr: 'nameFr-103' },
-    shortName: { en: 'shortName-103', fr: 'shortNameFr-103' },
+    name: 'name-103',
+    shortName: 'shortName-103',
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -60,8 +60,8 @@ const testData = [
   },
   {
     id: 104,
-    name: { en: 'name-104', fr: 'nameFr-104' },
-    shortName: { en: 'shortName-104', fr: 'shortNameFr-104' },
+    name: 'name-104',
+    shortName: 'shortName-104',
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -73,8 +73,8 @@ const testData = [
   },
   {
     id: 105,
-    name: { en: 'name-105', fr: 'nameFr-105' },
-    shortName: { en: 'shortName-105', fr: 'shortNameFr-105' },
+    name: 'name-105',
+    shortName: 'shortName-105',
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -86,8 +86,8 @@ const testData = [
   },
   {
     id: 106,
-    name: { en: 'name-106', fr: 'nameFr-106' },
-    shortName: { en: 'shortName-106', fr: 'shortNameFr-106' },
+    name: 'name-106',
+    shortName: 'shortName-106',
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},

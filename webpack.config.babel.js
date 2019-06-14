@@ -3,8 +3,7 @@ const Webpack = require('webpack');
 const sass = require('node-sass');
 const SassUtilsConstructor = require('node-sass-utils');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TranslationTable = require('./src/TranslationTable');
-const { features } = require('./src/constants');
+const { applicationPath, features } = require('./src/constants');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
 const sassUtils = SassUtilsConstructor(sass);
@@ -29,8 +28,8 @@ module.exports = {
     historyApiFallback: {
       rewrites: [
         {
-          from: new RegExp(`^/${TranslationTable.getIn(['applicationPath', 'fr'])}`),
-          to: TranslationTable.getIn(['applicationPath', 'en']),
+          from: new RegExp(`^/${applicationPath.fr}`),
+          to: applicationPath.en,
         },
       ],
     },

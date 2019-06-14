@@ -3,8 +3,13 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForView, withStyles } from '../../../.storybook/utils';
 
 import ReadMe from './README.md';
-import ViewThree, { ViewThreeUnconnected } from '.';
-import { conditionCountsByYear, conditionCountsByCommodity, conditionData, displayOrder } from '../../mockData';
+import { ViewThreeUnconnected } from '.';
+import {
+  conditionCountsByYear,
+  conditionCountsByCommodity,
+  conditionData,
+  displayOrder,
+} from '../../mockData';
 
 const props = {
   conditionCountsByYear,
@@ -19,6 +24,7 @@ const props = {
     stream: 2010,
   },
   displayOrder,
+  conditionsPerYear: conditionCountsByYear.counts,
 };
 
 const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
@@ -61,5 +67,5 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       detailViewExpanded: false,
     },
   }))
-  .add('default', () => <ViewThree {...props} {...getInteractionProps()} />)
+  .add('default', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} />)
   .add('layout only', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} layoutOnly />);
