@@ -5276,7 +5276,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
     <span
       className="title"
     >
-      Trends & Definitions
+      Trends & Definitions: All Projects
     </span>
     <div
       className="List guideLine"
@@ -19447,7 +19447,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Overall Trend for Conditions: Theme Over Time
+      Total Conditions By Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -24587,7 +24587,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Overall Trend for Conditions: Theme Over Time
+      Total Conditions By Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
