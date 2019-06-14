@@ -2,5 +2,6 @@
   "extends": [
     "config:base"
   ],
-  "labels": ["Dependency", "Awaiting Review"]
+  "labels": ["Dependency", "Awaiting Review"],
+  "pin": { "automerge": true }
 }

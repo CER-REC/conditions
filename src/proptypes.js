@@ -41,6 +41,37 @@ export const project = PropTypes.shape({
 
 export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
 
+export const allConfigurationDataType = PropTypes.shape({
+  displayOrder: PropTypes.shape({
+    conditionFiling: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    conditionPhase: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    conditionStatus: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    conditionType: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    instrumentStatus: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    projectStatus: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    theme: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+  }).isRequired,
+  instrumentYearRange: PropTypes.shape({
+    max: PropTypes.number.isRequired,
+    min: PropTypes.number.isRequired,
+  }).isRequired,
+  lastUpdated: PropTypes.string.isRequired,
+});
+
 export const ConditionsByCommodityOrInstrument = PropTypes.shape({
   prefix: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
