@@ -256,7 +256,7 @@ export default class PhysicsVariant extends React.PureComponent {
       className="guideText"
       transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
     >
-      {messageIds.map(id => (
+      {messageIds.map((id, idx) => (
         <FormattedMessage id={`components.conditionExplorer.guide.messages.${id}`}>
           {(text) => {
             const lines = text.split('\n');
@@ -266,11 +266,9 @@ export default class PhysicsVariant extends React.PureComponent {
                 textAnchor="middle"
                 x="0"
                 y={`-${(lines.length) / 2}em`}
-                key={text}
-                // Double equals because we need to compare '1' with 1. toString()
-                // isn't doing it for me.
-                // eslint-disable-next-line eqeqeq
-                className={(id == this.state.guideMessage) ? '' : 'hidden'}
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                className={(id === this.state.guideMessage.toString()) ? '' : 'hidden'}
               >
                 {text.split('\n').map(line => (
                   <tspan x="0" dy="1em" key={line}>{line}</tspan>
