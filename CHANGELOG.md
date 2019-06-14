@@ -1,3 +1,81 @@
+# [0.18.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.18.0) (2019-06-13)
+
+
+### App
+
+* **Features:** syncs the tutorial Guide to the KeywordExplorerButton's circle (0a9ac22)
+* **Features:** removes hash table for condition text lengths (93fa249)
+* **Features:** sync tutorial Guide's starting position to physics Guide (1cbbadd)
+* **Features:** tidies up unused/commented code (d68e448)
+* **Features:** adjusts tutorial Guide styling (a7c3889)
+* **Features:** updates Guide text and wedges (948970c)
+* **Features:** refactors physics->tutorial logic for readability (94f1fe3)
+* **Features:** dynamically syncs the tutorial Guide position (7f731a8)
+* **Features:** tweaks the synced positioning of the guides (f9e926d)
+* **Features:** hides physics Guide and pink outline when appropriate (e11f7d0)
+* **Features:** uses fallback behavior for Guide fade out to work with media queries (e4cd298)
+* **Bug Fixes:** fixed pointer events (0a5f18b)
+* **Bug Fixes:** fixes overflow issues in View 3 (8805bdc)
+
+
+### Babel
+
+* **Bug Fixes:** fixes crash parsing .babelrc (5a38a04)
+
+
+### ConditionExplorer
+
+* **Bug Fixes:** closes the expanded guide if a keyword is selected (88babba)
+* **Bug Fixes:** physics wasn't being paused (7f355a0)
+* **Code Refactoring:** moves pausing logic to componentDidUpdate (b284afc)
+
+
+### Dependencies
+
+* **Project Maintenance:** pin dependency open-cli to 5.0.0 (ed4dca7)
+* **Project Maintenance:** replace @babel/polyfill with core-js@3 (840e39e)
+* **Project Maintenance:** replace opn-cli with open-cli (deprecation) (e65621f)
+* **Project Maintenance:** update dependency babel-plugin-macros to v2.6.1 (3fb3e71)
+* **Project Maintenance:** update dependency css-loader to v3 (7d3948c)
+* **Project Maintenance:** update dependency enzyme to v3.10.0 (2154c59)
+* **Project Maintenance:** update dependency enzyme-adapter-react-16 to v1.14.0 (7977879)
+* **Project Maintenance:** update dependency file-loader to v4 (147306e)
+* **Project Maintenance:** update dependency raw-loader to v3 (9f7518b)
+* **Project Maintenance:** update dependency webpack-cli to v3.3.4 (45db3fa)
+* **Project Maintenance:** update node.js (ba01fc6)
+* **Project Maintenance:** update storybook monorepo to v5.1.3 (8fd971e)
+
+
+### GraphQL
+
+* **Features:** updates components and storybook to match new schema (b3d4035, NEBV-1468)
+* **Features:** adds lang code to graphql endpoint (c0be995, NEBV-1468)
+
+
+### Guide
+
+* **Features:** sources the guide size from constants rather than hard-coding (3df1d5b)
+
+
+### ProjectMenu, App
+
+* **Bug Fixes:** fixed month and number overflow (ac434f9, NEBV-1578)
+
+
+### Share Icon
+
+* **Features:** added image to the share icon (06d86b6, NEBV-1557)
+
+
+### Styles
+
+* **Features:** adjusts fonts and layout with designers input (c4a077b)
+
+
+### Wheel
+
+* **Bug Fixes:** fixes a crash switching from Location to Company mode (6f20843)
+
 # [0.17.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.17.0) (2019-06-06)
 
 

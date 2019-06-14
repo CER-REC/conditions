@@ -10,9 +10,7 @@ export default gql`
           companyIds
         }
       }
-      text {
-        en
-      }
+      text
     }
   }
 `;

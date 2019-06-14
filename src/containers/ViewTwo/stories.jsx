@@ -5,7 +5,12 @@ import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import ViewTwoUnconnected from './ViewTwoUnconnected';
 import { ViewTwoGraphQL } from './ViewTwoGraphQL';
-import { searchData, conditionData, projectsData } from '../../mockData';
+import {
+  searchData,
+  conditionData,
+  projectsData,
+  conditionCountsByYear,
+} from '../../mockData';
 import { companyWheelData } from '../../components/Wheel/randomDataSample';
 import locationData from '../../mockData/locationData';
 
@@ -41,9 +46,11 @@ const props = {
     data: conditionData,
   },
   browseBy: 'company',
+  jumpToView1: noop,
   jumpToView3: noop,
   regionCompanyData,
   openProjectDetails: noop,
+  conditionsPerYear: conditionCountsByYear.counts,
 };
 
 const connectedProps = {
@@ -59,6 +66,7 @@ const connectedProps = {
   jumpToView3: noop,
   jumpToView1: noop,
   regionCompanyData,
+  conditionsPerYear: conditionCountsByYear.counts,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)

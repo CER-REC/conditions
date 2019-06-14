@@ -120,9 +120,7 @@ export const ViewTwoGraphQL = (props) => {
         const locationData = !regionsQLoading && !regionsQError && regionsQData.allRegions
           ? regionsQData.allRegions.sort((a, b) => {
             if (a.province === b.province) {
-              // TODO: REMOVE THE FOLLOWING LINE ONCE
-              // THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
-              return (a.name.en < b.name.en ? -1 : 1);
+              return (a.name < b.name ? -1 : 1);
             }
             return (a.province < b.province ? -1 : 1);
           })
@@ -132,9 +130,7 @@ export const ViewTwoGraphQL = (props) => {
           ? locationData.map(region => (
             {
               ...region,
-              // TODO: REMOVE THE FOLLOWING LINE ONCE
-              // THE DEFAULT LOCALE INTEGRATION HAS BEEN SETUP
-              name: region.name.en,
+              name: region.name,
               province: region.province,
               aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
                 .reduce((acc, [key, val]) => {

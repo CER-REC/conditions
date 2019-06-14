@@ -6,12 +6,8 @@ export const projectMenuQuery = gql`
     allProjectsByCompany(companyId: $id) {
       id
       status
-      shortName {
-        en
-      }
-      name {
-        en
-      }
+      shortName
+      name
       aggregatedCount: aggregatedCountArray {
         filing
         filingEnum
@@ -25,7 +21,7 @@ export const projectMenuQuery = gql`
         typeEnum
         instrument: prefix
         instrumentEnum: prefixEnum
-        
+
       }
     }
   }
