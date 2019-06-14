@@ -30,6 +30,11 @@
     left: 5px;
   }
 
+  .guideWrapper {
+    z-index: 999;
+    pointer-events: none;
+  }
+
   .selectedKeywordTranslate {
     position: absolute;
     top: 0;
@@ -46,9 +51,6 @@
   }
 
   .guideTranslate {
-    z-index: 999;
-    pointer-events: none;
-
     position: absolute;
 
     // Guide = 156px  / 2 = 78px

@@ -222,6 +222,8 @@ export default class PhysicsVariant extends React.PureComponent {
               {
                 textVisible: instance.isVisible,
                 selected: (instance.body.id === this.props.selectedKeywordId),
+                hidden:
+                  (instance.body.id === this.props.selectedKeywordId) && this.props.physicsPaused,
                 textPlaceholder: instance.category === placeholderCategory,
               },
             )}

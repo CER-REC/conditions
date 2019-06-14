@@ -301,6 +301,7 @@ class App extends React.PureComponent {
     });
   };
 
+  // TODO: Get the actual destination once we have search highlighting implemented
   syncFinalKeywordPosition = () => {
     this.setState({
       finalKeywordPosition: { x: 800, y: 600 },
