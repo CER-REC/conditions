@@ -22,10 +22,12 @@ class Wheel extends React.Component {
     selectedRay: PropTypes.number,
     selectRay: PropTypes.func.isRequired,
     wheelMotionTrigger: PropTypes.func.isRequired,
+    relevantProjects: PropTypes.arrayOf(PropTypes.number), 
   };
 
   static defaultProps = {
     selectedRay: null,
+    relevantProjects: [],
   };
 
   constructor(props) {
@@ -148,6 +150,7 @@ class Wheel extends React.Component {
                         reservedDegrees={reservedDegrees}
                         currentIndex={currentIndex}
                         rotation={props.rotation.interpolate(r => r * -1)}
+                        relevantProjects={this.props.relevantProjects}
                       />
                     ))}
                   </svg>

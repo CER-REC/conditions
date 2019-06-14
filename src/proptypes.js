@@ -145,6 +145,7 @@ export const viewTwo = {
   openProjectDetails: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
+  relevantInfo: PropTypes.Object, //TODO Make this proptype more specific
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
