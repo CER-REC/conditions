@@ -1,3 +1,18 @@
+export const applicationPath = {
+  en: 'conditions',
+  fr: 'conditions-fr',
+};
+
+export const lang = (typeof document !== 'undefined'
+    && document.location
+    && document.location.href
+    && document.location.href.includes(applicationPath.fr))
+  || (process.env.NODE_ENV === 'development'
+    && typeof window !== 'undefined'
+    && window.localStorage
+    && window.localStorage.getItem('dev-lang') === 'fr')
+  ? 'fr' : 'en';
+
 export const features = {
   instrument: {
     0: 'rgb(122, 25, 17)',
@@ -81,3 +96,5 @@ export const provinces = {
 export const appHost = ((process.env.NODE_ENV === 'production')
   ? 'http://198.103.162.97' // Replace this url with this 'https://apps2.neb-one.gc.ca' when it goes live
   : 'http://localhost:3003');
+
+export const guideSize = 128;

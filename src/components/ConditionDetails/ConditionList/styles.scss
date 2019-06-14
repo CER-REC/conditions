@@ -8,7 +8,7 @@
 
   .barMarker, .BarContainer {
     display: inline-block;
-    height: 6px;
+    height: 4px;
     margin-bottom: 1px;
   }
 
@@ -17,14 +17,14 @@
   }
 
   .barMarker {
-    width: 6px;
+    width: 4px;
     border-radius: 50%;
     margin-right: 5px;
-    
+
     &.marked { background-color: $SearchKeyword; }
   }
 
- 
+
   .BarContainer {
 
     &.binnedValue-1 {

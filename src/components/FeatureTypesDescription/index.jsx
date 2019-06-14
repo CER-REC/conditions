@@ -35,12 +35,12 @@ class FeatureTypesDescription extends React.PureComponent {
     const header = (headerId)
       ? (
         <FormattedMessage id={`components.featureTypesDescription.${headerId}`}>
-          {text => <p>* {text}</p> }
+          {text => <p className="info">* {text}</p> }
         </FormattedMessage>
       ) : null;
 
-    const content = displayOrder.map(type => (
-      <React.Fragment key={type}>
+    const content = displayOrder.map((type, i) => (
+      <div key={type} className={i >= 9 ? 'other' : ''}>
         {(feature === 'instrument')
           ? <h4 data-heading={type}>{type}</h4>
           : (
@@ -61,14 +61,14 @@ class FeatureTypesDescription extends React.PureComponent {
             ))
           }
         </FormattedMessage>
-      </React.Fragment>
+      </div>
     ));
 
     if (feature === 'instrument') {
       content.splice(9, 0, (
         <FormattedMessage
           key="other"
-          tagName="h3"
+          tagName="h4"
           id="components.featureTypesDescription.instrument.OTHER"
         />
       ));

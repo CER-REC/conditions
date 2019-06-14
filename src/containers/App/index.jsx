@@ -14,6 +14,7 @@ import { IntlProvider, FormattedMessage } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
+import { lang } from '../../constants';
 
 import { processConditionCounts } from './processQueryData';
 
@@ -39,7 +40,6 @@ import ViewOne from '../ViewOne';
 import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
-import graphQLEndPoint from '../../../globals';
 import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
@@ -54,7 +54,7 @@ import {
 const store = createStore();
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: graphQLEndPoint,
+  uri: `/conditions/graphql?lang=${lang}`,
   credentials: 'same-origin',
 });
 const client = new ApolloClient({ cache, link, fetch });
@@ -64,9 +64,10 @@ const tutorialTiming = 5000;
 
 const transitionStates = {
   view1: 0,
-  view2: 7,
-  view1Reset: 8,
-  view3: 9,
+  tutorialStart: 1,
+  view2: 8,
+  view1Reset: 9,
+  view3: 10,
 };
 
 const viewProps = {
@@ -90,6 +91,8 @@ class App extends React.PureComponent {
     this.state = {
       mainInfoBarPane: '',
       tutorialPlaying: false,
+      initialGuidePosition: { x: 0, y: 0 },
+      finalGuidePosition: { x: 0, y: 0 },
     };
     this.ref = React.createRef();
   }
@@ -98,7 +101,11 @@ class App extends React.PureComponent {
 
   incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
-    if (currentState === transitionStates.view1Reset) { currentState = 0; }
+    if (currentState === transitionStates.view1Reset) {
+      currentState = 0;
+    } else if (amt === -1 && currentState === (transitionStates.tutorialStart + 1)) {
+      currentState = 1;
+    }
 
     const newState = Math.min(
       Math.max(transitionStates.view1, currentState + amt),
@@ -132,6 +139,9 @@ class App extends React.PureComponent {
       ...prevState,
       tutorialPlaying: false,
     }));
+    // Override to avoid immediately incrementing +1 afterward if we're on the
+    // last tutorial step (see the App's onClickCapture attribute)
+    clearTimeout(this.transitionTimeout);
     this.incrementTransitionState(-1);
   };
 
@@ -198,6 +208,102 @@ class App extends React.PureComponent {
   }
 
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
+
+  syncInitialGuidePosition = (guidePosition) => {
+    const view = document.querySelector('.ViewOne');
+    const explorer = view.querySelector('.explorer');
+
+    if (!view || !explorer) { return; }
+
+    // Adapted from: https://stackoverflow.com/a/48346417
+    const svgRoot = explorer.querySelector('.ConditionExplorer svg');
+    const svgGuide = explorer.querySelector('.ConditionExplorer .guide');
+
+    const svgPosition = svgRoot.createSVGPoint();
+    const matrix = svgGuide.getCTM();
+    svgPosition.x = guidePosition.x;
+    svgPosition.y = guidePosition.y;
+
+    const positionInExplorer = svgPosition.matrixTransform(matrix);
+
+    const explorerRect = explorer.getBoundingClientRect();
+    const viewRect = view.getBoundingClientRect();
+
+    this.setState({
+      initialGuidePosition: {
+        x: 100 * (explorerRect.left - viewRect.left + positionInExplorer.x) / viewRect.width,
+        y: 100 * (explorerRect.top - viewRect.top + positionInExplorer.y) / viewRect.height,
+      },
+    });
+  };
+
+  syncFinalGuidePosition = () => {
+    const view = document.querySelector('.ViewTwo');
+    const button = view.querySelector('.KeywordExplorerButton');
+
+    if (!view || !button) { return; }
+
+    // Adapted from: https://stackoverflow.com/a/48346417
+    const svgRoot = button.querySelector('svg');
+    const svgCircle = button.querySelector('circle');
+
+    const svgPosition = svgRoot.createSVGPoint();
+    const matrix = svgCircle.getCTM();
+
+    // TODO: Magic numbers, borrowed from the KeywordExplorer button's SVG
+    svgPosition.x = 21;
+    svgPosition.y = 14;
+
+    const positionInSvg = svgPosition.matrixTransform(matrix);
+
+    const buttonRect = button.getBoundingClientRect();
+    const viewRect = view.getBoundingClientRect();
+
+    this.setState({
+      finalGuidePosition: {
+        x: 100 * (buttonRect.left - viewRect.left + positionInSvg.x) / viewRect.width,
+        y: 100 * (buttonRect.top - viewRect.top + positionInSvg.y) / viewRect.height,
+      },
+    });
+  };
+
+  beginTutorial = (guidePosition) => {
+    this.syncInitialGuidePosition(guidePosition);
+    this.syncFinalGuidePosition();
+
+    // Apply the "Guide was clicked state" immediately
+    this.incrementTransitionState();
+    this.togglePlay(true);
+
+    setTimeout(() => {
+      this.incrementTransitionState();
+    }, 1000);
+  };
+
+  getGuideTranslation = () => {
+    let guideTranslation;
+    if (
+      this.props.transitionState === transitionStates.view1
+      || this.props.transitionState === transitionStates.view1Reset
+      || this.props.transitionState === (transitionStates.tutorialStart)
+    ) {
+      guideTranslation = {
+        transform: `translate(
+          ${this.state.initialGuidePosition.x}%,
+          ${this.state.initialGuidePosition.y}%
+        )`,
+      };
+    } else if (this.props.transitionState === transitionStates.view2) {
+      guideTranslation = {
+        transform: `translate(
+          ${this.state.finalGuidePosition.x}%,
+          ${this.state.finalGuidePosition.y}%
+        )`,
+      };
+    }
+
+    return guideTranslation;
+  };
 
   setConditionAncestors = (id) => {
     // TODO: Make a query for this once our server has `conditionById($id)` available
@@ -275,7 +381,7 @@ class App extends React.PureComponent {
         // The timeout makes sure React doesn't re-render before the event can
         // propagate to the actual target
         onClickCapture={(transitionState === (transitionStates.view2 - 1))
-          ? () => setTimeout(this.incrementTransitionState, 0)
+          ? () => { this.transitionTimeout = setTimeout(this.incrementTransitionState, 0); }
           : null
         }
       >
@@ -286,11 +392,22 @@ class App extends React.PureComponent {
               * percentages relative to the element being translated; the Guide circle itself
               * can't use percentages for translating to a given position relative to the app.
               */}
-            <div className="guideTranslate">
+            <div
+              className="guideTranslate"
+              style={this.getGuideTranslation()}
+            >
               <Guide step={guideStep} onClick={this.handleGuideClick} />
             </div>
           </div>
-          <ViewOne jumpToAbout={this.jumpToAbout} setSelectedKeyword={this.setSelectedKeyword} />
+          <ViewOne
+            jumpToAbout={this.jumpToAbout}
+            setSelectedKeyword={this.setSelectedKeyword}
+            beginTutorial={this.beginTutorial}
+            physicsPaused={(
+              transitionState > transitionStates.view1
+              && transitionState !== transitionStates.view1Reset
+            )}
+          />
           <section className="appControls">
             <BrowseBy
               showArrow={
@@ -335,14 +452,12 @@ class App extends React.PureComponent {
                     if (loading) { return <div>Loading</div>; }
                     if (error) { return <div>Loading</div>; }
                     const { shortName, instruments } = data.getProjectById;
-                    // TODO: Change string 'en' to the redux store locale
-                    const formattedInstrument = formatConditionDetails(
-                      instruments, selected.feature,
-                    );
+                    const formattedInstrument =
+                      formatConditionDetails(instruments, selected.feature);
                     return (
                       <ConditionDetails
                         selectedItem={this.props.selected.condition}
-                        selectedProject={shortName.en}
+                        selectedProject={shortName}
                         updateSelectedItem={this.props.setSelectedCondition}
                         openIntermediatePopup={this.props.openIntermediatePopup}
                         openProjectDetails={this.props.openProjectDetails}
@@ -447,7 +562,7 @@ const ConnectedApp = hot(module)(connect(
 
 export default props => (
   <AppContainer>
-    <IntlProvider locale="en" messages={i18nMessages.en}>
+    <IntlProvider locale={lang} messages={i18nMessages[lang]}>
       <ApolloProvider client={client}>
         <Provider store={store}>
           <Query query={initialConfigurationDataQuery}>

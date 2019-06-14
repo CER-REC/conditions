@@ -4,12 +4,10 @@ import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
-import graphQLEndPoint from '../../globals';
+import { lang } from '../../src/constants';
 
 const cache = new InMemoryCache();
-const link = new HttpLink({
-  uri: graphQLEndPoint,
-});
+const link = new HttpLink({ uri: `/conditions/graphql?lang=${lang}` });
 const client = new ApolloClient({ cache, link, fetch });
 
 const addGQL = (storyFn, context) => (

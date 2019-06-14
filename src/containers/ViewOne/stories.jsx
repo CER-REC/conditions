@@ -30,12 +30,14 @@ storiesForView('Containers|ViewOne', module, ReadMe)
     <ViewOneUnconnected
       keywords={uniqueKeywords}
       jumpToAbout={noop}
+      beginTutorial={noop}
       {...getInteractionProps()}
     />
   ))
   .add('connected variant', () => (
     <ViewOneGraphQL
       jumpToAbout={noop}
+      beginTutorial={noop}
       {...getInteractionProps()}
     />
   ), { decorators: [withGQL] })
@@ -44,6 +46,7 @@ storiesForView('Containers|ViewOne', module, ReadMe)
       layoutOnly
       keywords={uniqueKeywords}
       jumpToAbout={noop}
+      beginTutorial={noop}
       {...getInteractionProps()}
     />
   ));
