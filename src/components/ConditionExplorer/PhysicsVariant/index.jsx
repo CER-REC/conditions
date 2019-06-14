@@ -46,8 +46,10 @@ export default class PhysicsVariant extends React.PureComponent {
     this.engine = Matter.Engine.create({ world });
 
     this.guide = new Guide(this.engine);
+
+    const isSelectedKeyword = id => (id === this.props.selectedKeywordId);
     this.keywords = this.props.keywords
-      .map(keyword => new Keyword(keyword, this.engine));
+      .map(keyword => new Keyword(keyword, this.engine, isSelectedKeyword));
 
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse: Matter.Mouse.create(this.groupRef.current.parentElement),

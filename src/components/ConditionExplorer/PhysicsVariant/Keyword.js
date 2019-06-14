@@ -9,7 +9,7 @@ import {
 } from './categories';
 
 export default class Keyword extends Body {
-  constructor(keyword, engine) {
+  constructor(keyword, engine, isSelectedKeyword) {
     const { outline } = keyword;
     const body = Matter.Bodies.rectangle(
       keyword.outline.x + (keyword.outline.width / 2),
@@ -28,6 +28,7 @@ export default class Keyword extends Body {
     super(body, engine);
     this.keyword = keyword;
     this.lastCollision = Date.now();
+    this.isSelectedKeyword = isSelectedKeyword;
   }
 
   get isVisible() { return this.body.collisionFilter.category !== placeholderCategory; }
@@ -73,6 +74,7 @@ export default class Keyword extends Body {
 
     if (this.category === visibleTextCategory
         && this.lastCollision + 5000 <= Date.now()
+        && !this.isSelectedKeyword(this.body.id)
         && keywordsCanReset) {
       const { x, y, width, height } = this.keyword.outline;
       const originalBounds = {
