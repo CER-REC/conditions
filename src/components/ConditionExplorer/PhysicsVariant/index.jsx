@@ -266,6 +266,7 @@ export default class PhysicsVariant extends React.PureComponent {
                 textAnchor="middle"
                 x="0"
                 y={`-${(lines.length) / 2}em`}
+                key={text}
                 // Double equals because we need to compare '1' with 1. toString()
                 // isn't doing it for me.
                 // eslint-disable-next-line eqeqeq
