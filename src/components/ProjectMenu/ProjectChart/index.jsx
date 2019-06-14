@@ -33,7 +33,7 @@ const ProjectChart = (props) => {
           <div className="SelectedPipe" />
         )
         : (
-          <div className="ProjectName"><p>{props.projectName}</p></div>
+          <div title={props.projectName} className="ProjectName"><p>{props.projectName}</p></div>
         )
       }
     </div>
