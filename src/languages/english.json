@@ -453,7 +453,7 @@
     },
     "totalConditionsLabel" : {
       "total": "Total Conditions",
-      "forProject": "for Project"
+      "forProject": "for this Project"
     }
   },
   "views": {
