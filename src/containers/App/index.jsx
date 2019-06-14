@@ -212,31 +212,23 @@ class App extends React.PureComponent {
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
   syncInitialGuidePosition = (guidePosition) => {
-    const view = document.querySelector('.ViewOne');
-    const explorer = view.querySelector('.explorer');
-
-    if (!view || !explorer) { return; }
-
-    // Adapted from: https://stackoverflow.com/a/48346417
-    const svgRoot = explorer.querySelector('.ConditionExplorer svg');
-    const svgGuide = explorer.querySelector('.ConditionExplorer .guide');
-
-    const svgPosition = svgRoot.createSVGPoint();
-    const matrix = svgGuide.getCTM();
-    svgPosition.x = guidePosition.x;
-    svgPosition.y = guidePosition.y;
-
-    const positionInExplorer = svgPosition.matrixTransform(matrix);
-
-    const explorerRect = explorer.getBoundingClientRect();
-    const viewRect = view.getBoundingClientRect();
-
-    this.setState({
-      initialGuidePosition: {
-        x: 100 * (explorerRect.left - viewRect.left + positionInExplorer.x) / viewRect.width,
-        y: 100 * (explorerRect.top - viewRect.top + positionInExplorer.y) / viewRect.height,
-      },
+    const position = this.absolutePositionFromSvg({
+      xInSvg: guidePosition.x,
+      yInSvg: guidePosition.y,
+      viewSelector: '.ViewOne',
+      containerSelector: '.explorer',
+      svgSelector: '.ConditionExplorer svg',
+      elementSelector: '.ConditionExplorer .guide',
     });
+
+    if (position) {
+      this.setState({
+        initialGuidePosition: {
+          x: 100 * position.x / position.viewWidth,
+          y: 100 * position.y / position.viewHeight,
+        },
+      });
+    }
   };
 
   syncFinalGuidePosition = () => {
@@ -269,36 +261,58 @@ class App extends React.PureComponent {
     });
   };
 
-  syncInitialKeywordPosition = () => {
-    const view = document.querySelector('.ViewOne');
-    const explorer = view.querySelector('.explorer');
+  absolutePositionFromSvg = ({ xInSvg, yInSvg, viewSelector, containerSelector, svgSelector, elementSelector }) => {
+    const view = document.querySelector(viewSelector);
+    const container = document.querySelector(containerSelector);
 
-    if (!view || !explorer) { return; }
-
-    const instance = this.selectedKeywordInstance;
+    if (!view || !container) { return null; }
 
     // Adapted from: https://stackoverflow.com/a/48346417
-    const svgRoot = explorer.querySelector('.ConditionExplorer svg');
-    const svgKeyword = explorer.querySelector(`[data-id="${instance.body.id}"]`);
+    const svgRoot = container.querySelector(svgSelector);
+    const svgElement = container.querySelector(elementSelector);
+
+    if (!svgElement) { return null; }
 
     const svgPosition = svgRoot.createSVGPoint();
-    const matrix = svgKeyword.getCTM();
+    const matrix = svgElement.getCTM();
 
-    svgPosition.x = instance.body.position.x - (0.89 * instance.keyword.textSize.width);
-    svgPosition.y = instance.body.position.y - 10;
+    svgPosition.x = xInSvg;
+    svgPosition.y = yInSvg;
 
     const positionInExplorer = svgPosition.matrixTransform(matrix);
 
-    const explorerRect = explorer.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
     const viewRect = view.getBoundingClientRect();
 
-    this.setState({
-      initialKeywordPosition: {
-        x: explorerRect.left - viewRect.left + positionInExplorer.x,
-        y: explorerRect.top - viewRect.top + positionInExplorer.y,
-        angle: instance.body.angle * 180 / Math.PI,
-      },
+    return {
+      x: containerRect.left - viewRect.left + positionInExplorer.x,
+      y: containerRect.top - viewRect.top + positionInExplorer.y,
+      viewWidth: viewRect.width,
+      viewHeight: viewRect.height,
+    };
+  };
+
+  syncInitialKeywordPosition = () => {
+    const instance = this.selectedKeywordInstance;
+
+    const position = this.absolutePositionFromSvg({
+      xInSvg: instance.body.position.x - (0.89 * instance.keyword.textSize.width),
+      yInSvg: instance.body.position.y - 10,
+      viewSelector: '.ViewOne',
+      containerSelector: '.explorer',
+      svgSelector: '.ConditionExplorer svg',
+      elementSelector: `[data-id="${instance.body.id}"]`,
     });
+
+    if (position) {
+      this.setState({
+        initialKeywordPosition: {
+          x: position.x,
+          y: position.y,
+          angle: instance.body.angle * 180 / Math.PI,
+        },
+      });
+    }
   };
 
   // TODO: Get the actual destination once we have search highlighting implemented
