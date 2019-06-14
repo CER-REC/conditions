@@ -296,6 +296,7 @@ class App extends React.PureComponent {
       initialKeywordPosition: {
         x: explorerRect.left - viewRect.left + positionInExplorer.x,
         y: explorerRect.top - viewRect.top + positionInExplorer.y,
+        angle: instance.body.angle * 180 / Math.PI,
       },
     });
   };
@@ -313,15 +314,13 @@ class App extends React.PureComponent {
     this.syncInitialKeywordPosition();
     this.syncFinalKeywordPosition();
 
-    // TODO: Just for debugging
-    this.props.setTransitionState(1);
     // Apply the "Guide was clicked state" immediately
-    // this.incrementTransitionState();
-    // this.togglePlay(true);
+    this.incrementTransitionState();
+    this.togglePlay(true);
 
-    // setTimeout(() => {
-    //   this.incrementTransitionState();
-    // }, 200);
+    setTimeout(() => {
+      this.incrementTransitionState();
+    }, 50);
   };
 
   getGuideTranslation = () => {
@@ -353,17 +352,25 @@ class App extends React.PureComponent {
     let keywordTranslation;
     if (this.props.transitionState <= transitionStates.tutorialStart) {
       keywordTranslation = {
-        transform: `translate(
-          ${this.state.initialKeywordPosition.x}px,
-          ${this.state.initialKeywordPosition.y}px
-        )`,
+        transform: `
+          translate(
+            ${this.state.initialKeywordPosition.x}px,
+            ${this.state.initialKeywordPosition.y}px
+          )
+          rotate(
+            ${this.state.initialKeywordPosition.angle}deg
+          )
+        `,
       };
     } else {
       keywordTranslation = {
-        transform: `translate(
-          ${this.state.finalKeywordPosition.x}px,
-          ${this.state.finalKeywordPosition.y}px
-        )`,
+        transform: `
+          translate(
+            ${this.state.finalKeywordPosition.x}px,
+            ${this.state.finalKeywordPosition.y}px
+          )
+          rotate(0deg)
+        `,
       };
     }
 
