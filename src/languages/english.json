@@ -118,7 +118,8 @@
       "READY_FOR_BOARD_DECISION": "Ready for Board Decision",
       "REVIEW_COMPLETE": "Review Complete",
       "SATISFACTORY": "Satisfactory",
-      "UNDER_REVIEW": "Under Review"
+      "UNDER_REVIEW": "Under Review",
+      "ALL_CONDITIONS_MET": "All Conditions Met"
     },
     "filing": {
       "REQUIRED": "Filing Required",

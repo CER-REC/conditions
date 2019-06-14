@@ -1798,81 +1798,89 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           className="Content"
         >
           <div
-            className="ContentBlock half"
+            className="half"
           >
-            <span
-              className="contentHeading"
+            <div
+              className="ContentBlock "
             >
-              Issuance Date
-            </span>
-            : 
-            2014-10-24
+              <span
+                className="contentHeading"
+              >
+                Issuance Date
+              </span>
+              : 
+              2014-10-24
+            </div>
+            <div
+              className="ContentBlock "
+            >
+              <span
+                className="contentHeading"
+              >
+                Instrument Number
+              </span>
+              : 
+              <button
+                className="instrumentLink"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                XO-003-2018
+              </button>
+            </div>
+            <div
+              className="ContentBlock "
+            >
+              <span
+                className="contentHeading"
+              >
+                Effective Date
+              </span>
+              : 
+              2014-10-24
+            </div>
           </div>
           <div
-            className="ContentBlock half"
+            className="half"
           >
-            <span
-              className="contentHeading"
+            <div
+              className="ContentBlock "
             >
-              Instrument Number
-            </span>
-            : 
-            <button
-              className="instrumentLink"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-              type="button"
+              <span
+                className="contentHeading"
+              >
+                Instrument Status
+              </span>
+              : 
+              <span>
+                In Progress
+              </span>
+            </div>
+            <div
+              className="ContentBlock "
             >
-              XO-003-2018
-            </button>
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
+              <span
+                className="contentHeading"
+              >
+                Sunset Date
+              </span>
+              : 
+              2019-01-30
+            </div>
+            <div
+              className="ContentBlock "
             >
-              Effective Date
-            </span>
-            : 
-            2014-10-24
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Status
-            </span>
-            : 
-            <span>
-              In Progress
-            </span>
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Sunset Date
-            </span>
-            : 
-            2019-01-30
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Location
-            </span>
-            : 
-            Albuquerque, NM
+              <span
+                className="contentHeading"
+              >
+                Location
+              </span>
+              : 
+              Albuquerque, NM
+            </div>
           </div>
           <p
             className="contentText"
@@ -2336,81 +2344,89 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             className="Content"
           >
             <div
-              className="ContentBlock half"
+              className="half"
             >
-              <span
-                className="contentHeading"
+              <div
+                className="ContentBlock "
               >
-                Issuance Date
-              </span>
-              : 
-              2014-10-24
+                <span
+                  className="contentHeading"
+                >
+                  Issuance Date
+                </span>
+                : 
+                2014-10-24
+              </div>
+              <div
+                className="ContentBlock "
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Instrument Number
+                </span>
+                : 
+                <button
+                  className="instrumentLink"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  XO-003-2018
+                </button>
+              </div>
+              <div
+                className="ContentBlock "
+              >
+                <span
+                  className="contentHeading"
+                >
+                  Effective Date
+                </span>
+                : 
+                2014-10-24
+              </div>
             </div>
             <div
-              className="ContentBlock half"
+              className="half"
             >
-              <span
-                className="contentHeading"
+              <div
+                className="ContentBlock "
               >
-                Instrument Number
-              </span>
-              : 
-              <button
-                className="instrumentLink"
-                focusable={true}
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                tabIndex={0}
-                type="button"
+                <span
+                  className="contentHeading"
+                >
+                  Instrument Status
+                </span>
+                : 
+                <span>
+                  In Progress
+                </span>
+              </div>
+              <div
+                className="ContentBlock "
               >
-                XO-003-2018
-              </button>
-            </div>
-            <div
-              className="ContentBlock half"
-            >
-              <span
-                className="contentHeading"
+                <span
+                  className="contentHeading"
+                >
+                  Sunset Date
+                </span>
+                : 
+                2019-01-30
+              </div>
+              <div
+                className="ContentBlock "
               >
-                Effective Date
-              </span>
-              : 
-              2014-10-24
-            </div>
-            <div
-              className="ContentBlock half"
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument Status
-              </span>
-              : 
-              <span>
-                In Progress
-              </span>
-            </div>
-            <div
-              className="ContentBlock half"
-            >
-              <span
-                className="contentHeading"
-              >
-                Sunset Date
-              </span>
-              : 
-              2019-01-30
-            </div>
-            <div
-              className="ContentBlock half"
-            >
-              <span
-                className="contentHeading"
-              >
-                Location
-              </span>
-              : 
-              Albuquerque, NM
+                <span
+                  className="contentHeading"
+                >
+                  Location
+                </span>
+                : 
+                Albuquerque, NM
+              </div>
             </div>
             <p
               className="contentText"
@@ -2848,81 +2864,89 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
           className="Content"
         >
           <div
-            className="ContentBlock half"
+            className="half"
           >
-            <span
-              className="contentHeading"
+            <div
+              className="ContentBlock "
             >
-              Issuance Date
-            </span>
-            : 
-            2014-10-24
+              <span
+                className="contentHeading"
+              >
+                Issuance Date
+              </span>
+              : 
+              2014-10-24
+            </div>
+            <div
+              className="ContentBlock "
+            >
+              <span
+                className="contentHeading"
+              >
+                Instrument Number
+              </span>
+              : 
+              <button
+                className="instrumentLink"
+                focusable={true}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                XO-003-2018
+              </button>
+            </div>
+            <div
+              className="ContentBlock "
+            >
+              <span
+                className="contentHeading"
+              >
+                Effective Date
+              </span>
+              : 
+              2014-10-24
+            </div>
           </div>
           <div
-            className="ContentBlock half"
+            className="half"
           >
-            <span
-              className="contentHeading"
+            <div
+              className="ContentBlock "
             >
-              Instrument Number
-            </span>
-            : 
-            <button
-              className="instrumentLink"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-              type="button"
+              <span
+                className="contentHeading"
+              >
+                Instrument Status
+              </span>
+              : 
+              <span>
+                In Progress
+              </span>
+            </div>
+            <div
+              className="ContentBlock "
             >
-              XO-003-2018
-            </button>
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
+              <span
+                className="contentHeading"
+              >
+                Sunset Date
+              </span>
+              : 
+              2019-01-30
+            </div>
+            <div
+              className="ContentBlock "
             >
-              Effective Date
-            </span>
-            : 
-            2014-10-24
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Status
-            </span>
-            : 
-            <span>
-              In Progress
-            </span>
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Sunset Date
-            </span>
-            : 
-            2019-01-30
-          </div>
-          <div
-            className="ContentBlock half"
-          >
-            <span
-              className="contentHeading"
-            >
-              Location
-            </span>
-            : 
-            Albuquerque, NM
+              <span
+                className="contentHeading"
+              >
+                Location
+              </span>
+              : 
+              Albuquerque, NM
+            </div>
           </div>
           <p
             className="contentText"
@@ -3463,81 +3487,89 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
       className="Content"
     >
       <div
-        className="ContentBlock half"
+        className="half"
       >
-        <span
-          className="contentHeading"
+        <div
+          className="ContentBlock "
         >
-          Issuance Date
-        </span>
-        : 
-        2014-10-24
+          <span
+            className="contentHeading"
+          >
+            Issuance Date
+          </span>
+          : 
+          2014-10-24
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <span
+            className="contentHeading"
+          >
+            Instrument Number
+          </span>
+          : 
+          <button
+            className="instrumentLink"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            XO-001-2018
+          </button>
+        </div>
+        <div
+          className="ContentBlock "
+        >
+          <span
+            className="contentHeading"
+          >
+            Effective Date
+          </span>
+          : 
+          2014-10-24
+        </div>
       </div>
       <div
-        className="ContentBlock half"
+        className="half"
       >
-        <span
-          className="contentHeading"
+        <div
+          className="ContentBlock "
         >
-          Instrument Number
-        </span>
-        : 
-        <button
-          className="instrumentLink"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
+          <span
+            className="contentHeading"
+          >
+            Instrument Status
+          </span>
+          : 
+          <span>
+            In Progress
+          </span>
+        </div>
+        <div
+          className="ContentBlock "
         >
-          XO-001-2018
-        </button>
-      </div>
-      <div
-        className="ContentBlock half"
-      >
-        <span
-          className="contentHeading"
+          <span
+            className="contentHeading"
+          >
+            Sunset Date
+          </span>
+          : 
+          2019-01-30
+        </div>
+        <div
+          className="ContentBlock "
         >
-          Effective Date
-        </span>
-        : 
-        2014-10-24
-      </div>
-      <div
-        className="ContentBlock half"
-      >
-        <span
-          className="contentHeading"
-        >
-          Instrument Status
-        </span>
-        : 
-        <span>
-          In Progress
-        </span>
-      </div>
-      <div
-        className="ContentBlock half"
-      >
-        <span
-          className="contentHeading"
-        >
-          Sunset Date
-        </span>
-        : 
-        2019-01-30
-      </div>
-      <div
-        className="ContentBlock half"
-      >
-        <span
-          className="contentHeading"
-        >
-          Location
-        </span>
-        : 
-        Albuquerque, NM
+          <span
+            className="contentHeading"
+          >
+            Location
+          </span>
+          : 
+          Albuquerque, NM
+        </div>
       </div>
       <p
         className="contentText"

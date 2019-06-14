@@ -16,15 +16,14 @@ export default (instruments, selectedFeature) => (
     } = instrument;
 
     const formattedConditions = conditions.reduce((acc, condition) => {
-      // const fill = Object.entries(condition.aggregatedCount[selectedFeature])
-      //   .reduce((fillAcc, [subFeature, subCount]) => {
-      //     if (subFeature === '__typename' || subCount <= 0) return fillAcc;
-      //     fillAcc.push(features[selectedFeature][subFeature]);
-      //     return fillAcc;
-      //   }, []);
+      const fill = Object.entries(condition.aggregatedCountArray[`${selectedFeature}Enum`])
+        .reduce((fillAcc, [index, subFeature]) => {
+          // if (subFeature === '__typename') return fillAcc;
+          if (selectedFeature === 'instrument') fillAcc.push(features[selectedFeature][index]);
+          else fillAcc.push(features[selectedFeature][subFeature]);
+          return fillAcc;
+        }, []);
       const { id } = condition;
-
-      const fill = ['red'];
 
       const details = {
         // TODO: Handle multiple themes (do any actually exist?)

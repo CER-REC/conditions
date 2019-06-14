@@ -46,12 +46,16 @@ class Content extends React.PureComponent {
         (this.props.itemIndex === -1)
           ? (
             <React.Fragment>
-              <ContentBlock id="components.conditionDetails.issuanceDate" content={data.issuanceDate} half />
-              <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} half />
-              <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} half />
-              <ContentBlock id="components.conditionDetails.status" content={<FormattedMessage id={`common.${data.status}`} />} half />
-              <ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} half />
-              <ContentBlock id="components.conditionDetails.location" content={data.location} half />
+              <div className="half">
+                <ContentBlock id="components.conditionDetails.issuanceDate" content={data.issuanceDate} />
+                <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
+                <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} />
+              </div>
+              <div className="half">
+                <ContentBlock id="components.conditionDetails.status" content={<FormattedMessage id={`common.status.${data.status}`} />} />
+                <ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />
+                <ContentBlock id="components.conditionDetails.location" content={data.location} />
+              </div>
               {this.renderContentText('components.conditionDetails.activity', data.activity)}
             </React.Fragment>
           )

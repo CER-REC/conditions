@@ -36,8 +36,8 @@ export default gql`
             filingEnum
             phase
             phaseEnum
-            prefix
-            prefixEnum
+            instrument: prefix
+            instrumentEnum: prefixEnum
             status
             statusEnum
             theme
