@@ -23,7 +23,8 @@ storiesForView('Containers|App', module, ReadMe)
     return <App {...props} />;
   })
   .add('within WET', () => (
-    /* eslint-disable react/no-unescaped-entities, react/self-closing-comp, jsx-a11y/label-has-associated-cotrol */
+    /* eslint-disable react/no-unescaped-entities, react/self-closing-comp */
+    /* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
     <React.Fragment>
       <link
         rel="stylesheet"
