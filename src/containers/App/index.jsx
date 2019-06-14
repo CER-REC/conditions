@@ -211,6 +211,40 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
+  // Adapted from: https://stackoverflow.com/a/48346417
+  absolutePositionFromSvg = ({
+    xInSvg,
+    yInSvg,
+    viewSelector,
+    svgSelector, // Relative to viewSelector
+    elementSelector, // Relative to svgSelector
+  }) => {
+    const view = document.querySelector(viewSelector);
+    if (!view) { return null; }
+
+    const svg = view.querySelector(svgSelector);
+    if (!svg) { return null; }
+
+    const svgElement = svg.querySelector(elementSelector);
+    if (!svgElement) { return null; }
+
+    const point = svg.createSVGPoint();
+    point.x = xInSvg;
+    point.y = yInSvg;
+
+    const positionInSvg = point.matrixTransform(svgElement.getCTM());
+
+    const svgRect = svg.getBoundingClientRect();
+    const viewRect = view.getBoundingClientRect();
+
+    return {
+      x: svgRect.left - viewRect.left + positionInSvg.x,
+      y: svgRect.top - viewRect.top + positionInSvg.y,
+      viewWidth: viewRect.width,
+      viewHeight: viewRect.height,
+    };
+  };
+
   syncInitialGuidePosition = (guidePosition) => {
     const position = this.absolutePositionFromSvg({
       xInSvg: guidePosition.x,
@@ -247,42 +281,6 @@ class App extends React.PureComponent {
         },
       });
     }
-  };
-
-  // Adapted from: https://stackoverflow.com/a/48346417
-  absolutePositionFromSvg = ({
-    xInSvg,
-    yInSvg,
-    viewSelector,
-    svgSelector, // Relative to viewSelector
-    elementSelector, // Relative to svgSelector
-  }) => {
-    const view = document.querySelector(viewSelector);
-    if (!view) { return null; }
-
-    const svg = view.querySelector(svgSelector);
-    if (!svg) { return null; }
-
-    const svgElement = svg.querySelector(elementSelector);
-    if (!svgElement) { return null; }
-
-    const point = svg.createSVGPoint();
-    const matrix = svgElement.getCTM();
-
-    point.x = xInSvg;
-    point.y = yInSvg;
-
-    const positionInSvg = point.matrixTransform(matrix);
-
-    const svgRect = svg.getBoundingClientRect();
-    const viewRect = view.getBoundingClientRect();
-
-    return {
-      x: svgRect.left - viewRect.left + positionInSvg.x,
-      y: svgRect.top - viewRect.top + positionInSvg.y,
-      viewWidth: viewRect.width,
-      viewHeight: viewRect.height,
-    };
   };
 
   syncInitialKeywordPosition = () => {
