@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CompanyPopup from '../../CompanyPopup';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import ProjectHeader from '.';
@@ -13,7 +12,10 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
   let spy;
 
   beforeEach(() => {
-    spy = jest.fn();
+    spy = {
+      openProjectDetails: jest.fn(),
+      toggleExpanded: jest.fn(),
+    };
   });
 
   describe('with default props', () => {
@@ -21,19 +23,20 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
       wrapper = shallow(
         <ProjectHeader
           selectedProject="Keystone XL"
-          toggleExpanded={spy}
+          openProjectDetails={spy.openProjectDetails}
+          toggleExpanded={spy.toggleExpanded}
         />,
       );
     });
 
     shouldBehaveLikeAComponent(ProjectHeader, () => wrapper);
 
-    test('should open the Company Modal', () => {
+    test('should call its openProjectDetails callback', () => {
       wrapper.find('.ProjectHeader')
         .find('.openProject')
         .simulate('click', eventFuncs);
 
-      expect(wrapper.find(CompanyPopup).prop('isOpen')).toEqual(true);
+      expect(spy.openProjectDetails).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -42,7 +45,8 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
       wrapper = shallow(
         <ProjectHeader
           selectedProject="Keystone XL"
-          toggleExpanded={spy}
+          openProjectDetails={spy.openProjectDetails}
+          toggleExpanded={spy.toggleExpanded}
           isExpandable
         />,
       );
@@ -53,7 +57,7 @@ describe('Components|ConditionDetails/ProjectHeader', () => {
         .find('.toggleExpand')
         .simulate('click', eventFuncs);
 
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy.toggleExpanded).toHaveBeenCalledTimes(1);
     });
   });
 });

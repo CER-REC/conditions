@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
-import RegDocsPopup from '../../RegDocsPopup';
 
 import Content from '.';
 
@@ -18,27 +17,27 @@ const defaultProps = {
 describe('Components|ConditionDetails/Content', () => {
   describe('with default props', () => {
     let wrapper;
+    let spy;
 
     beforeEach(() => {
+      spy = jest.fn();
       wrapper = shallow(
         <Content
           {...defaultProps}
+          openIntermediatePopup={spy}
         />,
       );
     });
 
     shouldBehaveLikeAComponent(Content, () => wrapper);
 
-    it('should open RegDocsPopup', () => {
+    it('should call its openIntermediatePopup callback', () => {
       wrapper.find('.Content')
         .find('ContentBlock').at(1).shallow()
         .find('button')
         .simulate('click', eventFuncs);
 
-      expect(wrapper.find('.Content')
-        .find('ContentBlock').at(1).shallow()
-        .find(RegDocsPopup)
-        .prop('isOpen')).toEqual(true);
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });
