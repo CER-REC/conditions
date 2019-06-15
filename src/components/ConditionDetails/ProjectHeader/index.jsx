@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
-import CompanyPopup from '../../CompanyPopup';
 
 import './styles.scss';
 
@@ -31,21 +30,6 @@ const moreButton = (
 );
 
 class ProjectHeader extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isCompanyPopupOpen: false,
-    };
-  }
-
-  openCompanyPopup =() => {
-    this.setState(prevState => ({ ...prevState, isCompanyPopupOpen: true }));
-  }
-
-  closeCompanyPopup = () => {
-    this.setState(prevState => ({ ...prevState, isCompanyPopupOpen: false }));
-  };
-
   render = () => (
     <div className={classNames('ProjectHeader', { location: this.props.browseBy === 'location' })}>
       {this.props.browseBy === 'company'
@@ -55,16 +39,10 @@ class ProjectHeader extends React.PureComponent {
             <button
               type="button"
               className="openProject"
-              {...handleInteraction(this.openCompanyPopup)}
+              {...handleInteraction(this.props.openProjectDetails)}
             >
               <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
             </button>
-            <CompanyPopup
-              projectName={this.props.selectedProject}
-              closeModal={this.closeCompanyPopup}
-              companies={this.props.companies}
-              isOpen={this.state.isCompanyPopupOpen}
-            />
           </React.Fragment>
         )
         : <FormattedMessage id="components.conditionDetails.selectedCondition" tagName="h1" />
@@ -86,14 +64,13 @@ ProjectHeader.propTypes = {
   selectedProject: PropTypes.string.isRequired,
   toggleExpanded: PropTypes.func.isRequired,
   browseBy: PropTypes.oneOf(['company', 'location']),
-  companies: PropTypes.arrayOf(PropTypes.string),
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ProjectHeader.defaultProps = {
   isExpandable: false,
   expanded: false,
   browseBy: 'company',
-  companies: [],
 };
 
 export default ProjectHeader;

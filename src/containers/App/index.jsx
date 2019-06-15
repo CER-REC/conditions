@@ -14,7 +14,7 @@ import { IntlProvider, FormattedMessage } from 'react-intl';
 import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
-import { lang } from '../../constants';
+import { lang, regDocURL } from '../../constants';
 
 import { processConditionCounts } from './processQueryData';
 
@@ -45,6 +45,10 @@ import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import RegDocsPopup from '../../components/RegDocsPopup';
+import CompanyPopup from '../../components/CompanyPopup';
+
+
 import './styles.scss';
 
 import {
@@ -93,6 +97,8 @@ class App extends React.PureComponent {
       tutorialPlaying: false,
       initialGuidePosition: { x: 0, y: 0 },
       finalGuidePosition: { x: 0, y: 0 },
+      isIntermediatePopupOpen: false,
+      isCompanyPopupOpen: false,
     };
     this.ref = React.createRef();
   }
@@ -345,6 +351,22 @@ class App extends React.PureComponent {
     });
   };
 
+  openRegDocPopup =() => {
+    this.setState(prevState => ({ ...prevState, isIntermediatePopupOpen: true }));
+  }
+
+  closeRegDocPopup = () => {
+    this.setState(prevState => ({ ...prevState, isIntermediatePopupOpen: false }));
+  };
+
+  openCompanyPopup =() => {
+    this.setState(prevState => ({ ...prevState, isCompanyPopupOpen: true }));
+  }
+
+  closeCompanyPopup = () => {
+    this.setState(prevState => ({ ...prevState, isCompanyPopupOpen: false }));
+  };
+
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
@@ -466,21 +488,39 @@ class App extends React.PureComponent {
                       instruments,
                       selected.feature,
                     );
+                    const insturmentNumbertemp = formattedInstrument[
+                      this.props.selected.condition.instrumentIndex
+                    ].instrumentNumber;
                     return (
-                      <ConditionDetails
-                        selectedItem={this.props.selected.condition}
-                        selectedProject={shortName}
-                        updateSelectedItem={this.props.setSelectedCondition}
-                        toggleExpanded={noop}
-                        searchKeywords={{
-                          include: this.props.included,
-                          exclude: this.props.excluded,
-                        }}
-                        data={formattedInstrument}
-                        companies={companyArray}
-                        browseBy={this.props.browseBy}
-                        {...conditionDetailsViewProps}
-                      />
+                      <React.Fragment>
+                        <ConditionDetails
+                          selectedItem={this.props.selected.condition}
+                          selectedProject={shortName}
+                          updateSelectedItem={this.props.setSelectedCondition}
+                          toggleExpanded={noop}
+                          searchKeywords={{
+                            include: this.props.included,
+                            exclude: this.props.excluded,
+                          }}
+                          data={formattedInstrument}
+                          browseBy={this.props.browseBy}
+                          openIntermediatePopup={this.openRegDocPopup}
+                          openProjectDetails={this.openCompanyPopup}
+                          {...conditionDetailsViewProps}
+                        />
+                        <RegDocsPopup
+                          isOpen={this.state.isIntermediatePopupOpen}
+                          closeModal={this.closeRegDocPopup}
+                          instrument={insturmentNumbertemp}
+                          regdocsUrl={`${regDocURL}${insturmentNumbertemp}`}
+                        />
+                        <CompanyPopup
+                          projectName={shortName}
+                          closeModal={this.closeCompanyPopup}
+                          companies={companyArray}
+                          isOpen={this.state.isCompanyPopupOpen}
+                        />
+                      </React.Fragment>
                     );
                   }}
                 </Query>

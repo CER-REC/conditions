@@ -7,17 +7,8 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
 
 import ContentBlock from '../ContentBlock';
-import RegDocsPopup from '../../RegDocsPopup';
-import { regDocURL } from '../../../constants';
 
 class Content extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isIntermediatePopupOpen: false,
-    };
-  }
-
   renderContentText = (id, content) => {
     const paragraphs = content.split('\n');
 
@@ -37,30 +28,14 @@ class Content extends React.PureComponent {
     );
   }
 
-  openRegDocPopup =() => {
-    this.setState(prevState => ({ ...prevState, isIntermediatePopupOpen: true }));
-  }
-
-  closeRegDocPopup = () => {
-    this.setState(prevState => ({ ...prevState, isIntermediatePopupOpen: false }));
-  };
-
   renderInstrumentLink = instrumentNumber => (
-    <div>
-      <button
-        type="button"
-        className="instrumentLink"
-        {...handleInteraction(this.openRegDocPopup)}
-      >
-        {instrumentNumber}
-      </button>
-      <RegDocsPopup
-        isOpen={this.state.isIntermediatePopupOpen}
-        closeModal={this.closeRegDocPopup}
-        instrument={instrumentNumber}
-        regdocsUrl={`${regDocURL}${instrumentNumber}`}
-      />
-    </div>
+    <button
+      type="button"
+      className="instrumentLink"
+      {...handleInteraction(this.props.openIntermediatePopup)}
+    >
+      {instrumentNumber}
+    </button>
   )
 
   render() {
@@ -106,6 +81,7 @@ Content.propTypes = {
     conditions: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
   itemIndex: PropTypes.number.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
 };
 
 export default Content;

@@ -61,7 +61,7 @@ class ConditionDetails extends React.Component {
       selectedProject={this.props.selectedProject}
       toggleExpanded={this.props.toggleExpanded}
       browseBy={this.props.browseBy}
-      companies={this.props.companies}
+      openProjectDetails={this.props.openProjectDetails}
     />
   )
 
@@ -77,6 +77,7 @@ class ConditionDetails extends React.Component {
     <Content
       instrument={this.props.data[this.props.selectedItem.instrumentIndex]}
       itemIndex={this.props.selectedItem.itemIndex}
+      openIntermediatePopup={this.props.openIntermediatePopup}
     />
   )
 
@@ -125,7 +126,8 @@ ConditionDetails.propTypes = {
   }),
   toggleExpanded: PropTypes.func,
   updateSelectedItem: PropTypes.func.isRequired,
-  companies: PropTypes.arrayOf(PropTypes.string),
+  openIntermediatePopup: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ConditionDetails.defaultProps = {
@@ -135,7 +137,6 @@ ConditionDetails.defaultProps = {
   searchKeywords: { include: [], exclude: [] },
   selectedItem: { instrumentIndex: 0, itemIndex: -1 },
   toggleExpanded: () => {},
-  companies: [],
 };
 
 export default ConditionDetails;
