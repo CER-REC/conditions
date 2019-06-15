@@ -48,7 +48,6 @@ import formatConditionDetails from '../../utilities/formatConditionDetails';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 
-
 import './styles.scss';
 
 import {
