@@ -81,7 +81,7 @@ storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
   ), {
     interaction:
     {
-      state: { selectedItem: { instrumentIndex: 0, itemIndex: -1 } },
+      state: { selectedItem: 0 },
       actions: { updateSelectedItem },
     },
   });

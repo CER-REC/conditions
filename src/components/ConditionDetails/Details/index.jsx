@@ -23,8 +23,8 @@ class Details extends React.PureComponent {
                       index === this.props.data.theme.length - 1
                         ? <FormattedMessage key={`common.theme.${theme}`} id={`common.theme.${theme}`} />
                         : (
-                          <React.Fragment>
-                            <FormattedMessage key={`common.theme.${theme}`} id={`common.theme.${theme}`} />
+                          <React.Fragment key={`common.theme.${theme}`}>
+                            <FormattedMessage id={`common.theme.${theme}`} />
                             <span>, </span>
                           </React.Fragment>
                         )
