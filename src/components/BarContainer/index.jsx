@@ -59,7 +59,9 @@ const BarContainer = (props) => {
           y={calculateSize(100 - height, maxHeight)}
           width={calculateSize(width, maxWidth)}
           height={calculateSize(height, maxHeight)}
-        />
+        >
+          <title>{bar.description}</title>
+        </rect>
       );
     }
 
@@ -74,7 +76,9 @@ const BarContainer = (props) => {
         y={0}
         width={`${width}%`}
         height="100%"
-      />
+      >
+        <title>{bar.description}</title>
+      </rect>
     );
   });
 
