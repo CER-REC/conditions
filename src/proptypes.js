@@ -145,7 +145,10 @@ export const viewTwo = {
   openProjectDetails: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
-  relevantInfo: PropTypes.Object, // TODO Make this proptype more specific
+  relevantInfo: PropTypes.shape(
+    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.arrayOf(PropTypes.number),
+  ), // TODO Make this proptype more specific
   filteredProjects: PropTypes.arrayOf(PropTypes.number),
 };
 // Used in Keyword List (SuggestedKeywords)

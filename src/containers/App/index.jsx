@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider, Query } from 'react-apollo';

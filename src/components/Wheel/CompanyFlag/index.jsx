@@ -2,7 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectDot from '../../ProjectDot';
 
-const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotation, relevantProjects, filteredProjects}) => {
+const CompanyFlag = ({
+  flagLayout,
+  dotWidth,
+  dotSpacing,
+  x,
+  y,
+  svgHeight,
+  rotation,
+  relevantProjects,
+  filteredProjects,
+}) => {
   if (!flagLayout) { return null; }
 
   const baseY = y + svgHeight - (flagLayout[0].length * dotSpacing);
@@ -52,6 +62,7 @@ CompanyFlag.propTypes = {
   dotSpacing: PropTypes.number,
   rotation: PropTypes.number,
   relevantProjects: PropTypes.arrayOf(PropTypes.number),
+  filteredProjects: PropTypes.arrayOf(PropTypes.number),
 };
 
 CompanyFlag.defaultProps = {
@@ -61,6 +72,7 @@ CompanyFlag.defaultProps = {
   dotSpacing: 24,
   rotation: 0,
   relevantProjects: [],
+  filteredProjects: [],
 };
 
 export default CompanyFlag;

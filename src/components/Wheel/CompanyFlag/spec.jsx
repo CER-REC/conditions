@@ -72,16 +72,16 @@ describe('Components|Wheel/CompanyFlag', () => {
       wrapper = shallow(<CompanyFlag
         flagLayout={[
           [
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
+            100,
+            5,
+            300,
+            452,
+            60,
+            12,
+            10,
+            67,
+            42,
+            514,
           ],
         ]}
         svgHeight={200}
@@ -99,22 +99,22 @@ describe('Components|Wheel/CompanyFlag', () => {
       wrapper = shallow(<CompanyFlag
         flagLayout={[
           [
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
+            50,
+            150,
+            250,
+            350,
           ],
           [
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
+            67,
+            642,
+            65,
+            78,
           ],
           [
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
-            { filtered: false, relevant: true },
+            300,
+            301,
+            302,
+            14,
           ],
         ]}
         svgHeight={200}
