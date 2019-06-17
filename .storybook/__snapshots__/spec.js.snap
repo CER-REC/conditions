@@ -1584,7 +1584,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   onKeyPress={[Function]}
                   tabIndex={0}
                 >
-                  <div>
+                  <div
+                    title="XO-001-2018"
+                  >
                     <div
                       className="barMarker"
                     />
@@ -1718,7 +1720,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   onKeyPress={[Function]}
                   tabIndex={0}
                 >
-                  <div>
+                  <div
+                    title="XO-003-2018"
+                  >
                     <div
                       className="barMarker"
                     />
@@ -1832,7 +1836,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   onKeyPress={[Function]}
                   tabIndex={0}
                 >
-                  <div>
+                  <div
+                    title="XO-005-2018"
+                  >
                     <div
                       className="barMarker"
                     />
@@ -2140,7 +2146,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     onKeyPress={[Function]}
                     tabIndex={0}
                   >
-                    <div>
+                    <div
+                      title="XO-001-2018"
+                    >
                       <div
                         className="barMarker"
                       />
@@ -2274,7 +2282,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     onKeyPress={[Function]}
                     tabIndex={0}
                   >
-                    <div>
+                    <div
+                      title="XO-003-2018"
+                    >
                       <div
                         className="barMarker"
                       />
@@ -2388,7 +2398,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     onKeyPress={[Function]}
                     tabIndex={0}
                   >
-                    <div>
+                    <div
+                      title="XO-005-2018"
+                    >
                       <div
                         className="barMarker"
                       />
@@ -2670,7 +2682,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                   onKeyPress={[Function]}
                   tabIndex={0}
                 >
-                  <div>
+                  <div
+                    title="XO-001-2018"
+                  >
                     <div
                       className="barMarker"
                     />
@@ -2804,7 +2818,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                   onKeyPress={[Function]}
                   tabIndex={0}
                 >
-                  <div>
+                  <div
+                    title="XO-003-2018"
+                  >
                     <div
                       className="barMarker"
                     />
@@ -2918,7 +2934,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                   onKeyPress={[Function]}
                   tabIndex={0}
                 >
-                  <div>
+                  <div
+                    title="XO-005-2018"
+                  >
                     <div
                       className="barMarker"
                     />
@@ -3164,7 +3182,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               onKeyPress={[Function]}
               tabIndex={0}
             >
-              <div>
+              <div
+                title="XO-001-2018"
+              >
                 <div
                   className="barMarker"
                 />
@@ -3278,7 +3298,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               onKeyPress={[Function]}
               tabIndex={0}
             >
-              <div>
+              <div
+                title="XO-003-2018"
+              >
                 <div
                   className="barMarker"
                 />
@@ -3392,7 +3414,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               onKeyPress={[Function]}
               tabIndex={0}
             >
-              <div>
+              <div
+                title="XO-005-2018"
+              >
                 <div
                   className="barMarker"
                 />
@@ -5143,10 +5167,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Security"
       >
-        <span>
-          Security
-        </span>
+        Security
       </div>
     </div>
     <div
@@ -5162,10 +5185,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Management System"
       >
-        <span>
-          Management System
-        </span>
+        Management System
       </div>
     </div>
     <div
@@ -5181,10 +5203,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Financial"
       >
-        <span>
-          Financial
-        </span>
+        Financial
       </div>
     </div>
     <div
@@ -5200,10 +5221,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Damage Prevention"
       >
-        <span>
-          Damage Prevention
-        </span>
+        Damage Prevention
       </div>
     </div>
     <div
@@ -5219,10 +5239,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Socio-Economic"
       >
-        <span>
-          Socio-Economic
-        </span>
+        Socio-Economic
       </div>
     </div>
   </div>
@@ -5249,10 +5268,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Security"
       >
-        <span>
-          Security
-        </span>
+        Security
       </div>
     </div>
     <div
@@ -5268,10 +5286,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Management System"
       >
-        <span>
-          Management System
-        </span>
+        Management System
       </div>
     </div>
     <div
@@ -5287,10 +5304,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Financial"
       >
-        <span>
-          Financial
-        </span>
+        Financial
       </div>
     </div>
     <div
@@ -5306,10 +5322,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Damage Prevention"
       >
-        <span>
-          Damage Prevention
-        </span>
+        Damage Prevention
       </div>
     </div>
     <div
@@ -5325,10 +5340,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Socio-Economic"
       >
-        <span>
-          Socio-Economic
-        </span>
+        Socio-Economic
       </div>
     </div>
     <div
@@ -5443,10 +5457,9 @@ exports[`Storyshots Components|FeaturesLegend/LegendItem default 1`] = `
       />
       <div
         className="text"
+        title="Security"
       >
-        <span>
-          Security
-        </span>
+        Security
       </div>
     </div>
   </div>
