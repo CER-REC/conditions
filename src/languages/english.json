@@ -133,6 +133,13 @@
   "components": {
     "conditionExplorer": {
       "guide": {
+        "messages": {
+          "intro": "These lines\nare conditions",
+          "0": "Reveal condition\nkeywords by\ndragging",
+          "1": "Click to learn\nwhat a\ncondition is",
+          "2": "Select a\nkeyword and\nclick to\ncontinue",
+          "click": "Click to\ncontinue"
+        },
         "overview": {
           "title": "What is a condition?",
           "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB’s regulatory framework, which is made of laws, regulations, requirements and guidance."
@@ -146,7 +153,8 @@
           "documentationPrompt": "The NEB verifies company compliance with project condition requirements through:",
           "doc1": "compliance verification activities (i.e. inspections, audits, etc.)",
           "doc2": "assessing condition filings"
-        }
+        },
+        "clickOutside": "Click outside circle to go back"
       }
     },
     "companyWheel": {
