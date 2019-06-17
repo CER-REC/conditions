@@ -510,7 +510,7 @@ class App extends React.PureComponent {
                           isOpen={this.state.isIntermediatePopupOpen}
                           closeModal={this.closeRegDocPopup}
                           instrument={insturmentNumbertemp}
-                          regdocsUrl={`${regDocURL}${insturmentNumbertemp}`}
+                          regdocsUrl={`${regDocURL[lang]}${insturmentNumbertemp}`}
                         />
                         <CompanyPopup
                           projectName={shortName}
