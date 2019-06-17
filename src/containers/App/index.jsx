@@ -486,9 +486,9 @@ class App extends React.PureComponent {
                       instruments,
                       selected.feature,
                     );
-                    const insturmentNumbertemp = formattedInstrument[
+                    const { instrumentNumber } = formattedInstrument[
                       this.props.selected.condition.instrumentIndex
-                    ].instrumentNumber;
+                    ];
                     return (
                       <React.Fragment>
                         <ConditionDetails
@@ -509,8 +509,8 @@ class App extends React.PureComponent {
                         <RegDocsPopup
                           isOpen={this.state.isIntermediatePopupOpen}
                           closeModal={this.closeRegDocPopup}
-                          instrument={insturmentNumbertemp}
-                          regdocsUrl={`${regDocURL[lang]}${insturmentNumbertemp}`}
+                          instrument={instrumentNumber}
+                          regdocsUrl={`${regDocURL[lang]}${instrumentNumber}`}
                         />
                         <CompanyPopup
                           projectName={shortName}
