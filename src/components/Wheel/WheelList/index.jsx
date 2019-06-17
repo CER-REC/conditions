@@ -52,7 +52,14 @@ class WheelList extends React.Component {
             {text => <span className="label">{text}</span>}
           </FormattedMessage>
           { this.props.listContent.length > 0
-            ? (<span className="selected">{this.props.listContent[this.props.selected].name}</span>)
+            ? (
+              <span
+                title={this.props.listContent[this.props.selected].name}
+                className="selected"
+              >
+                {this.props.listContent[this.props.selected].name}
+              </span>
+            )
             : null
           }
         </div>
