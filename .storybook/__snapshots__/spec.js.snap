@@ -18766,6 +18766,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               />
               <span
                 className="text"
+                title="All Themes"
               >
                 All Themes
               </span>
@@ -18862,6 +18863,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span
                 className="text"
+                title="Security"
               >
                 Security
               </span>
@@ -18930,6 +18932,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span
                 className="text"
+                title="Management System"
               >
                 Management System
               </span>
@@ -18998,6 +19001,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span
                 className="text"
+                title="Financial"
               >
                 Financial
               </span>
@@ -19067,6 +19071,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               />
               <span
                 className="text"
+                title="All Themes"
               >
                 All Themes
               </span>
@@ -19163,6 +19168,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               </span>
               <span
                 className="text"
+                title="Security"
               >
                 Security
               </span>
@@ -19231,6 +19237,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               </span>
               <span
                 className="text"
+                title="Management System"
               >
                 Management System
               </span>
@@ -19299,6 +19306,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               </span>
               <span
                 className="text"
+                title="Financial"
               >
                 Financial
               </span>
@@ -19340,6 +19348,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               />
               <span
                 className="text"
+                title="All Themes"
               >
                 All Themes
               </span>
@@ -19436,6 +19445,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               </span>
               <span
                 className="text"
+                title="Security"
               >
                 Security
               </span>
@@ -19532,6 +19542,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               </span>
               <span
                 className="text"
+                title="Management System"
               >
                 Management System
               </span>
@@ -19600,6 +19611,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               </span>
               <span
                 className="text"
+                title="Financial"
               >
                 Financial
               </span>
@@ -19627,6 +19639,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem all 1`] = `
       />
       <span
         className="text"
+        title="All Filings"
       >
         All Filings
       </span>
@@ -19694,6 +19707,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem basic usage 1`] =
       </span>
       <span
         className="text"
+        title="Security"
       >
         Security
       </span>
@@ -19761,6 +19775,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
       </span>
       <span
         className="text"
+        title="Financial"
       >
         Financial
       </span>
