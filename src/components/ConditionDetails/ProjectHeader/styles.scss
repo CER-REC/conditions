@@ -29,16 +29,18 @@
 
   .openProject {
     height: 90%;
-    max-width: 67%;
+    width: 67%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
-    &:first-of-type {
-      width: fit-content;
+    div {
+      display: inline-block;
+      vertical-align: top;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      max-width: 97%;
     }
     &:before{
       content: '\00a0';

@@ -16,7 +16,21 @@ class Details extends React.PureComponent {
             ? (
               <React.Fragment>
                 <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
-                <ContentBlock id="common.features.theme" content={<FormattedMessage id={`common.${this.props.data.theme}`} />} />
+                <ContentBlock
+                  id="common.features.theme"
+                  content={
+                    this.props.data.theme.map((theme, index) => (
+                      index === this.props.data.theme.length - 1
+                        ? <FormattedMessage key={`common.theme.${theme}`} id={`common.theme.${theme}`} />
+                        : (
+                          <React.Fragment>
+                            <FormattedMessage key={`common.theme.${theme}`} id={`common.theme.${theme}`} />
+                            <span>, </span>
+                          </React.Fragment>
+                        )
+                    ))
+                  }
+                />
                 <ContentBlock id="common.features.phase" content={<FormattedMessage id={`common.${this.props.data.phase}`} />} />
                 <ContentBlock id="common.features.type" content={<FormattedMessage id={`common.${this.props.data.type}`} />} />
                 <ContentBlock id="common.features.status" content={<FormattedMessage id={`common.${this.props.data.status}`} />} />
@@ -34,7 +48,7 @@ class Details extends React.PureComponent {
 Details.propTypes = {
   isInstrument: PropTypes.bool,
   data: PropTypes.shape({
-    theme: PropTypes.string.isRequired,
+    theme: PropTypes.array.isRequired,
     phase: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,

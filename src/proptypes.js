@@ -80,7 +80,7 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   effectiveDate: PropTypes.string.isRequired,
   sunsetDate: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
+  location: PropTypes.array.isRequired,
   activity: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.shape({
     binnedValue: PropTypes.number.isRequired,
@@ -88,7 +88,7 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     text: PropTypes.string.isRequired,
     details: PropTypes.shape({
-      theme: PropTypes.string.isRequired,
+      theme: PropTypes.array.isRequired,
       phase: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,

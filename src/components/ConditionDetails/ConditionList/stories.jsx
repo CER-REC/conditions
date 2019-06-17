@@ -13,6 +13,8 @@ const data = [
   },
   {
     binnedValue: 3,
+    instrumentNumber: 'XO-001-2018',
+    id: 1,
     fill: ['pink'],
     marked: true,
     instrumentIndex: 0,
@@ -20,6 +22,8 @@ const data = [
   },
   {
     binnedValue: 2,
+    instrumentNumber: 'XO-001-2018',
+    id: 2,
     fill: ['blue'],
     instrumentIndex: 0,
     itemIndex: 1,
@@ -32,12 +36,16 @@ const data = [
   },
   {
     binnedValue: 1,
+    instrumentNumber: 'XO-003-2018',
+    id: 4,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 0,
   },
   {
     binnedValue: 2,
+    instrumentNumber: 'XO-003-2018',
+    id: 5,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 1,
@@ -50,6 +58,8 @@ const data = [
   },
   {
     binnedValue: 3,
+    instrumentNumber: 'XO-005-2018',
+    id: 6,
     fill: ['orange'],
     marked: true,
     instrumentIndex: 2,
@@ -57,14 +67,9 @@ const data = [
   },
 ];
 
-const updateSelectedItem = () => (instrumentIndex, itemIndex) => {
-  const idx = data.findIndex(item => (
-    item.instrumentIndex === instrumentIndex
-    && item.itemIndex === itemIndex
-  ));
-
-  return { selectedItem: idx };
-};
+const updateSelectedItem = () => (instrumentIndex, itemIndex) => (
+  { instrumentIndex, itemIndex }
+);
 
 storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
   .addDecorator(withInteraction({ actions: ['updateSelectedItem'] }))
@@ -73,4 +78,10 @@ storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
       items={data}
       {...getInteractionProps()}
     />
-  ), { interaction: { state: { selectedItem: 3 }, actions: { updateSelectedItem } } });
+  ), {
+    interaction:
+    {
+      state: { selectedItem: { instrumentIndex: 0, itemIndex: -1 } },
+      actions: { updateSelectedItem },
+    },
+  });

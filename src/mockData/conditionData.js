@@ -17,7 +17,7 @@ export default [
     effectiveDate: '2014-10-24',
     sunsetDate: '2019-01-30',
     status: 'IN_PROGRESS',
-    location: 'Albuquerque, NM',
+    location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
     activity: lorem,
     conditions: [
@@ -27,7 +27,7 @@ export default [
         keywords: ['program'],
         text: `hello ${lorem}`,
         details: {
-          theme: 'theme.ENVIRONMENTAL_PROTECTION',
+          theme: ['ENVIRONMENTAL_PROTECTION', 'SECURITY'],
           instrument: 'instrument.CONSTRUCTION',
           phase: 'phase.DURING_CONSTRUCTION_PHASE',
           type: 'type.STANDARD',
@@ -41,7 +41,7 @@ export default [
         keywords: ['program'],
         text: lorem,
         details: {
-          theme: 'theme.SECURITY',
+          theme: ['SECURITY', 'ENFORCEMENT'],
           instrument: 'instrument.ABANDONMENT',
           phase: 'phase.POST_CONSTRUCTION_PHASE',
           type: 'type.STANDARD',
@@ -57,7 +57,7 @@ export default [
     effectiveDate: '2014-10-24',
     sunsetDate: '2019-01-30',
     status: 'IN_PROGRESS',
-    location: 'Albuquerque, NM',
+    location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
     activity: lorem,
     conditions: [
@@ -67,7 +67,7 @@ export default [
         keywords: ['program'],
         text: lorem,
         details: {
-          theme: 'theme.ENFORCEMENT',
+          theme: ['ENFORCEMENT'],
           instrument: 'instrumentCommodityType.OIL',
           phase: 'phase.DURING_CONSTRUCTION_PHASE',
           type: 'type.NON_STANDARD',
@@ -81,7 +81,7 @@ export default [
         keywords: ['program'],
         text: lorem,
         details: {
-          theme: 'theme.SUNSET_CLAUSE',
+          theme: ['SUNSET_CLAUSE'],
           instrument: 'instrument.ROUTING',
           phase: 'phase.DURING_CONSTRUCTION_PHASE',
           type: 'type.STANDARD',
@@ -97,7 +97,7 @@ export default [
     effectiveDate: '2014-10-24',
     sunsetDate: '2019-01-30',
     status: 'CLOSED',
-    location: 'Albuquerque, NM',
+    location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
     activity: lorem,
     conditions: [
@@ -107,7 +107,7 @@ export default [
         keywords: ['program'],
         text: `hello ${lorem}`,
         details: {
-          theme: 'theme.ADMINISTRATIVE',
+          theme: ['ADMINISTRATIVE', 'ENFORCEMENT', 'SUNSET_CLAUSE'],
           instrument: 'instrument.OPENING',
           phase: 'phase.INCLUDES_ALL_PHASES_OF_CONSTR',
           type: 'type.NON_STANDARD',

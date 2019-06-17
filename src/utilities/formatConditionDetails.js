@@ -18,16 +18,19 @@ export default (instruments, selectedFeature) => (
     const formattedConditions = conditions.reduce((acc, condition) => {
       const fill = Object.entries(condition.aggregatedCountArray[`${selectedFeature}Enum`])
         .reduce((fillAcc, [index, subFeature]) => {
-          // if (subFeature === '__typename') return fillAcc;
-          if (selectedFeature === 'instrument') fillAcc.push(features[selectedFeature][index]);
-          else fillAcc.push(features[selectedFeature][subFeature]);
+          if (condition.aggregatedCountArray[selectedFeature][index] === 0) { return fillAcc; }
+
+          fillAcc.push(features[selectedFeature][(selectedFeature === 'instrument')
+            ? index
+            : subFeature
+          ]);
           return fillAcc;
         }, []);
+
       const { id } = condition;
 
       const details = {
-        // TODO: Handle multiple themes (do any actually exist?)
-        theme: `theme.${condition.theme[0]}`,
+        theme: condition.theme.filter((v, i, a) => a.indexOf(v) === i),
         phase: `phase.${condition.phase}`,
         type: `type.${(condition.standardCondition) ? 'STANDARD' : 'NON_STANDARD'}`,
         status: `status.${condition.status}`,

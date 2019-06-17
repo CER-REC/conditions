@@ -2,7 +2,7 @@
 .ConditionList {
   vertical-align: top;
   max-width: 160px;
-  line-height: 10px;
+  line-height: 4px;
   height: 100%;
 
   .barMarker, .BarContainer {
@@ -28,21 +28,21 @@
     overflow: visible;
     ul {
       padding-top: 20px;
+      padding-left: 5px;
       height: 100%;
       overflow-y: auto;
     }
   }
 
   .BarContainer {
-
     &.binnedValue-1 {
-      width: calc(33% - 15px);
+      width: calc(0.333 * (100% - 15px));
     }
-
+    
     &.binnedValue-2 {
-      width: calc(67% - 15px);
+      width: calc(0.667 * (100% - 15px));
     }
-
+    
     &.binnedValue-3 {
       width: calc(100% - 15px);
     }

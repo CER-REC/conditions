@@ -68,7 +68,7 @@ const connectedProps = {
   jumpToView1: noop,
   regionCompanyData,
   conditionsPerYear: conditionCountsByYear.counts,
-  wheelMotiontrigge: noop,
+  wheelMotiontrigger: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)

@@ -166,7 +166,7 @@
     "conditionDetails": {
       "selectedProject": "Selected Project:",
       "selectedCondition": "Selected Condition:",
-      "instrumentNumber": "Instrument Number",
+      "instrumentNumber": "Instrument #",
       "location": "Location",
       "issuanceDate": "Issuance Date",
       "effectiveDate": "Effective Date",

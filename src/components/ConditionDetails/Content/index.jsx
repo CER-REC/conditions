@@ -48,12 +48,12 @@ class Content extends React.PureComponent {
             <React.Fragment>
               <div className="half">
                 <ContentBlock id="components.conditionDetails.issuanceDate" content={data.issuanceDate} />
-                <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
                 <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} />
+                <ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />
               </div>
               <div className="half">
+                <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
                 <ContentBlock id="components.conditionDetails.status" content={<FormattedMessage id={`common.status.${data.status}`} />} />
-                <ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />
                 <ContentBlock id="components.conditionDetails.location" content={data.location} />
               </div>
               {this.renderContentText('components.conditionDetails.activity', data.activity)}
@@ -61,8 +61,12 @@ class Content extends React.PureComponent {
           )
           : (
             <React.Fragment>
-              <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} half />
-              <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} half />
+              <div className="half">
+                <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} />
+              </div>
+              <div className="half">
+                <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
+              </div>
               <ContentBlock id="components.conditionDetails.keywords" content={data.conditions[this.props.itemIndex].keywords.join(', ')} />
               {this.renderContentText('components.conditionDetails.text', data.conditions[this.props.itemIndex].text)}
             </React.Fragment>
@@ -80,7 +84,7 @@ Content.propTypes = {
     effectiveDate: PropTypes.string.isRequired,
     sunsetDate: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
+    location: PropTypes.array.isRequired,
     activity: PropTypes.string.isRequired,
     conditions: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
