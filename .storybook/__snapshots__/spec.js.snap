@@ -93,7 +93,11 @@ exports[`Storyshots Components|BarContainer default 1`] = `
       x="0%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -103,7 +107,11 @@ exports[`Storyshots Components|BarContainer default 1`] = `
       x="10.810810810810814%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -113,7 +121,11 @@ exports[`Storyshots Components|BarContainer default 1`] = `
       x="70.27027027027027%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
   </svg>
 </div>
@@ -136,7 +148,11 @@ exports[`Storyshots Components|BarContainer size as percentage 1`] = `
       x="0%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -146,7 +162,11 @@ exports[`Storyshots Components|BarContainer size as percentage 1`] = `
       x="10.810810810810814%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -156,7 +176,11 @@ exports[`Storyshots Components|BarContainer size as percentage 1`] = `
       x="70.27027027027027%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
   </svg>
 </div>
@@ -179,7 +203,11 @@ exports[`Storyshots Components|BarContainer size as pixels 1`] = `
       x="0%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -189,7 +217,11 @@ exports[`Storyshots Components|BarContainer size as pixels 1`] = `
       x="10.810810810810814%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -199,7 +231,11 @@ exports[`Storyshots Components|BarContainer size as pixels 1`] = `
       x="70.27027027027027%"
       y={0}
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
   </svg>
 </div>
@@ -223,7 +259,11 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
         x="0%"
         y={0}
       >
-        <title />
+        <title>
+          <span>
+            Standard Condition
+          </span>
+        </title>
       </rect>
       <rect
         className="Bar"
@@ -233,7 +273,11 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
         x="10.810810810810814%"
         y={0}
       >
-        <title />
+        <title>
+          <span>
+            Standard Condition
+          </span>
+        </title>
       </rect>
       <rect
         className="Bar"
@@ -243,7 +287,11 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
         x="70.27027027027027%"
         y={0}
       >
-        <title />
+        <title>
+          <span>
+            Standard Condition
+          </span>
+        </title>
       </rect>
     </g>
   </svg>
@@ -267,7 +315,11 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       x="0%"
       y="81.81818181818181%"
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -277,7 +329,11 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       x="33.33333333333333%"
       y="0%"
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
     <rect
       className="Bar"
@@ -287,7 +343,11 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       x="66.66666666666666%"
       y="50%"
     >
-      <title />
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
     </rect>
   </svg>
 </div>
@@ -1561,7 +1621,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -1571,7 +1631,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="50%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -1604,7 +1664,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -1614,7 +1674,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="50%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -1723,7 +1783,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -1756,7 +1816,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -1809,7 +1869,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -1819,7 +1879,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="33.33333333333333%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -1829,7 +1889,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="66.66666666666666%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -2117,7 +2177,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                         <rect
                           className="Bar"
@@ -2127,7 +2187,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="50%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                       </svg>
                     </div>
@@ -2160,7 +2220,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                         <rect
                           className="Bar"
@@ -2170,7 +2230,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="50%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                       </svg>
                     </div>
@@ -2279,7 +2339,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                       </svg>
                     </div>
@@ -2312,7 +2372,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                       </svg>
                     </div>
@@ -2365,7 +2425,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                         <rect
                           className="Bar"
@@ -2375,7 +2435,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="33.33333333333333%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                         <rect
                           className="Bar"
@@ -2385,7 +2445,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="66.66666666666666%"
                           y={0}
                         >
-                          <title />
+                          
                         </rect>
                       </svg>
                     </div>
@@ -2647,7 +2707,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -2657,7 +2717,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="50%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -2690,7 +2750,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -2700,7 +2760,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="50%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -2809,7 +2869,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -2842,7 +2902,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -2895,7 +2955,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -2905,7 +2965,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="33.33333333333333%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                       <rect
                         className="Bar"
@@ -2915,7 +2975,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="66.66666666666666%"
                         y={0}
                       >
-                        <title />
+                        
                       </rect>
                     </svg>
                   </div>
@@ -3141,7 +3201,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    <title />
+                    
                   </rect>
                 </svg>
               </div>
@@ -3174,7 +3234,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    <title />
+                    
                   </rect>
                 </svg>
               </div>
@@ -3283,7 +3343,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    <title />
+                    
                   </rect>
                 </svg>
               </div>
@@ -3316,7 +3376,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    <title />
+                    
                   </rect>
                 </svg>
               </div>
@@ -3369,7 +3429,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    <title />
+                    
                   </rect>
                 </svg>
               </div>
@@ -16008,168 +16068,182 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             className="Bar"
             fill="rgb(181, 11, 128)"
             height="100%"
-            width="7.142857142857142%"
+            width="7.6923076923076925%"
             x="0%"
             y="0%"
           >
             <title>
-              STANDARD_CONDITION
+              <span>
+                Standard Condition
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(153, 82, 255)"
             height="40%"
-            width="7.142857142857142%"
-            x="7.142857142857142%"
+            width="7.6923076923076925%"
+            x="7.6923076923076925%"
             y="60%"
           >
             <title>
-              INTEGRITY_MANAGEMENT
+              <span>
+                Integrity Management
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(33, 181, 115)"
             height="86%"
-            width="7.142857142857142%"
-            x="14.285714285714285%"
+            width="7.6923076923076925%"
+            x="15.384615384615383%"
             y="14%"
           >
             <title>
-              ENVIRONMENTAL_PROTECTION
+              <span>
+                Environmental Protection
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(201, 215, 65)"
             height="30%"
-            width="7.142857142857142%"
-            x="21.428571428571427%"
+            width="7.6923076923076925%"
+            x="23.076923076923077%"
             y="70%"
           >
             <title>
-              ADMINISTRATIVE
+              <span>
+                Administrative
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(41, 41, 218)"
             height="10%"
-            width="7.142857142857142%"
-            x="28.571428571428566%"
+            width="7.6923076923076925%"
+            x="30.769230769230766%"
             y="90%"
           >
             <title>
-              SUNSET_CLAUSE
+              <span>
+                Sunset Clause
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(74, 166, 255)"
             height="30%"
-            width="7.142857142857142%"
-            x="35.71428571428571%"
+            width="7.6923076923076925%"
+            x="38.46153846153846%"
             y="70%"
           >
             <title>
-              ENFORCEMENT
+              <span>
+                Enforcement
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(11, 121, 153)"
             height="6%"
-            width="7.142857142857142%"
-            x="42.85714285714285%"
+            width="7.6923076923076925%"
+            x="46.15384615384615%"
             y="94%"
           >
             <title>
-              EMERGENCY_MANAGEMENT
+              <span>
+                Emergency Management
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(153, 153, 255)"
             height="30%"
-            width="7.142857142857142%"
-            x="49.99999999999998%"
+            width="7.6923076923076925%"
+            x="53.84615384615385%"
             y="70%"
           >
             <title>
-              SOCIO_ECONOMIC
+              <span>
+                Socio-Economic
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(68, 34, 149)"
             height="6%"
-            width="7.142857142857142%"
-            x="57.14285714285713%"
+            width="7.6923076923076925%"
+            x="61.53846153846153%"
             y="94%"
           >
             <title>
-              SAFETY_MANAGEMENT
+              <span>
+                Safety Management
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(133, 28, 133)"
             height="6%"
-            width="7.142857142857142%"
-            x="64.28571428571426%"
+            width="7.6923076923076925%"
+            x="69.23076923076923%"
             y="94%"
           >
             <title>
-              DAMAGE_PREVENTION
+              <span>
+                Damage Prevention
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(247, 193, 97)"
             height="6%"
-            width="7.142857142857142%"
-            x="71.4285714285714%"
+            width="7.6923076923076925%"
+            x="76.92307692307692%"
             y="94%"
           >
             <title>
-              FINANCIAL
+              <span>
+                Financial
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(221, 10, 10)"
             height="6%"
-            width="7.142857142857142%"
-            x="78.57142857142854%"
+            width="7.6923076923076925%"
+            x="84.61538461538461%"
             y="94%"
           >
             <title>
-              SECURITY
+              <span>
+                Security
+              </span>
             </title>
           </rect>
           <rect
             className="Bar"
             fill="rgb(36, 91, 64)"
             height="6%"
-            width="7.142857142857142%"
-            x="85.7142857142857%"
+            width="7.6923076923076925%"
+            x="92.3076923076923%"
             y="94%"
           >
             <title>
-              MANAGEMENT_SYSTEM
-            </title>
-          </rect>
-          <rect
-            className="Bar"
-            fill="black"
-            height="8%"
-            width="7.142857142857142%"
-            x="92.85714285714283%"
-            y="92%"
-          >
-            <title>
-              NO_THEME_INDICATED
+              <span>
+                Management System
+              </span>
             </title>
           </rect>
         </svg>
@@ -16252,7 +16326,9 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
             y="50%"
           >
             <title>
-              STANDARD
+              <span>
+                Standard
+              </span>
             </title>
           </rect>
           <rect
@@ -16264,7 +16340,9 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
             y="0%"
           >
             <title>
-              NON_STANDARD
+              <span>
+                Non Standard
+              </span>
             </title>
           </rect>
         </svg>
@@ -17934,7 +18012,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="0%"
                 y={0}
               >
-                <title />
+                
               </rect>
               <rect
                 className="Bar"
@@ -17944,7 +18022,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="100%"
                 y={0}
               >
-                <title />
+                
               </rect>
             </svg>
             <div
@@ -18004,7 +18082,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="0%"
                 y={0}
               >
-                <title />
+                
               </rect>
               <rect
                 className="Bar"
@@ -18014,7 +18092,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="33.33333333333333%"
                 y={0}
               >
-                <title />
+                
               </rect>
             </svg>
             <div
@@ -18110,7 +18188,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="0%"
                 y={0}
               >
-                <title />
+                
               </rect>
               <rect
                 className="Bar"
@@ -18120,7 +18198,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="100%"
                 y={0}
               >
-                <title />
+                
               </rect>
             </svg>
             <div
@@ -18180,7 +18258,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="0%"
                 y={0}
               >
-                <title />
+                
               </rect>
               <rect
                 className="Bar"
@@ -18190,7 +18268,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="33.33333333333333%"
                 y={0}
               >
-                <title />
+                
               </rect>
             </svg>
             <div

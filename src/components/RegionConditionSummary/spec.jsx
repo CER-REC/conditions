@@ -17,7 +17,6 @@ const themeData = [
   { feature: 'theme', description: 'FINANCIAL', value: 3 },
   { feature: 'theme', description: 'SECURITY', value: 3 },
   { feature: 'theme', description: 'MANAGEMENT_SYSTEM', value: 3 },
-  { feature: 'theme', description: 'NO_THEME_INDICATED', value: 4 },
 ];
 
 describe('Component|RegionConditionSummary', () => {

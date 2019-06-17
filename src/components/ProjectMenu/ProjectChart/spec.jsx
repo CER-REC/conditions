@@ -10,7 +10,6 @@ const chartData = [
   { name: 'SUNSET_CLAUSE', count: 2 },
   { name: 'FINANCIAL', count: 14 },
   { name: 'MANAGEMENT SYSTEM', count: 4 },
-  { name: 'NO_THEME_INDICATED', count: 5 },
   { name: 'SECURITY', count: 79 },
   { name: 'ENFORCEMENT', count: 66 },
   { name: 'ADMINISTRATIVE', count: 9 },
@@ -80,7 +79,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
     });
 
     test('should render 14 FeatureFlags', () => {
-      expect(wrapper.find(FeatureFlag)).toHaveLength(14);
+      expect(wrapper.find(FeatureFlag)).toHaveLength(13);
     });
   });
 

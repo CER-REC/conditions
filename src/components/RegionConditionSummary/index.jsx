@@ -11,6 +11,7 @@ const RegionConditionSummary = (props) => {
     value: k.value,
     fill: features[k.feature][k.description] || 'black',
     description: k.description,
+    feature: k.feature,
   }));
 
   return (
