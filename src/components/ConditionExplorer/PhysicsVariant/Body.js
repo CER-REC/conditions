@@ -109,9 +109,15 @@ export default class Body {
   }
 
   onUpdatePosition(inOut, start, end) {
-    Matter.Body.setPosition(this.body, {
+    const next = {
       x: start.x + ((end.x - start.x) * inOut),
       y: start.y + ((end.y - start.y) * inOut),
+    };
+
+    // Assuming velocity is measured in units-per-frame here
+    Matter.Body.setVelocity(this.body, {
+      x: next.x - this.body.position.x,
+      y: next.y - this.body.position.y,
     });
   }
 
