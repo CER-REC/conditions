@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
 import {
@@ -14,6 +15,16 @@ import {
 } from './categories';
 import Keyword from './Keyword';
 import Guide from './Guide';
+
+const messageIds = [
+  'intro',
+  '0',
+  '1',
+  '2',
+  'click',
+];
+
+const messageTime = 5000;
 
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
@@ -38,7 +49,11 @@ export default class PhysicsVariant extends React.PureComponent {
     this.lastTime = 0;
     this.selected = 0;
     this.lastDeltaTime = 0;
-    this.state = { renderToggle: false };
+    this.lastMessageTime = 0;
+    this.state = {
+      renderToggle: false,
+      guideMessage: 'intro',
+    };
   }
 
   componentDidMount() {
@@ -54,6 +69,10 @@ export default class PhysicsVariant extends React.PureComponent {
       constraint: { render: { visible: false }, stiffness: 1 },
       collisionFilter: { mask: guideOutlineCategory },
     });
+
+    Matter.Events.on(mouseConstraint, 'startdrag', this.onGuideDragStart);
+    Matter.Events.on(mouseConstraint, 'enddrag', this.onGuideDragEnd);
+
     Matter.World.add(this.engine.world, mouseConstraint);
 
     Matter.Engine.run(this.engine);
@@ -128,6 +147,7 @@ export default class PhysicsVariant extends React.PureComponent {
       this.lastDeltaTime ? (deltaTime / this.lastDeltaTime) : 1,
     );
 
+    this.updateGuideMessage(currTime);
     this.setState(state => ({ renderToggle: !state.renderToggle }));
 
     this.lastDeltaTime = deltaTime;
@@ -147,6 +167,14 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.Body.setStatic(this.guide.outline.body, false);
   };
 
+  onGuideDragStart = () => {
+    this.guideHasMoved = true;
+  };
+
+  onGuideDragEnd = () => {
+    this.guideHasMoved = false;
+  };
+
   closeGuide = () => {
     if (!this.guide.isExpanded || !this.guideClickDetection) { return; }
     this.guideClickDetection = undefined;
@@ -162,6 +190,8 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   onGuideMouseUp = (e) => {
+    if (!this.guide.outlineReady) { return; }
+
     // If the click detection failed, don't do anything
     Matter.Body.setStatic(this.guide.outline.body, true);
     if (!this.guideClickDetection) { return; }
@@ -173,7 +203,7 @@ export default class PhysicsVariant extends React.PureComponent {
     if (distance.x > 5 || distance.y > 5) { return; }
 
     e.stopPropagation();
-    if (this.props.selectedKeywordId && !this.guide.isExpanded) {
+    if (this.props.selectedKeywordId > -1 && !this.guide.isExpanded) {
       this.updateGuidePosition();
       this.props.beginTutorial();
     } else if (this.guide.isExpanded) {
@@ -197,6 +227,59 @@ export default class PhysicsVariant extends React.PureComponent {
     }
     this.props.onKeywordClick(e);
   };
+
+  updateGuideMessage = (currTime) => {
+    const currMsg = this.state.guideMessage;
+    let newMsg;
+    if (this.guideHasMoved || this.guide.isExpanded) {
+      newMsg = -1;
+      this.lastMessageTime = currTime;
+    } else if (this.props.selectedKeywordId > -1) {
+      newMsg = 'click';
+    } else if (!this.guide.outlineReady) {
+      newMsg = 'intro';
+    } else if (Number.isNaN(parseInt(currMsg, 10))) {
+      newMsg = 0;
+      this.lastMessageTime = currTime;
+    } else if ((currTime - this.lastMessageTime) > messageTime) {
+      newMsg = (currMsg + 1) % 3;
+      this.lastMessageTime = currTime;
+    }
+
+    if (newMsg !== undefined && newMsg !== currMsg) {
+      this.setState({ guideMessage: newMsg });
+    }
+  };
+
+  renderMessages = () => (
+    <g
+      className="guideText"
+      transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
+    >
+      {messageIds.map((id, idx) => (
+        <FormattedMessage id={`components.conditionExplorer.guide.messages.${id}`}>
+          {(text) => {
+            const lines = text.split('\n');
+
+            return (
+              <text
+                textAnchor="middle"
+                x="0"
+                y={`-${(lines.length) / 2}em`}
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                className={(id === this.state.guideMessage.toString()) ? '' : 'hidden'}
+              >
+                {text.split('\n').map(line => (
+                  <tspan x="0" dy="1em" key={line}>{line}</tspan>
+                ))}
+              </text>
+            );
+          }}
+        </FormattedMessage>
+      ))}
+    </g>
+  );
 
   render() {
     if (!this.guide) { return <g ref={this.groupRef} />; }
@@ -269,6 +352,7 @@ export default class PhysicsVariant extends React.PureComponent {
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
+        {this.renderMessages()}
       </g>
     );
   }
