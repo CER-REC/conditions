@@ -56,15 +56,6 @@ export default class Keyword extends Body {
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
-    const threshold = 1.01;
-    const magnitude = Matter.Vector.magnitude(this.body.velocity);
-    if (magnitude >= threshold) {
-      const clamped = Matter.Vector.normalise({ ...this.body.velocity });
-      const velocity = threshold;
-      clamped.x *= velocity;
-      clamped.y *= velocity;
-    }
-
     super.onUpdate(update);
 
     if (this.category === resettingCategory && !this.isMoving) {
