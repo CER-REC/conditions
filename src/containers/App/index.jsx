@@ -351,19 +351,19 @@ class App extends React.PureComponent {
   };
 
   openRegDocPopup =() => {
-    this.setState(prevState => ({ ...prevState, isIntermediatePopupOpen: true }));
+    this.setState({ isIntermediatePopupOpen: true });
   }
 
   closeRegDocPopup = () => {
-    this.setState(prevState => ({ ...prevState, isIntermediatePopupOpen: false }));
+    this.setState({ isIntermediatePopupOpen: false });
   };
 
   openCompanyPopup =() => {
-    this.setState(prevState => ({ ...prevState, isCompanyPopupOpen: true }));
+    this.setState({ isCompanyPopupOpen: true });
   }
 
   closeCompanyPopup = () => {
-    this.setState(prevState => ({ ...prevState, isCompanyPopupOpen: false }));
+    this.setState({ isCompanyPopupOpen: false });
   };
 
   render() {
@@ -473,7 +473,6 @@ class App extends React.PureComponent {
                     if (loading) { return <div>Loading</div>; }
                     if (error) { return <div>Loading</div>; }
                     const { shortName, instruments } = data.getProjectById;
-                    // TODO: Change string 'en' to the redux store locale
                     let companyArray = [];
                     if (data.getProjectById
                       && data.getProjectById.companies
