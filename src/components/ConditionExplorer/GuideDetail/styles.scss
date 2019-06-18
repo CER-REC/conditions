@@ -4,38 +4,51 @@
 @import '../../../styles/legend.scss';
 
 .GuideDetail {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+
   font-family: $fira-sans-condensed;
   text-align: center;
-  background: #5050EA;
-  color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  color: $White;
+
   border-radius: 50%;
   overflow: hidden;
 
   .step-text {
-    // 14.25% inscribes the square text inside the circular container
-    margin: 14.25%;
-    margin-bottom: 0;
+    margin: 22% 8% 0 8%;
+    height: 56%;
+
     overflow-y: auto;
-    height: calc(100% - 14.25% - 75px);
+
+    font-family: $fira-sans-condensed-light;
+    font-size: 20px;
 
     h1 {
-      font-size: 24px;
+      font-family: $fira-sans-condensed-bold;
+      font-size: 36px;
     }
 
-    a {
-      color: #fff;
-      text-decoration: underline;
+    p {
+      margin-top: 1.2em;
     }
 
-    ul { text-align: left; }
+    ul {
+      text-align: left;
+    }
   }
 
   .step-controls {
     height: 75px;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     .List {
       display: inline-block;
@@ -51,11 +64,33 @@
 
     .List-Item {
       .CircleContainer {
-        margin: 0 8px;
-        background: lightgrey;
+        margin: 0 6px;
+        background: $White;
+        opacity: 0.6;
       }
 
-      &.selected .CircleContainer { background: gray; }
+      &.selected .CircleContainer {
+        background: $White;
+        opacity: 1;
+      }
+    }
+
+    .List-Arrow {
+      transform: scale(0.7);
+    }
+  }
+
+  .curvedText {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    pointer-events: none;
+
+    textPath {
+      font-family: $fira-sans-condensed-light;
+      font-size: 11px;
+      fill: $LightGray;
     }
   }
 }

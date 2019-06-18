@@ -18,7 +18,7 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
         setSelectedKeywordId: () => keywordId => ({ selectedKeywordId: keywordId }),
       },
       state: {
-        selectedKeywordId: null,
+        selectedKeywordId: -1,
       },
     }),
   )

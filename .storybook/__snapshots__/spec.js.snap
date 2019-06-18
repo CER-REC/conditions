@@ -4021,11 +4021,11 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
                 tabIndex={0}
               >
                 <div
-                  className="CircleContainer lightgrey"
+                  className="CircleContainer"
                   style={
                     Object {
-                      "height": 10,
-                      "width": 10,
+                      "height": 8,
+                      "width": 8,
                     }
                   }
                 >
@@ -4046,11 +4046,11 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
                 tabIndex={0}
               >
                 <div
-                  className="CircleContainer gray"
+                  className="CircleContainer"
                   style={
                     Object {
-                      "height": 10,
-                      "width": 10,
+                      "height": 8,
+                      "width": 8,
                     }
                   }
                 >
@@ -4071,11 +4071,11 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
                 tabIndex={0}
               >
                 <div
-                  className="CircleContainer lightgrey"
+                  className="CircleContainer"
                   style={
                     Object {
-                      "height": 10,
-                      "width": 10,
+                      "height": 8,
+                      "width": 8,
                     }
                   }
                 >
@@ -4120,6 +4120,31 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           </ul>
         </div>
       </div>
+      <svg
+        className="curvedText"
+        height={125}
+        viewBox="0 125 250 125"
+        width={250}
+      >
+        <defs>
+          <path
+            d="
+                  M 0,246
+                  A 246 246 0 0 0 246,0
+                  Z
+                "
+            id="guideDetailText"
+          />
+        </defs>
+        <text>
+          <textPath
+            href="#guideDetailText"
+            startOffset="3%"
+          >
+            Click outside circle to go back
+          </textPath>
+        </text>
+      </svg>
     </section>
   </div>
 </div>
@@ -5276,7 +5301,7 @@ exports[`Storyshots Components|FeaturesMenu basic usage 1`] = `
     <span
       className="title"
     >
-      Trends & Definitions
+      Trends & Definitions: All Projects
     </span>
     <div
       className="List guideLine"
@@ -19447,7 +19472,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Overall Trend for Conditions: Theme Over Time
+      Total Conditions By Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -24587,7 +24612,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Overall Trend for Conditions: Theme Over Time
+      Total Conditions By Theme Over Time
     </h1>
     <div
       className="VictoryContainer"

@@ -10,7 +10,7 @@
       "filing": "Filing"
     },
     "trend": {
-      "title": "Trends & Definitions"
+      "title": "Trends & Definitions: All Projects"
     },
     "linkText": {
       "regDocs": "REGDOCS",
@@ -133,6 +133,13 @@
   "components": {
     "conditionExplorer": {
       "guide": {
+        "messages": {
+          "intro": "These lines\nare conditions",
+          "0": "Reveal condition\nkeywords by\ndragging",
+          "1": "Click to learn\nwhat a\ncondition is",
+          "2": "Select a\nkeyword and\nclick to\ncontinue",
+          "click": "Click to\ncontinue"
+        },
         "overview": {
           "title": "What is a condition?",
           "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB’s regulatory framework, which is made of laws, regulations, requirements and guidance."
@@ -146,7 +153,8 @@
           "documentationPrompt": "The NEB verifies company compliance with project condition requirements through:",
           "doc1": "compliance verification activities (i.e. inspections, audits, etc.)",
           "doc2": "assessing condition filings"
-        }
+        },
+        "clickOutside": "Click outside circle to go back"
       }
     },
     "companyWheel": {
@@ -419,8 +427,8 @@
     },
     "streamGraph": {
       "title": {
-        "instrument": "Instruments Across All Conditions",
-        "theme": "Overall Trend for Conditions: Theme Over Time",
+        "instrument": "Total Conditions By Instrument Over Time",
+        "theme": "Total Conditions By Theme Over Time",
         "phase": "Total Conditions by Phase Over Time",
         "status": "Total Conditions by Status Over Time",
         "type": "Total Conditions by Type Over Time",
@@ -457,13 +465,10 @@
     }
   },
   "views": {
-    "app": {
-      "dataLastUpdated" : "Data Last Updated:"
-    },
     "view1": {
       "header": {
         "title": "Conditions on NEB-regulated energy projects",
-        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation."
+        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation. The last update was:"
       }
     },
     "view3": {

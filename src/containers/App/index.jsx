@@ -9,9 +9,8 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider, FormattedMessage } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 
-import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
 import { lang } from '../../constants';
@@ -22,7 +21,6 @@ import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
-import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -34,6 +32,7 @@ import createStore from '../../Store';
 import {
   browseByType,
   allConditionsPerYearType,
+  allConfigurationDataType,
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
@@ -200,7 +199,11 @@ class App extends React.PureComponent {
     this.scrollSelectorIntoView('.Footer', 1000);
   }
 
-  jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
+  jumpToView1 = () => {
+    this.props.setTransitionState(transitionStates.view1Reset);
+    this.props.setBrowseBy('company');
+    this.props.setSelectedKeywordId(-1);
+  }
 
   jumpToView2 = (type) => {
     this.props.setTransitionState(transitionStates.view2);
@@ -407,6 +410,7 @@ class App extends React.PureComponent {
               transitionState > transitionStates.view1
               && transitionState !== transitionStates.view1Reset
             )}
+            lastUpdated={this.props.allConfigurationData.lastUpdated}
           />
           <section className="appControls">
             <BrowseBy
@@ -478,20 +482,6 @@ class App extends React.PureComponent {
               )
               : null}
           </section>
-          <Query query={getDateDataUpdated}>
-            {(dateQProps) => {
-              const { loading: dateLoading, error: errorDateQuery, data: dateData } = dateQProps;
-              if (dateLoading) return 'Loading Date';
-              if (errorDateQuery) return 'Error Occured';
-              const dateOfUpdate = new Date(dateData.allConfigurationData.lastUpdated);
-              return (
-                <div className="DateUpdated">
-                  <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
-                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth() + 1} -`} ${dateOfUpdate.getDate()}`}</h1>
-                </div>
-              );
-            }}
-          </Query>
         </div>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
@@ -523,6 +513,7 @@ App.propTypes = {
     }).isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
+  allConfigurationData: allConfigurationDataType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -535,7 +526,7 @@ export const AppUnconnected = App;
 // Allows stories to override the initial state
 export const AppStore = store;
 
-const ConnectedApp = hot(module)(connect(
+const ConnectedApp = connect(
   ({
     selected,
     browseBy,
@@ -560,36 +551,34 @@ const ConnectedApp = hot(module)(connect(
     setTransitionState: transitionStateCreators.setTransitionState,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(App));
+)(App);
 
 export default props => (
-  <AppContainer>
-    <IntlProvider locale={lang} messages={i18nMessages[lang]}>
-      <ApolloProvider client={client}>
-        <Provider store={store}>
-          <Query query={initialConfigurationDataQuery}>
-            {({ data: configData, loading: configLoading }) => (
-              <Query query={conditionsPerYearQuery}>
-                {({ data: conditionsData, loading: conditionsLoading }) => {
-                  // TODO: Error handling for these queries
-                  if (
-                    conditionsLoading || !conditionsData
-                    || configLoading || !configData
-                  ) return null;
+  <IntlProvider locale={lang} messages={i18nMessages[lang]}>
+    <ApolloProvider client={client}>
+      <Provider store={store}>
+        <Query query={initialConfigurationDataQuery}>
+          {({ data: configData, loading: configLoading }) => (
+            <Query query={conditionsPerYearQuery}>
+              {({ data: conditionsData, loading: conditionsLoading }) => {
+                // TODO: Error handling for these queries
+                if (
+                  conditionsLoading || !conditionsData
+                  || configLoading || !configData
+                ) return null;
 
-                  return (
-                    <ConnectedApp
-                      allConditionsPerYear={conditionsData.conditionsPerYear}
-                      configData={configData.allConfigurationData}
-                      {...props}
-                    />
-                  );
-                }}
-              </Query>
-            )}
-          </Query>
-        </Provider>
-      </ApolloProvider>
-    </IntlProvider>
-  </AppContainer>
+                return (
+                  <ConnectedApp
+                    allConditionsPerYear={conditionsData.conditionsPerYear}
+                    allConfigurationData={configData.allConfigurationData}
+                    {...props}
+                  />
+                );
+              }}
+            </Query>
+          )}
+        </Query>
+      </Provider>
+    </ApolloProvider>
+  </IntlProvider>
 );

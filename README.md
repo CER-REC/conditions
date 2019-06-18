@@ -14,6 +14,6 @@ Commands
 
 - Linting: `npm run lint`
 - Testing (all): `npm run test`
-- Testing (target): `npm run test:single [PATH_TO_FILES]`
+- Testing (target): `npm run test -- [PATH_TO_FILES]`
 - Coverage Report: `npm run test:showcoverage`
 - Run Express server with Wet Template: `npm run dev-start`
