@@ -23,7 +23,7 @@ export const projectMenuQuery = gql`
         instrumentEnum: prefixEnum
 
       }
+      numberOfConditions
     }
   }
 `;
-

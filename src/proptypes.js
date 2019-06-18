@@ -36,6 +36,7 @@ export const project = PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   shortName: PropTypes.string.isRequired,
+  numberOfConditions: PropTypes.number.isRequired,
   aggregatedCount: featureData.isRequired,
 });
 

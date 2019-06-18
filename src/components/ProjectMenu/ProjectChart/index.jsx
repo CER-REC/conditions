@@ -7,13 +7,12 @@ import CircleContainer from '../../CircleContainer';
 import './styles.scss';
 
 const ProjectChart = (props) => {
-  const { graphData } = props;
-  const conditionCount = graphData.reduce((acc, next) => (acc + next.count), 0);
+  const { graphData, numberOfConditions } = props;
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
         <CircleContainer size={24} className="ConditionCount">
-          {props.loading || conditionCount < 0 ? '' : conditionCount}
+          {props.loading || numberOfConditions < 0 ? '' : numberOfConditions}
         </CircleContainer>
       </div>
       <div className="FlagWrapper">
@@ -50,6 +49,7 @@ ProjectChart.propTypes = {
     name: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
   })),
+  numberOfConditions: PropTypes.number,
   /** Selected class for styling */
   selected: PropTypes.bool,
   /** A flag to animate fake data inside the chart and change condition count value */
@@ -61,6 +61,7 @@ ProjectChart.defaultProps = {
   graphData: [],
   projectName: '',
   loading: false,
+  numberOfConditions: 0,
 };
 
 export default ProjectChart;
