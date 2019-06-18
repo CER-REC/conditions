@@ -49,6 +49,7 @@ class WheelRay extends React.Component {
     let legendTracker = '';
 
     const rays = items.map((item, index) => {
+      console.log(items)
       if (index === currentIndex) { return null; }
       let position = rotation;
       const plotIndex = currentIndex - index;
@@ -95,6 +96,9 @@ class WheelRay extends React.Component {
               ? (
                 <text className="textLabels" transform="translate(28.75) rotate(90)" textAnchor="middle" {...handleInteraction(props.onChange, index)}>
                   {item.province}
+                  <title>
+                    {item.province}
+                  </title>
                 </text>
               ) : null }
           </g>
