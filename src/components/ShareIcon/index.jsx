@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Request from 'client-request/promise';
+import { fetch as fetchPolyfill } from 'whatwg-fetch';
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
@@ -15,12 +15,9 @@ class ShareIcon extends React.PureComponent {
     const bitlyEndpoint = RouteComputations.bitlyEndpoint();
     // TODO: will remove this hardcoded value 'en' once langaguge prop is introduce
     const shortenUrl = RouteComputations.bitlyParameter('en');
+    const uri = `${bitlyEndpoint}?shortenUrl=${shortenUrl}`;
 
-    const options = {
-      uri: `${bitlyEndpoint}?shortenUrl=${shortenUrl}`,
-      json: true,
-    };
-    return Request(options)
+    return fetchPolyfill(uri)
       .then((response) => {
         if (response.body.status_code !== 200) {
           return document.location.href;
