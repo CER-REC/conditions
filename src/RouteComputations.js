@@ -7,8 +7,5 @@ const RouteComputations = {
   bitlyEndpoint() {
     return `${document.location.origin}/bitlyService/api/bitlyShortlink`;
   },
-  appRoot(language) {
-    return `${document.location.origin}/${RouteComputations.applicationPath(language)}`;
-  },
 };
 export default RouteComputations;
