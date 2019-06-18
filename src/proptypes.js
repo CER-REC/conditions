@@ -146,9 +146,9 @@ export const viewTwo = {
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
-    companyRelevanceById: PropTypes.arrayOf(PropTypes.bool),
-    conditionRelevanceById: PropTypes.arrayOf(PropTypes.bool),
-    projectRelevanceById: PropTypes.arrayOf(PropTypes.bool),
+    companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
   }),
   filteredProjects: PropTypes.arrayOf(PropTypes.bool),
 };

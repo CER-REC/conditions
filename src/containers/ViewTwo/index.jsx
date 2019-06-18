@@ -80,7 +80,7 @@ class ViewTwo extends React.Component {
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
             wheelData={this.props.wheelData}
             wheelMotionTrigger={this.setWheelMoving}
-            relevantProjects={this.props.searchResults.projectRelevanceById}
+            relevantProjects={this.props.searchResults.projectIdLookup}
             filteredProjects={this.props.filteredProjects}
           />
           <GreyPipe mode={this.props.browseBy} />
@@ -154,9 +154,9 @@ ViewTwo.defaultProps = {
   legendItems: [],
   projectsData: [],
   searchResults: {
-    companyRelevanceById: [],
-    conditionRelevanceById: [],
-    projectRelevanceById: [],
+    companyIdLookup: [],
+    conditionIdLookup: [],
+    projectIdLookup: [],
   },
   filteredProjects: [],
 };

@@ -85,10 +85,11 @@ const viewProps = {
   openIntermediatePopup: noop,
   openProjectDetails: noop,
 };
-const createLookupList = (acc, cur) => {
+const createLookupList = arr => arr.reduce((acc, cur) => {
   acc[cur] = true;
   return acc;
-};
+}, []);
+
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -351,12 +352,12 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
-    const processedSearchResults = {
-      companyRelevanceById: this.props.searchResults.companyIds.reduce(createLookupList, []),
-      conditionRelevanceById: this.props.searchResults.conditionIds.reduce(createLookupList, []),
-      projectRelevanceById: this.props.searchResults.projectIds.reduce(createLookupList, []),
+    this.processedSearchResults = this.processedSearchResults || {
+      companyIdLookup: createLookupList(this.props.searchResults.companyIds),
+      conditionIdLookup: createLookupList(this.props.searchResults.conditionIds),
+      projectIdLookup: createLookupList(this.props.searchResults.projectIds),
     };
-    const processedFilter = this.props.filteredProjectIDs.reduce(createLookupList, []);
+    this.processedFilter = this.processedFilter || createLookupList(this.props.filteredProjectIDs);
     this.processedConditionCounts = this.processedConditionCounts
       || processConditionCounts(this.props.allConditionsPerYear);
 
@@ -445,8 +446,8 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
-            searchResults={processedSearchResults}
-            filteredProjects={processedFilter}
+            searchResults={this.processedSearchResults}
+            filteredProjects={this.processedFilter}
           />
           <ViewThree
             {...viewProps}
