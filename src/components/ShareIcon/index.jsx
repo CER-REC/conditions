@@ -7,14 +7,14 @@ import handleInteraction from '../../utilities/handleInteraction';
 import CircleContainer from '../CircleContainer';
 import Icon from '../Icon';
 import RouteComputations from '../../RouteComputations';
+import { lang } from '../../constants';
 
 const noop = () => {};
 
 class ShareIcon extends React.PureComponent {
   getBitlyURL = () => {
     const bitlyEndpoint = RouteComputations.bitlyEndpoint();
-    // TODO: will remove this hardcoded value 'en' once langaguge prop is introduce
-    const shortenUrl = RouteComputations.bitlyParameter('en');
+    const shortenUrl = RouteComputations.bitlyParameter(lang);
     const uri = `${bitlyEndpoint}?shortenUrl=${shortenUrl}`;
 
     return fetchPolyfill(uri)
