@@ -1,0 +1,34 @@
+import React from 'react';
+import { Query } from 'react-apollo';
+
+export default ({ children, ...props }) => {
+  const composedQuery = Object.entries(props)
+    // Allow the props to be undefined so that queries can be dynamically added
+    .filter(([, query]) => !!query)
+    .reduce((acc, [name, query]) => prevQueries => (
+      <Query {...query} key={name}>
+        {(result) => {
+          const merged = {
+            queryInfo: {
+              ...prevQueries.data,
+              [name]: result,
+            },
+            data: {
+              ...prevQueries.data,
+              [name]: Object.values(result.data)[0],
+            },
+            loading: prevQueries.loading || result.loading,
+            errors: prevQueries.errors,
+          };
+          if (result.error) {
+            merged.errors = merged.errors
+              ? merged.errors.concat(result.error)
+              : [result.error];
+          }
+          return acc(merged);
+        }}
+      </Query>
+    ), children);
+
+  return composedQuery({ queryInfo: {}, data: {}, loading: false, errors: null });
+};
