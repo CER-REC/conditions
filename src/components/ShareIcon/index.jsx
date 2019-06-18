@@ -33,9 +33,7 @@ class ShareIcon extends React.PureComponent {
         const emailUrl = `mailto:?subject=; &body= ${emailBody}`;
         window.location.href = emailUrl;
       }).catch(
-        () => {
-          // do nothing
-        },
+        noop,
       );
     }
     if (this.props.target === 'facebook') {
