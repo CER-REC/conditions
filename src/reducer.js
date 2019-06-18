@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { mergeDeep } from 'immutable';
+import mergeDeep from 'deepmerge';
 
 import { reducer as selectedReducer } from './actions/selected';
 import { reducer as searchReducer } from './actions/search';

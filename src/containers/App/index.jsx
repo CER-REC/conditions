@@ -11,7 +11,6 @@ import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 
-import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
 import { lang } from '../../constants';
@@ -527,7 +526,7 @@ export const AppUnconnected = App;
 // Allows stories to override the initial state
 export const AppStore = store;
 
-const ConnectedApp = hot(module)(connect(
+const ConnectedApp = connect(
   ({
     selected,
     browseBy,
@@ -552,36 +551,34 @@ const ConnectedApp = hot(module)(connect(
     setTransitionState: transitionStateCreators.setTransitionState,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(App));
+)(App);
 
 export default props => (
-  <AppContainer>
-    <IntlProvider locale={lang} messages={i18nMessages[lang]}>
-      <ApolloProvider client={client}>
-        <Provider store={store}>
-          <Query query={initialConfigurationDataQuery}>
-            {({ data: configData, loading: configLoading }) => (
-              <Query query={conditionsPerYearQuery}>
-                {({ data: conditionsData, loading: conditionsLoading }) => {
-                  // TODO: Error handling for these queries
-                  if (
-                    conditionsLoading || !conditionsData
-                    || configLoading || !configData
-                  ) return null;
+  <IntlProvider locale={lang} messages={i18nMessages[lang]}>
+    <ApolloProvider client={client}>
+      <Provider store={store}>
+        <Query query={initialConfigurationDataQuery}>
+          {({ data: configData, loading: configLoading }) => (
+            <Query query={conditionsPerYearQuery}>
+              {({ data: conditionsData, loading: conditionsLoading }) => {
+                // TODO: Error handling for these queries
+                if (
+                  conditionsLoading || !conditionsData
+                  || configLoading || !configData
+                ) return null;
 
-                  return (
-                    <ConnectedApp
-                      allConditionsPerYear={conditionsData.conditionsPerYear}
-                      allConfigurationData={configData.allConfigurationData}
-                      {...props}
-                    />
-                  );
-                }}
-              </Query>
-            )}
-          </Query>
-        </Provider>
-      </ApolloProvider>
-    </IntlProvider>
-  </AppContainer>
+                return (
+                  <ConnectedApp
+                    allConditionsPerYear={conditionsData.conditionsPerYear}
+                    allConfigurationData={configData.allConfigurationData}
+                    {...props}
+                  />
+                );
+              }}
+            </Query>
+          )}
+        </Query>
+      </Provider>
+    </ApolloProvider>
+  </IntlProvider>
 );
