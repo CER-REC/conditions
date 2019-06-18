@@ -19,8 +19,8 @@ class WheelRay extends React.Component {
     rotation: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
-    relevantProjects: PropTypes.arrayOf(PropTypes.number),
-    filteredProjects: PropTypes.arrayOf(PropTypes.number),
+    relevantProjects: PropTypes.arrayOf(PropTypes.bool),
+    filteredProjects: PropTypes.arrayOf(PropTypes.bool),
   }
 
   static defaultProps = {

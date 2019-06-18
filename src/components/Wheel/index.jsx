@@ -22,8 +22,8 @@ class Wheel extends React.Component {
     selectedRay: PropTypes.number,
     selectRay: PropTypes.func.isRequired,
     wheelMotionTrigger: PropTypes.func.isRequired,
-    relevantProjects: PropTypes.arrayOf(PropTypes.number),
-    filteredProjects: PropTypes.arrayOf(PropTypes.number),
+    relevantProjects: PropTypes.arrayOf(PropTypes.bool),
+    filteredProjects: PropTypes.arrayOf(PropTypes.bool),
   };
 
   static defaultProps = {

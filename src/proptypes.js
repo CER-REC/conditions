@@ -145,12 +145,12 @@ export const viewTwo = {
   openProjectDetails: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
-  relevantInfo: PropTypes.shape({
-    relevantConditionIDs: PropTypes.arrayOf(PropTypes.number),
-    relevantCompanyIDs: PropTypes.arrayOf(PropTypes.number),
-    relevantProjectIDs: PropTypes.arrayOf(PropTypes.number),
+  searchResults: PropTypes.shape({
+    companyRelevanceById: PropTypes.arrayOf(PropTypes.bool),
+    conditionRelevanceById: PropTypes.arrayOf(PropTypes.bool),
+    projectRelevanceById: PropTypes.arrayOf(PropTypes.bool),
   }),
-  filteredProjects: PropTypes.arrayOf(PropTypes.number),
+  filteredProjects: PropTypes.arrayOf(PropTypes.bool),
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
