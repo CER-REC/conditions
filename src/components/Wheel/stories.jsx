@@ -7,7 +7,7 @@ import Wheel from '.';
 import { features } from '../../constants';
 import ReadMe from './README.md';
 
-import { companyWheelData as companyData } from './randomDataSample';
+import { companyWheelData as companyData, relevantProjects, filteredProjects } from './randomDataSample';
 import locationData from '../../mockData/locationData';
 
 const noop = () => {};
@@ -45,10 +45,20 @@ storiesForComponent('Components|Wheel', module, ReadMe)
     }),
   )
   .add('default', () => (
-    <div>
-      <Wheel {...getInteractionProps()} wheelType="company" wheelData={companyData} wheelMotionTrigger={noop} />
-    </div>
+    <Wheel
+      {...getInteractionProps()}
+      wheelType="company"
+      wheelData={companyData}
+      relevantProjects={relevantProjects}
+      filteredProjects={filteredProjects}
+      wheelMotionTrigger={noop}
+    />
   ))
   .add('location props', () => (
-    <Wheel {...getInteractionProps()} wheelType="location" wheelData={processedLocationData} wheelMotionTrigger={noop} />
+    <Wheel
+      {...getInteractionProps()}
+      wheelType="location"
+      wheelData={processedLocationData}
+      wheelMotionTrigger={noop}
+    />
   ));
