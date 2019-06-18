@@ -76,21 +76,19 @@ export const features = {
 };
 
 export const provinces = {
-  Yukon: 'YT',
-  'Northwest Territories': 'NT',
-  Nunavut: 'NU',
-  'Newfoundland and Labrador': 'NL',
-  'Prince Edward Island': 'PE',
-  'British Columbia': 'BC',
-  Alberta: 'AB',
-  Saskatchewan: 'SK',
-  Manitoba: 'MB',
-  Ontario: 'ON',
-  Québec: 'QC',
-  'New Brunswick': 'NB',
-  'Nova Scotia': 'NS',
-  'Atlantic provinces and Québec': 'ATL-Q',
-  'Other provinces and territories': 'OtherProvinces',
+  YT: 'Yukon',
+  NT: 'Northwest Territories',
+  NU: 'Nunavut',
+  NL: 'Newfoundland and Labrador',
+  PE: 'Prince Edward Island',
+  BC: 'British Columbia',
+  AB: 'Alberta',
+  SK: 'Saskatchewan',
+  MB: 'Manitoba',
+  ON: 'Ontario',
+  QC: 'Québec',
+  NB: 'New Brunswick',
+  NS: 'Nova Scotia',
 };
 
 export const guideSize = 128;
