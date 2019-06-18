@@ -38,7 +38,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(
     withInteraction({
-      state: { selectedRay: '' },
+      state: { selectedRay: 0 },
       actions: {
         selectRay: () => selectedRay => ({ selectedRay }),
       },
