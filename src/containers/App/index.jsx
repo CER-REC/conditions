@@ -92,9 +92,12 @@ class App extends React.PureComponent {
       tutorialPlaying: false,
       initialGuidePosition: { x: 0, y: 0 },
       finalGuidePosition: { x: 0, y: 0 },
+      wheelMoving: false,
     };
     this.ref = React.createRef();
   }
+
+  setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
@@ -436,6 +439,8 @@ class App extends React.PureComponent {
           <div style={{ clear: 'both' }} />
           <ViewTwo
             {...viewProps}
+            setWheelMoving={this.setWheelMoving}
+            wheelMoving={this.state.wheelMoving}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
@@ -448,37 +453,45 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
           />
           <section className="conditions">
-            {selected.project !== null
-              ? (
-                <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
-                  {({ data, loading, error }) => {
-                    if (!data.getProjectById || !data) { return null; }
-                    if (loading) { return <div>Loading</div>; }
-                    if (error) { return <div>Loading</div>; }
-                    const { shortName, instruments } = data.getProjectById;
-                    const formattedInstrument =
-                      formatConditionDetails(instruments, selected.feature);
-                    return (
-                      <ConditionDetails
-                        selectedItem={this.props.selected.condition}
-                        selectedProject={shortName}
-                        updateSelectedItem={this.props.setSelectedCondition}
-                        openIntermediatePopup={this.props.openIntermediatePopup}
-                        openProjectDetails={this.props.openProjectDetails}
-                        toggleExpanded={noop}
-                        searchKeywords={{
-                          include: this.props.included,
-                          exclude: this.props.excluded,
-                        }}
-                        data={formattedInstrument}
-                        browseBy={this.props.browseBy}
-                        {...conditionDetailsViewProps}
-                      />
-                    );
-                  }}
-                </Query>
-              )
-              : null}
+            <Query
+              query={getProjectDetails}
+              variables={{ projectId: selected.project }}
+              skip={!selected.project}
+            >
+              {(conditionDetailsQProps) => {
+                const {
+                  data: condDetQData,
+                  loading: condDetQLoading,
+                  error: condDetQError,
+                } = conditionDetailsQProps;
+                const loadedCondDetails = !condDetQLoading && !condDetQError && condDetQData
+                  && condDetQData.getProjectById;
+                const instruments = loadedCondDetails && loadedCondDetails.instruments;
+                const formattedInstruments = instruments && !this.state.wheelMoving
+                  ? formatConditionDetails(instruments, selected.feature)
+                  : [];
+                const shortName = formattedInstruments.length > 0
+                  && loadedCondDetails.shortName;
+
+                return (
+                  <ConditionDetails
+                    selectedItem={this.props.selected.condition}
+                    selectedProjectId={selected.project}
+                    selectedProject={shortName || ''}
+                    updateSelectedItem={this.props.setSelectedCondition}
+                    openIntermediatePopup={this.props.openIntermediatePopup}
+                    openProjectDetails={this.props.openProjectDetails}
+                    searchKeywords={{
+                      include: this.props.included,
+                      exclude: this.props.excluded,
+                    }}
+                    data={formattedInstruments}
+                    browseBy={this.props.browseBy}
+                    {...conditionDetailsViewProps}
+                  />
+                );
+              }}
+            </Query>
           </section>
         </div>
         <Footer
@@ -508,6 +521,7 @@ App.propTypes = {
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
       itemIndex: PropTypes.number.isRequired,
+      instrumentNumber: PropTypes.string,
     }).isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,

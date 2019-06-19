@@ -43,7 +43,9 @@ class ConditionDetails extends React.Component {
         const marked = this.textMatchesKeywords(condition.text);
         data.push({
           binnedValue: condition.binnedValue,
+          instrumentNumber: instrument.instrumentNumber,
           fill: condition.fill,
+          id: condition.id,
           marked,
           instrumentIndex,
           itemIndex,
@@ -73,10 +75,10 @@ class ConditionDetails extends React.Component {
     />
   )
 
-  renderContent = () => (
+  renderContent = (instrument, itemIndex) => (
     <Content
-      instrument={this.props.data[this.props.selectedItem.instrumentIndex]}
-      itemIndex={this.props.selectedItem.itemIndex}
+      instrument={instrument}
+      itemIndex={itemIndex}
       openIntermediatePopup={this.props.openIntermediatePopup}
     />
   )
@@ -86,7 +88,10 @@ class ConditionDetails extends React.Component {
     return (
       <Details
         isInstrument={isInstrument}
-        data={isInstrument ? null : instrument.conditions[index].details}
+        data={isInstrument
+          ? null
+          : instrument.conditions[index].details
+        }
       />
     );
   }
@@ -94,16 +99,25 @@ class ConditionDetails extends React.Component {
   render() {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;
+    const shouldRenderData = this.props.data.length > 0
+      && instrument;
 
     return (
       <section className="ConditionDetails">
         <div className={classNames('main', { expanded: this.props.expanded, expandable: this.props.isExpandable })}>
           {this.renderHeader()}
-          <div className="listPane">{this.renderList()}</div>
-          <div className="contentPane">{this.renderContent(instrument, index)}</div>
+          { shouldRenderData
+            ? (
+              <React.Fragment>
+                <div className="listPane">{this.renderList()}</div>
+                <div className="contentPane">{this.renderContent(instrument, index)}</div>
+              </React.Fragment>
+            )
+            : null
+          }
         </div>
         <div className={classNames('popout', { expanded: (this.props.isExpandable && this.props.expanded) })}>
-          {this.renderDetails(instrument, index)}
+          {shouldRenderData ? this.renderDetails(instrument, index) : null}
         </div>
       </section>
     );
