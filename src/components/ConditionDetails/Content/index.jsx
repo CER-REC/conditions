@@ -9,24 +9,19 @@ import './styles.scss';
 import ContentBlock from '../ContentBlock';
 
 class Content extends React.PureComponent {
-  renderContentText = (id, content) => {
-    const paragraphs = content.split('\n');
-
-    return (
-      <React.Fragment>
-        <p className="contentText">
-          <FormattedMessage id={id}>
-            {text => <span className="contentHeading">{text}</span>}
-          </FormattedMessage>: {paragraphs[0]}
-        </p>
-        {
-          paragraphs.slice(1)
-            // eslint-disable-next-line react/no-array-index-key
-            .map((text, idx) => <p className="contentText" key={idx}>{text}</p>)
+  renderContentText = (id, content) => (
+    <React.Fragment>
+      <FormattedMessage id={id}>
+        {(text) => {
+          const fullText = `<span class="contentHeading">${text}:&nbsp;</span>${content}`;
+          return (
+            <div className="contentText" dangerouslySetInnerHTML={{ __html: fullText }} />
+          );
         }
-      </React.Fragment>
-    );
-  }
+          }
+      </FormattedMessage>
+    </React.Fragment>
+  )
 
   renderInstrumentLink = instrumentNumber => (
     <button
@@ -38,9 +33,16 @@ class Content extends React.PureComponent {
     </button>
   )
 
+  colourKeywords = (matchList, givenString) => {
+    let finalString = givenString;
+    for (let j = 0; j < matchList.length; j += 1) {
+      finalString = finalString.replace(new RegExp(matchList[j], 'g'), `<span class="highlighted">${matchList[j]}</span>`);
+    }
+    return (finalString);
+  }
+
   render() {
     const data = this.props.instrument;
-
     return (
       <div className="Content">{
         (this.props.itemIndex === -1)
@@ -67,8 +69,8 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
               </div>
-              <ContentBlock id="components.conditionDetails.keywords" content={data.conditions[this.props.itemIndex].keywords.join(', ')} />
-              {this.renderContentText('components.conditionDetails.text', data.conditions[this.props.itemIndex].text)}
+              <ContentBlock id="components.conditionDetails.keywords" content={this.colourKeywords(this.props.includedKeywords, data.conditions[this.props.itemIndex].keywords.join(', '))} />
+              {this.renderContentText('components.conditionDetails.text', this.colourKeywords(this.props.includedKeywords, data.conditions[this.props.itemIndex].text))}
             </React.Fragment>
           )
         }
@@ -90,6 +92,10 @@ Content.propTypes = {
   }).isRequired,
   itemIndex: PropTypes.number.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
+  includedKeywords: PropTypes.arrayOf(PropTypes.string),
+};
+Content.defaultProps = {
+  includedKeywords: [],
 };
 
 export default Content;

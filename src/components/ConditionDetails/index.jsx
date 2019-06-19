@@ -80,6 +80,7 @@ class ConditionDetails extends React.Component {
       instrument={instrument}
       itemIndex={itemIndex}
       openIntermediatePopup={this.props.openIntermediatePopup}
+      includedKeywords={this.props.searchKeywords.include}
     />
   )
 
