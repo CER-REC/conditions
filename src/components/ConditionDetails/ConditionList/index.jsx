@@ -14,6 +14,7 @@ class ConditionList extends React.PureComponent {
   }
 
   scrollTo = (type) => {
+    if (!this.ref.current) { return; }
     const elm = this.ref.current.querySelector(`[data-heading="${type}"]`);
     elm.scrollIntoView({ block: 'center' });
   }
@@ -28,14 +29,12 @@ class ConditionList extends React.PureComponent {
     const elements = this.props.items.reduce((out, item) => {
       out.push((item.isInstrument)
         ? (
-          // eslint-disable-next-line no-return-assign
           <div key={item.instrumentNumber} data-heading={`${item.instrumentIndex}-${item.itemIndex}`}>
             <div className={classNames('barMarker', { marked: item.marked })} />
             <h4>{item.instrumentNumber}</h4>
           </div>
         )
         : (
-          // eslint-disable-next-line no-return-assign
           <div key={`${item.instrumentIndex}-${item.itemIndex}`} data-heading={`${item.instrumentIndex}-${item.itemIndex}`}>
             <div className={classNames('barMarker', { marked: item.marked })} />
 

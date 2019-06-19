@@ -1440,12 +1440,10 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           tabIndex={0}
           type="button"
         >
-          <div>
-            <h2>
-              Keystone XL
-            </h2>
-          </div>
           <h2>
+            <span>
+              Keystone XL
+            </span>
             <span
               className="asterisk"
             >
@@ -2004,12 +2002,10 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             tabIndex={0}
             type="button"
           >
-            <div>
-              <h2>
-                Keystone XL
-              </h2>
-            </div>
             <h2>
+              <span>
+                Keystone XL
+              </span>
               <span
                 className="asterisk"
               >
@@ -3861,12 +3857,10 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
         tabIndex={0}
         type="button"
       >
-        <div>
-          <h2>
-            Keystone XL
-          </h2>
-        </div>
         <h2>
+          <span>
+            Keystone XL
+          </span>
           <span
             className="asterisk"
           >
@@ -3962,12 +3956,10 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
         tabIndex={0}
         type="button"
       >
-        <div>
-          <h2>
-            Keystone XL
-          </h2>
-        </div>
         <h2>
+          <span>
+            Keystone XL
+          </span>
           <span
             className="asterisk"
           >

@@ -34,14 +34,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
-    div {
+
+    span:first-of-type {
       display: inline-block;
       vertical-align: top;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       max-width: 97%;
+      font-family: 'FiraSansCondensedBold';
+      text-decoration: underline;
     }
+    
     &:before{
       content: '\00a0';
       display: inline-block;
