@@ -81,6 +81,10 @@ $keywordColors: (
           fill: $MainOrange;
         }
       }
+
+      &.hidden {
+        visibility: hidden;
+      }
     }
   }
 
