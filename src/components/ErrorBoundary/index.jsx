@@ -4,15 +4,15 @@ import { FormattedMessage } from 'react-intl';
 
 import './styles.scss';
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { error: null, errorInfo: null };
   }
 
-  getRestoreLink = () => window.location.href;
+  getRestoreLink = () => document.location.href;
 
-  getResetLink = () => window.location.origin + window.location.pathname;
+  getResetLink = () => document.location.origin + document.location.pathname;
 
   componentDidCatch(error, errorInfo) {
     this.setState({
