@@ -172,8 +172,6 @@ export const viewTwo = {
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedRegion: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
 };

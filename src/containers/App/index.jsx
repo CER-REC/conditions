@@ -587,7 +587,7 @@ class App extends React.PureComponent {
                   ? formattedInstruments[selected.condition.instrumentIndex]
                   : { instrumentNumber: '' };
                 let companyArray = [];
-                if (condDetQData.getProjectById
+                if (loadedCondDetails
                   && condDetQData.getProjectById.companies
                   && condDetQData.getProjectById.companies.length > 0) {
                   companyArray = condDetQData.getProjectById.companies.reduce((acc, company) => {
