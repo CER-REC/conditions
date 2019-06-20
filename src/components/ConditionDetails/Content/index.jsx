@@ -10,18 +10,16 @@ import ContentBlock from '../ContentBlock';
 
 class Content extends React.PureComponent {
   renderContentText = (id, content) => (
-    <React.Fragment>
-      <FormattedMessage id={id}>
-        {(text) => {
-          const fullText = `<span class="contentHeading">${text}:&nbsp;</span>${content}`;
-          return (
-            // eslint-disable-next-line react/no-danger
-            <div className="contentText" dangerouslySetInnerHTML={{ __html: fullText }} />
-          );
+    <FormattedMessage id={id}>
+      {(text) => {
+        const fullText = `<span class="contentHeading">${text}:&nbsp;</span>${content}`;
+        return (
+        // eslint-disable-next-line react/no-danger
+          <div className="contentText" dangerouslySetInnerHTML={{ __html: fullText }} />
+        );
+      }
         }
-          }
-      </FormattedMessage>
-    </React.Fragment>
+    </FormattedMessage>
   )
 
   renderInstrumentLink = instrumentNumber => (
@@ -35,22 +33,23 @@ class Content extends React.PureComponent {
   )
 
   getHighlightedKeywords = (matchList, givenString) => {
-    let text = givenString;
-    const oldString = text;
-    let keywords = '';
+    let highlightedText = givenString;
+    let oldString = highlightedText;
+    let matchedKeywords = [];
     for (let j = 0; j < matchList.length; j += 1) {
-      text = text.replace(new RegExp(matchList[j], 'g'), `<span class="highlighted">${matchList[j]}</span>`);
-      if (oldString !== text) {
-        keywords += `${matchList[j]}, `;
+      oldString = highlightedText;
+      highlightedText = highlightedText.replace(new RegExp(matchList[j], 'g'), `<span class="highlighted">${matchList[j]}</span>`);
+      if (oldString !== highlightedText) {
+        matchedKeywords.push(matchList[j]);
       }
     }
-    keywords = keywords.substring(0, keywords.length - 2);
-    return ({ text, keywords });
+    matchedKeywords = matchedKeywords.join(', ');
+    return ({ highlightedText, matchedKeywords });
   }
 
   render() {
     const data = this.props.instrument;
-    const formattedKeywords = this.getHighlightedKeywords(
+    const { highlightedText, matchedKeywords } = this.getHighlightedKeywords(
       this.props.includedKeywords,
       (this.props.itemIndex === -1) ? '' : data.conditions[this.props.itemIndex].text,
     );
@@ -80,8 +79,8 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
               </div>
-              <ContentBlock id="components.conditionDetails.keywords" content={formattedKeywords.keywords} />
-              {this.renderContentText('components.conditionDetails.text', formattedKeywords.text)}
+              <ContentBlock id="components.conditionDetails.keywords" content={matchedKeywords} />
+              {this.renderContentText('components.conditionDetails.text', highlightedText)}
             </React.Fragment>
           )
         }
