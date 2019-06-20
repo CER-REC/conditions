@@ -52,7 +52,7 @@ class Content extends React.PureComponent {
     const data = this.props.instrument;
     const formattedKeywords = this.getHighlightedKeywords(
       this.props.includedKeywords,
-      data.conditions[this.props.itemIndex].text,
+      (this.props.itemIndex === -1) ? '' : data.conditions[this.props.itemIndex].text,
     );
     return (
       <div className="Content">{
