@@ -3,10 +3,13 @@
 .ProjectDot{
   fill: $Gray160;
   opacity: 1;
-  &.IsFiltered {
-    opacity: 0.5;
-  }
-  &.IsRelevant{
+  &.Relevant {
     fill: $SearchKeyword;
+  }
+  &.Filtered {
+    fill: $Filtered;
+  }
+  &.RelevantAndFiltered {
+    fill: $FilteredSearchKeyword;
   }
 }

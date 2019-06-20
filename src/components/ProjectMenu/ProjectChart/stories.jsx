@@ -27,11 +27,13 @@ storiesForComponent('Components|ProjectMenu/ProjectChart', module, ReadMe)
       chartType={chartType}
       projectName={projectName}
       selected={boolean('Selected project', true)}
+      projectId={1}
     />
   ))
   .add('Empty graphData', () => (
     <ProjectChart
       chartType={chartType}
+      projectId={1}
     />
   ));
 

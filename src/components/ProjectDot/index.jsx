@@ -3,9 +3,19 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.scss';
 
+const determineColour = (relevant, filtered) => {
+  if (relevant && filtered) {
+    return ('RelevantAndFiltered');
+  } if (relevant && !filtered) {
+    return ('Relevant');
+  } if (!relevant && filtered) {
+    return ('Filtered');
+  }
+  return ('');
+};
 const ProjectDot = ({ cx, cy, r, filtered, relevant }) => (
   <circle
-    className={classNames('ProjectDot', { IsFiltered: filtered, IsRelevant: relevant })}
+    className={classNames('ProjectDot', determineColour(relevant, filtered))}
     cx={cx}
     cy={cy}
     r={r}
