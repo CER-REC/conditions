@@ -437,7 +437,7 @@ class App extends React.PureComponent {
     });
   };
 
-  openRegDocPopup =() => {
+  openRegDocPopup = () => {
     this.setState({ isIntermediatePopupOpen: true });
   }
 
@@ -445,7 +445,7 @@ class App extends React.PureComponent {
     this.setState({ isIntermediatePopupOpen: false });
   };
 
-  openCompanyPopup =() => {
+  openCompanyPopup = () => {
     this.setState({ isCompanyPopupOpen: true });
   }
 
@@ -617,7 +617,7 @@ class App extends React.PureComponent {
                       isOpen={this.state.isIntermediatePopupOpen}
                       closeModal={this.closeRegDocPopup}
                       instrument={instrumentNumber}
-                      regdocsUrl={`${regDocURL[lang]}${instrumentNumber}`}
+                      regdocsUrl={`${regDocURL}${instrumentNumber}`}
                     />
                     <CompanyPopup
                       projectName={shortName}
