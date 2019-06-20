@@ -15,6 +15,7 @@ class Content extends React.PureComponent {
         {(text) => {
           const fullText = `<span class="contentHeading">${text}:&nbsp;</span>${content}`;
           return (
+            // eslint-disable-next-line react/no-danger
             <div className="contentText" dangerouslySetInnerHTML={{ __html: fullText }} />
           );
         }
@@ -41,8 +42,20 @@ class Content extends React.PureComponent {
     return (finalString);
   }
 
+  getIncludedKeywords= (searchedKeywords, text) => {
+    let keywords = '';
+    const comparableText = text.toLowerCase();
+    for (let i = 0; i < searchedKeywords.length; i += 1) {
+      if (comparableText.includes(searchedKeywords[i].toLowerCase())) {
+        keywords += `${searchedKeywords[i]}, `;
+      }
+    }
+    return (keywords.substring(0, keywords.length - 2));
+  }
+
   render() {
     const data = this.props.instrument;
+
     return (
       <div className="Content">{
         (this.props.itemIndex === -1)
@@ -69,7 +82,7 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
               </div>
-              <ContentBlock id="components.conditionDetails.keywords" content={this.colourKeywords(this.props.includedKeywords, data.conditions[this.props.itemIndex].keywords.join(', '))} />
+              <ContentBlock id="components.conditionDetails.keywords" content={this.getIncludedKeywords(this.props.includedKeywords, data.conditions[this.props.itemIndex].text)} />
               {this.renderContentText('components.conditionDetails.text', this.colourKeywords(this.props.includedKeywords, data.conditions[this.props.itemIndex].text))}
             </React.Fragment>
           )
