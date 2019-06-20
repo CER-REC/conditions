@@ -34,28 +34,26 @@ class Content extends React.PureComponent {
     </button>
   )
 
-  colourKeywords = (matchList, givenString) => {
-    let finalString = givenString;
-    for (let j = 0; j < matchList.length; j += 1) {
-      finalString = finalString.replace(new RegExp(matchList[j], 'g'), `<span class="highlighted">${matchList[j]}</span>`);
-    }
-    return (finalString);
-  }
-
-  getIncludedKeywords= (searchedKeywords, text) => {
+  getHighlightedKeywords = (matchList, givenString) => {
+    let text = givenString;
+    const oldString = text;
     let keywords = '';
-    const comparableText = text.toLowerCase();
-    for (let i = 0; i < searchedKeywords.length; i += 1) {
-      if (comparableText.includes(searchedKeywords[i].toLowerCase())) {
-        keywords += `${searchedKeywords[i]}, `;
+    for (let j = 0; j < matchList.length; j += 1) {
+      text = text.replace(new RegExp(matchList[j], 'g'), `<span class="highlighted">${matchList[j]}</span>`);
+      if (oldString !== text) {
+        keywords += `${matchList[j]}, `;
       }
     }
-    return (keywords.substring(0, keywords.length - 2));
+    keywords = keywords.substring(0, keywords.length - 2);
+    return ({ text, keywords });
   }
 
   render() {
     const data = this.props.instrument;
-
+    const formattedKeywords = this.getHighlightedKeywords(
+      this.props.includedKeywords,
+      data.conditions[this.props.itemIndex].text,
+    );
     return (
       <div className="Content">{
         (this.props.itemIndex === -1)
@@ -82,8 +80,8 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
               </div>
-              <ContentBlock id="components.conditionDetails.keywords" content={this.getIncludedKeywords(this.props.includedKeywords, data.conditions[this.props.itemIndex].text)} />
-              {this.renderContentText('components.conditionDetails.text', this.colourKeywords(this.props.includedKeywords, data.conditions[this.props.itemIndex].text))}
+              <ContentBlock id="components.conditionDetails.keywords" content={formattedKeywords.keywords} />
+              {this.renderContentText('components.conditionDetails.text', formattedKeywords.text)}
             </React.Fragment>
           )
         }
