@@ -110,6 +110,8 @@ class ViewTwo extends React.Component {
                   selectedProjectID={this.props.selected.project}
                   onChange={this.props.setSelectedProject}
                   selectedFeature={this.props.selected.feature}
+                  relevantProjects={this.props.searchResults.projectIdLookup}
+                  filteredProjects={this.props.filteredProjects}
                 />
               </React.Fragment>
             )

@@ -19,12 +19,17 @@ class ProjectMenu extends React.PureComponent {
     projectsData: PropTypes.arrayOf(projectData),
     /** A flag used to simulate data inside the project menu while loading */
     loading: PropTypes.bool,
+
+    relevantProjects: PropTypes.arrayOf(PropTypes.bool),
+    filteredProjects: PropTypes.arrayOf(PropTypes.bool),
   }
 
   static defaultProps = {
     loading: false,
     projectsData: [],
     selectedProjectID: null,
+    relevantProjects: [],
+    filteredProjects: [],
   }
 
   getListItems = (projectsData, selectedProjectID) => {
@@ -85,6 +90,9 @@ class ProjectMenu extends React.PureComponent {
           projectName={project.shortName}
           selected={project.id === selectedProjectID}
           loading={loading}
+          relevantProjects={this.props.relevantProjects}
+          filteredProjects={this.props.filteredProjects}
+          projectId={project.id}
         />
       ))
       : [];

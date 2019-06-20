@@ -6,13 +6,25 @@ import CircleContainer from '../../CircleContainer';
 
 import './styles.scss';
 
+const determineColour = (relevant, filtered) => {
+  if (relevant && filtered) {
+    return ('RelevantAndFiltered');
+  } if (relevant && !filtered) {
+    return ('Relevant');
+  } if (!relevant && filtered) {
+    return ('Filtered');
+  }
+  return ('');
+};
+
 const ProjectChart = (props) => {
   const { graphData } = props;
   const conditionCount = graphData.reduce((acc, next) => (acc + next.count), 0);
+
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
-        <CircleContainer size={24} className="ConditionCount">
+        <CircleContainer size={24} className={classNames('ConditionCount', determineColour(props.relevantProjects[props.projectId], props.filteredProjects[props.projectId]))}>
           {props.loading || conditionCount < 0 ? '' : conditionCount}
         </CircleContainer>
       </div>
@@ -54,6 +66,9 @@ ProjectChart.propTypes = {
   selected: PropTypes.bool,
   /** A flag to animate fake data inside the chart and change condition count value */
   loading: PropTypes.bool,
+  relevantProjects: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjects: PropTypes.arrayOf(PropTypes.bool),
+  projectId: PropTypes.number.isRequired,
 };
 
 ProjectChart.defaultProps = {
@@ -61,6 +76,8 @@ ProjectChart.defaultProps = {
   graphData: [],
   projectName: '',
   loading: false,
+  relevantProjects: [],
+  filteredProjects: [],
 };
 
 export default ProjectChart;
