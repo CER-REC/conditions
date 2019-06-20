@@ -10,9 +10,9 @@ class ErrorBoundary extends React.Component {
     this.state = { error: null, errorInfo: null };
   }
 
-  getRestoreLink = () => document.location.href;
+  getRestoreLink = () => window.location.href;
 
-  getResetLink = () => document.location.origin + document.location.pathname;
+  getResetLink = () => window.location.origin + window.location.pathname;
 
   componentDidCatch(error, errorInfo) {
     this.setState({
