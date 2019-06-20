@@ -8,22 +8,34 @@ import List from '../../List';
 import BarContainer from '../../BarContainer';
 
 class ConditionList extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }
+
+  scrollTo = (type) => {
+    if (!this.ref.current) { return; }
+    const elm = this.ref.current.querySelector(`[data-heading="${type}"]`);
+    elm.scrollIntoView({ block: 'center' });
+  }
+
   onChange = (i) => {
-    const { instrumentIndex, itemIndex } = this.props.items[i];
-    this.props.updateSelectedItem({ instrumentIndex, itemIndex });
+    const { instrumentNumber, id, instrumentIndex, itemIndex } = this.props.items[i];
+    this.props.updateSelectedItem({ instrumentNumber, id, instrumentIndex, itemIndex });
+    this.scrollTo(`${instrumentIndex}-${itemIndex}`);
   }
 
   render() {
     const elements = this.props.items.reduce((out, item) => {
       out.push((item.isInstrument)
         ? (
-          <div key={item.instrumentNumber}>
+          <div key={item.instrumentNumber} data-heading={`${item.instrumentIndex}-${item.itemIndex}`}>
             <div className={classNames('barMarker', { marked: item.marked })} />
             <h4>{item.instrumentNumber}</h4>
           </div>
         )
         : (
-          <div key={`${item.instrumentIndex}-${item.itemIndex}`}>
+          <div key={`${item.instrumentIndex}-${item.itemIndex}`} data-heading={`${item.instrumentIndex}-${item.itemIndex}`}>
             <div className={classNames('barMarker', { marked: item.marked })} />
 
             <BarContainer
@@ -42,7 +54,7 @@ class ConditionList extends React.PureComponent {
     }, []);
 
     return (
-      <div className="ConditionList">
+      <div className="ConditionList" ref={this.ref}>
         <List
           items={elements}
           onChange={this.onChange}
@@ -55,6 +67,7 @@ class ConditionList extends React.PureComponent {
 
 ConditionList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
     isInstrument: PropTypes.bool,
     instrumentNumber: PropTypes.string,
     instrumentIndex: PropTypes.number.isRequired,

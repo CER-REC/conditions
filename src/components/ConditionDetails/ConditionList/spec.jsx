@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import ConditionList from '.';
@@ -98,12 +98,28 @@ describe('Components|ConditionDetails/ConditionList', () => {
 
       expect(barItems.length).toBe(3);
     });
+  });
+
+  describe('mounted', () => {
+    let wrapper;
+    let spy;
+
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = mount(
+        <ConditionList
+          {...defaultProps}
+          updateSelectedItem={spy}
+        />,
+      );
+    });
 
     it('should pass its updateSelectedItem callback to the List component', () => {
+      Element.prototype.scrollIntoView = jest.fn();
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(Element.prototype.scrollIntoView).toHaveBeenCalledTimes(1);
     });
 
     it('should call updateSelectedItem with an instrument index and item index', () => {
