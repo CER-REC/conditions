@@ -61,9 +61,9 @@ class ConditionDetails extends React.Component {
       isExpandable={this.props.isExpandable}
       expanded={this.props.expanded}
       selectedProject={this.props.selectedProject}
-      openProjectDetails={this.props.openProjectDetails}
       toggleExpanded={this.props.toggleExpanded}
       browseBy={this.props.browseBy}
+      openProjectDetails={this.props.openProjectDetails}
     />
   )
 
@@ -138,10 +138,10 @@ ConditionDetails.propTypes = {
     instrumentIndex: PropTypes.number,
     itemIndex: PropTypes.number,
   }),
-  openProjectDetails: PropTypes.func.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
   toggleExpanded: PropTypes.func,
   updateSelectedItem: PropTypes.func.isRequired,
+  openIntermediatePopup: PropTypes.func.isRequired,
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ConditionDetails.defaultProps = {

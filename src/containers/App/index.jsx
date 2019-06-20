@@ -13,7 +13,7 @@ import { IntlProvider } from 'react-intl';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
-import { lang } from '../../constants';
+import { lang, regDocURL } from '../../constants';
 
 import { processConditionCounts } from './processQueryData';
 
@@ -44,6 +44,9 @@ import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import RegDocsPopup from '../../components/RegDocsPopup';
+import CompanyPopup from '../../components/CompanyPopup';
+
 import './styles.scss';
 
 import {
@@ -80,8 +83,6 @@ const viewProps = {
     bubble: 'XO',
     stream: 2010,
   },
-  openIntermediatePopup: noop,
-  openProjectDetails: noop,
 };
 
 class App extends React.PureComponent {
@@ -95,6 +96,8 @@ class App extends React.PureComponent {
       wheelMoving: false,
       initialKeywordPosition: { x: 0, y: 0 },
       finalKeywordPosition: { x: 0, y: 0 },
+      isIntermediatePopupOpen: false,
+      isCompanyPopupOpen: false,
     };
     this.ref = React.createRef();
   }
@@ -434,6 +437,22 @@ class App extends React.PureComponent {
     });
   };
 
+  openRegDocPopup = () => {
+    this.setState({ isIntermediatePopupOpen: true });
+  }
+
+  closeRegDocPopup = () => {
+    this.setState({ isIntermediatePopupOpen: false });
+  };
+
+  openCompanyPopup = () => {
+    this.setState({ isCompanyPopupOpen: true });
+  }
+
+  closeCompanyPopup = () => {
+    this.setState({ isCompanyPopupOpen: false });
+  };
+
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
@@ -560,24 +579,53 @@ class App extends React.PureComponent {
                   ? formatConditionDetails(instruments, selected.feature)
                   : [];
                 const shortName = formattedInstruments.length > 0
-                  && loadedCondDetails.shortName;
+                  ? loadedCondDetails.shortName
+                  : '';
+
+                // Defaulted to {} since this won't be available while we're loading
+                const { instrumentNumber } = formattedInstruments.length > 0
+                  ? formattedInstruments[selected.condition.instrumentIndex]
+                  : { instrumentNumber: '' };
+                let companyArray = [];
+                if (condDetQData.getProjectById
+                  && condDetQData.getProjectById.companies
+                  && condDetQData.getProjectById.companies.length > 0) {
+                  companyArray = condDetQData.getProjectById.companies.reduce((acc, company) => {
+                    acc.push(company.name);
+                    return acc;
+                  }, []);
+                }
 
                 return (
-                  <ConditionDetails
-                    selectedItem={this.props.selected.condition}
-                    selectedProjectId={selected.project}
-                    selectedProject={shortName || ''}
-                    updateSelectedItem={this.props.setSelectedCondition}
-                    openIntermediatePopup={this.props.openIntermediatePopup}
-                    openProjectDetails={this.props.openProjectDetails}
-                    searchKeywords={{
-                      include: this.props.included,
-                      exclude: this.props.excluded,
-                    }}
-                    data={formattedInstruments}
-                    browseBy={this.props.browseBy}
-                    {...conditionDetailsViewProps}
-                  />
+                  <React.Fragment>
+                    <ConditionDetails
+                      selectedItem={this.props.selected.condition}
+                      selectedProjectId={selected.project}
+                      selectedProject={shortName || ''}
+                      updateSelectedItem={this.props.setSelectedCondition}
+                      openIntermediatePopup={this.openRegDocPopup}
+                      openProjectDetails={this.openCompanyPopup}
+                      searchKeywords={{
+                        include: this.props.included,
+                        exclude: this.props.excluded,
+                      }}
+                      data={formattedInstruments}
+                      browseBy={this.props.browseBy}
+                      {...conditionDetailsViewProps}
+                    />
+                    <RegDocsPopup
+                      isOpen={this.state.isIntermediatePopupOpen}
+                      closeModal={this.closeRegDocPopup}
+                      instrument={instrumentNumber}
+                      regdocsUrl={`${regDocURL}${instrumentNumber}`}
+                    />
+                    <CompanyPopup
+                      projectName={shortName}
+                      closeModal={this.closeCompanyPopup}
+                      companies={companyArray}
+                      isOpen={this.state.isCompanyPopupOpen}
+                    />
+                  </React.Fragment>
                 );
               }}
             </Query>
@@ -601,9 +649,7 @@ App.propTypes = {
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   detailViewExpanded: PropTypes.bool.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
   expandDetailView: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     project: PropTypes.number,
     subFeature: PropTypes.string.isRequired,

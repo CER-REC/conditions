@@ -32,7 +32,7 @@ class Content extends React.PureComponent {
     <button
       type="button"
       className="instrumentLink"
-      {...handleInteraction(this.props.openIntermediatePopup, instrumentNumber)}
+      {...handleInteraction(this.props.openIntermediatePopup)}
     >
       {instrumentNumber}
     </button>

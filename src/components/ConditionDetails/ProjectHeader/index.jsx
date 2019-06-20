@@ -41,7 +41,7 @@ class ProjectHeader extends React.PureComponent {
                 <button
                   type="button"
                   className="openProject"
-                  {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
+                  {...handleInteraction(this.props.openProjectDetails)}
                 >
                   <h2>
                     <span>{this.props.selectedProject}</span>
@@ -70,9 +70,9 @@ ProjectHeader.propTypes = {
   isExpandable: PropTypes.bool,
   expanded: PropTypes.bool,
   selectedProject: PropTypes.string.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
   toggleExpanded: PropTypes.func.isRequired,
   browseBy: PropTypes.oneOf(['company', 'location']),
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ProjectHeader.defaultProps = {
