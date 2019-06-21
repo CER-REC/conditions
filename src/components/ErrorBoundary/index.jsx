@@ -55,7 +55,7 @@ class ErrorBoundary extends React.PureComponent {
 }
 ErrorBoundary.propTypes = {
   // Default children props from react
-  children: PropTypes.func.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default ErrorBoundary;

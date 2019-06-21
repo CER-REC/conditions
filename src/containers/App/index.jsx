@@ -657,10 +657,10 @@ const ConnectedApp = connect(
 )(App);
 
 export default props => (
-  <IntlProvider locale={lang} messages={i18nMessages[lang]}>
-    <ApolloProvider client={client}>
-      <Provider store={store}>
-        <ErrorBoundary>
+  <ErrorBoundary>
+    <IntlProvider locale={lang} messages={i18nMessages[lang]}>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
           <Query query={initialConfigurationDataQuery}>
             {({ data: configData, loading: configLoading }) => (
               <Query query={conditionsPerYearQuery}>
@@ -682,8 +682,8 @@ export default props => (
               </Query>
             )}
           </Query>
-        </ErrorBoundary>
-      </Provider>
-    </ApolloProvider>
-  </IntlProvider>
+        </Provider>
+      </ApolloProvider>
+    </IntlProvider>
+  </ErrorBoundary>
 );
