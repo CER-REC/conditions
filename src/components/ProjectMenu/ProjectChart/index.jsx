@@ -6,17 +6,6 @@ import CircleContainer from '../../CircleContainer';
 
 import './styles.scss';
 
-const determineColour = (relevant, filtered) => {
-  if (relevant && filtered) {
-    return ('RelevantAndFiltered');
-  } if (relevant && !filtered) {
-    return ('Relevant');
-  } if (!relevant && filtered) {
-    return ('Filtered');
-  }
-  return ('');
-};
-
 const ProjectChart = (props) => {
   const { graphData } = props;
   const conditionCount = graphData.reduce((acc, next) => (acc + next.count), 0);
@@ -24,7 +13,7 @@ const ProjectChart = (props) => {
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
-        <CircleContainer size={24} className={classNames('ConditionCount', { Filtered: props.relevantProjects[props.projectId], Relevant: props.filteredProjects[props.projectId] })}>
+        <CircleContainer size={24} className={classNames('ConditionCount', { Filtered: props.filteredProjects[props.projectId], Relevant: props.relevantProjects[props.projectId] })}>
           {props.loading || conditionCount < 0 ? '' : conditionCount}
         </CircleContainer>
       </div>
