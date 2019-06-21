@@ -26,7 +26,7 @@ class Modal extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    if (this.dialog.current) { this.dialog.current.close(); }
+    if (this.dialog.current && this.dialog.current.hasAttribute('open')) { this.dialog.current.close(); }
   }
 
   updateDialogState = () => {
@@ -35,7 +35,7 @@ class Modal extends React.PureComponent {
     if (this.props.isOpen) {
       this.lastFocus = document.activeElement;
       this.dialog.current.showModal();
-    } else {
+    } else if (this.dialog.current.hasAttribute('open')) {
       this.dialog.current.close();
     }
   };

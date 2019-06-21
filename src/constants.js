@@ -93,4 +93,8 @@ export const provinces = {
   'Other provinces and territories': 'OtherProvinces',
 };
 
+export const regDocURL = (lang === 'fr')
+  ? 'https://apps.neb-one.gc.ca/REGDOCS/Recherche?txthl='
+  : 'https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=';
+
 export const guideSize = 128;

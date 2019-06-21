@@ -4,23 +4,15 @@ import ReadMe from './README.md';
 import App, { AppStore } from '.';
 import { setTransitionState } from '../../actions/transitionState';
 
-const noop = () => {};
-const props = {
-  openIntermediatePopup: noop,
-  openProjectDetails: noop,
-};
-
 storiesForView('Containers|App', module, ReadMe)
-  .add('default', () => (
-    <App {...props} />
-  ))
+  .add('default', () => <App />)
   .add('view 2', () => {
     AppStore.dispatch(setTransitionState(8));
-    return <App {...props} />;
+    return <App />;
   })
   .add('view 3', () => {
     AppStore.dispatch(setTransitionState(10));
-    return <App {...props} />;
+    return <App />;
   })
   .add('within WET', () => (
     /* eslint-disable react/no-unescaped-entities, react/self-closing-comp */
@@ -121,7 +113,7 @@ storiesForView('Containers|App', module, ReadMe)
       <main role="main" property="mainContentOfPage" className="container">
 
         <div className="visualization">
-          <App {...props} />
+          <App />
         </div>
 
       </main>
