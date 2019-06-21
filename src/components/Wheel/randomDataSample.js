@@ -879,7 +879,7 @@ const locationData = locationDataRaw.map((location, index) => ({
 
 const relevantProjects = randomProjects.reduce((acc, company) => {
   company.forEach((projectId) => {
-    if (projectId % 11 === 0) acc[projectId] = true;
+    if (projectId % 11 === 0) { acc[projectId] = true; }
   });
 
   return acc;
@@ -887,7 +887,7 @@ const relevantProjects = randomProjects.reduce((acc, company) => {
 
 const filteredProjects = randomProjects.reduce((acc, company) => {
   company.forEach((projectId) => {
-    if (projectId % 7 === 0) acc[projectId] = true;
+    if (projectId % 7 === 0) { acc[projectId] = true; }
   });
 
   return acc;
