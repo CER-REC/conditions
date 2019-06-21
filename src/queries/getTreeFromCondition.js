@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query getConditionAncestors($id: Int!) {
+  query getTreeFromCondition($id: Int!) {
     getConditionById(id: $id){
       instrumentId
       instrument {
@@ -10,7 +10,6 @@ export default gql`
           companyIds
         }
       }
-      text
     }
   }
 `;

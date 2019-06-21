@@ -19,7 +19,8 @@ import { lang, regDocURL } from '../../constants';
 
 import { processConditionCounts } from './processQueryData';
 
-import getConditionAncestors from '../../queries/getConditionAncestors';
+import getTreeFromCondition from '../../queries/getTreeFromCondition';
+import getTreeFromInstrument from '../../queries/getTreeFromInstrument';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
@@ -398,10 +399,40 @@ class App extends React.PureComponent {
     return keywordTranslation;
   };
 
-  setConditionAncestors = (id) => {
-    // TODO: Make a query for this once our server has `conditionById($id)` available
+  setRandomCompany = (companyIds) => {
+    const rand = Math.floor(
+      Math.random() * companyIds.length,
+    );
+    const company = companyIds[rand];
+    this.props.setSelectedCompany(company);
+
+    return company;
+  }
+
+  setSelectionFromInstrument = (id) => {
     client.query({
-      query: getConditionAncestors,
+      query: getTreeFromInstrument,
+      variables: { id },
+    }).then((response) => {
+      // TODO: Error checking
+      const instrument = response.data.getInstrumentById;
+
+      this.props.setSelectedCondition(0);
+      this.props.setSelectedInstrument(id);
+      this.props.setSelectedProject(instrument.projectId);
+      const company = this.setRandomCompany(instrument.project.companyIds);
+
+      console.log(`Setting selection from instrument:
+      Condition: 0
+      Instrument: ${id}
+      Project: ${instrument.projectId}
+      Company: ${company}`);
+    });
+  }
+
+  setSelectionFromCondition = (id) => {
+    client.query({
+      query: getTreeFromCondition,
       variables: { id },
     // eslint-disable-next-line no-unused-vars
     }).then((response) => {
@@ -410,12 +441,13 @@ class App extends React.PureComponent {
 
       this.props.setSelectedCondition(id);
       this.props.setSelectedProject(condition.instrument.projectId);
+      const company = this.setRandomCompany(condition.instrument.project.companyIds);
 
-      const randomCompany = Math.floor(
-        Math.random() * condition.instrument.project.companyIds.length,
-      );
-      const company = condition.instrument.project.companyIds[randomCompany];
-      this.props.setSelectedCompany(company);
+      console.log(`Setting selection from condition:
+      Condition: ${id}
+      Instrument: ${condition.instrumentId}
+      Project: ${condition.instrument.projectId}
+      Company: ${company}`);
     });
   }
 
@@ -438,7 +470,7 @@ class App extends React.PureComponent {
         console.error(`There are no conditions matching "${keyword}"`);
       } else {
         const randomId = conditionIds[Math.floor(Math.random() * conditionIds.length)];
-        this.setConditionAncestors(randomId);
+        this.setSelectionFromCondition(randomId);
       }
     });
   };
@@ -457,6 +489,9 @@ class App extends React.PureComponent {
 
   closeCompanyPopup = () => {
     this.setState({ isCompanyPopupOpen: false });
+  setSelectedConditionListItem = (instrumentId, conditionId) => {
+    this.setSelectionFromInstrument(instrumentId);
+    this.props.setSelectedCondition(conditionId);
   };
 
   render() {
@@ -602,19 +637,16 @@ class App extends React.PureComponent {
                   }
                 }
 
-                let instrumentIndex = -1;
+                let instrumentIndex = 0;
                 let itemIndex = -1;
-                while (itemIndex === -1 && (instrumentIndex < instruments.length)) {
-                  instrumentIndex += 1;
-                  if (instruments[instrumentIndex]) {
-                    itemIndex = instruments[instrumentIndex].conditions
-                      .findIndex(condition => condition.id === selected.condition);
-                  }
-                }
 
-                // Default to the top of the list if we didn't find anything
-                if (itemIndex === -1) {
-                  instrumentIndex = 0;
+                if (instruments.length) {
+                  instrumentIndex = formattedInstruments
+                    .findIndex(instrument => instrument.id === selected.instrument);
+                  if (instrumentIndex === -1) { instrumentIndex = 0; }
+
+                  itemIndex = formattedInstruments[instrumentIndex].conditions
+                    .findIndex(condition => condition.id === selected.condition);
                 }
 
                 return (
@@ -623,7 +655,7 @@ class App extends React.PureComponent {
                       selectedItem={{ instrumentIndex, itemIndex }}
                       selectedProjectId={selected.project}
                       selectedProject={shortName || ''}
-                      updateSelectedItem={this.props.setSelectedCondition}
+                      updateSelectedItem={this.setSelectedConditionListItem}
                       openIntermediatePopup={this.openRegDocPopup}
                       openProjectDetails={this.openCompanyPopup}
                       searchKeywords={{
