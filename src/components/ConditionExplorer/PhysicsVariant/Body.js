@@ -109,10 +109,12 @@ export default class Body {
   }
 
   onUpdatePosition(inOut, start, end) {
-    Matter.Body.setPosition(this.body, {
+    const next = {
       x: start.x + ((end.x - start.x) * inOut),
       y: start.y + ((end.y - start.y) * inOut),
-    });
+    };
+
+    Matter.Body.setPosition(this.body, next);
   }
 
   onUpdateRotation(inOut, start, end) {
