@@ -20,8 +20,8 @@ class ConditionList extends React.PureComponent {
   }
 
   onChange = (i) => {
-    const { id, instrumentIndex, itemIndex } = this.props.items[i];
-    this.props.updateSelectedItem(id);
+    const { conditionId, instrumentId, instrumentIndex, itemIndex } = this.props.items[i];
+    this.props.updateSelectedItem(instrumentId, (conditionId !== undefined) ? conditionId : 0);
     this.scrollTo(`${instrumentIndex}-${itemIndex}`);
   }
 
@@ -70,6 +70,8 @@ ConditionList.propTypes = {
     id: PropTypes.number,
     isInstrument: PropTypes.bool,
     instrumentNumber: PropTypes.string,
+    instrumentId: PropTypes.number.isRequired,
+    conditionId: PropTypes.number,
     instrumentIndex: PropTypes.number.isRequired,
     itemIndex: PropTypes.number.isRequired,
     binnedValue: PropTypes.number,

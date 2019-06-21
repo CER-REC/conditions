@@ -9,7 +9,7 @@ import { HttpLink } from 'apollo-link-http';
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { connect, Provider } from 'react-redux';
+import { connect, Provider, batch } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
@@ -67,6 +67,8 @@ const client = new ApolloClient({ cache, link, fetch });
 
 const noop = () => {};
 const tutorialTiming = 5000;
+
+const randomArrayValue = array => array[Math.floor(Math.random() * array.length)];
 
 const transitionStates = {
   view1: 0,
@@ -399,55 +401,55 @@ class App extends React.PureComponent {
     return keywordTranslation;
   };
 
-  setRandomCompany = (companyIds) => {
-    const rand = Math.floor(
-      Math.random() * companyIds.length,
-    );
-    const company = companyIds[rand];
-    this.props.setSelectedCompany(company);
+  updateSelection = newSelection => batch(() => {
+    console.time('store update');
+    console.log('Updating selection:');
+    console.log(JSON.stringify(newSelection, null, 2));
 
-    return company;
-  }
+    Object.entries(newSelection).forEach(([key, val]) => {
+      const action = this.props[`setSelected${key}`];
+      if (action && (val !== this.props.selected[key.toLowerCase()])) {
+        action(val);
+      }
+    });
 
-  setSelectionFromInstrument = (id) => {
-    client.query({
+    console.timeEnd('store update');
+  })
+
+  getSelectionFromInstrument = (id) => {
+    return client.query({
       query: getTreeFromInstrument,
       variables: { id },
     }).then((response) => {
       // TODO: Error checking
       const instrument = response.data.getInstrumentById;
+      const company = randomArrayValue(instrument.project.companyIds);
 
-      this.props.setSelectedCondition(0);
-      this.props.setSelectedInstrument(id);
-      this.props.setSelectedProject(instrument.projectId);
-      const company = this.setRandomCompany(instrument.project.companyIds);
-
-      console.log(`Setting selection from instrument:
-      Condition: 0
-      Instrument: ${id}
-      Project: ${instrument.projectId}
-      Company: ${company}`);
+      return {
+        Condition: 0,
+        Instrument: id,
+        Project: instrument.projectId,
+        Company: company,
+      };
     });
   }
 
-  setSelectionFromCondition = (id) => {
-    client.query({
+  getSelectionFromCondition = (id) => {
+    return client.query({
       query: getTreeFromCondition,
       variables: { id },
     // eslint-disable-next-line no-unused-vars
     }).then((response) => {
       // TODO: Error checking
       const condition = response.data.getConditionById;
+      const company = randomArrayValue(condition.instrument.project.companyIds);
 
-      this.props.setSelectedCondition(id);
-      this.props.setSelectedProject(condition.instrument.projectId);
-      const company = this.setRandomCompany(condition.instrument.project.companyIds);
-
-      console.log(`Setting selection from condition:
-      Condition: ${id}
-      Instrument: ${condition.instrumentId}
-      Project: ${condition.instrument.projectId}
-      Company: ${company}`);
+      return {
+        Condition: id,
+        Instrument: condition.instrumentId,
+        Project: condition.instrument.projectId,
+        Company: company,
+      };
     });
   }
 
@@ -469,8 +471,10 @@ class App extends React.PureComponent {
         // TODO: Proper error checking or something
         console.error(`There are no conditions matching "${keyword}"`);
       } else {
-        const randomId = conditionIds[Math.floor(Math.random() * conditionIds.length)];
-        this.setSelectionFromCondition(randomId);
+        const randomId = randomArrayValue(conditionIds);
+        const newSelection = this.getSelectionFromCondition(randomId);
+
+        this.updateSelection(newSelection);
       }
     });
   };
@@ -490,8 +494,9 @@ class App extends React.PureComponent {
   closeCompanyPopup = () => {
     this.setState({ isCompanyPopupOpen: false });
   setSelectedConditionListItem = (instrumentId, conditionId) => {
-    this.setSelectionFromInstrument(instrumentId);
-    this.props.setSelectedCondition(conditionId);
+    this.getSelectionFromInstrument(instrumentId).then((newSelection) => {
+      this.updateSelection({ ...newSelection, Condition: conditionId });
+    });
   };
 
   render() {
@@ -713,6 +718,7 @@ App.propTypes = {
   allConfigurationData: allConfigurationDataType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
+  setSelectedInstrument: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedKeywordId: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
@@ -747,6 +753,7 @@ const ConnectedApp = connect(
   {
     setSelectedCompany: selectedCreators.setSelectedCompany,
     setSelectedCondition: selectedCreators.setSelectedCondition,
+    setSelectedInstrument: selectedCreators.setSelectedInstrument,
     setSelectedProject: selectedCreators.setSelectedProject,
     setIncluded: searchCreators.setIncluded,
     setSelectedKeywordId: selectedCreators.setSelectedKeywordId,

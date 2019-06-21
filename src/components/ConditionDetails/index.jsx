@@ -35,6 +35,7 @@ class ConditionDetails extends React.Component {
       data.push({
         isInstrument: true,
         instrumentIndex,
+        instrumentId: instrument.id,
         instrumentNumber: instrument.instrumentNumber,
         itemIndex: -1,
       });
@@ -44,8 +45,9 @@ class ConditionDetails extends React.Component {
         data.push({
           binnedValue: condition.binnedValue,
           instrumentNumber: instrument.instrumentNumber,
+          instrumentId: instrument.id,
           fill: condition.fill,
-          id: condition.id,
+          conditionId: condition.id,
           marked,
           instrumentIndex,
           itemIndex,
