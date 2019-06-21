@@ -81,10 +81,6 @@ ViewThree.propTypes = {
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-    }).isRequired,
   }).isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   setSelectedFeature: PropTypes.func.isRequired,
