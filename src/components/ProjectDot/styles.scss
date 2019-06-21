@@ -8,8 +8,9 @@
   }
   &.Filtered {
     fill: $Filtered;
+    &.Relevant {
+      fill:$FilteredSearchKeyword;
+    }
   }
-  &.RelevantAndFiltered {
-    fill: $FilteredSearchKeyword;
-  }
+  
 }

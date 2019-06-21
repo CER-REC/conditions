@@ -24,7 +24,7 @@ const ProjectChart = (props) => {
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
-        <CircleContainer size={24} className={classNames('ConditionCount', determineColour(props.relevantProjects[props.projectId], props.filteredProjects[props.projectId]))}>
+        <CircleContainer size={24} className={classNames('ConditionCount', { Filtered: props.relevantProjects[props.projectId], Relevant: props.filteredProjects[props.projectId] })}>
           {props.loading || conditionCount < 0 ? '' : conditionCount}
         </CircleContainer>
       </div>

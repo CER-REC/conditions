@@ -55,9 +55,9 @@ $project-chart-line: $Gray160;
       }
       &.Filtered {
         background-color: $Filtered;
-      }
-      &.RelevantAndFiltered {
-        background-color: $FilteredSearchKeyword;
+        &.Relevant {
+          background-color:$FilteredSearchKeyword;
+        }
       }
     }
   }
