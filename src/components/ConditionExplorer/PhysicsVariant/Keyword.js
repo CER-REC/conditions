@@ -22,7 +22,7 @@ export default class Keyword extends Body {
           mask: guideOutlineCategory,
         },
         density: 0.08,
-        frictionAir: 0.032,
+        frictionAir: 0.06,
       },
     );
     super(body, engine);
@@ -56,6 +56,17 @@ export default class Keyword extends Body {
   }
 
   onUpdate(update, keywordsCanReset, circleBounds) {
+    const threshold = 1.01;
+    const magnitude = Matter.Vector.magnitude(this.body.velocity);
+    if (magnitude > threshold) {
+      const clamped = Matter.Vector.mult(
+        Matter.Vector.normalise(this.body.velocity),
+        threshold,
+      );
+
+      Matter.Body.setVelocity(this.body, clamped);
+    }
+
     super.onUpdate(update);
 
     if (this.category === resettingCategory && !this.isMoving) {
