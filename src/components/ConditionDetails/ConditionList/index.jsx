@@ -23,8 +23,8 @@ class ConditionList extends React.PureComponent {
   }
 
   onChange = (i) => {
-    const { instrumentNumber, id, instrumentIndex, itemIndex } = this.props.items[i];
-    this.props.updateSelectedItem({ instrumentNumber, id, instrumentIndex, itemIndex });
+    const { id, instrumentIndex, itemIndex } = this.props.items[i];
+    this.props.updateSelectedItem(id);
     this.scrollTo(`${instrumentIndex}-${itemIndex}`);
   }
 
