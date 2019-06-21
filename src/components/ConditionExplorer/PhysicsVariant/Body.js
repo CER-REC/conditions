@@ -114,15 +114,6 @@ export default class Body {
       y: start.y + ((end.y - start.y) * inOut),
     };
 
-    // Even though we're directly setting the position, the Outline still needs
-    // to have a velocity set for it to collide properly with keywords
-    if (this.constructor.name === 'Outline') {
-      Matter.Body.setVelocity(this.body, {
-        x: (next.x - this.body.position.x),
-        y: (next.y - this.body.position.y),
-      });
-    }
-
     Matter.Body.setPosition(this.body, next);
   }
 
