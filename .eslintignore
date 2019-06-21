@@ -1,5 +1,5 @@
 !.*
-devPublic
+.storybook/wet-template
 coverage
 .git
 node_modules

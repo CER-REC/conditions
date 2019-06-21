@@ -52,10 +52,10 @@ const stateToURLMiddleware = (store) => {
 
     const stateString = JSON.stringify(state);
 
-    const compressed = encodeURIComponent(LZUTF8.compress(stateString, { outputEncoding: 'Base64' }));
-
     updatingHistory = true;
-    history.push(`?config=${compressed}`);
+    const query = QueryString.parse(document.location.search);
+    query.config = encodeURIComponent(LZUTF8.compress(stateString, { outputEncoding: 'Base64' }));
+    history.push(`?${QueryString.stringify(query)}`);
     updatingHistory = false;
   };
 };

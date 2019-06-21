@@ -38,7 +38,6 @@ export const ViewTwoGraphQL = (props) => {
                   ? omitTypename(projData.allProjectsByCompany)
                   : [];
                 const featuresEnums = ['theme', 'instrument', 'phase', 'status', 'type', 'filing'];
-
                 const parsedProjectsData = projectsData.length > 0
                   && projectsData[0].aggregatedCount
                   ? projectsData.map((project, projectIndex) => {

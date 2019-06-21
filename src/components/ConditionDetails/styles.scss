@@ -62,6 +62,7 @@
   }
 
   .listPane {
+    height: calc(100% - 24px);
     display: inline-block;
     width: 27%;
     vertical-align: top;

@@ -53,7 +53,10 @@ addParameters({
   },
 });
 
-addDecorator(storyFn => <div className="visualization">{storyFn()}</div>);
+addDecorator((storyFn, context) => {
+  if (context.id === 'containers-app--within-wet') { return storyFn(); }
+  return <div className="visualization">{storyFn()}</div>;
+});
 
 // automatically import all files named stories.jsx
 const documentationStories = requireContext('../documentation/', true, /stories.jsx$/);

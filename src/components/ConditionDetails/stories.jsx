@@ -85,4 +85,30 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
         updateSelectedItem,
       },
     },
+  })
+  .add('no data loaded', () => (
+    <div style={{ width: 800, border: '1px dashed magenta' }}>
+      <ConditionDetails
+        data={[]}
+        selectedProject=""
+        searchKeywords={{ include: [], exclude: [] }}
+        browseBy="location"
+        openProjectDetails={project => alert(`Project details for: ${project}`)}
+        openIntermediatePopup={instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`)}
+        {...getInteractionProps()}
+      />
+    </div>
+  ), {
+    interaction: {
+      state: {
+        selectedItem: {
+          instrumentIndex: 0,
+          itemIndex: -1,
+        },
+      },
+      actions: {
+        toggleExpanded,
+        updateSelectedItem,
+      },
+    },
   });
