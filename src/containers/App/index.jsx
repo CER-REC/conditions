@@ -408,8 +408,7 @@ class App extends React.PureComponent {
       // TODO: Error checking
       const condition = response.data.getConditionById;
 
-      // TODO: setSelectedCondition once View 2 is wired up for it
-
+      this.props.setSelectedCondition(id);
       this.props.setSelectedProject(condition.instrument.projectId);
 
       const randomCompany = Math.floor(
@@ -417,7 +416,6 @@ class App extends React.PureComponent {
       );
       const company = condition.instrument.project.companyIds[randomCompany];
       this.props.setSelectedCompany(company);
-      // TODO: This should also set the condition to selected
     });
   }
 
@@ -587,7 +585,6 @@ class App extends React.PureComponent {
               }}
             >
               {({ data, loading, error }) => {
-                const { instrumentIndex } = selected.condition;
                 let shortName = '';
                 let instruments = [];
                 let instrumentNumber = '';
@@ -605,10 +602,25 @@ class App extends React.PureComponent {
                   }
                 }
 
+                let instrumentIndex = -1;
+                let itemIndex = -1;
+                while (itemIndex === -1 && (instrumentIndex < instruments.length)) {
+                  instrumentIndex += 1;
+                  if (instruments[instrumentIndex]) {
+                    itemIndex = instruments[instrumentIndex].conditions
+                      .findIndex(condition => condition.id === selected.condition);
+                  }
+                }
+
+                // Default to the top of the list if we didn't find anything
+                if (itemIndex === -1) {
+                  instrumentIndex = 0;
+                }
+
                 return (
                   <React.Fragment>
                     <ConditionDetails
-                      selectedItem={this.props.selected.condition}
+                      selectedItem={{ instrumentIndex, itemIndex }}
                       selectedProjectId={selected.project}
                       selectedProject={shortName || ''}
                       updateSelectedItem={this.props.setSelectedCondition}
@@ -662,11 +674,7 @@ App.propTypes = {
   selected: PropTypes.shape({
     project: PropTypes.number,
     subFeature: PropTypes.string.isRequired,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-      instrumentNumber: PropTypes.string,
-    }).isRequired,
+    condition: PropTypes.number,
     keywordId: PropTypes.number.isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,

@@ -85,6 +85,7 @@ class ConditionDetails extends React.Component {
 
   renderDetails = (instrument, index) => {
     const isInstrument = (index === -1);
+
     return (
       <Details
         isInstrument={isInstrument}
