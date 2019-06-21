@@ -357,7 +357,7 @@ class App extends React.PureComponent {
       conditionIdLookup: createLookupList(this.props.searchResults.conditionIds),
       projectIdLookup: createLookupList(this.props.searchResults.projectIds),
     };
-    this.processedFilter = this.processedFilter || createLookupList(this.props.filteredProjectIDs);
+    this.processedFilter = this.processedFilter || createLookupList(this.props.filteredProjectIds);
     this.processedConditionCounts = this.processedConditionCounts
       || processConditionCounts(this.props.allConditionsPerYear);
 
@@ -542,7 +542,7 @@ App.propTypes = {
     conditionIds: PropTypes.arrayOf(PropTypes.number),
     projectIds: PropTypes.arrayOf(PropTypes.number),
   }).isRequired,
-  filteredProjectIDs: PropTypes.arrayOf(PropTypes.number).isRequired,
+  filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export const AppUnconnected = App;

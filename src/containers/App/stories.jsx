@@ -11,7 +11,7 @@ const props = {
   openIntermediatePopup: noop,
   openProjectDetails: noop,
   searchResults: searchResult.searchResults,
-  filteredProjectIDs: searchResult.filteredProjectIDs,
+  filteredProjectIds: searchResult.filteredProjectIds,
 
 };
 
