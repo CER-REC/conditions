@@ -23,6 +23,7 @@ $states: (
     ".guideTranslate .CircleContainer": (
       pointer-events: none,
     ),
+    ".selectedKeywordTranslate": (opacity: 0),
     ".ConditionExplorer .guide": (
       opacity: 1,
       transition: opacity 0.3s 1s ease-in-out,
@@ -33,17 +34,24 @@ $states: (
     ),
     ".ViewTwo": (pointer-events: none),
     ".ViewTwo .header": (opacity: 0),
-    ".ViewTwo .wheel": (opacity: 0),
+    ".ViewTwo .wheel .MovingContainer": (opacity: 0),
+    ".ViewTwo .wheel .pullToSpinContainer": (opacity: 0),
+    ".ViewTwo .wheel .listContainer": (opacity: 0),
+    ".ViewTwo .wheel .labelContainer": (opacity: 0),
+    ".ViewTwo .wheel .GreyPipe": (opacity: 0),
+
     ".ViewTwo .companyBreakdown": (opacity: 0),
     ".ViewTwo .menus": (opacity: 0),
     ".ViewTwo .legend": (opacity: 0),
+    ".ViewTwo .legend .AssociatedComp": (opacity: 0),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: none),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: none),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List-Item-Content": (pointer-events: none),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List": (pointer-events: none),
 
     ".conditions": (pointer-events: none),
-    ".ConditionDetails .listPane": (opacity: 0),
+    ".ConditionDetails .listPane .List-Item": (opacity: 0),
+    ".ConditionDetails .listPane .CircleContainer": (opacity: 0),
     ".ConditionDetails .ProjectHeader": (opacity: 0),
     ".ConditionDetails .contentPane": (opacity: 0),
     ".ViewThree": (
@@ -66,6 +74,9 @@ $states: (
       opacity: 1,
       transition: opacity 0s,
     ),
+    ".selectedKeywordTranslate": (
+      opacity: 1,
+    ),
     ".ConditionExplorer .guide": (
       opacity: 0,
       transition: opacity 0s,
@@ -77,12 +88,16 @@ $states: (
   ),
   2: (
     ".guideTranslate": (
-      transform: translate(58%, 76%),
+      transform: translate(55%, 85%),
       opacity: 1,
       transition: "transform #{$defaultTransition}, opacity #{$fastStart}",
     ),
     ".guideTranslate .CircleContainer": (
       pointer-events: auto,
+    ),
+    ".selectedKeywordTranslate": (
+      opacity: 0,
+      transition: "transform #{$defaultTransition}, opacity #{$fastEnd}",
     ),
     ".appControls .BrowseByBtn.location": (opacity: 0),
     ".appControls .GuideTransport": (
@@ -107,6 +122,7 @@ $states: (
       transition: "transform #{$defaultTransition}, visibility 0s 1s",
     ),
     ".ConditionDetails .contentPane": (opacity: 1),
+    ".ConditionDetails .listPane .List-Item.selected": (opacity: 1),
   ),
   3: (
     ".guideTranslate": (
@@ -114,20 +130,25 @@ $states: (
       transition: "transform #{$defaultTransition}, opacity #{$defaultTransition}",
     ),
     ".ConditionDetails .contentPane": (opacity: $faded),
-    ".ViewTwo .menus": (opacity: 1),
+    ".ConditionDetails .listPane .List-Item.selected": (opacity: $faded),
     ".ViewTwo .legend": (opacity: 1),
   ),
   4: (
     ".guideTranslate": (transform: translate(42%, 70%)),
-    ".ViewTwo .menus": (opacity: $faded),
     ".ViewTwo .legend": (opacity: $faded),
-    ".ConditionDetails .listPane": (opacity: 1),
+    ".ConditionDetails .listPane .List-Item": (opacity: 1),
+    ".ConditionDetails .listPane .CircleContainer": (opacity: 1),
+    ".ConditionDetails .listPane .List-Item.selected": (opacity: 1),
     ".ConditionDetails .ProjectHeader": (opacity: 1),
   ),
   5: (
     ".guideTranslate": (transform: translate(80%, 10%)),
-    ".ConditionDetails .listPane": (opacity: $faded),
+    ".ConditionDetails .listPane .List-Item": (opacity: $faded),
+    ".ConditionDetails .listPane .CircleContainer": (opacity: $faded),
+    ".ConditionDetails .listPane .List-Item.selected": (opacity: $faded),
     ".ConditionDetails .ProjectHeader": (opacity: $faded),
+    ".ViewTwo .wheel .labelContainer": (opacity: 1),
+    ".ViewTwo .wheel .GreyPipe": (opacity: 1),
     ".ViewTwo .companyBreakdown": (opacity: 1),
   ),
   6: (
@@ -136,7 +157,9 @@ $states: (
     ".appControls .BrowseByBtn.company": (opacity: 0),
     ".appControls .BrowseByBtn.location": (opacity: 0),
     ".ViewTwo .companyBreakdown": (opacity: $faded),
-    ".ViewTwo .wheel": (opacity: 1),
+    ".ViewTwo .wheel .MovingContainer": (opacity: 1),
+    ".ViewTwo .wheel .listContainer": (opacity: 1),
+    ".ViewTwo .wheel .pullToSpinContainer": (opacity: 1),
   ),
   7: (
     ".guideWrapper": (
@@ -159,12 +182,13 @@ $states: (
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: auto),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: auto),
     ".ViewTwo .header": (opacity: 1),
-    ".ViewTwo .wheel": (opacity: 1),
     ".ViewTwo .companyBreakdown": (opacity: 1),
-    ".ViewTwo .menus": (opacity: 1),
     ".ViewTwo .legend": (opacity: 1),
+    ".ViewTwo .legend .AssociatedComp": (opacity: 1),
     ".conditions": (pointer-events: auto),
-    ".ConditionDetails .listPane": (opacity: 1),
+    ".ConditionDetails .listPane .List-Item": (opacity: 1),
+    ".ConditionDetails .listPane .List-Item.selected": (opacity: 1),
+    ".ConditionDetails .listPane .List-Item .CircleContainer": (opacity: 1),
     ".ConditionDetails .ProjectHeader": (opacity: 1),
     ".ConditionDetails .contentPane": (opacity: 1),
     ".Footer": (
@@ -180,9 +204,9 @@ $states: (
     ".guideTranslate": (
       visibility: hidden,
       opacity: 0,
-      transition: "transform #{$defaultTransition}, opacity #{$fastEnd}",
+      transition: "transform #{$defaultTransition}, opacity #{$fastestEnd}",
     ),
-    ".guideTranslate .Guide": (transform: scale(0.17)),
+    ".guideTranslate .Guide": (transform: scale(0.2)),
     ".guideTranslate .CircleContainer": (
       pointer-events: none,
       background-color: $GuideFaded,
@@ -195,6 +219,10 @@ $states: (
     ),
     ".ViewTwo": (
       transition: "opacity #{$defaultTransition}",
+    ),
+    ".ViewTwo .menus": (
+      opacity: 1,
+      transition: opacity $fastestEnd,
     ),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: all),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: all),

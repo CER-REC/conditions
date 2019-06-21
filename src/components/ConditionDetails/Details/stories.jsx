@@ -4,7 +4,7 @@ import Details from '.';
 import ReadMe from './README.md';
 
 const data = {
-  theme: 'theme.ENVIRONMENTAL_PROTECTION',
+  theme: ['ADMINISTRATIVE', 'ENFORCEMENT', 'SUNSET_CLAUSE'],
   instrument: 'instrument.CONSTRUCTION',
   phase: 'phase.DURING_CONSTRUCTION_PHASE',
   type: 'type.STANDARD',

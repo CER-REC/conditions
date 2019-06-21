@@ -7,7 +7,7 @@ import './styles.scss';
 class ContentBlock extends React.PureComponent {
   render() {
     return (
-      <div className={`ContentBlock ${(this.props.half ? 'half' : '')}`}>
+      <div className="ContentBlock">
         <FormattedMessage id={this.props.id}>
           {text => <span className="contentHeading">{text}</span>}
         </FormattedMessage>: {this.props.content}
@@ -19,11 +19,6 @@ class ContentBlock extends React.PureComponent {
 ContentBlock.propTypes = {
   id: PropTypes.string.isRequired,
   content: PropTypes.node.isRequired,
-  half: PropTypes.bool,
-};
-
-ContentBlock.defaultProps = {
-  half: false,
 };
 
 export default ContentBlock;

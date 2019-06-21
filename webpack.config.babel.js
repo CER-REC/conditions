@@ -3,7 +3,7 @@ const Webpack = require('webpack');
 const sass = require('node-sass');
 const SassUtilsConstructor = require('node-sass-utils');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { applicationPath, features } = require('./src/constants');
+const { features } = require('./src/constants');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
 const sassUtils = SassUtilsConstructor(sass);
@@ -13,10 +13,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    bundle: [
-      devMode ? 'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr' : '',
-      './src/index.jsx',
-    ].filter(v => !!v),
+    bundle: './src/index.jsx',
   },
   output: {
     path: BUILD_DIR,
@@ -24,16 +21,6 @@ module.exports = {
     filename: '[name].js',
   },
   devtool: devMode ? 'cheap-module-eval-source-map' : 'none',
-  devServer: {
-    historyApiFallback: {
-      rewrites: [
-        {
-          from: new RegExp(`^/${applicationPath.fr}`),
-          to: applicationPath.en,
-        },
-      ],
-    },
-  },
   module: {
     rules: [
       {

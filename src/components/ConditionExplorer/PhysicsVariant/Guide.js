@@ -7,7 +7,7 @@ import { guideSize } from '../../../constants';
 
 export default class Guide extends Body {
   constructor(engine) {
-    const body = Matter.Bodies.polygon(200, 200, 100, (guideSize / 2), {
+    const body = Matter.Bodies.polygon(700, 300, 100, (guideSize / 2), {
       collisionFilter: {
         category: guideCategory,
         mask: ~guideOutlineCategory, // eslint-disable-line no-bitwise
@@ -36,7 +36,7 @@ export default class Guide extends Body {
     this.locationBeforeExpand = { ...this.body.position };
     return Promise.all([
       this.moveTo(dimensions.x, dimensions.y, 2500),
-      this.scaleTo(Math.min(dimensions.x, dimensions.y) / 50, 2500),
+      this.scaleTo(Math.min(dimensions.x, dimensions.y) / 65, 2500),
     ]);
   }
 

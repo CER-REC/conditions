@@ -36,13 +36,21 @@ class ProjectHeader extends React.PureComponent {
         ? (
           <React.Fragment>
             <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
-            <button
-              type="button"
-              className="openProject"
-              {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
-            >
-              <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
-            </button>
+            { this.props.selectedProject !== ''
+              ? (
+                <button
+                  type="button"
+                  className="openProject"
+                  {...handleInteraction(this.props.openProjectDetails)}
+                >
+                  <h2>
+                    <span>{this.props.selectedProject}</span>
+                    <span className="asterisk">*</span>
+                  </h2>
+                </button>
+              )
+              : null
+            }
           </React.Fragment>
         )
         : <FormattedMessage id="components.conditionDetails.selectedCondition" tagName="h1" />
@@ -62,9 +70,9 @@ ProjectHeader.propTypes = {
   isExpandable: PropTypes.bool,
   expanded: PropTypes.bool,
   selectedProject: PropTypes.string.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
   toggleExpanded: PropTypes.func.isRequired,
   browseBy: PropTypes.oneOf(['company', 'location']),
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ProjectHeader.defaultProps = {

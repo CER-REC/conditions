@@ -14,4 +14,16 @@ export default class Outline extends Body {
     body.frictionAir = 0.2;
     super(body, engine);
   }
+
+  // Needs to have a velocity so that it will collide properly with keywords
+  onUpdatePosition(inOut, start, end) {
+    const prevPosition = { ...this.body.position };
+
+    super.onUpdatePosition(inOut, start, end);
+
+    Matter.Body.setVelocity(this.body, {
+      x: (this.body.position.x - prevPosition.x),
+      y: (this.body.position.y - prevPosition.y),
+    });
+  }
 }

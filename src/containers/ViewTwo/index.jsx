@@ -28,13 +28,6 @@ const availableYearRange = { start: 1970, end: 1980 };
 class ViewTwo extends React.Component {
   regionName = null;
 
-  constructor() {
-    super();
-    this.state = {
-      wheelMoving: false,
-    };
-  }
-
   componentDidUpdate(prevProps) {
     if (prevProps.selected.region !== this.props.selected.region) {
       this.regionName = this.props.selected.region
@@ -42,8 +35,6 @@ class ViewTwo extends React.Component {
         : null;
     }
   }
-
-  setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
   render() {
     return (
@@ -68,7 +59,7 @@ class ViewTwo extends React.Component {
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
               region={this.regionName}
-              className={this.state.wheelMoving ? 'hidden' : ''}
+              className={this.props.wheelMoving ? 'hidden' : ''}
             />
           ) : null}
         </section>
@@ -79,9 +70,9 @@ class ViewTwo extends React.Component {
             selectedRay={this.props.browseBy === 'company' ? this.props.selected.company : this.props.selected.region}
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
             wheelData={this.props.wheelData}
-            wheelMotionTrigger={this.setWheelMoving}
             relevantProjects={this.props.searchResults.projectIdLookup}
             filteredProjects={this.props.filteredProjects}
+            wheelMotionTrigger={this.props.setWheelMoving}
           />
           <GreyPipe mode={this.props.browseBy} />
         </section>
@@ -91,13 +82,13 @@ class ViewTwo extends React.Component {
               <div className="regionChart">
                 <RegionConditionSummary
                   featureData={this.props.legendItems}
-                  isHidden={this.state.wheelMoving}
+                  isHidden={this.props.wheelMoving}
                 />
                 <RegionCompanies
                   companies={this.props.regionCompanyData.companies}
                   activeConditionCompanies={this.props.regionCompanyData.selectedConditionCompanies}
                   openProjectDetails={this.props.openProjectDetails}
-                  isVisible={this.state.wheelMoving ? 'hidden' : ''}
+                  isVisible={this.props.wheelMoving ? 'hidden' : ''}
                 />
               </div>
             )
@@ -105,7 +96,7 @@ class ViewTwo extends React.Component {
               <React.Fragment>
                 <TotalConditionsLabel />
                 <ProjectMenu
-                  loading={this.state.wheelMoving || this.props.projectMenuLoading}
+                  loading={this.props.wheelMoving || this.props.projectMenuLoading}
                   projectsData={this.props.projectsData}
                   selectedProjectID={this.props.selected.project}
                   onChange={this.props.setSelectedProject}

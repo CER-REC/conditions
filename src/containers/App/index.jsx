@@ -10,12 +10,11 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider, FormattedMessage } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 
-import { AppContainer, hot } from 'react-hot-loader';
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import i18nMessages from '../../i18n';
-import { lang } from '../../constants';
+import { lang, regDocURL } from '../../constants';
 
 import { processConditionCounts } from './processQueryData';
 
@@ -23,7 +22,6 @@ import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
-import getDateDataUpdated from '../../queries/getDateDataUpdated';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -35,6 +33,7 @@ import createStore from '../../Store';
 import {
   browseByType,
   allConditionsPerYearType,
+  allConfigurationDataType,
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
@@ -46,6 +45,9 @@ import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import RegDocsPopup from '../../components/RegDocsPopup';
+import CompanyPopup from '../../components/CompanyPopup';
+
 import './styles.scss';
 
 import {
@@ -82,8 +84,6 @@ const viewProps = {
     bubble: 'XO',
     stream: 2010,
   },
-  openIntermediatePopup: noop,
-  openProjectDetails: noop,
 };
 const createLookupList = arr => arr.reduce((acc, cur) => {
   acc[cur] = true;
@@ -98,9 +98,16 @@ class App extends React.PureComponent {
       tutorialPlaying: false,
       initialGuidePosition: { x: 0, y: 0 },
       finalGuidePosition: { x: 0, y: 0 },
+      wheelMoving: false,
+      initialKeywordPosition: { x: 0, y: 0 },
+      finalKeywordPosition: { x: 0, y: 0 },
+      isIntermediatePopupOpen: false,
+      isCompanyPopupOpen: false,
     };
     this.ref = React.createRef();
   }
+
+  setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
   setMainInfoBarPane = v => this.setState({ mainInfoBarPane: v });
 
@@ -205,7 +212,11 @@ class App extends React.PureComponent {
     this.scrollSelectorIntoView('.Footer', 1000);
   }
 
-  jumpToView1 = () => this.props.setTransitionState(transitionStates.view1Reset)
+  jumpToView1 = () => {
+    this.props.setTransitionState(transitionStates.view1Reset);
+    this.props.setBrowseBy('company');
+    this.props.setSelectedKeywordId(-1);
+  }
 
   jumpToView2 = (type) => {
     this.props.setTransitionState(transitionStates.view2);
@@ -214,61 +225,104 @@ class App extends React.PureComponent {
 
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
 
-  syncInitialGuidePosition = (guidePosition) => {
-    const view = document.querySelector('.ViewOne');
-    const explorer = view.querySelector('.explorer');
+  // Adapted from: https://stackoverflow.com/a/48346417
+  absolutePositionFromSvg = ({
+    xInSvg,
+    yInSvg,
+    viewSelector,
+    svgSelector, // Relative to viewSelector
+    elementSelector, // Relative to svgSelector
+  }) => {
+    const view = document.querySelector(viewSelector);
+    if (!view) { return null; }
 
-    if (!view || !explorer) { return; }
+    const svg = view.querySelector(svgSelector);
+    if (!svg) { return null; }
 
-    // Adapted from: https://stackoverflow.com/a/48346417
-    const svgRoot = explorer.querySelector('.ConditionExplorer svg');
-    const svgGuide = explorer.querySelector('.ConditionExplorer .guide');
+    const svgElement = svg.querySelector(elementSelector);
+    if (!svgElement) { return null; }
 
-    const svgPosition = svgRoot.createSVGPoint();
-    const matrix = svgGuide.getCTM();
-    svgPosition.x = guidePosition.x;
-    svgPosition.y = guidePosition.y;
+    const point = svg.createSVGPoint();
+    point.x = xInSvg;
+    point.y = yInSvg;
 
-    const positionInExplorer = svgPosition.matrixTransform(matrix);
+    const positionInSvg = point.matrixTransform(svgElement.getCTM());
 
-    const explorerRect = explorer.getBoundingClientRect();
+    const svgRect = svg.getBoundingClientRect();
     const viewRect = view.getBoundingClientRect();
 
-    this.setState({
-      initialGuidePosition: {
-        x: 100 * (explorerRect.left - viewRect.left + positionInExplorer.x) / viewRect.width,
-        y: 100 * (explorerRect.top - viewRect.top + positionInExplorer.y) / viewRect.height,
-      },
+    return {
+      x: svgRect.left - viewRect.left + positionInSvg.x,
+      y: svgRect.top - viewRect.top + positionInSvg.y,
+      viewWidth: viewRect.width,
+      viewHeight: viewRect.height,
+    };
+  };
+
+  syncInitialGuidePosition = (guidePosition) => {
+    const position = this.absolutePositionFromSvg({
+      xInSvg: guidePosition.x,
+      yInSvg: guidePosition.y,
+      viewSelector: '.ViewOne',
+      svgSelector: '.ConditionExplorer svg',
+      elementSelector: '.ConditionExplorer .guide',
     });
+
+    if (position) {
+      this.setState({
+        initialGuidePosition: {
+          x: 100 * position.x / position.viewWidth,
+          y: 100 * position.y / position.viewHeight,
+        },
+      });
+    }
   };
 
   syncFinalGuidePosition = () => {
-    const view = document.querySelector('.ViewTwo');
-    const button = view.querySelector('.KeywordExplorerButton');
+    const position = this.absolutePositionFromSvg({
+      xInSvg: 18,
+      yInSvg: 14,
+      viewSelector: '.ViewTwo',
+      svgSelector: '.KeywordExplorerButton svg',
+      elementSelector: 'circle',
+    });
 
-    if (!view || !button) { return; }
+    if (position) {
+      this.setState({
+        finalGuidePosition: {
+          x: 100 * position.x / position.viewWidth,
+          y: 100 * position.y / position.viewHeight,
+        },
+      });
+    }
+  };
 
-    // Adapted from: https://stackoverflow.com/a/48346417
-    const svgRoot = button.querySelector('svg');
-    const svgCircle = button.querySelector('circle');
+  syncInitialKeywordPosition = () => {
+    const instance = this.selectedKeywordInstance;
 
-    const svgPosition = svgRoot.createSVGPoint();
-    const matrix = svgCircle.getCTM();
+    const position = this.absolutePositionFromSvg({
+      xInSvg: instance.body.position.x - (0.89 * instance.keyword.textSize.width),
+      yInSvg: instance.body.position.y - 10,
+      viewSelector: '.ViewOne',
+      svgSelector: '.ConditionExplorer svg',
+      elementSelector: `[data-id="${instance.body.id}"]`,
+    });
 
-    // TODO: Magic numbers, borrowed from the KeywordExplorer button's SVG
-    svgPosition.x = 21;
-    svgPosition.y = 14;
+    if (position) {
+      this.setState({
+        initialKeywordPosition: {
+          x: position.x,
+          y: position.y,
+          angle: instance.body.angle * 180 / Math.PI,
+        },
+      });
+    }
+  };
 
-    const positionInSvg = svgPosition.matrixTransform(matrix);
-
-    const buttonRect = button.getBoundingClientRect();
-    const viewRect = view.getBoundingClientRect();
-
+  // TODO: Get the actual destination once we have search highlighting implemented
+  syncFinalKeywordPosition = () => {
     this.setState({
-      finalGuidePosition: {
-        x: 100 * (buttonRect.left - viewRect.left + positionInSvg.x) / viewRect.width,
-        y: 100 * (buttonRect.top - viewRect.top + positionInSvg.y) / viewRect.height,
-      },
+      finalKeywordPosition: { x: 800, y: 600 },
     });
   };
 
@@ -276,13 +330,16 @@ class App extends React.PureComponent {
     this.syncInitialGuidePosition(guidePosition);
     this.syncFinalGuidePosition();
 
+    this.syncInitialKeywordPosition();
+    this.syncFinalKeywordPosition();
+
     // Apply the "Guide was clicked state" immediately
     this.incrementTransitionState();
     this.togglePlay(true);
 
     setTimeout(() => {
       this.incrementTransitionState();
-    }, 1000);
+    }, 50);
   };
 
   getGuideTranslation = () => {
@@ -310,6 +367,35 @@ class App extends React.PureComponent {
     return guideTranslation;
   };
 
+  getKeywordTranslation = () => {
+    let keywordTranslation;
+    if (this.props.transitionState <= transitionStates.tutorialStart) {
+      keywordTranslation = {
+        transform: `
+          translate(
+            ${this.state.initialKeywordPosition.x}px,
+            ${this.state.initialKeywordPosition.y}px
+          )
+          rotate(
+            ${this.state.initialKeywordPosition.angle}deg
+          )
+        `,
+      };
+    } else {
+      keywordTranslation = {
+        transform: `
+          translate(
+            ${this.state.finalKeywordPosition.x}px,
+            ${this.state.finalKeywordPosition.y}px
+          )
+          rotate(0deg)
+        `,
+      };
+    }
+
+    return keywordTranslation;
+  };
+
   setConditionAncestors = (id) => {
     // TODO: Make a query for this once our server has `conditionById($id)` available
     client.query({
@@ -332,9 +418,15 @@ class App extends React.PureComponent {
     });
   }
 
-  setSelectedKeyword = (keyword, id) => {
+  setSelectedKeyword = (instance) => {
+    this.selectedKeywordInstance = instance;
+
+    const id = parseInt(instance.body.id, 10);
+    const keyword = instance.keyword.value;
+
     this.props.setSelectedKeywordId(id);
     this.props.setIncluded([keyword]);
+
     client.query({
       query: getKeywordConditions,
       variables: { keywords: [keyword] },
@@ -348,6 +440,22 @@ class App extends React.PureComponent {
         this.setConditionAncestors(randomId);
       }
     });
+  };
+
+  openRegDocPopup = () => {
+    this.setState({ isIntermediatePopupOpen: true });
+  }
+
+  closeRegDocPopup = () => {
+    this.setState({ isIntermediatePopupOpen: false });
+  };
+
+  openCompanyPopup = () => {
+    this.setState({ isCompanyPopupOpen: true });
+  }
+
+  closeCompanyPopup = () => {
+    this.setState({ isCompanyPopupOpen: false });
   };
 
   render() {
@@ -408,6 +516,12 @@ class App extends React.PureComponent {
             >
               <Guide step={guideStep} onClick={this.handleGuideClick} />
             </div>
+            <span
+              className="selectedKeywordTranslate"
+              style={this.getKeywordTranslation()}
+            >
+              {(this.selectedKeywordInstance) ? this.selectedKeywordInstance.keyword.value : ''}
+            </span>
           </div>
           <ViewOne
             jumpToAbout={this.jumpToAbout}
@@ -417,6 +531,7 @@ class App extends React.PureComponent {
               transitionState > transitionStates.view1
               && transitionState !== transitionStates.view1Reset
             )}
+            lastUpdated={this.props.allConfigurationData.lastUpdated}
           />
           <section className="appControls">
             <BrowseBy
@@ -442,6 +557,8 @@ class App extends React.PureComponent {
           <div style={{ clear: 'both' }} />
           <ViewTwo
             {...viewProps}
+            setWheelMoving={this.setWheelMoving}
+            wheelMoving={this.state.wheelMoving}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
@@ -456,51 +573,75 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
           />
           <section className="conditions">
-            {selected.project !== null
-              ? (
-                <Query query={getProjectDetails} variables={{ projectId: selected.project }}>
-                  {({ data, loading, error }) => {
-                    if (!data.getProjectById || !data) { return null; }
-                    if (loading) { return <div>Loading</div>; }
-                    if (error) { return <div>Loading</div>; }
-                    const { shortName, instruments } = data.getProjectById;
-                    const formattedInstrument = formatConditionDetails(instruments, selected.feature);
-                    return (
-                      <ConditionDetails
-                        selectedItem={this.props.selected.condition}
-                        selectedProject={shortName}
-                        updateSelectedItem={this.props.setSelectedCondition}
-                        openIntermediatePopup={this.props.openIntermediatePopup}
-                        openProjectDetails={this.props.openProjectDetails}
-                        toggleExpanded={noop}
-                        searchKeywords={{
-                          include: this.props.included,
-                          exclude: this.props.excluded,
-                        }}
-                        data={formattedInstrument}
-                        browseBy={this.props.browseBy}
-                        {...conditionDetailsViewProps}
-                      />
-                    );
-                  }}
-                </Query>
-              )
-              : null}
+            <Query
+              query={getProjectDetails}
+              variables={{ projectId: selected.project }}
+              skip={!selected.project}
+            >
+              {(conditionDetailsQProps) => {
+                const {
+                  data: condDetQData,
+                  loading: condDetQLoading,
+                  error: condDetQError,
+                } = conditionDetailsQProps;
+                const loadedCondDetails = !condDetQLoading && !condDetQError && condDetQData
+                  && condDetQData.getProjectById;
+                const instruments = loadedCondDetails && loadedCondDetails.instruments;
+                const formattedInstruments = instruments && !this.state.wheelMoving
+                  ? formatConditionDetails(instruments, selected.feature)
+                  : [];
+                const shortName = formattedInstruments.length > 0
+                  ? loadedCondDetails.shortName
+                  : '';
+
+                // Defaulted to {} since this won't be available while we're loading
+                const { instrumentNumber } = formattedInstruments.length > 0
+                  ? formattedInstruments[selected.condition.instrumentIndex]
+                  : { instrumentNumber: '' };
+                let companyArray = [];
+                if (loadedCondDetails
+                  && condDetQData.getProjectById.companies
+                  && condDetQData.getProjectById.companies.length > 0) {
+                  companyArray = condDetQData.getProjectById.companies.reduce((acc, company) => {
+                    acc.push(company.name);
+                    return acc;
+                  }, []);
+                }
+
+                return (
+                  <React.Fragment>
+                    <ConditionDetails
+                      selectedItem={this.props.selected.condition}
+                      selectedProjectId={selected.project}
+                      selectedProject={shortName || ''}
+                      updateSelectedItem={this.props.setSelectedCondition}
+                      openIntermediatePopup={this.openRegDocPopup}
+                      openProjectDetails={this.openCompanyPopup}
+                      searchKeywords={{
+                        include: this.props.included,
+                        exclude: this.props.excluded,
+                      }}
+                      data={formattedInstruments}
+                      browseBy={this.props.browseBy}
+                      {...conditionDetailsViewProps}
+                    />
+                    <RegDocsPopup
+                      isOpen={this.state.isIntermediatePopupOpen}
+                      closeModal={this.closeRegDocPopup}
+                      instrument={instrumentNumber}
+                      regdocsUrl={`${regDocURL}${instrumentNumber}`}
+                    />
+                    <CompanyPopup
+                      projectName={shortName}
+                      closeModal={this.closeCompanyPopup}
+                      companies={companyArray}
+                      isOpen={this.state.isCompanyPopupOpen}
+                    />
+                  </React.Fragment>
+                );
+              }}
+            </Query>
           </section>
-          <Query query={getDateDataUpdated}>
-            {(dateQProps) => {
-              const { loading: dateLoading, error: errorDateQuery, data: dateData } = dateQProps;
-              if (dateLoading) return 'Loading Date';
-              if (errorDateQuery) return 'Error Occured';
-              const dateOfUpdate = new Date(dateData.allConfigurationData.lastUpdated);
-              return (
-                <div className="DateUpdated">
-                  <FormattedMessage id="views.app.dataLastUpdated" tagName="h1" />
-                  <h1>{`${`${dateOfUpdate.getFullYear()} -`} ${`${dateOfUpdate.getMonth() + 1} -`} ${dateOfUpdate.getDate()}`}</h1>
-                </div>
-              );
-            }}
-          </Query>
         </div>
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
@@ -520,18 +661,19 @@ App.propTypes = {
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
   detailViewExpanded: PropTypes.bool.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
   expandDetailView: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     project: PropTypes.number,
     subFeature: PropTypes.string.isRequired,
     condition: PropTypes.shape({
       instrumentIndex: PropTypes.number.isRequired,
       itemIndex: PropTypes.number.isRequired,
+      instrumentNumber: PropTypes.string,
     }).isRequired,
+    keywordId: PropTypes.number.isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
+  allConfigurationData: allConfigurationDataType.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -550,7 +692,7 @@ export const AppUnconnected = App;
 // Allows stories to override the initial state
 export const AppStore = store;
 
-const ConnectedApp = hot(module)(connect(
+const ConnectedApp = connect(
   ({
     selected,
     browseBy,
@@ -575,36 +717,34 @@ const ConnectedApp = hot(module)(connect(
     setTransitionState: transitionStateCreators.setTransitionState,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
   },
-)(App));
+)(App);
 
 export default props => (
-  <AppContainer>
-    <IntlProvider locale={lang} messages={i18nMessages[lang]}>
-      <ApolloProvider client={client}>
-        <Provider store={store}>
-          <Query query={initialConfigurationDataQuery}>
-            {({ data: configData, loading: configLoading }) => (
-              <Query query={conditionsPerYearQuery}>
-                {({ data: conditionsData, loading: conditionsLoading }) => {
-                  // TODO: Error handling for these queries
-                  if (
-                    conditionsLoading || !conditionsData
-                    || configLoading || !configData
-                  ) return null;
+  <IntlProvider locale={lang} messages={i18nMessages[lang]}>
+    <ApolloProvider client={client}>
+      <Provider store={store}>
+        <Query query={initialConfigurationDataQuery}>
+          {({ data: configData, loading: configLoading }) => (
+            <Query query={conditionsPerYearQuery}>
+              {({ data: conditionsData, loading: conditionsLoading }) => {
+                // TODO: Error handling for these queries
+                if (
+                  conditionsLoading || !conditionsData
+                  || configLoading || !configData
+                ) return null;
 
-                  return (
-                    <ConnectedApp
-                      allConditionsPerYear={conditionsData.conditionsPerYear}
-                      configData={configData.allConfigurationData}
-                      {...props}
-                    />
-                  );
-                }}
-              </Query>
-            )}
-          </Query>
-        </Provider>
-      </ApolloProvider>
-    </IntlProvider>
-  </AppContainer>
+                return (
+                  <ConnectedApp
+                    allConditionsPerYear={conditionsData.conditionsPerYear}
+                    allConfigurationData={configData.allConfigurationData}
+                    {...props}
+                  />
+                );
+              }}
+            </Query>
+          )}
+        </Query>
+      </Provider>
+    </ApolloProvider>
+  </IntlProvider>
 );

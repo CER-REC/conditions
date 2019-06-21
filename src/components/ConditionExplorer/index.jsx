@@ -34,7 +34,7 @@ export default class ConditionExplorer extends React.Component {
   };
 
   static defaultProps = {
-    selectedKeywordId: null,
+    selectedKeywordId: -1,
     physics: true,
     physicsPaused: false,
   };
@@ -94,9 +94,8 @@ export default class ConditionExplorer extends React.Component {
     let x = startX;
 
     return this.props.keywords
-      .map((v) => {
-        // TODO: Need a better way of shortcircuiting the map
-        if (y > size.height) { return null; }
+      .reduce((acc, v) => {
+        if (y > size.height) { return acc; }
 
         const textSize = this.calculateTextSize(v);
         const outline = {
@@ -112,7 +111,7 @@ export default class ConditionExplorer extends React.Component {
           y += lineHeight; // We don't add the text size since it may wrap
         }
 
-        return {
+        acc.push({
           value: v,
           textOffset: {
             x: -(outline.width / 2) - (textSize.xOffset * 2),
@@ -121,10 +120,10 @@ export default class ConditionExplorer extends React.Component {
           textSize,
           outline,
           className: randomColor(v),
-        };
-      })
-      // Filter out null values
-      .filter(v => !!v);
+        });
+
+        return acc;
+      }, []);
   }
 
   testFontSize = () => {
@@ -141,12 +140,9 @@ export default class ConditionExplorer extends React.Component {
     }
   };
 
-  onKeywordClick = (e) => {
+  onKeywordClick = (e, instance) => {
     if (e.currentTarget.classList.contains('textVisible')) {
-      this.props.setSelectedKeyword(
-        e.currentTarget.dataset.keyword,
-        parseInt(e.currentTarget.dataset.id, 10),
-      );
+      this.props.setSelectedKeyword(instance);
       e.stopPropagation();
       e.preventDefault();
     }
