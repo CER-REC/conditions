@@ -37,6 +37,13 @@ describe('actions/selected', () => {
     compareReduxChange(selected.reducer, newState);
   });
 
+  it('should update the instrument state based on the action', () => {
+    const instrument = 'testInstrument';
+    const newState = selected.reducer(undefined, selected.setSelectedInstrument(instrument));
+    expect(newState).toHaveProperty('instrument', instrument);
+    compareReduxChange(selected.reducer, newState);
+  });
+
   it('should update the condition state based on the action', () => {
     const condition = 'testCondition';
     const newState = selected.reducer(undefined, selected.setSelectedCondition(condition));
