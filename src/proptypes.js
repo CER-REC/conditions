@@ -150,10 +150,6 @@ export const viewTwo = {
     region: PropTypes.number,
     project: PropTypes.number,
     feature: featureTypes.isRequired,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-    }).isRequired,
   }).isRequired,
   projectMenuLoading: PropTypes.bool,
   projectsData: PropTypes.arrayOf(project),

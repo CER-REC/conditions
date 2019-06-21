@@ -82,9 +82,6 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
         setIncluded: () => words => ({ included: words }),
         setExcluded: () => words => ({ excluded: words }),
         setSelectedFeature: ({ selected }) => feature => ({ selected: { ...selected, feature } }),
-        setSelectedCondition: ({ selected }) => selectedCondition => ({
-          selected: { ...selected, condition: selectedCondition },
-        }),
         setSelectedProject: ({ selected }) => project => ({ selected: { ...selected, project } }),
         setSelectedCompany: ({ selected }) => company => ({ selected: { ...selected, company } }),
         setSelectedRegion: ({ selected }) => region => ({ selected: { ...selected, region } }),
@@ -100,7 +97,6 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
         findAny: true,
         selected: {
           feature: 'theme',
-          condition: { instrumentIndex: 0, itemIndex: 0 },
           project: 1225,
           company: null,
           region: null,
