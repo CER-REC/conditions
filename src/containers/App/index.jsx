@@ -559,13 +559,6 @@ class App extends React.PureComponent {
               end: this.props.allConfigurationData.instrumentYearRange.max,
             }
             }
-            projectYear={
-              {
-                start: this.props.allConfigurationData.instrumentYearRange.min,
-                end: this.props.allConfigurationData.instrumentYearRange.max,
-              }
-              
-            }
           />
           <ViewThree
             {...viewProps}
