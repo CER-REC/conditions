@@ -4,6 +4,9 @@
 .WheelRay {
   opacity: 1;
   cursor: pointer;
+  .locationRay, .companyRay {
+    pointer-events: bounding-box;
+  }
   .textLabels {
     font-size: 0.14em;
     fill:$InnerColourCompany1;

@@ -19,7 +19,14 @@ class WheelRay extends React.Component {
     rotation: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
+    relevantProjects: PropTypes.arrayOf(PropTypes.bool),
+    filteredProjects: PropTypes.arrayOf(PropTypes.bool),
   }
+
+  static defaultProps = {
+    relevantProjects: [],
+    filteredProjects: [],
+  };
 
   constructor(props) {
     super(props);
@@ -49,7 +56,6 @@ class WheelRay extends React.Component {
     let legendTracker = '';
 
     const rays = items.map((item, index) => {
-      if (index === currentIndex) { return null; }
       let position = rotation;
       const plotIndex = currentIndex - index;
       if (plotIndex < 0) {
@@ -76,6 +82,8 @@ class WheelRay extends React.Component {
                   dotWidth={0.8 * this.flagScale}
                   dotSpacing={this.flagScale}
                   rotation={90}
+                  relevantProjects={this.props.relevantProjects}
+                  filteredProjects={this.props.filteredProjects}
                 />
               )
               : null
@@ -102,7 +110,7 @@ class WheelRay extends React.Component {
       legendTracker = props.wheelType === 'company'
         ? item.name.charAt(0)
         : item.province;
-      return componentToReturn;
+      return index === currentIndex ? null : componentToReturn;
     });
 
     return (
