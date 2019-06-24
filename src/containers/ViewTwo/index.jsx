@@ -26,12 +26,12 @@ const availableCategories = [
 const availableYearRange = { start: 1970, end: 1980 };
 
 class ViewTwo extends React.Component {
-  regionName = null;
+  miniMapData = null;
 
   componentDidUpdate(prevProps) {
     if (prevProps.selected.region !== this.props.selected.region) {
-      this.regionName = this.props.selected.region
-        ? this.props.wheelData.find(region => region.id === this.props.selected.region).name
+      this.miniMapData = this.props.selected.region
+        ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
     }
   }
@@ -58,7 +58,7 @@ class ViewTwo extends React.Component {
           />
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
-              region={this.regionName}
+              region={this.miniMapData}
               className={this.props.wheelMoving ? 'hidden' : ''}
             />
           ) : null}

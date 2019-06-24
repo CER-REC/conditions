@@ -56,7 +56,6 @@ class WheelRay extends React.Component {
     let legendTracker = '';
 
     const rays = items.map((item, index) => {
-      if (index === currentIndex) { return null; }
       let position = rotation;
       const plotIndex = currentIndex - index;
       if (plotIndex < 0) {
@@ -111,7 +110,7 @@ class WheelRay extends React.Component {
       legendTracker = props.wheelType === 'company'
         ? item.name.charAt(0)
         : item.province;
-      return componentToReturn;
+      return index === currentIndex ? null : componentToReturn;
     });
 
     return (
