@@ -876,4 +876,21 @@ const locationData = locationDataRaw.map((location, index) => ({
   ...location,
   aggregatedCount: randomLocationBars[index],
 }));
-export { companyWheelData, locationData };
+
+const relevantProjects = randomProjects.reduce((acc, company) => {
+  company.forEach((projectId) => {
+    if (projectId % 11 === 0) { acc[projectId] = true; }
+  });
+
+  return acc;
+}, []);
+
+const filteredProjects = randomProjects.reduce((acc, company) => {
+  company.forEach((projectId) => {
+    if (projectId % 7 === 0) { acc[projectId] = true; }
+  });
+
+  return acc;
+}, []);
+
+export { companyWheelData, locationData, relevantProjects, filteredProjects };

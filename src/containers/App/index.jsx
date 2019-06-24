@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider, Query } from 'react-apollo';
@@ -84,6 +85,10 @@ const viewProps = {
     stream: 2010,
   },
 };
+const createLookupList = arr => arr.reduce((acc, cur) => {
+  acc[cur] = true;
+  return acc;
+}, []);
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -455,7 +460,12 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
-
+    this.processedSearchResults = this.processedSearchResults || {
+      companyIdLookup: createLookupList(this.props.searchResults.companyIds),
+      conditionIdLookup: createLookupList(this.props.searchResults.conditionIds),
+      projectIdLookup: createLookupList(this.props.searchResults.projectIds),
+    };
+    this.processedFilter = this.processedFilter || createLookupList(this.props.filteredProjectIds);
     this.processedConditionCounts = this.processedConditionCounts
       || processConditionCounts(this.props.allConditionsPerYear);
 
@@ -553,6 +563,8 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
+            searchResults={this.processedSearchResults}
+            filteredProjects={this.processedFilter}
           />
           <ViewThree
             {...viewProps}
@@ -667,6 +679,12 @@ App.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedKeywordId: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
+  searchResults: PropTypes.shape({
+    companyIds: PropTypes.arrayOf(PropTypes.number),
+    conditionIds: PropTypes.arrayOf(PropTypes.number),
+    projectIds: PropTypes.arrayOf(PropTypes.number),
+  }).isRequired,
+  filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export const AppUnconnected = App;
