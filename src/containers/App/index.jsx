@@ -481,6 +481,7 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -703,10 +704,10 @@ const ConnectedApp = connect(
 )(App);
 
 export default props => (
-  <ErrorBoundary>
-    <IntlProvider locale={lang} messages={i18nMessages[lang]}>
-      <ApolloProvider client={client}>
-        <Provider store={store}>
+  <IntlProvider locale={lang} messages={i18nMessages[lang]}>
+    <ApolloProvider client={client}>
+      <Provider store={store}>
+        <ErrorBoundary>
           <Query query={initialConfigurationDataQuery}>
             {({ data: configData, loading: configLoading }) => (
               <Query query={conditionsPerYearQuery}>
@@ -728,8 +729,8 @@ export default props => (
               </Query>
             )}
           </Query>
-        </Provider>
-      </ApolloProvider>
-    </IntlProvider>
-  </ErrorBoundary>
+        </ErrorBoundary>
+      </Provider>
+    </ApolloProvider>
+  </IntlProvider>
 );
