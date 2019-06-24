@@ -1,3 +1,10 @@
+## [0.19.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.19.1) (2019-06-24)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** hides condition list during intro transitions (5294c58)
+
 # [0.19.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.19.0) (2019-06-21)
 
 
