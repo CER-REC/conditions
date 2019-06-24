@@ -24,14 +24,14 @@
     background-color: $LightGray;
     border-radius: 1.5% 1.5% / 24px 0 0 24px;
     line-height: 24px;
-    
+
     span {
       font-size: 14px;
       line-height: 24px;
       color: $Black77;
       font-family: $fira-sans-condensed;
     }
-    
+
     .label {
       position: absolute;
       left: 0;
@@ -52,7 +52,7 @@
       overflow: hidden;
       text-align: left;
       text-overflow: ellipsis;
-      white-space: nowrap; 
+      white-space: nowrap;
       background-color: $LightGray;
     }
   }
@@ -65,7 +65,7 @@
     white-space: nowrap;
     position: absolute;
     top: calc(26% - 1px);
-    
+
     .List-Item.selected {
       line-height: 24px;
       background: transparent;
@@ -82,7 +82,7 @@
 
         span {
           float: left;
-          visibility: hidden;
+          opacity: 0;
           overflow: hidden;
         }
       }
@@ -94,14 +94,14 @@
     left: 45%;
     height: 100%;
     width: 55%;
-    
+
     .List{
       position: absolute;
       height: 100%;
       width: 98%;
       top: 0%;
       pointer-events: auto;
-      
+
       ul {
         position: absolute;
         top: 50%;
