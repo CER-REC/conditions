@@ -648,6 +648,9 @@ class App extends React.PureComponent {
                 let instrumentNumber = '';
                 let documentId = '';
                 let companyArray = [];
+                let instrumentIndex = 0;
+                let itemIndex = -1;
+
                 if (!loading && !error) {
                   const { projectDetails, allInstruments } = data;
                   instruments = formatConditionDetails(allInstruments, selected.feature);
@@ -659,18 +662,6 @@ class App extends React.PureComponent {
                     ({ shortName } = projectDetails);
                     companyArray = projectDetails.companies.map(({ name }) => name);
                   }
-                }
-
-                let instrumentIndex = 0;
-                let itemIndex = -1;
-
-                if (instruments.length) {
-                  instrumentIndex = instruments
-                    .findIndex(instrument => instrument.id === selected.instrument);
-                  if (instrumentIndex === -1) { instrumentIndex = 0; }
-
-                  itemIndex = instruments[instrumentIndex].conditions
-                    .findIndex(condition => condition.id === selected.condition);
                 }
 
                 return (
