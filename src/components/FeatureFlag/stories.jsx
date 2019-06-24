@@ -5,6 +5,8 @@ import withStatus from '../../../.storybook/addon-status';
 import FeatureFlag from '.';
 import ReadMe from './README.md';
 
+import { features } from '../../constants';
+
 const options = {
   range: true,
   min: 1,
@@ -21,6 +23,7 @@ storiesForComponent('Components|FeatureFlag', module, ReadMe)
     <FeatureFlag
       count={number('Amount of conditions', 1, options)}
       chartType="theme"
+      color={features.theme.DAMAGE_PREVENTION}
       name="DAMAGE_PREVENTION"
     />
   ))
@@ -28,6 +31,7 @@ storiesForComponent('Components|FeatureFlag', module, ReadMe)
     <FeatureFlag
       count={10}
       chartType="theme"
+      color={features.theme.FINANCIAL}
       name="FINANCIAL"
     />
   ))
@@ -35,6 +39,7 @@ storiesForComponent('Components|FeatureFlag', module, ReadMe)
     <FeatureFlag
       count={20}
       chartType="theme"
+      color={features.theme.SECURITY}
       name="SECURITY"
     />
   ));

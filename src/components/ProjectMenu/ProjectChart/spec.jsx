@@ -21,7 +21,7 @@ const chartData = [
   { name: 'DAMAGE_PREVENTION', count: 0 },
 ];
 
-const chartType = 'Theme';
+const chartType = 'theme';
 const projectName = '3. Section 21.(1) application';
 
 describe('Components|ProjectMenu/ProjectChart', () => {
