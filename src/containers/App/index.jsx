@@ -454,7 +454,6 @@ class App extends React.PureComponent {
   };
 
   render() {
-    console.dir("Maxx" + this.props.allConfigurationData.instrumentYearRange.max);
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
     this.processedConditionCounts = this.processedConditionCounts

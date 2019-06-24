@@ -35,8 +35,6 @@ class ViewTwo extends React.Component {
   }
 
   render() {
-    console.dir(this.props.projectYear);
-    console.dir(this.props.projectYears);
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
