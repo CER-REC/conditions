@@ -5,7 +5,7 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import LocationWheelMinimap from '.';
 
 const defaultProps = {
-  region: 'Lethbridge--Medicine Hat',
+  region: { province: 'AB', name: 'Lethbridge--Medicine Hat' },
 };
 
 describe('Components|LocationWheelMinimap', () => {

@@ -1,4 +1,6 @@
 @import '../../styles/grid';
+@import '../../styles/colors';
+@import '../../styles/fontVariables.scss';
 @import "./transitions.scss";
 
 .App {
@@ -28,10 +30,28 @@
     left: 5px;
   }
 
-  .guideTranslate {
+  .guideWrapper {
     z-index: 999;
     pointer-events: none;
+  }
 
+  .selectedKeywordTranslate {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-family: $fira-sans-condensed-light;
+    font-size: 16px;
+
+    color: $SearchKeyword;
+    text-shadow: 1px 1px 1px $SearchKeyword;
+
+    pointer-events: none;
+
+    transition: translate $defaultTransition opacity $fastestStart;
+  }
+
+  .guideTranslate {
     position: absolute;
 
     // Guide = 156px  / 2 = 78px
@@ -132,11 +152,20 @@
     transition: opacity $fastestEnd;
 
     .header,
-    .wheel,
+    .wheel .MovingContainer,
+    .wheel .pullToSpinContainer,
+    .wheel .listContainer,
+    .wheel .labelContainer,
+    .wheel .GreyPipe,
     .companyBreakdown,
     .menus,
-    .legend {
+    .legend,
+    .legend .AssociatedComp {
       transition: opacity $defaultTransition;
+    }
+
+    .menus .keywordExplorerCircle {
+      transition: opacity $fastestEnd;
     }
   }
 
@@ -148,7 +177,9 @@
 
   .conditions {
     .ConditionDetails {
-      .listPane,
+      .ConditionList .List,
+      .listPane .List-Item,
+      .listPane .CircleContainer,
       .ProjectHeader,
       .contentPane {
         transition: opacity $defaultTransition;
@@ -240,6 +271,7 @@
     }
 
     .ConditionDetails {
+      .ConditionList .List,
       .listPane,
       .ProjectHeader,
       .contentPane {

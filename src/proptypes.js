@@ -41,6 +41,37 @@ export const project = PropTypes.shape({
 
 export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
 
+export const allConfigurationDataType = PropTypes.shape({
+  displayOrder: PropTypes.shape({
+    conditionFiling: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    conditionPhase: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    conditionStatus: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    conditionType: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    instrumentStatus: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    projectStatus: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+    theme: PropTypes.shape({
+      en: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
+  }).isRequired,
+  instrumentYearRange: PropTypes.shape({
+    max: PropTypes.number.isRequired,
+    min: PropTypes.number.isRequired,
+  }).isRequired,
+  lastUpdated: PropTypes.string.isRequired,
+});
+
 export const ConditionsByCommodityOrInstrument = PropTypes.shape({
   prefix: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
@@ -80,7 +111,7 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   effectiveDate: PropTypes.string.isRequired,
   sunsetDate: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
+  location: PropTypes.array.isRequired,
   activity: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.shape({
     binnedValue: PropTypes.number.isRequired,
@@ -88,7 +119,7 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     text: PropTypes.string.isRequired,
     details: PropTypes.shape({
-      theme: PropTypes.string.isRequired,
+      theme: PropTypes.array.isRequired,
       phase: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
@@ -141,8 +172,6 @@ export const viewTwo = {
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedRegion: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({

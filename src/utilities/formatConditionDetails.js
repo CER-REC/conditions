@@ -16,18 +16,21 @@ export default (instruments, selectedFeature) => (
     } = instrument;
 
     const formattedConditions = conditions.reduce((acc, condition) => {
-      // const fill = Object.entries(condition.aggregatedCount[selectedFeature])
-      //   .reduce((fillAcc, [subFeature, subCount]) => {
-      //     if (subFeature === '__typename' || subCount <= 0) return fillAcc;
-      //     fillAcc.push(features[selectedFeature][subFeature]);
-      //     return fillAcc;
-      //   }, []);
+      const fill = Object.entries(condition.aggregatedCountArray[`${selectedFeature}Enum`])
+        .reduce((fillAcc, [index, subFeature]) => {
+          if (condition.aggregatedCountArray[selectedFeature][index] === 0) { return fillAcc; }
 
-      const fill = ['red'];
+          fillAcc.push(features[selectedFeature][(selectedFeature === 'instrument')
+            ? index
+            : subFeature
+          ]);
+          return fillAcc;
+        }, []);
+
+      const { id } = condition;
 
       const details = {
-        // TODO: Handle multiple themes (do any actually exist?)
-        theme: `theme.${condition.theme[0]}`,
+        theme: condition.theme.filter((v, i, a) => a.indexOf(v) === i),
         phase: `phase.${condition.phase}`,
         type: `type.${(condition.standardCondition) ? 'STANDARD' : 'NON_STANDARD'}`,
         status: `status.${condition.status}`,
@@ -36,6 +39,7 @@ export default (instruments, selectedFeature) => (
 
       // TODO: keywords needs to be matched search keywords...
       acc.push({
+        id,
         fill,
         details,
         binnedValue: condition.textLength,

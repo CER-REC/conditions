@@ -51,6 +51,7 @@ const props = {
   regionCompanyData,
   openProjectDetails: noop,
   conditionsPerYear: conditionCountsByYear.counts,
+  wheelMotiontrigger: noop,
 };
 
 const connectedProps = {
@@ -67,6 +68,7 @@ const connectedProps = {
   jumpToView1: noop,
   regionCompanyData,
   conditionsPerYear: conditionCountsByYear.counts,
+  wheelMotiontrigger: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)
@@ -88,6 +90,7 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
         setSelectedRegion: ({ selected }) => region => ({ selected: { ...selected, region } }),
         openIntermediatePopup: () => () => ({}),
         openProjectDetails: () => () => ({}),
+        setWheelMoving: () => moving => ({ wheelMoving: moving }),
       },
       state: {
         included: [],
@@ -102,6 +105,7 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
           company: null,
           region: null,
         },
+        wheelMoving: false,
       },
     }),
   )
