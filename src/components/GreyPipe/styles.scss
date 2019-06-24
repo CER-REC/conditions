@@ -4,8 +4,9 @@ $curveRadius: 48px;
 
 .GreyPipe {
   position: absolute;
-
   width: $curveRadius;
+
+  pointer-events: none;
 
   .top, .bottom, .bottomSvg {
     position: absolute;
