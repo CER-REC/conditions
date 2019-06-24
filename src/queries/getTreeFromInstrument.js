@@ -10,6 +10,7 @@ export default gql`
       project {
         companyIds
       }
+      regionIds
     }
   }
 `;

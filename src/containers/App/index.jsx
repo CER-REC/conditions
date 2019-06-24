@@ -21,6 +21,9 @@ import * as processQueryData from './processQueryData';
 
 import getTreeFromCondition from '../../queries/getTreeFromCondition';
 import getTreeFromInstrument from '../../queries/getTreeFromInstrument';
+import getTreeFromProject from '../../queries/getTreeFromProject';
+import getTreeFromCompany from '../../queries/getTreeFromCompany';
+
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
@@ -415,6 +418,44 @@ class App extends React.PureComponent {
     console.timeEnd('store update');
   })
 
+  getSelectionFromCompany = id => client.query({
+    query: getTreeFromCompany,
+    variables: { id },
+  }).then((response) => {
+    // TODO: Error checking
+    const company = response.data.getCompanyById;
+    const project = company.projects[0].id;
+    const instrument = company.projects[0].instruments[0].id;
+    const region = randomArrayValue(company.projects[0].instruments[0].regionIds);
+
+    return {
+      Condition: 0,
+      Instrument: instrument,
+      Region: region,
+      Project: project,
+      Company: id,
+    };
+  });
+
+  getSelectionFromProject = id => client.query({
+    query: getTreeFromProject,
+    variables: { id },
+  }).then((response) => {
+    // TODO: Error checking
+    const project = response.data.getProjectById;
+    const company = randomArrayValue(project.companyIds);
+    const instrument = project.instruments[0].id;
+    const region = project.instruments[0].regionIds[0];
+
+    return {
+      Condition: 0,
+      Instrument: instrument,
+      Region: region,
+      Project: id,
+      Company: company,
+    };
+  });
+
   getSelectionFromInstrument = id => client.query({
     query: getTreeFromInstrument,
     variables: { id },
@@ -422,11 +463,13 @@ class App extends React.PureComponent {
     // TODO: Error checking
     const instrument = response.data.getInstrumentById;
     const company = randomArrayValue(instrument.project.companyIds);
+    const region = instrument.regionIds[0];
 
     return {
       Condition: 0,
       Instrument: id,
       Project: instrument.projectId,
+      Region: region,
       Company: company,
     };
   });
@@ -439,14 +482,22 @@ class App extends React.PureComponent {
     // TODO: Error checking
     const condition = response.data.getConditionById;
     const company = randomArrayValue(condition.instrument.project.companyIds);
+    const region = condition.instrument.regionIds[0];
 
     return {
       Condition: id,
       Instrument: condition.instrumentId,
       Project: condition.instrument.projectId,
+      Region: region,
       Company: company,
     };
   });
+
+  setSelectedConditionListItem = (instrumentId, conditionId) => {
+    this.getSelectionFromInstrument(instrumentId).then((newSelection) => {
+      this.updateSelection({ ...newSelection, Condition: conditionId });
+    });
+  };
 
   setSelectedKeyword = (instance) => {
     this.selectedKeywordInstance = instance;
@@ -489,12 +540,6 @@ class App extends React.PureComponent {
   closeCompanyPopup = () => {
     this.setState({ isCompanyPopupOpen: false });
   }
-
-  setSelectedConditionListItem = (instrumentId, conditionId) => {
-    this.getSelectionFromInstrument(instrumentId).then((newSelection) => {
-      this.updateSelection({ ...newSelection, Condition: conditionId });
-    });
-  };
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
