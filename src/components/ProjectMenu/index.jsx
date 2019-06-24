@@ -49,8 +49,8 @@ class ProjectMenu extends React.PureComponent {
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
-  getReformattedData = data => (
-    Object.entries(data[this.props.selectedFeature])
+  getReformattedData = (data, selectedFeature) => (
+    Object.entries(data[selectedFeature])
       .filter(([name]) => (name !== '__typename'))
       .map(([name, count]) => ({ name, count }))
   );
@@ -81,7 +81,7 @@ class ProjectMenu extends React.PureComponent {
         <ProjectChart
           key={project.id}
           chartType={selectedFeature}
-          graphData={this.getReformattedData(project.aggregatedCount)}
+          graphData={this.getReformattedData(project.aggregatedCount, selectedFeature)}
           projectName={project.shortName}
           selected={project.id === selectedProjectID}
           loading={loading}

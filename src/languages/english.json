@@ -44,13 +44,6 @@
       "SUNSET_CLAUSE": "Sunset Clause"
     },
     "instrument": {
-      "ROUTING": "Routing",
-      "CONSTRUCTION": "Construction",
-      "OPENING": "Opening",
-      "ABANDONMENT": "Abandonment",
-      "SAFETY": "Safety",
-      "TARIFFS": "Tariffs",
-      "MISC": "Misc.",
       "AO": "Amending Order",
       "EC": "Electricity Certificate",
       "EP": "Electricity Permit",
@@ -83,7 +76,7 @@
       "OPSP": "text not yet provided",
       "CO": "text not yet provided",
       "OPL": "text not yet provided",
-      "OTHER": "other"
+      "OTHER": "Other"
     },
     "instrumentCommodityType": {
       "OIL": "Oil",
