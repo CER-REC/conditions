@@ -12,7 +12,6 @@ describe('Components|ErrorBoundary', () => {
     beforeEach(() => {
       ProblemChild = () => {
         throw new Error('Error thrown from problem child');
-        return <div>Error</div>; // eslint-disable-line
       };
       GoodChild = () => <div>I am the good child</div>;
       wrapper = shallow(
