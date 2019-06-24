@@ -399,6 +399,7 @@ class App extends React.PureComponent {
     return keywordTranslation;
   };
 
+  // Update any/all values in selected.__ at once to avoid multiple renders
   updateSelection = newSelection => batch(() => {
     console.time('store update');
     console.log('Updating selection:');
@@ -414,42 +415,38 @@ class App extends React.PureComponent {
     console.timeEnd('store update');
   })
 
-  getSelectionFromInstrument = (id) => {
-    return client.query({
-      query: getTreeFromInstrument,
-      variables: { id },
-    }).then((response) => {
-      // TODO: Error checking
-      const instrument = response.data.getInstrumentById;
-      const company = randomArrayValue(instrument.project.companyIds);
+  getSelectionFromInstrument = id => client.query({
+    query: getTreeFromInstrument,
+    variables: { id },
+  }).then((response) => {
+    // TODO: Error checking
+    const instrument = response.data.getInstrumentById;
+    const company = randomArrayValue(instrument.project.companyIds);
 
-      return {
-        Condition: 0,
-        Instrument: id,
-        Project: instrument.projectId,
-        Company: company,
-      };
-    });
-  }
+    return {
+      Condition: 0,
+      Instrument: id,
+      Project: instrument.projectId,
+      Company: company,
+    };
+  });
 
-  getSelectionFromCondition = (id) => {
-    return client.query({
-      query: getTreeFromCondition,
-      variables: { id },
-    // eslint-disable-next-line no-unused-vars
-    }).then((response) => {
-      // TODO: Error checking
-      const condition = response.data.getConditionById;
-      const company = randomArrayValue(condition.instrument.project.companyIds);
+  getSelectionFromCondition = id => client.query({
+    query: getTreeFromCondition,
+    variables: { id },
+  // eslint-disable-next-line no-unused-vars
+  }).then((response) => {
+    // TODO: Error checking
+    const condition = response.data.getConditionById;
+    const company = randomArrayValue(condition.instrument.project.companyIds);
 
-      return {
-        Condition: id,
-        Instrument: condition.instrumentId,
-        Project: condition.instrument.projectId,
-        Company: company,
-      };
-    });
-  }
+    return {
+      Condition: id,
+      Instrument: condition.instrumentId,
+      Project: condition.instrument.projectId,
+      Company: company,
+    };
+  });
 
   setSelectedKeyword = (instance) => {
     this.selectedKeywordInstance = instance;
@@ -470,9 +467,9 @@ class App extends React.PureComponent {
         console.error(`There are no conditions matching "${keyword}"`);
       } else {
         const randomId = randomArrayValue(conditionIds);
-        const newSelection = this.getSelectionFromCondition(randomId);
 
-        this.updateSelection(newSelection);
+        this.getSelectionFromCondition(randomId)
+          .then(newSelection => this.updateSelection(newSelection));
       }
     });
   };
@@ -491,6 +488,8 @@ class App extends React.PureComponent {
 
   closeCompanyPopup = () => {
     this.setState({ isCompanyPopupOpen: false });
+  }
+
   setSelectedConditionListItem = (instrumentId, conditionId) => {
     this.getSelectionFromInstrument(instrumentId).then((newSelection) => {
       this.updateSelection({ ...newSelection, Condition: conditionId });
@@ -666,11 +665,11 @@ class App extends React.PureComponent {
                 let itemIndex = -1;
 
                 if (instruments.length) {
-                  instrumentIndex = formattedInstruments
+                  instrumentIndex = instruments
                     .findIndex(instrument => instrument.id === selected.instrument);
                   if (instrumentIndex === -1) { instrumentIndex = 0; }
 
-                  itemIndex = formattedInstruments[instrumentIndex].conditions
+                  itemIndex = instruments[instrumentIndex].conditions
                     .findIndex(condition => condition.id === selected.condition);
                 }
 
