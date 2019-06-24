@@ -5,6 +5,7 @@ import ErrorBoundary from '.';
 import ReadMe from './README.md';
 
 // To keep the error from showing up in our test runner
+const consoleError = console.error;
 console.error = () => {};
 
 const ProblemChild = () => {
@@ -17,3 +18,5 @@ storiesForComponent('Components|ErrorBoundary', module, ReadMe)
       <ProblemChild />
     </ErrorBoundary>
   ));
+
+console.error = consoleError;
