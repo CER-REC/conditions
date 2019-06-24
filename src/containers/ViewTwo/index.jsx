@@ -23,8 +23,6 @@ const availableCategories = [
   'environment',
   'administration & filings',
 ];
-const availableYearRange = { start: 1970, end: 1980 };
-
 class ViewTwo extends React.Component {
   regionName = null;
 
@@ -37,13 +35,15 @@ class ViewTwo extends React.Component {
   }
 
   render() {
+    console.dir(this.props.projectYear);
+    console.dir(this.props.projectYears);
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
           <SearchBar
             className={this.props.browseBy === 'location' ? 'small' : ''}
             suggestedKeywords={searchData}
-            availableYearRange={availableYearRange}
+            availableYearRange={this.props.projectYears}
             availableCategories={availableCategories}
             setIncluded={this.props.setIncluded}
             setExcluded={this.props.setExcluded}

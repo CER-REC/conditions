@@ -454,6 +454,7 @@ class App extends React.PureComponent {
   };
 
   render() {
+    console.dir("Maxx" + this.props.allConfigurationData.instrumentYearRange.max);
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
     this.processedConditionCounts = this.processedConditionCounts
@@ -553,6 +554,18 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
+            projectYears={{
+              start: this.props.allConfigurationData.instrumentYearRange.min,
+              end: this.props.allConfigurationData.instrumentYearRange.max,
+            }
+            }
+            projectYear={
+              {
+                start: this.props.allConfigurationData.instrumentYearRange.min,
+                end: this.props.allConfigurationData.instrumentYearRange.max,
+              }
+              
+            }
           />
           <ViewThree
             {...viewProps}
