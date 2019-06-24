@@ -1,3 +1,155 @@
+# [0.19.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.19.0) (2019-06-21)
+
+
+### App
+
+* **Features:** shows the selected condition in the condition list (54091df)
+* **Features:** adds a shadow to the animated keyword (e608901)
+* **Features:** resets browsing mode and selected keyword when resetting to view 1 (673b833)
+* **Features:** moves "last updated" date up to intro text, uses existing query (afe2347)
+* **Features:** hides the physics keyword when animated keyword is shown (b5b98d4)
+* **Features:** animated keyword matches the angle of the physics keyword (d7792ab)
+* **Features:** syns initial keyword position to the physics keyword (d7b93e9)
+* **Features:** renders and animates the keyword (position at either end is still rough) (8fc4bb8)
+* **Features:** gives the App a reference to the selected keyword (e8b1edf)
+* **Features:** hides "Associated Companies" until the end of the tutorial (1665b57)
+* **Features:** shows the company name and grey pipe earlier (e59e66f)
+* **Features:** hides the keyword button's circle until the Guide gets there (6b586dc)
+* **Bug Fixes:** keeps the Selected Company header from disappearing (7a6ed70)
+* **Tests:** updates snapshots (3620f5b)
+* **Code Formatting:** tidies refactored code (3201c7d)
+* **Code Refactoring:** begins extracting shared functionality from Guide/keyword sync logic (d766697)
+* **Code Refactoring:** finishes refactoring Guide and keyword sync logic (2c6acaf)
+* **Code Refactoring:** fixes conditional querying based on values (3432f75)
+
+
+### App/ConditionDetails
+
+* **Code Refactoring:** fixes render conditional on app with no data (initial implementation (d740297)
+* **Code Refactoring:** fixes rendering issue with undefined conditions (ab1a512)
+
+
+### Condition detail
+
+* **Bug Fixes:** fixes `Error: "Failed to execute 'close' on dialog` (d2dea8d, NEBV-1435)
+* **Bug Fixes:** fixes Reg Doc URL (2806daf, NEBV-1435)
+
+
+### Condition Details
+
+* **Features:** added popups to the company and inturment number in the condition detail se (a477448, NEBV-1435)
+
+
+### ConditionDetails
+
+* **Features:** fixes instruments display and details formatting/tests (7a3c0bb)
+* **Features:** adds scroll to condition details (dd69162)
+* **Bug Fixes:** fixes name length display overflow (06b1555)
+* **Code Refactoring:** adds support for multiple themes on details and other Fixes (c81d235)
+* **Code Refactoring:** fixes further PR comments (0b32728)
+* **Code Refactoring:** fixes tests and snapshots (ffba8ed)
+* **Code Refactoring:** fixes tests to match new data structure (639f974)
+* **Code Refactoring:** sets ids instead of indexes on redux for other components to use (6663b1a)
+
+
+### ConditionExplorer
+
+* **Features:** hides messages while the guide is being dragged (96db20f)
+* **Features:** reimplements clamping of keyword velocities (eb89571)
+* **Features:** prevents the selected keyword from reverting (5a9afbe)
+* **Features:** adds messages and multiline text rendering (ff70ca5)
+* **Features:** displays rotating guide messages (56731aa)
+* **Features:** adds text to the guide (f1319bd)
+* **Features:** makes Guide unclickable if the pink outline isn't ready (ff41639)
+* **Features:** adds curved text to the GuideDetail (efd55d8)
+* **Features:** updates GuideDetail styling (2007d5b)
+* **Features:** adds a timer before redisplaying messages, adjusts expanded Guide styling (5534734)
+* **Features:** starts a timer before showing text after a drag (0c9332d)
+* **Bug Fixes:** removes/swallows errors from debug messages (52051b2)
+* **Bug Fixes:** adds missing key attribute (65adc65)
+* **Bug Fixes:** fixes extra blue circle and List button positioning in Guide (aa48e25)
+* **Bug Fixes:** uses velocity when manually moving bodies to allow proper collisions (7bb06f5)
+* **Bug Fixes:** directly sets the outline position to avoid jittering (7a301a0)
+* **Code Formatting:** flattens unnecessary CSS calc (8ca4d3f)
+* **Code Formatting:** removes unused code (c1b1349)
+* **Code Formatting:** removes unused code (87fe28e)
+* **Code Refactoring:** moves Outline-specific logic out of Body (d72a05d)
+* **Code Refactoring:** replaces redundant map+filter with reduce (94bd731)
+
+
+### CondtionExplorer
+
+* **Code Formatting:** reduces size of the curved text's parent svg (8521049)
+
+
+### Dependencies
+
+* **Project Maintenance:** enables renovate automerge for pinning dependency versions (0883869)
+* **Project Maintenance:** pin dependency http-proxy-middleware to 0.19.1 (0898711)
+* **Project Maintenance:** update dependency babel-eslint to v10.0.2 (96da766)
+* **Project Maintenance:** update dependency webpack to v4.34.0 (509a922)
+* **Project Maintenance:** update storybook monorepo to v5.1.8 (9d0f5a3)
+
+
+### pulltospin
+
+* **Features:** distinguish between drag and click (bb643af)
+
+
+### PulltoSpin
+
+* **Features:** animations are now as expected (ff1df8b)
+
+
+### PullToSpin
+
+* **Features:** adds drag and click interaction (c7a26d8, NEBV-1560)
+* **Features:** have both animations mostly working now (5188f04)
+* **Features:** added spin on drag (a7f52c2, NEBV-1560)
+* **Code Formatting:** applied style changes and moved functions (cd922da)
+* **Code Formatting:** got rid of comments (e904d22)
+* **Code Formatting:** moved noop (595c68e)
+
+
+### RegDocsPopup
+
+* **Bug Fixes:** fixes crash when using data while query is loading (3873bcc)
+* **Bug Fixes:** fixes PR concerns (0989138)
+
+
+### ShortcutInfoBar
+
+* **Features:** makes text clickable (37217e9)
+
+
+### Storybook
+
+* **Bug Fixes:** fixes bug with stateToURLMiddleware overwriting storybook ID (1bce307)
+
+
+### View 1
+
+* **Code Refactoring:** processes date values using string methods for readability (1bd201a)
+
+
+### View 3
+
+* **Features:** updates and standardizes titles (94bcd21)
+
+
+### Webpack
+
+* **Project Maintenance:** removes unused declarations from webpack config (5b388c7)
+
+
+### WET
+
+* **Bug Fixes:** fixes padding of main container in WET storybook (f912c8b)
+* **Documentation:** adds WET template to storybook, replacing dev-server (372122d)
+* **Project Maintenance:** fixes linting errors caused by WET in storybook (36282a3)
+* **Project Maintenance:** removes dev-server specific changes (eda89ea)
+* **Project Maintenance:** reorganizes and removes unused files (5f37a37)
+
 # [0.18.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.18.0) (2019-06-13)
 
 

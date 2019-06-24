@@ -4,29 +4,16 @@ import ContentBlock from '.';
 import ReadMe from './README.md';
 
 storiesForComponent('Components|ConditionDetails/ContentBlock', module, ReadMe)
-  .add('full block', () => (
+  .add('default', () => (
     <div>
       <ContentBlock
         id="common.features.theme"
-        content="This is a full block"
+        content="This is a content block"
       />
       <ContentBlock
         id="common.features.theme"
-        content="This is a full block"
-      />
-    </div>
-  ))
-  .add('half block', () => (
-    <div>
-      <ContentBlock
-        id="common.features.theme"
-        content="This is a half block"
-        half
-      />
-      <ContentBlock
-        id="common.features.theme"
-        content="This is a half block"
-        half
+        content="This is a content block"
       />
     </div>
   ));
+

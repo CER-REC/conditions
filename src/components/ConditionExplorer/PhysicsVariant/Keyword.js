@@ -9,7 +9,7 @@ import {
 } from './categories';
 
 export default class Keyword extends Body {
-  constructor(keyword, engine) {
+  constructor(keyword, engine, isSelectedKeyword) {
     const { outline } = keyword;
     const body = Matter.Bodies.rectangle(
       keyword.outline.x + (keyword.outline.width / 2),
@@ -22,12 +22,13 @@ export default class Keyword extends Body {
           mask: guideOutlineCategory,
         },
         density: 0.08,
-        frictionAir: 0.032,
+        frictionAir: 0.06,
       },
     );
     super(body, engine);
     this.keyword = keyword;
     this.lastCollision = Date.now();
+    this.isSelectedKeyword = isSelectedKeyword;
   }
 
   get isVisible() { return this.body.collisionFilter.category !== placeholderCategory; }
@@ -58,11 +59,13 @@ export default class Keyword extends Body {
   onUpdate(update, keywordsCanReset, circleBounds) {
     const threshold = 1.01;
     const magnitude = Matter.Vector.magnitude(this.body.velocity);
-    if (magnitude >= threshold) {
-      const clamped = Matter.Vector.normalise({ ...this.body.velocity });
-      const velocity = threshold;
-      clamped.x *= velocity;
-      clamped.y *= velocity;
+    if (magnitude > threshold) {
+      const clamped = Matter.Vector.mult(
+        Matter.Vector.normalise(this.body.velocity),
+        threshold,
+      );
+
+      Matter.Body.setVelocity(this.body, clamped);
     }
 
     super.onUpdate(update);
@@ -73,6 +76,7 @@ export default class Keyword extends Body {
 
     if (this.category === visibleTextCategory
         && this.lastCollision + 5000 <= Date.now()
+        && !this.isSelectedKeyword(this.body.id)
         && keywordsCanReset) {
       const { x, y, width, height } = this.keyword.outline;
       const originalBounds = {

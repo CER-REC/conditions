@@ -61,8 +61,10 @@ export default class PhysicsVariant extends React.PureComponent {
     this.engine = Matter.Engine.create({ world });
 
     this.guide = new Guide(this.engine);
+
+    const isSelectedKeyword = id => (id === this.props.selectedKeywordId);
     this.keywords = this.props.keywords
-      .map(keyword => new Keyword(keyword, this.engine));
+      .map(keyword => new Keyword(keyword, this.engine, isSelectedKeyword));
 
     const mouseConstraint = Matter.MouseConstraint.create(this.engine, {
       mouse: Matter.Mouse.create(this.groupRef.current.parentElement),
@@ -225,7 +227,10 @@ export default class PhysicsVariant extends React.PureComponent {
     if (this.guide.isExpanded) {
       this.closeGuide();
     }
-    this.props.onKeywordClick(e);
+
+    const id = parseInt(e.currentTarget.dataset.id, 10);
+    const instance = this.keywords.find(keywordInstance => keywordInstance.body.id === id);
+    this.props.onKeywordClick(e, instance);
   };
 
   updateGuideMessage = (currTime) => {
@@ -257,7 +262,7 @@ export default class PhysicsVariant extends React.PureComponent {
       transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
     >
       {messageIds.map((id, idx) => (
-        <FormattedMessage id={`components.conditionExplorer.guide.messages.${id}`}>
+        <FormattedMessage key={id} id={`components.conditionExplorer.guide.messages.${id}`}>
           {(text) => {
             const lines = text.split('\n');
 
@@ -302,11 +307,12 @@ export default class PhysicsVariant extends React.PureComponent {
               {
                 textVisible: instance.isVisible,
                 selected: (instance.body.id === this.props.selectedKeywordId),
+                hidden:
+                  (instance.body.id === this.props.selectedKeywordId) && this.props.physicsPaused,
                 textPlaceholder: instance.category === placeholderCategory,
               },
             )}
             data-id={instance.body.id}
-            data-keyword={instance.keyword.value}
             onClick={this.onKeywordClick}
           >
             <g

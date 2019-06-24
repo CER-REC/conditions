@@ -17,16 +17,38 @@
   line-height: 24px;
   vertical-align: middle;
 
+  white-space: nowrap;
+  overflow: hidden;
+
   .asterisk {
+    display: inline-block;
+    width: fit-content;
     color: $LinksTextButtons;
     font-family: 'FiraSansCondensedBold';
   }
 
   .openProject {
     height: 90%;
-  }
-  .openProject::before {
-    content: '\00a0';
+    width: 67%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+
+    span:first-of-type {
+      display: inline-block;
+      vertical-align: top;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 97%;
+      font-family: 'FiraSansCondensedBold';
+      text-decoration: underline;
+    }
+
+    &:before{
+      content: '\00a0';
+      display: inline-block;
+    }
   }
 
   .toggleExpand {

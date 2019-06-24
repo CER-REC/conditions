@@ -64,7 +64,7 @@ storiesForView('Containers|ViewThree', module, ReadMe)
         condition: { instrumentIndex: 0, itemIndex: 0 },
       },
       chartIndicatorPosition: { bubble: 'XO', stream: 2010 },
-      detailViewExpanded: false,
+      detailViewExpanded: true,
     },
   }))
   .add('default', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} />)

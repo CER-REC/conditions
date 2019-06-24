@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 // eslint-disable-next-line import/prefer-default-export
 export default gql`
-  query getProject($projectId: Int!){
+  query getConditionDetails($projectId: Int!){
     getProjectById(id:$projectId) {
       shortName
       name
@@ -36,8 +36,8 @@ export default gql`
             filingEnum
             phase
             phaseEnum
-            prefix
-            prefixEnum
+            instrument: prefix
+            instrumentEnum: prefixEnum
             status
             statusEnum
             theme
