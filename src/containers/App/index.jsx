@@ -569,9 +569,11 @@ class App extends React.PureComponent {
             jumpToView3={this.jumpToView3}
             searchResults={this.processedSearchResults}
             filteredProjects={this.processedFilter}
+            displayOrder={this.props.allConfigurationData.displayOrder}
           />
           <ViewThree
             {...viewProps}
+            displayOrder={this.props.allConfigurationData.displayOrder}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             prefixOrder={this.processedConditionCounts.prefixOrder}
             years={this.processedConditionCounts.years}

@@ -41,30 +41,16 @@ export const project = PropTypes.shape({
 
 export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
 
+export const displayOrder = PropTypes.shape({
+  filing: PropTypes.arrayOf(PropTypes.string).isRequired,
+  phase: PropTypes.arrayOf(PropTypes.string).isRequired,
+  status: PropTypes.arrayOf(PropTypes.string).isRequired,
+  type: PropTypes.arrayOf(PropTypes.string).isRequired,
+  theme: PropTypes.arrayOf(PropTypes.string).isRequired,
+});
+
 export const allConfigurationDataType = PropTypes.shape({
-  displayOrder: PropTypes.shape({
-    conditionFiling: PropTypes.shape({
-      en: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }),
-    conditionPhase: PropTypes.shape({
-      en: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }),
-    conditionStatus: PropTypes.shape({
-      en: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }),
-    conditionType: PropTypes.shape({
-      en: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }),
-    instrumentStatus: PropTypes.shape({
-      en: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }),
-    projectStatus: PropTypes.shape({
-      en: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }),
-    theme: PropTypes.shape({
-      en: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }),
-  }).isRequired,
+  displayOrder: displayOrder.isRequired,
   instrumentYearRange: PropTypes.shape({
     max: PropTypes.number.isRequired,
     min: PropTypes.number.isRequired,
@@ -180,6 +166,7 @@ export const viewTwo = {
     projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
   }),
   filteredProjects: PropTypes.arrayOf(PropTypes.bool),
+  displayOrder: displayOrder.isRequired,
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
