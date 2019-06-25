@@ -23,6 +23,7 @@ import getTreeFromCondition from '../../queries/getTreeFromCondition';
 import getTreeFromInstrument from '../../queries/getTreeFromInstrument';
 import getTreeFromProject from '../../queries/getTreeFromProject';
 import getTreeFromCompany from '../../queries/getTreeFromCompany';
+import getTreeFromRegion from '../../queries/getTreeFromRegion';
 
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
@@ -429,6 +430,25 @@ class App extends React.PureComponent {
       Region: region,
       Project: project,
       Company: id,
+    };
+  });
+
+  getSelectionFromRegion = id => client.query({
+    query: getTreeFromRegion,
+    variables: { id },
+  }).then((response) => {
+    // TODO: Error checking
+    const region = response.data.getRegionById;
+    const instrument = randomArrayValue(region.instruments);
+    const project = instrument.project.id;
+    const company = randomArrayValue(instrument.project.companyIds);
+
+    return {
+      Condition: 0,
+      Instrument: instrument.id,
+      Region: id,
+      Project: project,
+      Company: company,
     };
   });
 
