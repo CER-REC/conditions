@@ -9,7 +9,7 @@ import { HttpLink } from 'apollo-link-http';
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { connect, Provider, batch } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
@@ -19,11 +19,7 @@ import { lang, regDocURL } from '../../constants';
 
 import { processConditionCounts } from './processQueryData';
 
-import getTreeFromCondition from '../../queries/getTreeFromCondition';
-import getTreeFromInstrument from '../../queries/getTreeFromInstrument';
-import getTreeFromProject from '../../queries/getTreeFromProject';
-import getTreeFromCompany from '../../queries/getTreeFromCompany';
-import getTreeFromRegion from '../../queries/getTreeFromRegion';
+import updateSelection from './updateSelection';
 
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
@@ -114,6 +110,7 @@ class App extends React.PureComponent {
       isCompanyPopupOpen: false,
     };
     this.ref = React.createRef();
+    this.updateSelection = updateSelection(this, client);
   }
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
@@ -405,117 +402,6 @@ class App extends React.PureComponent {
     return keywordTranslation;
   };
 
-  // Update any/all values in selected.__ at once to avoid multiple renders
-  // Only updates the store for values that have changed
-  updateSelection = newSelection => batch(() => {
-    Object.entries(newSelection).forEach(([key, val]) => {
-      const action = this.props[`setSelected${key}`];
-      if (action && (val !== this.props.selected[key.toLowerCase()])) {
-        action(val);
-      }
-    });
-  })
-
-  getSelectionFromCompany = id => client.query({
-    query: getTreeFromCompany,
-    variables: { id },
-  }).then((response) => {
-    // TODO: Error checking
-    const company = response.data.getCompanyById;
-    const project = company.projects[0].id;
-    const instrument = company.projects[0].instruments[0].id;
-    const region = randomArrayValue(company.projects[0].instruments[0].regionIds);
-
-    return {
-      Condition: 0,
-      Instrument: instrument,
-      Region: region,
-      Project: project,
-      Company: id,
-    };
-  });
-
-  getSelectionFromRegion = id => client.query({
-    query: getTreeFromRegion,
-    variables: { id },
-  }).then((response) => {
-    // TODO: Error checking
-    const region = response.data.getRegionById;
-    const instrument = randomArrayValue(region.instruments);
-    const project = instrument.project.id;
-    const company = randomArrayValue(instrument.project.companyIds);
-
-    return {
-      Condition: 0,
-      Instrument: instrument.id,
-      Region: id,
-      Project: project,
-      Company: company,
-    };
-  });
-
-  getSelectionFromProject = id => client.query({
-    query: getTreeFromProject,
-    variables: { id },
-  }).then((response) => {
-    // TODO: Error checking
-    const project = response.data.getProjectById;
-    const company = randomArrayValue(project.companyIds);
-    const instrument = project.instruments[0].id;
-    const region = project.instruments[0].regionIds[0];
-
-    return {
-      Condition: 0,
-      Instrument: instrument,
-      Region: region,
-      Project: id,
-      Company: company,
-    };
-  });
-
-  getSelectionFromInstrument = id => client.query({
-    query: getTreeFromInstrument,
-    variables: { id },
-  }).then((response) => {
-    // TODO: Error checking
-    const instrument = response.data.getInstrumentById;
-    const company = randomArrayValue(instrument.project.companyIds);
-    const region = instrument.regionIds[0];
-
-    return {
-      Condition: 0,
-      Instrument: id,
-      Project: instrument.projectId,
-      Region: region,
-      Company: company,
-    };
-  });
-
-  getSelectionFromCondition = id => client.query({
-    query: getTreeFromCondition,
-    variables: { id },
-  // eslint-disable-next-line no-unused-vars
-  }).then((response) => {
-    // TODO: Error checking
-    const condition = response.data.getConditionById;
-    const company = randomArrayValue(condition.instrument.project.companyIds);
-    const region = condition.instrument.regionIds[0];
-
-    return {
-      Condition: id,
-      Instrument: condition.instrumentId,
-      Project: condition.instrument.projectId,
-      Region: region,
-      Company: company,
-    };
-  });
-
-  setSelectedConditionListItem = (instrumentId, conditionId) => {
-    this.getSelectionFromInstrument(instrumentId).then((newSelection) => {
-      this.updateSelection({ ...newSelection, Condition: conditionId });
-    });
-  };
-
   setSelectedKeyword = (instance) => {
     this.selectedKeywordInstance = instance;
 
@@ -536,26 +422,9 @@ class App extends React.PureComponent {
       } else {
         const randomId = randomArrayValue(conditionIds);
 
-        this.getSelectionFromCondition(randomId)
-          .then(newSelection => this.updateSelection(newSelection));
+        this.updateSelection.fromCondition(randomId);
       }
     });
-  };
-
-  setSelectedCompany = (id) => {
-    this.getSelectionFromCompany(id).then(this.updateSelection);
-  };
-
-  setSelectedRegion = (id) => {
-    this.getSelectionFromRegion(id).then(this.updateSelection);
-  };
-
-  setSelectedProject = (id) => {
-    if (id !== -1) {
-      this.getSelectionFromProject(id).then(this.updateSelection);
-    } else {
-      this.updateSelection({ Project: -1 });
-    }
   };
 
   openRegDocPopup = () => {
@@ -683,9 +552,9 @@ class App extends React.PureComponent {
             jumpToView3={this.jumpToView3}
             searchResults={this.processedSearchResults}
             filteredProjects={this.processedFilter}
-            setSelectedCompany={this.setSelectedCompany}
-            setSelectedRegion={this.setSelectedRegion}
-            setSelectedProject={this.setSelectedProject}
+            setSelectedCompany={this.updateSelection.fromCompany}
+            setSelectedRegion={this.updateSelection.fromRegion}
+            setSelectedProject={this.updateSelection.fromProject}
           />
           <ViewThree
             {...viewProps}
@@ -736,7 +605,7 @@ class App extends React.PureComponent {
                       selectedItem={{ instrumentIndex, itemIndex }}
                       selectedProjectId={selected.project}
                       selectedProject={shortName || ''}
-                      updateSelectedItem={this.setSelectedConditionListItem}
+                      updateSelectedItem={this.updateSelection.fromConditionListItem}
                       openIntermediatePopup={this.openRegDocPopup}
                       openProjectDetails={this.openCompanyPopup}
                       searchKeywords={{
