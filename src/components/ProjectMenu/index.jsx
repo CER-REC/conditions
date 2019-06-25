@@ -74,7 +74,7 @@ class ProjectMenu extends React.PureComponent {
     const { loading, onChange } = this.props;
     let { selectedProjectID, projectsData, selectedFeature } = this.props;
     const isListEmpty = this.getListItems(projectsData, selectedProjectID).length === 0;
-    if (isListEmpty && selectedProjectID !== -1) this.props.onChange(-1);
+    // if (isListEmpty && selectedProjectID !== -1) this.props.onChange(-1);
     if (loading || isListEmpty) {
       projectsData = [{ ...loadingProjectsData, id: 0 }];
       selectedProjectID = 0;
