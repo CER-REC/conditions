@@ -405,19 +405,14 @@ class App extends React.PureComponent {
   };
 
   // Update any/all values in selected.__ at once to avoid multiple renders
+  // Only updates the store for values that have changed
   updateSelection = newSelection => batch(() => {
-    console.time('store update');
-    console.log('Updating selection:');
-    console.log(JSON.stringify(newSelection, null, 2));
-
     Object.entries(newSelection).forEach(([key, val]) => {
       const action = this.props[`setSelected${key}`];
       if (action && (val !== this.props.selected[key.toLowerCase()])) {
         action(val);
       }
     });
-
-    console.timeEnd('store update');
   })
 
   getSelectionFromCompany = id => client.query({
@@ -525,6 +520,22 @@ class App extends React.PureComponent {
           .then(newSelection => this.updateSelection(newSelection));
       }
     });
+  };
+
+  setSelectedCompany = (id) => {
+    this.getSelectionFromCompany(id).then(this.updateSelection);
+  };
+
+  setSelectedRegion = (id) => {
+    this.getSelectionFromRegion(id).then(this.updateSelection);
+  };
+
+  setSelectedProject = (id) => {
+    if (id !== -1) {
+      this.getSelectionFromProject(id).then(this.updateSelection);
+    } else {
+      this.updateSelection({ Project: -1 });
+    }
   };
 
   openRegDocPopup = () => {
@@ -652,6 +663,9 @@ class App extends React.PureComponent {
             jumpToView3={this.jumpToView3}
             searchResults={this.processedSearchResults}
             filteredProjects={this.processedFilter}
+            setSelectedCompany={this.setSelectedCompany}
+            setSelectedRegion={this.setSelectedRegion}
+            setSelectedProject={this.setSelectedProject}
           />
           <ViewThree
             {...viewProps}
@@ -665,8 +679,8 @@ class App extends React.PureComponent {
                 ? { query: getProjectDetails, variables: { projectId: selected.project } }
                 : null}
               allInstruments={{
-                query: selected.project ? allInstrumentsBy.project : allInstrumentsBy.region,
-                variables: { id: selected.project || selected.region },
+                query: ((browseBy === 'company') ? allInstrumentsBy.project : allInstrumentsBy.region),
+                variables: { id: (browseBy === 'company') ? selected.project : selected.region },
               }}
             >
               {({ data, loading, error }) => {
@@ -763,6 +777,7 @@ App.propTypes = {
   setSelectedInstrument: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedKeywordId: PropTypes.func.isRequired,
+  setSelectedRegion: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
     companyIds: PropTypes.arrayOf(PropTypes.number),
@@ -797,6 +812,7 @@ const ConnectedApp = connect(
     setSelectedCondition: selectedCreators.setSelectedCondition,
     setSelectedInstrument: selectedCreators.setSelectedInstrument,
     setSelectedProject: selectedCreators.setSelectedProject,
+    setSelectedRegion: selectedCreators.setSelectedRegion,
     setIncluded: searchCreators.setIncluded,
     setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
     setBrowseBy: browseByCreators.setBrowseBy,
