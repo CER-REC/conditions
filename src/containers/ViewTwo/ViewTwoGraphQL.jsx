@@ -206,10 +206,6 @@ export default connect(
   }),
   {
     setSelectedFeature: selectedCreators.setSelectedFeature,
-    // setSelectedCompany: selectedCreators.setSelectedCompany,
-    // setSelectedRegion: selectedCreators.setSelectedRegion,
-    // setSelectedCondition: selectedCreators.setSelectedCondition,
-    // setSelectedProject: selectedCreators.setSelectedProject,
     setBrowseBy: browseByCreators.setBrowseBy,
     setProjectStatus: searchCreators.setProjectStatus,
     setProjectYear: searchCreators.setProjectYear,
