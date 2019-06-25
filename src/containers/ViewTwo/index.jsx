@@ -30,7 +30,7 @@ class ViewTwo extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.selected.region !== this.props.selected.region) {
-      this.miniMapData = this.props.selected.region
+      this.miniMapData = (this.props.browseBy === 'location' && this.props.selected.region)
         ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
     }
