@@ -45,6 +45,7 @@ import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 
@@ -490,6 +491,7 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -723,27 +725,29 @@ export default props => (
   <IntlProvider locale={lang} messages={i18nMessages[lang]}>
     <ApolloProvider client={client}>
       <Provider store={store}>
-        <Query query={initialConfigurationDataQuery}>
-          {({ data: configData, loading: configLoading }) => (
-            <Query query={conditionsPerYearQuery}>
-              {({ data: conditionsData, loading: conditionsLoading }) => {
-                // TODO: Error handling for these queries
-                if (
-                  conditionsLoading || !conditionsData
-                  || configLoading || !configData
-                ) return null;
+        <ErrorBoundary>
+          <Query query={initialConfigurationDataQuery}>
+            {({ data: configData, loading: configLoading }) => (
+              <Query query={conditionsPerYearQuery}>
+                {({ data: conditionsData, loading: conditionsLoading }) => {
+                  // TODO: Error handling for these queries
+                  if (
+                    conditionsLoading || !conditionsData
+                    || configLoading || !configData
+                  ) return null;
 
-                return (
-                  <ConnectedApp
-                    allConditionsPerYear={conditionsData.conditionsPerYear}
-                    allConfigurationData={configData.allConfigurationData}
-                    {...props}
-                  />
-                );
-              }}
-            </Query>
-          )}
-        </Query>
+                  return (
+                    <ConnectedApp
+                      allConditionsPerYear={conditionsData.conditionsPerYear}
+                      allConfigurationData={configData.allConfigurationData}
+                      {...props}
+                    />
+                  );
+                }}
+              </Query>
+            )}
+          </Query>
+        </ErrorBoundary>
       </Provider>
     </ApolloProvider>
   </IntlProvider>

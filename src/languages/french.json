@@ -222,6 +222,13 @@
     "browseByBtn": {
       "projectsBy": "",
       "conditionsBy": ""
+    },
+    "errorBoundary":{
+      "errorMessage":"",
+      "restoreLinkText":"",
+      "restoreMessage":"",
+      "resetLinkText":"",
+      "resetMessage":""
     }
   },
   "views": {
