@@ -154,7 +154,6 @@ export const viewTwo = {
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedRegion: PropTypes.func.isRequired,
-  setSelectedCondition: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
   projectYears: PropTypes.shape({
