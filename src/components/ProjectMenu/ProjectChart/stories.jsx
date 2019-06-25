@@ -28,8 +28,8 @@ storiesForComponent('Components|ProjectMenu/ProjectChart', module, ReadMe)
       chartType={chartType}
       projectName={projectName}
       selected={boolean('Selected project', true)}
-      relevantProjects={[true, true, true,, true]}
-      filteredProjects={[true, true, true,, true]}
+      relevantProjectLookup={[true, true, true,, true]}
+      filteredProjectLookup={[true, true, true,, true]}
       projectId={1}
     />
   ))

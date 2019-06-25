@@ -16,8 +16,8 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={projectsData}
       selectedFeature="theme"
       loading={false}
-      relevantProjects={processedProjects.relevantProjects}
-      filteredProjects={processedProjects.filteredProjects}
+      relevantProjectLookup={processedProjects.relevantProjectLookup}
+      filteredProjectLookup={processedProjects.filteredProjectLookup}
       {...getInteractionProps()}
     />
   ), {
@@ -61,8 +61,8 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={projectsData.slice(0, 2)}
       selectedProjectID={1225}
       selectedFeature="theme"
-      relevantProjects={processedProjects.relevantProjects}
-      filteredProjects={processedProjects.filteredProjects}
+      relevantProjectLookup={processedProjects.relevantProjectLookup}
+      filteredProjectLookup={processedProjects.filteredProjectLookup}
       {...getInteractionProps()}
     />
   ))
@@ -71,8 +71,8 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={projectsData.slice(0, 3)}
       selectedProjectID={1227}
       selectedFeature="theme"
-      relevantProjects={processedProjects.relevantProjects}
-      filteredProjects={processedProjects.filteredProjects}
+      relevantProjectLookup={processedProjects.relevantProjectLookup}
+      filteredProjectLookup={processedProjects.filteredProjectLookup}
       {...getInteractionProps()}
     />
   ))
@@ -81,8 +81,8 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={projectsData.slice(0, 1)}
       selectedProjectID={1225}
       selectedFeature="theme"
-      relevantProjects={processedProjects.relevantProjects}
-      filteredProjects={processedProjects.filteredProjects}
+      relevantProjectLookup={processedProjects.relevantProjectLookup}
+      filteredProjectLookup={processedProjects.filteredProjectLookup}
       {...getInteractionProps()}
     />
   ))
@@ -91,8 +91,8 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={projectsData.slice(0, 4)}
       selectedProjectID={1226}
       selectedFeature="theme"
-      relevantProjects={processedProjects.relevantProjects}
-      filteredProjects={processedProjects.filteredProjects}
+      relevantProjectLookup={processedProjects.relevantProjectLookup}
+      filteredProjectLookup={processedProjects.filteredProjectLookup}
       {...getInteractionProps()}
     />
   ))
@@ -101,8 +101,8 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={projectsData.slice(0, 4)}
       selectedProjectID={1227}
       selectedFeature="theme"
-      relevantProjects={processedProjects.relevantProjects}
-      filteredProjects={processedProjects.filteredProjects}
+      relevantProjectLookup={processedProjects.relevantProjectLookup}
+      filteredProjectLookup={processedProjects.filteredProjectLookup}
       {...getInteractionProps()}
     />
   ))
@@ -111,8 +111,8 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={projectsData.slice(0, 3)}
       selectedProjectID={1226}
       selectedFeature="theme"
-      relevantProjects={processedProjects.relevantProjects}
-      filteredProjects={processedProjects.filteredProjects}
+      relevantProjectLookup={processedProjects.relevantProjectLookup}
+      filteredProjectLookup={processedProjects.filteredProjectLookup}
       {...getInteractionProps()}
     />
   ));

@@ -179,7 +179,7 @@ export const viewTwo = {
     conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
     projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
   }),
-  filteredProjects: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],

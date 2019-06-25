@@ -50,12 +50,12 @@ $project-chart-line: $Gray160;
       color: $White;
       font-size: 12px;
 
-      &.Relevant {
+      &.relevant {
         background-color: $SearchKeyword;
       }
-      &.Filtered {
+      &.filtered {
         background-color: $Filtered;
-        &.Relevant {
+        &.relevant {
           background-color:$FilteredSearchKeyword;
         }
       }

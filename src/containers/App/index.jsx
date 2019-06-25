@@ -564,7 +564,7 @@ class App extends React.PureComponent {
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
             searchResults={this.processedSearchResults}
-            filteredProjects={this.processedFilter}
+            filteredProjectLookup={this.processedFilter}
           />
           <ViewThree
             {...viewProps}

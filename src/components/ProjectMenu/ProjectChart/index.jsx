@@ -13,7 +13,7 @@ const ProjectChart = (props) => {
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
-        <CircleContainer size={24} className={classNames('ConditionCount', { Filtered: props.filteredProjects[props.projectId], Relevant: props.relevantProjects[props.projectId] })}>
+        <CircleContainer size={24} className={classNames('ConditionCount', { filtered: props.filteredProjectLookup[props.projectId], relevant: props.relevantProjectLookup[props.projectId] })}>
           {props.loading || conditionCount < 0 ? '' : conditionCount}
         </CircleContainer>
       </div>
@@ -55,8 +55,8 @@ ProjectChart.propTypes = {
   selected: PropTypes.bool,
   /** A flag to animate fake data inside the chart and change condition count value */
   loading: PropTypes.bool,
-  relevantProjects: PropTypes.arrayOf(PropTypes.bool),
-  filteredProjects: PropTypes.arrayOf(PropTypes.bool),
+  relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   projectId: PropTypes.number.isRequired,
 };
 
@@ -65,8 +65,8 @@ ProjectChart.defaultProps = {
   graphData: [],
   projectName: '',
   loading: false,
-  relevantProjects: [],
-  filteredProjects: [],
+  relevantProjectLookup: [],
+  filteredProjectLookup: [],
 };
 
 export default ProjectChart;
