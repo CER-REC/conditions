@@ -4436,6 +4436,66 @@ exports[`Storyshots Components|Dropdown with interaction 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ErrorBoundary default 1`] = `
+<div
+  className="visualization"
+>
+  <section
+    className="ErrorBoundary"
+  >
+    <section
+      className="errorMessage"
+    >
+      <h1>
+        Something went wrong.
+      </h1>
+    </section>
+    <section
+      className="restoreLink"
+    >
+      <span>
+        Please click on the link to restore the session: 
+      </span>
+      <a
+        href="http://localhost/"
+      >
+        <span>
+          Restore Session
+        </span>
+      </a>
+    </section>
+    <section
+      className="resetLink"
+    >
+      <span>
+        Please click on the link to reset the session: 
+      </span>
+      <a
+        href="http://localhost/"
+      >
+        <span>
+          Reset Session
+        </span>
+      </a>
+    </section>
+    <section
+      className="details"
+    >
+      <details>
+        Error: Error thrown from problem child
+        <br />
+        
+    in ProblemChild
+    in ErrorBoundary
+    in IntlProvider (created by WithIntl)
+    in WithIntl
+    in div
+      </details>
+    </section>
+  </section>
+</div>
+`;
+
 exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
 <div
   className="visualization"
