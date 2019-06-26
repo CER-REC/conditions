@@ -33,18 +33,20 @@ class Content extends React.PureComponent {
   )
 
   getHighlightedKeywords = (matchList, givenString) => {
-    let highlightedText = givenString;
-    let oldString = highlightedText;
-    let matchedKeywords = [];
-    for (let j = 0; j < matchList.length; j += 1) {
-      oldString = highlightedText;
-      highlightedText = highlightedText.replace(new RegExp(matchList[j], 'g'), `<span class="highlighted">${matchList[j]}</span>`);
-      if (oldString !== highlightedText) {
-        matchedKeywords.push(matchList[j]);
-      }
+    if (matchList.length === 0) {
+      return { highlightedText: givenString, matchedKeywords: [] };
     }
-    matchedKeywords = matchedKeywords.join(', ');
-    return ({ highlightedText, matchedKeywords });
+    const matched = [];
+    const highlightedText = givenString.replace(
+      new RegExp(`(${matchList.join('|')})`, 'gi'),
+      (_, match) => {
+        if (matched.includes(match.toLowerCase()) === false) {
+          matched.push(match.toLowerCase());
+        }
+        return `<span class="highlighted">${match}</span>`;
+      },
+    );
+    return { highlightedText, matchedKeywords: matched.join(', ') };
   }
 
   render() {
