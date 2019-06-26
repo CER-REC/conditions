@@ -9,6 +9,8 @@ const ProjectDot = ({ cx, cy, r, filtered, relevant }) => (
     cx={cx}
     cy={cy}
     r={r}
+    stroke="transparent"
+    strokeWidth="10%"
   />
 );
 

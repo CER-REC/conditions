@@ -4310,6 +4310,8 @@ exports[`Storyshots Components|DotLegend default 1`] = `
         cx={5}
         cy={5}
         r={3}
+        stroke="transparent"
+        strokeWidth="10%"
       />
     </svg>
     <p>
@@ -8651,6 +8653,8 @@ exports[`Storyshots Components|ProjectDot default 1`] = `
       cx={50}
       cy={50}
       r={40}
+      stroke="transparent"
+      strokeWidth="10%"
     />
   </svg>
   <style
