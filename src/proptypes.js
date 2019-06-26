@@ -48,6 +48,7 @@ export const displayOrder = PropTypes.shape({
   status: PropTypes.arrayOf(PropTypes.string).isRequired,
   type: PropTypes.arrayOf(PropTypes.string).isRequired,
   theme: PropTypes.arrayOf(PropTypes.string).isRequired,
+  instrument: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
 export const allConfigurationDataType = PropTypes.shape({
@@ -58,17 +59,6 @@ export const allConfigurationDataType = PropTypes.shape({
   }).isRequired,
   lastUpdated: PropTypes.string.isRequired,
 });
-
-export const ConditionsByCommodityOrInstrument = PropTypes.shape({
-  prefix: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
-  commodity: PropTypes.arrayOf(PropTypes.string).isRequired,
-});
-
-export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
-  ConditionsByCommodityOrInstrument,
-);
 
 export const browseByType = PropTypes.oneOf(['company', 'location']);
 
