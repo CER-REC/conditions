@@ -8,6 +8,9 @@ const HighlightSummary = props => (
   <div className="HighlightSummary">
     <FormattedMessage id="components.searchBar.highlightSummary.showingAll" />
     <span> {props.selectedYear.start} - {props.selectedYear.end } </span>
+    <br />
+    <FormattedMessage id="components.searchBar.highlightSummary.includingStatuses" />
+    <div> {props.includedStatuses.map(i => <FormattedMessage id={`components.searchBar.filter.projectStatus.${i}`}>{text => (<span>{text}&nbsp; </span>)}</FormattedMessage>)} </div>
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.includes">
@@ -35,6 +38,7 @@ HighlightSummary.propTypes = {
   selectedYear: yearRangeType.isRequired,
   includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
   excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+  includedStatuses: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default HighlightSummary;

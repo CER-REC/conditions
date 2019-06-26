@@ -320,6 +320,7 @@
       },
       "highlightSummary": {
         "showingAll": "Showing all projects from",
+        "includingStatuses": "With Status(es):",
         "includes": "Highlighting conditions containing",
         "excludes": "Exclude conditions containing"
       },
