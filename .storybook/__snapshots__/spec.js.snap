@@ -8912,7 +8912,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Filtered Relevant"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -9439,7 +9439,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Filtered Relevant"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -9994,7 +9994,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Filtered Relevant"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -10260,7 +10260,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Filtered"
+                  className="CircleContainer ConditionCount filtered"
                   style={
                     Object {
                       "height": 24,
@@ -10502,7 +10502,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Relevant"
+                  className="CircleContainer ConditionCount relevant"
                   style={
                     Object {
                       "height": 24,
@@ -11029,7 +11029,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Filtered Relevant"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -11556,7 +11556,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Filtered Relevant"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -13042,7 +13042,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount Filtered Relevant"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -13677,7 +13677,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
         className="ConditionPipe"
       >
         <div
-          className="CircleContainer ConditionCount Filtered Relevant"
+          className="CircleContainer ConditionCount filtered relevant"
           style={
             Object {
               "height": 24,
