@@ -3,6 +3,7 @@ export default [
     id: 1225,
     name: 'Trans-Alta Limited-44245',
     shortName: 'Trans-Alta',
+    numberOfConditions: 14,
     aggregatedCount: {
       instrument: {
         ROUTING: 12,
@@ -66,6 +67,7 @@ export default [
     id: 1226,
     name: 'Trans-Alta Limited-44245',
     shortName: 'Trans-Alta',
+    numberOfConditions: 102,
     aggregatedCount: {
       instrument: {
         ROUTING: 3,
@@ -129,6 +131,7 @@ export default [
     id: 1227,
     name: 'Trans-Alta Limited-44245',
     shortName: 'Trans-Alta',
+    numberOfConditions: 19,
     aggregatedCount: {
       instrument: {
         ROUTING: 12,
@@ -192,6 +195,7 @@ export default [
     id: 1228,
     name: 'Trans-Alta Limited-44245',
     shortName: 'Trans-Alta',
+    numberOfConditions: 12,
     aggregatedCount: {
       instrument: {
         ROUTING: 12,
@@ -255,6 +259,7 @@ export default [
     id: 1229,
     name: 'Trans-Alta Limited-44245',
     shortName: 'Trans-Alta',
+    numberOfConditions: 3,
     aggregatedCount: {
       instrument: {
         ROUTING: 3,
@@ -318,6 +323,7 @@ export default [
     id: 1230,
     name: 'Trans-Alta Limited-44245',
     shortName: 'Trans-Alta',
+    numberOfConditions: 104,
     aggregatedCount: {
       instrument: {
         ROUTING: 12,
