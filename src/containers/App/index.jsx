@@ -16,7 +16,7 @@ import getProjectDetails from '../../queries/conditionDetails/getProjectDetails'
 import i18nMessages from '../../i18n';
 import { lang, regDocURL } from '../../constants';
 
-import { processConditionCounts } from './processQueryData';
+import * as processQueryData from './processQueryData';
 
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
@@ -86,10 +86,6 @@ const viewProps = {
     stream: 2010,
   },
 };
-const createLookupList = arr => arr.reduce((acc, cur) => {
-  acc[cur] = true;
-  return acc;
-}, []);
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -461,14 +457,14 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
-    this.processedSearchResults = this.processedSearchResults || {
-      companyIdLookup: createLookupList(this.props.searchResults.companyIds),
-      conditionIdLookup: createLookupList(this.props.searchResults.conditionIds),
-      projectIdLookup: createLookupList(this.props.searchResults.projectIds),
-    };
-    this.processedFilter = this.processedFilter || createLookupList(this.props.filteredProjectIds);
+    this.processedSearchResults = this.processedSearchResults
+      || processQueryData.searchResults(this.props.searchResults);
+
+    this.processedFilter = this.processedFilter
+      || processQueryData.filteredProjects(this.props.filteredProjectIds);
+
     this.processedConditionCounts = this.processedConditionCounts
-      || processConditionCounts(this.props.allConditionsPerYear);
+      || processQueryData.conditionCounts(this.props.allConditionsPerYear);
 
     let guideStep = transitionState;
     if (guideStep === transitionStates.view1Reset) {
