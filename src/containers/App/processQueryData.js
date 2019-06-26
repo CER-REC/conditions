@@ -1,8 +1,10 @@
-// Exporting a const with the expectation that more functions will be added here,
-// such as our display order logic.
+const createLookupList = arr => arr.reduce((acc, cur) => {
+  acc[cur] = true;
+  return acc;
+}, []);
 
 // eslint-disable-next-line import/prefer-default-export
-export const processConditionCounts = (counts) => {
+export const conditionCounts = (counts) => {
   // TODO: Change to 'const' once the instrument hack below is removed
   // eslint-disable-next-line prefer-const
   let [instruments, notInstruments] = Object.entries(counts)
@@ -62,3 +64,22 @@ export const processConditionCounts = (counts) => {
     years: counts.year,
   };
 };
+
+export const searchResults = results => (
+  (results)
+    ? {
+      companyIdLookup: createLookupList(results.companyIds),
+      conditionIdLookup: createLookupList(results.conditionIds),
+      projectIdLookup: createLookupList(results.projectIds),
+    }
+    : {
+      companyIdLookup: [],
+      conditionIdLookup: [],
+      projectIdLookup: [],
+    }
+);
+export const filteredProjects = ids => (
+  (ids)
+    ? createLookupList(ids)
+    : []
+);

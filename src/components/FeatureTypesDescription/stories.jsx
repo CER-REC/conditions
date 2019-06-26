@@ -42,14 +42,14 @@ storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
     <FeatureTypesDescription
       feature="theme"
       subFeature={select('Scroll Target', defaultTargets, 'SECURITY')}
-      displayOrder={displayOrder.features.theme}
+      displayOrder={displayOrder.theme}
     />
   ))
   .add('allThemes', () => (
     <FeatureTypesDescription
       feature="theme"
       subFeature=""
-      displayOrder={displayOrder.features.theme}
+      displayOrder={displayOrder.theme}
     />
   ))
   .add('instruments', () => (

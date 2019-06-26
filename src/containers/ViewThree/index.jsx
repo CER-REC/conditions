@@ -8,7 +8,7 @@ import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
-import displayOrder from '../../mockData/displayOrder';
+import { displayOrder } from '../../proptypes';
 import './styles.scss';
 import * as selectedCreators from '../../actions/selected';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
@@ -22,7 +22,7 @@ class ViewThree extends React.PureComponent {
 
     const currentDisplayOrder = (props.selected.feature === 'instrument')
       ? props.prefixOrder
-      : displayOrder.features[props.selected.feature];
+      : this.props.displayOrder[props.selected.feature];
 
     return (
       <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
@@ -87,6 +87,7 @@ ViewThree.propTypes = {
   setSelectedFeature: PropTypes.func.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   setSelectedSubFeature: PropTypes.func.isRequired,
+  displayOrder: displayOrder.isRequired,
 };
 
 ViewThree.defaultProps = {

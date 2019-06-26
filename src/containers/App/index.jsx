@@ -17,7 +17,7 @@ import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
 import i18nMessages from '../../i18n';
 import { lang, regDocURL } from '../../constants';
 
-import { processConditionCounts } from './processQueryData';
+import * as processQueryData from './processQueryData';
 
 import updateSelection from './updateSelection';
 
@@ -48,6 +48,7 @@ import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import ComposedQuery from '../../components/ComposedQuery';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 
@@ -90,10 +91,6 @@ const viewProps = {
     stream: 2010,
   },
 };
-const createLookupList = arr => arr.reduce((acc, cur) => {
-  acc[cur] = true;
-  return acc;
-}, []);
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -445,15 +442,14 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
+    this.processedSearchResults = this.processedSearchResults
+      || processQueryData.searchResults(this.props.searchResults);
 
-    this.processedSearchResults = this.processedSearchResults || {
-      companyIdLookup: createLookupList(this.props.searchResults.companyIds),
-      conditionIdLookup: createLookupList(this.props.searchResults.conditionIds),
-      projectIdLookup: createLookupList(this.props.searchResults.projectIds),
-    };
-    this.processedFilter = this.processedFilter || createLookupList(this.props.filteredProjectIds);
+    this.processedFilter = this.processedFilter
+      || processQueryData.filteredProjects(this.props.filteredProjectIds);
+
     this.processedConditionCounts = this.processedConditionCounts
-      || processConditionCounts(this.props.allConditionsPerYear);
+      || processQueryData.conditionCounts(this.props.allConditionsPerYear);
 
     let guideStep = transitionState;
     if (guideStep === transitionStates.view1Reset) {
@@ -555,9 +551,11 @@ class App extends React.PureComponent {
             setSelectedCompany={this.updateSelection.fromCompany}
             setSelectedRegion={this.updateSelection.fromRegion}
             setSelectedProject={this.updateSelection.fromProject}
+            displayOrder={this.props.allConfigurationData.displayOrder}
           />
           <ViewThree
             {...viewProps}
+            displayOrder={this.props.allConfigurationData.displayOrder}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             prefixOrder={this.processedConditionCounts.prefixOrder}
             years={this.processedConditionCounts.years}
@@ -714,25 +712,27 @@ export default props => (
   <IntlProvider locale={lang} messages={i18nMessages[lang]}>
     <ApolloProvider client={client}>
       <Provider store={store}>
-        <ComposedQuery
-          config={{ query: initialConfigurationDataQuery }}
-          conditionsPerYear={{ query: conditionsPerYearQuery }}
-        >
-          {({ data, loading, errors }) => {
-            const configData = data.config;
-            const conditionsData = data.conditionsPerYear;
-            // TODO: Error handling for these queries
-            if (loading || errors) { return null; }
+        <ErrorBoundary>
+          <ComposedQuery
+            config={{ query: initialConfigurationDataQuery }}
+            conditionsPerYear={{ query: conditionsPerYearQuery }}
+          >
+            {({ data, loading, errors }) => {
+              const configData = data.config;
+              const conditionsData = data.conditionsPerYear;
+              // TODO: Error handling for these queries
+              if (loading || errors) { return null; }
 
-            return (
-              <ConnectedApp
-                allConditionsPerYear={conditionsData}
-                allConfigurationData={configData}
-                {...props}
-              />
-            );
-          }}
-        </ComposedQuery>
+              return (
+                <ConnectedApp
+                  allConditionsPerYear={conditionsData}
+                  allConfigurationData={configData}
+                  {...props}
+                />
+              );
+            }}
+          </ComposedQuery>
+        </ErrorBoundary>
       </Provider>
     </ApolloProvider>
   </IntlProvider>

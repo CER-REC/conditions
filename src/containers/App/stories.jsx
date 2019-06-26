@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import App, { AppStore } from '.';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import { setTransitionState } from '../../actions/transitionState';
 import { searchResult } from '../../mockData';
 
@@ -184,4 +185,16 @@ storiesForView('Containers|App', module, ReadMe)
       <script src="./themes-dist-4.0.20-theme-gcwu-fegc/theme-gcwu-fegc/js/theme.min.js"></script>
     </React.Fragment>
     /* eslint-enable */
-  ));
+  ))
+  .add('WithErrors', () => {
+    const BuggyComponent = () => {
+      throw new Error('I crashed!');
+      return <App />; // eslint-disable-line
+    };
+
+    return (
+      <ErrorBoundary>
+        <BuggyComponent />
+      </ErrorBoundary>
+    );
+  });

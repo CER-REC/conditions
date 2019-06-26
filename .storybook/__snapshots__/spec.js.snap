@@ -1898,57 +1898,22 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               Albuquerque, NM
             </div>
           </div>
-          <p
+          <div
             className="contentText"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Activity
-            </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-          </p>
-          <p
-            className="contentText"
-          >
-            Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-          </p>
-          <p
-            className="contentText"
-          >
-            Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque eu lobortis velit, quis viverra elit.
-          </p>
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+              }
+            }
+          />
         </div>
       </div>
     </div>
@@ -2460,57 +2425,22 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 Albuquerque, NM
               </div>
             </div>
-            <p
+            <div
               className="contentText"
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument Activity
-              </span>
-              : 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-            </p>
-            <p
-              className="contentText"
-            >
-              Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-            </p>
-            <p
-              className="contentText"
-            >
-              Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-            </p>
-            <p
-              className="contentText"
-            >
-              Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-            </p>
-            <p
-              className="contentText"
-            >
-              Quisque eu lobortis velit, quis viverra elit.
-            </p>
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+                }
+              }
+            />
           </div>
         </div>
       </div>
@@ -2996,57 +2926,22 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               Albuquerque, NM
             </div>
           </div>
-          <p
+          <div
             className="contentText"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Activity
-            </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-          </p>
-          <p
-            className="contentText"
-          >
-            Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-          </p>
-          <p
-            className="contentText"
-          >
-            Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque eu lobortis velit, quis viverra elit.
-          </p>
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+              }
+            }
+          />
         </div>
       </div>
     </div>
@@ -3490,59 +3385,24 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           Keywords
         </span>
         : 
-        program
+        hello, ipsum
       </div>
-      <p
+      <div
         className="contentText"
-      >
-        <span
-          className="contentHeading"
-        >
-          Text
-        </span>
-        : 
-        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-      </p>
-      <p
-        className="contentText"
-      >
-        Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-      </p>
-      <p
-        className="contentText"
-      >
-        Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque eu lobortis velit, quis viverra elit.
-      </p>
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<span class=\\"contentHeading\\">Text:&nbsp;</span><span class=\\"highlighted\\">hello</span> Lorem <span class=\\"highlighted\\">ipsum</span> dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+          }
+        }
+      />
     </div>
   </div>
 </div>
@@ -3643,57 +3503,22 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           Albuquerque, NM
         </div>
       </div>
-      <p
+      <div
         className="contentText"
-      >
-        <span
-          className="contentHeading"
-        >
-          Instrument Activity
-        </span>
-        : 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-      </p>
-      <p
-        className="contentText"
-      >
-        Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-      </p>
-      <p
-        className="contentText"
-      >
-        Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque eu lobortis velit, quis viverra elit.
-      </p>
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+          }
+        }
+      />
     </div>
   </div>
 </div>
@@ -4433,6 +4258,66 @@ exports[`Storyshots Components|Dropdown with interaction 1`] = `
       </option>
     </select>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components|ErrorBoundary default 1`] = `
+<div
+  className="visualization"
+>
+  <section
+    className="ErrorBoundary"
+  >
+    <section
+      className="errorMessage"
+    >
+      <h1>
+        Something went wrong.
+      </h1>
+    </section>
+    <section
+      className="restoreLink"
+    >
+      <span>
+        Please click on the link to restore the session: 
+      </span>
+      <a
+        href="http://localhost/"
+      >
+        <span>
+          Restore Session
+        </span>
+      </a>
+    </section>
+    <section
+      className="resetLink"
+    >
+      <span>
+        Please click on the link to reset the session: 
+      </span>
+      <a
+        href="http://localhost/"
+      >
+        <span>
+          Reset Session
+        </span>
+      </a>
+    </section>
+    <section
+      className="details"
+    >
+      <details>
+        Error: Error thrown from problem child
+        <br />
+        
+    in ProblemChild
+    in ErrorBoundary
+    in IntlProvider (created by WithIntl)
+    in WithIntl
+    in div
+      </details>
+    </section>
+  </section>
 </div>
 `;
 
@@ -8679,7 +8564,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -8921,7 +8806,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -9206,7 +9091,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -9448,7 +9333,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -9733,7 +9618,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -10003,7 +9888,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -10269,7 +10154,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    95
+                    19
                   </div>
                 </div>
               </div>
@@ -10511,7 +10396,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    67
+                    12
                   </div>
                 </div>
               </div>
@@ -10796,7 +10681,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -11038,7 +10923,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -11323,7 +11208,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -11565,7 +11450,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -12524,7 +12409,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -12809,7 +12694,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -13051,7 +12936,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -13364,7 +13249,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                   }
                 >
                   <div>
-                    0
+                    
                   </div>
                 </div>
               </div>
@@ -13686,7 +13571,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
           }
         >
           <div>
-            143
+            0
           </div>
         </div>
       </div>

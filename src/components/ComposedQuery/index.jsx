@@ -15,7 +15,7 @@ export default ({ children, ...props }) => {
             },
             data: {
               ...prevQueries.data,
-              [name]: Object.values(result.data)[0],
+              [name]: result.data ? Object.values(result.data)[0] : null,
             },
             loading: prevQueries.loading || result.loading,
             errors: prevQueries.errors,

@@ -14,6 +14,7 @@ const defaultProps = {
   instrument: conditionData[0],
   openIntermediatePopup,
   itemIndex: 0,
+  includedKeywords: ['program', 'hello', 'ipsum'],
 };
 
 storiesForComponent('Components|ConditionDetails/Content', module, ReadMe)
