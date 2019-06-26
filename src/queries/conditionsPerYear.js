@@ -41,7 +41,7 @@ export default gql`
         NON_STANDARD
         STANDARD
       }
-      prefix {
+      instrument {
         AO
         CC
         CO

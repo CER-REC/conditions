@@ -19,8 +19,8 @@ export const projectMenuQuery = gql`
         themeEnum
         type
         typeEnum
-        instrument: prefix
-        instrumentEnum: prefixEnum
+        instrument
+        instrumentEnum
 
       }
       numberOfConditions
