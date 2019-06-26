@@ -10,13 +10,17 @@ class LoadingGuide extends React.PureComponent {
     this.state = { step: 0 };
   }
 
+  componentWillUnmount() {
+    if (this.timeout) { clearTimeout(this.timeout); }
+  }
+
   incrementStep = () => {
     this.setState(prevState => ({ step: prevState.step + 1 }));
   };
 
   render() {
     const guideStep = (this.state.step % 7) + 1;
-    setTimeout(this.incrementStep, 500);
+    this.timeout = setTimeout(this.incrementStep, 500);
     return <Guide loading step={guideStep} onClick={noop} />;
   }
 }
