@@ -1,3 +1,180 @@
+# [0.20.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.20.0) (2019-06-26)
+
+
+### App
+
+* **Bug Fixes:** prevents crashing if search props are null, extracts processing logic (c486f95)
+* **Bug Fixes:** moves ErrorBoundary inside IntlProvider (164b71c)
+* **Bug Fixes:** fixes broken tests and stories, updates snapshots (e31ba15)
+* **Bug Fixes:** fixes heading styles that were coming from the WET template (2d339f4)
+* **Bug Fixes:** uses new query field for projects' condition counts (1016888)
+
+
+### App, View 2, Company Ray
+
+* **Features:** adds relevant search highlighting (182eadf, NEBV-1393)
+
+
+### App, View 2, Wheel, Ray, Company Flag
+
+* **Code Refactoring:** cleaned up and made sure filteredProjects Prop was (2b87b9d)
+
+
+### App, View2
+
+* **Code Refactoring:** moved data and renamed variables (a3ae926)
+
+
+### App, View2, Wheel, WheelRay, CompanyFlag
+
+* **Features:** adds filter (3806877)
+* **Code Refactoring:** optimized dot efficiency (a337897)
+
+
+### CompanyFlag
+
+* **Code Refactoring:** fixed tests (1d8c39d, NEBV-1394)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** works with instrument (de23de4)
+* **Code Refactoring:** optimized Loop (66aa305)
+* **Code Refactoring:** removed unnecessary dependency (d3ae230)
+
+
+### ConditionDetails, Content
+
+* **Features:** adds keyword list (aea8216)
+* **Features:** adds search highlighting (58a5ef2, NEBV-1401)
+
+
+### ConditionDetails/Content
+
+* **Bug Fixes:** adds all case highlighting (0d0b3d0)
+* **Code Refactoring:** optimized (8b32803)
+
+
+### Dependencies
+
+* **Project Maintenance:** update dependency eslint to v6.0.1 (fc7e805)
+* **Project Maintenance:** update dependency eslint-plugin-import to v2.18.0 (624e82c)
+* **Project Maintenance:** update dependency url-loader to v2.0.1 (4eb93f2)
+* **Project Maintenance:** update dependency webpack to v4.35.0 (7e66e1b)
+* **Project Maintenance:** update storybook monorepo to v5.1.9 (56c2c44)
+
+
+### Ellipses everywhere
+
+* **Features:** adds title attributes to the elemen (b3be484, NEBV-1591)
+
+
+### ErrorBoundary
+
+* **Features:** adds a story for the component (0a75ef1)
+* **Bug Fixes:** replaces console.error after the story is run (e197195)
+
+
+### ESLint
+
+* **Bug Fixes:** updates .eslintrc syntax to ESLint 6.x (9fb5d70)
+
+
+### GraphQL
+
+* **Features:** prepares for DisplayOrder from query (6f76c9c)
+* **Features:** ComposedQuery waits on multiple queries before rendering (4ebed19)
+* **Features:** optimizing and cleaning up queries (b5774a0)
+* **Features:** partial optimization of ConditionDetails (1a2e6a9)
+
+
+### GreyPipe
+
+* **Bug Fixes:** stops pipe from stealing mouse events (8e19902)
+
+
+### LocationWheelMinimap/Wheel
+
+* **Features:** adds rough province name to LocationWheelMinimap, fixes display of (1a46d5a)
+
+
+### mockData
+
+* **Bug Fixes:** removed hard coding (be1d564)
+
+
+### mockData, App
+
+* **Code Refactoring:** changed case of ID (3d4ffb9)
+
+
+### Project Dot, Project Chart
+
+* **Code Refactoring:** update css colour rules (adc1e87)
+
+
+### ProjectChardt
+
+* **Bug Fixes:** fixed tests (1abfcb0)
+
+
+### ProjectDot
+
+* **Bug Fixes:** fixes tests (ba28e19)
+* **Code Refactoring:** updates filtered and relevant colours (bc7a81c)
+
+
+### ProjectMenu
+
+* **Bug Fixes:** fixes FormattedMessage errors when in loading state (88392d9)
+* **Tests:** fixes project mock data missing numberOfConditions (614994e)
+
+
+### ProjectMenu, ProjectChart
+
+* **Features:** adds Story Functionality (0bbcd80)
+* **Features:** adds color changes (5fefb73, NEBV-1397, NEBV-1398)
+
+
+### Tests
+
+* **Bug Fixes:** updated Snapshots (385bbcc)
+
+
+### View 2
+
+* **Bug Fixes:** fixes title attributes on FeatureFlags showing intl IDs (e1caddb)
+
+
+### View2
+
+* **Features:** added Mock data props for story (4761afb)
+
+
+### View2, ProjectMenu, ProjectChart, Wheel, WheelRay, CompanyFlag
+
+* **Code Refactoring:** renamed relevantProjects a (27f7b67)
+
+
+### Wheel
+
+* **Bug Fixes:** allows mouse hover to show the title attribute (cd38acf)
+* **Bug Fixes:** updates mock data and stories to use new filter/search structure (03032e2)
+* **Code Formatting:** adds curly braces for consistency (eddf3ea)
+* **Code Formatting:** fixes prop error in story (fd7f1f4)
+
+
+### Whole App
+
+* **Features:** added component to display error when app crashes (b624217, NEBV-1582)
+
+
+### BREAKING CHANGES
+
+* **App, View 2, Company Ray:** Added additional Prop to view 2, wheel, wheelRay, CompanyFlag
+* **App, View2, Wheel, WheelRay, CompanyFlag:** Added an extra prop to every component down from view 2 (inclusive)
+* **LocationWheelMinimap/Wheel:** Changes to the minimap props
+
 ## [0.19.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.19.1) (2019-06-24)
 
 
