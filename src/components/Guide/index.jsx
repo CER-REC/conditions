@@ -34,7 +34,7 @@ const y3 = -(0.5 * r3);
 const x4 = 0;
 const y4 = -radius + padding + wedgeWidth;
 
-const Guide = ({ step, onClick }) => {
+const Guide = ({ step, onClick, loading }) => {
   const wedges = [];
   for (let i = 0; i < numWedges; i += 1) {
     const hidden = i > (step - wedgesStart);
@@ -75,11 +75,14 @@ const Guide = ({ step, onClick }) => {
 
       }
       <CircleContainer size={guideSize} onClick={onClick}>
+        <FormattedMessage id="components.guide.loading" key="loading">
+          {text => <span className={(loading) ? '' : 'hidden'}>{text}</span>}
+        </FormattedMessage>
         {
           textPlaceholders.map((_, idx) => (
             // eslint-disable-next-line react/no-array-index-key
             <FormattedMessage id={`components.guide.tutorial.${idx}`} key={idx}>
-              {text => <span className={(idx === step) ? '' : 'hidden'}>{text}</span>}
+              {text => <span className={(!loading && idx === step) ? '' : 'hidden'}>{text}</span>}
             </FormattedMessage>
           ))
         }
@@ -91,6 +94,11 @@ const Guide = ({ step, onClick }) => {
 Guide.propTypes = {
   step: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
+};
+
+Guide.defaultProps = {
+  loading: false,
 };
 
 export default Guide;
