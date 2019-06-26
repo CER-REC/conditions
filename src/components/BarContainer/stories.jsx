@@ -5,9 +5,9 @@ import BarContainer from '.';
 import ReadMe from './README.md';
 
 const rectItems = [
-  { value: 12, fill: 'green' },
-  { value: 66, fill: 'red' },
-  { value: 33, fill: 'pink' },
+  { feature: 'theme', description: 'STANDARD_CONDITION', value: 12, fill: 'green' },
+  { feature: 'theme', description: 'STANDARD_CONDITION', value: 66, fill: 'red' },
+  { feature: 'theme', description: 'STANDARD_CONDITION', value: 33, fill: 'pink' },
 ];
 
 storiesForComponent('Components|BarContainer', module, ReadMe)

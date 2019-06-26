@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import FeatureFlag from '../../FeatureFlag';
 import CircleContainer from '../../CircleContainer';
 
+import { features } from '../../../constants';
+
 import './styles.scss';
 
 const ProjectChart = (props) => {
@@ -23,14 +25,29 @@ const ProjectChart = (props) => {
       </div>
       <div className="FlagWrapper">
         <div className="FlagPole" />
-        {graphData.map((condition, idx) => (
-          <FeatureFlag
-            key={condition.name}
-            name={(props.chartType === 'instrument') ? idx : condition.name}
-            count={condition.count}
-            chartType={props.chartType}
-          />
-        ))}
+        {graphData.map((condition, idx) => {
+          let color;
+          switch (props.chartType) {
+            case 'legend':
+              color = 'transparent';
+              break;
+            case 'instrument':
+              color = features.instrument[idx];
+              break;
+            default:
+              color = features[props.chartType][condition.name];
+          }
+
+          return (
+            <FeatureFlag
+              key={condition.name}
+              name={condition.name}
+              color={color}
+              count={condition.count}
+              chartType={props.chartType}
+            />
+          );
+        })}
       </div>
 
       {props.selected
@@ -38,7 +55,7 @@ const ProjectChart = (props) => {
           <div className="SelectedPipe" />
         )
         : (
-          <div className="ProjectName"><p>{props.projectName}</p></div>
+          <div title={props.projectName} className="ProjectName"><p>{props.projectName}</p></div>
         )
       }
     </div>
