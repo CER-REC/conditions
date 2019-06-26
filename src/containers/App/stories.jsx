@@ -2,21 +2,30 @@ import React from 'react';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import App, { AppStore } from '.';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import { setTransitionState } from '../../actions/transitionState';
+import { searchResult } from '../../mockData';
+
+const props = {
+  searchResults: searchResult.searchResults,
+  filteredProjectIds: searchResult.filteredProjectIds,
+
+};
 
 storiesForView('Containers|App', module, ReadMe)
-  .add('default', () => <App />)
+  .add('default', () => <App {...props} />)
   .add('view 2', () => {
     AppStore.dispatch(setTransitionState(8));
-    return <App />;
+    return <App {...props} />;
   })
   .add('view 3', () => {
     AppStore.dispatch(setTransitionState(10));
-    return <App />;
+    return <App {...props} />;
   })
   .add('within WET', () => (
     /* eslint-disable react/no-unescaped-entities, react/self-closing-comp */
     /* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
+    /* eslint-disable max-len */
     <React.Fragment>
       <link
         rel="stylesheet"
@@ -113,7 +122,7 @@ storiesForView('Containers|App', module, ReadMe)
       <main role="main" property="mainContentOfPage" className="container">
 
         <div className="visualization">
-          <App />
+          <App {...props} />
         </div>
 
       </main>
@@ -176,4 +185,16 @@ storiesForView('Containers|App', module, ReadMe)
       <script src="./themes-dist-4.0.20-theme-gcwu-fegc/theme-gcwu-fegc/js/theme.min.js"></script>
     </React.Fragment>
     /* eslint-enable */
-  ));
+  ))
+  .add('WithErrors', () => {
+    const BuggyComponent = () => {
+      throw new Error('I crashed!');
+      return <App />; // eslint-disable-line
+    };
+
+    return (
+      <ErrorBoundary>
+        <BuggyComponent />
+      </ErrorBoundary>
+    );
+  });

@@ -5,6 +5,7 @@ import './styles.scss';
 
 import { geoConicConformal, geoPath } from 'd3-geo';
 import { feature, mergeArcs } from 'topojson-client';
+import { provinces } from '../../constants';
 
 // Hardcoding for now so I can work on the component
 import topoJSON from './economic_regions_2016_latlng_simplified';
@@ -67,8 +68,8 @@ class LocationWheelMinimap extends React.Component {
 
   render() {
     if (!this.props.region || !this.state.topoData.objects) { return null; }
-
-    const regionData = this.regionData(this.props.region);
+    const regionData = this.regionData(this.props.region.name);
+    const province = provinces[this.props.region.province];
     const provinceData = this.provinceData(regionData.properties.PRNAME);
 
     const projection = geoPath().projection(projectFeature(provinceData));
@@ -84,6 +85,7 @@ class LocationWheelMinimap extends React.Component {
             <path d={provincePath} className="province" />
           </g>
         </svg>
+        <div>{province}</div>
       </div>
     );
   }
@@ -91,13 +93,19 @@ class LocationWheelMinimap extends React.Component {
 
 LocationWheelMinimap.propTypes = {
   /** Economic region, e.g. 'Vancouver Island and Coast' */
-  region: PropTypes.string,
+  region: PropTypes.shape({
+    province: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }),
   /** A class to hide or show the component according to the movement of the wheel */
   className: PropTypes.string,
 };
 
 LocationWheelMinimap.defaultProps = {
-  region: '',
+  region: {
+    name: '',
+    province: '',
+  },
   className: '',
 };
 

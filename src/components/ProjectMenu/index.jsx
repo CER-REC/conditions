@@ -76,12 +76,14 @@ class ProjectMenu extends React.PureComponent {
       selectedFeature = 'theme';
     }
     const listItems = this.getListItems(projectsData, selectedProjectID);
+
     const renderedItems = listItems ? listItems
       .map(project => (
         <ProjectChart
           key={project.id}
           chartType={selectedFeature}
           graphData={this.getReformattedData(project.aggregatedCount, selectedFeature)}
+          numberOfConditions={project.numberOfConditions}
           projectName={project.shortName}
           selected={project.id === selectedProjectID}
           loading={loading}

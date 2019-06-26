@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider, Query } from 'react-apollo';
@@ -44,6 +45,7 @@ import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 
@@ -84,6 +86,10 @@ const viewProps = {
     stream: 2010,
   },
 };
+const createLookupList = arr => arr.reduce((acc, cur) => {
+  acc[cur] = true;
+  return acc;
+}, []);
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -455,7 +461,12 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
-
+    this.processedSearchResults = this.processedSearchResults || {
+      companyIdLookup: createLookupList(this.props.searchResults.companyIds),
+      conditionIdLookup: createLookupList(this.props.searchResults.conditionIds),
+      projectIdLookup: createLookupList(this.props.searchResults.projectIds),
+    };
+    this.processedFilter = this.processedFilter || createLookupList(this.props.filteredProjectIds);
     this.processedConditionCounts = this.processedConditionCounts
       || processConditionCounts(this.props.allConditionsPerYear);
 
@@ -480,6 +491,7 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -553,6 +565,8 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
+            searchResults={this.processedSearchResults}
+            filteredProjects={this.processedFilter}
           />
           <ViewThree
             {...viewProps}
@@ -667,6 +681,12 @@ App.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedKeywordId: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
+  searchResults: PropTypes.shape({
+    companyIds: PropTypes.arrayOf(PropTypes.number),
+    conditionIds: PropTypes.arrayOf(PropTypes.number),
+    projectIds: PropTypes.arrayOf(PropTypes.number),
+  }).isRequired,
+  filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export const AppUnconnected = App;
@@ -705,27 +725,29 @@ export default props => (
   <IntlProvider locale={lang} messages={i18nMessages[lang]}>
     <ApolloProvider client={client}>
       <Provider store={store}>
-        <Query query={initialConfigurationDataQuery}>
-          {({ data: configData, loading: configLoading }) => (
-            <Query query={conditionsPerYearQuery}>
-              {({ data: conditionsData, loading: conditionsLoading }) => {
-                // TODO: Error handling for these queries
-                if (
-                  conditionsLoading || !conditionsData
-                  || configLoading || !configData
-                ) return null;
+        <ErrorBoundary>
+          <Query query={initialConfigurationDataQuery}>
+            {({ data: configData, loading: configLoading }) => (
+              <Query query={conditionsPerYearQuery}>
+                {({ data: conditionsData, loading: conditionsLoading }) => {
+                  // TODO: Error handling for these queries
+                  if (
+                    conditionsLoading || !conditionsData
+                    || configLoading || !configData
+                  ) return null;
 
-                return (
-                  <ConnectedApp
-                    allConditionsPerYear={conditionsData.conditionsPerYear}
-                    allConfigurationData={configData.allConfigurationData}
-                    {...props}
-                  />
-                );
-              }}
-            </Query>
-          )}
-        </Query>
+                  return (
+                    <ConnectedApp
+                      allConditionsPerYear={conditionsData.conditionsPerYear}
+                      allConfigurationData={configData.allConfigurationData}
+                      {...props}
+                    />
+                  );
+                }}
+              </Query>
+            )}
+          </Query>
+        </ErrorBoundary>
       </Provider>
     </ApolloProvider>
   </IntlProvider>

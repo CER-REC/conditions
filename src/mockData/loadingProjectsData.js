@@ -2,6 +2,7 @@ export default {
   id: null,
   name: '',
   shortName: '',
+  numberOfConditions: -1,
   aggregatedCount: {
     instrument: {
       0: 0,

@@ -456,6 +456,13 @@
     "totalConditionsLabel" : {
       "total": "Total Conditions",
       "forProject": "for this Project"
+    },
+    "errorBoundary":{
+      "errorMessage":"Something went wrong.",
+      "restoreLinkText":"Restore Session",
+      "restoreMessage":"Please click on the link to restore the session: ",
+      "resetLinkText":"Reset Session",
+      "resetMessage":"Please click on the link to reset the session: "
     }
   },
   "views": {

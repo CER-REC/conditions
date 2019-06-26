@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesForComponent } from '../../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../../.storybook/utils';
+import { relevantProjects, filteredProjects } from '../randomDataSample';
 import CompanyFlag from '.';
 import ReadMe from './README.md';
 
@@ -9,75 +10,80 @@ const defaultProps = {
   dotWidth: 16,
   dotSpacing: 24,
   svgHeight: 100,
+  relevantProjects,
+  filteredProjects,
 };
 
 const flagLayouts = [
   [
     [
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: true },
-      { filtered: false, relevant: true },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
     ],
     [
-      { filtered: true, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: true, relevant: false },
+      8,
+      9,
+      10,
     ],
     [
-      { filtered: true, relevant: true },
-      { filtered: true, relevant: true },
+      11,
+      12,
     ],
     [
-      { filtered: false, relevant: false },
+      13,
     ],
   ],
   [
     [
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: true },
-      { filtered: false, relevant: true },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
     ],
     [
-      { filtered: true, relevant: false },
+      8,
       0,
-      { filtered: true, relevant: false },
+      9,
     ],
     [
-      { filtered: true, relevant: true },
-      { filtered: true, relevant: true },
+      10,
+      11,
     ],
     [
-      { filtered: false, relevant: false },
+      12,
     ],
   ],
   [
     [
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: true },
-      { filtered: false, relevant: true },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: true, relevant: false },
-      { filtered: false, relevant: false },
-      { filtered: true, relevant: false },
-      { filtered: true, relevant: true },
-      { filtered: true, relevant: true },
-      { filtered: false, relevant: false },
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
     ],
   ],
 ];
 
 storiesForComponent('Components|Wheel/CompanyFlag', module, ReadMe)
+  .addDecorator(withStyles(`
+    .Wheel { padding-top: 0; }
+  `))
   .add('full', () => (
     <svg height={400} width={200}>
       <CompanyFlag {...defaultProps} flagLayout={flagLayouts[0]} />
