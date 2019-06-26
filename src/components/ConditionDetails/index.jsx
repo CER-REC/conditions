@@ -69,13 +69,19 @@ class ConditionDetails extends React.Component {
     />
   )
 
-  renderList = () => (
-    <ConditionList
-      items={this.getListData()}
-      selectedItem={this.findSelectedItem()}
-      updateSelectedItem={this.props.updateSelectedItem}
-    />
-  )
+  renderList = () => {
+    const items = this.getListData();
+
+    return (items && items.length)
+      ? (
+        <ConditionList
+          items={this.getListData()}
+          selectedItem={this.findSelectedItem()}
+          updateSelectedItem={this.props.updateSelectedItem}
+        />
+      )
+      : null;
+  }
 
   renderContent = (instrument, itemIndex) => (
     <Content
