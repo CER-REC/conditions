@@ -16,31 +16,17 @@ describe('Components|ShareIcon', () => {
 
   shouldBehaveLikeAComponent(ShareIcon, () => wrapper);
 
-  test('should handle if target is facebook', () => {
-    wrapper.setProps({ target: 'facebook' });
-    expect(wrapper.simulate('click', eventFuncs));
-    expect(wrapper.find('Icon').props().icon).toBe('facebook');
-    expect(global.open).toBeCalled();
-  });
-
-  test('should handle if target is twitter', () => {
-    wrapper.setProps({ target: 'twitter' });
-    expect(wrapper.simulate('click', eventFuncs));
-    expect(wrapper.find('Icon').props().icon).toBe('twitter');
-    expect(global.open).toBeCalled();
-  });
-
-  test('should handle if target is linkedin', () => {
-    wrapper.setProps({ target: 'linkedin' });
-    expect(wrapper.simulate('click', eventFuncs));
-    expect(wrapper.find('Icon').props().icon).toBe('linkedin');
-    expect(global.open).toBeCalled();
-  });
+  test.each(['facebook', 'twitter', 'linkedin'])(
+    'should handle if target is %s', (socialMedia) => {
+      wrapper.setProps({ target: socialMedia });
+      expect(wrapper.simulate('click', eventFuncs));
+      expect(wrapper.find('Icon').props().icon).toBe(socialMedia);
+    },
+  );
 
   test('should handle if target is email', () => {
     wrapper.setProps({ target: 'email', prefix: 'fas' });
     expect(wrapper.simulate('click', eventFuncs));
     expect(wrapper.find('Icon').props().icon).toBe('envelope');
-    expect(window.location.assign).toHaveBeenCalled();
   });
 });
