@@ -10,7 +10,7 @@ const HighlightSummary = props => (
     <span> {props.selectedYear.start} - {props.selectedYear.end } </span>
     <br />
     <FormattedMessage id="components.searchBar.highlightSummary.includingStatuses" />
-    <div> {props.includedStatuses.map(i => <FormattedMessage id={`components.searchBar.filter.projectStatus.${i}`}>{text => (<span>{text}&nbsp; </span>)}</FormattedMessage>)} </div>
+    <div> {props.includedStatuses.map(i => <FormattedMessage id={`components.searchBar.filter.projectStatus.${i}`} />).reduce((prev, curr) => [prev, ', ', curr])} </div>
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.includes">
