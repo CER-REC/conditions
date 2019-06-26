@@ -70,9 +70,9 @@ class ViewTwo extends React.Component {
             selectedRay={this.props.browseBy === 'company' ? this.props.selected.company : this.props.selected.region}
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
             wheelData={this.props.wheelData}
-            relevantProjects={this.props.searchResults.projectIdLookup}
-            filteredProjects={this.props.filteredProjects}
             wheelMotionTrigger={this.props.setWheelMoving}
+            relevantProjectLookup={this.props.searchResults.projectIdLookup}
+            filteredProjectLookup={this.props.filteredProjectLookup}
           />
           <GreyPipe mode={this.props.browseBy} />
         </section>
@@ -101,6 +101,8 @@ class ViewTwo extends React.Component {
                   selectedProjectID={this.props.selected.project}
                   onChange={this.props.setSelectedProject}
                   selectedFeature={this.props.selected.feature}
+                  relevantProjectLookup={this.props.searchResults.projectIdLookup}
+                  filteredProjectLookup={this.props.filteredProjectLookup}
                 />
               </React.Fragment>
             )
@@ -149,7 +151,7 @@ ViewTwo.defaultProps = {
     conditionIdLookup: [],
     projectIdLookup: [],
   },
-  filteredProjects: [],
+  filteredProjectLookup: [],
 };
 
 export default ViewTwo;

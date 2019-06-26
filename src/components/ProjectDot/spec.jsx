@@ -26,14 +26,14 @@ describe('Components|ProjectDot', () => {
   });
 
   describe('with changing classes', () => {
-    test('should have the class IsRelevant when relevant passed in', () => {
+    test('should have the class relevant when relevant passed in', () => {
       wrapper = shallow(<ProjectDot relevant {...defaultProps} />);
-      expect(wrapper.props().className).toContain('IsRelevant');
+      expect(wrapper.props().className).toContain('relevant');
     });
 
-    test('should have the class isFiltered when filtered passed in', () => {
+    test('should have the class filtered when filtered passed in', () => {
       wrapper = shallow(<ProjectDot filtered {...defaultProps} />);
-      expect(wrapper.props().className).toContain('IsFiltered');
+      expect(wrapper.props().className).toContain('filtered');
     });
   });
 });

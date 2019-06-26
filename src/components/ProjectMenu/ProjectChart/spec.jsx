@@ -33,6 +33,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
         chartType={chartType}
         graphData={chartData}
         projectName={projectName}
+        projectId={1}
       />);
     });
 
@@ -52,6 +53,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
         chartType={chartType}
         graphData={chartData}
         projectName={projectName}
+        projectId={1}
         loading
       />);
     });
@@ -76,6 +78,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
         chartType={chartType}
         graphData={chartData}
         projectName={projectName}
+        projectId={1}
       />);
     });
 
@@ -91,6 +94,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
         chartType={chartType}
         graphData={chartData}
         projectName={projectName}
+        projectId={1}
         selected
       />);
     });
@@ -111,6 +115,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
       wrapper = shallow(<ProjectChart
         chartType={chartType}
         graphData={[]}
+        projectId={1}
       />);
     });
     test('should only render a ConditionPipe', () => {

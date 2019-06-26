@@ -49,6 +49,16 @@ $project-chart-line: $Gray160;
       background-color: $Gray160;
       color: $White;
       font-size: 12px;
+
+      &.relevant {
+        background-color: $SearchKeyword;
+      }
+      &.filtered {
+        background-color: $Filtered;
+        &.relevant {
+          background-color:$FilteredSearchKeyword;
+        }
+      }
     }
   }
 
@@ -91,7 +101,6 @@ $project-chart-line: $Gray160;
       margin: 0;
 
       .ConditionCount {
-        background-color: $SearchKeyword;
         color: $White;
         position: relative;
         bottom: 10px;

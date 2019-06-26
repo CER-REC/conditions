@@ -10,8 +10,8 @@ const CompanyFlag = ({
   y,
   svgHeight,
   rotation,
-  relevantProjects,
-  filteredProjects,
+  relevantProjectLookup,
+  filteredProjectLookup,
 }) => {
   if (!flagLayout) { return null; }
 
@@ -33,8 +33,8 @@ const CompanyFlag = ({
           cx: x + columnX,
           cy: y + dotY,
           r: dotWidth / 2,
-          filtered: filteredProjects[flagLayout[columnIndex][dotIndex]],
-          relevant: relevantProjects[flagLayout[columnIndex][dotIndex]],
+          filtered: filteredProjectLookup[flagLayout[columnIndex][dotIndex]],
+          relevant: relevantProjectLookup[flagLayout[columnIndex][dotIndex]],
         });
       }
     });
@@ -61,8 +61,8 @@ CompanyFlag.propTypes = {
   dotWidth: PropTypes.number,
   dotSpacing: PropTypes.number,
   rotation: PropTypes.number,
-  relevantProjects: PropTypes.arrayOf(PropTypes.bool),
-  filteredProjects: PropTypes.arrayOf(PropTypes.bool),
+  relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
 };
 
 CompanyFlag.defaultProps = {
@@ -71,8 +71,8 @@ CompanyFlag.defaultProps = {
   dotWidth: 16,
   dotSpacing: 24,
   rotation: 0,
-  relevantProjects: [],
-  filteredProjects: [],
+  relevantProjectLookup: [],
+  filteredProjectLookup: [],
 };
 
 export default CompanyFlag;

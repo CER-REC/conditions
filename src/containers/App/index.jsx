@@ -565,7 +565,7 @@ class App extends React.PureComponent {
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
             searchResults={this.processedSearchResults}
-            filteredProjects={this.processedFilter}
+            filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
           />
           <ViewThree
@@ -729,7 +729,7 @@ export default props => (
               const conditionsData = data.conditionsPerYear;
               // TODO: Error handling for these queries
               if (loading || errors) { return null; }
-  
+
               return (
                 <ConnectedApp
                   allConditionsPerYear={conditionsData}

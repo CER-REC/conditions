@@ -166,7 +166,7 @@ export const viewTwo = {
     conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
     projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
   }),
-  filteredProjects: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,
 };
 // Used in Keyword List (SuggestedKeywords)
