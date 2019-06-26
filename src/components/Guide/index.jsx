@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
 
 import CircleContainer from '../CircleContainer';
 
@@ -34,7 +35,7 @@ const y3 = -(0.5 * r3);
 const x4 = 0;
 const y4 = -radius + padding + wedgeWidth;
 
-const Guide = ({ step, onClick, loading }) => {
+const Guide = ({ step, onClick, loading, className }) => {
   const wedges = [];
   for (let i = 0; i < numWedges; i += 1) {
     const hidden = i > (step - wedgesStart);
@@ -62,7 +63,7 @@ const Guide = ({ step, onClick, loading }) => {
   }
 
   return (
-    <div className="Guide" style={{ width: 2 * radius, height: 2 * radius }}>
+    <div className={classNames('Guide', className)} style={{ width: 2 * radius, height: 2 * radius }}>
       {(wedges.length)
         ? (
           <svg
@@ -95,10 +96,12 @@ Guide.propTypes = {
   step: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
   loading: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 Guide.defaultProps = {
   loading: false,
+  className: '',
 };
 
 export default Guide;

@@ -21,7 +21,7 @@ class LoadingGuide extends React.PureComponent {
   render() {
     const guideStep = (this.state.step % 7) + 1;
     this.timeout = setTimeout(this.incrementStep, 500);
-    return <Guide loading step={guideStep} onClick={noop} />;
+    return <Guide className="LoadingGuide" loading step={guideStep} onClick={noop} />;
   }
 }
 
