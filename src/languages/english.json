@@ -281,6 +281,7 @@
       "dropDownTitle": "Feature"
     },
     "guide": {
+      "loading": "Loading...",
       "tutorial": {
         "0": "Click to continue",
         "1": "Click to continue",
