@@ -5,20 +5,25 @@ import getTreeFromInstrument from '../../queries/getTreeFromInstrument';
 import getTreeFromProject from '../../queries/getTreeFromProject';
 import getTreeFromCompany from '../../queries/getTreeFromCompany';
 import getTreeFromRegion from '../../queries/getTreeFromRegion';
+import getKeywordConditions from '../../queries/getKeywordConditions';
 
 const randomArrayValue = array => array[Math.floor(Math.random() * array.length)];
 
 export default (app, client) => {
   // Update any/all values in selected.__ at once to avoid multiple renders
   // Only updates the store for values that have changed
-  const updateSelection = newSelection => batch(() => {
-    Object.entries(newSelection).forEach(([key, val]) => {
-      const action = app.props[`setSelected${key}`];
-      if (action && (val !== app.props.selected[key.toLowerCase()])) {
-        action(val);
-      }
+  const updateSelection = (newSelection) => {
+    if (!newSelection) { return; }
+
+    batch(() => {
+      Object.entries(newSelection).forEach(([key, val]) => {
+        const action = app.props[`setSelected${key}`];
+        if (action && (val !== app.props.selected[key.toLowerCase()])) {
+          action(val);
+        }
+      });
     });
-  });
+  };
 
   const getSelectionFromProject = id => client.query({
     query: getTreeFromProject,
@@ -113,6 +118,23 @@ export default (app, client) => {
     };
   });
 
+  const getSelectionFromKeyword = (id, keyword) => client.query({
+    query: getKeywordConditions,
+    variables: { keywords: [keyword] },
+  }).then((response) => {
+    const { conditionIds } = response.data.findSearchResults;
+    if (!conditionIds.length) {
+      // TODO: Better error checking
+      console.error(`There are no conditions matching "${keyword}"`);
+      return null;
+    }
+
+    const randomId = randomArrayValue(conditionIds);
+    const newSelection = getSelectionFromCondition(randomId);
+
+    return { ...newSelection, KeywordId: id };
+  });
+
   return {
     fromProject: (id) => {
       if (id !== -1) {
@@ -129,5 +151,6 @@ export default (app, client) => {
         updateSelection({ ...newSelection, Condition: conditionId });
       });
     },
+    fromKeyword: (id, keyword) => getSelectionFromKeyword(id, keyword).then(updateSelection),
   };
 };

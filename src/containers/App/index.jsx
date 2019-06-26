@@ -21,7 +21,6 @@ import * as processQueryData from './processQueryData';
 
 import updateSelection from './updateSelection';
 
-import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 import companyNameById from '../../queries/companyNameById';
@@ -69,8 +68,6 @@ const client = new ApolloClient({ cache, link, fetch });
 
 const noop = () => {};
 const tutorialTiming = 5000;
-
-const randomArrayValue = array => array[Math.floor(Math.random() * array.length)];
 
 const transitionStates = {
   view1: 0,
@@ -406,23 +403,9 @@ class App extends React.PureComponent {
     const id = parseInt(instance.body.id, 10);
     const keyword = instance.keyword.value;
 
-    this.props.setSelectedKeywordId(id);
     this.props.setIncluded([keyword]);
 
-    client.query({
-      query: getKeywordConditions,
-      variables: { keywords: [keyword] },
-    }).then((response) => {
-      const { conditionIds } = response.data.findSearchResults;
-      if (!conditionIds.length) {
-        // TODO: Proper error checking or something
-        console.error(`There are no conditions matching "${keyword}"`);
-      } else {
-        const randomId = randomArrayValue(conditionIds);
-
-        this.updateSelection.fromCondition(randomId);
-      }
-    });
+    this.updateSelection.fromKeyword(id, keyword);
   };
 
   openRegDocPopup = () => {
