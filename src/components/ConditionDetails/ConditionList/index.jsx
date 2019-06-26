@@ -14,8 +14,10 @@ class ConditionList extends React.PureComponent {
   }
 
   scrollTo = (type) => {
-    if (!this.ref.current) { return; }
-    const elm = this.ref.current.querySelector(`[data-heading="${type}"]`);
+    const node = this.ref.current;
+    if (!node || node.scrollHeight <= node.clientHeight) { return; }
+
+    const elm = node.querySelector(`[data-heading="${type}"]`);
     elm.scrollIntoView({ block: 'center' });
   }
 

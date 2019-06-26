@@ -114,14 +114,6 @@ describe('Components|ConditionDetails/ConditionList', () => {
       );
     });
 
-    it('should pass its updateSelectedItem callback to the List component', () => {
-      Element.prototype.scrollIntoView = jest.fn();
-      wrapper.find('.ConditionList')
-        .find('List').props().onChange(2);
-
-      expect(Element.prototype.scrollIntoView).toHaveBeenCalledTimes(1);
-    });
-
     it('should call updateSelectedItem with an instrument index and item index', () => {
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
