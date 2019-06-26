@@ -10,7 +10,8 @@ const data = [
     instrumentNumber: 'XO-001-2018',
     instrumentIndex: 0,
     itemIndex: -1,
-    id: 100,
+    instrumentId: 100,
+    conditionId: 200,
   },
   {
     binnedValue: 3,
@@ -18,42 +19,48 @@ const data = [
     marked: true,
     instrumentIndex: 0,
     itemIndex: 0,
-    id: 101,
+    instrumentId: 101,
+    conditionId: 201,
   },
   {
     binnedValue: 2,
     fill: ['blue', 'red', 'green'],
     instrumentIndex: 0,
     itemIndex: 1,
-    id: 102,
+    instrumentId: 102,
+    conditionId: 202,
   },
   {
     isInstrument: true,
     instrumentNumber: 'XO-003-2018',
     instrumentIndex: 1,
     itemIndex: -1,
-    id: 103,
+    instrumentId: 103,
+    conditionId: 203,
   },
   {
     binnedValue: 1,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 0,
-    id: 104,
+    instrumentId: 104,
+    conditionId: 204,
   },
   {
     binnedValue: 2,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 1,
-    id: 105,
+    instrumentId: 105,
+    conditionId: 205,
   },
   {
     isInstrument: true,
     instrumentNumber: 'XO-005-2018',
     instrumentIndex: 2,
     itemIndex: -1,
-    id: 106,
+    instrumentId: 106,
+    conditionId: 206,
   },
   {
     binnedValue: 3,
@@ -61,7 +68,8 @@ const data = [
     marked: true,
     instrumentIndex: 2,
     itemIndex: 0,
-    id: 107,
+    instrumentId: 107,
+    conditionId: 207,
   },
 ];
 
@@ -122,11 +130,19 @@ describe('Components|ConditionDetails/ConditionList', () => {
       );
     });
 
-    it('should call updateSelectedItem with an instrument index and item index', () => {
+    it('should pass its updateSelectedItem callback to the List component', () => {
+      Element.prototype.scrollIntoView = jest.fn();
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledWith(102);
+      expect(Element.prototype.scrollIntoView).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call updateSelectedItem with the instrument and condition ids', () => {
+      wrapper.find('.ConditionList')
+        .find('List').props().onChange(2);
+
+      expect(spy).toHaveBeenCalledWith(102, 202);
     });
   });
 });

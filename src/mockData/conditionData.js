@@ -20,12 +20,14 @@ export default [
     location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
     activity: lorem,
+    id: 100,
     conditions: [
       {
         binnedValue: 3,
         fill: ['pink', 'green'],
         keywords: ['program'],
         text: `hello ${lorem}`,
+        id: 101,
         details: {
           theme: ['ENVIRONMENTAL_PROTECTION', 'SECURITY'],
           instrument: 'instrument.CONSTRUCTION',
@@ -40,6 +42,7 @@ export default [
         fill: ['blue', 'red'],
         keywords: ['program'],
         text: lorem,
+        id: 102,
         details: {
           theme: ['SECURITY', 'ENFORCEMENT'],
           instrument: 'instrument.ABANDONMENT',
@@ -60,12 +63,14 @@ export default [
     location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
     activity: lorem,
+    id: 200,
     conditions: [
       {
         binnedValue: 1,
         fill: ['red'],
         keywords: ['program'],
         text: lorem,
+        id: 201,
         details: {
           theme: ['ENFORCEMENT'],
           instrument: 'instrumentCommodityType.OIL',
@@ -80,6 +85,7 @@ export default [
         fill: ['red'],
         keywords: ['program'],
         text: lorem,
+        id: 202,
         details: {
           theme: ['SUNSET_CLAUSE'],
           instrument: 'instrument.ROUTING',
@@ -100,12 +106,14 @@ export default [
     location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
     activity: lorem,
+    id: 300,
     conditions: [
       {
         binnedValue: 3,
         fill: ['orange', 'yellow', 'teal'],
         keywords: ['program'],
         text: `hello ${lorem}`,
+        id: 301,
         details: {
           theme: ['ADMINISTRATIVE', 'ENFORCEMENT', 'SUNSET_CLAUSE'],
           instrument: 'instrument.OPENING',
