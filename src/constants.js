@@ -48,7 +48,7 @@ export const features = {
     INCLUDES_ALL_PHASES_OF_CONSTR: 'rgb(72, 82, 193)',
     NOT_CONSTRUCTION_RELATED: 'rgb(5, 215, 210)',
     POST_CONSTRUCTION_PHASE: 'rgb(31, 51, 79)',
-    PRIOR_TO_CONSTRUCTION_PHASE: 'rgb(210, 102, 236)',
+    PRIOR_TO_THE_CONSTRUCTION_PHASE: 'rgb(210, 102, 236)',
     UNSPECIFIED: 'rgb(26, 57, 146)',
   },
   filing: {
