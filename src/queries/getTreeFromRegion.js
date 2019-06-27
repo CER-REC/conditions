@@ -9,6 +9,9 @@ export default gql`
           id
           companyIds
         }
+        conditions {
+          id
+        }
       }
     }
   }

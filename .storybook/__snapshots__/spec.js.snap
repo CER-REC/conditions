@@ -3490,7 +3490,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="33.33333333333333%"
                     x="0%"
                     y={0}
-                  />
+                  >
+
+                  </rect>
                   <rect
                     className="Bar"
                     fill="red"
@@ -3498,7 +3500,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="33.33333333333333%"
                     x="33.33333333333333%"
                     y={0}
-                  />
+                  >
+
+                  </rect>
                   <rect
                     className="Bar"
                     fill="green"
@@ -3506,7 +3510,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="33.33333333333333%"
                     x="66.66666666666666%"
                     y={0}
-                  />
+                  >
+
+                  </rect>
                 </svg>
               </div>
             </div>
@@ -10037,7 +10043,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered"
                   style={
                     Object {
                       "height": 24,
@@ -10068,7 +10074,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 4"
+                    title="Theme - Administrative - 4"
                   />
                 </div>
                 <div
@@ -10083,7 +10089,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 11"
+                    title="Theme - Damage Prevention - 11"
                   />
                 </div>
                 <div
@@ -10143,7 +10149,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 5"
+                    title="Theme - Financial - 5"
                   />
                 </div>
                 <div
@@ -10173,7 +10179,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 14"
+                    title="Theme - Management System - 14"
                   />
                 </div>
                 <div
@@ -10203,7 +10209,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 7"
+                    title="Theme - Security - 7"
                   />
                 </div>
                 <div
@@ -10323,7 +10329,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount filtered relevant"
+                  className="CircleContainer ConditionCount"
                   style={
                     Object {
                       "height": 24,
@@ -10369,7 +10375,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -10384,7 +10390,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -10414,7 +10420,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -10429,7 +10435,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -10489,7 +10495,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -10534,12 +10540,13 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -10593,7 +10600,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount filtered"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -10624,7 +10631,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -10639,7 +10646,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -10654,7 +10661,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -10684,7 +10691,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -10699,7 +10706,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -10729,7 +10736,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -10759,7 +10766,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -10804,7 +10811,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
@@ -10859,7 +10866,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount relevant"
+                  className="CircleContainer ConditionCount filtered"
                   style={
                     Object {
                       "height": 24,
@@ -10890,7 +10897,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 4"
+                    title="Theme - Administrative - 4"
                   />
                 </div>
                 <div
@@ -10905,7 +10912,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 11"
+                    title="Theme - Damage Prevention - 11"
                   />
                 </div>
                 <div
@@ -10965,7 +10972,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 5"
+                    title="Theme - Financial - 5"
                   />
                 </div>
                 <div
@@ -10995,7 +11002,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 14"
+                    title="Theme - Management System - 14"
                   />
                 </div>
                 <div
@@ -11025,7 +11032,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 7"
+                    title="Theme - Security - 7"
                   />
                 </div>
                 <div
@@ -11102,7 +11109,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount relevant"
                   style={
                     Object {
                       "height": 24,
@@ -11388,7 +11395,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount filtered relevant"
+                  className="CircleContainer ConditionCount"
                   style={
                     Object {
                       "height": 24,
@@ -11434,7 +11441,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -11449,7 +11456,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -11479,7 +11486,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -11494,7 +11501,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -11554,7 +11561,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -11599,12 +11606,13 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -11658,7 +11666,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -11689,7 +11697,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -11704,7 +11712,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -11719,7 +11727,1489 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Financial - 13"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Management System - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.6)",
+                      }
+                    }
+                    title="Theme - Security - 6"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 7"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount filtered"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    19
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Administrative - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Financial - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 14"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Security - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+                title="Trans-Alta"
+              >
+                <p>
+                  Trans-Alta
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount relevant"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    12
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Administrative - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Management System - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.1)",
+                      }
+                    }
+                    title="Theme - Security - 1"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+                title="Trans-Alta"
+              >
+                <p>
+                  Trans-Alta
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ProjectMenu { width: 400px; height: 412px; border: 1px solid red; }",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="ProjectMenu paddingBefore1 paddingAfter0"
+  >
+    <div
+      className="pipe"
+    />
+    <div
+      className="sedimentation left"
+      style={
+        Object {
+          "width": 1,
+        }
+      }
+    />
+    <div
+      className="sedimentation right"
+      style={
+        Object {
+          "width": 2,
+        }
+      }
+    />
+    <div
+      className="List horizontal"
+    >
+      <ul>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    14
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Administrative - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Management System - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.1)",
+                      }
+                    }
+                    title="Theme - Security - 1"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+                title="Trans-Alta"
+              >
+                <p>
+                  Trans-Alta
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item selected"
+        >
+          <div
+            className="CircleContainer arrow arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart selected"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount filtered relevant"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    102
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Administrative - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Financial - 13"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Management System - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.6)",
+                      }
+                    }
+                    title="Theme - Security - 6"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 7"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount filtered"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    19
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Administrative - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Financial - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 14"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Security - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
                 <div
@@ -13230,7 +14720,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount relevant"
                   style={
                     Object {
                       "height": 24,
@@ -13544,7 +15034,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount filtered relevant"
+                  className="CircleContainer ConditionCount"
                   style={
                     Object {
                       "height": 24,
@@ -13575,7 +15065,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 0"
+                    title="Theme - Administrative - 0"
                   />
                 </div>
                 <div
@@ -13590,7 +15080,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -13605,7 +15095,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 0"
+                    title="Theme - Emergency Management - 0"
                   />
                 </div>
                 <div
@@ -13620,7 +15110,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 0"
+                    title="Theme - Enforcement - 0"
                   />
                 </div>
                 <div
@@ -13635,7 +15125,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 0"
+                    title="Theme - Environmental Protection - 0"
                   />
                 </div>
                 <div
@@ -13650,7 +15140,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -13665,7 +15155,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 0"
+                    title="Theme - Integrity Management - 0"
                   />
                 </div>
                 <div
@@ -13680,7 +15170,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 0"
+                    title="Theme - Management System - 0"
                   />
                 </div>
                 <div
@@ -13695,7 +15185,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 0"
+                    title="Theme - Safety Management - 0"
                   />
                 </div>
                 <div
@@ -13710,7 +15200,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 0"
+                    title="Theme - Security - 0"
                   />
                 </div>
                 <div
@@ -13725,7 +15215,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 0"
+                    title="Theme - Socio-Economic - 0"
                   />
                 </div>
                 <div
@@ -13755,7 +15245,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 0"
+                    title="Theme - Sunset Clause - 0"
                   />
                 </div>
               </div>
@@ -14221,7 +15711,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -14251,7 +15741,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -14266,7 +15756,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -14281,7 +15771,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -14311,7 +15801,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -14326,7 +15816,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -14341,7 +15831,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -14356,7 +15846,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -14371,7 +15861,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -14401,12 +15891,13 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -14746,7 +16237,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -14792,7 +16283,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -14807,7 +16298,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -14837,7 +16328,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -14852,7 +16343,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -14912,7 +16403,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -14957,7 +16448,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
@@ -15012,7 +16503,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount filtered relevant"
+                  className="CircleContainer ConditionCount filtered"
                   style={
                     Object {
                       "height": 24,
@@ -15043,7 +16534,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 4"
+                    title="Theme - Administrative - 4"
                   />
                 </div>
                 <div
@@ -15058,7 +16549,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 11"
+                    title="Theme - Damage Prevention - 11"
                   />
                 </div>
                 <div
@@ -15073,7 +16564,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -15103,7 +16594,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -15118,7 +16609,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 5"
+                    title="Theme - Financial - 5"
                   />
                 </div>
                 <div
@@ -15148,7 +16639,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 14"
+                    title="Theme - Management System - 14"
                   />
                 </div>
                 <div
@@ -15178,7 +16669,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 7"
+                    title="Theme - Security - 7"
                   />
                 </div>
                 <div
@@ -15223,7 +16714,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
@@ -18123,16 +19614,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         >
 
           environment
-        </li>
-        <li
-          className="categoryList upperCase"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-
-          oversight & safety
         </li>
         <li
           className="categoryList upperCase"

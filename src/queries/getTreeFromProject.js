@@ -7,6 +7,9 @@ export default gql`
       instruments {
         id
         regionIds
+        conditions {
+          id
+        }
       }
     }
   }
