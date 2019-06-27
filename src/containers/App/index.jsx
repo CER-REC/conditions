@@ -590,12 +590,13 @@ class App extends React.PureComponent {
                 let shortName = '';
                 let instruments = [];
                 let instrumentNumber = '';
+                let documentId = '';
                 let companyArray = [];
                 if (!loading && !error) {
                   const { projectDetails, allInstruments } = data;
                   instruments = formatConditionDetails(allInstruments, selected.feature);
                   if (instruments.length > 0) {
-                    ({ instrumentNumber } = instruments[instrumentIndex]);
+                    ({ instrumentNumber, documentId } = instruments[instrumentIndex]);
                   }
 
                   if (projectDetails) {
@@ -625,7 +626,7 @@ class App extends React.PureComponent {
                       isOpen={this.state.isIntermediatePopupOpen}
                       closeModal={this.closeRegDocPopup}
                       instrument={instrumentNumber}
-                      regdocsUrl={`${regDocURL}${instrumentNumber}`}
+                      regdocsUrl={`${regDocURL}${documentId}`}
                     />
                     <CompanyPopup
                       projectName={shortName}
