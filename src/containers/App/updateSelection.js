@@ -9,6 +9,14 @@ import getKeywordConditions from '../../queries/getKeywordConditions';
 
 const randomArrayValue = array => array[Math.floor(Math.random() * array.length)];
 
+const defaultSelection = {
+  Condition: 0,
+  Instrument: 0,
+  Region: 0,
+  Project: 0,
+  Company: 0,
+};
+
 export default (app, client) => {
   // Update any/all values in selected.__ at once to avoid multiple renders
   // Only updates the store for values that have changed
@@ -30,18 +38,22 @@ export default (app, client) => {
     variables: { id },
   }).then((response) => {
     // TODO: Error checking
-    const project = response.data.getProjectById;
-    const company = randomArrayValue(project.companyIds);
-    const instrument = project.instruments[0].id;
-    const region = project.instruments[0].regionIds[0];
+    const newSelection = { ...defaultSelection, Project: id };
 
-    return {
-      Condition: 0,
-      Instrument: instrument,
-      Region: region,
-      Project: id,
-      Company: company,
-    };
+    const project = response.data.getProjectById;
+
+    const hasSelectedCompany = (project.companyIds.indexOf(app.props.selected.company) > -1);
+    newSelection.Company = (hasSelectedCompany)
+      ? app.props.selected.company
+      : randomArrayValue(project.companyIds);
+
+    if (project.instruments.length) {
+      newSelection.Instrument = project.instruments[0].id;
+      newSelection.Condition = project.instruments[0].conditions[0].id;
+      [newSelection.Region] = project.instruments[0].regionIds;
+    }
+
+    return newSelection;
   });
 
   const getSelectionFromRegion = id => client.query({
@@ -49,18 +61,31 @@ export default (app, client) => {
     variables: { id },
   }).then((response) => {
     // TODO: Error checking
-    const region = response.data.getRegionById;
-    const instrument = randomArrayValue(region.instruments);
-    const project = instrument.project.id;
-    const company = randomArrayValue(instrument.project.companyIds);
+    const newSelection = { ...defaultSelection, Region: id };
 
-    return {
-      Condition: 0,
-      Instrument: instrument.id,
-      Region: id,
-      Project: project,
-      Company: company,
-    };
+    const region = response.data.getRegionById;
+
+    if (region.instruments.length) {
+      const selectedInstrumentInRegion = region.instruments.find(inst => (
+        inst.id === app.props.selected.instrument
+      ));
+
+      if (selectedInstrumentInRegion) {
+        newSelection.Condition = app.props.selected.condition;
+        newSelection.Instrument = app.props.selected.instrument;
+        newSelection.Project = app.props.selected.project;
+        newSelection.Company = app.props.selected.company;
+      } else {
+        const instrument = randomArrayValue(region.instruments);
+
+        newSelection.Condition = instrument.conditions[0].id;
+        newSelection.Instrument = instrument.id;
+        newSelection.Project = instrument.project.id;
+        newSelection.Company = randomArrayValue(instrument.project.companyIds);
+      }
+    }
+
+    return newSelection;
   });
 
   const getSelectionFromCompany = id => client.query({
@@ -68,18 +93,34 @@ export default (app, client) => {
     variables: { id },
   }).then((response) => {
     // TODO: Error checking
-    const company = response.data.getCompanyById;
-    const project = company.projects[0].id;
-    const instrument = company.projects[0].instruments[0].id;
-    const region = randomArrayValue(company.projects[0].instruments[0].regionIds);
+    const newSelection = { ...defaultSelection, Company: id };
 
-    return {
-      Condition: 0,
-      Instrument: instrument,
-      Region: region,
-      Project: project,
-      Company: id,
-    };
+    const company = response.data.getCompanyById;
+
+    if (company.projects.length) {
+      const selectedProjectInCompany = company.projects.find(proj => (
+        proj.id === app.props.selected.project
+      ));
+
+      if (selectedProjectInCompany) {
+        newSelection.Project = app.props.selected.project;
+        newSelection.Instrument = app.props.selected.instrument;
+        newSelection.Condition = app.props.selected.condition;
+        newSelection.Region = app.props.selected.region;
+      } else {
+        const project = company.projects[0];
+
+        newSelection.Project = project.id;
+
+        if (project.instruments.length) {
+          newSelection.Instrument = project.instruments[0].id;
+          newSelection.Condition = project.instruments[0].conditions[0].id;
+          newSelection.Region = randomArrayValue(project.instruments[0].regionIds);
+        }
+      }
+    }
+
+    return newSelection;
   });
 
   const getSelectionFromInstrument = id => client.query({
@@ -87,17 +128,30 @@ export default (app, client) => {
     variables: { id },
   }).then((response) => {
     // TODO: Error checking
-    const instrument = response.data.getInstrumentById;
-    const company = randomArrayValue(instrument.project.companyIds);
-    const region = instrument.regionIds[0];
+    const newSelection = { ...defaultSelection, Instrument: id };
 
-    return {
-      Condition: 0,
-      Instrument: id,
-      Project: instrument.projectId,
-      Region: region,
-      Company: company,
-    };
+    const instrument = response.data.getInstrumentById;
+
+    newSelection.Condition = instrument.conditions[0].id;
+    newSelection.Project = instrument.projectId;
+
+    const instrumentInSelectedCompany = (
+      instrument.project.companyIds.indexOf(app.props.selected.company) > -1
+    );
+
+    newSelection.Company = (instrumentInSelectedCompany)
+      ? app.props.selected.company
+      : randomArrayValue(instrument.project.companyIds);
+
+    const instrumentInSelectedRegion = (
+      instrument.regionIds.indexOf(app.props.selected.region) > -1
+    );
+
+    newSelection.Region = (instrumentInSelectedRegion)
+      ? app.props.selected.region
+      : randomArrayValue(instrument.regionIds);
+
+    return newSelection;
   });
 
   const getSelectionFromCondition = id => client.query({
@@ -105,17 +159,31 @@ export default (app, client) => {
     variables: { id },
   }).then((response) => {
     // TODO: Error checking
+    const newSelection = { ...defaultSelection, Condition: id };
     const condition = response.data.getConditionById;
-    const company = randomArrayValue(condition.instrument.project.companyIds);
-    const region = condition.instrument.regionIds[0];
 
-    return {
-      Condition: id,
-      Instrument: condition.instrumentId,
-      Project: condition.instrument.projectId,
-      Region: region,
-      Company: company,
-    };
+    newSelection.Instrument = condition.instrumentId;
+    const { instrument } = condition;
+
+    newSelection.Project = instrument.projectId;
+
+    const instrumentInSelectedCompany = (
+      instrument.project.companyIds.indexOf(app.props.selected.company) > -1
+    );
+
+    newSelection.Company = (instrumentInSelectedCompany)
+      ? app.props.selected.company
+      : randomArrayValue(instrument.project.companyIds);
+
+    const instrumentInSelectedRegion = (
+      instrument.regionIds.indexOf(app.props.selected.region) > -1
+    );
+
+    newSelection.Region = (instrumentInSelectedRegion)
+      ? app.props.selected.region
+      : randomArrayValue(instrument.regionIds);
+
+    return newSelection;
   });
 
   const getSelectionFromKeyword = (id, keyword) => client.query({
