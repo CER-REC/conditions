@@ -557,6 +557,7 @@ class App extends React.PureComponent {
                 let shortName = '';
                 let instruments = [];
                 let instrumentNumber = '';
+                let documentId = '';
                 let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
@@ -567,7 +568,11 @@ class App extends React.PureComponent {
                   if (instruments.length > 0) {
                     instrumentIndex = instruments
                       .findIndex(instrument => instrument.id === selected.instrument);
-                    if (instrumentIndex === -1) { instrumentIndex = 0; }
+                    if (instrumentIndex === -1) {
+                      instrumentIndex = 0;
+                    } else {
+                      ({ documentId } = instruments[instrumentIndex]);
+                    }
 
                     itemIndex = instruments[instrumentIndex].conditions
                       .findIndex(condition => condition.id === selected.condition);
@@ -601,7 +606,7 @@ class App extends React.PureComponent {
                       isOpen={this.state.isIntermediatePopupOpen}
                       closeModal={this.closeRegDocPopup}
                       instrument={instrumentNumber}
-                      regdocsUrl={`${regDocURL}${instrumentNumber}`}
+                      regdocsUrl={`${regDocURL}${documentId}`}
                     />
                     <CompanyPopup
                       projectName={shortName}
