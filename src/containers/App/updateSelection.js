@@ -130,9 +130,9 @@ export default (app, client) => {
     }
 
     const randomId = randomArrayValue(conditionIds);
-    const newSelection = getSelectionFromCondition(randomId);
 
-    return { ...newSelection, KeywordId: id };
+    return getSelectionFromCondition(randomId)
+      .then(newSelection => ({ ...newSelection, KeywordId: id }));
   });
 
   return {
