@@ -4476,13 +4476,14 @@ exports[`Storyshots Components|ErrorBoundary default 1`] = `
     >
       <details>
         Error: Error thrown from problem child
-        <br />
-        
+        <p>
+          
     in ProblemChild
     in ErrorBoundary
     in IntlProvider (created by WithIntl)
     in WithIntl
     in div
+        </p>
       </details>
     </section>
   </section>

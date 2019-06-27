@@ -36,7 +36,7 @@ export default {
             INCLUDES_ALL_PHASES_OF_CONSTR: 12,
             NOT_CONSTRUCTION_RELATED: 33,
             POST_CONSTRUCTION_PHASE: 4,
-            PRIOR_TO_CONSTRUCTION_PHASE: 2,
+            PRIOR_TO_THE_CONSTRUCTION_PHASE: 2,
             UNSPECIFIED: 5,
           },
           status: {
@@ -100,7 +100,7 @@ export default {
             INCLUDES_ALL_PHASES_OF_CONSTR: 12,
             NOT_CONSTRUCTION_RELATED: 33,
             POST_CONSTRUCTION_PHASE: 4,
-            PRIOR_TO_CONSTRUCTION_PHASE: 2,
+            PRIOR_TO_THE_CONSTRUCTION_PHASE: 2,
             UNSPECIFIED: 5,
           },
           status: {

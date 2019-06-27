@@ -1,3 +1,22 @@
+## [0.20.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.20.1) (2019-06-27)
+
+
+### App
+
+* **Features:** uses RegDocs URL as per NEB + document ID (d98333e)
+* **Bug Fixes:** adds missing instrument statuses to locale text (e56a078)
+* **Bug Fixes:** adds "THE" (d555574)
+* **Code Refactoring:** includes documentId when formatting instruments (c745164)
+
+
+### GraphQL
+
+* **Features:** adds handleQueryError to all queries (3b02149)
+* **Features:** captures more information from errors (6f9f7e7)
+* **Features:** catch GraphQL errors in the ErrorBoundary (0e8a3dc)
+* **Bug Fixes:** fixes crash when non-apollo error is thrown (ab64298)
+* **Bug Fixes:** fixes incorrect variable name for handleQueryError (ad4ccc5)
+
 # [0.20.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.20.0) (2019-06-26)
 
 

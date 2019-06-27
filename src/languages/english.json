@@ -92,7 +92,7 @@
       "INCLUDES_ALL_PHASES_OF_CONSTR": "Includes All Phases of Construction",
       "NOT_CONSTRUCTION_RELATED": "Not Construction Related",
       "POST_CONSTRUCTION_PHASE": "Post Construction Phase",
-      "PRIOR_TO_CONSTRUCTION_PHASE": "Prior to Construction Phase",
+      "PRIOR_TO_THE_CONSTRUCTION_PHASE": "Prior to Construction Phase",
       "UNSPECIFIED": "Unspecified"
     },
     "type": {
@@ -112,7 +112,9 @@
       "REVIEW_COMPLETE": "Review Complete",
       "SATISFACTORY": "Satisfactory",
       "UNDER_REVIEW": "Under Review",
-      "ALL_CONDITIONS_MET": "All Conditions Met"
+      "ALL_CONDITIONS_MET": "All Conditions Met",
+      "DRAFT": "Draft",
+      "EXPIRED": "Expired"
     },
     "filing": {
       "REQUIRED": "Filing Required",
@@ -215,7 +217,7 @@
         "INCLUDES_ALL_PHASES_OF_CONSTR": "Some conditions apply at all phases of construction (prior, during and post construction).",
         "NOT_CONSTRUCTION_RELATED": "Some conditions apply outside of the construction context.",
         "POST_CONSTRUCTION_PHASE": "After construction is complete, the NEB continues to regulate the post-construction activities carried out by the company through compliance verification activities (CVAs).",
-        "PRIOR_TO_CONSTRUCTION_PHASE": "Before construction can begin, conditions assigned must be fulfilled.",
+        "PRIOR_TO_THE_CONSTRUCTION_PHASE": "Before construction can begin, conditions assigned must be fulfilled.",
         "UNSPECIFIED": "Phase is not specified or applicable."
       },
       "status": {

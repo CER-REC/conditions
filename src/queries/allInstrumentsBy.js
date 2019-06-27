@@ -13,6 +13,9 @@ const instrumentFields = `
   dateSunset
   dateIssuance
   dateEffective
+  documents {
+    documentId
+  }
   conditions {
     theme
     phase
@@ -27,8 +30,8 @@ const instrumentFields = `
       filingEnum
       phase
       phaseEnum
-      prefix
-      prefixEnum
+      instrument: prefix
+      instrumentEnum: prefixEnum
       status
       statusEnum
       theme
