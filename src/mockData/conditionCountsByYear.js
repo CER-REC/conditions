@@ -57,7 +57,7 @@ export default {
     },
     {
       feature: 'phase',
-      subFeature: 'PRIOR_TO_CONSTRUCTION_PHASE',
+      subFeature: 'PRIOR_TO_THE_CONSTRUCTION_PHASE',
       years: {
         2010: 131,
         2011: 12,
