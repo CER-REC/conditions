@@ -596,9 +596,7 @@ class App extends React.PureComponent {
                   const { projectDetails, allInstruments } = data;
                   instruments = formatConditionDetails(allInstruments, selected.feature);
                   if (instruments.length > 0) {
-                    ({ instrumentNumber } = instruments[instrumentIndex]);
-                    const document = instruments[instrumentIndex].documents[0];
-                    if (document) { ({ documentId } = document); }
+                    ({ instrumentNumber, documentId } = instruments[instrumentIndex]);
                   }
 
                   if (projectDetails) {
