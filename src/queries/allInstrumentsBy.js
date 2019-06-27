@@ -13,6 +13,9 @@ const instrumentFields = `
   dateSunset
   dateIssuance
   dateEffective
+  documents {
+    documentId
+  }
   conditions {
     theme
     phase
