@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesForComponent, withStyles } from '../../../../.storybook/utils';
-import { relevantProjects, filteredProjects } from '../randomDataSample';
+import { relevantProjectLookup, filteredProjectLookup } from '../randomDataSample';
 import CompanyFlag from '.';
 import ReadMe from './README.md';
 
@@ -10,8 +10,8 @@ const defaultProps = {
   dotWidth: 16,
   dotSpacing: 24,
   svgHeight: 100,
-  relevantProjects,
-  filteredProjects,
+  relevantProjectLookup,
+  filteredProjectLookup,
 };
 
 const flagLayouts = [

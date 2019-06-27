@@ -29,7 +29,11 @@ class ConditionList extends React.PureComponent {
     const elements = this.props.items.reduce((out, item) => {
       out.push((item.isInstrument)
         ? (
-          <div key={item.instrumentNumber} data-heading={`${item.instrumentIndex}-${item.itemIndex}`}>
+          <div
+            key={item.instrumentNumber}
+            title={item.instrumentNumber}
+            data-heading={`${item.instrumentIndex}-${item.itemIndex}`}
+          >
             <div className={classNames('barMarker', { marked: item.marked })} />
             <h4>{item.instrumentNumber}</h4>
           </div>

@@ -27,6 +27,7 @@ class WheelList extends React.Component {
         )].name;
         return (
           <span
+            title={text}
             className={offsetClasses[Math.abs(offset)]}
             style={{ width: `${props.textClippingRadius}%` }}
             key={`${text}-${offset}`}
@@ -51,7 +52,14 @@ class WheelList extends React.Component {
             {text => <span className="label">{text}</span>}
           </FormattedMessage>
           { this.props.listContent.length > 0
-            ? (<span className="selected">{this.props.listContent[this.props.selected].name}</span>)
+            ? (
+              <span
+                title={this.props.listContent[this.props.selected].name}
+                className="selected"
+              >
+                {this.props.listContent[this.props.selected].name}
+              </span>
+            )
             : null
           }
         </div>

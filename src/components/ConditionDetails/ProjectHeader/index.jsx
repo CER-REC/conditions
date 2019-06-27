@@ -43,8 +43,8 @@ class ProjectHeader extends React.PureComponent {
                   className="openProject"
                   {...handleInteraction(this.props.openProjectDetails)}
                 >
-                  <h2>
-                    <span>{this.props.selectedProject}</span>
+                  <h2 title={this.props.selectedProject}>
+                    {this.props.selectedProject}
                     <span className="asterisk">*</span>
                   </h2>
                 </button>

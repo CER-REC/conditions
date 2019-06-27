@@ -5,8 +5,8 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import BarContainer from '.';
 
 const rectItems = [
-  { value: 10, fill: 'tomato' },
-  { value: 40, fill: 'blue' },
+  { feature: 'theme', description: 'STANDARD_CONDITION', value: 10, fill: 'tomato' },
+  { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', value: 40, fill: 'blue' },
 ];
 
 describe('Components|BarContainer', () => {

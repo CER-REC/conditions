@@ -13,7 +13,7 @@ const RegionCompanies = (props) => {
       const active = !activeConditionCompanies.includes(company.id)
         ? null
         : <button type="button" className="asterisk" {...handleInteraction(openProjectDetails, company.id)}>*</button>;
-      return (<li key={company.id}>{company.name}{active}</li>);
+      return (<li title={company.name} key={company.id}>{company.name}{active}</li>);
     });
   return (
     <div className="RegionCompanies">

@@ -7,7 +7,7 @@ import Wheel from '.';
 import { features } from '../../constants';
 import ReadMe from './README.md';
 
-import { companyWheelData as companyData, relevantProjects, filteredProjects } from './randomDataSample';
+import { companyWheelData as companyData, relevantProjectLookup, filteredProjectLookup } from './randomDataSample';
 import locationData from '../../mockData/locationData';
 
 const noop = () => {};
@@ -49,8 +49,8 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       {...getInteractionProps()}
       wheelType="company"
       wheelData={companyData}
-      relevantProjects={relevantProjects}
-      filteredProjects={filteredProjects}
+      relevantProjectLookup={relevantProjectLookup}
+      filteredProjectLookup={filteredProjectLookup}
       wheelMotionTrigger={noop}
     />
   ))

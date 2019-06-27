@@ -5,13 +5,16 @@ export default {
   numberOfConditions: -1,
   aggregatedCount: {
     instrument: {
-      ROUTING: 0,
-      CONSTRUCTION: 0,
-      ABANDONMENT: 0,
-      OPENING: 0,
-      MISC: 0,
-      SAFETY: 0,
-      TARIFFS: 0,
+      0: 0,
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      6: 0,
+      7: 0,
+      8: 0,
+      OTHER: 0,
     },
     theme: {
       ADMINISTRATIVE: 0,
@@ -35,7 +38,7 @@ export default {
       INCLUDES_ALL_PHASES_OF_CONSTR: 0,
       NOT_CONSTRUCTION_RELATED: 33,
       POST_CONSTRUCTION_PHASE: 0,
-      PRIOR_TO_CONSTRUCTION_PHASE: 0,
+      PRIOR_TO_THE_CONSTRUCTION_PHASE: 0,
       UNSPECIFIED: 0,
     },
     status: {

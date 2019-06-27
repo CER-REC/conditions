@@ -530,10 +530,10 @@ class App extends React.PureComponent {
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
             searchResults={this.processedSearchResults}
-            filteredProjects={this.processedFilter}
             setSelectedCompany={this.updateSelection.fromCompany}
             setSelectedRegion={this.updateSelection.fromRegion}
             setSelectedProject={this.updateSelection.fromProject}
+            filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
           />
           <ViewThree
