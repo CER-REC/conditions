@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
 import ViewTwo from './index';
+import handleQueryError from '../../utilities/handleQueryError';
 import { companyWheelQuery, locationWheelQuery, companiesByRegionQuery } from '../../queries/viewTwoQueries/wheel';
 import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import * as browseByCreators from '../../actions/browseBy';
@@ -16,6 +17,7 @@ export const ViewTwoGraphQL = (props) => {
     return (
       <Query query={companyWheelQuery}>
         {(wheelQProps) => {
+          handleQueryError(wheelQProps);
           const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQProps;
           const wheelData = !wheelQLoading && !wheelQerror && wheelQData.allCompanies
             ? wheelQData.allCompanies.sort((a, b) => (a.name.localeCompare(b.name)))
@@ -28,6 +30,7 @@ export const ViewTwoGraphQL = (props) => {
             >
 
               { (projectMenuQprops) => {
+                handleQueryError(projectMenuQProps);
                 const {
                   loading: projLoading,
                   error: projError,
@@ -111,6 +114,7 @@ export const ViewTwoGraphQL = (props) => {
   return (
     <Query query={locationWheelQuery}>{
       (allRegionsQProps) => {
+        handleQueryError(allRegionsQProps);
         // eslint-disable-next-line no-shadow
         const {
           data: regionsQData,
@@ -162,6 +166,7 @@ export const ViewTwoGraphQL = (props) => {
             skip={!props.selected.region}
           >
             {(companiesByRegionProps) => {
+              handleQueryError(companiesByRegionProps);
               const {
                 data: compByRegQdata,
                 loading: compByRegQload,
