@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
 import { FormattedMessage } from 'react-intl';
+import handleQueryError from '../../utilities/handleQueryError';
 import allKeywords from '../../queries/allKeywords';
 
 import ConditionExplorer from '../../components/ConditionExplorer';
@@ -97,11 +98,12 @@ export const ViewOneUnconnected = props => (
 
 export const ViewOneGraphQL = props => (
   <Query query={allKeywords}>
-    {({ data }) => {
-      if (!data.allKeywords) { return null; }
+    {(result) => {
+      handleQueryError(result);
+      if (!result.data.allKeywords) { return null; }
 
-      const shuffledKeywords = shuffleArray(data.allKeywords
-        .concat(data.allKeywords) // Make sure we don't run out of keywords
+      const shuffledKeywords = shuffleArray(result.data.allKeywords
+        .concat(result.data.allKeywords) // Make sure we don't run out of keywords
         .map(keyword => keyword.name));
 
       return (

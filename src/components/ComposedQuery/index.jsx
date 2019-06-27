@@ -1,5 +1,6 @@
 import React from 'react';
 import { Query } from 'react-apollo';
+import handleQueryError from '../../utilities/handleQueryError';
 
 export default ({ children, ...props }) => {
   const composedQuery = Object.entries(props)
@@ -8,6 +9,7 @@ export default ({ children, ...props }) => {
     .reduce((acc, [name, query]) => prevQueries => (
       <Query {...query} key={name}>
         {(result) => {
+          handleQueryError(result);
           const merged = {
             queryInfo: {
               ...prevQueries.data,
@@ -18,17 +20,11 @@ export default ({ children, ...props }) => {
               [name]: result.data ? Object.values(result.data)[0] : null,
             },
             loading: prevQueries.loading || result.loading,
-            errors: prevQueries.errors,
           };
-          if (result.error) {
-            merged.errors = merged.errors
-              ? merged.errors.concat(result.error)
-              : [result.error];
-          }
           return acc(merged);
         }}
       </Query>
     ), children);
 
-  return composedQuery({ queryInfo: {}, data: {}, loading: false, errors: null });
+  return composedQuery({ queryInfo: {}, data: {}, loading: false });
 };

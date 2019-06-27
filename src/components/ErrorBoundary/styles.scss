@@ -15,6 +15,10 @@
   }
   .details {
     details {
+      text-align: left;
+      display: inline-block;
+      padding-top: 1em;
+      visibility: visible;
       white-space: pre-wrap;
     }
   }
