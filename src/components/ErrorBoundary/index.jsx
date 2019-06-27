@@ -26,7 +26,7 @@ class ErrorBoundary extends React.PureComponent {
       const details = [
         this.state.errorInfo.componentStack,
         this.state.error.networkError,
-        ...this.state.error.graphQLErrors,
+        ...(this.state.error.graphQLErrors || []),
       ].filter(v => v);
       return (
         <section className="ErrorBoundary">
