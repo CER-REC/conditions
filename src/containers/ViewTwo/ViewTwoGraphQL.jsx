@@ -30,7 +30,7 @@ export const ViewTwoGraphQL = (props) => {
             >
 
               { (projectMenuQprops) => {
-                handleQueryError(projectMenuQProps);
+                handleQueryError(projectMenuQprops);
                 const {
                   loading: projLoading,
                   error: projError,
