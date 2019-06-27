@@ -91,8 +91,6 @@ export const provinces = {
   NS: 'Nova Scotia',
 };
 
-export const regDocURL = (lang === 'fr')
-  ? 'https://apps.neb-one.gc.ca/REGDOCS/Recherche?txthl='
-  : 'https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=';
+export const regDocURL = 'https://apps.neb-one.gc.ca/REGDOCS/File/Download/';
 
 export const guideSize = 128;

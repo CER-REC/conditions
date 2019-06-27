@@ -13,6 +13,7 @@ export default (instruments, selectedFeature) => (
       regions,
       name,
       conditions,
+      documents,
     } = instrument;
 
     const formattedConditions = conditions.reduce((acc, condition) => {
@@ -63,6 +64,7 @@ export default (instruments, selectedFeature) => (
       status,
       location: allLocations,
       activity: name,
+      documentId: (documents.length) ? documents[0].documentId : '',
       conditions: formattedConditions,
     };
   }));
