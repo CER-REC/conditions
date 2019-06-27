@@ -23,6 +23,7 @@ const FeaturesLegend = (props) => {
               chartType="legend"
               name="tenConditions"
               count={10}
+              color="transparent"
             />
             <span className="FlagDesc">10</span>
           </div>
@@ -31,6 +32,7 @@ const FeaturesLegend = (props) => {
               chartType="legend"
               name="greaterThanTenConditions"
               count={11}
+              color="transparent"
             />
             <span className="FlagDesc"> &gt;10 </span>
           </div>

@@ -4,28 +4,50 @@ import classNames from 'classnames';
 import FeatureFlag from '../../FeatureFlag';
 import CircleContainer from '../../CircleContainer';
 
+import { features } from '../../../constants';
+
 import './styles.scss';
 
 const ProjectChart = (props) => {
-  const { graphData } = props;
-  const conditionCount = graphData.reduce((acc, next) => (acc + next.count), 0);
+  const { graphData, numberOfConditions } = props;
   return (
     <div className={classNames('ProjectChart', { selected: props.selected, loading: props.loading })}>
       <div className="ConditionPipe">
-        <CircleContainer size={24} className="ConditionCount">
-          {props.loading || conditionCount < 0 ? '' : conditionCount}
+        <CircleContainer
+          size={24}
+          className={classNames('ConditionCount', {
+            filtered: props.filteredProjectLookup[props.projectId],
+            relevant: props.relevantProjectLookup[props.projectId],
+          })}
+        >
+          {props.loading || numberOfConditions < 0 ? '' : numberOfConditions}
         </CircleContainer>
       </div>
       <div className="FlagWrapper">
         <div className="FlagPole" />
-        {graphData.map((condition, idx) => (
-          <FeatureFlag
-            key={condition.name}
-            name={(props.chartType === 'instrument') ? idx : condition.name}
-            count={condition.count}
-            chartType={props.chartType}
-          />
-        ))}
+        {graphData.map((condition, idx) => {
+          let color;
+          switch (props.chartType) {
+            case 'legend':
+              color = 'transparent';
+              break;
+            case 'instrument':
+              color = features.instrument[idx];
+              break;
+            default:
+              color = features[props.chartType][condition.name];
+          }
+
+          return (
+            <FeatureFlag
+              key={condition.name}
+              name={condition.name}
+              color={color}
+              count={condition.count}
+              chartType={props.chartType}
+            />
+          );
+        })}
       </div>
 
       {props.selected
@@ -33,7 +55,7 @@ const ProjectChart = (props) => {
           <div className="SelectedPipe" />
         )
         : (
-          <div className="ProjectName"><p>{props.projectName}</p></div>
+          <div title={props.projectName} className="ProjectName"><p>{props.projectName}</p></div>
         )
       }
     </div>
@@ -50,10 +72,14 @@ ProjectChart.propTypes = {
     name: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,
   })),
+  numberOfConditions: PropTypes.number,
   /** Selected class for styling */
   selected: PropTypes.bool,
   /** A flag to animate fake data inside the chart and change condition count value */
   loading: PropTypes.bool,
+  relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  projectId: PropTypes.number.isRequired,
 };
 
 ProjectChart.defaultProps = {
@@ -61,6 +87,9 @@ ProjectChart.defaultProps = {
   graphData: [],
   projectName: '',
   loading: false,
+  numberOfConditions: 0,
+  relevantProjectLookup: [],
+  filteredProjectLookup: [],
 };
 
 export default ProjectChart;

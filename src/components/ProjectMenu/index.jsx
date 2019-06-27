@@ -19,12 +19,17 @@ class ProjectMenu extends React.PureComponent {
     projectsData: PropTypes.arrayOf(projectData),
     /** A flag used to simulate data inside the project menu while loading */
     loading: PropTypes.bool,
+
+    relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   }
 
   static defaultProps = {
     loading: false,
     projectsData: [],
     selectedProjectID: null,
+    relevantProjectLookup: [],
+    filteredProjectLookup: [],
   }
 
   getListItems = (projectsData, selectedProjectID) => {
@@ -49,8 +54,8 @@ class ProjectMenu extends React.PureComponent {
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
-  getReformattedData = data => (
-    Object.entries(data[this.props.selectedFeature])
+  getReformattedData = (data, selectedFeature) => (
+    Object.entries(data[selectedFeature])
       .filter(([name]) => (name !== '__typename'))
       .map(([name, count]) => ({ name, count }))
   );
@@ -76,15 +81,20 @@ class ProjectMenu extends React.PureComponent {
       selectedFeature = 'theme';
     }
     const listItems = this.getListItems(projectsData, selectedProjectID);
+
     const renderedItems = listItems ? listItems
       .map(project => (
         <ProjectChart
           key={project.id}
           chartType={selectedFeature}
-          graphData={this.getReformattedData(project.aggregatedCount)}
+          graphData={this.getReformattedData(project.aggregatedCount, selectedFeature)}
+          numberOfConditions={project.numberOfConditions}
           projectName={project.shortName}
           selected={project.id === selectedProjectID}
           loading={loading}
+          relevantProjectLookup={this.props.relevantProjectLookup}
+          filteredProjectLookup={this.props.filteredProjectLookup}
+          projectId={project.id}
         />
       ))
       : [];

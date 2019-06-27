@@ -65,6 +65,7 @@ export const ViewTwoGraphQL = (props) => {
                         });
                       }
                     });
+
                     return ({
                       ...project,
                       aggregatedCount: aggregated,

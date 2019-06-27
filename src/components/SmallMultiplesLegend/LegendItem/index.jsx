@@ -11,15 +11,15 @@ const LegendItem = (props) => {
   if (props.all) {
     caption = (
       <FormattedMessage id={`components.smallMultiplesLegend.all.${props.feature}`}>
-        {text => <span className="text">{text}</span>}
+        {text => <span title={text} className="text">{text}</span>}
       </FormattedMessage>
     );
   } else if (props.feature === 'instrument' && props.subFeature !== 'OTHER') {
-    caption = <span className="text">{props.subFeature}</span>;
+    caption = <span title={props.subFeature} className="text">{props.subFeature}</span>;
   } else {
     caption = (
       <FormattedMessage id={`common.${props.feature}.${props.subFeature}`}>
-        {text => <span className="text">{text}</span>}
+        {text => <span title={text} className="text">{text}</span>}
       </FormattedMessage>
     );
   }

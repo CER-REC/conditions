@@ -9,24 +9,18 @@ import './styles.scss';
 import ContentBlock from '../ContentBlock';
 
 class Content extends React.PureComponent {
-  renderContentText = (id, content) => {
-    const paragraphs = content.split('\n');
-
-    return (
-      <React.Fragment>
-        <p className="contentText">
-          <FormattedMessage id={id}>
-            {text => <span className="contentHeading">{text}</span>}
-          </FormattedMessage>: {paragraphs[0]}
-        </p>
-        {
-          paragraphs.slice(1)
-            // eslint-disable-next-line react/no-array-index-key
-            .map((text, idx) => <p className="contentText" key={idx}>{text}</p>)
+  renderContentText = (id, content) => (
+    <FormattedMessage id={id}>
+      {(text) => {
+        const fullText = `<span class="contentHeading">${text}:&nbsp;</span>${content}`;
+        return (
+        // eslint-disable-next-line react/no-danger
+          <div className="contentText" dangerouslySetInnerHTML={{ __html: fullText }} />
+        );
+      }
         }
-      </React.Fragment>
-    );
-  }
+    </FormattedMessage>
+  )
 
   renderInstrumentLink = instrumentNumber => (
     <button
@@ -38,9 +32,29 @@ class Content extends React.PureComponent {
     </button>
   )
 
+  getHighlightedKeywords = (matchList, givenString) => {
+    if (matchList.length === 0) {
+      return { highlightedText: givenString, matchedKeywords: [] };
+    }
+    const matched = [];
+    const highlightedText = givenString.replace(
+      new RegExp(`(${matchList.join('|')})`, 'gi'),
+      (_, match) => {
+        if (matched.includes(match.toLowerCase()) === false) {
+          matched.push(match.toLowerCase());
+        }
+        return `<span class="highlighted">${match}</span>`;
+      },
+    );
+    return { highlightedText, matchedKeywords: matched.join(', ') };
+  }
+
   render() {
     const data = this.props.instrument;
-
+    const { highlightedText, matchedKeywords } = this.getHighlightedKeywords(
+      this.props.includedKeywords,
+      (this.props.itemIndex === -1) ? '' : data.conditions[this.props.itemIndex].text,
+    );
     return (
       <div className="Content">{
         (this.props.itemIndex === -1)
@@ -67,8 +81,8 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
               </div>
-              <ContentBlock id="components.conditionDetails.keywords" content={data.conditions[this.props.itemIndex].keywords.join(', ')} />
-              {this.renderContentText('components.conditionDetails.text', data.conditions[this.props.itemIndex].text)}
+              <ContentBlock id="components.conditionDetails.keywords" content={matchedKeywords} />
+              {this.renderContentText('components.conditionDetails.text', highlightedText)}
             </React.Fragment>
           )
         }
@@ -90,6 +104,10 @@ Content.propTypes = {
   }).isRequired,
   itemIndex: PropTypes.number.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
+  includedKeywords: PropTypes.arrayOf(PropTypes.string),
+};
+Content.defaultProps = {
+  includedKeywords: [],
 };
 
 export default Content;

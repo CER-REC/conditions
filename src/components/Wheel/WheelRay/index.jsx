@@ -19,7 +19,14 @@ class WheelRay extends React.Component {
     rotation: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
+    relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   }
+
+  static defaultProps = {
+    relevantProjectLookup: [],
+    filteredProjectLookup: [],
+  };
 
   constructor(props) {
     super(props);
@@ -49,7 +56,6 @@ class WheelRay extends React.Component {
     let legendTracker = '';
 
     const rays = items.map((item, index) => {
-      if (index === currentIndex) { return null; }
       let position = rotation;
       const plotIndex = currentIndex - index;
       if (plotIndex < 0) {
@@ -76,6 +82,8 @@ class WheelRay extends React.Component {
                   dotWidth={0.8 * this.flagScale}
                   dotSpacing={this.flagScale}
                   rotation={90}
+                  relevantProjectLookup={this.props.relevantProjectLookup}
+                  filteredProjectLookup={this.props.filteredProjectLookup}
                 />
               )
               : null
@@ -95,6 +103,9 @@ class WheelRay extends React.Component {
               ? (
                 <text className="textLabels" transform="translate(28.75) rotate(90)" textAnchor="middle" {...handleInteraction(props.onChange, index)}>
                   {item.province}
+                  <title>
+                    {item.province}
+                  </title>
                 </text>
               ) : null }
           </g>
@@ -102,7 +113,7 @@ class WheelRay extends React.Component {
       legendTracker = props.wheelType === 'company'
         ? item.name.charAt(0)
         : item.province;
-      return componentToReturn;
+      return index === currentIndex ? null : componentToReturn;
     });
 
     return (

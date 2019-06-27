@@ -5,8 +5,8 @@ module.exports = {
   rules: {
     'no-console': ['error', { allow: ['error'] }],
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0 }],
-    'react/destructuring-assignment': false,
-    'react/jsx-one-expression-per-line': false,
+    'react/destructuring-assignment': 0,
+    'react/jsx-one-expression-per-line': 0,
     'object-curly-newline': ['error', {
       minProperties: 8,
       multiline: true,

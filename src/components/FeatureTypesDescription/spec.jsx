@@ -9,7 +9,7 @@ describe('Components|FeatureTypesDescription', () => {
     const wrapper = shallow(
       <FeatureTypesDescription
         feature="theme"
-        displayOrder={displayOrder.features.theme}
+        displayOrder={displayOrder.theme}
       />,
     );
 

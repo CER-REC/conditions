@@ -11,7 +11,7 @@ import {
   projectsData,
   conditionCountsByYear,
 } from '../../mockData';
-import { companyWheelData } from '../../components/Wheel/randomDataSample';
+import { companyWheelData, relevantProjectLookup, filteredProjectLookup } from '../../components/Wheel/randomDataSample';
 import locationData from '../../mockData/locationData';
 
 const noop = () => {};
@@ -56,6 +56,12 @@ const props = {
   openProjectDetails: noop,
   conditionsPerYear: conditionCountsByYear.counts,
   wheelMotiontrigger: noop,
+  searchResults: {
+    companyIdLookup: [],
+    conditionIdLookup: [],
+    projectIdLookup: relevantProjectLookup,
+  },
+  filteredProjectLookup,
 };
 
 const connectedProps = {
@@ -73,6 +79,12 @@ const connectedProps = {
   regionCompanyData,
   conditionsPerYear: conditionCountsByYear.counts,
   wheelMotiontrigger: noop,
+  searchResults: {
+    companyIdLookup: [],
+    conditionIdLookup: [],
+    projectIdLookup: relevantProjectLookup,
+  },
+  filteredProjectLookup,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)

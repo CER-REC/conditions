@@ -92,7 +92,13 @@ exports[`Storyshots Components|BarContainer default 1`] = `
       width="10.81081081081081%"
       x="0%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="red"
@@ -100,7 +106,13 @@ exports[`Storyshots Components|BarContainer default 1`] = `
       width="59.45945945945946%"
       x="10.810810810810814%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="pink"
@@ -108,7 +120,13 @@ exports[`Storyshots Components|BarContainer default 1`] = `
       width="29.72972972972973%"
       x="70.27027027027027%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
   </svg>
 </div>
 `;
@@ -129,7 +147,13 @@ exports[`Storyshots Components|BarContainer size as percentage 1`] = `
       width="10.81081081081081%"
       x="0%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="red"
@@ -137,7 +161,13 @@ exports[`Storyshots Components|BarContainer size as percentage 1`] = `
       width="59.45945945945946%"
       x="10.810810810810814%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="pink"
@@ -145,7 +175,13 @@ exports[`Storyshots Components|BarContainer size as percentage 1`] = `
       width="29.72972972972973%"
       x="70.27027027027027%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
   </svg>
 </div>
 `;
@@ -166,7 +202,13 @@ exports[`Storyshots Components|BarContainer size as pixels 1`] = `
       width="10.81081081081081%"
       x="0%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="red"
@@ -174,7 +216,13 @@ exports[`Storyshots Components|BarContainer size as pixels 1`] = `
       width="59.45945945945946%"
       x="10.810810810810814%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="pink"
@@ -182,7 +230,13 @@ exports[`Storyshots Components|BarContainer size as pixels 1`] = `
       width="29.72972972972973%"
       x="70.27027027027027%"
       y={0}
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
   </svg>
 </div>
 `;
@@ -204,7 +258,13 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
         width="10.81081081081081%"
         x="0%"
         y={0}
-      />
+      >
+        <title>
+          <span>
+            Standard Condition
+          </span>
+        </title>
+      </rect>
       <rect
         className="Bar"
         fill="red"
@@ -212,7 +272,13 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
         width="59.45945945945946%"
         x="10.810810810810814%"
         y={0}
-      />
+      >
+        <title>
+          <span>
+            Standard Condition
+          </span>
+        </title>
+      </rect>
       <rect
         className="Bar"
         fill="pink"
@@ -220,7 +286,13 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
         width="29.72972972972973%"
         x="70.27027027027027%"
         y={0}
-      />
+      >
+        <title>
+          <span>
+            Standard Condition
+          </span>
+        </title>
+      </rect>
     </g>
   </svg>
 </div>
@@ -242,7 +314,13 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       width="33.33333333333333%"
       x="0%"
       y="81.81818181818181%"
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="red"
@@ -250,7 +328,13 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       width="33.33333333333333%"
       x="33.33333333333333%"
       y="0%"
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
     <rect
       className="Bar"
       fill="pink"
@@ -258,7 +342,13 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
       width="33.33333333333333%"
       x="66.66666666666666%"
       y="50%"
-    />
+    >
+      <title>
+        <span>
+          Standard Condition
+        </span>
+      </title>
+    </rect>
   </svg>
 </div>
 `;
@@ -1440,10 +1530,10 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           tabIndex={0}
           type="button"
         >
-          <h2>
-            <span>
-              Keystone XL
-            </span>
+          <h2
+            title="Keystone XL"
+          >
+            Keystone XL
             <span
               className="asterisk"
             >
@@ -1496,6 +1586,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div
                     data-heading="0--1"
+                    title="XO-001-2018"
                   >
                     <div
                       className="barMarker"
@@ -1534,7 +1625,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="50%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="green"
@@ -1542,7 +1635,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="50%"
                         x="50%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -1575,7 +1670,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="50%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="red"
@@ -1583,7 +1680,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="50%"
                         x="50%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -1628,6 +1727,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div
                     data-heading="1--1"
+                    title="XO-003-2018"
                   >
                     <div
                       className="barMarker"
@@ -1694,7 +1794,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="100%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -1727,7 +1829,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="100%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -1744,6 +1848,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 >
                   <div
                     data-heading="2--1"
+                    title="XO-005-2018"
                   >
                     <div
                       className="barMarker"
@@ -1782,7 +1887,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="33.33333333333333%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="yellow"
@@ -1790,7 +1897,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="33.33333333333333%"
                         x="33.33333333333333%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="teal"
@@ -1798,7 +1907,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         width="33.33333333333333%"
                         x="66.66666666666666%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -1898,57 +2009,22 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               Albuquerque, NM
             </div>
           </div>
-          <p
+          <div
             className="contentText"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Activity
-            </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-          </p>
-          <p
-            className="contentText"
-          >
-            Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-          </p>
-          <p
-            className="contentText"
-          >
-            Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque eu lobortis velit, quis viverra elit.
-          </p>
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+              }
+            }
+          />
         </div>
       </div>
     </div>
@@ -2002,10 +2078,10 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             tabIndex={0}
             type="button"
           >
-            <h2>
-              <span>
-                Keystone XL
-              </span>
+            <h2
+              title="Keystone XL"
+            >
+              Keystone XL
               <span
                 className="asterisk"
               >
@@ -2058,6 +2134,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div
                       data-heading="0--1"
+                      title="XO-001-2018"
                     >
                       <div
                         className="barMarker"
@@ -2096,7 +2173,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="50%"
                           x="0%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                         <rect
                           className="Bar"
                           fill="green"
@@ -2104,7 +2183,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="50%"
                           x="50%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                       </svg>
                     </div>
                   </div>
@@ -2137,7 +2218,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="50%"
                           x="0%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                         <rect
                           className="Bar"
                           fill="red"
@@ -2145,7 +2228,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="50%"
                           x="50%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                       </svg>
                     </div>
                   </div>
@@ -2190,6 +2275,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div
                       data-heading="1--1"
+                      title="XO-003-2018"
                     >
                       <div
                         className="barMarker"
@@ -2256,7 +2342,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="100%"
                           x="0%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                       </svg>
                     </div>
                   </div>
@@ -2289,7 +2377,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="100%"
                           x="0%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                       </svg>
                     </div>
                   </div>
@@ -2306,6 +2396,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   >
                     <div
                       data-heading="2--1"
+                      title="XO-005-2018"
                     >
                       <div
                         className="barMarker"
@@ -2344,7 +2435,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="33.33333333333333%"
                           x="0%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                         <rect
                           className="Bar"
                           fill="yellow"
@@ -2352,7 +2445,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="33.33333333333333%"
                           x="33.33333333333333%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                         <rect
                           className="Bar"
                           fill="teal"
@@ -2360,7 +2455,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           width="33.33333333333333%"
                           x="66.66666666666666%"
                           y={0}
-                        />
+                        >
+                          
+                        </rect>
                       </svg>
                     </div>
                   </div>
@@ -2460,57 +2557,22 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 Albuquerque, NM
               </div>
             </div>
-            <p
+            <div
               className="contentText"
-            >
-              <span
-                className="contentHeading"
-              >
-                Instrument Activity
-              </span>
-              : 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-            </p>
-            <p
-              className="contentText"
-            >
-              Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-            </p>
-            <p
-              className="contentText"
-            >
-              Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-            </p>
-            <p
-              className="contentText"
-            >
-              Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-            </p>
-            <p
-              className="contentText"
-            >
-              Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-            </p>
-            <p
-              className="contentText"
-            >
-              Quisque eu lobortis velit, quis viverra elit.
-            </p>
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+                }
+              }
+            />
           </div>
         </div>
       </div>
@@ -2594,6 +2656,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div
                     data-heading="0--1"
+                    title="XO-001-2018"
                   >
                     <div
                       className="barMarker"
@@ -2632,7 +2695,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="50%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="green"
@@ -2640,7 +2705,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="50%"
                         x="50%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -2673,7 +2740,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="50%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="red"
@@ -2681,7 +2750,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="50%"
                         x="50%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -2726,6 +2797,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div
                     data-heading="1--1"
+                    title="XO-003-2018"
                   >
                     <div
                       className="barMarker"
@@ -2792,7 +2864,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="100%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -2825,7 +2899,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="100%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -2842,6 +2918,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 >
                   <div
                     data-heading="2--1"
+                    title="XO-005-2018"
                   >
                     <div
                       className="barMarker"
@@ -2880,7 +2957,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="33.33333333333333%"
                         x="0%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="yellow"
@@ -2888,7 +2967,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="33.33333333333333%"
                         x="33.33333333333333%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                       <rect
                         className="Bar"
                         fill="teal"
@@ -2896,7 +2977,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         width="33.33333333333333%"
                         x="66.66666666666666%"
                         y={0}
-                      />
+                      >
+                        
+                      </rect>
                     </svg>
                   </div>
                 </div>
@@ -2996,57 +3079,22 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               Albuquerque, NM
             </div>
           </div>
-          <p
+          <div
             className="contentText"
-          >
-            <span
-              className="contentHeading"
-            >
-              Instrument Activity
-            </span>
-            : 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-          </p>
-          <p
-            className="contentText"
-          >
-            Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-          </p>
-          <p
-            className="contentText"
-          >
-            Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-          </p>
-          <p
-            className="contentText"
-          >
-            Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-          </p>
-          <p
-            className="contentText"
-          >
-            Quisque eu lobortis velit, quis viverra elit.
-          </p>
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+              }
+            }
+          />
         </div>
       </div>
     </div>
@@ -3178,6 +3226,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div
                 data-heading="0--1"
+                title="XO-001-2018"
               >
                 <div
                   className="barMarker"
@@ -3244,7 +3293,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="100%"
                     x="0%"
                     y={0}
-                  />
+                  >
+                    
+                  </rect>
                 </svg>
               </div>
             </div>
@@ -3277,7 +3328,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="100%"
                     x="0%"
                     y={0}
-                  />
+                  >
+                    
+                  </rect>
                 </svg>
               </div>
             </div>
@@ -3294,6 +3347,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div
                 data-heading="1--1"
+                title="XO-003-2018"
               >
                 <div
                   className="barMarker"
@@ -3332,7 +3386,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="100%"
                     x="0%"
                     y={0}
-                  />
+                  >
+                    
+                  </rect>
                 </svg>
               </div>
             </div>
@@ -3365,7 +3421,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="100%"
                     x="0%"
                     y={0}
-                  />
+                  >
+                    
+                  </rect>
                 </svg>
               </div>
             </div>
@@ -3382,6 +3440,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
             >
               <div
                 data-heading="2--1"
+                title="XO-005-2018"
               >
                 <div
                   className="barMarker"
@@ -3420,7 +3479,9 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     width="100%"
                     x="0%"
                     y={0}
-                  />
+                  >
+                    
+                  </rect>
                 </svg>
               </div>
             </div>
@@ -3490,59 +3551,24 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           Keywords
         </span>
         : 
-        program
+        hello, ipsum
       </div>
-      <p
+      <div
         className="contentText"
-      >
-        <span
-          className="contentHeading"
-        >
-          Text
-        </span>
-        : 
-        hello Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-      </p>
-      <p
-        className="contentText"
-      >
-        Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-      </p>
-      <p
-        className="contentText"
-      >
-        Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque eu lobortis velit, quis viverra elit.
-      </p>
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<span class=\\"contentHeading\\">Text:&nbsp;</span><span class=\\"highlighted\\">hello</span> Lorem <span class=\\"highlighted\\">ipsum</span> dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+          }
+        }
+      />
     </div>
   </div>
 </div>
@@ -3643,57 +3669,22 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           Albuquerque, NM
         </div>
       </div>
-      <p
+      <div
         className="contentText"
-      >
-        <span
-          className="contentHeading"
-        >
-          Instrument Activity
-        </span>
-        : 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
-      </p>
-      <p
-        className="contentText"
-      >
-        Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
-      </p>
-      <p
-        className="contentText"
-      >
-        Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
-      </p>
-      <p
-        className="contentText"
-      >
-        Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
-      </p>
-      <p
-        className="contentText"
-      >
-        Quisque eu lobortis velit, quis viverra elit.
-      </p>
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
+Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
+Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
+Maecenas sit amet pretium leo, ut vestibulum arcu. Etiam in est ultricies, finibus mi non, aliquam elit. Morbi nec cursus turpis, at dictum massa.
+Quisque eu lobortis velit, quis viverra elit.",
+          }
+        }
+      />
     </div>
   </div>
 </div>
@@ -3857,10 +3848,10 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
         tabIndex={0}
         type="button"
       >
-        <h2>
-          <span>
-            Keystone XL
-          </span>
+        <h2
+          title="Keystone XL"
+        >
+          Keystone XL
           <span
             className="asterisk"
           >
@@ -3956,10 +3947,10 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
         tabIndex={0}
         type="button"
       >
-        <h2>
-          <span>
-            Keystone XL
-          </span>
+        <h2
+          title="Keystone XL"
+        >
+          Keystone XL
           <span
             className="asterisk"
           >
@@ -4436,6 +4427,66 @@ exports[`Storyshots Components|Dropdown with interaction 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|ErrorBoundary default 1`] = `
+<div
+  className="visualization"
+>
+  <section
+    className="ErrorBoundary"
+  >
+    <section
+      className="errorMessage"
+    >
+      <h1>
+        Something went wrong.
+      </h1>
+    </section>
+    <section
+      className="restoreLink"
+    >
+      <span>
+        Please click on the link to restore the session: 
+      </span>
+      <a
+        href="http://localhost/"
+      >
+        <span>
+          Restore Session
+        </span>
+      </a>
+    </section>
+    <section
+      className="resetLink"
+    >
+      <span>
+        Please click on the link to reset the session: 
+      </span>
+      <a
+        href="http://localhost/"
+      >
+        <span>
+          Reset Session
+        </span>
+      </a>
+    </section>
+    <section
+      className="details"
+    >
+      <details>
+        Error: Error thrown from problem child
+        <br />
+        
+    in ProblemChild
+    in ErrorBoundary
+    in IntlProvider (created by WithIntl)
+    in WithIntl
+    in div
+      </details>
+    </section>
+  </section>
+</div>
+`;
+
 exports[`Storyshots Components|FeatureDescription basic usage 1`] = `
 <div
   className="visualization"
@@ -4471,7 +4522,7 @@ exports[`Storyshots Components|FeatureFlag default 1`] = `
           "width": "calc(18px * 0.1)",
         }
       }
-      title="Theme - theme.DAMAGE_PREVENTION - 1"
+      title="Theme - Damage Prevention - 1"
     />
   </div>
 </div>
@@ -4493,7 +4544,7 @@ exports[`Storyshots Components|FeatureFlag with tip 1`] = `
           "width": "calc(18px * 1)",
         }
       }
-      title="Theme - theme.SECURITY - 20"
+      title="Theme - Security - 20"
     />
   </div>
 </div>
@@ -4515,7 +4566,7 @@ exports[`Storyshots Components|FeatureFlag without tip 1`] = `
           "width": "calc(18px * 1)",
         }
       }
-      title="Theme - theme.FINANCIAL - 10"
+      title="Theme - Financial - 10"
     />
   </div>
 </div>
@@ -5126,10 +5177,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Security"
       >
-        <span>
-          Security
-        </span>
+        Security
       </div>
     </div>
     <div
@@ -5145,10 +5195,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Management System"
       >
-        <span>
-          Management System
-        </span>
+        Management System
       </div>
     </div>
     <div
@@ -5164,10 +5213,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Financial"
       >
-        <span>
-          Financial
-        </span>
+        Financial
       </div>
     </div>
     <div
@@ -5183,10 +5231,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Damage Prevention"
       >
-        <span>
-          Damage Prevention
-        </span>
+        Damage Prevention
       </div>
     </div>
     <div
@@ -5202,10 +5249,9 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       />
       <div
         className="text"
+        title="Socio-Economic"
       >
-        <span>
-          Socio-Economic
-        </span>
+        Socio-Economic
       </div>
     </div>
   </div>
@@ -5232,10 +5278,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Security"
       >
-        <span>
-          Security
-        </span>
+        Security
       </div>
     </div>
     <div
@@ -5251,10 +5296,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Management System"
       >
-        <span>
-          Management System
-        </span>
+        Management System
       </div>
     </div>
     <div
@@ -5270,10 +5314,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Financial"
       >
-        <span>
-          Financial
-        </span>
+        Financial
       </div>
     </div>
     <div
@@ -5289,10 +5332,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Damage Prevention"
       >
-        <span>
-          Damage Prevention
-        </span>
+        Damage Prevention
       </div>
     </div>
     <div
@@ -5308,10 +5350,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       />
       <div
         className="text"
+        title="Socio-Economic"
       >
-        <span>
-          Socio-Economic
-        </span>
+        Socio-Economic
       </div>
     </div>
     <div
@@ -5426,10 +5467,9 @@ exports[`Storyshots Components|FeaturesLegend/LegendItem default 1`] = `
       />
       <div
         className="text"
+        title="Security"
       >
-        <span>
-          Security
-        </span>
+        Security
       </div>
     </div>
   </div>
@@ -8679,7 +8719,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -8701,7 +8741,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -8716,7 +8756,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -8731,7 +8771,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -8746,7 +8786,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -8761,7 +8801,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -8776,7 +8816,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -8791,7 +8831,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -8806,7 +8846,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -8821,7 +8861,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -8836,7 +8876,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -8851,7 +8891,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -8866,7 +8906,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -8881,12 +8921,13 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -8912,7 +8953,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -8921,7 +8962,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -8943,7 +8984,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -8958,7 +8999,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -8973,7 +9014,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -8988,7 +9029,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -9003,7 +9044,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -9018,7 +9059,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -9033,7 +9074,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -9048,7 +9089,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -9063,7 +9104,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -9078,7 +9119,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -9093,7 +9134,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -9108,7 +9149,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -9123,12 +9164,13 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -9206,7 +9248,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -9228,7 +9270,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -9243,7 +9285,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -9258,7 +9300,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -9273,7 +9315,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -9288,7 +9330,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -9303,7 +9345,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -9318,7 +9360,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -9333,7 +9375,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -9348,7 +9390,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -9363,7 +9405,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -9378,7 +9420,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -9393,7 +9435,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -9408,12 +9450,13 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -9439,7 +9482,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -9448,7 +9491,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -9470,7 +9513,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -9485,7 +9528,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -9500,7 +9543,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -9515,7 +9558,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -9530,7 +9573,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -9545,7 +9588,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -9560,7 +9603,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -9575,7 +9618,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -9590,7 +9633,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -9605,7 +9648,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -9620,7 +9663,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -9635,7 +9678,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -9650,12 +9693,13 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -9733,7 +9777,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -9755,7 +9799,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -9770,7 +9814,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -9785,7 +9829,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -9800,7 +9844,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -9815,7 +9859,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -9830,7 +9874,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -9845,7 +9889,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -9860,7 +9904,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -9875,7 +9919,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -9890,7 +9934,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -9905,7 +9949,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -9920,7 +9964,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -9935,12 +9979,13 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -9994,7 +10039,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -10003,7 +10048,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -10025,7 +10070,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -10040,7 +10085,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -10055,7 +10100,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -10070,7 +10115,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -10085,7 +10130,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -10100,7 +10145,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -10115,7 +10160,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -10130,7 +10175,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -10145,7 +10190,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -10160,7 +10205,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -10175,7 +10220,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -10190,7 +10235,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -10205,7 +10250,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
@@ -10260,7 +10305,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered"
                   style={
                     Object {
                       "height": 24,
@@ -10269,7 +10314,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    95
+                    19
                   </div>
                 </div>
               </div>
@@ -10291,7 +10336,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 4"
+                    title="Theme - Administrative - 4"
                   />
                 </div>
                 <div
@@ -10306,7 +10351,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 11"
+                    title="Theme - Damage Prevention - 11"
                   />
                 </div>
                 <div
@@ -10321,7 +10366,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -10336,7 +10381,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -10351,7 +10396,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -10366,7 +10411,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 5"
+                    title="Theme - Financial - 5"
                   />
                 </div>
                 <div
@@ -10381,7 +10426,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -10396,7 +10441,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 14"
+                    title="Theme - Management System - 14"
                   />
                 </div>
                 <div
@@ -10411,7 +10456,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -10426,7 +10471,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 7"
+                    title="Theme - Security - 7"
                   />
                 </div>
                 <div
@@ -10441,7 +10486,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -10456,7 +10501,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -10471,12 +10516,13 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -10502,7 +10548,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount relevant"
                   style={
                     Object {
                       "height": 24,
@@ -10511,7 +10557,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                   }
                 >
                   <div>
-                    67
+                    12
                   </div>
                 </div>
               </div>
@@ -10533,7 +10579,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -10548,7 +10594,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -10563,7 +10609,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -10578,7 +10624,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -10593,7 +10639,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -10608,7 +10654,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -10623,7 +10669,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -10638,7 +10684,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -10653,7 +10699,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -10668,7 +10714,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -10683,7 +10729,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -10698,7 +10744,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -10713,12 +10759,13 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -10796,7 +10843,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -10818,7 +10865,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -10833,7 +10880,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -10848,7 +10895,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -10863,7 +10910,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -10878,7 +10925,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -10893,7 +10940,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -10908,7 +10955,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -10923,7 +10970,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -10938,7 +10985,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -10953,7 +11000,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -10968,7 +11015,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -10983,7 +11030,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -10998,12 +11045,13 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -11029,7 +11077,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -11038,7 +11086,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -11060,7 +11108,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -11075,7 +11123,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -11090,7 +11138,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -11105,7 +11153,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -11120,7 +11168,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -11135,7 +11183,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -11150,7 +11198,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -11165,7 +11213,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -11180,7 +11228,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -11195,7 +11243,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -11210,7 +11258,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -11225,7 +11273,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -11240,12 +11288,13 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -11323,7 +11372,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -11345,7 +11394,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -11360,7 +11409,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -11375,7 +11424,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -11390,7 +11439,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -11405,7 +11454,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -11420,7 +11469,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -11435,7 +11484,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -11450,7 +11499,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -11465,7 +11514,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -11480,7 +11529,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -11495,7 +11544,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -11510,7 +11559,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -11525,12 +11574,13 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -11556,7 +11606,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -11565,7 +11615,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -11587,7 +11637,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -11602,7 +11652,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -11617,7 +11667,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -11632,7 +11682,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -11647,7 +11697,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -11662,7 +11712,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -11677,7 +11727,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -11692,7 +11742,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -11707,7 +11757,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -11722,7 +11772,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -11737,7 +11787,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -11752,7 +11802,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -11767,12 +11817,13 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -11900,7 +11951,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 0"
+                    title="Theme - Administrative - 0"
                   />
                 </div>
                 <div
@@ -11915,7 +11966,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -11930,7 +11981,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 0"
+                    title="Theme - Emergency Management - 0"
                   />
                 </div>
                 <div
@@ -11945,7 +11996,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 0"
+                    title="Theme - Enforcement - 0"
                   />
                 </div>
                 <div
@@ -11960,7 +12011,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 0"
+                    title="Theme - Environmental Protection - 0"
                   />
                 </div>
                 <div
@@ -11975,7 +12026,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -11990,7 +12041,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 0"
+                    title="Theme - Integrity Management - 0"
                   />
                 </div>
                 <div
@@ -12005,7 +12056,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 0"
+                    title="Theme - Management System - 0"
                   />
                 </div>
                 <div
@@ -12020,7 +12071,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 0"
+                    title="Theme - Safety Management - 0"
                   />
                 </div>
                 <div
@@ -12035,7 +12086,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 0"
+                    title="Theme - Security - 0"
                   />
                 </div>
                 <div
@@ -12050,7 +12101,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 0"
+                    title="Theme - Socio-Economic - 0"
                   />
                 </div>
                 <div
@@ -12065,7 +12116,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -12080,7 +12131,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 0"
+                    title="Theme - Sunset Clause - 0"
                   />
                 </div>
               </div>
@@ -12237,7 +12288,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 0"
+                    title="Theme - Administrative - 0"
                   />
                 </div>
                 <div
@@ -12252,7 +12303,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -12267,7 +12318,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 0"
+                    title="Theme - Emergency Management - 0"
                   />
                 </div>
                 <div
@@ -12282,7 +12333,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 0"
+                    title="Theme - Enforcement - 0"
                   />
                 </div>
                 <div
@@ -12297,7 +12348,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 0"
+                    title="Theme - Environmental Protection - 0"
                   />
                 </div>
                 <div
@@ -12312,7 +12363,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -12327,7 +12378,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 0"
+                    title="Theme - Integrity Management - 0"
                   />
                 </div>
                 <div
@@ -12342,7 +12393,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 0"
+                    title="Theme - Management System - 0"
                   />
                 </div>
                 <div
@@ -12357,7 +12408,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 0"
+                    title="Theme - Safety Management - 0"
                   />
                 </div>
                 <div
@@ -12372,7 +12423,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 0"
+                    title="Theme - Security - 0"
                   />
                 </div>
                 <div
@@ -12387,7 +12438,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 0"
+                    title="Theme - Socio-Economic - 0"
                   />
                 </div>
                 <div
@@ -12402,7 +12453,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -12417,7 +12468,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 0"
+                    title="Theme - Sunset Clause - 0"
                   />
                 </div>
               </div>
@@ -12524,7 +12575,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -12546,7 +12597,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -12561,7 +12612,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -12576,7 +12627,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -12591,7 +12642,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -12606,7 +12657,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -12621,7 +12672,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -12636,7 +12687,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -12651,7 +12702,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -12666,7 +12717,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -12681,7 +12732,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -12696,7 +12747,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -12711,7 +12762,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -12726,12 +12777,13 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -12809,7 +12861,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                   }
                 >
                   <div>
-                    67
+                    14
                   </div>
                 </div>
               </div>
@@ -12831,7 +12883,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -12846,7 +12898,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -12861,7 +12913,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 2"
+                    title="Theme - Emergency Management - 2"
                   />
                 </div>
                 <div
@@ -12876,7 +12928,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -12891,7 +12943,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 3"
+                    title="Theme - Environmental Protection - 3"
                   />
                 </div>
                 <div
@@ -12906,7 +12958,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -12921,7 +12973,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -12936,7 +12988,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -12951,7 +13003,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -12966,7 +13018,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.1)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 1"
+                    title="Theme - Security - 1"
                   />
                 </div>
                 <div
@@ -12981,7 +13033,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -12996,7 +13048,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -13011,12 +13063,13 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 15"
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -13042,7 +13095,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                 className="ConditionPipe"
               >
                 <div
-                  className="CircleContainer ConditionCount"
+                  className="CircleContainer ConditionCount filtered relevant"
                   style={
                     Object {
                       "height": 24,
@@ -13051,7 +13104,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                   }
                 >
                   <div>
-                    86
+                    102
                   </div>
                 </div>
               </div>
@@ -13073,7 +13126,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 10"
+                    title="Theme - Administrative - 10"
                   />
                 </div>
                 <div
@@ -13088,7 +13141,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.3)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 3"
+                    title="Theme - Damage Prevention - 3"
                   />
                 </div>
                 <div
@@ -13103,7 +13156,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 7"
+                    title="Theme - Emergency Management - 7"
                   />
                 </div>
                 <div
@@ -13118,7 +13171,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.5)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 5"
+                    title="Theme - Enforcement - 5"
                   />
                 </div>
                 <div
@@ -13133,7 +13186,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.4)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 4"
+                    title="Theme - Environmental Protection - 4"
                   />
                 </div>
                 <div
@@ -13148,7 +13201,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 13"
+                    title="Theme - Financial - 13"
                   />
                 </div>
                 <div
@@ -13163,7 +13216,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 11"
+                    title="Theme - Integrity Management - 11"
                   />
                 </div>
                 <div
@@ -13178,7 +13231,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.2)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 2"
+                    title="Theme - Management System - 2"
                   />
                 </div>
                 <div
@@ -13193,7 +13246,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 7"
+                    title="Theme - Safety Management - 7"
                   />
                 </div>
                 <div
@@ -13208,7 +13261,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.6)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 6"
+                    title="Theme - Security - 6"
                   />
                 </div>
                 <div
@@ -13223,7 +13276,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 1)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 11"
+                    title="Theme - Socio-Economic - 11"
                   />
                 </div>
                 <div
@@ -13238,7 +13291,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -13253,12 +13306,13 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                         "width": "calc(18px * 0.7)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 7"
+                    title="Theme - Sunset Clause - 7"
                   />
                 </div>
               </div>
               <div
                 className="ProjectName"
+                title="Trans-Alta"
               >
                 <p>
                   Trans-Alta
@@ -13364,7 +13418,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                   }
                 >
                   <div>
-                    0
+                    
                   </div>
                 </div>
               </div>
@@ -13386,7 +13440,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ADMINISTRATIVE - 0"
+                    title="Theme - Administrative - 0"
                   />
                 </div>
                 <div
@@ -13401,7 +13455,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.DAMAGE_PREVENTION - 0"
+                    title="Theme - Damage Prevention - 0"
                   />
                 </div>
                 <div
@@ -13416,7 +13470,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.EMERGENCY_MANAGEMENT - 0"
+                    title="Theme - Emergency Management - 0"
                   />
                 </div>
                 <div
@@ -13431,7 +13485,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENFORCEMENT - 0"
+                    title="Theme - Enforcement - 0"
                   />
                 </div>
                 <div
@@ -13446,7 +13500,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.ENVIRONMENTAL_PROTECTION - 0"
+                    title="Theme - Environmental Protection - 0"
                   />
                 </div>
                 <div
@@ -13461,7 +13515,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.FINANCIAL - 0"
+                    title="Theme - Financial - 0"
                   />
                 </div>
                 <div
@@ -13476,7 +13530,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.INTEGRITY_MANAGEMENT - 0"
+                    title="Theme - Integrity Management - 0"
                   />
                 </div>
                 <div
@@ -13491,7 +13545,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.MANAGEMENT_SYSTEM - 0"
+                    title="Theme - Management System - 0"
                   />
                 </div>
                 <div
@@ -13506,7 +13560,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SAFETY_MANAGEMENT - 0"
+                    title="Theme - Safety Management - 0"
                   />
                 </div>
                 <div
@@ -13521,7 +13575,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SECURITY - 0"
+                    title="Theme - Security - 0"
                   />
                 </div>
                 <div
@@ -13536,7 +13590,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SOCIO_ECONOMIC - 0"
+                    title="Theme - Socio-Economic - 0"
                   />
                 </div>
                 <div
@@ -13551,7 +13605,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.STANDARD_CONDITION - 0"
+                    title="Theme - Standard Condition - 0"
                   />
                 </div>
                 <div
@@ -13566,7 +13620,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                         "width": "calc(18px * 0)",
                       }
                     }
-                    title="Theme - theme.SUNSET_CLAUSE - 0"
+                    title="Theme - Sunset Clause - 0"
                   />
                 </div>
               </div>
@@ -13653,6 +13707,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
       </div>
       <div
         className="ProjectName"
+        title=""
       >
         <p>
           
@@ -13677,7 +13732,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
         className="ConditionPipe"
       >
         <div
-          className="CircleContainer ConditionCount"
+          className="CircleContainer ConditionCount filtered relevant"
           style={
             Object {
               "height": 24,
@@ -13686,7 +13741,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
           }
         >
           <div>
-            143
+            0
           </div>
         </div>
       </div>
@@ -13708,7 +13763,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                 "width": "calc(18px * 0.1)",
               }
             }
-            title="Theme - theme.SECURITY - 1"
+            title="Theme - Security - 1"
           />
         </div>
         <div
@@ -13723,7 +13778,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                 "width": "calc(18px * 1)",
               }
             }
-            title="Theme - theme.MANAGEMENT_SYSTEM - 45"
+            title="Theme - Management System - 45"
           />
         </div>
         <div
@@ -13738,7 +13793,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                 "width": "calc(18px * 1)",
               }
             }
-            title="Theme - theme.FINANCIAL - 55"
+            title="Theme - Financial - 55"
           />
         </div>
         <div
@@ -13753,7 +13808,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                 "width": "calc(18px * 1)",
               }
             }
-            title="Theme - theme.DAMAGE_PREVENTION - 23"
+            title="Theme - Damage Prevention - 23"
           />
         </div>
         <div
@@ -13768,7 +13823,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                 "width": "calc(18px * 0.3)",
               }
             }
-            title="Theme - theme.SAFETY_MANAGEMENT - 3"
+            title="Theme - Safety Management - 3"
           />
         </div>
         <div
@@ -13783,7 +13838,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                 "width": "calc(18px * 1)",
               }
             }
-            title="Theme - theme.SOCIO_ECONOMIC - 13"
+            title="Theme - Socio-Economic - 13"
           />
         </div>
         <div
@@ -13798,7 +13853,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart With legend items 1`] = 
                 "width": "calc(18px * 0.3)",
               }
             }
-            title="Theme - theme.EMERGENCY_MANAGEMENT - 3"
+            title="Theme - Emergency Management - 3"
           />
         </div>
       </div>
@@ -14167,19 +14222,29 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
       <ul
         className=""
       >
-        <li>
+        <li
+          title="Alberta Trans-Alta e"
+        >
           Alberta Trans-Alta e
         </li>
-        <li>
+        <li
+          title="Alberta Trans-Alta è"
+        >
           Alberta Trans-Alta è
         </li>
-        <li>
+        <li
+          title="Canada-Montana Pipe Line Company"
+        >
           Canada-Montana Pipe Line Company
         </li>
-        <li>
+        <li
+          title="Express Pipeline Ltd."
+        >
           Express Pipeline Ltd.
         </li>
-        <li>
+        <li
+          title="Kinder Morgan Cochin Ulc."
+        >
           Kinder Morgan Cochin Ulc.
           <button
             className="asterisk"
@@ -14192,13 +14257,19 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
             *
           </button>
         </li>
-        <li>
+        <li
+          title="Nova Gas Transmission Ltd."
+        >
           Nova Gas Transmission Ltd.
         </li>
-        <li>
+        <li
+          title="Power Plants R Us"
+        >
           Power Plants R Us
         </li>
-        <li>
+        <li
+          title="Z-Anti"
+        >
           Z-Anti
         </li>
       </ul>
@@ -14307,114 +14378,184 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
             className="Bar"
             fill="rgb(181, 11, 128)"
             height="100%"
-            width="7.142857142857142%"
+            width="7.6923076923076925%"
             x="0%"
             y="0%"
-          />
+          >
+            <title>
+              <span>
+                Standard Condition
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(153, 82, 255)"
             height="40%"
-            width="7.142857142857142%"
-            x="7.142857142857142%"
+            width="7.6923076923076925%"
+            x="7.6923076923076925%"
             y="60%"
-          />
+          >
+            <title>
+              <span>
+                Integrity Management
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(33, 181, 115)"
             height="86%"
-            width="7.142857142857142%"
-            x="14.285714285714285%"
+            width="7.6923076923076925%"
+            x="15.384615384615383%"
             y="14%"
-          />
+          >
+            <title>
+              <span>
+                Environmental Protection
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(201, 215, 65)"
             height="30%"
-            width="7.142857142857142%"
-            x="21.428571428571427%"
+            width="7.6923076923076925%"
+            x="23.076923076923077%"
             y="70%"
-          />
+          >
+            <title>
+              <span>
+                Administrative
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(41, 41, 218)"
             height="10%"
-            width="7.142857142857142%"
-            x="28.571428571428566%"
+            width="7.6923076923076925%"
+            x="30.769230769230766%"
             y="90%"
-          />
+          >
+            <title>
+              <span>
+                Sunset Clause
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(74, 166, 255)"
             height="30%"
-            width="7.142857142857142%"
-            x="35.71428571428571%"
+            width="7.6923076923076925%"
+            x="38.46153846153846%"
             y="70%"
-          />
+          >
+            <title>
+              <span>
+                Enforcement
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(11, 121, 153)"
             height="6%"
-            width="7.142857142857142%"
-            x="42.85714285714285%"
+            width="7.6923076923076925%"
+            x="46.15384615384615%"
             y="94%"
-          />
+          >
+            <title>
+              <span>
+                Emergency Management
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(153, 153, 255)"
             height="30%"
-            width="7.142857142857142%"
-            x="49.99999999999998%"
+            width="7.6923076923076925%"
+            x="53.84615384615385%"
             y="70%"
-          />
+          >
+            <title>
+              <span>
+                Socio-Economic
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(68, 34, 149)"
             height="6%"
-            width="7.142857142857142%"
-            x="57.14285714285713%"
+            width="7.6923076923076925%"
+            x="61.53846153846153%"
             y="94%"
-          />
+          >
+            <title>
+              <span>
+                Safety Management
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(133, 28, 133)"
             height="6%"
-            width="7.142857142857142%"
-            x="64.28571428571426%"
+            width="7.6923076923076925%"
+            x="69.23076923076923%"
             y="94%"
-          />
+          >
+            <title>
+              <span>
+                Damage Prevention
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(247, 193, 97)"
             height="6%"
-            width="7.142857142857142%"
-            x="71.4285714285714%"
+            width="7.6923076923076925%"
+            x="76.92307692307692%"
             y="94%"
-          />
+          >
+            <title>
+              <span>
+                Financial
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(221, 10, 10)"
             height="6%"
-            width="7.142857142857142%"
-            x="78.57142857142854%"
+            width="7.6923076923076925%"
+            x="84.61538461538461%"
             y="94%"
-          />
+          >
+            <title>
+              <span>
+                Security
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(36, 91, 64)"
             height="6%"
-            width="7.142857142857142%"
-            x="85.7142857142857%"
+            width="7.6923076923076925%"
+            x="92.3076923076923%"
             y="94%"
-          />
-          <rect
-            className="Bar"
-            fill="black"
-            height="8%"
-            width="7.142857142857142%"
-            x="92.85714285714283%"
-            y="92%"
-          />
+          >
+            <title>
+              <span>
+                Management System
+              </span>
+            </title>
+          </rect>
         </svg>
       </div>
     </div>
@@ -14493,7 +14634,13 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
             width="50%"
             x="0%"
             y="50%"
-          />
+          >
+            <title>
+              <span>
+                Standard
+              </span>
+            </title>
+          </rect>
           <rect
             className="Bar"
             fill="rgb(77, 39, 90)"
@@ -14501,7 +14648,13 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
             width="50%"
             x="50%"
             y="0%"
-          />
+          >
+            <title>
+              <span>
+                Non Standard
+              </span>
+            </title>
+          </rect>
         </svg>
       </div>
     </div>
@@ -16168,7 +16321,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 width="100%"
                 x="0%"
                 y={0}
-              />
+              >
+                
+              </rect>
               <rect
                 className="Bar"
                 fill="transparent"
@@ -16176,7 +16331,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 width="0%"
                 x="100%"
                 y={0}
-              />
+              >
+                
+              </rect>
             </svg>
             <div
               className="conditionsText"
@@ -16234,7 +16391,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 width="33.33333333333333%"
                 x="0%"
                 y={0}
-              />
+              >
+                
+              </rect>
               <rect
                 className="Bar"
                 fill="transparent"
@@ -16242,7 +16401,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 width="66.66666666666667%"
                 x="33.33333333333333%"
                 y={0}
-              />
+              >
+                
+              </rect>
             </svg>
             <div
               className="conditionsText"
@@ -16336,7 +16497,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 width="100%"
                 x="0%"
                 y={0}
-              />
+              >
+                
+              </rect>
               <rect
                 className="Bar"
                 fill="transparent"
@@ -16344,7 +16507,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 width="0%"
                 x="100%"
                 y={0}
-              />
+              >
+                
+              </rect>
             </svg>
             <div
               className="conditionsText"
@@ -16402,7 +16567,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 width="33.33333333333333%"
                 x="0%"
                 y={0}
-              />
+              >
+                
+              </rect>
               <rect
                 className="Bar"
                 fill="transparent"
@@ -16410,7 +16577,9 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 width="66.66666666666667%"
                 x="33.33333333333333%"
                 y={0}
-              />
+              >
+                
+              </rect>
             </svg>
             <div
               className="conditionsText"
@@ -16894,6 +17063,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               />
               <span
                 className="text"
+                title="All Themes"
               >
                 All Themes
               </span>
@@ -16990,6 +17160,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span
                 className="text"
+                title="Security"
               >
                 Security
               </span>
@@ -17058,6 +17229,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span
                 className="text"
+                title="Management System"
               >
                 Management System
               </span>
@@ -17126,6 +17298,7 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
               </span>
               <span
                 className="text"
+                title="Financial"
               >
                 Financial
               </span>
@@ -17195,6 +17368,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               />
               <span
                 className="text"
+                title="All Themes"
               >
                 All Themes
               </span>
@@ -17291,6 +17465,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               </span>
               <span
                 className="text"
+                title="Security"
               >
                 Security
               </span>
@@ -17359,6 +17534,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               </span>
               <span
                 className="text"
+                title="Management System"
               >
                 Management System
               </span>
@@ -17427,6 +17603,7 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
               </span>
               <span
                 className="text"
+                title="Financial"
               >
                 Financial
               </span>
@@ -17468,6 +17645,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               />
               <span
                 className="text"
+                title="All Themes"
               >
                 All Themes
               </span>
@@ -17564,6 +17742,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               </span>
               <span
                 className="text"
+                title="Security"
               >
                 Security
               </span>
@@ -17660,6 +17839,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               </span>
               <span
                 className="text"
+                title="Management System"
               >
                 Management System
               </span>
@@ -17728,6 +17908,7 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
               </span>
               <span
                 className="text"
+                title="Financial"
               >
                 Financial
               </span>
@@ -17755,6 +17936,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem all 1`] = `
       />
       <span
         className="text"
+        title="All Filings"
       >
         All Filings
       </span>
@@ -17822,6 +18004,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem basic usage 1`] =
       </span>
       <span
         className="text"
+        title="Security"
       >
         Security
       </span>
@@ -17889,6 +18072,7 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
       </span>
       <span
         className="text"
+        title="Financial"
       >
         Financial
       </span>
@@ -25091,7 +25275,7 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
         x="0"
         y="24"
       >
-        for Project
+        for this Project
       </text>
       <line
         className="connectingLine"

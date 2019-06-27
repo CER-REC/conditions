@@ -24,12 +24,12 @@ const availableCategories = [
   'administration & filings',
 ];
 class ViewTwo extends React.Component {
-  regionName = null;
+  miniMapData = null;
 
   componentDidUpdate(prevProps) {
     if (prevProps.selected.region !== this.props.selected.region) {
-      this.regionName = this.props.selected.region
-        ? this.props.wheelData.find(region => region.id === this.props.selected.region).name
+      this.miniMapData = this.props.selected.region
+        ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
     }
   }
@@ -56,7 +56,7 @@ class ViewTwo extends React.Component {
           />
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
-              region={this.regionName}
+              region={this.miniMapData}
               className={this.props.wheelMoving ? 'hidden' : ''}
             />
           ) : null}
@@ -69,6 +69,8 @@ class ViewTwo extends React.Component {
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
             wheelData={this.props.wheelData}
             wheelMotionTrigger={this.props.setWheelMoving}
+            relevantProjectLookup={this.props.searchResults.projectIdLookup}
+            filteredProjectLookup={this.props.filteredProjectLookup}
           />
           <GreyPipe mode={this.props.browseBy} />
         </section>
@@ -97,6 +99,8 @@ class ViewTwo extends React.Component {
                   selectedProjectID={this.props.selected.project}
                   onChange={this.props.setSelectedProject}
                   selectedFeature={this.props.selected.feature}
+                  relevantProjectLookup={this.props.searchResults.projectIdLookup}
+                  filteredProjectLookup={this.props.filteredProjectLookup}
                 />
               </React.Fragment>
             )
@@ -140,6 +144,12 @@ ViewTwo.defaultProps = {
   wheelData: [],
   legendItems: [],
   projectsData: [],
+  searchResults: {
+    companyIdLookup: [],
+    conditionIdLookup: [],
+    projectIdLookup: [],
+  },
+  filteredProjectLookup: [],
 };
 
 export default ViewTwo;

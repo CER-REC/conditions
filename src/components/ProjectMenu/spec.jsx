@@ -10,6 +10,7 @@ const testData = [
     id: 100,
     name: 'name-100',
     shortName: 'shortName-100',
+    numberOfConditions: 10,
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -23,6 +24,7 @@ const testData = [
     id: 101,
     name: 'name-101',
     shortName: 'shortName-101',
+    numberOfConditions: 10,
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -36,6 +38,7 @@ const testData = [
     id: 102,
     name: 'name-102',
     shortName: 'shortName-102',
+    numberOfConditions: 10,
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -49,6 +52,7 @@ const testData = [
     id: 103,
     name: 'name-103',
     shortName: 'shortName-103',
+    numberOfConditions: 10,
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -62,6 +66,7 @@ const testData = [
     id: 104,
     name: 'name-104',
     shortName: 'shortName-104',
+    numberOfConditions: 10,
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -75,6 +80,7 @@ const testData = [
     id: 105,
     name: 'name-105',
     shortName: 'shortName-105',
+    numberOfConditions: 10,
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},
@@ -88,6 +94,7 @@ const testData = [
     id: 106,
     name: 'name-106',
     shortName: 'shortName-106',
+    numberOfConditions: 10,
     aggregatedCount: {
       theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
       instrument: {},

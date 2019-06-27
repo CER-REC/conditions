@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
-import { ApolloProvider, Query } from 'react-apollo';
+import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { HttpLink } from 'apollo-link-http';
@@ -12,10 +13,11 @@ import { connect, Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
+import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
 import i18nMessages from '../../i18n';
 import { lang, regDocURL } from '../../constants';
 
-import { processConditionCounts } from './processQueryData';
+import * as processQueryData from './processQueryData';
 
 import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
@@ -43,7 +45,9 @@ import Guide from '../../components/Guide';
 import BrowseBy from '../../components/BrowseBy';
 import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
+import ComposedQuery from '../../components/ComposedQuery';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 
@@ -410,6 +414,7 @@ class App extends React.PureComponent {
       );
       const company = condition.instrument.project.companyIds[randomCompany];
       this.props.setSelectedCompany(company);
+      // TODO: This should also set the condition to selected
     });
   }
 
@@ -455,9 +460,14 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
+    this.processedSearchResults = this.processedSearchResults
+      || processQueryData.searchResults(this.props.searchResults);
+
+    this.processedFilter = this.processedFilter
+      || processQueryData.filteredProjects(this.props.filteredProjectIds);
 
     this.processedConditionCounts = this.processedConditionCounts
-      || processConditionCounts(this.props.allConditionsPerYear);
+      || processQueryData.conditionCounts(this.props.allConditionsPerYear);
 
     let guideStep = transitionState;
     if (guideStep === transitionStates.view1Reset) {
@@ -480,6 +490,7 @@ class App extends React.PureComponent {
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
       } : {};
+
     return (
       <div
         className={classNames('App', `transition-state-${transitionState}`)}
@@ -558,47 +569,44 @@ class App extends React.PureComponent {
               end: this.props.allConfigurationData.instrumentYearRange.max,
             }
             }
+            searchResults={this.processedSearchResults}
+            filteredProjectLookup={this.processedFilter}
+            displayOrder={this.props.allConfigurationData.displayOrder}
           />
           <ViewThree
             {...viewProps}
+            displayOrder={this.props.allConfigurationData.displayOrder}
             conditionsPerYear={this.processedConditionCounts.conditionCounts}
             prefixOrder={this.processedConditionCounts.prefixOrder}
             years={this.processedConditionCounts.years}
           />
           <section className="conditions">
-            <Query
-              query={getProjectDetails}
-              variables={{ projectId: selected.project }}
-              skip={!selected.project}
+            <ComposedQuery
+              projectDetails={selected.project
+                ? { query: getProjectDetails, variables: { projectId: selected.project } }
+                : null}
+              allInstruments={{
+                query: selected.project ? allInstrumentsBy.project : allInstrumentsBy.region,
+                variables: { id: selected.project || selected.region },
+              }}
             >
-              {(conditionDetailsQProps) => {
-                const {
-                  data: condDetQData,
-                  loading: condDetQLoading,
-                  error: condDetQError,
-                } = conditionDetailsQProps;
-                const loadedCondDetails = !condDetQLoading && !condDetQError && condDetQData
-                  && condDetQData.getProjectById;
-                const instruments = loadedCondDetails && loadedCondDetails.instruments;
-                const formattedInstruments = instruments && !this.state.wheelMoving
-                  ? formatConditionDetails(instruments, selected.feature)
-                  : [];
-                const shortName = formattedInstruments.length > 0
-                  ? loadedCondDetails.shortName
-                  : '';
-
-                // Defaulted to {} since this won't be available while we're loading
-                const { instrumentNumber } = formattedInstruments.length > 0
-                  ? formattedInstruments[selected.condition.instrumentIndex]
-                  : { instrumentNumber: '' };
+              {({ data, loading, error }) => {
+                const { instrumentIndex } = selected.condition;
+                let shortName = '';
+                let instruments = [];
+                let instrumentNumber = '';
                 let companyArray = [];
-                if (loadedCondDetails
-                  && condDetQData.getProjectById.companies
-                  && condDetQData.getProjectById.companies.length > 0) {
-                  companyArray = condDetQData.getProjectById.companies.reduce((acc, company) => {
-                    acc.push(company.name);
-                    return acc;
-                  }, []);
+                if (!loading && !error) {
+                  const { projectDetails, allInstruments } = data;
+                  instruments = formatConditionDetails(allInstruments, selected.feature);
+                  if (instruments.length > 0) {
+                    ({ instrumentNumber } = instruments[instrumentIndex]);
+                  }
+
+                  if (projectDetails) {
+                    ({ shortName } = projectDetails);
+                    companyArray = projectDetails.companies.map(({ name }) => name);
+                  }
                 }
 
                 return (
@@ -614,7 +622,7 @@ class App extends React.PureComponent {
                         include: this.props.included,
                         exclude: this.props.excluded,
                       }}
-                      data={formattedInstruments}
+                      data={instruments}
                       browseBy={this.props.browseBy}
                       {...conditionDetailsViewProps}
                     />
@@ -633,7 +641,7 @@ class App extends React.PureComponent {
                   </React.Fragment>
                 );
               }}
-            </Query>
+            </ComposedQuery>
           </section>
         </div>
         <Footer
@@ -672,6 +680,12 @@ App.propTypes = {
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedKeywordId: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
+  searchResults: PropTypes.shape({
+    companyIds: PropTypes.arrayOf(PropTypes.number),
+    conditionIds: PropTypes.arrayOf(PropTypes.number),
+    projectIds: PropTypes.arrayOf(PropTypes.number),
+  }).isRequired,
+  filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export const AppUnconnected = App;
@@ -710,27 +724,27 @@ export default props => (
   <IntlProvider locale={lang} messages={i18nMessages[lang]}>
     <ApolloProvider client={client}>
       <Provider store={store}>
-        <Query query={initialConfigurationDataQuery}>
-          {({ data: configData, loading: configLoading }) => (
-            <Query query={conditionsPerYearQuery}>
-              {({ data: conditionsData, loading: conditionsLoading }) => {
-                // TODO: Error handling for these queries
-                if (
-                  conditionsLoading || !conditionsData
-                  || configLoading || !configData
-                ) return null;
+        <ErrorBoundary>
+          <ComposedQuery
+            config={{ query: initialConfigurationDataQuery }}
+            conditionsPerYear={{ query: conditionsPerYearQuery }}
+          >
+            {({ data, loading, errors }) => {
+              const configData = data.config;
+              const conditionsData = data.conditionsPerYear;
+              // TODO: Error handling for these queries
+              if (loading || errors) { return null; }
 
-                return (
-                  <ConnectedApp
-                    allConditionsPerYear={conditionsData.conditionsPerYear}
-                    allConfigurationData={configData.allConfigurationData}
-                    {...props}
-                  />
-                );
-              }}
-            </Query>
-          )}
-        </Query>
+              return (
+                <ConnectedApp
+                  allConditionsPerYear={conditionsData}
+                  allConfigurationData={configData}
+                  {...props}
+                />
+              );
+            }}
+          </ComposedQuery>
+        </ErrorBoundary>
       </Provider>
     </ApolloProvider>
   </IntlProvider>
