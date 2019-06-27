@@ -21,9 +21,8 @@ export default ({ children, ...props }) => {
             errors: prevQueries.errors,
           };
           if (result.error) {
-            merged.errors = merged.errors
-              ? merged.errors.concat(result.error)
-              : [result.error];
+            // Immediately throw the error so that it is caught by our ErrorBoundary
+            throw new Error(result.error);
           }
           return acc(merged);
         }}
