@@ -23,6 +23,11 @@ class ErrorBoundary extends React.PureComponent {
 
   render() {
     if (this.state.errorInfo) {
+      const details = [
+        this.state.errorInfo.componentStack,
+        this.state.error.networkError,
+        ...this.state.error.graphQLErrors,
+      ].filter(v => v);
       return (
         <section className="ErrorBoundary">
           <section className="errorMessage">
@@ -43,8 +48,9 @@ class ErrorBoundary extends React.PureComponent {
           <section className="details">
             <details>
               {this.state.error && this.state.error.toString()}
-              <br />
-              {this.state.errorInfo.componentStack}
+              {details.map((v, i) => (
+                <p key={i /* eslint-disable-line react/no-array-index-key */}>{v}</p>
+              ))}
             </details>
           </section>
         </section>
