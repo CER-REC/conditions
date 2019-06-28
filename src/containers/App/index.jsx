@@ -567,8 +567,7 @@ class App extends React.PureComponent {
             projectYears={{
               start: this.props.allConfigurationData.instrumentYearRange.min,
               end: this.props.allConfigurationData.instrumentYearRange.max,
-            }
-            }
+            }}
             searchResults={this.processedSearchResults}
             filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
