@@ -226,66 +226,6 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(spyInclude).toHaveBeenCalledTimes(1);
     });
 
-    test('onClick on excludeTextbox will call its exclude prop', () => {
-      const inputDiv = wrapper.find('.input').last();
-      const input = inputDiv.find('input');
-      input.simulate('change', { target: { value: 'exclude123' } });
-      const addButton = inputDiv.find('.addInput');
-      addButton.simulate('click', eventFuncs);
-      expect(spyExclude).toHaveBeenCalledTimes(1);
-    });
-
-    test('without any word length it will not call the prop', () => {
-      const inputDiv = wrapper.find('.input').first();
-      const input = inputDiv.find('input');
-      input.simulate('change', { target: { value: '' } });
-      const addButton = inputDiv.find('.addInput');
-      addButton.simulate('click', eventFuncs);
-      expect(spyInclude).toHaveBeenCalledTimes(0);
-    });
-
-    test('will not call prop if it is the same word', () => {
-      const inputDiv = wrapper.find('.input').first();
-      const input = inputDiv.find('input');
-      input.simulate('change', { target: { value: 'department of' } });
-      const addButton = inputDiv.find('.addInput');
-      addButton.simulate('click', eventFuncs);
-      expect(spyInclude).toHaveBeenCalledTimes(0);
-    });
-  });
-
-  describe('onClick on the add button', () => {
-    let wrapper;
-    let spyInclude;
-    let spyExclude;
-    beforeEach(() => {
-      spyInclude = jest.fn();
-      spyExclude = jest.fn();
-      wrapper = shallow(
-        <SearchContent
-          includeKeywords={includeKeywords}
-          excludeKeywords={excludeKeywords}
-          setIncluded={spyInclude}
-          setExcluded={spyExclude}
-          closeTab={noop}
-          findAny
-          isExclude
-          findAnyOnChange={noop}
-          changeIsExclude={noop}
-        />,
-      );
-      wrapper.setState({ mode: 'advanced' });
-    });
-
-    test('onClick on includeTextbox will call its include prop', () => {
-      const inputDiv = wrapper.find('.input').first();
-      const input = inputDiv.find('input');
-      input.simulate('change', { target: { value: 'test124' } });
-      const addButton = inputDiv.find('.addInput');
-      addButton.simulate('click', eventFuncs);
-      expect(spyInclude).toHaveBeenCalledTimes(1);
-    });
-
     test('onEnter on includeTextbox will call its include prop', () => {
       const inputDiv = wrapper.find('.input').first();
       const input = inputDiv.find('input');
@@ -343,6 +283,45 @@ describe('Components|SearchBar/SearchContent', () => {
       input.simulate('change', { target: { value: 'department of' } });
       input.simulate('keyDown', { ...eventFuncs, key: 'Enter' });
       expect(spyInclude).toHaveBeenCalledTimes(0);
+    });
+  });
+
+  describe('with full keywords list and in advanced state', () => {
+    let wrapper;
+    let spy;
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = shallow(
+        <SearchContent
+          includeKeywords={['word1', 'word2', 'word3', 'word4', 'word5', 'word6']}
+          excludeKeywords={['except1', 'except2', 'except3', 'except4', 'except5', 'except6']}
+          setIncluded={spy}
+          setExcluded={noop}
+          closeTab={noop}
+          findAny
+          isExclude
+          findAnyOnChange={noop}
+          changeIsExclude={noop}
+        />,
+      );
+      wrapper.setState({ mode: 'advanced' });
+    });
+    test('should not call prop with include word', () => {
+      const inputDiv = wrapper.find('.input').first();
+      const input = inputDiv.find('input');
+      input.simulate('change', { target: { value: 'test1' } });
+      const addButton = inputDiv.find('.addInput');
+      addButton.simulate('click', eventFuncs);
+      expect(spy).toHaveBeenCalledTimes(0);
+    });
+
+    test('should not call prop with exclude word', () => {
+      const inputDiv = wrapper.find('.input').last();
+      const input = inputDiv.find('input');
+      input.simulate('change', { target: { value: 'test1' } });
+      const addButton = inputDiv.find('.addInput');
+      addButton.simulate('click', eventFuncs);
+      expect(spy).toHaveBeenCalledTimes(0);
     });
   });
 
