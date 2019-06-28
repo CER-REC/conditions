@@ -11,14 +11,8 @@ import * as searchCreators from '../../actions/search';
 import { features } from '../../constants';
 import { viewTwo } from '../../proptypes';
 import omitTypename from '../../utilities/omitTypeName';
-// eslint-disable-next-line import/no-cycle
-// import { AppStore } from '../App';
 
 export const ViewTwoGraphQL = (props) => {
-  // // TODO: Fix this cycle problem
-  // if (AppStore.getState().search.projectYear.start === 0) {
-  //   AppStore.dispatch(searchCreators.setProjectYear(props.projectYears));
-  // }
   if (props.browseBy === 'company') {
     return (
       <Query query={companyWheelQuery}>

@@ -35,9 +35,12 @@ class ViewTwo extends React.Component {
   }
 
   render() {
+    // TODO: Evil hack. Ideally we would refactor the App's Redux connection to
+    // be outside the initial queries so we could update the store when they return.
     if (!this.props.projectYear.start) {
       this.props.setProjectYear(this.props.projectYears);
     }
+
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
