@@ -37,9 +37,9 @@ export default (app, client) => {
     query: getTreeFromProject,
     variables: { id },
   }).then((response) => {
-    // TODO: Error checking
-    const newSelection = { ...defaultSelection, Project: id };
+    if (response.error) { return null; }
 
+    const newSelection = { ...defaultSelection, Project: id };
     const project = response.data.getProjectById;
 
     const hasSelectedCompany = (project.companyIds.indexOf(app.props.selected.company) > -1);
@@ -60,9 +60,9 @@ export default (app, client) => {
     query: getTreeFromRegion,
     variables: { id },
   }).then((response) => {
-    // TODO: Error checking
-    const newSelection = { ...defaultSelection, Region: id };
+    if (response.error) { return null; }
 
+    const newSelection = { ...defaultSelection, Region: id };
     const region = response.data.getRegionById;
 
     if (region.instruments.length) {
@@ -92,9 +92,9 @@ export default (app, client) => {
     query: getTreeFromCompany,
     variables: { id },
   }).then((response) => {
-    // TODO: Error checking
-    const newSelection = { ...defaultSelection, Company: id };
+    if (response.error) { return null; }
 
+    const newSelection = { ...defaultSelection, Company: id };
     const company = response.data.getCompanyById;
 
     if (company.projects.length) {
@@ -127,9 +127,9 @@ export default (app, client) => {
     query: getTreeFromInstrument,
     variables: { id },
   }).then((response) => {
-    // TODO: Error checking
-    const newSelection = { ...defaultSelection, Instrument: id };
+    if (response.error) { return null; }
 
+    const newSelection = { ...defaultSelection, Instrument: id };
     const instrument = response.data.getInstrumentById;
 
     newSelection.Condition = instrument.conditions[0].id;
@@ -158,7 +158,8 @@ export default (app, client) => {
     query: getTreeFromCondition,
     variables: { id },
   }).then((response) => {
-    // TODO: Error checking
+    if (response.error) { return null; }
+
     const newSelection = { ...defaultSelection, Condition: id };
     const condition = response.data.getConditionById;
 
@@ -190,9 +191,11 @@ export default (app, client) => {
     query: getKeywordConditions,
     variables: { keywords: [keyword] },
   }).then((response) => {
+    if (response.error) { return null; }
+
     const { conditionIds } = response.data.findSearchResults;
     if (!conditionIds.length) {
-      // TODO: Better error checking
+      // TODO: Leaving this here until the ETL search is fixed
       console.error(`There are no conditions matching "${keyword}"`);
       return null;
     }
