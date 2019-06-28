@@ -14810,7 +14810,6 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span>
           Completed
         </span>
-         
       </div>
       <p>
         Highlighting conditions containing
@@ -15984,7 +15983,6 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         <span>
           Completed
         </span>
-         
       </div>
       <p>
         Highlighting conditions containing
