@@ -75,7 +75,7 @@ class ConditionDetails extends React.Component {
     return (items && items.length)
       ? (
         <ConditionList
-          items={this.getListData()}
+          items={items}
           selectedItem={this.findSelectedItem()}
           updateSelectedItem={this.props.updateSelectedItem}
         />
