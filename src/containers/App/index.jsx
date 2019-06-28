@@ -38,6 +38,7 @@ import {
 } from '../../proptypes';
 
 import ViewOne from '../ViewOne';
+// eslint-disable-next-line import/no-cycle
 import ViewTwo from '../ViewTwo/ViewTwoGraphQL';
 import ViewThree from '../ViewThree';
 import Footer from '../Footer';
