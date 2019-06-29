@@ -64,7 +64,7 @@ class ViewThree extends React.PureComponent {
         <section className="selectedCompany">
           {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
           <div className="selectedCompanyHeader">
-            <FormattedMessage id="views.view3.company" tagName="h1" />
+            <FormattedMessage id="views.view3.company" tagName="h1" attribute="title" />
             <h2 className="companyName">{this.props.companyName}</h2>
           </div>
         </section>

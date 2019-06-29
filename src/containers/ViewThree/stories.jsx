@@ -25,7 +25,7 @@ const props = {
   },
   displayOrder,
   conditionsPerYear: conditionCountsByYear.counts,
-  companyName: "Some Company Name",
+  companyName: 'Some Company Name',
 };
 
 const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
