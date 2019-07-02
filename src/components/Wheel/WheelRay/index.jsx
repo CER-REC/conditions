@@ -112,7 +112,7 @@ class WheelRay extends React.Component {
                     y2="-2"
                   />
                   <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChange, index)}>
-                    &nbsp;{(item.province !== '') ? item.province : 'LOL'}
+                    &nbsp;{item.province}
                     <title>
                       {item.province}
                     </title>
