@@ -56,7 +56,7 @@ class ViewThree extends React.PureComponent {
           <FeatureTypesDescription
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
-            displayOrder={featureDisplayOrder}
+            displayOrder={this.props.displayOrder}
           />
         </section>
         <section className="selectedCompany">
