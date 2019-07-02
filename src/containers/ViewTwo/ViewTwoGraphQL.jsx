@@ -122,25 +122,23 @@ export const ViewTwoGraphQL = (props) => {
           })
           : [];
         // Get the aggregatedCount and create the graph for each one.
+        console.log(locationData)
         const regionsFeatureData = locationData.length > 0
           ? locationData.map(region => (
             {
               ...region,
-              name: region.name,
-              province: region.province,
-              aggregatedCount: Object.entries(region.aggregatedCount[props.selected.feature])
-                .reduce((acc, [key, val]) => {
-                  if (key !== '__typename') {
-                    const description = region.aggregatedCount[`${props.selected.feature}Enum`][key];
-                    acc.push({
-                      feature: props.selected.feature,
-                      description,
-                      disabled: val <= 0,
-                      value: val,
-                      fill: features[props.selected.feature][props.selected.feature === 'instrument' ? key : description],
-                      id: region.id,
-                    });
-                  }
+              // TODO: Can we remove most of these values?
+              aggregatedCount: region.aggregatedCount[props.selected.feature]
+                .reduce((acc, val, i) => {
+                  const description = val.name;
+                  acc.push({
+                    feature: props.selected.feature,
+                    description,
+                    disabled: val.count <= 0,
+                    value: val.count,
+                    fill: features[props.selected.feature][props.selected.feature === 'instrument' ? i : description],
+                    id: region.id,
+                  });
                   return acc;
                 }, []),
             }))

@@ -16,19 +16,13 @@ export const locationWheelQuery = gql`
       id
       name
       province
-      aggregatedCount: aggregatedCountArray {
-        filing
-        filingEnum
-        phase
-        phaseEnum
-        status
-        statusEnum
-        theme
-        themeEnum
-        type
-        typeEnum
-        instrument
-        instrumentEnum
+      aggregatedCount {
+        filing { name, count }
+        phase { name, count }
+        status { name, count }
+        theme { name, count }
+        type { name, count }
+        instrument { name, count }
       }
     }
   }

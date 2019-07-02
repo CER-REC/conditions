@@ -616,7 +616,11 @@ class App extends React.PureComponent {
                 let companyArray = [];
                 if (!loading && !error) {
                   const { projectDetails, allInstruments } = data;
-                  instruments = formatConditionDetails(allInstruments, selected.feature);
+                  instruments = formatConditionDetails(
+                    allInstruments,
+                    selected.feature,
+                    this.props.allConfigurationData.displayOrder,
+                  );
                   if (instruments.length > 0) {
                     ({ instrumentNumber, documentId } = instruments[instrumentIndex]);
                   }
