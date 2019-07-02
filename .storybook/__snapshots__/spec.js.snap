@@ -16181,7 +16181,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
         >
            
-          wildlife & habitat
+          oversight & safety
         </li>
         <li
           className="categoryList upperCase"
@@ -16201,7 +16201,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
         >
            
-          engineering & structures
+          administration & filings
         </li>
         <li
           className="categoryList upperCase"
@@ -16211,7 +16211,27 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
         >
            
-          administration & filings
+          wildlife & habitat
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          people & communities
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          engineering & structures
         </li>
       </ul>
       <div
