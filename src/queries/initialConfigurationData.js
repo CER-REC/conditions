@@ -10,6 +10,7 @@ export default gql`
         type
         theme
         instrument
+        instrumentOther
       }
       instrumentYearRange {
         max

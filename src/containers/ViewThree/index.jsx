@@ -20,9 +20,7 @@ class ViewThree extends React.PureComponent {
 
     this.reversedCounts = this.reversedCounts || conditionCounts.slice().reverse();
 
-    const currentDisplayOrder = (props.selected.feature === 'instrument')
-      ? props.prefixOrder
-      : this.props.displayOrder[props.selected.feature];
+    const featureDisplayOrder = this.props.displayOrder[props.selected.feature];
 
     return (
       <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
@@ -37,7 +35,7 @@ class ViewThree extends React.PureComponent {
           <SmallMultiplesLegend
             feature={props.selected.feature}
             data={conditionCounts}
-            displayOrder={currentDisplayOrder}
+            displayOrder={featureDisplayOrder}
             onChange={props.setSelectedSubFeature}
             selected={props.selected.subFeature}
           />
@@ -45,7 +43,7 @@ class ViewThree extends React.PureComponent {
         <section className="chart">
           <StreamGraph
             countsData={this.reversedCounts}
-            displayOrder={currentDisplayOrder}
+            displayOrder={featureDisplayOrder}
             years={props.years}
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
@@ -58,7 +56,7 @@ class ViewThree extends React.PureComponent {
           <FeatureTypesDescription
             feature={props.selected.feature}
             subFeature={props.selected.subFeature}
-            displayOrder={currentDisplayOrder}
+            displayOrder={featureDisplayOrder}
           />
         </section>
         <section className="selectedCompany">

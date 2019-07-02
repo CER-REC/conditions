@@ -50,18 +50,12 @@ export const conditionCounts = (counts) => {
     years: minorInstrumentYears,
   });
 
-  // TODO: Pull this from the configuration query
-  const prefixOrder = instruments.reduce((acc, cur) => {
-    acc.push(cur.subFeature);
-    return acc;
-  }, []);
-
   // We need to know their order here for the StreamGraph's colors
   instrumentsOut.forEach((_, idx) => { instrumentsOut[idx].rank = idx; });
 
   return {
+    // TODO: This should be coming from the query
     conditionCounts: [...instrumentsOut, ...notInstruments],
-    prefixOrder,
     years: counts.year,
   };
 };

@@ -10,6 +10,7 @@ import {
   conditionData,
   projectsData,
   conditionCountsByYear,
+  displayOrder,
 } from '../../mockData';
 import { companyWheelData, relevantProjectLookup, filteredProjectLookup } from '../../components/Wheel/randomDataSample';
 import locationData from '../../mockData/locationData';
@@ -59,6 +60,7 @@ const props = {
     projectIdLookup: relevantProjectLookup,
   },
   filteredProjectLookup,
+  displayOrder,
 };
 
 const connectedProps = {

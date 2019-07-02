@@ -49,6 +49,7 @@ export const displayOrder = PropTypes.shape({
   type: PropTypes.arrayOf(PropTypes.string).isRequired,
   theme: PropTypes.arrayOf(PropTypes.string).isRequired,
   instrument: PropTypes.arrayOf(PropTypes.string).isRequired,
+  instrumentOther: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
 export const allConfigurationDataType = PropTypes.shape({
