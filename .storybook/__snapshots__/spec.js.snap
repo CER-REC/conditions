@@ -16026,6 +16026,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="searchBar"
           onChange={[Function]}
           onFocus={[Function]}
+          onKeyDown={[Function]}
           value=""
         />
         <button
