@@ -17,12 +17,6 @@ import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
-const availableCategories = [
-  'all',
-  'oversight & safety',
-  'environment',
-  'administration & filings',
-];
 const availableYearRange = { start: 1970, end: 1980 };
 
 class ViewTwo extends React.Component {
@@ -44,7 +38,7 @@ class ViewTwo extends React.Component {
             className={this.props.browseBy === 'location' ? 'small' : ''}
             suggestedKeywords={searchData}
             availableYearRange={availableYearRange}
-            availableCategories={availableCategories}
+            availableCategories={this.props.availableCategories}
             setIncluded={this.props.setIncluded}
             setExcluded={this.props.setExcluded}
             findAnyOnChange={this.props.setFindAny}

@@ -54,7 +54,7 @@ import CompanyPopup from '../../components/CompanyPopup';
 import './styles.scss';
 
 import {
-  conditionData,
+  conditionData, categories,
 } from '../../mockData';
 
 const store = createStore();
@@ -567,6 +567,7 @@ class App extends React.PureComponent {
             searchResults={this.processedSearchResults}
             filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
+            availableCategories={categories.availableCategories}
           />
           <ViewThree
             {...viewProps}
