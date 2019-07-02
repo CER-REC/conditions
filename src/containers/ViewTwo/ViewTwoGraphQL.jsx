@@ -8,7 +8,7 @@ import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
-import { features } from '../../constants';
+import { features, noRegionColor } from '../../constants';
 import { viewTwo } from '../../proptypes';
 import omitTypename from '../../utilities/omitTypeName';
 
@@ -140,12 +140,21 @@ export const ViewTwoGraphQL = (props) => {
                 .reduce((acc, [key, val]) => {
                   if (key !== '__typename') {
                     const description = region.aggregatedCount[`${props.selected.feature}Enum`][key];
+                    let fill;
+                    if (region.id === -1) {
+                      fill = noRegionColor;
+                    } else {
+                      const subFeature = (props.selected.feature === 'instrument')
+                        ? key
+                        : description;
+                      fill = features[props.selected.feature][subFeature];
+                    }
                     acc.push({
                       feature: props.selected.feature,
                       description,
                       disabled: val <= 0,
                       value: val,
-                      fill: features[props.selected.feature][props.selected.feature === 'instrument' ? key : description],
+                      fill,
                       id: region.id,
                     });
                   }

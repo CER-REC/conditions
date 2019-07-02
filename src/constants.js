@@ -75,6 +75,8 @@ export const features = {
   },
 };
 
+export const noRegionColor = 'rgb(153,153,153)';
+
 export const provinces = {
   YT: 'Yukon',
   NT: 'Northwest Territories',
