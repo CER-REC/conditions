@@ -119,10 +119,7 @@ export const viewTwo = {
       PropTypes.number,
     ),
   }),
-  legendItems: PropTypes.arrayOf(PropTypes.shape({
-    disabled: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-  })),
+  activeFeaturesLegendEntries: PropTypes.arrayOf(PropTypes.string),
   selected: PropTypes.shape({
     company: PropTypes.number,
     region: PropTypes.number,

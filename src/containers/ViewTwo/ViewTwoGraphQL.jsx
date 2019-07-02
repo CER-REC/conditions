@@ -81,17 +81,9 @@ export const ViewTwoGraphQL = (props) => {
                   ? parsedProjectsData.find(item => item.id === props.selected.project)
                   : null;
 
-                const projectFeatureData = selectedProject
-                  ? Object.entries(selectedProject.aggregatedCount[props.selected.feature])
-                    .reduce((acc, [key, val]) => {
-                      acc.push({
-                        feature: props.selected.feature,
-                        description: key,
-                        disabled: val <= 0,
-                      });
-                      return acc;
-                    }, [])
-                  : [];
+                const activeFeaturesLegendEntries = !selectedProject ? []
+                  : Object.entries(selectedProject.aggregatedCount[props.selected.feature])
+                    .reduce((acc, [k, v]) => (v <= 0 ? acc : acc.concat(k)), []);
 
                 // TODO: ERROR HANDLING
                 return (
@@ -99,7 +91,7 @@ export const ViewTwoGraphQL = (props) => {
                     wheelData={wheelData}
                     projectsData={parsedProjectsData}
                     projectMenuLoading={projLoading}
-                    legendItems={projectFeatureData}
+                    activeFeaturesLegendEntries={activeFeaturesLegendEntries}
                     {...props}
                   />
                 );
@@ -153,7 +145,7 @@ export const ViewTwoGraphQL = (props) => {
                 }, []),
             }))
           : [];
-        const legendItems = regionsFeatureData.length > 0 && props.selected.region
+        const activeFeaturesLegendEntries = regionsFeatureData.length > 0 && props.selected.region
           ? regionsFeatureData.find(
             region => region.id === props.selected.region,
           ).aggregatedCount
@@ -182,7 +174,7 @@ export const ViewTwoGraphQL = (props) => {
                 <ViewTwo
                   {...props}
                   wheelData={regionsFeatureData}
-                  legendItems={legendItems}
+                  activeFeaturesLegendEntries={activeFeaturesLegendEntries}
                   regionCompanyData={regionCompanyData}
                 />
               );

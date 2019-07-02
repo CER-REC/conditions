@@ -5347,51 +5347,15 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "rgb(221, 10, 10)",
+            "backgroundColor": "rgb(201, 215, 65)",
           }
         }
       />
       <div
         className="text"
-        title="Security"
+        title="Administrative"
       >
-        Security
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(36, 91, 64)",
-          }
-        }
-      />
-      <div
-        className="text"
-        title="Management System"
-      >
-        Management System
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(247, 193, 97)",
-          }
-        }
-      />
-      <div
-        className="text"
-        title="Financial"
-      >
-        Financial
+        Administrative
       </div>
     </div>
     <div
@@ -5413,6 +5377,150 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
       </div>
     </div>
     <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(11, 121, 153)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Emergency Management"
+      >
+        Emergency Management
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(74, 166, 255)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Enforcement"
+      >
+        Enforcement
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(33, 181, 115)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Environmental Protection"
+      >
+        Environmental Protection
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(247, 193, 97)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Financial"
+      >
+        Financial
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(153, 82, 255)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Integrity Management"
+      >
+        Integrity Management
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(36, 91, 64)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Management System"
+      >
+        Management System
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(68, 34, 149)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Safety Management"
+      >
+        Safety Management
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(221, 10, 10)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Security"
+      >
+        Security
+      </div>
+    </div>
+    <div
       className="LegendItem"
     >
       <div
@@ -5428,6 +5536,42 @@ exports[`Storyshots Components|FeaturesLegend Location Legend 1`] = `
         title="Socio-Economic"
       >
         Socio-Economic
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(181, 11, 128)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Standard Condition"
+      >
+        Standard Condition
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(41, 41, 218)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Sunset Clause"
+      >
+        Sunset Clause
       </div>
     </div>
   </div>
@@ -5448,51 +5592,15 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "rgb(221, 10, 10)",
+            "backgroundColor": "rgb(201, 215, 65)",
           }
         }
       />
       <div
         className="text"
-        title="Security"
+        title="Administrative"
       >
-        Security
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(36, 91, 64)",
-          }
-        }
-      />
-      <div
-        className="text"
-        title="Management System"
-      >
-        Management System
-      </div>
-    </div>
-    <div
-      className="LegendItem"
-    >
-      <div
-        className="color"
-        style={
-          Object {
-            "backgroundColor": "rgb(247, 193, 97)",
-          }
-        }
-      />
-      <div
-        className="text"
-        title="Financial"
-      >
-        Financial
+        Administrative
       </div>
     </div>
     <div
@@ -5514,6 +5622,150 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
       </div>
     </div>
     <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(11, 121, 153)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Emergency Management"
+      >
+        Emergency Management
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(74, 166, 255)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Enforcement"
+      >
+        Enforcement
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(33, 181, 115)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Environmental Protection"
+      >
+        Environmental Protection
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(247, 193, 97)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Financial"
+      >
+        Financial
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(153, 82, 255)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Integrity Management"
+      >
+        Integrity Management
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(36, 91, 64)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Management System"
+      >
+        Management System
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(68, 34, 149)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Safety Management"
+      >
+        Safety Management
+      </div>
+    </div>
+    <div
+      className="LegendItem"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(221, 10, 10)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Security"
+      >
+        Security
+      </div>
+    </div>
+    <div
       className="LegendItem"
     >
       <div
@@ -5529,6 +5781,42 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         title="Socio-Economic"
       >
         Socio-Economic
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(181, 11, 128)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Standard Condition"
+      >
+        Standard Condition
+      </div>
+    </div>
+    <div
+      className="LegendItem disabled"
+    >
+      <div
+        className="color"
+        style={
+          Object {
+            "backgroundColor": "rgb(41, 41, 218)",
+          }
+        }
+      />
+      <div
+        className="text"
+        title="Sunset Clause"
+      >
+        Sunset Clause
       </div>
     </div>
     <div
@@ -5637,7 +5925,7 @@ exports[`Storyshots Components|FeaturesLegend/LegendItem default 1`] = `
         className="color"
         style={
           Object {
-            "backgroundColor": "rgb(221, 10, 10)",
+            "backgroundColor": "pink",
           }
         }
       />

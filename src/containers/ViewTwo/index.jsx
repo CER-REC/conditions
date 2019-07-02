@@ -88,7 +88,7 @@ class ViewTwo extends React.Component {
             ? (
               <div className="regionChart">
                 <RegionConditionSummary
-                  featureData={this.props.legendItems}
+                  featureData={this.props.activeFeaturesLegendEntries}
                   isHidden={this.props.wheelMoving}
                 />
                 <RegionCompanies
@@ -137,9 +137,10 @@ class ViewTwo extends React.Component {
             onChange={this.props.setSelectedFeature}
           />
           <FeaturesLegend
-            legendItems={this.props.legendItems}
+            activeEntries={this.props.activeFeaturesLegendEntries}
             selectedFeature={this.props.selected.feature}
             isProjectLegend={this.props.browseBy !== 'location'}
+            displayOrder={this.props.displayOrder}
           />
         </section>
       </section>
@@ -152,7 +153,7 @@ ViewTwo.propTypes = viewTwo;
 ViewTwo.defaultProps = {
   layoutOnly: false,
   wheelData: [],
-  legendItems: [],
+  activeFeaturesLegendEntries: [],
   projectsData: [],
   searchResults: {
     companyIdLookup: [],

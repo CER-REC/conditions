@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LegendItem from './LegendItem';
 import FeatureFlag from '../FeatureFlag';
+import { displayOrder } from '../../proptypes';
+import { features } from '../../constants';
 
 import './styles.scss';
 
 const FeaturesLegend = (props) => {
-  if (props.legendItems.length === 0) { return null; }
+  if (props.activeEntries.length === 0) { return null; }
   const footer = (
     <React.Fragment>
       <div className="featuresLegend">
@@ -49,18 +51,21 @@ const FeaturesLegend = (props) => {
     </React.Fragment>
   );
 
-  const renderedItems = props.legendItems.map(item => (
-    <LegendItem
-      key={item.description}
-      text={item.description}
-      disabled={item.disabled}
-      selectedFeature={props.selectedFeature}
-    />
-  ));
+  const { selectedFeature } = props;
+  const renderedItems = props.displayOrder[selectedFeature]
+    .map((name, i) => (
+      <LegendItem
+        key={name}
+        text={name}
+        disabled={!props.activeEntries.includes(name)}
+        selectedFeature={selectedFeature}
+        color={features[selectedFeature][selectedFeature === 'instrument' ? i : name]}
+      />
+    ));
   return (
     <div className="FeaturesLegend">
       {renderedItems}
-      { props.isProjectLegend ? footer : null }
+      {props.isProjectLegend ? footer : null}
     </div>
   );
 };
@@ -69,11 +74,9 @@ FeaturesLegend.propTypes = {
   /** Selected feature from the feature menu */
   selectedFeature: PropTypes.string.isRequired,
   /** Data for the legend item */
-  legendItems: PropTypes.arrayOf(PropTypes.shape({
-    disabled: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-  })).isRequired,
+  activeEntries: PropTypes.arrayOf(PropTypes.string).isRequired,
   isProjectLegend: PropTypes.bool.isRequired,
+  displayOrder: displayOrder.isRequired,
 };
 
 export default FeaturesLegend;
