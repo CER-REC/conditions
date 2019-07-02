@@ -5,7 +5,7 @@
   position: absolute;
   top: 27px;
   left: 425px;
-  width: 500px;
+  width: 506px;
   margin-left: 2px;
   margin-right: auto;
   display: inline-block;
@@ -46,17 +46,18 @@
     margin: 0px;
   }
   .viewText {
+    font-family: $fira-sans-condensed-bold;
     display: inline-block;
     font-size: 20px;
-    padding: 0px 10px 0px 0px;
-    vertical-align: bottom;
+    padding: 0px 5px 0px 0px;
+    vertical-align: top;
     color: $Black51;
-    margin: 5px 0px;
+    margin: 2px 0px;
   }
   .categoryList {
     display: inline-block;
-    padding: 0px 15px;
-    margin: 5px 5px;
+    padding: 0px 7px;
+    margin: 4px 2px;
     border: 1px solid $LinksTextButtons;
     border-radius: 15px;
     vertical-align: middle;
