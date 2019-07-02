@@ -4,7 +4,12 @@ import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ProjectMenu from '.';
 import ReadMe from './README.md';
-import { projectsData, loadingProjectsData, processedProjects } from '../../mockData';
+import {
+  projectsData,
+  loadingProjectsData,
+  processedProjects,
+  displayOrder,
+} from '../../mockData';
 
 storiesForComponent('Components|ProjectMenu', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -18,6 +23,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       loading={false}
       relevantProjectLookup={processedProjects.relevantProjectLookup}
       filteredProjectLookup={processedProjects.filteredProjectLookup}
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ), {
@@ -30,6 +36,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
     <ProjectMenu
       projectsData={[]}
       selectedFeature="theme"
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ), {
@@ -43,6 +50,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={[{ ...loadingProjectsData, id: 0 }]}
       selectedProjectID={0}
       selectedFeature="theme"
+      displayOrder={displayOrder}
       loading
       {...getInteractionProps()}
     />
@@ -52,6 +60,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       projectsData={Array(5).fill(loadingProjectsData).map((v, id) => ({ ...v, id }))}
       selectedProjectID={0}
       selectedFeature="theme"
+      displayOrder={displayOrder}
       loading
       {...getInteractionProps()}
     />
@@ -63,6 +72,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       selectedFeature="theme"
       relevantProjectLookup={processedProjects.relevantProjectLookup}
       filteredProjectLookup={processedProjects.filteredProjectLookup}
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ))
@@ -73,6 +83,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       selectedFeature="theme"
       relevantProjectLookup={processedProjects.relevantProjectLookup}
       filteredProjectLookup={processedProjects.filteredProjectLookup}
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ))
@@ -83,6 +94,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       selectedFeature="theme"
       relevantProjectLookup={processedProjects.relevantProjectLookup}
       filteredProjectLookup={processedProjects.filteredProjectLookup}
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ))
@@ -93,6 +105,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       selectedFeature="theme"
       relevantProjectLookup={processedProjects.relevantProjectLookup}
       filteredProjectLookup={processedProjects.filteredProjectLookup}
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ))
@@ -103,6 +116,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       selectedFeature="theme"
       relevantProjectLookup={processedProjects.relevantProjectLookup}
       filteredProjectLookup={processedProjects.filteredProjectLookup}
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ))
@@ -113,6 +127,7 @@ storiesForComponent('Components|ProjectMenu', module, ReadMe)
       selectedFeature="theme"
       relevantProjectLookup={processedProjects.relevantProjectLookup}
       filteredProjectLookup={processedProjects.filteredProjectLookup}
+      displayOrder={displayOrder}
       {...getInteractionProps()}
     />
   ));

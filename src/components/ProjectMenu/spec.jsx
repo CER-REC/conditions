@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import ProjectMenu from '.';
 import ProjectChart from './ProjectChart';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
-import { loadingProjectsData } from '../../mockData';
+import { loadingProjectsData, displayOrder } from '../../mockData';
 
 const testData = [
   {
@@ -115,6 +115,7 @@ describe('Components|ProjectMenu', () => {
         selectedProjectID={105}
         onChange={() => {}}
         selectedFeature="theme"
+        displayOrder={displayOrder}
       />);
     });
 
@@ -135,6 +136,7 @@ describe('Components|ProjectMenu', () => {
         selectedProjectID={0}
         onChange={() => {}}
         selectedFeature="theme"
+        displayOrder={displayOrder}
         loading
       />);
     });
@@ -210,6 +212,7 @@ describe('Components|ProjectMenu', () => {
               selectedProjectID={testData[menuIndex].id}
               onChange={onChange}
               selectedFeature="theme"
+              displayOrder={displayOrder}
             />,
           );
         });

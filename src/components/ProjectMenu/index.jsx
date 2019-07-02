@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import List from '../List';
 import ProjectChart from './ProjectChart';
-import { project as projectData, nullableNumber } from '../../proptypes';
+import { project as projectData, nullableNumber, displayOrder } from '../../proptypes';
 import { loadingProjectsData } from '../../mockData';
 import './styles.scss';
 
@@ -19,9 +19,9 @@ class ProjectMenu extends React.PureComponent {
     projectsData: PropTypes.arrayOf(projectData),
     /** A flag used to simulate data inside the project menu while loading */
     loading: PropTypes.bool,
-
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    displayOrder: displayOrder.isRequired,
   }
 
   static defaultProps = {
@@ -47,7 +47,7 @@ class ProjectMenu extends React.PureComponent {
       .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
   }
 
-  handleConditionChange = (listItemIndex) => {
+  handleProjectChange = (listItemIndex) => {
     if (this.props.loading) { return; }
     const visibleListItems = this.getListItems(this.props.projectsData,
       this.props.selectedProjectID);
@@ -55,9 +55,8 @@ class ProjectMenu extends React.PureComponent {
   }
 
   getReformattedData = (data, selectedFeature) => (
-    Object.entries(data[selectedFeature])
-      .filter(([name]) => (name !== '__typename'))
-      .map(([name, count]) => ({ name, count }))
+    this.props.displayOrder[selectedFeature]
+      .map(name => ({ name, count: data[selectedFeature][name] || 0 }))
   );
 
   getSedimentationWidth = (data) => {
@@ -125,7 +124,7 @@ class ProjectMenu extends React.PureComponent {
         <div className={classNames('sedimentation', 'right')} style={{ width: sedimentationRight }} />
         <List
           items={renderedItems}
-          onChange={this.handleConditionChange}
+          onChange={this.handleProjectChange}
           selected={selected}
           horizontal
         />
