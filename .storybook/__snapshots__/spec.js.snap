@@ -16181,7 +16181,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
         >
            
-          oversight & safety
+          wildlife & habitat
         </li>
         <li
           className="categoryList upperCase"
@@ -16201,27 +16201,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
         >
            
-          administration & filings
-        </li>
-        <li
-          className="categoryList upperCase"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-           
-          wildlife & habitat
-        </li>
-        <li
-          className="categoryList upperCase"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-        >
-           
-          people & communities
+          oversight & safety
         </li>
         <li
           className="categoryList upperCase"
@@ -16232,6 +16212,26 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         >
            
           engineering & structures
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          administration & filings
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          people & communities
         </li>
       </ul>
       <div
@@ -16282,7 +16282,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
             </svg>
           </span>
           <span
-            className="upperCase"
+            className="upperCase sortType"
           >
              
             none
