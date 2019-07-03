@@ -6,34 +6,16 @@ import withStatus from '../../../.storybook/addon-status';
 import Wheel from '.';
 import { features } from '../../constants';
 import ReadMe from './README.md';
-
-import { companyWheelData as companyData, relevantProjectLookup, filteredProjectLookup } from './randomDataSample';
-import locationData from '../../mockData/locationData';
+import {
+  companyWheelData as companyData,
+  relevantProjectLookup,
+  filteredProjectLookup,
+} from './randomDataSample';
+import { locationData, displayOrder } from '../../mockData';
 
 const noop = () => {};
 const processedLocationData = locationData
-  .sort((a, b) => (a.province < b.province ? -1 : 1))
-  .map(region => (
-    {
-      ...region,
-      name: region.name,
-      province: region.province,
-      aggregatedCount: Object.entries(region.aggregatedCount.theme)
-        .reduce((acc, [key, val]) => {
-          if (key !== '__typename') {
-            acc.push({
-              feature: 'theme',
-              description: key,
-              disabled: val <= 0,
-              count: val,
-              value: val,
-              fill: features.theme[key],
-              id: region.id,
-            });
-          }
-          return acc;
-        }, []),
-    }));
+  .sort((a, b) => (a.province < b.province ? -1 : 1));
 storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(
@@ -52,6 +34,8 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       relevantProjectLookup={relevantProjectLookup}
       filteredProjectLookup={filteredProjectLookup}
       wheelMotionTrigger={noop}
+      displayOrder={displayOrder}
+      selectedFeature="theme"
     />
   ))
   .add('location props', () => (
@@ -60,5 +44,7 @@ storiesForComponent('Components|Wheel', module, ReadMe)
       wheelType="location"
       wheelData={processedLocationData}
       wheelMotionTrigger={noop}
+      displayOrder={displayOrder}
+      selectedFeature="theme"
     />
   ));

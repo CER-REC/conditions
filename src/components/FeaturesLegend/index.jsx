@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LegendItem from './LegendItem';
 import FeatureFlag from '../FeatureFlag';
-import { displayOrder } from '../../proptypes';
-import { features } from '../../constants';
+import { displayOrder, aggregatedFeatureData } from '../../proptypes';
+import getFeatureColor from '../../utilities/getFeatureColor';
 
 import './styles.scss';
 
 const FeaturesLegend = (props) => {
-  if (props.activeEntries.length === 0) { return null; }
+  const { selectedFeature, selectedAggregatedCount } = props;
+  if (!selectedAggregatedCount) { return null; }
+
   const footer = (
     <React.Fragment>
       <div className="featuresLegend">
@@ -51,15 +53,15 @@ const FeaturesLegend = (props) => {
     </React.Fragment>
   );
 
-  const { selectedFeature } = props;
+  const aggregatedFeature = selectedAggregatedCount[selectedFeature];
   const renderedItems = props.displayOrder[selectedFeature]
     .map((name, i) => (
       <LegendItem
         key={name}
         text={name}
-        disabled={!props.activeEntries.includes(name)}
+        disabled={!aggregatedFeature.find(v => v.count > 0 && v.name === name)}
         selectedFeature={selectedFeature}
-        color={features[selectedFeature][selectedFeature === 'instrument' ? i : name]}
+        color={getFeatureColor(selectedFeature, name, i)}
       />
     ));
   return (
@@ -74,9 +76,13 @@ FeaturesLegend.propTypes = {
   /** Selected feature from the feature menu */
   selectedFeature: PropTypes.string.isRequired,
   /** Data for the legend item */
-  activeEntries: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedAggregatedCount: aggregatedFeatureData,
   isProjectLegend: PropTypes.bool.isRequired,
   displayOrder: displayOrder.isRequired,
+};
+
+FeaturesLegend.defaultProps = {
+  selectedAggregatedCount: null,
 };
 
 export default FeaturesLegend;

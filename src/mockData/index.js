@@ -10,3 +10,5 @@ export { default as loadingProjectsData } from './loadingProjectsData';
 export { default as displayOrder } from './displayOrder';
 export { default as processedProjects } from './processedProjects';
 export { default as categories } from './categories';
+export { default as locationData } from './locationData';
+export { default as aggregatedCount } from './aggregatedCount';

@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { features } from '../constants';
+import getKeyedAggregatedCount from './getKeyedAggregatedCount';
+import getFeatureColor from './getFeatureColor';
 
 // eslint-disable-next-line no-unused-vars
 export default (instruments, selectedFeature, displayOrder) => (
@@ -17,12 +19,11 @@ export default (instruments, selectedFeature, displayOrder) => (
     } = instrument;
 
     const formattedConditions = conditions.reduce((acc, condition) => {
-      const counts = condition.aggregatedCount[selectedFeature]
-        .reduce((countAcc, next) => ({ ...countAcc, [next.name]: next.count }), {});
+      const counts = getKeyedAggregatedCount(condition.aggregatedCount, selectedFeature);
       const fill = displayOrder[selectedFeature]
-        .reduce((fillAcc, next, i) => (counts[next] === 0
-          ? fillAcc
-          : fillAcc.concat(selectedFeature === 'instrument' ? i : next)
+        .reduce((fillAcc, next, i) => (counts[next] > 0
+          ? fillAcc.concat(getFeatureColor(selectedFeature, next, i))
+          : fillAcc
         ), []);
 
       const { id } = condition;

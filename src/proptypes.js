@@ -11,13 +11,18 @@ export const conditionsPerYear = PropTypes.shape({
   years: PropTypes.objectOf(PropTypes.number).isRequired,
 });
 
-export const featureData = PropTypes.shape({
-  instrument: PropTypes.objectOf(PropTypes.number).isRequired,
-  theme: PropTypes.objectOf(PropTypes.number).isRequired,
-  phase: PropTypes.objectOf(PropTypes.number).isRequired,
-  status: PropTypes.objectOf(PropTypes.number).isRequired,
-  type: PropTypes.objectOf(PropTypes.number).isRequired,
-  filing: PropTypes.objectOf(PropTypes.number).isRequired,
+const aggregatedFeatureEntry = PropTypes.arrayOf(PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+})).isRequired;
+
+export const aggregatedFeatureData = PropTypes.shape({
+  instrument: aggregatedFeatureEntry,
+  theme: aggregatedFeatureEntry,
+  phase: aggregatedFeatureEntry,
+  status: aggregatedFeatureEntry,
+  type: aggregatedFeatureEntry,
+  filing: aggregatedFeatureEntry,
 });
 
 export const company = PropTypes.shape({
@@ -26,18 +31,12 @@ export const company = PropTypes.shape({
   data: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
-export const location = PropTypes.shape({
-  primary: PropTypes.string.isRequired,
-  secondary: PropTypes.string.isRequired,
-  data: featureData.isRequired,
-});
-
 export const project = PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   shortName: PropTypes.string.isRequired,
   numberOfConditions: PropTypes.number.isRequired,
-  aggregatedCount: featureData.isRequired,
+  aggregatedCount: aggregatedFeatureData.isRequired,
 });
 
 export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
@@ -65,10 +64,6 @@ export const browseByType = PropTypes.oneOf(['company', 'location']);
 
 export const allCompanyData = PropTypes.arrayOf(
   company,
-);
-
-export const allLocationData = PropTypes.arrayOf(
-  location,
 );
 
 export const yearRangeType = PropTypes.shape({
@@ -119,7 +114,7 @@ export const viewTwo = {
       PropTypes.number,
     ),
   }),
-  activeFeaturesLegendEntries: PropTypes.arrayOf(PropTypes.string),
+  selectedAggregatedCount: aggregatedFeatureData,
   selected: PropTypes.shape({
     company: PropTypes.number,
     region: PropTypes.number,

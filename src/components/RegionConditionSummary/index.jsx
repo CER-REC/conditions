@@ -4,14 +4,24 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import BarContainer from '../BarContainer';
 import './styles.scss';
-import { features } from '../../constants';
+import {
+  displayOrder as displayOrderType,
+  aggregatedFeatureData,
+  featureTypes,
+} from '../../proptypes';
+import getKeyedAggregatedCount from '../../utilities/getKeyedAggregatedCount';
+import getFeatureColor from '../../utilities/getFeatureColor';
 
 const RegionConditionSummary = (props) => {
-  const items = props.featureData.map(k => ({
-    value: k.value,
-    fill: features[k.feature][k.description] || 'black',
-    description: k.description,
-    feature: k.feature,
+  const { displayOrder, selectedAggregatedCount, selectedFeature } = props;
+  if (!selectedAggregatedCount) { return null; }
+
+  const counts = getKeyedAggregatedCount(selectedAggregatedCount, selectedFeature);
+  const items = displayOrder[selectedFeature].map((name, i) => ({
+    value: counts[name] || 0,
+    fill: getFeatureColor(selectedFeature, name, i),
+    description: name,
+    feature: selectedFeature,
   }));
 
   return (
@@ -37,14 +47,14 @@ const RegionConditionSummary = (props) => {
 
 RegionConditionSummary.propTypes = {
   isHidden: PropTypes.bool,
-  featureData: PropTypes.arrayOf(PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
-  })).isRequired,
+  selectedAggregatedCount: aggregatedFeatureData,
+  selectedFeature: featureTypes.isRequired,
+  displayOrder: displayOrderType.isRequired,
 };
 
 RegionConditionSummary.defaultProps = {
   isHidden: false,
+  selectedAggregatedCount: null,
 };
 
 export default RegionConditionSummary;

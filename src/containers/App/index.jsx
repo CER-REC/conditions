@@ -602,7 +602,7 @@ class App extends React.PureComponent {
               projectDetails={selected.project
                 ? { query: getProjectDetails, variables: { projectId: selected.project } }
                 : null}
-              allInstruments={{
+              allInstruments={!selected.project && !selected.region ? null : {
                 query: selected.project ? allInstrumentsBy.project : allInstrumentsBy.region,
                 variables: { id: selected.project || selected.region },
               }}
@@ -616,6 +616,7 @@ class App extends React.PureComponent {
                 let companyArray = [];
                 if (!loading && !error) {
                   const { projectDetails, allInstruments } = data;
+                  if (!allInstruments) { return null; }
                   instruments = formatConditionDetails(
                     allInstruments,
                     selected.feature,

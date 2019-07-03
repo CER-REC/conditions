@@ -3,7 +3,7 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import withGQL from '../../../.storybook/addon-graphql';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import ViewTwoUnconnected from './ViewTwoUnconnected';
+import ViewTwoUnconnected from '.';
 import { ViewTwoGraphQL } from './ViewTwoGraphQL';
 import {
   searchData,
@@ -124,8 +124,26 @@ storiesForView('Containers|ViewTwo', module, ReadMe)
       },
     }),
   )
-  .add('default', () => <ViewTwoUnconnected {...props} wheelData={companyWheelData} {...getInteractionProps()} />)
-  .add('location', () => <ViewTwoUnconnected {...props} browseBy="location" wheelData={locationData} {...getInteractionProps()} />)
+  .add('default', () => (
+    <ViewTwoUnconnected
+      {...props}
+      wheelData={companyWheelData}
+      {...getInteractionProps()}
+    />
+  ))
+  .add('location', () => {
+    const interactionProps = getInteractionProps();
+    const selectedRegion = locationData.find(v => v.id === interactionProps.selected.region) || {};
+    return (
+      <ViewTwoUnconnected
+        {...props}
+        browseBy="location"
+        wheelData={locationData}
+        {...interactionProps}
+        selectedAggregatedCount={selectedRegion.aggregatedCount}
+      />
+    );
+  })
   .add(
     'connected company',
     () => <ViewTwoGraphQL {...connectedProps} {...getInteractionProps()} />,

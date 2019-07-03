@@ -7,7 +7,7 @@ import './styles.scss';
 import Ring from './Ring';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
-import { browseByType } from '../../proptypes';
+import { browseByType, displayOrder, featureTypes } from '../../proptypes';
 import WheelList from './WheelList';
 
 const reservedDegrees = 12;
@@ -24,6 +24,8 @@ class Wheel extends React.Component {
     wheelMotionTrigger: PropTypes.func.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    displayOrder: displayOrder.isRequired,
+    selectedFeature: featureTypes.isRequired,
   };
 
   static defaultProps = {
@@ -78,10 +80,11 @@ class Wheel extends React.Component {
     };
   }
 
-  shouldComponentUpdate(prevProps) {
-    return prevProps.wheelType !== this.props.wheelType
-      || prevProps.selectedRay !== this.props.selectedRay
-      || prevProps.wheelData !== this.props.wheelData;
+  shouldComponentUpdate(nextProps) {
+    return nextProps.wheelType !== this.props.wheelType
+      || nextProps.selectedRay !== this.props.selectedRay
+      || nextProps.wheelData !== this.props.wheelData
+      || nextProps.selectedFeature !== this.props.selectedFeature;
   }
 
   onClickSpin = () => {
@@ -154,6 +157,8 @@ class Wheel extends React.Component {
                         rotation={props.rotation.interpolate(r => r * -1)}
                         relevantProjectLookup={this.props.relevantProjectLookup}
                         filteredProjectLookup={this.props.filteredProjectLookup}
+                        displayOrder={this.props.displayOrder}
+                        selectedFeature={this.props.selectedFeature}
                       />
                     ))}
                   </svg>

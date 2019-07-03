@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
 import ViewTwo from './index';
 import handleQueryError from '../../utilities/handleQueryError';
-import { companyWheelQuery, locationWheelQuery, companiesByRegionQuery } from '../../queries/viewTwoQueries/wheel';
+import {
+  companyWheelQuery,
+  locationWheelQuery,
+  companiesByRegionQuery,
+} from '../../queries/viewTwoQueries/wheel';
 import { projectMenuQuery } from '../../queries/viewTwoQueries/projectMenu';
 import * as browseByCreators from '../../actions/browseBy';
 import * as selectedCreators from '../../actions/selected';
 import * as searchCreators from '../../actions/search';
-import { features } from '../../constants';
 import { viewTwo } from '../../proptypes';
 import omitTypename from '../../utilities/omitTypeName';
 
@@ -38,60 +41,24 @@ export const ViewTwoGraphQL = (props) => {
                 } = projectMenuQprops;
 
                 const projectsData = !projLoading && !projError && props.selected.company
-                  ? omitTypename(projData.allProjectsByCompany)
-                  : [];
-                const featuresEnums = ['theme', 'instrument', 'phase', 'status', 'type', 'filing'];
-                const parsedProjectsData = projectsData.length > 0
-                  && projectsData[0].aggregatedCount
-                  ? projectsData.map((project, projectIndex) => {
-                    const aggregated = {};
-                    featuresEnums.forEach((feature) => {
-                      project.aggregatedCount[feature]
-                        .forEach((count, subfeatureIndex) => {
-                          aggregated[feature] = ({
-                            ...aggregated[feature],
-                            [`${projectsData[projectIndex].aggregatedCount[`${feature}Enum`][subfeatureIndex]}`]: count,
-                          });
-                        });
-                      if (feature === 'instrument' && Object.keys(aggregated.instrument.length > 9)) {
-                        const parsedData = Object.entries(aggregated[feature]).sort(
-                          (a, b) => (a.count > b.count ? -1 : 1),
-                        );
-                        aggregated[feature] = {};
-                        parsedData.push([
-                          'OTHER',
-                          parsedData.splice(9).reduce((acc, cur) => (acc + cur[1]), 0),
-                        ]);
-                        parsedData.forEach((arrayElement) => {
-                          // eslint-disable-next-line prefer-destructuring
-                          aggregated[feature][arrayElement[0]] = arrayElement[1];
-                        });
-                      }
-                    });
-
-                    return ({
-                      ...project,
-                      aggregatedCount: aggregated,
-                    });
-                  })
+                  ? projData.allProjectsByCompany
                   : [];
 
-                const selectedProject = !projLoading && !projError && props.selected.company
-                  && parsedProjectsData.length > 0
-                  ? parsedProjectsData.find(item => item.id === props.selected.project)
+                const selectedProject = props.selected.company && projectsData.length > 0
+                  ? projectsData.find(item => item.id === props.selected.project)
                   : null;
-
-                const activeFeaturesLegendEntries = !selectedProject ? []
-                  : Object.entries(selectedProject.aggregatedCount[props.selected.feature])
-                    .reduce((acc, [k, v]) => (v <= 0 ? acc : acc.concat(k)), []);
+                const selectedAggregatedCount = selectedProject
+                  ? selectedProject.aggregatedCount
+                  : undefined;
 
                 // TODO: ERROR HANDLING
                 return (
                   <ViewTwo
                     wheelData={wheelData}
-                    projectsData={parsedProjectsData}
+                    projectsData={projectsData}
                     projectMenuLoading={projLoading}
-                    activeFeaturesLegendEntries={activeFeaturesLegendEntries}
+                    selectedAggregatedCount={selectedAggregatedCount}
+                    displayOrder={props.displayOrder}
                     {...props}
                   />
                 );
@@ -121,33 +88,13 @@ export const ViewTwoGraphQL = (props) => {
             return (a.province < b.province ? -1 : 1);
           })
           : [];
-        // Get the aggregatedCount and create the graph for each one.
-        console.log(locationData)
-        const regionsFeatureData = locationData.length > 0
-          ? locationData.map(region => (
-            {
-              ...region,
-              // TODO: Can we remove most of these values?
-              aggregatedCount: region.aggregatedCount[props.selected.feature]
-                .reduce((acc, val, i) => {
-                  const description = val.name;
-                  acc.push({
-                    feature: props.selected.feature,
-                    description,
-                    disabled: val.count <= 0,
-                    value: val.count,
-                    fill: features[props.selected.feature][props.selected.feature === 'instrument' ? i : description],
-                    id: region.id,
-                  });
-                  return acc;
-                }, []),
-            }))
-          : [];
-        const activeFeaturesLegendEntries = regionsFeatureData.length > 0 && props.selected.region
-          ? regionsFeatureData.find(
-            region => region.id === props.selected.region,
-          ).aggregatedCount
-          : [];
+        // TODO: Can region be empty?
+        const selectedLocation = props.selected.region
+          ? locationData.find(region => region.id === props.selected.region)
+          : null;
+        const selectedAggregatedCount = selectedLocation
+          ? selectedLocation.aggregatedCount
+          : undefined;
 
         return (
           <Query
@@ -171,9 +118,10 @@ export const ViewTwoGraphQL = (props) => {
               return (
                 <ViewTwo
                   {...props}
-                  wheelData={regionsFeatureData}
-                  activeFeaturesLegendEntries={activeFeaturesLegendEntries}
+                  wheelData={locationData}
+                  selectedAggregatedCount={selectedAggregatedCount}
                   regionCompanyData={regionCompanyData}
+                  displayOrder={props.displayOrder}
                 />
               );
             }}

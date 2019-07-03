@@ -5,6 +5,7 @@ import List from '../List';
 import ProjectChart from './ProjectChart';
 import { project as projectData, nullableNumber, displayOrder } from '../../proptypes';
 import { loadingProjectsData } from '../../mockData';
+import getKeyedAggregatedCount from '../../utilities/getKeyedAggregatedCount';
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
@@ -54,10 +55,11 @@ class ProjectMenu extends React.PureComponent {
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
-  getReformattedData = (data, selectedFeature) => (
-    this.props.displayOrder[selectedFeature]
-      .map(name => ({ name, count: data[selectedFeature][name] || 0 }))
-  );
+  getReformattedData = (data, selectedFeature) => {
+    const counts = getKeyedAggregatedCount(data, selectedFeature);
+    return this.props.displayOrder[selectedFeature]
+      .map(name => ({ name, count: counts[name] || 0 }));
+  };
 
   getSedimentationWidth = (data) => {
     const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);

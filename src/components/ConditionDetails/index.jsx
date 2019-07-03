@@ -40,6 +40,7 @@ class ConditionDetails extends React.Component {
       });
 
       instrument.conditions.forEach((condition, itemIndex) => {
+        // TODO: This should be coming from the search instead
         const marked = this.textMatchesKeywords(condition.text);
         data.push({
           binnedValue: condition.binnedValue,
