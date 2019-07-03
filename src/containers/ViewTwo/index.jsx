@@ -67,6 +67,7 @@ class ViewTwo extends React.Component {
             wheelType={this.props.browseBy}
             selectedRay={this.props.browseBy === 'company' ? this.props.selected.company : this.props.selected.region}
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
+            selectProject={this.props.setSelectedProject}
             wheelData={this.props.wheelData}
             wheelMotionTrigger={this.props.setWheelMoving}
             relevantProjectLookup={this.props.searchResults.projectIdLookup}
