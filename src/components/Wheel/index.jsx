@@ -96,10 +96,14 @@ class Wheel extends React.Component {
     this.props.selectRay(this.props.wheelData[index].id);
   };
 
-  onChangeDot = (e) => {
+  onChangeDot = (index, e) => {
     const id = parseInt(e.target.dataset.id, 10);
 
-    if (id) { this.props.selectProject(id); }
+    if (id) {
+      this.props.selectProject(id);
+    } else {
+      this.onChangeRay(index);
+    }
   };
 
   getIndex = (currentRotation) => {
