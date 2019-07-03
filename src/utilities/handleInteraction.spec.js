@@ -30,13 +30,13 @@ describe('utilities/handleInteraction', () => {
     test('should add an onClick handler', () => {
       result.onClick(eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith('a', 'b');
+      expect(spy).toHaveBeenCalledWith('a', 'b', expect.objectContaining(eventFuncs));
     });
 
     test('should add an onKeyPress handler', () => {
       result.onKeyPress({ key: 'Enter', ...eventFuncs });
       expect(spy).toHaveBeenCalledTimes(1);
-      expect(spy).toHaveBeenCalledWith('a', 'b');
+      expect(spy).toHaveBeenCalledWith('a', 'b', expect.objectContaining(eventFuncs));
     });
 
     test('should only let onKeyPress respond to enter', () => {
