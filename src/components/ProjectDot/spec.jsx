@@ -7,6 +7,7 @@ const defaultProps = {
   cx: 16,
   cy: 16,
   r: 8,
+  id: 5,
 };
 
 describe('Components|ProjectDot', () => {
@@ -22,6 +23,10 @@ describe('Components|ProjectDot', () => {
 
     test('should have a class ProjectDot always', () => {
       expect(wrapper.hasClass('ProjectDot')).toBe(true);
+    });
+
+    test('should have its id as a data attribute', () => {
+      expect(wrapper.prop('data-id')).toBe(5);
     });
   });
 

@@ -29,12 +29,14 @@ const CompanyFlag = ({
       const dotY = columnY + (dotIndex * dotSpacing);
 
       if (dot) {
+        const id = flagLayout[columnIndex][dotIndex];
         out.push({
           cx: x + columnX,
           cy: y + dotY,
           r: dotWidth / 2,
-          filtered: filteredProjectLookup[flagLayout[columnIndex][dotIndex]],
-          relevant: relevantProjectLookup[flagLayout[columnIndex][dotIndex]],
+          filtered: filteredProjectLookup[id],
+          relevant: relevantProjectLookup[id],
+          id,
         });
       }
     });
