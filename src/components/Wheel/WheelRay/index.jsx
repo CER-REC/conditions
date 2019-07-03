@@ -69,7 +69,7 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay" {...handleInteraction(props.onChangeDot)}>
+          <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay" {...handleInteraction(props.onChangeDot, index)}>
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
             <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChangeRay, index)}>
