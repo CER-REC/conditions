@@ -32,7 +32,8 @@ describe('Components|SearchBar/HighlightSummary', () => {
     test('should not render exclude keywords if no exclude keywords', () => {
       wrapper.setProps({ excludeKeywords: [] });
       const updatedWrapper = wrapper.find('FormattedMessage');
-      expect(updatedWrapper).toHaveLength(5);
+      const lastWrapper = updatedWrapper.at(updatedWrapper.length - 1);
+      expect(lastWrapper.props().id).not.toBe('components.searchBar.highlightSummary.excludes');
     });
   });
 });
