@@ -13885,7 +13885,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </strong>
          in 
         <strong>
-          Regdocs...
+          RegDocs...
         </strong>
       </h3>
       <p
@@ -14053,7 +14053,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </strong>
          in 
         <strong>
-          Regdocs...
+          RegDocs...
         </strong>
       </h3>
       <p
@@ -14793,8 +14793,16 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       <span>
          
         1970
-         - 
+         
+      </span>
+      <span>
+        - 
+      </span>
+      <span>
         1980
+         
+      </span>
+      <span>
          
       </span>
       <p>
@@ -15952,8 +15960,16 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <span>
          
         2010
-         - 
+         
+      </span>
+      <span>
+        - 
+      </span>
+      <span>
         2018
+         
+      </span>
+      <span>
          
       </span>
       <p>
