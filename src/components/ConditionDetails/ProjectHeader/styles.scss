@@ -29,12 +29,12 @@
 
   .openProject {
     height: 90%;
-    width: 76%;
+    width: 80%;
     white-space: nowrap;
     overflow: hidden;
     text-align: left;
 
-    span:first-of-type {
+    .projectName {
       display: inline-block;
       vertical-align: top;
       white-space: nowrap;

@@ -27,17 +27,25 @@
     }
 
     &.expandable {
-        .ProjectHeader .toggleExpand {
-          opacity: 1;
-          visibility: visible;
-          transition: opacity 1s ease-in-out, visibility 0s;
+        .ProjectHeader {
+          .openProject {
+            width: 67%;
+          }
+
+          .toggleExpand {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1s ease-in-out, visibility 0s;
+          }
         }
     }
 
-    .ProjectHeader .toggleExpand {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 1s ease-in-out, visibility 0s 1s;
+    .ProjectHeader {
+      .toggleExpand {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1s ease-in-out, visibility 0s 1s;
+      }
     }
   }
 
