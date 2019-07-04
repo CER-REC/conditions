@@ -103,9 +103,11 @@ class ConditionDetails extends React.Component {
     const shouldRenderData = this.props.data.length > 0
       && instrument;
 
+    const expanded = this.props.isExpandable && this.props.expanded;
+
     return (
       <section className="ConditionDetails">
-        <div className={classNames('main', { expanded: this.props.expanded, expandable: this.props.isExpandable })}>
+        <div className={classNames('main', { expanded, expandable: this.props.isExpandable })}>
           {this.renderHeader()}
           { shouldRenderData
             ? (
@@ -117,7 +119,7 @@ class ConditionDetails extends React.Component {
             : null
           }
         </div>
-        <div className={classNames('popout', { expanded: (this.props.isExpandable && this.props.expanded) })}>
+        <div className={classNames('popout', { expanded })}>
           {shouldRenderData ? this.renderDetails(instrument, index) : null}
         </div>
       </section>
