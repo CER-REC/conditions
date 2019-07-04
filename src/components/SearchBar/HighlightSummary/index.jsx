@@ -7,7 +7,10 @@ import { yearRangeType } from '../../../proptypes';
 const HighlightSummary = props => (
   <div className="HighlightSummary">
     <FormattedMessage id="components.searchBar.highlightSummary.showingAll" />
-    <span> {props.selectedYear.start} - {props.selectedYear.end } </span>
+    <span> {props.selectedYear.start} </span>
+    <FormattedMessage id="components.searchBar.highlightSummary.middle" />
+    <span>{props.selectedYear.end } </span>
+    <FormattedMessage id="components.searchBar.highlightSummary.after" />
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.includes">
