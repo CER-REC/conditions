@@ -30,8 +30,8 @@ const instrumentFields = `
       filingEnum
       phase
       phaseEnum
-      prefix
-      prefixEnum
+      instrument: prefix
+      instrumentEnum: prefixEnum
       status
       statusEnum
       theme
