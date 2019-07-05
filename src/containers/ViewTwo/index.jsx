@@ -20,8 +20,17 @@ import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 class ViewTwo extends React.Component {
   miniMapData = null;
 
+  constructor(props) {
+    super(props);
+    if (props.selected.region) {
+      this.miniMapData = props.wheelData
+        .find(region => region.id === props.selected.region);
+    }
+  }
+
   componentDidUpdate(prevProps) {
-    if (prevProps.selected.region !== this.props.selected.region) {
+    if (prevProps.selected.region !== this.props.selected.region
+      || prevProps.wheelData !== this.props.wheelData) {
       this.miniMapData = this.props.selected.region
         ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
