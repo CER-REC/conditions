@@ -55,13 +55,13 @@ class LocationWheelMinimap extends React.Component {
 
   // Returns a Feature for the given region name
   regionData(name) {
-    return this.state.regions.find(region => region.properties.ERNAME.match(name));
+    return this.state.regions.find(region => region.properties.ERNAME === name);
   }
 
   // Returns a Feature aggregating all regions in the given province
   provinceData(province) {
     const regions = this.state.topoData.objects[topoObj].geometries
-      .filter(region => region.properties.PRNAME.match(province));
+      .filter(region => region.properties.PRNAME === province);
 
     return feature(this.state.topoData, mergeArcs(this.state.topoData, regions));
   }
@@ -69,9 +69,9 @@ class LocationWheelMinimap extends React.Component {
   render() {
     if (!this.props.region || !this.state.topoData.objects) { return null; }
     const regionData = this.regionData(this.props.region.name);
-    const province = provinces[this.props.region.province];
-    if (!province) { return null; }
+    if (!regionData) { return null; }
     const provinceData = this.provinceData(regionData.properties.PRNAME);
+    if (!provinceData) { return null; }
 
     const projection = geoPath().projection(projectFeature(provinceData));
 
