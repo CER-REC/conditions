@@ -14802,7 +14802,6 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         With Status(es):
       </span>
       <div>
-         
         <span>
           In Progress
         </span>
@@ -14818,7 +14817,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       <div
         className="keywordsText"
       >
-        safety
+        <span>
+          safety
+        </span>
       </div>
     </div>
   </div>
@@ -15975,7 +15976,6 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         With Status(es):
       </span>
       <div>
-         
         <span>
           In Progress
         </span>
@@ -15991,7 +15991,13 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <div
         className="keywordsText"
       >
-        include1, include2
+        <span>
+          include1
+        </span>
+        , 
+        <span>
+          include2
+        </span>
       </div>
       <p>
         Exclude conditions containing
@@ -16000,7 +16006,13 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <div
         className="keywordsText"
       >
-        exclude1, exclude2
+        <span>
+          exclude1
+        </span>
+        , 
+        <span>
+          exclude2
+        </span>
       </div>
     </div>
   </div>
