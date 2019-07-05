@@ -27,6 +27,9 @@ class ViewTwo extends React.Component {
       this.miniMapData = props.wheelData
         .find(region => region.id === props.selected.region);
     }
+
+    // Make sure we grab results if the user came from a shared URL with search params set up
+    this.updateSearch();
   }
 
   componentDidUpdate(prevProps) {
@@ -39,7 +42,20 @@ class ViewTwo extends React.Component {
 
     if (this.shouldSearch) {
       this.shouldSearch = false;
+      this.updateSearch();
     }
+  }
+
+  updateSearch = () => {
+    this.props.updateSearch({
+      includeKeywords: this.props.included,
+      excludeKeywords: this.props.excluded,
+      findAny: this.props.findAny,
+    }, {
+      startYear: this.props.projectYear.start,
+      endYear: this.props.projectYear.end,
+      statuses: this.props.projectStatus,
+    });
   }
 
   setIncluded = (keywords) => {
