@@ -451,7 +451,7 @@
     },
     "browseByBtn": {
       "projectsBy": "",
-      "conditionsBy": "Conditions selon",
+      "conditionsBy": "Conditions selon {icon}",
       "company": "",
       "location": "le lieu"
     },
