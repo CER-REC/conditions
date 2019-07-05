@@ -70,6 +70,7 @@ class LocationWheelMinimap extends React.Component {
     if (!this.props.region || !this.state.topoData.objects) { return null; }
     const regionData = this.regionData(this.props.region.name);
     const province = provinces[this.props.region.province];
+    if (!province) { return null; }
     const provinceData = this.provinceData(regionData.properties.PRNAME);
 
     const projection = geoPath().projection(projectFeature(provinceData));
