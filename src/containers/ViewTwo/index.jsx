@@ -20,6 +20,13 @@ import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 class ViewTwo extends React.Component {
   miniMapData = null;
 
+  constructor(props) {
+    super(props);
+
+    // Make sure we grab results if the user came from a shared URL with search params set up
+    this.updateSearch();
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.selected.region !== this.props.selected.region) {
       this.miniMapData = (this.props.browseBy === 'location' && this.props.selected.region)
@@ -29,7 +36,20 @@ class ViewTwo extends React.Component {
 
     if (this.shouldSearch) {
       this.shouldSearch = false;
+      this.updateSearch();
     }
+  }
+
+  updateSearch = () => {
+    this.props.updateSearch({
+      includeKeywords: this.props.included,
+      excludeKeywords: this.props.excluded,
+      findAny: this.props.findAny,
+    }, {
+      startYear: this.props.projectYear.start,
+      endYear: this.props.projectYear.end,
+      statuses: this.props.projectStatus,
+    });
   }
 
   setIncluded = (keywords) => {
