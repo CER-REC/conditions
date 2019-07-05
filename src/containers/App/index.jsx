@@ -20,6 +20,7 @@ import { lang, regDocURL } from '../../constants';
 import * as processQueryData from './processQueryData';
 
 import updateSelection from './updateSelection';
+import updateSearch from './updateSearch';
 
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
@@ -128,6 +129,8 @@ class App extends React.PureComponent {
         { keywordId: id },
       ),
     };
+
+    this.updateSearch = updateSearch(this, client);
   }
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
@@ -448,11 +451,6 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
-    this.processedSearchResults = this.processedSearchResults
-      || processQueryData.searchResults(this.props.searchResults);
-
-    this.processedFilter = this.processedFilter
-      || processQueryData.filteredProjects(this.props.filteredProjectIds);
 
     this.processedConditionCounts = this.processedConditionCounts
       || processQueryData.conditionCounts(this.props.allConditionsPerYear);
@@ -565,6 +563,7 @@ class App extends React.PureComponent {
             filteredProjectLookup={this.props.filteredProjects}
             displayOrder={this.props.allConfigurationData.displayOrder}
             availableCategories={categories.availableCategories}
+            updateSearch={this.updateSearch}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}
