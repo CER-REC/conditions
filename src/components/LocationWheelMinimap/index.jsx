@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 
 import { geoConicConformal, geoPath } from 'd3-geo';
 import { feature, mergeArcs } from 'topojson-client';
-import { provinces } from '../../constants';
 
 // Hardcoding for now so I can work on the component
 import topoJSON from './economic_regions_2016_latlng_simplified';
@@ -86,7 +86,9 @@ class LocationWheelMinimap extends React.Component {
             <path d={provincePath} className="province" />
           </g>
         </svg>
-        <span className="provinceName">{province}</span>
+        <FormattedMessage id={`provinces.${this.props.region.province}`}>
+          {text => <span className="provinceName">{text}</span>}
+        </FormattedMessage>
       </div>
     );
   }
