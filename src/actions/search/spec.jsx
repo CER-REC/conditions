@@ -36,4 +36,22 @@ describe('actions/search', () => {
     expect(newState).toHaveProperty('projectYear', projectYear);
     compareReduxChange(search.reducer, newState);
   });
+
+  it('should update the search results based on the action', () => {
+    const searchResults = {
+      companyIdLookup: [true, false, true],
+      conditionIdLookup: [false, false, true],
+      projectIdLookup: [false, true, false],
+    };
+    const newState = search.reducer(undefined, search.setSearchResults(searchResults));
+    expect(newState).toHaveProperty('searchResults', searchResults);
+    compareReduxChange(search.reducer, newState);
+  });
+
+  it('should update the filtered projects', () => {
+    const filteredProjects = [true, false, false];
+    const newState = search.reducer(undefined, search.setFilteredProjects(filteredProjects));
+    expect(newState).toHaveProperty('filteredProjects', filteredProjects);
+    compareReduxChange(search.reducer, newState);
+  });
 });
