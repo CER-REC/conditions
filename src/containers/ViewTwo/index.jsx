@@ -17,12 +17,6 @@ import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
-const availableCategories = [
-  'all',
-  'oversight & safety',
-  'environment',
-  'administration & filings',
-];
 class ViewTwo extends React.Component {
   miniMapData = null;
 
@@ -48,7 +42,7 @@ class ViewTwo extends React.Component {
             className={this.props.browseBy === 'location' ? 'small' : ''}
             suggestedKeywords={searchData}
             availableYearRange={this.props.projectYears}
-            availableCategories={availableCategories}
+            availableCategories={this.props.availableCategories}
             setIncluded={this.props.setIncluded}
             setExcluded={this.props.setExcluded}
             findAnyOnChange={this.props.setFindAny}
