@@ -86,7 +86,7 @@ class LocationWheelMinimap extends React.Component {
             <path d={provincePath} className="province" />
           </g>
         </svg>
-        <div>{province}</div>
+        <span className="provinceName">{province}</span>
       </div>
     );
   }
