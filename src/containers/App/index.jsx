@@ -129,6 +129,8 @@ class App extends React.PureComponent {
         { keywordId: id },
       ),
     };
+
+    this.updateSearch = updateSearch(this, client);
   }
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
