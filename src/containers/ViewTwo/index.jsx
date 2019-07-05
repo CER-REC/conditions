@@ -36,7 +36,36 @@ class ViewTwo extends React.Component {
         ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
     }
+
+    if (this.shouldSearch) {
+      this.shouldSearch = false;
+    }
   }
+
+  setIncluded = (keywords) => {
+    this.props.setIncluded(keywords);
+    this.shouldSearch = true;
+  };
+
+  setExcluded = (keywords) => {
+    this.props.setExcluded(keywords);
+    this.shouldSearch = true;
+  };
+
+  setFindAny = (value) => {
+    this.props.setFindAny(value);
+    this.shouldSearch = true;
+  };
+
+  setProjectYear = (range) => {
+    this.props.setProjectYear(range);
+    this.shouldSearch = true;
+  };
+
+  setProjectStatus = (statuses) => {
+    this.props.setProjectStatus(statuses);
+    this.shouldSearch = true;
+  };
 
   render() {
     // TODO: Evil hack. Ideally we would refactor the App's Redux connection to
@@ -53,11 +82,11 @@ class ViewTwo extends React.Component {
             suggestedKeywords={searchData}
             availableYearRange={this.props.projectYears}
             availableCategories={this.props.availableCategories}
-            setIncluded={this.props.setIncluded}
-            setExcluded={this.props.setExcluded}
-            findAnyOnChange={this.props.setFindAny}
-            updateYear={this.props.setProjectYear}
-            changeProjectStatus={this.props.setProjectStatus}
+            setIncluded={this.setIncluded}
+            setExcluded={this.setExcluded}
+            findAnyOnChange={this.setFindAny}
+            updateYear={this.setProjectYear}
+            changeProjectStatus={this.setProjectStatus}
             includeKeywords={this.props.included}
             excludeKeywords={this.props.excluded}
             projectStatus={this.props.projectStatus}
