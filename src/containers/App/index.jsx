@@ -529,11 +529,11 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
-            searchResults={this.processedSearchResults}
+            searchResults={this.props.searchResults}
             setSelectedCompany={this.updateSelection.fromCompany}
             setSelectedRegion={this.updateSelection.fromRegion}
             setSelectedProject={this.updateSelection.fromProject}
-            filteredProjectLookup={this.processedFilter}
+            filteredProjectLookup={this.props.filteredProjects}
             displayOrder={this.props.allConfigurationData.displayOrder}
           />
           <ViewThree
@@ -641,7 +641,10 @@ App.propTypes = {
   expandDetailView: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     project: PropTypes.number,
+    feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string.isRequired,
+    region: PropTypes.number,
+    instrument: PropTypes.number,
     condition: PropTypes.number,
     keywordId: PropTypes.number.isRequired,
   }).isRequired,
@@ -655,11 +658,11 @@ App.propTypes = {
   setSelectedRegion: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
-    companyIds: PropTypes.arrayOf(PropTypes.number),
-    conditionIds: PropTypes.arrayOf(PropTypes.number),
-    projectIds: PropTypes.arrayOf(PropTypes.number),
+    companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
   }).isRequired,
-  filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  filteredProjects: PropTypes.arrayOf(PropTypes.bool).isRequired,
 };
 
 export const AppUnconnected = App;
@@ -680,6 +683,8 @@ const ConnectedApp = connect(
     transitionState,
     included: search.included,
     excluded: search.excluded,
+    searchResults: search.searchResults,
+    filteredProjects: search.filteredProjects,
     detailViewExpanded,
   }),
   {
@@ -693,6 +698,8 @@ const ConnectedApp = connect(
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
+    setSearchResults: searchCreators.setSearchResults,
+    setFilteredProjects: searchCreators.setFilteredProjects,
   },
 )(App);
 
