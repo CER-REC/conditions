@@ -490,7 +490,9 @@ class App extends React.PureComponent {
         isExpandable: true,
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
-      } : {};
+      } : {
+        expanded: this.props.detailViewExpanded,
+      };
 
     return (
       <div

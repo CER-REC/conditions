@@ -1549,7 +1549,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main expanded"
+      className="main"
     >
       <div
         className="ProjectHeader"
@@ -1568,7 +1568,11 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           <h2
             title="Keystone XL"
           >
-            Keystone XL
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
             <span
               className="asterisk"
             >
@@ -2151,7 +2155,11 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             <h2
               title="Keystone XL"
             >
-              Keystone XL
+              <span
+                className="projectName"
+              >
+                Keystone XL
+              </span>
               <span
                 className="asterisk"
               >
@@ -2708,7 +2716,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main expanded"
+      className="main"
     >
       <div
         className="ProjectHeader location"
@@ -3272,7 +3280,7 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
       className="ConditionDetails"
     >
       <div
-        className="main expanded"
+        className="main"
       >
         <div
           className="ProjectHeader location"
@@ -4026,7 +4034,11 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
         <h2
           title="Keystone XL"
         >
-          Keystone XL
+          <span
+            className="projectName"
+          >
+            Keystone XL
+          </span>
           <span
             className="asterisk"
           >
@@ -4125,7 +4137,11 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
         <h2
           title="Keystone XL"
         >
-          Keystone XL
+          <span
+            className="projectName"
+          >
+            Keystone XL
+          </span>
           <span
             className="asterisk"
           >
