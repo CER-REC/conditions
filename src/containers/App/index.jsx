@@ -565,6 +565,10 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
+            projectYears={{
+              start: this.props.allConfigurationData.instrumentYearRange.min,
+              end: this.props.allConfigurationData.instrumentYearRange.max,
+            }}
             searchResults={this.processedSearchResults}
             filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}

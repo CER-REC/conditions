@@ -23,8 +23,6 @@ const availableCategories = [
   'environment',
   'administration & filings',
 ];
-const availableYearRange = { start: 1970, end: 1980 };
-
 class ViewTwo extends React.Component {
   miniMapData = null;
 
@@ -37,13 +35,19 @@ class ViewTwo extends React.Component {
   }
 
   render() {
+    // TODO: Evil hack. Ideally we would refactor the App's Redux connection to
+    // be outside the initial queries so we could update the store when they return.
+    if (!this.props.projectYear.start) {
+      this.props.setProjectYear(this.props.projectYears);
+    }
+
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
           <SearchBar
             className={this.props.browseBy === 'location' ? 'small' : ''}
             suggestedKeywords={searchData}
-            availableYearRange={availableYearRange}
+            availableYearRange={this.props.projectYears}
             availableCategories={availableCategories}
             setIncluded={this.props.setIncluded}
             setExcluded={this.props.setExcluded}

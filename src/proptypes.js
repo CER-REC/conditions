@@ -161,6 +161,10 @@ export const viewTwo = {
   setSelectedCondition: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
+  projectYears: PropTypes.shape({
+    start: PropTypes.number,
+    end: PropTypes.number,
+  }),
   searchResults: PropTypes.shape({
     companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
     conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
