@@ -14788,7 +14788,11 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing all projects from
+        Showing 
+        <span>
+          All
+        </span>
+         projects from
       </span>
       <span>
          
@@ -14798,18 +14802,6 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
          
       </span>
       <br />
-      <span>
-        With Status(es):
-      </span>
-      <div>
-        <span>
-          In Progress
-        </span>
-        , 
-        <span>
-          Completed
-        </span>
-      </div>
       <p>
         Highlighting conditions containing
          : 
@@ -15962,7 +15954,11 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing all projects from
+        Showing 
+        <span>
+          All
+        </span>
+         projects from
       </span>
       <span>
          
@@ -15972,18 +15968,6 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
          
       </span>
       <br />
-      <span>
-        With Status(es):
-      </span>
-      <div>
-        <span>
-          In Progress
-        </span>
-        , 
-        <span>
-          Completed
-        </span>
-      </div>
       <p>
         Highlighting conditions containing
          : 

@@ -308,8 +308,8 @@
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
           "IN_PROGRESS": "In Progress",
-          "COMPLETED": "Completed"
-
+          "COMPLETED": "Completed",
+          "ALL": "All"
         }
       },
       "tab": {
@@ -321,8 +321,7 @@
         "suggestedKeywords": "Suggested\nKeywords"
       },
       "highlightSummary": {
-        "showingAll": "Showing all projects from",
-        "includingStatuses": "With Status(es):",
+        "showing": "Showing {status} projects from",
         "includes": "Highlighting conditions containing",
         "excludes": "Exclude conditions containing"
       },

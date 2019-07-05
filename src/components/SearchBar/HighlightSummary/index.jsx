@@ -18,16 +18,22 @@ const formatSummaryText = (arr, mapFunc) => joinJsxArray(arr.map(mapFunc), ', ')
 
 const HighlightSummary = props => (
   <div className="HighlightSummary">
-    <FormattedMessage id="components.searchBar.highlightSummary.showingAll" />
+    <FormattedMessage
+      id="components.searchBar.highlightSummary.showing"
+      values={{
+        status: <FormattedMessage
+          id={
+            `components.searchBar.filter.projectStatus.${
+              (props.includedStatuses.length === 1)
+                ? props.includedStatuses[0]
+                : 'ALL'
+            }`
+          }
+        />,
+      }}
+    />
     <span> {props.selectedYear.start} - {props.selectedYear.end } </span>
     <br />
-    <FormattedMessage id="components.searchBar.highlightSummary.includingStatuses" />
-    <div>
-      {formatSummaryText(
-        props.includedStatuses,
-        status => <FormattedMessage key={status} id={`components.searchBar.filter.projectStatus.${status}`} />,
-      )}
-    </div>
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.includes">
