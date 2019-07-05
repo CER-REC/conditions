@@ -4,6 +4,8 @@ import { Spring, animated } from 'react-spring/renderprops';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
+import hashValuesDiffer from '../../utilities/hashValuesDiffer';
+
 import Ring from './Ring';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
@@ -82,10 +84,14 @@ class Wheel extends React.Component {
     };
   }
 
-  shouldComponentUpdate(prevProps) {
-    return prevProps.wheelType !== this.props.wheelType
-      || prevProps.selectedRay !== this.props.selectedRay
-      || prevProps.wheelData !== this.props.wheelData;
+  shouldComponentUpdate(nextProps) {
+    return hashValuesDiffer(this.props, nextProps, [
+      'wheelType',
+      'selectedRay',
+      'wheelData',
+      'relevantProjectLookup',
+      'filteredProjectLookup',
+    ]);
   }
 
   onClickSpin = () => {
