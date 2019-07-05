@@ -58,6 +58,7 @@ const props = {
     projectIdLookup: relevantProjectLookup,
   },
   filteredProjectLookup,
+  updateSearch: noop,
 };
 
 const connectedProps = {
@@ -81,6 +82,7 @@ const connectedProps = {
     projectIdLookup: relevantProjectLookup,
   },
   filteredProjectLookup,
+  updateSearch: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)

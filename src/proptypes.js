@@ -163,6 +163,7 @@ export const viewTwo = {
   }),
   filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,
+  updateSearch: PropTypes.func.isRequired,
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
