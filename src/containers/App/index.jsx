@@ -537,6 +537,9 @@ class App extends React.PureComponent {
               end: this.props.allConfigurationData.instrumentYearRange.max,
             }}
             searchResults={this.processedSearchResults}
+            setSelectedCompany={this.updateSelection.fromCompany}
+            setSelectedRegion={this.updateSelection.fromRegion}
+            setSelectedProject={this.updateSelection.fromProject}
             filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
             availableCategories={categories.availableCategories}
