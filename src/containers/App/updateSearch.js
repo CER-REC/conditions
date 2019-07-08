@@ -1,28 +1,45 @@
 import { batch } from 'react-redux';
 import searchQuery from '../../queries/search';
-import { searchResults, filteredProjects } from './processQueryData';
+import * as processQueryData from './processQueryData';
 
-const emptySearch = { data: { includeKeywords: [''] } };
+const nullSearch = { data: { findSearchResults: null } };
+const nullFilter = { data: { findFilteredProjects: null } };
+
+const shouldQuery = {
+  search: search => search.includeKeywords.length > 0,
+  filter: filter => (
+    filter.endYear - filter.startYear < 9 || filter.statuses.length < 2
+  ),
+};
 
 export default (app, client) => (searchVariables, filterVariables) => {
   Promise.all([
-    (searchVariables.includeKeywords.length)
+    (shouldQuery.search(searchVariables))
       ? client.query({
         query: searchQuery.findSearchResults,
         variables: searchVariables,
       })
-      : emptySearch,
-    client.query({
-      query: searchQuery.findFilteredProjects,
-      variables: filterVariables,
-    }),
+      : nullSearch,
+
+    (shouldQuery.filter(filterVariables))
+      ? client.query({
+        query: searchQuery.findFilteredProjects,
+        variables: filterVariables,
+      })
+      : nullFilter,
   ]).then((response) => {
+    if (response.error) { console.error(response.error); }
+
     batch(() => {
-      if (response[0]) {
-        app.props.setSearchResults(searchResults(response[0].data.findSearchResults));
+      if (response[0] && response[0].data) {
+        app.props.setSearchResults(
+          processQueryData.searchResults(response[0].data.findSearchResults),
+        );
       }
-      if (response[1]) {
-        app.props.setFilteredProjects(filteredProjects(response[1].data.findFilteredProjects));
+      if (response[1] && response[1].data) {
+        app.props.setFilteredProjects(
+          processQueryData.filteredProjects(response[1].data.findFilteredProjects),
+        );
       }
     });
   });
