@@ -111,26 +111,35 @@
     }
   }
 
-  .List-Item-Content:not(.selected){
+  .List-Item-Content:not(.selected) span{
     text-overflow: clip;
     overflow: hidden;
-  }
 
-  .oneAway {
-    color: $Gray160;
-    font-family: $fira-sans-condensed-light;
-    font-size: 13px;
-  }
+    display: inline-block;
 
-  .twoAway {
-    color: $Gray160;
-    font-family: $fira-sans-condensed-light;
-    font-size: 10px;
-  }
+    &.oneAway {
+      color: $Gray160;
+      font-family: $fira-sans-condensed-light;
+      font-size: 13px;
 
-  .threeAway {
-    color: $Gray160;
-    font-family: $fira-sans-condensed-light;
-    font-size: 8px;
+      width: 100%;
+    }
+
+    &.twoAway {
+      color: $Gray160;
+      font-family: $fira-sans-condensed-light;
+      font-size: 10px;
+
+      width: 96%;
+    }
+
+    &.threeAway {
+      color: $Gray160;
+      font-family: $fira-sans-condensed-light;
+      font-size: 8px;
+
+      width: 88%;
+    }
+
   }
 }
