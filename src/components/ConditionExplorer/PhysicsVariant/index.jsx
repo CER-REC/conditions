@@ -192,6 +192,23 @@ export default class PhysicsVariant extends React.PureComponent {
     });
   };
 
+  openGuide = () => {
+    this.guideShouldOpen = true;
+    this.guide.open(this.getCenterCoordinates())
+      .then(() => {
+        if (this.guideShouldOpen) {
+          this.props.setGuideExpanded(true);
+        }
+      })
+      .finally(() => { this.updateGuidePosition(); });
+    this.keywords.forEach((body) => {
+      body.removeCollisionMask(guideOutlineCategory);
+      if (body.category === visibleTextCategory) {
+        body.addCollisionMask(guideCategory);
+      }
+    });
+  }
+
   onGuideMouseUp = (e) => {
     if (!this.guide.outlineReady) { return; }
 
@@ -212,20 +229,7 @@ export default class PhysicsVariant extends React.PureComponent {
     } else if (this.guide.isExpanded) {
       this.closeGuide();
     } else {
-      this.guideShouldOpen = true;
-      this.guide.open(this.getCenterCoordinates())
-        .then(() => {
-          if (this.guideShouldOpen) {
-            this.props.setGuideExpanded(true);
-          }
-        })
-        .finally(() => { this.updateGuidePosition(); });
-      this.keywords.forEach((body) => {
-        body.removeCollisionMask(guideOutlineCategory);
-        if (body.category === visibleTextCategory) {
-          body.addCollisionMask(guideCategory);
-        }
-      });
+      this.openGuide();
     }
   };
 
