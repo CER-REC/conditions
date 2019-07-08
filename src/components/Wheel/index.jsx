@@ -21,6 +21,8 @@ class Wheel extends React.Component {
   static propTypes = {
     wheelType: browseByType.isRequired,
     wheelData: PropTypes.arrayOf(PropTypes.object).isRequired,
+    // Incorrectly flagged by the linter:
+    // eslint-disable-next-line react/no-unused-prop-types
     selectedRay: PropTypes.number,
     selectRay: PropTypes.func.isRequired,
     selectProject: PropTypes.func.isRequired,
