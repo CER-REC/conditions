@@ -586,7 +586,17 @@ class App extends React.PureComponent {
                   const { projectDetails, allInstruments } = data;
                   instruments = formatConditionDetails(allInstruments, selected.feature);
                   if (instruments.length > 0) {
-                    ({ instrumentNumber, documentId } = instruments[instrumentIndex]);
+                    instrumentIndex = instruments
+                      .findIndex(instrument => instrument.id === selected.instrument);
+                    if (instrumentIndex === -1) {
+                      instrumentIndex = 0;
+                    } else {
+                      ({ documentId } = instruments[instrumentIndex]);
+                    }
+
+                    itemIndex = instruments[instrumentIndex].conditions
+                      .findIndex(condition => condition.id === selected.condition);
+                    ({ instrumentNumber } = instruments[instrumentIndex]);
                   }
 
                   if (projectDetails) {
@@ -651,8 +661,11 @@ App.propTypes = {
   expandDetailView: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     company: PropTypes.number,
+    region: PropTypes.number,
     project: PropTypes.number,
+    feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string.isRequired,
+    instrument: PropTypes.number,
     condition: PropTypes.number,
     keywordId: PropTypes.number.isRequired,
   }).isRequired,
