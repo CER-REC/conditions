@@ -178,6 +178,7 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   closeGuide = () => {
+    this.guideShouldOpen = false;
     if (!this.guide.isExpanded || !this.guideClickDetection) { return; }
     this.guideClickDetection = undefined;
     this.props.setGuideExpanded(false);
@@ -211,8 +212,13 @@ export default class PhysicsVariant extends React.PureComponent {
     } else if (this.guide.isExpanded) {
       this.closeGuide();
     } else {
+      this.guideShouldOpen = true;
       this.guide.open(this.getCenterCoordinates())
-        .then(() => { this.props.setGuideExpanded(true); })
+        .then(() => {
+          if (this.guideShouldOpen) {
+            this.props.setGuideExpanded(true);
+          }
+        })
         .finally(() => { this.updateGuidePosition(); });
       this.keywords.forEach((body) => {
         body.removeCollisionMask(guideOutlineCategory);
