@@ -37,8 +37,8 @@ const initialState = {
   findAny: true,
   projectStatus: ['IN_PROGRESS', 'COMPLETED'],
   projectYear: {
-    start: 2010,
-    end: 2018,
+    start: 0,
+    end: 0,
   },
 };
 

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider, Query } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { HttpLink } from 'apollo-link-http';
@@ -23,6 +23,7 @@ import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
+import companyNameById from '../../queries/companyNameById';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -54,7 +55,7 @@ import CompanyPopup from '../../components/CompanyPopup';
 import './styles.scss';
 
 import {
-  conditionData,
+  conditionData, categories,
 } from '../../mockData';
 
 const store = createStore();
@@ -489,7 +490,9 @@ class App extends React.PureComponent {
         isExpandable: true,
         toggleExpanded: this.props.expandDetailView,
         expanded: this.props.detailViewExpanded,
-      } : {};
+      } : {
+        expanded: this.props.detailViewExpanded,
+      };
 
     return (
       <div
@@ -564,17 +567,34 @@ class App extends React.PureComponent {
             years={this.processedConditionCounts.years}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
+            projectYears={{
+              start: this.props.allConfigurationData.instrumentYearRange.min,
+              end: this.props.allConfigurationData.instrumentYearRange.max,
+            }}
             searchResults={this.processedSearchResults}
             filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
+            availableCategories={categories.availableCategories}
           />
-          <ViewThree
-            {...viewProps}
-            displayOrder={this.props.allConfigurationData.displayOrder}
-            conditionsPerYear={this.processedConditionCounts.conditionCounts}
-            prefixOrder={this.processedConditionCounts.prefixOrder}
-            years={this.processedConditionCounts.years}
-          />
+          <Query
+            skip={!this.props.selected || !this.props.selected.company}
+            query={companyNameById}
+            variables={{ id: this.props.selected.company }}
+          >
+            {({ data, loading, error }) => {
+              const companyName = (!loading && !error && data && data.getCompanyById.name) || '';
+              return (
+                <ViewThree
+                  {...viewProps}
+                  displayOrder={this.props.allConfigurationData.displayOrder}
+                  conditionsPerYear={this.processedConditionCounts.conditionCounts}
+                  prefixOrder={this.processedConditionCounts.prefixOrder}
+                  years={this.processedConditionCounts.years}
+                  companyName={companyName}
+                />
+              );
+            }}
+          </Query>
           <section className="conditions">
             <ComposedQuery
               projectDetails={selected.project
@@ -660,6 +680,7 @@ App.propTypes = {
   detailViewExpanded: PropTypes.bool.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   selected: PropTypes.shape({
+    company: PropTypes.number,
     project: PropTypes.number,
     subFeature: PropTypes.string.isRequired,
     condition: PropTypes.shape({
