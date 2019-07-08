@@ -477,5 +477,20 @@
     "view3": {
       "company":"Selected Company:"
     }
+  },
+  "provinces": {
+    "YT": "Yukon",
+    "NT": "Northwest Territories",
+    "NU": "Nunavut",
+    "NL": "Newfoundland and Labrador",
+    "PE": "Prince Edward Island",
+    "BC": "British Columbia",
+    "AB": "Alberta",
+    "SK": "Saskatchewan",
+    "MB": "Manitoba",
+    "ON": "Ontario",
+    "QC": "Québec",
+    "NB": "New Brunswick",
+    "NS": "Nova Scotia"
   }
 }
