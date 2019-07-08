@@ -147,6 +147,9 @@
   }
 
   .ViewTwo {
+    // Make sure the wheel is always in front of ConditionDetails' left margin
+    // to avoid losing pointer events
+    z-index: 1;
     opacity: 1;
 
     transition: opacity $fastestEnd;
@@ -176,6 +179,9 @@
   }
 
   .conditions {
+    // Avoid catching pointer events meant for the wheel
+    z-index: 0;
+
     .ConditionDetails {
       .ConditionList .List,
       .listPane .List-Item,
