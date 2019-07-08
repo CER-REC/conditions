@@ -171,7 +171,6 @@ class Wheel extends React.Component {
                   <AnimatedWheelList
                     wheelType={this.props.wheelType}
                     listContent={this.props.wheelData}
-                    textClippingRadius="60"
                     onChange={this.onChange}
                     selected={currentIndex}
                   />
