@@ -10,3 +10,4 @@ export { default as projectsData } from './projectsData';
 export { default as loadingProjectsData } from './loadingProjectsData';
 export { default as displayOrder } from './displayOrder';
 export { default as processedProjects } from './processedProjects';
+export { default as categories } from './categories';

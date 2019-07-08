@@ -16,8 +16,8 @@ import locationData from '../../mockData/locationData';
 
 const noop = () => {};
 const year = {
-  start: 1970,
-  end: 1980,
+  start: 2010,
+  end: 2019,
 };
 
 const regionCompanyData = {
@@ -40,7 +40,8 @@ const props = {
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },
-  years: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+  years: Array(year.end - year.start + 1).fill(year.start).map((i, index) => i + index),
+  projectYears: year,
   conditionDetails: {
     selectedProject: 'Project Name',
     data: conditionData,
@@ -64,7 +65,7 @@ const connectedProps = {
   availableProjectYear: { year },
   availableCategories: { categories },
   suggestedKeywords: { searchData },
-  years: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+  years: Array(year.end - year.start + 1).fill(year.start).map((i, index) => i + index),
   conditionDetails: {
     selectedProject: 'Project Name',
     data: conditionData,
