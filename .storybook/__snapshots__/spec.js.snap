@@ -4520,6 +4520,7 @@ exports[`Storyshots Components|DotLegend default 1`] = `
         className="ProjectDot"
         cx={5}
         cy={5}
+        data-id={0}
         r={3}
         stroke="transparent"
         strokeWidth={3}
