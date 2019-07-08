@@ -42,9 +42,10 @@ export default class Guide extends Body {
 
   close() {
     const { x, y } = this.locationBeforeExpand;
+    const closeTime = Date.now() - this.targetScale.start.timestamp;
     return Promise.all([
-      this.moveTo(x, y, 2500),
-      this.scaleTo(1, 2500),
+      this.moveTo(x, y, closeTime),
+      this.scaleTo(1, closeTime),
     ]);
   }
 

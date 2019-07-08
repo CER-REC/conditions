@@ -178,18 +178,19 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   closeGuide = () => {
+    if (!this.guide.isExpanded || !this.guideClickDetection || !this.guideShouldOpen) { return; }
     this.guideShouldOpen = false;
-    if (!this.guide.isExpanded || !this.guideClickDetection) { return; }
     this.guideClickDetection = undefined;
     this.props.setGuideExpanded(false);
-    this.guide.close().finally(() => {
-      this.updateGuidePosition();
-      this.keywords.forEach((body) => {
-        if (body.category === resettingCategory) { return; }
-        body.addCollisionMask(guideOutlineCategory);
-        body.removeCollisionMask(guideCategory);
+    this.guide.close()
+      .finally(() => {
+        this.updateGuidePosition();
+        this.keywords.forEach((body) => {
+          if (body.category === resettingCategory) { return; }
+          body.addCollisionMask(guideOutlineCategory);
+          body.removeCollisionMask(guideCategory);
+        });
       });
-    });
   };
 
   openGuide = () => {
