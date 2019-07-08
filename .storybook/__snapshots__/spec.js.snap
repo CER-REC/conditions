@@ -16661,7 +16661,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         </ul>
       </div>
       <div
-        className="close"
+        className="closeSearchKeywordPopout"
       >
         <button
           className="upperCase"
