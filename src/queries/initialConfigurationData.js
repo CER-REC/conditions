@@ -15,6 +15,7 @@ export default gql`
         min
       }
       lastUpdated
+      keywordCategories
     }
   }
 `;
