@@ -94,6 +94,8 @@ const BarContainer = (props) => {
       {...spreadProps}
       className={classNames('BarContainer', props.className)}
     >
+      {/* Catch pointer events since most browsers won't have pointer-events: bounding-box */}
+      <rect x={0} y={0} width={props.width} height={props.height} fill="transparent" />
       {bars}
     </Container>
   );

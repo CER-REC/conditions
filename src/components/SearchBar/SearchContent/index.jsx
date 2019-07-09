@@ -81,9 +81,17 @@ class SearchContent extends React.PureComponent {
     this.setState({ inputInclude: '' });
   }
 
+  addIncludeWordOnEnter = (e) => {
+    if (e.key === 'Enter') { this.addIncludeWord(); }
+  }
+
   addExcludeWord = () => {
     this.addWord(this.state.inputExclude, 'exclude');
     this.setState({ inputExclude: '' });
+  }
+
+  addExcludeWordOnEnter = (e) => {
+    if (e.key === 'Enter') { this.addExcludeWord(); }
   }
 
   excludeSearchTextAndWords = () => (
@@ -104,6 +112,7 @@ class SearchContent extends React.PureComponent {
         <input
           value={this.state.inputExclude}
           onChange={this.updateInputExclude}
+          onKeyDown={this.addExcludeWordOnEnter}
           onFocus={() => this.props.changeIsExclude(true)}
           className="searchBar"
         />
@@ -197,6 +206,7 @@ class SearchContent extends React.PureComponent {
         <input
           value={this.state.inputInclude}
           onChange={this.updateInputInclude}
+          onKeyDown={this.addIncludeWordOnEnter}
           className="searchBar"
           onFocus={() => this.props.changeIsExclude(false)}
         />

@@ -75,21 +75,7 @@ export const features = {
   },
 };
 
-export const provinces = {
-  YT: 'Yukon',
-  NT: 'Northwest Territories',
-  NU: 'Nunavut',
-  NL: 'Newfoundland and Labrador',
-  PE: 'Prince Edward Island',
-  BC: 'British Columbia',
-  AB: 'Alberta',
-  SK: 'Saskatchewan',
-  MB: 'Manitoba',
-  ON: 'Ontario',
-  QC: 'Québec',
-  NB: 'New Brunswick',
-  NS: 'Nova Scotia',
-};
+export const noRegionColor = 'rgb(153,153,153)';
 
 export const regDocURL = 'https://apps.neb-one.gc.ca/REGDOCS/File/Download/';
 

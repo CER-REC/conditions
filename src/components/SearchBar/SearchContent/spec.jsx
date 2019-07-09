@@ -226,6 +226,14 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(spyInclude).toHaveBeenCalledTimes(1);
     });
 
+    test('onEnter on includeTextbox will call its include prop', () => {
+      const inputDiv = wrapper.find('.input').first();
+      const input = inputDiv.find('input');
+      input.simulate('change', { target: { value: 'test124' } });
+      input.simulate('keyDown', { ...eventFuncs, key: 'Enter' });
+      expect(spyInclude).toBeCalledTimes(1);
+    });
+
     test('onClick on excludeTextbox will call its exclude prop', () => {
       const inputDiv = wrapper.find('.input').last();
       const input = inputDiv.find('input');
@@ -233,6 +241,14 @@ describe('Components|SearchBar/SearchContent', () => {
       const addButton = inputDiv.find('.addInput');
       addButton.simulate('click', eventFuncs);
       expect(spyExclude).toHaveBeenCalledTimes(1);
+    });
+
+    test('onEnter on excludeTextbox will call its exclude prop', () => {
+      const inputDiv = wrapper.find('.input').last();
+      const input = inputDiv.find('input');
+      input.simulate('change', { target: { value: 'exclude123' } });
+      input.simulate('keyDown', { ...eventFuncs, key: 'Enter' });
+      expect(spyExclude).toBeCalledTimes(1);
     });
 
     test('without any word length it will not call the prop', () => {
@@ -244,12 +260,28 @@ describe('Components|SearchBar/SearchContent', () => {
       expect(spyInclude).toHaveBeenCalledTimes(0);
     });
 
+    test('without any word length will not call the prop on Enter', () => {
+      const inputDiv = wrapper.find('.input').first();
+      const input = inputDiv.find('input');
+      input.simulate('change', { target: { value: '' } });
+      input.simulate('keyDown', { ...eventFuncs, key: 'Enter' });
+      expect(spyInclude).toHaveBeenCalledTimes(0);
+    });
+
     test('will not call prop if it is the same word', () => {
       const inputDiv = wrapper.find('.input').first();
       const input = inputDiv.find('input');
       input.simulate('change', { target: { value: 'department of' } });
       const addButton = inputDiv.find('.addInput');
       addButton.simulate('click', eventFuncs);
+      expect(spyInclude).toHaveBeenCalledTimes(0);
+    });
+
+    test('will not call prop on Enter if it is the same word', () => {
+      const inputDiv = wrapper.find('.input').first();
+      const input = inputDiv.find('input');
+      input.simulate('change', { target: { value: 'department of' } });
+      input.simulate('keyDown', { ...eventFuncs, key: 'Enter' });
       expect(spyInclude).toHaveBeenCalledTimes(0);
     });
   });

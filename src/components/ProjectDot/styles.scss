@@ -2,7 +2,7 @@
 
 .ProjectDot{
   fill: $Gray160;
-  opacity: 1;
+
   &.relevant {
     fill: $SearchKeyword;
   }
@@ -12,5 +12,5 @@
       fill:$FilteredSearchKeyword;
     }
   }
-  
+
 }

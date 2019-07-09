@@ -17,19 +17,20 @@ import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 
-const availableCategories = [
-  'all',
-  'oversight & safety',
-  'environment',
-  'administration & filings',
-];
-const availableYearRange = { start: 1970, end: 1980 };
-
 class ViewTwo extends React.Component {
   miniMapData = null;
 
+  constructor(props) {
+    super(props);
+    if (props.selected.region) {
+      this.miniMapData = props.wheelData
+        .find(region => region.id === props.selected.region);
+    }
+  }
+
   componentDidUpdate(prevProps) {
-    if (prevProps.selected.region !== this.props.selected.region) {
+    if (prevProps.selected.region !== this.props.selected.region
+      || prevProps.wheelData !== this.props.wheelData) {
       this.miniMapData = this.props.selected.region
         ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
@@ -37,14 +38,20 @@ class ViewTwo extends React.Component {
   }
 
   render() {
+    // TODO: Evil hack. Ideally we would refactor the App's Redux connection to
+    // be outside the initial queries so we could update the store when they return.
+    if (!this.props.projectYear.start) {
+      this.props.setProjectYear(this.props.projectYears);
+    }
+
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
           <SearchBar
             className={this.props.browseBy === 'location' ? 'small' : ''}
             suggestedKeywords={searchData}
-            availableYearRange={availableYearRange}
-            availableCategories={availableCategories}
+            availableYearRange={this.props.projectYears}
+            availableCategories={this.props.availableCategories}
             setIncluded={this.props.setIncluded}
             setExcluded={this.props.setExcluded}
             findAnyOnChange={this.props.setFindAny}
