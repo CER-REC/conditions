@@ -64,7 +64,7 @@ class StreamGraph extends React.Component {
     const emptyYears = this.getYearTicks().map(x => ({ x, y: 0 }));
     return this.props.displayOrder[this.props.feature]
       .map((name, i) => {
-        const areaData = (subFeature && name !== subFeature) ? emptyYears: data[name];
+        const areaData = (subFeature && name !== subFeature) ? emptyYears : data[name];
         return (
           <VictoryArea
             key={name}

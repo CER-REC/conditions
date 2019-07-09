@@ -50,4 +50,8 @@ LocationRay.propTypes = {
   selectedFeature: featureTypes.isRequired,
 };
 
+LocationRay.defaultProps = {
+  items: null,
+};
+
 export default LocationRay;

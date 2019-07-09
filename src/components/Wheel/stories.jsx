@@ -4,7 +4,6 @@ import withInteraction, { getInteractionProps } from 'storybook-addon-interactio
 import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import Wheel from '.';
-import { features } from '../../constants';
 import ReadMe from './README.md';
 import {
   companyWheelData as companyData,
