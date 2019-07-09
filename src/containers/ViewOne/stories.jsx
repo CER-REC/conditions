@@ -1,9 +1,8 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import withGQL from '../../../.storybook/addon-graphql';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import { ViewOneUnconnected, ViewOneGraphQL } from '.';
+import { ViewOneUnconnected } from '.';
 
 import keywords from '../../components/ConditionExplorer/mockKeywords';
 
@@ -28,23 +27,16 @@ storiesForView('Containers|ViewOne', module, ReadMe)
   )
   .add('default', () => (
     <ViewOneUnconnected
-      keywords={uniqueKeywords}
+      allKeywords={uniqueKeywords}
       jumpToAbout={noop}
       beginTutorial={noop}
       {...getInteractionProps()}
     />
   ))
-  .add('connected variant', () => (
-    <ViewOneGraphQL
-      jumpToAbout={noop}
-      beginTutorial={noop}
-      {...getInteractionProps()}
-    />
-  ), { decorators: [withGQL] })
   .add('layout only', () => (
     <ViewOneUnconnected
       layoutOnly
-      keywords={uniqueKeywords}
+      allKeywords={uniqueKeywords}
       jumpToAbout={noop}
       beginTutorial={noop}
       {...getInteractionProps()}

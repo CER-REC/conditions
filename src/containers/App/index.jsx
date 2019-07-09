@@ -23,6 +23,7 @@ import getConditionAncestors from '../../queries/getConditionAncestors';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
+import allKeywordsQuery from '../../queries/allKeywords';
 import companyNameById from '../../queries/companyNameById';
 
 import * as browseByCreators from '../../actions/browseBy';
@@ -528,6 +529,7 @@ class App extends React.PureComponent {
             </span>
           </div>
           <ViewOne
+            allKeywords={this.props.allKeywords}
             jumpToAbout={this.jumpToAbout}
             setSelectedKeyword={this.setSelectedKeyword}
             beginTutorial={this.beginTutorial}
@@ -692,6 +694,11 @@ App.propTypes = {
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
   allConfigurationData: allConfigurationDataType.isRequired,
+  allKeywords: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    category: PropTypes.string,
+    conditionCount: PropTypes.number,
+  })).isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedCondition: PropTypes.func.isRequired,
   setSelectedProject: PropTypes.func.isRequired,
@@ -745,10 +752,12 @@ export default props => (
           <ComposedQuery
             config={{ query: initialConfigurationDataQuery }}
             conditionsPerYear={{ query: conditionsPerYearQuery }}
+            allKeywords={{ query: allKeywordsQuery }}
           >
             {({ data, loading, errors }) => {
               const configData = data.config;
               const conditionsData = data.conditionsPerYear;
+              const { allKeywords } = data;
               // TODO: Error handling for these queries
               if (loading || errors) { return null; }
 
@@ -756,6 +765,7 @@ export default props => (
                 <ConnectedApp
                   allConditionsPerYear={conditionsData}
                   allConfigurationData={configData}
+                  allKeywords={allKeywords}
                   {...props}
                 />
               );
