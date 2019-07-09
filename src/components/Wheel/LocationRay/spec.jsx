@@ -24,6 +24,7 @@ describe('Components|Wheel/LocationRay', () => {
   describe('with default props', () => {
     const wrapper = shallow(
       <LocationRay
+        regionId={1}
         items={randomLocationBars}
         height={degreesPerItem * 2}
         width="163"

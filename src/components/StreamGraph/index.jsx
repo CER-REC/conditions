@@ -16,6 +16,7 @@ import {
 } from '../../proptypes';
 import getFeatureColor from '../../utilities/getFeatureColor';
 import getStreamGraphData from '../../utilities/getStreamGraphData';
+import { features } from '../../constants';
 
 import './styles.scss';
 
@@ -62,9 +63,12 @@ class StreamGraph extends React.Component {
     const { subFeature } = this.props;
     const data = this.getStreamData();
     const emptyYears = this.getYearTicks().map(x => ({ x, y: 0 }));
-    return this.props.displayOrder[this.props.feature]
-      .map((name, i) => {
-        const areaData = (subFeature && name !== subFeature) ? emptyYears : data[name];
+    return Object.keys(features).map((feature) => {
+        return this.props.displayOrder[feature].map((name, i) => {
+        let areaData = emptyYears;
+        if (feature === this.props.feature && (!subFeature || name === subFeature)) {
+          areaData = data[name];
+        }
         return (
           <VictoryArea
             key={name}
@@ -79,7 +83,9 @@ class StreamGraph extends React.Component {
             interpolation="catmullRom"
           />
         );
-      });
+        })
+      })
+      .flat();
   }
 
   updateControlYearState = (controlYearArray) => {
