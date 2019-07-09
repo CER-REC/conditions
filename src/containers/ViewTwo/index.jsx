@@ -45,6 +45,13 @@ class ViewTwo extends React.Component {
       this.props.setProjectYear(this.props.projectYears);
     }
 
+    const countData = this.props.projectsData.reduce((acc, project) => {
+      acc.instruments += project.instruments.length;
+      acc.conditions += project.numberOfConditions;
+
+      return acc;
+    }, { projects: this.props.projectsData.length, instruments: 0, conditions: 0 });
+
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
@@ -82,7 +89,13 @@ class ViewTwo extends React.Component {
             relevantProjectLookup={this.props.searchResults.projectIdLookup}
             filteredProjectLookup={this.props.filteredProjectLookup}
           />
-          <GreyPipe mode={this.props.browseBy} />
+          <GreyPipe
+            mode={this.props.browseBy}
+            countData={(this.props.browseBy === 'company')
+              ? countData
+              : null
+            }
+          />
           {(this.props.browseBy === 'company')
             ? <DotLegend />
             : null

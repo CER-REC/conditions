@@ -8,6 +8,9 @@ export const projectMenuQuery = gql`
       status
       shortName
       name
+      instruments {
+        id
+      }
       aggregatedCount: aggregatedCountArray {
         filing
         filingEnum

@@ -5970,6 +5970,32 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|GreyPipe/CountBubble default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="GreyPipe"
+  >
+    <div
+      className="CountBubble"
+    >
+      <span
+        className="count"
+      >
+        42
+      </span>
+      <span
+        className="text"
+      >
+         
+        projects
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|Guide default 1`] = `
 <div
   className="visualization"
