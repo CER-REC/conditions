@@ -4,10 +4,11 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import SmallMultiplesLegend from '.';
 import ReadMe from './README.md';
-import { conditionCountsByYear } from '../../mockData';
+import { conditionCountsByYear, displayOrder } from '../../mockData';
 
 const props = {
-  data: conditionCountsByYear.counts,
+  allConditionsPerYear: conditionCountsByYear,
+  displayOrder,
   feature: 'theme',
   selected: '',
 };

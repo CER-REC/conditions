@@ -128,9 +128,8 @@ class ViewTwo extends React.Component {
           <TrendButton
             onClick={this.props.jumpToView3}
             feature={this.props.selected.feature}
-            subFeature=""
-            years={this.props.years}
-            countsData={this.props.conditionsPerYear}
+            allConditionsPerYear={this.props.allConditionsPerYear}
+            displayOrder={this.props.displayOrder}
           />
         </section>
 

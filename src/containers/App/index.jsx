@@ -564,8 +564,7 @@ class App extends React.PureComponent {
             {...viewProps}
             setWheelMoving={this.setWheelMoving}
             wheelMoving={this.state.wheelMoving}
-            conditionsPerYear={this.processedConditionCounts.conditionCounts}
-            years={this.processedConditionCounts.years}
+            allConditionsPerYear={this.props.allConditionsPerYear}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
             projectYears={{
@@ -590,7 +589,7 @@ class App extends React.PureComponent {
                 <ViewThree
                   {...viewProps}
                   displayOrder={this.props.allConfigurationData.displayOrder}
-                  conditionsPerYear={this.processedConditionCounts.conditionCounts}
+                  allConditionsPerYear={this.props.allConditionsPerYear /* this.processedConditionCounts.conditionCounts */}
                   years={this.processedConditionCounts.years}
                   companyName={companyName}
                 />

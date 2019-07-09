@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
 import './styles.scss';
-import { conditionsPerYear } from '../../../proptypes';
 
 const LegendItem = (props) => {
   let caption;
@@ -33,7 +32,7 @@ const LegendItem = (props) => {
         preserveAspectRatio="none"
       >
         <VictoryArea
-          data={Object.entries(props.data.years).map(([x, y]) => ({ x, y }))}
+          data={props.data}
           maxDomain={{ y: props.max }}
           style={{ data: { fill: props.color } }}
           interpolation="natural"
@@ -67,7 +66,10 @@ LegendItem.propTypes = {
   /** The feature of which to look up the translations */
   feature: PropTypes.string.isRequired,
   /** The data to render the stream graph */
-  data: conditionsPerYear,
+  data: PropTypes.arrayOf(PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+  })),
   /** What color to use for the graph (CSS) */
   color: PropTypes.string.isRequired,
   /** The y-axis height to set the graph */

@@ -4,13 +4,6 @@ import { features } from './constants';
 
 export const featureTypes = PropTypes.oneOf(Object.keys(features));
 
-export const conditionsPerYear = PropTypes.shape({
-  feature: featureTypes.isRequired,
-  subFeature: PropTypes.string.isRequired,
-  rank: PropTypes.number, // Used for instrument ordering
-  years: PropTypes.objectOf(PropTypes.number).isRequired,
-});
-
 const aggregatedFeatureEntry = PropTypes.arrayOf(PropTypes.shape({
   name: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
@@ -39,7 +32,16 @@ export const project = PropTypes.shape({
   aggregatedCount: aggregatedFeatureData.isRequired,
 });
 
-export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
+export const conditionsPerYear = PropTypes.shape({
+  year: PropTypes.number.isRequired,
+  aggregatedCount: aggregatedFeatureData.isRequired,
+});
+
+export const allConditionsPerYearType = PropTypes.shape({
+  minYear: PropTypes.number.isRequired,
+  maxYear: PropTypes.number.isRequired,
+  years: PropTypes.arrayOf(conditionsPerYear).isRequired,
+});
 
 export const displayOrder = PropTypes.shape({
   filing: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -156,6 +158,7 @@ export const viewTwo = {
   filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,
   availableCategories: PropTypes.arrayOf(PropTypes.string),
+  allConditionsPerYear: allConditionsPerYearType.isRequired,
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],

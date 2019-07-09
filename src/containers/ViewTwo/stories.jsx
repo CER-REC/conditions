@@ -52,7 +52,7 @@ const props = {
   jumpToView3: noop,
   regionCompanyData,
   openProjectDetails: noop,
-  conditionsPerYear: conditionCountsByYear.counts,
+  allConditionsPerYear: conditionCountsByYear,
   wheelMotiontrigger: noop,
   searchResults: {
     companyIdLookup: [],
@@ -76,7 +76,7 @@ const connectedProps = {
   jumpToView3: noop,
   jumpToView1: noop,
   regionCompanyData,
-  conditionsPerYear: conditionCountsByYear.counts,
+  allConditionsPerYear: conditionCountsByYear.counts,
   wheelMotiontrigger: noop,
   searchResults: {
     companyIdLookup: [],
