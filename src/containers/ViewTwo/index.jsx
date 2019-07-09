@@ -91,9 +91,12 @@ class ViewTwo extends React.Component {
           />
           <GreyPipe
             mode={this.props.browseBy}
-            countData={(this.props.browseBy === 'company')
+            countData={(
+              this.props.browseBy === 'company'
+              && !(this.props.wheelMoving || this.props.projectMenuLoading)
+            )
               ? countData
-              : null
+              : undefined
             }
           />
           {(this.props.browseBy === 'company')

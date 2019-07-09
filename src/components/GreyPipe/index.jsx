@@ -17,7 +17,7 @@ const GreyPipe = ({ mode, countData }) => (
     }
     <div className="top" />
     <div className="vertical">
-      {(mode === 'company')
+      {(mode === 'company' && countData)
         ? (
           <React.Fragment>
             <CountBubble count={countData.conditions} textId="conditions" />
@@ -43,10 +43,6 @@ GreyPipe.propTypes = {
 };
 
 GreyPipe.defaultProps = {
-  countData: {
-    conditions: 0,
-    instruments: 0,
-    projects: 0,
-  },
+  countData: null,
 };
 export default GreyPipe;
