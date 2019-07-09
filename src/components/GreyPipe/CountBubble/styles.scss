@@ -1,0 +1,31 @@
+@import '../../../styles/colors';
+
+$bubbleSize: 36px;
+
+.CountBubble {
+  position: relative;
+
+  width: $bubbleSize;
+  height: $bubbleSize;
+
+  border-radius: 50%;
+
+  color: $Gray160;
+  background-color: $LightGray;
+
+  line-height: $bubbleSize;
+  vertical-align: middle;
+
+  text-align: center;
+
+  .count {
+    font-size: 20px;
+  }
+
+  .text {
+    position: absolute;
+    left: 100%;
+
+    font-size: 14px;
+  }
+}

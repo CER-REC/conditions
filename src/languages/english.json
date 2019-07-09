@@ -282,6 +282,13 @@
     "featureMenu": {
       "dropDownTitle": "Feature"
     },
+    "greyPipe": {
+      "countBubble": {
+        "instruments": "instruments",
+        "projects": "projects",
+        "conditions": "conditions"
+      }
+    },
     "guide": {
       "loading": "Loading...",
       "tutorial": {

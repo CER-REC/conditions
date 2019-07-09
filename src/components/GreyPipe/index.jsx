@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.scss';
 
+import CountBubble from './CountBubble';
+
 const GreyPipe = ({ mode }) => (
   <div className={classNames('GreyPipe', mode)}>
     {mode === 'location'
@@ -14,7 +16,18 @@ const GreyPipe = ({ mode }) => (
       )
     }
     <div className="top" />
-    <div className="vertical" />
+    <div className="vertical">
+      {(mode === 'company')
+        ? (
+          <React.Fragment>
+            <CountBubble count={10} textId="conditions" />
+            <CountBubble count={10} textId="instruments" />
+            <CountBubble count={10} textId="projects" />
+          </React.Fragment>
+        )
+        : null
+      }
+    </div>
     <div className="bottom" />
     {mode === 'location' ? <div className="bottomConnection" /> : null}
   </div>
