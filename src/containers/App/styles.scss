@@ -15,16 +15,16 @@
   position: relative;
   overflow: hidden;
 
-  .fixedContainer{
+  .fixedContainer {
     @include grid((
       guideWrapper: (x: 0, y: 0, w: 120, h: 84),
       ViewOne: (x: 0, y: 0, w: 120, h: 84),
       ViewTwo: (x: 0, y: 0, w: 120, h: 84),
       ViewThree: (x: 0, y: 0, w: 120, h: 84),
       conditions: (x: 39, y:53, w: 79, h:29),
-  ))
+    ))
   }
-  .DateUpdated{
+  .DateUpdated {
     position: absolute;
     bottom: 0;
     left: 5px;

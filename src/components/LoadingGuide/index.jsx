@@ -1,5 +1,6 @@
 import React from 'react';
 import Guide from '../Guide';
+import './styles.scss';
 
 const noop = () => {};
 
@@ -21,7 +22,11 @@ class LoadingGuide extends React.PureComponent {
 
   render() {
     const guideStep = (this.state.step % 7) + 1;
-    return <Guide className="LoadingGuide" loading step={guideStep} onClick={noop} />;
+    return (
+      <div className="LoadingGuide">
+        <Guide loading step={guideStep} onClick={noop} />
+      </div>
+    );
   }
 }
 

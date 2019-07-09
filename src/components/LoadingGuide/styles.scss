@@ -1,0 +1,12 @@
+.LoadingGuide {
+  position: relative;
+  min-height: 200px;
+  // Try to fill the screen. 518px=Header+Footer
+  height: calc(100vh - 518px);
+
+  .Guide {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
