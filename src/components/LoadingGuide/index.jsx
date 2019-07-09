@@ -6,7 +6,6 @@ const noop = () => {};
 class LoadingGuide extends React.PureComponent {
   constructor() {
     super();
-
     this.state = { step: 0 };
   }
 
@@ -14,20 +13,14 @@ class LoadingGuide extends React.PureComponent {
 
   componentDidUpdate() { this.setTimeout(); }
 
-  componentWillUnmount() {
-    if (this.timeout) { clearTimeout(this.timeout); }
-  }
+  componentWillUnmount() { clearTimeout(this.timeout); }
 
   setTimeout = () => { this.timeout = setTimeout(this.incrementStep, 500); }
 
-  incrementStep = () => {
-    this.setState(prevState => ({ step: prevState.step + 1 }));
-  };
+  incrementStep = () => this.setState(({ step }) => ({ step: (step + 1) % 7 }));
 
   render() {
     const guideStep = (this.state.step % 7) + 1;
-    this.timeout = setTimeout(this.incrementStep, 500);
-
     return <Guide className="LoadingGuide" loading step={guideStep} onClick={noop} />;
   }
 }
