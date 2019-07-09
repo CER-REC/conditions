@@ -282,6 +282,7 @@
       "dropDownTitle": "Feature"
     },
     "guide": {
+      "loading": "Loading...",
       "tutorial": {
         "0": "Click to continue",
         "1": "Click to continue",
@@ -321,6 +322,7 @@
       },
       "highlightSummary": {
         "showingAll": "Showing all projects from",
+        "includingStatuses": "With Status(es):",
         "includes": "Highlighting conditions containing",
         "excludes": "Exclude conditions containing"
       },

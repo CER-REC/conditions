@@ -6407,6 +6407,11 @@ exports[`Storyshots Components|Guide default 1`] = `
         <span
           className="hidden"
         >
+          Loading...
+        </span>
+        <span
+          className="hidden"
+        >
           Click to continue
         </span>
         <span
@@ -7705,6 +7710,239 @@ exports[`Storyshots Components|List selected 1`] = `
       </li>
     </ul>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components|LoadingGuide default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+  >
+    <div
+      className="Guide LoadingGuide"
+      style={
+        Object {
+          "height": 156,
+          "width": 156,
+        }
+      }
+    >
+      <svg
+        className="wedgeContainer"
+        viewBox="-78 -78 156 156"
+      >
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(0)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(60)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(120)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(180)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(240)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(300)
+            translate(1, -2)
+          "
+          />
+        </g>
+      </svg>
+      <div
+        className="CircleContainer"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        style={
+          Object {
+            "height": 128,
+            "width": 128,
+          }
+        }
+        tabIndex={0}
+      >
+        <div>
+          <span
+            className=""
+          >
+            Loading...
+          </span>
+          <span
+            className="hidden"
+          >
+            Click to continue
+          </span>
+          <span
+            className="hidden"
+          >
+            Click to continue
+          </span>
+          <span
+            className="hidden"
+          >
+            Here is the full legal text of the condition you selected
+          </span>
+          <span
+            className="hidden"
+          >
+            Conditions are characterized by features, such as theme
+          </span>
+          <span
+            className="hidden"
+          >
+            Scroll to browse other conditions in this project
+          </span>
+          <span
+            className="hidden"
+          >
+            Scroll to browse other projects by this company
+          </span>
+          <span
+            className="hidden"
+          >
+            Spin wheel to browse companies
+          </span>
+          <span
+            className="hidden"
+          >
+            Look around to discover more!
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {
+      height: 200px;
+      width: 200px;
+      position: relative;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      margin-top: 50px;
+    }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -15226,6 +15464,20 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         1980
          
       </span>
+      <br />
+      <span>
+        With Status(es):
+      </span>
+      <div>
+         
+        <span>
+          In Progress
+        </span>
+        , 
+        <span>
+          Completed
+        </span>
+      </div>
       <p>
         Highlighting conditions containing
          : 
@@ -16385,6 +16637,20 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         2018
          
       </span>
+      <br />
+      <span>
+        With Status(es):
+      </span>
+      <div>
+         
+        <span>
+          In Progress
+        </span>
+        , 
+        <span>
+          Completed
+        </span>
+      </div>
       <p>
         Highlighting conditions containing
          : 

@@ -56,7 +56,7 @@ class WheelRay extends React.Component {
     } = props;
     const width = '19%';
     const halfReservedDegrees = reservedDegrees / 2;
-    let legendTracker = '';
+    let legendTracker = null;
 
     const rays = items.map((item, index) => {
       let position = rotation;
@@ -66,6 +66,7 @@ class WheelRay extends React.Component {
       } else if (plotIndex > 0) {
         position -= halfReservedDegrees + (plotIndex * degreesPerItem);
       }
+
       const transform = `rotate(${(position % 360).toFixed(2)})`;
 
       const componentToReturn = wheelType === 'company'
@@ -96,6 +97,7 @@ class WheelRay extends React.Component {
         : (
           <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChange, index)}>
             <LocationRay
+              regionId={item.id}
               items={item.aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
@@ -106,12 +108,22 @@ class WheelRay extends React.Component {
             />
             { item.province !== legendTracker
               ? (
-                <text className="textLabels" transform="translate(28.75) rotate(90)" textAnchor="middle" {...handleInteraction(props.onChange, index)}>
-                  {item.province}
-                  <title>
-                    {item.province}
-                  </title>
-                </text>
+                <React.Fragment>
+                  <line
+                    className="regionDivider"
+                    transform="translate(28.75) rotate(90)"
+                    x1="0"
+                    y1="0.6"
+                    x2="0"
+                    y2="-2"
+                  />
+                  <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChange, index)}>
+                    &nbsp;{item.province}
+                    <title>
+                      {item.province}
+                    </title>
+                  </text>
+                </React.Fragment>
               ) : null }
           </g>
         );
