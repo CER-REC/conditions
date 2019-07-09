@@ -283,6 +283,7 @@
       "dropDownTitle": "Feature"
     },
     "guide": {
+      "loading": "Loading...",
       "tutorial": {
         "0": "Click to continue",
         "1": "Click to continue",
@@ -322,6 +323,7 @@
       },
       "highlightSummary": {
         "showingAll": "Showing all projects from",
+        "includingStatuses": "With Status(es):",
         "includes": "Highlighting conditions containing",
         "excludes": "Exclude conditions containing"
       },
@@ -477,5 +479,20 @@
     "view3": {
       "company":"Selected Company:"
     }
+  },
+  "provinces": {
+    "YT": "Yukon",
+    "NT": "Northwest Territories",
+    "NU": "Nunavut",
+    "NL": "Newfoundland and Labrador",
+    "PE": "Prince Edward Island",
+    "BC": "British Columbia",
+    "AB": "Alberta",
+    "SK": "Saskatchewan",
+    "MB": "Manitoba",
+    "ON": "Ontario",
+    "QC": "Québec",
+    "NB": "New Brunswick",
+    "NS": "Nova Scotia"
   }
 }

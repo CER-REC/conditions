@@ -121,6 +121,7 @@ class SearchBar extends React.PureComponent {
             includeKeywords={includeKeywords}
             excludeKeywords={excludeKeywords}
             selectedYear={yearRange}
+            includedStatuses={projectStatus}
           />
         );
     }

@@ -16,6 +16,7 @@ import { searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
+import DotLegend from '../../components/DotLegend';
 
 class ViewTwo extends React.Component {
   miniMapData = null;
@@ -25,11 +26,16 @@ class ViewTwo extends React.Component {
 
     // Make sure we grab results if the user came from a shared URL with search params set up
     this.updateSearch();
+    if (props.selected.region) {
+      this.miniMapData = props.wheelData
+        .find(region => region.id === props.selected.region);
+    }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.selected.region !== this.props.selected.region) {
-      this.miniMapData = (this.props.browseBy === 'location' && this.props.selected.region)
+    if (prevProps.selected.region !== this.props.selected.region
+      || prevProps.wheelData !== this.props.wheelData) {
+      this.miniMapData = this.props.selected.region
         ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
     }
@@ -123,6 +129,10 @@ class ViewTwo extends React.Component {
             filteredProjectLookup={this.props.filteredProjectLookup}
           />
           <GreyPipe mode={this.props.browseBy} />
+          {(this.props.browseBy === 'company')
+            ? <DotLegend />
+            : null
+          }
         </section>
         <section className="companyBreakdown">
           {this.props.browseBy === 'location'
