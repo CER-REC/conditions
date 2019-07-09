@@ -16,6 +16,7 @@ import { searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
+import DotLegend from '../../components/DotLegend';
 
 class ViewTwo extends React.Component {
   miniMapData = null;
@@ -82,6 +83,10 @@ class ViewTwo extends React.Component {
             filteredProjectLookup={this.props.filteredProjectLookup}
           />
           <GreyPipe mode={this.props.browseBy} />
+          {(this.props.browseBy === 'company')
+            ? <DotLegend />
+            : null
+          }
         </section>
         <section className="companyBreakdown">
           {this.props.browseBy === 'location'
