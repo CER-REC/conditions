@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
 import handleInteraction from '../../../utilities/handleInteraction';
-import { suggestedKeywordsObject } from '../../../proptypes';
 import KeywordList from './KeywordList';
 
 class SuggestedKeywordsPopout extends React.PureComponent {
@@ -13,7 +12,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     setIncluded: PropTypes.func.isRequired,
     setExcluded: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    suggestedKeywords: suggestedKeywordsObject.isRequired,
+    suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      category: PropTypes.arrayOf(PropTypes.string),
+      conditionCount: PropTypes.number,
+    })).isRequired,
     isExclude: PropTypes.bool.isRequired,
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -58,18 +61,29 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   sortKeywords = () => {
     const { sortBy, sortHierarchy, selectedCategory } = this.state;
     const { suggestedKeywords } = this.props;
-    let filteredKeywords = Object.entries(suggestedKeywords);
+    // So this one creates an array with the key then value pair in it so it would look like:
+    // [ ["name", { conditions: 1200, category: ['category1', 'category2']}],
+    // So now we can get the new shape in this form
+    let filteredKeywordsNew = suggestedKeywords.map(
+      keyword => [
+        keyword.name,
+        {
+          conditions: keyword.conditionCount,
+          category: keyword.category,
+        },
+      ],
+    );
     if (selectedCategory.length > 0) {
-      filteredKeywords = filteredKeywords
+      filteredKeywordsNew = filteredKeywordsNew
         .filter(([, { category }]) => category.some(v => (selectedCategory.includes(v))));
     }
     if (sortBy.length > 0 && sortHierarchy !== 'none') {
       const direction = (sortHierarchy === 'dec') ? -1 : 1;
-      filteredKeywords = (sortBy === 'alphabetical')
-        ? filteredKeywords.sort(([a], [b]) => a.localeCompare(b) * direction)
-        : filteredKeywords.sort(([, a], [, b]) => (a.conditions - b.conditions) * direction);
+      filteredKeywordsNew = (sortBy === 'alphabetical')
+        ? filteredKeywordsNew.sort(([a], [b]) => a.localeCompare(b) * direction)
+        : filteredKeywordsNew.sort(([, a], [, b]) => (a.conditions - b.conditions) * direction);
     }
-    return filteredKeywords;
+    return filteredKeywordsNew;
   }
 
   sortHierarchyOnClick = () => {

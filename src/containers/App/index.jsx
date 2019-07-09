@@ -577,6 +577,7 @@ class App extends React.PureComponent {
             filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
             availableCategories={(['all'].concat(this.props.allConfigurationData.keywordCategories))}
+            allKeywords={this.props.allKeywords}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}

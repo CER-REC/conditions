@@ -12,7 +12,6 @@ import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
 
-import { searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
@@ -40,7 +39,6 @@ class ViewTwo extends React.Component {
         <section className="header">
           <SearchBar
             className={this.props.browseBy === 'location' ? 'small' : ''}
-            suggestedKeywords={searchData}
             availableYearRange={this.props.projectYears}
             availableCategories={this.props.availableCategories}
             setIncluded={this.props.setIncluded}
@@ -53,6 +51,7 @@ class ViewTwo extends React.Component {
             projectStatus={this.props.projectStatus}
             yearRange={this.props.projectYear}
             findAny={this.props.findAny}
+            suggestedKeywords={this.props.allKeywords}
           />
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
