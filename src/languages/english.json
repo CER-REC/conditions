@@ -286,7 +286,10 @@
       "countBubble": {
         "instruments": "instruments",
         "projects": "projects",
-        "conditions": "conditions"
+        "conditions": "conditions",
+        "instrument": "instrument",
+        "project": "project",
+        "condition": "condition"
       }
     },
     "guide": {

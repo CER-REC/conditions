@@ -20,6 +20,10 @@ $bubbleSize: 36px;
 
   .count {
     font-size: 20px;
+
+    &.small {
+      font-size: 16px;
+    }
   }
 
   .text {
