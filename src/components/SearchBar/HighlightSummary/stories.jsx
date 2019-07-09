@@ -9,5 +9,6 @@ storiesForComponent('Components|SearchBar/HighlightSummary', module, ReadMe)
       includeKeywords={['include1', 'include2']}
       excludeKeywords={['exclude1', 'exclude2']}
       selectedYear={{ start: 2010, end: 2018 }}
+      includedStatuses={['IN_PROGRESS', 'COMPLETED']}
     />
   ));
