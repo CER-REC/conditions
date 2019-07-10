@@ -5996,6 +5996,58 @@ exports[`Storyshots Components|GreyPipe/CountBubble default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|GreyPipe/CountBubble large value 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="GreyPipe"
+  >
+    <div
+      className="CountBubble"
+    >
+      <span
+        className="count small"
+      >
+        1723
+      </span>
+      <span
+        className="text"
+      >
+         
+        instruments
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|GreyPipe/CountBubble singular 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="GreyPipe"
+  >
+    <div
+      className="CountBubble"
+    >
+      <span
+        className="count"
+      >
+        1
+      </span>
+      <span
+        className="text"
+      >
+         
+        condition
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|Guide default 1`] = `
 <div
   className="visualization"

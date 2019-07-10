@@ -8,9 +8,6 @@ export const projectMenuQuery = gql`
       status
       shortName
       name
-      instruments {
-        id
-      }
       aggregatedCount: aggregatedCountArray {
         filing
         filingEnum
@@ -27,6 +24,7 @@ export const projectMenuQuery = gql`
 
       }
       numberOfConditions
+      numberOfInstruments
     }
   }
 `;

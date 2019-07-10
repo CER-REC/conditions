@@ -46,7 +46,7 @@ class ViewTwo extends React.Component {
     }
 
     const countData = this.props.projectsData.reduce((acc, project) => {
-      acc.instruments += project.instruments.length;
+      acc.instruments += project.numberOfInstruments;
       acc.conditions += project.numberOfConditions;
 
       return acc;
