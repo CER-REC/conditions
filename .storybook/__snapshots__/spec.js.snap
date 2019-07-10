@@ -3734,7 +3734,17 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           Keywords
         </span>
         : 
-        hello, ipsum
+        <span
+          className="highlighted"
+        >
+          hello
+        </span>
+        , 
+        <span
+          className="highlighted"
+        >
+          ipsum
+        </span>
       </div>
       <div
         className="contentText"
