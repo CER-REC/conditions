@@ -3,16 +3,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { yearRangeType } from '../../../proptypes';
-
-const joinJsxArray = (arr, joinWith) => {
-  if (!arr || arr.length < 2) { return arr; }
-
-  const out = [arr[0]];
-  for (let i = 1; i < arr.length; i += 1) {
-    out.push(joinWith, arr[i]);
-  }
-  return out;
-};
+import joinJsxArray from '../../../utilities/joinJsxArray';
 
 const formatSummaryText = (arr, mapFunc) => joinJsxArray(arr.map(mapFunc), ', ');
 
