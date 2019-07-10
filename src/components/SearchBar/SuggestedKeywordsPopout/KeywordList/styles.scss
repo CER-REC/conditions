@@ -50,8 +50,8 @@
       }
 
       .selectedText {
-        overflow: visible;
-        vertical-align: super;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .regularText {

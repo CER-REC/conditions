@@ -3,10 +3,18 @@ import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import SuggestedKeywordsPopout from '.';
 
-const words = {
-  deer: { conditions: 1200, category: ['wildlife & habitat'] },
-  alberta: { conditions: 400, category: ['administration & filings'] },
-};
+const words = [
+  {
+    name: 'deer',
+    category: ['wildlife & habitat'],
+    conditionCount: 1300,
+  },
+  {
+    name: 'alberta',
+    category: ['administration & filing'],
+    conditionCount: 500,
+  },
+];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 const includedKeywords = ['deer'];

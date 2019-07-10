@@ -16577,7 +16577,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="conditionsText"
             >
               <span>
-                1200 conditions
+                1300 conditions
               </span>
             </div>
           </li>
@@ -16633,7 +16633,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 className="Bar"
                 fill="rgb(96,96,96)"
                 height="100%"
-                width="33.33333333333333%"
+                width="38.46153846153847%"
                 x="0%"
                 y={0}
               >
@@ -16643,8 +16643,8 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 className="Bar"
                 fill="transparent"
                 height="100%"
-                width="66.66666666666667%"
-                x="33.33333333333333%"
+                width="61.53846153846154%"
+                x="38.46153846153846%"
                 y={0}
               >
                 
@@ -16654,7 +16654,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               className="conditionsText"
             >
               <span>
-                400 conditions
+                500 conditions
               </span>
             </div>
           </li>
