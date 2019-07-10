@@ -701,6 +701,7 @@ App.propTypes = {
     companyIds: PropTypes.arrayOf(PropTypes.number),
     conditionIds: PropTypes.arrayOf(PropTypes.number),
     projectIds: PropTypes.arrayOf(PropTypes.number),
+    regionIds: PropTypes.arrayOf(PropTypes.number),
   }).isRequired,
   filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
