@@ -543,9 +543,6 @@ class App extends React.PureComponent {
             filteredProjectLookup={this.processedFilter}
             displayOrder={this.props.allConfigurationData.displayOrder}
             availableCategories={categories.availableCategories}
-            setSelectedCompany={this.updateSelection.fromCompany}
-            setSelectedRegion={this.updateSelection.fromRegion}
-            setSelectedProject={this.updateSelection.fromProject}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}
