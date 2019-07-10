@@ -366,7 +366,8 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       <span
         className="browseLabel"
       >
-        Skip intro to browse:
+        Skip intro to browse
+        :
       </span>
     </div>
     <button
@@ -508,7 +509,8 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       <span
         className="browseLabel"
       >
-        Skip intro to browse:
+        Skip intro to browse
+        :
       </span>
     </div>
     <button
@@ -650,7 +652,8 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       <span
         className="browseLabel"
       >
-        Return to browse:
+        Return to browse
+        :
       </span>
     </div>
     <button
@@ -1251,14 +1254,15 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
       className="Company"
     >
       <h2>
-        Full Project Name:
-         
+        Full Project Name
+        : 
         <strong>
           Trans Mountain Expansion
         </strong>
       </h2>
       <h3>
         Companies associated with this project
+        :
       </h3>
       <ul
         className="companies"
@@ -1384,14 +1388,15 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
       className="Company"
     >
       <h2>
-        Full Project Name:
-         
+        Full Project Name
+        : 
         <strong>
           Trans Mountain Expansion
         </strong>
       </h2>
       <h3>
         Companies associated with this project
+        :
       </h3>
       <ul
         className="companies"
@@ -1520,7 +1525,8 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         className="ProjectHeader"
       >
         <h1>
-          Selected Project:
+          Selected Project
+          :
         </h1>
         <button
           className="openProject"
@@ -2068,7 +2074,8 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           className="ProjectHeader"
         >
           <h1>
-            Selected Project:
+            Selected Project
+            :
           </h1>
           <button
             className="openProject"
@@ -2609,7 +2616,8 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         className="ProjectHeader location"
       >
         <h1>
-          Selected Condition:
+          Selected Condition
+          :
         </h1>
         <button
           className="toggleExpand"
@@ -3138,7 +3146,8 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
           className="ProjectHeader location"
         >
           <h1>
-            Selected Condition:
+            Selected Condition
+            :
           </h1>
           <button
             className="toggleExpand"
@@ -3838,7 +3847,8 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
       className="ProjectHeader"
     >
       <h1>
-        Selected Project:
+        Selected Project
+        :
       </h1>
       <button
         className="openProject"
@@ -3897,7 +3907,8 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       className="ProjectHeader location"
     >
       <h1>
-        Selected Condition:
+        Selected Condition
+        :
       </h1>
       <button
         className="toggleExpand"
@@ -3937,7 +3948,8 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
       className="ProjectHeader"
     >
       <h1>
-        Selected Project:
+        Selected Project
+        :
       </h1>
       <button
         className="openProject"
@@ -4445,7 +4457,8 @@ exports[`Storyshots Components|ErrorBoundary default 1`] = `
       className="restoreLink"
     >
       <span>
-        Please click on the link to restore the session: 
+        Please click on the link to restore the session
+        : 
       </span>
       <a
         href="http://localhost/"
@@ -4459,7 +4472,8 @@ exports[`Storyshots Components|ErrorBoundary default 1`] = `
       className="resetLink"
     >
       <span>
-        Please click on the link to reset the session: 
+        Please click on the link to reset the session
+        : 
       </span>
       <a
         href="http://localhost/"
@@ -14217,7 +14231,8 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
         className="title"
       >
         <span>
-          Companies in Selected Region:
+          Companies in Selected Region
+          :
         </span>
       </div>
       <ul
@@ -14807,7 +14822,7 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       </span>
       <p>
         Highlighting conditions containing
-         : 
+        : 
       </p>
       <div
         className="keywordsText"
@@ -15974,7 +15989,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       </span>
       <p>
         Highlighting conditions containing
-         : 
+        : 
       </p>
       <div
         className="keywordsText"
@@ -15983,7 +15998,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       </div>
       <p>
         Exclude conditions containing
-         : 
+        : 
       </p>
       <div
         className="keywordsText"
@@ -16032,8 +16047,9 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         className="includeText"
       >
         <span>
-          Include any of:
+          Include any of
         </span>
+        :
       </div>
       <div
         className="input"
@@ -16114,8 +16130,9 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
               any
                
             </span>
-             of the following:
+             of the following
           </span>
+          :
         </div>
         <div
           className="keywordsText"

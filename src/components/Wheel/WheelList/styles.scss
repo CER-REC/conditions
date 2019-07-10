@@ -35,7 +35,7 @@
     .label {
       position: absolute;
       left: 0;
-      width: 33%;
+      width: 37%;
       text-align: center;
       border-radius: 0px;
       border-style: none;
@@ -43,11 +43,14 @@
       padding: 0px;
       font-weight: normal;
       vertical-align: middle;
+
+      white-space: nowrap;
+      overflow: visible;
     }
 
     .selected {
       position: absolute;
-      left: 35%;
+      left: 39%;
       width: 60%;
       overflow: hidden;
       text-align: left;
