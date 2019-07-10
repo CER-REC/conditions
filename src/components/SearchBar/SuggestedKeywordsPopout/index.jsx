@@ -61,9 +61,6 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   sortKeywords = () => {
     const { sortBy, sortHierarchy, selectedCategory } = this.state;
     const { suggestedKeywords } = this.props;
-    // So this one creates an array with the key then value pair in it so it would look like:
-    // [ ["name", { conditions: 1200, category: ['category1', 'category2']}],
-    // So now we can get the new shape in this form
     let filteredKeywordsNew = suggestedKeywords.map(
       keyword => [
         keyword.name,
