@@ -117,27 +117,21 @@
 
     display: inline-block;
 
-    &.oneAway {
-      color: $Gray160;
-      font-family: $fira-sans-condensed-light;
-      font-size: 13px;
+    color: $Gray160;
+    font-family: $fira-sans-condensed-light;
 
+    &.oneAway {
+      font-size: 13px;
       width: 100%;
     }
 
     &.twoAway {
-      color: $Gray160;
-      font-family: $fira-sans-condensed-light;
       font-size: 10px;
-
       width: 96%;
     }
 
     &.threeAway {
-      color: $Gray160;
-      font-family: $fira-sans-condensed-light;
       font-size: 8px;
-
       width: 88%;
     }
 
