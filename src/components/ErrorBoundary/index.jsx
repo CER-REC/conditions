@@ -34,13 +34,17 @@ class ErrorBoundary extends React.PureComponent {
             <FormattedMessage id="components.errorBoundary.errorMessage" tagName="h1" />
           </section>
           <section className="restoreLink">
-            <FormattedMessage id="components.errorBoundary.restoreMessage" />
+            <FormattedMessage id="components.errorBoundary.restoreMessage">
+              {text => <span>{text}:&nbsp;</span>}
+            </FormattedMessage>
             <a href={`${this.getRestoreLink()}`}>
               <FormattedMessage id="components.errorBoundary.restoreLinkText" />
             </a>
           </section>
           <section className="resetLink">
-            <FormattedMessage id="components.errorBoundary.resetMessage" />
+            <FormattedMessage id="components.errorBoundary.resetMessage">
+              {text => <span>{text}:&nbsp;</span>}
+            </FormattedMessage>
             <a href={`${this.getResetLink()}`}>
               <FormattedMessage id="components.errorBoundary.resetLinkText" />
             </a>

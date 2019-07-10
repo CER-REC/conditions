@@ -35,8 +35,9 @@ const steps = [
       />
       <FormattedMessage
         id="components.conditionExplorer.guide.compliance.documentationPrompt"
-        tagName="p"
-      />
+      >
+        {text => <p>{text}:</p>}
+      </FormattedMessage>
       <ul>
         {[1, 2].map(i => (
           <FormattedMessage

@@ -49,7 +49,7 @@ class WheelList extends React.Component {
       <div className={classNames('WheelList', this.props.className)}>
         <div className="labelContainer">
           <FormattedMessage id={`components.companyWheel.list.${this.props.wheelType}`}>
-            {text => <span className="label">{text}</span>}
+            {text => <span className="label">{text}:</span>}
           </FormattedMessage>
           { this.props.listContent.length > 0
             ? (

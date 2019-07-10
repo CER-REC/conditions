@@ -11,7 +11,7 @@ const BrowseBy = ({ showArrow, labelId, browseBy, onClick }) => (
   <div className="BrowseBy">
     <div className={classNames('arrowWrapper', { showArrow, zeroWidth: (labelId === 'blank') })}>
       <FormattedMessage id={`components.browseBy.${labelId}`}>
-        {text => <span className="browseLabel">{text}</span>}
+        {text => <span className="browseLabel">{text}:</span>}
       </FormattedMessage>
     </div>
     <BrowseByBtn classNames={(browseBy === 'company') ? 'inactive' : 'active'} mode="company" onClick={onClick} />

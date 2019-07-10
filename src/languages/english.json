@@ -62,9 +62,9 @@
       "SO": "Oil Safety Order",
       "TG": "Gas Toll & Tariff Order",
       "TO": "Oil Toll & Tariff Order",
-      "XC": "Commodity Order:",
-      "XG":"Gas Order",
-      "XO" :"Oil Order",
+      "XC": "Commodity Order",
+      "XG": "Gas Order",
+      "XO": "Oil Order",
       "ZO": "Abandonment Order",
       "GH": "text not yet provided",
       "OH": "text not yet provided",
@@ -146,7 +146,7 @@
         },
         "compliance": {
           "title": "How does the NEB verify condition compliance?",
-          "documentationPrompt": "The NEB verifies company compliance with project condition requirements through:",
+          "documentationPrompt": "The NEB verifies company compliance with project condition requirements through",
           "doc1": "compliance verification activities (i.e. inspections, audits, etc.)",
           "doc2": "assessing condition filings"
         },
@@ -158,8 +158,8 @@
         "title": "Selected Company"
       },
       "list": {
-        "company": "Selected Company:",
-        "location": "Region:"
+        "company": "Selected Company",
+        "location": "Region"
       },
       "pullToSpin": {
         "pull": "Pull",
@@ -167,8 +167,8 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Selected Project:",
-      "selectedCondition": "Selected Condition:",
+      "selectedProject": "Selected Project",
+      "selectedCondition": "Selected Condition",
       "instrumentNumber": "Instrument #",
       "location": "Location",
       "issuanceDate": "Issuance Date",
@@ -262,8 +262,8 @@
         "TG": "The fixing of tariffs and tolls – gas pipelines",
         "TO": "The fixing of tariffs and tolls – oil pipelines",
         "XC": "The exemption of a commodity pipeline or parts thereof, or commodity pipeline facilities",
-        "XG":" The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
-        "XO" :"The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)",
+        "XG": " The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
+        "XO": "The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)",
         "ZO": "The approval of abandonment applications",
         "GH": "text not yet provided",
         "OH": "text not yet provided",
@@ -275,7 +275,7 @@
         "OPSP": "text not yet provided",
         "CO": "text not yet provided",
         "OPL": "text not yet provided",
-        "OTHER":  "text not yet provided",
+        "OTHER": "text not yet provided",
         "other": "text not yet provided"
       }
     },
@@ -323,7 +323,7 @@
       "highlightSummary": {
         "showingAll": "Showing all projects from",
         "middle": "- ",
-        "after": " ", 
+        "after": " ",
         "includes": "Highlighting conditions containing",
         "excludes": "Exclude conditions containing"
       },
@@ -336,14 +336,14 @@
           "all": "all"
         },
         "searchText": {
-          "basicInclude": "Include any of:",
-          "advancedInclude": "Include {dropdown} of:",
-          "exclude": "But do {not} include:",
+          "basicInclude": "Include any of",
+          "advancedInclude": "Include {dropdown} of",
+          "exclude": "But do {not} include",
           "not": "not"
         },
         "highlightText": {
           "highlightConditions": "Highlight conditions containing",
-          "following": " {choice} of the following:",
+          "following": " {choice} of the following",
           "any": "any",
           "none": "none",
           "all": "all"
@@ -385,7 +385,7 @@
         "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."
       },
       "company": {
-        "name": "Full Project Name:",
+        "name": "Full Project Name",
         "associated": "Companies associated with this project",
         "meaningHeading": "Why is there more than one company associated with this project?",
         "meaningText": "There are instances when more than one company has obligations related to a project.  Examples include:\n-an agreement between one company to sell and another company to purchase a pipeline;\n-where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and\n-NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).",
@@ -408,7 +408,7 @@
       "associated": "Associated Companies"
     },
     "regionCompanies": {
-      "title": "Companies in Selected Region:"
+      "title": "Companies in Selected Region"
     },
     "regionConditionSummary": {
       "title": "Total Conditions for Selected Region"
@@ -444,8 +444,8 @@
       "description": "Back to\nKeywords"
     },
     "browseBy": {
-      "skip": "Skip intro to browse:",
-      "return": "Return to browse:",
+      "skip": "Skip intro to browse",
+      "return": "Return to browse",
       "blank": " "
     },
     "browseByBtn": {
@@ -462,22 +462,22 @@
       "forProject": "for this Project"
     },
     "errorBoundary":{
-      "errorMessage":"Something went wrong.",
-      "restoreLinkText":"Restore Session",
-      "restoreMessage":"Please click on the link to restore the session: ",
-      "resetLinkText":"Reset Session",
-      "resetMessage":"Please click on the link to reset the session: "
+      "errorMessage": "Something went wrong.",
+      "restoreLinkText": "Restore Session",
+      "restoreMessage": "Please click on the link to restore the session",
+      "resetLinkText": "Reset Session",
+      "resetMessage": "Please click on the link to reset the session"
     }
   },
   "views": {
     "view1": {
       "header": {
         "title": "Conditions on NEB-regulated energy projects",
-        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation. The last update was:"
+        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation. The last update was"
       }
     },
     "view3": {
-      "company":"Selected Company:"
+      "company": "Selected Company"
     }
   }
 }

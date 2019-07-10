@@ -10,9 +10,11 @@ import './styles.scss';
 const Company = ({ projectName, companies, closeModal }) => (
   <div className="Company">
     <FormattedMessage id="components.modal.company.name">
-      {text => <h2>{text} <strong>{projectName}</strong></h2>}
+      {text => <h2>{text}: <strong>{projectName}</strong></h2>}
     </FormattedMessage>
-    <FormattedMessage id="components.modal.company.associated" tagName="h3" />
+    <FormattedMessage id="components.modal.company.associated">
+      {text => <h3>{text}:</h3>}
+    </FormattedMessage>
     <ul className="companies">
       {companies.map(company => <li key={company}>{company}</li>)}
     </ul>
