@@ -63,15 +63,15 @@ class StreamGraph extends React.Component {
     const { subFeature } = this.props;
     const data = this.getStreamData();
     const emptyYears = this.getYearTicks().map(x => ({ x, y: 0 }));
-    return Object.keys(features).map((feature) => {
-        return this.props.displayOrder[feature].map((name, i) => {
+    return Object.keys(features)
+      .map(feature => this.props.displayOrder[feature].map((name, i) => {
         let areaData = emptyYears;
         if (feature === this.props.feature && (!subFeature || name === subFeature)) {
           areaData = data[name];
         }
         return (
           <VictoryArea
-            key={name}
+            key={`${feature}-${name}`}
             name={name}
             data={areaData}
             style={{
@@ -83,9 +83,9 @@ class StreamGraph extends React.Component {
             interpolation="catmullRom"
           />
         );
-        })
-      })
-      .flat();
+      }))
+      .flat()
+      .reverse();
   }
 
   updateControlYearState = (controlYearArray) => {

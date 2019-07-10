@@ -88,7 +88,6 @@ export const ViewTwoGraphQL = (props) => {
             return (a.province < b.province ? -1 : 1);
           })
           : [];
-        // TODO: Can region be empty?
         const selectedLocation = props.selected.region
           ? locationData.find(region => region.id === props.selected.region)
           : null;
