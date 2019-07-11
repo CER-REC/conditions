@@ -137,7 +137,14 @@ const selectionPaths = {
 };
 
 const execute = (prevSelection, setSelected, client, from, variables, staticSelection = {}) => {
-  const executeWrapped = execute.bind(prevSelection, setSelected, client);
+  const executeWrapped = (fromWrapped, variablesWrapped, staticWrapped = {}) => execute(
+    prevSelection,
+    setSelected,
+    client,
+    fromWrapped,
+    variablesWrapped,
+    { ...staticSelection, ...staticWrapped },
+  );
   const { query, selection } = selectionPaths[from];
   return client.query({ query, variables })
     .then((result) => {
@@ -147,8 +154,8 @@ const execute = (prevSelection, setSelected, client, from, variables, staticSele
       return Promise.resolve(selection(data, prevSelection, variables, executeWrapped))
         .then((nextSelection) => {
           console.log('Received', nextSelection);
-          console.log('New selection is', { ...defaultSelection, ...nextSelection, ...staticSelection });
           if (!nextSelection) { return; }
+          console.log('New selection is', { ...defaultSelection, ...nextSelection, ...staticSelection });
           setSelected({ ...defaultSelection, ...nextSelection, ...staticSelection });
         });
     });

@@ -11,7 +11,7 @@ const data = [
     instrumentIndex: 0,
     itemIndex: -1,
     instrumentId: 100,
-    conditionId: 200,
+    conditionId: undefined,
   },
   {
     binnedValue: 3,
@@ -36,7 +36,7 @@ const data = [
     instrumentIndex: 1,
     itemIndex: -1,
     instrumentId: 103,
-    conditionId: 203,
+    conditionId: undefined,
   },
   {
     binnedValue: 1,
@@ -60,7 +60,7 @@ const data = [
     instrumentIndex: 2,
     itemIndex: -1,
     instrumentId: 106,
-    conditionId: 206,
+    conditionId: undefined,
   },
   {
     binnedValue: 3,
@@ -73,21 +73,17 @@ const data = [
   },
 ];
 
-const updateSelectedItem = () => (instrumentIndex, itemIndex) => (
-  { instrumentIndex, itemIndex }
-);
-
 storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
-  .addDecorator(withInteraction({ actions: ['updateSelectedItem'] }))
+  .addDecorator(withInteraction({
+    state: { selectedCondition: -1, selectedInstrument: -1 },
+    actions: {
+      updateSelectedInstrument: () => id => ({ selectedInstrument: id, selectedCondition: -1 }),
+      updateSelectedCondition: () => id => ({ selectedInstrument: -1, selectedCondition: id }),
+    },
+  }))
   .add('default', () => (
     <ConditionList
       items={data}
       {...getInteractionProps()}
     />
-  ), {
-    interaction:
-    {
-      state: { selectedItem: 0 },
-      actions: { updateSelectedItem },
-    },
-  });
+  ));

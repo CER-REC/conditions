@@ -122,7 +122,11 @@ class App extends React.PureComponent {
       fromCompany: id => updateSelectionWrapped('Company', { id }),
       fromInstrument: id => updateSelectionWrapped('Instrument', { id }),
       fromCondition: id => updateSelectionWrapped('Condition', { id }),
-      fromKeyword: id => updateSelectionWrapped('Keyword', { id }),
+      fromKeyword: (keyword, id) => updateSelectionWrapped(
+        'Keyword',
+        { keywords: [keyword] },
+        { keywordId: id },
+      ),
     };
   }
 
@@ -423,7 +427,7 @@ class App extends React.PureComponent {
 
     this.props.setIncluded([keyword]);
 
-    this.updateSelection.fromKeyword({ keywords: [keyword] }, { KeywordId: id });
+    this.updateSelection.fromKeyword(keyword, id);
   };
 
   openRegDocPopup = () => {

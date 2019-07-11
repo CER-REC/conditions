@@ -16,38 +16,15 @@ describe('actions/selected', () => {
     compareReduxChange(selected.reducer, newState);
   });
 
-  it('should update the company state based on the action', () => {
-    const company = 'testCompany';
-    const newState = selected.reducer(undefined, selected.setSelectedCompany(company));
-    expect(newState).toHaveProperty('company', company);
-    compareReduxChange(selected.reducer, newState);
-  });
-
-  it('should update the region state based on the action', () => {
-    const region = 'testRegion';
-    const newState = selected.reducer(undefined, selected.setSelectedRegion(region));
-    expect(newState).toHaveProperty('region', region);
-    compareReduxChange(selected.reducer, newState);
-  });
-
-  it('should update the project state based on the action', () => {
-    const project = 'testProject';
-    const newState = selected.reducer(undefined, selected.setSelectedProject(project));
-    expect(newState).toHaveProperty('project', project);
-    compareReduxChange(selected.reducer, newState);
-  });
-
-  it('should update the instrument state based on the action', () => {
-    const instrument = 'testInstrument';
-    const newState = selected.reducer(undefined, selected.setSelectedInstrument(instrument));
-    expect(newState).toHaveProperty('instrument', instrument);
-    compareReduxChange(selected.reducer, newState);
-  });
-
-  it('should update the condition state based on the action', () => {
-    const condition = 'testCondition';
-    const newState = selected.reducer(undefined, selected.setSelectedCondition(condition));
-    expect(newState).toHaveProperty('condition', condition);
+  it('should merge state when using setSelectedMultiple', () => {
+    const newState = selected.reducer(undefined, selected.setSelectedMultiple({
+      company: 123,
+      condition: 456,
+    }));
+    expect(newState).toHaveProperty('company', 123);
+    expect(newState).toHaveProperty('condition', 456);
+    // Test to make sure the old values haven't been removed
+    expect(newState).toHaveProperty('instrument', 0);
     compareReduxChange(selected.reducer, newState);
   });
 });

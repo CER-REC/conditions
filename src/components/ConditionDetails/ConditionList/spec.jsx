@@ -11,7 +11,7 @@ const data = [
     instrumentIndex: 0,
     itemIndex: -1,
     instrumentId: 100,
-    conditionId: 200,
+    conditionId: undefined,
   },
   {
     binnedValue: 3,
@@ -78,17 +78,18 @@ const defaultProps = {
   selectedItem: 3,
 };
 
-describe('Components|ConditionDetails/ConditionList', () => {
-  describe('with default props', () => {
-    let wrapper;
-    let spy;
+const noop = () => {};
 
+describe('Components|ConditionDetails/ConditionList', () => {
+  let wrapper;
+
+  describe('with default props', () => {
     beforeEach(() => {
-      spy = jest.fn();
       wrapper = shallow(
         <ConditionList
           {...defaultProps}
-          updateSelectedItem={spy}
+          updateSelectedCondition={noop}
+          updateSelectedInstrument={noop}
         />,
       );
     });
@@ -117,15 +118,16 @@ describe('Components|ConditionDetails/ConditionList', () => {
   });
 
   describe('mounted', () => {
-    let wrapper;
-    let spy;
-
+    let spyCondition;
+    let spyInstrument;
     beforeEach(() => {
-      spy = jest.fn();
+      spyCondition = jest.fn();
+      spyInstrument = jest.fn();
       wrapper = mount(
         <ConditionList
           {...defaultProps}
-          updateSelectedItem={spy}
+          updateSelectedCondition={spyCondition}
+          updateSelectedInstrument={spyInstrument}
         />,
       );
     });
@@ -134,7 +136,16 @@ describe('Components|ConditionDetails/ConditionList', () => {
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledWith(102, 202);
+      expect(spyCondition).toHaveBeenCalledWith(202);
+      expect(spyInstrument).not.toHaveBeenCalled();
+    });
+
+    it('should call updateSelectedItem with the instrument and condition ids', () => {
+      wrapper.find('.ConditionList')
+        .find('List').props().onChange(0);
+
+      expect(spyCondition).not.toHaveBeenCalled();
+      expect(spyInstrument).toHaveBeenCalledWith(100);
     });
   });
 });
