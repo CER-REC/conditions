@@ -207,7 +207,7 @@
         "SAFETY_MANAGEMENT": " conditions that eliminate or reduce risk to the public, workers, the environment and assets.",
         "SECURITY": "conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.",
         "SOCIO_ECONOMIC": "conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.",
-        "STANDARD_CONDITION": " conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.",
+        "STANDARD_CONDITION": "a condition that is typically imposed on all approved projects.",
         "SUNSET_CLAUSE": "conditions that ensure projects begin within a specific period of time."
       },
       "phase": {
@@ -235,7 +235,7 @@
         "UNDER_REVIEW": "Missing description"
       },
       "type": {
-        "STANDARD": "a set of conditions that are typically imposed on all approved infrastructure projects.",
+        "STANDARD": "a condition that is typically imposed on all approved projects.",
         "NON_STANDARD": "non-standard conditions capture project-specific information or concerns that are not addressed by standard conditions."
       },
       "filing": {
@@ -388,7 +388,7 @@
         "name": "Full Project Name:",
         "associated": "Companies associated with this project",
         "meaningHeading": "Why is there more than one company associated with this project?",
-        "meaningText": "There are instances when more than one company has obligations related to a project.  Examples include:\n-an agreement between one company to sell and another company to purchase a pipeline;\n-where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and\n-NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).",
+        "meaningText": "There are instances when more than one company has obligations related to a project. Examples include:\n - an agreement between one company to sell and another company to purchase a pipeline; and\n - NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).",
         "back": "Back"
       },
       "regdocs": {
