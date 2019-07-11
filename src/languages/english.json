@@ -357,8 +357,10 @@
         "sortBy": "Sort by",
         "frequency": "Frequency",
         "alphabetical": "Alphabetical",
-        "none": "none",
-        "conditions": "{conditions} conditions"
+        "conditions": "{conditions} conditions",
+        "inc": "inc",
+        "dec": "dec",
+        "none": "none"
       }
     },
     "mainInfoBar": {
