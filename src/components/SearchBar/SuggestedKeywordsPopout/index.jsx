@@ -61,7 +61,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   sortKeywords = () => {
     const { sortBy, sortHierarchy, selectedCategory } = this.state;
     const { suggestedKeywords } = this.props;
-    let filteredKeywordsNew = suggestedKeywords.map(
+    let filteredKeywords = suggestedKeywords.map(
       keyword => [
         keyword.name,
         {
@@ -71,16 +71,18 @@ class SuggestedKeywordsPopout extends React.PureComponent {
       ],
     );
     if (selectedCategory.length > 0) {
-      filteredKeywordsNew = filteredKeywordsNew
+      filteredKeywords = filteredKeywords
         .filter(([, { category }]) => category.some(v => (selectedCategory.includes(v))));
     }
     if (sortBy.length > 0 && sortHierarchy !== 'none') {
       const direction = (sortHierarchy === 'dec') ? -1 : 1;
-      filteredKeywordsNew = (sortBy === 'alphabetical')
-        ? filteredKeywordsNew.sort(([a], [b]) => a.localeCompare(b) * direction)
-        : filteredKeywordsNew.sort(([, a], [, b]) => (a.conditions - b.conditions) * direction);
+      filteredKeywords.sort(
+        (sortBy === 'alphabetical')
+          ? ([a], [b]) => a.localeCompare(b) * direction
+          : ([, a], [, b]) => (a.conditions - b.conditions) * direction,
+      );
     }
-    return filteredKeywordsNew;
+    return filteredKeywords;
   }
 
   sortHierarchyOnClick = () => {

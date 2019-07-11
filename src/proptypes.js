@@ -175,7 +175,7 @@ export const viewTwo = {
   availableCategories: PropTypes.arrayOf(PropTypes.string),
   suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
-    category: PropTypes.string,
+    category: PropTypes.arrayOf(PropTypes.string),
     conditionCount: PropTypes.number,
   })).isRequired,
 };

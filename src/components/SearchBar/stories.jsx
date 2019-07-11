@@ -7,7 +7,7 @@ import SearchBar from '.';
 import ReadMe from './README.md';
 import { categories } from '../../mockData';
 
-const newSampleSuggestedKeywords = [
+const sampleSuggestedKeywords = [
   {
     name: 'safety',
     category: ['administration & filings'],
@@ -36,7 +36,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
   .addDecorator(withKnobs)
   .add('SearchBar default', () => (
     <SearchBar
-      suggestedKeywords={newSampleSuggestedKeywords}
+      suggestedKeywords={sampleSuggestedKeywords}
       availableYearRange={{ start: 1970, end: 1980 }}
       availableCategories={categories.availableCategories}
       {...getInteractionProps()}

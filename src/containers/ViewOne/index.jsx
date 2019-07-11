@@ -82,7 +82,11 @@ class ViewOne extends React.PureComponent {
 
 ViewOne.propTypes = {
   selectedKeywordId: PropTypes.number,
-  allKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+  allKeywords: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    category: PropTypes.arrayOf(PropTypes.string),
+    conditionCount: PropTypes.number,
+  })).isRequired,
   setSelectedKeyword: PropTypes.func.isRequired,
   jumpToAbout: PropTypes.func.isRequired,
   beginTutorial: PropTypes.func.isRequired,

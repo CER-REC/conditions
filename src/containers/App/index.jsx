@@ -538,6 +538,7 @@ class App extends React.PureComponent {
               && transitionState !== transitionStates.view1Reset
             )}
             lastUpdated={this.props.allConfigurationData.lastUpdated}
+            selectedKeywordId={this.props.selected.keywordId}
           />
           <section className="appControls">
             <BrowseBy
@@ -697,7 +698,7 @@ App.propTypes = {
   allConfigurationData: allConfigurationDataType.isRequired,
   allKeywords: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
-    category: PropTypes.string,
+    category: PropTypes.arrayOf(PropTypes.string),
     conditionCount: PropTypes.number,
   })).isRequired,
   setSelectedCompany: PropTypes.func.isRequired,

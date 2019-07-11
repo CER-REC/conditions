@@ -14,7 +14,7 @@
       .icon {
         display: inline-block;
         width: 25px;
-        vertical-align: super;
+        vertical-align: middle; 
         .Icon {
           svg {
             width: 15px;
@@ -45,22 +45,19 @@
       }
       .keywordCategory {
         display: inline-block;
-        width: 60px;
         white-space: nowrap;
-      }
-
-      .selectedText {
         overflow: hidden;
         text-overflow: ellipsis;
+        width: 100px; 
+        vertical-align: middle; 
+        padding: 4px 0; 
+        font-size: 16px;
       }
 
-      .regularText {
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
       .BarContainer {
-        width: calc(100% - 85px - 130px);
-        vertical-align: super;
+        width: calc(100% - 125px - 130px); 
+        vertical-align: middle; 
+        margin-bottom: 4px;
       }
 
       .conditionsText {
