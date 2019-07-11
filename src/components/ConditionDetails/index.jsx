@@ -77,7 +77,8 @@ class ConditionDetails extends React.Component {
         <ConditionList
           items={items}
           selectedItem={this.findSelectedItem()}
-          updateSelectedItem={this.props.updateSelectedItem}
+          updateSelectedInstrument={this.props.updateSelectedInstrument}
+          updateSelectedCondition={this.props.updateSelectedCondition}
         />
       )
       : null;
@@ -151,7 +152,8 @@ ConditionDetails.propTypes = {
     itemIndex: PropTypes.number,
   }),
   toggleExpanded: PropTypes.func,
-  updateSelectedItem: PropTypes.func.isRequired,
+  updateSelectedInstrument: PropTypes.func.isRequired,
+  updateSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
 };

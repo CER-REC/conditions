@@ -1,13 +1,10 @@
+import shallowequal from 'shallowequal';
+
 export const Types = {
   SELECTED_FEATURE: 'selectedFeature',
   SELECTED_SUBFEATURE: 'selectedSubFeature',
   SELECTED_INDICATOR: 'selectedIndicator',
-  SELECTED_COMPANY: 'selectedCompany',
-  SELECTED_REGION: 'selectedRegion',
-  SELECTED_PROJECT: 'selectedProject',
-  SELECTED_INSTRUMENT: 'selectedInstrument',
-  SELECTED_CONDITION: 'selectedCondition',
-  SELECTED_KEYWORDID: 'selectedKeywordId',
+  SET_MULTIPLE: 'SELECTED.SET_MULTIPLE',
 };
 
 export const setSelectedFeature = feature => ({
@@ -25,31 +22,9 @@ export const setSelectedIndicator = indicator => ({
   payload: { indicator },
 });
 
-export const setSelectedCompany = company => ({
-  type: Types.SELECTED_COMPANY,
-  payload: { company },
-});
-
-export const setSelectedRegion = region => ({
-  type: Types.SELECTED_REGION,
-  payload: { region },
-});
-export const setSelectedProject = project => ({
-  type: Types.SELECTED_PROJECT,
-  payload: { project },
-});
-export const setSelectedInstrument = instrument => ({
-  type: Types.SELECTED_INSTRUMENT,
-  payload: { instrument },
-});
-export const setSelectedCondition = condition => ({
-  type: Types.SELECTED_CONDITION,
-  payload: { condition },
-});
-
-export const setSelectedKeywordId = keywordId => ({
-  type: Types.SELECTED_KEYWORDID,
-  payload: { keywordId },
+export const setSelectedMultiple = payload => ({
+  type: Types.SET_MULTIPLE,
+  payload,
 });
 
 const initialState = {
@@ -69,12 +44,11 @@ export const reducer = (state = initialState, action) => {
     case Types.SELECTED_FEATURE: return { ...state, subFeature: '', feature: action.payload.feature };
     case Types.SELECTED_SUBFEATURE: return { ...state, subFeature: action.payload.subFeature };
     case Types.SELECTED_INDICATOR: return { ...state, indicator: action.payload.indicator };
-    case Types.SELECTED_COMPANY: return { ...state, company: action.payload.company };
-    case Types.SELECTED_REGION: return { ...state, region: action.payload.region };
-    case Types.SELECTED_PROJECT: return { ...state, project: action.payload.project };
-    case Types.SELECTED_INSTRUMENT: return { ...state, instrument: action.payload.instrument };
-    case Types.SELECTED_CONDITION: return { ...state, condition: action.payload.condition };
-    case Types.SELECTED_KEYWORDID: return { ...state, keywordId: action.payload.keywordId };
+    case Types.SET_MULTIPLE: {
+      const newState = { ...state, ...action.payload };
+      // Only change the state if a value actually changed
+      return shallowequal(state, newState) ? state : newState;
+    }
     default: return state;
   }
 };

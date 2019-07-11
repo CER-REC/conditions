@@ -105,7 +105,25 @@ class App extends React.PureComponent {
       isCompanyPopupOpen: false,
     };
     this.ref = React.createRef();
-    this.updateSelection = updateSelection(this, client);
+
+    const updateSelectionWrapped = (from, variables, staticSelection = {}) => {
+      updateSelection(
+        this.props.selected,
+        this.props.setSelectedMultiple,
+        client,
+        from,
+        variables,
+        staticSelection,
+      );
+    };
+    this.updateSelection = {
+      fromProject: id => updateSelectionWrapped('Project', { id }),
+      fromRegion: id => updateSelectionWrapped('Region', { id }),
+      fromCompany: id => updateSelectionWrapped('Company', { id }),
+      fromInstrument: id => updateSelectionWrapped('Instrument', { id }),
+      fromCondition: id => updateSelectionWrapped('Condition', { id }),
+      fromKeyword: id => updateSelectionWrapped('Keyword', { id }),
+    };
   }
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
@@ -216,7 +234,7 @@ class App extends React.PureComponent {
   jumpToView1 = () => {
     this.props.setTransitionState(transitionStates.view1Reset);
     this.props.setBrowseBy('company');
-    this.props.setSelectedKeywordId(-1);
+    this.props.setSelectedMultiple({ keywordId: -1 });
   }
 
   jumpToView2 = (type) => {
@@ -405,7 +423,7 @@ class App extends React.PureComponent {
 
     this.props.setIncluded([keyword]);
 
-    this.updateSelection.fromKeyword(id, keyword);
+    this.updateSelection.fromKeyword({ keywords: [keyword] }, { KeywordId: id });
   };
 
   openRegDocPopup = () => {
@@ -611,7 +629,8 @@ class App extends React.PureComponent {
                       selectedItem={{ instrumentIndex, itemIndex }}
                       selectedProjectId={selected.project}
                       selectedProject={shortName || ''}
-                      updateSelectedItem={this.updateSelection.fromConditionListItem}
+                      updateSelectedInstrument={this.updateSelection.fromInstrument}
+                      updateSelectedCondition={this.updateSelection.fromCondition}
                       openIntermediatePopup={this.openRegDocPopup}
                       openProjectDetails={this.openCompanyPopup}
                       searchKeywords={{
@@ -671,12 +690,7 @@ App.propTypes = {
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
   allConfigurationData: allConfigurationDataType.isRequired,
-  setSelectedCompany: PropTypes.func.isRequired,
-  setSelectedCondition: PropTypes.func.isRequired,
-  setSelectedInstrument: PropTypes.func.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  setSelectedKeywordId: PropTypes.func.isRequired,
-  setSelectedRegion: PropTypes.func.isRequired,
+  setSelectedMultiple: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
     companyIds: PropTypes.arrayOf(PropTypes.number),
@@ -707,13 +721,8 @@ const ConnectedApp = connect(
     detailViewExpanded,
   }),
   {
-    setSelectedCompany: selectedCreators.setSelectedCompany,
-    setSelectedCondition: selectedCreators.setSelectedCondition,
-    setSelectedInstrument: selectedCreators.setSelectedInstrument,
-    setSelectedProject: selectedCreators.setSelectedProject,
-    setSelectedRegion: selectedCreators.setSelectedRegion,
     setIncluded: searchCreators.setIncluded,
-    setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
+    setSelectedMultiple: selectedCreators.setSelectedMultiple,
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,

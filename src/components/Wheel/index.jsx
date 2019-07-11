@@ -55,7 +55,9 @@ class Wheel extends React.Component {
     const selectedIndex = items.findIndex(v => v.id === props.selectedRay);
     const { wheelModifiers } = prevState;
     let { newRotation } = prevState;
-    if (wheelModifiers.spin || prevState.selectedIndex === -1) {
+    if (props.wheelType !== prevState.wheelType) {
+      newRotation = selectedIndex * (360 / items.length);
+    } else if (wheelModifiers.spin || prevState.selectedIndex === -1) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + selectedIndex * (360 / items.length);
       wheelModifiers.spin = true;
@@ -75,6 +77,7 @@ class Wheel extends React.Component {
       oldRotation: prevState.newRotation || 0,
       newRotation,
       wheelModifiers,
+      wheelType: props.wheelType,
     };
   }
 
