@@ -1348,19 +1348,16 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         Why is there more than one company associated with this project?
       </h4>
       <p>
-        There are instances when more than one company has obligations related to a project.  Examples include:
+        There are instances when more than one company has obligations related to a project. Examples include:
       </p>
       <ul
         className="bullets"
       >
         <li>
-          an agreement between one company to sell and another company to purchase a pipeline;
+          an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
-        </li>
-        <li>
-          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -1481,19 +1478,16 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         Why is there more than one company associated with this project?
       </h4>
       <p>
-        There are instances when more than one company has obligations related to a project.  Examples include:
+        There are instances when more than one company has obligations related to a project. Examples include:
       </p>
       <ul
         className="bullets"
       >
         <li>
-          an agreement between one company to sell and another company to purchase a pipeline;
+          an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
-        </li>
-        <li>
-          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -4920,7 +4914,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Standard Condition
       </h4>
       <p>
-         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        a condition that is typically imposed on all approved projects.
       </p>
     </div>
     <div
@@ -5094,7 +5088,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Standard Condition
       </h4>
       <p>
-         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        a condition that is typically imposed on all approved projects.
       </p>
     </div>
     <div
