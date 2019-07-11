@@ -139,7 +139,7 @@ class SearchContent extends React.PureComponent {
 
       <div className="anyText">
         <FormattedMessage
-          id="components.searchBar.findWords.highlightText.following"
+          id="components.searchBar.findWords.highlightText.followingInclude"
           values={{
             choice: (
               this.props.findAny
@@ -166,7 +166,7 @@ class SearchContent extends React.PureComponent {
 
             <div className="anyText">
               <FormattedMessage
-                id="components.searchBar.findWords.highlightText.following"
+                id="components.searchBar.findWords.highlightText.followingExclude"
                 values={{
                   choice: (
                     <FormattedMessage id="components.searchBar.findWords.highlightText.none">

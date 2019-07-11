@@ -344,9 +344,10 @@
         },
         "highlightText": {
           "highlightConditions": "Signaler les conditions contenant",
-          "following": " {choice} ",
-          "any": "UN OU L'AUTRE des mots suivants",
-          "none": "RIEN de ce qui suit",
+          "followingInclude": " {choice} des mots suivants",
+          "followingExclude": " {choice} de ce qui suit",
+          "any": "un ou l'autre",
+          "none": "rien",
           "all": ""
         }
       },

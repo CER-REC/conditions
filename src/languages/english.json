@@ -343,7 +343,8 @@
         },
         "highlightText": {
           "highlightConditions": "Highlight conditions containing",
-          "following": " {choice} of the following",
+          "followingInclude": " {choice} of the following",
+          "followingExclude": " {choice} of the following",
           "any": "any",
           "none": "none",
           "all": "all"
