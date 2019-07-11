@@ -24,12 +24,14 @@ class Wheel extends React.Component {
     wheelMotionTrigger: PropTypes.func.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
   };
 
   static defaultProps = {
     selectedRay: null,
     relevantProjectLookup: [],
     filteredProjectLookup: [],
+    searchedRegionsLookup: [],
   };
 
   constructor(props) {
@@ -154,6 +156,7 @@ class Wheel extends React.Component {
                         rotation={props.rotation.interpolate(r => r * -1)}
                         relevantProjectLookup={this.props.relevantProjectLookup}
                         filteredProjectLookup={this.props.filteredProjectLookup}
+                        searchedRegionsLookup={this.props.searchedRegionsLookup}
                       />
                     ))}
                   </svg>

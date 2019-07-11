@@ -21,11 +21,13 @@ class WheelRay extends React.Component {
     currentIndex: PropTypes.number.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
   }
 
   static defaultProps = {
     relevantProjectLookup: [],
     filteredProjectLookup: [],
+    searchedRegionsLookup: [],
   };
 
   constructor(props) {
@@ -97,7 +99,7 @@ class WheelRay extends React.Component {
               items={items[index].aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
-              searched
+              searched={!!(this.props.searchedRegionsLookup[item.id])}
               adjustRotationReference={degreesPerItem / 2}
             />
             { item.province !== legendTracker
