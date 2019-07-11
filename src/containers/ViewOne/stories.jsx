@@ -15,6 +15,7 @@ storiesForView('Containers|ViewOne', module, ReadMe)
   .addDecorator(
     withInteraction({
       actions: {
+        // TODO: Fix this once ConditionExplorer's story has been updated
         setSelectedKeyword: () => (keyword, id) => (
           { selected: { keywordId: id } }
         ),
