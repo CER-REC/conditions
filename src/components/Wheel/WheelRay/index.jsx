@@ -99,7 +99,6 @@ class WheelRay extends React.Component {
               items={items[index].aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
-              // TODO: Fix for noRegion -1 as id
               searched={!!(this.props.searchedRegionsLookup[item.id])}
               adjustRotationReference={degreesPerItem / 2}
             />
