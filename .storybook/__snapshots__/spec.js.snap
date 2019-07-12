@@ -9103,6 +9103,7 @@ exports[`Storyshots Components|ProjectDot default 1`] = `
       className="ProjectDot"
       cx={50}
       cy={50}
+      data-id={0}
       r={40}
       stroke="transparent"
       strokeWidth={40}

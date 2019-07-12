@@ -21,7 +21,8 @@ describe('Components|CompanyWheel/WheelRay', () => {
         selectRay: '',
         wheelType: 'company',
         currentIndex: 0,
-        onChange: noop,
+        onChangeRay: noop,
+        onChangeDot: noop,
       }, propOverrides);
 
       const wrapper = shallow(<WheelRay {...props} />);

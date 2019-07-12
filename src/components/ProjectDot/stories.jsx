@@ -17,6 +17,7 @@ storiesForComponent('Components|ProjectDot', module, ReadMe)
         r={40}
         filtered={boolean('Filtered', false)}
         relevant={boolean('Relevant', false)}
+        id={0}
       />
     </svg>
   ), { styles: '.Wheel { padding-top: 0px }' });
