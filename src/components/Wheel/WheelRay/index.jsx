@@ -42,11 +42,6 @@ class WheelRay extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    // return (this.props.currentIndex !== nextProps.currentIndex
-    //   || this.props.wheelType !== nextProps.wheelType
-    //   || this.props.items !== nextProps.items)
-    //   || this.props.relevantProjectLookup !== nextProps.relevantProjectLookup
-    //   || this.props.filteredProjectLookup !== nextProps.filteredProjectLookup;
     return hashValuesDiffer(this.props, nextProps, [
       'currentIndex',
       'wheelType',
