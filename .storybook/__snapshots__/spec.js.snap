@@ -86,6 +86,13 @@ exports[`Storyshots Components|BarContainer default 1`] = `
     width="100%"
   >
     <rect
+      fill="transparent"
+      height="100%"
+      width="100%"
+      x={0}
+      y={0}
+    />
+    <rect
       className="Bar"
       fill="green"
       height="100%"
@@ -141,6 +148,13 @@ exports[`Storyshots Components|BarContainer size as percentage 1`] = `
     width="50%"
   >
     <rect
+      fill="transparent"
+      height="100%"
+      width="50%"
+      x={0}
+      y={0}
+    />
+    <rect
       className="Bar"
       fill="green"
       height="100%"
@@ -195,6 +209,13 @@ exports[`Storyshots Components|BarContainer size as pixels 1`] = `
     height={200}
     width={200}
   >
+    <rect
+      fill="transparent"
+      height={200}
+      width={200}
+      x={0}
+      y={0}
+    />
     <rect
       className="Bar"
       fill="green"
@@ -252,6 +273,13 @@ exports[`Storyshots Components|BarContainer standalone 1`] = `
       width="100%"
     >
       <rect
+        fill="transparent"
+        height="100%"
+        width="100%"
+        x={0}
+        y={0}
+      />
+      <rect
         className="Bar"
         fill="green"
         height="100%"
@@ -307,6 +335,13 @@ exports[`Storyshots Components|BarContainer vertical bars 1`] = `
     height="100%"
     width="100%"
   >
+    <rect
+      fill="transparent"
+      height="100%"
+      width="100%"
+      x={0}
+      y={0}
+    />
     <rect
       className="Bar"
       fill="green"
@@ -1317,19 +1352,16 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         Why is there more than one company associated with this project?
       </h4>
       <p>
-        There are instances when more than one company has obligations related to a project.  Examples include:
+        There are instances when more than one company has obligations related to a project. Examples include:
       </p>
       <ul
         className="bullets"
       >
         <li>
-          an agreement between one company to sell and another company to purchase a pipeline;
+          an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
-        </li>
-        <li>
-          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -1451,19 +1483,16 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         Why is there more than one company associated with this project?
       </h4>
       <p>
-        There are instances when more than one company has obligations related to a project.  Examples include:
+        There are instances when more than one company has obligations related to a project. Examples include:
       </p>
       <ul
         className="bullets"
       >
         <li>
-          an agreement between one company to sell and another company to purchase a pipeline;
+          an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
-        </li>
-        <li>
-          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -1519,7 +1548,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main expanded"
+      className="main"
     >
       <div
         className="ProjectHeader"
@@ -1539,7 +1568,11 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           <h2
             title="Keystone XL"
           >
-            Keystone XL
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
             <span
               className="asterisk"
             >
@@ -1581,8 +1614,36 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           >
             <ul>
               <li
-                className="List-Item"
+                className="List-Item selected"
               >
+                <div
+                  className="CircleContainer arrow arrowPrevious hidden"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="Arrow Up"
+                    >
+                      <svg
+                        height="22"
+                        width="22"
+                      >
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
                 <div
                   className="List-Item-Content"
                   focusable={true}
@@ -1600,6 +1661,34 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                     <h4>
                       XO-001-2018
                     </h4>
+                  </div>
+                </div>
+                <div
+                  className="CircleContainer arrow arrowNext"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="Arrow Down"
+                    >
+                      <svg
+                        height="22"
+                        width="22"
+                      >
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -1624,6 +1713,13 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="pink"
@@ -1670,6 +1766,13 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       width="100%"
                     >
                       <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
+                      <rect
                         className="Bar"
                         fill="blue"
                         height="100%"
@@ -1694,36 +1797,8 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 </div>
               </li>
               <li
-                className="List-Item selected"
+                className="List-Item"
               >
-                <div
-                  className="CircleContainer arrow arrowPrevious"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Up"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
                 <div
                   className="List-Item-Content"
                   focusable={true}
@@ -1741,34 +1816,6 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                     <h4>
                       XO-003-2018
                     </h4>
-                  </div>
-                </div>
-                <div
-                  className="CircleContainer arrow arrowNext"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Down"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </li>
@@ -1793,6 +1840,13 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="red"
@@ -1828,6 +1882,13 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="red"
@@ -1886,6 +1947,13 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="orange"
@@ -1987,7 +2055,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                 tabIndex={0}
                 type="button"
               >
-                XO-003-2018
+                XO-001-2018
               </button>
             </div>
             <div
@@ -2088,7 +2156,11 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             <h2
               title="Keystone XL"
             >
-              Keystone XL
+              <span
+                className="projectName"
+              >
+                Keystone XL
+              </span>
               <span
                 className="asterisk"
               >
@@ -2130,8 +2202,36 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             >
               <ul>
                 <li
-                  className="List-Item"
+                  className="List-Item selected"
                 >
+                  <div
+                    className="CircleContainer arrow arrowPrevious hidden"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Arrow Up"
+                      >
+                        <svg
+                          height="22"
+                          width="22"
+                        >
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     className="List-Item-Content"
                     focusable={true}
@@ -2149,6 +2249,34 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                       <h4>
                         XO-001-2018
                       </h4>
+                    </div>
+                  </div>
+                  <div
+                    className="CircleContainer arrow arrowNext"
+                    focusable={true}
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                    style={
+                      Object {
+                        "height": 24,
+                        "width": 24,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="Arrow Down"
+                      >
+                        <svg
+                          height="22"
+                          width="22"
+                        >
+                          <polyline
+                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </li>
@@ -2173,6 +2301,13 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height="100%"
                         width="100%"
                       >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
                         <rect
                           className="Bar"
                           fill="pink"
@@ -2219,6 +2354,13 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         width="100%"
                       >
                         <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
+                        <rect
                           className="Bar"
                           fill="blue"
                           height="100%"
@@ -2243,36 +2385,8 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   </div>
                 </li>
                 <li
-                  className="List-Item selected"
+                  className="List-Item"
                 >
-                  <div
-                    className="CircleContainer arrow arrowPrevious"
-                    focusable={true}
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
-                    style={
-                      Object {
-                        "height": 24,
-                        "width": 24,
-                      }
-                    }
-                    tabIndex={0}
-                  >
-                    <div>
-                      <div
-                        className="Arrow Up"
-                      >
-                        <svg
-                          height="22"
-                          width="22"
-                        >
-                          <polyline
-                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
                   <div
                     className="List-Item-Content"
                     focusable={true}
@@ -2290,34 +2404,6 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                       <h4>
                         XO-003-2018
                       </h4>
-                    </div>
-                  </div>
-                  <div
-                    className="CircleContainer arrow arrowNext"
-                    focusable={true}
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
-                    style={
-                      Object {
-                        "height": 24,
-                        "width": 24,
-                      }
-                    }
-                    tabIndex={0}
-                  >
-                    <div>
-                      <div
-                        className="Arrow Down"
-                      >
-                        <svg
-                          height="22"
-                          width="22"
-                        >
-                          <polyline
-                            points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                          />
-                        </svg>
-                      </div>
                     </div>
                   </div>
                 </li>
@@ -2342,6 +2428,13 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height="100%"
                         width="100%"
                       >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
                         <rect
                           className="Bar"
                           fill="red"
@@ -2377,6 +2470,13 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height="100%"
                         width="100%"
                       >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
                         <rect
                           className="Bar"
                           fill="red"
@@ -2435,6 +2535,13 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                         height="100%"
                         width="100%"
                       >
+                        <rect
+                          fill="transparent"
+                          height="100%"
+                          width="100%"
+                          x={0}
+                          y={0}
+                        />
                         <rect
                           className="Bar"
                           fill="orange"
@@ -2536,7 +2643,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                   tabIndex={0}
                   type="button"
                 >
-                  XO-003-2018
+                  XO-001-2018
                 </button>
               </div>
               <div
@@ -2610,7 +2717,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
     className="ConditionDetails"
   >
     <div
-      className="main expanded"
+      className="main"
     >
       <div
         className="ProjectHeader location"
@@ -2653,8 +2760,36 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
           >
             <ul>
               <li
-                className="List-Item"
+                className="List-Item selected"
               >
+                <div
+                  className="CircleContainer arrow arrowPrevious hidden"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="Arrow Up"
+                    >
+                      <svg
+                        height="22"
+                        width="22"
+                      >
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
                 <div
                   className="List-Item-Content"
                   focusable={true}
@@ -2672,6 +2807,34 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                     <h4>
                       XO-001-2018
                     </h4>
+                  </div>
+                </div>
+                <div
+                  className="CircleContainer arrow arrowNext"
+                  focusable={true}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <div>
+                    <div
+                      className="Arrow Down"
+                    >
+                      <svg
+                        height="22"
+                        width="22"
+                      >
+                        <polyline
+                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -2696,6 +2859,13 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="pink"
@@ -2742,6 +2912,13 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                       width="100%"
                     >
                       <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
+                      <rect
                         className="Bar"
                         fill="blue"
                         height="100%"
@@ -2766,36 +2943,8 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 </div>
               </li>
               <li
-                className="List-Item selected"
+                className="List-Item"
               >
-                <div
-                  className="CircleContainer arrow arrowPrevious"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Up"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
                 <div
                   className="List-Item-Content"
                   focusable={true}
@@ -2813,34 +2962,6 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                     <h4>
                       XO-003-2018
                     </h4>
-                  </div>
-                </div>
-                <div
-                  className="CircleContainer arrow arrowNext"
-                  focusable={true}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  style={
-                    Object {
-                      "height": 24,
-                      "width": 24,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <div>
-                    <div
-                      className="Arrow Down"
-                    >
-                      <svg
-                        height="22"
-                        width="22"
-                      >
-                        <polyline
-                          points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
-                        />
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </li>
@@ -2865,6 +2986,13 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="red"
@@ -2900,6 +3028,13 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="red"
@@ -2958,6 +3093,13 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                       height="100%"
                       width="100%"
                     >
+                      <rect
+                        fill="transparent"
+                        height="100%"
+                        width="100%"
+                        x={0}
+                        y={0}
+                      />
                       <rect
                         className="Bar"
                         fill="orange"
@@ -3059,7 +3201,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                 tabIndex={0}
                 type="button"
               >
-                XO-003-2018
+                XO-001-2018
               </button>
             </div>
             <div
@@ -3140,7 +3282,7 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
       className="ConditionDetails"
     >
       <div
-        className="main expanded"
+        className="main"
       >
         <div
           className="ProjectHeader location"
@@ -3296,6 +3438,13 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   width="100%"
                 >
                   <rect
+                    fill="transparent"
+                    height="100%"
+                    width="100%"
+                    x={0}
+                    y={0}
+                  />
+                  <rect
                     className="Bar"
                     fill="pink"
                     height="100%"
@@ -3331,11 +3480,38 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   width="100%"
                 >
                   <rect
+                    fill="transparent"
+                    height="100%"
+                    width="100%"
+                    x={0}
+                    y={0}
+                  />
+                  <rect
                     className="Bar"
                     fill="blue"
                     height="100%"
-                    width="100%"
+                    width="33.33333333333333%"
                     x="0%"
+                    y={0}
+                  >
+                    
+                  </rect>
+                  <rect
+                    className="Bar"
+                    fill="red"
+                    height="100%"
+                    width="33.33333333333333%"
+                    x="33.33333333333333%"
+                    y={0}
+                  >
+                    
+                  </rect>
+                  <rect
+                    className="Bar"
+                    fill="green"
+                    height="100%"
+                    width="33.33333333333333%"
+                    x="66.66666666666666%"
                     y={0}
                   >
                     
@@ -3389,6 +3565,13 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   width="100%"
                 >
                   <rect
+                    fill="transparent"
+                    height="100%"
+                    width="100%"
+                    x={0}
+                    y={0}
+                  />
+                  <rect
                     className="Bar"
                     fill="red"
                     height="100%"
@@ -3423,6 +3606,13 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   height="100%"
                   width="100%"
                 >
+                  <rect
+                    fill="transparent"
+                    height="100%"
+                    width="100%"
+                    x={0}
+                    y={0}
+                  />
                   <rect
                     className="Bar"
                     fill="red"
@@ -3481,6 +3671,13 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                   height="100%"
                   width="100%"
                 >
+                  <rect
+                    fill="transparent"
+                    height="100%"
+                    width="100%"
+                    x={0}
+                    y={0}
+                  />
                   <rect
                     className="Bar"
                     fill="orange"
@@ -3861,7 +4058,11 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
         <h2
           title="Keystone XL"
         >
-          Keystone XL
+          <span
+            className="projectName"
+          >
+            Keystone XL
+          </span>
           <span
             className="asterisk"
           >
@@ -3962,7 +4163,11 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
         <h2
           title="Keystone XL"
         >
-          Keystone XL
+          <span
+            className="projectName"
+          >
+            Keystone XL
+          </span>
           <span
             className="asterisk"
           >
@@ -4321,7 +4526,10 @@ exports[`Storyshots Components|DotLegend default 1`] = `
         className="ProjectDot"
         cx={5}
         cy={5}
+        data-id={0}
         r={3}
+        stroke="transparent"
+        strokeWidth={3}
       />
     </svg>
     <p>
@@ -4609,7 +4817,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Administrative
       </h4>
       <p>
-        conditions that help track organizational tasks.
+        Conditions that help track organizational tasks.
       </p>
     </div>
     <div
@@ -4621,7 +4829,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Damage Prevention
       </h4>
       <p>
-        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
+        Conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </p>
     </div>
     <div
@@ -4633,7 +4841,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Emergency Management
       </h4>
       <p>
-        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
+        Conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </p>
     </div>
     <div
@@ -4645,7 +4853,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Enforcement
       </h4>
       <p>
-        conditions that reinforce prescribed regulatory requirements to be met.
+        Conditions that reinforce prescribed regulatory requirements to be met.
       </p>
     </div>
     <div
@@ -4657,7 +4865,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Environmental Protection
       </h4>
       <p>
-        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
+        Conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </p>
     </div>
     <div
@@ -4669,7 +4877,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Financial
       </h4>
       <p>
-        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
+        Conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </p>
     </div>
     <div
@@ -4681,7 +4889,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Integrity Management
       </h4>
       <p>
-        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
+        Conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </p>
     </div>
     <div
@@ -4693,7 +4901,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Management System
       </h4>
       <p>
-        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
+        Company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
       </p>
     </div>
     <div
@@ -4705,7 +4913,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Safety Management
       </h4>
       <p>
-         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
+         Conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </p>
     </div>
     <div
@@ -4717,7 +4925,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Security
       </h4>
       <p>
-        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        Conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </p>
     </div>
     <div
@@ -4729,7 +4937,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Socio-Economic
       </h4>
       <p>
-        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
+        Conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </p>
     </div>
     <div
@@ -4741,7 +4949,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Standard Condition
       </h4>
       <p>
-         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        A condition that is typically imposed on all approved projects.
       </p>
     </div>
     <div
@@ -4753,7 +4961,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Sunset Clause
       </h4>
       <p>
-        conditions that ensure projects begin within a specific period of time.
+        Conditions that ensure projects begin within a specific period of time.
       </p>
     </div>
   </div>
@@ -4783,7 +4991,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Administrative
       </h4>
       <p>
-        conditions that help track organizational tasks.
+        Conditions that help track organizational tasks.
       </p>
     </div>
     <div
@@ -4795,7 +5003,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Damage Prevention
       </h4>
       <p>
-        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
+        Conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </p>
     </div>
     <div
@@ -4807,7 +5015,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Emergency Management
       </h4>
       <p>
-        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
+        Conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </p>
     </div>
     <div
@@ -4819,7 +5027,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Enforcement
       </h4>
       <p>
-        conditions that reinforce prescribed regulatory requirements to be met.
+        Conditions that reinforce prescribed regulatory requirements to be met.
       </p>
     </div>
     <div
@@ -4831,7 +5039,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Environmental Protection
       </h4>
       <p>
-        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
+        Conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </p>
     </div>
     <div
@@ -4843,7 +5051,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Financial
       </h4>
       <p>
-        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
+        Conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </p>
     </div>
     <div
@@ -4855,7 +5063,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Integrity Management
       </h4>
       <p>
-        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
+        Conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </p>
     </div>
     <div
@@ -4867,7 +5075,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Management System
       </h4>
       <p>
-        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
+        Company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
       </p>
     </div>
     <div
@@ -4879,7 +5087,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Safety Management
       </h4>
       <p>
-         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
+         Conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </p>
     </div>
     <div
@@ -4891,7 +5099,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Security
       </h4>
       <p>
-        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        Conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </p>
     </div>
     <div
@@ -4903,7 +5111,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Socio-Economic
       </h4>
       <p>
-        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
+        Conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </p>
     </div>
     <div
@@ -4915,7 +5123,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Standard Condition
       </h4>
       <p>
-         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        A condition that is typically imposed on all approved projects.
       </p>
     </div>
     <div
@@ -4927,7 +5135,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Sunset Clause
       </h4>
       <p>
-        conditions that ensure projects begin within a specific period of time.
+        Conditions that ensure projects begin within a specific period of time.
       </p>
     </div>
   </div>
@@ -5955,6 +6163,11 @@ exports[`Storyshots Components|Guide default 1`] = `
       tabIndex={0}
     >
       <div>
+        <span
+          className="hidden"
+        >
+          Loading...
+        </span>
         <span
           className="hidden"
         >
@@ -7256,6 +7469,239 @@ exports[`Storyshots Components|List selected 1`] = `
       </li>
     </ul>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components|LoadingGuide default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+  >
+    <div
+      className="Guide LoadingGuide"
+      style={
+        Object {
+          "height": 156,
+          "width": 156,
+        }
+      }
+    >
+      <svg
+        className="wedgeContainer"
+        viewBox="-78 -78 156 156"
+      >
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(0)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(60)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(120)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(180)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(240)
+            translate(1, -2)
+          "
+          />
+        </g>
+        <g
+          className="wedge"
+          style={
+            Object {
+              "transform": "scale(0.8, 0.8)",
+            }
+          }
+        >
+          <path
+            d="
+            M 0 -74
+            A 74 74 0 0 1 64.084 -37
+            L 55.424 -32
+            A 64 64 0 0 0 0 -64
+            Z
+          "
+            transform="
+            rotate(300)
+            translate(1, -2)
+          "
+          />
+        </g>
+      </svg>
+      <div
+        className="CircleContainer"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        style={
+          Object {
+            "height": 128,
+            "width": 128,
+          }
+        }
+        tabIndex={0}
+      >
+        <div>
+          <span
+            className=""
+          >
+            Loading...
+          </span>
+          <span
+            className="hidden"
+          >
+            Click to continue
+          </span>
+          <span
+            className="hidden"
+          >
+            Click to continue
+          </span>
+          <span
+            className="hidden"
+          >
+            Here is the full legal text of the condition you selected
+          </span>
+          <span
+            className="hidden"
+          >
+            Conditions are characterized by features, such as theme
+          </span>
+          <span
+            className="hidden"
+          >
+            Scroll to browse other conditions in this project
+          </span>
+          <span
+            className="hidden"
+          >
+            Scroll to browse other projects by this company
+          </span>
+          <span
+            className="hidden"
+          >
+            Spin wheel to browse companies
+          </span>
+          <span
+            className="hidden"
+          >
+            Look around to discover more!
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {
+      height: 200px;
+      width: 200px;
+      position: relative;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      margin-top: 50px;
+    }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -8665,7 +9111,10 @@ exports[`Storyshots Components|ProjectDot default 1`] = `
       className="ProjectDot"
       cx={50}
       cy={50}
+      data-id={0}
       r={40}
+      stroke="transparent"
+      strokeWidth={40}
     />
   </svg>
   <style
@@ -8683,7 +9132,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter0"
+    className="ProjectMenu paddingBefore1 paddingAfter2"
   >
     <div
       className="pipe"
@@ -8692,7 +9141,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 1,
         }
       }
     />
@@ -8700,7 +9149,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 2,
+          "width": 0,
         }
       }
     />
@@ -8952,8 +9401,36 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
           </div>
         </li>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -8962,7 +9439,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart"
+              className="ProjectChart selected"
             >
               <div
                 className="ConditionPipe"
@@ -9184,12 +9661,35 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
                 </div>
               </div>
               <div
-                className="ProjectName"
-                title="Trans-Alta"
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext hidden"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
               >
-                <p>
-                  Trans-Alta
-                </p>
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -9212,7 +9712,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter0"
+    className="ProjectMenu paddingBefore1 paddingAfter1"
   >
     <div
       className="pipe"
@@ -9221,7 +9721,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 1,
         }
       }
     />
@@ -9229,7 +9729,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 3,
+          "width": 1,
         }
       }
     />
@@ -9481,8 +9981,36 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
           </div>
         </li>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -9491,7 +10019,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart"
+              className="ProjectChart selected"
             >
               <div
                 className="ConditionPipe"
@@ -9709,6 +10237,272 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
                       }
                     }
                     title="Theme - Sunset Clause - 7"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount filtered"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    19
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Administrative - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Financial - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 14"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Security - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
@@ -10807,7 +11601,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter0"
+    className="ProjectMenu paddingBefore1 paddingAfter0"
   >
     <div
       className="pipe"
@@ -10816,7 +11610,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 1,
         }
       }
     />
@@ -10824,7 +11618,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 4,
+          "width": 2,
         }
       }
     />
@@ -11076,8 +11870,36 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
           </div>
         </li>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -11086,7 +11908,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart"
+              className="ProjectChart selected"
             >
               <div
                 className="ConditionPipe"
@@ -11304,6 +12126,515 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
                       }
                     }
                     title="Theme - Sunset Clause - 7"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount filtered"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    19
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Administrative - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Financial - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 14"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Security - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+                title="Trans-Alta"
+              >
+                <p>
+                  Trans-Alta
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount relevant"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    12
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Administrative - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Management System - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.1)",
+                      }
+                    }
+                    title="Theme - Security - 1"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
@@ -11336,7 +12667,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter0"
+    className="ProjectMenu paddingBefore1 paddingAfter0"
   >
     <div
       className="pipe"
@@ -11345,7 +12676,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 1,
         }
       }
     />
@@ -11353,7 +12684,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 4,
+          "width": 2,
         }
       }
     />
@@ -11605,8 +12936,36 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
           </div>
         </li>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -11615,7 +12974,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart"
+              className="ProjectChart selected"
             >
               <div
                 className="ConditionPipe"
@@ -11833,6 +13192,515 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
                       }
                     }
                     title="Theme - Sunset Clause - 7"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount filtered"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    19
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Administrative - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Financial - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 14"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Security - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
+                  />
+                </div>
+              </div>
+              <div
+                className="ProjectName"
+                title="Trans-Alta"
+              >
+                <p>
+                  Trans-Alta
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount relevant"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    12
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Administrative - 10"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Financial - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Management System - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.1)",
+                      }
+                    }
+                    title="Theme - Security - 1"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
@@ -12825,7 +14693,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
   className="visualization"
 >
   <div
-    className="ProjectMenu paddingBefore3 paddingAfter0"
+    className="ProjectMenu paddingBefore1 paddingAfter1"
   >
     <div
       className="pipe"
@@ -12834,7 +14702,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 1,
         }
       }
     />
@@ -12842,7 +14710,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 3,
+          "width": 1,
         }
       }
     />
@@ -13094,8 +14962,36 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
           </div>
         </li>
         <li
-          className="List-Item"
+          className="List-Item selected"
         >
+          <div
+            className="CircleContainer arrow arrowPrevious"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Left"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
           <div
             className="List-Item-Content"
             focusable={true}
@@ -13104,7 +15000,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
             tabIndex={0}
           >
             <div
-              className="ProjectChart"
+              className="ProjectChart selected"
             >
               <div
                 className="ConditionPipe"
@@ -13322,6 +15218,272 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
                       }
                     }
                     title="Theme - Sunset Clause - 7"
+                  />
+                </div>
+              </div>
+              <div
+                className="SelectedPipe"
+              />
+            </div>
+          </div>
+          <div
+            className="CircleContainer arrow arrowNext"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }
+            tabIndex={0}
+          >
+            <div>
+              <div
+                className="Arrow Right"
+              >
+                <svg
+                  height="22"
+                  width="22"
+                >
+                  <polyline
+                    points=" 5, 16 10.5,4 11.5,4 17,16 15.5,16 11,6.5 6.5,16 5,16 "
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="List-Item"
+        >
+          <div
+            className="List-Item-Content"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="ProjectChart"
+            >
+              <div
+                className="ConditionPipe"
+              >
+                <div
+                  className="CircleContainer ConditionCount filtered"
+                  style={
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    }
+                  }
+                >
+                  <div>
+                    19
+                  </div>
+                </div>
+              </div>
+              <div
+                className="FlagWrapper"
+              >
+                <div
+                  className="FlagPole"
+                />
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(201, 215, 65)",
+                        "borderLeftColor": "rgb(201, 215, 65)",
+                        "width": "calc(18px * 0.4)",
+                      }
+                    }
+                    title="Theme - Administrative - 4"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(133, 28, 133)",
+                        "borderLeftColor": "rgb(133, 28, 133)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Damage Prevention - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(11, 121, 153)",
+                        "borderLeftColor": "rgb(11, 121, 153)",
+                        "width": "calc(18px * 0.2)",
+                      }
+                    }
+                    title="Theme - Emergency Management - 2"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(74, 166, 255)",
+                        "borderLeftColor": "rgb(74, 166, 255)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Enforcement - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(33, 181, 115)",
+                        "borderLeftColor": "rgb(33, 181, 115)",
+                        "width": "calc(18px * 0.3)",
+                      }
+                    }
+                    title="Theme - Environmental Protection - 3"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(247, 193, 97)",
+                        "borderLeftColor": "rgb(247, 193, 97)",
+                        "width": "calc(18px * 0.5)",
+                      }
+                    }
+                    title="Theme - Financial - 5"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 82, 255)",
+                        "borderLeftColor": "rgb(153, 82, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Integrity Management - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(36, 91, 64)",
+                        "borderLeftColor": "rgb(36, 91, 64)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Management System - 14"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(68, 34, 149)",
+                        "borderLeftColor": "rgb(68, 34, 149)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Safety Management - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(221, 10, 10)",
+                        "borderLeftColor": "rgb(221, 10, 10)",
+                        "width": "calc(18px * 0.7)",
+                      }
+                    }
+                    title="Theme - Security - 7"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(153, 153, 255)",
+                        "borderLeftColor": "rgb(153, 153, 255)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Socio-Economic - 11"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(181, 11, 128)",
+                        "borderLeftColor": "rgb(181, 11, 128)",
+                        "width": "calc(18px * 0)",
+                      }
+                    }
+                    title="Theme - Standard Condition - 0"
+                  />
+                </div>
+                <div
+                  className="FeatureFlag"
+                >
+                  <div
+                    className="Bar withTip"
+                    style={
+                      Object {
+                        "backgroundColor": "rgb(41, 41, 218)",
+                        "borderLeftColor": "rgb(41, 41, 218)",
+                        "width": "calc(18px * 1)",
+                      }
+                    }
+                    title="Theme - Sunset Clause - 15"
                   />
                 </div>
               </div>
@@ -14391,6 +16553,13 @@ exports[`Storyshots Components|RegionConditionSummary with theme data 1`] = `
           width="100%"
         >
           <rect
+            fill="transparent"
+            height="100%"
+            width="100%"
+            x={0}
+            y={0}
+          />
+          <rect
             className="Bar"
             fill="rgb(181, 11, 128)"
             height="100%"
@@ -14644,6 +16813,13 @@ exports[`Storyshots Components|RegionConditionSummary with type data 1`] = `
           width="100%"
         >
           <rect
+            fill="transparent"
+            height="100%"
+            width="100%"
+            x={0}
+            y={0}
+          />
+          <rect
             className="Bar"
             fill="rgb(181, 11, 128)"
             height="50%"
@@ -14803,23 +16979,13 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing all projects from
+        Showing 
+        <span>
+          In Progress
+        </span>
+         projects from 1970 - 1980
       </span>
-      <span>
-         
-        1970
-         
-      </span>
-      <span>
-        - 
-      </span>
-      <span>
-        1980
-         
-      </span>
-      <span>
-         
-      </span>
+      <br />
       <p>
         Highlighting conditions containing
         : 
@@ -14827,7 +16993,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       <div
         className="keywordsText"
       >
-        safety
+        <span>
+          safety
+        </span>
       </div>
     </div>
   </div>
@@ -15970,23 +18138,13 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing all projects from
+        Showing 
+        <span>
+          In Progress
+        </span>
+         projects from 2010 - 2018
       </span>
-      <span>
-         
-        2010
-         
-      </span>
-      <span>
-        - 
-      </span>
-      <span>
-        2018
-         
-      </span>
-      <span>
-         
-      </span>
+      <br />
       <p>
         Highlighting conditions containing
         : 
@@ -15994,7 +18152,13 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <div
         className="keywordsText"
       >
-        include1, include2
+        <span>
+          include1
+        </span>
+        , 
+        <span>
+          include2
+        </span>
       </div>
       <p>
         Exclude conditions containing
@@ -16003,7 +18167,13 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <div
         className="keywordsText"
       >
-        exclude1, exclude2
+        <span>
+          exclude1
+        </span>
+        , 
+        <span>
+          exclude2
+        </span>
       </div>
     </div>
   </div>
@@ -16235,6 +18405,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
         >
            
+          oversight & safety
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
           engineering & structures
         </li>
         <li
@@ -16246,6 +18426,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         >
            
           administration & filings
+        </li>
+        <li
+          className="categoryList upperCase"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+           
+          people & communities
         </li>
       </ul>
       <div
@@ -16296,7 +18486,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
             </svg>
           </span>
           <span
-            className="upperCase"
+            className="upperCase sortType"
           >
              
             none
@@ -16349,6 +18539,13 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               height="8px"
               width="100%"
             >
+              <rect
+                fill="transparent"
+                height="8px"
+                width="100%"
+                x={0}
+                y={0}
+              />
               <rect
                 className="Bar"
                 fill="rgb(238,97,41)"
@@ -16420,6 +18617,13 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               width="100%"
             >
               <rect
+                fill="transparent"
+                height="8px"
+                width="100%"
+                x={0}
+                y={0}
+              />
+              <rect
                 className="Bar"
                 fill="rgb(96,96,96)"
                 height="100%"
@@ -16451,7 +18655,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         </ul>
       </div>
       <div
-        className="close"
+        className="closeSearchKeywordPopout"
       >
         <button
           className="upperCase"
@@ -16526,6 +18730,13 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               width="100%"
             >
               <rect
+                fill="transparent"
+                height="8px"
+                width="100%"
+                x={0}
+                y={0}
+              />
+              <rect
                 className="Bar"
                 fill="rgb(96,96,96)"
                 height="100%"
@@ -16595,6 +18806,13 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               height="8px"
               width="100%"
             >
+              <rect
+                fill="transparent"
+                height="8px"
+                width="100%"
+                x={0}
+                y={0}
+              />
               <rect
                 className="Bar"
                 fill="rgb(96,96,96)"

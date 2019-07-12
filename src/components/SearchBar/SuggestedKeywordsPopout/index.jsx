@@ -146,7 +146,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
               </svg>
             </span>
             <FormattedMessage id={`components.searchBar.suggestedKeywordsPopout.${this.state.sortHierarchy}`}>
-              {text => <span className="upperCase"> {text} </span>}
+              {text => <span className="upperCase sortType"> {text} </span>}
             </FormattedMessage>
           </span>
         </div>
@@ -160,7 +160,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
         />
         <FormattedMessage id="components.searchBar.close">
           {text => (
-            <div className="close">
+            <div className="closeSearchKeywordPopout">
               <button
                 {...handleInteraction(this.props.closeTab)}
                 className="upperCase"

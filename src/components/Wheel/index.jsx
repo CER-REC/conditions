@@ -4,6 +4,8 @@ import { Spring, animated } from 'react-spring/renderprops';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
+import hashValuesDiffer from '../../utilities/hashValuesDiffer';
+
 import Ring from './Ring';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
@@ -19,17 +21,22 @@ class Wheel extends React.Component {
   static propTypes = {
     wheelType: browseByType.isRequired,
     wheelData: PropTypes.arrayOf(PropTypes.object).isRequired,
+    // Incorrectly flagged by the linter:
+    // eslint-disable-next-line react/no-unused-prop-types
     selectedRay: PropTypes.number,
     selectRay: PropTypes.func.isRequired,
+    selectProject: PropTypes.func.isRequired,
     wheelMotionTrigger: PropTypes.func.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
   };
 
   static defaultProps = {
     selectedRay: null,
     relevantProjectLookup: [],
     filteredProjectLookup: [],
+    searchedRegionsLookup: [],
   };
 
   constructor(props) {
@@ -55,7 +62,9 @@ class Wheel extends React.Component {
     const selectedIndex = items.findIndex(v => v.id === props.selectedRay);
     const { wheelModifiers } = prevState;
     let { newRotation } = prevState;
-    if (wheelModifiers.spin || prevState.selectedIndex === -1) {
+    if (props.wheelType !== prevState.wheelType) {
+      newRotation = selectedIndex * (360 / items.length);
+    } else if (wheelModifiers.spin || prevState.selectedIndex === -1) {
       const minimumRotation = 360 - (prevState.newRotation % 360);
       newRotation += minimumRotation + selectedIndex * (360 / items.length);
       wheelModifiers.spin = true;
@@ -75,13 +84,18 @@ class Wheel extends React.Component {
       oldRotation: prevState.newRotation || 0,
       newRotation,
       wheelModifiers,
+      wheelType: props.wheelType,
     };
   }
 
-  shouldComponentUpdate(prevProps) {
-    return prevProps.wheelType !== this.props.wheelType
-      || prevProps.selectedRay !== this.props.selectedRay
-      || prevProps.wheelData !== this.props.wheelData;
+  shouldComponentUpdate(nextProps) {
+    return hashValuesDiffer(this.props, nextProps, [
+      'wheelType',
+      'selectedRay',
+      'wheelData',
+      'relevantProjectLookup',
+      'filteredProjectLookup',
+    ]);
   }
 
   onClickSpin = () => {
@@ -91,8 +105,18 @@ class Wheel extends React.Component {
     this.props.selectRay(items[randomNum].id);
   };
 
-  onChange = (index) => {
+  onChangeRay = (index) => {
     this.props.selectRay(this.props.wheelData[index].id);
+  };
+
+  onChangeDot = (index, e) => {
+    const id = parseInt(e.target.dataset.id, 10);
+
+    if (id) {
+      this.props.selectProject(id);
+    } else {
+      this.onChangeRay(index);
+    }
   };
 
   getIndex = (currentRotation) => {
@@ -144,7 +168,8 @@ class Wheel extends React.Component {
                     <Ring ringType={this.props.wheelType} />
                     {this.shouldRender(() => (
                       <AnimatedWheelRay
-                        onChange={this.onChange}
+                        onChangeRay={this.onChangeRay}
+                        onChangeDot={this.onChangeDot}
                         stopWheel={this.stopWheel}
                         wheelType={this.props.wheelType}
                         items={this.props.wheelData}
@@ -154,6 +179,7 @@ class Wheel extends React.Component {
                         rotation={props.rotation.interpolate(r => r * -1)}
                         relevantProjectLookup={this.props.relevantProjectLookup}
                         filteredProjectLookup={this.props.filteredProjectLookup}
+                        searchedRegionsLookup={this.props.searchedRegionsLookup}
                       />
                     ))}
                   </svg>
@@ -172,7 +198,7 @@ class Wheel extends React.Component {
                     wheelType={this.props.wheelType}
                     listContent={this.props.wheelData}
                     textClippingRadius="60"
-                    onChange={this.onChange}
+                    onChange={this.onChangeRay}
                     selected={currentIndex}
                   />
                 </div>

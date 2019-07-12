@@ -171,10 +171,10 @@
       "selectedCondition": "Condition sélectionné",
       "instrumentNumber": "Instrument n˚",
       "location": "Lieu",
-      "issuanceDate": "Date de délivrance",
+      "issuanceDate": "Date de déliverance",
       "effectiveDate": "Entrée en vigueur",
       "sunsetDate": "Date de réexamen",
-      "status": "État de l'instrument",
+      "status": "État del'instrument",
       "type": "Type d'instrument",
       "activity": "Activité liée à l'instrument",
       "keywords": "Mots-clés",
@@ -307,9 +307,8 @@
         "projectYear": "Trier par année du projet",
         "projectStatus": {
           "projectStatusText": "Filtrer par état du projet",
-          "IN_PROGRESS": "",
-          "COMPLETED": ""
-
+          "IN_PROGRESS": "En Cours",
+          "COMPLETED": "Terminé"
         }
       },
       "tab": {
@@ -321,11 +320,12 @@
         "suggestedKeywords": "les mots-clés proposés"
       },
       "highlightSummary": {
-        "showingAll": "Tous les projets de",
-        "middle": "à ",
-        "after": "sont affichés",
+        "showing": "{status} de {start} à {end} sont affichés.",
         "includes": "Conditions renfermant",
-        "excludes": ""
+        "excludes": "",
+        "IN_PROGRESS": "Les projets en cours",
+        "COMPLETED": "Les projets terminés",
+        "ALL": "Tous les projets"
 
       },
       "findWords": {
@@ -452,7 +452,7 @@
     },
     "browseByBtn": {
       "projectsBy": "",
-      "conditionsBy": "Conditions selon {icon}",
+      "conditionsBy": "Conditions selon",
       "company": "",
       "location": "le lieu"
     },

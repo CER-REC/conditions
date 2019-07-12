@@ -10,6 +10,8 @@ const data = [
     instrumentNumber: 'XO-001-2018',
     instrumentIndex: 0,
     itemIndex: -1,
+    instrumentId: 100,
+    conditionId: undefined,
   },
   {
     binnedValue: 3,
@@ -17,36 +19,48 @@ const data = [
     marked: true,
     instrumentIndex: 0,
     itemIndex: 0,
+    instrumentId: 101,
+    conditionId: 201,
   },
   {
     binnedValue: 2,
     fill: ['blue', 'red', 'green'],
     instrumentIndex: 0,
     itemIndex: 1,
+    instrumentId: 102,
+    conditionId: 202,
   },
   {
     isInstrument: true,
     instrumentNumber: 'XO-003-2018',
     instrumentIndex: 1,
     itemIndex: -1,
+    instrumentId: 103,
+    conditionId: 203,
   },
   {
     binnedValue: 1,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 0,
+    instrumentId: 104,
+    conditionId: 204,
   },
   {
     binnedValue: 2,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 1,
+    instrumentId: 105,
+    conditionId: 205,
   },
   {
     isInstrument: true,
     instrumentNumber: 'XO-005-2018',
     instrumentIndex: 2,
     itemIndex: -1,
+    instrumentId: 106,
+    conditionId: 206,
   },
   {
     binnedValue: 3,
@@ -54,6 +68,8 @@ const data = [
     marked: true,
     instrumentIndex: 2,
     itemIndex: 0,
+    instrumentId: 107,
+    conditionId: 207,
   },
 ];
 
@@ -62,17 +78,18 @@ const defaultProps = {
   selectedItem: 3,
 };
 
-describe('Components|ConditionDetails/ConditionList', () => {
-  describe('with default props', () => {
-    let wrapper;
-    let spy;
+const noop = () => {};
 
+describe('Components|ConditionDetails/ConditionList', () => {
+  let wrapper;
+
+  describe('with default props', () => {
     beforeEach(() => {
-      spy = jest.fn();
       wrapper = shallow(
         <ConditionList
           {...defaultProps}
-          updateSelectedItem={spy}
+          updateSelectedCondition={noop}
+          updateSelectedInstrument={noop}
         />,
       );
     });
@@ -101,24 +118,34 @@ describe('Components|ConditionDetails/ConditionList', () => {
   });
 
   describe('mounted', () => {
-    let wrapper;
-    let spy;
-
+    let spyCondition;
+    let spyInstrument;
     beforeEach(() => {
-      spy = jest.fn();
+      spyCondition = jest.fn();
+      spyInstrument = jest.fn();
       wrapper = mount(
         <ConditionList
           {...defaultProps}
-          updateSelectedItem={spy}
+          updateSelectedCondition={spyCondition}
+          updateSelectedInstrument={spyInstrument}
         />,
       );
     });
 
-    it('should call updateSelectedItem with an instrument index and item index', () => {
+    it('should call updateSelectedItem with the instrument and condition ids', () => {
       wrapper.find('.ConditionList')
         .find('List').props().onChange(2);
 
-      expect(spy).toHaveBeenCalledWith({ instrumentIndex: 0, itemIndex: 1 });
+      expect(spyCondition).toHaveBeenCalledWith(202);
+      expect(spyInstrument).not.toHaveBeenCalled();
+    });
+
+    it('should call updateSelectedItem with the instrument and condition ids', () => {
+      wrapper.find('.ConditionList')
+        .find('List').props().onChange(0);
+
+      expect(spyCondition).not.toHaveBeenCalled();
+      expect(spyInstrument).toHaveBeenCalledWith(100);
     });
   });
 });

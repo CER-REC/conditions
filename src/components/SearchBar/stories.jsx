@@ -5,6 +5,7 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import SearchBar from '.';
 import ReadMe from './README.md';
+import { categories } from '../../mockData';
 
 const sampleSuggestedKeywords = {
   safety: { conditions: 1200, category: ['administration & filings'] },
@@ -21,7 +22,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
     <SearchBar
       suggestedKeywords={sampleSuggestedKeywords}
       availableYearRange={{ start: 1970, end: 1980 }}
-      availableCategories={['all', 'oversight & safety', 'environment', 'administration & filings']}
+      availableCategories={categories.availableCategories}
       {...getInteractionProps()}
     />
   ), {
