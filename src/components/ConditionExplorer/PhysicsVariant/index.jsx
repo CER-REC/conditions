@@ -180,18 +180,37 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   closeGuide = () => {
-    if (!this.guide.isExpanded || !this.guideClickDetection) { return; }
+    if (!this.guide.isExpanded || !this.guideClickDetection || !this.guideShouldOpen) { return; }
+    this.guideShouldOpen = false;
     this.guideClickDetection = undefined;
     this.props.setGuideExpanded(false);
-    this.guide.close().finally(() => {
-      this.updateGuidePosition();
-      this.keywords.forEach((body) => {
-        if (body.category === resettingCategory) { return; }
-        body.addCollisionMask(guideOutlineCategory);
-        body.removeCollisionMask(guideCategory);
+    this.guide.close()
+      .finally(() => {
+        this.updateGuidePosition();
+        this.keywords.forEach((body) => {
+          if (body.category === resettingCategory) { return; }
+          body.addCollisionMask(guideOutlineCategory);
+          body.removeCollisionMask(guideCategory);
+        });
       });
-    });
   };
+
+  openGuide = () => {
+    this.guideShouldOpen = true;
+    this.guide.open(this.getCenterCoordinates())
+      .then(() => {
+        if (this.guideShouldOpen) {
+          this.props.setGuideExpanded(true);
+        }
+      })
+      .finally(() => { this.updateGuidePosition(); });
+    this.keywords.forEach((body) => {
+      body.removeCollisionMask(guideOutlineCategory);
+      if (body.category === visibleTextCategory) {
+        body.addCollisionMask(guideCategory);
+      }
+    });
+  }
 
   onGuideMouseUp = (e) => {
     if (!this.guide.outlineReady) { return; }
@@ -213,15 +232,7 @@ export default class PhysicsVariant extends React.PureComponent {
     } else if (this.guide.isExpanded) {
       this.closeGuide();
     } else {
-      this.guide.open(this.getCenterCoordinates())
-        .then(() => { this.props.setGuideExpanded(true); })
-        .finally(() => { this.updateGuidePosition(); });
-      this.keywords.forEach((body) => {
-        body.removeCollisionMask(guideOutlineCategory);
-        if (body.category === visibleTextCategory) {
-          body.addCollisionMask(guideCategory);
-        }
-      });
+      this.openGuide();
     }
   };
 

@@ -29,7 +29,6 @@ class WheelList extends React.Component {
           <span
             title={text}
             className={offsetClasses[Math.abs(offset)]}
-            style={{ width: `${props.textClippingRadius}%` }}
             key={`${text}-${offset}`}
           >
             {text}
@@ -83,9 +82,6 @@ class WheelList extends React.Component {
 }
 
 WheelList.propTypes = {
-  /** Distance at which to clip the selected text. Requires a valid CSS width. */
-  // eslint-disable-next-line react/no-unused-prop-types
-  textClippingRadius: PropTypes.string,
   /** Additional classes to apply */
   className: PropTypes.string,
   /** Event handler, will receive the array index being selected */
@@ -100,7 +96,6 @@ WheelList.propTypes = {
 
 WheelList.defaultProps = {
   className: null,
-  textClippingRadius: '80%',
 };
 
 export default WheelList;
