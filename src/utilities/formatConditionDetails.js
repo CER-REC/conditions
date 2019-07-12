@@ -28,8 +28,6 @@ export default (instruments, selectedFeature) => (
           return fillAcc;
         }, []);
 
-      const { id } = condition;
-
       const details = {
         theme: condition.theme.filter((v, i, a) => a.indexOf(v) === i),
         phase: `phase.${condition.phase}`,
@@ -40,7 +38,7 @@ export default (instruments, selectedFeature) => (
 
       // TODO: keywords needs to be matched search keywords...
       acc.push({
-        id,
+        id: condition.id,
         fill,
         details,
         binnedValue: condition.textLength,
@@ -58,6 +56,7 @@ export default (instruments, selectedFeature) => (
 
     return {
       instrumentNumber: number,
+      id: instrument.id,
       issuanceDate: dateIssuance,
       effectiveDate: dateEffective,
       sunsetDate: dateSunset || 'null',
