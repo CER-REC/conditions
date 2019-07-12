@@ -576,7 +576,7 @@ class App extends React.PureComponent {
             setSelectedProject={this.updateSelection.fromProject}
             filteredProjectLookup={this.props.filteredProjects}
             displayOrder={this.props.allConfigurationData.displayOrder}
-            availableCategories={(this.props.allConfigurationData.keywordCategories)}
+            availableCategories={this.props.allConfigurationData.keywordCategories}
             suggestedKeywords={this.props.allKeywords}
             updateSearch={this.updateSearch}
           />
@@ -770,20 +770,12 @@ export default props => (
             {({ data, loading, errors }) => {
               // TODO: Error handling for these queries
               if (loading || errors) { return null; }
-              const configData = {
-                ...data.config,
-                keywordCategories: ['all'].concat(data.config.keywordCategories),
-
-              };
-
-              const conditionsData = data.conditionsPerYear;
-              const { allKeywords } = data;
 
               return (
                 <ConnectedApp
-                  allConditionsPerYear={conditionsData}
-                  allConfigurationData={configData}
-                  allKeywords={allKeywords}
+                  allConditionsPerYear={data.conditionsPerYear}
+                  allConfigurationData={data.config}
+                  allKeywords={data.allKeywords}
                   {...props}
                 />
               );
