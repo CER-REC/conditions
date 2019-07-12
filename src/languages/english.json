@@ -309,8 +309,7 @@
         "projectStatus": {
           "projectStatusText": "Filter by Project Status",
           "IN_PROGRESS": "In Progress",
-          "COMPLETED": "Completed",
-          "ALL": "All"
+          "COMPLETED": "Completed"
         }
       },
       "tab": {
@@ -322,9 +321,12 @@
         "suggestedKeywords": "Suggested\nKeywords"
       },
       "highlightSummary": {
-        "showing": "Showing {status} projects from",
+        "showing": "Showing {status} projects from {start} - {end}",
         "includes": "Highlighting conditions containing",
-        "excludes": "Exclude conditions containing"
+        "excludes": "Exclude conditions containing",
+        "IN_PROGRESS": "In Progress",
+        "COMPLETED": "Completed",
+        "ALL": "All"
       },
       "findWords": {
         "findWords": "Find Words",
@@ -392,7 +394,7 @@
       },
       "regdocs": {
         "searchFor": "Search for instrument {instrument} in {regdocs}",
-        "regdocs": "Regdocs...",
+        "regdocs": "RegDocs...",
         "found": "Instrument found, click to open document.",
         "currentTab": "Open in current tab",
         "newTab": "Open in new tab",

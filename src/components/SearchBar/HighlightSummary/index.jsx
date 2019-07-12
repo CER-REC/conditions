@@ -22,17 +22,12 @@ const HighlightSummary = props => (
       id="components.searchBar.highlightSummary.showing"
       values={{
         status: <FormattedMessage
-          id={
-            `components.searchBar.filter.projectStatus.${
-              (props.includedStatuses.length === 1)
-                ? props.includedStatuses[0]
-                : 'ALL'
-            }`
-          }
+          id={`components.searchBar.highlightSummary.${props.includedStatuses[0] || 'ALL'}`}
         />,
+        start: props.selectedYear.start,
+        end: props.selectedYear.end,
       }}
     />
-    <span> {props.selectedYear.start} - {props.selectedYear.end } </span>
     <br />
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
