@@ -12,7 +12,13 @@ const shouldQuery = {
   ),
 };
 
-export default (app, client) => (searchVariables, filterVariables) => {
+export default (
+  client,
+  setSearchResults,
+  setFilteredProjects,
+  searchVariables,
+  filterVariables,
+) => {
   Promise.all([
     (shouldQuery.search(searchVariables))
       ? client.query({
@@ -32,12 +38,12 @@ export default (app, client) => (searchVariables, filterVariables) => {
 
     batch(() => {
       if (response[0] && response[0].data) {
-        app.props.setSearchResults(
+        setSearchResults(
           processQueryData.searchResults(response[0].data.findSearchResults),
         );
       }
       if (response[1] && response[1].data) {
-        app.props.setFilteredProjects(
+        setFilteredProjects(
           processQueryData.filteredProjects(response[1].data.findFilteredProjects),
         );
       }

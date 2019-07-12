@@ -1,7 +1,10 @@
-const createLookupList = arr => arr.reduce((acc, cur) => {
-  acc[cur] = true;
-  return acc;
-}, []);
+const createLookupList = arr => ((arr && arr.length)
+  ? arr.reduce((acc, cur) => {
+    acc[cur] = true;
+    return acc;
+  }, [])
+  : []
+);
 
 // eslint-disable-next-line import/prefer-default-export
 export const conditionCounts = (counts) => {

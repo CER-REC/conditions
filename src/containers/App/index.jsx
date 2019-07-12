@@ -129,9 +129,18 @@ class App extends React.PureComponent {
         { keywordId: id },
       ),
     };
-
-    this.updateSearch = updateSearch(this, client);
   }
+
+  updateSearch = (searchVariables, filterVariables) => updateSearch(
+    client,
+    // Linter is incorrectly flagging these
+    // eslint-disable-next-line react/prop-types
+    this.props.setSearchResults,
+    // eslint-disable-next-line react/prop-types
+    this.props.setFilteredProjects,
+    searchVariables,
+    filterVariables,
+  );
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
