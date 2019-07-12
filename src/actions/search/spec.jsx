@@ -42,6 +42,7 @@ describe('actions/search', () => {
       companyIdLookup: [true, false, true],
       conditionIdLookup: [false, false, true],
       projectIdLookup: [false, true, false],
+      regionIdLookup: [false, true, true],
     };
     const newState = search.reducer(undefined, search.setSearchResults(searchResults));
     expect(newState).toHaveProperty('searchResults', searchResults);

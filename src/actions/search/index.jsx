@@ -56,6 +56,7 @@ const initialState = {
     companyIdLookup: [],
     conditionIdLookup: [],
     projectIdLookup: [],
+    regionIdLookup: [],
   },
   filteredProjects: [],
 };
