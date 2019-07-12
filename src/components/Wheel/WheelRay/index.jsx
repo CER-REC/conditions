@@ -23,11 +23,13 @@ class WheelRay extends React.Component {
     currentIndex: PropTypes.number.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
   }
 
   static defaultProps = {
     relevantProjectLookup: [],
     filteredProjectLookup: [],
+    searchedRegionsLookup: [],
   };
 
   constructor(props) {
@@ -79,10 +81,19 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay" {...handleInteraction(props.onChangeDot, index)}>
+          <g
+            key={`${item.id}CompanyRay`}
+            transform={transform}
+            className="companyRay"
+            {...handleInteraction(props.onChangeDot, index)}
+          >
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
-            <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChangeRay, index)}>
+            <text
+              className="textLabels"
+              transform="translate(28.75) rotate(90)"
+              {...handleInteraction(props.onChangeRay, index)}
+            >
               { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
             </text>
             {(this.flagLayouts)
@@ -108,7 +119,7 @@ class WheelRay extends React.Component {
               items={items[index].aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
-              searched
+              searched={!!(this.props.searchedRegionsLookup[item.id])}
               adjustRotationReference={degreesPerItem / 2}
             />
             { item.province !== legendTracker

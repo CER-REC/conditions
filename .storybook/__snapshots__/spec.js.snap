@@ -1348,19 +1348,16 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         Why is there more than one company associated with this project?
       </h4>
       <p>
-        There are instances when more than one company has obligations related to a project.  Examples include:
+        There are instances when more than one company has obligations related to a project. Examples include:
       </p>
       <ul
         className="bullets"
       >
         <li>
-          an agreement between one company to sell and another company to purchase a pipeline;
+          an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
-        </li>
-        <li>
-          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -1481,19 +1478,16 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         Why is there more than one company associated with this project?
       </h4>
       <p>
-        There are instances when more than one company has obligations related to a project.  Examples include:
+        There are instances when more than one company has obligations related to a project. Examples include:
       </p>
       <ul
         className="bullets"
       >
         <li>
-          an agreement between one company to sell and another company to purchase a pipeline;
+          an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and
-        </li>
-        <li>
-          NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).
+          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -4809,7 +4803,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Administrative
       </h4>
       <p>
-        conditions that help track organizational tasks.
+        Conditions that help track organizational tasks.
       </p>
     </div>
     <div
@@ -4821,7 +4815,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Damage Prevention
       </h4>
       <p>
-        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
+        Conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </p>
     </div>
     <div
@@ -4833,7 +4827,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Emergency Management
       </h4>
       <p>
-        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
+        Conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </p>
     </div>
     <div
@@ -4845,7 +4839,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Enforcement
       </h4>
       <p>
-        conditions that reinforce prescribed regulatory requirements to be met.
+        Conditions that reinforce prescribed regulatory requirements to be met.
       </p>
     </div>
     <div
@@ -4857,7 +4851,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Environmental Protection
       </h4>
       <p>
-        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
+        Conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </p>
     </div>
     <div
@@ -4869,7 +4863,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Financial
       </h4>
       <p>
-        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
+        Conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </p>
     </div>
     <div
@@ -4881,7 +4875,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Integrity Management
       </h4>
       <p>
-        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
+        Conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </p>
     </div>
     <div
@@ -4893,7 +4887,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Management System
       </h4>
       <p>
-        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
+        Company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
       </p>
     </div>
     <div
@@ -4905,7 +4899,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Safety Management
       </h4>
       <p>
-         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
+         Conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </p>
     </div>
     <div
@@ -4917,7 +4911,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Security
       </h4>
       <p>
-        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        Conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </p>
     </div>
     <div
@@ -4929,7 +4923,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Socio-Economic
       </h4>
       <p>
-        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
+        Conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </p>
     </div>
     <div
@@ -4941,7 +4935,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Standard Condition
       </h4>
       <p>
-         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        A condition that is typically imposed on all approved projects.
       </p>
     </div>
     <div
@@ -4953,7 +4947,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
         Sunset Clause
       </h4>
       <p>
-        conditions that ensure projects begin within a specific period of time.
+        Conditions that ensure projects begin within a specific period of time.
       </p>
     </div>
   </div>
@@ -4983,7 +4977,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Administrative
       </h4>
       <p>
-        conditions that help track organizational tasks.
+        Conditions that help track organizational tasks.
       </p>
     </div>
     <div
@@ -4995,7 +4989,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Damage Prevention
       </h4>
       <p>
-        conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
+        Conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.
       </p>
     </div>
     <div
@@ -5007,7 +5001,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Emergency Management
       </h4>
       <p>
-        conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
+        Conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.
       </p>
     </div>
     <div
@@ -5019,7 +5013,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Enforcement
       </h4>
       <p>
-        conditions that reinforce prescribed regulatory requirements to be met.
+        Conditions that reinforce prescribed regulatory requirements to be met.
       </p>
     </div>
     <div
@@ -5031,7 +5025,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Environmental Protection
       </h4>
       <p>
-        conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
+        Conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.
       </p>
     </div>
     <div
@@ -5043,7 +5037,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Financial
       </h4>
       <p>
-        conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
+        Conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.
       </p>
     </div>
     <div
@@ -5055,7 +5049,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Integrity Management
       </h4>
       <p>
-        conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
+        Conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.
       </p>
     </div>
     <div
@@ -5067,7 +5061,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Management System
       </h4>
       <p>
-        company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
+        Company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.
       </p>
     </div>
     <div
@@ -5079,7 +5073,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Safety Management
       </h4>
       <p>
-         conditions that eliminate or reduce risk to the public, workers, the environment and assets.
+         Conditions that eliminate or reduce risk to the public, workers, the environment and assets.
       </p>
     </div>
     <div
@@ -5091,7 +5085,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Security
       </h4>
       <p>
-        conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        Conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
       </p>
     </div>
     <div
@@ -5103,7 +5097,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Socio-Economic
       </h4>
       <p>
-        conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
+        Conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.
       </p>
     </div>
     <div
@@ -5115,7 +5109,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Standard Condition
       </h4>
       <p>
-         conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.
+        A condition that is typically imposed on all approved projects.
       </p>
     </div>
     <div
@@ -5127,7 +5121,7 @@ exports[`Storyshots Components|FeatureTypesDescription default 1`] = `
         Sunset Clause
       </h4>
       <p>
-        conditions that ensure projects begin within a specific period of time.
+        Conditions that ensure projects begin within a specific period of time.
       </p>
     </div>
   </div>
@@ -9103,6 +9097,7 @@ exports[`Storyshots Components|ProjectDot default 1`] = `
       className="ProjectDot"
       cx={50}
       cy={50}
+      data-id={0}
       r={40}
       stroke="transparent"
       strokeWidth={40}
@@ -16969,7 +16964,11 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing all projects from
+        Showing 
+        <span>
+          All
+        </span>
+         projects from
       </span>
       <span>
          
@@ -16979,19 +16978,6 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
          
       </span>
       <br />
-      <span>
-        With Status(es):
-      </span>
-      <div>
-         
-        <span>
-          In Progress
-        </span>
-        , 
-        <span>
-          Completed
-        </span>
-      </div>
       <p>
         Highlighting conditions containing
          : 
@@ -16999,7 +16985,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       <div
         className="keywordsText"
       >
-        safety
+        <span>
+          safety
+        </span>
       </div>
     </div>
   </div>
@@ -18142,7 +18130,11 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing all projects from
+        Showing 
+        <span>
+          All
+        </span>
+         projects from
       </span>
       <span>
          
@@ -18152,19 +18144,6 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
          
       </span>
       <br />
-      <span>
-        With Status(es):
-      </span>
-      <div>
-         
-        <span>
-          In Progress
-        </span>
-        , 
-        <span>
-          Completed
-        </span>
-      </div>
       <p>
         Highlighting conditions containing
          : 
@@ -18172,7 +18151,13 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <div
         className="keywordsText"
       >
-        include1, include2
+        <span>
+          include1
+        </span>
+        , 
+        <span>
+          include2
+        </span>
       </div>
       <p>
         Exclude conditions containing
@@ -18181,7 +18166,13 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <div
         className="keywordsText"
       >
-        exclude1, exclude2
+        <span>
+          exclude1
+        </span>
+        , 
+        <span>
+          exclude2
+        </span>
       </div>
     </div>
   </div>
@@ -18661,7 +18652,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         </ul>
       </div>
       <div
-        className="close"
+        className="closeSearchKeywordPopout"
       >
         <button
           className="upperCase"

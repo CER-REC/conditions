@@ -71,11 +71,13 @@ export const searchResults = results => (
       companyIdLookup: createLookupList(results.companyIds),
       conditionIdLookup: createLookupList(results.conditionIds),
       projectIdLookup: createLookupList(results.projectIds),
+      regionIdLookup: createLookupList(results.regionIds),
     }
     : {
       companyIdLookup: [],
       conditionIdLookup: [],
       projectIdLookup: [],
+      regionIdLookup: [],
     }
 );
 export const filteredProjects = ids => (

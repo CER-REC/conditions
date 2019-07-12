@@ -153,7 +153,9 @@ export default class PhysicsVariant extends React.PureComponent {
     this.setState(state => ({ renderToggle: !state.renderToggle }));
 
     this.lastDeltaTime = deltaTime;
-    this.loopID = window.requestAnimationFrame(this.loop);
+    if (!this.props.physicsPaused) {
+      this.loopID = window.requestAnimationFrame(this.loop);
+    }
   }
 
   updateGuidePosition = () => this.props.setGuidePosition(

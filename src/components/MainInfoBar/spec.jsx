@@ -6,7 +6,6 @@ import MainInfoBar from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-const expectFuncs = expect.objectContaining(eventFuncs);
 
 describe('Components|MainInfoBar', () => {
   let spy;
@@ -34,7 +33,8 @@ describe('Components|MainInfoBar', () => {
         .first()
         .simulate('click', eventFuncs);
 
-      expect(spy.setPane).toHaveBeenCalledWith('about', expectFuncs);
+      expect(spy.setPane).toHaveBeenCalledTimes(1);
+      expect(spy.setPane.mock.calls[0][0]).toBe('about');
     });
 
     test('should pass its setPane callback to the collapse arrows', () => {
@@ -42,7 +42,8 @@ describe('Components|MainInfoBar', () => {
         .find('CircleContainer')
         .simulate('click', eventFuncs);
 
-      expect(spy.setPane).toHaveBeenCalledWith('', expectFuncs);
+      expect(spy.setPane).toHaveBeenCalledTimes(1);
+      expect(spy.setPane.mock.calls[0][0]).toBe('');
     });
   });
 
