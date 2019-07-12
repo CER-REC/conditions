@@ -46,11 +46,11 @@ class ViewTwo extends React.Component {
     }
 
     const countData = this.props.projectsData.reduce((acc, project) => {
-      acc.instruments += project.numberOfInstruments;
-      acc.conditions += project.numberOfConditions;
+      acc.instrumentCount += project.numberOfInstruments;
+      acc.conditionCount += project.numberOfConditions;
 
       return acc;
-    }, { projects: this.props.projectsData.length, instruments: 0, conditions: 0 });
+    }, { projectCount: this.props.projectsData.length, instrumentCount: 0, conditionCount: 0 });
 
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
@@ -91,13 +91,13 @@ class ViewTwo extends React.Component {
           />
           <GreyPipe
             mode={this.props.browseBy}
-            countData={(
+            {...((
               this.props.browseBy === 'company'
               && !(this.props.wheelMoving || this.props.projectMenuLoading)
             )
               ? countData
-              : undefined
-            }
+              : {}
+            )}
           />
           {(this.props.browseBy === 'company')
             ? <DotLegend />

@@ -5,7 +5,7 @@ import './styles.scss';
 
 import CountBubble from './CountBubble';
 
-const GreyPipe = ({ mode, countData }) => (
+const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
   <div className={classNames('GreyPipe', mode)}>
     {mode === 'location'
       ? <div className="topConnection" />
@@ -17,12 +17,12 @@ const GreyPipe = ({ mode, countData }) => (
     }
     <div className="top" />
     <div className="vertical">
-      {(mode === 'company' && countData)
+      {(mode === 'company' && conditionCount !== null)
         ? (
           <React.Fragment>
-            <CountBubble count={countData.conditions} textId="conditions" />
-            <CountBubble count={countData.instruments} textId="instruments" />
-            <CountBubble count={countData.projects} textId="projects" />
+            <CountBubble count={conditionCount} textId="conditions" />
+            <CountBubble count={instrumentCount} textId="instruments" />
+            <CountBubble count={projectCount} textId="projects" />
           </React.Fragment>
         )
         : null
@@ -35,14 +35,14 @@ const GreyPipe = ({ mode, countData }) => (
 
 GreyPipe.propTypes = {
   mode: PropTypes.oneOf(['company', 'location']).isRequired,
-  countData: PropTypes.shape({
-    conditions: PropTypes.number,
-    instruments: PropTypes.number,
-    projects: PropTypes.number,
-  }),
+  conditionCount: PropTypes.number,
+  instrumentCount: PropTypes.number,
+  projectCount: PropTypes.number,
 };
 
 GreyPipe.defaultProps = {
-  countData: null,
+  conditionCount: null,
+  instrumentCount: null,
+  projectCount: null,
 };
 export default GreyPipe;
