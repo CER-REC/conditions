@@ -62,10 +62,9 @@ class ViewThree extends React.PureComponent {
           />
         </section>
         <section className="selectedCompany">
-          {/* TODO: Use SelectedGroupBar instead of hardcoding here */}
           <div className="selectedCompanyHeader">
-            <FormattedMessage id="views.view3.company" />
-            <h2 className="companyName">Company Name</h2>
+            <FormattedMessage id="views.view3.company" tagName="h1" />
+            <h2 className="companyName" title={this.props.companyName}>{this.props.companyName}</h2>
           </div>
         </section>
       </section>
@@ -82,16 +81,13 @@ ViewThree.propTypes = {
   selected: PropTypes.shape({
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-    }).isRequired,
   }).isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   setSelectedFeature: PropTypes.func.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   setSelectedSubFeature: PropTypes.func.isRequired,
   displayOrder: displayOrder.isRequired,
+  companyName: PropTypes.string.isRequired,
 };
 
 ViewThree.defaultProps = {

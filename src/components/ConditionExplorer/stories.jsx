@@ -15,7 +15,10 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
   .addDecorator(
     withInteraction({
       actions: {
-        setSelectedKeywordId: () => keywordId => ({ selectedKeywordId: keywordId }),
+        // TODO: There is a bug with the story implementation that causes the
+        // browser to lock up
+        // TODO: Implement the same action and crash-fix to ViewOne story
+        setSelectedKeyword: () => keywordId => ({ selectedKeywordId: keywordId.body.id }),
       },
       state: {
         selectedKeywordId: -1,
@@ -25,7 +28,6 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
   .add('default', () => (
     <ConditionExplorer
       keywords={uniqueKeywords}
-      setSelectedKeyword={noop}
       beginTutorial={noop}
       {...getInteractionProps()}
     />
@@ -33,7 +35,6 @@ storiesForComponent('Components|ConditionExplorer', module, ReadMe)
   .add('physics disabled', () => (
     <ConditionExplorer
       keywords={uniqueKeywords}
-      setSelectedKeyword={noop}
       beginTutorial={noop}
       physics={false}
       {...getInteractionProps()}

@@ -4,6 +4,7 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
 import SuggestedKeywordsPopout from '.';
 import ReadMe from './README.md';
+import { categories } from '../../../mockData';
 
 const keywords = {
   deer: { conditions: 1200, category: ['wildlife & habitat'] },
@@ -17,7 +18,7 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
     <SuggestedKeywordsPopout
       isExclude={false}
       suggestedKeywords={keywords}
-      categories={['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings']}
+      categories={categories.availableCategories}
       {...getInteractionProps()}
     />
   ), {

@@ -17,6 +17,11 @@
   font-size: 9px;
   font-family: $fira-sans-condensed-italic;
   text-align: left;
+
+  .keywordsText span {
+    color: $SearchKeyword;
+  }
+
   p {
     padding: 0px;
     margin: 0px;

@@ -5,6 +5,7 @@ import List from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
+const expectFuncs = expect.objectContaining(eventFuncs);
 
 describe('Components|List', () => {
   describe('without any items', () => {
@@ -73,12 +74,12 @@ describe('Components|List', () => {
 
     test('should call its onChange prop with what was clicked', () => {
       wrapper.find('.List-Item-Content').last().simulate('click', eventFuncs);
-      expect(spy).toHaveBeenLastCalledWith(2);
+      expect(spy).toHaveBeenLastCalledWith(2, expectFuncs);
     });
 
     test('should call its onChange prop with what enter was pressed on', () => {
       wrapper.find('.List-Item-Content').last().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(2);
+      expect(spy).toHaveBeenLastCalledWith(2, expectFuncs);
     });
   });
 
