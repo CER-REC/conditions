@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.scss';
 
-const ProjectDot = ({ cx, cy, r, filtered, relevant }) => (
+const ProjectDot = ({ cx, cy, r, filtered, relevant, id }) => (
   <circle
     className={classNames('ProjectDot', { filtered, relevant })}
+    data-id={id}
     cx={cx}
     cy={cy}
     r={r}
@@ -20,6 +21,7 @@ ProjectDot.propTypes = {
   r: PropTypes.number.isRequired,
   filtered: PropTypes.bool,
   relevant: PropTypes.bool,
+  id: PropTypes.number.isRequired,
 };
 
 ProjectDot.defaultProps = {

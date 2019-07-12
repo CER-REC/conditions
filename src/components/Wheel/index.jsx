@@ -21,6 +21,7 @@ class Wheel extends React.Component {
     wheelData: PropTypes.arrayOf(PropTypes.object).isRequired,
     selectedRay: PropTypes.number,
     selectRay: PropTypes.func.isRequired,
+    selectProject: PropTypes.func.isRequired,
     wheelMotionTrigger: PropTypes.func.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
@@ -96,8 +97,18 @@ class Wheel extends React.Component {
     this.props.selectRay(items[randomNum].id);
   };
 
-  onChange = (index) => {
+  onChangeRay = (index) => {
     this.props.selectRay(this.props.wheelData[index].id);
+  };
+
+  onChangeDot = (index, e) => {
+    const id = parseInt(e.target.dataset.id, 10);
+
+    if (id) {
+      this.props.selectProject(id);
+    } else {
+      this.onChangeRay(index);
+    }
   };
 
   getIndex = (currentRotation) => {
@@ -149,7 +160,8 @@ class Wheel extends React.Component {
                     <Ring ringType={this.props.wheelType} />
                     {this.shouldRender(() => (
                       <AnimatedWheelRay
-                        onChange={this.onChange}
+                        onChangeRay={this.onChangeRay}
+                        onChangeDot={this.onChangeDot}
                         stopWheel={this.stopWheel}
                         wheelType={this.props.wheelType}
                         items={this.props.wheelData}
@@ -178,7 +190,7 @@ class Wheel extends React.Component {
                     wheelType={this.props.wheelType}
                     listContent={this.props.wheelData}
                     textClippingRadius="60"
-                    onChange={this.onChange}
+                    onChange={this.onChangeRay}
                     selected={currentIndex}
                   />
                 </div>

@@ -4,7 +4,7 @@
 .WheelRay {
   opacity: 1;
   cursor: pointer;
-  .locationRay, .companyRay {
+  .locationRay {
     pointer-events: bounding-box;
   }
   .textLabels {

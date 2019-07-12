@@ -9,13 +9,13 @@ export default memoize((callback, ...boundArgs) => {
     onClick: (e) => {
       e.preventDefault();
       e.stopPropagation();
-      callback(...boundArgs);
+      callback(...boundArgs, e);
     },
     onKeyPress: (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
         e.stopPropagation();
-        callback(...boundArgs);
+        callback(...boundArgs, e);
       }
     },
     tabIndex: 0,
