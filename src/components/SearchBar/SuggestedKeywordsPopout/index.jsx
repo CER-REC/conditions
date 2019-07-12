@@ -75,7 +75,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
             console.dir(b.name);
             console.dir(a.name.localeCompare(b.name) * direction);
             return (
-              -a.name.localeCompare(b.name) * direction);
+              a.name.localeCompare(b.name) * direction);
           }
           : (a, b) => (a.conditionCount - b.conditionCount) * direction,
       );
