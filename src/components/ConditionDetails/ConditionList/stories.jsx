@@ -10,78 +10,80 @@ const data = [
     instrumentNumber: 'XO-001-2018',
     instrumentIndex: 0,
     itemIndex: -1,
+    instrumentId: 100,
+    conditionId: undefined,
   },
   {
     binnedValue: 3,
-    instrumentNumber: 'XO-001-2018',
-    id: 1,
     fill: ['pink'],
     marked: true,
     instrumentIndex: 0,
     itemIndex: 0,
+    instrumentId: 101,
+    conditionId: 201,
   },
   {
     binnedValue: 2,
-    instrumentNumber: 'XO-001-2018',
-    id: 2,
-    fill: ['blue'],
+    fill: ['blue', 'red', 'green'],
     instrumentIndex: 0,
     itemIndex: 1,
+    instrumentId: 102,
+    conditionId: 202,
   },
   {
     isInstrument: true,
     instrumentNumber: 'XO-003-2018',
     instrumentIndex: 1,
     itemIndex: -1,
+    instrumentId: 103,
+    conditionId: undefined,
   },
   {
     binnedValue: 1,
-    instrumentNumber: 'XO-003-2018',
-    id: 4,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 0,
+    instrumentId: 104,
+    conditionId: 204,
   },
   {
     binnedValue: 2,
-    instrumentNumber: 'XO-003-2018',
-    id: 5,
     fill: ['red'],
     instrumentIndex: 1,
     itemIndex: 1,
+    instrumentId: 105,
+    conditionId: 205,
   },
   {
     isInstrument: true,
     instrumentNumber: 'XO-005-2018',
     instrumentIndex: 2,
     itemIndex: -1,
+    instrumentId: 106,
+    conditionId: undefined,
   },
   {
     binnedValue: 3,
-    instrumentNumber: 'XO-005-2018',
-    id: 6,
     fill: ['orange'],
     marked: true,
     instrumentIndex: 2,
     itemIndex: 0,
+    instrumentId: 107,
+    conditionId: 207,
   },
 ];
 
-const updateSelectedItem = () => (instrumentIndex, itemIndex) => (
-  { instrumentIndex, itemIndex }
-);
-
 storiesForComponent('Components|ConditionDetails/ConditionList', module, ReadMe)
-  .addDecorator(withInteraction({ actions: ['updateSelectedItem'] }))
+  .addDecorator(withInteraction({
+    state: { selectedCondition: -1, selectedInstrument: -1 },
+    actions: {
+      updateSelectedInstrument: () => id => ({ selectedInstrument: id, selectedCondition: -1 }),
+      updateSelectedCondition: () => id => ({ selectedInstrument: -1, selectedCondition: id }),
+    },
+  }))
   .add('default', () => (
     <ConditionList
       items={data}
       {...getInteractionProps()}
     />
-  ), {
-    interaction:
-    {
-      state: { selectedItem: 0 },
-      actions: { updateSelectedItem },
-    },
-  });
+  ));

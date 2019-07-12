@@ -39,6 +39,12 @@
 
     section.wheel {
       overflow: visible;
+
+      .DotLegend {
+        position: absolute;
+        left: 0;
+        top: 105%;
+      }
     }
 
     section.menus {

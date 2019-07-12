@@ -24,7 +24,8 @@ describe('Components|ConditionDetails', () => {
         openProjectDetails: jest.fn(),
         openIntermediatePopup: jest.fn(),
         toggleExpanded: jest.fn(),
-        updateSelectedItem: jest.fn(),
+        updateSelectedInstrument: jest.fn(),
+        updateSelectedCondition: jest.fn(),
       };
 
       wrapper = shallow(

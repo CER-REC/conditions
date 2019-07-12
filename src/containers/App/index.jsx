@@ -19,8 +19,9 @@ import { lang, regDocURL } from '../../constants';
 
 import * as processQueryData from './processQueryData';
 
-import getConditionAncestors from '../../queries/getConditionAncestors';
-import getKeywordConditions from '../../queries/getKeywordConditions';
+import updateSelection from './updateSelection';
+import updateSearch from './updateSearch';
+
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 import allKeywordsQuery from '../../queries/allKeywords';
@@ -106,7 +107,41 @@ class App extends React.PureComponent {
       isCompanyPopupOpen: false,
     };
     this.ref = React.createRef();
+
+    const updateSelectionWrapped = (from, variables, staticSelection = {}) => {
+      updateSelection(
+        this.props.selected,
+        this.props.setSelectedMultiple,
+        client,
+        from,
+        variables,
+        staticSelection,
+      );
+    };
+    this.updateSelection = {
+      fromProject: id => updateSelectionWrapped('Project', { id }),
+      fromRegion: id => updateSelectionWrapped('Region', { id }),
+      fromCompany: id => updateSelectionWrapped('Company', { id }),
+      fromInstrument: id => updateSelectionWrapped('Instrument', { id }),
+      fromCondition: id => updateSelectionWrapped('Condition', { id }),
+      fromKeyword: (keyword, id) => updateSelectionWrapped(
+        'Keyword',
+        { keywords: [keyword] },
+        { keywordId: id },
+      ),
+    };
   }
+
+  updateSearch = (searchVariables, filterVariables) => updateSearch(
+    client,
+    // Linter is incorrectly flagging these
+    // eslint-disable-next-line react/prop-types
+    this.props.setSearchResults,
+    // eslint-disable-next-line react/prop-types
+    this.props.setFilteredProjects,
+    searchVariables,
+    filterVariables,
+  );
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
@@ -216,7 +251,7 @@ class App extends React.PureComponent {
   jumpToView1 = () => {
     this.props.setTransitionState(transitionStates.view1Reset);
     this.props.setBrowseBy('company');
-    this.props.setSelectedKeywordId(-1);
+    this.props.setSelectedMultiple({ keywordId: -1 });
   }
 
   jumpToView2 = (type) => {
@@ -397,51 +432,17 @@ class App extends React.PureComponent {
     return keywordTranslation;
   };
 
-  setConditionAncestors = (id) => {
-    // TODO: Make a query for this once our server has `conditionById($id)` available
-    client.query({
-      query: getConditionAncestors,
-      variables: { id },
-    // eslint-disable-next-line no-unused-vars
-    }).then((response) => {
-      // TODO: Error checking
-      const condition = response.data.getConditionById;
-
-      // TODO: setSelectedCondition once View 2 is wired up for it
-
-      this.props.setSelectedProject(condition.instrument.projectId);
-
-      const randomCompany = Math.floor(
-        Math.random() * condition.instrument.project.companyIds.length,
-      );
-      const company = condition.instrument.project.companyIds[randomCompany];
-      this.props.setSelectedCompany(company);
-      // TODO: This should also set the condition to selected
-    });
-  }
-
   setSelectedKeyword = (instance) => {
     this.selectedKeywordInstance = instance;
 
+    // TODO: We should either make this support the fallback mode (no physics) and
+    // finish implementing it, or remove the code for it
     const id = parseInt(instance.body.id, 10);
     const keyword = instance.keyword.value;
 
-    this.props.setSelectedKeywordId(id);
     this.props.setIncluded([keyword]);
 
-    client.query({
-      query: getKeywordConditions,
-      variables: { keywords: [keyword] },
-    }).then((response) => {
-      const { conditionIds } = response.data.findSearchResults;
-      if (!conditionIds.length) {
-        // TODO: Proper error checking or something
-        console.error(`There are no conditions matching "${keyword}"`);
-      } else {
-        const randomId = conditionIds[Math.floor(Math.random() * conditionIds.length)];
-        this.setConditionAncestors(randomId);
-      }
-    });
+    this.updateSelection.fromKeyword(keyword, id);
   };
 
   openRegDocPopup = () => {
@@ -458,15 +459,10 @@ class App extends React.PureComponent {
 
   closeCompanyPopup = () => {
     this.setState({ isCompanyPopupOpen: false });
-  };
+  }
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
-    this.processedSearchResults = this.processedSearchResults
-      || processQueryData.searchResults(this.props.searchResults);
-
-    this.processedFilter = this.processedFilter
-      || processQueryData.filteredProjects(this.props.filteredProjectIds);
 
     this.processedConditionCounts = this.processedConditionCounts
       || processQueryData.conditionCounts(this.props.allConditionsPerYear);
@@ -574,11 +570,15 @@ class App extends React.PureComponent {
               start: this.props.allConfigurationData.instrumentYearRange.min,
               end: this.props.allConfigurationData.instrumentYearRange.max,
             }}
-            searchResults={this.processedSearchResults}
-            filteredProjectLookup={this.processedFilter}
+            searchResults={this.props.searchResults}
+            setSelectedCompany={this.updateSelection.fromCompany}
+            setSelectedRegion={this.updateSelection.fromRegion}
+            setSelectedProject={this.updateSelection.fromProject}
+            filteredProjectLookup={this.props.filteredProjects}
             displayOrder={this.props.allConfigurationData.displayOrder}
             availableCategories={(this.props.allConfigurationData.keywordCategories)}
             suggestedKeywords={this.props.allKeywords}
+            updateSearch={this.updateSearch}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}
@@ -605,22 +605,34 @@ class App extends React.PureComponent {
                 ? { query: getProjectDetails, variables: { projectId: selected.project } }
                 : null}
               allInstruments={{
-                query: selected.project ? allInstrumentsBy.project : allInstrumentsBy.region,
-                variables: { id: selected.project || selected.region },
+                query: ((browseBy === 'company') ? allInstrumentsBy.project : allInstrumentsBy.region),
+                variables: { id: (browseBy === 'company') ? selected.project : selected.region },
               }}
             >
               {({ data, loading, error }) => {
-                const { instrumentIndex } = selected.condition;
                 let shortName = '';
                 let instruments = [];
                 let instrumentNumber = '';
                 let documentId = '';
                 let companyArray = [];
+                let instrumentIndex = 0;
+                let itemIndex = -1;
+
                 if (!loading && !error) {
                   const { projectDetails, allInstruments } = data;
                   instruments = formatConditionDetails(allInstruments, selected.feature);
                   if (instruments.length > 0) {
-                    ({ instrumentNumber, documentId } = instruments[instrumentIndex]);
+                    instrumentIndex = instruments
+                      .findIndex(instrument => instrument.id === selected.instrument);
+                    if (instrumentIndex === -1) {
+                      instrumentIndex = 0;
+                    } else {
+                      ({ documentId } = instruments[instrumentIndex]);
+                    }
+
+                    itemIndex = instruments[instrumentIndex].conditions
+                      .findIndex(condition => condition.id === selected.condition);
+                    ({ instrumentNumber } = instruments[instrumentIndex]);
                   }
 
                   if (projectDetails) {
@@ -632,10 +644,11 @@ class App extends React.PureComponent {
                 return (
                   <React.Fragment>
                     <ConditionDetails
-                      selectedItem={this.props.selected.condition}
+                      selectedItem={{ instrumentIndex, itemIndex }}
                       selectedProjectId={selected.project}
                       selectedProject={shortName || ''}
-                      updateSelectedItem={this.props.setSelectedCondition}
+                      updateSelectedInstrument={this.updateSelection.fromInstrument}
+                      updateSelectedCondition={this.updateSelection.fromCondition}
                       openIntermediatePopup={this.openRegDocPopup}
                       openProjectDetails={this.openCompanyPopup}
                       searchKeywords={{
@@ -685,13 +698,12 @@ App.propTypes = {
   expandDetailView: PropTypes.func.isRequired,
   selected: PropTypes.shape({
     company: PropTypes.number,
+    region: PropTypes.number,
     project: PropTypes.number,
+    feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string.isRequired,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-      instrumentNumber: PropTypes.string,
-    }).isRequired,
+    instrument: PropTypes.number,
+    condition: PropTypes.number,
     keywordId: PropTypes.number.isRequired,
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
@@ -701,17 +713,15 @@ App.propTypes = {
     category: PropTypes.arrayOf(PropTypes.string),
     conditionCount: PropTypes.number,
   })).isRequired,
-  setSelectedCompany: PropTypes.func.isRequired,
-  setSelectedCondition: PropTypes.func.isRequired,
-  setSelectedProject: PropTypes.func.isRequired,
-  setSelectedKeywordId: PropTypes.func.isRequired,
+  setSelectedMultiple: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
-    companyIds: PropTypes.arrayOf(PropTypes.number),
-    conditionIds: PropTypes.arrayOf(PropTypes.number),
-    projectIds: PropTypes.arrayOf(PropTypes.number),
+    companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    regionIds: PropTypes.arrayOf(PropTypes.bool),
   }).isRequired,
-  filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  filteredProjects: PropTypes.arrayOf(PropTypes.bool).isRequired,
 };
 
 export const AppUnconnected = App;
@@ -732,17 +742,18 @@ const ConnectedApp = connect(
     transitionState,
     included: search.included,
     excluded: search.excluded,
+    searchResults: search.searchResults,
+    filteredProjects: search.filteredProjects,
     detailViewExpanded,
   }),
   {
-    setSelectedCompany: selectedCreators.setSelectedCompany,
-    setSelectedCondition: selectedCreators.setSelectedCondition,
-    setSelectedProject: selectedCreators.setSelectedProject,
     setIncluded: searchCreators.setIncluded,
-    setSelectedKeywordId: selectedCreators.setSelectedKeywordId,
+    setSelectedMultiple: selectedCreators.setSelectedMultiple,
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
+    setSearchResults: searchCreators.setSearchResults,
+    setFilteredProjects: searchCreators.setFilteredProjects,
   },
 )(App);
 

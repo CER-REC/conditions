@@ -7,6 +7,7 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 const keywords = ['test1', 'test2'];
 const exceptKeywords = ['except1', 'except2'];
 const selectedYear = { start: 2010, end: 2018 };
+const statuses = ['IN_PROGRESS', 'COMPLETED'];
 
 describe('Components|SearchBar/HighlightSummary', () => {
   describe('default', () => {
@@ -17,6 +18,7 @@ describe('Components|SearchBar/HighlightSummary', () => {
           includeKeywords={keywords}
           excludeKeywords={exceptKeywords}
           selectedYear={selectedYear}
+          includedStatuses={statuses}
         />,
       );
     });
@@ -30,7 +32,8 @@ describe('Components|SearchBar/HighlightSummary', () => {
     test('should not render exclude keywords if no exclude keywords', () => {
       wrapper.setProps({ excludeKeywords: [] });
       const updatedWrapper = wrapper.find('FormattedMessage');
-      expect(updatedWrapper).toHaveLength(2);
+      const lastWrapper = updatedWrapper.at(updatedWrapper.length - 1);
+      expect(lastWrapper.props().id).not.toBe('components.searchBar.highlightSummary.excludes');
     });
   });
 });

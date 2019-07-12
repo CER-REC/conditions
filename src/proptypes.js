@@ -137,10 +137,6 @@ export const viewTwo = {
     region: PropTypes.number,
     project: PropTypes.number,
     feature: featureTypes.isRequired,
-    condition: PropTypes.shape({
-      instrumentIndex: PropTypes.number.isRequired,
-      itemIndex: PropTypes.number.isRequired,
-    }).isRequired,
   }).isRequired,
   projectMenuLoading: PropTypes.bool,
   projectsData: PropTypes.arrayOf(project),
@@ -158,7 +154,6 @@ export const viewTwo = {
   setSelectedProject: PropTypes.func.isRequired,
   setSelectedCompany: PropTypes.func.isRequired,
   setSelectedRegion: PropTypes.func.isRequired,
-  setSelectedCondition: PropTypes.func.isRequired,
   jumpToView1: PropTypes.func.isRequired,
   jumpToView3: PropTypes.func.isRequired,
   projectYears: PropTypes.shape({
@@ -169,6 +164,7 @@ export const viewTwo = {
     companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
     conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
     projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    regionIdLookup: PropTypes.arrayOf(PropTypes.bool),
   }),
   filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,
@@ -178,6 +174,7 @@ export const viewTwo = {
     category: PropTypes.arrayOf(PropTypes.string),
     conditionCount: PropTypes.number,
   })).isRequired,
+  updateSearch: PropTypes.func.isRequired,
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],

@@ -82,15 +82,16 @@
       }
     }
   }
-
-  .close {
+  .closeSearchKeywordPopout {
     text-align: right;
     button {
       padding: 5px;
-      margin: 5px 5px 0px 5px;
+      margin: 10px -5px 0px 5px;
       background-color: $LinksTextButtons;
       color: $White;
-      border-color: $LinksTextButtons;
+      border: none;
+      width: 80px;
     }
   }
+  
 }

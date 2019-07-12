@@ -15,17 +15,72 @@ import FeaturesMenu from '../../components/FeaturesMenu';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
+import DotLegend from '../../components/DotLegend';
 
 class ViewTwo extends React.Component {
   miniMapData = null;
 
+  constructor(props) {
+    super(props);
+    if (props.selected.region) {
+      this.miniMapData = props.wheelData
+        .find(region => region.id === props.selected.region);
+    }
+
+    // Make sure we grab results if the user came from a shared URL with search params set up
+    this.updateSearch();
+  }
+
   componentDidUpdate(prevProps) {
-    if (prevProps.selected.region !== this.props.selected.region) {
+    if (prevProps.selected.region !== this.props.selected.region
+      || prevProps.wheelData !== this.props.wheelData) {
       this.miniMapData = this.props.selected.region
         ? this.props.wheelData.find(region => region.id === this.props.selected.region)
         : null;
     }
+
+    if (this.shouldSearch) {
+      this.shouldSearch = false;
+      this.updateSearch();
+    }
   }
+
+  updateSearch = () => {
+    this.props.updateSearch({
+      includeKeywords: this.props.included,
+      excludeKeywords: this.props.excluded,
+      findAny: this.props.findAny,
+    }, {
+      startYear: this.props.projectYear.start,
+      endYear: this.props.projectYear.end,
+      statuses: this.props.projectStatus,
+    });
+  }
+
+  setIncluded = (keywords) => {
+    this.props.setIncluded(keywords);
+    this.shouldSearch = true;
+  };
+
+  setExcluded = (keywords) => {
+    this.props.setExcluded(keywords);
+    this.shouldSearch = true;
+  };
+
+  setFindAny = (value) => {
+    this.props.setFindAny(value);
+    this.shouldSearch = true;
+  };
+
+  setProjectYear = (range) => {
+    this.props.setProjectYear(range);
+    this.shouldSearch = true;
+  };
+
+  setProjectStatus = (statuses) => {
+    this.props.setProjectStatus(statuses);
+    this.shouldSearch = true;
+  };
 
   render() {
     // TODO: Evil hack. Ideally we would refactor the App's Redux connection to
@@ -41,11 +96,11 @@ class ViewTwo extends React.Component {
             className={this.props.browseBy === 'location' ? 'small' : ''}
             availableYearRange={this.props.projectYears}
             availableCategories={this.props.availableCategories}
-            setIncluded={this.props.setIncluded}
-            setExcluded={this.props.setExcluded}
-            findAnyOnChange={this.props.setFindAny}
-            updateYear={this.props.setProjectYear}
-            changeProjectStatus={this.props.setProjectStatus}
+            setIncluded={this.setIncluded}
+            setExcluded={this.setExcluded}
+            findAnyOnChange={this.setFindAny}
+            updateYear={this.setProjectYear}
+            changeProjectStatus={this.setProjectStatus}
             includeKeywords={this.props.included}
             excludeKeywords={this.props.excluded}
             projectStatus={this.props.projectStatus}
@@ -66,12 +121,18 @@ class ViewTwo extends React.Component {
             wheelType={this.props.browseBy}
             selectedRay={this.props.browseBy === 'company' ? this.props.selected.company : this.props.selected.region}
             selectRay={this.props.browseBy === 'company' ? this.props.setSelectedCompany : this.props.setSelectedRegion}
+            selectProject={this.props.setSelectedProject}
             wheelData={this.props.wheelData}
             wheelMotionTrigger={this.props.setWheelMoving}
             relevantProjectLookup={this.props.searchResults.projectIdLookup}
             filteredProjectLookup={this.props.filteredProjectLookup}
+            searchedRegionsLookup={this.props.searchResults.regionIdLookup}
           />
           <GreyPipe mode={this.props.browseBy} />
+          {(this.props.browseBy === 'company')
+            ? <DotLegend />
+            : null
+          }
         </section>
         <section className="companyBreakdown">
           {this.props.browseBy === 'location'
@@ -147,6 +208,7 @@ ViewTwo.defaultProps = {
     companyIdLookup: [],
     conditionIdLookup: [],
     projectIdLookup: [],
+    regionIdLookup: [],
   },
   filteredProjectLookup: [],
 };

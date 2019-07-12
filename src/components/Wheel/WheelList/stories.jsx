@@ -44,7 +44,6 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
       <WheelList
         wheelType="company"
         listContent={companyList}
-        textClippingRadius="75%"
         {...getInteractionProps()}
       />
     </div>
@@ -54,7 +53,6 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
       <WheelList
         wheelType="location"
         listContent={locationList}
-        textClippingRadius="75%"
         {...getInteractionProps()}
       />
     </div>
@@ -64,9 +62,7 @@ storiesForComponent('Components|Wheel/WheelList', module, ReadMe)
       <WheelList
         wheelType="company"
         listContent={[]}
-        textClippingRadius="75%"
         {...getInteractionProps()}
       />
     </div>
   ));
-
