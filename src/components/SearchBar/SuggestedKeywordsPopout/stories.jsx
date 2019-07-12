@@ -6,7 +6,7 @@ import SuggestedKeywordsPopout from '.';
 import ReadMe from './README.md';
 import { categories } from '../../../mockData';
 
-const newKeywords = [
+const keywords = [
   {
     name: 'deer',
     category: ['wildlife & habitat'],
@@ -14,7 +14,7 @@ const newKeywords = [
   },
   {
     name: 'alberta',
-    category: ['administration & filing'],
+    category: ['administration & filings'],
     conditionCount: 500,
   },
 ];
@@ -25,7 +25,7 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
   .add('with interaction', () => (
     <SuggestedKeywordsPopout
       isExclude={false}
-      suggestedKeywords={newKeywords}
+      suggestedKeywords={keywords}
       categories={categories.availableCategories}
       {...getInteractionProps()}
     />

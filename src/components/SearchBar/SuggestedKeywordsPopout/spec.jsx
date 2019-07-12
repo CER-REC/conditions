@@ -256,32 +256,32 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
     test('with sortBy as alphabetical, and hierarchy as inc', () => {
       wrapper.setState({ sortBy: 'alphabetical', sortHierarchy: 'inc' });
       const updatedWrapper = wrapper.find('KeywordList').props().keywords;
-      const firstWord = updatedWrapper[0][0];
-      const secondWord = updatedWrapper[1][0];
+      const firstWord = updatedWrapper[0].name;
+      const secondWord = updatedWrapper[1].name;
       expect(firstWord < secondWord).toBe(true);
     });
 
     test('with sortBy as alphabetical, and hierarchy as dec', () => {
       wrapper.setState({ sortBy: 'alphabetical', sortHierarchy: 'dec' });
       const updatedWrapper = wrapper.find('KeywordList').props().keywords;
-      const firstWord = updatedWrapper[0][0];
-      const secondWord = updatedWrapper[1][0];
+      const firstWord = updatedWrapper[0].name;
+      const secondWord = updatedWrapper[1].name;
       expect(firstWord > secondWord).toBe(true);
     });
 
     test('with sortBy as frequency, and hierarchy as inc', () => {
       wrapper.setState({ sortBy: 'frequency', sortHierarchy: 'inc' });
       const updatedWrapper = wrapper.find('KeywordList').props().keywords;
-      const firstCondition = updatedWrapper[0][1].conditions;
-      const secondCondition = updatedWrapper[1][1].conditions;
+      const firstCondition = updatedWrapper[0].conditionCount;
+      const secondCondition = updatedWrapper[1].conditionCount;
       expect(firstCondition < secondCondition).toBe(true);
     });
 
     test('with sortBy as frequency, and hierarchy as dec', () => {
       wrapper.setState({ sortBy: 'frequency', sortHierarchy: 'dec' });
       const updatedWrapper = wrapper.find('KeywordList').props().keywords;
-      const firstCondition = updatedWrapper[0][1].conditions;
-      const secondCondition = updatedWrapper[1][1].conditions;
+      const firstCondition = updatedWrapper[0].conditionCount;
+      const secondCondition = updatedWrapper[1].conditionCount;
       expect(firstCondition > secondCondition).toBe(true);
     });
   });
