@@ -164,6 +164,7 @@ export const viewTwo = {
     companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
     conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
     projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    regionIdLookup: PropTypes.arrayOf(PropTypes.bool),
   }),
   filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,

@@ -434,6 +434,8 @@ class App extends React.PureComponent {
   setSelectedKeyword = (instance) => {
     this.selectedKeywordInstance = instance;
 
+    // TODO: We should either make this support the fallback mode (no physics) and
+    // finish implementing it, or remove the code for it
     const id = parseInt(instance.body.id, 10);
     const keyword = instance.keyword.value;
 
@@ -708,6 +710,7 @@ App.propTypes = {
     companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
     conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
     projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    regionIds: PropTypes.arrayOf(PropTypes.bool),
   }).isRequired,
   filteredProjects: PropTypes.arrayOf(PropTypes.bool).isRequired,
 };
