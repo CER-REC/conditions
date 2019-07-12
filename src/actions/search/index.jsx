@@ -4,6 +4,8 @@ export const Types = {
   FIND_ANY: 'findAny',
   PROJECT_STATUS: 'projectStatus',
   PROJECT_YEAR: 'projectYear',
+  SEARCH_RESULTS: 'searchResults',
+  FILTERED_PROJECTS: 'filteredProjects',
 };
 
 export const setIncluded = included => ({
@@ -31,6 +33,16 @@ export const setProjectYear = projectYear => ({
   payload: { projectYear },
 });
 
+export const setSearchResults = searchResults => ({
+  type: Types.SEARCH_RESULTS,
+  payload: { searchResults },
+});
+
+export const setFilteredProjects = filteredProjects => ({
+  type: Types.FILTERED_PROJECTS,
+  payload: { filteredProjects },
+});
+
 const initialState = {
   included: [],
   excluded: [],
@@ -40,6 +52,13 @@ const initialState = {
     start: 0,
     end: 0,
   },
+  searchResults: {
+    companyIdLookup: [],
+    conditionIdLookup: [],
+    projectIdLookup: [],
+    regionIdLookup: [],
+  },
+  filteredProjects: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -49,6 +68,11 @@ export const reducer = (state = initialState, action) => {
     case Types.FIND_ANY: return { ...state, findAny: action.payload.findAny };
     case Types.PROJECT_STATUS: return { ...state, projectStatus: action.payload.projectStatus };
     case Types.PROJECT_YEAR: return { ...state, projectYear: action.payload.projectYear };
+    case Types.SEARCH_RESULTS: return { ...state, searchResults: action.payload.searchResults };
+    case Types.FILTERED_PROJECTS: return {
+      ...state,
+      filteredProjects: action.payload.filteredProjects,
+    };
     default: return state;
   }
 };

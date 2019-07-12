@@ -20,6 +20,7 @@ import { lang, regDocURL } from '../../constants';
 import * as processQueryData from './processQueryData';
 
 import updateSelection from './updateSelection';
+import updateSearch from './updateSearch';
 
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
@@ -129,6 +130,17 @@ class App extends React.PureComponent {
       ),
     };
   }
+
+  updateSearch = (searchVariables, filterVariables) => updateSearch(
+    client,
+    // Linter is incorrectly flagging these
+    // eslint-disable-next-line react/prop-types
+    this.props.setSearchResults,
+    // eslint-disable-next-line react/prop-types
+    this.props.setFilteredProjects,
+    searchVariables,
+    filterVariables,
+  );
 
   setWheelMoving = (moving) => { this.setState({ wheelMoving: moving }); };
 
@@ -450,11 +462,6 @@ class App extends React.PureComponent {
 
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
-    this.processedSearchResults = this.processedSearchResults
-      || processQueryData.searchResults(this.props.searchResults);
-
-    this.processedFilter = this.processedFilter
-      || processQueryData.filteredProjects(this.props.filteredProjectIds);
 
     this.processedConditionCounts = this.processedConditionCounts
       || processQueryData.conditionCounts(this.props.allConditionsPerYear);
@@ -560,13 +567,14 @@ class App extends React.PureComponent {
               start: this.props.allConfigurationData.instrumentYearRange.min,
               end: this.props.allConfigurationData.instrumentYearRange.max,
             }}
-            searchResults={this.processedSearchResults}
+            searchResults={this.props.searchResults}
             setSelectedCompany={this.updateSelection.fromCompany}
             setSelectedRegion={this.updateSelection.fromRegion}
             setSelectedProject={this.updateSelection.fromProject}
-            filteredProjectLookup={this.processedFilter}
+            filteredProjectLookup={this.props.filteredProjects}
             displayOrder={this.props.allConfigurationData.displayOrder}
             availableCategories={categories.availableCategories}
+            updateSearch={this.updateSearch}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}
@@ -699,12 +707,12 @@ App.propTypes = {
   setSelectedMultiple: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
-    companyIds: PropTypes.arrayOf(PropTypes.number),
-    conditionIds: PropTypes.arrayOf(PropTypes.number),
-    projectIds: PropTypes.arrayOf(PropTypes.number),
-    regionIds: PropTypes.arrayOf(PropTypes.number),
+    companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    regionIds: PropTypes.arrayOf(PropTypes.bool),
   }).isRequired,
-  filteredProjectIds: PropTypes.arrayOf(PropTypes.number).isRequired,
+  filteredProjects: PropTypes.arrayOf(PropTypes.bool).isRequired,
 };
 
 export const AppUnconnected = App;
@@ -725,6 +733,8 @@ const ConnectedApp = connect(
     transitionState,
     included: search.included,
     excluded: search.excluded,
+    searchResults: search.searchResults,
+    filteredProjects: search.filteredProjects,
     detailViewExpanded,
   }),
   {
@@ -733,6 +743,8 @@ const ConnectedApp = connect(
     setBrowseBy: browseByCreators.setBrowseBy,
     setTransitionState: transitionStateCreators.setTransitionState,
     expandDetailView: detailViewExpandedCreators.toggleDetailView,
+    setSearchResults: searchCreators.setSearchResults,
+    setFilteredProjects: searchCreators.setFilteredProjects,
   },
 )(App);
 

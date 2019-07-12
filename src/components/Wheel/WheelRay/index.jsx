@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { browseByType } from '../../../proptypes';
 import LocationRay from '../LocationRay';
 import handleInteraction from '../../../utilities/handleInteraction';
+import hashValuesDiffer from '../../../utilities/hashValuesDiffer';
 
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
 import CompanyFlag from '../CompanyFlag';
@@ -43,9 +44,13 @@ class WheelRay extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return (this.props.currentIndex !== nextProps.currentIndex
-      || this.props.wheelType !== nextProps.wheelType
-      || this.props.items !== nextProps.items);
+    return hashValuesDiffer(this.props, nextProps, [
+      'currentIndex',
+      'wheelType',
+      'items',
+      'relevantProjectLookup',
+      'filteredProjectLookup',
+    ]);
   }
 
   render() {
