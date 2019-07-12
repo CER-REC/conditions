@@ -121,7 +121,7 @@ class WheelRay extends React.Component {
                     x2="0"
                     y2="-2"
                   />
-                  <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChange, index)}>
+                  <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChangeRay, index)}>
                     &nbsp;{item.province}
                     <title>
                       {item.province}

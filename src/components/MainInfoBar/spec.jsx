@@ -6,7 +6,6 @@ import MainInfoBar from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
-const expectFuncs = expect.objectContaining(eventFuncs);
 
 describe('Components|MainInfoBar', () => {
   let spy;
