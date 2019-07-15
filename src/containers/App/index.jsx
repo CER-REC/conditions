@@ -50,6 +50,7 @@ import GuideTransport from '../../components/GuideTransport';
 import ConditionDetails from '../../components/ConditionDetails';
 import ComposedQuery from '../../components/ComposedQuery';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
+import handleQueryError from '../../utilities/handleQueryError';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
@@ -562,8 +563,7 @@ class App extends React.PureComponent {
             {...viewProps}
             setWheelMoving={this.setWheelMoving}
             wheelMoving={this.state.wheelMoving}
-            conditionsPerYear={this.processedConditionCounts.conditionCounts}
-            years={this.processedConditionCounts.years}
+            allConditionsPerYear={this.props.allConditionsPerYear}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
             projectYears={{
@@ -585,14 +585,15 @@ class App extends React.PureComponent {
             query={companyNameById}
             variables={{ id: this.props.selected.company }}
           >
-            {({ data, loading, error }) => {
+            {(companyQueryResult) => {
+              handleQueryError(companyQueryResult);
+              const { data, loading, error } = companyQueryResult;
               const companyName = (!loading && !error && data && data.getCompanyById.name) || '';
               return (
                 <ViewThree
                   {...viewProps}
                   displayOrder={this.props.allConfigurationData.displayOrder}
-                  conditionsPerYear={this.processedConditionCounts.conditionCounts}
-                  prefixOrder={this.processedConditionCounts.prefixOrder}
+                  allConditionsPerYear={this.props.allConditionsPerYear /* this.processedConditionCounts.conditionCounts */}
                   years={this.processedConditionCounts.years}
                   companyName={companyName}
                 />
@@ -620,7 +621,12 @@ class App extends React.PureComponent {
 
                 if (!loading && !error) {
                   const { projectDetails, allInstruments } = data;
-                  instruments = formatConditionDetails(allInstruments, selected.feature);
+                  if (!allInstruments) { return null; }
+                  instruments = formatConditionDetails(
+                    allInstruments,
+                    selected.feature,
+                    this.props.allConfigurationData.displayOrder,
+                  );
                   if (instruments.length > 0) {
                     instrumentIndex = instruments
                       .findIndex(instrument => instrument.id === selected.instrument);

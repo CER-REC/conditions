@@ -7,9 +7,16 @@ import {
   VictoryGroup,
 } from 'victory';
 import { injectIntl, FormattedMessage, intlShape } from 'react-intl';
+import memoize from 'lodash.memoize';
 import StackGroupProps from './StackGroupProps';
+import {
+  allConditionsPerYearType,
+  featureTypes,
+  displayOrder as displayOrderType,
+} from '../../proptypes';
+import getFeatureColor from '../../utilities/getFeatureColor';
+import getStreamGraphData from '../../utilities/getStreamGraphData';
 import { features } from '../../constants';
-import { allConditionsPerYearType, featureTypes } from '../../proptypes';
 
 import './styles.scss';
 
@@ -19,12 +26,12 @@ const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 
 class StreamGraph extends React.Component {
   static propTypes = {
-    countsData: allConditionsPerYearType.isRequired,
-    years: PropTypes.arrayOf(PropTypes.number).isRequired,
+    allConditionsPerYear: allConditionsPerYearType.isRequired,
     feature: featureTypes.isRequired,
     subFeature: PropTypes.string.isRequired,
     streamOnly: PropTypes.bool,
     intl: intlShape.isRequired,
+    displayOrder: displayOrderType.isRequired,
   }
 
   static defaultProps = {
@@ -36,46 +43,50 @@ class StreamGraph extends React.Component {
     this.state = { controlYear: null };
   }
 
+  getYearTicksInternal = memoize(
+    (min, max) => Array(max - min + 1).fill(min).map((v, i) => v + i),
+  );
+
+  getYearTicks = () => this.getYearTicksInternal(
+    this.props.allConditionsPerYear.minYear,
+    this.props.allConditionsPerYear.maxYear,
+  );
+
+  getStreamData = () => getStreamGraphData(
+    this.props.allConditionsPerYear,
+    this.props.feature,
+  );
+
   handleOnChange = controlYear => this.setState({ controlYear });
 
-  // For data that doesn't match the current feature/subfeature, sets all y = 0
-  processCountsData = () => {
-    const { countsData, feature, subFeature } = this.props;
-
-    this.processedData = countsData.map((entry) => {
-      if (entry.feature === feature
-        && (entry.subFeature === subFeature || subFeature === '')
-      ) { return entry; }
-
-      const copy = JSON.parse(JSON.stringify(entry));
-      Object.keys(copy.years).forEach((k) => {
-        copy.years[k] = 0;
-      });
-      return copy;
-    });
-  };
-
-  streamLayers = () => this.processedData.map((v) => {
-    const data = Object.entries(v.years).map(([x, y]) => ({ x: parseInt(x, 10), y }));
-
-    return (
-      <VictoryArea
-        key={`${v.feature}-${v.subFeature}`}
-        name={v.subFeature}
-        data={data}
-        style={{
-          data: {
-            fill: ((v.feature === 'instrument')
-              ? features.instrument[v.rank]
-              : features[v.feature][v.subFeature]
-            ),
-            strokeWidth: 0,
-          },
-        }}
-        interpolation="catmullRom"
-      />
-    );
-  });
+  streamLayers = () => {
+    const { subFeature } = this.props;
+    const data = this.getStreamData();
+    const emptyYears = this.getYearTicks().map(x => ({ x, y: 0 }));
+    return Object.keys(features)
+      .map(feature => this.props.displayOrder[feature].map((name, i) => {
+        let areaData = emptyYears;
+        if (feature === this.props.feature && (!subFeature || name === subFeature)) {
+          areaData = data[name];
+        }
+        return (
+          <VictoryArea
+            key={`${feature}-${name}`}
+            name={name}
+            data={areaData}
+            style={{
+              data: {
+                fill: getFeatureColor(this.props.feature, name, i),
+                strokeWidth: 0,
+              },
+            }}
+            interpolation="catmullRom"
+          />
+        );
+      }))
+      .flat()
+      .reverse();
+  }
 
   updateControlYearState = (controlYearArray) => {
     if (this.state.controlYear === null) {
@@ -90,28 +101,17 @@ class StreamGraph extends React.Component {
   };
 
   chart() {
-    const filteredData = this.processedData.filter(entry => (
-      (entry.feature === this.props.feature)
-      && ((this.props.subFeature === '') || (entry.subFeature === this.props.subFeature))
-    ));
+    const { allConditionsPerYear, intl } = this.props;
+    const controlYearArray = this.getYearTicks();
 
-    const controlYearArray = [];
+    const filteredData = this.props.subFeature
+      ? this.getStreamData()[this.props.subFeature]
+      : Object.values(this.getStreamData()).flat();
+    const years = filteredData
+      .reduce((acc, { x, y }) => ({ ...acc, [x]: (acc[x] || 0) + y }), {});
+    const maxTotal = Math.max(...Object.values(years));
 
-    const yearTotals = filteredData.reduce((acc, cur) => {
-      Object.entries(cur.years).forEach(([year, count], yearIdx) => {
-        acc[yearIdx] = count + (acc[yearIdx] || 0);
-        if (!controlYearArray.includes(year)) {
-          controlYearArray.push(year);
-        }
-      });
-
-      return acc;
-    }, []);
-
-    const maxTotal = Math.max(...yearTotals);
-
-    const minDate = this.props.years[0];
-    const maxDate = this.props.years[this.props.years.length - 1];
+    const { minYear, maxYear } = allConditionsPerYear;
 
     if (this.props.streamOnly) {
       return (
@@ -130,7 +130,7 @@ class StreamGraph extends React.Component {
               groupProps={{
                 onChange: noop,
                 controlYear: null,
-                countsData: this.processedData,
+                totalPerYear: years,
                 allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
               }}
             >
@@ -155,7 +155,6 @@ class StreamGraph extends React.Component {
       },
     };
 
-    const { intl } = this.props;
     const controlYr = this.updateControlYearState(controlYearArray);
     return (
       <VictoryChart
@@ -177,15 +176,15 @@ class StreamGraph extends React.Component {
           tickFormat={Math.round}
           scale="linear"
           className="axis-label"
-          tickValues={this.props.years}
-          domain={[minDate, maxDate]}
+          tickValues={this.getYearTicks()}
+          domain={[minYear, maxYear]}
           style={axisStyles}
         />
         <StackGroupProps
           groupProps={{
             onChange: this.handleOnChange,
             controlYear: controlYr,
-            countsData: filteredData,
+            totalPerYear: years,
             allThemes: (this.props.feature === 'theme' && this.props.subFeature === ''),
           }}
         >
@@ -196,12 +195,8 @@ class StreamGraph extends React.Component {
   }
 
   render() {
-    this.processCountsData();
-
     return (
-      <div
-        className="StreamGraph"
-      >
+      <div className="StreamGraph">
         {this.props.streamOnly ? null : (
           <FormattedMessage
             id={`components.streamGraph.title.${this.props.feature}`}

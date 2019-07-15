@@ -3,7 +3,7 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { browseByType } from '../../../proptypes';
+import { browseByType, displayOrder, featureTypes } from '../../../proptypes';
 import LocationRay from '../LocationRay';
 import handleInteraction from '../../../utilities/handleInteraction';
 import hashValuesDiffer from '../../../utilities/hashValuesDiffer';
@@ -23,6 +23,8 @@ class WheelRay extends React.Component {
     currentIndex: PropTypes.number.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    displayOrder: displayOrder.isRequired,
+    selectedFeature: featureTypes.isRequired,
     searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
   }
 
@@ -50,6 +52,7 @@ class WheelRay extends React.Component {
       'items',
       'relevantProjectLookup',
       'filteredProjectLookup',
+      'selectedFeature',
     ]);
   }
 
@@ -111,11 +114,14 @@ class WheelRay extends React.Component {
         : (
           <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
             <LocationRay
-              items={items[index].aggregatedCount}
+              regionId={item.id}
+              items={item.aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
               searched={!!(this.props.searchedRegionsLookup[item.id])}
               adjustRotationReference={degreesPerItem / 2}
+              displayOrder={this.props.displayOrder}
+              selectedFeature={this.props.selectedFeature}
             />
             { item.province !== legendTracker
               ? (

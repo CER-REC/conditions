@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
-
 import Wheel from '.';
 import { companyWheelData as wheelData } from './randomDataSample';
+import { displayOrder } from '../../mockData';
 
 describe('Components|Wheel', () => {
   let wrapper;
@@ -17,6 +17,8 @@ describe('Components|Wheel', () => {
         selectRay={spy}
         selectProject={spy}
         wheelMotionTrigger={() => {}}
+        displayOrder={displayOrder}
+        selectedFeature="theme"
       />
     ));
   });
