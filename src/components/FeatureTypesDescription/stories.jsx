@@ -12,26 +12,6 @@ const defaultTargets = [
   'FINANCIAL',
 ];
 
-const prefixOrder = [
-  'GH',
-  'XG',
-  'OH',
-  'MO',
-  'KAX',
-  'MHW',
-  'CPTC',
-  'XE',
-  'MH',
-  'ZO',
-  'TG',
-  'GPSO',
-  'OPLO',
-  'GPMO',
-  'OPSP',
-  'OPL',
-  'GPL',
-];
-
 storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withKnobs)
@@ -42,20 +22,20 @@ storiesForComponent('Components|FeatureTypesDescription', module, ReadMe)
     <FeatureTypesDescription
       feature="theme"
       subFeature={select('Scroll Target', defaultTargets, 'SECURITY')}
-      displayOrder={displayOrder.theme}
+      displayOrder={displayOrder}
     />
   ))
   .add('allThemes', () => (
     <FeatureTypesDescription
       feature="theme"
       subFeature=""
-      displayOrder={displayOrder.theme}
+      displayOrder={displayOrder}
     />
   ))
   .add('instruments', () => (
     <FeatureTypesDescription
       feature="instrument"
       subFeature=""
-      displayOrder={prefixOrder}
+      displayOrder={displayOrder}
     />
   ));

@@ -25,19 +25,13 @@ const instrumentFields = `
     id
     textLength
     text
-    aggregatedCountArray {
-      filing
-      filingEnum
-      phase
-      phaseEnum
-      instrument: prefix
-      instrumentEnum: prefixEnum
-      status
-      statusEnum
-      theme
-      themeEnum
-      type
-      typeEnum
+    aggregatedCount {
+      filing { name, count }
+      phase { name, count }
+      instrument { name, count }
+      status { name, count }
+      theme { name, count }
+      type { name, count }
     }
   }
 `;

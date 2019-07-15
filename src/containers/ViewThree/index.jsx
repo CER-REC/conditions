@@ -8,72 +8,57 @@ import SmallMultiplesLegend from '../../components/SmallMultiplesLegend';
 import StreamGraph from '../../components/StreamGraph';
 import FeatureDescription from '../../components/FeatureDescription';
 import FeatureTypesDescription from '../../components/FeatureTypesDescription';
-import { displayOrder } from '../../proptypes';
+import { displayOrder, allConditionsPerYearType } from '../../proptypes';
 import './styles.scss';
 import * as selectedCreators from '../../actions/selected';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 
-class ViewThree extends React.PureComponent {
-  render() {
-    const { props } = this;
-    const conditionCounts = props.conditionsPerYear;
-
-    this.reversedCounts = this.reversedCounts || conditionCounts.slice().reverse();
-
-    const currentDisplayOrder = (props.selected.feature === 'instrument')
-      ? props.prefixOrder
-      : this.props.displayOrder[props.selected.feature];
-
-    return (
-      <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
-        <section className="gradientContainer" />
-        <section className="features">
-          <FeaturesMenu
-            selected={props.selected.feature}
-            onChange={props.setSelectedFeature}
-          />
-        </section>
-        <section className="legend">
-          <SmallMultiplesLegend
-            feature={props.selected.feature}
-            data={conditionCounts}
-            displayOrder={currentDisplayOrder}
-            onChange={props.setSelectedSubFeature}
-            selected={props.selected.subFeature}
-          />
-        </section>
-        <section className="chart">
-          <StreamGraph
-            countsData={this.reversedCounts}
-            displayOrder={currentDisplayOrder}
-            years={props.years}
-            feature={props.selected.feature}
-            subFeature={props.selected.subFeature}
-          />
-        </section>
-        <section className="featureDescription">
-          <FeatureDescription feature={props.selected.feature} />
-        </section>
-        <section className="typesDescription">
-          <FeatureTypesDescription
-            feature={props.selected.feature}
-            subFeature={props.selected.subFeature}
-            displayOrder={currentDisplayOrder}
-          />
-        </section>
-        <section className="selectedCompany">
-          <div className="selectedCompanyHeader">
-            <FormattedMessage id="views.view3.company" tagName="h1" />
-            <h2 className="companyName" title={this.props.companyName}>{this.props.companyName}</h2>
-          </div>
-        </section>
-      </section>
-    );
-  }
-}
+const ViewThree = props => (
+  <section className={classNames('ViewThree', { layoutOnly: props.layoutOnly })}>
+    <section className="gradientContainer" />
+    <section className="features">
+      <FeaturesMenu
+        selected={props.selected.feature}
+        onChange={props.setSelectedFeature}
+      />
+    </section>
+    <section className="legend">
+      <SmallMultiplesLegend
+        feature={props.selected.feature}
+        allConditionsPerYear={props.allConditionsPerYear}
+        displayOrder={props.displayOrder}
+        onChange={props.setSelectedSubFeature}
+        selected={props.selected.subFeature}
+      />
+    </section>
+    <section className="chart">
+      <StreamGraph
+        allConditionsPerYear={props.allConditionsPerYear}
+        displayOrder={props.displayOrder}
+        feature={props.selected.feature}
+        subFeature={props.selected.subFeature}
+      />
+    </section>
+    <section className="featureDescription">
+      <FeatureDescription feature={props.selected.feature} />
+    </section>
+    <section className="typesDescription">
+      <FeatureTypesDescription
+        feature={props.selected.feature}
+        subFeature={props.selected.subFeature}
+        displayOrder={props.displayOrder}
+      />
+    </section>
+    <section className="selectedCompany">
+      <div className="selectedCompanyHeader">
+        <FormattedMessage id="views.view3.company" tagName="h1" />
+        <h2 className="companyName" title={props.companyName}>{props.companyName}</h2>
+      </div>
+    </section>
+  </section>
+);
 
 ViewThree.propTypes = {
-  // eslint-disable-next-line react/no-unused-prop-types
   layoutOnly: PropTypes.bool,
   chartIndicatorPosition: PropTypes.shape({
     stream: PropTypes.number.isRequired,
@@ -82,12 +67,11 @@ ViewThree.propTypes = {
     feature: PropTypes.string.isRequired,
     subFeature: PropTypes.string,
   }).isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
   setSelectedFeature: PropTypes.func.isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
   setSelectedSubFeature: PropTypes.func.isRequired,
   displayOrder: displayOrder.isRequired,
   companyName: PropTypes.string.isRequired,
+  allConditionsPerYear: allConditionsPerYearType.isRequired,
 };
 
 ViewThree.defaultProps = {

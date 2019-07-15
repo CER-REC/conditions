@@ -2,27 +2,22 @@ import React from 'react';
 import { storiesForComponent } from '../../../.storybook/utils';
 import FeaturesLegend from '.';
 import ReadMe from './README.md';
-
-const legendItems = [
-  { description: 'SECURITY', disabled: true },
-  { description: 'MANAGEMENT_SYSTEM', disabled: false },
-  { description: 'FINANCIAL', disabled: false },
-  { description: 'DAMAGE_PREVENTION', disabled: false },
-  { description: 'SOCIO_ECONOMIC', disabled: false },
-];
+import { displayOrder, aggregatedCount } from '../../mockData';
 
 storiesForComponent('Components|FeaturesLegend', module, ReadMe)
   .add('Project Legend', () => (
     <FeaturesLegend
-      legendItems={legendItems}
+      selectedAggregatedCount={aggregatedCount}
       selectedFeature="theme"
       isProjectLegend
+      displayOrder={displayOrder}
     />
   ))
   .add('Location Legend', () => (
     <FeaturesLegend
-      legendItems={legendItems}
+      selectedAggregatedCount={aggregatedCount}
       selectedFeature="theme"
       isProjectLegend={false}
+      displayOrder={displayOrder}
     />
   ));

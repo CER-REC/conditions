@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import WheelRay from '.';
-
 import { companyWheelData as wheelData } from '../randomDataSample';
+import { displayOrder } from '../../../mockData';
 
 describe('Components|CompanyWheel/WheelRay', () => {
   describe('with default props', () => {
@@ -21,6 +20,8 @@ describe('Components|CompanyWheel/WheelRay', () => {
         selectRay: '',
         wheelType: 'company',
         currentIndex: 0,
+        displayOrder,
+        selectedFeature: 'theme',
         onChangeRay: noop,
         onChangeDot: noop,
       }, propOverrides);

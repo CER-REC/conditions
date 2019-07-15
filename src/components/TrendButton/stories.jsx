@@ -4,7 +4,7 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import TrendButton from '.';
 import ReadMe from './README.md';
-import { conditionCountsByYear } from '../../mockData';
+import { conditionCountsByYear, displayOrder } from '../../mockData';
 
 storiesForComponent('Components|TrendButton', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -13,8 +13,7 @@ storiesForComponent('Components|TrendButton', module, ReadMe)
     <TrendButton
       {...getInteractionProps()}
       feature="theme"
-      subFeature=""
-      years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
-      countsData={conditionCountsByYear.counts}
+      allConditionsPerYear={conditionCountsByYear}
+      displayOrder={displayOrder}
     />
   ));

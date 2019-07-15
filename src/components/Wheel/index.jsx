@@ -9,7 +9,7 @@ import hashValuesDiffer from '../../utilities/hashValuesDiffer';
 import Ring from './Ring';
 import PullToSpin from './PullToSpin';
 import WheelRay from './WheelRay';
-import { browseByType } from '../../proptypes';
+import { browseByType, displayOrder, featureTypes } from '../../proptypes';
 import WheelList from './WheelList';
 
 const reservedDegrees = 12;
@@ -29,6 +29,8 @@ class Wheel extends React.Component {
     wheelMotionTrigger: PropTypes.func.isRequired,
     relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    displayOrder: displayOrder.isRequired,
+    selectedFeature: featureTypes.isRequired,
     searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
   };
 
@@ -95,6 +97,7 @@ class Wheel extends React.Component {
       'wheelData',
       'relevantProjectLookup',
       'filteredProjectLookup',
+      'selectedFeature',
     ]);
   }
 
@@ -179,6 +182,8 @@ class Wheel extends React.Component {
                         rotation={props.rotation.interpolate(r => r * -1)}
                         relevantProjectLookup={this.props.relevantProjectLookup}
                         filteredProjectLookup={this.props.filteredProjectLookup}
+                        displayOrder={this.props.displayOrder}
+                        selectedFeature={this.props.selectedFeature}
                         searchedRegionsLookup={this.props.searchedRegionsLookup}
                       />
                     ))}

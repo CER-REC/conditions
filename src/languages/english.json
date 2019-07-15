@@ -275,8 +275,7 @@
         "OPSP": "text not yet provided",
         "CO": "text not yet provided",
         "OPL": "text not yet provided",
-        "OTHER":  "text not yet provided",
-        "other": "text not yet provided"
+        "OTHER":  ""
       }
     },
     "featureMenu": {

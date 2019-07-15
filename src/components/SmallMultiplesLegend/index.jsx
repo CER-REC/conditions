@@ -4,17 +4,17 @@ import classNames from 'classnames';
 import List from '../List';
 import LegendItem from './LegendItem';
 import './styles.scss';
-import { features } from '../../constants';
-import { allConditionsPerYearType } from '../../proptypes';
-import getFilteredProjectData from '../../utilities/getFilteredProjectData';
+import { allConditionsPerYearType, displayOrder as displayOrderType } from '../../proptypes';
+import getFeatureColor from '../../utilities/getFeatureColor';
+import getStreamGraphData from '../../utilities/getStreamGraphData';
 
-class SmallMultiplesLegend extends React.PureComponent {
+export default class SmallMultiplesLegend extends React.PureComponent {
   static propTypes = {
     /** The selected feature in the feature menu */
     feature: PropTypes.string.isRequired,
     /** The data to render the stream graphs
         Items are rendered in the provided order */
-    data: allConditionsPerYearType.isRequired,
+    allConditionsPerYear: allConditionsPerYearType.isRequired,
     /** The name of the data element to set as selected */
     selected: PropTypes.string.isRequired,
     /** The name of the data element to highlight */
@@ -24,6 +24,7 @@ class SmallMultiplesLegend extends React.PureComponent {
     onChange: PropTypes.func.isRequired,
     /** Additional className to add to the component */
     className: PropTypes.string,
+    displayOrder: displayOrderType.isRequired,
   };
 
   static defaultProps = {
@@ -31,34 +32,33 @@ class SmallMultiplesLegend extends React.PureComponent {
     className: '',
   };
 
-  getData = () => getFilteredProjectData(this.props.data, this.props.feature);
-
-  onItemChange = index => this.props
-    .onChange(index === 0 ? '' : this.getData()[index - 1].subFeature);
+  onItemChange = index => this.props.onChange(index === 0
+    ? ''
+    : this.props.displayOrder[this.props.feature][index - 1]);
 
   render() {
-    const { feature, highlightName, selected } = this.props;
-    const data = this.getData();
+    const { feature, highlightName, selected, displayOrder } = this.props;
+    const data = getStreamGraphData(
+      this.props.allConditionsPerYear,
+      feature,
+    );
 
     // Add one to account for 'all
-    const selectedIndex = data.findIndex(c => c.subFeature === selected) + 1;
-    const hasHighlight = !!data.find(c => c.subFeature === highlightName);
+    const selectedIndex = displayOrder[feature].findIndex(v => v === selected) + 1;
+    const hasHighlight = !!displayOrder[feature].find(v => v === highlightName);
 
-    const maxCount = data.reduce((acc, { years }) => Math.max(acc, ...Object.values(years)), 0);
+    const maxCount = Math.max(...Object.values(data).flat().map(v => v.y));
 
-    const legendDataItems = data.map((conditionsData, idx) => (
+    const legendDataItems = displayOrder[feature].map((subfeature, idx) => (
       <LegendItem
-        key={conditionsData.subFeature}
-        feature={this.props.feature}
-        subFeature={conditionsData.subFeature}
+        key={subfeature}
+        feature={feature}
+        subFeature={subfeature}
         index={idx}
-        color={(this.props.feature === 'instrument')
-          ? features.instrument[idx]
-          : features[this.props.feature][conditionsData.subFeature]
-        }
-        data={conditionsData}
+        color={getFeatureColor(feature, subfeature, idx)}
+        data={data[subfeature]}
         max={maxCount}
-        faded={hasHighlight && (conditionsData.subFeature !== this.props.highlightName)}
+        faded={hasHighlight && (subfeature !== highlightName)}
       />
     ));
 
@@ -88,6 +88,3 @@ class SmallMultiplesLegend extends React.PureComponent {
     );
   }
 }
-
-// TODO: Wrap in React.memo when testing issue fixed
-export default SmallMultiplesLegend;

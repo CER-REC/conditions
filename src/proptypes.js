@@ -4,20 +4,18 @@ import { features } from './constants';
 
 export const featureTypes = PropTypes.oneOf(Object.keys(features));
 
-export const conditionsPerYear = PropTypes.shape({
-  feature: featureTypes.isRequired,
-  subFeature: PropTypes.string.isRequired,
-  rank: PropTypes.number, // Used for instrument ordering
-  years: PropTypes.objectOf(PropTypes.number).isRequired,
-});
+const aggregatedFeatureEntry = PropTypes.arrayOf(PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+})).isRequired;
 
-export const featureData = PropTypes.shape({
-  instrument: PropTypes.objectOf(PropTypes.number).isRequired,
-  theme: PropTypes.objectOf(PropTypes.number).isRequired,
-  phase: PropTypes.objectOf(PropTypes.number).isRequired,
-  status: PropTypes.objectOf(PropTypes.number).isRequired,
-  type: PropTypes.objectOf(PropTypes.number).isRequired,
-  filing: PropTypes.objectOf(PropTypes.number).isRequired,
+export const aggregatedFeatureData = PropTypes.shape({
+  instrument: aggregatedFeatureEntry,
+  theme: aggregatedFeatureEntry,
+  phase: aggregatedFeatureEntry,
+  status: aggregatedFeatureEntry,
+  type: aggregatedFeatureEntry,
+  filing: aggregatedFeatureEntry,
 });
 
 export const company = PropTypes.shape({
@@ -26,21 +24,24 @@ export const company = PropTypes.shape({
   data: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
-export const location = PropTypes.shape({
-  primary: PropTypes.string.isRequired,
-  secondary: PropTypes.string.isRequired,
-  data: featureData.isRequired,
-});
-
 export const project = PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   shortName: PropTypes.string.isRequired,
   numberOfConditions: PropTypes.number.isRequired,
-  aggregatedCount: featureData.isRequired,
+  aggregatedCount: aggregatedFeatureData.isRequired,
 });
 
-export const allConditionsPerYearType = PropTypes.arrayOf(conditionsPerYear);
+export const conditionsPerYear = PropTypes.shape({
+  year: PropTypes.number.isRequired,
+  aggregatedCount: aggregatedFeatureData.isRequired,
+});
+
+export const allConditionsPerYearType = PropTypes.shape({
+  minYear: PropTypes.number.isRequired,
+  maxYear: PropTypes.number.isRequired,
+  years: PropTypes.arrayOf(conditionsPerYear).isRequired,
+});
 
 export const displayOrder = PropTypes.shape({
   filing: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -48,6 +49,8 @@ export const displayOrder = PropTypes.shape({
   status: PropTypes.arrayOf(PropTypes.string).isRequired,
   type: PropTypes.arrayOf(PropTypes.string).isRequired,
   theme: PropTypes.arrayOf(PropTypes.string).isRequired,
+  instrument: PropTypes.arrayOf(PropTypes.string).isRequired,
+  instrumentOther: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
 export const allConfigurationDataType = PropTypes.shape({
@@ -59,25 +62,10 @@ export const allConfigurationDataType = PropTypes.shape({
   lastUpdated: PropTypes.string.isRequired,
 });
 
-export const ConditionsByCommodityOrInstrument = PropTypes.shape({
-  prefix: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
-  commodity: PropTypes.arrayOf(PropTypes.string).isRequired,
-});
-
-export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
-  ConditionsByCommodityOrInstrument,
-);
-
 export const browseByType = PropTypes.oneOf(['company', 'location']);
 
 export const allCompanyData = PropTypes.arrayOf(
   company,
-);
-
-export const allLocationData = PropTypes.arrayOf(
-  location,
 );
 
 export const yearRangeType = PropTypes.shape({
@@ -128,10 +116,7 @@ export const viewTwo = {
       PropTypes.number,
     ),
   }),
-  legendItems: PropTypes.arrayOf(PropTypes.shape({
-    disabled: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-  })),
+  selectedAggregatedCount: aggregatedFeatureData,
   selected: PropTypes.shape({
     company: PropTypes.number,
     region: PropTypes.number,
@@ -169,6 +154,7 @@ export const viewTwo = {
   filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,
   availableCategories: PropTypes.arrayOf(PropTypes.string),
+  allConditionsPerYear: allConditionsPerYearType.isRequired,
   updateSearch: PropTypes.func.isRequired,
 };
 // Used in Keyword List (SuggestedKeywords)

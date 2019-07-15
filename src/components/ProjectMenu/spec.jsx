@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import ProjectMenu from '.';
 import ProjectChart from './ProjectChart';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
-import { loadingProjectsData } from '../../mockData';
+import { loadingProjectsData, displayOrder } from '../../mockData';
 
 const testData = [
   {
@@ -12,12 +12,12 @@ const testData = [
     shortName: 'shortName-100',
     numberOfConditions: 10,
     aggregatedCount: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
@@ -26,12 +26,12 @@ const testData = [
     shortName: 'shortName-101',
     numberOfConditions: 10,
     aggregatedCount: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
@@ -40,12 +40,12 @@ const testData = [
     shortName: 'shortName-102',
     numberOfConditions: 10,
     aggregatedCount: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
@@ -54,12 +54,12 @@ const testData = [
     shortName: 'shortName-103',
     numberOfConditions: 10,
     aggregatedCount: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
@@ -68,12 +68,12 @@ const testData = [
     shortName: 'shortName-104',
     numberOfConditions: 10,
     aggregatedCount: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
@@ -82,12 +82,12 @@ const testData = [
     shortName: 'shortName-105',
     numberOfConditions: 10,
     aggregatedCount: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
@@ -96,12 +96,12 @@ const testData = [
     shortName: 'shortName-106',
     numberOfConditions: 10,
     aggregatedCount: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
 ];
@@ -115,6 +115,7 @@ describe('Components|ProjectMenu', () => {
         selectedProjectID={105}
         onChange={() => {}}
         selectedFeature="theme"
+        displayOrder={displayOrder}
       />);
     });
 
@@ -135,6 +136,7 @@ describe('Components|ProjectMenu', () => {
         selectedProjectID={0}
         onChange={() => {}}
         selectedFeature="theme"
+        displayOrder={displayOrder}
         loading
       />);
     });
@@ -210,6 +212,7 @@ describe('Components|ProjectMenu', () => {
               selectedProjectID={testData[menuIndex].id}
               onChange={onChange}
               selectedFeature="theme"
+              displayOrder={displayOrder}
             />,
           );
         });
