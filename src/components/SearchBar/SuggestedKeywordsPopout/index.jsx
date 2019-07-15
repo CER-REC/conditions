@@ -70,13 +70,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
       const direction = (sortHierarchy === 'dec') ? -1 : 1;
       filteredKeywords.sort(
         (sortBy === 'alphabetical')
-          ? (a, b) => {
-            console.dir(a.name);
-            console.dir(b.name);
-            console.dir(a.name.localeCompare(b.name) * direction);
-            return (
-              a.name.localeCompare(b.name) * direction);
-          }
+          ? (a, b) => a.name.localeCompare(b.name) * direction
           : (a, b) => (a.conditionCount - b.conditionCount) * direction,
       );
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
+import memoize from 'lodash.memoize';
 
 import ConditionExplorer from '../../components/ConditionExplorer';
 import ShortcutInfoBar from '../../components/ShortcutInfoBar';
@@ -31,54 +32,43 @@ const shuffleArray = (arr) => {
   return out;
 };
 
-class ViewOne extends React.PureComponent {
-  render() {
-    const { props } = this;
+const shuffleKeywords = memoize(keywords => shuffleArray(keywords.concat(keywords).map(v => v.name)));
 
-    this.shuffledKeywords = this.shuffledKeywords
-      || shuffleArray(
-        props.allKeywords
-          .concat(props.allKeywords) // Make sure we don't run out of keywords
-          .map(keyword => keyword.name),
-      );
+const ViewOne = props => (
+  <section className={classNames('ViewOne', { layoutOnly: props.layoutOnly })}>
+    <section className="introduction">
+      <FormattedMessage id="views.view1.header.title" tagName="h1" />
+      <FormattedMessage id="views.view1.header.subtitle">
+        {(text) => {
+          const date = new Date(props.lastUpdated);
+          const dateStr = [
+            date.getUTCFullYear(),
+            (date.getUTCMonth() + 1).toString().padStart(2, '0'),
+            date.getUTCDate().toString().padStart(2, '0'),
+          ].join('-');
 
-    return (
-      <section className={classNames('ViewOne', { layoutOnly: props.layoutOnly })}>
-        <section className="introduction">
-          <FormattedMessage id="views.view1.header.title" tagName="h1" />
-          <FormattedMessage id="views.view1.header.subtitle">
-            {(text) => {
-              const date = new Date(props.lastUpdated);
-              const dateStr = [
-                date.getUTCFullYear(),
-                (date.getUTCMonth() + 1).toString().padStart(2, '0'),
-                date.getUTCDate().toString().padStart(2, '0'),
-              ].join('-');
-
-              return <span>{text}&nbsp;{dateStr}.</span>;
-            }}
-          </FormattedMessage>
-        </section>
-        <section className="explorer">
-          <ConditionExplorer
-            keywords={this.shuffledKeywords}
-            selectedKeywordId={props.selectedKeywordId}
-            setSelectedKeyword={props.setSelectedKeyword}
-            beginTutorial={props.beginTutorial}
-            physicsPaused={props.physicsPaused}
-          />
-        </section>
-        <section className="infoBar">
-          <ShortcutInfoBar
-            handleInfoBar={false}
-            jumpToAbout={props.jumpToAbout}
-            openDataModal={noop}
-          />
-        </section>
-      </section>
-    );
-  }
-}
+          return <span>{text}&nbsp;{dateStr}.</span>;
+        }}
+      </FormattedMessage>
+    </section>
+    <section className="explorer">
+      <ConditionExplorer
+        keywords={shuffleKeywords(props.allKeywords)}
+        selectedKeywordId={props.selectedKeywordId}
+        setSelectedKeyword={props.setSelectedKeyword}
+        beginTutorial={props.beginTutorial}
+        physicsPaused={props.physicsPaused}
+      />
+    </section>
+    <section className="infoBar">
+      <ShortcutInfoBar
+        handleInfoBar={false}
+        jumpToAbout={props.jumpToAbout}
+        openDataModal={noop}
+      />
+    </section>
+  </section>
+);
 
 ViewOne.propTypes = {
   selectedKeywordId: PropTypes.number,
@@ -103,9 +93,3 @@ ViewOne.defaultProps = {
 };
 
 export default ViewOne;
-
-export const ViewOneUnconnected = props => (
-  <ViewOne
-    {...props}
-  />
-);

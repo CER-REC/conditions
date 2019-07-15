@@ -2,7 +2,7 @@ import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import { ViewOneUnconnected } from '.';
+import ViewOne from '.';
 
 import keywords from '../../components/ConditionExplorer/mockKeywords';
 
@@ -27,7 +27,7 @@ storiesForView('Containers|ViewOne', module, ReadMe)
     }),
   )
   .add('default', () => (
-    <ViewOneUnconnected
+    <ViewOne
       allKeywords={uniqueKeywords}
       jumpToAbout={noop}
       beginTutorial={noop}
@@ -35,7 +35,7 @@ storiesForView('Containers|ViewOne', module, ReadMe)
     />
   ))
   .add('layout only', () => (
-    <ViewOneUnconnected
+    <ViewOne
       layoutOnly
       allKeywords={uniqueKeywords}
       jumpToAbout={noop}
