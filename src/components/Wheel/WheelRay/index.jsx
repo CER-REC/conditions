@@ -6,13 +6,15 @@ import PropTypes from 'prop-types';
 import { browseByType, displayOrder, featureTypes } from '../../../proptypes';
 import LocationRay from '../LocationRay';
 import handleInteraction from '../../../utilities/handleInteraction';
+import hashValuesDiffer from '../../../utilities/hashValuesDiffer';
 
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
 import CompanyFlag from '../CompanyFlag';
 
 class WheelRay extends React.Component {
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
+    onChangeRay: PropTypes.func.isRequired,
+    onChangeDot: PropTypes.func.isRequired,
     wheelType: browseByType.isRequired,
     degreesPerItem: PropTypes.number.isRequired,
     reservedDegrees: PropTypes.number.isRequired,
@@ -23,11 +25,13 @@ class WheelRay extends React.Component {
     filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
     displayOrder: displayOrder.isRequired,
     selectedFeature: featureTypes.isRequired,
+    searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
   }
 
   static defaultProps = {
     relevantProjectLookup: [],
     filteredProjectLookup: [],
+    searchedRegionsLookup: [],
   };
 
   constructor(props) {
@@ -42,10 +46,14 @@ class WheelRay extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.currentIndex !== nextProps.currentIndex
-      || this.props.wheelType !== nextProps.wheelType
-      || this.props.items !== nextProps.items
-      || this.props.selectedFeature !== nextProps.selectedFeature;
+    return hashValuesDiffer(this.props, nextProps, [
+      'currentIndex',
+      'wheelType',
+      'items',
+      'relevantProjectLookup',
+      'filteredProjectLookup',
+      'selectedFeature',
+    ]);
   }
 
   render() {
@@ -71,10 +79,19 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g key={`${item.id}CompanyRay`} transform={transform} className="companyRay" {...handleInteraction(props.onChange, index)}>
+          <g
+            key={`${item.id}CompanyRay`}
+            transform={transform}
+            className="companyRay"
+            {...handleInteraction(props.onChangeDot, index)}
+          >
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
-            <text className="textLabels" transform="translate(28.75) rotate(90)" {...handleInteraction(props.onChange, index)}>
+            <text
+              className="textLabels"
+              transform="translate(28.75) rotate(90)"
+              {...handleInteraction(props.onChangeRay, index)}
+            >
               { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
             </text>
             {(this.flagLayouts)
@@ -95,13 +112,13 @@ class WheelRay extends React.Component {
           </g>
         )
         : (
-          <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChange, index)}>
+          <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
             <LocationRay
               regionId={item.id}
               items={item.aggregatedCount}
               height={degreesPerItem * 0.5}
               width={width}
-              searched
+              searched={!!(this.props.searchedRegionsLookup[item.id])}
               adjustRotationReference={degreesPerItem / 2}
               displayOrder={this.props.displayOrder}
               selectedFeature={this.props.selectedFeature}
@@ -117,7 +134,7 @@ class WheelRay extends React.Component {
                     x2="0"
                     y2="-2"
                   />
-                  <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChange, index)}>
+                  <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChangeRay, index)}>
                     &nbsp;{item.province}
                     <title>
                       {item.province}

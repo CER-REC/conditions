@@ -32,7 +32,7 @@ const LocationRay = (props) => {
       {searched ? (
         <line
           className="searched"
-          y2="28%"
+          y2="27.9%"
           y1="23.4%"
           style={{ transform: `rotate(-${90 - adjustRotationReference}deg)` }}
         />

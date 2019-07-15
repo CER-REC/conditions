@@ -35,6 +35,7 @@ class ConditionDetails extends React.Component {
       data.push({
         isInstrument: true,
         instrumentIndex,
+        instrumentId: instrument.id,
         instrumentNumber: instrument.instrumentNumber,
         itemIndex: -1,
       });
@@ -45,8 +46,9 @@ class ConditionDetails extends React.Component {
         data.push({
           binnedValue: condition.binnedValue,
           instrumentNumber: instrument.instrumentNumber,
+          instrumentId: instrument.id,
           fill: condition.fill,
-          id: condition.id,
+          conditionId: condition.id,
           marked,
           instrumentIndex,
           itemIndex,
@@ -68,13 +70,20 @@ class ConditionDetails extends React.Component {
     />
   )
 
-  renderList = () => (
-    <ConditionList
-      items={this.getListData()}
-      selectedItem={this.findSelectedItem()}
-      updateSelectedItem={this.props.updateSelectedItem}
-    />
-  )
+  renderList = () => {
+    const items = this.getListData();
+
+    return (items && items.length)
+      ? (
+        <ConditionList
+          items={items}
+          selectedItem={this.findSelectedItem()}
+          updateSelectedInstrument={this.props.updateSelectedInstrument}
+          updateSelectedCondition={this.props.updateSelectedCondition}
+        />
+      )
+      : null;
+  }
 
   renderContent = (instrument, itemIndex) => (
     <Content
@@ -87,6 +96,7 @@ class ConditionDetails extends React.Component {
 
   renderDetails = (instrument, index) => {
     const isInstrument = (index === -1);
+
     return (
       <Details
         isInstrument={isInstrument}
@@ -143,7 +153,8 @@ ConditionDetails.propTypes = {
     itemIndex: PropTypes.number,
   }),
   toggleExpanded: PropTypes.func,
-  updateSelectedItem: PropTypes.func.isRequired,
+  updateSelectedInstrument: PropTypes.func.isRequired,
+  updateSelectedCondition: PropTypes.func.isRequired,
   openIntermediatePopup: PropTypes.func.isRequired,
   openProjectDetails: PropTypes.func.isRequired,
 };

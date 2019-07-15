@@ -1,7 +1,10 @@
-const createLookupList = arr => arr.reduce((acc, cur) => {
-  acc[cur] = true;
-  return acc;
-}, []);
+const createLookupList = arr => ((arr && arr.length)
+  ? arr.reduce((acc, cur) => {
+    acc[cur] = true;
+    return acc;
+  }, [])
+  : []
+);
 
 // eslint-disable-next-line import/prefer-default-export
 export const conditionCounts = (counts) => {
@@ -66,11 +69,13 @@ export const searchResults = results => (
       companyIdLookup: createLookupList(results.companyIds),
       conditionIdLookup: createLookupList(results.conditionIds),
       projectIdLookup: createLookupList(results.projectIds),
+      regionIdLookup: createLookupList(results.regionIds),
     }
     : {
       companyIdLookup: [],
       conditionIdLookup: [],
       projectIdLookup: [],
+      regionIdLookup: [],
     }
 );
 export const filteredProjects = ids => (

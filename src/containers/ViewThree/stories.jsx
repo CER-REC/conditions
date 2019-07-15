@@ -42,9 +42,6 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
       }),
-      setSelectedCondition: ({ selected }) => selectedCondition => ({
-        selected: { ...selected, condition: selectedCondition },
-      }),
       expandDetailView: ({ detailViewExpanded }) => () => ({
         detailViewExpanded: !detailViewExpanded,
       }),
@@ -59,7 +56,6 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       selected: {
         feature: 'theme',
         subFeature: '',
-        condition: { instrumentIndex: 0, itemIndex: 0 },
       },
       chartIndicatorPosition: { bubble: 'XO', stream: 2010 },
       detailViewExpanded: true,

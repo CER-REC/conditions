@@ -196,19 +196,19 @@
       "allThemes": "Conditions with multiple themes are counted more than once.",
       "otherInstruments": "The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.",
       "theme": {
-        "ADMINISTRATIVE": "conditions that help track organizational tasks.",
-        "DAMAGE_PREVENTION": "conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.",
-        "EMERGENCY_MANAGEMENT": "conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.",
-        "ENFORCEMENT": "conditions that reinforce prescribed regulatory requirements to be met.",
-        "ENVIRONMENTAL_PROTECTION": "conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.",
-        "FINANCIAL": "conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.",
-        "INTEGRITY_MANAGEMENT": "conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.",
-        "MANAGEMENT_SYSTEM": "company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.",
-        "SAFETY_MANAGEMENT": " conditions that eliminate or reduce risk to the public, workers, the environment and assets.",
-        "SECURITY": "conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.",
-        "SOCIO_ECONOMIC": "conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.",
-        "STANDARD_CONDITION": " conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.",
-        "SUNSET_CLAUSE": "conditions that ensure projects begin within a specific period of time."
+        "ADMINISTRATIVE": "Conditions that help track organizational tasks.",
+        "DAMAGE_PREVENTION": "Conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.",
+        "EMERGENCY_MANAGEMENT": "Conditions that ensure companies have a robust program that anticipates and prevents incidents, and manages and mitigates situations during an emergency.",
+        "ENFORCEMENT": "Conditions that reinforce prescribed regulatory requirements to be met.",
+        "ENVIRONMENTAL_PROTECTION": "Conditions that mandate projects to be planned, built, operated or abandoned in a manner that protects the environment.",
+        "FINANCIAL": "Conditions that require certain details or all aspects of a company’s financial obligations be fulfilled.",
+        "INTEGRITY_MANAGEMENT": "Conditions that ensure projects are designed, built, operated and maintained in a safe and effective manner. For instance, the use of appropriate materials, the detection of corrosion, etc.",
+        "MANAGEMENT_SYSTEM": "Company specific conditions that ensure the use of an effective and efficient approach to manage and reduce risk. Note: A management system is not project specific.",
+        "SAFETY_MANAGEMENT": " Conditions that eliminate or reduce risk to the public, workers, the environment and assets.",
+        "SECURITY": "Conditions that ensure companies have adequate personnel and systems to deter, respond and manage security threats.",
+        "SOCIO_ECONOMIC": "Conditions that address the concerns of potentially affected landowners, residents, communities, indigenous groups, etc.",
+        "STANDARD_CONDITION": "A condition that is typically imposed on all approved projects.",
+        "SUNSET_CLAUSE": "Conditions that ensure projects begin within a specific period of time."
       },
       "phase": {
         "ABANDONMENT": "If a company wants to abandon a pipeline or facility, it must submit an application to the NEB, including an environmental and socio-economic assessment.  The NEB will assess the application and may hold a public hearing. The NEB may impose conditions on an abandonment project.",
@@ -235,12 +235,12 @@
         "UNDER_REVIEW": "Missing description"
       },
       "type": {
-        "STANDARD": "a set of conditions that are typically imposed on all approved infrastructure projects.",
-        "NON_STANDARD": "non-standard conditions capture project-specific information or concerns that are not addressed by standard conditions."
+        "STANDARD": "A condition that is typically imposed on all approved projects.",
+        "NON_STANDARD": "Non-standard conditions capture project-specific information or concerns that are not addressed by standard conditions."
       },
       "filing": {
-        "REQUIRED": "a company must file a document with the NEB in order to comply with a condition. The NEB reviews these filings.",
-        "NOT_REQUIRED": " a company is not required to file a document with the NEB in order to comply with a condition. Some conditions are covered by filings for another related condition. If a condition does not require a company to file a document, the NEB can verify compliance during a compliance verification activity (CVA) such as an inspection or audit."
+        "REQUIRED": "A company must file a document with the NEB in order to comply with a condition. The NEB reviews these filings.",
+        "NOT_REQUIRED": " A company is not required to file a document with the NEB in order to comply with a condition. Some conditions are covered by filings for another related condition. If a condition does not require a company to file a document, the NEB can verify compliance during a compliance verification activity (CVA) such as an inspection or audit."
       },
       "instrument": {
         "AO": "The approval of an amendment as to content or conditions of any Certificate, License, Order or Permit (in some cases the approval of the Governor in Council is required).",
@@ -309,7 +309,6 @@
           "projectStatusText": "Filter by Project Status",
           "IN_PROGRESS": "In Progress",
           "COMPLETED": "Completed"
-
         }
       },
       "tab": {
@@ -321,10 +320,12 @@
         "suggestedKeywords": "Suggested\nKeywords"
       },
       "highlightSummary": {
-        "showingAll": "Showing all projects from",
-        "includingStatuses": "With Status(es):",
+        "showing": "Showing {status} projects from {start} - {end}",
         "includes": "Highlighting conditions containing",
-        "excludes": "Exclude conditions containing"
+        "excludes": "Exclude conditions containing",
+        "IN_PROGRESS": "In Progress",
+        "COMPLETED": "Completed",
+        "ALL": "All"
       },
       "findWords": {
         "findWords": "Find Words",
@@ -387,12 +388,12 @@
         "name": "Full Project Name:",
         "associated": "Companies associated with this project",
         "meaningHeading": "Why is there more than one company associated with this project?",
-        "meaningText": "There are instances when more than one company has obligations related to a project.  Examples include:\n-an agreement between one company to sell and another company to purchase a pipeline;\n-where one company is the owner of a pipeline but another company operates that pipeline on the owner’s behalf; and\n-NEB initiatives that address regulatory gaps such as establishing an Abandonment Cost Estimate (the amount of money a company estimates it will need to abandon a pipeline in the future), and a Set-Aside Mechanism (the manner in which the Board determines that the company will set that money aside).",
+        "meaningText": "There are instances when more than one company has obligations related to a project. Examples include:\n - an agreement between one company to sell and another company to purchase a pipeline; and\n - NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).",
         "back": "Back"
       },
       "regdocs": {
         "searchFor": "Search for instrument {instrument} in {regdocs}",
-        "regdocs": "Regdocs...",
+        "regdocs": "RegDocs...",
         "found": "Instrument found, click to open document.",
         "currentTab": "Open in current tab",
         "newTab": "Open in new tab",

@@ -3,24 +3,33 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { yearRangeType } from '../../../proptypes';
+import joinJsxArray from '../../../utilities/joinJsxArray';
+
+const formatSummaryText = (arr, mapFunc) => joinJsxArray(arr.map(mapFunc), ', ');
 
 const HighlightSummary = props => (
   <div className="HighlightSummary">
-    <FormattedMessage id="components.searchBar.highlightSummary.showingAll" />
-    <span> {props.selectedYear.start} - {props.selectedYear.end } </span>
+    <FormattedMessage
+      id="components.searchBar.highlightSummary.showing"
+      values={{
+        status: <FormattedMessage
+          id={`components.searchBar.highlightSummary.${props.includedStatuses[0] || 'ALL'}`}
+        />,
+        start: props.selectedYear.start,
+        end: props.selectedYear.end,
+      }}
+    />
     <br />
-    <FormattedMessage id="components.searchBar.highlightSummary.includingStatuses" />
-    <div> {props.includedStatuses.map(
-      status => <FormattedMessage key={status} id={`components.searchBar.filter.projectStatus.${status}`} />,
-    ).reduce((prev, curr) => [prev, ', ', curr])}
-    </div>
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.includes">
           {text => (<p>{text} : </p>)}
         </FormattedMessage>
         <div className="keywordsText">
-          {props.includeKeywords.join(', ')}
+          {formatSummaryText(
+            props.includeKeywords,
+            keyword => <span key={keyword}>{keyword}</span>,
+          )}
         </div>
       </React.Fragment>
     )}
@@ -30,7 +39,10 @@ const HighlightSummary = props => (
           {text => (<p>{text} : </p>)}
         </FormattedMessage>
         <div className="keywordsText">
-          {props.excludeKeywords.join(', ')}
+          {formatSummaryText(
+            props.excludeKeywords,
+            keyword => <span key={keyword}>{keyword}</span>,
+          )}
         </div>
       </React.Fragment>
     )}

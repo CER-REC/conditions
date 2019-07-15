@@ -183,7 +183,7 @@ const buildFlagLayouts = (flagData, maxFlagHeight, flagScale) => {
 
   // Using a For loop rather than Map/ForEach so we can return early if we find a problem
   for (let rayIndex = 0, lastIndex = flagData.length; rayIndex < lastIndex; rayIndex += 1) {
-    const stem = flagData[rayIndex].slice(0, scaledMaxHeight);
+    const stem = flagData[rayIndex].slice(0, scaledMaxHeight).reverse();
 
     if (stem.length === flagData[rayIndex].length) {
       flagLayouts.push([stem]);
