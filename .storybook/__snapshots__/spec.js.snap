@@ -18742,7 +18742,8 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               </div>
             </div>
             <div
-              className="keywordCategory selectedText"
+              className="keywordCategory"
+              title="deer"
             >
               deer
                
@@ -18819,7 +18820,8 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               </div>
             </div>
             <div
-              className="keywordCategory regularText"
+              className="keywordCategory"
+              title="alberta"
             >
               alberta
                
@@ -18932,7 +18934,8 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               </div>
             </div>
             <div
-              className="keywordCategory regularText"
+              className="keywordCategory"
+              title="deer"
             >
               deer
                
@@ -19009,7 +19012,8 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               </div>
             </div>
             <div
-              className="keywordCategory regularText"
+              className="keywordCategory"
+              title="alberta"
             >
               alberta
                
