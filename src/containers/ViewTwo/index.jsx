@@ -89,6 +89,13 @@ class ViewTwo extends React.Component {
       this.props.setProjectYear(this.props.projectYears);
     }
 
+    const countData = this.props.projectsData.reduce((acc, project) => {
+      acc.instrumentCount += project.numberOfInstruments;
+      acc.conditionCount += project.numberOfConditions;
+
+      return acc;
+    }, { projectCount: this.props.projectsData.length, instrumentCount: 0, conditionCount: 0 });
+
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
@@ -130,7 +137,16 @@ class ViewTwo extends React.Component {
             selectedFeature={this.props.selected.feature}
             searchedRegionsLookup={this.props.searchResults.regionIdLookup}
           />
-          <GreyPipe mode={this.props.browseBy} />
+          <GreyPipe
+            mode={this.props.browseBy}
+            {...((
+              this.props.browseBy === 'company'
+              && !(this.props.wheelMoving || this.props.projectMenuLoading)
+            )
+              ? countData
+              : {}
+            )}
+          />
           {(this.props.browseBy === 'company')
             ? <DotLegend />
             : null

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.scss';
 
-const GreyPipe = ({ mode }) => (
+import CountBubble from './CountBubble';
+
+const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
   <div className={classNames('GreyPipe', mode)}>
     {mode === 'location'
       ? <div className="topConnection" />
@@ -14,7 +16,18 @@ const GreyPipe = ({ mode }) => (
       )
     }
     <div className="top" />
-    <div className="vertical" />
+    <div className="vertical">
+      {(mode === 'company' && conditionCount !== null)
+        ? (
+          <React.Fragment>
+            <CountBubble count={conditionCount} textId="conditions" />
+            <CountBubble count={instrumentCount} textId="instruments" />
+            <CountBubble count={projectCount} textId="projects" />
+          </React.Fragment>
+        )
+        : null
+      }
+    </div>
     <div className="bottom" />
     {mode === 'location' ? <div className="bottomConnection" /> : null}
   </div>
@@ -22,6 +35,14 @@ const GreyPipe = ({ mode }) => (
 
 GreyPipe.propTypes = {
   mode: PropTypes.oneOf(['company', 'location']).isRequired,
+  conditionCount: PropTypes.number,
+  instrumentCount: PropTypes.number,
+  projectCount: PropTypes.number,
 };
 
+GreyPipe.defaultProps = {
+  conditionCount: null,
+  instrumentCount: null,
+  projectCount: null,
+};
 export default GreyPipe;

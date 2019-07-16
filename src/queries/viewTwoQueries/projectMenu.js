@@ -17,6 +17,7 @@ export const projectMenuQuery = gql`
         instrument { name, count }
       }
       numberOfConditions
+      numberOfInstruments
     }
   }
 `;
