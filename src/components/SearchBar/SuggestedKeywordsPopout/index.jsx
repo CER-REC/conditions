@@ -150,7 +150,9 @@ class SuggestedKeywordsPopout extends React.PureComponent {
                 </g>
               </svg>
             </span>
-            <span className="upperCase sortType"> {this.state.sortHierarchy } </span>
+            <FormattedMessage id={`components.searchBar.suggestedKeywordsPopout.${this.state.sortHierarchy}`}>
+              {text => <span className="upperCase sortType"> {text} </span>}
+            </FormattedMessage>
           </span>
         </div>
         <KeywordList

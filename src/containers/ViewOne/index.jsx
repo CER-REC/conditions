@@ -47,7 +47,7 @@ const ViewOne = props => (
             date.getUTCDate().toString().padStart(2, '0'),
           ].join('-');
 
-          return <span>{text}&nbsp;{dateStr}.</span>;
+          return <span>{text}:&nbsp;{dateStr}.</span>;
         }}
       </FormattedMessage>
     </section>

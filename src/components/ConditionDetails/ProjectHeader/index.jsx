@@ -35,7 +35,9 @@ class ProjectHeader extends React.PureComponent {
       {this.props.browseBy === 'company'
         ? (
           <React.Fragment>
-            <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
+            <FormattedMessage id="components.conditionDetails.selectedProject">
+              {text => <h1>{text}:</h1>}
+            </FormattedMessage>
             { this.props.selectedProject !== ''
               ? (
                 <button
@@ -53,7 +55,11 @@ class ProjectHeader extends React.PureComponent {
             }
           </React.Fragment>
         )
-        : <FormattedMessage id="components.conditionDetails.selectedCondition" tagName="h1" />
+        : (
+          <FormattedMessage id="components.conditionDetails.selectedCondition">
+            {text => <h1>{text}:</h1>}
+          </FormattedMessage>
+        )
       }
       <button
         type="button"

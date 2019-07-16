@@ -107,6 +107,7 @@ class SearchContent extends React.PureComponent {
             ),
           }}
         />
+        :
       </div>
       <div className="input">
         <input
@@ -138,7 +139,7 @@ class SearchContent extends React.PureComponent {
 
       <div className="anyText">
         <FormattedMessage
-          id="components.searchBar.findWords.highlightText.following"
+          id="components.searchBar.findWords.highlightText.followingInclude"
           values={{
             choice: (
               this.props.findAny
@@ -154,6 +155,7 @@ class SearchContent extends React.PureComponent {
                 )),
           }}
         />
+        :
       </div>
 
       <div className="keywordsText">{this.keyWordsRender(this.props.includeKeywords)}</div>
@@ -164,7 +166,7 @@ class SearchContent extends React.PureComponent {
 
             <div className="anyText">
               <FormattedMessage
-                id="components.searchBar.findWords.highlightText.following"
+                id="components.searchBar.findWords.highlightText.followingExclude"
                 values={{
                   choice: (
                     <FormattedMessage id="components.searchBar.findWords.highlightText.none">
@@ -172,6 +174,7 @@ class SearchContent extends React.PureComponent {
                     </FormattedMessage>),
                 }}
               />
+              :
             </div>
             <div className="keywordsText">{this.keyWordsRender(this.props.excludeKeywords)}</div>
           </React.Fragment>
@@ -200,7 +203,8 @@ class SearchContent extends React.PureComponent {
               }}
             />
           )
-      }
+        }
+        :
       </div>
       <div className="input">
         <input

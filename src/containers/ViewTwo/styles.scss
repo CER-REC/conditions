@@ -2,7 +2,7 @@
 
 .ViewTwo {
   @include grid((
-    header: (x: 2, y: 2, w: 94, h: 11),
+    header: (x: 2, y: 2, w: 57, h: 11),
     wheel: (x: 2, y: 14, w: 57, h: 57),
     companyBreakdown: (x: 60, y: 14, w: 36, h: 38),
     menus: (x: 97, y: 2, w: 21, h: 11),
@@ -84,7 +84,7 @@
         }
       }
       .FeaturesLegend {
-        padding-top: 36px;
+        padding-top: 35px;
       }
     }
 
@@ -93,12 +93,11 @@
       overflow: visible;
 
       .SearchBar.small {
-        width: 200px;
+        width: 210px;
       }
 
       .LocationWheelMinimap {
-        position: relative;
-        left: 200px;
+        left: 210px;
       }
     }
   }

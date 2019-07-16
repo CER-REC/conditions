@@ -155,10 +155,10 @@
     },
     "companyWheel": {
       "wheelRay": {
-        "title": "Société sélectionnée:"
+        "title": "Société sélectionnée"
       },
       "list": {
-        "company": "Société sélectionnée:",
+        "company": "Société sélectionnée",
         "location": "Région"
       },
       "pullToSpin": {
@@ -169,8 +169,8 @@
     "conditionDetails": {
       "selectedProject": "Projet sélectionné",
       "selectedCondition": "Condition sélectionné",
-      "instrumentNumber": "Instrument n˚:",
-      "location": "lieu",
+      "instrumentNumber": "Instrument n˚",
+      "location": "Lieu",
       "issuanceDate": "Date de déliverance",
       "effectiveDate": "Entrée en vigueur",
       "sunsetDate": "Date de réexamen",
@@ -337,16 +337,17 @@
           "all": ""
         },
         "searchText": {
-          "basicInclude": "Rechercher TOUT mot dans:",
+          "basicInclude": "Rechercher TOUT mot dans",
           "advancedInclude": "",
-          "exclude": "Mais {not} inclure:",
+          "exclude": "Mais {not} inclure",
           "not": "ne pas"
         },
         "highlightText": {
           "highlightConditions": "Signaler les conditions contenant",
-          "following": " {choice} ",
-          "any": "UN OU L'AUTRE des mots suivants:",
-          "none": "RIEN de ce qui suit:",
+          "followingInclude": " {choice} des mots suivants",
+          "followingExclude": " {choice} de ce qui suit",
+          "any": "un ou l'autre",
+          "none": "rien",
           "all": ""
         }
       },
@@ -386,8 +387,8 @@
         "description": ""
       },
       "company": {
-        "name": "Nom complet du projet:",
-        "associated": "Sociétés associées au projet:",
+        "name": "Nom complet du projet",
+        "associated": "Sociétés associées au projet",
         "meaningHeading": "Que faut-il comprendre quand plus d’une société est associée au projet?",
         "meaningText": "",
         "back": "Précédent"
@@ -409,7 +410,7 @@
       "associated": "Sociétés associées"
     },
     "regionCompanies": {
-      "title": "Sociétés dans la région sélectionnée:"
+      "title": "Sociétés dans la région sélectionnée"
     },
     "regionConditionSummary": {
       "title": "Nombre total de conditions pour la région sélectionnée"

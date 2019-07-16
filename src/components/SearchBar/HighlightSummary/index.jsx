@@ -23,7 +23,7 @@ const HighlightSummary = props => (
     {props.includeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.includes">
-          {text => (<p>{text} : </p>)}
+          {text => (<p>{text}:&nbsp;</p>)}
         </FormattedMessage>
         <div className="keywordsText">
           {formatSummaryText(
@@ -36,7 +36,7 @@ const HighlightSummary = props => (
     {props.excludeKeywords.length === 0 ? null : (
       <React.Fragment>
         <FormattedMessage id="components.searchBar.highlightSummary.excludes">
-          {text => (<p>{text} : </p>)}
+          {text => (<p>{text}:&nbsp;</p>)}
         </FormattedMessage>
         <div className="keywordsText">
           {formatSummaryText(
