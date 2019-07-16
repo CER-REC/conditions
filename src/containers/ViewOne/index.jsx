@@ -32,7 +32,7 @@ const shuffleArray = (arr) => {
   return out;
 };
 
-const shuffleKeywords = memoize(keywords => shuffleArray(keywords.concat(keywords).map(v => v.name)));
+const shuffleKeywords = memoize(words => shuffleArray(words.concat(words).map(v => v.name)));
 
 const ViewOne = props => (
   <section className={classNames('ViewOne', { layoutOnly: props.layoutOnly })}>

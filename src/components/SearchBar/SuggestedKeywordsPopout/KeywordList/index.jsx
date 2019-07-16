@@ -50,10 +50,10 @@ class KeywordList extends React.PureComponent {
           {
             (keywords).map((value) => {
               const key = value.name;
-              const [icon, iconClass, selectedColor, textStyle] = (includeKeywords.includes(key)
+              const [icon, iconClass, selectedColor] = (includeKeywords.includes(key)
                 || excludeKeywords.includes(key))
-                ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
-                : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
+                ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)']
+                : ['plus-circle', 'regularIcon', 'rgb(96,96,96)'];
 
               const maxConditions = this.findMaxConditions();
 
@@ -67,7 +67,7 @@ class KeywordList extends React.PureComponent {
                   >
                     <Icon className={iconClass} icon={icon} />
                   </div>
-                  <div className={`keywordCategory ${textStyle}`}>{key} </div>
+                  <div className="keywordCategory" title={key}>{key} </div>
                   <BarContainer
                     items={[{ value: conditions, fill: selectedColor },
                       { value: remainingSpace, fill: 'transparent' }]}
