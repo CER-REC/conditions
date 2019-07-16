@@ -24,6 +24,7 @@ import updateSearch from './updateSearch';
 
 import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
+import allKeywordsQuery from '../../queries/allKeywords';
 import companyNameById from '../../queries/companyNameById';
 
 import * as browseByCreators from '../../actions/browseBy';
@@ -57,7 +58,7 @@ import CompanyPopup from '../../components/CompanyPopup';
 import './styles.scss';
 
 import {
-  conditionData, categories,
+  conditionData,
 } from '../../mockData';
 
 const store = createStore();
@@ -525,6 +526,7 @@ class App extends React.PureComponent {
             </span>
           </div>
           <ViewOne
+            allKeywords={this.props.allKeywords}
             jumpToAbout={this.jumpToAbout}
             setSelectedKeyword={this.setSelectedKeyword}
             beginTutorial={this.beginTutorial}
@@ -533,6 +535,7 @@ class App extends React.PureComponent {
               && transitionState !== transitionStates.view1Reset
             )}
             lastUpdated={this.props.allConfigurationData.lastUpdated}
+            selectedKeywordId={this.props.selected.keywordId}
           />
           <section className="appControls">
             <BrowseBy
@@ -573,7 +576,8 @@ class App extends React.PureComponent {
             setSelectedProject={this.updateSelection.fromProject}
             filteredProjectLookup={this.props.filteredProjects}
             displayOrder={this.props.allConfigurationData.displayOrder}
-            availableCategories={categories.availableCategories}
+            availableCategories={this.props.allConfigurationData.keywordCategories}
+            suggestedKeywords={this.props.allKeywords}
             updateSearch={this.updateSearch}
           />
           <Query
@@ -710,6 +714,11 @@ App.propTypes = {
   }).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
   allConfigurationData: allConfigurationDataType.isRequired,
+  allKeywords: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    category: PropTypes.arrayOf(PropTypes.string),
+    conditionCount: PropTypes.number,
+  })).isRequired,
   setSelectedMultiple: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
@@ -762,17 +771,17 @@ export default props => (
           <ComposedQuery
             config={{ query: initialConfigurationDataQuery }}
             conditionsPerYear={{ query: conditionsPerYearQuery }}
+            allKeywords={{ query: allKeywordsQuery }}
           >
             {({ data, loading, errors }) => {
-              const configData = data.config;
-              const conditionsData = data.conditionsPerYear;
               // TODO: Error handling for these queries
               if (loading || errors) { return null; }
 
               return (
                 <ConnectedApp
-                  allConditionsPerYear={conditionsData}
-                  allConfigurationData={configData}
+                  allConditionsPerYear={data.conditionsPerYear}
+                  allConfigurationData={data.config}
+                  allKeywords={data.allKeywords}
                   {...props}
                 />
               );

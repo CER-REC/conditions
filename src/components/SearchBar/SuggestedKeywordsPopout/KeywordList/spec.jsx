@@ -4,8 +4,16 @@ import KeywordList from '.';
 import './styles.scss';
 
 const keywords = [
-  ['deer', { conditions: 1200, category: ['wildlife & habitat'] }],
-  ['alberta', { conditions: 400, category: ['administration & filings'] }],
+  {
+    name: 'deer',
+    category: ['wildlife & habitat'],
+    conditionCount: 1300,
+  },
+  {
+    name: 'alberta',
+    category: ['administration & filings'],
+    conditionCount: 500,
+  },
 ];
 const includeKeywords = ['deer'];
 const excludeKeywords = [];

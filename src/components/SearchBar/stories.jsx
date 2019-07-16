@@ -7,12 +7,28 @@ import SearchBar from '.';
 import ReadMe from './README.md';
 import { categories } from '../../mockData';
 
-const sampleSuggestedKeywords = {
-  safety: { conditions: 1200, category: ['administration & filings'] },
-  emissions: { conditions: 1000, category: ['environment'] },
-  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
-  construction: { conditions: 1000, category: ['environment'] },
-};
+const sampleSuggestedKeywords = [
+  {
+    name: 'safety',
+    category: ['administration & filings'],
+    conditionCount: 1201,
+  },
+  {
+    name: 'emissions',
+    category: ['environment'],
+    conditionCount: 1001,
+  },
+  {
+    name: 'habitat',
+    category: ['environment', 'oversight & safety'],
+    conditionCount: 801,
+  },
+  {
+    name: 'construction',
+    category: ['environment'],
+    conditionCount: 1001,
+  },
+];
 
 storiesForComponent('Components|SearchBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))

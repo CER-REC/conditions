@@ -154,6 +154,11 @@ export const viewTwo = {
   filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,
   availableCategories: PropTypes.arrayOf(PropTypes.string),
+  suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    category: PropTypes.arrayOf(PropTypes.string),
+    conditionCount: PropTypes.number,
+  })).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
   updateSearch: PropTypes.func.isRequired,
 };

@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { connect } from 'react-redux';
-import { Query } from 'react-apollo';
 import { FormattedMessage } from 'react-intl';
-import handleQueryError from '../../utilities/handleQueryError';
-import allKeywords from '../../queries/allKeywords';
+import memoize from 'lodash.memoize';
 
 import ConditionExplorer from '../../components/ConditionExplorer';
 import ShortcutInfoBar from '../../components/ShortcutInfoBar';
@@ -35,6 +32,8 @@ const shuffleArray = (arr) => {
   return out;
 };
 
+const shuffleKeywords = memoize(words => shuffleArray(words.concat(words).map(v => v.name)));
+
 const ViewOne = props => (
   <section className={classNames('ViewOne', { layoutOnly: props.layoutOnly })}>
     <section className="introduction">
@@ -54,8 +53,8 @@ const ViewOne = props => (
     </section>
     <section className="explorer">
       <ConditionExplorer
-        keywords={props.keywords}
-        selectedKeywordId={props.selected.keywordId}
+        keywords={shuffleKeywords(props.allKeywords)}
+        selectedKeywordId={props.selectedKeywordId}
         setSelectedKeyword={props.setSelectedKeyword}
         beginTutorial={props.beginTutorial}
         physicsPaused={props.physicsPaused}
@@ -72,10 +71,12 @@ const ViewOne = props => (
 );
 
 ViewOne.propTypes = {
-  selected: PropTypes.shape({
-    keywordId: PropTypes.number,
-  }).isRequired,
-  keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedKeywordId: PropTypes.number,
+  allKeywords: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    category: PropTypes.arrayOf(PropTypes.string),
+    conditionCount: PropTypes.number,
+  })).isRequired,
   setSelectedKeyword: PropTypes.func.isRequired,
   jumpToAbout: PropTypes.func.isRequired,
   beginTutorial: PropTypes.func.isRequired,
@@ -85,35 +86,10 @@ ViewOne.propTypes = {
 };
 
 ViewOne.defaultProps = {
+  selectedKeywordId: null,
   layoutOnly: PropTypes.false,
   physicsPaused: false,
   lastUpdated: '1970-01-01T00:00:00Z',
 };
 
-export const ViewOneUnconnected = props => (
-  <ViewOne
-    {...props}
-  />
-);
-
-export const ViewOneGraphQL = props => (
-  <Query query={allKeywords}>
-    {(result) => {
-      handleQueryError(result);
-      if (!result.data.allKeywords) { return null; }
-
-      const shuffledKeywords = shuffleArray(result.data.allKeywords
-        .concat(result.data.allKeywords) // Make sure we don't run out of keywords
-        .map(keyword => keyword.name));
-
-      return (
-        <ViewOne
-          keywords={shuffledKeywords}
-          {...props}
-        />
-      );
-    }}
-  </Query>
-);
-
-export default connect(({ selected }) => ({ selected }), {})(ViewOneGraphQL);
+export default ViewOne;

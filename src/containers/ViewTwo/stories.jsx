@@ -36,11 +36,34 @@ const regionCompanyData = {
 
 const categories = ['all', 'wildlife & habitat'];
 
+const suggestedKeywordsForStory = [{
+  name: 'safety',
+  category: ['administration & filings'],
+  conditionCount: 1201,
+},
+{
+  name: 'emissions',
+  category: ['environment'],
+  conditionCount: 1001,
+},
+{
+  name: 'habitat',
+  category: ['environment', 'oversight & safety'],
+  conditionCount: 801,
+},
+{
+  name: 'construction',
+  category: ['environment'],
+  conditionCount: 1001,
+},
+];
+
 const props = {
   projectsData,
   availableProjectYear: { year },
-  availableCategories: { categories },
-  suggestedKeywords: { searchData },
+  availableCategories: categories,
+  suggestedKeywords: suggestedKeywordsForStory,
+  allKeywords: searchData.searchData,
   years: Array(year.end - year.start + 1).fill(year.start).map((i, index) => i + index),
   projectYears: year,
   conditionDetails: {
@@ -66,8 +89,9 @@ const props = {
 
 const connectedProps = {
   availableProjectYear: { year },
-  availableCategories: { categories },
-  suggestedKeywords: { searchData },
+  availableCategories: categories,
+  suggestedKeywords: suggestedKeywordsForStory,
+  allKeywords: searchData.searchData,
   years: Array(year.end - year.start + 1).fill(year.start).map((i, index) => i + index),
   conditionDetails: {
     selectedProject: 'Project Name',

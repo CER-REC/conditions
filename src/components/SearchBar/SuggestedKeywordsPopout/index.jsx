@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
 import handleInteraction from '../../../utilities/handleInteraction';
-import { suggestedKeywordsObject } from '../../../proptypes';
 import KeywordList from './KeywordList';
 
 class SuggestedKeywordsPopout extends React.PureComponent {
@@ -13,7 +12,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     setIncluded: PropTypes.func.isRequired,
     setExcluded: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    suggestedKeywords: suggestedKeywordsObject.isRequired,
+    suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      category: PropTypes.arrayOf(PropTypes.string),
+      conditionCount: PropTypes.number,
+    })).isRequired,
     isExclude: PropTypes.bool.isRequired,
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -58,16 +61,18 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   sortKeywords = () => {
     const { sortBy, sortHierarchy, selectedCategory } = this.state;
     const { suggestedKeywords } = this.props;
-    let filteredKeywords = Object.entries(suggestedKeywords);
+    let filteredKeywords = suggestedKeywords;
     if (selectedCategory.length > 0) {
       filteredKeywords = filteredKeywords
-        .filter(([, { category }]) => category.some(v => (selectedCategory.includes(v))));
+        .filter(({ category }) => category.some(v => (selectedCategory.includes(v))));
     }
     if (sortBy.length > 0 && sortHierarchy !== 'none') {
       const direction = (sortHierarchy === 'dec') ? -1 : 1;
-      filteredKeywords = (sortBy === 'alphabetical')
-        ? filteredKeywords.sort(([a], [b]) => a.localeCompare(b) * direction)
-        : filteredKeywords.sort(([, a], [, b]) => (a.conditions - b.conditions) * direction);
+      filteredKeywords.sort(
+        (sortBy === 'alphabetical')
+          ? (a, b) => a.name.localeCompare(b.name) * direction
+          : (a, b) => (a.conditionCount - b.conditionCount) * direction,
+      );
     }
     return filteredKeywords;
   }
