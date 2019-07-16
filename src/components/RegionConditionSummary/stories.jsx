@@ -3,27 +3,7 @@ import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import ReadMe from './README.md';
 import RegionConditionSummary from '.';
-
-const themeData = [
-  { feature: 'theme', description: 'STANDARD_CONDITION', value: 50 },
-  { feature: 'theme', description: 'INTEGRITY_MANAGEMENT', value: 20 },
-  { feature: 'theme', description: 'ENVIRONMENTAL_PROTECTION', value: 43 },
-  { feature: 'theme', description: 'ADMINISTRATIVE', value: 15 },
-  { feature: 'theme', description: 'SUNSET_CLAUSE', value: 5 },
-  { feature: 'theme', description: 'ENFORCEMENT', value: 15 },
-  { feature: 'theme', description: 'EMERGENCY_MANAGEMENT', value: 3 },
-  { feature: 'theme', description: 'SOCIO_ECONOMIC', value: 15 },
-  { feature: 'theme', description: 'SAFETY_MANAGEMENT', value: 3 },
-  { feature: 'theme', description: 'DAMAGE_PREVENTION', value: 3 },
-  { feature: 'theme', description: 'FINANCIAL', value: 3 },
-  { feature: 'theme', description: 'SECURITY', value: 3 },
-  { feature: 'theme', description: 'MANAGEMENT_SYSTEM', value: 3 },
-];
-
-const typeData = [
-  { feature: 'type', description: 'STANDARD', value: 50 },
-  { feature: 'type', description: 'NON_STANDARD', value: 100 },
-];
+import { aggregatedCount, displayOrder } from '../../mockData';
 
 storiesForComponent('Components|RegionConditionSummary', module, ReadMe)
   .addDecorator(withStatus({
@@ -34,16 +14,21 @@ storiesForComponent('Components|RegionConditionSummary', module, ReadMe)
   `))
   .add('with theme data', () => (
     <RegionConditionSummary
-      featureData={themeData}
+      selectedFeature="theme"
+      selectedAggregatedCount={aggregatedCount}
+      displayOrder={displayOrder}
     />
   ))
   .add('with type data', () => (
     <RegionConditionSummary
-      featureData={typeData}
+      selectedFeature="type"
+      selectedAggregatedCount={aggregatedCount}
+      displayOrder={displayOrder}
     />
   ))
   .add('with no data', () => (
     <RegionConditionSummary
-      featureData={[]}
+      selectedFeature="theme"
+      displayOrder={displayOrder}
     />
   ));

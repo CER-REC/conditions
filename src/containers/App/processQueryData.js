@@ -13,12 +13,12 @@ export const conditionCounts = (counts) => {
   let [instruments, notInstruments] = Object.entries(counts)
     .reduce((acc, [feature, featureCounts]) => {
       if (feature === 'year' || feature === '__typename') return acc;
-      const pushTo = (feature === 'prefix') ? 0 : 1;
+      const pushTo = (feature === 'instrument') ? 0 : 1;
 
       Object.entries(featureCounts).forEach(([subFeature, subCounts]) => {
         if (subFeature === '__typename' || !subCounts.length) return;
         const countObj = {
-          feature: (feature === 'prefix') ? 'instrument' : feature,
+          feature,
           subFeature,
           years: {},
           total: 0,
@@ -53,17 +53,12 @@ export const conditionCounts = (counts) => {
     years: minorInstrumentYears,
   });
 
-  const prefixOrder = instruments.reduce((acc, cur) => {
-    acc.push(cur.subFeature);
-    return acc;
-  }, []);
-
   // We need to know their order here for the StreamGraph's colors
   instrumentsOut.forEach((_, idx) => { instrumentsOut[idx].rank = idx; });
 
   return {
+    // TODO: This should be coming from the query
     conditionCounts: [...instrumentsOut, ...notInstruments],
-    prefixOrder,
     years: counts.year,
   };
 };

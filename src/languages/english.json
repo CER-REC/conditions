@@ -275,12 +275,21 @@
         "OPSP": "text not yet provided",
         "CO": "text not yet provided",
         "OPL": "text not yet provided",
-        "OTHER": "text not yet provided",
-        "other": "text not yet provided"
+        "OTHER": "text not yet provided"
       }
     },
     "featureMenu": {
       "dropDownTitle": "Feature"
+    },
+    "greyPipe": {
+      "countBubble": {
+        "instruments": "instruments",
+        "projects": "projects",
+        "conditions": "conditions",
+        "instrument": "instrument",
+        "project": "project",
+        "condition": "condition"
+      }
     },
     "guide": {
       "loading": "Loading...",

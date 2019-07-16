@@ -4,9 +4,16 @@ import { storiesForComponent } from '../../../../../.storybook/utils';
 import KeywordList from '.';
 import ReadMe from './README.md';
 
-const words = [
-  ['deer', { conditions: 1200, category: ['wildlife & habitat'] }],
-  ['alberta', { conditions: 400, category: ['administration & filings'] }],
+const words = [{
+  name: 'deer',
+  category: ['wildlife & habitat'],
+  conditionCount: 1200,
+},
+{
+  name: 'alberta',
+  category: ['administration & filings'],
+  conditionCount: 400,
+},
 ];
 
 storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', module, ReadMe)

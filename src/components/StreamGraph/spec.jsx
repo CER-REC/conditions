@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallowWithIntl } from '../../tests/utilities';
 import StreamGraph from '.';
-import { conditionCountsByYear } from '../../mockData';
+import { conditionCountsByYear, displayOrder } from '../../mockData';
 
 describe('Components|StreamGraph', () => {
   describe('with default props', () => {
@@ -9,8 +9,8 @@ describe('Components|StreamGraph', () => {
     let handleOnChange;
     beforeEach(() => {
       wrapper = shallowWithIntl(<StreamGraph
-        countsData={conditionCountsByYear.counts}
-        years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
+        allConditionsPerYear={conditionCountsByYear}
+        displayOrder={displayOrder}
         handleOnChange={handleOnChange}
         feature="theme"
         subFeature=""

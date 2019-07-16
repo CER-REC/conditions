@@ -12,7 +12,6 @@ import SearchBar from '../../components/SearchBar';
 import LocationWheelMinimap from '../../components/LocationWheelMinimap';
 import FeaturesMenu from '../../components/FeaturesMenu';
 
-import { searchData } from '../../mockData';
 import KeywordExplorerButton from '../../components/KeywordExplorerButton';
 import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
@@ -90,12 +89,18 @@ class ViewTwo extends React.Component {
       this.props.setProjectYear(this.props.projectYears);
     }
 
+    const countData = this.props.projectsData.reduce((acc, project) => {
+      acc.instrumentCount += project.numberOfInstruments;
+      acc.conditionCount += project.numberOfConditions;
+
+      return acc;
+    }, { projectCount: this.props.projectsData.length, instrumentCount: 0, conditionCount: 0 });
+
     return (
       <section className={classNames('ViewTwo', { layoutOnly: this.props.layoutOnly })}>
         <section className="header">
           <SearchBar
             className={this.props.browseBy === 'location' ? 'small' : ''}
-            suggestedKeywords={searchData}
             availableYearRange={this.props.projectYears}
             availableCategories={this.props.availableCategories}
             setIncluded={this.setIncluded}
@@ -108,6 +113,7 @@ class ViewTwo extends React.Component {
             projectStatus={this.props.projectStatus}
             yearRange={this.props.projectYear}
             findAny={this.props.findAny}
+            suggestedKeywords={this.props.suggestedKeywords}
           />
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
@@ -127,9 +133,20 @@ class ViewTwo extends React.Component {
             wheelMotionTrigger={this.props.setWheelMoving}
             relevantProjectLookup={this.props.searchResults.projectIdLookup}
             filteredProjectLookup={this.props.filteredProjectLookup}
+            displayOrder={this.props.displayOrder}
+            selectedFeature={this.props.selected.feature}
             searchedRegionsLookup={this.props.searchResults.regionIdLookup}
           />
-          <GreyPipe mode={this.props.browseBy} />
+          <GreyPipe
+            mode={this.props.browseBy}
+            {...((
+              this.props.browseBy === 'company'
+              && !(this.props.wheelMoving || this.props.projectMenuLoading)
+            )
+              ? countData
+              : {}
+            )}
+          />
           {(this.props.browseBy === 'company')
             ? <DotLegend />
             : null
@@ -140,7 +157,9 @@ class ViewTwo extends React.Component {
             ? (
               <div className="regionChart">
                 <RegionConditionSummary
-                  featureData={this.props.legendItems}
+                  selectedAggregatedCount={this.props.selectedAggregatedCount}
+                  selectedFeature={this.props.selected.feature}
+                  displayOrder={this.props.displayOrder}
                   isHidden={this.props.wheelMoving}
                 />
                 <RegionCompanies
@@ -162,6 +181,7 @@ class ViewTwo extends React.Component {
                   selectedFeature={this.props.selected.feature}
                   relevantProjectLookup={this.props.searchResults.projectIdLookup}
                   filteredProjectLookup={this.props.filteredProjectLookup}
+                  displayOrder={this.props.displayOrder}
                 />
               </React.Fragment>
             )
@@ -175,9 +195,8 @@ class ViewTwo extends React.Component {
           <TrendButton
             onClick={this.props.jumpToView3}
             feature={this.props.selected.feature}
-            subFeature=""
-            years={this.props.years}
-            countsData={this.props.conditionsPerYear}
+            allConditionsPerYear={this.props.allConditionsPerYear}
+            displayOrder={this.props.displayOrder}
           />
         </section>
 
@@ -188,9 +207,10 @@ class ViewTwo extends React.Component {
             onChange={this.props.setSelectedFeature}
           />
           <FeaturesLegend
-            legendItems={this.props.legendItems}
+            selectedAggregatedCount={this.props.selectedAggregatedCount}
             selectedFeature={this.props.selected.feature}
             isProjectLegend={this.props.browseBy !== 'location'}
+            displayOrder={this.props.displayOrder}
           />
         </section>
       </section>
@@ -203,7 +223,6 @@ ViewTwo.propTypes = viewTwo;
 ViewTwo.defaultProps = {
   layoutOnly: false,
   wheelData: [],
-  legendItems: [],
   projectsData: [],
   searchResults: {
     companyIdLookup: [],

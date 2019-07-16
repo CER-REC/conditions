@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
-import { conditionCountsByYear } from '../../mockData';
+import { conditionCountsByYear, displayOrder } from '../../mockData';
 import TrendButton from '.';
 
 const noop = () => {};
@@ -15,9 +15,8 @@ describe('Components|TrendButton', () => {
       wrapper = shallow(<TrendButton
         onClick={noop}
         feature="theme"
-        subFeature=""
-        years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
-        countsData={conditionCountsByYear.counts}
+        allConditionsPerYear={conditionCountsByYear}
+        displayOrder={displayOrder}
       />);
     });
     test('should render a div with a className of buttonText', () => {
@@ -31,6 +30,7 @@ describe('Components|TrendButton', () => {
       expect(updatedWrapper.find('p')).toHaveLength(2);
     });
   });
+
   describe('when a trendButton is clicked', () => {
     let spy;
     let wrapper;
@@ -39,9 +39,8 @@ describe('Components|TrendButton', () => {
       wrapper = shallow(<TrendButton
         onClick={spy}
         feature="theme"
-        subFeature=""
-        years={[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]}
-        countsData={conditionCountsByYear.counts}
+        allConditionsPerYear={conditionCountsByYear}
+        displayOrder={displayOrder}
       />);
     });
     test("should call it's onClick prop", () => {

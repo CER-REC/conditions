@@ -6,10 +6,18 @@ import SuggestedKeywordsPopout from '.';
 import ReadMe from './README.md';
 import { categories } from '../../../mockData';
 
-const keywords = {
-  deer: { conditions: 1200, category: ['wildlife & habitat'] },
-  alberta: { conditions: 400, category: ['administration & filings'] },
-};
+const keywords = [
+  {
+    name: 'deer',
+    category: ['wildlife & habitat'],
+    conditionCount: 1300,
+  },
+  {
+    name: 'alberta',
+    category: ['administration & filings'],
+    conditionCount: 500,
+  },
+];
 
 storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))

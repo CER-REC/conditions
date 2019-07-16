@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
+import joinJsxArray from '../../../utilities/joinJsxArray';
 
 import './styles.scss';
 
@@ -40,13 +41,22 @@ class Content extends React.PureComponent {
     const highlightedText = givenString.replace(
       new RegExp(`(${matchList.join('|')})`, 'gi'),
       (_, match) => {
-        if (matched.includes(match.toLowerCase()) === false) {
-          matched.push(match.toLowerCase());
+        const keyword = match.toLowerCase();
+        if (!matched.includes(keyword)) {
+          matched.push(keyword);
         }
         return `<span class="highlighted">${match}</span>`;
       },
     );
-    return { highlightedText, matchedKeywords: matched.join(', ') };
+
+    const matchedKeywords = joinJsxArray(
+      matched.map(keyword => (
+        <span className="highlighted">{keyword}</span>
+      )),
+      ', ',
+    );
+
+    return { highlightedText, matchedKeywords };
   }
 
   render() {

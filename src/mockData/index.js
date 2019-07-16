@@ -1,5 +1,4 @@
 export { default as conditionCountsByYear } from './conditionCountsByYear';
-export { default as conditionCountsByCommodity } from './conditionCountsByCommodity';
 export { default as companyData } from './companyData';
 export { default as searchData } from './searchData';
 export { default as searchResult } from './searchResult';
@@ -11,3 +10,5 @@ export { default as loadingProjectsData } from './loadingProjectsData';
 export { default as displayOrder } from './displayOrder';
 export { default as processedProjects } from './processedProjects';
 export { default as categories } from './categories';
+export { default as locationData } from './locationData';
+export { default as aggregatedCount } from './aggregatedCount';
