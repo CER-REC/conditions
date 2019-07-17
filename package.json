@@ -13,7 +13,7 @@
     "storybook": "start-storybook -s ./src/images -s ./.storybook/wet-template -p 6006",
     "build-storybook": "cross-env NODE_ENV=production build-storybook -s ./src/images -s ./.storybook/wet-template",
     "build:modified": "git show -s --format=%cd HEAD --date=short > LAST_MODIFIED",
-    "build:update-version": "node -p -e \"require('./package.json').version\" > VERSION",
+    "build:update-version": "node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version, 'utf-8')\"",
     "build:changelog": "conventional-changelog -n .release/index.js -i CHANGELOG.md -s",
     "build": "cross-env NODE_ENV=production webpack && npm run build:modified && npm run build:update-version",
     "version": "npm run build:changelog && git add CHANGELOG.md"
