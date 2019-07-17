@@ -3,13 +3,20 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import memoize from 'lodash.memoize';
 import { browseByType, displayOrder, featureTypes } from '../../../proptypes';
 import LocationRay from '../LocationRay';
 import handleInteraction from '../../../utilities/handleInteraction';
 import hashValuesDiffer from '../../../utilities/hashValuesDiffer';
+import memoizeReference from '../../../utilities/memoizeReference';
 
 import flagLayoutCalculation from '../CompanyFlag/flagLayoutCalculation';
 import CompanyFlag from '../CompanyFlag';
+
+const updateFlagLayout = memoize((wheelType, items) => {
+  const flagData = wheelType === 'company' ? items.map(company => company.projectIds) : [];
+  return flagLayoutCalculation(flagData);
+}, (type, items) => `${type}-${memoizeReference(items)}`);
 
 class WheelRay extends React.Component {
   static propTypes = {
@@ -34,15 +41,18 @@ class WheelRay extends React.Component {
     searchedRegionsLookup: [],
   };
 
+  static getDerivedStateFromProps(props, state) {
+    return {
+      ...updateFlagLayout(props.wheelType, props.items),
+    };
+  }
+
   constructor(props) {
     super(props);
-
-    // TODO: This shouldn't be in the constructor; load the data and prompt a
-    // re-render.
-    const flagData = props.wheelType === 'company' ? this.props.items.map(company => company.projectIds) : [];
-    const calc = flagLayoutCalculation(flagData);
-    this.flagLayouts = calc.flagLayouts;
-    this.flagScale = calc.flagScale;
+    this.state = {
+      flagLayouts: null,
+      flagScale: 1,
+    };
   }
 
   shouldComponentUpdate(nextProps) {
@@ -53,6 +63,8 @@ class WheelRay extends React.Component {
       'relevantProjectLookup',
       'filteredProjectLookup',
       'selectedFeature',
+      'flagLayouts',
+      'flagScale',
     ]);
   }
 
@@ -94,14 +106,14 @@ class WheelRay extends React.Component {
             >
               { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
             </text>
-            {(this.flagLayouts)
+            {(this.state.flagLayouts)
               ? (
                 <CompanyFlag
                   y={-65}
-                  flagLayout={this.flagLayouts[index]}
+                  flagLayout={this.state.flagLayouts[index]}
                   svgHeight={100}
-                  dotWidth={0.8 * this.flagScale}
-                  dotSpacing={this.flagScale}
+                  dotWidth={0.8 * this.state.flagScale}
+                  dotSpacing={this.state.flagScale}
                   rotation={90}
                   relevantProjectLookup={this.props.relevantProjectLookup}
                   filteredProjectLookup={this.props.filteredProjectLookup}
