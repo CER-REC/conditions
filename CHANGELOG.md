@@ -1,3 +1,21 @@
+## [0.21.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.21.1) (2019-07-17)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** fix crash when text is null (a4a66ab)
+* **Bug Fixes:** fixes overlap with wheel (469893a)
+
+
+### i18n
+
+* **Bug Fixes:** fixes bug with French not loading strings (0920e51)
+
+
+### Wheel
+
+* **Bug Fixes:** fixes bug with flags not appearing when toggling modes (017a972)
+
 # [0.21.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.21.0) (2019-07-17)
 
 
