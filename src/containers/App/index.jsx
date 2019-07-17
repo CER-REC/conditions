@@ -10,7 +10,9 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import enLocaleData from 'react-intl/locale-data/en';
+import frLocaleData from 'react-intl/locale-data/fr';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
@@ -68,6 +70,9 @@ const link = new HttpLink({
   credentials: 'same-origin',
 });
 const client = new ApolloClient({ cache, link, fetch });
+
+addLocaleData(enLocaleData);
+addLocaleData(frLocaleData);
 
 const noop = () => {};
 const tutorialTiming = 5000;
