@@ -1,3 +1,409 @@
+# [0.21.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.21.0) (2019-07-17)
+
+
+### app
+
+* **Bug Fixes:** moves concat (30ccc37)
+* **Code Formatting:** adds missing comments (d11ea00)
+
+
+### App
+
+* **Features:** adds a lookup table for regionIds in search results (ad6dab5)
+* **Features:** sets the selected condition from View 1, locates it in ConditionDetails (14438ea)
+* **Features:** sends a search query when params change, updates the store with results (49ba8f7)
+* **Features:** adds search results to Redux (94a6238)
+* **Features:** adds error and empty search checking to the search queries (49e00ac)
+* **Features:** sends a search query when params change, updates the store with results (0920c5f)
+* **Features:** sends a search query when params change, updates the store with results (1f0cd05)
+* **Features:** adds search results to Redux (8d0e05b)
+* **Features:** adds selected instrument ID to Redux (7f7daef)
+* **Features:** removes unused props from views (d70a3d4)
+* **Features:** refines updateSelection logic and queries (a16959b, NEBV-1596)
+* **Features:** adds function to set the app state from an instrument ID (0179bb7)
+* **Features:** updates the selection tree from ConditionDetails, batches updates (5f8cd09)
+* **Features:** adds queries and processing for trees by Project and Company, adds region IDs (f18f237)
+* **Features:** uses callbacks from App for View 2's setSelected functions (52ea2ba)
+* **Features:** adds getSelectionFromRegion, uses browseBy for status checks (f083879)
+* **Features:** reduces duplicate code for updateSelection logic (92f2fe7, NEBV-1596)
+* **Features:** adds regionIDLookup (cdba020, NEBV-1395)
+* **Features:** adds LoadingGuide component (c19d41e)
+* **Features:** adds basic error checking to selection logic, keeps selections if possible (82e64e1)
+* **Features:** moves allKeywords query up to the App level (a5d3c1e)
+* **Features:** adds basic error handling to selection queries (deeaed8)
+* **Features:** adds LoadingGuide component (b8bea14)
+* **Features:** adds error and empty search checking to the search queries (5d2d076)
+* **Features:** adds french text to view 2 (499ee17, NEBV-1649)
+* **Features:** sends a search query when params change, updates the store with results (18f8863)
+* **Features:** adds search results to Redux (9190bf4)
+* **Features:** adds search results to Redux (d90da5b)
+* **Features:** sends a search query when params change, updates the store with results (a471963)
+* **Features:** sets the selected condition from View 1, locates it in ConditionDetails (b81dd83)
+* **Features:** adds basic error handling to selection queries (8ed6fea)
+* **Features:** adds basic error checking to selection logic, keeps selections if possible (836310a)
+* **Features:** adds selected instrument ID to Redux (64fff54)
+* **Features:** removes unused props from views (66d22e8)
+* **Features:** adds error and empty search checking to the search queries (eeb5119)
+* **Features:** adds getSelectionFromRegion, uses browseBy for status checks (a4239b8)
+* **Features:** uses callbacks from App for View 2's setSelected functions (fa4ff7f)
+* **Features:** adds queries and processing for trees by Project and Company, adds region IDs (b00086f)
+* **Features:** adds function to set the app state from an instrument ID (9f16951)
+* **Features:** updates the selection tree from ConditionDetails, batches updates (380097a)
+* **Bug Fixes:** keeps ConditionDetails from stealing the wheel's pointer events (6f97f03)
+* **Bug Fixes:** applies requested changes (73ef73d)
+* **Bug Fixes:** moves trailing :s in locale text to JSX (29797e1)
+* **Bug Fixes:** updates snapshots, fixes rebase issues (929420a)
+* **Bug Fixes:** updates snapshots (b62ddc2)
+* **Bug Fixes:** fixes ConditionDetails glitch when going V3->2 (c443235)
+* **Bug Fixes:** hides the DotLegend during the intro and tutorial (5a6d54b)
+* **Bug Fixes:** merges develop, fixes conflicts (47a12ca)
+* **Bug Fixes:** updates snapshots (6c78a39, NEBV-1660)
+* **Bug Fixes:** merges develop, fixes conflicts (f86286e)
+* **Bug Fixes:** returns a promise instead of immediate value (eb76920)
+* **Bug Fixes:** removes circular dependency (7e0ca85)
+* **Bug Fixes:** updates snapshots (aa8ee75)
+* **Bug Fixes:** renames "prefix" field to "instrument" to match client data (b72d87a)
+* **Bug Fixes:** returns a promise instead of immediate value (d9bae34)
+* **Bug Fixes:** removes console statements (29b44f2)
+* **Bug Fixes:** fixes minor style issues (c46fa91)
+* **Tests:** updates snapshots (23a3f67)
+* **Tests:** updates snapshots (111d484)
+* **Code Formatting:** adds comments, fixes linting errors (ce739ad)
+* **Code Formatting:** adds comments, fixes linting errors (4aaaa23)
+* **Code Formatting:** removes commented code (a041b55)
+* **Code Refactoring:** adds prop suggestedKeywords to view 2 (3d84336)
+* **Code Refactoring:** changes text as requested by NEB (3788c4f)
+* **Code Refactoring:** extracts joinJsxArray from the search bar to a separate module (13a8a95)
+* **Code Refactoring:** extracts selection logic to a separate module (3e69614)
+* **Code Refactoring:** extracts selection logic to a separate module (e50aaf4)
+* **Code Refactoring:** finishes extracting selection logic (776897e)
+* **Code Refactoring:** finishes extracting selection logic (24abdb7)
+* **Code Refactoring:** makes updateSearch a normal class method (49802ed)
+* **Code Refactoring:** removes unnecessay assignment (1841be7)
+
+
+### App, SearchBar, HighlightSummary
+
+* **Bug Fixes:** adds requested changes and merges develop (9799ada)
+
+
+### App, View2, FilterContent
+
+* **Bug Fixes:** fixes year range bug (f3c1402, NEBV-1536)
+
+
+### App, View2, SearchBar
+
+* **Code Refactoring:** adds missing categories (69e68d3, NEBV-1562)
+
+
+### BarContainer
+
+* **Features:** adds a transparent background so the entire chart catches mouse events (5e17143)
+
+
+### ConditionDetails
+
+* **Features:** highlights the list of matched keywords (b6ede7e)
+* **Bug Fixes:** fixes tests and mock data, updates snapshots (d69095a)
+* **Bug Fixes:** sets the header's width dynamically to allow for More button (400d1a6)
+* **Bug Fixes:** fixes tests and mock data, updates snapshots (c253484)
+* **Code Formatting:** removes redundant function call (d6f97a9)
+* **Code Formatting:** removes redundant function call (4d1d0aa)
+
+
+### ConditionDetails/ProjectHeader
+
+* **Code Refactoring:** fixes width for projects (aba4621, NEBV-1651)
+
+
+### ConditionExplorer
+
+* **Bug Fixes:** fixes bug with physics not pausing in some situations (92de7c6, NEBV-1662)
+* **Bug Fixes:** adds check for targetScale when closing the Guide (da2f1ff)
+* **Bug Fixes:** fixes "invisible circle" behavior (2fb35a4)
+* **Bug Fixes:** prevents GuideDetail's state from getting out of sync (e01a2f0)
+* **Code Formatting:** extracts guide opening logic to a new method (ad22b7c)
+
+
+### ConditionList
+
+* **Bug Fixes:** checks for overflow before attempting to scroll (5eec51e)
+
+
+### Dependencies
+
+* **Bug Fixes:** update dependency deepmerge to v4 (eede4eb)
+* **Project Maintenance:** update babel monorepo to v7.5.0 (8db5c74)
+* **Project Maintenance:** update babel monorepo to v7.5.2 (bab71a6)
+* **Project Maintenance:** update babel monorepo to v7.5.4 (0515d71)
+* **Project Maintenance:** update dependency @babel/plugin-proposal-object-rest-spread to v7.5.1 (7ca514c)
+* **Project Maintenance:** update dependency eslint-config-airbnb to v17.1.1 (492d47d)
+* **Project Maintenance:** update dependency eslint-plugin-jsx-a11y to v6.2.3 (02fc401)
+* **Project Maintenance:** update dependency eslint-plugin-react to v7.14.2 (8532676)
+* **Project Maintenance:** update dependency eslint-plugin-react-hooks to v1.6.1 (dc13bce)
+* **Project Maintenance:** update dependency postcss-preset-env to v6.7.0 (bb17503)
+* **Project Maintenance:** update dependency webpack to v4.35.2 (e82831d)
+* **Project Maintenance:** update dependency webpack to v4.35.3 (0117b99)
+* **Project Maintenance:** update dependency webpack-cli to v3.3.6 (7124d25)
+
+
+### ESLint
+
+* **Bug Fixes:** fixes additional PR and lint concerns (f0b30a8)
+* **Tests:** fixes linting errors (c721f69)
+
+
+### FeaturesLegend
+
+* **Features:** adds support for DisplayOrder (6cb5689)
+* **Bug Fixes:** fixes positioning of legend items being affected by text length (c31361d)
+
+
+### FeatureTypesDescription
+
+* **Features:** adds support for DisplayOrder (b853bbf)
+
+
+### GraphQL
+
+* **Features:** moves 'all' keyword category to server (f530b77, NEBV-1659)
+* **Features:** converts view 3 to use aggregatedCount format (047de28)
+* **Features:** converts interface to use aggregatedCount format (2e12cec)
+* **Features:** initial conversion to new aggregatedCount format (c81625b)
+* **Features:** pulls instrument display order from query (e98e7c9)
+* **Features:** rename "prefix" to "instrument" (2fd9c04)
+* **Bug Fixes:** fixes PR concerns (b40e3df)
+* **Code Formatting:** fixes linting errors (a096d43)
+
+
+### GreyPipe
+
+* **Features:** adds stories for edge cases (d9e46ac)
+* **Features:** accounts for single and large counts in count bubbles (e11d4a5)
+* **Features:** adds bubbles displaying project, instrument, and condition counts (1b05a67)
+* **Code Refactoring:** uses a new query field for instrument count per project (4a693c7)
+
+
+### handleInteraction
+
+* **Features:** passes the incoming React event as a final arg to its callback (4c8e000)
+* **Features:** passes the incoming React event as a final arg to its callback (f761fc5)
+* **Features:** passes the incoming React event as a final arg to its callback (860d63c)
+* **Features:** passes the incoming React event as a final arg to its callback (bf1b65a)
+
+
+### HighlightSummary
+
+* **Bug Fixes:** fixes tests and snapshots (dd06b4e)
+* **Tests:** changes test (b7292e0)
+
+
+### KeywordList
+
+* **Bug Fixes:** accidental negative (4feb44d)
+
+
+### LoadingGuide
+
+* **Features:** adds documentation and a basic spec (b4503c3)
+* **Features:** adds documentation and a basic spec (b4399a5)
+* **Bug Fixes:** fixes double-set of timeout (ed02ec5)
+* **Bug Fixes:** merges remote, fixes conflicts (dc4897d)
+* **Bug Fixes:** updates snapshots, adds missing class name (5fa64a4)
+* **Bug Fixes:** updates snapshots, adds missing class name (bc69725)
+* **Code Refactoring:** sets the timer using appropriate lifecycle methods (11cfba7)
+
+
+### LocationRay
+
+* **Bug Fixes:** makes highlighting slightly shorter (5b338d4)
+
+
+### LocationWheelMinimap
+
+* **Features:** adjusts position of minimap with new search width (336a12f)
+* **Features:** adds translation support for province names (e1f3c73)
+* **Features:** adjusts styling of province name (19ec713)
+* **Bug Fixes:** checks for valid region/province data before rendering (bc87bd4)
+* **Bug Fixes:** fixes map not appearing on refresh until region changed (9777a05)
+* **Bug Fixes:** fixes crash for "No associated region" map (9da1a78)
+
+
+### MainInfoBar
+
+* **Tests:** fixes failing test due to extra args (99bb08e)
+
+
+### npm
+
+* **Project Maintenance:** fixes version file generation (b2e9f2c)
+
+
+### ProjectDot
+
+* **Features:** adds a stroke to increase the hitbox size (bf60cc3)
+* **Bug Fixes:** fixes unit error in dot's stroke width (526d4d4)
+
+
+### ProjectMenu
+
+* **Features:** adds support for DisplayOrder (244ae2f)
+* **Bug Fixes:** keeps component from forcing constant rerenders if it has no data (54e88f0)
+* **Bug Fixes:** keeps component from forcing constant rerenders if it has no data (328c3e1)
+* **Code Formatting:** removes commented code (a197380)
+* **Code Formatting:** removes commented code (e97aa78)
+
+
+### Search Bar
+
+* **Features:** adds keyword categories from query (2e02110, NEBV-1650)
+* **Code Refactoring:** fixes the stories (a1c17e1)
+
+
+### SearchBar
+
+* **Features:** uses localized strings for Inc/Dec/None (a95b2af)
+* **Features:** condenses the highlight summary's status listing (6ad6863)
+* **Features:** adds highlighting to keywords in the search summary (756d000)
+* **Features:** allows pressing Enter in inputs to add keywords (b03bc25)
+* **Bug Fixes:** restores tests that were accidentally deleted (a1cfc60)
+* **Code Refactoring:** changes shape from array to obj (b20b25f)
+* **Code Refactoring:** tweaks where strings are split to allow proper formatting (747d7a1)
+
+
+### SearchBar/HighlightSummary
+
+* **Features:** adds statuses section to description (d4cd5d0, NEBV-1477)
+* **Bug Fixes:** adds commas (772d2ba)
+
+
+### snapshots
+
+* **Bug Fixes:** updates snapshots (81625ed)
+
+
+### Snapshots
+
+* **Bug Fixes:** updates snapshots and tests (10614e2)
+* **Bug Fixes:** updates snapshots (e0be74a)
+
+
+### SnapShots
+
+* **Code Refactoring:** updates snapshots (49e349b)
+
+
+### Storybook
+
+* **Tests:** updates snapshots (706c829)
+
+
+### StreamGraph
+
+* **Features:** inverts streams to match SmallMultiplesLegend (26d2507)
+
+
+### SuggestedKeywordsPopout
+
+* **Features:** adds ellipses when selected (86f3dd0)
+* **Bug Fixes:** fixes wet styles overriding (ace468b)
+* **Code Formatting:** removes comments (1032b11)
+* **Code Refactoring:** changes shape of keywords prop (d1d458a)
+* **Code Refactoring:** css styling fixes (e59860d)
+* **Code Refactoring:** fixes layout for keywords (6a65449)
+
+
+### view 2
+
+* **Bug Fixes:** adds compatability with connected variant (1079d11)
+
+
+### View 2
+
+* **Features:** wraps search actions in order to trigger a query (354c366)
+* **Features:** sets the selected project when clicking a project dot (bd4d130)
+* **Features:** sets the selected project when clicking a project dot (aa0906d)
+* **Features:** adds loading state to Grey Pipe's count bubbles (d5186d1)
+* **Features:** passes project counts into the Grey Pipe (bf1c30e)
+* **Features:** wraps search actions in order to trigger a query (4cf6e45)
+* **Features:** wraps search actions in order to trigger a query (d456476)
+* **Features:** sets the selected project when clicking a project dot (05f4ad7)
+* **Features:** wraps search actions in order to trigger a query (cba7dc7)
+* **Features:** adds the dot legend in Company mode (b08ecd7)
+* **Features:** sets the selected project when clicking a project dot (175b124)
+* **Bug Fixes:** avoids unnecessary renders of the Grey Pipe (7640104)
+* **Bug Fixes:** prevents search tabs from wrapping if French + Location (de0872f)
+* **Code Formatting:** removes commented code (371edd4)
+* **Code Formatting:** removes commented code (abdb636)
+* **Code Formatting:** removes commented code (577b7c4)
+
+
+### View 3
+
+* **Code Formatting:** capitalization (08fd238)
+
+
+### View2GraphQL
+
+* **Features:** adds a filter state change on initial render (ed9723c)
+
+
+### ViewOne
+
+* **Features:** fixes PR concerns (0c86c16)
+
+
+### ViewThree
+
+* **Features:** adds company name to the condition details extension on view 3 (e3499e3)
+* **Code Refactoring:** changes minimal fixes in the company name (ab3fb96)
+* **Code Refactoring:** fixes lint errors and adds title attribute (f038629)
+* **Project Maintenance:** removes unused mock data and proptypes (610a596)
+
+
+### Wheel
+
+* **Features:** removes commented code (f2fc627)
+* **Features:** adds dividing lines between provinces in Location mode (acc9775)
+* **Features:** updates the wheel on new search results, extracts code for readability (094fd86)
+* **Features:** reduce hitbox of company flag so it doesn't overlap with other companies (4ef36bf)
+* **Features:** updates the wheel on new search results, extracts code for readability (b989180)
+* **Features:** updates the wheel on new search results, extracts code for readability (4df12aa)
+* **Features:** updates the wheel on new search results, extracts code for readability (d7d1b9c)
+* **Bug Fixes:** adjusts positioning of Pull To Spin text to avoid clipping with the grey pipe (3d8062a)
+* **Bug Fixes:** removes test code (56d68ea)
+* **Bug Fixes:** selects the company when clicking an empty area of the flag's hitbox (3157aaa)
+* **Bug Fixes:** selects the company when clicking an empty area of the flag's hitbox (d26f9eb)
+* **Bug Fixes:** reverses the flag's stem to maintain project order (bd21b62)
+* **Bug Fixes:** clips list text to avoid overlapping with the wheel (76c2237)
+* **Bug Fixes:** selects the company when clicking an empty area of the flag's hitbox (93e32a9)
+* **Bug Fixes:** reverses the flag's stem to maintain project order (9deb9ea)
+* **Bug Fixes:** selects the company when clicking an empty area of the flag's hitbox (1111907)
+* **Bug Fixes:** reverses the flag's stem to maintain project order (4cc60f8)
+* **Code Formatting:** adds comments (eb077d7)
+* **Code Formatting:** adds comments (f75ae68)
+* **Code Formatting:** adds comments (4cbbc95)
+* **Code Formatting:** removes unused prop (1a5b376)
+
+
+### WheelList
+
+* **Code Refactoring:** pulls up shared styles (2066526)
+
+
+### WheelRay
+
+* **Features:** connecting mock data to location wheel (a22dea6)
+* **Code Formatting:** removes unnecessary comments (44b22ec)
+
+
+### BREAKING CHANGES
+
+* **App, View2, FilterContent:** Added Prop to View 2
+* **App:** additional prop
+* **View2GraphQL:** Cycling imports between App and View2GQL
+
 ## [0.20.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.20.1) (2019-06-27)
 
 
