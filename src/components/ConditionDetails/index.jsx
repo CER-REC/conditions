@@ -22,12 +22,10 @@ class ConditionDetails extends React.Component {
   };
 
   textMatchesKeywords = (text) => {
+    if (!text) { return false; }
     const lowerText = text.toLowerCase();
     const match = words => words && words.some(word => lowerText.match(word.toLowerCase()));
-
-    return (
-      match(this.props.searchKeywords.include)
-      && !match(this.props.searchKeywords.exclude));
+    return match(this.props.searchKeywords.include) && !match(this.props.searchKeywords.exclude);
   }
 
   getListData = () => this.props.data.reduce(

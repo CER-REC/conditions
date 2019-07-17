@@ -50,7 +50,7 @@ $states: (
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List-Item-Content": (pointer-events: none),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .List": (pointer-events: none),
 
-    ".conditions": (pointer-events: none),
+    ".ConditionDetails > *": (pointer-events: none),
     ".ConditionDetails .ConditionList .List": (opacity: 0),
     ".ConditionDetails .listPane .List-Item": (opacity: 0),
     ".ConditionDetails .listPane .CircleContainer": (opacity: 0),
@@ -192,7 +192,7 @@ $states: (
     ".ViewTwo .companyBreakdown": (opacity: 1),
     ".ViewTwo .legend": (opacity: 1),
     ".ViewTwo .legend .AssociatedComp": (opacity: 1),
-    ".conditions": (pointer-events: auto),
+    ".ConditionDetails > *": (pointer-events: auto),
     ".ConditionDetails .ConditionList .List": (opacity: 1),
     ".ConditionDetails .listPane .List-Item": (opacity: 1),
     ".ConditionDetails .listPane .List-Item.selected": (opacity: 1),

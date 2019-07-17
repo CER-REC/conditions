@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
+import memoize from 'lodash.memoize';
 import ViewTwo from './index';
 import handleQueryError from '../../utilities/handleQueryError';
 import {
@@ -15,6 +16,12 @@ import * as searchCreators from '../../actions/search';
 import { viewTwo } from '../../proptypes';
 import omitTypename from '../../utilities/omitTypeName';
 
+const emptyArray = [];
+const memoizeWheelData = memoize(data => {
+  if (!data) { return emptyArray; }
+  return [...data].sort((a, b) => a.name.localeCompare(b.name));
+});
+
 export const ViewTwoGraphQL = (props) => {
   if (props.browseBy === 'company') {
     return (
@@ -22,9 +29,7 @@ export const ViewTwoGraphQL = (props) => {
         {(wheelQProps) => {
           handleQueryError(wheelQProps);
           const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQProps;
-          const wheelData = !wheelQLoading && !wheelQerror && wheelQData.allCompanies
-            ? wheelQData.allCompanies.sort((a, b) => (a.name.localeCompare(b.name)))
-            : [];
+          const wheelData = memoizeWheelData(wheelQData.allCompanies);
           return (
             <Query
               query={projectMenuQuery}
@@ -41,7 +46,7 @@ export const ViewTwoGraphQL = (props) => {
                 } = projectMenuQprops;
 
                 const projectsData = !projLoading && !projError && props.selected.company
-                  ? projData.allProjectsByCompany
+                  ? (projData.allProjectsByCompany || emptyArray)
                   : [];
 
                 const selectedProject = props.selected.company && projectsData.length > 0
