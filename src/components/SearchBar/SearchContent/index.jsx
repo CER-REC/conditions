@@ -82,7 +82,10 @@ class SearchContent extends React.PureComponent {
   }
 
   addIncludeWordOnEnter = (e) => {
-    if (e.key === 'Enter') { this.addIncludeWord(); }
+    if (e.key === 'Enter') {
+      e.preventDefault(); // WET template will trigger a refresh on enter
+      this.addIncludeWord();
+    }
   }
 
   addExcludeWord = () => {
@@ -91,7 +94,10 @@ class SearchContent extends React.PureComponent {
   }
 
   addExcludeWordOnEnter = (e) => {
-    if (e.key === 'Enter') { this.addExcludeWord(); }
+    if (e.key === 'Enter') {
+      e.preventDefault(); // WET template will trigger a refresh on enter
+      this.addExcludeWord();
+    }
   }
 
   excludeSearchTextAndWords = () => (
