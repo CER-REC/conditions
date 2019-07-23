@@ -166,8 +166,8 @@ class Wheel extends React.Component {
             const currentIndex = props.rotation.interpolate(r => this.getIndex(r));
             return (
               <div className="svgContainer">
-                <animated.div style={{ transform: props.rotation.interpolate(r => `rotate(${r.toFixed(2)}deg)`) }} className="MovingContainer">
-                  <svg viewBox="0 0 860 860">
+                <svg viewBox="0 0 860 860">
+                  <animated.g style={{ transform: props.rotation.interpolate(r => `rotate(${r.toFixed(2)}deg)`), transformOrigin: '50% 50%' }} className="MovingContainer">
                     <Ring ringType={this.props.wheelType} />
                     {this.shouldRender(() => (
                       <AnimatedWheelRay
@@ -187,8 +187,8 @@ class Wheel extends React.Component {
                         searchedRegionsLookup={this.props.searchedRegionsLookup}
                       />
                     ))}
-                  </svg>
-                </animated.div>
+                  </animated.g>
+                </svg>
                 <div className="interactiveItems">
                   <svg viewBox="0 0 860 860">
                     <g className="pullToSpinContainer">
