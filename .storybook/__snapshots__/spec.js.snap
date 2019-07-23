@@ -18754,7 +18754,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
            
         </span>
         <span
-          className={null}
+          className="selectedSort"
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -18765,7 +18765,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         </span>
          | 
         <span
-          className={null}
+          className=""
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -18797,7 +18797,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
             className="upperCase sortType"
           >
              
-            none
+            dec
              
           </span>
         </span>
