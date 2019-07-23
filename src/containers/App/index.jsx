@@ -445,10 +445,19 @@ class App extends React.PureComponent {
     // finish implementing it, or remove the code for it
     const id = parseInt(instance.body.id, 10);
     const keyword = instance.keyword.value;
+    const newIncluded = [keyword];
 
-    this.props.setIncluded([keyword]);
+    this.props.setIncluded(newIncluded);
 
-    this.updateSelection.fromKeyword(keyword, id);
+    this.updateSearch({
+      includeKeywords: newIncluded,
+      excludeKeywords: this.props.excluded,
+      findAny: this.props.findAny,
+    }).then((data) => {
+      console.dir(data.findSearchResults.conditionIds)
+    });
+
+    this.updateSelection.fromCondition(keyword, id);
   };
 
   openRegDocPopup = () => {
@@ -753,6 +762,7 @@ const ConnectedApp = connect(
     transitionState,
     included: search.included,
     excluded: search.excluded,
+    findAny: search.findAny,
     searchResults: search.searchResults,
     filteredProjects: search.filteredProjects,
     detailViewExpanded,
