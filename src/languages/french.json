@@ -1,156 +1,130 @@
 {
   "common": {
     "features": {
-      "theme": "",
-      "instrument": "",
-      "timing": "",
-      "phase": "",
-      "type": "",
-      "status": "",
-      "filing": ""
+      "theme": "Thème",
+      "instrument": "Instrument",
+      "phase": "Étape",
+      "type": "Type",
+      "status": "État",
+      "filing": "Dépôt"
     },
     "trend": {
-      "title": ""
+      "title": "Tendances et définitions : Tous les projets"
     },
     "linkText": {
-      "regDocs": "",
-      "here": "",
-      "lifecycle": "",
-      "applications": "",
-      "envProtection": "",
-      "conditions": "",
-      "map": "",
-      "hearings": "",
-      "lawsRegulations": "",
-      "applicationProcess": "",
-      "NEBLink": "",
-      "exploreHere": "",
-      "appProcess": "",
-      "explorableHere": ""
+      "regDocs": "REGDOCS",
+      "here": "ici",
+      "lifecycle": "le cycle de vie",
+      "applications": "demandes",
+      "envProtection": "protection de l’environnement",
+      "conditions": "Conditions",
+      "map": "carte",
+      "hearings": "audiences",
+      "lawsRegulations": "des lois et des règlements",
+      "applicationProcess": "processus de demande",
+      "NEBLink": "conceptionenergie@neb-one.gc.ca",
+      "exploreHere": "explorer ici",
+      "appProcess": "processus de demande",
+      "explorableHere": "explorable ici"
     },
     "theme": {
-      "ADMINISTRATIVE": "",
-      "DAMAGE_PREVENTION": "",
-      "EMERGENCY_MANAGEMENT": "",
-      "ENFORCEMENT": "",
-      "ENVIRONMENTAL_PROTECTION": "",
-      "FINANCIAL": "",
-      "INTEGRITY_MANAGEMENT": "",
-      "MANAGEMENT_SYSTEM": "",
-      "SAFETY_MANAGEMENT": "",
-      "SECURITY": "",
-      "SOCIO_ECONOMIC": "",
-      "STANDARD_CONDITION": "",
-      "SUNSET_CLAUSE": ""
+      "ADMINISTRATIVE": "Administratif",
+      "DAMAGE_PREVENTION": "Prévention des dommages",
+      "EMERGENCY_MANAGEMENT": "Gestion des situations d’urgence",
+      "ENFORCEMENT": "Exécution",
+      "ENVIRONMENTAL_PROTECTION": "Protection de l’environnement",
+      "FINANCIAL": "Finances",
+      "INTEGRITY_MANAGEMENT": "Gestion de l’intégrité",
+      "MANAGEMENT_SYSTEM": "Système de gestion",
+      "SAFETY_MANAGEMENT": "Gestion de la sécurité ",
+      "SECURITY": "Sûreté ",
+      "SOCIO_ECONOMIC": "Socioéconomique",
+      "STANDARD_CONDITION": "Condition standard",
+      "SUNSET_CLAUSE": "Disposition de temporisation"
     },
     "instrument": {
-      "AO": "",
-      "EC": "",
-      "EP": "",
-      "EPE": "",
-      "FRO": "",
-      "GC": "",
-      "GPL": "",
-      "GPLO": "",
-      "GPMO": "",
-      "GPSO": "",
-      "MO": "",
-      "OC": "",
-      "OPLO": "",
-      "OPSO": "",
-      "SG": "",
-      "SO": "",
-      "TG": "",
-      "TO": "",
-      "XC": "",
-      "XG": "",
-      "XO": "",
-      "ZO": "",
-      "GH": "",
-      "OH": "",
-      "KAX": "",
-      "MHW": "",
-      "CPTC": "",
-      "XE": "",
-      "MH": "",
-      "OPSP": "",
-      "CO": "",
-      "OPL": "",
-      "OTHER": ""
-    },
-    "instrumentCommodityType": {
-      "OIL": "",
-      "GAS": "",
-      "POWER": "",
-      "ANY_COMMODITY_TYPES": "",
-      "NOT_SPECIFIED": ""
+      "AO": "Ordonnance modificatrice",
+      "EC": "Certificat visant une ligne de transport",
+      "EP": "Permis d’électricité",
+      "EPE": "Permis d’exportation d’électricité",
+      "FRO": "Ordonnance visant des exigences financières",
+      "GC": "Certificat visant un gazoduc",
+      "GPL": "Ordonnance visant un projet gazier",
+      "GPLO": "Ordonnance visant un projet gazier",
+      "GPMO": "Ordonnance visant un projet gazier",
+      "GPSO": "Ordonnance visant un projet gazier",
+      "MO": "Ordonnance générale",
+      "OC": "Certificat visant un projet pétrolier",
+      "OPLO": "Ordonnance visant un projet pétrolier",
+      "OPSO": "Ordonnance visant un projet pétrolier",
+      "SG": "Ordonnance de sécurité visant un projet gazier",
+      "SO": "Ordonnance de sécurité visant un projet pétrolier",
+      "TG": "Ordonnance - Droits et tarifs relatifs au gaz",
+      "TO": "Ordonnance - Droits et tarifs relatifs au pétrole",
+      "XC": "Ordonnance visant un produit de base",
+      "XG": "Ordonnance visant un projet gazier",
+      "XO": "Ordonnance visant un projet pétrolier",
+      "ZO": "Ordonnance de cessation d’exploitation",
+      "GH": "Ordonnance d’audience relative à un projet gazier",
+      "OH": "Ordonnance d’audience relative à un projet pétrolier",
+      "XE": "Ordonnance visant un projet d’électricité",
+      "MH": "Ordonnance d'audience",
+      "OPL": "Ordonnance visant un projet pétrolier",
+      "OTHER": "Autre"
     },
     "phase": {
-      "ABANDONMENT": "",
-      "DURING_CONSTRUCTION_PHASE": "",
-      "EXPIRY_DATE_OF_REG_INSTR": "",
-      "INCLUDES_ALL_PHASES_OF_CONSTR": "",
-      "NOT_CONSTRUCTION_RELATED": "",
-      "POST_CONSTRUCTION_PHASE": "",
-      "PRIOR_TO_THE_CONSTRUCTION_PHASE": "",
-      "UNSPECIFIED": ""
+      "ABANDONMENT": "Cessation d’exploitation",
+      "DURING_CONSTRUCTION_PHASE": "Pendant la construction",
+      "EXPIRY_DATE_OF_REG_INSTR": "Date d’échéance d’un instrument réglementaire",
+      "INCLUDES_ALL_PHASES_OF_CONSTR": "Visent toutes les étapes de la construction",
+      "NOT_CONSTRUCTION_RELATED": "Non liées à la construction",
+      "POST_CONSTRUCTION_PHASE": "Étape suivant la construction",
+      "PRIOR_TO_THE_CONSTRUCTION_PHASE": "Avant l’étape de la construction",
+      "UNSPECIFIED": "Non précisé"
     },
     "type": {
-      "NON_STANDARD": "",
-      "STANDARD": ""
+      "NON_STANDARD": "Non standard",
+      "STANDARD": "Standard"
     },
     "status": {
-      "AMENDED": "",
-      "AWAITING_FILING": "",
-      "AWAITING_IR_RESPONSE": "",
-      "CLOSED": "",
-      "FURTHER_INFORMATION_REQUIRED": "",
-      "IN_PROGRESS": "",
-      "NO_FILING_REQUIRED": "",
-      "OVERDUE_FILING": "",
-      "READY_FOR_BOARD_DECISION": "",
-      "REVIEW_COMPLETE": "",
-      "SATISFACTORY": "",
-      "UNDER_REVIEW": "",
-      "ALL_CONDITIONS_MET": "",
-      "DRAFT": "",
-      "EXPIRED": ""
+      "CLOSED": "Conforme",
+      "IN_PROGRESS": "En cours"
     },
     "filing": {
-      "REQUIRED": "",
-      "NOT_REQUIRED": ""
+      "REQUIRED": "Dépôt requis",
+      "NOT_REQUIRED": "Dépôt non requis"
     },
     "legend": {
-      "zeroConditions": "",
-      "tenConditions": "",
-      "greaterThanTenConditions": ""
+      "zeroConditions": "Aucune condition",
+      "tenConditions": "Dix conditions",
+      "greaterThanTenConditions": "Plus de dix conditions"
     }
   },
   "components": {
     "conditionExplorer": {
       "guide": {
         "messages": {
-          "intro": "",
-          "0": "",
-          "1": "",
-          "2": "",
-          "click": ""
+          "0": "Afficher la condition\nmots-clés en\nglissant.",
+          "1": "Cliquer pour savoir\nce qu’est une\ncondition.",
+          "2": "Choisir un\nmot-clé et\ncliquer pour\npoursuivre.",
+          "intro": "Ces lignes\nsont les conditions.",
+          "click": "Cliquer ici pour\npoursuivre."
         },
         "overview": {
-          "title": "",
-          "overview": ""
+          "title": "Qu’est-ce qu’une condition?",
+          "overview": "Les conditions sont des exigences qu’une société doit respecter pour être autorisée à construire, exploiter ou cesser d’exploiter un projet. Les conditions sont un outil du cadre de réglementation de l’Office, qui regroupe des lois, des règlements, des exigences et des lignes directrices."
         },
         "reason": {
-          "title": "",
-          "overview": ""
+          "title": "Pourquoi impose-t-on des conditions?",
+          "overview": "Les conditions varient selon les projets. L’Office les établit durant le processus d’évaluation de la demande pour prévenir les préjudices, promouvoir la sécurité et protéger l’environnement dans l’intérêt public."
         },
         "compliance": {
-          "title": "",
-          "documentationPrompt": "",
-          "doc1": "",
-          "doc2": ""
+          "title": "Comment l’Office s’assure-t-il que les conditions sont respectées?",
+          "documentationPrompt": "L’Office s’assure que la société respecte les exigences relatives aux conditions rattachées à un projet en effectuant ce qui suit :",
+          "doc1": "activités de vérification de la conformité (inspections, vérifications, etc.);",
+          "doc2": "évaluation des pièces déposées en conformité aux conditions."
         },
-        "clickOutside": ""
+        "clickOutside": "Cliquer à l’extérieur du cercle pour revenir en arrière."
       }
     },
     "companyWheel": {
@@ -167,146 +141,141 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Projet sélectionné",
-      "selectedCondition": "Condition sélectionné",
-      "instrumentNumber": "Instrument n˚",
+      "selectedProject": "Projet sélectionnée",
+      "selectedCondition": "Condition sélectionnée",
+      "instrumentNumber": "Instrument nᵒ",
       "location": "Lieu",
-      "issuanceDate": "Date de déliverance",
+      "issuanceDate": "Date de délivrance",
       "effectiveDate": "Entrée en vigueur",
       "sunsetDate": "Date de réexamen",
-      "status": "État del'instrument",
-      "type": "Type d'instrument",
-      "activity": "Activité liée à l'instrument",
-      "keywords": "Mots-clés",
+      "status": "État de l’instrument",
+      "type": "Type d’instrument",
+      "activity": "Activité liée à l’instrument",
+      "keywords": "Mot-clé",
       "text": "Texte",
-      "selectedConditionFeature": "",
-      "more": "",
-      "less": ""
+      "selectedConditionFeature": "Particularité de la condition sélectionnée",
+      "more": "Plus",
+      "less": "Moins"
     },
     "featureDescription": {
-      "theme": "",
-      "phase": "",
-      "phaseHere": "",
-      "status": "",
-      "type": "",
-      "filing": "",
-      "instrument": ""
+      "theme": "Pour faciliter l’analyse et la compréhension du public, les conditions sont regroupées par thème, comme l’environnement, les finances, la sécurité, la sûreté, etc.",
+      "phase": "En sa qualité d’organisme de réglementation présent tout au long du cycle de vie d’un projet, l’Office assure la sécurité et la protection de l’environnement à toutes les étapes. Des conditions peuvent viser une ou plusieurs étapes du cycle de vie ou toutes les étapes. Apprenez-en plus sur la démarche de l’Office axée sur le cycle de vie.",
+      "phaseHere": "ici",
+      "status": "Les conditions peuvent avoir deux états : En cours et conforme.",
+      "type": "Il existe deux grands types de conditions : standard et non standard.",
+      "filing": "Un document démontrant que les exigences relatives à une condition ont été respectées.",
+      "instrument": "Ordonnances, certificats, licences ou permis délivrés par l’Office. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite.   L’Office publie un Rapport d’instruments réglementaires qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014. "
     },
     "featureTypesDescription": {
-      "allThemes": "",
-      "otherInstruments": "",
+      "allThemes": "Les conditions englobant plusieurs thèmes sont comptées plus d’une fois.",
+      "otherInstruments": "Le graphique ci-dessus illustre les neuf principaux types d’instruments réglementaires d’après leur nombre d’occurrences dans les données. Les autres types sont regroupés sous « Autre ». Les définitions ci-dessous renferment la liste complète des instruments réglementaires que l’on trouve dans les données.",
       "theme": {
-        "ADMINISTRATIVE": "",
-        "DAMAGE_PREVENTION": "",
-        "EMERGENCY_MANAGEMENT": "",
-        "ENFORCEMENT": "",
-        "ENVIRONMENTAL_PROTECTION": "",
-        "FINANCIAL": "",
-        "INTEGRITY_MANAGEMENT": "",
-        "MANAGEMENT_SYSTEM": "",
-        "SAFETY_MANAGEMENT": "",
-        "SECURITY": "",
-        "SOCIO_ECONOMIC": "",
-        "STANDARD_CONDITION": "",
-        "SUNSET_CLAUSE": ""
+        "ADMINISTRATIVE": "Conditions permettant de faire le suivi des tâches organisationnelles.",
+        "DAMAGE_PREVENTION": "Conditions visant à tenir les sociétés responsables du déroulement sécuritaire des activités à proximité des pipelines et des installations.",
+        "EMERGENCY_MANAGEMENT": "Conditions visant à s’assurer que les sociétés disposent d’un solide programme de prévention des incidents qui permet de gérer et d’atténuer certaines situations en cas d’urgence.",
+        "ENFORCEMENT": "Conditions venant renforcer les exigences réglementaires prescrites.",
+        "ENVIRONMENTAL_PROTECTION": "Conditions visant à s’assurer que la planification, la construction, l’exploitation ou la cessation d’exploitation des projets seront effectuées dans le respect de l’environnement.",
+        "FINANCIAL": "Conditions dont le respect nécessite la présentation de certains détails concernant tous les aspects des obligations financières d’une société.",
+        "INTEGRITY_MANAGEMENT": "Conditions visant à s’assurer que les projets sont conçus, construits, exploités et entretenus de manière sécuritaire et efficace (utilisation de matériaux appropriés, détection de la corrosion, etc.).",
+        "MANAGEMENT_SYSTEM": "Conditions particulières imposées à une société afin de s’assurer qu’une démarche efficace est utilisée pour gérer et réduire le risque. Remarque : un système de gestion n’est pas propre à un projet.",
+        "SAFETY_MANAGEMENT": "Conditions visant à éliminer ou à réduire le risque pour le public, les travailleurs, l’environnement et les biens.",
+        "SECURITY": "Conditions visant à s’assurer que les sociétés disposent du personnel voulu et des systèmes adéquats pour contrer les menaces à la sûreté, y répondre et les gérer.",
+        "SOCIO_ECONOMIC": "Conditions visant à répondre aux préoccupations des propriétaires fonciers, des résidents, des collectivités et des groupes autochtones susceptibles d’être touchés, etc.",
+        "STANDARD_CONDITION": "Une condition généralement imposée relativement à tous les projets approuvés.",
+        "SUNSET_CLAUSE": "Conditions visant à s’assurer que les projets sont entrepris dans un délai précis."
       },
       "phase": {
-        "ABANDONMENT": "",
-        "DURING_CONSTRUCTION_PHASE": "",
-        "EXPIRY_DATE_OF_REG_INSTR": "",
-        "INCLUDES_ALL_PHASES_OF_CONSTR": "",
-        "NOT_CONSTRUCTION_RELATED": "",
-        "POST_CONSTRUCTION_PHASE": "",
-        "PRIOR_TO_THE_CONSTRUCTION_PHASE": "",
-        "UNSPECIFIED": ""
+        "ABANDONMENT": "Lorsqu’une société souhaite cesser l’exploitation d’un pipeline ou d’une installation, elle doit présenter une demande à l’Office qui comprend une évaluation environnementale et socioéconomique.  L’Office évalue ensuite la demande et peut tenir une audience publique. L’Office peut imposer des conditions relativement à un projet de cessation d’exploitation.",
+        "DURING_CONSTRUCTION_PHASE": "L’Office surveillera et vérifiera la conformité aux conditions des instruments réglementaires pendant la construction en menant des activités de vérification de la conformité.",
+        "EXPIRY_DATE_OF_REG_INSTR": "Si la construction n’est pas entreprise avant la date d’échéance, l’instrument et toutes les conditions sont frappés de nullité.",
+        "INCLUDES_ALL_PHASES_OF_CONSTR": "Certaines conditions s’appliquent à toutes les étapes de la construction (avant, pendant et après la construction).",
+        "NOT_CONSTRUCTION_RELATED": "Certaines conditions qui ne sont pas liées à la construction peuvent être imposées.",
+        "POST_CONSTRUCTION_PHASE": "Après la construction, l’Office continue de réglementer les activités postérieures menées par la société au moyen d’activités de vérification de la conformité.",
+        "PRIOR_TO_THE_CONSTRUCTION_PHASE": "Avant le début de la construction, les conditions imposées doivent être satisfaites.",
+        "UNSPECIFIED": "L’étape n’est pas précisée ou applicable."
       },
       "status": {
-        "AMENDED": "",
-        "AWAITING_FILING": "",
-        "AWAITING_IR_RESPONSE": "",
-        "CLOSED": "",
-        "FURTHER_INFORMATION_REQUIRED": "",
-        "IN_PROGRESS": "",
-        "NO_FILING_REQUIRED": "",
-        "OVERDUE_FILING": "",
-        "READY_FOR_BOARD_DECISION": "",
-        "REVIEW_COMPLETE": "",
-        "SATISFACTORY": "",
-        "UNDER_REVIEW": ""
+        "CLOSED": "Cet état signifie ce qui suit : • la société a respecté les exigences relatives à la condition et aucun autre dépôt n’est requis; • les exigences de dépôt ou de prise de mesures s’appliquant à une étape précise qui ont été imposées dans la condition ont été satisfaites, car l’étape en question est terminée (p. ex., exigence de dépôt de pièces précises durant l’étape de la construction). Remarque : des commentaires sur les mesures requises peuvent encore être formulés à la société. ",
+        "IN_PROGRESS": "Cet état signifie que la condition continue de faire l’objet d’une surveillance par l’Office. Cela peut se produire dans les situations suivantes :  • l’Office n’a pas encore reçu les pièces déposées en conformité aux conditions;  • les pièces ont été reçues, mais elles sont en cours d’examen ou elles ne répondent pas aux exigences; • un projet n’est pas terminé et des conditions ne sont pas satisfaites;  • un projet est soumis à une condition postérieure à la construction, mais une exigence n’est pas satisfaite;  • certaines conditions peuvent demeurer en vigueur indéfiniment ou viser l’exploitation continue d’un pipeline. L’Office assure un suivi des conditions « En cours ». "
       },
       "type": {
-        "STANDARD": "",
-        "NON_STANDARD": ""
+        "STANDARD": "Une condition généralement imposée relativement à tous les projets approuvés.",
+        "NON_STANDARD": "Les conditions non standard englobent des questions ou des préoccupations propres au projet qui ne sont pas visées par les conditions standard."
       },
       "filing": {
-        "REQUIRED": "",
-        "NOT_REQUIRED": ""
+        "REQUIRED": "Une société doit déposer un document devant l’Office afin de satisfaire à une condition. L’Office examine ensuite les dépôts.",
+        "NOT_REQUIRED": "Une société n’est pas tenue de déposer un document devant l’Office afin de satisfaire à une condition. Certaines conditions sont satisfaites à la suite d’un dépôt de conformité relativement à une autre condition connexe. Lorsqu’une société n’est pas tenue de déposer de document pour satisfaire à une condition, l’Office peut vérifier la conformité durant une activité de vérification de la conformité, comme une inspection ou une vérification. "
       },
       "instrument": {
-        "AO": "",
-        "EC": "",
-        "EP": "",
-        "EPE": "",
-        "FRO": "",
-        "GC": "",
-        "GPL": "",
-        "GPLO": "",
-        "GPMO": "",
-        "GPSO": "",
-        "MO": "",
-        "OC": "",
-        "OPLO": "",
-        "OPSO": "",
-        "SG": "",
-        "SO": "",
-        "TG": "",
-        "TO": "",
-        "XC": "",
-        "XG": "",
-        "XO": "",
-        "ZO": "",
-        "GH": "",
-        "OH": "",
-        "KAX": "",
-        "MHW": "",
-        "CPTC": "",
-        "XE": "",
-        "MH": "",
-        "OPSP": "",
-        "CO": "",
-        "OPL": "",
-        "OTHER": "",
-        "other": ""
+        "AO": "Instrument ayant pour effet d’approuver la modification du contenu ou des modalités d’un certificat, d’une licence, d’une ordonnance ou d’un permis (dans certains cas, l’approbation du gouverneur en conseil est nécessaire).",
+        "EC": "Instrument autorisant la construction ou l’exploitation d’une ligne internationale de transport d’électricité.",
+        "EP": "Instrument ayant pour effet d’autoriser la construction et l’exploitation d’une ligne internationale de transport d’électricité.",
+        "EPE": "Instrument autorisant l’exportation de puissance, d’énergie ou des deux.",
+        "FRO": "Approbation concernant un accès plus direct aux ressources financières, notamment sous des formes accessibles à court terme",
+        "GC": "Instrument autorisant la construction d’un gazoduc, nouveau ou supplémentaire.",
+        "GPL": "Instrument ayant pour effet d’approuver les plans, profils et livres de renvoi relatifs à un gazoduc, nouveau ou supplémentaire, et pouvant servir dans les cas de déviation d’un gazoduc en place.",
+        "GPLO": "Instrument ayant pour effet d’autoriser la mise en service d’un gazoduc, nouveau ou supplémentaire, ou d’une déviation de gazoduc.",
+        "GPMO": "Instrument ayant pour effet d’autoriser la mise en service d’une station de comptage ou d’une partie d’une telle station.",
+        "GPSO": "Instrument ayant pour effet d’autoriser la mise en service d’une station de compression, d’une usine de traitement du gaz, ou d’une partie d’une telle station ou usine.",
+        "MO": "Instrument servant à approuver différentes questions, telles que les suivantes : augmentation de la pression maximale d’exploitation autorisée, transfert, vente ou location d’un pipeline ou d’une partie de pipeline, cessation d’exploitation d’un pipeline, etc.",
+        "OC": "Instrument autorisant la construction d’un nouvel oléoduc ou d’un oléoduc supplémentaire.",
+        "OPLO": "Instrument ayant pour effet d’autoriser la mise en service d’un nouvel oléoduc ou d’un oléoduc supplémentaire, ou d’une déviation d’oléoduc.",
+        "OPSO": "Instrument ayant pour effet d’autoriser la mise en service d’une station de pompage, d’une partie d’une telle station ou d’un terminal.",
+        "SG": "Instrument précisant les exigences auxquelles la société pipelinière visée doit se plier pour des raisons de sécurité (p. ex., réparer, reconstruire ou modifier un tronçon de gazoduc).",
+        "SO": "Instrument précisant les exigences auxquelles la société pipelinière visée doit se plier pour des raisons de sécurité (p. ex., réparer, reconstruire ou modifier un tronçon d’oléoduc).",
+        "TG": "Instrument ayant pour effet d’établir les droits et tarifs exigibles pour les services d’un gazoduc.",
+        "TO": "Instrument ayant pour effet d’établir les droits et tarifs exigibles pour les services d’un oléoduc.",
+        "XC": "Instrument ayant pour effet d’exempter le titulaire de certaines obligations visant un productoduc, une partie de productoduc ou des installations connexes.",
+        "XG": "Instrument ayant pour effet d’exempter le titulaire de certaines obligations liées à un gazoduc, une partie de gazoduc ou des installations gazières (catégorie B).",
+        "XO": "Instrument ayant pour effet d’exempter le titulaire de certaines obligations liées à un oléoduc, une partie d’oléoduc ou des installations pétrolières (catégorie B).",
+        "ZO": "Instrument ayant pour effet d’approuver une demande de cessation d’exploitation.",
+        "GH": "Instrument ayant pour effet d’établir un processus d’audience relativement à la construction d’un gazoduc ou à l’exportation ou l’importation de gaz.",
+        "OH": "Ordonnance d’audience relative à un projet pétrolier : Instrument ayant pour effet d’établir un processus d’audience relativement à la construction d’un oléoduc.",
+        "XE": "Instrument ayant pour effet d’exempter le titulaire de l’obligation d’obtenir un certificat visant une ligne internationale de transport d’électricité (avant 1990).",
+        "MH": "Instrument ayant pour effet d’établir la date d’une audience relative à des questions qui, pour diverses raisons, ne sont pas visées au paragraphe 24(6).",
+        "OPL": "Instrument ayant pour effet d’approuver les plan, plan, profil et livre de renvoi relatifs à un nouvel oléoduc et pouvant servir dans les cas de déviation d’un oléoduc en place.",
+        "OTHER": ""
       }
     },
     "featureMenu": {
       "dropDownTitle": "Élément"
     },
+    "greyPipe": {
+      "countBubble": {
+        "instruments": "instruments",
+        "projects": "projets",
+        "conditions": "conditions",
+        "instrument": "instrument",
+        "project": "projet",
+        "condition": "condition"
+      }
+    },
     "guide": {
+      "loading": "Veuillez patienter…",
       "tutorial": {
-        "0": "",
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": ""
+        "0": "Cliquer pour poursuivre.",
+        "1": "Cliquer pour poursuivre.",
+        "2": "Voici le texte juridique intégral de la condition que vous avez sélectionnée.",
+        "3": "Les conditions sont caractérisées par leurs particularités, comme thème.",
+        "4": "Faire défiler pour consulter les autres conditions assorties à ce projet.",
+        "5": "Faire défiler pour consulter les autres projets de cette société.",
+        "6": "Faire tourner la route pour parcourir les sociétés.",
+        "7": "Il y a davantage à découvrir au tour!"
       }
     },
     "guideTransport": {
-      "caption": ""
+      "caption": "Guide"
     },
     "instrumentsLegend": {
-      "all": ""
+      "all": "Tous les instruments "
     },
     "searchBar": {
-      "close": "",
-      "reset": "",
+      "close": "Fermer",
+      "reset": "Réinitialiser",
       "filter": {
         "projectYear": "Trier par année du projet",
         "projectStatus": {
-          "projectStatusText": "Filtrer par état du projet",
+          "projectStatusText": "Filtrer par état du projet ",
           "IN_PROGRESS": "En Cours",
           "COMPLETED": "Terminé"
         }
@@ -320,25 +289,24 @@
         "suggestedKeywords": "les mots-clés proposés"
       },
       "highlightSummary": {
-        "showing": "{status} de {start} à {end} sont affichés.",
-        "includes": "Conditions renfermant",
-        "excludes": "",
-        "IN_PROGRESS": "Les projets en cours",
-        "COMPLETED": "Les projets terminés",
-        "ALL": "Tous les projets"
-
+        "showing": "{status} de {start} à  {end} sont affichés.",
+        "includes": "Surlignage des conditions contenant",
+        "excludes": "Exclure les conditions contenant",
+        "IN_PROGRESS": "En cours",
+        "COMPLETED": "Terminé",
+        "ALL": "Tous"
       },
       "findWords": {
         "findWords": "Recherche de mots",
         "advancedSearch": "Recherche avancée",
         "basicSearch": "Recherche simple",
         "options": {
-          "any": "",
-          "all": ""
+          "any": "un ou l'autre",
+          "all": "tous"
         },
         "searchText": {
-          "basicInclude": "Rechercher TOUT mot dans",
-          "advancedInclude": "",
+          "basicInclude": "Rechercher l’un ou l’autre des",
+          "advancedInclude": "Inclure {dropdown} de",
           "exclude": "Mais {not} inclure",
           "not": "ne pas"
         },
@@ -347,65 +315,66 @@
           "followingInclude": " {choice} des mots suivants",
           "followingExclude": " {choice} de ce qui suit",
           "any": "un ou l'autre",
-          "none": "rien",
-          "all": ""
+          "none": "aucun",
+          "all": "tous"
         }
       },
       "suggestedKeywordsPopout": {
-        "suggestedKeywords": "Mots-clés suggérés",
-        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés ici.",
-        "keywordsHere": "",
+        "suggestedKeywords": "Mots-clés proposés",
+        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés ici.  ",
+        "keywordsHere": "ici",
         "viewBy": "Afficher par",
         "sortBy": "Tri",
         "frequency": "Fréquence",
         "alphabetical": "Ordre alphabétique",
-        "none": "",
-        "conditions": ""
+        "conditions": "{conditions} conditions",
+        "inc": "aug.",
+        "dec": "dim."
       }
     },
     "mainInfoBar": {
       "headings": {
         "about": "La visualisation",
-        "contributor": "",
+        "contributor": "Collaborateur",
         "methodology": "La méthodologie",
         "download": "Téléchargement",
-        "downloadData": "",
-        "keywords": ""
+        "downloadData": "Télécharger des données",
+        "keywords": "Mots-clés"
       },
       "content": {
-        "methodology": "",
+        "methodology": "Cliquer {here} pour télécharger un fichier PDF expliquant la méthodologie appliquée pour collecter les données.",
         "keywords": "",
-        "downloadData": "",
-        "about": "",
-        "contributor": "",
-        "here": ""
+        "downloadData": "Cliquer {here} pour télécharger le jeu de données en format Microsoft Excel (.xlsx).",
+        "about": "L’outil interactif Conditions relatives aux projets énergétiques fait partie de l’initiative de visualisation de données de l’Office national de l’énergie. Échelonnée sur trois ans, cette initiative vise à transformer la manière dont l’Office structure et diffuse ses données. Elle a pour objectif de favoriser un processus décisionnel fondé sur la preuve et de faciliter la compréhension des questions liées aux réseaux énergétiques et pipeliniers du Canada, grâce à des visualisations interactives, faciles à utiliser. Cette visualisation se fonde sur les données de l’Office, de 2010 à aujourd’hui, sur les conditions relatives aux projets énergétiques assujettis à sa réglementation. Si vous souhaitez utiliser les données pour vos recherches ou pour en faire votre propre analyse, vous pouvez les télécharger et les partager.  Nous espérons avoir atteint notre objectif. Votre rétroaction est essentielle. Vous pouvez nous la faire parvenir, ainsi que vos suggestions, à l’adresse {nebLink}. Nous attendons vos commentaires avec impatience. ",
+        "contributor": "SOURCE DES DONNÉES Groupe de travail chargé du projet de l’Office : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp Spécialistes des données de l’Office : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker ETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau COORDINATION Annette Hester (concept et coordination), Katherine Murphy (gestionnaire de projet), Amanda Harwood (gestionnaire de projet) et Shane Mahar (adjoint administratif) VISUALISATION DE DONNÉES Direction de la recherche conceptuelle : Sheelagh Carpendale et Wesley Willett, iLab, Université de Calgary Conception : Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix et Mieka West Chef technique : VizworX  Personnel technique : Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee et Adam Lovatt ",
+        "here": "ici"
       }
     },
     "modal": {
       "data": {
-        "title": "",
-        "description": ""
+        "title": "Téléchargement des données",
+        "description": "Les données ayant servi à créer cette visualisation sont ouvertes et peuvent être téléchargées. Cliquer sur l’icône pour sauvegarder le fichier de données sur votre ordinateur."
       },
       "company": {
         "name": "Nom complet du projet",
         "associated": "Sociétés associées au projet",
-        "meaningHeading": "Que faut-il comprendre quand plus d’une société est associée au projet?",
-        "meaningText": "",
+        "meaningHeading": "Pourquoi y a-t-il plus d’une société associée à un projet? ",
+        "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples : • une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter; • des initiatives de l’Office visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds). ",
         "back": "Précédent"
       },
       "regdocs": {
-        "searchFor": "Recherche de l'instrument n˚ {instrument} dans {regdocs}",
+        "searchFor": "Recherche de l'instrument nᵒ {instrument} dans {regdocs}",
         "regdocs": "RegDocs...",
-        "found": "L’instrument a été trouvé. Cliquer pour ouvrir le document dans un autre onglet.",
-        "currentTab": "",
+        "found": "L’instrument a été trouvé. Cliquer pour ouvrir le document dans un autre onglet. ",
+        "currentTab": "Ouvrir dans l’onglet actuel",
         "newTab": "Ouvrir dans un autre onglet",
         "cancel": "Annuler",
         "whatIsHeading": "Qu'est-ce que RegRocs?",
-        "whatIsText": "RegDocs est une collection de documents publics qui ont été déposés au registre légal relativement à des audiences ou à d’autres instances réglementaires écrites. Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires."
+        "whatIsText": "RegDocs est une collection de documents publics qui ont été déposés au registre légal relativement à des audiences ou à d’autres instances réglementaires écrites. Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires. "
       }
     },
     "projectLegend": {
-      "numberOfConditions": "Nombre de conditions",
+      "numberOfConditions": "Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires. ",
       "totalConditions": "Nombre total de conditions",
       "associated": "Sociétés associées"
     },
@@ -413,73 +382,88 @@
       "title": "Sociétés dans la région sélectionnée"
     },
     "regionConditionSummary": {
-      "title": "Nombre total de conditions pour la région sélectionnée"
+      "title": "Nombre total de conditions pour la région sélectionnée  "
     },
     "smallMultiplesLegend": {
       "all": {
-        "instrument": "",
-        "theme": "",
-        "phase": "",
-        "type": "",
-        "status": "",
-        "filing": ""
+        "instrument": "Tous les instruments",
+        "theme": "Tous les thèmes",
+        "phase": "Toutes les phases",
+        "type": "Tous les types",
+        "status": "Tous les états",
+        "filing": "Tous les dépôts"
       }
     },
     "streamGraph": {
       "title": {
-        "instrument": "",
-        "theme": "",
-        "phase": "",
-        "status": "",
-        "type": "",
-        "filing": ""
+        "instrument": "Total des conditions par instrument au fil du temps",
+        "theme": "Total des conditions selon le thème au fil du temps",
+        "phase": "Total des conditions par étape au fil du temps",
+        "status": "Total des conditions selon l’état au fil du temps",
+        "type": "Total des conditions selon le type au fil du temps",
+        "filing": "Total des conditions selon le dépôt au fil du temps"
       },
-      "axis":{
-        "yAxis": "",
-        "xAxis": ""
+      "axis": {
+        "yAxis": "Nombre de conditions",
+        "xAxis": "Entrée en vigueur"
       }
     },
     "trendButton": {
       "description": "Tendances et\ndéfinitions"
     },
     "keywordExploreButton": {
-      "description": ""
+      "description": "Retour aux\nmots-clés"
     },
     "browseBy": {
-      "skip": "",
-      "return": "",
+      "skip": "Sauter l’introduction pour naviguer.",
+      "return": "Retour à la navigation",
       "blank": ""
     },
     "browseByBtn": {
-      "projectsBy": "",
-      "conditionsBy": "Conditions selon",
-      "company": "",
+      "projectsBy": "Projets par {icon}",
+      "conditionsBy": "Conditions selon {icon}",
+      "company": "société",
       "location": "le lieu"
     },
     "dotLegend": {
       "text": "Projets réglementés par l’Office assortis de conditions"
     },
-    "totalConditionsLabel" : {
-      "total": "",
-      "forProject": ""
+    "totalConditionsLabel": {
+      "total": "Nombre total de conditions",
+      "forProject": "pour ce projet"
     },
-    "errorBoundary":{
-      "errorMessage": "",
-      "restoreLinkText": "",
-      "restoreMessage": "",
-      "resetLinkText": "",
-      "resetMessage": ""
+    "errorBoundary": {
+      "errorMessage": "Une erreur s’est produite.",
+      "restoreLinkText": "Rétablir la session.",
+      "restoreMessage": "Veuillez cliquer sur le lien pour rétablir la session.",
+      "resetLinkText": "Réinitialiser la session.",
+      "resetMessage": "Veuillez cliquer sur le lien pour réinitialiser la session."
     }
   },
   "views": {
     "view1": {
       "header": {
-        "title": "",
-        "subtitle": ""
+        "title": "Conditions assorties aux projets énergétiques réglementés par l’Office",
+        "subtitle": "Cet outil interactif permet d’explorer les données sur les conditions au moyen de mots-clés et d’une représentation visuelle. Plus récente mise à jour :"
       }
     },
     "view3": {
-      "company": ""
+      "company": "Société sélectionnée"
     }
+  },
+  "provinces": {
+    "YT": "Yukon",
+    "NT": "Territoires du Nord-Ouest",
+    "NU": "Nunavut",
+    "NL": "Terre-Neuve-et-Labrador",
+    "PE": "Île-du-Prince-Édouard",
+    "BC": "Colombie-Britannique",
+    "AB": "Alberta",
+    "SK": "Saskatchewan",
+    "MB": "Manitoba",
+    "ON": "Ontario",
+    "QC": "Québec",
+    "NB": "Nouveau-Brunswick",
+    "NS": "Nouvelle-Écosse"
   }
 }

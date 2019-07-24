@@ -65,11 +65,11 @@
       "XG": "Gas Order",
       "XO": "Oil Order",
       "ZO": "Abandonment Order",
-      "GH": "text not yet provided",
-      "OH": "text not yet provided",
-      "XE": "text not yet provided",
-      "MH": "text not yet provided",
-      "OPL": "text not yet provided",
+      "GH": "Gas Hearing Order",
+      "OH": "Oil Hearing Order",
+      "XE": "Electricity Order",
+      "MH": "Hearing Order",
+      "OPL": "Oil Order",
       "OTHER": "Other"
     },
     "phase": {
@@ -104,15 +104,15 @@
     "conditionExplorer": {
       "guide": {
         "messages": {
-          "intro": "These lines\nare conditions",
           "0": "Reveal condition\nkeywords by\ndragging",
           "1": "Click to learn\nwhat a\ncondition is",
           "2": "Select a\nkeyword and\nclick to\ncontinue",
-          "click": "Click to\ncontinue"
+          "intro": "These lines\nare conditions",
+          "click": "Click here to\ncontinue"
         },
         "overview": {
           "title": "What is a condition?",
-          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB’s regulatory framework, which is made of laws, regulations, requirements and guidance."
+          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB's regulatory framework, which is made of laws, regulations, requirements and guidance."
         },
         "reason": {
           "title": "Why are conditions made?",
@@ -211,7 +211,7 @@
         "EC": "The approval of the construction and/or operation of an international power line",
         "EP": "The approval of the construction and operation of an international power line",
         "EPE": "The approval of the export of power and/or energy",
-        "FRO": " ",
+        "FRO": "The approval to provide more direct access to financial resources, including readily accessible types",
         "GC": "The approval of the construction of a new gas pipeline or additional gas pipeline",
         "GPL": "The approval of the Plans, Profiles, and Books of Reference for a new or additional gas pipeline. Also used in connection with deviations required in existing gas pipelines",
         "GPLO": "The approval of the opening of a new or additional gas pipelines or deviations thereof",
@@ -229,12 +229,12 @@
         "XG": " The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
         "XO": "The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)",
         "ZO": "The approval of abandonment applications",
-        "GH": "text not yet provided",
-        "OH": "text not yet provided",
-        "XE": "text not yet provided",
-        "MH": "text not yet provided",
-        "OPL": "text not yet provided",
-        "OTHER": "text not yet provided"
+        "GH": "The setting of a hearing process for a new additional gas pipeline and/or the export of/or import of gas",
+        "OH": "The setting of a hearing process for a new or additional oil pipeline ",
+        "XE": "The exemption from certification for an international power line (pre 1990)",
+        "MH": "The setting of a hearing date for matters not covered by s.24(6) for various reasons ",
+        "OPL": "The approval of the Plans, Profiles and Books of Reference for a new or additional oil pipeline. Also used in connection with deviation required in existing pipelines",
+        "OTHER": ""
       }
     },
     "featureMenu": {
@@ -329,8 +329,7 @@
         "alphabetical": "Alphabetical",
         "conditions": "{conditions} conditions",
         "inc": "inc",
-        "dec": "dec",
-        "none": "none"
+        "dec": "dec"
       }
     },
     "mainInfoBar": {
@@ -404,7 +403,7 @@
         "type": "Total Conditions by Type Over Time",
         "filing": "Total Conditions by Filing Over Time"
       },
-      "axis":{
+      "axis": {
         "yAxis": "Number of Conditions",
         "xAxis": "Effective Date"
       }
@@ -429,11 +428,11 @@
     "dotLegend": {
       "text": "NEB Regulated Project with Conditions"
     },
-    "totalConditionsLabel" : {
+    "totalConditionsLabel": {
       "total": "Total Conditions",
       "forProject": "for this Project"
     },
-    "errorBoundary":{
+    "errorBoundary": {
       "errorMessage": "Something went wrong.",
       "restoreLinkText": "Restore Session",
       "restoreMessage": "Please click on the link to restore the session",
