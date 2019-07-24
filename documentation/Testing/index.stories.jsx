@@ -1,8 +1,9 @@
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { doc } from 'storybook-readme';
 import Process from './process.md';
 import Documentation from './documentation.md';
 
+const noop = () => <React.Fragment />;
 storiesOf('Documentation|Testing', module)
-  .add('Process', doc(Process))
-  .add('Documentation', doc(Documentation));
+  .add('Process', noop, { readme: { content: Process } })
+  .add('Documentation', noop, { readme: { content: Documentation } });

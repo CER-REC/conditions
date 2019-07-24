@@ -1,12 +1,13 @@
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { doc } from 'storybook-readme';
 import HighLevel from './highLevel.md';
 import Component from './components.md';
 import View from './views.md';
 import Translation from './translations.md';
 
+const noop = () => <React.Fragment />;
 storiesOf('Documentation|Architecture', module)
-  .add('High Level', doc(HighLevel))
-  .add('Components', doc(Component))
-  .add('Views', doc(View))
-  .add('Translations', doc(Translation));
+  .add('High Level', noop, { readme: { content: HighLevel } })
+  .add('Components', noop, { readme: { content: Component } })
+  .add('Views', noop, { readme: { content: View } })
+  .add('Translations', noop, { readme: { content: Translation } });
