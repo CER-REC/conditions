@@ -3,7 +3,6 @@ import getTreeFromInstrument from '../../queries/getTreeFromInstrument';
 import getTreeFromProject from '../../queries/getTreeFromProject';
 import getTreeFromCompany from '../../queries/getTreeFromCompany';
 import getTreeFromRegion from '../../queries/getTreeFromRegion';
-import getKeywordConditions from '../../queries/getKeywordConditions';
 import handleQueryError from '../../utilities/handleQueryError';
 import randomArrayValue from '../../utilities/randomArrayValue';
 
@@ -121,18 +120,6 @@ const selectionPaths = {
         ? selected.region
         : randomArrayValue(condition.instrument.regionIds),
     }),
-  },
-
-  Keyword: {
-    query: getKeywordConditions,
-    selection: ({ conditionIds }, selected, { keywords }, getNewSelection) => {
-      if (conditionIds.length === 0) {
-        // TODO: Leaving this here until the ETL search is fixed
-        console.error(`There are no conditions matching "${keywords[0]}"`);
-        return null;
-      }
-      return getNewSelection('Condition', { id: randomArrayValue(conditionIds) });
-    },
   },
 };
 
