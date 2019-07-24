@@ -23,7 +23,7 @@
       "hearings": "hearings",
       "lawsRegulations": "laws, acts and regulations",
       "applicationProcess": "application process",
-      "NEBLink": "energyindesign@neb-one.gc.ca.",
+      "NEBLink": "energyindesign@neb-one.gc.ca",
       "exploreHere": "explore here",
       "appProcess": "application process",
       "explorableHere": "explorable here"
@@ -387,7 +387,7 @@
         "methodology": "Click {here} to download a PDF file explaining our data collection methodology.",
         "keywords": "[Placeholder for an explanation of...]",
         "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
-        "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.\nEmail us with your comments and ideas:{nebLink} We look forward to hearing from you.",
+        "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.\nEmail us with your comments and ideas:{nebLink}. We look forward to hearing from you.",
         "contributor": "DATA SOURCE:\nNEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nNEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau\nCOORDINATION:\nAnnette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)\nDATA VISUALIZATION:\nLead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.\nDesign: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.\nLead Technical: VizworX\nTechnical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.",
         "here": "here"
       }
