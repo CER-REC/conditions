@@ -17,7 +17,7 @@ import { viewTwo } from '../../proptypes';
 import omitTypename from '../../utilities/omitTypeName';
 
 const emptyArray = [];
-const memoizeWheelData = memoize(data => {
+const memoizeWheelData = memoize((data) => {
   if (!data) { return emptyArray; }
   return [...data].sort((a, b) => a.name.localeCompare(b.name));
 });
@@ -28,8 +28,7 @@ export const ViewTwoGraphQL = (props) => {
       <Query query={companyWheelQuery}>
         {(wheelQProps) => {
           handleQueryError(wheelQProps);
-          const { data: wheelQData, loading: wheelQLoading, error: wheelQerror } = wheelQProps;
-          const wheelData = memoizeWheelData(wheelQData.allCompanies);
+          const wheelData = memoizeWheelData(wheelQProps.data.allCompanies);
           return (
             <Query
               query={projectMenuQuery}
