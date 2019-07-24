@@ -104,10 +104,10 @@
     "conditionExplorer": {
       "guide": {
         "messages": {
-          "0": "Afficher la condition\nmots-clés en\nglissant.",
-          "1": "Cliquer pour savoir\nce qu’est une\ncondition.",
+          "0": "Afficher la\ncondition\nmots-clés\nen glissant.",
+          "1": "Cliquer pour\nsavoir ce qu’est\nune condition.",
           "2": "Choisir un\nmot-clé et\ncliquer pour\npoursuivre.",
-          "intro": "Ces lignes\nsont les conditions.",
+          "intro": "Ces lignes sont\nles conditions.",
           "click": "Cliquer ici pour\npoursuivre."
         },
         "overview": {
@@ -346,7 +346,7 @@
         "keywords": "",
         "downloadData": "Cliquer {here} pour télécharger le jeu de données en format Microsoft Excel (.xlsx).",
         "about": "L’outil interactif Conditions relatives aux projets énergétiques fait partie de l’initiative de visualisation de données de l’Office national de l’énergie. Échelonnée sur trois ans, cette initiative vise à transformer la manière dont l’Office structure et diffuse ses données. Elle a pour objectif de favoriser un processus décisionnel fondé sur la preuve et de faciliter la compréhension des questions liées aux réseaux énergétiques et pipeliniers du Canada, grâce à des visualisations interactives, faciles à utiliser. Cette visualisation se fonde sur les données de l’Office, de 2010 à aujourd’hui, sur les conditions relatives aux projets énergétiques assujettis à sa réglementation. Si vous souhaitez utiliser les données pour vos recherches ou pour en faire votre propre analyse, vous pouvez les télécharger et les partager.  Nous espérons avoir atteint notre objectif. Votre rétroaction est essentielle. Vous pouvez nous la faire parvenir, ainsi que vos suggestions, à l’adresse {nebLink}. Nous attendons vos commentaires avec impatience. ",
-        "contributor": "SOURCE DES DONNÉES Groupe de travail chargé du projet de l’Office : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp Spécialistes des données de l’Office : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker ETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau COORDINATION Annette Hester (concept et coordination), Katherine Murphy (gestionnaire de projet), Amanda Harwood (gestionnaire de projet) et Shane Mahar (adjoint administratif) VISUALISATION DE DONNÉES Direction de la recherche conceptuelle : Sheelagh Carpendale et Wesley Willett, iLab, Université de Calgary Conception : Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix et Mieka West Chef technique : VizworX  Personnel technique : Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee et Adam Lovatt ",
+        "contributor": "SOURCE DES DONNÉES :\nGroupe de travail chargé du projet de l’Office : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp\nSpécialistes des données de l’Office : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker\nETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau\nCOORDINATION\nAnnette Hester (concept et coordination), Katherine Murphy (gestionnaire de projet), Amanda Harwood (gestionnaire de projet) et Shane Mahar (adjoint administratif)\nVISUALISATION DE DONNÉES\nDirection de la recherche conceptuelle : Sheelagh Carpendale et Wesley Willett, iLab, Université de Calgary\nConception : Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix et Mieka West\nChef technique : VizworX\nPersonnel technique : Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee et Adam Lovatt",
         "here": "ici"
       }
     },
@@ -374,7 +374,7 @@
       }
     },
     "projectLegend": {
-      "numberOfConditions": "Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires. ",
+      "numberOfConditions": "Nombre de conditions",
       "totalConditions": "Nombre total de conditions",
       "associated": "Sociétés associées"
     },
@@ -417,7 +417,7 @@
     "browseBy": {
       "skip": "Sauter l’introduction pour naviguer.",
       "return": "Retour à la navigation",
-      "blank": ""
+      "blank": " "
     },
     "browseByBtn": {
       "projectsBy": "Projets par {icon}",
