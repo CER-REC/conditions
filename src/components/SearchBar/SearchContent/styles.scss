@@ -36,6 +36,12 @@
     span {
       padding: 0px;
     }
+
+    strong {
+      font-family: $fira-sans-condensed-bold;
+      font-weight: normal;
+    }
+
     .dropDown {
       select {
         text-transform: uppercase;
@@ -142,7 +148,7 @@
     }
   }
   .advancedSearchText {
-    font-family: $fira-sans-condensed; 
+    font-family: $fira-sans-condensed;
     text-align: right;
     button {
       border: none;
@@ -164,7 +170,7 @@
       color: $DarkGray;
     }
   }
-  .close {
+  .closeSearchBar {
     text-align: right;
     button {
       padding: 5px;
@@ -172,6 +178,7 @@
       background-color: $LinksTextButtons;
       color: $White;
       border: none;
+      width: 80px;
     }
   }
 }

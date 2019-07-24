@@ -1,8 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProjectDot from '../ProjectDot';
+import ProjectDot from '../../ProjectDot';
 
-const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotation }) => {
+const CompanyFlag = ({
+  flagLayout,
+  dotWidth,
+  dotSpacing,
+  x,
+  y,
+  svgHeight,
+  rotation,
+  relevantProjectLookup,
+  filteredProjectLookup,
+}) => {
+  if (!flagLayout) { return null; }
+
   const baseY = y + svgHeight - (flagLayout[0].length * dotSpacing);
 
   const columnOffset = {
@@ -17,12 +29,14 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotati
       const dotY = columnY + (dotIndex * dotSpacing);
 
       if (dot) {
+        const id = flagLayout[columnIndex][dotIndex];
         out.push({
           cx: x + columnX,
           cy: y + dotY,
           r: dotWidth / 2,
-          filtered: dot.filtered,
-          relevant: dot.relevant,
+          filtered: filteredProjectLookup[id],
+          relevant: relevantProjectLookup[id],
+          id,
         });
       }
     });
@@ -40,13 +54,7 @@ const CompanyFlag = ({ flagLayout, dotWidth, dotSpacing, x, y, svgHeight, rotati
 CompanyFlag.propTypes = {
   flagLayout: PropTypes.arrayOf(
     PropTypes.arrayOf(
-      PropTypes.oneOfType([
-        PropTypes.shape({
-          filtered: PropTypes.bool.isRequired,
-          relevant: PropTypes.bool.isRequired,
-        }),
-        PropTypes.number,
-      ]),
+      PropTypes.number,
     ),
   ).isRequired,
   x: PropTypes.number,
@@ -55,6 +63,8 @@ CompanyFlag.propTypes = {
   dotWidth: PropTypes.number,
   dotSpacing: PropTypes.number,
   rotation: PropTypes.number,
+  relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
 };
 
 CompanyFlag.defaultProps = {
@@ -63,6 +73,8 @@ CompanyFlag.defaultProps = {
   dotWidth: 16,
   dotSpacing: 24,
   rotation: 0,
+  relevantProjectLookup: [],
+  filteredProjectLookup: [],
 };
 
 export default CompanyFlag;

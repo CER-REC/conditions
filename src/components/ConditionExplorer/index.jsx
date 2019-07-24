@@ -26,12 +26,17 @@ const setTimeoutChain = (callback, timeout, times) => {
 export default class ConditionExplorer extends React.Component {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectedKeywordId: PropTypes.number,
+    setSelectedKeyword: PropTypes.func.isRequired,
+    beginTutorial: PropTypes.func.isRequired,
+    physicsPaused: PropTypes.bool,
     physics: PropTypes.bool,
-    // changeVisibleWords: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
+    selectedKeywordId: -1,
     physics: true,
+    physicsPaused: false,
   };
 
   calculateTextSize = memoize((text) => {
@@ -80,8 +85,8 @@ export default class ConditionExplorer extends React.Component {
         height: this.svgRef.current.height.baseVal.value,
       };
 
-    const startX = -50; // Off the left edge to match design
-    const margin = { width: 10, height: 10 };
+    const startX = -20; // Off the left edge to match design
+    const margin = { width: 22, height: 22 };
 
     const lineHeight = this.state.calculatedFontSize.height + margin.height;
     // The top needs to be one line down to account for y=bottom of text
@@ -89,9 +94,8 @@ export default class ConditionExplorer extends React.Component {
     let x = startX;
 
     return this.props.keywords
-      .map((v) => {
-        // TODO: Need a better way of shortcircuiting the map
-        if (y > size.height) { return null; }
+      .reduce((acc, v) => {
+        if (y > size.height) { return acc; }
 
         const textSize = this.calculateTextSize(v);
         const outline = {
@@ -107,18 +111,19 @@ export default class ConditionExplorer extends React.Component {
           y += lineHeight; // We don't add the text size since it may wrap
         }
 
-        return {
+        acc.push({
           value: v,
           textOffset: {
             x: -(outline.width / 2) - (textSize.xOffset * 2),
             y: textSize.yOffset + (outline.height / 2),
           },
+          textSize,
           outline,
           className: randomColor(v),
-        };
-      })
-      // Filter out null values
-      .filter(v => !!v);
+        });
+
+        return acc;
+      }, []);
   }
 
   testFontSize = () => {
@@ -135,6 +140,18 @@ export default class ConditionExplorer extends React.Component {
     }
   };
 
+  onKeywordClick = (e, instance) => {
+    if (e.currentTarget.classList.contains('textVisible')) {
+      this.props.setSelectedKeyword(instance);
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  };
+
+  beginTutorial = () => {
+    this.props.beginTutorial(this.state.guidePosition);
+  };
+
   render() {
     const { calculatedFontSize } = this.state;
     const keywords = calculatedFontSize ? this.getKeywords() : [];
@@ -144,8 +161,12 @@ export default class ConditionExplorer extends React.Component {
     if (keywords.length > 0) {
       const contentProps = {
         keywords,
+        selectedKeywordId: this.props.selectedKeywordId,
+        onKeywordClick: this.onKeywordClick,
         setGuidePosition: this.setGuidePosition,
         setGuideExpanded: this.setGuideExpanded,
+        beginTutorial: this.beginTutorial,
+        physicsPaused: this.props.physicsPaused,
       };
       content = this.props.physics
         ? <PhysicsVariant {...contentProps} />

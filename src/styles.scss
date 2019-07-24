@@ -43,14 +43,22 @@
   // Overwriting styles from theme
   h1, h2, h3, h4, h5, h6 {
     all: unset;
+
+    // Edge and IE don't support the 'all' property
+    font-size: unset;
+    margin-top: unset;
+    line-height: unset;
+
     display: block;
   }
 }
 
 // Override the WET template for our container
-body > .container {
+main.container {
   padding-left: 0;
   padding-right: 0;
+
+  line-height: initial;
 
   // TODO: Deployment hacks
   // This is only used to indicate the division between views right now

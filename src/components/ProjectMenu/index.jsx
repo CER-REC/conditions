@@ -3,19 +3,37 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import List from '../List';
 import ProjectChart from './ProjectChart';
-import { project as projectData, nullableNumber } from '../../proptypes';
+import { project as projectData, nullableNumber, displayOrder } from '../../proptypes';
+import { loadingProjectsData } from '../../mockData';
+import getKeyedAggregatedCount from '../../utilities/getKeyedAggregatedCount';
 import './styles.scss';
 
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
-    selectedProjectID: nullableNumber.isRequired,
+    /** The Project id of the item currently selected */
+    selectedProjectID: nullableNumber,
+    /** The selected feature */
     selectedFeature: PropTypes.string.isRequired,
+    /** Function for updating the project selected index */
     onChange: PropTypes.func.isRequired,
-    projectsData: PropTypes.arrayOf(projectData).isRequired,
+    /** All of the projects condition data */
+    projectsData: PropTypes.arrayOf(projectData),
+    /** A flag used to simulate data inside the project menu while loading */
+    loading: PropTypes.bool,
+    relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    displayOrder: displayOrder.isRequired,
   }
 
-  getListItems = () => {
-    const { projectsData, selectedProjectID } = this.props;
+  static defaultProps = {
+    loading: false,
+    projectsData: [],
+    selectedProjectID: null,
+    relevantProjectLookup: [],
+    filteredProjectLookup: [],
+  }
+
+  getListItems = (projectsData, selectedProjectID) => {
     const projectIndex = selectedProjectID === null
       ? -1
       : projectsData.findIndex(project => project.id === selectedProjectID);
@@ -30,57 +48,85 @@ class ProjectMenu extends React.PureComponent {
       .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
   }
 
-  handleConditionChange = (listItemIndex) => {
-    const visibleListItems = this.getListItems();
+  handleProjectChange = (listItemIndex) => {
+    if (this.props.loading) { return; }
+    const visibleListItems = this.getListItems(this.props.projectsData,
+      this.props.selectedProjectID);
     this.props.onChange(visibleListItems[listItemIndex].id);
   }
 
-  getReformattedData = data => (
-    Object.entries(data[this.props.selectedFeature])
-      .map(([name, count]) => ({ name, count }))
-  );
+  getReformattedData = (data, selectedFeature) => {
+    const counts = getKeyedAggregatedCount(data, selectedFeature);
+    return this.props.displayOrder[selectedFeature]
+      .map(name => ({ name, count: counts[name] || 0 }));
+  };
+
+  getSedimentationWidth = (data) => {
+    const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
+    const rightCount = data.length - leftCount - 1;
+
+    return [
+      leftCount < 35 ? leftCount : 35,
+      rightCount < 35 ? rightCount : 35,
+    ];
+  };
 
   render() {
-    const listItems = this.getListItems();
-    // If there are no listItems render virtualized data
-    // TODO: Make fake renderedItems for loading of projectMenu
+    const { loading, onChange } = this.props;
+    let { selectedProjectID, projectsData, selectedFeature } = this.props;
+    const isListEmpty = this.getListItems(projectsData, selectedProjectID).length === 0;
+
+    if (loading || isListEmpty) {
+      projectsData = [{ ...loadingProjectsData, id: 0 }];
+      selectedProjectID = 0;
+      selectedFeature = 'theme';
+    }
+    const listItems = this.getListItems(projectsData, selectedProjectID);
+
     const renderedItems = listItems ? listItems
       .map(project => (
         <ProjectChart
           key={project.id}
-          chartType={this.props.selectedFeature}
-          graphData={this.getReformattedData(project.data)}
-          projectName={project.name.en}
-          selected={project.id === this.props.selectedProjectID}
+          chartType={selectedFeature}
+          graphData={this.getReformattedData(project.aggregatedCount, selectedFeature)}
+          numberOfConditions={project.numberOfConditions}
+          projectName={project.shortName}
+          selected={project.id === selectedProjectID}
+          loading={loading}
+          relevantProjectLookup={this.props.relevantProjectLookup}
+          filteredProjectLookup={this.props.filteredProjectLookup}
+          projectId={project.id}
         />
       ))
       : [];
 
-    const selected = this.props.selectedProjectID === null
+    const selected = selectedProjectID === null
       ? -1
-      : listItems.findIndex(project => project.id === this.props.selectedProjectID);
+      : listItems.findIndex(project => project.id === selectedProjectID);
 
     // If no project is selected, set it to the first project
-    if (selected === -1) {
-      if (listItems.length > 0) { this.props.onChange(listItems[0].id); }
-      return null;
-    }
+    if (selected === -1 && listItems.length > 0) { onChange(listItems[0].id); }
 
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;
 
+    const [sedimentationLeft, sedimentationRight] = loading ? [0, 0]
+      : this.getSedimentationWidth(projectsData);
     return (
       <div
         className={classNames(
           'ProjectMenu',
           `paddingBefore${paddingBefore}`,
           `paddingAfter${paddingAfter}`,
+          { loading },
         )}
       >
         <div className="pipe" />
+        <div className={classNames('sedimentation', 'left')} style={{ width: sedimentationLeft }} />
+        <div className={classNames('sedimentation', 'right')} style={{ width: sedimentationRight }} />
         <List
           items={renderedItems}
-          onChange={this.handleConditionChange}
+          onChange={this.handleProjectChange}
           selected={selected}
           horizontal
         />

@@ -8,60 +8,80 @@ import './styles.scss';
 
 const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
 const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
+class WheelList extends React.Component {
+  static wrapIndex= (i, selected, length) => (selected + i + length)
+  % length;
 
-const WheelList = (props) => {
-  const wrapIndex = i => (props.selected + i + props.listContent.length) % props.listContent.length;
-  const handleOnChange = i => props.onChange(wrapIndex(i - 3));
+  constructor(props) {
+    super(props);
+    this.state = {
+      listElements: [],
+    };
+  }
 
-  const setDangerousText = text => (
-    {
-      __html: text,
-    }
+  static getDerivedStateFromProps(props) {
+    const listElements = props.listContent.length > 0
+      ? (indexOffsets.map((offset) => {
+        const text = props.listContent[WheelList.wrapIndex(
+          offset, props.selected, props.listContent.length,
+        )].name;
+        return (
+          <span
+            title={text}
+            className={offsetClasses[Math.abs(offset)]}
+            key={`${text}-${offset}`}
+          >
+            {text}
+          </span>
+        );
+      }))
+      : [];
+    return { listElements };
+  }
+
+  handleOnChange = i => this.props.onChange(
+    WheelList.wrapIndex(i - 3, this.props.selected, this.props.listContent.length),
   );
 
-  const listElements = indexOffsets.map((offset) => {
-    const text = props.wheelType === 'company'
-      ? props.listContent[wrapIndex(offset)].name
-      : props.listContent[wrapIndex(offset)].region_name;
+  render() {
     return (
-      <span
-        className={offsetClasses[Math.abs(offset)]}
-        style={{ width: `${props.textClippingRadius}%` }}
-        // eslint-disable-next-line react/no-array-index-key
-        key={`${text}-${offset}`}
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={setDangerousText(text)}
-      />
-    );
-  });
-
-  return (
-    <div className={classNames('WheelList', props.className)}>
-      <div className="labelContainer">
-        <FormattedMessage id={`components.companyWheel.list.${props.wheelType}`}>
-          {text => <span className="label">{text}</span>}
-        </FormattedMessage>
-        <span
-          className="selected"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={setDangerousText(props.wheelType === 'company'
-            ? props.listContent[props.selected].name
-            : props.listContent[props.selected].region_name)
+      <div className={classNames('WheelList', this.props.className)}>
+        <div className="labelContainer">
+          <FormattedMessage id={`components.companyWheel.list.${this.props.wheelType}`}>
+            {text => <span className="label">{text}:</span>}
+          </FormattedMessage>
+          { this.props.listContent.length > 0
+            ? (
+              <span
+                title={this.props.listContent[this.props.selected].name}
+                className="selected"
+              >
+                {this.props.listContent[this.props.selected].name}
+              </span>
+            )
+            : null
           }
-        />
-      </div>
-      <div className="listContainer">
-        <div className="list">
-          <List elevated items={listElements} onChange={handleOnChange} selected={3} />
+        </div>
+        <div className="listContainer">
+          { this.props.listContent.length > 0
+            ? (
+              <div className="list">
+                <List
+                  elevated
+                  items={this.state.listElements}
+                  onChange={this.handleOnChange}
+                  selected={3}
+                />
+              </div>
+            ) : null
+          }
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 WheelList.propTypes = {
-  /** Distance at which to clip the selected text. Requires a valid CSS width. */
-  textClippingRadius: PropTypes.string,
   /** Additional classes to apply */
   className: PropTypes.string,
   /** Event handler, will receive the array index being selected */
@@ -76,7 +96,6 @@ WheelList.propTypes = {
 
 WheelList.defaultProps = {
   className: null,
-  textClippingRadius: '80%',
 };
 
 export default WheelList;

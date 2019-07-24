@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { features } from '../../constants';
+import { displayOrder as displayOrderPropType } from '../../proptypes';
 import './styles.scss';
 
 class FeatureTypesDescription extends React.PureComponent {
@@ -10,60 +10,79 @@ class FeatureTypesDescription extends React.PureComponent {
     this.ref = React.createRef();
   }
 
+  componentDidMount() {
+    if (this.props.subFeature) { this.scrollTo(this.props.subFeature); }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.subFeature !== this.props.subFeature) {
+      this.scrollTo(this.props.subFeature);
+    }
+  }
+
   scrollTo = (type) => {
+    if (!this.ref.current) { return; }
     const elm = this.ref.current.querySelector(`[data-heading="${type}"]`);
     this.ref.current.scrollTop = (elm)
       ? (elm.offsetTop - this.ref.current.offsetTop)
       : 0;
-  };
+  }
 
-  componentDidUpdate = (prevProps) => {
-    if (prevProps.subFeature !== this.props.subFeature) {
-      this.scrollTo(this.props.subFeature);
-    }
-  };
-
-  render() {
-    const { feature } = this.props;
-    const content = Object.entries(features[feature]).map(([type, color]) => (
-      <React.Fragment key={type}>
+  renderEntry = (feature, type, className) => {
+    const heading = feature === 'instrument'
+      ? <h4 data-heading={type}>{type}</h4>
+      : (
         <FormattedMessage id={`common.${feature}.${type}`}>
           {text => <h4 data-heading={type}>{text}</h4>}
         </FormattedMessage>
-        <FormattedMessage
-          id={`components.featureTypesDescription.${feature}.${type}`}
-        >
-          {str => str.split('\n').map((line, idx) => {
-            let prefix = null;
-            const split = line.split(':');
-            if (split.length > 1) {
-              prefix = <span style={{ color }}>{split.splice(0, 1)}:</span>;
-            }
-            return (
-              // eslint-disable-next-line react/no-array-index-key
-              <p key={idx}>
-                {prefix}
-                <span>{split.join(':')}</span>
-              </p>
-            );
-          })}
-        </FormattedMessage>
-      </React.Fragment>
-    ));
+      );
+
+    const content = (feature === 'instrument' && type === 'OTHER') ? null : (
+      <FormattedMessage
+        id={`components.featureTypesDescription.${feature}.${type}`}
+      >
+        {/* eslint-disable-next-line react/no-array-index-key */}
+        {str => str.split('\n').map((line, idx) => <p key={idx}>{line}</p>)}
+      </FormattedMessage>
+    );
+    return (
+      <div key={type} className={className}>
+        {heading}
+        {content}
+      </div>
+    );
+  }
+
+  render() {
+    const { feature, subFeature, displayOrder } = this.props;
+
+    let headerId;
+    if (feature === 'theme' && subFeature === '') {
+      headerId = 'allThemes';
+    } else if (feature === 'instrument') {
+      headerId = 'otherInstruments';
+    }
+
+    const header = !headerId ? null : (
+      <FormattedMessage id={`components.featureTypesDescription.${headerId}`}>
+        {text => <p className="info">* {text}</p>}
+      </FormattedMessage>
+    );
+
+    let content = displayOrder[feature].map(type => this.renderEntry(feature, type));
+
+    if (feature === 'instrument') {
+      content = content.concat(
+        displayOrder.instrumentOther.map(type => this.renderEntry(feature, type, 'other')),
+      );
+    }
 
     return (
       <div
         className="FeatureTypesDescription"
         ref={this.ref}
       >
-        {(this.props.feature === 'theme' && this.props.subFeature === '')
-          ? (
-            <FormattedMessage id="components.featureTypesDescription.allThemes">
-              {text => <p>* {text}</p> }
-            </FormattedMessage>
-          )
-          : null
-        }
+        {header}
         {content}
       </div>
     );
@@ -75,6 +94,8 @@ FeatureTypesDescription.propTypes = {
   feature: PropTypes.string.isRequired,
   /** Heading that the container should scroll to (ex. "security") */
   subFeature: PropTypes.string,
+  /** Display order by feature type */
+  displayOrder: displayOrderPropType.isRequired,
 };
 
 FeatureTypesDescription.defaultProps = {

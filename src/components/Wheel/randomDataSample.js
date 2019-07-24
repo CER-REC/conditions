@@ -1,4 +1,5 @@
 import randomProjects from './randomProjects';
+import { features } from '../../constants';
 
 const companyDataSample = [
   {
@@ -854,6 +855,42 @@ const calcRayLegendDataLocation = () => {
   return WheelLocationData;
 };
 
+const featureKeys = Object.keys(features);
+const randomLocationBars = Array(200).fill('')
+  .map(() => featureKeys.map(feature => (
+    Object.entries(features[feature]).map(([key, value]) => {
+      const randomValue = Math.floor(Math.random() * 15);
+      return ({
+        feature,
+        description: key,
+        disabled: randomValue <= 0,
+        count: randomValue,
+        value: randomValue,
+        fill: value,
+      });
+    })
+  )));
 const companyWheelData = calcRayLegendData().items;
-const locationData = calcRayLegendDataLocation().items;
-export { companyWheelData, locationData };
+const locationDataRaw = calcRayLegendDataLocation().items;
+const locationData = locationDataRaw.map((location, index) => ({
+  ...location,
+  aggregatedCount: randomLocationBars[index],
+}));
+
+const relevantProjectLookup = randomProjects.reduce((acc, company) => {
+  company.forEach((projectId) => {
+    if (projectId % 11 === 0) { acc[projectId] = true; }
+  });
+
+  return acc;
+}, []);
+
+const filteredProjectLookup = randomProjects.reduce((acc, company) => {
+  company.forEach((projectId) => {
+    if (projectId % 7 === 0) { acc[projectId] = true; }
+  });
+
+  return acc;
+}, []);
+
+export { companyWheelData, locationData, relevantProjectLookup, filteredProjectLookup };

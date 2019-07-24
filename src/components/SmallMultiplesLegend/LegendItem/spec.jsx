@@ -6,41 +6,32 @@ import LegendItem from '.';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import { features } from '../../../constants';
 
-const data = {
-  feature: 'theme',
-  subFeature: 'SECURITY',
-  years: {
-    2018: 12,
-    2019: 1,
-    2020: 345,
-  },
+const props = {
+  feature: 'filing',
+  subFeature: 'REQUIRED',
+  color: features.filing.REQUIRED,
+  data: [
+    { x: 2010, y: 316 },
+    { x: 2011, y: 827 },
+    { x: 2012, y: 421 },
+    { x: 2013, y: 108 },
+    { x: 2014, y: 236 },
+    { x: 2015, y: 312 },
+    { x: 2016, y: 2311 },
+    { x: 2017, y: 175 },
+    { x: 2018, y: 343 },
+  ],
+  max: 2311,
 };
 
 describe('Components|SmallMultiplesLegend/LegendItem', () => {
-  let wrapper = shallow((
-    <LegendItem
-      className="testtest"
-      title="security"
-      feature="theme"
-      data={data}
-      max={0}
-    />
-  ));
+  let wrapper = shallow(<LegendItem className="testtest" {...props} />);
 
   shouldBehaveLikeAComponent(LegendItem, () => wrapper);
 
   describe('when the all property is provided', () => {
-    const title = 'a1';
-
     beforeEach(() => {
-      wrapper = shallow((
-        <LegendItem
-          title={title}
-          feature={title}
-          max={0}
-          all
-        />
-      ));
+      wrapper = shallow(<LegendItem {...props} all />);
     });
 
     test('should not render the graph', () => {
@@ -52,31 +43,18 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     });
 
     test('should render the formatted all title', () => {
-      const id = `components.smallMultiplesLegend.all.${title}`;
+      const id = 'components.smallMultiplesLegend.all.filing';
       expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
     });
   });
 
   describe('when there is no all property provided', () => {
-    const title = 'SECURITY';
-    const feature = 'theme';
-    const max = 500;
-
     beforeEach(() => {
-      wrapper = shallow((
-        <LegendItem
-          className="testclass"
-          title={title}
-          feature={feature}
-          data={data}
-          max={max}
-        />
-      ));
+      wrapper = shallow(<LegendItem {...props} />);
     });
 
     test('should render the formatted title', () => {
-      const id = `common.${feature}.${title}`;
-
+      const id = 'common.filing.REQUIRED';
       expect(wrapper.find('.stream')).toHaveLength(1);
       expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
     });
@@ -85,13 +63,9 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
       const victoryAreaWrapper = wrapper.find(VictoryArea);
 
       expect(victoryAreaWrapper).toHaveLength(1);
-      expect(victoryAreaWrapper.prop('maxDomain')).toEqual({ y: max });
-      expect(victoryAreaWrapper.prop('style'))
-        .toEqual({ data: { fill: features[feature][title] } });
+      expect(victoryAreaWrapper.prop('maxDomain')).toEqual({ y: props.max });
 
-      expect(victoryAreaWrapper.prop('data')).toEqual(
-        expect.arrayContaining(Object.entries(data.years).map(([x, y]) => ({ x, y }))),
-      );
+      expect(victoryAreaWrapper.prop('data')).toEqual(props.data);
     });
 
     test('should render without the all class', () => {
@@ -103,18 +77,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     });
 
     test('should render with the faded class when the faded property is provided', () => {
-      wrapper = shallow((
-        <LegendItem
-          className="myClass"
-          title={title}
-          feature={feature}
-          data={data}
-          color="#AACC11"
-          max={0}
-          faded
-        />
-      ));
-
+      wrapper = shallow(<LegendItem {...props} faded />);
       expect(wrapper.hasClass('faded')).toBe(true);
     });
   });

@@ -1,0 +1,25 @@
+@import '../../../styles/colors';
+
+.DownloadBox {
+  svg {
+    float: left;
+    width: 20px;
+    height: 32px;
+
+    .fillVDG {
+      fill: $VeryDarkGray;
+    }
+
+    .fillLG {
+      fill: $LightGray;
+    }
+
+    .fillNone {
+      fill: none;
+    }
+
+    .strokeVDG {
+      stroke: $VeryDarkGray;
+    }
+  }
+}

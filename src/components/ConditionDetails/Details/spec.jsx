@@ -5,7 +5,7 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import Details from '.';
 
 const data = {
-  theme: 'theme.ENVIRONMENTAL_PROTECTION',
+  theme: ['ENVIRONMENTAL_PROTECTION'],
   instrument: 'instrument.CONSTRUCTION',
   phase: 'phase.DURING_CONSTRUCTION_PHASE',
   type: 'type.STANDARD',
@@ -27,7 +27,7 @@ describe('Components|ConditionDetails/Details', () => {
         .find('.content')
         .children();
 
-      expect(items).toHaveLength(7);
+      expect(items).toHaveLength(6);
     });
   });
 

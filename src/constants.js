@@ -1,12 +1,30 @@
+export const applicationPath = {
+  en: 'conditions',
+  fr: 'conditions-fr',
+};
+
+export const lang = (typeof document !== 'undefined'
+    && document.location
+    && document.location.href
+    && document.location.href.includes(applicationPath.fr))
+  || (process.env.NODE_ENV === 'development'
+    && typeof window !== 'undefined'
+    && window.localStorage
+    && window.localStorage.getItem('dev-lang') === 'fr')
+  ? 'fr' : 'en';
+
 export const features = {
   instrument: {
-    ROUTING: 'rgb(14, 43, 140)',
-    CONSTRUCTION: 'rgb(39, 165, 249)',
-    ABANDONMENT: 'rgb(22, 78, 248)',
-    OPENING: 'rgb(22, 78, 248)',
-    MISC: 'rgb(212, 169, 42)',
-    SAFETY: 'rgb(201, 4, 194)',
-    TARIFFS: 'rgb(195, 230, 179)',
+    0: 'rgb(122, 25, 17)',
+    1: 'rgb(239, 71, 57)',
+    2: 'rgb(73, 127, 57)',
+    3: 'rgb(246, 155, 202)',
+    4: 'rgb(231, 157, 78)',
+    5: 'rgb(141, 191, 105)',
+    6: 'rgb(221, 106, 97)',
+    7: 'rgb(175, 107, 68)',
+    8: 'rgb(90, 158, 150)',
+    9: 'rgb(96, 96, 96)',
   },
   theme: {
     ADMINISTRATIVE: 'rgb(201, 215, 65)',
@@ -26,12 +44,20 @@ export const features = {
   phase: {
     ABANDONMENT: 'rgb(102, 102, 102)',
     DURING_CONSTRUCTION_PHASE: 'rgb(83, 164, 248)',
-    EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 'rgb(175, 244, 244)',
-    INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 'rgb(72, 82, 193)',
+    EXPIRY_DATE_OF_REG_INSTR: 'rgb(175, 244, 244)',
+    INCLUDES_ALL_PHASES_OF_CONSTR: 'rgb(72, 82, 193)',
     NOT_CONSTRUCTION_RELATED: 'rgb(5, 215, 210)',
     POST_CONSTRUCTION_PHASE: 'rgb(31, 51, 79)',
-    PRIOR_TO_CONSTRUCTION_PHASE: 'rgb(210, 102, 236)',
+    PRIOR_TO_THE_CONSTRUCTION_PHASE: 'rgb(210, 102, 236)',
     UNSPECIFIED: 'rgb(26, 57, 146)',
+  },
+  filing: {
+    REQUIRED: 'rgb(82, 82, 247)',
+    NOT_REQUIRED: 'rgb(58, 58, 58)',
+  },
+  type: {
+    NON_STANDARD: 'rgb(77, 39, 90)',
+    STANDARD: 'rgb(181, 11, 128)',
   },
   status: {
     IN_PROGRESS: 'rgb(101, 216, 126)',
@@ -47,30 +73,10 @@ export const features = {
     AMENDED: 'rgb(198, 170, 6)',
     SATISFACTORY: 'rgb(88, 104, 107)',
   },
-  type: {
-    NON_STANDARD: 'rgb(77, 39, 90)',
-    STANDARD: 'rgb(181, 11, 128)',
-  },
-  filing: {
-    REQUIRED: 'rgb(82, 82, 247)',
-    NOT_REQUIRED: 'rgb(58, 58, 58)',
-  },
 };
 
-export const provinces = {
-  Yukon: 'YT',
-  'Northwest Territories': 'NT',
-  Nunavut: 'NU',
-  'Newfoundland and Labrador': 'NL',
-  'Prince Edward Island': 'PE',
-  'British Columbia': 'BC',
-  Alberta: 'AB',
-  Saskatchewan: 'SK',
-  Manitoba: 'MB',
-  Ontario: 'ON',
-  Québec: 'QC',
-  'New Brunswick': 'NB',
-  'Nova Scotia': 'NS',
-  'Atlantic provinces and Québec': 'ATL-Q',
-  'Other provinces and territories': 'OtherProvinces',
-};
+export const noRegionColor = 'rgb(153,153,153)';
+
+export const regDocURL = 'https://apps.neb-one.gc.ca/REGDOCS/File/Download/';
+
+export const guideSize = 128;

@@ -6,7 +6,6 @@ import ReadMe from './README.md';
 
 const jumpToAbout = () => {};
 const openDataModal = () => {};
-const openScreenshotModal = () => {};
 
 storiesForComponent('Components|ShortcutInfoBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -14,6 +13,5 @@ storiesForComponent('Components|ShortcutInfoBar', module, ReadMe)
     <ShortcutInfoBar
       jumpToAbout={jumpToAbout}
       openDataModal={openDataModal}
-      openScreenshotModal={openScreenshotModal}
     />
   ));

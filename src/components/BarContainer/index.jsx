@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import invariant from 'invariant';
+import { FormattedMessage } from 'react-intl';
 
 const isValidUnit = (unit) => {
   // Must be a number or a string
@@ -46,6 +47,11 @@ const BarContainer = (props) => {
 
   let x = 0;
   const bars = items.map((bar, index) => {
+    // get value to show mouse hover
+    let title = '';
+    if ('feature' in bar && 'description' in bar) {
+      title = <title><FormattedMessage id={`common.${bar.feature}.${bar.description}`} /></title>;
+    }
     if (vertical) {
       const width = 1 / items.length * 100;
       const height = bar.value / scaleAgainst * 100;
@@ -59,7 +65,9 @@ const BarContainer = (props) => {
           y={calculateSize(100 - height, maxHeight)}
           width={calculateSize(width, maxWidth)}
           height={calculateSize(height, maxHeight)}
-        />
+        >
+          {title}
+        </rect>
       );
     }
 
@@ -74,7 +82,9 @@ const BarContainer = (props) => {
         y={0}
         width={`${width}%`}
         height="100%"
-      />
+      >
+        {title}
+      </rect>
     );
   });
 
@@ -84,6 +94,8 @@ const BarContainer = (props) => {
       {...spreadProps}
       className={classNames('BarContainer', props.className)}
     >
+      {/* Catch pointer events since most browsers won't have pointer-events: bounding-box */}
+      <rect x={0} y={0} width={props.width} height={props.height} fill="transparent" />
       {bars}
     </Container>
   );

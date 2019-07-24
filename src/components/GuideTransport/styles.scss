@@ -1,0 +1,55 @@
+@import '../../styles/colors';
+@import '../../styles/fontVariables';
+
+.GuideTransport {
+  display: inline-block;
+
+  position: relative;
+  top: -7px;
+  left: 0;
+
+  span {
+    display: inline-block;
+
+    position: relative;
+
+    height: 24px;
+    color: $Gray160;
+    font-family: $fira-sans-condensed;
+    font-size: 16px;
+
+    margin-left: 8px;
+    margin-right: 8px;
+
+    // text-align: right;
+    vertical-align: baseline;
+    line-height: 24px;
+    white-space: nowrap;
+
+    overflow: hidden;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 8px;
+
+    cursor: pointer;
+
+    circle {
+      fill: $Guide;
+
+
+      &.pink, &:hover {
+        fill: $LinksTextButtons;
+      }
+    }
+
+    path {
+      pointer-events: none;
+
+      fill: $White;
+    }
+  }
+}

@@ -20,4 +20,14 @@
     text-decoration: underline;
   }
 
+  .half {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: auto;
+  }
+  .highlighted {
+    color: $SearchKeyword;
+  }
+
 }

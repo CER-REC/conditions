@@ -3,6 +3,8 @@ import Matter from 'matter-js';
 // Found at https://gist.github.com/gre/1650294
 const easeInOutCubic = t => (t < 0.5 ? (4 * t * t * t) : ((t - 1) * (2 * t - 2) * (2 * t - 2) + 1));
 
+const noop = () => {};
+
 export default class Body {
   constructor(body, engine) {
     this.body = body;
@@ -39,11 +41,9 @@ export default class Body {
   /* eslint-enable no-bitwise */
 
   moveTo(x, y, time = 0) {
-    if (this.targetPosition) {
-      this.targetPosition.promise.reject(new Error('Movement cancelled due to new target'));
-    }
-    if (time === 0) {
+    if (time === 0 || (this.body.position.x === x && this.body.position.y === y)) {
       Matter.Body.setPosition(this.body, { x, y });
+      Matter.Body.setVelocity(this.body, { x: 0, y: 0 });
       return Promise.resolve();
     }
     const timestamp = Date.now();
@@ -58,20 +58,22 @@ export default class Body {
         // If we haven't resolved in 2x the time, reject the promise
         timeout: setTimeout(() => reject(new Error(`Movement did not finish within ${time * 2}ms limit`)), time * 2),
       };
-    });
+    }).catch(noop);
   }
 
-  rotateTo(r, time = 0) {
-    if (this.targetRotation) {
-      this.targetRotation.promise.reject(new Error('Rotation cancelled due to new target'));
-    }
-    if (time === 0) {
+  rotateTo(rRaw, time = 0) {
+    const modRad = v => v % (Math.PI * 2);
+    const r = modRad(rRaw);
+    let start = modRad(this.body.angle + (Math.PI * 2));
+    if (time === 0 || r === start) {
       Matter.Body.setAngle(this.body, r);
+      Matter.Body.setAngularVelocity(this.body, 0);
       return Promise.resolve();
     }
     const timestamp = Date.now();
+    if (start > Math.PI) { start -= (Math.PI * 2); }
     this.targetRotation = {
-      start: { r: this.body.angle, timestamp },
+      start: { r: start, timestamp },
       end: { r, timestamp: timestamp + time },
     };
     return new Promise((resolve, reject) => {
@@ -81,14 +83,11 @@ export default class Body {
         // If we haven't resolved in 2x the time, reject the promise
         timeout: setTimeout(() => reject(new Error(`Rotation did not finish within ${time * 2}ms limit`)), time * 2),
       };
-    });
+    }).catch(noop);
   }
 
   scaleTo(s, time = 0) {
-    if (this.targetScale) {
-      this.targetScale.promise.reject(new Error('Scale cancelled due to new target'));
-    }
-    if (time === 0) {
+    if (time === 0 || s === this.scale) {
       const scale = (1 / this.scale) * s;
       Matter.Body.scale(this.body, scale, scale);
       this.scale = s;
@@ -106,14 +105,16 @@ export default class Body {
         // If we haven't resolved in 2x the time, reject the promise
         timeout: setTimeout(() => reject(new Error(`Scale did not finish within ${time * 2}ms limit`)), time * 2),
       };
-    });
+    }).catch(noop);
   }
 
   onUpdatePosition(inOut, start, end) {
-    Matter.Body.setPosition(this.body, {
+    const next = {
       x: start.x + ((end.x - start.x) * inOut),
       y: start.y + ((end.y - start.y) * inOut),
-    });
+    };
+
+    Matter.Body.setPosition(this.body, next);
   }
 
   onUpdateRotation(inOut, start, end) {
@@ -138,6 +139,13 @@ export default class Body {
     this[`onUpdate${param}`](inOut, start, end);
 
     if (inOut === 1) {
+      // Stop the movement to prevent drifting
+      switch (param) {
+        case 'Position': Matter.Body.setVelocity(this.body, { x: 0, y: 0 }); break;
+        case 'Rotation': Matter.Body.setAngularVelocity(this.body, 0); break;
+        default: break;
+      }
+
       this[targetParam].promise.resolve();
       clearInterval(this[targetParam].promise.timeout);
       this[targetParam] = false;

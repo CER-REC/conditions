@@ -1,10 +1,10 @@
+import shallowequal from 'shallowequal';
+
 export const Types = {
   SELECTED_FEATURE: 'selectedFeature',
   SELECTED_SUBFEATURE: 'selectedSubFeature',
   SELECTED_INDICATOR: 'selectedIndicator',
-  SELECTED_COMPANY: 'selectedCompany',
-  SELECTED_PROJECT: 'selectedProject',
-  SELECTED_CONDITION: 'selectedCondition',
+  SET_MULTIPLE: 'SELECTED.SET_MULTIPLE',
 };
 
 export const setSelectedFeature = feature => ({
@@ -21,40 +21,34 @@ export const setSelectedIndicator = indicator => ({
   type: Types.SELECTED_INDICATOR,
   payload: { indicator },
 });
-export const setSelectedCompany = company => ({
-  type: Types.SELECTED_COMPANY,
-  payload: { company },
-});
 
-export const setSelectedProject = project => ({
-  type: Types.SELECTED_PROJECT,
-  payload: { project },
-});
-
-export const setSelectedCondition = condition => ({
-  type: Types.SELECTED_CONDITION,
-  payload: { condition },
+export const setSelectedMultiple = payload => ({
+  type: Types.SET_MULTIPLE,
+  payload,
 });
 
 const initialState = {
   feature: 'theme',
   subFeature: '',
-  company: '',
-  project: null,
-  condition: { instrumentIndex: 0, itemIndex: 0 },
+  company: 0,
+  region: 0,
+  project: 0,
+  instrument: 0,
+  condition: 0,
   indicator: '',
+  keywordId: -1,
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case Types.SELECTED_FEATURE: return { ...state, subFeature: '', feature: action.payload.feature };
-    case Types.SELECTED_SUBFEATURE: return {
-      ...state, subFeature: action.payload.subFeature,
-    };
+    case Types.SELECTED_SUBFEATURE: return { ...state, subFeature: action.payload.subFeature };
     case Types.SELECTED_INDICATOR: return { ...state, indicator: action.payload.indicator };
-    case Types.SELECTED_COMPANY: return { ...state, company: action.payload.company };
-    case Types.SELECTED_PROJECT: return { ...state, project: action.payload.project };
-    case Types.SELECTED_CONDITION: return { ...state, condition: action.payload.condition };
+    case Types.SET_MULTIPLE: {
+      const newState = { ...state, ...action.payload };
+      // Only change the state if a value actually changed
+      return shallowequal(state, newState) ? state : newState;
+    }
     default: return state;
   }
 };

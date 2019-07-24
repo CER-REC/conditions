@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import "../../styles/fontVariables";
 
 .FeatureTypesDescription {
   height: 100%;
@@ -6,15 +7,28 @@
   text-align: left;
   overflow-y: auto;
 
+  padding-right: 10px;
+
   h4 {
     color: $Gray160;
     margin-bottom: 0.1rem;
+    font-size: 14px;
+    font-family: $fira-sans-condensed;
+  }
 
-    font-family: 'FiraSansCondensedLight', sans-serif;
+  .other h4 {
+    font-family: $fira-sans-condensed-bold;
+    font-size: 12px;
   }
 
   p {
     margin-top: 0;
+    font-family: $fira-sans-condensed-light;
+    font-size: 12px;
+
+    &.info {
+      font-size: 11px;
+    }
   }
 
   @each $category, $color in getFeatureColors('instrument') {

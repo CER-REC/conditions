@@ -2,10 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import memoize from 'lodash.memoize';
 import './styles.scss';
 import handleInteraction from '../../../utilities/handleInteraction';
-import { suggestedKeywordsObject } from '../../../proptypes';
+import memoizeReference from '../../../utilities/memoizeReference';
 import KeywordList from './KeywordList';
+
+const sortKeywords = memoize((sortByCount, desc, selectedCategories, keywords) => {
+  let filteredKeywords = keywords;
+  if (selectedCategories.length > 0) {
+    filteredKeywords = filteredKeywords
+      .filter(({ category }) => category.some(v => selectedCategories.includes(v)));
+  }
+  const direction = desc ? -1 : 1;
+  return [...filteredKeywords].sort(sortByCount
+    ? (a, b) => (a.conditionCount - b.conditionCount) * direction
+    : (a, b) => a.name.localeCompare(b.name) * direction);
+}, (sortBy, desc, category, keywords) => `${sortBy}-${desc}-${category.join('|')}-${memoizeReference(keywords)}`);
 
 class SuggestedKeywordsPopout extends React.PureComponent {
   static propTypes = {
@@ -13,7 +26,11 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     setIncluded: PropTypes.func.isRequired,
     setExcluded: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
-    suggestedKeywords: suggestedKeywordsObject.isRequired,
+    suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      category: PropTypes.arrayOf(PropTypes.string),
+      conditionCount: PropTypes.number,
+    })).isRequired,
     isExclude: PropTypes.bool.isRequired,
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -23,8 +40,8 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     super(props);
     this.state = {
       selectedCategory: [],
-      sortBy: '',
-      sortHierarchy: 'none',
+      sortByCount: true,
+      sortDesc: true,
     };
   }
 
@@ -46,45 +63,27 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     })
   )
 
-  categoryOnClick = (li) => {
-    const { selectedCategory } = this.state;
-    if (li === 'all') return (this.setState({ selectedCategory: [] }));
-    if (!selectedCategory.includes(li)) {
-      return this.setState({ selectedCategory: selectedCategory.concat(li) });
-    }
-    return this.setState({ selectedCategory: selectedCategory.filter(v => v !== li) });
-  }
+  categoryOnClick = clicked => this.setState(({ selectedCategory }) => {
+    if (clicked === 'all') { return { selectedCategory: [] }; }
+    return {
+      selectedCategory: selectedCategory.includes(clicked)
+        ? selectedCategory.filter(v => v !== clicked)
+        : selectedCategory.concat(clicked),
+    };
+  });
 
-  sortKeywords = () => {
-    const { sortBy, sortHierarchy, selectedCategory } = this.state;
-    const { suggestedKeywords } = this.props;
-    let filteredKeywords = Object.entries(suggestedKeywords);
-    if (selectedCategory.length > 0) {
-      filteredKeywords = filteredKeywords
-        .filter(([, { category }]) => category.some(v => (selectedCategory.includes(v))));
-    }
-    if (sortBy.length > 0 && sortHierarchy !== 'none') {
-      const direction = (sortHierarchy === 'dec') ? -1 : 1;
-      filteredKeywords = (sortBy === 'alphabetical')
-        ? filteredKeywords.sort(([a], [b]) => a.localeCompare(b) * direction)
-        : filteredKeywords.sort(([, a], [, b]) => (a.conditions - b.conditions) * direction);
-    }
-    return filteredKeywords;
-  }
+  toggleSortOrder = () => this.setState(({ sortDesc }) => ({ sortDesc: !sortDesc }));
 
-  sortHierarchyOnClick = () => {
-    const sortArray = ['none', 'inc', 'dec'];
-    this.setState(({ sortHierarchy }) => ({
-      sortHierarchy: sortArray[(sortArray.indexOf(sortHierarchy) + 1) % 3],
-    }));
-  }
-
-  changeSortOnClick = sort => (
-    this.setState(({ sortBy }) => ({ sortBy: (sortBy === sort ? '' : sort) }))
-  )
+  // Default sortDesc to count=descending and alphabetical=ascending
+  toggleSortBy = sortByCount => this.setState(({ sortByCount, sortDesc: sortByCount }));
 
   render() {
-    const keywords = this.sortKeywords();
+    const keywords = sortKeywords(
+      this.state.sortByCount,
+      this.state.sortDesc,
+      this.state.selectedCategory,
+      this.props.suggestedKeywords,
+    );
     return (
       <div className="SuggestedKeywordsPopout">
         <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.suggestedKeywords">
@@ -106,23 +105,23 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.frequency">
             {text => (
               <span
-                className={this.state.sortBy === 'frequency' ? 'selectedSort' : null}
-                {...handleInteraction(this.changeSortOnClick, 'frequency')}
+                className={this.state.sortByCount ? 'selectedSort' : ''}
+                {...handleInteraction(this.toggleSortBy, true)}
               > {text}
               </span>
             )}
           </FormattedMessage>
-          |
+          &nbsp;|&nbsp;
           <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.alphabetical">
             {text => (
               <span
-                className={this.state.sortBy === 'alphabetical' ? 'selectedSort' : null}
-                {...handleInteraction(this.changeSortOnClick, 'alphabetical')}
+                className={this.state.sortByCount ? '' : 'selectedSort'}
+                {...handleInteraction(this.toggleSortBy, false)}
               >{text}
               </span>
             )}
           </FormattedMessage>
-          <span className="hierarchy" {...handleInteraction(this.sortHierarchyOnClick)}>
+          <span className="hierarchy" {...handleInteraction(this.toggleSortOrder)}>
             <span className="arrow">
               <svg viewBox="0 0 427.5 427.5">
                 <g>
@@ -145,7 +144,14 @@ class SuggestedKeywordsPopout extends React.PureComponent {
                 </g>
               </svg>
             </span>
-            <span className="upperCase"> {this.state.sortHierarchy } </span>
+            <FormattedMessage
+              id={`components.searchBar.suggestedKeywordsPopout.${
+                // TODO: dec should be desc
+                this.state.sortDesc ? 'dec' : 'inc'
+              }`}
+            >
+              {text => <span className="upperCase sortType"> {text} </span>}
+            </FormattedMessage>
           </span>
         </div>
         <KeywordList
@@ -158,7 +164,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
         />
         <FormattedMessage id="components.searchBar.close">
           {text => (
-            <div className="close">
+            <div className="closeSearchKeywordPopout">
               <button
                 {...handleInteraction(this.props.closeTab)}
                 className="upperCase"

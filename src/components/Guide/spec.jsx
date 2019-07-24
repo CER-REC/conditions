@@ -4,9 +4,11 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import Guide from '.';
 
+const noop = () => {};
+
 describe('Components|Guide', () => {
   describe('with default props', () => {
-    const wrapper = shallow(<Guide textState={3} />);
+    const wrapper = shallow(<Guide step={3} onClick={noop} />);
 
     shouldBehaveLikeAComponent(Guide, () => wrapper);
   });

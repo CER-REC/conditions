@@ -2,50 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LegendItem from './LegendItem';
-import CircleContainer from '../CircleContainer';
 import FeatureFlag from '../FeatureFlag';
+import { displayOrder, aggregatedFeatureData } from '../../proptypes';
+import getFeatureColor from '../../utilities/getFeatureColor';
 
 import './styles.scss';
 
 const FeaturesLegend = (props) => {
-  if (props.legendItems.length === 0) { return null; }
-  let footer = null;
-  if (props.isProjectLegend) {
-    footer = (
-      <div className="footer">
+  const { selectedFeature, selectedAggregatedCount } = props;
+  if (!selectedAggregatedCount) { return null; }
+
+  const footer = (
+    <React.Fragment>
+      <div className="featuresLegend">
         <h3 className="Title">
           <FormattedMessage id="components.projectLegend.numberOfConditions" />
         </h3>
         <div className="ChartLegend">
-          <FeatureFlag
-            chartType="legend"
-            name="zeroConditions"
-            count={0}
-          />
-          <div className="FlagDesc">0</div>
-          <FeatureFlag
-            chartType="legend"
-            name="tenConditions"
-            count={10}
-          />
-          <div className="FlagDesc">10</div>
-          <FeatureFlag
-            chartType="legend"
-            name="greaterThanTenConditions"
-            count={11}
-          />
-          <div className="FlagDesc"> &gt;10 </div>
-        </div>
-        <CircleContainer
-          size={24}
-          className="ConditionsIcon"
-        >
-        #
-        </CircleContainer>
-        <div className="ConditionsDesc">
-          <FormattedMessage
-            id="components.projectLegend.totalConditions"
-          />
+          <div className="legendRow">
+            <span className="FlagDesc">0</span>
+          </div>
+          <div className="legendRow">
+            <FeatureFlag
+              chartType="legend"
+              name="tenConditions"
+              count={10}
+              color="transparent"
+            />
+            <span className="FlagDesc">10</span>
+          </div>
+          <div className="legendRow">
+            <FeatureFlag
+              chartType="legend"
+              name="greaterThanTenConditions"
+              count={11}
+              color="transparent"
+            />
+            <span className="FlagDesc"> &gt;10 </span>
+          </div>
         </div>
         <div className="AssociatedComp">
           <h3 className="Asterisk">*</h3>
@@ -56,20 +50,24 @@ const FeaturesLegend = (props) => {
           </div>
         </div>
       </div>
-    );
-  }
-  const renderedItems = props.legendItems.map(item => (
-    <LegendItem
-      key={item.description}
-      text={item.description}
-      disabled={item.disabled}
-      selectedFeature={props.selectedFeature}
-    />
-  ));
+    </React.Fragment>
+  );
+
+  const aggregatedFeature = selectedAggregatedCount[selectedFeature];
+  const renderedItems = props.displayOrder[selectedFeature]
+    .map((name, i) => (
+      <LegendItem
+        key={name}
+        text={name}
+        disabled={!aggregatedFeature.find(v => v.count > 0 && v.name === name)}
+        selectedFeature={selectedFeature}
+        color={getFeatureColor(selectedFeature, name, i)}
+      />
+    ));
   return (
     <div className="FeaturesLegend">
       {renderedItems}
-      {footer}
+      {props.isProjectLegend ? footer : null}
     </div>
   );
 };
@@ -78,11 +76,13 @@ FeaturesLegend.propTypes = {
   /** Selected feature from the feature menu */
   selectedFeature: PropTypes.string.isRequired,
   /** Data for the legend item */
-  legendItems: PropTypes.arrayOf(PropTypes.shape({
-    disabled: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-  })).isRequired,
+  selectedAggregatedCount: aggregatedFeatureData,
   isProjectLegend: PropTypes.bool.isRequired,
+  displayOrder: displayOrder.isRequired,
+};
+
+FeaturesLegend.defaultProps = {
+  selectedAggregatedCount: null,
 };
 
 export default FeaturesLegend;

@@ -1,35 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
+import classNames from 'classnames';
 import './styles.scss';
-import { features } from '../../constants';
 
 const FeatureFlag = (props) => {
   const { intl } = props;
-  // Tip is 7px, so the flag can take up whatever remains
-  const flagSize = `calc(calc(100% - 7px) * ${Math.min(props.count, 10) / 10})`;
 
-  const title = props.chartType === 'legend'
-    ? intl.formatMessage({ id: `common.legend.${props.name}` })
-    : `${intl.formatMessage({ id: `common.features.${props.chartType}` })} - ${intl.formatMessage({ id: `common.${props.chartType}.${props.name}` })} - ${props.count}`;
+  const flagSize = `calc(18px * ${Math.min(props.count, 10) / 10})`;
 
-  const color = props.chartType === 'legend'
-    ? 'transparent'
-    : features[props.chartType][props.name];
+  let title;
+
+  if (props.chartType === 'legend') {
+    title = intl.formatMessage({ id: `common.legend.${props.name}` });
+  } else {
+    title = [
+      intl.formatMessage({ id: `common.features.${props.chartType}` }),
+      intl.formatMessage({ id: `common.${props.chartType}.${props.name}` }),
+      props.count,
+    ].join(' - ');
+  }
 
   const bar = (
     <div
-      className="Bar"
-      style={{ backgroundColor: color, width: flagSize }}
+      className={classNames('Bar', { withTip: (props.count > 10) })}
+      style={{ backgroundColor: props.color, width: flagSize, borderLeftColor: props.color }}
       title={title}
     />
   );
-
-  const tip = props.count <= 10
-    ? null
-    : <div className="FlagTip" style={{ borderLeftColor: color, left: flagSize }} />;
-
-  return <div className="FeatureFlag">{bar}{tip}</div>;
+  return <div className="FeatureFlag">{bar}</div>;
 };
 
 FeatureFlag.propTypes = {
@@ -41,6 +40,8 @@ FeatureFlag.propTypes = {
   name: PropTypes.string.isRequired,
   /** The amount of conditions */
   count: PropTypes.number.isRequired,
+  /** CSS color */
+  color: PropTypes.string.isRequired,
 };
 
 export default injectIntl(FeatureFlag);

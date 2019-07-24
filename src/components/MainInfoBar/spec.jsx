@@ -13,7 +13,6 @@ describe('Components|MainInfoBar', () => {
     spy = {
       setPane: jest.fn(),
       openDataModal: jest.fn(),
-      openScreenshotModal: jest.fn(),
     };
   });
 
@@ -34,7 +33,8 @@ describe('Components|MainInfoBar', () => {
         .first()
         .simulate('click', eventFuncs);
 
-      expect(spy.setPane).toHaveBeenCalledWith('about');
+      expect(spy.setPane).toHaveBeenCalledTimes(1);
+      expect(spy.setPane.mock.calls[0][0]).toBe('about');
     });
 
     test('should pass its setPane callback to the collapse arrows', () => {
@@ -42,30 +42,24 @@ describe('Components|MainInfoBar', () => {
         .find('CircleContainer')
         .simulate('click', eventFuncs);
 
-      expect(spy.setPane).toHaveBeenCalledWith('');
+      expect(spy.setPane).toHaveBeenCalledTimes(1);
+      expect(spy.setPane.mock.calls[0][0]).toBe('');
     });
   });
 
   describe('passing information to the content boxes', () => {
-    test('should pass its openDataModal and openScreenshotModal callbacks to the Downloads box', () => {
+    test('should pass its openDataModal callback to the Downloads box', () => {
       const wrapper = shallow(<MainInfoBar
-        pane="downloads"
+        pane="download"
         {...spy}
       />);
 
       wrapper.find('.MainInfoBar')
-        .find('DownloadsBox')
+        .find('DownloadBox')
         .props()
         .openDataModal();
 
       expect(spy.openDataModal).toHaveBeenCalledTimes(1);
-
-      wrapper.find('.MainInfoBar')
-        .find('DownloadsBox')
-        .props()
-        .openScreenshotModal();
-
-      expect(spy.openScreenshotModal).toHaveBeenCalledTimes(1);
     });
   });
 });

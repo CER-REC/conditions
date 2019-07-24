@@ -3,7 +3,6 @@ const Webpack = require('webpack');
 const sass = require('node-sass');
 const SassUtilsConstructor = require('node-sass-utils');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TranslationTable = require('./src/TranslationTable');
 const { features } = require('./src/constants');
 
 const BUILD_DIR = Path.resolve(__dirname, 'public/script');
@@ -14,11 +13,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    bundle: [
-      '@babel/polyfill',
-      devMode ? 'webpack-hot-middleware/client?path=/conditions/script/__webpack_hmr' : '',
-      './src/index.jsx',
-    ].filter(v => !!v),
+    bundle: './src/index.jsx',
   },
   output: {
     path: BUILD_DIR,
@@ -26,16 +21,6 @@ module.exports = {
     filename: '[name].js',
   },
   devtool: devMode ? 'cheap-module-eval-source-map' : 'none',
-  devServer: {
-    historyApiFallback: {
-      rewrites: [
-        {
-          from: new RegExp(`^/${TranslationTable.getIn(['applicationPath', 'fr'])}`),
-          to: TranslationTable.getIn(['applicationPath', 'en']),
-        },
-      ],
-    },
-  },
   module: {
     rules: [
       {

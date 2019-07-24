@@ -19,9 +19,11 @@
     }
 
     button#{&},
-    a#{&} {
-      width: 108px;
-      height: 48px;
+    a#{&},
+    a:visited#{&},
+    a:hover#{&} {
+      width: 110px;
+      min-height: 48px;
 
       position: relative;
 
@@ -32,6 +34,7 @@
       font-family: inherit;
       font-size: 15px;
       text-align: left;
+      text-decoration: none;
       vertical-align: top;
 
       color: $LinksTextButtons;

@@ -19,7 +19,9 @@ const stackProps = {
 
 const groupProps = {
   onChange: () => {},
-  projectData: [],
+  totalPerYear: {
+    2010: 5,
+  },
   allThemes: false,
 };
 

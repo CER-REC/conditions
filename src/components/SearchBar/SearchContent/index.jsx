@@ -81,9 +81,23 @@ class SearchContent extends React.PureComponent {
     this.setState({ inputInclude: '' });
   }
 
+  addIncludeWordOnEnter = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // WET template will trigger a refresh on enter
+      this.addIncludeWord();
+    }
+  }
+
   addExcludeWord = () => {
     this.addWord(this.state.inputExclude, 'exclude');
     this.setState({ inputExclude: '' });
+  }
+
+  addExcludeWordOnEnter = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // WET template will trigger a refresh on enter
+      this.addExcludeWord();
+    }
   }
 
   excludeSearchTextAndWords = () => (
@@ -99,11 +113,13 @@ class SearchContent extends React.PureComponent {
             ),
           }}
         />
+        :
       </div>
       <div className="input">
         <input
           value={this.state.inputExclude}
           onChange={this.updateInputExclude}
+          onKeyDown={this.addExcludeWordOnEnter}
           onFocus={() => this.props.changeIsExclude(true)}
           className="searchBar"
         />
@@ -129,7 +145,7 @@ class SearchContent extends React.PureComponent {
 
       <div className="anyText">
         <FormattedMessage
-          id="components.searchBar.findWords.highlightText.following"
+          id="components.searchBar.findWords.highlightText.followingInclude"
           values={{
             choice: (
               this.props.findAny
@@ -145,6 +161,7 @@ class SearchContent extends React.PureComponent {
                 )),
           }}
         />
+        :
       </div>
 
       <div className="keywordsText">{this.keyWordsRender(this.props.includeKeywords)}</div>
@@ -155,7 +172,7 @@ class SearchContent extends React.PureComponent {
 
             <div className="anyText">
               <FormattedMessage
-                id="components.searchBar.findWords.highlightText.following"
+                id="components.searchBar.findWords.highlightText.followingExclude"
                 values={{
                   choice: (
                     <FormattedMessage id="components.searchBar.findWords.highlightText.none">
@@ -163,6 +180,7 @@ class SearchContent extends React.PureComponent {
                     </FormattedMessage>),
                 }}
               />
+              :
             </div>
             <div className="keywordsText">{this.keyWordsRender(this.props.excludeKeywords)}</div>
           </React.Fragment>
@@ -191,12 +209,14 @@ class SearchContent extends React.PureComponent {
               }}
             />
           )
-      }
+        }
+        :
       </div>
       <div className="input">
         <input
           value={this.state.inputInclude}
           onChange={this.updateInputInclude}
+          onKeyDown={this.addIncludeWordOnEnter}
           className="searchBar"
           onFocus={() => this.props.changeIsExclude(false)}
         />
@@ -264,7 +284,7 @@ class SearchContent extends React.PureComponent {
         {this.highlightConditions()}
         <FormattedMessage id="components.searchBar.close">
           {text => (
-            <div className="close">
+            <div className="closeSearchBar">
               <button
                 {...handleInteraction(this.props.closeTab)}
                 type="button"

@@ -5,16 +5,32 @@ import SearchBar from '.';
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-const sampleSuggestedKeywords = {
-  safety: { conditions: 1200, category: ['administration & filings'] },
-  emissions: { conditions: 1000, category: ['environment'] },
-  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
-  construction: { conditions: 1000, category: ['environment'] },
-};
+const sampleSuggestedKeywords = [
+  {
+    name: 'safety',
+    category: ['administration & filings'],
+    conditionCount: 1201,
+  },
+  {
+    name: 'emissions',
+    category: ['environment'],
+    conditionCount: 1001,
+  },
+  {
+    name: 'habitat',
+    category: ['environment', 'oversight & safety'],
+    conditionCount: 801,
+  },
+  {
+    name: 'construction',
+    category: ['environment'],
+    conditionCount: 1001,
+  },
+];
 
 const includeKeywords = ['safety'];
 const excludeKeywords = ['exclude1'];
-const projectStatus = ['OPEN'];
+const projectStatus = ['IN_PROGRESS'];
 const yearRange = { start: 1970, end: 1980 };
 const categories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 

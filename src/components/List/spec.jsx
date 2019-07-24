@@ -5,6 +5,7 @@ import List from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
+const expectFuncs = expect.objectContaining(eventFuncs);
 
 describe('Components|List', () => {
   describe('without any items', () => {
@@ -73,12 +74,12 @@ describe('Components|List', () => {
 
     test('should call its onChange prop with what was clicked', () => {
       wrapper.find('.List-Item-Content').last().simulate('click', eventFuncs);
-      expect(spy).toHaveBeenLastCalledWith(2);
+      expect(spy).toHaveBeenLastCalledWith(2, expectFuncs);
     });
 
     test('should call its onChange prop with what enter was pressed on', () => {
       wrapper.find('.List-Item-Content').last().simulate('keypress', { key: 'Enter', ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(2);
+      expect(spy).toHaveBeenLastCalledWith(2, expectFuncs);
     });
   });
 
@@ -88,16 +89,6 @@ describe('Components|List', () => {
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={1} onChange={spy} />);
-    });
-
-    test('should recognize scrolling up', () => {
-      wrapper.find('.List').first().simulate('wheel', { deltaY: -1, ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(0);
-    });
-
-    test('should recognize scrolling down', () => {
-      wrapper.find('.List').first().simulate('wheel', { deltaY: 1, ...eventFuncs });
-      expect(spy).toHaveBeenLastCalledWith(2);
     });
 
     test('should not scroll if the delta is 0', () => {
@@ -193,11 +184,6 @@ describe('Components|List', () => {
       expect(spy).toHaveBeenLastCalledWith(2);
       expect(spy).toHaveBeenCalledTimes(1);
     });
-
-    test('should render the arrows with vertical icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('up');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('down');
-    });
   });
 
   describe('styling', () => {
@@ -225,11 +211,6 @@ describe('Components|List', () => {
 
     test('should render with the horizontal class', () => {
       expect(wrapper.hasClass('horizontal')).toBe(true);
-    });
-
-    test('should render the arrows with horizontal icons', () => {
-      expect(wrapper.find('.arrowPrevious').children().prop('icon')).toContain('left');
-      expect(wrapper.find('.arrowNext').children().prop('icon')).toContain('right');
     });
   });
 });

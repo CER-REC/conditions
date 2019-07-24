@@ -1,13 +1,17 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { storiesForView } from '../../../.storybook/utils';
+import { storiesForView, withStyles } from '../../../.storybook/utils';
+
 import ReadMe from './README.md';
-import { ViewThreeRaw } from '.';
-import { conditionCountsByYear, conditionCountsByCommodity, conditionData } from '../../mockData';
+import { ViewThreeUnconnected } from '.';
+import {
+  conditionCountsByYear,
+  conditionData,
+  displayOrder,
+} from '../../mockData';
 
 const props = {
-  conditionCountsByYear,
-  conditionCountsByCommodity,
+  years: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
   conditionDetails: {
     selectedProject: 'Project Name',
     data: conditionData,
@@ -16,6 +20,9 @@ const props = {
     bubble: 'XO',
     stream: 2010,
   },
+  displayOrder,
+  allConditionsPerYear: conditionCountsByYear,
+  companyName: 'Some Company Name',
 };
 
 const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((acc, next) => ({
@@ -24,6 +31,9 @@ const pendingActions = ['openIntermediatePopup', 'openProjectDetails'].reduce((a
 }), {});
 
 storiesForView('Containers|ViewThree', module, ReadMe)
+  .addDecorator(withStyles(`
+    .ViewThree { height: 90vh }
+  `))
   .addDecorator(withInteraction({
     actions: {
       setSelectedFeature: ({ selected }) => feature => ({
@@ -31,9 +41,6 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       }),
       setSelectedSubFeature: ({ selected }) => subFeature => ({
         selected: { ...selected, subFeature },
-      }),
-      setSelectedCondition: ({ selected }) => selectedCondition => ({
-        selected: { ...selected, condition: selectedCondition },
       }),
       expandDetailView: ({ detailViewExpanded }) => () => ({
         detailViewExpanded: !detailViewExpanded,
@@ -49,11 +56,10 @@ storiesForView('Containers|ViewThree', module, ReadMe)
       selected: {
         feature: 'theme',
         subFeature: '',
-        condition: { instrumentIndex: 0, itemIndex: 0 },
       },
       chartIndicatorPosition: { bubble: 'XO', stream: 2010 },
-      detailViewExpanded: false,
+      detailViewExpanded: true,
     },
   }))
-  .add('default', () => <ViewThreeRaw {...props} {...getInteractionProps()} />)
-  .add('layout only', () => <ViewThreeRaw {...props} {...getInteractionProps()} layoutOnly />);
+  .add('default', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} />)
+  .add('layout only', () => <ViewThreeUnconnected {...props} {...getInteractionProps()} layoutOnly />);

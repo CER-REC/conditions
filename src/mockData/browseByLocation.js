@@ -32,11 +32,11 @@ export default {
           phase: {
             ABANDONMENT: 2,
             DURING_CONSTRUCTION_PHASE: 7,
-            EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
-            INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+            EXPIRY_DATE_OF_REG_INSTR: 6,
+            INCLUDES_ALL_PHASES_OF_CONSTR: 12,
             NOT_CONSTRUCTION_RELATED: 33,
             POST_CONSTRUCTION_PHASE: 4,
-            PRIOR_TO_CONSTRUCTION_PHASE: 2,
+            PRIOR_TO_THE_CONSTRUCTION_PHASE: 2,
             UNSPECIFIED: 5,
           },
           status: {
@@ -96,11 +96,11 @@ export default {
           phase: {
             ABANDONMENT: 2,
             DURING_CONSTRUCTION_PHASE: 7,
-            EXPIRY_DATE_OF_REGULATORY_INSTRUMENT: 6,
-            INCLUDES_ALL_PHASES_OF_CONSTRUCTION: 12,
+            EXPIRY_DATE_OF_REG_INSTR: 6,
+            INCLUDES_ALL_PHASES_OF_CONSTR: 12,
             NOT_CONSTRUCTION_RELATED: 33,
             POST_CONSTRUCTION_PHASE: 4,
-            PRIOR_TO_CONSTRUCTION_PHASE: 2,
+            PRIOR_TO_THE_CONSTRUCTION_PHASE: 2,
             UNSPECIFIED: 5,
           },
           status: {

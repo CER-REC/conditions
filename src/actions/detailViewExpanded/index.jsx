@@ -7,7 +7,7 @@ export const toggleDetailView = () => ({
   payload: {},
 });
 
-const initialState = false;
+const initialState = true;
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {

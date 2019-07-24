@@ -1,26 +1,44 @@
-$square-size: 14px;
+@import '../../../styles/colors';
+
+$square-size: 12px;
 .FeaturesLegend .LegendItem {
-  display: table;
-  text-align: left;
   max-height: $square-size;
+
   margin: 0px;
   margin-top: 1px;
   padding: 0px;
+
   text-align: left;
+
   &.disabled {
     opacity: 0.3;
   }
+
   .color {
-    display: table-cell;
+    display: inline-block;
+
     height: $square-size;
     width: $square-size;
+
     content: '';
   }
+
   .text {
-    line-height: 14px;
-    height: 14px;
-    display: table-cell;
+    display: inline-block;
+
+    position: absolute;
+    left: $square-size;
+    height: $square-size;
+    width: calc(100% - #{$square-size});
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    margin-top: 1px;
+
     padding-left: 10px;
-    vertical-align: top;
+
+    font-size: 12px;
+    line-height: $square-size;
   }
 }

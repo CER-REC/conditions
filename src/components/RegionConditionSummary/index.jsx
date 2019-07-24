@@ -4,48 +4,57 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import BarContainer from '../BarContainer';
 import './styles.scss';
-import { features } from '../../constants';
+import {
+  displayOrder as displayOrderType,
+  aggregatedFeatureData,
+  featureTypes,
+} from '../../proptypes';
+import getKeyedAggregatedCount from '../../utilities/getKeyedAggregatedCount';
+import getFeatureColor from '../../utilities/getFeatureColor';
 
 const RegionConditionSummary = (props) => {
-  const items = props.featureData.map(k => ({
-    value: k.count,
-    fill: features[k.feature][k.description] || 'black',
+  const { displayOrder, selectedAggregatedCount, selectedFeature } = props;
+  if (!selectedAggregatedCount) { return null; }
+
+  const counts = getKeyedAggregatedCount(selectedAggregatedCount, selectedFeature);
+  const items = displayOrder[selectedFeature].map((name, i) => ({
+    value: counts[name] || 0,
+    fill: getFeatureColor(selectedFeature, name, i),
+    description: name,
+    feature: selectedFeature,
   }));
+
   return (
-    <div className={classNames(
-      'RegionConditionSummary',
-      props.className,
-    )}
-    >
+    <div className="RegionConditionSummary">
       <div className="ChartContainer">
-        <div className="BorderBottom" />
         <div className="RegionConditionSummaryTitle">
           <FormattedMessage id="components.regionConditionSummary.title" />
         </div>
-        <div className="RegionConditionChart">
+        <div className={classNames('RegionConditionChart', props.isHidden ? 'hidden' : '')}>
           <BarContainer items={items} vertical />
         </div>
       </div>
-      <svg className="YAxis" viewBox="0 0 100 200">
-        <text x="45" y="11" fill="rgb(161, 168, 167)">100</text>
-        <rect x="85" y="0" width="10" height="3" fill="#e4e4e4" />
-        <text x="58" y="110" fill="rgb(161, 168, 167)">0</text>
-        <rect x="85" y="50" width="10" height="3" fill="#e4e4e4" />
+      <div className="BorderBottom" />
+      <svg className="YAxis" viewBox="0 0 100 100">
+        <text x="45" y="18">100</text>
+        <rect x="85" y="8" width="10" height="3" />
+        <text x="58" y="100">0</text>
+        <rect x="85" y="50" width="10" height="3" />
       </svg>
     </div>
   );
 };
 
 RegionConditionSummary.propTypes = {
-  className: PropTypes.string,
-  featureData: PropTypes.arrayOf(PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    count: PropTypes.number.isRequired,
-  })).isRequired,
+  isHidden: PropTypes.bool,
+  selectedAggregatedCount: aggregatedFeatureData,
+  selectedFeature: featureTypes.isRequired,
+  displayOrder: displayOrderType.isRequired,
 };
 
 RegionConditionSummary.defaultProps = {
-  className: '',
+  isHidden: false,
+  selectedAggregatedCount: null,
 };
 
 export default RegionConditionSummary;

@@ -3,78 +3,122 @@
     "features": {
       "theme": "",
       "instrument": "",
+      "timing": "",
       "phase": "",
       "type": "",
-      "ftatus": "",
+      "status": "",
       "filing": ""
     },
     "trend": {
       "title": ""
     },
+    "linkText": {
+      "regDocs": "",
+      "here": "",
+      "lifecycle": "",
+      "applications": "",
+      "envProtection": "",
+      "conditions": "",
+      "map": "",
+      "hearings": "",
+      "lawsRegulations": "",
+      "applicationProcess": "",
+      "NEBLink": "",
+      "exploreHere": "",
+      "appProcess": "",
+      "explorableHere": ""
+    },
     "theme": {
-      "security": "",
-      "managementSystem": "",
-      "financial": "",
-      "damagePrevention": "",
-      "safetyManagement": "",
-      "socioEconomic": "",
-      "emergencyManagement": "",
-      "enforcement": "",
-      "sunsetClause": "",
-      "administrative": "",
-      "environmentalProtection": "",
-      "integrityManagement": "",
-      "standardCondition": ""
+      "ADMINISTRATIVE": "",
+      "DAMAGE_PREVENTION": "",
+      "EMERGENCY_MANAGEMENT": "",
+      "ENFORCEMENT": "",
+      "ENVIRONMENTAL_PROTECTION": "",
+      "FINANCIAL": "",
+      "INTEGRITY_MANAGEMENT": "",
+      "MANAGEMENT_SYSTEM": "",
+      "SAFETY_MANAGEMENT": "",
+      "SECURITY": "",
+      "SOCIO_ECONOMIC": "",
+      "STANDARD_CONDITION": "",
+      "SUNSET_CLAUSE": ""
     },
     "instrument": {
-      "category": {
-        "routing": "",
-        "construction": "",
-        "opening": "",
-        "abandonment": "",
-        "safety": "",
-        "tariffs": "",
-        "misc": ""
-      },
-      "type": {
-        "oil": "",
-        "gas": "",
-        "power": "",
-        "anyCommodityTypes": "",
-        "notSpecified": ""
-      }
+      "AO": "",
+      "EC": "",
+      "EP": "",
+      "EPE": "",
+      "FRO": "",
+      "GC": "",
+      "GPL": "",
+      "GPLO": "",
+      "GPMO": "",
+      "GPSO": "",
+      "MO": "",
+      "OC": "",
+      "OPLO": "",
+      "OPSO": "",
+      "SG": "",
+      "SO": "",
+      "TG": "",
+      "TO": "",
+      "XC": "",
+      "XG": "",
+      "XO": "",
+      "ZO": "",
+      "GH": "",
+      "OH": "",
+      "KAX": "",
+      "MHW": "",
+      "CPTC": "",
+      "XE": "",
+      "MH": "",
+      "OPSP": "",
+      "CO": "",
+      "OPL": "",
+      "OTHER": ""
+    },
+    "instrumentCommodityType": {
+      "OIL": "",
+      "GAS": "",
+      "POWER": "",
+      "ANY_COMMODITY_TYPES": "",
+      "NOT_SPECIFIED": ""
     },
     "phase": {
-      "includesAll": "",
-      "notConstruction": "",
-      "postConstruction": "",
-      "priorConstruction": "",
-      "expiryDate": "",
-      "duringConstruction": "",
-      "abandonment": "",
-      "unspecified": ""
+      "ABANDONMENT": "",
+      "DURING_CONSTRUCTION_PHASE": "",
+      "EXPIRY_DATE_OF_REG_INSTR": "",
+      "INCLUDES_ALL_PHASES_OF_CONSTR": "",
+      "NOT_CONSTRUCTION_RELATED": "",
+      "POST_CONSTRUCTION_PHASE": "",
+      "PRIOR_TO_THE_CONSTRUCTION_PHASE": "",
+      "UNSPECIFIED": ""
     },
     "type": {
-      "nonStandard": "",
-      "standard": ""
+      "NON_STANDARD": "",
+      "STANDARD": ""
     },
     "status": {
-      "inProgress": "",
-      "closed": "",
-      "noFilingReq": "",
-      "awaitingFiling": "",
-      "overdueFiling": "",
-      "underReview": "",
-      "reviewComplete": "",
-      "awaitingIR": "",
-      "readyBoard": "",
-      "furtherInfo": "",
-      "amended": "",
-      "satisfactory": ""
+      "AMENDED": "",
+      "AWAITING_FILING": "",
+      "AWAITING_IR_RESPONSE": "",
+      "CLOSED": "",
+      "FURTHER_INFORMATION_REQUIRED": "",
+      "IN_PROGRESS": "",
+      "NO_FILING_REQUIRED": "",
+      "OVERDUE_FILING": "",
+      "READY_FOR_BOARD_DECISION": "",
+      "REVIEW_COMPLETE": "",
+      "SATISFACTORY": "",
+      "UNDER_REVIEW": "",
+      "ALL_CONDITIONS_MET": "",
+      "DRAFT": "",
+      "EXPIRED": ""
     },
     "filing": {
-      "filingRequired": "",
-      "FilingNotRequired": ""
+      "REQUIRED": "",
+      "NOT_REQUIRED": ""
     },
     "legend": {
       "zeroConditions": "",
@@ -83,35 +127,175 @@
     }
   },
   "components": {
+    "conditionExplorer": {
+      "guide": {
+        "messages": {
+          "intro": "",
+          "0": "",
+          "1": "",
+          "2": "",
+          "click": ""
+        },
+        "overview": {
+          "title": "",
+          "overview": ""
+        },
+        "reason": {
+          "title": "",
+          "overview": ""
+        },
+        "compliance": {
+          "title": "",
+          "documentationPrompt": "",
+          "doc1": "",
+          "doc2": ""
+        },
+        "clickOutside": ""
+      }
+    },
+    "companyWheel": {
+      "wheelRay": {
+        "title": "Société sélectionnée"
+      },
+      "list": {
+        "company": "Société sélectionnée",
+        "location": "Région"
+      },
+      "pullToSpin": {
+        "pull": "Tirer pour",
+        "toSpin": "faire tourner"
+      }
+    },
     "conditionDetails": {
-      "selectedProject": "",
-      "instrumentNumber": "",
-      "location": "",
-      "issuanceDate": "",
-      "effectiveDate": "",
-      "sunsetDate": "",
-      "status": "",
-      "type": "",
-      "activity": "",
-      "keywords": "",
-      "text": "",
+      "selectedProject": "Projet sélectionné",
+      "selectedCondition": "Condition sélectionné",
+      "instrumentNumber": "Instrument n˚",
+      "location": "Lieu",
+      "issuanceDate": "Date de déliverance",
+      "effectiveDate": "Entrée en vigueur",
+      "sunsetDate": "Date de réexamen",
+      "status": "État del'instrument",
+      "type": "Type d'instrument",
+      "activity": "Activité liée à l'instrument",
+      "keywords": "Mots-clés",
+      "text": "Texte",
       "selectedConditionFeature": "",
       "more": "",
       "less": ""
     },
-    "featureMenu": {
-      "dropDownTitle": ""
+    "featureDescription": {
+      "theme": "",
+      "phase": "",
+      "phaseHere": "",
+      "status": "",
+      "type": "",
+      "filing": "",
+      "instrument": ""
     },
     "featureTypesDescription": {
+      "allThemes": "",
+      "otherInstruments": "",
       "theme": {
-        "security": "",
-        "managementSystem": "",
-        "financial": ""
+        "ADMINISTRATIVE": "",
+        "DAMAGE_PREVENTION": "",
+        "EMERGENCY_MANAGEMENT": "",
+        "ENFORCEMENT": "",
+        "ENVIRONMENTAL_PROTECTION": "",
+        "FINANCIAL": "",
+        "INTEGRITY_MANAGEMENT": "",
+        "MANAGEMENT_SYSTEM": "",
+        "SAFETY_MANAGEMENT": "",
+        "SECURITY": "",
+        "SOCIO_ECONOMIC": "",
+        "STANDARD_CONDITION": "",
+        "SUNSET_CLAUSE": ""
+      },
+      "phase": {
+        "ABANDONMENT": "",
+        "DURING_CONSTRUCTION_PHASE": "",
+        "EXPIRY_DATE_OF_REG_INSTR": "",
+        "INCLUDES_ALL_PHASES_OF_CONSTR": "",
+        "NOT_CONSTRUCTION_RELATED": "",
+        "POST_CONSTRUCTION_PHASE": "",
+        "PRIOR_TO_THE_CONSTRUCTION_PHASE": "",
+        "UNSPECIFIED": ""
+      },
+      "status": {
+        "AMENDED": "",
+        "AWAITING_FILING": "",
+        "AWAITING_IR_RESPONSE": "",
+        "CLOSED": "",
+        "FURTHER_INFORMATION_REQUIRED": "",
+        "IN_PROGRESS": "",
+        "NO_FILING_REQUIRED": "",
+        "OVERDUE_FILING": "",
+        "READY_FOR_BOARD_DECISION": "",
+        "REVIEW_COMPLETE": "",
+        "SATISFACTORY": "",
+        "UNDER_REVIEW": ""
+      },
+      "type": {
+        "STANDARD": "",
+        "NON_STANDARD": ""
+      },
+      "filing": {
+        "REQUIRED": "",
+        "NOT_REQUIRED": ""
       },
       "instrument": {
-        "routing": "",
-        "construction": ""
+        "AO": "",
+        "EC": "",
+        "EP": "",
+        "EPE": "",
+        "FRO": "",
+        "GC": "",
+        "GPL": "",
+        "GPLO": "",
+        "GPMO": "",
+        "GPSO": "",
+        "MO": "",
+        "OC": "",
+        "OPLO": "",
+        "OPSO": "",
+        "SG": "",
+        "SO": "",
+        "TG": "",
+        "TO": "",
+        "XC": "",
+        "XG": "",
+        "XO": "",
+        "ZO": "",
+        "GH": "",
+        "OH": "",
+        "KAX": "",
+        "MHW": "",
+        "CPTC": "",
+        "XE": "",
+        "MH": "",
+        "OPSP": "",
+        "CO": "",
+        "OPL": "",
+        "OTHER": "",
+        "other": ""
       }
+    },
+    "featureMenu": {
+      "dropDownTitle": "Élément"
+    },
+    "guide": {
+      "tutorial": {
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+      }
+    },
+    "guideTransport": {
+      "caption": ""
     },
     "instrumentsLegend": {
       "all": ""
@@ -120,83 +304,120 @@
       "close": "",
       "reset": "",
       "filter": {
-        "projectYear": "",
+        "projectYear": "Trier par année du projet",
         "projectStatus": {
-          "projectStatusText": "",
-          "OPEN": "",
-          "CLOSED": "",
-          "CANCELLED": ""
+          "projectStatusText": "Filtrer par état du projet",
+          "IN_PROGRESS": "En Cours",
+          "COMPLETED": "Terminé"
         }
       },
       "tab": {
-        "filter": "",
-        "find": ""
+        "filter": "Filtre",
+        "find": "Recherche de mots"
       },
       "suggestedKeywordsPrompt": {
-        "selectFrom": "",
-        "suggestedKeywords": ""
+        "selectFrom": "Sélectionner dans",
+        "suggestedKeywords": "les mots-clés proposés"
       },
       "highlightSummary": {
-        "showingAll": "",
-        "highlightConditions": ""
+        "showing": "{status} de {start} à {end} sont affichés.",
+        "includes": "Conditions renfermant",
+        "excludes": "",
+        "IN_PROGRESS": "Les projets en cours",
+        "COMPLETED": "Les projets terminés",
+        "ALL": "Tous les projets"
+
       },
       "findWords": {
-        "findWords": "",
-        "advancedSearch": "",
-        "basicSearch": "",
+        "findWords": "Recherche de mots",
+        "advancedSearch": "Recherche avancée",
+        "basicSearch": "Recherche simple",
         "options": {
           "any": "",
           "all": ""
         },
         "searchText": {
-          "basicInclude": "",
+          "basicInclude": "Rechercher TOUT mot dans",
           "advancedInclude": "",
-          "exclude": "",
-          "not": ""
+          "exclude": "Mais {not} inclure",
+          "not": "ne pas"
         },
         "highlightText": {
-          "highlightConditions" : "",
-          "following": "",
-          "any": "",
-          "none": "",
+          "highlightConditions": "Signaler les conditions contenant",
+          "followingInclude": " {choice} des mots suivants",
+          "followingExclude": " {choice} de ce qui suit",
+          "any": "un ou l'autre",
+          "none": "rien",
           "all": ""
         }
       },
       "suggestedKeywordsPopout": {
-        "suggestedKeywords": "",
-        "keywordsDescription": "",
+        "suggestedKeywords": "Mots-clés suggérés",
+        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés ici.",
         "keywordsHere": "",
-        "viewBy": "",
-        "sortBy": "",
-        "frequency": "",
-        "alphabetical": "",
+        "viewBy": "Afficher par",
+        "sortBy": "Tri",
+        "frequency": "Fréquence",
+        "alphabetical": "Ordre alphabétique",
         "none": "",
         "conditions": ""
       }
     },
-    "modal": {
-      "image": {
-        "title": "",
-        "save": "",
-        "contentTitle": "",
-        "contentDescription": "",
-        "linkText": ""
+    "mainInfoBar": {
+      "headings": {
+        "about": "La visualisation",
+        "contributor": "",
+        "methodology": "La méthodologie",
+        "download": "Téléchargement",
+        "downloadData": "",
+        "keywords": ""
       },
+      "content": {
+        "methodology": "",
+        "keywords": "",
+        "downloadData": "",
+        "about": "",
+        "contributor": "",
+        "here": ""
+      }
+    },
+    "modal": {
       "data": {
         "title": "",
         "description": ""
+      },
+      "company": {
+        "name": "Nom complet du projet",
+        "associated": "Sociétés associées au projet",
+        "meaningHeading": "Que faut-il comprendre quand plus d’une société est associée au projet?",
+        "meaningText": "",
+        "back": "Précédent"
+      },
+      "regdocs": {
+        "searchFor": "Recherche de l'instrument n˚ {instrument} dans {regdocs}",
+        "regdocs": "RegDocs...",
+        "found": "L’instrument a été trouvé. Cliquer pour ouvrir le document dans un autre onglet.",
+        "currentTab": "",
+        "newTab": "Ouvrir dans un autre onglet",
+        "cancel": "Annuler",
+        "whatIsHeading": "Qu'est-ce que RegRocs?",
+        "whatIsText": "RegDocs est une collection de documents publics qui ont été déposés au registre légal relativement à des audiences ou à d’autres instances réglementaires écrites. Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires."
       }
     },
     "projectLegend": {
-      "numberOfConditions": "",
-      "totalConditions": "",
-      "associated": ""
+      "numberOfConditions": "Nombre de conditions",
+      "totalConditions": "Nombre total de conditions",
+      "associated": "Sociétés associées"
+    },
+    "regionCompanies": {
+      "title": "Sociétés dans la région sélectionnée"
     },
     "regionConditionSummary": {
-      "title": ""
+      "title": "Nombre total de conditions pour la région sélectionnée"
     },
     "smallMultiplesLegend": {
       "all": {
+        "instrument": "",
         "theme": "",
         "phase": "",
         "type": "",
@@ -204,21 +425,50 @@
         "filing": ""
       }
     },
+    "streamGraph": {
+      "title": {
+        "instrument": "",
+        "theme": "",
+        "phase": "",
+        "status": "",
+        "type": "",
+        "filing": ""
+      },
+      "axis":{
+        "yAxis": "",
+        "xAxis": ""
+      }
+    },
     "trendButton": {
+      "description": "Tendances et\ndéfinitions"
+    },
+    "keywordExploreButton": {
       "description": ""
     },
-    "streamGraph": {
-      "xAxis": "",
-      "yAxis": "",
-      "title": ""
-    },
-    "wheel": {
-      "company": "",
-      "location": ""
+    "browseBy": {
+      "skip": "",
+      "return": "",
+      "blank": ""
     },
     "browseByBtn": {
       "projectsBy": "",
-      "conditionsBy": ""
+      "conditionsBy": "Conditions selon",
+      "company": "",
+      "location": "le lieu"
+    },
+    "dotLegend": {
+      "text": "Projets réglementés par l’Office assortis de conditions"
+    },
+    "totalConditionsLabel" : {
+      "total": "",
+      "forProject": ""
+    },
+    "errorBoundary":{
+      "errorMessage": "",
+      "restoreLinkText": "",
+      "restoreMessage": "",
+      "resetLinkText": "",
+      "resetMessage": ""
     }
   },
   "views": {
@@ -226,10 +476,10 @@
       "header": {
         "title": "",
         "subtitle": ""
-      },
-      "footer": {
-        "skip": ""
       }
+    },
+    "view3": {
+      "company": ""
     }
   }
 }

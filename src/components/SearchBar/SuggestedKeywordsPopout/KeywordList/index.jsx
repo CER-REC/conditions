@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import Icon from '../../../Icon/index';
 import handleInteraction from '../../../../utilities/handleInteraction';
 import BarContainer from '../../../BarContainer';
-import { suggestedKeywordsArrayType } from '../../../../proptypes';
 import './styles.scss';
 
 library.add(faMinusCircle, faPlusCircle);
@@ -18,7 +17,11 @@ class KeywordList extends React.PureComponent {
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     setIncluded: PropTypes.func.isRequired,
     setExcluded: PropTypes.func.isRequired,
-    keywords: suggestedKeywordsArrayType.isRequired,
+    keywords: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      category: PropTypes.arrayOf(PropTypes.string),
+      conditionCount: PropTypes.number,
+    })).isRequired,
     isExclude: PropTypes.bool.isRequired,
   }
 
@@ -36,7 +39,7 @@ class KeywordList extends React.PureComponent {
   };
 
   findMaxConditions = () => (
-    Math.max(...this.props.keywords.map(([, { conditions }]) => conditions))
+    Math.max(...this.props.keywords.map(({ conditionCount }) => conditionCount))
   );
 
   render() {
@@ -45,25 +48,26 @@ class KeywordList extends React.PureComponent {
       <div className="KeywordList">
         <ul>
           {
-            (keywords).map(([key, value]) => {
-              const [icon, iconClass, selectedColor, textStyle] = (includeKeywords.includes(key)
+            (keywords).map((value) => {
+              const key = value.name;
+              const [icon, iconClass, selectedColor] = (includeKeywords.includes(key)
                 || excludeKeywords.includes(key))
-                ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)', 'selectedText']
-                : ['plus-circle', 'regularIcon', 'rgb(96,96,96)', 'regularText'];
+                ? ['minus-circle', 'selectedIcon', 'rgb(238,97,41)']
+                : ['plus-circle', 'regularIcon', 'rgb(96,96,96)'];
 
               const maxConditions = this.findMaxConditions();
 
-              const conditions = (value.conditions / maxConditions);
+              const conditions = (value.conditionCount / maxConditions);
               const remainingSpace = (1 - conditions);
               return (
-                <li key={`${key} ${value.conditions}`}>
+                <li key={`${key} ${value.conditionCount}`}>
                   <div
                     className={classNames('icon', { disabled: (includeKeywords.length === 6 || excludeKeywords.length === 6) })}
                     {...handleInteraction(this.keywordOnClick, key)}
                   >
                     <Icon className={iconClass} icon={icon} />
                   </div>
-                  <div className={`keywordCategory ${textStyle}`}>{key} </div>
+                  <div className="keywordCategory" title={key}>{key} </div>
                   <BarContainer
                     items={[{ value: conditions, fill: selectedColor },
                       { value: remainingSpace, fill: 'transparent' }]}
@@ -72,7 +76,7 @@ class KeywordList extends React.PureComponent {
                   <div className="conditionsText">
                     <FormattedMessage
                       id="components.searchBar.suggestedKeywordsPopout.conditions"
-                      values={{ conditions: value.conditions }}
+                      values={{ conditions: value.conditionCount }}
                     />
                   </div>
                 </li>

@@ -1,30 +1,49 @@
+@import '../../../styles/colors.scss';
 .ConditionList {
   vertical-align: top;
   max-width: 160px;
-  padding-top: 20px;
+  line-height: 4px;
+  height: 100%;
 
   .barMarker, .BarContainer {
     display: inline-block;
-    height: 6px;
+    height: 4px;
+    margin-bottom: 1px;
+  }
+
+  h4 {
+    line-height: 20px;
   }
 
   .barMarker {
-    width: 10px;
-    &.marked { background-color: red; }
+    width: 4px;
+    border-radius: 50%;
+    margin-right: 5px;
+
+    &.marked { background-color: $SearchKeyword; }
+  }
+
+  .List {
+    height: 100%;
+    overflow-y: auto;
+    ul {
+      padding-top: 20px;
+      padding-left: 5px;
+      height: 100%;
+    }
   }
 
   .BarContainer {
-
     &.binnedValue-1 {
-      width: calc(33% - 10px);
+      width: calc(0.333 * (100% - 15px));
     }
-
+    
     &.binnedValue-2 {
-      width: calc(67% - 10px);
+      width: calc(0.667 * (100% - 15px));
     }
-
+    
     &.binnedValue-3 {
-      width: calc(100% - 10px);
+      width: calc(100% - 15px);
     }
   }
 }

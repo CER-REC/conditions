@@ -1,21 +1,44 @@
+@import "../../styles/grid";
+
 .FeatureFlag {
   position: relative;
-  width: 50px;
-  display: flex;
+
+  width: 20px;
+  height: 10px;
+
+  // Some user agents (and/or Storybook) leave 'text-align: center' on <div>
+  text-align: left;
 
   .Bar {
-    height: 14px;
+    position: relative;
+
+    height: 10px;
     display: inline-block;
+
+    &.withTip::after {
+      content: '';
+      display: inline-block;
+
+      position: absolute;
+      left: 100%;
+
+      width: 0;
+      height: 0;
+
+      border-width: 5px;
+      border-color: transparent;
+      border-left-color: inherit;
+      border-style: solid;
+    }
   }
 
-  .FlagTip {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-width: 7px;
-    border-color: transparent;
-    border-style: solid;
-    display: inline-block;
+  @include breakpoint("large") {
+    height: 12px;
+
+    .Bar {
+      height: 12px;
+      &.withTip::before { border-width: 5px; }
+      &.withTip::after { border-width: 6px; }
+    }
   }
 }

@@ -1,4 +1,5 @@
 @import '../../styles/legend.scss';
+@import '../../styles/colors.scss';
 
 %faded {
   opacity: 0.2;
@@ -11,5 +12,22 @@
     .CircleContainer {
       @extend %faded;
     }
+  }
+
+  .LegendItem {
+    height: 1.6em;
+  }
+
+  .List .List-Item.selected {
+
+    margin: 0.3em 0;
+
+    .LegendItem {
+    outline: 1px solid $LinksTextButtons;
+    margin: 0 2px;
+    border: none;
+    padding: none;
+  }
+
   }
 }

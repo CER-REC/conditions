@@ -3,97 +3,105 @@ import { shallow } from 'enzyme';
 import ProjectMenu from '.';
 import ProjectChart from './ProjectChart';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { loadingProjectsData, displayOrder } from '../../mockData';
 
 const testData = [
   {
     id: 100,
-    name: { en: 'name-100', fr: 'nameFr-100' },
-    shortName: { en: 'shortName-100', fr: 'shortNameFr-100' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+    name: 'name-100',
+    shortName: 'shortName-100',
+    numberOfConditions: 10,
+    aggregatedCount: {
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
     id: 101,
-    name: { en: 'name-101', fr: 'nameFr-101' },
-    shortName: { en: 'shortName-101', fr: 'shortNameFr-101' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+    name: 'name-101',
+    shortName: 'shortName-101',
+    numberOfConditions: 10,
+    aggregatedCount: {
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
     id: 102,
-    name: { en: 'name-102', fr: 'nameFr-102' },
-    shortName: { en: 'shortName-102', fr: 'shortNameFr-102' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+    name: 'name-102',
+    shortName: 'shortName-102',
+    numberOfConditions: 10,
+    aggregatedCount: {
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
     id: 103,
-    name: { en: 'name-103', fr: 'nameFr-103' },
-    shortName: { en: 'shortName-103', fr: 'shortNameFr-103' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+    name: 'name-103',
+    shortName: 'shortName-103',
+    numberOfConditions: 10,
+    aggregatedCount: {
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
     id: 104,
-    name: { en: 'name-104', fr: 'nameFr-104' },
-    shortName: { en: 'shortName-104', fr: 'shortNameFr-104' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+    name: 'name-104',
+    shortName: 'shortName-104',
+    numberOfConditions: 10,
+    aggregatedCount: {
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
     id: 105,
-    name: { en: 'name-105', fr: 'nameFr-105' },
-    shortName: { en: 'shortName-105', fr: 'shortNameFr-105' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+    name: 'name-105',
+    shortName: 'shortName-105',
+    numberOfConditions: 10,
+    aggregatedCount: {
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
   {
     id: 106,
-    name: { en: 'name-106', fr: 'nameFr-106' },
-    shortName: { en: 'shortName-106', fr: 'shortNameFr-106' },
-    data: {
-      theme: { ADMINISTRATIVE: 10, DAMAGE_PREVENTION: 0 },
-      instrument: {},
-      phase: {},
-      status: {},
-      type: {},
-      filing: {},
+    name: 'name-106',
+    shortName: 'shortName-106',
+    numberOfConditions: 10,
+    aggregatedCount: {
+      theme: [{ name: 'ADMINISTRATIVE', count: 10 }, { name: 'DAMAGE_PREVENTION', count: 0 }],
+      instrument: [],
+      phase: [],
+      status: [],
+      type: [],
+      filing: [],
     },
   },
 ];
@@ -107,6 +115,7 @@ describe('Components|ProjectMenu', () => {
         selectedProjectID={105}
         onChange={() => {}}
         selectedFeature="theme"
+        displayOrder={displayOrder}
       />);
     });
 
@@ -116,6 +125,26 @@ describe('Components|ProjectMenu', () => {
       const list = wrapper.find('List');
       expect(list).toHaveLength(1);
       expect(Array.isArray(list.props().items)).toBe(true);
+    });
+  });
+
+  describe('with loading data', () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<ProjectMenu
+        projectsData={Array(5).fill(loadingProjectsData).map((v, id) => ({ ...v, id }))}
+        selectedProjectID={0}
+        onChange={() => {}}
+        selectedFeature="theme"
+        displayOrder={displayOrder}
+        loading
+      />);
+    });
+
+    test('should add a loading class onto ProjectMenu', () => {
+      const list = wrapper.find('List');
+      expect(list).toHaveLength(1);
+      expect(wrapper.hasClass('loading')).toBe(true);
     });
   });
 
@@ -183,6 +212,7 @@ describe('Components|ProjectMenu', () => {
               selectedProjectID={testData[menuIndex].id}
               onChange={onChange}
               selectedFeature="theme"
+              displayOrder={displayOrder}
             />,
           );
         });

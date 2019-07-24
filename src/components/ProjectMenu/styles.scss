@@ -1,19 +1,93 @@
 @import '../../styles/colors.scss';
 
+
+@keyframes microLoading {
+  0% {
+    background-color: $LightGray;
+    width: 0;
+  }
+  50% {
+    background-color: $Gray160;
+    width: 16px;
+  }
+  100% {
+    background-color: $LightGray;
+    width: 0;
+  }
+}
+
 .ProjectMenu {
   position: relative;
-  padding-top: 12px; // Account for list lifting selected arrows upwards
+  margin-top: 12px; // Account for list lifting selected arrows upwards
+  height: calc(100% - 12px);
+
+  &.loading {
+    .List {
+      .CircleContainer.arrowNext{
+        background-color: $White;
+        border-color: $Gray160;
+        .Icon {
+          background-color: $White;
+          content: '';
+          color: $White;
+        }
+      }
+    }
+    @for $li from 0 through 5 {
+      .List-Item:nth-child(#{$li}) {
+        .ConditionPipe {
+          .ConditionCount {
+            background-color: $Gray160;
+            border-color: $Gray160;
+          }
+        }
+        .FlagWrapper {
+          .FeatureFlag {
+            .FlagTip {
+              display: none;
+            }
+            $waves: 10;
+            $divisor: 5;
+
+            .Bar {
+              animation: microLoading #{$waves / $divisor}s infinite;
+            }
+
+            @for $i from 0 through $waves - 1 {
+              &:nth-child(#{$waves}n+#{$i}) {
+                .Bar { animation-delay: #{1 + $i / $divisor - $li / 3}s; }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   > .List {
-    display: inline-block;
     width: 100%;
+    height: 100%;
     padding: 0 15%;
+
+    ul {
+      height: 100%;
+    }
 
     ul .List-Item {
       width: 15%;
+      height: 100%;
       display: inline-block;
       vertical-align: top;
+
+      .CircleContainer {
+        z-index: 1;
+      }
+
       &.selected { width: 40%; }
+
+      .List-Item-Content {
+        height: 100%;
+      }
     }
   }
   &.paddingBefore1 > .List > ul > li:first-child { margin-left: 15%; }
@@ -23,10 +97,30 @@
 
   > .pipe {
     position: absolute;
-    top: 12px;
-    left: 0;
+    top: 0;
+    left: 14px;
     right: 0;
-    height: 30px;
-    background: $LightGreyBackground;
+    height: 24px;
+    background: $LightGray;
+    // z-index: 0;
+  }
+
+  .sedimentation {
+    position: absolute;
+
+    top: 0;
+    height: 24px;
+
+    background: $Gray160;
+
+    // z-index: 1;
+
+    &.left {
+      left: 12px;
+    }
+
+    &.right {
+      right: 0px;
+    }
   }
 }

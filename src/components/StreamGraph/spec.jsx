@@ -1,15 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import StreamGraph, { roundDateLabel } from '.';
-import { conditionCountsByYear } from '../../mockData';
+import { shallowWithIntl } from '../../tests/utilities';
+import StreamGraph from '.';
+import { conditionCountsByYear, displayOrder } from '../../mockData';
 
 describe('Components|StreamGraph', () => {
   describe('with default props', () => {
     let wrapper;
     let handleOnChange;
     beforeEach(() => {
-      wrapper = shallow(<StreamGraph
-        projectData={conditionCountsByYear.counts}
+      wrapper = shallowWithIntl(<StreamGraph
+        allConditionsPerYear={conditionCountsByYear}
+        displayOrder={displayOrder}
         handleOnChange={handleOnChange}
         feature="theme"
         subFeature=""
@@ -31,10 +32,5 @@ describe('Components|StreamGraph', () => {
     test('should render the x and y axis', () => {
       expect(wrapper.find('VictoryAxis')).toHaveLength(2);
     });
-
-    test('should round the date label', () => {
-      expect(roundDateLabel(2018.1)).toBe(2018);
-    });
   });
 });
-

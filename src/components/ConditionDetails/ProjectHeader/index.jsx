@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 
 import handleInteraction from '../../../utilities/handleInteraction';
@@ -30,26 +31,43 @@ const moreButton = (
 
 class ProjectHeader extends React.PureComponent {
   render = () => (
-    <div className="ProjectHeader">
-      <FormattedMessage id="components.conditionDetails.selectedProject" tagName="h1" />
+    <div className={classNames('ProjectHeader', { location: this.props.browseBy === 'location' })}>
+      {this.props.browseBy === 'company'
+        ? (
+          <React.Fragment>
+            <FormattedMessage id="components.conditionDetails.selectedProject">
+              {text => <h1>{text}:</h1>}
+            </FormattedMessage>
+            { this.props.selectedProject !== ''
+              ? (
+                <button
+                  type="button"
+                  className="openProject"
+                  {...handleInteraction(this.props.openProjectDetails)}
+                >
+                  <h2 title={this.props.selectedProject}>
+                    <span className="projectName">{this.props.selectedProject}</span>
+                    <span className="asterisk">*</span>
+                  </h2>
+                </button>
+              )
+              : null
+            }
+          </React.Fragment>
+        )
+        : (
+          <FormattedMessage id="components.conditionDetails.selectedCondition">
+            {text => <h1>{text}:</h1>}
+          </FormattedMessage>
+        )
+      }
       <button
         type="button"
-        className="openProject"
-        {...handleInteraction(this.props.openProjectDetails, this.props.selectedProject)}
+        className="toggleExpand"
+        {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
       >
-        <h2>{this.props.selectedProject}<span className="asterisk">*</span></h2>
+        {this.props.expanded ? lessButton : moreButton}
       </button>
-      {this.props.isExpandable
-        ? (
-          <button
-            type="button"
-            className="toggleExpand"
-            {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
-          >
-            {this.props.expanded ? lessButton : moreButton}
-          </button>
-        ) : null
-      }
     </div>
   )
 }
@@ -58,13 +76,15 @@ ProjectHeader.propTypes = {
   isExpandable: PropTypes.bool,
   expanded: PropTypes.bool,
   selectedProject: PropTypes.string.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
   toggleExpanded: PropTypes.func.isRequired,
+  browseBy: PropTypes.oneOf(['company', 'location']),
+  openProjectDetails: PropTypes.func.isRequired,
 };
 
 ProjectHeader.defaultProps = {
   isExpandable: false,
   expanded: false,
+  browseBy: 'company',
 };
 
 export default ProjectHeader;

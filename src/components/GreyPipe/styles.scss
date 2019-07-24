@@ -1,0 +1,184 @@
+@import '../../styles/colors';
+
+$curveRadius: 48px;
+
+.GreyPipe {
+  position: absolute;
+  width: $curveRadius;
+
+  pointer-events: none;
+
+  .top, .bottom, .bottomSvg {
+    position: absolute;
+
+    width: 100%;
+    height: $curveRadius;
+
+    background: $LightGray;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+
+      width: 50%;
+      height: calc(#{$curveRadius} / 2);
+
+      background: $White;
+    }
+
+  }
+
+  .vertical {
+    position: absolute;
+    width: calc(#{$curveRadius} / 2);
+    background: $LightGray;
+
+    .CountBubble {
+      position: absolute;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      $bubbleSpacing: 32px;
+      $bubbleBottom: -10px;
+
+      &:nth-of-type(1) {
+        bottom: $bubbleBottom + 2 * $bubbleSpacing;
+      }
+
+      &:nth-of-type(2) {
+        bottom: $bubbleBottom + $bubbleSpacing;
+      }
+
+      &:nth-of-type(3) {
+        bottom: $bubbleBottom;
+      }
+    }
+  }
+
+  .topConnection {
+    position: absolute;
+    background: $LightGray;
+  }
+
+  .bottomConnection {
+    position: absolute;
+    background: $LightGray;
+  }
+
+  &.company {
+    top: 12px;
+    right: 0;
+    bottom: calc(50% - 8px);
+
+    .vertical {
+      top: $curveRadius;
+      bottom: $curveRadius;
+      right: 0;
+    }
+    .top {
+      right: -50%;
+      top: 0;
+
+      border-top-left-radius: 100%;
+
+      &:before {
+        right: 0;
+        bottom: 0;
+        border-top-left-radius: 100%;
+      }
+    }
+
+    .bottomSvg {
+      bottom: 0;
+      right: 0;
+      background: none;
+      path {
+        fill: $LightGray;
+      }
+    }
+    .bottom {
+      visibility: hidden;
+    }
+  }
+
+  &.location {
+    top: calc(50% - 16px);
+    right: calc(8px - #{$curveRadius});
+
+    // (Height of ProjectMenu + 1 grid unit for the gap) / Wheel height = 31.5%
+    bottom: calc(31.5% - 24px);
+
+    .top {
+      right: 0;
+      top: 0;
+
+      border-top-right-radius: 0;
+
+      &:before {
+        left: 0;
+        bottom: 0;
+
+        border-top-right-radius: 100%;
+      }
+    }
+
+    .bottom {
+      left: 50%;
+      bottom: 0;
+      border-bottom-left-radius: 100%;
+
+      &:before {
+        right: 0;
+        top: 0;
+        border-bottom-left-radius: 100%;
+      }
+    }
+
+    .vertical {
+      top: $curveRadius;
+      bottom: $curveRadius;
+      right: 0;
+    }
+
+    .topConnection {
+      top: 0;
+      right: 100%;
+
+      width: 38px;
+      height: 24px;
+    }
+
+    .bottomConnection {
+      bottom: 0;
+      left: calc(100% + (#{$curveRadius} / 2));
+
+      width: 19px;
+      height: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .GreyPipe {
+
+    &.company {
+      .top {
+        border-top-left-radius: 90%;
+
+        &:before {
+          border-top-left-radius: 90%;
+        }
+      }
+      .bottom {
+        border-bottom-right-radius: 90%;
+
+        &:before {
+          border-bottom-right-radius: 90%;
+        }
+      }
+    }
+  }
+}

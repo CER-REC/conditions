@@ -5,24 +5,45 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import Wheel from '.';
 import ReadMe from './README.md';
+import {
+  companyWheelData as companyData,
+  relevantProjectLookup,
+  filteredProjectLookup,
+} from './randomDataSample';
+import { locationData, displayOrder } from '../../mockData';
 
-import { companyWheelData as companyData, locationData } from './randomDataSample';
-
+const noop = () => {};
+const processedLocationData = locationData
+  .sort((a, b) => (a.province < b.province ? -1 : 1));
 storiesForComponent('Components|Wheel', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(
     withInteraction({
-      state: { selectedRay: '' },
+      state: { selectedRay: 0 },
       actions: {
         selectRay: () => selectedRay => ({ selectedRay }),
       },
     }),
   )
   .add('default', () => (
-    <div>
-      <Wheel {...getInteractionProps()} wheelType="company" wheelData={companyData} />
-    </div>
+    <Wheel
+      {...getInteractionProps()}
+      wheelType="company"
+      wheelData={companyData}
+      relevantProjectLookup={relevantProjectLookup}
+      filteredProjectLookup={filteredProjectLookup}
+      wheelMotionTrigger={noop}
+      displayOrder={displayOrder}
+      selectedFeature="theme"
+    />
   ))
   .add('location props', () => (
-    <Wheel {...getInteractionProps()} wheelType="location" wheelData={locationData} />
+    <Wheel
+      {...getInteractionProps()}
+      wheelType="location"
+      wheelData={processedLocationData}
+      wheelMotionTrigger={noop}
+      displayOrder={displayOrder}
+      selectedFeature="theme"
+    />
   ));

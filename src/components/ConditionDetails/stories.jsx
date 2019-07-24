@@ -6,12 +6,6 @@ import ReadMe from './README.md';
 
 import { conditionData } from '../../mockData';
 
-const updateSelectedItem = () => ({ instrumentIndex, itemIndex }) => (
-  { selectedItem: { instrumentIndex, itemIndex } }
-);
-
-const toggleExpanded = () => expand => ({ expanded: expand });
-
 const defaultProps = {
   data: conditionData,
   selectedProject: 'Keystone XL',
@@ -23,26 +17,26 @@ const defaultProps = {
 };
 
 storiesForComponent('Components|ConditionDetails', module, ReadMe)
-  .addDecorator(withInteraction({ actions: ['updateSelectedItem', 'toggleExpanded'] }))
+  .addDecorator(withInteraction({
+    actions: {
+      updateSelectedCondition: () => () => ({}),
+      updateSelectedInstrument: () => () => ({}),
+      toggleExpanded: () => expand => ({ expanded: expand }),
+    },
+  }))
   .add('default', () => (
     <ConditionDetails
       {...defaultProps}
       {...getInteractionProps()}
     />
-  ), {
-    interaction: {
-      state: {
-        selectedItem: {
-          instrumentIndex: 1,
-          itemIndex: -1,
-        },
-      },
-      actions: {
-        toggleExpanded,
-        updateSelectedItem,
-      },
-    },
-  })
+  ))
+  .add('location', () => (
+    <ConditionDetails
+      {...defaultProps}
+      browseBy="location"
+      {...getInteractionProps()}
+    />
+  ))
   .add('expandable', () => (
     <div style={{ width: 800, border: '1px dashed magenta' }}>
       <ConditionDetails
@@ -52,17 +46,17 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
         {...getInteractionProps()}
       />
     </div>
-  ), {
-    interaction: {
-      state: {
-        selectedItem: {
-          instrumentIndex: 1,
-          itemIndex: 1,
-        },
-      },
-      actions: {
-        toggleExpanded,
-        updateSelectedItem,
-      },
-    },
-  });
+  ))
+  .add('no data loaded', () => (
+    <div style={{ width: 800, border: '1px dashed magenta' }}>
+      <ConditionDetails
+        data={[]}
+        selectedProject=""
+        searchKeywords={{ include: [], exclude: [] }}
+        browseBy="location"
+        openProjectDetails={project => alert(`Project details for: ${project}`)}
+        openIntermediatePopup={instrumentNumber => alert(`Intermediate popup for: ${instrumentNumber}`)}
+        {...getInteractionProps()}
+      />
+    </div>
+  ));

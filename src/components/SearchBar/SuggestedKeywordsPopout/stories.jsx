@@ -4,11 +4,20 @@ import { storiesForComponent } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
 import SuggestedKeywordsPopout from '.';
 import ReadMe from './README.md';
+import { categories } from '../../../mockData';
 
-const keywords = {
-  deer: { conditions: 1200, category: ['wildlife & habitat'] },
-  alberta: { conditions: 400, category: ['administration & filings'] },
-};
+const keywords = [
+  {
+    name: 'deer',
+    category: ['wildlife & habitat'],
+    conditionCount: 1300,
+  },
+  {
+    name: 'alberta',
+    category: ['administration & filings'],
+    conditionCount: 500,
+  },
+];
 
 storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -17,7 +26,7 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
     <SuggestedKeywordsPopout
       isExclude={false}
       suggestedKeywords={keywords}
-      categories={['all', 'wildlife & habitat', 'environment', 'engineering & structures', 'administration & filings']}
+      categories={categories.availableCategories}
       {...getInteractionProps()}
     />
   ), {

@@ -4,19 +4,18 @@ import { features } from './constants';
 
 export const featureTypes = PropTypes.oneOf(Object.keys(features));
 
-export const conditionsPerYear = PropTypes.shape({
-  feature: featureTypes.isRequired,
-  subFeature: PropTypes.string.isRequired,
-  years: PropTypes.objectOf(PropTypes.number).isRequired,
-});
+const aggregatedFeatureEntry = PropTypes.arrayOf(PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+})).isRequired;
 
-export const featureData = PropTypes.shape({
-  instrument: PropTypes.objectOf(PropTypes.number).isRequired,
-  theme: PropTypes.objectOf(PropTypes.number).isRequired,
-  phase: PropTypes.objectOf(PropTypes.number).isRequired,
-  status: PropTypes.objectOf(PropTypes.number).isRequired,
-  type: PropTypes.objectOf(PropTypes.number).isRequired,
-  filing: PropTypes.objectOf(PropTypes.number).isRequired,
+export const aggregatedFeatureData = PropTypes.shape({
+  instrument: aggregatedFeatureEntry,
+  theme: aggregatedFeatureEntry,
+  phase: aggregatedFeatureEntry,
+  status: aggregatedFeatureEntry,
+  type: aggregatedFeatureEntry,
+  filing: aggregatedFeatureEntry,
 });
 
 export const company = PropTypes.shape({
@@ -25,46 +24,48 @@ export const company = PropTypes.shape({
   data: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
-export const location = PropTypes.shape({
-  primary: PropTypes.string.isRequired,
-  secondary: PropTypes.string.isRequired,
-  data: featureData.isRequired,
-});
-
 export const project = PropTypes.shape({
   id: PropTypes.number.isRequired,
-  name: PropTypes.shape({
-    en: PropTypes.string.isRequired,
-    fr: PropTypes.string.isRequired,
-  }).isRequired,
-  shortName: PropTypes.shape({
-    en: PropTypes.string.isRequired,
-    fr: PropTypes.string.isRequired,
-  }).isRequired,
-  data: featureData.isRequired,
+  name: PropTypes.string.isRequired,
+  shortName: PropTypes.string.isRequired,
+  numberOfConditions: PropTypes.number.isRequired,
+  aggregatedCount: aggregatedFeatureData.isRequired,
 });
 
-export const allConditionsPerYear = PropTypes.arrayOf(conditionsPerYear);
-
-export const ConditionsByCommodityOrInstrument = PropTypes.shape({
-  prefix: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
-  commodity: PropTypes.arrayOf(PropTypes.string).isRequired,
+export const conditionsPerYear = PropTypes.shape({
+  year: PropTypes.number.isRequired,
+  aggregatedCount: aggregatedFeatureData.isRequired,
 });
 
-export const allConditionsByCommodityOrInstrument = PropTypes.arrayOf(
-  ConditionsByCommodityOrInstrument,
-);
+export const allConditionsPerYearType = PropTypes.shape({
+  minYear: PropTypes.number.isRequired,
+  maxYear: PropTypes.number.isRequired,
+  years: PropTypes.arrayOf(conditionsPerYear).isRequired,
+});
+
+export const displayOrder = PropTypes.shape({
+  filing: PropTypes.arrayOf(PropTypes.string).isRequired,
+  phase: PropTypes.arrayOf(PropTypes.string).isRequired,
+  status: PropTypes.arrayOf(PropTypes.string).isRequired,
+  type: PropTypes.arrayOf(PropTypes.string).isRequired,
+  theme: PropTypes.arrayOf(PropTypes.string).isRequired,
+  instrument: PropTypes.arrayOf(PropTypes.string).isRequired,
+  instrumentOther: PropTypes.arrayOf(PropTypes.string).isRequired,
+});
+
+export const allConfigurationDataType = PropTypes.shape({
+  displayOrder: displayOrder.isRequired,
+  instrumentYearRange: PropTypes.shape({
+    max: PropTypes.number.isRequired,
+    min: PropTypes.number.isRequired,
+  }).isRequired,
+  lastUpdated: PropTypes.string.isRequired,
+});
 
 export const browseByType = PropTypes.oneOf(['company', 'location']);
 
 export const allCompanyData = PropTypes.arrayOf(
   company,
-);
-
-export const allLocationData = PropTypes.arrayOf(
-  location,
 );
 
 export const yearRangeType = PropTypes.shape({
@@ -85,8 +86,7 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   effectiveDate: PropTypes.string.isRequired,
   sunsetDate: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  location: PropTypes.array.isRequired,
   activity: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.shape({
     binnedValue: PropTypes.number.isRequired,
@@ -94,8 +94,7 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     text: PropTypes.string.isRequired,
     details: PropTypes.shape({
-      theme: PropTypes.string.isRequired,
-      instrument: PropTypes.string.isRequired,
+      theme: PropTypes.array.isRequired,
       phase: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
@@ -104,6 +103,65 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   })).isRequired,
 }));
 
+export const viewTwo = {
+  layoutOnly: PropTypes.bool,
+  browseBy: browseByType.isRequired,
+  wheelData: PropTypes.arrayOf(PropTypes.any),
+  regionCompanyData: PropTypes.shape({
+    companies: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })),
+    selectedConditionCompanies: PropTypes.arrayOf(
+      PropTypes.number,
+    ),
+  }),
+  selectedAggregatedCount: aggregatedFeatureData,
+  selected: PropTypes.shape({
+    company: PropTypes.number,
+    region: PropTypes.number,
+    project: PropTypes.number,
+    feature: featureTypes.isRequired,
+  }).isRequired,
+  projectMenuLoading: PropTypes.bool,
+  projectsData: PropTypes.arrayOf(project),
+  projectYear: yearRangeType.isRequired,
+  included: PropTypes.arrayOf(PropTypes.string).isRequired,
+  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
+  projectStatus: PropTypes.arrayOf(PropTypes.string).isRequired,
+  findAny: PropTypes.bool.isRequired,
+  setFindAny: PropTypes.func.isRequired,
+  setProjectYear: PropTypes.func.isRequired,
+  setProjectStatus: PropTypes.func.isRequired,
+  setIncluded: PropTypes.func.isRequired,
+  setExcluded: PropTypes.func.isRequired,
+  setSelectedFeature: PropTypes.func.isRequired,
+  setSelectedProject: PropTypes.func.isRequired,
+  setSelectedCompany: PropTypes.func.isRequired,
+  setSelectedRegion: PropTypes.func.isRequired,
+  jumpToView1: PropTypes.func.isRequired,
+  jumpToView3: PropTypes.func.isRequired,
+  projectYears: PropTypes.shape({
+    start: PropTypes.number,
+    end: PropTypes.number,
+  }),
+  searchResults: PropTypes.shape({
+    companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    regionIdLookup: PropTypes.arrayOf(PropTypes.bool),
+  }),
+  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  displayOrder: displayOrder.isRequired,
+  availableCategories: PropTypes.arrayOf(PropTypes.string),
+  suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    category: PropTypes.arrayOf(PropTypes.string),
+    conditionCount: PropTypes.number,
+  })).isRequired,
+  allConditionsPerYear: allConditionsPerYearType.isRequired,
+  updateSearch: PropTypes.func.isRequired,
+};
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],
 // ["emissions", { conditions: 400, category: ['category2', 'category3]}]]

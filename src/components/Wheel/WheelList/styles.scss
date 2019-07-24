@@ -5,36 +5,37 @@
 .WheelList {
   display: flex;
   align-items: center;
-  left: 26.6%;
+  left: 26.3%;
   right: 27.4%;
-  top: 50%;
+  top: 0;
   position: absolute;
   color: $Black77;
-  height: 45%;
+  height: 100%;
+  width: 46.3%;
   font-family: $fira-sans-condensed;
-  transform: translate(0%, -51%);
 
   .labelContainer {
     position: absolute;
-    top: 50%;
-    transform: translate(0, -51%);
+    top: calc(50% - 16px);
     height: 24px;
-    width: 150%;
+    left: 0;
+    width: calc(160% - 48px);
     overflow: visible;
     background-color: $LightGray;
-    pointer-events: none;
-    border-radius: 0.7% 0.7% / 25px 0 0 25px;
+    border-radius: 1.5% 1.5% / 24px 0 0 24px;
     line-height: 24px;
+
     span {
       font-size: 14px;
       line-height: 24px;
       color: $Black77;
       font-family: $fira-sans-condensed;
     }
+
     .label {
       position: absolute;
-      right: 70%;
-      width: 30%;
+      left: 0;
+      width: 37%;
       text-align: center;
       border-radius: 0px;
       border-style: none;
@@ -42,11 +43,14 @@
       padding: 0px;
       font-weight: normal;
       vertical-align: middle;
+
+      white-space: nowrap;
+      overflow: visible;
     }
 
     .selected {
       position: absolute;
-      left: 35%;
+      left: 39%;
       width: 60%;
       overflow: hidden;
       text-align: left;
@@ -58,20 +62,31 @@
 
   .listContainer {
     width: 100%;
-    height: 100%;
+    height: 47%;
     margin: auto;
-    overflow: hidden;
-    border-radius: 100%;
+    border-radius: 50%;
     white-space: nowrap;
-    position: relative;
+    position: absolute;
+    top: calc(26% - 1px);
+
     .List-Item.selected {
       line-height: 24px;
       background: transparent;
-      width: fit-content;
+      width: 100%;
+      margin-top: 1px;
+      margin-bottom: 1px;
+      overflow: visible;
+
       .List-Item-Content {
+        height: 24px;
         background-color: transparent;
+        width: 160%;
+        margin-left: 3%;
+
         span {
-          visibility: hidden;
+          float: left;
+          opacity: 0;
+          overflow: hidden;
         }
       }
     }
@@ -79,30 +94,49 @@
 
   .list {
     position: absolute;
-    top: 50%;
     left: 45%;
+    height: 100%;
     width: 55%;
-    transform: translate(0, -50%);
-    .selected {
-      line-height: 20px;
+
+    .List{
+      position: absolute;
+      height: 100%;
+      width: 98%;
+      top: 0%;
+      pointer-events: auto;
+
+      ul {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+      }
     }
   }
 
-  .oneAway {
-    color: $Gray160;
-    font-family: $fira-sans-condensed-light;
-    font-size: 13px;
-  }
+  .List-Item-Content:not(.selected) span{
+    text-overflow: clip;
+    overflow: hidden;
 
-  .twoAway {
-    color: $Gray160;
-    font-family: $fira-sans-condensed-light;
-    font-size: 10px;
-  }
+    display: inline-block;
 
-  .threeAway {
     color: $Gray160;
     font-family: $fira-sans-condensed-light;
-    font-size: 8px;
+
+    &.oneAway {
+      font-size: 13px;
+      width: 100%;
+    }
+
+    &.twoAway {
+      font-size: 10px;
+      width: 96%;
+    }
+
+    &.threeAway {
+      font-size: 8px;
+      width: 88%;
+    }
+
   }
 }

@@ -5,13 +5,30 @@ import { storiesForComponent } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import SearchBar from '.';
 import ReadMe from './README.md';
+import { categories } from '../../mockData';
 
-const sampleSuggestedKeywords = {
-  safety: { conditions: 1200, category: ['administration & filings'] },
-  emissions: { conditions: 1000, category: ['environment'] },
-  habitat: { conditions: 800, category: ['environment', 'oversight & safety'] },
-  construction: { conditions: 1000, category: ['environment'] },
-};
+const sampleSuggestedKeywords = [
+  {
+    name: 'safety',
+    category: ['administration & filings'],
+    conditionCount: 1201,
+  },
+  {
+    name: 'emissions',
+    category: ['environment'],
+    conditionCount: 1001,
+  },
+  {
+    name: 'habitat',
+    category: ['environment', 'oversight & safety'],
+    conditionCount: 801,
+  },
+  {
+    name: 'construction',
+    category: ['environment'],
+    conditionCount: 1001,
+  },
+];
 
 storiesForComponent('Components|SearchBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
@@ -21,7 +38,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
     <SearchBar
       suggestedKeywords={sampleSuggestedKeywords}
       availableYearRange={{ start: 1970, end: 1980 }}
-      availableCategories={['all', 'oversight & safety', 'environment', 'administration & filings']}
+      availableCategories={categories.availableCategories}
       {...getInteractionProps()}
     />
   ), {
@@ -29,7 +46,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
       state: {
         includeKeywords: ['safety'],
         excludeKeywords: [],
-        projectStatus: ['OPEN', 'CANCELLED'],
+        projectStatus: ['IN_PROGRESS', 'COMPLETED'],
         yearRange: { start: 1970, end: 1980 },
         findAny: true,
       },

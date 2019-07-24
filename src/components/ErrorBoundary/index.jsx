@@ -1,0 +1,71 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+
+import './styles.scss';
+
+class ErrorBoundary extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { error: null, errorInfo: null };
+  }
+
+  getRestoreLink = () => document.location.href;
+
+  getResetLink = () => document.location.origin + document.location.pathname;
+
+  componentDidCatch(error, errorInfo) {
+    this.setState({
+      error,
+      errorInfo,
+    });
+  }
+
+  render() {
+    if (this.state.errorInfo) {
+      const details = [
+        this.state.errorInfo.componentStack,
+        this.state.error.networkError,
+        ...(this.state.error.graphQLErrors || []),
+      ].filter(v => v);
+      return (
+        <section className="ErrorBoundary">
+          <section className="errorMessage">
+            <FormattedMessage id="components.errorBoundary.errorMessage" tagName="h1" />
+          </section>
+          <section className="restoreLink">
+            <FormattedMessage id="components.errorBoundary.restoreMessage">
+              {text => <span>{text}:&nbsp;</span>}
+            </FormattedMessage>
+            <a href={`${this.getRestoreLink()}`}>
+              <FormattedMessage id="components.errorBoundary.restoreLinkText" />
+            </a>
+          </section>
+          <section className="resetLink">
+            <FormattedMessage id="components.errorBoundary.resetMessage">
+              {text => <span>{text}:&nbsp;</span>}
+            </FormattedMessage>
+            <a href={`${this.getResetLink()}`}>
+              <FormattedMessage id="components.errorBoundary.resetLinkText" />
+            </a>
+          </section>
+          <section className="details">
+            <details>
+              {this.state.error && this.state.error.toString()}
+              {details.map((v, i) => (
+                <p key={i /* eslint-disable-line react/no-array-index-key */}>{v}</p>
+              ))}
+            </details>
+          </section>
+        </section>
+      );
+    }
+    return this.props.children;
+  }
+}
+ErrorBoundary.propTypes = {
+  // Default children props from react
+  children: PropTypes.element.isRequired,
+};
+
+export default ErrorBoundary;

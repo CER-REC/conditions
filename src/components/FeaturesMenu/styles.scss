@@ -1,6 +1,7 @@
 @import "../../styles/borders.scss";
 @import "../../styles/colors.scss";
 @import "../../styles/svgs.scss";
+@import "../../styles/fontVariables.scss";
 
 $select-side-padding: 0.4em;
 
@@ -11,6 +12,8 @@ $select-side-padding: 0.4em;
     .title {
       color: $Black77;
       font-size: 18px;
+
+      white-space: nowrap;
     }
 
     .List {
@@ -27,6 +30,7 @@ $select-side-padding: 0.4em;
         color: $Black51;
         background-color: $LightGray;
         border: $list-selected;
+        font-family: $fira-sans-condensed-bold;
       }
     }
   }
@@ -36,7 +40,12 @@ $select-side-padding: 0.4em;
 
     .Dropdown {
       width: 100px;
+      background-color: $LightGray;
+      select{
+        border: none;
+      }
     }
+
 
     .title {
       color: $Gray160;

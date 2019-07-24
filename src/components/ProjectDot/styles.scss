@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.ProjectDot{
+  fill: $Gray160;
+
+  &.relevant {
+    fill: $SearchKeyword;
+  }
+  &.filtered {
+    fill: $Filtered;
+    &.relevant {
+      fill:$FilteredSearchKeyword;
+    }
+  }
+
+}
