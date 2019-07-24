@@ -18,7 +18,7 @@ export default (
   setFilteredProjects,
   searchVariables,
   filterVariables,
-) => {
+) => (
   Promise.all([
     (shouldQuery.search(searchVariables))
       ? client.query({
@@ -57,5 +57,5 @@ export default (
         (response[1] && response[1].data) ? response[1].data : nullFilter
       ).findFilteredProjects,
     };
-  });
-};
+  })
+);

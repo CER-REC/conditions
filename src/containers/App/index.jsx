@@ -131,10 +131,10 @@ class App extends React.PureComponent {
       fromCompany: id => updateSelectionWrapped('Company', { id }),
       fromInstrument: id => updateSelectionWrapped('Instrument', { id }),
       fromCondition: id => updateSelectionWrapped('Condition', { id }),
-      fromKeyword: (keyword, id) => updateSelectionWrapped(
-        'Keyword',
-        { keywords: [keyword] },
-        { keywordId: id },
+      fromSearchedKeyword: (keywordId, conditionId) => updateSelectionWrapped(
+        'Condition',
+        { id: conditionId },
+        { keywordId },
       ),
     };
   }
@@ -444,7 +444,7 @@ class App extends React.PureComponent {
 
     // TODO: We should either make this support the fallback mode (no physics) and
     // finish implementing it, or remove the code for it
-    const id = parseInt(instance.body.id, 10);
+    const keywordId = parseInt(instance.body.id, 10);
     const keyword = instance.keyword.value;
     const newIncluded = [keyword];
 
@@ -455,10 +455,15 @@ class App extends React.PureComponent {
       excludeKeywords: this.props.excluded,
       findAny: this.props.findAny,
     }).then((data) => {
-      console.dir(data.findSearchResults.conditionIds)
-    });
+      if (!(data.findSearchResults.conditionIds && data.findSearchResults.conditionIds.length)) {
+        // TODO: Leaving this here until the ETL search is fixed
+        console.error(`There are no conditions matching "${keyword}"`);
+      } else {
+        const conditionId = randomArrayValue(data.findSearchResults.conditionIds);
 
-    this.updateSelection.fromCondition(keyword, id);
+        this.updateSelection.fromSearchedKeyword(keywordId, conditionId);
+      }
+    });
   };
 
   openRegDocPopup = () => {
@@ -715,6 +720,7 @@ App.propTypes = {
   setTransitionState: PropTypes.func.isRequired,
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
+  findAny: PropTypes.bool.isRequired,
   detailViewExpanded: PropTypes.bool.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   selected: PropTypes.shape({
