@@ -44,7 +44,7 @@
     "d3": "^5.7.0",
     "d3-geo": "^1.11.3",
     "deepmerge": "^4.0.0",
-    "dialog-polyfill": "^0.4.10",
+    "dialog-polyfill": "^0.5.0",
     "domready": "^1.0.8",
     "graphql": "^14.2.1",
     "graphql-tag": "^2.10.0",
