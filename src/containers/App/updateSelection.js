@@ -5,8 +5,8 @@ import getTreeFromCompany from '../../queries/getTreeFromCompany';
 import getTreeFromRegion from '../../queries/getTreeFromRegion';
 import getKeywordConditions from '../../queries/getKeywordConditions';
 import handleQueryError from '../../utilities/handleQueryError';
+import randomArrayValue from '../../utilities/randomArrayValue';
 
-const randomArrayValue = array => array[Math.floor(Math.random() * array.length)];
 const keepPrev = (selected, ...keys) => keys.reduce((acc, next) => {
   acc[next] = selected[next];
   return acc;
