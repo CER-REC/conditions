@@ -34,107 +34,114 @@ class FilterContent extends React.PureComponent {
   constructor(props) {
     super(props);
     this.isDragging = false;
+
+    this.availableYears = createYearArray(this.props.yearRange);
+
+    this.state = ({
+      selectedYears: {
+        start: this.availableYears[0],
+        end: this.availableYears[this.availableYears.length - 1],
+      },
+    });
   }
 
   onDragStart = (event) => {
     this.isDragging = true;
     const year = findListItemValue(event.target);
-    this.props.onYearSelect({ start: year, end: year });
+    this.setState({ selectedYears: { start: year, end: year } });
+    // this.props.onYearSelect({ start: year, end: year });
   }
 
   onDragMove = (event) => {
     if (!this.isDragging) { return; }
-    const li = findListItemValue(event.target);
-    let selectedYearArray = createYearArray(this.props.selectedYear);
-    selectedYearArray.push(li);
-    selectedYearArray = selectedYearArray.sort((a, b) => a - b);
-    selectedYearArray = createYearArray({
-      start: selectedYearArray[0],
-      end: selectedYearArray[selectedYearArray.length - 1],
-    });
-    selectedYearArray = selectedYearArray.sort((a, b) => a - b);
-    const newRange = {
-      start: selectedYearArray[0],
-      end: selectedYearArray[selectedYearArray.length - 1],
-    };
-    this.props.onYearSelect(newRange);
+    const year = findListItemValue(event.target);
+
+    this.setState(state => ({
+      selectedYears: {
+        start: state.selectedYears.start,
+        end: year,
+      },
+    }));
   }
+
+  getSelectedYearRange = () => (
+    (this.state.selectedYears.end > this.state.selectedYears.start)
+      ? [this.state.selectedYears.start, this.state.selectedYears.end]
+      : [this.state.selectedYears.end, this.state.selectedYears.start]
+  )
 
   onDragStop = () => {
     this.isDragging = false;
+    const [start, end] = this.getSelectedYearRange();
+    this.props.onYearSelect({ start, end });
   }
 
   onKeyPress = (event) => {
-    const selectedYear = createYearArray(this.props.selectedYear);
-    const yearArray = createYearArray(this.props.yearRange);
-    const lastNum = selectedYear[selectedYear.length - 1];
-    const firstNum = selectedYear[0];
+    const selectedYears = this.createSelectedYearArray();
+    const lastNum = selectedYears[selectedYears.length - 1];
+    const firstNum = selectedYears[0];
     if (event.key === 'ArrowRight' || event.keyCode === 39) {
-      if (yearArray.indexOf(lastNum + 1) > -1) {
-        selectedYear.push(lastNum + 1);
+      if (this.availableYears.indexOf(lastNum + 1) > -1) {
+        selectedYears.push(lastNum + 1);
       }
     } else if (event.key === 'ArrowLeft' || event.keyCode === 37) {
-      if (yearArray.indexOf(firstNum - 1) > -1) {
-        selectedYear.push(firstNum - 1);
+      if (this.availableYears.indexOf(firstNum - 1) > -1) {
+        selectedYears.push(firstNum - 1);
       }
     }
-    selectedYear.sort((a, b) => a - b);
-    this.props.onYearSelect({ start: selectedYear[0], end: selectedYear[selectedYear.length - 1] });
+    selectedYears.sort((a, b) => a - b);
+    const newRange = {
+      start: selectedYears[0],
+      end: selectedYears[selectedYears.length - 1],
+    };
+
+    this.setState({ selectedYears: newRange });
+    this.props.onYearSelect(newRange);
+  }
+
+  createSelectedYearArray = () => {
+    const [start, end] = this.getSelectedYearRange();
+
+    return createYearArray({ start, end });
   }
 
   yearRangeRender = () => {
-    const yearArray = createYearArray(this.props.yearRange);
-    return (yearArray.map((i) => {
-      let { selectedYear } = this.props;
-      selectedYear = createYearArray(selectedYear);
-      const arrayIndex = selectedYear.indexOf(i);
-      if (arrayIndex === -1) {
-        return (
-          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-          <li
-            {...handleInteraction(this.props.onYearSelect, { start: i, end: i })}
-            key={i}
-            value={i}
-            onFocus={() => {}}
-            onMouseDown={this.onDragStart}
-            onMouseOver={this.onDragMove}
-            onMouseUp={this.onDragStop}
-            onKeyDown={this.onKeyPress}
-          >
-            <CircleContainer size={24} className="regularCircle"> {i.toString().substring(2)} </CircleContainer>
-          </li>
+    const selectedYears = this.createSelectedYearArray();
+
+    return (this.availableYears.map((i) => {
+      const arrayIndex = selectedYears.indexOf(i);
+
+      const listClasses = [];
+      const circleClasses = ['regularCircle'];
+
+      if (arrayIndex > -1) {
+        listClasses.push('selectedBackground');
+        if (arrayIndex === 0) { listClasses.push('leftCurve'); }
+        if (arrayIndex === selectedYears.length - 1) { listClasses.push('rightCurve'); }
+
+        circleClasses.push(
+          (listClasses.length > 1)
+            ? 'selectedOutsideCircle'
+            : 'selectedInsideCircle',
         );
       }
-      const classArray = [];
-      let position = 'middle';
-      classArray.push('regularBackground');
-      if (selectedYear.length === 1) {
-        classArray.push('rightCurve');
-        classArray.push('leftCurve');
-        position = 'outside';
-      } else if (arrayIndex === 0 && selectedYear[1] > selectedYear[0]) {
-        classArray.push('leftCurve');
-        position = 'outside';
-      } else if (
-        arrayIndex === selectedYear.length - 1
-          && selectedYear[arrayIndex] > selectedYear[selectedYear.length - 2]) {
-        classArray.push('rightCurve');
-        position = 'outside';
-      }
+
       return (
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <li
           {...handleInteraction(this.props.onYearSelect, { start: i, end: i })}
           key={i}
           value={i}
+          onFocus={() => {}}
           onMouseDown={this.onDragStart}
+          onMouseOver={this.onDragMove}
           onMouseUp={this.onDragStop}
           onKeyDown={this.onKeyPress}
-          className={classNames(classArray)}
+          className={classNames(listClasses)}
         >
           <CircleContainer
             size={24}
-            className={`regularCircle ${(position === 'outside') ? 'selectedOutsideCircle' : 'selectedInsideCircle'}`}
+            className={classNames(circleClasses)}
           >
             {i.toString().substring(2)}
           </CircleContainer>
