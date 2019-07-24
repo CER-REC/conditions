@@ -3,11 +3,9 @@
 $square-size: 12px;
 .FeaturesLegend .LegendItem {
   max-height: $square-size;
-
   margin: 0px;
   margin-top: 1px;
   padding: 0px;
-
   text-align: left;
 
   &.disabled {
@@ -16,28 +14,22 @@ $square-size: 12px;
 
   .color {
     display: inline-block;
-
     height: $square-size;
     width: $square-size;
-
     content: '';
   }
 
   .text {
     display: inline-block;
-
     position: absolute;
     left: $square-size;
-    height: $square-size;
+    height: #{$square-size + 2px}; /* Add 2px so descenders remain visible */
     width: calc(100% - #{$square-size});
-
     overflow: hidden;
     text-overflow: ellipsis;
-
+    white-space: nowrap;
     margin-top: 1px;
-
     padding-left: 10px;
-
     font-size: 12px;
     line-height: $square-size;
   }
