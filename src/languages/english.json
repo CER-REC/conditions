@@ -3,7 +3,6 @@
     "features": {
       "theme": "Theme",
       "instrument": "Instrument",
-      "timing": "Timing",
       "phase": "Phase",
       "type": "Type",
       "status": "Status",
@@ -68,22 +67,10 @@
       "ZO": "Abandonment Order",
       "GH": "text not yet provided",
       "OH": "text not yet provided",
-      "KAX": "text not yet provided",
-      "MHW": "text not yet provided",
-      "CPTC": "text not yet provided",
       "XE": "text not yet provided",
       "MH": "text not yet provided",
-      "OPSP": "text not yet provided",
-      "CO": "text not yet provided",
       "OPL": "text not yet provided",
       "OTHER": "Other"
-    },
-    "instrumentCommodityType": {
-      "OIL": "Oil",
-      "GAS": "Gas",
-      "POWER": "Power",
-      "ANY_COMMODITY_TYPES": "Any Commodity Types",
-      "NOT_SPECIFIED": "Not Specified"
     },
     "phase": {
       "ABANDONMENT": "Abandonment",
@@ -100,21 +87,8 @@
       "STANDARD": "Standard"
     },
     "status": {
-      "AMENDED": "Amended",
-      "AWAITING_FILING": "Awaiting Filing",
-      "AWAITING_IR_RESPONSE": "Awaiting IR Response",
       "CLOSED": "Closed",
-      "FURTHER_INFORMATION_REQUIRED": "Further Information Required",
-      "IN_PROGRESS": "In Progress",
-      "NO_FILING_REQUIRED": "No Filing Required",
-      "OVERDUE_FILING": "Overdue Filing",
-      "READY_FOR_BOARD_DECISION": "Ready for Board Decision",
-      "REVIEW_COMPLETE": "Review Complete",
-      "SATISFACTORY": "Satisfactory",
-      "UNDER_REVIEW": "Under Review",
-      "ALL_CONDITIONS_MET": "All Conditions Met",
-      "DRAFT": "Draft",
-      "EXPIRED": "Expired"
+      "IN_PROGRESS": "In Progress"
     },
     "filing": {
       "REQUIRED": "Filing Required",
@@ -221,18 +195,8 @@
         "UNSPECIFIED": "Phase is not specified or applicable."
       },
       "status": {
-        "AMENDED": "Missing description",
-        "AWAITING_FILING": "Missing description",
-        "AWAITING_IR_RESPONSE": "Missing description",
         "CLOSED": "this status refers to:\n-condition requirements that have been satisfied, and no further submissions from the company are required; or\n-conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
-        "FURTHER_INFORMATION_REQUIRED": "Missing description",
-        "IN_PROGRESS": "this status refers to conditions that continue to be monitored by the NEB. This happens when:\n-condition filings have not yet been received by the NEB; or,\n-filings have been received but are under review or do not yet meet requirements; or,\n-a project is not completed and it has conditions, which have not been met; or,\n-a project has a post-construction condition, but a requirement has not yet been completed; or,\n-some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions.",
-        "NO_FILING_REQUIRED": "Missing description",
-        "OVERDUE_FILING": "Missing description",
-        "READY_FOR_BOARD_DECISION": "Missing description",
-        "REVIEW_COMPLETE": "Missing description",
-        "SATISFACTORY": "Missing description",
-        "UNDER_REVIEW": "Missing description"
+        "IN_PROGRESS": "this status refers to conditions that continue to be monitored by the NEB. This happens when:\n-condition filings have not yet been received by the NEB; or,\n-filings have been received but are under review or do not yet meet requirements; or,\n-a project is not completed and it has conditions, which have not been met; or,\n-a project has a post-construction condition, but a requirement has not yet been completed; or,\n-some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions."
       },
       "type": {
         "STANDARD": "A condition that is typically imposed on all approved projects.",
@@ -267,13 +231,8 @@
         "ZO": "The approval of abandonment applications",
         "GH": "text not yet provided",
         "OH": "text not yet provided",
-        "KAX": "text not yet provided",
-        "MHW": "text not yet provided",
-        "CPTC": "text not yet provided",
         "XE": "text not yet provided",
         "MH": "text not yet provided",
-        "OPSP": "text not yet provided",
-        "CO": "text not yet provided",
         "OPL": "text not yet provided",
         "OTHER": "text not yet provided"
       }

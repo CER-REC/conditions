@@ -44,16 +44,6 @@ export default {
     status: [
       { name: 'IN_PROGRESS', count: 0 },
       { name: 'CLOSED', count: 0 },
-      { name: 'NO_FILING_REQUIRED', count: 0 },
-      { name: 'AWAITING_FILING', count: 0 },
-      { name: 'OVERDUE_FILING', count: 0 },
-      { name: 'UNDER_REVIEW', count: 0 },
-      { name: 'REVIEW_COMPLETE', count: 0 },
-      { name: 'AWAITING_IR_RESPONSE', count: 0 },
-      { name: 'READY_FOR_BOARD_DECISION', count: 0 },
-      { name: 'FURTHER_INFORMATION_REQUIRED', count: 0 },
-      { name: 'AMENDED', count: 0 },
-      { name: 'SATISFACTORY', count: 0 },
     ],
     type: [
       { name: 'NON_STANDARD', count: 0 },
