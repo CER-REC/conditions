@@ -41,7 +41,7 @@ class WheelRay extends React.Component {
     searchedRegionsLookup: [],
   };
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props) {
     return {
       ...updateFlagLayout(props.wheelType, props.items),
     };
