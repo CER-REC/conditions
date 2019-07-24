@@ -178,6 +178,9 @@
 
   .conditions {
     pointer-events: none;
+
+    .Modal { pointer-events: auto; }
+
     .ConditionDetails {
       .ConditionList .List,
       .listPane .List-Item,
