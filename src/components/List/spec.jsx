@@ -157,20 +157,20 @@ describe('Components|List', () => {
 
     test('should not show a previous arrow on the first item', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={0} onChange={spy} />);
-      expect(wrapper.find('.arrowPrevious.hidden')).toHaveLength(1);
+      expect(wrapper.find('.arrowPrevious.hiddenArrow')).toHaveLength(1);
     });
 
     test('should not show a next arrow on the last item', () => {
       wrapper = shallow(<List items={['a', 'b', 'c']} selected={2} onChange={spy} />);
-      expect(wrapper.find('.arrowNext.hidden')).toHaveLength(1);
+      expect(wrapper.find('.arrowNext.hiddenArrow')).toHaveLength(1);
     });
 
     test('should show a previous arrow if there are available items', () => {
-      expect(wrapper.find('.arrowPrevious:not(.hidden)')).toHaveLength(1);
+      expect(wrapper.find('.arrowPrevious:not(.hiddenArrow)')).toHaveLength(1);
     });
 
     test('should show a next arrow if there are available items', () => {
-      expect(wrapper.find('.arrowNext:not(.hidden)')).toHaveLength(1);
+      expect(wrapper.find('.arrowNext:not(.hiddenArrow)')).toHaveLength(1);
     });
 
     test('should call its onChange prop with the previous index', () => {

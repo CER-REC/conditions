@@ -60,7 +60,7 @@ class List extends React.PureComponent {
   }
 
   renderArrow(next, selectedIndex) {
-    const hidden = ((next === false && selectedIndex === 0)
+    const hiddenArrow = ((next === false && selectedIndex === 0)
       || (next === true && selectedIndex === this.props.items.length - 1));
 
     // arrowSize should match the legend style's arrow-size variable
@@ -73,7 +73,7 @@ class List extends React.PureComponent {
       <CircleContainer
         size={arrowSize}
         onClick={() => this.props.onChange(selectedIndex + (next ? 1 : -1))}
-        className={classNames('arrow', next ? 'arrowNext' : 'arrowPrevious', { hidden })}
+        className={classNames('arrow', next ? 'arrowNext' : 'arrowPrevious', { hiddenArrow })}
       >
         <Arrow orientation={next ? nextArrow : previousArrow} />
       </CircleContainer>
