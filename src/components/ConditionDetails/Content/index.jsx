@@ -51,7 +51,7 @@ class Content extends React.PureComponent {
 
     const matchedKeywords = joinJsxArray(
       matched.map(keyword => (
-        <span className="highlighted">{keyword}</span>
+        <span className="highlighted" key={keyword}>{keyword}</span>
       )),
       ', ',
     );
@@ -91,7 +91,7 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
               </div>
-              {(matchedKeywords.length !== 0) ? (<ContentBlock id="components.conditionDetails.keywords" content={matchedKeywords} />) : null}
+              {(matchedKeywords.length) ? (<ContentBlock id="components.conditionDetails.keywords" content={matchedKeywords} />) : null}
               {this.renderContentText('components.conditionDetails.text', highlightedText)}
             </React.Fragment>
           )
