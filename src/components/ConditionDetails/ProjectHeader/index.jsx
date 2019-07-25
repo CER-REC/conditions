@@ -51,14 +51,17 @@ class ProjectHeader extends React.PureComponent {
                   </h2>
                 </button>
               )
-              : null
+              : <div className="openProject" />
             }
           </React.Fragment>
         )
         : (
-          <FormattedMessage id="components.conditionDetails.selectedCondition">
-            {text => <h1>{text}:</h1>}
-          </FormattedMessage>
+          <React.Fragment>
+            <FormattedMessage id="components.conditionDetails.selectedCondition">
+              {text => <h1>{text}:</h1>}
+            </FormattedMessage>
+            <div className="openProject" />
+          </React.Fragment>
         )
       }
       {!this.props.isExpandable ? null : (
