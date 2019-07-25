@@ -61,13 +61,15 @@ class ProjectHeader extends React.PureComponent {
           </FormattedMessage>
         )
       }
-      <button
-        type="button"
-        className="toggleExpand"
-        {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
-      >
-        {this.props.expanded ? lessButton : moreButton}
-      </button>
+      {!this.props.isExpandable ? null : (
+        <button
+          type="button"
+          className="toggleExpand"
+          {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
+        >
+          {this.props.expanded ? lessButton : moreButton}
+        </button>
+      )}
     </div>
   )
 }
