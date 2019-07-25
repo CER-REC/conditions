@@ -53,12 +53,12 @@ const initialState = {
     end: 0,
   },
   searchResults: {
-    companyIdLookup: [],
-    conditionIdLookup: [],
-    projectIdLookup: [],
-    regionIdLookup: [],
+    companyIdLookup: {},
+    conditionIdLookup: {},
+    projectIdLookup: {},
+    regionIdLookup: {},
   },
-  filteredProjects: [],
+  filteredProjects: {},
 };
 
 export const reducer = (state = initialState, action) => {

@@ -225,12 +225,12 @@ ViewTwo.defaultProps = {
   wheelData: [],
   projectsData: [],
   searchResults: {
-    companyIdLookup: [],
-    conditionIdLookup: [],
-    projectIdLookup: [],
-    regionIdLookup: [],
+    companyIdLookup: {},
+    conditionIdLookup: {},
+    projectIdLookup: {},
+    regionIdLookup: {},
   },
-  filteredProjectLookup: [],
+  filteredProjectLookup: {},
 };
 
 export default ViewTwo;
