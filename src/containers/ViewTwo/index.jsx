@@ -51,8 +51,9 @@ class ViewTwo extends React.Component {
       excludeKeywords: this.props.excluded,
       findAny: this.props.findAny,
     }, {
-      startYear: this.props.projectYear.start,
-      endYear: this.props.projectYear.end,
+      // If search is in the default state (years = 0), use the dataset's range
+      startYear: this.props.projectYear.start || this.props.projectYears.start,
+      endYear: this.props.projectYear.end || this.props.projectYears.end,
       statuses: this.props.projectStatus,
     });
   }
