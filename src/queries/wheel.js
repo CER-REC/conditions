@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const companyWheelQuery = gql`
+export const allCompaniesQuery = gql`
   query companies {
     allCompanies {
       id
@@ -10,7 +10,7 @@ export const companyWheelQuery = gql`
   }
 `;
 
-export const locationWheelQuery = gql`
+export const allRegionsQuery = gql`
   query regions {
     allRegions {
       id

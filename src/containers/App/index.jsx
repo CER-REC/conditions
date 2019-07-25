@@ -28,6 +28,7 @@ import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 import allKeywordsQuery from '../../queries/allKeywords';
 import companyNameById from '../../queries/companyNameById';
+import { allCompaniesQuery, allRegionsQuery } from '../../queries/wheel';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -263,6 +264,12 @@ class App extends React.PureComponent {
 
   jumpToView2 = (type) => {
     this.props.setTransitionState(transitionStates.view2);
+
+    if (type === 'location' && !this.props.selected.region) {
+
+    } else if (type === 'company' && !this.props.selected.company) {
+
+    }
     this.props.setBrowseBy(type);
   }
 
@@ -581,6 +588,8 @@ class App extends React.PureComponent {
           <div style={{ clear: 'both' }} />
           <ViewTwo
             {...viewProps}
+            allCompanies={this.props.allCompanies}
+            allRegions={this.props.allRegions}
             setWheelMoving={this.setWheelMoving}
             wheelMoving={this.state.wheelMoving}
             allConditionsPerYear={this.props.allConditionsPerYear}
@@ -794,6 +803,8 @@ export default props => (
             config={{ query: initialConfigurationDataQuery }}
             conditionsPerYear={{ query: conditionsPerYearQuery }}
             allKeywords={{ query: allKeywordsQuery }}
+            allCompanies={{ query: allCompaniesQuery }}
+            allRegions={{ query: allRegionsQuery }}
           >
             {({ data, loading, errors }) => {
               // TODO: Error handling for these queries
@@ -804,6 +815,8 @@ export default props => (
                   allConditionsPerYear={data.conditionsPerYear}
                   allConfigurationData={data.config}
                   allKeywords={data.allKeywords}
+                  allCompanies={data.allCompanies}
+                  allRegions={data.allRegions}
                   {...props}
                 />
               );
