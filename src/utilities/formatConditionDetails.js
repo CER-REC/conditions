@@ -57,7 +57,7 @@ export default (instruments, selectedFeature, displayOrder) => (
       id: instrument.id,
       issuanceDate: dateIssuance,
       effectiveDate: dateEffective,
-      sunsetDate: dateSunset || 'null',
+      sunsetDate: dateSunset,
       status,
       location: allLocations,
       activity: name,

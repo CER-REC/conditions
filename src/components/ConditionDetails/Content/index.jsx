@@ -73,7 +73,7 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.issuanceDate" content={data.issuanceDate} />
                 <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} />
-                {(data.sunsetDate !== 'null') ? (<ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />) : null }
+                {(data.sunsetDate) ? (<ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />) : null }
               </div>
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
