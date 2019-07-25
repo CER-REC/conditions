@@ -1,5 +1,5 @@
-const relevantProjectLookup = [];
-const filteredProjectLookup = [];
+const relevantProjectLookup = {};
+const filteredProjectLookup = {};
 
 relevantProjectLookup[1226] = true;
 relevantProjectLookup[1228] = true;
