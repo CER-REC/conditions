@@ -38,18 +38,31 @@ class FilterContent extends React.PureComponent {
     this.availableYears = createYearArray(this.props.yearRange);
 
     this.state = ({
-      selectedYears: {
-        start: this.availableYears[0],
-        end: this.availableYears[this.availableYears.length - 1],
-      },
+      selectedYears: { ...props.selectedYear },
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    const cur = this.props.selectedYear;
+    const prev = prevProps.selectedYear;
+    const state = this.state.selectedYears;
+
+    if (
+      (cur.start !== prev.start && cur.start !== state.start)
+    || (cur.end !== prev.end && cur.end !== state.end)
+    ) {
+      // Workaround to let us manage the selected years in the component while
+      // still being able to set them from Redux if the user hits Back, comes
+      // from a shared URL, etc.
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ selectedYears: cur });
+    }
   }
 
   onDragStart = (event) => {
     this.isDragging = true;
     const year = findListItemValue(event.target);
     this.setState({ selectedYears: { start: year, end: year } });
-    // this.props.onYearSelect({ start: year, end: year });
   }
 
   onDragMove = (event) => {
