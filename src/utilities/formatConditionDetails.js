@@ -48,7 +48,7 @@ export default (instruments, selectedFeature, displayOrder) => (
 
     // This is used to show all regions belonging to an instrument
     const allLocations = regions.reduce((acc, next) => {
-      acc.push(`${next.name}, ${next.province} `);
+      acc.push(`${next.name}${next.province ? `, ${next.province}` : ''}`);
       return acc;
     }, []);
 
