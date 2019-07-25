@@ -265,11 +265,21 @@ class App extends React.PureComponent {
   jumpToView2 = (type) => {
     this.props.setTransitionState(transitionStates.view2);
 
+    let modeData;
+    let updateFunc;
     if (type === 'location' && !this.props.selected.region) {
-
+      modeData = this.props.allRegions;
+      updateFunc = this.updateSelection.fromRegion;
     } else if (type === 'company' && !this.props.selected.company) {
-
+      modeData = this.props.allCompanies;
+      updateFunc = this.updateSelection.fromCompany;
     }
+
+    if (modeData) {
+      const selectedItem = randomArrayValue(modeData);
+      updateFunc(selectedItem.id);
+    }
+
     this.props.setBrowseBy(type);
   }
 
@@ -749,6 +759,8 @@ App.propTypes = {
     category: PropTypes.arrayOf(PropTypes.string),
     conditionCount: PropTypes.number,
   })).isRequired,
+  allCompanies: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  allRegions: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   setSelectedMultiple: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
