@@ -17233,12 +17233,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         className="projectList"
       >
         <li
-          className="regularBackground leftCurve"
+          className="selectedBackground leftCurve"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1970}
@@ -17258,12 +17260,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1971}
@@ -17283,12 +17287,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1972}
@@ -17308,12 +17314,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1973}
@@ -17333,12 +17341,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1974}
@@ -17358,12 +17368,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1975}
@@ -17383,12 +17395,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1976}
@@ -17408,12 +17422,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1977}
@@ -17433,12 +17449,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1978}
@@ -17458,12 +17476,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1979}
@@ -17483,12 +17503,14 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground rightCurve"
+          className="selectedBackground rightCurve"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1980}
@@ -17608,12 +17630,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         className="projectList"
       >
         <li
-          className="regularBackground leftCurve"
+          className="selectedBackground leftCurve"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1970}
@@ -17633,12 +17657,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1971}
@@ -17658,12 +17684,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1972}
@@ -17683,12 +17711,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1973}
@@ -17708,12 +17738,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1974}
@@ -17733,12 +17765,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1975}
@@ -17758,12 +17792,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1976}
@@ -17783,12 +17819,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1977}
@@ -17808,12 +17846,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1978}
@@ -17833,12 +17873,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1979}
@@ -17858,12 +17900,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground rightCurve"
+          className="selectedBackground rightCurve"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1980}
@@ -17983,12 +18027,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         className="projectList"
       >
         <li
-          className="regularBackground leftCurve"
+          className="selectedBackground leftCurve"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1970}
@@ -18008,12 +18054,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1971}
@@ -18033,12 +18081,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1972}
@@ -18058,12 +18108,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1973}
@@ -18083,12 +18135,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1974}
@@ -18108,12 +18162,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1975}
@@ -18133,12 +18189,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1976}
@@ -18158,12 +18216,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1977}
@@ -18183,12 +18243,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1978}
@@ -18208,12 +18270,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground"
+          className="selectedBackground"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1979}
@@ -18233,12 +18297,14 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           </div>
         </li>
         <li
-          className="regularBackground rightCurve"
+          className="selectedBackground rightCurve"
           focusable={true}
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onMouseDown={[Function]}
+          onMouseOver={[Function]}
           onMouseUp={[Function]}
           tabIndex={0}
           value={1980}
