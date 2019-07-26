@@ -42,16 +42,6 @@ export default {
           status: {
             IN_PROGRESS: 1,
             CLOSED: 8,
-            NO_FILING_REQUIRED: 2,
-            AWAITING_FILING: 22,
-            OVERDUE_FILING: 0,
-            UNDER_REVIEW: 7,
-            REVIEW_COMPLETE: 4,
-            AWAITING_IR_RESPONSE: 8,
-            READY_FOR_BOARD_DECISION: 3,
-            FURTHER_INFORMATION_REQUIRED: 12,
-            AMENDED: 0,
-            SATISFACTORY: 7,
           },
           type: {
             NON_STANDARD: 3,
@@ -106,16 +96,6 @@ export default {
           status: {
             IN_PROGRESS: 1,
             CLOSED: 8,
-            NO_FILING_REQUIRED: 2,
-            AWAITING_FILING: 22,
-            OVERDUE_FILING: 0,
-            UNDER_REVIEW: 7,
-            REVIEW_COMPLETE: 4,
-            AWAITING_IR_RESPONSE: 8,
-            READY_FOR_BOARD_DECISION: 3,
-            FURTHER_INFORMATION_REQUIRED: 12,
-            AMENDED: 0,
-            SATISFACTORY: 7,
           },
           type: {
             NON_STANDARD: 3,

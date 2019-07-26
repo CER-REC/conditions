@@ -62,16 +62,6 @@ export const features = {
   status: {
     IN_PROGRESS: 'rgb(101, 216, 126)',
     CLOSED: 'rgb(137, 137, 137)',
-    NO_FILING_REQUIRED: 'rgb(30, 29, 30)',
-    AWAITING_FILING: 'rgb(252, 106, 187)',
-    OVERDUE_FILING: 'rgb(145, 9, 9)',
-    UNDER_REVIEW: 'rgb(249, 214, 202)',
-    REVIEW_COMPLETE: 'rgb(45, 151, 247)',
-    AWAITING_IR_RESPONSE: 'rgb(188, 30, 226)',
-    READY_FOR_BOARD_DECISION: 'rgb(234, 189, 110)',
-    FURTHER_INFORMATION_REQUIRED: 'rgb(176, 244, 244)',
-    AMENDED: 'rgb(198, 170, 6)',
-    SATISFACTORY: 'rgb(88, 104, 107)',
   },
 };
 

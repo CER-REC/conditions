@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { doc } from 'storybook-readme';
 import { withKnobs, number } from '@storybook/addon-knobs';
 
 import ReadMe from './README.md';
@@ -16,9 +15,10 @@ const options = {
   step: 1,
 };
 
+const noop = () => <React.Fragment />;
 storiesOf('Atomic Design|HTML', module)
   .addDecorator(withKnobs)
-  .add('Description', doc(ReadMe))
+  .add('Description', noop, { readme: { content: ReadMe } })
   .add('Typography', () => <Typography />)
   .add('Buttons', () => <Buttons />)
   .add('Forms', () => <Forms />)
