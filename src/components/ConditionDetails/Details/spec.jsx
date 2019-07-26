@@ -10,7 +10,7 @@ const data = {
   phase: 'phase.DURING_CONSTRUCTION_PHASE',
   type: 'type.STANDARD',
   status: 'status.IN_PROGRESS',
-  filing: 'status.NO_FILING_REQUIRED',
+  filing: 'filing.REQUIRED',
 };
 
 describe('Components|ConditionDetails/Details', () => {
