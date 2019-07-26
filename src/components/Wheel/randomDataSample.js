@@ -883,7 +883,7 @@ const relevantProjectLookup = randomProjects.reduce((acc, company) => {
   });
 
   return acc;
-}, []);
+}, {});
 
 const filteredProjectLookup = randomProjects.reduce((acc, company) => {
   company.forEach((projectId) => {
@@ -891,6 +891,6 @@ const filteredProjectLookup = randomProjects.reduce((acc, company) => {
   });
 
   return acc;
-}, []);
+}, {});
 
 export { companyWheelData, locationData, relevantProjectLookup, filteredProjectLookup };
