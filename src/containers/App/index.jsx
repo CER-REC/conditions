@@ -136,7 +136,6 @@ class App extends React.PureComponent {
         { id: conditionId },
         { keywordId },
       ),
-      fromStatic: toUpdate => this.props.setSelectedMultiple(toUpdate),
     };
   }
 
@@ -471,7 +470,7 @@ class App extends React.PureComponent {
       const keyword = this.selectedKeywordInstance.keyword.value;
 
       this.props.setIncluded(this.props.included.filter(term => term !== keyword));
-      this.updateSelection.fromStatic({ keywordId: -1 });
+      this.props.setSelectedMultiple({ keywordId: -1 });
 
       this.selectedKeywordInstance = null;
     }
