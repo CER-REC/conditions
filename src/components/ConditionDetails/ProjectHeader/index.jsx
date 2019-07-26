@@ -51,23 +51,28 @@ class ProjectHeader extends React.PureComponent {
                   </h2>
                 </button>
               )
-              : null
+              : <div className="openProject" />
             }
           </React.Fragment>
         )
         : (
-          <FormattedMessage id="components.conditionDetails.selectedCondition">
-            {text => <h1>{text}:</h1>}
-          </FormattedMessage>
+          <React.Fragment>
+            <FormattedMessage id="components.conditionDetails.selectedCondition">
+              {text => <h1>{text}:</h1>}
+            </FormattedMessage>
+            <div className="openProject" />
+          </React.Fragment>
         )
       }
-      <button
-        type="button"
-        className="toggleExpand"
-        {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
-      >
-        {this.props.expanded ? lessButton : moreButton}
-      </button>
+      {!this.props.isExpandable ? null : (
+        <button
+          type="button"
+          className="toggleExpand"
+          {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
+        >
+          {this.props.expanded ? lessButton : moreButton}
+        </button>
+      )}
     </div>
   )
 }

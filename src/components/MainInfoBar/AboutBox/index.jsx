@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-const formatLink = (link, text) => (
-  <a href={link} rel="noopener noreferrer" target="_blank">
-    <FormattedMessage id={text} />
-  </a>
+const formatEmail = (id) => (
+  <FormattedMessage id={id}>
+    {email => <a href={`mailto:${email}`} rel="noopener noreferrer" target="_blank">{email}</a>}
+  </FormattedMessage>
 );
 
 const AboutBox = () => (
@@ -12,15 +12,11 @@ const AboutBox = () => (
     <FormattedMessage id="components.mainInfoBar.headings.about" tagName="h1" />
     <FormattedMessage
       id="components.mainInfoBar.content.about"
-      values={{
-        nebLink: formatLink('mailto:energyindesign@neb-one.gc.ca.', 'common.linkText.NEBLink'),
-      }}
+      values={{ nebLink: formatEmail('common.linkText.NEBLink') }}
     />
     <FormattedMessage
       id="components.mainInfoBar.content.about"
-      values={{
-        nebLink: formatLink('mailto:energyindesign@neb-one.gc.ca.', 'common.linkText.NEBLink'),
-      }}
+      values={{ nebLink: formatEmail('common.linkText.NEBLink') }}
     >
       {/* eslint-disable-next-line react/no-array-index-key */}
       {text => text.split('\n').map((para, idx) => <p key={idx}>{para}</p>)}
