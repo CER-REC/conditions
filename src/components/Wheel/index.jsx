@@ -27,18 +27,18 @@ class Wheel extends React.Component {
     selectRay: PropTypes.func.isRequired,
     selectProject: PropTypes.func.isRequired,
     wheelMotionTrigger: PropTypes.func.isRequired,
-    relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
-    filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    relevantProjectLookup: PropTypes.objectOf(PropTypes.bool),
+    filteredProjectLookup: PropTypes.objectOf(PropTypes.bool),
     displayOrder: displayOrder.isRequired,
     selectedFeature: featureTypes.isRequired,
-    searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
+    searchedRegionsLookup: PropTypes.objectOf(PropTypes.bool),
   };
 
   static defaultProps = {
     selectedRay: null,
-    relevantProjectLookup: [],
-    filteredProjectLookup: [],
-    searchedRegionsLookup: [],
+    relevantProjectLookup: {},
+    filteredProjectLookup: {},
+    searchedRegionsLookup: {},
   };
 
   constructor(props) {

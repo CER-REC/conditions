@@ -28,17 +28,17 @@ class WheelRay extends React.Component {
     rotation: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentIndex: PropTypes.number.isRequired,
-    relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
-    filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+    relevantProjectLookup: PropTypes.objectOf(PropTypes.bool),
+    filteredProjectLookup: PropTypes.objectOf(PropTypes.bool),
     displayOrder: displayOrder.isRequired,
     selectedFeature: featureTypes.isRequired,
-    searchedRegionsLookup: PropTypes.arrayOf(PropTypes.bool),
+    searchedRegionsLookup: PropTypes.objectOf(PropTypes.bool),
   }
 
   static defaultProps = {
-    relevantProjectLookup: [],
-    filteredProjectLookup: [],
-    searchedRegionsLookup: [],
+    relevantProjectLookup: {},
+    filteredProjectLookup: {},
+    searchedRegionsLookup: {},
   };
 
   static getDerivedStateFromProps(props) {

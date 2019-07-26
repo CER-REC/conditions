@@ -1,12 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-const nebEmailUrl = 'mailto:energyindesign@neb-one.gc.ca';
-
-const formatLink = (link, text) => (
-  <a href={link} rel="noopener noreferrer" target="_blank">
-    <FormattedMessage id={text} />
-  </a>
+const formatEmail = id => (
+  <FormattedMessage id={id}>
+    {email => <a href={`mailto:${email}`} rel="noopener noreferrer" target="_blank">{email}</a>}
+  </FormattedMessage>
 );
 
 const AboutBox = () => (
@@ -17,7 +15,7 @@ const AboutBox = () => (
       {text => text.split('\n').map((para, idx) => <p key={idx}>{para}</p>)}
     </FormattedMessage>
     <FormattedMessage id="components.mainInfoBar.content.emailUs">
-      {text => <p key="emailUs">{text}: {formatLink(nebEmailUrl, 'common.linkText.NEBLink')}</p>}
+      {text => <p key="emailUs">{text}: {formatEmail('common.linkText.NEBLink')}</p>}
     </FormattedMessage>
     <FormattedMessage id="components.mainInfoBar.content.lookForward" />
     <FormattedMessage id="components.mainInfoBar.headings.contributor" tagName="h1" />

@@ -727,12 +727,12 @@ App.propTypes = {
   setSelectedMultiple: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
-    companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
-    conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
-    projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
-    regionIds: PropTypes.arrayOf(PropTypes.bool),
+    companyIdLookup: PropTypes.objectOf(PropTypes.bool),
+    conditionIdLookup: PropTypes.objectOf(PropTypes.bool),
+    projectIdLookup: PropTypes.objectOf(PropTypes.bool),
+    regionIds: PropTypes.objectOf(PropTypes.bool),
   }).isRequired,
-  filteredProjects: PropTypes.arrayOf(PropTypes.bool).isRequired,
+  filteredProjects: PropTypes.objectOf(PropTypes.bool).isRequired,
 };
 
 export const AppUnconnected = App;

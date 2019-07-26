@@ -146,12 +146,12 @@ export const viewTwo = {
     end: PropTypes.number,
   }),
   searchResults: PropTypes.shape({
-    companyIdLookup: PropTypes.arrayOf(PropTypes.bool),
-    conditionIdLookup: PropTypes.arrayOf(PropTypes.bool),
-    projectIdLookup: PropTypes.arrayOf(PropTypes.bool),
-    regionIdLookup: PropTypes.arrayOf(PropTypes.bool),
+    companyIdLookup: PropTypes.objectOf(PropTypes.bool),
+    conditionIdLookup: PropTypes.objectOf(PropTypes.bool),
+    projectIdLookup: PropTypes.objectOf(PropTypes.bool),
+    regionIdLookup: PropTypes.objectOf(PropTypes.bool),
   }),
-  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.objectOf(PropTypes.bool),
   displayOrder: displayOrder.isRequired,
   availableCategories: PropTypes.arrayOf(PropTypes.string),
   suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
