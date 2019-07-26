@@ -156,15 +156,17 @@ class App extends React.PureComponent {
   incrementTransitionState = (amt = 1) => {
     let currentState = this.props.transitionState;
     if (currentState === transitionStates.view1Reset) {
-      currentState = 0;
-    } else if (amt === -1 && currentState === (transitionStates.tutorialStart + 1)) {
-      currentState = 1;
+      currentState = transitionStates.view1;
     }
 
-    const newState = Math.min(
+    let newState = Math.min(
       Math.max(transitionStates.view1, currentState + amt),
       transitionStates.view2,
     );
+
+    if (newState === transitionStates.tutorialStart && amt < 0) {
+      newState = transitionStates.view1;
+    }
 
     if (newState !== this.props.transitionState) {
       this.props.setTransitionState(newState);
@@ -193,10 +195,19 @@ class App extends React.PureComponent {
       ...prevState,
       tutorialPlaying: false,
     }));
+
     // Override to avoid immediately incrementing +1 afterward if we're on the
     // last tutorial step (see the App's onClickCapture attribute)
     clearTimeout(this.transitionTimeout);
-    this.incrementTransitionState(-1);
+
+    const elapsed = Date.now() - this.lastPlayTimer;
+
+    // If the transition has just started, go back to the previous step
+    const incrementBy = (elapsed < 300)
+      ? -2
+      : -1;
+
+    this.incrementTransitionState(incrementBy);
   };
 
   transportForward = () => {
@@ -204,7 +215,11 @@ class App extends React.PureComponent {
       ...prevState,
       tutorialPlaying: false,
     }));
-    this.incrementTransitionState();
+
+    // If we're transitioning, don't skip past the step we're already moving to
+    if (Date.now() - this.lastPlayTimer > tutorialTiming) {
+      this.incrementTransitionState();
+    }
   };
 
   playTimer = () => {
@@ -214,6 +229,7 @@ class App extends React.PureComponent {
     ) {
       this.incrementTransitionState();
 
+      this.lastPlayTimer = Date.now();
       setTimeout(this.playTimer, tutorialTiming);
     }
   };
