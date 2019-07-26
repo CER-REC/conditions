@@ -141,8 +141,13 @@ export default class ConditionExplorer extends React.Component {
   };
 
   onKeywordClick = (e, instance) => {
-    if (e.currentTarget.classList.contains('textVisible')) {
-      this.props.setSelectedKeyword(instance);
+    const instanceOut = (instance && e.currentTarget.classList.contains('textVisible'))
+      ? instance
+      : null;
+
+    this.props.setSelectedKeyword(instanceOut);
+
+    if (e) {
       e.stopPropagation();
       e.preventDefault();
     }
