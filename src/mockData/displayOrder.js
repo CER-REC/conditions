@@ -25,18 +25,8 @@ export default {
     'UNSPECIFIED',
   ],
   status: [
-    'AMENDED',
-    'AWAITING_FILING',
-    'AWAITING_IR_RESPONSE',
     'CLOSED',
-    'FURTHER_INFORMATION_REQUIRED',
     'IN_PROGRESS',
-    'NO_FILING_REQUIRED',
-    'OVERDUE_FILING',
-    'READY_FOR_BOARD_DECISION',
-    'REVIEW_COMPLETE',
-    'SATISFACTORY',
-    'UNDER_REVIEW',
   ],
   type: [
     'STANDARD',
@@ -59,7 +49,6 @@ export default {
     'OTHER',
   ],
   instrumentOther: [
-    'CO',
     'EC',
     'EP',
     'EPE',

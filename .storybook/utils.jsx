@@ -2,8 +2,12 @@ import React from 'react';
 import { makeDecorator } from '@storybook/addons';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { withDocs, withReadme } from 'storybook-readme';
 import withStatus from './addon-status';
+
+// eslint-disable-next-line react/prop-types
+const DocPreview = ({ children }) => (
+  <div style={{ padding: '0 40px 40px' }}> {children}</div>
+);
 
 export const storiesForComponent = (name, m, readme) => {
   let stories = storiesOf(name, m)
@@ -23,7 +27,9 @@ export const storiesForComponent = (name, m, readme) => {
     .addDecorator(withInfo({ header: false, inline: true }));
 
   if (readme) {
-    stories = stories.addDecorator(withDocs(readme));
+    stories = stories.addParameters({
+      readme: { content: `<!-- STORY -->\n${readme}`, DocPreview },
+    });
   }
   // Add withStatus after the Readme, to make sure it groups on the outside
   stories = stories.addDecorator(withStatus);
@@ -34,7 +40,9 @@ export const storiesForView = (name, m, readme) => {
   let stories = storiesOf(name, m)
     .addParameters({ viewport: { defaultViewport: 'desktop' } });
   if (readme) {
-    stories = stories.addDecorator(withReadme(readme));
+    stories = stories.addParameters({
+      readme: { content: `<!-- STORY -->\n${readme}`, DocPreview },
+    });
   }
   return stories;
 };

@@ -16,37 +16,41 @@ class Modal extends React.PureComponent {
 
   componentDidMount() {
     if (this.dialog.current) { dialogPolyfill.registerDialog(this.dialog.current); }
-    this.updateDialogState();
+    // Use the inverse as the old state to ensure it updates
+    this.updateDialogState(!this.props.isOpen, this.props.isOpen);
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.isOpen !== this.props.isOpen) {
-      this.updateDialogState();
-    }
+    this.updateDialogState(prevProps.isOpen, this.props.isOpen);
   }
 
   componentWillUnmount() {
-    if (this.dialog.current && this.dialog.current.hasAttribute('open')) { this.dialog.current.close(); }
+    this.updateDialogState(this.props.isOpen, false);
   }
 
-  updateDialogState = () => {
+  updateDialogState = (wasOpen, isOpen) => {
     if (!this.dialog.current) { return; }
+    if (wasOpen === isOpen) { return; }
 
-    if (this.props.isOpen) {
+    if (isOpen) {
       this.lastFocus = document.activeElement;
       this.dialog.current.showModal();
     } else if (this.dialog.current.hasAttribute('open')) {
       this.dialog.current.close();
     }
+    // else branch would be trying to close a dialog we thought was open, but
+    // had been closed by the dialog itself already (pressing esc)
   };
 
-  dialogClosed = () => { if (this.lastFocus) { this.lastFocus.focus(); } }
+  dialogClosed = () => {
+    // If something was focused before the dialog opened, refocus on it
+    if (this.lastFocus) { this.lastFocus.focus(); }
+    // If the dialog was closed with esc, notify the parent to close it
+    if (this.props.isOpen) { this.props.closeModal(); }
+  }
 
   render() {
-    const {
-      isOpen,
-      componentProps,
-    } = this.props;
+    const { isOpen, componentProps } = this.props;
 
     return (
       <dialog
@@ -68,7 +72,7 @@ Modal.propTypes = {
   /** A non-rendered component to be rendered in the window */
   component: componentType.isRequired,
   /** Props to be passed to the component */
-  componentProps: PropTypes.shape({}),
+  componentProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Determines if the modal is opened or closed */
   isOpen: PropTypes.bool,
   /** Function that closes the modal */
