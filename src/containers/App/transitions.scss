@@ -101,7 +101,10 @@ $states: (
       opacity: 0,
       transition: "transform #{$defaultTransition}, opacity #{$fastEnd}",
     ),
-    ".appControls .BrowseByBtn.location": (opacity: 0),
+    ".appControls .BrowseByBtn.location": (
+      opacity: 0,
+      pointer-events: none,
+    ),
     ".appControls .GuideTransport": (
       opacity: 1,
       visibility: visible,
@@ -160,8 +163,14 @@ $states: (
   6: (
     ".guideTranslate": (transform: translate(11%, 68%)),
     ".appControls .BrowseBy": (opacity: 0),
-    ".appControls .BrowseByBtn.company": (opacity: 0),
-    ".appControls .BrowseByBtn.location": (opacity: 0),
+    ".appControls .BrowseByBtn.company": (
+      opacity: 0,
+      pointer-events: none,
+    ),
+    ".appControls .BrowseByBtn.location": (
+      opacity: 0,
+      pointer-events: none,
+    ),
     ".ViewTwo .companyBreakdown": (opacity: $faded),
     ".ViewTwo .wheel .MovingContainer": (opacity: 1),
     ".ViewTwo .wheel .listContainer": (opacity: 1),
@@ -175,11 +184,15 @@ $states: (
     ".guideTranslate": (transform: translate(80%, 10%)),
     ".appControls": (transform: translateX(10px)),
     ".appControls .BrowseBy": (opacity: 1),
-    ".appControls .BrowseByBtn.company": (opacity: 1),
+    ".appControls .BrowseByBtn.company": (
+      opacity: 1,
+      pointer-events: auto,
+    ),
     ".appControls .BrowseByBtn.location": (
       opacity: 1,
+      pointer-events: auto,
       transform: translateX(-100%),
-      ),
+    ),
     ".appControls .BrowseByBtn.inactive": (
       visibility: hidden,
       opacity: 0,

@@ -222,7 +222,9 @@ class App extends React.PureComponent {
   togglePlay = (state) => {
     this.setState(prevState => ({
       ...prevState,
-      tutorialPlaying: (state !== undefined) ? state : !prevState.tutorialPlaying,
+      tutorialPlaying: (state !== undefined && typeof state !== 'object')
+        ? state
+        : !prevState.tutorialPlaying,
     }));
 
     setTimeout(this.playTimer, tutorialTiming);
