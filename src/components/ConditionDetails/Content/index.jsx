@@ -65,6 +65,7 @@ class Content extends React.PureComponent {
       this.props.includedKeywords,
       (this.props.itemIndex === -1) ? '' : data.conditions[this.props.itemIndex].text,
     );
+
     return (
       <div className="Content">{
         (this.props.itemIndex === -1)
@@ -78,7 +79,7 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
                 <ContentBlock id="components.conditionDetails.status" content={<FormattedMessage id={`common.status.${data.status}`} />} />
-                <ContentBlock id="components.conditionDetails.location" content={data.location} />
+                <ContentBlock id="components.conditionDetails.location" content={<span>{data.location.join(', ')}</span>} />
               </div>
               {this.renderContentText('components.conditionDetails.activity', data.activity)}
             </React.Fragment>
