@@ -1,8 +1,9 @@
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { doc } from 'storybook-readme';
 import Git from './git.md';
 import Code from './code.md';
 
+const noop = () => <React.Fragment />;
 storiesOf('Documentation|Standards', module)
-  .add('Git', doc(Git))
-  .add('Code', doc(Code));
+  .add('Git', noop, { readme: { content: Git } })
+  .add('Code', noop, { readme: { content: Code } });
