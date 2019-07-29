@@ -109,10 +109,10 @@ export const fillTriangleFrame = ({
 export const triangleCollidesWithRay = ({
   flagBase,
   otherRay,
-  minimumDistance = 0,
+  minimumDistance = 1,
 }) => {
   // The ray is tall enough to be worth checking
-  if (otherRay.y > flagBase.y) {
+  if (otherRay.y >= flagBase.y) {
     const dx = (otherRay.y - flagBase.y) * Math.tan(SIXTY_DEGREES);
     const xIntersect = flagBase.x - Math.abs(dx);
 
