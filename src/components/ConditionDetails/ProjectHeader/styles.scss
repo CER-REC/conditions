@@ -1,85 +1,115 @@
 @import '../../../styles/colors.scss';
 
 .ProjectHeader {
-  height: 24px;
+  // height: 24px;
 
-  background-color: $LightGray;
-
-  display: flex;
   width: 91.5%;
-
   margin-left: 8.5%;
 
-  padding-left: 3px;
-  padding-right: 10px;
+  .topBar {
+    z-index: 1000;
+    position: relative;
 
-  text-align:left;
-  line-height: 24px;
-  vertical-align: middle;
+    background-color: $LightGray;
 
-  white-space: nowrap;
-  overflow: hidden;
+    display: flex;
 
-  h1 {
-    display: inline-block;
-    flex-shrink: 1;
-  }
+    height: 24px;
 
-  .asterisk {
-    color: $LinksTextButtons;
-    font-family: 'FiraSansCondensedBold';
-    display: inline-block;
-  }
 
-  .openProject {
-    height: 90%;
-    flex-grow: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: left;
 
-    .projectName {
-      display: inline-block;
-      vertical-align: top;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 97%;
-      font-family: 'FiraSansCondensedBold';
-      text-decoration: underline;
-    }
+    padding-left: 3px;
+    padding-right: 10px;
 
-    &:before{
-      content: '\00a0';
-      display: inline-block;
-    }
-  }
-
-  .toggleExpand {
-    flex-shrink: 1;
-    padding-left: 10px;
-
-    color: $LinksTextButtons;
-
+    text-align:left;
     line-height: 24px;
-
-    height: 90%;
-  }
-
-
-  .arrow {
-    display: inline-block;
-    stroke: $LinksTextButtons;
-    stroke-width: 1.5px;
-    fill: white;
-
     vertical-align: middle;
 
-    width: 16px;
-    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    h1 {
+      display: inline-block;
+      flex-shrink: 1;
+    }
+
+    .asterisk {
+      color: $LinksTextButtons;
+      font-family: 'FiraSansCondensedBold';
+      display: inline-block;
+    }
+
+    .openProject {
+      height: 90%;
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: left;
+
+      .projectName {
+        display: inline-block;
+        vertical-align: top;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 97%;
+        font-family: 'FiraSansCondensedBold';
+        text-decoration: underline;
+      }
+
+      &:before{
+        content: '\00a0';
+        display: inline-block;
+      }
+    }
+
+    .toggleExpand {
+      flex-shrink: 1;
+      padding-left: 10px;
+
+      color: $LinksTextButtons;
+
+      line-height: 24px;
+
+      height: 90%;
+    }
+
+
+    .arrow {
+      display: inline-block;
+      stroke: $LinksTextButtons;
+      stroke-width: 1.5px;
+      fill: white;
+
+      vertical-align: middle;
+
+      width: 16px;
+      height: 100%;
+    }
+
+    .upperCase {
+      text-transform: uppercase;
+    }
+
   }
 
-  .upperCase {
-    text-transform: uppercase;
+  .counts {
+    z-index: 0;
+    position: relative;
+
+    .CountBubble {
+      display: inline-block;
+
+      top: -6px;
+
+      &:first-of-type {
+        border-top-left-radius: 0;
+      }
+
+      &:last-of-type {
+        position: absolute;
+        left: calc(22%);
+      }
+    }
   }
 }

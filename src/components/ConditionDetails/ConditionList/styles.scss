@@ -27,7 +27,7 @@
     height: 100%;
     overflow-y: auto;
     ul {
-      padding-top: 20px;
+      padding-top: 12px;
       padding-left: 5px;
       height: 100%;
     }
@@ -37,11 +37,11 @@
     &.binnedValue-1 {
       width: calc(0.333 * (100% - 15px));
     }
-    
+
     &.binnedValue-2 {
       width: calc(0.667 * (100% - 15px));
     }
-    
+
     &.binnedValue-3 {
       width: calc(100% - 15px);
     }

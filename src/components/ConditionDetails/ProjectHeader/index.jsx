@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
+import CountBubble from '../../CountBubble';
+
 import handleInteraction from '../../../utilities/handleInteraction';
 
 import './styles.scss';
@@ -35,49 +37,55 @@ const moreButton = (
 
 const ProjectHeader = props => (
   <div className={classNames('ProjectHeader', { location: props.browseBy === 'location' })}>
-    {props.browseBy === 'company'
-      ? (
-        <React.Fragment>
-          <AdvancedFormattedMessage
-            id="components.conditionDetails.selectedProject"
-            tag="h1"
-          />
-          { props.selectedProject !== ''
-            ? (
-              <button
-                type="button"
-                className="openProject"
-                {...handleInteraction(props.openProjectDetails)}
-              >
-                <h2 title={props.selectedProject}>
-                  <span className="projectName">{props.selectedProject}</span>
-                  <span className="asterisk">*</span>
-                </h2>
-              </button>
-            )
-            : <div className="openProject" />
-          }
-        </React.Fragment>
-      )
-      : (
-        <React.Fragment>
-          <AdvancedFormattedMessage
-            id="components.conditionDetails.selectedCondition"
-            tag="h1"
-          />
-          <div className="openProject" />
-        </React.Fragment>
-      )
-    }
-    {!props.isExpandable ? null : (
-      <button
-        type="button"
-        className="toggleExpand"
-        {...handleInteraction(props.toggleExpanded, !props.expanded)}
-      >
-        {props.expanded ? lessButton : moreButton}
-      </button>
-    )}
+    <div className="topBar">
+      {props.browseBy === 'company'
+        ? (
+          <React.Fragment>
+            <AdvancedFormattedMessage
+              id="components.conditionDetails.selectedProject"
+              tag="h1"
+            />
+            { props.selectedProject !== ''
+              ? (
+                <button
+                  type="button"
+                  className="openProject"
+                  {...handleInteraction(props.openProjectDetails)}
+                >
+                  <h2 title={props.selectedProject}>
+                    <span className="projectName">{props.selectedProject}</span>
+                    <span className="asterisk">*</span>
+                  </h2>
+                </button>
+              )
+              : <div className="openProject" />
+            }
+          </React.Fragment>
+        )
+        : (
+          <React.Fragment>
+            <AdvancedFormattedMessage
+              id="components.conditionDetails.selectedCondition"
+              tag="h1"
+            />
+            <div className="openProject" />
+          </React.Fragment>
+        )
+      }
+      {!props.isExpandable ? null : (
+        <button
+          type="button"
+          className="toggleExpand"
+          {...handleInteraction(props.toggleExpanded, !props.expanded)}
+        >
+          {props.expanded ? lessButton : moreButton}
+        </button>
+      )}
+    </div>
+    <div className="counts">
+      <CountBubble count={props.counts.instruments} textId="instruments" />
+      <CountBubble count={props.counts.conditions} textId="conditions" />
+    </div>
   </div>
 );
 
