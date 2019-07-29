@@ -107,7 +107,7 @@ Content.propTypes = {
     instrumentNumber: PropTypes.string.isRequired,
     issuanceDate: PropTypes.string.isRequired,
     effectiveDate: PropTypes.string.isRequired,
-    sunsetDate: PropTypes.string.isRequired,
+    sunsetDate: PropTypes.string,
     status: PropTypes.string.isRequired,
     location: PropTypes.array.isRequired,
     activity: PropTypes.string.isRequired,
