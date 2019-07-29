@@ -196,8 +196,8 @@
         "UNSPECIFIED": "Phase is not specified or applicable."
       },
       "status": {
-        "CLOSED": "this status refers to:\n-condition requirements that have been satisfied, and no further submissions from the company are required; or\n-conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
-        "IN_PROGRESS": "this status refers to conditions that continue to be monitored by the NEB. This happens when:\n-condition filings have not yet been received by the NEB; or,\n-filings have been received but are under review or do not yet meet requirements; or,\n-a project is not completed and it has conditions, which have not been met; or,\n-a project has a post-construction condition, but a requirement has not yet been completed; or,\n-some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions."
+        "CLOSED": "This status refers to:\n• Condition requirements that have been satisfied, and no further submissions from the company are required; or\n• Conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
+        "IN_PROGRESS": "This status refers to conditions that continue to be monitored by the NEB. This happens when:\n• Condition filings have not yet been received by the NEB; or,\n• Filings have been received but are under review or do not yet meet requirements; or,\n• A project is not completed and it has conditions, which have not been met; or,\n• A project has a post-construction condition, but a requirement has not yet been completed; or,\n• Some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions."
       },
       "type": {
         "STANDARD": "A condition that is typically imposed on all approved projects.",
