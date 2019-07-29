@@ -4,6 +4,7 @@ import { setIntlConfig, withIntl } from 'storybook-addon-intl';
 import { addDecorator, configure, addParameters } from '@storybook/react';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure as enzyme } from 'enzyme';
+import { addReadme, configureReadme } from 'storybook-readme';
 
 // Load Locale Data
 import { addLocaleData } from 'react-intl';
@@ -25,6 +26,14 @@ setIntlConfig({
 });
 
 addDecorator(withIntl);
+
+addDecorator(addReadme);
+configureReadme({
+  // eslint-disable-next-line react/prop-types
+  DocPreview: ({ children }) => (
+    <div style={{ padding: '40px 40px 0' }}> {children}</div>
+  ),
+});
 
 const viewports = {
   fullscreen: {

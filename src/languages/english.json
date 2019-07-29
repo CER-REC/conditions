@@ -3,7 +3,6 @@
     "features": {
       "theme": "Theme",
       "instrument": "Instrument",
-      "timing": "Timing",
       "phase": "Phase",
       "type": "Type",
       "status": "Status",
@@ -23,7 +22,7 @@
       "hearings": "hearings",
       "lawsRegulations": "laws, acts and regulations",
       "applicationProcess": "application process",
-      "NEBLink": "energyindesign@neb-one.gc.ca.",
+      "NEBLink": "energyindesign@neb-one.gc.ca",
       "exploreHere": "explore here",
       "appProcess": "application process",
       "explorableHere": "explorable here"
@@ -66,24 +65,12 @@
       "XG": "Gas Order",
       "XO": "Oil Order",
       "ZO": "Abandonment Order",
-      "GH": "text not yet provided",
-      "OH": "text not yet provided",
-      "KAX": "text not yet provided",
-      "MHW": "text not yet provided",
-      "CPTC": "text not yet provided",
-      "XE": "text not yet provided",
-      "MH": "text not yet provided",
-      "OPSP": "text not yet provided",
-      "CO": "text not yet provided",
-      "OPL": "text not yet provided",
+      "GH": "Gas Hearing Order",
+      "OH": "Oil Hearing Order",
+      "XE": "Electricity Order",
+      "MH": "Hearing Order",
+      "OPL": "Oil Order",
       "OTHER": "Other"
-    },
-    "instrumentCommodityType": {
-      "OIL": "Oil",
-      "GAS": "Gas",
-      "POWER": "Power",
-      "ANY_COMMODITY_TYPES": "Any Commodity Types",
-      "NOT_SPECIFIED": "Not Specified"
     },
     "phase": {
       "ABANDONMENT": "Abandonment",
@@ -100,21 +87,8 @@
       "STANDARD": "Standard"
     },
     "status": {
-      "AMENDED": "Amended",
-      "AWAITING_FILING": "Awaiting Filing",
-      "AWAITING_IR_RESPONSE": "Awaiting IR Response",
       "CLOSED": "Closed",
-      "FURTHER_INFORMATION_REQUIRED": "Further Information Required",
-      "IN_PROGRESS": "In Progress",
-      "NO_FILING_REQUIRED": "No Filing Required",
-      "OVERDUE_FILING": "Overdue Filing",
-      "READY_FOR_BOARD_DECISION": "Ready for Board Decision",
-      "REVIEW_COMPLETE": "Review Complete",
-      "SATISFACTORY": "Satisfactory",
-      "UNDER_REVIEW": "Under Review",
-      "ALL_CONDITIONS_MET": "All Conditions Met",
-      "DRAFT": "Draft",
-      "EXPIRED": "Expired"
+      "IN_PROGRESS": "In Progress"
     },
     "filing": {
       "REQUIRED": "Filing Required",
@@ -130,15 +104,15 @@
     "conditionExplorer": {
       "guide": {
         "messages": {
-          "intro": "These lines\nare conditions",
           "0": "Reveal condition\nkeywords by\ndragging",
           "1": "Click to learn\nwhat a\ncondition is",
           "2": "Select a\nkeyword and\nclick to\ncontinue",
-          "click": "Click to\ncontinue"
+          "intro": "These lines\nare conditions",
+          "click": "Click here to\ncontinue"
         },
         "overview": {
           "title": "What is a condition?",
-          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB’s regulatory framework, which is made of laws, regulations, requirements and guidance."
+          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB's regulatory framework, which is made of laws, regulations, requirements and guidance."
         },
         "reason": {
           "title": "Why are conditions made?",
@@ -177,7 +151,7 @@
       "status": "Instrument Status",
       "type": "Instrument Type",
       "activity": "Instrument Activity",
-      "keywords": "Keywords",
+      "keywords": "Search Matches",
       "text": "Text",
       "selectedConditionFeature": "Selected Condition Feature",
       "more": "More",
@@ -221,18 +195,8 @@
         "UNSPECIFIED": "Phase is not specified or applicable."
       },
       "status": {
-        "AMENDED": "Missing description",
-        "AWAITING_FILING": "Missing description",
-        "AWAITING_IR_RESPONSE": "Missing description",
         "CLOSED": "this status refers to:\n-condition requirements that have been satisfied, and no further submissions from the company are required; or\n-conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
-        "FURTHER_INFORMATION_REQUIRED": "Missing description",
-        "IN_PROGRESS": "this status refers to conditions that continue to be monitored by the NEB. This happens when:\n-condition filings have not yet been received by the NEB; or,\n-filings have been received but are under review or do not yet meet requirements; or,\n-a project is not completed and it has conditions, which have not been met; or,\n-a project has a post-construction condition, but a requirement has not yet been completed; or,\n-some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions.",
-        "NO_FILING_REQUIRED": "Missing description",
-        "OVERDUE_FILING": "Missing description",
-        "READY_FOR_BOARD_DECISION": "Missing description",
-        "REVIEW_COMPLETE": "Missing description",
-        "SATISFACTORY": "Missing description",
-        "UNDER_REVIEW": "Missing description"
+        "IN_PROGRESS": "this status refers to conditions that continue to be monitored by the NEB. This happens when:\n-condition filings have not yet been received by the NEB; or,\n-filings have been received but are under review or do not yet meet requirements; or,\n-a project is not completed and it has conditions, which have not been met; or,\n-a project has a post-construction condition, but a requirement has not yet been completed; or,\n-some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions."
       },
       "type": {
         "STANDARD": "A condition that is typically imposed on all approved projects.",
@@ -247,7 +211,7 @@
         "EC": "The approval of the construction and/or operation of an international power line",
         "EP": "The approval of the construction and operation of an international power line",
         "EPE": "The approval of the export of power and/or energy",
-        "FRO": " ",
+        "FRO": "The approval to provide more direct access to financial resources, including readily accessible types",
         "GC": "The approval of the construction of a new gas pipeline or additional gas pipeline",
         "GPL": "The approval of the Plans, Profiles, and Books of Reference for a new or additional gas pipeline. Also used in connection with deviations required in existing gas pipelines",
         "GPLO": "The approval of the opening of a new or additional gas pipelines or deviations thereof",
@@ -265,17 +229,12 @@
         "XG": " The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)",
         "XO": "The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)",
         "ZO": "The approval of abandonment applications",
-        "GH": "text not yet provided",
-        "OH": "text not yet provided",
-        "KAX": "text not yet provided",
-        "MHW": "text not yet provided",
-        "CPTC": "text not yet provided",
-        "XE": "text not yet provided",
-        "MH": "text not yet provided",
-        "OPSP": "text not yet provided",
-        "CO": "text not yet provided",
-        "OPL": "text not yet provided",
-        "OTHER": "text not yet provided"
+        "GH": "The setting of a hearing process for a new additional gas pipeline and/or the export of/or import of gas",
+        "OH": "The setting of a hearing process for a new or additional oil pipeline ",
+        "XE": "The exemption from certification for an international power line (pre 1990)",
+        "MH": "The setting of a hearing date for matters not covered by s.24(6) for various reasons ",
+        "OPL": "The approval of the Plans, Profiles and Books of Reference for a new or additional oil pipeline. Also used in connection with deviation required in existing pipelines",
+        "OTHER": ""
       }
     },
     "featureMenu": {
@@ -370,8 +329,7 @@
         "alphabetical": "Alphabetical",
         "conditions": "{conditions} conditions",
         "inc": "inc",
-        "dec": "dec",
-        "none": "none"
+        "dec": "dec"
       }
     },
     "mainInfoBar": {
@@ -387,7 +345,9 @@
         "methodology": "Click {here} to download a PDF file explaining our data collection methodology.",
         "keywords": "[Placeholder for an explanation of...]",
         "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
-        "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.\nEmail us with your comments and ideas:{nebLink} We look forward to hearing from you.",
+        "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
+        "emailUs": "Email us with your comments and ideas",
+        "lookForward": "We look forward to hearing from you.",
         "contributor": "DATA SOURCE:\nNEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nNEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau\nCOORDINATION:\nAnnette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)\nDATA VISUALIZATION:\nLead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.\nDesign: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.\nLead Technical: VizworX\nTechnical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.",
         "here": "here"
       }
@@ -445,7 +405,7 @@
         "type": "Total Conditions by Type Over Time",
         "filing": "Total Conditions by Filing Over Time"
       },
-      "axis":{
+      "axis": {
         "yAxis": "Number of Conditions",
         "xAxis": "Effective Date"
       }
@@ -470,11 +430,11 @@
     "dotLegend": {
       "text": "NEB Regulated Project with Conditions"
     },
-    "totalConditionsLabel" : {
+    "totalConditionsLabel": {
       "total": "Total Conditions",
       "forProject": "for this Project"
     },
-    "errorBoundary":{
+    "errorBoundary": {
       "errorMessage": "Something went wrong.",
       "restoreLinkText": "Restore Session",
       "restoreMessage": "Please click on the link to restore the session",
