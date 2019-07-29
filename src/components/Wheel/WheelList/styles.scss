@@ -16,7 +16,7 @@
 
   .labelContainer {
     position: absolute;
-    top: calc(50% - 16px);
+    top: calc(50% - 12px);
     height: 24px;
     left: 0;
     width: calc(160% - 48px);
@@ -67,7 +67,7 @@
     border-radius: 50%;
     white-space: nowrap;
     position: absolute;
-    top: calc(26% - 1px);
+    top: 26.5%;
 
     .List-Item.selected {
       line-height: 24px;
