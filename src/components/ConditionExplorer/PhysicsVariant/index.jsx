@@ -185,8 +185,8 @@ export default class PhysicsVariant extends React.PureComponent {
     const dragThreshold = 4;
 
     if (
-      (mouse.absolute.x - this.guideDragOrigin.x > dragThreshold)
-      || (mouse.absolute.y - this.guideDragOrigin.y > dragThreshold)
+      Math.abs(mouse.absolute.x - this.guideDragOrigin.x) > dragThreshold
+      || Math.abs(mouse.absolute.y - this.guideDragOrigin.y) > dragThreshold
     ) {
       if (this.props.selectedKeywordId > -1) {
         this.clearSelectedKeyword();
