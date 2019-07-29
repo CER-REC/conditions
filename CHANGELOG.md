@@ -1,3 +1,31 @@
+## [0.22.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.22.1) (2019-07-29)
+
+
+### App
+
+* **Features:** deselects the current keyword when the Guide is dragged (100c055)
+* **Features:** selects a random wheel item when jumping to View 2 if none is selected (cabd062)
+* **Bug Fixes:** updates search query when keyword is deselected (f36b98d)
+* **Bug Fixes:** avoids glitches when clicking the GuideTransport just after transition has started (d8136b2)
+* **Bug Fixes:** fixes Guide transport's Play not responding, BrowseBy being clickable when hidden (fec5a62)
+* **Code Refactoring:** moves the initial company and location wheel queries up to the App (14ff3bd)
+* **Code Refactoring:** removes redundant method (a5af0aa)
+
+
+### ConditionDetails
+
+* **Features:** adds Condition Number to details content (698ef02, NEBV-1684)
+
+
+### Dependencies
+
+* **Project Maintenance:** update dependency conventional-changelog-cli to v2.0.23 (c6aa2ed)
+
+
+### Wheel
+
+* **Bug Fixes:** fixes company flag collision logic (55a8d18)
+
 # [0.22.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.22.0) (2019-07-29)
 
 
