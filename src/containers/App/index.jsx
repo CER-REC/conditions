@@ -468,10 +468,16 @@ class App extends React.PureComponent {
     // Deselect the current keyword
     } else if (this.selectedKeywordInstance) {
       const keyword = this.selectedKeywordInstance.keyword.value;
+      const newIncluded = this.props.included.filter(term => term !== keyword);
 
-      this.props.setIncluded(this.props.included.filter(term => term !== keyword));
+      this.props.setIncluded(newIncluded);
+      this.updateSearch({
+        includeKeywords: newIncluded,
+        excludeKeywords: this.props.excluded,
+        findAny: this.props.findAny,
+      });
+
       this.props.setSelectedMultiple({ keywordId: -1 });
-
       this.selectedKeywordInstance = null;
     }
   }
