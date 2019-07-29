@@ -694,7 +694,7 @@ class App extends React.PureComponent {
                   conditions: 0,
                 };
 
-                if (!loading && !error) {
+                if (!loading && !error && !this.state.wheelMoving) {
                   const { projectDetails, allInstruments } = data;
                   if (!allInstruments) { return null; }
                   instruments = formatConditionDetails(

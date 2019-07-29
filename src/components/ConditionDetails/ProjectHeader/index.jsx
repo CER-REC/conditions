@@ -82,10 +82,15 @@ const ProjectHeader = props => (
         </button>
       )}
     </div>
-    <div className="counts">
-      <CountBubble count={props.counts.instruments} textId="instruments" />
-      <CountBubble count={props.counts.conditions} textId="conditions" />
-    </div>
+    {props.counts.instruments
+      ? (
+        <div className="counts">
+          <CountBubble count={props.counts.instruments} textId="instruments" />
+          <CountBubble count={props.counts.conditions} textId="conditions" />
+        </div>
+      )
+      : null
+    }
   </div>
 );
 
