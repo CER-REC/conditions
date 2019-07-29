@@ -5,6 +5,10 @@
 
   text-align: center;
 
+  color: $Black77;
+  font-family: $fira-sans-condensed-light;
+  font-size: 12px;
+
   .textButton {
     background: none;
     cursor: pointer;
@@ -12,16 +16,17 @@
     border: none;
     text-align: center;
     display: inline-block;
-    font-size: 10px;
-    margin: 10px;
+    font-family: $fira-sans-condensed;
+    font-size: 11px;
+    margin: 10px 14px;
     color: $Gray160;
     line-height: 16px;
     vertical-align: middle;
-    font-family: inherit;
 
     &.selected {
-      font-size: 12px;
-      font-weight: 600;
+      color: $DarkGray;
+      font-size: 16px;
+      font-family: $fira-sans-condensed-bold;
     }
   }
 
@@ -66,20 +71,17 @@
   }
 
   h1 {
-    color: $general-text-2;
+    color: $Black77;
     font-family: $fira-sans-condensed;
     font-size: 14px;
-    size: 1px;
+
+    &:not(:first-of-type) {
+      margin-top: 1em;
+    }
 
     & + p {
       margin-top: 4px;
     }
-  }
-
-  p {
-    color: $Black77;
-    font-family: $fira-sans-condensed-light;
-    font-size: 12px;
   }
 
   a {

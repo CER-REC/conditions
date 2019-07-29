@@ -8040,20 +8040,6 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           <h1>
             About
           </h1>
-          <span>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
-If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
-We hope we are hitting the mark. Your feedback is essential.
-Email us with your comments and ideas:
-            <a
-              href="mailto:energyindesign@neb-one.gc.ca"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              energyindesign@neb-one.gc.ca
-            </a>
-            . We look forward to hearing from you.
-          </span>
           <p>
             This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
@@ -8064,8 +8050,19 @@ Email us with your comments and ideas:
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas:
+            Email us with your comments and ideas
+            : 
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              energyindesign@neb-one.gc.ca
+            </a>
           </p>
+          <span>
+            We look forward to hearing from you.
+          </span>
           <h1>
             Contributor
           </h1>
@@ -8345,20 +8342,6 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           <h1>
             About
           </h1>
-          <span>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
-If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
-We hope we are hitting the mark. Your feedback is essential.
-Email us with your comments and ideas:
-            <a
-              href="mailto:energyindesign@neb-one.gc.ca"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              energyindesign@neb-one.gc.ca
-            </a>
-            . We look forward to hearing from you.
-          </span>
           <p>
             This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
@@ -8369,8 +8352,19 @@ Email us with your comments and ideas:
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas:
+            Email us with your comments and ideas
+            : 
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              energyindesign@neb-one.gc.ca
+            </a>
           </p>
+          <span>
+            We look forward to hearing from you.
+          </span>
           <h1>
             Contributor
           </h1>
@@ -8650,20 +8644,6 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           <h1>
             About
           </h1>
-          <span>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
-If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
-We hope we are hitting the mark. Your feedback is essential.
-Email us with your comments and ideas:
-            <a
-              href="mailto:energyindesign@neb-one.gc.ca"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              energyindesign@neb-one.gc.ca
-            </a>
-            . We look forward to hearing from you.
-          </span>
           <p>
             This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
@@ -8674,8 +8654,19 @@ Email us with your comments and ideas:
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas:
+            Email us with your comments and ideas
+            : 
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              energyindesign@neb-one.gc.ca
+            </a>
           </p>
+          <span>
+            We look forward to hearing from you.
+          </span>
           <h1>
             Contributor
           </h1>
@@ -8955,20 +8946,6 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           <h1>
             About
           </h1>
-          <span>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
-If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
-We hope we are hitting the mark. Your feedback is essential.
-Email us with your comments and ideas:
-            <a
-              href="mailto:energyindesign@neb-one.gc.ca"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              energyindesign@neb-one.gc.ca
-            </a>
-            . We look forward to hearing from you.
-          </span>
           <p>
             This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
           </p>
@@ -8979,8 +8956,19 @@ Email us with your comments and ideas:
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas:
+            Email us with your comments and ideas
+            : 
+            <a
+              href="mailto:energyindesign@neb-one.gc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              energyindesign@neb-one.gc.ca
+            </a>
           </p>
+          <span>
+            We look forward to hearing from you.
+          </span>
           <h1>
             Contributor
           </h1>
