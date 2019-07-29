@@ -77,8 +77,8 @@ ProjectChart.propTypes = {
   selected: PropTypes.bool,
   /** A flag to animate fake data inside the chart and change condition count value */
   loading: PropTypes.bool,
-  relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
-  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  relevantProjectLookup: PropTypes.objectOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.objectOf(PropTypes.bool),
   projectId: PropTypes.number.isRequired,
 };
 
@@ -88,8 +88,8 @@ ProjectChart.defaultProps = {
   projectName: '',
   loading: false,
   numberOfConditions: 0,
-  relevantProjectLookup: [],
-  filteredProjectLookup: [],
+  relevantProjectLookup: {},
+  filteredProjectLookup: {},
 };
 
 export default ProjectChart;

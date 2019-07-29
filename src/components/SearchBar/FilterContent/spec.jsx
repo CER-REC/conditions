@@ -98,7 +98,7 @@ describe('Components|SearchBar/FilterContent', () => {
       expect(spy).toHaveBeenCalledTimes(1);
       li.simulate('keyDown', { ...eventFuncs, key: 'ArrowLeft' });
       li.simulate('keyUp', { ...eventFuncs, key: 'ArrowLeft' });
-      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1972 });
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1973 });
       expect(spy).toHaveBeenCalledTimes(2);
     });
 
@@ -109,7 +109,7 @@ describe('Components|SearchBar/FilterContent', () => {
       expect(spy).toHaveBeenCalledWith({ start: 1971, end: 1973 });
       li.simulate('keyDown', { ...eventFuncs, keyCode: 37 });
       li.simulate('keyUp', { ...eventFuncs, keyCode: 37 });
-      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1972 });
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1973 });
       expect(spy).toHaveBeenCalledTimes(2);
     });
 
@@ -277,9 +277,9 @@ describe('Components|SearchBar/FilterContent', () => {
       li = wrapper.find('.projectList').find('li');
     });
 
-    test('The first index will have regularBackground, leftCurve and rightCurve', () => {
+    test('The first index will have selectedBackground, leftCurve and rightCurve', () => {
       expect(
-        li.first().hasClass('regularBackground rightCurve leftCurve'),
+        li.first().hasClass('selectedBackground leftCurve rightCurve'),
       ).toBe(true);
     });
 
@@ -306,15 +306,15 @@ describe('Components|SearchBar/FilterContent', () => {
     });
 
     test('The first index will have left curve', () => {
-      expect(li.at(0).hasClass('regularBackground leftCurve')).toBe(true);
+      expect(li.at(0).hasClass('selectedBackground leftCurve')).toBe(true);
     });
 
     test('The second index will only have regular background', () => {
-      expect(li.at(1).hasClass('regularBackground')).toBe(true);
+      expect(li.at(1).hasClass('selectedBackground')).toBe(true);
     });
 
     test('The third index will have rightCurve', () => {
-      expect(li.at(2).hasClass('regularBackground rightCurve')).toBe(true);
+      expect(li.at(2).hasClass('selectedBackground rightCurve')).toBe(true);
     });
   });
 
@@ -345,7 +345,7 @@ describe('Components|SearchBar/FilterContent', () => {
   });
 
   describe('onDrag start', () => {
-    test('onDrag start will call yearSelect prop', () => {
+    test('onDrag start will only update the internal state', () => {
       const spy = jest.fn();
       const wrapper = shallow(
         <FilterContent
@@ -357,12 +357,14 @@ describe('Components|SearchBar/FilterContent', () => {
           onYearSelect={spy}
         />,
       );
+
       const li = wrapper
         .find('.projectList')
         .find('li')
         .first();
       li.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledTimes(0);
+      expect(wrapper.state('selectedYears')).toEqual({ start: 1970, end: 1970 });
     });
   });
 
@@ -386,24 +388,27 @@ describe('Components|SearchBar/FilterContent', () => {
       updatedWrapper = wrapper.find('.projectList').find('li');
       firstLi = updatedWrapper.first();
     });
-    test('onDrag move, will call its onYearSelect prop', () => {
+    test('onDrag move, will only update the internal state', () => {
       firstLi.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledTimes(0);
+      expect(wrapper.state('selectedYears')).toEqual({ start: 1970, end: 1970 });
     });
 
-    test('onDrag Stop, onDragMove should not call its onYearSelect prop', () => {
+    test('onDrag Stop, should update Redux with the new state', () => {
       firstLi.simulate('mouseDown', { ...eventFuncs, target: { value: '1970' } });
+      expect(spy).toHaveBeenCalledTimes(0);
+      firstLi.simulate('mouseOver', { ...eventFuncs, target: { value: '1971' } });
+      expect(spy).toHaveBeenCalledTimes(0);
+      firstLi.simulate('mouseUp', { ...eventFuncs, target: { value: '1971' } });
+      firstLi.simulate('mouseOver', { ...eventFuncs, target: { value: '1972' } });
       expect(spy).toHaveBeenCalledTimes(1);
-      firstLi.simulate('mouseOver', { ...eventFuncs, target: { value: '1970' } });
-      expect(spy).toHaveBeenCalledTimes(2);
-      firstLi.simulate('mouseUp', { ...eventFuncs, target: { value: '1970' } });
-      firstLi.simulate('mouseOver', { ...eventFuncs, target: { value: '1970' } });
-      expect(spy).toHaveBeenCalledTimes(2);
+      expect(spy).toHaveBeenCalledWith({ start: 1970, end: 1971 });
     });
 
-    test('it should obtain the value even if it is clicked on parentElement', () => {
+    test('it should update the internal state even if it is clicked on parentElement', () => {
       firstLi.simulate('mouseDown', { ...eventFuncs, target: { parentElement: { value: '1970' } } });
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledTimes(0);
+      expect(wrapper.state('selectedYears')).toEqual({ start: 1970, end: 1970 });
     });
   });
 });

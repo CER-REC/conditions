@@ -39,10 +39,10 @@ describe('actions/search', () => {
 
   it('should update the search results based on the action', () => {
     const searchResults = {
-      companyIdLookup: [true, false, true],
-      conditionIdLookup: [false, false, true],
-      projectIdLookup: [false, true, false],
-      regionIdLookup: [false, true, true],
+      companyIdLookup: { 1: true, 2: false, 3: true },
+      conditionIdLookup: { 1: false, 2: false, 3: true },
+      projectIdLookup: { 1: false, 2: true, 3: false },
+      regionIdLookup: { 1: false, 2: true, 3: true },
     };
     const newState = search.reducer(undefined, search.setSearchResults(searchResults));
     expect(newState).toHaveProperty('searchResults', searchResults);

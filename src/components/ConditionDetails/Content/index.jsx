@@ -51,7 +51,7 @@ class Content extends React.PureComponent {
 
     const matchedKeywords = joinJsxArray(
       matched.map(keyword => (
-        <span className="highlighted">{keyword}</span>
+        <span className="highlighted" key={keyword}>{keyword}</span>
       )),
       ', ',
     );
@@ -65,6 +65,7 @@ class Content extends React.PureComponent {
       this.props.includedKeywords,
       (this.props.itemIndex === -1) ? '' : data.conditions[this.props.itemIndex].text,
     );
+
     return (
       <div className="Content">{
         (this.props.itemIndex === -1)
@@ -73,12 +74,12 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.issuanceDate" content={data.issuanceDate} />
                 <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} />
-                <ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />
+                {(data.sunsetDate) ? (<ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />) : null }
               </div>
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
                 <ContentBlock id="components.conditionDetails.status" content={<FormattedMessage id={`common.status.${data.status}`} />} />
-                <ContentBlock id="components.conditionDetails.location" content={data.location} />
+                <ContentBlock id="components.conditionDetails.location" content={<span>{data.location.join(', ')}</span>} />
               </div>
               {this.renderContentText('components.conditionDetails.activity', data.activity)}
             </React.Fragment>
@@ -91,7 +92,7 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
               </div>
-              <ContentBlock id="components.conditionDetails.keywords" content={matchedKeywords} />
+              {(matchedKeywords.length) ? (<ContentBlock id="components.conditionDetails.keywords" content={matchedKeywords} />) : null}
               {this.renderContentText('components.conditionDetails.text', highlightedText)}
             </React.Fragment>
           )
@@ -106,7 +107,7 @@ Content.propTypes = {
     instrumentNumber: PropTypes.string.isRequired,
     issuanceDate: PropTypes.string.isRequired,
     effectiveDate: PropTypes.string.isRequired,
-    sunsetDate: PropTypes.string.isRequired,
+    sunsetDate: PropTypes.string,
     status: PropTypes.string.isRequired,
     location: PropTypes.array.isRequired,
     activity: PropTypes.string.isRequired,

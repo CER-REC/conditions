@@ -13,12 +13,33 @@ class ConditionList extends React.PureComponent {
     this.ref = React.createRef();
   }
 
-  scrollTo = (type) => {
-    if (!this.ref.current) { return; }
-    const node = this.ref.current;
-    if (!node || node.scrollHeight <= node.clientHeight) { return; }
+  componentDidMount() {
+    const item = this.props.items[this.props.selectedItem];
+    this.scrollTo(item.instrumentIndex, item.itemIndex);
+  }
 
-    const elm = node.querySelector(`[data-heading="${type}"]`);
+  componentDidUpdate(prevProps) {
+    const prev = prevProps.selectedItem;
+    const cur = this.props.selectedItem;
+
+    if (cur !== prev) {
+      const item = this.props.items[cur];
+      this.scrollTo(item.instrumentIndex, item.itemIndex);
+    }
+  }
+
+  scrollTo = (instrumentIndex, itemIndex) => {
+    if (!this.ref.current) { return; }
+
+    const node = this.ref.current;
+    if (!node) { return; }
+
+    const list = node.querySelector('.List');
+    if (list.scrollHeight <= list.clientHeight) { return; }
+
+    const scrollSelector = `[data-heading="${instrumentIndex}-${itemIndex}"]`;
+
+    const elm = list.querySelector(scrollSelector);
     elm.scrollIntoView({ block: 'center' });
   }
 
@@ -29,7 +50,7 @@ class ConditionList extends React.PureComponent {
     } else {
       this.props.updateSelectedInstrument(instrumentId);
     }
-    this.scrollTo(`${instrumentIndex}-${itemIndex}`);
+    this.scrollTo(instrumentIndex, itemIndex);
   }
 
   render() {

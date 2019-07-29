@@ -63,8 +63,8 @@ CompanyFlag.propTypes = {
   dotWidth: PropTypes.number,
   dotSpacing: PropTypes.number,
   rotation: PropTypes.number,
-  relevantProjectLookup: PropTypes.arrayOf(PropTypes.bool),
-  filteredProjectLookup: PropTypes.arrayOf(PropTypes.bool),
+  relevantProjectLookup: PropTypes.objectOf(PropTypes.bool),
+  filteredProjectLookup: PropTypes.objectOf(PropTypes.bool),
 };
 
 CompanyFlag.defaultProps = {
@@ -73,8 +73,8 @@ CompanyFlag.defaultProps = {
   dotWidth: 16,
   dotSpacing: 24,
   rotation: 0,
-  relevantProjectLookup: [],
-  filteredProjectLookup: [],
+  relevantProjectLookup: {},
+  filteredProjectLookup: {},
 };
 
 export default CompanyFlag;
