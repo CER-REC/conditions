@@ -55,7 +55,7 @@ class LocationWheelMinimap extends React.Component {
 
   // Returns a Feature for the given region name
   regionData(name) {
-    return this.state.regions.find(region => region.properties.ERNAME === name);
+    return this.state.regions.find(region => region.properties.ERNAME.match(name));
   }
 
   // Returns a Feature aggregating all regions in the given province
