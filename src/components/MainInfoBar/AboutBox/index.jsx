@@ -12,6 +12,20 @@ const ConcatenatedEmailText = ({ children }) => (
   <p key="emailUs">{children}</p>
 );
 
+const contributorIndices = [1, 2, 3];
+
+const FormattedContributorSection = ({ children }) => {
+  const lines = children.split('\n');
+  const heading = lines.shift();
+
+  return (
+    <React.Fragment>
+      <h2>{heading}</h2>
+      { lines.map(line => <p key={line}>{line}</p>) }
+    </React.Fragment>
+  );
+};
+
 const AboutBox = () => (
   <div className="AboutBox">
     <FormattedMessage id="components.mainInfoBar.headings.about" tagName="h1" />
@@ -31,10 +45,13 @@ const AboutBox = () => (
       }}
     />
     <FormattedMessage id="components.mainInfoBar.headings.contributor" tagName="h1" />
-    <AdvancedFormattedMessage
-      id="components.mainInfoBar.content.contributor"
-      tag={TranslatedParagraphs}
-    />
+    {contributorIndices.map(i => (
+      <AdvancedFormattedMessage
+        id={`components.mainInfoBar.content.contributors.${i}`}
+        key={i}
+        tag={FormattedContributorSection}
+      />
+    ))}
   </div>
 );
 
