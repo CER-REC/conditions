@@ -28,6 +28,7 @@ import conditionsPerYearQuery from '../../queries/conditionsPerYear';
 import initialConfigurationDataQuery from '../../queries/initialConfigurationData';
 import allKeywordsQuery from '../../queries/allKeywords';
 import companyNameById from '../../queries/companyNameById';
+import { allCompaniesQuery, allRegionsQuery } from '../../queries/wheel';
 
 import * as browseByCreators from '../../actions/browseBy';
 import * as searchCreators from '../../actions/search';
@@ -281,6 +282,22 @@ class App extends React.PureComponent {
 
   jumpToView2 = (type) => {
     this.props.setTransitionState(transitionStates.view2);
+
+    let modeData;
+    let updateFunc;
+    if (type === 'location' && !this.props.selected.region) {
+      modeData = this.props.allRegions;
+      updateFunc = this.updateSelection.fromRegion;
+    } else if (type === 'company' && !this.props.selected.company) {
+      modeData = this.props.allCompanies;
+      updateFunc = this.updateSelection.fromCompany;
+    }
+
+    if (modeData) {
+      const selectedItem = randomArrayValue(modeData);
+      updateFunc(selectedItem.id);
+    }
+
     this.props.setBrowseBy(type);
   }
 
@@ -615,6 +632,8 @@ class App extends React.PureComponent {
           <div style={{ clear: 'both' }} />
           <ViewTwo
             {...viewProps}
+            allCompanies={this.props.allCompanies}
+            allRegions={this.props.allRegions}
             setWheelMoving={this.setWheelMoving}
             wheelMoving={this.state.wheelMoving}
             allConditionsPerYear={this.props.allConditionsPerYear}
@@ -774,6 +793,8 @@ App.propTypes = {
     category: PropTypes.arrayOf(PropTypes.string),
     conditionCount: PropTypes.number,
   })).isRequired,
+  allCompanies: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  allRegions: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   setSelectedMultiple: PropTypes.func.isRequired,
   setIncluded: PropTypes.func.isRequired,
   searchResults: PropTypes.shape({
@@ -828,6 +849,8 @@ export default props => (
             config={{ query: initialConfigurationDataQuery }}
             conditionsPerYear={{ query: conditionsPerYearQuery }}
             allKeywords={{ query: allKeywordsQuery }}
+            allCompanies={{ query: allCompaniesQuery }}
+            allRegions={{ query: allRegionsQuery }}
           >
             {({ data, loading, errors }) => {
               // TODO: Error handling for these queries
@@ -838,6 +861,8 @@ export default props => (
                   allConditionsPerYear={data.conditionsPerYear}
                   allConfigurationData={data.config}
                   allKeywords={data.allKeywords}
+                  allCompanies={data.allCompanies}
+                  allRegions={data.allRegions}
                   {...props}
                 />
               );
