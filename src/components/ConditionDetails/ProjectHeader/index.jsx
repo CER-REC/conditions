@@ -33,55 +33,53 @@ const moreButton = (
   </React.Fragment>
 );
 
-class ProjectHeader extends React.PureComponent {
-  render = () => (
-    <div className={classNames('ProjectHeader', { location: this.props.browseBy === 'location' })}>
-      {this.props.browseBy === 'company'
-        ? (
-          <React.Fragment>
-            <AdvancedFormattedMessage
-              id="components.conditionDetails.selectedProject"
-              tag="h1"
-            />
-            { this.props.selectedProject !== ''
-              ? (
-                <button
-                  type="button"
-                  className="openProject"
-                  {...handleInteraction(this.props.openProjectDetails)}
-                >
-                  <h2 title={this.props.selectedProject}>
-                    <span className="projectName">{this.props.selectedProject}</span>
-                    <span className="asterisk">*</span>
-                  </h2>
-                </button>
-              )
-              : <div className="openProject" />
-            }
-          </React.Fragment>
-        )
-        : (
-          <React.Fragment>
-            <AdvancedFormattedMessage
-              id="components.conditionDetails.selectedCondition"
-              tag="h1"
-            />
-            <div className="openProject" />
-          </React.Fragment>
-        )
-      }
-      {!this.props.isExpandable ? null : (
-        <button
-          type="button"
-          className="toggleExpand"
-          {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
-        >
-          {this.props.expanded ? lessButton : moreButton}
-        </button>
-      )}
-    </div>
-  )
-}
+const ProjectHeader = props => (
+  <div className={classNames('ProjectHeader', { location: props.browseBy === 'location' })}>
+    {props.browseBy === 'company'
+      ? (
+        <React.Fragment>
+          <AdvancedFormattedMessage
+            id="components.conditionDetails.selectedProject"
+            tag="h1"
+          />
+          { props.selectedProject !== ''
+            ? (
+              <button
+                type="button"
+                className="openProject"
+                {...handleInteraction(props.openProjectDetails)}
+              >
+                <h2 title={props.selectedProject}>
+                  <span className="projectName">{props.selectedProject}</span>
+                  <span className="asterisk">*</span>
+                </h2>
+              </button>
+            )
+            : <div className="openProject" />
+          }
+        </React.Fragment>
+      )
+      : (
+        <React.Fragment>
+          <AdvancedFormattedMessage
+            id="components.conditionDetails.selectedCondition"
+            tag="h1"
+          />
+          <div className="openProject" />
+        </React.Fragment>
+      )
+    }
+    {!props.isExpandable ? null : (
+      <button
+        type="button"
+        className="toggleExpand"
+        {...handleInteraction(props.toggleExpanded, !props.expanded)}
+      >
+        {props.expanded ? lessButton : moreButton}
+      </button>
+    )}
+  </div>
+);
 
 ProjectHeader.propTypes = {
   isExpandable: PropTypes.bool,
@@ -90,12 +88,20 @@ ProjectHeader.propTypes = {
   toggleExpanded: PropTypes.func.isRequired,
   browseBy: PropTypes.oneOf(['company', 'location']),
   openProjectDetails: PropTypes.func.isRequired,
+  counts: PropTypes.shape({
+    instruments: PropTypes.number,
+    conditions: PropTypes.number,
+  }),
 };
 
 ProjectHeader.defaultProps = {
   isExpandable: false,
   expanded: false,
   browseBy: 'company',
+  counts: {
+    instruments: 0,
+    conditions: 0,
+  },
 };
 
 export default ProjectHeader;

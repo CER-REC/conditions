@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import './styles.scss';
 
 const CountBubble = ({ count, textId }) => {
