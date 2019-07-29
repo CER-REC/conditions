@@ -6,8 +6,8 @@ const nullSearch = { data: { findSearchResults: null } };
 const nullFilter = { data: { findFilteredProjects: null } };
 
 const shouldQuery = {
-  search: search => search.includeKeywords.length > 0,
-  filter: filter => (
+  search: search => search && search.includeKeywords.length > 0,
+  filter: filter => filter && (
     filter.endYear - filter.startYear < 9 || filter.statuses.length < 2
   ),
 };
@@ -18,7 +18,7 @@ export default (
   setFilteredProjects,
   searchVariables,
   filterVariables,
-) => {
+) => (
   Promise.all([
     (shouldQuery.search(searchVariables))
       ? client.query({
@@ -48,5 +48,14 @@ export default (
         );
       }
     });
-  });
-};
+
+    return {
+      findSearchResults: (
+        (response[0] && response[0].data) ? response[0].data : nullSearch
+      ).findSearchResults,
+      findFilteredProjects: (
+        (response[1] && response[1].data) ? response[1].data : nullFilter
+      ).findFilteredProjects,
+    };
+  })
+);

@@ -53,6 +53,7 @@ import ConditionDetails from '../../components/ConditionDetails';
 import ComposedQuery from '../../components/ComposedQuery';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
 import handleQueryError from '../../utilities/handleQueryError';
+import randomArrayValue from '../../utilities/randomArrayValue';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
@@ -130,10 +131,10 @@ class App extends React.PureComponent {
       fromCompany: id => updateSelectionWrapped('Company', { id }),
       fromInstrument: id => updateSelectionWrapped('Instrument', { id }),
       fromCondition: id => updateSelectionWrapped('Condition', { id }),
-      fromKeyword: (keyword, id) => updateSelectionWrapped(
-        'Keyword',
-        { keywords: [keyword] },
-        { keywordId: id },
+      fromSearchedKeyword: (keywordId, conditionId) => updateSelectionWrapped(
+        'Condition',
+        { id: conditionId },
+        { keywordId },
       ),
     };
   }
@@ -443,12 +444,26 @@ class App extends React.PureComponent {
 
     // TODO: We should either make this support the fallback mode (no physics) and
     // finish implementing it, or remove the code for it
-    const id = parseInt(instance.body.id, 10);
+    const keywordId = parseInt(instance.body.id, 10);
     const keyword = instance.keyword.value;
+    const newIncluded = [keyword];
 
-    this.props.setIncluded([keyword]);
+    this.props.setIncluded(newIncluded);
 
-    this.updateSelection.fromKeyword(keyword, id);
+    this.updateSearch({
+      includeKeywords: newIncluded,
+      excludeKeywords: this.props.excluded,
+      findAny: this.props.findAny,
+    }).then((data) => {
+      if (!(data.findSearchResults.conditionIds && data.findSearchResults.conditionIds.length)) {
+        // TODO: Leaving this here until the ETL search is fixed
+        console.error(`There are no conditions matching "${keyword}"`);
+      } else {
+        const conditionId = randomArrayValue(data.findSearchResults.conditionIds);
+
+        this.updateSelection.fromSearchedKeyword(keywordId, conditionId);
+      }
+    });
   };
 
   openRegDocPopup = () => {
@@ -705,6 +720,7 @@ App.propTypes = {
   setTransitionState: PropTypes.func.isRequired,
   included: PropTypes.arrayOf(PropTypes.string).isRequired,
   excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
+  findAny: PropTypes.bool.isRequired,
   detailViewExpanded: PropTypes.bool.isRequired,
   expandDetailView: PropTypes.func.isRequired,
   selected: PropTypes.shape({
@@ -753,6 +769,7 @@ const ConnectedApp = connect(
     transitionState,
     included: search.included,
     excluded: search.excluded,
+    findAny: search.findAny,
     searchResults: search.searchResults,
     filteredProjects: search.filteredProjects,
     detailViewExpanded,
