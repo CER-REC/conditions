@@ -42,6 +42,7 @@ export default (instruments, selectedFeature, displayOrder) => (
         binnedValue: condition.textLength,
         keywords: [''],
         text: condition.text,
+        conditionNumber: condition.conditionNumber,
       });
       return acc;
     }, []);

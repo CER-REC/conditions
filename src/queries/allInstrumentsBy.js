@@ -25,6 +25,7 @@ const instrumentFields = `
     id
     textLength
     text
+    conditionNumber
     aggregatedCount {
       filing { name, count }
       phase { name, count }

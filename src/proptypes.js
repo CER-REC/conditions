@@ -100,6 +100,7 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
       status: PropTypes.string.isRequired,
       filing: PropTypes.string.isRequired,
     }).isRequired,
+    conditionNumber: PropTypes.string.isRequired, // Despite the name, this is a string
   })).isRequired,
 }));
 

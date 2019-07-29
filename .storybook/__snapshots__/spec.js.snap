@@ -3669,6 +3669,27 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           : 
           2014-10-24
         </div>
+        <div
+          className="ContentBlock"
+        >
+          <span
+            className="contentHeading"
+          >
+            Search Matches
+          </span>
+          : 
+          <span
+            className="highlighted"
+          >
+            hello
+          </span>
+          , 
+          <span
+            className="highlighted"
+          >
+            ipsum
+          </span>
+        </div>
       </div>
       <div
         className="half"
@@ -3693,27 +3714,17 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
             XO-001-2018
           </button>
         </div>
-      </div>
-      <div
-        className="ContentBlock"
-      >
-        <span
-          className="contentHeading"
+        <div
+          className="ContentBlock"
         >
-          Search Matches
-        </span>
-        : 
-        <span
-          className="highlighted"
-        >
-          hello
-        </span>
-        , 
-        <span
-          className="highlighted"
-        >
-          ipsum
-        </span>
+          <span
+            className="contentHeading"
+          >
+            Condition #
+          </span>
+          : 
+          1
+        </div>
       </div>
       <div
         className="contentText"
