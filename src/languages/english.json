@@ -243,12 +243,12 @@
     },
     "greyPipe": {
       "countBubble": {
-        "instruments": "instruments",
-        "projects": "projects",
-        "conditions": "conditions",
-        "instrument": "instrument",
-        "project": "project",
-        "condition": "condition"
+        "instruments": "Instruments",
+        "projects": "Projects",
+        "conditions": "Conditions",
+        "instrument": "Instrument",
+        "project": "Project",
+        "condition": "Condition"
       }
     },
     "guide": {
