@@ -144,6 +144,7 @@
       "selectedProject": "Selected Project",
       "selectedCondition": "Selected Condition",
       "instrumentNumber": "Instrument #",
+      "conditionNumber": "Condition #",
       "location": "Location",
       "issuanceDate": "Issuance Date",
       "effectiveDate": "Effective Date",

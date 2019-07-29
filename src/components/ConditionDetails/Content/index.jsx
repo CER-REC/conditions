@@ -61,9 +61,10 @@ class Content extends React.PureComponent {
 
   render() {
     const data = this.props.instrument;
+    const condition = this.props.itemIndex === -1 ? null : data.conditions[this.props.itemIndex];
     const { highlightedText, matchedKeywords } = this.getHighlightedKeywords(
       this.props.includedKeywords,
-      (this.props.itemIndex === -1) ? '' : data.conditions[this.props.itemIndex].text,
+      condition ? condition.text : '',
     );
 
     return (
@@ -72,14 +73,34 @@ class Content extends React.PureComponent {
           ? (
             <React.Fragment>
               <div className="half">
-                <ContentBlock id="components.conditionDetails.issuanceDate" content={data.issuanceDate} />
-                <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} />
-                {(data.sunsetDate) ? (<ContentBlock id="components.conditionDetails.sunsetDate" content={data.sunsetDate} />) : null }
+                <ContentBlock
+                  id="components.conditionDetails.issuanceDate"
+                  content={data.issuanceDate}
+                />
+                <ContentBlock
+                  id="components.conditionDetails.effectiveDate"
+                  content={data.effectiveDate}
+                />
+                {!data.sunsetDate ? null : (
+                  <ContentBlock
+                    id="components.conditionDetails.sunsetDate"
+                    content={data.sunsetDate}
+                  />
+                )}
               </div>
               <div className="half">
-                <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
-                <ContentBlock id="components.conditionDetails.status" content={<FormattedMessage id={`common.status.${data.status}`} />} />
-                <ContentBlock id="components.conditionDetails.location" content={<span>{data.location.join(', ')}</span>} />
+                <ContentBlock
+                  id="components.conditionDetails.instrumentNumber"
+                  content={this.renderInstrumentLink(data.instrumentNumber)}
+                />
+                <ContentBlock
+                  id="components.conditionDetails.status"
+                  content={<FormattedMessage id={`common.status.${data.status}`} />}
+                />
+                <ContentBlock
+                  id="components.conditionDetails.location"
+                  content={<span>{data.location.join(', ')}</span>}
+                />
               </div>
               {this.renderContentText('components.conditionDetails.activity', data.activity)}
             </React.Fragment>
@@ -87,12 +108,27 @@ class Content extends React.PureComponent {
           : (
             <React.Fragment>
               <div className="half">
-                <ContentBlock id="components.conditionDetails.effectiveDate" content={data.effectiveDate} />
+                <ContentBlock
+                  id="components.conditionDetails.effectiveDate"
+                  content={data.effectiveDate}
+                />
+                {matchedKeywords.length === 0 ? null : (
+                  <ContentBlock
+                    id="components.conditionDetails.keywords"
+                    content={matchedKeywords}
+                  />
+                )}
               </div>
               <div className="half">
-                <ContentBlock id="components.conditionDetails.instrumentNumber" content={this.renderInstrumentLink(data.instrumentNumber)} />
+                <ContentBlock
+                  id="components.conditionDetails.instrumentNumber"
+                  content={this.renderInstrumentLink(data.instrumentNumber)}
+                />
+                <ContentBlock
+                  id="components.conditionDetails.conditionNumber"
+                  content={condition.conditionNumber}
+                />
               </div>
-              {(matchedKeywords.length) ? (<ContentBlock id="components.conditionDetails.keywords" content={matchedKeywords} />) : null}
               {this.renderContentText('components.conditionDetails.text', highlightedText)}
             </React.Fragment>
           )

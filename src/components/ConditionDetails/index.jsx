@@ -57,55 +57,6 @@ class ConditionDetails extends React.Component {
     }, [],
   );
 
-  renderHeader = () => (
-    <ProjectHeader
-      isExpandable={this.props.isExpandable}
-      expanded={this.props.expanded}
-      selectedProject={this.props.selectedProject}
-      toggleExpanded={this.props.toggleExpanded}
-      browseBy={this.props.browseBy}
-      openProjectDetails={this.props.openProjectDetails}
-    />
-  )
-
-  renderList = () => {
-    const items = this.getListData();
-
-    return (items && items.length)
-      ? (
-        <ConditionList
-          items={items}
-          selectedItem={this.findSelectedItem()}
-          updateSelectedInstrument={this.props.updateSelectedInstrument}
-          updateSelectedCondition={this.props.updateSelectedCondition}
-        />
-      )
-      : null;
-  }
-
-  renderContent = (instrument, itemIndex) => (
-    <Content
-      instrument={instrument}
-      itemIndex={itemIndex}
-      openIntermediatePopup={this.props.openIntermediatePopup}
-      includedKeywords={this.props.searchKeywords.include}
-    />
-  )
-
-  renderDetails = (instrument, index) => {
-    const isInstrument = (index === -1);
-
-    return (
-      <Details
-        isInstrument={isInstrument}
-        data={isInstrument
-          ? null
-          : instrument.conditions[index].details
-        }
-      />
-    );
-  }
-
   render() {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
     const index = this.props.selectedItem.itemIndex;
@@ -113,23 +64,49 @@ class ConditionDetails extends React.Component {
       && instrument;
 
     const expanded = this.props.isExpandable && this.props.expanded;
+    const items = this.getListData();
 
     return (
       <section className="ConditionDetails">
         <div className={classNames('main', { expanded, expandable: this.props.isExpandable })}>
-          {this.renderHeader()}
-          { shouldRenderData
-            ? (
-              <React.Fragment>
-                <div className="listPane">{this.renderList()}</div>
-                <div className="contentPane">{this.renderContent(instrument, index)}</div>
-              </React.Fragment>
-            )
-            : null
-          }
+          <ProjectHeader
+            isExpandable={this.props.isExpandable}
+            expanded={this.props.expanded}
+            selectedProject={this.props.selectedProject}
+            toggleExpanded={this.props.toggleExpanded}
+            browseBy={this.props.browseBy}
+            openProjectDetails={this.props.openProjectDetails}
+          />
+          {!shouldRenderData ? null : (
+            <React.Fragment>
+              <div className="listPane">
+                {items.length === 0 ? null : (
+                  <ConditionList
+                    items={items}
+                    selectedItem={this.findSelectedItem()}
+                    updateSelectedInstrument={this.props.updateSelectedInstrument}
+                    updateSelectedCondition={this.props.updateSelectedCondition}
+                  />
+                )}
+              </div>
+              <div className="contentPane">
+                <Content
+                  instrument={instrument}
+                  itemIndex={index}
+                  openIntermediatePopup={this.props.openIntermediatePopup}
+                  includedKeywords={this.props.searchKeywords.include}
+                />
+              </div>
+            </React.Fragment>
+          )}
         </div>
         <div className={classNames('popout', { expanded })}>
-          {shouldRenderData ? this.renderDetails(instrument, index) : null}
+          {!shouldRenderData ? null : (
+            <Details
+              isInstrument={index === -1}
+              data={index === -1 ? null : instrument.conditions[index].details}
+            />
+          )}
         </div>
       </section>
     );

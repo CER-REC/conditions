@@ -28,6 +28,7 @@ export default [
         keywords: ['program'],
         text: `hello ${lorem}`,
         id: 101,
+        conditionNumber: '1',
         details: {
           theme: ['ENVIRONMENTAL_PROTECTION', 'SECURITY'],
           instrument: 'instrument.CONSTRUCTION',
@@ -43,6 +44,7 @@ export default [
         keywords: ['program'],
         text: lorem,
         id: 102,
+        conditionNumber: '2',
         details: {
           theme: ['SECURITY', 'ENFORCEMENT'],
           instrument: 'instrument.ABANDONMENT',
@@ -71,6 +73,7 @@ export default [
         keywords: ['program'],
         text: lorem,
         id: 201,
+        conditionNumber: '1 a',
         details: {
           theme: ['ENFORCEMENT'],
           instrument: 'instrument.ABANDONMENT',
@@ -86,6 +89,7 @@ export default [
         keywords: ['program'],
         text: lorem,
         id: 202,
+        conditionNumber: '1 b',
         details: {
           theme: ['SUNSET_CLAUSE'],
           instrument: 'instrument.ROUTING',
@@ -114,6 +118,7 @@ export default [
         keywords: ['program'],
         text: `hello ${lorem}`,
         id: 301,
+        conditionNumber: '3',
         details: {
           theme: ['ADMINISTRATIVE', 'ENFORCEMENT', 'SUNSET_CLAUSE'],
           instrument: 'instrument.OPENING',
