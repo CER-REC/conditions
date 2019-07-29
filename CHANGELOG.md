@@ -1,3 +1,120 @@
+# [0.22.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.22.0) (2019-07-29)
+
+
+### App
+
+* **Features:** updates French structure for About text to match English changes. (c8ddb6d)
+* **Features:** updates the selection using search results (ec09cfe)
+* **Bug Fixes:** ensures that ConditionDetails' list auto-scrolls when changed (63c5343)
+* **Bug Fixes:** uses an object for search result lookups; wrong projects were being filtered (d3dd6f3)
+* **Bug Fixes:** updates Snapshots (e61131b)
+* **Bug Fixes:** updates search IDs when selecting a keyword (866b06d)
+* **Tests:** updates tests and mock data (776bd2f)
+* **Code Formatting:** removes query and wrapper that are no longer needed (9cb12ff)
+* **Code Refactoring:** extracts randomArrayValue to a utility (63b23a4)
+
+
+### ConditionDetails
+
+* **Features:** adjusts spacing in ProjectHeader when no project is selected (ab14b71, NEBV-1671)
+* **Bug Fixes:** fixes prop type warnings (1e3ac90)
+* **Bug Fixes:** fixes ellipses on ProjectHeader (5571974, NEBV-1671)
+
+
+### ConditionDetails/Content
+
+* **Bug Fixes:** adds no render if null (44eb5cc, NEBV-1675)
+
+
+### Content
+
+* **Bug Fixes:** changes conditionDetails Format (6519f3a)
+* **Code Formatting:** add comma for formatting (6ae6347)
+* **Code Formatting:** makes logic simpler and removes warning (a500c0d)
+
+
+### Dependencies
+
+* **Bug Fixes:** update dependency victory to v32 (549c669)
+* **Tests:** updates snapshots for Victory (6833d1f)
+* **Project Maintenance:** update dependency mini-css-extract-plugin to v0.8.0 (3051b03)
+* **Project Maintenance:** update dependency storybook-readme to v5 (46b5985)
+* **Project Maintenance:** update dependency webpack to v4.38.0 (3617ddf)
+* **Project Maintenance:** updates docs to use storybook-readme@5 syntax (f0d7eaa)
+
+
+### ESLint
+
+* **Code Formatting:** fixes linting errors (2d849da)
+
+
+### FeaturesLegend
+
+* **Bug Fixes:** fixes ellipsis and descenders being clipped (d973107, NEBV-1671)
+
+
+### i18n
+
+* **Features:** fixes double-colon for the view 1 header's subtitle (40f5079, NEBV-1671)
+* **Features:** updates French translations with Adam's comments (79f1925, NEBV-1671)
+* **Features:** updates all translations to match latest provided by NEB (32525be, NEBV-1671)
+* **Features:** removes unused entries related to old data types from translations, constants, and mock/ (814c63d, NEBV-1671)
+* **Features:** updates About box email links to support French (3312373, NEBV-1671)
+
+
+### List, GuideDetail
+
+* **Bug Fixes:** fixes wet template style overwrites (ca89186, NEBV-1673)
+
+
+### MainInfoBar
+
+* **Bug Fixes:** fixes duplicate text, updates styling to match design doc (3dcbdcd)
+
+
+### Modal
+
+* **Bug Fixes:** fixes ability to close modal dialogs (b7ca883, NEBV-1672)
+
+
+### Search
+
+* **Bug Fixes:** fixes enter in include/exclude causing WET to reload page (d9674a7)
+* **Bug Fixes:** reimplements SuggestedKeywordPopout sort order (055a0e7)
+
+
+### SearchBar
+
+* **Features:** watches for changes to selectedYears from Redux (6fb53bd)
+* **Bug Fixes:** fixes glitches when dragging the filter range (430b65b)
+* **Tests:** updates snapshots and tests (b2bbb01)
+* **Tests:** updates tests to match rewrite of props and behavior (ed82576)
+
+
+### Snapshots
+
+* **Tests:** updates storybook snapshots (3a0fe91)
+
+
+### storybook-readme
+
+* **Tests:** fixes mock for storybook-readme to work with v5.0.5 (3b80e4e)
+
+
+### Utilities
+
+* **Bug Fixes:** removes trailing comma on no region (39cdce5, NEBV-1677)
+
+
+### View 2
+
+* **Bug Fixes:** uses the dataset's year range for initial filter query (6cd7d60)
+
+
+### wheel
+
+* **Bug Fixes:** makes ring stay in place (a125c77, NEBV-1669)
+
 ## [0.21.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.21.1) (2019-07-17)
 
 
