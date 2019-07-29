@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.scss';
 
-import CountBubble from './CountBubble';
+import CountBubble from '../CountBubble';
 
 const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
   <div className={classNames('GreyPipe', mode)}>
