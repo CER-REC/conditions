@@ -74,6 +74,7 @@ export default class PhysicsVariant extends React.PureComponent {
 
     Matter.Events.on(mouseConstraint, 'startdrag', this.onGuideDragStart);
     Matter.Events.on(mouseConstraint, 'enddrag', this.onGuideDragEnd);
+    Matter.Events.on(mouseConstraint, 'mousemove', this.onMouseMove);
 
     Matter.World.add(this.engine.world, mouseConstraint);
 
@@ -171,12 +172,31 @@ export default class PhysicsVariant extends React.PureComponent {
     Matter.Body.setStatic(this.guide.outline.body, false);
   };
 
-  onGuideDragStart = () => {
-    this.guideHasMoved = true;
+  onGuideDragStart = ({ mouse }) => {
+    this.guideIsDragging = true;
+    this.guideDragOrigin = { x: mouse.absolute.x, y: mouse.absolute.y };
   };
 
+  onMouseMove = ({ mouse }) => {
+    if (!this.guideDragOrigin) { return; }
+
+    // To allow for a bit of stray movement while trying to click the Guide,
+    // i.e. fingers on a tablet
+    const dragThreshold = 4;
+
+    if (
+      Math.abs(mouse.absolute.x - this.guideDragOrigin.x) > dragThreshold
+      || Math.abs(mouse.absolute.y - this.guideDragOrigin.y) > dragThreshold
+    ) {
+      if (this.props.selectedKeywordId > -1) {
+        this.clearSelectedKeyword();
+      }
+    }
+  }
+
   onGuideDragEnd = () => {
-    this.guideHasMoved = false;
+    this.guideIsDragging = false;
+    this.guideDragOrigin = null;
   };
 
   closeGuide = () => {
@@ -236,6 +256,20 @@ export default class PhysicsVariant extends React.PureComponent {
     }
   };
 
+  onBackgroundClick = () => {
+    if (this.guide.isExpanded) {
+      this.closeGuide();
+    /*
+    } else if (this.props.selectedKeywordId) {
+      this.clearSelectedKeyword(e);
+    */
+    }
+  };
+
+  clearSelectedKeyword = (e) => {
+    this.props.onKeywordClick(e);
+  }
+
   onKeywordClick = (e) => {
     if (this.guide.isExpanded) {
       this.closeGuide();
@@ -249,7 +283,7 @@ export default class PhysicsVariant extends React.PureComponent {
   updateGuideMessage = (currTime) => {
     const currMsg = this.state.guideMessage;
     let newMsg;
-    if (this.guideHasMoved || this.guide.isExpanded) {
+    if (this.guideDragOrigin || this.guide.isExpanded) {
       newMsg = -1;
       this.lastMessageTime = currTime;
     } else if (this.props.selectedKeywordId > -1) {
@@ -308,7 +342,7 @@ export default class PhysicsVariant extends React.PureComponent {
         return 0;
       });
     return (
-      <g ref={this.groupRef} onClick={this.closeGuide}>
+      <g ref={this.groupRef} onClick={this.onBackgroundClick}>
         {/* This is to ensure the group is always clickable */}
         <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
         {sortedKeywords.map(instance => (

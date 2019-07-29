@@ -440,31 +440,47 @@ class App extends React.PureComponent {
   };
 
   setSelectedKeyword = (instance) => {
-    this.selectedKeywordInstance = instance;
+    if (instance) {
+      this.selectedKeywordInstance = instance;
 
-    // TODO: We should either make this support the fallback mode (no physics) and
-    // finish implementing it, or remove the code for it
-    const keywordId = parseInt(instance.body.id, 10);
-    const keyword = instance.keyword.value;
-    const newIncluded = [keyword];
+      // TODO: We should either make this support the fallback mode (no physics) and
+      // finish implementing it, or remove the code for it
+      const keywordId = parseInt(instance.body.id, 10);
+      const keyword = instance.keyword.value;
+      const newIncluded = [keyword];
 
-    this.props.setIncluded(newIncluded);
+      this.props.setIncluded(newIncluded);
 
-    this.updateSearch({
-      includeKeywords: newIncluded,
-      excludeKeywords: this.props.excluded,
-      findAny: this.props.findAny,
-    }).then((data) => {
-      if (!(data.findSearchResults.conditionIds && data.findSearchResults.conditionIds.length)) {
-        // TODO: Leaving this here until the ETL search is fixed
-        console.error(`There are no conditions matching "${keyword}"`);
-      } else {
-        const conditionId = randomArrayValue(data.findSearchResults.conditionIds);
+      this.updateSearch({
+        includeKeywords: newIncluded,
+        excludeKeywords: this.props.excluded,
+        findAny: this.props.findAny,
+      }).then((data) => {
+        if (!(data.findSearchResults.conditionIds && data.findSearchResults.conditionIds.length)) {
+          // TODO: Leaving this here until the ETL search is fixed
+          console.error(`There are no conditions matching "${keyword}"`);
+        } else {
+          const conditionId = randomArrayValue(data.findSearchResults.conditionIds);
 
-        this.updateSelection.fromSearchedKeyword(keywordId, conditionId);
-      }
-    });
-  };
+          this.updateSelection.fromSearchedKeyword(keywordId, conditionId);
+        }
+      });
+    // Deselect the current keyword
+    } else if (this.selectedKeywordInstance) {
+      const keyword = this.selectedKeywordInstance.keyword.value;
+      const newIncluded = this.props.included.filter(term => term !== keyword);
+
+      this.props.setIncluded(newIncluded);
+      this.updateSearch({
+        includeKeywords: newIncluded,
+        excludeKeywords: this.props.excluded,
+        findAny: this.props.findAny,
+      });
+
+      this.props.setSelectedMultiple({ keywordId: -1 });
+      this.selectedKeywordInstance = null;
+    }
+  }
 
   openRegDocPopup = () => {
     this.setState({ isIntermediatePopupOpen: true });
