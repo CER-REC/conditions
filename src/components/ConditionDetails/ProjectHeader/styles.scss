@@ -18,8 +18,10 @@
 
 
 
-    padding-left: 3px;
+    padding-left: 10px;
     padding-right: 10px;
+
+    padding-top: 2px;
 
     text-align:left;
     line-height: 24px;
@@ -54,7 +56,6 @@
         text-overflow: ellipsis;
         max-width: 97%;
         font-family: 'FiraSansCondensedBold';
-        text-decoration: underline;
       }
 
       &:before{

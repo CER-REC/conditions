@@ -29,7 +29,6 @@ const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
       }
     </div>
     <div className="bottom" />
-    {mode === 'location' ? <div className="bottomConnection" /> : null}
   </div>
 );
 
