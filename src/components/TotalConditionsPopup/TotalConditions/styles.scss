@@ -1,0 +1,33 @@
+@import '../../../styles/colors';
+
+.TotalConditions {
+  position: relative;
+
+  width: 450px;
+  height: 250px;
+
+   .Header {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: black;
+  }
+  .Description {
+    font-size: 14px;
+    .Explanation{
+      margin-bottom: 8px;
+    }
+    .Example{
+      margin-top: 8px;
+    }
+  }
+  .PopupBtn {
+    position: absolute;
+
+    right: -12px;
+    bottom: 0;
+
+    width: 80px;
+
+    font-size: 18px;
+  }
+}
