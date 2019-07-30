@@ -160,7 +160,15 @@ $curveRadius: 48px;
     }
   }
 }
-
+@media not all and (min-resolution:.001dpcm) //Safari 
+    { @supports (-webkit-appearance:none) {
+      .GreyPipe{
+        &.company{ 
+          bottom: calc(50%-7px);
+        }
+      }
+    }
+  }
 @media only screen and (max-width: 1200px) {
   .GreyPipe {
 
