@@ -7,9 +7,6 @@ import './styles.scss';
 import { geoConicConformal, geoPath } from 'd3-geo';
 import { feature, mergeArcs } from 'topojson-client';
 
-// Hardcoding for now so I can work on the component
-import topoJSON from './economic_regions_2016_latlng_simplified';
-
 const topoObj = 'economic_regions_2016_latlng_simplified';
 
 // This should use the same dimensions as the component's div to avoid scaling
@@ -29,29 +26,24 @@ class LocationWheelMinimap extends React.Component {
       topoData: {},
       regions: [],
     };
-
-    // Needed to avoid memory issues if React ends up unmounting the component
-    // before our Promise in componentDidMount resolves
-    this.isCurrentlyMounted = false;
   }
 
   componentDidMount() {
     this.isCurrentlyMounted = true;
-
-    Promise.resolve({ body: topoJSON })
-      .then(({ body: topoData }) => {
-        if (this.isCurrentlyMounted) {
-          this.setState({
-            regions: feature(topoData, topoData.objects[topoObj]).features,
-            topoData,
-          });
-        }
-      });
   }
 
   componentWillUnmount() {
     this.isCurrentlyMounted = false;
   }
+
+  loadTopoData = () => import('./economic_regions_2016_latlng_simplified')
+    .then((topoData) => {
+      if (!this.isCurrentlyMounted) { return; }
+      this.setState({
+        regions: feature(topoData, topoData.objects[topoObj]).features,
+        topoData,
+      });
+    });
 
   // Returns a Feature for the given region name
   regionData(name) {
@@ -67,7 +59,11 @@ class LocationWheelMinimap extends React.Component {
   }
 
   render() {
-    if (!this.props.region || !this.state.topoData.objects) { return null; }
+    if (!this.props.region || !this.state.topoData.objects) {
+      this.loadTopoData();
+      return null;
+    }
+
     const regionData = this.regionData(this.props.region.name);
     if (!regionData) { return null; }
     const provinceData = this.provinceData(regionData.properties.PRNAME);
