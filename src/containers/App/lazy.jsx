@@ -9,13 +9,9 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, Provider } from 'react-redux';
-import { IntlProvider, addLocaleData } from 'react-intl';
-import enLocaleData from 'react-intl/locale-data/en';
-import frLocaleData from 'react-intl/locale-data/fr';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
-import i18nMessages from '../../i18n';
 import { lang, regDocURL } from '../../constants';
 
 import * as processQueryData from './processQueryData';
@@ -71,9 +67,6 @@ const link = new HttpLink({
   credentials: 'same-origin',
 });
 const client = new ApolloClient({ cache, link, fetch });
-
-addLocaleData(enLocaleData);
-addLocaleData(frLocaleData);
 
 const noop = () => {};
 const tutorialTiming = 5000;
@@ -137,6 +130,12 @@ class App extends React.PureComponent {
         { keywordId },
       ),
     };
+  }
+
+  componentDidMount() {
+    // Dispatch an event to tell the LoadingGuide that we're mounted
+    const event = new CustomEvent('LoadingGuide.enabled', { detail: false });
+    window.dispatchEvent(event);
   }
 
   updateSearch = (searchVariables, filterVariables) => updateSearch(
@@ -840,35 +839,33 @@ const ConnectedApp = connect(
 )(App);
 
 export default props => (
-  <IntlProvider locale={lang} messages={i18nMessages[lang]}>
-    <ApolloProvider client={client}>
-      <Provider store={store}>
-        <ErrorBoundary>
-          <ComposedQuery
-            config={{ query: initialConfigurationDataQuery }}
-            conditionsPerYear={{ query: conditionsPerYearQuery }}
-            allKeywords={{ query: allKeywordsQuery }}
-            allCompanies={{ query: allCompaniesQuery }}
-            allRegions={{ query: allRegionsQuery }}
-          >
-            {({ data, loading, errors }) => {
-              // TODO: Error handling for these queries
-              if (loading || errors) { return null; }
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <ErrorBoundary>
+        <ComposedQuery
+          config={{ query: initialConfigurationDataQuery }}
+          conditionsPerYear={{ query: conditionsPerYearQuery }}
+          allKeywords={{ query: allKeywordsQuery }}
+          allCompanies={{ query: allCompaniesQuery }}
+          allRegions={{ query: allRegionsQuery }}
+        >
+          {({ data, loading, errors }) => {
+            // TODO: Error handling for these queries
+            if (loading || errors) { return null; }
 
-              return (
-                <ConnectedApp
-                  allConditionsPerYear={data.conditionsPerYear}
-                  allConfigurationData={data.config}
-                  allKeywords={data.allKeywords}
-                  allCompanies={data.allCompanies}
-                  allRegions={data.allRegions}
-                  {...props}
-                />
-              );
-            }}
-          </ComposedQuery>
-        </ErrorBoundary>
-      </Provider>
-    </ApolloProvider>
-  </IntlProvider>
+            return (
+              <ConnectedApp
+                allConditionsPerYear={data.conditionsPerYear}
+                allConfigurationData={data.config}
+                allKeywords={data.allKeywords}
+                allCompanies={data.allCompanies}
+                allRegions={data.allRegions}
+                {...props}
+              />
+            );
+          }}
+        </ComposedQuery>
+      </ErrorBoundary>
+    </Provider>
+  </ApolloProvider>
 );

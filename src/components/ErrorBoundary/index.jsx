@@ -19,6 +19,9 @@ class ErrorBoundary extends React.PureComponent {
       error,
       errorInfo,
     });
+    // Dispatch an event to tell the LoadingGuide that we're mounted
+    const event = new CustomEvent('LoadingGuide.enabled', { detail: false });
+    window.dispatchEvent(event);
   }
 
   render() {

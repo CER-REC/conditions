@@ -2,7 +2,7 @@
   position: relative;
   min-height: 200px;
   // Try to fill the screen. 518px=Header+Footer
-  height: calc(100vh - 518px);
+  height: 100%;
 
   .Guide {
     top: 50%;
