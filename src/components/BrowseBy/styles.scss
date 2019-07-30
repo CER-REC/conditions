@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fontVariables.scss";
+@import "../../styles/safariOnly.scss";
 
 .BrowseBy {
   display: inline-block;
@@ -84,14 +85,13 @@
     }
   }
 }
-@media not all and (min-resolution:.001dpcm) //Safari 
-    { @supports (-webkit-appearance:none) {
-      .BrowseBy{
-        .arrowWrapper{ 
-          &::after {
-            border-width: 12px;
-          }
-        }
+@include safariOnly{
+  .BrowseBy{
+    .arrowWrapper{ 
+      &::after {
+        border-width: 12px;
       }
     }
   }
+}
+  

@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import "../../../styles/safariOnly.scss";
 
 .Company {
   position: relative;
@@ -55,22 +56,20 @@
     font-size: 18px;
   }
 }
-@media not all and (min-resolution:.001dpcm) //Safari 
-    { @supports (-webkit-appearance:none) {
-      .Company{
-        width: 480px;
-          p {
-            width: 400px;
-          }
-          li {
-            width: 400px;
-          }
-          ul {
-            width: 430px;
-          }
-          .PopupBtn {
-            right: 20px;
-          }
-        }
+@include safariOnly{
+  .Company{
+    width: 480px;
+      p {
+       width: 400px;
+      }
+      li {
+        width: 400px;
+      }
+      ul {
+        width: 430px;
+      }
+      .PopupBtn {
+        right: 20px;
+      }
     }
-  }
+}
