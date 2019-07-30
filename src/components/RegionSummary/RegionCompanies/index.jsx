@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import handleInteraction from '../../utilities/handleInteraction';
+import handleInteraction from '../../../utilities/handleInteraction';
 
 import './styles.scss';
 
@@ -18,7 +18,7 @@ const RegionCompanies = (props) => {
   return (
     <div className="RegionCompanies">
       <div className="title">
-        <FormattedMessage id="components.regionCompanies.title" />
+        <FormattedMessage id="components.regionSummary.regionCompanies.title" />
       </div>
       <ul className={props.isVisible}>
         {companyItems}

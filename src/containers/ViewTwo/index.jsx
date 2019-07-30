@@ -4,8 +4,8 @@ import ProjectMenu from '../../components/ProjectMenu';
 import FeaturesLegend from '../../components/FeaturesLegend';
 import Wheel from '../../components/Wheel';
 import GreyPipe from '../../components/GreyPipe';
-import RegionConditionSummary from '../../components/RegionConditionSummary';
-import RegionCompanies from '../../components/RegionCompanies';
+// import RegionConditionSummary from '../../components/RegionConditionSummary';
+// import RegionCompanies from '../../components/RegionCompanies';
 import TrendButton from '../../components/TrendButton';
 import { viewTwo } from '../../proptypes';
 import SearchBar from '../../components/SearchBar';
@@ -157,20 +157,21 @@ class ViewTwo extends React.Component {
         <section className="companyBreakdown">
           {this.props.browseBy === 'location'
             ? (
-              <div className="regionChart">
-                <RegionConditionSummary
-                  selectedAggregatedCount={this.props.selectedAggregatedCount}
-                  selectedFeature={this.props.selected.feature}
-                  displayOrder={this.props.displayOrder}
-                  isHidden={this.props.wheelMoving}
-                />
-                <RegionCompanies
-                  companies={this.props.regionCompanyData.companies}
-                  activeConditionCompanies={this.props.regionCompanyData.selectedConditionCompanies}
-                  openProjectDetails={this.props.openProjectDetails}
-                  isVisible={this.props.wheelMoving ? 'hidden' : ''}
-                />
-              </div>
+              // <div className="regionChart">
+              //   <RegionConditionSummary
+              //     selectedAggregatedCount={this.props.selectedAggregatedCount}
+              //     selectedFeature={this.props.selected.feature}
+              //     displayOrder={this.props.displayOrder}
+              //     isHidden={this.props.wheelMoving}
+              //   />
+              //   <RegionCompanies
+              //     companies={this.props.regionCompanyData.companies}
+              //     activeConditionCompanies={this.props.regionCompanyData.selectedConditionCompanies}
+              //     openProjectDetails={this.props.openProjectDetails}
+              //     isVisible={this.props.wheelMoving ? 'hidden' : ''}
+              //   />
+              // </div>
+              null
             )
             : (
               <React.Fragment>

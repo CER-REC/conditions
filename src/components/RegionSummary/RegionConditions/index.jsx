@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import BarContainer from '../BarContainer';
+import BarContainer from '../../BarContainer';
 import './styles.scss';
 import {
   displayOrder as displayOrderType,
   aggregatedFeatureData,
   featureTypes,
-} from '../../proptypes';
-import getKeyedAggregatedCount from '../../utilities/getKeyedAggregatedCount';
-import getFeatureColor from '../../utilities/getFeatureColor';
+} from '../../../proptypes';
+import getKeyedAggregatedCount from '../../../utilities/getKeyedAggregatedCount';
+import getFeatureColor from '../../../utilities/getFeatureColor';
 
-const RegionConditionSummary = (props) => {
+const RegionConditions = (props) => {
   const { displayOrder, selectedAggregatedCount, selectedFeature } = props;
   if (!selectedAggregatedCount) { return null; }
 
@@ -25,10 +25,10 @@ const RegionConditionSummary = (props) => {
   }));
 
   return (
-    <div className="RegionConditionSummary">
+    <div className="RegionConditions">
       <div className="ChartContainer">
-        <div className="RegionConditionSummaryTitle">
-          <FormattedMessage id="components.regionConditionSummary.title" />
+        <div className="RegionConditionsTitle">
+          <FormattedMessage id="components.regionSummary.regionConditions.title" />
         </div>
         <div className={classNames('RegionConditionChart', props.isHidden ? 'hidden' : '')}>
           <BarContainer items={items} vertical />
@@ -45,16 +45,16 @@ const RegionConditionSummary = (props) => {
   );
 };
 
-RegionConditionSummary.propTypes = {
+RegionConditions.propTypes = {
   isHidden: PropTypes.bool,
   selectedAggregatedCount: aggregatedFeatureData,
   selectedFeature: featureTypes.isRequired,
   displayOrder: displayOrderType.isRequired,
 };
 
-RegionConditionSummary.defaultProps = {
+RegionConditions.defaultProps = {
   isHidden: false,
   selectedAggregatedCount: null,
 };
 
-export default RegionConditionSummary;
+export default RegionConditions;
