@@ -44,7 +44,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
 
     test('should render the formatted all title', () => {
       const id = 'components.smallMultiplesLegend.all.filing';
-      expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
+      expect(wrapper.find('AdvancedFormattedMessage').prop('id')).toBe(id);
     });
   });
 
@@ -56,7 +56,7 @@ describe('Components|SmallMultiplesLegend/LegendItem', () => {
     test('should render the formatted title', () => {
       const id = 'common.filing.REQUIRED';
       expect(wrapper.find('.stream')).toHaveLength(1);
-      expect(wrapper.find('FormattedMessage').prop('id')).toBe(id);
+      expect(wrapper.find('AdvancedFormattedMessage').prop('id')).toBe(id);
     });
 
     test('should render the graph', () => {
