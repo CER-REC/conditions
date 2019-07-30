@@ -28,23 +28,24 @@ const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
       <FormattedMessage id="components.modal.regdocs.found" />
     </p>
     <FormattedMessage id="components.modal.regdocs.currentTab">
-      {text => (<PopupBtn text={text} icon="plus" action={regdocsUrl} />)}
+      {text => (<PopupBtn icon="plus" action={regdocsUrl}>{text}</PopupBtn>)}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.newTab">
       {text => (
         <PopupBtn
-          text={text}
           icon="plus"
           action={regdocsUrl}
           attributes={{
             target: '_blank',
             rel: 'noopener noreferrer',
           }}
-        />
+        >
+          {text}
+        </PopupBtn>
       )}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.cancel">
-      {text => (<PopupBtn text={text} icon="x" action={closeModal} className="cancel" />)}
+      {text => (<PopupBtn icon="x" action={closeModal} className="cancel">{text}</PopupBtn>)}
     </FormattedMessage>
     <FormattedMessage id="components.modal.regdocs.whatIsHeading" tagName="h4" />
     <FormattedMessage id="components.modal.regdocs.whatIsText" tagName="p" />

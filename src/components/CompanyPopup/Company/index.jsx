@@ -36,7 +36,7 @@ const Company = ({ projectName, companies, closeModal }) => (
       }}
     </FormattedMessage>
     <FormattedMessage id="components.modal.company.back">
-      {text => <PopupBtn text={text} icon="x" action={closeModal} />}
+      {text => <PopupBtn icon="x" action={closeModal}>{text}</PopupBtn>}
     </FormattedMessage>
   </div>
 );
