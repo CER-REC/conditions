@@ -3,6 +3,9 @@
 
 $curveRadius: 48px;
 
+$bubbleSpacing: 32px;
+$bubbleBottom: -10px;
+
 .GreyPipe {
   position: absolute;
   width: $curveRadius;
@@ -38,12 +41,7 @@ $curveRadius: 48px;
     .CountBubble {
       position: absolute;
 
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      $bubbleSpacing: 32px;
-      $bubbleBottom: -10px;
+      left: 0;
 
       &:nth-of-type(1) {
         bottom: $bubbleBottom + 2 * $bubbleSpacing;
@@ -78,6 +76,29 @@ $curveRadius: 48px;
       top: $curveRadius;
       bottom: $curveRadius;
       right: 0;
+
+      &.withBubbles {
+        background: none;
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          width: 100%;
+          background: $LightGray;
+        }
+
+        &:before {
+          top: 0;
+          height: calc(100% - #{$bubbleBottom + 2.5 * $bubbleSpacing});
+        }
+
+        &:after {
+          bottom: 0;
+          height: 5%;
+        }
+      }
     }
     .top {
       right: -50%;
