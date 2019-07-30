@@ -75,6 +75,15 @@
     }
   }
 }
+@-moz-document url-prefix() {
+  .BrowseBy{
+    .arrowWrapper{ 
+      &::after {
+        border-width: 14px;
+      }
+    }
+  }
+}
 @media not all and (min-resolution:.001dpcm) //Safari 
     { @supports (-webkit-appearance:none) {
       .BrowseBy{
