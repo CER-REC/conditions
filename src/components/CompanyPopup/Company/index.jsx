@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { FormattedMessage } from 'react-intl';
-
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import PopupBtn from '../../PopupBtn';
-
 import './styles.scss';
+
+// eslint-disable-next-line react/prop-types
+const ProjectName = ({ children, name }) => <h2>{children} <strong>{name}</strong></h2>;
 
 const Company = ({ projectName, companies, closeModal }) => (
   <div className="Company">
-    <FormattedMessage id="components.modal.company.name">
-      {text => <h2>{text}: <strong>{projectName}</strong></h2>}
-    </FormattedMessage>
-    <FormattedMessage id="components.modal.company.associated">
-      {text => <h3>{text}:</h3>}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.modal.company.name"
+      tag={ProjectName}
+      name={projectName}
+    />
+    <AdvancedFormattedMessage id="components.modal.company.associated" tag="h3" />
     <ul className="companies">
       {companies.map(company => <li key={company}>{company}</li>)}
     </ul>
-    <FormattedMessage id="components.modal.company.meaningHeading" tagName="h4" />
+    <AdvancedFormattedMessage id="components.modal.company.meaningHeading" tag="h4" />
     <FormattedMessage id="components.modal.company.meaningText">
       {(text) => {
         const arr = text.split('\n');
@@ -35,9 +36,12 @@ const Company = ({ projectName, companies, closeModal }) => (
         );
       }}
     </FormattedMessage>
-    <FormattedMessage id="components.modal.company.back">
-      {text => <PopupBtn icon="x" action={closeModal}>{text}</PopupBtn>}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.modal.company.back"
+      tag={PopupBtn}
+      icon="x"
+      action={closeModal}
+    />
   </div>
 );
 

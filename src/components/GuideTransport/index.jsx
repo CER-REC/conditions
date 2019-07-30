@@ -45,9 +45,7 @@ const pausePath = `
 
 const GuideTransport = ({ playing, back, forward, togglePlay }) => (
   <div className="GuideTransport">
-    <FormattedMessage id="components.guideTransport.caption">
-      {text => <span>{text}:</span>}
-    </FormattedMessage>
+    <FormattedMessage id="components.guideTransport.caption" />
     <svg
       className="back"
       viewBox="0 0 100 100"

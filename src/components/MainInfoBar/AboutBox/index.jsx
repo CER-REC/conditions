@@ -1,28 +1,45 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
-const formatEmail = id => (
-  <FormattedMessage id={id}>
-    {email => <a href={`mailto:${email}`} rel="noopener noreferrer" target="_blank">{email}</a>}
-  </FormattedMessage>
+// eslint-disable-next-line react/prop-types
+const TranslatedParagraphs = ({ children }) => [].concat(children).map((v) => {
+  if (typeof v !== 'string') { return v; }
+  // eslint-disable-next-line react/no-array-index-key
+  return v.split('\n').map((line, i) => <p key={i}>{line}</p>);
+});
+
+const formatEmail = email => (
+  <a href={`mailto:${email}`} rel="noopener noreferrer" target="_blank">{email}</a>
 );
 
 const AboutBox = () => (
   <div className="AboutBox">
     <FormattedMessage id="components.mainInfoBar.headings.about" tagName="h1" />
-    <FormattedMessage id="components.mainInfoBar.content.about">
-      {/* eslint-disable-next-line react/no-array-index-key */}
-      {text => text.split('\n').map((para, idx) => <p key={idx}>{para}</p>)}
-    </FormattedMessage>
-    <FormattedMessage id="components.mainInfoBar.content.emailUs">
-      {text => <p key="emailUs">{text}: {formatEmail('common.linkText.NEBLink')}</p>}
-    </FormattedMessage>
-    <FormattedMessage id="components.mainInfoBar.content.lookForward" />
+    <AdvancedFormattedMessage
+      id="components.mainInfoBar.content.about"
+      tag={TranslatedParagraphs}
+    />
+    <FormattedMessage
+      id="components.mainInfoBar.content.emailUs"
+      tagName="p"
+      values={{
+        emailPlaceholder: (
+          <FormattedMessage id="common.linkText.NEBLink">
+            {formatEmail}
+          </FormattedMessage>
+        ),
+      }}
+    />
+    <AdvancedFormattedMessage
+      id="components.mainInfoBar.content.lookForward"
+      tag={TranslatedParagraphs}
+    />
     <FormattedMessage id="components.mainInfoBar.headings.contributor" tagName="h1" />
-    <FormattedMessage id="components.mainInfoBar.content.contributor">
-      {/* eslint-disable-next-line react/no-array-index-key */}
-      {text => text.split('\n').map((para, idx) => <p key={idx}>{para}</p>)}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.mainInfoBar.content.contributor"
+      tag={TranslatedParagraphs}
+    />
   </div>
 );
 

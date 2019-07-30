@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 import './styles.scss';
@@ -22,13 +22,12 @@ const DownloadBox = props => (
       tagName="p"
       values={{
         here: (
-          <FormattedMessage id="components.mainInfoBar.content.here">
-            {text => (
-              <button type="button" {...handleInteraction(props.openDataModal)}>
-                {text}
-              </button>
-            )}
-          </FormattedMessage>
+          <AdvancedFormattedMessage
+            id="components.mainInfoBar.content.here"
+            tag="button"
+            type="button"
+            {...handleInteraction(props.openDataModal)}
+          />
         ),
       }}
     />

@@ -401,8 +401,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       <span
         className="browseLabel"
       >
-        Skip intro to browse
-        :
+        Skip intro to browse:
       </span>
     </div>
     <button
@@ -416,13 +415,11 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Projects by 
-          <span
-            className="LastWord"
-          >
-            Company
-          </span>
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
         </span>
       </div>
       <svg
@@ -477,13 +474,11 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Conditions by 
-          <span
-            className="LastWord"
-          >
-            Location
-          </span>
+        Conditions by 
+        <span
+          className="LastWord"
+        >
+          Location
         </span>
       </div>
       <svg
@@ -544,8 +539,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       <span
         className="browseLabel"
       >
-        Skip intro to browse
-        :
+        Skip intro to browse:
       </span>
     </div>
     <button
@@ -559,13 +553,11 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Projects by 
-          <span
-            className="LastWord"
-          >
-            Company
-          </span>
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
         </span>
       </div>
       <svg
@@ -620,13 +612,11 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Conditions by 
-          <span
-            className="LastWord"
-          >
-            Location
-          </span>
+        Conditions by 
+        <span
+          className="LastWord"
+        >
+          Location
         </span>
       </div>
       <svg
@@ -687,8 +677,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       <span
         className="browseLabel"
       >
-        Return to browse
-        :
+        Return to browse:
       </span>
     </div>
     <button
@@ -702,13 +691,11 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Projects by 
-          <span
-            className="LastWord"
-          >
-            Company
-          </span>
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
         </span>
       </div>
       <svg
@@ -763,13 +750,11 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Conditions by 
-          <span
-            className="LastWord"
-          >
-            Location
-          </span>
+        Conditions by 
+        <span
+          className="LastWord"
+        >
+          Location
         </span>
       </div>
       <svg
@@ -835,13 +820,11 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByCompany 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Projects by 
-          <span
-            className="LastWord"
-          >
-            Company
-          </span>
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
         </span>
       </div>
       <svg
@@ -907,13 +890,11 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByLocation 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Projects by 
-          <span
-            className="LastWord"
-          >
-            Company
-          </span>
+        Projects by 
+        <span
+          className="LastWord"
+        >
+          Company
         </span>
       </div>
       <svg
@@ -979,13 +960,11 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn with state toggle 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        <span>
-          Conditions by 
-          <span
-            className="LastWord"
-          >
-            Location
-          </span>
+        Conditions by 
+        <span
+          className="LastWord"
+        >
+          Location
         </span>
       </div>
       <svg
@@ -1289,15 +1268,14 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
       className="Company"
     >
       <h2>
-        Full Project Name
-        : 
+        Full Project Name:
+         
         <strong>
           Trans Mountain Expansion
         </strong>
       </h2>
       <h3>
-        Companies associated with this project
-        :
+        Companies associated with this project:
       </h3>
       <ul
         className="companies"
@@ -1420,15 +1398,14 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
       className="Company"
     >
       <h2>
-        Full Project Name
-        : 
+        Full Project Name:
+         
         <strong>
           Trans Mountain Expansion
         </strong>
       </h2>
       <h3>
-        Companies associated with this project
-        :
+        Companies associated with this project:
       </h3>
       <ul
         className="companies"
@@ -1554,8 +1531,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
         className="ProjectHeader"
       >
         <h1>
-          Selected Project
-          :
+          Selected Project:
         </h1>
         <button
           className="openProject"
@@ -2122,8 +2098,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
           className="ProjectHeader"
         >
           <h1>
-            Selected Project
-            :
+            Selected Project:
           </h1>
           <button
             className="openProject"
@@ -2705,8 +2680,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
         className="ProjectHeader location"
       >
         <h1>
-          Selected Condition
-          :
+          Selected Condition:
         </h1>
         <div
           className="openProject"
@@ -3253,8 +3227,7 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
           className="ProjectHeader location"
         >
           <h1>
-            Selected Condition
-            :
+            Selected Condition:
           </h1>
           <div
             className="openProject"
@@ -4013,8 +3986,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
       className="ProjectHeader"
     >
       <h1>
-        Selected Project
-        :
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -4077,8 +4049,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
       className="ProjectHeader location"
     >
       <h1>
-        Selected Condition
-        :
+        Selected Condition:
       </h1>
       <div
         className="openProject"
@@ -4099,8 +4070,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
       className="ProjectHeader"
     >
       <h1>
-        Selected Project
-        :
+        Selected Project:
       </h1>
       <button
         className="openProject"
@@ -4410,10 +4380,10 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
         <defs>
           <path
             d="
-                  M 0,246
-                  A 246 246 0 0 0 246,0
-                  Z
-                "
+          M 0,246
+          A 246 246 0 0 0 246,0
+          Z
+        "
             id="guideDetailText"
           />
         </defs>
@@ -4593,9 +4563,9 @@ exports[`Storyshots Components|ErrorBoundary default 1`] = `
       className="restoreLink"
     >
       <span>
-        Please click on the link to restore the session
-        : 
+        Please click on the link to restore the session:
       </span>
+       
       <a
         href="http://localhost/"
       >
@@ -4608,9 +4578,9 @@ exports[`Storyshots Components|ErrorBoundary default 1`] = `
       className="resetLink"
     >
       <span>
-        Please click on the link to reset the session
-        : 
+        Please click on the link to reset the session:
       </span>
+       
       <a
         href="http://localhost/"
       >
@@ -4733,8 +4703,7 @@ exports[`Storyshots Components|FeatureTypesDescription allThemes 1`] = `
     <p
       className="info"
     >
-      * 
-      Conditions with multiple themes are counted more than once.
+      * Conditions with multiple themes are counted more than once.
     </p>
     <div>
       <h4
@@ -5035,8 +5004,7 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     <p
       className="info"
     >
-      * 
-      The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.
+      * The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.
     </p>
     <div>
       <h4
@@ -6203,7 +6171,6 @@ exports[`Storyshots Components|GreyPipe/CountBubble default 1`] = `
       <span
         className="text"
       >
-         
         projects
       </span>
     </div>
@@ -6229,7 +6196,6 @@ exports[`Storyshots Components|GreyPipe/CountBubble large value 1`] = `
       <span
         className="text"
       >
-         
         instruments
       </span>
     </div>
@@ -6255,7 +6221,6 @@ exports[`Storyshots Components|GreyPipe/CountBubble singular 1`] = `
       <span
         className="text"
       >
-         
         condition
       </span>
     </div>
@@ -6486,8 +6451,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
     className="GuideTransport"
   >
     <span>
-      Guide
-      :
+      Guide:
     </span>
     <svg
       className="back"
@@ -6597,8 +6561,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
     className="GuideTransport"
   >
     <span>
-      Guide
-      :
+      Guide:
     </span>
     <svg
       className="back"
@@ -8065,8 +8028,7 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas
-            : 
+            Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -8075,9 +8037,9 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
               energyindesign@neb-one.gc.ca
             </a>
           </p>
-          <span>
+          <p>
             We look forward to hearing from you.
-          </span>
+          </p>
           <h1>
             Contributor
           </h1>
@@ -8367,8 +8329,7 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas
-            : 
+            Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -8377,9 +8338,9 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
               energyindesign@neb-one.gc.ca
             </a>
           </p>
-          <span>
+          <p>
             We look forward to hearing from you.
-          </span>
+          </p>
           <h1>
             Contributor
           </h1>
@@ -8669,8 +8630,7 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas
-            : 
+            Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -8679,9 +8639,9 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
               energyindesign@neb-one.gc.ca
             </a>
           </p>
-          <span>
+          <p>
             We look forward to hearing from you.
-          </span>
+          </p>
           <h1>
             Contributor
           </h1>
@@ -8971,8 +8931,7 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas
-            : 
+            Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -8981,9 +8940,9 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
               energyindesign@neb-one.gc.ca
             </a>
           </p>
-          <span>
+          <p>
             We look forward to hearing from you.
-          </span>
+          </p>
           <h1>
             Contributor
           </h1>
@@ -16641,8 +16600,7 @@ exports[`Storyshots Components|RegionCompanies default 1`] = `
         className="title"
       >
         <span>
-          Companies in Selected Region
-          :
+          Companies in Selected Region:
         </span>
       </div>
       <ul
@@ -17185,8 +17143,7 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       </span>
       <br />
       <p>
-        Highlighting conditions containing
-        : 
+        Highlighting conditions containing:
       </p>
       <div
         className="keywordsText"
@@ -17217,13 +17174,13 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
         onKeyPress={[Function]}
         tabIndex={0}
       >
+         
         <span
           className="upperCase"
         >
-           
           Reset
-           
         </span>
+         
         <svg
           viewBox="0 0 427.5 427.5"
           width={12}
@@ -17558,13 +17515,13 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
+           
           <span
             className="upperCase"
           >
-             
             In Progress
-             
           </span>
+           
         </li>
         <li
           className="selectedProject"
@@ -17573,13 +17530,13 @@ exports[`Storyshots Components|SearchBar/FilterContent with interaction 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
+           
           <span
             className="upperCase"
           >
-             
             Completed
-             
           </span>
+           
         </li>
       </ul>
       <button
@@ -17614,13 +17571,13 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
         onKeyPress={[Function]}
         tabIndex={0}
       >
+         
         <span
           className="upperCase"
         >
-           
           Reset
-           
         </span>
+         
         <svg
           viewBox="0 0 427.5 427.5"
           width={12}
@@ -17955,13 +17912,13 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
+           
           <span
             className="upperCase"
           >
-             
             In Progress
-             
           </span>
+           
         </li>
         <li
           className="selectedProject"
@@ -17970,13 +17927,13 @@ exports[`Storyshots Components|SearchBar/FilterContent withProjectStatus 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
+           
           <span
             className="upperCase"
           >
-             
             Completed
-             
           </span>
+           
         </li>
       </ul>
       <button
@@ -18011,13 +17968,13 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
         onKeyPress={[Function]}
         tabIndex={0}
       >
+         
         <span
           className="upperCase"
         >
-           
           Reset
-           
         </span>
+         
         <svg
           viewBox="0 0 427.5 427.5"
           width={12}
@@ -18352,13 +18309,13 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
+           
           <span
             className="upperCase"
           >
-             
             In Progress
-             
           </span>
+           
         </li>
         <li
           className="selectedProject"
@@ -18367,13 +18324,13 @@ exports[`Storyshots Components|SearchBar/FilterContent withYear 1`] = `
           onKeyPress={[Function]}
           tabIndex={0}
         >
+           
           <span
             className="upperCase"
           >
-             
             Completed
-             
           </span>
+           
         </li>
       </ul>
       <button
@@ -18410,8 +18367,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       </span>
       <br />
       <p>
-        Highlighting conditions containing
-        : 
+        Highlighting conditions containing:
       </p>
       <div
         className="keywordsText"
@@ -18425,8 +18381,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         </span>
       </div>
       <p>
-        Exclude conditions containing
-        : 
+        Exclude conditions containing:
       </p>
       <div
         className="keywordsText"
@@ -18464,9 +18419,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         <span
           className="upperCase"
         >
-           
           Reset
-           
         </span>
         <svg
           viewBox="0 0 427.5 427.5"
@@ -18560,9 +18513,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
             <span
               className="upperCase"
             >
-               
               any
-               
             </span>
              of the following
           </span>
@@ -18610,16 +18561,12 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <h1
         className="keywordsTitle"
       >
-         
         Suggested Keywords
-          
       </h1>
       <p
         className="description"
       >
-         
         Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
-          
       </p>
       <ul
         className="categories"
@@ -18627,9 +18574,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
         <li
           className="viewText"
         >
-           
-          View By
-          :  
+          View By:
         </li>
         <li
           className="categoryList upperCase selectedCategory"
@@ -18707,8 +18652,8 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       >
         <span>
           Sort by
-           
         </span>
+         
         <span
           className="selectedSort"
           focusable={true}
@@ -18716,7 +18661,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           Frequency
         </span>
          | 
@@ -18749,12 +18693,11 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               </g>
             </svg>
           </span>
+           
           <span
             className="upperCase sortType"
           >
-             
             dec
-             
           </span>
         </span>
       </div>
@@ -18931,7 +18874,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           tabIndex={0}
           type="button"
         >
-           
           Close
         </button>
       </div>
@@ -19255,37 +19197,6 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
         className="bottom active"
       />
     </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|SelectedGroupBar default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="SelectedGroupBar"
-  >
-    <p
-      style={
-        Object {
-          "background": "lightgrey",
-          "fontSize": 16,
-        }
-      }
-    >
-      Selected Company
-      :
-      <span
-        style={
-          Object {
-            "fontSize": 14,
-          }
-        }
-      >
-        Example Company Name
-      </span>
-    </p>
   </div>
 </div>
 `;

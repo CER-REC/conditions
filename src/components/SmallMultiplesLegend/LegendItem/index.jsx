@@ -1,25 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
 import { VictoryArea } from 'victory';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import './styles.scss';
+
+// eslint-disable-next-line react/prop-types
+const TranslationWithTitle = ({ children }) => <span title={children} className="text">{children}</span>;
 
 const LegendItem = (props) => {
   let caption;
   if (props.all) {
     caption = (
-      <FormattedMessage id={`components.smallMultiplesLegend.all.${props.feature}`}>
-        {text => <span title={text} className="text">{text}</span>}
-      </FormattedMessage>
+      <AdvancedFormattedMessage
+        id={`components.smallMultiplesLegend.all.${props.feature}`}
+        tag={TranslationWithTitle}
+      />
     );
   } else if (props.feature === 'instrument' && props.subFeature !== 'OTHER') {
     caption = <span title={props.subFeature} className="text">{props.subFeature}</span>;
   } else {
     caption = (
-      <FormattedMessage id={`common.${props.feature}.${props.subFeature}`}>
-        {text => <span title={text} className="text">{text}</span>}
-      </FormattedMessage>
+      <AdvancedFormattedMessage
+        id={`common.${props.feature}.${props.subFeature}`}
+        tag={TranslationWithTitle}
+      />
     );
   }
 

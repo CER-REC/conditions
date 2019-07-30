@@ -664,7 +664,7 @@ class App extends React.PureComponent {
                 <ViewThree
                   {...viewProps}
                   displayOrder={this.props.allConfigurationData.displayOrder}
-                  allConditionsPerYear={this.props.allConditionsPerYear /* this.processedConditionCounts.conditionCounts */}
+                  allConditionsPerYear={this.props.allConditionsPerYear}
                   years={this.processedConditionCounts.years}
                   companyName={companyName}
                 />

@@ -191,5 +191,4 @@ storiesForView('Containers|App', module, ReadMe)
         <BuggyComponent />
       </ErrorBoundary>
     );
-  })
-  .add('lazy-load', () => <LazyApp />);
+  });

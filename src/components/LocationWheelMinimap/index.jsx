@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
-import './styles.scss';
-
 import { geoConicConformal, geoPath } from 'd3-geo';
 import { feature, mergeArcs } from 'topojson-client';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
+import './styles.scss';
 
 const topoObj = 'economic_regions_2016_latlng_simplified';
 
@@ -82,9 +81,10 @@ class LocationWheelMinimap extends React.Component {
             <path d={provincePath} className="province" />
           </g>
         </svg>
-        <FormattedMessage id={`provinces.${this.props.region.province}`}>
-          {text => <span className="provinceName">{text}</span>}
-        </FormattedMessage>
+        <AdvancedFormattedMessage
+          id={`provinces.${this.props.region.province}`}
+          className="provinceName"
+        />
       </div>
     );
   }

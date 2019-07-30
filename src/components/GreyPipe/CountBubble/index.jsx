@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import './styles.scss';
 
 const CountBubble = ({ count, textId }) => {
@@ -11,9 +11,7 @@ const CountBubble = ({ count, textId }) => {
   return (
     <div className="CountBubble">
       <span className={classNames('count', { small: count > 999 })}>{count}</span>
-      <FormattedMessage id={`components.greyPipe.countBubble.${id}`}>
-        {text => <span className="text">&nbsp;{text}</span>}
-      </FormattedMessage>
+      <AdvancedFormattedMessage id={`components.greyPipe.countBubble.${id}`} className="text" />
     </div>
   );
 };

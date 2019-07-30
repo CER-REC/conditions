@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import memoize from 'lodash.memoize';
 import './styles.scss';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import handleInteraction from '../../../utilities/handleInteraction';
 import memoizeReference from '../../../utilities/memoizeReference';
 import KeywordList from './KeywordList';
@@ -86,41 +87,38 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     );
     return (
       <div className="SuggestedKeywordsPopout">
-        <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.suggestedKeywords">
-          { text => <h1 className="keywordsTitle"> { text }  </h1> }
-        </FormattedMessage>
-        <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.keywordsDescription">
-          { text => <p className="description"> { text }  </p> }
-        </FormattedMessage>
+        <AdvancedFormattedMessage
+          id="components.searchBar.suggestedKeywordsPopout.suggestedKeywords"
+          tag="h1"
+          className="keywordsTitle"
+        />
+        <AdvancedFormattedMessage
+          id="components.searchBar.suggestedKeywordsPopout.keywordsDescription"
+          tag="p"
+          className="description"
+        />
         <ul className="categories">
-          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.viewBy">
-            { text => <li className="viewText"> { text }:  </li> }
-          </FormattedMessage>
+          <AdvancedFormattedMessage
+            id="components.searchBar.suggestedKeywordsPopout.viewBy"
+            tag="li"
+            className="viewText"
+          />
           {this.renderCategories()}
         </ul>
         <div className="rightText">
-          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.sortBy">
-            {text => <span>{text} </span>}
-          </FormattedMessage>
-          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.frequency">
-            {text => (
-              <span
-                className={this.state.sortByCount ? 'selectedSort' : ''}
-                {...handleInteraction(this.toggleSortBy, true)}
-              > {text}
-              </span>
-            )}
-          </FormattedMessage>
+          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.sortBy" />
+          &nbsp;
+          <AdvancedFormattedMessage
+            id="components.searchBar.suggestedKeywordsPopout.frequency"
+            className={this.state.sortByCount ? 'selectedSort' : ''}
+            {...handleInteraction(this.toggleSortBy, true)}
+          />
           &nbsp;|&nbsp;
-          <FormattedMessage id="components.searchBar.suggestedKeywordsPopout.alphabetical">
-            {text => (
-              <span
-                className={this.state.sortByCount ? '' : 'selectedSort'}
-                {...handleInteraction(this.toggleSortBy, false)}
-              >{text}
-              </span>
-            )}
-          </FormattedMessage>
+          <AdvancedFormattedMessage
+            id="components.searchBar.suggestedKeywordsPopout.alphabetical"
+            className={this.state.sortByCount ? '' : 'selectedSort'}
+            {...handleInteraction(this.toggleSortBy, false)}
+          />
           <span className="hierarchy" {...handleInteraction(this.toggleSortOrder)}>
             <span className="arrow">
               <svg viewBox="0 0 427.5 427.5">
@@ -144,14 +142,14 @@ class SuggestedKeywordsPopout extends React.PureComponent {
                 </g>
               </svg>
             </span>
-            <FormattedMessage
+            &nbsp;
+            <AdvancedFormattedMessage
               id={`components.searchBar.suggestedKeywordsPopout.${
                 // TODO: dec should be desc
                 this.state.sortDesc ? 'dec' : 'inc'
               }`}
-            >
-              {text => <span className="upperCase sortType"> {text} </span>}
-            </FormattedMessage>
+              className="upperCase sortType"
+            />
           </span>
         </div>
         <KeywordList
@@ -162,18 +160,15 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           includeKeywords={this.props.includeKeywords}
           excludeKeywords={this.props.excludeKeywords}
         />
-        <FormattedMessage id="components.searchBar.close">
-          {text => (
-            <div className="closeSearchKeywordPopout">
-              <button
-                {...handleInteraction(this.props.closeTab)}
-                className="upperCase"
-                type="button"
-              > {text}
-              </button>
-            </div>
-          )}
-        </FormattedMessage>
+        <div className="closeSearchKeywordPopout">
+          <AdvancedFormattedMessage
+            id="components.searchBar.close"
+            tag="button"
+            type="button"
+            {...handleInteraction(this.props.closeTab)}
+            className="upperCase"
+          />
+        </div>
       </div>
     );
   }

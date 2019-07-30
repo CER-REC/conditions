@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import { displayOrder as displayOrderPropType } from '../../proptypes';
 import './styles.scss';
+
+// eslint-disable-next-line react/prop-types
+const TranslatedParagraphs = ({ children }) => children
+  .split('\n')
+  .map((line, i) => <p key={i}>{line}</p>); // eslint-disable-line react/no-array-index-key
 
 class FeatureTypesDescription extends React.PureComponent {
   constructor(props) {
@@ -31,19 +36,13 @@ class FeatureTypesDescription extends React.PureComponent {
   renderEntry = (feature, type, className) => {
     const heading = feature === 'instrument'
       ? <h4 data-heading={type}>{type}</h4>
-      : (
-        <FormattedMessage id={`common.${feature}.${type}`}>
-          {text => <h4 data-heading={type}>{text}</h4>}
-        </FormattedMessage>
-      );
+      : <AdvancedFormattedMessage id={`common.${feature}.${type}`} tag="h4" data-heading={type} />;
 
     const content = (feature === 'instrument' && type === 'OTHER') ? null : (
-      <FormattedMessage
+      <AdvancedFormattedMessage
         id={`components.featureTypesDescription.${feature}.${type}`}
-      >
-        {/* eslint-disable-next-line react/no-array-index-key */}
-        {str => str.split('\n').map((line, idx) => <p key={idx}>{line}</p>)}
-      </FormattedMessage>
+        tag={TranslatedParagraphs}
+      />
     );
     return (
       <div key={type} className={className}>
@@ -64,9 +63,11 @@ class FeatureTypesDescription extends React.PureComponent {
     }
 
     const header = !headerId ? null : (
-      <FormattedMessage id={`components.featureTypesDescription.${headerId}`}>
-        {text => <p className="info">* {text}</p>}
-      </FormattedMessage>
+      <AdvancedFormattedMessage
+        id={`components.featureTypesDescription.${headerId}`}
+        tag="p"
+        className="info"
+      />
     );
 
     let content = displayOrder[feature].map(type => this.renderEntry(feature, type));
