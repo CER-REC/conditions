@@ -288,7 +288,7 @@ class App extends React.PureComponent {
     if (type === 'location' && !this.props.selected.region) {
       modeData = this.props.allRegions;
       updateFunc = this.updateSelection.fromRegion;
-    } else if (type === 'company' && !this.props.selected.company) {
+    } else if (!this.props.selected.company) {
       modeData = this.props.allCompanies;
       updateFunc = this.updateSelection.fromCompany;
     }
