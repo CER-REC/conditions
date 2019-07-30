@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import classNames from 'classnames';
+
 import handleInteraction from '../../../utilities/handleInteraction';
 
 import './styles.scss';
@@ -20,7 +22,7 @@ const RegionCompanies = (props) => {
       <div className="title">
         <FormattedMessage id="components.regionSummary.regionCompanies.title" />
       </div>
-      <ul className={props.isVisible}>
+      <ul className={classNames({ hidden: props.isHidden })}>
         {companyItems}
       </ul>
     </div>
@@ -35,13 +37,11 @@ RegionCompanies.propTypes = {
   /** A function for opening up the dialog to project details */
   openProjectDetails: PropTypes.func.isRequired,
   /** A class to hide or show the component according to the movement of the wheel */
-  isVisible: PropTypes.string,
-  /** A string that adds a class to the list within the component.
-   * hidden modifies the visibility of the list */
+  isHidden: PropTypes.bool,
 };
 
 RegionCompanies.defaultProps = {
-  isVisible: '',
+  isHidden: false,
 };
 
 export default RegionCompanies;
