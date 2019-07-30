@@ -1,6 +1,13 @@
 @import '../../styles/grid';
+@import '../../styles/breakpoints';
+
 .App {
-  &.Loading { position: absolute; }
+  position: relative;
+  overflow: hidden;
+
+  @include fillViewport("small", true);
+  @include breakpoint("medium") { @include fillViewport("medium", true); }
+  @include breakpoint("large") { @include fillViewport("large", true); }
 
   .fixedContainer {
     @include grid((

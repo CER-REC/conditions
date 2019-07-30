@@ -14,6 +14,7 @@ const compiler = webpack(webpackConfig);
 const app = express();
 
 app.use(middleware(compiler, {
+  host: '0.0.0.0',
   publicPath: '/conditions/',
 }));
 app.use('/conditions/', express.static('.storybook/wet-template'));

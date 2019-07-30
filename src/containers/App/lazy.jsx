@@ -563,7 +563,7 @@ class App extends React.PureComponent {
 
     return (
       <div
-        className={classNames('App', `transition-state-${transitionState}`)}
+        className={classNames('transitionWrapper', `transition-state-${transitionState}`)}
         ref={this.ref}
         // For the last tutorial step, the view needs to be interactive but still
         // advance the transition state when something is interacted with.

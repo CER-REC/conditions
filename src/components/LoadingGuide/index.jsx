@@ -30,7 +30,7 @@ class LoadingGuide extends React.PureComponent {
 
   setTimeout = () => {
     if (!this.state.visible) { return; }
-    this.timeout = setTimeout(this.incrementStep, 500);
+    this.timeout = setTimeout(this.incrementStep, 250);
   }
 
   incrementStep = () => this.setState(({ step }) => ({ step: (step + 1) % 7 }));

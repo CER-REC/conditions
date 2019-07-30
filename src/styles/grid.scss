@@ -23,9 +23,7 @@
     }
   }
 
-  width: map-get($viewPort, "w");
-  height: map-get($viewPort, "h");
-  position: relative;
+  @include fillViewport($size);
 }
 
 @mixin grid($gridSizes) {

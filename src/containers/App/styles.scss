@@ -1,4 +1,3 @@
-@import '../../styles/grid';
 @import '../../styles/colors';
 @import '../../styles/fontVariables.scss';
 @import "./transitions.scss";
@@ -12,18 +11,6 @@
   $fastStart: 1s cubic-bezier(0, 0.8, 0.2, 1);
   $fastestStart: 1s cubic-bezier(0, 1, 0, 1);
 
-  position: relative;
-  overflow: hidden;
-
-  .fixedContainer {
-    @include grid((
-      guideWrapper: (x: 0, y: 0, w: 120, h: 84),
-      ViewOne: (x: 0, y: 0, w: 120, h: 84),
-      ViewTwo: (x: 0, y: 0, w: 120, h: 84),
-      ViewThree: (x: 0, y: 0, w: 120, h: 84),
-      conditions: (x: 39, y:53, w: 79, h:29),
-    ))
-  }
   .DateUpdated {
     position: absolute;
     bottom: 0;
@@ -194,98 +181,98 @@
 
   .Footer {
     visibility: hidden;
-
-
     transition: opacity $defaultTransition, height $defaultTransition, visibility 0s 1s;
   }
 
-  &.transition-state-8 {
-    .Guide {
-      transition:
-        opacity $fastestEnd,
-        transform $defaultTransition,
-        background-color $defaultTransition,
-        visibility 0s 1s;
-    }
-  }
-
-  // Snapping back from View 2 to View 1, using different curves to make it look decent
-  &.transition-state-9 {
-    .guideTranslate {
-      transition: opacity $fastestEnd;
-    }
-
-    .appControls {
-      transition: transform $fastStart;
-
-      .BrowseBy {
+  .transitionWrapper {
+    &.transition-state-8 {
+      .Guide {
         transition:
-          opacity $fastEnd,
-          color $fastEnd,
-          background-color $fastEnd,
-          margin-right $fastEnd;
-
-        &::after {
-          transition: border-color $fastEnd;
-        }
-      }
-
-      .BrowseByBtn.location {
-        transition: opacity $fastEnd;
-      }
-
-      .GuideTransport {
-        opacity: 0;
-        visibility: hidden;
-
-        transition: opacity $fastEnd, visibility 0s 1s;
+          opacity $fastestEnd,
+          transform $defaultTransition,
+          background-color $defaultTransition,
+          visibility 0s 1s;
       }
     }
 
+    // Snapping back from View 2 to View 1, using different curves to make it look decent
+    &.transition-state-9 {
+      .guideTranslate {
+        transition: opacity $fastestEnd;
+      }
 
-    .ViewOne {
-      .row {
-        &.intro {
-          transition: transform $defaultTransition;
-        }
-        &.explorer {
-          transition: transform $defaultTransition;
-        }
-        &.buttons {
+      .appControls {
+        transition: transform $fastStart;
 
-          .ShortcutInfoBar {
-            transition: opacity $fastEnd;
+        .BrowseBy {
+          transition:
+            opacity $fastEnd,
+            color $fastEnd,
+            background-color $fastEnd,
+            margin-right $fastEnd;
+
+          &::after {
+            transition: border-color $fastEnd;
+          }
+        }
+
+        .BrowseByBtn.location {
+          transition: opacity $fastEnd;
+        }
+
+        .GuideTransport {
+          opacity: 0;
+          visibility: hidden;
+
+          transition: opacity $fastEnd, visibility 0s 1s;
+        }
+      }
+
+
+      .ViewOne {
+        .row {
+          &.intro {
+            transition: transform $defaultTransition;
+          }
+          &.explorer {
+            transition: transform $defaultTransition;
+          }
+          &.buttons {
+
+            .ShortcutInfoBar {
+              transition: opacity $fastEnd;
+            }
           }
         }
       }
-    }
 
-    .ViewTwo {
-      transition: opacity $fastStart;
+      .ViewTwo {
+        transition: opacity $fastStart;
 
-      .header,
-      .wheel,
-      .companyBreakdown,
-      .menus {
+        .header,
+        .wheel,
+        .companyBreakdown,
+        .menus {
+          transition: opacity $fastStart;
+        }
+      }
+
+      .ViewThree {
         transition: opacity $fastStart;
       }
-    }
 
-    .ViewThree {
-      transition: opacity $fastStart;
-    }
-
-    .ConditionDetails {
-      .ConditionList .List,
-      .listPane,
-      .ProjectHeader,
-      .contentPane {
-        transition: opacity $fastStart;
+      .ConditionDetails {
+        .ConditionList .List,
+        .listPane,
+        .ProjectHeader,
+        .contentPane {
+          transition: opacity $fastStart;
+        }
       }
-    }
 
-    .Footer {
-      transition: opacity $fastStart, visibility 0s 1s;
+      .Footer {
+        transition: opacity $fastStart, visibility 0s 1s;
+      }
     }
   }
 }

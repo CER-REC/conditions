@@ -1,8 +1,10 @@
 .LoadingGuide {
-  position: relative;
-  min-height: 200px;
-  // Try to fill the screen. 518px=Header+Footer
+  position: absolute;
+  width: 100%;
   height: 100%;
+  top: 0;
+  z-index: 9999;
+  background: #fff;
 
   .Guide {
     top: 50%;

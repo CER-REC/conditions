@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import LazyApp from '.';
-import App, { AppStore } from './lazy';
+import App from '.';
+import { AppStore } from './lazy';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import { setTransitionState } from '../../actions/transitionState';
 
@@ -116,7 +116,7 @@ storiesForView('Containers|App', module, ReadMe)
       <main role="main" property="mainContentOfPage" className="container">
 
         <div className="visualization">
-          <LazyApp />
+          <App />
         </div>
 
       </main>
