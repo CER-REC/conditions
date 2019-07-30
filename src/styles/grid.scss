@@ -1,16 +1,7 @@
-$breakpoints: (
-  "small": 768px,
-  "medium": 992px,
-  "large": 1200px,
-);
+@import './breakpoints';
 
-@mixin breakpoint($size) {
-  @media (min-width: map-get($breakpoints, $size)) {
-    @content;
-  }
-}
-
-@mixin grid-sizes($gridSizes, $viewPort) {
+@mixin grid-sizes($gridSizes, $size) {
+  $viewPort: map-get($viewports, $size);
   $gridUnit: map-get($viewPort, "w") / 120;
 
   @each $className, $values in $gridSizes {
@@ -53,10 +44,9 @@ $breakpoints: (
     > * { display: none; }
   }
 
-  @include grid-sizes($gridSizes, (w: 100%, h: 100%));
-  @include breakpoint("small") { @include grid-sizes($gridSizes, (w: 746px, h: 538px)); }
-  @include breakpoint("medium") { @include grid-sizes($gridSizes, (w: 968px, h: 698px)); }
-  @include breakpoint("large") { @include grid-sizes($gridSizes, (w: 1168px, h: 843px)); }
+  @include grid-sizes($gridSizes, "small");
+  @include breakpoint("medium") { @include grid-sizes($gridSizes, "medium"); }
+  @include breakpoint("large") { @include grid-sizes($gridSizes, "large"); }
 
   @content;
 }
