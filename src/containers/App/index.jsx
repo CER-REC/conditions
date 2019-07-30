@@ -266,7 +266,7 @@ class App extends React.PureComponent {
   }
 
   jumpToAbout = () => {
-    this.props.setTransitionState(transitionStates.view2);
+    this.jumpToView2();
     this.setMainInfoBarPane('about');
 
     // This timer needs to be long enough for React to do its thing and for the
@@ -298,7 +298,7 @@ class App extends React.PureComponent {
       updateFunc(selectedItem.id);
     }
 
-    this.props.setBrowseBy(type);
+    if (type) { this.props.setBrowseBy(type); }
   }
 
   jumpToView3 = () => this.props.setTransitionState(transitionStates.view3)
