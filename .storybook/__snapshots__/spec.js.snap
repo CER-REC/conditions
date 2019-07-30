@@ -415,7 +415,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Projects by 
+        Projects by
         <span
           className="LastWord"
         >
@@ -474,7 +474,7 @@ exports[`Storyshots Components|BrowseBy default 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Conditions by 
+        Conditions by
         <span
           className="LastWord"
         >
@@ -553,7 +553,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Projects by 
+        Projects by
         <span
           className="LastWord"
         >
@@ -612,7 +612,7 @@ exports[`Storyshots Components|BrowseBy view 1 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Conditions by 
+        Conditions by
         <span
           className="LastWord"
         >
@@ -691,7 +691,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Projects by 
+        Projects by
         <span
           className="LastWord"
         >
@@ -750,7 +750,7 @@ exports[`Storyshots Components|BrowseBy view 3 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Conditions by 
+        Conditions by
         <span
           className="LastWord"
         >
@@ -820,7 +820,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByCompany 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Projects by 
+        Projects by
         <span
           className="LastWord"
         >
@@ -890,7 +890,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn browseByLocation 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Projects by 
+        Projects by
         <span
           className="LastWord"
         >
@@ -960,7 +960,7 @@ exports[`Storyshots Components|BrowseBy/BrowseByBtn with state toggle 1`] = `
       <div
         className="BrowseByBtn-ButtonText"
       >
-        Conditions by 
+        Conditions by
         <span
           className="LastWord"
         >
@@ -1096,7 +1096,7 @@ exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
         y="-12"
       >
         With Circle
-        
+
       </text>
     </g>
   </svg>
@@ -1138,7 +1138,7 @@ exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
         y="-12"
       >
         Without circle
-        
+
       </text>
     </g>
   </svg>
@@ -1269,7 +1269,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     >
       <h2>
         Full Project Name:
-         
+
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -1399,7 +1399,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     >
       <h2>
         Full Project Name:
-         
+
         <strong>
           Trans Mountain Expansion
         </strong>
@@ -1541,21 +1541,34 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
           tabIndex={0}
           type="button"
         >
-          <h2
-            title="Keystone XL"
+          <h1>
+            Selected Project
+            :
+          </h1>
+          <button
+            className="openProject"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <span
-              className="projectName"
+            <h2
+              title="Keystone XL"
             >
-              Keystone XL
-            </span>
-            <span
-              className="asterisk"
-            >
-              *
-            </span>
-          </h2>
-        </button>
+              <span
+                className="projectName"
+              >
+                Keystone XL
+              </span>
+              <span
+                className="asterisk"
+              >
+                *
+              </span>
+            </h2>
+          </button>
+        </div>
       </div>
       <div
         className="listPane"
@@ -1682,7 +1695,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -1692,7 +1705,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="50%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -1734,7 +1747,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -1744,7 +1757,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="50%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -1809,7 +1822,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -1851,7 +1864,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -1916,7 +1929,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -1926,7 +1939,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="33.33333333333333%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -1936,7 +1949,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                         x="66.66666666666666%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -1963,7 +1976,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               >
                 Issuance Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -1974,7 +1987,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               >
                 Effective Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -1985,7 +1998,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               >
                 Sunset Date
               </span>
-              : 
+              :
               2019-01-30
             </div>
           </div>
@@ -2000,7 +2013,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               >
                 Instrument #
               </span>
-              : 
+              :
               <button
                 className="instrumentLink"
                 focusable={true}
@@ -2020,7 +2033,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               >
                 Instrument Status
               </span>
-              : 
+              :
               <span>
                 In Progress
               </span>
@@ -2033,7 +2046,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               >
                 Location
               </span>
-              : 
+              :
               <span>
                 Albuquerque, NM
               </span>
@@ -2043,10 +2056,10 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
             className="contentText"
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
 Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
 Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
 Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
@@ -2108,43 +2121,56 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
             tabIndex={0}
             type="button"
           >
-            <h2
-              title="Keystone XL"
-            >
-              <span
-                className="projectName"
-              >
-                Keystone XL
-              </span>
-              <span
-                className="asterisk"
-              >
-                *
-              </span>
-            </h2>
-          </button>
-          <button
-            className="toggleExpand"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <h1
-              className="upperCase"
-            >
-              Less
+            <h1>
+              Selected Project
+              :
             </h1>
-            <svg
-              className="arrow"
-              viewBox="0 0 16 24"
+            <button
+              className="openProject"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <polyline
-                points="4,4 12,12.5 4,20 4,4"
-              />
-            </svg>
-          </button>
+              <h2
+                title="Keystone XL"
+              >
+                <span
+                  className="projectName"
+                >
+                  Keystone XL
+                </span>
+                <span
+                  className="asterisk"
+                >
+                  *
+                </span>
+              </h2>
+            </button>
+            <button
+              className="toggleExpand"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <h1
+                className="upperCase"
+              >
+                Less
+              </h1>
+              <svg
+                className="arrow"
+                viewBox="0 0 16 24"
+              >
+                <polyline
+                  points="4,4 12,12.5 4,20 4,4"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div
           className="listPane"
@@ -2271,7 +2297,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          
+
                         </rect>
                         <rect
                           className="Bar"
@@ -2281,7 +2307,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="50%"
                           y={0}
                         >
-                          
+
                         </rect>
                       </svg>
                     </div>
@@ -2323,7 +2349,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          
+
                         </rect>
                         <rect
                           className="Bar"
@@ -2333,7 +2359,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="50%"
                           y={0}
                         >
-                          
+
                         </rect>
                       </svg>
                     </div>
@@ -2398,7 +2424,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          
+
                         </rect>
                       </svg>
                     </div>
@@ -2440,7 +2466,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          
+
                         </rect>
                       </svg>
                     </div>
@@ -2505,7 +2531,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="0%"
                           y={0}
                         >
-                          
+
                         </rect>
                         <rect
                           className="Bar"
@@ -2515,7 +2541,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="33.33333333333333%"
                           y={0}
                         >
-                          
+
                         </rect>
                         <rect
                           className="Bar"
@@ -2525,7 +2551,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                           x="66.66666666666666%"
                           y={0}
                         >
-                          
+
                         </rect>
                       </svg>
                     </div>
@@ -2552,7 +2578,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   Issuance Date
                 </span>
-                : 
+                :
                 2014-10-24
               </div>
               <div
@@ -2563,7 +2589,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   Effective Date
                 </span>
-                : 
+                :
                 2014-10-24
               </div>
               <div
@@ -2574,7 +2600,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   Sunset Date
                 </span>
-                : 
+                :
                 2019-01-30
               </div>
             </div>
@@ -2589,7 +2615,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   Instrument #
                 </span>
-                : 
+                :
                 <button
                   className="instrumentLink"
                   focusable={true}
@@ -2609,7 +2635,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   Instrument Status
                 </span>
-                : 
+                :
                 <span>
                   In Progress
                 </span>
@@ -2622,7 +2648,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 >
                   Location
                 </span>
-                : 
+                :
                 <span>
                   Albuquerque, NM
                 </span>
@@ -2632,10 +2658,10 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
               className="contentText"
               dangerouslySetInnerHTML={
                 Object {
-                  "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+                  "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
 Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
 Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
 Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
@@ -2677,14 +2703,22 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
       className="main"
     >
       <div
-        className="ProjectHeader location"
+        className="ProjectHeader"
       >
         <h1>
           Selected Condition:
         </h1>
         <div
-          className="openProject"
-        />
+          className="topBar location"
+        >
+          <h1>
+            Conditions In Selected Region
+            :
+          </h1>
+          <div
+            className="openProject"
+          />
+        </div>
       </div>
       <div
         className="listPane"
@@ -2811,7 +2845,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -2821,7 +2855,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="50%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -2863,7 +2897,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -2873,7 +2907,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="50%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -2938,7 +2972,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -2980,7 +3014,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -3045,7 +3079,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="0%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -3055,7 +3089,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="33.33333333333333%"
                         y={0}
                       >
-                        
+
                       </rect>
                       <rect
                         className="Bar"
@@ -3065,7 +3099,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                         x="66.66666666666666%"
                         y={0}
                       >
-                        
+
                       </rect>
                     </svg>
                   </div>
@@ -3092,7 +3126,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               >
                 Issuance Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -3103,7 +3137,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               >
                 Effective Date
               </span>
-              : 
+              :
               2014-10-24
             </div>
             <div
@@ -3114,7 +3148,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               >
                 Sunset Date
               </span>
-              : 
+              :
               2019-01-30
             </div>
           </div>
@@ -3129,7 +3163,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               >
                 Instrument #
               </span>
-              : 
+              :
               <button
                 className="instrumentLink"
                 focusable={true}
@@ -3149,7 +3183,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               >
                 Instrument Status
               </span>
-              : 
+              :
               <span>
                 In Progress
               </span>
@@ -3162,7 +3196,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               >
                 Location
               </span>
-              : 
+              :
               <span>
                 Albuquerque, NM
               </span>
@@ -3172,10 +3206,10 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
             className="contentText"
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+                "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
 Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
 Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
 Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
@@ -3224,14 +3258,22 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
         className="main"
       >
         <div
-          className="ProjectHeader location"
+          className="ProjectHeader"
         >
           <h1>
             Selected Condition:
           </h1>
           <div
-            className="openProject"
-          />
+            className="topBar location"
+          >
+            <h1>
+              Conditions In Selected Region
+              :
+            </h1>
+            <div
+              className="openProject"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -3371,7 +3413,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    
+
                   </rect>
                 </svg>
               </div>
@@ -3413,7 +3455,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    
+
                   </rect>
                   <rect
                     className="Bar"
@@ -3423,7 +3465,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="33.33333333333333%"
                     y={0}
                   >
-                    
+
                   </rect>
                   <rect
                     className="Bar"
@@ -3433,7 +3475,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="66.66666666666666%"
                     y={0}
                   >
-                    
+
                   </rect>
                 </svg>
               </div>
@@ -3498,7 +3540,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    
+
                   </rect>
                 </svg>
               </div>
@@ -3540,7 +3582,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    
+
                   </rect>
                 </svg>
               </div>
@@ -3605,7 +3647,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
                     x="0%"
                     y={0}
                   >
-                    
+
                   </rect>
                 </svg>
               </div>
@@ -3639,7 +3681,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           >
             Effective Date
           </span>
-          : 
+          :
           2014-10-24
         </div>
         <div
@@ -3650,13 +3692,13 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           >
             Search Matches
           </span>
-          : 
+          :
           <span
             className="highlighted"
           >
             hello
           </span>
-          , 
+          ,
           <span
             className="highlighted"
           >
@@ -3675,7 +3717,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           >
             Instrument #
           </span>
-          : 
+          :
           <button
             className="instrumentLink"
             focusable={true}
@@ -3695,7 +3737,7 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           >
             Condition #
           </span>
-          : 
+          :
           1
         </div>
       </div>
@@ -3703,10 +3745,10 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         className="contentText"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "<span class=\\"contentHeading\\">Text:&nbsp;</span><span class=\\"highlighted\\">hello</span> Lorem <span class=\\"highlighted\\">ipsum</span> dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+            "__html": "<span class=\\"contentHeading\\">Text:&nbsp;</span><span class=\\"highlighted\\">hello</span> Lorem <span class=\\"highlighted\\">ipsum</span> dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
 Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
 Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
 Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
@@ -3741,7 +3783,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           >
             Issuance Date
           </span>
-          : 
+          :
           2014-10-24
         </div>
         <div
@@ -3752,7 +3794,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           >
             Effective Date
           </span>
-          : 
+          :
           2014-10-24
         </div>
         <div
@@ -3763,7 +3805,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           >
             Sunset Date
           </span>
-          : 
+          :
           2019-01-30
         </div>
       </div>
@@ -3778,7 +3820,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           >
             Instrument #
           </span>
-          : 
+          :
           <button
             className="instrumentLink"
             focusable={true}
@@ -3798,7 +3840,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           >
             Instrument Status
           </span>
-          : 
+          :
           <span>
             In Progress
           </span>
@@ -3811,7 +3853,7 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           >
             Location
           </span>
-          : 
+          :
           <span>
             Albuquerque, NM
           </span>
@@ -3821,10 +3863,10 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
         className="contentText"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius. 
-Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla. 
-Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem. 
-Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper. 
+            "__html": "<span class=\\"contentHeading\\">Instrument Activity:&nbsp;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis est non mi euismod, eu bibendum purus varius.
+Donec mattis porta sem sed malesuada. Nulla luctus elit at suscipit tempor. Aenean maximus leo eu massa eleifend gravida. Integer nulla tortor, pulvinar quis arcu non, gravida finibus nulla.
+Quisque in velit sed odio tempor viverra quis id neque. Suspendisse id arcu sed elit feugiat bibendum eu a sem.
+Etiam tincidunt massa ut nisi dictum, vitae ultrices mi sagittis. Nulla facilisi. In convallis massa ac orci dictum semper.
 Maecenas tincidunt sem nec turpis fringilla, et gravida dui congue.
 Suspendisse sed ultrices orci. Donec elementum sem aliquet, malesuada tortor at, finibus elit.
 Nulla posuere aliquet nibh sit amet porta. Sed tristique arcu non consectetur euismod. Aenean maximus arcu non urna volutpat viverra.
@@ -3854,7 +3896,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock default 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a content block
       </div>
       <div
@@ -3865,7 +3907,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock default 1`] = `
         >
           Theme
         </span>
-        : 
+        :
         This is a content block
       </div>
     </div>
@@ -3900,18 +3942,18 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Theme
           </span>
-          : 
+          :
           <span>
             Administrative
           </span>
           <span>
-            , 
+            ,
           </span>
           <span>
             Enforcement
           </span>
           <span>
-            , 
+            ,
           </span>
           <span>
             Sunset Clause
@@ -3925,7 +3967,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Phase
           </span>
-          : 
+          :
           <span>
             During Construction Phase
           </span>
@@ -3938,7 +3980,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Type
           </span>
-          : 
+          :
           <span>
             Standard
           </span>
@@ -3951,7 +3993,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Status
           </span>
-          : 
+          :
           <span>
             In Progress
           </span>
@@ -3964,7 +4006,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Filing
           </span>
-          : 
+          :
           <span>
             Filing Required
           </span>
@@ -3996,43 +4038,56 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
         tabIndex={0}
         type="button"
       >
-        <h2
-          title="Keystone XL"
-        >
-          <span
-            className="projectName"
-          >
-            Keystone XL
-          </span>
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
-      <button
-        className="toggleExpand"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <h1
-          className="upperCase"
-        >
-          Less
+        <h1>
+          Selected Project
+          :
         </h1>
-        <svg
-          className="arrow"
-          viewBox="0 0 16 24"
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <polyline
-            points="4,4 12,12.5 4,20 4,4"
-          />
-        </svg>
-      </button>
+          <h2
+            title="Keystone XL"
+          >
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -4046,14 +4101,22 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
     className="ConditionDetails"
   >
     <div
-      className="ProjectHeader location"
+      className="ProjectHeader"
     >
       <h1>
         Selected Condition:
       </h1>
       <div
-        className="openProject"
-      />
+        className="topBar location"
+      >
+        <h1>
+          Conditions In Selected Region
+          :
+        </h1>
+        <div
+          className="openProject"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -4080,21 +4143,34 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
         tabIndex={0}
         type="button"
       >
-        <h2
-          title="Keystone XL"
+        <h1>
+          Selected Project
+          :
+        </h1>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <span
-            className="projectName"
+          <h2
+            title="Keystone XL"
           >
-            Keystone XL
-          </span>
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -4409,6 +4485,72 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
 </div>
 `;
 
+exports[`Storyshots Components|CountBubble default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count"
+    >
+      42
+    </span>
+    <span
+      className="text"
+    >
+       
+      Projects
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble large value 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count small"
+    >
+      1723
+    </span>
+    <span
+      className="text"
+    >
+       
+      Instruments
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble singular 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count"
+    >
+      1
+    </span>
+    <span
+      className="text"
+    >
+       
+      Condition
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|DotLegend default 1`] = `
 <div
   className="visualization"
@@ -4595,7 +4737,7 @@ exports[`Storyshots Components|ErrorBoundary default 1`] = `
       <details>
         Error: Error thrown from problem child
         <p>
-          
+
     in ProblemChild
     in ErrorBoundary
     in IntlProvider (created by WithIntl)
@@ -5799,7 +5941,7 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           <span
             className="FlagDesc"
           >
-             &gt;10 
+             &gt;10
           </span>
         </div>
       </div>
@@ -6138,9 +6280,6 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       <div
         className="bottom"
       />
-      <div
-        className="bottomConnection"
-      />
     </div>
   </div>
   <style
@@ -6476,7 +6615,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
         r="48"
       />
       <path
-        d="M 15 50 
+        d="M 15 50
   l 18 -23
   l 18 0
   l -18 23
@@ -6486,7 +6625,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
 "
       />
       <path
-        d="M 44 50 
+        d="M 44 50
   l 18 -23
   l 18 0
   l -18 23
@@ -6538,7 +6677,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
         r="48"
       />
       <path
-        d="M 15 50 
+        d="M 15 50
   l 18 -23
   l 18 0
   l -18 23
@@ -6548,7 +6687,7 @@ exports[`Storyshots Components|GuideTransport default 1`] = `
 "
       />
       <path
-        d="M 44 50 
+        d="M 44 50
   l 18 -23
   l 18 0
   l -18 23
@@ -6586,7 +6725,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
         r="48"
       />
       <path
-        d="M 15 50 
+        d="M 15 50
   l 18 -23
   l 18 0
   l -18 23
@@ -6596,7 +6735,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
 "
       />
       <path
-        d="M 44 50 
+        d="M 44 50
   l 18 -23
   l 18 0
   l -18 23
@@ -6654,7 +6793,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
         r="48"
       />
       <path
-        d="M 15 50 
+        d="M 15 50
   l 18 -23
   l 18 0
   l -18 23
@@ -6664,7 +6803,7 @@ exports[`Storyshots Components|GuideTransport playing 1`] = `
 "
       />
       <path
-        d="M 44 50 
+        d="M 44 50
   l 18 -23
   l 18 0
   l -18 23
@@ -8037,7 +8176,7 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: 
+            Email us with your comments and ideas:
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -8338,7 +8477,7 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: 
+            Email us with your comments and ideas:
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -8639,7 +8778,7 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: 
+            Email us with your comments and ideas:
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -8940,7 +9079,7 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
             We hope we are hitting the mark. Your feedback is essential.
           </p>
           <p>
-            Email us with your comments and ideas: 
+            Email us with your comments and ideas:
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
               rel="noopener noreferrer"
@@ -14028,7 +14167,7 @@ exports[`Storyshots Components|ProjectMenu Loading 1 1`] = `
                   }
                 >
                   <div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -14365,7 +14504,7 @@ exports[`Storyshots Components|ProjectMenu Loading 5 1`] = `
                   }
                 >
                   <div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -15811,7 +15950,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
                   }
                 >
                   <div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -16103,7 +16242,7 @@ exports[`Storyshots Components|ProjectMenu/ProjectChart Empty graphData 1`] = `
         title=""
       >
         <p>
-          
+
         </p>
       </div>
     </div>
@@ -16270,12 +16409,12 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument 
+        Search for instrument
         <strong>
           #
           XO-001-2018
         </strong>
-         in 
+         in
         <strong>
           RegDocs...
         </strong>
@@ -16438,12 +16577,12 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       className="RegDocs"
     >
       <h3>
-        Search for instrument 
+        Search for instrument
         <strong>
           #
           XO-001-2018
         </strong>
-         in 
+         in
         <strong>
           RegDocs...
         </strong>
@@ -17078,9 +17217,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-           
+
           Find Words
-           
+
         </span>
         <span
           className="iconSvg"
@@ -17118,9 +17257,9 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
         <span
           className="tabText"
         >
-           
+
           Filter
-           
+
         </span>
         <span
           className="iconSvg"
@@ -17144,7 +17283,7 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing 
+        Showing
         <span>
           In Progress
         </span>
@@ -18368,7 +18507,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       className="HighlightSummary"
     >
       <span>
-        Showing 
+        Showing
         <span>
           In Progress
         </span>
@@ -18384,7 +18523,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         <span>
           include1
         </span>
-        , 
+        ,
         <span>
           include2
         </span>
@@ -18398,7 +18537,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
         <span>
           exclude1
         </span>
-        , 
+        ,
         <span>
           exclude2
         </span>
@@ -18518,7 +18657,7 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="anyText"
         >
           <span>
-             
+
             <span
               className="upperCase"
             >
@@ -18532,8 +18671,8 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
           className="keywordsText"
         >
           <span>
-            
-             
+
+
           </span>
         </div>
         <div />
@@ -18592,7 +18731,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           all
         </li>
         <li
@@ -18602,7 +18741,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           wildlife & habitat
         </li>
         <li
@@ -18612,7 +18751,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           environment
         </li>
         <li
@@ -18622,7 +18761,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           oversight & safety
         </li>
         <li
@@ -18632,7 +18771,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           engineering & structures
         </li>
         <li
@@ -18642,7 +18781,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           administration & filings
         </li>
         <li
@@ -18652,7 +18791,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
+
           people & communities
         </li>
       </ul>
@@ -18749,7 +18888,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               title="deer"
             >
               deer
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -18771,7 +18910,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="0%"
                 y={0}
               >
-                
+
               </rect>
               <rect
                 className="Bar"
@@ -18781,7 +18920,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="100%"
                 y={0}
               >
-                
+
               </rect>
             </svg>
             <div
@@ -18827,7 +18966,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
               title="alberta"
             >
               alberta
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -18849,7 +18988,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="0%"
                 y={0}
               >
-                
+
               </rect>
               <rect
                 className="Bar"
@@ -18859,7 +18998,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
                 x="38.46153846153846%"
                 y={0}
               >
-                
+
               </rect>
             </svg>
             <div
@@ -18940,7 +19079,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               title="deer"
             >
               deer
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -18962,7 +19101,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="0%"
                 y={0}
               >
-                
+
               </rect>
               <rect
                 className="Bar"
@@ -18972,7 +19111,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="100%"
                 y={0}
               >
-                
+
               </rect>
             </svg>
             <div
@@ -19018,7 +19157,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
               title="alberta"
             >
               alberta
-               
+
             </div>
             <svg
               className="BarContainer"
@@ -19040,7 +19179,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="0%"
                 y={0}
               >
-                
+
               </rect>
               <rect
                 className="Bar"
@@ -19050,7 +19189,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout/KeywordList def
                 x="33.33333333333333%"
                 y={0}
               >
-                
+
               </rect>
             </svg>
             <div
@@ -19134,9 +19273,9 @@ exports[`Storyshots Components|SearchBar/Tab FilterTab 1`] = `
       <span
         className="tabText"
       >
-         
+
         Filter
-         
+
       </span>
       <span
         className="iconSvg"
@@ -19176,9 +19315,9 @@ exports[`Storyshots Components|SearchBar/Tab SearchTab 1`] = `
       <span
         className="tabText"
       >
-         
+
         Find Words
-         
+
       </span>
       <span
         className="iconSvg"
@@ -27141,7 +27280,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             y="-12"
           >
             25882
-            
+
           </text>
         </g>
       </svg>
@@ -30890,7 +31029,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             y="-12"
           >
             380
-            
+
           </text>
         </g>
       </svg>
