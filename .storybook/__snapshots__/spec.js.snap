@@ -6216,6 +6216,92 @@ exports[`Storyshots Components|GreyPipe company 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|GreyPipe company w/ count bubbles 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+  >
+    <div
+      className="GreyPipe company"
+    >
+      <svg
+        className="bottomSvg"
+        height="48"
+        width="48"
+      >
+        <path
+          d="M48 0 C48 0 48 48 0 48 L24 48 0 48 0 24 C0 24 24 24 24 0 L24 12 24 0"
+        />
+      </svg>
+      <div
+        className="top"
+      />
+      <div
+        className="vertical withBubbles"
+      >
+        <div
+          className="CountBubble"
+        >
+          <span
+            className="count"
+          >
+            42
+          </span>
+          <span
+            className="text"
+          >
+             
+            Conditions
+          </span>
+        </div>
+        <div
+          className="CountBubble"
+        >
+          <span
+            className="count"
+          >
+            15
+          </span>
+          <span
+            className="text"
+          >
+             
+            Instruments
+          </span>
+        </div>
+        <div
+          className="CountBubble"
+        >
+          <span
+            className="count"
+          >
+            1
+          </span>
+          <span
+            className="text"
+          >
+             
+            Project
+          </span>
+        </div>
+      </div>
+      <div
+        className="bottom"
+      />
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {position: relative; height: 400px; width: 200px;}",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`Storyshots Components|GreyPipe location 1`] = `
 <div
   className="visualization"
