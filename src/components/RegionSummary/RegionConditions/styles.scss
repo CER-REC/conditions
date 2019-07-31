@@ -16,8 +16,6 @@
     bottom: 0;
     left: 48px;
 
-    padding: 0 24px;
-
     width: calc(100% - 48px);
     height: 100%;
 
@@ -32,12 +30,13 @@
 
     height: 45px;
     bottom: 0;
-    left: auto;
+    left: 24px;
     right: 24px;
   }
 
   .RegionConditionsTitle {
     margin-top: 8px;
+    margin-left: 24px;
 
     font-size: 14px;
     text-align: left;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesForComponent } from '../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import ReadMe from './README.md';
 import RegionSummary from '.';
 import { aggregatedCount, displayOrder } from '../../mockData';
@@ -19,6 +19,11 @@ const companies = [
 const active = ['3'];
 
 storiesForComponent('Components|RegionSummary', module, ReadMe)
+  .addDecorator(withStyles(`
+    .RegionSummary {
+      width: 400px;
+    }
+  `))
   .add('default props', () => (
     <RegionSummary
       selectedFeature="theme"
