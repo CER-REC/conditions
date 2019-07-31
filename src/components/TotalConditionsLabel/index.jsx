@@ -16,7 +16,7 @@ class TotalConditionsLabel extends React.PureComponent {
           <text x="0" y="12" className="small">{this.props.intl.formatMessage({ id: 'components.totalConditionsLabel.total' })}</text>
           <text x="0" y="24" className="small">{this.props.intl.formatMessage({ id: 'components.totalConditionsLabel.forProject' })}</text>
           <text x="0" y="36" className="small linked">{this.props.intl.formatMessage({ id: 'components.totalConditionsLabel.learnMore' })}</text>
-          <line x1="1.5" y1="37" x2="1.5" y2="60" className="connectingLine" />
+          <line x1="1.5" y1="40" x2="1.5" y2="60" className="connectingLine" />
         </svg>
       </button>
     </div>
