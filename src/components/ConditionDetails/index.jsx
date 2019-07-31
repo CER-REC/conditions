@@ -11,7 +11,7 @@ import Details from './Details';
 
 import { conditionData } from '../../proptypes';
 
-class ConditionDetails extends React.Component {
+class ConditionDetails extends React.PureComponent {
   findSelectedItem = () => {
     let count = 0;
     for (let i = 0, l = this.props.selectedItem.instrumentIndex; i < l; i += 1) {

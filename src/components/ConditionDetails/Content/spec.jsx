@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
 import Content from '.';
+import ContentBlock from '../ContentBlock';
 
 import { conditionData } from '../../../mockData';
 
@@ -33,7 +34,7 @@ describe('Components|ConditionDetails/Content', () => {
 
     it('should provide a clickable instrument number', () => {
       wrapper.find('.Content')
-        .find('ContentBlock').at(1).shallow()
+        .find(ContentBlock).at(1).shallow()
         .find('button')
         .simulate('click', eventFuncs);
 

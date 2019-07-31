@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-// Imported instead of using string lookup because of InjectIntl
-import FeatureFlag from '../../FeatureFlag';
 
 import ProjectChart from '.';
+import FeatureFlag from '../../FeatureFlag';
+import CircleContainer from '../../CircleContainer';
 
 const chartData = [
   { name: 'INTEGRITY_MANAGEMENT', count: 34 },
@@ -66,7 +66,7 @@ describe('Components|ProjectMenu/ProjectChart', () => {
     });
 
     test('should not display a condition count', () => {
-      expect(wrapper.find('CircleContainer').props().children).toEqual('');
+      expect(wrapper.find(CircleContainer).props().children).toEqual('');
     });
   });
 

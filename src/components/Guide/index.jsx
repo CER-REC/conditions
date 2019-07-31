@@ -104,4 +104,4 @@ Guide.defaultProps = {
   className: '',
 };
 
-export default Guide;
+export default React.memo(Guide);

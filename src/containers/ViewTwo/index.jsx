@@ -16,7 +16,7 @@ import './styles.scss';
 import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 import DotLegend from '../../components/DotLegend';
 
-class ViewTwo extends React.Component {
+class ViewTwo extends React.PureComponent {
   miniMapData = null;
 
   constructor(props) {

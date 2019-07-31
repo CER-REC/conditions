@@ -49,4 +49,4 @@ GreyPipe.defaultProps = {
   instrumentCount: null,
   projectCount: null,
 };
-export default GreyPipe;
+export default React.memo(GreyPipe);

@@ -29,4 +29,4 @@ RegDocsPopup.defaultProps = {
   isOpen: false,
 };
 
-export default RegDocsPopup;
+export default React.memo(RegDocsPopup);

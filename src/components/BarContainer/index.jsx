@@ -121,4 +121,4 @@ BarContainer.defaultProps = {
   height: '100%',
 };
 
-export default BarContainer;
+export default React.memo(BarContainer);

@@ -34,4 +34,4 @@ LegendItem.defaultProps = {
   disabled: false,
 };
 
-export default LegendItem;
+export default React.memo(LegendItem);

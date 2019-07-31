@@ -4,6 +4,8 @@ import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import { conditionData } from '../../mockData';
 import ConditionDetails from '.';
+import ProjectHeader from './ProjectHeader';
+import Content from './Content';
 
 const defaultProps = {
   data: conditionData,
@@ -42,7 +44,7 @@ describe('Components|ConditionDetails', () => {
     test('should pass its openProjectDetails callback to the ProjectHeader component', () => {
       wrapper.find('.ConditionDetails')
         .find('.main')
-        .find('ProjectHeader')
+        .find(ProjectHeader)
         .props()
         .openProjectDetails('test');
 
@@ -52,7 +54,7 @@ describe('Components|ConditionDetails', () => {
     test('should pass its openIntermediatePopup callback to the Content component', () => {
       wrapper.find('.ConditionDetails')
         .find('.main')
-        .find('Content')
+        .find(Content)
         .props()
         .openIntermediatePopup();
 
@@ -62,7 +64,7 @@ describe('Components|ConditionDetails', () => {
     test('should call its toggleExpanded callback', () => {
       wrapper.find('.ConditionDetails')
         .find('.main')
-        .find('ProjectHeader')
+        .find(ProjectHeader)
         .props()
         .toggleExpanded(true);
 

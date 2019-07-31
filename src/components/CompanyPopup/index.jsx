@@ -34,4 +34,4 @@ CompanyPopup.defaultProps = {
   isOpen: false,
 };
 
-export default CompanyPopup;
+export default React.memo(CompanyPopup);

@@ -29,4 +29,4 @@ ProjectDot.defaultProps = {
   relevant: false,
 };
 
-export default ProjectDot;
+export default React.memo(ProjectDot);

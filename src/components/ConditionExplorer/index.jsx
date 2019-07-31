@@ -23,7 +23,7 @@ const setTimeoutChain = (callback, timeout, times) => {
   return () => { remaining = 0; };
 };
 
-export default class ConditionExplorer extends React.Component {
+export default class ConditionExplorer extends React.PureComponent {
   static propTypes = {
     keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     selectedKeywordId: PropTypes.number,

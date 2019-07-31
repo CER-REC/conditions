@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import MainInfoBar from '.';
+import DownloadBox from './DownloadBox';
+import CircleContainer from '../CircleContainer';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
@@ -39,7 +41,7 @@ describe('Components|MainInfoBar', () => {
 
     test('should pass its setPane callback to the collapse arrows', () => {
       wrapper.find('.MainInfoBar')
-        .find('CircleContainer')
+        .find(CircleContainer)
         .simulate('click', eventFuncs);
 
       expect(spy.setPane).toHaveBeenCalledTimes(1);
@@ -55,7 +57,7 @@ describe('Components|MainInfoBar', () => {
       />);
 
       wrapper.find('.MainInfoBar')
-        .find('DownloadBox')
+        .find(DownloadBox)
         .props()
         .openDataModal();
 

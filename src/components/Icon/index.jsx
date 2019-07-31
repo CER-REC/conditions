@@ -28,4 +28,4 @@ Icon.defaultProps = {
   size: null,
   color: '',
 };
-export default Icon;
+export default React.memo(Icon);

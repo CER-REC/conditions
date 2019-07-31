@@ -19,4 +19,4 @@ StackGroupProps.propTypes = {
   }).isRequired,
 };
 
-export default StackGroupProps;
+export default React.memo(StackGroupProps);

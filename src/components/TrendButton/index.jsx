@@ -28,11 +28,11 @@ const TrendButton = props => (
   </div>
 );
 
-export default TrendButton;
-
 TrendButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
   feature: featureTypes.isRequired,
   displayOrder: displayOrder.isRequired,
 };
+
+export default React.memo(TrendButton);

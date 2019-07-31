@@ -6,7 +6,7 @@ import PopupBtn from '../../PopupBtn';
 import './styles.scss';
 
 // eslint-disable-next-line react/prop-types
-const ProjectName = ({ children, name }) => <h2>{children} <strong>{name}</strong></h2>;
+const ProjectName = React.memo(({ children, name }) => <h2>{children} <strong>{name}</strong></h2>);
 
 const Company = ({ projectName, companies, closeModal }) => (
   <div className="Company">
@@ -51,4 +51,4 @@ Company.propTypes = {
   closeModal: PropTypes.func.isRequired,
 };
 
-export default Company;
+export default React.memo(Company);

@@ -61,4 +61,4 @@ BrowseByBtn.defaultProps = {
   classNames: '',
 };
 
-export default BrowseByBtn;
+export default React.memo(BrowseByBtn);
