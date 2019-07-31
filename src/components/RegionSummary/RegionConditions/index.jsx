@@ -24,6 +24,8 @@ const RegionConditions = (props) => {
     feature: selectedFeature,
   }));
 
+  const max = items.reduce((current, item) => (item.value > current ? item.value : current), 0);
+
   return (
     <div className="RegionConditions">
       <div className="ChartContainer">
@@ -35,7 +37,7 @@ const RegionConditions = (props) => {
         </div>
       </div>
       <svg className="YAxis" viewBox="0 0 100 100">
-        <text x="76" y="15" textAnchor="end">100</text>
+        <text x="76" y="15" textAnchor="end">{max}</text>
         <rect x="85" y="15" width="10" height="3" />
         <text x="76" y="100" textAnchor="end">0</text>
         <rect x="85" y="57.5" width="10" height="3" />
