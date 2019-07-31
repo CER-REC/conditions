@@ -14,10 +14,10 @@ const TotalConditions = ({ closeModal }) => (
     </div>
     <div className="Description">
       <div className="Explanation">
-        <FormattedMessage id="components.modal.totalConditions.description1" />
+        <FormattedMessage id="components.modal.totalConditions.explanation" />
       </div>
       <div className="Example">
-        <FormattedMessage id="components.modal.totalConditions.description2" />
+        <FormattedMessage id="components.modal.totalConditions.example" />
       </div>
     </div>
     <FormattedMessage id="components.modal.company.back">

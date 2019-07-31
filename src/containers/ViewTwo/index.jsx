@@ -173,7 +173,9 @@ class ViewTwo extends React.Component {
             )
             : (
               <React.Fragment>
-                <TotalConditionsLabel />
+                <TotalConditionsLabel
+                  openNumberDetails={this.props.openNumberDetails}
+                />
                 <ProjectMenu
                   loading={this.props.wheelMoving || this.props.projectMenuLoading}
                   projectsData={this.props.projectsData}

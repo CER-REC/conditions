@@ -1,18 +1,19 @@
 @import '../../../styles/colors';
-
+@import '../../../styles/fontVariables.scss';
 .TotalConditions {
   position: relative;
 
-  width: 450px;
-  height: 250px;
+  width: 500px;
+  height: 300px;
 
    .Header {
     margin-bottom: 8px;
     font-size: 18px;
-    color: black;
+    font-family: $fira-sans-condensed-bold;
+    color: $Black51;
   }
   .Description {
-    font-size: 14px;
+    font-size: 16px;
     .Explanation{
       margin-bottom: 8px;
     }

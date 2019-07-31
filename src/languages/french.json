@@ -354,6 +354,11 @@
       }
     },
     "modal": {
+      "totalConditions":{
+        "title": "",
+        "explanation": "",
+        "example": ""
+      },
       "data": {
         "title": "Téléchargement des données",
         "description": "Les données ayant servi à créer cette visualisation sont ouvertes et peuvent être téléchargées. Cliquer sur l’icône pour sauvegarder le fichier de données sur votre ordinateur."
@@ -433,7 +438,8 @@
     },
     "totalConditionsLabel": {
       "total": "Nombre total de conditions",
-      "forProject": "pour ce projet"
+      "forProject": "pour ce projet",
+      "learnMore": ""
     },
     "errorBoundary": {
       "errorMessage": "Une erreur s’est produite.",
