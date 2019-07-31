@@ -31058,13 +31058,13 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
           x="0"
           y="36"
         >
-          learn more
+          (learn more)
         </text>
         <line
           className="connectingLine"
           x1="1.5"
           x2="1.5"
-          y1="37"
+          y1="40"
           y2="60"
         />
       </svg>

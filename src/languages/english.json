@@ -439,7 +439,7 @@
     "totalConditionsLabel": {
       "total": "Total Conditions",
       "forProject": "for this Project",
-      "learnMore": "learn more"
+      "learnMore": "(learn more)"
       
     },
     "errorBoundary": {
