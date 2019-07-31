@@ -1,5 +1,5 @@
 @import '../../../styles/colors';
-@import "../../../styles/safariOnly.scss";
+@import "../../../styles/browserSpecific.scss";
 
 .RegDocs {
   width: 500px;
@@ -53,8 +53,8 @@
   }
 }
 
-@include safariOnly{
-  .RegDocs{
+@include safariOnly {
+  .RegDocs {
     p {
       margin-top: 0;
       width: 450px;

@@ -1,6 +1,6 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fontVariables.scss";
-@import "../../styles/safariOnly.scss";
+@import "../../styles/browserSpecific.scss";
 
 .BrowseBy {
   display: inline-block;
@@ -76,18 +76,18 @@
     }
   }
 }
-@-moz-document url-prefix() {
-  .BrowseBy{
-    .arrowWrapper{ 
+@include firefoxOnly {
+  .BrowseBy {
+    .arrowWrapper { 
       &::after {
         border-width: 14px;
       }
     }
   }
 }
-@include safariOnly{
-  .BrowseBy{
-    .arrowWrapper{ 
+@include safariOnly {
+  .BrowseBy {
+    .arrowWrapper { 
       &::after {
         border-width: 12px;
       }

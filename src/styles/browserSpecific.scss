@@ -6,3 +6,9 @@
   }
 
 }
+
+@mixin firefoxOnly {
+  @media screen and (min--moz-device-pixel-ratio:0) {
+    @content;
+  }
+}

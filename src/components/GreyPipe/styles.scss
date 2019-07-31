@@ -1,5 +1,5 @@
 @import '../../styles/colors';
-@import "../../styles/safariOnly.scss";
+@import "../../styles/browserSpecific.scss";
 
 $curveRadius: 48px;
 
@@ -161,9 +161,9 @@ $curveRadius: 48px;
     }
   }
 }
-@include safariOnly{
-  .GreyPipe{
-    &.company{ 
+@include safariOnly {
+  .GreyPipe {
+    &.company { 
       bottom: calc(50%-7px);
     }
   }
