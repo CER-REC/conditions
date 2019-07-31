@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import CountBubble from '../../CountBubble';
@@ -36,7 +35,7 @@ const moreButton = (
 );
 
 const ProjectHeader = props => (
-  <div className={classNames('ProjectHeader', { location: props.browseBy === 'location' })}>
+  <div className="ProjectHeader">
     <div className="topBar">
       {props.browseBy === 'company'
         ? (
