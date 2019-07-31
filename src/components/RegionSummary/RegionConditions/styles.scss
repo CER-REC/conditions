@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
 
-  height: 124px;
+  height: 90px;
 
   .hidden {
     visibility: hidden;
@@ -13,42 +13,31 @@
   .ChartContainer {
     position: absolute;
 
-    top: 0;
+    bottom: 0;
     left: 48px;
 
-    width: calc(100% - 48px);
-    height: 100px;
+    padding: 0 24px;
 
-    border: 4px solid $LightGray;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    width: calc(100% - 48px);
+    height: 100%;
+
+    border: 3px solid $LightGray;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
     border-bottom: none;
   }
 
   .RegionConditionChart {
     position: absolute;
 
-    top: 45px;
+    height: 45px;
     bottom: 0;
-    left: 24px;
+    left: auto;
     right: 24px;
   }
 
-  .BorderBottom {
-    position: absolute;
-    bottom: 0;
-    // right: -4px;
-    left: 24px;
-    right: 0;
-
-    height: 24px;
-
-    background: $LightGray;
-  }
-
-  .RegionConditionSummaryTitle {
+  .RegionConditionsTitle {
     margin-top: 8px;
-    margin-left: 28px;
 
     font-size: 14px;
     text-align: left;
@@ -59,7 +48,7 @@
   .YAxis {
     position: absolute;
 
-    bottom: 26px;
+    bottom: 2px;
     left: 0;
 
     height: 50px;
@@ -74,6 +63,8 @@
 
     rect {
       fill: $LightGray;
+      stroke: $LightGray;
+      stroke-width: 3px;
     }
   }
   ul {

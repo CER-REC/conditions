@@ -34,12 +34,11 @@ const RegionConditions = (props) => {
           <BarContainer items={items} vertical />
         </div>
       </div>
-      <div className="BorderBottom" />
       <svg className="YAxis" viewBox="0 0 100 100">
-        <text x="45" y="18">100</text>
-        <rect x="85" y="8" width="10" height="3" />
-        <text x="58" y="100">0</text>
-        <rect x="85" y="50" width="10" height="3" />
+        <text x="76" y="15" textAnchor="end">100</text>
+        <rect x="85" y="15" width="10" height="3" />
+        <text x="76" y="100" textAnchor="end">0</text>
+        <rect x="85" y="57.5" width="10" height="3" />
       </svg>
     </div>
   );

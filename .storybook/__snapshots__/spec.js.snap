@@ -16902,16 +16902,14 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
           </svg>
         </div>
       </div>
-      <div
-        className="BorderBottom"
-      />
       <svg
         className="YAxis"
         viewBox="0 0 100 100"
       >
         <text
-          x="45"
-          y="18"
+          textAnchor="end"
+          x="76"
+          y="15"
         >
           100
         </text>
@@ -16919,10 +16917,11 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
           height="3"
           width="10"
           x="85"
-          y="8"
+          y="15"
         />
         <text
-          x="58"
+          textAnchor="end"
+          x="76"
           y="100"
         >
           0
@@ -16931,7 +16930,7 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
           height="3"
           width="10"
           x="85"
-          y="50"
+          y="57.5"
         />
       </svg>
     </div>
@@ -17352,16 +17351,14 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with theme data 1`
           </svg>
         </div>
       </div>
-      <div
-        className="BorderBottom"
-      />
       <svg
         className="YAxis"
         viewBox="0 0 100 100"
       >
         <text
-          x="45"
-          y="18"
+          textAnchor="end"
+          x="76"
+          y="15"
         >
           100
         </text>
@@ -17369,10 +17366,11 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with theme data 1`
           height="3"
           width="10"
           x="85"
-          y="8"
+          y="15"
         />
         <text
-          x="58"
+          textAnchor="end"
+          x="76"
           y="100"
         >
           0
@@ -17381,7 +17379,7 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with theme data 1`
           height="3"
           width="10"
           x="85"
-          y="50"
+          y="57.5"
         />
       </svg>
     </div>
@@ -17462,16 +17460,14 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with type data 1`]
           </svg>
         </div>
       </div>
-      <div
-        className="BorderBottom"
-      />
       <svg
         className="YAxis"
         viewBox="0 0 100 100"
       >
         <text
-          x="45"
-          y="18"
+          textAnchor="end"
+          x="76"
+          y="15"
         >
           100
         </text>
@@ -17479,10 +17475,11 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with type data 1`]
           height="3"
           width="10"
           x="85"
-          y="8"
+          y="15"
         />
         <text
-          x="58"
+          textAnchor="end"
+          x="76"
           y="100"
         >
           0
@@ -17491,7 +17488,7 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with type data 1`]
           height="3"
           width="10"
           x="85"
-          y="50"
+          y="57.5"
         />
       </svg>
     </div>
