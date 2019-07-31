@@ -16911,7 +16911,7 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
           x="76"
           y="15"
         >
-          100
+          20
         </text>
         <rect
           height="3"
@@ -17001,6 +17001,16 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
       </ul>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".RegionSummary {
+      width: 400px;
+      margin-top: 100px;
+    }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -17360,7 +17370,7 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with theme data 1`
           x="76"
           y="15"
         >
-          100
+          20
         </text>
         <rect
           height="3"
@@ -17469,7 +17479,7 @@ exports[`Storyshots Components|RegionSummary/RegionConditions with type data 1`]
           x="76"
           y="15"
         >
-          100
+          30
         </text>
         <rect
           height="3"

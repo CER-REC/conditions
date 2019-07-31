@@ -1,6 +1,8 @@
 @import '../../styles/fontVariables.scss';
 @import '../../styles/colors.scss';
 
+$popoutSize: 23%;
+
 .ConditionDetails {
   max-width: 820px;
   height: 100%;
@@ -16,10 +18,10 @@
 
   .main {
     display: inline-block;
-    width: 70%;
+    width: calc(100% - #{$popoutSize});
     height: 100%;
 
-    margin-left: 30%;
+    margin-left: $popoutSize;
     transition: margin-left 1s ease-in-out;
 
     &.expanded {
@@ -64,7 +66,7 @@
     &.expanded {
       transition: width 1s ease-in-out, visibility 0s;
 
-      width: 30%;
+      width: $popoutSize;
       visibility: visible;
     }
   }

@@ -28,6 +28,7 @@
           // 50% - 16px of the Wheel = 75% of our container here - 16px
           //                         = 25% + 16px to bottom, - 24px for the border
           // bottom: calc(25% + 16px - 24px);
+          top: calc(75% - 16px);
           bottom: 0;
         }
       }

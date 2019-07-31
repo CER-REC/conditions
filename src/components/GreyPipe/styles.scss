@@ -126,8 +126,9 @@ $bubbleBottom: -10px;
   }
 
   &.location {
-    top: calc(50% - 12px);
-    right: calc(8px - #{$curveRadius});
+
+    top: calc(50% - 16px);
+    right: -16px;
 
     // (Height of ProjectMenu + 1 grid unit for the gap) / Wheel height = 31.5%
     bottom: calc(31.5% - 24px);
@@ -168,7 +169,7 @@ $bubbleBottom: -10px;
       top: 0;
       right: 100%;
 
-      width: 38px;
+      width: 16px;
       height: 24px;
     }
   }

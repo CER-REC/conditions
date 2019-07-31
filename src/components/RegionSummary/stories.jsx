@@ -22,6 +22,7 @@ storiesForComponent('Components|RegionSummary', module, ReadMe)
   .addDecorator(withStyles(`
     .RegionSummary {
       width: 400px;
+      margin-top: 100px;
     }
   `))
   .add('default props', () => (
