@@ -694,7 +694,12 @@ class App extends React.PureComponent {
                   conditions: 0,
                 };
 
-                if (!loading && !error && !this.state.wheelMoving) {
+                const inTutorial = (
+                  transitionState > transitionStates.view1
+                  && transitionState < transitionStates.view2
+                );
+
+                if (!loading && !error && (!this.state.wheelMoving || inTutorial)) {
                   const { projectDetails, allInstruments } = data;
                   if (!allInstruments) { return null; }
                   instruments = formatConditionDetails(
