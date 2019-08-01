@@ -11,7 +11,10 @@ const CountBubble = ({ count, textId }) => {
   return (
     <div className="CountBubble">
       <span className={classNames('count', { small: count > 999 })}>{count}</span>
-      <AdvancedFormattedMessage id={`components.greyPipe.countBubble.${id}`} className="text" />
+      <span className="text">
+        &nbsp;
+        <AdvancedFormattedMessage id={`components.greyPipe.countBubble.${id}`} />
+      </span>
     </div>
   );
 };

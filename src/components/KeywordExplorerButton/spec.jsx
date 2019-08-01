@@ -20,6 +20,8 @@ describe('Components|KeywordExplorerButton', () => {
     const messageWrapper = wrapper.find('AdvancedFormattedMessage');
     expect(messageWrapper).toHaveLength(1);
     expect(messageWrapper.prop('id')).toBe('components.keywordExploreButton.description');
+    // AdvancedFormattedMessage injects some extra components, so dig through them
+    // until we find the p tags
     const updatedWrapper = messageWrapper
       .shallowWithIntl()
       .shallowWithIntl()

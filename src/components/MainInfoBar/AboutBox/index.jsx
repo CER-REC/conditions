@@ -1,13 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
-
-// eslint-disable-next-line react/prop-types
-const TranslatedParagraphs = ({ children }) => [].concat(children).map((v) => {
-  if (typeof v !== 'string') { return v; }
-  // eslint-disable-next-line react/no-array-index-key
-  return v.split('\n').map((line, i) => <p key={i}>{line}</p>);
-});
+import TranslatedParagraphs from '../../TranslatedParagraphs';
 
 const formatEmail = email => (
   <a href={`mailto:${email}`} rel="noopener noreferrer" target="_blank">{email}</a>

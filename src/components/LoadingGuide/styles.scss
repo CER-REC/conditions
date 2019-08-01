@@ -1,10 +1,12 @@
+@import '../../styles/colors.scss';
+
 .LoadingGuide {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   z-index: 9999;
-  background: #fff;
+  background: $White;
 
   .Guide {
     top: 50%;

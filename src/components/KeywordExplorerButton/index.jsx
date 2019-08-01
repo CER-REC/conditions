@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
 import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
-
-// eslint-disable-next-line react/prop-types
-const TranslatedParagraphs = ({ children }) => children
-  .split('\n')
-  .map((line, i) => <p key={i}>{line}</p>); // eslint-disable-line react/no-array-index-key
+import TranslatedParagraphs from '../TranslatedParagraphs';
 
 const KeywordExplorerButton = props => (
   <div className="KeywordExplorerButton" {...handleInteraction(props.onClick)}>

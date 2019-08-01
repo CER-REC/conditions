@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
+import TranslatedParagraphs from '../TranslatedParagraphs';
 import { displayOrder as displayOrderPropType } from '../../proptypes';
 import './styles.scss';
-
-// eslint-disable-next-line react/prop-types
-const TranslatedParagraphs = ({ children }) => children
-  .split('\n')
-  .map((line, i) => <p key={i}>{line}</p>); // eslint-disable-line react/no-array-index-key
 
 class FeatureTypesDescription extends React.PureComponent {
   constructor(props) {

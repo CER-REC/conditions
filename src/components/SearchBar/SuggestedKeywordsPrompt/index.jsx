@@ -3,12 +3,8 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+import TranslatedParagraphs from '../../TranslatedParagraphs';
 import handleInteraction from '../../../utilities/handleInteraction';
-
-// eslint-disable-next-line react/prop-types
-const TranslatedParagraphs = ({ children }) => children
-  .split('\n')
-  .map(line => <p key={line} className="colorChange">{line}</p>);
 
 const SuggestedKeywordsPrompt = props => (
   <div className={classNames('SuggestedKeywordsPrompt', { isActive: props.isActive })}>
@@ -20,6 +16,7 @@ const SuggestedKeywordsPrompt = props => (
     <AdvancedFormattedMessage
       id="components.searchBar.suggestedKeywordsPrompt.suggestedKeywords"
       tag={TranslatedParagraphs}
+      className="colorChange"
     />
     <svg
       className="arrow"

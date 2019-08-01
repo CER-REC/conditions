@@ -6171,7 +6171,10 @@ exports[`Storyshots Components|GreyPipe/CountBubble default 1`] = `
       <span
         className="text"
       >
-        projects
+         
+        <span>
+          projects
+        </span>
       </span>
     </div>
   </div>
@@ -6196,7 +6199,10 @@ exports[`Storyshots Components|GreyPipe/CountBubble large value 1`] = `
       <span
         className="text"
       >
-        instruments
+         
+        <span>
+          instruments
+        </span>
       </span>
     </div>
   </div>
@@ -6221,7 +6227,10 @@ exports[`Storyshots Components|GreyPipe/CountBubble singular 1`] = `
       <span
         className="text"
       >
-        condition
+         
+        <span>
+          condition
+        </span>
       </span>
     </div>
   </div>

@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
+import TranslatedParagraphs from '../TranslatedParagraphs';
 import StreamGraph from '../StreamGraph';
 import { allConditionsPerYearType, featureTypes, displayOrder } from '../../proptypes';
 
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
-
-// eslint-disable-next-line react/prop-types
-const TranslatedParagraphs = ({ children }) => children
-  .split('\n')
-  .map(line => <p key={line}>{line}</p>);
 
 const TrendButton = props => (
   <div className="TrendButton" {...handleInteraction(props.onClick)}>
