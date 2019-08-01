@@ -52,6 +52,7 @@ describe('Components|SearchBar/SearchBar', () => {
           findAnyOnChange={noop}
           updateYear={noop}
           changeProjectStatus={noop}
+          scrollToMethodology={noop}
           findAny
         />,
       );
@@ -82,6 +83,7 @@ describe('Components|SearchBar/SearchBar', () => {
           findAnyOnChange={noop}
           updateYear={noop}
           changeProjectStatus={noop}
+          scrollToMethodology={noop}
           findAny
         />,
       );
@@ -115,7 +117,9 @@ describe('Components|SearchBar/SearchBar', () => {
 
   describe(' with mode set to find', () => {
     let wrapper;
+    let spy;
     beforeEach(() => {
+      spy = jest.fn();
       wrapper = shallow(
         <SearchBar
           suggestedKeywords={sampleSuggestedKeywords}
@@ -130,6 +134,7 @@ describe('Components|SearchBar/SearchBar', () => {
           findAnyOnChange={noop}
           updateYear={noop}
           changeProjectStatus={noop}
+          scrollToMethodology={spy}
           findAny
         />,
       );
@@ -159,6 +164,14 @@ describe('Components|SearchBar/SearchBar', () => {
       wrapper.find('SuggestedKeywordsPopout').props().closeTab();
       expect(wrapper.state().isActive).toBe(false);
     });
+
+    test('passes scrollToMethodology prop to SuggestedKeywords', () => {
+      wrapper.find('SuggestedKeywordsPopout')
+        .props()
+        .scrollToMethodology();
+
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('with mode set to filter', () => {
@@ -178,6 +191,7 @@ describe('Components|SearchBar/SearchBar', () => {
           findAnyOnChange={noop}
           updateYear={noop}
           changeProjectStatus={noop}
+          scrollToMethodology={noop}
           findAny
         />,
       );
@@ -199,6 +213,7 @@ describe('Components|SearchBar/SearchBar', () => {
       wrapper = shallow(
         <SearchBar
           suggestedKeywords={sampleSuggestedKeywords}
+          scrollToMethodology={noop}
           availableYearRange={yearRange}
           availableCategories={categories}
           includeKeywords={includeKeywords}

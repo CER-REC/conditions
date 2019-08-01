@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fontVariables.scss";
+@import "../../styles/browserSpecific.scss";
 
 .BrowseBy {
   display: inline-block;
@@ -50,7 +51,7 @@
       width: 0;
       height: 0;
 
-      border-width: 14px;
+      border-width: 13.5px;
       border-radius: 1px;
       border-color: transparent;
       border-style: solid;
@@ -75,3 +76,22 @@
     }
   }
 }
+@include firefoxOnly {
+  .BrowseBy {
+    .arrowWrapper { 
+      &::after {
+        border-width: 14px;
+      }
+    }
+  }
+}
+@include safariOnly {
+  .BrowseBy {
+    .arrowWrapper { 
+      &::after {
+        border-width: 12px;
+      }
+    }
+  }
+}
+  

@@ -115,6 +115,7 @@ class ViewTwo extends React.Component {
             yearRange={this.props.projectYear}
             findAny={this.props.findAny}
             suggestedKeywords={this.props.suggestedKeywords}
+            scrollToMethodology={this.props.scrollToMethodology}
           />
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap

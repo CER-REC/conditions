@@ -24,7 +24,9 @@ const categories = ['all', 'wildlife & habitat', 'environment'];
 describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
   describe('with default props', () => {
     let wrapper;
+    let spy;
     beforeEach(() => {
+      spy = jest.fn();
       wrapper = shallow(
         <SuggestedKeywordsPopout
           categories={categories}
@@ -35,11 +37,29 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
           excludeKeywords={excludedKeywords}
           closeTab={noop}
           isExclude={false}
+          scrollToMethodology={spy}
         />,
       );
     });
 
     shouldBehaveLikeAComponent(SuggestedKeywordsPopout, () => wrapper);
+
+    test('calls scrollToMethodology prop when "here" link is clicked', () => {
+      // Drilling into the formatted message components to get the actual link
+      const anchor = wrapper.find('.description')
+        .shallowWithIntl()
+        .shallowWithIntl()
+        .find('AdvancedFormattedMessage')
+        .shallowWithIntl()
+        .shallowWithIntl()
+        .shallowWithIntl();
+
+      anchor
+        .find('a')
+        .simulate('click', eventFuncs);
+
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('with sortBy as alphabetical', () => {
@@ -55,6 +75,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
           excludeKeywords={excludedKeywords}
           closeTab={noop}
           isExclude={false}
+          scrollToMethodology={noop}
         />,
       );
       wrapper.setState({ sortByCount: false });
@@ -88,6 +109,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
           excludeKeywords={excludedKeywords}
           closeTab={noop}
           isExclude={false}
+          scrollToMethodology={noop}
         />,
       );
       wrapper.setState({ sortByCount: true });
@@ -118,6 +140,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         excludeKeywords={excludedKeywords}
         closeTab={noop}
         isExclude={false}
+        scrollToMethodology={noop}
       />,
     );
     test('onClick of hierarchy text, should set to dec', () => {
@@ -139,6 +162,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
         excludeKeywords={excludedKeywords}
         closeTab={noop}
         isExclude={false}
+        scrollToMethodology={noop}
       />,
     );
     test('onClick of hierarchy text, should set to inc', () => {
@@ -162,6 +186,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
           excludeKeywords={excludedKeywords}
           closeTab={noop}
           isExclude={false}
+          scrollToMethodology={noop}
         />,
       );
     });
@@ -201,6 +226,7 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
           excludeKeywords={excludedKeywords}
           closeTab={noop}
           isExclude={false}
+          scrollToMethodology={noop}
         />,
       );
     });
