@@ -14,7 +14,9 @@ const ConcatenatedEmailText = ({ children }) => (
 
 const contributorIndices = [1, 2, 3];
 
+// eslint-disable-next-line react/prop-types
 const FormattedContributorSection = ({ children }) => {
+  // eslint-disable-next-line react/prop-types
   const lines = children.split('\n');
   const heading = lines.shift();
 
@@ -35,7 +37,7 @@ const AboutBox = () => (
     />
     <FormattedMessage
       id="components.mainInfoBar.content.emailUs"
-      tagName={ConcatenatedEmailText}
+      tag={ConcatenatedEmailText}
       values={{
         email: (
           <FormattedMessage id="common.linkText.NEBLink">
@@ -44,7 +46,7 @@ const AboutBox = () => (
         ),
       }}
     />
-    <FormattedMessage id="components.mainInfoBar.headings.contributor" tagName="h1" />
+    <FormattedMessage id="components.mainInfoBar.headings.contributors" tagName="h1" />
     {contributorIndices.map(i => (
       <AdvancedFormattedMessage
         id={`components.mainInfoBar.content.contributors.${i}`}
