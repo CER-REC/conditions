@@ -272,6 +272,11 @@ class App extends React.PureComponent {
     this.scrollSelectorIntoView('.Footer', 1000);
   }
 
+  scrollToMethodology = () => {
+    this.setMainInfoBarPane('methodology');
+    this.scrollSelectorIntoView('.Footer', 0);
+  }
+
   jumpToView1 = () => {
     this.props.setTransitionState(transitionStates.view1Reset);
     this.props.setBrowseBy('company');
@@ -650,6 +655,7 @@ class App extends React.PureComponent {
             availableCategories={this.props.allConfigurationData.keywordCategories}
             suggestedKeywords={this.props.allKeywords}
             updateSearch={this.updateSearch}
+            scrollToMethodology={this.scrollToMethodology}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}

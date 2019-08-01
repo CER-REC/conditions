@@ -27,6 +27,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     setIncluded: PropTypes.func.isRequired,
     setExcluded: PropTypes.func.isRequired,
     closeTab: PropTypes.func.isRequired,
+    scrollToMethodology: PropTypes.func.isRequired,
     suggestedKeywords: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       category: PropTypes.arrayOf(PropTypes.string),
@@ -78,6 +79,14 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   // Default sortDesc to count=descending and alphabetical=ascending
   toggleSortBy = sortByCount => this.setState(({ sortByCount, sortDesc: sortByCount }));
 
+  MethodologyLink = ({ children }) => (
+    <a
+      {...handleInteraction(this.props.scrollToMethodology)}
+    >
+      {children}
+    </a>
+  );
+
   render() {
     const keywords = sortKeywords(
       this.state.sortByCount,
@@ -96,6 +105,14 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           id="components.searchBar.suggestedKeywordsPopout.keywordsDescription"
           tag="p"
           className="description"
+          values={{
+            here: (
+              <AdvancedFormattedMessage
+                id="components.searchBar.suggestedKeywordsPopout.keywordsHere"
+                tag={this.MethodologyLink}
+              />
+            ),
+          }}
         />
         <ul className="categories">
           <AdvancedFormattedMessage

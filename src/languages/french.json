@@ -322,7 +322,7 @@
       },
       "suggestedKeywordsPopout": {
         "suggestedKeywords": "Mots-clés proposés",
-        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés ici.  ",
+        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés {ici}.",
         "keywordsHere": "ici",
         "viewBy": "Afficher par :",
         "sortBy": "Tri",

@@ -322,7 +322,7 @@
       },
       "suggestedKeywordsPopout": {
         "suggestedKeywords": "Suggested Keywords",
-        "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords",
+        "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords {here}.",
         "keywordsHere": "here",
         "viewBy": "View By:",
         "sortBy": "Sort by",

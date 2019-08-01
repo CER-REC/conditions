@@ -33,6 +33,7 @@ class SearchBar extends React.PureComponent {
     findAnyOnChange: PropTypes.func.isRequired,
     updateYear: PropTypes.func.isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
+    scrollToMethodology: PropTypes.func.isRequired,
     className: PropTypes.string,
   }
 
@@ -63,7 +64,7 @@ class SearchBar extends React.PureComponent {
       projectStatus, setIncluded, setExcluded,
       findAny, includeKeywords, excludeKeywords, suggestedKeywords,
       yearRange, availableYearRange, availableCategories, findAnyOnChange,
-      changeProjectStatus, updateYear,
+      changeProjectStatus, updateYear, scrollToMethodology,
     } = this.props;
 
     let modeComponent;
@@ -100,6 +101,7 @@ class SearchBar extends React.PureComponent {
                   isExclude={isExclude}
                   includeKeywords={includeKeywords}
                   excludeKeywords={excludeKeywords}
+                  scrollToMethodology={scrollToMethodology}
                 />
               )
               : null
