@@ -85,6 +85,7 @@ const props = {
   filteredProjectLookup,
   displayOrder,
   updateSearch: noop,
+  scrollToMethodology: noop,
 };
 
 const connectedProps = {
