@@ -164,6 +164,7 @@
   }
 
   .conditions {
+    overflow: visible !important;
     pointer-events: none;
 
     .Modal { pointer-events: auto; }

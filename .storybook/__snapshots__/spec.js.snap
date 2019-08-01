@@ -2093,10 +2093,10 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
     }
   >
     <section
-      className="ConditionDetails"
+      className="ConditionDetails expanded"
     >
       <div
-        className="main expanded expandable"
+        className="main expandable"
       >
         <div
           className="ProjectHeader"
