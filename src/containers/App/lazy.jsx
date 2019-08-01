@@ -108,6 +108,8 @@ class App extends React.PureComponent {
     };
     this.ref = React.createRef();
 
+    this.lastPlayTimer = 0;
+
     const updateSelectionWrapped = (from, variables, staticSelection = {}) => {
       updateSelection(
         this.props.selected,
