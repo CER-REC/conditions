@@ -58,6 +58,7 @@ import randomArrayValue from '../../utilities/randomArrayValue';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
+import DownloadPopup from '../../components/DownloadPopup';
 
 import './styles.scss';
 
@@ -76,7 +77,6 @@ const client = new ApolloClient({ cache, link, fetch });
 addLocaleData(enLocaleData);
 addLocaleData(frLocaleData);
 
-const noop = () => {};
 const tutorialTiming = 5000;
 
 const transitionStates = {
@@ -113,6 +113,7 @@ class App extends React.PureComponent {
       finalKeywordPosition: { x: 0, y: 0 },
       isIntermediatePopupOpen: false,
       isCompanyPopupOpen: false,
+      isDownloadPopupOpen: false,
     };
     this.ref = React.createRef();
 
@@ -517,6 +518,14 @@ class App extends React.PureComponent {
     }
   }
 
+  openDownloadPopup = () => {
+    this.setState({ isDownloadPopupOpen: true });
+  }
+
+  closeDownloadPopup = () => {
+    this.setState({ isDownloadPopupOpen: false });
+  };
+
   openRegDocPopup = () => {
     this.setState({ isIntermediatePopupOpen: true });
   }
@@ -607,6 +616,11 @@ class App extends React.PureComponent {
             )}
             lastUpdated={this.props.allConfigurationData.lastUpdated}
             selectedKeywordId={this.props.selected.keywordId}
+            openDownloadModal={this.openDownloadPopup}
+          />
+          <DownloadPopup
+            isOpen={this.state.isDownloadPopupOpen}
+            closeModal={this.closeDownloadPopup}
           />
           <section className="appControls">
             <BrowseBy
@@ -759,7 +773,7 @@ class App extends React.PureComponent {
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
-          openDataModal={noop}
+          openDataModal={this.openDownloadPopup}
         />
       </div>
     );
