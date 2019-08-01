@@ -6,6 +6,8 @@ import SuggestedKeywordsPopout from '.';
 import ReadMe from './README.md';
 import { categories } from '../../../mockData';
 
+const noop = () => {};
+
 const keywords = [
   {
     name: 'deer',
@@ -27,6 +29,7 @@ storiesForComponent('Components|SearchBar/SuggestedKeywordsPopout', module, Read
       isExclude={false}
       suggestedKeywords={keywords}
       categories={categories.availableCategories}
+      scrollToMethodology={noop}
       {...getInteractionProps()}
     />
   ), {
