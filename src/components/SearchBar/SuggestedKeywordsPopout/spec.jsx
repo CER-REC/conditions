@@ -60,13 +60,16 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       wrapper.setState({ sortByCount: false });
     });
     test('only alphabetical should have a classname of "selectedSort"', () => {
-      const updatedWrapper = wrapper.find('.rightText FormattedMessage');
-      expect(updatedWrapper.at(1).shallowWithIntl().hasClass('selectedSort')).toBe(false);
-      expect(updatedWrapper.at(2).shallowWithIntl().hasClass('selectedSort')).toBe(true);
+      const updatedWrapper = wrapper.find('.rightText AdvancedFormattedMessage');
+      expect(updatedWrapper.at(0).hasClass('selectedSort')).toBe(false);
+      expect(updatedWrapper.at(1).hasClass('selectedSort')).toBe(true);
     });
 
     test('clicking on frequency text should call changeSort ', () => {
-      const updatedWrapper = wrapper.find('.rightText FormattedMessage').at(1).shallowWithIntl();
+      const updatedWrapper = wrapper.find('.rightText AdvancedFormattedMessage')
+        .at(0)
+        .shallowWithIntl()
+        .shallowWithIntl();
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().sortByCount).toBe(true);
     });
@@ -90,12 +93,15 @@ describe('Components|SearchBar/SuggestedKeywordsPopout', () => {
       wrapper.setState({ sortByCount: true });
     });
     test('only frequency should have a classname of "selectedSort"', () => {
-      const updatedWrapper = wrapper.find('.rightText FormattedMessage');
-      expect(updatedWrapper.at(1).shallowWithIntl().hasClass('selectedSort')).toBe(true);
-      expect(updatedWrapper.at(2).shallowWithIntl().hasClass('selectedSort')).toBe(false);
+      const updatedWrapper = wrapper.find('.rightText AdvancedFormattedMessage');
+      expect(updatedWrapper.at(0).hasClass('selectedSort')).toBe(true);
+      expect(updatedWrapper.at(1).hasClass('selectedSort')).toBe(false);
     });
     test('clicking on alphabetical text should call changeSort', () => {
-      const updatedWrapper = wrapper.find('.rightText FormattedMessage').at(2).shallowWithIntl();
+      const updatedWrapper = wrapper.find('.rightText AdvancedFormattedMessage')
+        .at(1)
+        .shallowWithIntl()
+        .shallowWithIntl();
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().sortByCount).toBe(false);
     });

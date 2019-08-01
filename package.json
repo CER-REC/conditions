@@ -11,6 +11,7 @@
     "test:showcoverage": "open-cli coverage/lcov-report/index.html",
     "start": "npm run storybook",
     "storybook": "start-storybook -s ./src/images -s ./.storybook/wet-template -p 6006",
+    "verifyLazyLoad": "babel-node ./serveLazyDevServer",
     "build-storybook": "cross-env NODE_ENV=production build-storybook -s ./src/images -s ./.storybook/wet-template",
     "build:modified": "git show -s --format=%cd HEAD --date=short > LAST_MODIFIED",
     "build:update-version": "node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version, 'utf-8')\"",
@@ -54,7 +55,7 @@
     "lodash.throttle": "^4.1.1",
     "lzutf8": "^0.5.5",
     "matter-js": "github:spenserj/matter-js#dd02dba",
-    "prop-types": "^15.6.2",
+    "prop-types": "15.7.2",
     "query-string": "^6.5.0",
     "react": "^16.8.3",
     "react-apollo": "^2.5.4",
@@ -77,6 +78,7 @@
     "@babel/node": "7.5.5",
     "@babel/plugin-proposal-class-properties": "7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",
     "@storybook/addon-info": "5.1.9",
@@ -112,7 +114,9 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "1.6.1",
+    "express": "^4.17.1",
     "file-loader": "4.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "0.19.1",
     "jest": "24.8.0",
     "jest-junit": "7.0.0",
@@ -135,7 +139,8 @@
     "topojson-simplify": "3.0.2",
     "url-loader": "2.1.0",
     "webpack": "4.38.0",
-    "webpack-cli": "3.3.6"
+    "webpack-cli": "3.3.6",
+    "webpack-dev-middleware": "3.7.0"
   },
   "config": {
     "commitizen": {

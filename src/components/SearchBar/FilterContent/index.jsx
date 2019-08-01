@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import handleInteraction from '../../../utilities/handleInteraction';
 import CircleContainer from '../../CircleContainer';
 import { yearRangeType } from '../../../proptypes';
@@ -185,9 +186,10 @@ class FilterContent extends React.PureComponent {
       {...handleInteraction(this.filterProjectStatus, i)}
       className={statusArray.indexOf(i) > -1 ? 'selectedProject' : ''}
     >
-      <FormattedMessage id={`components.searchBar.filter.projectStatus.${i}`}>
-        {text => <span className="upperCase"> {text} </span>}
-      </FormattedMessage>
+      &nbsp;<AdvancedFormattedMessage
+        id={`components.searchBar.filter.projectStatus.${i}`}
+        className="upperCase"
+      />&nbsp;
     </li>
   )))
 
@@ -195,9 +197,10 @@ class FilterContent extends React.PureComponent {
     return (
       <div className="FilterContent contentPane">
         <div {...handleInteraction(this.reset)} className="reset">
-          <FormattedMessage id="components.searchBar.reset">
-            { text => <span className="upperCase"> {text} </span> }
-          </FormattedMessage>
+          &nbsp;<AdvancedFormattedMessage
+            id="components.searchBar.reset"
+            className="upperCase"
+          />&nbsp;
           <svg width={12} viewBox="0 0 427.5 427.5">
             <path
               d="M316.2,329.6c-60.9,57.6-157,54.8-214.6-6.1c-54.1-57.3-55.4-146.3-3-205.2c55.8-57.5,136.1-70.5,196.1-12.3
@@ -218,13 +221,13 @@ class FilterContent extends React.PureComponent {
         <ul className="projectStatus">
           {this.projectStatusRender(this.props.projectStatus)}
         </ul>
-        <FormattedMessage id="components.searchBar.close">
-          { text => (
-            <button {...handleInteraction(this.props.closeTab)} className="closeSearchBar upperCase" type="button">
-              {text }
-            </button>
-          )}
-        </FormattedMessage>
+        <AdvancedFormattedMessage
+          id="components.searchBar.close"
+          tag="button"
+          type="button"
+          {...handleInteraction(this.props.closeTab)}
+          className="closeSearchBar upperCase"
+        />
       </div>
     );
   }

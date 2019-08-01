@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import './styles.scss';
 
 import handleInteraction from '../../../utilities/handleInteraction';
@@ -33,18 +33,19 @@ const BrowseByBtn = (props) => {
       className={classNames('BrowseByBtn', props.mode, props.classNames)}
       {...handleInteraction(props.onClick, props.mode)}
     >
-      <div className="BrowseByBtn-ButtonText">
-        <FormattedMessage
-          id={`components.browseByBtn.${message[0]}`}
-          values={{
-            icon: (
-              <FormattedMessage id={`components.browseByBtn.${message[1]}`}>
-                {text => <span className="LastWord">{text}</span>}
-              </FormattedMessage>
-            ),
-          }}
-        />
-      </div>
+      <AdvancedFormattedMessage
+        id={`components.browseByBtn.${message[0]}`}
+        tag="div"
+        className="BrowseByBtn-ButtonText"
+        values={{
+          icon: (
+            <AdvancedFormattedMessage
+              id={`components.browseByBtn.${message[1]}`}
+              className="LastWord"
+            />
+          ),
+        }}
+      />
       {background}
     </button>
   );

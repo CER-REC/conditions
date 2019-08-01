@@ -35,11 +35,11 @@ describe('Components|FeaturesMenu', () => {
     });
 
     test('should render the trend title', () => {
-      const titleWrapper = wrapper.find('.FeaturesMenu > FormattedMessage');
+      const titleWrapper = wrapper.find('.FeaturesMenu > AdvancedFormattedMessage');
 
       expect(titleWrapper).toHaveLength(1);
       expect(titleWrapper.prop('id')).toBe('common.trend.title');
-      expect(titleWrapper.shallowWithIntl().hasClass('title')).toBe(true);
+      expect(titleWrapper.shallowWithIntl().shallowWithIntl().hasClass('title')).toBe(true);
     });
 
     test('should render the features in the List component', () => {
@@ -98,11 +98,11 @@ describe('Components|FeaturesMenu', () => {
     });
 
     test('should render the drop down title', () => {
-      const titleWrapper = wrapper.find('.FeaturesMenu > FormattedMessage');
+      const titleWrapper = wrapper.find('.FeaturesMenu > AdvancedFormattedMessage');
 
       expect(titleWrapper).toHaveLength(1);
       expect(titleWrapper.prop('id')).toBe('components.featureMenu.dropDownTitle');
-      expect(titleWrapper.shallowWithIntl().hasClass('title')).toBe(true);
+      expect(titleWrapper.shallowWithIntl().shallowWithIntl().hasClass('title')).toBe(true);
     });
   });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import CircleContainer from '../../CircleContainer';
 import List from '../../List';
 import './styles.scss';
@@ -8,48 +8,79 @@ import './styles.scss';
 const steps = [
   (
     <React.Fragment>
-      <FormattedMessage
+      <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.overview.title"
-        tagName="h1"
+        tag="h1"
       />
-      <FormattedMessage id="components.conditionExplorer.guide.overview.overview" tagName="p" />
+      <AdvancedFormattedMessage
+        id="components.conditionExplorer.guide.overview.overview"
+        tag="p"
+      />
     </React.Fragment>
   ),
   (
     <React.Fragment>
-      <FormattedMessage
+      <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.reason.title"
-        tagName="h1"
+        tag="h1"
       />
-      <FormattedMessage
+      <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.reason.overview"
-        tagName="p"
+        tag="p"
       />
     </React.Fragment>
   ),
   (
     <React.Fragment>
-      <FormattedMessage
+      <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.compliance.title"
-        tagName="h1"
+        tag="h1"
       />
-      <FormattedMessage
+      <AdvancedFormattedMessage
         id="components.conditionExplorer.guide.compliance.documentationPrompt"
-      >
-        {text => <p>{text}:</p>}
-      </FormattedMessage>
+        tag="p"
+      />
       <ul>
         {[1, 2].map(i => (
-          <FormattedMessage
+          <AdvancedFormattedMessage
             key={i}
             id={`components.conditionExplorer.guide.compliance.doc${i}`}
-            tagName="li"
+            tag="li"
           />
         ))}
       </ul>
     </React.Fragment>
   ),
 ];
+
+// eslint-disable-next-line react/prop-types
+const GuideDetailOutsideText = ({ children, radius, textRadius }) => (
+  <svg
+    className="curvedText"
+    width={radius}
+    height={radius / 2}
+    viewBox={`0 ${radius / 2} ${radius} ${radius / 2}`}
+  >
+    <defs>
+      <path
+        id="guideDetailText"
+        d={`
+          M 0,${textRadius}
+          A ${textRadius} ${textRadius} 0 0 0 ${textRadius},0
+          Z
+        `}
+      />
+    </defs>
+    <text>
+      <textPath
+        href="#guideDetailText"
+        startOffset="3%"
+      >
+        {children}
+      </textPath>
+    </text>
+  </svg>
+);
 
 const GuideDetail = (props) => {
   const { changeStep, selected, radius } = props;
@@ -78,35 +109,12 @@ const GuideDetail = (props) => {
           items={circles}
         />
       </div>
-      <FormattedMessage id="components.conditionExplorer.guide.clickOutside">
-        {text => (
-          <svg
-            className="curvedText"
-            width={radius}
-            height={radius / 2}
-            viewBox={`0 ${radius / 2} ${radius} ${radius / 2}`}
-          >
-            <defs>
-              <path
-                id="guideDetailText"
-                d={`
-                  M 0,${textRadius}
-                  A ${textRadius} ${textRadius} 0 0 0 ${textRadius},0
-                  Z
-                `}
-              />
-            </defs>
-            <text>
-              <textPath
-                href="#guideDetailText"
-                startOffset="3%"
-              >
-                {text}
-              </textPath>
-            </text>
-          </svg>
-        )}
-      </FormattedMessage>
+      <AdvancedFormattedMessage
+        id="components.conditionExplorer.guide.clickOutside"
+        tag={GuideDetailOutsideText}
+        textRadius={textRadius}
+        radius={radius}
+      />
     </section>
   );
 };

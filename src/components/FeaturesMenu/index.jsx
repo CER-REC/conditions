@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import List from '../List';
 import './styles.scss';
 import Dropdown from '../Dropdown';
@@ -12,12 +12,12 @@ const FeaturesMenu = (props) => {
   const id = props.dropDown ? 'components.featureMenu.dropDownTitle' : 'common.trend.title';
   const selected = features.includes(props.selected) ? props.selected : features[0];
   const listItems = features.map(feature => (
-    <FormattedMessage key={feature} id={`common.features.${feature}`} />
+    <AdvancedFormattedMessage key={feature} id={`common.features.${feature}`} />
   ));
 
   return (
     <div className={classNames('FeaturesMenu', props.className, { dropDown: props.dropDown })}>
-      <FormattedMessage id={id}>{text => <span className="title">{text}</span>}</FormattedMessage>
+      <AdvancedFormattedMessage id={id} className="title" />
       {(props.dropDown) ? (
         <Dropdown
           options={features}

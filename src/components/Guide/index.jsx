@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import CircleContainer from '../CircleContainer';
 
 import './styles.scss';
@@ -63,30 +63,30 @@ const Guide = ({ step, onClick, loading, className }) => {
   }
 
   return (
-    <div className={classNames('Guide', className)} style={{ width: 2 * radius, height: 2 * radius }}>
-      {(wedges.length)
-        ? (
-          <svg
-            className="wedgeContainer"
-            viewBox={`${-radius} ${-radius} ${2 * radius} ${2 * radius}`}
-          >
-            {wedges}
-          </svg>
-        ) : null
-
-      }
+    <div
+      className={classNames('Guide', className)}
+      style={{ width: 2 * radius, height: 2 * radius }}
+    >
+      {wedges.length === 0 ? null : (
+        <svg
+          className="wedgeContainer"
+          viewBox={`${-radius} ${-radius} ${2 * radius} ${2 * radius}`}
+        >
+          {wedges}
+        </svg>
+      )}
       <CircleContainer size={guideSize} onClick={onClick}>
-        <FormattedMessage id="components.guide.loading" key="loading">
-          {text => <span className={(loading) ? '' : 'hidden'}>{text}</span>}
-        </FormattedMessage>
-        {
-          textPlaceholders.map((_, idx) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <FormattedMessage id={`components.guide.tutorial.${idx}`} key={idx}>
-              {text => <span className={(!loading && idx === step) ? '' : 'hidden'}>{text}</span>}
-            </FormattedMessage>
-          ))
-        }
+        <AdvancedFormattedMessage
+          id="components.guide.loading"
+          className={(loading) ? '' : 'hidden'}
+        />
+        {textPlaceholders.map((_, idx) => (
+          <AdvancedFormattedMessage
+            id={`components.guide.tutorial.${idx}`}
+            key={idx /* eslint-disable-line react/no-array-index-key */}
+            className={(!loading && idx === step) ? '' : 'hidden'}
+          />
+        ))}
       </CircleContainer>
     </div>
   );

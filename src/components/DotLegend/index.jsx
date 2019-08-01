@@ -9,9 +9,7 @@ const DotLegend = () => (
     <svg height="10" width="10">
       <ProjectDot cx={5} cy={5} r={3} id={0} />
     </svg>
-    <FormattedMessage id="components.dotLegend.text">
-      {text => <p>{text}</p>}
-    </FormattedMessage>
+    <FormattedMessage id="components.dotLegend.text" tagName="p" />
   </div>
 );
 
