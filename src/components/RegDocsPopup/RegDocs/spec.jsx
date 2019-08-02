@@ -18,8 +18,7 @@ describe('Components|RegDocs', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = mountWithIntl(<RegDocs
-        instrument="test"
-        regdocsUrl="https://www.example.com"
+        instrument="MO-025-2011"
         {...spy}
       />);
     });

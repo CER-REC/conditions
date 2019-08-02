@@ -5,6 +5,8 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import PopupBtn from '../../PopupBtn';
 
+import { regDocsUrl } from '../../../constants';
+
 import './styles.scss';
 
 const checkIcon = (
@@ -14,7 +16,7 @@ const checkIcon = (
   </svg>
 );
 
-const RegDocs = ({ instrument, regDocsUrl, closeModal }) => {
+const RegDocs = ({ instrument, closeModal }) => {
   const linkUrl = `${regDocsUrl}${instrument}`;
 
   return (
@@ -62,7 +64,6 @@ const RegDocs = ({ instrument, regDocsUrl, closeModal }) => {
 
 RegDocs.propTypes = {
   instrument: PropTypes.string.isRequired,
-  regDocsUrl: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 

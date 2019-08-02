@@ -4,17 +4,12 @@ import PropTypes from 'prop-types';
 import RegDocs from './RegDocs';
 import Modal from '../Modal';
 
-import { regDocsUrl } from '../../constants';
-
 import './styles.scss';
 
 const RegDocsPopup = ({ instrument, isOpen, closeModal }) => (
   <Modal
     component={RegDocs}
-    componentProps={{
-      instrument,
-      regDocsUrl,
-    }}
+    componentProps={{ instrument }}
     isOpen={isOpen}
     closeModal={closeModal}
     className="RegDocsPopup"
