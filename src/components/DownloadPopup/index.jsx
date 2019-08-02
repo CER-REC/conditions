@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { localDataURL } from '../../constants';
 import PopupBtn from '../PopupBtn';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 
 import Modal from '../Modal';
 
@@ -40,9 +41,12 @@ const DownloadPopup = (props) => {
         <FormattedMessage id="components.modal.data.description" />
       </div>
       <div className="closeIcon">
-        <FormattedMessage id="components.modal.company.back">
-          {text => <PopupBtn text={text} icon="x" action={closeModal} />}
-        </FormattedMessage>
+        <AdvancedFormattedMessage
+          id="components.modal.data.back"
+          tag={PopupBtn}
+          icon="x"
+          action={closeModal}
+        />
       </div>
     </div>
   );
