@@ -1,5 +1,6 @@
 @import '../../../styles/colors';
 @import '../../../styles/fontVariables.scss';
+@import '../../../styles/browserSpecific.scss';
 .TotalConditions {
   position: relative;
 
@@ -30,5 +31,21 @@
     width: 80px;
 
     font-size: 18px;
+  }
+}
+
+@include safariOnly {
+  .TotalConditions {
+   .Example {
+      width: 450px;
+   }
+   .Explanation {
+     width: 450px;
+   }
+   .PopupBtn {
+     right: 10px;
+   }
+   
+
   }
 }
