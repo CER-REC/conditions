@@ -16941,8 +16941,7 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
         className="title"
       >
         <span>
-          Companies in Selected Region
-          :
+          Companies in Selected Region:
         </span>
       </div>
       <ul
@@ -17027,34 +17026,11 @@ exports[`Storyshots Components|RegionSummary/RegionCompanies default 1`] = `
       <div
         className="RegionCompanies"
       >
-        <span>
-          Companies in Selected Region:
-        </span>
-      </div>
-      <ul
-        className=""
-      >
-        <li
-          title="Alberta Trans-Alta e"
-        >
-          Alberta Trans-Alta e
-        </li>
-        <li
-          title="Alberta Trans-Alta è"
-        >
-          Alberta Trans-Alta è
-        </li>
-        <li
-          title="Canada-Montana Pipe Line Company"
-        >
-          Canada-Montana Pipe Line Company
-        </li>
-        <li
-          title="Express Pipeline Ltd."
+        <div
+          className="title"
         >
           <span>
-            Companies in Selected Region
-            :
+            Companies in Selected Region:
           </span>
         </div>
         <ul
