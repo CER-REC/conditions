@@ -288,7 +288,7 @@ $states: (
 
 $combinedState: ();
 
-.App {
+.transitionWrapper {
   @each $stage, $rules in $states {
     &.transition-state-#{$stage} {
       @each $selector, $properties in $rules {

@@ -243,8 +243,9 @@ describe('Components|SearchBar/FilterContent', () => {
         />,
       );
       close = wrapper
-        .find('FormattedMessage')
+        .find('AdvancedFormattedMessage')
         .last()
+        .shallowWithIntl()
         .shallowWithIntl();
     });
     test('click should call its closeTab Prop', () => {

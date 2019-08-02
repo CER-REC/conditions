@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import './styles.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import Icon from '../../Icon/index';
 import Dropdown from '../../Dropdown';
 import handleInteraction from '../../../utilities/handleInteraction';
@@ -107,9 +108,7 @@ class SearchContent extends React.PureComponent {
           id="components.searchBar.findWords.searchText.exclude"
           values={{
             not: (
-              <FormattedMessage id="components.searchBar.findWords.searchText.not">
-                {text => <span> <strong> {text} </strong> </span>}
-              </FormattedMessage>
+              <FormattedMessage id="components.searchBar.findWords.searchText.not" tagName="strong" />
             ),
           }}
         />
@@ -139,9 +138,11 @@ class SearchContent extends React.PureComponent {
 
   highlightConditions = () => (
     <div className="highlightConditions">
-      <FormattedMessage id="components.searchBar.findWords.highlightText.highlightConditions">
-        {text => <div className="highlightText">{text}</div>}
-      </FormattedMessage>
+      <AdvancedFormattedMessage
+        id="components.searchBar.findWords.highlightText.highlightConditions"
+        className="highlightText"
+        tag="div"
+      />
 
       <div className="anyText">
         <FormattedMessage
@@ -150,14 +151,16 @@ class SearchContent extends React.PureComponent {
             choice: (
               this.props.findAny
                 ? (
-                  <FormattedMessage id="components.searchBar.findWords.highlightText.any">
-                    { text => <span className="upperCase"> {text} </span>}
-                  </FormattedMessage>
+                  <AdvancedFormattedMessage
+                    id="components.searchBar.findWords.highlightText.any"
+                    className="upperCase"
+                  />
                 )
                 : (
-                  <FormattedMessage id="components.searchBar.findWords.highlightText.all">
-                    { text => <span className="upperCase"> {text} </span>}
-                  </FormattedMessage>
+                  <AdvancedFormattedMessage
+                    id="components.searchBar.findWords.highlightText.all"
+                    className="upperCase"
+                  />
                 )),
           }}
         />
@@ -175,9 +178,11 @@ class SearchContent extends React.PureComponent {
                 id="components.searchBar.findWords.highlightText.followingExclude"
                 values={{
                   choice: (
-                    <FormattedMessage id="components.searchBar.findWords.highlightText.none">
-                      {text => <span className="upperCase"> {text} </span>}
-                    </FormattedMessage>),
+                    <AdvancedFormattedMessage
+                      id="components.searchBar.findWords.highlightText.none"
+                      className="upperCase"
+                    />
+                  ),
                 }}
               />
               :
@@ -258,9 +263,10 @@ class SearchContent extends React.PureComponent {
           {...handleInteraction(this.reset)}
           className={classNames('reset', { shifted: !this.props.isExclude })}
         >
-          <FormattedMessage id="components.searchBar.reset">
-            { text => <span className="upperCase"> {text} </span> }
-          </FormattedMessage>
+          <AdvancedFormattedMessage
+            id="components.searchBar.reset"
+            className="upperCase"
+          />
           <svg width={12} viewBox="0 0 427.5 427.5">
             <path
               d="M316.2,329.6c-60.9,57.6-157,54.8-214.6
@@ -282,19 +288,15 @@ class SearchContent extends React.PureComponent {
           </button>
         </div>
         {this.highlightConditions()}
-        <FormattedMessage id="components.searchBar.close">
-          {text => (
-            <div className="closeSearchBar">
-              <button
-                {...handleInteraction(this.props.closeTab)}
-                type="button"
-                className="upperCase"
-              >
-                {text}
-              </button>
-            </div>
-          )}
-        </FormattedMessage>
+        <div className="closeSearchBar">
+          <AdvancedFormattedMessage
+            id="components.searchBar.close"
+            tag="button"
+            type="button"
+            {...handleInteraction(this.props.closeTab)}
+            className="upperCase"
+          />
+        </div>
       </div>
     );
   }

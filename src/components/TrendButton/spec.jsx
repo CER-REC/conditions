@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { FormattedMessage } from 'react-intl';
 import { conditionCountsByYear, displayOrder } from '../../mockData';
 import TrendButton from '.';
 
@@ -23,10 +22,13 @@ describe('Components|TrendButton', () => {
       expect(wrapper.find('div.buttonText')).toHaveLength(1);
     });
     test('should render a FormattedMessage component for button text', () => {
-      const messageWrapper = wrapper.find(FormattedMessage);
+      const messageWrapper = wrapper.find('AdvancedFormattedMessage');
       expect(messageWrapper).toHaveLength(1);
       expect(messageWrapper.prop('id')).toBe('components.trendButton.description');
-      const updatedWrapper = messageWrapper.shallowWithIntl();
+      const updatedWrapper = messageWrapper
+        .shallowWithIntl()
+        .shallowWithIntl()
+        .shallowWithIntl();
       expect(updatedWrapper.find('p')).toHaveLength(2);
     });
   });

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import PopupBtn from '../../PopupBtn';
 
@@ -27,25 +28,29 @@ const RegDocs = ({ instrument, regdocsUrl, closeModal }) => (
       {checkIcon}
       <FormattedMessage id="components.modal.regdocs.found" />
     </p>
-    <FormattedMessage id="components.modal.regdocs.currentTab">
-      {text => (<PopupBtn text={text} icon="plus" action={regdocsUrl} />)}
-    </FormattedMessage>
-    <FormattedMessage id="components.modal.regdocs.newTab">
-      {text => (
-        <PopupBtn
-          text={text}
-          icon="plus"
-          action={regdocsUrl}
-          attributes={{
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          }}
-        />
-      )}
-    </FormattedMessage>
-    <FormattedMessage id="components.modal.regdocs.cancel">
-      {text => (<PopupBtn text={text} icon="x" action={closeModal} className="cancel" />)}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.modal.regdocs.currentTab"
+      tag={PopupBtn}
+      icon="plus"
+      action={regdocsUrl}
+    />
+    <AdvancedFormattedMessage
+      id="components.modal.regdocs.newTab"
+      tag={PopupBtn}
+      icon="plus"
+      action={regdocsUrl}
+      attributes={{
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }}
+    />
+    <AdvancedFormattedMessage
+      id="components.modal.regdocs.cancel"
+      tag={PopupBtn}
+      icon="x"
+      action={closeModal}
+      className="cancel"
+    />
     <FormattedMessage id="components.modal.regdocs.whatIsHeading" tagName="h4" />
     <FormattedMessage id="components.modal.regdocs.whatIsText" tagName="p" />
   </div>

@@ -22,6 +22,7 @@ module.exports = {
         '**/spec.js',
         '**/spec.jsx',
         'src/tests/**',
+        'serveLazyDevServer.js',
       ],
       rules: {
         'import/no-extraneous-dependencies': [

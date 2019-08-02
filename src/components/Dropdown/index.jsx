@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import './styles.scss';
 
 const Dropdown = (props) => {
@@ -9,13 +9,12 @@ const Dropdown = (props) => {
     ? props.selectedOption
     : props.options[0];
   const selectList = props.options.map(feature => (
-    <FormattedMessage key={feature} id={`${props.optionID}.${feature}`}>
-      {text => (
-        <option value={feature}>
-          {text}
-        </option>
-      )}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      key={feature}
+      id={`${props.optionID}.${feature}`}
+      tag="option"
+      value={feature}
+    />
   ));
 
   return (

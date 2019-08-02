@@ -120,7 +120,7 @@
         },
         "compliance": {
           "title": "How does the NEB verify condition compliance?",
-          "documentationPrompt": "The NEB verifies company compliance with project condition requirements through",
+          "documentationPrompt": "The NEB verifies company compliance with project condition requirements through:",
           "doc1": "compliance verification activities (i.e. inspections, audits, etc.)",
           "doc2": "assessing condition filings"
         },
@@ -132,8 +132,8 @@
         "title": "Selected Company"
       },
       "list": {
-        "company": "Selected Company",
-        "location": "Region"
+        "company": "Selected Company:",
+        "location": "Region:"
       },
       "pullToSpin": {
         "pull": "Pull",
@@ -141,8 +141,8 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Selected Project",
-      "selectedCondition": "Selected Condition",
+      "selectedProject": "Selected Project:",
+      "selectedCondition": "Selected Condition:",
       "instrumentNumber": "Instrument #",
       "conditionNumber": "Condition #",
       "location": "Location",
@@ -168,8 +168,8 @@
       "instrument": "Orders, certificates, licenses or permits issued by the Board. All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe NEB publishes a [Regulatory Instrument] Report that lists Regulatory Instruments issued from September 2014 to current."
     },
     "featureTypesDescription": {
-      "allThemes": "Conditions with multiple themes are counted more than once.",
-      "otherInstruments": "The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.",
+      "allThemes": "* Conditions with multiple themes are counted more than once.",
+      "otherInstruments": "* The graph above shows the top nine types of regulatory instruments based on the total number of times they occur in the data. Remaining instrument types are grouped into the 'Other' category. The definitions below contain the complete list of regulatory instrument types in the data.",
       "theme": {
         "ADMINISTRATIVE": "Conditions that help track organizational tasks.",
         "DAMAGE_PREVENTION": "Conditions that hold companies accountable for the safe conduct in and around pipelines and facilities.",
@@ -265,7 +265,7 @@
       }
     },
     "guideTransport": {
-      "caption": "Guide"
+      "caption": "Guide:"
     },
     "instrumentsLegend": {
       "all": "All Instruments"
@@ -291,8 +291,8 @@
       },
       "highlightSummary": {
         "showing": "Showing {status} projects from {start} - {end}",
-        "includes": "Highlighting conditions containing",
-        "excludes": "Exclude conditions containing",
+        "includes": "Highlighting conditions containing:",
+        "excludes": "Exclude conditions containing:",
         "IN_PROGRESS": "In Progress",
         "COMPLETED": "Completed",
         "ALL": "All"
@@ -324,7 +324,7 @@
         "suggestedKeywords": "Suggested Keywords",
         "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords",
         "keywordsHere": "here",
-        "viewBy": "View By",
+        "viewBy": "View By:",
         "sortBy": "Sort by",
         "frequency": "Frequency",
         "alphabetical": "Alphabetical",
@@ -347,7 +347,7 @@
         "keywords": "[Placeholder for an explanation of...]",
         "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
         "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
-        "emailUs": "Email us with your comments and ideas",
+        "emailUs": "Email us with your comments and ideas: {emailPlaceholder}",
         "lookForward": "We look forward to hearing from you.",
         "contributor": "DATA SOURCE:\nNEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nNEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau\nCOORDINATION:\nAnnette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)\nDATA VISUALIZATION:\nLead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.\nDesign: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.\nLead Technical: VizworX\nTechnical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.",
         "here": "here"
@@ -357,15 +357,16 @@
       "totalConditions":{
         "title": "How is the Total Number of Conditions Determined?",
         "explanation": "The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.",
-        "example": "For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project."
+        "example": "For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.",
+        "back": "Back"
       },
       "data": {
         "title": "Data Download",
         "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."
       },
       "company": {
-        "name": "Full Project Name",
-        "associated": "Companies associated with this project",
+        "name": "Full Project Name:",
+        "associated": "Companies associated with this project:",
         "meaningHeading": "Why is there more than one company associated with this project?",
         "meaningText": "There are instances when more than one company has obligations related to a project. Examples include:\n - an agreement between one company to sell and another company to purchase a pipeline; and\n - NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).",
         "back": "Back"
@@ -387,7 +388,7 @@
       "associated": "Associated Companies"
     },
     "regionCompanies": {
-      "title": "Companies in Selected Region"
+      "title": "Companies in Selected Region:"
     },
     "regionConditionSummary": {
       "title": "Total Conditions for Selected Region"
@@ -423,8 +424,8 @@
       "description": "Back to\nKeywords"
     },
     "browseBy": {
-      "skip": "Skip intro to browse",
-      "return": "Return to browse",
+      "skip": "Skip intro to browse:",
+      "return": "Return to browse:",
       "blank": " "
     },
     "browseByBtn": {
@@ -445,9 +446,9 @@
     "errorBoundary": {
       "errorMessage": "Something went wrong.",
       "restoreLinkText": "Restore Session",
-      "restoreMessage": "Please click on the link to restore the session",
+      "restoreMessage": "Please click on the link to restore the session:",
       "resetLinkText": "Reset Session",
-      "resetMessage": "Please click on the link to reset the session"
+      "resetMessage": "Please click on the link to reset the session:"
     }
   },
   "views": {

@@ -9,18 +9,21 @@ const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
 describe('Components|PopupBtn', () => {
   describe('with default props', () => {
-    const wrapper = shallow(<PopupBtn icon="x" text="Test" action="" />);
+    const wrapper = shallow(<PopupBtn icon="x" action="">Test</PopupBtn>);
 
     shouldBehaveLikeAComponent(PopupBtn, () => wrapper);
   });
 
   describe('as a link', () => {
-    const wrapper = shallow(<PopupBtn
-      text="Test"
-      icon="x"
-      action="https://www.example.com"
-      attributes={{ target: '_blank' }}
-    />);
+    const wrapper = shallow((
+      <PopupBtn
+        icon="x"
+        action="https://www.example.com"
+        attributes={{ target: '_blank' }}
+      >
+        Test
+      </PopupBtn>
+    ));
 
     test('should render an anchor tag', () => {
       expect(wrapper.type()).toBe('a');
@@ -34,11 +37,7 @@ describe('Components|PopupBtn', () => {
   describe('as a button', () => {
     const spy = jest.fn();
 
-    const wrapper = shallow(<PopupBtn
-      text="Test"
-      icon="x"
-      action={spy}
-    />);
+    const wrapper = shallow(<PopupBtn icon="x" action={spy}>Test</PopupBtn>);
 
     test('should render a button tag', () => {
       expect(wrapper.type()).toBe('button');

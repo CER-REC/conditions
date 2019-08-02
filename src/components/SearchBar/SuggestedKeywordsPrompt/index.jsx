@@ -1,21 +1,23 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+import TranslatedParagraphs from '../../TranslatedParagraphs';
 import handleInteraction from '../../../utilities/handleInteraction';
 
 const SuggestedKeywordsPrompt = props => (
   <div className={classNames('SuggestedKeywordsPrompt', { isActive: props.isActive })}>
-    <FormattedMessage id="components.searchBar.suggestedKeywordsPrompt.selectFrom">
-      {text => (<p className="selectFrom">{text}</p>)}
-    </FormattedMessage>
-    <FormattedMessage id="components.searchBar.suggestedKeywordsPrompt.suggestedKeywords">
-      {text => (
-        text.split('\n')
-          .map(string => <p className="colorChange" key={string}>{string}</p>)
-      )}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.searchBar.suggestedKeywordsPrompt.selectFrom"
+      className="selectFrom"
+      tag="p"
+    />
+    <AdvancedFormattedMessage
+      id="components.searchBar.suggestedKeywordsPrompt.suggestedKeywords"
+      tag={TranslatedParagraphs}
+      className="colorChange"
+    />
     <svg
       className="arrow"
       {...handleInteraction(props.onClick)}

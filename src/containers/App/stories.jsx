@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesForView } from '../../../.storybook/utils';
 import ReadMe from './README.md';
-import App, { AppStore } from '.';
+import App from '.';
+import { AppStore } from './lazy';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import { setTransitionState } from '../../actions/transitionState';
 

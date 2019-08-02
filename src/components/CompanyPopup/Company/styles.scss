@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import "../../../styles/browserSpecific.scss";
 
 .Company {
   position: relative;
@@ -54,4 +55,21 @@
 
     font-size: 18px;
   }
+}
+@include safariOnly {
+  .Company {
+    width: 480px;
+      p {
+       width: 400px;
+      }
+      li {
+        width: 400px;
+      }
+      ul {
+        width: 430px;
+      }
+      .PopupBtn {
+        right: 20px;
+      }
+    }
 }

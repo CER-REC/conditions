@@ -18,9 +18,7 @@ const RegionCompanies = (props) => {
   return (
     <div className="RegionCompanies">
       <div className="title">
-        <FormattedMessage id="components.regionCompanies.title">
-          {text => <span>{text}:</span>}
-        </FormattedMessage>
+        <FormattedMessage id="components.regionCompanies.title" />
       </div>
       <ul className={props.isVisible}>
         {companyItems}

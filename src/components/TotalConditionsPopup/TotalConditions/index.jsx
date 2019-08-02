@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import PopupBtn from '../../PopupBtn';
 
@@ -20,9 +21,12 @@ const TotalConditions = ({ closeModal }) => (
         <FormattedMessage id="components.modal.totalConditions.example" />
       </div>
     </div>
-    <FormattedMessage id="components.modal.company.back">
-      {text => <PopupBtn text={text} icon="x" action={closeModal} />}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.modal.company.back"
+      tag={PopupBtn}
+      icon="x"
+      action={closeModal}
+    />
   </div>
 );
 

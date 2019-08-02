@@ -128,22 +128,22 @@ describe('Components|SearchBar/SearchContent', () => {
       const updatedWrapper = wrapper.find('.anyText').at(1)
         .find('FormattedMessage')
         .shallowWithIntl()
-        .find('FormattedMessage');
+        .find('AdvancedFormattedMessage');
       expect(updatedWrapper.prop('id')).toBe(
         'components.searchBar.findWords.highlightText.none',
       );
-      expect(updatedWrapper.shallowWithIntl().hasClass('upperCase')).toBe(true);
+      expect(updatedWrapper.shallowWithIntl().shallowWithIntl().hasClass('upperCase')).toBe(true);
     });
 
     test('when findAny is true, render any text in summary', () => {
       const updatedWrapper = wrapper.find('.anyText').first()
         .find('FormattedMessage')
         .shallowWithIntl()
-        .find('FormattedMessage');
+        .find('AdvancedFormattedMessage');
       expect(updatedWrapper.prop('id')).toBe(
         'components.searchBar.findWords.highlightText.any',
       );
-      expect(updatedWrapper.shallowWithIntl().hasClass('upperCase')).toBe(true);
+      expect(updatedWrapper.shallowWithIntl().shallowWithIntl().hasClass('upperCase')).toBe(true);
     });
 
     test('when findAny is false, render all text in summary', () => {
@@ -151,11 +151,11 @@ describe('Components|SearchBar/SearchContent', () => {
       const updatedWrapper = wrapper.find('.anyText').first()
         .find('FormattedMessage')
         .shallowWithIntl()
-        .find('FormattedMessage');
+        .find('AdvancedFormattedMessage');
       expect(updatedWrapper.prop('id')).toBe(
         'components.searchBar.findWords.highlightText.all',
       );
-      expect(updatedWrapper.shallowWithIntl().hasClass('upperCase')).toBe(true);
+      expect(updatedWrapper.shallowWithIntl().shallowWithIntl().hasClass('upperCase')).toBe(true);
     });
   });
 

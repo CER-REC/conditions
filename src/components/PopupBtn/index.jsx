@@ -37,19 +37,19 @@ const icons = {
   ),
 };
 
-const PopupBtn = ({ action, text, icon, attributes, className }) => {
+const PopupBtn = ({ action, children, icon, attributes, className }) => {
   const classes = classNames('PopupBtn', className);
   return (
     (typeof action === 'string')
       ? (
         <a className={classes} href={action} {...attributes}>
-          {<div>{text}</div>}
+          {<div>{children}</div>}
           {icons[icon]}
         </a>
       )
       : (
         <button className={classes} type="button" {...handleInteraction(action)}>
-          {text}
+          {children}
           {icons[icon]}
         </button>
       )
@@ -63,7 +63,7 @@ PopupBtn.propTypes = {
   /** Attributes (i.e. target="_blank") to pass to the element */
   attributes: PropTypes.shape({}),
   /** Label */
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   /** Icon to be displayed */
   icon: PropTypes.oneOf(['plus', 'x']).isRequired,
   /** Additional CSS classes */
