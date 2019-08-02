@@ -24,11 +24,11 @@ describe('Components|Dropdown', () => {
     });
 
     test('should render the options in the select drop down', () => {
-      const optionsWrapper = wrapper.find('select FormattedMessage');
+      const optionsWrapper = wrapper.find('select AdvancedFormattedMessage');
       expect(optionsWrapper).toHaveLength(options.length);
       options.forEach((feature, index) => {
         expect(optionsWrapper.at(index).prop('id')).toBe(`${optionID}.${feature}`);
-        expect(optionsWrapper.at(index).shallowWithIntl().is('option')).toBe(true);
+        expect(optionsWrapper.at(index).shallowWithIntl().shallowWithIntl().is('option')).toBe(true);
       });
     });
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 const MethodologyBox = () => (
   <div className="MethodologyBox">
@@ -9,9 +10,13 @@ const MethodologyBox = () => (
       tagName="p"
       values={{
         here: (
-          <FormattedMessage id="components.mainInfoBar.content.here">
-            {text => <a href="placeholder" target="_blank" rel="noopener noreferrer">{text}</a>}
-          </FormattedMessage>
+          <AdvancedFormattedMessage
+            id="components.mainInfoBar.content.here"
+            tag="a"
+            href="placeholder"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
         ),
       }}
     />

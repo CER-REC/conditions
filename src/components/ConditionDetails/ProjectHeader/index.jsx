@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
@@ -9,9 +9,11 @@ import './styles.scss';
 
 const lessButton = (
   <React.Fragment>
-    <FormattedMessage id="components.conditionDetails.less">
-      {text => <h1 className="upperCase">{text}</h1>}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.conditionDetails.less"
+      className="upperCase"
+      tag="h1"
+    />
     <svg className="arrow" viewBox="0 0 16 24">
       <polyline points="4,4 12,12.5 4,20 4,4" />
     </svg>
@@ -23,9 +25,11 @@ const moreButton = (
     <svg className="arrow" viewBox="0 0 16 24">
       <polyline points="12,4 4,12.5 12,20 12,4" />
     </svg>
-    <FormattedMessage id="components.conditionDetails.more">
-      {text => <h1 className="upperCase">{text}</h1>}
-    </FormattedMessage>
+    <AdvancedFormattedMessage
+      id="components.conditionDetails.more"
+      className="upperCase"
+      tag="h1"
+    />
   </React.Fragment>
 );
 
@@ -35,9 +39,10 @@ class ProjectHeader extends React.PureComponent {
       {this.props.browseBy === 'company'
         ? (
           <React.Fragment>
-            <FormattedMessage id="components.conditionDetails.selectedProject">
-              {text => <h1>{text}:</h1>}
-            </FormattedMessage>
+            <AdvancedFormattedMessage
+              id="components.conditionDetails.selectedProject"
+              tag="h1"
+            />
             { this.props.selectedProject !== ''
               ? (
                 <button
@@ -57,9 +62,10 @@ class ProjectHeader extends React.PureComponent {
         )
         : (
           <React.Fragment>
-            <FormattedMessage id="components.conditionDetails.selectedCondition">
-              {text => <h1>{text}:</h1>}
-            </FormattedMessage>
+            <AdvancedFormattedMessage
+              id="components.conditionDetails.selectedCondition"
+              tag="h1"
+            />
             <div className="openProject" />
           </React.Fragment>
         )

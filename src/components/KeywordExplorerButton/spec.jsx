@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { FormattedMessage } from 'react-intl';
 import KeywordExplorerButton from '.';
 
 const noop = () => {};
@@ -18,10 +17,15 @@ describe('Components|KeywordExplorerButton', () => {
     expect(wrapper.find('div.buttonText')).toHaveLength(1);
   });
   test('should render a FormattedMessage component for button text', () => {
-    const messageWrapper = wrapper.find(FormattedMessage);
+    const messageWrapper = wrapper.find('AdvancedFormattedMessage');
     expect(messageWrapper).toHaveLength(1);
     expect(messageWrapper.prop('id')).toBe('components.keywordExploreButton.description');
-    const updatedWrapper = messageWrapper.shallowWithIntl();
+    // AdvancedFormattedMessage injects some extra components, so dig through them
+    // until we find the p tags
+    const updatedWrapper = messageWrapper
+      .shallowWithIntl()
+      .shallowWithIntl()
+      .shallowWithIntl();
     expect(updatedWrapper.find('p')).toHaveLength(2);
   });
 

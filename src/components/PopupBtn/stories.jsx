@@ -8,22 +8,25 @@ storiesForComponent('Components|PopupBtn', module, ReadMe)
   .add('default', () => (
     <PopupBtn
       action="https://www.example.com"
-      text="Example"
       icon="plus"
-    />
+    >
+      Example
+    </PopupBtn>
   ))
   .add('link attributes', () => (
     <PopupBtn
       action="https://www.example.com"
-      text="Example"
       icon="plus"
       attributes={{ target: '_blank', rel: 'noopener noreferrer' }}
-    />
+    >
+      Example
+    </PopupBtn>
   ))
   .add('button', () => (
     <PopupBtn
       action={() => alert('Who\'s there?')}
-      text="Knock, knock"
       icon="x"
-    />
+    >
+      Knock, knock
+    </PopupBtn>
   ));

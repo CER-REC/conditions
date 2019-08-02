@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
-import './styles.scss';
-
 import { geoConicConformal, geoPath } from 'd3-geo';
 import { feature, mergeArcs } from 'topojson-client';
-
-// Hardcoding for now so I can work on the component
-import topoJSON from './economic_regions_2016_latlng_simplified';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
+import './styles.scss';
 
 const topoObj = 'economic_regions_2016_latlng_simplified';
 
@@ -29,29 +25,24 @@ class LocationWheelMinimap extends React.Component {
       topoData: {},
       regions: [],
     };
-
-    // Needed to avoid memory issues if React ends up unmounting the component
-    // before our Promise in componentDidMount resolves
-    this.isCurrentlyMounted = false;
   }
 
   componentDidMount() {
     this.isCurrentlyMounted = true;
-
-    Promise.resolve({ body: topoJSON })
-      .then(({ body: topoData }) => {
-        if (this.isCurrentlyMounted) {
-          this.setState({
-            regions: feature(topoData, topoData.objects[topoObj]).features,
-            topoData,
-          });
-        }
-      });
   }
 
   componentWillUnmount() {
     this.isCurrentlyMounted = false;
   }
+
+  loadTopoData = () => import('./economic_regions_2016_latlng_simplified')
+    .then((topoData) => {
+      if (!this.isCurrentlyMounted) { return; }
+      this.setState({
+        regions: feature(topoData, topoData.objects[topoObj]).features,
+        topoData,
+      });
+    });
 
   // Returns a Feature for the given region name
   regionData(name) {
@@ -67,7 +58,11 @@ class LocationWheelMinimap extends React.Component {
   }
 
   render() {
-    if (!this.props.region || !this.state.topoData.objects) { return null; }
+    if (!this.props.region || !this.state.topoData.objects) {
+      this.loadTopoData();
+      return null;
+    }
+
     const regionData = this.regionData(this.props.region.name);
     if (!regionData) { return null; }
     const provinceData = this.provinceData(regionData.properties.PRNAME);
@@ -86,9 +81,10 @@ class LocationWheelMinimap extends React.Component {
             <path d={provincePath} className="province" />
           </g>
         </svg>
-        <FormattedMessage id={`provinces.${this.props.region.province}`}>
-          {text => <span className="provinceName">{text}</span>}
-        </FormattedMessage>
+        <AdvancedFormattedMessage
+          id={`provinces.${this.props.region.province}`}
+          className="provinceName"
+        />
       </div>
     );
   }

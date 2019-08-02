@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import './styles.scss';
 
@@ -8,9 +8,10 @@ class ContentBlock extends React.PureComponent {
   render() {
     return (
       <div className="ContentBlock">
-        <FormattedMessage id={this.props.id}>
-          {text => <span className="contentHeading">{text}</span>}
-        </FormattedMessage>: {this.props.content}
+        <AdvancedFormattedMessage
+          id={this.props.id}
+          className="contentHeading"
+        />: {this.props.content}
       </div>
     );
   }

@@ -19,6 +19,9 @@ class ErrorBoundary extends React.PureComponent {
       error,
       errorInfo,
     });
+    // Dispatch an event to tell the LoadingGuide that we're mounted
+    const event = new CustomEvent('LoadingGuide.enabled', { detail: false });
+    window.dispatchEvent(event);
   }
 
   render() {
@@ -34,17 +37,14 @@ class ErrorBoundary extends React.PureComponent {
             <FormattedMessage id="components.errorBoundary.errorMessage" tagName="h1" />
           </section>
           <section className="restoreLink">
-            <FormattedMessage id="components.errorBoundary.restoreMessage">
-              {text => <span>{text}:&nbsp;</span>}
-            </FormattedMessage>
+            <FormattedMessage id="components.errorBoundary.restoreMessage" />
+            &nbsp;
             <a href={`${this.getRestoreLink()}`}>
               <FormattedMessage id="components.errorBoundary.restoreLinkText" />
             </a>
           </section>
           <section className="resetLink">
-            <FormattedMessage id="components.errorBoundary.resetMessage">
-              {text => <span>{text}:&nbsp;</span>}
-            </FormattedMessage>
+            <FormattedMessage id="components.errorBoundary.resetMessage" />&nbsp;
             <a href={`${this.getResetLink()}`}>
               <FormattedMessage id="components.errorBoundary.resetLinkText" />
             </a>

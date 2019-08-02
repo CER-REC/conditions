@@ -132,8 +132,8 @@
         "title": "Société sélectionnée"
       },
       "list": {
-        "company": "Société sélectionnée",
-        "location": "Région"
+        "company": "Société sélectionnée :",
+        "location": "Région :"
       },
       "pullToSpin": {
         "pull": "Tirer pour",
@@ -141,8 +141,8 @@
       }
     },
     "conditionDetails": {
-      "selectedProject": "Projet sélectionnée",
-      "selectedCondition": "Condition sélectionnée",
+      "selectedProject": "Projet sélectionnée :",
+      "selectedCondition": "Condition sélectionnée :",
       "instrumentNumber": "Instrument nᵒ",
       "conditionNumber": "Condition nᵒ",
       "location": "Lieu",
@@ -168,8 +168,8 @@
       "instrument": "Ordonnances, certificats, licences ou permis délivrés par l’Office. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite.   L’Office publie un Rapport d’instruments réglementaires qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014. "
     },
     "featureTypesDescription": {
-      "allThemes": "Les conditions englobant plusieurs thèmes sont comptées plus d’une fois.",
-      "otherInstruments": "Le graphique ci-dessus illustre les neuf principaux types d’instruments réglementaires d’après leur nombre d’occurrences dans les données. Les autres types sont regroupés sous « Autre ». Les définitions ci-dessous renferment la liste complète des instruments réglementaires que l’on trouve dans les données.",
+      "allThemes": "* Les conditions englobant plusieurs thèmes sont comptées plus d’une fois.",
+      "otherInstruments": "* Le graphique ci-dessus illustre les neuf principaux types d’instruments réglementaires d’après leur nombre d’occurrences dans les données. Les autres types sont regroupés sous « Autre ». Les définitions ci-dessous renferment la liste complète des instruments réglementaires que l’on trouve dans les données.",
       "theme": {
         "ADMINISTRATIVE": "Conditions permettant de faire le suivi des tâches organisationnelles.",
         "DAMAGE_PREVENTION": "Conditions visant à tenir les sociétés responsables du déroulement sécuritaire des activités à proximité des pipelines et des installations.",
@@ -265,7 +265,7 @@
       }
     },
     "guideTransport": {
-      "caption": "Guide"
+      "caption": "Guide :"
     },
     "instrumentsLegend": {
       "all": "Tous les instruments "
@@ -291,8 +291,8 @@
       },
       "highlightSummary": {
         "showing": "{status} de {start} à  {end} sont affichés.",
-        "includes": "Surlignage des conditions contenant",
-        "excludes": "Exclure les conditions contenant",
+        "includes": "Surlignage des conditions contenant :",
+        "excludes": "Exclure les conditions contenant :",
         "IN_PROGRESS": "En cours",
         "COMPLETED": "Terminé",
         "ALL": "Tous"
@@ -324,7 +324,7 @@
         "suggestedKeywords": "Mots-clés proposés",
         "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés ici.  ",
         "keywordsHere": "ici",
-        "viewBy": "Afficher par",
+        "viewBy": "Afficher par :",
         "sortBy": "Tri",
         "frequency": "Fréquence",
         "alphabetical": "Ordre alphabétique",
@@ -347,7 +347,7 @@
         "keywords": "",
         "downloadData": "Cliquer {here} pour télécharger le jeu de données en format Microsoft Excel (.xlsx).",
         "about": "L’outil interactif Conditions relatives aux projets énergétiques fait partie de l’initiative de visualisation de données de l’Office national de l’énergie. Échelonnée sur trois ans, cette initiative vise à transformer la manière dont l’Office structure et diffuse ses données. Elle a pour objectif de favoriser un processus décisionnel fondé sur la preuve et de faciliter la compréhension des questions liées aux réseaux énergétiques et pipeliniers du Canada, grâce à des visualisations interactives, faciles à utiliser. Cette visualisation se fonde sur les données de l’Office, de 2010 à aujourd’hui, sur les conditions relatives aux projets énergétiques assujettis à sa réglementation. Si vous souhaitez utiliser les données pour vos recherches ou pour en faire votre propre analyse, vous pouvez les télécharger et les partager.  Nous espérons avoir atteint notre objectif. Votre rétroaction est essentielle.",
-        "emailUs": "Vous pouvez nous la faire parvenir, ainsi que vos suggestions, à l’adresse",
+        "emailUs": "Vous pouvez nous la faire parvenir, ainsi que vos suggestions, à l’adresse : {emailPlaceholder}",
         "lookForward": "Nous attendons vos commentaires avec impatience.",
         "contributor": "SOURCE DES DONNÉES :\nGroupe de travail chargé du projet de l’Office : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp\nSpécialistes des données de l’Office : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker\nETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau\nCOORDINATION\nAnnette Hester (concept et coordination), Katherine Murphy (gestionnaire de projet), Amanda Harwood (gestionnaire de projet) et Shane Mahar (adjoint administratif)\nVISUALISATION DE DONNÉES\nDirection de la recherche conceptuelle : Sheelagh Carpendale et Wesley Willett, iLab, Université de Calgary\nConception : Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix et Mieka West\nChef technique : VizworX\nPersonnel technique : Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee et Adam Lovatt",
         "here": "ici"
@@ -359,10 +359,10 @@
         "description": "Les données ayant servi à créer cette visualisation sont ouvertes et peuvent être téléchargées. Cliquer sur l’icône pour sauvegarder le fichier de données sur votre ordinateur."
       },
       "company": {
-        "name": "Nom complet du projet",
-        "associated": "Sociétés associées au projet",
+        "name": "Nom complet du projet :",
+        "associated": "Sociétés associées au projet :",
         "meaningHeading": "Pourquoi y a-t-il plus d’une société associée à un projet? ",
-        "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples : • une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter; • des initiatives de l’Office visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds). ",
+        "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples :\n- une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter;\n- des initiatives de l’Office visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds).",
         "back": "Précédent"
       },
       "regdocs": {
@@ -382,7 +382,7 @@
       "associated": "Sociétés associées"
     },
     "regionCompanies": {
-      "title": "Sociétés dans la région sélectionnée"
+      "title": "Sociétés dans la région sélectionnée :"
     },
     "regionConditionSummary": {
       "title": "Nombre total de conditions pour la région sélectionnée  "
@@ -419,7 +419,7 @@
     },
     "browseBy": {
       "skip": "Sauter l’introduction pour naviguer.",
-      "return": "Retour à la navigation",
+      "return": "Retour à la navigation :",
       "blank": " "
     },
     "browseByBtn": {

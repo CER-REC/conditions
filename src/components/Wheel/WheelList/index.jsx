@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import List from '../../List';
 import './styles.scss';
 
@@ -47,9 +46,10 @@ class WheelList extends React.Component {
     return (
       <div className={classNames('WheelList', this.props.className)}>
         <div className="labelContainer">
-          <FormattedMessage id={`components.companyWheel.list.${this.props.wheelType}`}>
-            {text => <span className="label">{text}:</span>}
-          </FormattedMessage>
+          <AdvancedFormattedMessage
+            id={`components.companyWheel.list.${this.props.wheelType}`}
+            className="label"
+          />
           { this.props.listContent.length > 0
             ? (
               <span
