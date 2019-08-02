@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 import RegDocs from './RegDocs';
 import Modal from '../Modal';
 
+import { regDocsUrl } from '../../constants';
+
 import './styles.scss';
 
-const RegDocsPopup = ({ instrument, regdocsUrl, isOpen, closeModal }) => (
+const RegDocsPopup = ({ instrument, isOpen, closeModal }) => (
   <Modal
     component={RegDocs}
     componentProps={{
       instrument,
-      regdocsUrl,
+      regDocsUrl,
     }}
     isOpen={isOpen}
     closeModal={closeModal}
@@ -26,8 +28,6 @@ RegDocsPopup.propTypes = {
   closeModal: PropTypes.func.isRequired,
   /** Instrument number ('XO-001-2018') */
   instrument: PropTypes.string.isRequired,
-  /** Regdocs page for the instrument */
-  regdocsUrl: PropTypes.string.isRequired,
 };
 
 RegDocsPopup.defaultProps = {

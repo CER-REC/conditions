@@ -12,7 +12,7 @@ import { connect, Provider } from 'react-redux';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
-import { lang, regDocURL } from '../../constants';
+import { lang } from '../../constants';
 
 import * as processQueryData from './processQueryData';
 
@@ -693,7 +693,6 @@ class App extends React.PureComponent {
                 let shortName = '';
                 let instruments = [];
                 let instrumentNumber = '';
-                let documentId = '';
                 let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
@@ -711,8 +710,6 @@ class App extends React.PureComponent {
                       .findIndex(instrument => instrument.id === selected.instrument);
                     if (instrumentIndex === -1) {
                       instrumentIndex = 0;
-                    } else {
-                      ({ documentId } = instruments[instrumentIndex]);
                     }
 
                     itemIndex = instruments[instrumentIndex].conditions
@@ -748,7 +745,6 @@ class App extends React.PureComponent {
                       isOpen={this.state.isIntermediatePopupOpen}
                       closeModal={this.closeRegDocPopup}
                       instrument={instrumentNumber}
-                      regdocsUrl={`${regDocURL}${documentId}`}
                     />
                     <CompanyPopup
                       projectName={shortName}
