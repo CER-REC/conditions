@@ -7,8 +7,14 @@ import CountBubble from './CountBubble';
 
 const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
   <div className={classNames('GreyPipe', mode)}>
-    {mode === 'location'
-      ? <div className="topConnection" />
+    {(mode === 'location')
+      ? (
+        <React.Fragment>
+          <div className="topConnection" />
+          <div className="bottom" />
+          <div className="bottomConnection" />
+        </React.Fragment>
+      )
       : (
         <svg width="48" height="48" className="bottomSvg">
           <path d="M48 0 C48 0 48 48 0 48 L24 48 0 48 0 24 C0 24 24 24 24 0 L24 12 24 0" />
@@ -28,8 +34,6 @@ const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
         : null
       }
     </div>
-    <div className="bottom" />
-    {mode === 'location' ? <div className="bottomConnection" /> : null}
   </div>
 );
 
