@@ -2,12 +2,10 @@
   border: 1px solid #b4b4b4;
   box-shadow: 0 5px 40px rgba(0,0,0,0.1), 12px 30px 20px rgba(0,0,0,0.1);
 
-  width: 600px;
-  height: 600px;
-  .downloadIcon {
-    position: relative;
-    padding-left: 120px;
-    padding-top: 20px;
+  width: 1000px;
+  height: 500px;
+  .Icons{
+    padding-left: 370px;
   }
   .header {
     display: inline-block;
@@ -22,18 +20,30 @@
       display: inline-block;
       color: gray;
     }
+    .closeIcon {
+      background-color: transparent;
+      stroke-width: 2.5;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      line {
+        fill: none;
+        stroke-linecap: round;
+        stroke: grey;
+      }
+    }
+
 
   }
-  .closeIcon {
-    padding-left: 420px;
 
-
-
-  }
 
   .content {
-    margin: 40px;
-    border: 1px solid #b4b4b4;
+    margin-left: 230px;
+    width: 500px;
+    font-size: 16px;
+    text-align: center; 
+    display: inline-block;
+    color: gray;
   }
 
   

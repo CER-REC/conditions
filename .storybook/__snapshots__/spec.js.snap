@@ -4458,6 +4458,38 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
             Data Download
           </span>
         </span>
+        <svg
+          className="closeIcon"
+          focusable={true}
+          height="20"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          version="1.1"
+          width="20"
+        >
+          <line
+            strokeLinecap="round"
+            x1="0"
+            x2="20"
+            y1="20"
+            y2="0"
+          />
+          <line
+            strokeLinecap="round"
+            x1="0"
+            x2="20"
+            y1="0"
+            y2="20"
+          />
+        </svg>
+      </div>
+      <div
+        className="content"
+      >
+        <span>
+          The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer.
+        </span>
       </div>
       <div
         className="Icons"
@@ -4468,8 +4500,8 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
           <svg
             className="downloadIcon"
             height="350"
-            viewBox="0 0 20 20"
-            width="565"
+            viewBox="0 0 15 15"
+            width="280"
           >
             <g
               icon="file-download"
@@ -4478,39 +4510,23 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
                 d="M2.9,13.3s-.4-.3,0-.3H4.5V9.2c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L6.1,16Z"
                 fill="#666"
               />
-              <polygon
-                fill="none"
-                points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0"
-              />
-              <line
-                strokeMiterlimit="10"
-                x1="0.5"
-                x2="11.2"
-                y1="11.1"
-                y2="11.1"
-              />
-              <rect
-                fill="none"
-                height="11.6"
-                width="11.6"
-              />
               <path
-                d="M7.8,1l2.8,2.9v6.8H1V1.1H7.8M8.2,0H0V11.6H11.6V3.4L8.2,0Z"
+                d=" M7.8,1.1 l2.8,2.9 v6.8 H1 V1.1 H7.8 M8.2,0 H0 V11.6 H11.6 V3.4 Z"
                 fill="#666"
               />
               <line
                 stroke="#666"
-                strokeWidth="0.75p"
-                x1="7.7"
-                x2="7.7"
+                strokeWidth="0.1"
+                x1="7.8"
+                x2="7.8"
                 y1="0.4"
                 y2="4"
               />
               <line
                 stroke="#666"
-                strokeWidth="0.75px"
+                strokeWidth="0.1"
                 x1="11.2"
-                x2="7.3"
+                x2="7.75"
                 y1="4"
                 y2="4"
               />
@@ -4521,53 +4537,7 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
       <div
         className="content"
       >
-        <span>
-          The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer.
-        </span>
-      </div>
-      <div
-        className="closeIcon"
-      >
-        <button
-          className="PopupBtn"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Back
-          <svg
-            className="buttonIcon"
-            viewBox="0 0 100 100"
-          >
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-            />
-            <path
-              d="
-  M 46 28
-  a 4 4 0 0 1 8,0
-  v 18
-  h 18
-  a 4 4 0 0 1 0,8
-  h -18
-  v 18
-  a 4 4 0 0 1 -8,0
-  v -18
-  h -18
-  a 4 4 0 0 1 0,-8
-  h 18
-  v -18
-  Z
-"
-              fill="white"
-              transform="rotate(45 50 50)"
-            />
-          </svg>
-        </button>
+        conditions.csv
       </div>
     </div>
   </dialog>

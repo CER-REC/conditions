@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { localDataURL } from '../../constants';
-import PopupBtn from '../PopupBtn';
-import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
+import { localDataURL, fileDownloadName } from '../../constants';
+import handleInteraction from '../../utilities/handleInteraction';
 
 import Modal from '../Modal';
 
@@ -17,40 +16,61 @@ const DownloadPopup = (props) => {
         <span className="title">
           <FormattedMessage id="components.modal.data.title" />
         </span>
+        <svg
+          version="1.1"
+          width="20"
+          height="20"
+          className="closeIcon"
+          {...handleInteraction(closeModal)}
+        >
+          <line x1="0" y1="20" x2="20" y2="0" strokeLinecap="round" />
+          <line x1="0" y1="0" x2="20" y2="20" strokeLinecap="round" />
+        </svg>
+
+      </div>
+      <div className="content">
+        <FormattedMessage id="components.modal.data.description" />
       </div>
       <div className="Icons">
         <a href={localDataURL}>
-          <svg className="downloadIcon" viewBox="0 0 20 20" width="565" height="350">
+          <svg className="downloadIcon" viewBox="0 0 15 15" width="280" height="350">
             <g
               key="file-download"
               icon="file-download"
             >
+              {/* Arrow */}
               <path fill="#666" d="M2.9,13.3s-.4-.3,0-.3H4.5V9.2c0-.1.1-.2.3-.2H7c.1,0,.2.1.3.2v3.7H8.8c.5,0,.2.3.2.3L6.1,16Z" />
-              <polygon fill="none" points="0 0 0 11.6 3.4 11.6 3.4 6.7 8.3 6.7 8.3 11.6 11.6 11.6 11.6 0 0 0" />
-              <line strokeMiterlimit="10" x1="0.5" y1="11.1" x2="11.2" y2="11.1" />
-              <rect fill="none" width="11.6" height="11.6" />
-              <path fill="#666" d="M7.8,1l2.8,2.9v6.8H1V1.1H7.8M8.2,0H0V11.6H11.6V3.4L8.2,0Z" />
-              <line stroke="#666" strokeWidth="0.75p" x1="7.7" y1="0.4" x2="7.7" y2="4" />
-              <line stroke="#666" strokeWidth="0.75px" x1="11.2" y1="4" x2="7.3" y2="4" />
+              {/* File outline */}
+              <path
+                fill="#666"
+                d="
+              M7.8,1.1
+              l2.8,2.9
+              v6.8
+              H1
+              V1.1
+              H7.8
+              M8.2,0
+              H0
+              V11.6
+              H11.6
+              V3.4
+              Z"
+              />
+              {/* Vertical Line */}
+              <line stroke="#666" strokeWidth="0.1" x1="7.8" y1="0.4" x2="7.8" y2="4" />
+              {/* Horizontal line */}
+              <line stroke="#666" strokeWidth="0.1" x1="11.2" y1="4" x2="7.75" y2="4" />
             </g>
           </svg>
         </a>
       </div>
-
       <div className="content">
-        <FormattedMessage id="components.modal.data.description" />
-      </div>
-      <div className="closeIcon">
-        <AdvancedFormattedMessage
-          id="components.modal.data.back"
-          tag={PopupBtn}
-          icon="x"
-          action={closeModal}
-        />
+        {fileDownloadName}
       </div>
     </div>
   );
-
+  console.dir(fileDownloadName);
   return (
     <Modal
       component={component}
