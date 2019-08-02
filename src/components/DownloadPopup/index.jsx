@@ -70,7 +70,6 @@ const DownloadPopup = (props) => {
       </div>
     </div>
   );
-  console.dir(fileDownloadName);
   return (
     <Modal
       component={component}
