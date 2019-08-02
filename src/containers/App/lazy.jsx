@@ -108,6 +108,8 @@ class App extends React.PureComponent {
     };
     this.ref = React.createRef();
 
+    this.lastPlayTimer = 0;
+
     const updateSelectionWrapped = (from, variables, staticSelection = {}) => {
       updateSelection(
         this.props.selected,
@@ -270,6 +272,11 @@ class App extends React.PureComponent {
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
     this.scrollSelectorIntoView('.Footer', 1000);
+  }
+
+  scrollToMethodology = () => {
+    this.setMainInfoBarPane('methodology');
+    this.scrollSelectorIntoView('.Footer', 0);
   }
 
   jumpToView1 = () => {
@@ -650,6 +657,7 @@ class App extends React.PureComponent {
             availableCategories={this.props.allConfigurationData.keywordCategories}
             suggestedKeywords={this.props.allKeywords}
             updateSearch={this.updateSearch}
+            scrollToMethodology={this.scrollToMethodology}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}
