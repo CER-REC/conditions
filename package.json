@@ -128,7 +128,7 @@
     "postcss-preset-env": "6.7.0",
     "raw-loader": "3.1.0",
     "react-test-renderer": "16.8.6",
-    "require-context.macro": "1.1.0",
+    "require-context.macro": "1.1.1",
     "sass-loader": "7.1.0",
     "shapefile": "0.6.6",
     "storybook-addon-interaction": "1.0.1",
