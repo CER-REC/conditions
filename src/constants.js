@@ -68,5 +68,6 @@ export const features = {
 export const noRegionColor = 'rgb(153,153,153)';
 
 export const regDocURL = 'https://apps.neb-one.gc.ca/REGDOCS/File/Download/';
+export const nltkLink = 'http://www.nltk.org/';
 
 export const guideSize = 128;

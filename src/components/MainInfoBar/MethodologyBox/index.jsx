@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
-import { lang } from '../../../constants';
+import { lang, nltkLink } from '../../../constants';
 import methodologyKeywordEN1 from '../../../../public/images/KeywordMethodology1_EN_480w.png';
 import methodologyKeywordEN2 from '../../../../public/images/KeywordMethodology2_EN_480w.png';
 import methodologyKeywordEN3 from '../../../../public/images/KeywordMethodology3_EN_480w.png';
@@ -41,7 +41,9 @@ const MethodologyBox = () => (
           <img src={methodologyKeywordEN1} alt="KeywordMethodologyEN1" />
           <img src={methodologyKeywordEN2} alt="KeywordMethodologyEN2" />
           <img src={methodologyKeywordEN3} alt="KeywordMethodologyEN3" />
-          <img src={methodologyKeywordEN4} alt="KeywordMethodologyEN4" />
+          <a href={nltkLink} target="_blank" rel="noopener noreferrer">
+            <img src={methodologyKeywordEN4} alt="KeywordMethodologyEN4" />
+          </a>
           <img src={methodologyKeywordEN5} alt="KeywordMethodologyEN5" />
           <img src={methodologyKeywordEN6} alt="KeywordMethodologyEN6" />
         </div>
@@ -51,7 +53,9 @@ const MethodologyBox = () => (
           <img src={methodologyKeywordFR1} alt="KeywordMethodologyFR1" />
           <img src={methodologyKeywordFR2} alt="KeywordMethodologyFR2" />
           <img src={methodologyKeywordFR3} alt="KeywordMethodologyFR3" />
-          <img src={methodologyKeywordFR4} alt="KeywordMethodologyFR4" />
+          <a href={nltkLink} target="_blank" rel="noopener noreferrer">
+            <img src={methodologyKeywordFR4} alt="KeywordMethodologyFR4" />
+          </a>
           <img src={methodologyKeywordFR5} alt="KeywordMethodologyFR5" />
           <img src={methodologyKeywordFR6} alt="KeywordMethodologyFR6" />
         </div>
