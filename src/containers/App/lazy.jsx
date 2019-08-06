@@ -531,7 +531,7 @@ class App extends React.PureComponent {
 
   closeDownloadPopup = () => {
     this.setState({ isDownloadPopupOpen: false });
-  };
+  }
 
   openTotalConditionNumberPopup = () => {
     this.setState({ isTotalConditionNumberPopupOpen: true });
