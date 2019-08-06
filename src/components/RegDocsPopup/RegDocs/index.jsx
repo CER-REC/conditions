@@ -21,15 +21,15 @@ const linkAttributes = {
   rel: 'noopener noreferrer',
 };
 
-const RegDocs = ({ instrument, closeModal }) => {
-  const linkUrl = `${regDocsUrl}${instrument}`;
+const RegDocs = ({ document, closeModal }) => {
+  const linkUrl = `${regDocsUrl}${document}`;
 
   return (
     <div className="RegDocs">
       <FormattedMessage
         id="components.modal.regdocs.searchFor"
         values={{
-          instrument: (<strong>#{instrument}</strong>),
+          instrument: (<strong>#{document}</strong>),
           regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" />),
         }}
         tagName="h3"
@@ -65,7 +65,7 @@ const RegDocs = ({ instrument, closeModal }) => {
 };
 
 RegDocs.propTypes = {
-  instrument: PropTypes.string.isRequired,
+  document: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 
