@@ -16,6 +16,11 @@ const checkIcon = (
   </svg>
 );
 
+const linkAttributes = {
+  target: '_blank',
+  rel: 'noopener noreferrer',
+};
+
 const RegDocs = ({ instrument, closeModal }) => {
   const linkUrl = `${regDocsUrl}${instrument}`;
 
@@ -24,8 +29,8 @@ const RegDocs = ({ instrument, closeModal }) => {
       <FormattedMessage
         id="components.modal.regdocs.searchFor"
         values={{
-          instrument: (<strong key="instrument">#{instrument}</strong>),
-          regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" key="regdocs" />),
+          instrument: (<strong>#{instrument}</strong>),
+          regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" />),
         }}
         tagName="h3"
       />
@@ -44,10 +49,7 @@ const RegDocs = ({ instrument, closeModal }) => {
         tag={PopupBtn}
         icon="plus"
         action={linkUrl}
-        attributes={{
-          target: '_blank',
-          rel: 'noopener noreferrer',
-        }}
+        attributes={linkAttributes}
       />
       <AdvancedFormattedMessage
         id="components.modal.regdocs.cancel"
