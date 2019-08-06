@@ -692,7 +692,7 @@ class App extends React.PureComponent {
               {({ data, loading, error }) => {
                 let shortName = '';
                 let instruments = [];
-                let instrumentNumber = '';
+                let documentNumber;
                 let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
@@ -714,7 +714,7 @@ class App extends React.PureComponent {
 
                     itemIndex = instruments[instrumentIndex].conditions
                       .findIndex(condition => condition.id === selected.condition);
-                    ({ instrumentNumber } = instruments[instrumentIndex]);
+                    ({ documentNumber } = instruments[instrumentIndex]);
                   }
 
                   if (projectDetails) {
@@ -741,11 +741,15 @@ class App extends React.PureComponent {
                       browseBy={this.props.browseBy}
                       {...conditionDetailsViewProps}
                     />
-                    <RegDocsPopup
-                      isOpen={this.state.isIntermediatePopupOpen}
-                      closeModal={this.closeRegDocPopup}
-                      instrument={instrumentNumber}
-                    />
+                    {(!documentNumber) ? null
+                      : (
+                        <RegDocsPopup
+                          isOpen={this.state.isIntermediatePopupOpen}
+                          closeModal={this.closeRegDocPopup}
+                          document={documentNumber}
+                        />
+                      )
+                    }
                     <CompanyPopup
                       projectName={shortName}
                       closeModal={this.closeCompanyPopup}

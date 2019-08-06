@@ -13,6 +13,7 @@ const lorem = [
 export default [
   {
     instrumentNumber: 'XO-001-2018',
+    documentNumber: 'XO-003-2018',
     issuanceDate: '2014-10-24',
     effectiveDate: '2014-10-24',
     sunsetDate: '2019-01-30',
