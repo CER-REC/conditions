@@ -1530,32 +1530,36 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
       <div
         className="ProjectHeader"
       >
-        <h1>
-          Selected Project:
-        </h1>
-        <button
-          className="openProject"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
+        <div
+          className="topBar"
         >
-          <h2
-            title="Keystone XL"
+          <h1>
+            Selected Project:
+          </h1>
+          <button
+            className="openProject"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <span
-              className="projectName"
+            <h2
+              title="Keystone XL"
             >
-              Keystone XL
-            </span>
-            <span
-              className="asterisk"
-            >
-              *
-            </span>
-          </h2>
-        </button>
+              <span
+                className="projectName"
+              >
+                Keystone XL
+              </span>
+              <span
+                className="asterisk"
+              >
+                *
+              </span>
+            </h2>
+          </button>
+        </div>
       </div>
       <div
         className="listPane"
@@ -2097,54 +2101,58 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
         <div
           className="ProjectHeader"
         >
-          <h1>
-            Selected Project:
-          </h1>
-          <button
-            className="openProject"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
+          <div
+            className="topBar"
           >
-            <h2
-              title="Keystone XL"
-            >
-              <span
-                className="projectName"
-              >
-                Keystone XL
-              </span>
-              <span
-                className="asterisk"
-              >
-                *
-              </span>
-            </h2>
-          </button>
-          <button
-            className="toggleExpand"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <h1
-              className="upperCase"
-            >
-              Less
+            <h1>
+              Selected Project:
             </h1>
-            <svg
-              className="arrow"
-              viewBox="0 0 16 24"
+            <button
+              className="openProject"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <polyline
-                points="4,4 12,12.5 4,20 4,4"
-              />
-            </svg>
-          </button>
+              <h2
+                title="Keystone XL"
+              >
+                <span
+                  className="projectName"
+                >
+                  Keystone XL
+                </span>
+                <span
+                  className="asterisk"
+                >
+                  *
+                </span>
+              </h2>
+            </button>
+            <button
+              className="toggleExpand"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <h1
+                className="upperCase"
+              >
+                Less
+              </h1>
+              <svg
+                className="arrow"
+                viewBox="0 0 16 24"
+              >
+                <polyline
+                  points="4,4 12,12.5 4,20 4,4"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div
           className="listPane"
@@ -2677,14 +2685,18 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
       className="main"
     >
       <div
-        className="ProjectHeader location"
+        className="ProjectHeader"
       >
-        <h1>
-          Selected Condition:
-        </h1>
         <div
-          className="openProject"
-        />
+          className="topBar"
+        >
+          <h1>
+            Conditions In Selected Region:
+          </h1>
+          <div
+            className="openProject"
+          />
+        </div>
       </div>
       <div
         className="listPane"
@@ -3224,14 +3236,18 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
         className="main"
       >
         <div
-          className="ProjectHeader location"
+          className="ProjectHeader"
         >
-          <h1>
-            Selected Condition:
-          </h1>
           <div
-            className="openProject"
-          />
+            className="topBar"
+          >
+            <h1>
+              Conditions In Selected Region:
+            </h1>
+            <div
+              className="openProject"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -3985,54 +4001,58 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
     <div
       className="ProjectHeader"
     >
-      <h1>
-        Selected Project:
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="topBar"
       >
-        <h2
-          title="Keystone XL"
-        >
-          <span
-            className="projectName"
-          >
-            Keystone XL
-          </span>
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
-      <button
-        className="toggleExpand"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <h1
-          className="upperCase"
-        >
-          Less
+        <h1>
+          Selected Project:
         </h1>
-        <svg
-          className="arrow"
-          viewBox="0 0 16 24"
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <polyline
-            points="4,4 12,12.5 4,20 4,4"
-          />
-        </svg>
-      </button>
+          <h2
+            title="Keystone XL"
+          >
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -4046,14 +4066,18 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
     className="ConditionDetails"
   >
     <div
-      className="ProjectHeader location"
+      className="ProjectHeader"
     >
-      <h1>
-        Selected Condition:
-      </h1>
       <div
-        className="openProject"
-      />
+        className="topBar"
+      >
+        <h1>
+          Conditions In Selected Region:
+        </h1>
+        <div
+          className="openProject"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -4069,32 +4093,36 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
     <div
       className="ProjectHeader"
     >
-      <h1>
-        Selected Project:
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="topBar"
       >
-        <h2
-          title="Keystone XL"
+        <h1>
+          Selected Project:
+        </h1>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <span
-            className="projectName"
+          <h2
+            title="Keystone XL"
           >
-            Keystone XL
-          </span>
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -4406,6 +4434,78 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
   className="visualization"
 >
   <div />
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count"
+    >
+      42
+    </span>
+    <span
+      className="text"
+    >
+       
+      <span>
+        Projects
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble large value 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count small"
+    >
+      1723
+    </span>
+    <span
+      className="text"
+    >
+       
+      <span>
+        Instruments
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble singular 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count"
+    >
+      1
+    </span>
+    <span
+      className="text"
+    >
+       
+      <span>
+        Condition
+      </span>
+    </span>
+  </div>
 </div>
 `;
 
@@ -6140,90 +6240,6 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       }
     }
   />
-</div>
-`;
-
-exports[`Storyshots Components|GreyPipe/CountBubble default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="GreyPipe"
-  >
-    <div
-      className="CountBubble"
-    >
-      <span
-        className="count"
-      >
-        42
-      </span>
-      <span
-        className="text"
-      >
-         
-        <span>
-          projects
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|GreyPipe/CountBubble large value 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="GreyPipe"
-  >
-    <div
-      className="CountBubble"
-    >
-      <span
-        className="count small"
-      >
-        1723
-      </span>
-      <span
-        className="text"
-      >
-         
-        <span>
-          instruments
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|GreyPipe/CountBubble singular 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="GreyPipe"
-  >
-    <div
-      className="CountBubble"
-    >
-      <span
-        className="count"
-      >
-        1
-      </span>
-      <span
-        className="text"
-      >
-         
-        <span>
-          condition
-        </span>
-      </span>
-    </div>
-  </div>
 </div>
 `;
 

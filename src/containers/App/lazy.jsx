@@ -697,8 +697,17 @@ class App extends React.PureComponent {
                 let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
+                const counts = {
+                  instruments: 0,
+                  conditions: 0,
+                };
 
-                if (!loading && !error) {
+                const inTutorial = (
+                  transitionState > transitionStates.view1
+                  && transitionState < transitionStates.view2
+                );
+
+                if (!loading && !error && (!this.state.wheelMoving || inTutorial)) {
                   const { projectDetails, allInstruments } = data;
                   if (!allInstruments) { return null; }
                   instruments = formatConditionDetails(
@@ -706,6 +715,7 @@ class App extends React.PureComponent {
                     selected.feature,
                     this.props.allConfigurationData.displayOrder,
                   );
+
                   if (instruments.length > 0) {
                     instrumentIndex = instruments
                       .findIndex(instrument => instrument.id === selected.instrument);
@@ -718,6 +728,12 @@ class App extends React.PureComponent {
                     itemIndex = instruments[instrumentIndex].conditions
                       .findIndex(condition => condition.id === selected.condition);
                     ({ instrumentNumber } = instruments[instrumentIndex]);
+
+                    counts.instruments = instruments.length;
+                    counts.conditions = instruments.reduce(
+                      (acc, cur) => acc + cur.conditions.length,
+                      0,
+                    );
                   }
 
                   if (projectDetails) {
@@ -741,6 +757,7 @@ class App extends React.PureComponent {
                         exclude: this.props.excluded,
                       }}
                       data={instruments}
+                      counts={counts}
                       browseBy={this.props.browseBy}
                       {...conditionDetailsViewProps}
                     />
