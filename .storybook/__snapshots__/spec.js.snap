@@ -4585,7 +4585,7 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
         </svg>
       </div>
       <div
-        className="content"
+        className="content top"
       >
         <span>
           The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer.
@@ -4596,15 +4596,14 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
       >
         <a
           href="http://www.neb-one.gc.ca/open/conditions/conditions.csv"
-          rel="noopener"
+          rel="noopener noreferrer"
           target="_blank"
         >
-          \`\`\`
           <svg
             className="downloadIcon"
-            height="350"
-            viewBox="0 0 15 15"
-            width="280"
+            height="250"
+            viewBox="0 0 12 17"
+            width="250"
           >
             <g
               icon="file-download"

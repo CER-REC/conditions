@@ -1,15 +1,18 @@
+@import "../../styles/colors.scss";
 .DownloadPopup {
   border: 1px solid #b4b4b4;
   box-shadow: 0 5px 40px rgba(0,0,0,0.1), 12px 30px 20px rgba(0,0,0,0.1);
 
   width: 1000px;
   .Icons{
-    padding-left: 370px;
+    margin-top: 3em;
+    padding-left: 375px;
   }
   .header {
-    margin-bottom: 1em;
+    margin: 2em;
+
     display: inline-block;
-    width: 100%;
+    width: 95%;
     position: relative;
     text-transform: uppercase;
 
@@ -18,7 +21,7 @@
       padding: 0;
       font-size: 30px;
       display: inline-block;
-      color: gray;
+      color: $VeryDarkGray;
     }
     .closeIcon {
       background-color: transparent;
@@ -29,7 +32,7 @@
       line {
         fill: none;
         stroke-linecap: round;
-        stroke: grey;
+        stroke: $VeryDarkGray;
       }
     }
 
@@ -38,12 +41,16 @@
 
 
   .content {
-    margin-left: 230px;
-    width: 500px;
-    font-size: 16px;
+    &.top{
+      margin-top: 1em;
+    }
+    margin-left: 150px;
+    margin-bottom: 1em;
+    width: 700px;
+    font-size: 24px;
     text-align: center; 
     display: inline-block;
-    color: gray;
+    color: $VeryDarkGray;
   }
 
   
