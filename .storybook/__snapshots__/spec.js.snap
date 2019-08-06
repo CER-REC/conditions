@@ -4596,7 +4596,10 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
       >
         <a
           href="http://www.neb-one.gc.ca/open/conditions/conditions.csv"
+          rel="noopener"
+          target="_blank"
         >
+          \`\`\`
           <svg
             className="downloadIcon"
             height="350"
