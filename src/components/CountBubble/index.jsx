@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import './styles.scss';
 
 const CountBubble = ({ count, textId }) => {
   // Use the singular when necessary
-  const id = (count > 1) ? textId : textId.slice(0, -1);
+  const id = (count > 1 || count === 0) ? textId : textId.slice(0, -1);
 
   return (
     <div className="CountBubble">

@@ -86,6 +86,7 @@ const props = {
   displayOrder,
   updateSearch: noop,
   openNumberDetails: noop,
+  scrollToMethodology: noop,
 };
 
 const connectedProps = {

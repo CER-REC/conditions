@@ -142,7 +142,7 @@
     },
     "conditionDetails": {
       "selectedProject": "Projet sélectionnée :",
-      "selectedCondition": "Condition sélectionnée :",
+      "selectedCondition": "Conditions dans la région sélectionnée :",
       "instrumentNumber": "Instrument nᵒ",
       "conditionNumber": "Condition nᵒ",
       "location": "Lieu",
@@ -243,12 +243,12 @@
     },
     "greyPipe": {
       "countBubble": {
-        "instruments": "instruments",
-        "projects": "projets",
-        "conditions": "conditions",
-        "instrument": "instrument",
-        "project": "projet",
-        "condition": "condition"
+        "instruments": "Instruments",
+        "projects": "Projets",
+        "conditions": "Conditions",
+        "instrument": "Instrument",
+        "project": "Projet",
+        "condition": "Condition"
       }
     },
     "guide": {
@@ -322,7 +322,7 @@
       },
       "suggestedKeywordsPopout": {
         "suggestedKeywords": "Mots-clés proposés",
-        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés ici.  ",
+        "keywordsDescription": "Les mots-clés saisissent le sujet général d’une condition, p. ex. le type d’espèces réglementées. Découvrez de quelle façon nous extrayons les mots-clés {here}.",
         "keywordsHere": "ici",
         "viewBy": "Afficher par :",
         "sortBy": "Tri",
@@ -336,7 +336,7 @@
     "mainInfoBar": {
       "headings": {
         "about": "La visualisation",
-        "contributor": "Collaborateur",
+        "contributors": "Collaborateurs",
         "methodology": "La méthodologie",
         "download": "Téléchargement",
         "downloadData": "Télécharger des données",
@@ -347,9 +347,12 @@
         "keywords": "",
         "downloadData": "Cliquer {here} pour télécharger le jeu de données en format Microsoft Excel (.xlsx).",
         "about": "L’outil interactif Conditions relatives aux projets énergétiques fait partie de l’initiative de visualisation de données de l’Office national de l’énergie. Échelonnée sur trois ans, cette initiative vise à transformer la manière dont l’Office structure et diffuse ses données. Elle a pour objectif de favoriser un processus décisionnel fondé sur la preuve et de faciliter la compréhension des questions liées aux réseaux énergétiques et pipeliniers du Canada, grâce à des visualisations interactives, faciles à utiliser. Cette visualisation se fonde sur les données de l’Office, de 2010 à aujourd’hui, sur les conditions relatives aux projets énergétiques assujettis à sa réglementation. Si vous souhaitez utiliser les données pour vos recherches ou pour en faire votre propre analyse, vous pouvez les télécharger et les partager.  Nous espérons avoir atteint notre objectif. Votre rétroaction est essentielle.",
-        "emailUs": "Vous pouvez nous la faire parvenir, ainsi que vos suggestions, à l’adresse : {emailPlaceholder}",
-        "lookForward": "Nous attendons vos commentaires avec impatience.",
-        "contributor": "SOURCE DES DONNÉES :\nGroupe de travail chargé du projet de l’Office : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp\nSpécialistes des données de l’Office : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker\nETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau\nCOORDINATION\nAnnette Hester (concept et coordination), Katherine Murphy (gestionnaire de projet), Amanda Harwood (gestionnaire de projet) et Shane Mahar (adjoint administratif)\nVISUALISATION DE DONNÉES\nDirection de la recherche conceptuelle : Sheelagh Carpendale et Wesley Willett, iLab, Université de Calgary\nConception : Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix et Mieka West\nChef technique : VizworX\nPersonnel technique : Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee et Adam Lovatt",
+        "emailUs": "Vous pouvez nous la faire parvenir, ainsi que vos suggestions, à l’adresse : {email}. Nous attendons vos commentaires avec impatience.",
+        "contributors": {
+          "1": "SOURCE DES DONNÉES :\nGroupe de travail chargé du projet de l’Office : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp\nSpécialistes des données de l’Office : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker\nETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau",
+          "2": "COORDINATION\nAnnette Hester (concept et coordination), Katherine Murphy (gestionnaire de projet), Amanda Harwood (gestionnaire de projet) et Shane Mahar (adjoint administratif)",
+          "3": "VISUALISATION DE DONNÉES\nDirection de la recherche conceptuelle : Sheelagh Carpendale et Wesley Willett, iLab, Université de Calgary\nConception : Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix et Mieka West\nChef technique : VizworX\nPersonnel technique : Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee et Adam Lovatt"
+        },
         "here": "ici"
       }
     },

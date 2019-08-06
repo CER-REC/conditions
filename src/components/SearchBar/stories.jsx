@@ -7,6 +7,8 @@ import SearchBar from '.';
 import ReadMe from './README.md';
 import { categories } from '../../mockData';
 
+const noop = () => {};
+
 const sampleSuggestedKeywords = [
   {
     name: 'safety',
@@ -39,6 +41,7 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
       suggestedKeywords={sampleSuggestedKeywords}
       availableYearRange={{ start: 1970, end: 1980 }}
       availableCategories={categories.availableCategories}
+      scrollToMethodology={noop}
       {...getInteractionProps()}
     />
   ), {
