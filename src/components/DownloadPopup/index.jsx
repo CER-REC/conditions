@@ -32,7 +32,8 @@ const DownloadPopup = (props) => {
         <FormattedMessage id="components.modal.data.description" />
       </div>
       <div className="Icons">
-        <a href={localDataURL}>
+        <a href={localDataURL} target="_blank" rel="noopener">
+```
           <svg className="downloadIcon" viewBox="0 0 15 15" width="280" height="350">
             <g
               key="file-download"
