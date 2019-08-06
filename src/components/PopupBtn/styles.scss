@@ -12,15 +12,13 @@
 
     a#{&} {
       display: inline-flex;
-
       align-items: center;
-
-      text-decoration: none;
     }
 
     button#{&},
     a#{&},
     a:visited#{&},
+    a:focus#{&},
     a:hover#{&} {
       width: 110px;
       min-height: 48px;

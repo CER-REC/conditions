@@ -16360,7 +16360,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         Search for instrument 
         <strong>
           #
-          XO-001-2018
+          MO-025-2011
         </strong>
          in 
         <strong>
@@ -16389,7 +16389,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </p>
       <a
         className="PopupBtn"
-        href="https://www.example.com"
+        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
       >
         <div>
           Open in current tab
@@ -16426,7 +16426,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </a>
       <a
         className="PopupBtn"
-        href="https://www.example.com"
+        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -16528,7 +16528,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         Search for instrument 
         <strong>
           #
-          XO-001-2018
+          MO-025-2011
         </strong>
          in 
         <strong>
@@ -16557,7 +16557,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </p>
       <a
         className="PopupBtn"
-        href="https://www.example.com"
+        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
       >
         <div>
           Open in current tab
@@ -16594,7 +16594,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </a>
       <a
         className="PopupBtn"
-        href="https://www.example.com"
+        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
         rel="noopener noreferrer"
         target="_blank"
       >

@@ -11,7 +11,6 @@ storiesForComponent('Components|RegDocsPopup/RegDocs', module)
     <RegDocs
       isOpen={boolean('Visible', true)}
       closeModal={closeModal}
-      instrument="XO-001-2018"
-      regdocsUrl="https://www.example.com"
+      instrument="MO-025-2011"
     />
   ));
