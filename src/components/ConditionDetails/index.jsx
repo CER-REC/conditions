@@ -76,6 +76,7 @@ class ConditionDetails extends React.Component {
             toggleExpanded={this.props.toggleExpanded}
             browseBy={this.props.browseBy}
             openProjectDetails={this.props.openProjectDetails}
+            counts={this.props.counts}
           />
           {!shouldRenderData ? null : (
             <React.Fragment>
@@ -122,6 +123,10 @@ ConditionDetails.propTypes = {
     include: PropTypes.arrayOf(PropTypes.string),
     exclude: PropTypes.arrayOf(PropTypes.string),
   }),
+  counts: PropTypes.shape({
+    instruments: PropTypes.number,
+    conditions: PropTypes.number,
+  }),
   data: conditionData.isRequired,
   selectedItem: PropTypes.shape({
     instrumentIndex: PropTypes.number,
@@ -138,6 +143,10 @@ ConditionDetails.defaultProps = {
   browseBy: 'company',
   isExpandable: false,
   expanded: false,
+  counts: {
+    instruments: 0,
+    conditions: 0,
+  },
   searchKeywords: { include: [], exclude: [] },
   selectedItem: { instrumentIndex: 0, itemIndex: -1 },
   toggleExpanded: () => {},

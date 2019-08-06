@@ -142,7 +142,7 @@
     },
     "conditionDetails": {
       "selectedProject": "Projet sélectionnée :",
-      "selectedCondition": "Condition sélectionnée :",
+      "selectedCondition": "Conditions dans la région sélectionnée :",
       "instrumentNumber": "Instrument nᵒ",
       "conditionNumber": "Condition nᵒ",
       "location": "Lieu",
@@ -243,12 +243,12 @@
     },
     "greyPipe": {
       "countBubble": {
-        "instruments": "instruments",
-        "projects": "projets",
-        "conditions": "conditions",
-        "instrument": "instrument",
-        "project": "projet",
-        "condition": "condition"
+        "instruments": "Instruments",
+        "projects": "Projets",
+        "conditions": "Conditions",
+        "instrument": "Instrument",
+        "project": "Projet",
+        "condition": "Condition"
       }
     },
     "guide": {

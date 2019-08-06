@@ -3,6 +3,9 @@
 
 $curveRadius: 48px;
 
+$bubbleSpacing: 32px;
+$bubbleBottom: -10px;
+
 .GreyPipe {
   position: absolute;
   width: $curveRadius;
@@ -36,14 +39,9 @@ $curveRadius: 48px;
     background: $LightGray;
 
     .CountBubble {
+      z-index: 1;
       position: absolute;
-
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      $bubbleSpacing: 32px;
-      $bubbleBottom: -10px;
+      left: 0;
 
       &:nth-of-type(1) {
         bottom: $bubbleBottom + 2 * $bubbleSpacing;
@@ -78,6 +76,28 @@ $curveRadius: 48px;
       top: $curveRadius;
       bottom: $curveRadius;
       right: 0;
+
+      &.withBubbles {
+        background: none;
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 100%;
+          background: $LightGray;
+        }
+
+        &:before {
+          top: 0;
+          height: calc(100% - #{$bubbleBottom + 2.5 * $bubbleSpacing});
+        }
+
+        &:after {
+          bottom: 0;
+          height: 5%;
+        }
+      }
     }
     .top {
       right: -50%;
@@ -151,19 +171,11 @@ $curveRadius: 48px;
       width: 38px;
       height: 24px;
     }
-
-    .bottomConnection {
-      bottom: 0;
-      left: calc(100% + (#{$curveRadius} / 2));
-
-      width: 19px;
-      height: 24px;
-    }
   }
 }
 @include safariOnly {
   .GreyPipe {
-    &.company { 
+    &.company {
       bottom: calc(50%-7px);
     }
   }

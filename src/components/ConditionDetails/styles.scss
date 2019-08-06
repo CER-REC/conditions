@@ -69,8 +69,10 @@
     }
   }
 
+  $projectHeaderHeight: 60px;
+
   .listPane {
-    height: calc(100% - 24px);
+    height: calc(100% - #{$projectHeaderHeight});
     display: inline-block;
     width: 27%;
     vertical-align: top;
@@ -81,7 +83,7 @@
     display: inline-block;
     width: 73%;
     vertical-align: top;
-    height: calc(100% - 24px);
+    height: calc(100% - #{$projectHeaderHeight});
   }
 
   .contentHeading {
