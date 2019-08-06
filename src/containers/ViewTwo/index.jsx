@@ -115,6 +115,7 @@ class ViewTwo extends React.Component {
             yearRange={this.props.projectYear}
             findAny={this.props.findAny}
             suggestedKeywords={this.props.suggestedKeywords}
+            scrollToMethodology={this.props.scrollToMethodology}
           />
           {this.props.browseBy === 'location' ? (
             <LocationWheelMinimap
@@ -173,7 +174,9 @@ class ViewTwo extends React.Component {
             )
             : (
               <React.Fragment>
-                <TotalConditionsLabel />
+                <TotalConditionsLabel
+                  openNumberDetails={this.props.openNumberDetails}
+                />
                 <ProjectMenu
                   loading={this.props.wheelMoving || this.props.projectMenuLoading}
                   projectsData={this.props.projectsData}

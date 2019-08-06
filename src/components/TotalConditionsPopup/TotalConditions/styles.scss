@@ -1,0 +1,51 @@
+@import '../../../styles/colors';
+@import '../../../styles/fontVariables.scss';
+@import '../../../styles/browserSpecific.scss';
+.TotalConditions {
+  position: relative;
+
+  width: 500px;
+  height: 300px;
+
+   .Header {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-family: $fira-sans-condensed-bold;
+    color: $Black51;
+  }
+  .Description {
+    font-size: 16px;
+    .Explanation{
+      margin-bottom: 8px;
+    }
+    .Example{
+      margin-top: 8px;
+    }
+  }
+  .PopupBtn {
+    position: absolute;
+
+    right: -12px;
+    bottom: 0;
+
+    width: 80px;
+
+    font-size: 18px;
+  }
+}
+
+@include safariOnly {
+  .TotalConditions {
+   .Example {
+      width: 450px;
+   }
+   .Explanation {
+     width: 450px;
+   }
+   .PopupBtn {
+     right: 10px;
+   }
+   
+
+  }
+}

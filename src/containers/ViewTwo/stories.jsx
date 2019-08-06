@@ -85,6 +85,8 @@ const props = {
   filteredProjectLookup,
   displayOrder,
   updateSearch: noop,
+  openNumberDetails: noop,
+  scrollToMethodology: noop,
 };
 
 const connectedProps = {
@@ -110,6 +112,7 @@ const connectedProps = {
   },
   filteredProjectLookup,
   updateSearch: noop,
+  openNumberDetails: noop,
 };
 
 storiesForView('Containers|ViewTwo', module, ReadMe)

@@ -2,21 +2,30 @@
 @import '../../styles/fontVariables.scss';
 
 .TotalConditionsLabel {
+  .openDetails{
+    //overriding inherited button styles
+    font: unset;
+    border: none;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0); 
+    .conditionLabel {
+      position: relative;
+      left: -1.45px;
   
-  .conditionLabel {
-    position: relative;
-    left: -1.45px;
+      .small{
+        fill: $Gray160;
+        font: $fira-sans-condensed-light;
+        font-size: 12px;
+        &.linked{
+          fill: $LinksTextButtons
+        }
+      }
   
-    .small{
-      fill: $Gray160;
-      font: $fira-sans-condensed-light;
-      font-size: 12px;
-    }
-  
-    .connectingLine{
-      stroke-dasharray: 3,1;
-      stroke: $Gray160;
-      stroke-width: 1px;
+      .connectingLine{
+        stroke-dasharray: 3,1;
+        stroke: $Gray160;
+        stroke-width: 1px;
+      }
     }
   }
 }

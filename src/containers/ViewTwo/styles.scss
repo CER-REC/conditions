@@ -13,7 +13,7 @@
       margin-bottom: 0;
       .TotalConditionsLabel{
         position: absolute;
-        top : -50px;
+        bottom: calc(100% - 4px);
         left: 50%;
       }
 
@@ -25,13 +25,13 @@
         .RegionConditionSummary {
           position: absolute;
 
-          // 50% - 16px of the Wheel = 75% of our container here - 16px
-          //                         = 25% + 16px to bottom, - 24px for the border
-          bottom: calc(25% + 16px - 24px);
+          // 50% - 12px of the Wheel = 75% of our container here - 12px
+          //                         = 25% + 12px to bottom, - 24px for the border
+          bottom: calc(25% + 12px - 24px);
         }
 
         .RegionCompanies {
-          top: calc(75% - 16px + 24px);
+          top: calc(75% - 12px + 24px);
           left: 30px;
         }
       }

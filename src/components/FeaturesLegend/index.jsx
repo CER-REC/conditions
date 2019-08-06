@@ -8,6 +8,20 @@ import getFeatureColor from '../../utilities/getFeatureColor';
 
 import './styles.scss';
 
+const greaterThanTenFlag = (
+  <svg className="greaterThanTenFlag" viewBox="0 0 23 12">
+    <path d="
+      M -1 0
+      L 16 0
+      L 22 6
+      L 16 12
+      L -1 12
+      Z
+    "
+    />
+  </svg>
+);
+
 const FeaturesLegend = (props) => {
   const { selectedFeature, selectedAggregatedCount } = props;
   if (!selectedAggregatedCount) { return null; }
@@ -32,13 +46,8 @@ const FeaturesLegend = (props) => {
             <span className="FlagDesc">10</span>
           </div>
           <div className="legendRow">
-            <FeatureFlag
-              chartType="legend"
-              name="greaterThanTenConditions"
-              count={11}
-              color="transparent"
-            />
-            <span className="FlagDesc"> &gt;10 </span>
+            {greaterThanTenFlag}
+            <span className="FlagDesc">&gt;10</span>
           </div>
         </div>
         <div className="AssociatedComp">
