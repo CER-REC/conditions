@@ -6283,9 +6283,6 @@ exports[`Storyshots Components|GreyPipe company w/ count bubbles 1`] = `
           </span>
         </div>
       </div>
-      <div
-        className="bottom"
-      />
     </div>
   </div>
   <style
