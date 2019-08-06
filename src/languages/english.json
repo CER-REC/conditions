@@ -357,6 +357,12 @@
       }
     },
     "modal": {
+      "totalConditions":{
+        "title": "How is the Total Number of Conditions Determined?",
+        "explanation": "The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.",
+        "example": "For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.",
+        "back": "Back"
+      },
       "data": {
         "title": "Data Download",
         "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."
@@ -436,7 +442,9 @@
     },
     "totalConditionsLabel": {
       "total": "Total Conditions",
-      "forProject": "for this Project"
+      "forProject": "for this Project",
+      "learnMore": "(learn more)"
+      
     },
     "errorBoundary": {
       "errorMessage": "Something went wrong.",

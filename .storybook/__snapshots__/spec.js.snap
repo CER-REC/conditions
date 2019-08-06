@@ -31050,33 +31050,210 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
   <div
     className="TotalConditionsLabel"
   >
-    <svg
-      className="conditionLabel"
-      height="60"
-      width="100"
+    <button
+      className="openDetails"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      <text
-        className="small"
-        x="0"
-        y="12"
+      <svg
+        className="conditionLabel"
+        height="60"
+        width="80"
       >
-        Total Conditions
-      </text>
-      <text
-        className="small"
-        x="0"
-        y="24"
+        <text
+          className="small"
+          x="0"
+          y="12"
+        >
+          Total Conditions
+        </text>
+        <text
+          className="small"
+          x="0"
+          y="24"
+        >
+          for this Project
+        </text>
+        <text
+          className="small linked"
+          x="0"
+          y="36"
+        >
+          (learn more)
+        </text>
+        <line
+          className="connectingLine"
+          x1="1.5"
+          x2="1.5"
+          y1="40"
+          y2="60"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|TotalConditionsPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal TotalConditionsPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="TotalConditions"
+    >
+      <div
+        className="Header"
       >
-        for this Project
-      </text>
-      <line
-        className="connectingLine"
-        x1="1.5"
-        x2="1.5"
-        y1="25"
-        y2="60"
-      />
-    </svg>
+        <span>
+          How is the Total Number of Conditions Determined?
+        </span>
+      </div>
+      <div
+        className="Description"
+      >
+        <div
+          className="Explanation"
+        >
+          <span>
+            The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+          </span>
+        </div>
+        <div
+          className="Example"
+        >
+          <span>
+            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+          </span>
+        </div>
+      </div>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|TotalConditionsPopup/TotalConditions default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="TotalConditionsPopup"
+  >
+    <div
+      className="TotalConditions"
+    >
+      <div
+        className="Header"
+      >
+        <span>
+          How is the Total Number of Conditions Determined?
+        </span>
+      </div>
+      <div
+        className="Description"
+      >
+        <div
+          className="Explanation"
+        >
+          <span>
+            The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+          </span>
+        </div>
+        <div
+          className="Example"
+        >
+          <span>
+            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+          </span>
+        </div>
+      </div>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;

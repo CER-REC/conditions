@@ -53,6 +53,7 @@ import randomArrayValue from '../../utilities/randomArrayValue';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
+import TotalConditionsPopup from '../../components/TotalConditionsPopup';
 
 import './styles.scss';
 
@@ -105,6 +106,7 @@ class App extends React.PureComponent {
       finalKeywordPosition: { x: 0, y: 0 },
       isIntermediatePopupOpen: false,
       isCompanyPopupOpen: false,
+      isTotalConditionNumberPopupOpen: false,
     };
     this.ref = React.createRef();
 
@@ -522,6 +524,14 @@ class App extends React.PureComponent {
     }
   }
 
+  openTotalConditionNumberPopup = () => {
+    this.setState({ isTotalConditionNumberPopupOpen: true });
+  }
+
+  closeTotalConditionNumberPopup = () => {
+    this.setState({ isTotalConditionNumberPopupOpen: false });
+  };
+
   openRegDocPopup = () => {
     this.setState({ isIntermediatePopupOpen: true });
   }
@@ -658,6 +668,11 @@ class App extends React.PureComponent {
             suggestedKeywords={this.props.allKeywords}
             updateSearch={this.updateSearch}
             scrollToMethodology={this.scrollToMethodology}
+            openNumberDetails={this.openTotalConditionNumberPopup}
+          />
+          <TotalConditionsPopup
+            isOpen={this.state.isTotalConditionNumberPopupOpen}
+            closeModal={this.closeTotalConditionNumberPopup}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}

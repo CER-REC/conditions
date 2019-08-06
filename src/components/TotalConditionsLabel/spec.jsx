@@ -5,7 +5,11 @@ import TotalConditionsLabel from '.';
 
 describe('Component|TotalConditionsLabel', () => {
   describe('default', () => {
-    const wrapper = shallowWithIntl(<TotalConditionsLabel />);
+    const wrapper = shallowWithIntl(
+      <TotalConditionsLabel
+        openNumberDetails={() => {}}
+      />,
+    );
     shouldBehaveLikeAComponent(TotalConditionsLabel, () => wrapper);
   });
 });
