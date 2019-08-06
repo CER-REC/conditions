@@ -18,4 +18,14 @@ storiesForComponent('Components|GreyPipe', module, ReadMe)
     <div className="storyWrapper">
       <GreyPipe mode="location" />
     </div>
+  ))
+  .add('company w/ count bubbles', () => (
+    <div className="storyWrapper">
+      <GreyPipe
+        mode="company"
+        conditionCount={42}
+        instrumentCount={15}
+        projectCount={1}
+      />
+    </div>
   ));

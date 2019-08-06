@@ -142,7 +142,7 @@
     },
     "conditionDetails": {
       "selectedProject": "Selected Project:",
-      "selectedCondition": "Selected Condition:",
+      "selectedCondition": "Conditions In Selected Region:",
       "instrumentNumber": "Instrument #",
       "conditionNumber": "Condition #",
       "location": "Location",
@@ -243,12 +243,12 @@
     },
     "greyPipe": {
       "countBubble": {
-        "instruments": "instruments",
-        "projects": "projects",
-        "conditions": "conditions",
-        "instrument": "instrument",
-        "project": "project",
-        "condition": "condition"
+        "instruments": "Instruments",
+        "projects": "Projects",
+        "conditions": "Conditions",
+        "instrument": "Instrument",
+        "project": "Project",
+        "condition": "Condition"
       }
     },
     "guide": {
@@ -322,7 +322,7 @@
       },
       "suggestedKeywordsPopout": {
         "suggestedKeywords": "Suggested Keywords",
-        "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords",
+        "keywordsDescription": "Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords {here}.",
         "keywordsHere": "here",
         "viewBy": "View By:",
         "sortBy": "Sort by",
@@ -336,7 +336,7 @@
     "mainInfoBar": {
       "headings": {
         "about": "About",
-        "contributor": "Contributor",
+        "contributors": "Contributors",
         "methodology": "Methodology",
         "download": "Download",
         "downloadData": "Download Data",
@@ -347,13 +347,22 @@
         "keywords": "[Placeholder for an explanation of...]",
         "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
         "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
-        "emailUs": "Email us with your comments and ideas: {emailPlaceholder}",
-        "lookForward": "We look forward to hearing from you.",
-        "contributor": "DATA SOURCE:\nNEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nNEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau\nCOORDINATION:\nAnnette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)\nDATA VISUALIZATION:\nLead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.\nDesign: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.\nLead Technical: VizworX\nTechnical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt.",
+        "emailUs": "Email us with your comments and ideas: {email}. We look forward to hearing from you.",
+        "contributors": {
+          "1": "DATA SOURCE:\nNEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nNEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau",
+          "2": "COORDINATION:\nAnnette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)",
+          "3": "DATA VISUALIZATION:\nLead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.\nDesign: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.\nLead Technical: VizworX\nTechnical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt."
+        },
         "here": "here"
       }
     },
     "modal": {
+      "totalConditions":{
+        "title": "How is the Total Number of Conditions Determined?",
+        "explanation": "The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.",
+        "example": "For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.",
+        "back": "Back"
+      },
       "data": {
         "title": "Data Download",
         "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer.",
@@ -434,7 +443,9 @@
     },
     "totalConditionsLabel": {
       "total": "Total Conditions",
-      "forProject": "for this Project"
+      "forProject": "for this Project",
+      "learnMore": "(learn more)"
+      
     },
     "errorBoundary": {
       "errorMessage": "Something went wrong.",

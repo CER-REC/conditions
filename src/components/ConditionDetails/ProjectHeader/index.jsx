@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+
+import CountBubble from '../../CountBubble';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
@@ -33,25 +34,25 @@ const moreButton = (
   </React.Fragment>
 );
 
-class ProjectHeader extends React.PureComponent {
-  render = () => (
-    <div className={classNames('ProjectHeader', { location: this.props.browseBy === 'location' })}>
-      {this.props.browseBy === 'company'
+const ProjectHeader = props => (
+  <div className="ProjectHeader">
+    <div className="topBar">
+      {props.browseBy === 'company'
         ? (
           <React.Fragment>
             <AdvancedFormattedMessage
               id="components.conditionDetails.selectedProject"
               tag="h1"
             />
-            { this.props.selectedProject !== ''
+            { props.selectedProject !== ''
               ? (
                 <button
                   type="button"
                   className="openProject"
-                  {...handleInteraction(this.props.openProjectDetails)}
+                  {...handleInteraction(props.openProjectDetails)}
                 >
-                  <h2 title={this.props.selectedProject}>
-                    <span className="projectName">{this.props.selectedProject}</span>
+                  <h2 title={props.selectedProject}>
+                    <span className="projectName">{props.selectedProject}</span>
                     <span className="asterisk">*</span>
                   </h2>
                 </button>
@@ -70,18 +71,27 @@ class ProjectHeader extends React.PureComponent {
           </React.Fragment>
         )
       }
-      {!this.props.isExpandable ? null : (
+      {!props.isExpandable ? null : (
         <button
           type="button"
           className="toggleExpand"
-          {...handleInteraction(this.props.toggleExpanded, !this.props.expanded)}
+          {...handleInteraction(props.toggleExpanded, !props.expanded)}
         >
-          {this.props.expanded ? lessButton : moreButton}
+          {props.expanded ? lessButton : moreButton}
         </button>
       )}
     </div>
-  )
-}
+    {props.counts.instruments
+      ? (
+        <div className="counts">
+          <CountBubble count={props.counts.instruments} textId="instruments" />
+          <CountBubble count={props.counts.conditions} textId="conditions" />
+        </div>
+      )
+      : null
+    }
+  </div>
+);
 
 ProjectHeader.propTypes = {
   isExpandable: PropTypes.bool,
@@ -90,12 +100,20 @@ ProjectHeader.propTypes = {
   toggleExpanded: PropTypes.func.isRequired,
   browseBy: PropTypes.oneOf(['company', 'location']),
   openProjectDetails: PropTypes.func.isRequired,
+  counts: PropTypes.shape({
+    instruments: PropTypes.number,
+    conditions: PropTypes.number,
+  }),
 };
 
 ProjectHeader.defaultProps = {
   isExpandable: false,
   expanded: false,
   browseBy: 'company',
+  counts: {
+    instruments: 0,
+    conditions: 0,
+  },
 };
 
 export default ProjectHeader;

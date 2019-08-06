@@ -43,7 +43,8 @@
       margin-bottom: 11px;
       line-height: 10px;
 
-      font-family: $fira-sans-condensed-bold;
+      color: $Gray160;
+      font-weight: bold;
     }
 
     .ChartLegend {
@@ -60,14 +61,26 @@
         position: relative;
         height: 11px;
 
+        margin-bottom: 2px;
+
         .FlagDesc {
           display: inline-block;
           position: absolute;
-          top: 0;
-          left: 24px;
+          top: -2px;
+          left: 28px;
           width: 10px;
           height: 10px;
         }
+
+
+        svg.greaterThanTenFlag {
+          height: 12px;
+          width: auto;
+
+          fill: $White;
+          stroke: $VeryDarkGray;
+        }
+
 
         .FeatureFlag {
           display: inline-block;

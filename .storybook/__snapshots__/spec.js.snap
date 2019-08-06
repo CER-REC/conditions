@@ -1530,32 +1530,36 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
       <div
         className="ProjectHeader"
       >
-        <h1>
-          Selected Project:
-        </h1>
-        <button
-          className="openProject"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
+        <div
+          className="topBar"
         >
-          <h2
-            title="Keystone XL"
+          <h1>
+            Selected Project:
+          </h1>
+          <button
+            className="openProject"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <span
-              className="projectName"
+            <h2
+              title="Keystone XL"
             >
-              Keystone XL
-            </span>
-            <span
-              className="asterisk"
-            >
-              *
-            </span>
-          </h2>
-        </button>
+              <span
+                className="projectName"
+              >
+                Keystone XL
+              </span>
+              <span
+                className="asterisk"
+              >
+                *
+              </span>
+            </h2>
+          </button>
+        </div>
       </div>
       <div
         className="listPane"
@@ -2097,54 +2101,58 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
         <div
           className="ProjectHeader"
         >
-          <h1>
-            Selected Project:
-          </h1>
-          <button
-            className="openProject"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
+          <div
+            className="topBar"
           >
-            <h2
-              title="Keystone XL"
-            >
-              <span
-                className="projectName"
-              >
-                Keystone XL
-              </span>
-              <span
-                className="asterisk"
-              >
-                *
-              </span>
-            </h2>
-          </button>
-          <button
-            className="toggleExpand"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <h1
-              className="upperCase"
-            >
-              Less
+            <h1>
+              Selected Project:
             </h1>
-            <svg
-              className="arrow"
-              viewBox="0 0 16 24"
+            <button
+              className="openProject"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <polyline
-                points="4,4 12,12.5 4,20 4,4"
-              />
-            </svg>
-          </button>
+              <h2
+                title="Keystone XL"
+              >
+                <span
+                  className="projectName"
+                >
+                  Keystone XL
+                </span>
+                <span
+                  className="asterisk"
+                >
+                  *
+                </span>
+              </h2>
+            </button>
+            <button
+              className="toggleExpand"
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <h1
+                className="upperCase"
+              >
+                Less
+              </h1>
+              <svg
+                className="arrow"
+                viewBox="0 0 16 24"
+              >
+                <polyline
+                  points="4,4 12,12.5 4,20 4,4"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div
           className="listPane"
@@ -2677,14 +2685,18 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
       className="main"
     >
       <div
-        className="ProjectHeader location"
+        className="ProjectHeader"
       >
-        <h1>
-          Selected Condition:
-        </h1>
         <div
-          className="openProject"
-        />
+          className="topBar"
+        >
+          <h1>
+            Conditions In Selected Region:
+          </h1>
+          <div
+            className="openProject"
+          />
+        </div>
       </div>
       <div
         className="listPane"
@@ -3224,14 +3236,18 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
         className="main"
       >
         <div
-          className="ProjectHeader location"
+          className="ProjectHeader"
         >
-          <h1>
-            Selected Condition:
-          </h1>
           <div
-            className="openProject"
-          />
+            className="topBar"
+          >
+            <h1>
+              Conditions In Selected Region:
+            </h1>
+            <div
+              className="openProject"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -3985,54 +4001,58 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader expandable 1`] = `
     <div
       className="ProjectHeader"
     >
-      <h1>
-        Selected Project:
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="topBar"
       >
-        <h2
-          title="Keystone XL"
-        >
-          <span
-            className="projectName"
-          >
-            Keystone XL
-          </span>
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
-      <button
-        className="toggleExpand"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <h1
-          className="upperCase"
-        >
-          Less
+        <h1>
+          Selected Project:
         </h1>
-        <svg
-          className="arrow"
-          viewBox="0 0 16 24"
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <polyline
-            points="4,4 12,12.5 4,20 4,4"
-          />
-        </svg>
-      </button>
+          <h2
+            title="Keystone XL"
+          >
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+        <button
+          className="toggleExpand"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <h1
+            className="upperCase"
+          >
+            Less
+          </h1>
+          <svg
+            className="arrow"
+            viewBox="0 0 16 24"
+          >
+            <polyline
+              points="4,4 12,12.5 4,20 4,4"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -4046,14 +4066,18 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
     className="ConditionDetails"
   >
     <div
-      className="ProjectHeader location"
+      className="ProjectHeader"
     >
-      <h1>
-        Selected Condition:
-      </h1>
       <div
-        className="openProject"
-      />
+        className="topBar"
+      >
+        <h1>
+          Conditions In Selected Region:
+        </h1>
+        <div
+          className="openProject"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -4069,32 +4093,36 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader not expandable 1`]
     <div
       className="ProjectHeader"
     >
-      <h1>
-        Selected Project:
-      </h1>
-      <button
-        className="openProject"
-        focusable={true}
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-        type="button"
+      <div
+        className="topBar"
       >
-        <h2
-          title="Keystone XL"
+        <h1>
+          Selected Project:
+        </h1>
+        <button
+          className="openProject"
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          <span
-            className="projectName"
+          <h2
+            title="Keystone XL"
           >
-            Keystone XL
-          </span>
-          <span
-            className="asterisk"
-          >
-            *
-          </span>
-        </h2>
-      </button>
+            <span
+              className="projectName"
+            >
+              Keystone XL
+            </span>
+            <span
+              className="asterisk"
+            >
+              *
+            </span>
+          </h2>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -4406,6 +4434,78 @@ exports[`Storyshots Components|ConditionExplorer/PhysicsVariant documentation 1`
   className="visualization"
 >
   <div />
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count"
+    >
+      42
+    </span>
+    <span
+      className="text"
+    >
+       
+      <span>
+        Projects
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble large value 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count small"
+    >
+      1723
+    </span>
+    <span
+      className="text"
+    >
+       
+      <span>
+        Instruments
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|CountBubble singular 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="CountBubble"
+  >
+    <span
+      className="count"
+    >
+      1
+    </span>
+    <span
+      className="text"
+    >
+       
+      <span>
+        Condition
+      </span>
+    </span>
+  </div>
 </div>
 `;
 
@@ -5826,25 +5926,18 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         <div
           className="legendRow"
         >
-          <div
-            className="FeatureFlag"
+          <svg
+            className="greaterThanTenFlag"
+            viewBox="0 0 23 12"
           >
-            <div
-              className="Bar withTip"
-              style={
-                Object {
-                  "backgroundColor": "transparent",
-                  "borderLeftColor": "transparent",
-                  "width": "calc(18px * 1)",
-                }
-              }
-              title="Greater than Ten Conditions"
+            <path
+              d=" M -1 0 L 16 0 L 22 6 L 16 12 L -1 12 Z "
             />
-          </div>
+          </svg>
           <span
             className="FlagDesc"
           >
-             &gt;10 
+            &gt;10
           </span>
         </div>
       </div>
@@ -6146,9 +6239,95 @@ exports[`Storyshots Components|GreyPipe company 1`] = `
       <div
         className="vertical"
       />
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".storyWrapper {position: relative; height: 400px; width: 200px;}",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components|GreyPipe company w/ count bubbles 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="storyWrapper"
+  >
+    <div
+      className="GreyPipe company"
+    >
+      <svg
+        className="bottomSvg"
+        height="48"
+        width="48"
+      >
+        <path
+          d="M48 0 C48 0 48 48 0 48 L24 48 0 48 0 24 C0 24 24 24 24 0 L24 12 24 0"
+        />
+      </svg>
       <div
-        className="bottom"
+        className="top"
       />
+      <div
+        className="vertical withBubbles"
+      >
+        <div
+          className="CountBubble"
+        >
+          <span
+            className="count"
+          >
+            42
+          </span>
+          <span
+            className="text"
+          >
+             
+            <span>
+              Conditions
+            </span>
+          </span>
+        </div>
+        <div
+          className="CountBubble"
+        >
+          <span
+            className="count"
+          >
+            15
+          </span>
+          <span
+            className="text"
+          >
+             
+            <span>
+              Instruments
+            </span>
+          </span>
+        </div>
+        <div
+          className="CountBubble"
+        >
+          <span
+            className="count"
+          >
+            1
+          </span>
+          <span
+            className="text"
+          >
+             
+            <span>
+              Project
+            </span>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <style
@@ -6175,16 +6354,16 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
         className="topConnection"
       />
       <div
-        className="top"
-      />
-      <div
-        className="vertical"
-      />
-      <div
         className="bottom"
       />
       <div
         className="bottomConnection"
+      />
+      <div
+        className="top"
+      />
+      <div
+        className="vertical"
       />
     </div>
   </div>
@@ -6195,90 +6374,6 @@ exports[`Storyshots Components|GreyPipe location 1`] = `
       }
     }
   />
-</div>
-`;
-
-exports[`Storyshots Components|GreyPipe/CountBubble default 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="GreyPipe"
-  >
-    <div
-      className="CountBubble"
-    >
-      <span
-        className="count"
-      >
-        42
-      </span>
-      <span
-        className="text"
-      >
-         
-        <span>
-          projects
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|GreyPipe/CountBubble large value 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="GreyPipe"
-  >
-    <div
-      className="CountBubble"
-    >
-      <span
-        className="count small"
-      >
-        1723
-      </span>
-      <span
-        className="text"
-      >
-         
-        <span>
-          instruments
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components|GreyPipe/CountBubble singular 1`] = `
-<div
-  className="visualization"
->
-  <div
-    className="GreyPipe"
-  >
-    <div
-      className="CountBubble"
-    >
-      <span
-        className="count"
-      >
-        1
-      </span>
-      <span
-        className="text"
-      >
-         
-        <span>
-          condition
-        </span>
-      </span>
-    </div>
-  </div>
 </div>
 `;
 
@@ -8081,7 +8176,7 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
-          <p>
+          <span>
             Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
@@ -8090,16 +8185,14 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
             >
               energyindesign@neb-one.gc.ca
             </a>
-          </p>
-          <p>
-            We look forward to hearing from you.
-          </p>
+            . We look forward to hearing from you.
+          </span>
           <h1>
-            Contributor
+            Contributors
           </h1>
-          <p>
+          <h2>
             DATA SOURCE:
-          </p>
+          </h2>
           <p>
             NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
@@ -8109,15 +8202,15 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
           </p>
-          <p>
+          <h2>
             COORDINATION:
-          </p>
+          </h2>
           <p>
             Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
           </p>
-          <p>
+          <h2>
             DATA VISUALIZATION:
-          </p>
+          </h2>
           <p>
             Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
           </p>
@@ -8382,7 +8475,7 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
-          <p>
+          <span>
             Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
@@ -8391,16 +8484,14 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
             >
               energyindesign@neb-one.gc.ca
             </a>
-          </p>
-          <p>
-            We look forward to hearing from you.
-          </p>
+            . We look forward to hearing from you.
+          </span>
           <h1>
-            Contributor
+            Contributors
           </h1>
-          <p>
+          <h2>
             DATA SOURCE:
-          </p>
+          </h2>
           <p>
             NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
@@ -8410,15 +8501,15 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
           </p>
-          <p>
+          <h2>
             COORDINATION:
-          </p>
+          </h2>
           <p>
             Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
           </p>
-          <p>
+          <h2>
             DATA VISUALIZATION:
-          </p>
+          </h2>
           <p>
             Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
           </p>
@@ -8683,7 +8774,7 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
-          <p>
+          <span>
             Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
@@ -8692,16 +8783,14 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
             >
               energyindesign@neb-one.gc.ca
             </a>
-          </p>
-          <p>
-            We look forward to hearing from you.
-          </p>
+            . We look forward to hearing from you.
+          </span>
           <h1>
-            Contributor
+            Contributors
           </h1>
-          <p>
+          <h2>
             DATA SOURCE:
-          </p>
+          </h2>
           <p>
             NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
@@ -8711,15 +8800,15 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
           </p>
-          <p>
+          <h2>
             COORDINATION:
-          </p>
+          </h2>
           <p>
             Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
           </p>
-          <p>
+          <h2>
             DATA VISUALIZATION:
-          </p>
+          </h2>
           <p>
             Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
           </p>
@@ -8984,7 +9073,7 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           <p>
             We hope we are hitting the mark. Your feedback is essential.
           </p>
-          <p>
+          <span>
             Email us with your comments and ideas: 
             <a
               href="mailto:energyindesign@neb-one.gc.ca"
@@ -8993,16 +9082,14 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
             >
               energyindesign@neb-one.gc.ca
             </a>
-          </p>
-          <p>
-            We look forward to hearing from you.
-          </p>
+            . We look forward to hearing from you.
+          </span>
           <h1>
-            Contributor
+            Contributors
           </h1>
-          <p>
+          <h2>
             DATA SOURCE:
-          </p>
+          </h2>
           <p>
             NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
@@ -9012,15 +9099,15 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
           </p>
-          <p>
+          <h2>
             COORDINATION:
-          </p>
+          </h2>
           <p>
             Annette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)
           </p>
-          <p>
+          <h2>
             DATA VISUALIZATION:
-          </p>
+          </h2>
           <p>
             Lead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.
           </p>
@@ -18620,7 +18707,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <p
         className="description"
       >
-        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords
+        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords 
+        <a
+          focusable={true}
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+        >
+          here
+        </a>
+        .
       </p>
       <ul
         className="categories"
@@ -30999,33 +31095,210 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
   <div
     className="TotalConditionsLabel"
   >
-    <svg
-      className="conditionLabel"
-      height="60"
-      width="100"
+    <button
+      className="openDetails"
+      focusable={true}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      <text
-        className="small"
-        x="0"
-        y="12"
+      <svg
+        className="conditionLabel"
+        height="60"
+        width="80"
       >
-        Total Conditions
-      </text>
-      <text
-        className="small"
-        x="0"
-        y="24"
+        <text
+          className="small"
+          x="0"
+          y="12"
+        >
+          Total Conditions
+        </text>
+        <text
+          className="small"
+          x="0"
+          y="24"
+        >
+          for this Project
+        </text>
+        <text
+          className="small linked"
+          x="0"
+          y="36"
+        >
+          (learn more)
+        </text>
+        <line
+          className="connectingLine"
+          x1="1.5"
+          x2="1.5"
+          y1="40"
+          y2="60"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components|TotalConditionsPopup default 1`] = `
+<div
+  className="visualization"
+>
+  <dialog
+    className="Modal TotalConditionsPopup"
+    onClose={[Function]}
+  >
+    <div
+      className="TotalConditions"
+    >
+      <div
+        className="Header"
       >
-        for this Project
-      </text>
-      <line
-        className="connectingLine"
-        x1="1.5"
-        x2="1.5"
-        y1="25"
-        y2="60"
-      />
-    </svg>
+        <span>
+          How is the Total Number of Conditions Determined?
+        </span>
+      </div>
+      <div
+        className="Description"
+      >
+        <div
+          className="Explanation"
+        >
+          <span>
+            The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+          </span>
+        </div>
+        <div
+          className="Example"
+        >
+          <span>
+            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+          </span>
+        </div>
+      </div>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Storyshots Components|TotalConditionsPopup/TotalConditions default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="TotalConditionsPopup"
+  >
+    <div
+      className="TotalConditions"
+    >
+      <div
+        className="Header"
+      >
+        <span>
+          How is the Total Number of Conditions Determined?
+        </span>
+      </div>
+      <div
+        className="Description"
+      >
+        <div
+          className="Explanation"
+        >
+          <span>
+            The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+          </span>
+        </div>
+        <div
+          className="Example"
+        >
+          <span>
+            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+          </span>
+        </div>
+      </div>
+      <button
+        className="PopupBtn"
+        focusable={true}
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Back
+        <svg
+          className="buttonIcon"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+          />
+          <path
+            d="
+  M 46 28
+  a 4 4 0 0 1 8,0
+  v 18
+  h 18
+  a 4 4 0 0 1 0,8
+  h -18
+  v 18
+  a 4 4 0 0 1 -8,0
+  v -18
+  h -18
+  a 4 4 0 0 1 0,-8
+  h 18
+  v -18
+  Z
+"
+            fill="white"
+            transform="rotate(45 50 50)"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;

@@ -54,6 +54,7 @@ import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 import DownloadPopup from '../../components/DownloadPopup';
+import TotalConditionsPopup from '../../components/TotalConditionsPopup';
 
 import './styles.scss';
 
@@ -106,6 +107,7 @@ class App extends React.PureComponent {
       isIntermediatePopupOpen: false,
       isCompanyPopupOpen: false,
       isDownloadPopupOpen: false,
+      isTotalConditionNumberPopupOpen: false,
     };
     this.ref = React.createRef();
 
@@ -273,6 +275,11 @@ class App extends React.PureComponent {
     // This timer needs to be long enough for React to do its thing and for the
     // CSS transitions to finish so the Footer content is there to scroll to.
     this.scrollSelectorIntoView('.Footer', 1000);
+  }
+
+  scrollToMethodology = () => {
+    this.setMainInfoBarPane('methodology');
+    this.scrollSelectorIntoView('.Footer', 0);
   }
 
   jumpToView1 = () => {
@@ -524,6 +531,14 @@ class App extends React.PureComponent {
 
   closeDownloadPopup = () => {
     this.setState({ isDownloadPopupOpen: false });
+  }
+
+  openTotalConditionNumberPopup = () => {
+    this.setState({ isTotalConditionNumberPopupOpen: true });
+  }
+
+  closeTotalConditionNumberPopup = () => {
+    this.setState({ isTotalConditionNumberPopupOpen: false });
   };
 
   openRegDocPopup = () => {
@@ -666,6 +681,12 @@ class App extends React.PureComponent {
             availableCategories={this.props.allConfigurationData.keywordCategories}
             suggestedKeywords={this.props.allKeywords}
             updateSearch={this.updateSearch}
+            scrollToMethodology={this.scrollToMethodology}
+            openNumberDetails={this.openTotalConditionNumberPopup}
+          />
+          <TotalConditionsPopup
+            isOpen={this.state.isTotalConditionNumberPopupOpen}
+            closeModal={this.closeTotalConditionNumberPopup}
           />
           <Query
             skip={!this.props.selected || !this.props.selected.company}
@@ -705,8 +726,17 @@ class App extends React.PureComponent {
                 let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
+                const counts = {
+                  instruments: 0,
+                  conditions: 0,
+                };
 
-                if (!loading && !error) {
+                const inTutorial = (
+                  transitionState > transitionStates.view1
+                  && transitionState < transitionStates.view2
+                );
+
+                if (!loading && !error && (!this.state.wheelMoving || inTutorial)) {
                   const { projectDetails, allInstruments } = data;
                   if (!allInstruments) { return null; }
                   instruments = formatConditionDetails(
@@ -714,6 +744,7 @@ class App extends React.PureComponent {
                     selected.feature,
                     this.props.allConfigurationData.displayOrder,
                   );
+
                   if (instruments.length > 0) {
                     instrumentIndex = instruments
                       .findIndex(instrument => instrument.id === selected.instrument);
@@ -726,6 +757,12 @@ class App extends React.PureComponent {
                     itemIndex = instruments[instrumentIndex].conditions
                       .findIndex(condition => condition.id === selected.condition);
                     ({ instrumentNumber } = instruments[instrumentIndex]);
+
+                    counts.instruments = instruments.length;
+                    counts.conditions = instruments.reduce(
+                      (acc, cur) => acc + cur.conditions.length,
+                      0,
+                    );
                   }
 
                   if (projectDetails) {
@@ -749,6 +786,7 @@ class App extends React.PureComponent {
                         exclude: this.props.excluded,
                       }}
                       data={instruments}
+                      counts={counts}
                       browseBy={this.props.browseBy}
                       {...conditionDetailsViewProps}
                     />
