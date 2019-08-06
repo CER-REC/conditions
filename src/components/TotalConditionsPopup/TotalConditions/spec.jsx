@@ -6,7 +6,7 @@ import TotalConditions from '.';
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|RegDocs', () => {
+describe('Components|TotalConditons', () => {
   let spy;
   beforeEach(() => {
     spy = {
@@ -18,8 +18,6 @@ describe('Components|RegDocs', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = mountWithIntl(<TotalConditions
-        instrument="test"
-        regdocsUrl="https://www.example.com"
         {...spy}
       />);
     });
