@@ -1,3 +1,168 @@
+# [0.23.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.23.0) (2019-08-06)
+
+
+### App
+
+* **Features:** provides count data to ConditionDetails (4706113)
+* **Features:** adds the updated RegDocs URLs (cb4238c)
+* **Features:** links up modal and changes TotalConditions Label (86a332c, NEBV-1705)
+* **Features:** implements scrollToMethodology, adds a link to the SuggestedKeywords text (885a407)
+* **Features:** adjusts layout and styling of ConditionDetails to maximize space (be28d83)
+* **Bug Fixes:** fixes the initial spin being missed when jumping to View 2 via the About button (a4f8e81)
+* **Bug Fixes:** fixes ConditionDetails showing while the wheel is spinning (b79ceb1)
+* **Bug Fixes:** actually fixes the missing spin when jumping to View 2 via the About button (a86b1bd)
+* **Bug Fixes:** shows ConditionDetails during the tutorial even while the wheel is spinning (a815308)
+* **Bug Fixes:** the Forward transport button was failing due to an uninitialized variable (62fc950)
+* **Tests:** updates snapshots (928914f)
+* **Tests:** updates snapshots (be15153)
+* **Tests:** updates snapshots (0697742)
+* **Tests:** updates tests, stories, and snapshots (59433d9)
+* **Code Formatting:** updates snapshots, removes commented code (80cb1f4)
+* **Code Formatting:** updates snapshots, removes commented code (4ba131c)
+* **Code Refactoring:** moves CountBubble from GreyPipe to its own public component (e3f966d)
+
+
+### BrowseBy
+
+* **Bug Fixes:** fixes look in Firefox (b68fd72)
+
+
+### BrowseBy, CompanyPopup, GreyPipe, RegDocs, Styles
+
+* **Code Formatting:** fixes spacing (2c94a34)
+
+
+### ConditionDetails
+
+* **Features:** updates header's title in Location mode (6a7c3dd)
+* **Features:** renders count bubbles, updates styles and layout (b56cf92)
+* **Code Refactoring:** makes ProjectHeader a functional component (efd9509)
+
+
+### CountBubble
+
+* **Features:** updates styling, adds check to pluralize if count = 0 (7adc974)
+
+
+### Dependencies
+
+* **Project Maintenance:** update node.js to v10.16.1 (700d63e)
+* **Project Maintenance:** updates related apollo dependencies (0e7d630)
+
+
+### FeaturesLegend
+
+* **Bug Fixes:** replaces div with triangular border with SVG (9a958b6)
+* **Bug Fixes:** updates title styling to match the design doc (6fee2aa)
+
+
+### FeatureTypesDescription
+
+* **Bug Fixes:** fixes formatting (08c4f47, NEBV-1690)
+
+
+### GreyPipe
+
+* **Features:** tweaks placement of count bubbles as per new design (4a20f8f)
+* **Tests:** updates snapshots, adds story and tests for count bubbles (48dec01)
+
+
+### GreyPipe, BrowseBy, RegDocs, CompanyPopup, WheelList
+
+* **Bug Fixes:** fixes Safari CSS (8ef1679, NEBV-1709)
+
+
+### i18n
+
+* **Features:** converts all FormattedMessage components with function body to AdvancedFormattedMessage (510418c, NEBV-1655)
+* **Tests:** fixes tests that broke with AdvancedFormattedMessage (4e2c56e, NEBV-1655)
+
+
+### LoadingGuide
+
+* **Features:** fixes PR concerns (56b23f8, NEBV-1655)
+* **Features:** improves styling and positioning while loading (e9d3e1a, NEBV-1655)
+* **Features:** reorganizes styles for grid (652a19a, NEBV-1655)
+* **Features:** initial integration with React.lazy and queries (c4fb11e, NEBV-1655)
+* **Features:** initial integration of LoadingGuide with webpack (f71f4b4)
+
+
+### LocationWheelMinimap
+
+* **Features:** delays loading topojson until it is needed (42a1cde, NEBV-1655)
+* **Bug Fixes:** fixes the NWT map not being rendered (cc337b8)
+
+
+### MainInfoBar
+
+* **Features:** updates About text's styling to match the NEB's storyboard (9970f5e)
+* **Bug Fixes:** updates About text formatting to match the NEB's text (60f55a7)
+* **Tests:** updates snapshots and disables prop errors (bfaecb9)
+
+
+### PopupBtn
+
+* **Features:** accepts text as children instead of a prop (515184e, NEBV-1655)
+* **Bug Fixes:** corrects link styles being overridden by the WET template (387c872)
+
+
+### RegDocs
+
+* **Bug Fixes:** removes unnecessary key attributes (a73526c)
+
+
+### RegDocsPopup
+
+* **Features:** relocates url import, updates tests/stories (2617c6a)
+
+
+### SearchBar
+
+* **Bug Fixes:** updates keyword list styling to match the design doc (95f2d4b)
+
+
+### Snapshots
+
+* **Bug Fixes:** update snapshots (0b3cdcd)
+
+
+### Storybook
+
+* **Tests:** updates snapshot that was missed during merges (8b52d65)
+
+
+### StreamGraph
+
+* **Bug Fixes:** fixes issues with click detection in Safari (7b7e4df)
+
+
+### Styles
+
+* **Code Refactoring:** uses mixins (487ebc9)
+
+
+### TotalConditions, View2
+
+* **Bug Fixes:** fixes tests and stories (a5debb7)
+
+
+### TotalConditionsPopup
+
+* **Features:** adds Safari Specific CSS (109059e)
+* **Features:** adds TotalConditions Popup Component (aa5d132, NEBV-1705)
+
+
+### View 2
+
+* **Bug Fixes:** updates styles in Location mode to keep grey pipe connected properly (43b485b)
+* **Bug Fixes:** fixes wheel list not being centered in the wheel (e324a37)
+* **Code Formatting:** changed positioning (ae6f7a2)
+
+
+### BREAKING CHANGES
+
+* **App:** Added Prop to view 2
+
 ## [0.22.1](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.22.1) (2019-07-29)
 
 
