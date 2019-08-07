@@ -6,21 +6,9 @@ import FeatureFlag from '../FeatureFlag';
 import { displayOrder, aggregatedFeatureData } from '../../proptypes';
 import getFeatureColor from '../../utilities/getFeatureColor';
 
-import './styles.scss';
+import greaterThanTenFlag from '../../../public/images/featuresLegend/greaterThanTenFlag.png';
 
-const greaterThanTenFlag = (
-  <svg className="greaterThanTenFlag" viewBox="0 0 23 12">
-    <path d="
-      M -1 0
-      L 16 0
-      L 22 6
-      L 16 12
-      L -1 12
-      Z
-    "
-    />
-  </svg>
-);
+import './styles.scss';
 
 const FeaturesLegend = (props) => {
   const { selectedFeature, selectedAggregatedCount } = props;
@@ -46,7 +34,7 @@ const FeaturesLegend = (props) => {
             <span className="FlagDesc">10</span>
           </div>
           <div className="legendRow">
-            {greaterThanTenFlag}
+            <img src={greaterThanTenFlag} alt="???" title="???" />
             <span className="FlagDesc">&gt;10</span>
           </div>
         </div>
