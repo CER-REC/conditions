@@ -5882,9 +5882,9 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
           className="legendRow"
         >
           <img
-            alt="???"
+            alt="Greater than Ten Conditions"
             src={Object {}}
-            title="???"
+            title="Greater than Ten Conditions"
           />
           <span
             className="FlagDesc"
