@@ -2,8 +2,11 @@
 
 .MethodologyBox {
   .KeywordExplanation {
-    .img {
+    img {
       display: block;
+      margin-bottom: 5px;
+      transform: translateX(10%);
+      width: 80%;
     }
   }
 }
