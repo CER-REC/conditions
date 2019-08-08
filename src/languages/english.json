@@ -365,7 +365,8 @@
       },
       "data": {
         "title": "Data Download",
-        "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer."
+        "description": "The data used to create this visualization is open data available for you to download. Click the icon to save the data file to your computer.",
+        "back": "Back"
       },
       "company": {
         "name": "Full Project Name:",
