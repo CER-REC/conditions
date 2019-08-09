@@ -88,7 +88,8 @@
     },
     "status": {
       "CLOSED": "Conforme",
-      "IN_PROGRESS": "En cours"
+      "IN_PROGRESS": "En cours",
+      "COMPLETED": "Terminé"
     },
     "filing": {
       "REQUIRED": "Dépôt requis",

@@ -88,7 +88,11 @@
     },
     "status": {
       "CLOSED": "Closed",
-      "IN_PROGRESS": "In Progress"
+      "IN_PROGRESS": "In Progress",
+      "ALL_CONDITIONS_MET": "All Conditions Met",
+      "EXPIRED": "Expired",
+      "DRAFT": "Draft",
+      "COMPLETED": "Completed"
     },
     "filing": {
       "REQUIRED": "Filing Required",
@@ -445,7 +449,7 @@
       "total": "Total Conditions",
       "forProject": "for this Project",
       "learnMore": "(learn more)"
-      
+
     },
     "errorBoundary": {
       "errorMessage": "Something went wrong.",
