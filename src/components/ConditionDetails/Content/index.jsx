@@ -23,14 +23,17 @@ class Content extends React.PureComponent {
     </FormattedMessage>
   )
 
-  renderInstrumentLink = instrumentNumber => (
-    <button
-      type="button"
-      className="instrumentLink"
-      {...handleInteraction(this.props.openIntermediatePopup)}
-    >
-      {instrumentNumber}
-    </button>
+  renderDocumentLink = data => ((data.documentNumber)
+    ? (
+      <button
+        type="button"
+        className="instrumentLink"
+        {...handleInteraction(this.props.openIntermediatePopup)}
+      >
+        {data.instrumentNumber}
+      </button>
+    )
+    : <span>{data.instrumentNumber}</span>
   )
 
   getHighlightedKeywords = (matchList, givenString) => {
@@ -91,7 +94,7 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock
                   id="components.conditionDetails.instrumentNumber"
-                  content={this.renderInstrumentLink(data.instrumentNumber)}
+                  content={this.renderDocumentLink(data)}
                 />
                 <ContentBlock
                   id="components.conditionDetails.status"
@@ -122,7 +125,7 @@ class Content extends React.PureComponent {
               <div className="half">
                 <ContentBlock
                   id="components.conditionDetails.instrumentNumber"
-                  content={this.renderInstrumentLink(data.instrumentNumber)}
+                  content={this.renderDocumentLink(data)}
                 />
                 <ContentBlock
                   id="components.conditionDetails.conditionNumber"
@@ -141,6 +144,7 @@ class Content extends React.PureComponent {
 Content.propTypes = {
   instrument: PropTypes.shape({
     instrumentNumber: PropTypes.string.isRequired,
+    documentNumber: PropTypes.string,
     issuanceDate: PropTypes.string.isRequired,
     effectiveDate: PropTypes.string.isRequired,
     sunsetDate: PropTypes.string,
