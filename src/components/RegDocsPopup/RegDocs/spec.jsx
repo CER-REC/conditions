@@ -18,7 +18,7 @@ describe('Components|RegDocs', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = mountWithIntl(<RegDocs
-        instrument="MO-025-2011"
+        document="MO-025-2011"
         {...spy}
       />);
     });
