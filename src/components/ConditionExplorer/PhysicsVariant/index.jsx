@@ -264,8 +264,8 @@ export default class PhysicsVariant extends React.PureComponent {
     }
   };
 
-  clearSelectedKeyword = (e) => {
-    this.props.onKeywordClick(e);
+  clearSelectedKeyword = () => {
+    this.props.onKeywordClick();
   }
 
   onKeywordClick = (e) => {
@@ -340,7 +340,7 @@ export default class PhysicsVariant extends React.PureComponent {
         return 0;
       });
     return (
-      <g ref={this.groupRef} onClick={this.onBackgroundClick}>
+      <g ref={this.groupRef} onMouseUp={this.onBackgroundClick} onTouchEnd={this.onBackgroundClick}>
         {/* This is to ensure the group is always clickable */}
         <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
         {sortedKeywords.map(instance => (
