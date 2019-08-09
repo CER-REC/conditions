@@ -259,10 +259,8 @@ export default class PhysicsVariant extends React.PureComponent {
   onBackgroundClick = () => {
     if (this.guide.isExpanded) {
       this.closeGuide();
-    /*
     } else if (this.props.selectedKeywordId) {
-      this.clearSelectedKeyword(e);
-    */
+      this.clearSelectedKeyword();
     }
   };
 
