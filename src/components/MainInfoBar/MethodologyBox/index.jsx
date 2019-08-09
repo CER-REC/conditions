@@ -4,7 +4,9 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import { lang, nltkLink } from '../../../constants';
 import './styles.scss';
 
-const imageContext = require.context('../../../../public/images/keywordMethodology/', true, /\.png$/);
+const imageContext = require.context('./keywordMethodology/', true, /\.png$/);
+// eslint-disable-next-line react/prop-types
+const Image = ({ children, src }) => <img src={src} alt={children} title={children} />;
 const images = imageContext.keys().reduce((acc, cur) => {
   const [imageLang, id] = cur.match(/^\.\/(\w+)\/KeywordMethodology(\d+)_/).slice(1);
 
@@ -12,8 +14,9 @@ const images = imageContext.keys().reduce((acc, cur) => {
     acc.push((
       <AdvancedFormattedMessage
         id={`components.mainInfoBar.content.keywords.${id}`}
-        tag={({ children }) => <img src={imageContext(cur)} alt={children} title={children} />}
+        tag={Image}
         key={id}
+        src={imageContext(cur)}
       />
     ));
   }
