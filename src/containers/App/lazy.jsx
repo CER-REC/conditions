@@ -53,6 +53,7 @@ import randomArrayValue from '../../utilities/randomArrayValue';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
+import DownloadPopup from '../../components/DownloadPopup';
 import TotalConditionsPopup from '../../components/TotalConditionsPopup';
 
 import './styles.scss';
@@ -69,7 +70,6 @@ const link = new HttpLink({
 });
 const client = new ApolloClient({ cache, link, fetch });
 
-const noop = () => {};
 const tutorialTiming = 5000;
 
 const transitionStates = {
@@ -106,6 +106,7 @@ class App extends React.PureComponent {
       finalKeywordPosition: { x: 0, y: 0 },
       isIntermediatePopupOpen: false,
       isCompanyPopupOpen: false,
+      isDownloadPopupOpen: false,
       isTotalConditionNumberPopupOpen: false,
     };
     this.ref = React.createRef();
@@ -524,6 +525,14 @@ class App extends React.PureComponent {
     }
   }
 
+  openDownloadPopup = () => {
+    this.setState({ isDownloadPopupOpen: true });
+  }
+
+  closeDownloadPopup = () => {
+    this.setState({ isDownloadPopupOpen: false });
+  }
+
   openTotalConditionNumberPopup = () => {
     this.setState({ isTotalConditionNumberPopupOpen: true });
   }
@@ -622,6 +631,11 @@ class App extends React.PureComponent {
             )}
             lastUpdated={this.props.allConfigurationData.lastUpdated}
             selectedKeywordId={this.props.selected.keywordId}
+            openDownloadModal={this.openDownloadPopup}
+          />
+          <DownloadPopup
+            isOpen={this.state.isDownloadPopupOpen}
+            closeModal={this.closeDownloadPopup}
           />
           <section className="appControls">
             <BrowseBy
@@ -707,7 +721,7 @@ class App extends React.PureComponent {
               {({ data, loading, error }) => {
                 let shortName = '';
                 let instruments = [];
-                let instrumentNumber = '';
+                let documentNumber;
                 let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
@@ -739,7 +753,7 @@ class App extends React.PureComponent {
 
                     itemIndex = instruments[instrumentIndex].conditions
                       .findIndex(condition => condition.id === selected.condition);
-                    ({ instrumentNumber } = instruments[instrumentIndex]);
+                    ({ documentNumber } = instruments[instrumentIndex]);
 
                     counts.instruments = instruments.length;
                     counts.conditions = instruments.reduce(
@@ -773,11 +787,15 @@ class App extends React.PureComponent {
                       browseBy={this.props.browseBy}
                       {...conditionDetailsViewProps}
                     />
-                    <RegDocsPopup
-                      isOpen={this.state.isIntermediatePopupOpen}
-                      closeModal={this.closeRegDocPopup}
-                      instrument={instrumentNumber}
-                    />
+                    {(!documentNumber) ? null
+                      : (
+                        <RegDocsPopup
+                          isOpen={this.state.isIntermediatePopupOpen}
+                          closeModal={this.closeRegDocPopup}
+                          document={documentNumber}
+                        />
+                      )
+                    }
                     <CompanyPopup
                       projectName={shortName}
                       closeModal={this.closeCompanyPopup}
@@ -793,7 +811,7 @@ class App extends React.PureComponent {
         <Footer
           setMainInfoBarPane={this.setMainInfoBarPane}
           mainInfoBarPane={this.state.mainInfoBarPane}
-          openDataModal={noop}
+          openDataModal={this.openDownloadPopup}
         />
       </div>
     );

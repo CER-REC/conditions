@@ -71,4 +71,7 @@ export const regDocsUrl = (lang === 'en')
   ? 'https://apps.neb-one.gc.ca/REGDOCS/Search?txthl='
   : 'https://apps.neb-one.gc.ca/REGDOCS/Recherche/Index/?txthl=';
 
+export const localDataURL = lang === 'en' ? 'http://www.neb-one.gc.ca/open/conditions/conditions.csv' : 'http://www.neb-one.gc.ca/ouvert/conditions/conditions.csv';
+
+export const fileDownloadName = localDataURL.substring(localDataURL.lastIndexOf('/') + 1, localDataURL.length);
 export const guideSize = 128;
