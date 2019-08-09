@@ -40,17 +40,23 @@ class ConditionList extends React.PureComponent {
     const scrollSelector = `[data-heading="${instrumentIndex}-${itemIndex}"]`;
 
     const elm = list.querySelector(scrollSelector);
-    elm.scrollIntoView({ block: 'center' });
+    const elmRect = elm.getBoundingClientRect();
+
+    const listRect = list.getBoundingClientRect();
+
+    const elmTop = elmRect.top + list.scrollTop;
+    const listTop = listRect.top;
+
+    list.scrollTop = (elmTop - listTop) - ((listRect.height - elmRect.height) / 2);
   }
 
   onChange = (i) => {
-    const { conditionId, instrumentId, instrumentIndex, itemIndex } = this.props.items[i];
+    const { conditionId, instrumentId } = this.props.items[i];
     if (conditionId) {
       this.props.updateSelectedCondition(conditionId);
     } else {
       this.props.updateSelectedInstrument(instrumentId);
     }
-    this.scrollTo(instrumentIndex, itemIndex);
   }
 
   render() {
@@ -67,7 +73,10 @@ class ConditionList extends React.PureComponent {
           </div>
         )
         : (
-          <div key={`${item.instrumentIndex}-${item.itemIndex}`} data-heading={`${item.instrumentIndex}-${item.itemIndex}`}>
+          <div
+            key={`${item.instrumentIndex}-${item.itemIndex}`}
+            data-heading={`${item.instrumentIndex}-${item.itemIndex}`}
+          >
             <div className={classNames('barMarker', { marked: item.marked })} />
 
             <BarContainer

@@ -391,11 +391,13 @@
       "totalConditions": "Total Number of Conditions for Project",
       "associated": "Associated Companies"
     },
-    "regionCompanies": {
-      "title": "Companies in Selected Region:"
-    },
-    "regionConditionSummary": {
-      "title": "Total Conditions for Selected Region"
+    "regionSummary": {
+      "regionCompanies": {
+        "title": "Companies in Selected Region:"
+      },
+      "regionConditions": {
+        "title": "Total Conditions for Selected Region"
+      }
     },
     "smallMultiplesLegend": {
       "all": {

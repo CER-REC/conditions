@@ -1,7 +1,7 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { storiesForComponent, withStyles } from '../../../.storybook/utils';
-import withStatus from '../../../.storybook/addon-status';
+import { storiesForComponent, withStyles } from '../../../../.storybook/utils';
+import withStatus from '../../../../.storybook/addon-status';
 import ReadMe from './README.md';
 import RegionCompanies from '.';
 
@@ -17,7 +17,7 @@ const companies = [
 ];
 const active = ['3'];
 
-storiesForComponent('Components|RegionCompanies', module, ReadMe)
+storiesForComponent('Components|RegionSummary/RegionCompanies', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['openProjectDetails'] }))
   .addDecorator(withStyles(`

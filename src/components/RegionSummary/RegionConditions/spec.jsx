@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { shouldBehaveLikeAComponent } from '../../tests/utilities';
-import RegionConditionSummary from '.';
-import { aggregatedCount, displayOrder } from '../../mockData';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
+import RegionConditions from '.';
+import { aggregatedCount, displayOrder } from '../../../mockData';
 
-describe('Component|RegionConditionSummary', () => {
+describe('Component|RegionSummary/RegionConditions', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow((
-        <RegionConditionSummary
+        <RegionConditions
           selectedFeature="theme"
           selectedAggregatedCount={aggregatedCount}
           displayOrder={displayOrder}
@@ -17,7 +17,7 @@ describe('Component|RegionConditionSummary', () => {
       ));
     });
 
-    shouldBehaveLikeAComponent(RegionConditionSummary, () => wrapper);
+    shouldBehaveLikeAComponent(RegionConditions, () => wrapper);
 
     test('should render a formatted message for the title', () => {
       expect(wrapper.find('FormattedMessage')).toHaveLength(1);
