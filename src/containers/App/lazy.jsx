@@ -113,19 +113,23 @@ class App extends React.PureComponent {
 
     this.lastPlayTimer = 0;
 
-    const updateSelectionWrapped = (from, variables, staticSelection = {}) => {
+    const updateSelectionWrapped = (from, variables, staticSelection = {}, eager = true) => {
       updateSelection(
         this.props.selected,
         this.props.setSelectedMultiple,
         client,
         from,
         variables,
+        ((eager) ? null : staticSelection),
       );
 
-      this.props.setSelectedMultiple({
-        [`${from}Id`]: variables.id,
-        ...staticSelection,
-      });
+      // Set the known values without having to wait for queries to return
+      if (eager) {
+        this.props.setSelectedMultiple({
+          [from]: variables.id,
+          ...staticSelection,
+        });
+      }
     };
     this.updateSelection = {
       fromProject: id => updateSelectionWrapped('project', { id }),
