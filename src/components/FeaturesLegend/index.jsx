@@ -7,7 +7,7 @@ import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import { displayOrder, aggregatedFeatureData } from '../../proptypes';
 import getFeatureColor from '../../utilities/getFeatureColor';
 
-import flagImage from '../../../public/images/featuresLegend/greaterThanTenFlag.png';
+import flagImage from './images/greaterThanTenFlag.png';
 
 import './styles.scss';
 
