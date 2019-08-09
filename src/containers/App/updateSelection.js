@@ -20,7 +20,7 @@ const defaultSelection = {
 };
 
 const selectionPaths = {
-  Project: {
+  project: {
     query: getTreeFromProject,
     selection: (project, selected) => ({
       project: project.id,
@@ -40,7 +40,7 @@ const selectionPaths = {
     }),
   },
 
-  Region: {
+  region: {
     query: getTreeFromRegion,
     selection: (region, selected) => {
       if (region.instruments.length === 0) { return { region: region.id }; }
@@ -66,7 +66,7 @@ const selectionPaths = {
     },
   },
 
-  Company: {
+  company: {
     query: getTreeFromCompany,
     selection: (company, selected) => {
       if (!company.projects.length) { return { company: company.id }; }
@@ -93,7 +93,7 @@ const selectionPaths = {
     },
   },
 
-  Instrument: {
+  instrument: {
     query: getTreeFromInstrument,
     selection: (instrument, selected) => ({
       instrument: instrument.id,
@@ -107,7 +107,7 @@ const selectionPaths = {
     }),
   },
 
-  Condition: {
+  condition: {
     query: getTreeFromCondition,
     selection: (condition, selected) => ({
       condition: condition.id,
