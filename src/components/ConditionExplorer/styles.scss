@@ -89,7 +89,10 @@ $keywordColors: (
   }
 
   .guide {
-   fill: $Guide;
+    fill: $Guide;
+    &.selected {
+      fill: $MainOrange;
+    }
   }
 
   .guideOutline {

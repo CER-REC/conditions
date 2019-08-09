@@ -396,7 +396,7 @@ export default class PhysicsVariant extends React.PureComponent {
           onTouchEnd={this.onGuideMouseUp}
         />
         <path
-          className="guide"
+          className={classNames('guide', (this.props.selectedKeywordId > -1) ? 'selected' : '')}
           d={this.guide.renderedPathPoints}
           onMouseDown={this.onGuideMouseDown}
           onTouchStart={this.onGuideMouseDown}
