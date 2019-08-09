@@ -64,7 +64,7 @@ const ViewOne = props => (
       <ShortcutInfoBar
         handleInfoBar={false}
         jumpToAbout={props.jumpToAbout}
-        openDataModal={noop}
+        openDataModal={props.openDownloadModal}
       />
     </section>
   </section>
@@ -83,6 +83,7 @@ ViewOne.propTypes = {
   layoutOnly: PropTypes.bool,
   physicsPaused: PropTypes.bool,
   lastUpdated: PropTypes.string,
+  openDownloadModal: PropTypes.func,
 };
 
 ViewOne.defaultProps = {
@@ -90,6 +91,7 @@ ViewOne.defaultProps = {
   layoutOnly: PropTypes.false,
   physicsPaused: false,
   lastUpdated: '1970-01-01T00:00:00Z',
+  openDownloadModal: noop,
 };
 
 export default ViewOne;
