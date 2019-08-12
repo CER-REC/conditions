@@ -1,4 +1,6 @@
 .ContentBlock {
   padding-bottom: 0.4rem;
-  white-space: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

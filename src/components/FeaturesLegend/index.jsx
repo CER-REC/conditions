@@ -3,23 +3,17 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LegendItem from './LegendItem';
 import FeatureFlag from '../FeatureFlag';
+import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import { displayOrder, aggregatedFeatureData } from '../../proptypes';
 import getFeatureColor from '../../utilities/getFeatureColor';
 
+import flagImage from './images/greaterThanTenFlag.png';
+
 import './styles.scss';
 
-const greaterThanTenFlag = (
-  <svg className="greaterThanTenFlag" viewBox="0 0 23 12">
-    <path d="
-      M -1 0
-      L 16 0
-      L 22 6
-      L 16 12
-      L -1 12
-      Z
-    "
-    />
-  </svg>
+// eslint-disable-next-line react/prop-types
+const greaterThanTenFlag = ({ children }) => (
+  <img src={flagImage} alt={children} title={children} />
 );
 
 const FeaturesLegend = (props) => {
@@ -46,7 +40,10 @@ const FeaturesLegend = (props) => {
             <span className="FlagDesc">10</span>
           </div>
           <div className="legendRow">
-            {greaterThanTenFlag}
+            <AdvancedFormattedMessage
+              id="common.legend.greaterThanTenConditions"
+              tag={greaterThanTenFlag}
+            />
             <span className="FlagDesc">&gt;10</span>
           </div>
         </div>

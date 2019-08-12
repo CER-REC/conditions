@@ -88,7 +88,11 @@
     },
     "status": {
       "CLOSED": "Closed",
-      "IN_PROGRESS": "In Progress"
+      "IN_PROGRESS": "In Progress",
+      "ALL_CONDITIONS_MET": "All Conditions Met",
+      "EXPIRED": "Expired",
+      "DRAFT": "Draft",
+      "COMPLETED": "Completed"
     },
     "filing": {
       "REQUIRED": "Filing Required",
@@ -344,7 +348,14 @@
       },
       "content": {
         "methodology": "Click {here} to download a PDF file explaining our data collection methodology.",
-        "keywords": "[Placeholder for an explanation of...]",
+        "keywords": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": ""
+        },
         "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
         "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
         "emailUs": "Email us with your comments and ideas: {email}. We look forward to hearing from you.",
@@ -391,11 +402,13 @@
       "totalConditions": "Total Number of Conditions for Project",
       "associated": "Associated Companies"
     },
-    "regionCompanies": {
-      "title": "Companies in Selected Region:"
-    },
-    "regionConditionSummary": {
-      "title": "Total Conditions for Selected Region"
+    "regionSummary": {
+      "regionCompanies": {
+        "title": "Companies in Selected Region:"
+      },
+      "regionConditions": {
+        "title": "Total Conditions for Selected Region"
+      }
     },
     "smallMultiplesLegend": {
       "all": {
@@ -445,7 +458,7 @@
       "total": "Total Conditions",
       "forProject": "for this Project",
       "learnMore": "(learn more)"
-      
+
     },
     "errorBoundary": {
       "errorMessage": "Something went wrong.",

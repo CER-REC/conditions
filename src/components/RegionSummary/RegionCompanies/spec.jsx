@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { shouldBehaveLikeAComponent } from '../../tests/utilities';
+import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import RegionCompanies from '.';
 
 const companies = [
@@ -18,7 +18,7 @@ const active = ['3'];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|RegionCompanies', () => {
+describe('Components|RegionSummary/RegionCompanies', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {

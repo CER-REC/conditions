@@ -67,8 +67,8 @@ class ConditionDetails extends React.Component {
     const items = this.getListData();
 
     return (
-      <section className="ConditionDetails">
-        <div className={classNames('main', { expanded, expandable: this.props.isExpandable })}>
+      <section className={classNames('ConditionDetails', { expanded })}>
+        <div className={classNames('main', { expandable: this.props.isExpandable })}>
           <ProjectHeader
             isExpandable={this.props.isExpandable}
             expanded={this.props.expanded}
