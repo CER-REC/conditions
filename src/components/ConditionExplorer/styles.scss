@@ -89,6 +89,7 @@ $keywordColors: (
   }
   .guideTransitionWrapper {
     fill: $Guide;
+    transition: fill 0.75s ease-out 0.75s;
     &.selected {
       fill: $MainOrange;
       transition: fill 0.75s ease-out 0.75s; 
