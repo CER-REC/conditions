@@ -395,15 +395,17 @@ export default class PhysicsVariant extends React.PureComponent {
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
-        <path
-          className={classNames('guide', (this.props.selectedKeywordId > -1) ? 'selected' : '')}
-          d={this.guide.renderedPathPoints}
-          onMouseDown={this.onGuideMouseDown}
-          onTouchStart={this.onGuideMouseDown}
-          onMouseUp={this.onGuideMouseUp}
-          onTouchEnd={this.onGuideMouseUp}
-        />
-        {this.renderMessages()}
+        <g className={classNames('guideTransitionWrapper', (this.props.selectedKeywordId > -1) ? 'selected' : '')}>
+          <path
+            className="guide"
+            d={this.guide.renderedPathPoints}
+            onMouseDown={this.onGuideMouseDown}
+            onTouchStart={this.onGuideMouseDown}
+            onMouseUp={this.onGuideMouseUp}
+            onTouchEnd={this.onGuideMouseUp}
+          />
+          {this.renderMessages()}
+        </g>
       </g>
     );
   }
