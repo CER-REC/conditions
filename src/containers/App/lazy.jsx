@@ -8,7 +8,7 @@ import { HttpLink } from 'apollo-link-http';
 import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { connect, Provider } from 'react-redux';
+import { connect, batch, Provider } from 'react-redux';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
@@ -113,24 +113,32 @@ class App extends React.PureComponent {
 
     this.lastPlayTimer = 0;
 
-    const updateSelectionWrapped = (from, variables, staticSelection = {}) => {
+    const updateSelectionWrapped = (from, variables, staticSelection = {}, eager = true) => {
       updateSelection(
         this.props.selected,
         this.props.setSelectedMultiple,
         client,
         from,
         variables,
-        staticSelection,
+        ((eager) ? null : staticSelection),
       );
+
+      // Set the known values without having to wait for queries to return
+      if (eager) {
+        this.props.setSelectedMultiple({
+          [from]: variables.id,
+          ...staticSelection,
+        });
+      }
     };
     this.updateSelection = {
-      fromProject: id => updateSelectionWrapped('Project', { id }),
-      fromRegion: id => updateSelectionWrapped('Region', { id }),
-      fromCompany: id => updateSelectionWrapped('Company', { id }),
-      fromInstrument: id => updateSelectionWrapped('Instrument', { id }),
-      fromCondition: id => updateSelectionWrapped('Condition', { id }),
+      fromProject: id => updateSelectionWrapped('project', { id }),
+      fromRegion: id => updateSelectionWrapped('region', { id }),
+      fromCompany: id => updateSelectionWrapped('company', { id }),
+      fromInstrument: id => updateSelectionWrapped('instrument', { id }),
+      fromCondition: id => updateSelectionWrapped('condition', { id }),
       fromSearchedKeyword: (keywordId, conditionId) => updateSelectionWrapped(
-        'Condition',
+        'condition',
         { id: conditionId },
         { keywordId },
       ),
@@ -492,7 +500,10 @@ class App extends React.PureComponent {
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
 
-      this.props.setIncluded(newIncluded);
+      batch(() => {
+        this.props.setSelectedMultiple({ keywordId });
+        this.props.setIncluded(newIncluded);
+      });
 
       this.updateSearch({
         includeKeywords: newIncluded,
@@ -513,14 +524,17 @@ class App extends React.PureComponent {
       const keyword = this.selectedKeywordInstance.keyword.value;
       const newIncluded = this.props.included.filter(term => term !== keyword);
 
-      this.props.setIncluded(newIncluded);
+      batch(() => {
+        this.props.setSelectedMultiple({ keywordId: -1 });
+        this.props.setIncluded(newIncluded);
+      });
+
       this.updateSearch({
         includeKeywords: newIncluded,
         excludeKeywords: this.props.excluded,
         findAny: this.props.findAny,
       });
 
-      this.props.setSelectedMultiple({ keywordId: -1 });
       this.selectedKeywordInstance = null;
     }
   }
