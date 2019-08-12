@@ -10,4 +10,3 @@ DomReady(() => {
     document.getElementById('reactRoot'),
   );
 });
-

@@ -57,8 +57,6 @@ import DownloadPopup from '../../components/DownloadPopup';
 import TotalConditionsPopup from '../../components/TotalConditionsPopup';
 
 import './styles.scss';
-import './force-scrollbars-visible.css';
-
 import {
   conditionData,
 } from '../../mockData';
