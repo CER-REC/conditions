@@ -33,5 +33,6 @@ storiesForComponent('Components|RegionSummary', module, ReadMe)
       companies={companies}
       activeConditionCompanies={active}
       openProjectDetails={noop}
+      selectCompany={noop}
     />
   ));

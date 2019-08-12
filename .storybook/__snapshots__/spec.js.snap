@@ -16994,27 +16994,67 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
         <li
           title="Alberta Trans-Alta e"
         >
-          Alberta Trans-Alta e
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Alberta Trans-Alta e
+          </button>
         </li>
         <li
           title="Alberta Trans-Alta è"
         >
-          Alberta Trans-Alta è
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Alberta Trans-Alta è
+          </button>
         </li>
         <li
           title="Canada-Montana Pipe Line Company"
         >
-          Canada-Montana Pipe Line Company
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Canada-Montana Pipe Line Company
+          </button>
         </li>
         <li
           title="Express Pipeline Ltd."
         >
-          Express Pipeline Ltd.
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Express Pipeline Ltd.
+          </button>
         </li>
         <li
           title="Kinder Morgan Cochin Ulc."
         >
-          Kinder Morgan Cochin Ulc.
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Kinder Morgan Cochin Ulc.
+          </button>
           <button
             className="asterisk"
             focusable={true}
@@ -17029,17 +17069,41 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
         <li
           title="Nova Gas Transmission Ltd."
         >
-          Nova Gas Transmission Ltd.
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Nova Gas Transmission Ltd.
+          </button>
         </li>
         <li
           title="Power Plants R Us"
         >
-          Power Plants R Us
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Power Plants R Us
+          </button>
         </li>
         <li
           title="Z-Anti"
         >
-          Z-Anti
+          <button
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Z-Anti
+          </button>
         </li>
       </ul>
     </div>
@@ -17083,27 +17147,67 @@ exports[`Storyshots Components|RegionSummary/RegionCompanies default 1`] = `
           <li
             title="Alberta Trans-Alta e"
           >
-            Alberta Trans-Alta e
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Alberta Trans-Alta e
+            </button>
           </li>
           <li
             title="Alberta Trans-Alta è"
           >
-            Alberta Trans-Alta è
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Alberta Trans-Alta è
+            </button>
           </li>
           <li
             title="Canada-Montana Pipe Line Company"
           >
-            Canada-Montana Pipe Line Company
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Canada-Montana Pipe Line Company
+            </button>
           </li>
           <li
             title="Express Pipeline Ltd."
           >
-            Express Pipeline Ltd.
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Express Pipeline Ltd.
+            </button>
           </li>
           <li
             title="Kinder Morgan Cochin Ulc."
           >
-            Kinder Morgan Cochin Ulc.
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Kinder Morgan Cochin Ulc.
+            </button>
             <button
               className="asterisk"
               focusable={true}
@@ -17118,17 +17222,41 @@ exports[`Storyshots Components|RegionSummary/RegionCompanies default 1`] = `
           <li
             title="Nova Gas Transmission Ltd."
           >
-            Nova Gas Transmission Ltd.
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Nova Gas Transmission Ltd.
+            </button>
           </li>
           <li
             title="Power Plants R Us"
           >
-            Power Plants R Us
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Power Plants R Us
+            </button>
           </li>
           <li
             title="Z-Anti"
           >
-            Z-Anti
+            <button
+              focusable={true}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Z-Anti
+            </button>
           </li>
         </ul>
       </div>

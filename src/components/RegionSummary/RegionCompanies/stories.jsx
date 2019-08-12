@@ -1,9 +1,10 @@
 import React from 'react';
-import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
 import { storiesForComponent, withStyles } from '../../../../.storybook/utils';
 import withStatus from '../../../../.storybook/addon-status';
 import ReadMe from './README.md';
 import RegionCompanies from '.';
+
+const noop = () => {};
 
 const companies = [
   { id: '1', name: 'Canada-Montana Pipe Line Company' },
@@ -19,7 +20,6 @@ const active = ['3'];
 
 storiesForComponent('Components|RegionSummary/RegionCompanies', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
-  .addDecorator(withInteraction({ actions: ['openProjectDetails'] }))
   .addDecorator(withStyles(`
     .storyWrapper { position: relative; width: 300px; height: 500px; }
   `))
@@ -28,11 +28,8 @@ storiesForComponent('Components|RegionSummary/RegionCompanies', module, ReadMe)
       <RegionCompanies
         companies={companies}
         activeConditionCompanies={active}
-        {...getInteractionProps()}
+        openProjectDetails={noop}
+        selectCompany={noop}
       />
     </div>
-  ), {
-    actions: {
-      openProjectDetails: () => {},
-    },
-  });
+  ));

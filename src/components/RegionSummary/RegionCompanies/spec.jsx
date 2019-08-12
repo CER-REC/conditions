@@ -5,16 +5,16 @@ import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 import RegionCompanies from '.';
 
 const companies = [
-  { id: '1', name: 'Canada-Montana Pipe Line Company' },
-  { id: '2', name: 'Express Pipeline Ltd.' },
-  { id: '3', name: 'Kinder Morgan Cochin Ulc.' },
-  { id: '4', name: 'Nova Gas Transmission Ltd.' },
-  { id: '11', name: 'Alberta Trans-Alta è' },
-  { id: '12', name: 'Alberta Trans-Alta e' },
-  { id: '13', name: 'Z-Anti' },
-  { id: '14', name: 'Power Plants R Us' },
+  { id: 1, name: 'Canada-Montana Pipe Line Company' },
+  { id: 2, name: 'Express Pipeline Ltd.' },
+  { id: 3, name: 'Kinder Morgan Cochin Ulc.' },
+  { id: 4, name: 'Nova Gas Transmission Ltd.' },
+  { id: 11, name: 'Alberta Trans-Alta è' },
+  { id: 12, name: 'Alberta Trans-Alta e' },
+  { id: 13, name: 'Z-Anti' },
+  { id: 14, name: 'Power Plants R Us' },
 ];
-const active = ['3'];
+const active = [3];
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
@@ -27,6 +27,7 @@ describe('Components|RegionSummary/RegionCompanies', () => {
           companies={companies}
           activeConditionCompanies={active}
           openProjectDetails={noop}
+          selectCompany={noop}
         />,
       );
     });
@@ -47,11 +48,38 @@ describe('Components|RegionSummary/RegionCompanies', () => {
     });
 
     test('should display a asterisk beside Kinder Morgan Cochin Ulc.', () => {
-      expect(wrapper.find('li').at(4).find('button').type()).toBe('button');
+      expect(
+        wrapper
+          .find('li').at(4)
+          .find('button')
+          .last()
+          .hasClass('asterisk'),
+      ).toBe(true);
     });
 
     test('should render a formatted message for the title', () => {
       expect(wrapper.find('FormattedMessage')).toHaveLength(1);
+    });
+  });
+
+  describe('when a company is clicked', () => {
+    let spy;
+    let wrapper;
+    beforeEach(() => {
+      spy = jest.fn();
+      wrapper = shallow(
+        <RegionCompanies
+          companies={companies}
+          activeConditionCompanies={active}
+          openProjectDetails={noop}
+          selectCompany={spy}
+        />,
+      );
+    });
+    test('should call the selectCompany function', () => {
+      wrapper.find('button').first().simulate('click', eventFuncs);
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith(12, eventFuncs);
     });
   });
 
@@ -65,12 +93,14 @@ describe('Components|RegionSummary/RegionCompanies', () => {
           companies={companies}
           activeConditionCompanies={active}
           openProjectDetails={spy}
+          selectCompany={noop}
         />,
       );
     });
     test('should call the openProjectDetails function', () => {
-      wrapper.find('button').first().simulate('click', eventFuncs);
+      wrapper.find('.asterisk').first().simulate('click', eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith(3, eventFuncs);
     });
   });
 });
