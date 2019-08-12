@@ -13,7 +13,6 @@ export default (instruments, selectedFeature, displayOrder) => (
       dateSunset,
       status,
       regions,
-      name,
       conditions,
       documentNumber,
     } = instrument;
@@ -61,7 +60,6 @@ export default (instruments, selectedFeature, displayOrder) => (
       sunsetDate: dateSunset,
       status,
       location: allLocations,
-      activity: name,
       documentNumber,
       conditions: formattedConditions,
     };

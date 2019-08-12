@@ -155,7 +155,6 @@
       "sunsetDate": "Sunset Date",
       "status": "Instrument Status",
       "type": "Instrument Type",
-      "activity": "Instrument Activity",
       "keywords": "Search Matches",
       "text": "Text",
       "selectedConditionFeature": "Selected Condition Feature",

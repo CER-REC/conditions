@@ -152,7 +152,6 @@
       "sunsetDate": "Date de réexamen",
       "status": "État de l’instrument",
       "type": "Type d’instrument",
-      "activity": "Activité liée à l’instrument",
       "keywords": "Mot-clé",
       "text": "Texte",
       "selectedConditionFeature": "Particularité de la condition sélectionnée",

@@ -20,7 +20,6 @@ export default [
     status: 'IN_PROGRESS',
     location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
-    activity: lorem,
     id: 100,
     conditions: [
       {
@@ -65,7 +64,6 @@ export default [
     status: 'IN_PROGRESS',
     location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
-    activity: lorem,
     id: 200,
     conditions: [
       {
@@ -110,7 +108,6 @@ export default [
     status: 'CLOSED',
     location: ['Albuquerque, NM'],
     type: 'Construction of Oil Pipeline',
-    activity: lorem,
     id: 300,
     conditions: [
       {

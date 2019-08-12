@@ -2,7 +2,6 @@ import gql from 'graphql-tag';
 
 const instrumentFields = `
   id
-  name
   prefix
   status
   regions {
