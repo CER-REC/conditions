@@ -572,8 +572,10 @@ class App extends React.PureComponent {
   }
 
   selectRegionCompany = (id) => {
-    this.props.setBrowseBy('company');
-    this.updateSelection.fromCompany(id);
+    batch(() => {
+      this.props.setBrowseBy('company');
+      this.updateSelection.fromCompany(id);
+    });
   }
 
   render() {
