@@ -5928,14 +5928,11 @@ exports[`Storyshots Components|FeaturesLegend Project Legend 1`] = `
         <div
           className="legendRow"
         >
-          <svg
-            className="greaterThanTenFlag"
-            viewBox="0 0 23 12"
-          >
-            <path
-              d=" M -1 0 L 16 0 L 22 6 L 16 12 L -1 12 Z "
-            />
-          </svg>
+          <img
+            alt="Greater than Ten Conditions"
+            src={Object {}}
+            title="Greater than Ten Conditions"
+          />
           <span
             className="FlagDesc"
           >
