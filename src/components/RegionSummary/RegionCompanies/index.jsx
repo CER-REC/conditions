@@ -12,10 +12,18 @@ const RegionCompanies = (props) => {
   const companyItems = companies
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((company) => {
+      const companyButton = (
+        <button
+          type="button"
+          onClick={() => {}}
+        >
+          {company.name}
+        </button>
+      );
       const active = !activeConditionCompanies.includes(company.id)
         ? null
         : <button type="button" className="asterisk" {...handleInteraction(openProjectDetails, company.id)}>*</button>;
-      return (<li title={company.name} key={company.id}>{company.name}{active}</li>);
+      return (<li title={company.name} key={company.id}>{companyButton}{active}</li>);
     });
   return (
     <div className="RegionCompanies">

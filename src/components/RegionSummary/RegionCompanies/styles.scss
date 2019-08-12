@@ -57,21 +57,35 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-    }
 
-    .asterisk {
-      padding: 0;
+      button {
+        border: none;
+        margin: none;
+        padding: none;
+        background: none;
+        font: inherit;
+        color: inherit;
 
-      font-size: 21px;
-      font-family: 'FiraSansCondensedBold';
-      line-height: 16px;
-      vertical-align: middle;
+        &:hover {
+          color: $LinksTextButtons;
+          text-decoration: underline;
+        }
+      }
 
-      color: $LinksTextButtons;
-      background: none;
+      .asterisk {
+        padding: 0;
 
-      border: none;
-      outline: inherit;
+        font-size: 21px;
+        font-family: 'FiraSansCondensedBold';
+        line-height: 16px;
+        vertical-align: middle;
+
+        color: $LinksTextButtons;
+        background: none;
+
+        border: none;
+        outline: inherit;
+      }
     }
   }
 }
