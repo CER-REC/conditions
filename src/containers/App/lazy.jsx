@@ -57,6 +57,7 @@ import DownloadPopup from '../../components/DownloadPopup';
 import TotalConditionsPopup from '../../components/TotalConditionsPopup';
 
 import './styles.scss';
+import './force-scrollbars-visible.css';
 
 import {
   conditionData,
@@ -558,6 +559,7 @@ class App extends React.PureComponent {
   }
 
   render() {
+    document.body.classList.add('force-show-scrollbars');
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
     this.processedConditionCounts = this.processedConditionCounts
