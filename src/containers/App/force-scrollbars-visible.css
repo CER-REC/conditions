@@ -1,6 +1,5 @@
-.force-show-scrollbars {
-  background-color: red;
-}
+/*Adapted From https://gist.github.com/IceCreamYou/cd517596e5847a88e2bb0a091da43fb4*/
+
 .force-show-scrollbars ::-webkit-scrollbar-track:vertical {
   border-left: 1px solid #E7E7E7;
   box-shadow: 1px 0 1px 0 #F6F6F6 inset, -1px 0 1px 0 #F6F6F6 inset;
