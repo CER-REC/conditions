@@ -8,14 +8,14 @@ import handleInteraction from '../../../utilities/handleInteraction';
 import './styles.scss';
 
 const RegionCompanies = (props) => {
-  const { companies, activeConditionCompanies, openProjectDetails } = props;
+  const { companies, activeConditionCompanies, openProjectDetails, selectCompany } = props;
   const companyItems = companies
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((company) => {
       const companyButton = (
         <button
           type="button"
-          onClick={() => {}}
+          {...handleInteraction(selectCompany, company.id)}
         >
           {company.name}
         </button>
@@ -41,7 +41,9 @@ RegionCompanies.propTypes = {
   /** A List of the companies that belong to the region */
   companies: PropTypes.arrayOf(PropTypes.object).isRequired,
   /** A List of ID's of companies that belong to selected condition */
-  activeConditionCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  activeConditionCompanies: PropTypes.arrayOf(PropTypes.number).isRequired,
+  /** A function for selecting a company and switching to Company mode */
+  selectCompany: PropTypes.func.isRequired,
   /** A function for opening up the dialog to project details */
   openProjectDetails: PropTypes.func.isRequired,
   /** A class to hide or show the component according to the movement of the wheel */

@@ -571,6 +571,11 @@ class App extends React.PureComponent {
     this.setState({ isCompanyPopupOpen: false });
   }
 
+  selectRegionCompany = (id) => {
+    this.props.setBrowseBy('company');
+    this.updateSelection.fromCompany(id);
+  }
+
   render() {
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
@@ -690,6 +695,7 @@ class App extends React.PureComponent {
             setSelectedCompany={this.updateSelection.fromCompany}
             setSelectedRegion={this.updateSelection.fromRegion}
             setSelectedProject={this.updateSelection.fromProject}
+            selectRegionCompany={this.selectRegionCompany}
             filteredProjectLookup={this.props.filteredProjects}
             displayOrder={this.props.allConfigurationData.displayOrder}
             availableCategories={this.props.allConfigurationData.keywordCategories}
