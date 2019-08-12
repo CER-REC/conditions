@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
@@ -28,7 +29,14 @@ const RegionCompanies = (props) => {
   return (
     <div className="RegionCompanies">
       <div className="title">
-        <FormattedMessage id="components.regionSummary.regionCompanies.title" />
+        <AdvancedFormattedMessage
+          id="components.regionSummary.regionCompanies.title"
+          className="companies"
+        />
+        <AdvancedFormattedMessage
+          id="components.regionSummary.regionCompanies.select"
+          className="select"
+        />
       </div>
       <ul className={classNames({ hidden: props.isHidden })}>
         {companyItems}

@@ -9,23 +9,37 @@
   .title {
     position: relative;
 
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 
     width: 100%;
     height: 44px;
 
-    padding-left: 10%;
+    padding-left: 33px;
+
+    margin-bottom: 2px;
 
     background-color:  $LightGray;
 
     border-bottom-right-radius: 15px;
 
     span {
-      position: absolute;
-      bottom: 0;
+      display: block;
 
-      color: $Black77;
-      font-size: 16px;
+      &.companies {
+        margin-top: auto;
+
+        color: $Black77;
+        font-size: 16px;
+      }
+
+      &.select {
+        margin-bottom: 2px;
+
+        color: $Gray160;
+        font-size: 13px;
+        font-style: italic;
+      }
     }
   }
 
