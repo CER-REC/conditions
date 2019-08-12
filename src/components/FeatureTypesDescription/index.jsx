@@ -19,6 +19,19 @@ const FeatureTypeHeading = ({ feature, type }) => ((feature === 'instrument')
 );
 
 class FeatureTypesDescription extends React.PureComponent {
+  static propTypes = {
+    /** Keyword or path where types can be found (ex. "theme", "instrument.category" */
+    feature: PropTypes.string.isRequired,
+    /** Heading that the container should scroll to (ex. "security") */
+    subFeature: PropTypes.string,
+    /** Display order by feature type */
+    displayOrder: displayOrderPropType.isRequired,
+  };
+
+  static defaultProps = {
+    subFeature: '',
+  };
+
   constructor(props) {
     super(props);
     this.ref = React.createRef();
@@ -94,18 +107,5 @@ class FeatureTypesDescription extends React.PureComponent {
     );
   }
 }
-
-FeatureTypesDescription.propTypes = {
-  /** Keyword or path where types can be found (ex. "theme", "instrument.category" */
-  feature: PropTypes.string.isRequired,
-  /** Heading that the container should scroll to (ex. "security") */
-  subFeature: PropTypes.string,
-  /** Display order by feature type */
-  displayOrder: displayOrderPropType.isRequired,
-};
-
-FeatureTypesDescription.defaultProps = {
-  subFeature: '',
-};
 
 export default FeatureTypesDescription;

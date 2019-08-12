@@ -13,6 +13,44 @@ import Details from './Details';
 import { conditionData } from '../../proptypes';
 
 class ConditionDetails extends React.PureComponent {
+  static propTypes = {
+    browseBy: PropTypes.oneOf(['company', 'location']),
+    isExpandable: PropTypes.bool,
+    expanded: PropTypes.bool,
+    selectedProject: PropTypes.string.isRequired,
+    searchKeywords: PropTypes.shape({
+      include: PropTypes.arrayOf(PropTypes.string),
+      exclude: PropTypes.arrayOf(PropTypes.string),
+    }),
+    counts: PropTypes.shape({
+      instruments: PropTypes.number,
+      conditions: PropTypes.number,
+    }),
+    data: conditionData.isRequired,
+    selectedItem: PropTypes.shape({
+      instrumentIndex: PropTypes.number,
+      itemIndex: PropTypes.number,
+    }),
+    toggleExpanded: PropTypes.func,
+    updateSelectedInstrument: PropTypes.func.isRequired,
+    updateSelectedCondition: PropTypes.func.isRequired,
+    openIntermediatePopup: PropTypes.func.isRequired,
+    openProjectDetails: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    browseBy: 'company',
+    isExpandable: false,
+    expanded: false,
+    counts: {
+      instruments: 0,
+      conditions: 0,
+    },
+    searchKeywords: { include: [], exclude: [] },
+    selectedItem: { instrumentIndex: 0, itemIndex: -1 },
+    toggleExpanded: () => {},
+  };
+
   getListData = memoize(data => data.reduce(
     (acc, instrument, instrumentIndex) => {
       acc.push({
@@ -114,43 +152,5 @@ class ConditionDetails extends React.PureComponent {
     );
   }
 }
-
-ConditionDetails.propTypes = {
-  browseBy: PropTypes.oneOf(['company', 'location']),
-  isExpandable: PropTypes.bool,
-  expanded: PropTypes.bool,
-  selectedProject: PropTypes.string.isRequired,
-  searchKeywords: PropTypes.shape({
-    include: PropTypes.arrayOf(PropTypes.string),
-    exclude: PropTypes.arrayOf(PropTypes.string),
-  }),
-  counts: PropTypes.shape({
-    instruments: PropTypes.number,
-    conditions: PropTypes.number,
-  }),
-  data: conditionData.isRequired,
-  selectedItem: PropTypes.shape({
-    instrumentIndex: PropTypes.number,
-    itemIndex: PropTypes.number,
-  }),
-  toggleExpanded: PropTypes.func,
-  updateSelectedInstrument: PropTypes.func.isRequired,
-  updateSelectedCondition: PropTypes.func.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
-  openProjectDetails: PropTypes.func.isRequired,
-};
-
-ConditionDetails.defaultProps = {
-  browseBy: 'company',
-  isExpandable: false,
-  expanded: false,
-  counts: {
-    instruments: 0,
-    conditions: 0,
-  },
-  searchKeywords: { include: [], exclude: [] },
-  selectedItem: { instrumentIndex: 0, itemIndex: -1 },
-  toggleExpanded: () => {},
-};
 
 export default ConditionDetails;

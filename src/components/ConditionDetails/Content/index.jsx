@@ -20,6 +20,27 @@ const DangerousContentText = React.memo(({ children, content }) => (
 ));
 
 class Content extends React.PureComponent {
+  static propTypes = {
+    instrument: PropTypes.shape({
+      instrumentNumber: PropTypes.string.isRequired,
+      documentNumber: PropTypes.string,
+      issuanceDate: PropTypes.string.isRequired,
+      effectiveDate: PropTypes.string,
+      sunsetDate: PropTypes.string,
+      status: PropTypes.string.isRequired,
+      location: PropTypes.array.isRequired,
+      activity: PropTypes.string.isRequired,
+      conditions: PropTypes.arrayOf(PropTypes.object).isRequired,
+    }).isRequired,
+    itemIndex: PropTypes.number.isRequired,
+    openIntermediatePopup: PropTypes.func.isRequired,
+    includedKeywords: PropTypes.arrayOf(PropTypes.string),
+  };
+
+  static defaultProps = {
+    includedKeywords: [],
+  };
+
   renderContentText = (id, content) => (
     <AdvancedFormattedMessage id={id} tag={DangerousContentText} content={content} />
   )
@@ -144,24 +165,5 @@ class Content extends React.PureComponent {
     );
   }
 }
-
-Content.propTypes = {
-  instrument: PropTypes.shape({
-    instrumentNumber: PropTypes.string.isRequired,
-    documentNumber: PropTypes.string,
-    issuanceDate: PropTypes.string.isRequired,
-    effectiveDate: PropTypes.string,
-    sunsetDate: PropTypes.string,
-    status: PropTypes.string.isRequired,
-    location: PropTypes.array.isRequired,
-    conditions: PropTypes.arrayOf(PropTypes.object).isRequired,
-  }).isRequired,
-  itemIndex: PropTypes.number.isRequired,
-  openIntermediatePopup: PropTypes.func.isRequired,
-  includedKeywords: PropTypes.arrayOf(PropTypes.string),
-};
-Content.defaultProps = {
-  includedKeywords: [],
-};
 
 export default Content;

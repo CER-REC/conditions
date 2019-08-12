@@ -8,6 +8,24 @@ import 'dialog-polyfill/dialog-polyfill.css';
 import './styles.scss';
 
 class Modal extends React.PureComponent {
+  static propTypes = {
+    /** A non-rendered component to be rendered in the window */
+    component: componentType.isRequired,
+    /** Props to be passed to the component */
+    componentProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    /** Determines if the modal is opened or closed */
+    isOpen: PropTypes.bool,
+    /** Function that closes the modal */
+    closeModal: PropTypes.func.isRequired,
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    isOpen: false,
+    componentProps: {},
+    className: '',
+  };
+
   constructor(props) {
     super(props);
     this.lastFocus = null;
@@ -67,23 +85,5 @@ class Modal extends React.PureComponent {
     );
   }
 }
-
-Modal.propTypes = {
-  /** A non-rendered component to be rendered in the window */
-  component: componentType.isRequired,
-  /** Props to be passed to the component */
-  componentProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** Determines if the modal is opened or closed */
-  isOpen: PropTypes.bool,
-  /** Function that closes the modal */
-  closeModal: PropTypes.func.isRequired,
-  className: PropTypes.string,
-};
-
-Modal.defaultProps = {
-  isOpen: false,
-  componentProps: {},
-  className: '',
-};
 
 export default Modal;

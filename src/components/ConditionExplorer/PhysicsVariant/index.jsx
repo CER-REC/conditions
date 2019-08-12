@@ -388,7 +388,7 @@ export default class PhysicsVariant extends React.PureComponent {
                 }}
                 transform={`
                   scale(${instance.scale})
-                  rotate(${instance.body.angle * 180 / Math.PI})
+                  rotate(${(instance.body.angle * 180) / Math.PI})
                 `}
               >
                 {instance.keyword.value}

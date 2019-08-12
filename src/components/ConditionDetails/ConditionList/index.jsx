@@ -8,6 +8,28 @@ import List from '../../List';
 import BarContainer from '../../BarContainer';
 
 class ConditionList extends React.PureComponent {
+  static propTypes = {
+    items: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      isInstrument: PropTypes.bool,
+      instrumentNumber: PropTypes.string,
+      instrumentId: PropTypes.number.isRequired,
+      conditionId: PropTypes.number,
+      instrumentIndex: PropTypes.number.isRequired,
+      itemIndex: PropTypes.number.isRequired,
+      binnedValue: PropTypes.number,
+      fill: PropTypes.arrayOf(PropTypes.string),
+      marked: PropTypes.bool,
+    })).isRequired,
+    selectedItem: PropTypes.number,
+    updateSelectedInstrument: PropTypes.func.isRequired,
+    updateSelectedCondition: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    selectedItem: 0,
+  };
+
   constructor(props) {
     super(props);
     this.ref = React.createRef();
@@ -105,27 +127,5 @@ class ConditionList extends React.PureComponent {
     );
   }
 }
-
-ConditionList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    isInstrument: PropTypes.bool,
-    instrumentNumber: PropTypes.string,
-    instrumentId: PropTypes.number.isRequired,
-    conditionId: PropTypes.number,
-    instrumentIndex: PropTypes.number.isRequired,
-    itemIndex: PropTypes.number.isRequired,
-    binnedValue: PropTypes.number,
-    fill: PropTypes.arrayOf(PropTypes.string),
-    marked: PropTypes.bool,
-  })).isRequired,
-  selectedItem: PropTypes.number,
-  updateSelectedInstrument: PropTypes.func.isRequired,
-  updateSelectedCondition: PropTypes.func.isRequired,
-};
-
-ConditionList.defaultProps = {
-  selectedItem: 0,
-};
 
 export default ConditionList;

@@ -17,6 +17,21 @@ import TotalConditionsLabel from '../../components/TotalConditionsLabel';
 import DotLegend from '../../components/DotLegend';
 
 class ViewTwo extends React.PureComponent {
+  static propTypes = viewTwo;
+
+  static defaultProps = {
+    layoutOnly: false,
+    wheelData: [],
+    projectsData: [],
+    searchResults: {
+      companyIdLookup: {},
+      conditionIdLookup: {},
+      projectIdLookup: {},
+      regionIdLookup: {},
+    },
+    filteredProjectLookup: {},
+  };
+
   miniMapData = null;
 
   constructor(props) {
@@ -148,10 +163,8 @@ class ViewTwo extends React.PureComponent {
               : {}
             )}
           />
-          {(this.props.browseBy === 'company')
-            ? <DotLegend />
-            : null
-          }
+          {(this.props.browseBy !== 'company') ? null
+            : <DotLegend />}
         </section>
         <section className="companyBreakdown">
           {this.props.browseBy === 'location'
@@ -186,8 +199,7 @@ class ViewTwo extends React.PureComponent {
                   displayOrder={this.props.displayOrder}
                 />
               </React.Fragment>
-            )
-          }
+            )}
         </section>
 
         <section className="menus">
@@ -219,20 +231,5 @@ class ViewTwo extends React.PureComponent {
     );
   }
 }
-
-ViewTwo.propTypes = viewTwo;
-
-ViewTwo.defaultProps = {
-  layoutOnly: false,
-  wheelData: [],
-  projectsData: [],
-  searchResults: {
-    companyIdLookup: {},
-    conditionIdLookup: {},
-    projectIdLookup: {},
-    regionIdLookup: {},
-  },
-  filteredProjectLookup: {},
-};
 
 export default ViewTwo;

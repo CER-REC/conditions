@@ -19,6 +19,24 @@ const projectFeature = feat => geoConicConformal()
   .fitExtent([[2, 2], [viewBox.width - 4, viewBox.height - 4]], feat);
 
 class LocationWheelMinimap extends React.PureComponent {
+  static propTypes = {
+    /** Economic region, e.g. 'Vancouver Island and Coast' */
+    region: PropTypes.shape({
+      province: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+    /** A class to hide or show the component according to the movement of the wheel */
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    region: {
+      name: '',
+      province: '',
+    },
+    className: '',
+  };
+
   constructor() {
     super();
     this.state = {
@@ -89,23 +107,5 @@ class LocationWheelMinimap extends React.PureComponent {
     );
   }
 }
-
-LocationWheelMinimap.propTypes = {
-  /** Economic region, e.g. 'Vancouver Island and Coast' */
-  region: PropTypes.shape({
-    province: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  }),
-  /** A class to hide or show the component according to the movement of the wheel */
-  className: PropTypes.string,
-};
-
-LocationWheelMinimap.defaultProps = {
-  region: {
-    name: '',
-    province: '',
-  },
-  className: '',
-};
 
 export default LocationWheelMinimap;

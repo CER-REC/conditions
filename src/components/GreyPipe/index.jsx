@@ -19,8 +19,7 @@ const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
         <svg width="48" height="48" className="bottomSvg">
           <path d="M48 0 C48 0 48 48 0 48 L24 48 0 48 0 24 C0 24 24 24 24 0 L24 12 24 0" />
         </svg>
-      )
-    }
+      )}
     <div className="top" />
     <div className={classNames('vertical', { withBubbles: conditionCount !== null })}>
       {(mode === 'company' && conditionCount !== null)
@@ -31,8 +30,7 @@ const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
             <CountBubble count={projectCount} textId="projects" />
           </React.Fragment>
         )
-        : null
-      }
+        : null}
     </div>
   </div>
 );

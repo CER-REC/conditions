@@ -56,8 +56,7 @@ const ProjectChart = (props) => {
         )
         : (
           <div title={props.projectName} className="ProjectName"><p>{props.projectName}</p></div>
-        )
-      }
+        )}
     </div>
   );
 };

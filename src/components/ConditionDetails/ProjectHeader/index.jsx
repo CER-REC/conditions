@@ -37,14 +37,14 @@ const moreButton = (
 const ProjectHeader = props => (
   <div className="ProjectHeader">
     <div className="topBar">
-      {props.browseBy === 'company'
+      {(props.browseBy === 'company')
         ? (
           <React.Fragment>
             <AdvancedFormattedMessage
               id="components.conditionDetails.selectedProject"
               tag="h1"
             />
-            { props.selectedProject !== ''
+            {(props.selectedProject !== '')
               ? (
                 <button
                   type="button"
@@ -57,8 +57,7 @@ const ProjectHeader = props => (
                   </h2>
                 </button>
               )
-              : <div className="openProject" />
-            }
+              : <div className="openProject" />}
           </React.Fragment>
         )
         : (
@@ -69,8 +68,7 @@ const ProjectHeader = props => (
             />
             <div className="openProject" />
           </React.Fragment>
-        )
-      }
+        )}
       {!props.isExpandable ? null : (
         <button
           type="button"
@@ -81,15 +79,14 @@ const ProjectHeader = props => (
         </button>
       )}
     </div>
-    {props.counts.instruments
+    {(props.counts.instruments)
       ? (
         <div className="counts">
           <CountBubble count={props.counts.instruments} textId="instruments" />
           <CountBubble count={props.counts.conditions} textId="conditions" />
         </div>
       )
-      : null
-    }
+      : null}
   </div>
 );
 

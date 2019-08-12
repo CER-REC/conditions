@@ -23,6 +23,11 @@ library.add(
 );
 
 class ShortcutInfoBar extends React.PureComponent {
+  static propTypes = {
+    jumpToAbout: PropTypes.func.isRequired,
+    openDataModal: PropTypes.func.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = { expanded: false };
@@ -94,10 +99,5 @@ class ShortcutInfoBar extends React.PureComponent {
     );
   }
 }
-
-ShortcutInfoBar.propTypes = {
-  jumpToAbout: PropTypes.func.isRequired,
-  openDataModal: PropTypes.func.isRequired,
-};
 
 export default ShortcutInfoBar;

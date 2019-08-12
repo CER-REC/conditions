@@ -5,6 +5,37 @@ import ChartIndicator from '../../ChartIndicator';
 import './styles.scss';
 
 class StackGroup extends React.PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    controlYear: PropTypes.number,
+    totalPerYear: PropTypes.objectOf(PropTypes.number).isRequired,
+    onChange: PropTypes.func.isRequired,
+    stackProps: PropTypes.shape({
+      domain: PropTypes.shape({
+        x: PropTypes.arrayOf(PropTypes.number).isRequired,
+      }).isRequired,
+      scale: PropTypes.shape({
+        x: PropTypes.func.isRequired,
+        y: PropTypes.func.isRequired,
+      }).isRequired,
+      padding: PropTypes.shape({
+        left: PropTypes.number.isRequired,
+        right: PropTypes.number.isRequired,
+        top: PropTypes.number.isRequired,
+        bottom: PropTypes.number.isRequired,
+      }).isRequired,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired,
+    }).isRequired,
+    allThemes: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    children: null,
+    controlYear: null,
+    allThemes: false,
+  };
+
   constructor(props) {
     super(props);
     this.isDragging = false;
@@ -149,36 +180,5 @@ class StackGroup extends React.PureComponent {
     );
   }
 }
-
-StackGroup.propTypes = {
-  children: PropTypes.node,
-  controlYear: PropTypes.number,
-  totalPerYear: PropTypes.objectOf(PropTypes.number).isRequired,
-  onChange: PropTypes.func.isRequired,
-  stackProps: PropTypes.shape({
-    domain: PropTypes.shape({
-      x: PropTypes.arrayOf(PropTypes.number).isRequired,
-    }).isRequired,
-    scale: PropTypes.shape({
-      x: PropTypes.func.isRequired,
-      y: PropTypes.func.isRequired,
-    }).isRequired,
-    padding: PropTypes.shape({
-      left: PropTypes.number.isRequired,
-      right: PropTypes.number.isRequired,
-      top: PropTypes.number.isRequired,
-      bottom: PropTypes.number.isRequired,
-    }).isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
-  }).isRequired,
-  allThemes: PropTypes.bool,
-};
-
-StackGroup.defaultProps = {
-  children: null,
-  controlYear: null,
-  allThemes: false,
-};
 
 export default StackGroup;

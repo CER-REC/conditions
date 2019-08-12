@@ -216,8 +216,7 @@ class SearchContent extends React.PureComponent {
                   />),
                 }}
               />
-            )
-          }
+            )}
           :
         </div>
         <div className="input">
@@ -287,8 +286,7 @@ class SearchContent extends React.PureComponent {
           <button type="button" {...handleInteraction(this.changeSearchType)}>
             {(this.state.mode === 'basic'
               ? <FormattedMessage id="components.searchBar.findWords.advancedSearch" />
-              : <FormattedMessage id="components.searchBar.findWords.basicSearch" />)
-            }
+              : <FormattedMessage id="components.searchBar.findWords.basicSearch" />)}
           </button>
         </div>
         {this.highlightConditions()}

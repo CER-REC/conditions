@@ -12,6 +12,17 @@ import { lang } from '../../constants';
 const noop = () => {};
 
 class ShareIcon extends React.PureComponent {
+  static propTypes = {
+    className: PropTypes.string,
+    prefix: PropTypes.string,
+    target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin']).isRequired,
+  };
+
+  static defaultProps = {
+    className: '',
+    prefix: 'fab',
+  };
+
   getBitlyURL = () => {
     const bitlyEndpoint = RouteComputations.bitlyEndpoint();
     const shortenUrl = RouteComputations.bitlyParameter(lang);
@@ -72,16 +83,4 @@ class ShareIcon extends React.PureComponent {
   }
 }
 
-ShareIcon.propTypes = {
-  className: PropTypes.string,
-  prefix: PropTypes.string,
-  target: PropTypes.oneOf(['facebook', 'email', 'twitter', 'linkedin']).isRequired,
-};
-
-ShareIcon.defaultProps = {
-  className: '',
-  prefix: 'fab',
-};
-
 export default ShareIcon;
-

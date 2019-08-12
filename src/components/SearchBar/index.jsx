@@ -91,8 +91,8 @@ class SearchBar extends React.PureComponent {
                 isActive={isActive}
               />
             </div>
-            {(isActive)
-              ? (
+            {(!isActive) ? null
+              : (
                 <SuggestedKeywordsPopout
                   suggestedKeywords={suggestedKeywords}
                   closeTab={this.toggleIsActive}
@@ -104,9 +104,7 @@ class SearchBar extends React.PureComponent {
                   excludeKeywords={excludeKeywords}
                   scrollToMethodology={scrollToMethodology}
                 />
-              )
-              : null
-            }
+              )}
           </React.Fragment>
         );
         break;

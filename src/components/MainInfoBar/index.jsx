@@ -28,6 +28,12 @@ library.add(
 );
 
 class MainInfoBar extends React.PureComponent {
+  static propTypes = {
+    pane: PropTypes.oneOf(['', 'about', 'methodology', 'download']).isRequired,
+    setPane: PropTypes.func.isRequired,
+    openDataModal: PropTypes.func.isRequired,
+  };
+
   static getDerivedStateFromProps(props, state) {
     // Expanded is determined by whether we have an pane prop
     // The renderedDialog is either the active dialog, or the previously active one.
@@ -120,11 +126,5 @@ class MainInfoBar extends React.PureComponent {
     );
   }
 }
-
-MainInfoBar.propTypes = {
-  pane: PropTypes.oneOf(['', 'about', 'methodology', 'download']).isRequired,
-  setPane: PropTypes.func.isRequired,
-  openDataModal: PropTypes.func.isRequired,
-};
 
 export default MainInfoBar;

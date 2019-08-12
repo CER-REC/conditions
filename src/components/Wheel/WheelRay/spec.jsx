@@ -12,7 +12,7 @@ describe('Components|CompanyWheel/WheelRay', () => {
     const noop = () => {};
 
     const wrapperSetup = (propOverrides) => {
-      const props = Object.assign({
+      const props = {
         items: wheelData,
         reservedDegrees,
         degreesPerItem,
@@ -24,7 +24,8 @@ describe('Components|CompanyWheel/WheelRay', () => {
         selectedFeature: 'theme',
         onChangeRay: noop,
         onChangeDot: noop,
-      }, propOverrides);
+        ...propOverrides,
+      };
 
       const wrapper = shallow(<WheelRay {...props} />);
 
