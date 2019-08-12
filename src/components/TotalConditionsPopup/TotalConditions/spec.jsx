@@ -1,12 +1,12 @@
 import React from 'react';
 import { shouldBehaveLikeAComponent, mountWithIntl } from '../../../tests/utilities';
 
-import RegDocs from '.';
+import TotalConditions from '.';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
 
-describe('Components|RegDocs', () => {
+describe('Components|TotalConditionsPopup/TotalConditions', () => {
   let spy;
   beforeEach(() => {
     spy = {
@@ -17,16 +17,15 @@ describe('Components|RegDocs', () => {
   describe('with default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = mountWithIntl(<RegDocs
-        document="MO-025-2011"
+      wrapper = mountWithIntl(<TotalConditions
         {...spy}
       />);
     });
 
-    shouldBehaveLikeAComponent(RegDocs, () => wrapper);
+    shouldBehaveLikeAComponent(TotalConditions, () => wrapper);
 
     test('should call its closeModal callback when the Cancel button is clicked', () => {
-      wrapper.find('.RegDocs')
+      wrapper.find('.TotalConditions')
         .find('button')
         .simulate('click', eventFuncs);
 

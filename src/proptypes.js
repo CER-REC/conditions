@@ -162,6 +162,7 @@ export const viewTwo = {
   })).isRequired,
   allConditionsPerYear: allConditionsPerYearType.isRequired,
   updateSearch: PropTypes.func.isRequired,
+  openNumberDetails: PropTypes.func,
 };
 // Used in Keyword List (SuggestedKeywords)
 // Example: [ ["safety", { conditions: 1200, category: ['category1', 'category2']}],

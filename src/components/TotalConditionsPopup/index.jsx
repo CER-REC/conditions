@@ -1,32 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import RegDocs from './RegDocs';
+import TotalConditions from './TotalConditions';
 import Modal from '../Modal';
 
 import './styles.scss';
 
-const RegDocsPopup = ({ document, isOpen, closeModal }) => (
+const TotalConditionsPopup = ({ isOpen, closeModal }) => (
   <Modal
-    component={RegDocs}
-    componentProps={{ document }}
+    component={TotalConditions}
     isOpen={isOpen}
     closeModal={closeModal}
-    className="RegDocsPopup"
+    className="TotalConditionsPopup"
   />
 );
 
-RegDocsPopup.propTypes = {
+TotalConditionsPopup.propTypes = {
   /** Determines if the modal is opened or closed */
   isOpen: PropTypes.bool,
   /** Function to be run when the modal is closed */
   closeModal: PropTypes.func.isRequired,
-  /** Document number ('XO-001-2018') */
-  document: PropTypes.string.isRequired,
+
 };
 
-RegDocsPopup.defaultProps = {
+TotalConditionsPopup.defaultProps = {
   isOpen: false,
 };
 
-export default RegDocsPopup;
+export default TotalConditionsPopup;

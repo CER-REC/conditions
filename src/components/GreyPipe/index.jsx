@@ -22,7 +22,7 @@ const GreyPipe = ({ mode, conditionCount, instrumentCount, projectCount }) => (
       )
     }
     <div className="top" />
-    <div className="vertical">
+    <div className={classNames('vertical', { withBubbles: conditionCount !== null })}>
       {(mode === 'company' && conditionCount !== null)
         ? (
           <React.Fragment>

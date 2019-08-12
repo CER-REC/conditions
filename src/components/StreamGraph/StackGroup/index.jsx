@@ -24,7 +24,7 @@ class StackGroup extends React.PureComponent {
 
   calculateRenderedSize = () => {
     const size = this.sizeRef.current
-      ? this.sizeRef.current.getClientRects()[0]
+      ? this.sizeRef.current.getBoundingClientRect()
       : this.calculateStackSize();
     /* eslint-disable object-curly-newline */
     const { top, left, width, height } = size;

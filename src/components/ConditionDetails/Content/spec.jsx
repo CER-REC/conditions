@@ -31,13 +31,31 @@ describe('Components|ConditionDetails/Content', () => {
 
     shouldBehaveLikeAComponent(Content, () => wrapper);
 
-    it('should call its openIntermediatePopup callback', () => {
+    it('should provide a clickable instrument number', () => {
       wrapper.find('.Content')
         .find('ContentBlock').at(1).shallow()
         .find('button')
         .simulate('click', eventFuncs);
 
       expect(spy).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('with no document', () => {
+    const wrapper = shallow(
+      <Content
+        instrument={conditionData[1]}
+        itemIndex={0}
+        openIntermediatePopup={noop}
+      />,
+    );
+
+    it('should not provide a clickable instrument number', () => {
+      const button = wrapper.find('.Content')
+        .find('ContentBlock').at(1).shallow()
+        .find('button');
+
+      expect(button).toHaveLength(0);
     });
   });
 });

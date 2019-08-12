@@ -1,16 +1,15 @@
 import React from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { storiesForComponent } from '../../../../.storybook/utils';
-import RegDocs from '.';
+import TotalConditions from '.';
 
 const closeModal = () => alert('Close is handled by the view and isn\'t available in this story.\n\nPlease use the Knobs panel on the right.');
 
-storiesForComponent('Components|RegDocsPopup/RegDocs', module)
+storiesForComponent('Components|TotalConditionsPopup/TotalConditions', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <RegDocs
+    <TotalConditions
       isOpen={boolean('Visible', true)}
       closeModal={closeModal}
-      document="MO-025-2011"
     />
   ));

@@ -13,7 +13,6 @@ storiesForComponent('Components|RegDocsPopup', module, ReadMe)
     <RegDocsPopup
       isOpen={boolean('Visible', true)}
       closeModal={closeModal}
-      instrument="XO-001-2018"
-      regdocsUrl="https://www.example.com"
+      document="MO-025-2011"
     />
   ));
