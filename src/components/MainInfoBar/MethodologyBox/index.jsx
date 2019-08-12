@@ -1,6 +1,30 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+import { lang, nltkLink } from '../../../constants';
+import './styles.scss';
+
+const imageContext = require.context('./keywordMethodology/', true, /\.png$/);
+// eslint-disable-next-line react/prop-types
+const Image = ({ children, src }) => <img src={src} alt={children} title={children} />;
+const images = imageContext.keys().reduce((acc, cur) => {
+  const [imageLang, id] = cur.match(/^\.\/(\w+)\/KeywordMethodology(\d+)_/).slice(1);
+
+  if (imageLang === lang) {
+    acc.push((
+      <AdvancedFormattedMessage
+        id={`components.mainInfoBar.content.keywords.${id}`}
+        tag={Image}
+        key={id}
+        src={imageContext(cur)}
+      />
+    ));
+  }
+
+  return acc;
+}, []);
+
+images[3] = <a href={nltkLink} target="_blank" rel="noopener noreferrer" key="4">{images[3]}</a>;
 
 const MethodologyBox = () => (
   <div className="MethodologyBox">
@@ -21,7 +45,10 @@ const MethodologyBox = () => (
       }}
     />
     <FormattedMessage id="components.mainInfoBar.headings.keywords" tagName="h1" />
-    <FormattedMessage id="components.mainInfoBar.content.keywords" tagName="p" />
+    <div className="KeywordExplanation">
+      {images}
+    </div>
+
   </div>
 );
 

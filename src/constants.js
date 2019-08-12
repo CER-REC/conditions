@@ -67,6 +67,7 @@ export const features = {
 
 export const noRegionColor = 'rgb(153,153,153)';
 
+export const nltkLink = 'http://www.nltk.org/';
 export const regDocsUrl = (lang === 'en')
   ? 'https://apps.neb-one.gc.ca/REGDOCS/Search?txthl='
   : 'https://apps.neb-one.gc.ca/REGDOCS/Recherche/Index/?txthl=';
