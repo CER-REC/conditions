@@ -56,10 +56,6 @@ describe('Components|RegionSummary/RegionCompanies', () => {
           .hasClass('asterisk'),
       ).toBe(true);
     });
-
-    test('should render a formatted message for the title', () => {
-      expect(wrapper.find('FormattedMessage')).toHaveLength(1);
-    });
   });
 
   describe('when a company is clicked', () => {

@@ -16984,8 +16984,15 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
       <div
         className="title"
       >
-        <span>
+        <span
+          className="companies"
+        >
           Companies in Selected Region:
+        </span>
+        <span
+          className="select"
+        >
+          Select a company and return to company wheel
         </span>
       </div>
       <ul
@@ -17137,8 +17144,15 @@ exports[`Storyshots Components|RegionSummary/RegionCompanies default 1`] = `
         <div
           className="title"
         >
-          <span>
+          <span
+            className="companies"
+          >
             Companies in Selected Region:
+          </span>
+          <span
+            className="select"
+          >
+            Select a company and return to company wheel
           </span>
         </div>
         <ul
