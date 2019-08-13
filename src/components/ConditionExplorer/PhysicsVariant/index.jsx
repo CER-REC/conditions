@@ -318,10 +318,10 @@ export default class PhysicsVariant extends React.PureComponent {
                 y={`-${(lines.length) / 2}em`}
                 // eslint-disable-next-line react/no-array-index-key
                 key={idx}
-                className={classNames(
-                  (id === this.state.guideMessage.toString()) ? '' : 'hidden',
-                  (this.props.selectedKeywordId > -1) ? 'selected' : '',
-                )
+                className={classNames({
+                  hidden: !(id === this.state.guideMessage.toString()),
+                  selected: (this.props.selectedKeywordId > -1),
+                })
                 }
               >
                 {text.split('\n').map(line => (
