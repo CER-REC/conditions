@@ -4,6 +4,12 @@
 
 .BrowseBy {
   display: inline-block;
+  pointer-events: none;
+
+  .BrowseByBtn {
+    pointer-events: auto;
+  }
+
   .arrowWrapper {
     display: inline-block;
 
@@ -78,7 +84,7 @@
 }
 @include firefoxOnly {
   .BrowseBy {
-    .arrowWrapper { 
+    .arrowWrapper {
       &::after {
         border-width: 14px;
       }
@@ -87,11 +93,10 @@
 }
 @include safariOnly {
   .BrowseBy {
-    .arrowWrapper { 
+    .arrowWrapper {
       &::after {
         border-width: 12px;
       }
     }
   }
 }
-  
