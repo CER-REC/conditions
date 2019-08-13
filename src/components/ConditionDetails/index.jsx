@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import memoize from 'lodash.memoize';
 
 import './styles.scss';
 
@@ -28,9 +29,9 @@ class ConditionDetails extends React.PureComponent {
     return match(this.props.searchKeywords.include) && !match(this.props.searchKeywords.exclude);
   }
 
-  getListData = () => this.props.data.reduce(
-    (data, instrument, instrumentIndex) => {
-      data.push({
+  getListData = memoize(data => data.reduce(
+    (acc, instrument, instrumentIndex) => {
+      acc.push({
         isInstrument: true,
         instrumentIndex,
         instrumentId: instrument.id,
@@ -41,7 +42,7 @@ class ConditionDetails extends React.PureComponent {
       instrument.conditions.forEach((condition, itemIndex) => {
         // TODO: This should be coming from the search instead
         const marked = this.textMatchesKeywords(condition.text);
-        data.push({
+        acc.push({
           binnedValue: condition.binnedValue,
           instrumentNumber: instrument.instrumentNumber,
           instrumentId: instrument.id,
@@ -53,9 +54,9 @@ class ConditionDetails extends React.PureComponent {
         });
       });
 
-      return data;
+      return acc;
     }, [],
-  );
+  ));
 
   render() {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
@@ -64,7 +65,7 @@ class ConditionDetails extends React.PureComponent {
       && instrument;
 
     const expanded = this.props.isExpandable && this.props.expanded;
-    const items = this.getListData();
+    const items = this.getListData(this.props.data);
 
     return (
       <section className={classNames('ConditionDetails', { expanded })}>

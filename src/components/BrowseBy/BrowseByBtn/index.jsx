@@ -6,6 +6,27 @@ import './styles.scss';
 
 import handleInteraction from '../../../utilities/handleInteraction';
 
+// Predefine the messages to prevent wasted renders
+const messages = [['company', 'projectsBy'], ['location', 'conditionsBy']]
+  .reduce((acc, next) => {
+    acc[next[0]] = (
+      <AdvancedFormattedMessage
+        id={`components.browseByBtn.${next[1]}`}
+        tag="div"
+        className="BrowseByBtn-ButtonText"
+        values={{
+          icon: (
+            <AdvancedFormattedMessage
+              id={`components.browseByBtn.${next[0]}`}
+              className="LastWord"
+            />
+          ),
+        }}
+      />
+    );
+    return acc;
+  }, {});
+
 const BrowseByBtn = (props) => {
   // Appending the mode so multiple buttons aren't sharing/overriding the same clip paths
   const clipOutside = `BrowseByBtn-clipOutside-${props.mode}`;
@@ -23,29 +44,13 @@ const BrowseByBtn = (props) => {
     </svg>
   );
 
-  const message = props.mode === 'company'
-    ? ['projectsBy', 'company']
-    : ['conditionsBy', 'location'];
-
   return (
     <button
       type="button"
       className={classNames('BrowseByBtn', props.mode, props.classNames)}
       {...handleInteraction(props.onClick, props.mode)}
     >
-      <AdvancedFormattedMessage
-        id={`components.browseByBtn.${message[0]}`}
-        tag="div"
-        className="BrowseByBtn-ButtonText"
-        values={{
-          icon: (
-            <AdvancedFormattedMessage
-              id={`components.browseByBtn.${message[1]}`}
-              className="LastWord"
-            />
-          ),
-        }}
-      />
+      {messages[props.mode]}
       {background}
     </button>
   );

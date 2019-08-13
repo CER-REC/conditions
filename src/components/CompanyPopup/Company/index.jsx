@@ -1,12 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import PopupBtn from '../../PopupBtn';
 import './styles.scss';
 
 // eslint-disable-next-line react/prop-types
 const ProjectName = React.memo(({ children, name }) => <h2>{children} <strong>{name}</strong></h2>);
+
+// eslint-disable-next-line react/prop-types
+const BulletList = React.memo(({ children }) => {
+  const arr = children.split('\n'); // eslint-disable-line react/prop-types
+  const first = arr.shift();
+  const items = arr.map(bullet => <li key={bullet}>{bullet.match(/- ?(.+)/)[1]}</li>);
+
+  return (
+    <React.Fragment>
+      <p>{first}</p>
+      <ul className="bullets">
+        {items}
+      </ul>
+    </React.Fragment>
+  );
+});
 
 const Company = ({ projectName, companies, closeModal }) => (
   <div className="Company">
@@ -17,25 +32,10 @@ const Company = ({ projectName, companies, closeModal }) => (
     />
     <AdvancedFormattedMessage id="components.modal.company.associated" tag="h3" />
     <ul className="companies">
-      {companies.map(company => <li key={company}>{company}</li>)}
+      {companies.map(({ name }) => <li key={name}>{name}</li>)}
     </ul>
     <AdvancedFormattedMessage id="components.modal.company.meaningHeading" tag="h4" />
-    <FormattedMessage id="components.modal.company.meaningText">
-      {(text) => {
-        const arr = text.split('\n');
-        const first = arr.shift();
-        const items = arr.map(bullet => <li key={bullet}>{bullet.match(/- ?(.+)/)[1]}</li>);
-
-        return (
-          <React.Fragment>
-            <p>{first}</p>
-            <ul className="bullets">
-              {items}
-            </ul>
-          </React.Fragment>
-        );
-      }}
-    </FormattedMessage>
+    <AdvancedFormattedMessage id="components.modal.company.meaningText" tag={BulletList} />
     <AdvancedFormattedMessage
       id="components.modal.company.back"
       tag={PopupBtn}
@@ -47,7 +47,9 @@ const Company = ({ projectName, companies, closeModal }) => (
 
 Company.propTypes = {
   projectName: PropTypes.string.isRequired,
-  companies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  companies: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  })).isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 

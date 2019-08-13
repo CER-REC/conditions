@@ -86,6 +86,7 @@ class SearchBar extends React.PureComponent {
             <div className={classNames('SuggestionPrompt', { excludePrompt: (isExclude) })}>
               <SuggestedKeywordsPrompt
                 onClick={
+                  // TODO: This causes wasted renders
                 () => (this.setState({ isActive: !isActive }))}
                 isActive={isActive}
               />

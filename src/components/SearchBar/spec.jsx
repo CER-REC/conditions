@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SearchBar from '.';
+import SuggestedKeywordsPrompt from './SuggestedKeywordsPrompt';
+import Tab from './Tab';
+import HighlightSummary from './HighlightSummary';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
@@ -34,7 +37,7 @@ const projectStatus = ['IN_PROGRESS'];
 const yearRange = { start: 1970, end: 1980 };
 const categories = ['all', 'oversight & safety', 'environment', 'administration & filings'];
 
-describe('Components|SearchBar/SearchBar', () => {
+describe('Components|SearchBar', () => {
   describe('default props', () => {
     let wrapper;
     beforeEach(() => {
@@ -62,7 +65,7 @@ describe('Components|SearchBar/SearchBar', () => {
     });
 
     test('render highlight summary when tabs closed', () => {
-      expect(wrapper.find('HighlightSummary')).toHaveLength(1);
+      expect(wrapper.find(HighlightSummary)).toHaveLength(1);
     });
   });
 
@@ -89,27 +92,27 @@ describe('Components|SearchBar/SearchBar', () => {
       );
     });
     test('render find component on find click', () => {
-      const updatedWrapper = wrapper.find('Tab').first();
+      const updatedWrapper = wrapper.find(Tab).first();
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().mode).toEqual('find');
     });
 
     test('close find component on find click', () => {
       wrapper.setState({ mode: 'find' });
-      const updatedWrapper = wrapper.find('Tab').first();
+      const updatedWrapper = wrapper.find(Tab).first();
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().mode).toEqual('');
     });
 
     test('render filter component on filter click', () => {
-      const updatedWrapper = wrapper.find('Tab').last();
+      const updatedWrapper = wrapper.find(Tab).last();
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().mode).toEqual('filter');
     });
 
     test('close filter component on filter click', () => {
       wrapper.setState({ mode: 'filter' });
-      const updatedWrapper = wrapper.find('Tab').last();
+      const updatedWrapper = wrapper.find(Tab).last();
       updatedWrapper.simulate('click', eventFuncs);
       expect(wrapper.state().mode).toEqual('');
     });
@@ -244,7 +247,7 @@ describe('Components|SearchBar/SearchBar', () => {
 
     test('change active state on click ', () => {
       const updatedWrapper = wrapper.find('.SuggestionPrompt');
-      updatedWrapper.find('SuggestedKeywordsPrompt').props().onClick();
+      updatedWrapper.find(SuggestedKeywordsPrompt).props().onClick();
       expect(wrapper.state().isActive).toBe(true);
     });
   });

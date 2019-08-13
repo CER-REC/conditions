@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import './styles.scss';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
+
+// eslint-disable-next-line react/prop-types
+const TitledDiv = ({ children }) => <div title={children} className="text">{children}</div>;
 
 const LegendItem = ({ disabled, selectedFeature, text, color }) => (
   <div className={classNames('LegendItem', { disabled })}>
     <div className="color" style={{ backgroundColor: color }} />
-    <FormattedMessage id={`common.${selectedFeature}.${text}`}>
-      {
-        formattedText => (
-          <div title={formattedText} className="text">
-            {formattedText}
-          </div>
-        )
-      }
-    </FormattedMessage>
+    <AdvancedFormattedMessage id={`common.${selectedFeature}.${text}`} tag={TitledDiv} />
   </div>
 );
 

@@ -95,4 +95,4 @@ DownloadPopup.defaultProps = {
   isOpen: false,
 };
 
-export default React.Memo(DownloadPopup);
+export default React.memo(DownloadPopup);

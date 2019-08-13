@@ -53,7 +53,7 @@ describe('Components|ConditionDetails/Content', () => {
 
     it('should not provide a clickable instrument number', () => {
       const button = wrapper.find('.Content')
-        .find('ContentBlock').at(1).shallow()
+        .find('AdvancedFormattedMessage').shallow()
         .find('button');
 
       expect(button).toHaveLength(0);
