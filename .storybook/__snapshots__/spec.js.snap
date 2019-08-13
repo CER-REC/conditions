@@ -3920,15 +3920,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           <span>
             Administrative
           </span>
-          <span>
-            , 
-          </span>
+          , 
           <span>
             Enforcement
           </span>
-          <span>
-            , 
-          </span>
+          , 
           <span>
             Sunset Clause
           </span>
@@ -3988,6 +3984,14 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
       </div>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ConditionDetails { position: relative; }
+    .Details { position: relative; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -31449,7 +31453,6 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
       <svg
         className="conditionLabel"
         height="60"
-        width="80"
       >
         <text
           className="small"
