@@ -37,18 +37,9 @@ const steps = [
         tag="h1"
       />
       <AdvancedFormattedMessage
-        id="components.conditionExplorer.guide.compliance.documentationPrompt"
+        id="components.conditionExplorer.guide.compliance.overview"
         tag="p"
       />
-      <ul>
-        {[1, 2].map(i => (
-          <AdvancedFormattedMessage
-            key={i}
-            id={`components.conditionExplorer.guide.compliance.doc${i}`}
-            tag="li"
-          />
-        ))}
-      </ul>
     </React.Fragment>
   ),
 ];

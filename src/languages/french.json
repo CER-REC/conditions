@@ -123,10 +123,8 @@
           "overview": "Les conditions varient selon les projets. L’Office les établit durant le processus d’évaluation de la demande pour prévenir les préjudices, promouvoir la sécurité et protéger l’environnement dans l’intérêt public."
         },
         "compliance": {
-          "title": "Comment l’Office s’assure-t-il que les conditions sont respectées?",
-          "documentationPrompt": "L’Office s’assure que la société respecte les exigences relatives aux conditions rattachées à un projet en effectuant ce qui suit :",
-          "doc1": "activités de vérification de la conformité (inspections, vérifications, etc.);",
-          "doc2": "évaluation des pièces déposées en conformité aux conditions."
+          "title": "Comment l’Office vérifie-t-il la conformité aux conditions?",
+          "overview": "L’Office s’assure que les sociétés respectent les conditions rattachées aux projets par des activités de vérification de la conformité (inspections, audits, etc.) et par l’examen des pièces déposées conformément aux conditions."
         },
         "clickOutside": "Cliquer à l’extérieur du cercle pour revenir en arrière."
       }
@@ -156,7 +154,7 @@
       "status": "État de l’instrument",
       "type": "Type d’instrument",
       "activity": "Activité liée à l’instrument",
-      "keywords": "Mot-clé",
+      "keywords": "Correspondence de recherché",
       "text": "Texte",
       "selectedConditionFeature": "Particularité de la condition sélectionnée",
       "more": "Plus",
@@ -260,10 +258,10 @@
       "tutorial": {
         "0": "Cliquer pour poursuivre.",
         "1": "Cliquer pour poursuivre.",
-        "2": "Voici le texte juridique intégral de la condition que vous avez sélectionnée.",
-        "3": "Les conditions sont caractérisées par leurs particularités, comme thème.",
-        "4": "Faire défiler pour consulter les autres conditions assorties à ce projet.",
-        "5": "Faire défiler pour consulter les autres projets de cette société.",
+        "2": "Texte juridique intégral de la condition sélectionnée.",
+        "3": "Conditions caractérisées par particularités (thème).",
+        "4": "Faire défiler pour voir d’autres conditions du projet.",
+        "5": "Faire défiler pour voir d’autres projets de la société.",
         "6": "Faire tourner la route pour parcourir les sociétés.",
         "7": "Il y a davantage à découvrir au tour!"
       }
@@ -290,8 +288,8 @@
         "find": "Recherche de mots"
       },
       "suggestedKeywordsPrompt": {
-        "selectFrom": "Sélectionner dans",
-        "suggestedKeywords": "les mots-clés proposés"
+        "selectFrom": "Sélectionner\nparmi",
+        "suggestedKeywords": "les suggestions"
       },
       "highlightSummary": {
         "showing": "{status} de {start} à  {end} sont affichés.",
@@ -306,7 +304,7 @@
         "advancedSearch": "Recherche avancée",
         "basicSearch": "Recherche simple",
         "options": {
-          "any": "un ou l'autre",
+          "any": "n'importe quel",
           "all": "tous"
         },
         "searchText": {
@@ -319,7 +317,7 @@
           "highlightConditions": "Signaler les conditions contenant",
           "followingInclude": "{choice} des mots suivants",
           "followingExclude": "{choice} de ce qui suit",
-          "any": "un ou l'autre",
+          "any": "n'importe quel",
           "none": "aucun",
           "all": "tous"
         }
@@ -333,8 +331,8 @@
         "frequency": "Fréquence",
         "alphabetical": "Ordre alphabétique",
         "conditions": "{conditions} conditions",
-        "inc": "aug.",
-        "dec": "dim."
+        "inc": "croiss",
+        "dec": "décroiss"
       }
     },
     "mainInfoBar": {
@@ -438,11 +436,11 @@
       "description": "Tendances et\ndéfinitions"
     },
     "keywordExploreButton": {
-      "description": "Retour aux\nmots-clés"
+      "description": "Mots-clés"
     },
     "browseBy": {
-      "skip": "Sauter l’introduction pour naviguer.",
-      "return": "Retour à la navigation :",
+      "skip": "Sauter l’introduction :",
+      "return": "Navigation :",
       "blank": " "
     },
     "browseByBtn": {

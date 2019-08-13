@@ -16,6 +16,8 @@
   position: relative;
   .selectFrom {
     color: $Black77;
+    width: 90%;
+    margin-left: 5%;
   }
   .colorChange {
     color: $LinksTextButtons;
@@ -41,7 +43,7 @@
   polyline {
     stroke: $White;
     fill: none;
-    stroke-width: 2; 
+    stroke-width: 2;
   }
 
   &.isActive {
