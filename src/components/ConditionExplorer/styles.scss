@@ -92,11 +92,10 @@ $keywordColors: (
     transition: fill 0.75s ease-out 0.75s;
     &.selected {
       fill: $MainOrange;
-      transition: fill 0.75s ease-out 0.75s; 
-        text {
-          fill: $White;
-          transition: fill 0.25s ease-out 0.25s;
-        } 
+      text {
+        fill: $White;
+        transition: fill 0.25s ease-out 0.25s;
+      }
     }
   }
 
@@ -112,7 +111,7 @@ $keywordColors: (
       font-size: 16px;
       font-family: $fira-sans-condensed;
       fill: $LightGray;
-      transition: opacity 1s;
+      transition: opacity 1s, fill 0.25s ease-out 0.25s;
 
 
       &.hidden {
