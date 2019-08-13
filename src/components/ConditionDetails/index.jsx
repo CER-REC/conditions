@@ -13,22 +13,6 @@ import Details from './Details';
 import { conditionData } from '../../proptypes';
 
 class ConditionDetails extends React.PureComponent {
-  findSelectedItem = () => {
-    let count = 0;
-    for (let i = 0, l = this.props.selectedItem.instrumentIndex; i < l; i += 1) {
-      count += this.props.data[i].conditions.length + 1;
-    }
-
-    return count + this.props.selectedItem.itemIndex + 1;
-  };
-
-  textMatchesKeywords = (text) => {
-    if (!text) { return false; }
-    const lowerText = text.toLowerCase();
-    const match = words => words && words.some(word => lowerText.match(word.toLowerCase()));
-    return match(this.props.searchKeywords.include) && !match(this.props.searchKeywords.exclude);
-  }
-
   getListData = memoize(data => data.reduce(
     (acc, instrument, instrumentIndex) => {
       acc.push({
@@ -57,6 +41,22 @@ class ConditionDetails extends React.PureComponent {
       return acc;
     }, [],
   ));
+
+  textMatchesKeywords = (text) => {
+    if (!text) { return false; }
+    const lowerText = text.toLowerCase();
+    const match = words => words && words.some(word => lowerText.match(word.toLowerCase()));
+    return match(this.props.searchKeywords.include) && !match(this.props.searchKeywords.exclude);
+  }
+
+  findSelectedItem = () => {
+    let count = 0;
+    for (let i = 0, l = this.props.selectedItem.instrumentIndex; i < l; i += 1) {
+      count += this.props.data[i].conditions.length + 1;
+    }
+
+    return count + this.props.selectedItem.itemIndex + 1;
+  };
 
   render() {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];

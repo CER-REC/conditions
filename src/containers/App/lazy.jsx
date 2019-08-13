@@ -56,12 +56,7 @@ import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 import DownloadPopup from '../../components/DownloadPopup';
 import TotalConditionsPopup from '../../components/TotalConditionsPopup';
-
 import './styles.scss';
-
-import {
-  conditionData,
-} from '../../mockData';
 
 const store = createStore();
 const cache = new InMemoryCache();
@@ -725,7 +720,6 @@ class App extends React.PureComponent {
                 // TODO: This causes wasted renders. Don't reformat the instruments
                 let instruments = [];
                 let documentNumber;
-                let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
                 // TODO: This causes wasted renders. Memoize this
@@ -768,8 +762,6 @@ class App extends React.PureComponent {
 
                   if (projectDetails) {
                     ({ shortName } = projectDetails);
-                    // TODO: This causes wasted renders. Pass down the entire list instead
-                    companyArray = projectDetails.companies.map(({ name }) => name);
                   }
                 }
 
