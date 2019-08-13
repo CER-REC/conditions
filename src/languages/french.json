@@ -443,7 +443,7 @@
     "browseBy": {
       "skip": "Sauter l’introduction pour naviguer.",
       "return": "Retour à la navigation :",
-      "blank": ""
+      "blank": " "
     },
     "browseByBtn": {
       "projectsBy": "Projets par {icon}",
