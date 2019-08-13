@@ -318,7 +318,11 @@ export default class PhysicsVariant extends React.PureComponent {
                 y={`-${(lines.length) / 2}em`}
                 // eslint-disable-next-line react/no-array-index-key
                 key={idx}
-                className={(id === this.state.guideMessage.toString()) ? '' : 'hidden'}
+                className={classNames(
+                  (id === this.state.guideMessage.toString()) ? '' : 'hidden',
+                  (this.props.selectedKeywordId > -1) ? 'selected' : '',
+                )
+                }
               >
                 {text.split('\n').map(line => (
                   <tspan x="0" dy="1em" key={line}>{line}</tspan>
@@ -395,9 +399,9 @@ export default class PhysicsVariant extends React.PureComponent {
           onMouseUp={this.onGuideMouseUp}
           onTouchEnd={this.onGuideMouseUp}
         />
-        <g className={classNames('guideTransitionWrapper', (this.props.selectedKeywordId > -1) ? 'selected' : '')}>
+        <g className="guide">
           <path
-            className="guide"
+            className={classNames((this.props.selectedKeywordId > -1) ? 'selected' : '')}
             d={this.guide.renderedPathPoints}
             onMouseDown={this.onGuideMouseDown}
             onTouchStart={this.onGuideMouseDown}

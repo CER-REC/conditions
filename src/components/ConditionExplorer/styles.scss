@@ -87,15 +87,21 @@ $keywordColors: (
       }
     }
   }
-  .guideTransitionWrapper {
-    fill: $Guide;
-    transition: fill 0.75s ease-out 0.75s;
-    &.selected {
-      fill: $MainOrange;
-      text {
-        fill: $White;
-        transition: fill 0.25s ease-out 0.25s;
+  .guide {
+    path{
+      fill: $Guide;
+      transition: fill 0.75s ease-out 0.75s;
+      &.selected {
+        fill: $MainOrange;
       }
+    }
+    .guideText{
+      text {
+        transition: fill 0.5s ease-out 0.5s;
+        &.selected {
+          fill: $White;
+        }
+      } 
     }
   }
 
