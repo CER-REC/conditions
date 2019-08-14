@@ -69,4 +69,4 @@ RegDocs.propTypes = {
   closeModal: PropTypes.func.isRequired,
 };
 
-export default RegDocs;
+export default React.memo(RegDocs);

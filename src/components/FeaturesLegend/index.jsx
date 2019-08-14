@@ -91,4 +91,4 @@ FeaturesLegend.defaultProps = {
   selectedAggregatedCount: null,
 };
 
-export default FeaturesLegend;
+export default React.memo(FeaturesLegend);

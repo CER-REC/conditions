@@ -58,4 +58,4 @@ RegionConditions.defaultProps = {
   selectedAggregatedCount: null,
 };
 
-export default RegionConditions;
+export default React.memo(RegionConditions);

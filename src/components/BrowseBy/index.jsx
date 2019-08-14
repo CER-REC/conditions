@@ -29,4 +29,4 @@ BrowseBy.defaultProps = {
   labelId: '',
 };
 
-export default BrowseBy;
+export default React.memo(BrowseBy);

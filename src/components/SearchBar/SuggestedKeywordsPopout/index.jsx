@@ -21,6 +21,13 @@ const sortKeywords = memoize((sortByCount, desc, selectedCategories, keywords) =
     : (a, b) => a.name.localeCompare(b.name) * direction);
 }, (sortBy, desc, category, keywords) => `${sortBy}-${desc}-${category.join('|')}-${memoizeReference(keywords)}`);
 
+// eslint-disable-next-line react/prop-types
+const MethodologyLink = React.memo(({ children, scrollToMethodology }) => (
+  <a {...handleInteraction(scrollToMethodology)}>
+    {children}
+  </a>
+));
+
 class SuggestedKeywordsPopout extends React.PureComponent {
   static propTypes = {
     categories: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -37,6 +44,16 @@ class SuggestedKeywordsPopout extends React.PureComponent {
     includeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
     excludeKeywords: PropTypes.arrayOf(PropTypes.string).isRequired,
   }
+
+  keywordDescriptionValues = memoize(scrollToMethodology => ({
+    here: (
+      <AdvancedFormattedMessage
+        id="components.searchBar.suggestedKeywordsPopout.keywordsHere"
+        tag={MethodologyLink}
+        scrollToMethodology={scrollToMethodology}
+      />
+    ),
+  }));
 
   constructor(props) {
     super(props);
@@ -79,14 +96,6 @@ class SuggestedKeywordsPopout extends React.PureComponent {
   // Default sortDesc to count=descending and alphabetical=ascending
   toggleSortBy = sortByCount => this.setState(({ sortByCount, sortDesc: sortByCount }));
 
-  MethodologyLink = ({ children }) => (
-    <a
-      {...handleInteraction(this.props.scrollToMethodology)}
-    >
-      {children}
-    </a>
-  );
-
   render() {
     const keywords = sortKeywords(
       this.state.sortByCount,
@@ -105,14 +114,7 @@ class SuggestedKeywordsPopout extends React.PureComponent {
           id="components.searchBar.suggestedKeywordsPopout.keywordsDescription"
           tag="p"
           className="description"
-          values={{
-            here: (
-              <AdvancedFormattedMessage
-                id="components.searchBar.suggestedKeywordsPopout.keywordsHere"
-                tag={this.MethodologyLink}
-              />
-            ),
-          }}
+          values={this.keywordDescriptionValues(this.props.scrollToMethodology)}
         />
         <ul className="categories">
           <AdvancedFormattedMessage

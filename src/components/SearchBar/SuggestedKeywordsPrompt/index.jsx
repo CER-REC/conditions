@@ -36,4 +36,4 @@ SuggestedKeywordsPrompt.propTypes = {
   isActive: PropTypes.bool.isRequired,
 };
 
-export default SuggestedKeywordsPrompt;
+export default React.memo(SuggestedKeywordsPrompt);

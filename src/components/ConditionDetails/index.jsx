@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import memoize from 'lodash.memoize';
 
 import './styles.scss';
 
@@ -11,26 +12,10 @@ import Details from './Details';
 
 import { conditionData } from '../../proptypes';
 
-class ConditionDetails extends React.Component {
-  findSelectedItem = () => {
-    let count = 0;
-    for (let i = 0, l = this.props.selectedItem.instrumentIndex; i < l; i += 1) {
-      count += this.props.data[i].conditions.length + 1;
-    }
-
-    return count + this.props.selectedItem.itemIndex + 1;
-  };
-
-  textMatchesKeywords = (text) => {
-    if (!text) { return false; }
-    const lowerText = text.toLowerCase();
-    const match = words => words && words.some(word => lowerText.match(word.toLowerCase()));
-    return match(this.props.searchKeywords.include) && !match(this.props.searchKeywords.exclude);
-  }
-
-  getListData = () => this.props.data.reduce(
-    (data, instrument, instrumentIndex) => {
-      data.push({
+class ConditionDetails extends React.PureComponent {
+  getListData = memoize(data => data.reduce(
+    (acc, instrument, instrumentIndex) => {
+      acc.push({
         isInstrument: true,
         instrumentIndex,
         instrumentId: instrument.id,
@@ -41,7 +26,7 @@ class ConditionDetails extends React.Component {
       instrument.conditions.forEach((condition, itemIndex) => {
         // TODO: This should be coming from the search instead
         const marked = this.textMatchesKeywords(condition.text);
-        data.push({
+        acc.push({
           binnedValue: condition.binnedValue,
           instrumentNumber: instrument.instrumentNumber,
           instrumentId: instrument.id,
@@ -53,9 +38,25 @@ class ConditionDetails extends React.Component {
         });
       });
 
-      return data;
+      return acc;
     }, [],
-  );
+  ));
+
+  textMatchesKeywords = (text) => {
+    if (!text) { return false; }
+    const lowerText = text.toLowerCase();
+    const match = words => words && words.some(word => lowerText.match(word.toLowerCase()));
+    return match(this.props.searchKeywords.include) && !match(this.props.searchKeywords.exclude);
+  }
+
+  findSelectedItem = () => {
+    let count = 0;
+    for (let i = 0, l = this.props.selectedItem.instrumentIndex; i < l; i += 1) {
+      count += this.props.data[i].conditions.length + 1;
+    }
+
+    return count + this.props.selectedItem.itemIndex + 1;
+  };
 
   render() {
     const instrument = this.props.data[this.props.selectedItem.instrumentIndex];
@@ -64,7 +65,7 @@ class ConditionDetails extends React.Component {
       && instrument;
 
     const expanded = this.props.isExpandable && this.props.expanded;
-    const items = this.getListData();
+    const items = this.getListData(this.props.data);
 
     return (
       <section className={classNames('ConditionDetails', { expanded })}>

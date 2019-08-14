@@ -52,4 +52,4 @@ HighlightSummary.propTypes = {
   includedStatuses: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default HighlightSummary;
+export default React.memo(HighlightSummary);

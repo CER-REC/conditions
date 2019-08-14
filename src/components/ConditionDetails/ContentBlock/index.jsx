@@ -4,22 +4,18 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import './styles.scss';
 
-class ContentBlock extends React.PureComponent {
-  render() {
-    return (
-      <div className="ContentBlock">
-        <AdvancedFormattedMessage
-          id={this.props.id}
-          className="contentHeading"
-        />: {this.props.content}
-      </div>
-    );
-  }
-}
+const ContentBlock = props => (
+  <div className="ContentBlock">
+    <AdvancedFormattedMessage
+      id={props.id}
+      className="contentHeading"
+    />: {props.content}
+  </div>
+);
 
 ContentBlock.propTypes = {
   id: PropTypes.string.isRequired,
   content: PropTypes.node.isRequired,
 };
 
-export default ContentBlock;
+export default React.memo(ContentBlock);
