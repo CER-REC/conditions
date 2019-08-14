@@ -61,6 +61,8 @@ import {
   conditionData,
 } from '../../mockData';
 
+// Check if on MacOS and scrollbars are hidden apply styles if necessary
+// Linked Ticket: NEBV-1697
 function areScrollbarsVisible() {
   const scrollableElem = document.createElement('div');
   const innerElem = document.createElement('div');
@@ -75,6 +77,9 @@ function areScrollbarsVisible() {
   const diff = scrollableElem.offsetWidth - scrollableElem.clientWidth;
   document.body.removeChild(scrollableElem);
   return diff > 0;
+}
+if (!areScrollbarsVisible()) {
+  document.body.classList.add('force-show-scrollbars');
 }
 
 const store = createStore();
@@ -153,10 +158,6 @@ class App extends React.PureComponent {
   }
 
   componentDidMount() {
-    // Check if scrollbars are visible (MacOS hides them sometimes) and display styling if necessary
-    if (!areScrollbarsVisible()) {
-      document.body.classList.add('force-show-scrollbars');
-    }
     // Dispatch an event to tell the LoadingGuide that we're mounted
     const event = new CustomEvent('LoadingGuide.enabled', { detail: false });
     window.dispatchEvent(event);
