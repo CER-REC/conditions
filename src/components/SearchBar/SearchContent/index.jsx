@@ -103,32 +103,34 @@ class SearchContent extends React.PureComponent {
 
   excludeSearchTextAndWords = () => (
     <React.Fragment>
-      <div className="includeText">
-        <FormattedMessage
-          id="components.searchBar.findWords.searchText.exclude"
-          values={{
-            not: (
-              <FormattedMessage id="components.searchBar.findWords.searchText.not" tagName="strong" />
-            ),
-          }}
-        />
-        :
-      </div>
-      <div className="input">
-        <input
-          value={this.state.inputExclude}
-          onChange={this.updateInputExclude}
-          onKeyDown={this.addExcludeWordOnEnter}
-          onFocus={() => this.props.changeIsExclude(true)}
-          className="searchBar"
-        />
-        <button
-          type="button"
-          className={classNames('addInput', { disabled: this.props.excludeKeywords.length === 6 })}
-          {...handleInteraction(this.addExcludeWord)}
-        >
-          <Icon className={classNames(['iconInline', 'plusIcon'])} icon="plus-circle" />
-        </button>
+      <div className="includeElements">
+        <div className="includeText">
+          <FormattedMessage
+            id="components.searchBar.findWords.searchText.exclude"
+            values={{
+              not: (
+                <FormattedMessage id="components.searchBar.findWords.searchText.not" tagName="strong" />
+              ),
+            }}
+          />
+          :
+        </div>
+        <div className="input">
+          <input
+            value={this.state.inputExclude}
+            onChange={this.updateInputExclude}
+            onKeyDown={this.addExcludeWordOnEnter}
+            onFocus={() => this.props.changeIsExclude(true)}
+            className="searchBar"
+          />
+          <button
+            type="button"
+            className={classNames('addInput', { disabled: this.props.excludeKeywords.length === 6 })}
+            {...handleInteraction(this.addExcludeWord)}
+          >
+            <Icon className={classNames(['iconInline', 'plusIcon'])} icon="plus-circle" />
+          </button>
+        </div>
       </div>
       <ul className="searchWords">
         {this.searchWordsRender(this.props.excludeKeywords, 'exclude')}
@@ -195,45 +197,47 @@ class SearchContent extends React.PureComponent {
 
   includeSearchTextAndWords = () => (
     <React.Fragment>
-      <div className="includeText">
-        {this.state.mode === 'basic'
-          ? (
-            <FormattedMessage id="components.searchBar.findWords.searchText.basicInclude" />
-          )
-          : (
-            <FormattedMessage
-              id="components.searchBar.findWords.searchText.advancedInclude"
-              values={{
-                dropdown: (<Dropdown
-                  options={['any', 'all']}
-                  onChange={v => this.props.findAnyOnChange(v === 'any')}
-                  className="dropDown"
-                  selectedOption={this.props.findAny ? 'any' : 'all'}
-                  optionID="components.searchBar.findWords.options"
-                />),
-              }}
-            />
-          )
-        }
-        :
-      </div>
-      <div className="input">
-        <input
-          value={this.state.inputInclude}
-          onChange={this.updateInputInclude}
-          onKeyDown={this.addIncludeWordOnEnter}
-          className="searchBar"
-          onFocus={() => this.props.changeIsExclude(false)}
-        />
-        <button
-          type="button"
-          className={classNames(
-            'addInput', { disabled: this.props.includeKeywords.length === 6 },
-          )}
-          {...handleInteraction(this.addIncludeWord)}
-        >
-          <Icon className="iconInline plusIcon" icon="plus-circle" />
-        </button>
+      <div className="includeElements">
+        <div className="includeText">
+          {this.state.mode === 'basic'
+            ? (
+              <FormattedMessage id="components.searchBar.findWords.searchText.basicInclude" />
+            )
+            : (
+              <FormattedMessage
+                id="components.searchBar.findWords.searchText.advancedInclude"
+                values={{
+                  dropdown: (<Dropdown
+                    options={['any', 'all']}
+                    onChange={v => this.props.findAnyOnChange(v === 'any')}
+                    className="dropDown"
+                    selectedOption={this.props.findAny ? 'any' : 'all'}
+                    optionID="components.searchBar.findWords.options"
+                  />),
+                }}
+              />
+            )
+          }
+          :
+        </div>
+        <div className="input">
+          <input
+            value={this.state.inputInclude}
+            onChange={this.updateInputInclude}
+            onKeyDown={this.addIncludeWordOnEnter}
+            className="searchBar"
+            onFocus={() => this.props.changeIsExclude(false)}
+          />
+          <button
+            type="button"
+            className={classNames(
+              'addInput', { disabled: this.props.includeKeywords.length === 6 },
+            )}
+            {...handleInteraction(this.addIncludeWord)}
+          >
+            <Icon className="iconInline plusIcon" icon="plus-circle" />
+          </button>
+        </div>
       </div>
       <ul className="searchWords">
         {this.searchWordsRender(this.props.includeKeywords, 'include')}
