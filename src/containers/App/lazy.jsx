@@ -153,6 +153,10 @@ class App extends React.PureComponent {
   }
 
   componentDidMount() {
+    // Check if scrollbars are visible (MacOS hides them sometimes) and display styling if necessary
+    if (!areScrollbarsVisible()) {
+      document.body.classList.add('force-show-scrollbars');
+    }
     // Dispatch an event to tell the LoadingGuide that we're mounted
     const event = new CustomEvent('LoadingGuide.enabled', { detail: false });
     window.dispatchEvent(event);
@@ -573,9 +577,6 @@ class App extends React.PureComponent {
   }
 
   render() {
-    if (!areScrollbarsVisible()) {
-      document.body.classList.add('force-show-scrollbars');
-    }
     const { transitionState, browseBy, setBrowseBy, selected } = this.props;
 
     this.processedConditionCounts = this.processedConditionCounts
