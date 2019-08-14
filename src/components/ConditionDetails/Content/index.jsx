@@ -80,10 +80,12 @@ class Content extends React.PureComponent {
                   id="components.conditionDetails.issuanceDate"
                   content={data.issuanceDate}
                 />
-                <ContentBlock
-                  id="components.conditionDetails.effectiveDate"
-                  content={data.effectiveDate}
-                />
+                {!data.effectiveDate ? null : (
+                  <ContentBlock
+                    id="components.conditionDetails.effectiveDate"
+                    content={data.effectiveDate}
+                  />
+                )}
                 {!data.sunsetDate ? null : (
                   <ContentBlock
                     id="components.conditionDetails.sunsetDate"
@@ -111,10 +113,12 @@ class Content extends React.PureComponent {
           : (
             <React.Fragment>
               <div className="half">
-                <ContentBlock
-                  id="components.conditionDetails.effectiveDate"
-                  content={data.effectiveDate}
-                />
+                {!data.effectiveDate ? null : (
+                  <ContentBlock
+                    id="components.conditionDetails.effectiveDate"
+                    content={data.effectiveDate}
+                  />
+                )}
                 {matchedKeywords.length === 0 ? null : (
                   <ContentBlock
                     id="components.conditionDetails.keywords"
@@ -146,7 +150,7 @@ Content.propTypes = {
     instrumentNumber: PropTypes.string.isRequired,
     documentNumber: PropTypes.string,
     issuanceDate: PropTypes.string.isRequired,
-    effectiveDate: PropTypes.string.isRequired,
+    effectiveDate: PropTypes.string,
     sunsetDate: PropTypes.string,
     status: PropTypes.string.isRequired,
     location: PropTypes.array.isRequired,
