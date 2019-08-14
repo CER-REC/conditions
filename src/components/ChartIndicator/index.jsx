@@ -14,8 +14,9 @@ const ChartIndicator = (props) => {
     />
   );
   const label = typeof props.label === 'undefined' ? null : (
-    <text x="0" y="-12" textAnchor="middle" alignmentBaseline="bottom">
-      {props.label}{(props.allThemes) ? '*' : ''}
+    <text x="0" y="-16" textAnchor="middle" alignmentBaseline="bottom">
+      {(typeof props.label === 'number') ? props.label.toLocaleString() : props.label}
+      {(props.allThemes) ? '*' : ''}
     </text>
   );
   return (
