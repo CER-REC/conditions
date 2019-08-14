@@ -44,4 +44,4 @@ RegionCompanies.defaultProps = {
   isHidden: false,
 };
 
-export default RegionCompanies;
+export default React.memo(RegionCompanies);

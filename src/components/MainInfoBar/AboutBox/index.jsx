@@ -57,4 +57,4 @@ const AboutBox = () => (
   </div>
 );
 
-export default AboutBox;
+export default React.memo(AboutBox);

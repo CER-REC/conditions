@@ -33,4 +33,4 @@ TotalConditionsLabel.propTypes = {
   openNumberDetails: PropTypes.func.isRequired,
 };
 
-export default injectIntl(TotalConditionsLabel);
+export default injectIntl(React.memo(TotalConditionsLabel));

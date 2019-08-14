@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import handleInteraction from '../../../utilities/handleInteraction';
 import joinJsxArray from '../../../utilities/joinJsxArray';
 
@@ -9,18 +9,19 @@ import './styles.scss';
 
 import ContentBlock from '../ContentBlock';
 
+// eslint-disable-next-line react/prop-types
+const DangerousContentText = React.memo(({ children, content }) => (
+  <div
+    className="contentText"
+    dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
+      __html: `<span class="contentHeading">${children}:&nbsp;</span>${content}`,
+    }}
+  />
+));
+
 class Content extends React.PureComponent {
   renderContentText = (id, content) => (
-    <FormattedMessage id={id}>
-      {(text) => {
-        const fullText = `<span class="contentHeading">${text}:&nbsp;</span>${content}`;
-        return (
-        // eslint-disable-next-line react/no-danger
-          <div className="contentText" dangerouslySetInnerHTML={{ __html: fullText }} />
-        );
-      }
-        }
-    </FormattedMessage>
+    <AdvancedFormattedMessage id={id} tag={DangerousContentText} content={content} />
   )
 
   renderDocumentLink = data => ((data.documentNumber)

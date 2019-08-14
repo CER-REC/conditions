@@ -19,8 +19,8 @@ const KeywordExplorerButton = props => (
   </div>
 );
 
-export default KeywordExplorerButton;
-
 KeywordExplorerButton.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
+
+export default React.memo(KeywordExplorerButton);

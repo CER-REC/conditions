@@ -17,4 +17,4 @@ Arrow.propTypes = {
   orientation: PropTypes.oneOf(['Up', 'Down', 'Left', 'Right']).isRequired,
 };
 
-export default Arrow;
+export default React.memo(Arrow);

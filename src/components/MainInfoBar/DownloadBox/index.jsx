@@ -39,4 +39,4 @@ DownloadBox.propTypes = {
 
 };
 
-export default DownloadBox;
+export default React.memo(DownloadBox);

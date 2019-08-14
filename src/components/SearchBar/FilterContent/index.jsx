@@ -18,6 +18,7 @@ const findListItemValue = (target, depth = 0) => {
 const createYearArray = yearObject => Array(yearObject.end - yearObject.start + 1)
   .fill()
   .map((_, index) => yearObject.start + index);
+
 class FilterContent extends React.PureComponent {
   static propTypes = {
     yearRange: yearRangeType.isRequired,

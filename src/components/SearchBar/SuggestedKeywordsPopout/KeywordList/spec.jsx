@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import KeywordList from '.';
+import Icon from '../../../Icon';
 import './styles.scss';
 
 const keywords = [
@@ -40,15 +41,15 @@ describe('Components|SearchBar/SuggestedKeywordsPopout/KeywordList', () => {
     test('if word is selected, should have appropriately styled', () => {
       const updatedWrapper = wrapper.find('li');
       const first = updatedWrapper.first();
-      expect((first).find('Icon').props().icon).toBe('minus-circle');
-      expect((first).find('Icon').hasClass('selectedIcon')).toBe(true);
+      expect((first).find(Icon).props().icon).toBe('minus-circle');
+      expect((first).find(Icon).hasClass('selectedIcon')).toBe(true);
     });
 
     test('if word is not selected, should have appropriate styles', () => {
       const updatedWrapper = wrapper.find('li');
       const last = updatedWrapper.last();
-      expect((last).find('Icon').props().icon).toBe('plus-circle');
-      expect((last).find('Icon').hasClass('regularIcon')).toBe(true);
+      expect((last).find(Icon).props().icon).toBe('plus-circle');
+      expect((last).find(Icon).hasClass('regularIcon')).toBe(true);
     });
   });
 

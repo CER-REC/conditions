@@ -44,4 +44,4 @@ FeatureFlag.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-export default injectIntl(FeatureFlag);
+export default injectIntl(React.memo(FeatureFlag));

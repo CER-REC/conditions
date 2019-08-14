@@ -107,7 +107,7 @@ class SearchContent extends React.PureComponent {
         <div className="includeText">
           <FormattedMessage
             id="components.searchBar.findWords.searchText.exclude"
-            values={{
+            values={{ // TODO: New objects cause wasted renders
               not: (
                 <FormattedMessage id="components.searchBar.findWords.searchText.not" tagName="strong" />
               ),
@@ -149,7 +149,7 @@ class SearchContent extends React.PureComponent {
       <div className="anyText">
         <FormattedMessage
           id="components.searchBar.findWords.highlightText.followingInclude"
-          values={{
+          values={{ // TODO: New objects cause wasted renders
             choice: (
               this.props.findAny
                 ? (
@@ -178,7 +178,7 @@ class SearchContent extends React.PureComponent {
             <div className="anyText">
               <FormattedMessage
                 id="components.searchBar.findWords.highlightText.followingExclude"
-                values={{
+                values={{ // TODO: New objects cause wasted renders
                   choice: (
                     <AdvancedFormattedMessage
                       id="components.searchBar.findWords.highlightText.none"
@@ -206,7 +206,7 @@ class SearchContent extends React.PureComponent {
             : (
               <FormattedMessage
                 id="components.searchBar.findWords.searchText.advancedInclude"
-                values={{
+                values={{ // TODO: New objects cause wasted renders
                   dropdown: (<Dropdown
                     options={['any', 'all']}
                     onChange={v => this.props.findAnyOnChange(v === 'any')}

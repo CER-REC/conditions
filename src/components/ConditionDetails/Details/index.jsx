@@ -10,53 +10,62 @@ import ContentBlock from '../ContentBlock';
 
 import './styles.scss';
 
-class Details extends React.PureComponent {
-  detailBlock = type => (
+/* eslint-disable react/prop-types */
+const DetailBlocks = ({ data }) => (
+  <React.Fragment>
     <ContentBlock
-      id={`common.features.${type}`}
-      content={(<AdvancedFormattedMessage id={`common.${this.props.data[type]}`} />)}
+      id="common.features.phase"
+      content={(<AdvancedFormattedMessage id={`common.${data.phase}`} />)}
     />
-  );
+    <ContentBlock
+      id="common.features.type"
+      content={(<AdvancedFormattedMessage id={`common.${data.type}`} />)}
+    />
+    <ContentBlock
+      id="common.features.status"
+      content={(<AdvancedFormattedMessage id={`common.${data.status}`} />)}
+    />
+    <ContentBlock
+      id="common.features.filing"
+      content={(<AdvancedFormattedMessage id={`common.${data.filing}`} />)}
+    />
+  </React.Fragment>
+);
+/* eslint-enable react/prop-types */
 
-  render() {
-    return (
-      <div className="Details">
-        <div className="filler" />
-        <div className="content">
-          {!this.props.isInstrument
-            ? (
-              <React.Fragment>
-                <FormattedMessage
-                  id="components.conditionDetails.selectedConditionFeature"
-                  tagName="h3"
-                />
-                <ContentBlock
-                  id="common.features.theme"
-                  content={
-                    joinJsxArray(
-                      this.props.data.theme.map(theme => (
-                        <AdvancedFormattedMessage
-                          key={`common.theme.${theme}`}
-                          id={`common.theme.${theme}`}
-                        />
-                      )),
-                      ', ',
-                    )
-                  }
-                />
-                {this.detailBlock('phase')}
-                {this.detailBlock('type')}
-                {this.detailBlock('status')}
-                {this.detailBlock('filing')}
-              </React.Fragment>
-            )
-            : null
-          }
-        </div>
-      </div>
-    );
-  }
-}
+const Details = ({ data, isInstrument }) => (
+  <div className="Details">
+    <div className="filler" />
+    <div className="content">
+      {!isInstrument
+        ? (
+          <React.Fragment>
+            <FormattedMessage
+              id="components.conditionDetails.selectedConditionFeature"
+              tagName="h3"
+            />
+            <ContentBlock
+              id="common.features.theme"
+              content={
+                joinJsxArray(
+                  data.theme.map(theme => (
+                    <AdvancedFormattedMessage
+                      key={`common.theme.${theme}`}
+                      id={`common.theme.${theme}`}
+                    />
+                  )),
+                  ', ',
+                )
+              }
+            />
+            <DetailBlocks data={data} />
+          </React.Fragment>
+        )
+        : null
+      }
+    </div>
+  </div>
+);
 
 Details.propTypes = {
   isInstrument: PropTypes.bool,
@@ -74,4 +83,4 @@ Details.defaultProps = {
   data: {},
 };
 
-export default Details;
+export default React.memo(Details);

@@ -15,21 +15,21 @@ storiesForComponent('Components|CompanyPopup', module, ReadMe)
       closeModal={closeModal}
       projectName="Trans Mountain Expansion"
       companies={[
-        'Company A',
-        'Company B',
-        'Company C',
-        'Company D',
-        'Company E',
-        'Company F',
-        'Company G',
-        'Company H',
-        'Company I',
-        'Company J',
-        'Company K',
-        'Company L',
-        'Company M',
-        'Company N',
-        'Company O',
+        { name: 'Company A' },
+        { name: 'Company B' },
+        { name: 'Company C' },
+        { name: 'Company D' },
+        { name: 'Company E' },
+        { name: 'Company F' },
+        { name: 'Company G' },
+        { name: 'Company H' },
+        { name: 'Company I' },
+        { name: 'Company J' },
+        { name: 'Company K' },
+        { name: 'Company L' },
+        { name: 'Company M' },
+        { name: 'Company N' },
+        { name: 'Company O' },
       ]}
     />
   ));

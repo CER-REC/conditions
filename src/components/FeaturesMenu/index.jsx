@@ -54,4 +54,4 @@ FeaturesMenu.defaultProps = {
   className: '',
 };
 
-export default FeaturesMenu;
+export default React.memo(FeaturesMenu);

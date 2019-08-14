@@ -47,4 +47,4 @@ Ring.propTypes = {
   ringType: browseByType.isRequired,
 };
 
-export default Ring;
+export default React.memo(Ring);

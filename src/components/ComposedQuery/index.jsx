@@ -2,7 +2,8 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import handleQueryError from '../../utilities/handleQueryError';
 
-export default ({ children, ...props }) => {
+// eslint-disable-next-line react/prop-types
+export default React.memo(({ children, ...props }) => {
   const composedQuery = Object.entries(props)
     // Allow the props to be undefined so that queries can be dynamically added
     .filter(([, query]) => !!query)
@@ -27,4 +28,4 @@ export default ({ children, ...props }) => {
     ), children);
 
   return composedQuery({ queryInfo: {}, data: {}, loading: false });
-};
+});
