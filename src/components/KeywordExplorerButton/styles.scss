@@ -14,14 +14,16 @@
     height: 100%;
   }
   .descriptionText {
-    display: inline-block;
-    padding-top: 2%;
     left: 45px;
+    width: calc(100% - 45px);
+    height: 100%;
     position: absolute;
-  }
-  p {
-    padding: 0px;
-    margin: 0px;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
   }
   .keywordExplorerCircle {
     height: 36px;
