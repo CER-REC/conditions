@@ -6951,8 +6951,8 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         className="keywordExplorerCircle"
       >
         <circle
-          cx="18"
-          cy="14"
+          cx="13"
+          cy="13"
           r="12"
         />
       </svg>

@@ -14,10 +14,11 @@
     height: 100%;
   }
   .descriptionText {
-    left: 45px;
+    position: absolute;
+    right: 5%;
+
     width: calc(100% - 45px);
     height: 100%;
-    position: absolute;
 
     padding: 0;
     margin: 0;
@@ -26,10 +27,14 @@
     align-items: center;
   }
   .keywordExplorerCircle {
-    height: 36px;
-    width: 36px;
-    left: 4px;
+    height: 26px;
+    width: 26px;
+
     position: absolute;
+    top: 50%;
+    left: 5%;
+
+    transform: translateY(-50%);
   }
   .keywordExplorerCircle > circle {
     fill: $GuideFaded;
