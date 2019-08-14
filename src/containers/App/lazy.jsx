@@ -58,6 +58,27 @@ import DownloadPopup from '../../components/DownloadPopup';
 import TotalConditionsPopup from '../../components/TotalConditionsPopup';
 import './styles.scss';
 
+// Check if on MacOS and scrollbars are hidden apply styles if necessary
+// Linked Ticket: NEBV-1697
+function areScrollbarsVisible() {
+  const scrollableElem = document.createElement('div');
+  const innerElem = document.createElement('div');
+  scrollableElem.style.width = '30px';
+  scrollableElem.style.height = '30px';
+  scrollableElem.style.overflow = 'scroll';
+  scrollableElem.style.borderWidth = '0';
+  innerElem.style.width = '30px';
+  innerElem.style.height = '60px';
+  scrollableElem.appendChild(innerElem);
+  document.body.appendChild(scrollableElem); // Elements only have width if they're in the layout
+  const diff = scrollableElem.offsetWidth - scrollableElem.clientWidth;
+  document.body.removeChild(scrollableElem);
+  return diff > 0;
+}
+if (!areScrollbarsVisible()) {
+  document.body.classList.add('force-show-scrollbars');
+}
+
 const store = createStore();
 const cache = new InMemoryCache();
 const link = new HttpLink({
