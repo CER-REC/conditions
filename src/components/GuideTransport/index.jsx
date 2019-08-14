@@ -87,4 +87,4 @@ GuideTransport.defaultProps = {
   playing: false,
 };
 
-export default GuideTransport;
+export default React.memo(GuideTransport);

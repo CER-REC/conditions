@@ -44,4 +44,4 @@ Dropdown.defaultProps = {
   className: '',
 };
 
-export default Dropdown;
+export default React.memo(Dropdown);

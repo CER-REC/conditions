@@ -27,4 +27,4 @@ Footer.defaultProps = {
   layoutOnly: PropTypes.false,
 };
 
-export default Footer;
+export default React.memo(Footer);

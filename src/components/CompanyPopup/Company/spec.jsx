@@ -17,7 +17,7 @@ describe('Components|Company', () => {
     beforeEach(() => {
       wrapper = mountWithIntl(<Company
         projectName="Trans Mountain Expansion"
-        companies={['A', 'B', 'C']}
+        companies={[{ name: 'A' }, { name: 'B' }, { name: 'C' }]}
         closeModal={spy}
       />);
     });

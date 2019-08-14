@@ -6,44 +6,40 @@ import ContentBlock from '../ContentBlock';
 
 import './styles.scss';
 
-class Details extends React.PureComponent {
-  render() {
-    return (
-      <div className="Details">
-        <div className="filler" />
-        <div className="content">
-          {!this.props.isInstrument
-            ? (
-              <React.Fragment>
-                <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
-                <ContentBlock
-                  id="common.features.theme"
-                  content={
-                    this.props.data.theme.map((theme, index) => (
-                      index === this.props.data.theme.length - 1
-                        ? <FormattedMessage key={`common.theme.${theme}`} id={`common.theme.${theme}`} />
-                        : (
-                          <React.Fragment key={`common.theme.${theme}`}>
-                            <FormattedMessage id={`common.theme.${theme}`} />
-                            <span>, </span>
-                          </React.Fragment>
-                        )
-                    ))
-                  }
-                />
-                <ContentBlock id="common.features.phase" content={<FormattedMessage id={`common.${this.props.data.phase}`} />} />
-                <ContentBlock id="common.features.type" content={<FormattedMessage id={`common.${this.props.data.type}`} />} />
-                <ContentBlock id="common.features.status" content={<FormattedMessage id={`common.${this.props.data.status}`} />} />
-                <ContentBlock id="common.features.filing" content={<FormattedMessage id={`common.${this.props.data.filing}`} />} />
-              </React.Fragment>
-            )
-            : null
-          }
-        </div>
-      </div>
-    );
-  }
-}
+const Details = props => (
+  <div className="Details">
+    <div className="filler" />
+    <div className="content">
+      {!props.isInstrument
+        ? (
+          <React.Fragment>
+            <FormattedMessage id="components.conditionDetails.selectedConditionFeature" tagName="h3" />
+            <ContentBlock
+              id="common.features.theme"
+              content={
+                props.data.theme.map((theme, index) => (
+                  index === props.data.theme.length - 1
+                    ? <FormattedMessage key={`common.theme.${theme}`} id={`common.theme.${theme}`} />
+                    : (
+                      <React.Fragment key={`common.theme.${theme}`}>
+                        <FormattedMessage id={`common.theme.${theme}`} />
+                        <span>, </span>
+                      </React.Fragment>
+                    )
+                ))
+              }
+            />
+            <ContentBlock id="common.features.phase" content={<FormattedMessage id={`common.${props.data.phase}`} />} />
+            <ContentBlock id="common.features.type" content={<FormattedMessage id={`common.${props.data.type}`} />} />
+            <ContentBlock id="common.features.status" content={<FormattedMessage id={`common.${props.data.status}`} />} />
+            <ContentBlock id="common.features.filing" content={<FormattedMessage id={`common.${props.data.filing}`} />} />
+          </React.Fragment>
+        )
+        : null
+      }
+    </div>
+  </div>
+);
 
 Details.propTypes = {
   isInstrument: PropTypes.bool,
@@ -61,4 +57,4 @@ Details.defaultProps = {
   data: {},
 };
 
-export default Details;
+export default React.memo(Details);

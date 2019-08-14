@@ -92,4 +92,4 @@ ProjectChart.defaultProps = {
   filteredProjectLookup: {},
 };
 
-export default ProjectChart;
+export default React.memo(ProjectChart);

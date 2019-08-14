@@ -24,7 +24,7 @@ const noop = () => {};
 
 const streamAnimation = { duration: 1000, easing: 'cubicInOut' };
 
-class StreamGraph extends React.Component {
+class StreamGraph extends React.PureComponent {
   static propTypes = {
     allConditionsPerYear: allConditionsPerYearType.isRequired,
     feature: featureTypes.isRequired,

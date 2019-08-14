@@ -18,7 +18,7 @@ const projectFeature = feat => geoConicConformal()
   .rotate([96, 0])
   .fitExtent([[2, 2], [viewBox.width - 4, viewBox.height - 4]], feat);
 
-class LocationWheelMinimap extends React.Component {
+class LocationWheelMinimap extends React.PureComponent {
   constructor() {
     super();
     this.state = {

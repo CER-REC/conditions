@@ -27,4 +27,4 @@ TotalConditionsPopup.defaultProps = {
   isOpen: false,
 };
 
-export default TotalConditionsPopup;
+export default React.memo(TotalConditionsPopup);

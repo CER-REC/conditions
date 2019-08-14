@@ -116,4 +116,4 @@ ProjectHeader.defaultProps = {
   },
 };
 
-export default ProjectHeader;
+export default React.memo(ProjectHeader);

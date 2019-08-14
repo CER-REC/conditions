@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import FeaturesLegend from '.';
+import LegendItem from './LegendItem';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 import { displayOrder, aggregatedCount } from '../../mockData';
 
@@ -21,7 +22,7 @@ describe('Components|FeaturesLegend', () => {
   shouldBehaveLikeAComponent(FeaturesLegend, () => wrapper);
 
   test('should contain five active LegendItems', () => {
-    const legendItems = wrapper.find('LegendItem');
+    const legendItems = wrapper.find(LegendItem);
     expect(legendItems).toHaveLength(13);
     expect(legendItems.filterWhere(v => !v.prop('disabled'))).toHaveLength(10);
   });

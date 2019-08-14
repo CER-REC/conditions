@@ -75,4 +75,4 @@ PopupBtn.defaultProps = {
   className: '',
 };
 
-export default PopupBtn;
+export default React.memo(PopupBtn);

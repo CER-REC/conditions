@@ -65,4 +65,4 @@ Tab.defaultProps = {
   isFilter: false,
 };
 
-export default Tab;
+export default React.memo(Tab);

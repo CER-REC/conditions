@@ -110,4 +110,4 @@ PullToSpin.propTypes = {
   intl: intlShape.isRequired,
 };
 
-export default injectIntl(PullToSpin);
+export default injectIntl(React.memo(PullToSpin));

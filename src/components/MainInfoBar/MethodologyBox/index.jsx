@@ -52,4 +52,4 @@ const MethodologyBox = () => (
   </div>
 );
 
-export default MethodologyBox;
+export default React.memo(MethodologyBox);

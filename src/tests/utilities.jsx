@@ -27,7 +27,10 @@ export const monkeyPatchShallowWithIntl = () => {
 };
 
 export const shouldBehaveLikeAComponent = (rawComponent, callback) => {
-  const component = rawComponent.WrappedComponent || rawComponent;
+  let component = rawComponent.WrappedComponent || rawComponent;
+  if (component.$$typeof === Symbol.for('react.memo')) {
+    component = component.type;
+  }
 
   it('should render with the component name as a class', () => {
     const wrapper = callback();
