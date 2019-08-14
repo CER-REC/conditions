@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
-import Icon from '../../../Icon/index';
+import Icon from '../../../Icon';
 import handleInteraction from '../../../../utilities/handleInteraction';
 import BarContainer from '../../../BarContainer';
 import './styles.scss';

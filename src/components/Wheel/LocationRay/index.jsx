@@ -56,4 +56,4 @@ LocationRay.defaultProps = {
   items: null,
 };
 
-export default LocationRay;
+export default React.memo(LocationRay);

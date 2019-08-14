@@ -77,4 +77,4 @@ CompanyFlag.defaultProps = {
   filteredProjectLookup: {},
 };
 
-export default CompanyFlag;
+export default React.memo(CompanyFlag);

@@ -1,16 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import memoize from 'lodash.memoize';
+import memoizeReference from '../../../utilities/memoizeReference';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import List from '../../List';
 import './styles.scss';
 
 const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
 const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
-class WheelList extends React.Component {
-  static wrapIndex= (i, selected, length) => (selected + i + length)
-  % length;
 
+const wrapIndex = (i, selected, length) => (selected + i + length) % length;
+
+const memoizedListElements = memoize((listContent, selected) => {
+  if (listContent.length === 0) { return []; }
+  return indexOffsets.map((offset) => {
+    const text = listContent[wrapIndex(offset, selected, listContent.length)].name;
+    return (
+      <span
+        title={text}
+        className={offsetClasses[Math.abs(offset)]}
+        key={`${text}-${offset}`}
+      >
+        {text}
+      </span>
+    );
+  });
+}, (list, selected) => `${memoizeReference(list)}-${selected}`);
+
+class WheelList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,27 +37,11 @@ class WheelList extends React.Component {
   }
 
   static getDerivedStateFromProps(props) {
-    const listElements = props.listContent.length > 0
-      ? (indexOffsets.map((offset) => {
-        const text = props.listContent[WheelList.wrapIndex(
-          offset, props.selected, props.listContent.length,
-        )].name;
-        return (
-          <span
-            title={text}
-            className={offsetClasses[Math.abs(offset)]}
-            key={`${text}-${offset}`}
-          >
-            {text}
-          </span>
-        );
-      }))
-      : [];
-    return { listElements };
+    return { listElements: memoizedListElements(props.listContent, props.selected) };
   }
 
   handleOnChange = i => this.props.onChange(
-    WheelList.wrapIndex(i - 3, this.props.selected, this.props.listContent.length),
+    wrapIndex(i - 3, this.props.selected, this.props.listContent.length),
   );
 
   render() {

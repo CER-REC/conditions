@@ -54,7 +54,7 @@ const steps = [
 ];
 
 // eslint-disable-next-line react/prop-types
-const GuideDetailOutsideText = ({ children, radius, textRadius }) => (
+const GuideDetailOutsideText = React.memo(({ children, radius, textRadius }) => (
   <svg
     className="curvedText"
     width={radius}
@@ -80,7 +80,7 @@ const GuideDetailOutsideText = ({ children, radius, textRadius }) => (
       </textPath>
     </text>
   </svg>
-);
+));
 
 const GuideDetail = (props) => {
   const { changeStep, selected, radius } = props;
@@ -127,4 +127,4 @@ GuideDetail.propTypes = {
 
 GuideDetail.defaultProps = {};
 
-export default GuideDetail;
+export default React.memo(GuideDetail);

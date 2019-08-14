@@ -57,4 +57,4 @@ ChartIndicator.defaultProps = {
   allThemes: false,
 };
 
-export default ChartIndicator;
+export default React.memo(ChartIndicator);

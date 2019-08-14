@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SearchContent from '.';
+import Dropdown from '../../Dropdown';
 
 const includeKeywords = [
   'access management',
@@ -113,15 +114,15 @@ describe('Components|SearchBar/SearchContent', () => {
         'components.searchBar.findWords.searchText.advancedInclude',
       );
       const updatedWrapper = formattedMessageWrapper.shallowWithIntl();
-      expect(updatedWrapper.find('Dropdown')).toHaveLength(1);
-      expect(updatedWrapper.find('Dropdown').props().selectedOption).toBe('any');
+      expect(updatedWrapper.find(Dropdown)).toHaveLength(1);
+      expect(updatedWrapper.find(Dropdown).props().selectedOption).toBe('any');
     });
 
     test('with findAny as false, render dropdown with all as the option', () => {
       wrapper.setProps({ findAny: false });
       const updatedWrapper = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl();
-      expect(updatedWrapper.find('Dropdown')).toHaveLength(1);
-      expect(updatedWrapper.find('Dropdown').props().selectedOption).toBe('all');
+      expect(updatedWrapper.find(Dropdown)).toHaveLength(1);
+      expect(updatedWrapper.find(Dropdown).props().selectedOption).toBe('all');
     });
 
     test('render none text in summary', () => {
@@ -180,14 +181,14 @@ describe('Components|SearchBar/SearchContent', () => {
       wrapper.setState({ mode: 'advanced' });
     });
     test('onChange when the option selected is any', () => {
-      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
+      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find(Dropdown);
       dropdown.simulate('change', 'any');
       expect(spy).toBeCalledTimes(1);
       expect(spy).toBeCalledWith(true);
     });
     test('onChange when the option selected is all', () => {
       wrapper.setProps({ findAny: false });
-      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find('Dropdown');
+      const dropdown = wrapper.find('.includeText > FormattedMessage').first().shallowWithIntl().find(Dropdown);
       dropdown.simulate('change', 'all');
       expect(spy).toBeCalledTimes(1);
       expect(spy).toBeCalledWith(false);

@@ -94,4 +94,4 @@ ViewOne.defaultProps = {
   openDownloadModal: noop,
 };
 
-export default ViewOne;
+export default React.memo(ViewOne);

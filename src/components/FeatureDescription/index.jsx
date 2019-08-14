@@ -32,4 +32,4 @@ FeatureDescription.propTypes = {
   feature: featureTypes.isRequired,
 };
 
-export default FeatureDescription;
+export default React.memo(FeatureDescription);

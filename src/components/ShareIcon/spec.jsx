@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { shouldBehaveLikeAComponent } from '../../tests/utilities';
 
 import ShareIcon from '.';
+import Icon from '../Icon';
 
 const noop = () => {};
 const eventFuncs = { preventDefault: noop, stopPropagation: noop };
@@ -20,13 +21,13 @@ describe('Components|ShareIcon', () => {
     'should handle if target is %s', (socialMedia) => {
       wrapper.setProps({ target: socialMedia });
       expect(wrapper.simulate('click', eventFuncs));
-      expect(wrapper.find('Icon').props().icon).toBe(socialMedia);
+      expect(wrapper.find(Icon).props().icon).toBe(socialMedia);
     },
   );
 
   test('should handle if target is email', () => {
     wrapper.setProps({ target: 'email', prefix: 'fas' });
     expect(wrapper.simulate('click', eventFuncs));
-    expect(wrapper.find('Icon').props().icon).toBe('envelope');
+    expect(wrapper.find(Icon).props().icon).toBe('envelope');
   });
 });

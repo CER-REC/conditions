@@ -25,4 +25,4 @@ CountBubble.propTypes = {
   textId: PropTypes.string.isRequired,
 };
 
-export default CountBubble;
+export default React.memo(CountBubble);

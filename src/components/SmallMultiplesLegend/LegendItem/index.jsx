@@ -95,4 +95,4 @@ LegendItem.defaultProps = {
 };
 
 // TODO: Wrap in React.memo when testing issue fixed
-export default LegendItem;
+export default React.memo(LegendItem);

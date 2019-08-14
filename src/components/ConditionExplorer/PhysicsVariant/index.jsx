@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
 import Matter from 'matter-js';
 import { keywordList } from '../proptypes';
 import {
@@ -15,6 +14,7 @@ import {
 } from './categories';
 import Keyword from './Keyword';
 import Guide from './Guide';
+import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 const messageIds = [
   'intro',
@@ -25,6 +25,26 @@ const messageIds = [
 ];
 
 const messageTime = 5000;
+
+// eslint-disable-next-line react/prop-types
+const SplitLines = React.memo(({ children, className, idx }) => {
+  const lines = children.split('\n'); // eslint-disable-line react/prop-types
+
+  return (
+    <text
+      textAnchor="middle"
+      x="0"
+      y={`-${(lines.length) / 2}em`}
+      // eslint-disable-next-line react/no-array-index-key
+      key={idx}
+      className={className}
+    >
+      {lines.map(line => (
+        <tspan x="0" dy="1em" key={line}>{line}</tspan>
+      ))}
+    </text>
+  );
+});
 
 export default class PhysicsVariant extends React.PureComponent {
   static propTypes = {
@@ -307,30 +327,16 @@ export default class PhysicsVariant extends React.PureComponent {
       transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
     >
       {messageIds.map((id, idx) => (
-        <FormattedMessage key={id} id={`components.conditionExplorer.guide.messages.${id}`}>
-          {(text) => {
-            const lines = text.split('\n');
-
-            return (
-              <text
-                textAnchor="middle"
-                x="0"
-                y={`-${(lines.length) / 2}em`}
-                // eslint-disable-next-line react/no-array-index-key
-                key={idx}
-                className={classNames({
-                  hidden: !(id === this.state.guideMessage.toString()),
-                  selected: (this.props.selectedKeywordId > -1),
-                })
-                }
-              >
-                {text.split('\n').map(line => (
-                  <tspan x="0" dy="1em" key={line}>{line}</tspan>
-                ))}
-              </text>
-            );
-          }}
-        </FormattedMessage>
+        <AdvancedFormattedMessage
+          key={id}
+          id={`components.conditionExplorer.guide.messages.${id}`}
+          className={classNames({
+            hidden: !(id === this.state.guideMessage.toString()),
+            selected: (this.props.selectedKeywordId > -1),
+          })}
+          tag={SplitLines}
+          idx={idx}
+        />
       ))}
     </g>
   );

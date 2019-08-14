@@ -13,4 +13,4 @@ const DotLegend = () => (
   </div>
 );
 
-export default DotLegend;
+export default React.memo(DotLegend);

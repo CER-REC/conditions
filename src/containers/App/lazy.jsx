@@ -9,6 +9,7 @@ import { fetch } from 'whatwg-fetch';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect, batch, Provider } from 'react-redux';
+import memoize from 'lodash.memoize';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
@@ -55,12 +56,7 @@ import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 import DownloadPopup from '../../components/DownloadPopup';
 import TotalConditionsPopup from '../../components/TotalConditionsPopup';
-
 import './styles.scss';
-
-import {
-  conditionData,
-} from '../../mockData';
 
 const store = createStore();
 const cache = new InMemoryCache();
@@ -80,18 +76,10 @@ const transitionStates = {
   view3: 10,
 };
 
-const viewProps = {
-  conditionDetails: {
-    searchKeywords: {
-      include: ['hello'],
-    },
-    data: conditionData,
-  },
-  chartIndicatorPosition: {
-    bubble: 'XO',
-    stream: 2010,
-  },
-};
+// TODO: Remove this after the server has been updated
+const reformatYearRange = memoize(range => ({ start: range.min, end: range.max }));
+
+const emptyArray = [];
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -674,7 +662,6 @@ class App extends React.PureComponent {
           {/* TODO: Deployment hacks */}
           <div style={{ clear: 'both' }} />
           <ViewTwo
-            {...viewProps}
             allCompanies={this.props.allCompanies}
             allRegions={this.props.allRegions}
             setWheelMoving={this.setWheelMoving}
@@ -682,10 +669,7 @@ class App extends React.PureComponent {
             allConditionsPerYear={this.props.allConditionsPerYear}
             jumpToView1={this.jumpToView1}
             jumpToView3={this.jumpToView3}
-            projectYears={{
-              start: this.props.allConfigurationData.instrumentYearRange.min,
-              end: this.props.allConfigurationData.instrumentYearRange.max,
-            }}
+            projectYears={reformatYearRange(this.props.allConfigurationData.instrumentYearRange)}
             searchResults={this.props.searchResults}
             setSelectedCompany={this.updateSelection.fromCompany}
             setSelectedRegion={this.updateSelection.fromRegion}
@@ -713,7 +697,6 @@ class App extends React.PureComponent {
               const companyName = (!loading && !error && data && data.getCompanyById.name) || '';
               return (
                 <ViewThree
-                  {...viewProps}
                   displayOrder={this.props.allConfigurationData.displayOrder}
                   allConditionsPerYear={this.props.allConditionsPerYear}
                   years={this.processedConditionCounts.years}
@@ -734,11 +717,12 @@ class App extends React.PureComponent {
             >
               {({ data, loading, error }) => {
                 let shortName = '';
+                // TODO: This causes wasted renders. Don't reformat the instruments
                 let instruments = [];
                 let documentNumber;
-                let companyArray = [];
                 let instrumentIndex = 0;
                 let itemIndex = -1;
+                // TODO: This causes wasted renders. Memoize this
                 const counts = {
                   instruments: 0,
                   conditions: 0,
@@ -778,7 +762,6 @@ class App extends React.PureComponent {
 
                   if (projectDetails) {
                     ({ shortName } = projectDetails);
-                    companyArray = projectDetails.companies.map(({ name }) => name);
                   }
                 }
 
@@ -813,7 +796,9 @@ class App extends React.PureComponent {
                     <CompanyPopup
                       projectName={shortName}
                       closeModal={this.closeCompanyPopup}
-                      companies={companyArray}
+                      companies={data.projectDetails
+                        ? data.projectDetails.companies
+                        : emptyArray}
                       isOpen={this.state.isCompanyPopupOpen}
                     />
                   </React.Fragment>
