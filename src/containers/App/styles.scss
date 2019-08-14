@@ -84,6 +84,7 @@
           background-color $defaultTransition,
           margin-right $defaultTransition,
           color $defaultTransition,
+          width $defaultTransition,
           opacity $defaultTransition;
 
         opacity: 1;
@@ -92,15 +93,17 @@
           transition: border-color $defaultTransition;
         }
       }
-      .browseLabel {
-        transition:
-          width $fastStart,
+
+      .company {
+        overflow-x: visible;
+        white-space: nowrap;
       }
 
       .location,
       .company {
         transition:
           opacity $defaultTransition,
+          width $defaultTransition,
           transform $defaultTransition;
 
         opacity: 1
