@@ -56,6 +56,8 @@ class SearchBar extends React.PureComponent {
 
   changeIsExclude = bool => (this.setState({ isExclude: bool }));
 
+  toggleIsActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
+
   render() {
     const {
       mode, isActive, isExclude,
@@ -75,7 +77,7 @@ class SearchBar extends React.PureComponent {
             <SearchContent
               setIncluded={setIncluded}
               setExcluded={setExcluded}
-              closeTab={() => (this.setState({ mode: '' }))}
+              closeTab={this.handleTabChange('')}
               findAnyOnChange={findAnyOnChange}
               findAny={findAny}
               includeKeywords={includeKeywords}
@@ -85,9 +87,7 @@ class SearchBar extends React.PureComponent {
             />
             <div className={classNames('SuggestionPrompt', { excludePrompt: (isExclude) })}>
               <SuggestedKeywordsPrompt
-                onClick={
-                  // TODO: This causes wasted renders
-                () => (this.setState({ isActive: !isActive }))}
+                onClick={this.toggleIsActive}
                 isActive={isActive}
               />
             </div>
@@ -95,7 +95,7 @@ class SearchBar extends React.PureComponent {
               ? (
                 <SuggestedKeywordsPopout
                   suggestedKeywords={suggestedKeywords}
-                  closeTab={() => (this.setState({ isActive: false }))}
+                  closeTab={this.toggleIsActive}
                   setIncluded={setIncluded}
                   setExcluded={setExcluded}
                   categories={availableCategories}
