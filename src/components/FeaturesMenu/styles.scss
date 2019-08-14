@@ -6,10 +6,18 @@
 $select-side-padding: 0.4em;
 
 .FeaturesMenu {
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
   text-align: left;
 
   &:not(.dropDown) {
     .title {
+      position: absolute;
+      top: 0;
+      left: auto;
+
       color: $Black77;
       font-size: 18px;
 
@@ -17,13 +25,15 @@ $select-side-padding: 0.4em;
     }
 
     .List {
+      margin-top: 32px;
+
       .List-Item-Content {
         color: $DarkGray;
         font-size: 16px;
         font-weight: bold;
         border: $list-width $list-style $Gray160;
         padding: 0.2em 1em;
-        margin-top: 1em;
+        margin-top: 10%;
       }
 
       .selected .List-Item-Content {

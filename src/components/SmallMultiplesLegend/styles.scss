@@ -1,12 +1,22 @@
 @import '../../styles/legend.scss';
 @import '../../styles/colors.scss';
+@import '../../styles/breakpoints';
 
 %faded {
   opacity: 0.2;
 }
 
 .SmallMultiplesLegend {
+  height: 100%;
   @extend %legend;
+
+  .List {
+    height: 100%;
+
+    ul {
+      height: 100%;
+    }
+  }
 
   .List.faded {
     .CircleContainer {
@@ -14,19 +24,22 @@
     }
   }
 
-  .LegendItem {
-    height: 1.6em;
-  }
+  .List .List-Item {
+    height: 6.5%;
+    @include breakpoint("medium") { height: 7%; }
 
-  .List .List-Item.selected {
+    .List-Item-Content {
+      height: 100%;
+    }
 
-    margin: 0.3em 0;
+    &.selected {
+      height: 27.4px;
 
-    .LegendItem {
-    outline: 1px solid $LinksTextButtons;
-    margin: 0 2px;
-    border: none;
-    padding: none;
+      .LegendItem {
+      border: 1px solid $LinksTextButtons;
+      margin: 0 2px;
+      padding: none;
+      }
   }
 
   }
