@@ -164,6 +164,7 @@ class ViewTwo extends React.PureComponent {
                   isHidden={this.props.wheelMoving}
                   companies={this.props.regionCompanyData.companies}
                   activeConditionCompanies={this.props.regionCompanyData.selectedConditionCompanies}
+                  selectCompany={this.props.selectRegionCompany}
                   openProjectDetails={this.props.openProjectDetails}
                   isVisible={this.props.wheelMoving ? 'hidden' : ''}
                 />

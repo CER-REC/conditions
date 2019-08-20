@@ -401,7 +401,8 @@
     },
     "regionSummary": {
       "regionCompanies": {
-        "title": "Companies in Selected Region:"
+        "title": "Companies in Selected Region:",
+        "select": "Select a company and return to company wheel"
       },
       "regionConditions": {
         "title": "Total Conditions for Selected Region"

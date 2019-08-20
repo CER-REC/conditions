@@ -9,23 +9,37 @@
   .title {
     position: relative;
 
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 
     width: 100%;
     height: 44px;
 
-    padding-left: 10%;
+    padding-left: 33px;
+
+    margin-bottom: 2px;
 
     background-color:  $LightGray;
 
     border-bottom-right-radius: 15px;
 
     span {
-      position: absolute;
-      bottom: 0;
+      display: block;
 
-      color: $Black77;
-      font-size: 16px;
+      &.companies {
+        margin-top: auto;
+
+        color: $Black77;
+        font-size: 16px;
+      }
+
+      &.select {
+        margin-bottom: 2px;
+
+        color: $Gray160;
+        font-size: 13px;
+        font-style: italic;
+      }
     }
   }
 
@@ -57,21 +71,35 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-    }
 
-    .asterisk {
-      padding: 0;
+      button {
+        border: none;
+        margin: none;
+        padding: none;
+        background: none;
+        font: inherit;
+        color: inherit;
 
-      font-size: 21px;
-      font-family: 'FiraSansCondensedBold';
-      line-height: 16px;
-      vertical-align: middle;
+        &:hover, &:focus {
+          color: $LinksTextButtons;
+          text-decoration: underline;
+        }
+      }
 
-      color: $LinksTextButtons;
-      background: none;
+      .asterisk {
+        padding: 0;
 
-      border: none;
-      outline: inherit;
+        font-size: 21px;
+        font-family: 'FiraSansCondensedBold';
+        line-height: 16px;
+        vertical-align: middle;
+
+        color: $LinksTextButtons;
+        background: none;
+
+        border: none;
+        outline: inherit;
+      }
     }
   }
 }

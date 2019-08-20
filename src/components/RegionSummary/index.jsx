@@ -20,6 +20,7 @@ const RegionSummary = ({
   activeConditionCompanies,
   isHidden,
   openProjectDetails,
+  selectCompany,
 }) => (
   <div className="RegionSummary">
     <RegionConditions
@@ -33,6 +34,7 @@ const RegionSummary = ({
       activeConditionCompanies={activeConditionCompanies}
       isHidden={isHidden}
       openProjectDetails={openProjectDetails}
+      selectCompany={selectCompany}
     />
   </div>
 );
@@ -42,6 +44,8 @@ RegionSummary.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.object).isRequired,
   /** A List of ID's of companies that belong to selected condition */
   activeConditionCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  /** A function for selecting a company and switching to Company mode */
+  selectCompany: PropTypes.func.isRequired,
   /** A function for opening up the dialog to project details */
   openProjectDetails: PropTypes.func.isRequired,
   /** A class to hide or show the component according to the movement of the wheel */
