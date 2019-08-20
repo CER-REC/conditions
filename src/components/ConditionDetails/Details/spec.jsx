@@ -23,11 +23,14 @@ describe('Components|ConditionDetails/Details', () => {
     shouldBehaveLikeAComponent(Details, () => wrapper);
 
     it('should show text content', () => {
-      const items = wrapper.find('.Details')
-        .find('.content')
+      const topLevel = wrapper.find('.content').children();
+      expect(topLevel).toHaveLength(3);
+
+      const detailBlocks = topLevel.find('DetailBlocks')
+        .shallow()
         .children();
 
-      expect(items).toHaveLength(6);
+      expect(detailBlocks).toHaveLength(4);
     });
   });
 

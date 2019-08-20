@@ -31,59 +31,73 @@
   .lowerCase{
     text-transform: lowercase;
   }
-  .includeText {
-    display: inline-block;
+
+  .includeElements {
+    display: flex;
+    justify-content: space-between;
+    .includeText {
+      display: inline-block;
+      flex-basis: fit-content;
+      text-align: right;
+      span {
+        padding: 0px;
+      }
+
+      strong {
+        font-family: $fira-sans-condensed-bold;
+        font-weight: normal;
+      }
+
+      .dropDown {
+        select {
+          text-transform: uppercase;
+          width: auto;
+          padding-right: 20px;
+          height: 1.4em;
+        }
+      }
+    }
     span {
-      padding: 0px;
+      color: $VeryDarkGray;
+      padding: 0px 10px;
     }
-
-    strong {
-      font-family: $fira-sans-condensed-bold;
-      font-weight: normal;
-    }
-
-    .dropDown {
-      select {
-        text-transform: uppercase;
-        width: 5em;
+    .input {
+      display: inline-block;
+      flex: 1;
+      max-width: 70%;
+      padding-left: 8px;
+      .searchBar {
+        width: calc(100% - 32px);
+        border-radius: 10px;
+        border-color: $DarkGray;
+        border-width: 1px;
+        caret-color: $SearchKeyword;
+        padding-left: 6px;
       }
-    }
-  }
-  span {
-    color: $VeryDarkGray;
-    padding: 0px 10px;
-  }
-  .input {
-    float: right;
-    .searchBar {
-      width: 230px;
-      border-radius: 510px;
-      border-color: $DarkGray;
-      border-width: 1px;
-      caret-color: $SearchKeyword;
-      padding-left:6px;
-    }
-    .addInput {
-      background: transparent;
-      line-height: 10px;
-      border: none;
-      padding: 1px 14px 2px 0;
-      div {
-        transform: inherit;
-      }
-      .plusIcon {
-        color: $LinksTextButtons;
-        height: 14px;
-        width: 14px;
-      }
-      &.disabled {
-        pointer-events: none;
+      .addInput {
+        width: 32px;
+        background: transparent;
+        line-height: 10px;
+        border: none;
+        padding: 1px 14px 2px 0;
+        div {
+          transform: inherit;
+        }
         .plusIcon {
-          color: $LightGray;
+          color: $LinksTextButtons;
+          height: 14px;
+          width: 14px;
+        }
+        &.disabled {
+          pointer-events: none;
+          .plusIcon {
+            color: $LightGray;
+          }
         }
       }
     }
   }
+
   .searchWords {
     margin: 10px;
     padding: 0px;

@@ -36,8 +36,8 @@
       "FINANCIAL": "Finances",
       "INTEGRITY_MANAGEMENT": "Gestion de l’intégrité",
       "MANAGEMENT_SYSTEM": "Système de gestion",
-      "SAFETY_MANAGEMENT": "Gestion de la sécurité ",
-      "SECURITY": "Sûreté ",
+      "SAFETY_MANAGEMENT": "Gestion de la sécurité",
+      "SECURITY": "Sûreté",
       "SOCIO_ECONOMIC": "Socioéconomique",
       "STANDARD_CONDITION": "Condition standard",
       "SUNSET_CLAUSE": "Disposition de temporisation"
@@ -89,6 +89,9 @@
     "status": {
       "CLOSED": "Conforme",
       "IN_PROGRESS": "En cours",
+      "ALL_CONDITIONS_MET": "Toutes conditions satisfaites",
+      "EXPIRED": "Échu",
+      "DRAFT": "Ébauche",
       "COMPLETED": "Terminé"
     },
     "filing": {
@@ -120,10 +123,8 @@
           "overview": "Les conditions varient selon les projets. L’Office les établit durant le processus d’évaluation de la demande pour prévenir les préjudices, promouvoir la sécurité et protéger l’environnement dans l’intérêt public."
         },
         "compliance": {
-          "title": "Comment l’Office s’assure-t-il que les conditions sont respectées?",
-          "documentationPrompt": "L’Office s’assure que la société respecte les exigences relatives aux conditions rattachées à un projet en effectuant ce qui suit :",
-          "doc1": "activités de vérification de la conformité (inspections, vérifications, etc.);",
-          "doc2": "évaluation des pièces déposées en conformité aux conditions."
+          "title": "Comment l’Office vérifie-t-il la conformité aux conditions?",
+          "overview": "L’Office s’assure que les sociétés respectent les conditions rattachées aux projets par des activités de vérification de la conformité (inspections, audits, etc.) et par l’examen des pièces déposées conformément aux conditions."
         },
         "clickOutside": "Cliquer à l’extérieur du cercle pour revenir en arrière."
       }
@@ -152,7 +153,7 @@
       "sunsetDate": "Date de réexamen",
       "status": "État de l’instrument",
       "type": "Type d’instrument",
-      "keywords": "Mot-clé",
+      "keywords": "Correspondence de recherché",
       "text": "Texte",
       "selectedConditionFeature": "Particularité de la condition sélectionnée",
       "more": "Plus",
@@ -165,7 +166,7 @@
       "status": "Les conditions peuvent avoir deux états : En cours et conforme.",
       "type": "Il existe deux grands types de conditions : standard et non standard.",
       "filing": "Un document démontrant que les exigences relatives à une condition ont été respectées.",
-      "instrument": "Ordonnances, certificats, licences ou permis délivrés par l’Office. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite.   L’Office publie un Rapport d’instruments réglementaires qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014. "
+      "instrument": "Ordonnances, certificats, licences ou permis délivrés par l’Office. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite.   L’Office publie un Rapport d’instruments réglementaires qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014."
     },
     "featureTypesDescription": {
       "allThemes": "* Les conditions englobant plusieurs thèmes sont comptées plus d’une fois.",
@@ -196,8 +197,8 @@
         "UNSPECIFIED": "L’étape n’est pas précisée ou applicable."
       },
       "status": {
-        "CLOSED": "Cet état signifie ce qui suit : \n• La société a respecté les exigences relatives à la condition et aucun autre dépôt n’est requis; \n• Les exigences de dépôt ou de prise de mesures s’appliquant à une étape précise qui ont été imposées dans la condition ont été satisfaites, car l’étape en question est terminée (p. ex., exigence de dépôt de pièces précises durant l’étape de la construction). Remarque : des commentaires sur les mesures requises peuvent encore être formulés à la société. ",
-        "IN_PROGRESS": "Cet état signifie que la condition continue de faire l’objet d’une surveillance par l’Office. Cela peut se produire dans les situations suivantes :  \n• L’Office n’a pas encore reçu les pièces déposées en conformité aux conditions;  \n• Les pièces ont été reçues, mais elles sont en cours d’examen ou elles ne répondent pas aux exigences; \n• Un projet n’est pas terminé et des conditions ne sont pas satisfaites;  \n• Un projet est soumis à une condition postérieure à la construction, mais une exigence n’est pas satisfaite;  \n• Certaines conditions peuvent demeurer en vigueur indéfiniment ou viser l’exploitation continue d’un pipeline. L’Office assure un suivi des conditions « En cours ». "
+        "CLOSED": "Cet état signifie ce qui suit : \n• La société a respecté les exigences relatives à la condition et aucun autre dépôt n’est requis; \n• Les exigences de dépôt ou de prise de mesures s’appliquant à une étape précise qui ont été imposées dans la condition ont été satisfaites, car l’étape en question est terminée (p. ex., exigence de dépôt de pièces précises durant l’étape de la construction). Remarque : des commentaires sur les mesures requises peuvent encore être formulés à la société.",
+        "IN_PROGRESS": "Cet état signifie que la condition continue de faire l’objet d’une surveillance par l’Office. Cela peut se produire dans les situations suivantes :  \n• L’Office n’a pas encore reçu les pièces déposées en conformité aux conditions;  \n• Les pièces ont été reçues, mais elles sont en cours d’examen ou elles ne répondent pas aux exigences; \n• Un projet n’est pas terminé et des conditions ne sont pas satisfaites;  \n• Un projet est soumis à une condition postérieure à la construction, mais une exigence n’est pas satisfaite;  \n• Certaines conditions peuvent demeurer en vigueur indéfiniment ou viser l’exploitation continue d’un pipeline. L’Office assure un suivi des conditions « En cours »."
       },
       "type": {
         "STANDARD": "Une condition généralement imposée relativement à tous les projets approuvés.",
@@ -205,7 +206,7 @@
       },
       "filing": {
         "REQUIRED": "Une société doit déposer un document devant l’Office afin de satisfaire à une condition. L’Office examine ensuite les dépôts.",
-        "NOT_REQUIRED": "Une société n’est pas tenue de déposer un document devant l’Office afin de satisfaire à une condition. Certaines conditions sont satisfaites à la suite d’un dépôt de conformité relativement à une autre condition connexe. Lorsqu’une société n’est pas tenue de déposer de document pour satisfaire à une condition, l’Office peut vérifier la conformité durant une activité de vérification de la conformité, comme une inspection ou une vérification. "
+        "NOT_REQUIRED": "Une société n’est pas tenue de déposer un document devant l’Office afin de satisfaire à une condition. Certaines conditions sont satisfaites à la suite d’un dépôt de conformité relativement à une autre condition connexe. Lorsqu’une société n’est pas tenue de déposer de document pour satisfaire à une condition, l’Office peut vérifier la conformité durant une activité de vérification de la conformité, comme une inspection ou une vérification."
       },
       "instrument": {
         "AO": "Instrument ayant pour effet d’approuver la modification du contenu ou des modalités d’un certificat, d’une licence, d’une ordonnance ou d’un permis (dans certains cas, l’approbation du gouverneur en conseil est nécessaire).",
@@ -256,10 +257,10 @@
       "tutorial": {
         "0": "Cliquer pour poursuivre.",
         "1": "Cliquer pour poursuivre.",
-        "2": "Voici le texte juridique intégral de la condition que vous avez sélectionnée.",
-        "3": "Les conditions sont caractérisées par leurs particularités, comme thème.",
-        "4": "Faire défiler pour consulter les autres conditions assorties à ce projet.",
-        "5": "Faire défiler pour consulter les autres projets de cette société.",
+        "2": "Texte juridique intégral de la condition sélectionnée.",
+        "3": "Conditions caractérisées par particularités (thème).",
+        "4": "Faire défiler pour voir d’autres conditions du projet.",
+        "5": "Faire défiler pour voir d’autres projets de la société.",
         "6": "Faire tourner la route pour parcourir les sociétés.",
         "7": "Il y a davantage à découvrir au tour!"
       }
@@ -268,7 +269,7 @@
       "caption": "Guide :"
     },
     "instrumentsLegend": {
-      "all": "Tous les instruments "
+      "all": "Tous les instruments"
     },
     "searchBar": {
       "close": "Fermer",
@@ -286,8 +287,8 @@
         "find": "Recherche de mots"
       },
       "suggestedKeywordsPrompt": {
-        "selectFrom": "Sélectionner dans",
-        "suggestedKeywords": "les mots-clés proposés"
+        "selectFrom": "Sélectionner\nparmi",
+        "suggestedKeywords": "les suggestions"
       },
       "highlightSummary": {
         "showing": "{status} de {start} à  {end} sont affichés.",
@@ -302,7 +303,7 @@
         "advancedSearch": "Recherche avancée",
         "basicSearch": "Recherche simple",
         "options": {
-          "any": "un ou l'autre",
+          "any": "n'importe quel",
           "all": "tous"
         },
         "searchText": {
@@ -313,9 +314,9 @@
         },
         "highlightText": {
           "highlightConditions": "Signaler les conditions contenant",
-          "followingInclude": " {choice} des mots suivants",
-          "followingExclude": " {choice} de ce qui suit",
-          "any": "un ou l'autre",
+          "followingInclude": "{choice} des mots suivants",
+          "followingExclude": "{choice} de ce qui suit",
+          "any": "n'importe quel",
           "none": "aucun",
           "all": "tous"
         }
@@ -329,8 +330,8 @@
         "frequency": "Fréquence",
         "alphabetical": "Ordre alphabétique",
         "conditions": "{conditions} conditions",
-        "inc": "aug.",
-        "dec": "dim."
+        "inc": "croiss",
+        "dec": "décroiss"
       }
     },
     "mainInfoBar": {
@@ -345,12 +346,12 @@
       "content": {
         "methodology": "Cliquer {here} pour télécharger un fichier PDF expliquant la méthodologie appliquée pour collecter les données.",
         "keywords": {
-          "1": "",
-          "2": "",
-          "3": "",
-          "4": "",
-          "5": "",
-          "6": ""
+          "1": "D’où viennent les mots-clés?\nLes termes qui, dans le libellé d’une condition, correspondent à des mots-clés de la liste principale forment les mots-clés de cette condition.",
+          "2": "D’où vient la liste principale?\n1. Une première série de mots a été extraite manuellement du guide sur les conditions de l’Office\n… un document interne qui oriente l’élaboration des conditions.",
+          "3": "2. Cette liste initiale a été augmentée grâce à l’exploration de texte\nsynonymes",
+          "4": "… à l’aide du produit Natural Language Toolkit de Python (www.nltk.org).",
+          "5": "3. L’ajout de noms de lieux et de localités est venu compléter la liste principale.",
+          "6": "Comment les mots-clés sont-ils catégorisés?\nLes mots-clés sont répartis manuellement dans les domaines suivants : Espèces sauvages et habitats, Environnement, Surveillance et sécurité, Ingénierie et structures, Administration et dépôts, et Peuples et communautés."
         },
         "downloadData": "Cliquer {here} pour télécharger le jeu de données en format Microsoft Excel (.xlsx).",
         "about": "L’outil interactif Conditions relatives aux projets énergétiques fait partie de l’initiative de visualisation de données de l’Office national de l’énergie. Échelonnée sur trois ans, cette initiative vise à transformer la manière dont l’Office structure et diffuse ses données. Elle a pour objectif de favoriser un processus décisionnel fondé sur la preuve et de faciliter la compréhension des questions liées aux réseaux énergétiques et pipeliniers du Canada, grâce à des visualisations interactives, faciles à utiliser. Cette visualisation se fonde sur les données de l’Office, de 2010 à aujourd’hui, sur les conditions relatives aux projets énergétiques assujettis à sa réglementation. Si vous souhaitez utiliser les données pour vos recherches ou pour en faire votre propre analyse, vous pouvez les télécharger et les partager.  Nous espérons avoir atteint notre objectif. Votre rétroaction est essentielle.",
@@ -364,20 +365,21 @@
       }
     },
     "modal": {
-      "totalConditions":{
-        "title": "",
-        "explanation": "",
-        "example": "",
-        "back": ""
+      "totalConditions": {
+        "title": "Comment le nombre total de conditions est-il déterminé?",
+        "explanation": "Il est possible que le nombre de conditions affichées dans l’outil de visualisation ne corresponde pas au nombre de conditions imposées à un projet. Certaines conditions se répètent dans plusieurs des instruments de réglementation d’un projet et l’outil de visualisation compte toutes les conditions de chacun des instruments.",
+        "example": "L’Office peut par exemple imposer dix conditions différentes à un projet. Cependant, si l’une de ces conditions se répète dans six instruments de réglementation visant le projet, l’outil de visualisation indiquera que le projet est assorti de 15 conditions.",
+        "back": "Retour"
       },
       "data": {
         "title": "Téléchargement des données",
-        "description": "Les données ayant servi à créer cette visualisation sont ouvertes et peuvent être téléchargées. Cliquer sur l’icône pour sauvegarder le fichier de données sur votre ordinateur."
+        "description": "Les données ayant servi à créer cette visualisation sont ouvertes et peuvent être téléchargées. Cliquer sur l’icône pour sauvegarder le fichier de données sur votre ordinateur.",
+        "back": "Retour"
       },
       "company": {
         "name": "Nom complet du projet :",
         "associated": "Sociétés associées au projet :",
-        "meaningHeading": "Pourquoi y a-t-il plus d’une société associée à un projet? ",
+        "meaningHeading": "Pourquoi y a-t-il plus d’une société associée à un projet?",
         "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples :\n- une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter;\n- des initiatives de l’Office visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds).",
         "back": "Précédent"
       },
@@ -389,7 +391,7 @@
         "newTab": "Ouvrir dans un autre onglet",
         "cancel": "Annuler",
         "whatIsHeading": "Qu'est-ce que RegRocs?",
-        "whatIsText": "RegDocs est une collection de documents publics qui ont été déposés au registre légal relativement à des audiences ou à d’autres instances réglementaires écrites. Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires. "
+        "whatIsText": "RegDocs est une collection de documents publics qui ont été déposés au registre légal relativement à des audiences ou à d’autres instances réglementaires écrites. Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires."
       }
     },
     "projectLegend": {
@@ -397,11 +399,13 @@
       "totalConditions": "Nombre total de conditions",
       "associated": "Sociétés associées"
     },
-    "regionCompanies": {
-      "title": "Sociétés dans la région sélectionnée :"
-    },
-    "regionConditionSummary": {
-      "title": "Nombre total de conditions pour la région sélectionnée  "
+    "regionSummary": {
+      "regionCompanies": {
+        "title": "Sociétés dans la région sélectionnée :"
+      },
+      "regionConditions": {
+        "title": "Total des conditions pour la région sélectionnée"
+      }
     },
     "smallMultiplesLegend": {
       "all": {
@@ -431,11 +435,11 @@
       "description": "Tendances et\ndéfinitions"
     },
     "keywordExploreButton": {
-      "description": "Retour aux\nmots-clés"
+      "description": "Mots-clés"
     },
     "browseBy": {
-      "skip": "Sauter l’introduction pour naviguer.",
-      "return": "Retour à la navigation :",
+      "skip": "Sauter l’introduction :",
+      "return": "Navigation :",
       "blank": " "
     },
     "browseByBtn": {
@@ -450,7 +454,7 @@
     "totalConditionsLabel": {
       "total": "Nombre total de conditions",
       "forProject": "pour ce projet",
-      "learnMore": ""
+      "learnMore": "(Pour en savoir plus)"
     },
     "errorBoundary": {
       "errorMessage": "Une erreur s’est produite.",

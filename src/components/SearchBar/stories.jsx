@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { storiesForComponent } from '../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import withStatus from '../../../.storybook/addon-status';
 import SearchBar from '.';
 import ReadMe from './README.md';
@@ -36,6 +36,9 @@ storiesForComponent('Components|SearchBar', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
   .addDecorator(withInteraction({ actions: ['findAnyOnChange', 'updateKeywords'] }))
   .addDecorator(withKnobs)
+  .addDecorator(withStyles(`
+    .SearchBar { position: relative; }
+  `))
   .add('SearchBar default', () => (
     <SearchBar
       suggestedKeywords={sampleSuggestedKeywords}

@@ -124,9 +124,7 @@
         },
         "compliance": {
           "title": "How does the NEB verify condition compliance?",
-          "documentationPrompt": "The NEB verifies company compliance with project condition requirements through:",
-          "doc1": "compliance verification activities (i.e. inspections, audits, etc.)",
-          "doc2": "assessing condition filings"
+          "overview": "The NEB verifies company compliance with project condition requirements through compliance verification activities (i.e. inspections, audits, etc.) and assessing condition filings."
         },
         "clickOutside": "Click outside circle to go back"
       }
@@ -332,8 +330,8 @@
         "frequency": "Frequency",
         "alphabetical": "Alphabetical",
         "conditions": "{conditions} conditions",
-        "inc": "inc",
-        "dec": "dec"
+        "inc": "asc",
+        "dec": "desc"
       }
     },
     "mainInfoBar": {
@@ -348,12 +346,12 @@
       "content": {
         "methodology": "Click {here} to download a PDF file explaining our data collection methodology.",
         "keywords": {
-          "1": "",
-          "2": "",
-          "3": "",
-          "4": "",
-          "5": "",
-          "6": ""
+          "1": "How do we get keywords?\nWhen parts of a condition’s text match keywords from the Master List they become the keywords for that condition.",
+          "2": "Where did the Master List come from?\n1. Manual processing was used to extract an initial set of words from the NEB Condition Guide\n … an internal document that guides the creation of all conditions.",
+          "3": "2. The initial set was expanded through text mining\nsynonyms",
+          "4": "…using the Python Natural Language Toolkit (www.nltk.org)",
+          "5": "3. Additional lists of locations and community names were added to create the Master List",
+          "6": "How are keywords categorized?\nThe Master List of keywords was manually grouped into the following areas: Wildlife & Habitat, Environment, Oversight & Safety, Engineering & Structures, Administration & Filings and, People & Communities."
         },
         "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
         "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",

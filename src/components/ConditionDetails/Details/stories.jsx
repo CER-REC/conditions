@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesForComponent } from '../../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../../.storybook/utils';
 import Details from '.';
 import ReadMe from './README.md';
 
@@ -13,6 +13,10 @@ const data = {
 };
 
 storiesForComponent('Components|ConditionDetails/Details', module, ReadMe)
+  .addDecorator(withStyles(`
+    .ConditionDetails { position: relative; }
+    .Details { position: relative; }
+  `))
   .add('default', () => (
     <Details
       data={data}

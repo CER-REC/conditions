@@ -1,23 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { FormattedMessage } from 'react-intl';
+
 import './styles.scss';
 import handleInteraction from '../../utilities/handleInteraction';
-import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
-import TranslatedParagraphs from '../TranslatedParagraphs';
 
 const KeywordExplorerButton = props => (
   <div className="KeywordExplorerButton" {...handleInteraction(props.onClick)}>
     <div className="buttonText">
       <svg className="keywordExplorerCircle">
-        <circle cx="18" cy="14" r="12" />
+        <circle cx="13" cy="13" r="12" />
       </svg>
-      <span className="descriptionText">
-        <AdvancedFormattedMessage
-          id="components.keywordExploreButton.description"
-          tag={TranslatedParagraphs}
-        />
-      </span>
+      <p className="descriptionText">
+        <FormattedMessage id="components.keywordExploreButton.description" />
+      </p>
     </div>
   </div>
 );

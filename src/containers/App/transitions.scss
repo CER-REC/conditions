@@ -187,11 +187,11 @@ $states: (
     ".appControls .BrowseByBtn.company": (
       opacity: 1,
       pointer-events: auto,
+      width: 0,
     ),
     ".appControls .BrowseByBtn.location": (
       opacity: 1,
       pointer-events: auto,
-      transform: translateX(-100%),
     ),
     ".appControls .BrowseByBtn.inactive": (
       visibility: hidden,
@@ -255,7 +255,7 @@ $states: (
   ),
   // View 3
   10: (
-    ".appControls .arrowWrapper .browseLabel": (width: 128px),
+    ".appControls .arrowWrapper": (width: 128px),
     ".appControls .BrowseByBtn.active": (
       visibility: hidden,
       opacity: 0,
