@@ -1,4 +1,5 @@
 @import './borders.scss';
+@import './breakpoints';
 
 // arrow-size should match the List component's code's arrowSize variable
 // (there are testing issues with :export)
@@ -12,20 +13,20 @@ $item-data-width-percentage: 50%;
   font-size: 0.85em;
 
   .List .List-Item.selected {
-    margin: 0.5em 0;
+    margin-bottom: 0.5em;
 
     .LegendItem {
       font-size: 1.25em;
+      line-height: 1.4em;
       border: $list-selected;
       background-color: white;
-      padding: 0.4em;
     }
   }
 }
 
 %legendItem {
-  height: 2em;
-  padding: $item-padding;
+  height: 100%;
+  padding: 0.1em;
 }
 
 %legendItemData {

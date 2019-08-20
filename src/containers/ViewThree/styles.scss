@@ -31,6 +31,7 @@
   }
   .legend {
     padding-top: 42px;
+    overflow: visible;
   }
 
   .featureDescription {
@@ -85,10 +86,10 @@
         font-size: 14px;
         color: $Black51;
       }
-      
+
       h2 {
         width: 40%;
-        white-space: nowrap; 
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         font-family: $fira-sans-condensed-bold;
