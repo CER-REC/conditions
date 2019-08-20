@@ -87,7 +87,6 @@ export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   sunsetDate: PropTypes.string,
   status: PropTypes.string.isRequired,
   location: PropTypes.array.isRequired,
-  activity: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.shape({
     binnedValue: PropTypes.number.isRequired,
     fill: PropTypes.arrayOf(PropTypes.string).isRequired,
