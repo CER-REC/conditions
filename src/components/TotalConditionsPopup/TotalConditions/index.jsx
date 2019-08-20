@@ -22,7 +22,7 @@ const TotalConditions = ({ closeModal }) => (
       </div>
     </div>
     <AdvancedFormattedMessage
-      id="components.modal.company.back"
+      id="components.modal.totalConditions.back"
       tag={PopupBtn}
       icon="x"
       action={closeModal}

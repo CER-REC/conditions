@@ -116,12 +116,6 @@ class Content extends React.PureComponent {
                   id="components.conditionDetails.effectiveDate"
                   content={data.effectiveDate}
                 />
-                {matchedKeywords.length === 0 ? null : (
-                  <ContentBlock
-                    id="components.conditionDetails.keywords"
-                    content={matchedKeywords}
-                  />
-                )}
               </div>
               <div className="half">
                 <ContentBlock
@@ -133,6 +127,12 @@ class Content extends React.PureComponent {
                   content={condition.conditionNumber}
                 />
               </div>
+              {matchedKeywords.length === 0 ? null : (
+                <ContentBlock
+                  id="components.conditionDetails.keywords"
+                  content={matchedKeywords}
+                />
+              )}
               {this.renderContentText('components.conditionDetails.text', highlightedText)}
             </React.Fragment>
           )

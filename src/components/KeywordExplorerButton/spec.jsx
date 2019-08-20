@@ -17,16 +17,9 @@ describe('Components|KeywordExplorerButton', () => {
     expect(wrapper.find('div.buttonText')).toHaveLength(1);
   });
   test('should render a FormattedMessage component for button text', () => {
-    const messageWrapper = wrapper.find('AdvancedFormattedMessage');
+    const messageWrapper = wrapper.find('FormattedMessage');
     expect(messageWrapper).toHaveLength(1);
     expect(messageWrapper.prop('id')).toBe('components.keywordExploreButton.description');
-    // AdvancedFormattedMessage injects some extra components, so dig through them
-    // until we find the p tags
-    const updatedWrapper = messageWrapper
-      .shallowWithIntl()
-      .shallowWithIntl()
-      .shallowWithIntl();
-    expect(updatedWrapper.find('p')).toHaveLength(2);
   });
 
   describe('when a KeywordExplorerButton is clicked', () => {

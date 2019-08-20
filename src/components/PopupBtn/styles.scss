@@ -20,7 +20,7 @@
     a:visited#{&},
     a:focus#{&},
     a:hover#{&} {
-      width: 110px;
+      max-width: calc(33% - 24px);
       min-height: 48px;
 
       position: relative;

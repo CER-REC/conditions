@@ -3658,27 +3658,6 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           : 
           2014-10-24
         </div>
-        <div
-          className="ContentBlock"
-        >
-          <span
-            className="contentHeading"
-          >
-            Search Matches
-          </span>
-          : 
-          <span
-            className="highlighted"
-          >
-            hello
-          </span>
-          , 
-          <span
-            className="highlighted"
-          >
-            ipsum
-          </span>
-        </div>
       </div>
       <div
         className="half"
@@ -3714,6 +3693,27 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           : 
           1
         </div>
+      </div>
+      <div
+        className="ContentBlock"
+      >
+        <span
+          className="contentHeading"
+        >
+          Search Matches
+        </span>
+        : 
+        <span
+          className="highlighted"
+        >
+          hello
+        </span>
+        , 
+        <span
+          className="highlighted"
+        >
+          ipsum
+        </span>
       </div>
       <div
         className="contentText"
@@ -3920,15 +3920,11 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           <span>
             Administrative
           </span>
-          <span>
-            , 
-          </span>
+          , 
           <span>
             Enforcement
           </span>
-          <span>
-            , 
-          </span>
+          , 
           <span>
             Sunset Clause
           </span>
@@ -3988,6 +3984,14 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
       </div>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".ConditionDetails { position: relative; }
+    .Details { position: relative; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -6947,21 +6951,19 @@ exports[`Storyshots Components|KeywordExplorerButton Default Keyword Explore But
         className="keywordExplorerCircle"
       >
         <circle
-          cx="18"
-          cy="14"
+          cx="13"
+          cy="13"
           r="12"
         />
       </svg>
-      <span
+      <p
         className="descriptionText"
       >
-        <p>
+        <span>
           Back to
-        </p>
-        <p>
-          Keywords
-        </p>
-      </span>
+Keywords
+        </span>
+      </p>
     </div>
   </div>
 </div>
@@ -17638,6 +17640,13 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       </div>
     </div>
   </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".SearchBar { position: relative; }",
+      }
+    }
+  />
 </div>
 `;
 
@@ -18915,53 +18924,57 @@ exports[`Storyshots Components|SearchBar/SearchContent with interaction 1`] = `
         </svg>
       </div>
       <div
-        className="includeText"
+        className="includeElements"
       >
-        <span>
-          Include any of
-        </span>
-        :
-      </div>
-      <div
-        className="input"
-      >
-        <input
-          className="searchBar"
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          value=""
-        />
-        <button
-          className="addInput"
-          focusable={true}
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
-          type="button"
+        <div
+          className="includeText"
         >
-          <div
-            className="Icon"
+          <span>
+            Include any of
+          </span>
+          :
+        </div>
+        <div
+          className="input"
+        >
+          <input
+            className="searchBar"
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            value=""
+          />
+          <button
+            className="addInput"
+            focusable={true}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-plus-circle fa-w-16 iconInline plusIcon"
-              color=""
-              data-icon="plus-circle"
-              data-prefix="fas"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="Icon"
             >
-              <path
-                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
-                fill="currentColor"
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-plus-circle fa-w-16 iconInline plusIcon"
+                color=""
+                data-icon="plus-circle"
+                data-prefix="fas"
+                role="img"
                 style={Object {}}
-              />
-            </svg>
-          </div>
-        </button>
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
       </div>
       <ul
         className="searchWords"
@@ -19190,7 +19203,7 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           <span
             className="upperCase sortType"
           >
-            dec
+            desc
           </span>
         </span>
       </div>
@@ -31449,7 +31462,6 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
       <svg
         className="conditionLabel"
         height="60"
-        width="80"
       >
         <text
           className="small"
