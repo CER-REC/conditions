@@ -83,7 +83,7 @@ export const suggestedKeywordsObject = PropTypes.objectOf(
 export const conditionData = PropTypes.arrayOf(PropTypes.shape({
   instrumentNumber: PropTypes.string.isRequired,
   issuanceDate: PropTypes.string.isRequired,
-  effectiveDate: PropTypes.string.isRequired,
+  effectiveDate: PropTypes.string,
   sunsetDate: PropTypes.string,
   status: PropTypes.string.isRequired,
   location: PropTypes.array.isRequired,
