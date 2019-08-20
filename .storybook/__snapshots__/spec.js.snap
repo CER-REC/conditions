@@ -1044,7 +1044,7 @@ exports[`Storyshots Components|ChartIndicator allThemes 1`] = `
         alignmentBaseline="bottom"
         textAnchor="middle"
         x="0"
-        y="-12"
+        y="-16"
       >
         Without circle
         *
@@ -1093,7 +1093,7 @@ exports[`Storyshots Components|ChartIndicator withCircle 1`] = `
         alignmentBaseline="bottom"
         textAnchor="middle"
         x="0"
-        y="-12"
+        y="-16"
       >
         With Circle
         
@@ -1135,7 +1135,7 @@ exports[`Storyshots Components|ChartIndicator withoutCircle 1`] = `
         alignmentBaseline="bottom"
         textAnchor="middle"
         x="0"
-        y="-12"
+        y="-16"
       >
         Without circle
         
@@ -4465,9 +4465,9 @@ exports[`Storyshots Components|DotLegend default 1`] = `
         cx={5}
         cy={5}
         data-id={0}
-        r={3}
+        r={1.5}
         stroke="transparent"
-        strokeWidth={3}
+        strokeWidth={1.5}
       />
     </svg>
     <p>
@@ -5095,9 +5095,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </p>
     <div>
       <h4
-        data-heading="MO"
+        date-heading="MO"
       >
         MO
+         - 
+        <span>
+          Miscellaneous Order
+        </span>
       </h4>
       <p>
         The approval of miscellaneous matters, such as upgrading of maximum authorized operation pressures, conveyance, sale or lease of a pipeline or parts thereof, abandonment of pipelines, etc.
@@ -5105,9 +5109,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="AO"
+        date-heading="AO"
       >
         AO
+         - 
+        <span>
+          Amending Order
+        </span>
       </h4>
       <p>
         The approval of an amendment as to content or conditions of any Certificate, License, Order or Permit (in some cases the approval of the Governor in Council is required).
@@ -5115,9 +5123,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="XG"
+        date-heading="XG"
       >
         XG
+         - 
+        <span>
+          Gas Order
+        </span>
       </h4>
       <p>
          The exemption of a gas pipeline or parts thereof, or gas pipeline facilities (Class B)
@@ -5125,9 +5137,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="XO"
+        date-heading="XO"
       >
         XO
+         - 
+        <span>
+          Oil Order
+        </span>
       </h4>
       <p>
         The exemption of an oil pipeline or parts thereof, or oil facilities (Class B)
@@ -5135,9 +5151,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="ZO"
+        date-heading="ZO"
       >
         ZO
+         - 
+        <span>
+          Abandonment Order
+        </span>
       </h4>
       <p>
         The approval of abandonment applications
@@ -5145,9 +5165,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="OPL"
+        date-heading="OPL"
       >
         OPL
+         - 
+        <span>
+          Oil Order
+        </span>
       </h4>
       <p>
         The approval of the Plans, Profiles and Books of Reference for a new or additional oil pipeline. Also used in connection with deviation required in existing pipelines
@@ -5155,9 +5179,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="SG"
+        date-heading="SG"
       >
         SG
+         - 
+        <span>
+          Gas Safety Order
+        </span>
       </h4>
       <p>
         The requirements for gas pipeline company to repair, reconstruct or alter part of a gas pipeline, etc., for safety reasons
@@ -5165,9 +5193,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="SO"
+        date-heading="SO"
       >
         SO
+         - 
+        <span>
+          Oil Safety Order
+        </span>
       </h4>
       <p>
         The requirements for an oil pipeline company to repair, reconstruct or alter part of an oil pipeline etc., for safety reasons
@@ -5175,9 +5207,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="GC"
+        date-heading="GC"
       >
         GC
+         - 
+        <span>
+          Gas Certificate
+        </span>
       </h4>
       <p>
         The approval of the construction of a new gas pipeline or additional gas pipeline
@@ -5185,18 +5221,26 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        data-heading="OTHER"
+        date-heading="OTHER"
       >
         OTHER
+         - 
+        <span>
+          Other
+        </span>
       </h4>
     </div>
     <div
       className="other"
     >
       <h4
-        data-heading="EC"
+        date-heading="EC"
       >
         EC
+         - 
+        <span>
+          Electricity Certificate
+        </span>
       </h4>
       <p>
         The approval of the construction and/or operation of an international power line
@@ -5206,9 +5250,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="EP"
+        date-heading="EP"
       >
         EP
+         - 
+        <span>
+          Electricity Permit
+        </span>
       </h4>
       <p>
         The approval of the construction and operation of an international power line
@@ -5218,9 +5266,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="EPE"
+        date-heading="EPE"
       >
         EPE
+         - 
+        <span>
+          Electricity Export Permit
+        </span>
       </h4>
       <p>
         The approval of the export of power and/or energy
@@ -5230,9 +5282,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="FRO"
+        date-heading="FRO"
       >
         FRO
+         - 
+        <span>
+          Financial requirements order
+        </span>
       </h4>
       <p>
         The approval to provide more direct access to financial resources, including readily accessible types
@@ -5242,9 +5298,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="GPLO"
+        date-heading="GPLO"
       >
         GPLO
+         - 
+        <span>
+          Gas Order
+        </span>
       </h4>
       <p>
         The approval of the opening of a new or additional gas pipelines or deviations thereof
@@ -5254,9 +5314,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="GPSO"
+        date-heading="GPSO"
       >
         GPSO
+         - 
+        <span>
+          Gas Order
+        </span>
       </h4>
       <p>
         The approval of the opening of a gas compressor station, gas plant or parts thereof
@@ -5266,9 +5330,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="OC"
+        date-heading="OC"
       >
         OC
+         - 
+        <span>
+          Oil Certificate
+        </span>
       </h4>
       <p>
         The approval of the construction of a new oil pipeline or additional oil pipeline
@@ -5278,9 +5346,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="OPLO"
+        date-heading="OPLO"
       >
         OPLO
+         - 
+        <span>
+          Oil Order
+        </span>
       </h4>
       <p>
         The approval of the opening of a new or additional oil pipelines or derivations thereof
@@ -5290,9 +5362,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="OPSO"
+        date-heading="OPSO"
       >
         OPSO
+         - 
+        <span>
+          Oil Order
+        </span>
       </h4>
       <p>
         The approval of the opening of an oil pump station or parts thereof and terminal facilities
@@ -5302,9 +5378,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="TG"
+        date-heading="TG"
       >
         TG
+         - 
+        <span>
+          Gas Toll & Tariff Order
+        </span>
       </h4>
       <p>
         The fixing of tariffs and tolls – gas pipelines
@@ -5314,9 +5394,13 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
       className="other"
     >
       <h4
-        data-heading="XC"
+        date-heading="XC"
       >
         XC
+         - 
+        <span>
+          Commodity Order
+        </span>
       </h4>
       <p>
         The exemption of a commodity pipeline or parts thereof, or commodity pipeline facilities
@@ -23370,7 +23454,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 textAnchor="end"
                 x={39}
               >
-                28149
+                28,149
               </tspan>
             </text>
           </g>
@@ -25418,9 +25502,9 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
             alignmentBaseline="bottom"
             textAnchor="middle"
             x="0"
-            y="-12"
+            y="-16"
           >
-            28149
+            28,149
             *
           </text>
         </g>
@@ -25665,7 +25749,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 textAnchor="end"
                 x={39}
               >
-                25882
+                25,882
               </tspan>
             </text>
           </g>
@@ -27713,9 +27797,9 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             alignmentBaseline="bottom"
             textAnchor="middle"
             x="0"
-            y="-12"
+            y="-16"
           >
-            25882
+            25,882
             
           </text>
         </g>
@@ -31462,7 +31546,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             alignmentBaseline="bottom"
             textAnchor="middle"
             x="0"
-            y="-12"
+            y="-16"
           >
             380
             

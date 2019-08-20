@@ -1,9 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import TranslatedParagraphs from '../TranslatedParagraphs';
 import { displayOrder as displayOrderPropType } from '../../proptypes';
 import './styles.scss';
+
+// eslint-disable-next-line react/prop-types
+const FeatureTypeHeading = ({ feature, type }) => ((feature === 'instrument')
+  ? (
+    <React.Fragment>
+      <h4 date-heading={type}>
+        {type} - <FormattedMessage id={`common.${feature}.${type}`} />
+      </h4>
+    </React.Fragment>
+  )
+  : <AdvancedFormattedMessage id={`common.${feature}.${type}`} tag="h4" data-heading={type} />
+);
 
 class FeatureTypesDescription extends React.PureComponent {
   constructor(props) {
@@ -30,10 +43,6 @@ class FeatureTypesDescription extends React.PureComponent {
   }
 
   renderEntry = (feature, type, className) => {
-    const heading = feature === 'instrument'
-      ? <h4 data-heading={type}>{type}</h4>
-      : <AdvancedFormattedMessage id={`common.${feature}.${type}`} tag="h4" data-heading={type} />;
-
     const content = (feature === 'instrument' && type === 'OTHER') ? null : (
       <AdvancedFormattedMessage
         id={`components.featureTypesDescription.${feature}.${type}`}
@@ -42,7 +51,7 @@ class FeatureTypesDescription extends React.PureComponent {
     );
     return (
       <div key={type} className={className}>
-        {heading}
+        <FeatureTypeHeading feature={feature} type={type} />
         {content}
       </div>
     );

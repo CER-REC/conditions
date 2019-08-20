@@ -57,6 +57,8 @@ class StreamGraph extends React.PureComponent {
     this.props.feature,
   );
 
+  formatTickValues = v => Math.round(v).toLocaleString();
+
   handleOnChange = controlYear => this.setState({ controlYear });
 
   streamLayers = () => {
@@ -167,7 +169,7 @@ class StreamGraph extends React.PureComponent {
           dependentAxis
           label={intl.formatMessage({ id: 'components.streamGraph.axis.yAxis' })}
           tickValues={[0, maxTotal]}
-          tickFormat={Math.round}
+          tickFormat={this.formatTickValues}
           className="axis-label"
           style={axisStyles}
         />
