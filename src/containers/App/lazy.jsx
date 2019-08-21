@@ -51,7 +51,6 @@ import ComposedQuery from '../../components/ComposedQuery';
 import formatConditionDetails from '../../utilities/formatConditionDetails';
 import handleQueryError from '../../utilities/handleQueryError';
 import randomArrayValue from '../../utilities/randomArrayValue';
-import ErrorBoundary from '../../components/ErrorBoundary';
 import RegDocsPopup from '../../components/RegDocsPopup';
 import CompanyPopup from '../../components/CompanyPopup';
 import DownloadPopup from '../../components/DownloadPopup';
@@ -923,31 +922,29 @@ const ConnectedApp = connect(
 export default props => (
   <ApolloProvider client={client}>
     <Provider store={store}>
-      <ErrorBoundary>
-        <ComposedQuery
-          config={{ query: initialConfigurationDataQuery }}
-          conditionsPerYear={{ query: conditionsPerYearQuery }}
-          allKeywords={{ query: allKeywordsQuery }}
-          allCompanies={{ query: allCompaniesQuery }}
-          allRegions={{ query: allRegionsQuery }}
-        >
-          {({ data, loading, errors }) => {
-            // TODO: Error handling for these queries
-            if (loading || errors) { return null; }
+      <ComposedQuery
+        config={{ query: initialConfigurationDataQuery }}
+        conditionsPerYear={{ query: conditionsPerYearQuery }}
+        allKeywords={{ query: allKeywordsQuery }}
+        allCompanies={{ query: allCompaniesQuery }}
+        allRegions={{ query: allRegionsQuery }}
+      >
+        {({ data, loading, errors }) => {
+          // TODO: Error handling for these queries
+          if (loading || errors) { return null; }
 
-            return (
-              <ConnectedApp
-                allConditionsPerYear={data.conditionsPerYear}
-                allConfigurationData={data.config}
-                allKeywords={data.allKeywords}
-                allCompanies={data.allCompanies}
-                allRegions={data.allRegions}
-                {...props}
-              />
-            );
-          }}
-        </ComposedQuery>
-      </ErrorBoundary>
+          return (
+            <ConnectedApp
+              allConditionsPerYear={data.conditionsPerYear}
+              allConfigurationData={data.config}
+              allKeywords={data.allKeywords}
+              allCompanies={data.allCompanies}
+              allRegions={data.allRegions}
+              {...props}
+            />
+          );
+        }}
+      </ComposedQuery>
     </Provider>
   </ApolloProvider>
 );

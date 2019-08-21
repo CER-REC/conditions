@@ -4,6 +4,7 @@ import frLocaleData from 'react-intl/locale-data/fr';
 import { IntlProvider, addLocaleData, FormattedMessage } from 'react-intl';
 import i18nMessages from '../../i18n';
 import { lang } from '../../constants';
+import ErrorBoundary from '../../components/ErrorBoundary';
 import AdvancedFormattedMessage from '../../components/AdvancedFormattedMessage';
 import TranslatedParagraphs from '../../components/TranslatedParagraphs';
 import LoadingGuide from '../../components/LoadingGuide';
@@ -57,7 +58,9 @@ export default class AppWrapper extends React.PureComponent {
     return (
       <IntlProvider locale={lang} messages={i18nMessages[lang]}>
         <div className="App">
-          {content}
+          <ErrorBoundary>
+            {content}
+          </ErrorBoundary>
         </div>
       </IntlProvider>
     );
