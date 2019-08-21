@@ -1,5 +1,7 @@
 @import '../../styles/grid';
 @import '../../styles/breakpoints';
+@import "../../styles/fontVariables.scss";
+@import "../../styles/colors.scss";
 
 .App {
   position: relative;
@@ -17,5 +19,24 @@
       ViewThree: (x: 0, y: 0, w: 120, h: 84),
       conditions: (x: 57, y: 53, w: 61, h:29),
     ))
+  }
+
+  .unsupportedContainer {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 10%;
+
+    h1 {
+      text-align: center;
+      font-family: $fira-sans-condensed-bold;
+      font-size: 24px;
+      color: $Black51;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    p {
+      text-align: center;
+    }
   }
 }

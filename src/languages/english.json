@@ -467,6 +467,16 @@
     }
   },
   "views": {
+    "unsupported": {
+      "browser": {
+        "title": "Unsupported Browser",
+        "body": "Your browser does not support the features required by this visualization. Please use a recent version of Chrome, Firefox, Safari, or Edge.\nThank you!"
+      },
+      "resolution": {
+        "title": "Optimized for computers and tablets",
+        "body": "This visualization has been optimized for use on computers and tablets with a screen width of at least 768px.\nThank you!"
+      }
+    },
     "view1": {
       "header": {
         "title": "Conditions on NEB-regulated energy projects",
