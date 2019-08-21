@@ -19,6 +19,8 @@ export default class AppWrapper extends React.PureComponent {
     super(props);
     this.state = {
       supportedResolution: window.innerWidth >= 746,
+      // This will detect any version of IE up to and including IE11
+      supportedBrowser: !(!!window.MSInputMethodContext && !!document.documentMode),
     };
   }
 
@@ -36,6 +38,16 @@ export default class AppWrapper extends React.PureComponent {
           <FormattedMessage id="views.unsupported.resolution.title" tagName="h1" />
           <AdvancedFormattedMessage
             id="views.unsupported.resolution.body"
+            tag={TranslatedParagraphs}
+          />
+        </div>
+      );
+    } else if (!this.state.supportedBrowser) {
+      content = (
+        <div className="unsupportedContainer">
+          <FormattedMessage id="views.unsupported.browser.title" tagName="h1" />
+          <AdvancedFormattedMessage
+            id="views.unsupported.browser.body"
             tag={TranslatedParagraphs}
           />
         </div>
