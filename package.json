@@ -106,7 +106,7 @@
     "d3-geo-projection": "2.7.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
-    "eslint": "6.2.0",
+    "eslint": "6.2.2",
     "eslint-config-airbnb": "17.1.1",
     "eslint-formatter-gitlab": "1.1.0",
     "eslint-junit": "1.0.1",
