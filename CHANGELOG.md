@@ -1,3 +1,244 @@
+# [0.24.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.24.0) (2019-08-26)
+
+
+### app
+
+* **Bug Fixes:** remove linting error (67b289d)
+
+
+### App
+
+* **Features:** batches Redux updates to avoid re-renders (792fb59)
+* **Features:** extracts unsupported-system logic to a separate component (cc816c0)
+* **Features:** adds unsupported browser message (6b00499, NEBV-1692)
+* **Features:** adds unsupported resolution message (55e2b67, NEBV-1693)
+* **Features:** adds Instrument.documentNumber, removes Instrument.documents (8efc248)
+* **Features:** adjusts layout and styling to match the design doc (1127b05)
+* **Features:** rewrites ConditionDetails' expansion code and styles to make layout easier (57fe355)
+* **Features:** adds Instrument.documentNumber, removes Instrument.documents (8bc32cd)
+* **Features:** updates French text, fix small styling issues (80bd0a8)
+* **Features:** moves images (44187d8)
+* **Features:** updateSelection applies known values immediately rather than waiting for queries (291a0ae)
+* **Features:** updates locale text (d7cd18f)
+* **Features:** removes Instrument activity field (bb08e23)
+* **Features:** scrollbars become visible on MacOS (6d69b6b)
+* **Features:** lifts ErrorBoundary up to catch codesplitting errors (9ab920d, NEBV-1692)
+* **Features:** adds Instrument.documentNumber, removes Instrument.documents (a048728)
+* **Bug Fixes:** adds missing Status text (1ad42db)
+* **Bug Fixes:** makes eager loading optional, fixes query missing a field (8edf64f)
+* **Bug Fixes:** adds eager loading that was missed in previous commit (a544e99)
+* **Bug Fixes:** fixes the bottom of the ConditionList not being clickable (7019b65)
+* **Bug Fixes:** fixes BrowseBy spilling off the screen, transition glitches (82d17b7)
+* **Bug Fixes:** updates snapshots, fixes styling issues from rebase (103afce)
+* **Tests:** updates snapshots (9f25c47)
+* **Tests:** updates snapshots, fixes broken test (4470d7f)
+* **Tests:** fixes linting errors (6a5ced8)
+* **Tests:** updates snapshots, removes useless test (93a4923)
+* **Tests:** updates snapshots (2e23931)
+* **Code Formatting:** cleanup of duplicate code (d9b6aad)
+* **Code Formatting:** removes unused query (f80835b)
+* **Code Refactoring:** makes RegionConditions and RegionCompanies private components (bd045d9)
+* **Code Refactoring:** relocates FeaturesLegend image to the component folder (acc2732)
+
+
+### App, View 1, Footer, DownloadPopup
+
+* **Features:** adds download modal and links it to csv download (8dda6b3, NEBV-1704)
+
+
+### ConditionDetails
+
+* **Features:** increases font size (d02d202)
+* **Features:** increases the list's line height to 8px (b891045)
+* **Bug Fixes:** keeps ProjectHeader from sitting in front of the Keyword popout (37702cb)
+* **Bug Fixes:** moves search matches to a full-width block (2becd1a)
+* **Bug Fixes:** removes ellipsing for Details content to avoid issues with Theme arrays (caf4b8d)
+* **Bug Fixes:** rewrites auto-scroll logic to fix Firefox scrolling the whole window (92643f1)
+* **Code Formatting:** removes commented code (0a42219)
+* **Code Formatting:** removes commented code (3a40c63)
+
+
+### ConditionDetails/Content
+
+* **Bug Fixes:** adds conditional rendering for effective date (fd28584)
+
+
+### ConditionExplorer
+
+* **Features:** uses a shadow to help the selected keyword stand out more (8a36abf)
+* **Features:** adds texts colour change on off click (486c02b)
+* **Features:** fades on off click (e2a37e4)
+* **Features:** adds fading into the guide (25b6c1e)
+* **Features:** changes colour of explorer on keyword selection (6b15e55, NEBV-1699)
+* **Features:** unselects the current keyword on a click elsewhere in the explorer (d7a8916)
+* **Bug Fixes:** removes duplicate code (ae8f77a)
+* **Bug Fixes:** fixes misnamed events causing handlers to fire incorrectly (c3ecd6c)
+* **Code Formatting:** moves repeat css (82a5a7c)
+
+
+### Dependencies
+
+* **Project Maintenance:** update dependency babel-eslint to v10.0.3 (f5860e9)
+* **Project Maintenance:** update dependency eslint to v6.2.0 (c77a0a8)
+* **Project Maintenance:** update dependency eslint to v6.2.2 (2250808)
+* **Project Maintenance:** update dependency eslint-config-airbnb to v18 (baeb423)
+* **Project Maintenance:** update dependency eslint-formatter-gitlab to v1.1.0 (dd685d3)
+* **Project Maintenance:** update dependency eslint-plugin-react-hooks to v2 (f9f34c5)
+* **Project Maintenance:** update dependency sass-loader to v7.2.0 (fa2bab2)
+* **Project Maintenance:** update dependency sass-loader to v7.3.1 (bc13da5)
+* **Project Maintenance:** update dependency storybook-readme to v5.0.8 (43b63d9)
+* **Project Maintenance:** update dependency webpack-cli to v3.3.7 (89b7685)
+* **Project Maintenance:** update jest monorepo to v24.9.0 (adb68a4)
+* **Project Maintenance:** update node.js (ef476f4)
+* **Project Maintenance:** update node.js to v10.16.2 (aea82c1)
+
+
+### DotLegend
+
+* **Features:** decreases dot size to match typical wheel scale (3b27790)
+
+
+### DownloadPopup
+
+* **Bug Fixes:** fixes layout (71415f1)
+* **Bug Fixes:** design changes (541cbf4)
+* **Bug Fixes:** fixes back button (9dce1cd)
+
+
+### ESLint
+
+* **Tests:** updates linter config to match our existing style (a6d75d4)
+* **Code Formatting:** fixes linting errors (e59d632, NEBV-1655)
+
+
+### FeaturesLegend
+
+* **Features:** adds localized alt/title text to the flag image (d7707e5)
+* **Bug Fixes:** replaces >10 flag with a .png to correct scaling/rendering issues (91bffa8)
+
+
+### FeatureTypesDescription
+
+* **Features:** adds the full name for Instrument types (1f7a386)
+
+
+### KeywordExplorerButton
+
+* **Features:** updates circle and text alignment (ac7a6c8)
+* **Bug Fixes:** centers text vertically, avoids overflow (29d18ad)
+
+
+### Languages
+
+* **Bug Fixes:** remove descriptions (639879d)
+
+
+### Lazy
+
+* **Features:** adds conditional check for scrollbar visibility (c4c5634)
+* **Code Refactoring:** moves check from render to componentDidMount (26aa5f0)
+
+
+### LoadingGuide
+
+* **Features:** reduces number of wasted renders from prop reference changes (c964e69, NEBV-1655)
+* **Features:** converts all components to React.memo/React.PureComponent (493c49f, NEBV-1655)
+
+
+### MainInfoBar
+
+* **Features:** adjusts methodology images and sizing to match Trello (a5d469e, NEBV-1667)
+* **Features:** adds Pictures in (d317eb1, NEBV-1667)
+
+
+### Methedology
+
+* **Bug Fixes:** dynamically pull in images (fae6bb8)
+
+
+### Methodology
+
+* **Features:** make one image external link (89d6825)
+* **Features:** adds Keyword Methodology (e9f7b16, NEBV-1667)
+
+
+### Methodology Box
+
+* **Bug Fixes:** fixes Layout (6a393b7)
+
+
+### PopupBtn
+
+* **Bug Fixes:** allows buttons to size based on their content (a48c3be)
+
+
+### RegionCompanies
+
+* **Features:** selects a company and switches modes on click (b04a034)
+
+
+### RegionSummary
+
+* **Features:** adds description text, updates styles (c70bbf9)
+* **Features:** adds focus style for touch devices (e3c102d)
+* **Features:** renders the company list as buttons (7fa20ce)
+* **Features:** uses the current maximum for the chart's maximum value label (419544e)
+* **Features:** updates styling and layout to match the design doc (5178bed)
+* **Features:** implements parent component (efa5f59)
+* **Bug Fixes:** fixes propType errors (1a3bd36)
+* **Tests:** updates tests and snapshots (c3dec85)
+
+
+### SearchBar
+
+* **Features:** removes some render thrashing from creating new functions (0e27a00, NEBV-1655)
+* **Bug Fixes:** sizes the select and input elements dynamically (1c0635e)
+
+
+### Snapshots
+
+* **Bug Fixes:** updates Snapshots (c90a770)
+
+
+### src
+
+* **Code Formatting:** moves conditional check and fixes styling (3b1814d)
+
+
+### src App
+
+* **Bug Fixes:** attempts to add scrollbars (0cef9c6, NEBV-1697)
+
+
+### Storybook
+
+* **Bug Fixes:** restores correct IP address for GraphQL endpoint (85599e2)
+
+
+### StreamGraph
+
+* **Features:** adds locale formatting (commas) to values and axis labels (e44515e)
+
+
+### TotalConditionsLabel
+
+* **Bug Fixes:** removes text clipping (5a71802)
+
+
+### UnsupportedWarning
+
+* **Features:** updates styles to match the design doc's mobile popup (fb8e179)
+
+
+### View 2
+
+* **Features:** adds the revised RegionSummary component to the view (75ab443)
+
+
+### View 3
+
+* **Bug Fixes:** fixes layout issues in the FeaturesMenu and SmallMultiplesLegend on tablet view (82743ca)
+
 # [0.23.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.23.0) (2019-08-06)
 
 
