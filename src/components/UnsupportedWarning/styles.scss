@@ -3,19 +3,24 @@
 
 .UnsupportedWarning {
   max-width: 750px;
-  margin: 0 auto;
-  padding: 10%;
+  margin: 12px auto;
+  padding: 16px;
 
-  h1 {
-    text-align: center;
-    font-family: $fira-sans-condensed-bold;
-    font-size: 24px;
-    color: $Black51;
-    text-transform: uppercase;
-    margin-bottom: 4px;
+  text-align: center;
+
+  svg {
+    width: 150px;
+    height: auto;
+
+    stroke: $MidGray;
+    fill: $MidGray;
+    stroke-linejoin: round;
+    stroke-linecap: round;
   }
 
   p {
-    text-align: center;
+    font-size: 16px;
+    color: $general-text-2;
+    margin-top: 1em;
   }
 }
