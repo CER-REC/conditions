@@ -12,6 +12,11 @@ module.exports = {
       multiline: true,
       consistent: true,
     }],
+    'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+    'react/jsx-props-no-spreading': 0,
+    'react/state-in-constructor': [2, 'always'],
+    'react/jsx-fragments': [2, 'element'],
+    'react/static-property-placement': [2, 'static public field'],
   },
   overrides: [
     {

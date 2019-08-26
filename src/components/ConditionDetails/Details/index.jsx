@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-
 import joinJsxArray from '../../../utilities/joinJsxArray';
-
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
-
 import ContentBlock from '../ContentBlock';
-
 import './styles.scss';
 
 /* eslint-disable react/prop-types */
@@ -61,8 +57,7 @@ const Details = ({ data, isInstrument }) => (
             <DetailBlocks data={data} />
           </React.Fragment>
         )
-        : null
-      }
+        : null}
     </div>
   </div>
 );

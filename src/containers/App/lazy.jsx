@@ -102,6 +102,46 @@ const reformatYearRange = memoize(range => ({ start: range.min, end: range.max }
 const emptyArray = [];
 
 class App extends React.PureComponent {
+  static propTypes = {
+    browseBy: browseByType.isRequired,
+    setBrowseBy: PropTypes.func.isRequired,
+    transitionState: PropTypes.number.isRequired,
+    setTransitionState: PropTypes.func.isRequired,
+    included: PropTypes.arrayOf(PropTypes.string).isRequired,
+    excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
+    findAny: PropTypes.bool.isRequired,
+    detailViewExpanded: PropTypes.bool.isRequired,
+    expandDetailView: PropTypes.func.isRequired,
+    selected: PropTypes.shape({
+      company: PropTypes.number,
+      region: PropTypes.number,
+      project: PropTypes.number,
+      feature: PropTypes.string.isRequired,
+      subFeature: PropTypes.string.isRequired,
+      instrument: PropTypes.number,
+      condition: PropTypes.number,
+      keywordId: PropTypes.number.isRequired,
+    }).isRequired,
+    allConditionsPerYear: allConditionsPerYearType.isRequired,
+    allConfigurationData: allConfigurationDataType.isRequired,
+    allKeywords: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      category: PropTypes.arrayOf(PropTypes.string),
+      conditionCount: PropTypes.number,
+    })).isRequired,
+    allCompanies: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    allRegions: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    setSelectedMultiple: PropTypes.func.isRequired,
+    setIncluded: PropTypes.func.isRequired,
+    searchResults: PropTypes.shape({
+      companyIdLookup: PropTypes.objectOf(PropTypes.bool),
+      conditionIdLookup: PropTypes.objectOf(PropTypes.bool),
+      projectIdLookup: PropTypes.objectOf(PropTypes.bool),
+      regionIds: PropTypes.objectOf(PropTypes.bool),
+    }).isRequired,
+    filteredProjects: PropTypes.objectOf(PropTypes.bool).isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -373,8 +413,8 @@ class App extends React.PureComponent {
     if (position) {
       this.setState({
         initialGuidePosition: {
-          x: 100 * position.x / position.viewWidth,
-          y: 100 * position.y / position.viewHeight,
+          x: (100 * position.x) / position.viewWidth,
+          y: (100 * position.y) / position.viewHeight,
         },
       });
     }
@@ -392,8 +432,8 @@ class App extends React.PureComponent {
     if (position) {
       this.setState({
         finalGuidePosition: {
-          x: 100 * position.x / position.viewWidth,
-          y: 100 * position.y / position.viewHeight,
+          x: (100 * position.x) / position.viewWidth,
+          y: (100 * position.y) / position.viewHeight,
         },
       });
     }
@@ -415,7 +455,7 @@ class App extends React.PureComponent {
         initialKeywordPosition: {
           x: position.x,
           y: position.y,
-          angle: instance.body.angle * 180 / Math.PI,
+          angle: (instance.body.angle * 180) / Math.PI,
         },
       });
     }
@@ -624,10 +664,8 @@ class App extends React.PureComponent {
         // advance the transition state when something is interacted with.
         // The timeout makes sure React doesn't re-render before the event can
         // propagate to the actual target
-        onClickCapture={(transitionState === (transitionStates.view2 - 1))
-          ? () => { this.transitionTimeout = setTimeout(this.incrementTransitionState, 0); }
-          : null
-        }
+        onClickCapture={(transitionState !== (transitionStates.view2 - 1)) ? null
+          : () => { this.transitionTimeout = setTimeout(this.incrementTransitionState, 0); }}
       >
         <div className="fixedContainer">
           <div className="guideWrapper">
@@ -674,10 +712,9 @@ class App extends React.PureComponent {
               }
               labelId={labelId}
               browseBy={browseBy}
-              onClick={
-                (transitionState === transitionStates.view2)
-                  ? setBrowseBy
-                  : this.jumpToView2}
+              onClick={(transitionState === transitionStates.view2)
+                ? setBrowseBy
+                : this.jumpToView2}
             />
             <GuideTransport
               playing={this.state.tutorialPlaying}
@@ -819,8 +856,7 @@ class App extends React.PureComponent {
                           closeModal={this.closeRegDocPopup}
                           document={documentNumber}
                         />
-                      )
-                    }
+                      )}
                     <CompanyPopup
                       projectName={shortName}
                       closeModal={this.closeCompanyPopup}
@@ -844,46 +880,6 @@ class App extends React.PureComponent {
     );
   }
 }
-
-App.propTypes = {
-  browseBy: browseByType.isRequired,
-  setBrowseBy: PropTypes.func.isRequired,
-  transitionState: PropTypes.number.isRequired,
-  setTransitionState: PropTypes.func.isRequired,
-  included: PropTypes.arrayOf(PropTypes.string).isRequired,
-  excluded: PropTypes.arrayOf(PropTypes.string).isRequired,
-  findAny: PropTypes.bool.isRequired,
-  detailViewExpanded: PropTypes.bool.isRequired,
-  expandDetailView: PropTypes.func.isRequired,
-  selected: PropTypes.shape({
-    company: PropTypes.number,
-    region: PropTypes.number,
-    project: PropTypes.number,
-    feature: PropTypes.string.isRequired,
-    subFeature: PropTypes.string.isRequired,
-    instrument: PropTypes.number,
-    condition: PropTypes.number,
-    keywordId: PropTypes.number.isRequired,
-  }).isRequired,
-  allConditionsPerYear: allConditionsPerYearType.isRequired,
-  allConfigurationData: allConfigurationDataType.isRequired,
-  allKeywords: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    category: PropTypes.arrayOf(PropTypes.string),
-    conditionCount: PropTypes.number,
-  })).isRequired,
-  allCompanies: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  allRegions: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  setSelectedMultiple: PropTypes.func.isRequired,
-  setIncluded: PropTypes.func.isRequired,
-  searchResults: PropTypes.shape({
-    companyIdLookup: PropTypes.objectOf(PropTypes.bool),
-    conditionIdLookup: PropTypes.objectOf(PropTypes.bool),
-    projectIdLookup: PropTypes.objectOf(PropTypes.bool),
-    regionIds: PropTypes.objectOf(PropTypes.bool),
-  }).isRequired,
-  filteredProjects: PropTypes.objectOf(PropTypes.bool).isRequired,
-};
 
 export const AppUnconnected = App;
 

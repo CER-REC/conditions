@@ -106,8 +106,8 @@ class WheelRay extends React.Component {
             >
               { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
             </text>
-            {(this.state.flagLayouts)
-              ? (
+            {(!this.state.flagLayouts) ? null
+              : (
                 <CompanyFlag
                   y={-65}
                   flagLayout={this.state.flagLayouts[index]}
@@ -118,9 +118,7 @@ class WheelRay extends React.Component {
                   relevantProjectLookup={this.props.relevantProjectLookup}
                   filteredProjectLookup={this.props.filteredProjectLookup}
                 />
-              )
-              : null
-            }
+              )}
           </g>
         )
         : (

@@ -5,14 +5,15 @@ import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 
 class ErrorBoundary extends React.PureComponent {
+  static propTypes = {
+    // Default children props from react
+    children: PropTypes.element.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = { error: null, errorInfo: null };
   }
-
-  getRestoreLink = () => document.location.href;
-
-  getResetLink = () => document.location.origin + document.location.pathname;
 
   componentDidCatch(error, errorInfo) {
     this.setState({
@@ -23,6 +24,10 @@ class ErrorBoundary extends React.PureComponent {
     const event = new CustomEvent('LoadingGuide.enabled', { detail: false });
     window.dispatchEvent(event);
   }
+
+  getRestoreLink = () => document.location.href;
+
+  getResetLink = () => document.location.origin + document.location.pathname;
 
   render() {
     if (this.state.errorInfo) {
@@ -63,9 +68,5 @@ class ErrorBoundary extends React.PureComponent {
     return this.props.children;
   }
 }
-ErrorBoundary.propTypes = {
-  // Default children props from react
-  children: PropTypes.element.isRequired,
-};
 
 export default ErrorBoundary;

@@ -15,7 +15,7 @@ const isValidUnit = (unit) => {
 };
 
 const calculateSize = (size, max) => {
-  const value = parseInt(max, 10) * size / 100;
+  const value = (parseInt(max, 10) * size) / 100;
   return (max.toString().endsWith('%')) ? `${value}%` : value;
 };
 
@@ -53,8 +53,8 @@ const BarContainer = (props) => {
       title = <title><FormattedMessage id={`common.${bar.feature}.${bar.description}`} /></title>;
     }
     if (vertical) {
-      const width = 1 / items.length * 100;
-      const height = bar.value / scaleAgainst * 100;
+      const width = (1 / items.length) * 100;
+      const height = (bar.value / scaleAgainst) * 100;
       x += width;
       return (
         <rect
@@ -71,7 +71,7 @@ const BarContainer = (props) => {
       );
     }
 
-    const width = bar.value / scaleAgainst * 100;
+    const width = (bar.value / scaleAgainst) * 100;
     x += width;
     return (
       <rect

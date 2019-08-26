@@ -38,6 +38,34 @@ const handleScroll = throttle((deltaY, currentIndex, length) => {
 }, scrollDelay, { trailing: true });
 
 class List extends React.PureComponent {
+  static propTypes = {
+    /** Rendered items to be displayed in the list */
+    items: PropTypes.arrayOf(PropTypes.node).isRequired,
+    /** The index of the currently selected item */
+    selected: PropTypes.number.isRequired,
+    /** The flag to determine if the component renders horizontally */
+    horizontal: PropTypes.bool,
+    /** The flag to determine if the component renders a guide line for vertical lists only */
+    guideLine: PropTypes.bool,
+    /** A function that will receive an array index when an item is selected */
+    onChange: PropTypes.func.isRequired,
+    /** Bind onKeyPress and onClick for selecting an item */
+    itemInteractions: PropTypes.bool,
+    /** Additional className to add to the list */
+    className: PropTypes.string,
+    elevated: PropTypes.bool,
+    arrowsAtEdges: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    horizontal: false,
+    guideLine: false,
+    itemInteractions: true,
+    className: '',
+    elevated: false,
+    arrowsAtEdges: false,
+  };
+
   componentRef = null;
 
   componentDidMount() {
@@ -123,33 +151,5 @@ class List extends React.PureComponent {
     );
   }
 }
-
-List.propTypes = {
-  /** Rendered items to be displayed in the list */
-  items: PropTypes.arrayOf(PropTypes.node).isRequired,
-  /** The index of the currently selected item */
-  selected: PropTypes.number.isRequired,
-  /** The flag to determine if the component renders horizontally */
-  horizontal: PropTypes.bool,
-  /** The flag to determine if the component renders a guide line for vertical lists only */
-  guideLine: PropTypes.bool,
-  /** A function that will receive an array index when an item is selected */
-  onChange: PropTypes.func.isRequired,
-  /** Bind onKeyPress and onClick for selecting an item */
-  itemInteractions: PropTypes.bool,
-  /** Additional className to add to the list */
-  className: PropTypes.string,
-  elevated: PropTypes.bool,
-  arrowsAtEdges: PropTypes.bool,
-};
-
-List.defaultProps = {
-  horizontal: false,
-  guideLine: false,
-  itemInteractions: true,
-  className: '',
-  elevated: false,
-  arrowsAtEdges: false,
-};
 
 export default List;

@@ -47,7 +47,7 @@ const Guide = ({ step, onClick, loading, className }) => {
       >
         <path
           transform={`
-            rotate(${i * 360 / numWedges})
+            rotate(${(i * 360) / numWedges})
             translate(1, -2)
           `}
           d={`

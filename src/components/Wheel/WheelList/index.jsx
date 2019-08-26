@@ -29,6 +29,23 @@ const memoizedListElements = memoize((listContent, selected) => {
 }, (list, selected) => `${memoizeReference(list)}-${selected}`);
 
 class WheelList extends React.PureComponent {
+  static propTypes = {
+    /** Additional classes to apply */
+    className: PropTypes.string,
+    /** Event handler, will receive the array index being selected */
+    onChange: PropTypes.func.isRequired,
+    /** Index of the currently selected item in 'listContent' */
+    selected: PropTypes.number.isRequired,
+    /** Wheel mode */
+    wheelType: PropTypes.oneOf(['company', 'location']).isRequired,
+    /** Array of company/location names to pull the list from */
+    listContent: PropTypes.arrayOf(PropTypes.any).isRequired,
+  };
+
+  static defaultProps = {
+    className: null,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -52,21 +69,19 @@ class WheelList extends React.PureComponent {
             id={`components.companyWheel.list.${this.props.wheelType}`}
             className="label"
           />
-          { this.props.listContent.length > 0
-            ? (
+          {(!this.props.listContent.length) ? null
+            : (
               <span
                 title={this.props.listContent[this.props.selected].name}
                 className="selected"
               >
                 {this.props.listContent[this.props.selected].name}
               </span>
-            )
-            : null
-          }
+            )}
         </div>
         <div className="listContainer">
-          { this.props.listContent.length > 0
-            ? (
+          {(!this.props.listContent.length) ? null
+            : (
               <div className="list">
                 <List
                   elevated
@@ -75,29 +90,11 @@ class WheelList extends React.PureComponent {
                   selected={3}
                 />
               </div>
-            ) : null
-          }
+            )}
         </div>
       </div>
     );
   }
 }
-
-WheelList.propTypes = {
-  /** Additional classes to apply */
-  className: PropTypes.string,
-  /** Event handler, will receive the array index being selected */
-  onChange: PropTypes.func.isRequired,
-  /** Index of the currently selected item in 'listContent' */
-  selected: PropTypes.number.isRequired,
-  /** Wheel mode */
-  wheelType: PropTypes.oneOf(['company', 'location']).isRequired,
-  /** Array of company/location names to pull the list from */
-  listContent: PropTypes.arrayOf(PropTypes.any).isRequired,
-};
-
-WheelList.defaultProps = {
-  className: null,
-};
 
 export default WheelList;
