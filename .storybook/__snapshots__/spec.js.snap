@@ -17084,16 +17084,6 @@ exports[`Storyshots Components|RegionSummary default props 1`] = `
           >
             Kinder Morgan Cochin Ulc.
           </button>
-          <button
-            className="asterisk"
-            focusable={true}
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            *
-          </button>
         </li>
         <li
           title="Nova Gas Transmission Ltd."
@@ -17243,16 +17233,6 @@ exports[`Storyshots Components|RegionSummary/RegionCompanies default 1`] = `
               type="button"
             >
               Kinder Morgan Cochin Ulc.
-            </button>
-            <button
-              className="asterisk"
-              focusable={true}
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              *
             </button>
           </li>
           <li
