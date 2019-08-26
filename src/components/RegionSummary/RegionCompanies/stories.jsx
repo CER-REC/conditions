@@ -16,7 +16,7 @@ const companies = [
   { id: '13', name: 'Z-Anti' },
   { id: '14', name: 'Power Plants R Us' },
 ];
-const active = ['3'];
+const active = [3];
 
 storiesForComponent('Components|RegionSummary/RegionCompanies', module, ReadMe)
   .addDecorator(withStatus('functionalityUnderDevelopment'))
