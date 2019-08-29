@@ -18,7 +18,7 @@ export default class AdvancedFormattedMessage extends React.PureComponent {
   };
 
   processMessage = (...children) => {
-    const { tag, ...props } = this.props;
+    const { id, values, tag, ...props } = this.props;
     return React.createElement(tag, props, ...children);
   }
 

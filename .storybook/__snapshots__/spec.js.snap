@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components|AdvancedFormattedMessage documentation 1`] = `
+<div
+  className="visualization"
+>
+  <div />
+</div>
+`;
+
 exports[`Storyshots Components|Arrow Down orientation 1`] = `
 <div
   className="visualization"
@@ -1514,6 +1522,14 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
       </button>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components|ComposedQuery documentation 1`] = `
+<div
+  className="visualization"
+>
+  <div />
 </div>
 `;
 
@@ -31797,6 +31813,14 @@ exports[`Storyshots Components|TotalConditionsPopup/TotalConditions default 1`] 
       </button>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components|TranslatedParagraphs documentation 1`] = `
+<div
+  className="visualization"
+>
+  <div />
 </div>
 `;
 
