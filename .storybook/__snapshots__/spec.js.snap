@@ -4551,7 +4551,7 @@ exports[`Storyshots Components|DownloadPopup default 1`] = `
         className="Icons"
       >
         <a
-          href="http://www.neb-one.gc.ca/open/conditions/conditions.csv"
+          href="http://www.cer-rec.gc.ca/open/conditions/conditions.csv"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -16471,7 +16471,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </p>
       <a
         className="PopupBtn"
-        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
       >
         <div>
           Open in current tab
@@ -16508,7 +16508,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
       </a>
       <a
         className="PopupBtn"
-        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -16639,7 +16639,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </p>
       <a
         className="PopupBtn"
-        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
       >
         <div>
           Open in current tab
@@ -16676,7 +16676,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
       </a>
       <a
         className="PopupBtn"
-        href="https://apps.neb-one.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
+        href="https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl=MO-025-2011"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -31644,8 +31644,8 @@ exports[`Storyshots Components|TotalConditionsLabel default 1`] = `
         </text>
         <line
           className="connectingLine"
-          x1="1.5"
-          x2="1.5"
+          x1="0"
+          x2="0"
           y1="40"
           y2="60"
         />

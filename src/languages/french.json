@@ -161,12 +161,15 @@
     },
     "featureDescription": {
       "theme": "Pour faciliter l’analyse et la compréhension du public, les conditions sont regroupées par thème, comme l’environnement, les finances, la sécurité, la sûreté, etc.",
-      "phase": "En sa qualité d’organisme de réglementation présent tout au long du cycle de vie d’un projet, la Régie assure la sécurité et la protection de l’environnement à toutes les étapes. Des conditions peuvent viser une ou plusieurs étapes du cycle de vie ou toutes les étapes. Apprenez-en plus sur la démarche de la Régie axée sur le cycle de vie.",
-      "phaseHere": "ici",
+      "phase": "En sa qualité d’organisme de réglementation présent tout au long du cycle de vie d’un projet, la Régie assure la sécurité et la protection de l’environnement à toutes les étapes. Des conditions peuvent viser une ou plusieurs étapes du cycle de vie ou toutes les étapes. {phaseLink}.",
       "status": "Les conditions peuvent avoir deux états : En cours et conforme.",
       "type": "Il existe deux grands types de conditions : standard et non standard.",
       "filing": "Un document démontrant que les exigences relatives à une condition ont été respectées.",
-      "instrument": "Ordonnances, certificats, licences ou permis délivrés par la Régie. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite. La Régie publie un Rapport d’instruments réglementaires qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014."
+      "instrument": "Ordonnances, certificats, licences ou permis délivrés par la Régie. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite. La Régie publie un {instrumentLink} qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014.",
+      "links": {
+        "phase": "Apprenez-en plus sur la démarche de la Régie axée sur le cycle de vie",
+        "instrument": "Rapport d’instruments réglementaires"
+      }
     },
     "featureTypesDescription": {
       "allThemes": "* Les conditions englobant plusieurs thèmes sont comptées plus d’une fois.",

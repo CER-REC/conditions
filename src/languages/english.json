@@ -161,12 +161,15 @@
     },
     "featureDescription": {
       "theme": "To facilitate analysis and public understanding, conditions are grouped into themes such as environment, finance, safety, security, etc.",
-      "phase": "As a lifecycle regulator, the CER ensures the safety and protection of the environment throughout all phases of a project. Conditions can apply to one, several or all phases of the lifecycle. Learn more about the CER Lifecycle Approach.",
-      "phaseHere": "here",
+      "phase": "As a lifecycle regulator, the CER ensures the safety and protection of the environment throughout all phases of a project. Conditions can apply to one, several or all phases of the lifecycle. Learn more about {phaseLink}.",
       "status": "There are two possible status for conditions: In Progress and Closed.",
       "type": "There are two main types of conditions: standard and non-standard.",
       "filing": "A document that demonstrates the fulfillment of a condition’s requirements.",
-      "instrument": "Orders, certificates, licenses or permits issued by the CER (previously the NEB). All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe CER publishes a [Regulatory Instrument] Report that lists Regulatory Instruments issued from September 2014 to current."
+      "instrument": "Orders, certificates, licenses or permits issued by the CER (previously the NEB). All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe CER publishes a {instrumentLink} that lists Regulatory Instruments issued from September 2014 to current.",
+      "links": {
+        "phase": "the CER Lifecycle Approach",
+        "instrument": "Regulatory Instrument Report"
+      }
     },
     "featureTypesDescription": {
       "allThemes": "* Conditions with multiple themes are counted more than once.",

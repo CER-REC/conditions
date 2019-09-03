@@ -2,12 +2,18 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import './styles.scss';
 import { featureTypes } from '../../proptypes';
+import { featureDescriptionLinks } from '../../constants';
 
-const formatLink = (link, text) => (
-  <a href={link} rel="noopener noreferrer" target="_blank">
-    <FormattedMessage id={text} />
+const formatLink = id => (
+  <a href={featureDescriptionLinks[id]} rel="noopener noreferrer" target="_blank">
+    <FormattedMessage id={`components.featureDescription.links.${id}`} />
   </a>
 );
+
+const linkValues = {
+  phaseLink: formatLink('phase'),
+  instrumentLink: formatLink('instrument'),
+};
 
 const FeatureDescription = props => (
   <div
@@ -19,10 +25,7 @@ const FeatureDescription = props => (
     <FormattedMessage
       id={`components.featureDescription.${props.feature}`}
       tagName="p"
-      values={{
-        regDocsLink: formatLink('https://apps.neb-one.gc.ca/REGDOCS/', 'common.linkText.regDocs'),
-        phaseLink: formatLink('https://www.neb-one.gc.ca/sftnvrnmnt/nvrnmnt/lfcclpprch/index-eng.html#s1', 'common.linkText.here'),
-      }}
+      values={linkValues}
     />
   </div>
 );
