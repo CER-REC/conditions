@@ -7,11 +7,11 @@
     font: unset;
     border: none;
     padding: 0px;
-    background-color: rgba(255, 255, 255, 0); 
+    background-color: rgba(255, 255, 255, 0);
+
     .conditionLabel {
-      position: relative;
-      left: -1.45px;
-  
+      width: 100%;
+
       .small{
         fill: $Gray160;
         font: $fira-sans-condensed-light;
@@ -20,7 +20,7 @@
           fill: $LinksTextButtons
         }
       }
-  
+
       .connectingLine{
         stroke-dasharray: 3,1;
         stroke: $Gray160;
@@ -29,4 +29,3 @@
     }
   }
 }
-
