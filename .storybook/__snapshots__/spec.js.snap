@@ -8205,7 +8205,7 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER (previously the NEB) structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -8216,11 +8216,11 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@neb-one.gc.ca"
+              href="mailto:energyindesign@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@neb-one.gc.ca
+              energyindesign@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>
@@ -8504,7 +8504,7 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER (previously the NEB) structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -8515,11 +8515,11 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@neb-one.gc.ca"
+              href="mailto:energyindesign@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@neb-one.gc.ca
+              energyindesign@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>
@@ -8803,7 +8803,7 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER (previously the NEB) structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -8814,11 +8814,11 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@neb-one.gc.ca"
+              href="mailto:energyindesign@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@neb-one.gc.ca
+              energyindesign@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>
@@ -9102,7 +9102,7 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER (previously the NEB) structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -9113,11 +9113,11 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
           <span>
             Email us with your comments and ideas: 
             <a
-              href="mailto:energyindesign@neb-one.gc.ca"
+              href="mailto:energyindesign@cer-rec.gc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              energyindesign@neb-one.gc.ca
+              energyindesign@cer-rec.gc.ca
             </a>
             . We look forward to hearing from you.
           </span>

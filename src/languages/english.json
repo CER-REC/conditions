@@ -22,7 +22,7 @@
       "hearings": "hearings",
       "lawsRegulations": "laws, acts and regulations",
       "applicationProcess": "application process",
-      "NEBLink": "energyindesign@neb-one.gc.ca",
+      "NEBLink": "energyindesign@cer-rec.gc.ca",
       "exploreHere": "explore here",
       "appProcess": "application process",
       "explorableHere": "explorable here"
@@ -163,10 +163,10 @@
       "theme": "To facilitate analysis and public understanding, conditions are grouped into themes such as environment, finance, safety, security, etc.",
       "phase": "As a lifecycle regulator, the CER ensures the safety and protection of the environment throughout all phases of a project. Conditions can apply to one, several or all phases of the lifecycle. Learn more about the CER Lifecycle Approach.",
       "phaseHere": "here",
-      "status": "There are two possible status for conditions: In progress and Closed.",
+      "status": "There are two possible status for conditions: In Progress and Closed.",
       "type": "There are two main types of conditions: standard and non-standard.",
       "filing": "A document that demonstrates the fulfillment of a condition’s requirements.",
-      "instrument": "Orders, certificates, licenses or permits issued by the Board. All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe CER publishes a [Regulatory Instrument] Report that lists Regulatory Instruments issued from September 2014 to current."
+      "instrument": "Orders, certificates, licenses or permits issued by the CER (previously the NEB). All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe CER publishes a [Regulatory Instrument] Report that lists Regulatory Instruments issued from September 2014 to current."
     },
     "featureTypesDescription": {
       "allThemes": "* Conditions with multiple themes are counted more than once.",
@@ -197,8 +197,8 @@
         "UNSPECIFIED": "Phase is not specified or applicable."
       },
       "status": {
-        "CLOSED": "This status refers to:\n• Condition requirements that have been satisfied, and no further submissions from the company are required; or\n• Conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
-        "IN_PROGRESS": "This status refers to conditions that continue to be monitored by the CER. This happens when:\n• Condition filings have not yet been received by the CER; or,\n• Filings have been received but are under review or do not yet meet requirements; or,\n• A project is not completed and it has conditions, which have not been met; or,\n• A project has a post-construction condition, but a requirement has not yet been completed; or,\n• Some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe CER follows up on In progress conditions."
+        "CLOSED": "This status refers to:\n• condition requirements that have been satisfied, and no further submissions from the company are required; or\n• conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
+        "IN_PROGRESS": "This status refers to conditions that continue to be monitored by the CER. This happens when:\n• condition filings have not yet been received by the CER; or,\n• filings have been received but are under review or do not yet meet requirements; or,\n• a project is not completed and it has conditions, which have not been met; or,\n• a project has a post-construction condition, but a requirement has not yet been completed; or,\n• some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe CER follows up on in-progress conditions."
       },
       "type": {
         "STANDARD": "A condition that is typically imposed on all approved projects.",
@@ -353,8 +353,8 @@
           "5": "3. Additional lists of locations and community names were added to create the Master List",
           "6": "How are keywords categorized?\nThe Master List of keywords was manually grouped into the following areas: Wildlife & Habitat, Environment, Oversight & Safety, Engineering & Structures, Administration & Filings and, People & Communities."
         },
-        "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
-        "about": "This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
+        "downloadData": "Click {here} to download the dataset in CSV (comma-separated values) format.",
+        "about": "This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER (previously the NEB) structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
         "emailUs": "Email us with your comments and ideas: {email}. We look forward to hearing from you.",
         "contributors": {
           "1": "DATA SOURCE:\nCER Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nCER Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau",
