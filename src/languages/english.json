@@ -468,6 +468,11 @@
       "restoreMessage": "Please click on the link to restore the session:",
       "resetLinkText": "Reset Session",
       "resetMessage": "Please click on the link to reset the session:"
+    },
+    "shortcutInfoBar": {
+      "about": "About this Visualization",
+      "share": "Share:",
+      "download": "Download:"
     }
   },
   "views": {
