@@ -1347,7 +1347,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
           an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
+          CER initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -1477,7 +1477,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
           an agreement between one company to sell and another company to purchase a pipeline; and
         </li>
         <li>
-          NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
+          CER initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).
         </li>
       </ul>
       <button
@@ -4203,7 +4203,7 @@ exports[`Storyshots Components|ConditionExplorer/GuideDetail default 1`] = `
           Why are conditions made?
         </h1>
         <p>
-          Conditions are project-specific. The NEB sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest.
+          Conditions are project-specific. The CER sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest.
         </p>
       </div>
       <div
@@ -4487,7 +4487,7 @@ exports[`Storyshots Components|DotLegend default 1`] = `
       />
     </svg>
     <p>
-      NEB Regulated Project with Conditions
+      CER Regulated Project with Conditions
     </p>
   </div>
 </div>
@@ -8205,7 +8205,7 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -8231,10 +8231,10 @@ exports[`Storyshots Components|MainInfoBar About 1`] = `
             DATA SOURCE:
           </h2>
           <p>
-            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+            CER Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
           <p>
-            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+            CER Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
           </p>
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
@@ -8504,7 +8504,7 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -8530,10 +8530,10 @@ exports[`Storyshots Components|MainInfoBar Download 1`] = `
             DATA SOURCE:
           </h2>
           <p>
-            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+            CER Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
           <p>
-            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+            CER Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
           </p>
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
@@ -8803,7 +8803,7 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -8829,10 +8829,10 @@ exports[`Storyshots Components|MainInfoBar Methodology 1`] = `
             DATA SOURCE:
           </h2>
           <p>
-            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+            CER Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
           <p>
-            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+            CER Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
           </p>
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
@@ -9102,7 +9102,7 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
             About
           </h1>
           <p>
-            This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.
+            This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.
           </p>
           <p>
             If you want to use the data for research and undertake your own review, all the data is downloadable and shareable.
@@ -9128,10 +9128,10 @@ exports[`Storyshots Components|MainInfoBar with interaction 1`] = `
             DATA SOURCE:
           </h2>
           <p>
-            NEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
+            CER Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp
           </p>
           <p>
-            NEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
+            CER Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker
           </p>
           <p>
             ETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau
@@ -16589,7 +16589,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         What is RegDocs?
       </h4>
       <p>
-        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the CER, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
       </p>
     </div>
   </dialog>
@@ -16757,7 +16757,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         What is RegDocs?
       </h4>
       <p>
-        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
+        RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the CER, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters.
       </p>
     </div>
   </div>
@@ -31680,7 +31680,7 @@ exports[`Storyshots Components|TotalConditionsPopup default 1`] = `
           className="Explanation"
         >
           <span>
-            The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+            The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
           </span>
         </div>
         <div
@@ -31760,7 +31760,7 @@ exports[`Storyshots Components|TotalConditionsPopup/TotalConditions default 1`] 
           className="Explanation"
         >
           <span>
-            The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+            The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
           </span>
         </div>
         <div
