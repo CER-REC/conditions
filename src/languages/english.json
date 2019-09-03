@@ -116,15 +116,15 @@
         },
         "overview": {
           "title": "What is a condition?",
-          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the NEB's regulatory framework, which is made of laws, regulations, requirements and guidance."
+          "overview": "Conditions are requirements that a company must complete to be allowed to construct, operate or abandon a project. Conditions are one tool within the CER's regulatory framework, which is made of laws, regulations, requirements and guidance."
         },
         "reason": {
           "title": "Why are conditions made?",
-          "overview": "Conditions are project-specific. The NEB sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest."
+          "overview": "Conditions are project-specific. The CER sets them during the application assessment process to prevent harm, promote safety and environmental protection in the public interest."
         },
         "compliance": {
-          "title": "How does the NEB verify condition compliance?",
-          "overview": "The NEB verifies company compliance with project condition requirements through compliance verification activities (i.e. inspections, audits, etc.) and assessing condition filings."
+          "title": "How does the CER verify condition compliance?",
+          "overview": "The CER verifies company compliance with project condition requirements through compliance verification activities (i.e. inspections, audits, etc.) and assessing condition filings."
         },
         "clickOutside": "Click outside circle to go back"
       }
@@ -161,12 +161,12 @@
     },
     "featureDescription": {
       "theme": "To facilitate analysis and public understanding, conditions are grouped into themes such as environment, finance, safety, security, etc.",
-      "phase": "As a lifecycle regulator, the NEB ensures the safety and protection of the environment throughout all phases of a project. Conditions can apply to one, several or all phases of the lifecycle. Learn more about the NEB Lifecycle Approach.",
+      "phase": "As a lifecycle regulator, the CER ensures the safety and protection of the environment throughout all phases of a project. Conditions can apply to one, several or all phases of the lifecycle. Learn more about the CER Lifecycle Approach.",
       "phaseHere": "here",
       "status": "There are two possible status for conditions: In progress and Closed.",
       "type": "There are two main types of conditions: standard and non-standard.",
       "filing": "A document that demonstrates the fulfillment of a condition’s requirements.",
-      "instrument": "Orders, certificates, licenses or permits issued by the Board. All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe NEB publishes a [Regulatory Instrument] Report that lists Regulatory Instruments issued from September 2014 to current."
+      "instrument": "Orders, certificates, licenses or permits issued by the Board. All instruments have an instrument prefix and number (i.e. GC-115).\nAll regulatory instrument prefixes with associated conditions are listed and defined in the right panel.\nThe CER publishes a [Regulatory Instrument] Report that lists Regulatory Instruments issued from September 2014 to current."
     },
     "featureTypesDescription": {
       "allThemes": "* Conditions with multiple themes are counted more than once.",
@@ -187,26 +187,26 @@
         "SUNSET_CLAUSE": "Conditions that ensure projects begin within a specific period of time."
       },
       "phase": {
-        "ABANDONMENT": "If a company wants to abandon a pipeline or facility, it must submit an application to the NEB, including an environmental and socio-economic assessment.  The NEB will assess the application and may hold a public hearing. The NEB may impose conditions on an abandonment project.",
-        "DURING_CONSTRUCTION_PHASE": "The NEB will monitor and verify compliance with the regulatory instrument’s conditions during the construction phase through compliance verification activities (CVAs).",
+        "ABANDONMENT": "If a company wants to abandon a pipeline or facility, it must submit an application to the CER, including an environmental and socio-economic assessment.  The CER will assess the application and may hold a public hearing. The CER may impose conditions on an abandonment project.",
+        "DURING_CONSTRUCTION_PHASE": "The CER will monitor and verify compliance with the regulatory instrument’s conditions during the construction phase through compliance verification activities (CVAs).",
         "EXPIRY_DATE_OF_REG_INSTR": "If construction has not commenced prior to the expiry dates, the instrument and all conditions are null and void.",
         "INCLUDES_ALL_PHASES_OF_CONSTR": "Some conditions apply at all phases of construction (prior, during and post construction).",
         "NOT_CONSTRUCTION_RELATED": "Some conditions apply outside of the construction context.",
-        "POST_CONSTRUCTION_PHASE": "After construction is complete, the NEB continues to regulate the post-construction activities carried out by the company through compliance verification activities (CVAs).",
+        "POST_CONSTRUCTION_PHASE": "After construction is complete, the CER continues to regulate the post-construction activities carried out by the company through compliance verification activities (CVAs).",
         "PRIOR_TO_THE_CONSTRUCTION_PHASE": "Before construction can begin, conditions assigned must be fulfilled.",
         "UNSPECIFIED": "Phase is not specified or applicable."
       },
       "status": {
         "CLOSED": "This status refers to:\n• Condition requirements that have been satisfied, and no further submissions from the company are required; or\n• Conditions whose filings or actions apply to a specific phase that have been fulfilled as the phase is completed (i.e. a specific filing during construction phase). Note: comments on the required actions can still be received.",
-        "IN_PROGRESS": "This status refers to conditions that continue to be monitored by the NEB. This happens when:\n• Condition filings have not yet been received by the NEB; or,\n• Filings have been received but are under review or do not yet meet requirements; or,\n• A project is not completed and it has conditions, which have not been met; or,\n• A project has a post-construction condition, but a requirement has not yet been completed; or,\n• Some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe NEB follows up on In progress conditions."
+        "IN_PROGRESS": "This status refers to conditions that continue to be monitored by the CER. This happens when:\n• Condition filings have not yet been received by the CER; or,\n• Filings have been received but are under review or do not yet meet requirements; or,\n• A project is not completed and it has conditions, which have not been met; or,\n• A project has a post-construction condition, but a requirement has not yet been completed; or,\n• Some conditions may be active indefinitely or refer to the continued operation of a pipeline.\n\nThe CER follows up on In progress conditions."
       },
       "type": {
         "STANDARD": "A condition that is typically imposed on all approved projects.",
         "NON_STANDARD": "Non-standard conditions capture project-specific information or concerns that are not addressed by standard conditions."
       },
       "filing": {
-        "REQUIRED": "A company must file a document with the NEB in order to comply with a condition. The NEB reviews these filings.",
-        "NOT_REQUIRED": " A company is not required to file a document with the NEB in order to comply with a condition. Some conditions are covered by filings for another related condition. If a condition does not require a company to file a document, the NEB can verify compliance during a compliance verification activity (CVA) such as an inspection or audit."
+        "REQUIRED": "A company must file a document with the CER in order to comply with a condition. The CER reviews these filings.",
+        "NOT_REQUIRED": " A company is not required to file a document with the CER in order to comply with a condition. Some conditions are covered by filings for another related condition. If a condition does not require a company to file a document, the CER can verify compliance during a compliance verification activity (CVA) such as an inspection or audit."
       },
       "instrument": {
         "AO": "The approval of an amendment as to content or conditions of any Certificate, License, Order or Permit (in some cases the approval of the Governor in Council is required).",
@@ -347,17 +347,17 @@
         "methodology": "Click {here} to download a PDF file explaining our data collection methodology.",
         "keywords": {
           "1": "How do we get keywords?\nWhen parts of a condition’s text match keywords from the Master List they become the keywords for that condition.",
-          "2": "Where did the Master List come from?\n1. Manual processing was used to extract an initial set of words from the NEB Condition Guide\n … an internal document that guides the creation of all conditions.",
+          "2": "Where did the Master List come from?\n1. Manual processing was used to extract an initial set of words from the CER Condition Guide\n … an internal document that guides the creation of all conditions.",
           "3": "2. The initial set was expanded through text mining\nsynonyms",
           "4": "…using the Python Natural Language Toolkit (www.nltk.org)",
           "5": "3. Additional lists of locations and community names were added to create the Master List",
           "6": "How are keywords categorized?\nThe Master List of keywords was manually grouped into the following areas: Wildlife & Habitat, Environment, Oversight & Safety, Engineering & Structures, Administration & Filings and, People & Communities."
         },
         "downloadData": "Click {here} to download the dataset in Microsoft Excel format (.xlsx)",
-        "about": "This Conditions on Energy Projects interactive online tool is part of the National Energy Board’s (NEB) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the NEB structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on NEB data from 2010 to current for conditions on NEB- regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
+        "about": "This Conditions on Energy Projects interactive online tool is part of the Canada Energy Regulator’s (CER) Data Visualization Initiative (DVI). The DVI is a three-year initiative to transform how the CER structures and shares data. The objective is to enable evidence-based decision making and remove barriers to understanding Canada’s energy and pipeline systems through the use of user-friendly interactive visualizations. This visualization is based on CER data from 2010 to current for conditions on CER-regulated energy projects.\nIf you want to use the data for research and undertake your own review, all the data is downloadable and shareable.\nWe hope we are hitting the mark. Your feedback is essential.",
         "emailUs": "Email us with your comments and ideas: {email}. We look forward to hearing from you.",
         "contributors": {
-          "1": "DATA SOURCE:\nNEB Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nNEB Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau",
+          "1": "DATA SOURCE:\nCER Project Working Group: Heather Dodds, Marcus Eyre, Kevin Hill and Lori-Ann Sharp\nCER Data Experts: Shirley Chan, Grant Moss, Michelle Shabits and Tammy Walker\nETL/Web Service: Phil Cheung, Curtis Raymond and Dwayne Croteau",
           "2": "COORDINATION:\nAnnette Hester (Concept and Coordination); Katherine Murphy (Project Manager); Amanda Harwood (Project Manager); Shane Mahar (Administrative Support)",
           "3": "DATA VISUALIZATION:\nLead Design Research: Sheelagh Carpendale and Wesley Willett, iLab, University of Calgary.\nDesign: Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix, and Mieka West.\nLead Technical: VizworX\nTechnical: Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee, and Adam Lovatt."
         },
@@ -367,7 +367,7 @@
     "modal": {
       "totalConditions":{
         "title": "How is the Total Number of Conditions Determined?",
-        "explanation": "The total number of conditions displayed in the visualization may not match the NEB's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.",
+        "explanation": "The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.",
         "example": "For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.",
         "back": "Back"
       },
@@ -380,7 +380,7 @@
         "name": "Full Project Name:",
         "associated": "Companies associated with this project:",
         "meaningHeading": "Why is there more than one company associated with this project?",
-        "meaningText": "There are instances when more than one company has obligations related to a project. Examples include:\n - an agreement between one company to sell and another company to purchase a pipeline; and\n - NEB initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).",
+        "meaningText": "There are instances when more than one company has obligations related to a project. Examples include:\n - an agreement between one company to sell and another company to purchase a pipeline; and\n - CER initiatives that address regulatory gaps. (i.e. Abandonment Cost Estimate and Set-Aside Mechanism).",
         "back": "Back"
       },
       "regdocs": {
@@ -391,7 +391,7 @@
         "newTab": "Open in new tab",
         "cancel": "Cancel",
         "whatIsHeading": "What is RegDocs?",
-        "whatIsText": "RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the NEB, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters."
+        "whatIsText": "RegDocs is a collection of publically accessible documents that are filed onto the legal record for hearings or other written regulatory proceedings. These documents originate from the Company Applicants, the CER, and various participants in the regulatory processes. Technical staff and Board Members use these documents when considering project applications and other regulatory matters."
       }
     },
     "projectLegend": {
@@ -450,7 +450,7 @@
       "location": "Location"
     },
     "dotLegend": {
-      "text": "NEB Regulated Project with Conditions"
+      "text": "CER Regulated Project with Conditions"
     },
     "totalConditionsLabel": {
       "total": "Total Conditions",
@@ -473,8 +473,8 @@
   "views": {
     "view1": {
       "header": {
-        "title": "Conditions on NEB-regulated energy projects",
-        "subtitle": "This is an interactive tool for exploration of NEB conditions data through keywords and visual representation. The last update was"
+        "title": "Conditions on CER-regulated energy projects",
+        "subtitle": "This is an interactive tool for exploration of CER conditions data through keywords and visual representation. The last update was"
       }
     },
     "view3": {
