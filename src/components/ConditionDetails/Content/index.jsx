@@ -14,7 +14,7 @@ const DangerousContentText = React.memo(({ children, content }) => (
   <div
     className="contentText"
     dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-      __html: `<span class="contentHeading">${children}:&nbsp;</span>${content}`,
+      __html: `<span class="contentHeading">${children}&nbsp;</span>${content}`,
     }}
   />
 ));

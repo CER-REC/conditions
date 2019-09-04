@@ -144,16 +144,16 @@
     "conditionDetails": {
       "selectedProject": "Projet sélectionnée :",
       "selectedCondition": "Conditions dans la région sélectionnée :",
-      "instrumentNumber": "Instrument nᵒ",
-      "conditionNumber": "Condition nᵒ",
-      "location": "Lieu",
-      "issuanceDate": "Date de délivrance",
-      "effectiveDate": "Entrée en vigueur",
-      "sunsetDate": "Date de réexamen",
-      "status": "État de l’instrument",
+      "instrumentNumber": "Instrument nᵒ :",
+      "conditionNumber": "Condition nᵒ :",
+      "location": "Lieu :",
+      "issuanceDate": "Date de délivrance :",
+      "effectiveDate": "Entrée en vigueur :",
+      "sunsetDate": "Date de réexamen :",
+      "status": "État de l’instrument :",
       "type": "Type d’instrument",
-      "keywords": "Correspondence de recherché",
-      "text": "Texte",
+      "keywords": "Correspondence de recherché :",
+      "text": "Texte :",
       "selectedConditionFeature": "Particularité de la condition sélectionnée",
       "more": "Plus",
       "less": "Moins"
@@ -475,7 +475,7 @@
     "view1": {
       "header": {
         "title": "Conditions assorties aux projets énergétiques réglementés par la Régie",
-        "subtitle": "Cet outil interactif permet d’explorer les données sur les conditions au moyen de mots-clés et d’une représentation visuelle. Plus récente mise à jour "
+        "subtitle": "Cet outil interactif permet d’explorer les données sur les conditions au moyen de mots-clés et d’une représentation visuelle. Plus récente mise à jour :"
       }
     },
     "view3": {

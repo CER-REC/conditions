@@ -9,7 +9,7 @@ const ContentBlock = props => (
     <AdvancedFormattedMessage
       id={props.id}
       className="contentHeading"
-    />: {props.content}
+    /> {props.content}
   </div>
 );
 
