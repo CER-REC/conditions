@@ -69,7 +69,7 @@
     "redux": "^4.0.1",
     "shallowequal": "^1.1.0",
     "topojson-client": "^3.0.0",
-    "victory": "^32.0.0",
+    "victory": "^33.0.0",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {

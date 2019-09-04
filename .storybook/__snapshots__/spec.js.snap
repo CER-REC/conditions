@@ -20231,8 +20231,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20300,8 +20298,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20369,8 +20365,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20438,8 +20432,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20507,8 +20499,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20576,8 +20566,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20645,8 +20633,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20714,8 +20700,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20783,8 +20767,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20852,8 +20834,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20921,8 +20901,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -20990,8 +20968,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21059,8 +21035,6 @@ exports[`Storyshots Components|SmallMultiplesLegend basic usage 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21226,8 +21200,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21295,8 +21267,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21364,8 +21334,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21433,8 +21401,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21502,8 +21468,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21571,8 +21535,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21640,8 +21602,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21709,8 +21669,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21778,8 +21736,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21847,8 +21803,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21916,8 +21870,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -21985,8 +21937,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22054,8 +22004,6 @@ exports[`Storyshots Components|SmallMultiplesLegend highlight 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22165,8 +22113,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22234,8 +22180,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22303,8 +22247,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22372,8 +22314,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22441,8 +22381,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22510,8 +22448,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22579,8 +22515,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22648,8 +22582,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22717,8 +22649,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22814,8 +22744,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22911,8 +22839,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -22980,8 +22906,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -23049,8 +22973,6 @@ exports[`Storyshots Components|SmallMultiplesLegend selected 1`] = `
                       >
                         <rect
                           height={100}
-                          role="presentation"
-                          shapeRendering="auto"
                           vectorEffect="non-scaling-stroke"
                           width={100}
                           x={0}
@@ -23145,8 +23067,6 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem basic usage 1`] =
               >
                 <rect
                   height={100}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={100}
                   x={0}
@@ -23213,8 +23133,6 @@ exports[`Storyshots Components|SmallMultiplesLegend/LegendItem faded 1`] = `
               >
                 <rect
                   height={100}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={100}
                   x={0}
@@ -23276,7 +23194,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
         role="img"
         style={
           Object {
-            "height": "100%",
+            "height": "auto",
             "pointerEvents": "all",
             "width": "100%",
           }
@@ -23309,6 +23227,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
             direction="inherit"
             dx={0}
             dy={-1.7400000000000002}
+            id="chart-axis-0-axisLabel-0"
             transform="rotate(-90,25,165)"
             x={25}
             y={165}
@@ -23335,42 +23254,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={550}
-              y1={280}
-              y2={280}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={49}
-              y1={280}
-              y2={280}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
+              id="chart-axis-0-tickLabels-0"
               x={39}
               y={280}
             >
@@ -23396,42 +23284,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={550}
-              y1={69.86183074265975}
-              y2={69.86183074265975}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={49}
-              y1={69.86183074265975}
-              y2={69.86183074265975}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
+              id="chart-axis-0-tickLabels-1"
               x={39}
               y={69.86183074265975}
             >
@@ -23480,6 +23337,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
             direction="inherit"
             dx={0}
             dy={10.26}
+            id="chart-axis-1-axisLabel-0"
             x={300}
             y={305}
           >
@@ -23505,42 +23363,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={50}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={50}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-0"
               x={50}
               y={291}
             >
@@ -23566,42 +23393,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={112.5}
-              x2={112.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={112.5}
-              x2={112.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-1"
               x={112.5}
               y={291}
             >
@@ -23627,42 +23423,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={175}
-              x2={175}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={175}
-              x2={175}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-2"
               x={175}
               y={291}
             >
@@ -23688,42 +23453,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={237.5}
-              x2={237.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={237.5}
-              x2={237.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-3"
               x={237.5}
               y={291}
             >
@@ -23749,42 +23483,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={300}
-              x2={300}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={300}
-              x2={300}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-4"
               x={300}
               y={291}
             >
@@ -23810,42 +23513,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={362.5}
-              x2={362.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={362.5}
-              x2={362.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-5"
               x={362.5}
               y={291}
             >
@@ -23871,42 +23543,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={425}
-              x2={425}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={425}
-              x2={425}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-6"
               x={425}
               y={291}
             >
@@ -23932,42 +23573,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={487.5}
-              x2={487.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={487.5}
-              x2={487.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-7"
               x={487.5}
               y={291}
             >
@@ -23993,42 +23603,11 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={550}
-              x2={550}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={550}
-              x2={550}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-8"
               x={550}
               y={291}
             >
@@ -24088,8 +23667,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24126,8 +23703,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24164,8 +23739,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24202,8 +23775,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24240,8 +23811,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24278,8 +23847,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24316,8 +23883,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24354,8 +23919,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24392,8 +23955,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24430,8 +23991,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24468,8 +24027,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24506,8 +24063,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24544,8 +24099,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24582,8 +24135,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24620,8 +24171,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24658,8 +24207,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24696,8 +24243,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24734,8 +24279,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24772,8 +24315,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24810,8 +24351,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24848,8 +24387,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24886,8 +24423,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24924,8 +24459,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -24962,8 +24495,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25000,8 +24531,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25038,8 +24567,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25076,8 +24603,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25114,8 +24639,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25152,8 +24675,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25190,8 +24711,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25228,8 +24747,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25266,8 +24783,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25304,8 +24819,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25342,8 +24855,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25380,8 +24891,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25418,8 +24927,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25456,8 +24963,6 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -25508,7 +25013,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
+            "height": "auto",
             "left": 0,
             "position": "absolute",
             "top": 0,
@@ -25521,7 +25026,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           height={330}
           style={
             Object {
-              "height": "100%",
+              "height": "auto",
               "overflow": "visible",
               "width": "100%",
             }
@@ -25571,7 +25076,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
         role="img"
         style={
           Object {
-            "height": "100%",
+            "height": "auto",
             "pointerEvents": "all",
             "width": "100%",
           }
@@ -25604,6 +25109,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             direction="inherit"
             dx={0}
             dy={-1.7400000000000002}
+            id="chart-axis-0-axisLabel-0"
             transform="rotate(-90,25,165)"
             x={25}
             y={165}
@@ -25630,42 +25136,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={550}
-              y1={280}
-              y2={280}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={49}
-              y1={280}
-              y2={280}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
+              id="chart-axis-0-tickLabels-0"
               x={39}
               y={280}
             >
@@ -25691,42 +25166,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={550}
-              y1={69.86183074265975}
-              y2={69.86183074265975}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={49}
-              y1={69.86183074265975}
-              y2={69.86183074265975}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
+              id="chart-axis-0-tickLabels-1"
               x={39}
               y={69.86183074265975}
             >
@@ -25775,6 +25219,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
             direction="inherit"
             dx={0}
             dy={10.26}
+            id="chart-axis-1-axisLabel-0"
             x={300}
             y={305}
           >
@@ -25800,42 +25245,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={50}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={50}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-0"
               x={50}
               y={291}
             >
@@ -25861,42 +25275,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={112.5}
-              x2={112.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={112.5}
-              x2={112.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-1"
               x={112.5}
               y={291}
             >
@@ -25922,42 +25305,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={175}
-              x2={175}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={175}
-              x2={175}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-2"
               x={175}
               y={291}
             >
@@ -25983,42 +25335,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={237.5}
-              x2={237.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={237.5}
-              x2={237.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-3"
               x={237.5}
               y={291}
             >
@@ -26044,42 +25365,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={300}
-              x2={300}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={300}
-              x2={300}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-4"
               x={300}
               y={291}
             >
@@ -26105,42 +25395,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={362.5}
-              x2={362.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={362.5}
-              x2={362.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-5"
               x={362.5}
               y={291}
             >
@@ -26166,42 +25425,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={425}
-              x2={425}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={425}
-              x2={425}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-6"
               x={425}
               y={291}
             >
@@ -26227,42 +25455,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={487.5}
-              x2={487.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={487.5}
-              x2={487.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-7"
               x={487.5}
               y={291}
             >
@@ -26288,42 +25485,11 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={550}
-              x2={550}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={550}
-              x2={550}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-8"
               x={550}
               y={291}
             >
@@ -26383,8 +25549,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26421,8 +25585,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26459,8 +25621,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26497,8 +25657,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26535,8 +25693,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26573,8 +25729,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26611,8 +25765,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26649,8 +25801,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26687,8 +25837,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26725,8 +25873,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26763,8 +25909,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26801,8 +25945,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26839,8 +25981,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26877,8 +26017,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26915,8 +26053,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26953,8 +26089,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -26991,8 +26125,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27029,8 +26161,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27067,8 +26197,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27105,8 +26233,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27143,8 +26269,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27181,8 +26305,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27219,8 +26341,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27257,8 +26377,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27295,8 +26413,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27333,8 +26449,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27371,8 +26485,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27409,8 +26521,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27447,8 +26557,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27485,8 +26593,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27523,8 +26629,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27561,8 +26665,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27599,8 +26701,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27637,8 +26737,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27675,8 +26773,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27713,8 +26809,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27751,8 +26845,6 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -27803,7 +26895,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
+            "height": "auto",
             "left": 0,
             "position": "absolute",
             "top": 0,
@@ -27816,7 +26908,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           height={330}
           style={
             Object {
-              "height": "100%",
+              "height": "auto",
               "overflow": "visible",
               "width": "100%",
             }
@@ -27886,8 +26978,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -27924,8 +27014,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -27962,8 +27050,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28000,8 +27086,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28038,8 +27122,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28076,8 +27158,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28114,8 +27194,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28152,8 +27230,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28190,8 +27266,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28228,8 +27302,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28266,8 +27338,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28304,8 +27374,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28342,8 +27410,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28380,8 +27446,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28418,8 +27482,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28456,8 +27518,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28494,8 +27554,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28532,8 +27590,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28570,8 +27626,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28608,8 +27662,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28646,8 +27698,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28684,8 +27734,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28722,8 +27770,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28760,8 +27806,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28798,8 +27842,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28836,8 +27878,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28874,8 +27914,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28912,8 +27950,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28950,8 +27986,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -28988,8 +28022,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29026,8 +28058,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29064,8 +28094,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29102,8 +28130,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29140,8 +28166,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29178,8 +28202,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29216,8 +28238,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29254,8 +28274,6 @@ exports[`Storyshots Components|StreamGraph streamOnly 1`] = `
               >
                 <rect
                   height={300}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={0}
@@ -29320,7 +28338,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
         role="img"
         style={
           Object {
-            "height": "100%",
+            "height": "auto",
             "pointerEvents": "all",
             "width": "100%",
           }
@@ -29353,6 +28371,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             direction="inherit"
             dx={0}
             dy={-1.7400000000000002}
+            id="chart-axis-0-axisLabel-0"
             transform="rotate(-90,25,165)"
             x={25}
             y={165}
@@ -29379,42 +28398,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={550}
-              y1={280}
-              y2={280}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={49}
-              y1={280}
-              y2={280}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
+              id="chart-axis-0-tickLabels-0"
               x={39}
               y={280}
             >
@@ -29440,42 +28428,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={550}
-              y1={69.86183074265975}
-              y2={69.86183074265975}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={49}
-              y1={69.86183074265975}
-              y2={69.86183074265975}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={3.55}
+              id="chart-axis-0-tickLabels-1"
               x={39}
               y={69.86183074265975}
             >
@@ -29524,6 +28481,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
             direction="inherit"
             dx={0}
             dy={10.26}
+            id="chart-axis-1-axisLabel-0"
             x={300}
             y={305}
           >
@@ -29549,42 +28507,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={50}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={50}
-              x2={50}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-0"
               x={50}
               y={291}
             >
@@ -29610,42 +28537,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={112.5}
-              x2={112.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={112.5}
-              x2={112.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-1"
               x={112.5}
               y={291}
             >
@@ -29671,42 +28567,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={175}
-              x2={175}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={175}
-              x2={175}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-2"
               x={175}
               y={291}
             >
@@ -29732,42 +28597,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={237.5}
-              x2={237.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={237.5}
-              x2={237.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-3"
               x={237.5}
               y={291}
             >
@@ -29793,42 +28627,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={300}
-              x2={300}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={300}
-              x2={300}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-4"
               x={300}
               y={291}
             >
@@ -29854,42 +28657,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={362.5}
-              x2={362.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={362.5}
-              x2={362.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-5"
               x={362.5}
               y={291}
             >
@@ -29915,42 +28687,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={425}
-              x2={425}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={425}
-              x2={425}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-6"
               x={425}
               y={291}
             >
@@ -29976,42 +28717,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={487.5}
-              x2={487.5}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={487.5}
-              x2={487.5}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-7"
               x={487.5}
               y={291}
             >
@@ -30037,42 +28747,11 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <g
             role="presentation"
           >
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={550}
-              x2={550}
-              y1={280}
-              y2={50}
-            />
-            <line
-              role="presentation"
-              shapeRendering="auto"
-              style={
-                Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                }
-              }
-              vectorEffect="non-scaling-stroke"
-              x1={550}
-              x2={550}
-              y1={280}
-              y2={281}
-            />
             <text
               direction="inherit"
               dx={0}
               dy={8.55}
+              id="chart-axis-1-tickLabels-8"
               x={550}
               y={291}
             >
@@ -30132,8 +28811,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30170,8 +28847,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30208,8 +28883,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30246,8 +28919,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30284,8 +28955,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30322,8 +28991,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30360,8 +29027,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30398,8 +29063,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30436,8 +29099,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30474,8 +29135,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30512,8 +29171,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30550,8 +29207,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30588,8 +29243,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30626,8 +29279,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30664,8 +29315,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30702,8 +29351,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30740,8 +29387,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30778,8 +29423,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30816,8 +29459,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30854,8 +29495,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30892,8 +29531,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30930,8 +29567,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -30968,8 +29603,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31006,8 +29639,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31044,8 +29675,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31082,8 +29711,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31120,8 +29747,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31158,8 +29783,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31196,8 +29819,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31234,8 +29855,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31272,8 +29891,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31310,8 +29927,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31348,8 +29963,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31386,8 +29999,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31424,8 +30035,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31462,8 +30071,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31500,8 +30107,6 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               >
                 <rect
                   height={230}
-                  role="presentation"
-                  shapeRendering="auto"
                   vectorEffect="non-scaling-stroke"
                   width={0}
                   x={50}
@@ -31552,7 +30157,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
       <div
         style={
           Object {
-            "height": "100%",
+            "height": "auto",
             "left": 0,
             "position": "absolute",
             "top": 0,
@@ -31565,7 +30170,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           height={330}
           style={
             Object {
-              "height": "100%",
+              "height": "auto",
               "overflow": "visible",
               "width": "100%",
             }
@@ -31883,8 +30488,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -31921,8 +30524,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -31959,8 +30560,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -31997,8 +30596,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32035,8 +30632,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32073,8 +30668,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32111,8 +30704,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32149,8 +30740,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32187,8 +30776,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32225,8 +30812,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32263,8 +30848,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32301,8 +30884,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32339,8 +30920,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32377,8 +30956,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32415,8 +30992,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32453,8 +31028,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32491,8 +31064,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32529,8 +31100,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32567,8 +31136,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32605,8 +31172,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32643,8 +31208,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32681,8 +31244,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32719,8 +31280,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32757,8 +31316,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32795,8 +31352,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32833,8 +31388,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32871,8 +31424,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32909,8 +31460,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32947,8 +31496,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -32985,8 +31532,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -33023,8 +31568,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -33061,8 +31604,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -33099,8 +31640,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -33137,8 +31676,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -33175,8 +31712,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -33213,8 +31748,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
@@ -33251,8 +31784,6 @@ exports[`Storyshots Components|TrendButton Default StreamGraph Button 1`] = `
                   >
                     <rect
                       height={300}
-                      role="presentation"
-                      shapeRendering="auto"
                       vectorEffect="non-scaling-stroke"
                       width={0}
                       x={0}
