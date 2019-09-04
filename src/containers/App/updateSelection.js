@@ -81,7 +81,12 @@ const selectionPaths = {
       }
 
       const project = company.projects[0];
-      if (!project.instruments.length) { return { project: project.id }; }
+      if (!project.instruments.length) {
+        return {
+          company: company.id,
+          project: project.id,
+        };
+      }
 
       return {
         company: company.id,
