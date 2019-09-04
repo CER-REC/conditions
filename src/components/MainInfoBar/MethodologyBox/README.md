@@ -1,6 +1,6 @@
 # Methodology Box
 
-The Methodology Box is a private component that is used by the Main Info Bar. It provides a link to the visualization's Methodology document provided by the NEB and a description of the methodology for keyword extraction.
+The Methodology Box is a private component that is used by the Main Info Bar. It provides a link to the visualization's Methodology document provided by the CER and a description of the methodology for keyword extraction.
 
 ## Requirements
 

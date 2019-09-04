@@ -1,7 +1,7 @@
 Conditions Visualization
 ========================
 
-Conditions data visualization for NEB.
+Conditions data visualization for CER.
 
 Quick Start
 -----------

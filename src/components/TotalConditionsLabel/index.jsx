@@ -21,7 +21,7 @@ const TotalConditionsLabel = props => (
         <text x="0" y="36" className="small linked">
           {props.intl.formatMessage({ id: 'components.totalConditionsLabel.learnMore' })}
         </text>
-        <line x1="1.5" y1="40" x2="1.5" y2="60" className="connectingLine" />
+        <line x1="0" y1="40" x2="0" y2="60" className="connectingLine" />
       </svg>
     </button>
   </div>

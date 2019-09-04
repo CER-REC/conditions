@@ -2,10 +2,19 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import TranslatedParagraphs from '../../TranslatedParagraphs';
+import { contactEmail } from '../../../constants';
 
-const formatEmail = email => (
-  <a href={`mailto:${email}`} rel="noopener noreferrer" target="_blank">{email}</a>
-);
+const emailValues = {
+  email: (
+    <a
+      href={`mailto:${contactEmail}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      {contactEmail}
+    </a>
+  ),
+};
 
 // eslint-disable-next-line react/prop-types
 const ConcatenatedEmailText = ({ children }) => (
@@ -38,13 +47,7 @@ const AboutBox = () => (
     <FormattedMessage
       id="components.mainInfoBar.content.emailUs"
       tag={ConcatenatedEmailText}
-      values={{
-        email: (
-          <FormattedMessage id="common.linkText.NEBLink">
-            {formatEmail}
-          </FormattedMessage>
-        ),
-      }}
+      values={emailValues}
     />
     <FormattedMessage id="components.mainInfoBar.headings.contributors" tagName="h1" />
     {contributorIndices.map(i => (

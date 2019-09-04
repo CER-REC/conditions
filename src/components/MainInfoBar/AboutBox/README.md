@@ -1,6 +1,6 @@
 # About Box
 
-The About Box is a private component that is used by the Main Info Bar. It displays text provided by the NEB and asset attributions by the UofC Design Team.
+The About Box is a private component that is used by the Main Info Bar. It displays text provided by the CER and asset attributions by the UofC Design Team.
 
 ## Requirements
 

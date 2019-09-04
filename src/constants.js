@@ -69,10 +69,26 @@ export const noRegionColor = 'rgb(153,153,153)';
 
 export const nltkLink = 'http://www.nltk.org/';
 export const regDocsUrl = (lang === 'en')
-  ? 'https://apps.neb-one.gc.ca/REGDOCS/Search?txthl='
-  : 'https://apps.neb-one.gc.ca/REGDOCS/Recherche/Index/?txthl=';
+  ? 'https://apps.cer-rec.gc.ca/REGDOCS/Search?txthl='
+  : 'https://apps.cer-rec.gc.ca/REGDOCS/Recherche/Index/?txthl=';
 
-export const localDataURL = lang === 'en' ? 'http://www.neb-one.gc.ca/open/conditions/conditions.csv' : 'http://www.neb-one.gc.ca/ouvert/conditions/conditions.csv';
+export const featureDescriptionLinks = (lang === 'en')
+  ? {
+    phase: 'https://www.cer-rec.gc.ca/bts/nws/vds/thlfcclapprch-eng.html',
+    instrument: 'https://open.canada.ca/data/dataset/5b137b2a-d196-44ca-96fe-e9e33f847594',
+  }
+  : {
+    phase: 'https://www.cer-rec.gc.ca/bts/nws/vds/thlfcclapprch-fra.html',
+    instrument: 'https://ouvert.canada.ca/data/fr/dataset/5b137b2a-d196-44ca-96fe-e9e33f847594',
+  };
+
+export const localDataURL = (lang === 'en')
+  ? 'http://www.cer-rec.gc.ca/open/conditions/conditions.csv'
+  : 'http://www.cer-rec.gc.ca/ouvert/conditions/conditions.csv';
+
+export const contactEmail = (lang === 'en')
+  ? 'energyindesign@cer-rec.gc.ca'
+  : 'conceptionenergie@rec-cer.gc.ca';
 
 export const fileDownloadName = localDataURL.substring(localDataURL.lastIndexOf('/') + 1, localDataURL.length);
 export const guideSize = 128;

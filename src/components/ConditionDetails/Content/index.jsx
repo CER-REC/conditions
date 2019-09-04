@@ -29,7 +29,6 @@ class Content extends React.PureComponent {
       sunsetDate: PropTypes.string,
       status: PropTypes.string.isRequired,
       location: PropTypes.array.isRequired,
-      activity: PropTypes.string.isRequired,
       conditions: PropTypes.arrayOf(PropTypes.object).isRequired,
     }).isRequired,
     itemIndex: PropTypes.number.isRequired,

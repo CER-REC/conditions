@@ -22,7 +22,6 @@
       "hearings": "audiences",
       "lawsRegulations": "des lois et des règlements",
       "applicationProcess": "processus de demande",
-      "NEBLink": "conceptionenergie@neb-one.gc.ca",
       "exploreHere": "explorer ici",
       "appProcess": "processus de demande",
       "explorableHere": "explorable ici"
@@ -116,15 +115,15 @@
         },
         "overview": {
           "title": "Qu’est-ce qu’une condition?",
-          "overview": "Les conditions sont des exigences qu’une société doit respecter pour être autorisée à construire, exploiter ou cesser d’exploiter un projet. Les conditions sont un outil du cadre de réglementation de l’Office, qui regroupe des lois, des règlements, des exigences et des lignes directrices."
+          "overview": "Les conditions sont des exigences qu’une société doit respecter pour être autorisée à construire, exploiter ou cesser d’exploiter un projet. Les conditions sont un outil du cadre de réglementation de la Régie, qui regroupe des lois, des règlements, des exigences et des lignes directrices."
         },
         "reason": {
           "title": "Pourquoi impose-t-on des conditions?",
-          "overview": "Les conditions varient selon les projets. L’Office les établit durant le processus d’évaluation de la demande pour prévenir les préjudices, promouvoir la sécurité et protéger l’environnement dans l’intérêt public."
+          "overview": "Les conditions varient selon les projets. La Régie les établit durant le processus d’évaluation de la demande pour prévenir les préjudices, promouvoir la sécurité et protéger l’environnement dans l’intérêt public."
         },
         "compliance": {
-          "title": "Comment l’Office vérifie-t-il la conformité aux conditions?",
-          "overview": "L’Office s’assure que les sociétés respectent les conditions rattachées aux projets par des activités de vérification de la conformité (inspections, audits, etc.) et par l’examen des pièces déposées conformément aux conditions."
+          "title": "Comment la Régie vérifie-t-elle la conformité aux conditions?",
+          "overview": "La Régie s’assure que les sociétés respectent les conditions rattachées aux projets par des activités de vérification de la conformité (inspections, audits, etc.) et par l’examen des pièces déposées conformément aux conditions."
         },
         "clickOutside": "Cliquer à l’extérieur du cercle pour revenir en arrière."
       }
@@ -161,12 +160,15 @@
     },
     "featureDescription": {
       "theme": "Pour faciliter l’analyse et la compréhension du public, les conditions sont regroupées par thème, comme l’environnement, les finances, la sécurité, la sûreté, etc.",
-      "phase": "En sa qualité d’organisme de réglementation présent tout au long du cycle de vie d’un projet, l’Office assure la sécurité et la protection de l’environnement à toutes les étapes. Des conditions peuvent viser une ou plusieurs étapes du cycle de vie ou toutes les étapes. Apprenez-en plus sur la démarche de l’Office axée sur le cycle de vie.",
-      "phaseHere": "ici",
+      "phase": "En sa qualité d’organisme de réglementation présent tout au long du cycle de vie d’un projet, la Régie assure la sécurité et la protection de l’environnement à toutes les étapes. Des conditions peuvent viser une ou plusieurs étapes du cycle de vie ou toutes les étapes. {phaseLink}.",
       "status": "Les conditions peuvent avoir deux états : En cours et conforme.",
       "type": "Il existe deux grands types de conditions : standard et non standard.",
       "filing": "Un document démontrant que les exigences relatives à une condition ont été respectées.",
-      "instrument": "Ordonnances, certificats, licences ou permis délivrés par l’Office. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite.   L’Office publie un Rapport d’instruments réglementaires qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014."
+      "instrument": "Ordonnances, certificats, licences ou permis délivrés par la Régie. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite. La Régie publie un {instrumentLink} qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014.",
+      "links": {
+        "phase": "Apprenez-en plus sur la démarche de la Régie axée sur le cycle de vie",
+        "instrument": "Rapport d’instruments réglementaires"
+      }
     },
     "featureTypesDescription": {
       "allThemes": "* Les conditions englobant plusieurs thèmes sont comptées plus d’une fois.",
@@ -187,26 +189,26 @@
         "SUNSET_CLAUSE": "Conditions visant à s’assurer que les projets sont entrepris dans un délai précis."
       },
       "phase": {
-        "ABANDONMENT": "Lorsqu’une société souhaite cesser l’exploitation d’un pipeline ou d’une installation, elle doit présenter une demande à l’Office qui comprend une évaluation environnementale et socioéconomique.  L’Office évalue ensuite la demande et peut tenir une audience publique. L’Office peut imposer des conditions relativement à un projet de cessation d’exploitation.",
-        "DURING_CONSTRUCTION_PHASE": "L’Office surveillera et vérifiera la conformité aux conditions des instruments réglementaires pendant la construction en menant des activités de vérification de la conformité.",
+        "ABANDONMENT": "Lorsqu’une société souhaite cesser l’exploitation d’un pipeline ou d’une installation, elle doit présenter une demande à la Régie qui comprend une évaluation environnementale et socioéconomique. La Régie évalue ensuite la demande et peut tenir une audience publique. La Régie peut imposer des conditions relativement à un projet de cessation d’exploitation.",
+        "DURING_CONSTRUCTION_PHASE": "La Régie surveillera et vérifiera la conformité aux conditions des instruments réglementaires pendant la construction en menant des activités de vérification de la conformité.",
         "EXPIRY_DATE_OF_REG_INSTR": "Si la construction n’est pas entreprise avant la date d’échéance, l’instrument et toutes les conditions sont frappés de nullité.",
         "INCLUDES_ALL_PHASES_OF_CONSTR": "Certaines conditions s’appliquent à toutes les étapes de la construction (avant, pendant et après la construction).",
         "NOT_CONSTRUCTION_RELATED": "Certaines conditions qui ne sont pas liées à la construction peuvent être imposées.",
-        "POST_CONSTRUCTION_PHASE": "Après la construction, l’Office continue de réglementer les activités postérieures menées par la société au moyen d’activités de vérification de la conformité.",
+        "POST_CONSTRUCTION_PHASE": "Après la construction, la Régie continue de réglementer les activités postérieures menées par la société au moyen d’activités de vérification de la conformité.",
         "PRIOR_TO_THE_CONSTRUCTION_PHASE": "Avant le début de la construction, les conditions imposées doivent être satisfaites.",
         "UNSPECIFIED": "L’étape n’est pas précisée ou applicable."
       },
       "status": {
-        "CLOSED": "Cet état signifie ce qui suit : \n• La société a respecté les exigences relatives à la condition et aucun autre dépôt n’est requis; \n• Les exigences de dépôt ou de prise de mesures s’appliquant à une étape précise qui ont été imposées dans la condition ont été satisfaites, car l’étape en question est terminée (p. ex., exigence de dépôt de pièces précises durant l’étape de la construction). Remarque : des commentaires sur les mesures requises peuvent encore être formulés à la société.",
-        "IN_PROGRESS": "Cet état signifie que la condition continue de faire l’objet d’une surveillance par l’Office. Cela peut se produire dans les situations suivantes :  \n• L’Office n’a pas encore reçu les pièces déposées en conformité aux conditions;  \n• Les pièces ont été reçues, mais elles sont en cours d’examen ou elles ne répondent pas aux exigences; \n• Un projet n’est pas terminé et des conditions ne sont pas satisfaites;  \n• Un projet est soumis à une condition postérieure à la construction, mais une exigence n’est pas satisfaite;  \n• Certaines conditions peuvent demeurer en vigueur indéfiniment ou viser l’exploitation continue d’un pipeline. L’Office assure un suivi des conditions « En cours »."
+        "CLOSED": "Cet état signifie ce qui suit : \n• la société a respecté les exigences relatives à la condition et aucun autre dépôt n’est requis; \n• les exigences de dépôt ou de prise de mesures s’appliquant à une étape précise qui ont été imposées dans la condition ont été satisfaites, car l’étape en question est terminée (p. ex., exigence de dépôt de pièces précises durant l’étape de la construction). Remarque : des commentaires sur les mesures requises peuvent encore être formulés à la société.",
+        "IN_PROGRESS": "Cet état signifie que la condition continue de faire l’objet d’une surveillance par la Régie. Cela peut se produire dans les situations suivantes :  \n• la Régie n’a pas encore reçu les pièces déposées en conformité aux conditions;  \n• les pièces ont été reçues, mais elles sont en cours d’examen ou elles ne répondent pas aux exigences; \n• un projet n’est pas terminé et des conditions ne sont pas satisfaites;  \n• un projet est soumis à une condition postérieure à la construction, mais une exigence n’est pas satisfaite;  \n• certaines conditions peuvent demeurer en vigueur indéfiniment ou viser l’exploitation continue d’un pipeline. La Régie assure un suivi des conditions « En cours »."
       },
       "type": {
         "STANDARD": "Une condition généralement imposée relativement à tous les projets approuvés.",
         "NON_STANDARD": "Les conditions non standard englobent des questions ou des préoccupations propres au projet qui ne sont pas visées par les conditions standard."
       },
       "filing": {
-        "REQUIRED": "Une société doit déposer un document devant l’Office afin de satisfaire à une condition. L’Office examine ensuite les dépôts.",
-        "NOT_REQUIRED": "Une société n’est pas tenue de déposer un document devant l’Office afin de satisfaire à une condition. Certaines conditions sont satisfaites à la suite d’un dépôt de conformité relativement à une autre condition connexe. Lorsqu’une société n’est pas tenue de déposer de document pour satisfaire à une condition, l’Office peut vérifier la conformité durant une activité de vérification de la conformité, comme une inspection ou une vérification."
+        "REQUIRED": "Une société doit déposer un document devant la Régie afin de satisfaire à une condition. La Régie examine ensuite les dépôts.",
+        "NOT_REQUIRED": "Une société n’est pas tenue de déposer un document devant la Régie afin de satisfaire à une condition. Certaines conditions sont satisfaites à la suite d’un dépôt de conformité relativement à une autre condition connexe. Lorsqu’une société n’est pas tenue de déposer de document pour satisfaire à une condition, la Régie peut vérifier la conformité durant une activité de vérification de la conformité, comme une inspection ou une vérification."
       },
       "instrument": {
         "AO": "Instrument ayant pour effet d’approuver la modification du contenu ou des modalités d’un certificat, d’une licence, d’une ordonnance ou d’un permis (dans certains cas, l’approbation du gouverneur en conseil est nécessaire).",
@@ -235,7 +237,7 @@
         "OH": "Ordonnance d’audience relative à un projet pétrolier : Instrument ayant pour effet d’établir un processus d’audience relativement à la construction d’un oléoduc.",
         "XE": "Instrument ayant pour effet d’exempter le titulaire de l’obligation d’obtenir un certificat visant une ligne internationale de transport d’électricité (avant 1990).",
         "MH": "Instrument ayant pour effet d’établir la date d’une audience relative à des questions qui, pour diverses raisons, ne sont pas visées au paragraphe 24(6).",
-        "OPL": "Instrument ayant pour effet d’approuver les plan, plan, profil et livre de renvoi relatifs à un nouvel oléoduc et pouvant servir dans les cas de déviation d’un oléoduc en place.",
+        "OPL": "Instrument ayant pour effet d’approuver les plans, , profils et livres de renvoi relatifs à un nouvel oléoduc et pouvant servir dans les cas de déviation d’un oléoduc en place.",
         "OTHER": ""
       }
     },
@@ -347,17 +349,17 @@
         "methodology": "Cliquer {here} pour télécharger un fichier PDF expliquant la méthodologie appliquée pour collecter les données.",
         "keywords": {
           "1": "D’où viennent les mots-clés?\nLes termes qui, dans le libellé d’une condition, correspondent à des mots-clés de la liste principale forment les mots-clés de cette condition.",
-          "2": "D’où vient la liste principale?\n1. Une première série de mots a été extraite manuellement du guide sur les conditions de l’Office\n… un document interne qui oriente l’élaboration des conditions.",
+          "2": "D’où vient la liste principale?\n1. Une première série de mots a été extraite manuellement du guide sur les conditions de la Régie\n… un document interne qui oriente l’élaboration des conditions.",
           "3": "2. Cette liste initiale a été augmentée grâce à l’exploration de texte\nsynonymes",
           "4": "… à l’aide du produit Natural Language Toolkit de Python (www.nltk.org).",
           "5": "3. L’ajout de noms de lieux et de localités est venu compléter la liste principale.",
           "6": "Comment les mots-clés sont-ils catégorisés?\nLes mots-clés sont répartis manuellement dans les domaines suivants : Espèces sauvages et habitats, Environnement, Surveillance et sécurité, Ingénierie et structures, Administration et dépôts, et Peuples et communautés."
         },
-        "downloadData": "Cliquer {here} pour télécharger le jeu de données en format Microsoft Excel (.xlsx).",
-        "about": "L’outil interactif Conditions relatives aux projets énergétiques fait partie de l’initiative de visualisation de données de l’Office national de l’énergie. Échelonnée sur trois ans, cette initiative vise à transformer la manière dont l’Office structure et diffuse ses données. Elle a pour objectif de favoriser un processus décisionnel fondé sur la preuve et de faciliter la compréhension des questions liées aux réseaux énergétiques et pipeliniers du Canada, grâce à des visualisations interactives, faciles à utiliser. Cette visualisation se fonde sur les données de l’Office, de 2010 à aujourd’hui, sur les conditions relatives aux projets énergétiques assujettis à sa réglementation. Si vous souhaitez utiliser les données pour vos recherches ou pour en faire votre propre analyse, vous pouvez les télécharger et les partager.  Nous espérons avoir atteint notre objectif. Votre rétroaction est essentielle.",
+        "downloadData": "Cliquer {here} pour télécharger le jeu de données en format CSV (champs séparés par des virgules).",
+        "about": "L’outil interactif Conditions relatives aux projets énergétiques fait partie de l’initiative de visualisation de données de la Régie de l’énergie du Canada. Échelonnée sur trois ans, cette initiative vise à transformer la manière dont la Régie (anciennement appelée l’Office national de l’énergie) structure et diffuse ses données. Elle a pour objectif de favoriser un processus décisionnel fondé sur la preuve et de faciliter la compréhension des questions liées aux réseaux énergétiques et pipeliniers du Canada, grâce à des visualisations interactives, faciles à utiliser. Cette visualisation se fonde sur les données de la Régie, de 2010 à aujourd’hui, sur les conditions relatives aux projets énergétiques assujettis à sa réglementation. Si vous souhaitez utiliser les données pour vos recherches ou pour en faire votre propre analyse, vous pouvez les télécharger et les partager.  Nous espérons avoir atteint notre objectif. Votre rétroaction est essentielle.",
         "emailUs": "Vous pouvez nous la faire parvenir, ainsi que vos suggestions, à l’adresse : {email}. Nous attendons vos commentaires avec impatience.",
         "contributors": {
-          "1": "SOURCE DES DONNÉES :\nGroupe de travail chargé du projet de l’Office : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp\nSpécialistes des données de l’Office : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker\nETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau",
+          "1": "SOURCE DES DONNÉES :\nGroupe de travail chargé du projet de la Régie : Heather Dodds, Marcus Eyre, Kevin Hill et Lori-Ann Sharp\nSpécialistes des données de la Régie : Shirley Chan, Grant Moss, Michelle Shabits et Tammy Walker\nETL/Service Web : Phil Cheung, Curtis Raymond et Dwayne Croteau",
           "2": "COORDINATION\nAnnette Hester (concept et coordination), Katherine Murphy (gestionnaire de projet), Amanda Harwood (gestionnaire de projet) et Shane Mahar (adjoint administratif)",
           "3": "VISUALISATION DE DONNÉES\nDirection de la recherche conceptuelle : Sheelagh Carpendale et Wesley Willett, iLab, Université de Calgary\nConception : Bon Adriel Aseniero, Peter Buk, Christian Frisson, Tina Hunyh, Lisa Hynes, Doris Kosminsky, Claudia Maurer, Richard Pusch, Sarah Storteboom, Markus Tessmann, Sonja Thoma, Jagoda Walny Nix et Mieka West\nChef technique : VizworX\nPersonnel technique : Manali Bhattacharyya, Jorge Castano, Alan Chen, Charlie Cheung, Ben Cousins, Kaitlin de Chastelain Finnigan, Brandon Devaleriola, Joshua Johnsgaard, Spenser Jones, Rahul Kamal Bhaskar, Rachel Lee et Adam Lovatt"
         },
@@ -368,7 +370,7 @@
       "totalConditions": {
         "title": "Comment le nombre total de conditions est-il déterminé?",
         "explanation": "Il est possible que le nombre de conditions affichées dans l’outil de visualisation ne corresponde pas au nombre de conditions imposées à un projet. Certaines conditions se répètent dans plusieurs des instruments de réglementation d’un projet et l’outil de visualisation compte toutes les conditions de chacun des instruments.",
-        "example": "L’Office peut par exemple imposer dix conditions différentes à un projet. Cependant, si l’une de ces conditions se répète dans six instruments de réglementation visant le projet, l’outil de visualisation indiquera que le projet est assorti de 15 conditions.",
+        "example": "La Régie peut par exemple imposer dix conditions différentes à un projet. Cependant, si l’une de ces conditions se répète dans six instruments de réglementation visant le projet, l’outil de visualisation indiquera que le projet est assorti de 15 conditions.",
         "back": "Retour"
       },
       "data": {
@@ -380,7 +382,7 @@
         "name": "Nom complet du projet :",
         "associated": "Sociétés associées au projet :",
         "meaningHeading": "Pourquoi y a-t-il plus d’une société associée à un projet?",
-        "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples :\n- une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter;\n- des initiatives de l’Office visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds).",
+        "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples :\n- une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter;\n- des initiatives de la Régie visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds).",
         "back": "Précédent"
       },
       "regdocs": {
@@ -391,7 +393,7 @@
         "newTab": "Ouvrir dans un autre onglet",
         "cancel": "Annuler",
         "whatIsHeading": "Qu'est-ce que RegRocs?",
-        "whatIsText": "RegDocs est une collection de documents publics qui ont été déposés au registre légal relativement à des audiences ou à d’autres instances réglementaires écrites. Ces documents proviennent des sociétés à l’origine des demandes, de l’Office et de divers participants aux processus de réglementation. Le personnel technique et les membres de l’Office utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires."
+        "whatIsText": "RegDocs est une collection de documents publics qui ont été déposés au registre légal relativement à des audiences ou à d’autres instances réglementaires écrites. Ces documents proviennent des sociétés à l’origine des demandes, de la Régie et de divers participants aux processus de réglementation. Le personnel technique et les membres de la Régie utilisent ces documents lorsqu’ils examinent des demandes de projets et d’autres questions réglementaires."
       }
     },
     "projectLegend": {
@@ -449,7 +451,7 @@
       "location": "le lieu"
     },
     "dotLegend": {
-      "text": "Projets réglementés par l’Office assortis de conditions"
+      "text": "Projets réglementés par la Régie assortis de conditions"
     },
     "totalConditionsLabel": {
       "total": "Nombre total de conditions",
@@ -472,7 +474,7 @@
   "views": {
     "view1": {
       "header": {
-        "title": "Conditions assorties aux projets énergétiques réglementés par l’Office",
+        "title": "Conditions assorties aux projets énergétiques réglementés par la Régie",
         "subtitle": "Cet outil interactif permet d’explorer les données sur les conditions au moyen de mots-clés et d’une représentation visuelle. Plus récente mise à jour "
       }
     },
