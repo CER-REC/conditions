@@ -47,7 +47,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              functions: {
+              sassOptions: {
                 'getFeatureColors($feature)':
                   feature => sassUtils.castToSass(features[feature.getValue()]),
               },

@@ -30,8 +30,4 @@
       font-size: 11px;
     }
   }
-
-  @each $category, $color in getFeatureColors('instrument') {
-    .color-#{$category} { color: $color; }
-  }
 }
