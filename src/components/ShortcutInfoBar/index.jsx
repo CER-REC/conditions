@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -45,21 +47,23 @@ class ShortcutInfoBar extends React.PureComponent {
               type="button"
               onClick={this.props.jumpToAbout}
             >
-              About this Visualization
+              <FormattedMessage id="components.shortcutInfoBar.about" />
             </button>
             <CircleContainer className="AngleDoubleDown" size={20}>
               <Icon color="#D1057A" size="1x" icon="angle-double-down" prefix="fas" />
             </CircleContainer>
           </div>
           <div className="Icons">
-            Share:&nbsp;
+            <FormattedMessage id="components.shortcutInfoBar.share" />
+            &nbsp;
             <ShareIcon target="email" prefix="fas" />
             <ShareIcon target="twitter" />
             <ShareIcon target="facebook" />
             <ShareIcon target="linkedin" />
           </div>
           <div className="Icons" {...handleInteraction(this.props.openDataModal)}>
-            Download:&nbsp;
+            <FormattedMessage id="components.shortcutInfoBar.download" />
+            &nbsp;
             <svg className="downloadIcons" width="40" height="16">
               <g
                 key="file-download"
