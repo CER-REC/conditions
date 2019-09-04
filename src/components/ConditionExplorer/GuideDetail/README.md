@@ -1,6 +1,6 @@
 # GuideDetail
 
-Guide Detail is a text component that renders NEB descriptions that can be used in condition explorer for descriptions. 
+Guide Detail is a text component that renders CER descriptions that can be used in condition explorer for descriptions.
 
 
 ## Requirements

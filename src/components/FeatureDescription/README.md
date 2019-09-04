@@ -1,7 +1,7 @@
 # Feature Description
 
-This section contains a text description of the feature in summary, such as what it is and how the 
-NEB deals with it. This text will be scrollable if need be.
+This section contains a text description of the feature in summary, such as what it is and how the
+CER deals with it. This text will be scrollable if need be.
 
 ## Interaction Requirements
 

@@ -34,7 +34,7 @@ From the moment the guide is set to open, no additional keywords may be popped a
 When the user collapses the circle, all already-popped keywords return to the exact same position and rotation they were in before the circle was expanded (this should be saved when the circle is expanded and animated directly, without the use of physics). Once the guide is done collapsing, the old behavior of the guide returns; the pink interactive circle should quickly fade back in, the already-popped keywords can enter back into the physics system, and the circle can once again be dragged and pop new keywords.
 
 ## Expanded Content
-The content within the expanded circle replaces the content previously within the banner. There is a series of panels each following the formula of heading, a short statement (300 characters) and (if relevant) an external link to target pages of the NEB website. The heading, statement, and each link should be separated by a double space with pararaph sized leading. The following is an example, but contents will shift in consultation the NEB.
+The content within the expanded circle replaces the content previously within the banner. There is a series of panels each following the formula of heading, a short statement (300 characters) and (if relevant) an external link to target pages of the CER website. The heading, statement, and each link should be separated by a double space with pararaph sized leading. The following is an example, but contents will shift in consultation the CER.
 
 Links should open in a new tab.
 

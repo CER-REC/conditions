@@ -1,7 +1,7 @@
 # GraphQL
 
 We will be making use of GraphQL to easily query data from the server. This will
-be implemented in C# in the ASP.Net application running on the NEB infrastructure.
+be implemented in C# in the ASP.Net application running on the CER infrastructure.
 
 ## Scalar Types
 

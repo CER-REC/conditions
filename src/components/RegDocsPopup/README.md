@@ -6,7 +6,7 @@ Provides links to the RegDocs entry for a given instrument, along with an explan
 
 * [x] Should have links to open RegDocs in a new tab, the current tab
 * [x] Should have a button to Cancel
-* [x] Should explain what RegDocs is (text to be provided by the NEB)
+* [x] Should explain what RegDocs is (text to be provided by the CER)
 
 ## Interaction Requirements
 
