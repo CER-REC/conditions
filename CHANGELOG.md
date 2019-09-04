@@ -1,3 +1,88 @@
+# [0.25.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.25.0) (2019-09-04)
+
+
+### AdvancedFormattedMessage
+
+* **Features:** adds documentation and tests (30c6b17)
+* **Documentation:** adds performance suggestions (918164f)
+
+
+### App
+
+* **Features:** updates localization with revised text (813d245)
+* **Features:** changes NEB-related terminology to the CER (60b43c7)
+* **Bug Fixes:** fixes FormattedMessage values being passed to children (47fa9e8)
+* **Tests:** updates snapshots (c08dcd6)
+* **Documentation:** updates documentation with change from NEB to CER (28d3fc5)
+
+
+### CompanyPopup
+
+* **Bug Fixes:** fixes the Close button being cut off in French (b7adc47)
+
+
+### ComposedQuery
+
+* **Features:** adds documentation (4d17525)
+
+
+### ConditionDetails
+
+* **Bug Fixes:** removes prop type for an unused prop (67504ee)
+
+
+### Dependencies
+
+* **Bug Fixes:** update dependency victory to v33 (1b85a8c)
+* **Tests:** updates snapshots after updating Victory (1d05b9c)
+* **Project Maintenance:** update dependency cross-env to v5.2.1 (66931e8)
+* **Project Maintenance:** update dependency eslint to v6.3.0 (39b403b)
+* **Project Maintenance:** update dependency eslint-config-airbnb to v18.0.1 (62a2cd7)
+* **Project Maintenance:** update dependency http-proxy-middleware to v0.20.0 (c2a25fd)
+* **Project Maintenance:** update dependency jest-junit to v8 (9bee97c)
+* **Project Maintenance:** update dependency webpack-dev-middleware to v3.7.1 (ec8f36c)
+
+
+### FeatureDescription
+
+* **Features:** adds revised links to feature text (f254732)
+
+
+### FeatureTypesDescription
+
+* **Bug Fixes:** removes unused code that was breaking the build (2af3539)
+
+
+### jest-junit
+
+* **Tests:** updates jest-junit config to output for CI (93ea658)
+
+
+### MainInfoBar
+
+* **Features:** updates Methodology images with the change to CER (7558877)
+* **Code Refactoring:** extracts contact email to constants.js (36d09f6)
+
+
+### ShortcutInfoBar
+
+* **Features:** replaces hardcoded text with localization (26542b0)
+
+
+### TotalConditionsLabel
+
+* **Bug Fixes:** fixes very large focus outline (2400eea)
+
+
+### TranslatedParagraphs
+
+* **Features:** adds documentation and tests (b582435)
+
+
+### Webpack
+
+* **Features:** updates Webpack config to reflect the new Sass-Loader API (de10b30)
+
 # [0.24.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.24.0) (2019-08-26)
 
 
