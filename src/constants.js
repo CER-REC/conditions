@@ -94,3 +94,19 @@ export const contactEmail = (lang === 'en')
 
 export const fileDownloadName = localDataURL.substring(localDataURL.lastIndexOf('/') + 1, localDataURL.length);
 export const guideSize = 128;
+
+export const provinces = {
+  YT: 'Yukon',
+  NT: 'Northwest Territories',
+  NU: 'Nunavut',
+  NL: 'Newfoundland and Labrador',
+  PE: 'Prince Edward Island',
+  BC: 'British Columbia',
+  AB: 'Alberta',
+  SK: 'Saskatchewan',
+  MB: 'Manitoba',
+  ON: 'Ontario',
+  QC: 'Québec',
+  NB: 'New Brunswick',
+  NS: 'Nova Scotia',
+};
