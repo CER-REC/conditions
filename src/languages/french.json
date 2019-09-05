@@ -469,6 +469,10 @@
       "about": "La visualization",
       "share": "Partager :",
       "download": "Téléchargement :"
+    },
+    "disclaimer": {
+      "heading": "Avertissement :",
+      "text": "Les conditions qui apparaissent aux présentes sont tirées (transcription, copie) des instruments de réglementation. En cas de divergence, en français ou en anglais, entre le texte de la condition reproduit aux présentes et le texte de la condition dans l’instrument de réglementation, ce dernier prévaut."
     }
   },
   "views": {

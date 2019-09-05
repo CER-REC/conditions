@@ -1,0 +1,14 @@
+@import '../../styles/fontVariables';
+
+.Disclaimer {
+  max-width: 800px;
+  margin: 24px auto 0;
+
+  font-family: $fira-sans-condensed-light;
+  font-size: 13px;
+
+  strong {
+    font-family: $fira-sans-condensed-bold;
+    font-weight: normal;
+  }
+}

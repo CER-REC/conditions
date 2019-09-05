@@ -4465,6 +4465,24 @@ exports[`Storyshots Components|CountBubble singular 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components|Disclaimer default 1`] = `
+<div
+  className="visualization"
+>
+  <div
+    className="Disclaimer"
+  >
+    <strong>
+      Disclaimer
+    </strong>
+     
+    <span>
+      The conditions which appear in this visualization have been transcribed or copied from the regulatory instruments as issued. In the event of any discrepancy, either in English or French, between text of a condition as it appears in this visualization and the text in the regulatory instrument, the regulatory instrument prevails.
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components|DotLegend default 1`] = `
 <div
   className="visualization"

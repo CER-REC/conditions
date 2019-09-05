@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import MainInfoBar from '../../components/MainInfoBar';
+import Disclaimer from '../../components/Disclaimer';
+
 import './styles.scss';
 
 const Footer = props => (
@@ -13,6 +15,7 @@ const Footer = props => (
         openDataModal={props.openDataModal}
       />
     </section>
+    <Disclaimer />
   </section>
 );
 
