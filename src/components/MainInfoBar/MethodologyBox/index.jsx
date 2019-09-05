@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
-import { lang, nltkLink } from '../../../constants';
+import { lang, nltkLink, pdfLink } from '../../../constants';
 import './styles.scss';
 
 const imageContext = require.context('./keywordMethodology/', true, /\.png$/);
@@ -37,7 +37,7 @@ const MethodologyBox = () => (
           <AdvancedFormattedMessage
             id="components.mainInfoBar.content.here"
             tag="a"
-            href="placeholder"
+            href={pdfLink}
             target="_blank"
             rel="noopener noreferrer"
           />
