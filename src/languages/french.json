@@ -403,7 +403,8 @@
     },
     "regionSummary": {
       "regionCompanies": {
-        "title": "Sociétés dans la région sélectionnée :"
+        "title": "Sociétés dans la région sélectionnée :",
+        "select": "Sélectionner une société et revenir à la roue"
       },
       "regionConditions": {
         "title": "Total des conditions pour la région sélectionnée"
