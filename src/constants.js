@@ -1,6 +1,6 @@
 export const applicationPath = {
   en: 'conditions',
-  fr: 'conditions-fr',
+  fr: 'conditions-projet',
 };
 
 export const lang = (typeof document !== 'undefined'
