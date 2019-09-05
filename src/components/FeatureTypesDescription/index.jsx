@@ -7,7 +7,7 @@ import { displayOrder as displayOrderPropType } from '../../proptypes';
 import './styles.scss';
 
 // eslint-disable-next-line react/prop-types
-const FeatureTypeHeading = ({ feature, type }) => ((feature === 'instrument')
+const FeatureTypeHeading = ({ feature, type }) => ((feature === 'instrument' && type !== 'OTHER')
   ? (
     <React.Fragment>
       <h4 date-heading={type}>

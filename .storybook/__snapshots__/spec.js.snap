@@ -5237,13 +5237,9 @@ exports[`Storyshots Components|FeatureTypesDescription instruments 1`] = `
     </div>
     <div>
       <h4
-        date-heading="OTHER"
+        data-heading="OTHER"
       >
-        OTHER
-         - 
-        <span>
-          Other
-        </span>
+        Other
       </h4>
     </div>
     <div
