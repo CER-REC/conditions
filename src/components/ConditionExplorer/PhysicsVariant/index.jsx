@@ -303,7 +303,7 @@ export default class PhysicsVariant extends React.PureComponent {
     let newMsg;
     if (this.guideDragOrigin || this.guide.isExpanded) {
       newMsg = -1;
-      this.lastMessageTime = currTime;
+      this.lastMessageTime = currTime - messageTime;
     } else if (this.props.selectedKeywordId > -1) {
       newMsg = 'click';
     } else if (!this.guide.outlineReady) {
