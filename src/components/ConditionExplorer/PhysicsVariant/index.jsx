@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-bitwise */
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Matter from 'matter-js';
@@ -14,7 +15,6 @@ import {
 } from './categories';
 import Keyword from './Keyword';
 import Guide from './Guide';
-import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 const messageIds = [
   'intro',
@@ -327,16 +327,21 @@ export default class PhysicsVariant extends React.PureComponent {
       transform={`translate(${this.guide.body.position.x}, ${this.guide.body.position.y})`}
     >
       {messageIds.map((id, idx) => (
-        <AdvancedFormattedMessage
-          key={id}
+        <FormattedMessage
           id={`components.conditionExplorer.guide.messages.${id}`}
-          className={classNames({
-            hidden: !(id === this.state.guideMessage.toString()),
-            selected: (this.props.selectedKeywordId > -1),
-          })}
-          tag={SplitLines}
-          idx={idx}
-        />
+        >
+          {text => (
+            <SplitLines
+              className={classNames({
+                hidden: !(id === this.state.guideMessage.toString()),
+                selected: (this.props.selectedKeywordId > -1),
+              })}
+              idx={idx}
+            >
+              {text}
+            </SplitLines>
+          )}
+        </FormattedMessage>
       ))}
     </g>
   );
