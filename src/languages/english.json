@@ -475,6 +475,10 @@
       "about": "About this Visualization",
       "share": "Share:",
       "download": "Download:"
+    },
+    "disclaimer": {
+      "heading": "Disclaimer",
+      "text": "The conditions which appear in this visualization have been transcribed or copied from the regulatory instruments as issued. In the event of any discrepancy, either in English or French, between text of a condition as it appears in this visualization and the text in the regulatory instrument, the regulatory instrument prevails."
     }
   },
   "views": {
