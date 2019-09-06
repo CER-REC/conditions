@@ -6,6 +6,8 @@ import { feature, mergeArcs } from 'topojson-client';
 import AdvancedFormattedMessage from '../AdvancedFormattedMessage';
 import './styles.scss';
 
+import { provinces } from '../../constants';
+
 const topoObj = 'economic_regions_2016_latlng_simplified';
 
 // This should use the same dimensions as the component's div to avoid scaling
@@ -63,8 +65,11 @@ class LocationWheelMinimap extends React.PureComponent {
     });
 
   // Returns a Feature for the given region name
-  regionData(name) {
-    return this.state.regions.find(region => region.properties.ERNAME.match(name));
+  regionData(name, province) {
+    return this.state.regions.find(region => (
+      region.properties.ERNAME.match(name)
+      && region.properties.PRNAME.match(provinces[province])
+    ));
   }
 
   // Returns a Feature aggregating all regions in the given province
@@ -81,7 +86,7 @@ class LocationWheelMinimap extends React.PureComponent {
       return null;
     }
 
-    const regionData = this.regionData(this.props.region.name);
+    const regionData = this.regionData(this.props.region.name, this.props.region.province);
     if (!regionData) { return null; }
     const provinceData = this.provinceData(regionData.properties.PRNAME);
     if (!provinceData) { return null; }
