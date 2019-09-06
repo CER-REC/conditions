@@ -9,6 +9,8 @@
 
   padding-right: 10px;
 
+  color: $Black77;
+
   h4 {
     color: $Gray160;
     margin-bottom: 0.1rem;
@@ -17,17 +19,16 @@
   }
 
   .other h4 {
-    font-family: $fira-sans-condensed-bold;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   p {
     margin-top: 0;
     font-family: $fira-sans-condensed-light;
-    font-size: 12px;
+    font-size: 13px;
 
     &.info {
-      font-size: 11px;
+      font-size: 10px;
     }
   }
 }

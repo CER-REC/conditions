@@ -4,14 +4,12 @@
 .StreamGraph {
   cursor: pointer;
 
-  &, .axis-label { color: $Black51; }
-
   h1 {
     margin-top: 10px;
-    font-family: $fira-sans-condensed;
+    font-family: $fira-sans-condensed-bold;
     font-weight: normal;
     color: $Black77;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .VictoryContainer {

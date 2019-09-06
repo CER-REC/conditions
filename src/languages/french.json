@@ -382,7 +382,7 @@
         "name": "Nom complet du projet :",
         "associated": "Sociétés associées au projet :",
         "meaningHeading": "Pourquoi y a-t-il plus d’une société associée à un projet?",
-        "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples :\n- une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter;\n- des initiatives de la Régie visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds).",
+        "meaningText": "Dans certains cas, plus d’une société a des obligations relativement à un projet. Voici des exemples :\n• une entente entre une société souhaitant vendre un pipeline et une autre voulant l’acheter;\n• des initiatives de la Régie visant à combler des lacunes réglementaires (p. ex., coûts estimatifs de la cessation d’exploitation et mécanisme de mise de côté des fonds).",
         "back": "Précédent"
       },
       "regdocs": {
@@ -484,7 +484,7 @@
       }
     },
     "view3": {
-      "company": "Société sélectionnée"
+      "company": "Société sélectionnée :"
     }
   },
   "provinces": {
