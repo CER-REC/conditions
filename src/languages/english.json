@@ -144,16 +144,16 @@
     "conditionDetails": {
       "selectedProject": "Selected Project:",
       "selectedCondition": "Conditions In Selected Region:",
-      "instrumentNumber": "Instrument #",
-      "conditionNumber": "Condition #",
-      "location": "Location",
-      "issuanceDate": "Issuance Date",
-      "effectiveDate": "Effective Date",
-      "sunsetDate": "Sunset Date",
-      "status": "Instrument Status",
-      "type": "Instrument Type",
-      "keywords": "Search Matches",
-      "text": "Text",
+      "instrumentNumber": "Instrument #:",
+      "conditionNumber": "Condition #:",
+      "location": "Location:",
+      "issuanceDate": "Issuance Date:",
+      "effectiveDate": "Effective Date:",
+      "sunsetDate": "Sunset Date:",
+      "status": "Instrument Status:",
+      "type": "Instrument Type:",
+      "keywords": "Search Matches:",
+      "text": "Text:",
       "selectedConditionFeature": "Selected Condition Feature",
       "more": "More",
       "less": "Less"
@@ -481,7 +481,7 @@
     "view1": {
       "header": {
         "title": "Conditions on CER-regulated energy projects",
-        "subtitle": "This is an interactive tool for exploration of CER conditions data through keywords and visual representation. The last update was"
+        "subtitle": "This is an interactive tool for exploration of CER conditions data through keywords and visual representation. The last update was:"
       }
     },
     "view3": {

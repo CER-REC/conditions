@@ -16,12 +16,20 @@
     top: -13px;
     color: $Gray160;
 
-    .LastWord { color: $LinksTextButtons; }
+    .LastWord {
+      display: inline-block;
+      height: 1em;
+
+      color: $LinksTextButtons;
+      background: $White;
+    }
   }
 
   &-Wheel {
     display: inline;
     position: relative;
     margin-left: -23px;
+
+    z-index: -1;
   }
 }

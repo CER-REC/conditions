@@ -1981,9 +1981,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               <span
                 className="contentHeading"
               >
-                Issuance Date
+                Issuance Date:
               </span>
-              : 
+               
               2014-10-24
             </div>
             <div
@@ -1992,9 +1992,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               <span
                 className="contentHeading"
               >
-                Effective Date
+                Effective Date:
               </span>
-              : 
+               
               2014-10-24
             </div>
             <div
@@ -2003,9 +2003,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               <span
                 className="contentHeading"
               >
-                Sunset Date
+                Sunset Date:
               </span>
-              : 
+               
               2019-01-30
             </div>
           </div>
@@ -2018,9 +2018,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               <span
                 className="contentHeading"
               >
-                Instrument #
+                Instrument #:
               </span>
-              : 
+               
               <button
                 className="instrumentLink"
                 focusable={true}
@@ -2038,9 +2038,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               <span
                 className="contentHeading"
               >
-                Instrument Status
+                Instrument Status:
               </span>
-              : 
+               
               <span>
                 In Progress
               </span>
@@ -2051,9 +2051,9 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
               <span
                 className="contentHeading"
               >
-                Location
+                Location:
               </span>
-              : 
+               
               <span>
                 Albuquerque, NM
               </span>
@@ -2558,9 +2558,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 <span
                   className="contentHeading"
                 >
-                  Issuance Date
+                  Issuance Date:
                 </span>
-                : 
+                 
                 2014-10-24
               </div>
               <div
@@ -2569,9 +2569,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 <span
                   className="contentHeading"
                 >
-                  Effective Date
+                  Effective Date:
                 </span>
-                : 
+                 
                 2014-10-24
               </div>
               <div
@@ -2580,9 +2580,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 <span
                   className="contentHeading"
                 >
-                  Sunset Date
+                  Sunset Date:
                 </span>
-                : 
+                 
                 2019-01-30
               </div>
             </div>
@@ -2595,9 +2595,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 <span
                   className="contentHeading"
                 >
-                  Instrument #
+                  Instrument #:
                 </span>
-                : 
+                 
                 <button
                   className="instrumentLink"
                   focusable={true}
@@ -2615,9 +2615,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 <span
                   className="contentHeading"
                 >
-                  Instrument Status
+                  Instrument Status:
                 </span>
-                : 
+                 
                 <span>
                   In Progress
                 </span>
@@ -2628,9 +2628,9 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                 <span
                   className="contentHeading"
                 >
-                  Location
+                  Location:
                 </span>
-                : 
+                 
                 <span>
                   Albuquerque, NM
                 </span>
@@ -3086,9 +3086,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               <span
                 className="contentHeading"
               >
-                Issuance Date
+                Issuance Date:
               </span>
-              : 
+               
               2014-10-24
             </div>
             <div
@@ -3097,9 +3097,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               <span
                 className="contentHeading"
               >
-                Effective Date
+                Effective Date:
               </span>
-              : 
+               
               2014-10-24
             </div>
             <div
@@ -3108,9 +3108,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               <span
                 className="contentHeading"
               >
-                Sunset Date
+                Sunset Date:
               </span>
-              : 
+               
               2019-01-30
             </div>
           </div>
@@ -3123,9 +3123,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               <span
                 className="contentHeading"
               >
-                Instrument #
+                Instrument #:
               </span>
-              : 
+               
               <button
                 className="instrumentLink"
                 focusable={true}
@@ -3143,9 +3143,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               <span
                 className="contentHeading"
               >
-                Instrument Status
+                Instrument Status:
               </span>
-              : 
+               
               <span>
                 In Progress
               </span>
@@ -3156,9 +3156,9 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
               <span
                 className="contentHeading"
               >
-                Location
+                Location:
               </span>
-              : 
+               
               <span>
                 Albuquerque, NM
               </span>
@@ -3621,9 +3621,9 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           <span
             className="contentHeading"
           >
-            Effective Date
+            Effective Date:
           </span>
-          : 
+           
           2014-10-24
         </div>
       </div>
@@ -3636,9 +3636,9 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           <span
             className="contentHeading"
           >
-            Instrument #
+            Instrument #:
           </span>
-          : 
+           
           <button
             className="instrumentLink"
             focusable={true}
@@ -3656,9 +3656,9 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
           <span
             className="contentHeading"
           >
-            Condition #
+            Condition #:
           </span>
-          : 
+           
           1
         </div>
       </div>
@@ -3668,9 +3668,9 @@ exports[`Storyshots Components|ConditionDetails/Content condition selected 1`] =
         <span
           className="contentHeading"
         >
-          Search Matches
+          Search Matches:
         </span>
-        : 
+         
         <span
           className="highlighted"
         >
@@ -3723,9 +3723,9 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           <span
             className="contentHeading"
           >
-            Issuance Date
+            Issuance Date:
           </span>
-          : 
+           
           2014-10-24
         </div>
         <div
@@ -3734,9 +3734,9 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           <span
             className="contentHeading"
           >
-            Effective Date
+            Effective Date:
           </span>
-          : 
+           
           2014-10-24
         </div>
         <div
@@ -3745,9 +3745,9 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           <span
             className="contentHeading"
           >
-            Sunset Date
+            Sunset Date:
           </span>
-          : 
+           
           2019-01-30
         </div>
       </div>
@@ -3760,9 +3760,9 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           <span
             className="contentHeading"
           >
-            Instrument #
+            Instrument #:
           </span>
-          : 
+           
           <button
             className="instrumentLink"
             focusable={true}
@@ -3780,9 +3780,9 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           <span
             className="contentHeading"
           >
-            Instrument Status
+            Instrument Status:
           </span>
-          : 
+           
           <span>
             In Progress
           </span>
@@ -3793,9 +3793,9 @@ exports[`Storyshots Components|ConditionDetails/Content instrument selected 1`] 
           <span
             className="contentHeading"
           >
-            Location
+            Location:
           </span>
-          : 
+           
           <span>
             Albuquerque, NM
           </span>
@@ -3822,7 +3822,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock default 1`] = `
         >
           Theme
         </span>
-        : 
+         
         This is a content block
       </div>
       <div
@@ -3833,7 +3833,7 @@ exports[`Storyshots Components|ConditionDetails/ContentBlock default 1`] = `
         >
           Theme
         </span>
-        : 
+         
         This is a content block
       </div>
     </div>
@@ -3868,7 +3868,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Theme
           </span>
-          : 
+           
           <span>
             Administrative
           </span>
@@ -3889,7 +3889,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Phase
           </span>
-          : 
+           
           <span>
             During Construction Phase
           </span>
@@ -3902,7 +3902,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Type
           </span>
-          : 
+           
           <span>
             Standard
           </span>
@@ -3915,7 +3915,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Status
           </span>
-          : 
+           
           <span>
             In Progress
           </span>
@@ -3928,7 +3928,7 @@ exports[`Storyshots Components|ConditionDetails/Details default 1`] = `
           >
             Filing
           </span>
-          : 
+           
           <span>
             Filing Required
           </span>
