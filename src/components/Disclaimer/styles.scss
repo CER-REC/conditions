@@ -1,4 +1,5 @@
 @import '../../styles/fontVariables';
+@import '../../styles/colors';
 
 .Disclaimer {
   max-width: 800px;
@@ -7,8 +8,12 @@
   font-family: $fira-sans-condensed-light;
   font-size: 13px;
 
+  color: $Black77;
+
   strong {
-    font-family: $fira-sans-condensed-bold;
-    font-weight: normal;
+    font-family: $fira-sans-condensed;
+    font-size: 13px;
+
+    color: $Gray160;
   }
 }
