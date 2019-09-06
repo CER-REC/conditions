@@ -38,11 +38,15 @@
     }
 
     .openProject {
+      position: relative;
+      top: 2px;
+
       height: 90%;
       flex-grow: 1;
       white-space: nowrap;
       overflow: hidden;
       text-align: left;
+
 
       .projectName {
         display: inline-block;
@@ -78,7 +82,7 @@
       stroke-width: 1.5px;
       fill: white;
 
-      vertical-align: middle;
+      vertical-align: top;
 
       width: 16px;
       height: 100%;

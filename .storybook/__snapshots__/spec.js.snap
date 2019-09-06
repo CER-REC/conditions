@@ -2675,7 +2675,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
           className="topBar"
         >
           <h1>
-            Conditions In Selected Region:
+            Conditions in Selected Region:
           </h1>
           <div
             className="openProject"
@@ -3210,7 +3210,7 @@ exports[`Storyshots Components|ConditionDetails no data loaded 1`] = `
             className="topBar"
           >
             <h1>
-              Conditions In Selected Region:
+              Conditions in Selected Region:
             </h1>
             <div
               className="openProject"
@@ -4028,7 +4028,7 @@ exports[`Storyshots Components|ConditionDetails/ProjectHeader location mode 1`] 
         className="topBar"
       >
         <h1>
-          Conditions In Selected Region:
+          Conditions in Selected Region:
         </h1>
         <div
           className="openProject"
