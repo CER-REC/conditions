@@ -68,6 +68,7 @@
     white-space: nowrap;
     position: absolute;
     top: 26.5%;
+    overflow: hidden;
 
     .List-Item.selected {
       line-height: 24px;
