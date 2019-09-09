@@ -32,6 +32,7 @@ import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
+import { prepareAnalytics, reportAnalytics } from '../../utilities/analyticsReporting';
 
 import {
   browseByType,
@@ -79,6 +80,8 @@ if (!areScrollbarsVisible()) {
 }
 
 const store = createStore();
+prepareAnalytics(store);
+
 const cache = new InMemoryCache();
 const link = new HttpLink({
   uri: `/conditions/graphql?lang=${lang}`,
@@ -345,6 +348,9 @@ class App extends React.PureComponent {
   }
 
   jumpToView2 = (type) => {
+    // Temporary for testing
+    reportAnalytics("view", "clicked", { thing: "stuff", stuff: "things" });
+
     this.props.setTransitionState(transitionStates.view2);
 
     let modeData;
