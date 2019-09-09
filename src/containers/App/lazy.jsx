@@ -13,7 +13,7 @@ import memoize from 'lodash.memoize';
 
 import getProjectDetails from '../../queries/conditionDetails/getProjectDetails';
 import * as allInstrumentsBy from '../../queries/allInstrumentsBy';
-import { lang } from '../../constants';
+import { lang, transitionStates } from '../../constants';
 
 import * as processQueryData from './processQueryData';
 
@@ -90,14 +90,6 @@ const link = new HttpLink({
 const client = new ApolloClient({ cache, link, fetch });
 
 const tutorialTiming = 5000;
-
-const transitionStates = {
-  view1: 0,
-  tutorialStart: 1,
-  view2: 8,
-  view1Reset: 9,
-  view3: 10,
-};
 
 // TODO: Remove this after the server has been updated
 const reformatYearRange = memoize(range => ({ start: range.min, end: range.max }));
@@ -349,7 +341,7 @@ class App extends React.PureComponent {
 
   jumpToView2 = (type) => {
     // Temporary for testing
-    reportAnalytics("view", "clicked", { thing: "stuff", stuff: "things" });
+    reportAnalytics("clicked", "browseBy", "company");
 
     this.props.setTransitionState(transitionStates.view2);
 

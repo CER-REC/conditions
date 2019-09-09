@@ -1,17 +1,45 @@
-let getState;
+import { lang, transitionStates } from '../constants';
 
+const staticDetails = {
+  visualization: 'conditions',
+  language: lang,
+};
+
+let getState;
 export const prepareAnalytics = (reduxStore) => { getState = () => reduxStore.getState(); };
+
+const getView = (transitionState) => {
+  if (transitionState <= transitionStates.tutorialStart) { return 'view 1'; }
+  if (transitionState === transitionStates.view2) { return 'view 2'; }
+  return 'view 3';
+};
+const analyticsFromState = () => {
+  /*
+    • subVisualization - Which view you're on
+    • filter - Search and filter parameters
+   */
+  const state = getState();
+
+  const search = { ...state.search };
+  delete search.searchResults;
+  delete search.filteredProjects;
+
+  return {
+    subVisualization: getView(state.transitionState),
+    filter: JSON.stringify(state.search),
+    mode: state.browseBy,
+  };
+};
 
 /**
  * [description]
- * @param  {[type]} category        [category Constant.getIn(['analytics','category'])]
- * @param  {[type]} action          [action Constant.getIn(['analytics','action'])]
- * @param  {[type]} eventDetail     [plain text for additional detail for example in map piece we
- *                                  can send a name e.g. "NY"]
- * @return {[type]}                 [returns a updated object for analytics]
+ * @param  {[type]} action      What the user did ('clicked')
+ * @param  {[type]} category    What the user did it to ('wheel list')
+ * @param  {[type]} label       Any identifying information ('Trans-Mountain LLC')
+ * @return {[type]}             returns an updated object for analytics
  */
 
-export const reportAnalytics = (category, action, eventDetail) => {
+export const reportAnalytics = (action, category, label) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     console.warn('Google Tag Manager not found.');
@@ -19,26 +47,12 @@ export const reportAnalytics = (category, action, eventDetail) => {
     // return null;
   }
 
-  /*
-    • subVisualization - Which view you're on
-    • filter - Search and filter parameters
-    • language - en/fr
-    • visualization - conditions
-    • event - Can't remember exactly what this was
-    • action - click, select, unselect, etc
-    • category - company, region, condition, instrument, etc (what was clicked)
-    • label - Any label associated with whatever was clicked
-   */
-  const analyticsObject = getState();
-
-  // TODO: Temporary for testing
-  console.dir(analyticsObject);
-
   const dataObject = {
-    ...analyticsObject,
+    ...staticDetails,
+    ...analyticsFromState(),
     action,
     category,
-    label: eventDetail,
+    label,
   };
 
   // eslint-disable-next-line no-console
