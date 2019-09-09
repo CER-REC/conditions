@@ -98,7 +98,8 @@ $popoutSize: 200px;
 
   .contentHeading {
     font-family: $fira-sans-condensed;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 13px;
 
     color: $Gray160;
   }
@@ -137,6 +138,8 @@ $popoutSize: 200px;
     display: inline;
 
     font-family: $fira-sans-condensed;
+    font-weight: 700;
+    font-size: 13px;
 
     color: $Gray160;
   }

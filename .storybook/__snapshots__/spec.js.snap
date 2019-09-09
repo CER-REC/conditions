@@ -23240,7 +23240,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={-1.7400000000000002}
+            dy={-1.8850000000000002}
             id="chart-axis-0-axisLabel-0"
             transform="rotate(-90,25,165)"
             x={25}
@@ -23250,9 +23250,10 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "rgb(77, 77, 77)",
+                  "fill": "rgb(161,168,167)",
                   "fontFamily": "FiraSansCondensed, sans-serif",
-                  "fontSize": 12,
+                  "fontSize": 13,
+                  "fontWeight": "700",
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -23281,7 +23282,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23311,7 +23312,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23350,7 +23351,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={10.26}
+            dy={11.115}
             id="chart-axis-1-axisLabel-0"
             x={300}
             y={305}
@@ -23359,9 +23360,10 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "rgb(77, 77, 77)",
+                  "fill": "rgb(161,168,167)",
                   "fontFamily": "FiraSansCondensed, sans-serif",
-                  "fontSize": 12,
+                  "fontSize": 13,
+                  "fontWeight": "700",
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -23390,7 +23392,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23420,7 +23422,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23450,7 +23452,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23480,7 +23482,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23510,7 +23512,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23540,7 +23542,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23570,7 +23572,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23600,7 +23602,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -23630,7 +23632,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25122,7 +25124,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={-1.7400000000000002}
+            dy={-1.8850000000000002}
             id="chart-axis-0-axisLabel-0"
             transform="rotate(-90,25,165)"
             x={25}
@@ -25132,9 +25134,10 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "rgb(77, 77, 77)",
+                  "fill": "rgb(161,168,167)",
                   "fontFamily": "FiraSansCondensed, sans-serif",
-                  "fontSize": 12,
+                  "fontSize": 13,
+                  "fontWeight": "700",
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -25163,7 +25166,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25193,7 +25196,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25232,7 +25235,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={10.26}
+            dy={11.115}
             id="chart-axis-1-axisLabel-0"
             x={300}
             y={305}
@@ -25241,9 +25244,10 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "rgb(77, 77, 77)",
+                  "fill": "rgb(161,168,167)",
                   "fontFamily": "FiraSansCondensed, sans-serif",
-                  "fontSize": 12,
+                  "fontSize": 13,
+                  "fontWeight": "700",
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -25272,7 +25276,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25302,7 +25306,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25332,7 +25336,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25362,7 +25366,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25392,7 +25396,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25422,7 +25426,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25452,7 +25456,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25482,7 +25486,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -25512,7 +25516,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28384,7 +28388,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={-1.7400000000000002}
+            dy={-1.8850000000000002}
             id="chart-axis-0-axisLabel-0"
             transform="rotate(-90,25,165)"
             x={25}
@@ -28394,9 +28398,10 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "rgb(77, 77, 77)",
+                  "fill": "rgb(161,168,167)",
                   "fontFamily": "FiraSansCondensed, sans-serif",
-                  "fontSize": 12,
+                  "fontSize": 13,
+                  "fontWeight": "700",
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -28425,7 +28430,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28455,7 +28460,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28494,7 +28499,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
           <text
             direction="inherit"
             dx={0}
-            dy={10.26}
+            dy={11.115}
             id="chart-axis-1-axisLabel-0"
             x={300}
             y={305}
@@ -28503,9 +28508,10 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
               dx={0}
               style={
                 Object {
-                  "fill": "rgb(77, 77, 77)",
+                  "fill": "rgb(161,168,167)",
                   "fontFamily": "FiraSansCondensed, sans-serif",
-                  "fontSize": 12,
+                  "fontSize": 13,
+                  "fontWeight": "700",
                   "letterSpacing": "normal",
                   "padding": 25,
                   "stroke": "transparent",
@@ -28534,7 +28540,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28564,7 +28570,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28594,7 +28600,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28624,7 +28630,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28654,7 +28660,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28684,7 +28690,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28714,7 +28720,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28744,7 +28750,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,
@@ -28774,7 +28780,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
                 style={
                   Object {
                     "fill": "rgb(77, 77, 77)",
-                    "fontFamily": "FiraSansCondensed, sans-serif",
+                    "fontFamily": "FiraSansCondensedLight, sans-serif",
                     "fontSize": 10,
                     "letterSpacing": "normal",
                     "padding": 10,

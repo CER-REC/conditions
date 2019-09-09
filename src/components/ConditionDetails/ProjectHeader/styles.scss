@@ -1,4 +1,5 @@
 @import '../../../styles/colors.scss';
+@import '../../../styles/fontVariables.scss';
 
 .ProjectHeader {
   width: 91.5%;
@@ -29,11 +30,15 @@
     h1 {
       display: inline-block;
       flex-shrink: 1;
+
+      font-family: $fira-sans-condensed;
+      font-size: 14px;
+      font-weight: normal;
     }
 
     .asterisk {
       color: $LinksTextButtons;
-      font-family: 'FiraSansCondensedBold';
+      font-family: $fira-sans-condensed-bold;
       display: inline-block;
     }
 
@@ -47,6 +52,9 @@
       overflow: hidden;
       text-align: left;
 
+      font-family: $fira-sans-condensed-bold;
+      font-size: 15px;
+      font-weight: normal;
 
       .projectName {
         display: inline-block;
@@ -55,7 +63,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 97%;
-        font-family: 'FiraSansCondensedBold';
+
+        color: $Black77;
       }
 
       &:before{

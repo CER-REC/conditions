@@ -147,13 +147,14 @@ class StreamGraph extends React.PureComponent {
     const axisStyles = {
       tickLabels: {
         fontSize: '10px',
-        fontFamily: 'FiraSansCondensed, sans-serif',
+        fontFamily: 'FiraSansCondensedLight, sans-serif',
         fill: 'rgb(77, 77, 77)',
       },
       axisLabel: {
-        fontSize: '12px',
+        fontSize: '13px',
         fontFamily: 'FiraSansCondensed, sans-serif',
-        fill: 'rgb(77, 77, 77)',
+        fontWeight: '700',
+        fill: 'rgb(161,168,167)',
       },
     };
 

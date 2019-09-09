@@ -28,19 +28,19 @@ $select-side-padding: 0.4em;
       margin-top: 32px;
 
       .List-Item-Content {
-        color: $DarkGray;
-        font-size: 16px;
-        font-weight: bold;
+        color: $Gray160;
+        font-size: 15px;
         border: $list-width $list-style $Gray160;
         padding: 0.2em 1em;
         margin-top: 10%;
       }
 
       .selected .List-Item-Content {
-        color: $Black51;
+        color: $Black77;
         background-color: $LightGray;
         border: $list-selected;
         font-family: $fira-sans-condensed-bold;
+        font-weight: normal;
       }
     }
   }
