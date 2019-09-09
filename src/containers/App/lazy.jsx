@@ -32,7 +32,7 @@ import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
-import { prepareAnalytics, reportAnalytics } from '../../utilities/analyticsReporting';
+import { prepareAnalytics } from '../../utilities/analyticsReporting';
 
 import {
   browseByType,
@@ -340,9 +340,6 @@ class App extends React.PureComponent {
   }
 
   jumpToView2 = (type) => {
-    // Temporary for testing
-    reportAnalytics("clicked", "browseBy", "company");
-
     this.props.setTransitionState(transitionStates.view2);
 
     let modeData;

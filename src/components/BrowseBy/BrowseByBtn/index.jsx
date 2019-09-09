@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import './styles.scss';
 
-import handleInteraction from '../../../utilities/handleInteraction';
+import { handleAnalyticsInteraction } from '../../../utilities/analyticsReporting';
 
 // Predefine the messages to prevent wasted renders
 const messages = [['company', 'projectsBy'], ['location', 'conditionsBy']]
@@ -48,7 +48,7 @@ const BrowseByBtn = (props) => {
     <button
       type="button"
       className={classNames('BrowseByBtn', props.mode, props.classNames)}
-      {...handleInteraction(props.onClick, props.mode)}
+      {...handleAnalyticsInteraction('browseBy', `to ${props.mode}`, props.onClick, props.mode)}
     >
       {messages[props.mode]}
       {background}

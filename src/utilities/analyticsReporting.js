@@ -1,4 +1,5 @@
 import { lang, transitionStates } from '../constants';
+import handleInteraction from './handleInteraction';
 
 const staticDetails = {
   visualization: 'conditions',
@@ -6,7 +7,6 @@ const staticDetails = {
 };
 
 let getState;
-export const prepareAnalytics = (reduxStore) => { getState = () => reduxStore.getState(); };
 
 const getView = (transitionState) => {
   if (transitionState <= transitionStates.tutorialStart) { return 'view 1'; }
@@ -14,10 +14,6 @@ const getView = (transitionState) => {
   return 'view 3';
 };
 const analyticsFromState = () => {
-  /*
-    • subVisualization - Which view you're on
-    • filter - Search and filter parameters
-   */
   const state = getState();
 
   const search = { ...state.search };
@@ -26,15 +22,17 @@ const analyticsFromState = () => {
 
   return {
     subVisualization: getView(state.transitionState),
-    filter: JSON.stringify(state.search),
+    filter: JSON.stringify(search),
     mode: state.browseBy,
   };
 };
 
+export const prepareAnalytics = (reduxStore) => { getState = () => reduxStore.getState(); };
+
 /**
  * [description]
- * @param  {[type]} action      What the user did ('clicked')
- * @param  {[type]} category    What the user did it to ('wheel list')
+ * @param  {[type]} action      Event type ('click')
+ * @param  {[type]} category    What the user interacted with ('wheel list')
  * @param  {[type]} label       Any identifying information ('Trans-Mountain LLC')
  * @return {[type]}             returns an updated object for analytics
  */
@@ -57,5 +55,16 @@ export const reportAnalytics = (action, category, label) => {
 
   // eslint-disable-next-line no-console
   console.log('Sending Google Analytics report:', dataObject);
-  return window.dataLayer.push(dataObject);
+  // TODO: Enable this when GTM is added
+  // return window.dataLayer.push(dataObject);
 };
+
+export const handleAnalyticsInteraction = (
+  category,
+  label,
+  callback,
+  ...boundArgs
+) => handleInteraction((e) => {
+  reportAnalytics(e.type, category, label);
+  return callback(...boundArgs, e);
+});
