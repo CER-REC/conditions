@@ -105,7 +105,7 @@ $keywordColors: (
         fill: $LightGray;
         transition: opacity 1s, fill 0.5s ease-out 0.5s;
 
-        &.hidden {
+        &.hiddenText {
           opacity: 0;
         }
         &.selected {

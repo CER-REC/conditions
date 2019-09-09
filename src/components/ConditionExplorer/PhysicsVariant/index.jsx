@@ -331,7 +331,7 @@ export default class PhysicsVariant extends React.PureComponent {
           key={id}
           id={`components.conditionExplorer.guide.messages.${id}`}
           className={classNames({
-            hidden: !(id === this.state.guideMessage.toString()),
+            hiddenText: !(id === this.state.guideMessage.toString()),
             selected: (this.props.selectedKeywordId > -1),
           })}
           tag={SplitLines}
