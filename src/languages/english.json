@@ -143,7 +143,7 @@
     },
     "conditionDetails": {
       "selectedProject": "Selected Project:",
-      "selectedCondition": "Conditions In Selected Region:",
+      "selectedCondition": "Conditions in Selected Region:",
       "instrumentNumber": "Instrument #:",
       "conditionNumber": "Condition #:",
       "location": "Location:",

@@ -109,9 +109,12 @@ $popoutSize: 200px;
 
   h1 {
     display: inline;
+    align-self: center;
 
     font-family: $fira-sans-condensed;
-    font-size: 14px;
+    font-size: 16px;
+
+    color: $Black77;
   }
 
   h2 {
