@@ -108,7 +108,7 @@ $states: (
     ".appControls .GuideTransport": (
       opacity: 1,
       visibility: visible,
-      transition: opacity $fastEnd,
+      transition: "opacity #{$fastEnd}, left #{$defaultTransition}",
     ),
     ".ViewOne": (pointer-events: none),
     ".ViewOne .infoBar": (
@@ -198,6 +198,9 @@ $states: (
       opacity: 0,
       transition: "opacity #{$fastStart}, transform #{$defaultTransition}, visibility 0s 1s",
     ),
+    ".appControls .GuideTransport": (
+      left: 190px,
+    ),
     ".ViewTwo": (pointer-events: auto),
     ".ViewTwo .wheel .Wheel .interactiveItems .PullToSpin": (pointer-events: auto),
     ".ViewTwo .wheel .Wheel .interactiveItems .WheelList .list": (pointer-events: auto),
@@ -235,7 +238,7 @@ $states: (
     ".appControls .GuideTransport": (
       visibility: hidden,
       opacity: 0,
-      transition: "opacity #{$fastStart}, visibility 0s 1s",
+      transition: "opacity #{$fastStart}, visibility 0s 1s, left #{$defaultTransition}",
 
     ),
     ".ViewTwo": (

@@ -114,9 +114,12 @@
       opacity: 0;
       visibility: hidden;
 
-      left: -170px;
+      position: absolute;
 
-      transition: opacity $fastStart, visibility 0s 1s;
+      left: 340px;
+      top: 11px;
+
+      transition: opacity $fastStart, visibility 0s 1s, left $defaultTransition;
     }
 
   }
