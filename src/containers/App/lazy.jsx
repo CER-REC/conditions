@@ -32,7 +32,7 @@ import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
-import { prepareAnalytics } from '../../utilities/analyticsReporting';
+import { prepareAnalytics, reportAnalytics } from '../../utilities/analyticsReporting';
 
 import {
   browseByType,
@@ -473,6 +473,8 @@ class App extends React.PureComponent {
     // Apply the "Guide was clicked state" immediately
     this.incrementTransitionState();
     this.togglePlay(true);
+
+    reportAnalytics('click', 'guide', 'begin tutorial');
 
     setTimeout(() => {
       this.incrementTransitionState();
