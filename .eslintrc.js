@@ -1,23 +1,6 @@
 module.exports = {
   parser: 'babel-eslint',
-  extends: 'airbnb',
-  env: { browser: true },
-  rules: {
-    'no-console': ['error', { allow: ['error'] }],
-    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0 }],
-    'react/destructuring-assignment': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'object-curly-newline': ['error', {
-      minProperties: 8,
-      multiline: true,
-      consistent: true,
-    }],
-    'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
-    'react/jsx-props-no-spreading': 0,
-    'react/state-in-constructor': [2, 'always'],
-    'react/jsx-fragments': [2, 'element'],
-    'react/static-property-placement': [2, 'static public field'],
-  },
+  extends: '@vizworx/eslint-config-react',
   overrides: [
     {
       files: [
@@ -38,10 +21,6 @@ module.exports = {
     },
     {
       files: [
-        '**/spec.js',
-        '**/spec.jsx',
-        '**/*.spec.js',
-        '**/*.spec.jsx',
         'src/tests/**',
         '.storybook/spec.js',
       ],
