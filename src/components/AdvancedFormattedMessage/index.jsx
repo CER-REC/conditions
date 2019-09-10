@@ -27,7 +27,7 @@ export default class AdvancedFormattedMessage extends React.PureComponent {
       <FormattedMessage
         id={this.props.id}
         values={this.props.values}
-        key={Math.random() /* Needs a random key to force a render when props change */}
+        data-forceRender={Math.random() /* Needed to force a render when props change */}
       >
         {this.processMessage}
       </FormattedMessage>
