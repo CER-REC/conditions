@@ -7,6 +7,8 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import List from '../../List';
 import './styles.scss';
 
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
+
 const offsetClasses = ['', 'oneAway', 'twoAway', 'threeAway'];
 const indexOffsets = [-3, -2, -1, 0, 1, 2, 3];
 
@@ -57,9 +59,20 @@ class WheelList extends React.PureComponent {
     return { listElements: memoizedListElements(props.listContent, props.selected) };
   }
 
-  handleOnChange = i => this.props.onChange(
-    wrapIndex(i - 3, this.props.selected, this.props.listContent.length),
-  );
+  reportAnalytics = (item, e) => {
+    const [type, name] = (this.props.wheelType === 'company')
+      ? ['company', item.name]
+      : ['region', `${item.name}, ${item.province}`];
+
+    reportAnalytics(e.type, `select ${type} from wheel list`, name);
+  }
+
+  handleOnChange = (i, e) => {
+    const wrappedIndex = wrapIndex(i - 3, this.props.selected, this.props.listContent.length);
+
+    this.reportAnalytics(this.props.listContent[wrappedIndex], e);
+    this.props.onChange(wrappedIndex);
+  }
 
   render() {
     return (
