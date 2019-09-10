@@ -16,9 +16,9 @@ export const prepareAnalytics = (reduxStore, silenceConsoleLogs) => {
 };
 
 const getView = (transitionState) => {
-  if (transitionState <= transitionStates.tutorialStart) { return 'view 1'; }
+  if (transitionState === transitionStates.view3) { return 'view 3'; }
   if (transitionState === transitionStates.view2) { return 'view 2'; }
-  return 'view 3';
+  return 'view 1';
 };
 const analyticsFromState = () => {
   const state = getState();

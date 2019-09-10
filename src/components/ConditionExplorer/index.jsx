@@ -150,7 +150,7 @@ export default class ConditionExplorer extends React.PureComponent {
       ? instance
       : null;
 
-    this.props.setSelectedKeyword(instanceOut);
+    this.props.setSelectedKeyword(e, instanceOut);
 
     if (e) {
       e.stopPropagation();

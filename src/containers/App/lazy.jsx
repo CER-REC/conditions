@@ -535,7 +535,7 @@ class App extends React.PureComponent {
     return keywordTranslation;
   };
 
-  setSelectedKeyword = (instance) => {
+  setSelectedKeyword = (e, instance) => {
     if (instance) {
       this.selectedKeywordInstance = instance;
 
@@ -544,6 +544,8 @@ class App extends React.PureComponent {
       const keywordId = parseInt(instance.body.id, 10);
       const keyword = instance.keyword.value;
       const newIncluded = [keyword];
+
+      reportAnalytics(e.type, 'keyword', keyword);
 
       batch(() => {
         this.props.setSelectedMultiple({ keywordId });
