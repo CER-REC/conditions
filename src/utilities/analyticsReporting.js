@@ -9,6 +9,11 @@ const staticDetails = {
 };
 
 let getState;
+let silenceLogs;
+export const prepareAnalytics = (reduxStore, silenceConsoleLogs) => {
+  getState = () => reduxStore.getState();
+  silenceLogs = silenceConsoleLogs;
+};
 
 const getView = (transitionState) => {
   if (transitionState <= transitionStates.tutorialStart) { return 'view 1'; }
@@ -29,8 +34,6 @@ const analyticsFromState = () => {
   };
 };
 
-export const prepareAnalytics = (reduxStore) => { getState = () => reduxStore.getState(); };
-
 /**
  * [description]
  * @param  {[type]} action      Event type ('click')
@@ -42,7 +45,7 @@ export const prepareAnalytics = (reduxStore) => { getState = () => reduxStore.ge
 export const reportAnalytics = (action, category, label) => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
-    console.warn('Google Tag Manager not found.');
+    if (!silenceLogs) { console.warn('Google Tag Manager not found.'); }
     // TODO: Remove this when GTM is added
     // return null;
   }
@@ -56,7 +59,7 @@ export const reportAnalytics = (action, category, label) => {
   };
 
   // eslint-disable-next-line no-console
-  console.log('Sending Google Analytics report:', dataObject);
+  if (!silenceLogs) { console.log('Sending Google Analytics report:', dataObject); }
   // TODO: Enable this when GTM is added
   // return window.dataLayer.push(dataObject);
 };
