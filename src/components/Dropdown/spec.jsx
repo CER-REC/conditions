@@ -38,8 +38,9 @@ describe('Components|Dropdown', () => {
 
     test('should call the onChange function with the feature on drop down item change', () => {
       options.forEach((feature) => {
-        wrapper.find('select').simulate('change', { target: { value: feature } });
-        expect(spy).toHaveBeenLastCalledWith(feature);
+        const eventObj = { target: { value: feature } };
+        wrapper.find('select').simulate('change', eventObj);
+        expect(spy).toHaveBeenLastCalledWith(feature, eventObj);
       });
       expect(spy).toHaveBeenCalledTimes(options.length);
     });
