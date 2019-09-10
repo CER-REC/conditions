@@ -9,6 +9,7 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 import Icon from '../../Icon/index';
 import Dropdown from '../../Dropdown';
 import handleInteraction from '../../../utilities/handleInteraction';
+import { handleAnalyticsInteraction, reportAnalytics } from '../../../utilities/analyticsReporting';
 
 library.add(
   faTimes,
@@ -41,7 +42,10 @@ class SearchContent extends React.PureComponent {
       <React.Fragment key={word}>
         <li className="liText"> {word} </li>
         <li className="deleteButton">
-          <button type="button" {...handleInteraction(this.deleteWord, word, type)}>
+          <button
+            type="button"
+            {...handleAnalyticsInteraction('delete search term', `${type}: ${word}`, this.deleteWord, word, type)}
+          >
             <Icon className="iconInline timesIcon" icon="times" />
           </button>
         </li>
@@ -77,7 +81,8 @@ class SearchContent extends React.PureComponent {
 
   updateInputExclude = e => this.setState({ inputExclude: e.target.value });
 
-  addIncludeWord = () => {
+  addIncludeWord = (e) => {
+    reportAnalytics(e.type, 'add search term', `include: ${this.state.inputInclude}`);
     this.addWord(this.state.inputInclude, 'include');
     this.setState({ inputInclude: '' });
   }
@@ -85,11 +90,12 @@ class SearchContent extends React.PureComponent {
   addIncludeWordOnEnter = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault(); // WET template will trigger a refresh on enter
-      this.addIncludeWord();
+      this.addIncludeWord(e);
     }
   }
 
-  addExcludeWord = () => {
+  addExcludeWord = (e) => {
+    reportAnalytics(e.type, 'add search term', `exclude: ${this.state.inputExclude}`);
     this.addWord(this.state.inputExclude, 'exclude');
     this.setState({ inputExclude: '' });
   }
@@ -97,7 +103,7 @@ class SearchContent extends React.PureComponent {
   addExcludeWordOnEnter = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault(); // WET template will trigger a refresh on enter
-      this.addExcludeWord();
+      this.addExcludeWord(e);
     }
   }
 
@@ -283,7 +289,14 @@ class SearchContent extends React.PureComponent {
         {this.includeSearchTextAndWords()}
         {(this.state.mode !== 'advanced') ? null : (this.excludeSearchTextAndWords())}
         <div className="advancedSearchText">
-          <button type="button" {...handleInteraction(this.changeSearchType)}>
+          <button
+            type="button"
+            {...handleAnalyticsInteraction(
+              'toggle search mode',
+              `to ${(this.state.mode === 'basic') ? 'advanced' : 'basic'}`,
+              this.changeSearchType,
+            )}
+          >
             {(this.state.mode === 'basic'
               ? <FormattedMessage id="components.searchBar.findWords.advancedSearch" />
               : <FormattedMessage id="components.searchBar.findWords.basicSearch" />)}
