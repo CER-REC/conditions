@@ -175,13 +175,13 @@ describe('Components|List', () => {
 
     test('should call its onChange prop with the previous index', () => {
       wrapper.find('.arrowPrevious').simulate('click', eventFuncs);
-      expect(spy).toHaveBeenLastCalledWith(0);
+      expect(spy).toHaveBeenLastCalledWith(0, eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
     test('should call its onChange prop with the next index', () => {
       wrapper.find('.arrowNext').simulate('click', eventFuncs);
-      expect(spy).toHaveBeenLastCalledWith(2);
+      expect(spy).toHaveBeenLastCalledWith(2, eventFuncs);
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });

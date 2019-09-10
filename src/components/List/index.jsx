@@ -84,7 +84,7 @@ class List extends React.PureComponent {
     e.preventDefault();
     e.stopPropagation();
     const newIndex = handleScroll(e.deltaY, this.props.selected, this.props.items.length);
-    if (newIndex !== this.props.selected && newIndex !== null) this.props.onChange(newIndex);
+    if (newIndex !== this.props.selected && newIndex !== null) this.props.onChange(newIndex, e);
   }
 
   renderArrow(next, selectedIndex) {
@@ -100,7 +100,7 @@ class List extends React.PureComponent {
     return (
       <CircleContainer
         size={arrowSize}
-        onClick={() => this.props.onChange(selectedIndex + (next ? 1 : -1))}
+        onClick={e => this.props.onChange(selectedIndex + (next ? 1 : -1), e)}
         className={classNames('arrow', next ? 'arrowNext' : 'arrowPrevious', { hiddenArrow })}
       >
         <Arrow orientation={next ? nextArrow : previousArrow} />
