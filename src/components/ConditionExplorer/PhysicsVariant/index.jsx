@@ -194,6 +194,7 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   onGuideDragStart = ({ mouse }) => {
+    reportAnalytics('drag', 'guide');
     this.guideIsDragging = true;
     this.guideDragOrigin = { x: mouse.absolute.x, y: mouse.absolute.y };
   };

@@ -42,7 +42,7 @@ const analyticsFromState = () => {
  * @return {[type]}             returns an updated object for analytics
  */
 
-export const reportAnalytics = (action, category, label) => {
+export const reportAnalytics = (action, category, label = '') => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     if (!silenceLogs) { console.warn('Google Tag Manager not found.'); }
