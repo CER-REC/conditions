@@ -7,6 +7,8 @@ import './styles.scss';
 import List from '../../List';
 import BarContainer from '../../BarContainer';
 
+import { reportAnalytics } from '../../../utilities/analyticsReporting';
+
 class ConditionList extends React.PureComponent {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
@@ -72,11 +74,13 @@ class ConditionList extends React.PureComponent {
     list.scrollTop = (elmTop - listTop) - ((listRect.height - elmRect.height) / 2);
   }
 
-  onChange = (i) => {
+  onChange = (i, e) => {
     const { conditionId, instrumentId } = this.props.items[i];
     if (conditionId) {
+      reportAnalytics(e.type, 'select condition', `id: ${conditionId}`);
       this.props.updateSelectedCondition(conditionId);
     } else {
+      reportAnalytics(e.type, 'select instrument', `id: ${instrumentId}`);
       this.props.updateSelectedInstrument(instrumentId);
     }
   }
