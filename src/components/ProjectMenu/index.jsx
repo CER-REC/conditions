@@ -8,6 +8,8 @@ import { loadingProjectsData } from '../../mockData';
 import getKeyedAggregatedCount from '../../utilities/getKeyedAggregatedCount';
 import './styles.scss';
 
+import { reportAnalytics } from '../../utilities/analyticsReporting';
+
 class ProjectMenu extends React.PureComponent {
   static propTypes = {
     /** The Project id of the item currently selected */
@@ -48,11 +50,17 @@ class ProjectMenu extends React.PureComponent {
       .slice(projectIndex - numBefore, projectIndex + numAfter + 1);
   }
 
-  handleProjectChange = (listItemIndex) => {
+  handleProjectChange = (listItemIndex, e) => {
     if (this.props.loading) { return; }
-    const visibleListItems = this.getListItems(this.props.projectsData,
-      this.props.selectedProjectID);
-    this.props.onChange(visibleListItems[listItemIndex].id);
+    const item = this.getListItems(this.props.projectsData,
+      this.props.selectedProjectID)[listItemIndex];
+
+    reportAnalytics(
+      e.type,
+      'select project',
+      `${item.name}, ${item.numberOfConditions} conditions`,
+    );
+    this.props.onChange(item.id);
   }
 
   getReformattedData = (data, selectedFeature) => {
