@@ -7,6 +7,8 @@ import Fallback from './Fallback';
 import GuideDetail from './GuideDetail';
 import './styles.scss';
 
+import { reportAnalytics } from '../../utilities/analyticsReporting';
+
 // This function memoizes based on the keyword, but doesn't use it in the result
 // function. It is only used in the (default) key generation function (2nd arg)
 const randomColor = memoize(() => `color${Math.floor(Math.random() * 3)}`);
@@ -74,7 +76,10 @@ export default class ConditionExplorer extends React.PureComponent {
     guideStep: 0,
   });
 
-  setGuideStep = guideStep => this.setState({ guideStep });
+  setGuideStep = (guideStep, e) => {
+    reportAnalytics(e.type, 'guide detail', `page ${this.state.guideStep} to ${guideStep}`);
+    this.setState({ guideStep });
+  };
 
   getKeywords() {
     if (!this.textSizeRef.current || !this.state.calculatedFontSize) { return []; }
