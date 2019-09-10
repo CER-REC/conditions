@@ -134,8 +134,7 @@ describe('Components|ConditionDetails/ConditionList', () => {
 
     it('should call updateSelectedItem with the instrument and condition ids', () => {
       wrapper.find('.ConditionList')
-        // Mock event to keep analytics from breaking the test
-        .find('List').props().onChange(2, { type: 'test' });
+        .find('List').props().onChange(2, {});
 
       expect(spyCondition).toHaveBeenCalledWith(202);
       expect(spyInstrument).not.toHaveBeenCalled();
@@ -143,8 +142,7 @@ describe('Components|ConditionDetails/ConditionList', () => {
 
     it('should call updateSelectedItem with the instrument and condition ids', () => {
       wrapper.find('.ConditionList')
-        // Mock event to keep analytics from breaking the test
-        .find('List').props().onChange(0, { type: 'test' });
+        .find('List').props().onChange(0, {});
 
       expect(spyCondition).not.toHaveBeenCalled();
       expect(spyInstrument).toHaveBeenCalledWith(100);

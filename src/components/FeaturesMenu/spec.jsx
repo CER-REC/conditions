@@ -63,9 +63,7 @@ describe('Components|FeaturesMenu', () => {
       const list = wrapper.find('List');
       const desired = i18nToFeature(list.prop('items')[3].props.id);
 
-      // Fake event to keep analytics from breaking the test
-      const eventObj = { type: 'test' };
-      list.prop('onChange')(3, eventObj);
+      list.prop('onChange')(3, {});
       expect(spy).toHaveBeenLastCalledWith(desired);
     });
 

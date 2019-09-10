@@ -238,8 +238,7 @@ describe('Components|ProjectMenu', () => {
         test.each(items.map((v, i) => ([i, v])))(
           'clicking list index %d should emit project ID %d',
           (index, projectID) => {
-            // Mock event to keep analytics from breaking the test
-            wrapper.find('List').props().onChange(index, { type: 'test' });
+            wrapper.find('List').props().onChange(index, {});
             expect(onChange).toHaveBeenCalledTimes(1);
             expect(onChange).toHaveBeenLastCalledWith(projectID);
           },

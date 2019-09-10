@@ -45,8 +45,7 @@ describe('Components|Wheel/WheelList', () => {
         .find('.list')
         .find('List')
         .props()
-        // Mock event to keep analytics from breaking the test
-        .onChange(2, { type: 'test' });
+        .onChange(2, {});
 
       expect(spy).toHaveBeenCalledTimes(1);
     });
@@ -57,8 +56,7 @@ describe('Components|Wheel/WheelList', () => {
         .find('.list')
         .find('List')
         .props()
-        // Mock event to keep analytics from breaking the test
-        .onChange(5, { type: 'test' });
+        .onChange(5, {});
 
       expect(spy).toHaveBeenCalledWith(6);
     });
