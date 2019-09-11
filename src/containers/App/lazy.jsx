@@ -32,7 +32,7 @@ import * as selectedCreators from '../../actions/selected';
 import * as transitionStateCreators from '../../actions/transitionState';
 import * as detailViewExpandedCreators from '../../actions/detailViewExpanded';
 import createStore from '../../Store';
-import { prepareAnalytics, reportAnalytics } from '../../utilities/analyticsReporting';
+import { connectAnalyticsToStore, reportAnalytics } from '../../utilities/analyticsReporting';
 import getAnalyticsFromState from './getAnalyticsFromState';
 
 import {
@@ -81,7 +81,7 @@ if (!areScrollbarsVisible()) {
 }
 
 const store = createStore();
-prepareAnalytics(store, getAnalyticsFromState);
+connectAnalyticsToStore(store, getAnalyticsFromState);
 
 const cache = new InMemoryCache();
 const link = new HttpLink({

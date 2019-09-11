@@ -2,27 +2,42 @@ import memoize from 'lodash.memoize';
 import handleInteraction from './handleInteraction';
 import memoizeReference from './memoizeReference';
 
+const noop = () => {};
+
 let getState;
-let getAnalyticsFromState;
-let silenceLogs;
-export const prepareAnalytics = (reduxStore, analyticsFromState, silenceConsoleLogs) => {
-  getState = () => reduxStore.getState();
+let getAnalyticsFromState = noop;
+let silenceConsoleLogs;
+
+/**
+ * Allows the analytics reporter to pull information from Redux.
+ *
+ * @param {{}}        store                 A Redux store.
+ * @param {function}  analyticsFromState    A callback to provide any static information
+ *                                          (the app name, language, etc) or general
+ *                                          state details (current search parameters,
+ *                                          etc). Should return an object.
+ * @param {boolean}   silenceLogs    Hide console output (i.e. for running tests)
+ */
+export const connectAnalyticsToStore = (store, analyticsFromState, silenceLogs = false) => {
+  getState = () => store.getState();
   getAnalyticsFromState = () => analyticsFromState(getState());
-  silenceLogs = silenceConsoleLogs;
+  silenceConsoleLogs = silenceLogs;
 };
 
 /**
- * [description]
- * @param  {[type]} action      Event type ('click')
- * @param  {[type]} category    What the user interacted with ('wheel list')
- * @param  {[type]} label       Any identifying information ('Trans-Mountain LLC')
- * @return {[type]}             returns an updated object for analytics
+ * Generates and pushes an analytics report with the given details and any global
+ * information provided via prepareAnalytics' analyticsFromState callback.
+ *
+ * @param  {string} action      Event type ('click')
+ * @param  {string} category    What the user did ('select company')
+ * @param  {string} label       Any identifying information ('Trans-Mountain LLC')
+ * @return {{}}                 An object of analytics information
  */
 
 export const reportAnalytics = (action, category, label = '') => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
-    if (!silenceLogs) { console.warn('Google Tag Manager not found.'); }
+    if (!silenceConsoleLogs) { console.warn('Google Tag Manager not found.'); }
     // TODO: Uncomment this when GTM is added
     // return null;
   }
@@ -35,18 +50,20 @@ export const reportAnalytics = (action, category, label = '') => {
   };
 
   // eslint-disable-next-line no-console
-  if (!silenceLogs) { console.log('Sending Google Analytics report:', dataObject); }
-  return window.dataLayer.push(dataObject);
+  if (!silenceConsoleLogs) { console.log('Sending Google Analytics report:', dataObject); }
+  // TODO: Remove redundant dataLayer check when GTM is added
+  return window.dataLayer && window.dataLayer.push(dataObject);
 };
 
 /**
- * Usage is pretty much the same as handleInteraction, with two additional fields
- * in front for the event category and label (see descriptions above)
+ * Wraps the handleInteraction utility together with reportAnalytics.
  *
- * Example:
- * <div
- *   {...handleAnalyticsInteraction('browseBy', `to ${props.mode}`, props.onClick, props.mode)}
- * />
+ * @param  {string} category    What the user did ('select company')
+ * @param  {string} label       Any identifying information ('Trans-Mountain LLC')
+ * @param  {function} callback  Will be called upon user interaction with any
+ *                              subsequent arguments and, lastly, the React/DOM event.
+ * @param  {...*} boundArgs     Arguments to pass to the callback.
+ * @return {{}}                 A memoized object with onClick and onKeyPress closures
  */
 export const handleAnalyticsInteraction = memoize((
   category,

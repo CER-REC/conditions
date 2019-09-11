@@ -2,7 +2,7 @@ import registerRequireContextHook from 'babel-plugin-require-context-hook/regist
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { monkeyPatchShallowWithIntl } from './utilities';
-import { prepareAnalytics } from '../utilities/analyticsReporting';
+import { connectAnalyticsToStore } from '../utilities/analyticsReporting';
 
 registerRequireContextHook();
 configure({ adapter: new Adapter() });
@@ -16,4 +16,4 @@ global.store = {
   setState(newState) { this.state = newState; },
 };
 window.dataLayer = [];
-prepareAnalytics(global.store, () => {}, true);
+connectAnalyticsToStore(global.store, () => {}, true);
