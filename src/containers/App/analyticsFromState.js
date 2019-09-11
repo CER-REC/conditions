@@ -11,7 +11,9 @@ const getView = (transitionState) => {
   return 'view 1';
 };
 
-export default (state) => {
+export default store => () => {
+  const state = store.getState();
+
   const search = { ...state.search };
   delete search.searchResults;
   delete search.filteredProjects;

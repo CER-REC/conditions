@@ -2,31 +2,27 @@ import memoize from 'lodash.memoize';
 import handleInteraction from './handleInteraction';
 import memoizeReference from './memoizeReference';
 
+const env = process.env.NODE_ENV;
 const noop = () => {};
 
-let getState;
-let getAnalyticsFromState = noop;
-let silenceConsoleLogs;
+let getGeneralAnalytics = noop;
 
 /**
- * Allows the analytics reporter to pull information from Redux.
+ * Allows the analytics reporter to pull any static or generally-relevant information
+ * for each entry. (Locale, search parameters, what part of the app the user is looking at, etc.)
  *
- * @param {{}}        store                 A Redux store.
- * @param {function}  analyticsFromState    A callback to provide any static information
- *                                          (the app name, language, etc) or general
- *                                          state details (current search parameters,
- *                                          etc). Should return an object.
- * @param {boolean}   silenceLogs    Hide console output (i.e. for running tests)
+ * @param {function}  generalAnalytics    A callback to provide any static information
+ *                                        (the app name, language, etc) or general
+ *                                        state details (current search parameters,
+ *                                        etc). Should return an object.
  */
-export const connectAnalyticsToStore = (store, analyticsFromState, silenceLogs = false) => {
-  getState = () => store.getState();
-  getAnalyticsFromState = () => analyticsFromState(getState());
-  silenceConsoleLogs = silenceLogs;
+export const addGeneralAnalytics = (generalAnalytics) => {
+  getGeneralAnalytics = () => generalAnalytics();
 };
 
 /**
  * Generates and pushes an analytics report with the given details and any global
- * information provided via prepareAnalytics' analyticsFromState callback.
+ * information provided via addGeneralAnalytics' callback.
  *
  * @param  {string} action      Event type ('click')
  * @param  {string} category    What the user did ('select company')
@@ -37,20 +33,20 @@ export const connectAnalyticsToStore = (store, analyticsFromState, silenceLogs =
 export const reportAnalytics = (action, category, label = '') => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
-    if (!silenceConsoleLogs) { console.warn('Google Tag Manager not found.'); }
+    if (env !== 'test') { console.warn('Google Tag Manager not found.'); }
     // TODO: Uncomment this when GTM is added
     // return null;
   }
 
   const dataObject = {
-    ...getAnalyticsFromState(),
+    ...getGeneralAnalytics(),
     action,
     category,
     label,
   };
 
   // eslint-disable-next-line no-console
-  if (!silenceConsoleLogs) { console.log('Sending Google Analytics report:', dataObject); }
+  if (env !== 'test') { console.log('Sending Google Analytics report:', dataObject); }
   // TODO: Remove redundant dataLayer check when GTM is added
   return window.dataLayer && window.dataLayer.push(dataObject);
 };
