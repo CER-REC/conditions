@@ -1,3 +1,100 @@
+# [0.26.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.26.0) (2019-09-11)
+
+
+### App
+
+* **Features:** adds "Beta" to title of visualization (ed9028d, NEBV-1750)
+* **Features:** updates social media images to replace NEB with CER (dec5576)
+* **Features:** Uses new French URL (c1772f6)
+* **Features:** fixes French spacing for colons (ac42115)
+* **Bug Fixes:** fixes transport controls overlapping the BrowseBy buttons (462bf0c)
+* **Bug Fixes:** fixes invalid company selection if the first project has no instruments (ed810d5)
+
+
+### BrowseBy
+
+* **Features:** adds background to keep French accents from being cut off by the wedges (494c256)
+
+
+### CompanyPopup
+
+* **Bug Fixes:** fixes crash with bullet points in French (74525be)
+
+
+### ConditionDetails
+
+* **Features:** adjusts project header typography and wording (42bccd0)
+
+
+### ConditionDetails/ProjectHeader
+
+* **Bug Fixes:** fixes overlapping bubbles (49118e8, NEBV-1730)
+
+
+### ConditionExplorer
+
+* **Bug Fixes:** fixes AdvancedFormattedMessage remounting breaking transitions (6e099ff, NEBV-1750)
+* **Bug Fixes:** fixes the Guide messages not fading in and out (c2641f1)
+* **Bug Fixes:** fixes the Guide remaining blank after interactions (4c34107)
+
+
+### Dependencies
+
+* **Project Maintenance:** switches from manual Babel config to @vizworx/babel-preset (311972c)
+* **Project Maintenance:** switches from manual ESLint config to @vizworx/eslint-config-react (39339b5)
+* **Project Maintenance:** update babel monorepo to v7.6.0 (3e2aa5d)
+* **Project Maintenance:** update dependency @babel/node to v7.6.1 (a960469)
+* **Project Maintenance:** update dependency require-context.macro to v1.2.1 (97763a3)
+* **Project Maintenance:** update dependency topojson-server to v3.0.1 (d028ee1)
+* **Project Maintenance:** update dependency topojson-simplify to v3.0.3 (1c5f756)
+* **Project Maintenance:** update dependency webpack-cli to v3.3.8 (ca6928c)
+
+
+### Disclaimer
+
+* **Features:** updates styling to match the rest of the vis. (35f75a9)
+* **Features:** adds a component to display required legal text (1822fdf)
+
+
+### FeatureTypesDescription
+
+* **Bug Fixes:** removes redundant occurrence of Other from instrument headings (b956c53)
+
+
+### GreyPipe
+
+* **Bug Fixes:** fixes break in pipe (c950f71, NEBV-1748)
+
+
+### LocationWheelMinimap
+
+* **Bug Fixes:** ensures that the map matches both the region and province (9f5d716)
+
+
+### MainInfoBar
+
+* **Features:** updates methodology links to point at final URLs (0566b55)
+
+
+### Methodology
+
+* **Features:** adds Regdoc Link (0339305, NEBV-1703)
+
+
+### RegionSummary
+
+* **Features:** adds missing French translation (7ee0015)
+
+
+### View 3
+
+* **Features:** updates typography as per the iLab (6e15bac)
+
+
+### Wheel
+
+* **Bug Fixes:** keeps the list's corners from capturing click events in the wheel (50635a6)
+
 # [0.25.0](http://neb-conditions-devdoc.s3-website.us-west-2.amazonaws.com/v0.25.0) (2019-09-04)
 
 
