@@ -484,7 +484,7 @@
   "views": {
     "view1": {
       "header": {
-        "title": "Conditions on CER-regulated energy projects",
+        "title": "Conditions on CER-regulated energy projects (Beta)",
         "subtitle": "This is an interactive tool for exploration of CER conditions data through keywords and visual representation. The last update was:"
       }
     },

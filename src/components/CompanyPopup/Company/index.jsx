@@ -11,7 +11,7 @@ const ProjectName = React.memo(({ children, name }) => <h2>{children} <strong>{n
 const BulletList = React.memo(({ children }) => {
   const arr = children.split('\n'); // eslint-disable-line react/prop-types
   const first = arr.shift();
-  const items = arr.map(bullet => <li key={bullet}>{bullet.match(/- ?(.+)/)[1]}</li>);
+  const items = arr.map(bullet => <li key={bullet}>{bullet.replace(/^.*(-|•) /, '')}</li>);
 
   return (
     <React.Fragment>
