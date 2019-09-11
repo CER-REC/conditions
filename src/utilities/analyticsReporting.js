@@ -1,37 +1,14 @@
 import memoize from 'lodash.memoize';
-import { lang, transitionStates } from '../constants';
 import handleInteraction from './handleInteraction';
 import memoizeReference from './memoizeReference';
 
-const staticDetails = {
-  visualization: 'conditions',
-  language: lang,
-};
-
 let getState;
+let getAnalyticsFromState;
 let silenceLogs;
-export const prepareAnalytics = (reduxStore, silenceConsoleLogs) => {
+export const prepareAnalytics = (reduxStore, analyticsFromState, silenceConsoleLogs) => {
   getState = () => reduxStore.getState();
+  getAnalyticsFromState = () => analyticsFromState(getState());
   silenceLogs = silenceConsoleLogs;
-};
-
-const getView = (transitionState) => {
-  if (transitionState === transitionStates.view3) { return 'view 3'; }
-  if (transitionState === transitionStates.view2) { return 'view 2'; }
-  return 'view 1';
-};
-const analyticsFromState = () => {
-  const state = getState();
-
-  const search = { ...state.search };
-  delete search.searchResults;
-  delete search.filteredProjects;
-
-  return {
-    subVisualization: getView(state.transitionState),
-    filter: JSON.stringify(search),
-    mode: state.browseBy,
-  };
 };
 
 /**
@@ -46,13 +23,12 @@ export const reportAnalytics = (action, category, label = '') => {
   if (typeof window.dataLayer === 'undefined') {
     // eslint-disable-next-line no-console
     if (!silenceLogs) { console.warn('Google Tag Manager not found.'); }
-    // TODO: Remove this when GTM is added
+    // TODO: Uncomment this when GTM is added
     // return null;
   }
 
   const dataObject = {
-    ...staticDetails,
-    ...analyticsFromState(),
+    ...getAnalyticsFromState(),
     action,
     category,
     label,
@@ -60,8 +36,7 @@ export const reportAnalytics = (action, category, label = '') => {
 
   // eslint-disable-next-line no-console
   if (!silenceLogs) { console.log('Sending Google Analytics report:', dataObject); }
-  // TODO: Enable this when GTM is added
-  // return window.dataLayer.push(dataObject);
+  return window.dataLayer.push(dataObject);
 };
 
 /**

@@ -16,4 +16,4 @@ global.store = {
   setState(newState) { this.state = newState; },
 };
 window.dataLayer = [];
-prepareAnalytics(global.store, true);
+prepareAnalytics(global.store, () => {}, true);
