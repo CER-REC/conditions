@@ -177,7 +177,7 @@ $bubbleBottom: -10px;
 @include safariOnly {
   .GreyPipe {
     &.company {
-      bottom: calc(50%-7px);
+      bottom: calc(50%-11px);
     }
   }
 }
