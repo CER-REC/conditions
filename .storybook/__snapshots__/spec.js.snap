@@ -1626,6 +1626,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   tabIndex={0}
                 >
                   <div
+                    className="instrumentNumber"
                     data-heading="0--1"
                     title="XO-001-2018"
                   >
@@ -1781,6 +1782,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   tabIndex={0}
                 >
                   <div
+                    className="instrumentNumber"
                     data-heading="1--1"
                     title="XO-003-2018"
                   >
@@ -1888,6 +1890,7 @@ exports[`Storyshots Components|ConditionDetails default 1`] = `
                   tabIndex={0}
                 >
                   <div
+                    className="instrumentNumber"
                     data-heading="2--1"
                     title="XO-005-2018"
                   >
@@ -2203,6 +2206,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     tabIndex={0}
                   >
                     <div
+                      className="instrumentNumber"
                       data-heading="0--1"
                       title="XO-001-2018"
                     >
@@ -2358,6 +2362,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     tabIndex={0}
                   >
                     <div
+                      className="instrumentNumber"
                       data-heading="1--1"
                       title="XO-003-2018"
                     >
@@ -2465,6 +2470,7 @@ exports[`Storyshots Components|ConditionDetails expandable 1`] = `
                     tabIndex={0}
                   >
                     <div
+                      className="instrumentNumber"
                       data-heading="2--1"
                       title="XO-005-2018"
                     >
@@ -2731,6 +2737,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                   tabIndex={0}
                 >
                   <div
+                    className="instrumentNumber"
                     data-heading="0--1"
                     title="XO-001-2018"
                   >
@@ -2886,6 +2893,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                   tabIndex={0}
                 >
                   <div
+                    className="instrumentNumber"
                     data-heading="1--1"
                     title="XO-003-2018"
                   >
@@ -2993,6 +3001,7 @@ exports[`Storyshots Components|ConditionDetails location 1`] = `
                   tabIndex={0}
                 >
                   <div
+                    className="instrumentNumber"
                     data-heading="2--1"
                     title="XO-005-2018"
                   >
@@ -3279,6 +3288,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               tabIndex={0}
             >
               <div
+                className="instrumentNumber"
                 data-heading="0--1"
                 title="XO-001-2018"
               >
@@ -3434,6 +3444,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               tabIndex={0}
             >
               <div
+                className="instrumentNumber"
                 data-heading="1--1"
                 title="XO-003-2018"
               >
@@ -3541,6 +3552,7 @@ exports[`Storyshots Components|ConditionDetails/ConditionList default 1`] = `
               tabIndex={0}
             >
               <div
+                className="instrumentNumber"
                 data-heading="2--1"
                 title="XO-005-2018"
               >
