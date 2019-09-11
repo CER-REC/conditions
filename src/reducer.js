@@ -20,7 +20,13 @@ const nestedReducers = combineReducers({
 export default (initialState = {}, action) => {
   let state = initialState;
   if (action.type === 'urlRouteChanged') {
-    state = mergeDeep(state, action.payload);
+    /*
+      Arrays need to be replaced rather than merged, or things like the initial filter status:
+        ['IN PROGRESS', 'COMPLETED']
+      will be concatenated with the same items in a pasted URL and produce:
+        ['IN PROGRESS', 'COMPLETED', 'IN PROGRESS', 'COMPLETED']
+    */
+    state = mergeDeep(state, action.payload, { arrayMerge: (dest, source) => source });
   }
   return nestedReducers(state, action);
 };
