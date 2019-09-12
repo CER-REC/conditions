@@ -65,10 +65,7 @@ class ProjectMenu extends React.PureComponent {
     const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
     const rightCount = data.length - leftCount - 1;
 
-    return [
-      leftCount < 35 ? leftCount : 35,
-      rightCount < 35 ? rightCount : 35,
-    ];
+    return [leftCount, rightCount];
   };
 
   render() {
