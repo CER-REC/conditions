@@ -122,37 +122,41 @@ class WheelRay extends React.Component {
           </g>
         )
         : (
-          <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
-            <LocationRay
-              regionId={item.id}
-              items={item.aggregatedCount}
-              height={degreesPerItem * 0.5}
-              width={width}
-              searched={!!(this.props.searchedRegionsLookup[item.id])}
-              adjustRotationReference={degreesPerItem / 2}
-              displayOrder={this.props.displayOrder}
-              selectedFeature={this.props.selectedFeature}
-            />
-            { item.province !== legendTracker
-              ? (
-                <React.Fragment>
-                  <line
-                    className="regionDivider"
-                    transform="translate(28.75) rotate(90)"
-                    x1="0"
-                    y1="0.6"
-                    x2="0"
-                    y2="-2"
-                  />
-                  <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChangeRay, index)}>
-                    &nbsp;{item.province}
-                    <title>
-                      {item.province}
-                    </title>
-                  </text>
-                </React.Fragment>
-              ) : null }
-          </g>
+          <React.Fragment>
+            <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
+              <LocationRay
+                regionId={item.id}
+                items={item.aggregatedCount}
+                height={degreesPerItem * 0.5}
+                width={width}
+                searched={!!(this.props.searchedRegionsLookup[item.id])}
+                adjustRotationReference={degreesPerItem / 2}
+                displayOrder={this.props.displayOrder}
+                selectedFeature={this.props.selectedFeature}
+              />
+            </g>
+            {
+              (item.province !== legendTracker)
+                ? (
+                  <g key={`${item.id}Legend`} transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
+                    <line
+                      className="regionDivider"
+                      transform="translate(28.75) rotate(90)"
+                      x1="0"
+                      y1="0.6"
+                      x2="0"
+                      y2="-2"
+                    />
+                    <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChangeRay, index)}>
+                      &nbsp;{item.province}
+                      <title>
+                        {item.province}
+                      </title>
+                    </text>
+                  </g>
+                ) : null
+            }
+          </React.Fragment>
         );
       legendTracker = props.wheelType === 'company'
         ? item.name.charAt(0)
