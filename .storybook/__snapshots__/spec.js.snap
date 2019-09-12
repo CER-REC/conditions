@@ -19235,16 +19235,16 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
       <p
         className="description"
       >
-        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about how we extracted keywords 
+        Keywords capture the general idea of a condition, e.g. type of species regulated. Learn more about 
         <a
           focusable={true}
           onClick={[Function]}
           onKeyPress={[Function]}
           tabIndex={0}
         >
-          here
+          how we extracted
         </a>
-        .
+         keywords.
       </p>
       <ul
         className="categories"
