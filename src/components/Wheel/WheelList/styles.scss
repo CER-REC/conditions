@@ -99,12 +99,18 @@
     height: 100%;
     width: 55%;
 
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+
     .List{
       position: absolute;
       height: 100%;
       width: 98%;
       top: 0%;
       pointer-events: auto;
+
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
 
       ul {
         position: absolute;
