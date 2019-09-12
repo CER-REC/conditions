@@ -23180,7 +23180,7 @@ exports[`Storyshots Components|StreamGraph allThemes 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions By Theme Over Time
+      Number of Conditions by Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -25064,7 +25064,7 @@ exports[`Storyshots Components|StreamGraph default 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions by Phase Over Time
+      Number of Conditions by Phase Over Time
     </h1>
     <div
       className="VictoryContainer"
@@ -28328,7 +28328,7 @@ exports[`Storyshots Components|StreamGraph subFeature 1`] = `
     className="StreamGraph"
   >
     <h1>
-      Total Conditions By Theme Over Time
+      Number of Conditions by Theme Over Time
     </h1>
     <div
       className="VictoryContainer"
