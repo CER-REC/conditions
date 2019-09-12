@@ -1,6 +1,6 @@
 import React from 'react';
 import withInteraction, { getInteractionProps } from 'storybook-addon-interaction';
-import { storiesForComponent } from '../../../.storybook/utils';
+import { storiesForComponent, withStyles } from '../../../.storybook/utils';
 import ConditionDetails from '.';
 import ReadMe from './README.md';
 
@@ -24,21 +24,28 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
       toggleExpanded: () => expand => ({ expanded: expand }),
     },
   }))
+  .addDecorator(withStyles(`
+    div.storyWrapper { position: relative; height: 200px; width: 600px; }
+  `))
   .add('default', () => (
-    <ConditionDetails
-      {...defaultProps}
-      {...getInteractionProps()}
-    />
+    <div className="storyWrapper">
+      <ConditionDetails
+        {...defaultProps}
+        {...getInteractionProps()}
+      />
+    </div>
   ))
   .add('location', () => (
-    <ConditionDetails
-      {...defaultProps}
-      browseBy="location"
-      {...getInteractionProps()}
-    />
+    <div className="storyWrapper">
+      <ConditionDetails
+        {...defaultProps}
+        browseBy="location"
+        {...getInteractionProps()}
+      />
+    </div>
   ))
   .add('expandable', () => (
-    <div style={{ width: 800, border: '1px dashed magenta' }}>
+    <div className="storyWrapper" style={{ width: 800, border: '1px dashed magenta' }}>
       <ConditionDetails
         {...defaultProps}
         isExpandable
@@ -48,7 +55,7 @@ storiesForComponent('Components|ConditionDetails', module, ReadMe)
     </div>
   ))
   .add('no data loaded', () => (
-    <div style={{ width: 800, border: '1px dashed magenta' }}>
+    <div className="storyWrapper" style={{ width: 800, border: '1px dashed magenta' }}>
       <ConditionDetails
         data={[]}
         selectedProject=""
