@@ -143,7 +143,7 @@
     },
     "conditionDetails": {
       "selectedProject": "Projet sélectionné :",
-      "selectedCondition": "Conditions dans la région sélectionnée :",
+      "selectedCondition": "Conditions dans la region selectionnée",
       "instrumentNumber": "Instrument nᵒ :",
       "conditionNumber": "Condition nᵒ :",
       "location": "Lieu :",
@@ -154,14 +154,14 @@
       "type": "Type d’instrument",
       "keywords": "Correspondance de recherché :",
       "text": "Texte :",
-      "selectedConditionFeature": "Particularité de la condition sélectionnée",
+      "selectedConditionFeature": "Attribut sélectionné",
       "more": "Plus",
       "less": "Moins"
     },
     "featureDescription": {
       "theme": "Pour faciliter l’analyse et la compréhension du public, les conditions sont regroupées par thème, comme l’environnement, les finances, la sécurité, la sûreté, etc.",
       "phase": "En sa qualité d’organisme de réglementation présent tout au long du cycle de vie d’un projet, la Régie assure la sécurité et la protection de l’environnement à toutes les étapes. Des conditions peuvent viser une ou plusieurs étapes du cycle de vie ou toutes les étapes. {phaseLink}.",
-      "status": "Les conditions peuvent avoir deux états : En cours et conforme.",
+      "status": "Les conditions peuvent avoir deux états : en cours et conforme.",
       "type": "Il existe deux grands types de conditions : standard et non standard.",
       "filing": "Un document démontrant que les exigences relatives à une condition ont été respectées.",
       "instrument": "Ordonnances, certificats, licences ou permis délivrés par la Régie. Tous les instruments comportent un préfixe et un numéro (p. ex., GC-115).   Les préfixes des instruments réglementaires et les conditions y afférentes sont énoncés et définis dans le tableau de droite. La Régie publie un {instrumentLink} qui dresse la liste des instruments réglementaires délivrés depuis septembre 2014.",
@@ -424,12 +424,12 @@
     },
     "streamGraph": {
       "title": {
-        "instrument": "Total des conditions par instrument au fil du temps",
-        "theme": "Total des conditions selon le thème au fil du temps",
-        "phase": "Total des conditions par étape au fil du temps",
-        "status": "Total des conditions selon l’état au fil du temps",
-        "type": "Total des conditions selon le type au fil du temps",
-        "filing": "Total des conditions selon le dépôt au fil du temps"
+        "instrument": "Nombre de conditions par instrument au fil du temps",
+        "theme": "Nombre de conditions selon le thème au fil du temps",
+        "phase": "Nombre de conditions par étape au fil du temps",
+        "status": "Nombre de conditions selon l’état au fil du temps",
+        "type": "Nombre de conditions selon le type au fil du temps",
+        "filing": "Nombre de conditions selon le dépôt au fil du temps"
       },
       "axis": {
         "yAxis": "Nombre de conditions",

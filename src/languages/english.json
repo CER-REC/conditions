@@ -424,12 +424,12 @@
     },
     "streamGraph": {
       "title": {
-        "instrument": "Total Conditions By Instrument Over Time",
-        "theme": "Total Conditions By Theme Over Time",
-        "phase": "Total Conditions by Phase Over Time",
-        "status": "Total Conditions by Status Over Time",
-        "type": "Total Conditions by Type Over Time",
-        "filing": "Total Conditions by Filing Over Time"
+        "instrument": "Number of Conditions by Instrument Over Time",
+        "theme": "Number of Conditions by Theme Over Time",
+        "phase": "Number of Conditions by Phase Over Time",
+        "status": "Number of Conditions by Status Over Time",
+        "type": "Number of Conditions by Type Over Time",
+        "filing": "Number of Conditions by Filing Over Time"
       },
       "axis": {
         "yAxis": "Number of Conditions",
