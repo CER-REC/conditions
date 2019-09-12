@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mountWithIntl } from '../../tests/utilities';
 import SearchBar from '.';
 import SuggestedKeywordsPrompt from './SuggestedKeywordsPrompt';
 import Tab from './Tab';
@@ -41,7 +41,7 @@ describe('Components|SearchBar', () => {
   describe('default props', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = mountWithIntl(
         <SearchBar
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
@@ -72,7 +72,7 @@ describe('Components|SearchBar', () => {
   describe('tabs', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = mountWithIntl(
         <SearchBar
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
@@ -123,7 +123,7 @@ describe('Components|SearchBar', () => {
     let spy;
     beforeEach(() => {
       spy = jest.fn();
-      wrapper = shallow(
+      wrapper = mountWithIntl(
         <SearchBar
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
@@ -180,7 +180,7 @@ describe('Components|SearchBar', () => {
   describe('with mode set to filter', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = mountWithIntl(
         <SearchBar
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
@@ -213,7 +213,7 @@ describe('Components|SearchBar', () => {
   describe('on suggestion prompt', () => {
     let wrapper;
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = mountWithIntl(
         <SearchBar
           suggestedKeywords={sampleSuggestedKeywords}
           scrollToMethodology={noop}
@@ -231,6 +231,7 @@ describe('Components|SearchBar', () => {
           findAny
         />,
       );
+
       wrapper.setState({ mode: 'find' });
     });
 

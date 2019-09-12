@@ -19261,7 +19261,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           all
         </li>
         <li
@@ -19271,7 +19270,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           wildlife & habitat
         </li>
         <li
@@ -19281,7 +19279,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           environment
         </li>
         <li
@@ -19291,7 +19288,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           oversight & safety
         </li>
         <li
@@ -19301,7 +19297,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           engineering & structures
         </li>
         <li
@@ -19311,7 +19306,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           administration & filings
         </li>
         <li
@@ -19321,7 +19315,6 @@ exports[`Storyshots Components|SearchBar/SuggestedKeywordsPopout with interactio
           onKeyPress={[Function]}
           tabIndex={0}
         >
-           
           people & communities
         </li>
       </ul>

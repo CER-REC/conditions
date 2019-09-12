@@ -331,9 +331,11 @@
         "sortBy": "Tri",
         "frequency": "Fréquence",
         "alphabetical": "Ordre alphabétique",
+        "condition": "{conditions} condition",
         "conditions": "{conditions} conditions",
-        "inc": "croiss",
-        "dec": "décroiss"
+        "inc": "croiss.",
+        "dec": "décroiss.",
+        "all": "tous"
       }
     },
     "mainInfoBar": {
