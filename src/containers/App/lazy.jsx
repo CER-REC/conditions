@@ -745,6 +745,7 @@ class App extends React.PureComponent {
             suggestedKeywords={this.props.allKeywords}
             updateSearch={this.updateSearch}
             scrollToMethodology={this.scrollToMethodology}
+            openProjectDetails={this.openCompanyPopup}
             openNumberDetails={this.openTotalConditionNumberPopup}
           />
           <TotalConditionsPopup
