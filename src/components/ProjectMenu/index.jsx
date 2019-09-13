@@ -72,7 +72,7 @@ class ProjectMenu extends React.PureComponent {
   };
 
   render() {
-    const { loading, onChange } = this.props;
+    const { loading } = this.props;
     let { selectedProjectID, projectsData, selectedFeature } = this.props;
     const isListEmpty = this.getListItems(projectsData, selectedProjectID).length === 0;
 
@@ -100,18 +100,15 @@ class ProjectMenu extends React.PureComponent {
       ))
       : [];
 
-    const selected = selectedProjectID === null
-      ? -1
-      : listItems.findIndex(project => project.id === selectedProjectID);
-
-    // If no project is selected, set it to the first project
-    if (selected === -1 && listItems.length > 0) { onChange(listItems[0].id); }
+    let selected = listItems.findIndex(project => project.id === selectedProjectID);
+    if (selected === -1) { selected = 0; }
 
     const paddingBefore = Math.max(0, 2 - selected);
     const paddingAfter = 5 - listItems.length - paddingBefore;
 
     const [sedimentationLeft, sedimentationRight] = loading ? [0, 0]
       : this.getSedimentationWidth(projectsData);
+
     return (
       <div
         className={classNames(
