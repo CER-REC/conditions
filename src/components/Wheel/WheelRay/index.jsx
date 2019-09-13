@@ -91,39 +91,47 @@ class WheelRay extends React.Component {
 
       const componentToReturn = wheelType === 'company'
         ? (
-          <g
-            key={`${item.id}CompanyRay`}
-            transform={transform}
-            className="companyRay"
-            {...handleInteraction(props.onChangeDot, index)}
-          >
+          <React.Fragment key={`${item.id}CompanyRay`}>
+            {
+              (!this.state.flagLayouts) ? null : (
+                <g
+                  key="flag"
+                  transform={transform}
+                  className="companyRay"
+                  {...handleInteraction(props.onChangeDot, index)}
+                >
+                  <CompanyFlag
+                    y={-65}
+                    flagLayout={this.state.flagLayouts[index]}
+                    svgHeight={100}
+                    dotWidth={0.8 * this.state.flagScale}
+                    dotSpacing={this.state.flagScale}
+                    rotation={90}
+                    relevantProjectLookup={this.props.relevantProjectLookup}
+                    filteredProjectLookup={this.props.filteredProjectLookup}
+                  />
+                </g>
+              )
+            }
             {/* This rect will be used to denote the letter separation in the location wheel
             also to can be used to mark the search */}
-            <text
-              className="textLabels"
-              transform="translate(28.75) rotate(90)"
-              {...handleInteraction(props.onChangeRay, index)}
-            >
-              { item.name.charAt(0) !== legendTracker ? item.name.charAt(0) : null }
-            </text>
-            {(!this.state.flagLayouts) ? null
-              : (
-                <CompanyFlag
-                  y={-65}
-                  flagLayout={this.state.flagLayouts[index]}
-                  svgHeight={100}
-                  dotWidth={0.8 * this.state.flagScale}
-                  dotSpacing={this.state.flagScale}
-                  rotation={90}
-                  relevantProjectLookup={this.props.relevantProjectLookup}
-                  filteredProjectLookup={this.props.filteredProjectLookup}
-                />
-              )}
-          </g>
+            {
+              (item.name.charAt(0) === legendTracker) ? null : (
+                <text
+                  key="legend"
+                  className="textLabels"
+                  transform={`${transform} translate(28.75) rotate(90)`}
+                  {...handleInteraction(props.onChangeRay, index)}
+                >
+                  {item.name.charAt(0)}
+                </text>
+              )
+            }
+          </React.Fragment>
         )
         : (
-          <React.Fragment>
-            <g key={`${item.id}LocationRay`} transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
+          <React.Fragment key={`${item.id}LocationRay`}>
+            <g key="chart" transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
               <LocationRay
                 regionId={item.id}
                 items={item.aggregatedCount}
@@ -138,16 +146,16 @@ class WheelRay extends React.Component {
             {
               (item.province !== legendTracker)
                 ? (
-                  <g key={`${item.id}Legend`} transform={transform} className="locationRay" {...handleInteraction(props.onChangeRay, index)}>
+                  <g key="text" transform={`${transform} translate(28.75)`} className="locationRay">
                     <line
                       className="regionDivider"
-                      transform="translate(28.75) rotate(90)"
+                      transform="rotate(90)"
                       x1="0"
                       y1="0.6"
                       x2="0"
                       y2="-2"
                     />
-                    <text className="textLabels" transform="translate(28.75) rotate(94)" textAnchor="right" {...handleInteraction(props.onChangeRay, index)}>
+                    <text className="textLabels" transform="rotate(94)" textAnchor="right" {...handleInteraction(props.onChangeRay, index)}>
                       &nbsp;{item.province}
                       <title>
                         {item.province}
