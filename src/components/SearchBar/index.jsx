@@ -37,17 +37,24 @@ class SearchBar extends React.PureComponent {
     mode: PropTypes.oneOf(['location', 'company']).isRequired,
   }
 
-  handleTabChange = memoize(toggleMode => () => this.setState(({ mode }) => ({
-    mode: (mode !== toggleMode) ? toggleMode : '',
+  handleTabChange = memoize(toggleMode => () => this.setState(({ activeTab }) => ({
+    activeTab: (activeTab !== toggleMode) ? toggleMode : '',
   })))
 
   constructor(props) {
     super(props);
     this.state = {
-      mode: '',
+      activeTab: '',
       isActive: false,
       isExclude: false,
     };
+  }
+
+  componentDidUpdate(prev) {
+    if (this.props.mode === 'location' && this.props.mode !== prev.mode) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ activeTab: '' });
+    }
   }
 
   changeIsExclude = bool => (this.setState({ isExclude: bool }));
@@ -62,7 +69,7 @@ class SearchBar extends React.PureComponent {
 
   render() {
     const {
-      mode, isActive, isExclude,
+      activeTab: mode, isActive, isExclude,
     } = this.state;
     const {
       projectStatus, setIncluded, setExcluded,
@@ -116,7 +123,7 @@ class SearchBar extends React.PureComponent {
             projectStatus={projectStatus}
             selectedYear={yearRange}
             yearRange={availableYearRange}
-            closeTab={() => (this.setState({ mode: '' }))}
+            closeTab={this.handleTabChange('')}
             changeProjectStatus={changeProjectStatus}
             onYearSelect={updateYear}
           />
