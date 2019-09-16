@@ -34,11 +34,7 @@ class SearchBar extends React.PureComponent {
     updateYear: PropTypes.func.isRequired,
     changeProjectStatus: PropTypes.func.isRequired,
     scrollToMethodology: PropTypes.func.isRequired,
-    className: PropTypes.string,
-  }
-
-  static defaultProps = {
-    className: '',
+    mode: PropTypes.oneOf(['location', 'company']).isRequired,
   }
 
   handleTabChange = memoize(toggleMode => () => this.setState(({ mode }) => ({
@@ -132,17 +128,22 @@ class SearchBar extends React.PureComponent {
     }
 
     return (
-      <div className={classNames('SearchBar', this.props.className)}>
+      <div className={classNames('SearchBar', { small: this.props.mode === 'location' })}>
         <div className="SelectionTab">
           <Tab
             onClick={this.handleTabChange('find')}
             isActive={(mode === 'find')}
           />
-          <Tab
-            onClick={this.handleTabChange('filter')}
-            isFilter
-            isActive={(mode === 'filter')}
-          />
+          {
+            (this.props.mode === 'location') ? null
+              : (
+                <Tab
+                  onClick={this.handleTabChange('filter')}
+                  isFilter
+                  isActive={(mode === 'filter')}
+                />
+              )
+          }
         </div>
         {modeComponent}
       </div>

@@ -43,6 +43,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = shallow(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -74,6 +75,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = shallow(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -118,13 +120,40 @@ describe('Components|SearchBar', () => {
     });
   });
 
-  describe(' with mode set to find', () => {
+  describe('tabs in location mode', () => {
+    const wrapper = shallow(
+      <SearchBar
+        mode="location"
+        suggestedKeywords={sampleSuggestedKeywords}
+        availableYearRange={yearRange}
+        availableCategories={categories}
+        includeKeywords={includeKeywords}
+        excludeKeywords={excludeKeywords}
+        projectStatus={projectStatus}
+        yearRange={yearRange}
+        setIncluded={noop}
+        setExcluded={noop}
+        findAnyOnChange={noop}
+        updateYear={noop}
+        changeProjectStatus={noop}
+        scrollToMethodology={noop}
+        findAny
+      />,
+    );
+
+    test('should only render the search tab', () => {
+      expect(wrapper.find(Tab)).toHaveLength(1);
+    });
+  });
+
+  describe('with mode set to find', () => {
     let wrapper;
     let spy;
     beforeEach(() => {
       spy = jest.fn();
       wrapper = shallow(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -182,6 +211,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = shallow(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           availableYearRange={yearRange}
           availableCategories={categories}
@@ -215,6 +245,7 @@ describe('Components|SearchBar', () => {
     beforeEach(() => {
       wrapper = shallow(
         <SearchBar
+          mode="company"
           suggestedKeywords={sampleSuggestedKeywords}
           scrollToMethodology={noop}
           availableYearRange={yearRange}
