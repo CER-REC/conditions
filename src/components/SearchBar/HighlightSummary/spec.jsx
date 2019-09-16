@@ -4,8 +4,8 @@ import HighlightSummary from '.';
 import './styles.scss';
 import { shouldBehaveLikeAComponent } from '../../../tests/utilities';
 
-const keywords = ['test1', 'test2'];
-const exceptKeywords = ['except1', 'except2'];
+const includeKeywords = ['test1', 'test2'];
+const excludeKeywords = ['except1', 'except2'];
 const selectedYear = { start: 2010, end: 2018 };
 const statuses = ['IN_PROGRESS', 'COMPLETED'];
 
@@ -15,8 +15,9 @@ describe('Components|SearchBar/HighlightSummary', () => {
     beforeEach(() => {
       wrapper = shallow(
         <HighlightSummary
-          includeKeywords={keywords}
-          excludeKeywords={exceptKeywords}
+          showFilterSummary={false}
+          includeKeywords={[]}
+          excludeKeywords={[]}
           selectedYear={selectedYear}
           includedStatuses={statuses}
         />,
@@ -24,16 +25,35 @@ describe('Components|SearchBar/HighlightSummary', () => {
     });
 
     shouldBehaveLikeAComponent(HighlightSummary, () => wrapper);
-    test('should not render include keywords text if no keywords', () => {
-      wrapper.setProps({ includeKeywords: [] });
-      const updatedWrapper = (wrapper).find('FormattedMessage').at(1);
-      expect(updatedWrapper.props().id).not.toBe('components.searchBar.highlightSummary.includes');
+    test('should not render any text', () => {
+      expect(wrapper.find('FormattedMessage')).toHaveLength(0);
     });
-    test('should not render exclude keywords if no exclude keywords', () => {
-      wrapper.setProps({ excludeKeywords: [] });
-      const updatedWrapper = wrapper.find('FormattedMessage');
-      const lastWrapper = updatedWrapper.at(updatedWrapper.length - 1);
-      expect(lastWrapper.props().id).not.toBe('components.searchBar.highlightSummary.excludes');
+
+    test('should render the filter summary', () => {
+      wrapper.setProps({ showFilterSummary: true });
+      const formatted = (wrapper).find('FormattedMessage');
+      expect(formatted).toHaveLength(1);
+      expect(formatted.at(0).props().id).toBe('components.searchBar.highlightSummary.showing');
+    });
+
+    test('should render the included keywords', () => {
+      wrapper.setProps({ includeKeywords });
+
+      const formatted = (wrapper).find('FormattedMessage');
+      expect(formatted).toHaveLength(1);
+      expect(formatted.at(0).props().id).toBe('components.searchBar.highlightSummary.includes');
+
+      includeKeywords.forEach(word => expect(wrapper.text()).toMatch(word));
+    });
+
+    test('should render the excluded keywords', () => {
+      wrapper.setProps({ excludeKeywords });
+
+      const formatted = (wrapper).find('FormattedMessage');
+      expect(formatted).toHaveLength(1);
+      expect(formatted.at(0).props().id).toBe('components.searchBar.highlightSummary.excludes');
+
+      excludeKeywords.forEach(word => expect(wrapper.text()).toMatch(word));
     });
   });
 });

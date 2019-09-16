@@ -54,6 +54,12 @@ class SearchBar extends React.PureComponent {
 
   toggleIsActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
 
+  filterIsActive = () => (
+    this.props.yearRange.start !== this.props.availableYearRange.start
+    || this.props.yearRange.end !== this.props.availableYearRange.end
+    || this.props.projectStatus.length < 2
+  )
+
   render() {
     const {
       mode, isActive, isExclude,
@@ -119,6 +125,7 @@ class SearchBar extends React.PureComponent {
       default:
         modeComponent = (
           <HighlightSummary
+            showFilterSummary={this.props.mode === 'company' && this.filterIsActive()}
             includeKeywords={includeKeywords}
             excludeKeywords={excludeKeywords}
             selectedYear={yearRange}
