@@ -51,7 +51,7 @@ class SearchBar extends React.PureComponent {
   }
 
   componentDidUpdate(prev) {
-    if (this.props.mode === 'location' && this.props.mode !== prev.mode) {
+    if (this.props.mode !== prev.mode) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ activeTab: '' });
     }
