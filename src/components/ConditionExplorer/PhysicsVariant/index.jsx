@@ -194,8 +194,6 @@ export default class PhysicsVariant extends React.PureComponent {
   };
 
   onGuideDragStart = ({ mouse }) => {
-    reportAnalytics('drag', 'guide');
-    this.guideIsDragging = true;
     this.guideDragOrigin = { x: mouse.absolute.x, y: mouse.absolute.y };
   };
 
@@ -210,6 +208,11 @@ export default class PhysicsVariant extends React.PureComponent {
       Math.abs(mouse.absolute.x - this.guideDragOrigin.x) > dragThreshold
       || Math.abs(mouse.absolute.y - this.guideDragOrigin.y) > dragThreshold
     ) {
+      if (!this.sentDragAnalytics) {
+        reportAnalytics('drag', 'guide');
+        this.sentDragAnalytics = true;
+      }
+
       if (this.props.selectedKeywordId > -1) {
         this.clearSelectedKeyword();
       }
@@ -217,8 +220,8 @@ export default class PhysicsVariant extends React.PureComponent {
   }
 
   onGuideDragEnd = () => {
-    this.guideIsDragging = false;
     this.guideDragOrigin = null;
+    this.sentDragAnalytics = null;
   };
 
   closeGuide = () => {
