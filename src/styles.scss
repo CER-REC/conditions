@@ -51,6 +51,10 @@
 
     display: block;
   }
+
+  button {
+    line-height: unset;
+  }
 }
 
 // Override the WET template for our container

@@ -14,14 +14,14 @@
     display: flex;
 
     height: 24px;
+    line-height: 24px;
 
     padding-left: 10px;
     padding-right: 10px;
 
-    padding-top: 2px;
+    // padding-top: 2px;
 
     text-align:left;
-    line-height: 24px;
     vertical-align: middle;
 
     white-space: nowrap;
@@ -34,6 +34,9 @@
       font-family: $fira-sans-condensed;
       font-size: 14px;
       font-weight: normal;
+
+      height: 100%;
+      line-height: inherit;
     }
 
     .asterisk {
@@ -43,14 +46,13 @@
     }
 
     .openProject {
-      position: relative;
-      top: 2px;
-
-      height: 90%;
+      height: 100%;
       flex-grow: 1;
       white-space: nowrap;
       overflow: hidden;
       text-align: left;
+
+      line-height: inherit;
 
       font-family: $fira-sans-condensed-bold;
       font-size: 15px;
