@@ -9590,7 +9590,7 @@ exports[`Storyshots Components|ProjectMenu At left 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -10170,7 +10170,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -10178,7 +10178,7 @@ exports[`Storyshots Components|ProjectMenu At right 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -10993,7 +10993,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -11001,7 +11001,7 @@ exports[`Storyshots Components|ProjectMenu Default Props 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 4,
+          "width": 2,
         }
       }
     />
@@ -12059,7 +12059,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -12067,7 +12067,7 @@ exports[`Storyshots Components|ProjectMenu Four near left 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 2,
+          "width": 0,
         }
       }
     />
@@ -13125,7 +13125,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -13133,7 +13133,7 @@ exports[`Storyshots Components|ProjectMenu Four near right 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 2,
+          "width": 0,
         }
       }
     />
@@ -14865,7 +14865,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 0,
         }
       }
     />
@@ -14873,7 +14873,7 @@ exports[`Storyshots Components|ProjectMenu Single project 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -15207,7 +15207,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -15215,7 +15215,7 @@ exports[`Storyshots Components|ProjectMenu Three at middle 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />
@@ -16030,7 +16030,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
       className="sedimentation left"
       style={
         Object {
-          "width": -1,
+          "width": 0,
         }
       }
     />
@@ -16038,7 +16038,7 @@ exports[`Storyshots Components|ProjectMenu no data, empty pipe 1`] = `
       className="sedimentation right"
       style={
         Object {
-          "width": 1,
+          "width": 0,
         }
       }
     />

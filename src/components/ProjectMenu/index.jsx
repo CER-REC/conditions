@@ -62,12 +62,12 @@ class ProjectMenu extends React.PureComponent {
   };
 
   getSedimentationWidth = (data) => {
-    const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID);
-    const rightCount = data.length - leftCount - 1;
+    const leftCount = data.findIndex(project => project.id === this.props.selectedProjectID) - 2;
+    const rightCount = data.length - leftCount - 5;
 
     return [
-      leftCount < 35 ? leftCount : 35,
-      rightCount < 35 ? rightCount : 35,
+      Math.max(0, Math.min(leftCount, 35)),
+      Math.max(0, Math.min(rightCount, 35)),
     ];
   };
 
