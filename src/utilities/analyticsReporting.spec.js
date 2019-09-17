@@ -1,4 +1,9 @@
-import { addGeneralAnalytics, reportAnalytics, handleAnalyticsInteraction } from './analyticsReporting';
+import {
+  addGeneralAnalytics,
+  reportAnalytics,
+  handleAnalyticsInteraction,
+  analyticsActions,
+} from './analyticsReporting';
 
 const eventFuncs = { preventDefault: () => {}, stopPropagation: () => {} };
 const general = { fieldA: 'testing', fieldB: 'more testing' };
@@ -26,17 +31,21 @@ describe('utilities/analyticsReporting', () => {
     });
 
     test('should push an analytics object with the given details', () => {
-      reportAnalytics('click', 'guide', 'expand');
+      reportAnalytics(analyticsActions.drag, 'guide', 'expand');
       expect(window.dataLayer).toHaveLength(1);
-      expect(window.dataLayer[0]).toMatchObject({ action: 'click', category: 'guide', label: 'expand' });
+      expect(window.dataLayer[0]).toMatchObject({
+        action: analyticsActions.drag,
+        category: 'guide',
+        label: 'expand',
+      });
     });
 
     test('should push an analytics object with both the given and general details', () => {
       store.setState(general);
-      reportAnalytics('click', 'guide', 'expand');
+      reportAnalytics(analyticsActions.click, 'guide', 'expand');
       expect(window.dataLayer).toHaveLength(1);
       expect(window.dataLayer[0]).toMatchObject({
-        action: 'click',
+        action: analyticsActions.click,
         category: 'guide',
         label: 'expand',
         fieldA: 'testing',

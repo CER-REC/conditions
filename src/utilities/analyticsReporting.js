@@ -5,6 +5,11 @@ import memoizeReference from './memoizeReference';
 const env = process.env.NODE_ENV;
 const noop = () => {};
 
+export const analyticsActions = {
+  click: 'click',
+  drag: 'drag',
+};
+
 let getGeneralAnalytics = noop;
 
 /**
