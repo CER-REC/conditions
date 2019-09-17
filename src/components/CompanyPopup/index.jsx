@@ -4,7 +4,6 @@ import memoize from 'lodash.memoize';
 import Company from './Company';
 import Modal from '../Modal';
 import memoizeReference from '../../utilities/memoizeReference';
-import './styles.scss';
 
 const getComponentProps = memoize(
   (projectName, companies) => ({ projectName, companies }),

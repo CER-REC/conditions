@@ -24,7 +24,7 @@ const BulletList = React.memo(({ children }) => {
 });
 
 const Company = ({ projectName, companies, closeModal }) => (
-  <div className="Company">
+  <div className="Company pad-bottom">
     <AdvancedFormattedMessage
       id="components.modal.company.name"
       tag={ProjectName}
@@ -39,6 +39,7 @@ const Company = ({ projectName, companies, closeModal }) => (
     <AdvancedFormattedMessage
       id="components.modal.company.back"
       tag={PopupBtn}
+      className="large bottom-right"
       icon="x"
       action={closeModal}
     />

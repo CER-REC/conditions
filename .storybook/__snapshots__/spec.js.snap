@@ -1273,7 +1273,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
     onClose={[Function]}
   >
     <div
-      className="Company"
+      className="Company pad-bottom"
     >
       <h2>
         Full Project Name:
@@ -1351,7 +1351,7 @@ exports[`Storyshots Components|CompanyPopup default 1`] = `
         </li>
       </ul>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -1403,7 +1403,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
     className="CompanyPopup"
   >
     <div
-      className="Company"
+      className="Company pad-bottom"
     >
       <h2>
         Full Project Name:
@@ -1481,7 +1481,7 @@ exports[`Storyshots Components|CompanyPopup/Company default 1`] = `
         </li>
       </ul>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -16558,7 +16558,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
     <div
       className="RegDocs"
     >
-      <h3>
+      <h2>
         Search for instrument 
         <strong>
           #
@@ -16568,7 +16568,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         <strong>
           RegDocs...
         </strong>
-      </h3>
+      </h2>
       <p
         className="iconContainer"
       >
@@ -16666,7 +16666,7 @@ exports[`Storyshots Components|RegDocsPopup default 1`] = `
         </svg>
       </a>
       <button
-        className="PopupBtn cancel"
+        className="PopupBtn large"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -16726,7 +16726,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
     <div
       className="RegDocs"
     >
-      <h3>
+      <h2>
         Search for instrument 
         <strong>
           #
@@ -16736,7 +16736,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         <strong>
           RegDocs...
         </strong>
-      </h3>
+      </h2>
       <p
         className="iconContainer"
       >
@@ -16834,7 +16834,7 @@ exports[`Storyshots Components|RegDocsPopup/RegDocs default 1`] = `
         </svg>
       </a>
       <button
-        className="PopupBtn cancel"
+        className="PopupBtn large"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -30388,35 +30388,19 @@ exports[`Storyshots Components|TotalConditionsPopup default 1`] = `
     onClose={[Function]}
   >
     <div
-      className="TotalConditions"
+      className="TotalConditions pad-bottom"
     >
-      <div
-        className="Header"
-      >
-        <span>
-          How is the Total Number of Conditions Determined?
-        </span>
-      </div>
-      <div
-        className="Description"
-      >
-        <div
-          className="Explanation"
-        >
-          <span>
-            The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
-          </span>
-        </div>
-        <div
-          className="Example"
-        >
-          <span>
-            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
-          </span>
-        </div>
-      </div>
+      <h2>
+        How is the Total Number of Conditions Determined?
+      </h2>
+      <p>
+        The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+      </p>
+      <p>
+        For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+      </p>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -30468,35 +30452,19 @@ exports[`Storyshots Components|TotalConditionsPopup/TotalConditions default 1`] 
     className="TotalConditionsPopup"
   >
     <div
-      className="TotalConditions"
+      className="TotalConditions pad-bottom"
     >
-      <div
-        className="Header"
-      >
-        <span>
-          How is the Total Number of Conditions Determined?
-        </span>
-      </div>
-      <div
-        className="Description"
-      >
-        <div
-          className="Explanation"
-        >
-          <span>
-            The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
-          </span>
-        </div>
-        <div
-          className="Example"
-        >
-          <span>
-            For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
-          </span>
-        </div>
-      </div>
+      <h2>
+        How is the Total Number of Conditions Determined?
+      </h2>
+      <p>
+        The total number of conditions displayed in the visualization may not match the CER's published total number of conditions attached to a project. Some conditions are repeated in several instruments for a single project, and the visualization counts conditions each time they appear in an instrument.
+      </p>
+      <p>
+        For example, a project may have 10 unique conditions reported, but if one of these conditions is repeated in 6 different instruments for that project, the visualization will display a count of 15 conditions for that project.
+      </p>
       <button
-        className="PopupBtn"
+        className="PopupBtn large bottom-right"
         focusable={true}
         onClick={[Function]}
         onKeyPress={[Function]}

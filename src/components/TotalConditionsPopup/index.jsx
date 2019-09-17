@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import TotalConditions from './TotalConditions';
 import Modal from '../Modal';
 
-import './styles.scss';
-
 const TotalConditionsPopup = ({ isOpen, closeModal }) => (
   <Modal
     component={TotalConditions}

@@ -32,7 +32,7 @@ const RegDocs = ({ document, closeModal }) => {
           instrument: (<strong>#{document}</strong>),
           regdocs: (<FormattedMessage id="components.modal.regdocs.regdocs" tagName="strong" />),
         }}
-        tagName="h3"
+        tagName="h2"
       />
       <p className="iconContainer">
         {checkIcon}
@@ -56,7 +56,7 @@ const RegDocs = ({ document, closeModal }) => {
         tag={PopupBtn}
         icon="x"
         action={closeModal}
-        className="cancel"
+        className="large"
       />
       <FormattedMessage id="components.modal.regdocs.whatIsHeading" tagName="h4" />
       <FormattedMessage id="components.modal.regdocs.whatIsText" tagName="p" />

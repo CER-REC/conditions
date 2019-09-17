@@ -6,24 +6,15 @@ import AdvancedFormattedMessage from '../../AdvancedFormattedMessage';
 
 import PopupBtn from '../../PopupBtn';
 
-import './styles.scss';
-
 const TotalConditions = ({ closeModal }) => (
-  <div className="TotalConditions">
-    <div className="Header">
-      <FormattedMessage id="components.modal.totalConditions.title" />
-    </div>
-    <div className="Description">
-      <div className="Explanation">
-        <FormattedMessage id="components.modal.totalConditions.explanation" />
-      </div>
-      <div className="Example">
-        <FormattedMessage id="components.modal.totalConditions.example" />
-      </div>
-    </div>
+  <div className="TotalConditions pad-bottom">
+    <FormattedMessage id="components.modal.totalConditions.title" tagName="h2" />
+    <FormattedMessage id="components.modal.totalConditions.explanation" tagName="p" />
+    <FormattedMessage id="components.modal.totalConditions.example" tagName="p" />
     <AdvancedFormattedMessage
       id="components.modal.totalConditions.back"
       tag={PopupBtn}
+      className="large bottom-right"
       icon="x"
       action={closeModal}
     />

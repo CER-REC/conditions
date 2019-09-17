@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import memoize from 'lodash.memoize';
 import RegDocs from './RegDocs';
 import Modal from '../Modal';
-import './styles.scss';
 
 const getComponentProps = memoize(document => ({ document }));
 const RegDocsPopup = ({ document, isOpen, closeModal }) => (
