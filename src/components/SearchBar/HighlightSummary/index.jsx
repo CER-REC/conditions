@@ -13,7 +13,7 @@ const HighlightSummary = props => (
       id="components.searchBar.highlightSummary.showing"
       values={{
         status: <FormattedMessage
-          id={`components.searchBar.highlightSummary.${props.includedStatuses[0] || 'ALL'}`}
+          id={`components.searchBar.highlightSummary.${props.includedStatuses[1] ? 'ALL' : props.includedStatuses[0]}`}
         />,
         start: props.selectedYear.start,
         end: props.selectedYear.end,

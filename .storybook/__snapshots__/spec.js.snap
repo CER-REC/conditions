@@ -17795,7 +17795,7 @@ exports[`Storyshots Components|SearchBar SearchBar default 1`] = `
       <span>
         Showing 
         <span>
-          In Progress
+          All
         </span>
          projects from 1970 - 1980
       </span>
@@ -19026,7 +19026,7 @@ exports[`Storyshots Components|SearchBar/HighlightSummary default 1`] = `
       <span>
         Showing 
         <span>
-          In Progress
+          All
         </span>
          projects from 2010 - 2018
       </span>
