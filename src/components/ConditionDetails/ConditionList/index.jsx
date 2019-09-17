@@ -89,6 +89,7 @@ class ConditionList extends React.PureComponent {
             key={item.instrumentNumber}
             title={item.instrumentNumber}
             data-heading={`${item.instrumentIndex}-${item.itemIndex}`}
+            className="instrumentNumber"
           >
             <div className={classNames('barMarker', { marked: item.marked })} />
             <h4>{item.instrumentNumber}</h4>
